@@ -2,7 +2,7 @@
 layout: tutorial
 title: Hana Configure Tutorial from Github - Lalit is testing!
 description: In this tutorial you will make your very first steps to access data on HANA.  This tutorial will write a native HANA application, using the Web-based Development Workbench. 
-tags: [tutorial:product/sapHana, tutorial:product/hana_studio, tutorial:technology/sql, 67837800100800004901]
+tags: [tutorial:product/sapHana, tutorial:product/hana_studio, tutorial:technology/sql, product:tech/73554900100700000996/67837800100800004901]
 ---
 <div class="prerequisites">
 ## Prerequisites  
