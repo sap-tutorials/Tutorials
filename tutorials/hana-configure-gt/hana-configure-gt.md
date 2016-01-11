@@ -9,7 +9,7 @@ tags: [product:tech/73554900100700000996, product:tech/67838200100800004076, tut
 [How to create an SAP HANA Developer Edition in the Cloud](http://go-qa.sap.com/developer/tutorials/setup-hana-for-cloud.html)
 </div>
 
-## Details
+## Details updated tags
 
 **Testing Webhook**
 
