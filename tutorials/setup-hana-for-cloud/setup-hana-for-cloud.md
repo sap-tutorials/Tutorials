@@ -17,7 +17,7 @@ How to create a HANA instance in your cloud provider, using the Cloud Appliance 
 This tutorial provides step by step instructions to walk you through the CAL setup process.
 
 ### Time to Compete
-This section takes about **10 minutes** to complete, and about **10 to 25 minutes** after completion to get the Virtual Machine started.
+This section takes about **10 minutes** to complete, and about **10 to 25 minutes** after completion to get the Virtual Machine started. 
 
 >### Warning
 >Both the Amazon AWS and Microsoft Azure accounts will charge you for time on those cloud systems.
