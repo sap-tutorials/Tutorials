@@ -10,7 +10,7 @@ tags: [tutorial:product/sapHana, tutorial:product/hana_studio, tutorial:product/
 ### You will learn  
 1. How to use HANA Studio Perspectives
 2. How to create a connection to the HANA back end
-3. Getting started with the HANA Web based development workbench
+3. Getting started with the HANA Web based development workbench 
 
 ### Information
 > All source code solutions and templates for all exercises in this document can be found [here](http://hanapm:8005/workshop/admin/ui/exerciseMaster/?workshop=xs)
