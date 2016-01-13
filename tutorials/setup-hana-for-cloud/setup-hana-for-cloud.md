@@ -9,7 +9,7 @@ You will need to have an account on either Microsoft Azure or Amazon AWS
 
 ## Next Steps
 [Hello World!  HANA and the Web Development Workbench](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
- 
+
 ## Details
 
 ### You will learn  
@@ -36,7 +36,7 @@ Go to the [Cloud Appliance Library](https://cal.sap.com/) page, and click the ``
 
 >Click [here](http://go.sap.com/index.html) to go to the [sap.com website](http://go.sap.com/index.html), then click *login* in the upper right corner to create an account.
 
-![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/setup-hana-for-cloud/1.png)
+![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/setup-hana-for-cloud/1.png)
 
 At the top of the screen, click on ***SOLUTIONS*** to see the systems available for use. Search for our "*SAP HANA developer edition*" in the search box to find the HANA developer edition.
 
@@ -44,7 +44,7 @@ Once you've found the instance through the search, you need to "activate" it. Ac
 
 Finally, click the "Create Instance" link on this solution to start the setup wizard. The wizard  will take you through a few simple steps and then you will have your instance up and running. These steps are outlined below.
 
-![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/setup-hana-for-cloud/2.png)
+![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/setup-hana-for-cloud/2.png)
 
 First, enter a name for your instance (and you can add an optional description).  
 
@@ -56,7 +56,7 @@ The network and subnet sections can use the default settings.
 
 When you are ready, click ```Next``` to continue.
 
-![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/setup-hana-for-cloud/3.png)
+![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/setup-hana-for-cloud/3.png)
 
 Choose the virtual machine size you want to use. Larger virtual machines can handle more data, and process faster, but cost more money. (The cost per hour on the screen is updated based on your selection.)
 
@@ -64,18 +64,18 @@ Volume Type and Access Points can be left as defaults.
 
 When you are ready to continue, click ```Next```.
 
-![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/setup-hana-for-cloud/4.png)
+![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/setup-hana-for-cloud/4.png)
 
 Enter a password for your system.
 
 >### Note
->The password rules can be confusing.  Choose a password between 8-9 charaters, with at least one uppercase letter, one lowercase letter, and one number.
+>The password rules can be confusing.  Choose a password between 8-9 characters, with at least one uppercase letter, one lowercase letter, and one number.
 
 >If your password does not follow the rules, a warning will appear on the screen.
 
 Click ```next``` to continue.
 
-![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/setup-hana-for-cloud/5.png)
+![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/setup-hana-for-cloud/5.png)
 
 Configure the schedule for the virtual machine.  
 
@@ -85,13 +85,13 @@ This option allows you to define a specific date when the machine will shut down
 
 Click Next when you have set a run schedule, or a suspend date.
 
-![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/setup-hana-for-cloud/6.png)
+![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/setup-hana-for-cloud/6.png)
 
 Summary. This screen shows all of your choices for review. To fix any problems, just click ```Previous```.
 
 When you are done, click ```Finish```. The VM creation process will start.
 
-![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/setup-hana-for-cloud/7.png)
+![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/setup-hana-for-cloud/7.png)
 
 After the process of creating the VM starts, you will be prompted to download your "Key Pair".  This file will allow you to access your system using [SSH](http://en.wikipedia.org/wiki/Secure_Shell).
 
@@ -101,7 +101,7 @@ It will take about 10-25 minutes for your VM to start.  You can see your instanc
 
 ### ![](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_03.svg) Connect to your new HANA instance
 
-![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/setup-hana-for-cloud/8.png)
+![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/setup-hana-for-cloud/8.png)
 
 There are two ways to connect:
 
@@ -109,16 +109,16 @@ There are two ways to connect:
 2. **Using the HANA Studio**.  Install the [HANA Studio](https://tools.hana.ondemand.com/#hanatools) (which required Eclipse) on your local system.  Then, you can log in to HANA using the IP address, the username ```SYSTEM```, and the password you specified in the setup process.
 
 ### Optional - Use SSH to log in to the Linux OS
-Connecting to the underlying Linux OS in the cloud instances is different for each provider.  Follow the instructions for the cloud provider you have chosen to host HANA. 
- 
+Connecting to the underlying Linux OS in the cloud instances is different for each provider.  Follow the instructions for the cloud provider you have chosen to host HANA.
+
 #### Amazon AWS
-To connect to Amazon AWS, you **must** use the key-pair that was provided by Amazon when the instance was created. 
+To connect to Amazon AWS, you **must** use the key-pair that was provided by Amazon when the instance was created.
 
 **Connecting to AWS from Windows**
 1. Using the key-pair file (*.pem) downloaded from Amazon, create a private key file for putty using puttygen.exe.  
 2. Open PuTTY on your computer, and enter the IP Address for your instance in the Host Name (or IP address) field. Click the ```Open``` button.
-3. When the connection is opened, enter ```root``` as the user. You can now change the default password for the hdbadm OS user with the command ```passwd hdbadm```. Your new password must be entered twice, and it will be checked to ensure it is sufficiently secure. Once you have entered an appropriate password twice, then you are finished! 
-For more detailed instructions, check out the [Amazon AWS guide to Connect Your Amazon EC2 Instance](http://docs.aws.amazon.com/gettingstarted/latest/computebasics-linux/getting-started-deploy-app-connect.html). 
+3. When the connection is opened, enter ```root``` as the user. You can now change the default password for the hdbadm OS user with the command ```passwd hdbadm```. Your new password must be entered twice, and it will be checked to ensure it is sufficiently secure. Once you have entered an appropriate password twice, then you are finished!
+For more detailed instructions, check out the [Amazon AWS guide to Connect Your Amazon EC2 Instance](http://docs.aws.amazon.com/gettingstarted/latest/computebasics-linux/getting-started-deploy-app-connect.html).
 
 **Connecting to AWS from Mac or Unix**
 From Linux or Mac OS-X, in terminal window, run this command: ```ssh -i [hanakey].pem [IP Address] -l root``` (Replace [hanakey].pem with the name of your key-pair file, and [IP Address] with the IP address of your instance.)
@@ -134,7 +134,7 @@ For more detailed instructions, check out [Connecting to Microsoft Azure with SS
 
 ### A few notes
 - Some corporate firewalls may not allow SSH to Amazon cloud.  You may have to work with your IT organization to resolve this.
-- User ```hdbadm``` owns sap software in the Linux instance. To restart the database without restarting the entire Linux instance, switch to user ```hdbadm``` and perform stop and start operations using the following commands: 
+- User ```hdbadm``` owns sap software in the Linux instance. To restart the database without restarting the entire Linux instance, switch to user ```hdbadm``` and perform stop and start operations using the following commands:
   - ```su – hdbadm``` To switch user.
   - ```./HDB stop``` Command to stop HANA DB
   - ```./HDB start``` Command to start HANA DB
