@@ -10,9 +10,9 @@ tags: [tutorial:product/hcp, tutorial:product/mobile, tutorial:interest/gettings
 ## Next Steps
 [Deploy an app to SAP HANA Cloud Platform](TODO)
 
-##Details
+## Details
 
-###You will learn
+### You will learn
 The SAP Web IDE (Integrated Development Environment) has a project template wizard, which makes it easy to create new applications quickly. In this tutorial you will build an app that reads product and supplier information from an OData source and displays it in a responsive mobile web app.
 
 You will be setting a few configurations, then filling out a few forms in this step, but the end result is an application which can be run on a mobile device.  Ready?  Let's get started...
@@ -131,5 +131,5 @@ You will be setting a few configurations, then filling out a few forms in this s
 
  ![mob1-2_21.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mobile-build-app-from-template/mob1-2_21.png)
 
-##Next Steps
+## Next Steps
 [Deploy an app to SAP HANA Cloud Platform](TODO)
