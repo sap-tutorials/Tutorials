@@ -10,7 +10,7 @@ tags: [tutorial:product/hcp, tutorial:interest/gettingstarted]
 ### You will learn  
 This is a simple 8 step tutorial to walk through signing up for an account on HANA Cloud Platform. 
 
-### Note
+> ### Note
 >If you already have an account on HANA Cloud Platform (HCP), you can go directly to the HANA Cloud Platform Cockpit and then move on to the next tutorial.
 
 ### Time to Complete
