@@ -26,7 +26,7 @@ Follow our other tutorials on the HANA Cloud Platform website
 Beginners might take **10-15 minutes** to execute this tutorial.
 
 ### ![](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_01.svg) Open the Web-based Development Workbench
-####Using HANA Cloud Platform
+#### Using HANA Cloud Platform
 Each Trial HANA instance comes with the HANA Web-based Development Workbench. The workbench allows you to develop on HANA without the need to set up a local development environment.
 
 Login to the [HANA Cloud Cockpit](https://account.hanatrial.ondemand.com/cockpit) with your free developer edition account.
@@ -37,7 +37,7 @@ Choose HANA Instances and choose then SAP HANA Web-based Development Workbench l
 
 You are now in the Editor and can immediately start developing in HANA.
 
-####Using HANA on Amazon AWS or Microsoft Azure
+#### Using HANA on Amazon AWS or Microsoft Azure
 
 Access the web page of your HANA server using the IP address of your server.  Enter the address ```http://XXX.XXX.XXX.XXX``` to the address bar of your browser. (Replace XXX.XXX.XXX.XXX with the IP address of your server.)
 
