@@ -6,7 +6,7 @@ tags: [tutorial:product/hcp, tutorial:interest/gettingstarted]
 ## Prerequisites
  - **Proficiency:** Beginner
 
-##Details
+## Details
 ### You will learn  
 This is a simple 8 step tutorial to walk through signing up for an account on HANA Cloud Platform. 
 
