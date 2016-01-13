@@ -2,7 +2,7 @@ The tutorials made available at https://github.com/SAPDocuments/Tutorials/ ("Tut
 
 - Sample Code - All sample code contained in the Tutorials is licensed under the Apache Software License, Version 2.0, a copy of which is provided below.
 
-- All Other Content - All other content contained in the Tutorials (including, without limitation, text, images, videos and other content) is provided for informational purposes only and solely for your personal non-commercial use. You may not copy, distribute, store, modify or publically display or perform the Tutorials or any portion thereof without the prior written consent from SAP. 
+- All Other Content - All other content contained in the Tutorials (including, without limitation, text, images, videos and other content) is provided for informational purposes only and solely for your personal non-commercial use. You may not copy, distribute, store, modify or publically display or publically perform the Tutorials or any portion thereof without the prior written consent from SAP. 
 
 The Tutorials are provided AS-IS and AS AVAILABLE. SAP does not guarantee or warrant any features or qualities of the Tutorials or give any undertaking with regard to any other quality. TO THE EXTENT ALLOWABLE BY APPLICABLE LAW, SAP AND ITS AFFILIATES, SUBSIDIARIES, OFFICERS, EMPLOYEES, AGENTS, PARTNERS, AND LICENSORS ARE NOT LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS, REVENUE, GOODWILL, USE, DATA, OR OTHER INTANGIBLE LOSSES (EVEN IF SAP HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), HOWEVER CAUSED, WHETHER IN CONTRACT, TORT, OR OTHERWISE, RELATING TO THE TUTORIALS. 
 
