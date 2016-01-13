@@ -18,7 +18,7 @@ The SAP Web IDE (Integrated Development Environment) has a project template wiza
 You will be setting a few configurations, then filling out a few forms in this step, but the end result is an application which can be run on a mobile device.  Ready?  Let's get started...
 
 ### Time to Complete
-**10 min**
+**10 min** 
 
 
 1. Go to <https://account.hanatrial.ondemand.com> and log in to your HCP cockpit.
