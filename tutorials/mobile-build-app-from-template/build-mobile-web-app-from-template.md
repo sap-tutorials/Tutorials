@@ -5,10 +5,10 @@ tags: [tutorial:product/hcp, tutorial:product/mobile, tutorial:interest/gettings
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Create a Destination on HANA Cloud Platform](TODO)
+ - **Tutorials:** [Create a Destination on HANA Cloud Platform](http://go.sap.com/developer/tutorials/create-hcp-destination.html)
 
 ## Next Steps
-[Deploy an app to SAP HANA Cloud Platform](TODO)
+[Deploy an app to SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/deploy-mobile-web-app-to-hcp.html)
 
 ## Details
 
@@ -132,4 +132,4 @@ You will be setting a few configurations, then filling out a few forms in this s
  ![mob1-2_21.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mobile-build-app-from-template/mob1-2_21.png)
 
 ## Next Steps
-[Deploy an app to SAP HANA Cloud Platform](TODO)
+[Deploy an app to SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/deploy-mobile-web-app-to-hcp.html)

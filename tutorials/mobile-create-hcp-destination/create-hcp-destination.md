@@ -6,10 +6,10 @@ tags: [tutorial:product/hcp, tutorial:product/mobile, tutorial:interest/gettings
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Sign up for an account on HANA Cloud Platform](TODO)
+ - **Tutorials:** [Sign up for an account on HANA Cloud Platform](http://go.sap.com/developer/tutorials/create-hcp-trial-account.html)
 
 ## Next Steps
-[Build an app from an SAP Web IDE template](TODO)
+[Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/build-mobile-web-app-from-template.html)
 
 ## Details
 
@@ -56,4 +56,4 @@ The data source URL is <http://services.odata.org/V2/Northwind/Northwind.svc/>
 4. Click **Save**, and that's it. Continue with the tutorial below to build your first app.
 
 ## Next Steps
-[Build an app from an SAP Web IDE template](TODO)
+[Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/build-mobile-web-app-from-template.html)

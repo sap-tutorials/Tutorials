@@ -5,10 +5,10 @@ tags: [tutorial:product/hcp, tutorial:product/mobile, tutorial:interest/gettings
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Build an app from an SAP Web IDE template](TODO)
+ - **Tutorials:** [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/build-mobile-web-app-from-template.html)
 
 ## Next Steps
-[Add labels and additional data field to your app](TODO)
+You can add labels and additional data field to your app.
 
 ## Details
 
@@ -44,6 +44,3 @@ Since any project that is created initially in the SAP Web IDE contains a ```neo
 
 8. You can now enter the application URL in your mobile device browser to see it running there.
 ![mob1-3_8.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mobile-deploy-app-to-hcp/mob1-3_8.png)
-
-## Next Step:
-[Add labels and additional data field to your app](TODO)
