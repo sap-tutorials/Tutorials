@@ -14,6 +14,7 @@ Follow our other tutorials on the HANA Cloud Platform website
 - [Check out the other tutorials on our HANA Cloud Platform website](http://hcp.sap.com/developers/TutorialCatalog.html)
 
 ## Details
+
 ### You will learn  
 1. How to browse data using the SAP HANA Web-based Development Workbench.
 2. Opening a connection to the SAP HANA database.
@@ -25,7 +26,9 @@ Follow our other tutorials on the HANA Cloud Platform website
 ### Time to Complete
 Beginners might take **10-15 minutes** to execute this tutorial.
 
+
 ### ![](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_01.svg) Open the Web-based Development Workbench
+
 #### Using HANA Cloud Platform
 Each Trial HANA instance comes with the HANA Web-based Development Workbench. The workbench allows you to develop on HANA without the need to set up a local development environment.
 
@@ -42,6 +45,7 @@ You are now in the Editor and can immediately start developing in HANA.
 Access the web page of your HANA server using the IP address of your server.  Enter the address ```http://XXX.XXX.XXX.XXX``` to the address bar of your browser. (Replace XXX.XXX.XXX.XXX with the IP address of your server.)
 
 On the web page, there is a link in the center column for **Web-Based Development Workbench**.  Click this link to start the workbench.
+
 
 ### ![](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_02.svg) Browse Data with the Catalog
 
@@ -74,6 +78,7 @@ The resulting view shows the SQL query executed to fetch the content and the res
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-and-authorizations/7.png)
 
 Now let's access this data from a SAP HANA application.
+
 
 ### ![](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_03.svg) Access Data from a HANA Application
 
@@ -126,6 +131,7 @@ Save the file using the Save button or by pressing ```ctrl+s```. Again, the succ
 
 Now you are ready to run the application.
 
+
 ### ![](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_04.svg) Deploy, Run and Test the Application
 
 Now the application is ready to be tested. As you are developing with the Web-based Development Workbench the application is already deployed and activated to your HANA Trial Instance. So you can immediately continue to test it.
@@ -139,6 +145,7 @@ The application will open in your browser and greet you with **Hello World** and
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-and-authorizations/12.png)
 
 Congratulations: You have just accessed your first data on SAP HANA!
+
 
 ### Optional: Related Information
 [SAP HANA Development Information - Official Documentation](http://help.sap.com/hana_platform#section6)
