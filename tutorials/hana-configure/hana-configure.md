@@ -12,8 +12,8 @@ tags: [tutorial:product/sapHana, tutorial:product/hana_studio, tutorial:product/
 2. How to create a connection to the HANA back end
 3. Getting started with the HANA Web based development workbench
 
-### Information
-> All source code solutions and templates for all exercises in this document can be found [here](http://hanapm:8005/workshop/admin/ui/exerciseMaster/?workshop=xs)
+> ### Information
+>All source code solutions and templates for all exercises in this document can be found [here](http://hanapm:8005/workshop/admin/ui/exerciseMaster/?workshop=xs)
 
 ### Time to Compete
 Beginners will take **30 minutes** to finish this tutorial.
@@ -83,7 +83,8 @@ Click ```Finish```:
 
 You should now have a new connection with your specific user id for the HANA system. Please make sure to use this connection for the rest of the exercise.
 
-[Note]> The System ID and users shown in these screen shots might be different than the ones you are working with and will often be blurred to avoid any confusion.
+> ### Note
+>The System ID and users shown in these screen shots might be different than the ones you are working with and will often be blurred to avoid any confusion.
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/13.png)
 
@@ -100,7 +101,8 @@ You should now see the local workspace mapped to the remote workspace in the SAP
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/16.png)
 
-[Note]> Your System ID, User ID, Hostname, and System Numbers will be different than those displayed in subsequent screen shots. For this reason we have often blurred this information in screen shots to avoid confusion.
+> ### Note
+>Your System ID, User ID, Hostname, and System Numbers will be different than those displayed in subsequent screen shots. For this reason we have often blurred this information in screen shots to avoid confusion.
 
 ### ![](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_03.svg) Launching the SAP HANA Web-based Development Workbench and creating initial development artifacts
 

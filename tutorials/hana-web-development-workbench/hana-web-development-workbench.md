@@ -15,13 +15,13 @@ You need a HANA account. Pick one of the following:
 ## Details
 ### You will learn  
 1. How to use the SAP HANA Web-based Development Workbench.
-2. How to develop a simple server-side application. 
+2. How to develop a simple server-side application.
 3. How to publish and run an application.
 
 ### Time to Compete
 Beginners might take 10-15 minutes to execute this tutorial.
 
->### Information
+> ### Information
 >The full application build in this tutorial can be found [in this Github repository](https://github.com/SAP/cloud-hana-helloworld/).
 
 ### ![](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_01.svg) Using HANA Cloud Platform

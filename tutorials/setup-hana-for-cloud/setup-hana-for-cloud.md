@@ -17,9 +17,9 @@ How to create a HANA instance in your cloud provider, using the Cloud Appliance 
 This tutorial provides step by step instructions to walk you through the CAL setup process.
 
 ### Time to Compete
-This section takes about **10 minutes** to complete, and about **10 to 25 minutes** after completion to get the Virtual Machine started. 
+This section takes about **10 minutes** to complete, and about **10 to 25 minutes** after completion to get the Virtual Machine started.
 
->### Warning
+> ### Warning
 >Both the Amazon AWS and Microsoft Azure accounts will charge you for time on those cloud systems.
 >If you want to create a free developer account - with no cloud VM charges - on the HANA Cloud Platform, do not follow this tutorial. Click here to sign up for the account, and then proceed to the next tutorial.
 
@@ -31,9 +31,8 @@ This section takes about **10 minutes** to complete, and about **10 to 25 minute
 ### ![](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_02.svg) Configure your HANA instance
 Go to the [Cloud Appliance Library](https://cal.sap.com/) page, and click the ```login``` link in the upper right hand corner.
 
->### Note
+> ### Note
 >If you don't have an account on the sap.com website, you need to create one to access the Cloud Appliance Library.
-
 >Click [here](http://go.sap.com/index.html) to go to the [sap.com website](http://go.sap.com/index.html), then click *login* in the upper right corner to create an account.
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/setup-hana-for-cloud/1.png)
@@ -68,9 +67,8 @@ When you are ready to continue, click ```Next```.
 
 Enter a password for your system.
 
->### Note
+> ### Note
 >The password rules can be confusing.  Choose a password between 8-9 characters, with at least one uppercase letter, one lowercase letter, and one number.
-
 >If your password does not follow the rules, a warning will appear on the screen.
 
 Click ```next``` to continue.
