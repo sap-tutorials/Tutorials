@@ -24,7 +24,7 @@ Follow our other tutorials on the HANA Cloud Platform website
 >The full application build in this tutorial can be found [in this Github repository](https://github.com/SAP/cloud-hana-helloworld/).
 
 ### Time to Complete
-Beginners might take **10-15 min** to execute this tutorial.
+Beginners might take **10-15 minutes** to execute this tutorial.
 
 
 ### ![](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_01.svg) Open the Web-based Development Workbench
