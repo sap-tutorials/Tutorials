@@ -133,4 +133,3 @@ You will be setting a few configurations, then filling out a few forms in this s
 
 ## Next Steps
 [Deploy an app to SAP HANA Cloud Platform](TODO)
- 
