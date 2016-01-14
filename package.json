@@ -1,0 +1,28 @@
+{
+  "name": "tutorials",
+  "version": "1.0.0",
+  "description": "Tutorials for catalog on sap.com http://go.sap.com/developer/tutorials.html",
+  "main": "README.MD",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SAPDocuments/Tutorials.git"
+  },
+  "keywords": [
+    "sap",
+    "tutorials",
+    "github"
+  ],
+  "author": "SAP",
+  "license": "https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt",
+  "bugs": {
+    "url": "https://github.com/SAPDocuments/Tutorials/issues"
+  },
+  "homepage": "https://github.com/SAPDocuments/Tutorials#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-mdspell": "^0.4.0"
+  }
+}

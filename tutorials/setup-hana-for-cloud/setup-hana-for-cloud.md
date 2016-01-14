@@ -49,7 +49,7 @@ First, enter a name for your instance (and you can add an optional description).
 
 Next, choose the account to use. The account will be charged for the cloud time you use.  
 
-Next, choose the region you wish to create your system. (A region defines the datacenter where the instance will run, we suggest choosing an inexpensive region or, if your internet speeds are slow,  one close to you.)  
+Next, choose the region you wish to create your system. (A region defines the data-center where the instance will run, we suggest choosing an inexpensive region or, if your internet speeds are slow,  one close to you.)  
 
 The network and subnet sections can use the default settings.  
 
@@ -68,7 +68,7 @@ When you are ready to continue, click ```Next```.
 Enter a password for your system.
 
 > ### Note
->The password rules can be confusing.  Choose a password between 8-9 characters, with at least one uppercase letter, one lowercase letter, and one number.
+>The password rules can be confusing.  Choose a password between 8-9 characters, with at least one upper-case letter, one lower-case letter, and one number.
 >If your password does not follow the rules, a warning will appear on the screen.
 
 Click ```next``` to continue.
@@ -113,13 +113,13 @@ Connecting to the underlying Linux OS in the cloud instances is different for ea
 To connect to Amazon AWS, you **must** use the key-pair that was provided by Amazon when the instance was created.
 
 **Connecting to AWS from Windows**
-1. Using the key-pair file (*.pem) downloaded from Amazon, create a private key file for putty using puttygen.exe.  
+1. Using the key-pair file (`*.pem`) downloaded from Amazon, create a private key file for putty using ```puttygen.exe```.  
 2. Open PuTTY on your computer, and enter the IP Address for your instance in the Host Name (or IP address) field. Click the ```Open``` button.
-3. When the connection is opened, enter ```root``` as the user. You can now change the default password for the hdbadm OS user with the command ```passwd hdbadm```. Your new password must be entered twice, and it will be checked to ensure it is sufficiently secure. Once you have entered an appropriate password twice, then you are finished!
+3. When the connection is opened, enter ```root``` as the user. You can now change the default password for the ```hdbadm``` OS user with the command ```passwd hdbadm```. Your new password must be entered twice, and it will be checked to ensure it is sufficiently secure. Once you have entered an appropriate password twice, then you are finished!
 For more detailed instructions, check out the [Amazon AWS guide to Connect Your Amazon EC2 Instance](http://docs.aws.amazon.com/gettingstarted/latest/computebasics-linux/getting-started-deploy-app-connect.html).
 
 **Connecting to AWS from Mac or Unix**
-From Linux or Mac OS-X, in terminal window, run this command: ```ssh -i [hanakey].pem [IP Address] -l root``` (Replace [hanakey].pem with the name of your key-pair file, and [IP Address] with the IP address of your instance.)
+From Linux or Mac OS-X, in terminal window, run this command: ```ssh -i [hanakey].pem [IP Address] -l root``` (Replace `[hanakey].pem` with the name of your key-pair file, and [IP Address] with the IP address of your instance.)
 
 For more detailed instructions, check out the [Amazon AWS guide to Connect Your Amazon EC2 Instance](http://docs.aws.amazon.com/gettingstarted/latest/computebasics-linux/getting-started-deploy-app-connect.html).
 

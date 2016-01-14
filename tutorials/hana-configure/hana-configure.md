@@ -42,7 +42,7 @@ In the upper right corner of your SAP HANA Studio, there is an add Perspectives 
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/5.png)
 
-Add the SAP HANA Development perspective. This is the perspective you should be using for almost this entire walkthrough:
+Add the SAP HANA Development perspective. This is the perspective you should be using for almost this entire tutorial:
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/6.png)
 
@@ -71,7 +71,7 @@ Enter a meaningful description of your choice. Press the ```Next``` button:
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/11.png)
 
-Enter the user id and password. The user id should be WORKSHOP_<Group Number>. Your group number is ```01```. For this tutorial, your user id is ```WORKSHOP_01```.
+Enter the user id and password. The user id should be ```WORKSHOP_<Group Number>```. Your group number is ```01```. For this tutorial, your user id is ```WORKSHOP_01```.
 
 Enter the password: ```HANARocks2015```
 
@@ -106,7 +106,7 @@ You should now see the local workspace mapped to the remote workspace in the SAP
 
 ### ![](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_03.svg) Launching the SAP HANA Web-based Development Workbench and creating initial development artifacts
 
-We will primarily work in the Browser Based IDE – the SAP HANA Web-based Development Workbench. Thereofre, launch Google Chrome.
+We will primarily work in the Browser Based IDE – the SAP HANA Web-based Development Workbench. Therefore, launch Google Chrome.
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/18.png)
 
@@ -116,7 +116,7 @@ Then the path to the HANA Web Workbench (```/sap/hana/ide/editor/```).
 
 Complete URL would be: ```http://hanapm:8000/sap/hana/ide/editor/```
 
-If prompted for user name and password, enter the user id and password which the instructor has provided to you. The user id should be WORKSHOP_. Your group number will be given to you by the session instructor. For example if the group number is “01”, then your user id would be ```WORKSHOP_01```.
+If prompted for user name and password, enter the user id and password which the instructor has provided to you. The user id should be ```WORKSHOP_```. Your group number will be given to you by the session instructor. For example if the group number is “01”, then your user id would be ```WORKSHOP_01```.
 
 Enter the password: ```HANARocks2015```:
 
@@ -132,7 +132,7 @@ The Web Workbench also has some project wizards.  Right mouse click on the exerc
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/21.png)
 
-In the Create Application from Template dialog, first choose the Empty application (with XSAccess and XSApp) option as the Template type:
+In the Create Application from Template dialog, first choose the Empty application (with ```XSAccess``` and ```XSApp```) option as the Template type:
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/22.png)
 
@@ -150,7 +150,7 @@ We will also need a schema to house database catalog objects. Right mouse on you
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/25.png)
 
-Create a file named HANA_WORKSHOP_<Group Number>.hdbschema.
+Create a file named ```HANA_WORKSHOP_<Group Number>.hdbschema```.
 
 For this example this would be ```HANA_WORKSHOP_01.hdbschema```.
 
@@ -162,7 +162,7 @@ A code template can be inserted into the new development object by choosing the 
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/27.png)
 
-Replace the default value of MY_SCHEMA_NAME without your actual schema name of  HANA_WORKSHOP_<Group Number> (```HANA_WORKSHOP_01```):
+Replace the default value of ```MY_SCHEMA_NAME``` without your actual schema name of  ```HANA_WORKSHOP_<Group Number>``` (```HANA_WORKSHOP_01```):
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/28.png)
 
@@ -170,7 +170,7 @@ Save the Schema:
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/29.png)
 
-When you first create a development object, like a schema, you don’t have access to it. This is because it is created and owned by the system user _SYS_REPO.  In order to grant your development user access to this object, we will need to open the security tool. The security tool will then open in a new browser tab:
+When you first create a development object, like a schema, you don’t have access to it. This is because it is created and owned by the system user ```_SYS_REPO```. In order to grant your development user access to this object, we will need to open the security tool. The security tool will then open in a new browser tab:
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/30.png)
 
@@ -198,7 +198,7 @@ You can now close the Security tab in the browser and return to the Editor tab:
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/36.png)
 
-Your group folder now also contains an index.html file. This is a nice way to test to make sure that HTTP access is setup and working for your group folder:
+Your group folder now also contains an ```index.html``` file. This is a nice way to test to make sure that HTTP access is setup and working for your group folder:
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/37.png)
 
@@ -206,7 +206,7 @@ Select the ```index.html``` file and then press the ```Run``` button in order to
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/38.png)
 
-The index.html file should open in a new browser window. This simple test tells us that your project, role and access control files are all setup properly:
+The ```index.html``` file should open in a new browser window. This simple test tells us that your project, role and access control files are all setup properly:
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/39.png)
 
@@ -216,11 +216,11 @@ You have completed the exercise! You are now able to:
 - Create a schema
 - Create access control files
 - Grant access to the schema
-- Create an index.html file to test your setup
+- Create an ```index.html``` file to test your setup
 
 ### Optional - Getting Help
 If you need addition help resources beyond this document, we would suggest the following content:
 
-* The Online Help at [http://help.sap.com/hana/SAP_HANA_Developer_Guide_en.pdf](http://help.sap.com/hana/SAP_HANA_Developer_Guide_en.pdf)
-* The integrated help within SAP HANA Studio (content  identical to the above mentioned online help)
+* The [Online Help](http://help.sap.com/hana/SAP_HANA_Developer_Guide_en.pdf)
+* The integrated help within SAP HANA Studio (content identical to the above mentioned online help)
 * SAPUI5 SDK (installed on your HANA Server) ```/sap/ui5/1/sdk/index.html#content/Overview.html```

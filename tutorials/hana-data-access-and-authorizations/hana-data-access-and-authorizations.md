@@ -21,7 +21,7 @@ Follow our other tutorials on the HANA Cloud Platform website
 3. Preparing and executing a very simple SQL query on the system table ```DUMMY```.
 
 > ### Information
->The full application build in this tutorial can be found [in this Github repository](https://github.com/SAP/cloud-hana-helloworld/).
+>The full application build in this tutorial can be found [in this GitHub repository](https://github.com/SAP/cloud-hana-helloworld/).
 
 ### Time to Complete
 Beginners might take **10-15 minutes** to execute this tutorial.
@@ -42,9 +42,9 @@ You are now in the Editor and can immediately start developing in HANA.
 
 #### Using HANA on Amazon AWS or Microsoft Azure
 
-Access the web page of your HANA server using the IP address of your server.  Enter the address ```http://XXX.XXX.XXX.XXX``` to the address bar of your browser. (Replace XXX.XXX.XXX.XXX with the IP address of your server.)
+Access the web page of your HANA server using the IP address of your server.  Enter the address ```http://XXX.XXX.XXX.XXX``` to the address bar of your browser. (Replace ```XXX.XXX.XXX.XXX``` with the IP address of your server.)
 
-On the web page, there is a link in the center column for **Web-Based Development Workbench**.  Click this link to start the workbench.
+On the web page, there is a link in the middle column for **Web-Based Development Workbench**.  Click this link to start the workbench.
 
 
 ### ![](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_02.svg) Browse Data with the Catalog
@@ -136,7 +136,7 @@ Now you are ready to run the application.
 
 Now the application is ready to be tested. As you are developing with the Web-based Development Workbench the application is already deployed and activated to your HANA Trial Instance. So you can immediately continue to test it.
 
-Select the helloworld.xsjs file to enable the Run on Server in the toolbar. Then click the ```Run on Server``` button:
+Select the ```helloworld.xsjs``` file to enable the Run on Server in the toolbar. Then click the ```Run on Server``` button:
 
 ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-and-authorizations/11.png)
 

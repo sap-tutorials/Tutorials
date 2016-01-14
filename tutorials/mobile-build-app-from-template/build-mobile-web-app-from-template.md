@@ -18,13 +18,13 @@ The SAP Web IDE (Integrated Development Environment) has a project template wiza
 You will be setting a few configurations, then filling out a few forms in this step, but the end result is an application which can be run on a mobile device.  Ready?  Let's get started...
 
 ### Time to Complete
-**10 min** 
+**10 min**
 
 
 1. Go to <https://account.hanatrial.ondemand.com> and log in to your HCP cockpit.
 
  ![mob1-2_1.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mobile-build-app-from-template/mob1-2_1.png)
-2. To open SAP Web IDE, click on the **Subscriptions** tab in the nav bar, then click the **webide** link in the **Application** column to open the Web IDE status page.
+2. To open SAP Web IDE, click on the **Subscriptions** tab in the navigation bar, then click the ```webide``` link in the **Application** column to open the Web IDE status page.
 
  ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mobile-build-app-from-template/mob1-2_1.png)
 
@@ -58,15 +58,15 @@ You will be setting a few configurations, then filling out a few forms in this s
 
  ![mob1-2_10.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mobile-build-app-from-template/mob1-2_10.png)
 
-11. From the dropdown listbox select the **Northwind OData Service** entry (which is the name of the destination you created).
+11. From the drop-down list-box select the **Northwind OData Service** entry (which is the name of the destination you created).
 
  ![mob1-2_11.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mobile-build-app-from-template/mob1-2_11.png)
 
-12. After selecting the Northwind OData Service entry, enter the relative path (see below) to the OData service you will use in the field under the dropdown listbox (where it says “Paste URL here”). Be sure not to include any trailing space characters. The relative path to enter is: `/V2/Northwind/Northwind.svc`
+12. After selecting the Northwind OData Service entry, enter the relative path (see below) to the OData service you will use in the field under the drop-down list-box (where it says “Paste URL here”). Be sure not to include any trailing space characters. The relative path to enter is: `/V2/Northwind/Northwind.svc`
 
  ![mob1-2_12.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mobile-build-app-from-template/mob1-2_12.png)
 
-13. Click the **run** (right arrow) button to test the connection. If the connection is successful, the CollectionSets (Categories, CustomerDemographics, etc.) of the Northwind OData Service will be displayed on the right side. This demonstrates that your destination is working properly. Click **Next** to advance to the *Template Customization* page.
+13. Click the **run** (right arrow) button to test the connection. If the connection is successful, the `CollectionSets` (`Categories`, `CustomerDemographics`, etc.) of the Northwind OData Service will be displayed on the right side. This demonstrates that your destination is working properly. Click **Next** to advance to the *Template Customization* page.
 
  ![mob1-2_13.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mobile-build-app-from-template/mob1-2_13.png)
 
@@ -122,7 +122,7 @@ You will be setting a few configurations, then filling out a few forms in this s
 
  ![mob1-2_19.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mobile-build-app-from-template/mob1-2_19.png)
 
-20. To run your application, select the **index.html** file, and click the **Run** button. Your Northwind application will open in a Web IDE preview pane.
+20. To run your application, select the ```index.html``` file, and click the **Run** button. Your Northwind application will open in a Web IDE preview pane.
 
  ![mob1-2_20.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mobile-build-app-from-template/mob1-2_20.png)
 
