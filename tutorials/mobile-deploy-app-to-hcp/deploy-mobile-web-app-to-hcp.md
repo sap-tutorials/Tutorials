@@ -46,4 +46,4 @@ Since any project that is created initially in the SAP Web IDE contains a neo-ap
 ![mob1-3_8.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mobile-deploy-app-to-hcp/mob1-3_8.png)
 
 ## Next Step:
-[Add labels and additional data field to your app](TODO)
+[Add labels and additional data field to your app](TODO) 
