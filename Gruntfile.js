@@ -17,6 +17,6 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-mdspell');
 
-  grunt.registerTask('default', ['mdspell']);
+  grunt.registerTask('test', ['mdspell']);
 
 };
