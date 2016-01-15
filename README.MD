@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/SAPDocuments/Tutorials.svg?branch=master)](https://travis-ci.org/SAPDocuments/Tutorials)
+
 # Tutorials for sap.com
 Welcome to the Markdown tutorial catalog for tutorials you can find on sap.com. This project is still in an early stage, so stay tuned and start watching!
 
