@@ -26,7 +26,7 @@ You will be setting a few configurations, then filling out a few forms in this s
  ![mob1-2_1.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mobile-build-app-from-template/mob1-2_1.png)
 2. To open SAP Web IDE, click on the **Subscriptions** tab in the navigation bar, then click the ```webide``` link in the **Application** column to open the Web IDE status page.
 
- ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mobile-build-app-from-template/mob1-2_1.png)
+ ![mob1-2_1.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/mobile-build-app-from-template/mob1-2_1.png)
 
 3. On the status page, click on the **Application URL** to open Web IDE in a new browser tab.
 
