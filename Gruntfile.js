@@ -1,6 +1,12 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
+    copy: {
+      depchanges: {
+        src: 'dependency-mods/files_check.js',
+        dest: 'node_modules/grunt-files-check/tasks/files_check.js'
+      }
+    },
     files_check: {
       images: {
         options: {
@@ -59,7 +65,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mdspell');
   grunt.loadNpmTasks('grunt-deadlink');
   grunt.loadNpmTasks('grunt-files-check');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
-  grunt.registerTask('test', ['files_check', 'mdspell', 'deadlink']);
+  grunt.registerTask('test', ['copy', 'files_check', 'mdspell', 'deadlink']);
 
 };
