@@ -4,7 +4,11 @@ module.exports = function(grunt) {
     files_check: {
       images: {
         options: {
-          pattern: /\!\[\]\((.*?)\)/,
+          patterns: [
+            '\\!\\[\\]\\((.*?)\\)', // require alt tag for images
+            '\\>###', // avoid message box typo
+            '(.exe)(\\b)' // prohibit suspicious filetypes
+          ],
           verbose: true,
           maxFileNameWidth: 100
         },

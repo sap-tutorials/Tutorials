@@ -113,7 +113,7 @@ Connecting to the underlying Linux OS in the cloud instances is different for ea
 To connect to Amazon AWS, you **must** use the key-pair that was provided by Amazon when the instance was created.
 
 **Connecting to AWS from Windows**
-1. Using the key-pair file (`*.pem`) downloaded from Amazon, create a private key file for putty using ```puttygen.exe```.  
+1. Using the key-pair file (`*.pem`) downloaded from Amazon, create a private key file for putty using the PuTTY executable.  
 2. Open PuTTY on your computer, and enter the IP Address for your instance in the Host Name (or IP address) field. Click the ```Open``` button.
 3. When the connection is opened, enter ```root``` as the user. You can now change the default password for the ```hdbadm``` OS user with the command ```passwd hdbadm```. Your new password must be entered twice, and it will be checked to ensure it is sufficiently secure. Once you have entered an appropriate password twice, then you are finished!
 For more detailed instructions, check out the [Amazon AWS guide to Connect Your Amazon EC2 Instance](http://docs.aws.amazon.com/gettingstarted/latest/computebasics-linux/getting-started-deploy-app-connect.html).
