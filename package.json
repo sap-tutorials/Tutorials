@@ -4,7 +4,7 @@
   "description": "Tutorials for catalog on sap.com http://go.sap.com/developer/tutorials.html",
   "main": "README.MD",
   "scripts": {
-    "test": "grunt test -v"
+    "test": "bin/tests.sh"
   },
   "repository": {
     "type": "git",
