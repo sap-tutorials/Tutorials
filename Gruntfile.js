@@ -1,6 +1,19 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
+    files_check: {
+      images: {
+        options: {
+          pattern: /\!\[\]\((.*?)\)/,
+          verbose: true,
+          maxFileNameWidth: 100
+        },
+        src: [
+          '**/*.md',
+          '!node_modules/**/**'
+        ]
+      }
+    },
     mdspell: {
       options: {
         ignoreAcronyms: true,
@@ -41,7 +54,8 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-mdspell');
   grunt.loadNpmTasks('grunt-deadlink');
+  grunt.loadNpmTasks('grunt-files-check');
 
-  grunt.registerTask('test', ['mdspell', 'deadlink']);
+  grunt.registerTask('test', ['files_check', 'mdspell', 'deadlink']);
 
 };
