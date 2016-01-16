@@ -4,3 +4,4 @@ node_js:
   - "4"
 before_script:
   - npm install -g grunt-cli
+script: . tests.sh
