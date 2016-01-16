@@ -4,7 +4,7 @@
   "description": "Tutorials for catalog on sap.com http://go.sap.com/developer/tutorials.html",
   "main": "README.MD",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test -v"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,6 @@
     "github"
   ],
   "author": "SAP",
-  "license": "https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt",
   "bugs": {
     "url": "https://github.com/SAPDocuments/Tutorials/issues"
   },

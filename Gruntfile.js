@@ -1,7 +1,6 @@
 module.exports = function(grunt) {
 
   grunt.initConfig({
-    clean: ["broken-links.log"],
     mdspell: {
       options: {
         ignoreAcronyms: true,
@@ -16,10 +15,8 @@ module.exports = function(grunt) {
     },
     deadlink: {
       options: {
-        logToFile: true,
-        logFilename: 'broken-links.log',
-        retryDelay: 5000, // retry after 5secs
-        maxAttempts: 3, // try max 3 times
+        retryDelay: 100000,
+        maxAttempts: 5,
         filter: function(content) { // `function` or `regular expressions` to take a link. default is markdown.
           var expressions = [
             /\[[^\]]*\]\((http[s]?:\/\/[^\) ]+)/g, //[...](<url>)
@@ -44,8 +41,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-mdspell');
   grunt.loadNpmTasks('grunt-deadlink');
-  grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('test', ['clean', 'mdspell', 'deadlink']);
+  grunt.registerTask('test', ['mdspell', 'deadlink']);
 
 };

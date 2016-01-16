@@ -128,7 +128,7 @@ To connect from Windows, open puTTY, and enter the IP address.  The user name is
 
 To connect from Mac or Unix, use this command: ```ssh azureuser@<ip address>``` (Replace with the IP address of your Azure instance.)
 
-For more detailed instructions, check out [Connecting to Microsoft Azure with SSH](http://azure.microsoft.com/en-us/documentation/articles/linux-use-ssh-key/).
+For more detailed instructions, check out [Connecting to Microsoft Azure with SSH](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-use-ssh-key/).
 
 ### A few notes
 - Some corporate firewalls may not allow SSH to Amazon cloud.  You may have to work with your IT organization to resolve this.
