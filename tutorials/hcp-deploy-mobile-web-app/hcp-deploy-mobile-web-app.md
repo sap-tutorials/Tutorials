@@ -5,7 +5,7 @@ tags: [tutorial:product/hcp, tutorial:product/mobile, tutorial:interest/gettings
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/build-mobile-web-app-from-template.html)
+ - **Tutorials:** [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
 
 ## Next Steps
 You can add labels and additional data field to your app.

@@ -7,10 +7,10 @@ tags: [tutorial:technology/amazon_aws, tutorial:product/sapHana, tutorial:produc
 ## Prerequisites  
 You need a HANA account. Pick one of the following:
 - [Get a free account in HANA Cloud Platform](https://account.hanatrial.ondemand.com/register)
-- [Set up an account on Amazon AWS or Microsoft Azure](http://go.sap.com/developer/tutorials/setup-hana-for-cloud.html)
+- [Set up an account on Amazon AWS or Microsoft Azure](http://go.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 ## Next Steps
-[Hello Data! Access your first Data from a native SAP HANA Application using the SAP HANA Web-based Development Workbench](http://go.sap.com/developer/tutorials/hana-data-access-and-authorizations.html)
+[Hello Data! Access your first Data from a native SAP HANA Application using the SAP HANA Web-based Development Workbench](http://go.sap.com/developer/tutorials/hana-data-access-authorizations.html)
 
 ## Details
 ### You will learn  
@@ -135,4 +135,4 @@ Congratulations: You just have your first own native SAP HANA application runnin
 ## Next Steps
 Make your very first steps to access data on HANA. This tutorial will write a native HANA application, using the Web-based Development Workbench.
 
-[Hello Data! Access your first Data from a native SAP HANA Application using the SAP HANA Web-based Development Workbench](http://go.sap.com/developer/tutorials/hana-data-access-and-authorizations.html)
+[Hello Data! Access your first Data from a native SAP HANA Application using the SAP HANA Web-based Development Workbench](http://go.sap.com/developer/tutorials/hana-data-access-authorizations.html)

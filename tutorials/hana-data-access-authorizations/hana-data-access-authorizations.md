@@ -5,7 +5,7 @@ tags: [tutorial:technology/amazon_aws, tutorial:technology/sql, tutorial:product
 ---
 
 ## Prerequisites  
-- [Set up a HANA instance on a cloud provider](http://go.sap.com/developer/tutorials/setup-hana-for-cloud.html)
+- [Set up a HANA instance on a cloud provider](http://go.sap.com/developer/tutorials/hana-setup-cloud.html)
 - [Hello World!  Develop your first HANA application](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
 
 ## Next Steps
