@@ -118,6 +118,9 @@ module.exports = function(grunt) {
         }
 
         grunt.fail.warn(message);
+
+        // fail the Build
+        return false;
       }
       else {
         grunt.log.ok(files.length + ' file' + (files.length > 1 ? 's' : '') + ' checked.');
