@@ -1,7 +1,7 @@
 ---
 title: Hello Data! Access your first data in a native HANA Application
 description: In this tutorial you will make your very first steps to access data on HANA. This tutorial will write a native HANA application, using the Web-based Development Workbench.
-tags: [tutorial:technology/amazon_aws, tutorial:technology/SQL, tutorial:product/hcp_cloud_connector, tutorial:product/hcp, tutorial:interest/gettingstarted, tutorial:product/hcp_web_workbench]
+tags: [tutorial:technology/amazon_aws, tutorial:technology/sql, tutorial:product/hcp_cloud_connector, tutorial:product/hcp, tutorial:interest/gettingstarted, tutorial:product/hcp_web_workbench]
 ---
 
 ## Prerequisites  
