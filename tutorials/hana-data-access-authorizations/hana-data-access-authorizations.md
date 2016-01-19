@@ -36,7 +36,7 @@ Login to the [HANA Cloud Cockpit](https://account.hanatrial.ondemand.com/cockpit
 
 Choose HANA Instances and choose then SAP HANA Web-based Development Workbench link.
 
-![1.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-and-authorizations/1.png)
+![1.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/1.png)
 
 You are now in the Editor and can immediately start developing in HANA.
 
@@ -53,29 +53,29 @@ Before accessing the data from a HANA application we will first have a look at t
 
 Open the Catalog of the Web-based Development Workbench by expanding the + button,  and then choosing Catalog:
 
-![2.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-and-authorizations/2.png)
+![2.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/2.png)
 
 The Catalog will open in a new browser window:
 
-![3.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-and-authorizations/3.png)
+![3.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/3.png)
 
 This tutorial will access data from the system table ```DUMMY```.
 
 Open this table by choosing ```SYS > Tables > DUMMY``` in the catalog:
 
-![4.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-and-authorizations/4.png)
+![4.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/4.png)
 
 The resulting view gives you more information about the DUMMY table: You can see that it consists of only one column:
 
-![5.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-and-authorizations/5.png)
+![5.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/5.png)
 
 To see what is the content of the table right-click on the DUMMY table and choose ```Open Content```:
 
-![6.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-and-authorizations/6.png)
+![6.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/6.png)
 
 The resulting view shows the SQL query executed to fetch the content and the result of this query: You can see that DUMMY contains exactly one entry X:
 
-![7.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-and-authorizations/7.png)
+![7.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/7.png)
 
 Now let's access this data from a SAP HANA application.
 
@@ -86,11 +86,11 @@ You must have finished the previous tutorial ["Hello World! Develop your first H
 
 Go back to the Editor by expanding the + button and choosing Editor:
 
-![8.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-and-authorizations/8.png)
+![8.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/8.png)
 
 Open the already existing ```helloworld.xsjs```.
 
-![9.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-and-authorizations/9.png)
+![9.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/9.png)
 
 Replace the current code in the ```helloworld.xsjs``` file with the following code that opens a database connection, prepares a simple SQL statement, executes it and returns the result of the query:
 
@@ -127,7 +127,7 @@ $.response.setBody(output);
 ```
 Save the file using the Save button or by pressing ```ctrl+s```. Again, the successful save is confirmed in the console.
 
-![10.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-and-authorizations/10.png)
+![10.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/10.png)
 
 Now you are ready to run the application.
 
@@ -138,11 +138,11 @@ Now the application is ready to be tested. As you are developing with the Web-ba
 
 Select the ```helloworld.xsjs``` file to enable the Run on Server in the toolbar. Then click the ```Run on Server``` button:
 
-![11.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-and-authorizations/11.png)
+![11.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/11.png)
 
 The application will open in your browser and greet you with **Hello World** and the just accessed data from system table ```DUMMY```:
 
-![12.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-and-authorizations/12.png)
+![12.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/12.png)
 
 Congratulations: You have just accessed your first data on SAP HANA!
 
