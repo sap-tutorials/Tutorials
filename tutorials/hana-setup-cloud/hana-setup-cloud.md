@@ -35,7 +35,7 @@ Go to the [Cloud Appliance Library](https://cal.sap.com/) page, and click the ``
 >If you don't have an account on the sap.com website, you need to create one to access the Cloud Appliance Library.
 >Click [here](http://go.sap.com/index.html) to go to the [sap.com website](http://go.sap.com/index.html), then click *login* in the upper right corner to create an account.
 
-![1.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/1.png)
+    ![1.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/1.png)
 
 At the top of the screen, click on ***SOLUTIONS*** to see the systems available for use. Search for our "*SAP HANA developer edition*" in the search box to find the HANA developer edition.
 
@@ -43,7 +43,7 @@ Once you've found the instance through the search, you need to "activate" it. Ac
 
 Finally, click the "Create Instance" link on this solution to start the setup wizard. The wizard  will take you through a few simple steps and then you will have your instance up and running. These steps are outlined below.
 
-![2.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/2.png)
+    ![2.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/2.png)
 
 First, enter a name for your instance (and you can add an optional description).  
 
@@ -55,7 +55,7 @@ The network and subnet sections can use the default settings.
 
 When you are ready, click ```Next``` to continue.
 
-![3.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/3.png)
+    ![3.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/3.png)
 
 Choose the virtual machine size you want to use. Larger virtual machines can handle more data, and process faster, but cost more money. (The cost per hour on the screen is updated based on your selection.)
 
@@ -63,7 +63,7 @@ Volume Type and Access Points can be left as defaults.
 
 When you are ready to continue, click ```Next```.
 
-![4.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/4.png)
+    ![4.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/4.png)
 
 Enter a password for your system.
 
@@ -73,7 +73,7 @@ Enter a password for your system.
 
 Click ```next``` to continue.
 
-![5.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/5.png)
+    ![5.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/5.png)
 
 Configure the schedule for the virtual machine.  
 
@@ -83,13 +83,13 @@ This option allows you to define a specific date when the machine will shut down
 
 Click Next when you have set a run schedule, or a suspend date.
 
-![6.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/6.png)
+    ![6.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/6.png)
 
 Summary. This screen shows all of your choices for review. To fix any problems, just click ```Previous```.
 
 When you are done, click ```Finish```. The VM creation process will start.
 
-![7.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/7.png)
+    ![7.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/7.png)
 
 After the process of creating the VM starts, you will be prompted to download your "Key Pair".  This file will allow you to access your system using [SSH](http://en.wikipedia.org/wiki/Secure_Shell).
 
@@ -99,7 +99,7 @@ It will take about 10-25 minutes for your VM to start.  You can see your instanc
 
 ### ![icon_gold_circle_03.svg](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_03.svg) Connect to your new HANA instance
 
-![8.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/8.png)
+    ![8.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/8.png)
 
 There are two ways to connect:
 
