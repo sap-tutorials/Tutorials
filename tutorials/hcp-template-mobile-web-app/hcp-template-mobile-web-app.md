@@ -79,7 +79,7 @@ You will be setting a few configurations, then filling out a few forms in this s
 
     **Project Namespace:** `com.test.northwind`
     **Title:** `Products`
-    **OData Collection*:**  `Products`
+    **OData Collection:**  `Products`
     **Search Placeholder:** `Search `
     **Search Tooltip:** `Search for product name`
     **Search Field:** `ProductName`
