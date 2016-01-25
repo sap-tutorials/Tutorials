@@ -78,12 +78,12 @@ You will be setting a few configurations, then filling out a few forms in this s
 
  **Field Name: Value**
 
- - **Project Namespace:** `com.test.northwind`
- - **Title:** `Products`
- - **OData Collection*:**  `Products`
- - **Search Placeholder:** `Search `
- - **Search Tooltip:** `Search for product name`
- - **Search Field:** `ProductName`
+**Project Namespace:** `com.test.northwind`
+**Title:** `Products`
+**OData Collection*:**  `Products`
+**Search Placeholder:** `Search `
+**Search Tooltip:** `Search for product name`
+**Search Field:** `ProductName`
 
     ![mob1-2_15.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_15.png)
 
@@ -91,9 +91,9 @@ You will be setting a few configurations, then filling out a few forms in this s
 
  **Field Name: Value**
 
- - Item title: `ProductName`
- - Numeric Attribute: `UnitPrice`
- - Units Attribute: `QuantityPerUnit`
+**Item title:** `ProductName`
+**Numeric Attribute:** `UnitPrice`
+**Units Attribute:** `QuantityPerUnit`
 
     ![mob1-2_16.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_16.png)
 
@@ -101,18 +101,18 @@ You will be setting a few configurations, then filling out a few forms in this s
 
  Field Name              |  Value
 
- - **Title:** `Product Inventory Details`
- - **Additional Attribute 1:** `UnitsInStock`
- - **Additional Attribute 2:** `UnitsOnOrder`
+**Title:** `Product Inventory Details`
+**Additional Attribute 1:** `UnitsInStock`
+**Additional Attribute 2:** `UnitsOnOrder`
 
     ![mob1-2_17.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_17.png)
 
 18. Scroll down to the *Information Section*. Fill out the Information Section as displayed in the screenshot.
 
- - **OData Navigations:** `Supplier`
- - **Navigation Attribute 1:** `CompanyName`
- - **Navigation Attribute 2:** `Phone`
- - **Navigation Attribute 3:** `Address`
+**OData Navigations:** `Supplier`
+**Navigation Attribute 1:** `CompanyName`
+**Navigation Attribute 2:** `Phone`
+**Navigation Attribute 3:** `Address`
 
     ![mob1-2_18.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_18.png)
 
