@@ -1,0 +1,151 @@
+<h2 id="prerequisites">Prerequisites</h2>
+<p>You will need to have an account on either Microsoft Azure or Amazon AWS</p>
+
+<h2 id="next-steps">Next Steps</h2>
+<p><a href="http://go.sap.com/developer/tutorials/hana-web-development-workbench.html">Hello World!  HANA and the Web Development Workbench</a></p>
+
+<h2 id="details">Details</h2>
+
+<h3 id="you-will-learn">You will learn</h3>
+<p>How to create a HANA instance in your cloud provider, using the Cloud Appliance Library (CAL) system.
+This tutorial provides step by step instructions to walk you through the CAL setup process.</p>
+
+<h3 id="time-to-compete">Time to Compete</h3>
+<p>This section takes about <strong>10 minutes</strong> to complete, and about <strong>10 to 25 minutes</strong> after completion to get the Virtual Machine started.</p>
+
+<blockquote>
+  <h3 id="warning">Warning</h3>
+  <p>Both the Amazon AWS and Microsoft Azure accounts will charge you for time on those cloud systems.
+If you want to create a free developer account - with no cloud VM charges - on the HANA Cloud Platform, do not follow this tutorial. Click here to sign up for the account, and then proceed to the next tutorial.</p>
+</blockquote>
+
+<h3 id="icongoldcircle01svghttpgosapcomdamapplicationsharediconsicongoldcircle01svg-create-a-cloud-account"><img src="http://go.sap.com/dam/application/shared/icons/icon_gold_circle_01.svg" alt="icon_gold_circle_01.svg" /> Create a cloud account</h3>
+<p><strong>Amazon AWS</strong>:  To create an account, click <a href="http://aws.amazon.com/account/">here</a>.</p>
+
+<p><strong>Microsoft Azure</strong>:  To create an account, sign up for a free one month trial <a href="http://azure.microsoft.com/en-us/pricing/free-trial/">here</a>.</p>
+
+<h3 id="icongoldcircle02svghttpgosapcomdamapplicationsharediconsicongoldcircle02svg-configure-your-hana-instance"><img src="http://go.sap.com/dam/application/shared/icons/icon_gold_circle_02.svg" alt="icon_gold_circle_02.svg" /> Configure your HANA instance</h3>
+<p>Go to the <a href="https://cal.sap.com/">Cloud Appliance Library</a> page, and click the <code>login</code> link in the upper right hand corner.</p>
+
+<blockquote>
+  <h3 id="note">Note</h3>
+  <p>If you don’t have an account on the sap.com website, you need to create one to access the Cloud Appliance Library.
+Click <a href="http://go.sap.com/index.html">here</a> to go to the <a href="http://go.sap.com/index.html">sap.com website</a>, then click <em>login</em> in the upper right corner to create an account.</p>
+</blockquote>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/1.png" alt="1.png" /></p>
+
+<p>At the top of the screen, click on <strong><em>SOLUTIONS</em></strong> to see the systems available for use. Search for our “<em>SAP HANA developer edition</em>” in the search box to find the HANA developer edition.</p>
+
+<p>Once you’ve found the instance through the search, you need to “activate” it. Activating an instance connects it to your account on Microsoft Azure or Amazon AWS. After the solution is activated, the link next to it should change to “Create Instance”.</p>
+
+<p>Finally, click the “Create Instance” link on this solution to start the setup wizard. The wizard  will take you through a few simple steps and then you will have your instance up and running. These steps are outlined below.</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/2.png" alt="2.png" /></p>
+
+<p>First, enter a name for your instance (and you can add an optional description).</p>
+
+<p>Next, choose the account to use. The account will be charged for the cloud time you use.</p>
+
+<p>Next, choose the region you wish to create your system. (A region defines the data-center where the instance will run, we suggest choosing an inexpensive region or, if your internet speeds are slow,  one close to you.)</p>
+
+<p>The network and subnet sections can use the default settings.</p>
+
+<p>When you are ready, click <code>Next</code> to continue.</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/3.png" alt="3.png" /></p>
+
+<p>Choose the virtual machine size you want to use. Larger virtual machines can handle more data, and process faster, but cost more money. (The cost per hour on the screen is updated based on your selection.)</p>
+
+<p>Volume Type and Access Points can be left as defaults.</p>
+
+<p>When you are ready to continue, click <code>Next</code>.</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/4.png" alt="4.png" /></p>
+
+<p>Enter a password for your system.</p>
+
+<blockquote>
+  <h3 id="note-1">Note</h3>
+  <p>The password rules can be confusing.  Choose a password between 8-9 characters, with at least one upper-case letter, one lower-case letter, and one number.
+If your password does not follow the rules, a warning will appear on the screen.</p>
+</blockquote>
+
+<p>Click <code>next</code> to continue.</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/5.png" alt="5.png" /></p>
+
+<p>Configure the schedule for the virtual machine.</p>
+
+<p>This option allows you to define a specific date when the machine will shut down, or a schedule when it should be running.  The virtual machine will suspend on the date you set.</p>
+
+<p><strong>Why do we require this?</strong>  To prevent a virtual machine from running indefinitely. As you, the user, are paying for this VM by the hour, if it is left to run indefinitely you could have a huge bill at the end of the month.</p>
+
+<p>Click Next when you have set a run schedule, or a suspend date.</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/6.png" alt="6.png" /></p>
+
+<p>Summary. This screen shows all of your choices for review. To fix any problems, just click <code>Previous</code>.</p>
+
+<p>When you are done, click <code>Finish</code>. The VM creation process will start.</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/7.png" alt="7.png" /></p>
+
+<p>After the process of creating the VM starts, you will be prompted to download your “Key Pair”.  This file will allow you to access your system using <a href="http://en.wikipedia.org/wiki/Secure_Shell">SSH</a>.</p>
+
+<p><em>(This feature is only for Amazon AWS.  Shell access is not yet available for Microsoft Azure.)</em></p>
+
+<p>It will take about 10-25 minutes for your VM to start.  You can see your instance status by clicking on the <strong>INSTANCE</strong> tab of the Cloud Appliance Library main screen.</p>
+
+<h3 id="icongoldcircle03svghttpgosapcomdamapplicationsharediconsicongoldcircle03svg-connect-to-your-new-hana-instance"><img src="http://go.sap.com/dam/application/shared/icons/icon_gold_circle_03.svg" alt="icon_gold_circle_03.svg" /> Connect to your new HANA instance</h3>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/8.png" alt="8.png" /></p>
+
+<p>There are two ways to connect:</p>
+
+<ol>
+  <li><strong>Using a browser</strong>.  Open your browser, and add the IP address of your instance to address bar.  Use the format:  <code>http://XXX.XXX.XXX.XXX</code>.  The web server on the HANA instance has a getting started page with information, links to tools, and content.</li>
+  <li><strong>Using the HANA Studio</strong>.  Install the <a href="https://tools.hana.ondemand.com/#hanatools">HANA Studio</a> (which required Eclipse) on your local system.  Then, you can log in to HANA using the IP address, the username <code>SYSTEM</code>, and the password you specified in the setup process.</li>
+</ol>
+
+<h3 id="optional---use-ssh-to-log-in-to-the-linux-os">Optional - Use SSH to log in to the Linux OS</h3>
+<p>Connecting to the underlying Linux OS in the cloud instances is different for each provider.  Follow the instructions for the cloud provider you have chosen to host HANA.</p>
+
+<h4 id="amazon-aws">Amazon AWS</h4>
+<p>To connect to Amazon AWS, you <strong>must</strong> use the key-pair that was provided by Amazon when the instance was created.</p>
+
+<p><strong>Connecting to AWS from Windows</strong>
+1. Using the key-pair file (<code>*.pem</code>) downloaded from Amazon, create a private key file for putty using the PuTTY executable.<br />
+2. Open PuTTY on your computer, and enter the IP Address for your instance in the Host Name (or IP address) field. Click the <code>Open</code> button.
+3. When the connection is opened, enter <code>root</code> as the user. You can now change the default password for the <code>hdbadm</code> OS user with the command <code>passwd hdbadm</code>. Your new password must be entered twice, and it will be checked to ensure it is sufficiently secure. Once you have entered an appropriate password twice, then you are finished!
+For more detailed instructions, check out the <a href="http://docs.aws.amazon.com/gettingstarted/latest/computebasics-linux/getting-started-deploy-app-connect.html">Amazon AWS guide to Connect Your Amazon EC2 Instance</a>.</p>
+
+<p><strong>Connecting to AWS from Mac or Unix</strong>
+From Linux or Mac OS-X, in terminal window, run this command: <code>ssh -i [hanakey].pem [IP Address] -l root</code> (Replace <code>[hanakey].pem</code> with the name of your key-pair file, and [IP Address] with the IP address of your instance.)</p>
+
+<p>For more detailed instructions, check out the <a href="http://docs.aws.amazon.com/gettingstarted/latest/computebasics-linux/getting-started-deploy-app-connect.html">Amazon AWS guide to Connect Your Amazon EC2 Instance</a>.</p>
+
+<h4 id="microsoft-azure">Microsoft Azure</h4>
+<p>To connect from Windows, open puTTY, and enter the IP address.  The user name is <code>azureuser</code>, and the password is your master password.</p>
+
+<p>To connect from Mac or Unix, use this command: <code>ssh azureuser@&lt;ip address&gt;</code> (Replace with the IP address of your Azure instance.)</p>
+
+<p>For more detailed instructions, check out <a href="https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-use-ssh-key/">Connecting to Microsoft Azure with SSH</a>.</p>
+
+<h3 id="a-few-notes">A few notes</h3>
+<ul>
+  <li>Some corporate firewalls may not allow SSH to Amazon cloud.  You may have to work with your IT organization to resolve this.</li>
+  <li>User <code>hdbadm</code> owns sap software in the Linux instance. To restart the database without restarting the entire Linux instance, switch to user <code>hdbadm</code> and perform stop and start operations using the following commands:
+    <ul>
+      <li><code>su – hdbadm</code> To switch user.</li>
+      <li><code>./HDB stop</code> Command to stop HANA DB</li>
+      <li><code>./HDB start</code> Command to start HANA DB</li>
+    </ul>
+  </li>
+  <li>The default password of user <code>hdbadm</code> is <code>HANAabcd1234</code>. You should change this password using the Linux command <code>passwd hdbadm</code> after creating your instance. Enter your new password (described above) when HANA Studio prompts you for the <code>&lt;SID&gt;adm</code> logon to perform administrative tasks.</li>
+</ul>
+
+<h2 id="next-steps-1">Next Steps</h2>
+<p>Make your very first steps on SAP HANA and develop a very simple “Hello World” application using the SAP HANA Web-based Development Workbench on the SAP HANA Cloud Platform.</p>
+
+<p><a href="http://go.sap.com/developer/tutorials/hana-web-development-workbench.html">Hello World!  HANA and the Web Development Workbench</a></p>

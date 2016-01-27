@@ -1,0 +1,155 @@
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+  <li><a href="http://go.sap.com/developer/tutorials/hana-setup-cloud.html">Set up a HANA instance on a cloud provider</a></li>
+  <li><a href="http://go.sap.com/developer/tutorials/hana-web-development-workbench.html">Hello World!  Develop your first HANA application</a></li>
+</ul>
+
+<h2 id="next-steps">Next Steps</h2>
+<p>Follow our other tutorials on the HANA Cloud Platform website
+- <a href="http://hcp.sap.com/developers/TutorialCatalog/nat200_03_native_hana_hello_user_with_webide">Hello User!  Authorize your first user</a>
+- <a href="http://hcp.sap.com/developers/TutorialCatalog.html">Check out the other tutorials on our HANA Cloud Platform website</a></p>
+
+<h2 id="details">Details</h2>
+
+<h3 id="you-will-learn">You will learn</h3>
+<ol>
+  <li>How to browse data using the SAP HANA Web-based Development Workbench.</li>
+  <li>Opening a connection to the SAP HANA database.</li>
+  <li>Preparing and executing a very simple SQL query on the system table <code>DUMMY</code>.</li>
+</ol>
+
+<blockquote>
+  <h3 id="information">Information</h3>
+  <p>The full application build in this tutorial can be found <a href="https://github.com/SAP/cloud-hana-helloworld/">in this GitHub repository</a>.</p>
+</blockquote>
+
+<h3 id="time-to-complete">Time to Complete</h3>
+<p>Beginners might take <strong>10-15 minutes</strong> to execute this tutorial.</p>
+
+<h3 id="icongoldcircle01svghttpgosapcomdamapplicationsharediconsicongoldcircle01svg-open-the-web-based-development-workbench"><img src="http://go.sap.com/dam/application/shared/icons/icon_gold_circle_01.svg" alt="icon_gold_circle_01.svg" /> Open the Web-based Development Workbench</h3>
+
+<h4 id="using-hana-cloud-platform">Using HANA Cloud Platform</h4>
+<p>Each Trial HANA instance comes with the HANA Web-based Development Workbench. The workbench allows you to develop on HANA without the need to set up a local development environment.</p>
+
+<p>Login to the <a href="https://account.hanatrial.ondemand.com/cockpit">HANA Cloud Cockpit</a> with your free developer edition account.</p>
+
+<p>Choose HANA Instances and choose then SAP HANA Web-based Development Workbench link.</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/1.png" alt="1.png" /></p>
+
+<p>You are now in the Editor and can immediately start developing in HANA.</p>
+
+<h4 id="using-hana-on-amazon-aws-or-microsoft-azure">Using HANA on Amazon AWS or Microsoft Azure</h4>
+
+<p>Access the web page of your HANA server using the IP address of your server.  Enter the address <code>http://XXX.XXX.XXX.XXX</code> to the address bar of your browser. (Replace <code>XXX.XXX.XXX.XXX</code> with the IP address of your server.)</p>
+
+<p>On the web page, there is a link in the middle column for <strong>Web-Based Development Workbench</strong>.  Click this link to start the workbench.</p>
+
+<h3 id="icongoldcircle02svghttpgosapcomdamapplicationsharediconsicongoldcircle02svg-browse-data-with-the-catalog"><img src="http://go.sap.com/dam/application/shared/icons/icon_gold_circle_02.svg" alt="icon_gold_circle_02.svg" /> Browse Data with the Catalog</h3>
+
+<p>Before accessing the data from a HANA application we will first have a look at the respective tables using the Catalog.</p>
+
+<p>Open the Catalog of the Web-based Development Workbench by expanding the + button,  and then choosing Catalog:</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/2.png" alt="2.png" /></p>
+
+<p>The Catalog will open in a new browser window:</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/3.png" alt="3.png" /></p>
+
+<p>This tutorial will access data from the system table <code>DUMMY</code>.</p>
+
+<p>Open this table by choosing <code>SYS &gt; Tables &gt; DUMMY</code> in the catalog:</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/4.png" alt="4.png" /></p>
+
+<p>The resulting view gives you more information about the DUMMY table: You can see that it consists of only one column:</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/5.png" alt="5.png" /></p>
+
+<p>To see what is the content of the table right-click on the DUMMY table and choose <code>Open Content</code>:</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/6.png" alt="6.png" /></p>
+
+<p>The resulting view shows the SQL query executed to fetch the content and the result of this query: You can see that DUMMY contains exactly one entry X:</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/7.png" alt="7.png" /></p>
+
+<p>Now let’s access this data from a SAP HANA application.</p>
+
+<h3 id="icongoldcircle03svghttpgosapcomdamapplicationsharediconsicongoldcircle03svg-access-data-from-a-hana-application"><img src="http://go.sap.com/dam/application/shared/icons/icon_gold_circle_03.svg" alt="icon_gold_circle_03.svg" /> Access Data from a HANA Application</h3>
+
+<p>You must have finished the previous tutorial <a href="http://go.sap.com/developer/tutorials/hana-web-development-workbench.html">“Hello World! Develop your first HANA Application using Web-based Development Workbench”</a> so that you have a working hello world application ready.</p>
+
+<p>Go back to the Editor by expanding the + button and choosing Editor:</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/8.png" alt="8.png" /></p>
+
+<p>Open the already existing <code>helloworld.xsjs</code>.</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/9.png" alt="9.png" /></p>
+
+<p>Replace the current code in the <code>helloworld.xsjs</code> file with the following code that opens a database connection, prepares a simple SQL statement, executes it and returns the result of the query:</p>
+
+<p>```js
+$.response.contentType = “text/html”;
+var output = “Hello World!<br /><br />”;</p>
+
+<p>//Open a database connection
+var conn = $.db.getConnection();</p>
+
+<p>//Prepare a simple SQL statement on the system table “DUMMY”
+var pstmt = conn.prepareStatement(“select * from DUMMY”);</p>
+
+<p>//Execute the query
+var rs = pstmt.executeQuery();</p>
+
+<p>//Check the query result
+if (!rs.next()) {
+    //Something went wrong: Return an error
+    $.response.setBody(“Failed to retrieve data”);
+    $.response.status = $.net.http.INTERNAL_SERVER_ERROR;
+} else {
+    //All went fine: Return the Query result
+    output = output + “This is the response from my SQL: “ + rs.getString(1);
+}</p>
+
+<p>//Close the database connection
+rs.close();
+pstmt.close();
+conn.close();</p>
+
+<p>//Return the HTML response.
+$.response.setBody(output);
+<code>
+Save the file using the Save button or by pressing</code>ctrl+s```. Again, the successful save is confirmed in the console.</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/10.png" alt="10.png" /></p>
+
+<p>Now you are ready to run the application.</p>
+
+<h3 id="icongoldcircle04svghttpgosapcomdamapplicationsharediconsicongoldcircle04svg-deploy-run-and-test-the-application"><img src="http://go.sap.com/dam/application/shared/icons/icon_gold_circle_04.svg" alt="icon_gold_circle_04.svg" /> Deploy, Run and Test the Application</h3>
+
+<p>Now the application is ready to be tested. As you are developing with the Web-based Development Workbench the application is already deployed and activated to your HANA Trial Instance. So you can immediately continue to test it.</p>
+
+<p>Select the <code>helloworld.xsjs</code> file to enable the Run on Server in the toolbar. Then click the <code>Run on Server</code> button:</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/11.png" alt="11.png" /></p>
+
+<p>The application will open in your browser and greet you with <strong>Hello World</strong> and the just accessed data from system table <code>DUMMY</code>:</p>
+
+<p><img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/12.png" alt="12.png" /></p>
+
+<p>Congratulations: You have just accessed your first data on SAP HANA!</p>
+
+<h3 id="optional-related-information">Optional: Related Information</h3>
+<p><a href="http://help.sap.com/hana_platform#section6">SAP HANA Development Information - Official Documentation</a></p>
+
+<h2 id="next-steps-1">Next Steps</h2>
+<p><a href="http://hcp.sap.com/developers/TutorialCatalog/nat200_03_native_hana_hello_user_with_webide.html">Hello User! Authorize your first HANA User using the Web-based Development Workbench</a>
+Take your first steps to authorize users to access native HANA applications with roles and privileges using the Web-based Development Workbench.</p>
+
+<p><em>This tutorial is part of the HANA Cloud Platform tutorials set.</em></p>
+
+<p><a href="http://hcp.sap.com/developers/TutorialCatalog.html">Check out the entire list of tutorials for HANA and the HANA Cloud Platform</a>
+Even more tutorials are available in our HANA Cloud Platform tutorial catalog.  Try a few!</p>
