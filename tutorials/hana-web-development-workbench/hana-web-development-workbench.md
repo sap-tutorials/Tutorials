@@ -19,7 +19,7 @@ You need a HANA account. Pick one of the following:
 3. How to publish and run an application.
 
 ### Time to Compete
-Beginners might take 10-15 minutes to execute this tutorial.
+Beginners might take **10-15 minutes** to execute this tutorial.
 
 > ### Information
 >The full application build in this tutorial can be found [in this GitHub repository](https://github.com/SAP/cloud-hana-helloworld/).
@@ -28,9 +28,45 @@ Beginners might take 10-15 minutes to execute this tutorial.
 Each Trial HANA instance comes with the HANA Web-based Development Workbench. The workbench allows you to develop on HANA without the need to set up a local development environment.
 
 Login to the [HANA Cloud Cockpit](https://account.hanatrial.ondemand.com/cockpit) with your free developer edition account.
-Choose HANA Instances and choose then SAP HANA Web-based Development Workbench link.
+Choose Databases & Schemas. You will need to create your new instance, to do this simple give it a name, enable web access and of course give a password. This password you will need to remember as it is the password for your SYSTEM user and how you will be able to access the server.
 
-![1.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/1.png)
+![1.png](1.png)
+
+Once you begin the creation process, you will be redirected to an events tab.
+
+![2.png](2.png)
+
+Remember the instance runs for a limited time, so if you have to come back later you may need to restart it.
+
+![3.png](3.png)
+
+Just click start to restart it. Also note it’s only valid for 30 days.
+
+#### 2 more steps before we hit the editor
+
+You'll need to click on the "Admin Cockpit" first to trigger the authorizations you will need going forward.
+
+![4.png](4.png)
+
+Once your authorizations have applied, you should then select the "Manage Roles and Users".
+
+![5.png](5.png)
+
+Here you can create a new user, this is recommended so you do not risk the "SYSTEM" user.
+
+![6.png](6.png)
+
+![7.png](7.png)
+
+Now simply apply new roles to the user to give this user the appropriate authorizations to begin developing.
+
+![9.png](9.png)
+
+![10.png](10.png)
+
+With that completed we can now log into the "SAP HANA Web Based Development Workbench"
+
+![11.png](11.png)
 
 You are now in the Editor and can immediately start developing in HANA.
 
@@ -42,43 +78,26 @@ On the web page, there is a link in the middle column for **Web-Based Developmen
 ### ![icon_gold_circle_02.svg](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_02.svg) Create Package for the Hello World Application
 The first step to start developing a SAP HANA application with SAP HANA Web-based Development Workbench is to create a new package for the application.
 
-Open the first package in the Content folder that is named like your account, e.g. ```p1234567890trial```. Then select the package that is named like your HANA trial instance, e.g. ```hana```:
+Here we will create a package called `codejam`, Right-Click on the content folder on the left, and enter the package details.
 
-![2.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/2.png)
+![12.png](12.png)
 
-Right-Click on the selected package of your SAP HANA trial instance and choose Create Package. Enter ```helloworld``` as new package name and save with Enter:
+Now you have a package that is waiting for your code, now we will Right-Click on the ```codejam``` package and choose ```Create Application```
 
-![3.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/3.png)
+![13.png](13.png)
 
-Now you have a package that is waiting for your code:
+This step will generate 3 files, the `.xsapp`, `.xsaccess` and an `index.html`.
 
-![4.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/4.png)
-
-### ![icon_gold_circle_03.svg](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_03.svg) Create .xsapp File
-In SAP HANA, an empty .xsapp file indicates that a package is containing a HANA XS application. As we want to create such an application the next step is to create such a file.
-
-Open the context menu of the just created ```helloworld``` package by right-clicking on the name and choose Create File. Enter .xsapp as file name and save with Enter:
-
-![5.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/5.png)
-
-The new file is now open in the Editor:
-
-![6.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/6.png)
-
-Save the empty file using the Save button or by pressing ```ctrl+s```. The successfully save is confirmed in the console:
-
-![7.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/7.png)
-
-### ![icon_gold_circle_04.svg](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_04.svg) Create the "Hello World" Application
+### ![icon_gold_circle_03.svg](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_03.svg) Now Create the "Hello World" Application
 Now is the time to actually create some application code. In SAP HANA XS application code essentially is JavaScript code provided in .xsjs files. Now such a file will be created.
 
 Open the context menu of the ```helloworld``` package by right-clicking on the name and choose Create File. Enter ```helloworld.xsjs``` as file name and save with Enter:
 
-![8.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/8.png)
+![14.png](14.png)
 
 The new empty file is now open in the Editor:
 
-![9.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/9.png)
+![15.png](15.png)
 
 Copy and paste this code to the just created ```helloworld.xsjs``` file:
 
@@ -89,42 +108,16 @@ $.response.setBody("Hello World!");
 
 Save the file using the Save button or by pressing ```ctrl+s```. Again, the successful save is confirmed in the console.
 
-![10.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/10.png)
+![16.png](16.png)
 
-### ![icon_gold_circle_05.svg](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_05.svg) Configure Access to the Application
-The just developed application can't be accessed yet. For this it must be declared with a .xsaccess file that the application shall be accessible.
-
-Open the context menu of the ```helloworld``` package by right-clicking on the name and choose Create File. Enter ```.xsaccess``` as file name and save with Enter:
-
-![11.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/11.png)
-
-The new empty file is now open in the Editor:
-
-![12.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/12.png)
-
-Copy and paste this code to the just created ```.xsaccess``` file. This code declares that the package shall be accessible as application:
-
-```json
-{
-    "exposed" : true
-}
-```
-Save the file using the Save button or by pressing ```ctrl+s```. Again, the successful save is confirmed in the console.
-
-![13.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/13.png)
-
-Now you are ready to run the application.
-
-### ![icon_gold_circle_06.svg](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_06.svg) Deploy, Run and Test the Application
+### ![icon_gold_circle_04.svg](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_04.svg) Deploy, Run and Test the Application
 Now the application is ready to be tested. As you are developing with the SAP HANA Web-based Development Workbench the application is already deployed and activated to your SAP HANA Trial Instance. So you can immediately continue to test it:
 
 Select the ```helloworld.xsjs``` file to enable the Run on Server in the toolbar. Then click the Run on Server button:
 
-![14.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/14.png)
-
 The application will open in your browser and greet you with Hello World:
 
-![15.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/15.png)
+![17.png](17.png)
 
 Congratulations: You just have your first own native SAP HANA application running on SAP HANA Cloud Platform!
 
