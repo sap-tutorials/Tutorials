@@ -1,4 +1,4 @@
-[![CircleCI](https://img.shields.io/circleci/project/BrightFlair/PHP.Gt.svg)](https://github.com/SAPDocuments/Tutorials)
+[![Circle CI](https://circleci.com/gh/SAPDocuments/Tutorials.svg?style=svg)](https://circleci.com/gh/SAPDocuments/Tutorials)
 [![devDependency Status](https://david-dm.org/SAPDocuments/Tutorials/dev-status.svg)](https://david-dm.org/SAPDocuments/Tutorials#info=devDependencies)
 [![ReviewNinja](https://app.review.ninja/47708831/badge)](https://app.review.ninja/SAPDocuments/Tutorials)
 
