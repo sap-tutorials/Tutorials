@@ -1,5 +1,6 @@
-[![Build Status](https://travis-ci.org/SAPDocuments/Tutorials.svg?branch=master)](https://travis-ci.org/SAPDocuments/Tutorials) [![devDependency Status](https://david-dm.org/SAPDocuments/Tutorials/dev-status.svg)](https://david-dm.org/SAPDocuments/Tutorials#info=devDependencies)
-
+[![CircleCI](https://img.shields.io/circleci/project/BrightFlair/PHP.Gt.svg)](https://github.com/SAPDocuments/Tutorial-Contribution)
+[![devDependency Status](https://david-dm.org/SAPDocuments/Tutorials/dev-status.svg)](https://david-dm.org/SAPDocuments/Tutorials#info=devDependencies)
+[![ReviewNinja](https://app.review.ninja/47708831/badge)](https://app.review.ninja/SAPDocuments/Tutorials)
 
 # Tutorials for sap.com
 Welcome to the Markdown tutorial catalog for tutorials you can find on sap.com. This project is still in an early stage, so stay tuned and start watching!
