@@ -1,0 +1,8 @@
+machine:
+  timezone:
+    America/Los_Angeles
+  node:
+    version: 4.2.2
+test:
+  override:
+    - . tests.sh
