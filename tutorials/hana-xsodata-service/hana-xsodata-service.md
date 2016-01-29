@@ -1,7 +1,7 @@
 ---
 title: Hello World! Develop your first HANA XS oData service using the Web-based Development Workbench
 description: In this tutorial you will make your very first steps on SAP HANA and develop a very simple "Hello World" application using the SAP HANA Web-based Development Workbench within SAP HANA or SAP HANA Cloud Platform.
-tags: [tutorial:technology/amazon_aws, tutorial:product/sapHana, tutorial:product/hcp, tutorial:interest/gettingstarted, tutorial:product/hcp_web_workbench, tutorial:technology/odata]
+tags: [tutorial:technology/amazon_aws, tutorial:product/sapHana, tutorial:product/hcp, tutorial:interest/gettingstarted, tutorial:product/hcp_web_workbench, tutorial:technology/odata, tutorial:interest/hanaxs]
 ---
 
 ## Prerequisites  
