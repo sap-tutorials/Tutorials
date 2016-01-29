@@ -23,6 +23,8 @@ The data source URL is <http://services.odata.org/V2/Northwind/Northwind.svc/>
 ### Time to Complete
 **< 5 min**
 
+---
+
 1. Go to <https://account.hanatrial.ondemand.com> and log in to your HCP cockpit.
 
     ![step 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_1.png)
