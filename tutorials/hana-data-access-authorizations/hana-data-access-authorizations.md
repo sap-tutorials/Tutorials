@@ -227,6 +227,3 @@ Congratulations: You have just accessed your first data on SAP HANA!
 Take your first steps to authorize users to access native HANA applications with roles and privileges using the Web-based Development Workbench.
 
 *This tutorial is part of the SAP HANA and SAP HANA Cloud Platform tutorials set.*
-
-[Check out the entire list of tutorials for HANA and the HANA Cloud Platform](http://hcp.sap.com/developers/TutorialCatalog.html)
-Even more tutorials are available in our HANA Cloud Platform tutorial catalog.  Try a few!

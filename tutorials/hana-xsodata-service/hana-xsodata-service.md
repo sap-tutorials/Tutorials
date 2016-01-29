@@ -14,7 +14,7 @@ You should have made your first steps into the Web Based Development Workbench
 ## Next Steps
 Perhaps it is time to enhance our XS application to display our oData service together with some UI5 controls?
 
-[Hello Data! Access your service inside of a UI5 control](http://go.sap.com/developer/tutorials/hana-data-ui5.html)
+Coming soon: `Hello Data! Access your service inside of a UI5 control`.
 
 ## Details
 ### You will learn  
@@ -74,4 +74,4 @@ Congratulations: You just have your first oData service together with your SAP H
 ## Next Steps
 Perhaps it is time to enhance our XS application to display our oData service together with some UI5 controls?
 
-[Hello Data! Access your service inside of a UI5 control](http://go.sap.com/developer/tutorials/hana-data-ui5.html)
+Coming soon: `Hello Data! Access your service inside of a UI5 control`.
