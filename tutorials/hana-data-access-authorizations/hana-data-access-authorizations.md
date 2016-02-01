@@ -9,7 +9,7 @@ tags: [tutorial:technology/amazon_aws, tutorial:technology/sql, tutorial:product
 - [Hello World!  Develop your first HANA application](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
 
 ## Next Steps
-- [Hello User! Your first XS oData service with SAP HANA](http://go.sap.com/developer/tutorials/hana-xsodata-service.html)
+- Coming soon: `Hello User! Your first XS oData service with SAP HANA`
 
 
 ## Details
@@ -223,7 +223,8 @@ Congratulations: You have just accessed your first data on SAP HANA!
 [SAP HANA Development Information - Official Documentation](http://help.sap.com/hana_platform#section6)
 
 ## Next Steps
-[Hello User! Your first XS oData service with SAP HANA](http://go.sap.com/developer/tutorials/hana-xsodata-service.html)
+Coming soon: `Hello User! Your first XS oData service with SAP HANA`
+
 Take your first steps to authorize users to access native HANA applications with roles and privileges using the Web-based Development Workbench.
 
 *This tutorial is part of the SAP HANA and SAP HANA Cloud Platform tutorials set.*
