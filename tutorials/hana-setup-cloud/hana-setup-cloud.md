@@ -24,16 +24,16 @@ This section takes about **10 minutes** to complete, and about **10 to 25 minute
 >If you want to create a free developer account - with no cloud VM charges - on the HANA Cloud Platform, do not follow this tutorial. Click here to sign up for the account, and then proceed to the next tutorial.
 
 ### ![icon_gold_circle_01.svg](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_01.svg) Create a cloud account
-**Amazon AWS**:  To create an account, click [here](http://aws.amazon.com/account/).
+**Amazon AWS**:  To create an account, please visit [Amazon AWS](http://aws.amazon.com/account/).
 
-**Microsoft Azure**:  To create an account, sign up for a free one month trial [here](http://azure.microsoft.com/en-us/pricing/free-trial/).
+**Microsoft Azure**:  To create an account, [sign up for a free one month trial](http://azure.microsoft.com/en-us/pricing/free-trial/).
 
 ### ![icon_gold_circle_02.svg](http://go.sap.com/dam/application/shared/icons/icon_gold_circle_02.svg) Configure your HANA instance
 Go to the [Cloud Appliance Library](https://cal.sap.com/) page, and click the ```login``` link in the upper right hand corner.
 
 > ### Note
 >If you don't have an account on the sap.com website, you need to create one to access the Cloud Appliance Library.
->Click [here](http://go.sap.com/index.html) to go to the [sap.com website](http://go.sap.com/index.html), then click *login* in the upper right corner to create an account.
+>Visit [go.sap.com](http://go.sap.com/index.html) and click *login* in the upper right corner to create an account.
 
 ![1.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/1.png)
 

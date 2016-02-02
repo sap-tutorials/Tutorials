@@ -16,7 +16,7 @@ This is a simple 8 step tutorial to walk through signing up for an account on HA
 ### Time to Complete
 **5 mins**
 
-1. Go [here](https://account.hanatrial.ondemand.com/), and click on the **Register** button.
+1. Go to the [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com/) website and click on the **Register** button.
 
     ![hcp_signup1.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-trial-account/hcp_signup1.png)
 
@@ -32,7 +32,7 @@ This is a simple 8 step tutorial to walk through signing up for an account on HA
 
     ![hcp_signup4.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-trial-account/hcp_signup4.png)
 
-5. A web page opens and you will see that your account was activated. Click **Continue** to go back [here](https://account.hanatrial.ondemand.com) to log in.
+5. A web page opens and you will see that your account was activated. Click **Continue** to go back to the [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com) website and  log in.
 
     ![hcp_signup5.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-trial-account/hcp_signup5.png)
 
