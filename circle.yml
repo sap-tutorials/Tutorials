@@ -6,3 +6,7 @@ machine:
 test:
   override:
     - . tests.sh
+notify:
+  webhooks:
+    # gitter hook
+    - url: https://webhooks.gitter.im/e/15f197634234d80a32fa
