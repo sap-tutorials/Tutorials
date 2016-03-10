@@ -151,7 +151,7 @@ In this tutorial you will implement a simple domain model and implement the corr
     </init-param>
     ```
 
-    ![](e2e_06-13.png)
+    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-13.png)
 
 14. Just below the aforementioned **\<init-param>** tag we need to add another `<init-param>` for JSON de-/serialization as follows:
 
