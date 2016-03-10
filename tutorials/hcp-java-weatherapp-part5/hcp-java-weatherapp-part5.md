@@ -40,7 +40,7 @@ In this tutorial you will learn how to expose RESTful services using a library c
 
     ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-1.png)
  
-2. We also need to specify the corresponding CXF version property at the end of the **<properties>** tag in **pom.xml**. See the image below for where to insert this snippet. 
+2. We also need to specify the corresponding CXF version property at the end of the **\<properties>** tag in **pom.xml**. See the image below for where to insert this snippet. 
 
     ```xml
     <org.apache.cxf-version>3.0.0</org.apache.cxf-version>
@@ -95,7 +95,7 @@ In this tutorial you will learn how to expose RESTful services using a library c
     ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-4.png)
 
 
-5. Open the **web.xml** configuration file and copy and paste the following lines of code in between the closing **</servlet-mapping>** and the opening **<login-config>** tags:
+5. Open the **web.xml** configuration file and copy and paste the following lines of code in between the closing **\</servlet-mapping>** and the opening **\<login-config>** tags:
 
     ```xml
     <servlet>

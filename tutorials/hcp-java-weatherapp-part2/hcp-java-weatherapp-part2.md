@@ -39,7 +39,7 @@ In this tutorial you will learn how to add a basic HTML page to a Java app.
 
     ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part2/e2e_02-4.png)
 
-5. For security reasons and for the sake of housekeeping you should remove all <welcome-file> entries except for the **index.html** entry. 
+5. For security reasons and for the sake of housekeeping you should remove all <welcome-file> entries except for the **index.html** entry from the **web.xml** file. 
 
     ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part2/e2e_02-5.png)
 

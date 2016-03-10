@@ -31,7 +31,7 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
 ### Time to Complete
 **10 min**
 
-1. Create a new dynamic web project by selecting the “New > Dynamic Web Project” menu entry and enter the following information:
+1. Create a new dynamic web project by selecting the **File > New > Dynamic Web Project** menu entry and enter the following information:
 
     - **Name:** `weatherapp`
     - **Target Runtime:** `Java Web`
@@ -49,13 +49,13 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
  
     ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-2.png) 
 
-3. Change the Content Directory from `WebContent` to `src/main/webapp` (again, to adhere to Maven conventions) 
+3. Change the Content Directory from **WebContent** to `src/main/webapp` (again, to adhere to Maven conventions) 
 
     Click on **Finish**.
 
     ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-3.png)
 
-4. Create a new Servlet by selecting the “New > Servlet” menu entry and enter the following information:
+4. Make sure you have your **weatherapp** project folder selected, and then create a new Servlet by selecting the **File > New > Servlet** menu entry and enter the following information:
 
     - **Package name:** `com.sap.hana.cloud.samples.weatherapp.web`
     - **Class name:** `HelloWorldServlet`
@@ -66,7 +66,7 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
  
 5. Change the URL Mapping from `/HelloWorldServlet` to `/hello` to make it a bit easier to memorize.
 
-    Click on **Finish**.
+    Click on **Finish** and the HelloWorldServlet.java file will open in the editor.
  
     ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-5.png)
 

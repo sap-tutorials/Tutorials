@@ -65,7 +65,9 @@ In this tutorial you will learn how to add authenication and authorization to yo
 2. After successful authentication the application can access users’ principal information using standard servlet APIs. To illustrate that, make the following changes to the **HelloWorldServlet**:
 
     ```java
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+    /**
+    * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+    */protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
     {
     	    String user = request.getRemoteUser();
     	    if (user != null)
@@ -77,7 +79,7 @@ In this tutorial you will learn how to add authenication and authorization to yo
     	        LoginContext loginContext;
     		    try 
     	        {
-    	             loginContext =  ⏎LoginContextFactory.createLoginContext("FORM");
+    	             loginContext = LoginContextFactory.createLoginContext("FORM");
     			 		loginContext.login();
     	             response.getWriter().println("Hello, " +  request.getRemoteUser());
     	        } 
@@ -87,6 +89,11 @@ In this tutorial you will learn how to add authenication and authorization to yo
     		    }
     	    }
     }
+    
+    
+    /**
+    * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+    */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
     {	
     		doGet(request, response);
@@ -104,7 +111,7 @@ In this tutorial you will learn how to add authenication and authorization to yo
 
 5. Since we are working with a local server so far we need to provide a local user repository to authenticate against. For this purpose, double-click on the local server node in the **Servers** view to open the configuration window.
 
-    At the bottom of that window there are four tabs: Overview, Connectivity, Users and Loggers.
+    At the bottom of that window there are four tabs: **Overview**, **Connectivity**, **Users** and **Loggers**.
 
     Within the Users tab you can manage local users. Let’s create a simple test user with the user id “test” and a password of your choice. Save your changes.
 
