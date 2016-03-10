@@ -141,17 +141,15 @@ In this tutorial you will implement a simple domain model and implement the corr
 
 13. To register our RESTful service implementation in the **web.xml** configuration file, add the fully qualified classname of our **FavoriteCityService** class to the *comma-separated* list of **jaxrs.serviceClasses**. See the snippet below for where to enter the fully qualified classname inside the **\<param-value>** element (don't forget the comma at the end of the **AuthenticationService** line).
 
-
     ```xml
     <init-param>
-        <param-name>jaxrs.serviceClasses</param-name>
-	     <param-value>
-            com.sap.hana.cloud.samples.weatherapp.api.AuthenticationService,
-            com.sap.hana.cloud.samples.weatherapp.api.FavoriteCityService
-        </param-value>
+    <param-name>jaxrs.serviceClasses</param-name>
+	 <param-value>
+    com.sap.hana.cloud.samples.weatherapp.api.AuthenticationService,
+    com.sap.hana.cloud.samples.weatherapp.api.FavoriteCityService
+    </param-value>
     </init-param>
-
-     ```
+    ```
 
     ![](e2e_06-13.png)
    
