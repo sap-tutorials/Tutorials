@@ -152,7 +152,6 @@ In this tutorial you will implement a simple domain model and implement the corr
     ```
 
     ![](e2e_06-13.png)
-   
 
 14. Just below the aforementioned **\<init-param>** tag we need to add another `<init-param>` for JSON de-/serialization as follows:
 
