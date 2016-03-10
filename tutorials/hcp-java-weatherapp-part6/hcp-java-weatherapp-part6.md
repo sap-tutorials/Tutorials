@@ -141,6 +141,7 @@ In this tutorial you will implement a simple domain model and implement the corr
 
 13. To register our RESTful service implementation in the **web.xml** configuration file, add the fully qualified classname of our **FavoriteCityService** class to the *comma-separated* list of **jaxrs.serviceClasses**. See the snippet below for where to enter the fully qualified classname inside the **\<param-value>** element (don't forget the comma at the end of the **AuthenticationService** line).
 
+
     ```xml
     <init-param>
         <param-name>jaxrs.serviceClasses</param-name>
@@ -151,7 +152,7 @@ In this tutorial you will implement a simple domain model and implement the corr
     </init-param>
 
      ```
- 
+
     ![](e2e_06-13.png)
    
 
@@ -167,12 +168,13 @@ In this tutorial you will implement a simple domain model and implement the corr
  
 15. The last change to make is to define a DataSource within the **web.xml** in order to connect to the underlying database. To do this, copy and paste the following xml snippet after the closing **\</welcome-file-list>** tag:
 
-     ```xml
-     <resource-ref>
-     <res-ref-name>jdbc/DefaultDB</res-ref-name>
-     <res-type>javax.sql.DataSource</res-type>
-     </resource-ref>
-     ```
+
+    ```xml
+    <resource-ref>
+    <res-ref-name>jdbc/DefaultDB</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    </resource-ref>
+    ```
  
     ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-15.png)
 
@@ -181,12 +183,11 @@ In this tutorial you will implement a simple domain model and implement the corr
 
 17. Within Postman, enter `http://localhost:8080/weatherapp/api/v1/cities` in the URL input field and make sure to provide your username/password as Basic Auth parameters in the “Authorization” tab. 
 
- Afterwards, make sure to update the request by pressing the respective “Update request” button. That will then add the “Authorization” parameter as an HTTP header parameter to your request. 
+    Afterwards, make sure to update the request by pressing the respective “Update request” button. That will then add the “Authorization” parameter as an HTTP header parameter to your request. 
 
     ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-17.png)
 
 
- 
 18. Once you execute the call, you’ll see two empty brackets “[]” (indicating an empty array) after successful authentication. Don’t worry, we haven’t saved any cities as favorites yet, sothat’s just what we would expect. 
  
     ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-18.png)

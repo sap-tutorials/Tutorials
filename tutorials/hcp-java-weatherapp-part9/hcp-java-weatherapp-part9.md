@@ -29,8 +29,9 @@ In this tutorial you will implement a simple responsive, mobile-compatible user 
     - `/weather_app/view/List.controller.js`
     - `/weather_app/view/List.view.xml`
     - `/weather_app/Component.js`
+    - `/weather_app/util/formatter.js`
 
-    >Note that **Component.js** is in the **weather_app** directory, not the **weather_app/view** directory.
+    >Note that **Component.js** is in the **weather_app** directory, not the **weather_app/view** directory, and you must create the **util** directory for the **formatter.js** file. 
 
     ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part9/e2e_09-3.png)
  
@@ -42,6 +43,7 @@ In this tutorial you will implement a simple responsive, mobile-compatible user 
     - /weather_app/view/[List.controller.js](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/weather_app/view/List.controller.js)
     - /weather_app/view/[List.view.xml](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/weather_app/view/List.view.xml)
     - /weather_app/[Component.js](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/weather_app/Component.js)
+    - /weather_app[/util/formatter.js](https://raw.githubusercontent.com/SAP/cloud-weatherapp/master/src/main/webapp/weather_app/util/formatter.js)
 
 
 5. Replace the content of the **index.html** file to match this [version in Github](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/index.html).
