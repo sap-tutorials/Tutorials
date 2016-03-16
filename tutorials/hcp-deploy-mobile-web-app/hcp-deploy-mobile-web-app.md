@@ -29,7 +29,7 @@ Since any project that is created initially in the SAP Web IDE contains a ```neo
 
 3. If this is your first time deploying an app to the SAP HANA Cloud Platform, you may see a dialog box requesting information to configure your Git repository. Enter your **email** and **username** and click **OK**.
 
-    ![mob1-3_3.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_2.png)
+    ![mob1-3_3.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_3.png)
 
 4. You will be prompted for your SAP HANA Cloud Platform Password and click on **Login**.
 
