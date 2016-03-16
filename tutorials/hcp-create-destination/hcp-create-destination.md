@@ -9,7 +9,7 @@ tags: [tutorial:product/hcp, tutorial:product/mobile, tutorial:interest/gettings
  - **Tutorials:** [Sign up for an account on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-[Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+ - [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
 
 ## Details
 
@@ -29,28 +29,28 @@ The data source URL is <http://services.odata.org/V2/Northwind/Northwind.svc/>
 
     ![step 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_1.png)
 
-2. Select the **Destinations** tab on the left side, and then click on **New Destination…** to open a new destination configuration form.
+2. Select the **Destinations** tab on the left side, and then click on **New Destination** to open a new destination configuration form.
 
     ![mob1-1_2.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_2.png)
 
 3. Enter/confirm all fields in the Destination configuration section with the information below.
 
-    **Name:** `Northwind`
-    **Type:** `HTTP`
-    **Description:** `Northwind OData Service`
-    **URL:** `http://services.odata.org`
-    **Proxy Type:** `Internet`
-    **Authentication:** `NoAuthentication`
+    - **Name:** `Northwind`
+    - **Type:** `HTTP`
+    - **Description:** `Northwind OData Service`
+    - **URL:** `http://services.odata.org`
+    - **Proxy Type:** `Internet`
+    - **Authentication:** `NoAuthentication`
 
     Add three **Additional Properties** fields by clicking on the **New Property** button once for each property.
 
-    **`WebIDEEnabled`:** `true`
-    **`WebIDESystem`:** `Northwind_Data`
-    **`WebIDEUsage`:** `odata_gen`
+    - **WebIDEEnabled:** `true`
+    - **WebIDESystem:** `Northwind_Data`
+    - **WebIDEUsage:** `odata_gen`
 
     ![mob1-1_3.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_3.png)
 
 4. Click **Save**, and that's it. Continue with the tutorial below to build your first app.
 
 ## Next Steps
-[Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+ - [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)

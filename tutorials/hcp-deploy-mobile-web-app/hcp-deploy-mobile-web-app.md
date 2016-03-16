@@ -8,7 +8,7 @@ tags: [tutorial:product/hcp, tutorial:product/mobile, tutorial:interest/gettings
  - **Tutorials:** [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
 
 ## Next Steps
-You can add labels and additional data field to your app.
+ - [Add labels and a field to your app](http://go.sap.com/developer/tutorials/hcp-webide-add-labels-field.html)
 
 ## Details
 
@@ -22,9 +22,8 @@ Since any project that is created initially in the SAP Web IDE contains a ```neo
 
 
 1. Open the SAP Web IDE.
-*If you are not logged in yet, refer to the previous tutorial, steps 1-3.*
 
-2. In SAP Web IDE, select the ```index.html``` file of the Northwind project and open the context menu by right-clicking on it. Choose **Deploy > Deploy to SAP HANA Cloud Platform** to open the deploy dialog box.
+2. In SAP Web IDE, select the **northwind** project folder and open the context menu by right-clicking on it. Choose **Deploy > Deploy to SAP HANA Cloud Platform**.
 
     ![mob1-3_2.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_2.png)
 
@@ -36,7 +35,7 @@ Since any project that is created initially in the SAP Web IDE contains a ```neo
 
     ![mob1-3_4.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_4.png)
 
-5. Because there is a restriction for the names of HTML applications which can be deployed on SAP HANA Cloud Platform (only lower-case alphanumeric characters are allowed) the application name is converted to lower-case letters. Enter the version number **1.0.0** and check on **Activate** box. Click on **Deploy**.
+5. Because all HTML application names on HCP are lower case, the application name will be converted (if required) to lower-case letters. Check the **Connect to the SAP HANA Cloud Platform Git repository...** checkbox, verify the version number is **1.0.0** and the **Activate** check box is marked. Click on **Deploy**.
 
     ![mob1-3_5.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_5.png)
 
@@ -51,3 +50,6 @@ Since any project that is created initially in the SAP Web IDE contains a ```neo
 8. You can now enter the application URL in your mobile device browser to see it running there.
 
     ![mob1-3_8.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_8.png)
+
+## Next Steps
+ - [Add labels and a field to your app](http://go.sap.com/developer/tutorials/hcp-webide-add-labels-field.html)

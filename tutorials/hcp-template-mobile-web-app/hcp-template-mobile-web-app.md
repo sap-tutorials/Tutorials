@@ -8,7 +8,7 @@ tags: [tutorial:product/hcp, tutorial:product/mobile, tutorial:interest/gettings
  - **Tutorials:** [Create a Destination on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
 
 ## Next Steps
-[Deploy an app to SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+ - [Deploy an app to SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
 
 ## Details
 
@@ -27,7 +27,7 @@ You will be setting a few configurations, then filling out a few forms in this s
 
 2. To open SAP Web IDE, click on the **Subscriptions** tab in the navigation bar, then click the ```webide``` link in the **Application** column to open the Web IDE status page.
 
-    ![mob1-2_1.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_1.png)
+    ![mob1-2_1.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_2.png)
 
 3. On the status page, click on the **Application URL** to open Web IDE in a new browser tab.
 
@@ -37,41 +37,47 @@ You will be setting a few configurations, then filling out a few forms in this s
 
     ![mob1-2_4.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_4.png)
 
-5. In the Preferences page, click on **Optional Plugins**, check the **Hybrid App Toolkit** checkbox and click **Save**.
+5. In the Preferences page, click on **Plugins** on the left then check the **Hybrid App Toolkit** checkbox.
 
     ![mob1-2_5.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_5.png)
 
-6. Refresh the Web IDE browser tab to reload Web IDE. When you reload after selecting the Hybrid App Toolkit plugin, Web IDE will include the hybrid app configured templates you will use in this tutorial.
+6. Click **Save**, and you will see a dialog box explaining that Web IDe will refresh. The purpose of the refresh is that after selecting the Hybrid App Toolkit plugin, Web IDE will download with the hybrid app configured templates you will use in this tutorial.
 
-7. In the SAP Web IDE select the Local root, place your cursor over the **Local** folder icon and open the context menu by right-clicking. Choose **New > Project from Template** to open the new project creation wizard.
+    ![mob1-2_5.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_6.png)
+    
+7. Once SAP Web IDE reloads, close the **Tips and Tricks** dialog box, then click on **File > New > Project from Template** to open the new project creation wizard.
 
     ![mob1-2_7.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_7.png)
 
-8. On the *Template Selection* page, click on the **SAPUI5 Master Detail Kapsel Application**  and click **Next**.
+8. On the **Template Selection** page, click on the **Category** pulldown menu (where you see **Featured**) and select **SAPUI5 Mobile Application**. When the mobile templates are displayed, select the **SAPUI5 Master Detail Kapsel Application** template, then click **Next**.
 
-    ![mob1-2_8.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_8.png)
+    ![mob1-2_8.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_8a.png)
+    
+    ![mob1-2_8.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_8b.png)
 
-9. On the *Basic Information* page of the New Project wizard enter the project name **Northwind** and click **Next**.
+9. On the **Basic Information** page of the New Project wizard enter the project name `northwind` and click **Next**. The project name will also become the name of your app when deployed.
 
     ![mob1-2_9.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_9.png)
 
-10. On the *Data Connection* page, click on **Service URL** as service source.
+10. The next step is to select the data source for your app. On the **Data Connection** page, click on **Service URL** as service source.
 
     ![mob1-2_10.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_10.png)
 
-11. From the drop-down list-box select the **Northwind OData Service** entry (which is the name of the destination you created).
+11.  If you only have one *WebIDEEnabled* destination in HCP, it will be selected automatically. If you don't see the **Northwind OData Service** selected (the destination your created in the previous tutorial), click on the pull down menu and select it. 
+
+    > Note: If you don't see the the **Northwind OData Service** in the pull down menu, go back to your destination in the HCP cockpit and double-check the entries from the previous tutorial. If you make changes, reload Web IDE, then restart the procedure in this tutorial.
 
     ![mob1-2_11.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_11.png)
 
-12. After selecting the Northwind OData Service entry, enter the relative path (see below) to the OData service you will use in the field under the drop-down list-box (where it says “Paste URL here”). Be sure not to include any trailing space characters. The relative path to enter is: `/V2/Northwind/Northwind.svc`
+12. After selecting the Northwind OData Service entry, enter the relative path (see below) to the OData service you will use in the field under the drop-down list-box (where it says “Paste URL here”). Be sure not to include any trailing space characters. The relative path to enter is: `/V2/Northwind/Northwind.svc`. The URL you entered for your destination plus the relative path you enter here points to the OData Service you will use for your app.
 
     ![mob1-2_12.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_12.png)
 
-13. Click the **run** (right arrow) button to test the connection. If the connection is successful, the `CollectionSets` (`Categories`, `CustomerDemographics`, etc.) of the Northwind OData Service will be displayed on the right side. This demonstrates that your destination is working properly. Click **Next** to advance to the *Template Customization* page.
+13. Click the **run** (right arrow) button (or just press the tab key on your keyboard to shift focus) to test the connection. If the connection is successful, the Collections (**Categories**, **CustomerDemographics**, etc.) of the Northwind OData Service will be displayed on the right side. This demonstrates that your destination is working properly. Click **Next** to advance to the *Template Customization* page.
 
     ![mob1-2_13.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_13.png)
 
-14. On the *Template Customization* page you can customize the displayed values on the Project Settings, Master Section (Products List), Main Data Fields, the Detail Section (Selected Product Details) and the Information Section area.
+14. On the *Template Customization* page you will specify the displayed values on the **Project Settings**, **Master Section** (Products List), **Main Data Fields**, the **Detail Section** (Selected Product Details) and the **Information Section** area.
 
     ![mob1-2_14.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_14.png)
 
@@ -111,11 +117,11 @@ You will be setting a few configurations, then filling out a few forms in this s
 
     ![mob1-2_18.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_18.png)
 
-19. Click **Next**, and then click **Finish** to create the new Northwind application. When the generation finishes, click the Northwind project folder icon to see the project structure.
+19. Click **Finish** to create the new Northwind application. When the generation finishes, click the **Northwind project folder icon** to see the project structure.
 
     ![mob1-2_19.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_19.png)
 
-20. To run your application, select the ```index.html``` file, and click the **Run** button. Your Northwind application will open in a Web IDE preview pane.
+20. To run your application, select the **index.html** file, and click the **Run** button. Your Northwind application will open in a Web IDE preview pane.
 
     ![mob1-2_20.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_20.png)
 
@@ -125,4 +131,4 @@ You will be setting a few configurations, then filling out a few forms in this s
     ![mob1-2_21.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_21.png)
 
 ## Next Steps
-[Deploy an app to SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+ - [Deploy an app to SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
