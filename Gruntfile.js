@@ -9,9 +9,9 @@ module.exports = function(grunt) {
           // check first if filename equals folder name
           var folders = wholeName.split('/');
 
-          if(folders.length === 3 && folders[0] === 'tutorials') {
+          if (folders.length === 3 && folders[0] === grunt.option('path')) {
             // there is no subfolder for tutorials allowed
-            if(folders[1] !== fName) {
+            if (folders[1] !== fName) {
               return false;
             }
           }
@@ -32,13 +32,13 @@ module.exports = function(grunt) {
           var chunks = fName.split('-');
 
           // allow only up to 5 unqiue keywords
-          if(chunks.length > 6) {
+          if (chunks.length > 6) {
             return false;
           }
 
           // check for common English stop words
           for (var i = 0; i < chunks.length; i++) {
-            if(stopwords.indexOf(chunks[i]) > -1) {
+            if (stopwords.indexOf(chunks[i]) > -1) {
               return false;
             }
           }
@@ -48,8 +48,7 @@ module.exports = function(grunt) {
         error: 'Error: {filename} does not pass the filename conventions'
       },
       src: [
-        '**/*.md',
-        '!node_modules/**/**'
+        grunt.option('path')
       ]
     },
     files_check: {
@@ -68,8 +67,7 @@ module.exports = function(grunt) {
           maxFileNameWidth: 100
         },
         src: [
-          '**/*.md',
-          '!node_modules/**/**'
+          grunt.option('path')
         ]
       }
     },
@@ -80,8 +78,7 @@ module.exports = function(grunt) {
       },
       all: {
         src: [
-          '**/*.md',
-          '!node_modules/**/**'
+          grunt.option('path')
         ]
       }
     },
@@ -106,7 +103,35 @@ module.exports = function(grunt) {
         }
       },
       all: {
-        src: ['**/*.md', '!node_modules/**/**'] // glob pattern. files path that include links to checking.
+        src: [
+          grunt.option('path')
+        ]
+      }
+    },
+    copy: {
+      test: {
+        files: [{
+          expand: true,
+          cwd: 'dependency-mods/grunt-files-check/',
+          dest: 'node_modules/grunt-files-check/tasks/',
+          src: '*/*',
+          flatten: true,
+          filter: 'isFile'
+        }, {
+          expand: true,
+          cwd: 'dependency-mods/grunt-deadlink/',
+          dest: 'node_modules/grunt-deadlink/tasks/',
+          src: '*/*',
+          flatten: true,
+          filter: 'isFile'
+        }, {
+          expand: true,
+          cwd: 'dependency-mods/grunt-filenames/',
+          dest: 'node_modules/grunt-filenames/tasks/',
+          src: '*/*',
+          flatten: true,
+          filter: 'isFile'
+        }]
       }
     }
   });
@@ -115,7 +140,16 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-deadlink');
   grunt.loadNpmTasks('grunt-files-check');
   grunt.loadNpmTasks('grunt-filenames');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
-  grunt.registerTask('test', ['filenames', 'files_check', 'mdspell', 'deadlink']);
+  grunt.registerTask('setuptests', ['copy:test']);
+  grunt.registerTask('tests', ['filenames', 'files_check', 'mdspell', 'deadlink']);
+  grunt.registerTask('test', 'Run tests within specfic folder', function(path) {
+    if (path === null) {
+      grunt.log.write('Proceeding with all Markdown for testing ...');
+      grunt.option('path', '**/*.md');
+    }
 
+    grunt.task.run('tests');
+  });
 };
