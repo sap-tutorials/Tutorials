@@ -16,9 +16,10 @@ In this tutorial you will learn how to add authenication and authorization to yo
 
 ### Time to Complete
 **10 min**
- 
 
  >Please note that HCP adheres to Java standards to manage authentication and authorization.
+
+---
 
 1. In order to activate authentication and establish authorization we have to apply the respective security settings in the **web.xml** configuration file. The full **web.xml** contents are below:
 
@@ -60,7 +61,7 @@ In this tutorial you will learn how to add authenication and authorization to yo
     </web-app>
     ```
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-1.png)
+    ![Adding security settings to the web.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-1.png)
  
 2. After successful authentication the application can access users’ principal information using standard servlet APIs. To illustrate that, make the following changes to the **HelloWorldServlet**:
 
@@ -102,7 +103,7 @@ In this tutorial you will learn how to add authenication and authorization to yo
 
     >Note: The reason we also had to implement the “doPost()” method is related to specifics of the SAML 2.0 authentication process  flow. For more information please refer to the [respective parts](https://help.hana.ondemand.com/help/frameset.htm?e637f62abb571014857cb0232adc43a7.html) of the SAP HANA Cloud Platform online documentation.
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-2.png)
+    ![Modifying the doGet() and doPost() methods in the Java Servlet](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-2.png)
 
 
 3. To remove the syntax errors, you need to organize import statements via the respective context menu **Source > Organize imports** of the main code editor window. Save your changes.
@@ -115,11 +116,11 @@ In this tutorial you will learn how to add authenication and authorization to yo
 
     Within the Users tab you can manage local users. Let’s create a simple test user with the user id “test” and a password of your choice. Save your changes.
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-5.png)
+    ![Adding a user to the local Java Server](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-5.png)
 
 6. Now, when you navigate to the HelloWorldServlet with the URL <http://localhost:8080/weatherapp/hello> you’ll first be prompted to enter your user credentials before you are forwarded to the requested servlet. If the authentication was successful you should now see a personalized welcome message instead of the dull “Hello World!” we saw earlier. 
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-6.png)
+    ![Running the Java app with authentication enabled](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-6.png)
  
 
 ## Next Steps

@@ -17,11 +17,13 @@ In this tutorial you will implement a simple responsive, mobile-compatible user 
 ### Time to Complete
 **15 min**
 
+---
+
 1. Create a `weather_app` folder underneath the **webapp** folder.
 
 2. In that **weather_app** folder create another sub-folder called `view`.
 
-3. Next create the following JavaScript files:
+3. Next create the following JavaScript and XML files:
 
     - `/weather_app/view/App.view.xml`
     - `/weather_app/view/Details.controller.js`
@@ -33,7 +35,7 @@ In this tutorial you will implement a simple responsive, mobile-compatible user 
 
     >Note that **Component.js** is in the **weather_app** directory, not the **weather_app/view** directory, and you must create the **util** directory for the **formatter.js** file. 
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part9/e2e_09-3.png)
+    ![Project explorer for UI5 view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part9/e2e_09-3.png)
  
 4. Copy and paste the content from GitHub into the respective files and familiarize yourself with the content of the individual files. 
 
@@ -50,7 +52,7 @@ In this tutorial you will implement a simple responsive, mobile-compatible user 
 
 6. Publish/deploy your updated app and navigate your browser to the root URL: <http://localhost:8080/weatherapp>. After successful authentication you should see a fully operational UI.
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part9/e2e_09-6.png)
+    ![App example showing weather info for a specific city](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part9/e2e_09-6.png)
 
     >Note: Feel free beautify the UI by applying formatters and respective icons etc. 
 

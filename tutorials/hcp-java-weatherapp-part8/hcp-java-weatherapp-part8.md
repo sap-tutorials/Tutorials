@@ -23,12 +23,14 @@ For this part of the series, you will consume a RESTful weather service that ret
 ### Time to Complete
 **10 min**
 
+---
+
 1. Once you have your APPID, create a new service class with the following properties:
 
     - **Package name:** `com.sap.hana.cloud.samples.weatherapp.api`
     - **Classname:** `WeatherService`
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-1.png)
+    ![Creating a new Java class](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-1.png)
  
 2. Replace the contents of the **WeatherService.java** file with [this code from Github](https://raw.githubusercontent.com/SAP/cloud-weatherapp/0f16e22720cbc5032e9a63af4ee95e2ead6e0761/src/main/java/com/sap/hana/cloud/samples/weatherapp/api/WeatherService.java) and save your changes.
 
@@ -46,7 +48,7 @@ For this part of the series, you will consume a RESTful weather service that ret
     </init-param>
     ```
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-3.png)
+    ![Modifying the web.xml file to include the new service](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-3.png)
 
 4. Within the code we are obtaining a reference to an HttpDestination with the logical name “openweathermap-destination” via JNDI, hence we need to create that destination. For that purpose, double-click on the local server in the Servers view.
 
@@ -56,7 +58,7 @@ For this part of the series, you will consume a RESTful weather service that ret
     - **Type:** `HTTP`
     - **URL:** `http://api.openweathermap.org/data/2.5/weather?APPID=YOUR_APPID`
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-4.png)
+    ![Adding a new destination to the local web server](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-4.png)
  
 5. Similar to what we have done to register the DataSource in the **web.xml** file, we also need to specify the HTTP destination in the **web.xml** file. Open it and enter the following code snippet underneath the already existing tag. 
 
@@ -67,12 +69,12 @@ For this part of the series, you will consume a RESTful weather service that ret
     </resource-ref>
     ```
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-5.png)
+    ![Adding the HTTP destination to the web.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-5.png)
  
 
 6. Save your changes and deploy/publish the application again. After successful authenticating yourself, navigate to the following URL: <http://localhost:8080/weatherapp/api/v1/weather?id=2158177>
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-6.png)
+    ![Testing the new weather destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-6.png)
  
 7. One more thing: it would actually be nice to be able to traverse the path and query for weather information in a more RESTful manner via a URL pattern like: `/api/v1/cities/{id}/weather`. Let’s add a respective method to the **FavoriteCityService** class:
 
@@ -87,7 +89,7 @@ For this part of the series, you will consume a RESTful weather service that ret
     }
     ```
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-7.png)
+    ![Supporting a new URL by adding an @Path annotation](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-7.png)
 
     >Note: Since working behind corporate firewalls is a common cause of frustration I want to point out how to accomodate this. if your firewall requires a proxy for outbound communication you need to start your local server with proxy settings as follows: 
 
@@ -102,7 +104,7 @@ For this part of the series, you will consume a RESTful weather service that ret
         - Dhttps.proxyPort=
     - Choose OK
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-Note.png)
+    ![Modifying launch configuration when running behind a firewall](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-Note.png)
  
 
 ## Next Steps

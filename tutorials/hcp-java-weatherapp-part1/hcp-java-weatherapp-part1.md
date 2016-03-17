@@ -31,6 +31,8 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
 ### Time to Complete
 **10 min**
 
+---
+
 1. Create a new dynamic web project by selecting the **File > New > Dynamic Web Project** menu entry and enter the following information:
 
     - **Name:** `weatherapp`
@@ -39,7 +41,7 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
  
     Click on **Next**
  
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-1.png)
+    ![Creating a new dynamic web project](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-1.png)
 
 2. Remove the standard “src” Source folder and add a new one called `src/main/java` to create a project that adheres to the standard Maven Directory Layout.
 
@@ -47,13 +49,13 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
 
     Click on **Next**. 
  
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-2.png) 
+    ![Configuring java project](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-2.png) 
 
 3. Change the Content Directory from **WebContent** to `src/main/webapp` (again, to adhere to Maven conventions) 
 
     Click on **Finish**.
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-3.png)
+    ![specifying output directory to comply with Maven conventions](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-3.png)
 
 4. Make sure you have your **weatherapp** project folder selected, and then create a new Servlet by selecting the **File > New > Servlet** menu entry and enter the following information:
 
@@ -62,13 +64,13 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
 
     Click on **Next**.
  
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-4.png)
+    ![Creating a new servlet](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-4.png)
  
 5. Change the URL Mapping from `/HelloWorldServlet` to `/hello` to make it a bit easier to memorize.
 
     Click on **Finish** and the HelloWorldServlet.java file will open in the editor.
  
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-5.png)
+    ![Changing the Servlet URL mapping](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-5.png)
 
 6. Now we need to do our first bit of coding. Navigate to the servlet’s **doGet()** method and replace the **TODO comment** with the following line of code and save your changes:
 
@@ -76,7 +78,7 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
     response.getWriter().println("Hello World!");
     ```
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-6.png)
+    ![Modifying the doGet() method](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-6.png)
 
 7. Deploy the application to your local server by using the **Run as > Run on Server** context menu of the **HelloWorldServlet** node in the Project Explorer view.
 
@@ -84,7 +86,7 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
 
     Click on **Finish**. The internal browser is now started and displays the traditional message marking the first step into a new programmer’s journey. 
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-8.png)
+    ![Creating a new local Java Server to run your app](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-8.png)
 
 
 ## Next Steps

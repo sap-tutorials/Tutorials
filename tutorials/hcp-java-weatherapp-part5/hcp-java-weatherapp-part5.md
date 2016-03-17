@@ -17,6 +17,8 @@ In this tutorial you will learn how to expose RESTful services using a library c
 ### Time to Complete
 **10 min**
 
+---
+
 1. First, we need to add the dependency references to Apache CXF in the **pom.xml** file. Insert the XML snippet below just below the **Servlet** dependency section.
 
     ```xml
@@ -38,7 +40,7 @@ In this tutorial you will learn how to expose RESTful services using a library c
     </dependency>
     ```
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-1.png)
+    ![Adding Apache CXF to the pom.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-1.png)
  
 2. We also need to specify the corresponding CXF version property at the end of the **\<properties>** tag in **pom.xml**. See the image below for where to insert this snippet. 
 
@@ -46,7 +48,7 @@ In this tutorial you will learn how to expose RESTful services using a library c
     <org.apache.cxf-version>3.0.0</org.apache.cxf-version>
     ```
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-2.png)
+    ![Adding Apache CXF to pom.xml properties element](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-2.png)
  
 3. Next, create a new Class via the context menu entry **New > Class** of the **weatherapp** node in the Project Explorer. Enter the following information:
 
@@ -55,7 +57,7 @@ In this tutorial you will learn how to expose RESTful services using a library c
     
     Click on **Finish**.
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-3.png)
+    ![Adding a new Java class](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-3.png)
  
 4. Replace the contents of **AuthenticationService.java** with the following and save your changes.
 
@@ -92,7 +94,7 @@ In this tutorial you will learn how to expose RESTful services using a library c
     }
     ```
     
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-4.png)
+    ![Building out the new Java class](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-4.png)
 
 
 5. Open the **web.xml** configuration file and copy and paste the following lines of code in between the closing **\</servlet-mapping>** and the opening **\<login-config>** tags:
@@ -115,7 +117,7 @@ In this tutorial you will learn how to expose RESTful services using a library c
     </servlet-mapping>
     ```
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-5.png)
+    ![Modifying the web.xml file for REST services](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-5.png)
 
 6. With this, we have registered (Apache) CXF as a Servlet that listens to incoming requests using the URL-pattern: `/api/v1/*`. Furthermore, we registered our AuthenticationService class as one of the RESTful services. During startup, CXF will introspect the class and use the provided JAX-RS annotations to properly configure our service.
 
@@ -123,7 +125,7 @@ In this tutorial you will learn how to expose RESTful services using a library c
 
 7. Navigate to the following URL: <http://localhost:8080/weatherapp/api/v1/auth>. After successful authentication you should see your username.
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-7.png)
+    ![Running the Java app with RESTful API enabled](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-7.png)
 
  
 ## Next Steps

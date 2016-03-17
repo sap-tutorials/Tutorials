@@ -25,31 +25,31 @@ Since any project that is created initially in the SAP Web IDE contains a ```neo
 
 2. In SAP Web IDE, select the **northwind** project folder and open the context menu by right-clicking on it. Choose **Deploy > Deploy to SAP HANA Cloud Platform**.
 
-    ![mob1-3_2.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_2.png)
+    ![HCP Deployment contextual menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_2.png)
 
 3. If this is your first time deploying an app to the SAP HANA Cloud Platform, you may see a dialog box requesting information to configure your Git repository. Enter your **email** and **username** and click **OK**.
 
-    ![mob1-3_3.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_3.png)
+    ![HCP Git user login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_3.png)
 
 4. You will be prompted for your SAP HANA Cloud Platform Password and click on **Login**.
 
-    ![mob1-3_4.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_4.png)
+    ![HCP user validation](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_4.png)
 
 5. Because all HTML application names on HCP are lower case, the application name will be converted (if required) to lower-case letters. Check the **Connect to the SAP HANA Cloud Platform Git repository...** checkbox, verify the version number is **1.0.0** and the **Activate** check box is marked. Click on **Deploy**.
 
-    ![mob1-3_5.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_5.png)
+    ![HCP HTML5 Deployment dialog box](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_5.png)
 
 6. The deployment process will take a few seconds, and after it has finished, you will see a success message.
 
-    ![mob1-3_6.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_6.png)
+    ![HCP deployment confirmation dialog box](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_6.png)
 
 7. Click on **Open the active version of the application** link to see your app running on HCP. Your app should look like this:
 
-    ![mob1-3_7.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_7.png)
+    ![Basic master-detail app using Northwind OData Service](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_7.png)
 
 8. You can now enter the application URL in your mobile device browser to see it running there.
 
-    ![mob1-3_8.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_8.png)
+    ![iPhone view of master-detail app showing responsive design adaptation](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_8.png)
 
 ## Next Steps
  - [Add labels and a field to your app](http://go.sap.com/developer/tutorials/hcp-webide-add-labels-field.html)

@@ -17,6 +17,7 @@ In the final part of this tutorial series you will learn how to deploy your Java
 ### Time to Complete
 **10 min**
 
+---
 
 1. Create a new server by opening up the corresponding context menu on the Servers view and selecting **New > Server**. Enter the following and click **Next**.
 
@@ -24,7 +25,7 @@ In the final part of this tutorial series you will learn how to deploy your Java
     - **Landscape host:** `hanatrial.ondemand.com`
     - **Server name:** `HCP on hanatrial` 
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-1.png)
+    ![Creating the SAP HANA Cloud Platform server in your project](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-1.png)
  
 
 2. Configure the new server with the following and click **Next**.
@@ -35,7 +36,7 @@ In the final part of this tutorial series you will learn how to deploy your Java
     - **User name:** `<userid>`
     - **Password:** `<SCN password>`
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-2.png)
+    ![Configuring the HCP server](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-2.png)
 
 3. Select the weatherapp on the list on the left and add it to the (remote) server by clicking on the **Add** button. Then, click on **Finish**.  
 
@@ -48,11 +49,11 @@ In the final part of this tutorial series you will learn how to deploy your Java
     - **Proxy Type:** `Internet`
     - **Authentication:** `NoAuthentication` 
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-4.png)
+    ![Creating a new destination in HCP for the external weather service](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-4.png)
 
 5. Finally publish the application to the (remote) server and run it. You app should look like this:
 
-    ![](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-5.png)
+    ![Screenshot of the Java app running on HCP](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-5.png)
  
 ##Next Steps
   - [Return to the HCP tutorial catalog](https://hcp.sap.com/developers/TutorialCatalog.html#/) to select other tutorials
