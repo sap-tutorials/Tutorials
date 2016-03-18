@@ -9,7 +9,7 @@ tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/m
  - **Tutorials:** [Add labels and a new field to your app](http://go.sap.com/developer/tutorials/hcp-webide-add-labels-field.html)
 
 ## Next Steps
- - [Round the currency field using JavaScript](http://go.sap.com/developer/tutorials/hcp-webide-round-currency.html)
+ - [Insert a currency symbol for display](http://go.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)
 
 ##Details
 
@@ -77,4 +77,4 @@ You will also learn how to add a field to your app. This is useful since the tem
 If the numbers are not rounded, remember to clear the cache as described at the bottom of the [Add labels and a new field to your app](http://go.sap.com/developer/tutorials/hcp-webide-add-labels-field.html) tutorial.
 
 ##Next Step:
-- [Insert a currency symbol](url)
+ - [Insert a currency symbol for display](http://go.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)
