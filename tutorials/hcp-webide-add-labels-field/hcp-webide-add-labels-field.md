@@ -14,11 +14,11 @@ tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/m
 ## Details
 
 ### You will learn
-When you built the app in previous tutorial series, the template added two fields in the detail view header (UnitsInStock and UnitsOnOrder). Those fields appear in the detail view without labels, so you will add some for them. 
+When you built the app in previous tutorial series, the template added two fields in the detail view header (UnitsInStock and UnitsOnOrder). Those fields appear in the detail view without labels, so you will add some for them.
 
  ![Application fields requiring labels](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-labels-field/mob2-1_0.png)
 
-To explore a bit more of SAP Web IDE, you will use the Web IDE search feature to identify which file to edit. 
+To explore a bit more of SAP Web IDE, you will use the Web IDE search feature to identify which file to edit.
 
 You will also learn how to add a field to your app. This is useful since the template can quickly generate a working app for you, but you are not restricted to what it generates.
 
@@ -36,13 +36,13 @@ You will also learn how to add a field to your app. This is useful since the tem
 2. In the search results, and you will see two files were found. One is in the **Detail.view.xml** file which is in the view folder. Since you want to change the detail view part of the app – that is the file to edit.
 
     >Tip: If you hover your cursor over an item in the search result list, a window opens to show some context around that item.
- 
+
     ![SAP Web IDE search pane results](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-labels-field/mob2-1_label_2.png)
 
 
-3. Double-click the UnitsInStock line in **Detail.view.xml** to open that file in the edit pane. 
+3. Double-click the UnitsInStock line in **Detail.view.xml** to open that file in the edit pane.
 
-    >Notice that the search term is highlighted in the source file. You can click on the **Search icon** again to close the search pane. 
+    >Notice that the search term is highlighted in the source file. You can click on the **Search icon** again to close the search pane.
 
     ![Clicking on SAP Web IDE search pane results](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-labels-field/mob2-1_label_3.png)
 
@@ -62,7 +62,7 @@ You will also learn how to add a field to your app. This is useful since the tem
 
     ![Labels added to fields](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-labels-field/mob2-1_label_6.png)
 
- 
+
 ### Adding a data field in the header section
 
 ---
@@ -76,13 +76,13 @@ In this section, you will add the Product ID field from the OData source to the 
     ```
 
     >Note: in this XML element, both the label (title field) and value (text field) are included.
- 
+
     ![Inserted XML view element](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-labels-field/mob2-1_field_1.png)
 
 2. Save your edits, and either:
 
     - Switch to your preview tab with Developer Tools open and select **Hard Reload** or **Empty Cache and Hard Reload**  
-    - or select the **index.html** and click the **Run** button to preview the Northwind application with the added ProductID field. If you do this, you will probably have to follow the procedure above on [Browser cache](#browser_cache) to see your change.
+    - or select the **index.html** and click the **Run** button to preview the Northwind application with the added ProductID field. If you do this, you will probably have to follow the procedure above on `Browser cache` to see your change.
 
     ![New XML view element displayed in the app](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-labels-field/mob2-1_field_2.png)
 
@@ -92,10 +92,9 @@ The browser cache will frequently prevent changes from showing up. There are a f
 
 1. Hold down the shift key while clicking the refresh icon in the browser.
 2. Turn on Developer Tools (Google Chrome: F12 on a PC, or Option-Command-I on a Mac), then right-click on the refresh icon and select **Hard Reload** or **Empty Cache and Hard Reload**
-3. If you are doing a lot of web development, when you open Developer Tools, click on the **Network** tab and then select **Disable Cache**. 
-4. If you have Developer Tools enabled, and you are contunuing to work through tutorials, it is convenient to leave the preview tab open. After you save a change in Web IDE, instead of selecting **index.html** and clicking **Run**, simply switch back to the preview tab and select **Hard Reload** or **Empty Cache and Hard Reload** to reload the app. 
+3. If you are doing a lot of web development, when you open Developer Tools, click on the **Network** tab and then select **Disable Cache**.
+4. If you have Developer Tools enabled, and you are contunuing to work through tutorials, it is convenient to leave the preview tab open. After you save a change in Web IDE, instead of selecting **index.html** and clicking **Run**, simply switch back to the preview tab and select **Hard Reload** or **Empty Cache and Hard Reload** to reload the app.
 
 
 ## Next Steps
  - [Round the currency field using JavaScript](http://go.sap.com/developer/tutorials/hcp-webide-round-currency.html)
-
