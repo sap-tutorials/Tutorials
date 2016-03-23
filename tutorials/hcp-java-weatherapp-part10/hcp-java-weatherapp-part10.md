@@ -9,7 +9,7 @@ tags: [tutorial:interest/gettingstarted, tutorial:interest/cloud, tutorial:produ
 
 ## Next Steps
  - [Return to the HCP tutorial catalog](https://hcp.sap.com/developers/TutorialCatalog.html#/) to select other tutorials
- 
+
 ## Details
 ### You will learn  
 In the final part of this tutorial series you will learn how to deploy your Java application to SAP HANA Cloud Platform.
@@ -23,10 +23,10 @@ In the final part of this tutorial series you will learn how to deploy your Java
 
     - **Server type:** `SAP HANA Cloud Platform`
     - **Landscape host:** `hanatrial.ondemand.com`
-    - **Server name:** `HCP on hanatrial` 
+    - **Server name:** `HCP on hanatrial`
 
     ![Creating the SAP HANA Cloud Platform server in your project](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-1.png)
- 
+
 
 2. Configure the new server with the following and click **Next**.
 
@@ -44,17 +44,16 @@ In the final part of this tutorial series you will learn how to deploy your Java
 
     - **Name:** `openweathermap`
     - **Type:** `HTTP`
-    - **Description:** `openweathermap service` 
+    - **Description:** `openweathermap service`
     - **URL:** `http://api.openweathermap.org/data/2.5/weather?APPID=YOUR_APPID`
     - **Proxy Type:** `Internet`
-    - **Authentication:** `NoAuthentication` 
+    - **Authentication:** `NoAuthentication`
 
     ![Creating a new destination in HCP for the external weather service](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-4.png)
 
 5. Finally publish the application to the (remote) server and run it. You app should look like this:
 
     ![Screenshot of the Java app running on HCP](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-5.png)
- 
-##Next Steps
-  - [Return to the HCP tutorial catalog](https://hcp.sap.com/developers/TutorialCatalog.html#/) to select other tutorials
 
+## Next Steps
+  - [Return to the HCP tutorial catalog](https://hcp.sap.com/developers/TutorialCatalog.html#/) to select other tutorials

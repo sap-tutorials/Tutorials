@@ -11,14 +11,14 @@ tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/m
 ## Next Steps
  - [Insert a currency symbol for display](http://go.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)
 
-##Details
+## Details
 
 ### You will learn
 The OData service provides the Unit Price field with with four decimal places. For most currencies, this can be rounded to two decimal places (or even to whole integers) depending on the users' needs. In this tutorial you will learn how to round numbers in JavaScript and where to insert a function to do the rounding in your app.
 
  ![fields without labels](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_0.png)
 
-To explore a bit more of SAP Web IDE, you will use the Web IDE search feature to identify which file to edit. 
+To explore a bit more of SAP Web IDE, you will use the Web IDE search feature to identify which file to edit.
 
 You will also learn how to add a field to your app. This is useful since the template can quickly generate a working app for you, but you are not restricted to what it generates.
 
@@ -31,33 +31,33 @@ You will also learn how to add a field to your app. This is useful since the tem
 
     ![View of OData model](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_1.png)
 
-2.  In JavaScript, the best way to round the number for display is to convert the string to a number, then use the toFixed(NUM) method to round to the specified number of decimal places. See the example below. 
+2.  In JavaScript, the best way to round the number for display is to convert the string to a number, then use the toFixed(NUM) method to round to the specified number of decimal places. See the example below.
 
     ```javascript
     product.UnitPrice = Number(product.UnitPrice).toFixed(NUM)
     ```
     Now that you know how to round the number, the trick is to figure out where to use this approach.
 
-3. To make the change so it affects the master and detail views, you want to make the change as far “upstream” as possible, which is in the **_setModel** function of **Component.js**. 
+3. To make the change so it affects the master and detail views, you want to make the change as far “upstream” as possible, which is in the **_setModel** function of **Component.js**.
 
 
     ![Beginning of _setModel function](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_3.png)
- 
+
 4. You will do this by adding an **attachRequestCompleted()** function near the top of the **_setModel** function as shown in the image below.
 
     The code to insert:
 
     ```javascript
     // Reformat UnitPrice string to show only two decimal places
-    oModel.attachRequestCompleted(function() 
+    oModel.attachRequestCompleted(function()
     {
         var NUM_DECIMAL_PLACES = 2;
-                
+
         //Get all objects
         var products = this.getModel().mContexts;
-                
+
         // loop through the objects and round to NUM_DECIMAL_PLACE
-        for (var i in products) 
+        for (var i in products)
         {
             var product = products[i].getObject();
             product.UnitPrice = Number(product.UnitPrice).toFixed(NUM_DECIMAL_PLACES);
@@ -76,5 +76,5 @@ You will also learn how to add a field to your app. This is useful since the tem
 ## Remember the browser cache
 If the numbers are not rounded, remember to clear the cache as described at the bottom of the [Add labels and a new field to your app](http://go.sap.com/developer/tutorials/hcp-webide-add-labels-field.html) tutorial.
 
-##Next Step:
+## Next Step:
  - [Insert a currency symbol for display](http://go.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)

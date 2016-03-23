@@ -62,7 +62,8 @@ module.exports = function(grunt) {
             '\!\[.*?\]\((.*?)\?token=(.*?)\)', // check for prohibited tokens in IMG tags
             '[^!]\\[.*?(here|there|file|folder|this|page)\\]\\((.*?)\\)', // avoid useless url names
             '\\>###', // avoid message box typo
-            '(.exe)(\\b)' // prohibit suspicious filetypes
+            '(.exe)(\\b)', // prohibit suspicious filetypes
+            '^[#]+\\b' // spaces after header indicators
           ],
           verbose: true,
           maxFileNameWidth: 100
