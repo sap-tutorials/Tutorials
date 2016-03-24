@@ -14,7 +14,7 @@ tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/m
 ## Details
 
 ### You will learn
-When you built the app in previous tutorial series, the template added two fields in the detail view header (UnitsInStock and UnitsOnOrder). Those fields appear in the detail view without labels, so you will add some for them.
+When you built the app in previous tutorial series, the template added two fields in the detail view header (`UnitsInStock` and `UnitsOnOrder`). Those fields appear in the detail view without labels, so you will add some for them.
 
  ![Application fields requiring labels](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-labels-field/mob2-1_0.png)
 
@@ -69,7 +69,7 @@ You will also learn how to add a field to your app. This is useful since the tem
 
 In this section, you will add the Product ID field from the OData source to the header section of the detail page just above the Units In Stock and Units On Order. To do this you will add an XML element just above the `ObjectAttribute` elements that were edited in the previous section.
 
-1. Go back to the **northwind > view> Detail.view.xml** in the edit pane (or reopen if you closed it). Add the following XML snippet inside the section as shown below.
+1. Go back to the **northwind > view > Detail.view.xml** in the edit pane (or reopen if you closed it). Add the following XML snippet inside the section as shown below.
 
     ```xml
     <ObjectAttribute title="Product ID" text="{ProductID}"/>
@@ -82,7 +82,7 @@ In this section, you will add the Product ID field from the OData source to the 
 2. Save your edits, and either:
 
     - Switch to your preview tab with Developer Tools open and select **Hard Reload** or **Empty Cache and Hard Reload**  
-    - or select the **index.html** and click the **Run** button to preview the Northwind application with the added ProductID field. If you do this, you will probably have to follow the procedure above on `Browser cache` to see your change.
+    - or select the **index.html** and click the **Run** button to preview the northwind application with the added `ProductID` field. If you do this, you will probably have to follow the procedure above on `Browser cache` to see your change.
 
     ![New XML view element displayed in the app](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-labels-field/mob2-1_field_2.png)
 
@@ -93,7 +93,7 @@ The browser cache will frequently prevent changes from showing up. There are a f
 1. Hold down the shift key while clicking the refresh icon in the browser.
 2. Turn on Developer Tools (Google Chrome: F12 on a PC, or Option-Command-I on a Mac), then right-click on the refresh icon and select **Hard Reload** or **Empty Cache and Hard Reload**
 3. If you are doing a lot of web development, when you open Developer Tools, click on the **Network** tab and then select **Disable Cache**.
-4. If you have Developer Tools enabled, and you are contunuing to work through tutorials, it is convenient to leave the preview tab open. After you save a change in Web IDE, instead of selecting **index.html** and clicking **Run**, simply switch back to the preview tab and select **Hard Reload** or **Empty Cache and Hard Reload** to reload the app.
+4. If you have Developer Tools enabled, and you are continuing to work through tutorials, it is convenient to leave the preview tab open. After you save a change in Web IDE, instead of selecting **index.html** and clicking **Run**, simply switch back to the preview tab and select **Hard Reload** or **Empty Cache and Hard Reload** to reload the app.
 
 
 ## Next Steps

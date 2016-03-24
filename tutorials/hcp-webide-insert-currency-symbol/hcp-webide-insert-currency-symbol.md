@@ -21,7 +21,7 @@ Ideally, an OData service should specify the currency symbol or currency type fo
 
 ---
 
-1. The recommended way to insert strings in your app is to take advantage of the internationalization (i18) and localization capabilities that are built into the SAPUI5 framework. To begin, open the **northwind > i18n > messageBundle.properties file** and insert the line below. You can change the symbol to $, or whichever symbol you would like to display.
+1. The recommended way to insert strings in your app is to take advantage of the internationalization (i18n) and localization capabilities that are built into the SAPUI5 framework. To begin, open the **northwind > i18n > messageBundle.properties file** and insert the line below. You can change the symbol to $, or whichever symbol you would like to display.
 
     ```xml
     currencySymbol=€
@@ -34,12 +34,12 @@ Ideally, an OData service should specify the currency symbol or currency type fo
     ```xml
     {i18n>currencySymbol}
     ```
-3. Edit the **Master.view.xml** file by inserting the reference to **currencySymbol** just before the **{UnitPrice}** reference as shown below (be sure to insert the reference within the same double quotes as the **{UnitPrice}** field.
+3. Edit the `Master.view.xml` file by inserting the reference to `currencySymbol` just before the `{UnitPrice}` reference as shown below (be sure to insert the reference within the same double quotes as the `{UnitPrice}` field.
 
 
     ![Edited Master.view.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-insert-currency-symbol/mob2-3_3.png)
 
-4. Edit the **Detail.view.xml** file by inserting the reference to **currencySymbol** just before the **{UnitPrice}** reference as shown below (again, be sure to insert the reference within the same double quotes as the **{UnitPrice}**.
+4. Edit the `Detail.view.xml` file by inserting the reference to `currencySymbol` just before the `{UnitPrice}` reference as shown below (again, be sure to insert the reference within the same double quotes as the `{UnitPrice}`.
 
     ![Edited Detail.view.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-insert-currency-symbol/mob2-3_4.png)
 
@@ -50,7 +50,7 @@ Ideally, an OData service should specify the currency symbol or currency type fo
 
 6. If your symbol does not show up:
     * Make sure you have saved your edits
-    * Verify that you inserted `{i18n>currencySymbol}` between the {UnitPrice} double quotes
+    * Verify that you inserted `{i18n>currencySymbol}` between the `{UnitPrice}` double quotes
     * Do a hard-reload or clear cache. See the note below.
 
 ## Remember the browser cache

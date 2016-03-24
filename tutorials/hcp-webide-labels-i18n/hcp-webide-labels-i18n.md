@@ -6,7 +6,7 @@ tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/m
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Insert a currency symbol for display](http://go.sap.com/developer/tutorials/insert-currency-symbol.html)
+ - **Tutorials:** [Insert a currency symbol for display](http://go.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)
 
 ## Next Steps
  - [Add A Tab and additional fields in an SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-add-tab.html)
@@ -14,7 +14,7 @@ tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/m
 ## Details
 
 ### You will learn
-In the previous tutorials you added some labels to the details view by inserting a `title=”xxx”` XML snippet into an **ObjectAttribute** element. In this tutorial, you will extract those strings to the **messageBundle.properties** file (which you just used to insert the currency symbol) and insert a reference to them in place of the string literals in your app. The appearance of the app will not change, but having the strings in one place will make the app easier to maintain, and will enable the support of different languages and locales (which you will do as part of this series). The three labels you will work with in this tutorial are:
+In the previous tutorials you added some labels to the details view by inserting a `title=”xxx”` XML snippet into an `ObjectAttribute` element. In this tutorial, you will extract those strings to the **messageBundle.properties** file (which you just used to insert the currency symbol) and insert a reference to them in place of the string literals in your app. The appearance of the app will not change, but having the strings in one place will make the app easier to maintain, and will enable the support of different languages and locales (which you will do as part of this series). The three labels you will work with in this tutorial are:
 
  * Product ID
  * Units In Stock

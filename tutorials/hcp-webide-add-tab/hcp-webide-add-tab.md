@@ -6,7 +6,7 @@ tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/m
 
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **Tutorials:** [Insert a currency symbol for display](http://go.sap.com/developer/tutorials/insert-currency-symbol.html)
+ - **Tutorials:** [Insert a currency symbol for display](http://go.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)
 
 ## Next Steps
  - [Calculate and display a new field in an SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-calculate-new-field.html)
@@ -15,7 +15,7 @@ tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/m
 
 ### You will learn
 When you created your initial app, SAP Web IDE template included one tab containing a few fields from the Supplier collection. In this tutorial, you will add another tab using the Web IDE Layout Editor and make a few other changes:
- * Change the icon for the Supplier tab * Add a new Details tab to hold other Product data * Create a view fragment file for the new tab * Add in other Supplier related data fields to the Supplier tab * Extract the Supplier fragment title field to the messageBundle.properties file
+ * Change the icon for the Supplier tab * Add a new Details tab to hold other Product data * Create a view fragment file for the new tab * Add in other Supplier related data fields to the Supplier tab * Extract the Supplier fragment title field to the `messageBundle.properties` file
 
 ### Time to Complete
 **< 5 min**
@@ -26,11 +26,11 @@ When you created your initial app, SAP Web IDE template included one tab contain
 
 1. Log into your HCP account and open SAP Web IDE in a Google Chrome browser.
 
-    Open th **northwind** project folder and then the **view** folder. Right-click on **Detail.view.xml** and select **Open With > Layout Editor** (you must use Google Chrome to open the Layout Editor).
+    Open the `northwind` project folder and then the `view` folder. Right-click on `Detail.view.xml` and select **Open With > Layout Editor** (you must use Google Chrome to open the Layout Editor).
 
     ![Layout Editor](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_icon_1.png)
 
-2. When the Layout Editor opens, click on the **Supplier** icon. The **Properties and Data pane** will open.
+2. When the Layout Editor opens, click on the `Supplier` icon. The **Properties and Data pane** will open.
 
     ![Properties and Data pane](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_icon_2.png)
 
@@ -48,9 +48,9 @@ When you created your initial app, SAP Web IDE template included one tab contain
 
 
 ### Add a new Details tab to hold other Product data
-1. In SAPUI5, a tab is called an **IconTabFilter**. To add one to your app, click on **Container** in the palette pane. Click on the **Icon Tab Filter**, then drag and drop it next to the **Supplier** tab.
+1. In SAPUI5, a tab is called an `IconTabFilter`. To add one to your app, click on **Container** in the palette pane. Click on the **Icon Tab Filter**, then drag and drop it next to the **Supplier** tab.
 
-    Depending on the path you drag, the new tab may snap to the first (left) spot. You can drag it left and right to place it on the right of the **Supplier IconTabFilter** before letting the mouse button up. You can also release the mouse button to place it where it snaps to first, then click and drag it to the position you want.
+    Depending on the path you drag, the new tab may snap to the first (left) spot. You can drag it left and right to place it on the right of the **Supplier `IconTabFilter`** before letting the mouse button up. You can also release the mouse button to place it where it snaps to first, then click and drag it to the position you want.
 
     ![adding a new Icon Tab Filter](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_tab_1.png)
 
@@ -78,37 +78,37 @@ Content for a new tab is displayed in a view fragment file.
     ```xml
     <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m">    <l:Grid defaultSpan="L12 M12 S12" id="productFragment" width="auto">    <l:content>    <f:SimpleForm columnsL="1" columnsM="1" editable="false" emptySpanL="4" emptySpanM="4" labelSpanL="3" labelSpanM="3"layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" title="{i18n>tab_product_sub_title}">    <f:content>    <Label text="{i18n>label_CategoryID}"/>    <Text text="{CategoryID}"/>    <Label text="{i18n>label_ReorderLevel}"/>    <Text text="{ReorderLevel}"/>    <Label text="{i18n>label_Discontinued}"/>    <Text text="{Discontinued}"/>    </f:content>    </f:SimpleForm>    </l:content>    </l:Grid>    </core:FragmentDefinition>    ```
 
-    In addition to the standard XML wrapper, there are a few key items to call out in the source above:    - In the `Grid` element, the id is set to `productFragment`. This allows you to programmatically refer to the grid in the future if needed    - In the `SimpleForm` element, the title is set to a string in **messageBundle.properties**. You will add that entry in the next step    - In the `f:content` element, three additional fields from the Products collection are added (Label and the string) The label strings will be added next.
+    In addition to the standard XML wrapper, there are a few key items to call out in the source above:    - In the `Grid` element, the id is set to `productFragment`. This allows you to programmatically refer to the grid in the future if needed    - In the `SimpleForm` element, the title is set to a string in `messageBundle.properties`. You will add that entry in the next step    - In the `f:content` element, three additional fields from the Products collection are added (Label and the string) The label strings will be added next.
 
     ![ProductDetailInfoForm.fragment.xml](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_fragment_3.png)
 
-4. Open **messageBundle.properties** and replace all of the content of the file with the lines below. These are the strings for the new Product tab, as well as the Supplier tab (which you will edit next).
+4. Open `messageBundle.properties` and replace all of the content of the file with the lines below. These are the strings for the new Product tab, as well as the Supplier tab (which you will edit next).
     ```xml
     masterTitle=Products    detailTitle=Product Inventory Details    notFoundTitle=Not Found    notFoundText=The requested resource was not found    masterListNoDataText=No entities    masterSearchPlaceholder=Search    masterSearchTooltip=Search for product name    currencySymbol=€    label_ProductID=Product ID    label_UnitsInStock=Units In Stock    label_UnitsOnOrder=Units On Order    label_CategoryID=Category ID    label_ReorderLevel=Product Reorder Level    label_Discontinued=Discontinued status    label_SupplierID=Supplier ID    label_CompanyName=Company Name    label_ContactName=Contact Name    label_ContactTitle=Contact Title    label_Address=Address    label_City=City    label_PostalCode=Postal Code    label_Country=Country    label_Region=Region    label_Phone=Phone    label_Fax=Fax    label_HomePage=Home page
     tab_supplier_short_title=Supplier    tab_supplier_sub_title=Supplier Details    tab_product_short_title=Product    tab_product_sub_title=Product Details    ```
 
-    Your **messageBundle.properties** file should look like this now.:
+    Your `messageBundle.properties` file should look like this now.:
 
     ![messageBundle.properties file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_fragment_4.png)
 
 
 ### Add in other Supplier related data fields to the Supplier tab
 
-1. Open **DetailInfoForm.fragment.xml** (which is the fragment for the **Supplier** tab). In the **f:SimpleForm** element, replace the `title="Supplier"` attribute with `title="{i18n>tab_supplier_sub_title}"` and save your change. Be sure to keep the double quotes. This replaces the string inserted by the template with a reference to one in the **messageBundle.properties** file.
+1. Open `DetailInfoForm.fragment.xml` (which is the fragment for the **Supplier** tab). In the `f:SimpleForm` element, replace the `title="Supplier"` attribute with `title="{i18n>tab_supplier_sub_title}"` and save your change. Be sure to keep the double quotes. This replaces the string inserted by the template with a reference to one in the `messageBundle.properties` file.
 
     ![DetailInfoForm title](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_supplier_fields_1.png)
 
-2. The Web IDE template inserted three of the fields in the Suppliers Collection (which is linked to the Product Collection). To add in all of the fields available, open **DetailInfoForm.fragment.xml**, and replace all of the content within the `<f:content>` element with the source below, **Beautify** and save your edits.
+2. The Web IDE template inserted three of the fields in the Suppliers Collection (which is linked to the Product Collection). To add in all of the fields available, open `DetailInfoForm.fragment.xml`, and replace all of the content within the `<f:content>` element with the source below, **Beautify** and save your edits.
 
     ```xml
     <Label text="{i18n>label_SupplierID}"/>    <Text text="{SupplierID}"/>    <Label text="{i18n>label_CompanyName}"/>    <Text text="{CompanyName}"/>    <Label text="{i18n>label_ContactName}"/>    <Text text="{ContactName}"/>    <Label text="{i18n>label_ContactTitle}"/>    <Text text="{ContactTitle}"/>    <Label text="{i18n>label_Address}"/>    <Text text="{Address}"/>    <Label text="{i18n>label_City}"/>    <Text text="{City}"/>    <Label text="{i18n>label_PostalCode}"/>    <Text text="{PostalCode}"/>    <Label text="{i18n>label_Country}"/>    <Text text="{Country}"/>    <Label text="{i18n>label_Region}"/>    <Text text="{Region}"/>    <Label text="{i18n>label_Phone}"/>    <Text text="{Phone}"/>    <Label text="{i18n>label_Fax}"/>    <Text text="{Fax}"/>    <Label text="{i18n>label_HomePage}"/>    <Text text="{HomePage}"/>    ```
 
-    Your **DetailInfoForm.fragment.xml** file should look like this now:
+    Your `DetailInfoForm.fragment.xml` file should look like this now:
 
     ![DetailInfoForm fields](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_supplier_fields_2.png)
 
-3. The last step is to add a `content` element to link the new fragment file to the Details Icon Tab Filter. Open **Detail.view.xml**, replace the text within the **items** element with the text below, **Beautify** and save your changes.    ```xml    <IconTabFilter icon="sap-icon://supplier" key="Supplier" text="{i18n>tab_supplier_short_title}">    <content>    <core:Fragment fragmentName="com.test.northwind.view.DetailInfoForm" type="XML"/>    </content>    </IconTabFilter>    <IconTabFilter count="" icon="sap-icon://product" iconColor="Default" id="__filter3"  text="{i18n>tab_product_short_title}">    <content>    <core:Fragment fragmentName="com.test.northwind.view.ProductDetailInfoForm" type="XML"/>    </content>    </IconTabFilter>   ```    The XML you pasted in did a few things:
-    - Changed the label on the **Supplier** tab to a string in the **messageBundle.properties** file (but otherwise that **IconTabFilter** tag was unchanged)    - Changed the Product **IconTabFilter** from a self-closing element to a multi-line element (this is necessary to add in the **content** element) and set the label string    - Added a **content** element for the Product tab with a reference to the new fragment you created
+3. The last step is to add a `content` element to link the new fragment file to the Details Icon Tab Filter. Open `Detail.view.xml`, replace the text within the `items` element with the text below, **Beautify** and save your changes.    ```xml    <IconTabFilter icon="sap-icon://supplier" key="Supplier" text="{i18n>tab_supplier_short_title}">    <content>    <core:Fragment fragmentName="com.test.northwind.view.DetailInfoForm" type="XML"/>    </content>    </IconTabFilter>    <IconTabFilter count="" icon="sap-icon://product" iconColor="Default" id="__filter3"  text="{i18n>tab_product_short_title}">    <content>    <core:Fragment fragmentName="com.test.northwind.view.ProductDetailInfoForm" type="XML"/>    </content>    </IconTabFilter>   ```    The XML you pasted in did a few things:
+    - Changed the label on the **Supplier** tab to a string in the `messageBundle.properties` file (but otherwise that `IconTabFilter` tag was unchanged)    - Changed the Product `IconTabFilter` from a self-closing element to a multi-line element (this is necessary to add in the `content` element) and set the label string    - Added a `content` element for the Product tab with a reference to the new fragment you created
 
     ![content element](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_supplier_fields_3.png)
 

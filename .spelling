@@ -1,3 +1,5 @@
+_app
+App.view.xml
 artifacts
 backend
 Bieser
@@ -6,13 +8,19 @@ classname
 Classname
 Cmehil
 CodeJam
+Color
+Component.js
 CustomerDemographics
 data-center
 DataSource
+Detail.view.xml
+Details.controller.js
+Details.view.xml
 dialog
 EclipseLink
 favorite
 favorites
+formatter.js
 Github
 github.com
 go.sap.com
@@ -26,9 +34,12 @@ JAVA_HOME
 JAX-RS
 JPA
 Kapsel
+List.controller.js
+List.view.xml
 MacDown
 Maven
 Maven-based
+messageBundle.properties
 META-INF
 NetWeaver
 northwind
@@ -51,6 +62,8 @@ setup
 tutorials.html
 UI5
 url
+util
+weather_app
 weatherapp
 web.xml
 webapp
