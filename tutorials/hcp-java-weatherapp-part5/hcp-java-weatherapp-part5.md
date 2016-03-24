@@ -9,10 +9,10 @@ tags: [tutorial:interest/gettingstarted, tutorial:interest/cloud, tutorial:produ
 
 ## Next Steps
  - [End-to-End Weather App Scenario Part 6](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part6.html)
- 
+
 ## Details
 ### You will learn  
-In this tutorial you will learn how to expose RESTful services using a library called [Apache CXF](http://cxf.apache.org/), which is one of the most often used implementations of the [JAX-RS](https://jax-rs-spec.java.net/) standard. 
+In this tutorial you will learn how to expose RESTful services using a library called [Apache CXF](http://cxf.apache.org/), which is one of the most often used implementations of the [JAX-RS](https://jax-rs-spec.java.net/) standard.
 
 ### Time to Complete
 **10 min**
@@ -41,39 +41,39 @@ In this tutorial you will learn how to expose RESTful services using a library c
     ```
 
     ![Adding Apache CXF to the pom.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-1.png)
- 
-2. We also need to specify the corresponding CXF version property at the end of the **\<properties>** tag in **pom.xml**. See the image below for where to insert this snippet. 
+
+2. We also need to specify the corresponding CXF version property at the end of the **\<properties>** tag in **pom.xml**. See the image below for where to insert this snippet.
 
     ```xml
     <org.apache.cxf-version>3.0.0</org.apache.cxf-version>
     ```
 
     ![Adding Apache CXF to pom.xml properties element](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-2.png)
- 
+
 3. Next, create a new Class via the context menu entry **New > Class** of the **weatherapp** node in the Project Explorer. Enter the following information:
 
     - **Package name:** `com.sap.hana.cloud.samples.weatherapp.api`
     - **Classname:** `AuthenticationService`
-    
+
     Click on **Finish**.
 
     ![Adding a new Java class](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-3.png)
- 
-4. Replace the contents of **AuthenticationService.java** with the following and save your changes.
+
+4. Replace the contents of `AuthenticationService.java` with the following and save your changes.
 
     ```java
     package com.sap.hana.cloud.samples.weatherapp.api;
-    
+
     import javax.ws.rs.GET;
     import javax.ws.rs.Path;
     import javax.ws.rs.Produces;
     import javax.ws.rs.core.Context;
     import javax.ws.rs.core.MediaType;
     import javax.ws.rs.core.SecurityContext;
-    
+
     @Path("/auth")
     @Produces({ MediaType.APPLICATION_JSON })
-    public class AuthenticationService 
+    public class AuthenticationService
     {
     	@GET
     	@Path("/")
@@ -87,13 +87,13 @@ In this tutorial you will learn how to expose RESTful services using a library c
     		}
     		catch (Exception ex)
     		{
-    			ex.printStackTrace(); // lazy 
+    			ex.printStackTrace(); // lazy
     		}
     		return retVal;
     	}
     }
     ```
-    
+
     ![Building out the new Java class](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-4.png)
 
 
@@ -119,7 +119,7 @@ In this tutorial you will learn how to expose RESTful services using a library c
 
     ![Modifying the web.xml file for REST services](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-5.png)
 
-6. With this, we have registered (Apache) CXF as a Servlet that listens to incoming requests using the URL-pattern: `/api/v1/*`. Furthermore, we registered our AuthenticationService class as one of the RESTful services. During startup, CXF will introspect the class and use the provided JAX-RS annotations to properly configure our service.
+6. With this, we have registered (Apache) CXF as a Servlet that listens to incoming requests using the URL-pattern: `/api/v1/*`. Furthermore, we registered our `AuthenticationService` class as one of the RESTful services. During start-up, CXF will introspect the class and use the provided JAX-RS annotations to properly configure our service.
 
     Save your changes and publish/deploy your application.
 
@@ -127,7 +127,6 @@ In this tutorial you will learn how to expose RESTful services using a library c
 
     ![Running the Java app with RESTful API enabled](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-7.png)
 
- 
+
 ## Next Steps
  - [End-to-End Weather App Scenario Part 6](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part6.html)
-

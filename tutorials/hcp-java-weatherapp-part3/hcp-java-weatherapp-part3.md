@@ -9,10 +9,10 @@ tags: [tutorial:interest/gettingstarted, tutorial:interest/cloud, tutorial:produ
 
 ## Next Steps
  - [End-to-End Weather App Scenario Part 4](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)
- 
+
 ## Details
 ### You will learn  
-In this tutorial you will learn how to add authenication and authorization to your Java app.
+In this tutorial you will learn how to add authentication and authorization to your Java app.
 
 ### Time to Complete
 **10 min**
@@ -62,13 +62,13 @@ In this tutorial you will learn how to add authenication and authorization to yo
     ```
 
     ![Adding security settings to the web.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-1.png)
- 
+
 2. After successful authentication the application can access users’ principal information using standard servlet APIs. To illustrate that, make the following changes to the **HelloWorldServlet**:
 
     ```java
     /**
     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-    */protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+    */protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
     {
     	    String user = request.getRemoteUser();
     	    if (user != null)
@@ -78,25 +78,25 @@ In this tutorial you will learn how to add authenication and authorization to yo
     	    else
     	    {
     	        LoginContext loginContext;
-    		    try 
+    		    try
     	        {
     	             loginContext = LoginContextFactory.createLoginContext("FORM");
     			 		loginContext.login();
     	             response.getWriter().println("Hello, " +  request.getRemoteUser());
-    	        } 
-    	        catch (LoginException ex) 
+    	        }
+    	        catch (LoginException ex)
     	        {
     	             ex.printStackTrace();
     		    }
     	    }
     }
-    
-    
+
+
     /**
     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
     */
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-    {	
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
     		doGet(request, response);
     }
     ```
@@ -118,10 +118,10 @@ In this tutorial you will learn how to add authenication and authorization to yo
 
     ![Adding a user to the local Java Server](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-5.png)
 
-6. Now, when you navigate to the HelloWorldServlet with the URL <http://localhost:8080/weatherapp/hello> you’ll first be prompted to enter your user credentials before you are forwarded to the requested servlet. If the authentication was successful you should now see a personalized welcome message instead of the dull “Hello World!” we saw earlier. 
+6. Now, when you navigate to the HelloWorldServlet with the URL <http://localhost:8080/weatherapp/hello> you’ll first be prompted to enter your user credentials before you are forwarded to the requested servlet. If the authentication was successful you should now see a personalized welcome message instead of the dull “Hello World!” we saw earlier.
 
     ![Running the Java app with authentication enabled](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-6.png)
- 
+
 
 ## Next Steps
  - [End-to-End Weather App Scenario Part 4](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)

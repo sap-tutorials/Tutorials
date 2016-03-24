@@ -6,11 +6,11 @@ tags: [tutorial:interest/gettingstarted, tutorial:interest/cloud, tutorial:produ
 
 ## Prerequisites  
  - [Getting Started with the SAP HANA Cloud Platform Tools for Java](https://hcp.sap.com/developers/TutorialCatalog/jav100_01_java_setup_eclipse.html)
- - Note: JDK 1.6 or 1.7 are required. If you have a later version of Java installed, please install [JDK 1.7](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk7-downloads-1880260.html) and temporarily change your JAVA_HOME environment variable to point to it.
+ - Note: JDK 1.6 or 1.7 are required. If you have a later version of Java installed, please install [JDK 1.7](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk7-downloads-1880260.html) and temporarily change your `JAVA_HOME` environment variable to point to it.
 
 ## Next Steps
  - [End-to-End Weather App Scenario Part 2](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)
- 
+
 ## Details
 ### You will learn  
 In this tutorial series you will start from zero and develop a fully operational weather application. In total there are 10 parts to the series, each building on top of its predecessor. The entire source code of both the final and all intermediate parts are available on [Github](https://github.com/SAP/cloud-weatherapp).
@@ -38,20 +38,20 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
     - **Name:** `weatherapp`
     - **Target Runtime:** `Java Web`
     - **Dynamic Web Module Version:** `2.5`
- 
+
     Click on **Next**
- 
+
     ![Creating a new dynamic web project](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-1.png)
 
-2. Remove the standard “src” Source folder and add a new one called `src/main/java` to create a project that adheres to the standard Maven Directory Layout.
+2. Remove the standard `src` Source folder and add a new one called `src/main/java` to create a project that adheres to the standard Maven Directory Layout.
 
-    Change the default output folder to `target/classes` 
+    Change the default output folder to `target/classes`
 
-    Click on **Next**. 
- 
-    ![Configuring java project](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-2.png) 
+    Click on **Next**.
 
-3. Change the Content Directory from **WebContent** to `src/main/webapp` (again, to adhere to Maven conventions) 
+    ![Configuring java project](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-2.png)
+
+3. Change the Content Directory from `WebContent` to `src/main/webapp` (again, to adhere to Maven conventions)
 
     Click on **Finish**.
 
@@ -63,16 +63,16 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
     - **Class name:** `HelloWorldServlet`
 
     Click on **Next**.
- 
+
     ![Creating a new servlet](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-4.png)
- 
+
 5. Change the URL Mapping from `/HelloWorldServlet` to `/hello` to make it a bit easier to memorize.
 
-    Click on **Finish** and the HelloWorldServlet.java file will open in the editor.
- 
+    Click on **Finish** and the `HelloWorldServlet.java` file will open in the editor.
+
     ![Changing the Servlet URL mapping](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-5.png)
 
-6. Now we need to do our first bit of coding. Navigate to the servlet’s **doGet()** method and replace the **TODO comment** with the following line of code and save your changes:
+6. Now we need to do our first bit of coding. Navigate to the servlet’s `doGet()` method and replace the `TODO` comment with the following line of code and save your changes:
 
     ```javascript
     response.getWriter().println("Hello World!");
@@ -82,9 +82,9 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
 
 7. Deploy the application to your local server by using the **Run as > Run on Server** context menu of the **HelloWorldServlet** node in the Project Explorer view.
 
-8. Choose the **Manually define a new Server** option and select the **SAP / Java Web Server** option from the server selection. Make sure to select **Java Web** as the server runtime environment. 
+8. Choose the **Manually define a new Server** option and select the **SAP / Java Web Server** option from the server selection. Make sure to select **Java Web** as the server runtime environment.
 
-    Click on **Finish**. The internal browser is now started and displays the traditional message marking the first step into a new programmer’s journey. 
+    Click on **Finish**. The internal browser is now started and displays the traditional message marking the first step into a new programmer’s journey.
 
     ![Creating a new local Java Server to run your app](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-8.png)
 
