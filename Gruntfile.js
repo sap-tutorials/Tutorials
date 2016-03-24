@@ -138,6 +138,10 @@ module.exports = function(grunt) {
     }
   });
 
+  grunt.registerTask('log', function(msg) {
+    grunt.log.writeln('\n---------\nNow executing the link checker, hang in there. This will take up to 5 minutes.\n---------\n');
+});
+
   grunt.loadNpmTasks('grunt-mdspell');
   grunt.loadNpmTasks('grunt-deadlink');
   grunt.loadNpmTasks('grunt-files-check');
@@ -145,5 +149,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.registerTask('setuptests', ['copy:test']);
-  grunt.registerTask('test', ['filenames', 'files_check', 'mdspell', 'deadlink']);
+  grunt.registerTask('test', ['filenames', 'files_check', 'mdspell', 'log', 'deadlink']);
 };
