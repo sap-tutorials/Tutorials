@@ -9,7 +9,7 @@ tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/m
  - **Tutorials:** [Calculate and display a new field in an SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-calculate-new-field.html)
 
 ## Next Steps
- - Localizing your SAPUI5 app (coming soon)
+ - [Localizing your SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-localizing-app.html)
 
 ## Details
 
@@ -74,4 +74,4 @@ Decoration                                                   | Meaning
     ![commit description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_7.png)
 
 ## Next Steps
- - Localizing your SAPUI5 app (coming soon)
+ - [Localizing your SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-localizing-app.html)
