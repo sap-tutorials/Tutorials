@@ -29,13 +29,12 @@ When loading an app, SAPUI5 will check the container’s (in this case your brow
     >This step is required because the SAP Translation Hub service is currently in beta release.
     ![Accounts tab](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_1.png)2. Click on the **Services** tab, scroll down until you see **SAP Translation Hub**, then click on the **SAP Translation Hub** tile.    ![Open Translation Hub page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_2.png)3. Click on the **Enable** button. The status will change to **Processing**, then **Enabled**. Click on the **Go To Service** link to open the **Translation Hub** service page.    ![Enable Translation Hub](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_3a.png)
 
-    ![Open Translation Hub page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_3b.png)    4. Click the **+** icon to create a new translation project and enter the following information in the **Create Translation Project page**. You will see a toast notification at the bottom of the screen with the selected languages. Click **Save** after entering all information. A toast notification is a non-modal UI element used to display brief alerts to a user.    Field Name      |  Value
-    :---------------| :-------------
-    Application Name            |  `northwind` (See note below)
-    Branch                      |  `Master`
-    Path to Properties File     |  `i18n/messageBundle.properties`
-    Target Languages            | Click on the menu and check: `Dutch, French, German, Spanish`
-    Domain                      | `Basis`
+    ![Open Translation Hub page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_3b.png)    4. Click the **+** icon to create a new translation project and enter the following information in the **Create Translation Project page**. You will see a toast notification at the bottom of the screen with the selected languages. Click **Save** after entering all information. A toast notification is a non-modal UI element used to display brief alerts to a user.    - **Field:** Value
+    - **Application Name:** `northwind` (See note below)
+    - **Branch:** `Master`
+    - **Path to Properties File:** `i18n/messageBundle.properties`
+    - **Target Languages:** Click on the menu and check: `Dutch, French, German, Spanish`
+    - **Domain:** `Basis`
 
     > Note: The application name must be lower case, and match the HTML5 Application name in your git repository. To check your app name, go to your HCP Cockpit and click on Git Repositories in the left navigation bar.)    ![Translation project fields](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_4.png)5. The Translation Hub will display the Project Details. Click **Get Translations** in the lower right corner of the window, enter your password and click **Submit** when prompted.    The Translation Hub service will create the appropriate `messageBundle_xx.properties` files and add them to your Git repository (but they will not be visible in your project folder until you complete the next two steps).    ![Get Translations](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_5a.png)
 
