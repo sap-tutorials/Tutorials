@@ -9,7 +9,7 @@ tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/m
  - **Tutorials:** [Add a tab and additional fields to an SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-add-tab.html)
 
 ## Next Steps
- - Localizing your SAPUI5 app (coming soon)
+ - [Commit your project files to your HCP Git repository](http://go.sap.com/developer/tutorials/hcp-webide-commit-git.html)
 
 ## Details
 
@@ -70,4 +70,4 @@ There are times when a use case calls for the generation of a data field that is
     ![cleaned up function](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_14.png)
 
 ## Next Steps
- - Localizing your SAPUI5 app (coming soon)
+ - [Commit your project files to your HCP Git repository](http://go.sap.com/developer/tutorials/hcp-webide-commit-git.html)
