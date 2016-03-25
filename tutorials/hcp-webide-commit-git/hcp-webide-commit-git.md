@@ -26,12 +26,12 @@ When you deployed your application to SAP HANA Cloud Platform, you checked the *
 
 Decoration                                                   | Meaning
 :--------------------------------------------------------:   | :-------------
-![committed](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-to-git/mob_3_2a_git_committed.png)                     | Committed file (version in your project matches that in Git)
-![modified not staged](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-to-git/mob_3_2a_git_mod_not_staged.png)      | Modified file that has not been staged
-![modified staged](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-to-git/mob_3_2a_git_mod_staged.png)              | Modified file that has been staged
-![committed](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-to-git/mob_3_2a_git_new_file.png)                      | New file
-![deleted files](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-to-git/mob_3_2a_git_folder_with_deleted_files.png) | Folder containing deleted files
-![conflicts](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-to-git/mob_3_2a_git_file_merge_conflicts.png)          | File with merge conflicts
+![committed](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_git_committed.png)                     | Committed file (version in your project matches that in Git)
+![modified not staged](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_git_mod_not_staged.png)      | Modified file that has not been staged
+![modified staged](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_git_mod_staged.png)              | Modified file that has been staged
+![committed](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_git_new_file.png)                      | New file
+![deleted files](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_git_folder_with_deleted_files.png) | Folder containing deleted files
+![conflicts](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_git_file_merge_conflicts.png)          | File with merge conflicts
 
  
 ### Time to Complete
@@ -41,37 +41,37 @@ Decoration                                                   | Meaning
 
 1. Open SAP Web IDE in a browser window, and open your project folder (`northwind`). Note the **New file** decorations.
 
-    ![project files with Git status](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-to-git/mob_3_2a_1.png)
+    ![project files with Git status](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_1.png)
 
 2. Click on the **Git pane** icon on the right hand side of the SAP Web IDE window.
 
     If your project does not appear in the **Git pane**, keep the Git pane open and click on the project folder again. 
 
-    ![Git pane](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-to-git/mob_3_2a_2.png)
+    ![Git pane](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_2.png)
 
 3. You may select individual files to commit, but to commit all project files, click the **Stage All** checkbox.
 
-    ![staging all files](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-to-git/mob_3_2a_3.png)
+    ![staging all files](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_3.png)
     
     Notice the change in the decorations for your files and folders.
     
-    ![staged decorations](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-to-git/mob_3_2a_3a.png)
+    ![staged decorations](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_3a.png)
 
 4. Scroll down in the **Git pane** and enter a description (required for any commits). A description like `Initial commit of northwind app` would work well.
 
-    ![commit description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-to-git/mob_3_2a_4.png)
+    ![commit description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_4.png)
 
 5. Click on the **Commit and Push** button, and select **origin/master**, from the pop up menu. This will add your files to the master branch (in other source control systems this is sometimes referred to as the "trunk").
 
-    ![commit description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-to-git/mob_3_2a_5.png)
+    ![commit description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_5.png)
 
 6. Log in with your user ID and account password and click **OK**.
 
-    ![commit description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-to-git/mob_3_2a_6.png)
+    ![commit description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_6.png)
 
 7. You will see a confirmation alert appear briefly in the top-right corner of the Web IDE window (just below **Logout**), and you will see the decorations change to the **green circles** indicating that the files have been committed (and the version in your project matches the version in the Git repository). 
 
-    ![commit description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-to-git/mob_3_2a_7.png)
+    ![commit description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_7.png)
 
 ## Next Steps
  - Localizing your SAPUI5 app (coming soon)
