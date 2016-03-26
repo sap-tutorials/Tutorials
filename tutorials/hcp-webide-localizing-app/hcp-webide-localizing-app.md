@@ -9,7 +9,7 @@ tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/m
  - **Tutorials:** [Commit your project files to your HCP Git repository](http://go.sap.com/developer/tutorials/hcp-webide-commit-git.html)
 
 ## Next Steps
- - [An Open Data Protocol (OData) primer for developers](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/hcp-webide-odata-primer.html)
+ - [An Open Data Protocol (OData) primer for developers](http://go.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
 
 ## Details
 
@@ -66,4 +66,4 @@ When loading an app, SAPUI5 will check the container’s (in this case your brow
 
 
 ## Next Steps
- - [An Open Data Protocol (OData) primer for developers](https://github.com/SAPDocuments/Tutorials/blob/master/tutorials/hcp-webide-odata-primer.html)
+ - [An Open Data Protocol (OData) primer for developers](http://go.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
