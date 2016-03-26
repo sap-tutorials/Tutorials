@@ -8,6 +8,7 @@ classname
 Classname
 Cmehil
 CodeJam
+color
 Color
 Component.js
 CustomerDemographics
@@ -33,10 +34,12 @@ Jaquet
 JAVA_HOME
 JAX-RS
 JPA
+JSONView
 Kapsel
 List.controller.js
 List.view.xml
 MacDown
+math
 Maven
 Maven-based
 messageBundle.properties
@@ -52,6 +55,8 @@ persistence.xml
 plugin
 plugins
 pom.xml
+pre-pend
+pre-pended
 pulldown
 sap.com
 SAPDocuments
