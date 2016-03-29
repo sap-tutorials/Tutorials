@@ -9,7 +9,7 @@ tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/m
  - **Tutorials:** [Localizing your SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-localizing-app.html)
 
 ## Next Steps
- - Inserting OData query options into your SAPUI5 app (coming soon)
+ - [Inserting OData query options into your SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-inserting-query-options.html)
 
 ## Details
 
@@ -56,4 +56,4 @@ To build an app like what you have now, but with data from SAP Gateway you simpl
 
  
 ## Next Steps
- - Inserting OData query options into your SAPUI5 app (coming soon)
+ - [Inserting OData query options into your SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-inserting-query-options.html)

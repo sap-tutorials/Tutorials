@@ -1,7 +1,7 @@
 ---
 title: Inserting OData query options into your SAPUI5 app
 description: Learn how to insert OData query options to your SAPUI5 app
-tags: [ tutorial:product/hcp,tutorial:product/mobile,tutorial:product/sap_ui5,tutorial:product/sapui5_web_ide,tutorial:technology/odata ]
+tags: [ tutorial:product/hcp, tutorial:product/mobile, tutorial:product/sap_ui5, tutorial:product/sapui5_web_ide, tutorial:technology/odata ]
 ---
 
 ## Prerequisites  
