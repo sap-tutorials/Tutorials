@@ -54,6 +54,5 @@ To build an app like what you have now, but with data from SAP Gateway you simpl
   - `/sap/opu/odata/IWBEP/GWDEMO` 
   - `/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT`
 
- 
 ## Next Steps
  - [Inserting OData query options into your SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-inserting-query-options.html)
