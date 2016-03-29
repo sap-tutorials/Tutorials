@@ -36,6 +36,7 @@ JAX-RS
 JPA
 JSONView
 Kapsel
+labeled
 List.controller.js
 List.view.xml
 MacDown
