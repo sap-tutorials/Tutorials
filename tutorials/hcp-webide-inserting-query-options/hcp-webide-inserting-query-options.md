@@ -5,7 +5,7 @@ tags: [ tutorial:product/hcp, tutorial:product/mobile, tutorial:product/sap_ui5,
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner | Intermediate | Expert
+ - **Proficiency:** Intermediate
  - **Tutorials:** [An Open Data Protocol (OData) primer for developers](http://go.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
 
 ## Next Steps
