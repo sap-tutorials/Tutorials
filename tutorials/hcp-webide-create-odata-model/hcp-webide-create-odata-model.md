@@ -9,7 +9,7 @@ tags: [ tutorial:interest/cloud, tutorial:product/hcp, tutorial:product/sapui5_w
  - **Tutorials:** While not required, it would be useful to complete the [An Open Data Protocol (OData) primer for developers](http://go.sap.com/developer/tutorials/hcp-webide-odata-primer.html) and be familiar with SAP Web IDE before beginning this tutorial.
 
 ## Next Steps
- - Build an SAPUI5 app based on your data model and run it with mock data (coming soon)
+ - [Build an SAPUI5 app based on your data model and run it with mock data](http://go.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
 
 ## Details
 ### You will learn  
@@ -171,4 +171,4 @@ Most OData services you will use will have collections that are linked to one or
  - Read up on the [OData Model Editor](https://help.hana.ondemand.com/webide_odatamodeler/frameset.htm)
 
 ## Next Steps
- - Build an SAPUI5 app based on your data model and run it with mock data ( coming soon )
+ - [Build an SAPUI5 app based on your data model and run it with mock data](http://go.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
