@@ -35,18 +35,22 @@ The data source URL is <http://services.odata.org/V2/Northwind/Northwind.svc/>
 
 3. Enter/confirm all fields in the Destination configuration section with the information below.
 
-    - **Name:** `Northwind`
-    - **Type:** `HTTP`
-    - **Description:** `Northwind OData Service`
-    - **URL:** `http://services.odata.org`
-    - **Proxy Type:** `Internet`
-    - **Authentication:** `NoAuthentication`
+    Field Name     | Value
+    :------------- | :-------------
+    Name           | `Northwind`
+    Type           | `HTTP`
+    Description    | `Northwind OData Service`
+    URL            | `http://services.odata.org`
+    Proxy Type     | `Internet`
+    Authentication | `NoAuthentication`
 
     Add three **Additional Properties** fields by clicking on the **New Property** button once for each property.
 
-    - **WebIDEEnabled:** `true`
-    - **WebIDESystem:** `Northwind_Data`
-    - **WebIDEUsage:** `odata_gen`
+    Field Name       | Value
+    :--------------- | :-------------
+    `WebIDEEnabled`  | `true`
+    `WebIDESystem`   | `Northwind_Data`
+    `WebIDEUsage`    | `odata_gen`
 
     ![Completed HCP destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_3.png)
 

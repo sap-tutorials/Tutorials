@@ -1,7 +1,7 @@
 ---
 title: Build an app from an SAP Web IDE template
 description: Build an app using the SAP Web IDE template wizard
-tags: [tutorial:product/hcp, tutorial:product/mobile, tutorial:interest/gettingstarted]
+tags: [tutorial:product/hcp, tutorial:product/mobile, tutorial:interest/gettingstarted, tutorial:product/sapui5_web_ide, tutorial:technology/odata]
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
@@ -82,38 +82,46 @@ You will be setting a few configurations, then filling out a few forms in this s
     ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_14.png)
 
 15. Fill out the *Project Settings* and *Master Section* as displayed in the screenshot.
-
-    **Project Namespace:** `com.test.northwind`
-    **Title:** `Products`
-    **OData Collection:**  `Products`
-    **Search Placeholder:** `Search `
-    **Search Tooltip:** `Search for product name`
-    **Search Field:** `ProductName`
+    
+    Field Name                  |  Value
+    :---------------------------| :-------------
+    Project Namespace           | `com.test.northwind`
+    Title                       | `Products`
+    OData Collection*           | `Products`
+    Search Placeholder          | `Search `
+    Search Tooltip              | `Search for product name`
+    Search Field                | `ProductName`
 
     ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_15.png)
 
 16. Scroll down to the *Main Data Fields Section*. Fill out the Main Data Fields as displayed in the screenshot.
 
-    **Item title:** `ProductName`
-    **Numeric Attribute:** `UnitPrice`
-    **Units Attribute:** `QuantityPerUnit`
+    Field Name          |  Value
+    :-------------------| :-------------
+    Item title          | `ProductName`
+    Numeric Attribute   | `UnitPrice`
+    Units Attribute     | `QuantityPerUnit`
 
     ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_16.png)
 
 17. Scroll down to the *Detail Section*. Fill out the Detail Section as displayed in the screenshot.
 
-    **Title:** `Product Inventory Details`
-    **Additional Attribute 1:** `UnitsInStock`
-    **Additional Attribute 2:** `UnitsOnOrder`
+    Field Name              |  Value
+    :-----------------------| :-------------
+    Title                   | `Product Inventory Details`
+    Additional Attribute 1  | `UnitsInStock`
+    Additional Attribute 2  | `UnitsOnOrder`
 
     ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_17.png)
 
 18. Scroll down to the *Information Section*. Fill out the Information Section as displayed in the screenshot.
 
-    **OData Navigations:** `Supplier`
-    **Navigation Attribute 1:** `CompanyName`
-    **Navigation Attribute 2:** `Phone`
-    **Navigation Attribute 3:** `Address`
+    Field Name              |  Value
+    :-----------------------| :-------------
+    OData Navigations       | `Supplier`
+    Navigation Attribute 1  | `CompanyName`
+    Navigation Attribute 2  | `Phone`
+    Navigation Attribute 3  | `Address`
 
     ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_18.png)
 
