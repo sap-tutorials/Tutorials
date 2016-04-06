@@ -4,6 +4,7 @@ artifacts
 backend
 Bieser
 catalog
+center
 classname
 Classname
 Cmehil
@@ -83,5 +84,3 @@ xsaccess
 xsapp
 xsjs
 xsodata
-center
-Netweaver

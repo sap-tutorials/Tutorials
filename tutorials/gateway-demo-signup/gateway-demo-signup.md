@@ -79,7 +79,7 @@ Detailed steps creating an account on the Gateway Demo System (also known as ES4
 ### Problems?  Need Help?
 There are two different forums, depending on what type of trouble you are experiencing.  *Please use the correct one, or it will take longer to answer your questions.*
 
-- For questions about SAP Gateway (this includes using the Gateway server, creating services, or accessing ODATA) please post any questions to the [SAP Netweaver Gateway Developer Center](http://scn.sap.com/community/developer-center/netweaver-gateway) forums.  
+- For questions about SAP Gateway (this includes using the Gateway server, creating services, or accessing ODATA) please post any questions to the [SAP NetWeaver Gateway Developer Center](http://scn.sap.com/community/developer-center/netweaver-gateway) forums.  
 
 - For any problems with registration, or password changes, please email <mailto:rac-support@sap.com>.
 
