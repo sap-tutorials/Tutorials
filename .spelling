@@ -1,5 +1,6 @@
 _app
 App.view.xml
+Auth
 artifacts
 backend
 Bieser
@@ -28,6 +29,7 @@ formatter.js
 Github
 github.com
 go.sap.com
+HCPms
 hdbschema
 Heilman
 HelloWorldServlet
@@ -52,8 +54,10 @@ messageBundle.properties
 META-INF
 Netweaver
 NetWeaver
+Node.js
 northwind
 Northwind
+OAuth
 OData
 OpenUI5
 openweathermap
@@ -64,9 +68,11 @@ plugins
 pom.xml
 pre-pend
 pre-pended
+proxied
 pulldown
 rac-support
 Rudnicki
+Runtimes
 sap.com
 SAPDocuments
 SAPUI5
@@ -75,6 +81,8 @@ Servlet
 setup
 specialties
 Tessel
+timestamp
+truststore
 tutorials.html
 UI5
 url
