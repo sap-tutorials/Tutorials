@@ -3,8 +3,9 @@ App.view.xml
 artifacts
 backend
 Bieser
+BusinessObjects
 catalog
-center
+Center
 classname
 Classname
 Cmehil
@@ -15,6 +16,7 @@ Component.js
 CustomerDemographics
 data-center
 DataSource
+DesignStudio
 Detail.view.xml
 Details.controller.js
 Details.view.xml
@@ -41,12 +43,14 @@ Kapsel
 labeled
 List.controller.js
 List.view.xml
+Lumira
 MacDown
 math
 Maven
 Maven-based
 messageBundle.properties
 META-INF
+Netweaver
 NetWeaver
 northwind
 Northwind
@@ -61,6 +65,8 @@ pom.xml
 pre-pend
 pre-pended
 pulldown
+rac-support
+Rudnicki
 sap.com
 SAPDocuments
 SAPUI5
@@ -68,10 +74,12 @@ servlet
 Servlet
 setup
 specialties
+Tessel
 tutorials.html
 UI5
 url
 util
+Vora
 weather_app
 weatherapp
 web.xml
@@ -79,6 +87,8 @@ webapp
 WebIDEEnabled
 WebIDESystem
 WebIDEUsage
+Wi-Fi
+Witalij
 XML
 xsaccess
 xsapp
