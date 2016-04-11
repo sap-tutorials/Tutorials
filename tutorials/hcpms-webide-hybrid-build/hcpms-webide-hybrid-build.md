@@ -5,12 +5,14 @@ tags: [  tutorial:interest/cloud, tutorial:interest/mobileDevices, tutorial:prod
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** You must have completed the tutorials below in the Web IDE series.  
-   - [Create a Destination on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
-   - [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
-   - [Deploy your mobile web app to SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+ - **Tutorials:** 
+   - [Connecting SAP Web IDE to the Hybrid App Toolkit](http://go.sap.com/developer/tutorials/hcpms-webide-hat-connection.html)
+   - Additionally, you must have completed the tutorials below in the Web IDE series.  
+     - [Create a Destination on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
+     - [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+     - [Deploy your mobile web app to SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
 
-Additionally, you must have completed the HAT and Web IDE set up tutorials. the last in that series is [Connecting SAP Web IDE to the Hybrid App Toolkit].
+
 
 ## Next Steps
  - Continue with the SAP Web IDE series [Add labels and a new field to your app](http://go.sap.com/developer/tutorials/hcp-webide-add-labels-field.html), and return to this tutorial to redeploy your updated mobile web app as a hybrid app.

@@ -13,7 +13,7 @@ tags: [  tutorial:interest/cloud, tutorial:interest/mobileDevices, tutorial:prod
      - [Deploy your mobile web app to SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
 
 ## Next Steps
- - [Configure an SAP Web IDE project for hybrid builds](http://go.sap.com/developer/tutorial-contribution/hcpms-webide-hybrid-config.html)
+ - [Configure an SAP Web IDE project for hybrid builds](http://go.sap.com/developer/tutorials/hcpms-webide-hybrid-config.html)
 
 ## Details
 ### You will learn  
@@ -86,4 +86,4 @@ In this tutorial, you will learn how to create (or define) an app in SAP HANA Cl
     
 
 ## Next Steps
- - [Configure an SAP Web IDE project for hybrid builds](http://go.sap.com/developer/tutorial-contribution/hcpms-webide-hybrid-config.html)
+ - [Configure an SAP Web IDE project for hybrid builds](http://go.sap.com/developer/tutorials/hcpms-webide-hybrid-config.html)

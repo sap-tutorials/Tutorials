@@ -6,11 +6,11 @@ tags: [  tutorial:interest/cloud, tutorial:interest/mobileDevices, tutorial:prod
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Create an app in SAP HANA Cloud Platform mobile services](http://go.sap.com/developer/tutorial-contribution/hcpms-create-app.html)
+ - **Tutorials:** [Create an app in SAP HANA Cloud Platform mobile services](http://go.sap.com/developer/tutorials/hcpms-create-app.html)
 
 
 ## Next Steps
- - [Connecting SAP Web IDE to the Hybrid App Toolkit](http://go.sap.com/developer/tutorial-contribution/hcpms-webide-hat-connection.html)
+ - [Connecting SAP Web IDE to the Hybrid App Toolkit](http://go.sap.com/developer/tutorials/hcpms-webide-hat-connection.html)
 
 ## Details
 ### You will learn  
@@ -61,4 +61,4 @@ In this tutorial, set the target device configurations in SAP Web IDE which will
 
 
 ## Next Steps
- - [Connecting SAP Web IDE to the Hybrid App Toolkit](http://go.sap.com/developer/tutorial-contribution/hcpms-webide-hat-connection.html)
+ - [Connecting SAP Web IDE to the Hybrid App Toolkit](http://go.sap.com/developer/tutorials/hcpms-webide-hat-connection.html)

@@ -7,7 +7,7 @@ tags: [  tutorial:interest/cloud, tutorial:interest/mobileDevices, tutorial:prod
  - **Proficiency:** Intermediate
 
 ## Next Steps
- - [Create an app in SAP HANA Cloud Platform mobile services](http://go.sap.com/developer/tutorial-contribution/hcpms-create-app.html)
+ - [Create an app in SAP HANA Cloud Platform mobile services](http://go.sap.com/developer/tutorials/hcpms-create-app.html)
 
 ## Details
 ### You will learn  
@@ -80,4 +80,4 @@ In this tutorial, you will enable and configure SAP HANA Cloud Platform mobile s
 
 
 ## Next Steps
- - [Create an app in SAP HANA Cloud Platform mobile services](http://go.sap.com/developer/tutorial-contribution/hcpms-create-app.html)
+ - [Create an app in SAP HANA Cloud Platform mobile services](http://go.sap.com/developer/tutorials/hcpms-create-app.html)
