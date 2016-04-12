@@ -6,6 +6,9 @@ tags: [tutorial:product/hcp, tutorial:interest/gettingstarted]
 ## Prerequisites
  - **Proficiency:** Beginner
 
+## Next Steps
+ - Return to the [catalog](http://go.sap.com/developer/tutorials.html) and select your first tutorial.
+
 ## Details
 ### You will learn  
 This is a simple 8 step tutorial to walk through signing up for an account on HANA Cloud Platform.
@@ -49,4 +52,4 @@ This is a simple 8 step tutorial to walk through signing up for an account on HA
     ![HCP Cockpit with news and announcements](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-trial-account/hcp_signup8.png)
 
 ## Next Steps
-Return to the [catalog](http://go.sap.com/developer/tutorials.html) and select your first tutorial.
+ - Return to the [catalog](http://go.sap.com/developer/tutorials.html) and select your first tutorial.
