@@ -9,7 +9,7 @@ tags: [ tutorial:product/hcp, tutorial:product/mobile, tutorial:product/sap_ui5,
  - **Tutorials:** [An Open Data Protocol (OData) primer for developers](http://go.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
 
 ## Next Steps
- - Manually creating a data model to use in SAP Web IDE's Mock Data server (coming soon)
+ - [Manually creating a data model to use in SAP Web IDE's Mock Data server](http://go.sap.com/developer/tutorials/hcp-webide-create-odata-model.html)
 
 ## Details
 ### You will learn  
@@ -101,4 +101,4 @@ The previous tutorial introduced a number of OData query options that developers
 
 
 ## Next Steps
- - Manually creating a data model to use in SAP Web IDE's Mock Data server (coming soon)
+ - [Manually creating a data model to use in SAP Web IDE's Mock Data server](http://go.sap.com/developer/tutorials/hcp-webide-create-odata-model.html)

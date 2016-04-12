@@ -9,7 +9,7 @@ tags: [ tutorial:interest/cloud, tutorial:product/hcp, tutorial:product/mobile, 
  - **Tutorials:** [Manually creating a data model to use in SAP Web IDE’s Mock Data server](http://go.sap.com/developer/tutorials/hcp-webide-create-odata-model.html)
 
 ## Next Steps
- - Switch your app from mock data to a live OData service (coming soon)
+ - [Switch your app from mock data to a live OData service](http://go.sap.com/developer/tutorials/hcp-webide-switch-live-odata.html)
 
 ## Details
 ### You will learn  
@@ -135,4 +135,4 @@ The steps in this tutorial assume that you are familiar with the Web IDE menu an
     To add the data back to your project, you can simply open and replace the content of the JSON files in your project.
 
 ## Next Steps
- - Switch your app from mock data to a live OData service (coming soon)
+ - [Switch your app from mock data to a live OData service](http://go.sap.com/developer/tutorials/hcp-webide-switch-live-odata.html)
