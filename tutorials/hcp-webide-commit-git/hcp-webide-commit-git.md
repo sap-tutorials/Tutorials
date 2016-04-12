@@ -20,7 +20,9 @@ There are many reasons why you might want to use a source code management tool. 
 
  - You made a mistake during development and want to return to a previous version of a file (or all)
  - Capture the state of code for a deployed application
- - Work in a development team and need to merge changes from individual "branches" of the code into the "main line" of the code streamIn this tutorial, you will learn how to commit and "push" your project files to your Git repository. In addition to being a good idea, your project files will need to be in Git for the next tutorial where you will [Localize your SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-localizing-app.html)
+ - Work in a development team and need to merge changes from individual "branches" of the code into the "main line" of the code stream
+
+In this tutorial, you will learn how to commit and "push" your project files to your Git repository. In addition to being a good idea, your project files will need to be in Git for the next tutorial where you will [Localize your SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-localizing-app.html)
 
 When you deployed your application to SAP HANA Cloud Platform, you checked the **Connect to the SAP HANA Cloud Platform Git repository** checkbox. After deployment, you may have noticed the Git "decorations" or icons indicating Git status started to appear next to your files and folders. There are six different states which are indicated as shown in the table below. As you work through this tutorial, watch for the decorations to change from New file > Modified and Staged > Committed. After a commit, and changes in a file will be indicated with one asterisk (indicating that the file is out of sync with the version in Git).
 
@@ -71,7 +73,8 @@ Decoration                                                   | Meaning
 
 7. You will see a confirmation alert appear briefly in the top-right corner of the Web IDE window (just below **Logout**), and you will see the decorations change to the **green circles** indicating that the files have been committed (and the version in your project matches the version in the Git repository). 
 
-    ![commit description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_7.png)
+    ![commit description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_7.png)
+
 
 ## Next Steps
  - [Localizing your SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-localizing-app.html)
