@@ -6,7 +6,7 @@ tags: [products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topi
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Create an app in SAP HANA Cloud Platform mobile services](http://go.sap.com/developer/tutorials/hcpms-create-app.html)
+ - **Tutorials:** [Create an app in SAP HANA Cloud Platform mobile services](http://go.sap.com/developer/tutorials/hcpms-create-hybrid-app.html)
 
 
 ## Next Steps

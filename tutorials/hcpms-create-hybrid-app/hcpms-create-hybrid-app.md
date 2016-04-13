@@ -29,20 +29,20 @@ In this tutorial, you will learn how to create (or define) an app in SAP HANA Cl
 
 2. From the SAP HANA Cloud Platform Cockpit page, click **Subscriptions** in the navigation bar, scroll down until you see Mobile Services and click on its tile.
 
-    ![Subscriptions tab](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-app/2.png)
+    ![Subscriptions tab](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-hybrid-app/2.png)
 
 3. Click on the **Go to Service** link to launch the HCPms Cockpit application.
 
-    ![Go to Service](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-app/3.png)
+    ![Go to Service](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-hybrid-app/3.png)
 
 
 4. The Mobile Services Cockpit will be displayed, click on the **Applications** tile.
 
-    ![Applications tile](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-app/4.png)
+    ![Applications tile](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-hybrid-app/4.png)
 
 5. Click on the **Create Application** icon to add a new application definition.
 
-    ![Create Application](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-app/5.png)
+    ![Create Application](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-hybrid-app/5.png)
 
 6. Edit the fields as shown below (make sure you scroll down in the **Create Application** dialog box to fill in all fields) and click **Save**.
 
@@ -58,11 +58,11 @@ In this tutorial, you will learn how to create (or define) an app in SAP HANA Cl
     Ignore Case for User Name | `<checked>`
     Security Configuration    | `None` (from drop-down)
 
-    ![Applications tile](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-app/6.png)
+    ![Applications tile](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-hybrid-app/6.png)
 
 7. When the page updates, click on the **BACK END** tab.
 
-    ![Applications tile](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-app/7.png)
+    ![Applications tile](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-hybrid-app/7.png)
 
 8. Fill in the connection information as shown below, click **Save** and after your edits are saved, click the **back** arrow to return to the list of applications.
 
@@ -77,12 +77,12 @@ In this tutorial, you will learn how to create (or define) an app in SAP HANA Cl
     Rewrite mode        | `Rewrite URL on HCPms` (from drop-down)
     Relative Paths      | (leave blank)
 
-    ![Applications tile](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-app/8.png)
+    ![Applications tile](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-hybrid-app/8.png)
 
 
 9. You have successfully created the application in HCPms. Click on the Home icon (in the upper left corner of window) to return to the Mobile Services Cockpit. Note that the application and connection numbers have incremented.
 
-    ![Applications tile](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-app/9.png)
+    ![Applications tile](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-hybrid-app/9.png)
 
 
 ## Next Steps
