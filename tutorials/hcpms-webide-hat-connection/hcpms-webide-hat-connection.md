@@ -1,11 +1,11 @@
 ---
 title: Connecting SAP Web IDE to the Hybrid App Toolkit
 description: Start the Hybrid App Toolkit and test the connection with SAP Web IDE
-tags: [  tutorial:interest/cloud, tutorial:interest/mobileDevices, tutorial:product/hcp, tutorial:product/mobile, tutorial:product/sapui5_web_ide ]
+tags: [products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, tutorial>intermediate ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** 
+ - **Tutorials:**
    - [Configure an SAP Web IDE project for hybrid builds](http://go.sap.com/developer/tutorials/hcpms-webide-hybrid-config.html)
    - You must have completed the download and [installation procedure](https://help.hana.ondemand.com/webide_hat/frameset.htm?d2865598e67f4ddabc79e5943352b0a1.html) for the Hybrid App Toolkit
 
@@ -14,7 +14,7 @@ tags: [  tutorial:interest/cloud, tutorial:interest/mobileDevices, tutorial:prod
 
 ## Details
 ### You will learn  
-In this tutorial, will start the Hybrid App Toolkit Connector and test the communication between it and SAP Web IDE. You must have completed the download and installation process for the Hybrid App Toolkit before starting this section. 
+In this tutorial, will start the Hybrid App Toolkit Connector and test the communication between it and SAP Web IDE. You must have completed the download and installation process for the Hybrid App Toolkit before starting this section.
 
 ### Time to Complete
 **< 5 Min**.
@@ -27,7 +27,7 @@ In this tutorial, will start the Hybrid App Toolkit Connector and test the comm
 
     - On Windows, double-click `run.cmd`
     - On a Mac, execute the `./run.sh` command
-    
+
     > Note: On a Mac, you may need to change file permissions `sudo chmod +x ./run.sh`. You may also need to change the owner by running `sudo chown –R <your user> .` from inside the HAT directory
 
 3. Enter your key store password (same password you used when you installed HAT) when prompted. Your terminal/command window will look similar to the picture below if HAT started properly.
@@ -47,7 +47,7 @@ In this tutorial, will start the Hybrid App Toolkit Connector and test the comm
 
 7. Go back to the main project view in Web IDE by selecting the menu option: **Tools > Development**.
 
- 
+
 ## Troubleshooting
 If the connection fails, the likely causes are a browser security exception or a misconfiguration. Work through the steps below in order, reload Web IDE and retest the connection after each step.  
 
@@ -60,6 +60,6 @@ If the connection fails, the likely causes are a browser security exception or 
 	"port" : 9010,
 	"apiKey" : "X2gr91J4ihu60pN8kwbV7",
 	```
- 
+
 ## Next Steps
  - [Build and run a hybrid app with SAP Web IDE and Hybrid App Toolkit](http://go.sap.com/developer/tutorials/hcpms-webide-hybrid-build.html)

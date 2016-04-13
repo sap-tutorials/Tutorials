@@ -1,7 +1,7 @@
 ---
 title: Enable SAP HANA Cloud Platform mobile services
-description: Enable and configure the mobile services in SAP HANA Cloud Platform 
-tags: [  tutorial:interest/cloud, tutorial:interest/mobileDevices, tutorial:product/hcp, tutorial:product/mobile ]
+description: Enable and configure the mobile services in SAP HANA Cloud Platform
+tags: [products>sap-hana-cloud-platform, topic>cloud, topic>mobile, tutorial>intermediate ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
@@ -25,7 +25,7 @@ In this tutorial, you will enable and configure SAP HANA Cloud Platform mobile s
 
     ![Subscriptions tab](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-enable-mobile-services/2.png)
 
-3. If Mobile Services is not enabled, click on the blue **Enable** button and wait a few seconds until the green **Enabled** badge appears. Return to the cockpit by clicking on your User ID "breadcrumb" link near the top left of the browser window. 
+3. If Mobile Services is not enabled, click on the blue **Enable** button and wait a few seconds until the green **Enabled** badge appears. Return to the cockpit by clicking on your User ID "breadcrumb" link near the top left of the browser window.
 
     ![Enable HCPms](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-enable-mobile-services/3.png)
 
@@ -33,7 +33,7 @@ In this tutorial, you will enable and configure SAP HANA Cloud Platform mobile s
 
     ![Configure Mobile Services](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-enable-mobile-services/4.png)
 
-5. Click on the **Roles** tab, select **Administrator** under **New Role** then click on **Assign** next to **Individual Users**. 
+5. Click on the **Roles** tab, select **Administrator** under **New Role** then click on **Assign** next to **Individual Users**.
 
     ![Role configuration](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-enable-mobile-services/5.png)
 

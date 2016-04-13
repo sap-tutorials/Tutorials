@@ -1,7 +1,7 @@
 ---
 title: Localizing your SAPUI5 app
 description: Learn how to support multiple languages in your app using the SAP Translation Hub, and how to manually add a language-locale combination.
-tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/mobile, tutorial:product/sap_ui5]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, tutorial>intermediate]
 ---
 
 ## Prerequisites
@@ -32,7 +32,7 @@ When loading an app, SAPUI5 will check the container’s (in this case your brow
 Strings in more specific resource bundles (loaded earlier) will take precedence over strings for the same translation keys in less specific resource bundles (loaded later).
 
  >An important point: Before you begin, make sure you have deployed the current version of your app to SAP HANA Cloud Platform. This ensures that your latest code is checked into your Git Repository and is available to the Translation Hub service.
- 
+
 ### Time to Complete
 **20 min**
 
@@ -52,7 +52,7 @@ Strings in more specific resource bundles (loaded earlier) will take precedence 
     ![Enable Translation Hub](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_3a.png)
 
     ![Open Translation Hub page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_3b.png)
-    
+
 4. Click the **+** icon to create a new translation project and enter the following information in the **Create Translation Project page**. You will see a toast notification at the bottom of the screen with the selected languages. Click **Save** after entering all information. A toast notification is a non-modal UI element used to display brief alerts to a user.
 
 

@@ -1,7 +1,7 @@
 ---
 title: Calculate and display a new field in an SAPUI5 app
 description: Learn how to add an additional tab, and more data fields to an SAPUI5 app.
-tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/mobile, tutorial:product/sap_ui5]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>intermediate ]
 ---
 
 ## Prerequisites

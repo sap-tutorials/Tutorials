@@ -1,12 +1,12 @@
 ---
 title: Switch your app from mock data to a live OData service
 description: After running your app with mock data, learn how to switch it to a live OData service
-tags: [ tutorial:interest/cloud, tutorial:product/hcp, tutorial:product/mobile, tutorial:product/sapui5_web_ide, tutorial:technology/odata ]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>intermediate ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** 
+ - **Tutorials:**
    - [Build an SAPUI5 app based on your data model and run it with mock data](http://go.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
    - [Create an account on the Gateway Demo system](http://go.sap.com/developer/tutorials/gateway-demo-signup.html)
 
@@ -17,9 +17,9 @@ tags: [ tutorial:interest/cloud, tutorial:product/hcp, tutorial:product/mobile, 
 
 ### You will learn  
 
-The previous two tutorials introduced a scenario where app development was going to precede the availability of an OData service. To work in parallel with the service development, you created an OData model (which would have been based on Design Thinking sessions with the users) and then built your SAPUI5 app based on that model. You also were able to run it against the SAP Web IDE mock data server. This tutorial will show you how to configure your finished application to run against a live service. 
+The previous two tutorials introduced a scenario where app development was going to precede the availability of an OData service. To work in parallel with the service development, you created an OData model (which would have been based on Design Thinking sessions with the users) and then built your SAPUI5 app based on that model. You also were able to run it against the SAP Web IDE mock data server. This tutorial will show you how to configure your finished application to run against a live service.
 
-Converting an app built on mock data to a live service requires editing only two files if there is perfect agreement between the OData models (the one you created by hand, and the model in the final service). For completeness, the metadata model in the app project should also be updated (but it is not downloaded to the client or used when the app runs). In this tutorial, you will make a third required change to show how to accommodate a less than perfect alignment between the models. 
+Converting an app built on mock data to a live service requires editing only two files if there is perfect agreement between the OData models (the one you created by hand, and the model in the final service). For completeness, the metadata model in the app project should also be updated (but it is not downloaded to the client or used when the app runs). In this tutorial, you will make a third required change to show how to accommodate a less than perfect alignment between the models.
 
 ### Time to Complete
 
@@ -57,7 +57,7 @@ Converting an app built on mock data to a live service requires editing only two
 
 3. To establish a baseline for the source code you have written so far, you will deploy it to SAP HANA Cloud Platform and commit the project to Git. If you aren't sure how to do this, refer to the two tutorials below:
 
-    - [HCP Deployment tutorial](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) (but select your current project not `northwind`) 
+    - [HCP Deployment tutorial](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) (but select your current project not `northwind`)
     - Commit the code to Git following the [Git Tutorial](http://go.sap.com/developer/tutorials/hcp-webide-commit-git.html)
 
 
@@ -65,10 +65,10 @@ Converting an app built on mock data to a live service requires editing only two
 
     - `Component.js`
     - `neo-app.json`
-    - `metadata.xml` 
+    - `metadata.xml`
     - `Master.view.xml` (required because there is a slight difference between the models)
 
-5. Open `Component.js` in Web IDE, and search for `serviceConfig` in the metadata definition. 
+5. Open `Component.js` in Web IDE, and search for `serviceConfig` in the metadata definition.
 
     ![Component.js](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_5.png)
 
@@ -81,7 +81,7 @@ Converting an app built on mock data to a live service requires editing only two
 
     ![serviceConfig edit](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_6.png)
 
-7. Open the `neo-app.json` file, paste in the additional route definition below to point to the ES4 Gateway and save your edits. 
+7. Open the `neo-app.json` file, paste in the additional route definition below to point to the ES4 Gateway and save your edits.
 
     ```json
    {
@@ -96,11 +96,11 @@ Converting an app built on mock data to a live service requires editing only two
     ![neo-app.json edit](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_7.png)
 
 
-8. To display the metadata document used by the service, open a browser tab to the service document URL and add `$metadata` to the end (if prompted to log in, use your ES4 Gateway user ID and password). 
+8. To display the metadata document used by the service, open a browser tab to the service document URL and add `$metadata` to the end (if prompted to log in, use your ES4 Gateway user ID and password).
 
     <https://sapes4.sapdevcenter.com/sap/opu/odata/IWBEP/GWDEMO/$metadata>
 
-    At the top of the page, note that the `Namespace` is `GWDEMO`. 
+    At the top of the page, note that the `Namespace` is `GWDEMO`.
 
     ![namespace field in Gateway data model](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_8.png)
 
@@ -109,12 +109,12 @@ Converting an app built on mock data to a live service requires editing only two
     ![EntityType in Gateway data model](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_9.png)
 
 
-10. In the same page, search for `EntitySet Name=` to find the name assigned to the `GWDEMO.SalesOrder EntityType`. The name of the collection is `SalesOrderCollection`. 
+10. In the same page, search for `EntitySet Name=` to find the name assigned to the `GWDEMO.SalesOrder EntityType`. The name of the collection is `SalesOrderCollection`.
 
     ![Collection name in Gateway data model](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_10.png)
 
 
-11. Since you have the metadata displayed, copy the contents of the entire page from the opening `<edmx.Edmx>` element to the closing `</edmx.Edmx>` tag and replace the contents of the `model/metadata.xml` file in your project and save your edits. 
+11. Since you have the metadata displayed, copy the contents of the entire page from the opening `<edmx.Edmx>` element to the closing `</edmx.Edmx>` tag and replace the contents of the `model/metadata.xml` file in your project and save your edits.
 
     >Note: do not include the first line of the web page that starts with “This XML file…”
 

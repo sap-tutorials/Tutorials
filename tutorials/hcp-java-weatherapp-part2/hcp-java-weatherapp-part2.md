@@ -1,7 +1,7 @@
 ---
 title: End-to-End Weather App Scenario Part 2
 description: Adding a simple web page to a Java app
-tags: [tutorial:interest/gettingstarted, tutorial:interest/cloud, tutorial:product/hcp, tutorial:technology/java]
+tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
 ---
 
 ## Prerequisites  
@@ -36,7 +36,7 @@ In this tutorial you will learn how to add a basic HTML page to a Java app.
 
 3. Save your changes and publish the update project to the local server by selecting the respective context menu on the server in the Server view.
 
-4. Once the publishing is done you can go back to the internal browser window and remove the `/hello` part of the URL and hit the **Enter** key. Now, you should see the same “Hello World!” message for the URL <http://localhost:8080/weatherapp/> as well. The reason for this is the `<welcome-file-list>` in the **web.xml** (located in the `WEB-INF` directory underneath the `webapp` folder). 
+4. Once the publishing is done you can go back to the internal browser window and remove the `/hello` part of the URL and hit the **Enter** key. Now, you should see the same “Hello World!” message for the URL <http://localhost:8080/weatherapp/> as well. The reason for this is the `<welcome-file-list>` in the **web.xml** (located in the `WEB-INF` directory underneath the `webapp` folder).
 
     ![Run the java app, but use the base URL, not the servlet](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part2/e2e_02-4.png)
 

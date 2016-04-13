@@ -1,11 +1,11 @@
 ---
 title: Create an app in SAP HANA Cloud Platform mobile services
 description: Learn how to create an app definition in HCPms
-tags: [  tutorial:interest/cloud, tutorial:interest/mobileDevices, tutorial:product/hcp, tutorial:product/mobile ]
+tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>mobile, tutorial>intermediate]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** 
+ - **Tutorials:**
    - [Enable SAP HANA Cloud Platform mobile services](http://go.sap.com/developer/tutorials/hcpms-enable-mobile-services.html)
    - You must have completed at least the three tutorials below in the Web IDE series:  
      - [Create a Destination on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
@@ -17,7 +17,7 @@ tags: [  tutorial:interest/cloud, tutorial:interest/mobileDevices, tutorial:prod
 
 ## Details
 ### You will learn  
-In this tutorial, you will learn how to create (or define) an app in SAP HANA Cloud Platform mobile services. This process is very similar to to the creation of a Destination in HCP, and allows your HCPms instance know how to handle incoming application requests (registration, authentication and data). 
+In this tutorial, you will learn how to create (or define) an app in SAP HANA Cloud Platform mobile services. This process is very similar to to the creation of a Destination in HCP, and allows your HCPms instance know how to handle incoming application requests (registration, authentication and data).
 
 ### Time to Complete
 **5 Min**.
@@ -83,7 +83,7 @@ In this tutorial, you will learn how to create (or define) an app in SAP HANA Cl
 9. You have successfully created the application in HCPms. Click on the Home icon (in the upper left corner of window) to return to the Mobile Services Cockpit. Note that the application and connection numbers have incremented.
 
     ![Applications tile](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-create-app/9.png)
-    
+
 
 ## Next Steps
  - [Configure an SAP Web IDE project for hybrid builds](http://go.sap.com/developer/tutorials/hcpms-webide-hybrid-config.html)

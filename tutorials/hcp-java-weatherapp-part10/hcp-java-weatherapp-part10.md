@@ -1,7 +1,7 @@
 ---
 title: End-to-End Weather App Scenario Part 10
 description: Deploying your Java app to SAP HANA Cloud Platform
-tags: [tutorial:interest/gettingstarted, tutorial:interest/cloud, tutorial:product/hcp, tutorial:technology/java]
+tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
 ---
 
 ## Prerequisites  

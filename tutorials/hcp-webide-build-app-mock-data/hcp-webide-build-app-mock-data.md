@@ -1,7 +1,7 @@
 ---
 title: Build an SAPUI5 app based on your data model and run it with mock data
 description: Learn how to build an app with the SAP Web IDE template based on your manually created data model
-tags: [ tutorial:interest/cloud, tutorial:product/hcp, tutorial:product/mobile, tutorial:product/sapui5_web_ide, tutorial:technology/odata ]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>intermediate ]
 ---
 
 ## Prerequisites  
@@ -109,7 +109,7 @@ The steps in this tutorial assume that you are familiar with the Web IDE menu an
 11. The **Edit Mock Data** window opens where you have the ability to select the collection (`SalesOrders` or `BusinessPartners`) then Add or Delete a row of data. You can also **Generate Random Data** which will create ten of rows of data similar to what you saw when the app was running.
 
     ![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_11.png)
-    
+
     The check box for the **Use the data above as my mock data source** sets the data in this view as the source for the data when the app is run again.
 
 12. To get some initial data populated in the table, select the `SalesOrders` entity set and click the **Generate Random Data** button. You can scroll right/left to view all of the columns (one for each Property in the data model).

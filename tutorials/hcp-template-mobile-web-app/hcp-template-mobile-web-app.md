@@ -1,7 +1,7 @@
 ---
 title: Build an app from an SAP Web IDE template
 description: Build an app using the SAP Web IDE template wizard
-tags: [tutorial:product/hcp, tutorial:product/mobile, tutorial:interest/gettingstarted, tutorial:product/sapui5_web_ide, tutorial:technology/odata]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>beginner ]
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
@@ -82,7 +82,7 @@ You will be setting a few configurations, then filling out a few forms in this s
     ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_14.png)
 
 15. Fill out the *Project Settings* and *Master Section* as displayed in the screenshot.
-    
+
     Field Name                  |  Value
     :---------------------------| :-------------
     Project Namespace           | `com.test.northwind`

@@ -1,7 +1,7 @@
 ---
 title: Add labels and a new field to your app
 description: Learn how to insert labels into the detail view of your app and add additional fields.
-tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/mobile, tutorial:interest/gettingstarted, tutorial:product/sap_ui5]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>beginner ]
 ---
 
 ## Prerequisites

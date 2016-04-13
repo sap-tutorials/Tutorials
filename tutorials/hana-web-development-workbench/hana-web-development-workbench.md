@@ -1,7 +1,7 @@
 ---
-title: Hello World! Develop your first HANA Application
-description: In this tutorial you will make your very first steps on SAP HANA and develop a very simple "Hello World" application using the SAP HANA Web-based Development Workbench.
-tags: [tutorial:technology/amazon_aws, tutorial:product/sapHana, tutorial:product/hcp, tutorial:interest/gettingstarted, tutorial:product/hcp_web_workbench]
+title: Develop your first HANA Application
+description: In this tutorial you will make your very first steps on SAP HANA and develop a very simple application using the SAP HANA Web-based Development Workbench.
+tags: [ products>sap-hana, products>sap-hana-cloud-platform, tutorial>beginner]
 ---
 
 ## Prerequisites  
@@ -10,7 +10,7 @@ You need a HANA account. Pick one of the following:
 - [Set up an account on Amazon AWS or Microsoft Azure](http://go.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 ## Next Steps
-[Hello Data! Access your first Data from a native SAP HANA Application](http://go.sap.com/developer/tutorials/hana-data-access-authorizations.html)
+[Access your first Data from a native SAP HANA Application](http://go.sap.com/developer/tutorials/hana-data-access-authorizations.html)
 
 ## Details
 ### You will learn  
@@ -128,4 +128,4 @@ Congratulations: You just have your first own native SAP HANA application runnin
 ## Next Steps
 Make your very first steps to access data on HANA. This tutorial will write a native HANA application, using the Web-based Development Workbench.
 
-[Hello Data! Access your first Data from a native SAP HANA Application](http://go.sap.com/developer/tutorials/hana-data-access-authorizations.html)
+- [Access your first Data from a native SAP HANA Application](http://go.sap.com/developer/tutorials/hana-data-access-authorizations.html)

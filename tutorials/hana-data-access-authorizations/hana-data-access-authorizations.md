@@ -1,7 +1,7 @@
 ---
-title: Hello Data! Access your first data in a native HANA Application
+title: Access your first data in a native HANA Application
 description: In this tutorial you will make your very first steps to access data on HANA. This tutorial will write a native HANA application, using the Web-based Development Workbench.
-tags: [tutorial:technology/amazon_aws, tutorial:technology/sql, tutorial:product/hcp_cloud_connector, tutorial:product/hcp, tutorial:interest/gettingstarted, tutorial:product/hcp_web_workbench]
+tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-platform, products>cloud-connector-for-sap-hana-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
 ---
 
 ## Prerequisites  
@@ -9,7 +9,7 @@ tags: [tutorial:technology/amazon_aws, tutorial:technology/sql, tutorial:product
 - [Hello World!  Develop your first HANA application](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
 
 ## Next Steps
-- Coming soon: `Hello User! Your first XS oData service with SAP HANA`
+- Your first XS OData service with SAP HANA (coming soon)
 
 
 ## Details
@@ -223,7 +223,7 @@ Congratulations: You have just accessed your first data on SAP HANA!
 [SAP HANA Development Information - Official Documentation](http://help.sap.com/hana_platform#section6)
 
 ## Next Steps
-Coming soon: `Hello User! Your first XS oData service with SAP HANA`
+- Your first XS OData service with SAP HANA (coming soon)
 
 Take your first steps to authorize users to access native HANA applications with roles and privileges using the Web-based Development Workbench.
 

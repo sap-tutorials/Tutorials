@@ -1,7 +1,7 @@
 ---
 title: Configure an SAP Web IDE project for hybrid builds
 description: Learn how to modify the Device Configurations settings of a mobile web project for a hybrid build
-tags: [  tutorial:interest/cloud, tutorial:interest/mobileDevices, tutorial:product/hcp, tutorial:product/mobile, tutorial:product/sapui5_web_ide ]
+tags: [products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, tutorial>intermediate ]
 ---
 
 ## Prerequisites  
@@ -14,7 +14,7 @@ tags: [  tutorial:interest/cloud, tutorial:interest/mobileDevices, tutorial:prod
 
 ## Details
 ### You will learn  
-In this tutorial, set the target device configurations in SAP Web IDE which will be used when the project is compiled by the Hybrid App Toolkit. 
+In this tutorial, set the target device configurations in SAP Web IDE which will be used when the project is compiled by the Hybrid App Toolkit.
 
 ### Time to Complete
 **5 Min**.
@@ -24,14 +24,14 @@ In this tutorial, set the target device configurations in SAP Web IDE which will
 1. Open SAP Web IDE in a browser window.
 
 
-2. Right-click on the `northwind` project folder and select **Project Settings** 
+2. Right-click on the `northwind` project folder and select **Project Settings**
 
     ![Project settings](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-config/2.png)
 
 3. Select **Device Configuration** in the Project Settings window.
 
     ![Project settings](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-config/3.png)
-    
+
 4. In the Application section, fill in the information shown below.
 
     Field Name          | Value
@@ -41,7 +41,7 @@ In this tutorial, set the target device configurations in SAP Web IDE which will
     Description         | `hybrid version of northwind web app`
     Version             | `1.0.0`
 
-    > Note: The App ID field here must match the string you entered for **Application ID** when creating the HCPms application. 
+    > Note: The App ID field here must match the string you entered for **Application ID** when creating the HCPms application.
 
 
 5. In the **Build Options** section, click the radio button for **Release Mode**.
@@ -52,7 +52,7 @@ In this tutorial, set the target device configurations in SAP Web IDE which will
 
 7. In the **Plugins** section, you specify the plugins the application will use.  For this exercise, do not check any of the standard Cordova plugins. Click the “Kapsel“ tab, and select `Logon Manager`.
 
-8. After selecting Logon Manager, the plugins section will update to allow you to select the type of server the app will connect to. Click the radio button next to **HANA Cloud Platform mobile services** and ensure your **HCPms Host** URL is correct. 
+8. After selecting Logon Manager, the plugins section will update to allow you to select the type of server the app will connect to. Click the radio button next to **HANA Cloud Platform mobile services** and ensure your **HCPms Host** URL is correct.
 
     > Note: Do not use the `hcpmsadmin-pxxxxxxxxx` form of the URL here.
 

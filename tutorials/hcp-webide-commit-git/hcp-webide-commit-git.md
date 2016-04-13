@@ -1,7 +1,7 @@
 ---
 title: Commit your project files to your HCP Git respository
 description: Learn how to commit and push your project files to the Git repository built into your HCP account.
-tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/mobile, tutorial:product/sap_ui5]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>mobile, tutorial>intermediate]
 ---
 
 ## Prerequisites
@@ -35,7 +35,7 @@ Decoration                                                   | Meaning
 ![deleted files](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_git_folder_with_deleted_files.png) | Folder containing deleted files
 ![conflicts](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_git_file_merge_conflicts.png)          | File with merge conflicts
 
- 
+
 ### Time to Complete
 **5 min**
 
@@ -47,16 +47,16 @@ Decoration                                                   | Meaning
 
 2. Click on the **Git pane** icon on the right hand side of the SAP Web IDE window.
 
-    If your project does not appear in the **Git pane**, keep the Git pane open and click on the project folder again. 
+    If your project does not appear in the **Git pane**, keep the Git pane open and click on the project folder again.
 
     ![Git pane](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_2.png)
 
 3. You may select individual files to commit, but to commit all project files, click the **Stage All** checkbox.
 
     ![staging all files](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_3.png)
-    
+
     Notice the change in the decorations for your files and folders.
-    
+
     ![staged decorations](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_3a.png)
 
 4. Scroll down in the **Git pane** and enter a description (required for any commits). A description like `Initial commit of northwind app` would work well.
@@ -71,7 +71,7 @@ Decoration                                                   | Meaning
 
     ![commit description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_6.png)
 
-7. You will see a confirmation alert appear briefly in the top-right corner of the Web IDE window (just below **Logout**), and you will see the decorations change to the **green circles** indicating that the files have been committed (and the version in your project matches the version in the Git repository). 
+7. You will see a confirmation alert appear briefly in the top-right corner of the Web IDE window (just below **Logout**), and you will see the decorations change to the **green circles** indicating that the files have been committed (and the version in your project matches the version in the Git repository).
 
     ![commit description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_7.png)
 

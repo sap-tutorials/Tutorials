@@ -1,11 +1,11 @@
 ---
 title: Build and run a hybrid app with SAP Web IDE and Hybrid App Toolkit
 description: Utilize the Hybrid App Toolkit to build a downloadable hybrid app and run it on a device or simulator
-tags: [  tutorial:interest/cloud, tutorial:interest/mobileDevices, tutorial:product/hcp, tutorial:product/mobile, tutorial:product/sapui5_web_ide ]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, tutorial>intermediate ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** 
+ - **Tutorials:**
    - [Connecting SAP Web IDE to the Hybrid App Toolkit](http://go.sap.com/developer/tutorials/hcpms-webide-hat-connection.html)
    - Additionally, you must have completed the tutorials below in the Web IDE series.  
      - [Create a Destination on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
@@ -38,11 +38,11 @@ When compiled, your Web IDE generated mobile web app will be packaged using the 
 3. Right-click on the `northwind` project folder. Select **Deploy > Deploy to local Hybrid App Toolkit**.
 
     ![start deployment](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/3.png)
-    
+
 4. Deployment will start. You can view the progress in the console, and when it is complete you will see the dialog box below. Click **OK** to close it.
 
     ![start deployment](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/4.png)
-    
+
 5. To run the hybrid app, right click on the `northwind` project folder, then select **Run > Run on > Android Emulator** (or **iOS Simulator** if you are using a Mac). You can also run it on an Android or iOS device if you prefer.
 
     ![run on Android Emulator](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/5.png)
@@ -72,11 +72,10 @@ HAT will launch the emulator/simulator and load the app.
 10. Click on one of the items in the list to view the details page, and scroll down to view the rest of the details. Depending on far you have gotten in the Web IDE tutorials, your screen may look different that shown here.
 
     ![detail view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/10.png)
-    
+
 11. If you have implemented a [second tab](http://go.sap.com/developer/tutorials/hcp-webide-add-tab.html) in your app, click it to see the data there.
 
     ![detail view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/11.png)
 
 ## Next Steps
  - Continue with the SAP Web IDE series [Add labels and a new field to your app](http://go.sap.com/developer/tutorials/hcp-webide-add-labels-field.html), and return to this tutorial to redeploy your updated mobile web app as a hybrid app.
-

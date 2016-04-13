@@ -1,7 +1,7 @@
 ---
 title: Implementing labels using the i18n (internationalization) features of SAPUI5
 description: Utilize the i18n framework in SAPUi5 to extract "hard-coded" strings in your app and maintain them in a single file.
-tags: [tutorial:product/hcp, tutorial:product/sapui5_web_ide, tutorial:product/mobile, tutorial:interest/gettingstarted, tutorial:product/sap_ui5]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>beginner ]
 ---
 
 ## Prerequisites
