@@ -1,6 +1,6 @@
 ---
-title: Create an app in SAP HANA Cloud Platform mobile services
-description: Learn how to create an app definition in HCPms
+title: Create a hybrid app in SAP HANA Cloud Platform mobile services
+description: Learn how to create a hybrid app definition in SAP HANA Cloud Platform mobile services
 tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>mobile, tutorial>intermediate]
 ---
 ## Prerequisites  
