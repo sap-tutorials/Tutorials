@@ -37,7 +37,7 @@ You will be setting a few configurations, then filling out a few forms in this s
 
     ![SAP Web IDE Tools menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_4.png)
 
-5. In the Preferences page, click on **Plugins** on the left then check the **Hybrid App Toolkit** checkbox.
+5. In the Preferences page, click on **Plugins** on the left, scroll down to find the **Hybrid App Toolkit** plugin then enable it by clicking on the slider.
 
     ![SAP Web IDE plugins options](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_5.png)
 
