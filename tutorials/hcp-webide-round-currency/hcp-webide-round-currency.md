@@ -31,7 +31,7 @@ You will also learn how to add a field to your app. This is useful since the tem
 
     ![View of OData model](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_1.png)
 
-2.  In JavaScript, the best way to round the number for display is to convert the string to a number, then use the `toFixed(NUM)` method to round to the specified number of decimal places. See the example below.
+2.  In JavaScript, the best way to round the number for display is to convert the string to a number, then use the `toFixed(NUM)` method to round to the specified number of decimal places. See the example below (there's no need to copy the code).
 
     ```javascript
     product.UnitPrice = Number(product.UnitPrice).toFixed(NUM)
