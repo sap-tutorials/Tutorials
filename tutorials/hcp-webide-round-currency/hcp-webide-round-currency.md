@@ -36,13 +36,13 @@ You will also learn how to add a field to your app. This is useful since the tem
     ```javascript
     product.UnitPrice = Number(product.UnitPrice).toFixed(NUM)
     ```
+    
     Now that you know how to round the number, the trick is to figure out where to use this approach.
 
 3. To make the change so it affects the master and detail views, you want to make the change as far “upstream” as possible, which is in the `_setModel` function of `Component.js`.
-
-
-    ![Beginning of _setModel function](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_3.png)
-
+    
+    ![Beginning of `_setModel` function](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_3.png)
+    
 4. You will do this by adding an `attachRequestCompleted()` function near the top of the `_setModel` function as shown in the image below.
 
     The code to insert:
