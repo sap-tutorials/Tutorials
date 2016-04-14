@@ -1,7 +1,7 @@
 ---
 title: Access your first data in a native HANA Application
 description: In this tutorial you will make your very first steps to access data on HANA. This tutorial will write a native HANA application, using the Web-based Development Workbench.
-tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-platform, products>cloud-connector-for-sap-hana-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
+tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
 ---
 
 ## Prerequisites  
