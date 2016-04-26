@@ -26,11 +26,11 @@ The workbench allows you to develop on HANA without the need to set up a local d
 
 Login to the [HANA Cloud Cockpit](https://account.hanatrial.ondemand.com/cockpit) with your free developer edition account.
 
-![Databases and schemas](1.png)
+![Databases and schemas](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-xsodata/1.png)
 
 Choose Databases and Schemas, and choose then the instance that you created in the previous tutorials. From here you can access the Workbench.
 
-![Individual instance](2.png)
+![Individual instance](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-xsodata/2.png)
 
 You are now in the Editor and can immediately start developing in HANA.
 
@@ -44,7 +44,7 @@ On the web page, there is a link in the middle column for **Web-Based Developmen
 
 `Hello World` is great and all but let's put some real meat into your first application. To get started you will need to create a new sub package called `data` to hold our new data objects.
 
-![Data sub package](3.png)
+![Data sub package](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-xsodata/3.png)
 
 This is where you will add a few objects to generate a table and add some data into it.
 
@@ -115,7 +115,7 @@ import	= 	[
 
 Now that you have a table with data in it, you need to be able to access the data and for that you will need to create and `.xsodata` file which defines an OData service. To start create a new sub package for your services.
 
-![Service sub package](4.png)
+![Service sub package](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-xsodata/4.png)
 
 ### Create a xsodata service
 
@@ -133,20 +133,20 @@ Now before you can access your newly create service you will need to give your u
 
 Under your data sub package create a new file called `user.hdbrole`, once you create it the role wizard will launch. 
 
-![New role wizard](5.png)
+![New role wizard](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-xsodata/5.png)
 
 Here you will add your schema and table. From here you will then load the `security` console and add the role to your user.
 
-![Adding the role to your user](6.png)
+![Adding the role to your user](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-xsodata/6.png)
 
 
 ### Access your xsodata service
 
 At this point you should be able to launch your XSODATA file in your browser or right click and choose the `OData Explorer` to view and see the data from your table.
 
-![OData Explorer](7.png)
+![OData Explorer](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-xsodata/7.png)
 
-![Raw broswer output](8.png)
+![Raw broswer output](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-xsodata/8.png)
 
 Congratulations: You have just enabled a simple REST interface for your application.
 

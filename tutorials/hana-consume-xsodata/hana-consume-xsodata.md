@@ -23,11 +23,11 @@ The workbench allows you to develop on HANA without the need to set up a local d
 
 Login to the [HANA Cloud Cockpit](https://account.hanatrial.ondemand.com/cockpit) with your free developer edition account.
 
-![Databases and schemas](1.png)
+![Databases and schemas](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-consume-xsodata/1.png)
 
 Choose Databases and Schemas, and choose then the instance that you created in the previous tutorials. From here you can access the Workbench.
 
-![Individual instance](2.png)
+![Individual instance](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-consume-xsodata/2.png)
 
 You are now in the Editor and can immediately start developing in HANA.
 
@@ -69,7 +69,7 @@ Select the ```index.html``` file to enable the Run on Server in the toolbar. The
 
 The application will open in your browser and greet you with Hello World:
 
-![Table of data](3.png)
+![Table of data](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-consume-xsodata/3.png)
 
 
 ### Optional: Related Information
