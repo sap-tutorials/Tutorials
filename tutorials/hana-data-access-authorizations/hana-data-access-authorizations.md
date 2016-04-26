@@ -41,20 +41,20 @@ You are now in the Editor and can immediately start developing in HANA.
 
 #### Using HANA on Amazon AWS or Microsoft Azure
 
-Access the web page of your HANA server using the IP address of your server.  Enter the address ```http://XXX.XXX.XXX.XXX``` to the address bar of your browser. (Replace ```XXX.XXX.XXX.XXX``` with the IP address of your server.)
+Access the web page of your HANA server using the IP address of your server.  Enter the address `http://XXX.XXX.XXX.XXX` to the address bar of your browser. (Replace `XXX.XXX.XXX.XXX` with the IP address of your server.)
 
 On the web page, there is a link in the middle column for **Web-Based Development Workbench**.  Click this link to start the workbench.
 
 
 ### Create your catalog object
 
-Our first step will be to create a package to organize our files. To do this we will create a new package under our existing ```codejam``` package and call it ```data```.
+Our first step will be to create a package to organize our files. To do this we will create a new package under our existing `codejam` package and call it `data`.
 
 ![New package](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/3.png)
 
 ![data package](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/4.png)
 
-Now that we have a location for our objects we will create our schema file, this will be a new file called ```MYCJ``` which is short for "My CodeJam" but you can actually call it anything you like.
+Now that we have a location for our objects we will create our schema file, this will be a new file called `MYCJ` which is short for "My CodeJam" but you can actually call it anything you like.
 
 ![New file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/5.png)
 
@@ -62,7 +62,7 @@ Now that we have a location for our objects we will create our schema file, this
 
 ![Schema name](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/7.png)
 
-Now that we have a home for our table, we will go ahead and define a simple table. So it's time for a new file called ```mydata.hdbdd```, again you can call it whatever you like.
+Now that we have a home for our table, we will go ahead and define a simple table. So it's time for a new file called `mydata.hdbdd`, again you can call it whatever you like.
 
 ![New table](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/8.png)
 
@@ -152,7 +152,7 @@ Go back to the Editor and open the already existing ```helloworld.xsjs```.
 
 ![Initial file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/27.png)
 
-Replace the current code in the ```helloworld.xsjs``` file with the following code that opens a database connection, prepares a simple SQL statement, executes it and returns the result of the query:
+Replace the current code in the `helloworld.xsjs` file with the following code that opens a database connection, prepares a simple SQL statement, executes it and returns the result of the query:
 
 ```js
 $.response.contentType = "text/html";
@@ -206,7 +206,7 @@ You can even loop through all records like this,
 
 Now the application is ready to be tested. As you are developing with the Web-based Development Workbench the application is already deployed and activated so you can immediately continue to test it.
 
-Select the ```helloworld.xsjs``` file to enable the Run on Server in the toolbar. Then click the ```Run on Server``` button:
+Select the `helloworld.xsjs` file to enable the Run on Server in the toolbar. Then click the **Run on Server** button:
 
 ![Launch page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/29.png)
 
@@ -222,3 +222,6 @@ Congratulations: You have just accessed your first data on SAP HANA!
 
 
 *This tutorial is part of the SAP HANA and SAP HANA Cloud Platform tutorials set.*
+
+## Next Steps
+- [Enable XSODATA in your SAP HANA XSC application](http://go.sap.com/developer/tutorials/hana-xsodata.html)

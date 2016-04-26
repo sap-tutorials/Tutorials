@@ -7,10 +7,14 @@ tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-pla
 ## Prerequisites  
 - [Enable XSODATA in your SAP HANA XSC Application](http://go.sap.com/developer/tutorials/hana-xsodata.html)
 
+## Next Steps
+- [Select a new tutorial series in the tutorial catalog](http://go.sap.com/developer/tutorials.html)
+
+
 ## Details
 
 ### You will learn  
-1. How to create a simple xsodata service.
+How to create a simple xsodata service.
 
 ### Time to Complete
 Beginners might take **10 minutes** to execute this tutorial.
@@ -33,7 +37,7 @@ You are now in the Editor and can immediately start developing in HANA.
 
 #### Using HANA on Amazon AWS or Microsoft Azure
 
-Access the web page of your HANA server using the IP address of your server.  Enter the address ```http://XXX.XXX.XXX.XXX``` to the address bar of your browser. (Replace ```XXX.XXX.XXX.XXX``` with the IP address of your server.)
+Access the web page of your HANA server using the IP address of your server.  Enter the address `http://XXX.XXX.XXX.XXX` to the address bar of your browser. (Replace `XXX.XXX.XXX.XXX` with the IP address of your server.)
 
 On the web page, there is a link in the middle column for **Web-Based Development Workbench**.  Click this link to start the workbench.
 
@@ -65,7 +69,7 @@ The last bit is to add the call to the service to your code and you will have a 
 
 Now the application is ready to be tested. As you are developing with the SAP HANA Web-based Development Workbench the application is already deployed and activated. So you can immediately continue to test it:
 
-Select the ```index.html``` file to enable the Run on Server in the toolbar. Then click the Run on Server button:
+Select the `index.html` file to enable the Run on Server in the toolbar. Then click the Run on Server button:
 
 The application will open in your browser and greet you with Hello World:
 
@@ -77,3 +81,6 @@ The application will open in your browser and greet you with Hello World:
 
 
 *This tutorial is part of the SAP HANA and SAP HANA Cloud Platform tutorials set.*
+
+## Next Steps
+- [Select a new tutorial series in the tutorial catalog](http://go.sap.com/developer/tutorials.html)
