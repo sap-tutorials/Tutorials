@@ -11,7 +11,6 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
  - **Tutorials:** [Internet of Things (IoT) CodeJam Setup](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
 
 ## Next Steps
-
  - [Internet of Things (IoT) Setup SAP HANA XS (On-premise or stand-alone server)](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
 
 ## Details
@@ -92,4 +91,4 @@ You should also be familiar with working with the command prompt in Windows or t
     > When working with the different modules you should create a separate folder under your `tessel-code` folder, the reason for this is that when you install the libraries for the module it’s best to do this in a new directory because when you create your JavaScript code and then run that on the device it deploys the libraries at the same time and thus best to not have everything inside the same exact folder.
 
 ## Next Steps
- - [Next tutorial in the series...](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
+ - [Internet of Things (IoT) Setup SAP HANA XS (On-premise or stand-alone server)](http://go.sap.com/developer/tutorials/hcp-create-destination.html)

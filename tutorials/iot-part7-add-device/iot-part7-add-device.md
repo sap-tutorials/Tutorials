@@ -91,4 +91,4 @@ With the MMS service now deployed, and your user assigned the appropriate role i
     ```￼17. Click **Send** and you should receive a message similar to when you used the HCP tool.￼ This indicates that your POST was successful and if you return to the “Display Stored Messages” you will see your new entry.
 
 ## Next Steps
- - [Next tutorial in the series...](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
+ - [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://go.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)

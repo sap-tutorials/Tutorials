@@ -52,4 +52,4 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
      ![results](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part4-checking-data/p4_6.png)
 ￼     You’ll only have as many records in there as you added with Postman, but after you insert data directly from the Tessel, you can return to this and section and check again.
 ## Next Steps
- - [Next tutorial in the series...](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
+ - [Internet of Things (IoT) Using the Tessel to post data](http://go.sap.com/developer/tutorials/iot-part5-inserting-tessel-data.html)

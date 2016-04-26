@@ -49,4 +49,4 @@ This procedure assumes you are using the trial edition of the SAP HANA Cloud Pla
     ![Authorizations](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part6-hcp-services/p6_8.png)
 
 9. Then under **Individual Users**, click **Assign** and enter your HCP user ID (e.g. your p-number without the word “trial” on the end). With that complete it is time to add our device.    ![Assign Role](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part6-hcp-services/p6_9.png)## Next Steps
- - [Next tutorial in the series...](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
+ - [Internet of Things (IoT) Adding a new device to the IoT Services](http://go.sap.com/developer/tutorials/iot-part7-add-device.html)

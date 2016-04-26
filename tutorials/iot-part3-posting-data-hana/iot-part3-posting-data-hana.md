@@ -57,4 +57,4 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 8. You can modify the values in the POST body and send a few more requests to add a bit more data if you'd like (but it is not required).
 
 ## Next Steps
- - [Next tutorial in the series...](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
+ - [Internet of Things (IoT) Check your data](http://go.sap.com/developer/tutorials/iot-part4-checking-data.html)

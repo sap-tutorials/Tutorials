@@ -143,4 +143,4 @@ Now its time to insert data from your Tessel to SAP IoT Services. If you have al
     ![Viewing new values in HCP](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part8-hcp-services-tessel/p8_8.png)
 
 ## Next Steps
- - [Next tutorial in the series...](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
+ - [Go back to catalog and select a tutorial](http://go.sap.com/developer/tutorials.html)
