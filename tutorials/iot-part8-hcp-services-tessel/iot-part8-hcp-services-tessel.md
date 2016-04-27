@@ -9,6 +9,9 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
  - **Proficiency:** Beginner
  - **Tutorials:** [Internet of Things (IoT) Adding a new device to the IoT Services](http://go.sap.com/developer/tutorials/iot-part7-add-device.html)
 
+## Next Steps
+ - [Go back to catalog and select a tutorial](http://go.sap.com/developer/tutorials.html)
+
 
 ## Details
 ### You will learn  
