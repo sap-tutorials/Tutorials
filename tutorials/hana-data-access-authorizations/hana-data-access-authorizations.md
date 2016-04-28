@@ -148,15 +148,16 @@ Now let's access this data from a SAP HANA application.
 
 You must have finished the previous tutorial ["Hello World! Develop your first HANA Application using Web-based Development Workbench"](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html) so that you have a working hello world application ready.
 
-Go back to the Editor and open the already existing ```helloworld.xsjs```.
+Go back to the Editor and open the already existing `mylibrary.xsjs`.
 
 ![Initial file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/27.png)
 
-Replace the current code in the `helloworld.xsjs` file with the following code that opens a database connection, prepares a simple SQL statement, executes it and returns the result of the query:
+Replace the current code in the `mylibrary.xsjs` file with the following code that opens a database connection, prepares a simple SQL statement, executes it and returns the result of the query:
 
-```js
+```
+js
 $.response.contentType = "text/html";
-var output = "Hello World!<br><br>";
+var output = "My Personal Library!<br><br>";
 
 //Open a database connection
 var conn = $.db.getConnection();
@@ -187,7 +188,7 @@ conn.close();
 $.response.setBody(output);
 ```
 
-Save the file using the Save button or by pressing ```ctrl+s```. Again, the successful save is confirmed in the console.
+Save the file using the Save button or by pressing `ctrl+s`. Again, the successful save is confirmed in the console.
 
 ![Modified initial page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/28.png)
 
@@ -195,7 +196,7 @@ Now you are ready to run the application.
 
 You can even loop through all records like this,
 
-```js
+```
     while (rs.next()) {
         output = output + rs.getString(1) + ' ' +  rs.getString(2) + ' ' +  rs.getString(3) + ' ' +  rs.getString(4) + '<br>';
     }
@@ -206,13 +207,11 @@ You can even loop through all records like this,
 
 Now the application is ready to be tested. As you are developing with the Web-based Development Workbench the application is already deployed and activated so you can immediately continue to test it.
 
-Select the `helloworld.xsjs` file to enable the Run on Server in the toolbar. Then click the **Run on Server** button:
+Select the `mylibrary.xsjs` file to enable the Run on Server in the toolbar. Then click the `Run on Server` button:
 
-![Launch page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/29.png)
+The application will open in your browser and greet you with **My Personal Library** and the just accessed data from your table:
 
-The application will open in your browser and greet you with **Hello World** and the just accessed data from your table:
-
-![Running example](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/30.png)
+![Running example](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/29.png)
 
 Congratulations: You have just accessed your first data on SAP HANA!
 
@@ -222,6 +221,3 @@ Congratulations: You have just accessed your first data on SAP HANA!
 
 
 *This tutorial is part of the SAP HANA and SAP HANA Cloud Platform tutorials set.*
-
-## Next Steps
-- [Enable XSODATA in your SAP HANA XSC application](http://go.sap.com/developer/tutorials/hana-xsodata.html)

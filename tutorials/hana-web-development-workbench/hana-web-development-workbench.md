@@ -10,7 +10,7 @@ You need a HANA account. Pick one of the following:
 - [Set up an account on Amazon AWS or Microsoft Azure](http://go.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 ## Next Steps
- - [Access your first Data from a native SAP HANA Application](http://go.sap.com/developer/tutorials/hana-data-access-authorizations.html)
+[Access your first Data from a native SAP HANA Application](http://go.sap.com/developer/tutorials/hana-data-access-authorizations.html)
 
 ## Details
 ### You will learn  
@@ -94,7 +94,7 @@ This step will generate 3 files, the `.xsapp`, `.xsaccess` and an `index.html`.
 ### Now Create the Application
 Now is the time to actually create some application code. In SAP HANA XSC application code essentially is JavaScript code provided in .xsjs files. Now such a file will be created.
 
-Open the context menu of the `helloworld` package by right-clicking on the name and choose Create File. Enter `helloworld.xsjs` as file name and save with Enter:
+Open the context menu of the `codejam` package by right-clicking on the name and choose Create File. Enter `mylibrary.xsjs` as file name and save with Enter:
 
 ![14.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/14.png)
 
@@ -102,23 +102,23 @@ The new empty file is now open in the Editor:
 
 ![15.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/15.png)
 
-Copy and paste this code to the just created `helloworld.xsjs` file:
+Copy and paste this code to the just created `mylibrary.xsjs` file:
 
 ```js
 $.response.contentType = "text/html";
-$.response.setBody("Hello World");
+$.response.setBody("My Personal Library");
 ```
 
-Save the file using the Save button or by pressing `Ctrl + s`. Again, the successful save is confirmed in the console.
+Save the file using the Save button or by pressing `ctrl+s`. Again, the successful save is confirmed in the console.
 
 ![16.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/16.png)
 
 ### Deploy, Run and Test the Application
 Now the application is ready to be tested. As you are developing with the SAP HANA Web-based Development Workbench the application is already deployed and activated to your SAP HANA Trial Instance. So you can immediately continue to test it:
 
-Select the `helloworld.xsjs` file to enable the Run on Server in the toolbar. Then click the Run on Server button:
+Select the `mylibrary.xsjs` file to enable the Run on Server in the toolbar. Then click the Run on Server button:
 
-The application will open in your browser and greet you with Hello World:
+The application will open in your browser and greet you with the beginning of your personal library:
 
 ![17.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/17.png)
 
@@ -128,6 +128,3 @@ Congratulations: You just have your first own native SAP HANA application runnin
 [SAP HANA Development Information - official documentation](http://help.sap.com/hana_platform#section6)
 
 *This tutorial is part of the SAP HANA and SAP HANA Cloud Platform tutorials set.*
-
-## Next Steps
- - [Access your first Data from a native SAP HANA Application](http://go.sap.com/developer/tutorials/hana-data-access-authorizations.html)
