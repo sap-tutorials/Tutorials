@@ -1,7 +1,7 @@
 ---
 title: Add a tab and additional fields to an SAPUI5 app
 description: Learn how to add an additional tab, and more data fields to an SAPUI5 app.
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>intermediate ]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>intermediate ]
 ---
 
 ## Prerequisites

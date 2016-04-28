@@ -1,7 +1,7 @@
 ---
 title: Build an SAPUI5 app based on your data model and run it with mock data
 description: Learn how to build an app with the SAP Web IDE template based on your manually created data model
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>intermediate ]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>intermediate ]
 ---
 
 ## Prerequisites  

@@ -15,7 +15,7 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 ### You will learn
 After creating your app in SAP WEB IDE, you will now deploy it to your HANA Cloud Platform trial account and be able to see it on a mobile device.
 
-Since any project that is created initially in the SAP Web IDE contains a ```neo-app.json``` file, it is ready to be deployed to HANA Cloud Platform. During the deployment process, Web IDE creates the HTML5 application in HANA Cloud Platform and also the related Git repository (which will track code changes) for your app automatically.
+Since any project that is created initially in the SAP Web IDE contains a `neo-app.json` file, it is ready to be deployed to HANA Cloud Platform. During the deployment process, Web IDE creates the HTML5 application in HANA Cloud Platform and also the related Git repository (which will track code changes) for your app automatically.
 
 ### Time to Complete
 **5 min**

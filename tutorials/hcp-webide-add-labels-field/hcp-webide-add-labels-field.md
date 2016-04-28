@@ -1,7 +1,7 @@
 ---
 title: Add labels and a new field to your app
 description: Learn how to insert labels into the detail view of your app and add additional fields.
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>beginner ]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>beginner ]
 ---
 
 ## Prerequisites
@@ -56,6 +56,7 @@ You will also learn how to add a field to your app. This is useful since the tem
     <ObjectAttribute title="Units In Stock" text="{UnitsInStock}"/>
     <ObjectAttribute title="Units On Order" text="{UnitsOnOrder}"/>
     ```
+    
     ![Modified XML view elements](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-labels-field/mob2-1_label_5.png)
 
 6. Save your edts, select **index.html** and click the **Run** button to preview the Northwind application with the added labels. If you do not see your labels it is probably because the browser has cached the page. To fix this, see the browser cache section below.

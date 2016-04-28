@@ -1,7 +1,7 @@
 ---
 title: Localizing your SAPUI5 app
 description: Learn how to support multiple languages in your app using the SAP Translation Hub, and how to manually add a language-locale combination.
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, tutorial>intermediate]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>sapui5, tutorial>intermediate]
 ---
 
 ## Prerequisites
