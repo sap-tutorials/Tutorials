@@ -53,7 +53,7 @@ You should also be familiar with working with the command prompt in Windows or t
 
 5. Once you create the file add the following code to it:
 
-    ```javascript
+    ```
     // Import the interface to Tessel hardware
     var tessel = require('tessel');
     // Set the led pins as outputs with initial states
