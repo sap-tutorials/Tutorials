@@ -2,22 +2,15 @@
 [![devDependency Status](https://david-dm.org/SAPDocuments/Tutorials/dev-status.svg)](https://david-dm.org/SAPDocuments/Tutorials#info=devDependencies)
 
 # Tutorials for go.sap.com
-Welcome to the Markdown tutorial catalog for tutorials you can find on `go.sap.com`. This project is still in an early stage, so stay tuned and start watching!
-
-# A few sample tutorials
-| Name | Title | Author | Proficiency | Tags | URL |
-|------|-------------|--------|-------------|------|-----|
-| [`hcp-create-trial-account`](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/hcp-create-trial-account) | Sign up for an account on HANA Cloud Platform | [Jim Jaquet](https://github.com/orgs/SAPDocuments/people/akula86) | Beginner | ```HCP```, ```Getting Started``` | [live](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html) |
-| [`hana-configure`](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/hana-configure) | HANA 101 - Getting Started, and connecting the Web Workbench | Rich Heilman, [Thomas Jung](https://github.com/I809764) | Beginner | ```SQL```, ```Web```, ```HANA```, ```HANA Studio```, ```HCP Web Workbench```, ```Big Data```, ```Getting Started``` | [live](http://go.sap.com/developer/tutorials/hana-configure.html) |
-| [`hana-data-access-authorizations`](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/hana-data-access-authorizations) | Hello Data! Access your first data in a native HANA Application | [Thomas Bieser](https://github.com/netbieser) | Beginner | ```Amazon Web Services```, ```SQL```, ```HANA```, ```HCP Web Workbench```, ```Getting Started``` | [live](http://go.sap.com/developer/tutorials/hana-data-access-authorizations.html) |
+Welcome to the Markdown tutorial catalog for tutorials you can find on the [SAP developer pages](http://go.sap.com/developer.html) here: <http://go.sap.com/developer/tutorials.html>. 
 
 
-# How to contribute?
-Contributions in terms of additional tutorials will be accepted in the future. However, for now you can provide us with feedback (e.g. outdated screens) and suggestions for improvements on existing tutorials.
+# How to contribute
+Contributions from external authors may be accepted in the future. However, for now you can provide us with feedback (e.g. outdated screens) and suggestions for improvements on existing tutorials by creating a Github issue.
 
-Meanwhile, we will start working on a tutorial pipeline to capture your requests for new tutorial scenarios. In case you have something in mind right away, [create a new issue](https://github.com/SAPDocuments/Tutorials/issues/new) with the Label ```enhancement```.
+We have a large tutorial pipeline in the works, but in case you have something in mind right away, please [create a new issue](https://github.com/SAPDocuments/Tutorials/issues/new) with the Label `enhancement` and let us know what you'd like to see covered in a tutorial.
 
-Every contributor needs to sign a CLA provided by SAP. To make this step hassle-free, this repository has activated the [CLA assistant](https://cla-assistant.io).
+Every contributor needs to sign a Contributor License Agreement (CLA) provided by SAP. To make this step hassle-free, this repository has activated the [CLA assistant](https://cla-assistant.io).
 
 
 # License
