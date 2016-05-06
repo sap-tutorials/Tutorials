@@ -7,7 +7,7 @@ tags: [products>sap-lumira, tutorial>beginner]
  - **Proficiency:** Beginner
  
 ## Next Steps
- - [Get started with SAP Lumira](http://go.sap.com/developer/tutorials/lumira-extensions-intro.html)
+ - [Install and Deploy SAP Lumira extensions](http://go.sap.com/developer/tutorials/lumira-extensions-intro.html)
 
 ## Details
 ### You will learn  
@@ -54,4 +54,4 @@ How to find the SAP Lumira Desktop trial version for download, and install it on
     > For further reference information about the installation of SAP Lumira Desktop, please refer to the documentation: [Installation and Upgrade Information](http://help.sap.com/lumira#section3)
 
 ## Next Steps
- - [Get started with SAP Lumira](http://go.sap.com/developer/tutorials/lumira-extensions-intro.html)
+ - [Install and Deploy SAP Lumira extensions](http://go.sap.com/developer/tutorials/lumira-extensions-intro.html)
