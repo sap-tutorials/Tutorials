@@ -57,7 +57,7 @@ module.exports = function(grunt) {
         options: {
           patterns: [
             '\\!\\[\\]\\((.*?)\\)', // require alt tag for images
-            '\\[.*?\\]\\(.?[^http].*?\\)', // require absolute paths for all references
+            //'\\[.*?\\]\\(.?[^http].*?\\)', // require absolute paths for all references
             '\\s#\\s', // check for H1
             '\!\[.*?\]\((.*?)\?token=(.*?)\)', // check for prohibited tokens in IMG tags
             '[^!]\\[.*?(here|there|file|folder|this|page)\\]\\((.*?)\\)', // avoid useless url names
