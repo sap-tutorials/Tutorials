@@ -16,10 +16,10 @@ tags: [  tutorial>beginner, products>sap-lumira, products>sap-hana-cloud-platfor
 ### You will learn  
 How to start creating your own visualization extension for SAP Lumira, using SAP Web IDE and the `VizPacker` plugin.
 
-####What is SAP Web IDE?
+#### What is SAP Web IDE?
 SAP Web IDE is the development environment for building various SAP applications, including visualization extensions for SAP Lumira. 
 
-####What is `VizPacker`?
+#### What is `VizPacker`?
 `VizPacker` is a plugin that allows you to visualize your visualization rendering code while still in development. In this way, `VizPacker` provides a real-time visual preview of what you are building and allows you to test your work before packaging it and using it in SAP Lumira. 
 
 This tutorial will cover:
