@@ -7,8 +7,10 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, tutorial>beginner ]
  - **Proficiency:** Beginner
 
 ## Next Steps
- - Return to the [catalog](http://go.sap.com/developer/tutorials.html) and select your first tutorial, or
- - Continue with the [Create and deploy an app in the cloud series](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
+ - For SAP HANA development: [SAP HANA XSC basic development](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
+ - For Mobile development [Create and deploy an app in the cloud series](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
+ - Return to the [catalog](http://go.sap.com/developer/tutorials.html) and select your next tutorial
+
 
 ## Details
 ### You will learn  
@@ -53,5 +55,6 @@ This is a simple 8 step tutorial to walk through signing up for an account on HA
     ![HCP Cockpit with news and announcements](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-trial-account/hcp_signup8.png)
 
 ## Next Steps
- - Return to the [catalog](http://go.sap.com/developer/tutorials.html) and select your first tutorial, or
- - Continue with the [Create and deploy an app in the cloud series](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
+ - For SAP HANA development: [SAP HANA XSC basic development](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
+ - For Mobile development [Create and deploy an app in the cloud series](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
+ - Return to the [catalog](http://go.sap.com/developer/tutorials.html) and select your next tutorial
