@@ -1,7 +1,7 @@
 ---
 title: End-to-End Weather App Scenario Part 1
 description: Create a basic Java app in SAP HANA Cloud Platform
-tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
+tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>beginner]
 ---
 
 ## Prerequisites  
