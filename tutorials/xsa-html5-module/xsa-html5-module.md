@@ -129,5 +129,5 @@ xs create-service xsuaa default dev602_01-uaa
 
 
 
-# Next Steps
+## Next Steps
   - [Go back to catalog and select a tutorial](http://go.sap.com/developer/tutorials.html)
