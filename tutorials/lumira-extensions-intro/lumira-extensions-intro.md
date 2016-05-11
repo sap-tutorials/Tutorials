@@ -5,6 +5,7 @@ tags: [  tutorial>beginner, products>sap-lumira]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
+ - [Download and install SAP Lumira](http://go.sap.com/developer/tutorials/lumira-install.html)
 
 ## Next Steps
  - Creating a new viz extension project 
