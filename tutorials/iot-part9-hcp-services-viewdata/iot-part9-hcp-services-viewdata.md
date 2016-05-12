@@ -12,7 +12,7 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
  - Note: JDK 1.6 or 1.7 are required. If you have a later version of Java installed, please install JDK 1.7 and temporarily change your `JAVA_HOME` environment variable to point to it.
 
 ## Next Steps
- - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://go.sap.com/developer/tutorials/iot-part10-hcp-services-hana.html)
+ - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://go.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
 
 
 ## Details
@@ -112,4 +112,4 @@ Now that you have data stored in the system its time to display that data within
  
 
 ## Next Steps
- - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://go.sap.com/developer/tutorials/iot-part10-hcp-services-hana.html)
+ - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://go.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)

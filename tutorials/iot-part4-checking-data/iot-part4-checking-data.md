@@ -1,6 +1,6 @@
 ---
 title: Internet of Things (IoT) Check your data
-description: Part 4 of 8, Check your SAP HANA tables for the newly added data
+description: Part 4 of 10, Check your SAP HANA tables for the newly added data
 tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
 ---

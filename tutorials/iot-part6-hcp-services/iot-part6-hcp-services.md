@@ -1,6 +1,6 @@
 ---
 title: Internet of Things (IoT) Explore the SAP HCP IoT Services
-description: Part 6 of 8, Setup and configure the use of the IoT Services with SAP HANA Cloud Platform
+description: Part 6 of 10, Setup and configure the use of the IoT Services with SAP HANA Cloud Platform
 tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
 ---

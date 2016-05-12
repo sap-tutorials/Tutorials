@@ -1,6 +1,6 @@
 ---
 title: Internet of Things (IoT) Posting data with a REST Client
-description: Part 3 of 8, Use a standard HTTP Client to post data to your SAP HANA tables
+description: Part 3 of 10, Use a standard HTTP Client to post data to your SAP HANA tables
 tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
 ---

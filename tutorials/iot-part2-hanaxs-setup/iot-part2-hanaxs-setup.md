@@ -1,6 +1,6 @@
 ---
 title: Internet of Things (IoT) Setup SAP HANA XS (On-premise or stand-alone server)
-description: Part 2 of 8, Setup and configure your initial SAP HANA XS application for use with your IoT Data
+description: Part 2 of 10, Setup and configure your initial SAP HANA XS application for use with your IoT Data
 tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
 ---

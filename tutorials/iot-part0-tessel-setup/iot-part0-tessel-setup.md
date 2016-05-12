@@ -1,6 +1,6 @@
 ---
 title: Internet of Things (IoT) Setup your SAP CodeJam
-description: Step 0 of 8, Here you will setup your IoT development environment and configure a Tessel device
+description: Step 0 of 10, Here you will setup your IoT development environment and configure a Tessel device
 tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 --
 

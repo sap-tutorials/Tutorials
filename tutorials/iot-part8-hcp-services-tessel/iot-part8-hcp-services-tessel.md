@@ -1,6 +1,6 @@
 ---
 title: Internet of Things (IoT) Connecting your Tessel to IoT Services
-description: Part 8 of 8, Now connect your Tessel device to the IoT Services for sending data
+description: Part 8 of 10, Now connect your Tessel device to the IoT Services for sending data
 tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
 ---
