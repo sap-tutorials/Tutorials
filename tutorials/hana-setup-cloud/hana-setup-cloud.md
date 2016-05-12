@@ -37,45 +37,44 @@ This section takes about **10 minutes** to complete, and about **10 to 25 minute
     >If you don't have an account on the sap.com website, you need to create one to access the Cloud Appliance Library.
     >Visit [go.sap.com](http://go.sap.com/index.html) and click *login* in the upper right corner to create an account.
 
-    ![1.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/1.png)
+    ![Solution Selection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/1.png)
 
-3. At the top of the screen, click on ***SOLUTIONS*** to see the systems available for use. Search for our **SAP HANA developer edition** in the search box to find the HANA developer edition.
+3. On the left, click on ***SOLUTIONS*** to see the systems available for use. Search for our **SAP HANA developer edition** in the search box to find the HANA developer edition.
 
 4. Once you've found the instance through the search, you need to "activate" it. Activating an instance connects it to your account on Microsoft Azure or Amazon AWS. After the solution is activated, the link next to it should change to **Create Instance**.
 
 5. Finally, click the "Create Instance" link on this solution to start the setup wizard. The wizard  will take you through a few simple steps and then you will have your instance up and running. These steps are outlined below.
 
-    ![2.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/2.png)
+    ![Simple Mode](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/2.png)
 
-6. Enter a name for your instance (and you can add an optional description).  
+6. Choose your account, select your region, enter a name for your instance and password for your instance. This is the "simple" setup and only requires those couple of items to generate your instance.  
 
-7. Choose the account to use. The account will be charged for the cloud time you use.  
+7. Optionally you can switch to the "Advanced" mode where you will have additional selections to make. Steps 8 through 11 will cover the "advanced" selection.  
 
-8. Choose the region you wish to create your system. (A region defines the data-center where the instance will run, we suggest choosing an inexpensive region or, if your internet speeds are slow,  one close to you.)  
+8. From the advanced mode the first step is to select your account.  
+	
+	![Account Selection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/3.png)
 
-    The network and subnet sections can use the default settings.  
+9. Next you will need to give details for this instance such as name and description as well as the network, subnet and whether you want the instance to have a static IP address.
 
-    When you are ready, click **Next** to continue.
+	The network and subnet sections can use the default settings.  When you are ready, click **Step 3** to continue.
 
-    ![3.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/3.png)
+    ![Instance Details](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/4.png)
 
-9. Choose the virtual machine size you want to use. Larger virtual machines can handle more data, and process faster, but cost more money. (The cost per hour on the screen is updated based on your selection.)
+10. Choose the virtual machine size you want to use. Larger virtual machines can handle more data, and process faster, but cost more money. (The cost per hour on the screen is updated based on your selection.)
 
-    Volume Type and Access Points can be left as defaults.
+    ![Instance Size](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/5.png)
 
-    When you are ready to continue, click **Next**.
+11. The next part of this section refers to the port addresses that are opened for the server, these are the standard ones that need to be opened for use of the majority of the server, later on you can reduce these to fit your specific needs.
 
-    ![4.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/4.png)
+	![Instance Ports](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/6.png)
 
-10. Enter a password for your system.
+12. Enter a password for your system.
 
-    > ### Note
     >The password rules can be confusing.  Choose a password between 8-9 characters, with at least one upper-case letter, one lower-case letter, and one number.
     >If your password does not follow the rules, a warning will appear on the screen.
 
-    Click **Next** to continue.
-
-    ![5.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/5.png)
+    ![Password Rules](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/7.png)
 
 11. Configure the schedule for the virtual machine. This option allows you to define a specific date when the machine will shut down, or a schedule when it should be running.  The virtual machine will suspend on the date you set.  
 
@@ -83,25 +82,27 @@ This section takes about **10 minutes** to complete, and about **10 to 25 minute
 
     Click **Next** when you have set a run schedule, or a suspend date.
 
-    ![6.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/6.png)
+    ![Scheduling](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/8.png)
 
-12. This screen shows all of your choices for review. To fix any problems, just click **Previous**. When you are done, click **Finish**. The VM creation process will start.
+12. This screen shows all of your choices for review. To fix any problems, just click **Edit** that particular section. When you are done, click **Create**. The VM creation process will start.
 
-    ![7.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/7.png)
+    ![Review](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/9.png)
 
 13. After the process of creating the VM starts, you will be prompted to download your "Key Pair".  This file will allow you to access your system using [SSH](http://en.wikipedia.org/wiki/Secure_Shell).
 
     > This feature is only for Amazon AWS.  Shell access is not yet available for Microsoft Azure.
+
+	![Review](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/10.png)
 
     It will take about 10-25 minutes for your VM to start.  You can see your instance status by clicking on the **INSTANCE** tab of the Cloud Appliance Library main screen.
 
 14. There are two ways to connect to your new HANA instance:
 
 
-    - **Using a browser**.  Open your browser, and add the IP address of your instance to address bar.  Use the format:  `http://XXX.XXX.XXX.XXX`.  The web server on the HANA instance has a getting started page with information, links to tools, and content.
+    - **Using a browser**.  Open your browser, and add the IP address of your instance to address bar.  Use the format:  `http://XXX.XXX.XXX.XXX`.  The web server (XSC) on the HANA instance has a getting started page with information, links to tools, and content. This also includes the links needed for accessing the XSA based tools.
     - **Using the HANA Studio**.  Install the [HANA Studio](https://tools.hana.ondemand.com/#hanatools) (which required Eclipse) on your local system.  Then, you can log in to HANA using the IP address, the username `SYSTEM`, and the password you specified in the setup process.
 
-    ![8.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/8.png)
+    ![Instanced](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/11.png)
 
 
 
