@@ -21,7 +21,7 @@ This section takes about **10 minutes** to complete, and about **10 to 25 minute
 
 > ### Warning
 >Both the Amazon AWS and Microsoft Azure accounts will charge you for time on those cloud systems.
->If you want to create a free developer account - with no cloud VM charges - on the HANA Cloud Platform, do not follow this tutorial. Click here to sign up for the account, and then proceed to the next tutorial.
+>If you want to create a free developer account - with no cloud VM charges - on the HANA Cloud Platform, do not follow this tutorial. [Click here](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html) to sign up for the account, and then proceed to the next tutorial.
 
 ---
 
