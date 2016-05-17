@@ -8,7 +8,7 @@ tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-pla
 - [Enable XSODATA in your SAP HANA XSC Application](http://go.sap.com/developer/tutorials/hana-xsodata.html)
 
 ## Next Steps
-- [Select a new tutorial series in the tutorial catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
 
 
 ## Details
@@ -83,4 +83,4 @@ The application will open in your browser and greet you with Hello World:
 *This tutorial is part of the SAP HANA and SAP HANA Cloud Platform tutorials set.*
 
 ## Next Steps
-- [Select a new tutorial series in the tutorial catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)

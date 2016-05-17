@@ -10,7 +10,7 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
  - **Tutorials:** [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
 
 ## Next Steps
- - [Go back to catalog and select a tutorial](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
 
 
 ## Details
@@ -172,4 +172,4 @@ Now that your IoT Services are collecting data and you were able to view it your
 
     
 ## Next Steps
- - [Go back to catalog and select a tutorial](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)

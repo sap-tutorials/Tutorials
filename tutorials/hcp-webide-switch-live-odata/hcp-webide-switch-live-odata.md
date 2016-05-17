@@ -11,7 +11,7 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
    - [Create an account on the Gateway Demo system](http://go.sap.com/developer/tutorials/gateway-demo-signup.html)
 
 ## Next Steps
- - [Select a new tutorial series in the tutorial catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
 
 ## Details
 
@@ -141,4 +141,4 @@ Converting an app built on mock data to a live service requires editing only two
 
 
 ## Next Steps
- - [Select a new tutorial series in the tutorial catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)

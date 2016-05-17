@@ -9,7 +9,7 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, tutorial>beginner ]
 ## Next Steps
  - For SAP HANA development: [SAP HANA XSC basic development](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
  - For Mobile development [Create and deploy an app in the cloud series](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
- - Return to the [catalog](http://go.sap.com/developer/tutorials.html) and select your next tutorial
+ - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
 
 
 ## Details
@@ -57,4 +57,4 @@ This is a simple 8 step tutorial to walk through signing up for an account on HA
 ## Next Steps
  - For SAP HANA development: [SAP HANA XSC basic development](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
  - For Mobile development [Create and deploy an app in the cloud series](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
- - Return to the [catalog](http://go.sap.com/developer/tutorials.html) and select your next tutorial
+ - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)

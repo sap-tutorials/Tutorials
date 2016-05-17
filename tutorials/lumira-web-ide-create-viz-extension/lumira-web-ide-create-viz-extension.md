@@ -10,7 +10,8 @@ tags: [  tutorial>beginner, products>sap-lumira, products>sap-hana-cloud-platfor
     - [Install and Deploy SAP Lumira extensions](http://go.sap.com/developer/tutorials/lumira-extensions-intro.html)
 
 ## Next Steps
- - Adapt a D3 Chart for Lumira with SAP Web IDE
+ - Adapt a D3 Chart for Lumira with SAP Web IDE (coming soon)
+ - Or, select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -186,4 +187,5 @@ This tutorial will cover:
 
     
 ## Next Steps
- - Adapt a D3 Chart for Lumira with SAP Web IDE
+ - Adapt a D3 Chart for Lumira with SAP Web IDE (coming soon)
+ - Or, select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)

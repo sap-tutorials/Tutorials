@@ -7,7 +7,7 @@ tags: [ products>sap-gateway, topic>cloud, topic>odata, tutorial>beginner ]
  - **Proficiency:** Beginner
 
 ## Next Steps
- - [Go back to the catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn
@@ -86,4 +86,4 @@ There are two different forums, depending on what type of trouble you are experi
 
 
 ## Next Steps
- - [Go back to the catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)

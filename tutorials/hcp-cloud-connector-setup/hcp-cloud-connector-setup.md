@@ -10,7 +10,7 @@ tags: [  tutorial>intermediate, topic>cloud, topic>security, products>sap-hana-c
 
 
 ## Next Steps
- - [Go back to catalog and select a tutorial](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -132,4 +132,4 @@ Review some related materials online:
  - [Configure RFC resource in Cloud Connector](https://help.hana.ondemand.com/help/frameset.htm?ca5868997e48468395cf0ca4882f5783.html)
 
 ## Next Steps
- - [Go back to catalog and select a tutorial](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)

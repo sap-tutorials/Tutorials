@@ -1,6 +1,6 @@
 ---
 title: SAP HANA XS Advanced, Creating an HTML5 Module
-description: Part 2 of 2, Create your first HTML5 module for HTML5 content within your XSA application
+description: Part 2 of 3, Create your first HTML5 module for HTML5 content within your XSA application
 tags: [products>sap-hana, topic>big-data, tutorial>beginner ]
 
 ---
@@ -10,7 +10,7 @@ tags: [products>sap-hana, topic>big-data, tutorial>beginner ]
  - **Tutorials:** [SAP HANA XS Advanced Connecting to SAP Web IDE for SAP HANA](http://go.sap.com/developer/tutorials/xsa-connecting-webide.html)
 
 ## Next Steps
- - [Go back to catalog and select a tutorial](http://go.sap.com/developer/tutorials.html)
+ - [SAP HANA XS Advanced Creating an HDI Module](http://go.sap.com/developer/tutorials/xsa-hdi-module.html)
 
 
 ## Details
@@ -130,4 +130,4 @@ If you have used the CODEJAMMER user then the command would look different.
 
 
 ## Next Steps
-  - [Go back to catalog and select a tutorial](http://go.sap.com/developer/tutorials.html)
+ - [SAP HANA XS Advanced Creating an HDI Module](http://go.sap.com/developer/tutorials/xsa-hdi-module.html)
