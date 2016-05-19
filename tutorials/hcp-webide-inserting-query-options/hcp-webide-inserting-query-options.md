@@ -36,67 +36,108 @@ The previous tutorial introduced a number of OData query options that developers
 
     ![Key element](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_3.png)
 
-4. It is easier for a user to find a given product by name if the list is in alphabetical order. To implement this through a query option, append the `items` attribute in `Main.view.xml` with `?$orderby=ProductName`. The `?` is used as the first separator in an HTTP URL. The rest of the query option should be familiar to you after going through the previous tutorial.
+4. It is easier for a user to find a given product by name if the list is in alphabetical order. To implement this through a query option, you could append the `items` attribute in `Main.view.xml` with `?$orderby=ProductName`. 
+
+    However, the proper way to make the change is to use the [UI5 Sorter](https://openui5.hana.ondemand.com/docs/api/symbols/sap.ui.model.Sorter.html) for list bindings. In `Master.view.xml`, modify the `items` attribute of the `List` element as shown below.
 
     The items attribute should be:
 
     ```xml
-    items="{/Products?$orderby=ProductName}"
+    items="{
+        path :'/Products',
+        sorter : {
+        path : 'ProductName', descending : false
+        }
+    }"
     ```
 
-    ![modified items attribute](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_4.png)
+    ![modified items attribute](mob3-5_4.png)
 
 5. Save your change and run the app ( remember to empty the cache and reload if necessary). You will see that the master list is now sorted by product name.
 
     ![alphanumberically ordered](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_5.png)
 
-6. Adding additional query options is almost as easy as copying in the characters from a URL (if you are trying out the query in a browser window first). There are two items to be aware of when going beyond one query option in your app:
-     - The query option strings you are adding are being inserted into an XML document
-     - While the ampersand character `&` is is used to separate options in an HTTP URL, it is not allowed in XML as a stand-alone character
+6. To add additional query options as a filter requires a different approach because the `List` element doesn't support the a Filter value as a binding path. The way to add one or more filter query options is add a function in the view controller (`Master.controller.js`). In the Web IDE, open `northwind/view/Master.controller.js` and locate the `onInit: function()`.
+ 
+    ![onInit function](mob3-5_6.png)
 
-     The good news is that there are five predefined entities in XML, one of which is for the ampersand. The predefined entities follow the pattern: `&name;`. The five predefined entities in XML are:
-
-
-     Name    |  Character  | XML Format | Description
-     :-------| :-----------| :--------- | :-----------
-     `quot`  | `"`         | `&quot;`   | Double quotation mark
-     `amp`   | `&`         | `&amp;`    | Ampersand
-     `apos`  | `'`         | `&apos;`   | Apostrophe
-     `lt`    | `<`         | `&lt;`     | Less-than sign
-     `gt`    | `>`         | `&gt;`     | Greater-than sign
-
-
-7. To sort by the product name *and* exclude products that are out of stock, the query option would need to be formatting like the string below (the `&` in the URL is replaced with `&amp;`). Modify the `items` attribute to
+7. To sort by the product name *and* exclude products that are out of stock, insert the lines below to create a variable with a reference to the view.
 
     ```xml
-    items="{/Products?$orderby=ProductName&amp;$filter=UnitsInStock gt 0}"
+    // get the view for filtering
+    this._oView = this.getView();
     ```
+
+    ![_oView variable](mob3-5_7.png)
+
+8. At the bottom on the `onInit` function, insert the code snippet below which adds an `attachAfterRendering` function which defines the parameters for the [UI5 Filter](https://openui5.hana.ondemand.com/docs/api/symbols/sap.ui.model.Filter.html), creates a new `Filter` object, gets the list binding and applies the filter:
+
+    ```javascript
+    // inserted function to filter master list
+    this._oView.attachAfterRendering(function() {
+		    
+        // create the filter for UnitsInStock
+        var sPath1 = "UnitsInStock";
+        var sOperator1 = "GT";
+        var sValue1 = "0";
+        var oFilter1 = new sap.ui.model.Filter(sPath1, sOperator1, sValue1);
+            
+        // get the list items binding
+        var oBinding = this.byId("list").getBinding("items");
+            
+        //Apply filter(s)
+        oBinding.filter(oFilter1);
+    });
+    ```
+
+    ![attachAfterRendering function with filter](mob3-5_8a.png)
 
     Save your change, switch to the app preview tab and select Hard Reload or Empty Cache and Hard Reload. Your app should now look like this:
+    
+    ![ordered and filtered](mob3-5_8b.png)
+    
+9. Suppose there is a need to support a particular sales team in operating unit that only sells products from specific suppliers, you can add in a second logical test. To add an additional filter to exclude products from Supplier IDs 1 and 2, modify the `attachAfterRendering` function to create a second filter, then apply both to the list binding:
 
-    ![items update](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_7a.png)
-
-    ![ordered and filtered](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_7b.png)
-
-8. Suppose there is a need to support a particular sales team in operating unit that only sells products from specific suppliers, you can add in a second logical test. Modify the items attribute as shown below to exclude products from Supplier IDs 1 and 2:
-
-    ```xml
-    items="{/Products?$orderby=ProductName&amp;$filter=UnitsInStock gt 0 and SupplierID gt 2}"
+    ```javascript
+    // inserted function to filter master list
+    this._oView.attachAfterRendering(function() {
+		    
+        // create the filter for UnitsInStock
+        var sPath1 = "UnitsInStock";
+        var sOperator1 = "GT";
+        var sValue1 = "0";
+        var oFilter1 = new sap.ui.model.Filter(sPath1, sOperator1, sValue1);
+            
+        // create the filter for SupplierID
+        var sPath2 = "SupplierID";
+        var sOperator2 = "GT";
+        var sValue2 = "2";
+        var oFilter2 = new sap.ui.model.Filter(sPath2, sOperator2, sValue2);
+            
+        // get the list items binding
+        var oBinding = this.byId("list").getBinding("items");
+            
+        //Apply filter(s)
+        oBinding.filter( [oFilter1, oFilter2] );
+    });
     ```
+    
+    > Note the addition of the square brakets in the when applying the second filter.
 
+    ![items update](mob3-5_9a.png)
+    
     Save your change, switch to the app preview tab and select Hard Reload or Empty Cache and Hard Reload. Your view file and app should now look like this:
 
-    ![items update](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_8a.png)
 
-    ![ordered and filtered, exluding two suppliers](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_8b.png)
 
-9. To rollback your edits, you can return the items attribute by either editing the line as shown below, or by using Git. To use Git, click on the **Git** icon in Web IDE, click the arrow under **Discard** in the **Git pane** and click **OK** on the Git confirmation dialog box. After clicking the discard arrow, the green dot (indicating the version in your project folder is the same as that in Git) will reappear next to `Master.view.xml` (as well as the **view** and **northwind** folders).
+    ![ordered and filtered, exluding two suppliers](mob3-5_9b.png)
 
-    ```xml
-    items="{/Products}"
-    ```
 
-    ![Discard changes using git](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_9.png)
+
+10. You can keep these edits if you would like, or to rollback to the previous state by using Git. To use Git, click on the **Git** icon in Web IDE, click the arrow under **Discard** in the **Git pane** and click **OK** on the Git confirmation dialog box. After clicking the discard arrow, the green dot (indicating the version in your project folder is the same as that in Git) will reappear next to `Master.view.xml` and `Master.controller.js` (as well as the **view** and **northwind** folders).
+
+
+    ![Discard changes using git](mob3-5_10.png)
 
 
 
