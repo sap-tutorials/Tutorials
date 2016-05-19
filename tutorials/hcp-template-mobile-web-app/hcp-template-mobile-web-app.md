@@ -25,11 +25,11 @@ You will be setting a few configurations, then filling out a few forms in this s
 
     ![HCP login page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_1.png)
 
-2. To open SAP Web IDE, click on the **Subscriptions** tab in the navigation bar, then click the ```webide``` link in the **Application** column to open the Web IDE status page.
+2. To open SAP Web IDE, click on the **Services** tab in the navigation bar, scroll down and then click the **SAP Web IDE** tile to open the SAP Web IDE service page.
 
     ![HCP Subscriptions page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_2.png)
 
-3. On the status page, click on the **Application URL** to open Web IDE in a new browser tab.
+3. On the service page, click on the **Open SAP Web IDE** link to open Web IDE in a new browser tab.
 
     ![SAP Web IDE status page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_3.png)
 
