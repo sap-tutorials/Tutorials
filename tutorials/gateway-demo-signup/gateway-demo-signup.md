@@ -81,7 +81,7 @@ There are two different forums, depending on what type of trouble you are experi
 
 - For questions about SAP Gateway (this includes using the Gateway server, creating services, or accessing ODATA) please post any questions to the [SAP NetWeaver Gateway Developer Center](http://scn.sap.com/community/developer-center/netweaver-gateway) forums.  
 
-- For any problems with registration, or password changes, please email rac-support@sap.com.
+- For any problems with registration, or password changes, please email rac-support@sap.com
 
 
 
