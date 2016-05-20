@@ -122,7 +122,7 @@ The previous tutorial introduced a number of OData query options that developers
     });
     ```
     
-    > Note the addition of the square brakets in the when applying the second filter.
+    > Note the addition of the square brackets in the when applying the second filter.
 
     ![items update](mob3-5_9a.png)
     
