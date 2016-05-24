@@ -45,14 +45,13 @@ Creating an app in SAP HANA Cloud Platform mobile service for development and op
     Description             | `Native version of Northwind app`
     Vendor                  | `SAP`
     Enable CSRF protection  | (leave unchecked)
+    Ignore Case for User Name | (leave unchecked)
+    Security Configuration    | `None` (from drop-down)
 
     ![Create Application](mg6-1-04.png)
 
 
-5. The Edit Application screen is displayed with the **INFORMATION** tab displayed. In the Security Configuration pull-down, select `Basic` (for username and password authentication). 
-
-    ![Application Information](mg6-1-05.png)
-
+5. The Edit Application screen is displayed with the **INFORMATION** tab displayed. 
 
 6. Click on the **BACK END** tab and enter the following and click **Save**. 
 
