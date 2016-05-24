@@ -52,13 +52,13 @@ The procedure shown in this tutorial can be used for any of the Android activity
 
     The path should be: `<install_path>/MobileSDK3/NativeSDK/ODataFramework/Android/libraries/maflogonui-xxx.aar`
     
-    > Note `maflogonui-xxx.aar` is under the ODataFramework directory, not `MAFReuse`
+    > Note `maflogonui-xxx.aar` is under the `ODataFramework` directory, not `MAFReuse`
 
 7. Repeat steps 2-4 to import `MobilePlace-xxx.aar`. The `MobilePlace.jar` was replaced by the `.aar` package, so it needs to be included in the same way as the MAF packages.
     
     The path should be: `<install_path>/MobileSDK3/NativeSDK/ODataFramework/Android/libraries/MobilePlace-3.11.5.aar`
 
-    > Note `MobilePlace-xxx.aar` is under the ODataFramework directory, not `MAFReuse`
+    > Note `MobilePlace-xxx.aar` is under the `ODataFramework` directory, not `MAFReuse`
     
 8. Your project should look like this now:
 
@@ -89,25 +89,25 @@ The procedure shown in this tutorial can be used for any of the Android activity
 
     Using the Android Studio project view, copy the following jar libraries from the SDK installation folders and paste it into the libs folder in Android Studio.  
 
-    - ClientHubSLL
-    - ClientLog.jar
-    - Common.jar
-    - Connectivity.jar
-    - CoreServices.jar
-    - DataVaultLib.jar
-    - E2ETrace.jar
-    - HttpConvAuthFlows.jar
-    - HttpConversation.jar
-    - maflogger.jar
-    - maflogoncore.jar
-    - ODataAPI.jar
-    - odataoffline.jar (offline store)
-    - ODataOnline.jar (online store)
-    - perflib.jar
-    - Request.jar
-    - sap-e2etrace.jar
-    - SupportabilityFacade.jar
-    - XscriptParser.jar
+    - `ClientHubSLL`
+    - `ClientLog.jar`
+    - `Common.jar`
+    - `Connectivity.jar`
+    - `CoreServices.jar`
+    - `DataVaultLib.jar`
+    - `E2ETrace.jar`
+    - `HttpConvAuthFlows.jar`
+    - `HttpConversation.jar`
+    - `maflogger.jar`
+    - `maflogoncore.jar`
+    - `ODataAPI.jar`
+    - `odataoffline.jar (offline store)`
+    - `ODataOnline.jar (online store)`
+    - `perflib.jar`
+    - `Request.jar`
+    - `sap-e2etrace.jar`
+    - `SupportabilityFacade.jar`
+    - `XscriptParser.jar`
 
 15. In Android Studio, open the libs folder, select all the libraries you have added, right-click and select **Add As Library...**.
 
@@ -117,7 +117,7 @@ The procedure shown in this tutorial can be used for any of the Android activity
 
     ![Create library](mg6-3-16.png)
     
-17. You can check the libraries were added in the build.gradle file located in the app module.
+17. You can check the libraries were added in the `build.gradle` file located in the app module.
 
     ![Confirm dependencies added](mg6-3-17.png)
 
