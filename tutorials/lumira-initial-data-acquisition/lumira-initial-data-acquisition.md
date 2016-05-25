@@ -21,13 +21,13 @@ How to acquire data into SAP BusinessObjects Lumira using sample MS Excel file.
 
 1. Open SAP BusinessObjects Lumira. Create new document by selecting **File** -> **New** from the menu.
 
-    ![Creating a new document in SAP BusinessObjects Lumira](Lum01-01.png)
-
     You can also press `Ctrl+N`.
+
+    ![Creating a new document in SAP BusinessObjects Lumira](Lum01-01.png)
 
     > In this example screenshots from SAP BusinessObjects Lumira version 1.30 in English are being used. They may be slightly different between versions and application languages.
 
-2. Create a new Dataset by selecting **Microsoft Excel** as a source, pressing **Next**, and then `BestRunCorp_Retail.xlsx` from the your user’s directory `…\Documents\SAP Lumira Documents\Samples\`. SAP BusinessObjects Lumira installation add a few different sample files, and this MS Excel file with data is one of them.
+2. Create a new Dataset by selecting **Microsoft Excel** as a source, pressing **Next**, and then selecting `BestRunCorp_Retail.xlsx` file from the your user’s directory `…\Documents\SAP Lumira Documents\Samples\`. SAP BusinessObjects Lumira installation comes with a few sample files, and this MS Excel file with data is just one of them.
 
     > If for any reason you do not have that file or that directory in your local installation, then download [`BestRunCorp_Retail.xlsx`](./BestRunCorp_Retail.xlsx) file.
 
@@ -43,7 +43,9 @@ How to acquire data into SAP BusinessObjects Lumira using sample MS Excel file.
 
     Click **Create**.
 
-5. SAP BusinessObjects Lumira opens the dataset in the new document ready for data discovery and visualizations. One of so called 'rooms' is open for your further activities: **Prepare**, **Visualize**, or **Compose**. It depends on the preferences settings accessible from **File** -> **Preferences** -> **General** -> **Default Room**
+5. SAP BusinessObjects Lumira opens the dataset in the new document ready for data discovery and visualizations. One of so called 'rooms' is open for your further activities: **Prepare**, **Visualize**, or **Compose**.
+
+    > It depends on the preferences settings accessible from **File** -> **Preferences** -> **General** -> **Default Room**
 
     ![The new document is created in SAP BusinessObjects Lumira and Prepare room is selected for further work with a dataset](Lum01-06.png)
 
@@ -51,10 +53,9 @@ How to acquire data into SAP BusinessObjects Lumira using sample MS Excel file.
 
     ![Saving your first document in SAP BusinessObjects Lumira](Lum01-07.png)
 
-    > Please note that all SAP BusinessObjects Lumira documents are saved in the same default directory under user's `…\Documents\SAP Lumira Documents\`.
+    > Please note that all SAP BusinessObjects Lumira documents are saved in the same default directory in user's `…\Documents\SAP Lumira Documents\` folder.
 
-    > Lumira documents have extension `.lums` and in fact are zipped archives containing multiple files, like configuration and data files, visualization thumbnails etc.
-
+    > Lumira documents have extension `.lums`. These files are zipped archives containing multiple files, like configuration and data files, visualization thumbnails etc.
 
 ## Next Steps
  - [Initial data exploration in SAP BusinessObjects Lumira](http://go.sap.com/developer/tutorials/lumira-initial-data-exploration.html)

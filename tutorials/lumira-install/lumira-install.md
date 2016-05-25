@@ -54,4 +54,5 @@ How to find the SAP BusinessObjects Lumira Desktop trial version for download, a
     > For further reference information about the installation of SAP BusinessObjects Lumira Desktop, please refer to the documentation: [Installation and Upgrade Information](http://help.sap.com/lumira#section3)
 
 ## Next Steps
- - [Install and Deploy SAP BusinessObjects Lumira extensions](http://go.sap.com/developer/tutorials/lumira-extensions-intro.html)
+ - [Initial data acquisition in SAP BusinessObjects Lumira](http://go.sap.com/developer/tutorials/lumira-initial-data-acquisition.html) if you are beginner
+ - [Install and Deploy SAP BusinessObjects Lumira extensions](http://go.sap.com/developer/tutorials/lumira-extensions-intro.html) if you want to continue with learning extensions development
