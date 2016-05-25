@@ -5,7 +5,7 @@ tags: [  tutorial>beginner, products>sap-lumira ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Initial data acquisition in SAP BusinessObjects Lumira](http://go.sap.com/developer/lumira-initial-data-acquisition.html)
+ - **Tutorials:** [Initial data acquisition in SAP BusinessObjects Lumira](http://go.sap.com/developer/tutorials/lumira-initial-data-acquisition.html)
 
 ## Next Steps
  - Basics of data visualization (coming soon)
