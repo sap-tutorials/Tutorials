@@ -91,7 +91,7 @@ For this part of the series, you will consume a RESTful weather service that ret
 
     ![Supporting a new URL by adding an @Path annotation](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-7.png)
 
-    >Note: Since working behind corporate firewalls is a common cause of frustration I want to point out how to accomodate this. if your firewall requires a proxy for outbound communication you need to start your local server with proxy settings as follows:
+    >Note: Since working behind corporate firewalls is a common cause of frustration I want to point out how to accommodate this. if your firewall requires a proxy for outbound communication you need to start your local server with proxy settings as follows:
 
     - In the Servers view, double-click the added server to open the editor.
     - Click the Open Launch Configuration link.
