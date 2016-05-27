@@ -5,7 +5,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create your HCP Trial account first](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Sign up for an account on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
  - Add custom fields to a standard SAP Fiori app
@@ -21,7 +21,7 @@ In this tutorial I want to show you how to get started with the SAP Fiori, Demo 
 
 1. You can access the SAP Fiori, Demo Cloud Edition by following this link:
 
-    [https://www.sapfioritrial.com/](https://www.sapfioritrial.com/)
+    <https://www.sapfioritrial.com/>
     
 2. You continue by clicking the **See it in action** Button.
 
