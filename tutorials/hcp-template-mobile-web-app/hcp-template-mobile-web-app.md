@@ -129,7 +129,7 @@ You will be setting a few configurations, then filling out a few forms in this s
 
     ![SAP Web IDE project file view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_19.png)
 
-20. To run your application, select the **index.html** file, and click the **Run** button. Your Northwind application will open in a Web IDE preview pane.
+20. To run your application, select the `index.html` file, and click the **Run** button. Your Northwind application will open in a Web IDE preview pane.
 
     ![How to run an SAP Web IDE project in preview mode](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_20.png)
 

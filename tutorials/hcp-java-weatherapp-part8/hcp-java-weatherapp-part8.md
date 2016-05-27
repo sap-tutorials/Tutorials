@@ -35,7 +35,7 @@ For this part of the series, you will consume a RESTful weather service that ret
 2. Replace the contents of the `WeatherService.java` file with [this code from Github](https://raw.githubusercontent.com/SAP/cloud-weatherapp/0f16e22720cbc5032e9a63af4ee95e2ead6e0761/src/main/java/com/sap/hana/cloud/samples/weatherapp/api/WeatherService.java) and save your changes.
 
 
-3. Include the full-qualified classname of the `WeatherService` class in the list of JAX-RS services specified in the **web.xml** configuration you did before. The corresponding <init-param> element should now look like this:
+3. Include the full-qualified classname of the `WeatherService` class in the list of JAX-RS services specified in the `web.xml` configuration you did before. The corresponding <init-param> element should now look like this:
 
     ```xml
     <init-param>
@@ -60,7 +60,7 @@ For this part of the series, you will consume a RESTful weather service that ret
 
     ![Adding a new destination to the local web server](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-4.png)
 
-5. Similar to what we have done to register the DataSource in the **web.xml** file, we also need to specify the HTTP destination in the **web.xml** file. Open it and enter the following code snippet underneath the already existing tag.
+5. Similar to what we have done to register the DataSource in the `web.xml` file, we also need to specify the HTTP destination in the `web.xml` file. Open it and enter the following code snippet underneath the already existing tag.
 
     ```xml
     <resource-ref>

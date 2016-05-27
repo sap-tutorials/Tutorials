@@ -19,7 +19,7 @@ In this tutorial you will learn how to expose RESTful services using a library c
 
 ---
 
-1. First, we need to add the dependency references to Apache CXF in the **pom.xml** file. Insert the XML snippet below just below the **Servlet** dependency section.
+1. First, we need to add the dependency references to Apache CXF in the `pom.xml` file. Insert the XML snippet below just below the **Servlet** dependency section.
 
     ```xml
     <!-- Apache CXF -->
@@ -42,7 +42,7 @@ In this tutorial you will learn how to expose RESTful services using a library c
 
     ![Adding Apache CXF to the pom.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-1.png)
 
-2. We also need to specify the corresponding CXF version property at the end of the **\<properties>** tag in **pom.xml**. See the image below for where to insert this snippet.
+2. We also need to specify the corresponding CXF version property at the end of the `<properties>` tag in `pom.xml`. See the image below for where to insert this snippet.
 
     ```xml
     <org.apache.cxf-version>3.0.0</org.apache.cxf-version>
@@ -50,7 +50,7 @@ In this tutorial you will learn how to expose RESTful services using a library c
 
     ![Adding Apache CXF to pom.xml properties element](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-2.png)
 
-3. Next, create a new Class via the context menu entry **New > Class** of the **weatherapp** node in the Project Explorer. Enter the following information:
+3. Next, create a new Class via the context menu entry **New > Class** of the `weatherapp` node in the Project Explorer. Enter the following information:
 
     - **Package name:** `com.sap.hana.cloud.samples.weatherapp.api`
     - **Classname:** `AuthenticationService`
@@ -97,7 +97,7 @@ In this tutorial you will learn how to expose RESTful services using a library c
     ![Building out the new Java class](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-4.png)
 
 
-5. Open the **web.xml** configuration file and copy and paste the following lines of code in between the closing **\</servlet-mapping>** and the opening **\<login-config>** tags:
+5. Open the `web.xml` configuration file and copy and paste the following lines of code in between the closing `</servlet-mapping>` and the opening `<login-config>` tags:
 
     ```xml
     <servlet>

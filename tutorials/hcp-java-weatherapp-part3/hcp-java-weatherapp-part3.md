@@ -21,7 +21,7 @@ In this tutorial you will learn how to add authentication and authorization to y
 
 ---
 
-1. In order to activate authentication and establish authorization we have to apply the respective security settings in the **web.xml** configuration file. The full **web.xml** contents are below:
+1. In order to activate authentication and establish authorization we have to apply the respective security settings in the `web.xml` configuration file. The full `web.xml` contents are below:
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -63,7 +63,7 @@ In this tutorial you will learn how to add authentication and authorization to y
 
     ![Adding security settings to the web.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-1.png)
 
-2. After successful authentication the application can access users’ principal information using standard servlet APIs. To illustrate that, make the following changes to the **HelloWorldServlet**:
+2. After successful authentication the application can access users’ principal information using standard servlet APIs. To illustrate that, make the following changes to the `HelloWorldServlet`:
 
     ```java
     /**
@@ -118,7 +118,7 @@ In this tutorial you will learn how to add authentication and authorization to y
 
     ![Adding a user to the local Java Server](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-5.png)
 
-6. Now, when you navigate to the HelloWorldServlet with the URL <http://localhost:8080/weatherapp/hello> you’ll first be prompted to enter your user credentials before you are forwarded to the requested servlet. If the authentication was successful you should now see a personalized welcome message instead of the dull “Hello World!” we saw earlier.
+6. Now, when you navigate to the `HelloWorldServlet` with the URL <http://localhost:8080/weatherapp/hello> you’ll first be prompted to enter your user credentials before you are forwarded to the requested servlet. If the authentication was successful you should now see a personalized welcome message instead of the dull “Hello World!” we saw earlier.
 
     ![Running the Java app with authentication enabled](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-6.png)
 

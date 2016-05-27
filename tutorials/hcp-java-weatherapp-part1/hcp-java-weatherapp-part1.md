@@ -1,7 +1,7 @@
 ---
 title: End-to-End Weather App Scenario Part 1
 description: Create a basic Java app in SAP HANA Cloud Platform
-tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>beginner]
+tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
 ---
 
 ## Prerequisites  
@@ -57,7 +57,7 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
 
     ![specifying output directory to comply with Maven conventions](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-3.png)
 
-4. Make sure you have your **weatherapp** project folder selected, and then create a new Servlet by selecting the **File > New > Servlet** menu entry and enter the following information:
+4. Make sure you have your `weatherapp` project folder selected, and then create a new Servlet by selecting the **File > New > Servlet** menu entry and enter the following information:
 
     - **Package name:** `com.sap.hana.cloud.samples.weatherapp.web`
     - **Class name:** `HelloWorldServlet`
@@ -80,7 +80,7 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
 
     ![Modifying the doGet() method](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-6.png)
 
-7. Deploy the application to your local server by using the **Run as > Run on Server** context menu of the **HelloWorldServlet** node in the Project Explorer view.
+7. Deploy the application to your local server by using the **Run as > Run on Server** context menu of the `HelloWorldServlet` node in the Project Explorer view.
 
 8. Choose the **Manually define a new Server** option and select the **SAP / Java Web Server** option from the server selection. Make sure to select **Java Web** as the server runtime environment.
 

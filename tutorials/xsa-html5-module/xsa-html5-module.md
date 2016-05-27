@@ -100,7 +100,7 @@ You will now create the HTML5 module to add basic web based content to your XSA 
     ![Command line UAA](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-html5-module/6.png)
 
 
-9. The web folder in your project contains the resources that will be served out by this HTML5 module. This HTML5 module manages all HTML/client side UI resources (in the resources folder) and performs the task of reverse proxy for all other internal services. This way you have a single HTTP endpoint and avoid any CORS issues. The Add Module wizard already placed a simple index.html with `Hello World` in the resources folder. 
+9. The web folder in your project contains the resources that will be served out by this HTML5 module. This HTML5 module manages all HTML/client side UI resources (in the resources folder) and performs the task of reverse proxy for all other internal services. This way you have a single HTTP endpoint and avoid any CORS issues. The Add Module wizard already placed a simple `index.html` with `Hello World` in the resources folder. 
 
     ![Default Hello World](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-html5-module/7.png)
 
