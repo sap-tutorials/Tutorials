@@ -38,7 +38,7 @@ In the final part of this tutorial series you will learn how to deploy your Java
 
     ![Configuring the HCP server](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-2.png)
 
-3. Select the weatherapp on the list on the left and add it to the (remote) server by clicking on the **Add** button. Then, click on **Finish**.  
+3. Select the `weatherapp` on the list on the left and add it to the (remote) server by clicking on the **Add** button. Then, click on **Finish**.  
 
 4. Now create an HCP Destination for the remote server via the HCP cockpit (similar to what was done in section 8 for our local server). Enter the following:
 

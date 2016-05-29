@@ -32,7 +32,7 @@ The previous tutorial introduced a number of OData query options that developers
 
      ![Items attribute](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_2.png)
 
-3. If you run your app, you will notice that the OData results are returned sorted by the `ProductID` field. This default behaviour is driven by the `PropertyRef` in the `Key` element of the data model (`ProductID` in this case). You can see the key in the Northwind [metadata document](http://services.odata.org/V2/Northwind/Northwind.svc/$metadata) or your `northwind/model/metadata.xml` file.
+3. If you run your app, you will notice that the OData results are returned sorted by the `ProductID` field. This default behavior is driven by the `PropertyRef` in the `Key` element of the data model (`ProductID` in this case). You can see the key in the Northwind [metadata document](http://services.odata.org/V2/Northwind/Northwind.svc/$metadata) or your `northwind/model/metadata.xml` file.
 
     ![Key element](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_3.png)
 

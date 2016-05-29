@@ -19,7 +19,7 @@ SAP Lumira, a self-service BI tool, uses in-built data visualization charts (as 
 
 There are approximately 50+ viz extensions open sourced and available for download from [GitHub](https://github.com/SAP/lumira-extension-viz) at present. They are also showcased on the SAP Lumira gallery space in the SAP Community Network: [http://scn.sap.com/docs/DOC-60683](http://scn.sap.com/docs/DOC-60683). These are contributions from the Lumira developer community.
 
-There are also commercially available extensions developed by SAP Partners, that come with support, service and maintenance, available on the [SAP Extensions Marketplace]()
+There are also commercially available extensions developed by SAP Partners, that come with support, service and maintenance, available on the [SAP Extensions Marketplace](https://analytics-extensions.enter.sap/)
 
 In this tutorial, you will learn how to use an example viz extension (Bullet Chart), find how to download it, install it in SAP Lumira and use it like you would a native Lumira chart.
 

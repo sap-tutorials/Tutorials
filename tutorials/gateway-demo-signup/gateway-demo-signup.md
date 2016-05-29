@@ -41,13 +41,13 @@ Detailed steps creating an account on the Gateway Demo System (also known as ES4
 
 3. 	 Check your email inbox.  You will receive an email from *no-reply@sap.com* to your email account with your username and password.
 
-    > **Note:** If you do not recieve an email, please check and make sure your email address, listed on the registration web page, is correct.  If this address is correct, please wait for 5 minutes for the email to go through.  Also, check your spam filters - this email is sometimes reported as spam.  If the address is incorrect, change it on sap.com, and then start the registration process again.
+    > **Note:** If you do not receive an email, please check and make sure your email address, listed on the registration web page, is correct.  If this address is correct, please wait for 5 minutes for the email to go through.  Also, check your spam filters - this email is sometimes reported as spam.  If the address is incorrect, change it on sap.com, and then start the registration process again.
 
     This is an example of the registration confirmation email:
 
 	![Gateway Registration email confirmation](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/gateway-demo-signup/3.png)
 
-4.  Once you received your registration email, go to the [SAP Gateway WebGUI](https://sapes4.sapdevcenter.com/) (https://sapes4.sapdevcenter.com/).  Enter the username and initial password from your email.
+4.  Once you received your registration email, go to the [SAP Gateway WebGUI](https://sapes4.sapdevcenter.com/).  Enter the username and initial password from your email.
 
     ![Initial login - Gateway Web GUI](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/gateway-demo-signup/4.png)
 
@@ -73,7 +73,7 @@ Detailed steps creating an account on the Gateway Demo System (also known as ES4
 
 - If you need to reset your password, please visit the [Registration Form](https://supsignformsb03be6e80.us1.hana.ondemand.com/SUPSignForms/) again.  The system will reset your password and email you the new temporary password.
 
-- The email you received with your temporary password has additional links to the [Getting Started]() document, where you can find further information on how to utilize the SAP Gateway.
+- The email you received with your temporary password has additional links to the [Getting Started](http://scn.sap.com/docs/DOC-40986) document, where you can find further information on how to utilize the SAP Gateway.
 
 
 ### Problems?  Need Help?

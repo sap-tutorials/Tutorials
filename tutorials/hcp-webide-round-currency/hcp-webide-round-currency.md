@@ -1,7 +1,7 @@
 ---
 title: Round the currency field using JavaScript
 description: Learn how to round numbers received from the OData source using JavaScript.
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>beginner ]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>beginner ]
 ---
 
 ## Prerequisites
@@ -69,7 +69,7 @@ You will also learn how to add a field to your app. This is useful since the tem
 
     ![Inserted code](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_4.png)
 
-5. Save your edits, click on **index.html** and click the **Run** button to test this change. Your app should look like this:
+5. Save your edits, click on `index.html` and click the **Run** button to test this change. Your app should look like this:
 
     ![Modified app](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_5.png)
 

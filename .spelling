@@ -3,6 +3,7 @@ App.view.xml
 Auth
 artifacts
 backend
+behavior
 Bieser
 BusinessObjects
 catalog

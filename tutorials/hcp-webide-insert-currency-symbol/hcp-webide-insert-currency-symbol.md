@@ -1,7 +1,7 @@
 ---
 title: Insert a currency symbol for display
 description: Learn how to insert a symbol into the master and detail views of your app.
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>beginner ]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>beginner ]
 ---
 
 ## Prerequisites
@@ -43,7 +43,7 @@ Ideally, an OData service should specify the currency symbol or currency type fo
 
     ![Edited Detail.view.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-insert-currency-symbol/mob2-3_4.png)
 
-5. Save your edits and either refresh your preview tab or select the **index.html** file and click **Run**. Your app should look like this:
+5. Save your edits and either refresh your preview tab or select the `index.html` file and click **Run**. Your app should look like this:
 
 
     ![App showing currency symbol](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-insert-currency-symbol/mob2-3_5.png)

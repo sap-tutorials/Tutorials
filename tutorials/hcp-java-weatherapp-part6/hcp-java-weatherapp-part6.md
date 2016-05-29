@@ -19,7 +19,7 @@ In this tutorial you will implement a simple domain model and implement the corr
 
 ---
 
-1. Let’s create a base class for our domain model first. That’s usually considered best practices as it provides us with a central place to add common functionality to be shared across all domain model objects on later. For that purpose, select New > Class from the context menu entry on the **weatherapp** project and provide the following details:
+1. Let’s create a base class for our domain model first. That’s usually considered best practices as it provides us with a central place to add common functionality to be shared across all domain model objects on later. For that purpose, select New > Class from the context menu entry on the `weatherapp` project and provide the following details:
 
     - **Package name:** `com.sap.hana.cloud.samples.weatherapp.model`
     - **Classname:** `BaseObject`
@@ -47,11 +47,11 @@ In this tutorial you will implement a simple domain model and implement the corr
 
 6. Open the context menu of this newly created source folder and choose the **New > Other** option and then select the **Folder** option. Name the new folder `META-INF` (all capitals!) and click on **Finish**.
 
-7. Open the context menu of the newly created **META-INF** folder and select **New > File**. Name the new file `persistence.xml` and click on **Finish**.
+7. Open the context menu of the newly created `META-INF` folder and select **New > File**. Name the new file `persistence.xml` and click on **Finish**.
 
     ![Creating a configuration file for persistence](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-7.png)
 
-8. Copy and paste the following XML content into the **persistence.xml** file:
+8. Copy and paste the following XML content into the `persistence.xml` file:
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -81,7 +81,7 @@ In this tutorial you will implement a simple domain model and implement the corr
     ![Updating the persistence.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-8.png)
 
 
-9. Next, we need to add some more dependencies to our **pom.xml** file. In this case, the most important dependency is on EclipseLink (our JPA implementation of choice). However, we also need to declare dependencies for the Derby DB and Jackson (a serialization framework needed to convert data into JSON and vice versa.)
+9. Next, we need to add some more dependencies to our `pom.xml` file. In this case, the most important dependency is on EclipseLink (our JPA implementation of choice). However, we also need to declare dependencies for the Derby DB and Jackson (a serialization framework needed to convert data into JSON and vice versa.)
 
     ``` xml
     <!-- EclipseLink (and JPA) -->
@@ -123,7 +123,7 @@ In this tutorial you will implement a simple domain model and implement the corr
     ![Adding dependencies to pom.xml for persistence](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-9.png)
 
 
-10. We also need to add the Jackson version as a property in the properties section of the **pom.xml** file (as we have done in the previous section) and save your changes.
+10. We also need to add the Jackson version as a property in the properties section of the `pom.xml` file (as we have done in the previous section) and save your changes.
 
     ```xml
     <org.codehaus.jackson-version>1.9.9</org.codehaus.jackson-version>
@@ -140,7 +140,7 @@ In this tutorial you will implement a simple domain model and implement the corr
 
 12. Replace the contents of the `FavoriteCityService.java` file with [this code from Github](https://raw.githubusercontent.com/SAP/cloud-weatherapp/0988620f000075011dd3eb29c7155fae523647d8/src/main/java/com/sap/hana/cloud/samples/weatherapp/api/FavoriteCityService.java) and save your changes.
 
-13. To register our RESTful service implementation in the **web.xml** configuration file, add the fully qualified classname of our `FavoriteCityService` class to the *comma-separated* list of `jaxrs.serviceClasses`. See the snippet below for where to enter the fully qualified classname inside the `<param-value>` element (don't forget the comma at the end of the `AuthenticationService` line).
+13. To register our RESTful service implementation in the `web.xml` configuration file, add the fully qualified classname of our `FavoriteCityService` class to the *comma-separated* list of `jaxrs.serviceClasses`. See the snippet below for where to enter the fully qualified classname inside the `<param-value>` element (don't forget the comma at the end of the `AuthenticationService` line).
 
     ```xml
     <init-param>
@@ -154,7 +154,7 @@ In this tutorial you will implement a simple domain model and implement the corr
 
     ![Updating web.xml for persistence](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-13.png)
 
-14. Just below the aforementioned **\<init-param>** tag we need to add another `<init-param>` for JSON de-serialization as follows:
+14. Just below the aforementioned `<init-param>` tag we need to add another `<init-param>` for JSON de-serialization as follows:
 
     ```xml
     <init-param>
@@ -164,7 +164,7 @@ In this tutorial you will implement a simple domain model and implement the corr
     ```
     ![Adding init-param for JSON de-serialization](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-14.png)
 
-15. The last change to make is to define a DataSource within the **web.xml** in order to connect to the underlying database. To do this, copy and paste the following XML snippet after the closing **\</welcome-file-list>** tag:
+15. The last change to make is to define a DataSource within the `web.xml` in order to connect to the underlying database. To do this, copy and paste the following XML snippet after the closing `</welcome-file-list>` tag:
 
 
     ```xml

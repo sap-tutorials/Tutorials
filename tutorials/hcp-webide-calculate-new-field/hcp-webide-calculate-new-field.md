@@ -1,7 +1,7 @@
 ---
 title: Calculate and display a new field in an SAPUI5 app
 description: Learn how to add an additional tab, and more data fields to an SAPUI5 app.
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>intermediate ]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>intermediate ]
 ---
 
 ## Prerequisites
@@ -58,7 +58,7 @@ The field is calculated each time the detail view is displayed and is not persis
     ```
     ![bindview with debugger](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_2.png)
 
-3. Select **index.html** and run your app. In the preview tab, open Developer Tools (F12 or Option-Command-I), then select one of the items in the master list.
+3. Select `index.html` and run your app. In the preview tab, open Developer Tools (F12 or Option-Command-I), then select one of the items in the master list.
 
     You will see that execution has stopped at the debugger statement (1), and if you scroll down below the Call Stack, you will see the Scope section (2). Expand the record variable (3) and you will see the data made available by line 83 in your code.
 
