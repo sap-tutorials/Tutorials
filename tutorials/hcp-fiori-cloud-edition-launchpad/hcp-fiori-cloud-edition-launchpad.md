@@ -5,7 +5,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, produ
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Add custom fields to a standard SAP Fiori app]
+ - **Tutorials:** [Add custom fields to a standard SAP Fiori app](http://go.sap.com/developer/tutorials/hcp-fiori-cloud-edition-add-fields.html)
 
 ## Details
 ### You will learn  
