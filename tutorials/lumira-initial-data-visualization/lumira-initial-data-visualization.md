@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, products>sap-lumira ]
  - **Tutorials:** [Initial data exploration in SAP BusinessObjects Lumira](http://go.sap.com/developer/tutorials/lumira-initial-data-exploration.html)
 
 ## Next Steps
- - Predictive analytics in SAP BusinessObjects Lumira
+ - Time dimension and data drilling (coming soon)
 
 ## Details
 ### You will learn  
