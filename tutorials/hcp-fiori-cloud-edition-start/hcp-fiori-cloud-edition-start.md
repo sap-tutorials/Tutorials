@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform ]
 
 ## Details
 ### You will learn  
-In this tutorial I want to show you how to get started with the SAP Fiori, Demo Cloud Edition. 
+In this tutorial you will learn how to get started with the SAP Fiori, Demo Cloud Edition. 
 
 ### Time to Complete
 **5 Min**.
@@ -53,7 +53,7 @@ In this tutorial I want to show you how to get started with the SAP Fiori, Demo 
     
     ![launchpad start](5.png)
 
-7. The app we want to extend in the next tutorials is "My Opportunities" in the Group “CRM”:
+7. The app you want to extend in the next tutorials is "My Opportunities" in the Group “CRM”:
     
     ![Fiori launchpad group CRM](6.png)
 	
