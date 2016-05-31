@@ -1,18 +1,19 @@
 ---
 title: SAPUI5 Define Control Logic.
-description: Part 2 of 2. Write logic and extend the created control in your application.
+description: Part 2 of 2. In this Tutorial you will write logic and extend the created control in your application.
 tags: [  tutorial>beginner, topic>HTML5 ]
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - [SAPUI5 Creating Control](http://go.sap.com/developer/tutorials/sapui5-creating-control.html)
- - Should have basic understanding of HTML, CSS and JavaScript
+ - [SAPUI5 Creating Control](coming soon)
+ - Should have basic understanding of HTML, CSS and JavaScript.
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn
+
   You will learn how to extend controls in your application. In the below tutorial you will define controllers and it's logic to use it for generating and validating text-based captcha.
 
 ### Time to Complete
@@ -20,7 +21,7 @@ tags: [  tutorial>beginner, topic>HTML5 ]
 
 ---
 
-1.   Now you will define the metadata and it's content.
+1.   From the previous Tutorial you have created the control template, now you will define the metadata and it's content.
 
     ```javascript
     metadata : {
@@ -125,7 +126,7 @@ tags: [  tutorial>beginner, topic>HTML5 ]
 5. You should get such output when you run your application.
     ![sapui5_project](step_3.png)
 
-6. Now try out the application you created
+6. Now try out the application you created.
 
     ![sapui5_project](step_4.png)
 

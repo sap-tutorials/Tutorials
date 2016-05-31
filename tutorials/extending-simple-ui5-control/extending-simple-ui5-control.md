@@ -1,6 +1,6 @@
 ---
-title: Extending UI5 Controls
-description: Learn how to extend a simple UI5 control.
+title: SAPUI5 extending a simple Control.
+description: In this Tutorial you will learn how to extend a simple UI5 control.
 tags: [  tutorial>beginner, topic>HTML5 ]
 ---
 ## Prerequisites  
@@ -12,6 +12,7 @@ tags: [  tutorial>beginner, topic>HTML5 ]
 
 ## Details
 ### You will learn  
+
 You will learn how to extend a control in your application from scratch.
 Understand the basic flow of control and it's required parameters.
 
@@ -22,7 +23,7 @@ Understand the basic flow of control and it's required parameters.
 
    ![sapui5_project](sap_1.jpg)
 
-2. In your `index.html` file between the scripts tag add the following
+2. In your `index.html` file between the scripts tag add the following:
 
     ```javascript
        sap.ui.core.Control.extend()
