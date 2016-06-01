@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>HTML5 ]
 - Should have basic understanding of HTML, CSS and JavaScript.
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [SAPUI5 Extending Button Control](comming soon)
 
 ## Details
 ### You will learn  
@@ -80,4 +80,4 @@ Understand the basic flow of control and it's required parameters.
 ---
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [SAPUI5 Extending Button Control](comming soon)

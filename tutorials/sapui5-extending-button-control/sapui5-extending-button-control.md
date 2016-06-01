@@ -6,10 +6,11 @@ tags: [  tutorial>beginner, topic>HTML5 ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
+ - [SAPUI5 Extending Simple Control](comming soon)
  - Should have basic understanding of HTML,CSS and JavaScript.
 
 ## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+  - [SAPUI5 Creating Control](comming soon)
 
 ## Details
 ### You will learn  
@@ -94,4 +95,4 @@ You will learn how to extend an existing control i.e Button in your application,
 
 ---
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [SAPUI5 Creating Control](comming soon)
