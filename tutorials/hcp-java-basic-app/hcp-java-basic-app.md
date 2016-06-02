@@ -4,7 +4,7 @@ description: Develop and deploy your first Java application using the SAP HANA C
 tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner | Intermediate | Advanced
+ - **Proficiency:** Beginner
  - **Tutorials:** [Configuring Eclipse with SAP HANA Cloud Platform Tools for Java](http://go.sap.com/developer/tutorials/hcp-java-eclipse-setup.html)
 
 ## Next Steps
