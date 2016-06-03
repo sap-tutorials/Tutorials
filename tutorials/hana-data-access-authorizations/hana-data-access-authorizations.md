@@ -135,7 +135,7 @@ There now we are set to view the data from the "Catalog" tab.
 
 ![Add role to user](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/24.png)
 
-![25.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/25.png)
+![Table Definition](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/25.png)
 
 The resulting view shows the SQL query executed when we clicked the "Open Content" button.
 
