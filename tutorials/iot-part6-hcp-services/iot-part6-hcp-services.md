@@ -48,5 +48,5 @@ This procedure assumes you are using the trial edition of the SAP HANA Cloud Pla
 
     ![Authorizations](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part6-hcp-services/p6_8.png)
 
-9. Then under **Individual Users**, click **Assign** and enter your HCP user ID (e.g. your p-number without the word “trial” on the end). With that complete it is time to add our device.    ![Assign Role](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part6-hcp-services/p6_9.png)## Next Steps
+9. Then under **Individual Users**, click **Assign** and enter your HCP user ID (e.g. your p-number without the word “trial” on the end).    ![Assign Role](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part6-hcp-services/p6_9.png)     Once user is assigned to the role, stop and start `iotmms` application.## Next Steps
  - [Internet of Things (IoT) Adding a new device to the IoT Services](http://go.sap.com/developer/tutorials/iot-part7-add-device.html)
