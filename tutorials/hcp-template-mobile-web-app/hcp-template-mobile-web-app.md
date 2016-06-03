@@ -67,7 +67,7 @@ You will be setting a few configurations, then filling out a few forms in this s
 
     > Note: If you don't see the the **Northwind OData Service** in the pull down menu, go back to your destination in the HCP cockpit and double-check the entries from the previous tutorial. If you make changes, reload Web IDE, then restart the procedure in this tutorial.
 
-    ![mob1-2_11.png](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_11.png)
+    ![Data connection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_11.png)
 
 12. After selecting the Northwind OData Service entry, enter the relative path (see below) to the OData service you will use in the field under the drop-down list-box (where it says “Paste URL here”). Be sure not to include any trailing space characters. The relative path to enter is: `/V2/Northwind/Northwind.svc`. The URL you entered for your destination plus the relative path you enter here points to the OData Service you will use for your app.
 
