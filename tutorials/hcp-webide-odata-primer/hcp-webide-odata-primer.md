@@ -127,7 +127,7 @@ There is a wealth of information available at [http://www.odata.org](http://www.
 
     - <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=1>
 
-    ![top](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_13.png)
+    ![top query option](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_13.png)
 
 14. To see the 6th and 7th records, add the `$skiptoken=5` query option and change `$top` to 2. The `$skiptoken` will make the service skip over the `skiptoken` many records before it sends data. Changing `$top` to `2` will return two records, rather than just one.
 
