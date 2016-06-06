@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform ]
  - **Tutorials:** [Sign up for an account on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
- - Add custom fields to a standard SAP Fiori app
+ - [Add custom fields to a standard SAP Fiori app](http://go.sap.com/developer/tutorials/hcp-fiori-cloud-edition-add-fields.html)
 
 ## Details
 ### You will learn  
@@ -60,4 +60,5 @@ In this tutorial you will learn how to get started with the SAP Fiori, Demo Clou
 Congratulations, you're ready to go and start extending the SAP standard Fiori apps.
 
 ## Next Steps
- - Add custom fields to a standard SAP Fiori app
+ - [Add custom fields to a standard SAP Fiori app](http://go.sap.com/developer/tutorials/hcp-fiori-cloud-edition-add-fields.html)
+
