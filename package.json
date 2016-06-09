@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Tutorials for catalog on sap.com http://go.sap.com/developer/tutorials.html",
   "main": "README.MD",
+  "license": "Apache-2.0",
   "scripts": {
     "test": "node test.js -pt"
   },
