@@ -4,7 +4,7 @@
   "description": "Tutorials for catalog on sap.com http://go.sap.com/developer/tutorials.html",
   "main": "README.MD",
   "scripts": {
-    "test": "node test.js -pa"
+    "test": "node test.js -pt"
   },
   "repository": {
     "type": "git",

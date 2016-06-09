@@ -41,87 +41,96 @@ if (options.file){
   inquirerprompt.setShowfilename(true);
 }
 
-//if p flag is set it turns off the progressbar
-if (options.progressbar){
-  inquirerprompt.turnoffprogressbar(true);
+if (options.all || options.wip  || options.input || options.specific){
+  console.log("There is no work-in-progress folder and no further selection. Please use -t");
 }
+else{
 
-if (options.help){
-  log.info("HELP: Your possibilities for the input: \n      -h or --help for Help \n      -f: to log all filenames, which get tested \n      -a: for testing everything (including files, which aren't tutorials) \n      -w & -t: for testing every tutorial in both folders \n      -w: for testing all files in the work-in-progress folder \n      -t: for testing all files in the tutorials folder \n      -s: for dialog to choose specific tutorials \n      -i: to give an filename behind with *\n          to resctrict the scope: enter -w or/and -t \n      -p: to turn off the progressbar ");
-}
+  //if p flag is set it turns off the progressbar
+  if (options.progressbar){
+    inquirerprompt.turnoffprogressbar(true);
+  }
 
-else if (options.all){
-  //input flag a
-  inquirerprompt.readtutorialnames(function (){
-    inquirerprompt.readwipnames(function () {
-      inquirerprompt.readallfilenames(function () {
-        inquirerprompt.allfiles();
-      });
-    });
-  });
-}
+  if (options.help){
+    log.info("HELP: Your possibilities for the input: \n      -h or --help for Help \n      -f: to log all filenames, which get tested \n      -t: for testing all files in the tutorials folder \n      -p: to turn off the progressbar ");
+  }
 
-else if (options.tutorials && options.wip && !options.input){
-  //input flag w and t
-  inquirerprompt.readtutorialnames(function (){
-    inquirerprompt.readwipnames(function () {
-      inquirerprompt.alltutorials();
-    });
-  });
-}
-
-else if (options.tutorials && !options.wip && !options.input){
-  //input flag t
-  inquirerprompt.readtutorialnames(function (){
-    inquirerprompt.tutorials();
-  });
-}
-
-else if (options.wip && !options.tutorials && !options.input){
-//input flag w
-  inquirerprompt.readwipnames(function () {
-    inquirerprompt.wip();
-  });
-}
-
-else if (options.specific){
-  //input flag s
-  inquirerprompt.readtutorialnames(function (){
-    inquirerprompt.readwipnames(function () {
-      inquirerprompt.specific();
-    });
-  });
-}
-
-else if (options.input){
-  //only input or wt and input
-  if ((options.tutorials && options.wip) || (!options.tutorials && !options.wip)){
+  else if (options.all){
+    //input flag a
     inquirerprompt.readtutorialnames(function (){
       inquirerprompt.readwipnames(function () {
-        inquirerprompt.allgrouptutorials(options.input);
+        inquirerprompt.readallfilenames(function () {
+          inquirerprompt.allfiles();
+        });
       });
     });
   }
 
-  //w and  input
-  else if (options.wip){
-    inquirerprompt.readwipnames(function () {
-      inquirerprompt.wipgrouptutorials(options.input);
-    });
-  }
-  //t and  input
-  else if (options.tutorials){
+  else if (options.tutorials && options.wip && !options.input){
+    //input flag w and t
     inquirerprompt.readtutorialnames(function (){
-      inquirerprompt.tutorialsgrouptutorials(options.input);
+      inquirerprompt.readwipnames(function () {
+        inquirerprompt.alltutorials();
+      });
     });
   }
-}
 
-else {
-//  (no user input parameters (except of f))
-  if (!options.tutorials && !options.wip && !options.all && !options.help && !options.specific && !options.input)
-    inquirerprompt.ask(arraydeclaration.choicearray);
-  else{
-    log.error("Error: no available command identified )\n       prompt --help or -h for more info");
+  else if (options.tutorials && !options.wip && !options.input){
+    //input flag t
+    inquirerprompt.readtutorialnames(function (){
+      inquirerprompt.tutorials();
+    });
+  }
+
+  else if (options.wip && !options.tutorials && !options.input){
+  //input flag w
+    inquirerprompt.readwipnames(function () {
+      inquirerprompt.wip();
+    });
+  }
+
+  else if (options.specific){
+    //input flag s
+    inquirerprompt.readtutorialnames(function (){
+      inquirerprompt.readwipnames(function () {
+        inquirerprompt.specific();
+      });
+    });
+  }
+
+  else if (options.input){
+    //only input or wt and input
+    if ((options.tutorials && options.wip) || (!options.tutorials && !options.wip)){
+      inquirerprompt.readtutorialnames(function (){
+        inquirerprompt.readwipnames(function () {
+          inquirerprompt.allgrouptutorials(options.input);
+        });
+      });
+    }
+
+    //w and  input
+    else if (options.wip){
+      inquirerprompt.readwipnames(function () {
+        inquirerprompt.wipgrouptutorials(options.input);
+      });
+    }
+    //t and  input
+    else if (options.tutorials){
+      inquirerprompt.readtutorialnames(function (){
+        inquirerprompt.tutorialsgrouptutorials(options.input);
+      });
+    }
+  }
+
+  else {
+  //  (no user input parameters (except of f))
+    if (!options.tutorials && !options.wip && !options.all && !options.help && !options.specific && !options.input)
+      inquirerprompt.readtutorialnames(function (){
+        inquirerprompt.tutorials();
+      });
+      //inquirerprompt.ask(arraydeclaration.choicearray);
+    else{
+      log.error("Error: no available command identified )\n       prompt --help or -h for more info");
+    }
   }
 }
