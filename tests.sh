@@ -1,4 +1,4 @@
 #!/bin/bash
 
-grunt setuptests
-grunt test -v
+npm install
+npm run test

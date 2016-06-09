@@ -1,0 +1,8 @@
+test
+es6
+.travis.yml
+.appveyor.yml
+.spelling
+gulpfile.js
+.gitignore
+.eslintrc

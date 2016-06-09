@@ -4,7 +4,7 @@
   "description": "Tutorials for catalog on sap.com http://go.sap.com/developer/tutorials.html",
   "main": "README.MD",
   "scripts": {
-    "test": ". tests.sh"
+    "test": "node test.js -a"
   },
   "repository": {
     "type": "git",
@@ -21,11 +21,13 @@
   },
   "homepage": "https://github.com/SAPDocuments/Tutorials#readme",
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-deadlink": "^0.1.4",
-    "grunt-filenames": "^0.4.0",
-    "grunt-files-check": "^0.1.2",
-    "grunt-mdspell": "^0.4.0"
+    "checklink": "^1.0.0",
+    "color-log": "0.0.2",
+    "command-line-args": "^3.0.0",
+    "inquirer": "^1.0.3",
+    "markdown-spellcheck": "^0.10.0",
+    "mkdirp": "^0.5.1",
+    "progress": "^1.1.8",
+    "recursive-readdir": "^2.0.0"
   }
 }
