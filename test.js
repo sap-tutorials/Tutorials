@@ -25,7 +25,8 @@ const optionDefinitions = [
   { name: 'wip', alias: 'w', type: Boolean },
   { name: 'specific', alias: 's', type: Boolean },
   { name: 'input', alias: 'i', type: String },
-  { name: 'file', alias: 'f', type: Boolean}
+  { name: 'file', alias: 'f', type: Boolean},
+  { name: 'progressbar', alias: 'p', type: Boolean}
 ]
 
 const options = commandLineArgs(optionDefinitions)
@@ -40,8 +41,13 @@ if (options.file){
   inquirerprompt.setShowfilename(true);
 }
 
+//if p flag is set it turns off the progressbar
+if (options.progressbar){
+  inquirerprompt.turnoffprogressbar(true);
+}
+
 if (options.help){
-  log.info("HELP: Your possibilities for the input: \n      -h or --help for Help \n      -f: to log all filenames, which get tested \n      -a: for testing everything (including files, which aren't tutorials) \n      -w & -t: for testing every tutorial in both folders \n      -w: for testing all files in the work-in-progress folder \n      -t: for testing all files in the tutorials folder \n      -s: for dialog to choose specific tutorials \n      -i: to give an filename behind with *\n          to resctrict the scope: enter -w or/and -t");
+  log.info("HELP: Your possibilities for the input: \n      -h or --help for Help \n      -f: to log all filenames, which get tested \n      -a: for testing everything (including files, which aren't tutorials) \n      -w & -t: for testing every tutorial in both folders \n      -w: for testing all files in the work-in-progress folder \n      -t: for testing all files in the tutorials folder \n      -s: for dialog to choose specific tutorials \n      -i: to give an filename behind with *\n          to resctrict the scope: enter -w or/and -t \n      -p: to turn off the progressbar ");
 }
 
 else if (options.all){

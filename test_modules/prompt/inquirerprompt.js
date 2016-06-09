@@ -23,6 +23,14 @@ var setShowfilename = function(value){
   showfilenames = value;
 }
 
+var showprogressbar = true;
+
+var turnoffprogressbar = function(value){
+  if (value){
+    showprogressbar = false;
+  }
+}
+
 //"main function" -> reacts on the user input from commands
 var ask = function (array){
     inquirer.prompt(array).then(function(results) {
@@ -168,7 +176,7 @@ var alltutorials = function (){
     console.log(resultarray);
   }
   //console.log(resultarray.length);
-  checkjs(resultarray);
+  checkjs(resultarray, showprogressbar);
 }
 
 var allfiles = function (){
@@ -196,7 +204,7 @@ var allfiles = function (){
   }
 
   //console.log(resultarray.length);
-  checkjs(resultarray);
+  checkjs(resultarray, showprogressbar);
 }
 
 //function to build the results array with all files of the wip folder in case the user wants to test all wip-tutorials
@@ -208,7 +216,7 @@ var wip = function (){
   if (showfilenames){
     console.log(resultarray);
   }
-  checkjs(resultarray);
+  checkjs(resultarray, showprogressbar);
 }
 
 //function to build the results array with all files of the tutorial folder in case the user wants to test all tutorials
@@ -220,7 +228,7 @@ var tutorials = function (){
   if (showfilenames){
     console.log(resultarray);
   }
-  checkjs(resultarray);
+  checkjs(resultarray, showprogressbar);
 }
 
 //function to build the next interacive command in case the user wants to type in the filenames of tutorials
@@ -253,7 +261,7 @@ var singletutorialsselected = function (results){
   if (showfilenames){
     console.log(resultarray);
   }
-  checkjs(resultarray);
+  checkjs(resultarray, showprogressbar);
 }
 
 
@@ -279,7 +287,7 @@ var tutorialsgrouptutorials = function (results){
   if (showfilenames){
     console.log(resultarray);
   }
-  checkjs(resultarray);
+  checkjs(resultarray, showprogressbar);
 }
 
 
@@ -305,7 +313,7 @@ var wipgrouptutorials = function (results){
   if (showfilenames){
     console.log(resultarray);
   }
-  checkjs(resultarray);
+  checkjs(resultarray, showprogressbar);
 }
 
 
@@ -354,7 +362,7 @@ var allgrouptutorials = function (results){
   if (showfilenames){
     console.log(resultarray);
   }
-  checkjs(resultarray);
+  checkjs(resultarray, showprogressbar);
 
 
 }
@@ -376,5 +384,6 @@ module.exports = {
   tutorialsgrouptutorials: tutorialsgrouptutorials,
   wipgrouptutorials: wipgrouptutorials,
   readallfilenames: readallfilenames,
-  setShowfilename: setShowfilename
+  setShowfilename: setShowfilename,
+  turnoffprogressbar: turnoffprogressbar
 }

@@ -12,7 +12,7 @@ var log = require('color-log');
 var path = require('path');
 var ProgressBar = require('progress');
 
-module.exports = function(files, callback) {
+module.exports = function(files, showprogressbar, callback) {
     console.log("\n");
 
     //initialize ProgressBar
@@ -21,6 +21,8 @@ module.exports = function(files, callback) {
         width: 50,
         total: (4 * files.length) + 2
     });
+
+
 
     //initialize log for every test
     var logFilename = "";
@@ -40,18 +42,18 @@ module.exports = function(files, callback) {
     var cntNotCheckedDeadlink = 0;
 
     var index = 0;
-    bar.tick();
+    if(showprogressbar){ bar.tick(); };
 
     //read .spelling file
     readWhiteList(function() {
-        bar.tick();
+        if(showprogressbar){ bar.tick(); };
         //check every file
         files.forEach(function(file) {
 
             //check Filenames
             var fname = path.basename(file);
             var filenameRes = checkFilename(fname, file);
-            bar.tick();
+            if(showprogressbar){ bar.tick(); };
             //build error log
             if (filenameRes !== null) {
                 cntFilename++;
@@ -62,7 +64,7 @@ module.exports = function(files, callback) {
 
             //check spelling
             mdspell(file, function(report) {
-                bar.tick();
+                if(showprogressbar){ bar.tick(); };
                 var splitReport = report.split(/\r?\n/);
                 if (splitReport.length >= 3) {
                     //build error log
@@ -79,7 +81,7 @@ module.exports = function(files, callback) {
 
             //readLines
             readLines(file, function(fileContent) {
-                bar.tick();
+                if(showprogressbar){ bar.tick(); };
                 if (fileContent != null) {
                     //check file content
                     var lineIndex = 0;
@@ -103,7 +105,7 @@ module.exports = function(files, callback) {
 
                 //check links
                 var x = checkDeadLink(fname, getLinks(fileContent), function(results) {
-                    bar.tick();
+                    if(showprogressbar){ bar.tick(); };
                     index++;
                     if (results != null) {
                         checkedLinks += results.count;
