@@ -107,7 +107,7 @@ You should now see the local workspace mapped to the remote workspace in the SAP
 > ### Note
 >Your System ID, User ID, Hostname, and System Numbers will be different than those displayed in subsequent screen shots. For this reason we have often blurred this information in screen shots to avoid confusion.
 
-To view what you have just created, deployed and activated you can view the url on the server via your web browser.
+To view what you have just created, deployed and activated you can view the URL on the server via your web browser.
 
 
 ![Web view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/39.png)
