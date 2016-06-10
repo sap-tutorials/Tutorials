@@ -124,9 +124,19 @@ module.exports = function(files, showprogressbar, callback) {
                     //show log after all files are checked
                     if (index === files.length) {
                         logResult();
+                        var passed = (cntFilename + cntMdspell + cntContent + cntDeadLink) == 0;
                         //only for moving files to check if there are any errors
                         if (callback)
-                            callback((cntFilename + cntMdspell + cntContent + cntDeadLink) == 0);
+                            callback(passed);
+                        //error for circle ci
+                        if(passed){
+                          log.info("successful testing");
+                          process.exit(0); //success
+                        } else{
+                          log.error("failed testing");
+                          process.exit(1);  //fail
+                        }
+
                     }
 
                 });
