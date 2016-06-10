@@ -93,7 +93,7 @@ updateIoT(temp.toFixed(4), humid.toFixed(4));
     setTimeout(loop, 3000);
     ```
 
-    ![loop](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_8.png)
+    ![loop time-out modifications](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_8.png)
 
 9. Before running your script, you need to connect the Tessel to the Internet. Run the following command line file (in your CMD or Terminal window) replacing `SSID` and `password` with the appropriate Wi-Fi credentials (if you are at home or the office, use what is appropriate):
 

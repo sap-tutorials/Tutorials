@@ -100,7 +100,7 @@ Open the context menu of the `codejam` package by right-clicking on the name and
 
 The new empty file is now open in the Editor:
 
-![XSJS](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/15.png)
+![XSJS file in editor](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/15.png)
 
 Copy and paste this code to the just created `mylibrary.xsjs` file:
 
