@@ -3,6 +3,9 @@ machine:
     America/Los_Angeles
   node:
     version: 4.2.2
+dependencies:
+  override:
+    - npm install --production
 test:
   override:
     - . tests.sh
