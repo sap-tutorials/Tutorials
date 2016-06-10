@@ -36,7 +36,7 @@ In this tutorial, you will see what gamification on the SAP HANA Cloud Platform 
 
     ![Administration Tab](5.png)
 
-   > When generation of the application is complete, you will see the following message:
+    > When generation of the application is complete, you will see the following message:
 
     ![Successful App Creation](6.png)
 
