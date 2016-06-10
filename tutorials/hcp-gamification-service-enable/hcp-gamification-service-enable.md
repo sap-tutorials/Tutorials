@@ -51,7 +51,6 @@ How to enable the gamification service in your SAP HANA Cloud Platform account a
 
     ![Account-level Destinations](7.png)
 
-    ### Warning
     > Do NOT click the **Destinations** button in the gamification service itself.
 
 6. Click the **Edit** button to open the **`gsdest`** destination for editing.

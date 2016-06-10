@@ -73,7 +73,6 @@ In this tutorial, you will retrieve the gamified HelpDesk application from GitHu
 
     ![Application URL](13.png)
 
-    ### Information
     > If configured correctly, your browser should open the following page:
 
     ![Successfully Launched HelpDesk Application](14.png)

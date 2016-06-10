@@ -36,7 +36,6 @@ In this tutorial, you will see what gamification on the SAP HANA Cloud Platform 
 
     ![Administration Tab](5.png)
 
-    ### Information
    > When generation of the application is complete, you will see the following message:
 
     ![Successful App Creation](6.png)
@@ -61,7 +60,6 @@ In this tutorial, you will see what gamification on the SAP HANA Cloud Platform 
 
     ![HelpDesk Home Screen](11.png)
 
-    ### Information
     > The gamified HelpDesk application will appear pre-populated with questions in your queue.
 
 10. Customize a response in the **Your Response** field and click **Send Answer**.
