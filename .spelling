@@ -9,7 +9,6 @@ behavior
 Bieser
 BusinessObjects
 catalog
-center
 Center
 classname
 Classname
@@ -56,14 +55,12 @@ Kapsel
 labeled
 List.controller.js
 List.view.xml
-Lite
 Lumira
 MacDown
 math
 Maven
 Maven-based
 messageBundle.properties
-Modeling
 META-INF
 Netweaver
 NetWeaver
