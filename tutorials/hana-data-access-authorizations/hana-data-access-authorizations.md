@@ -123,7 +123,7 @@ In order to now view our data we will need to ensure our user has access to it, 
 
 Now we will need to open the "Security" tab and add this new role to our user.
 
-![User](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/20.png)
+![Security tab - User](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/20.png)
 
 ![Add role](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/21.png)
 
