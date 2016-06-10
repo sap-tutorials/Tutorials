@@ -27,7 +27,6 @@ In this tutorial, you will tweak the game mechanics of the HelpDesk application 
 
     ![Go to Service](2.png)
 
-    ### Tip
     >You can bookmark this page for ease of access in the future.
 
 3. Select the **`HelpDesk`** application from the drop-down menu in the upper-right corner.
@@ -46,11 +45,11 @@ In this tutorial, you will tweak the game mechanics of the HelpDesk application 
 
     ![Change XP Points](6.png)
 
-    ### Code
+    ```java
+    updateAPIv1.givePointsToPlayer($playerid, 'Experience Points', 3, 'Ticket processed');
+    update(engine.getPlayerById($playerid));
     ```
-    updateAPIv1.givePointsToPlayer($playerid, 'Experience Points', 3, 'Ticket processed');        
-  update(engine.getPlayerById($playerid));
-    ```
+
 7. Click **Save**.
 
     ![Save Experience Points](7.png)
@@ -63,17 +62,16 @@ In this tutorial, you will tweak the game mechanics of the HelpDesk application 
 
     ![Change CT XP Points](9.png)
 
-    ### Code
-    ```  
+    ```java
     updateAPIv1.givePointsToPlayer($playerid, 'Critical Tickets', 1, 'Critical ticket processed');
-  updateAPIv1.givePointsToPlayer($playerid, 'Experience Points', 7, 'Critical ticket processed');
-  update(engine.getPlayerById($playerid));
+    updateAPIv1.givePointsToPlayer($playerid, 'Experience Points', 7, 'Critical ticket processed');
+    update(engine.getPlayerById($playerid));
     ```
+
 10. Click **Save**.
 
     ![Save Experience Points](10.png)
 
-    ### Information
     >**`Experience Points`** for responding to critical tickets are given in addition to **`Experience Points`** given for processing any ticket. In other words, users will now receive 10 points when solving a critical ticket (7 critical points plus 3 points for solving any ticket).
 
 11. You can ensure that these rules were successfully updated by checking the notification center in the upper right-hand corner.
@@ -94,7 +92,6 @@ In this tutorial, you will tweak the game mechanics of the HelpDesk application 
 
 15. Repeat the previous step three to five times until you have a variety of levels.
 
-    ### Tip
     >Start with a level with a small threshold, so that newly registered users will have a level already assigned.
 
 16. Launch the gamified HelpDesk application by first selecting **Help** in the upper-right corner.
