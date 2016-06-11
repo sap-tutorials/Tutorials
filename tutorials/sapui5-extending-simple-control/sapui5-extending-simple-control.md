@@ -68,16 +68,15 @@ Understand the basic flow of control and it's required parameters.
 
     ![step_three](img-3.png)
 
-5. Now you will create an object of the extended control, pass the values for it's property and place the object in the content. Since you are going to add other elements in the content you will edit the existing `<div id="content">` as `<div id="content_1">`
+5.  Now you will create an object of the extended control, pass the values for it's property and place the object in the content. Since you are going to add other elements in the content you will edit the existing  `<div id="content">` as `<div id="content_1">`
 
     ```javascript
     var oLabel = new valueEditor({
   				label : "Login Preview",
-
   			 });
-    oLabel.placeAt("content_1");
-
+      oLabel.placeAt("content_1");
     ```
+    
     ![step_four](img-4.png)
 
 6. Your final code will look like this:

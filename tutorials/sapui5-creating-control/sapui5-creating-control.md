@@ -28,9 +28,9 @@ tags: [  tutorial>beginner, topic>html5 ]
     ```
     ![extendedcontrol](step-1.png)
 
-  This line will allow you to extend the Control from the `ui.core` library.
+    This line will allow you to extend the Control from the `ui.core` library.
 
-2. You must define the extended Control by adding metadata to it. Control metadata consist of properties, events, as well as aggregations and associations. Also under the metadata are the `init` and `renderer` functions for initializing and rendering elements. In this step you will just declare what you are going to use. In the same `index.html` inside the `sap.ui.core.Control.extend()`.
+2.    You must define the extended Control by adding metadata to it. Control metadata consist of properties, events, as well as aggregations and associations. Also under the metadata are the `init` and `renderer` functions for initializing and rendering elements. In this step you will just declare what you are going to use. In the same `index.html` inside the `sap.ui.core.Control.extend()`.
 
     ```javascript
         sap.ui.core.Control.extend("extendController",{
@@ -50,7 +50,7 @@ tags: [  tutorial>beginner, topic>html5 ]
 
     The `renderer` defines the HTML structure that will be added to the DOM tree of your application whenever the control is instantiates in a view. It is usually called initially by the core of SAPUI5 and whenever a property of the control is changed. But in this step you will leave it empty.
 
-3.  Now you will create an object of the extended control and place the object created in your content. Do this below the defined control. Remember you are going to place this in a new `div` so after you add the object also add the new `div with id="content_3"` in the **body tag**.
+3.   Now you will create an object of the extended control and place the object created in your content. Do this below the defined control. Remember you are going to place this in a new `div` so after you add the object also add the new `div with id="content_3"` in the **body tag**.
 
     ```javascript
       var oo = new extendController({});
