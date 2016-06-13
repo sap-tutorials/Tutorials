@@ -114,7 +114,14 @@ module.exports = function(files, showprogressbar, callback) {
                             cntDeadLink += results.deadlinks.length;
                             var errmsg = [];
                             results.deadlinks.forEach(function(deadlink) {
-                                errmsg.push('\n\n        url: ' + deadlink.url + '\n        code: ' + deadlink.code + '\n        message: ' + deadlink.message);
+                              var line;
+                                fileContent.forEach(function(line,i){
+                                  if(line.includes(deadlink.url)){
+                                    line = i+1;
+                                    errmsg.push('\n\n        url: ' + deadlink.url + '\n        line: ' + line + '\n        code: ' + deadlink.code + '\n        message: ' + deadlink.message);
+                                  }
+                                })
+
                             });
                             logDeadLink += '\n    > Deadlink(s) found in ' + fname + ':' + errmsg + '\n';
                         }
