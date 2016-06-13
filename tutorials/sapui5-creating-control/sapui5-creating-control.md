@@ -1,16 +1,16 @@
 ---
-title: SAPUI5 Creating Control
-description: Part 3 of 4. In this Tutorial you will learn how to create a simple UI5 Control. Create the template for your control.
+title: SAPUI5 creating a new UI5 control
+description: Part 3 of 4. In this tutorial you will learn how to create a simple UI5 Control.
 tags: [  tutorial>beginner, topic>html5 ]
 ---
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [SAPUI5 Extending Button Control](http://go.sap.com/developer/tutorials/sapui5-extending-button-control.html)
+ - **Tutorials:** [SAPUI5 extending `TextField`, `PasswordField` and `Button` Controls with events](http://go.sap.com/developer/tutorials/sapui5-extending-button-control.html)
  - Should have basic understanding of HTML, CSS and JavaScript.
 
 ## Next Steps
-  - [SAPUI5 Define Control Logic](http://go.sap.com/developer/tutorials/sapui5-define-control-logic.html)
+  - [Finalize your new UI5 Control by specifying the control logic](http://go.sap.com/developer/tutorials/sapui5-define-control-logic.html)
 
 ## Details
 ### You will learn
@@ -85,4 +85,4 @@ tags: [  tutorial>beginner, topic>html5 ]
   In the next Tutorial you will define all the functions to extend and add logic to your program.
 
 ## Next Steps
-  - [SAPUI5 Define Control Logic](http://go.sap.com/developer/tutorials/sapui5-define-control-logic.html)
+  - [Finalize your new UI5 Control by specifying the control logic](http://go.sap.com/developer/tutorials/sapui5-define-control-logic.html)

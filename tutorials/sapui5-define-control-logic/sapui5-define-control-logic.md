@@ -1,6 +1,6 @@
 ---
-title: SAPUI5 Define Control Logic.
-description: Part 4 of 4. In this Tutorial you will write logic and extend the created control in your application.
+title: Finalize your new UI5 Control by specifying the control logic
+description: Part 4 of 4. In this tutorial you will write logic and extend the created control in your application.
 tags: [  tutorial>beginner, topic>html5 ]
 ---
 ## Prerequisites

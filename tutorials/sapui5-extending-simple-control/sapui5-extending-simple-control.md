@@ -1,6 +1,6 @@
 ---
-title: SAPUI5 extending a simple Control.
-description: Part 1 of 4. In this Tutorial you will learn how to extend  a simple UI5 control.
+title: SAPUI5 extending a simple Control
+description: Part 1 of 4. In this tutorial you will learn how to extend a simple UI5 control.
 tags: [  tutorial>beginner, topic>html5 ]
 ---
 ## Prerequisites  
@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>html5 ]
 - Should have basic understanding of HTML, CSS and JavaScript.
 
 ## Next Steps
- - [SAPUI5 Extending Button Control](http://go.sap.com/developer/tutorials/sapui5-extending-button-control.html)
+ - [SAPUI5 extending `TextField`, `PasswordField` and `Button` Controls with events](http://go.sap.com/developer/tutorials/sapui5-extending-button-control.html)
 
 ## Details
 ### You will learn  
@@ -92,4 +92,4 @@ Understand the basic flow of control and it's required parameters.
 ---
 
 ## Next Steps
- - [SAPUI5 Extending Button Control](http://go.sap.com/developer/tutorials/sapui5-extending-button-control.html)
+ - [SAPUI5 extending `TextField`, `PasswordField` and `Button` Controls with events](http://go.sap.com/developer/tutorials/sapui5-extending-button-control.html)
