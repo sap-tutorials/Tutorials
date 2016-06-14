@@ -8,25 +8,26 @@ module.exports = function(file, line, callback) {
 
         //create regular expression
         var regexs = [
-            new RegExp('\\!\\[\\]\\((.*?)\\)'), //require alt tag for images
+            new RegExp('\\[\\]\\((.*?)\\)'), //require alt tag for images
             new RegExp('^(# )\\w+'), // check for H1
             new RegExp('\\!\\[(.*\\.png.*)\\]\\(.*\\)'), // check for .png namings
             new RegExp('[^!]\\[.*?(here|there|file|folder|this|page)\\]\\((.*?)\\)'), // avoid useless url names
-            new RegExp('\\!\\[(.{1,4}|\\s{1,})\\]\\(.*\\)'), // conventions of alt-text for images are not observed (at least 5 characters, not only spaces)
+            new RegExp('\\[(.{1,2}|\\s{1,})\\]\\(.*\\)'), // conventions of alt-text for images are not observed (at least 3 characters, not only spaces)
             new RegExp('\\>###'), // avoid message box typo //(^\s*(\>){1,})\s*(\w){1,}
-            new RegExp('(.exe)(\\b)') // prohibit suspicious filetypes
-
+            new RegExp('(.exe)(\\b)'), // prohibit suspicious filetypes
+            new RegExp('\\[.*\\]\\(\\)') //\[.*\]\(\)
         ]
 
         //messages for regular expressions
         var msg = [
-            "alt-text tag for images is required",
+            "empty alt-text tag for link/image",
             "no H1 (single #) allowed",
             "no filenames in alt-text for images allowed",
             "no useless hyperlinked terms",
-            "conventions of alt-text for images are not observed (at least 5 characters, not only spaces)",
+            "conventions of alt-text for link/image are not observed (at least 3 characters, not only spaces)",
             "no message box typo",
-            "no suspicious file types in links"
+            "no suspicious file types in links",
+            "empty URL field"
         ]
 
         //check line with every regex
