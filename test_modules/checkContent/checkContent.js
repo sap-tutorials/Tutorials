@@ -14,7 +14,7 @@ module.exports = function(file, line, callback) {
             new RegExp('[^!]\\[.*?(here|there|file|folder|this|page)\\]\\((.*?)\\)'), // avoid useless url names
             new RegExp('\\[(.{1,2}|\\s{1,})\\]\\(.*\\)'), // conventions of alt-text for images are not observed (at least 3 characters, not only spaces)
             new RegExp('\\>###'), // avoid message box typo //(^\s*(\>){1,})\s*(\w){1,}
-            new RegExp('(.exe)(\\b)'), // prohibit suspicious filetypes
+            new RegExp('\\[.*\]\\(.*\\.exe\\)'), // prohibit suspicious filetypes
             new RegExp('\\[.*\\]\\(\\)') //\[.*\]\(\)
         ]
 
