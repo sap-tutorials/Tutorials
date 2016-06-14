@@ -76,18 +76,18 @@ You will now create the HTML5 module to add basic web based content to your XSA 
 
 7. In future, adding the resource declaration to the MTA descriptor will allow the tools to automatically provision these resources at runtime. But this functionality is not yet provided for UAA services.  Therefore you have to use the XS command line client tool to perform this step. From a command line type the following to connect to remote XSA server. 
 
-	>REMEMBER You must also install the XSA command line tools!! These can be downloaded from the SAP HANA Developer Edition directly or via the [http://service.sap.com]SAP Service Marketplace]()
+    >REMEMBER: You must also install the XSA command line tools!! These can be downloaded from the SAP HANA Developer Edition directly or via the [SAP Service Marketplace](http://service.sap.com)
 	
 
-	```
-	 xs login -a http://<hostname>:30030 -o hanapm -s SAP -u WORKSHOP_01 -p HanaRocks2016 
-	```
+    ```
+    xs login -a http://<hostname>:30030 -o hanapm -s SAP -u WORKSHOP_01 -p HanaRocks2016 
+    ```
 
-	If you have used the CODEJAMMER user then the command would look different.    
+    If you have used the CODEJAMMER user then the command would look different.    
 
-	```
-	 xs login -a http://<hostname>:30030 -o hanapm -s SAP -u CODEJAMMER -p CodeJam2016 
-	```
+    ```
+    xs login -a http://<hostname>:30030 -o hanapm -s SAP -u CODEJAMMER -p CodeJam2016 
+    ```
     
     ![Command line XS Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-html5-module/5.png)
 

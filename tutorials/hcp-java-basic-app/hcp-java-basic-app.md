@@ -35,7 +35,7 @@ In this tutorial you will create a Dynamic Web project, a servlet to respond to 
 
     ![open wizard](jav100-2-new_dynamic_web_project.png)
     
-5. In the **New Dynamic Web Project Wizard** define the **Project name** to be `helloworld`. Make sure the **Target Runtime** is set to `Java Web`, the Server Runtime Environment that has been created in the tutorial [Configuring Eclipse with SAP HANA Cloud Platform Tools for Java](). Leave all other settings untouched and click **Finish** to create the project.
+5. In the **New Dynamic Web Project Wizard** define the **Project name** to be `helloworld`. Make sure the **Target Runtime** is set to `Java Web`, the Server Runtime Environment that has been created in the tutorial [Configuring Eclipse with SAP HANA Cloud Platform Tools for Java](http://go.sap.com/developer/tutorials/hcp-java-eclipse-setup.html). Leave all other settings untouched and click **Finish** to create the project.
 
     ![project wizard](jav100-2-dynamic_web_project_wizard.png)
 
