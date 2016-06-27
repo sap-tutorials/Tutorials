@@ -1,5 +1,5 @@
 ---
-title: SAP UI5 - Add a list to the view
+title: SAPUI5 - Add a list to the view
 description: Add a list view to a UI5 page
 tags: [ tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
 ---

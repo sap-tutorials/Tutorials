@@ -1,5 +1,5 @@
 ---
-title: SAP UI5 - Add a search field
+title: SAPUI5 - Add a search field
 description: Add a search using the SearchField element
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
 ---

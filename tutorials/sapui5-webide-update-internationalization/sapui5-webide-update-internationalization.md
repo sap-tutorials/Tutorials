@@ -1,5 +1,5 @@
 ---
-title: SAP UI5 - Update Internationalization (i18n)
+title: SAPUI5 - Update Internationalization (i18n)
 description: Add internationalization (i18n) files, and add language specific text
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
 ---

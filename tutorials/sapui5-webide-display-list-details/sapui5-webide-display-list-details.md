@@ -1,5 +1,5 @@
 ---
-title: SAP UI5 - Display List Element Details
+title: SAPUI5 - Display List Element Details
 description: Add details to a list, making it a multi-line list element
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
 ---

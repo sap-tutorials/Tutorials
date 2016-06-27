@@ -1,5 +1,5 @@
 ---
-title: SAP UI5 - Enable Routing
+title: SAPUI5 - Enable Routing
 description: Enable routing to move from one view to another
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
 ---
