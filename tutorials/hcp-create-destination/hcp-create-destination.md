@@ -12,7 +12,7 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>mobile, topic>odata
 The next step of your tutorial depends on which series you are working in.  Select the correct series below to move forward.
 
  - [**Mobile Application series** - Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
- - [**SAPUI5 with WebIDE series** - Set up the datasource in the application](https://go.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
+ - [**SAPUI5 with Web IDE series** - Set up the `datasource` in the application](https://go.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
 
 ## Details
 
@@ -63,4 +63,4 @@ The data source URL is <http://services.odata.org/V2/Northwind/Northwind.svc/>
 Several of the tutorial series create a Northwind destination.  To return to your tutorial series, pick the series from the list below:
 
 - [**Mobile Application series** - Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
-- [**SAPUI5 with WebIDE series** - Set up the datasource in the application](https://go.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
+- [**SAPUI5 with Web IDE series** - Set up the `datasource` in the application](https://go.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
