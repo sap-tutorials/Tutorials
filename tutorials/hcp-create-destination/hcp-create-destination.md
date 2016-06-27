@@ -9,7 +9,10 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>mobile, topic>odata
  - **Tutorials:** [Sign up for an account on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
- - [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+The next step of your tutorial depends on which series you are working in.  Select the correct series below to move forward.
+
+ - [**Mobile Application series** - Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+ - [**SAPUI5 with WebIDE series** - Set up the datasource in the application](sapui5-webide-setup-datasource.html)
 
 ## Details
 
@@ -54,7 +57,10 @@ The data source URL is <http://services.odata.org/V2/Northwind/Northwind.svc/>
 
     ![Completed HCP destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_3.png)
 
-4. Click **Save**, and that's it. Continue with the tutorial below to build your first app.
+4. Click **Save**, and that's it.  You are ready for the next step in your tutorial.
 
 ## Next Steps
- - [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+Several of the tutorial series create a Northwind destination.  To return to your tutorial series, pick the series from the list below:
+
+- [**Mobile Application series** - Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+- [**SAPUI5 with WebIDE series** - Set up the datasource in the application](sapui5-webide-setup-datasource.html)
