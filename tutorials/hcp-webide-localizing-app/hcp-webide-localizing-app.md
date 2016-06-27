@@ -1,7 +1,7 @@
 ---
 title: Localizing your SAPUI5 app
 description: Learn how to support multiple languages in your app using the SAP Translation Hub, and how to manually add a language-locale combination.
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>sapui5, tutorial>intermediate]
+tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, tutorial>intermediate]
 ---
 
 ## Prerequisites
@@ -15,7 +15,7 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 
 ### You will learn
 
-In the fourth tutorial of Mobile Guide #2, you extracted strings from the application into the internationalization (i18n) bundle of UI5. In subsequent tutorials, you continued this practice by placing all strings in the messageBundle.properties file.
+In the fourth tutorial of Mobile Guide #2, you extracted strings from the application into the internationalization (i18n) bundle of UI5. In subsequent tutorials, you continued this practice by placing all strings in the `messageBundle.properties` file.
 
 Using a single file not only makes it easy to update strings in the future, but it makes it trivial to localize the UI to different languages and locales. If you want to support multiple languages (English, Spanish, German, French, etc.) or multiple locale settings for a given language (e.g. UK vs US English, or German vs Swiss German) you can create separate files to store the localized strings.
 

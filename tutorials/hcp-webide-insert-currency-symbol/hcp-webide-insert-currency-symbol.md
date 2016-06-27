@@ -21,7 +21,7 @@ Ideally, an OData service should specify the currency symbol or currency type fo
 
 ---
 
-1. The recommended way to insert strings in your app is to take advantage of the internationalization (i18n) and localization capabilities that are built into the SAPUI5 framework. To begin, open the **northwind > i18n > messageBundle.properties file** and insert the line below. You can change the symbol to $, or whichever symbol you would like to display.
+1. The recommended way to insert strings in your app is to take advantage of the internationalization (i18n) and localization capabilities that are built into the SAPUI5 framework. To begin, open the **`northwind > i18n > messageBundle.properties` file** and insert the line below. You can change the symbol to $, or whichever symbol you would like to display.
 
     ```xml
     currencySymbol=€
@@ -29,7 +29,7 @@ Ideally, an OData service should specify the currency symbol or currency type fo
 
     ![messageBundle.properties file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-insert-currency-symbol/mob2-3_1.png)
 
-2.  Any string from the messageBundle.properties file can be used in your app using a reference in the following format: `{i18n>key}`. To reference the string you just inserted, you will use:
+2.  Any string from the `messageBundle.properties` file can be used in your app using a reference in the following format: `{i18n>key}`. To reference the string you just inserted, you will use:
 
     ```xml
     {i18n>currencySymbol}

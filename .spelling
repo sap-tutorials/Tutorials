@@ -1,4 +1,5 @@
 AngularJS
+Ansible
 Apriori
 Auth
 backend
@@ -13,7 +14,9 @@ CustomerDemographics
 data-center
 DataSource
 DesignStudio
+DevOps
 EclipseLink
+Envinject
 Fiori
 Github
 github.com
@@ -31,12 +34,14 @@ Javadoc
 Javadocs
 JAVA_HOME
 JAX-RS
+JDKs
 JPA
 JSONView
+JUnit
 Kapsel
 Lumira
 MacDown
-messageBundle.properties
+MySQL
 NetWeaver
 Node.js
 northwind
@@ -48,6 +53,7 @@ openweathermap
 openweathermap.org
 plugin
 plugins
+Postgres
 pre-pend
 pre-pended
 proxied
