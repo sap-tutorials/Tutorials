@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 6: [Display List Details](sapui5-webide-display-list-details.html)
+ - **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 6: [Display List Details](https://go.sap.com/developer/tutorials/sapui5-webide-display-list-details.html)
 
 ## Next Steps
- - The next tutorial is Step 8: [Improve the list and detail view](sapui5-webide-upgrade-detail-view.html)
+ - The next tutorial is Step 8: [Improve the list and detail view](https://go.sap.com/developer/tutorials/sapui5-webide-upgrade-detail-view.html)
 
 ## Details
 ### You will learn  
@@ -37,7 +37,7 @@ Set proper titles to `View1` and `Detail` page by updating the resource model (a
 
 
 ## Next Steps
- - The next tutorial is Step 8: [Improve the list and detail view](sapui5-webide-upgrade-detail-view.html)
+ - The next tutorial is Step 8: [Improve the list and detail view](https://go.sap.com/developer/tutorials/sapui5-webide-upgrade-detail-view.html)
 
 ##Additional Information
 - [Data-binding](http://help.sap.de/saphelp_uiaddon10/helpdata/en/91/f0f3cd6f4d1014b6dd926db0e91070/content.htm)

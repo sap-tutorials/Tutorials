@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorials:** This tutorial is part of a series.  The previous tutorial is [Set up the Northwind Destination](hcp-create-destination.html)
+ - **Tutorials:** This tutorial is part of a series.  The previous tutorial is [Set up the Northwind Destination](https://go.sap.com/developer/tutorials/hcp-create-destination.html)
 
 ## Next Steps
- - This tutorial is part of a series.  The next tutorial is part 4: [Add a list to the current view](sapui5-webide-add-list.html)
+ - This tutorial is part of a series.  The next tutorial is part 4: [Add a list to the current view](https://go.sap.com/developer/tutorials/sapui5-webide-add-list.html)
 
 ## Details
 ### You will learn  
@@ -136,4 +136,4 @@ Next, we will test the application.
 
 
 ## Next Steps
- - This tutorial is part of a series.  The next tutorial is part 4: [Add a list to the current view](sapui5-webide-add-list.html)
+ - This tutorial is part of a series.  The next tutorial is part 4: [Add a list to the current view](https://go.sap.com/developer/tutorials/sapui5-webide-add-list.html)

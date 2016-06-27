@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 5: [Enable Routing in your Application](sapui5-webide-enable-routing.html)
+ - **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 5: [Enable Routing in your Application](https://go.sap.com/developer/tutorials/sapui5-webide-enable-routing.html)
 
 ## Next Steps
- - Part 7 is next: [Update Internationalization](sapui5-webide-update-internationalization.html)
+ - Part 7 is next: [Update Internationalization](https://go.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
 
 ## Details
 ### You will learn  
@@ -99,7 +99,7 @@ In order to improve our web app, you can display a more detail information for e
     ![Current application - detail view](6b.png)
 
 ## Next Steps
- - Part 7 is next: [Update Internationalization](sapui5-webide-update-internationalization.html)
+ - Part 7 is next: [Update Internationalization](https://go.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
 
 ## Additional Reading
 - [Routing with mandatory parameters](http://help.sap.com/saphelp_nw75/helpdata/en/f9/6d2522a5ca4382a274ae3c6d002ca0/content.htm)

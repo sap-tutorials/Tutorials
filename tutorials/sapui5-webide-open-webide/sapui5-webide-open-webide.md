@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
  - **Tutorials:** If you don't have a HANA Cloud Account, follow the tutorial to [set up a free developer account](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html).
 
 ## Next Steps
- - Start the SAP UI5 with Web IDE series: [Create a new project](sapui5-webide-create-project.html)
+ - Start the SAP UI5 with Web IDE series: [Create a new project](https://go.sap.com/developer/tutorials/sapui5-webide-create-project.html)
 
 ## Details
 ### You will learn  
@@ -50,4 +50,4 @@ Learn how to enable and then navigate to the SAP Web IDE inside of HANA Cloud Pl
 
 
 ## Next Steps
- - Start the SAP UI5 with Web IDE series: [Create a new project](sapui5-webide-create-project.html)
+ - Start the SAP UI5 with Web IDE series: [Create a new project](https://go.sap.com/developer/tutorials/sapui5-webide-create-project.html)

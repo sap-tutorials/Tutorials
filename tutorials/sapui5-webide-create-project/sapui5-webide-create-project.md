@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorials:** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](#)
+ - **Tutorials:** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 ## Next Steps
- - This tutorial is part of a series.  The next tutorial is [Configure the Northwind Destination](#)
+ - This tutorial is part of a series.  The next tutorial is [Configure the Northwind Destination](https://go.sap.com/developer/tutorials/hcp-create-destination.html)
 
 ## Details
 ### You will learn  
@@ -47,4 +47,4 @@ Your project should now look like this.  (Click a folder icon to expand the cont
 [Here is some information on the UI5 folder structure.](https://sapui5.hana.ondemand.com/#docs/guide/003f755d46d34dd1bbce9ffe08c8d46a.html)
 
 ## Next Steps
- - This tutorial is part of a series.  The next tutorial is [Configure the Northwind Destination](#)
+ - This tutorial is part of a series.  The next tutorial is [Configure the Northwind Destination](https://go.sap.com/developer/tutorials/hcp-create-destination.html)
