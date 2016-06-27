@@ -1,6 +1,4 @@
-_app
 AngularJS
-App.view.xml
 Apriori
 Auth
 backend
@@ -11,17 +9,12 @@ classname
 Classname
 Cmehil
 CodeJam
-Component.js
 CustomerDemographics
 data-center
 DataSource
 DesignStudio
-Detail.view.xml
-Details.controller.js
-Details.view.xml
 EclipseLink
 Fiori
-formatter.js
 Github
 github.com
 go.sap.com
@@ -41,8 +34,6 @@ JAX-RS
 JPA
 JSONView
 Kapsel
-List.controller.js
-List.view.xml
 Lumira
 MacDown
 messageBundle.properties
@@ -74,11 +65,9 @@ Servlet
 Tessel
 timestamp
 truststore
-tutorials.html
 UI5
 util
 Vora
-weather_app
 webapp
 WebIDEEnabled
 WebIDESystem

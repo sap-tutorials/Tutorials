@@ -107,7 +107,7 @@ The field is calculated each time the detail view is displayed and is not persis
     ```
     ![messageBundle.properties file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_8.png)
 
-9. Open the **view > Detail.view.xml** file, add the following XML to the `ObjectHeader`, Beautify and save your change.
+9. Open the **view > `Detail.view.xml`** file, add the following XML to the `ObjectHeader`, Beautify and save your change.
 
     ```xml
     <ObjectAttribute text="{i18n>currencySymbol}{inventoryValue}" title="{i18n>label_CurrentInventoryValue}"/>

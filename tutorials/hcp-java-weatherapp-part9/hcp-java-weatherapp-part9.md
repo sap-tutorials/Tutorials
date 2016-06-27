@@ -39,13 +39,13 @@ In this tutorial you will implement a simple responsive, mobile-compatible user 
 
 4. Copy and paste the content from GitHub into the respective files and familiarize yourself with the content of the individual files.
 
-    - /weather_app/view/[App.view.xml](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/weather_app/view/App.view.xml)
-    - /weather_app/view/[Details.controller.js](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/weather_app/view/Details.controller.js)
-    - /weather_app/view/[Details.view.xml](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/weather_app/view/Details.view.xml)
-    - /weather_app/view/[List.controller.js](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/weather_app/view/List.controller.js)
-    - /weather_app/view/[List.view.xml](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/weather_app/view/List.view.xml)
-    - /weather_app/[Component.js](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/weather_app/Component.js)
-    - /weather_app[/util/formatter.js](https://raw.githubusercontent.com/SAP/cloud-weatherapp/master/src/main/webapp/weather_app/util/formatter.js)
+    - `/weather_app/view/`[`App.view.xml`](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/weather_app/view/App.view.xml)
+    - `/weather_app/view/`[`Details.controller.js`](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/weather_app/view/Details.controller.js)
+    - `/weather_app/view/`[`Details.view.xml`](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/weather_app/view/Details.view.xml)
+    - `/weather_app/view/`[`List.controller.js`](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/weather_app/view/List.controller.js)
+    - `/weather_app/view/`[`List.view.xml`](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/weather_app/view/List.view.xml)
+    - `/weather_app/`[`Component.js`](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/weather_app/Component.js)
+    - `/weather_app`[`/util/formatter.js`](https://raw.githubusercontent.com/SAP/cloud-weatherapp/master/src/main/webapp/weather_app/util/formatter.js)
 
 
 5. Replace the content of the `index.html` file to match this [version in Github](https://raw.githubusercontent.com/SAP/cloud-weatherapp/4c6c4ca78a680042fda82ab1d413e520608b581c/src/main/webapp/index.html).

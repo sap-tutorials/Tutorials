@@ -35,13 +35,13 @@ In the previous tutorials you added some labels to the details view by inserting
 
     ![messageBundle.properties](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-labels-i18n/mob2-4_1.png)
 
-2. Following the same pattern used for the currency example: `{i18n>key}`, the three references you will use are in the **Detail.view.xml** file are:
+2. Following the same pattern used for the currency example: `{i18n>key}`, the three references you will use are in the **`Detail.view.xml`** file are:
 
     * `{i18n>label_ProductID}`
     * `{i18n>label_UnitsInStock}`
     * `{i18n>label_UnitsOnOrder}`
 
-    Edit the Detail.view.xml file to replace the hard-coded title strings with the references above. Your file should look like this:
+    Edit the `Detail.view.xml` file to replace the hard-coded title strings with the references above. Your file should look like this:
 
      ![Modified Detail.view.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-labels-i18n/mob2-4_2.png)
 
