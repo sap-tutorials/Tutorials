@@ -8,7 +8,7 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>mobile, topic>odata
  - **Proficiency:** Beginner
  - **Tutorials:**  This tutorial is used in several different series.  Choose the series to move backward:
      - **Mobile Application Series**  [Sign up for an account on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
-     - **SAPUI5 with Web IDE Series** [Create a new UI5 project](http://go.sap.com/developer/tutorials/sapui5-webide-create-project)
+     - **SAPUI5 with Web IDE Series** [Create a new UI5 project](http://go.sap.com/developer/tutorials/sapui5-webide-create-project.html)
 
 ## Next Steps
 This tutorial is used in several different series.  Choose the correct series below to move forward.
