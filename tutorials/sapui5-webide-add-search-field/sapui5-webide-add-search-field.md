@@ -1,10 +1,13 @@
 ---
-title: SAP UI5 - Add a search field
+title: SAPUI5 - Add a search field
 description: Add a search using the SearchField element
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
+
+ - **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+
  - **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 6: [Upgrade the Detail view](https://go.sap.com/developer/tutorials/sapui5-webide-upgrade-detail-view.html)
 
 ## Next Steps

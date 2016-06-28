@@ -1,10 +1,13 @@
 ---
-title: SAP UI5 - Display List Element Details
+title: SAPUI5 - Display List Element Details
 description: Add details to a list, making it a multi-line list element
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
+
+ - **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+
  - **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 5: [Enable Routing in your Application](https://go.sap.com/developer/tutorials/sapui5-webide-enable-routing.html)
 
 ## Next Steps

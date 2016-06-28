@@ -1,10 +1,13 @@
 ---
-title: SAP UI5 - Improve the list and detail view
+title: SAPUI5 - Improve the list and detail view
 description: Multi-line list items using ObjectListItem and ObjectHeader controls
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
+
+ - **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+
  - **Tutorials:** This tutorial is part of a series.  The previous tutorial is Part 7 [Update Internationalization](https://go.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
 
 ## Next Steps

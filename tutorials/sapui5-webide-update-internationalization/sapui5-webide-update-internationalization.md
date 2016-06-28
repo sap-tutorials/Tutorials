@@ -1,10 +1,13 @@
 ---
-title: SAP UI5 - Update Internationalization (i18n)
+title: SAPUI5 - Update Internationalization (i18n)
 description: Add internationalization (i18n) files, and add language specific text
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
+
+ - **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+
  - **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 6: [Display List Details](https://go.sap.com/developer/tutorials/sapui5-webide-display-list-details.html)
 
 ## Next Steps

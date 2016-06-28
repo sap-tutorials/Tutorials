@@ -1,11 +1,13 @@
 ---
-title: SAP UI5 - Create an empty UI5 WebIDE project
-description: Start working with the Web IDE editor, and create a new empty UI5 WebIDE project
+title: SAP UI5 - Create an empty UI5 Web IDE project
+description: Start working with the Web IDE editor, and create a new empty UI5 Web IDE project
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorials:** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+
+ - **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+
 
 ## Next Steps
  - This tutorial is part of a series.  The next tutorial is [Configure the Northwind Destination](https://go.sap.com/developer/tutorials/hcp-create-destination.html)

@@ -1,10 +1,13 @@
 ---
-title: SAP UI5 - Setup the DataSource in the local application
+title: SAPUI5 - Setup the DataSource in the local application
 description: Once the datasource has been defined, configure the local application to use the data.
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
+
+ - **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+
  - **Tutorials:** This tutorial is part of a series.  The previous tutorial is [Set up the Northwind Destination](https://go.sap.com/developer/tutorials/hcp-create-destination.html)
 
 ## Next Steps

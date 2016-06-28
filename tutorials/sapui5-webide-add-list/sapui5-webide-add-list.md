@@ -1,10 +1,13 @@
 ---
-title: SAP UI5 - Add a list to the view
+title: SAPUI5 - Add a list to the view
 description: Add a list view to a UI5 page
 tags: [ tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
+
+ - **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+
  - **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 3: [Set up the data source in the Application](https://go.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
 
 ## Next Steps
