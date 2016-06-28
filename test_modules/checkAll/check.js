@@ -104,11 +104,11 @@ module.exports = function(files, showprogressbar, callback) {
                 }
 
                 //check links
-                var x = checkDeadLink(fname, getLinks(fileContent), function(results) {
-                    if(showprogressbar){ bar.tick(); };
+                var links = getLinks(fileContent);
+                checkedLinks += links.length;
+                checkDeadLink(fname, links, function(results) {
                     index++;
                     if (results != null) {
-                        checkedLinks += results.count;
                         //build error log
                         if (!results.isPassed) {
                             cntDeadLink += results.deadlinks.length;
@@ -118,40 +118,41 @@ module.exports = function(files, showprogressbar, callback) {
                                 fileContent.forEach(function(line,i){
                                   if(line.includes(deadlink.url)){
                                     line = i+1;
-                                    errmsg.push('\n\n        url: ' + deadlink.url + '\n        line: ' + line + '\n        code: ' + deadlink.code + '\n        message: ' + deadlink.message);
+                                    errmsg.push('\n\n        url: ' + deadlink.url + '\n        line: ' + line + '\n        code: ' + deadlink.code);
                                   }
                                 })
-
                             });
                             logDeadLink += '\n    > Deadlink(s) found in ' + fname + ':' + errmsg + '\n';
                         }
+                        checkIfCompleted();
                     } else {
                         cntNotCheckedDeadlink++;
+                        checkIfCompleted();
                     }
-                    //show log after all files are checked
-                    if (index === files.length) {
-                        logResult();
-                        var passed = (cntFilename + cntMdspell + cntContent + cntDeadLink) == 0;
-                        //only for moving files to check if there are any errors
-                        if (callback)
+
+                    function checkIfCompleted(){
+                      if(showprogressbar){ bar.tick(); };
+                      //show log after all files are checked
+                      if (index === files.length) {
+                          logResult();
+                          var passed = (cntFilename + cntMdspell + cntContent + cntDeadLink) == 0;
+                          //only for moving files to check if there are any errors
+                          if (callback){
                             callback(passed);
-                        //error for circle ci
-                        if(passed){
-                          log.info("successful testing");
-                          process.exit(0); //success
-                        } else{
-                          log.error("failed testing");
-                          process.exit(1);  //fail
-                        }
+                          }
+                          //error for circle ci
+                          else if(passed){
+                            log.info("successful testing");
+                            process.exit(0); //success
+                          } else{
+                            log.error("failed testing");
+                            process.exit(1);  //fail
+                          }
 
+                      }
                     }
-
                 });
-
             });
-
-
-
         })
 
         //log all results from testing with formatting
