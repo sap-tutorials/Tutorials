@@ -69,7 +69,7 @@ You will also learn how to add a field to your app. This is useful since the tem
 
 In this section, you will add the Product ID field from the OData source to the header section of the detail page just above the Units In Stock and Units On Order. To do this you will add an XML element just above the `ObjectAttribute` elements that were edited in the previous section.
 
-1. Go back to the **northwind > view > Detail.view.xml** in the edit pane (or reopen if you closed it). Add the following XML snippet inside the section as shown below.
+1. Go back to the **`northwind > view > Detail.view.xml`** in the edit pane (or reopen if you closed it). Add the following XML snippet inside the section as shown below.
 
     ```xml
     <ObjectAttribute title="Product ID" text="{ProductID}"/>
