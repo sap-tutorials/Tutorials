@@ -133,7 +133,7 @@ The difference is as follows:
 
 In any case, tests should automatically run in the build, enabling developers to avoid regressions and failures in an early state. Whenever it is possible to add an automatic test by writing additional code especially in the form of unit tests but also in the form of scripts which automatically install, start, and test the application, this should be done.
 
-Unit test frameworks are available for many source code technologies, most prominently, junit for Java.
+Unit test frameworks are available for many source code technologies, most prominently, JUnit for Java.
 For runtime tests, there are a lot of tools that allow implementing interactions with the software to be executed automatically and checking its behavior with the expected one. There are even frameworks to test graphical UIs like Selenium.
 
 Thus the build does not restrict itself anymore to the pure role of syntactical validation of the source code and production of the build artifacts (which then could turn out to be unusable from a functional point of view). The build also acts as a hurdle to ensure the functional correctness of the product (see also section "Build Each Change").
