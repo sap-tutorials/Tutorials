@@ -72,6 +72,8 @@ Tessel
 timestamp
 truststore
 UI5
+UIs
+url
 util
 Vora
 webapp
@@ -85,3 +87,4 @@ xsaccess
 xsapp
 xsjs
 xsodata
+Xvfb

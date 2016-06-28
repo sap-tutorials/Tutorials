@@ -9,11 +9,11 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Prerequisites  
 
   - **Proficiency:** Intermediate
-  - [Generic Project]
+  - [Generic Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)
 
 ## Next Steps
 
-  - [Back to the Navigator]
+  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
   
 ---
 
@@ -240,4 +240,4 @@ Do the following changes for both jobs `VO_neo-java-web-sdk-samples_master` and 
 
 ## Next Steps
 
-  - [Back to the Navigator]
+  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)

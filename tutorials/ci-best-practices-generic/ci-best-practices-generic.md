@@ -9,11 +9,11 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Prerequisites
 
   - **Proficiency:** Intermediate
-  - [Landscape Configuration]
+  - [Landscape Configuration](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)
 
 ## Next Steps
 
-  - [Back to the Navigator]
+  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
 
 ---
 
@@ -231,4 +231,4 @@ public class AppTest
 
 ## Next Steps
 
-  - [Back to the Navigator]
+  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)

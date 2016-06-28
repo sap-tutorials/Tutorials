@@ -9,11 +9,11 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Prerequisites
 
   - **Proficiency:** Intermediate
-  - [CI/CD Practices]
+  - [CI/CD Practices](http://go.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)
   
 ## Next Steps
  
-  - [Back to the Navigator]
+  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
   
 ---
 
@@ -145,5 +145,5 @@ What was discussed here so far is the process for integration into the main line
 
 ## Next Steps
  
-  - [Back to the Navigator]
+  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
   

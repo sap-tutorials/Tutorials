@@ -12,8 +12,8 @@ tags: [  tutorial>intermediate, tutorial:type/project  ]
 
 ## Next Steps
  
-  - [Landscape Configuration]
-  - [Back to the Navigator]
+  - [Landscape Configuration](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
   
 ---
 
@@ -64,14 +64,15 @@ This document refers to a Nexus 2 release. In the future, Nexus 3 might also be 
      ```
      /usr/local/nexus/bin/nexus start
      ```
-  8. Open the URL `http://{nexus host}:8081/nexus`. You should now be able to access Nexus and you should see some default repositories already configured, especially two of them named "Snapshots" and "Releases". Also, there is a user `deployment` that has access permissions for uploading artifacts. The default user for administrator access is `admin/admin123`.  
+  8. Open the URL `http://{nexus host}:8081/nexus`. You should now be able to access Nexus and you should see some default repositories already configured, especially two of them named "Snapshots" and "Releases".  
      ![Repositories](artifact-repository-1.png)  
-     ![Repositories](images/artifact-repository-2.png)
+     Also, there is a user `deployment` that has access permissions for uploading artifacts. The default user for administrator access is `admin/admin123`.
+     ![Repositories](artifact-repository-2.png)
   9. To make Nexus productively runnable and secure, please follow the post-install checklist of the official documentation.  
      > Documentation: https://books.sonatype.com/nexus-book/reference/install-sect-repoman-post-install.html   
 
 
 ## Next Steps
  
-  - [Landscape Configuration]
-  - [Back to the Navigator]
+  - [Landscape Configuration](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)

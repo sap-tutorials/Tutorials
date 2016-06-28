@@ -11,18 +11,18 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ## Outline
 
-1. [Introduction and Navigator] (this document)
+1. [Introduction and Navigator (this document)](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)  
 2. Continuous Integration and Delivery  
-2.1. [CI/CD Practices]  
-2.2. [Pipeline Suggestions]  
+2.1. [CI/CD Practices](http://go.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)  
+2.2. [Pipeline Suggestions](http://go.sap.com/developer/tutorials/ci-best-practices-pipelines.html)  
 3. CI/CD Landscape - Component Setup  
-3.1. [Source Code Versioning System]  
-3.2. [Build Scheduler]  
-3.3. [Artifact Repository]  
-3.4. [Landscape Configuration]  
+3.1. [Source Code Versioning System](http://go.sap.com/developer/tutorials/ci-best-practices-scm.html)  
+3.2. [Build Scheduler](http://go.sap.com/developer/tutorials/ci-best-practices-build.html)  
+3.3. [Artifact Repository](http://go.sap.com/developer/tutorials/ci-best-practices-artifacts.html)  
+3.4. [Landscape Configuration](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)  
 4. CI/CD Process Setup  
-4.1. [Generic Project]  
-4.2. [Java Web on SAP HANA Cloud Platform]  
+4.1. [Generic Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)  
+4.2. [Java Web on SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp.html)  
 
 ---
 
@@ -65,16 +65,16 @@ This best practices guide has to cover a broad spectrum of aspects and addresses
 
 | Part of the Guide      | Manager, Decision Maker | Quality Manager | Delivery Manager | Build Operator | Build Engineer | Developer engaged in CI |
 |-----------|---|---|---|---|---|---|
-| **1. Introduction and Navigator (this document)**  | ++         | ++         | ++         | ++         | ++         | ++          |
+| **1. [Introduction and Navigator (this document)](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)** | ++         | ++         | ++         | ++         | ++         | ++          |
 | **2. Continuous Integration and Delivery** |            |            |            |            |            |            |
-| 2.1. [CI/CD Practices]: The Practices and Principles of CI and CD   | ++         | ++         | ++         | +          | +          | +          |
-| 2.2. [Pipeline Suggestions]: Patterns for a CI/CD pipeline   | +          | ++         | ++         | +          | ++         |            |
+| 2.1. [CI/CD Practices: The Practices and Principles of CI and CD](http://go.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)   | ++         | ++         | ++         | +          | +          | +          |
+| 2.2. [Pipeline Suggestions: Patterns for a CI/CD pipeline](http://go.sap.com/developer/tutorials/ci-best-practices-pipelines.html)   | +          | ++         | ++         | +          | ++         |            |
 | **3. CI/CD Landscape - Component Setup**   |            |            |            |            |            |            |
-| 3.1. [Source Code Versioning System]: Setting up a Git/Gerrit Instance     |            |            |            | ++         |            |            |
-| 3.2. [Build Scheduler]: Setting up a Jenkins Instance       |            |            |            | ++         |            |            |
-| 3.3. [Artifact Repository]: Setting up a Nexus Instance        |            |            |            | ++         |            |            |
-| 3.4. [Landscape Configuration]: Configuring the CI Component Landscape       |            |            |            | ++         | +          |            |
+| 3.1. [Source Code Versioning System: Setting up a Git/Gerrit Instance](http://go.sap.com/developer/tutorials/ci-best-practices-scm.html)     |            |            |            | ++         |            |            |
+| 3.2. [Build Scheduler: Setting up a Jenkins Instance](http://go.sap.com/developer/tutorials/ci-best-practices-build.html)       |            |            |            | ++         |            |            |
+| 3.3. [Artifact Repository: Setting up a Nexus Instance](http://go.sap.com/developer/tutorials/ci-best-practices-artifacts.html)       |            |            |            | ++         |            |            |
+| 3.4. [Landscape Configuration: Configuring the CI Component Landscape](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)       |            |            |            | ++         | +          |            |
 | **4. CI/CD Process Setup**                |            |            |            |            |            |            |
-| 4.1. [Generic Project]: Configuring the CI system for Maven-based generic Java project                 |            |            |            | +          | ++         | +          |
-| 4.2. [Java Web on SAP HANA Cloud Platform]: Configuring the CI system for Maven-based Java Web project |          |            |            | (+)        | (++)       | (+)        |
+| 4.1. [Generic Project: Configuring the CI system for Maven-based generic Java project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)                 |            |            |            | +          | ++         | +          |
+| 4.2. [Java Web on SAP HANA Cloud Platform: Configuring the CI system for Maven-based Java Web project](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp.html) |          |            |            | (+)        | (++)       | (+)        |
 

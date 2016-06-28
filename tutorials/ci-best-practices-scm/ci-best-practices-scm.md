@@ -12,8 +12,8 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ## Next Steps
  
-  - [Build Scheduler]
-  - [Back to the Navigator]
+  - [Build Scheduler](http://go.sap.com/developer/tutorials/ci-best-practices-build.html)
+  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
 
 ---
 
@@ -84,5 +84,5 @@ Gerrit is available as open source and comes with a built-in installation of Git
 
 ## Next Steps
  
-  - [Build Scheduler]
-  - [Back to the Navigator]
+  - [Build Scheduler](http://go.sap.com/developer/tutorials/ci-best-practices-build.html)
+  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)

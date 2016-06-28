@@ -12,8 +12,8 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ## Next Steps
  
-  - [Artifact Repository]
-  - [Back to the Navigator]
+  - [Artifact Repository](http://go.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
+  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
   
 ---
 
@@ -127,7 +127,7 @@ This section describes how to set up the Jenkins master. The installation of a s
       | Maven installations | Click on "Add Maven" |
       | Name | `mvn` |
       | Install automatically | `unchecked` |
-      | `MAVEN_HOME` | `{Maven home path of the Maven installation directory on the slave (see below)` |
+      | `MAVEN_HOME` | Maven home path of the Maven installation directory on the slave (see below) |
   17. Save.
 
 
@@ -221,5 +221,5 @@ In this document, we restrict ourselves to Linux as operating system for the sla
 
 ## Next Steps
  
-  - [Artifact Repository]
-  - [Back to the Navigator]
+  - [Artifact Repository](http://go.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
+  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
