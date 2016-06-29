@@ -46,40 +46,46 @@ Gerrit is available as open source and comes with a built-in installation of Git
 
 #### Procedure
 
-  1. On the hosting machine, create an OS user `gerrit`.
-  2. Create a Gerrit installation directory owned by `gerrit`. 
-     In this document, we call it `/data/gerrit`, but any other directory that follows the respective conventions will work as well. 
-     Ensure that the file partition of the directory is big enough to store all the Gerrit data, especially the database.
-  3. Download the Gerrit installation (`gerrit.war` file) from the download site and save it to `/data/gerrit`.
-  4. Log on as `gerrit`.
-  5. Execute the following commands to do the installation and to prepare the Gerrit database:
-     ```
-     cd /data/gerrit
-     java -jar gerrit.war init -d /data/gerrit
-     java -jar gerrit.war reindex -d /data/gerrit
-     ```
-     During the installation procedure, you may approve any configuration proposal with "Enter".
-  6. To get the server up quickly with the ability to administer it, open the Gerrit configuration file `/data/gerrit/etc/gerrit.config` and set the authentication method to:
-     ```
-     [auth]
-             type = DEVELOPMENT_BECOME_ANY_ACCOUNT
-     ```
-     For security reasons, you should change this to an appropriate authentication method as soon as possible.
-  7. Start the Gerrit daemon.
-     ```
-     cd /data/gerrit/bin
-     ./gerrit.sh start
-     ```
-  8. The Gerrit application should now be accessible with a browser on port 8080.
-  9. In the Gerrit front end, click on "Become" and sign up. 
-     This first account has admin rights by default.
+1. On the hosting machine, create an OS user `gerrit`.
+2. Create a Gerrit installation directory owned by `gerrit`. 
+   In this document, we call it `/data/gerrit`, but any other directory that follows the respective conventions will work as well. 
+   Ensure that the file partition of the directory is big enough to store all the Gerrit data, especially the database.
+3. Download the Gerrit installation (`gerrit.war` file) from the download site and save it to `/data/gerrit`.
+4. Log on as `gerrit`.
+5. Execute the following commands to do the installation and to prepare the Gerrit database:
+
+   ```
+   cd /data/gerrit
+   java -jar gerrit.war init -d /data/gerrit
+   java -jar gerrit.war reindex -d /data/gerrit
+   ```
+
+   During the installation procedure, you may approve any configuration proposal with "Enter".
+6. To get the server up quickly with the ability to administer it, open the Gerrit configuration file `/data/gerrit/etc/gerrit.config` and set the authentication method to:
+
+   ```
+   [auth]
+           type = DEVELOPMENT_BECOME_ANY_ACCOUNT
+   ```
+
+   For security reasons, you should change this to an appropriate authentication method as soon as possible.
+7. Start the Gerrit daemon.
+
+   ```
+   cd /data/gerrit/bin
+   ./gerrit.sh start
+   ```
+
+8. The Gerrit application should now be accessible with a browser on port 8080.
+9. In the Gerrit front end, click on "Become" and sign up. 
+   This first account has admin rights by default.
 
 #### Further Enhancements
 
-  - The `gerrit.war` package includes a standalone Jerry servlet container. Deployment on other JEE run times is possible.
-  - Choose an appropriate authentication method.
-  - The default database installation used by Gerrit is H2. For larger installations, you can use MySQL or Postgres.
-  - Encapsulate the `gerrit.sh` into startup scripts in a way that Gerrit starts automatically with machine reboot.
+- The `gerrit.war` package includes a standalone Jerry servlet container. Deployment on other JEE run times is possible.
+- Choose an appropriate authentication method.
+- The default database installation used by Gerrit is H2. For larger installations, you can use MySQL or Postgres.
+- Encapsulate the `gerrit.sh` into startup scripts in a way that Gerrit starts automatically with machine reboot.
 
 
 ## Next Steps

@@ -42,6 +42,7 @@ The actors in a typical CI/CD process implementing the process flow are basicall
 The picture we are drawing is still a more or less high-level one. Actual implementations may deviate from it to a large extent by means of the selected components and their layout. Also, depending on the specific requirements of a concrete process, some of the components might not be required, but instead some others that are not described here.
 
 The main actors are:
+
   - The developer's workspace
     - The developer who creates changes.
     - He works in his local workspace: either locally with IDE and build tools and runtime physically installed on his PC, or on the cloud with the Web IDE).
@@ -104,6 +105,7 @@ For sure, the quality requirements and thus the scope of the tests to be execute
 It therefore highly depends on the specific landscape which tests have to be executed and whether they can be automated or must be executed manually. Since one can think of different tests with completely different characteristics (functional tests versus performance tests), it could happen that more than one test system has to be used in parallel.
 
 The following list gives you an idea of what could be part of a full-fledged qualification:
+
   - Automated integration tests
   - Manual scenario and acceptance tests
   - Performance and scalability tests
