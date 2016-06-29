@@ -35,6 +35,7 @@ There are a lot of sources from where developers or build operators can get advi
 Continuous Integration (CI) focuses on the controlled integration of any change that is created in a collaborative software project into a common so-called main line.
 
 The CI practices are:
+
   - Everything is under version control
   - Automate the build
   - Run unit test in the build
@@ -61,6 +62,7 @@ In this document we will mainly focus on Continuous Integration and Delivery onl
 ### Everything is Under Version Control
 
 Everyone who started with collaborative development, or even as a single developer, has been confronted with the situation to develop and apply bug fixes in parallel and is familiar with the meaning of the word "version hell". To avoid this, there are two basic principles:
+
   - Define a single source of truth.
   - Put everything under version control.
 
@@ -84,6 +86,7 @@ Unless other changes came into the main line in the meantime, the developer can 
 #### Feature Branches
 
 In more complicated scenarios the following could happen:
+
   - A lot of developers, for example, many more than 10, are working on the project. 
   - Not all changes are meant to be integrated at once into the main line. It is a common practice of especially big organizations that larger features and prototyping are developed isolated from the main line first and integrated into it at a later point in time.
 
@@ -112,6 +115,7 @@ For the sake of being reproducible for all team members, the build description m
 In this case, the developer does not have to care about the installation at all and the risk of having build problems caused by improper installations on the developer’s PC is minimized.
 
 A build scheduler like Jenkins is of great help for the operation of a central build infrastructure:
+
   - It offers comfortable front ends as an entry point for end users to trigger builds, monitor them, and so on.
   - It provides interfaces that are needed to integrate the builds with other components of the CI process.
 
@@ -123,11 +127,13 @@ Set up a central, reproducible build.
 ### Run Tests in the Build
 
 Builds are not restricted to validating the syntactical correctness of the code. There are several kinds of tests:
+
   - Component (unit) tests
   - Static code checks
   - Scenario tests
 
 The difference is as follows:
+
   - They operate directly on build results (unit tests) or sources (static code checks).
   - Or they require the newly built application to be installed and started or to be deployed on an already provided runtime system.
 
@@ -148,6 +154,7 @@ Do as much automated testing as possible in the build.
 ### Commit Early and Often
 
 As stated earlier, in a distributed development project with a number of developers, every developer aims to integrate his changes with the main line (the same applies for feature branches and their integration into the main line). We recommend to do this frequently, or rather as often as possible for mainly two reasons:
+
   - Merging local changes with the current version of the main line becomes more and more complicated and time-consuming as the main line evolves further.
   - From the product's quality point of view, the risk of instabilities introduced by a new change increases when the distance between the original base of the change and the current main line version has increased.
 
@@ -231,6 +238,7 @@ There is always a conflict of interest for which one has to find the right balan
 For small projects for which building, testing, and so on does not exceed, let’s say 15 minutes, the waiting period might be acceptable. As soon as the project grows larger and the amount of time that build and tests take increases, the acceptance will decrease.
 
 Therefore, a compromise must be found between different levels of acceptance criteria:
+
   - Those that are considered as crucial for the quality of the main line. Each change merged must fulfil them.
     This includes of course the syntactical correctness, but also unit tests and fast-running scenario tests. They have to run in the CI builds and maybe even in the voter builds.
   - More exhausting scenario tests that take longer than what would be acceptable for a CI build.
@@ -270,11 +278,13 @@ In addition to the automatic build and testing features described above, in the 
 The build infrastructure itself, that means, the build servers, mostly are and should run encapsulated. This is mostly due to security reasons, since make servers should run without being disturbed by any unauthorized access with the risk that build results are spoiled. But it also has the effect that developers who have a valid interest in getting the newest version of the application are not able to download it directly from the build server.
 
 Therefore, you need a central place that developers know about, where they can get the newest versions (any maybe also older versions) of the artifacts. First of all, it is important that this place is reliable in the following sense:
+
   - A developer is always able to easily find what he is looking for.
   - Only official build results find their way there. Unauthorized changes on the artifacts (for example, manual replacement of build results) must not be possible.
 
 A build result storage could be implemented as a file share. But then build operators or internal infrastructure operators have to do the design and implementation by themselves, which could be highly nontrivial.
 The naive approach "just to store the artifacts to a central share" will result in trouble later when it turns out that:
+
   - More than one application has to be stored.
   - More than one version has to be kept.
   - The application has to be built for more than one platform.
@@ -292,6 +302,7 @@ Define a unique and well-organized place for storing build results. Use an artif
 ### The Build Process is Transparent for Everyone
 
 This principle means that the status of the build process, and therefore the quality of the product, is visible for everybody. For me as a developer, the following questions are of interest:
+
   - Was my last (or any) change built?
   - Was it tested?
   - What were the build and test results and was my change merged into the main line?
@@ -314,11 +325,10 @@ Implement a single entry point to retrieve status information.
 
 Deployment, that means the installation of the application to a runtime system, should be done in an automated way.
 Automated deployment can be done in several ways and for different purposes:
-  - Automated scenario tests that already run in the build, or as a separate process that can be triggered by or after the build (which does not make any difference from a semantic point of view). The intention is that the scenario tests that must run against a running application are part of the acceptance process for a change proposed or committed by the developer. Different implementations are possible.
-  
-A single runtime system (like a JEE server) that is waiting for deployments would be sufficient in the beginning, but this approach has some drawbacks. Since it is a single instance, the test requests out of the CI process would have to be serialized to avoid clashes from two parallel test requests. A high amount of changes will make this instance a bottleneck.
-Another point is that working always with the same instance bears the risk of degeneration of the system with time. It would be a better approach install and start the runtime system on demand during the build. This could be done on the temporary file system that is dedicated to the single test execution instance, or – much more elegant – container technology is used (like Docker) to bring up the runtime system on demand in a well-defined state and to remove the container after usage without polluting any hardware.
 
+  - Automated scenario tests that already run in the build, or as a separate process that can be triggered by or after the build (which does not make any difference from a semantic point of view). The intention is that the scenario tests that must run against a running application are part of the acceptance process for a change proposed or committed by the developer. Different implementations are possible.
+  - A single runtime system (like a JEE server) that is waiting for deployments would be sufficient in the beginning, but this approach has some drawbacks. Since it is a single instance, the test requests out of the CI process would have to be serialized to avoid clashes from two parallel test requests. A high amount of changes will make this instance a bottleneck.
+    Another point is that working always with the same instance bears the risk of degeneration of the system with time. It would be a better approach install and start the runtime system on demand during the build. This could be done on the temporary file system that is dedicated to the single test execution instance, or – much more elegant – container technology is used (like Docker) to bring up the runtime system on demand in a well-defined state and to remove the container after usage without polluting any hardware.
   - Provisioning of a test system for manual tests: In a CI build scenario, this might not be appropriate since the frequency and time of the validation of new commits is not really predictable. It makes much more sense to provision manual test systems from a scheduled build that, for example, runs daily at a given time, deploys to the test system, and notifies the tester after successful deployment. What concerns the implementation of runtime system, all what was said before applies here as well though the risk of bottlenecks and collision of different tests is not given here. So one single runtime instance dedicated for this purpose could do the job in a satisfying way. This approach is also capable of supporting a staged environment (several test instances of different stages, that means, quality levels), as desired.
   - The ultimate level of automation is the automated deployment into the productive environment.
   
