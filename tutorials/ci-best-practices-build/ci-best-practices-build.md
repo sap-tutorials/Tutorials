@@ -184,16 +184,22 @@ In this document, we restrict ourselves to Linux as operating system for the sla
 - Java JDK 1.7.0 or higher is installed on the machine for running the Jenkins slave process. This Java installation should be the default and the `java` binary set in the `PATH` of the machine.
 - (MO) To build SAP applications, SAP JVM 7.1 should be used since the SAP-specific SDK will run during the build.
   Mixing them up can lead to build problems due to incompatibilities.
+  
   > Downloads: https://tools.hana.ondemand.com/#cloud  
   > Installation guide: https://help.hana.ondemand.com/help/frameset.htm?76137f42711e1014839a8273b0e91070.html
+  
 - (MO) Git installation.
+
   > Homepage: https://git-scm.com  
   > Downloads: https://git-scm.com/downloads  
   > Installation guide: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git  
+  
 - (MO) Maven installation. The recommended version is Maven 3.0.5. Later versions might lead to build errors due to plugin incompatibilities.
+
   > Homepage: https://maven.apache.org  
   > Downloads: https://maven.apache.org/download.cgi  
   > Installation guide: https://maven.apache.org/install.html
+  
 
 #### Procedure
 

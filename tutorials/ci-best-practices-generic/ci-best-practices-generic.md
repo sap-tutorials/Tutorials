@@ -44,14 +44,18 @@ Eclipse as development environment is commonly used but not absolutely needed an
    This automatically creates the master branch.
 4. Enter "Rights Inherit From:" `CI-Projects`.  
    ![Component Setup](generic-project-2.png)  
-   Alternatively, you may follow the steps for command line-based creation as described in:  
+   Alternatively, you may follow the steps for command line-based creation as described in: 
+    
    > Documentation: https://gerrit.googlecode.com/svn/documentation/2.0/project-setup.html
+   
 5. Do an initial clone of the project to your PC and check out the `master` branch.
 6. On your local PC, for being able to push commits to Gerrit, you have to add a commit hook into the
    `{Git repository root}/.git/hooks` directory. It can be obtained through
    `http://<hostname of Gerrit>:8080/tools/hooks/commit-msg`.
    Every developer who plans to do commits against Gerrit needs this hook.  
+   
    > Documentation: https://git.eclipse.org/r/Documentation/cmd-hook-commit-msg.html
+   
 7. Add the initial project files into the Git workspace.
    For example, add the following files with the content taken from the appendix:
 

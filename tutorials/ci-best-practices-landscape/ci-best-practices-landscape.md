@@ -25,6 +25,7 @@ After having installed and started the components that are involved in our CI pr
 ### Gerrit Parent Project
 
 To avoid the need to maintain the Jenkins permissions in Gerrit for each project separately, it is a good practice to create a common parent project that hosts the needed permissions.  
+
 > Documentation: https://wiki.jenkins-ci.org/display/JENKINS/Gerrit+Trigger#GerritTrigger-SetUp
 
 #### Procedure
@@ -49,6 +50,7 @@ To avoid the need to maintain the Jenkins permissions in Gerrit for each project
 ### Subscribe Jenkins to Gerrit Events
 
 Jenkins will establish an ssh connection to Gerrit to listen to the event stream. In order to do this, Jenkins needs access to Gerrit, and in the Jenkins configuration, Gerrit has to be defined:  
+
 > Documentation: https://wiki.jenkins-ci.org/display/JENKINS/Gerrit+Trigger#GerritTrigger-SetUp
 
 #### Procedure

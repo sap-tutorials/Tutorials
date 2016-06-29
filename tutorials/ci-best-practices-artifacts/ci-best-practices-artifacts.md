@@ -74,7 +74,8 @@ This document refers to a Nexus 2 release. In the future, Nexus 3 might also be 
    ![Repositories](artifact-repository-1.png)  
    Also, there is a user `deployment` that has access permissions for uploading artifacts. The default user for administrator access is `admin/admin123`.
    ![Repositories](artifact-repository-2.png)
-9. To make Nexus productively runnable and secure, please follow the post-install checklist of the official documentation.  
+9. To make Nexus productively runnable and secure, please follow the post-install checklist of the official documentation.
+
    > Documentation: https://books.sonatype.com/nexus-book/reference/install-sect-repoman-post-install.html   
 
 
