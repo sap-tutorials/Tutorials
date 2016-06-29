@@ -145,13 +145,13 @@ Do the following changes for both jobs `VO_neo-java-web-sdk-samples_master` and 
 
 1. In Jenkins, open the job and go to "Configure". There should be a new section “Build Environment”.  
 
-   | Field | Value |
-   | --- | ------------------------------------------------------------------------- |  
-   | Build Environment / Inject environment ... | `checked` |
-   | Build Environment / Inject environment / Properties Content | `DISPLAY=:99` |
-   | Pre Steps / Execute shell / Command | `Xvfb :99 -ac & echo $! > Xvfb.pid; ps -aef | grep Xvfb` | 
-   | Build / Goals and options | `clean deploy -P local-integration-tests -Dhttps.proxyHost={proxy host} -Dhttps.proxyPort={proxy port}` |
-   | Post Steps / Execute shell / Command	| `cat Xvfb.pid | xargs kill` |  
+   Field                                                       | Value
+   :---------------------------------------------------------- | :------------------------------------
+   Build Environment / Inject environment ...                  | `checked`
+   Build Environment / Inject environment / Properties Content | `DISPLAY=:99`
+   Pre Steps / Execute shell / Command                         | `Xvfb :99 -ac & echo $! > Xvfb.pid; ps -aef | grep Xvfb` 
+   Build / Goals and options                                   | `clean deploy -P local-integration-tests -Dhttps.proxyHost={proxy host} -Dhttps.proxyPort={proxy port}`
+   Post Steps / Execute shell / Command                        | `cat Xvfb.pid | xargs kill`  
 
    The DISPLAY environment variable is needed to tell Firefox where to send the front end to. Another tricky thing happens in the build pre step. `Xvfb` is started opening the display just mentioned.
    Since `Xvfb` should only run during the lifetime of the build, the process id is kept in a file from which it is restored in the post step to kill the `Xvfb` process.
@@ -241,9 +241,9 @@ Do the following changes for both jobs `VO_neo-java-web-sdk-samples_master` and 
 1. In Jenkins, open the job and go to "Configure".
 2. Enter the following data (in contrast to the local scenario tests above, here are no pre and post build steps necessary):  
 
-   | Field | Value |
-   | --- | ------------------------------------------------------------------------- |  
-   | Build / Goals and options | `clean deploy -P cloud-integration-tests -Dhttps.proxyHost={proxy host} -Dhttps.proxyPort={proxy port} -Dsap.cloud.account={HCP account} -Dsap.cloud.username={HCP user} -Dsap.cloud.password={HCP password} -Dsap.cloud.host=hanatrial.ondemand.com` |
+   Field                     | Value 
+   :------------------------ | :-------------------------------------------------------------------------  
+   Build / Goals and options | `clean deploy -P cloud-integration-tests -Dhttps.proxyHost={proxy host} -Dhttps.proxyPort={proxy port} -Dsap.cloud.account={HCP account} -Dsap.cloud.username={HCP user} -Dsap.cloud.password={HCP password} -Dsap.cloud.host=hanatrial.ondemand.com`
 
 3. Start the job. You should be able to see the job deploying onto HCP and executing the scenario tests.
 

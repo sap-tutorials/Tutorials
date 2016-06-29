@@ -89,25 +89,25 @@ Yet there is no Jenkins voter build configured for this branch. The global confi
    In principle, the name does not play a technical role except for identifying the job, but keep in mind that over time you might have to differentiate many jobs by Gerrit project name, branch, or other purposes (like the prefix "VO" for "voter build"). A naming convention is helpful.
 3. In the project configuration, enter the following data:  
 
-   | Field | Value |
-   | --- | ------------------------------------------------------------------------- |  
-   | Restrict where this project can be run | `checked`; Label Expression: the label that you have assigned to the slave, in this case `builds` |
-   | Source Code Management | `Git` |
-   | Git | `checked` |
-   | Repository URL | `{the ssh based URL of your repository}` |
-   | Credentials | `jenkins` |
-   |  | (Click on "Advanced...") |
-   | Ref spec | `refs/changes/*:refs/changes/*` |
-   | Branches to build; Branch Specifier | `$GERRIT_REFSPEC` (this might be unintuitive, but works according to the official documentation) |
-   | Build Triggers |  |
-   | Gerrit Event | `checked` |
-   | Gerrit Trigger |  |
-   | Choose a server | `{the Gerrit server you already have defined in Jenkins}` |
-   | Trigger on |  |
-   | Add | `Patchset Created` |
-   | Gerrit Project | Plain: `HelloWorld`; Branches Plain: `master` |
-   | Build |  |
-   | Goals an options | `clean install` |
+   Field                                    | Value
+   :--------------------------------------- | :------------------------------------------------------------------------
+   Restrict where this project can be run   | `checked`; Label Expression: the label that you have assigned to the slave, in this case `builds`
+   Source Code Management                   | `Git` 
+   Git                                      | `checked` 
+   Repository URL                           | `{the ssh based URL of your repository}` 
+   Credentials                              | `jenkins` 
+                                            | (Click on "Advanced...") 
+   Ref spec                                 | `refs/changes/*:refs/changes/*` 
+   Branches to build; Branch Specifier      | `$GERRIT_REFSPEC` (this might be unintuitive, but works according to the official documentation) 
+   Build Triggers                           |  
+   Gerrit Event                             | `checked` 
+   Gerrit Trigger                           |  
+   Choose a server                          | `{the Gerrit server you already have defined in Jenkins}` 
+   Trigger on                               |  |
+   Add                                      | `Patchset Created` 
+   Gerrit Project                           | Plain: `HelloWorld`; Branches Plain: `master` 
+   Build                                    |  
+   Goals an options                         | `clean install` 
 
    Now the Jenkins project is ready to listen to Gerrit events.  
    > Documentation: https://wiki.jenkins-ci.org/display/JENKINS/Gerrit+Trigger
@@ -127,20 +127,20 @@ A the CI build reacts on new commits pushed into the branch, an integration with
    As before, instead of "CI", you may choose a prefix of your choice.
 3. In the project configuration, enter the following data:  
 
-   | Field | Value |
-   | --- | ------------------------------------------------------------------------- | 
-   | Restrict where this project can be run | `checked`; Label Expression: the label that you have assigned to the slave, in this case `builds` |
-   | Source Code Management | `Git`; Enter the repository URL and as Credentials: `jenkins` |
-   | Git | `checked` |
-   | Repository URL | `{the ssh based URL of your repository}` |
-   | Credentials | `jenkins` |
-   | Ref spec | `{empty}` |
-   | Branches to build; Branch Specifier | `master` |
-   | Build Triggers |  |
-   | Poll SCM | `checked` |
-   | Schedule | `{Enter a pull frequency. In order to have immediate results, every two minutes could be an appropriate value}` |
-   | Build |  |
-   | Goals and options | `clean install` |
+   Field                                  | Value
+   :------------------------------------- | :------------------------------------------------------------------------- 
+   Restrict where this project can be run | `checked`; Label Expression: the label that you have assigned to the slave, in this case `builds` 
+   Source Code Management                 | `Git`; Enter the repository URL and as Credentials: `jenkins` 
+   Git                                    | `checked` 
+   Repository URL                         | `{the ssh based URL of your repository}` 
+   Credentials                            | `jenkins` 
+   Ref spec                               | `{empty}` 
+   Branches to build; Branch Specifier    | `master`
+   Build Triggers                         | 
+   Poll SCM                               | `checked`
+   Schedule                               | `{Enter a pull frequency. In order to have immediate results, every two minutes could be an appropriate value}`
+   Build                                  | 
+   Goals and options                      | `clean install`
  
 4. When you to a Gerrit submit of a change into the `master` branch, you should be able to see this job start running.
 

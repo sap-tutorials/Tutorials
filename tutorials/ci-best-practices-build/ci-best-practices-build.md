@@ -122,11 +122,11 @@ This section describes how to set up the Jenkins master. The installation of a s
 12. To be able to connect slave nodes to the Jenkins master, the ssh user has to be defined in the applications. For this, open the Jenkins front end and go to "Manage Jenkins" / "Manage Credentials" / "Add Credentials" / "SSH Username with private key".
 13. Enter the following data:  
 
-    | Field | Value |
-    | --- | ------------------------------------------------------------------------- | 
-    | Scope	| `Global` |
-    | Username | `jenkins` |
-    | Private Key | `From the Jenkins master ~/.ssh` |
+    Field       | Value
+    :---------- | :---------------- 
+    Scope       | `Global`
+    Username    | `jenkins`
+    Private Key | `From the Jenkins master ~/.ssh`
 
 14. If the master itself is used for running builds, open "Manage Jenkins" / "Configure System" and go the JDK section.
 15. Enter "JDK installations..." and choose "Add JDK".
@@ -138,12 +138,12 @@ This section describes how to set up the Jenkins master. The installation of a s
     Later on, you will enter JDKs for the slaves here as well.
 16. Also in "Manage Jenkins" / "Configure System", you inform Jenkins about the Maven path to be used on the slaves (see below):
 
-    | Field | Value |
-    | --- | ------------------------------------------------------------------------- | 
-    | Maven installations | Click on "Add Maven" |
-    | Name | `mvn` |
-    | Install automatically | `unchecked` |
-    | `MAVEN_HOME` | Maven home path of the Maven installation directory on the slave (see below) |
+    Field                 | Value
+    :-------------------- | :------------------- 
+    Maven installations   | Click on "Add Maven"
+    Name                  | `mvn`
+    Install automatically | `unchecked`
+    `MAVEN_HOME`          | Maven home path of the Maven installation directory on the slave (see below)
 
 17. Save.
 
@@ -215,20 +215,20 @@ In this document, we restrict ourselves to Linux as operating system for the sla
 7. Enter an appropriate node name (for example, the host name) and select "Dumb Slave".
 8. Do the following configurations:
 
-   | Field | Value |
-   | --- | ------------------------------------------------------------------------- |  
-   | Name | `{any logical name, for example the hostname}` |
-   | Description |	`{any description}` |
-   | # of executors | `{Number of parallel builds executable on the node. This depends on the load your build jobs produces and the resources of the machine. Start with 1 or 2 and try to increase it}` |
-   | Remote root directory	| `/data/jenkins` |
-   | Labels | `builds`|
-   | Usage | `Utilize this node as much as possible` |
-   | Launch method | `Launch slave agents on Unix machines via SSH` |
-   | Host | `{DNS name of the Jenkins slave}` |
-   | Credentials | `jenkins` |
-   |  | `{Choose the "Advanced" button to see more properties}` |
-   | Java Path | `{Path of the Java installation for the slave process. This may differ from the SAP JVM to be used for the builds.}` |
-   | Availability	| `Keep this slave on-line as much as possible` |
+   Field                 | Value
+   :-------------------- | :------------------------------------------- 
+   Name                  | `{any logical name, for example the hostname}`
+   Description           | `{any description}`
+   # of executors        | `{Number of parallel builds executable on the node. This depends on the load your build jobs produces and the resources of the machine. Start with 1 or 2 and try to increase it}`
+   Remote root directory | `/data/jenkins`
+   Labels                | `builds`
+   Usage                 | `Utilize this node as much as possible`
+   Launch method         | `Launch slave agents on Unix machines via SSH`
+   Host                  | `{DNS name of the Jenkins slave}`
+   Credentials           | `jenkins`
+                         | `{Choose the "Advanced" button to see more properties}`
+   Java Path             | `{Path of the Java installation for the slave process. This may differ from the SAP JVM to be used for the builds.}`
+   Availability	         | `Keep this slave on-line as much as possible`
 
 9. Save.
 10. (MO) Register the SAP JVM on the master. For this, open the Jenkins Master front end and go to the JDK section "Manage Jenkins" / "Configure System".

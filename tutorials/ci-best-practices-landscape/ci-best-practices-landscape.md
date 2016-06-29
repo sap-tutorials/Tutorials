@@ -71,27 +71,27 @@ Jenkins will establish an ssh connection to Gerrit to listen to the event stream
 5. Open a browser window to Jenkins and go to "Manage Jenkins" / "Gerrit Trigger" / "Add new Server".
 6. Enter the following data:
   
-   | Field | Value |
-   | --- | ------------------------------------------------------------------------- |
-   | Name | `{any logical name, e.g. the hostname of Gerrit}` |
-   | Hostname | `{hostname of Gerrit}` |
-   | Front end URL | `http://{hostname of Gerrit}:8080` |
-   | SSH Port | `29418` |
-   | Username | `jenkins` | 
-   | SSH Key file | `/home/jenkins/.ssh/id_rsa` |
+   Field         | Value 
+   :------------ | :-----------------------------------
+   Name          | `{any logical name, e.g. the hostname of Gerrit}` 
+   Hostname      | `{hostname of Gerrit}` 
+   Front end URL | `http://{hostname of Gerrit}:8080` 
+   SSH Port      | `29418` 
+   Username      | `jenkins` |
+   SSH Key file  | `/home/jenkins/.ssh/id_rsa` 
         
 7. Test the connection.
 8. Proceed with setting the review and voting values:  
    `1` for "Successful", `-1` for "Failed" and `0` otherwise are good starting values.
 9. Open the "Advanced" options. Enter the following values:
   
-   | Field | Value |
-   | --- | ------------------------------------------------------------------------- |
-   | Started | `gerrit review --message 'Build Started <BUILDURL> <STARTED_STATS>' <CHANGE>,<PATCHSET>` |
-   | Successful | `gerrit review --message 'Build Successful <BUILDS_STATS>' --code-review <CODE_REVIEW> <CHANGE>,<PATCHSET>` |
-   | Failed | `gerrit review --message 'Build Failed <BUILDS_STATS>' --code-review <CODE_REVIEW> <CHANGE>,<PATCHSET>` |
-   | Unstable | `gerrit review --message 'Build Unstable <BUILDS_STATS>' --code-review <CODE_REVIEW> <CHANGE>,<PATCHSET>` |
-   | Not Built | `gerrit review --message 'No Builds Executed <BUILDS_STATS>' <CHANGE>,<PATCHSET>` |    
+   Field      | Value 
+   :--------- | :------------------------------------------------------------------------- 
+   Started    | `gerrit review --message 'Build Started <BUILDURL> <STARTED_STATS>' <CHANGE>,<PATCHSET>` 
+   Successful | `gerrit review --message 'Build Successful <BUILDS_STATS>' --code-review <CODE_REVIEW> <CHANGE>,<PATCHSET>` 
+   Failed     | `gerrit review --message 'Build Failed <BUILDS_STATS>' --code-review <CODE_REVIEW> <CHANGE>,<PATCHSET>` 
+   Unstable   | `gerrit review --message 'Build Unstable <BUILDS_STATS>' --code-review <CODE_REVIEW> <CHANGE>,<PATCHSET>` 
+   Not Built  | `gerrit review --message 'No Builds Executed <BUILDS_STATS>' <CHANGE>,<PATCHSET>` 
  
 10. Save.
 11. Establish the connection by pressing the status button on the Gerrit Trigger overview page. It should change to green.
