@@ -5,6 +5,9 @@ tags: [ tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-pl
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
+
+ - **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+
  - **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 3: [Set up the data source in the Application](https://go.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
 
 ## Next Steps

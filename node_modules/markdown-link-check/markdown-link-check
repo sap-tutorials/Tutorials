@@ -1,0 +1,34 @@
+#!/usr/bin/env node
+
+'use strict';
+
+var chalk = require('chalk');
+var fs = require('fs');
+var markdownLinkCheck = require('./');
+var program = require('commander');
+var request = require('request');
+
+var statusLabels = {
+    alive: chalk.green('✓'),
+    dead: chalk.red('✖')
+};
+
+var stream = process.stdin; // read from stdin unless a filename is given
+program.arguments('[filenameOrUrl]').action(function (filenameOrUrl) {
+    if (/https?:/.test(filenameOrUrl)) {
+        stream = request.get(filenameOrUrl);
+    } else {
+        stream = fs.createReadStream(filenameOrUrl);
+    }
+}).parse(process.argv);
+
+var markdown = ''; // collect the markdown data, then process it
+stream.on('data', function (chunk) {
+    markdown += chunk.toString();
+}).on('end', function () {
+    markdownLinkCheck(markdown, function (err, results) {
+        results.forEach(function (result) {
+            console.log('[%s] %s', statusLabels[result.status], result.link);
+        });
+    });
+});
