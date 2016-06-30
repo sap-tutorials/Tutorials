@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, topic>github, topic>cloud, products>sap-hana, product
  - **Proficiency:** Beginner
 
 ## Next Steps
- - Create a Git repository within the Github Organization
+ - [Create a Git repository within the Github Organization](http://go.sap.com/developer/tutorials/webide-github-create-git-repo.html)
 
 ## Details
 ### You will learn  
@@ -61,4 +61,4 @@ In this tutorial, you'll learn how to create an organization in Github and add c
 8. Click on **Join** and now the organization will have the collaborator added!
 
 ## Next Steps
- - Create a Git repository within the Organization
+ - [Create a Git repository within the Organization](http://go.sap.com/developer/tutorials/webide-github-create-git-repo.html)

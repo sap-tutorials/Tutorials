@@ -6,7 +6,7 @@ tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, pro
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:** 
-     - Creating branches in Github, switching branches and updating application in different branch in SAP Web IDE
+     - [Creating branches in Github, switching branches and updating application in different branch in SAP Web IDE](http://go.sap.com/developer/tutorials/webide-github-branching.html)
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
