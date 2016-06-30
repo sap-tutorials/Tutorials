@@ -43,40 +43,48 @@ This document refers to a Nexus 2 release. In the future, Nexus 3 might also be 
 #### Procedure
 
 1. On the nexus machine, create an OS user `nexus`. Any other OS user that will run the Nexus application will work as well, but this is the name we will use in this document.
-2. Create a Nexus installation directory owned by `nexus`. 
-   In this document, we will use `/data/nexus`, but any other directory that follows the respective conventions will work as well.
-   Ensure that the file partition of the directory is big enough to store all the Nexus data including the binary artifacts uploaded to Nexus.
-3. Log on as `nexus`.
-4. Extract the downloaded Nexus installation archive into `/data/nexus`.
-5. Go into the configuration directory (which should be something like `/data/nexus/nexus-{release}/conf/`) and open the file `nexus.properties`. 
-   In this document, we will keep the settings as they are, especially the default setting of the port Nexus is running with. But in your setup, you may choose whatever port is appropriate.
 
-   ```
-   application-port=8081
-   ``` 
+2. Create a Nexus installation directory owned by `nexus`. In this document, we will use `/data/nexus`, but any other directory that follows the respective conventions will work as well.
+    Ensure that the file partition of the directory is big enough to store all the Nexus data including the binary artifacts uploaded to Nexus.
+
+3. Log on as `nexus`.
+
+4. Extract the downloaded Nexus installation archive into `/data/nexus`.
+
+5. Go into the configuration directory (which should be something like `/data/nexus/nexus-{release}/conf/`) and open the file `nexus.properties`. 
+    In this document, we will keep the settings as they are, especially the default setting of the port Nexus is running with. But in your setup, you may choose whatever port is appropriate.
+
+    ```
+    application-port=8081
+    ``` 
 
 6. Switch to user `root` and create symbolic links as recommended by the Nexus installation guide:
 
-   ```
-   cd /usr/local
-   ln -s /data/nexus/{the versioned nexus installation directory} nexus
-   ln -s /data/nexus/sonatype-work sonatype-work
-   ```
+    ```
+    cd /usr/local
+    ln -s /data/nexus/{the versioned nexus installation directory} nexus
+    ln -s /data/nexus/sonatype-work sonatype-work
+    ```
 
-   Please note that the directory `sonatype-work` does not yet exist but will be created on startup of the Nexus application.
+    Please note that the directory `sonatype-work` does not yet exist but will be created on startup of the Nexus application.
+
 7. Switch to user `nexus` again and start Nexus with a browser on port 8081.
 
-   ```
-   /usr/local/nexus/bin/nexus start
-   ```
+    ```
+    /usr/local/nexus/bin/nexus start
+    ```
 
-8. Open the URL `http://{nexus host}:8081/nexus`. You should now be able to access Nexus and you should see some default repositories already configured, especially two of them named "Snapshots" and "Releases".  
-   ![Repositories](artifact-repository-1.png)  
-   Also, there is a user `deployment` that has access permissions for uploading artifacts. The default user for administrator access is `admin/admin123`.
-   ![Repositories](artifact-repository-2.png)
+8. Open the URL `http://{nexus host}:8081/nexus`. You should now be able to access Nexus and you should see some default repositories already configured, especially two of them named `Snapshots` and `Releases`.  
+
+    ![Repositories](artifact-repository-1.png)
+    
+    Also, there is a user `deployment` that has access permissions for uploading artifacts. The default user for administrator access is `admin/admin123`.
+    
+    ![Repositories](artifact-repository-2.png)
+    
 9. To make Nexus productively runnable and secure, please follow the post-install checklist of the official documentation.
-
-   > Documentation: https://books.sonatype.com/nexus-book/reference/install-sect-repoman-post-install.html   
+ 
+    > Documentation: https://books.sonatype.com/nexus-book/reference/install-sect-repoman-post-install.html   
 
 
 ## Next Steps

@@ -47,14 +47,14 @@ This best practices guide has to cover a broad spectrum of aspects and addresses
 
 ### Roles
 
-Role                    | Description, Skill Set 
-:---------------------- | :----------------------------------------------------------------
-Manager, Decision Maker | Makes investment decisions on infrastructure, tools and usage of public services. He is mainly interested in a sustainable investment into the infrastructure. 
-Quality Manager         | Is responsible for the quality. He defines and decides on the processes to ensure the quality level.
-Delivery Manager        | Is responsible for the shipment and deployment of the product to production. He relies on the quality and defines the deployment process. 
-Build Operator          | Operates the technical components for a CI/CD infrastructure.
-Build Engineer          | Implements the CI/CD process on top of the technical components. He implements and supports the product-specific requirements that have to be implemented in the build and test procedures. He might be an expert of the software technology in which the product is implemented. 
-Developer engaged in CI | He implements the build scripts and tests in collaboration with the Build Engineer. He is an expert of the software technology in which the product is implemented. 
+| Role | Description, Skill Set |
+|-------------------|----------------------------------------------------------------|
+| Manager, Decision Maker | Makes investment decisions on infrastructure, tools and usage of public services. He is mainly interested in a sustainable investment into the infrastructure. |
+| Quality Manager | Is responsible for the quality. He defines and decides on the processes to ensure the quality level. | 
+| Delivery Manager | Is responsible for the shipment and deployment of the product to production. He relies on the quality and defines the deployment process. |
+| Build Operator | Operates the technical components for a CI/CD infrastructure. |
+| Build Engineer | Implements the CI/CD process on top of the technical components. He implements and supports the product-specific requirements that have to be implemented in the build and test procedures. He might be an expert of the software technology in which the product is implemented. | 
+| Developer engaged in CI | He implements the build scripts and tests in collaboration with the Build Engineer. He is an expert of the software technology in which the product is implemented. |
 
 ### Navigate through the relevant parts of the Guide
 
@@ -63,18 +63,18 @@ Developer engaged in CI | He implements the build scripts and tests in collabora
 (+): The part is of interest based on the respective technology  
 (++): The part is of strong interest based on the respective technology
 
-Part of the Guide     | Manager, Decision Maker | Quality Manager | Delivery Manager | Build Operator | Build Engineer | Developer engaged in CI 
-:------------------------------------------- | :--- | :--- | :--- | :--- | :--- | :---
-**1. [Introduction and Navigator (this document)](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)** | ++         | ++         | ++         | ++         | ++         | ++ 
-**2. Continuous Integration and Delivery** |            |            |            |            |            | 
-2.1. [CI/CD Practices: The Practices and Principles of CI and CD](http://go.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)   | ++         | ++         | ++         | +          | +          | + 
-2.2. [Pipeline Suggestions: Patterns for a CI/CD pipeline](http://go.sap.com/developer/tutorials/ci-best-practices-pipelines.html)   | +          | ++         | ++         | +          | ++         |  
-**3. CI/CD Landscape - Component Setup**   |            |            |            |            |            | 
-3.1. [Source Code Versioning System: Setting up a Git/Gerrit Instance](http://go.sap.com/developer/tutorials/ci-best-practices-scm.html)     |            |            |            | ++         |            |  
-3.2. [Build Scheduler: Setting up a Jenkins Instance](http://go.sap.com/developer/tutorials/ci-best-practices-build.html)       |            |            |            | ++         |            | 
-3.3. [Artifact Repository: Setting up a Nexus Instance](http://go.sap.com/developer/tutorials/ci-best-practices-artifacts.html)       |            |            |            | ++         |            | 
-3.4. [Landscape Configuration: Configuring the CI Component Landscape](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)       |            |            |            | ++         | +          |
-**4. CI/CD Process Setup**                |            |            |            |            |            | 
-4.1. [Generic Project: Configuring the CI system for Maven-based generic Java project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)                 |            |            |            | +          | ++         | +  
-4.2. [Java Web on SAP HANA Cloud Platform: Configuring the CI system for Maven-based Java Web project](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp.html) |          |            |            | (+)        | (++)       | (+)  
+| Part of the Guide      | Manager, Decision Maker | Quality Manager | Delivery Manager | Build Operator | Build Engineer | Developer engaged in CI |
+|-----------|---|---|---|---|---|---|
+| **1. [Introduction and Navigator (this document)](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)** | ++         | ++         | ++         | ++         | ++         | ++          |
+| **2. Continuous Integration and Delivery** |            |            |            |            |            |            |
+| 2.1. [CI/CD Practices: The Practices and Principles of CI and CD](http://go.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)   | ++         | ++         | ++         | +          | +          | +          |
+| 2.2. [Pipeline Suggestions: Patterns for a CI/CD pipeline](http://go.sap.com/developer/tutorials/ci-best-practices-pipelines.html)   | +          | ++         | ++         | +          | ++         |            |
+| **3. CI/CD Landscape - Component Setup**   |            |            |            |            |            |            |
+| 3.1. [Source Code Versioning System: Setting up a Git/Gerrit Instance](http://go.sap.com/developer/tutorials/ci-best-practices-scm.html)     |            |            |            | ++         |            |            |
+| 3.2. [Build Scheduler: Setting up a Jenkins Instance](http://go.sap.com/developer/tutorials/ci-best-practices-build.html)       |            |            |            | ++         |            |            |
+| 3.3. [Artifact Repository: Setting up a Nexus Instance](http://go.sap.com/developer/tutorials/ci-best-practices-artifacts.html)       |            |            |            | ++         |            |            |
+| 3.4. [Landscape Configuration: Configuring the CI Component Landscape](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)       |            |            |            | ++         | +          |            |
+| **4. CI/CD Process Setup**                |            |            |            |            |            |            |
+| 4.1. [Generic Project: Configuring the CI system for Maven-based generic Java project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)                 |            |            |            | +          | ++         | +          |
+| 4.2. [Java Web on SAP HANA Cloud Platform: Configuring the CI system for Maven-based Java Web project](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp.html) |          |            |            | (+)        | (++)       | (+)        |
 
