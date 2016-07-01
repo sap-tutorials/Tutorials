@@ -6,11 +6,11 @@ tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, pro
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:** 
-  - Create a repo within the Organization
+  - [Create a repo within the Organization](http://go.sap.com/developer/tutorials/webide-github-create-git-repo.html)
   - [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
 
 ## Next Steps
- - Using issues, setting milestones and assigning issues to collaborators
+ - [Using issues, setting milestones and assigning issues to collaborators](http://go.sap.com/developer/tutorials/webide-github-issues-milestones.html)
 
 ## Details
 ### You will learn  
@@ -83,4 +83,4 @@ In this tutorial, you'll learn how to import an existing SAP Web IDE project int
 
 
 ## Next Steps
- - Using issues, setting milestones and assigning issues to collaborators
+ - [Using issues, setting milestones and assigning issues to collaborators](http://go.sap.com/developer/tutorials/webide-github-issues-milestones.html)

@@ -6,10 +6,10 @@ tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, pro
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:** 
-    - Creating issues, setting milestones and assigning issues to collaborators
+    - [Creating issues, setting milestones and assigning issues to collaborators](http://go.sap.com/developer/tutorials/webide-github-issues-milestones.html)
 
 ## Next Steps
-- Merging branches back into master branch in Github using Pull Requests
+- [Merging branches back into master branch in Github using Pull Requests](http://go.sap.com/developer/tutorials/webide-github-merge-pull-request.html)
 
 ## Details
 ### You will learn  
@@ -37,7 +37,7 @@ In this tutorial, you'll learn how your collaborators can create branches in Git
 
     b. Enter your Github account credentials and post the repository URL.
 
-    ![Clone repository](p5_3b.png)
+    ![Repository details](p5_3b.png)
 
     c. The repository is now cloned.
 
@@ -73,10 +73,10 @@ In this tutorial, you'll learn how your collaborators can create branches in Git
  
 6. Now if you check the `m1` branch on Github organization repository, you will see that the push has been completed and the changes are seen on Github.
 
-    ![Push to Github remote branch](p5_6.png)
+    ![Push to Github remote branch is successful](p5_6.png)
 
 7. Similarly you can address other remaining issues targeted for `m1` milestone and commit and push the changes.
 
 
 ## Next Steps
- - Merging branches back into master branch in Github using Pull Requests
+ - [Merging branches back into master branch in Github using Pull Requests](http://go.sap.com/developer/tutorials/webide-github-merge-pull-request.html)
