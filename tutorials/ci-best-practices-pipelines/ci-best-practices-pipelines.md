@@ -18,12 +18,12 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ---
 
 
-The practices described in the section "Practices" are a good starting point for planning your delivery pipeline. But how can they be translated into a concrete Continuous Delivery (CD) landscape? Which components are needed and how does the overall CD process look like?
+The practices described in the part [CI/CD Practices](http://go.sap.com/developer/tutorials/ci-best-practices-ci-cd.html) are a good starting point for planning your delivery pipeline. But how can they be translated into a concrete Continuous Delivery (CD) landscape? Which components are needed and how does the overall CD process look like?
 
 
 ### CI/CD pipeline
 
-The recommended process flow starts with the change by a developer. This change is targeted to the main line in the source code management system. As outlined already in the "Practices" section, it is highly recommended to implement a voter build including automatic tests as a gate keeper. This helps you to discover issues before they reach the main line.
+The recommended process flow starts with the change by a developer. This change is targeted to the main line in the source code management system. As outlined already in the [CI/CD Practices](http://go.sap.com/developer/tutorials/ci-best-practices-ci-cd.html) part, it is highly recommended to implement a voter build including automatic tests as a gate keeper. This helps you to discover issues before they reach the main line.
 
 When the change has passed the voter build and tests, it is merged into the main line. As a precondition for a merge, applying a 4-eyes principle by doing code reviews is a common practice. Gerrit for, example collects, feedback of human code reviewers together with voter build and test results in one common place as a prerequisite for the merge.
 
@@ -140,7 +140,7 @@ What concerns the developer and the application operator, so-called DevOps appro
 
 When discussing the concrete setup of CI process landscapes for specific SAP technologies, we will also see aspects to be covered that were not yet part of the rather prototype-like process landscape just described.
 
-Finally, any CD process must fit to the individual needs of the development team and the technological boundary conditions. We will explain later in part 4 "CI/CD Process Setup" how these aspects influence the design of the CI process and how this leads to adaptations of the prototype landscape.
+Finally, any CD process must fit to the individual needs of the development team and the technological boundary conditions. We will explain later in [part 4: CI/CD Process Setup](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html) how these aspects influence the design of the CI process and how this leads to adaptations of the prototype landscape.
 
 What was discussed here so far is the process for integration into the main line. But as we have learned in section "Everything is under version control", it is possible to apply the process for feature branches as well. All what was said before applies to this case except that the "release" is not implemented as deployment into the production system but as push of the bundled changes made to the feature branch into the main line.
 
