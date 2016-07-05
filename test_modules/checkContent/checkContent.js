@@ -4,7 +4,7 @@ var path = require('path');
 
 module.exports = function(file, line, callback) {
     //test only files in tutorials and wip folder
-    if (path.parse(file).dir.includes("tutorials") || path.parse(file).dir.includes("work-in-progress")) {
+    if (path.parse(file).dir.split(path.sep)[0] == "tutorials" || path.parse(file).dir.split(path.sep)[0] == "work-in-progress") {
 
         //create regular expression
         var regexs = [
