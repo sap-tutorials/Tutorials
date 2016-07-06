@@ -31,7 +31,9 @@ What you need to be successful in building business applications on SAP's cloud 
 
 In this guide we will discuss some basic principles for software development that are derived from the process definitions for Continuous Integration (CI) and Continuous Delivery (CD). We will then break the principles down into the best practices that will support you in setting up an efficient development process for your cloud application development on SAP HANA Cloud Platform (SAP HCP).
 
-We have experienced that cloud products offered by SAP do not yet fully address our customers' CI processes. SAP offers several tools to address single aspects only. The goal of this guide is to provide recommendations that focus on the complete picture of a CI or CD process and how to set it up.
+We noticed that customers seek for more guidance on an end-to-end CI process. SAP offers several tools to address single aspects.
+The goal of this guide is to provide recommendations that focus on the complete picture of a CI or CD process and how to set it
+up using widely adapted complementary tools.
 
 For this, we will examine the most important SAP technologies and describe how to use existing tools to set up a CI process that fits the individual needs of your development project, your requirements, and your environment.
 
