@@ -22,10 +22,10 @@
   },
   "homepage": "https://github.com/SAPDocuments/Tutorials#readme",
   "devDependencies": {
-    "checklink": "^1.0.0",
     "color-log": "0.0.2",
     "command-line-args": "^3.0.0",
     "inquirer": "^1.0.3",
+    "markdown-link-check": "^1.0.1",
     "markdown-spellcheck": "^0.10.0",
     "mkdirp": "^0.5.1",
     "progress": "^1.1.8",
