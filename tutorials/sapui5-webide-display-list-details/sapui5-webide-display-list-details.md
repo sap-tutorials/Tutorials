@@ -43,7 +43,7 @@ In order to improve our web app, you can display a more detail information for e
 	 > **Be very careful when adding this code!**  The code must go inside the square brackets.  If you place it outside the brackets, you will get an error.  Look at the image for the exact placement.
 
     ```javascript
-    , {    "pattern": "detail/{productId}",    	"name": "appDetail"
+    , {    "pattern": "detail/{productId}",    	"name": "appDetail",
     	"target": "detail"    }
     ```
     
