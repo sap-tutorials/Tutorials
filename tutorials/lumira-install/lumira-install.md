@@ -25,11 +25,11 @@ How to download the SAP BusinessObjects Lumira Desktop, and install it on your p
 
 2. You will be directed to the SAP Store, where you will be able to start immediate download of SAP BusinessObjects Lumira.
 
-   Register your e-mail to receive additional free premium content.
+    Register your e-mail to receive additional free premium content.
 
     ![Lumira Trial](lumira1-1b.png)
 
-3. Once the file is downloaded follow the step-by-step installation process with the help of the installer. Restart your computer after installation has been completed.
+3. Once the file is downloaded follow the step-by-step installation process with the help of the installer. Restart your computer after installation has been completed. SAP BusinessObjects Lumira Desktop will start in 30-days trial mode.
 
     > ### Note
     > For further reference information about the installation of SAP BusinessObjects Lumira Desktop, please refer to the documentation: [Installation and Upgrade Information](http://help.sap.com/lumira#section3)
