@@ -38,7 +38,7 @@ Gerrit is available as open source and comes with a built-in installation of Git
 
 > Homepage: https://code.google.com/p/gerrit  
 > Downloads: http://gerrit-releases.storage.googleapis.com/index.html  
-> Installation guide: https://gerrit.googlecode.com/svn/documentation/2.0/install.html  
+> Quick get started guide: https://gerrit-review.googlesource.com/Documentation/install-quick.html
 
 #### Prerequisites
 
