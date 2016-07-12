@@ -52,7 +52,7 @@ Eclipse as development environment is commonly used but not absolutely needed an
  
     Alternatively, you may follow the steps for command line-based creation as described in:  
     
-    > Documentation: https://gerrit.googlecode.com/svn/documentation/2.0/project-setup.html
+    > Documentation: https://gerrit-review.googlesource.com/Documentation/cmd-create-project.html
     
 5. Do an initial clone of the project to your PC and check out the `master` branch.
 

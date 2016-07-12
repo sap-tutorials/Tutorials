@@ -239,7 +239,7 @@ For small projects for which building, testing, and so on does not exceed, letâ€
 
 Therefore, a compromise must be found between different levels of acceptance criteria:
 
-  - Those that are considered as crucial for the quality of the main line. Each change merged must fulfil them.
+  - Those that are considered as crucial for the quality of the main line. Each change merged must fulfill them.
     This includes of course the syntactical correctness, but also unit tests and fast-running scenario tests. They have to run in the CI builds and maybe even in the voter builds.
   - More exhausting scenario tests that take longer than what would be acceptable for a CI build.
     For running these tests, additional scheduled builds could run independently from the CI builds. They do not block the developer, since their processing time does not play such an important role.

@@ -99,7 +99,7 @@ What is also shown in the process diagram is the next step, the automatic deploy
 
 #### The Qualification Process and Continuous Delivery
 
-The quality requirements that a software has to fulfil before it can be deployed to production are a topic that can fill a whole book. In any case, to go into the details will go far beyond the scope of this small best practices guide.
+The quality requirements that a software has to fulfill before it can be deployed to production are a topic that can fill a whole book. In any case, to go into the details will go far beyond the scope of this small best practices guide.
 For sure, the quality requirements and thus the scope of the tests to be executed to qualify a software to be ready-for-production depend on various things, like, for example, the size of the application, the technology, the complexity (is it a stand-alone application or does it run in a complex integration scenario), the consumer space (is the application open for any cloud user or is the access restricted to a small user group), and so on.
 
 It therefore highly depends on the specific landscape which tests have to be executed and whether they can be automated or must be executed manually. Since one can think of different tests with completely different characteristics (functional tests versus performance tests), it could happen that more than one test system has to be used in parallel.
@@ -127,7 +127,7 @@ The release process controls how to bring an application version that was succes
 
 There are the two additional actors, the application operator and the production runtime system that come into the game now.
 
-The operator responsible for the life cycle of the application executes the release decision by triggering the upgrade on the process orchestrator. We assume here that also the deployment process on the production runtime system is automated as much as possible with the orchestrator as the unique entry point for any process triggering. The deploy tool called by the orchestrator downloads the artefacts and deploys them to the production system. Success notifications are flowing back through the orchestrator to the application operator.
+The operator responsible for the life cycle of the application executes the release decision by triggering the upgrade on the process orchestrator. We assume here that also the deployment process on the production runtime system is automated as much as possible with the orchestrator as the unique entry point for any process triggering. The deploy tool called by the orchestrator downloads the artifacts and deploys them to the production system. Success notifications are flowing back through the orchestrator to the application operator.
 
 
 ### Further Remarks
