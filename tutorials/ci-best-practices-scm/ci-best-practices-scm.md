@@ -1,6 +1,6 @@
 ---
 
-title: CI Best Practices Guide: Source Code Versioning System
+title: Continuous Integration (CI) Best Practices with SAP: Source Code Versioning System
 description: Part 3.1: Setting up a Git/Gerrit Instance.
 tags: [  tutorial>intermediate, tutorial:type/project ]
 

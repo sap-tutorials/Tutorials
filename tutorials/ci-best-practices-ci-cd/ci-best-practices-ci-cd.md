@@ -1,6 +1,6 @@
 ---
 
-title: CI Best Practices Guide: CI/CD Practices
+title: Continuous Integration (CI) Best Practices with SAP: CI/CD Practices
 description: Part 2.1: The Practices and Principles of CI and CD.
 tags: [  tutorial>intermediate, tutorial:type/project ]
 

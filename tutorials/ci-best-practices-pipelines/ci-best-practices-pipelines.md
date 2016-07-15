@@ -1,6 +1,6 @@
 ---
 
-title: CI Best Practices Guide: Pipeline Suggestions
+title: Continuous Integration (CI) Best Practices with SAP: Pipeline Suggestions
 description: Part 2.2: Patterns for a CI/CD pipeline.
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
