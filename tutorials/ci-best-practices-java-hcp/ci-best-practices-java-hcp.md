@@ -1,6 +1,6 @@
 ---
 
-title: CI Best Practices Guide: Java Web on HCP
+title: Continuous Integration (CI) Best Practices with SAP: Java Web on HCP
 description: Part 4.2: Configuring the CI system for Maven-based Java Web project.
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
