@@ -114,8 +114,13 @@ This section describes how to set up the Jenkins master. The installation of a s
 
 9. Now go to **Manage Jenkins > Manage Plugins > Available** and select
 
-    - **Gerrit Trigger**
-    - **Git plugin**
+    - **Gerrit Trigger Plugin**.
+    - **Git Plugin**.
+    - **Workspace Cleanup Plugin**.
+    - **Copy Artifact Plugin**.
+    - **Build Pipeline Plugin**. This will be needed for defining Jenkins jobs connected to a pipeline.
+    - **Conditional Build Step Plugin**
+
   
 10. Choose **Download now and install after restart**.
 
@@ -148,7 +153,7 @@ This section describes how to set up the Jenkins master. The installation of a s
 16. Also in **Manage Jenkins > Configure System**, you inform Jenkins about the Maven path to be used on the slaves (see below):
 
     Field                 | Value |
-    :-------------------- | -------------------------------------  
+    :-------------------- | :-------------------------------------  
     Maven installations   | Click on **Add Maven**
     Name                  | `mvn`
     Install automatically | `unchecked`
@@ -223,7 +228,7 @@ In this document, we restrict ourselves to Linux as operating system for the sla
 
     Field                  | Value 
     :--------------------- | :-------------------------------------- 
-    Name | `{any logical name, for example the hostname}`
+    Name                   | `{any logical name, for example the hostname}`
     Description            |	`{any description}`
     Number of executors    | `{Number of parallel builds executable on the node. This depends on the load your build jobs produces and the resources of the machine. Start with 1 or 2 and try to increase it}`
     Remote root directory  | `/data/jenkins` 

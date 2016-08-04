@@ -44,7 +44,7 @@ Eclipse as development environment is commonly used but not absolutely needed an
 
 2. Go to **Projects > Create New Project**. 
 
-3. Enter the project name `HelloWorld` and select **Create initial empty commit**. This automatically creates the master branch.
+3. Enter the project name `HelloWorld` and select **Create initial empty commit**. This automatically creates the `master` branch.
 
 4. Enter `Rights Inherit From:` `CI-Projects`.
 
