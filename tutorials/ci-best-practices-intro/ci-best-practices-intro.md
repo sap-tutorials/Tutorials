@@ -24,12 +24,13 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 4. CI/CD Process Setup  
 4.1. [Generic Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)  
 4.2. [Java Web on SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp.html)  
+4.3. [SAP HANA Extended Application Services (XS), classic model](http://go.sap.com/developer/tutorials/ci-best-practices-xsc.html)  
 
 ---
 
 
-An efficient software development process is vital for success in building business applications on SAP's cloud
-platform or using SAP on-premise technologies.
+An efficient software development process is vital for success in building business applications on SAP cloud
+or on-premise platforms.
 
 This guide discusses some basic principles for software development that are derived from the process definitions for
 Continuous Integration (CI) and Continuous Delivery (CD). We provide best practices
@@ -96,4 +97,5 @@ Developer engaged in CI   | Implements the build scripts and tests in collaborat
 | **4. CI/CD Process Setup**                |            |            |            |            |            |            |
 | 4.1. [Generic Project: Configuring the CI system for Maven-based generic Java project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)                 |            |            |            | +          | ++         | +          |
 | 4.2. [Java Web on SAP HANA Cloud Platform: Configuring the CI system for Maven-based Java Web project](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp.html) |          |            |            | (+)        | (++)       | (+)        |
+| 4.3. [SAP HANA Extended Application Services (XS), classic model: Configuring the CI system](http://go.sap.com/developer/tutorials/ci-best-practices-xsc.html) |          |            |            | (+)        | (++)       | (+)        |
 

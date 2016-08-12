@@ -189,7 +189,7 @@ This job is manually triggered but semantically linked to the job before.
     There will be a warning since the project does not yet exist. Ignore it for now. Enter as parameters
     
     ```
-    BUILD_JOB_NUMBER=${BUILD_NUMBER}
+    BUILD_JOB_NUMBER=${BUILD_JOB_NUMBER}
     ```
     
 6. Save the job definition.
