@@ -72,7 +72,7 @@ Decoration                                                   | Meaning
 
     ![Initialize local git](mg3-3-06.png)
 
-7. Paste in the **Git Repository URL** you copied earier and click **OK**. This will initialize your local repository and link it to the Git repository in HCP.
+7. Paste in the **Git Repository URL** you copied earlier and click **OK**. This will initialize your local repository and link it to the Git repository in HCP.
 
     ![Initialize with remote git URL](mg3-3-07.png)
 
@@ -120,7 +120,7 @@ Decoration                                                   | Meaning
 
 7. You will see a confirmation alert appear briefly in the top-right corner of the Web IDE window (just below **Logout**), and you will see the decorations change to the **green circles** indicating that the files have been committed (and the version in your project matches the version in the Git repository).
 
-    ![commit description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-commit-git/mob_3_2a_7.png)
+    ![commit description](mg3-3-18.png)
 
 
 ## Next Steps
