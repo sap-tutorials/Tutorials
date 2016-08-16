@@ -1,6 +1,6 @@
 ---
 title: Calculate and display a new field in an SAPUI5 app
-description: Learn how to add an additional tab, and more data fields to an SAPUI5 app.
+description: Compute a new field from data in the OData service and display it in your app.
 tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>intermediate ]
 ---
 
