@@ -90,8 +90,10 @@ In this tutorial you'll learn everything you need to know to setup your local de
 
     The SDK comes in different flavors:
 
-    - Java Web: Provides a lightweight runtime supporting a subset of the standard Java EE APIs (Servlet, JSP, JSTL, EL). Currently there is a `1.x` and a `2.x` version of this runtime available
-    - Java EE 6 Web Profile: Provides certified support for the whole Java EE 6 Web Profile APIs
+    - Java Web: Provides a lightweight runtime supporting a subset of the standard Java EE APIs (Servlet, JSP, JSTL, EL). Currently there is a `1.x` version of this runtime available
+    - Java EE 6 Web Profile: Provides certified support for the whole Java EE 6 Web Profile APIs. Currently there is a `2.x` version of this runtime available
+    - Java Web Tomcat 7: Provides support for some of the standard Java EE APIs (Servlet, JSTL, EL). Currently there is a `2.x` version of this runtime available
+    - Java Web Tomcat 8: Provides support for some of the standard Java EE APIs (Servlet, JSTL, EL). Currently there is a `3.x` version of this runtime available
 
     For this tutorial you will use the `Java Web SDK 1.x` version of the SDK. To install it on your system do the following:
 
@@ -110,7 +112,7 @@ In this tutorial you'll learn everything you need to know to setup your local de
 
     ![Accept SDK License](jav100-1-accept_license_2.png)  
 
-18. Once the download has finished extract the archive to a local folder of your choice. It is recommended to place the folder in `c:\dev` and to name it like the just downloaded file, e.g. `c:\dev\neo-java-web-sdk-1.63.20.7`
+18. Once the download has finished extract the archive to a local folder of your choice. It is recommended to place the folder in `c:\dev` and to name it like the just downloaded file, e.g. `c:\dev\neo-java-web-sdk-1.109.9`
 
     > Note: To familiarize yourself further with the content of the SDK, especially note the location of the [console client](https://help.hana.ondemand.com/help/frameset.htm?76132306711e1014839a8273b0e91070.html) within the tools directory and the provided samples in a respective samples directory. Also, you might be interested to learn about the [supported APIs](https://help.hana.ondemand.com/help/frameset.htm?e836a95cbb571014b3c4c422837fcde4.html).
 
