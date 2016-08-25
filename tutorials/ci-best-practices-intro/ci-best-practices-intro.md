@@ -29,40 +29,22 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ---
 
 
-An efficient software development process is vital for success in building business applications on SAP cloud
-or on-premise platforms.
+An efficient software development process is vital for success in building business applications on SAP cloud or on-premise platforms.
 
-This guide discusses some basic principles for software development that are derived from the process definitions for
-Continuous Integration (CI) and Continuous Delivery (CD). We provide best practices
-to support establishing your application development processes especially for SAP HANA Cloud
-Platform (SAP HCP) but also for other SAP technologies.
+This guide discusses some basic principles for software development that are derived from the process definitions for Continuous Integration (CI) and Continuous Delivery (CD). We provide best practices to support establishing your application development processes especially for SAP HANA Cloud Platform (SAP HCP) but also for other SAP technologies.
 
-Our customers have requested in-depth guidance for an end-to-end CI process. SAP offers several tools to address single aspects,
-such as the WebIDE in HCP.
-The goal of this guide is to provide a "big picture" on CI or CD processes and how to give showcases how to set them
-up using widely adopted complementary tools. The choice of tools should be considered as examples.
-Other tools fulfilling the same purpose will work as well.
+Our customers have requested in-depth guidance for an end-to-end CI process. SAP offers several tools to address single aspects, such as the WebIDE in HCP. The goal of this guide is to provide a "big picture" on CI or CD processes and how to give showcases how to set them up using widely adopted complementary tools. The choice of tools should be considered as examples. Other tools fulfilling the same purpose will work as well.
 
-We will take a look at the most important SAP technologies and describe how to use existing tools to set up a CI process that
-fits the individual needs of your development project, your requirements, and your environment.
+We will take a look at the most important SAP technologies and describe how to use existing tools to set up a CI process that fits the individual needs of your development project, your requirements, and your environment.
 
-Simply follow the step-by-step recipes to set up and configure the technical components. You will learn how to orchestrate those components
-to build a generic skeleton CI or CD process that is based on selected SAP technologies. We discuss the specifics
-of each technology and explain how to adopt the CI and CD approaches with the help of concrete examples or reference applications.
+Simply follow the step-by-step recipes to set up and configure the technical components. You will learn how to orchestrate those components to build a generic skeleton CI or CD process that is based on selected SAP technologies. We discuss the specifics of each technology and explain how to adopt the CI and CD approaches with the help of concrete examples or reference applications.
 
-This guide is intended for any SAP customer or partner who is interested in or currently setting up a development process for
-their cloud application development on SAP HCP or on-premise technologies.
-The high level principles discussed in part 2 of the guide are intended for a wide audience and will help managers, product owners,
-quality managers and developers understand why the principles make sense and how they can be applied.
-The subsequent parts are more technical and are intended for the process architects, build engineers, and operators
-who are implementing the development process.
+This guide is intended for any SAP customer or partner who is interested in or currently setting up a development process for their cloud application development on SAP HCP or on-premise technologies. The high level principles discussed in part 2 of the guide are intended for a wide audience and will help managers, product owners, quality managers and developers understand why the principles make sense and how they can be applied. The subsequent parts are more technical and are intended for the process architects, build engineers, and operators who are implementing the development process.
 
 
 ## Navigating Through the Best Practices Guide
 
-This best practices guide covers a broad spectrum of aspects and addresses many diverse topics at different levels for people who have
-different roles and interests. We have tried to identify some roles and direct them to the sections that are likely to be of
-most interest.
+This best practices guide covers a broad spectrum of aspects and addresses many diverse topics at different levels for people who have different roles and interests. We have tried to identify some roles and direct them to the sections that are likely to be of most interest.
 
 ### Roles
 
