@@ -3,9 +3,11 @@ AngularJS
 Ansible
 Apriori
 Auth
+AWS
 backend
 Bieser
 BusinessObjects
+CAL
 CircleCI
 classname
 Classname
@@ -22,6 +24,7 @@ Fiori
 Github
 github.com
 go.sap.com
+Hadoop
 HCPms
 hdbschema
 Heilman
@@ -61,8 +64,10 @@ pre-pend
 pre-pended
 proxied
 pulldown
+PuTTY
 rac-support
 Redhat
+Restangular
 ReviewNinja
 Rudnicki
 Runtimes
@@ -71,6 +76,7 @@ SAPDocuments
 SAPUI5
 servlet
 Servlet
+ssh
 Tessel
 timestamp
 truststore
@@ -90,3 +96,4 @@ xsaccess
 xsapp
 xsjs
 xsodata
+YaaS
