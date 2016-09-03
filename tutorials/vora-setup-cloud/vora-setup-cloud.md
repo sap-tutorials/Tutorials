@@ -9,12 +9,12 @@ tags: [  tutorial>beginner, products>sap-hana-vora, topic>big-data ]
  - You have understanding of cloud infrastructure
 
 ## Next Steps
- - Connect to SAP HANA Vora instance (coming soon)
+ - [Connect to SAP HANA Vora instance to manage it] (http://go.sap.com/developer/tutorials/vora-setup-cloud.html), or
  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
-How to create a SAP HANA Vora instance in your cloud provider, using the SAP Cloud Appliance Library (CAL) system.
+How to create a SAP HANA Vora instance, developer edition, in your cloud provider, using the SAP Cloud Appliance Library (CAL) system. SAP HANA Vora, developer edition, is covered by the Developer License Agreement, which you will need to accept in order to be able to get access to it.
 This tutorial provides step by step instructions to walk you through the initial setup process.
 
 ### Time to Complete
@@ -94,8 +94,9 @@ SAP HANA Vora leverages and extends the Apache Spark execution framework to prov
     Ideally you should remember to manually **Suspend** the instance every time you take a break in using the instance. This will stop the instance in AWS, so the cloud provider will not charge you for using resources when you do not work with SAP HANA Vora.
 
 ### Optional
- - Review the SAP HANA Vora documentation at http://help.sap.com/hana_vora_re.
+ - Review the [SAP HANA Vora documentation](http://help.sap.com/hana_vora_re)
+ - Review the [SAP Cloud Appliance Library (CAL) documentation](https://calstatic.hana.ondemand.com/res/~1472020269624~/docEN/index.html)
 
 ## Next Steps
- - Connect to SAP HANA Vora instance (coming soon)
+ - [Connect to SAP HANA Vora instance to manage it] (http://go.sap.com/developer/tutorials/vora-setup-cloud.html), or
  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
