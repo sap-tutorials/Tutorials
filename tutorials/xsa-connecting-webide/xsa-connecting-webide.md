@@ -1,7 +1,7 @@
 ---
 title: SAP HANA XS Advanced, Connecting to the WebIDE to begin development
 description: Part 1 of 3, Explore how to connect to the SAP Web IDE for SAP HANA to begin development.
-tags: [products>sap-hana, topic>big-data, tutorial>beginner ]
+tags: [products>sap-hana, products>sap-hana,-express-edition, topic>big-data, tutorial>beginner ]
 
 ---
 

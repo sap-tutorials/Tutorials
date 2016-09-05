@@ -10,7 +10,7 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
  - **Tutorials:** [Internet of Things (IoT) Adding a new device to the IoT Services](http://go.sap.com/developer/tutorials/iot-part7-add-device.html)
 
 ## Next Steps
- - [Go back to catalog and select a tutorial](http://go.sap.com/developer/tutorials.html)
+ - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
 
 
 ## Details
@@ -103,11 +103,9 @@ Now its time to insert data from your Tessel to SAP IoT Services. If you have al
         "mode":"sync",
         "messageType":"6c7a02f24cc32ee07174",
         "messages": [{
-            "ID": "1",
             "Humidity": humid,
             "Temperature": temp,
-            "Brightness": brightness,
-      "timestamp": time
+            "timestamp": time
             }]
     }
     var strData = JSON.stringify(jsonData);
@@ -123,7 +121,7 @@ Now its time to insert data from your Tessel to SAP IoT Services. If you have al
 5. Comment out the call to `updateHANA` and insert the call to `updateIot` just below it.
 
     ```javascript
-    updateIoT(temp.toFixed(4), humid.toFixed(4) , 23);
+    updateIoT(temp.toFixed(4), humid.toFixed(4));
     ```
 
 6. Check that your Tessel is still connected to Wi-Fi by running the command `tessel wifi -l`. If you do not get a response like that below, you should reconnect to the network with the command below with the correct SSID and password. If your access point has spaces in the name then just put it inside of quotes like this: `“Wifi name”`.
@@ -146,4 +144,4 @@ Now its time to insert data from your Tessel to SAP IoT Services. If you have al
     ![Viewing new values in HCP](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part8-hcp-services-tessel/p8_8.png)
 
 ## Next Steps
- - [Go back to catalog and select a tutorial](http://go.sap.com/developer/tutorials.html)
+  - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)

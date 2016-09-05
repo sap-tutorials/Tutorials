@@ -12,6 +12,8 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 ## Next Steps
  - [Internet of Things (IoT) Setup SAP HANA XS (On-premise or stand-alone server)](http://go.sap.com/developer/tutorials/iot-part2-hanaxs-setup.html)
+- [Internet of Things (IoT) Explore the SAP HCP IoT Services](http://go.sap.com/developer/tutorials/iot-part6-hcp-services.html)
+  
 
 ## Details
 ### You will learn  
@@ -20,6 +22,8 @@ In this tutorial, you will connect and configure your Tessel device.......
 Prior to starting this tutorial you should have your Tessel device and a USB cable. For Windows machines simply plugging in the device will often result in the drivers be installed whereas a Apple Mac OS X or Linux machine require a bit more effort to install.
 
 You should also be familiar with working with the command prompt in Windows or the Terminal or Shell in Mac or Linux.
+
+After this tutorial you can choose either the On-Premise or the Cloud route.
 
 
 ### Time to Complete
@@ -92,3 +96,4 @@ You should also be familiar with working with the command prompt in Windows or t
 
 ## Next Steps
  - [Internet of Things (IoT) Setup SAP HANA XS (On-premise or stand-alone server)](http://go.sap.com/developer/tutorials/iot-part2-hanaxs-setup.html)
+- [Internet of Things (IoT) Explore the SAP HCP IoT Services](http://go.sap.com/developer/tutorials/iot-part6-hcp-services.html)

@@ -15,7 +15,7 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 ## Details
 ### You will learn  
-In this tutorial, you will prepare your development environment to work with a [Tessel](https://tessel.io/) device and with SAP HANA.
+In this tutorial, you will prepare your development environment to work with a Tessel device (see `https://tessel.io/`) and with SAP HANA.
 
 ### Time to Complete
 **15 Min**.
