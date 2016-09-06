@@ -1,6 +1,6 @@
 ---
-title: Sign up for an account on SAP HANA Cloud Platform
-description: How to sign up for a free SAP HANA Cloud Platform (HCP) account
+title: Sign up for an free trial account on SAP HANA Cloud Platform
+description: How to sign up for a free trial account on SAP HANA Cloud Platform (HCP)
 tags: [ products>sap-hana-cloud-platform, topic>cloud, tutorial>beginner ]
 ---
 ## Prerequisites
