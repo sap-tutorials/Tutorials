@@ -23,17 +23,17 @@ You will now create the HTML5 module to add basic web based content to your XSA 
 
 ---
 
-1. Launch the SAP Web IDE for SAP HANA at the following URL in your web browser. The `hostname` of course is the hostname of the SAP HANA Developer Edition that you created in the previous tutorial. Remember for XSA you will need to use the hostname and not the IP address of the server, instructions are found on the server landing page itself.
+1. Launch the SAP Web IDE for SAP HANA at the following URL in your web browser. The `hostname` of course is the hostname of the SAP HANA Developer Edition or SAP HANA Express that you created in the previous tutorial. Remember for XSA you will need to use the hostname and not the IP address of the server, instructions are found on the server landing page itself.
 
     `http://<hostname>:53075/`
 
     User: `WORKSHOP_01`
-    Password: `HanaRocks2016`
+    Password: `HanaRocks2016` or what you changed it to
 
     or you can use
 
     User: `CODEJAMMER`
-    Password: `CodeJam2016`
+    Password: `CodeJam2016` or what you changed it to
 
     ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-html5-module/1.png)
 
@@ -88,6 +88,8 @@ You will now create the HTML5 module to add basic web based content to your XSA 
     ```
     xs login -a http://<hostname>:30030 -o hanapm -s SAP -u CODEJAMMER -p CodeJam2016 
     ```
+    
+    Remember to change `-o hanapm` or `-o HANAExpress` if you are using SAP HANA Express.
     
     ![Command line XS Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-html5-module/5.png)
 
