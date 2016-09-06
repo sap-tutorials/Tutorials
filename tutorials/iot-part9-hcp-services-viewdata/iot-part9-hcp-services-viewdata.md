@@ -1,7 +1,7 @@
 ---
 title: Internet of Things (IoT) Viewing your Tessel data from IoT Services
 description: Part 9 of 10, Now it is time to display your stored data from your Tessel device
-tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beginner ]
+tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
 ---
 

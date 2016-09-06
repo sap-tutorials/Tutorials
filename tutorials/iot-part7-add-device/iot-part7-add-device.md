@@ -1,7 +1,7 @@
 ---
 title: Internet of Things (IoT) Adding a new device to the IoT Services
 description: Part 7 of 10, Add a new device to your IoT Services
-tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beginner ]
+tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
 ---
 

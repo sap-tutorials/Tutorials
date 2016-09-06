@@ -1,7 +1,7 @@
 ---
 title: Internet of Things (IoT) Connecting your TI SensorTag to IoT Services
 description: Internet of Things (IoT) Connecting your TI SensorTag to IoT Services
-tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-cloud-platform, products>sap-hana ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
