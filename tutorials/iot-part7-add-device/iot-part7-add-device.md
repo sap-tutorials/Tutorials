@@ -12,6 +12,7 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 ## Next Steps
  - [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://go.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
+ [Internet of Things (IoT) Connecting your TI `SensorTag` to IoT Services](http://go.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
 
 ## Details
 ### You will learn  
@@ -134,3 +135,4 @@ Go to the **IoT Services Cockpit** and click the **View messages received, use s
 
 ## Next Steps
  - [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://go.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
+ [Internet of Things (IoT) Connecting your TI `SensorTag` to IoT Services](http://go.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)

@@ -31,7 +31,7 @@ In the following exercise we will show how to debug a procedure using the SQLScr
 
     ![service name](3.png)
 
-4. Choose your container associated with your user id.  Click "Ok".
+4. Choose your container associated with your user id.  Click "OK".
 
     ![container](4.png)
 
