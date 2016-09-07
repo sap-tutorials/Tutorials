@@ -45,8 +45,7 @@ With the MMS service now deployed, and your user assigned the appropriate role i
     `Humidity`      | `double`
     `Temperature`   | `double`
 
-
-    > Make sure `timestamp` in your definition has data type `long`, and not default `date`.
+    > **Make sure `timestamp` in your definition has data type `long`, and not default `date`.**
 
     The message type ID:
 
@@ -56,11 +55,11 @@ With the MMS service now deployed, and your user assigned the appropriate role i
 
     ![New Device Type](p7_3.png)
 
-6. Finally you can now click the "back arrow" and create the final item, your **Device**. 
+6. Finally you can now click the "back arrow" and create the final item, your **Device**.
 
     > This is extremely important, once you click **Create** a pop-up will appear that will display the **OAuth access token** for this new device. Copy that and save it somewhere, you will need it soon.  If you lose it, click into the **Authorization** tab and you can generate a new token.
 
-    ![Device](p7_6.png) 
+    ![Device](p7_6.png)
 
 7. When the OAuth Access Token is displayed, copy the token ID and save it. Click **Close**.
 
@@ -69,7 +68,7 @@ With the MMS service now deployed, and your user assigned the appropriate role i
 8. Copy and save the **Device ID** string
 
     ![Device ID](p7_8.png)
-    
+
 5. Click the “back arrow” again to return the the IoT Services Cockpit and click the **Devices** tile. Press the **+** symbol button at the bottom to create a new device.  Give it a name (e.g. `DevelopmentTessel`), select the device type that you created earlier. **DO NOT** click the **Create** button until you read the note below!    
 
 9. With the device type, message type and device configured, it is time to send some data.
@@ -135,4 +134,4 @@ Go to the **IoT Services Cockpit** and click the **View messages received, use s
 
 ## Next Steps
  - [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://go.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
- [Internet of Things (IoT) Connecting your TI `SensorTag` to IoT Services](http://go.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
+ - [Internet of Things (IoT) Connecting your TI `SensorTag` to IoT Services](http://go.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
