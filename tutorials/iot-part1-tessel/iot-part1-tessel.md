@@ -63,7 +63,7 @@ If it shows the serial number of the connected Tessel device, then you are good 
 
 5. Once you create the file add the following code to it:
 
-    ```JavaScript
+    ```javascript
     // Import the interface to Tessel hardware
     var tessel = require('tessel');
     // Set the led pins as outputs with initial states
