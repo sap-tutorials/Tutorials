@@ -1,7 +1,7 @@
 ---
 title: SAP HANA XS Advanced, Connecting to the WebIDE to begin development
 description: Part 1 of 3, Explore how to connect to the SAP Web IDE for SAP HANA to begin development.
-tags: [products>sap-hana, products>sap-hana,-express-edition, topic>big-data, tutorial>beginner ]
+tags: [products>sap-hana, topic>big-data, tutorial>beginner ]
 
 ---
 
@@ -23,7 +23,7 @@ SAP HANA XS Advanced is the new development paradigm from SAP based around the C
 
 ---
 
-1. Launch the SAP Web IDE for SAP HANA at the following URL in your web browser. The `hostname` of course is the hostname of the SAP HANA Developer Edition or SAP HANA Express that you created in the previous tutorial. Remember for XSA you will need to use the hostname and not the IP address of the server, instructions are found on the server landing page itself.
+1. Launch the SAP Web IDE for SAP HANA at the following URL in your web browser. The `hostname` of course is the hostname of the SAP HANA Developer Edition that you created in the previous tutorial. Remember for XSA you will need to use the hostname and not the IP address of the server, instructions are found on the server landing page itself.
 
     `http://<hostname>:53075/`
 

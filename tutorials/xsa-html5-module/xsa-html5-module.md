@@ -1,7 +1,7 @@
 ---
 title: SAP HANA XS Advanced, Creating an HTML5 Module
 description: Part 2 of 3, Create your first HTML5 module for HTML5 content within your XSA application
-tags: [products>sap-hana, products>sap-hana,-express-edition, topic>big-data, tutorial>beginner ]
+tags: [products>sap-hana, topic>big-data, tutorial>beginner ]
 
 ---
 
@@ -23,7 +23,7 @@ You will now create the HTML5 module to add basic web based content to your XSA 
 
 ---
 
-1. Launch the SAP Web IDE for SAP HANA at the following URL in your web browser. The `hostname` of course is the hostname of the SAP HANA Developer Edition or SAP HANA Express that you created in the previous tutorial. Remember for XSA you will need to use the hostname and not the IP address of the server, instructions are found on the server landing page itself.
+1. Launch the SAP Web IDE for SAP HANA at the following URL in your web browser. The `hostname` of course is the hostname of the SAP HANA Developer Edition that you created in the previous tutorial. Remember for XSA you will need to use the hostname and not the IP address of the server, instructions are found on the server landing page itself.
 
     `http://<hostname>:53075/`
 
