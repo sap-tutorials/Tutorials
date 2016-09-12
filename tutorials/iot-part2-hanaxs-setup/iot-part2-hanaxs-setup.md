@@ -7,7 +7,7 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Internet of Things (IoT) Setup the Tessel](http://go.sap.com/developer/tutorials/iot-part1-tessel.html)
+ - **Tutorials:** [Internet of Things (IoT) Setup the Tessel](http://go.sap.com/developer/how-tos/iot-tessel.html)
 
 
 ## Next Steps
@@ -23,7 +23,7 @@ You are now going to build a simple and quick SAP HANA XS application, if you al
 **< 5 Min**.
 ---1. Login to the server provided during this event or to your own SAP HANA server and go to the SAP HANA Web Based Development Workbench
     `http://xx.xx.xx.xx/sap/hana/xs/ide/editor`
-    Your login is: user name `CODEJAMMER` and `CodeJam2015` (or whichever user you have been given to login with)
+    Your login is: user name `CODEJAMMER` and `CodeJam2015` (or whichever username and password you have been given to login with)
 2. Once you have your editor loaded you will need to create a package name under the **CODEJAMMER** package with your name. This is done by right clicking on the **CODEJAMMER** package and choosing **New > Package** and then entering your name. If the **CODEJAMMER** package does not exist then simply create a new package under the **root** package which is simply the “Content” folder.
 
     ![Repository View](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part2-hanaxs-setup/p2_2.png)3. Then under your new package you will want to create another new package called `myiot`. This will be the package that you place all of our XS code under for our application.

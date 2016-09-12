@@ -1,7 +1,7 @@
 ---
 title: Creating a Calculation View with a Cube data type and Star Join
 description: Leveraging SQLScript in Stored Procedures & User Defined Functions
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana,-express-edition ]
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
