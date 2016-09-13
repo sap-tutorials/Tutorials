@@ -31,7 +31,7 @@ Now that your IoT Services are collecting data and you were able to view it your
     ![HANA instances](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part10-hcp-services-hanaxs/1.png)
 
     ![HANA instances](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part10-hcp-services-hanaxs/2.png)
-    
+
 3. Under the first one, our `XXXXXXtrial.iotmms.web` you’ll notice we have an existing binding in place. We need to remove that one. Then we will need to add the new binding to our new HANA XS (shared) instance.
 
 4. Once you have that complete you will need to start your “IOTMMS” Java Application and send some data through your device which will then generate the proper tables in your HANA XS (shared) instance ([see tutorial](http://go.sap.com/developer/tutorials/iot-part7-add-device.html)). So provided you received the “200” status in your messages then we should now have data in our tables and can begin working on our XS application.
@@ -54,15 +54,15 @@ Now that your IoT Services are collecting data and you were able to view it your
 		  	]
 		}
 	```
-	
+
 7. Now switch to the catalog view to determine the next values you will need.
 
     ![catalog](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part10-hcp-services-hanaxs/5.png)
-    
+
 8. Now check under the `NEO_` schema, you will need to make a note of that specific schema name as you will need it in a moment. Under this schema you will find your tables. These are the tables created by the IoT Services for our devices.
 
     ![catalog tables](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part10-hcp-services-hanaxs/6.png)
-    
+
 9. Your table table `T_IOT_1_XXXXXXXXXXXXX` will be the other item you need to make note of for use in a moment. Now back in our other window the “Editor” should still be open and running and there we need to make another new file in our sub package `iotmmsxs`. This file will be called `iotaccess.hdbrole`.
 
 	```
@@ -71,8 +71,8 @@ Now that your IoT Services are collecting data and you were able to view it your
 	 catalog schema "NEO_<schema_id>": SELECT;
 	}
 	```
-	
-	This will give a specific user read access to our table. As soon as you save it and it’s successfully activated that is. 
+
+	This will give a specific user read access to our table. As soon as you save it and it’s successfully activated that is.
 
 10. Now you will need to modify your `.xsaccess` file.
 
@@ -83,56 +83,56 @@ Now that your IoT Services are collecting data and you were able to view it your
 	 "authorization": ["<user_id>trial.codejam.iotmmsxs::Basic"]
 	}
 	```
-	Save these changes. At this point go back over to the “Catalog” window and give your user access to the application. 
+	Save these changes. At this point go back over to the “Catalog” window and give your user access to the application.
 
 11. Within the “Catalog” across the top menu there is a button for “SQL” go ahead and click it. This will open an SQL console.
 
 	```
 	call "HCP"."HCP_GRANT_ROLE_TO_USER"('<user_id>trial.codejam.iotmmsxs::iotaccess', '<user_id>')
 	```
-	
+
 	Here you will assign your user access to the role you just created.
 
 12. Back in the “Editor” it’s time to select your sub package `iotmmsxs` and then add a new file. This will be `iotservice.xsodata`.
-     
+
 	```
 	service {
 	  "NEO_<schema_id>"."T_IOT_<table_postfix>" key generate local "GEN_ID";
 	```
-	
+
 	So this file we can open in our web browser right now and have full access to all of the built in odata functionality.
-	
+
 	This will point you to OData service.
-	
+
 	```
 	https://<system_id>hanaxs.hanatrial.ondemand.com/<user_id>trial/codejam/iotmmsxs/iotservice.xsodata
 	```
-	
+
 	The next link shows OData service metadata
-	
+
 	```
 	https://<system_id>hanaxs.hanatrial.ondemand.com/<user_id>trial/codejam/iotmmsxs/iotservice.xsodata/$metadata
 	```
-	
+
 	The next link shows entity content in XML format
-	
+
 	```
 	https://<system_id>hanaxs.hanatrial.ondemand.com/<user_id>trial/codejam/iotmmsxs/iotservice.xsodata/T_IOT_<table_postfix>
 	```
-	
+
 	The next link shows entity content in JSON format
-	
+
 	```
 	https://<system_id>hanaxs.hanatrial.ondemand.com/<user_id>trial/codejam/iotmmsxs/iotservice.xsodata/T_IOT_<table_postfix>?$format=json
 	```
 
-13. You will use this when modifying the `index.html` file. 
+13. You will use this when modifying the `index.html` file.
 
 	![default page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part10-hcp-services-hanaxs/7.png)
 
 14. You will replace the existing code with the following, which is quite a bit but should be easily readable and understandable as we are adding a table to a page. This is not the only way to do but that is a matter for you to explore and discover!
 
-	```
+	```html
 	 <!DOCTYPE HTML>
 	 <html>
 	 <head>
@@ -166,10 +166,10 @@ Now that your IoT Services are collecting data and you were able to view it your
 	  <div id="sensor_table"/>
 	 </body>
 	 </html>
-	 ```
+	```
 
 	![new page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part10-hcp-services-hanaxs/8.png)
 
-    
+
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
