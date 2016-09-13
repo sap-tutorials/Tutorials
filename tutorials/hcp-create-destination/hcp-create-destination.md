@@ -8,20 +8,19 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>mobile, topic>odata
  - **Proficiency:** Beginner
  - **Tutorials:**  This tutorial is used in several different series.  Choose the series to move backward:
      - **Mobile Application Series**  [Sign up for an account on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
-     - **SAPUI5 with Web IDE Series** [Create a new UI5 project](http://go.sap.com/developer/tutorials/sapui5-webide-create-project.html)
+     - **SAPUI5 with Web IDE Series** [Create an empty UI5 Web IDE project](https://go.sap.com/developer/tutorials/sapui5-webide-create-project.html)
 
 ## Next Steps
-This tutorial is used in several different series.  Choose the correct series below to move forward.
-
- - **Mobile Application series** [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
- - **SAPUI5 with Web IDE Series** [Set up the `datasource` in the application](https://go.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
+- This tutorial is used in several different series.  Choose the correct series below to move forward.
+    - **Mobile Application series** [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+    - **SAPUI5 with Web IDE Series** [Set up the `datasource` in the application](https://go.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
 
 ## Details
 
 ### You will learn
 Destinations are used for the outbound communication of your application to a remote system (which can be a cloud or on-premise system). You will create a destination by giving it a name, URL of the remote system or service, the authentication type, and some other configuration data.
 
-The data source you will use in this tutorial series is called "Northwind", which is a publicly accessible OData source hosted by ```www.odata.org```:
+The data source you will use in this tutorial series is called "Northwind", which is a publicly accessible OData source hosted by <http://www.odata.org>:
 
 The data source URL is <http://services.odata.org/V2/Northwind/Northwind.svc/>
 
@@ -65,4 +64,4 @@ The data source URL is <http://services.odata.org/V2/Northwind/Northwind.svc/>
 Several of the tutorial series create a Northwind destination.  To return to your tutorial series, pick the series from the list below:
 
 - [**Mobile Application series** - Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
-- [**SAPUI5 with Web IDE series** - Set up the `datasource` in the application](https://go.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
+- [**SAPUI5 with Web IDE series** - Create an empty UI5 Web IDE project](https://go.sap.com/developer/tutorials/sapui5-webide-create-project.html)

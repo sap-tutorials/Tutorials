@@ -4,11 +4,9 @@ description: Multi-line list items using ObjectListItem and ObjectHeader control
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner 
-
- - **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
-
- - **Tutorials:** This tutorial is part of a series.  The previous tutorial is Part 7 [Update Internationalization](https://go.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
+- **Proficiency:** Beginner 
+- **How-To** [Start this tutorial series](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+- **Tutorials:** This tutorial is part of a series.  The previous tutorial is Part 7 [Update Internationalization](https://go.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
 
 ## Next Steps
  - The next tutorial is Part 9: [Add a search field](https://go.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
@@ -22,6 +20,8 @@ In this exercise you will replace a couple of controls; one in the `View1` and 
 **10 Minutes**.
 
 ---
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+
 
 1.  Open the `webapp/view/View1.view.xml` file, and replace the `<StandardListItem>` control with the following code:
 

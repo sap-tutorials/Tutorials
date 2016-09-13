@@ -4,11 +4,9 @@ description: Add details to a list, making it a multi-line list element
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner 
-
- - **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
-
- - **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 5: [Enable Routing in your Application](https://go.sap.com/developer/tutorials/sapui5-webide-enable-routing.html)
+- **Proficiency:** Beginner 
+- **How-To** [Start this tutorial series](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 5: [Enable Routing in your Application](https://go.sap.com/developer/tutorials/sapui5-webide-enable-routing.html)
 
 ## Next Steps
  - Part 7 is next: [Update Internationalization](https://go.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
@@ -21,6 +19,8 @@ In order to improve our web app, you can display a more detail information for e
 **10-15 Minutes**.
 
 ---
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+
 
 1.  Open the `webapp/view/View1.view.xml` file, and change the `<StandardListItem type="Active">` tag to read:
 
@@ -33,35 +33,21 @@ In order to improve our web app, you can display a more detail information for e
 2.  Open the `webapp/view/View1.controller.js` file, and modify the `handleListItemPress` event to the `Controller.extend` method:
 
     ```javascript
-    handleListItemPress: function (evt) {	 	var oRouter = sap.ui.core.UIComponent.getRouterFor(this);	 	var selectedProductId = evt.getSource().getBindingContext().getProperty("ProductID");    	oRouter.navTo("appDetail", {    		productId: selectedProductId    	});    }
+    handleListItemPress: function (evt) {	 	var oRouter = sap.ui.core.UIComponent.getRouterFor(this);	 	var selectedProductId = evt.getSource().getBindingContext().getProperty("ProductID");    	oRouter.navTo("detail", {    		productId: selectedProductId    	});    }
     ```
     
     ![change handleListItemPress](2.png)
   
-3.  Open the `webapp/manifest.json` file, and add the the following code to your `"routes"` section:
+  
+3.  Next, we will add another new SAPUI5 view.  Right click on the *webapp* folder, then select **New** --> **SAPUI5 View**.
 
-	 > **Be very careful when adding this code!**  The code must go inside the square brackets.  If you place it outside the brackets, you will get an error.  Look at the image for the exact placement.
+    ![Create new SAPUI5 view](3.png)
+  
+4.  In the *View Name* field, type in `Detail`.  Click **Next**, then on the next screen click **Finish**.
 
-    ```javascript
-    , {    "pattern": "detail/{productId}",    	"name": "appDetail",
-    	"target": "detail"    }
-    ```
-    
-    ![Add the new route](3a.png)
-    
-    Next, add the following code to your `"targets"` section:
-    
-    ```javascript
-    ,    	"detail": {    	"viewName": "Detail",    	"viewLevel" : 2    }
-    ```
-    
-    ![Add the new target](3b.png)
-    
-4.  Next, we are going to create a *New* file.  Right-click on the **View** folder, and select **New** --> **File** from the drop-down, and name the new file `Detail.view.xml`.
-    
-    ![Add the new file](4a.png)
-
-    Add the following code to your new file:
+    ![Set the name of the new view to Detail](4.png)
+  
+5.  Open the new file`webapp/view/Detail.view.xml`.  In the file, replace the code with the following:
     
     ```xml
     <mvc:View controllerName="HelloWorld.controller.Detail"              xmlns="sap.m"              xmlns:mvc="sap.ui.core.mvc" >
@@ -69,7 +55,59 @@ In order to improve our web app, you can display a more detail information for e
     		<VBox>    			<Text text="{ProductName}" />    			<Text text="{UnitPrice}" />    			<Text text="{QuantityPerUnit}" />    			<Text text="{UnitsInStock}" />    		</VBox>    	</Page>    </mvc:View>
     ```
     
-    ![Add the code to Detail.view.xml](4b.png)
+    ![Add the code to Detail.view.xml](5.png)
+
+
+6.  Open the file `webapp/controller/Detail.controller.js`, and replace the code with the following:  
+    
+    ```Javascript
+    sap.ui.define([    	"sap/ui/core/mvc/Controller"    ], function(Controller) {    	"use strict";    	return Controller.extend("HelloWorld.controller.Detail", {    		onInit: function () {    			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);    			oRouter.getRoute("detail").attachMatched(this._onRouteMatched, this);    		},    		_onRouteMatched : function (oEvent) {    			var oArgs, oView;    			oArgs = oEvent.getParameter("arguments");    			oView = this.getView();    			oView.bindElement({    				path : "/Products(" + oArgs.productId + ")",    				events : {    					dataRequested: function () {    						oView.setBusy(true);    					},    					dataReceived: function () {    						oView.setBusy(false);    					}    				}    			});    		},    		handleNavButtonPress : function (evt) {    			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);    			oRouter.navTo("home");    		}    	});    });
+    ```
+    
+    ![Add code to Detail.controller.js](6.png)
+   
+   
+7.  Open the `webapp/manifest.json` file.  Select the *Routing* tab, and scroll down to the *Manage Targets* section.
+
+    Click on the **+** icon to create a new target.
+   
+   ![Create a new target](7.png)
+   
+8.  Create a new target called `detail`, and click **OK**
+
+    ![Name the target](8.png)
+    
+9.  Select the new `detail` target, and change the following values.  (Don't forget to save your file!)
+
+    |           |           |
+    |----------:|---------- |
+    |View Name  |Detail     |
+    |View Level |2          |
+    
+    ![Update the new target information](9.png)
+    
+10. Scroll up to the *Routes* section, and then click the **+** button to create a new route.  Fill in the following information:
+
+    |           |                   |
+    |----------:|------------------ |
+    |Name       |detail             |
+    |Pattern    |`detail/{productId}` |
+    |Greedy     |(off)              |
+    |Targets    |detail             |
+    
+    ![Set up the new Detail route](10.png)
+    
+11. In the `webapp/mainfest.json` file, switch to the **Code Editor** tab (at the bottom of the screen).  
+
+    Find the section under `sap.ui5` called `routing`.  in the `config` area, add the following text:
+    
+    ```XML
+    "routerClass": "sap.m.routing.Router",
+    ```
+    
+    ![Define the routing system](11.png)
+      
+
 
     > **Additional Information**
     
@@ -77,35 +115,21 @@ In order to improve our web app, you can display a more detail information for e
         > Another important aspect is the declaration of “showNavButton” and the related “navButtonPress” event. While the first one enables the visibility of a “back” button, the latter one defines the function to be executed when this button is pressed. In our case, we assign the function “handleNavButtonPress” as event handler. This function will be implemented in the detail controller.
 
 
-5.  Create a NEW file called `webapp/controller/Detail.controller.js`.  
-    
-    ![Add new file Detail.controller.js](5a.png)
 
-	 Your file list should now look like this:
-    
-    ![Current list of files](5b.png)
 
-    Add the following code to your new file:
-
-    ```Javascript
-    sap.ui.define([    	"sap/ui/core/mvc/Controller"    ], function(Controller) {    	"use strict";    	return Controller.extend("HelloWorld.controller.Detail", {    		onInit: function () {    			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);    			oRouter.getRoute("appDetail").attachMatched(this._onRouteMatched, this);    		},    		_onRouteMatched : function (oEvent) {    			var oArgs, oView;    			oArgs = oEvent.getParameter("arguments");    			oView = this.getView();    			oView.bindElement({    				path : "/Products(" + oArgs.productId + ")",    				events : {    					dataRequested: function () {    						oView.setBusy(true);    					},    					dataReceived: function () {    						oView.setBusy(false);    					}    				}    			});    		},    		handleNavButtonPress : function (evt) {    			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);    			oRouter.navTo("appHome");    		}    	});    });
-    ```
+    > You will implement one function to handle the back button press event. This method will use the “navTo” method of the router and initiate the navigation via the “home” route. The “onInit” method is more complex. The method expects a navigation parameter for the ProductId. It hooks into the “detail” route and executes the “_onRouteMatched” method to extract the ProductId and set the data binding for the Detail view.
     
-    ![Add code to Detail.controller.js](5c.png)
-
-    > You will implement one function to handle the back button press event. This method will use the “navTo” method of the router and initiate the navigation via the “appHome” route. The “onInit” method is more complex. The method expects a navigation parameter for the ProductId. It hooks into the “appDetail” route and executes the “_onRouteMatched” method to extract the ProductId and set the data binding for the Detail view.
+12.  Run your application!  When you click on a row, the screen should slide sideways to show the detail view.  To return to the list, click the back arrow (in the upper left corner).
     
-6.  Run your application!  When you click on a row, the screen should slide sideways to show the detail view.  To return to the list, click the back arrow (in the upper left corner).
+    ![Current application - list view](12a.png)
     
-    ![Current application - list view](6a.png)
-    
-    ![Current application - detail view](6b.png)
+    ![Current application - detail view](12b.png)
 
 ## Next Steps
  - Part 7 is next: [Update Internationalization](https://go.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
 
 ## Additional Reading
 - [Routing with mandatory parameters](http://help.sap.com/saphelp_nw75/helpdata/en/f9/6d2522a5ca4382a274ae3c6d002ca0/content.htm)
-- [`<VBox>` element](https://sapui5.hana.ondemand.com/docs/api/symbols/sap.m.VBox.html)
+- [`<VBox>`](https://sapui5.hana.ondemand.com/docs/api/symbols/sap.m.VBox.html)
 
 

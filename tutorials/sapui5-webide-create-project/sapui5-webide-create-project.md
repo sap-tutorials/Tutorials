@@ -4,13 +4,13 @@ description: Start working with the Web IDE editor, and create a new empty UI5 W
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner 
-
- - **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
-
+- **Proficiency:** Beginner
+- **How-To** [Start this tutorial series](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+- **Tutorials:**  [Open the SAP Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+- **Tutorials:**  [Configure the Northwind Destination](https://go.sap.com/developer/tutorials/hcp-create-destination.html)
 
 ## Next Steps
- - This tutorial is part of a series.  The next tutorial is [Configure the Northwind Destination](https://go.sap.com/developer/tutorials/hcp-create-destination.html)
+- This tutorial is part of a series.  The next tutorial is part 2: [Set Up the DataSource in the local application](https://go.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
 
 ## Details
 ### You will learn  
@@ -20,18 +20,25 @@ How to create a new, empty, SAP Web IDE project.
 **2-3 Minutes**.
 
 ---
+> **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
-1.  Open the SAP Web IDE.  (If you have not opened the Web IDE, please check the previous tutorial for instructions.
+1.  Go to your SAP Web IDE.  
+
+    If you don't have the Web IDE open (or bookmarked), go to the [Enable and open the Web IDE instructions](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html) and then come back after it is open.
 
 2.  Select **File** --> **New** --> **Project From Template...**
+
     ![Activating the SAP Web IDE search pane](create-project-from-template.png)
 
 3.  Select the box called **SAPUI5 Application**, then click **Next**.
+
+    (Leave the **Available Versions** box on *SAPUI5 Innovation*).
+
     ![Activating the SAP Web IDE search pane](select-sapui5-application.png)
 
 4.  Fill in the form as follows:
 
-    |                                           |                          |
+    |                                           |                           |
     | -----------------------------------------:| ------------------------- |
     | Project Name                              | `HelloWorld`              |
     | Name Space                                | (leave this field blank)  |
@@ -45,8 +52,8 @@ Your project should now look like this.  (Click a folder icon to expand the cont
   
 ![Activating the SAP Web IDE search pane](new-helloworld-application.png)
 
-## Additional Information
+## Notes
 [Here is some information on the UI5 folder structure.](https://sapui5.hana.ondemand.com/#docs/guide/003f755d46d34dd1bbce9ffe08c8d46a.html)
 
 ## Next Steps
- - This tutorial is part of a series.  The next tutorial is [Configure the Northwind Destination](https://go.sap.com/developer/tutorials/hcp-create-destination.html)
+ - This tutorial is part of a series.  The next tutorial is part 2: [Configure the Northwind Destination](https://go.sap.com/developer/tutorials/hcp-create-destination.html)
