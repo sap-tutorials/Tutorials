@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-cloud-pl
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **How-To:** [Do this tutorial first](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
- - **Tutorials:** [Internet of Things (IoT) Setup your Environment for the TI SensorTag](http://go.sap.com/developer/how-tos/iot-tisensortag.html)
+ - **Tutorials:** Internet of Things (IoT) Setup your Environment for the TI SensorTag (Coming soon)
 
 ## Next Steps
  - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
