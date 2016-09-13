@@ -56,4 +56,4 @@ Your project should now look like this.  (Click a folder icon to expand the cont
 [Here is some information on the UI5 folder structure.](https://sapui5.hana.ondemand.com/#docs/guide/003f755d46d34dd1bbce9ffe08c8d46a.html)
 
 ## Next Steps
- - This tutorial is part of a series.  The next tutorial is part 2: [Configure the Northwind Destination](https://go.sap.com/developer/tutorials/hcp-create-destination.html)
+ - This tutorial is part of a series.  The next tutorial is part 2: [Set Up the DataSource in the local application](https://go.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
