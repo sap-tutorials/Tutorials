@@ -34,3 +34,11 @@ node_modules
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+.DS_Store
+
+.DS_Store
+
+tutorials/.DS_Store
+
+tutorials/iot-part11-hcp-services-ti/.DS_Store
