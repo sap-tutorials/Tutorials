@@ -1,6 +1,6 @@
 ---
 title: Extend the YaaS Storefront's Functionality with a Micro Service
-description: In this tutorial you will extend the Storefront using a micro service. The aim is to give helpful Tips to the undecided purchaser. You will run the Tips micro service locally and connect it to YaaS Storefront. The tips are communicated via REST calls to YaaS Storefront.
+description: In this tutorial you will extend the functionality of the Storefront to include Tips for the undecided purchaser. The logic will be implemented with a Tips REST based micro service.
 tags: [  tutorial>intermediate, products>sap-hybris-as-a-service-on-sap-hana-cloud-platform>sap-hybris-as-a-service-on-sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
@@ -17,7 +17,7 @@ tags: [  tutorial>intermediate, products>sap-hybris-as-a-service-on-sap-hana-clo
 
 ## Details
 ### You will learn  
-You will learn how to customize your Storefront using a micro service. The Storefront is structured around [Angular Modules](https://docs.angularjs.org/guide/module). The aim of this tutorial is to include a button in your Storefront's Product Details page that gives helpful Tips to the undecided purchaser, such as "This would add to your overall coolness", and "One word: No". To achieve this, you will run a new micro service locally to provide the tips, and add a button to your StoreFront that calls this. The tips are communicated via REST calls to your YaaS Storefront.
+You will learn how to extend your Storefront using a micro service. The Storefront is structured around [Angular Modules](https://docs.angularjs.org/guide/module). The aim of this tutorial is to include a button in your Storefront's Product Details page that gives helpful Tips to the undecided purchaser, such as "This would add to your overall coolness", and "One word: No". To achieve this, you will run a new micro service locally to provide the tips, and add a button to your StoreFront that calls this. The tips are communicated via REST calls to your YaaS Storefront.
 
 ### Time to Complete
 **20 Min**.
@@ -28,9 +28,9 @@ Locate your `yaas-storefront` folder which we will refer to below as (1).
 
 1. View the default Angular Modules that are included in your Storefront @ `(1)/public/js/app`. You can extend the Storefront's functionality by adding your own Angular Modules to these.  In this tutorial you will add a new Angular Module to support the "Mr Tip" functionality.
 
-    > NOTE: Each Angular Module provides the support for a specific piece of business functionality such as Products, Customers, Cart etc. Each Angular Module contains all the different parts required for that in your application, such as controllers, services, filters, etc.
+    > NOTE: Each Angular Module provides the support for a specific piece of business functionality such as Products, Customers, Cart etc. Each contains all the different parts required for that particular logic in your application, such as controllers, services, filters, etc.
 
-2. Create a folder `(2)` somewhere outside of your `yaas-storefront` folder, and `cd` into it.  Run `git clone https://github.com/SAP/yaas-getting-started-yaasbites.git`, to give you two new folders:
+2. Create a folder `(2)` somewhere outside of your `yaas-storefront` folder, and `cd` into it.  Run `git clone https://github.com/SAP/yaas-getting-started-yaasbites.git`, to give you several new folders, two of which are relevant to us:
     - `(2)/yaasbite200` which contains a "Mr Tip" micro service and front-end-client for populating it, and
     - `(2)/yaasbitestorefrontdeltas` which contains changes that you will make to the Storefront to call it.
 
@@ -48,7 +48,7 @@ Locate your `yaas-storefront` folder which we will refer to below as (1).
     > NOTE: Please keep the micro service running. You will use this in the next steps.
 
 4. With the Tips micro service running locally, you can now extend your StoreFront to include a button on its product detail page, that calls this service, and thus provide tips to the undecided purchaser.  To do this you need to modify some files in the `yaas-storefront` folder `(1)`.   Place **all** the files that are in `(2)/yaasbitestorefrontdeltas/two` into their respective locations in the `yaas-storedfront` folder `(1)`, overwriting the original files:
-    - For example: file `file product-detail-ctrl.js` located in `(2)/yaasbitestorefrontdeltas/two/public/js/app/products/controllers/product-detail-ctrl.js` should replace the one in `(1)/yaas-storefront/two/public/js/app/products/controllers/product-detail-ctrl.js`.
+    - For example: file `file product-detail-ctrl.js` located in `(2)/yaasbitestorefrontdeltas/two/public/js/app/products/controllers/product-detail-ctrl.js` should replace the one in `(1)/yaas-storefront/public/js/app/products/controllers/product-detail-ctrl.js`.
 
 5. Next we want to compile the modified code.
     - We will compile the code using the build tool grunt, which we first need to download with the help of the node package manager: run the command: `npm install -g grunt-cli` from within folder `(1)`.

@@ -18,14 +18,14 @@ tags: [  tutorial>intermediate, topic>cloud, products>sap-hana-cloud-platform, p
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to deploy a micro service to the SAP HCP. As an example you will use the Tips micro service created in [Extend the YaaS Storefront's Functionality](http://go.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html) tutorial. In order to deploy a micro service you will need to set up your Cloud Foundry Command Line interface and create a SAP HCP account. In the end you will run the micro service on the cloud.
+You will learn how to deploy a micro service to the SAP HCP. As an example you will use the Tips micro service created in the [Extend the YaaS Storefront's Functionality](http://go.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html) tutorial. In order to deploy a micro service you will need to set up your Cloud Foundry Command Line interface and create a SAP HCP account. In the end you will run the micro service on the cloud.
 
 ### Time to Complete
 **20 Min**.
 
 ---
 
-1. Download the **Cloud Foundry CLI**: Go to https://docs.cloudfoundry.org/cf-cli/install-go-cli.html, and install Cloud Foundry's CLI. Run `cf` commands from your command line to verify your installation.
+1. Run cf -v to see if you have the Cloud Foundry CLI installed. If not, download the **Cloud Foundry CLI**: Go to https://docs.cloudfoundry.org/cf-cli/install-go-cli.html, and install Cloud Foundry's CLI. Run `cf` from your command line to verify your installation.
 
     ![CF Command](cf-command.PNG)
 
@@ -37,7 +37,7 @@ In this tutorial you will learn how to deploy a micro service to the SAP HCP. As
     - Open your YaaS Projects **Administration** page.
     - Click **Subscription**, select **+ Subscription**, select the *Beta Worldwide* tab, and subscribe to the package called **HCP, STARTER EDITION FOR CLOUD FOUNDRY SERVICES (BETA)** in there.
 
-4. Wait 10 seconds and your package will appear in **Builder***. If your package did not appear, log out and back in to the YaaS Builder, find your project, and you should see **SAP HANA Cloud Platform** in your YaaS Project's Menu on the left side of the page.
+4. Wait 10 seconds and your package will appear in **Builder in your YaaS Project***. If your package did not appear, log out and back in to the YaaS Builder, find your project, and you should see **SAP HANA Cloud Platform** in your YaaS Project's Menu on the left side of the page. Select the **SAP HANA Cloud Platform** menu and click **Create** to activate your HCP account. This will trigger the email mentioned in the next step.
 
 5. You should now get an email from **HCP**, guiding you through steps to **activate** your HCP account.
 
@@ -57,9 +57,9 @@ In this tutorial you will learn how to deploy a micro service to the SAP HCP. As
 
 10. Push the war file to the cloud, by running `cf push` from the same location. This will use the information in `manifest.yml` to guide the deployment.
 
-11. Run `cf apps` to check whether the war file was successfully deployed and started and note the URL where it is running. It should be something like `yourAppsName.cfapps.us10.hana.ondemand.com`.
-
     > NOTE: The default HCP settings require the secure, https protocol. Therefore you must use https for all calls to your deployed services and when accessing your website in the cloud @ https://
+
+11. Run `cf apps` to check whether the war file was successfully deployed and started and note the URL where it is running. It should be something like `yourAppsName.cfapps.us10.hana.ondemand.com`.
 
     ![CF Apps](cf-apps.PNG)
 
@@ -74,8 +74,19 @@ In this tutorial you will learn how to deploy a micro service to the SAP HCP. As
 
     > NOTE: In order to access your service at the  **Generated Proxy URL** you will need to acquire an **Access Token**. This is because all calls to a service on YaaS are secured. If you are interested to learn more about this please refer to [YaaS Dev Portal](https://devportal.yaas.io/).  
 
-###Summary
-In this tutorial you learned how to deploy a micro service based on YaaS on HANA Cloud Platform and run the service.
+13. Now that you have deployed your service to the cloud, you need to tell your StoreFront about it.  Open the file `(1) site-config.js` in `yaas-storefront/public/js/app/shared` and modify the `baseUrl` of the `tipsEndpoint` to point to the Generated Proxy URL found given in the previous step, giving you something like the code below. Rebuild your storeFront with `grunt build`, and restart the storefront with `npm start`.  Your storeFront should now be communicating with your deployed service.  Open your Chrome developer tools to observe the REST traffic and confirm that this is the case.
+
+```
+tipsEndpoint: {
+                    // NEEDS_ADJUSTING : Define the end-point of your Tips Service e.g. http://localhost:8080
+                    baseUrl: 'https://yourAppsName.cfapps.us10.hana.ondemand.com'               
+                }
+
+```
+
+
+### Summary
+In this tutorial you learned how to deploy a micro service based on YaaS to the HANA Cloud Platform, and how to modify your storefront to communicate with it.
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
