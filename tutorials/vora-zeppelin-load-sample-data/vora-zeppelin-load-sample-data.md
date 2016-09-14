@@ -1,6 +1,6 @@
 ---
 title: Loading sample data using Apache Zeppelin
-description: You will use Apache Zeppelin to create table and load sample data from files already created in HDFS in SAP HANA Vora, developer edition, on CAL.
+description: You will use Apache Zeppelin to create tables and load sample data from files already created in HDFS in SAP HANA Vora, developer edition, on CAL.
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
 ---
 ## Prerequisites  
@@ -32,19 +32,21 @@ You will learn how to open Apache Zeppelin and how to load sample data.
 
     ![Opening Apache Zeppelin from CAL cockpit](vorazeppelin01.jpg)
 
-3. Once Zeppelin opens up in a new browser window, click on `0_DemoData` notebook.
+3. Once Zeppelin opens up in a new browser window, check it is **Connected** and if yes, then click on `0_DemoData` notebook.
 
-    ![Opening 0_DemoData notebook](vorazeppelin02.png)
+    >Status "Disconnected" may be caused by network firewalls, i.e. when you connect to public host on the port not allowed by your corporate network. Try to connect to Zeppelin from public network then.
+
+    ![Opening 0_DemoData notebook](vorazeppelin02.jpg)
 
 4. The `0_DemoData` notebook will open up. Now you can click on **Run all paragraphs** button on top of the page to create tables in SAP HANA Vora using data from the existing HDFS files preloaded on the instance in CAL. These are the tables you will need as well later in exercises.
 
-    A new window will pop up which asks you to confirm running all the commands. Click on **OK**.
+    A dialog window will pop up asking you to confirm to **Run all paragraphs?** Click **OK**
 
-    ![Running all statements from 0_DemoData notebook](vorazeppelin03.png)
+    ![Running all statements from 0_DemoData notebook](vorazeppelin03.jpg)
 
 5. After all statements are finished you should see the interpreter’s comment as "Command processed successfully with no results" for all paragraphs.
 
-    ![All statements executed in 0_DemoData notebook](vorazeppelin04.png)    
+    ![All statements executed in 0_DemoData notebook](vorazeppelin04.jpg)    
 
     The last statement should show you all tables created.
 
