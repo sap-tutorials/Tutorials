@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, products>sap-hybris-as-a-service-on-sap-hana-cloud-p
 
 ## Details
 ### You will learn  
-You will learn how to create your own YaaS project. This project will provide back-end support for a YaaS Storefront that you be creating in the next tutorial. The starting point is the Builder which is the back-office client of YaaS. The Builder's main functionalities are the orchestration of YaaS Organizations, Projects and Packages, and the maintenance and management of some billing and sales data. You will also learn about the YaaS Market where you can subscribe to different packages of your choice.
+You will learn how to create your own YaaS project. This project will provide back-end support for a YaaS Storefront that you will be creating in the next tutorial. The starting point is the Builder which is the back-office client of YaaS. The Builder's main functionalities are the orchestration of YaaS Organizations, Projects and Packages, and the maintenance and management of some billing and sales data. You will also learn about the YaaS Market where you can subscribe to different packages of your choice, as well as sell packages of your own.
 
 ### Time to Complete
 **10 Min**.
@@ -41,11 +41,11 @@ You will learn how to create your own YaaS project. This project will provide ba
     - Select your project, from **Projects** on the **Builder** home page.
     - From **Administration** menu in the left navigation, go to **Subscriptions**.
     - Use the **+ Subscription** button. You are then redirected to the **YaaS Market**.
-    - Click on **Beta Packages**. Beta packages are available free of charge and are intended for testing purposes in non-productive environments. They provide the same functionality as standard packages, but the number of requests or API calls per month is limited.
+    - Click on the Tab **Beta - Worldwide**. Beta packages are available free of charge and are intended for testing purposes in non-productive environments. They provide the same functionality as standard packages, but the number of requests or API calls per month is limited.
 
     ![Yaas Market](yaas-market.PNG)
 
-    - Choose the cart package and click on get it. You will be directed to the package Detail Page.
+    - Choose the **Cart (Beta)** package and click on get it. You will be directed to the package Detail Page.
 
     ![Cart Package](cart-package-detail-page.PNG)
 
@@ -54,8 +54,9 @@ You will learn how to create your own YaaS project. This project will provide ba
     ![Package Project](add-package-toproject.PNG)
 
     - Click **Continue** and then **Subscribe Now** to finalize your subscription.
-    - Allow 10 seconds for processing and check in your project's **Administration** section in the Builder if the package is displayed under **Subscriptions**. If the package is not displayed, reload your browser's page.
-    - You need to subscribe to all **Checkout**, **Coupon Management**, **Customer Accounts**, **Order Management**, **Product Content** and **Site Management** packages. Follow the step 2 in order to subscribe to these packages.
+    - Click **Configure It** to return to your project’s main page.
+    - In addition to **Cart (Beta)**, you need to subscribe to all **Checkout**, **Coupon Management**, **Customer Accounts**, **Order Management**, **Product Content** and **Site Management** packages. Follow the step 2 in order to subscribe to these packages.
+    - Confirm that you see **7** subscriptions listed in your in your YaaS project’s subscription page.  
 
 3. Now that you have subscribed to these packages, your YaaS Project is now aware of them, but to be able to call the micro services in those packages, your YaaS Project needs to have a valid YaaS Client.  Create a new YaaS Client and select *all possible* required Scopes (permissions) while doing so. Follow the steps below:
 
@@ -66,7 +67,7 @@ You will learn how to create your own YaaS project. This project will provide ba
 
     ![Scope Assignment](client-scope-assignment.PNG)
 
-    - Complete the fields, such as in the example, and **Save** the form.
+    - Complete the fields, such as in the example, and **Save** the form. Note that you can leave the Redirect URLs field blank. Confirm that you have one client listed in your project’s client page.
 
     ![Create Client](create-new-client.PNG)
 
