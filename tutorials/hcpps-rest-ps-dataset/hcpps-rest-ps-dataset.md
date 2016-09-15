@@ -16,7 +16,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
   - How to "Register" your data set with the HCP predictive services using a REST Client
 
 ### Time to Complete
-It should take around **10 minutes** to complete this tutorial.
+  **10 minutes**
 
 ---
 

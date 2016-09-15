@@ -16,7 +16,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
   - How to display in a grid and a chart the result of an OData service
 
 ### Time to Complete
-It should take around **10 minutes** to complete this tutorial.
+  **10 minutes**
 
 ---
 

@@ -6,7 +6,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - [Get a free account in HANA Cloud Platform](http:/account.hanatrial.ondemand.com/register/)
+  - [Sign up for an free trial account on SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
   - [Setup a HANA user account for the HCP predictive services](http://go.sap.com/developer/tutorials/hcpps-hana-create-user.html)
@@ -16,7 +16,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
   - How to setup a SAP HANA instance on SAP HANA Cloud Platform
 
 ### Time to Complete
-It should take around **10 to 15 minutes** to complete this tutorial (including the instance creation time).
+  **15 minutes**
 
 ---
 

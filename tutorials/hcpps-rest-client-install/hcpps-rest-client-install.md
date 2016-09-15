@@ -16,7 +16,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
   - How to install the [Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/).
 
 ### Time to Complete
-It should take around **2 minutes** to complete this tutorial.
+  **5 minutes**.
 
 ---
 

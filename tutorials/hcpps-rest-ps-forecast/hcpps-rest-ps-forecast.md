@@ -6,7 +6,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
 
 ## Prerequisites
   - **Proficiency:** Beginner
-    - **Tutorials:** [Test the "Data Set" HCP predictive services using a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - **Tutorials:** [Test the "Data Set" HCP predictive services using a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
 
 ## Next Steps
   - [Configure a SAPUI5 application to interact with the HCP predictive](http://go.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
@@ -16,7 +16,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
  - How to use the "Forecast" HCP predictive services from a REST Client in both synchronous and asynchronous mode.
 
 ### Time to Complete
-It should take around **10 minutes** to complete this tutorial.
+  **10 minutes**
 
 ---
 
