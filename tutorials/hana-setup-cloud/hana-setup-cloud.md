@@ -39,7 +39,7 @@ This section takes about **10 minutes** to complete, and about **10 to 25 minute
 
     ![Solution Selection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/1.png)
 
-3. On the left, click on ***SOLUTIONS*** to see the systems available for use. Search for our **SAP HANA developer edition** in the search box to find the HANA developer edition.
+3. On the left, click on ***SOLUTIONS*** to see the systems available for use. Search for our **developer** in the search box to find the HANA developer edition.
 
 4. Once you've found the instance through the search, you need to "activate" it. Activating an instance connects it to your account on Microsoft Azure or Amazon AWS. After the solution is activated, the link next to it should change to **Create Instance**.
 
