@@ -6,7 +6,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Visualize your predictive demo data set in a SAPUI5 application using an  OData service](http://go.sap.com/developer/tutorials/tutorials/hcpps-sapui5-odata.html)
+  - **Tutorials:** [Visualize your predictive demo data set in a SAPUI5 application using an  OData service](http://go.sap.com/developer/tutorials/hcpps-sapui5-odata.html)
 
 ## Next Steps
   - [Manage your "Data Set" in the HCP predictive service from a SAPUI5 application](http://go.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
@@ -16,7 +16,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
   - How to implement the  "Data Set" HCP predictive service in a SAPUI5 application
 
 ### Time to Complete
-It should take around **10 minutes** to complete this tutorial.
+  **10 minutes**
 
 ---
 

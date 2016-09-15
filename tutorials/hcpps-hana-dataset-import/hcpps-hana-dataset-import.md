@@ -16,7 +16,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
   - How to use the ***Import*** feature from the ***SAP HANA Web-based Development Workbench***
 
 ### Time to Complete
-It should take around **5 minutes** to complete this tutorial.
+  **5 minutes**
 
 ---
 

@@ -17,7 +17,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
   - What are the roles and privileges required to use the SAP HCP predictive services
 
 ### Time to Complete
-It should take around **5 minutes** to complete this tutorial.
+  **5 minutes**
 
 ### Why create new user account?
 Each Trial HANA MDC instance comes with a ***HANA System Account***. This user account shall be used only to execute "System" related activities.

@@ -16,7 +16,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
   - How to implement the synchronous mode of the "Forecast" HCP predictive service in a SAPUI5 application
 
 ### Time to Complete
-It should take around **10 minutes** to complete this tutorial.
+  **10 minutes**
 
 ---
 
