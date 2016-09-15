@@ -16,7 +16,7 @@ tags: [ tutorial>intermediate, products>sap-hybris-as-a-service-on-sap-hana-clou
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to create your own e-commerce shop in minutes with the YaaS Storefront.
+You will learn how to create your own e-commerce shop in minutes with the YaaS Storefront.
 
 ### Time to Complete
 **10 Min**.
@@ -25,7 +25,7 @@ In this tutorial you will learn how to create your own e-commerce shop in minute
 
 1. Confirm that you have **Node.js** and **Git** installed:
     - run the command `node -v` to see if you have **Node.js** installed.  If not, download it from <https://nodejs.org/en/download/>, and confirm that the command `node -v` runs okay.
-    - run the command `git`to see if you have **Git** installed.  If not, download it from <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>, and confirm that the command `git` runs okay.
+    - run the command `git` to see if you have **Git** installed.  If not, download it from <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>, and confirm that the command `git` runs okay.
 
 2. Clone the YaaS StoreFront:
     - Create a folder which we will refer to as `(1)` in the following steps, and `cd` into it.
@@ -34,7 +34,7 @@ In this tutorial you will learn how to create your own e-commerce shop in minute
 
 3. Use Node's package manager to download the dependencies:
     - The YaaS StoreFront includes `npm`, **Node.js**'s package manager, for downloading dependent packages.
-    - Run `npm install` to download all the packages the Storefront depends on.  The console should show `npm` downloading many dependencies; confirm this is the case.
+    - Run `npm install` to download all the packages the Storefront depends on.  The console should show `npm` downloading many dependencies; confirm this is the case and that you have no error messages.
 
 4. Start a local web server
     - Run the command `npm start` to start a local web server.  If your command prompt looks like the following image, you will know that the server is running.

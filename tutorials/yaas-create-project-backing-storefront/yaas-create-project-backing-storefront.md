@@ -1,6 +1,6 @@
 ---
-title: Use Your Own YaaS Project to Back your Storefront.
-description: By default, the StoreFront is wired to the YaaS Project default project (created by the StoreFront's own Team). This default project has already been wired up and populated with the Products (and Services) that you can browse. You will now use our own YaaS Project which you created earlier instead of the default one.
+title: Use Your Own YaaS Project to Back your Storefront
+description: By default, your StoreFront communicates with a default YaaS Project in the backend (created by the StoreFront's own Team). This contains the products that you have seen, banner images and much more.  In this step you will point your StoreFront to your own YaaS Project instead, giving you more control of back end logistics.
 tags: [  tutorial>intermediate, products>sap-hybris-as-a-service-on-sap-hana-cloud-platform>sap-hybris-as-a-service-on-sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
@@ -16,7 +16,7 @@ tags: [  tutorial>intermediate, products>sap-hybris-as-a-service-on-sap-hana-clo
 
 ## Details
 ### You will learn  
-In this tutorial you will use our own YaaS Project which you created earlier instead of the default one.
+In this tutorial you will use your own YaaS Project which you created earlier to serve as the backend of your StoreFront, rather than the default YaaS Project.  You will then have complete control over the contents of your Storefront, allowing you to populate its products, its banners, and many more features.
 
 ### Time to Complete
 **20 Min**.
@@ -25,7 +25,7 @@ In this tutorial you will use our own YaaS Project which you created earlier ins
 
 1. If you have not completed the Getting Started with YaaS tutorial, please do it now. This is necessary in order to follow the next steps.   
 
-2. Take note of the YaaS **Project's identifier** and the YaaS **Client's identifier** and place these as the `PROJECT_ID` and `CLIENT_ID` values in the `gruntfile.js` in the `folder(1)` directory which you created in the previous tutorials. This is the root directory of your `yaas-storefront` project.
+2. Open your YaaS Project in the YaaS Builder. Take note of the YaaS **Project's identifier** and the YaaS **Client's identifier** and place these as the `PROJECT_ID` and `CLIENT_ID` values in the `gruntfile.js` that already exists in the top level of your storefront `folder(1)` directory which you created in the previous tutorials. This is the root directory of your `yaas-storefront` project.
     - You Can find **Project's identifier** in the **Builder** under the **Administration** tab when you open your project.
 
     ![Project Identifier](project-identifier.PNG)
@@ -38,7 +38,7 @@ In this tutorial you will use our own YaaS Project which you created earlier ins
 
     ![Show Credentials](show-credentials.PNG)
 
-3. Rebuild the Storefront by running the `grunt build` command from `folder(1)` directory.
+3. Your `Gruntfile.js` should now contain lines similar to `PROJECT_ID = 'yb0160913',` and `CLIENT_ID = 'vBji2FMBBvKVYlGn8ZZ2b4E6xFKpHhNi',`. Note the commas and the single quotes around each variable. Rebuild the Storefront by running the `grunt build` command from `folder(1)` directory.
 
 4. Rerun your Storefront by running the `npm start` command from `folder(1)` directory. The client will now be talking with your YaaS Project.
 
@@ -59,14 +59,14 @@ In this tutorial you will use our own YaaS Project which you created earlier ins
     > NOTE: It is important to set your products as **active**, otherwise they will not appear in your online store.
 
 ### Summary
-In this tutorial, you replaced the default storefront project credentials with your own YaaS project credentials. You added customized products to your storefront.    
+In this tutorial, you modified your storefront to talk with your own YaaS Project in the backend rather than the default YaaS Project. This gave you complete control over the content of the Storefront, such as its products and banners, and much more that you have yet to explore.   
 
 ## Next Steps
- - [Deploy a Micro Service Built on YaaS on the SAP HCP](http://go.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)P
+ - [Deploy a Micro Service Built on YaaS on the SAP HCP](http://go.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
 
 ### Optional
 6. Create a category and assign your products to it.
     - Go back to the Builder and open Categories.
-    - Create a category and you can add image for it.
+    - Create a category and you can add an image for it.
     - Add sub categories to your category.
     - Assign products to categories
