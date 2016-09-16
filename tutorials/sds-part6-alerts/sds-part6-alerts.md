@@ -5,10 +5,10 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** Using an Aggregate Window in SAP HANA Smart Data Streaming
+ - **Tutorials:** [Using an Aggregate Window in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part5-add-aggregate-window.html)
 
 ## Next Steps
- - **Tutorials:** Run and Test a Project in SAP HANA Smart Data Streaming
+ - **Tutorials:** [Run and Test a Project in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part7-testing.html)
 
 ## Details
 ### You will learn  
@@ -92,4 +92,4 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 
 
 ## Next Steps
- - **Tutorials:** Run and Test a Project in SAP HANA Smart Data Streaming
+ - **Tutorials:** [Run and Test a Project in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part7-testing.html)
