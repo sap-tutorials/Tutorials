@@ -6,7 +6,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Use the asynchronous Forecast HCP predictive service from a SAPUI5 application](http://go.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)
+  - **Tutorials:** [Use the synchronous Forecast HCP predictive service from a SAPUI5 application](http://go.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
 
 ## Next Steps
   - This was the end of the tutorial series. Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
