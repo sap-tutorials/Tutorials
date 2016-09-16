@@ -17,9 +17,9 @@ tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>
 ## Details
 ### You will learn  
 
-In this tutorial you will review and run a native Android version of the Northwind hybrid app (from [Mobile Groups 1-3](http://go.sap.com/developer/tutorial-navigator/developer-tutorials.beginner.html)) and run it on SAP HANA Cloud Platform mobile services for development and operations. You will use Android Studio and elements of the SAP Mobile Platform SDK to build the app, and access the same Northwind OData service used in the mobile web and hybrid tutorials. 
+In this tutorial you will review and run a native Android version of the Northwind hybrid app (from [Mobile Groups 1-3](http://go.sap.com/developer/tutorial-navigator.beginner.html)) and run it on SAP HANA Cloud Platform mobile services for development and operations. You will use Android Studio and elements of the SAP Mobile Platform SDK to build the app, and access the same Northwind OData service used in the mobile web and hybrid tutorials. 
 
-If you have not completed the tutorials in [Mobile Groups 1-3](http://go.sap.com/developer/tutorial-navigator/developer-tutorials.beginner.html) – it would be best to work through those first to become familiar with the OData service used.
+If you have not completed the tutorials in [Mobile Groups 1-3](http://go.sap.com/developer/tutorial-navigator.beginner.html) – it would be best to work through those first to become familiar with the OData service used.
 
 The final version of the app will look like this:
 
