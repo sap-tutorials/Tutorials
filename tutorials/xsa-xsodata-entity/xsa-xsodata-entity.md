@@ -1,7 +1,7 @@
 ---
 title: Creating an OData Service with an Entity Relationship
 description: Creating an OData Service with an Entity Relationship
-tags: [  tutorial>intermediate, topic>odata, products>sap-hana ]
+tags: [  tutorial>intermediate, topic>odata, products>sap-hana, products>sap-hana,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
@@ -15,7 +15,7 @@ tags: [  tutorial>intermediate, topic>odata, products>sap-hana ]
 The first example of this exercise was very simplistic because it only exposed one database table as a single entity.  Often you need to also represent relationships between multiple entities. For example you might want to build an OData service which has both the Purchase Order Header and Items. For this you would build a 1:many relationship between the two entities.
 
 ### Time to Complete
-**15 Min**.
+**10 Min**.
 
 ---
 

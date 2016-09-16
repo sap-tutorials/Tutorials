@@ -1,7 +1,7 @@
 ---
 title: SAP HANA XS Advanced, Creating a Node.js Module
 description: SAP HANA XS Advanced, Creating a Node.js Module and implementing XSJS and XSODATA
-tags: [  tutorial>beginner, topic>odata, products>sap-hana ]
+tags: [  tutorial>beginner, topic>odata, products>sap-hana, products>sap-hana,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** beginner
