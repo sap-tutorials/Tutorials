@@ -155,3 +155,4 @@ For more details on the HCP predictive services, you can check the following URL
 
 ## Next Steps
   - [Test the "Forecast" HCP predictive service from a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
+
