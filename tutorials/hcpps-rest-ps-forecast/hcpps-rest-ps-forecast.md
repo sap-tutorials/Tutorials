@@ -253,4 +253,3 @@ For more details on the HCP predictive services, you can check the following URL
 
 ## Next Steps
   - [Configure a SAPUI5 application to interact with the HCP predictive](http://go.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
-

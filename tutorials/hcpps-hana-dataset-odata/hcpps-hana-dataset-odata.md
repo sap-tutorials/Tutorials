@@ -16,7 +16,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
   - How to use the create an ***OData*** service to expose a table stored in the HANA HCP instance
 
 ### Time to Complete
-  **5 minutes**
+  **10 minutes**
 
 ---
 
@@ -87,4 +87,3 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
 
 ## Next Steps
   - [Enable, deploy and configure the SAP HCP predictive services](http://go.sap.com/developer/tutorials/hcpps-ps-configure.html)
-

@@ -16,7 +16,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
   - How to setup a SAP HANA instance on SAP HANA Cloud Platform
 
 ### Time to Complete
-  **10 minutes**
+  **15 minutes**
 
 ---
 
@@ -83,4 +83,3 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
 
 ## Next Steps
   - [Setup a HANA user account for the HCP predictive services](http://go.sap.com/developer/tutorials/hcpps-hana-create-user.html)
-

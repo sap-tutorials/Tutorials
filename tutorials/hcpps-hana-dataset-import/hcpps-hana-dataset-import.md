@@ -42,4 +42,3 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
 
 ## Next Steps
   - [Expose your predictive demo dataset as an OData service](http://go.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
-

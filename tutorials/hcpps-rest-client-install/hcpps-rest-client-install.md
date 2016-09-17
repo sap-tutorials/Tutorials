@@ -16,7 +16,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
   - How to install the [Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/).
 
 ### Time to Complete
-  **1 minutes**.
+  **5 minutes**.
 
 ---
 
@@ -42,4 +42,3 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
 
 ## Next Steps
   - [Test the OData services using a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-odata.html)
-
