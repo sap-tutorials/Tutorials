@@ -16,7 +16,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
   - How to test an OData Service deployed on HCP using a REST Client
 
 ### Time to Complete
-  **10 minutes**
+  **5 minutes**
 
 ---
 
@@ -150,3 +150,4 @@ Token                                | Value
 
 ## Next Steps
   - [Test the "Data Set" HCP predictive service from a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+
