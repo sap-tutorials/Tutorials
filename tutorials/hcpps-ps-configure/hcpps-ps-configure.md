@@ -16,7 +16,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
   - How to enable, deploy and configure the HCP predictive services for your HCP Developer Account
 
 ### Time to Complete
-  **15 minutes**
+  **10 minutes**
 
 ---
 
@@ -140,3 +140,4 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
 
 ## Next Steps
   - [Install a REST client to interact with the HCP predictive services](http://go.sap.com/developer/tutorials/hcpps-rest-client-install.html)
+
