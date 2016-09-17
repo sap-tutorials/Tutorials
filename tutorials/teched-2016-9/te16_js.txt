@@ -1,0 +1,78 @@
+var hostIoT = 'iotmmsd045495trial.hanatrial.ondemand.com';
+var authStrIoT = 'Bearer a2b1bde95b3d023667a915975111529';
+var deviceId = '294b3f0d-e24e-4ea6-805c-ea57b2d27a97';
+var messageTypeID = '1c3ebed03106d7e53d17';
+var portIoT = 443;
+var pathIoT = '/com.sap.iotservices.mms/v1/api/http/data/';
+
+var tessel = require('tessel');
+var climatelib = require('climate-si7020');
+var climate = climatelib.use(tessel.port['A']);
+
+climate.on('ready', function () {
+  console.log('Connected to si7020');
+
+  // Loop forever
+  setImmediate(function loop () {
+    climate.readTemperature('c', function (err, temp) {
+      climate.readHumidity(function (err, humid) {
+        console.log('Degrees:', temp.toFixed(4) + 'C', 'Humidity:', humid.toFixed(4) + '%RH');
+        updateIoT(temp.toFixed(4), humid.toFixed(4));
+        setTimeout(loop, 1000);
+      });
+    });
+  });
+});
+
+climate.on('error', function(err) {
+  console.log('error connecting module', err);
+});
+
+function updateIoT(lv_temperature, lv_humidity) {
+    var http = require('https');
+    var options = {
+      host: hostIoT,
+	    port: portIoT,
+      path: pathIoT + deviceId,
+      agent: false,
+      headers: {
+         'Authorization': authStrIoT,
+         'Content-Type': 'application/json;charset=utf-8'
+      },
+      method: 'POST',     
+    };
+    options.agent = new http.Agent(options);
+    callback = function(response) {
+	  var body = '';
+	  response.on('data', function (data) {
+		body += data;
+	  });
+      response.on('end', function () {
+		console.log("END:", response.statusCode, JSON.parse(body).msg);
+      });
+      response.on('error', function(e) {
+          console.error(e);
+     });    
+    }
+    var req = http.request(options, callback);
+  req.on('error', function(e) {
+    console.error(e);
+  });
+  date = new Date();
+
+  req.shouldKeepAlive = false;
+    var jsonData = {
+		"mode":"sync",
+		"messageType": messageTypeID,
+		"messages": [{
+			"temperature": lv_temperature,
+			"humidity": lv_humidity,
+      "timestamp": date.getTime()
+			}]
+    };
+
+    var strData = JSON.stringify(jsonData);
+    console.log("POST jsonData:" + strData);
+    req.write(strData);
+    req.end();
+}
