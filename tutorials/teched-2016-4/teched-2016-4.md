@@ -170,7 +170,7 @@ Find and replace all instances (five of them) of `<ObjectName>` in the `i18n.pro
 
 [ACCORDION-BEGIN [Step 14: ](Insert the "Business Partners" label)]
 
-Find and replace all instances (three of them) of `<ObjectName>` in the `i18n.properties` file with `Business Partners`.
+Find and replace all instances (three of them) of `<ObjectNamePlural>` in the `i18n.properties` file with `Business Partners`.
 
 [DONE]
 [ACCORDION-END]
