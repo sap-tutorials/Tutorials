@@ -165,5 +165,8 @@ To test the language support in the deployed app, we can utilize the SAPUI5 `sap
 
 If your device is set to either the German or Spanish locale, then the app will check the language and locale settings on the device, and load the appropriate strings file.
 
+[DONE]
+[ACCORDION-END]
+
 ## Next Steps
  - [Configure an Internet of Things (IoT) sensor](http://go.sap.com/developer/tutorials/teched-2016-9.html)
