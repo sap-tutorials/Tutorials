@@ -42,3 +42,7 @@ Thumbs.db
 tutorials/.DS_Store
 
 tutorials/iot-part11-hcp-services-ti/.DS_Store
+
+tutorials/teched-2016-9/.tesselinclude
+
+*.js
