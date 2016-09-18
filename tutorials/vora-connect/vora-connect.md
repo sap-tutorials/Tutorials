@@ -53,7 +53,7 @@ You will learn how to connect to your SAP HANA Vora instance to manage it. There
 5. To connect to the instance's OS using `ssh` client you need the secure key-pair `.pem` file, which you downloaded when creating the SAP HANA Vora instance in CAL.
 
     In Unix-like systems (including Mac OS) you run this command in a terminal window:
-    ```
+    ```shell
     ssh -i [vorakeyfile].pem [IPaddress] -l ec2-user
     ```
     where `[vorakeyfile].pem` is the name of your key-pair file, and `[IPaddress]` is the external IP address of your instance.
@@ -68,7 +68,7 @@ You will learn how to connect to your SAP HANA Vora instance to manage it. There
      Click `Open` to login to the host's OS.
 
 6. Once you are logged as `ec2-user` you can switch to `root` user if needed, using a command
-    ```
+    ```shell
     sudo su -
     ```
 
