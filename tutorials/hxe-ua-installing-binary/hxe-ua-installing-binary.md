@@ -109,7 +109,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
     6. When *Summary Before Execution* displays, click **y** to continue with installation.  
 
     >**Note**
-    >If a `libssl.so.0.9.8` error occurs, see [Installation Fails with Error "Cannot load libssl.so.0.9.8"](http://go.sap.com/developer/tutorials/hxe-ua-troubleshooting).
+    >If a `libssl.so.0.9.8` error occurs, see [Installation Fails with Error "Cannot load libssl.so.0.9.8"](http://go.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
 
 ### (Optional) Installing XSC, XS Advanced, and Web IDE
 
