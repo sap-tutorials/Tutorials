@@ -1,6 +1,6 @@
 ---
 title: Using Autonomous Transactions
-description: Leveraging SQLScript in Stored Procedures & User Defined Functions in particular Autonomous transactions
+description: Leveraging SQLScript in Stored Procedures & User Defined Functions through the use of Autonomous transactions
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana,-express-edition ]
 ---
 ## Prerequisites  

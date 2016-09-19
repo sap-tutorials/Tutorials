@@ -1,7 +1,7 @@
 ---
 title: Web Sockets
 description: Using web sockets with Node.js and SAP HANA
-tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana,-express-edition ]
+tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate

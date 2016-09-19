@@ -1,7 +1,7 @@
 ---
 title: Exception Handling Transactions
-description: Leveraging SQLScript in Stored Procedures & User Defined Functions
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana,-express-edition ]
+description: Leveraging SQLScript in Stored Procedures & User Defined Functions through exception handling
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
