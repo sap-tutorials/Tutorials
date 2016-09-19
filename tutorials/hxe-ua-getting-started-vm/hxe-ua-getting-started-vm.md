@@ -1,7 +1,7 @@
 ---
 title: Start Using SAP HANA, express edition
 description: Once you’ve downloaded the SAP HANA, express edition OVA, start the server, change the default passwords to secure your system, and connect using client tools.
-tags: [  tutorial>beginner, topic>HXE, products>sap-hana,-express-edition ]
+tags: [  tutorial>beginner, topic>HXE, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
