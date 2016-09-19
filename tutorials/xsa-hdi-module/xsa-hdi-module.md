@@ -227,7 +227,7 @@ HDI introduces the concept of the container as an abstraction of the Schema. The
 	"imports": [{
 	"target_table": "dev602.data::PurchaseOrder.Header",
 	"source_data": {
-	“data_type": "CSV",
+	"data_type": "CSV",
 		"file_name": "dev602.data::header.csv",
 		"has_header": false,
 		"dialect": "HANA",
