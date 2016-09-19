@@ -120,7 +120,7 @@ Add a new file to your project by right-clicking on your **`view`** folder and s
 
 Name the file `Map.fragment.xml` and click **OK**.
 
-    ![new file name](te-2016-6-08.png) 
+![new file name](te-2016-6-08.png) 
 
 [DONE]
 [ACCORDION-END]
