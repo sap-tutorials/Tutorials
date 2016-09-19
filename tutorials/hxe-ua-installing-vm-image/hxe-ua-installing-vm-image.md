@@ -64,7 +64,7 @@ The registration page opens.
 ![Registration Page](HXE_register.PNG)
 The **Registration Success** page displays. (You will also receive an email indicating successful registration.)
 3. At the bottom of the **Registration Success** page, click the download manager that matches your system: Linux or Windows. If you have a Mac, or another type of machine, click “other” for a platform-independent download manager.
-![Registration Success page](HXE_register_success.PNG)
+![Registration Success page](hxe_register_success.PNG)
 4. Save the download manager installation file to your laptop and open it.
 5. If Windows prevents the download manager installation file from running, click **More info** on the warning message and select **Run anyway**.  
 ![Windows warning](hxe_win_warning.PNG)
