@@ -1,6 +1,6 @@
 ---
 title: Using COMMIT Transactions
-description: Leveraging SQLScript in Stored Procedures & User Defined Functions through the use of COMMIT
+description: Leveraging SQLScript in Stored Procedures & User Defined Functions in particular COMMIT transactions
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana,-express-edition ]
 ---
 ## Prerequisites  
