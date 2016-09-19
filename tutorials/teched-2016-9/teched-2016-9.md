@@ -23,7 +23,7 @@ This tutorial will take you through the steps at a rapid pace, if you'd like mor
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Connection to the SAP HANA CLoud Platform)]
+[ACCORDION-BEGIN [Step 1: ](Connection to the SAP HANA Cloud Platform)]
 
 The first step you need is to connect to the [SAP HANA Cloud Platform](https:/account.hanatrial.ondemand.com/) trial system which will be referred to as HCP for the remainder of the tutorial. 
 
