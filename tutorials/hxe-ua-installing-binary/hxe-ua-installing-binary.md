@@ -61,7 +61,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
     >![Windows SmartScreen](Windows_Runner.jpg)
 
 4. In Download Manager, in the **Image** pull-down, select **Binary Installer**.
-    ![Download Manager](HXE_download_manager.png)
+    ![Download Manager](HXE_download_manager.PNG)
 
 5. Click **Browse** and select a directory where your downloads will be saved.
 
@@ -109,7 +109,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
     6. When *Summary Before Execution* displays, click **y** to continue with installation.  
 
     >**Note**
-    >If a `libssl.so.0.9.8` error occurs, see [Installation Fails with Error "Cannot load libssl.so.0.9.8"](http://go.sap.com/developer/tutorials/hxe-ua-troubleshooting).
+    >If a `libssl.so.0.9.8` error occurs, see [Installation Fails with Error "Cannot load libssl.so.0.9.8"](http://go.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
 
 ### (Optional) Installing XSC, XS Advanced, and Web IDE
 
