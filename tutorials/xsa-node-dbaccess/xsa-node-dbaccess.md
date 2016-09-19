@@ -1,7 +1,7 @@
 ---
 title: SAP HANA Database access from Node.js
 description: Connecting to a SAP HANA database using Node.js
-tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana,-express-edition ]
+tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate

@@ -1,7 +1,7 @@
 ---
 title: Asynchronous Non-Blocking I/O
 description: Working with asynchronous connections
-tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana,-express-edition ]
+tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
