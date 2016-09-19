@@ -83,14 +83,13 @@ When the Translation Hub page loads, click the **+** icon at the bottom of the w
 
 Fill in the project details as shown below and click **Save**:
 
-    Field Name                 | Value
-    :------------------------- | :-------------
-    Application name           | `te2016`
-    Branch                     | `master`
-    Path to properties file    | `webapp/i18n/i18n.properties`
-    Domain                     | `Basis`
-    Target languages           | `German`, `Spanish`
-
+Field Name                 | Value
+:------------------------- | :-------------
+Application name           | `te2016`
+Branch                     | `master`
+Path to properties file    | `webapp/i18n/i18n.properties`
+Domain                     | `Basis`
+Target languages           | `German`, `Spanish`
 
 ![Accounts settings](te-2016-8-07.png)
 
@@ -151,12 +150,12 @@ Commit your new files to Git and deploy to HCP (following the same procedure as 
 
 To test the language support in the deployed app, we can utilize the SAPUI5 `sap-ui-language` URL parameter. To do so, just append `?sap-ui-language=xx_YY` to your application URL
 
-    - If your standard application URL looks like this:
-        - `https://te2016-p12345678trial.dispatcher.hanatrial.ondemand.com/`
-    - You can view the German strings by specifying:
-        - `https://te2016-p12345678trial.dispatcher.hanatrial.ondemand.com/?sap-ui-language=de`
-    - Spanish strings by specifying:
-        - `https://te2016-p12345678trial.dispatcher.hanatrial.ondemand.com/?sap-ui-language=es`
+- If your standard application URL looks like this:
+  - `https://te2016-p12345678trial.dispatcher.hanatrial.ondemand.com/`
+- You can view the German strings by specifying:
+  - `https://te2016-p12345678trial.dispatcher.hanatrial.ondemand.com/?sap-ui-language=de`
+- And the Spanish strings by specifying:
+  - `https://te2016-p12345678trial.dispatcher.hanatrial.ondemand.com/?sap-ui-language=es`
 
 [DONE]
 [ACCORDION-END]
