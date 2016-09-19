@@ -288,7 +288,7 @@ Result:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 19: ](Modify the App Descriptor]
+[ACCORDION-BEGIN [Step 19: ](Modify the App Descriptor)]
 
 The last change before running your app is to modify the `manifest.json` file. Open **`te2016` > `webapp` > `manifest.json`**.
 
