@@ -175,21 +175,21 @@ Find and replace all instances (three of them) of `<ObjectNamePlural>` in the `i
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Insert the "Related Contacts" label)]
+[ACCORDION-BEGIN [Step 15: ](Insert the "Related Contacts" label)]
 
 Find and replace the instance of `<FirstColumnName>` in the `i18n.properties` file with `Related Contacts`.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Insert the "Country" label)]
+[ACCORDION-BEGIN [Step 16: ](Insert the "Country" label)]
 
-Find and replace the instance of `<LastColumnName>` in the `i18n.properties` file with `Country`.
+Find and replace the instance of `<LastColumnName>` in the `i18n.properties` file with `Country`. Save your edits.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Launch your app)]
+[ACCORDION-BEGIN [Step 17: ](Launch your app)]
 
 To run your app, select your project folder and click the **Run** button. A new tab will open in your browser showing your app running in a preview pane.
 
@@ -198,7 +198,7 @@ To run your app, select your project folder and click the **Run** button. A new 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Confirm your app looks like the example)]
+[ACCORDION-BEGIN [Step 18: ](Confirm your app looks like the example)]
 
 You app should look like the image below. You can click on items in the master list and the right-hand (detail) pane will update. You have just built an SAP Fiori UX app.
 
