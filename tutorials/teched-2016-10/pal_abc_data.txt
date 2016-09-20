@@ -1,10 +1,12 @@
+/*
 DROP TABLE DUMMYDATA;
 
-CREATE TABLE DUMMYDATA (
-  accountnr nvarchar(11) default NULL,
+CREATE COLUMN TABLE DUMMYDATA (
+  accountnr varchar(11) default NULL,
   location varchar(100) default NULL,
   total_amount double default NULL
 );
+*/
 
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('82540748399','Netherlands',385);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('99692723699','Morocco',992);
