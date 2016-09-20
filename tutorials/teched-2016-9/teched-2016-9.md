@@ -25,7 +25,7 @@ This tutorial will take you through the steps at a rapid pace, if you'd like mor
 
 [ACCORDION-BEGIN [Step 1: ](Connection to the SAP HANA Cloud Platform)]
 
-The first step you need is to connect to the [SAP HANA Cloud Platform](https:/account.hanatrial.ondemand.com/) trial system which will be referred to as HCP for the remainder of the tutorial.
+The first step you need is to connect to the [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com/) trial system which will be referred to as HCP for the remainder of the tutorial.
 
 ![HCP Trial Account](1.png)
 
@@ -86,13 +86,13 @@ From here you will need to "Go to Service"
 5. Now that your version is up to date you will need to go to "Message Type" and create a new message type.
 
 Field    | Value
------------------------------
+:------------- | :-------------
 Name     | te2016
 
 And the following fields:
 
 Position    | Name        | Type
------------------------------------
+:------------- | :-------------
 1           | timestamp   | long
 2           | temperature | double
 3           | humidity    | double
@@ -113,7 +113,7 @@ Please note down the created message type id displayed here as we will be using 
 Once the message type is created you will need to create a new "Device Type" and assign the "Message Type" to it.
 
 Field           | Value
------------------------------
+:------------- | :-------------
 Name            | tessel2016
 Message Type    | te2016
 Direction       | From Device
@@ -130,7 +130,7 @@ Direction       | From Device
 Now that you have your message and device types created you will need to add your device.
 
 Field           | Value        
------------------------------------
+:------------- | :-------------
 Name            | te_tessel_16
 Device Type     | tessel2016
 
