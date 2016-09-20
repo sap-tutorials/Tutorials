@@ -100,6 +100,7 @@ When the HCP Cockpit loads, you can review the News and Announcements or skip th
  
 
 ## Next Steps
+ - Go to the [AppSpace page](http://go.sap.com/developer/app-space-page.html)
  - For SAP HANA development: [SAP HANA XSC basic development](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
  - For Mobile development [Create and deploy an app in the cloud series](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
  - For SAP HCP predictive services development: [Create a new HANA MDC instance](http://go.sap.com/developer/tutorials.html?link=hcpps-hana-create-mdc-instance.html)
