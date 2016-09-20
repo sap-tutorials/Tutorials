@@ -132,12 +132,12 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
       1. Install statistics:
 
           `sudo su - hxeadm
-          hdbsql -d SystemDB -u SYSTEM -p "${SYSTEM_PWD}" "alter system alter configuration('nameserver.ini','SYSTEM') SET ('statisticsserver','active')" = 'true' with reconfigure"`
+          hdbsql -d SystemDB -u SYSTEM -p "${SYSTEM_PWD}" "alter system alter configuration('nameserver.ini','SYSTEM') SET ('statisticsserver','active') = 'true' with reconfigure"`
 
           Example:
 
           `sudo su - hxeadm
-          hdbsql -d SystemDB -u SYSTEM -p ABCD1234 "alter system alter configuration('nameserver.ini','SYSTEM') SET ('statisticsserver','active')" = 'true' with reconfigure"`
+          hdbsql -d SystemDB -u SYSTEM -p ABCD1234 "alter system alter configuration('nameserver.ini','SYSTEM') SET ('statisticsserver','active') = 'true' with reconfigure"`
 
       2. Install XSA using `hdblcm`:
 
