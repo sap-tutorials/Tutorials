@@ -112,15 +112,11 @@ Please note down the created message type id displayed here as we will be using 
 
 Once the message type is created you will need to create a new "Device Type" and assign the "Message Type" to it.
 
-Field    | Value
+Field           | Value
 -----------------------------
-Name     | tessel2016
-
-And the following assignment:
-
-Message Type    | Direction        
------------------------------------
-te2016          | From Device
+Name            | tessel2016
+Message Type    | te2016
+Direction       | From Device
 
 ![Device Type](6.png)
 
@@ -139,6 +135,7 @@ Name            | te_tessel_16
 Device Type     | tessel2016
 
 ![Devices](7.png)
+
 ![Message Types](11.png)
 
 Be sure to save this token that is generated you will need it later.
@@ -163,7 +160,7 @@ Your device is the physical Tessel device next to you.
 
 With these steps completed you are now ready to modify the JavaScript code we have prepared for the device and deploy and execute it.
 
-If you are at the AppSpace, the file is already availble in the follozing directory: `C:\teched2016\te16.js`.
+If you are with us at TechEd in the `AppSpace`, the file is already available in the following directory: `C:\teched2016\te16.js`.
 
 If you are doing this on your own machine, you can download the file [`te16_js.txt`](te16_js.txt), and rename it to `te16.js` on your machine.
 
