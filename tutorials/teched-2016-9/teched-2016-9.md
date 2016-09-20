@@ -86,13 +86,13 @@ From here you will need to "Go to Service"
 5. Now that your version is up to date you will need to go to "Message Type" and create a new message type.
 
 Field    | Value
------------------------------
+---------|-------------------
 Name     | te2016
 
 And the following fields:
 
 Position    | Name        | Type
------------------------------------
+------------|-------------|--------
 1           | timestamp   | long
 2           | temperature | double
 3           | humidity    | double
@@ -113,7 +113,7 @@ Please note down the created message type id displayed here as we will be using 
 Once the message type is created you will need to create a new "Device Type" and assign the "Message Type" to it.
 
 Field           | Value
------------------------------
+----------------|------------
 Name            | tessel2016
 Message Type    | te2016
 Direction       | From Device
@@ -130,7 +130,7 @@ Direction       | From Device
 Now that you have your message and device types created you will need to add your device.
 
 Field           | Value        
------------------------------------
+----------------|------------------
 Name            | te_tessel_16
 Device Type     | tessel2016
 
@@ -229,4 +229,4 @@ The table with your data will match the `Message Type ID`
 [ACCORDION-END]
 
 ## Next Steps
- - [ABC Analysis with SAP HANA](http://go.sap.com/developer/tutorials/teched-2016-10.html)
+ - [Predictive analytics with SAP HANA: ABC Analysis](http://go.sap.com/developer/tutorials/teched-2016-10.html)
