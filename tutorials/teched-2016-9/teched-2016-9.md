@@ -19,7 +19,7 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-cloud-pl
 This tutorial will take you through the steps at a rapid pace, if you'd like more details please contact one of our support staff.
 
 ### Time to Complete
-**15 Min**.
+**20 Min**.
 
 ---
 
@@ -51,20 +51,33 @@ With IoT services enabled, you can begin the steps necessary to connect your dev
 
 The first step will be to configure and deploy the Message Management Service (MMS). Click on the **Deploy Message Management Service** tile.
 
-Enter in your information in the fields, where your account ID is your p-number (or s-number if you are SAP's customer or partner, or i-/d-number if you are SAP employee) with the world “trial” (no space between the p-number and trial) and your user name is just your p-number.
+Enter in your information in the fields, where your account ID is your p-number (or s-number if you are SAP's customer or partner, or i-/d-number if you are SAP employee) with the world “trial” (no space between the p-number and trial) and your user name is just your p-number. Click **Deploy**. It will deploy `iotmms` Java application for you.
 ￼
 ![Deploy Service](p6_6a.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure the IoT Role)]
+[ACCORDION-BEGIN [Step 4: ](Configure the IoT MMS)]
 
-Once successfully deployed then you can assign the role to our user and continue the next steps. Return to the HCP Cockpit view and click on **Java Applications** in the left navigation bar. You will see the new `iotmms` application you just deployed. Click on the `iotmms` link to display the **IoT MMS dashboard**.
+Once `iotmms` Java application is deployed (created), you need to do data binding and authorization for users who should use it.
 
-![Deployed application](p6_7.png)
-￼
-With the **IoT MMS dashboard** displayed click on the Roles link in the left navigation bar. Select the **IoT-MMS-User** (click the empty cell next to the Name to select the row if it is not highlighted in blue).
+Return to the HCP Cockpit view and click on **Java Applications** in the left navigation bar. You will see the new `iotmms` application you just deployed. Click on the `iotmms` link to display the **IoT MMS dashboard**.
+
+![Deployed application](p6_7.jpg)
+
+With the **IoT MMS dashboard** displayed click on **Data Source Bindings**. Check the data binding is in place, something similar to the picture below.
+
+![Data binding for iotmms](p6_7a.jpg)
+
+In case **your `iotmms` application is missing the data binding** you need to do additional steps of manually creating new database and binding it. Otherwise proceed to the next step of assigning a role with required authorizations.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Assign authorizations to run IoT MMS)]
+
+Click on the Roles link in the left navigation bar. Select the **IoT-MMS-User** (click the empty cell next to the Name to select the row if it is not highlighted in blue).
 
 ![Authorizations](p6_8.png)
 
@@ -81,7 +94,7 @@ From here you will need to "Go to Service"
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a new Message Type)]
+[ACCORDION-BEGIN [Step 6: ](Create a new Message Type)]
 
 5. Now that your version is up to date you will need to go to "Message Type" and create a new message type.
 
@@ -108,7 +121,7 @@ Please note down the created message type id displayed here as we will be using 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create new Device Type)]
+[ACCORDION-BEGIN [Step 7: ](Create new Device Type)]
 
 Once the message type is created you will need to create a new "Device Type" and assign the "Message Type" to it.
 
@@ -125,7 +138,7 @@ Direction       | From Device
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add a device)]
+[ACCORDION-BEGIN [Step 8: ](Add a device)]
 
 Now that you have your message and device types created you will need to add your device.
 
@@ -149,14 +162,14 @@ Please note down the created device id displayed here as we will be using it lat
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Select your IoT Device)]
+[ACCORDION-BEGIN [Step 9: ](Select your IoT Device)]
 
 Your device is the physical Tessel device next to you.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Download the JavaScript file)]
+[ACCORDION-BEGIN [Step 10: ](Download the JavaScript file)]
 
 With these steps completed you are now ready to modify the JavaScript code we have prepared for the device and deploy and execute it.
 
@@ -167,7 +180,7 @@ If you are doing this on your own machine, you can download the file [`te16_js.t
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Modify the code)]
+[ACCORDION-BEGIN [Step 11: ](Modify the code)]
 
 Modifying the code provided in the file now called `te16.js`, you will need to add in your message type id's, device id, etc.
 
@@ -190,7 +203,7 @@ You will modify the `hostIoT` line to add your own HCP Account User ID which sta
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Run your JavaScript program)]
+[ACCORDION-BEGIN [Step 12: ](Run your JavaScript program)]
 
 Once you have saved your file you will deploy and execute it from the command line. Open a "command" window, and run the following two commands:
 
@@ -202,7 +215,7 @@ Once you have saved your file you will deploy and execute it from the command li
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Verify data acquisition)]
+[ACCORDION-BEGIN [Step 13: ](Verify data acquisition)]
 
 Provided your JavaScript file was modified properly, the correct items your output should be something like the following.
 
