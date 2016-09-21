@@ -66,7 +66,11 @@ Return to the HCP Cockpit view and click on **Java Applications** in the left na
 
 ![Deployed application](p6_7.jpg)
 
-With the **IoT MMS dashboard** displayed click on **Data Source Bindings**. Check the data binding is in place, something similar to the picture below.
+With the **IoT MMS dashboard** displayed click on **Data Source Bindings**. Check the data binding is in place, something similar to pictures below.
+
+![Data binding for iotmms](p6_7b.jpg)
+
+or
 
 ![Data binding for iotmms](p6_7a.jpg)
 
