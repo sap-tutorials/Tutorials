@@ -2,6 +2,7 @@
 Ambari
 AngularJS
 Ansible
+AppSpace
 Apriori
 Auth
 AWS
@@ -86,6 +87,7 @@ truststore
 TrustAll
 UI5
 util
+VMware
 Vora
 webapp
 WebIDE

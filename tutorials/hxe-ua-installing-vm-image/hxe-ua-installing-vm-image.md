@@ -42,49 +42,65 @@ Install a supported `hypervisor` on your machine if you don't have one already. 
 SAP HANA, express edition has been tested on these `hypervisors`:
 * [VMware Player 7.1](https://www.vmware.com/)
 * [VMware Workstation Pro 12.1](https://www.vmware.com/)
-* [VMware Fusion or VMWare Fusion Pro 8.x](https://www.vmware.com/)
+* [VMware Fusion or VMware Fusion Pro 8.x](https://www.vmware.com/)
 
 For the purposes of this tutorial, we're using `VMware` Player.
 
 #### Install `VMWare` Player
 `VMware` Player 7.1 is a `hypervisor` compatible with SAP HANA express edition. You can install any supported `hypervisor`, but examples in this tutorial use `VMWare` Player 7.1.
 
-1. Download `VMware` Player from [www.vmware.com](http://www.vmware.com) and run the installer.
+1. Download `VMware` Player from <www.vmware.com> and run the installer.
 2. Ensure you're downloading the correct version for your machine.
 3. Register when prompted and follow the setup instructions.
 
 ### Download the OVA using the Download Manager
 Register and then use the Download Manager to download a server-only OVA, or a server-plus-applications OVA. Applications include XS Advanced (XSA) and Web IDE.
 
-1. Go to the registration page at [sap.com/sap-hana-express](http://sap.com/sap-hana-express)   
-(Alternately, you can go to the SAP HANA, express edition launch page at [go.sap.com/developer/topics/sap-hana-express.html](http://go.sap.com/developer/topics/sap-hana-express.html) and click the **Register and download SAP HANA, express edition download manager** link.)  
-The registration page opens.
+1. Go to the registration page at <http://sap.com/sap-hana-express> (Alternately, you can go to the SAP HANA, express edition launch page at <http://go.sap.com/developer/topics/sap-hana-express.html> and click the **Register and download SAP HANA, express edition download manager** link.)  The registration page opens.
+
 2. Complete the registration form and click the **Register** button.  
-**Note:** If you have an SAP login, click the Login icon at the top of the page to populate the registration form automatically.
-![Registration Page](HXE_register.PNG)
-The **Registration Success** page displays. (You will also receive an email indicating successful registration.)
+
+    > **Note:** If you have an SAP login, click the Login icon at the top of the page to populate the registration form automatically.
+
+    ![Registration Page](HXE_register.PNG)
+
+    The **Registration Success** page displays. (You will also receive an email indicating successful registration.)
+
 3. At the bottom of the **Registration Success** page, click the download manager that matches your system: Linux or Windows. If you have a Mac, or another type of machine, click “other” for a platform-independent download manager.
-![Registration Success page](hxe_register_success.PNG)
+
+    ![Registration Success page](hxe_register_success.PNG)
+
 4. Save the download manager installation file to your laptop and open it.
+
 5. If Windows prevents the download manager installation file from running, click **More info** on the warning message and select **Run anyway**.  
-![Windows warning](hxe_win_warning.PNG)
+
+    ![Windows warning](hxe_win_warning.PNG)
+
 6. In Download Manager, in the **Image** pull-down, select **virtual machine**.
-![Download Manager](HXE_download_mgr.PNG)
+
+    ![Download Manager](HXE_download_mgr.PNG)
+
 7. Click **Browse** and select a directory where your downloads will be saved.
+
 8. Select one or more of the following packages:  
 **Server only** - Downloads **`hxe.ova`**; a basic server-only package.  
 **Server + applications** - Downloads **`hxexsa.ova`**; the server plus XSA and Web IDE.  
 **Text analysis files for additional languages** - For languages other than English and German, files required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the **Server only** and **Server + applications** packages.)
+
 9. Click the **Download** button.
 
 ### Import the OVA into `VMWare` Player
 Import the downloaded OVA file into your `hypervisor` to begin using SAP HANA, express edition.
 
 1. Start `VMware` Player 7.1 and select *Open a Virtual Machine*.  
-![VMWare Player](hxe_vmware_import.PNG)
+
+    ![VMWare Player](hxe_vmware_import.PNG)
+
 2. Browse to the OVA file you downloaded and click **Open**. The Import Virtual Machine dialog box displays.
+
 3. Accept the defaults and click **Import**. The VM imports. The import process takes approximately 5 minutes.
+
 4. Power on your VM.
 
 ## Next Steps
- - [`Getting Started with SAP HANA, express edition (Binary Installer Method)](http://go.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
+ - [Getting Started with SAP HANA, express edition (Binary Installer Method)](http://go.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
