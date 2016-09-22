@@ -192,9 +192,9 @@ The lines in particular you will need to modify are the following
 
 ```
 var hostIoT = 'iotmms<HCP Account User ID>trial.hanatrial.ondemand.com';
-var authStrIoT = 'Bearer <generated token from step 7>';
+var authStrIoT = 'Bearer <generated token from step 8>';
 var deviceId = '<generated device id from step 8>';
-var messageTypeID = '<generated message type id from step 5>';
+var messageTypeID = '<generated message type id from step 6>';
 
 ```
 
