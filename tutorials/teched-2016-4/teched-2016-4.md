@@ -57,7 +57,7 @@ In the **Template Selection** window, select the **SAP Fiori Master-Detail Appli
 
 [ACCORDION-BEGIN [Step 5: ](Name your project)]
 
-In the **Basic Information** window, name your project `te2016`, select the **Enable native mobile device functionality** checkbox, and click **Next**.
+In the **Basic Information** window and name your project `te2016`. While not required, if you have the Hybrid App Toolkit plug-in enabled, you will see the **Enable native mobile device functionality** checkbox. You can click it if you'd like, but is not required for this series. **Next**.
 
 ![project name](te-2016-4-05.png)
 
