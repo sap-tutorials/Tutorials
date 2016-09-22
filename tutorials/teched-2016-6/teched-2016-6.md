@@ -295,13 +295,13 @@ The last change before running your app is to modify the `manifest.json` file. O
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 20: ](Run your app)]
+[ACCORDION-BEGIN [Step 20: ](Editing the App Descriptor)]
 
 Insert the two lines below as shown in the image.
 
-```
-"description": "{{appDescription}}",
+```json
 "ach": "ach",
+"resources": "resources.json",
 ```		
 
 ![app descriptor](te-2016-6-23.png)
