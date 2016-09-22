@@ -40,7 +40,7 @@ Open SAP Web IDE, and click on the folder icons to open the **`te2016` > `webapp
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Interting fields into the `ObjectHeader`)]
+[ACCORDION-BEGIN [Step 3: ](Inserting fields into the `ObjectHeader`)]
 
 Insert the four lines below into the `ObjectHeader` element. The XML snippet below adds four fields from the OData service (City, Country, URL and Partner role), as well as a reference to a title that you will insert in the next step.
 
@@ -288,7 +288,7 @@ Result:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 19: ](Modify the App Descriptor)]
+[ACCORDION-BEGIN [Step 19: ](Opening the manifest file)]
 
 The last change before running your app is to modify the `manifest.json` file. Open **`te2016` > `webapp` > `manifest.json`**.
 
