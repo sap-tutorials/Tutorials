@@ -51,7 +51,7 @@ Wait approximately 60 seconds for the system to start and the user prompt to ret
 ### Change the Default Password for SYSTEM User
 Changing the default SYSTEM user password can help secure your system.
 1. From the command prompt, enter this command:  
-**`hdbsql -u SYSTEM -d SystemDB –p HXEHana1`**
+**`hdbsql -u SYSTEM -d SystemDB -p HXEHana1`**
 2. Follow the command prompts to update the password.
 
 ### Record Your VM's IP Address
@@ -72,19 +72,19 @@ You recorded the IP address in tutorial topic **Record Your VM's IP Address**. A
 ![XSEngine Success Page](hxe_xs_success.PNG)
 2. Change the passwords of all XSA users:
     a. Change the `XSA_ADMIN` user password. Enter:  
-    **`hdbsql -u XSA_ADMIN –p HXEHana1 –d SystemDB`**   
+    **`hdbsql -u XSA_ADMIN -p HXEHana1 -d SystemDB`**   
     Follow the prompts to update the default password.
     b. Change the `XSA_DEV` user password. Enter:  
-    **`hdbsql -u XSA_DEV –p HXEHana1 –d SystemDB`**   
+    **`hdbsql -u XSA_DEV -p HXEHana1 -d SystemDB`**   
     Follow the prompts to update the default password.  
     c. Change the `XSA_SHINE` user password. Enter:  
-    **`hdbsql -u XSA_SHINE –p HXEHana1 –d SystemDB`**  
+    **`hdbsql -u XSA_SHINE -p HXEHana1 -d SystemDB`**  
     Follow the prompts to update the default password.
 3. Log in to XSA services:  
 **`xs login -u xsa_admin -p <password>`**
 4. Check for a series of entries beginning with `https://<ip address of VM>:30030`. If you see these entries, XSA installed correctly.
 5. Enter:  
-**`xs target –s SAP`**
+**`xs target -s SAP`**
 6. View the list of XSA applications. Enter:  
 **`xs apps`**
 7. Check that the application **`webide`** shows in the list of XSA applications.
@@ -129,7 +129,7 @@ Download SAP HANA Studio from the SAP HANA developer edition HANA Tools site to 
 ### Edit the /etc/hosts File
 You may need to edit the /etc/hosts file on the VM.
 1.	Change  
-**`sudo` echo <`ipaddress`> $(hostname –f) >> /`etc`/hosts**  
+**`sudo` echo <`ipaddress`> $(hostname -f) >> /`etc`/hosts**  
 To  
 **`sudo sh -c 'echo <Type your IP Address> $(hostname -f) >> /etc/hosts'`**
 
