@@ -1,7 +1,7 @@
 ---
 title: Text Bundles
 description: Working with text bundles in Node.js
-tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana,-express-edition ]
+tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate

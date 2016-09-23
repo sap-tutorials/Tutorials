@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, products>sap-hana-vora, topic>big-data ]
  - You have understanding of cloud infrastructure
 
 ## Next Steps
- - [Connect to SAP HANA Vora instance to manage it] (http://go.sap.com/developer/tutorials/vora-setup-cloud.html), or
+ - [Connect to SAP HANA Vora instance to manage it] (http://go.sap.com/developer/tutorials/vora-connect.html), or
  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
 
 ## Details
@@ -98,5 +98,5 @@ SAP HANA Vora leverages and extends the Apache Spark execution framework to prov
  - Review the [SAP Cloud Appliance Library (CAL) documentation](https://calstatic.hana.ondemand.com/res/~1472020269624~/docEN/index.html)
 
 ## Next Steps
- - [Connect to SAP HANA Vora instance to manage it] (http://go.sap.com/developer/tutorials/vora-setup-cloud.html), or
+ - [Connect to SAP HANA Vora instance to manage it] (http://go.sap.com/developer/tutorials/vora-connect.html), or
  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)

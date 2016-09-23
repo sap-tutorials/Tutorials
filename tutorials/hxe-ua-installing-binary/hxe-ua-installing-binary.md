@@ -1,7 +1,7 @@
 ---
 title: Installing Binary
 description: You may install SAP HANA, express edition on a Linux server using the HANA Database Lifecycle Manager (hdblcm) tool.
-tags: [ tutorial>beginner, topic>HXE,  products>sap-hana,-express-edition ]
+tags: [ tutorial>beginner, topic>HXE,  products>sap-hana\,-express-edition ]
 ---
 The SAP HANA, express edition is for Linux machines running specific installations, provided your host machine meets the storage and memory prerequisites. Choose this installation method if you want a custom setup. This tutorial is available as a [video](http://go.sap.com/assetdetail/2016/09/eccafc12-8a7c-0010-82c7-eda71af511fa.html).
 
@@ -61,7 +61,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
     >![Windows SmartScreen](Windows_Runner.jpg)
 
 4. In Download Manager, in the **Image** pull-down, select **Binary Installer**.
-    ![Download Manager](HXE_download_manager.png)
+    ![Download Manager](HXE_download_manager.PNG)
 
 5. Click **Browse** and select a directory where your downloads will be saved.
 
@@ -109,7 +109,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
     6. When *Summary Before Execution* displays, click **y** to continue with installation.  
 
     >**Note**
-    >If a `libssl.so.0.9.8` error occurs, see [Installation Fails with Error "Cannot load libssl.so.0.9.8"](http://go.sap.com/developer/tutorials/hxe-ua-troubleshooting).
+    >If a `libssl.so.0.9.8` error occurs, see [Installation Fails with Error "Cannot load libssl.so.0.9.8"](http://go.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
 
 ### (Optional) Installing XSC, XS Advanced, and Web IDE
 
@@ -132,12 +132,12 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
       1. Install statistics:
 
           `sudo su - hxeadm
-          hdbsql -d SystemDB -u SYSTEM -p "${SYSTEM_PWD}" "alter system alter configuration('nameserver.ini','SYSTEM') SET ('statisticsserver','active')" = 'true' with reconfigure"`
+          hdbsql -d SystemDB -u SYSTEM -p "${SYSTEM_PWD}" "alter system alter configuration('nameserver.ini','SYSTEM') SET ('statisticsserver','active') = 'true' with reconfigure"`
 
           Example:
 
           `sudo su - hxeadm
-          hdbsql -d SystemDB -u SYSTEM -p ABCD1234 "alter system alter configuration('nameserver.ini','SYSTEM') SET ('statisticsserver','active')" = 'true' with reconfigure"`
+          hdbsql -d SystemDB -u SYSTEM -p ABCD1234 "alter system alter configuration('nameserver.ini','SYSTEM') SET ('statisticsserver','active') = 'true' with reconfigure"`
 
       2. Install XSA using `hdblcm`:
 

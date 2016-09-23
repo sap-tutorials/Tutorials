@@ -57,7 +57,7 @@ In the **Template Selection** window, select the **SAP Fiori Master-Detail Appli
 
 [ACCORDION-BEGIN [Step 5: ](Name your project)]
 
-In the **Basic Information** window, name your project `te2016`, select the **Enable native mobile device functionality** checkbox, and click **Next**.
+In the **Basic Information** window and name your project `te2016`. While not required, if you have the Hybrid App Toolkit plug-in enabled, you will see the **Enable native mobile device functionality** checkbox. You can click it if you'd like, but is not required for this series. **Next**.
 
 ![project name](te-2016-4-05.png)
 
@@ -170,26 +170,26 @@ Find and replace all instances (five of them) of `<ObjectName>` in the `i18n.pro
 
 [ACCORDION-BEGIN [Step 14: ](Insert the "Business Partners" label)]
 
-Find and replace all instances (three of them) of `<ObjectName>` in the `i18n.properties` file with `Business Partners`.
+Find and replace all instances (three of them) of `<ObjectNamePlural>` in the `i18n.properties` file with `Business Partners`.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Insert the "Related Contacts" label)]
+[ACCORDION-BEGIN [Step 15: ](Insert the "Related Contacts" label)]
 
 Find and replace the instance of `<FirstColumnName>` in the `i18n.properties` file with `Related Contacts`.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Insert the "Country" label)]
+[ACCORDION-BEGIN [Step 16: ](Insert the "Country" label)]
 
-Find and replace the instance of `<LastColumnName>` in the `i18n.properties` file with `Country`.
+Find and replace the instance of `<LastColumnName>` in the `i18n.properties` file with `Country`. Save your edits.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Launch your app)]
+[ACCORDION-BEGIN [Step 17: ](Launch your app)]
 
 To run your app, select your project folder and click the **Run** button. A new tab will open in your browser showing your app running in a preview pane.
 
@@ -198,7 +198,7 @@ To run your app, select your project folder and click the **Run** button. A new 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Confirm your app looks like the example)]
+[ACCORDION-BEGIN [Step 18: ](Confirm your app looks like the example)]
 
 You app should look like the image below. You can click on items in the master list and the right-hand (detail) pane will update. You have just built an SAP Fiori UX app.
 

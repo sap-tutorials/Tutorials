@@ -40,7 +40,7 @@ Open SAP Web IDE, and click on the folder icons to open the **`te2016` > `webapp
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Interting fields into the `ObjectHeader`)]
+[ACCORDION-BEGIN [Step 3: ](Inserting fields into the `ObjectHeader`)]
 
 Insert the four lines below into the `ObjectHeader` element. The XML snippet below adds four fields from the OData service (City, Country, URL and Partner role), as well as a reference to a title that you will insert in the next step.
 
@@ -120,7 +120,7 @@ Add a new file to your project by right-clicking on your **`view`** folder and s
 
 Name the file `Map.fragment.xml` and click **OK**.
 
-    ![new file name](te-2016-6-08.png) 
+![new file name](te-2016-6-08.png) 
 
 [DONE]
 [ACCORDION-END]
@@ -288,18 +288,20 @@ Result:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 19: ](Modify the App Descriptor]
-
+[ACCORDION-BEGIN [Step 19: ](Opening the manifest file)]
 
 The last change before running your app is to modify the `manifest.json` file. Open **`te2016` > `webapp` > `manifest.json`**.
 
-[ACCORDION-BEGIN [Step 20: ](Run your app)]
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 20: ](Editing the App Descriptor)]
 
 Insert the two lines below as shown in the image.
 
-```
-"description": "{{appDescription}}",
+```json
 "ach": "ach",
+"resources": "resources.json",
 ```		
 
 ![app descriptor](te-2016-6-23.png)

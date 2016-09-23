@@ -1,7 +1,7 @@
 ---
 title: Creating a Graphical Calculation View
 description: Creating a Graphical Calculation View with a Dimension data type
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana ]
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate

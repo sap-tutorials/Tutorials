@@ -1,7 +1,7 @@
 ---
 title: Getting Started with SAP HANA, express edition (Binary Installer Method)
 description: Explore how to connect to the SAP Web IDE for SAP HANA, Express Edition to start developing your project.
-tags: [  tutorial>beginner, products>sap-hana ]
+tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites
 - Install SAP HANA, express edition. See [Installing Binary](http://go.sap.com/developer/tutorials/hxe-ua-installing-binary.html).

@@ -1,7 +1,7 @@
 ---
 title: Creating an OData Service with an Entity Relationship
 description: Creating an OData Service with an Entity Relationship
-tags: [  tutorial>intermediate, topic>odata, products>sap-hana, products>sap-hana,-express-edition ]
+tags: [  tutorial>intermediate, topic>odata, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
