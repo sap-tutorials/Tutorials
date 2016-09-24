@@ -15,7 +15,6 @@ classname
 Classname
 Cmehil
 CodeJam
-CustomerDemographics
 data-center
 DataSource
 DesignStudio
@@ -23,10 +22,9 @@ DevOps
 EclipseLink
 Envinject
 Fiori
-Github
+GitHub
 Hadoop
 HCPms
-hdbschema
 Heilman
 HelpDesk
 hostname

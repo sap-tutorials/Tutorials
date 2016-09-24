@@ -13,7 +13,7 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>inte
 
 ## Details
 ### You will learn  
-In this tutorial series you will start from zero and develop a fully operational weather application. In total there are 10 parts to the series, each building on top of its predecessor. The entire source code of both the final and all intermediate parts are available on [Github](https://github.com/SAP/cloud-weatherapp).
+In this tutorial series you will start from zero and develop a fully operational weather application. In total there are 10 parts to the series, each building on top of its predecessor. The entire source code of both the final and all intermediate parts are available on [GitHub](https://github.com/SAP/cloud-weatherapp).
 
 
 The constituent parts of this tutorial series cover the following:

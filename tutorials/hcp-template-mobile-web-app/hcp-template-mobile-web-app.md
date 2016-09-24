@@ -73,7 +73,7 @@ You will be setting a few configurations, then filling out a few forms in this s
 
     ![Using the SAP Web IDE service pulldown menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_12.png)
 
-13. Click the **run** (right arrow) button (or just press the tab key on your keyboard to shift focus) to test the connection. If the connection is successful, the Collections (**Categories**, **CustomerDemographics**, etc.) of the Northwind OData Service will be displayed on the right side. This demonstrates that your destination is working properly. Click **Next** to advance to the *Template Customization* page.
+13. Click the **run** (right arrow) button (or just press the tab key on your keyboard to shift focus) to test the connection. If the connection is successful, the Collections (**`Categories`**, **`CustomerDemographics`**, etc.) of the Northwind OData Service will be displayed on the right side. This demonstrates that your destination is working properly. Click **Next** to advance to the *Template Customization* page.
 
     ![Entering the remaining portion of an OData URL](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_13.png)
 

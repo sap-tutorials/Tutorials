@@ -250,4 +250,3 @@ The `feature` indicates that you want to update the highways. The `element` indi
 
 ## Next Steps
  - [Translate your app into multiple languages](http://go.sap.com/developer/tutorials/teched-2016-8.html)
- 

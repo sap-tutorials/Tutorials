@@ -17,7 +17,7 @@ tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topi
 
 ## Details
 ### You will learn  
-Now that you have data stored in the system its time to display that data within an application. To do that you need to create a new application that can interface with data service and display the data our device has been generating. What you will find next are the steps necessary to do just that. You will need your Eclipse environment setup, basic knowledge in using Eclipse as well as Github set up and some basic Java programming skills. It will also assume that you have already connected your Eclipse environment to your HCP Trial account.
+Now that you have data stored in the system its time to display that data within an application. To do that you need to create a new application that can interface with data service and display the data our device has been generating. What you will find next are the steps necessary to do just that. You will need your Eclipse environment setup, basic knowledge in using Eclipse as well as GitHub set up and some basic Java programming skills. It will also assume that you have already connected your Eclipse environment to your HCP Trial account.
 For more information on that please [see tutorial](https://hcp.sap.com/developers/TutorialCatalog/jav100_01_java_setup_eclipse.html)
 
 

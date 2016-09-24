@@ -1,6 +1,6 @@
 ---
-title: Creating a Github organization and adding collaborators
-description: Part 1 of 6, Collaborative Development Using Github and SAP Web IDE
+title: Creating a GitHub organization and adding collaborators
+description: Part 1 of 6, Collaborative Development Using GitHub and SAP Web IDE
 tags: [ tutorial>beginner, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-hana-cloud-platform ]
 
 ---
@@ -9,18 +9,18 @@ tags: [ tutorial>beginner, topic>github, topic>cloud, products>sap-hana, product
  - **Proficiency:** Beginner
 
 ## Next Steps
- - [Create a Git repository within the Github Organization](http://go.sap.com/developer/tutorials/webide-github-create-git-repo.html)
+ - [Create a Git repository within the GitHub Organization](http://go.sap.com/developer/tutorials/webide-github-create-git-repo.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you'll learn how to create an organization in Github and add collaborators. 
+In this tutorial, you'll learn how to create an organization in GitHub and add collaborators. 
 
 ### Time to Complete
 **5 Min**.
 
 ---
 
-1. Go to [Github](https://github.com)
+1. Go to [GitHub](https://github.com)
 
 2. Click on **Sign In**, enter your account credentials and click on **Sign in**.
 
@@ -33,7 +33,7 @@ In this tutorial, you'll learn how to create an organization in Github and add c
     ![Create New Organization](p1_4.png)
   
 5. 
-    a. Invite collaborators to the organization by entering their email id/Github username. Do ensure the collaborator has a Github account else the person will not be added as a collaborator. Click on **Finish** once done.
+    a. Invite collaborators to the organization by entering their email id/GitHub username. Do ensure the collaborator has a GitHub account else the person will not be added as a collaborator. Click on **Finish** once done.
     
     ![Search for collaborators](p1_5a.png)
 
@@ -45,7 +45,7 @@ In this tutorial, you'll learn how to create an organization in Github and add c
  
     ![Invite to organization](p1_5c.png)
 
-    d. And enter their Github username or email.
+    d. And enter their GitHub username or email.
 
     ![enter github username](p1_5d.png)
 
