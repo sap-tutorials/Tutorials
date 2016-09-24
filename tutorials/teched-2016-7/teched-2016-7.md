@@ -58,7 +58,7 @@ After the destination is saved, you can click the Check Connection button to tes
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Update the neo-app.json)]
-You will need to _re-open_ WebIDE for this step. In HCP Cockpit, go to Services and then WebIDE. In the WebIDE overview, click **Open SAP Web IDE**.
+You will need to _re-open_ Web IDE for this step. In HCP Cockpit, go to Services and then Web IDE. In the Web IDE overview, click **Open SAP Web IDE**.
 
 You will need to add the Google Maps  destination as a route available for your application by adding it to the `neo-app.json` file located in the `te2016` folder.
 

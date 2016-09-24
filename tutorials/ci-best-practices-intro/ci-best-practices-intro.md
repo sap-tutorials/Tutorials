@@ -33,7 +33,7 @@ An efficient software development process is vital for success in building busin
 
 This guide discusses some basic principles for software development that are derived from the process definitions for Continuous Integration (CI) and Continuous Delivery (CD). We provide best practices to support establishing your application development processes especially for SAP HANA Cloud Platform (SAP HCP) but also for other SAP technologies.
 
-Our customers have requested in-depth guidance for an end-to-end CI process. SAP offers several tools to address single aspects, such as the WebIDE in HCP. The goal of this guide is to provide a "big picture" on CI or CD processes and how to give showcases how to set them up using widely adopted complementary tools. The choice of tools should be considered as examples. Other tools fulfilling the same purpose will work as well.
+Our customers have requested in-depth guidance for an end-to-end CI process. SAP offers several tools to address single aspects, such as the SAP Web IDE in HCP. The goal of this guide is to provide a "big picture" on CI or CD processes and how to give showcases how to set them up using widely adopted complementary tools. The choice of tools should be considered as examples. Other tools fulfilling the same purpose will work as well.
 
 We will take a look at the most important SAP technologies and describe how to use existing tools to set up a CI process that fits the individual needs of your development project, your requirements, and your environment.
 

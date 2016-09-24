@@ -20,7 +20,7 @@ In this tutorial you will learn how to add a basic HTML page to a Java app.
 
 ---
 
-1. Navigate to the **webapp** node in the Project Explorer and create a new HTML page by selecting the respective context menu entry: **New > HTML File**.
+1. Navigate to the **`webapp`** node in the Project Explorer and create a new HTML page by selecting the respective context menu entry: **New > HTML File**.
 
     Choose the name `index.html` and click on **Finish**.
 

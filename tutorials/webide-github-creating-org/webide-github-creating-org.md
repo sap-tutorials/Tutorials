@@ -20,7 +20,7 @@ In this tutorial, you'll learn how to create an organization in Github and add c
 
 ---
 
-1. Go to [Github.com](https://github.com)
+1. Go to [Github](https://github.com)
 
 2. Click on **Sign In**, enter your account credentials and click on **Sign in**.
 

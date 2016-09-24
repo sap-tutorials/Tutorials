@@ -20,7 +20,7 @@ In this tutorial, you'll learn how to create a Git repository within a Github or
 
 ---
 
-1. Go to [Github.com](https://github.com) and login with your account credentials.
+1. Go to [Github](https://github.com) and login with your account credentials.
 
 2. Switch to the Organization context by clicking on the **Switch dashboard context** drop-down and click on the Organization.
 
