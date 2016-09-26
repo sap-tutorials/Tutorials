@@ -92,7 +92,7 @@ Name     | te2016
 And the following fields:
 
 Position    | Name        | Type
-:------------- | :------------- | :-------------
+:------------- | :-------------
 1           | timestamp   | long
 2           | temperature | double
 3           | humidity    | double
