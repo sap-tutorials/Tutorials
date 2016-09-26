@@ -18,6 +18,8 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-cloud-pl
 
 This tutorial will take you through the steps at a rapid pace, if you'd like more details please contact one of our support staff.
 
+If you have an interest in the world of IoT this first tutorial will help you get started by giving you the basics necessary for connecting any device or sensor that you decide to use. In this tutorial we have decided to use a Tessel 2 device, however you could just as easily use a Raspberry Pi, Arduino, or any number of other `micro-controller` devices available on the market today.
+
 ### Time to Complete
 **20 Min**.
 
@@ -34,7 +36,7 @@ The first step you need is to connect to the [SAP HANA Cloud Platform](https://a
 
 [ACCORDION-BEGIN [Step 2: ](Enable IoT Services)]
 
-Now you will need to select "Services" in the left column menu, scroll down and select the "Internet of Things (IoT)" services and ensure they are enabled.
+Now you will need to select "Services" in the left column menu, scroll down and select the "Internet of Things (IoT)" services and ensure they are enabled. 
 
 ![Services](2.png)
 
@@ -60,7 +62,7 @@ Enter in your information in the fields, where your account ID is your p-number 
 
 [ACCORDION-BEGIN [Step 4: ](Configure the IoT MMS)]
 
-Once `iotmms` Java application is deployed (created), you need to do data binding and authorization for users who should use it.
+Once `iotmms` Java application is deployed (created), you need to do data binding and authorization for users who should use it. The data binding allow the data you are sending to the system to be stored for access later and by adding your user ID you are able to access that data.
 
 Return to the HCP Cockpit view and click on **Java Applications** in the left navigation bar. You will see the new `iotmms` application you just deployed. Click on the `iotmms` link to display the **IoT MMS dashboard**.
 
@@ -85,7 +87,7 @@ Click on the Roles link in the left navigation bar. Select the **IoT-MMS-User** 
 
 ![Authorizations](p6_8.png)
 
-Then under **Individual Users**, click **Assign** and enter your HCP user ID (e.g. your p-number without the word “trial” on the end).
+Then under **Individual Users**, click **Assign** and enter your HCP user ID (e.g. your p-number ***without*** the word “trial” on the end).
 
 ![Assign Role](p6_9.png)
 
@@ -100,7 +102,7 @@ From here you will need to "Go to Service"
 
 [ACCORDION-BEGIN [Step 6: ](Create a new Message Type)]
 
-5. Now that your version is up to date you will need to go to "Message Type" and create a new message type.
+5. Now that your version is up to date you will need to go to "Message Type" and create a new message type. The "Message Type" defines the table to hold your data that you are collecting. Pay close attention to your field names, both in spelling, case sensitive and type as you will not be able to alter these after creation.
 
  Field    | Value
  :------- | :-----------------
@@ -118,7 +120,7 @@ And the following fields:
 
 ![Create Message Type](8.png)
 
-Please note down the created message type id displayed here as we will be using it later.
+Please note down the created message type id displayed here as you will be using it later.
 
 ![Message Type ID](9.png)
 
@@ -155,11 +157,11 @@ Device Type      | `tessel2016`
 
 ![Message Types](11.png)
 
-Be sure to save this token that is generated you will need it later.
+Be sure to save this token that is generated you will need it later. If you lose it you will need to generate a new one.
 
 ![Message Types](12.png)
 
-Please note down the created device id displayed here as we will be using it later.
+Please note down the created device id displayed here as you will be using it later.
 
 ![Message Types](12-1.png)
 
@@ -170,14 +172,16 @@ Please note down the created device id displayed here as we will be using it lat
 
 Your device is the physical Tessel device next to you.
 
+![Tessel 2](device.jpg)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Download the JavaScript file)]
+[ACCORDION-BEGIN [Step 10: ](Copy and Modify the JavaScript file)]
 
 With these steps completed you are now ready to modify the JavaScript code we have prepared for the device and deploy and execute it.
 
-If you are with us at TechEd in the `AppSpace`, the file is already available in the following directory: `C:\teched2016\te16.js`.
+If you are with us at TechEd in the `AppSpace`, the file is already available in the following directory: `C:\teched2016\te16 - Original.js`. Please make a copy of the file for your own use `C:\teched2016\te16.js` and the convenience of the next attendee.
 
 If you are doing this on your own machine, you can download the file [`te16_js.txt`](te16_js.txt), and rename it to `te16.js` on your machine.
 
@@ -195,7 +199,6 @@ var hostIoT = 'iotmms<HCP Account User ID>trial.hanatrial.ondemand.com';
 var authStrIoT = 'Bearer <generated token from step 8>';
 var deviceId = '<generated device id from step 8>';
 var messageTypeID = '<generated message type id from step 6>';
-
 ```
 
 You will modify the `hostIoT` line to add your own HCP Account User ID which starts with either an `S` or a `P`.
@@ -221,14 +224,14 @@ Once you have saved your file you will deploy and execute it from the command li
 
 [ACCORDION-BEGIN [Step 13: ](Verify data acquisition)]
 
-Provided your JavaScript file was modified properly, the correct items your output should be something like the following.
+Provided your JavaScript file was modified properly with the correct items your output should be something like the following.
 
 ![Execution](14.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](See your data in SAP HANA Cloud Platform)]
+[ACCORDION-BEGIN [Step 14: ](See your data in SAP HANA Cloud Platform)]
 
 If you now go back to the IoT Services in HCP you can see those newly created entries.
 
