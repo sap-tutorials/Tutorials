@@ -26,7 +26,7 @@ In this tutorial you will implement a simple domain model and implement the corr
 
     ![Adding a Java Class](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-1.png)
 
-2. Replace the contents of the `BaseObject.java` file with [this code from Github](https://raw.githubusercontent.com/SAP/cloud-weatherapp/6b77dcac5a8de14ea2326fa770f941e08c5d8419/src/main/java/com/sap/hana/cloud/samples/weatherapp/model/BaseObject.java) and save your changes.
+2. Replace the contents of the `BaseObject.java` file with [this code from GitHub](https://raw.githubusercontent.com/SAP/cloud-weatherapp/6b77dcac5a8de14ea2326fa770f941e08c5d8419/src/main/java/com/sap/hana/cloud/samples/weatherapp/model/BaseObject.java) and save your changes.
 
 3. Next, create another Java class (`FavoriteCity.java`) using the same procedure:
 
@@ -35,7 +35,7 @@ In this tutorial you will implement a simple domain model and implement the corr
 
     ![Specifying the package and class name](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-3.png)
 
-4. Replace the contents of the `FavoriteCity.java` file with [this code from Github](https://raw.githubusercontent.com/SAP/cloud-weatherapp/6b77dcac5a8de14ea2326fa770f941e08c5d8419/src/main/java/com/sap/hana/cloud/samples/weatherapp/model/FavoriteCity.java) and save your changes.
+4. Replace the contents of the `FavoriteCity.java` file with [this code from GitHub](https://raw.githubusercontent.com/SAP/cloud-weatherapp/6b77dcac5a8de14ea2326fa770f941e08c5d8419/src/main/java/com/sap/hana/cloud/samples/weatherapp/model/FavoriteCity.java) and save your changes.
 
 5. Next, we need to create a configuration file for our persistence layer. By Maven conventions, these non-source code artifacts should be located in a separate source code folder called: `src/main/resources`. Hence, let’s create that source folder via the corresponding context menu entry on the **Java Resources** node in the Project Explorer: **New > Source Folder**. Provide the following information:
 
@@ -138,7 +138,7 @@ In this tutorial you will implement a simple domain model and implement the corr
 
     ![Adding a new CRUD service](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-11.png)
 
-12. Replace the contents of the `FavoriteCityService.java` file with [this code from Github](https://raw.githubusercontent.com/SAP/cloud-weatherapp/0988620f000075011dd3eb29c7155fae523647d8/src/main/java/com/sap/hana/cloud/samples/weatherapp/api/FavoriteCityService.java) and save your changes.
+12. Replace the contents of the `FavoriteCityService.java` file with [this code from GitHub](https://raw.githubusercontent.com/SAP/cloud-weatherapp/0988620f000075011dd3eb29c7155fae523647d8/src/main/java/com/sap/hana/cloud/samples/weatherapp/api/FavoriteCityService.java) and save your changes.
 
 13. To register our RESTful service implementation in the `web.xml` configuration file, add the fully qualified classname of our `FavoriteCityService` class to the *comma-separated* list of `jaxrs.serviceClasses`. See the snippet below for where to enter the fully qualified classname inside the `<param-value>` element (don't forget the comma at the end of the `AuthenticationService` line).
 

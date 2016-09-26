@@ -102,17 +102,17 @@ From here you will need to "Go to Service"
 
 5. Now that your version is up to date you will need to go to "Message Type" and create a new message type.
 
-Field    | Value
----------|-------------------
-Name     | te2016
+ Field    | Value
+ :------- | :-----------------
+ Name     | `te2016`
 
 And the following fields:
 
-Position    | Name        | Type
-------------|-------------|--------
-1           | timestamp   | long
-2           | temperature | double
-3           | humidity    | double
+ Position    | Name          | Type
+ :---------- | :------------ | :------
+ 1           | `timestamp`   | long
+ 2           | `temperature` | double
+ 3           | `humidity`    | double
 
 ![Message Types](5.png)
 
@@ -129,11 +129,11 @@ Please note down the created message type id displayed here as we will be using 
 
 Once the message type is created you will need to create a new "Device Type" and assign the "Message Type" to it.
 
-Field           | Value
-----------------|------------
-Name            | tessel2016
-Message Type    | te2016
-Direction       | From Device
+Field            | Value
+:--------------- | :----------------
+Name             | `tessel2016`
+Message Type     | `te2016`
+Direction        | `From Device`
 
 ![Device Type](6.png)
 
@@ -146,10 +146,10 @@ Direction       | From Device
 
 Now that you have your message and device types created you will need to add your device.
 
-Field           | Value        
-----------------|------------------
-Name            | te_tessel_16
-Device Type     | tessel2016
+Field            | Value        
+:--------------- | :----------------
+Name             | `te_tessel_16`
+Device Type      | `tessel2016`
 
 ![Devices](7.png)
 
@@ -190,7 +190,7 @@ Modifying the code provided in the file now called `te16.js`, you will need to a
 
 The lines in particular you will need to modify are the following
 
-```
+```javascript
 var hostIoT = 'iotmms<HCP Account User ID>trial.hanatrial.ondemand.com';
 var authStrIoT = 'Bearer <generated token from step 8>';
 var deviceId = '<generated device id from step 8>';
@@ -200,7 +200,7 @@ var messageTypeID = '<generated message type id from step 6>';
 
 You will modify the `hostIoT` line to add your own HCP Account User ID which starts with either an `S` or a `P`.
 
- - The `authStrIoT` line contains the token you received in the popup window after creating your device
+ - The `authStrIoT` line contains the token you received in the pop-up window after creating your device
  - The `deviceId` is the ID of the device you created, not to be confused with the `token`
  - The `messageTypeID` is the ID of the message type you created
 

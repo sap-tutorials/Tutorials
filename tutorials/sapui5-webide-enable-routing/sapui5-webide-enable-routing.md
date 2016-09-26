@@ -22,13 +22,14 @@ In order to enable navigating from one view to another, our app needs to be enab
 >  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 
-You have to add a routing configuration to the descriptor file and initialize the router instance within the componentdefinition (`webapp/Component.js`).
+You have to add a routing configuration to the descriptor file and initialize the router instance within the component
+definition (`webapp/Component.js`).
 
 1.  Create a new SAPUI5 View called `App`.  
 
-    To create a new SAPUI5 View, right click in the **webapp** folder, and then choose **New** --> **SAPUI5 View**.  Enter the file name `App.view.xml`.
+    To create a new SAPUI5 View, right click in the **`webapp`** folder, and then choose **New > SAPUI5 View**.  Enter the file name `App.view.xml`.
     
-    > **IMPORTANT!** Be sure to right click in the **webapp** folder.  If you choose the wrong folder, the files will be created in the wrong place.  If this happens, delete the folders and start over.
+    > **IMPORTANT!** Be sure to right click in the **`webapp`** folder.  If you choose the wrong folder, the files will be created in the wrong place.  If this happens, delete the folders and start over.
     
     ![right click on webapp and select New - SAPUI5 View](1.png)
     
@@ -43,7 +44,8 @@ You have to add a routing configuration to the descriptor file and initialize th
     > Don't forget to save your files!
 
     ```xml
-	   <App id="app"/>    ```
+	   <App id="app"/>
+    ```
 
     ![Add code to App.view.xml](2.png)
 
@@ -112,7 +114,8 @@ You have to add a routing configuration to the descriptor file and initialize th
 14. Open the `webapp/Component.js` file, and add the following to the `init:` section:
 
     ```javascript
-    // create the views based on the url/hash	this.getRouter().initialize();
+    // create the views based on the url/hash
+	this.getRouter().initialize();
 	```
     
     ![Initialize routing](14.png)
@@ -120,8 +123,16 @@ You have to add a routing configuration to the descriptor file and initialize th
 15. Open the `webapp/css/style.css` file, and change the *entire* file to the following:
 
     ```css
-    .spacerTop {	 	margin-top: 2rem;	 }	 .sap-tablet .sapMDialog,	 .sap-desktop .sapMDialog {
-		min-width: 18rem;	 }	 .sapMMessageDialog {		width: 18rem;	 }
+    .spacerTop {
+	 	margin-top: 2rem;
+	 }
+	 .sap-tablet .sapMDialog,
+	 .sap-desktop .sapMDialog {
+		min-width: 18rem;
+	 }
+	 .sapMMessageDialog {
+		width: 18rem;
+	 }
 	```
 
     ![overwrite css file with new information](15.png)

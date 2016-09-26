@@ -35,21 +35,21 @@ Check if your machine has the recommended hardware to successfully install and r
 **RAM** - 16 GB RAM recommended.  
 **HDD** - 120 GB recommended.  
 **Cores** - 2 cores (4 recommended).  
-**Hardware `Virtualization`** - (Intel processors only) For Intel processors, `virtualization` is a BIOS setting known as either *Intel `Virtualization` Technology* or *Intel `VT`*. Go to [www.intel.com](http://www.intel.com/content/www/us/en/support/processors/000005486.html) to determine if your processor is capable of supporting `virtualization`. If `virtualization` is turned off on your `virtualization-capable` machine, consult documentation from your machine vendor on how to enable `virtualization` technology (or Intel `VT`) in the BIOS.
+**Hardware `Virtualization`** - (Intel processors only) For Intel processors, `virtualization` is a BIOS setting known as either *Intel `Virtualization` Technology* or *Intel `VT`*. Go to <http://www.intel.com/content/www/us/en/support/processors/000005486.html> to determine if your processor is capable of supporting `virtualization`. If `virtualization` is turned off on your `virtualization-capable` machine, consult documentation from your machine vendor on how to enable `virtualization` technology (or Intel `VT`) in the BIOS.
 
 #### Install a `Hypervisor`
 Install a supported `hypervisor` on your machine if you don't have one already. `Hypervisors` are software products used for creating and running virtual machines.
 SAP HANA, express edition has been tested on these `hypervisors`:
-* [VMware Player 7.1](https://www.vmware.com/)
-* [VMware Workstation Pro 12.1](https://www.vmware.com/)
-* [VMware Fusion or VMware Fusion Pro 8.x](https://www.vmware.com/)
+* [`VMware Player 7.1`](https://www.vmware.com/)
+* [`VMware Workstation Pro 12.1`](https://www.vmware.com/)
+* [`VMware Fusion or VMware Fusion Pro 8.x`](https://www.vmware.com/)
 
-For the purposes of this tutorial, we're using `VMware` Player.
+For the purposes of this tutorial, you will use the VMware Player.
 
-#### Install `VMWare` Player
-`VMware` Player 7.1 is a `hypervisor` compatible with SAP HANA express edition. You can install any supported `hypervisor`, but examples in this tutorial use `VMWare` Player 7.1.
+#### Install VMware Player
+VMware Player 7.1 is a `hypervisor` compatible with SAP HANA express edition. You can install any supported `hypervisor`, but examples in this tutorial use VMware Player 7.1.
 
-1. Download `VMware` Player from <www.vmware.com> and run the installer.
+1. Download VMware Player from <www.vmware.com> and run the installer.
 2. Ensure you're downloading the correct version for your machine.
 3. Register when prompted and follow the setup instructions.
 
@@ -92,7 +92,7 @@ Register and then use the Download Manager to download a server-only OVA, or a s
 ### Import the OVA into `VMWare` Player
 Import the downloaded OVA file into your `hypervisor` to begin using SAP HANA, express edition.
 
-1. Start `VMware` Player 7.1 and select *Open a Virtual Machine*.  
+1. Start VMware Player 7.1 and select *Open a Virtual Machine*.  
 
     ![VMWare Player](hxe_vmware_import.PNG)
 

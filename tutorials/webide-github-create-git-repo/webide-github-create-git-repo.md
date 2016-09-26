@@ -1,26 +1,26 @@
 ---
-title: Creating a Git repository within a Github organization
-description: Part 2 of 6, Collaborative Development Using Github and SAP Web IDE
+title: Creating a Git repository within a GitHub organization
+description: Part 2 of 6, Collaborative Development Using GitHub and SAP Web IDE
 tags: [ tutorial>beginner, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:** 
-  - [Creating a Github organization and adding collaborators](http://go.sap.com/developer/tutorials/webide-github-creating-org.html)
+  - [Creating a GitHub organization and adding collaborators](http://go.sap.com/developer/tutorials/webide-github-creating-org.html)
 
 ## Next Steps
- - [Creating project in SAP Web IDE and importing it into Github](http://go.sap.com/developer/tutorials/webide-github-import-project.html)
+ - [Creating project in SAP Web IDE and importing it into GitHub](http://go.sap.com/developer/tutorials/webide-github-import-project.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you'll learn how to create a Git repository within a Github organization. 
+In this tutorial, you'll learn how to create a Git repository within a GitHub organization. 
 
 ### Time to Complete
 **5 Min**.
 
 ---
 
-1. Go to [Github.com](https://github.com) and login with your account credentials.
+1. Go to [GitHub](https://github.com) and login with your account credentials.
 
 2. Switch to the Organization context by clicking on the **Switch dashboard context** drop-down and click on the Organization.
 
@@ -45,4 +45,4 @@ In this tutorial, you'll learn how to create a Git repository within a Github or
 6. Your Git repository is ready!
 
 ## Next Steps
- - [Creating project in SAP Web IDE and importing it into Github](http://go.sap.com/developer/tutorials/webide-github-import-project.html)
+ - [Creating project in SAP Web IDE and importing it into GitHub](http://go.sap.com/developer/tutorials/webide-github-import-project.html)

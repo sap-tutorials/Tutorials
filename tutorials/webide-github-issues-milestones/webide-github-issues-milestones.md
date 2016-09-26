@@ -1,15 +1,15 @@
 ---
 title: Creating issues, setting milestones and assigning issues to collaborators
-description: Part 4 of 6, Collaborative Development Using Github and SAP Web IDE
+description: Part 4 of 6, Collaborative Development Using GitHub and SAP Web IDE
 tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:** 
-  - [Creating project in SAP Web IDE and importing it into Github](http://go.sap.com/developer/tutorials/webide-github-import-project.html)
+  - [Creating project in SAP Web IDE and importing it into GitHub](http://go.sap.com/developer/tutorials/webide-github-import-project.html)
 
 ## Next Steps
- - [Creating branches in Github, switching branches and updating application in different branch in SAP Web IDE](http://go.sap.com/developer/tutorials/webide-github-branching.html)
+ - [Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE](http://go.sap.com/developer/tutorials/webide-github-branching.html)
 
 ## Details
 ### You will learn  
@@ -21,11 +21,11 @@ In this tutorial, you'll learn how to create issues, set milestones for delivery
 
 ---
 
-1. Go to your Github Organization repository.
+1. Go to your GitHub Organization repository.
 
-2. Click on the **Issues** tab to open Github Issues. Click on the **New Issue** button to create a new issue.
+2. Click on the **Issues** tab to open GitHub Issues. Click on the **New Issue** button to create a new issue.
 
-    ![Github issues](p4_2.png)
+    ![GitHub issues](p4_2.png)
 
 3. Enter the details about the change required. 
 
@@ -33,7 +33,7 @@ In this tutorial, you'll learn how to create issues, set milestones for delivery
 
     b. Click on the **Labels** and assign it as **Enhancement**. Labels can be used to categorize issues into bug/enhancements and custom labels even. 
 
-    ![Github issues](p4_3b.png)
+    ![GitHub issues](p4_3b.png)
 
     c. You can assign a specific collaborator to work on a issue. To do this, click on **Assignees** and select the collaborator who will work on this.
 
@@ -51,7 +51,7 @@ In this tutorial, you'll learn how to create issues, set milestones for delivery
 
 5. You can assign deadlines for milestones. 
 
-    a. To do this, click on **Issues** tab of your Github organization repository. Then click on the **Milestones** tab.
+    a. To do this, click on **Issues** tab of your GitHub organization repository. Then click on the **Milestones** tab.
 
     ![Milestone tab](p4_5a.png)
     
@@ -69,4 +69,4 @@ In this tutorial, you'll learn how to create issues, set milestones for delivery
     ![Milestones status](p4_6.png)
 
 ## Next Steps
- - [Creating branches in Github, switching branches and updating application in different branch in SAP Web IDE](http://go.sap.com/developer/tutorials/webide-github-branching.html)
+ - [Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE](http://go.sap.com/developer/tutorials/webide-github-branching.html)

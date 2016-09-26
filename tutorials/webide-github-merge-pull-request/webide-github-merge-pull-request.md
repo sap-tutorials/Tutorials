@@ -1,12 +1,12 @@
 ---
-title: Merging branches back into master branch in Github using Pull Requests
-description: Part 6 of 6, Collaborative Development Using Github and SAP Web IDE
+title: Merging branches back into master branch in GitHub using Pull Requests
+description: Part 6 of 6, Collaborative Development Using GitHub and SAP Web IDE
 tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:** 
-     - [Creating branches in Github, switching branches and updating application in different branch in SAP Web IDE](http://go.sap.com/developer/tutorials/webide-github-branching.html)
+     - [Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE](http://go.sap.com/developer/tutorials/webide-github-branching.html)
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
@@ -21,7 +21,7 @@ In this tutorial, you'll learn how to create and send pull requests so that the 
 
 ---
 
-1. Open the Organization repository on Github and switch to the branch which you want to merge into master.
+1. Open the Organization repository on GitHub and switch to the branch which you want to merge into master.
 
 2. Click on the **New Pull Request** button to create a Pull Request.
 
@@ -45,7 +45,7 @@ In this tutorial, you'll learn how to create and send pull requests so that the 
 
 7. You will notice that the issues are automatically closed as well and the milestone is complete. 
 
-    > Github will automatically close an issue if your commit message includes [certain keywords](https://help.github.com/articles/closing-issues-via-commit-messages/) once this change is merged into the master branch.
+    > GitHub will automatically close an issue if your commit message includes [certain keywords](https://help.github.com/articles/closing-issues-via-commit-messages/) once this change is merged into the master branch.
 
     ![Milestone complete](p6_7.png)
 
@@ -55,7 +55,7 @@ In this tutorial, you'll learn how to create and send pull requests so that the 
 
     ![Switch to master](p6_8a.png)
 
-    b. Click on the **Pull** button to pull in the changes. Enter your Github account credentials and press **OK** button. 
+    b. Click on the **Pull** button to pull in the changes. Enter your GitHub account credentials and press **OK** button. 
 
     ![Switch to master](p6_8b.png)
 

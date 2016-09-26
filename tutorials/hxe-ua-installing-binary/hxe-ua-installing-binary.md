@@ -37,9 +37,10 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 ### Download the Installer Files
 
-1. Go directly to the registration page at [sap.com/sap-hana-express](http://sap.com/sap-hana-express).   
+1. Go directly to the registration page at <http://sap.com/sap-hana-express>.  
+
     **Or**  
-    Go to the SAP HANA, express edition launch page at [go.sap.com/developer/topics/sap-hana-express.html](http://go.sap.com/developer/topics/sap-hana-express.html) and click the **Register and download SAP HANA, express edition download manager** link.  
+    Go to the SAP HANA, express edition launch page at <http://go.sap.com/developer/topics/sap-hana-express.html> and click the **Register and download SAP HANA, express edition download manager** link.  
 
     The registration page opens.
 
@@ -49,10 +50,13 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
     >If you have an SAP login, click the Login icon at the top of the page to populate the registration form automatically.
 
     ![Registration Page](HXE_register.PNG)
+
     The **Registration Success** page displays. (You will also receive an email indicating successful registration.)
 
 3. On the **Registration Success** page, click the **Download** button.
+
     ![Registration Success page](Other_HXE_register_success.PNG)  
+    
     The SAP HANA, express edition Download Manager opens.
 
     >**Note:**
