@@ -38,7 +38,7 @@ to support establishing your application development processes especially for SA
 Platform (SAP HCP) but also for other SAP technologies.
 
 Our customers have requested in-depth guidance for an end-to-end CI process. SAP offers several tools to address single aspects,
-such as the WebIDE in HCP.
+such as the SAP Web IDE in SAP HANA Cloud Platform.
 The goal of this guide is to provide a "big picture" on CI or CD processes and to give showcases how to set them
 up using widely adopted complementary tools. The choice of tools should be considered as examples.
 Other tools fulfilling the same purpose will work as well.
