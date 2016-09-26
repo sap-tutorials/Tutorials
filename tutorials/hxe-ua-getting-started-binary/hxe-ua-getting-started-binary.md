@@ -52,13 +52,13 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 * Confirm that your machine meets the system requirements for SAP HANA Tools, listed at [https://tools.hana.ondemand.com/#hanatools](https://tools.hana.ondemand.com/#hanatools)
 
 
-1. Download and install Eclipse Mars from [https://eclipse.org/downloads/](https://eclipse.org/downloads/), selecting one of the following packages:
+1. Download and install Eclipse Neon from [https://eclipse.org/downloads/](https://eclipse.org/downloads/), selecting one of the following packages:
   * Eclipse IDE for Java EE Developers
   * Eclipse IDE for Java Developers
 2. Open Eclipse and select a workspace.
 3. Install SAP HANA Tools:
   a. Select _Help > Install New Software_
-  b. In the **Work with** field, enter https://tools.hana.ondemand.com/mars and click Add.
+  b. In the **Work with** field, enter https://tools.hana.ondemand.com/neon and click Add.
   c. In the **Name** field, enter SAP HANA, express edition.
   d. Expand the **SAP HANA Tools** node.
   e. Select **SAP HANA Administrator (Developer Edition)**.
