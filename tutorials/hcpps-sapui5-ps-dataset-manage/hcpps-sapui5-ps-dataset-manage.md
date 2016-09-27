@@ -42,7 +42,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
     This fragment (which will be reused later) displays the list of registered dataset.
 
-    ```XML
+    ```xml
     <core:FragmentDefinition xmlns:core="sap.ui.core"
       xmlns="sap.m"
       xmlns:table="sap.ui.table">
@@ -90,7 +90,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
     When you select an entry, you will get the associated dataset description displayed.
     You will also be able to delete the registered dataset description.
 
-    ```XML
+    ```xml
     <mvc:View controllerName="demo.controller.dataset.DatasetManage"
       xmlns:html="http://www.w3.org/1999/xhtml"
       xmlns:mvc="sap.ui.core.mvc"
@@ -162,7 +162,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 1. Create a file named the `DatasetList.js` file in the `hcppredictiveservicesdemo\webapp\fragment\dataset` directory and add the following code.
 
     This JavaScript file will be used and extended whenever the `DatasetList` fragment is used. It includes the functions used to process the 'Press' events on the controls.
-    ```JavaScript
+    ```javascript
     sap.ui.define([
       "sap/ui/core/mvc/Controller",
       "sap/m/MessageToast"
@@ -245,7 +245,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
     The controller includes the functions used to process the 'Press' events on the controls added in the view and process the `AJAX` calls to the HCP predictive services.
    It 'extends' the `DataSetList` JavaScript file created earlier as our view uses the `DatasetList` fragment.
 
-    ```JavaScript
+    ```javascript
     sap.ui.define([
         "sap/ui/core/mvc/Controller",
         "sap/m/MessageToast",
@@ -311,7 +311,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
     Here we simply extend the main view.
 
-    ```XML
+    ```xml
     <mvc:View controllerName="demo.controller.demo"
       xmlns:html="http://www.w3.org/1999/xhtml"
       xmlns:mvc="sap.ui.core.mvc"

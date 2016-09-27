@@ -152,7 +152,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
     Open the `neo-app.json` file and update the file like this:
 
-    ```JSON
+    ```json
     {
       "welcomeFile": "/webapp/index.html",
       "routes": [

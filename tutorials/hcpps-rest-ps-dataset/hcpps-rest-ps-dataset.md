@@ -53,7 +53,7 @@ Token                               | Value
 
     Select the **Body** tab, enable the **raw** mode and select `JSON (application/json)` in the drop down, then add the following entries
 
-    ```JSON
+    ```json
     {
       "hanaURL":"DEMO/TIME_SERIES"
     }
@@ -69,7 +69,7 @@ Token                               | Value
 
     Now, we can use the `ID` value to reference the registered dataset with other HCP predictive services calls.
 
-    ```JSON
+    ```json
     {
       "ID": 1,
       "name": "TIME_SERIES",
