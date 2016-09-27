@@ -50,11 +50,11 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
     > Make sure you update the URL with your HCP Account identifier.
 
-    Property Name        | Value
-    -------------------- | --------------
-    WebIDEUsage          | `odata_xs`
-    WebIDEEnabled        | `true`
-    WebIDESystem         | `HCPOData`
+    Property Name          | Value
+    ---------------------- | --------------
+    `WebIDEUsage`          | `odata_xs`
+    `WebIDEEnabled`        | `true`
+    `WebIDESystem`         | `HCPOData`
 
     Click on **Save**
 
@@ -75,10 +75,10 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
     
     > Make sure you update the URL with your HCP Account identifier.
 
-    Property Name        | Value
-    -------------------- | --------------
-    WebIDEEnabled        | `true`
-    WebIDESystem         | `HCPps`
+    Property Name          | Value
+    ---------------------- | --------------
+    `WebIDEEnabled`        | `true`
+    `WebIDESystem`         | `HCPps`
 
     Click on **Save**
 
