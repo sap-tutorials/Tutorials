@@ -231,7 +231,7 @@ The input field is in the form, but it's not connected to anything.  Next, add i
 - [Bootstrap Forms](https://getbootstrap.com/css/#forms) - More details about forms
 - [Bootstrap alerts](https://getbootstrap.com/components/#alerts) - Adds an alert when a button is pressed
 
-#### JQuery tools
+#### jQuery tools
 
 - [`slideDown`](https://api.jquery.com/slidedown/) - slide the alert box down
 - [`slideUp`](https://api.jquery.com/slideup/) - how we scrolled the box back up after we are finished with it

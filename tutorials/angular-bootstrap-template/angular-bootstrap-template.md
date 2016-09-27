@@ -25,7 +25,7 @@ In the second tutorial, we will be setting up a template using [Bootstrap](https
 
 We will use Bootstrap for all of our web page layout.  
 
-We will also be adding in [JQuery](https://jquery.com/), a very popular web toolkit.  JQuery provides a number of great tools to help change web pages in JavaScript.  JQuery is required in order to use Bootstrap properly, so we will load it first.
+We will also be adding in [jQuery](https://jquery.com/), a very popular web toolkit.  jQuery provides a number of great tools to help change web pages in JavaScript.  jQuery is required in order to use Bootstrap properly, so we will load it first.
 
 ### Set up Bootstrap
 
@@ -34,15 +34,15 @@ Instead of downloading the Bootstrap files directly, we will use a set of HTML t
 1.  Open your `index.html` file.
 
 
-2.  First, we will need the JQuery toolkit.  Add the following line to your `index.html` file, between the two `<head>` tags:
+2.  First, we will need the jQuery toolkit.  Add the following line to your `index.html` file, between the two `<head>` tags:
 
     ```html
     <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     ```
     
-    ![Add JQuery template](1-2.png)
+    ![Add jQuery template](1-2.png)
 
-3.  Next, we will add the Bootstrap framework.  Add the following lines to your `index.html` file, under the previous JQuery line:
+3.  Next, we will add the Bootstrap framework.  Add the following lines to your `index.html` file, under the previous jQuery line:
 
     >**Don't forget to save your file!**
 
