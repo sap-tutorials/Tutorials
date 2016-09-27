@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Use the synchronous Forecast HCP predictive service from a SAPUI5 application
 description: You will extend your application with the use the synchronous mode from the "Forecast" HCP predictive service
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive, topic>sapui5 ]
+tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
@@ -42,7 +42,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
     This fragment will be used to display a form where the user can enter the parameters to run the "Forecast" service. As we will be reusing the same form for the asynchronous mode, it is a better practice to create it as a fragment.
 
-    ```XML
+    ```xml
     <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
       <form:SimpleForm editable="false" layout="ResponsiveGridLayout" class="editableForm">
         <form:content>
@@ -71,7 +71,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
     This fragment will be used to display the "Forecast" services results, including the prediction performance metrics.
 
-    ```XML
+    ```xml
     <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table">
       <!-- A table with the Data set details. It will be populated when the button is pressed-->
       <form:SimpleForm editable="false" layout="ResponsiveGridLayout" class="editableForm">
@@ -131,7 +131,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
     The view embeds the fragment created previously to display a form where the user can select the dataset to be used for the forecast call and additional service parameters.
 
-    ```XML
+    ```xml
     <mvc:View controllerName="demo.controller.forecast.ForecastSynchronous" xmlns:html="http://www.w3.org/1999/xhtml"
       xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form">
       <Panel expandable="true" expanded="false" headerText="Forecast with the HCP predictive services (Synchronous)" class="sapUiResponsiveMargin"
@@ -162,7 +162,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
     The controller includes the functions used to process the 'Press' events on the controls added in the view and process the `AJAX` calls to the HCP predictive services.
     It 'extends' the `DataSetList` JavaScript file created earlier as our view uses the `DatasetList` fragment.
 
-    ```JavaScript
+    ```javascript
     sap.ui.define([
       "sap/ui/core/mvc/Controller",
       "sap/m/MessageToast",
@@ -239,7 +239,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
     Here we simply extend the main view.
 
-    ```XML
+    ```xml
     <mvc:View controllerName="demo.controller.demo"
       xmlns:html="http://www.w3.org/1999/xhtml"
       xmlns:mvc="sap.ui.core.mvc"

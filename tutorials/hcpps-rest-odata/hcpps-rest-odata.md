@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Access your predictive demo data set using an OData services from a REST client
 description: Using a REST client, you will interact with an OData services and get access to your predictive demo data set
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive, topic>odata ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, topic>odata ]
 ---
 
 ## Prerequisites
@@ -55,7 +55,7 @@ Token                                | Value
 
 1. It will now display the list of OData services registered in the `timeseries.xsodata`
 
-    ```XML
+    ```xml
     <?xml version="1.0" encoding="utf-8" standalone="yes"?>
       <service xmlns:atom="http:/www.w3.org/2005/Atom"
         xmlns:app="http:/www.w3.org/2007/app"
@@ -79,7 +79,7 @@ Token                                | Value
 
     Click **Send**
 
-    ```XML
+    ```xml
     <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
     <edmx:Edmx Version="1.0" xmlns:edmx="http:/schemas.microsoft.com/ado/2007/06/edmx">
       <edmx:DataServices xmlns:m="http:/schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
