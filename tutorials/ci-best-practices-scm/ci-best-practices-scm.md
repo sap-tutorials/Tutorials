@@ -28,9 +28,7 @@ Note: This document is restricted to the description of component installation o
 
 The interface between local (single developer) and collaborative (team) development is the source code versioning tool together with a code review system. The source code versioning tool is as well the interface to any sequel step, most importantly, the build step in the overall CI process.
 
-There are many different possibilities to implement a source code versioning and review system. In this document, we show
-how to use Git as SCM tool and Gerrit as Git repository server and code review tool.
-These tools are very frequently used.
+There are many different possibilities to implement a source code versioning and review system. In this document, we show how to use Git as SCM tool and Gerrit as Git repository server and code review tool. These tools are very frequently used.
 
 ### Git/Gerrit
 
@@ -56,9 +54,7 @@ For installation of Git, see
 
 2. Create an OS user `gerrit`.
 
-3. Create a Gerrit installation directory. In this document, we call it `/data/gerrit`, but any other directory that follows the respective conventions
-    will work as well. The file partition of the directory must be large enough to store all the Gerrit data, especially the database.
-    The user `gerrit` must be the owner of the directory.
+3. Create a Gerrit installation directory. In this document, we call it `/data/gerrit`, but any other directory that follows the respective conventions will work as well. The file partition of the directory must be large enough to store all the Gerrit data, especially the database. The user `gerrit` must be the owner of the directory.
     
     ```
     mkdir -p /data/gerrit
