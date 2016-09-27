@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Install a REST client
 description: Install a REST client to be used to interact with the HCP predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 ---
 
 ## Prerequisites

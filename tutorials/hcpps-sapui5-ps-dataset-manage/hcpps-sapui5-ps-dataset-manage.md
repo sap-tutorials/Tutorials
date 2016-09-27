@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Manage your "Data Set" in the HCP predictive service from a SAPUI5 application
 description: You will extend your application with a list of all registered HCP predictive service "Data Set"
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive, topic>sapui5 ]
+tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites

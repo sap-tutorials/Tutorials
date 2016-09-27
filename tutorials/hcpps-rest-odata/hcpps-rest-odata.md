@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Access your predictive demo data set using an OData services from a REST client
 description: Using a REST client, you will interact with an OData services and get access to your predictive demo data set
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive, topic>odata ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, topic>odata ]
 ---
 
 ## Prerequisites

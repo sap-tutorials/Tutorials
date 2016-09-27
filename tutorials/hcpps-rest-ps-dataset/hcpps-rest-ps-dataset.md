@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Test the "Data Set" HCP predictive services using a REST client
 description: Using a REST client, you will test the "Data Set" HCP predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 ---
 
 ## Prerequisites

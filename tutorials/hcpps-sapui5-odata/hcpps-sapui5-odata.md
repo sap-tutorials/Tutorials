@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Visualize your predictive demo data set
 description: Using the configured destination for the OData service, you will extend your application to visualize the predictive demo dataset
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive, topic>sapui5, topic>odata ]
+tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, topic>sapui5, topic>odata ]
 ---
 
 ## Prerequisites

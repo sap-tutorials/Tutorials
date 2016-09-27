@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Configure a SAPUI5 application from the project template
 description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the OData service and the HCP predictive services
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive, topic>sapui5 ]
+tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
