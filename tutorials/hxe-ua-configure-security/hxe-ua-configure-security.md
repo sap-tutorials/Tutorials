@@ -1,7 +1,7 @@
 ---
 title: Configure SAP HANA, express edition Security
 description: Your SAP HANA, express edition installation has several preconfigured security settings. Before using SAP HANA, express edition, complete these security tasks.
-tags: [  tutorial>beginner, topic>HXE, products>sap-hana\,-express-edition ]
+tags: [  tutorial>beginner, topic>HXE, products>sap-hana,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -56,7 +56,7 @@ After confirmation, the properties page refreshes with your new license informat
 
     `hdbsql -u system -p <your password> -d SystemDB "SELECT HARDWARE_KEY FROM M_LICENSE"`
 
-3.	Copy or otherwise record the value returned for `HARDWARE_KEY`
+3.	Copy or otherwise record the value returned for `HARDWARE_KEY`.
 
 #### Order your license key
 1. Go to [SAP Sneak Preview License Key Request](http://sap.com/minisap) page and fill out all required information.
@@ -75,7 +75,11 @@ After confirmation, the properties page refreshes with your new license informat
 2. If you do not have an SCP client, please download and install one. There are several very good open source `scp` clients available for Windows, Mac and Linux. Copy the file from your hard disk to the `/usr/sap/HXE/home/license` directory.
 3. Issue the following command to install the license key.
 
-    `hdbsql -u system -p HANAhxe2 -d SystemDB -I '/usr/sap/HXE/home/license/HXE_License.txt'`
+    `hdbsql -u system -p <password> -n localhost:30013 -m -i <instance number> <<EOF`  
+    `SET SYSTEM LICENSE 'cat /usr/sap/HXE/home/license/HXE.txt'’;`  
+    `EOF`
+
+    **Note**: Make sure the license file string is surrounded by single quotation marks. After the license file string closing single quotation mark, make sure you include the back-tick and semicolon. For `<password>` and `<instance number>` etc., input values matching your SAP HANA, express edition settings.
 
 4.	Confirm that the license key was installed by issuing the following command.
 
@@ -85,7 +89,7 @@ After confirmation, the properties page refreshes with your new license informat
 5. Proceed to **Change the SSFS Master Keys**.
 
 
-## <a name="ssfsKeys">Change the SSFS Master Keys</a>
+## Change the SSFS Master Keys
 The secure stores in the file system (SSFS) used by SAP HANA are protected by unique master keys, generated during installation or update. If you installed HXE from an OVA, then it shares master keys with other HXE systems. We recommend that you change the master keys immediately after setup to ensure that your master keys are not known outside your organization. For more information on changing the master keys, see the [Change the SSFS Master Keys](https://help.sap.com/saphelp_hanaplatform/helpdata/en/58/1593c48739431caaccc3d2ef55c23f/frameset.htm) topic in the *SAP HANA Administration Guide*.
 
 1. Log on to the HANA system as `hxeadm` and shut the system down using the `sapcontrol` program:
