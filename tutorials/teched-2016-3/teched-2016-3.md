@@ -21,7 +21,9 @@ You will create a destination (a server end-point where HCP can send or receive 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Log into your HCP account)]
-Log into [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com/) and click on your username to open the cockpit view.
+Log into [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+
+Make sure you are using the **Europe (Trial)** landscape, and click on your account name as highlighted on the screenshot to open the cockpit view.
 
 ![Click on user name](te-2016-3-01.png)
 
@@ -39,7 +41,7 @@ In the left-hand navigation bar, click on **Connectivity**, then **Destinations*
 
 [ACCORDION-BEGIN [Step 3: ](Enter Destination details)]
 
-Enter the field values AND the **Additional Properties** below then click **Save**. Leave the **Use default JDK truststore** checked.
+Enter the field values as listed below:
 
 Field Name     | Value
 :------------- | :-------------
@@ -52,14 +54,17 @@ Authentication | `BasicAuthentication`
 User           | `<Your ES4 Gateway user> (e.g. p123456789)`
 Password       | `<Your ES4 Gateway password>`
 
-Add three Additional Properties fields by clicking on the **New Property** button once for each property.
+Leave the **Use default JDK truststore** checked.
 
+And add the following **Additional Properties** fields by clicking on the **New Property** button once for each property.
 
 Field Name       | Value
 :--------------- | :-------------
 `WebIDEEnabled`  | `true`
 `WebIDESystem`   | `gateway`
 `WebIDEUsage`    | `odata_gen`
+
+Then click **Save**.
 
 ![creating destination](te-2016-3-03.png)
 
@@ -68,7 +73,9 @@ Field Name       | Value
 
 [ACCORDION-BEGIN [Step 4: ](Test the new Destinations)]
 
-After the destination is saved, you can click the Check Connection button to test that SAP Gateway is reachable. 
+After the destination is saved, you can click the **Check Connection** button to test that SAP Gateway is reachable.
+
+Note that the **Check Connection** operation is not validating your user credentials but only the end-point availability.
 
 ![Check connection](te-2016-3-04.png)
 

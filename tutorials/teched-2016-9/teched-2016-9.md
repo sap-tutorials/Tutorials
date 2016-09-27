@@ -25,7 +25,9 @@ This tutorial will take you through the steps at a rapid pace, if you'd like mor
 
 [ACCORDION-BEGIN [Step 1: ](Connection to the SAP HANA Cloud Platform)]
 
-The first step you need is to connect to the [SAP HANA Cloud Platform](https:/account.hanatrial.ondemand.com/) trial system which will be referred to as HCP for the remainder of the tutorial.
+Log into [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+
+Make sure you are using the **Europe (Trial)** landscape, and click on your account name to open the cockpit view.
 
 ![HCP Trial Account](1.png)
 
@@ -34,9 +36,11 @@ The first step you need is to connect to the [SAP HANA Cloud Platform](https:/ac
 
 [ACCORDION-BEGIN [Step 2: ](Enable IoT Services)]
 
-Now you will need to select "Services" in the left column menu, scroll down and select the "Internet of Things (IoT)" services and ensure they are enabled.
+In the left-hand navigation bar, navigate in **Services**, then click on the **Internet of Things (IoT)** tile.
 
 ![Services](2.png)
+
+If the **Internet of Things (IoT)** is not enabled, then click on **Enable**.
 
 Once the service is enabled click the **Go to Service** link and a new browser tab will open.
 
@@ -47,11 +51,17 @@ Once the service is enabled click the **Go to Service** link and a new browser t
 
 [ACCORDION-BEGIN [Step 3: ](Deploy the IoT Services)]
 
-With IoT services enabled, you can begin the steps necessary to connect your device and enable message communication.
+With **Internet of Things (IoT)** enabled, you can begin the steps necessary to connect your device and enable message communication.
 
-The first step will be to configure and deploy the Message Management Service (MMS). Click on the **Deploy Message Management Service** tile.
+The first step will be to configure and deploy the **Message Management Service (MMS)**.
 
-Enter in your information in the fields, where your account ID is your p-number (or s-number if you are SAP's customer or partner, or i-/d-number if you are SAP employee) with the world “trial” (no space between the p-number and trial) and your user name is just your p-number.
+Click on the **Deploy Message Management Service** tile.
+
+The form should already be filled with your information like your account ID (p-number or s-number if you are SAP's customer or partner, or i-/d-number if you are SAP employee) with the world “trial” (no space between the p-number and trial), your user name etc.
+
+Enter your **SAP HANA Cloud Platform** password, then click on **Deploy**.
+
+It will deploy `iotmms` Java application for you in the background. ￼
 ￼
 ![Deploy Service](p6_6a.png)
 
@@ -60,21 +70,35 @@ Enter in your information in the fields, where your account ID is your p-number 
 
 [ACCORDION-BEGIN [Step 4: ](Configure the IoT Role)]
 
-Once successfully deployed then you can assign the role to our user and continue the next steps. Return to the HCP Cockpit view and click on **Java Applications** in the left navigation bar. You will see the new `iotmms` application you just deployed. Click on the `iotmms` link to display the **IoT MMS dashboard**.
+Once successfully deployed then you can assign the role to our user and continue the next steps.
+
+Return to the **SAP HANA Cloud Platform Cockpit**, and in the left navigation bar navigate in **Applications > Java Applications** .
+
+You will find the `iotmms` application you just deployed.
+
+Click on the `iotmms` link to display the **IoT MMS dashboard**.
 
 ![Deployed application](p6_7.png)
 ￼
-With the **IoT MMS dashboard** displayed click on the Roles link in the left navigation bar. Select the **IoT-MMS-User** (click the empty cell next to the Name to select the row if it is not highlighted in blue).
+With the **IoT MMS dashboard** displayed, navigate in **Security > Roles** in the left navigation bar.
+
+Select the **IoT-MMS-User** role (click the empty cell next to the Name to select the row if it is not highlighted in blue).
 
 ![Authorizations](p6_8.png)
 
 Then under **Individual Users**, click **Assign** and enter your HCP user ID (e.g. your p-number without the word “trial” on the end).
 
+Click on **Assign**
+
 ![Assign Role](p6_9.png)
 
-Once user is assigned to the role, stop and start `iotmms` application.
+Once user is assigned to the role, stop then start `iotmms` application.
 
-From here you will need to "Go to Service"
+Click on **Overview**  in the left navigation bar.
+
+Click **Stop**, then when the process stops, you can click on **Start**.
+
+From here you will need to click on **Go to Service**
 
 ![Go to Service](3.png)
 
@@ -85,14 +109,14 @@ From here you will need to "Go to Service"
 
 5. Now that your version is up to date you will need to go to "Message Type" and create a new message type.
 
-Field    | Value
------------------------------
-Name     | te2016
+Field       | Value
+:---------- | :----------
+Name        | `te2016`
 
 And the following fields:
 
 Position    | Name        | Type
------------------------------------
+:---------- | :---------- | :----------
 1           | timestamp   | long
 2           | temperature | double
 3           | humidity    | double
@@ -113,10 +137,10 @@ Please note down the created message type id displayed here as we will be using 
 Once the message type is created you will need to create a new "Device Type" and assign the "Message Type" to it.
 
 Field           | Value
------------------------------
-Name            | tessel2016
-Message Type    | te2016
-Direction       | From Device
+:-------------- | :--------------------
+Name            | `tessel2016`
+Message Type    | `te2016`
+Direction       | `From Device`
 
 ![Device Type](6.png)
 
@@ -130,9 +154,9 @@ Direction       | From Device
 Now that you have your message and device types created you will need to add your device.
 
 Field           | Value        
------------------------------------
-Name            | te_tessel_16
-Device Type     | tessel2016
+:-------------- | :--------------------
+Name            | `te_tessel_16`
+Device Type     | `tessel2016`
 
 ![Devices](7.png)
 
@@ -160,9 +184,9 @@ Your device is the physical Tessel device next to you.
 
 With these steps completed you are now ready to modify the JavaScript code we have prepared for the device and deploy and execute it.
 
-If you are with us at TechEd in the `AppSpace`, the file is already available in the following directory: `C:\teched2016\te16.js`.
+If you are with us at **`TechEd`** in the `AppSpace`, the file is already available in the following directory: `C:\teched2016\te16.js`.
 
-If you are doing this on your own machine, you can download the file [`te16_js.txt`](te16_js.txt), and rename it to `te16.js` on your machine.
+If you are doing this on your own machine, you can download the file [`te16_js.txt`](te16_js.txt), and saving it as `te16.js` on your machine.
 
 [DONE]
 [ACCORDION-END]
@@ -183,7 +207,7 @@ var messageTypeID = '<generated message type id from step 5>';
 
 You will modify the `hostIoT` line to add your own HCP Account User ID which starts with either an `S` or a `P`.
 
- - The `authStrIoT` line contains the token you received in the popup window after creating your device
+ - The `authStrIoT` line contains the token you received in the pop-up window after creating your device
  - The `deviceId` is the ID of the device you created, not to be confused with the `token`
  - The `messageTypeID` is the ID of the message type you created
 

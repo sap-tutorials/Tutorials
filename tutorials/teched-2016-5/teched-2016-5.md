@@ -22,7 +22,11 @@ You will create a Git repository in SAP HANA Cloud Platform for your project, co
 
 [ACCORDION-BEGIN [Step 1: ](Log into your HCP account)]
 
-In your [SAP HANA Cloud Platform cockpit](https://account.hanatrial.ondemand.com/cockpit), click on **Repositories > Git Repositories**.
+Log into [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+
+Make sure you are using the **Europe (Trial)** landscape, and click on your account name to open the cockpit view.
+
+In the left-hand navigation bar, click on **Repositories > Git Repositories**.
 
 ![Git Repositories](te-2016-5-01.png)
 
@@ -31,15 +35,15 @@ In your [SAP HANA Cloud Platform cockpit](https://account.hanatrial.ondemand.com
 
 [ACCORDION-BEGIN [Step 2: ](Create new repository)]
 
-Click on New Repository, and enter the following:
+Click on **New Repository**, and enter the following details:
 
 Field             | Value
 :---------------- | :----------------
 Repository Name   | `te2016`
 Description       | `Repository for Partner Contacts app`
-    
+
 Make sure the **Create empty commit** box is checked, click **OK** and your repository will be created.
-    
+
 ![Create repo image](te-2016-5-02.png)
 
 [DONE]
@@ -65,7 +69,7 @@ On the repository overview page, copy the **Git Repository URL**:
 
 [ACCORDION-BEGIN [Step 5: ](Initialize Local Repository)]
 
-Open SAP Web IDE in a browser window, right-click on your **`te2016`** project folder and select **Git > Initialize Local Repository**. 
+Open **SAP Web IDE** in a browser window (or in an existing one), right-click on your **`te2016`** project folder and select **Git > Initialize Local Repository**.
 
 ![Initialize local git](te-2016-5-05.png)
 
@@ -74,7 +78,9 @@ Open SAP Web IDE in a browser window, right-click on your **`te2016`** project f
 
 [ACCORDION-BEGIN [Step 6: ](Link to remote repository)]
 
-Paste in the **Git Repository URL** you copied earlier and click **OK**. This will initialize your local repository and link it to the Git repository in HCP.
+Paste in the **Git Repository URL** you copied earlier and click **OK**.
+
+This will initialize your local repository and link it to the Git repository in HCP.
 
 ![Initialize with remote git URL](te-2016-5-06.png)
 
@@ -83,7 +89,7 @@ Paste in the **Git Repository URL** you copied earlier and click **OK**. This wi
 
 [ACCORDION-BEGIN [Step 7: ](Open the Git pane)]
 
-Click on the **Git pane** icon on the right hand side of the SAP Web IDE window.
+Click on the **Git pane** icon on the right hand side bar of the **SAP Web IDE** window.
 
 If your project does not appear in the **Git pane**, keep the Git pane open and click on the project folder.
 
@@ -94,7 +100,9 @@ If your project does not appear in the **Git pane**, keep the Git pane open and 
 
 [ACCORDION-BEGIN [Step 8: ](Perform a Git Fetch)]
 
-To allow SAP Web IDE to see remote branches in the HCP Git repository, click the **Fetch** button on the Git pane and log in with your email address and HCP account password if prompted. When the **Changes Fetched** dialog box opens, click **OK**.
+To allow **SAP Web IDE** to see remote branches in the HCP Git repository, click the **Fetch** button on the Git pane and log in with your email address and HCP account password if prompted.
+
+When the **Changes Fetched** dialog box opens, click **OK**.
 
 ![Git Fetch](te-2016-5-08.png)
 
@@ -103,13 +111,17 @@ To allow SAP Web IDE to see remote branches in the HCP Git repository, click the
 
 [ACCORDION-BEGIN [Step 9: ](Perform a Git Merge)]
 
-Click the **Merge** button on the Git pane to merge your local branch to the remote origin/master branch. When the **Merge "master"** dialog box opens, make sure the **origin/master** remote branch is selected and click **OK**. 
+Click the **Merge** button on the Git pane to merge your local branch to the remote origin/master branch.
+
+When the **Merge "master"** dialog box opens, make sure the **origin/master** remote branch is selected and click **OK**.
 
 ![Git Merge](te-2016-5-09.png)
 
 ![Git Merge master](te-2016-5-10.png)
-    
-At this point your Git repository is set up. The next steps will commit and push your project files to the repository.
+
+At this point your Git repository is set up.
+
+The next steps will commit and push your project files to the repository.
 
 [DONE]
 [ACCORDION-END]
@@ -125,7 +137,7 @@ You may select individual files to commit, but to commit all project files, clic
 
 [ACCORDION-BEGIN [Step 11: ](Enter a description for the commit)]
 
-Scroll down in the **Git pane** and enter a description (required for any commits). A description like `Initial commit of te2016 app` would work well.
+Scroll down in the **Git pane** and enter a description (required for any commits) like `Initial commit of te2016 app`.
 
 ![commit description](te-2016-5-12.png)
 
@@ -134,7 +146,9 @@ Scroll down in the **Git pane** and enter a description (required for any commit
 
 [ACCORDION-BEGIN [Step 12: ](Perform a Git Commit and Push)]
 
-Click on the **Commit and Push** button, and select **Remote Branch**, from the pop up menu. This will add your files to the master branch (in other source control systems this is sometimes referred to as the "trunk").
+Click on the **Commit and Push** button, and select **Remote Branch**, from the pop up menu.
+
+This will add your files to the master branch (in other source control systems this is sometimes referred to as the "trunk").
 
 ![commit and push](te-2016-5-13.png)
 
@@ -162,7 +176,9 @@ You will see a confirmation alert appear briefly in the top-right corner of the 
 
 [ACCORDION-BEGIN [Step 15: ](Deploy app on HCP)]
 
-Deploying your app, is very simple. Right-click on your **`te2016`** project folder, and select **Deploy > Deploy to SAP HANA Cloud Platform**.
+Deploying your app, is very simple.
+
+Right-click on your **`te2016`** project folder, and select **Deploy > Deploy to SAP HANA Cloud Platform**.
 
 ![deploy to HCP menu](te-2016-5-16.png)
 
@@ -189,16 +205,18 @@ In the **Deploy Application to SAP HANA Cloud Platform** dialog box, confirm tha
 
 [ACCORDION-BEGIN [Step 18: ](Open the active version of your app)]
 
-In the **Successfully Deployed** confirmation dialog, click the **Open the active version of the application link** to launch your app. 
- 
+In the **Successfully Deployed** confirmation dialog, click the **Open the active version of the application link** to launch your app.
+
 ![successful deployment](te-2016-5-19.png)
-    
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 19: ](App deployed and running)]
 
-You app, running on SAP HANA Cloud Platform will open in another tab. You can enter the URL in your phone and see it running there as well. Since the URL is fairly long, you can email it to yourself and click the link in your email. 
+You app, running on SAP HANA Cloud Platform will open in another tab.
+
+You can enter the URL in your phone and see it running there as well. Since the URL is fairly long, you can email it to yourself and click the link in your email.
 
 ![deployed app](te-2016-5-20.png)
 
