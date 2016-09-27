@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Expose your predictive demo dataset as an OData service
 description: Expose the demo data to be used with the SAP HCP predictive services as an OData services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive, topic>odata ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, topic>odata ]
 ---
 
 ## Prerequisites
