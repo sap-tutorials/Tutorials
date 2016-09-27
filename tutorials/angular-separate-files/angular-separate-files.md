@@ -6,12 +6,12 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ## Prerequisites  
  - **Proficiency:** Beginner 
 #### AngularJS Series
- - Step #1 [AngularJS Getting Started](http://go.sap.com/developer/tutorials/angular-getting-started.html)
- - Step #2 [Create the Bootstrap Template](http://go.sap.com/developer/tutorials/angular-bootstrap-template.html)
- - Step #3 [Add the AngularJS JavaScript](http://go.sap.com/developer/tutorials/angular-add-javascript.html) 
+ - Step #1 [AngularJS Getting Started](http://go.sap.com/)
+ - Step #2 [Create the Bootstrap Template](http://go.sap.com/)
+ - Step #3 [Add the AngularJS JavaScript](http://go.sap.com/) 
 
 ## Next Steps
- - Step #5 [Add ODATA to the application](http://go.sap.com/developer/tutorials/angular-add-odata.html)
+ - Step #5 [Add ODATA to the application](http://go.sap.com/)
 
 ## Details
 ### You will learn  
@@ -163,4 +163,4 @@ Follow the same procedures to move the CSS file
 
 
 ## Next Steps
- - **Tutorials** Step #5 [Add ODATA to the application](http://go.sap.com/developer/tutorials/angular-add-odata.html)
+ - **Tutorials** Step #5 [Add ODATA to the application](http://go.sap.com/)

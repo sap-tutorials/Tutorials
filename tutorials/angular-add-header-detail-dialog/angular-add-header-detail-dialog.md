@@ -6,14 +6,14 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ## Prerequisites  
  - **Proficiency:** Beginner 
 #### AngularJS Series
- - Step #1 [AngularJS Getting Started](http://go.sap.com/developer/tutorials/angular-getting-started.html)
- - Step #2 [Create the Bootstrap Template](http://go.sap.com/developer/tutorials/angular-bootstrap-template.html)
- - Step #3 [Add the AngularJS JavaScript](http://go.sap.com/developer/tutorials/angular-add-javascript.html) 
- - Step #4 [Separate the JavaScript and CSS Files](http://go.sap.com/developer/tutorials/angular-separate-files.html) 
- - Step #5 [Add ODATA to the application](http://go.sap.com/developer/tutorials/angular-add-odata.html)
+ - Step #1 [AngularJS Getting Started](http://go.sap.com/)
+ - Step #2 [Create the Bootstrap Template](http://go.sap.com/)
+ - Step #3 [Add the AngularJS JavaScript](http://go.sap.com/) 
+ - Step #4 [Separate the JavaScript and CSS Files](http://go.sap.com/) 
+ - Step #5 [Add ODATA to the application](http://go.sap.com/)
 
 ## Next Steps
- - Step #7 [Add a Form to your application](http://go.sap.com/developer/tutorials/angular-forms-intro.html)  
+ - Step #7 [Add a Form to your application](http://go.sap.com/)  
 
 ## Details
 ### You will learn  
@@ -201,4 +201,4 @@ The `ng-click` attribute has sent the selected row to the function `selectProduc
 - [`ng-click`](https://docs.angularjs.org/api/ng/directive/ngClick) - Route a click event to an Angular function.
 
 ## Next Steps
-  - **Tutorials** Step #7 [Add a Form to your application](http://go.sap.com/developer/tutorials/angular-forms-intro.html)  
+  - **Tutorials** Step #7 [Add a Form to your application](http://go.sap.com/)  

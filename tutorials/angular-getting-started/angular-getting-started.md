@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 
 ## Next Steps
 #### AngularJS Series
- - Step #2: [Create the Bootstrap Template](http://go.sap.com/developer/tutorials/angular-getting.started.html)
+ - Step #2: [Create the Bootstrap Template](http://go.sap.com/)
 
 ## Details
 ### You will learn  
@@ -115,5 +115,5 @@ In this first tutorial, we will connect to the SAP Web IDE (free for development
 Yes, you can.   We are using Web IDE because it provides an unlimited, free, developer account.  It also has a built-in web front end, so that you can test your code immediately.  And, it has a pretty good HTML and JavaScript editing system.  But there are plenty of other development IDE's, including Eclipse, that would work as well.  Feel free to use the one that your company is using, or try out a new one.
 
 ## Next Steps
- - **Tutorials** Step #2: [Create the Bootstrap Template](http://go.sap.com/developer/tutorials/angular-getting.started.html)
+ - **Tutorials** Step #2: [Create the Bootstrap Template](http://go.sap.com/)
 

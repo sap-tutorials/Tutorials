@@ -6,12 +6,12 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ## Prerequisites  
  - **Proficiency:** Beginner 
 #### AngularJS Series
- - Step #1 [AngularJS Getting Started](http://go.sap.com/developer/tutorials/angular-getting-started.html)
- - Step #2 [Create the Bootstrap Template](http://go.sap.com/developer/tutorials/angular-bootstrap-template.html)
- - Step #3 [Add the AngularJS JavaScript](http://go.sap.com/developer/tutorials/angular-add-javascript.html) 
- - Step #4 [Separate the JavaScript and CSS Files](http://go.sap.com/developer/tutorials/angular-separate-files.html) 
- - Step #5 [Add ODATA to the application](http://go.sap.com/developer/tutorials/angular-add-odata.html) 
- - Step #6 [Add a Header and Detail Modal Dialog](http://go.sap.com/developer/tutorials/angular-add-header-detail-dialog.html) 
+ - Step #1 [AngularJS Getting Started](http://go.sap.com/)
+ - Step #2 [Create the Bootstrap Template](http://go.sap.com/)
+ - Step #3 [Add the AngularJS JavaScript](http://go.sap.com/) 
+ - Step #4 [Separate the JavaScript and CSS Files](http://go.sap.com/) 
+ - Step #5 [Add ODATA to the application](http://go.sap.com/) 
+ - Step #6 [Add a Header and Detail Modal Dialog](http://go.sap.com/) 
  
 
 ## Next Steps

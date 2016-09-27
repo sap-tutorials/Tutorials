@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ## Prerequisites  
  - **Proficiency:** Beginner 
 #### AngularJS Series
- - Step #1 [AngularJS Getting Started](http://go.sap.com/developer/tutorials/angular-getting-started.html)
- - Step #2 [Create the Bootstrap Template](http://go.sap.com/developer/tutorials/angular-bootstrap-template.html)
+ - Step #1 [AngularJS Getting Started](http://go.sap.com/)
+ - Step #2 [Create the Bootstrap Template](http://go.sap.com/)
 
 ## Next Steps
- - Step #4 [Separate the JavaScript and CSS Files](http://go.sap.com/developer/tutorials/angular-separate-files.html)
+ - Step #4 [Separate the JavaScript and CSS Files](http://go.sap.com/)
 
 ## Details
 ### You will learn  
