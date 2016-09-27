@@ -1,6 +1,6 @@
 ---
-title: AngularJS - Connect to the ODATA source
-description: Step #5: ODATA is our backend data source.  Connect to the public Northwind test data site.
+title: AngularJS - Connect to the OData source
+description: Step #5: OData is our backend data source.  Connect to the public Northwind test data site.
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
@@ -18,14 +18,14 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ### You will learn  
 Developers writing the HTML5 front-end to modern web applications have many choices of development technologies and frameworks.  SAP offers SAPUI5 for front-end development, but it is not the only choice for developing rich SPA (Single Page Applications) on the web.
 
-In this tutorial series, we will explore another technology for SPA development - AngularJS (which we will just call Angular).  Angular is a popular web framework, and is used by many companies.  This series will build a simple web front end, and connect that to ODATA services.
+In this tutorial series, we will explore another technology for SPA development - AngularJS (which we will just call Angular).  Angular is a popular web framework, and is used by many companies.  This series will build a simple web front end, and connect that to OData services.
 ### Time to Complete
 **15 Min**.
 
 ---
 In the fifth tutorial, we will start to work with the `$http` service.  This service provides a way to asynchronously get data from a server.  We will be using the [public Northwind test data service](http://www.odata.org/) to provide this test data.
 
-### Change the test data to the ODATA source
+### Change the test data to the OData source
 
 1.  Remove the test data from the JavaScript file.
 
@@ -45,7 +45,7 @@ In the fifth tutorial, we will start to work with the `$http` service.  This ser
 
     ![Reset the product list to an empty array](1-2.png)   
 
-3.  Now we want to add in the HTML call to get the ODATA information.  To do that, we will use the `$http` service to get the data.  
+3.  Now we want to add in the HTML call to get the OData information.  To do that, we will use the `$http` service to get the data.  
 
     Change the `helloController` function to get the `$http` service from Angular
     
