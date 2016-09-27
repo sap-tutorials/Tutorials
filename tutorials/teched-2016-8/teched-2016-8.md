@@ -24,9 +24,11 @@ Examples of language settings are `en` for English, `de` for German. Language an
 
 [ACCORDION-BEGIN [Step 1: ](Enable beta services)]
 
-Since the SAP Translation Hub service is currently in beta release, you need to verify your HCP account is configured for enabling beta services. 
+Since the **SAP Translation Hub** service is currently in beta release, you need to verify that your HCP account is configured for enabling beta services.
 
-Log into your [HCP account](https://account.hanatrial.ondemand.com), click on the **Europe (Trial)** link, then click on the **pencil** icon next to your account ID.
+Log into [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+
+Make sure you are using the **Europe (Trial)** landscape, then click on the **pencil** icon next to your account ID.
 
 ![Accounts settings](te-2016-8-01.png)
 
@@ -46,7 +48,6 @@ If **Beta Features** is not checked, check it and click **Save**. If it is check
 
 Click on your **Account ID** to return to your HCP cockpit.
 
-
 ![open cockpit](te-2016-8-03.png)
 
 [DONE]
@@ -54,7 +55,9 @@ Click on your **Account ID** to return to your HCP cockpit.
 
 [ACCORDION-BEGIN [Step 4: ](Open the SAP Translation Hub overview page)]
 
-Click on **Services** in the left-hand navigation bar, and scroll down until you see the **SAP Translation Hub** tile. Click on the tile to open the overview page.
+Select **Services** in the left-hand navigation bar, and scroll down until you see the **SAP Translation Hub** tile.
+
+Click on the tile to open the overview page.
 
 ![Accounts settings](te-2016-8-04.png)
 
@@ -63,7 +66,9 @@ Click on **Services** in the left-hand navigation bar, and scroll down until you
 
 [ACCORDION-BEGIN [Step 5: ](Enable and Go To Service)]
 
-If the **SAP Translation Hub** is not enabled, click on the blue **Enable** button, and wait for the green **Enabled** badge to appear. Click on the **Go to Service** link.
+If the **SAP Translation Hub** is not enabled, click on the blue **Enable** button, and wait for the green **Enabled** badge to appear.
+
+Click on the **Go to Service** link.
 
 ![Accounts settings](te-2016-8-05.png)
 
@@ -81,7 +86,7 @@ When the Translation Hub page loads, click the **+** icon at the bottom of the w
 
 [ACCORDION-BEGIN [Step 7: ](Fill in project details)]
 
-Fill in the project details as shown below and click **Save**:
+Fill in the project details as shown below:
 
 Field Name                 | Value
 :------------------------- | :-------------
@@ -90,6 +95,8 @@ Branch                     | `master`
 Path to properties file    | `webapp/i18n/i18n.properties`
 Domain                     | `Basis`
 Target languages           | `German`, `Spanish`
+
+Click on **Save**
 
 ![Accounts settings](te-2016-8-07.png)
 
@@ -101,8 +108,6 @@ Target languages           | `German`, `Spanish`
 Once the project is created click the green **Get Translations** button, and log in if prompted. 
 
 ![Accounts settings](te-2016-8-08.png)
-
-
 
 ![Accounts settings](te-2016-8-09.png)
 
@@ -120,7 +125,11 @@ You will see the "All done." toast message at the bottom of the screen when the 
 
 [ACCORDION-BEGIN [Step 10: ](Pull translated files to Web IDE)]
 
-Return to SAP Web IDE and open the Git pane. You will notice that there is only the original `i18n.properties` file in your project folder. In the **Git pane**, click the **Pull** button to pull the translated files from your Git repository to your project.
+Return to **SAP Web IDE** and open the **Git** pane.
+
+You will notice that there is only the original `i18n.properties` file in your project folder. 
+
+In the **Git pane**, click the **Pull** button to pull the translated files from your **Git** repository to your local project folder.
 
 ![Accounts settings](te-2016-8-13.png)
 
@@ -141,14 +150,18 @@ If you check the `i18n` folder in your project, you will see the two new files:
 
 [ACCORDION-BEGIN [Step 12: ](Commit files, and deploy to the cloud)]
 
-Commit your new files to Git and deploy to HCP (following the same procedure as in the previous [tutorial](http://go.sap.com/developer/tutorials/teched-2016-5.html).
+Commit your new files to **Git** and deploy the application to HCP (following the same procedure as in the previous [tutorial](http://go.sap.com/developer/tutorials/teched-2016-5.html).
+
+Right-click on your **`te2016`** project folder, and select **Deploy > Deploy to SAP HANA Cloud Platform** and click **Deploy**.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Testing your language files)]
 
-To test the language support in the deployed app, we can utilize the SAPUI5 `sap-ui-language` URL parameter. To do so, just append `?sap-ui-language=xx_YY` to your application URL
+To test the language support in the deployed app, we can utilize the SAPUI5 `sap-ui-language` URL parameter. 
+
+To do so, just append `?sap-ui-language=xx_YY` to your application URL
 
 - If your standard application URL looks like this:
   - `https://te2016-p12345678trial.dispatcher.hanatrial.ondemand.com/`
