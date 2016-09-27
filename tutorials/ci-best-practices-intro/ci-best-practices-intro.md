@@ -33,7 +33,7 @@ An efficient software development process is vital for success in building busin
 
 This guide discusses some basic principles for software development that are derived from the process definitions for Continuous Integration (CI) and Continuous Delivery (CD). We provide best practices to support establishing your application development processes especially for SAP HANA Cloud Platform (SAP HCP) but also for other SAP technologies.
 
-Our customers have requested in-depth guidance for an end-to-end CI process. SAP offers several tools to address single aspects, such as the SAP Web IDE in HCP. The goal of this guide is to provide a "big picture" on CI or CD processes and how to give showcases how to set them up using widely adopted complementary tools. The choice of tools should be considered as examples. Other tools fulfilling the same purpose will work as well.
+Our customers have requested in-depth guidance for an end-to-end CI process. SAP offers several tools to address single aspects, such as the SAP Web IDE in SAP HANA Cloud Platform. The goal of this guide is to provide a "big picture" on CI or CD processes and to give showcases how to set them up using widely adopted complementary tools. The choice of tools should be considered as examples. Other tools fulfilling the same purpose will work as well.
 
 We will take a look at the most important SAP technologies and describe how to use existing tools to set up a CI process that fits the individual needs of your development project, your requirements, and your environment.
 
@@ -50,7 +50,7 @@ This best practices guide covers a broad spectrum of aspects and addresses many 
 
 Role                      | Description, Skill Set
 :------------------------ | :----------------------------------------------------------------
-Manager, Decision Maker   | Makes investment decisions about infrastructure, tools and usage of public services. Mainly interested in a sustainable investment into the infrastructure.
+Manager                   | Makes investment decisions about infrastructure, tools and usage of public services. Mainly interested in a sustainable investment into the infrastructure.
 Quality Manager           | Responsible for product quality. Defines and decides on the processes that ensure the quality level.
 Delivery Manager          | Responsible for the shipment and deployment of the product to production. Relies on the quality and defines the deployment process.
 Build Operator            | Operates the technical components for a CI/CD infrastructure.
@@ -59,25 +59,23 @@ Developer engaged in CI   | Implements the build scripts and tests in collaborat
 
 ### Navigate through the relevant parts of the Guide
 
-+: The part is of interest  
-++: The part is of strong interest  
-(+): The part is of interest based on the respective technology  
-(++): The part is of strong interest based on the respective technology
+Role: The part is of interest for the stated role  
+**Role**: The part is of strong interest  
 
-| Part of the Guide      | Manager, Decision Maker | Quality Manager | Delivery Manager | Build Operator | Build Engineer | Developer engaged in CI |
-|-----------|---|---|---|---|---|---|
-| **1. [Introduction and Navigator (this document)](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)** | ++         | ++         | ++         | ++         | ++         | ++          |
-| **2. Continuous Integration and Delivery** |            |            |            |            |            |            |
-| 2.1. [CI/CD Practices: The Practices and Principles of CI and CD](http://go.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)   | ++         | ++         | ++         | +          | +          | +          |
-| 2.2. [Pipeline Suggestions: Patterns for a CI/CD pipeline](http://go.sap.com/developer/tutorials/ci-best-practices-pipelines.html)   | +          | ++         | ++         | +          | ++         |            |
-| **3. CI/CD Landscape - Component Setup**   |            |            |            |            |            |            |
-| 3.1. [Source Code Versioning System: Setting up a Git/Gerrit Instance](http://go.sap.com/developer/tutorials/ci-best-practices-scm.html)     |            |            |            | ++         |            |            |
-| 3.2. [Build Scheduler: Setting up a Jenkins Instance](http://go.sap.com/developer/tutorials/ci-best-practices-build.html)       |            |            |            | ++         |            |            |
-| 3.3. [Artifact Repository: Setting up a Nexus Instance](http://go.sap.com/developer/tutorials/ci-best-practices-artifacts.html)       |            |            |            | ++         |            |            |
-| 3.4. [Landscape Configuration: Configuring the CI Component Landscape](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)       |            |            |            | ++         | +          |            |
-| 3.5. [CD Pipeline Skeleton: Setup of a continuous delivery pipeline](http://go.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html)       |            |            |            | ++         | +          |            |
-| **4. CI/CD Process Setup**                |            |            |            |            |            |            |
-| 4.1. [Generic Project: Configuring the CI system for Maven-based generic Java project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)                 |            |            |            | +          | ++         | +          |
-| 4.2. [Java Web on SAP HANA Cloud Platform: Configuring the CI system for Maven-based Java Web project](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp.html) |          |            |            | (+)        | (++)       | (+)        |
-| 4.3. [SAP HANA Extended Application Services (XS), classic model: Configuring the CI system](http://go.sap.com/developer/tutorials/ci-best-practices-xsc.html) |          |            |            | (+)        | (++)       | (+)        |
+Part of the Guide      | Roles of interest
+:--------------------- | :----------------
+**1. [Introduction and Navigator (this document)](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)** | **Manager, Quality Manager, Delivery Manager, Build Operator, Build Engineer, Developer**
+**2. Continuous Integration and Delivery** | 
+2.1. [CI/CD Practices: The Practices and Principles of CI and CD](http://go.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)   | **Manager, Quality Manager, Delivery Manager**, Build Operator, Build Engineer, Developer
+2.2. [Pipeline Suggestions: Patterns for a CI/CD Pipeline](http://go.sap.com/developer/tutorials/ci-best-practices-pipelines.html)   | Manager, **Quality Manager, Delivery Manager**, Build Operator, **Build Engineer**, Developer
+**3. CI/CD Landscape - Component Setup**   | 
+3.1. [Source Code Versioning System: Setting Up a Git/Gerrit Instance](http://go.sap.com/developer/tutorials/ci-best-practices-scm.html)     | **Build Operator**
+3.2. [Build Scheduler: Setting Up a Jenkins Instance](http://go.sap.com/developer/tutorials/ci-best-practices-build.html)       | **Build Operator**
+3.3. [Artifact Repository: Setting Up a Nexus Instance](http://go.sap.com/developer/tutorials/ci-best-practices-artifacts.html)       | **Build Operator**
+3.4. [Landscape Configuration: Configuring the CI Component Landscape](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)       | **Build Operator**, Build Engineer
+3.5. [CD Pipeline Skeleton: Setting Up a Continuous Delivery Pipeline](http://go.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html)       | **Build Operator**, Build Engineer
+**4. CI/CD Process Setup**                | 
+4.1. [Generic Project: Configuring the CI System for Maven-based Generic Java Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)                 | Build Operator, **Build Engineer**, Developer
+4.2. [Java Web on SAP HANA Cloud Platform: Configuring the CI System for Maven-based Java Web Project](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp.html) | Build Operator, **Build Engineer**, Developer
+4.3. [SAP HANA Extended Application Services (XS), Classic Model: Configuring the CI System](http://go.sap.com/developer/tutorials/ci-best-practices-xsc.html) | Build Operator, **Build Engineer**, Developer
 

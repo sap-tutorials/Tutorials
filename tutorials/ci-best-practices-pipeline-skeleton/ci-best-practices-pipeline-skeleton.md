@@ -18,76 +18,57 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ---
 
 
-In this part we will show how Jenkins can be used to set up a continuous delivery pipeline skeleton which includes an automatically
-triggered continuous integration build (including automatic tests), a manual step to deploy the build result to a
-test system and an additional manual step to release and deploy to the production system.
-We assume that the project we want to build has the name `DummyProject`. 
+This part discusses how you can use Jenkins to set up a continuous delivery pipeline skeleton, which includes an automatically triggered CI build job (including automatic tests), a manual step to deploy the build result to a test system and an additional manual step that releases and deploys changes to the production system. The project name used throughout this discussion is `DummyProject`. 
 
-Thus the full continuous delivery scenario consists of the following steps:
+The full continuous delivery scenario consists of the following steps:
 
-1. The developer does a change in the sources and pushes it to the central Gerrit instance.
+1. The developer makes a change in the source files and pushes it to the central Gerrit instance for review.
 
-2. A reviewer submits the change in Gerrit. Voter builds will make absolutely sense as described in the theoretical parts, but they are
-    not really a part of continuous delivery pipeline since they run as pre-validation before the change reaches the `master` branch. Therefore,
-    voter builds will not be described here.
+2. A reviewer submits the change in Gerrit with the status `merged`. Although, as it was pointed out in the part [Pipeline Suggestions](http://go.sap.com/developer/tutorials/ci-best-practices-pipelines.html), it makes sense to create voter builds, they are not actually a part of a continuous delivery pipeline, since they run as pre-validation processes before the change reaches the master branch. Therefore, voter builds are not described here.
 
-3. A CI build job, which will be named `CI_DummyProject_master_build`,  is triggered automatically as soon as the change is merged into the
-    `master` branch. Typically, the CI build job contains automatic tests, static code checks and so on as required. 
+3. A CI build job, named `CI_DummyProject_master_build` for the purpose of this discussion, is triggered automatically as soon as the change is merged into the `master` branch. Typically, the CI build job contains automatic tests, static code checks and so on as required. 
 
-4. The build artifact is persisted to be used in eventual sequel steps which happens at the end of the job
-    `CI_DummyProject_master_build`. The status that the change has reached at this point
-    is that it was reviewed, successfully built and automatically tested. It has become a candidate for acceptance tests.
+4. The build artifact is archived and used in eventual sequel steps that take place at the end of the job `CI_DummyProject_master_build`. At this point, the change has been reviewed, successfully built and, automatically tested. It is now a candidate for acceptance tests.
     
-5. But acceptance tests are not done yet. They are often done manually, and
-    not each of the candidates (many may be created each day) will undergo this procedure due to resource reasons.
-    Rather they are scheduled for example on a daily basis taking the last stable candidate.
-    In any case, there is a conscious decision by a quality manager or test coordinator
-    to take a candidate and trigger that it is taken and deployed to a test system.
-    In our example, this is done by starting the job `CI_DummyProject_master_testDeploy`
-    After that, the test system remains stable for the rest of the day in the sense that no other candidates will be deployed. Only in
-    the case that the candidate fails early and there is time enough to start the procedure once again at the same day,
-    the deployment of another candidate could be triggered.
+5. Acceptance tests are often performed manually, and not all candidates (many may be created each day) will undergo this procedure, due to resource constraints. Acceptance tests are scheduled, for example, on a daily basis, taking one of the available candidates. In most cases, a quality manager or test coordinator selects or specifies a candidate and triggers the deployment to a test system. In our example, this is done by starting the job `CI_DummyProject_master_testDeploy`. After deployment, the test system generally remains stable for the rest of the day in the sense that no other candidates are deployed. However, if a candidate fails early and there is time enough to start the procedure once again on the same day, another candidate might be deployed.
 
-6. When the acceptance test was successful, the change can (but doesn't have to) be released. This again is a conscious manual process that is
-    triggered by the quality or release manager depending on the outcome of the tests. With the release, which is technically done by starting
-    the job `CI_DummyProject_master_release`, the artifact is uploaded
-    to the Nexus repository.
+6. Upon completion of a successful acceptance test, the change can be (but doesn't have to be) released. This again is a conscious manual process triggered by the quality or release manager depending on the outcome of the tests. With the release, the artifact is uploaded to the Nexus repository. In our example, this is performed by the job `CI_DummyProject_master_release`.
 
 ![Process Sequence](pipeline-sequence.png)
 
-In the following, we will create the jobs and orchestrate them using the features of Jenkins to give an idea of the principles.
-It is currently not our goal to go into technical specifics of any build tooling. Therefore, we leave the jobs as a skeleton with more or less
-void implementation. You will find concrete implementations in the sections that discuss the CI/CD processes for SAP specific technologies. 
+Figure: Process Sequence
 
-There is only one place where we will use Maven explicitly, namely for uploading the released artifact to Nexus. For convenience reasons, we store
-the metadata of the artifact in a `pom.xml` such that we do not have to care about how to pass them as parameters to the `mvn deploy` call. 
-Other implementations not using Maven are also possible.
+The next several procedures show how to create the jobs and orchestrate them using the features of Jenkins. They are intended to provide an idea of the principles and do not include technical specifics of any build tooling. That is, jobs are created as skeletons, which aren't intended to be fully implemented successfully. You can find concrete implementations in the sections that discuss the CI/CD processes for SAP-specific technologies. 
+
+Maven is used explicitly in only one place: uploading the released artifact to Nexus. For convenience, artifact metadata is stored in a `pom.xml` file such that passing the metadata as parameters to the `mvn deploy` call is unnecessary. Other implementations that do not use Maven are also possible.
 
 
 #### Prerequisites
 
-- Running Git/Gerrit instance
-- Running Jenkins Master and a Jenkins build slave 
-- Running Nexus with at least one snapshot repository
+- A running Git/Gerrit instance
+- A running Jenkins master and a Jenkins build slave 
+- A running Nexus instance that hosts at least one snapshot repository
 
 
-### Setup of a dummy Gerrit project
+### Setting up a dummy Gerrit project
 
-Since the process described above is triggered by a source change, a Git repository is required.
+Since the CD process is triggered by a source change, a Git repository is required.
 
 #### Procedure
 
-1. Access the Gerrit front end with a browser on port 8080 and log on with your admin user.
+1. In your browser, access the Gerrit on port 8080.
 
-2. Go to **Projects > Create New Project**. 
+2. Log in as the admin user.
 
-3. Enter the project name `DummyProject` and select **Create initial empty commit**. This automatically creates the `master` branch.
+3. Select **Projects > Create New Project**. 
 
-4. Enter `Rights Inherit From:` `CI-Projects`.
+4. Enter the project name `DummyProject` and select **Create initial empty commit**. This automatically creates the `master` branch.
+
+5. Enter `Rights Inherit From:` `CI-Projects`.
   
-5. Do an initial clone of the project to your PC and check out the `master` branch.
+6. Perform an initial clone of the project to your PC and check out the `master` branch.
 
-6. Add the following `pom.xml` file into your project folder:
+7. Add the following `pom.xml` file into your project folder:
 
     ```
     <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -98,36 +79,38 @@ Since the process described above is triggered by a source change, a Git reposit
     </project>
     ```
 
-7. Commit and push the change.
+8. Commit and push the change.
 
 
-### Setup of the CI build
+### Setting up the CI build
 
-The CI build is directly triggered by a merge of a change into the `master` branch, it does the build, automatic tests and build artifact
-archiving for further usage. 
+A CI build - the build itself, automatic tests, and artifact archiving - is directly triggered when a change is merged into the `master` branch.
+
 
 #### Procedure
 
-1. Open the Jenkins front end and go to **New Item**, select **Freestyle project** and enter `CI_DummyProject_master_build` as name.
+1. Open the Jenkins front end. 
 
-2. Enter the following values to the configuration:
+2. Select **New Item > Freestyle project** and enter `CI_DummyProject_master_build` as the project name.
+
+3. Enter the following values:
   
     Field                                  | Value
     :------------------------------------- | :------------------------------------------------------------------------- 
-    Restrict where this project can be run | `checked`; Label Expression: the label that you have assigned to the slave, in this case `builds` 
+    Restrict where this project can be run | `checked`; Label Expression: the label that you have assigned to the slave, in this case, `builds`.
     Source Code Management                 | `Git`; Enter the repository URL and as Credentials: `jenkins` 
     Git                                    | `checked` 
-    Repository URL                         | `{the ssh based URL of your repository}` 
+    Repository URL                         | `{the SSH-based URL of your repository}` 
     Credentials                            | `jenkins` 
     Ref spec                               | `{empty}` 
     Branches to build; Branch Specifier    | `master`
     Build Triggers                         |
     Poll SCM                               | `checked`
-    Schedule                               | `{Enter a pull frequency. In order to have immediate results, every two minutes could be an appropriate value}`
+    Schedule                               | `{Enter a pull frequency. For immediate results, every two minutes is an appropriate value}`
     Build Environment                      |
     Delete workspace before build starts   | `checked`
     
-3. Select **Add build step > Execute shell**  and enter as shell command
+4. Select **Add build step > Execute shell**  and enter the following script:
 
     ```
     mkdir target
@@ -135,33 +118,33 @@ archiving for further usage.
     cp pom.xml target
     ```
     
-    This rather silly operation simulates a build with a result located in the `target` folder.
-    The `pom.xml` file is copied to the `target` folder as well to make the metadata accessible to the sequel jobs.
+    This operation simulates a build with a result located in the `target` folder. The `pom.xml` file is copied to the `target` folder, and the metadata is made accessible to subsequent jobs.
     
-4. Select **Add post-build action > Archive the artifacts**. Enter `target/*`.
+5. Select **Add post-build action > Archive the artifacts**. Enter `target/*`.
 
-5. Select **Add post-build action > Build other projects (manual step)**. Enter `CI_DummyProject_master_testDeploy` as downstream project name.
-    There will be a warning since the project does not yet exist. Ignore it for now. Enter as parameters
+6. Select **Add post-build action > Build other projects (manual step)**. Enter `CI_DummyProject_master_testDeploy` as the downstream project name. You see a warning message, as the project does not yet exist. You can safely ignore the warning. Enter as parameters:
     
     ```
     BUILD_JOB_NUMBER=${BUILD_NUMBER}
     ```
     
-    The build number will be passed to the test deploy job since that has to fetch the artifacts from the right place.
+    The build number is passed to the test deploy job to enable it to fetch the artifacts from the correct location.
     
-6. Save the job definition.
+7. Save the job definition.
 
 
-### Setup of the test deploy job
+### Setting up the test deploy job
 
-This job is manually triggered but semantically linked to the job before. 
+The test deploy job must be manually triggered, but is semantically linked to the previous job.
 
 
 #### Procedure
 
-1. Open the Jenkins front end and go to **New Item**, select **Freestyle project** and enter `CI_DummyProject_master_testDeploy` as name.
+1. Open the Jenkins front end. 
 
-2. Enter the following values to the configuration:
+2. Select **New Item > Freestyle project** and enter `CI_DummyProject_master_testDeploy` as the project name.
+
+3. Enter the following values:
   
     Field                                  | Value
     :------------------------------------- | :------------------------------------------------------------------------- 
@@ -170,7 +153,9 @@ This job is manually triggered but semantically linked to the job before.
     Name                                   | `BUILD_JOB_NUMBER`
     Source Code Management                 | `none`
     
-3. In the **Build** section, select ** Add build step > Copy artifacts from another project** and enter:
+4. In the **Build** section, select **Add build step > Copy artifacts from another project**.
+
+5. Enter the following values:
 
     Field                                  | Value
     :------------------------------------- | :------------------------------------------------------------------------- 
@@ -179,29 +164,32 @@ This job is manually triggered but semantically linked to the job before.
     Build number                           | `$BUILD_JOB_NUMBER`
     Artifacts to copy                      | `target/*`
     
-4. Select **Add build step > Execute shell**  and enter as shell command
+6. Select **Add build step > Execute shell** and enter the following script:
 
     ```
     echo "Now a real job would deploy the artifact to the test system."
     ```
 
-5. Select **Add post-build action > Build other projects (manual step)**. Enter `CI_DummyProject_master_release` as downstream project name.
-    There will be a warning since the project does not yet exist. Ignore it for now. Enter as parameters
+7. Select **Add post-build action > Build other projects (manual step)**. Enter `CI_DummyProject_master_release` as the downstream project name. You see a warning message, as the project does not yet exist. You can safely ignore the warning. Enter as parameters:
     
     ```
     BUILD_JOB_NUMBER=${BUILD_JOB_NUMBER}
     ```
     
-6. Save the job definition.
+8. Save the job definition.
 
 
-### Setup of the release job
+### Setting up the release job
 
-As the job for the deployment to the test system, this job is manually triggered but semantically linked to the job before.
+The release job must be manually triggered, but is semantically linked to the previous job.
 
-1. Open the Jenkins front end and go to **New Item**, select **Freestyle project** and enter `CI_DummyProject_master_release` as name.
+#### Procedure
 
-2. Enter the following values to the configuration:
+1. Open the Jenkins front end.
+
+2. Select **New Item > Freestyle project** and enter `CI_DummyProject_master_release` as name.
+
+3. Enter the following values:
   
     Field                                  | Value
     :------------------------------------- | :------------------------------------------------------------------------- 
@@ -209,8 +197,10 @@ As the job for the deployment to the test system, this job is manually triggered
     This job is parametrized               | `checked`
     Name                                   | `BUILD_JOB_NUMBER`
     Source Code Management                 | `none`
-    
-3. In the **Build** section, select ** Add build step > Copy artifacts from another project** and enter:
+
+4. In the **Build** section, select **Add build step > Copy artifacts from another project**. 
+
+5. Enter the following values:
 
     Field                                  | Value
     :------------------------------------- | :------------------------------------------------------------------------- 
@@ -218,8 +208,8 @@ As the job for the deployment to the test system, this job is manually triggered
     Which build                            | `Specific build`
     Build number                           | `$BUILD_JOB_NUMBER`
     Artifacts to copy                      | `target/*`
-       
-4. Select **Add build step > Execute shell**  and enter as shell command
+
+6. Select **Add build step > Execute shell** and enter the following script:
 
     ```
     echo "Now a real job would deploy the artifact to the production system."
@@ -228,73 +218,67 @@ As the job for the deployment to the test system, this job is manually triggered
 
     ```
 
-    The value of `{your repository Id}`, the example given in our [Landscape Configuration](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-    assumes `nexus1`.
+    According to the example described in [Landscape Configuration](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html) the value of `{your repository Id}` is `nexus1`.
       
-5. Save the job definition.
+7. Save the job definition.
 
 
-### Create a view to the Pipeline
+### Creating a view to the Pipeline
 
-So far, the jobs implementation cover single process steps and are connected to each other. To visualize the pipeline in Jenkins,
-we use the Jenkins Build Pipeline Plugin.
+So far, the implementation has consisted of separate process steps that are connected to each other. You can visualize the pipeline by using the Jenkins Build Pipeline Plugin.
 
 #### Procedure
 
-1. Open the Jenkins front end and click in the last view tab containing the `+` sign.
+1. Open the Jenkins front end.
 
-2. Provide a name for the new view like `DummyProject` and check **Build Pipeline View**. Press **OK**.
+2. Select the view tab that contains the `+` sign.
 
-3. In the Layout section, enter the CI build job (here `CI_DummyProject_master_build`) into the field **Select Initial Job**.
+3. Provide a name for the new view, for example `DummyProject`. 
 
-4. In the field **No Of Displayed Builds** enter `5` for the beginning, but you may enter whatever is convenient for you. 
+4. Then select **Build Pipeline View**. Press **OK**.
 
-5. Press **OK**.
+5. In the Layout section, in the **Select Initial Job** field, enter the CI build job name (`CI_DummyProject_master_build`).
 
-6. You should now see the pipeline like shown in the picture. Most probably, you will see that the first run of the build job was already done
-    since it has fetched the first initial commit just after being defined.
+6. Enter an appropriate value in **No Of Displayed Builds** (we suggest starting with `5`).
+
+7. Press **OK**.
+
+You should now see a pipeline that looks similar to that shown below. It is likely that the first run of the build job has already finished since it fetched the first initial commit immediately after it was defined.
     
     ![Jenkins Pipeline](jenkins-pipeline.png)
     
     
-### One roundtrip through the process
+### One round-trip through the process
 
-After having set up the continuous delivery pipeline, we do now a round trip through the process.
+After setting up the continuous delivery pipeline, try performing a round-trip through the process.
 
 #### Procedure
 
-1. On your local PC, add a file in the `DummyProject` and directly push it to `master` (for simplicity, we leave out the voting on Gerrit).
+1. On your local PC, add a file in the `DummyProject` and push it to `master` (for simplicity, we omit the voting on Gerrit).
 
-2. After not more than 2 minutes, the build job starts automatically. We assume that something usefully is built and tested.
+2. After no longer than two minutes, the build job starts automatically. Upon successful completion, "something useful" has been built and tested.
 
-    ![Round Trip: Build was done](round-trip-1.png)
+    ![Round-Trip: Build is finished](round-trip-1.png)
     
-3. Let us assume that this is the status that the quality manager or test coordinator sees when he enters his office in the morning. He has to decide
-    on the version that should be tested today and decides for the artifact produced in pipeline #2. The pipeline view is interactive. In the bottom
-    right corner of the box representing the deploy job to the test system, a trigger button is active. Push it.
+3. For the example scenario, assume that the status shown in the picture above is what the quality manager or test coordinator sees upon entering the office in the morning. He or she decides what version is to be tested today and determines the artifact produced in pipeline #2. The pipeline view is interactive: select the trigger button in the bottom-right corner of the box representing the deploy job to the test system (`CI_DummyProject_master_testDeploy`).
     
-4. We assume now that the artifacts are deployed to the test system.
+4. The artifacts are deployed to the test system.
 
-    ![Round Trip: Deploy to Test was done](round-trip-2.png)
+    ![Round-Trip: After Deploying to Test](round-trip-2.png)
 
-    We can convince ourselves that the artifacts are in fact copied from the build
-    job to this one by clicking onto the job in the view, then **Back to Project > Workspace**. There is a `target`
-    folder containing the expected artifact.
+    To see that the artifacts were archived by the build job into the workspace of this job, select **Back to Project > Workspace**. There is a `target` folder containing the expected artifact.
     
-    ![Round Trip: Artifact on Workspace](round-trip-3.png)
+    ![Round-Trip: Artifact in the Workspace](round-trip-3.png)
     
-5. After assumed successful test, the quality or release manager may decide to release the artifact. This means, he deploys it to the productive system
-    and triggers an upload to Nexus as released version.
+5. After a successful test, the quality or release manager may decide to release the artifact, that is, deploy it to the productive system and trigger an upload to Nexus as a released version.
      
-    ![Round Trip: Release](round-trip-4.png)
+    ![Round-Trip: Release](round-trip-4.png)
     
     As result, the artifact is available in Nexus.
     
-    ![Round Trip: Artfact in Nexus](round-trip-6.png)
+    ![Round-Trip: Artifact in Nexus](round-trip-6.png)
     
-It is worth to mention that only very few changes will finally be released.
-The journey of most of them will end after the build step since either the build was failed (then the deploy step will not be possible at all),
-the quality manager did not choose them for acceptance test execution or the release manager did not decide to release them.
+Only very few changes are finally released. The journey for most changes ends after the build step, since the build fails (indicating that the deploy step is not possible), the quality manager did not choose them for acceptance test execution, or the release manager decided not to release them.
 
-![Round Trip: Failed Build](round-trip-5.png)
+![Round-Trip: Failed Build](round-trip-5.png)
 

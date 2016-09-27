@@ -18,29 +18,32 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ---
 
 
-We will start by setting up the CI process for a pure Java project without any deployment. The build tool of choice is Maven. So on the local developer host, a Maven installation is a prerequisite. The general procedure is the following: first, a project in Gerrit is created together with the first branch, the main integration branch master. Then the (initially empty) repository is cloned on a local developer workplace, code is committed and pushed as a first commit in Gerrit. As the next step, a build voter is configured with Jenkins.
+This generic project outlines a CI process for a pure Java project without any deployment. The build tool is Maven,
+which must be installed on a local developer host.
+The general procedure is as follows: first, create a project in Gerrit together with the first branch, the main integration branch `master`. Clone the (initially empty)
+repository on a local developer workplace, commit the code and push it as a first commit to Gerrit. Next use Jenkins to configure a voter build, which builds
+the commit before it is merged into the `master` branch. Finally implement the CI build.
 
 #### Prerequisites
 
-- There is a developer workplace (PC) with the following installations:
+- A developer workplace (PC) with the following installations:
     - Java JDK
     - Git
     - Maven
-    
-- Running Git/Gerrit instance
-- Running Jenkins Master and a Jenkins build slave 
-- Running Nexus with at least one snapshot repository
+- A running Git/Gerrit instance
+- A running Jenkins master and a Jenkins build slave 
+- A running Nexus with at least one snapshot and one release repository
 
 ![Component Setup](generic-project-1.png)
 
-Eclipse as development environment is commonly used but not absolutely needed and not regarded as prerequisite in this guide.
+Eclipse as development environment is commonly used but not required, and considered a prerequisite.
 
 
 ### Basic Project Setup
 
 #### Procedure
 
-1. Access the Gerrit front end with a browser on port 8080 and log on with your admin user.
+1. Use a browser to access the Gerrit front end on port 8080. Log in as your admin user.
 
 2. Go to **Projects > Create New Project**. 
 
@@ -50,27 +53,29 @@ Eclipse as development environment is commonly used but not absolutely needed an
 
     ![Component Setup](generic-project-2.png)  
  
-    Alternatively, you may follow the steps for command line-based creation as described in:  
+    Alternatively, you may follow the steps for command line-based creation as described in the Gerrit documentation:  
     
     > Documentation: https://gerrit-review.googlesource.com/Documentation/cmd-create-project.html
     
-5. Do an initial clone of the project to your PC and check out the `master` branch.
+5. Create an initial clone of the project on your PC and check out the `master` branch.
 
-6. On your local PC, for being able to push commits to Gerrit, you have to add a commit hook into the
-    `{Git repository root}/.git/hooks` directory. It can be obtained through `http://<hostname of Gerrit>:8080/tools/hooks/commit-msg`.
+6. On your local PC, to push commits to Gerrit, add a commit hook into the
+    `<Git repository root>/.git/hooks` directory. You can obtain this from `http://<hostname of Gerrit>:8080/tools/hooks/commit-msg`.
     Every developer who plans to do commits against Gerrit needs this hook.
      
     > Documentation: https://git.eclipse.org/r/Documentation/cmd-hook-commit-msg.html
     
 7. Add the initial project files into the Git workspace.
-    For example, add the following files with the content taken from the appendix:
+    For example, add the following files:
 
     ```
-    {Git repository root}/pom.xml
-    {Git repository root}/src/main/java/company/org/App.java
-    {Git repository root}/src/test/java/company/org/AppTest.java
+    <Git repository root>/pom.xml
+    <Git repository root>/src/main/java/company/org/App.java
+    <Git repository root>/src/test/java/company/org/AppTest.java
     ```
-
+    
+    The content of the files is available in the appendix.
+    
 8. Create a commit and push:
 
     ```
@@ -81,87 +86,92 @@ Eclipse as development environment is commonly used but not absolutely needed an
 
 9. In Gerrit, the commit should be listed under **My > Changes**. 
 
-10. Give the commit a `Code-Review+2 and **Submit**.
+10. Assign the commit a `Code-Review+2` and select **Submit**.
     Now the commit is merged into the master branch.
 
 
 ### Jenkins Voter Build
 
-Yet there is no Jenkins voter build configured for this branch. The global configurations are done, so now we will define the job.
+Configure a Jenkins voter build for this branch. The global configurations are already done, so now we only need to define the job.
 
 #### Procedure
 
-1. Open the Jenkins front end and go to `**New Item** and select **Maven project**.
+1. Open the Jenkins front end. Select **New Item**, then **Maven project**.
 
-2. Enter a project name like `VO_HelloWorld_master`.
-    In principle, the name does not play a technical role except for identifying the job, but keep in mind that over time you might have to differentiate many jobs by Gerrit project name, branch, or other purposes (like the prefix `VO` for "voter build"). A naming convention is helpful.
+2. Enter a project name, for example `VO_HelloWorld_master_build`.
+    The name only identifies the job, that is, it plays a technical role. But keep in mind that over time you might have to differentiate many jobs by Gerrit project name,
+    branch, or other purposes (such as using the prefix `VO` for "voter build"). You may want to establish your own naming convention.
 
-3. In the project configuration, enter the following data:  
-
+3. In the general section of the project configuration, select **Restrict where this project can be run** and
+    enter the label that you have assigned to the slave, in this case `builds`.
+    
+4. In the **Source Code Management** section, select **Git** and enter the following data:
+    
     Field                                    | Value
     :--------------------------------------- | :------------------------------------------------------------------------
-    Restrict where this project can be run   | `checked`; Label Expression: the label that you have assigned to the slave, in this case `builds`
-    Source Code Management                   | `Git`
-    Git                                      | `checked`
-    Repository URL                           | `{the ssh based URL of your repository}`
-    Credentials                              | `jenkins`, Click on **Advanced...**
+    Repository URL                           | `<the ssh based URL of your repository>`
+    Credentials                              | `jenkins`
+    
+    Click on **Advanced...**:
+    
+    Field                                    | Value
+    :--------------------------------------- | :------------------------------------------------------------------------
     Ref spec                                 | `refs/changes/*:refs/changes/*`
-    Branches to build; Branch Specifier      | `$GERRIT_REFSPEC` (this might be unintuitive, but works according to the official documentation)
-    Build Triggers                           |
-    Gerrit Event                             | `checked`
-    Gerrit Trigger                           |
-    Choose a server                          | `{the Gerrit server you already have defined in Jenkins}`
-    Trigger on                               |
-    Add                                      | `Patchset Created`
-    Gerrit Project                           | Plain: `HelloWorld`; Branches Plain: `master`
-    Build                                    |
-    Goals an options                         | `clean install`
+    Branches to build; Branch Specifier      | `$GERRIT_REFSPEC` (this seems unintuitive, but does work according to the Gerrit documentation)
+    
+5. In the **Build Triggers** section, select **Gerrit Event**.
 
-    Now the Jenkins project is ready to listen to Gerrit events.
+6. In the **Gerrit Trigger** section, choose the server which you already have defined
+    in Jenkins.  
+    Add a new trigger by clicking on **Add > Patch set Created**. In the **Gerrit Project** pane, enter `HelloWorld` as project name and `master` as
+    branch name, both with type `plain`.
+    
+7. In the **Build Environment** section, select **Delete workspace before build starts**. This ensures that you always have a clean build without the risk that it is polluted
+    by the build before.
+    
+8. In the **Build** section, add `clean verify` as **Goals and Options**.
+
+    The Jenkins project is now ready to listen for Gerrit events.
     
     > Documentation: https://wiki.jenkins-ci.org/display/JENKINS/Gerrit+Trigger
     
-4. In the local sources on your PC, do a small change, commit, and push it. You should be able to see once the change reaches Gerrit that a Jenkins build is triggered. Depending on the build status, the code review is rated -1 or +1.
+9. From the local sources on your PC, perform a small change, commit, and push it. Once the change reaches Gerrit, a Jenkins build is
+    triggered. Depending on the build status, the code review is rated -1 or +1.
 
     ![Gerrit configuration](generic-project-3.png)
 
-5. As the next step in the workflow (provided the build status is OK), you may review the change with +2 and submit it to merge the change into the master branch.
+10. You may want to review the change with +2 and press **Submit** to merge the change into the `master` branch.
 
 
 ### Jenkins CI Build
 
-A the CI build reacts on new commits pushed into the branch, an integration with Gerrit is not necessary. Instead, a time schedule can be defined and the build can also be triggered manually at any time.
+The CI build reacts on new commits pushed into the branch in Git, that is, an integration with Gerrit is unnecessary.
+Instead, you can define a time schedule or manually trigger the build at any time.
 
 #### Procedure
 
-1. Open the Jenkins front end and go to **New Item** and select **Maven project**.
+1. Open the Jenkins front end and go to **New Item**.  
+    The CI build differs from the voter build only in the details how it is triggered. Hence,
+    enter `CI_HelloWorld_master_build` as name, select **Copy existing item** and enter `VO_HelloWorld_master_build`.
+    
+2. In the **Source Code Management** section, click on **Advanced...** and clean the field **Ref spec**.  
+    Enter `master` as **Branch Specifier**.
+    
+3. In the **Build Triggers** section, select **Poll SCM** and enter a pull frequency. In order to have immediate build results after a merge,
+    every two minutes could be an appropriate value.
 
-2. Enter a project name like `CI_HelloWorld_master`. As before, instead of `CI`, you may choose a prefix of your choice.
+4. When you submit a change into the `master` branch in Gerrit, you see this job start running after some time according
+    to the pull frequency.
 
-3. In the project configuration, enter the following data:  
-
-    Field                                  | Value
-    :------------------------------------- | :------------------------------------------------------------------------- 
-    Restrict where this project can be run | `checked`; Label Expression: the label that you have assigned to the slave, in this case `builds` 
-    Source Code Management                 | `Git`; Enter the repository URL and as Credentials: `jenkins` 
-    Git                                    | `checked` 
-    Repository URL                         | `{the ssh based URL of your repository}` 
-    Credentials                            | `jenkins` 
-    Ref spec                               | `{empty}` 
-    Branches to build; Branch Specifier    | `master`
-    Build Triggers                         |
-    Poll SCM                               | `checked`
-    Schedule                               | `{Enter a pull frequency. In order to have immediate results, every two minutes could be an appropriate value}`
-    Build                                  |
-    Goals and options                      | `clean install`
- 
-4. When you do a Gerrit submit of a change into the `master` branch, you should be able to see this job start running.
 
 ### Artifact Upload to Nexus
 
-In the current setup, the build results are only stored in the build node's workspace. However, it could be that they have to be reused: 
-Additional test steps might be added in the future, or there might be other Maven projects depending on this project.
-Therefore, the results have to be uploaded to the Nexus instance for permanent storage.
+In the current setup, the build results are stored only in the build node's workspace. However, you may need to reuse them: 
+you might add test steps or you might have other Maven projects that depend on this project.
+In most examples of our guide, we will use the
+Jenkins archiving feature to temporarily store artifacts instead of a snapshot repository in Nexus. The upload to Nexus
+ is usually used by for released versions only.
+Nevertheless, we demonstrate here the Nexus upload on a snapshot version to demonstrate the principle.
 
 #### Procedure
 
@@ -171,12 +181,13 @@ Therefore, the results have to be uploaded to the Nexus instance for permanent s
     <distributionManagement>
       <snapshotRepository>
         <id>nexus1</id>
-        <url>{snapshot repository url on Nexus}</url>
+        <url><snapshot repository url on Nexus></url>
       </snapshotRepository>
     </distributionManagement>
     ```
 
-    The id `nexus1` refers to the credential entry in the maven installation's `settings.xml` on the Jenkins node machine. You can fetch the URL of the snapshot repository from the Repository overview page of the Nexus front end. Be aware that only a snapshot repository is defined so far. Therefore,the version defined in the maven project `pom.xml` must be a `SNAPSHOT` version, otherwise the upload to Nexus will not work.
+    The id `nexus1` refers to the credential entry in the maven installation's `settings.xml` on the Jenkins node machine.
+    You can fetch the URL of the snapshot repository from the Repository overview page of the Nexus front end.
 
 2. In Jenkins, go to the build job of the project and open the **Configure** page.
 
@@ -252,7 +263,7 @@ public class AppTest
 <!--  <distributionManagement>
     <snapshotRepository>
       <id>nexusCIProcess</id>
-      <url>http://{enter your nexus host here}:8081/nexus/content/repositories/snapshots</url>
+      <url>http://<your nexus host>:8081/nexus/content/repositories/snapshots</url>
     </snapshotRepository>
   </distributionManagement> -->  
 </project>

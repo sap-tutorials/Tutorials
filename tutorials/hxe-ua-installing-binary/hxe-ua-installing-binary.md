@@ -1,14 +1,14 @@
 ---
 title: Installing Binary
 description: You may install SAP HANA, express edition on a Linux server using the HANA Database Lifecycle Manager (hdblcm) tool.
-tags: [ tutorial>beginner, topic>HXE,  products>sap-hana\,-express-edition ]
+tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 The SAP HANA, express edition is for Linux machines running specific installations, provided your host machine meets the storage and memory prerequisites. Choose this installation method if you want a custom setup. This tutorial is available as a [video](http://go.sap.com/assetdetail/2016/09/eccafc12-8a7c-0010-82c7-eda71af511fa.html).
 
 ## Prerequisites
 - **Proficiency** Beginner
 - **Software** Your server will need the following:
-  - Java Runtime Environment 8
+  - Java Runtime Environment 8 (If you are planning to install the SAP HANA, express edition Download Manager for Windows or Linux, you need the 64-bit JRE. If you are planning to install the platform-independent Download Manager, you can use either the 32- or 64-bit JRE.)
   - OpenSSL .0.9.8
   - Linux SUSE for SAP in one of the following versions:
     - SUSE Linux Enterprise Server for SAP 12 SP1
@@ -56,7 +56,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 3. On the **Registration Success** page, click the **Download** button.
 
     ![Registration Success page](Other_HXE_register_success.PNG)  
-    
+
     The SAP HANA, express edition Download Manager opens.
 
     >**Note:**

@@ -19,7 +19,7 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 The terms Continuous Integration (CI) and Continuous Delivery (CD) are both widely used in software engineering: CI as the adoption of agile principles; CD as a combination of agile methodology techniques and a high-quality delivery process. Whereas CI addresses building a software product from the contributions of single members of a development team in a controlled though lean way, the goal of CD is validation of every change, preferably in an automated way, so that it is potentially shippable.
 
-What "shippable" means depends on the context. It could mean, for example, moving a web application feature into production mode or making software available from a download site. Both CI and CI serve one-person-shops as well as multiple teams working on one product. They can be adjusted to individual requirements and constraints. They are also flexible in that you can decide "how agile" you want the delivery process to be, which means you need not implement  practices that do not suit the environment. At the same time, you can expand the process as needed.
+What "shippable" means depends on the context. It could mean, for example, moving a web application feature into production mode or making software available from a download site. Both CI and CD serve one-person-shops as well as multiple teams working on one product. They can be adjusted to individual requirements and constraints. They are also flexible in that you can decide "how agile" you want the delivery process to be, which means you need not implement  practices that do not suit the environment. At the same time, you can expand the process as needed.
 
 The next section outlines best practices for both CI and CD.
 

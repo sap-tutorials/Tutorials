@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Visualize your predictive demo data set
 description: Using the configured destination for the OData service, you will extend your application to visualize the predictive demo dataset
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive, topic>sapui5, topic>odata ]
+tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, topic>sapui5, topic>odata ]
 ---
 
 ## Prerequisites
@@ -45,7 +45,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
     - a grid table that will display the data return by the OData service called in the `onLoadData` controller function
     - a `VizFrame` that will display a line chart with the same data
 
-    ```XML
+    ```xml
     <mvc:View controllerName="demo.controller.odata.ODataDisplay"
       xmlns:html="http://www.w3.org/1999/xhtml"
       xmlns:mvc="sap.ui.core.mvc"
@@ -109,7 +109,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
     The controller includes the functions used to process the 'Press' events on the controls added in the view and process the `AJAX` calls to the OData services.
 
-    ```JavaScript
+    ```javascript
     sap.ui.define([
       "sap/ui/core/mvc/Controller",
       "sap/m/MessageToast"
@@ -176,7 +176,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
     Here we simply extend the main view.
 
-    ```XML
+    ```xml
     <mvc:View controllerName="demo.controller.demo"
       xmlns:html="http://www.w3.org/1999/xhtml"
       xmlns:mvc="sap.ui.core.mvc"

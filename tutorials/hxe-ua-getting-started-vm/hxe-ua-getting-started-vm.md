@@ -1,7 +1,7 @@
 ---
 title: Start Using SAP HANA, express edition
 description: Once you’ve downloaded the SAP HANA, express edition OVA, start the server, change the default passwords to secure your system, and connect using client tools.
-tags: [  tutorial>beginner, topic>HXE, products>sap-hana\,-express-edition ]
+tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -100,15 +100,15 @@ Example:  `https://<hostname>:53075`
 
 ### Configure SAP HANA Studio
 Download SAP HANA Studio from the SAP HANA developer edition HANA Tools site to your laptop. Then connect to your SAP HANA, express edition instance.
-1. Download Eclipse Mars from [eclipse.org/downloads/](https://eclipse.org/downloads/)
+1. Download Eclipse Neon from [eclipse.org/downloads/](https://eclipse.org/downloads/)
 2. Review the installation procedure at [tools.hana.ondemand.com/#hanatools](https://tools.hana.ondemand.com/#hanatools). Ensure your laptop meets the prerequisites.
-3. Follow the installation procedure, but select Eclipse Mars.
+3. Follow the installation procedure, but select Eclipse Neon.
 4. When directed to the Eclipse packages site, select either **Eclipse IDE for Java EE Developers** or **Eclipse IDE for Java Developers**.
 5.	Download to your laptop.
 6.	Start the Eclipse installer.
 7.	Select a workspace when prompted. The welcome page displays.
 8.	Select *Help > Install New Software*.
-9.	In the Work with field, type https://tools.hana.ondemand.com/mars and click **Add**. The Add Repository dialog box displays.
+9.	In the Work with field, type https://tools.hana.ondemand.com/neon and click **Add**. The Add Repository dialog box displays.
 10.	In the Name field, type **SAP HANA, express edition**.
 11.	Expand the **SAP HANA Tools** node.
 12.	Select **SAP HANA Administrator (Developer Edition)**.
