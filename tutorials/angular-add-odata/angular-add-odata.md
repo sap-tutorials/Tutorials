@@ -1,6 +1,6 @@
 ---
-title: AngularJS - Connect to the ODATA source
-description: Step #5: ODATA is our backend data source.  Connect to the public Northwind test data site.
+title: AngularJS - Connect to the OData source
+description: Step #5: OData is our backend data source.  Connect to the public Northwind test data site.
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
@@ -9,7 +9,6 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 
 ## Next Steps
  - **Tutorials** Step 6 [Add a Header and Detail Modal Dialog](http://go.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)
- - 
 
 ## Details
 ### You will learn  
@@ -24,7 +23,7 @@ In this tutorial series, we will explore another technology for Single Page Appl
 
 ---
 
-### Change the test data to the ODATA source
+### Change the test data to the OData source
 
 1.  Remove the test data from the JavaScript file.
 
@@ -44,7 +43,7 @@ In this tutorial series, we will explore another technology for Single Page Appl
 
     ![Reset the product list to an empty array](1-2.png)   
 
-3.  Now we want to add in the HTML call to get the ODATA information.  To do that, we will use the `$http` service to get the data.  
+3.  Now we want to add in the HTML call to get the OData information.  To do that, we will use the `$http` service to get the data.  
 
     Change the `helloController` function to get the `$http` service from Angular
     
