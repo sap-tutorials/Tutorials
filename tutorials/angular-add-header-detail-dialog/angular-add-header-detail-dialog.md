@@ -5,14 +5,14 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorials** Step #5 [Add ODATA to the application](http://go.sap.com/developer/tutorials/angular-add-odata.html)
+ - **Tutorials** Step #5 [Add OData to the application](http://go.sap.com/developer/tutorials/angular-add-odata.html)
 
 ## Next Steps
  - **Tutorials** Step 7 [Add a Form to your application](http://go.sap.com/developer/tutorials/angular-forms-intro.html)  
 
 ## Details
 ### You will learn  
-In this tutorial series, we will explore another technology for Single Page Application (SPA) development - AngularJS (or just Angular).  Angular is a popular web framework in North America, and is used by many companies for both internal and client-facing systems.  These tutorials will parallel our SAPUI5 tutorials, building a visual interface using Angular, and connecting it to an ODATA back end service.
+In this tutorial series, we will explore another technology for Single Page Application (SPA) development - AngularJS (or just Angular).  Angular is a popular web framework in North America, and is used by many companies for both internal and client-facing systems.  These tutorials will parallel our SAPUI5 tutorials, building a visual interface using Angular, and connecting it to an OData back end service.
 
 ### Time to Complete
 **15 Min**.
