@@ -9,18 +9,20 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 
 ## Next Steps
 #### AngularJS Series
- - Step #2: [Create the Bootstrap Template](http://go.sap.com/)
+ - **Tutorials:** Step 2 [Create the Bootstrap Template](http://go.sap.com/developer/tutorials/angular-bootstrap-template.html)
 
 ## Details
 ### You will learn  
-Developers writing the HTML5 front-end to modern web applications have many choices of development technologies and frameworks.  SAP offers SAPUI5 for front-end development, but it is not the only choice for developing rich SPA (Single Page Applications) on the web.
+In this tutorial series, we will explore another technology for Single Page Application (SPA) development - AngularJS (or just Angular).  Angular is a popular web framework in North America, and is used by many companies for both internal and client-facing systems.  These tutorials will parallel our SAPUI5 tutorials, building a visual interface using Angular, and connecting it to an ODATA back end service.
 
-In this tutorial series, we will explore another technology for SPA development - AngularJS (which we will just call Angular).  Angular is a popular web framework, and is used by many companies.  This series will build a simple web front end, and connect that to ODATA services.
 ### Time to Complete
 **15 Min**.
 
 ---
-In this first tutorial, we will connect to the SAP Web IDE (free for development use), and then get a simple project set up for our future tutorials.
+#### AngularJS series
+**Step 1**: Connect to the SAP Web IDE (free for development use), and then get a simple project set up for our future tutorials.
+
+---
 
 ### Connect to SAP Web IDE
 
@@ -115,5 +117,5 @@ In this first tutorial, we will connect to the SAP Web IDE (free for development
 Yes, you can.   We are using Web IDE because it provides an unlimited, free, developer account.  It also has a built-in web front end, so that you can test your code immediately.  And, it has a pretty good HTML and JavaScript editing system.  But there are plenty of other development IDE's, including Eclipse, that would work as well.  Feel free to use the one that your company is using, or try out a new one.
 
 ## Next Steps
- - **Tutorials** Step #2: [Create the Bootstrap Template](http://go.sap.com/)
+ - **Tutorials:** Step 2 [Create the Bootstrap Template](http://go.sap.com/developer/tutorials/angular-bootstrap-template.html)
 

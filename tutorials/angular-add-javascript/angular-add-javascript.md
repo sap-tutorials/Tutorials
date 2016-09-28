@@ -6,22 +6,23 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ## Prerequisites  
  - **Proficiency:** Beginner 
 #### AngularJS Series
- - Step #1 [AngularJS Getting Started](http://go.sap.com/)
- - Step #2 [Create the Bootstrap Template](http://go.sap.com/)
+- **Tutorials** Step 2 [Create the Bootstrap Template](http://go.sap.com/developer/tutorials/angular-bootstrap-template.html)
 
 ## Next Steps
- - Step #4 [Separate the JavaScript and CSS Files](http://go.sap.com/)
+- **Tutorials** Step 4 [Separate the JavaScript and CSS Files](http://go.sap.com/developer/tutorials/angular-separate-files.html) 
 
 ## Details
 ### You will learn  
-Developers writing the HTML5 front-end to modern web applications have many choices of development technologies and frameworks.  SAP offers SAPUI5 for front-end development, but it is not the only choice for developing rich SPA (Single Page Applications) on the web.
-
-In this tutorial series, we will explore another technology for SPA development - AngularJS (which we will just call Angular).  Angular is a popular web framework, and is used by many companies.  This series will build a simple web front end, and connect that to ODATA services.
+In this tutorial series, we will explore another technology for Single Page Application (SPA) development - AngularJS (or just Angular).  Angular is a popular web framework in North America, and is used by many companies for both internal and client-facing systems.  These tutorials will parallel our SAPUI5 tutorials, building a visual interface using Angular, and connecting it to an ODATA back end service.
 ### Time to Complete
 **15 Min**.
 
 ---
-In the third tutorial, we will now add AngularJS to our web application.  We will introduce the angular *module* and *controller* to our mix, and show how they can be used to control the data in an application.
+
+#### AngularJS series
+**Step 3**: Add AngularJS to our web application.  We will introduce the angular *module* and *controller* to our mix, and show how they can be used to control the data in an application.
+
+---
 
 ### Add Angular to our application
 
@@ -237,4 +238,4 @@ In our list, we have a boolean called `Discontinued`.  But we don't want to disp
 - [`ng-repeat`](https://docs.angularjs.org/api/ng/directive/ngRepeat) - the AngularJS loop function
 
 ## Next Steps
-- **Tutorials** AngularJS Series - Step #4 [Separate the JavaScript and CSS Files](http://go.sap.com/) 
+- **Tutorials** Step 4 [Separate the JavaScript and CSS Files](http://go.sap.com/developer/tutorials/angular-separate-files.html) 

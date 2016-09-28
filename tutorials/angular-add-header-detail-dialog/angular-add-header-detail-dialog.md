@@ -5,26 +5,23 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
-#### AngularJS Series
- - Step #1 [AngularJS Getting Started](http://go.sap.com/)
- - Step #2 [Create the Bootstrap Template](http://go.sap.com/)
- - Step #3 [Add the AngularJS JavaScript](http://go.sap.com/) 
- - Step #4 [Separate the JavaScript and CSS Files](http://go.sap.com/) 
- - Step #5 [Add ODATA to the application](http://go.sap.com/)
+ - **Tutorials** Step #5 [Add ODATA to the application](http://go.sap.com/developer/tutorials/angular-add-odata.html)
 
 ## Next Steps
- - Step #7 [Add a Form to your application](http://go.sap.com/)  
+ - **Tutorials** Step 7 [Add a Form to your application](http://go.sap.com/developer/tutorials/angular-forms-intro.html)  
 
 ## Details
 ### You will learn  
-Developers writing the HTML5 front-end to modern web applications have many choices of development technologies and frameworks.  SAP offers SAPUI5 for front-end development, but it is not the only choice for developing rich SPA (Single Page Applications) on the web.
+In this tutorial series, we will explore another technology for Single Page Application (SPA) development - AngularJS (or just Angular).  Angular is a popular web framework in North America, and is used by many companies for both internal and client-facing systems.  These tutorials will parallel our SAPUI5 tutorials, building a visual interface using Angular, and connecting it to an ODATA back end service.
 
-In this tutorial series, we will explore another technology for SPA development - AngularJS (which we will just call Angular).  Angular is a popular web framework, and is used by many companies.  This series will build a simple web front end, and connect that to ODATA services.
 ### Time to Complete
 **15 Min**.
 
 ---
-In the sixth tutorial, we will add additional screens to our Angular application.  First, we will add a header to our list box, and second, we will add a Detail dialog box when the user clicks on a row.
+#### AngularJS series
+**Step 6**: Add additional screens to our Angular application.  First, we will add a header to our list box, and second, we will add a Detail dialog box when the user clicks on a row.
+
+---
 
 ### Add a header to our list
 
@@ -201,4 +198,4 @@ The `ng-click` attribute has sent the selected row to the function `selectProduc
 - [`ng-click`](https://docs.angularjs.org/api/ng/directive/ngClick) - Route a click event to an Angular function.
 
 ## Next Steps
-  - **Tutorials** Step #7 [Add a Form to your application](http://go.sap.com/)  
+ - **Tutorials** Step 7 [Add a Form to your application](http://go.sap.com/developer/tutorials/angular-forms-intro.html) 

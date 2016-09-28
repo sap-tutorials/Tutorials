@@ -5,25 +5,24 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
-#### AngularJS Series
- - Step #1 [AngularJS Getting Started](http://go.sap.com/)
- - Step #2 [Create the Bootstrap Template](http://go.sap.com/)
- - Step #3 [Add the AngularJS JavaScript](http://go.sap.com/) 
- - Step #4 [Separate the JavaScript and CSS Files](http://go.sap.com/)
+ - **Tutorials** Step 4 [Separate the JavaScript and CSS Files](http://go.sap.com/developer/tutorials/angular-separate-files.html)
 
 ## Next Steps
- - Step #6 [Add a Header and Detail Modal Dialog](http://go.sap.com/)  
+ - **Tutorials** Step 6 [Add a Header and Detail Modal Dialog](http://go.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)
+ - 
 
 ## Details
 ### You will learn  
-Developers writing the HTML5 front-end to modern web applications have many choices of development technologies and frameworks.  SAP offers SAPUI5 for front-end development, but it is not the only choice for developing rich SPA (Single Page Applications) on the web.
+In this tutorial series, we will explore another technology for Single Page Application (SPA) development - AngularJS (or just Angular).  Angular is a popular web framework in North America, and is used by many companies for both internal and client-facing systems.  These tutorials will parallel our SAPUI5 tutorials, building a visual interface using Angular, and connecting it to an ODATA back end service.
 
-In this tutorial series, we will explore another technology for SPA development - AngularJS (which we will just call Angular).  Angular is a popular web framework, and is used by many companies.  This series will build a simple web front end, and connect that to ODATA services.
 ### Time to Complete
 **15 Min**.
 
 ---
-In the fifth tutorial, we will start to work with the `$http` service.  This service provides a way to asynchronously get data from a server.  We will be using the [public Northwind test data service](http://www.odata.org/) to provide this test data.
+#### AngularJS series
+**Step 5**: Start to work with the `$http` service.  This service provides a way to asynchronously get data from a server.  We will be using the [public Northwind test data service](http://www.odata.org/) to provide this test data.
+
+---
 
 ### Change the test data to the ODATA source
 
@@ -87,4 +86,4 @@ In the fifth tutorial, we will start to work with the `$http` service.  This ser
 - [`$get`](https://docs.angularjs.org/api/ng/service/$http#get) (which is a shortcut for `$http`)
 
 ## Next Steps
- - **Tutorials:**  Step #6 [Add a Header and Detail Modal Dialog](http://go.sap.com/) 
+ - **Tutorials** Step 6 [Add a Header and Detail Modal Dialog](http://go.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)

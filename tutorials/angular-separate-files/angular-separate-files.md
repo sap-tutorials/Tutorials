@@ -5,24 +5,24 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
-#### AngularJS Series
- - Step #1 [AngularJS Getting Started](http://go.sap.com/)
- - Step #2 [Create the Bootstrap Template](http://go.sap.com/)
- - Step #3 [Add the AngularJS JavaScript](http://go.sap.com/) 
+ - **Tutorials** Step #3 [Add the AngularJS JavaScript](http://go.sap.com/developer/tutorials/angular-add-javascript.html)
 
 ## Next Steps
- - Step #5 [Add ODATA to the application](http://go.sap.com/)
+ - **Tutorials** Step #5 Add ODATA to the application](http://go.sap.com/developer/tutorials/angular-add-odata.html)
 
+ 
 ## Details
 ### You will learn  
-Developers writing the HTML5 front-end to modern web applications have many choices of development technologies and frameworks.  SAP offers SAPUI5 for front-end development, but it is not the only choice for developing rich SPA (Single Page Applications) on the web.
+In this tutorial series, we will explore another technology for Single Page Application (SPA) development - AngularJS (or just Angular).  Angular is a popular web framework in North America, and is used by many companies for both internal and client-facing systems.  These tutorials will parallel our SAPUI5 tutorials, building a visual interface using Angular, and connecting it to an ODATA back end service.
 
-In this tutorial series, we will explore another technology for SPA development - AngularJS (which we will just call Angular).  Angular is a popular web framework, and is used by many companies.  This series will build a simple web front end, and connect that to ODATA services.
 ### Time to Complete
 **15 Min**.
 
 ---
-In the fourth tutorial, we will connect an external OData feed to our application.  While doing that, we will also learn how to use an Angular *factory* to insert functionality in multiple places.  Finally, we will examine the Angular `$resource` factory, which helps us connect to REST resources.
+#### AngularJS series
+**Step 4**: Connect an external OData feed to our application.  While doing that, we will also learn how to use an Angular *factory* to insert functionality in multiple places.  Finally, we will examine the Angular `$resource` factory, which helps us connect to REST resources.
+
+---
 
 ### Move the JavaScript to a Separate File
 
@@ -163,4 +163,4 @@ Follow the same procedures to move the CSS file
 
 
 ## Next Steps
- - **Tutorials** Step #5 [Add ODATA to the application](http://go.sap.com/)
+ - **Tutorials** Step #5 Add ODATA to the application](http://go.sap.com/developer/tutorials/angular-add-odata.html)

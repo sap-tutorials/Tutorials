@@ -5,11 +5,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
-#### AngularJS Series
- - Step #1 [AngularJS Getting Started](http://go.sap.com/)
+ - **Tutorials** Step #1 [AngularJS Getting Started](http://go.sap.com/developer/tutorials/angular-getting-started.html) 
 
 ## Next Steps
- - Step #3 [Add the AngularJS JavaScript](http://go.sap.com/)
+ - **Tutorials** Step #3 [Add the AngularJS JavaScript](http://go.sap.com/developer/tutorials/angular-add-javascript.html) 
 
  
 ## Details
@@ -21,11 +20,14 @@ In this tutorial series, we will explore another technology for SPA development 
 **10 Min**.
 
 ---
-In the second tutorial, we will be setting up a template using [Bootstrap](https://getbootstrap.com/), a very popular open source layout system from Twitter.  Bootstrap makes it easy to create good looking web forms without manually writing a lot of CSS, and also has JavaScript tools for creating dialog boxes and other screen elements.  
+#### AngularJS series
+**Step 2**: Set up a template using [Bootstrap](https://getbootstrap.com/), a very popular open source layout system from Twitter.  Bootstrap makes it easy to create good looking web forms without manually writing a lot of CSS, and also has JavaScript tools for creating dialog boxes and other screen elements.  
 
-We will use Bootstrap for all of our web page layout.  
+We will use [Bootstrap](https://getbootstrap.com/) for all of our web page layout.  
 
-We will also be adding in [jQuery](https://jquery.com/), a very popular web toolkit.  jQuery provides a number of great tools to help change web pages in JavaScript.  jQuery is required in order to use Bootstrap properly, so we will load it first.
+We will also be adding in [jQuery](https://jquery.com/), a popular web toolkit.  jQuery provides a number of great tools to help change web pages in JavaScript.  jQuery is required in order to use Bootstrap properly, so we will load it first.
+
+---
 
 ### Set up Bootstrap
 
@@ -304,5 +306,5 @@ So, now that we have Bootstrap, let's set up the template for our application.
  - [Bootstrap](https://getbootstrap.com/) - get more information about Bootstrap.
         
 ## Next Steps
- - **Tutorials** Step #3 [Add the AngularJS JavaScript](http://go.sap.com/)
+ - **Tutorials** Step #3 [Add the AngularJS JavaScript](http://go.sap.com/developer/tutorials/angular-add-javascript.html) 
 
