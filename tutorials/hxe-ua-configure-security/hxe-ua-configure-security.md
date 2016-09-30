@@ -83,7 +83,7 @@ After confirmation, the properties page refreshes with your new license informat
 
 4.	Confirm that the license key was installed by issuing the following command.
 
-    `hdbsql -u system -p HANAhxe2 -d SystemDB "select hardware_key, expiration_date from m_licenses"`
+    `hdbsql -u system -p <password> -d SystemDB "select hardware_key, expiration_date from m_licenses"`
 
  The expiration date should be one year from today.
 5. Proceed to **Change the SSFS Master Keys**.
