@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Setup a HANA user account for the HCP predictive services
 description: Configure a user account with the relevant roles and privileges to use the SAP HCP predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 ---
 
 ## Prerequisites

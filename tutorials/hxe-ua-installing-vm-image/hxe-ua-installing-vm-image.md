@@ -1,7 +1,7 @@
 ---
 title: Installing the VM Image
 description: Installing the VM image is the simplest SAP HANA, express edition setup for compatible Windows, OS X, and Linux machines. This method installs a prepackaged express edition appliance running on a SUSE Linux VM guest.
-tags: [  tutorial>beginner, topic>HXE, products>sap-hana\,-express-edition ]
+tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  

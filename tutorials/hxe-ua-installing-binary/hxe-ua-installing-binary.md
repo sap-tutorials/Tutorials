@@ -1,7 +1,7 @@
 ---
 title: Installing Binary
 description: You may install SAP HANA, express edition on a Linux server using the HANA Database Lifecycle Manager (hdblcm) tool.
-tags: [ tutorial>beginner, topic>HXE,  products>sap-hana\,-express-edition ]
+tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 The SAP HANA, express edition is for Linux machines running specific installations, provided your host machine meets the storage and memory prerequisites. Choose this installation method if you want a custom setup. This tutorial is available as a [video](http://go.sap.com/assetdetail/2016/09/eccafc12-8a7c-0010-82c7-eda71af511fa.html).
 
