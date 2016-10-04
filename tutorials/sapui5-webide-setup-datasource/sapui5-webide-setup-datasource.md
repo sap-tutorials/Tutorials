@@ -84,6 +84,11 @@ Now, we will connect the cloud destination (which you created in the [Create Nor
     
     ![Define the default model](7.png)
     
+
+10. In the following screen, modify the `Binding Mode` property (on the lower right hand side).  Click the arrow, and select `Default` as the binding mode.
+
+    ![Change the binding mode](7b.png)
+
 11. The finished model screen should look like this.  Click **Save** to save this file.
 
     ![Save icon](save-icon.png)
