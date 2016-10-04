@@ -1,6 +1,6 @@
 ---
 title: Internet of Things (IoT) made easy
-description: The idea behind this tutorial is quickly show how to add a device and capture sensor data in the clous.
+description: The idea behind this tutorial is quickly show how to add a device and capture sensor data in the cloud.
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-cloud-platform ]
 ---
 
