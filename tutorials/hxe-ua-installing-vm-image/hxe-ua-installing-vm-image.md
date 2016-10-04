@@ -31,7 +31,7 @@ Installing the OVA installs:
 ### Machine Requirements
 Check if your machine has the recommended hardware to successfully install and run the express edition VM image.
 
-**JRE 8** - The Download Manager requires JRE 8 or higher. If you are planning to install the SAP HANA, express edition Download Manager for Windows or Linux, you need the 64-bit JRE. If you are planning to install the platform-independent Download Manager, you can use either the 32- or 64-bit JRE. 
+**JRE 8** - The Download Manager requires JRE 8 or higher. If you are planning to install the SAP HANA, express edition Download Manager for Windows or Linux, you need the 64-bit JRE. If you are planning to install the platform-independent Download Manager, you can use either the 32- or 64-bit JRE.
 **RAM** - 16 GB RAM recommended.  
 **HDD** - 120 GB recommended.  
 **Cores** - 2 cores (4 recommended).  
@@ -43,6 +43,7 @@ SAP HANA, express edition has been tested on these `hypervisors`:
 * [`VMware Player 7.1`](https://www.vmware.com/)
 * [`VMware Workstation Pro 12.1`](https://www.vmware.com/)
 * [`VMware Fusion or VMware Fusion Pro 8.x`](https://www.vmware.com/)
+* [`Oracle VirtualBox`](https://www.virtualbox.org/)
 
 For the purposes of this tutorial, you will use the VMware Player.
 
