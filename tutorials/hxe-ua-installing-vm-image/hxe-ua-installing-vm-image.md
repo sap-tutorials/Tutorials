@@ -104,4 +104,4 @@ Import the downloaded OVA file into your `hypervisor` to begin using SAP HANA, e
 4. Power on your VM.
 
 ## Next Steps
- - [Getting Started with SAP HANA, express edition (Binary Installer Method)](http://go.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
+ - Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA, express edition](http://go.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
