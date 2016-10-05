@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, products>sap-hana-cloud-platform, products>sap-web-i
  - **Tutorials:** [Add a map display to your app](http://go.sap.com/developer/tutorials/teched-2016-7.html)
 
 ## Next Steps
- - [Configure an Internet of Things (IoT) sensor](http://go.sap.com/developer/tutorials/teched-2016-9.html)
+ - [ABC Analysis with SAP HANA PAL](http://go.sap.com/developer/tutorials/teched-2016-10.html)
 
 ## Details
 ### You will learn  
@@ -181,4 +181,4 @@ If your device is set to either the German or Spanish locale, then the app will 
 [ACCORDION-END]
 
 ## Next Steps
- - [Configure an Internet of Things (IoT) sensor](http://go.sap.com/developer/tutorials/teched-2016-9.html)
+ - [ABC Analysis with SAP HANA PAL](http://go.sap.com/developer/tutorials/teched-2016-10.html)
