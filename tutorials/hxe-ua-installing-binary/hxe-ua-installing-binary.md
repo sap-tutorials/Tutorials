@@ -1,7 +1,7 @@
 ---
 title: Installing Binary
 description: You may install SAP HANA, express edition on a Linux server using the HANA Database Lifecycle Manager (hdblcm) tool.
-tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 The SAP HANA, express edition is for Linux machines running specific installations, provided your host machine meets the storage and memory prerequisites. Choose this installation method if you want a custom setup. This tutorial is available as a [video](http://go.sap.com/assetdetail/2016/09/eccafc12-8a7c-0010-82c7-eda71af511fa.html).
 
@@ -101,16 +101,25 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
     2. Execute hdblcm:
 
-        `sudo ./hdblcm -s <SID> -H <HostName> --hdbinst_server_import_content=off`
+        `sudo ./hdblcm -s HXE -H <HostName> --hdbinst_server_import_content=off`
+
+        >**Note**
+        >Here you may choose to install the Application Function Library (AFL) with `--components=server,afl`. AFL adds application functions on top of your Express Edition installation for performing data intensive operations, such as the Predictive Analysis Library (PAL) and the Business Function Library (BFL).
 
         Example:
 
-        `sudo ./hdblcm -s HXE -H myserver.mydomain.com --hdbinst_server_import_content=off`
+        `sudo ./hdblcm -s HXE -H myserver.mydomain.com --components=server,afl --hdbinst_server_import_content=off`
 
     3. Enter: **1(Install new system)**.
     4. When prompted for database isolation, enter **1 (low)**.
     5. Enter default settings and passwords.
-    6. When *Summary Before Execution* displays, click **y** to continue with installation.  
+    6. When *Summary Before Execution* displays, click **y** to continue with installation.
+    7. If AFL was installed, you need to allow functions in AFL to run:
+
+    `sudo su - hxeadm hdbsql -d SystemDB -u SYSTEM -p "${SYSTEM_PWD}" "alter system alter configuration ('indexserver.ini','SYSTEM')SET('calcengine','llvm_lib_whitelist') = 'bfl,pal'"`
+
+    >**Note**
+    >Any misbehavior (e.g. crash) in user written code could potentially destabilize the HANA server. Please ensure that user written AFL libraries are stable.
 
     >**Note**
     >If a `libssl.so.0.9.8` error occurs, see [Installation Fails with Error "Cannot load libssl.so.0.9.8"](http://go.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
@@ -128,9 +137,9 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 3. Install XSC:
 
-    `sudo /hana/shared/<SID>/global/hdb/install/bin/hdbupdrep --content_directory=/hana/shared/<SID>/global/hdb/auto_content`
+    `sudo /hana/shared/HXE/global/hdb/install/bin/hdbupdrep --content_directory=/hana/shared/HXE/global/hdb/auto_content`
 
-    `sudo /hana/shared/<SID>/global/hdb/install/bin/hdbupdrep --content_directory=/hana/shared/<SID>/global/hdb/auto_content/systemdb`
+    `sudo /hana/shared/HXE/global/hdb/install/bin/hdbupdrep --content_directory=/hana/shared/HXE/global/hdb/auto_content/systemdb`
 
 4. Install HANA Extended Services (XSA):
       1. Install statistics:
@@ -145,32 +154,33 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
       2. Install XSA using `hdblcm`:
 
-          `sudo ./hdblcm -s <SID> -H <HOSTNAME> --action=update --components=xs --xs_components=all --configfile=configurations/auto_install.cfg --component_medium=<download_path>/HANA_10_DEE`
+          `sudo ./hdblcm -s HXE -H <HOSTNAME> --action=update --components=xs --xs_components=all --configfile=configurations/auto_install.cfg --component_medium=<download_path>/HANA_10_DEE`
 
           Example:
 
           `sudo ./hdblcm -s HXE -H myhost.localdomain.com --action=update --components=xs --xs_components=all --configfile=configurations/auto_install.cfg --component_medium=/home/myname/Downloads/HANA_10_DEE`
 
-5. Execute the post-installation script.
-     1. Check proxy settings.
-        1. In SUSE, go to YAST. Click on *Proxy*
-        2. Ensure you have the fully qualified address for your proxy in the HTTP Proxy URL.
-        3. Check the "Use the same proxy" checkbox.
-        4. Add additional local domains to the No Proxy Domains list as necessary.
-     2. Extract `hxescripts.tgz`.
+### Execute the Post-Installation Script
 
-          `tar -xvzf <download_path>/hxescripts.tgz`
+1. Check proxy settings.
+  1. In SUSE, go to YAST. Click on *Proxy*
+  2. Ensure you have the fully qualified address for your proxy in the HTTP Proxy URL.
+  3. Check the "Use the same proxy" checkbox.
+  4. Add additional local domains to the No Proxy Domains list as necessary.
+2. Extract `hxescripts.tgz`.
 
-     3. Enable `<sid>adm`.
+  `tar -xvzf <download_path>/hxescripts.tgz`
 
-          `sudo su - <sid>adm`
+3. Enable `hxeadm`.
 
-     4. Navigate to the directory where you extracted *hxescripts.tgz* and execute the script.
+  `sudo su - hxeadm`
 
-          `cd <extracted_path>
-          ./hxe_optimize.sh`
+4. Navigate to the directory where you extracted `*hxescripts.tgz*` and execute the script.
 
-     5. Follow the prompts to enter the appropriate passwords.
+        `cd <extracted_path>
+        ./hxe_optimize.sh`
+
+5. Follow the prompts to enter the appropriate passwords.
 
 ## Next Steps
 - Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA, express edition](http://go.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).
