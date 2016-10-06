@@ -98,9 +98,11 @@ The secure stores in the file system (SSFS) used by SAP HANA are protected by un
 
 2. Re-encrypt the master key of the instance SSFS:  
 
-    `RSEC_SSFS_DATAPATH=/usr/sap/HXE/SYS/global/hdb/security/ssfs`
+    `export RSEC_SSFS_DATAPATH=/usr/sap/HXE/SYS/global/hdb/security/ssfs`
 
-    `RSEC_SSFS_KEYPATH=/usr/sap/HXE/SYS/global/hdb/security/ssfs rsecssfx changekey $(rsecssfx generatekey -getPlainValueToConsole)`
+    `export RSEC_SSFS_KEYPATH=/usr/sap/HXE/SYS/global/hdb/security/ssfs`
+
+    `rsecssfx changekey $(rsecssfx generatekey -getPlainValueToConsole)`
 
 3. Add the following entry to the `global.ini` file using a text editor. (HANA, express edition, comes with the `vi` and `vim` text editors.) The `global.ini` file is located here:    `/usr/sap/HXE/SYS/global/hdb/custom/config/global.ini`
 
@@ -112,9 +114,11 @@ The secure stores in the file system (SSFS) used by SAP HANA are protected by un
 
 4. Re-encrypt the system PKI SSFS with a new key - HDB start:  
 
-    `RSEC_SSFS_DATAPATH=/usr/sap/HXE/SYS/global/security/rsecssfs/data`
+    `export RSEC_SSFS_DATAPATH=/usr/sap/HXE/SYS/global/hdb/security/ssfs`
 
-    `RSEC_SSFS_KEYPATH=/usr/sap/HXE/SYS/global/security/rsecssfs/key rsecssfx changekey  $(rsecssfx generatekey -getPlainValueToConsole)`
+    `export RSEC_SSFS_KEYPATH=/usr/sap/HXE/SYS/global/hdb/security/ssfs`
+
+    `rsecssfx changekey $(rsecssfx generatekey -getPlainValueToConsole)`
 
 5.	Restart the system:  
 

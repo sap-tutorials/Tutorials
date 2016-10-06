@@ -1,15 +1,15 @@
 ---
 title: Internet of Things (IoT) made easy
-description: The idea behind this tutorial is quickly show how to add a device and capture sensor data in the clous.
+description: The idea behind this tutorial is quickly show how to add a device and capture sensor data in the cloud.
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-cloud-platform ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Translate your app into multiple languages](http://go.sap.com/developer/tutorials/teched-2016-7.html)
+ - **Tutorials:** [ABC Analysis with SAP HANA PAL](http://go.sap.com/developer/tutorials/teched-2016-10.html)
 
 ## Next Steps
- - [ABC Analysis with SAP HANA](http://go.sap.com/developer/tutorials/teched-2016-10.html)
+  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -293,4 +293,4 @@ The table with your data will match the **Message Type** id generated earlier.
 [ACCORDION-END]
 
 ## Next Steps
- - [Predictive analytics with SAP HANA: ABC Analysis](http://go.sap.com/developer/tutorials/teched-2016-10.html)
+  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)

@@ -320,7 +320,7 @@ The last change before running your app is to modify the `manifest.json` file lo
 
 [ACCORDION-BEGIN [Step 20: ](Editing the App Descriptor)]
 
-Insert the two lines below as shown in the image.
+Insert the two lines below as shown in the image. If the file is opened in the **Descriptor Editor** mode, click the **Code Editor** tab at the bottom of the window to change the mode.
 
 ```json
 "ach": "ach",
