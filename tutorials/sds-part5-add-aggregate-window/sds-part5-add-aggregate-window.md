@@ -5,7 +5,7 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Using a HANA Reference element in a Smart Data Streaming project](http://go.sap.com/developer/tutorials/sds-part4-hana-table-event-streaming.html)
+ - **Tutorials:** [Using a HANA Reference Element in a Smart Data Streaming project](http://go.sap.com/developer/tutorials/sds-part4-hana-table-event-streaming.html)
 
 ## Next Steps
  - **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part6-alerts.html)
