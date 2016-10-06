@@ -1,6 +1,6 @@
 ---
 title: Compile and run a native Android app on SAP HANA Cloud Platform
-description: Clone a Github repository, import it into your project, run it on SAP HANA Cloud Platform mobile services for development and operations then review the main classes and methods.
+description: Clone a GitHub repository, import it into your project, run it on SAP HANA Cloud Platform mobile services for development and operations then review the main classes and methods.
 tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>sap-hana-cloud-platform ]
 
 ---
@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:** [Configure Android Studio for mobile development](http://go.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html)
- - Download and install the [Github Desktop Client](https://desktop.github.com/)
+ - Download and install the [GitHub Desktop Client](https://desktop.github.com/)
  - Android device or Android Emulator on your development machine 
 
 ## Next Steps
@@ -17,30 +17,30 @@ tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>
 ## Details
 ### You will learn  
 
-In this tutorial you will review and run a native Android version of the Northwind hybrid app (from [Mobile Groups 1-3](http://go.sap.com/developer/tutorial-navigator/developer-tutorials.beginner.html)) and run it on SAP HANA Cloud Platform mobile services for development and operations. You will use Android Studio and elements of the SAP Mobile Platform SDK to build the app, and access the same Northwind OData service used in the mobile web and hybrid tutorials. 
+In this tutorial you will review and run a native Android version of the Northwind hybrid app (from [Mobile Groups 1-3](http://go.sap.com/developer/tutorial-navigator.beginner.html)) and run it on SAP HANA Cloud Platform mobile services for development and operations. You will use Android Studio and elements of the SAP Mobile Platform SDK to build the app, and access the same Northwind OData service used in the mobile web and hybrid tutorials. 
 
-If you have not completed the tutorials in [Mobile Groups 1-3](http://go.sap.com/developer/tutorial-navigator/developer-tutorials.beginner.html) – it would be best to work through those first to become familiar with the OData service used.
+If you have not completed the tutorials in [Mobile Groups 1-3](http://go.sap.com/developer/tutorial-navigator.beginner.html) – it would be best to work through those first to become familiar with the OData service used.
 
 The final version of the app will look like this:
 
  ![final version](mg6-4-intro.png)
 
-The source code is available in Github, and after a walk-through of the code in this tutorial, you will have the opportunity to make some changes and see their effect.
+The source code is available in GitHub, and after a walk-through of the code in this tutorial, you will have the opportunity to make some changes and see their effect.
 
 ### Time to Complete
 **20 Min**.
 
 ---
 
-1. The sample code used in this tutorial is available in the following Github repository: <https://github.com/SAP/cloud-hana-mobile-app-tutorial>. Open the repository link in a browser, click the **Clone or download** button.
+1. The sample code used in this tutorial is available in the following GitHub repository: <https://github.com/SAP/cloud-hana-mobile-app-tutorial>. Open the repository link in a browser, click the **Clone or download** button.
 
-2. If you have the Github Desktop Client installed, you can click the **Open in Desktop** link and follow the prompts to clone the repository to your development machine.
+2. If you have the GitHub Desktop Client installed, you can click the **Open in Desktop** link and follow the prompts to clone the repository to your development machine.
 
     ![Open in Desktop](mg6-4-02.png)
  
 3. Since you have already completed the [Configure Android Studio for mobile development](http://go.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html) tutorial you already have the basic app framework in place. For these instructions, we will assume the path to your project is: `~/devel/Northwind_Android`. Please substitute your real path accordingly.
 
-    What you will do next is replace the generated source files with those you just cloned from Github.
+    What you will do next is replace the generated source files with those you just cloned from GitHub.
 
 4. Navigate to the project folder created in the [Create a basic native Android master-detail app](http://go.sap.com/developer/tutorials/hcpdo-basic-android-app.html) tutorial, and move and rename the `~/devel/Northwind_Android/NWAndroid/app/src/main` directory back up the directory tree to `~/devel/Northwind_Android/NWAndroid/main_old`. This will preserve the generated files in case you want to refer to them later or do a `diff` to examine the changes made in the cloned source.
 

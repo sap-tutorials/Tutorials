@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Test the "Forecast" HCP predictive service from a REST client
 description: Using a REST client, you will test the "Forecast" HCP predictive service from a REST client
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 ---
 
 ## Prerequisites
@@ -58,7 +58,7 @@ With the synchronous mode, the HCP predictive service will be waiting until the 
 
     Select the **Body** tab, enable the **raw** mode and select `JSON (application/json)` in the drop down, then add the following entries
 
-    ```JSON
+    ```json
     {
       "datasetID": 3,
       "targetColumn": "Cash",
@@ -77,7 +77,7 @@ With the synchronous mode, the HCP predictive service will be waiting until the 
 
     Here is the result:
 
-    ```JSON
+    ```json
     {
       "forecasts": [
         {
@@ -175,7 +175,7 @@ With the asynchronous mode, the process is split across 3 service calls, where t
 
     Select the **Body** tab, enable the **raw** mode and select `JSON (application/json)` in the drop down, then add the following entries
 
-    ```JSON
+    ```json
     {
       "datasetID": 3,
       "targetColumn": "Cash",
@@ -190,7 +190,7 @@ With the asynchronous mode, the process is split across 3 service calls, where t
 
     Here is the result:
 
-    ```JSON
+    ```json
     {
       "ID": 1,
       "status": "PROCESSING",
@@ -222,7 +222,7 @@ With the asynchronous mode, the process is split across 3 service calls, where t
 
     Here is the result:
 
-    ```JSON
+    ```json
     {
       "ID": 1,
       "status": "SUCCESSFUL",
@@ -253,3 +253,4 @@ For more details on the HCP predictive services, you can check the following URL
 
 ## Next Steps
   - [Configure a SAPUI5 application to interact with the HCP predictive](http://go.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+

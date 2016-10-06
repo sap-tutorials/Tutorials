@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Configure a SAPUI5 application from the project template
 description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the OData service and the HCP predictive services
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive, topic>sapui5 ]
+tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
@@ -42,13 +42,19 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
     Name                 | `HCPOData`
     Type                 | `HTTP`
     Description          | `OData Service Destination to access the Time Series Data`
-    URL                  | `http://trial<`<code><b>HCP Identifier</b></code>`>trial.hanatrial.ondemand.com`
+    URL                  | `https://trial<`<code><b>HCP Identifier</b></code>`>trial.hanatrial.ondemand.com`
     Proxy Type           | `Internet`
     Authentication       | `Basic Authentication`
     User                 | `HCPPSTRIAL` (your ***HANA Account*** login)
     Password             | `Welcome16` (your ***HANA Account*** password)
 
     > Make sure you update the URL with your HCP Account identifier.
+
+    Property Name          | Value
+    ---------------------- | --------------
+    `WebIDEUsage`          | `odata_xs`
+    `WebIDEEnabled`        | `true`
+    `WebIDESystem`         | `HCPOData`
 
     Click on **Save**
 
@@ -63,13 +69,16 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
     Name                 | `HCPps`
     Type                 | `HTTP`
     Description          | `HCP predictive service Destination`
-    URL                  | ``http://aac4paservices<`<code><b>HCP Identifier</b></code>`>trial.hanatrial.ondemand.com/com.sap.aa.c4pa.services``
+    URL                  | `https://aac4paservices<`<code><b>HCP Identifier</b></code>`>trial.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
     Proxy Type           | `Internet`
-    Authentication       | `Basic Authentication`
-    User                 | your ***HCP Account*** login (typically your email address)
-    Password             | your ***HCP Account*** password
-
+    Authentication       | `AppToAppSSO`
+    
     > Make sure you update the URL with your HCP Account identifier.
+
+    Property Name          | Value
+    ---------------------- | --------------
+    `WebIDEEnabled`        | `true`
+    `WebIDESystem`         | `HCPps`
 
     Click on **Save**
 
@@ -143,7 +152,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
     Open the `neo-app.json` file and update the file like this:
 
-    ```JSON
+    ```json
     {
       "welcomeFile": "/webapp/index.html",
       "routes": [
@@ -192,20 +201,29 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
     Replace the following line of code
 
-    ```JavaScript
-    app: new sap.ui.core.ComponentContainer({
-      height : "100%",
-      name : "demo"
-    })
+    ```js
+    sap.ui.getCore().attachInit(function() {
+      new sap.m.Shell({
+        app: new sap.ui.core.ComponentContainer({
+          height : "100%",
+          name : "demo"
+        })
+      }).placeAt("content");
+    });    
     ```
     by
 
-    ```JavaScript
-    app: new sap.ui.view({
-      height : "100%",
-      viewName: "demo.view.demo",
-      type: sap.ui.core.mvc.ViewType.XML
-    })
+    ```js
+    sap.ui.getCore().attachInit(function() {
+      sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel());
+      new sap.m.Shell({
+        app: new sap.ui.view({
+          height : "100%",
+          viewName: "demo.view.demo",
+          type: sap.ui.core.mvc.ViewType.XML
+        })
+      }).placeAt("content");
+    });
     ```
 
     Click on the ![Save Button](0-save.png) button (or press CTRL+S)

@@ -1,0 +1,30 @@
+[STEP 1]
+
+[VALIDATE 1]
+###Rule
+regex-substring
+
+###Question
+Which parts of the address will be passed to the model to create your map?
+
+###Match
+Building
+street
+PostalCode
+City
+
+[STEP 1 - END]
+[STEP 2]
+
+[VALIDATE 2]
+
+###Rule
+exact-match
+
+###Question
+How many pixels wide will the returned map image be?
+
+###Match
+400
+
+[STEP 2 - END]

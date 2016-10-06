@@ -1,7 +1,7 @@
 ---
-title: Exception Handling, COMMIT & Autonomous Transactions
-description: Leveraging SQLScript in Stored Procedures & User Defined Functions
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana ]
+title: Using COMMIT Transactions
+description: Leveraging SQLScript in Stored Procedures & User Defined Functions through the use of COMMIT
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate

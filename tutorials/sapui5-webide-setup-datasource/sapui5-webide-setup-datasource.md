@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 ## Prerequisites  
  - **Proficiency:** Beginner 
  - **How-To** [Start this tutorial series](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
- - **Tutorials:** This tutorial is part of a series.  The previous tutorial is [Create an empty UI5 WebIDE project](https://go.sap.com/developer/tutorials/sapui5-webide-create-project.html)
+ - **Tutorials: [Create an empty UI5 Web IDE project](https://go.sap.com/developer/tutorials/sapui5-webide-create-project.html)
 
 ## Next Steps
- - This tutorial is part of a series.  The next tutorial is part 3: [Add a list to the current view](https://go.sap.com/developer/tutorials/sapui5-webide-add-list.html)
+ - [Add a list to the current view](https://go.sap.com/developer/tutorials/sapui5-webide-add-list.html)
 
 ## Details
 ### You will learn  
@@ -84,6 +84,11 @@ Now, we will connect the cloud destination (which you created in the [Create Nor
     
     ![Define the default model](7.png)
     
+
+10. In the following screen, modify the `Binding Mode` property (on the lower right hand side).  Click the arrow, and select `Default` as the binding mode.
+
+    ![Change the binding mode](7b.png)
+
 11. The finished model screen should look like this.  Click **Save** to save this file.
 
     ![Save icon](save-icon.png)
@@ -135,7 +140,7 @@ Next, we will test the application.
 
  - **$metadata file not listed?**  This means one of the files in your project is incorrect.  Check the files, and make sure no red X marks appear in the left hand column.  These indicate a problem with the file syntax.  Check the pictures carefully. 
  
- - **The `Northwind` system does not appear in the drop down box.**  This can happen when the WebIDE is "out of sync" with the server.  Reload the WebIDE (by clicking the reload button in your browser).  You will come back to the same place, and you can start the steps to create a new OData service again.
+ - **The `Northwind` system does not appear in the drop down box.**  This can happen when the Web IDE is "out of sync" with the server.  Reload the Web IDE (by clicking the reload button in your browser).  You will come back to the same place, and you can start the steps to create a new OData service again.
  
  - **Don't forget to save your files!**  If a file name has a * next to it, the file isn't saved.  
 

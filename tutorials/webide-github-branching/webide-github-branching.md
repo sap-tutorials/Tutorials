@@ -1,6 +1,6 @@
 ---
-title: Creating branches in Github, switching branches and updating application in different branch in SAP Web IDE
-description: Part 5 of 6, Collaborative Development Using Github and SAP Web IDE
+title: Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE
+description: Part 5 of 6, Collaborative Development Using GitHub and SAP Web IDE
 tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
@@ -9,11 +9,11 @@ tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, pro
     - [Creating issues, setting milestones and assigning issues to collaborators](http://go.sap.com/developer/tutorials/webide-github-issues-milestones.html)
 
 ## Next Steps
-- [Merging branches back into master branch in Github using Pull Requests](http://go.sap.com/developer/tutorials/webide-github-merge-pull-request.html)
+- [Merging branches back into master branch in GitHub using Pull Requests](http://go.sap.com/developer/tutorials/webide-github-merge-pull-request.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you'll learn how your collaborators can create branches in Github, switch to the other branch in SAP Web IDE and perform changes and commit the changes to the other branch. 
+In this tutorial, you'll learn how your collaborators can create branches in GitHub, switch to the other branch in SAP Web IDE and perform changes and commit the changes to the other branch. 
 
 > This tutorial is written from a **collaborator's** point of view.
 
@@ -29,13 +29,13 @@ In this tutorial, you'll learn how your collaborators can create branches in Git
 
     ![Find SAP Web IDE](p5_2.png)
 
-3. You'll have to clone the Github organization repository in SAP Web IDE. To do this
+3. You'll have to clone the GitHub organization repository in SAP Web IDE. To do this
  
     a. From the File menu in SAP Web IDE, click on **Git** &rarr; **Clone repository**.
     
     ![Clone repository](p5_3a.png)
 
-    b. Enter your Github account credentials and post the repository URL.
+    b. Enter your GitHub account credentials and post the repository URL.
 
     ![Repository details](p5_3b.png)
 
@@ -61,22 +61,22 @@ In this tutorial, you'll learn how your collaborators can create branches in Git
 
     b. Notice that when you save the changes, the Git pane on the right hand side shows the file that was changed. To commit the changes to the repository, click on the **Stage** checkbox, enter a change description and then click on commit. 
     
-    > Github will automatically close an issue if your commit message includes [certain keywords](https://help.github.com/articles/closing-issues-via-commit-messages/) once this change is merged into the master branch. You will see this in the next tutorial.
+    > GitHub will automatically close an issue if your commit message includes [certain keywords](https://help.github.com/articles/closing-issues-via-commit-messages/) once this change is merged into the master branch. You will see this in the next tutorial.
 
 
     ![Add change description](p5_5b.png)
 
-    c. Click on the **Commit** button to commit changes to the repository and then **Push** and select **Remote branch** to push the changes to Github. 
+    c. Click on the **Commit** button to commit changes to the repository and then **Push** and select **Remote branch** to push the changes to GitHub. 
 
 
-    ![Push to Github remote branch](p5_5c.png)
+    ![Push to GitHub remote branch](p5_5c.png)
  
-6. Now if you check the `m1` branch on Github organization repository, you will see that the push has been completed and the changes are seen on Github.
+6. Now if you check the `m1` branch on GitHub organization repository, you will see that the push has been completed and the changes are seen on GitHub.
 
-    ![Push to Github remote branch is successful](p5_6.png)
+    ![Push to GitHub remote branch is successful](p5_6.png)
 
 7. Similarly you can address other remaining issues targeted for `m1` milestone and commit and push the changes.
 
 
 ## Next Steps
- - [Merging branches back into master branch in Github using Pull Requests](http://go.sap.com/developer/tutorials/webide-github-merge-pull-request.html)
+ - [Merging branches back into master branch in GitHub using Pull Requests](http://go.sap.com/developer/tutorials/webide-github-merge-pull-request.html)

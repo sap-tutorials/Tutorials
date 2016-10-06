@@ -64,7 +64,7 @@ In this tutorial you will learn how to hide a view element from a standard SAP F
 
     ![Control selected](Control-selected.png)
 
-11. There are several ways to extend a control. You will use the Outline pane to make the change. Select the **Legend** either in the graphical pane or the Outline pane. Go to the Outline pane, **right click** the blue highlighted item **LRS4_LEGEND** and select**Hide Control**
+11. There are several ways to extend a control. You will use the Outline pane to make the change. Select the **Legend** either in the graphical pane or the Outline pane. Go to the Outline pane, **right click** the blue highlighted item `LRS4_LEGEN` and select **Hide Control**
 
     ![Hide Control](Hide-Control.png)
 

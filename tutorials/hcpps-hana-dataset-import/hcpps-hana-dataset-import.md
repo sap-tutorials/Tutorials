@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Import a predictive demo dataset in your SAP HANA
 description: Import a demo data to be used with the SAP HCP predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 ---
 
 ## Prerequisites
@@ -42,3 +42,4 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
 
 ## Next Steps
   - [Expose your predictive demo dataset as an OData service](http://go.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
+

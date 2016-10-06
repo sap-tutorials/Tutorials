@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Test the "Data Set" HCP predictive services using a REST client
 description: Using a REST client, you will test the "Data Set" HCP predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 ---
 
 ## Prerequisites
@@ -53,7 +53,7 @@ Token                               | Value
 
     Select the **Body** tab, enable the **raw** mode and select `JSON (application/json)` in the drop down, then add the following entries
 
-    ```JSON
+    ```json
     {
       "hanaURL":"DEMO/TIME_SERIES"
     }
@@ -69,7 +69,7 @@ Token                               | Value
 
     Now, we can use the `ID` value to reference the registered dataset with other HCP predictive services calls.
 
-    ```JSON
+    ```json
     {
       "ID": 1,
       "name": "TIME_SERIES",
@@ -155,3 +155,4 @@ For more details on the HCP predictive services, you can check the following URL
 
 ## Next Steps
   - [Test the "Forecast" HCP predictive service from a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
+

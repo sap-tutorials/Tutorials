@@ -1,7 +1,7 @@
 ---
 title: Creating an OData Service with Create Operation and XSJS Exit
 description: Creating an OData Service with Create Operation and XSJS Exit
-tags: [  tutorial>intermediate, topic>odata, products>sap-hana ]
+tags: [  tutorial>intermediate, topic>odata, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
@@ -15,7 +15,7 @@ tags: [  tutorial>intermediate, topic>odata, products>sap-hana ]
 Now to expand your code to include an XSJS exit.
 
 ### Time to Complete
-**15 Min**.
+**10 Min**.
 
 ---
 

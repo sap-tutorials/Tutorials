@@ -35,7 +35,7 @@ This section takes about **10 minutes** to complete, and about **10 to 25 minute
 
     > ### Note
     >If you don't have an account on the sap.com website, you need to create one to access the Cloud Appliance Library.
-    >Visit [go.sap.com](http://go.sap.com/index.html) and click *login* in the upper right corner to create an account.
+    >Go to the [SAP website](http://go.sap.com/index.html) and click *login* in the upper right corner to create an account.
 
     ![Solution Selection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/1.png)
 

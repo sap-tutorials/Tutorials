@@ -1,7 +1,7 @@
 ---
 title: SAP HCP predictive services, Setup your HCP trial SAP HANA MDC instance
 description: Learn how to setup a SAP HANA MDC instance to be used with the SAP HCP predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, products>sap-hana-cloud-platform-predictive-services, topic>predictive  ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform  ]
 ---
 
 ## Prerequisites
@@ -16,7 +16,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
   - How to setup a SAP HANA instance on SAP HANA Cloud Platform
 
 ### Time to Complete
-  **15 minutes**
+  **10 minutes**
 
 ---
 
@@ -83,3 +83,4 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
 
 ## Next Steps
   - [Setup a HANA user account for the HCP predictive services](http://go.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+
