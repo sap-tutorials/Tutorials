@@ -1,25 +1,30 @@
-/*
+/* Uncomment if you need to recreate the table before loading data
 DROP TABLE DUMMYDATA;
 
-CREATE COLUMN TABLE DUMMYDATA (
-  accountnr varchar(11) default NULL,
-  location varchar(100) default NULL,
-  total_amount double default NULL
+DROP TABLE "TUTORIAL_PAL_ABC"."DUMMYDATA";
+CREATE COLUMN TABLE "TUTORIAL_PAL_ABC"."DUMMYDATA"(
+	"ACCOUNTNR" VARCHAR(11),
+	"LOCATION" VARCHAR(100),
+	"TOTAL_AMOUNT" DOUBLE DEFAULT 0,
+	PRIMARY KEY (
+		"ACCOUNTNR"
+	)
 );
 */
 
-INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('82540748399','Netherlands',385);
-INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('99692723699','Morocco',992);
+--Loading data via INSERTs
+INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('82540748399','Netherlands',3850);
+INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('99692723699','Morocco',92);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('98804020299','Israel',176);
-INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('24364537999','Estonia',41);
+INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('24364537999','Estonia',41528);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('97592208699','South Africa',308);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('55783852899','Niger',332);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('12338489699','Malaysia',582);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('66941296899','Angola',332);
-INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('78341775899','Japan',778);
+INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('78341775899','Japan',7780);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('30205810399','Indonesia',665);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('35766575899','Madagascar',616);
-INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('23270858999','Malta',354);
+INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('23270858999','Malta',3540);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('91578369899','Bahrain',231);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('76401095499','Central African Republic',412);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('00913274699','Namibia',71);
@@ -27,16 +32,16 @@ INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('50694975399','S
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('01488053499','Solomon Islands',878);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('96932672899','Northern Mariana Islands',748);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('91282172899','Liberia',122);
-INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('79787992099','Jordan',800);
+INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('79787992099','Jordan',80);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('67397439699','El Salvador',539);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('63992562599','Macedonia',57);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('43356492199','San Marino',696);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('51670856799','Sao Tome and Principe',640);
-INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('19947726599','Ukraine',270);
-INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('99834072799','Ukraine',806);
+INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('19947726599','Ukraine',2700);
+INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('99834072799','Ukraine',8064);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('31917565199','French Guiana',27);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('90613141899','Ireland',369);
-INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('75361130899','Guinea',929);
+INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('75361130899','Guinea',92);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('39763551799','Jersey',385);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('94627738599','Equatorial Guinea',615);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('57356613099','Sao Tome and Principe',354);
@@ -44,7 +49,7 @@ INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('34330084699','A
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('02988459599','French Polynesia',418);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('79935287199','Korea, South',15);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('06403930099','Vanuatu',781);
-INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('41841311499','Belarus',820);
+INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('41841311499','Belarus',82);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('34791974399','Uzbekistan',984);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('24750820299','Ethiopia',791);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('68989297999','Anguilla',589);
@@ -61,7 +66,7 @@ INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('81519284299','M
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('94861577199','Grenada',89);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('23701374899','Sri Lanka',161);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('10334180899','Gambia',473);
-INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('63747550799','Ukraine',375);
+INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('63747550799','Ukraine',3715);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('66384175199','Tokelau',946);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('70471211599','Tokelau',45);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('94537787299','Bosnia and Herzegovina',956);
@@ -71,7 +76,7 @@ INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('12369169799','R
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('10320338499','Sudan',128);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('23973062599','Philippines',558);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('80234682699','Grenada',212);
-INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('92435601999','Norway',305);
+INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('92435601999','Norway',63305);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('05213022999','Samoa',714);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('34385740899','Guam',413);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('93686420399','Niger',957);
@@ -86,7 +91,7 @@ INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('90265537999','P
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('87529168299','Bolivia',642);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('65449829999','Norfolk Island',566);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('75845729799','Jamaica',568);
-INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('04342023699','Germany',5);
+INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('04342023699','Germany',55656);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('66802523699','Colombia',899);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('78554702399','Senegal',774);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('57575869099','Tunisia',26);
@@ -96,11 +101,11 @@ INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('54674462999','Z
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('07752768499','Bolivia',454);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('63610114499','Samoa',78);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('80322453199','Tajikistan',47);
-INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('01611711299','Latvia',821);
+INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('01611711299','Latvia',8213);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('05742930199','Curaçao',637);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('78351684399','United States Minor Outlying Islands',969);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('28553427199','Ethiopia',524);
-INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('99534559099','Ukraine',94);
+INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('99534559099','Ukraine',4295);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('75215421499','Uganda',958);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('37984032999','Bermuda',193);
 INSERT INTO DUMMYDATA (accountnr,location,total_amount) VALUES ('20604544399','Tanzania',961);
