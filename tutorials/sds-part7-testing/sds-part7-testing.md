@@ -10,8 +10,8 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 
 ## Next Steps
 Either of the following tutorials may be done next:
- - **Tutorials:** [Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming](coming soon)
- - **Tutorials:** [Custom Flex Operators with Advanced CCL](coming soon)
+ - **Tutorials:** [Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part8-patterns.html)
+ - **Tutorials:** [Custom Flex Operators with Advanced CCL in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part9-flex-operators.html)
 
 ## Details
 ### You will learn  
@@ -107,5 +107,5 @@ Either of the following tutorials may be done next:
 
 ## Next Steps
 Either of the following tutorials may be done next:
- - **Tutorials:** [Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming](coming soon)
- - **Tutorials:** [Custom Flex Operators with Advanced CCL](coming soon)
+ - **Tutorials:** [Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part8-patterns.html)
+ - **Tutorials:** [Custom Flex Operators with Advanced CCL in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part9-flex-operators.html)
