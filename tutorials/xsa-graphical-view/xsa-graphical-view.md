@@ -23,7 +23,7 @@ You will learn about creating a graphical calculation views with dimension data.
 
     ![Import](1.png)
     
-2. Choose the file `data.zip` from the Download folder of your local client machine. Keep all other parameters the same. Press OK. Confirm that it is OK to overwrite the existing files. If the file is not available please check our GIT repository.
+2. Choose the file `data.zip` from the Download folder of your local client machine. Keep all other parameters the same. Press OK. Confirm that it is OK to overwrite the existing files. If the file is not available please check our [GIT repository](https://github.com/I809764/DEV602).
     ![file select](2.png)
     ![confirm](3.png) 
     
@@ -32,7 +32,7 @@ You will learn about creating a graphical calculation views with dimension data.
 
 4. Similar to the run activity of the web module earlier; the status of the build will be displayed in a window in the lower right side of the IDE.     If everything worked correctly, you should see that the build completed successfully.
     ![Console output](5.png)
-5. There is a new database tool called the HANA Runtime Tools (or HRTT) that can be used to view and interact with HDI created content. Open a new browser tab and navigate to `https://<hostname>:51006` to access this tool.
+5. There is a new database tool called the HANA Runtime Tools (or HRTT) that can be used to view and interact with HDI created content. Open a new browser tab and navigate to `https://<hostname>:51006` to access this tool, for `SAP HANA, express edition` you will need to navigate to `http://<hostname>:51018`
     ![HRTT](6.png)
 6. You can explore some of the new tables and their content that have been imported. This is the SHINE (SAP HANA Interactive Education) content. 
     ![SHINE](7.png)
