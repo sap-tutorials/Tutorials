@@ -5,7 +5,7 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Creating an HDI Module](http://go.sap.com/developer/tutorials/xsa-hdi-module.html)
+ - **Tutorials:** [Creating a Graphical Calculation View](http://go.sap.com/developer/tutorials/xsa-graphical-view.html)
 
 ## Next Steps
  - [Creating Stored Procedures](http://go.sap.com/developer/tutorials/xsa-sqlscript-stored-proc.html)
