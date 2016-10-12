@@ -436,7 +436,7 @@ HDI introduces the concept of the container as an abstraction of the Schema. The
 
     ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/15.png)
 
-29. There is a new database tool called the HANA Runtime Tools (or `HRTT`) that can be used to view and interact with HDI created content. Open a new browser tab and navigate to `http://vhcalhdb:51006` to access this tool.
+29. There is a new database tool called the HANA Runtime Tools (or `HRTT`) that can be used to view and interact with HDI created content. Open a new browser tab and navigate to `http://<hostname>:51006` to access this tool, for `SAP HANA, express edition` you will need to navigate to `http://<hostname>:51018`
 
     ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/16.png)
 
