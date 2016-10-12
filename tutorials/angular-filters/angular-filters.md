@@ -1,6 +1,6 @@
 ---
-title: Getting started with AngularJS on HANA Cloud Platform
-description: Get started writing a simple AngularJS application.  Step #7: Introduction to Bootstrap forms.
+title: AngularJS - Add Dynamic and Custom Filters
+description: Step #8:  Add components for currency, style, and to dynamically filter the list.
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
