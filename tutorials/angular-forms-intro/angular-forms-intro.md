@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
  - **Tutorials** Step #6 [Add a Header and Detail Modal Dialog](http://go.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)
  
 ## Next Steps
- - This is the end of the series - for now.  More are coming, stay tuned!
+ - **Tutorials** Step #8 [AngularJS Filters](http://go.sap.com/developer/tutorials/angular-filters.html)
 
 ## Details
 ### You will learn  
@@ -19,7 +19,7 @@ In this tutorial series, we will explore another technology for Single Page Appl
 
 ---
 #### AngularJS series
-**Step 6**: Set up [Bootstrap forms](https://getbootstrap.com/css/#forms) for our application.  We will use the form in our new detail modal dialog box, to organize the information.
+**Step 7**: Set up [Bootstrap forms](https://getbootstrap.com/css/#forms) for our application.  We will use the form in our new detail modal dialog box, to organize the information.
 
 ---
 
@@ -236,4 +236,4 @@ The input field is in the form, but it's not connected to anything.  Next, add i
 - We used the [`setTimeout()`](http://www.w3schools.com/jsref/met_win_settimeout.asp) JavaScript function to add a delay before the alert box disappeared.  `setTimeout()` puts an event on the event queue after a specified delay (in milliseconds).  This is the best way to delay something, as the user will not be blocked while waiting for the timer to expire. 
 
 ## Next Steps
- - This is the end of the series - for now.  More are coming, stay tuned!
+ - **Tutorials** Step #8 [AngularJS Filters](http://go.sap.com/developer/tutorials/angular-filters.html)

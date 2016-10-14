@@ -69,8 +69,6 @@ With the MMS service now deployed, and your user assigned the appropriate role i
 
     ![Device ID](p7_8.png)
 
-5. Click the “back arrow” again to return the the IoT Services Cockpit and click the **Devices** tile. Press the **+** symbol button at the bottom to create a new device.  Give it a name (e.g. `DevelopmentTessel`), select the device type that you created earlier. **DO NOT** click the **Create** button until you read the note below!    
-
 9. With the device type, message type and device configured, it is time to send some data.
 Go to the **IoT Services Cockpit** and click the **View messages received, use sample clients, etc.** tile. Then click the **Send and receive messages through HTTP** tile.
 
