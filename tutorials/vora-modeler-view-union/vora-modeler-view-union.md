@@ -8,8 +8,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
  - **Tutorials:** [Getting started with SAP HANA Vora Modeler: Creating SQL views](http://go.sap.com/developer/tutorials/vora-modeler-getting-started.html)
 
 ## Next Steps
-- SAP HANA Vora Modeler: Aggregation in SQL View, or
-- Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [SAP HANA Vora Modeler: Aggregation in SQL View](http://go.sap.com/developer/tutorials/vora-modeler-view-aggregate.html)
 
 ## Details
 ### You will learn  
@@ -85,5 +84,4 @@ You will learn how to use Modeler artifacts to add union to previously created S
     ![Execute view with union](voraunion09.jpg)
 
 ## Next Steps
- - SAP HANA Vora Modeler: Aggregation in SQL View, or
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [SAP HANA Vora Modeler: Aggregation in SQL View](http://go.sap.com/developer/tutorials/vora-modeler-view-aggregate.html)

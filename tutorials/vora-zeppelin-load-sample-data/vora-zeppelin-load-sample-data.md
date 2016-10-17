@@ -8,8 +8,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
  - **Tutorials:** [Connect to SAP HANA Vora, developer edition](http://go.sap.com/developer/tutorials/vora-connect.html)
 
 ## Next Steps
- - [Getting started with SAP HANA Vora Tools](http://go.sap.com/developer/tutorials/vora-tools-getting-started.html), or
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [Getting started with SAP HANA Vora Tools](http://go.sap.com/developer/tutorials/vora-tools-getting-started.html)
 
 ## Details
 ### You will learn  
@@ -53,5 +52,4 @@ You will learn how to open Apache Zeppelin and how to load sample data.
     ![All tables created](vorazeppelin05.jpg)
 
 ## Next Steps
- - [Getting started with SAP HANA Vora Tools](http://go.sap.com/developer/tutorials/vora-tools-getting-started.html), or
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [Getting started with SAP HANA Vora Tools](http://go.sap.com/developer/tutorials/vora-tools-getting-started.html)
