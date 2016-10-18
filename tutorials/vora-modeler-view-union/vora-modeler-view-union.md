@@ -31,7 +31,7 @@ You will learn how to use Modeler artifacts to add union to previously created S
 
 3. You perform the union operation on result sets. This means that, for each data source, you include a result set node, and add the output of the data sources to the result sets.
 
-    Drag and drop the ResultSet node to the view editor and use its arrow to drag the cursor to `CUSTOMER_INFO` or `SALES`. The connection line is created in the view.
+    Drag and drop the `ResultSet` node to the view editor and use its arrow to drag the cursor to `CUSTOMER_INFO` or `SALES`. The connection line is created in the view.
 
     ![The first ResultSet](voraunion03.jpg)
 

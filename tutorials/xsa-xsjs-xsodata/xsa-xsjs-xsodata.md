@@ -56,7 +56,7 @@ For this exercise we will now build the XSJS and XSODATA services used to expose
 
 	![js folder](7.png)
 
-8. This `server.js` is the Node.js `bootstap` for XSJS compatibility mode. It uses the SAP provided xsjs module and starts it with a few basic parameters. However remember all the HANA database connectivity options come from the HDI container which you bound to this service via the `mta.yaml` file.  You want to make a few changes to what the wizard has generated. You want authentication on your service, so comment out the `anonymous: true` line. Also uncomment the configure HANA and UAA lines as you will need to load the resource configuration for both of these brokered services. The complete implementation of `server.js` should look like this now: Note: if you don’t want to type this code, we recommend that you cut and paste it from this web address `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602 &sub=ex3_4`
+8. This `server.js` is the Node.js `bootstap` for XSJS compatibility mode. It uses the SAP provided `xsjs` module and starts it with a few basic parameters. However remember all the HANA database connectivity options come from the HDI container which you bound to this service via the `mta.yaml` file.  You want to make a few changes to what the wizard has generated. You want authentication on your service, so comment out the `anonymous: true` line. Also uncomment the configure HANA and UAA lines as you will need to load the resource configuration for both of these brokered services. The complete implementation of `server.js` should look like this now: Note: if you don’t want to type this code, we recommend that you cut and paste it from this web address `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602 &sub=ex3_4`
 	
 	```
 	/*eslint no-console: 0, no-unused-vars: 0*/	"use strict";		var xsjs  = require("sap-xsjs");	var xsenv = require("sap-xsenv");	var port  = process.env.PORT || 3000;		var options = xsjs.extend({	//	anonymous : true, // remove to authenticate calls		redirectUrl : "/index.xsjs"	});		// configure HANA	options = xsjs.extend(options, xsenv.getServices({ hana: {tag: "hana"} }));		// configure UAA	options = xsjs.extend(options, xsenv.getServices({ uaa: {tag: "xsuaa"} }));		// start server	xsjs(options).listen(port);		console.log("Server listening on port %d", port);
@@ -71,7 +71,7 @@ For this exercise we will now build the XSJS and XSODATA services used to expose
 	Here you expose both the Header and Item tables from your HDI container as separate entities and build a navigation association between the two.
 
 
-10. In the lib folder, create a sub-folder called xsjs.  Create a file named `hdb.xsjs`.  Here is the source code for this file. Note: if you don’t want to type this code, we recommend that you cut and paste it from this web address `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602 &sub=ex3_6` This logic reads data from your item table, formats it as text table delimited and then sends it out in a way that the browser will treat it as an Excel download. 
+10. In the lib folder, create a sub-folder called `xsjs`.  Create a file named `hdb.xsjs`.  Here is the source code for this file. Note: if you don’t want to type this code, we recommend that you cut and paste it from this web address `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602 &sub=ex3_6` This logic reads data from your item table, formats it as text table delimited and then sends it out in a way that the browser will treat it as an Excel download. 
 	
 	```
 	var conn = $.hdb.getConnection();	var query = 'SELECT FROM dev602.data::PurchaseOrder.Item { ' +		        ' PURCHASEORDERID as "PurchaseOrderItemId", ' +	            ' PURCHASEORDERITEM as "ItemPos", ' +	            ' PRODUCT as "ProductID", ' +	            ' GROSSAMOUNT as "Amount" ' +	            ' } ';	var rs = conn.executeQuery(query);		var body = '';		for(var i = 0; i < rs.length; i++){	   if(rs[i]["Amount"] >= 500){		body += rs[i]["PurchaseOrderItemId"] + "\t" + rs[i]["ItemPos"] + "\t" + 				rs[i]["ProductID"] + "\t" + rs[i]["Amount"] + "\n";	   }	}			$.response.setBody(body);	$.response.contentType = 'application/vnd.ms-excel; charset=utf-16le';	$.response.headers.set('Content-Disposition',			'attachment; filename=Excel.xls');	$.response.status = $.net.http.OK;
@@ -112,11 +112,11 @@ For this exercise we will now build the XSJS and XSODATA services used to expose
 
 	![run module](18.png)
 
-19. In the running tab, you should see the `index.html` from earlier. You can add the URL to your xsjs service `/index.xsjs` in the browser. You will see that our xsjs service is accessible via the HTML5 module runtime. The HTML5 module functions as a proxy and performs the routing to the other service internally. 
+19. In the running tab, you should see the `index.html` from earlier. You can add the URL to your `xsjs` service `/index.xsjs` in the browser. You will see that your `xsjs` service is accessible via the HTML5 module runtime. The HTML5 module functions as a proxy and performs the routing to the other service internally. 
 
 	![running page](19.png)
 
-20. `/xsjs/hdb.xsjs` reads data from our new Purchase Order table you created in HANA in the previous exercise and exports it as an Excel text file. Feel free to test the other example xsjs files you created in this exercise as well. 
+20. `/xsjs/hdb.xsjs` reads data from our new Purchase Order table you created in HANA in the previous exercise and exports it as an Excel text file. Feel free to test the other example `xsjs` files you created in this exercise as well. 
 
 	![excel download](20.png)
 

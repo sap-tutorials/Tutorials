@@ -14,7 +14,7 @@ tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-pla
 ## Details
 
 ### You will learn  
-How to create a simple xsodata service.
+How to create a simple `xsodata` service.
 
 ### Time to Complete
 Beginners might take **10 minutes** to execute this tutorial.
@@ -48,21 +48,90 @@ Now that you have created your OData service in the previous tutorial it is time
 What you will do now is add a basic table control using the SAPUI5 framework.
 
 ```
-<!DOCTYPE HTML><html>  <head>    <meta http-equiv="X-UA-Compatible" content="IE=edge" />    <meta charset="UTF-8"/>    <title>Library</title>      <script id='sap-ui-bootstrap'         src='/sap/ui5/1/resources/sap-ui-core.js'          data-sap-ui-theme='sap_goldreflection'          data-sap-ui-libs='sap.ui.core,sap.ui.commons,sap.ui.table'>    </script></head><body>	<div id="ctable"/>	</body></html>
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8"/>
+    <title>Library</title>  
+    <script id='sap-ui-bootstrap' 
+        src='/sap/ui5/1/resources/sap-ui-core.js'  
+        data-sap-ui-theme='sap_goldreflection'  
+        data-sap-ui-libs='sap.ui.core,sap.ui.commons,sap.ui.table'>
+    </script>
+
+</head>
+<body>
+	<div id="ctable"/>
+	
+</body>
+</html>
 ```
 
-### Incorporate your xsodata service
+### Incorporate your `xsodata` service
 
 Now to add in JavaScript code to to add the UI5 control.
 
 ```
-    <SCRIPT language="JavaScript">        var aData;                //Create an instance of the table control        var oTable = new sap.ui.table.Table({        	title: "My Library",        	visibleRowCount: 7,        	firstVisibleRow: 3,        	selectionMode: sap.ui.table.SelectionMode.Single        });                //Define the columns and the control templates to be used        var oColumn = new sap.ui.table.Column({        	label: new sap.ui.commons.Label({text: "Genre"}),        	template: new sap.ui.commons.TextView().bindProperty("text", "GENRE"),        	sortProperty: "GENRE",        	filterProperty: "GENRE",        	width: "100px"        });        oTable.addColumn(oColumn);        //Define the columns and the control templates to be used        var oColumn = new sap.ui.table.Column({        	label: new sap.ui.commons.Label({text: "Name"}),        	template: new sap.ui.commons.TextView().bindProperty("text", "NAME"),        	sortProperty: "NAME",        	filterProperty: "NAME",        	width: "100px"        });        oTable.addColumn(oColumn);                     //Create a model and bind the table rows to this model        var oModel = new sap.ui.model.json.JSONModel();        oModel.setData({modelData: aData});        oTable.setModel(oModel);        oTable.bindRows("/modelData");                //Initially sort the table        oTable.sort(oTable.getColumns()[2]);                //Bring the table onto the UI         oTable.placeAt("ctable");	</script>
+    <SCRIPT language="JavaScript">
+        var aData;
+        
+        //Create an instance of the table control
+        var oTable = new sap.ui.table.Table({
+        	title: "My Library",
+        	visibleRowCount: 7,
+        	firstVisibleRow: 3,
+        	selectionMode: sap.ui.table.SelectionMode.Single
+        });
+        
+        //Define the columns and the control templates to be used
+        var oColumn = new sap.ui.table.Column({
+        	label: new sap.ui.commons.Label({text: "Genre"}),
+        	template: new sap.ui.commons.TextView().bindProperty("text", "GENRE"),
+        	sortProperty: "GENRE",
+        	filterProperty: "GENRE",
+        	width: "100px"
+        });
+        oTable.addColumn(oColumn);
+
+        //Define the columns and the control templates to be used
+        var oColumn = new sap.ui.table.Column({
+        	label: new sap.ui.commons.Label({text: "Name"}),
+        	template: new sap.ui.commons.TextView().bindProperty("text", "NAME"),
+        	sortProperty: "NAME",
+        	filterProperty: "NAME",
+        	width: "100px"
+        });
+        oTable.addColumn(oColumn);
+             
+        //Create a model and bind the table rows to this model
+        var oModel = new sap.ui.model.json.JSONModel();
+        oModel.setData({modelData: aData});
+        oTable.setModel(oModel);
+        oTable.bindRows("/modelData");
+        
+        //Initially sort the table
+        oTable.sort(oTable.getColumns()[2]);
+        
+        //Bring the table onto the UI 
+        oTable.placeAt("ctable");
+
+	</script>
 ```
 
 The last bit is to add the call to the service to your code and you will have a complete application, or at least complete in the sense that is shows your data. Add the following bit right after your variable definition `var aData`
 
 ```
-        $.ajax        ({          type: "GET",          url: "/codejam/services/library.xsodata/library/?$format=json",          dataType: 'json',          async: false,          success: function (data, status){        	  aData = data.d.results;          }        });
+        $.ajax
+        ({
+          type: "GET",
+          url: "/codejam/services/library.xsodata/library/?$format=json",
+          dataType: 'json',
+          async: false,
+          success: function (data, status){
+        	  aData = data.d.results;
+          }
+        });
 ```
 
 ### Deploy, Run and Test the Application
