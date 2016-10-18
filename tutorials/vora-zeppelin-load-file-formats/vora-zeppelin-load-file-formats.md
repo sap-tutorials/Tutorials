@@ -31,7 +31,7 @@ You will learn how to load sample data from Parquet and ORC file formats.
 
     ![Check HDFS for files](voraformats00.jpg)
 
-2. Similarly to loading sample SCV files you will use Zeppelin with predefined notebook here as well. To open Zeppelin web UI click on **Connect** in your SAP HANA Vora instance in CAL, and then pick **Open** a link for `Application: Zeppelin`.
+2. Similarly to loading sample CSV files you will use Zeppelin with predefined notebook here as well. To open Zeppelin web UI click on **Connect** in your SAP HANA Vora instance in CAL, and then pick **Open** a link for `Application: Zeppelin`.
 
     Once Zeppelin opens up in a new browser window, check it is **Connected** and if yes, then click on `2_DataTypes` notebook.
 

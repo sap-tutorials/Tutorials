@@ -17,6 +17,7 @@ Classname
 Cmehil
 CodeJam
 data-center
+DataFrame
 DataSource
 datasources
 DesignStudio
@@ -86,6 +87,7 @@ Tessel
 timestamp
 TrustAll
 truststore
+UDFs
 UI5
 util
 VMware
