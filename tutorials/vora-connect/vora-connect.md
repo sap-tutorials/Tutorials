@@ -10,8 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
  - Basic understanding of Linux OS, commands and the use of terminal
 
 ## Next Steps
- - [Loading sample data using Apache Zeppelin](http://go.sap.com/developer/tutorials/vora-zeppelin-load-sample-data.html), or
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [Loading sample data using Apache Zeppelin](http://go.sap.com/developer/tutorials/vora-zeppelin-load-sample-data.html)
 
 ## Details
 ### You will learn  
@@ -79,5 +78,4 @@ You will learn how to connect to your SAP HANA Vora instance to manage it. There
     ![ssh into SAP HANA Vora instance](voraconnect05.jpg)
 
 ## Next Steps
- - [Loading sample data using Apache Zeppelin](http://go.sap.com/developer/tutorials/vora-zeppelin-load-sample-data.html), or
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [Loading sample data using Apache Zeppelin](http://go.sap.com/developer/tutorials/vora-zeppelin-load-sample-data.html)
