@@ -13,7 +13,7 @@ tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-pla
 ## Details
 
 ### You will learn  
-1. How to create a simple xsodata service.
+1. How to create a simple `xsodata` service.
 
 ### Time to Complete
 Beginners might take **10 minutes** to execute this tutorial.
@@ -117,7 +117,7 @@ Now that you have a table with data in it, you need to be able to access the dat
 
 ![Service sub package](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-xsodata/4.png)
 
-### Create a xsodata service
+### Create a `xsodata` service
 
 Next create a new file `library.xsodata` and add the following code to it.
 
@@ -140,7 +140,7 @@ Here you will add your schema and table. From here you will then load the `secur
 ![Adding the role to your user](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-xsodata/6.png)
 
 
-### Access your xsodata service
+### Access your `xsodata` service
 
 At this point you should be able to launch your XSODATA file in your browser or right click and choose the `OData Explorer` to view and see the data from your table.
 

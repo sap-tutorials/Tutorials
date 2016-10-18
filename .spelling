@@ -17,7 +17,9 @@ Classname
 Cmehil
 CodeJam
 data-center
+DataFrame
 DataSource
+datasources
 DesignStudio
 DevOps
 EclipseLink
@@ -78,11 +80,13 @@ servlet
 Servlet
 SQLScript
 ssh
+subselect
 TechEd
 Tessel
 timestamp
 TrustAll
 truststore
+UDFs
 UI5
 util
 VMware
@@ -90,8 +94,4 @@ Vora
 Wi-Fi
 Witalij
 XML
-xsaccess
-xsapp
-xsjs
-xsodata
 YaaS

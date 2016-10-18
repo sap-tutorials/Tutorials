@@ -92,7 +92,7 @@ Now you have a package that is waiting for your code, now we will Right-Click on
 This step will generate 3 files, the `.xsapp`, `.xsaccess` and an `index.html`.
 
 ### Now Create the Application
-Now is the time to actually create some application code. In SAP HANA XSC application code essentially is JavaScript code provided in .xsjs files. Now such a file will be created.
+Now is the time to actually create some application code. In SAP HANA XSC application code essentially is JavaScript code provided in `.xsjs` files. Now such a file will be created.
 
 Open the context menu of the `codejam` package by right-clicking on the name and choose Create File. Enter `mylibrary.xsjs` as file name and save with Enter:
 
