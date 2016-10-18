@@ -48,10 +48,13 @@ You will learn how to use Modeler artifacts to add union to previously created S
     ![Union is created](voraunion06.jpg)
 
 5. Add the columns in the following order:
- - CUSTOMER_ID from the CUSTOMER_INFO table and YEAR, REVENUE from SALES_P table
- - CUSTOMER_ID from CUSTOMER and YEAR, REVENUE from SALES_2015 table.
 
-    The selected columns will be shown in the Default ResultSet as below. The columns in the Default ResultSet will be part of the output.
+    ```sql
+    CUSTOMER_ID from the CUSTOMER_INFO table and YEAR, REVENUE from SALES_P table
+    CUSTOMER_ID from CUSTOMER and YEAR, REVENUE from SALES_2015 table
+    ```
+
+    The selected columns will be shown in the **Default `ResultSet`** as below. The columns in the **Default `ResultSet`** will be part of the output.
 
     ![Output columns](voraunion07.jpg)
 
