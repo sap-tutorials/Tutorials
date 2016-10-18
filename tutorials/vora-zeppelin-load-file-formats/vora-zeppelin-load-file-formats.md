@@ -8,8 +8,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
  - **Tutorials:** [SAP HANA Vora Modeler: Aggregation in SQL View](http://go.sap.com/developer/tutorials/vora-modeler-view-aggregate.html)
 
 ## Next Steps
- - Working with hierarchies data (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [Using hierarchies in SAP HANA Vora](http://go.sap.com/developer/tutorials/vora-zeppelin-hierarchies.html)
 
 ## Details
 ### You will learn  
@@ -31,7 +30,7 @@ You will learn how to load sample data from Parquet and ORC file formats.
 
     ![Check HDFS for files](voraformats00.jpg)
 
-2. Similarly to loading sample CSV files you will use Zeppelin with predefined notebook here as well. To open Zeppelin web UI click on **Connect** in your SAP HANA Vora instance in CAL, and then pick **Open** a link for `Application: Zeppelin`.
+2. Similarly to loading sample SCV files you will use Zeppelin with predefined notebook here as well. To open Zeppelin web UI click on **Connect** in your SAP HANA Vora instance in CAL, and then pick **Open** a link for `Application: Zeppelin`.
 
     Once Zeppelin opens up in a new browser window, check it is **Connected** and if yes, then click on `2_DataTypes` notebook.
 
@@ -72,5 +71,4 @@ You will learn how to load sample data from Parquet and ORC file formats.
     ```    
 
 ## Next Steps
- - Working with hierarchies data (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [Using hierarchies in SAP HANA Vora](http://go.sap.com/developer/tutorials/vora-zeppelin-hierarchies.html)
