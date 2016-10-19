@@ -17,7 +17,7 @@ How to find and download SAP Lumira visualization extensions, install them in SA
 ### Introduction to SAP Lumira Visualization Extensions
 SAP Lumira, a self-service BI tool, uses in-built data visualization charts (as seen in the prerequisite tutorial). Sometimes, the data you want to represent may not be appropriately visualized with existing chart types. Or maybe you may have a creative way of visualizing data differently. SAP Lumira Visualization Extensions enable you to do just that. They are essentially plugins that enable customized and different types of charts which allow you to explore and visualize your data better. 
 
-There are approximately 50+ viz extensions open sourced and available for download from [GitHub](https://github.com/SAP/lumira-extension-viz) at present. They are also showcased on the SAP Lumira gallery space in the SAP Community Network: [http://scn.sap.com/docs/DOC-60683](http://scn.sap.com/docs/DOC-60683). These are contributions from the Lumira developer community.
+There are approximately 50+ viz extensions open sourced and available for download from [GitHub](https://github.com/SAP/lumira-extension-viz) at present.
 
 There are also commercially available extensions developed by SAP Partners, that come with support, service and maintenance, available on the [SAP Extensions Marketplace](https://analytics-extensions.enter.sap/)
 

@@ -113,8 +113,6 @@ You should now see the **SAP Easy Access** scren.  Your account is now active an
 
 - If you need to reset your password, please visit the [Registration Form](https://supsignformsb03be6e80.us1.hana.ondemand.com/SUPSignForms/) again.  The system will reset your password and email you the new temporary password.
 
-- The email you received with your temporary password has additional links to the [Getting Started](http://scn.sap.com/docs/DOC-40986) document, where you can find further information on how to utilize the SAP Gateway.
-
 
 ### Problems?  Need Help?
 There are two different forums, depending on what type of trouble you are experiencing.  *Please use the correct one, or it will take longer to answer your questions.*
