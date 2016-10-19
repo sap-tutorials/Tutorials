@@ -26,13 +26,15 @@ If you don’t apply the license, your SAP HANA, express edition will stop worki
 
 #### Obtain your hardware key
 If you are using the SAP HANA Studio eclipse plugin, you can do the following.
+
 1. Start SAP HANA studio.
-2.	On the Systems tab, select SYSTEMDB@HXE (SYSTEM).
-3.	View properties for SYSTEMDB@HXE (SYSTEM).
-4.	Select License properties. Open the System License tab.
+2.	On the Systems tab, select **`SYSTEMDB@HXE (SYSTEM)`**.
+3.	View properties for **`SYSTEMDB@HXE (SYSTEM)`**.
+4.	Select License properties. Open the **System License** tab.
 5.	Make a note of the Hardware Key value.
 
 #### Order your license key
+
 1. Go to [SAP Sneak Preview License Key Request](http://sap.com/minisap) page and fill out all required information.
 2.	For System ID, select HXE.
 3.	For Hardware Key, enter the hardware key value you recorded earlier.
@@ -40,6 +42,7 @@ If you are using the SAP HANA Studio eclipse plugin, you can do the following.
 5.  Save the license key file to your hard disk under the name `HXE.txt`.
 
 #### Apply the license key
+
 1.	In SAP HANA studio, view properties for SYSTEMDB@HXE (SYSTEM).
 2.	Select License properties. Open the System License tab.
 3.	Click Delete License Key to delete any existing licenses.
