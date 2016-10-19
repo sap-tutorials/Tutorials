@@ -10,7 +10,8 @@ tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topi
  - **Tutorials:** [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [Internet of Things (IoT) Viewing your Tessel data in a graph](http://go.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
+
 
 
 ## Details
@@ -75,7 +76,8 @@ Now that your IoT Services are collecting data and you were able to view it your
 
 	```
 	service {
-	  "T_IOT_<table_postfix>" key generate local "GEN_ID";
+	  "SYSTEM"."T_IOT_<table_postfix>" key generate local "GEN_ID";
+	}
 	```
 
 	So this file you can open in your web browser right now and have full access to all of the built in odata functionality.
@@ -125,4 +127,4 @@ Now that your IoT Services are collecting data and you were able to view it your
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [Internet of Things (IoT) Viewing your Tessel data in a graph](http://go.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
