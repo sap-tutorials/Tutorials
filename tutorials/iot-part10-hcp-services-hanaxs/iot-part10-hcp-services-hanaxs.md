@@ -63,50 +63,15 @@ Now that your IoT Services are collecting data and you were able to view it your
 
 	![Tables](9.png) 
 
-10. Now you’ll want to create a new file in this new sub package called `iotmmsxs` called `.xsprivileges` (remember the . in the front)
-
-	```
-	 	{
-		 	"privileges": [
-		 		{
-					"name":"Basic",
-		 			"description":"Basic IoT MMS privilege"
-				}  
-		  	]
-		}
-	```
-
 11. Now switch to the catalog view to determine the next values you will need.
 
     ![catalog](9.png)
 
 12. Now check under the `SYSTEM` schema. Under this schema you will find your tables. These are the tables created by the IoT Services for our devices.
 
-13. Your table `T_IOT_1_XXXXXXXXXXXXX` will be the other item you need to make note of for use in a moment. Now back in your other window the “Editor” should still be open and running and there we need to make another new file in our sub package `iotmmsxs`. This file will be called `iotaccess.hdbrole`.
+13. Your table `T_IOT_1_XXXXXXXXXXXXX` will be the other item you need to make note of for use in a moment. 
 
-	```
-	 role codejam.iotmmsxs::iotaccess {
-	 application privilege: codejam.iotmmsxs::Basic;
-	 catalog schema "SYSTEM": SELECT;
-	}
-	```
-
-	This will give a specific user read access to our table. As soon as you save it and it’s successfully activated that is.
-
-14. Now you will need to modify your `.xsaccess` file.
-
-	```
-	{
-	 "exposed" : true ,
-	 "authentication" : [{"method" : "Basic"}],
-	 "authorization": ["codejam.iotmmsxs::Basic"]
-	}
-	```
-	Save these changes. At this point go back over to the “Catalog” window and give your user access to the application.
-
-15. Within the “Security” across the top menu just like before with adding the roles to the SYSTEM user you will now add this role to your user as well.
-
-16. Back in the “Editor” it’s time to select your sub package `iotmmsxs` and then add a new file. This will be `iotservice.xsodata`.
+16. Back in the “Editor” it’s time to select your sub package `iotmmsxs` and then add a new sub package called `services`. There you will add a new file called `iotservice.xsodata`.
 
 	```
 	service {
@@ -133,7 +98,7 @@ Now that your IoT Services are collecting data and you were able to view it your
 		 	data-sap-ui-theme='sap_goldreflection'
 		 	data-sap-ui-libs='sap.ui.core,sap.ui.commons,sap.ui.table'></script>
 		 <script language="JavaScript">
-			 var oModel = new sap.ui.model.odata.ODataModel("/codejam/iotmmsxs/iotservice.xsodata/", false);
+			 var oModel = new sap.ui.model.odata.ODataModel("/codejam/iotmmsxs/services/iotservice.xsodata/", false);
 			 var arrayHeaders = new Array();
 			 	oTable = new sap.ui.table.Table("test",{tableId: "tableID", visibleRowCount: 10});
 			 //Bring the table onto the UI
@@ -148,7 +113,6 @@ Now that your IoT Services are collecting data and you were able to view it your
 			    }
 			 oTable.setModel(oModel);
 			 var sort1 = new sap.ui.model.Sorter("C_TIMESTAMP");
-			 <body>
 			oTable.bindRows("/<table name>",sort1);
 		 </script>
 	 </head>
