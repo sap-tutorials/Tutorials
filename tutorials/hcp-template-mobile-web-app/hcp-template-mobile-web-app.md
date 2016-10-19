@@ -69,19 +69,27 @@ You will be setting a few configurations, then filling out a few forms in this s
 
     ![Data connection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_11.png)
 
-12. After selecting the Northwind OData Service entry, enter the relative path (see below) to the OData service you will use in the field under the drop-down list-box (where it says “Paste URL here”). Be sure not to include any trailing space characters. The relative path to enter is: `/V2/Northwind/Northwind.svc`. The URL you entered for your destination plus the relative path you enter here points to the OData Service you will use for your app.
+12. After selecting the Northwind OData Service entry, enter the relative path (see below) to the OData service you will use in the field under the drop-down list-box (where it says “Paste URL here”). Be sure not to include any trailing space characters. 
+
+    The relative path to enter is: 
+    
+    ```
+    /V3/Northwind/Northwind.svc
+    ```
+    
+    The URL you entered for your destination plus the relative path you enter here points to the OData Service you will use for your app.
 
     ![Using the SAP Web IDE service pulldown menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_12.png)
 
-13. Click the **run** (right arrow) button (or just press the tab key on your keyboard to shift focus) to test the connection. If the connection is successful, the Collections (**`Categories`**, **`CustomerDemographics`**, etc.) of the Northwind OData Service will be displayed on the right side. This demonstrates that your destination is working properly. Click **Next** to advance to the *Template Customization* page.
+13. Click the **Test** button to test the connection. If the connection is successful, the Service and its Collections of the Northwind OData Service will appear. This demonstrates that your destination is working properly. Click **Next** to advance to the **Template Customization** page.
 
     ![Entering the remaining portion of an OData URL](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_13.png)
 
-14. On the *Template Customization* page you will specify the displayed values on the **Project Settings**, **Master Section** (Products List), **Main Data Fields**, the **Detail Section** (Selected Product Details) and the **Information Section** area.
+14. On the **Template Customization** page you will specify the displayed values on the **Project Settings**, **Master Section** (Products List), **Main Data Fields**, the **Detail Section** (Selected Product Details) and the **Information Section** area.
 
     ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_14.png)
 
-15. Fill out the *Project Settings* and *Master Section* as displayed in the screenshot.
+15. Fill out the **Project Settings** and **Master Section** as displayed in the screenshot.
 
     Field Name                  |  Value
     :---------------------------| :-------------
@@ -94,7 +102,7 @@ You will be setting a few configurations, then filling out a few forms in this s
 
     ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_15.png)
 
-16. Scroll down to the *Main Data Fields Section*. Fill out the Main Data Fields as displayed in the screenshot.
+16. Scroll down to the **Main Data Fields Section**. Fill out the Main Data Fields as displayed in the screenshot.
 
     Field Name          |  Value
     :-------------------| :-------------
@@ -104,7 +112,7 @@ You will be setting a few configurations, then filling out a few forms in this s
 
     ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_16.png)
 
-17. Scroll down to the *Detail Section*. Fill out the Detail Section as displayed in the screenshot.
+17. Scroll down to the **Detail Section**. Fill out the Detail Section as displayed in the screenshot.
 
     Field Name              |  Value
     :-----------------------| :-------------
@@ -114,7 +122,7 @@ You will be setting a few configurations, then filling out a few forms in this s
 
     ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_17.png)
 
-18. Scroll down to the *Information Section*. Fill out the Information Section as displayed in the screenshot.
+18. Scroll down to the **Information Section**. Fill out the Information Section as displayed in the screenshot.
 
     Field Name              |  Value
     :-----------------------| :-------------
