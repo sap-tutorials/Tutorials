@@ -75,7 +75,7 @@ Now that you have a basic application and service created you can now do a bit m
             var aData;
     		$.ajax({
     		  type: "GET",
-    		  url: "/codejam/iotmmsxs/services/iotservice.xsodata/T_IOT_1C3EBED03106D7E53D17?$format=json&$orderby=C_TIMESTAMP desc&$top=1",
+    		  url: "/codejam/iotmmsxs/services/iotservice.xsodata/<table name>?$format=json&$orderby=C_TIMESTAMP desc&$top=1",
     		  dataType: 'json',
     		  async: false,
     		  success: function (data, status){
