@@ -81,7 +81,7 @@ Content for a new tab is displayed in a view fragment file.
 
 3. The new file will open in the editor. Copy the text below, paste it into the new file, right-click in the editor and select **Beautify** (which will re-indent the XML file), then save your changes.
 
-    ```xml
+    ```
     <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns="sap.m">
     <l:Grid defaultSpan="L12 M12 S12" id="productFragment" width="auto">
     <l:content>
