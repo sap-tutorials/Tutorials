@@ -31,7 +31,7 @@ Now that you have a basic application and service created you can now do a bit m
 
 2. right click and create a new file called `graph.html`. You will use the following code to display your data now in a graph as opposed to the table from the previous tutorial. There are a ton of open source and other libraries out there for creating graphs, below is a simple use of the canvas tag.
 
-	```html
+	```
 	 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +53,7 @@ Now that you have a basic application and service created you can now do a bit m
 </style>
 </head>
 <body>
-    <canvas class="canvas" id="myCanvas" width="800" height="400">
+    <canvas class="canvas" id="myCanvas" width="800" height="400"></canvas>
     
     <script>
         var canvas = document.getElementById('myCanvas');

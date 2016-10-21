@@ -88,7 +88,7 @@ Now that your IoT Services are collecting data and you were able to view it your
 
 18. You will replace the existing code with the following, which is quite a bit but should be easily readable and understandable as we are adding a table to a page. This is not the only way to do but that is a matter for you to explore and discover!
 
-	```html
+	```
 	 <!DOCTYPE HTML>
 	 <html>
 	 <head>
