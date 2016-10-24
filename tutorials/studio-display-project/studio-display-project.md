@@ -1,5 +1,5 @@
 ---
-title: SAP HANA Studio, Import Data
+title: SAP HANA Studio, Display your Application
 description: Import Data to your SAP HANA system
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana,-express-edition, products>sap-hana-studio ]
 ---
