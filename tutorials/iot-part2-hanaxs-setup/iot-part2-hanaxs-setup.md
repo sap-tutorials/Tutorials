@@ -60,19 +60,19 @@ You are now going to build a simple and quick SAP HANA XS application, if you al
        };
     type tt_details {
          ID: Integer;
-		 TIMESTAMP: SDate;
-		 TEMPERATURE: Decimal(9,5);
-		 HUMIDITY: Double;
-		 BRIGHTNESS: Double;
+		  TIMESTAMP: SDate;
+		  TEMPERATURE: Decimal(9,5);
+		  HUMIDITY: Double;
+		  BRIGHTNESS: Double;
     };
 
     @Catalog.tableType : #COLUMN
     Entity Data {
- 		key ID: Integer;
-		TIMESTAMP: SDate;
-		TEMPERATURE: Decimal(9,5);
-		HUMIDITY: Double;
-		BRIGHTNESS: Double;
+ 		 key ID: Integer;
+		 TIMESTAMP: SDate;
+		 TEMPERATURE: Decimal(9,5);
+		 HUMIDITY: Double;
+		 BRIGHTNESS: Double;
       };
 
     };  
@@ -114,14 +114,14 @@ You are now going to build a simple and quick SAP HANA XS application, if you al
 
 16. Enter the following content in your `.xsodata` file, and make the appropriate name changes. This file will provide us the ability to read data but also insert data into our table.
 
-     ```javascript     service namespace "CODEJAMMER.johndoe.myiot" {
+     ```     service namespace "CODEJAMMER.johndoe.myiot" {
     	"JOHNDOE"."CODEJAMMER.johndoe.myiot::mydata.Data" as "HISTORY";
     	"JOHNDOE"."CODEJAMMER.johndoe.myiot::mydata.Data" as "DATA"
     		create using "CODEJAMMER.johndoe.myiot::newdata";
      }
      ```17. Your service enabled table is almost ready for use. You also need to give some authorizations and to do this you will create a “ROLE”. Right-click on your `myiot` package and select **New > Role**. Enter `johndoe_myiot` for the role name (modify the name accordingly) and click **Create**.
 
-     ![New role](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part2-hanaxs-setup/p2_11a.png)
+     ![New role](p2_11a.png)
 
 18. Once created, click on **Object Privileges**, then the **+** sign. Enter your name (**JOHNDOE** used here) and a schema and sequence Object Type should appear in the Matching Items list.
 
