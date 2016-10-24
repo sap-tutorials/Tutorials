@@ -18,6 +18,9 @@ How to start the server, change the default passwords to secure your system, and
 **15 Min**.
 
 ---
+
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://go.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
+
 ### Start SAP HANA, express edition
 1. Start the `hypervisor` and power on (or click **Play** on) your express edition VM.
 2. At the **`hxehost` login** prompt, enter **`hxeadm`**
@@ -59,8 +62,8 @@ Record the IP address of your VM so you can reference it later to connect using 
 1. At the command prompt, enter:  
 **/`sbin/ifconfig`**
 2. Locate the IP address, listed under the **`eth0`** interface as **`inet addr`**.  
-In the following example, the IP address is 10.7.186.70  
-![VM IP address](hxe_vm_ip.png)
+In the following example, the IP address is 172.25.86.13  
+![VM IP address](hxe_ua_ip_address.png)
 
 
 

@@ -22,6 +22,8 @@ How to download the VM image of SAP HANA, express edition, install the image on 
 
 This tutorial is available as a [video](http://go.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
 
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://go.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
+
 The SAP HANA, express edition VM image is platform-independent; you can install it to a Windows, OS X, or Linux machine, provided your host machine meets the storage and memory prerequisites. Choose this installation method if you want the simplest setup.
 
 Installing the OVA installs:

@@ -20,7 +20,7 @@ How to perform security tasks to ensure that your security settings are not know
 ---
 
 ### Apply the HANA, express-edition license key
-If you don’t apply the license, your SAP HANA, express edition will stop working after the default grace period of 60-90 days. If you have SAP HANA Studio or the HANA Studio eclipse plugin then begin at **Using Studio**. Otherwise proceed to **Using HDBSQL**.
+If you do not apply the license, your SAP HANA, express edition will stop working after the default grace period of 60-90 days. If you have SAP HANA Studio or the HANA Studio eclipse plugin then begin at **Applying the License Key with HANA Studio**. Otherwise proceed to **Applying the License Key with HDBSQL**.
 
 ### Applying the License Key with HANA Studio
 
@@ -75,9 +75,7 @@ After confirmation, the properties page refreshes with your new license informat
 2. If you do not have an SCP client, please download and install one. There are several very good open source `scp` clients available for Windows, Mac and Linux. Copy the file from your hard disk to the `/usr/sap/HXE/home/license` directory.
 3. Issue the following command to install the license key.
 
-    `hdbsql -u system -p <password> -n localhost:30013 -m -i <instance number> <<EOF`  
-    `SET SYSTEM LICENSE 'cat /usr/sap/HXE/home/license/HXE.txt'’;`  
-    `EOF`
+    `hdbsql -u system -p <password> -n localhost:30013 -m -i <instance number> "SET SYSTEM LICENSE '\`cat /usr/sap/HXE/home/license/HXE.txt\`';" `
 
     **Note**: Make sure the license file string is surrounded by single quotation marks. After the license file string closing single quotation mark, make sure you include the back-tick and semicolon. For `<password>` and `<instance number>` etc., input values matching your SAP HANA, express edition settings.
 
