@@ -42,7 +42,7 @@ In a [previous tutorial](https://go.sap.com/developer/tutorials/hcp-create-desti
 
     > If you open the file, and you get a code editor (and not the form editor shown below), click the **Descriptor Editor** link at the bottom of the page.  This will change to the Code Editor.
     
-    ![Open the mainfest.json file](1.png)
+    ![Open the `mainfest.json` file](1.png)
     
 2.  Click the **Data Sources** tab at the top of the screen.
 
@@ -73,9 +73,9 @@ In a [previous tutorial](https://go.sap.com/developer/tutorials/hcp-create-desti
 ---
 ### Create the model
 
-Now that the applicaiton has a connection to the "Northwind" destination, the next step is to create a data object (called a "model").  This object acts as the interface between the data coming from the web and the rest of the code in the application.
+Now that the application has a connection to the "Northwind" destination, the next step is to create a data object (called a "model").  This object acts as the interface between the data coming from the web and the rest of the code in the application.
 
-There are two ways to create a model:  in the JavaScript code, or by using the `mainfest.json` file.  Adding the model to the manifest.json file will set one up automatically.  
+There are two ways to create a model:  in the JavaScript code, or by using the `mainfest.json` file.  Adding the model to the `manifest.json` file will set one up automatically.  
 
 > **NOTE**  To create the model directly in JavaScript, read [the model help documentation](https://sapui5.netweaver.ondemand.com/docs/guide/5278bfd38f3940b192df0e39f2fb33b3.html).
 
@@ -100,7 +100,6 @@ There are two ways to create a model:  in the JavaScript code, or by using the `
     Then click the **OK** button to accept.
     
     ![Define the default model](7.png)
-    
 
 4.  In the next screen, modify the `Binding Mode` property (on the lower right hand side).  Click the arrow, and select `Default` as the binding mode.
 
@@ -115,7 +114,7 @@ There are two ways to create a model:  in the JavaScript code, or by using the `
     ![Finished model screen](8.png)
     
 ----
-## Test the applicaiton
+## Test the application
 
 1.  Test your application by clicking on **RUN**     ![Run Icon](run-icon.png)
 
