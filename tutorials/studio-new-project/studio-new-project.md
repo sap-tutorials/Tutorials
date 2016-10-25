@@ -27,7 +27,7 @@ Setup your first project with SAP HANA Studio for the SAP HANA, express edition.
 
 	![new project](1.png)
 
-3. The first step to create your new repository will be select "File" then "New" and from the dropdown you will select a "Project" under the "General" section.
+3. The first step to create your new repository will be select "File" then "New" and from the drop down you will select a "Project" under the "General" section.
 
 	![project name](2.png)
 
