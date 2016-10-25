@@ -94,7 +94,7 @@ There are two ways to create a model:  in the JavaScript code, or by using the `
     |---:|--- |
     | Model Name                                | *(leave blank)*       |
     | Model Source                              | Select Data Source    |
-    | Dropdown                                  | Northwind.svc         |
+    | `Dropdown`                                | `Northwind.svc`       |
     | Set as default model for the application  | *checked*             |
         
     Then click the **OK** button to accept.
