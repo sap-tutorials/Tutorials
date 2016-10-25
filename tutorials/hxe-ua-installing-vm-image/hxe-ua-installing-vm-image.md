@@ -8,6 +8,9 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
  - **Proficiency:** Beginner
  - **Tutorials:** [Select the correct SAP HANA, express edition version](http://go.sap.com/developer/how-tos/hxe-ua-version.html)
 
+ >**Tip:**
+ > This tutorial is available as a [video](http://go.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
+
 ## Next Steps
  - [Start Using SAP HANA, express edition](http://go.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
 
@@ -19,8 +22,6 @@ How to download the VM image of SAP HANA, express edition, install the image on 
 **15 Min**.
 
 ---
-
-This tutorial is available as a [video](http://go.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
 
 For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://go.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
 
