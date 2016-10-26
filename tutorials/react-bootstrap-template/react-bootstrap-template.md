@@ -1,5 +1,5 @@
 ---
-title: React JS - Getting started
+title: React JS - Define the Bootstrap Template
 description: Step #2: Define the initial page design and layout using Bootstrap
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
 ---
