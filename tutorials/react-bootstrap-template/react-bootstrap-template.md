@@ -4,11 +4,11 @@ description: Step #2: Define the initial page design and layout using Bootstrap
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorial** [Step 1 - Getting started with REACT](http://go.sap.com/developer/tutorials/react-getting-started.html)
+ - **Proficiency:** Beginner 
+ - **Tutorial:** [Step 1 - Getting started with REACT](http://go.sap.com/developer/tutorials/react-getting-started.html)
 
 ## Next Steps
- - **Tutorial** [Step 3 - Create the Bootstrap Template](http://go.sap.com/developer/tutorials.html)
+ - **Tutorial:** [Step 3 - Create the Boostrap Template](http://go.sap.com/developer/tutorials/react-add-javascript.html)
 
 
 ## Details
@@ -18,6 +18,7 @@ In this tutorial series, we will explore another technology for Single Page Appl
 ### Time to Complete
 **15 Min**.
 
+---
 
 #### REACT tutorial series
 **Step 2**: Set up a template using [Bootstrap](https://getbootstrap.com/), a very popular open source layout system from Twitter.  Bootstrap makes it easy to create good looking web forms without manually writing a lot of CSS, and also has JavaScript tools for creating dialog boxes and other screen elements.  
@@ -394,4 +395,4 @@ Just as a reference, your `index.html` file should now look like this:
  - [jQuery](https://jquery.com/) - a toolkit to easily manipulate web pages.
 
 ## Next Steps
- - **Tutorial** [Step 3 - Create the Bootstrap Template](http://go.sap.com/developer/tutorials.html)
+ - **Tutorial:** [Step 3 - Create the Boostrap Template](http://go.sap.com/developer/tutorials.html)
