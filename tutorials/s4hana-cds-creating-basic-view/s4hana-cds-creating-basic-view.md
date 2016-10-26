@@ -101,13 +101,13 @@ In the code area, replace texts as following:
 After Airline, insert a new annotation  as following:
  `@VDM.view.Type:#BASIC`.
 
-     ![Basic view](BasicView18.png)
+    ![Basic view](BasicView18.png)
 
-     ![Basic view](BasicView19.png)
+    ![Basic view](BasicView19.png)
 
-     ![Basic view](BasicView20.png)
-
-     ![Basic view](BasicView21.png)
+    ![Basic view](BasicView20.png)
+    
+    ![Basic view](BasicView21.png)
 
 - After line 5, insert line 6 with a new annotation `@Analytics: DataCategory: #DIMENSION`
 
