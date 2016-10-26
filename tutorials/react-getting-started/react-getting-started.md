@@ -18,9 +18,10 @@ In this tutorial series, we will explore another technology for Single Page Appl
 ### Time to Complete
 **10 Min**.
 
+---
 
 #### REACT tutorial series
-*Step 1*: Welcome to the tutorial series on React JS.  React is a great front end development tool for building Single Page Applications (SPA).  It is one of several possible options to build Views (using the [Model View Controller paradigm) in HTML5 browsers that will run in HANA Cloud Platform.
+**Step 1**: Welcome to the tutorial series on React JS.  React is a great front end development tool for building Single Page Applications (SPA).  It is one of several possible options to build Views (using the [Model View Controller paradigm) in HTML5 browsers that will run in HANA Cloud Platform.
 
 This first tutorial will start by opening the IDE and getting the basic parts of the project configured.  Here are the detailed steps:
 
