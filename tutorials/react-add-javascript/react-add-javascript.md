@@ -1,5 +1,5 @@
 ---
-title: React JS - Define the Bootstrap Template
+title: React JS - Add the React JavaScript
 description: Step #3: Add the React JavaScript to the file
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
 ---

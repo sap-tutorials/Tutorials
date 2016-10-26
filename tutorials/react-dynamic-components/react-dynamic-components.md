@@ -1,5 +1,5 @@
 ---
-title: React JS - Define the Bootstrap Template
+title: React JS - Convert to dynamic components
 description: Step #5: Convert React components from static to dynamic
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
 ---
@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
  - **Tutorial:** [Step 4 - Separate the files](http://go.sap.com/developer/tutorials/react-separate-files.html)
 
 ## Next Steps
- - **Tutorial:** [Step 6 - Add dynamic OData call](http://go.sap.com/developer/tutorials/react-add-odata.html)
+ - **Tutorial:** [Step 6 - Add REST OData call](http://go.sap.com/developer/tutorials/react-add-odata.html)
 
 
 ## Details
@@ -295,7 +295,7 @@ ReactDOM.render(
 
 
 ## Next Steps
- - **Tutorial:** [Step 6 - Add dynamic OData call](http://go.sap.com/developer/tutorials/react-add-odata.html)
+ - **Tutorial:** [Step 6 - Add REST OData call](http://go.sap.com/developer/tutorials/react-add-odata.html)
 
 
 

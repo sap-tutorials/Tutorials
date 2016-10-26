@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
  - **Tutorial:** [Step 1 - Getting started with REACT](http://go.sap.com/developer/tutorials/react-getting-started.html)
 
 ## Next Steps
- - **Tutorial:** [Step 3 - Create the Boostrap Template](http://go.sap.com/developer/tutorials/react-add-javascript.html)
+ - **Tutorial:** [Step 3 - Add the React JavaScript](http://go.sap.com/developer/tutorials/react-add-javascript.html)
 
 
 ## Details
@@ -395,4 +395,4 @@ Just as a reference, your `index.html` file should now look like this:
  - [jQuery](https://jquery.com/) - a toolkit to easily manipulate web pages.
 
 ## Next Steps
- - **Tutorial:** [Step 3 - Create the Boostrap Template](http://go.sap.com/developer/tutorials.html)
+ - **Tutorial:** [Step 3 - Add the React JavaScript](http://go.sap.com/developer/tutorials/react-add-javascript.html)
