@@ -5,7 +5,7 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorial:** [Step 3 - Create the Boostrap Template](http://go.sap.com/developer/tutorials/react-add-javascript.html)
+ - **Tutorial:** [Step 3 - Create the Bootstrap Template](http://go.sap.com/developer/tutorials/react-add-javascript.html)
 
 ## Next Steps
  - **Tutorial:** [Step 5 - Convert components from static to dynamic](http://go.sap.com/developer/tutorials/react-dynamic-components.html)
