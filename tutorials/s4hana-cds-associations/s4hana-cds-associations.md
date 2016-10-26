@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>s/4hana, topic>core data service, products>sap
  - **Tutorials:** [Core Data  Services, Preparing views for Associations/Joins]
 
 ## Next Steps
-[Creating OData-Service based on CDS-view. ](http://go.sap.com/developer/tutorials/s4hana-cds-creating-odata-service.html)
+[Creating OData-Service based on `CDS-view`. ](http://go.sap.com/developer/tutorials/s4hana-cds-creating-odata-service.html)
 
 
 ## Details
@@ -32,6 +32,7 @@ You will learn
 
 - Let's consider the coding of the view `ZXSHI_AIRLINE` again. We will enhance that code by inserting new annotations:
   - Annotation to make the view usable for BW by inserting the line below after line 6
+
     ```abap
       @Analytics.dataExtraction.enabled: true
      ```
@@ -41,9 +42,10 @@ You will learn
     ![Annotation for data extraction added](AddAnnotationDataExtractionToMakeUsableForBW_03.png)
 
   - Annotation  to enable the Joins by inserting the line below after line 7
+
     ``` abap
-      @ObjectModel.representativeKey: 'Airline'
-      ```
+    @ObjectModel.representativeKey: 'Airline'
+    ```
 
      ![First Annotation added](AddAnnotationForAssociationEnabling_04.png)
 
@@ -63,16 +65,16 @@ You will learn
 
 - We will enhance the code to make it capable for joins. To achieve this the following line code will be inserted after line 8 in the code.
 
-`...as select from scarr association [0..1] to ZXSH_I_AirlineText `
+    `...as select from scarr association [0..1] to ZXSH_I_AirlineText `
 
     ![Annotation syntax added](AddingAssociationSyntax_08.png)
 
     ![Annotation syntax added](AddingAssociationSyntax_09.png)
 
 
-**Inserting the alias text `_Text`**
+    **Inserting the alias text `_Text`**
 
-- To display the Carrer name we will enhance the code  by inserting the alias `_Text`
+    - To display the Carrer name we will enhance the code  by inserting the alias `_Text`
 
      ![Alias text added](AddingAliasText_10.png)
 
