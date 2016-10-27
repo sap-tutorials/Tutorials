@@ -314,6 +314,12 @@ So, now that we have Bootstrap, let's set up the template for our application.
 
 ---
 
+## Additional Information
+ - [Bootstrap](https://getbootstrap.com/) - get more information about Bootstrap.
+ - [jQuery](https://jquery.com/) - a toolkit to easily manipulate web pages.
+
+---
+
 ## Final code
 
 Just as a reference, your `index.html` file should now look like this:
@@ -390,9 +396,7 @@ Just as a reference, your `index.html` file should now look like this:
 </html>
 ```
 
-## Additional Information
- - [Bootstrap](https://getbootstrap.com/) - get more information about Bootstrap.
- - [jQuery](https://jquery.com/) - a toolkit to easily manipulate web pages.
+---
 
 ## Next Steps
  - **Tutorial:** [Step 3 - Add the React JavaScript](http://go.sap.com/developer/tutorials/react-add-javascript.html)

@@ -258,7 +258,8 @@ When you click on a product, the application should respond with the details of 
 
 It doesn't look great, yet.  The next tutorial will update the modal with a Bootstrap Form, and make it much more presentable. 
     
-    
+  
+---  
    
 ## Additional Information
 
@@ -271,6 +272,8 @@ It doesn't look great, yet.  The next tutorial will update the modal with a Boot
 
 - [Using the `setTimeout()` method](http://www.w3schools.com/jsref/met_win_settimeout.asp)
 - [Adding additional parameters with the `bind()` method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
+
+---
 
 ## Final Code
 

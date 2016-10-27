@@ -135,7 +135,7 @@ The steps for this tutorial are:
     ![OData data now displayed on the screen](2-4.png)
 
 
-
+---
 
 ## Additional Information
 
@@ -162,6 +162,8 @@ There are two things happening here.  First, all the major web browsers prevent 
 Second, when the browser attempts to get data from <https://services.odata.org/>, it runs in to another problem.  The OData test site has an invalid SSL certificate.  When the browser attempts to get the data, using HTTPS, the invalid certificate generates an error.
 
 We work around this by having HANA Cloud Platform talk to <http://services.odata.org/> directly.  This avoids the HTTPS connection, and works around the bug.
+
+---
 
 ## Final Code
 

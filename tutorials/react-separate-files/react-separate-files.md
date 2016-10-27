@@ -194,7 +194,9 @@ Follow the same procedures to move the CSS file
     ![Run - no changes should appear](no-changes.png)
 
 
-## Current Code
+---
+
+## Final Code
 
 Your project should now contain three files.  Here is the complete text of each file:
 

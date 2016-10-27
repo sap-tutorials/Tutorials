@@ -197,7 +197,15 @@ To display multiple rows of data, the `ProductList` component will need to be mo
 
     ![All rows of testdata displayed](3-3.png)
 
+---
 
+## Additional Information
+
+#### JavaScript
+
+- Instead of a `for()` loop, this tutorial used the [JavaScript array map() function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
+
+---
 
 ### Final Code
 
@@ -285,14 +293,7 @@ ReactDOM.render(
 ```
 
 
-
-
-## Additional Information
-
-#### JavaScript
-
-- Instead of a `for()` loop, this tutorial used the [JavaScript array map() function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-
+---
 
 ## Next Steps
  - **Tutorial:** [Step 6 - Add REST OData retrieval](http://go.sap.com/developer/tutorials/react-add-odata.html)
