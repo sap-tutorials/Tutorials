@@ -1,5 +1,5 @@
 ---
-title: React JS - Define the Bootstrap Template
+title: React JS - Add header and modal dialog
 description: Step #7: Extend the application with a list header and a modal dialog for product details.
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
 ---
