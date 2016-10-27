@@ -1,5 +1,5 @@
 ---
-title: React JS - Define the Bootstrap Template
+title: React JS - Add REST OData retrieval
 description: Step #6: Add dynamically retrieved data with OData support
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
 ---
