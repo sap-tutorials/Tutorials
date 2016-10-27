@@ -6,6 +6,7 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ## Prerequisites  
  - **Proficiency:** Beginner 
  - **Tutorial:** [Step 8 - Create child components](http://go.sap.com/developer/tutorials/react-child-components.html)
+
 ## Next Steps
  - This is the end of the tutorial series.  [Return to the tutorial navigator.](http://go.sap.com/developer/tutorial-navigator.html)
 
@@ -137,6 +138,8 @@ This tutorial will set up a new component to filter the list of products.  The n
 ## Additional Information
 
 React has a tutorial page that [discusses parent-child communication](https://facebook.github.io/react/docs/components-and-props.html).  
+
+---
 
 ## Final Code
 
@@ -443,6 +446,8 @@ ReactDOM.render(
     document.getElementById('product-list')
 );
 ```
+
+---
 
 ## Next Steps
  - This is the end of the tutorial series.  [Return to the tutorial navigator.](http://go.sap.com/developer/tutorial-navigator.html)

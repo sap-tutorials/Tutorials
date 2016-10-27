@@ -181,9 +181,9 @@ In this case, we will use the properties of the component to store the Categorie
 
 3.  Run your application.  When you click on a row, and the detail modal opens, you will see the Category display refresh.   (It starts by showing "...loading...", and then changes when the data is loaded.)
 
+---
 
-
-##Final Code
+## Final Code
 
 The `main.js` file is the only one modified.  It has become quite complex.  Here is the final copy of that file:
 
@@ -451,6 +451,8 @@ ReactDOM.render(
     document.getElementById('product-list')
 );
 ```
+
+---
 
 ## Next Steps
  - **Tutorial:** [Step 9 - Examine child to parent communication](http://go.sap.com/developer/tutorials/react-add-filter.html)

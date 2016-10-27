@@ -128,7 +128,7 @@ The list on the screen is nice, but it would be better if it had a header descri
 
 
 
-
+---
 
 ### Add a dialog box with product details
 
