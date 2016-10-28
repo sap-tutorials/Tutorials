@@ -34,8 +34,9 @@ Now its time to insert data from your Tessel to SAP IoT Services.
     var hostIoT = 'iotmms########trial.hanatrial.ondemand.com';
     var portIoT = 443;
     var pathIoT = '/com.sap.iotservices.mms/v1/api/http/data/';
-    var authStrIoT = 'Bearer e352bcc9dfdec1cdc6fc3e5ea0b2a66b';
+    var authStrIoT = 'Bearer e352bcc5dfdec1cdc6fc3e5ea0b2a66b';
     var deviceId = '78863a3a-e7b0-47df-acd3-b0d8ca67067e';
+    var messageTypeID = '6c7a02f24cc32ee07174';
     ```
     
     ![parameter definition](1.png)
@@ -43,7 +44,7 @@ Now its time to insert data from your Tessel to SAP IoT Services.
 2. Insert the new `updateIoT` function at the bottom of your `climate.js` file. After the very last line of your current code.
 
     ```javascript
-    function updateIoT(temp, humid,brightness) {
+    function updateIoT(temp, humid) {
     var http = require('https');
     var options = {
       host: hostIoT,
@@ -82,7 +83,7 @@ Now its time to insert data from your Tessel to SAP IoT Services.
     req.shouldKeepAlive = false;
       var jsonData = {
         "mode":"sync",
-        "messageType":"6c7a02f24cc32ee07174",
+        "messageType": messageTypeID,
         "messages": [{
             "Humidity": humid,
             "Temperature": temp,
