@@ -53,7 +53,17 @@ Now that you have data stored in the system its time to display that data within
 8. Open the `index.html` file and you can launch it as is.
 	 ![running app](7.png)
 
-9. You can now use your expertise with SAPUI5 and start making modifications. 
+9. You can now use your expertise with SAPUI5 and start making modifications. Such as the following lines (158 to 164) controlling the `y axis`.
+
+	```
+				yAxis: new sap.viz.ui5.types.Axis({
+				scale: new sap.viz.ui5.types.Axis_scale({
+					fixedRange: false,
+					minValue: 20,
+					maxValue: 40
+				})
+			}),
+	```
 
 ## Next Steps
  - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://go.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
