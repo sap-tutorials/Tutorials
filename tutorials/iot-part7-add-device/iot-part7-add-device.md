@@ -69,10 +69,11 @@ With the MMS service now deployed, and your user assigned the appropriate role i
 
     ![Device ID](p7_8.png)
 
-9. With the device type, message type and device configured, it is time to send some data.
-Go to the **IoT Services Cockpit** and click the **View messages received, use sample clients, etc.** tile. Then click the **Send and receive messages through HTTP** tile.
+9. With the device type, message type and device configured, it is time to send some data. Go to the **IoT Services Cockpit** and click the **Send and view messages...** tile.
 
     ![View Messages](p7_9a.png)
+
+    Then click the **Messaging through HTTP** tile in **Data Services** group.
 
     ![View stored messages](p7_9b.png)
 
@@ -89,7 +90,7 @@ Go to the **IoT Services Cockpit** and click the **View messages received, use s
 
     Under **Message to post** replace the existing content with the following which matches the message type your used earlier.
 
-    ```xml
+    ```JSON
     {"mode":"sync", "messageType":"6c7a02f24cc32ee07174", "messages":[{"Humidity":25.7, "Temperature": 76.5, "timestamp":1431450313}]}
     ```
 
@@ -99,7 +100,7 @@ Go to the **IoT Services Cockpit** and click the **View messages received, use s
 
     ![Server Reply](p7_12.png)
 
-    You may receive as well with response code `202` which indicates your request was not immediately processed but is placed in a processing queue. You should copy returned HTTP endpoint into **Receive acknowledgments** field to receive the status of your queued message.
+    You may receive as well with response code `202` which indicates your request was not immediately processed, but is placed in a processing queue. You should copy returned HTTP endpoint into **Receive acknowledgments** field to receive the status of your queued message.
 
     Response codes `4xx` or `5xx` indicate that post request has failed.
 ￼
@@ -122,14 +123,14 @@ Go to the **IoT Services Cockpit** and click the **View messages received, use s
 
 16. Select then the “RAW” type and copy and paste in the same content you just had (with a few value changes to make it easier to spot this insert. Make sure you change the `messageType` to your ID.
 
-    ```xml
+    ```JSON
     {"mode":"sync", "messageType":"6c7a02f24cc32ee07174", "messages":[{"Humidity":35.7, "Temperature": 86.5, "timestamp":1431450313}]}
     ```
-￼
+
 17. Click **Send** and you should receive a message similar to when you used the HCP tool.￼ This indicates that your POST was successful and if you return to the “Display Stored Messages” you will see your new entry.
 
     If you receive `40x` authorization error in return, then check if you are running Postman client in Chrome's incognito mode.
 
 ## Next Steps
  - [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://go.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
- - [Internet of Things (IoT) Connecting your TI `SensorTag` to IoT Services](http://go.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
+ - [Internet of Things (IoT) Connecting your TI SensorTag to IoT Services](http://go.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
