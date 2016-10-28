@@ -43,11 +43,17 @@ Now that you have data stored in the system its time to display that data within
 6. Next import a new project from your local file system, this will be the new archive you created. Then select the path.
 
 	 ![import](6.png)
+	 
+7. Open the `	main.view.js` file and you will need to modify the name of the OData field to match that of your Message Type. In the case of the climate example that would be changing line 120 to `value: "{odata>C_TEMPERATURE}"` instead of the `value: "{odata>C_VALUE}"`
 
-7. Open the `index.html` file and you can launch it as is.
+	 ![main view](8.png)
+	 
+	 ![code change](9.png)
+
+8. Open the `index.html` file and you can launch it as is.
 	 ![running app](7.png)
 
-8. You can now use your expertise with SAPUI5 and start making modifications. 
+9. You can now use your expertise with SAPUI5 and start making modifications. 
 
 ## Next Steps
  - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://go.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
