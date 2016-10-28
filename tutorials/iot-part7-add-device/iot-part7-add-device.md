@@ -90,7 +90,7 @@ With the MMS service now deployed, and your user assigned the appropriate role i
 
     Under **Message to post** replace the existing content with the following which matches the message type your used earlier.
 
-    ```JSON
+    ```json
     {"mode":"sync", "messageType":"6c7a02f24cc32ee07174", "messages":[{"Humidity":25.7, "Temperature": 76.5, "timestamp":1431450313}]}
     ```
 
@@ -123,7 +123,7 @@ With the MMS service now deployed, and your user assigned the appropriate role i
 
 16. Select then the “RAW” type and copy and paste in the same content you just had (with a few value changes to make it easier to spot this insert. Make sure you change the `messageType` to your ID.
 
-    ```JSON
+    ```json
     {"mode":"sync", "messageType":"6c7a02f24cc32ee07174", "messages":[{"Humidity":35.7, "Temperature": 86.5, "timestamp":1431450313}]}
     ```
 
