@@ -28,33 +28,49 @@ If you do not apply the license, your SAP HANA, express edition will stop workin
 If you are using the SAP HANA Studio eclipse plugin, you can do the following.
 
 1. Start SAP HANA studio.
-2.	On the Systems tab, select **`SYSTEMDB@HXE (SYSTEM)`**.
-3.	View properties for **`SYSTEMDB@HXE (SYSTEM)`**.
-4.	Select License properties. Open the **System License** tab.
+
+2.	On the Systems tab, select SYSTEMDB@HXE (SYSTEM).
+
+3.	View properties for SYSTEMDB@HXE (SYSTEM).
+
+4.	Select License properties. Open the System License tab.
+
 5.	Make a note of the Hardware Key value.
 
 #### Order your license key
 
 1. Go to [SAP Sneak Preview License Key Request](http://sap.com/minisap) page and fill out all required information.
+
 2.	For System ID, select HXE.
+
 3.	For Hardware Key, enter the hardware key value you recorded earlier.
+
 4.	Submit the form. The license key is emailed to you.
+
 5.  Save the license key file to your hard disk under the name `HXE.txt`.
 
 #### Apply the license key
 
 1.	In SAP HANA studio, view properties for SYSTEMDB@HXE (SYSTEM).
+
 2.	Select License properties. Open the System License tab.
+
 3.	Click Delete License Key to delete any existing licenses.
+
 4.	Click Install License Key.
+
 5.	Navigate to your license file and select it.  
-After confirmation, the properties page refreshes with your new license information.
+
+    After confirmation, the properties page refreshes with your new license information.
+
 6. Proceed to **Change the SSFS Master Keys**
 
 ### Applying the License Key with HDBSQL
 
 #### Obtain your hardware key
+
 1. Login in to your HANA, express edition as `hxeadm`.
+
 2.	Enter the following command:
 
     ```
@@ -64,10 +80,15 @@ After confirmation, the properties page refreshes with your new license informat
 3.	Copy or otherwise record the value returned for `HARDWARE_KEY`.
 
 #### Order your license key
+
 1. Go to [SAP Sneak Preview License Key Request](http://sap.com/minisap) page and fill out all required information.
+
 2.	For System ID, select HXE.
+
 3.	For Hardware Key, enter the hardware key value you recorded earlier.
+
 4.	Submit the form. The license key is emailed to you.
+
 5.  Save the license key file to your hard disk under the name `HXE.txt`.
 
 #### Apply the license key
@@ -78,23 +99,21 @@ After confirmation, the properties page refreshes with your new license informat
     mkdir ~/license
     ```
 
-    This command will make the directory `/usr/sap/HXE/home/license`
+        This command will make the directory `/usr/sap/HXE/home/license`
 
 2. If you do not have an SCP client, please download and install one. There are several very good open source `scp` clients available for Windows, Mac and Linux. Copy the file from your hard disk to the `/usr/sap/HXE/home/license` directory.
 
 3. Issue the following command to install the license key.
 
     ```
-    hdbsql -u system -p <password> -n localhost:30013 -m -i <instance number> "SET SYSTEM LICENSE 'cat /usr/sap/HXE/home/license/HXE.txt\`';"
+    hdbsql -u system -p <password> -n localhost:30013 -m -i <instance number> "SET SYSTEM LICENSE 'cat /usr/sap/HXE/home/license/HXE.txt'`;"
     ```
 
     **Note**: Make sure the license file string is surrounded by single quotation marks. After the license file string closing single quotation mark, make sure you include the back-tick and semicolon. For `<password>` and `<instance number>` etc., input values matching your SAP HANA, express edition settings.
 
 4.	Confirm that the license key was installed by issuing the following command.
 
-    ```
-    hdbsql -u system -p <password> -d SystemDB "select hardware_key, expiration_date from m_licenses"
-    ```
+    `hdbsql -u system -p <password> -d SystemDB "select hardware_key, expiration_date from m_licenses"`
 
  The expiration date should be one year from today.
 
@@ -124,15 +143,16 @@ The secure stores in the file system (SSFS) used by SAP HANA are protected by un
     rsecssfx changekey $(rsecssfx generatekey -getPlainValueToConsole)
     ```
 
-3. Add the following entry to the `global.ini` file using a text editor. (HANA, express edition, comes with the `vi` and `vim` text editors.) The `global.ini` file is located here:    `/usr/sap/HXE/SYS/global/hdb/custom/config/global.ini`
+3. Add the following entry to the `global.ini` file using a text editor. (HANA, express edition, comes with the `vi` and `vim` text editors.) The `global.ini` file is located here:    
+    ```
+    /usr/sap/HXE/SYS/global/hdb/custom/config/global.ini
+    ```
 
     Add or edit the cryptography section with the following value.
 
     `[cryptography]`
 
-    ```
-    ssfs_key_file_path = /usr/sap/HXE/SYS/global/hdb/security/ssfs
-    ```
+    `ssfs_key_file_path = /usr/sap/HXE/SYS/global/hdb/security/ssfs`
 
 4. Re-encrypt the system PKI SSFS with a new key - HDB start:  
 
@@ -144,8 +164,7 @@ The secure stores in the file system (SSFS) used by SAP HANA are protected by un
     export RSEC_SSFS_KEYPATH=/usr/sap/HXE/SYS/global/hdb/security/ssfs
     ```
 
-    ```
-    rsecssfx changekey $(rsecssfx generatekey -getPlainValueToConsole)
+    ```rsecssfx changekey $(rsecssfx generatekey -getPlainValueToConsole)
     ```
 
 5.	Restart the system:  
@@ -168,17 +187,25 @@ SAP HANA generates unique root keys on installation. If you installed HXE from a
 
     ```
     cd /usr/sap/HXE/HDB00/exe
+    ```
+
+    ```
     ./hdbnsutil -generateRootKeys --type=DPAPI
     ```
 
 3. Restart the system:  
 
-    `/usr/sap/hostctrl/exe/sapcontrol -nr 00 -function Start`
+    ```
+    /usr/sap/hostctrl/exe/sapcontrol -nr 00 -function Start
+    ```
 
 4. Reset the consistency information in the SSFS using the `hdbcons` program:  
 
     ```
     cd /usr/sap/HXE/HDB00/exe
+    ```
+
+    ```
     ./hdbcons "crypto ssfs resetConsistency" -e hdbnameserver
     ```
 
