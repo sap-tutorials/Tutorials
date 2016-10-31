@@ -97,7 +97,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
     1. Navigate to the `hdblcm` and execute it to install the server. Change to the `hdblcm` directory:
 
-        `cd <extracted_path>/HANA_10_DEE/DATA_UNITS/HDB_SERVER_LINUX_X86_G4`
+        `cd <extracted_path>/HANA_10_DEE/DATA_UNITS/HDB_SERVER_LINUX_X86_64`
 
     2. Execute hdblcm:
 
