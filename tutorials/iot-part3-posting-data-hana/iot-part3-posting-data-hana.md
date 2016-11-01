@@ -47,7 +47,7 @@ Now that your foundation in place it’s time to do a test of posting our data a
 
      ![JSON Result](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part3-posting-data-hana/p3_6.png)
  ￼
-7. If you get an error: **Request execution failed due to missing or invalid XSRF token**,  this is a cross site scripting errors. To correct that, you need to modify the `.xsaccess` and change `prevent_xsrf: true` to `prevent_xsrf: false` and save.
+7. If you get an error: **Request execution failed due to missing or invalid XSRF token**,  this is a cross site scripting errors. To correct that, you need to modify the `.xsaccess` and change `prevent_xsrf: true` to `prevent_xsrf: false` and save. You might also notice just a **403** error and if you are sure everything else is correct then check this as well.
 
      ![.xsaccess definition](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part3-posting-data-hana/p3_7.png)
 
