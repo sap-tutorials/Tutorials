@@ -29,76 +29,63 @@ In the "real world", it is uncommon to use this user account to develop an "end-
 
     ![SAP HANA Cockpit](1.png)
 
-1. Using the top menu ![menu](0-cockpit-menu.png) icon, go to **New** > **User**. Alternatively, you can "right-click" on **Users** then click on **New User**.
+1. Under **Security**, expand **Users**, then double click on **SYSTEM**.
 
-    ![SAP HANA Web-based Development Workbench](2.png)
+    ![SAP HANA Web-based Development Workbench](2-1.png)
 
-1. Complete the form following properties:
+1. In order to allow the **SYSTEM** user to run any SQL statement, you will need to grant him the following role:
 
-    Field Name | Value
-    ---------- | --------------
-    User Name  | `HCPPSTRIAL`
-    Password   | `TemporaryPassword1`
+  - `sap.hana.ide.roles::Developer`
 
-    The values listed above are provided as example, you can choose other values for theses properties.
+  Select the **Granted Roles** tab, then click on the ![plus](0-plus.png) icon, then add the roles listed above.
 
-    We will use a temporary password here, as HANA will require this one to be changed on the first connection.
+  Click on the ![save](0-save.png) button in the top menu bar
 
-    HANA enforces a password policy which requires at least an upper case character and a digit.
+  ![SAP HANA Web-based Development Workbench](3-1.png)
 
-    Click on the ![save](0-save.png) button in the top menu bar
+1. Using the ![navigation](0-navigation.png) menu bar icon, select **Catalog**.
 
-    ![SAP HANA Web-based Development Workbench](3.png)
+  The following screen should appear:
 
-1. In order to user the SAP HCP predictive, we will need to grant the following roles to the created user account:
-    - `AFLPM_CREATOR_ERASER_EXECUTE`
-    - `AFL__SYS_AFL_APL_AREA_EXECUTE`
-    - `sap.hana.ide.roles::Developer`
+  ![SAP HANA Web-based Development Workbench](4-1.png)
 
-    Select the **Granted Roles** tab, then click on the ![plus](0-plus.png) icon, then add the roles listed above.
+1. Click on the ![SQL Console](0-opensqlconsole.png) button in the top menu bar, and paste the following SQL code:
 
-    Click on the ![save](0-save.png) button in the top menu bar
+  ```sql
 
-    ![SAP HANA Web-based Development Workbench](4.png)
+  DROP USER HCPPSTRIAL CASCADE;
+  CREATE USER HCPPSTRIAL PASSWORD Welcome16 NO FORCE_FIRST_PASSWORD_CHANGE;
+  ALTER USER  HCPPSTRIAL DISABLE PASSWORD LIFETIME;
 
-1. This user account will also be used to import data and create a schema, we will need to grant the following system privileges to the created user account:
-    - `CREATE SCHEMA`
+  call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::Developer','HCPPSTRIAL');
+  call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','HCPPSTRIAL');
 
-    Select the **System Privileges** tab, then click on the ![plus](0-plus.png) icon, then add the privileges listed above.
+  GRANT "CREATE SCHEMA" TO HCPPSTRIAL;
 
-    Click on the ![save](0-save.png) button in the top menu bar
+  GRANT REPO.READ on "public" TO HCPPSTRIAL;
+  GRANT REPO.MAINTAIN_IMPORTED_PACKAGES on "public" TO HCPPSTRIAL;
+  GRANT REPO.MAINTAIN_NATIVE_PACKAGES   on "public" TO HCPPSTRIAL;
 
-    ![SAP HANA Web-based Development Workbench](5.png)
+  GRANT REPO.EDIT_NATIVE_OBJECTS   on "public" TO HCPPSTRIAL;
+  GRANT REPO.EDIT_IMPORTED_OBJECTS on "public" TO HCPPSTRIAL;
 
-1. And last but not least, in order to build our HTML5 application we will need to create a package.
+  GRANT REPO.ACTIVATE_NATIVE_OBJECTS   on "public" TO HCPPSTRIAL;
+  GRANT REPO.ACTIVATE_IMPORTED_OBJECTS on "public" TO HCPPSTRIAL;
+  ```
 
-    There are multiple options here. You can either use the `public` package or create a new package. We will use the `public` package during this tutorial.
+  **This script will delete any existing `HCPPSTRIAL` user including its related object and tables.**
 
-    Select the **Package Privileges** tab, then click on the ![plus](0-plus.png) icon, then add the `public` package.
+  Click on the ![Logout](0-run.png) **Run** button or press **F8**.
 
-    Check **ALL** to assign all ***Package Privileges***.
-
-    ![SAP HANA Web-based Development Workbench](6.png)
-
-    Click on the ![save](0-save.png) button in the top menu bar
+  ![SAP HANA Web-based Development Workbench Login](5-1.png)
 
 1. Click on the ![Logout](0-logout.png) **Logout** icon located in the top right corner of the screen.
 
-1. Now, switch back to the ***SAP HANA Cloud Platform Cockpit***.
+  ![SAP HANA Web-based Development Workbench Login](7-1.png)
 
-    Click on **SAP HANA Web-based Development Workbench**
+1. Now, you need to connect with your **`HCPPSTRIAL`** ***HANA User Account***.
 
-    ![SAP HANA Web-based Development Workbench Login](7.png)
-
-1. Now, you need to connect with your new user account.
-
-    Enter the ***HANA User Account*** user name and password, click on **Logon**.
-
-    You will be prompted to change your password with a new one.
-
-    Click on **Change Password**
-
-    ![SAP HANA Web-based Development Workbench Change Password](8.png)
+    Enter **`HCPPSTRIAL`** as ***Username*** user name and **`Welcome16`** as ***Password***, click on **Logon**.
 
 1. Your ***HANA User Account*** is now configured.
 
@@ -106,4 +93,3 @@ In the "real world", it is uncommon to use this user account to develop an "end-
 
 ## Next Steps
   - [Import a predictive demo dataset in your SAP HANA  instance](http://go.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
-
