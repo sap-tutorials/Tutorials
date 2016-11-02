@@ -213,7 +213,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
     ```
     by
 
-    ```js
+    ```javascript
     sap.ui.getCore().attachInit(function() {
       sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel());
       new sap.m.Shell({
