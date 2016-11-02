@@ -28,7 +28,9 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 
     ![SAP HANA Web-based Development Workbench](2.png?)
 
-1. Download the following SQL file locally [`create table and data SQL file`](demo.timeseries.sql.txt). It contains the SQL statement to create the required table and data set we will be using later on.
+1. Download the following SQL file locally "[`create table and data SQL file`](demo.timeseries.sql.txt)".
+
+It contains the SQL statement to create the required table and data set we will be using later on.
 
 1. Copy and paste the content of the file in the SQL console.
 
@@ -42,4 +44,3 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 
 ## Next Steps
   - [Expose your predictive demo dataset as an OData service](http://go.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
-

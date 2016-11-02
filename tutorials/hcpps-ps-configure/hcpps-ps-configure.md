@@ -84,7 +84,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 
     ![New Binding](9.png)
 
-    Enter your ***HANA User Account*** login and password.
+    Enter your ***HANA User Account*** login (`HCPPSTRIAL`) and password (`Welcome16`).
 
     Click on **Save**
 
@@ -140,4 +140,3 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 
 ## Next Steps
   - [Install a REST client to interact with the HCP predictive services](http://go.sap.com/developer/tutorials/hcpps-rest-client-install.html)
-
