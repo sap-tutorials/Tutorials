@@ -35,53 +35,52 @@ In the "real world", it is uncommon to use this user account to develop an "end-
 
 1. In order to allow the **SYSTEM** user to run any SQL statement, you will need to grant him the following role:
 
-  - `sap.hana.ide.roles::Developer`
+    - `sap.hana.ide.roles::Developer`
 
-  Select the **Granted Roles** tab, then click on the ![plus](0-plus.png) icon, then add the roles listed above.
+    Select the **Granted Roles** tab, then click on the ![plus](0-plus.png) icon, then add the roles listed above.
 
-  Click on the ![save](0-save.png) button in the top menu bar
+    Click on the ![save](0-save.png) button in the top menu bar
 
-  ![SAP HANA Web-based Development Workbench](3-1.png)
+    ![SAP HANA Web-based Development Workbench](3-1.png)
 
 1. Using the ![navigation](0-navigation.png) menu bar icon, select **Catalog**.
 
-  The following screen should appear:
+    The following screen should appear:
 
-  ![SAP HANA Web-based Development Workbench](4-1.png)
+    ![SAP HANA Web-based Development Workbench](4-1.png)
 
 1. Click on the ![SQL Console](0-opensqlconsole.png) button in the top menu bar, and paste the following SQL code:
 
-  ```sql
+    ```sql
+    DROP USER HCPPSTRIAL CASCADE;
+    CREATE USER HCPPSTRIAL PASSWORD Welcome16 NO FORCE_FIRST_PASSWORD_CHANGE;
+    ALTER USER  HCPPSTRIAL DISABLE PASSWORD LIFETIME;
 
-  DROP USER HCPPSTRIAL CASCADE;
-  CREATE USER HCPPSTRIAL PASSWORD Welcome16 NO FORCE_FIRST_PASSWORD_CHANGE;
-  ALTER USER  HCPPSTRIAL DISABLE PASSWORD LIFETIME;
+    call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::Developer','HCPPSTRIAL');
+    call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','HCPPSTRIAL');
 
-  call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::Developer','HCPPSTRIAL');
-  call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','HCPPSTRIAL');
+    GRANT "CREATE SCHEMA" TO HCPPSTRIAL;
 
-  GRANT "CREATE SCHEMA" TO HCPPSTRIAL;
+    GRANT REPO.READ on "public" TO HCPPSTRIAL;
+    GRANT REPO.MAINTAIN_IMPORTED_PACKAGES on "public" TO HCPPSTRIAL;
+    GRANT REPO.MAINTAIN_NATIVE_PACKAGES   on "public" TO HCPPSTRIAL;
 
-  GRANT REPO.READ on "public" TO HCPPSTRIAL;
-  GRANT REPO.MAINTAIN_IMPORTED_PACKAGES on "public" TO HCPPSTRIAL;
-  GRANT REPO.MAINTAIN_NATIVE_PACKAGES   on "public" TO HCPPSTRIAL;
+    GRANT REPO.EDIT_NATIVE_OBJECTS   on "public" TO HCPPSTRIAL;
+    GRANT REPO.EDIT_IMPORTED_OBJECTS on "public" TO HCPPSTRIAL;
 
-  GRANT REPO.EDIT_NATIVE_OBJECTS   on "public" TO HCPPSTRIAL;
-  GRANT REPO.EDIT_IMPORTED_OBJECTS on "public" TO HCPPSTRIAL;
+    GRANT REPO.ACTIVATE_NATIVE_OBJECTS   on "public" TO HCPPSTRIAL;
+    GRANT REPO.ACTIVATE_IMPORTED_OBJECTS on "public" TO HCPPSTRIAL;
+    ```
 
-  GRANT REPO.ACTIVATE_NATIVE_OBJECTS   on "public" TO HCPPSTRIAL;
-  GRANT REPO.ACTIVATE_IMPORTED_OBJECTS on "public" TO HCPPSTRIAL;
-  ```
+    **This script will delete any existing `HCPPSTRIAL` user including its related object and tables.**
 
-  **This script will delete any existing `HCPPSTRIAL` user including its related object and tables.**
+    Click on the ![Logout](0-run.png) **Run** button or press **F8**.
 
-  Click on the ![Logout](0-run.png) **Run** button or press **F8**.
-
-  ![SAP HANA Web-based Development Workbench Login](5-1.png)
+    ![SAP HANA Web-based Development Workbench Login](5-1.png)
 
 1. Click on the ![Logout](0-logout.png) **Logout** icon located in the top right corner of the screen.
 
-  ![SAP HANA Web-based Development Workbench Login](7-1.png)
+    ![SAP HANA Web-based Development Workbench Login](7-1.png)
 
 1. Now, you need to connect with your **`HCPPSTRIAL`** ***HANA User Account***.
 

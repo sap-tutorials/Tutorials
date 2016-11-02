@@ -30,7 +30,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 
 1. Download the following SQL file locally "[`create table and data SQL file`](demo.timeseries.sql.txt)".
 
-It contains the SQL statement to create the required table and data set we will be using later on.
+    It contains the SQL statement to create the required table and data set we will be using later on.
 
 1. Copy and paste the content of the file in the SQL console.
 
