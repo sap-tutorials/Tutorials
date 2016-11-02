@@ -71,11 +71,11 @@ Enter the User and Password values below and click **Enter**.
     Name              | `sha`
     Description       | `Welcome1`
     
-   ![Basic view](BasicView9.png)   
+    ![Basic view](BasicView9.png)   
 
 8. In the next window enter the ABAP transaction `se16` and afterward press the `Enter` button.
 
-   ![Basic view](BasicView10.png)
+    ![Basic view](BasicView10.png)
 
 9. In the next window enter `scarr` as Table Name and press the Table Contents icon.
 
