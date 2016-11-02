@@ -155,7 +155,6 @@ Go back to the Editor and open the already existing `mylibrary.xsjs`.
 Replace the current code in the `mylibrary.xsjs` file with the following code that opens a database connection, prepares a simple SQL statement, executes it and returns the result of the query:
 
 ```
-js
 $.response.contentType = "text/html";
 var output = "My Personal Library!<br><br>";
 

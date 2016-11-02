@@ -33,9 +33,9 @@ The data source URL is <http://services.odata.org/V2/Northwind/Northwind.svc/>
 
     ![HCP log in page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_1.png)
 
-2. Select the **Destinations** tab on the left side, and then click on **New Destination** to open a new destination configuration form.
+2. In the left-hand navigation bar, select **Connectivity > Destinations** then click on **New Destination** to open a new destination configuration form.
 
-    ![Web IDE Destination tab](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_2.png)
+    ![HCP Destination](mob1-1_2.png)
 
 3. Enter/confirm all fields in the Destination configuration section with the information below.
 

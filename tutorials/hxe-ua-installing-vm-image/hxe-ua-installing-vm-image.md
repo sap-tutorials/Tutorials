@@ -8,6 +8,9 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
  - **Proficiency:** Beginner
  - **Tutorials:** [Select the correct SAP HANA, express edition version](http://go.sap.com/developer/how-tos/hxe-ua-version.html)
 
+ >**Tip:**
+ > This tutorial is available as a [video](http://go.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
+
 ## Next Steps
  - [Start Using SAP HANA, express edition](http://go.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
 
@@ -20,7 +23,7 @@ How to download the VM image of SAP HANA, express edition, install the image on 
 
 ---
 
-This tutorial is available as a [video](http://go.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://go.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
 
 The SAP HANA, express edition VM image is platform-independent; you can install it to a Windows, OS X, or Linux machine, provided your host machine meets the storage and memory prerequisites. Choose this installation method if you want the simplest setup.
 
@@ -104,4 +107,4 @@ Import the downloaded OVA file into your `hypervisor` to begin using SAP HANA, e
 4. Power on your VM.
 
 ## Next Steps
- - [Getting Started with SAP HANA, express edition (Binary Installer Method)](http://go.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
+ - Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA, express edition](http://go.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)

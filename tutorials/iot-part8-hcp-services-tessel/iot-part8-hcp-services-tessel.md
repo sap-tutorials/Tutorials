@@ -10,12 +10,12 @@ tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topi
  - **Tutorials:** [Internet of Things (IoT) Adding a new device to the IoT Services](http://go.sap.com/developer/tutorials/iot-part7-add-device.html)
 
 ## Next Steps
- - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
+ - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
 
 
 ## Details
 ### You will learn  
-Now its time to insert data from your Tessel to SAP IoT Services. If you have already worked through Part 5 "Inserting Tessel Data" then this will be a quick modification of your code.  
+Now its time to insert data from your Tessel to SAP IoT Services.   
 
 
 ### Time to Complete
@@ -34,35 +34,17 @@ Now its time to insert data from your Tessel to SAP IoT Services. If you have al
     var hostIoT = 'iotmms########trial.hanatrial.ondemand.com';
     var portIoT = 443;
     var pathIoT = '/com.sap.iotservices.mms/v1/api/http/data/';
-    var authStrIoT = 'Bearer e352bcc9dfdec1cdc6fc3e5ea0b2a66b';
+    var authStrIoT = 'Bearer e352bcc5dfdec1cdc6fc3e5ea0b2a66b';
     var deviceId = '78863a3a-e7b0-47df-acd3-b0d8ca67067e';
-
-    // which device are you?
-    var stationId = 1;
-
-    var xTemp;
-    var xHumid;
-    var xbright;
-    var xtimestamp;
-    var date = new Date();
-    var time = date.getTime ();
+    var messageTypeID = '6c7a02f24cc32ee07174';
     ```
+    
+    ![parameter definition](1.png)
 
-    ![parameter definition](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part8-hcp-services-tessel/p8_1.png)
-
-2. Comment out the Connect to HANA parameters:
-
-    ![HANA parameters](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part8-hcp-services-tessel/p8_2.png)
-
-3. Comment out the entire `updateHANA` function.
-
-    ![HANA function](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part8-hcp-services-tessel/p8_3.png)
-
-4. Insert the new `updateIoT` function at the bottom of your `climate.js` file.
-
+2. Insert the new `updateIoT` function at the bottom of your `climate.js` file. After the very last line of your current code.
 
     ```javascript
-    function updateIoT(temp, humid,brightness) {
+    function updateIoT(temp, humid) {
     var http = require('https');
     var options = {
       host: hostIoT,
@@ -101,7 +83,7 @@ Now its time to insert data from your Tessel to SAP IoT Services. If you have al
     req.shouldKeepAlive = false;
       var jsonData = {
         "mode":"sync",
-        "messageType":"6c7a02f24cc32ee07174",
+        "messageType": messageTypeID,
         "messages": [{
             "Humidity": humid,
             "Temperature": temp,
@@ -118,30 +100,30 @@ Now its time to insert data from your Tessel to SAP IoT Services. If you have al
     >NOTE: `messageType` needs to be changed to match your `messageTypeID`.
 
 
-5. Comment out the call to `updateHANA` and insert the call to `updateIot` just below it.
+3. Insert the call to `updateIot` just after your `console.log` output of your sensor data and before your `setTimeout` or loop continues.
 
     ```javascript
     updateIoT(temp.toFixed(4), humid.toFixed(4));
     ```
 
-6. Check that your Tessel is still connected to Wi-Fi by running the command `tessel wifi -l`. If you do not get a response like that below, you should reconnect to the network with the command below with the correct SSID and password. If your access point has spaces in the name then just put it inside of quotes like this: `“Wifi name”`.
+4. Check that your Tessel is still connected to Wi-Fi by running the command `tessel wifi -l`. If you do not get a response like that below, you should reconnect to the network with the command below with the correct SSID and password. If your access point has spaces in the name then just put it inside of quotes like this: `“Wifi name”`.
 
     `tessel wifi -n SSID -p password`
 
-    ![Acquiring IP](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part8-hcp-services-tessel/p8_6.png)
+    ![Acquiring IP](p8_6.png)
 
-7. Run your code, and you should see an output like the one below:
+5. Run your code, and you should see an output like the one below:
 
     ```bash
     tessel run climate.js
     ```
 
-    ![Posting to HCP](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part8-hcp-services-tessel/p8_7.png)
+    ![Posting to HCP](p8_7.png)
 
 
-8. Return to the **IoT Services Cockpit**, click the **View messages received, use sample clients, etc.** tile, click the **View stored messages** tile, then select your **table**. You will see the latest messages showing up there. You can also click the **REFRESH** button as your script runs.
+6. Return to the **IoT Services Cockpit**, click the **View messages received, use sample clients, etc.** tile, click the **View stored messages** tile, then select your **table**. You will see the latest messages showing up there. You can also click the **REFRESH** button as your script runs.
 
-    ![Viewing new values in HCP](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part8-hcp-services-tessel/p8_8.png)
+    ![Viewing new values in HCP](p8_8.png)
 
 ## Next Steps
-  - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
+  - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)

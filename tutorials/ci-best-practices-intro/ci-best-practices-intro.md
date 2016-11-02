@@ -26,7 +26,7 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 4.2. [Java Web on SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp.html)  
 4.3. [SAP HANA Extended Application Services (XS), classic model](http://go.sap.com/developer/tutorials/ci-best-practices-xsc.html)  
 5. CI/CD Process Setup using SCM and build services on the cloud  
-5.1  [Generic Project with CI using Cloud Services](http://go.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html)  
+5.1. [Generic Project with CI using Cloud Services](http://go.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html)  
 5.2. [Java Web on SAP HANA Cloud Platform with CI using Cloud Services](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp-cloud.html)  
 
 ---
@@ -86,5 +86,5 @@ Part of the Guide      | Roles of interest
 4.2. [Java Web on SAP HANA Cloud Platform: Configuring the CI system for Maven-based Java Web project](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp.html) | Build Operator, **Build Engineer**, Developer
 4.3. [SAP HANA Extended Application Services (XS), classic model: Configuring the CI system](http://go.sap.com/developer/tutorials/ci-best-practices-xsc.html) | Build Operator, **Build Engineer**, Developer
 **5. CI/CD Process Setup using SCM and build services on the cloud**  | 
-5.1  [Generic Project with CI using Cloud Services: Configuring the CI infrastructure for a generic Java project using the cloud services of GitHub and Travis CI](http://go.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html) | Build Operator, **Build Engineer**, Developer
-5.2  [Java Web on SAP HANA Cloud Platform with CI using Cloud Services: Configuring the CI infrastructure for a Java web project on HCP using the cloud services of GitHub and Travis CI](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp-cloud.html) | Build Operator, **Build Engineer**, Developer
+5.1. [Generic Project with CI using Cloud Services: Configuring the CI infrastructure for a generic Java project using the cloud services of GitHub and Travis CI](http://go.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html) | Build Operator, **Build Engineer**, Developer
+5.2. [Java Web on SAP HANA Cloud Platform with CI using Cloud Services: Configuring the CI infrastructure for a Java web project on HCP using the cloud services of GitHub and Travis CI](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp-cloud.html) | Build Operator, **Build Engineer**, Developer

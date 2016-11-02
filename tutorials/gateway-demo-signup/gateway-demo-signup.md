@@ -52,7 +52,7 @@ The screen will change and the word *Success* will appear.
 
 [ACCORDION-BEGIN [Step 3: ](Registration email)]
 
-Check your email inbox.  You will receive an email from *no-reply@sap.com* to your email account with your username and password.
+Check your email inbox.  You will receive an email from `no-reply@sap.com` to your email account with your username and password.
 
 > **Note:** If you do not receive an email, please check and make sure your email address, listed on the registration web page, is correct.  If this address is correct, please wait for 5 minutes for the email to go through.  Also, check your spam filters - this email is sometimes reported as spam.  If the address is incorrect, change it on sap.com, and then start the registration process again.
 
@@ -112,8 +112,6 @@ You should now see the **SAP Easy Access** scren.  Your account is now active an
 ### Account Maintenance
 
 - If you need to reset your password, please visit the [Registration Form](https://supsignformsb03be6e80.us1.hana.ondemand.com/SUPSignForms/) again.  The system will reset your password and email you the new temporary password.
-
-- The email you received with your temporary password has additional links to the [Getting Started](http://scn.sap.com/docs/DOC-40986) document, where you can find further information on how to utilize the SAP Gateway.
 
 
 ### Problems?  Need Help?

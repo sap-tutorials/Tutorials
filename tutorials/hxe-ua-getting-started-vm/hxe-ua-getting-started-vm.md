@@ -7,6 +7,9 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
  - **Proficiency:** Beginner
  - **Tutorials:** [Installing the VM Image](http://go.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
 
+ >**Tip:**
+ > This tutorial is available as a [video](http://go.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
+
 ## Next Steps
  - [Configure SAP HANA, express edition Security](http://go.sap.com/developer/tutorials/hxe-ua-configure-security.html)
 
@@ -18,6 +21,9 @@ How to start the server, change the default passwords to secure your system, and
 **15 Min**.
 
 ---
+
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://go.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
+
 ### Start SAP HANA, express edition
 1. Start the `hypervisor` and power on (or click **Play** on) your express edition VM.
 2. At the **`hxehost` login** prompt, enter **`hxeadm`**
@@ -50,17 +56,22 @@ Wait approximately 60 seconds for the system to start and the user prompt to ret
 
 ### Change the Default Password for SYSTEM User
 Changing the default SYSTEM user password can help secure your system.
+
 1. From the command prompt, enter this command:  
-**`hdbsql -u SYSTEM -d SystemDB -p HXEHana1`**
+
+    **`hdbsql -u SYSTEM -d SystemDB -p HXEHana1`**
+
 2. Follow the command prompts to update the password.
 
 ### Record Your VM's IP Address
 Record the IP address of your VM so you can reference it later to connect using SAP HANA client tools.
+
 1. At the command prompt, enter:  
 **/`sbin/ifconfig`**
-2. Locate the IP address, listed under the **`eth0`** interface as **`inet addr`**.  
-In the following example, the IP address is 10.7.186.70  
-![VM IP address](hxe_vm_ip.png)
+
+2. Locate the IP address, listed under the **`eth0`** interface as **`inet addr`**. In the following example, the IP address is `172.25.86.13`  
+
+![VM IP address](hxe_ua_ip_address.png)
 
 
 

@@ -5,8 +5,7 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **How-To** [Start this tutorial series](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
- - **Tutorials: [Create an empty UI5 Web IDE project](https://go.sap.com/developer/tutorials/sapui5-webide-create-project.html)
+ - **Tutorial**: [Create an empty UI5 Web IDE project](https://go.sap.com/developer/tutorials/sapui5-webide-create-project.html)
 
 ## Next Steps
  - [Add a list to the current view](https://go.sap.com/developer/tutorials/sapui5-webide-add-list.html)
@@ -16,24 +15,34 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 Now that you have set up a Destination in the HANA Cloud Platform (HCP) cockpit, you will connect that destination to your local application.  
 
 ### Time to Complete
-**15-20 Minutes**.
+**15 Minutes**.
 
 ---
 >  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
+---
+There are three steps to connect the OData service to your application.  
 
-Now, we will connect the cloud destination (which you created in the [Create NorthWind Destination](https://go.sap.com/developer/tutorials/hcp-create-destination.html) tutorial) to the local application.  To do that, we need to edit the application configuration files.
+1.  Define the Data Source in your `mainfest.json` file.  
+2.  Create a Model.   (The Model is the data source, based on [the Model-View-Controller architecture](https://blog.codinghorror.com/understanding-model-view-controller/)).  
+3.  Test the application
+
+
+---
+### Define the Data source
+
+In a [previous tutorial](https://go.sap.com/developer/tutorials/hcp-create-destination.html) the OData test service called "Northwind" was set up for all HANA Cloud Platform applicaitons.  Next, this specific applicaiton must connect to that "Destination".  
+
 
 1.  Open the `webapp/mainfest.json` file, by double clicking on the file.
 
     > To open a folder in the Web IDE, just click on the folder icon.  It will expand to show the contents.
     
-    
-    The section will include our main service (Northwind) and a path to the API endpoint.
+    .
 
     > If you open the file, and you get a code editor (and not the form editor shown below), click the **Descriptor Editor** link at the bottom of the page.  This will change to the Code Editor.
     
-    ![Open the mainfest.json file](1.png)
+    ![Open the `mainfest.json` file](1.png)
     
 2.  Click the **Data Sources** tab at the top of the screen.
 
@@ -60,36 +69,43 @@ Now, we will connect the cloud destination (which you created in the [Create Nor
 
     ![Finish creating the OData service](4c.png)
 
-7.  Next, we will define the model in the UI5 application.
-    > *Why are we doing this?*  You can create a model in the JavaScript code, or UI5 can set one up for you.  Adding the model to the manifest.json file will set one up automatically.  If you want to create the model in JavaScript, there is more information in [the model help documentation](https://sapui5.netweaver.ondemand.com/docs/guide/5278bfd38f3940b192df0e39f2fb33b3.html).
 
-8.  Select the **Models** tab at the top of the screen.
+---
+### Create the model
+
+Now that the application has a connection to the "Northwind" destination, the next step is to create a data object (called a "model").  This object acts as the interface between the data coming from the web and the rest of the code in the application.
+
+There are two ways to create a model:  in the JavaScript code, or by using the `mainfest.json` file.  Adding the model to the `manifest.json` file will set one up automatically.  
+
+> **NOTE**  To create the model directly in JavaScript, read [the model help documentation](https://sapui5.netweaver.ondemand.com/docs/guide/5278bfd38f3940b192df0e39f2fb33b3.html).
+
+
+1.  Open the `manifest.json` file, and select the **Models** link at the top of the screen:
 
     ![Select the models tab](5.png)
 
-9.  Click the **+** button to create a new model.
+2.  Click the **+** button to create a new model.
 
     ![Create a new model](6.png)
 
-10. In the *New Model* dialog box, select the following:
+3. In the *New Model* dialog box, select the following:
 
     |    |    |
     |---:|--- |
     | Model Name                                | *(leave blank)*       |
     | Model Source                              | Select Data Source    |
-    | Dropdown                                  | Northwind.svc         |
+    | `Dropdown`                                | `Northwind.svc`       |
     | Set as default model for the application  | *checked*             |
         
     Then click the **OK** button to accept.
     
     ![Define the default model](7.png)
-    
 
-10. In the following screen, modify the `Binding Mode` property (on the lower right hand side).  Click the arrow, and select `Default` as the binding mode.
+4.  In the next screen, modify the `Binding Mode` property (on the lower right hand side).  Click the arrow, and select `Default` as the binding mode.
 
     ![Change the binding mode](7b.png)
 
-11. The finished model screen should look like this.  Click **Save** to save this file.
+5. The finished model screen will look like this.  Click **Save** to save this file.
 
     ![Save icon](save-icon.png)
 
@@ -98,17 +114,17 @@ Now, we will connect the cloud destination (which you created in the [Create Nor
     ![Finished model screen](8.png)
     
 ----
-Next, we will test the application.  
+## Test the application
 
 1.  Test your application by clicking on **RUN**     ![Run Icon](run-icon.png)
 
-    You should see a screen that looks like this:
+    A new browser window will open.  The screen should look like this:
     
     ![SAPUI5 screen with title only](test-1.png)
     
-2.  Next, we want to check the data.  The web page will receive the data, but nothing will appear on the screen.  (We will set up the screen display in the next few tutorials).  
+2.  Next, check to make sure the browser is receiving the data.  The web page will receive the data, but nothing will appear on the screen.  (We will set up the screen display in the next few tutorials).  
 
-	To check the data, we will use the browser tools and view the data coming from the server.
+	To check the data, use the browser tools and view the data coming from the server.
 	> *Why are we using Google Chrome?*  Google chrome has built in development tools that make it easy to debug and work with web pages.  If you are not using Google Chrome, [download it now](https://www.google.com/chrome/browser/desktop/).
 	
 	Right click on the web page, and choose **Inspect**
@@ -125,6 +141,8 @@ Next, we will test the application.
     >*What about the red text?* Several files will appear in red.  This is normal, as we have not set up that part of the application. 
     
 5.  Scroll down until you find the *$metadata* item.  
+
+    > **NOTE** Typing in `metadata` to the filter box in upper right corner will make it easy to find the correct row.
 
     ![metadata in the network view](test-5.png)
     
@@ -146,4 +164,5 @@ Next, we will test the application.
 
 
 ## Next Steps
- - This tutorial is part of a series.  The next tutorial is part 3: [Add a list to the current view](https://go.sap.com/developer/tutorials/sapui5-webide-add-list.html)
+
+- **Tutorial** Part 3: [Add a list to the current view](https://go.sap.com/developer/tutorials/sapui5-webide-add-list.html)

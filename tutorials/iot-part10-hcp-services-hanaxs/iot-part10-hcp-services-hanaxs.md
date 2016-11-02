@@ -10,7 +10,8 @@ tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topi
  - **Tutorials:** [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [Internet of Things (IoT) Viewing your Tessel data in a graph](http://go.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
+
 
 
 ## Details
@@ -59,106 +60,35 @@ Now that your IoT Services are collecting data and you were able to view it your
 
 	![Tables](9.png) 
 
-9. Choose the “SAP HANA Web-based Development Workbench,” now right click on the top level, `Content`, and choose “New Application”. Choose the “Blank Application” option and the “sub package” - `codejam.iotmmsxs`
+9. Your table `T_IOT_1_XXXXXXXXXXXXX` will be the other item you need to make note of for use in a moment. 
 
-	![Tables](9.png) 
+10. Choose the “SAP HANA Web-based Development Workbench,” now right click on the top level, `Content`, and choose “New Application”. Choose the “Blank Application” option and the “sub package” - `codejam.iotmmsxs`
 
-10. Now you’ll want to create a new file in this new sub package called `iotmmsxs` called `.xsprivileges` (remember the . in the front)
+	![new application](14.png)
 
-	```
-	 	{
-		 	"privileges": [
-		 		{
-					"name":"Basic",
-		 			"description":"Basic IoT MMS privilege"
-				}  
-		  	]
-		}
-	```
+11. Now modify the `.xsaccess` file, line 13 you need to change the "true" to "false".
 
-11. Now switch to the catalog view to determine the next values you will need.
-
-    ![catalog](9.png)
-
-12. Now check under the `SYSTEM` schema. Under this schema you will find your tables. These are the tables created by the IoT Services for our devices.
-
-13. Your table `T_IOT_1_XXXXXXXXXXXXX` will be the other item you need to make note of for use in a moment. Now back in your other window the “Editor” should still be open and running and there we need to make another new file in our sub package `iotmmsxs`. This file will be called `iotaccess.hdbrole`.
-
-	```
-	 role codejam.iotmmsxs::iotaccess {
-	 application privilege: codejam.iotmmsxs::Basic;
-	 catalog schema "SYSTEM": SELECT;
-	}
-	```
-
-	This will give a specific user read access to our table. As soon as you save it and it’s successfully activated that is.
-
-14. Now you will need to modify your `.xsaccess` file.
-
-	```
-	{
-	 "exposed" : true ,
-	 "authentication" : [{"method" : "Basic"}],
-	 "authorization": ["codejam.iotmmsxs::Basic"]
-	}
-	```
-	Save these changes. At this point go back over to the “Catalog” window and give your user access to the application.
-
-15. Within the “Security” across the top menu just like before with adding the roles to the SYSTEM user you will now add this role to your user as well.
-
-16. Back in the “Editor” it’s time to select your sub package `iotmmsxs` and then add a new file. This will be `iotservice.xsodata`.
+12. Select your sub package `iotmmsxs` and then add a new sub package called `services`. There you will add a new file called `iotservice.xsodata`.
 
 	```
 	service {
-	  "T_IOT_<table_postfix>" key generate local "GEN_ID";
+	  "SYSTEM"."T_IOT_<table_postfix>" key generate local "GEN_ID";
+	}
 	```
 
 	So this file you can open in your web browser right now and have full access to all of the built in odata functionality.
 
-17. You will use this when modifying the `index.html` file.
+13. Now you will use the created service in the `index.html` file.
 
-	![default page](10.png)
+	![default page](12.png)
+ 
+14. You will replace the existing code with the following, which is quite a bit but should be easily readable and understandable as we are adding a table to a page. This is not the only way to do but that is a matter for you to explore and discover!
 
-18. You will replace the existing code with the following, which is quite a bit but should be easily readable and understandable as we are adding a table to a page. This is not the only way to do but that is a matter for you to explore and discover!
-
-	```html
-	 <!DOCTYPE HTML>
-	 <html>
-	 <head>
-		 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		 <meta charset="UTF-8"/>
-		 <title>My Sensor Data</title>
-		 <script id='sap-ui-bootstrap'
-		 	src='/sap/ui5/1/resources/sap-ui-core.js'
-		 	data-sap-ui-theme='sap_goldreflection'
-		 	data-sap-ui-libs='sap.ui.core,sap.ui.commons,sap.ui.table'></script>
-		 <script language="JavaScript">
-			 var oModel = new sap.ui.model.odata.ODataModel("/codejam/iotmmsxs/iotservice.xsodata/", false);
-			 var arrayHeaders = new Array();
-			 	oTable = new sap.ui.table.Table("test",{tableId: "tableID", visibleRowCount: 10});
-			 //Bring the table onto the UI
-			 oTable.placeAt("sensor_table");
-			 //Table Column Definitions
-			 var oMeta = oModel.getServiceMetadata();
-			 var oControl;
-			 for ( var i = 0; i < oMeta.dataServices.schema[0].entityType[0].property.length; i++) {
-			 var property = oMeta.dataServices.schema[0].entityType[0].property[i];
-			  oControl = new sap.ui.commons.TextField().bindProperty("value",property.name);
-			  oTable.addColumn(new sap.ui.table.Column({label:new sap.ui.commons.Label({text: property.name}), template: oControl, sortProperty: property.name, filterProperty: property.name, filterOperator: sap.ui.model.FilterOperator.EQ, flexible: true, width: "125px" }));
-			    }
-			 oTable.setModel(oModel);
-			 var sort1 = new sap.ui.model.Sorter("C_TIMESTAMP");
-			 <body>
-			oTable.bindRows("/<table name>",sort1);
-		 </script>
-	 </head>
-	  <div id="sensor_table"/>
-	 </body>
-	 </html>
 	```
+<!DOCTYPE HTML> <html> <head>	 <meta http-equiv="X-UA-Compatible" content="IE=edge" />	 <meta charset="UTF-8"/>	 <title>My Sensor Data</title>	 <script id='sap-ui-bootstrap'	 	src='/sap/ui5/1/resources/sap-ui-core.js'	 	data-sap-ui-theme='sap_goldreflection'	 	data-sap-ui-libs='sap.ui.core,sap.ui.commons,sap.ui.table'> 	</script>	 <script language="JavaScript">		 var oModel = new sap.ui.model.odata.ODataModel("/codejam/iotmmsxs/services/iotservice.xsodata/", false);		 var arrayHeaders = new Array();		 oTable = new sap.ui.table.Table("test",{tableId: "tableID", visibleRowCount: 10});		 //Bring the table onto the UI		 oTable.placeAt("sensor_table");		 //Table Column Definitions		 var oMeta = oModel.getServiceMetadata();		 var oControl;		 for ( var i = 0; i < oMeta.dataServices.schema[0].entityType[0].property.length; i++) {		    var property = oMeta.dataServices.schema[0].entityType[0].property[i];		    oControl = new sap.ui.commons.TextField().bindProperty("value",property.name);		    oTable.addColumn(new sap.ui.table.Column({label:new sap.ui.commons.Label({text: property.name}), template: oControl, sortProperty: property.name, filterProperty: property.name, filterOperator: sap.ui.model.FilterOperator.EQ, flexible: true, width: "125px" }));		 }		 oTable.setModel(oModel);		 var sort1 = new sap.ui.model.Sorter("C_TIMESTAMP");		 oTable.bindRows("/<MESSAGE_ID>",sort1);	 </script> </head> <body>      <div id="sensor_table"/> </body> </html>	```
 
-	![new page](11.png)
+	![new page](13.png)
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [Internet of Things (IoT) Viewing your Tessel data in a graph](http://go.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
