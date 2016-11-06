@@ -1,7 +1,7 @@
 ---
 title: Core Data  Services, Preparing views for Associations/Joins
 description: Core Data  Services, Preparing views for Associations/Joins
-tags: [  tutorial>beginner, topic>s/4hana, topic>core data service, products>sap-s/4 hana on-premise ]
+tags: [  tutorial>beginner ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

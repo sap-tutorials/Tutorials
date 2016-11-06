@@ -1,7 +1,7 @@
 ---
 title: Creating Consumption views based on basic/interface views
 description: Create a Consumption CDS view  
-tags: [  tutorial>beginner, topic>s/4hana, topic>core data services, products>sap-s/4 hana on-premise ]
+tags: [  tutorial>beginner ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

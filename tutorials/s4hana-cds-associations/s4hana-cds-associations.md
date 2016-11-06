@@ -1,7 +1,7 @@
 ---
-title: Core Data Services, creating Associations(Joins)
-description: Core Data Services, creating Associations(Joins)
-tags: [  tutorial>beginner, topic>s/4hana, topic>core data service, products>sap-s/4 hana on-premise ]
+title: Core Data Services, creating Associations (Joins)
+description: Core Data Services, creating Associations (Joins)
+tags: [  tutorial>beginner ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
