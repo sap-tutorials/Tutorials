@@ -1,7 +1,7 @@
 ---
 title: Creating basic/interface views in Open Core Data Services
 description: Creating basic view  in Open Core Data Services also know as interface view
-tags: [  tutorial>beginner, topic>s/4hana, topic>core data service, products>sap-s/4 hana on-premise ]
+tags: [  tutorial>beginner ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
