@@ -96,7 +96,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 
     ![Binding](10.png)
 
-1. Assign to the `C4PA-User`* and `C4PA-Admin` role your ***HCP Account User Name*** (which was displayed during the ***Deploy*** step, should start with a lower case "p", ) using the **Assign** button as highlighted on the screenshot.
+1. Assign to the `C4PA-User` and `C4PA-Admin` role your ***HCP Account User Name*** (which was displayed during the ***Deploy*** step, should start with a lower case "p", ) using the **Assign** button as highlighted on the screenshot.
 
     ![Roles](11.png)
 
