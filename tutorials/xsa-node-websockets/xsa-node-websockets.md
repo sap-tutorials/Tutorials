@@ -1,5 +1,5 @@
 ---
-title: Web Sockets
+title: Web Sockets within Node.js SAP HANA applications
 description: Using web sockets with Node.js and SAP HANA
 tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
