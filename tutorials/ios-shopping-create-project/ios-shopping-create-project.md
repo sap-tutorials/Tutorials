@@ -21,14 +21,14 @@ This project will give you a first look at an SAP Fiori for iOS App, and later t
 
 ---
 
-ACCORDION-BEGIN [Step 1: ]( )]
+[ACCORDION-BEGIN [Step 1: ]( )]
 
 In the **Project Navigator**, select `Main.storyboard` and select the existing navigation controller and the view controller. Delete both so that the storyboard is empty. 
 
 [DONE]
 [ACCORDION-END]
 
-ACCORDION-BEGIN [Step 2: ]( )]
+[ACCORDION-BEGIN [Step 2: ]( )]
 
 Drag and drop a new **Navigation Controller** from the **Object Library**. Select the **Navigation Controller** and set **`Is Initial View Controller`** in the **Attributes Inspector**.
 
@@ -36,7 +36,7 @@ Drag and drop a new **Navigation Controller** from the **Object Library**. Selec
 [DONE]
 [ACCORDION-END]
 
-ACCORDION-BEGIN [Step 3: ]( )]
+[ACCORDION-BEGIN [Step 3: ]( )]
 
 Select the **`RootViewController`**, then select the **Navigation Item** to change its title in the **Attribute Inspector** to `Shop`.
 
@@ -44,7 +44,7 @@ Select the **`RootViewController`**, then select the **Navigation Item** to chan
 [DONE]
 [ACCORDION-END]
 
-ACCORDION-BEGIN [Step 4: ]( )]
+[ACCORDION-BEGIN [Step 4: ]( )]
 
 Select the `TableView` in the **`Shop` Scene** and change the **row height** to `88`.
 
@@ -52,7 +52,7 @@ Select the `TableView` in the **`Shop` Scene** and change the **row height** to 
 [DONE]
 [ACCORDION-END]
 
-ACCORDION-BEGIN [Step 5: ]( )]
+[ACCORDION-BEGIN [Step 5: ]( )]
 
 Select the **Table View Cell** in the **`Shop` Scene** and switch to the **Identity Inspector**. Set the **custom class** to `ObjectCell` and the module to `FioriUIKit` for prototype cell.
 
@@ -60,7 +60,7 @@ Select the **Table View Cell** in the **`Shop` Scene** and switch to the **Ident
 [DONE]
 [ACCORDION-END]
 
-ACCORDION-BEGIN [Step 6: ]( )]
+[ACCORDION-BEGIN [Step 6: ]( )]
 
 After preparing the `TableView` to use a custom cell from `FioriUIKit`, we want to skin the **Navigation Bar** like an SAP Fiori for iOS App.
 
@@ -91,7 +91,7 @@ Open `AppDelegate.swift` and add import statements for `FioriUIKit` and `HCPFoun
 [DONE]
 [ACCORDION-END]
 
-ACCORDION-BEGIN [Step 7: ]( )]
+[ACCORDION-BEGIN [Step 7: ]( )]
 
 Run the application
 
