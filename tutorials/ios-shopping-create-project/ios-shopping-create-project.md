@@ -32,6 +32,7 @@ In the **Project Navigator**, select `Main.storyboard` and select the existing n
 
 Drag and drop a new **Navigation Controller** from the **Object Library**. Select the **Navigation Controller** and set **`Is Initial View Controller`** in the **Attributes Inspector**.
 
+![Root view controller](1-2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -40,6 +41,7 @@ Drag and drop a new **Navigation Controller** from the **Object Library**. Selec
 
 Select the **`RootViewController`**, then select the **Navigation Item** to change its title in the **Attribute Inspector** to `Shop`.
 
+![Root view controller](1-3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -48,6 +50,7 @@ Select the **`RootViewController`**, then select the **Navigation Item** to chan
 
 Select the `TableView` in the **`Shop` Scene** and change the **row height** to `88`.
 
+![Root view controller](1-4.png)
 
 [DONE]
 [ACCORDION-END]
@@ -56,6 +59,7 @@ Select the `TableView` in the **`Shop` Scene** and change the **row height** to 
 
 Select the **Table View Cell** in the **`Shop` Scene** and switch to the **Identity Inspector**. Set the **custom class** to `ObjectCell` and the module to `FioriUIKit` for prototype cell.
 
+![Object cell](1-5.png)
 
 [DONE]
 [ACCORDION-END]

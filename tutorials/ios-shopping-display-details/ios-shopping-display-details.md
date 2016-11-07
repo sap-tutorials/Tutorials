@@ -23,6 +23,7 @@ In this tutorial you will implement the display of product details by adding a n
 
 Select `Main.storyboard` in the **Project Navigator** and drag a new **View Controller** from the Object library to the storyboard.
 
+![view controller](3-1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -31,6 +32,7 @@ Select `Main.storyboard` in the **Project Navigator** and drag a new **View Cont
 
 Select the prototype cell of the `ShopTableViewController` and control-drag from the cell to the new `ViewController`. Once you dropped on the new **View Controller** you will be asked which segue type you want to create. Select **Show**.
 
+![view controller](3-2.png)
 
 [DONE]
 [ACCORDION-END]
@@ -40,6 +42,7 @@ Select the prototype cell of the `ShopTableViewController` and control-drag from
 
 Now select the created segue and set the **Identifier** in the **Attribute Inspector** to `showProductDetailSegue`.
 
+![set the identifier](3-3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -49,6 +52,7 @@ Now select the created segue and set the **Identifier** in the **Attribute Inspe
 
 Next drag and drop a new **Navigation Item** from the Object library onto the new **View Controller** and change the title in the **Attribute Inspector** to `Detail`.
 
+![detail navigation item](3-4.png)
 
 [DONE]
 [ACCORDION-END]
@@ -58,6 +62,7 @@ Next drag and drop a new **Navigation Item** from the Object library onto the ne
 
 Create a new Swift-file to implement the logic for the `Detail Scene`. Create a new file and make sure you select **`Cocoa Touch Class`** in the **iOS** section. Click **Next**.
 
+![add new swift file](3-5.png)
 
 [DONE]
 [ACCORDION-END]
@@ -69,6 +74,7 @@ For class name enter `DetailViewController` and make sure it is a subclass of `U
 
 You will not need an additional `XIB` file, so make sure it’s not selected. Click **Next** to create the file.
 
+![detail view controller](3-6.png)
 
 [DONE]
 [ACCORDION-END]
@@ -96,6 +102,7 @@ class DetailViewController: UIViewController {
 
 Open `Main.storyboard` from the **Project Navigator** and select the **Detail Scene**. Now set the **Custom class** in the **Identity Inspector** to `DetailViewController`. Click **Return** to accept and validate the input. Now the **Module** should be automatically updated to `Current - Shop`.
 
+![update main story board](3-8.png)
 
 [DONE]
 [ACCORDION-END]
@@ -105,6 +112,8 @@ Open `Main.storyboard` from the **Project Navigator** and select the **Detail Sc
 
 Next select the **View** in the **Detail Scene** set it’s **Custom class** to `ShopDetailView`. Again hit return and the Module should be automatically be updated to `FioriBetaToolKit`.
 
+![set custom class](3-9.png)
+
 
 [DONE]
 [ACCORDION-END]
@@ -113,6 +122,8 @@ Next select the **View** in the **Detail Scene** set it’s **Custom class** to 
 [ACCORDION-BEGIN [Step 10: ]( )]
 
 Now open the **Detail Scene** using the **Assistant Editor**. Control-drag the **Product View** to the `DetailViewController.swift` and create an `Outlet` named `productView`.
+
+![create new outlet](3-10.png)
 
 
 [DONE]
@@ -220,6 +231,7 @@ Select the `ProductListViewController.swift` and add a new function which is cal
 
 Run your application.
 
+![product details display](3-15.png)
 
 [DONE]
 [ACCORDION-END]

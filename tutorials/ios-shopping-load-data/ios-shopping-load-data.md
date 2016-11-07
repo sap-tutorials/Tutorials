@@ -39,6 +39,7 @@ Open the **`SDK Scout App`** on your mobile device and select `Object Cell` from
 
 Show the code snippet for the cell by tapping the button in the toolbar.
 
+![code snippet tool bar icon](2-3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -202,6 +203,7 @@ You have already prepared the first function `loadProducts()`in `Shop.swift`. Ad
 
 Run the application.
 
+![app display](2-13.png)
 
 [DONE]
 [ACCORDION-END]
