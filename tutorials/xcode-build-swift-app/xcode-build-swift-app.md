@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>mobile, operating_system>ios ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Introduction to iOS development resources and Xcode](http://go.sap.com/developer/tutorials/xcode-debug-deploy.html)
+ - **Tutorials:** [Introduction to iOS development resources and Xcode](http://go.sap.com/developer/tutorials/xcode-introduction.html)
 
 ## Next Steps
- - [Debug and deploy the iOS app to an iPad](http://go.sap.com/developer/tutorials/xcode-introduction.html)
+ - [Debug and deploy the iOS app to an iPad](http://go.sap.com/developer/tutorials/xcode-debug-deploy.html)
 
 ## Details
 ### You will learn  
