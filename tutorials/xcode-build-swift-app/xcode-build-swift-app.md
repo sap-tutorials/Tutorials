@@ -89,7 +89,7 @@ To create an Outlet from the **Text Field** to the view controller, hold down th
   - Set the **Name** field to `textField`.
   - Press **Connect** to finalize the changes:
 
-  ![Creating an outlet](xcode-swift-04.png)
+ ![Creating an outlet](xcode-swift-04.gif)
 
 [DONE]
 [ACCORDION-END]
@@ -141,7 +141,7 @@ To create an Action from the **Button** to the view controller, hold down the **
   - Set the **Type** drop-down to `UIButton`.
   - Press **Connect** to finalize the changes:
 
-  ![Creating an Action](xcode-swift-05.png)
+  ![Creating an Action](xcode-swift-05.gif)
 
 [DONE]
 [ACCORDION-END]
@@ -213,7 +213,7 @@ In this part you create a **Segue** to the second view. The word 'Segue' is deri
 
 To create a Segue, **Ctrl-drag** the just created **Button** and drop it onto the **Navigation Controller**. In the pop-up that displays, select **Action Segue &gt; Show**:
 
-![Create a Segue](xcode-swift-07.png)
+![Create a Segue](xcode-swift-07.gif)
 
 [DONE]
 [ACCORDION-END]
