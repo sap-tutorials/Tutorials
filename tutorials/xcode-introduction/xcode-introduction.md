@@ -1,14 +1,14 @@
 ---
-title: Introduction to resources & Xcode
+title: Introduction to iOS development resources and Xcode
 description: Get an understanding of the Xcode development environment and build you first app using the Swift programming language.
-tags: [  tutorial>beginner, topic>mobile ]
+tags: [  tutorial>beginner, topic>mobile, operating_system>ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Development machine:** Access to a Mac computer
 
 ## Next Steps
- - [Build your first Xcode & Swift App](http://go.sap.com/developer/tutorials/xcode-build-swift-app.html)
+ - [Introduction to iOS development resources and Xcode]
 
 ## Details
 ### You will learn  
@@ -51,7 +51,7 @@ Select Xcode from the Dock at the bottom of the screen. Once you have started Xc
 
 To create your first project, click on "File \> New \> Project" in the menu bar. When you do so, you will be presented with a number of application templates.
 
-![New Project Dialog][image-1]
+![New Project Dialog](Tutorial-1-1.png)
 
 Choose "Single View Application", and click the „Next“ button.
 On the next screen you can enter several options for your projects, most of which you can keep default. You can use any name as your "Product Name", but for this tutorial, use `DemoApp`. You can also pick any name as "Organization Name", but this is mostly likely the name of your company. The organization identifier is also known as a bundle prefix and is a way to uniquely identify your company. It is usually the reverse domain name of your company. The bundle identifier is then generated automatically. Keep "Swift" as your programming language, ensure devices is set to „Universal“ and to make things simple, keep "Use Core Data", "Include Unit Tests" and "Include UI Tests" unchecked.
@@ -69,13 +69,13 @@ Organization Identifier | `com.sap.tutorial.swift`
 Language                | `Swift`
 Devices                 | `Universal`
 
-![Project Options Dialog][image-2]
+![Project Options Dialog](Tutorial-1-2.png)
 
 After entering the project options, all that is left is to decide where you would like to store the project. You could save your project to the desktop if you want, to be able to find it again easily.
 
 When you save the project, Xcode will create all the files you need according to the template you selected, and will show you the development environment to start developing your app.
 
-![Project Overview][image-3]
+![Project Overview](Tutorial-1-3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -102,15 +102,15 @@ To build your first app, you need to design the user interface of your applicati
 
 To edit the user interface of the application, bring up the storyboard designer by (single) clicking on  `Main.storyboard`. This will change the main pane to the storyboard editor, which allows you to lay out your app and define navigation paths between the views of your application. In our application we currently have only have one view, which is started when the application is launched. This is indicated by the arrow coming from the left.
 
-![Story Board Editor][image-4]
+![Story Board Editor](Tutorial-1-4.png)
 
 To add the text to the view, add a "Label". You can find the „Label“ control in the "Object Library" at the bottom of the context pane on the right. It is easiest by just entering "Label" in the filter bar at the far lower right.
 
-![Object Library][image-5]
+![Object Library](Tutorial-1-5.png)
 
 To get the label on the view, drag it from the object library, and drop into the view in the storyboard editor.
 
-![Add Label to View][image-6]
+![Add Label to View](Tutorial-1-6.png)
 
 > Note that while you drag the label onto the view, you will see horizontal and vertical blue lines in your interface. These lines help you to nicely align your controls to other controls or to the view.
 
@@ -123,7 +123,7 @@ To get the label to show "Demo Application", double-click it and  type in the ne
 
 To see what your app would look like on another device or in another orientation, you can click the "View as" text at the bottom of the screen. After clicking the "View as" button, you can select another device or orientation.
 
-![Change device or orientation][image-7]
+![Change device or orientation](Tutorial-1-7.png)
 
 [DONE]
 [ACCORDION-END]
@@ -132,15 +132,15 @@ To see what your app would look like on another device or in another orientation
 
 To build and run your application, click the „Build and Run„ arrow button at the top left section of the toolbar. When you press this button Xcode will build your application and start a simulator based on the device indicated on the right of the „Build and Run„ button. You could also specify a physical device as target device. This would get your app to run on a real device.
 
-![Change device or orientation][image-8]
+![Change device or orientation](Tutorial-1-8.png)
 
 When the „Build and Run„ button in the image above is pressed, a simulator is started. Once the simulator is running, the application is launched in the simulator.
 
-![Running the app in the emulator][image-9]
+![Running the app in the emulator](Tutorial-1-9.png)
 
 To stop the application, press the stop button in the toolbar controls:
 
-![Debug bar][image-10]
+![Debug bar](Tutorial-1-10.png)
 
 Congratulations! You have just created, built and run your first application for iOS using Xcode!
 
@@ -149,14 +149,3 @@ Congratulations! You have just created, built and run your first application for
 
 ### Next Steps
  - [Build your first Xcode & Swift App](http://go.sap.com/developer/tutorials/xcode-build-swift-app.html)
-
-[image-1]:	Tutorial-1-1.png
-[image-2]:	Tutorial-1-2.png
-[image-3]:	Tutorial-1-3.png
-[image-4]:	Tutorial-1-4.png
-[image-5]:	Tutorial-1-5.png
-[image-6]:	Tutorial-1-6.png
-[image-7]:	Tutorial-1-7.png
-[image-8]:	Tutorial-1-8.png
-[image-9]:	Tutorial-1-9.png
-[image-10]:	Tutorial-1-10.png

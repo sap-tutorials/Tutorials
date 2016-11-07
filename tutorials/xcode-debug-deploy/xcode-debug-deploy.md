@@ -1,7 +1,7 @@
 ---
-title: Debug and deploy the app to an iPad
+title: Debug and deploy the iOS app to an iPad
 description: Debug your app by setting breakpoints and inspecting variables both in the simulator as well as on a physical device
-tags: [  tutorial>beginner, topic>mobile ]
+tags: [  tutorial>beginner, topic>mobile, operating_system>ios ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
@@ -24,7 +24,7 @@ How to debug your application and how to deploy your app to an iPad
 
 When the application is not doing exactly what you expect it to do, the need arises to examine portions of the application to be able to determine where the problem occurs. A breakpoint is usually very instrumental in this process. A breakpoint pauses an app during execution at a predetermined location, so that you can inspect the state of variables and the app’s control flow.
 
-![Project Navigation][image-1]
+![Project Navigation](Tutorial-3-1-1.png)
 
 The illustration above shows the source editor, with the app paused by an enabled breakpoint. The green pointer and highlight in the source code indicates the location of the instruction pointer and the current line of code to be executed.
 
@@ -48,7 +48,7 @@ To start a debugging session, just press the „Build and Run“ button. This wi
 
 Inspection of variables is made possible using the Variables View on the left side below the code editor. The Variables View lists each variable available in the context where the app is paused.
 
-![Variable View][image-2]
+![Variable View](Tutorial-3-1-2.png)
 
 To see the value of `textField`, Ctrl-click the variable in the Variables View, and select **Print description of `textField`**. This will print the current state of the `textField` to the Console that is located on the right of the Variables View. In that view you should now see something similar to:
 
@@ -58,7 +58,7 @@ In the example above you can see that the current value of the text attribute is
 
 To resume execution of the application, press the **Continue/Pause** button in the debug bar:
 
-![Debug bar][image-3]
+![Debug bar](Tutorial-3-1-3.png)
 
 [DONE]
 [ACCORDION-END]
@@ -67,7 +67,7 @@ To resume execution of the application, press the **Continue/Pause** button in t
 
 To stop the application, press the **Stop** button in the toolbar controls:
 
-![Debug bar][image-4]
+![Debug bar](Tutorial-3-1-4.png)
 
 > Note: do not remove the breakpoint. You will be using it in the next steps.
 
@@ -78,13 +78,13 @@ To stop the application, press the **Stop** button in the toolbar controls:
 
 With the iPad connected to your Mac, click on the **target device** on the left section of the top toolbar (this is currently set to the simulator device). You will notice that the device connected to your Mac will show in the top of the list:
 
-![Target device][image-5]
+![Target device](Tutorial-3-2-1.png)
 
 Select your device so that its name appears in the toolbar. With your iPad selected, click on the **Build and Run** button to build and run the app.
 
 When you launch your app for the first time, there is a good chance you will see this alert:
 
-![Target device][image-6]
+![Target device](Tutorial-3-2-2.png)
 
 In this case, just follow the instructions of the message. Open the Settings app on the iPad, and navigate to **General \> Device Management**. From there, tap on the certificate associated to the team, and trust it by tapping the **Trust** button.
 
@@ -97,7 +97,7 @@ Once the application has just been trusted, it will not automatically be launche
 
 When the app is running, you can see that Xcode has changed its appearance into debugging mode again. In the left pane, the Debug Navigator is active and debug gauges are shown.
 
-![Debug gaugues][image-7]
+![Debug gaugues](Tutorial-3-2-3.png)
 
 Can you see how much memory your app is currently using?
 
@@ -119,11 +119,3 @@ Congratulations, you have now deployed and debugged your self-built app to an iP
 
 ### Next Steps
 - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
-
-[image-1]:	Tutorial-3-1-1.png
-[image-2]:	Tutorial-3-1-2.png
-[image-3]:	Tutorial-3-1-3.png
-[image-4]:	Tutorial-3-1-4.png
-[image-5]:	Tutorial-3-2-1.png
-[image-6]:	Tutorial-3-2-2.png
-[image-7]:	Tutorial-3-2-3.png
