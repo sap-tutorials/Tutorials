@@ -1,7 +1,7 @@
 ---
 title: Introduction to iOS development resources and Xcode
 description: Get an understanding of the Xcode development environment and build you first app using the Swift programming language.
-tags: [  tutorial>beginner, topic>mobile, operating_system>ios ]
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

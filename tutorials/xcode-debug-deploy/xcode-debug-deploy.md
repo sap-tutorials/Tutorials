@@ -1,7 +1,7 @@
 ---
 title: Debug and deploy the iOS app to an iPad
 description: Debug your app by setting breakpoints and inspecting variables both in the simulator as well as on a physical device
-tags: [  tutorial>beginner, topic>mobile, operating_system>ios ]
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
