@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>mobile, operating_system>ios ]
  - **Development machine:** Access to a Mac computer
 
 ## Next Steps
- - [Introduction to iOS development resources and Xcode]
+ - [Build your first Xcode & Swift App](http://go.sap.com/developer/tutorials/xcode-build-swift-app.html)
 
 ## Details
 ### You will learn  
