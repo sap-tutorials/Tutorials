@@ -272,7 +272,7 @@ We create the job for the CI build on the current `master` snapshot, which is tr
 
     ```
     npm install
-    grunt --no-color default createZip
+    node_modules/grunt-cli/bin/grunt --no-color default createZip
     ```
 
     All the build logic happens here. First, the npm call installs all the needed Grunt plugins. In the second step, Grunt is called executing the tasks defined in `Gruntfile.js`. The option `--no-color` suppresses odd characters in the build log that control the font color when Grunt is called from the console. For details concerning the contents of the files, please have a look into the appendix.
@@ -390,7 +390,7 @@ The upload of the zipped application is done by a pull from the ABAP system: it 
     npm install
     npm install https://github.com/SAP/node-rfc.git
     ln -s rfc-v4.4.3.node node_modules/node-rfc/build/linux_x64/rfc
-    grunt --no-color --gruntfile Gruntfile_ABAP.js createTransportRequest uploadToABAP releaseTransport
+    node_modules/grunt-cli/bin/grunt --no-color --gruntfile Gruntfile_ABAP.js createTransportRequest uploadToABAP releaseTransport
     ```
 
     The `node-rfc` library is not available from the public npm repository. It must be downloaded from GitHub directly, and its installation includes an automatically triggered compilation step against the installed native RFC library. The symbolic link is a needed technical step such that the library just compiled can be found. `Gruntfile_ABAP.js` (which we create in one of the next steps) contains the definition of the tasks given here. The task `createTransportRequest` creates a transport request in the ABAP system. The connection data are taken from the job parameters and the masked credentials which will be defined below. The number of the transport request is persisted in the job workspace in a file named `target/CTS_Data.txt` from where it can be fetched by the other tasks.
@@ -639,7 +639,7 @@ The prerequisite for the upload job is that an open transport request exists in 
     npm install
     npm install https://github.com/SAP/node-rfc.git
     ln -s rfc-v4.4.3.node node_modules/node-rfc/build/linux_x64/rfc
-    grunt --no-color --gruntfile Gruntfile_ABAP.js uploadToABAP
+    node_modules/grunt-cli/bin/grunt --no-color --gruntfile Gruntfile_ABAP.js uploadToABAP
     ```
 
 13. Save.
@@ -721,7 +721,7 @@ Due to access restrictions, HTTP requests from the ABAP development system to Je
 
     ```
     npm install
-    grunt --no-color default createZip deployToNexus
+    node_modules/grunt-cli/bin/grunt --no-color default createZip deployToNexus
     ```
     
 4. In the **Post-build Action > Archive the artifacts** step, remove the zip file entry:
@@ -1044,13 +1044,13 @@ This Grunt file contains the logic for the RFC connections. It implements 3 task
 There is a file `target/CTS_Data.txt` created by the transport request creation task to persist the transport request number. From the file, this number can be fetched by the two other tasks. This is how the transport request number is passed in a call like
 
 ```
-grunt --gruntfile Gruntfile_ABAP.js createTransportRequest uploadToABAP releaseTransport
+node_modules/grunt-cli/bin/grunt --gruntfile Gruntfile_ABAP.js createTransportRequest uploadToABAP releaseTransport
 ```
 
 Alternatively, it is possible to execute the upload without having created a transport request before. The transport request number can be passed as argument like this:
 
 ```
-grunt --gruntfile Gruntfile_ABAP.js uploadToABAP:<transport request number> 
+node_modules/grunt-cli/bin/grunt --gruntfile Gruntfile_ABAP.js uploadToABAP:<transport request number> 
 ```
 
 The implementation of the Grunt tasks is rather straight forward using the documentation of the `node-rfc` module.
