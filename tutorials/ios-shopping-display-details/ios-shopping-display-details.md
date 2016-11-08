@@ -60,7 +60,7 @@ Next drag and drop a new **Navigation Item** from the Object library onto the ne
 
 [ACCORDION-BEGIN [Step 5: ]( )]
 
-Create a new Swift-file to implement the logic for the `Detail Scene`. Create a new file and make sure you select **`Cocoa Touch Class`** in the **iOS** section. Click **Next**.
+Create a new Swift file to implement the logic for the `Detail Scene`. Create a new file and make sure you select **`Cocoa Touch Class`** in the **iOS** section. Click **Next**.
 
 ![add new swift file](3-5.png)
 
@@ -146,9 +146,8 @@ var product: Product!
 
 Next implement the function `updateValues()`. This function will set the values of the product to the respective properties of the `shopDetailView`. In addition we will create an empty function `addToShoppingCart()` which will be used later on to add the product to the shopping cart. The registration for the event is already implemented in `updateValues()`.
 
-```swift
-/// fill the values of the product to the detail view
-    private func updateValues() {
+```
+    func updateValues() {
         guard let currentProduct = self.product else {
             return
         }
@@ -174,10 +173,6 @@ Next implement the function `updateValues()`. This function will set the values 
             }
         }
     }
-
-    /// adds the product to the shopping cart
-    func addToShoppingCart(_ button: UIButton) {
-    }
 ```
 
 [DONE]
@@ -188,13 +183,13 @@ Next implement the function `updateValues()`. This function will set the values 
 
 Now we need to make sure that the function `updateValues()` is called every time the product variable is set. Update the definition of the local product variable as below.
 
-```swift
-var product: Product! {
-        didSet {
-            updateValues()
-        }
-    }
-```
+ ```
+ var product: Product! {
+     didSet {
+         updateValues()
+     }
+ }
+ ```
 
 [DONE]
 [ACCORDION-END]
@@ -205,23 +200,18 @@ var product: Product! {
 
 Select the `ProductListViewController.swift` and add a new function which is called before the segue is executed. Here we can pass a reference of the selected product to the `DetailViewController` so that the product is shown on the Detail View.
 
-```swift
-/// Prepares the navigation to the detail view
-    ///
-    /// - Parameters:
-    ///   - segue: Segue
-    ///   - sender: Sender
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showProductDetailSegue" {
-            if let detailController = segue.destination as? DetailViewController,
-                let selectedRow = sender as? ObjectCell {
-                let selectedIndexPath = self.tableView.indexPath(for: selectedRow)!
-                let selectedProduct = self.products[selectedIndexPath.row]
-                detailController.product = selectedProduct
-            }
-        }
-    }
-```
+ ```
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     if segue.identifier == "showProductDetailSegue" {
+         if let detailController = segue.destination as? DetailViewController,
+            let selectedRow = sender as? ObjectCell {
+             let selectedIndexPath = self.tableView.indexPath(for: selectedRow)!
+             let selectedProduct = self.products[selectedIndexPath.row]
+             detailController.product = selectedProduct
+         }
+     }
+ }
+ ```
 
 [DONE]
 [ACCORDION-END]
