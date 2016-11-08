@@ -77,25 +77,23 @@ After preparing the `TableView` to use a custom cell from `FioriUIKit`, we want 
 
 Open `AppDelegate.swift` and add import statements for `FioriUIKit` and `HCPFoundation` libraries. Now add the following lines of code to the existing function.
 
-```swift
- func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+```
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+
+    Logger.root.logLevel = .debug
+    UINavigationBar.appearance().tintColor = UIColor.preferredFioriColor(forStyle: .tintColorLight)
+    UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+    UINavigationBar.appearance().barTintColor = UIColor.preferredFioriColor(forStyle: .backgroundGradientTop)
+    UINavigationBar.appearance().isTranslucent = false
+    UINavigationBar.appearance().barStyle = .black
+    UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+    UINavigationBar.appearance().shadowImage = UIImage()
         
-        Logger.root.logLevel = .debug
-        
-        UINavigationBar.appearance().tintColor = UIColor.preferredFioriColor(forStyle: .tintColorLight)
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        UINavigationBar.appearance().barTintColor = UIColor.preferredFioriColor(forStyle: .backgroundGradientTop)
-        UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barStyle = .black
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        UINavigationBar.appearance().shadowImage = UIImage()
-        
-        UIApplication.shared.statusBarStyle = .lightContent
-        
-        window?.tintColor = UIColor.preferredFioriColor(forStyle: .tintColorLight)
-        
-        return true
-    }
+    UIApplication.shared.statusBarStyle = .lightContent
+    window?.tintColor = UIColor.preferredFioriColor(forStyle: .tintColorLight)
+    
+    return true
+}
 ```
 
 

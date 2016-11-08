@@ -183,13 +183,13 @@ Next implement the function `updateValues()`. This function will set the values 
 
 Now we need to make sure that the function `updateValues()` is called every time the product variable is set. Update the definition of the local product variable as below.
 
- ```
- var product: Product! {
-     didSet {
-         updateValues()
-     }
- }
- ```
+```
+var product: Product! {
+    didSet {
+        updateValues()
+    }
+}
+```
 
 [DONE]
 [ACCORDION-END]
