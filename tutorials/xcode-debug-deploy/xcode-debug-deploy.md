@@ -118,4 +118,4 @@ Congratulations, you have now deployed and debugged your self-built app to an iP
 [ACCORDION-END]
 
 ### Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+- [Create an Xcode project for the shopping app](http://go.sap.com/developer/tutorials/ios-shopping-create-project.html)
