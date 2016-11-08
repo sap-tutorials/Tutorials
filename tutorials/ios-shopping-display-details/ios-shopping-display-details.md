@@ -200,18 +200,18 @@ Now we need to make sure that the function `updateValues()` is called every time
 
 Select the `ProductListViewController.swift` and add a new function which is called before the segue is executed. Here we can pass a reference of the selected product to the `DetailViewController` so that the product is shown on the Detail View.
 
- ```
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     if segue.identifier == "showProductDetailSegue" {
-         if let detailController = segue.destination as? DetailViewController,
-            let selectedRow = sender as? ObjectCell {
+```
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if segue.identifier == "showProductDetailSegue" {
+        if let detailController = segue.destination as? DetailViewController,
+           let selectedRow = sender as? ObjectCell {
              let selectedIndexPath = self.tableView.indexPath(for: selectedRow)!
              let selectedProduct = self.products[selectedIndexPath.row]
              detailController.product = selectedProduct
          }
      }
  }
- ```
+```
 
 [DONE]
 [ACCORDION-END]
