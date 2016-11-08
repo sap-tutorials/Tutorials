@@ -73,22 +73,20 @@ Select `ProductListViewController.swift` in the **Project Navigator**. Add the c
  - A logger for the controller 
  - A local variable which will be used to save the loaded product list
 
-```swift
-import UIKit
-import FioriUIKit
-import FioriBetaToolKit
-import HCPOData
-import HCPFoundation
+ ```
+ import UIKit
 
-/** Provide the number of products to be shown in the table
-    TableView-Controller used to show the product list 
- */
+ import HCPFoundation
+ import HCPOData
+ import FioriUIKit
+ import FioriBetaToolKit
+
  class ProductListViewController: UITableViewController {
- let logger = Logger.shared(withName: "ProductListViewController")
- private var products = [Product] ()  
-  
-  ...
-```
+    let logger = Logger.shared(withName: "ProductListViewController")
+    var products = [Product]()
+    // ...
+ }
+ ```
 
 [DONE]
 [ACCORDION-END]
@@ -97,20 +95,10 @@ import HCPFoundation
 
 Change the protocol function `numberOfRowsInSection` which you received with the code snippet to return the correct number of products.
 
- ```swift
- /**
-    Provide the number of products to be shown in the table
-
-    - Parameters:
-        - tableView: Table View
-        - section: Section
-    
-    - Returns: The number of products 
- */
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.products.count
-     }
+ ```
+ override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return products.count
+ }
  ```
 
 [DONE]
@@ -119,43 +107,57 @@ Change the protocol function `numberOfRowsInSection` which you received with the
 
 [ACCORDION-BEGIN [Step 9: ]( )]
 
-In the function `cellForRowAt` load a single product item from the local products array and assign the values to the cells’ properties:
+In the function `tableView(_:cellForRowAt:)`, add a line to retrieve a product from the `products` array:
 
-Cell Property     | Product Property   |  Comment
-:---------------- | :----------------  | :------------
+ ```
+ let productItem = self.products[indexPath.row]
+ ```
+ 
+Change the values of the cell to match the following:
+
+Cell Property     | Product Property   |  
+:---------------- | :----------------  | 
 `headlineText`    | `name`             | 
 `subheadlineText` | `id`               | 
 `footnoteText`    | `mainCategoryName` | 
 `descriptionText` | `description`      | 
 `detailImage.accessibilityIdentifier`  | `name`      | 
-`statusText`      | `formattedPrice()` | convenience function on the `Product` class
-`substatusText` 	 | `stockAvailability()` | 	convenience function on the `Product` class
-`detailImage`	    | `FioriAssets.placeholder` | Set a placeholder image
+`statusText`      | `formattedPrice()` | 
+`substatusText` 	 | `stockAvailability()` | 
+`detailImage`	    | `FioriAssets.placeholder` | 
 `accessoryType`  | `disclosureIndicator` |
 
+For example:
 
+ ```
+ cell.headlineText = productItem.name
+ ```
+ 
+The `detailImage` is initially set to a placeholder, because the actual image will be loaded asynchonously.
+ 
 [DONE]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 10: ]( )]
 
-Additionally, you need to load the product image from SAP HANA Cloud Platform. Add the following code snippet after the assignment of the cell values and before the function returns the cell.
+Additionally, you need to load the product image from SAP HANA Cloud Platform. The image will be loaded asynchronously so that the table cell is returned immmediately, ensuring smooth scrolling. 
 
-```swift
-// load image asynchronously
-productItem.loadImage { image, error in
+Add the following code snippet after the assignment of the cell values and before the function returns the cell.
+
+ ```
+ productItem.loadImage { image, error in
     if let error = error {
-        self.logger.warn("Error while loading image.", error: error)
+        self.logger.warn("Error while loading image.",  error: error)
     }
             
     if let image = image {
         if let delayedUpdatedCell = tableView.cellForRow(at: indexPath) as? ObjectCell {
-                    delayedUpdatedCell.detailImage = image
+            delayedUpdatedCell.detailImage = image
         }
     }
-}
-```
+ }
+ ```
 
 [DONE]
 [ACCORDION-END]
@@ -165,6 +167,10 @@ productItem.loadImage { image, error in
 
 To make the stock availability of the product visually more appealing, you can change the `textColor` on the `substatusLabel` of the cell based on the products `stockQuantity` property.
 
+ ```
+ cell.substatusLabel.textColor = UIColor.preferredFioriColor(forStyle: productItem.stockQuantity == 0 ? .negative : .positive)
+ ```
+ 
 [DONE]
 [ACCORDION-END]
 
@@ -176,8 +182,7 @@ With the table to display the list of products for each cell you can now add the
 You have already prepared the first function `loadProducts()`in `Shop.swift`. Add a call to `loadProducts()` in `viewDidLoad()` of `ProductListViewController.swift`.
 
 
-```swift
-/// Loads the products, initializes the counter and prepares the notification to update the shopping cart item-counter.
+```
     override func viewDidLoad() {
         super.viewDidLoad()
         
