@@ -134,7 +134,7 @@ For example:
  cell.headlineText = productItem.name
  ```
  
-The `detailImage` is initially set to a placeholder, because the actual image will be loaded asynchonously.
+The `detailImage` is initially set to a placeholder, because the actual image will be loaded asynchronously.
  
 [DONE]
 [ACCORDION-END]
@@ -142,7 +142,7 @@ The `detailImage` is initially set to a placeholder, because the actual image wi
 
 [ACCORDION-BEGIN [Step 10: ]( )]
 
-Additionally, you need to load the product image from SAP HANA Cloud Platform. The image will be loaded asynchronously so that the table cell is returned immmediately, ensuring smooth scrolling. 
+Additionally, you need to load the product image from SAP HANA Cloud Platform. The image will be loaded asynchronously so that the table cell is returned immediately, ensuring smooth scrolling. 
 
 Add the following code snippet after the assignment of the cell values and before the function returns the cell.
 

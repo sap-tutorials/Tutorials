@@ -23,7 +23,7 @@ This project will give you a first look at an SAP Fiori for iOS App, and later t
 
 [ACCORDION-BEGIN [Step 1: ]( )]
 
-Go to the **Dock**, and select **Shop.xcodeproj** to open the project.
+Go to the **Dock**, and select **`Shop.xcodeproj`** to open the project.
 
 [DONE]
 [ACCORDION-END]
