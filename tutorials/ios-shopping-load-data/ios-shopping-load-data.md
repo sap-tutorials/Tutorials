@@ -73,7 +73,8 @@ Select `ProductListViewController.swift` in the **Project Navigator**. Add the c
  - A logger for the controller 
  - A local variable which will be used to save the loaded product list
 
- ```
+
+```
  import UIKit
 
  import HCPFoundation
@@ -83,10 +84,10 @@ Select `ProductListViewController.swift` in the **Project Navigator**. Add the c
 
  class ProductListViewController: UITableViewController {
     let logger = Logger.shared(withName: "ProductListViewController")
-    var products = [Product]()
+    var products: [Product] = []
     // ...
  }
- ```
+```
 
 [DONE]
 [ACCORDION-END]
@@ -145,8 +146,8 @@ Additionally, you need to load the product image from SAP HANA Cloud Platform. T
 
 Add the following code snippet after the assignment of the cell values and before the function returns the cell.
 
- ```
- productItem.loadImage { image, error in
+```
+productItem.loadImage { image, error in
     if let error = error {
         self.logger.warn("Error while loading image.",  error: error)
     }
@@ -157,7 +158,7 @@ Add the following code snippet after the assignment of the cell values and befor
         }
     }
  }
- ```
+```
 
 [DONE]
 [ACCORDION-END]
@@ -167,9 +168,9 @@ Add the following code snippet after the assignment of the cell values and befor
 
 To make the stock availability of the product visually more appealing, you can change the `textColor` on the `substatusLabel` of the cell based on the products `stockQuantity` property.
 
- ```
+```
  cell.substatusLabel.textColor = UIColor.preferredFioriColor(forStyle: productItem.stockQuantity == 0 ? .negative : .positive)
- ```
+```
  
 [DONE]
 [ACCORDION-END]
@@ -182,7 +183,7 @@ With the table to display the list of products for each cell you can now add the
 You have already prepared the first function `loadProducts()`in `Shop.swift`. Add a call to `loadProducts()` in `viewDidLoad()` of `ProductListViewController.swift`.
 
 
-```
+```swift
     override func viewDidLoad() {
         super.viewDidLoad()
         
