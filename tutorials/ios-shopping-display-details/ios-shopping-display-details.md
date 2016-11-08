@@ -227,7 +227,12 @@ Run your application.
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 16: ]( )]
 
+To reset the app for the next user, choose **Source Control > Discard All Changes...** and click the **Discard** button. 
+
+[DONE]
+[ACCORDION-END]
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
