@@ -250,9 +250,10 @@ You will modify:
 
 Once you have saved your file, you will deploy and execute it from the command line.
 
-Open a "command" window, and run the following two commands:
+Open a "command" window, and run the following commands:
 
 ```shell
+cd c:\teched2016
 t2 run te16.js
 ```
 
