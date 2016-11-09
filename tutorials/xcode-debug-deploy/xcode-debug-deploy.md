@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios ]
 - **Tutorials:** [Build your first Xcode & Swift App](http://go.sap.com/developer/tutorials/xcode-build-swift-app.html)
 
 ## Next Steps
-- [Create an Xcode project for the shopping app](http://go.sap.com/developer/tutorials/ios-shopping-create-project.html)
+ - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -118,4 +118,4 @@ Congratulations, you have now deployed and debugged your self-built app to an iP
 [ACCORDION-END]
 
 ### Next Steps
-- [Create an Xcode project for the shopping app](http://go.sap.com/developer/tutorials/ios-shopping-create-project.html)
+ - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
