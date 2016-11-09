@@ -239,9 +239,9 @@ var authToken = '<auth token of the device>';
 
 You will modify:
  - The `accountOwner` line to add your own HCP Account User ID which starts with either an `S`, `P`, `I`, `D` or `C`.
- - The `messageTypeID` is the ID of the message type you created
+ - The `messageTypeID` is the ID of the message type you created, and not the name of the message type.
  - The `deviceId` is the ID of the device you created, not to be confused with the `token`
- - The `authToken` line contains the token you received in the pop-up window after creating your device
+ - The `authToken` line contains the token of the device (not the device type!). You received it in the pop-up window after creating your device. But if missed it, then regenerate this token from Device screen once again.
 
 [DONE]
 [ACCORDION-END]
