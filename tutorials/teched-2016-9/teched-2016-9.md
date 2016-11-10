@@ -248,7 +248,7 @@ You will modify:
 
 [ACCORDION-BEGIN [Step 12: ](Run your JavaScript program)]
 
-Once you have saved your file, you will deploy and execute it from the command line.
+Once you have saved your file, you will deploy and execute it from the command line. `t2` is the comman line interface for `Tessel2` devices, which has been pre-installed on the computer already.
 
 Open a "command" window, and run the following commands:
 
