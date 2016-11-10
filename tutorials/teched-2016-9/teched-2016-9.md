@@ -264,7 +264,7 @@ t2 run te16.js
 
 Provided your JavaScript file was modified properly with the correct items your output should be something like the following.
 
-![Execution](14.png)
+![Execution](screenshot.jpg)
 
 [DONE]
 [ACCORDION-END]
