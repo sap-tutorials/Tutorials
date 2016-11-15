@@ -38,62 +38,63 @@ Now its time to insert data from your Tessel to SAP IoT Services.
     var deviceId = '78863a3a-e7b0-47df-acd3-b0d8ca67067e';
     var messageTypeID = '6c7a02f24cc32ee07174';
     ```
-    
+
     ![parameter definition](1.png)
 
 2. Insert the new `updateIoT` function at the bottom of your `climate.js` file. After the very last line of your current code.
 
     ```javascript
     function updateIoT(temp, humid) {
-    var http = require('https');
-    var options = {
-      host: hostIoT,
-      port: portIoT,
-      path: pathIoT + deviceId,
-      agent: false,
-      headers: {
-         'Authorization': authStrIoT,
-         'Content-Type': 'application/json;charset=utf-8'
-      },
-      method: 'POST',     
-    };
-    options.agent = new http.Agent(options);
-    callback = function(response) {
-      var body = '';
-      response.on('data', function (data) {
-        body += data;
-      });
-      response.on('end', function () {
-        console.log("END:", response.statusCode, JSON.parse(body).msg);
-      });
-      response.on('error', function(e) {
+      var http = require('https');
+      var options = {
+        host: hostIoT,
+        port: portIoT,
+        path: pathIoT + deviceId,
+        agent: false,
+        headers: {
+          'Authorization': authStrIoT,
+          'Content-Type': 'application/json;charset=utf-8'
+        },
+        method: 'POST',
+      };
+      options.agent = new http.Agent(options);
+      callback = function (response) {
+        var body = '';
+        response.on('data', function (data) {
+          body += data;
+        });
+        response.on('end', function () {
+          console.log("END:", response.statusCode, JSON.parse(body).msg);
+        });
+        response.on('error', function (e) {
           console.error(e);
-     });    
-    }
-    var req = http.request(options, callback);
-    req.on('error', function(e) {
-    console.error(e);
-    });
-    console.log ("time was:");
-    console.log (time);
-    date = new Date();
-    time =date.getTime();
-    console.log(time);
+        });
+      }
+      var req = http.request(options, callback);
+      req.on('error', function (e) {
+        console.error(e);
+      });
+      console.log("time was:");
+      console.log(time);
+      date = new Date();
+      time = date.getTime();
+      console.log(time);
 
-    req.shouldKeepAlive = false;
+      req.shouldKeepAlive = false;
       var jsonData = {
-        "mode":"sync",
+        "mode": "sync",
         "messageType": messageTypeID,
         "messages": [{
             "Humidity": humid,
             "Temperature": temp,
-            "timestamp": time
-            }]
-    }
-    var strData = JSON.stringify(jsonData);
-    console.log("POST jsonData:" + strData);
-    req.write(strData);
-    req.end();
+            "timestamp": date
+          }
+        ]
+      }
+      var strData = JSON.stringify(jsonData);
+      console.log("POST jsonData:" + strData);
+      req.write(strData);
+      req.end();
     }
     ```
 
@@ -108,13 +109,15 @@ Now its time to insert data from your Tessel to SAP IoT Services.
 
 4. Check that your Tessel is still connected to Wi-Fi by running the command `tessel wifi -l`. If you do not get a response like that below, you should reconnect to the network with the command below with the correct SSID and password. If your access point has spaces in the name then just put it inside of quotes like this: `“Wifi name”`.
 
-    `tessel wifi -n SSID -p password`
+    ```shell
+    tessel wifi -n SSID -p password
+    ```
 
     ![Acquiring IP](p8_6.png)
 
 5. Run your code, and you should see an output like the one below:
 
-    ```bash
+    ```shell
     tessel run climate.js
     ```
 
