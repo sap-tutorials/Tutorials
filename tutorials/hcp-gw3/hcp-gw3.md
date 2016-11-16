@@ -47,7 +47,7 @@ To explore a bit more of SAP Web IDE, you will use the Web IDE search feature to
 
 
 
-5. Insert the titles as attributes into the ObjectAttribute areas highlighted on the right below. You can type in the `title="xyz"` strings, or replace the lines entirely with the text below. The edited lines should look like the screenshot below.
+5. Insert the titles as attributes into the `ObjectAttribute` areas highlighted on the right below. You can type in the `title="xyz"` strings, or replace the lines entirely with the text below. The edited lines should look like the screenshot below.
 
     ```xml
     <ObjectAttribute title="Details" text="{Details}"/>
@@ -55,7 +55,7 @@ To explore a bit more of SAP Web IDE, you will use the Web IDE search feature to
     ```
 
 
-6. Save your edts, select `index.html` and click the **Run** button to preview the Northwind application with the added labels. If you do not see your labels it is probably because the browser has cached the page. To fix this, clear the browser cache.
+6. Save your edits, select `index.html` and click the **Run** button to preview the Northwind application with the added labels. If you do not see your labels it is probably because the browser has cached the page. To fix this, clear the browser cache.
 
 
 
