@@ -63,7 +63,7 @@ You will be setting a few configurations, then filling out a few forms in this s
 
     > Note: If you don't see the the **Gateway ES4 Service** in the pull down menu, go back to your destination in the HCP cockpit and double-check the entries from the previous tutorial. If you make changes, reload Web IDE, then restart the procedure in this tutorial.
 
-12. After selecting the Northwind OData Service entry, enter the relative path (see below) to the OData service you will use in the field under the drop-down list-box (where it says “Paste URL here”). Be sure not to include any trailing space characters. 
+12. After selecting the Northwind OData Service entry, enter the relative path (see below) to the OData service you will use in the field under the drop-down list-box (where it says **`Paste URL here`**). Be sure not to include any trailing space characters. 
 
     The relative path to enter is: 
     
