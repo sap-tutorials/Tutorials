@@ -1,6 +1,6 @@
 ---
-title: Add labels and a new field to your app
-description: Learn how to insert labels into the detail view of your app and add additional fields.
+title: Add labels to your app
+description: Learn how to insert labels into the detail view of your app 
 tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>beginner ]
 ---
 
@@ -18,7 +18,6 @@ When you built the app in previous tutorial series, the template added two field
 
 To explore a bit more of SAP Web IDE, you will use the Web IDE search feature to identify which file to edit.
 
-You will also learn how to add a field to your app. This is useful since the template can quickly generate a working app for you, but you are not restricted to what it generates.
 
 ### Time to Complete
 **<5 min**
