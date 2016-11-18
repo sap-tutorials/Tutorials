@@ -25,6 +25,7 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 4.1. [Generic Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)  
 4.2. [Java Web on SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp.html)  
 4.3. [SAP HANA Extended Application Services (XS), classic model](http://go.sap.com/developer/tutorials/ci-best-practices-xsc.html)  
+4.4. [SAPUI5/SAP Fiori on ABAP Front End Server](http://go.sap.com/developer/tutorials/ci-best-practices-fiori-abap.html)  
 5. CI/CD Process Setup using SCM and build services on the cloud  
 5.1. [Generic Project with CI using Cloud Services](http://go.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html)  
 5.2. [Java Web on SAP HANA Cloud Platform with CI using Cloud Services](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp-cloud.html)  
@@ -82,9 +83,10 @@ Part of the Guide      | Roles of interest
 3.4. [Landscape Configuration: Configuring the CI Component Landscape](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)       | **Build Operator**, Build Engineer
 3.5. [CD Pipeline Skeleton: Setup of a continuous delivery pipeline](http://go.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html)       | **Build Operator**, Build Engineer
 **4. CI/CD Process Setup**                | 
-4.1. [Generic Project: Configuring the CI system for Maven-based generic Java project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)                 | Build Operator, **Build Engineer**, Developer
-4.2. [Java Web on SAP HANA Cloud Platform: Configuring the CI system for Maven-based Java Web project](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp.html) | Build Operator, **Build Engineer**, Developer
-4.3. [SAP HANA Extended Application Services (XS), classic model: Configuring the CI system](http://go.sap.com/developer/tutorials/ci-best-practices-xsc.html) | Build Operator, **Build Engineer**, Developer
+4.1. [Generic Project: Configuring the CI System for Maven-based Generic Java Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)                 | Build Operator, **Build Engineer**, Developer
+4.2. [Java Web on SAP HANA Cloud Platform: Configuring the CI System for Maven-based Java Web Project](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp.html) | Build Operator, **Build Engineer**, Developer
+4.3. [SAP HANA Extended Application Services (XS), Classic Model: Configuring the CI System](http://go.sap.com/developer/tutorials/ci-best-practices-xsc.html) | Build Operator, **Build Engineer**, Developer
+4.4. [SAPUI5/SAP Fiori on ABAP Front End Server: Implementing the CI Pipeline](http://go.sap.com/developer/tutorials/ci-best-practices-fiori-abap.html) | Build Operator, **Build Engineer**, Developer
 **5. CI/CD Process Setup using SCM and build services on the cloud**  | 
 5.1. [Generic Project with CI using Cloud Services: Configuring the CI infrastructure for a generic Java project using the cloud services of GitHub and Travis CI](http://go.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html) | Build Operator, **Build Engineer**, Developer
 5.2. [Java Web on SAP HANA Cloud Platform with CI using Cloud Services: Configuring the CI infrastructure for a Java web project on HCP using the cloud services of GitHub and Travis CI](http://go.sap.com/developer/tutorials/ci-best-practices-java-hcp-cloud.html) | Build Operator, **Build Engineer**, Developer

@@ -66,7 +66,7 @@ This document refers to a Nexus 2 release. In the future, Nexus 3 might also be 
     ln -s /data/nexus/sonatype-work sonatype-work
     ```
 
-    Please note that the directory `sonatype-work` does not yet exist but will be created on startup of the Nexus application.
+    If the directory `sonatype-work` does not yet exist, it will be created on startup of the Nexus application.
 
 7. Switch to user `nexus` again and start Nexus with a browser on port 8081.
 

@@ -42,13 +42,13 @@ Make sure you are using the **Europe (Trial)** landscape, and click on your acco
 
 [ACCORDION-BEGIN [Step 2: ](Enable IoT Services)]
 
-In the left-hand navigation bar, select **Services**, then click on the **Internet of Things (IoT)** tile from the main panel.
+In the left-hand navigation bar, select **Services**, then click on the **Internet of Things Services** tile from the main panel.
 
 ![Services](2.png)
 
 If the **Internet of Things (IoT)** is not enabled, then click on **Enable**.
 
-Once the service is enabled click the **Go to Service** link and a new browser tab will open.
+Once the service is enabled click the **Go to Service** link and a new browser window will open.
 
 ![Access Service](p6_4.png)
 
@@ -57,17 +57,15 @@ Once the service is enabled click the **Go to Service** link and a new browser t
 
 [ACCORDION-BEGIN [Step 3: ](Deploy the IoT Services)]
 
-With **Internet of Things (IoT)** enabled, you can begin the steps necessary to connect your device and enable message communication.
+With **Internet of Things** enabled, you can begin the steps necessary to connect your device and enable message communication.
 
 The first step will be to configure and deploy the **Message Management Service (MMS)**.
 
-Click on the **Deploy Message Management Service** tile.
+Click on the **Deploy Message Management Service** tile. It will deploy `iotmms` Java application for you in the background.
 
 The form should already be filled with your information like your account ID (p-number or s-number if you are SAP's customer or partner, or i-/d-number if you are SAP employee) with the world “trial” (no space between the p-number and trial), your user name etc.
 
 Enter your **SAP HANA Cloud Platform** password, then click on **Deploy**.
-
-It will deploy `iotmms` Java application for you in the background.
 
 ![Deploy Service](p6_6a.png)
 
@@ -78,7 +76,7 @@ It will deploy `iotmms` Java application for you in the background.
 
 Once the `iotmms` Java application is successfully deployed (created), you will need to add data binding and the required authorization for users who should use it.
 
-The data binding allow the data you are sending from the device to the system to be stored for later access and the authorization will grant the access the data to your user.
+The data binding allow the data you are sending from the device to the system to be stored for later access and the authorization will grant the access to Message Management System to your user.
 
 Return to the **SAP HANA Cloud Platform Cockpit**, and in the left navigation bar select **Applications > Java Applications**.
 
@@ -134,9 +132,11 @@ From here you will need to go back to the **IoT Service Cockpit** from where you
 
 [ACCORDION-BEGIN [Step 6: ](Create a new Message Type)]
 
-Now that your version is up to date you will need to go to **Message Type** and create a new message type.
+Now that your version is up to date you will need to go to **Message Types** and create a new message type.
 
-The "Message Type" defines the table to hold your data that you are collecting.
+![Message Types](5.png)
+
+The "Message Type" defines the structure of data received from devices and generates a table to hold this data.
 
 Pay close attention to your field names, both in spelling, case sensitive and type as you will not be able to alter these after creation.
 
@@ -148,15 +148,13 @@ And the following fields:
 
  Position    | Name          | Type
  :---------- | :------------ | :------
- 1           | `timestamp`   | long
+ 1           | `timestamp`   | date
  2           | `temperature` | double
  3           | `humidity`    | double
 
-![Message Types](5.png)
-
 ![Create Message Type](8.png)
 
-Please note down the created **Message Type** id displayed here as you will be using it later.
+Please note down the created Message Type's **ID** displayed here, as you will be using it later.
 
 ![Message Type ID](9.png)
 
@@ -167,13 +165,13 @@ Please note down the created **Message Type** id displayed here as you will be u
 
 Once the **Message Type** is created, you will need to create a new **Device Type** and assign the **Message Type** to it.
 
+![Device Type](6.png)
+
 Field            | Value
 :--------------- | :----------------
 Name             | `tessel2016`
 Message Type     | `te2016`
 Direction        | `From Device`
-
-![Device Type](6.png)
 
 ![Message Types](10.png)
 
@@ -184,12 +182,12 @@ Direction        | `From Device`
 
 Now that you have your **Message Type** and **Device Type** created, you will need to add your **Device**.
 
+![Devices](7.png)
+
 Field            | Value        
 :--------------- | :----------------
 Name             | `te_tessel_16`
 Device Type      | `tessel2016`
-
-![Devices](7.png)
 
 ![Message Types](11.png)
 
@@ -219,7 +217,7 @@ If you are with us at TechEd in the `AppSpace`, your device is the physical **Te
 
 With these steps completed you are now ready to modify the JavaScript code we have prepared for the device and deploy and execute it.
 
-If you are with us at TechEd in the `AppSpace`, the file is already available in the following directory: `C:\teched2016\te16 - Original.js`. Please make a copy of the file for your own use `C:\teched2016\te16.js` and the convenience of the next attendee.
+If you are with us at TechEd in the `AppSpace`, the file is already available in the following directory: `C:\teched2016\te16-original.js`. Please make a copy of the file for your own use `C:\teched2016\te16.js` and the convenience of the next attendee.
 
 If you are doing this on your own machine, you can download the file [`te16_js.txt`](te16_js.txt), and rename it to `te16.js` on your machine.
 
@@ -233,31 +231,31 @@ Modifying the code provided in the file now called `te16.js`, you will need to a
 The lines in particular you will need to modify are the following:
 
 ```javascript
-var hostIoT = 'iotmms<HCP Account User ID>trial.hanatrial.ondemand.com';
-var authStrIoT = 'Bearer <generated token from step 8>';
-var deviceId = '<generated device id from step 8>';
-var messageTypeID = '<generated message type id from step 6>';
+var accountOwner = '<your account user>';
+var messageTypeID = '<message type>';
+var deviceId = '<device id>';
+var authToken = '<auth token of the device>';
 ```
 
 You will modify:
- - The `hostIoT` line to add your own HCP Account User ID which starts with either an `S` or a `P`.
- - The `authStrIoT` line contains the token you received in the pop-up window after creating your device
+ - The `accountOwner` line to add your own HCP Account User ID which starts with either an `S`, `P`, `I`, `D` or `C`.
+ - The `messageTypeID` is the ID of the message type you created, and not the name of the message type.
  - The `deviceId` is the ID of the device you created, not to be confused with the `token`
- - The `messageTypeID` is the ID of the message type you created
+ - The `authToken` line contains the token of the device (not the device type!). You received it in the pop-up window after creating your device. But if missed it, then regenerate this token from Device screen once again.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Run your JavaScript program)]
 
-Once you have saved your file, you will deploy and execute it from the command line.
+Once you have saved your file, you will deploy and execute it from the command line. `t2` is the command line interface for `Tessel2` devices, which has been pre-installed on the computer already.
 
-Open a "command" window, and run the following two commands:
+Open a "command" window, and run the following commands:
 
-- `t2 init`
-- `t2 run te16.js`
-
-![Deploy and Execute](13.png)
+```shell
+cd c:\teched2016
+t2 run te16.js
+```
 
 [DONE]
 [ACCORDION-END]
@@ -266,7 +264,7 @@ Open a "command" window, and run the following two commands:
 
 Provided your JavaScript file was modified properly with the correct items your output should be something like the following.
 
-![Execution](14.png)
+![Execution](screenshot.jpg)
 
 [DONE]
 [ACCORDION-END]

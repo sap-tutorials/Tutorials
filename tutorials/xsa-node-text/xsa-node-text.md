@@ -1,5 +1,5 @@
 ---
-title: Text Bundles
+title: Text Bundles within Node.js SAP HANA applications
 description: Working with text bundles in Node.js
 tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
