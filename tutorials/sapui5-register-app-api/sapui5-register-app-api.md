@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, topic>sapui5 ]
 
 ## Details
 ### You will learn  
-What the reader should take away from this time investment. You can also add screenshot(s) to illustrate what they will do.
+Create a developer account on the API's website. This will allow you to be able to get a developer key and track details about the API usage from your application.
 
 ### Time to Complete
 **15 Min**.
