@@ -150,7 +150,7 @@ The item count is still showing the number of total items, not the number of ite
     
     ![Change the title bar to display the computed item count](3-2.png)
 
-3.  Now run your application.  As you type in a filter, the item count will change as the list changes
+3.  Now, run your application.  As you type in a filter, the item count will change as the list changes
 
     ![Show the title bar with the correct item count](3-3.png)
 
