@@ -141,5 +141,4 @@ if(version.substring(0,2) === "v4" || version.substring(0,2) === "v5" || version
 }
 else {
   log.error("please use node version 4.x through 6.x")
-
 }
