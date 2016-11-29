@@ -7,7 +7,6 @@ tags: [ products>sap-gateway, topic>cloud, topic>odata, tutorial>beginner ]
  - **Proficiency:** Beginner
 
 ## Next Steps
- - Go to the [AppSpace landing](http://go.sap.com/developer/app-space-page.html) page
  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
 
 ## Details
@@ -124,5 +123,4 @@ There are two different forums, depending on what type of trouble you are experi
 
 
 ## Next Steps
- - Go to the [AppSpace landing](http://go.sap.com/developer/app-space-page.html) page
  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
