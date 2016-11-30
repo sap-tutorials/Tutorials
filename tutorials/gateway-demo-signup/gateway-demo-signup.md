@@ -35,7 +35,7 @@ You should see this page:
 
 [ACCORDION-BEGIN [Step 2: ](Fill out registration form)]
 
-Verify all of your *User Information* on the web page.   Please be certain your email address is correct.  If this address is incorrect, please fix it in your sap.com user profile.
+Verify all of your *User Information* on the web page. Please be certain your email address is correct.  If this address is incorrect, please fix it in your sap.com user profile.
 
 Next, read the Terms and Conditions, and check the box next to the line *I have read and understood the Terms and Conditions.*
 
