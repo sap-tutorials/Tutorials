@@ -7,17 +7,7 @@ The SAP HANA, express edition is for Linux machines running specific installatio
 
 ## Prerequisites
 - **Proficiency** Beginner
-- **Software** Your server will need the following:
-  - Java Runtime Environment 8 (If you are planning to install the SAP HANA, express edition Download Manager for Windows or Linux, you need the 64-bit JRE. If you are planning to install the platform-independent Download Manager, you can use either the 32- or 64-bit JRE.)
-  - OpenSSL .0.9.8
-  - Linux SUSE for SAP in one of the following versions:
-    - SUSE Linux Enterprise Server for SAP 12 SP1
-    - SUSE Linux Enterprise Server for SAP 12
-    - SUSE Linux Enterprise Server for SAP 11.4
-- **Hardware** Your server will need the following:
-    - 16 GB RAM
-    - 120 GB HDD
-    - 2 cores (4 recommended)
+
 
 >**Tip:**
 > If you are installing a SUSE Linux Enterprise Server for SAP for the first time, register your copy. You may need to install add-on packages later, and add-ons are only available to registered user. Register and download a 60 day evaluation of SUSE Linux Enterprise for SAP at: <https://www.suse.com/products/sles-for-sap/download>.
@@ -34,12 +24,35 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 **Approximately 60 Minutes. Download and installation speeds will vary.**
 
 ---
+### Machine Requirements
+Your server will need the following:
+
+**Software**
+
+- Java Runtime Environment 8
+
+>**Note:**
+>(If you are planning to install the SAP HANA, express edition Download Manager for Windows or Linux, you need the 64-bit JRE. If you are planning to install the platform-independent Download Manager, you can use either the 32- or 64-bit JRE.)
+
+- OpenSSL .0.9.8
+- Linux SUSE for SAP in one of the following versions:
+    - SUSE Linux Enterprise Server for SAP 12 SP1
+    - SUSE Linux Enterprise Server for SAP 12
+    - SUSE Linux Enterprise Server for SAP 11.4
+
+**Hardware**
+
+- 16 GB RAM
+- 120 GB HDD
+- 2 cores (4 recommended)
+
 
 ### Download the Installer Files
 
 1. Go directly to the registration page at <http://sap.com/sap-hana-express>.  
 
     **Or**  
+
     Go to the SAP HANA, express edition launch page at <http://go.sap.com/developer/topics/sap-hana-express.html> and click the **Register and download SAP HANA, express edition download manager** link.  
 
     The registration page opens.
@@ -79,7 +92,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 ### Gather Server Information
 1. In a shell, enter:
 
-    `hostname -f `
+    `hostname -f`
 
 2. Record the hostname.
 
@@ -95,28 +108,43 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 3. Install the server. You will be prompted to enter passwords during the installation.
 
-    1. Navigate to the `hdblcm` and execute it to install the server. Change to the `hdblcm` directory:
+      1. Navigate to the `hdblcm` directory:
 
-        `cd <extracted_path>/HANA_10_DEE/DATA_UNITS/HDB_SERVER_LINUX_X86_64`
+          `cd <extracted_path>/HANA_10_DEE/DATA_UNITS/HDB_SERVER_LINUX_X86_64`
 
-    2. Execute hdblcm:
+      2. Execute hdblcm:
 
-        `sudo ./hdblcm -s HXE -H <HostName> --hdbinst_server_import_content=off`
+          `sudo ./hdblcm -s HXE -H <HostName> --hdbinst_server_import_content=off`
 
         >**Note**
         >Here you may choose to install the Application Function Library (AFL) with `--components=server,afl`. AFL adds application functions on top of your Express Edition installation for performing data intensive operations, such as the Predictive Analysis Library (PAL) and the Business Function Library (BFL).
 
-        Example:
+          Example:
 
-        `sudo ./hdblcm -s HXE -H myserver.mydomain.com --components=server,afl --hdbinst_server_import_content=off`
+          `sudo ./hdblcm -s HXE -H myserver.mydomain.com --components=server,afl --hdbinst_server_import_content=off`
 
-    3. Enter: **1(Install new system)**.
-    4. When prompted for database isolation, enter **1 (low)**.
-    5. Enter default settings and passwords.
-    6. When *Summary Before Execution* displays, click **y** to continue with installation.
-    7. If AFL was installed, you need to allow functions in AFL to run:
+      3. Enter: **1(Install new system)**.
 
-    `sudo su - hxeadm hdbsql -d SystemDB -u SYSTEM -p "${SYSTEM_PWD}" "alter system alter configuration ('indexserver.ini','SYSTEM')SET('calcengine','llvm_lib_whitelist') = 'bfl,pal'"`
+      4. Enter default settings and passwords.
+
+      5. When *Summary Before Execution* displays, click **y** to continue with installation.
+
+      6. If AFL was installed, you need to allow functions in AFL to run:
+
+          1. Log in as hxeadm:
+
+              `sudo su -l hxeadm`
+
+          2. Execute:
+
+              `hdbsql -d SystemDB -u SYSTEM -p "${SYSTEM_PWD}" "alter system alter configuration ('indexserver.ini','SYSTEM')SET('calcengine','llvm_lib_whitelist') = 'bfl,pal'"`
+
+              Example:
+
+              ```
+              sudo su -l hxeadm
+              ```
+              `hdbsql -d SystemDB -u SYSTEM -p "ABCD1234" "alter system alter configuration ('indexserver.ini','SYSTEM') SET ('calcengine','llvm_lib_whitelist') = 'bfl,pal'"`
 
     >**Note**
     >Any misbehavior (e.g. crash) in user written code could potentially destabilize the HANA server. Please ensure that user written AFL libraries are stable.
@@ -142,17 +170,25 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
     `sudo /hana/shared/HXE/global/hdb/install/bin/hdbupdrep --content_directory=/hana/shared/HXE/global/hdb/auto_content/systemdb`
 
 4. Install HANA Extended Services (XSA):
-      1. Install statistics:
+      1. Navigate to the `hdblcm` directory:
 
-          `sudo su - hxeadm
-          hdbsql -d SystemDB -u SYSTEM -p "${SYSTEM_PWD}" "alter system alter configuration('nameserver.ini','SYSTEM') SET ('statisticsserver','active') = 'true' with reconfigure"`
+          `cd <extracted_path>/HANA_10_DEE/DATA_UNITS/HDB_SERVER_LINUX_X86_G4`
+
+      2. Install statistics:
+
+          ```
+          sudo su -l hxeadm
+          ```
+          `hdbsql -d SystemDB -u SYSTEM -p "${SYSTEM_PWD}" "alter system alter configuration('nameserver.ini','SYSTEM') SET ('statisticsserver','active') = 'true' with reconfigure"`
 
           Example:
 
-          `sudo su - hxeadm
-          hdbsql -d SystemDB -u SYSTEM -p ABCD1234 "alter system alter configuration('nameserver.ini','SYSTEM') SET ('statisticsserver','active') = 'true' with reconfigure"`
+          ```
+          sudo su -l hxeadm
+          ```
+          `hdbsql -d SystemDB -u SYSTEM -p ABCD1234 "alter system alter configuration('nameserver.ini','SYSTEM') SET ('statisticsserver','active') = 'true' with reconfigure"`
 
-      2. Install XSA using `hdblcm`:
+      3. Install XSA using `hdblcm`:
 
           `sudo ./hdblcm -s HXE -H <HOSTNAME> --action=update --components=xs --xs_components=all --configfile=configurations/auto_install.cfg --component_medium=<download_path>/HANA_10_DEE`
 
@@ -163,24 +199,34 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 ### Execute the Post-Installation Script
 
 1. Check proxy settings.
-  1. In SUSE, go to YAST. Click on *Proxy*
-  2. Ensure you have the fully qualified address for your proxy in the HTTP Proxy URL.
-  3. Check the "Use the same proxy" checkbox.
-  4. Add additional local domains to the No Proxy Domains list as necessary.
+      1. In SUSE, go to YAST. Click on *Proxy*.
+
+      2. Ensure you have the fully qualified address for your proxy in the HTTP Proxy URL.
+
+      3. Check the "Use the same proxy" checkbox.
+
+      4. Add additional local domains to the No Proxy Domains list as necessary.
+
 2. Extract `hxescripts.tgz`.
 
-  `tar -xvzf <download_path>/hxescripts.tgz`
+      `tar -xvzf <download_path>/hxescripts.tgz`
 
-3. Enable `hxeadm`.
+3. Give the extracted file `hxe_optimize.sh` read/execute permission.
 
-  `sudo su - hxeadm`
+      `chmod 755 hxe_optimize.sh`
 
-4. Navigate to the directory where you extracted `*hxescripts.tgz*` and execute the script.
+4. Log in as `hxeadm`.
 
-        `cd <extracted_path>
-        ./hxe_optimize.sh`
+      `sudo su -l hxeadm`
 
-5. Follow the prompts to enter the appropriate passwords.
+5. Navigate to the directory where you extracted `hxescripts.tgz` and execute the script.
+
+      ```
+      cd <extracted_path>
+      ```
+      `./hxe_optimize.sh`
+
+6. Follow the prompts to enter the appropriate passwords.
 
 ## Next Steps
 - Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA, express edition](http://go.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).
