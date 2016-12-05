@@ -17,6 +17,9 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
   
 ---
 
+> The purpose of this guide is to enable you to do first steps in designing your own CI processes using components like Gerrit, Jenkins and Nexus. These setup instructions for these components serve educational purposes only and are not meant as reference setup for productive purposes; for productive use, refer to the official component documentation.
+
+
 What we offer in this part is not more than a basic recipe to set up a minimum installation including only those components on Linux that we consider as absolutely necessary to run a CI/CD process for development with SAP. However, the setup best suited to your concrete requirements cannot be part of this document because it highly depends on your concrete local situation, the network setup, the overall landscape into which the CI/CD process will be embedded, and so on. Therefore, we will restrict ourselves here to showing only the principles and the core elements.
 
 If you are interested in other examples of CI/CD processes with a focus on specific needs and local conditions, just follow the references we provide to the official documentation for the described components. For each component, we provide hints to how the described setup could be improved. This concerns the professional and reliable operation, for example, further security activities and operational refinements.
