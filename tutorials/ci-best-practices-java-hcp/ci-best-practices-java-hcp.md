@@ -9,6 +9,10 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Prerequisites  
 
   - **Proficiency:** Intermediate
+  - [Source Code Versioning System](http://go.sap.com/developer/tutorials/ci-best-practices-scm.html)
+  - [Build Scheduler](http://go.sap.com/developer/tutorials/ci-best-practices-build.html)
+  - [Artifact Repository](http://go.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
+  - [Landscape Configuration](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)
   - [Pipeline Skeleton](http://go.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) 
   - [Generic Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)
 
@@ -17,6 +21,8 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
   - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
   
 ---
+
+> This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html). For all the examples to work properly make sure that you have followed the setup instructions for all components listed in the prerequisites box.
 
 
 The example shown here uses samples that are delivered as part of the SDK installation for Java Web development. These samples contain some web applications that are built using Maven and share a common parent `pom.xml`. Documentation and resources for Java web application development:
