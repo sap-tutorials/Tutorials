@@ -5,11 +5,10 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **System access:** You have access SAP HANA database instance, for example SAP HANA Express edition, or MDC instance in SAP HANA Cloud Platform Trial.
+ - **System access:** You have developer access SAP HANA database instance, for example SAP HANA Express edition, or MDC instance in SAP HANA Cloud Platform Trial.
 
 ## Next Steps
- - SAP HANA Spatial: Strings (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [SAP HANA Spatial: Strings](http://go.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
 
 ## Details
 ### You will learn  
@@ -77,5 +76,4 @@ You will learn the basics of spatial point processing, and use it as an example 
  - Check SAP HANA Spatial Reference at http://help.sap.com/hana_platform
 
 ## Next Steps
- - SAP HANA Spatial: Strings (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [SAP HANA Spatial: Strings](http://go.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
