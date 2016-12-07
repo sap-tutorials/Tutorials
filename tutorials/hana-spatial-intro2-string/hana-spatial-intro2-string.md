@@ -1,6 +1,6 @@
 ---
 title: Intro to SAP HANA Spatial: Strings
-description: Strings (curves in more general) in spatial connect points
+description: A string ('a curve' in more general) connects points
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana,-express-edition ]
 ---
 ## Prerequisites  
@@ -8,8 +8,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
  - **Tutorials:** [Intro to SAP HANA Spatial: Points](http://go.sap.com/developer/tutorials/hana-spatial-intro1-point.html)
 
 ## Next Steps
- - Intro to SAP HANA Spatial: Polygons (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [Intro to SAP HANA Spatial: Polygons](http://go.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
 
 ## Details
 ### You will learn  
@@ -131,5 +130,4 @@ You will continue learning basics of spatial processing now with ___strings___ (
  - Check SAP HANA Spatial Reference at http://help.sap.com/hana_platform
 
 ## Next Steps
-- Intro to SAP HANA Spatial: Polygons (coming soon), or
-- Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - [Intro to SAP HANA Spatial: Polygons](http://go.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)

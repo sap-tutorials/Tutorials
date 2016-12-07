@@ -1,6 +1,6 @@
 ---
 title: Intro to SAP HANA Spatial: Points
-description: The spatial point type is a 0-dimensional geometry and represents a single location
+description: A point is a 0-dimensional geometry representing a single location
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana,-express-edition ]
 ---
 ## Prerequisites  

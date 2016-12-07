@@ -62,13 +62,13 @@ You will continue learning basics of spatial processing now with ___polygons___ 
     SELECT NEW ST_Polygon('Polygon ((0 0, 4 0, 0 3, 0 0), (0.5 0.5, 0.5 1.5, 1.5 1.5, 1 0.5, 0.5 0.5))').ST_Boundary().ST_asWKT() FROM dummy;
     ```
 
-    ![Boundary of the polygon](spatial0302.jpg)
+    ![Boundary of the polygon](spatial0303.jpg)
 
     The result is a `MultiLineString` containing two `LineStrings`. One representing a triangle and another representing a square.
 
     `MultiLineString` is another spatial type, which is a collection of line strings. There are two more spatial collection types supported by SAP HANA: `MultiPoint` and `MultiPolygon`. Names are intuitive enough to understand what they represent.
 
-    Strings too have their boundaries, represented by their endpoints, except when they are rings. Rings - curves where the start point is the same as the end point and there are no self-intersections — have no boundaries.
+    Strings too have their boundaries, represented by their endpoints, except when they are rings. Rings - curves where the start point is the same as the end point and there are no self-intersections - have no boundaries.
 
     Check boundaries of a triangle string from the previous query.
 
@@ -86,7 +86,7 @@ You will continue learning basics of spatial processing now with ___polygons___ 
     SELECT NEW ST_LineString('LineString (0 0,4 0,0 3,1 0)').ST_Boundary().ST_asWKT() FROM dummy;
     ```
 
-    The result is a `MultiPoint` containing two end points.
+    The result is a `MultiPoint` collection containing two end points.
 
     ![Multipoint boundary](spatial0305.jpg)
 
@@ -102,11 +102,11 @@ You will continue learning basics of spatial processing now with ___polygons___ 
     SELECT NEW ST_Point (1,1).ST_Within(NEW ST_Polygon('Polygon ((0 0, 4 0, 0 3, 0 0), (0.5 0.5, 0.5 1.5, 1.5 1.5, 1 0.5, 0.5 0.5))')) FROM dummy;
     ```
 
-    Indeed the point (1, 1) is not within interior of your polygon form the earlier exercise, defined by external ring in the shape of triangle and internal ring in the shape of a square. An are within a square is the ___exterior___ of that geometry.
+    Indeed the point (1, 1) is not within ___interior___ of your polygon form the earlier exercise, defined by external ring in the shape of triangle and internal ring in the shape of a square. An area inside a square is the ___exterior___ of this particular geometry.
 
     ![Within linestring polygon](spatial0307.jpg)
 
-7. To check if a point is within a circle you use `ST_Boundary()` method defining the area of a particular distance from a circle's center point.
+7. To check if a point is within a given disk you use `ST_Boundary()` method defining the circle around an area of a particular distance from a central point.
 
     ```sql
     SELECT NEW ST_Point (1,1).ST_Within(NEW ST_Point(0, 0).ST_Buffer(2)) FROM dummy;
