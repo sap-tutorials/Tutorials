@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 
 ## Details
 ### You will learn  
-What the reader should take away from this time investment. You can also add screenshot(s) to illustrate what they will do.
+You will continue learning basics of spatial processing now with ___strings___ (also known as ___curves___) data types.
 
 ### Time to Complete
 **5 Min**.

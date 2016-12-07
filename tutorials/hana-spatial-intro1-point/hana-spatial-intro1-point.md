@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 
 ## Details
 ### You will learn  
-You will learn the basics of spatial point processing, and use it as an example to understand types, constructors and methods defined by SQL/MM standard implemented by SAP HANA database.
+You will learn the basics of spatial processing starting with points, and use them to understand types, constructors and methods defined by SQL/MM standard implemented by SAP HANA database.
 
 ### Time to Complete
 **5 Min**.
