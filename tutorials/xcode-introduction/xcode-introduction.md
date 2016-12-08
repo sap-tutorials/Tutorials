@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios ]
  - **Development machine:** Access to a Mac computer
 
 ## Next Steps
- - [Build your first Xcode & Swift App](http://go.sap.com/developer/tutorials/xcode-build-swift-app.html)
+ - [Build your first Xcode & Swift App](http://www.sap.com/developer/tutorials/xcode-build-swift-app.html)
 
 ## Details
 ### You will learn  
@@ -148,4 +148,4 @@ Congratulations! You have just created, built and run your first application for
 [ACCORDION-END]
 
 ### Next Steps
- - [Build your first Xcode & Swift App](http://go.sap.com/developer/tutorials/xcode-build-swift-app.html)
+ - [Build your first Xcode & Swift App](http://www.sap.com/developer/tutorials/xcode-build-swift-app.html)

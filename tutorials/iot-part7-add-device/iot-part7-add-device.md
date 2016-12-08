@@ -7,12 +7,12 @@ tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topi
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Internet of Things (IoT) Explore the SAP HCP IoT Services](http://go.sap.com/developer/tutorials/iot-part6-hcp-services.html)
+ - **Tutorials:** [Internet of Things (IoT) Explore the SAP HCP IoT Services](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
 
 
 ## Next Steps
-- [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://go.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
-- [Internet of Things (IoT) Connecting your TI SensorTag to IoT Services](http://go.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
+- [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
+- [Internet of Things (IoT) Connecting your TI SensorTag to IoT Services](http://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
 
 ## Details
 ### You will learn  
@@ -134,5 +134,5 @@ With the MMS service now deployed, and your user assigned the appropriate role i
     If you receive `40x` authorization error in return, then check if you are running Postman client in Chrome's incognito mode.
 
 ## Next Steps
- - [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://go.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
- - [Internet of Things (IoT) Connecting your TI SensorTag to IoT Services](http://go.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
+ - [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
+ - [Internet of Things (IoT) Connecting your TI SensorTag to IoT Services](http://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)

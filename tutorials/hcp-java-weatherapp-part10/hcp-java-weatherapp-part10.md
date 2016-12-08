@@ -5,10 +5,10 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>inte
 ---
 
 ## Prerequisites  
- - [End-to-End Weather App Scenario Part 9](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)
+ - [End-to-End Weather App Scenario Part 9](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -56,4 +56,4 @@ In the final part of this tutorial series you will learn how to deploy your Java
     ![Screenshot of the Java app running on HCP](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-5.png)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

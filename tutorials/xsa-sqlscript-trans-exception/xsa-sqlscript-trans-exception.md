@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Using Index-based Cell Access](http://go.sap.com/developer/tutorials/xsa-sqlscript-usingindexbased.html)
+ - **Tutorials:** [Using Index-based Cell Access](http://www.sap.com/developer/tutorials/xsa-sqlscript-usingindexbased.html)
 
 ## Next Steps
- - [Using COMMIT Statement](http://go.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)
+ - [Using COMMIT Statement](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)
 
 ## Details
 ### You will learn  
@@ -134,4 +134,4 @@ In this example we will exchange the dates of the scalar input parameters to pre
 	![error message](27.png)
 
 ## Next Steps
- - [Using COMMIT Statement](http://go.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)
+ - [Using COMMIT Statement](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)

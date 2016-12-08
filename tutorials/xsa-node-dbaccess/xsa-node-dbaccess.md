@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Modules and Express](http://go.sap.com/developer/tutorials/xsa-node-modules.html)
+ - **Tutorials:** [Modules and Express](http://www.sap.com/developer/tutorials/xsa-node-modules.html)
 
 ## Next Steps
- - [Asynchronous Non-Blocking I/O](http://go.sap.com/developer/tutorials/xsa-node-async.html)
+ - [Asynchronous Non-Blocking I/O](http://www.sap.com/developer/tutorials/xsa-node-async.html)
 
 ## Details
 ### You will learn  
@@ -35,7 +35,7 @@ Learn how to connect to the SAP HANA database using Node.js
 	module.exports = function(){	  var app = express(); 	  passport.use("JWT", new xssec.JWTStrategy(xsenv.getServices({uaa:{tag:"xsuaa"}}).uaa));	  app.use(passport.initialize());		  app.use(	   passport.authenticate("JWT", {session: false}),	   xsHDBConn.middleware());		//Hello Router	  app.route("/")
 	```
 
-4. Now add a new route for `/dummy`  that gets the database `connection/client` from the express request object (`req.db`). Then create a prepared statement for the SELECT of `SESSION_USER` from dummy ([using the synonym we created](http://go.sap.com/developer/tutorials/xsa-hdi-module.html) ). Execute the statement and send the results as JSON in the response object. 
+4. Now add a new route for `/dummy`  that gets the database `connection/client` from the express request object (`req.db`). Then create a prepared statement for the SELECT of `SESSION_USER` from dummy ([using the synonym we created](http://www.sap.com/developer/tutorials/xsa-hdi-module.html) ). Execute the statement and send the results as JSON in the response object. 
 
 	```
 	//Simple Database Select - In-line Callbacks	app.route("/dummy")	  .get(function(req, res){	  var client = req.db;	  client.prepare(	  "select SESSION_USER from \"dev602.data::DUMMY\" ", 	     function (err, statement){	       statement.exec([],	       function (err, results) {	       if (err){	       res.type("text/plain").status(500).send("ERROR: " + err);	       }else{	       var result = JSON.stringify( { Objects: results });	       res.type("application/json").status(200).send(result);	     } }  );	   } );	}); 
@@ -79,4 +79,4 @@ Learn how to connect to the SAP HANA database using Node.js
 
 
 ## Next Steps
- - [Asynchronous Non-Blocking I/O](http://go.sap.com/developer/tutorials/xsa-node-async.html)
+ - [Asynchronous Non-Blocking I/O](http://www.sap.com/developer/tutorials/xsa-node-async.html)

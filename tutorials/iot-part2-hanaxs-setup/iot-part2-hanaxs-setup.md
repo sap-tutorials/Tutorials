@@ -7,11 +7,11 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Internet of Things (IoT) Setup the Tessel](http://go.sap.com/developer/how-tos/iot-tessel.html)
+ - **Tutorials:** [Internet of Things (IoT) Setup the Tessel](http://www.sap.com/developer/how-tos/iot-tessel.html)
 
 
 ## Next Steps
- - [Internet of Things (IoT) Posting data with a REST Client](http://go.sap.com/developer/tutorials/iot-part3-posting-data-hana.html)
+ - [Internet of Things (IoT) Posting data with a REST Client](http://www.sap.com/developer/tutorials/iot-part3-posting-data-hana.html)
 
 ## Details
 ### You will learn  
@@ -147,4 +147,4 @@ You are now going to build a simple and quick SAP HANA XS application, if you al
      Now it’s time to test...
 
 ## Next Steps
- - [Internet of Things (IoT) Posting data with a REST Client](http://go.sap.com/developer/tutorials/iot-part3-posting-data-hana.html)
+ - [Internet of Things (IoT) Posting data with a REST Client](http://www.sap.com/developer/tutorials/iot-part3-posting-data-hana.html)

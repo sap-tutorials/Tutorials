@@ -5,10 +5,10 @@ tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-pla
 ---
 
 ## Prerequisites  
-- [Access your first data in a SAP HANA XSC Application](http://go.sap.com/developer/tutorials/hana-data-access-authorizations.html)
+- [Access your first data in a SAP HANA XSC Application](http://www.sap.com/developer/tutorials/hana-data-access-authorizations.html)
 
 ## Next Steps
-- [Consume XSODATA in your SAP HANA XSC Application](http://go.sap.com/developer/tutorials/hana-consume-xsodata.html)
+- [Consume XSODATA in your SAP HANA XSC Application](http://www.sap.com/developer/tutorials/hana-consume-xsodata.html)
  
 ## Details
 
@@ -158,4 +158,4 @@ Congratulations: You have just enabled a simple REST interface for your applicat
 *This tutorial is part of the SAP HANA and SAP HANA Cloud Platform tutorials set.*
 
 ## Next Steps
-- [Consume XSODATA in your SAP HANA XSC Application](http://go.sap.com/developer/tutorials/hana-consume-xsodata.html)
+- [Consume XSODATA in your SAP HANA XSC Application](http://www.sap.com/developer/tutorials/hana-consume-xsodata.html)

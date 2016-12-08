@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Creating an HDI Module](http://go.sap.com/developer/tutorials/xsa-hdi-module.html)
+ - **Tutorials:** [Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)
 
 ## Next Steps
- - [Creating a Calculation View with a Cube data type and Star Join](http://go.sap.com/developer/tutorials/xsa-sqlscript-cube.html)
+ - [Creating a Calculation View with a Cube data type and Star Join](http://www.sap.com/developer/tutorials/xsa-sqlscript-cube.html)
 
 ## Details
 ### You will learn  
@@ -164,4 +164,4 @@ You will learn about creating a graphical calculation views with dimension data.
     ![SHINE](42.png)
 
 ## Next Steps
- - [Creating a Calculation View with a Cube data type and Star Join](http://go.sap.com/developer/tutorials/xsa-sqlscript-cube.html)
+ - [Creating a Calculation View with a Cube data type and Star Join](http://www.sap.com/developer/tutorials/xsa-sqlscript-cube.html)

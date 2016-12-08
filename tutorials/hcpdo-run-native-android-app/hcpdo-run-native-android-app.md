@@ -7,19 +7,19 @@ tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Configure Android Studio for mobile development](http://go.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html)
+ - **Tutorials:** [Configure Android Studio for mobile development](http://www.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html)
  - Download and install the [GitHub Desktop Client](https://desktop.github.com/)
  - Android device or Android Emulator on your development machine 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
 
-In this tutorial you will review and run a native Android version of the Northwind hybrid app (from [Mobile Groups 1-3](http://go.sap.com/developer/tutorial-navigator.beginner.html)) and run it on SAP HANA Cloud Platform mobile services for development and operations. You will use Android Studio and elements of the SAP Mobile Platform SDK to build the app, and access the same Northwind OData service used in the mobile web and hybrid tutorials. 
+In this tutorial you will review and run a native Android version of the Northwind hybrid app (from [Mobile Groups 1-3](http://www.sap.com/developer/tutorial-navigator.beginner.html)) and run it on SAP HANA Cloud Platform mobile services for development and operations. You will use Android Studio and elements of the SAP Mobile Platform SDK to build the app, and access the same Northwind OData service used in the mobile web and hybrid tutorials. 
 
-If you have not completed the tutorials in [Mobile Groups 1-3](http://go.sap.com/developer/tutorial-navigator.beginner.html) – it would be best to work through those first to become familiar with the OData service used.
+If you have not completed the tutorials in [Mobile Groups 1-3](http://www.sap.com/developer/tutorial-navigator.beginner.html) – it would be best to work through those first to become familiar with the OData service used.
 
 The final version of the app will look like this:
 
@@ -38,11 +38,11 @@ The source code is available in GitHub, and after a walk-through of the code in 
 
     ![Open in Desktop](mg6-4-02.png)
  
-3. Since you have already completed the [Configure Android Studio for mobile development](http://go.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html) tutorial you already have the basic app framework in place. For these instructions, we will assume the path to your project is: `~/devel/Northwind_Android`. Please substitute your real path accordingly.
+3. Since you have already completed the [Configure Android Studio for mobile development](http://www.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html) tutorial you already have the basic app framework in place. For these instructions, we will assume the path to your project is: `~/devel/Northwind_Android`. Please substitute your real path accordingly.
 
     What you will do next is replace the generated source files with those you just cloned from GitHub.
 
-4. Navigate to the project folder created in the [Create a basic native Android master-detail app](http://go.sap.com/developer/tutorials/hcpdo-basic-android-app.html) tutorial, and move and rename the `~/devel/Northwind_Android/NWAndroid/app/src/main` directory back up the directory tree to `~/devel/Northwind_Android/NWAndroid/main_old`. This will preserve the generated files in case you want to refer to them later or do a `diff` to examine the changes made in the cloned source.
+4. Navigate to the project folder created in the [Create a basic native Android master-detail app](http://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html) tutorial, and move and rename the `~/devel/Northwind_Android/NWAndroid/app/src/main` directory back up the directory tree to `~/devel/Northwind_Android/NWAndroid/main_old`. This will preserve the generated files in case you want to refer to them later or do a `diff` to examine the changes made in the cloned source.
 
 5. Copy the main directory from the cloned directory (e.g. `~/devel/Git_Source/NWAndroid/main` to your project folder (`~/devel/Northwind_Android/NWAndroid/app/src/main`) so it takes the place of the directory you just moved.
 
@@ -299,7 +299,7 @@ The `ProductDataSingleton` keeps the same two variable names and simply replaces
     List entities = feed.getEntities();
     ```
     
-16. In the `getProducts()` method, a `for` loop steps through each entity received from an OData request, and stores the value in the appropriate field in a `Product` object. As was done in the [Round the currency field using JavaScript](http://go.sap.com/developer/tutorials/hcp-webide-round-currency.html) tutorial for the SAPUI5 app, the unit price is rounded to two decimal places, and the `Product` object is added to the `ITEMS ArrayList`.
+16. In the `getProducts()` method, a `for` loop steps through each entity received from an OData request, and stores the value in the appropriate field in a `Product` object. As was done in the [Round the currency field using JavaScript](http://www.sap.com/developer/tutorials/hcp-webide-round-currency.html) tutorial for the SAPUI5 app, the unit price is rounded to two decimal places, and the `Product` object is added to the `ITEMS ArrayList`.
 
     The last method called in the `try` block is `storeData()`, which adds each `Product` object in the `ArrayList` to the `ITEM_MAP HashMap`. Note that storing the data in the `ArrayList` *and* the `HashMap` is not ideal for large datasets – the approach used in the Android Studio template was preserved for consistency. 
 
@@ -385,4 +385,4 @@ A few key online help documents:
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

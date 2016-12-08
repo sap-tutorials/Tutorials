@@ -5,11 +5,11 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner 
-- **How-To** [Start this tutorial series](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
-- **Tutorials:** This tutorial is part of a series.  The previous tutorial is step 9: [SAPUI5 - Add a search field](http://go.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
+- **How-To** [Start this tutorial series](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+- **Tutorials:** This tutorial is part of a series.  The previous tutorial is step 9: [SAPUI5 - Add a search field](http://www.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
 
 ## Next Steps
- - This is the end of this tutorial series.  Return to the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - This is the end of this tutorial series.  Return to the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -21,7 +21,7 @@ In that bar, you will add a Button control to the right side of the footer bar i
 **10 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 
 1.  Open the `webapp/i18n/i18n.properties` file, and add the following four lines to the bottom:

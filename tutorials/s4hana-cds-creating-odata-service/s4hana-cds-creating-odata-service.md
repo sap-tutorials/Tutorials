@@ -6,10 +6,10 @@ tags: [  tutorial>beginner ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:** [Creating Consumption views based on basic/interface views.
-  ](http://go.sap.com/developer/tutorial-navigator.html)
+  ](http://www.sap.com/developer/tutorial-navigator.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 You will learn  
@@ -115,7 +115,7 @@ Beginners might take **15-20 minutes** to execute this tutorial.
  - Put any option steps here or remove this section if not applicable.
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Related Information
 - This tutorial is part of the S/4HANA Core Data Services

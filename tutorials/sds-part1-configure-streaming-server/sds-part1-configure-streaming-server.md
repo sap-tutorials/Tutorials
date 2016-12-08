@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
  - This tutorial assumes you will be using the HANA SYSTEM user to connect to your HANA system and will refer to it as “SYSTEM”.
 
 ## Next Steps
- - **Tutorials:** [Create a Streaming Project in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part2-create-streaming-project.html)
+ - **Tutorials:** [Create a Streaming Project in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part2-create-streaming-project.html)
 
 ## Details
 ### You will learn
@@ -138,4 +138,4 @@ your credentials when re-connecting to the system. Next click **Finish** or pres
     ![Discover Schema](configure-data-service-8-discover-schema.png)
 
 ## Next Steps
-- **Tutorials:** [Create a Streaming Project in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part2-create-streaming-project.html)
+- **Tutorials:** [Create a Streaming Project in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part2-create-streaming-project.html)

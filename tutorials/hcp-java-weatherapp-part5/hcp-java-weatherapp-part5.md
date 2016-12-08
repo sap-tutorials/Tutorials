@@ -5,10 +5,10 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>inte
 ---
 
 ## Prerequisites  
- - [End-to-End Weather App Scenario Part 4](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)
+ - [End-to-End Weather App Scenario Part 4](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 6](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part6.html)
+ - [End-to-End Weather App Scenario Part 6](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part6.html)
 
 ## Details
 ### You will learn  
@@ -129,4 +129,4 @@ In this tutorial you will learn how to expose RESTful services using a library c
 
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 6](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part6.html)
+ - [End-to-End Weather App Scenario Part 6](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part6.html)

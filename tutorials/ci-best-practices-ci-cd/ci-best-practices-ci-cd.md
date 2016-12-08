@@ -12,8 +12,8 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ## Next Steps
  
-  - [Pipeline Suggestions](http://go.sap.com/developer/tutorials/ci-best-practices-pipelines.html)
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Pipeline Suggestions](http://www.sap.com/developer/tutorials/ci-best-practices-pipelines.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
 
 ---
 
@@ -316,5 +316,5 @@ Do deployment as automatic post-build step. Also deploy automatically to product
 
 ## Next Steps
  
-  - [Pipeline Suggestions](http://go.sap.com/developer/tutorials/ci-best-practices-pipelines.html)
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Pipeline Suggestions](http://www.sap.com/developer/tutorials/ci-best-practices-pipelines.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

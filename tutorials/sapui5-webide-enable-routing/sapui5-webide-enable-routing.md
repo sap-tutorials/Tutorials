@@ -5,11 +5,11 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner 
-- **How-To** [Start this tutorial series](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
-- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 4: [Add a list to the view](https://go.sap.com/developer/tutorials/sapui5-webide-add-list.html)
+- **How-To** [Start this tutorial series](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 4: [Add a list to the view](http://www.sap.com/developer/tutorials/sapui5-webide-add-list.html)
 
 ## Next Steps
- - The next tutorial in this series is Part 6: [Display List Details](https://go.sap.com/developer/tutorials/sapui5-webide-display-list-details.html)
+ - The next tutorial in this series is Part 6: [Display List Details](http://www.sap.com/developer/tutorials/sapui5-webide-display-list-details.html)
 
 ## Details
 ### You will learn  
@@ -19,7 +19,7 @@ In order to enable navigating from one view to another, our app needs to be enab
 **15 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 
 You have to add a routing configuration to the descriptor file and initialize the router instance within the component
@@ -142,7 +142,7 @@ definition (`webapp/Component.js`).
 
 
 ## Next Steps
-- The next tutorial in this series is Part 6: [Display List Details](https://go.sap.com/developer/tutorials/sapui5-webide-display-list-details.html)
+- The next tutorial in this series is Part 6: [Display List Details](http://www.sap.com/developer/tutorials/sapui5-webide-display-list-details.html)
 
 ## Additional Information
 - [Additional reading and details on Routing and Navigation](https://sapui5.netweaver.ondemand.com/docs/guide/3d18f20bd2294228acb6910d8e8a5fb5.html)

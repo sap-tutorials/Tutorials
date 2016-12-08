@@ -8,11 +8,11 @@ tags: [  tutorial>intermediate, topic>cloud, topic>mobile, products>sap-hana-clo
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:** 
-   - [Sign up for an account on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
-   - [Enable SAP HANA Cloud Platform mobile services for development and operations](http://go.sap.com/developer/tutorials/hcpms-enable-mobile-services.html)
+   - [Sign up for an account on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+   - [Enable SAP HANA Cloud Platform mobile services for development and operations](http://www.sap.com/developer/tutorials/hcpms-enable-mobile-services.html)
 
 ## Next Steps
- - [Create a basic native Android master-detail app](http://go.sap.com/developer/tutorials/hcpdo-basic-android-app.html)
+ - [Create a basic native Android master-detail app](http://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html)
 
 ## Details
 ### You will learn  
@@ -72,4 +72,4 @@ Creating an app in SAP HANA Cloud Platform mobile service for development and op
     ![Cockpit homepage](mg6-1-07.png)
 
 ## Next Steps
- - [Create a basic native Android master-detail app](http://go.sap.com/developer/tutorials/hcpdo-basic-android-app.html)
+ - [Create a basic native Android master-detail app](http://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html)

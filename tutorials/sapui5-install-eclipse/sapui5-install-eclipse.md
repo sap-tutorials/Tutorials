@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>html5 ]
  - **Proficiency:** Beginner
 
 ## Next Steps
- - [SAPUI5 Extending a simple control](http://go.sap.com/developer/tutorials/sapui5-extending-simple-control.html)
+ - [SAPUI5 Extending a simple control](http://www.sap.com/developer/tutorials/sapui5-extending-simple-control.html)
 
 ## Details
 ### You will learn
@@ -81,4 +81,4 @@ Congratulations: You have now installed the SAPUI5 Library and are ready to star
 
 
 ## Next Steps
- - [SAPUI5 Extending a simple control](http://go.sap.com/developer/tutorials/sapui5-extending-simple-control.html)
+ - [SAPUI5 Extending a simple control](http://www.sap.com/developer/tutorials/sapui5-extending-simple-control.html)

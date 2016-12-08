@@ -5,10 +5,10 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create a new Streaming Project in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part2-create-streaming-project.html)
+ - **Tutorials:** [Create a new Streaming Project in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part2-create-streaming-project.html)
 
 ## Next Steps
- - **Tutorials:** [Using a HANA Reference Element in a Smart Data Streaming project](http://go.sap.com/developer/tutorials/sds-part4-hana-table-event-streaming.html)
+ - **Tutorials:** [Using a HANA Reference Element in a Smart Data Streaming project](http://www.sap.com/developer/tutorials/sds-part4-hana-table-event-streaming.html)
 
 ## Details
 ### You will learn  
@@ -89,4 +89,4 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
     ![check errors](compile/2-check-errors.png)
 
 ## Next Steps
- - **Tutorials:** [Using a HANA Reference Element in a Smart Data Streaming project](http://go.sap.com/developer/tutorials/sds-part4-hana-table-event-streaming.html)
+ - **Tutorials:** [Using a HANA Reference Element in a Smart Data Streaming project](http://www.sap.com/developer/tutorials/sds-part4-hana-table-event-streaming.html)

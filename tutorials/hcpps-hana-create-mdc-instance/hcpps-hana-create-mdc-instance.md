@@ -6,10 +6,10 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform  
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - [Sign up for an free trial account on SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
+  - [Sign up for an free trial account on SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-  - [Setup a HANA user account for the HCP predictive services](http://go.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+  - [Setup a HANA user account for the HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
 
 ## Details
 ### You will learn
@@ -82,5 +82,5 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform  
     ![SAP HANA Cockpit](10.png)
 
 ## Next Steps
-  - [Setup a HANA user account for the HCP predictive services](http://go.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+  - [Setup a HANA user account for the HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
 

@@ -6,11 +6,11 @@ tags: [products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topi
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:**
-   - [Configure an SAP Web IDE project for hybrid builds](http://go.sap.com/developer/tutorials/hcpms-webide-hybrid-config.html)
+   - [Configure an SAP Web IDE project for hybrid builds](http://www.sap.com/developer/tutorials/hcpms-webide-hybrid-config.html)
    - You must have completed the download and [installation procedure](https://help.hana.ondemand.com/webide_hat/frameset.htm?d2865598e67f4ddabc79e5943352b0a1.html) for the Hybrid App Toolkit
 
 ## Next Steps
- - [Build and run a hybrid app with SAP Web IDE and Hybrid App Toolkit](http://go.sap.com/developer/tutorials/hcpms-webide-hybrid-build.html)
+ - [Build and run a hybrid app with SAP Web IDE and Hybrid App Toolkit](http://www.sap.com/developer/tutorials/hcpms-webide-hybrid-build.html)
 
 ## Details
 ### You will learn  
@@ -62,4 +62,4 @@ If the connection fails, the likely causes are a browser security exception or 
 	```
 
 ## Next Steps
- - [Build and run a hybrid app with SAP Web IDE and Hybrid App Toolkit](http://go.sap.com/developer/tutorials/hcpms-webide-hybrid-build.html)
+ - [Build and run a hybrid app with SAP Web IDE and Hybrid App Toolkit](http://www.sap.com/developer/tutorials/hcpms-webide-hybrid-build.html)

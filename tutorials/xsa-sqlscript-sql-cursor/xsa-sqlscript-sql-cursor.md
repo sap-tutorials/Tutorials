@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Using APPLY FILTER statement](http://go.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)
+ - **Tutorials:** [Using APPLY FILTER statement](http://www.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)
 
 ## Next Steps
- - [Using Cursors](http://go.sap.com/developer/tutorials/xsa-sqlscript-usingcursor.html)
+ - [Using Cursors](http://www.sap.com/developer/tutorials/xsa-sqlscript-usingcursor.html)
 
 ## Details
 ### You will learn  
@@ -78,4 +78,4 @@ Depending on the nature of the problem to be solved a solution using an imperati
 	![run time](13.png)
 
 ## Next Steps
- - [Using Cursors](http://go.sap.com/developer/tutorials/xsa-sqlscript-usingcursor.html)
+ - [Using Cursors](http://www.sap.com/developer/tutorials/xsa-sqlscript-usingcursor.html)

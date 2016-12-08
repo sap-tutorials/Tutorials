@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-cloud-pl
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [ABC Analysis with SAP HANA PAL](http://go.sap.com/developer/tutorials/teched-2016-10.html)
+ - **Tutorials:** [ABC Analysis with SAP HANA PAL](http://www.sap.com/developer/tutorials/teched-2016-10.html)
 
 ## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -291,4 +291,4 @@ The table with your data will match the **Message Type** id generated earlier.
 [ACCORDION-END]
 
 ## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

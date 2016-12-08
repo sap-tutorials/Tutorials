@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>odata, products>sap-hana, products>sap-han
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Creating an OData Service with an Entity Relationship](http://go.sap.com/developer/tutorials/xsa-xsodata-entity.html)
+ - **Tutorials:** [Creating an OData Service with an Entity Relationship](http://www.sap.com/developer/tutorials/xsa-xsodata-entity.html)
 
 ## Next Steps
- - [Tutorial Catalog](http://go.sap.com/developer/tutorial-navigator.html)
+ - [Tutorial Catalog](http://www.sap.com/developer/tutorial-navigator.html)
 
 ## Details
 ### You will learn  
@@ -41,4 +41,4 @@ Now to expand your code to include an XSJS exit.
 
 	![Results](4.png) 	
 ## Next Steps
- - [Tutorial Catalog](http://go.sap.com/developer/tutorial-navigator.html)
+ - [Tutorial Catalog](http://www.sap.com/developer/tutorial-navigator.html)

@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Creating a Calculation View with a Cube data type and Star Join](http://go.sap.com/developer/tutorials/xsa-sqlscript-cube.html)
+ - **Tutorials:** [Creating a Calculation View with a Cube data type and Star Join](http://www.sap.com/developer/tutorials/xsa-sqlscript-cube.html)
 
 ## Next Steps
- - [Parallel Processing and Parameters](http://go.sap.com/developer/tutorials/xsa-sqlscript-parallel.html)
+ - [Parallel Processing and Parameters](http://www.sap.com/developer/tutorials/xsa-sqlscript-parallel.html)
 
 ## Details
 ### You will learn  
@@ -77,4 +77,4 @@ In this exercise you will create a small procedure `get_po_header_data` with two
 
 
 ## Next Steps
- - [Parallel Processing and Parameters](http://go.sap.com/developer/tutorials/xsa-sqlscript-parallel.html)
+ - [Parallel Processing and Parameters](http://www.sap.com/developer/tutorials/xsa-sqlscript-parallel.html)

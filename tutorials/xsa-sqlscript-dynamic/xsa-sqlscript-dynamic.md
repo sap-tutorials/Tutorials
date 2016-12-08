@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Anonymous Blocks](http://go.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)
+ - **Tutorials:** [Anonymous Blocks](http://www.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)
 
 ## Next Steps
- - [Using Execute Immediate](http://go.sap.com/developer/tutorials/xsa-sqlscript-execute.html)
+ - [Using Execute Immediate](http://www.sap.com/developer/tutorials/xsa-sqlscript-execute.html)
 
 ## Details 
 ### You will learn  
@@ -58,4 +58,4 @@ In this exercise, you will learn the differences between dynamic SQL (EXEC, EXEC
 	![run procedure](9.png)
 
 ## Next Steps
- - [Using Execute Immediate](http://go.sap.com/developer/tutorials/xsa-sqlscript-execute.html)
+ - [Using Execute Immediate](http://www.sap.com/developer/tutorials/xsa-sqlscript-execute.html)

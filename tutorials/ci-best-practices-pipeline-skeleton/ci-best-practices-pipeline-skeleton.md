@@ -9,11 +9,11 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Prerequisites  
 
   - **Proficiency:** Intermediate
-  - [Build Landscape](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+  - [Build Landscape](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
 
 ## Next Steps
 
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
   
 ---
 
@@ -24,7 +24,7 @@ The full continuous delivery scenario consists of the following steps:
 
 1. The developer makes a change in the source files and pushes it to the central Gerrit instance for review.
 
-2. A reviewer submits the change in Gerrit with the status `merged`. Although, as it was pointed out in the part [Pipeline Suggestions](http://go.sap.com/developer/tutorials/ci-best-practices-pipelines.html), it makes sense to create voter builds, they are not actually a part of a continuous delivery pipeline, since they run as pre-validation processes before the change reaches the master branch. Therefore, voter builds are not described here.
+2. A reviewer submits the change in Gerrit with the status `merged`. Although, as it was pointed out in the part [Pipeline Suggestions](http://www.sap.com/developer/tutorials/ci-best-practices-pipelines.html), it makes sense to create voter builds, they are not actually a part of a continuous delivery pipeline, since they run as pre-validation processes before the change reaches the master branch. Therefore, voter builds are not described here.
 
 3. A CI build job, named `CI_DummyProject_master_build` for the purpose of this discussion, is triggered automatically as soon as the change is merged into the `master` branch. Typically, the CI build job contains automatic tests, static code checks and so on as required. 
 
@@ -218,7 +218,7 @@ The release job must be manually triggered, but is semantically linked to the pr
 
     ```
 
-    According to the example described in [Landscape Configuration](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html) the value of `{your repository Id}` is `nexus1`.
+    According to the example described in [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html) the value of `{your repository Id}` is `nexus1`.
       
 7. Save the job definition.
 

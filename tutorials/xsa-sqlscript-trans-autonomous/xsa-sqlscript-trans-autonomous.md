@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Using COMMIT Statement](http://go.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)
+ - **Tutorials:** [Using COMMIT Statement](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)
 
 ## Next Steps
- - [SAP HANA XS Advanced Creating an HDI Module](http://go.sap.com/developer/tutorials/xsa-hdi-module.html)
+ - [SAP HANA XS Advanced Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)
 
 ## Details
 ### You will learn  
@@ -53,4 +53,4 @@ The autonomous transaction is independent from the main procedure transaction. C
 	
 
 ## Next Steps
- - [SAP HANA XS Advanced Creating an HDI Module](http://go.sap.com/developer/tutorials/xsa-hdi-module.html)
+ - [SAP HANA XS Advanced Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)

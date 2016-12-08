@@ -5,10 +5,10 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>inte
 ---
 
 ## Prerequisites  
- - [End-to-End Weather App Scenario Part 3](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part3.html)
+ - [End-to-End Weather App Scenario Part 3](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part3.html)
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 5](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part5.html)
+ - [End-to-End Weather App Scenario Part 5](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part5.html)
 
 ## Details
 ### You will learn  
@@ -39,4 +39,4 @@ In this tutorial you will learn how to convert your basic Java app into a Maven-
 
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 5](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part5.html)
+ - [End-to-End Weather App Scenario Part 5](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part5.html)

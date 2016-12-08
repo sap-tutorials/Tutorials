@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, produ
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Build an SAP Fiori UX app with SAP Gateway data](http://go.sap.com/developer/tutorials/teched-2016-4.html)
+ - **Tutorials:** [Build an SAP Fiori UX app with SAP Gateway data](http://www.sap.com/developer/tutorials/teched-2016-4.html)
 
 ## Next Steps
- - [Add an XML fragment for a tab in your app](http://go.sap.com/developer/tutorials/teched-2016-6.html)
+ - [Add an XML fragment for a tab in your app](http://www.sap.com/developer/tutorials/teched-2016-6.html)
 
 ## Details
 ### You will learn  
@@ -224,4 +224,4 @@ You can enter the URL in your phone and see it running there as well. Since the 
 [ACCORDION-END]
 
 ## Next Steps
- - [Add an XML fragment for a tab in your app](http://go.sap.com/developer/tutorials/teched-2016-6.html)
+ - [Add an XML fragment for a tab in your app](http://www.sap.com/developer/tutorials/teched-2016-6.html)

@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, products>sap-lumira ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Initial data acquisition in SAP BusinessObjects Lumira](http://go.sap.com/developer/tutorials/lumira-initial-data-acquisition.html)
+ - **Tutorials:** [Initial data acquisition in SAP BusinessObjects Lumira](http://www.sap.com/developer/tutorials/lumira-initial-data-acquisition.html)
 
 ## Next Steps
- - [Basics of data visualization](http://go.sap.com/developer/tutorials/lumira-initial-data-visualization.html)
+ - [Basics of data visualization](http://www.sap.com/developer/tutorials/lumira-initial-data-visualization.html)
 
 ## Details
 ### You will learn  
@@ -65,4 +65,4 @@ How to understand the dataset that has been added to SAP BusinessObjects Lumira.
  - You can learn more about data exploration from the product's official [user guide](http://help.sap.com/lumira#section2) for SAP BusinessObjects Lumira
 
 ## Next Steps
-- [Basics of data visualization](http://go.sap.com/developer/tutorials/lumira-initial-data-visualization.html)
+- [Basics of data visualization](http://www.sap.com/developer/tutorials/lumira-initial-data-visualization.html)

@@ -7,7 +7,7 @@ tags: [ products>sap-gateway, topic>cloud, topic>odata, tutorial>beginner ]
  - **Proficiency:** Beginner
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn
@@ -24,7 +24,7 @@ First we need to create an account on the Gateway System.  The system will use y
 
 Click or enter this link in your browser: [https://supsignformsb03be6e80.us1.hana.ondemand.com/SUPSignForms/](https://supsignformsb03be6e80.us1.hana.ondemand.com/SUPSignForms/).
 
-> **Note:** In order to sign up for an account on the Gateway Demo System, you must have an account on **sap.com**.  To register for an account on sap.com, navigate to [http://sap.com](http://go.sap.com/index.html), and then click on the **person icon** in the upper left hand corner of the web page. Once your account is set up, you can continue to register.
+> **Note:** In order to sign up for an account on the Gateway Demo System, you must have an account on **sap.com**.  To register for an account on sap.com, navigate to [http://sap.com](http://www.sap.com/index.html), and then click on the **person icon** in the upper left hand corner of the web page. Once your account is set up, you can continue to register.
 
 You should see this page:
 
@@ -123,4 +123,4 @@ There are two different forums, depending on what type of trouble you are experi
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Debugging Stored Procedures](http://go.sap.com/developer/tutorials/xsa-sqlscript-debugging.html)
+ - **Tutorials:** [Debugging Stored Procedures](http://www.sap.com/developer/tutorials/xsa-sqlscript-debugging.html)
 
 ## Next Steps
- - [Using Dynamic SQL vs Dynamic Filtering](http://go.sap.com/developer/tutorials/xsa-sqlscript-dynamic.html)
+ - [Using Dynamic SQL vs Dynamic Filtering](http://www.sap.com/developer/tutorials/xsa-sqlscript-dynamic.html)
 
 ## Details
 ### You will learn  
@@ -56,4 +56,4 @@ In this exercise we will show you how you can invoke SQLScript logic without the
 
 
 ## Next Steps
- - [Using Dynamic SQL vs Dynamic Filtering](http://go.sap.com/developer/tutorials/xsa-sqlscript-dynamic.html)
+ - [Using Dynamic SQL vs Dynamic Filtering](http://www.sap.com/developer/tutorials/xsa-sqlscript-dynamic.html)

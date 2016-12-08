@@ -8,17 +8,17 @@ tags: [  tutorial>intermediate, topic>cloud, products>sap-hana-cloud-platform, p
  - **Background Knowledge:**  You will get most from this tutorial if you already have basic knowledge of [Node.js](https://www.youtube.com/watch?v=pU9Q6oiQNd0), [Angular](https://docs.angularjs.org/guide/directive) and [Restangular](https://github.com/mgonto/restangular#starter-guide). If you are not already familiar with them and would like to dive into the code, you can follow the provided links to start learning.
  - **Software Requirements:** Cloud Foundry CLI (Command line interface), Maven which we will download in this tutorial.
  - **Tutorials:**
-    - [Getting Started with YaaS](http://go.sap.com/developer/tutorials/yaas-getting-started.html)
-    - [Download and Run the Default YaaS Storefront](http://go.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)   
-    - [Extend the YaaS Storefront's Functionality](http://go.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
-    - [Use Your Own YaaS Project to Back your YaaS Storefront](http://go.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
+    - [Getting Started with YaaS](http://www.sap.com/developer/tutorials/yaas-getting-started.html)
+    - [Download and Run the Default YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)   
+    - [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
+    - [Use Your Own YaaS Project to Back your YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
-You will learn how to deploy a micro service to the SAP HCP. As an example you will use the Tips micro service created in the [Extend the YaaS Storefront's Functionality](http://go.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html) tutorial. In order to deploy a micro service you will need to set up your Cloud Foundry Command Line interface and create a SAP HCP account. In the end you will run the micro service on the cloud.
+You will learn how to deploy a micro service to the SAP HCP. As an example you will use the Tips micro service created in the [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html) tutorial. In order to deploy a micro service you will need to set up your Cloud Foundry Command Line interface and create a SAP HCP account. In the end you will run the micro service on the cloud.
 
 ### Time to Complete
 **20 Min**.
@@ -47,7 +47,7 @@ You will learn how to deploy a micro service to the SAP HCP. As an example you w
 
 7. Familiarize yourself with the `manifest.yml` file which is located on the root folder of your Tips Service in your folder `(2)/yaasbite200`. This is the file that instructs your **Cloud Foundry CLI** where and how to deploy your war file.
 
-    > NOTE: If you have skipped the tutorial [Extend the YaaS Storefront's Functionality](http://go.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html), you can clone the Tips Micro Service with this command. `git clone https://github.com/SAP/yaas-getting-started-yaasbites.git`
+    > NOTE: If you have skipped the tutorial [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html), you can clone the Tips Micro Service with this command. `git clone https://github.com/SAP/yaas-getting-started-yaasbites.git`
 
 8. Ensure your deployment name is unique to you, by adjusting the name value in the file `manifest.yml` to for example `yourNameTipsService`.  This will ensure that your application will not clash with other applications deployed to the same environment by other users.
 
@@ -89,4 +89,4 @@ tipsEndpoint: {
 In this tutorial you learned how to deploy a micro service based on YaaS to the HANA Cloud Platform, and how to modify your storefront to communicate with it.
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

@@ -6,10 +6,10 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Configure a SAPUI5 application to interact with the HCP predictive](http://go.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+  - **Tutorials:** [Configure a SAPUI5 application to interact with the HCP predictive](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
 
 ## Next Steps
-  - [Register a "Data Set" HCP predictive service from a SAPUI5 application](http://go.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
+  - [Register a "Data Set" HCP predictive service from a SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
 
 ## Details
 ### You will learn
@@ -202,5 +202,5 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
     ![TimeSeries Demo Applications](8.png)
 
 ## Next Steps
-  - [Register a "Data Set" HCP predictive service from a SAPUI5 application](http://go.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
+  - [Register a "Data Set" HCP predictive service from a SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
 

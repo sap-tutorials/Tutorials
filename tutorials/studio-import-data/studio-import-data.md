@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana,-express-editio
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA Studio, Deploy your project](http://go.sap.com/developer/tutorials/studio-deploy-project.html)
+ - **Tutorials:** [SAP HANA Studio, Deploy your project](http://www.sap.com/developer/tutorials/studio-deploy-project.html)
 
 ## Next Steps
- - [SAP HANA Studio, Display your project](http://go.sap.com/developer/tutorials/studio-display-project.html)
+ - [SAP HANA Studio, Display your project](http://www.sap.com/developer/tutorials/studio-display-project.html)
 
 ## Details
 ### You will learn  
@@ -114,4 +114,4 @@ Now to expand your application to include data objects and import your sample da
 	![Content](13.png)
 
 ## Next Steps
- - [SAP HANA Studio, Display your project](http://go.sap.com/developer/tutorials/studio-display-project.html)
+ - [SAP HANA Studio, Display your project](http://www.sap.com/developer/tutorials/studio-display-project.html)

@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>odata, products>sap-hana, products>sap-han
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [SAP HANA XS Advanced, Creating a Node.js Module](http://go.sap.com/developer/tutorials/xsa-xsjs-xsodata.html)
+ - **Tutorials:** [SAP HANA XS Advanced, Creating a Node.js Module](http://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html)
 
 ## Next Steps
- - [Create and OData Service with Entity Relationship](http://go.sap.com/developer/tutorials/xsa-xsodata-entity.html)
+ - [Create and OData Service with Entity Relationship](http://www.sap.com/developer/tutorials/xsa-xsodata-entity.html)
 
 ## Details
 ### You will learn  
@@ -48,4 +48,4 @@ Create a simple OData service connecting to your table and data.
 	![output](7.png) 
 
 ## Next Steps
- - [Create and OData Service with Entity Relationship](http://go.sap.com/developer/tutorials/xsa-xsodata-entity.html)
+ - [Create and OData Service with Entity Relationship](http://www.sap.com/developer/tutorials/xsa-xsodata-entity.html)

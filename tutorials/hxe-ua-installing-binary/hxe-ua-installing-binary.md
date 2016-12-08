@@ -3,7 +3,7 @@ title: Installing Binary
 description: You may install SAP HANA, express edition on a Linux server using the HANA Database Lifecycle Manager (hdblcm) tool.
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
-The SAP HANA, express edition is for Linux machines running specific installations, provided your host machine meets the storage and memory prerequisites. Choose this installation method if you want a custom setup. This tutorial is available as a [video](http://go.sap.com/assetdetail/2016/09/eccafc12-8a7c-0010-82c7-eda71af511fa.html).
+The SAP HANA, express edition is for Linux machines running specific installations, provided your host machine meets the storage and memory prerequisites. Choose this installation method if you want a custom setup. This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/eccafc12-8a7c-0010-82c7-eda71af511fa.html).
 
 ## Prerequisites
 - **Proficiency** Beginner
@@ -13,13 +13,13 @@ The SAP HANA, express edition is for Linux machines running specific installatio
 > If you are installing a SUSE Linux Enterprise Server for SAP for the first time, register your copy. You may need to install add-on packages later, and add-ons are only available to registered user. Register and download a 60 day evaluation of SUSE Linux Enterprise for SAP at: <https://www.suse.com/products/sles-for-sap/download>.
 
 ## Next Steps
-- Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA, express edition](http://go.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).
+- Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).
 
 ## Details
 ### You will learn
 Download the binary image of SAP HANA, express edition, install the image on your Linux server, and install additional tools for express edition if desired.
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://go.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
 ### Time to Complete
 **Approximately 60 Minutes. Download and installation speeds will vary.**
 
@@ -53,7 +53,7 @@ Your server will need the following:
 
     **Or**  
 
-    Go to the SAP HANA, express edition launch page at <http://go.sap.com/developer/topics/sap-hana-express.html> and click the **Register and download SAP HANA, express edition download manager** link.  
+    Go to the SAP HANA, express edition launch page at <http://www.sap.com/developer/topics/sap-hana-express.html> and click the **Register and download SAP HANA, express edition download manager** link.  
 
     The registration page opens.
 
@@ -150,7 +150,7 @@ Your server will need the following:
     >Any misbehavior (e.g. crash) in user written code could potentially destabilize the HANA server. Please ensure that user written AFL libraries are stable.
 
     >**Note**
-    >If a `libssl.so.0.9.8` error occurs, see [Installation Fails with Error "Cannot load libssl.so.0.9.8"](http://go.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
+    >If a `libssl.so.0.9.8` error occurs, see [Installation Fails with Error "Cannot load libssl.so.0.9.8"](http://www.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
 
 ### (Optional) Installing XSC, XS Advanced, and Web IDE
 
@@ -229,4 +229,4 @@ Your server will need the following:
 6. Follow the prompts to enter the appropriate passwords.
 
 ## Next Steps
-- Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA, express edition](http://go.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).
+- Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).

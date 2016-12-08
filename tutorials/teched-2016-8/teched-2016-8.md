@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-hana-cloud-platform, products>sap-web-i
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Add a map display to your app](http://go.sap.com/developer/tutorials/teched-2016-7.html)
+ - **Tutorials:** [Add a map display to your app](http://www.sap.com/developer/tutorials/teched-2016-7.html)
 
 ## Next Steps
- - [ABC Analysis with SAP HANA PAL](http://go.sap.com/developer/tutorials/teched-2016-10.html)
+ - [ABC Analysis with SAP HANA PAL](http://www.sap.com/developer/tutorials/teched-2016-10.html)
 
 ## Details
 ### You will learn  
@@ -150,7 +150,7 @@ If you check the `i18n` folder in your project, you will see the two new files:
 
 [ACCORDION-BEGIN [Step 12: ](Commit files, and deploy to the cloud)]
 
-Commit your new files to **Git** and deploy the application to HCP (following the same procedure as in the previous [tutorial](http://go.sap.com/developer/tutorials/teched-2016-5.html).
+Commit your new files to **Git** and deploy the application to HCP (following the same procedure as in the previous [tutorial](http://www.sap.com/developer/tutorials/teched-2016-5.html).
 
 Right-click on your **`te2016`** project folder, and select **Deploy > Deploy to SAP HANA Cloud Platform** and click **Deploy**.
 
@@ -181,4 +181,4 @@ If your device is set to either the German or Spanish locale, then the app will 
 [ACCORDION-END]
 
 ## Next Steps
- - [ABC Analysis with SAP HANA PAL](http://go.sap.com/developer/tutorials/teched-2016-10.html)
+ - [ABC Analysis with SAP HANA PAL](http://www.sap.com/developer/tutorials/teched-2016-10.html)

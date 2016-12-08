@@ -6,10 +6,10 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Insert a currency symbol for display](http://go.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)
+ - **Tutorials:** [Insert a currency symbol for display](http://www.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)
 
 ## Next Steps
- - [Add A Tab and additional fields in an SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-add-tab.html)
+ - [Add A Tab and additional fields in an SAPUI5 app](http://www.sap.com/developer/tutorials/hcp-webide-add-tab.html)
 
 ## Details
 
@@ -51,4 +51,4 @@ In the previous tutorials you added some labels to the details view by inserting
     ![Modified Detail.view.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-labels-i18n/mob2-4_3.png)
 
 ## Next Step:
- - [Add A Tab and additional fields in an SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-add-tab.html)
+ - [Add A Tab and additional fields in an SAPUI5 app](http://www.sap.com/developer/tutorials/hcp-webide-add-tab.html)

@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Sign up for an account on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Sign up for an account on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
- - [Create the gamified HelpDesk application](http://go.sap.com/developer/tutorials/hcp-gamification-sample-application.html)
+ - [Create the gamified HelpDesk application](http://www.sap.com/developer/tutorials/hcp-gamification-sample-application.html)
 
 ## Details
 ### You will learn  
@@ -63,4 +63,4 @@ How to enable the gamification service in your SAP HANA Cloud Platform account a
 
 ## Next Steps
 
-- [Create the gamified HelpDesk application](http://go.sap.com/developer/tutorials/hcp-gamification-sample-application.html)
+- [Create the gamified HelpDesk application](http://www.sap.com/developer/tutorials/hcp-gamification-sample-application.html)

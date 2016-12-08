@@ -8,11 +8,11 @@ tags: [ tutorial>intermediate, products>sap-hybris-as-a-service-on-sap-hana-clou
  - **Background Knowledge:** The YaaS Storefront is based on [Node.js](https://www.youtube.com/watch?v=pU9Q6oiQNd0),  [Angular](https://docs.angularjs.org/guide/directive) and [Restangular](https://github.com/mgonto/restangular#starter-guide). If you are not already familiar with these, and would like to dive into the code, you can follow the provided links to start learning.
  - **Software Requirements:** Git and Node, which we will be downloading in this tutorial.
  - **Tutorials**
-    - [Getting Started with YaaS](http://go.sap.com/developer/tutorials/yaas-getting-started.html)
+    - [Getting Started with YaaS](http://www.sap.com/developer/tutorials/yaas-getting-started.html)
 
 ## Next Steps
- - [Extend the YaaS Storefront's Functionality](http://go.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
- - [Use Your Own YaaS Project to Back your YaaS Storefront](http://go.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
+ - [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
+ - [Use Your Own YaaS Project to Back your YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
 
 ## Details
 ### You will learn  
@@ -50,5 +50,5 @@ You will learn how to create your own e-commerce shop in minutes with the YaaS S
 You now have seen a default YaaS Storefront running locally on your machine. The next step is to customize and personalize it.  In the next tutorial you will add a feature to the StoreFront called "Mr Tip".  When browsing products, the undecided purchaser can click on "Mr Tip" to get advice, with helpful responses such as "Oh My God, like totally yes!!" and "One word: No".
 
 ## Next Steps
- - [Extend the YaaS Storefront's Functionality](http://go.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
- - [Use Your Own YaaS Project to Back your YaaS Storefront](http://go.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
+ - [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
+ - [Use Your Own YaaS Project to Back your YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)

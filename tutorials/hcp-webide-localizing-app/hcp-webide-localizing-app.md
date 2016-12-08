@@ -6,10 +6,10 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **Tutorials:** [Commit your project files to your HCP Git repository](http://go.sap.com/developer/tutorials/hcp-webide-commit-git.html)
+ - **Tutorials:** [Commit your project files to your HCP Git repository](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
 
 ## Next Steps
- - [An Open Data Protocol (OData) primer for developers](http://go.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
+ - [An Open Data Protocol (OData) primer for developers](http://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
 
 ## Details
 
@@ -163,9 +163,9 @@ Strings in more specific resource bundles (loaded earlier) will take precedence 
     ![de_CH strings](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_13.png)
 
 
-14. Commit your new file to Git (following the same procedure as in the previous [tutorial](http://go.sap.com/developer/tutorials/hcp-webide-commit-git.html).
+14. Commit your new file to Git (following the same procedure as in the previous [tutorial](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html).
 
-15. Deploy your app to HCP (following the same procedure as in an earlier [tutorial](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) and open the new, active version of the app.
+15. Deploy your app to HCP (following the same procedure as in an earlier [tutorial](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) and open the new, active version of the app.
 
 16. To test the language support in the deployed app, we can utilize the SAPUI5 `sap-ui-language` URL parameter. To do so, just append `?sap-ui-language=xx_YY` to your application URL
 
@@ -183,4 +183,4 @@ Strings in more specific resource bundles (loaded earlier) will take precedence 
 
 
 ## Next Steps
- - [An Open Data Protocol (OData) primer for developers](http://go.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
+ - [An Open Data Protocol (OData) primer for developers](http://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)

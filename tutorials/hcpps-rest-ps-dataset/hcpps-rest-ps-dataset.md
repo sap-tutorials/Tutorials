@@ -6,10 +6,10 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Access your predictive demo data set using an OData services from a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-odata.html)
+  - **Tutorials:** [Access your predictive demo data set using an OData services from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
 
 ## Next Steps
-  - [Test the "Forecast" HCP predictive service from a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
+  - [Test the "Forecast" HCP predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
 
 ## Details
 ### You will learn
@@ -154,5 +154,5 @@ For more details on the HCP predictive services, you can check the following URL
   - `<`<code><b>C4PA URL</b></code>`>/raml/index.html?raml=../aa-cloud-services.raml`
 
 ## Next Steps
-  - [Test the "Forecast" HCP predictive service from a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
+  - [Test the "Forecast" HCP predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
 

@@ -6,10 +6,10 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the "Data Set" HCP predictive services using a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - **Tutorials:** [Test the "Data Set" HCP predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
 
 ## Next Steps
-  - [Configure a SAPUI5 application to interact with the HCP predictive](http://go.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+  - [Configure a SAPUI5 application to interact with the HCP predictive](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
 
 ## Details
 ### You will learn
@@ -252,5 +252,5 @@ For more details on the HCP predictive services, you can check the following URL
   - `<`<code><b>C4PA URL</b></code>`>/raml/index.html?raml=../aa-cloud-services.raml`
 
 ## Next Steps
-  - [Configure a SAPUI5 application to interact with the HCP predictive](http://go.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+  - [Configure a SAPUI5 application to interact with the HCP predictive](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
 

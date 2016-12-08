@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>cloud, topic>sapui5, products>sap-web-ide ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Getting started with the SAP Fiori, Demo Cloud Edition](http://go.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html)
+ - **Tutorials:** [Getting started with the SAP Fiori, Demo Cloud Edition](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html)
 
 ## Next Steps
- - [Add extended app to SAP Fiori launchpad](http://go.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
+ - [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
 
 ## Details
 ### You will learn  
@@ -23,7 +23,7 @@ In this tutorial you will learn how to hide a view element from a standard SAP F
 
 ---
 
-1. Please make sure that you have worked through the tutorial [Getting started with the SAP Fiori, Demo Cloud Edition](http://go.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html). Log into the SAP Fiori Demo Cloud Edition and locate the group **Human Capital Management**. Click on the **My Leave Requests** tile.
+1. Please make sure that you have worked through the tutorial [Getting started with the SAP Fiori, Demo Cloud Edition](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html). Log into the SAP Fiori Demo Cloud Edition and locate the group **Human Capital Management**. Click on the **My Leave Requests** tile.
 
     ![SAP Fiori launchpad group Human Capital Management](Launchpag-My-Leave-Requests.png)
 
@@ -87,4 +87,4 @@ In this tutorial you will learn how to hide a view element from a standard SAP F
 Congratulations, you’ve successfully hid a view element from a SAP Standard Fiori app.
 
 ## Next Steps
- - [Add extended app to SAP Fiori launchpad](http://go.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
+ - [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)

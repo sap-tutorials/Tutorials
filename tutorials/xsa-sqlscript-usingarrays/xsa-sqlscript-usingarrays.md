@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Using Cursors](http://go.sap.com/developer/tutorials/xsa-sqlscript-usingarrays.html)
+ - **Tutorials:** [Using Cursors](http://www.sap.com/developer/tutorials/xsa-sqlscript-usingarrays.html)
 
 ## Next Steps
- - [Using Index-based Cell Access](http://go.sap.com/developer/tutorials/xsa-sqlscript-usingindexbased.html)
+ - [Using Index-based Cell Access](http://www.sap.com/developer/tutorials/xsa-sqlscript-usingindexbased.html)
 
 ## Details
 ### You will learn  
@@ -67,4 +67,4 @@ This solution shows how to use Arrays data iteration as well as the result creat
 
 
 ## Next Steps
- - [Using Index-based Cell Access](http://go.sap.com/developer/tutorials/xsa-sqlscript-usingindexbased.html)
+ - [Using Index-based Cell Access](http://www.sap.com/developer/tutorials/xsa-sqlscript-usingindexbased.html)

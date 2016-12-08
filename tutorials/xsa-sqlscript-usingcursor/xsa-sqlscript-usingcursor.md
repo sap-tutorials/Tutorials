@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [SQL vs Cursors vs Arrays vs Index-based Cell Access](http://go.sap.com/developer/tutorials/xsa-sqlscript-sql-cursor.html)
+ - **Tutorials:** [SQL vs Cursors vs Arrays vs Index-based Cell Access](http://www.sap.com/developer/tutorials/xsa-sqlscript-sql-cursor.html)
 
 ## Next Steps
- - [Using Arrays](http://go.sap.com/developer/tutorials/xsa-sqlscript-usingarrays.html)
+ - [Using Arrays](http://www.sap.com/developer/tutorials/xsa-sqlscript-usingarrays.html)
 
 ## Details
 ### You will learn  
@@ -89,4 +89,4 @@ This solution leverages a cursor for looping over the rows and calculating the s
 	
 
 ## Next Steps
- - [Using Arrays](http://go.sap.com/developer/tutorials/xsa-sqlscript-usingarrays.html)
+ - [Using Arrays](http://www.sap.com/developer/tutorials/xsa-sqlscript-usingarrays.html)

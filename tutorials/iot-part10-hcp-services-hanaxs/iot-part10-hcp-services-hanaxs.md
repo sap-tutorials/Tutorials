@@ -7,10 +7,10 @@ tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topi
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
+ - **Tutorials:** [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://www.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
 
 ## Next Steps
- - [Internet of Things (IoT) Viewing your Tessel data in a graph](http://go.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
+ - [Internet of Things (IoT) Viewing your Tessel data in a graph](http://www.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
 
 
 
@@ -58,7 +58,7 @@ Now that your IoT Services are collecting data and you were able to view it your
 
 7. Now start (or restart) the `iotmms` Java application.
 
-8. With that finished you should be able to go back to your MDC instance and select the "Catalog" under the menu options along the top of the page and see your tables now listed under "SYSTEM" schema - if not return to the IoT Services and send another test message. ([see tutorial](http://go.sap.com/developer/tutorials/iot-part7-add-device.html)). So provided you received the “200” status in your messages then you should now have data in your tables and can begin working on your XS application.
+8. With that finished you should be able to go back to your MDC instance and select the "Catalog" under the menu options along the top of the page and see your tables now listed under "SYSTEM" schema - if not return to the IoT Services and send another test message. ([see tutorial](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)). So provided you received the “200” status in your messages then you should now have data in your tables and can begin working on your XS application.
 
   ![Tables](9.png)
 
@@ -95,4 +95,4 @@ Now that your IoT Services are collecting data and you were able to view it your
 
 
 ## Next Steps
- - [Internet of Things (IoT) Viewing your Tessel data in a graph](http://go.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
+ - [Internet of Things (IoT) Viewing your Tessel data in a graph](http://www.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)

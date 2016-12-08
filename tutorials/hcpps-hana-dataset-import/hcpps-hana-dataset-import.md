@@ -6,10 +6,10 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Setup a HANA user account for the HCP predictive services](http://go.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+  - **Tutorials:** [Setup a HANA user account for the HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
 
 ## Next Steps
-  - [Expose your predictive demo dataset as an OData service](http://go.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
+  - [Expose your predictive demo dataset as an OData service](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
 
 ## Details
 ### You will learn
@@ -43,4 +43,4 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
     ![Catalog](4.png)
 
 ## Next Steps
-  - [Expose your predictive demo dataset as an OData service](http://go.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
+  - [Expose your predictive demo dataset as an OData service](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)

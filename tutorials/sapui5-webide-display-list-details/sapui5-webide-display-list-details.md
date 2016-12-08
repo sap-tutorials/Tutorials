@@ -5,11 +5,11 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner 
-- **How-To** [Start this tutorial series](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
-- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 5: [Enable Routing in your Application](https://go.sap.com/developer/tutorials/sapui5-webide-enable-routing.html)
+- **How-To** [Start this tutorial series](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 5: [Enable Routing in your Application](http://www.sap.com/developer/tutorials/sapui5-webide-enable-routing.html)
 
 ## Next Steps
- - Part 7 is next: [Update Internationalization](https://go.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
+ - Part 7 is next: [Update Internationalization](http://www.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
 
 ## Details
 ### You will learn  
@@ -21,7 +21,7 @@ You will also add a Detail view and controller as well as alter the `View1` view
 **10-15 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 
 1.  Open the `webapp/view/View1.view.xml` file, and change the `<StandardListItem type="Active">` tag to read:
@@ -178,7 +178,7 @@ You will also add a Detail view and controller as well as alter the `View1` view
     ![Current application - detail view](12b.png)
 
 ## Next Steps
- - Part 7 is next: [Update Internationalization](https://go.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
+ - Part 7 is next: [Update Internationalization](http://www.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
 
 ## Additional Reading
 - [Routing with mandatory parameters](http://help.sap.com/saphelp_nw75/helpdata/en/f9/6d2522a5ca4382a274ae3c6d002ca0/content.htm)

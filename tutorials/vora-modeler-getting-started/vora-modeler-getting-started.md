@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Getting started with SAP HANA Vora Tools](http://go.sap.com/developer/tutorials/vora-tools-getting-started.html)
+ - **Tutorials:** [Getting started with SAP HANA Vora Tools](http://www.sap.com/developer/tutorials/vora-tools-getting-started.html)
 
 ## Next Steps
- - [SAP HANA Vora Modeler: Unions in SQL View](http://go.sap.com/developer/tutorials/vora-modeler-view-union.html)
+ - [SAP HANA Vora Modeler: Unions in SQL View](http://www.sap.com/developer/tutorials/vora-modeler-view-union.html)
 
 ## Details
 ### You will learn  
@@ -88,4 +88,4 @@ You will learn how to use Modeler artifacts to create SQL views with joins. It w
     Compare results of both statements.
 
 ## Next Steps
- - [SAP HANA Vora Modeler: Unions in SQL View](http://go.sap.com/developer/tutorials/vora-modeler-view-union.html)
+ - [SAP HANA Vora Modeler: Unions in SQL View](http://www.sap.com/developer/tutorials/vora-modeler-view-union.html)

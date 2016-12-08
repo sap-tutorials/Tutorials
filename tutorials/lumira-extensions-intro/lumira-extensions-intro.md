@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, products>sap-lumira]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Download and install SAP Lumira](http://go.sap.com/developer/tutorials/lumira-install.html)
+ - **Tutorials:** [Download and install SAP Lumira](http://www.sap.com/developer/tutorials/lumira-install.html)
 
 ## Next Steps
- - [Creating a new viz extension project](http://go.sap.com/developer/tutorials/lumira-web-ide-create-viz-extension.html)
+ - [Creating a new viz extension project](http://www.sap.com/developer/tutorials/lumira-web-ide-create-viz-extension.html)
 
 ## Details
 ### You will learn  
@@ -72,4 +72,4 @@ In this tutorial, you will learn how to use an example viz extension (Bullet Cha
     > Some differences may exist between viz extension charts and native Lumira charts, for example the ability to have custom controls like adding a reference line, data filters, are present in native Lumira charts, but may or may not be available for charts based on visualization extensions depending on how they were developed.
 
 ## Next Steps
- - [Creating a new viz extension project](http://go.sap.com/developer/tutorials/lumira-web-ide-create-viz-extension.html)
+ - [Creating a new viz extension project](http://www.sap.com/developer/tutorials/lumira-web-ide-create-viz-extension.html)

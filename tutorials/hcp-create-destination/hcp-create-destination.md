@@ -7,13 +7,13 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>mobile, topic>odata
 ## Prerequisites
  - **Proficiency:** Beginner
  - **Tutorials:**  This tutorial is used in several different series.  Choose the series to move backward:
-     - **Mobile Application Series**  [Sign up for an account on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
-     - **SAPUI5 with Web IDE Series** [Create an empty UI5 Web IDE project](https://go.sap.com/developer/tutorials/sapui5-webide-create-project.html)
+     - **Mobile Application Series**  [Sign up for an account on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+     - **SAPUI5 with Web IDE Series** [Create an empty UI5 Web IDE project](http://www.sap.com/developer/tutorials/sapui5-webide-create-project.html)
 
 ## Next Steps
 - This tutorial is used in several different series.  Choose the correct series below to move forward.
-    - **Mobile Application series** [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
-    - **SAPUI5 with Web IDE Series** [Set up the `datasource` in the application](https://go.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
+    - **Mobile Application series** [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+    - **SAPUI5 with Web IDE Series** [Set up the `datasource` in the application](http://www.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
 
 ## Details
 
@@ -63,5 +63,5 @@ The data source URL is <http://services.odata.org/V2/Northwind/Northwind.svc/>
 ## Next Steps
 Several of the tutorial series create a Northwind destination.  To return to your tutorial series, pick the series from the list below:
 
-- [**Mobile Application series** - Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
-- [**SAPUI5 with Web IDE series** - Create an empty UI5 Web IDE project](https://go.sap.com/developer/tutorials/sapui5-webide-create-project.html)
+- [**Mobile Application series** - Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+- [**SAPUI5 with Web IDE series** - Create an empty UI5 Web IDE project](http://www.sap.com/developer/tutorials/sapui5-webide-create-project.html)

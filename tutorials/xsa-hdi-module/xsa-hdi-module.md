@@ -7,10 +7,10 @@ tags: [products>sap-hana, products>sap-hana\,-express-edition, topic>big-data, t
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA XS Advanced Creating an HTML5 Module](http://go.sap.com/developer/tutorials/xsa-html5-module.html)
+ - **Tutorials:** [SAP HANA XS Advanced Creating an HTML5 Module](http://www.sap.com/developer/tutorials/xsa-html5-module.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 
 ## Details
@@ -470,4 +470,4 @@ HDI introduces the concept of the container as an abstraction of the Schema. The
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

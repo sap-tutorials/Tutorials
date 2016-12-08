@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Using Dynamic SQL vs Dynamic Filtering](http://go.sap.com/developer/tutorials/xsa-sqlscript-dynamic.html)
+ - **Tutorials:** [Using Dynamic SQL vs Dynamic Filtering](http://www.sap.com/developer/tutorials/xsa-sqlscript-dynamic.html)
 
 ## Next Steps
- - [Using APPLY FILTER](http://go.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)
+ - [Using APPLY FILTER](http://www.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)
 
 ## Details
 ### You will learn  
@@ -56,4 +56,4 @@ In contrast to executing a string using EXEC, executing the string using EXECUTE
     ![new count](9.png)
 
 ## Next Steps
- - [Using APPLY FILTER](http://go.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)
+ - [Using APPLY FILTER](http://www.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)

@@ -8,7 +8,7 @@ tags: [  tutorial>beginner ]
  - **Tutorials:** [Core Data  Services, Preparing views for Associations/Joins]
 
 ## Next Steps
-[Creating OData-Service based on `CDS-view`. ](http://go.sap.com/developer/tutorials/s4hana-cds-creating-odata-service.html)
+[Creating OData-Service based on `CDS-view`. ](http://www.sap.com/developer/tutorials/s4hana-cds-creating-odata-service.html)
 
 
 ## Details

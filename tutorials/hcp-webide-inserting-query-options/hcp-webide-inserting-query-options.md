@@ -6,10 +6,10 @@ tags: [products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topi
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [An Open Data Protocol (OData) primer for developers](http://go.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
+ - **Tutorials:** [An Open Data Protocol (OData) primer for developers](http://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
 
 ## Next Steps
- - [Manually creating a data model to use in SAP Web IDE's Mock Data server](http://go.sap.com/developer/tutorials/hcp-webide-create-odata-model.html)
+ - [Manually creating a data model to use in SAP Web IDE's Mock Data server](http://www.sap.com/developer/tutorials/hcp-webide-create-odata-model.html)
 
 ## Details
 ### You will learn  
@@ -20,7 +20,7 @@ The previous tutorial introduced a number of OData query options that developers
 
 ---
 
-1. Log into your [HCP account](https://account.hanatrial.ondemand.com) and open SAP Web IDE tab in a Google Chrome browser. Ensure that your latest code has been committed to your git repository. If so, you should have green dots next to the folders and files in your project (as shown below). If not, [commit your files to Git now](http://go.sap.com/developer/tutorials/hcp-webide-commit-git.html).
+1. Log into your [HCP account](https://account.hanatrial.ondemand.com) and open SAP Web IDE tab in a Google Chrome browser. Ensure that your latest code has been committed to your git repository. If so, you should have green dots next to the folders and files in your project (as shown below). If not, [commit your files to Git now](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html).
 
      ![Project folder](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_1.png)
 
@@ -142,4 +142,4 @@ The previous tutorial introduced a number of OData query options that developers
 
 
 ## Next Steps
- - [Manually creating a data model to use in SAP Web IDE's Mock Data server](http://go.sap.com/developer/tutorials/hcp-webide-create-odata-model.html)
+ - [Manually creating a data model to use in SAP Web IDE's Mock Data server](http://www.sap.com/developer/tutorials/hcp-webide-create-odata-model.html)

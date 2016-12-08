@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorial:** [Step 7 - Add a header and a detail modal dialog](http://go.sap.com/developer/tutorials/react-add-header-detail-dialog.html)
+ - **Tutorial:** [Step 7 - Add a header and a detail modal dialog](http://www.sap.com/developer/tutorials/react-add-header-detail-dialog.html)
 
 ## Next Steps
- - **Tutorial:** [Step 9 - Examine child to parent communication](http://go.sap.com/developer/tutorials/react-add-filter.html)
+ - **Tutorial:** [Step 9 - Examine child to parent communication](http://www.sap.com/developer/tutorials/react-add-filter.html)
 
 
 ## Details
@@ -455,4 +455,4 @@ ReactDOM.render(
 ---
 
 ## Next Steps
- - **Tutorial:** [Step 9 - Examine child to parent communication](http://go.sap.com/developer/tutorials/react-add-filter.html)
+ - **Tutorial:** [Step 9 - Examine child to parent communication](http://www.sap.com/developer/tutorials/react-add-filter.html)

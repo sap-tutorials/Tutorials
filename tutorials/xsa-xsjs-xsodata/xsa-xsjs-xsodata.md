@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>odata, products>sap-hana, products>sap-hana\,-
 ---
 ## Prerequisites  
  - **Proficiency:** beginner
- - **Tutorials:** [SAP HANA XS Advanced, Creating an HDI Module](http://go.sap.com/developer/tutorials/xsa-hdi-module.html)
+ - **Tutorials:** [SAP HANA XS Advanced, Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)
 
 ## Next Steps
- - [Create a simple OData service](http://go.sap.com/developer/tutorials/xsa-xsodata.html)
+ - [Create a simple OData service](http://www.sap.com/developer/tutorials/xsa-xsodata.html)
 
 ## Details
 ### You will learn  
@@ -44,7 +44,7 @@ For this exercise we will now build the XSJS and XSODATA services used to expose
     ```
     
     Later at deploy, the destination routing builds a dependency and navigation ability between the two services without ever having to hard code the URLs or ports. They are assigned at deploy time and all references are automatically updated. 
-6. If you remember back you maintained the `xs-app.json` of the App Router [web module](http://go.sap.com/developer/tutorials/xsa-html5-module.html). Now you can add rules for redirecting certain requests to the web module into other modules in this project. 
+6. If you remember back you maintained the `xs-app.json` of the App Router [web module](http://www.sap.com/developer/tutorials/xsa-html5-module.html). Now you can add rules for redirecting certain requests to the web module into other modules in this project. 
 
 	This is where you are configuring that any file request with the extension `.xsjs` or `.xsodata` should be rerouted internally to the Node.js destination that you defined in the `mta.yaml`. Note: if you don’t want to type this code, we recommend that you cut and paste it from this web address `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602 &sub=ex3_3`
 	
@@ -127,4 +127,4 @@ For this exercise we will now build the XSJS and XSODATA services used to expose
 
 
 ## Next Steps
- - [Create a simple OData service](http://go.sap.com/developer/tutorials/xsa-xsodata.html)
+ - [Create a simple OData service](http://www.sap.com/developer/tutorials/xsa-xsodata.html)

@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorials** Step 4 [Separate the JavaScript and CSS Files](http://go.sap.com/developer/tutorials/angular-separate-files.html)
+ - **Tutorials** Step 4 [Separate the JavaScript and CSS Files](http://www.sap.com/developer/tutorials/angular-separate-files.html)
 
 ## Next Steps
- - **Tutorials** Step 6 [Add a Header and Detail Modal Dialog](http://go.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)
+ - **Tutorials** Step 6 [Add a Header and Detail Modal Dialog](http://www.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)
 
 ## Details
 ### You will learn  
@@ -85,4 +85,4 @@ In this tutorial series, we will explore another technology for Single Page Appl
 - [`$get`](https://docs.angularjs.org/api/ng/service/$http#get) (which is a shortcut for `$http`)
 
 ## Next Steps
- - **Tutorials** Step 6 [Add a Header and Detail Modal Dialog](http://go.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)
+ - **Tutorials** Step 6 [Add a Header and Detail Modal Dialog](http://www.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)

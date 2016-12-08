@@ -5,10 +5,10 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>inte
 ---
 
 ## Prerequisites  
- - [End-to-End Weather App Scenario Part 6](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part6.html)
+ - [End-to-End Weather App Scenario Part 6](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part6.html)
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 8](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)
+ - [End-to-End Weather App Scenario Part 8](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)
 
 ## Details
 ### You will learn  
@@ -62,4 +62,4 @@ In this tutorial you will enhance the persistence layer with a multi-tenancy fea
 
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 8](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)
+ - [End-to-End Weather App Scenario Part 8](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)
