@@ -5,10 +5,10 @@ tags: [  tutorial>beginner ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Creating basic/interface views in Open Core Data Services ](http://go.sap.com/developer/tutorial-navigator.html)
+ - **Tutorials:** [Creating basic/interface views in Open Core Data Services ](http://www.sap.com/developer/tutorial-navigator.html)
 
 ## Next Steps
-[Preparing view association based on consumption view. ](http://go.sap.com/developer/tutorials/s4hana-cds-preparing-views-associations.html)
+[Preparing view association based on consumption view. ](http://www.sap.com/developer/tutorials/s4hana-cds-preparing-views-associations.html)
 
 
 ## Details

@@ -5,12 +5,12 @@ tags: [  tutorial>intermediate, topic>cloud, topic>security, products>sap-hana-c
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Sign up for an account on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Sign up for an account on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
  - You should also review the [system requirements for the cloud connector](https://help.hana.ondemand.com/help/frameset.htm?e23f776e4d594fdbaeeb1196d47bbcc0)
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -132,4 +132,4 @@ Review some related materials online:
  - [Configure RFC resource in Cloud Connector](https://help.hana.ondemand.com/help/frameset.htm?ca5868997e48468395cf0ca4882f5783.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>sapui5, products>sap-hana-cloud-platform ]
  - **Tutorials:** This is the first tutorial in this series.  
 
 ## Next Steps
- - [Register your App with an External API](http://go.sap.com/developer/tutorials/sapui5-register-app-api.html)
+ - [Register your App with an External API](http://www.sap.com/developer/tutorials/sapui5-register-app-api.html)
 
 ## Details
 ### You will learn  
@@ -136,4 +136,4 @@ See some other examples below of destination details for other APIs.
 [ACCORDION-END]
 
 ## Next Steps
- - [Register your App with an External API](http://go.sap.com/developer/tutorials/sapui5-register-app-api.html)
+ - [Register your App with an External API](http://www.sap.com/developer/tutorials/sapui5-register-app-api.html)

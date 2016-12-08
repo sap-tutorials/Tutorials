@@ -5,10 +5,10 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>inte
 ---
 
 ## Prerequisites  
- - [End-to-End Weather App Scenario Part 2](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)
+ - [End-to-End Weather App Scenario Part 2](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 4](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)
+ - [End-to-End Weather App Scenario Part 4](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)
 
 ## Details
 ### You will learn  
@@ -124,4 +124,4 @@ In this tutorial you will learn how to add authentication and authorization to y
 
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 4](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)
+ - [End-to-End Weather App Scenario Part 4](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)

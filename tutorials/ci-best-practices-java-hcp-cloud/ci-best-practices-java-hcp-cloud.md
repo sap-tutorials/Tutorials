@@ -9,16 +9,16 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Prerequisites
 
   - **Proficiency:** Intermediate
-  - [Generic Project with CI on Cloud](http://go.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html)
+  - [Generic Project with CI on Cloud](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html)
   
 ## Next Steps
 
 
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
 
 ---
 
-This section continues what is discussed in [Generic Project (Pure Java) Using Cloud Services](http://go.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html), applying the approach using GitHub and Travis CI as cloud services to sample code that is delivered as part of the SDK installation for Java Web development. The sample discussed here contains some web applications that are built using Maven and share a common parent `pom.xml` file. Documentation and resources for Java web application development include the following:
+This section continues what is discussed in [Generic Project (Pure Java) Using Cloud Services](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html), applying the approach using GitHub and Travis CI as cloud services to sample code that is delivered as part of the SDK installation for Java Web development. The sample discussed here contains some web applications that are built using Maven and share a common parent `pom.xml` file. Documentation and resources for Java web application development include the following:
 
 > Documentation: https://help.hana.ondemand.com/help/frameset.htm?e66f3eecbb5710148397a19b46c4979b.html  
 > Tutorial: https://hcp.sap.com/developers/TutorialCatalog/jav100_2_java_hello_world.html  
@@ -35,7 +35,7 @@ Figure 1: Landscape using GitHub and Travis CI
 ### Basic Setup
 
 
-Follow the instructions for creating the GitHub project and a Travis CI build as described in [Generic Project (Pure Java) Using Cloud Services](http://go.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html). As sources, use the sample project from the `samples` folder of the SAP HANA Cloud Platform SDK installation zip that you can download from the link below.
+Follow the instructions for creating the GitHub project and a Travis CI build as described in [Generic Project (Pure Java) Using Cloud Services](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html). As sources, use the sample project from the `samples` folder of the SAP HANA Cloud Platform SDK installation zip that you can download from the link below.
 
 > SDK installation guide: https://help.hana.ondemand.com/help/frameset.htm?7613843c711e1014839a8273b0e91070.html  
 > Downloads: https://tools.hana.ondemand.com/#cloud
@@ -44,7 +44,7 @@ This example uses the project name `java_hcp_project`.
 
 #### Procedure
 
-1. In GitHub, create a new repository named `java_hcp_project` and clone it to your local machine as described in [Generic Project (Pure Java) Using Cloud Services](http://go.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html), steps 1-4.
+1. In GitHub, create a new repository named `java_hcp_project` and clone it to your local machine as described in [Generic Project (Pure Java) Using Cloud Services](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html), steps 1-4.
 
 2. The `samples` folder in the SAP HANA Cloud Platform SDK contains a Maven parent project that includes a couple of modules. Copy the sources of this Maven project into your cloned `java_hcp_project` repository root folder. For this example, we are going to use only the `explore-ui5` module; use comments in the parent `pom.xml` file to not include the other modules in the Gerrit project:
 
@@ -62,7 +62,7 @@ This example uses the project name `java_hcp_project`.
     </modules>
     ```
 
-3. Continue setting up the GitHub project and Travis CI build as described in [Generic Project (Pure Java) Using Cloud Services](http://go.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html), steps 6-11. The result is a successful build of the `explore-ui5` application on Travis CI.
+3. Continue setting up the GitHub project and Travis CI build as described in [Generic Project (Pure Java) Using Cloud Services](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html), steps 6-11. The result is a successful build of the `explore-ui5` application on Travis CI.
 
 
 ### Deployment to SAP HANA Cloud Platform
@@ -219,5 +219,5 @@ More sophisticated control mechanisms are provided by Travis' build matrix:
 
 ## Next Steps
 
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
   

@@ -7,11 +7,11 @@ tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topi
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Internet of Things (IoT) Setup the Tessel](http://go.sap.com/developer/how-tos/iot-tessel.html)
+ - **Tutorials:** [Internet of Things (IoT) Setup the Tessel](http://www.sap.com/developer/how-tos/iot-tessel.html)
 
 
 ## Next Steps
- - [Internet of Things (IoT) Adding a new device to the IoT Services](http://go.sap.com/developer/tutorials/iot-part7-add-device.html)
+ - [Internet of Things (IoT) Adding a new device to the IoT Services](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)
 
 ## Details
 ### You will learn  
@@ -48,4 +48,4 @@ This procedure assumes you are using the trial edition of the SAP HANA Cloud Pla
     ![Authorizations](p6_8.png)
 
 9. Then under **Individual Users**, click **Assign** and enter your HCP user ID (e.g. your p-number without the word “trial” on the end).    ![Assign Role](p6_9.png)     Once user is assigned to the role, stop and start `iotmms` application.## Next Steps
- - [Internet of Things (IoT) Adding a new device to the IoT Services](http://go.sap.com/developer/tutorials/iot-part7-add-device.html)
+ - [Internet of Things (IoT) Adding a new device to the IoT Services](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)

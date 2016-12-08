@@ -5,11 +5,11 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner 
-- **How-To** [Start this tutorial series](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
-- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 6: [Display List Details](https://go.sap.com/developer/tutorials/sapui5-webide-display-list-details.html)
+- **How-To** [Start this tutorial series](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+- **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 6: [Display List Details](http://www.sap.com/developer/tutorials/sapui5-webide-display-list-details.html)
 
 ## Next Steps
- - The next tutorial is Step 8: [Improve the list and detail view](https://go.sap.com/developer/tutorials/sapui5-webide-upgrade-detail-view.html)
+ - The next tutorial is Step 8: [Improve the list and detail view](http://www.sap.com/developer/tutorials/sapui5-webide-upgrade-detail-view.html)
 
 ## Details
 ### You will learn  
@@ -19,7 +19,7 @@ Set proper titles to `View1` and `Detail` page by updating the resource model (a
 **5 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 
 1.  Open the `webapp/i18n/i18n.properties` file, and update the entire with the following lines.
@@ -40,7 +40,7 @@ Set proper titles to `View1` and `Detail` page by updating the resource model (a
 
 
 ## Next Steps
- - The next tutorial is Step 8: [Improve the list and detail view](https://go.sap.com/developer/tutorials/sapui5-webide-upgrade-detail-view.html)
+ - The next tutorial is Step 8: [Improve the list and detail view](http://www.sap.com/developer/tutorials/sapui5-webide-upgrade-detail-view.html)
 
 ##Additional Information
 - [Data-binding](http://help.sap.de/saphelp_uiaddon10/helpdata/en/91/f0f3cd6f4d1014b6dd926db0e91070/content.htm)

@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorial:** [Step 8 - Create child components](http://go.sap.com/developer/tutorials/react-child-components.html)
+ - **Tutorial:** [Step 8 - Create child components](http://www.sap.com/developer/tutorials/react-child-components.html)
 
 ## Next Steps
- - This is the end of the tutorial series.  [Return to the tutorial navigator.](http://go.sap.com/developer/tutorial-navigator.html)
+ - This is the end of the tutorial series.  [Return to the tutorial navigator.](http://www.sap.com/developer/tutorial-navigator.html)
 
 
 ## Details
@@ -450,4 +450,4 @@ ReactDOM.render(
 ---
 
 ## Next Steps
- - This is the end of the tutorial series.  [Return to the tutorial navigator.](http://go.sap.com/developer/tutorial-navigator.html)
+ - This is the end of the tutorial series.  [Return to the tutorial navigator.](http://www.sap.com/developer/tutorial-navigator.html)

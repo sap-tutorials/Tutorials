@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Using Exception Handling](http://go.sap.com/developer/tutorials/xsa-sqlscript-trans-exception.html)
+ - **Tutorials:** [Using Exception Handling](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-exception.html)
 
 ## Next Steps
- - [Using Autonomous Transactions](http://go.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)
+ - [Using Autonomous Transactions](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)
 
 ## Details
 ### You will learn  
@@ -77,4 +77,4 @@ In this exercise will show the impact of a runtime error on DML statements and h
 
 
 ## Next Steps
- - [Using Autonomous Transactions](http://go.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)
+ - [Using Autonomous Transactions](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)

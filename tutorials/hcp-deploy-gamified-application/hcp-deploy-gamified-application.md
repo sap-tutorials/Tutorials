@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
-     - [Create the gamified HelpDesk application](http://go.sap.com/developer/tutorials/hcp-gamification-sample-application.html)
+     - [Create the gamified HelpDesk application](http://www.sap.com/developer/tutorials/hcp-gamification-sample-application.html)
      - Configure Eclipse environment for Maven projects (Coming soon)
 
 ## Next Steps
- - [Customize game mechanics of HelpDesk application in SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-customize-gamified-application.html)
+ - [Customize game mechanics of HelpDesk application in SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-customize-gamified-application.html)
 
 ## Details
 ### You will learn  
@@ -78,4 +78,4 @@ In this tutorial, you will retrieve the gamified HelpDesk application from GitHu
     ![Successfully Launched HelpDesk Application](14.png)
 
 ## Next Steps
- - [Customize game mechanics of HelpDesk application in SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-customize-gamified-application.html)
+ - [Customize game mechanics of HelpDesk application in SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-customize-gamified-application.html)

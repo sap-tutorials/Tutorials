@@ -6,10 +6,10 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **Tutorials:** [Add a tab and additional fields to an SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-add-tab.html)
+ - **Tutorials:** [Add a tab and additional fields to an SAPUI5 app](http://www.sap.com/developer/tutorials/hcp-webide-add-tab.html)
 
 ## Next Steps
- - [Commit your project files to your HCP Git repository](http://go.sap.com/developer/tutorials/hcp-webide-commit-git.html)
+ - [Commit your project files to your HCP Git repository](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
 
 ## Details
 
@@ -136,4 +136,4 @@ The field is calculated each time the detail view is displayed and is not persis
     ![cleaned up function](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_14.png)
 
 ## Next Steps
- - [Commit your project files to your HCP Git repository](http://go.sap.com/developer/tutorials/hcp-webide-commit-git.html)
+ - [Commit your project files to your HCP Git repository](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)

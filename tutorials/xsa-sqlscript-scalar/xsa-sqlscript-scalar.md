@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:**  [Intermediate Table Variables](http://go.sap.com/developer/tutorials/xsa-sqlscript-table-var.html)
+ - **Tutorials:**  [Intermediate Table Variables](http://www.sap.com/developer/tutorials/xsa-sqlscript-table-var.html)
 
 ## Next Steps
- - [Creating Table User Defined Functions](http://go.sap.com/developer/tutorials/xsa-sqlscript-table-user.html)
+ - [Creating Table User Defined Functions](http://www.sap.com/developer/tutorials/xsa-sqlscript-table-user.html)
 
 ## Details
 ### You will learn  
@@ -76,4 +76,4 @@ In this exercise we are creating a scalar UDF for generating a full name from th
 
 
 ## Next Steps
- - [Creating Table User Defined Functions](http://go.sap.com/developer/tutorials/xsa-sqlscript-table-user.html)
+ - [Creating Table User Defined Functions](http://www.sap.com/developer/tutorials/xsa-sqlscript-table-user.html)

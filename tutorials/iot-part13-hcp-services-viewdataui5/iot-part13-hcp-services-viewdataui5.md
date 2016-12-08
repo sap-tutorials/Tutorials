@@ -7,10 +7,10 @@ tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topi
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:**  [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://go.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
+ - **Tutorials:**  [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
 
 ## Next Steps
- - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://go.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+ - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
 
 
 ## Details
@@ -66,4 +66,4 @@ Now that you have data stored in the system its time to display that data within
 	```
 
 ## Next Steps
- - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://go.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+ - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)

@@ -4,10 +4,10 @@ description: Access your first data in a native SAP HANA Application.
 tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
 ---
 ## Prerequisites  
-[How to create an SAP HANA Developer Edition in the Cloud](http://go.sap.com/developer/tutorials/hana-setup-cloud.html)
+[How to create an SAP HANA Developer Edition in the Cloud](http://www.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 ## Next Steps
-- [Develop your first SAP HANA XSC application](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
+- [Develop your first SAP HANA XSC application](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
 
  
 ## Details
@@ -21,7 +21,7 @@ tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-pla
 Beginners will take **20 minutes** to finish this tutorial.
 
 ### Host Configuration
-Access your HANA instance that was created in ["How to create an SAP HANA Developer Edition in the Cloud"](http://go.sap.com/developer/tutorials/hana-setup-cloud.html).
+Access your HANA instance that was created in ["How to create an SAP HANA Developer Edition in the Cloud"](http://www.sap.com/developer/tutorials/hana-setup-cloud.html).
 
 Chose Notepad as the Open with Editor.
 

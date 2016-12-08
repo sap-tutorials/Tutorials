@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Text Bundles](http://go.sap.com/developer/tutorials/xsa-node-text.html)
+ - **Tutorials:** [Text Bundles](http://www.sap.com/developer/tutorials/xsa-node-text.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -86,4 +86,4 @@ This section will demonstrate the ease at which you can tap into the powerful we
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

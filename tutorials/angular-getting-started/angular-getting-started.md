@@ -5,11 +5,11 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorials:** You will need a HANA Cloud Platform (HCP) trial account for this tutorial series.  [Create an HCP Trial Account](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** You will need a HANA Cloud Platform (HCP) trial account for this tutorial series.  [Create an HCP Trial Account](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
 #### AngularJS Series
- - **Tutorials:** Step 2 [Create the Bootstrap Template](http://go.sap.com/developer/tutorials/angular-bootstrap-template.html)
+ - **Tutorials:** Step 2 [Create the Bootstrap Template](http://www.sap.com/developer/tutorials/angular-bootstrap-template.html)
 
 ## Details
 ### You will learn  
@@ -117,5 +117,5 @@ In this tutorial series, we will explore another technology for Single Page Appl
 Yes, you can.   We are using Web IDE because it provides an unlimited, free, developer account.  It also has a built-in web front end, so that you can test your code immediately.  And, it has a pretty good HTML and JavaScript editing system.  But there are plenty of other development IDE's, including Eclipse, that would work as well.  Feel free to use the one that your company is using, or try out a new one.
 
 ## Next Steps
- - **Tutorials:** Step 2 [Create the Bootstrap Template](http://go.sap.com/developer/tutorials/angular-bootstrap-template.html)
+ - **Tutorials:** Step 2 [Create the Bootstrap Template](http://www.sap.com/developer/tutorials/angular-bootstrap-template.html)
 

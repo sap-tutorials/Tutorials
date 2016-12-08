@@ -6,10 +6,10 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Install a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-client-install.html)
+  - **Tutorials:** [Install a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
 
 ## Next Steps
-  - [Test the "Data Set" HCP predictive service from a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - [Test the "Data Set" HCP predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
 
 ## Details
 ### You will learn
@@ -146,8 +146,8 @@ Token                                | Value
     This will return only 21 items.
 
 ### Optional
-  - For more tutorials on OData, you can check [An Open Data Protocol (OData) primer for developers](http://go.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
+  - For more tutorials on OData, you can check [An Open Data Protocol (OData) primer for developers](http://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
 
 ## Next Steps
-  - [Test the "Data Set" HCP predictive service from a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - [Test the "Data Set" HCP predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
 

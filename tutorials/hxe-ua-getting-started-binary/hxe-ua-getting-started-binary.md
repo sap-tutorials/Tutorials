@@ -4,16 +4,16 @@ description: Explore how to connect to the SAP Web IDE for SAP HANA, Express Edi
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites
-- Install SAP HANA, express edition. See [Installing Binary](http://go.sap.com/developer/tutorials/hxe-ua-installing-binary.html).
+- Install SAP HANA, express edition. See [Installing Binary](http://www.sap.com/developer/tutorials/hxe-ua-installing-binary.html).
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn
 How to configure the binary install of SAP HANA, express edition.
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://go.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
 ### Time to Complete
 **20 Min.**
 ---
@@ -98,4 +98,4 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 `/usr/sap/HXE/HDB00/exe/hdbsql -d SystemDB -u <admin-username> -p <admin-password> "ALTER USER SYSTEM DEACTIVATE USER NOW;"`
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

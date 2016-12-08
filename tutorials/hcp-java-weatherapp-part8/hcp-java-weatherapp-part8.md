@@ -5,11 +5,11 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>inte
 ---
 
 ## Prerequisites  
- - [End-to-End Weather App Scenario Part 7](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part7.html)
+ - [End-to-End Weather App Scenario Part 7](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part7.html)
  - Register for an API Key from [openweathermap.org](http://openweathermap.org/appid)
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 9](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)
+ - [End-to-End Weather App Scenario Part 9](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)
 
 ## Details
 ### You will learn  
@@ -108,4 +108,4 @@ For this part of the series, you will consume a RESTful weather service that ret
 
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 9](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)
+ - [End-to-End Weather App Scenario Part 9](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)

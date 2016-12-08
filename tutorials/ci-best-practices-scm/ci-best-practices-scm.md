@@ -12,8 +12,8 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ## Next Steps
  
-  - [Build Scheduler](http://go.sap.com/developer/tutorials/ci-best-practices-build.html)
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
 
 ---
 
@@ -107,5 +107,5 @@ For installation of Git, see
 
 ## Next Steps
  
-  - [Build Scheduler](http://go.sap.com/developer/tutorials/ci-best-practices-build.html)
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

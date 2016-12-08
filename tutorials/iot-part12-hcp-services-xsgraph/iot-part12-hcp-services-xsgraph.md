@@ -7,10 +7,10 @@ tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topi
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Internet of Things (IoT) Viewing your Tessel data in a SAP HANA XS application](http://go.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+ - **Tutorials:** [Internet of Things (IoT) Viewing your Tessel data in a SAP HANA XS application](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 
 ## Details
@@ -109,4 +109,4 @@ Now that you have a basic application and service created you can now do a bit m
     ![graph](3.png)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

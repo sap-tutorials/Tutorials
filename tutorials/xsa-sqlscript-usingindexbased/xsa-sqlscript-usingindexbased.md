@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Using Arrays](http://go.sap.com/developer/tutorials/xsa-sqlscript-usingarrays.html)
+ - **Tutorials:** [Using Arrays](http://www.sap.com/developer/tutorials/xsa-sqlscript-usingarrays.html)
 
 ## Next Steps
- - [Using Exception Handling](http://go.sap.com/developer/tutorials/xsa-sqlscript-trans-exception.html)
+ - [Using Exception Handling](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-exception.html)
  
 ## Details
 ### You will learn  
@@ -55,4 +55,4 @@ This solution shows how to use index-based cell access to achieve the same. This
 	
 
 ## Next Steps
- - [Using Exception Handling](http://go.sap.com/developer/tutorials/xsa-sqlscript-trans-exception.html)
+ - [Using Exception Handling](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-exception.html)

@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, products>sap-lumira ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Download and install SAP BusinessObjects Lumira](http://go.sap.com/developer/tutorials/lumira-install.html)
+ - **Tutorials:** [Download and install SAP BusinessObjects Lumira](http://www.sap.com/developer/tutorials/lumira-install.html)
 
 ## Next Steps
- - [Initial data exploration in SAP BusinessObjects Lumira](http://go.sap.com/developer/tutorials/lumira-initial-data-exploration.html)
+ - [Initial data exploration in SAP BusinessObjects Lumira](http://www.sap.com/developer/tutorials/lumira-initial-data-exploration.html)
 
 ## Details
 ### You will learn  
@@ -58,4 +58,4 @@ How to acquire data into SAP BusinessObjects Lumira using sample MS Excel file.
     > Lumira documents have extension `.lums`. These files are zipped archives containing multiple files, like configuration and data files, visualization thumbnails etc.
 
 ## Next Steps
- - [Initial data exploration in SAP BusinessObjects Lumira](http://go.sap.com/developer/tutorials/lumira-initial-data-exploration.html)
+ - [Initial data exploration in SAP BusinessObjects Lumira](http://www.sap.com/developer/tutorials/lumira-initial-data-exploration.html)

@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Creating an OData Service with Create Operation and XSJS Exit](http://go.sap.com/developer/tutorials/xsa-xsodata-create.html)
+ - **Tutorials:** [Creating an OData Service with Create Operation and XSJS Exit](http://www.sap.com/developer/tutorials/xsa-xsodata-create.html)
 
 ## Next Steps
- - [Consume a Basic OData Service](http://go.sap.com/developer/tutorials/xsa-sapui5-odata.html)
+ - [Consume a Basic OData Service](http://www.sap.com/developer/tutorials/xsa-sapui5-odata.html)
 
 ## Details
 ### You will learn  
@@ -96,4 +96,4 @@ Now we want to build a proper SAPUI5 interface that will consume our XSJS and XS
 	
 
 ## Next Steps
- - [Consume a Basic OData Service](http://go.sap.com/developer/tutorials/xsa-sapui5-odata.html)
+ - [Consume a Basic OData Service](http://www.sap.com/developer/tutorials/xsa-sapui5-odata.html)

@@ -5,11 +5,11 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Loading sample data using Apache Zeppelin](http://go.sap.com/developer/tutorials/vora-zeppelin-load-sample-data.html)
+ - **Tutorials:** [Loading sample data using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-zeppelin-load-sample-data.html)
  - Understanding basics of Apache Spark
 
 ## Next Steps
- - [Getting started with SAP HANA Vora Modeler: Creating SQL views](http://go.sap.com/developer/tutorials/vora-modeler-getting-started.html)
+ - [Getting started with SAP HANA Vora Modeler: Creating SQL views](http://www.sap.com/developer/tutorials/vora-modeler-getting-started.html)
 
 ## Details
 ### You will learn  
@@ -64,4 +64,4 @@ You will learn how to start SAP HANA Vora Tools and using two of them: SQL Edito
     ![Browsing data](voratools04.jpg)
 
 ## Next Steps
- - [Getting started with SAP HANA Vora Modeler: Creating SQL views](http://go.sap.com/developer/tutorials/vora-modeler-getting-started.html)
+ - [Getting started with SAP HANA Vora Modeler: Creating SQL views](http://www.sap.com/developer/tutorials/vora-modeler-getting-started.html)

@@ -6,10 +6,10 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Manually creating a data model to use in SAP Web IDE’s Mock Data server](http://go.sap.com/developer/tutorials/hcp-webide-create-odata-model.html)
+ - **Tutorials:** [Manually creating a data model to use in SAP Web IDE’s Mock Data server](http://www.sap.com/developer/tutorials/hcp-webide-create-odata-model.html)
 
 ## Next Steps
- - [Switch your app from mock data to a live OData service](http://go.sap.com/developer/tutorials/hcp-webide-switch-live-odata.html)
+ - [Switch your app from mock data to a live OData service](http://www.sap.com/developer/tutorials/hcp-webide-switch-live-odata.html)
 
 ## Details
 ### You will learn  
@@ -17,9 +17,9 @@ In the previous tutorial you created an OData entity model by hand. In this tuto
 
 The steps in this tutorial assume that you are familiar with the Web IDE menu and template wizard, and have created an OData model in the previous tutorial. If you are not familiar with Web IDE, it is suggested that you complete the following three tutorials first:
 
- - [Create a Destination on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
- - [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
- - [Deploy your mobile web app to SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+ - [Create a Destination on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+ - [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+ - [Deploy your mobile web app to SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
 
 ### Time to Complete
 
@@ -135,4 +135,4 @@ The steps in this tutorial assume that you are familiar with the Web IDE menu an
     To add the data back to your project, you can simply open and replace the content of the JSON files in your project.
 
 ## Next Steps
- - [Switch your app from mock data to a live OData service](http://go.sap.com/developer/tutorials/hcp-webide-switch-live-odata.html)
+ - [Switch your app from mock data to a live OData service](http://www.sap.com/developer/tutorials/hcp-webide-switch-live-odata.html)

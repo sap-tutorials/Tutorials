@@ -6,10 +6,10 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **Tutorials:** [Insert a currency symbol for display](http://go.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)
+ - **Tutorials:** [Insert a currency symbol for display](http://www.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)
 
 ## Next Steps
- - [Calculate and display a new field in an SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-calculate-new-field.html)
+ - [Calculate and display a new field in an SAPUI5 app](http://www.sap.com/developer/tutorials/hcp-webide-calculate-new-field.html)
 
 ## Details
 
@@ -219,4 +219,4 @@ layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" title="{i18n>
 5. You can now re-deploy the app to HCP so you will be able to see your changes on your mobile device.
 
 ## Next Steps
- - [Calculate and display a new field in an SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-calculate-new-field.html)
+ - [Calculate and display a new field in an SAPUI5 app](http://www.sap.com/developer/tutorials/hcp-webide-calculate-new-field.html)

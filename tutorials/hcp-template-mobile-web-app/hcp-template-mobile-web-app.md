@@ -5,10 +5,10 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Create a Destination on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
+ - **Tutorials:** [Create a Destination on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
 
 ## Next Steps
- - [Deploy an app to SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+ - [Deploy an app to SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
 
 ## Details
 
@@ -147,4 +147,4 @@ You will be setting a few configurations, then filling out a few forms in this s
     ![Finished mobile web app running in preview mode](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_21.png)
 
 ## Next Steps
- - [Deploy an app to SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+ - [Deploy an app to SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)

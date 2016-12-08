@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [SAPUI5 User Interface](http://go.sap.com/developer/tutorials/xsa-sapui5.html)
+ - **Tutorials:** [SAPUI5 User Interface](http://www.sap.com/developer/tutorials/xsa-sapui5.html)
 
 ## Next Steps
- - [Use OData Metadata to dynamically create the columns](http://go.sap.com/developer/tutorials/xsa-sapui5-metadata.html)
+ - [Use OData Metadata to dynamically create the columns](http://www.sap.com/developer/tutorials/xsa-sapui5-metadata.html)
 
 ## Details
 ### You will learn  
@@ -80,4 +80,4 @@ Consume a Basic OData Service within UI5 binding the service to a Table.
 	![run](11.png)
 
 ## Next Steps
- - [Use OData Metadata to dynamically create the columns](http://go.sap.com/developer/tutorials/xsa-sapui5-metadata.html)
+ - [Use OData Metadata to dynamically create the columns](http://www.sap.com/developer/tutorials/xsa-sapui5-metadata.html)

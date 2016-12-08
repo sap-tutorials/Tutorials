@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>sapui5, products>sap-hana-cloud-platform, prod
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Commit your project to Git and deploy to the cloud](http://go.sap.com/developer/tutorials/teched-2016-6.html)
+ - **Tutorials:** [Commit your project to Git and deploy to the cloud](http://www.sap.com/developer/tutorials/teched-2016-6.html)
 
 
 ## Next Steps
- - [Add a map display to your app](http://go.sap.com/developer/tutorials/teched-2016-7.html)
+ - [Add a map display to your app](http://www.sap.com/developer/tutorials/teched-2016-7.html)
 
 ## Details
 ### You will learn  
@@ -348,4 +348,4 @@ Map tab:
 [ACCORDION-END]
 
 ## Next Steps
- - [Add a map display to your app](http://go.sap.com/developer/tutorials/teched-2016-7.html)
+ - [Add a map display to your app](http://www.sap.com/developer/tutorials/teched-2016-7.html)

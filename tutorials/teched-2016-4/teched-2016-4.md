@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create an SAP HANA Cloud Platform destination pointing to an SAP Gateway](http://go.sap.com/developer/tutorials/teched-2016-3.html)
+ - **Tutorials:** [Create an SAP HANA Cloud Platform destination pointing to an SAP Gateway](http://www.sap.com/developer/tutorials/teched-2016-3.html)
 
 ## Next Steps
- - [Commit your project to Git and deploy to the cloud](http://go.sap.com/developer/tutorials/teched-2016-5.html)
+ - [Commit your project to Git and deploy to the cloud](http://www.sap.com/developer/tutorials/teched-2016-5.html)
 
 ## Details
 ### You will learn  
@@ -233,4 +233,4 @@ You have just built an SAP Fiori UX app.
 [ACCORDION-END]
 
 ## Next Steps
- - [Commit your project to Git and deploy to the cloud](http://go.sap.com/developer/tutorials/teched-2016-5.html)
+ - [Commit your project to Git and deploy to the cloud](http://www.sap.com/developer/tutorials/teched-2016-5.html)

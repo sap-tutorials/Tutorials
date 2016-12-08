@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Intro to SAP HANA Spatial: Points](http://go.sap.com/developer/tutorials/hana-spatial-intro1-point.html)
+ - **Tutorials:** [Intro to SAP HANA Spatial: Points](http://www.sap.com/developer/tutorials/hana-spatial-intro1-point.html)
 
 ## Next Steps
- - [Intro to SAP HANA Spatial: Polygons](http://go.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
+ - [Intro to SAP HANA Spatial: Polygons](http://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
 
 ## Details
 ### You will learn  
@@ -130,4 +130,4 @@ You will continue learning basics of spatial processing now with ___strings___ (
  - Check SAP HANA Spatial Reference at http://help.sap.com/hana_platform
 
 ## Next Steps
- - [Intro to SAP HANA Spatial: Polygons](http://go.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
+ - [Intro to SAP HANA Spatial: Polygons](http://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)

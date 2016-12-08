@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana,-express-editio
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA Studio, Import your data](http://go.sap.com/developer/tutorials/studio-import-data.html)
+ - **Tutorials:** [SAP HANA Studio, Import your data](http://www.sap.com/developer/tutorials/studio-import-data.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -101,4 +101,4 @@ Now that you have data it's time to display it in some way as well as enable acc
 		
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

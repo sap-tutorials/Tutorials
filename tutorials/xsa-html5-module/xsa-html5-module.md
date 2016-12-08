@@ -7,10 +7,10 @@ tags: [products>sap-hana, products>sap-hana\,-express-edition, topic>big-data, t
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA XS Advanced Connecting to SAP Web IDE for SAP HANA](http://go.sap.com/developer/tutorials/xsa-connecting-webide.html)
+ - **Tutorials:** [SAP HANA XS Advanced Connecting to SAP Web IDE for SAP HANA](http://www.sap.com/developer/tutorials/xsa-connecting-webide.html)
 
 ## Next Steps
- - [SAP HANA XS Advanced Creating an HDI Module](http://go.sap.com/developer/tutorials/xsa-hdi-module.html)
+ - [SAP HANA XS Advanced Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)
 
 
 ## Details
@@ -135,4 +135,4 @@ You will now create the HTML5 module to add basic web based content to your XSA 
 
 
 ## Next Steps
- - [SAP HANA XS Advanced Creating an HDI Module](http://go.sap.com/developer/tutorials/xsa-hdi-module.html)
+ - [SAP HANA XS Advanced Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)

@@ -7,8 +7,8 @@ tags: [  tutorial>beginner, products>sap-hybris-as-a-service-on-sap-hana-cloud-p
  - **Proficiency:** Beginner
 
 ## Next Steps
- - [Download and Run the Default YaaS Storefront](http://go.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)
- - [Extend the YaaS Storefront's Functionality](http://go.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
+ - [Download and Run the Default YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)
+ - [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
 
 ## Details
 ### You will learn  
@@ -75,5 +75,5 @@ You will learn how to create your own YaaS project. This project will provide ba
 In this step, you created your own YaaS project and a YaaS client. You also learned how to subscribe to different packages on YaaS Market. The next step is downloading and running a default YaaS Storefront project which runs locally on your machine. You will browse through a storefront which is populated with products and services.    
 
 ## Next Steps
- - [Download and Run the Default YaaS Storefront](http://go.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)
- - [Extend the YaaS Storefront's Functionality](http://go.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
+ - [Download and Run the Default YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)
+ - [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)

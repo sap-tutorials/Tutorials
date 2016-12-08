@@ -5,14 +5,14 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [SAP HANA XS Advanced, Creating a Node.js Module](http://go.sap.com/developer/tutorials/xsa-xsjs-xsodata.html)
+ - **Tutorials:** [SAP HANA XS Advanced, Creating a Node.js Module](http://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html)
 
 ## Next Steps
- - [HANA Database Access from Node.js](http://go.sap.com/developer/tutorials/xsa-node-dbaccess.html)
+ - [HANA Database Access from Node.js](http://www.sap.com/developer/tutorials/xsa-node-dbaccess.html)
 
 ## Details
 ### You will learn  
-In a previous tutorial you created a [SAP HANA XS Advanced, Creating a Node.js Module](http://go.sap.com/developer/tutorials/xsa-xsjs-xsodata.html), but didn’t really do much Node.js specific programming.  You were only using Node.js to run XSJS and XSODATA services. The support for XSJS and XSODATA is an important feature for XS Advanced. It not only allows backward compatible support for much of your existing development; but it provides a simplified programming model as an alternative to the non-block I/O event driven programming model normally used by Node.jsBut you certainly aren’t limited to only the functionality provided by XSJS and XSODATA. You have access to the full programming model of Node.js as well. In this section you will learn how to extend your existing Node.js module in the SAP Web IDE for SAP HANA. You will learn about how to create and use reusable code in the form of Node.js modules. You will use `packages.json` to define dependencies to these modules which make the installation of them quite easy. You will use one of the most popular modules – express; which helps with the setup the handling of the request and response object. You will use express to handle multiple HTTP handlers in the same service by using routes. You will learn about the fundamentals of the asynchronous nature of Node.js You will also see how this asynchronous capability allows for non-blocking input and output. This technique is one of the basic things that makes Node.js development different from other JavaScript development and also creates one of the reasons for its growing popularity. You will see how these techniques are applied to common operations like HTTP web service calls or even SAP HANA database access. You will also see how to create language translatable text strings and HANA database queries from Node.jsYour final part of this section will demonstrate the ease at which you can tap into the powerful web sockets capabilities of Node.js You will use web sockets to build a simple chat application. Any message sent from the SAPUI5 client side application will be propagated by the server to all listening clients. 
+In a previous tutorial you created a [SAP HANA XS Advanced, Creating a Node.js Module](http://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html), but didn’t really do much Node.js specific programming.  You were only using Node.js to run XSJS and XSODATA services. The support for XSJS and XSODATA is an important feature for XS Advanced. It not only allows backward compatible support for much of your existing development; but it provides a simplified programming model as an alternative to the non-block I/O event driven programming model normally used by Node.jsBut you certainly aren’t limited to only the functionality provided by XSJS and XSODATA. You have access to the full programming model of Node.js as well. In this section you will learn how to extend your existing Node.js module in the SAP Web IDE for SAP HANA. You will learn about how to create and use reusable code in the form of Node.js modules. You will use `packages.json` to define dependencies to these modules which make the installation of them quite easy. You will use one of the most popular modules – express; which helps with the setup the handling of the request and response object. You will use express to handle multiple HTTP handlers in the same service by using routes. You will learn about the fundamentals of the asynchronous nature of Node.js You will also see how this asynchronous capability allows for non-blocking input and output. This technique is one of the basic things that makes Node.js development different from other JavaScript development and also creates one of the reasons for its growing popularity. You will see how these techniques are applied to common operations like HTTP web service calls or even SAP HANA database access. You will also see how to create language translatable text strings and HANA database queries from Node.jsYour final part of this section will demonstrate the ease at which you can tap into the powerful web sockets capabilities of Node.js You will use web sockets to build a simple chat application. Any message sent from the SAPUI5 client side application will be propagated by the server to all listening clients. 
 
 ### Time to Complete
 **15 Min**.
@@ -67,7 +67,7 @@ In a previous tutorial you created a [SAP HANA XS Advanced, Creating a Node.js M
 
 	![successful build](10.png)
 
-11. However if you go to the tab where the service run was started, you will see an Unauthorized message just as you did in [SAP HANA XS Advanced, Creating a Node.js Module](http://go.sap.com/developer/tutorials/xsa-xsjs-xsodata.html).  This is as intended.
+11. However if you go to the tab where the service run was started, you will see an Unauthorized message just as you did in [SAP HANA XS Advanced, Creating a Node.js Module](http://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html).  This is as intended.
 
 	![unauthorized](11.png)
 
@@ -83,4 +83,4 @@ In a previous tutorial you created a [SAP HANA XS Advanced, Creating a Node.js M
 	![change path](14.png)
 
 ## Next Steps
- - [HANA Database Access from Node.js](http://go.sap.com/developer/tutorials/xsa-node-dbaccess.html)
+ - [HANA Database Access from Node.js](http://www.sap.com/developer/tutorials/xsa-node-dbaccess.html)

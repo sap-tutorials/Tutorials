@@ -9,19 +9,19 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Prerequisites  
 
   - **Proficiency:** Intermediate
-  - [Source Code Versioning System](http://go.sap.com/developer/tutorials/ci-best-practices-scm.html)
-  - [Build Scheduler](http://go.sap.com/developer/tutorials/ci-best-practices-build.html)
-  - [Artifact Repository](http://go.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
-  - [Landscape Configuration](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-  - [Generic Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)
+  - [Source Code Versioning System](http://www.sap.com/developer/tutorials/ci-best-practices-scm.html)
+  - [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html)
+  - [Artifact Repository](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
+  - [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+  - [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html)
   
 ## Next Steps
 
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
   
 ---
 
-> This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html). For all the examples working properly make sure that you have followed the setup instructions for all components listed in the prerequisites box.
+> This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html). For all the examples working properly make sure that you have followed the setup instructions for all components listed in the prerequisites box.
 
 
 ### 1. Introduction
@@ -63,7 +63,7 @@ Figure 1: The high-level process flow
   
 Note: This process does not yet contain a review or validation step. Developer's changes are pushed directly into the master branch of the central Git server. There are various ways to implement a review and validation step before merging changes into the `master` branch including the following:
     
-- If you are using GitHub, you can use pull requests to pre-validate and prepare changes. Install build hooks that trigger CI-like builds on the underlying feature branches. For information about implementing this method, see [Generic Project with CI using Cloud Services](http://go.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html).
+- If you are using GitHub, you can use pull requests to pre-validate and prepare changes. Install build hooks that trigger CI-like builds on the underlying feature branches. For information about implementing this method, see [Generic Project with CI using Cloud Services](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html).
 
 - The scenario we detail in this chapter uses feature branches in the central Git repository. CI-like builds are triggered whenever a change is pushed into the feature branch. Feature branches are manually merged into the `master` branch where the CI build is running. The central Git repository can be hosted by a Gerrit instance, which controls the access permissions. Review and voter features are not used.
 
@@ -97,7 +97,7 @@ Figure 4 summarizes the infrastructure that is required to run the process.
 
 Figure 4: Landscape for Fiori on ABAP front-end server
 
-The scenario described here builds on the chapters that describe how to set up an example infrastructure using Git/Gerrit as SCM and Jenkins as CI task engine. For details, see the corresponding chapters that are linked from our [navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html) page. However, you may decide to use another SCM system or CI task engine.
+The scenario described here builds on the chapters that describe how to set up an example infrastructure using Git/Gerrit as SCM and Jenkins as CI task engine. For details, see the corresponding chapters that are linked from our [navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html) page. However, you may decide to use another SCM system or CI task engine.
 
 
 ### 2. Prerequisites
@@ -134,7 +134,7 @@ You can either use SAP Web IDE on SAP HANA Cloud Platform, or alternatively, you
   
 2. In SAP Web IDE, go to **Tools > Preferences > Git settings**. Enter your Git user name and email address, and save your settings.
 
-3. In Gerrit, create a project with a `master` branch as described in [Generic Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html).
+3. In Gerrit, create a project with a `master` branch as described in [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html).
 
 4. Select the workspace folder, then select one of the following options::
 
@@ -242,7 +242,7 @@ You may clone the Git repository to your local machine either using SAP Web IDE 
 
 ### 7. Creating the CI Build
 
-We create the job for the CI build on the current `master` snapshot, which is triggered on each change. The configuration and credentials used in this section are based on the examples in [Build Scheduler](http://go.sap.com/developer/tutorials/ci-best-practices-build.html).
+We create the job for the CI build on the current `master` snapshot, which is triggered on each change. The configuration and credentials used in this section are based on the examples in [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html).
 
 #### Procedure
 
@@ -1272,4 +1272,4 @@ module.exports = function(grunt) {
 
 ## Next Steps
 
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

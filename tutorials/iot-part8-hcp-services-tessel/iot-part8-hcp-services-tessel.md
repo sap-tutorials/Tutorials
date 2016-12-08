@@ -7,10 +7,10 @@ tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topi
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Internet of Things (IoT) Adding a new device to the IoT Services](http://go.sap.com/developer/tutorials/iot-part7-add-device.html)
+ - **Tutorials:** [Internet of Things (IoT) Adding a new device to the IoT Services](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)
 
 ## Next Steps
- - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
+ - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
 
 
 ## Details
@@ -129,4 +129,4 @@ Now its time to insert data from your Tessel to SAP IoT Services.
     ![Viewing new values in HCP](p8_8.png)
 
 ## Next Steps
-  - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
+  - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)

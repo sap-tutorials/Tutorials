@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-gateway, products>sap-hana
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create an account on the Gateway Demo system](http://go.sap.com/developer/tutorials/gateway-demo-signup.html)
+ - **Tutorials:** [Create an account on the Gateway Demo system](http://www.sap.com/developer/tutorials/gateway-demo-signup.html)
 
 ## Next Steps
- - [Build an SAP Fiori UX app with SAP Gateway data](http://go.sap.com/developer/tutorials/teched-2016-4.html)
+ - [Build an SAP Fiori UX app with SAP Gateway data](http://www.sap.com/developer/tutorials/teched-2016-4.html)
 
 ## Details
 ### You will learn  
@@ -84,4 +84,4 @@ Note that the **Check Connection** operation is not validating your user credent
 
 
 ## Next Steps
- - [Build an SAP Fiori UX app with SAP Gateway data](http://go.sap.com/developer/tutorials/teched-2016-4.html)
+ - [Build an SAP Fiori UX app with SAP Gateway data](http://www.sap.com/developer/tutorials/teched-2016-4.html)

@@ -5,11 +5,11 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner 
-- **How-To** [Start this tutorial series](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
-- **Tutorials:** This tutorial is part of a series.  The previous tutorial is Part 7 [Update Internationalization](https://go.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
+- **How-To** [Start this tutorial series](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+- **Tutorials:** This tutorial is part of a series.  The previous tutorial is Part 7 [Update Internationalization](http://www.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
 
 ## Next Steps
- - The next tutorial is Part 9: [Add a search field](https://go.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
+ - The next tutorial is Part 9: [Add a search field](http://www.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
 
 ## Details
 ### You will learn  
@@ -20,7 +20,7 @@ In this exercise you will replace a couple of controls; one in the `View1` and 
 **10 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 
 1.  Open the `webapp/view/View1.view.xml` file, and replace the `<StandardListItem>` control with the following code:
@@ -58,7 +58,7 @@ In this exercise you will replace a couple of controls; one in the `View1` and 
 
 
 ## Next Steps
- - The next tutorial is Part 9: [Add a search field](https://go.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
+ - The next tutorial is Part 9: [Add a search field](http://www.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
 
 ## Additional Information
 - [Expression Binding](http://anz.mygraebe.de/new-ui5/#7)

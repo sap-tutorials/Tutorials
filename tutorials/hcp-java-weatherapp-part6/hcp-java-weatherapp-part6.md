@@ -5,10 +5,10 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>inte
 ---
 
 ## Prerequisites  
-- [End-to-End Weather App Scenario Part 5](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part5.html)
+- [End-to-End Weather App Scenario Part 5](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part5.html)
 
 ## Next Steps
-- [End-to-End Weather App Scenario Part 7](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part7.html)
+- [End-to-End Weather App Scenario Part 7](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part7.html)
 
 ## Details
 ### You will learn  
@@ -192,4 +192,4 @@ In this tutorial you will implement a simple domain model and implement the corr
 
 
 ## Next Steps
-- [End-to-End Weather App Scenario Part 7](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part7.html)
+- [End-to-End Weather App Scenario Part 7](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part7.html)

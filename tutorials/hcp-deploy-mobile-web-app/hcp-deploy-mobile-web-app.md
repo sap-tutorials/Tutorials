@@ -5,10 +5,10 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+ - **Tutorials:** [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
 
 ## Next Steps
- - [Add labels and a field to your app](http://go.sap.com/developer/tutorials/hcp-webide-add-labels-field.html)
+ - [Add labels and a field to your app](http://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html)
 
 ## Details
 
@@ -52,4 +52,4 @@ Since any project that is created initially in the SAP Web IDE contains a `neo-a
     ![iPhone view of master-detail app showing responsive design adaptation](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_8.png)
 
 ## Next Steps
- - [Add labels and a field to your app](http://go.sap.com/developer/tutorials/hcp-webide-add-labels-field.html)
+ - [Add labels and a field to your app](http://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html)

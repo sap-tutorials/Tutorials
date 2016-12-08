@@ -12,8 +12,8 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ## Next Steps
  
-  - [Artifact Repository](http://go.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Artifact Repository](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
   
 ---
 
@@ -266,5 +266,5 @@ Our examples are restricted to Linux as the operating system for the slaves, as 
 
 ## Next Steps
  
-  - [Artifact Repository](http://go.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Artifact Repository](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

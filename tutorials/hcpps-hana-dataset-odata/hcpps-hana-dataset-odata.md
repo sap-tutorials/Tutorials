@@ -6,10 +6,10 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Import a predictive demo dataset in your SAP HANA](http://go.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
+  - **Tutorials:** [Import a predictive demo dataset in your SAP HANA](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP HCP predictive services](http://go.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - [Enable, deploy and configure the SAP HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Details
 ### You will learn
@@ -89,4 +89,4 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
     Note that the URL include your HCP Account Identifier (represented as `XYZ`).
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP HCP predictive services](http://go.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - [Enable, deploy and configure the SAP HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)

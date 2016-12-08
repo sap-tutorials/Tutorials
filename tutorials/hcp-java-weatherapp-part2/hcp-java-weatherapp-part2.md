@@ -5,10 +5,10 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>inte
 ---
 
 ## Prerequisites  
- - [End-to-End Weather App Scenario Part 1](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part1.html)
+ - [End-to-End Weather App Scenario Part 1](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part1.html)
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 3](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part3.html)
+ - [End-to-End Weather App Scenario Part 3](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part3.html)
 
 ## Details
 ### You will learn  
@@ -46,4 +46,4 @@ In this tutorial you will learn how to add a basic HTML page to a Java app.
 
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 3](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part3.html)
+ - [End-to-End Weather App Scenario Part 3](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part3.html)

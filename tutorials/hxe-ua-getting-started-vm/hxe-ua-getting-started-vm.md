@@ -5,13 +5,13 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Installing the VM Image](http://go.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
+ - **Tutorials:** [Installing the VM Image](http://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
 
  >**Tip:**
- > This tutorial is available as a [video](http://go.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
+ > This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
 
 ## Next Steps
- - [Configure SAP HANA, express edition Security](http://go.sap.com/developer/tutorials/hxe-ua-configure-security.html)
+ - [Configure SAP HANA, express edition Security](http://www.sap.com/developer/tutorials/hxe-ua-configure-security.html)
 
 ## Details
 ### You will learn  
@@ -22,7 +22,7 @@ How to start the server, change the default passwords to secure your system, and
 
 ---
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://go.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
 
 ### Start SAP HANA, express edition
 1. Start the `hypervisor` and power on (or click **Play** on) your express edition VM.
@@ -150,4 +150,4 @@ If you downloaded `hxe.ova`, you can turn on statistics server from the command 
 **hdbsql -d SystemDB -u SYSTEM -p <system `passwd`> “alter system alter configuration( 'nameserver.ini','SYSTEM' ) SET ( 'statisticsserver','active' ) = 'true' with reconfigure”**
 
 ## Next Steps
- - [Configure SAP HANA, express edition Security](http://go.sap.com/developer/tutorials/hxe-ua-configure-security.html)
+ - [Configure SAP HANA, express edition Security](http://www.sap.com/developer/tutorials/hxe-ua-configure-security.html)

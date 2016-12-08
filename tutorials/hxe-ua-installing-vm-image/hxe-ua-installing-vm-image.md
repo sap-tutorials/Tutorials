@@ -6,13 +6,13 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Select the correct SAP HANA, express edition version](http://go.sap.com/developer/how-tos/hxe-ua-version.html)
+ - **Tutorials:** [Select the correct SAP HANA, express edition version](http://www.sap.com/developer/how-tos/hxe-ua-version.html)
 
  >**Tip:**
- > This tutorial is available as a [video](http://go.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
+ > This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
 
 ## Next Steps
- - [Start Using SAP HANA, express edition](http://go.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
+ - [Start Using SAP HANA, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
 
 ## Details
 ### You will learn  
@@ -23,7 +23,7 @@ How to download the VM image of SAP HANA, express edition, install the image on 
 
 ---
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://go.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
 
 The SAP HANA, express edition VM image is platform-independent; you can install it to a Windows, OS X, or Linux machine, provided your host machine meets the storage and memory prerequisites. Choose this installation method if you want the simplest setup.
 
@@ -60,7 +60,7 @@ VMware Player 7.1 is a `hypervisor` compatible with SAP HANA express edition. Yo
 ### Download the OVA using the Download Manager
 Register and then use the Download Manager to download a server-only OVA, or a server-plus-applications OVA. Applications include XS Advanced (XSA) and Web IDE.
 
-1. Go to the registration page at <http://sap.com/sap-hana-express> (Alternately, you can go to the SAP HANA, express edition launch page at <http://go.sap.com/developer/topics/sap-hana-express.html> and click the **Register and download SAP HANA, express edition download manager** link.)  The registration page opens.
+1. Go to the registration page at <http://sap.com/sap-hana-express> (Alternately, you can go to the SAP HANA, express edition launch page at <http://www.sap.com/developer/topics/sap-hana-express.html> and click the **Register and download SAP HANA, express edition download manager** link.)  The registration page opens.
 
 2. Complete the registration form and click the **Register** button.  
 
@@ -107,4 +107,4 @@ Import the downloaded OVA file into your `hypervisor` to begin using SAP HANA, e
 4. Power on your VM.
 
 ## Next Steps
- - Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA, express edition](http://go.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
+ - Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)

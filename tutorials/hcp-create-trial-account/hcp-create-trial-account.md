@@ -8,10 +8,10 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, tutorial>beginner ]
  - **Proficiency:** Beginner
 
 ## Next Steps
- - For SAP HANA development: [SAP HANA XSC basic development](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
- - For Mobile development [Create and deploy an app in the cloud series](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
- - For SAP HCP predictive services development: [Create a new HANA MDC instance](http://go.sap.com/developer/tutorials/hcpps-hana-create-mdc-instance.html)
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - For SAP HANA development: [SAP HANA XSC basic development](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
+ - For Mobile development [Create and deploy an app in the cloud series](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+ - For SAP HCP predictive services development: [Create a new HANA MDC instance](http://www.sap.com/developer/tutorials/hcpps-hana-create-mdc-instance.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 
 ## Details
@@ -100,7 +100,7 @@ When the HCP Cockpit loads, you can review the News and Announcements or skip th
 
 
 ## Next Steps
- - For SAP HANA development: [SAP HANA XSC basic development](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
- - For Mobile development [Create and deploy an app in the cloud series](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
- - For SAP HCP predictive services development: [Create a new HANA MDC instance](http://go.sap.com/developer/tutorials.html?link=hcpps-hana-create-mdc-instance.html)
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - For SAP HANA development: [SAP HANA XSC basic development](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
+ - For Mobile development [Create and deploy an app in the cloud series](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+ - For SAP HCP predictive services development: [Create a new HANA MDC instance](http://www.sap.com/developer/tutorials.html?link=hcpps-hana-create-mdc-instance.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

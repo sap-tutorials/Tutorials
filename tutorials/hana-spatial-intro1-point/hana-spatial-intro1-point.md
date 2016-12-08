@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
  - **System access:** You have developer access SAP HANA database instance, for example SAP HANA Express edition, or MDC instance in SAP HANA Cloud Platform Trial.
 
 ## Next Steps
- - [SAP HANA Spatial: Strings](http://go.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
+ - [SAP HANA Spatial: Strings](http://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
 
 ## Details
 ### You will learn  
@@ -76,4 +76,4 @@ You will learn the basics of spatial processing starting with points, and use th
  - Check SAP HANA Spatial Reference at http://help.sap.com/hana_platform
 
 ## Next Steps
- - [SAP HANA Spatial: Strings](http://go.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
+ - [SAP HANA Spatial: Strings](http://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)

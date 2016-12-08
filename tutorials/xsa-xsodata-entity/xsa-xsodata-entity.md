@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>odata, products>sap-hana, products>sap-han
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Create a Simple OData Service](http://go.sap.com/developer/tutorials/xsa-xsodata.html)
+ - **Tutorials:** [Create a Simple OData Service](http://www.sap.com/developer/tutorials/xsa-xsodata.html)
 
 ## Next Steps
- - [Creating an OData Service with Create Operation and XSJS Exit](http://go.sap.com/developer/tutorials/xsa-xsodata-create.html)
+ - [Creating an OData Service with Create Operation and XSJS Exit](http://www.sap.com/developer/tutorials/xsa-xsodata-create.html)
 
 ## Details
 ### You will learn  
@@ -35,4 +35,4 @@ The first example of this exercise was very simplistic because it only exposed o
 	![associations](5.png)
  	
 ## Next Steps
- - [Creating an OData Service with Create Operation and XSJS Exit](http://go.sap.com/developer/tutorials/xsa-xsodata-create.html)
+ - [Creating an OData Service with Create Operation and XSJS Exit](http://www.sap.com/developer/tutorials/xsa-xsodata-create.html)

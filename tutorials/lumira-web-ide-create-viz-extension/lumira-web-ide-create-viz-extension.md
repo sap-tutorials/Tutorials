@@ -6,12 +6,12 @@ tags: [  tutorial>beginner, products>sap-lumira, products>sap-hana-cloud-platfor
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:** 
-    - [Sign up for an account on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
-    - [Install and Deploy SAP Lumira extensions](http://go.sap.com/developer/tutorials/lumira-extensions-intro.html)
+    - [Sign up for an account on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+    - [Install and Deploy SAP Lumira extensions](http://www.sap.com/developer/tutorials/lumira-extensions-intro.html)
 
 ## Next Steps
  - Adapt a D3 Chart for Lumira with SAP Web IDE (coming soon)
- - Or, select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Or, select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -34,7 +34,7 @@ This tutorial will cover:
 
 ---
 
-1. First, you need to set up your development environment in SAP Web IDE. For this, you need to set up your SAP HANA Cloud Platform (HCP) account so that you can use SAP Web IDE. Please refer to the tutorial [Sign up for an account on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html) for a step-by-step guide on how to do so.
+1. First, you need to set up your development environment in SAP Web IDE. For this, you need to set up your SAP HANA Cloud Platform (HCP) account so that you can use SAP Web IDE. Please refer to the tutorial [Sign up for an account on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html) for a step-by-step guide on how to do so.
 
 2. After setting up your HCP account, you should be on this page, which is your HCP Cockpit
 
@@ -181,11 +181,11 @@ This tutorial will cover:
     
     ![SAP Web IDE Lumira extension download](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_21b.png)
     
-22. Save the extension in your computer. You can then use the extension in Lumira as explained in the tutorial: [Install and Deploy SAP Lumira extensions](http://go.sap.com/developer/tutorials/lumira-extensions-intro.html). Download the CSV file from your Web IDE project by right-clicking on it and selecting **Export**.
+22. Save the extension in your computer. You can then use the extension in Lumira as explained in the tutorial: [Install and Deploy SAP Lumira extensions](http://www.sap.com/developer/tutorials/lumira-extensions-intro.html). Download the CSV file from your Web IDE project by right-clicking on it and selecting **Export**.
 
     ![SAP Web IDE Lumira extension install](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_22.png)
 
     
 ## Next Steps
  - Adapt a D3 Chart for Lumira with SAP Web IDE (coming soon)
- - Or, select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Or, select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

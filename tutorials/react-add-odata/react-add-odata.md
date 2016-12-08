@@ -5,11 +5,11 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Northwind Destination** [Set up the Northwind service destination in the HCP cockpit](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
- - **Tutorial:** [Step 5 - Convert components from static to dynamic](http://go.sap.com/developer/tutorials/react-dynamic-components.html)
+ - **Northwind Destination** [Set up the Northwind service destination in the HCP cockpit](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+ - **Tutorial:** [Step 5 - Convert components from static to dynamic](http://www.sap.com/developer/tutorials/react-dynamic-components.html)
 
 ## Next Steps
- - **Tutorial:** [Step 7 - Add a header and a detail modal dialog](http://go.sap.com/developer/tutorials/react-add-header-detail-dialog.html)
+ - **Tutorial:** [Step 7 - Add a header and a detail modal dialog](http://www.sap.com/developer/tutorials/react-add-header-detail-dialog.html)
 
 
 ## Details
@@ -43,7 +43,7 @@ The steps for this tutorial are:
 > - In the right hand navigation, select **Connectivity**, then select **Destinations**
 > - Look for the Destination called `Northwind`.
 > 
-> If you do not see a Destination called `Northwind`, go to the **[Create a Destination](http://go.sap.com/developer/tutorials/hcp-create-destination.html)** tutorial.  When you are finished, return here.
+> If you do not see a Destination called `Northwind`, go to the **[Create a Destination](http://www.sap.com/developer/tutorials/hcp-create-destination.html)** tutorial.  When you are finished, return here.
 > 
 
 1.  Create a new file in your project.  Select the `HelloReact` project, and then right click.  Choose **New** --> **File**.
@@ -240,4 +240,4 @@ ReactDOM.render(
 ```
 
 ## Next Steps
- - **Tutorial:** [Step 7 - Add a header and a detail modal dialog](http://go.sap.com/developer/tutorials/react-add-header-detail-dialog.html)
+ - **Tutorial:** [Step 7 - Add a header and a detail modal dialog](http://www.sap.com/developer/tutorials/react-add-header-detail-dialog.html)

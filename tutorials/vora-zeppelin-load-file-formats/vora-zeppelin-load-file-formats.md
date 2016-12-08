@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA Vora Modeler: Aggregation in SQL View](http://go.sap.com/developer/tutorials/vora-modeler-view-aggregate.html)
+ - **Tutorials:** [SAP HANA Vora Modeler: Aggregation in SQL View](http://www.sap.com/developer/tutorials/vora-modeler-view-aggregate.html)
 
 ## Next Steps
- - [Using hierarchies in SAP HANA Vora](http://go.sap.com/developer/tutorials/vora-zeppelin-hierarchies.html)
+ - [Using hierarchies in SAP HANA Vora](http://www.sap.com/developer/tutorials/vora-zeppelin-hierarchies.html)
 
 ## Details
 ### You will learn  
@@ -71,4 +71,4 @@ You will learn how to load sample data from Parquet and ORC file formats.
     ```    
 
 ## Next Steps
- - [Using hierarchies in SAP HANA Vora](http://go.sap.com/developer/tutorials/vora-zeppelin-hierarchies.html)
+ - [Using hierarchies in SAP HANA Vora](http://www.sap.com/developer/tutorials/vora-zeppelin-hierarchies.html)

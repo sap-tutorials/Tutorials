@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-web-ide 
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Add paging to your API call](http://go.sap.com/developer/tutorials/sapui5-paging-api.html)
+ - **Tutorials:** [Add paging to your API call](http://www.sap.com/developer/tutorials/sapui5-paging-api.html)
 
 ## Next Steps
- - [Call another method in the API](http://go.sap.com/developer/tutorials/sapui5-nested-api-calls.html)
+ - [Call another method in the API](http://www.sap.com/developer/tutorials/sapui5-nested-api-calls.html)
 
 ## Details
 ### You will learn  
@@ -278,4 +278,4 @@ Make sure all your changes are saved and **RUN** your application.
 [ACCORDION-END]
 
 ## Next Steps
- - [Call another method in the API](http://go.sap.com/developer/tutorials/sapui5-nested-api-calls.html)
+ - [Call another method in the API](http://www.sap.com/developer/tutorials/sapui5-nested-api-calls.html)

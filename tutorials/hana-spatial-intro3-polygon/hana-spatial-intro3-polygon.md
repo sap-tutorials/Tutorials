@@ -5,11 +5,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Intro to SAP HANA Spatial: Strings](http://go.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
+ - **Tutorials:** [Intro to SAP HANA Spatial: Strings](http://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
 
 ## Next Steps
  - Tables with spatial columns (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -121,4 +121,4 @@ You will continue learning basics of spatial processing now with ___polygons___ 
 
 ## Next Steps
  - Tables with spatial columns (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
