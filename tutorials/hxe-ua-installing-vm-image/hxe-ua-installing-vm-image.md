@@ -126,7 +126,7 @@ Register and then use the Download Manager to download a server-only virtual mac
 
         >**Note**: Although this package will run on a 16 GB machine, SAP recommends 24 GB of RAM for optimum performance using the full suite of developer applications.
 
-    - **Clients** - Downloads **`clients.zip`** which contains four compressed client packages. Use the client packages to access developed SAP HANA, express edition applications from a client PC. See **How to Install the SAP HANA, express edition Clients**. See [How to Install SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/how-tos/hxe-ua-howto-installing-clients.html).
+    - **Clients** - Downloads **`clients.zip`** which contains four compressed client packages. Use the client packages to access developed SAP HANA, express edition applications from a client PC. See **How to Install the SAP HANA, express edition Clients**. See [How to Install SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html).
 
         - **`hdb_client_linux.tgz`** - Reduced HANA client for Linux 64 bit. Contains the HANA client package, drivers, and required licenses.
 
