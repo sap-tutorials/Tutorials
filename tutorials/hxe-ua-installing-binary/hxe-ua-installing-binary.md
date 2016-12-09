@@ -1,5 +1,5 @@
 ---
-title: Installing Binary
+title: Installing SAP HANA 2.0, express edition (Binary Installer Method)
 description: You may install SAP HANA, express edition on a Linux server using the HANA Database Lifecycle Manager (hdblcm) tool.
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
@@ -27,206 +27,105 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 ### Machine Requirements
 Your server will need the following:
 
-**Software**
 
-- Java Runtime Environment 8
+#### Software
 
->**Note:**
->(If you are planning to install the SAP HANA, express edition Download Manager for Windows or Linux, you need the 64-bit JRE. If you are planning to install the platform-independent Download Manager, you can use either the 32- or 64-bit JRE.)
+- **Java Runtime Environment** (JRE) 8 or higher. If you are planning to install the SAP HANA 2.0 express edition Download Manager for Windows or Linux, you need the 64-bit JRE. If you are planning to install the platform-independent Download Manager, you can use either the 32- or 64-bit JRE.
 
-- OpenSSL .0.9.8
-- Linux SUSE for SAP in one of the following versions:
-    - SUSE Linux Enterprise Server for SAP 12 SP1
-    - SUSE Linux Enterprise Server for SAP 12
-    - SUSE Linux Enterprise Server for SAP 11.4
+- **OpenSSL .0.9.8**
 
-**Hardware**
+- One of the following operating system versions:
+    - **SUSE Linux Enterprise Server for SAP 12 SP1**
 
-- 16 GB RAM
-- 120 GB HDD
-- 2 cores (4 recommended)
+#### Hardware
+
+- **RAM** 16 GB minimum (24 GB recommended)
+
+>**Note**: If you are installing on a system with 16 GB of RAM, increase the amount of swap space to at least 32 GB.
+
+- **HDD** 120 GB HDD recommended
+
+- **Cores** 2 cores (4 recommended)
 
 
 ### Download the Installer Files
 
-1. Go directly to the registration page at <http://sap.com/sap-hana-express>.  
+1. Go to the registration page at <http://sap.com/sap-hana-express>
 
-    **Or**  
-
-    Go to the SAP HANA, express edition launch page at <http://www.sap.com/developer/topics/sap-hana-express.html> and click the **Register and download SAP HANA, express edition download manager** link.  
+    (Alternately, you can go to the SAP HANA, express edition launch page at <http://www.sap.com/developer/topics/sap-hana-express.html> and click the **Register and download SAP HANA, express edition download manager** link.)  
 
     The registration page opens.
 
 2. Complete the registration form and click the **Register** button.  
 
-    >**Note:**
-    >If you have an SAP login, click the Login icon at the top of the page to populate the registration form automatically.
+    > **Note:** If you have an SAP login, click the Login icon at the top of the page to populate the registration form automatically.
 
     ![Registration Page](HXE_register.PNG)
 
     The **Registration Success** page displays. (You will also receive an email indicating successful registration.)
 
-3. On the **Registration Success** page, click the **Download** button.
+3. Under **SAP HANA 2.0, express edition download manager**, click the download manager that matches your system: Linux or Windows.
 
-    ![Registration Success page](Other_HXE_register_success.PNG)  
+    If you have a Mac, or another type of machine, click “Platform-independent” for a platform-independent download manager.
 
-    The SAP HANA, express edition Download Manager opens.
+    ![Registration Success page](HXE_register_success_20.PNG)
 
-    >**Note:**
-    >If you are using a Windows machine, you may receive a prompt preventing the Download Manager from running. Click **More info** and then click **Run anyway** to run the Download Manager.
+4. Save the download manager installation file to your laptop and open it.
 
-    >![Windows SmartScreen](Windows_Runner.jpg)
+  If your system displays a security warning when you open the file, accept the warning.
 
-4. In Download Manager, in the **Image** pull-down, select **Binary Installer**.
-    ![Download Manager](HXE_download_manager.PNG)
+  > **Note:**
+  > If you are inside a corporate firewall, you will be prompted for your proxy settings. Contact your IT administrator.
 
-5. Click **Browse** and select a directory where your downloads will be saved.
+5. In Download Manager, in the **Image** pull-down, select **Binary Installer**.
+    ![Download Manager](HXE_download_manager_20.PNG)
 
-6. Select one or more of the following packages:  
-    **Server only** - Downloads **`hxe.tgz`**; a basic server-only package, and **`hxescripts.tgz`**; a post-installation script.  
-    **Server + applications** - Downloads **`hxexsa.tgz`**; the server plus XSA and Web IDE.  
-    **Text analysis files for additional languages** - For languages other than English and German, these files are required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the **Server only** and **Server + applications** packages.)
+6. Click **Browse** and select a directory where your downloads will be saved.
 
-7. Click the **Download** button.
+7. Select one or more of the following packages:  
 
-### Gather Server Information
-1. In a shell, enter:
+    - **Server only installer** - Downloads **`hxe.tgz`**; the SAP HANA 2.0, express edition server with Application Function Library. **This file is necessary for installing SAP HANA 2.0, express edition**.  
 
-    `hostname -f`
+    - **Applications** - Downloads optional package **`hxexsa.tgz`**; XSA, Web IDE, SAP HANA cockpit, and EA Designer. Download this and **`hxe.tgz`** to install those applications.  
 
-2. Record the hostname.
+    - **Clients** - Downloads a zip file containing four compressed client-tools bundles. Use the client packages to access developed express edition applications from a client PC. See [How to Install the SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/how-tos/hxe-ua-howto-installing-clients.html).
 
-## Installing the SAP HANA, express edition Server
-1. Navigate to the directory where you wish to extract `hxe.tgz`.
+        - **`hdb_client_linux.tgz`** - Reduced HANA client for Linux 64 bit. Contains the HANA client package, drivers, and required licenses.
 
-2. Extract the contents of `hxe.tgz`:
+        - **`hdb_client_windows.zip`** - Reduced HANA client for Windows 64 bit. Contains the HANA client package, drivers, and required licenses.
+
+        - **`xs.onpremise.runtime.client_linuxx86_64.zip`** - Command-line tools for Linux that enable access to (and control of) the SAP HANA XS advanced run-time environment.
+
+        - **`xs.onpremise.runtime.client_ntamd64.zip`** - Command-line tools for Windows that enable access to (and control of) the SAP HANA XS advanced run-time environment.
+
+     > **Tip:** After you develop an application using SAP HANA, express edition, install Download Manager to a client machine and download the *clients only* to that client machine. You can then use the clients to connect to -- and test -- your HANA application, emulating a customer.  
+
+    - **Text analysis files for additional languages** - For languages other than English and German, these files are required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the **Server only** and **Server + applications** packages.) Download this and **`hxe.tgz`** to install these files. For the text analysis files installation procedure, see *Install Text Analysis Files* at [Start Using SAP HANA, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).
+
+8. Click the **Download** button.
+
+## Install SAP HANA, express edition
+1. Navigate to the directory where you wish to extract the installation files.
+
+2. Extract the contents of `hxe.tgz`, and `hxexsa.tgz` if you are also installing applications:
 
     `tar -xvzf <download_path>/hxe.tgz`
-
-    >**Tip**
-    > Run the tar command from the command shell as shown, rather than using a GUI-based extraction tool.
-
-3. Install the server. You will be prompted to enter passwords during the installation.
-
-      1. Navigate to the `hdblcm` directory:
-
-          `cd <extracted_path>/HANA_10_DEE/DATA_UNITS/HDB_SERVER_LINUX_X86_64`
-
-      2. Execute hdblcm:
-
-          `sudo ./hdblcm -s HXE -H <HostName> --hdbinst_server_import_content=off`
-
-        >**Note**
-        >Here you may choose to install the Application Function Library (AFL) with `--components=server,afl`. AFL adds application functions on top of your Express Edition installation for performing data intensive operations, such as the Predictive Analysis Library (PAL) and the Business Function Library (BFL).
-
-          Example:
-
-          `sudo ./hdblcm -s HXE -H myserver.mydomain.com --components=server,afl --hdbinst_server_import_content=off`
-
-      3. Enter: **1(Install new system)**.
-
-      4. Enter default settings and passwords.
-
-      5. When *Summary Before Execution* displays, click **y** to continue with installation.
-
-      6. If AFL was installed, you need to allow functions in AFL to run:
-
-          1. Log in as hxeadm:
-
-              `sudo su -l hxeadm`
-
-          2. Execute:
-
-              `hdbsql -d SystemDB -u SYSTEM -p "${SYSTEM_PWD}" "alter system alter configuration ('indexserver.ini','SYSTEM')SET('calcengine','llvm_lib_whitelist') = 'bfl,pal'"`
-
-              Example:
-
-              ```
-              sudo su -l hxeadm
-              ```
-              `hdbsql -d SystemDB -u SYSTEM -p "ABCD1234" "alter system alter configuration ('indexserver.ini','SYSTEM') SET ('calcengine','llvm_lib_whitelist') = 'bfl,pal'"`
-
-    >**Note**
-    >Any misbehavior (e.g. crash) in user written code could potentially destabilize the HANA server. Please ensure that user written AFL libraries are stable.
-
-    >**Note**
-    >If a `libssl.so.0.9.8` error occurs, see [Installation Fails with Error "Cannot load libssl.so.0.9.8"](http://www.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
-
-### (Optional) Installing XSC, XS Advanced, and Web IDE
-
-1. Navigate to the directory where you wish to extract `hxexsa.tgz`.
-
-2. Extract the contents of `hxexsa.tgz`:
-
     `tar -xvzf <download_path>/hxexsa.tgz`
 
     >**Tip**
     > Run the tar command from the command shell as shown, rather than using a GUI-based extraction tool.
 
-3. Install XSC:
+3. Navigate to the directory where you extracted the files and run `./setup_hxe.sh` as the root user:
 
-    `sudo /hana/shared/HXE/global/hdb/install/bin/hdbupdrep --content_directory=/hana/shared/HXE/global/hdb/auto_content`
+    `cd <extracted_path>`
+    `sudo ./setup_hxe.sh`
 
-    `sudo /hana/shared/HXE/global/hdb/install/bin/hdbupdrep --content_directory=/hana/shared/HXE/global/hdb/auto_content/systemdb`
+4. Follow the prompts to configure your installation.
 
-4. Install HANA Extended Services (XSA):
-      1. Navigate to the `hdblcm` directory:
+    >**Note**
+    > The master password you specify during installation is used for the `<sid>adm`,  `sapadm` OS users, the telemetry technical user, and the SYSTEM user. If you are installing the Applications package, this password is also used for the `XSA_ADMIN`, `XSA_DEV`, and `XSA_SHINE` users.
 
-          `cd <extracted_path>/HANA_10_DEE/DATA_UNITS/HDB_SERVER_LINUX_X86_G4`
-
-      2. Install statistics:
-
-          ```
-          sudo su -l hxeadm
-          ```
-          `hdbsql -d SystemDB -u SYSTEM -p "${SYSTEM_PWD}" "alter system alter configuration('nameserver.ini','SYSTEM') SET ('statisticsserver','active') = 'true' with reconfigure"`
-
-          Example:
-
-          ```
-          sudo su -l hxeadm
-          ```
-          `hdbsql -d SystemDB -u SYSTEM -p ABCD1234 "alter system alter configuration('nameserver.ini','SYSTEM') SET ('statisticsserver','active') = 'true' with reconfigure"`
-
-      3. Install XSA using `hdblcm`:
-
-          `sudo ./hdblcm -s HXE -H <HOSTNAME> --action=update --components=xs --xs_components=all --configfile=configurations/auto_install.cfg --component_medium=<download_path>/HANA_10_DEE`
-
-          Example:
-
-          `sudo ./hdblcm -s HXE -H myhost.localdomain.com --action=update --components=xs --xs_components=all --configfile=configurations/auto_install.cfg --component_medium=/home/myname/Downloads/HANA_10_DEE`
-
-### Execute the Post-Installation Script
-
-1. Check proxy settings.
-      1. In SUSE, go to YAST. Click on *Proxy*.
-
-      2. Ensure you have the fully qualified address for your proxy in the HTTP Proxy URL.
-
-      3. Check the "Use the same proxy" checkbox.
-
-      4. Add additional local domains to the No Proxy Domains list as necessary.
-
-2. Extract `hxescripts.tgz`.
-
-      `tar -xvzf <download_path>/hxescripts.tgz`
-
-3. Give the extracted file `hxe_optimize.sh` read/execute permission.
-
-      `chmod 755 hxe_optimize.sh`
-
-4. Log in as `hxeadm`.
-
-      `sudo su -l hxeadm`
-
-5. Navigate to the directory where you extracted `hxescripts.tgz` and execute the script.
-
-      ```
-      cd <extracted_path>
-      ```
-      `./hxe_optimize.sh`
-
-6. Follow the prompts to enter the appropriate passwords.
+Installation of SAP HANA 2.0, express edition will take some time. Installation is successful when your command line reads `SAP HANA Express Edition System installed`.
 
 ## Next Steps
 - Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).
