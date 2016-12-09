@@ -88,7 +88,7 @@ Your server will need the following:
 
     - **Applications** - Downloads optional package **`hxexsa.tgz`**; XSA, Web IDE, SAP HANA cockpit, and EA Designer. Download this and **`hxe.tgz`** to install those applications.  
 
-    - **Clients** - Downloads a zip file containing four compressed client-tools bundles. Use the client packages to access developed express edition applications from a client PC. See [How to Install the SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/how-tos/hxe-ua-howto-installing-clients.html).
+    - **Clients** - Downloads a zip file containing four compressed client-tools bundles. Use the client packages to access developed express edition applications from a client PC. See [How to Install the SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html).
 
         - **`hdb_client_linux.tgz`** - Reduced HANA client for Linux 64 bit. Contains the HANA client package, drivers, and required licenses.
 
