@@ -1,10 +1,11 @@
 ---
-title: Getting Started with SAP HANA, express edition (Binary Installer Method)
+title: Start Using SAP HANA 2.0, express edition (Binary Installer Method)
 description: Explore how to connect to the SAP Web IDE for SAP HANA, Express Edition to start developing your project.
-tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition ]
+tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites
-- Install SAP HANA, express edition. See [Installing Binary](http://www.sap.com/developer/tutorials/hxe-ua-installing-binary.html).
+- **Proficiency:** Beginner
+- **Tutorials:** [Installing Binary](http://www.sap.com/developer/tutorials/hxe-ua-installing-binary.html).
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
@@ -17,85 +18,265 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 ### Time to Complete
 **20 Min.**
 ---
+### The SAP HANA, express-edition License
+
+Installing SAP HANA 2.0, express edition installs a permanent 32 GB license automatically. No license configuration is required.
+
 ### Record Your System's IP address
 
 1. In a terminal, enter: `/sbin/ifconfig`.
+
 2. The IP address is listed under the `eth0 interface` as `inet addr`. In the following example, the IP address is 10.172.90.53:
 
   `etho Link encap:Ethernet HWaddr 00:0C:29:06:1F:93 inet addr:10.172.90.53`
 
+### Edit the `/etc/hosts` File
+
+You must edit the **`/etc/hosts`** file on machines you want to use to access SAP HANA, express edition. For example, edit **`/etc/hosts`** if you want to access any XS Advanced applications, or HANA Cockpit.
+
+#### Edit `/etc/hosts` on Windows
+
+1. Navigate to **`C:\Windows\System32\drivers\etc`**.
+
+2. In **Administrator** mode, open **hosts** in Notepad. See your operating system Help for information on opening applications in Administrator mode.
+
+3. In a new uncommented row, add the IP address and hostname of your SAP HANA, express edition server. Save your changes.
+
+    >**Tip**: Spacing is important. Make sure your hosts file in Notepad looks like this image.
+
+    ![Windows Host File](hxe_hosts_windows.png)
+
+#### Edit `/etc/hosts` on Linux
+
+1.	Access your Linux client editor.
+
+2.  Run this command:
+    ```
+    sudo sh -c 'echo <VM IP Address> $(hostname -f) >> /etc/hosts'\
+    ```
+
 ### Test Your Server installation
 
-1. In a terminal, enter: `HDB info`. The following services must be running:
+1. In a terminal, log in as the `<sid>adm` user:
+
+  `sudo su -l <sid>adm`
+
+2. Enter `HDB info`. The following services must be running:
   * `hdbnameserver`
   * `hdbcompileserver`
   * `hdbpreprocessor`
   * `hdbwebdispatcher`
   * `hdbdiserver` (if XSA is installed)
-  * `XS services` (if XSA is installed)
+
 2. If any services are not running, enter `HDB start`. When the prompt returns, the system is started.
 
-### Test XSC, XSA, and Web IDE
+### Test XSC and XSA (Applications Package Only)
 
-1. Check if XSC is working by going to the following URL:
-  `http://<ip-address-of-VM>:8000`
-2. Check if XSA is working:
-  a. In a terminal, use the following command to log into XSA services:
-  `xs login -u XSA_ADMIN -p <password>`
-  b. View a list of XSA applications using: `xs apps`
-  c. Confirm that `webide` shows in the list of XSA applications. Note the URL for it.
-3. Open the URL for Web IDE in a browser to confirm that it loads.
+If you installed the Applications package (`hxexsa.tgz`), test your XS installations.
 
-### Install Eclipse and SAP HANA Tools
+>**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
 
-#### Prerequisites
-* Confirm that your machine meets the system requirements for SAP HANA Tools, listed at [https://tools.hana.ondemand.com/#hanatools](https://tools.hana.ondemand.com/#hanatools)
+1. Check that the `XSEngine` is running. Open a browser and enter:   
+    ```
+    http://<hostname>:80<instance-number>  
+    ```
 
+    A success page displays:  
 
-1. Download and install Eclipse Neon from [https://eclipse.org/downloads/](https://eclipse.org/downloads/), selecting one of the following packages:
-  * Eclipse IDE for Java EE Developers
-  * Eclipse IDE for Java Developers
-2. Open Eclipse and select a workspace.
-3. Install SAP HANA Tools:
-  a. Select _Help > Install New Software_
-  b. In the **Work with** field, enter https://tools.hana.ondemand.com/neon and click Add.
-  c. In the **Name** field, enter SAP HANA, express edition.
-  d. Expand the **SAP HANA Tools** node.
-  e. Select **SAP HANA Administrator (Developer Edition)**.
-  f. Accept the installation wizard prompts and restart Eclipse.
-  g. Select _Window > Perspective > Open Perspective > Other_.
-  h. Select the **SAP HANA Administration Console** perspective.
-4. Add the SAP HANA, express edition system:
-  a. On the **Systems** view, right-click and select **Add System**, or click the **Add System** button.
-  b. Enter the following information and click **Next**:
-    * Host Name: the IP address for your system
-    * Instance Number: 00
-    * Mode: Multiple containers, System database
-  c. Select Authentication by database user and enter the credentials for your SYSTEM user. Click **Finish** to connect.
+    ![XSEngine Success Page](hxe_xs_success.PNG)
 
-### Obtain and Apply a License Key
+2. As the `<sid>adm` user, log in to XSA services:  
+    ```
+    xs login -u xsa_admin -p <password>
+    ```  
 
-1. Obtain your hardware key:
-  a. In Eclipse, connect to your system.
-  b. In the **Systems** view, right-click on your system and select **Properties**
-  c. Select **License**, then the **System License** tab.
-  d. Make a note of your hardware key.
-2. Order your license key:
-  a. In a browser, go to [http://www.sap.com/minisap](http://www.sap.com/minisap) and complete the form.
-  b. For **System ID**, select **HXE - SAP HANA, express edition (32 GB)**.
-  c. For **Hardware Key**, enter the hardware key for your system.
-  d. Submit the form. The license key is emailed to you.
-3. Apply the license key:
-  a. In Eclipse, click **Delete License Key** to remove existing licenses.
-  b. Click **Install License Key** and select the license key file.
+3. View the list of XSA applications. Enter:  
+    ```
+    xs apps
+   ```
+   >**Note**: When you run the `xs apps` command for the first time, it may take 1-2 minutes for the system to return the list of XSA applications.
 
-### Deactivate the SYSTEM user
+4. Check that the application **`cockpit-admin-web-app`** shows **STARTED** with 1/1 instances in the list of XSA applications.
 
-1. In a terminal, create a new admin user with the USER ADMIN system privilege:
-`/usr/sap/HXE/HDB00/exe/hdbsql -d SystemDB -u SYSTEM -p <SYSTEM-password> "CREATE USER <admin-username> PASSWORD <admin-password> NO FORCE_FIRST_PASSWORD_CHANGE;"
-/usr/sap/HXE/HDB00/exe/hdbsql -d SystemDB -u SYSTEM -p <SYSTEM-password> "GRANT USER ADMIN TO <admin-username> WITH ADMIN OPTION;"`
+    Make a note of the URL for `cockpit-admin-web-app`.
+
+    ![XSA apps](hxe_xsa_apps_cockpit.png)
+
+5. Enter the URL for `cockpit-admin-web-app` in a browser. The address is the one that displays in your  **`xs apps`**  command output.  
+
+    Example:  `https://my.hostname:51043`
+
+6. Log in using the `XSA_ADMIN` user.
+
+7. If your site uses a proxy for connecting to HTTP and HTTPS servers, select _Cockpit Settings > Proxy_, then enable **Http(s) Proxy** and set the host, port, and non-proxy hosts.
+
+  >**Tip**: To find your proxy server information, in a terminal, enter `env | grep PROXY`
+
+### Test Web IDE (Applications Package Only)
+
+>**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
+
+1. As the `<sid>adm` user, log in to XSA services:  
+    ```
+    xs login -u xsa_admin -p <password>
+    ```  
+
+2. View the status of the `webide` application. Enter:  
+    ```
+    xs apps | grep webide
+    ```
+
+3. Check that the application **`webide`** shows **STARTED** with 1/1 instances in the list of XSA applications.
+
+    Make a note of the URL for `webide`.
+
+4. Test your Web IDE connection. Enter the URL for `webide` in a browser. The address is the one that displays in your  **`xs apps`**  command output.  
+
+    Example:  `https://my.hostname:53075`
+
+5. Log on to Web IDE using the `XSA_DEV` user.
+
+### (Optional) Test your Installation using the HANA Eclipse Plugin
+
+>**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
+
+Download and install the HANA Eclipse Plugin on a client machine and connect to SAP HANA, express edition.
+
+1. Download **Eclipse IDE for Java EE Developers** from [http://www.eclipse.org/neon/](http://www.eclipse.org/neon/) to your local file system.
+
+2. Follow the eclipse installer prompts.
+
+3. Launch when prompted, or go to the eclipse folder (example: `C:\Users\<path>\eclipse\jee-neon`) and run the **eclipse** executable file.
+
+4. Follow the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/hxe-howto-eclipse.html).
+
+### Best Practices: Deactivate the SYSTEM user
+
+SYSTEM is the database superuser and is not intended for day-to-day activities in production systems. For better security, you can create other database users with only the privileges that they require for their tasks (for example, user administration), then deactivate the SYSTEM user.
+
+1. In a terminal, log in as the `<sid>adm` user:
+
+  `sudo su -l <sid>adm`
+
+2. Create a new admin user with the USER ADMIN system privilege:
+
+  `/usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u SYSTEM -p <SYSTEM-password> "CREATE USER <admin-username> PASSWORD <admin-password> NO FORCE_FIRST_PASSWORD_CHANGE;"`
+  `/usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u SYSTEM -p <SYSTEM-password> "GRANT USER ADMIN TO <admin-username> WITH ADMIN OPTION;"`
+
 2. Use the new admin user to deactivate the SYSTEM user:
-`/usr/sap/HXE/HDB00/exe/hdbsql -d SystemDB -u <admin-username> -p <admin-password> "ALTER USER SYSTEM DEACTIVATE USER NOW;"`
+
+  `/usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u <admin-username> -p <admin-password> "ALTER USER SYSTEM DEACTIVATE USER NOW;"`
+
+### Best Practices: Backups
+
+Make regular data backups to save your work.
+
+For information on data backup, recovery, and log file growth, see the [SAP HANA 2.0 Administration Guide](http://help.sap.com/saphelp_hanaplatform/helpdata/en/00/0ca1e3486640ef8b884cdf1a050fbb/frameset.htm).
+
+## (Optional) Install SAP Enterprise Architecture Designer (Applications Package Only)
+
+>**Note**: Installing additional features requires greater system resources and may impact performance.
+
+If you downloaded the Applications package (`hxexsa.tgz`), installation files for SAP Enterprise Architecture Designer (SAP EA Designer) are located at `<extracted_path>/HANA_EXPRESS_20/DATA_UNITS/XSA_CONTENT_10`.
+
+SAP EA Designer lets you capture, analyze, and present your organization's landscapes, strategies, requirements, processes, data, and other artifacts in a shared environment. Using industry-standard notations and techniques, organizations can leverage rich metadata and use models and diagrams to drive understanding and promote shared outcomes in creating innovative systems, information sets, and processes to support goals and capabilities.
+
+Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `xs` command line tool.
+
+>**Tip**: The SAP EA Designer installer file `XSACHANAEAD00_0.ZIP` is located in the directory where you extracted `hxexsa.tgz`.
+
+1. Log in as `<sid>adm`.
+
+    ```
+    sudo su -l <sid>adm
+    ```
+
+2. Create a text file, copy the following content to it, replacing the variable <tempPwd> with your choice of a temporary administrator password for the first login, and save it as `firstTime.mtaext`:
+
+    ```
+    _schema-version: "2.0.0"
+    ID: com.sap.hana.eadesigner.ext
+    extends: com.sap.hana.eadesigner
+
+    modules:
+      - name: eadesigner-backend
+      properties:
+        ADMIN_PASSWORD: <tempPwd>
+    ```    
+    >**Note**: Make sure that `properties` and `ADMIN_PASSWORD` are indented with spaces (not tab).
+
+    >**Note**: If you do not specify this temporary password file in your installation command, the installation will proceed normally, but you will not be able to log into SAP EA Designer. We recommend that your temporary password should contain 8 or more characters including a mix of numbers and uppercase and lowercase letters. Once installation is complete, you should delete this file.
+
+3. Login to the XSA environment with the following command and enter your credentials when prompted:
+
+    ```
+    xs login -a https://<HOST>:3<instance-number>30
+    ```
+
+4. Install the SAP EA Designer package using the following command, where `firstTime.mtaext` is the file containing the temporary administrator password:
+
+    ```
+    xs install XSACHANAEAD00_0.zip –e firstTime.mtaext
+    ```
+
+5. When the installation is complete enter the following command to confirm the status of SAP EA Designer:
+
+    ```
+    xs apps
+    ```
+
+    The output will include all the applications of your organization and space. You should see:   
+
+    - `eadesigner` - The SAP EA Designer application
+
+    - `eadesigner-service` - The SAP EA Designer Node application
+
+    - `eadesigner-backend` - The SAP EA Designer Java application
+
+    - `eadesigner-db` - The SAP EA Designer database creation application. This application will have a state of stopped when the installation is complete.
+
+6. Note the URL for `eadesigner` and enter it in your web browser address bar to go to the SAP EA Designer login screen.
+
+7. Enter the following credentials:
+
+    - User Name - ADMIN
+
+    >**Note**: Account names managed by SAP EA Designer are case-sensitive.
+
+    - Password - Enter the temporary administrator password (<`tempPwd`>) you specified in `firstTime.mtaext`.
+
+    You will be prompted to change the password and then logged in as administrator of SAP EA Designer.     
+
+## (Optional) Install SAP HANA Interactive Education (SHINE)
+
+To install SHINE for XSC, see the [SAP HANA Interactive Education (SHINE) guide](http://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_en.pdf).
+
+Installation files for SHINE for **XSC** are located at:
+```
+<extracted_path>/HANA_EXPRESS_20/DATA_UNITS/HCO_HANA_SHINE
+```
+
+To install SHINE for XSA, see the [SAP HANA Interactive Education (SHINE) for SAP HANA XS Advanced Model guide](http://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_for_SAP_HANA_XS_Advanced_Model_en.pdf).
+
+If you downloaded the Applications (`hxexsa.tgz`) package, installation files for SHINE for **XSA** are located at:
+```
+<extracted_path>/HANA_EXPRESS_20/DATA_UNITS/XSA_CONTENT_10
+```
+
+## (Optional) Install Text Analysis Files
+
+If you are using SAP HANA, express edition in a language other than English or German, you can download the **Text analysis files for additional languages** package in the Download Manager. This package contains the text analysis files for the HANA Text Analysis feature for languages other than English or German.
+
+**Prerequisite**: You downloaded the package **Text analysis files for additional languages** using Download Manager.
+
+1. Log in as `<sid>adm`.
+
+2. Navigate to `/hana/shared/<SID>/exe/linuxx86_64/hdb/lexicon`.
+
+3. Extract the contents of `additional_lang.tgz` to this directory:
+    ```
+    tar -xvzf <download_path>/additional_lang.tgz
+    ```
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
