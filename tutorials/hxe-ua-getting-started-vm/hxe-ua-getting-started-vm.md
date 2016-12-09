@@ -1,6 +1,6 @@
 ---
 title: Start Using SAP HANA 2.0, express edition (Virtual Machine Method)
-description: Once you’ve downloaded the SAP HANA 2.0, express edition Virtual Machine package, start the server, change the default passwords to secure your system, and connect using client tools.
+description: Once you have downloaded the SAP HANA 2.0, express edition Virtual Machine package, start the server, change the default passwords to secure your system, and connect using client tools.
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
