@@ -78,7 +78,7 @@ In previous tutorials you learned how to create spatial objects and run selected
     INSERT INTO SpatialShapes VALUES(15, NEW ST_POLYGON());
     ```
 
-Check shapes you loaded, including check of the geometry type and if the geometry value represents an empty set or not.
+    Check shapes you loaded, including types of geometries and what geometry values represent empty sets.
 
     ```sql
     SELECT SHAPEID, SHAPE.ST_asWKT(), SHAPE.ST_GeometryType(), SHAPE.ST_isEmpty()
