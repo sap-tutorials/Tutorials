@@ -37,7 +37,7 @@ In previous tutorials you learned how to create spatial objects and run selected
 
     `ST_GEOMETRY` is a core component of the SQL Multimedia (`SQL/MM`) standard for storing and accessing geospatial data. `SQL-MM` follows object-oriented approach. The term **geometry** means the overarching type for objects such as points, strings, and polygons. The geometry type is the supertype for all supported spatial data types.
 
-    The following diagram is taken from official SAP HANA Spatial Reference Guide and illustrates the hierarchy of the ST_Geometry data types:
+    The following diagram is taken from official SAP HANA Spatial Reference Guide and illustrates the hierarchy of the `ST_Geometry` data types:
 
     ![Spatial hierarchy](spatial0401.png)
 
@@ -45,7 +45,7 @@ In previous tutorials you learned how to create spatial objects and run selected
     - A subtype (or derived type) is more specific than its supertype (or base type).
     - A subtype inherits all methods from all supertypes. For example, `ST_Polygon` values can call methods defined for the `ST_Geometry`.
     - A value of a subtype can be automatically converted to any of its supertypes. For example, an `ST_Point` value can be used where a `ST_Geometry` parameter is required.
-    - A column or variable of type ST_Geometry can store spatial values of any type.
+    - A column or variable of type `ST_Geometry` can store spatial values of any type.
 
 3. Create and load data into `SpatialShapes` table. This example is taken from SAP HANA Spatial Reference, so that you can run exercises from the official help as well.
 
