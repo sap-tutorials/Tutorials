@@ -5,11 +5,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Intro to SAP HANA Spatial: Polygons]
+ - **Tutorials:** [Intro to SAP HANA Spatial: Polygons](http://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
 
 ## Next Steps
  - Intro to SAP HANA Spatial: 3rd dimension (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -27,7 +27,7 @@ In previous tutorials you learned how to create spatial objects and run selected
     SET SCHEMA TESTSGEO;
     ```
 
-    2. The following spatial types can be used in column tables in SAP HANA:
+2. The following spatial types can be used in column tables in SAP HANA:
     - `ST_POINT`,
     - `ST_GEOMETRY`.
 
@@ -111,7 +111,7 @@ Check shapes you loaded, including check of the geometry type and if the geometr
     - `ST_ConvexHullAggr()` returning the convex hull for all of the geometries in a group, also known as "rubber band",
     - `ST_EnvelopeAggr()` returning the bounding rectangle for all of the geometries in a group.
 
-    Execute this query to best illustrate both types of aggregations. It is using as well set operation method `ST_Union()` returning the geometry value that represents the point set union of two geometries. Please note the use of `ST_Boundary()` method to convert a polygon (which is a result of the aggregation) into just a curve surrounding the shape, so that combined geometries are all visible.
+    Execute this query to best illustrate both types of aggregations. It is using as well set operation method `ST_Union()` returning the geometry value that represents the point set union of two geometries.
 
     ```sql
     SELECT
@@ -120,6 +120,8 @@ Check shapes you loaded, including check of the geometry type and if the geometr
     FROM SPATIALSHAPES
     WHERE SHAPE.ST_isEmpty()=0 and SHAPE.ST_GeometryType() = 'ST_LineString';
     ```
+
+    Please note the use of `ST_Boundary()` method to convert a polygon (which is a result of the aggregation) into just a curve surrounding the shape, so that combined geometries are all visible.
 
     ![Other type of aggregations](spatial0405.jpg)
 
@@ -138,4 +140,4 @@ Check shapes you loaded, including check of the geometry type and if the geometr
 
 ## Next Steps
  - Intro to SAP HANA Spatial: 3rd dimension (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
