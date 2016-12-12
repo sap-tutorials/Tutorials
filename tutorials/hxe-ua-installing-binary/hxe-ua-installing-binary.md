@@ -78,7 +78,7 @@ Your server will need the following:
   > If you are inside a corporate firewall, you will be prompted for your proxy settings. Contact your IT administrator.
 
 5. In Download Manager, in the **Image** pull-down, select **Binary Installer**.
-    ![Download Manager](HXE_download_manager_20.PNG)
+    ![Download Manager](HXE_download_manager.PNG)
 
 6. Click **Browse** and select a directory where your downloads will be saved.
 
