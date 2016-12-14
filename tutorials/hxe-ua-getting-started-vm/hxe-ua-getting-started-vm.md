@@ -191,19 +191,20 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
     ```
     xs apps
    ```
+
    >**Note**: When you run the `xs apps` command for the first time, it may take 1-2 minutes for the system to return the list of XSA applications.
 
 5. Check that the application **`webide`** shows **STARTED** in the list of XSA applications , and has 1/1 instances. (If the list shows 0/1 in the instance column, the application is not started.)
 
-   Make a note of the URL for `webide`.
+    Make a note of the URL for `webide`.
 
-   ![webide URL](hxe_xsa_webide.PNG)
+    ![webide URL](hxe_xsa_webide.PNG)
 
-   >**Tip**: The command **`xs apps | grep webide`** returns the `webide` row only.
+    >**Tip**: The command **`xs apps | grep webide`** returns the `webide` row only.
 
-6. Test your Web IDE connection. Enter the URL for Web IDE in a browser on your laptop.   
+6. Test your Web IDE connection. Enter the URL for Web IDE in a browser on your laptop.
 
-   Example:  `https://hxehost:53075`
+    Example:  `https://hxehost:53075`
 
 7. Log on to Web IDE using the `XSA_DEV` user. You specified the password earlier in this tutorial in the section **Change the Default Passwords for Other Users**.
 
@@ -284,7 +285,7 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
 >**Tip**: The SAP EA Designer installer file `XSACHANAEAD00_0.ZIP` is located at
 >```    
-/usr/sap/hxeadm/home/HANA_EXPRESS_20/DATA_UNITS
+/usr/sap/HXE/home/HANA_EXPRESS_20/DATA_UNITS
 ```
 
 1. Log in as `hxeadm`.
@@ -301,6 +302,9 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
       properties:
          ADMIN_PASSWORD: <tempPwd>
     ```    
+
+    >**Note**: Make sure that properties and ADMIN_PASSWORD are indented with spaces (not tab). There are two spaces in front of `properties`. There are four spaces in front of `ADMIN_PASSWORD`.
+
     >**Note**: If you do not specify this temporary password file in your installation command, the installation will proceed normally, but you will not be able to log into SAP EA Designer. We recommend that your temporary password should contain 8 or more characters including a mix of numbers and uppercase and lowercase letters. Once installation is complete, you should delete this file.
 
 3. Login to the XSA environment with the following command and enter your credentials when prompted:
@@ -310,7 +314,7 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
 4. Install the SAP EA Designer package using the following command, where `firstTime.mtaext` is the file containing the temporary administrator password:
     ```
-    xs install XSACHANAEAD00_0.zip –e firstTime.mtaext
+    xs install XSACHANAEAD00_0.zip -e firstTime.mtaext
     ```
 
 5. When the installation is complete enter the following command to confirm the status of SAP EA Designer:

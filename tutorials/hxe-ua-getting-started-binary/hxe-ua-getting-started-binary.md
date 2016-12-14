@@ -177,13 +177,11 @@ For information on data backup, recovery, and log file growth, see the [SAP HANA
 
 >**Note**: Installing additional features requires greater system resources and may impact performance.
 
-If you downloaded the Applications package (`hxexsa.tgz`), installation files for SAP Enterprise Architecture Designer (SAP EA Designer) are located at `<extracted_path>/HANA_EXPRESS_20/DATA_UNITS/XSA_CONTENT_10`.
+If you downloaded the Applications package (`hxexsa.tgz`), the installation file for SAP Enterprise Architecture Designer (SAP EA Designer) is located at `<extracted_path>/HANA_EXPRESS_20/DATA_UNITS/XSA_CONTENT_10/XSACHANAEAD00_0.ZIP`.
 
 SAP EA Designer lets you capture, analyze, and present your organization's landscapes, strategies, requirements, processes, data, and other artifacts in a shared environment. Using industry-standard notations and techniques, organizations can leverage rich metadata and use models and diagrams to drive understanding and promote shared outcomes in creating innovative systems, information sets, and processes to support goals and capabilities.
 
 Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `xs` command line tool.
-
->**Tip**: The SAP EA Designer installer file `XSACHANAEAD00_0.ZIP` is located in the directory where you extracted `hxexsa.tgz`.
 
 1. Log in as `<sid>adm`.
 
@@ -203,7 +201,7 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
       properties:
         ADMIN_PASSWORD: <tempPwd>
     ```    
-    >**Note**: Make sure that `properties` and `ADMIN_PASSWORD` are indented with spaces (not tab).
+    >**Note**: Make sure that `properties` is indented two spaces and `ADMIN_PASSWORD` is indented four spaces. Do not use tab.
 
     >**Note**: If you do not specify this temporary password file in your installation command, the installation will proceed normally, but you will not be able to log into SAP EA Designer. We recommend that your temporary password should contain 8 or more characters including a mix of numbers and uppercase and lowercase letters. Once installation is complete, you should delete this file.
 
