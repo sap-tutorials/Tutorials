@@ -1,9 +1,9 @@
 ---
 title: Installing SAP HANA 2.0, express edition (Binary Installer Method)
-description: You may install SAP HANA, express edition on a Linux server using the HANA Database Lifecycle Manager (hdblcm) tool.
+description: You may install SAP HANA 2.0, express edition on a Linux server using the HANA Database Lifecycle Manager (hdblcm) tool.
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
-The SAP HANA, express edition is for Linux machines running specific installations, provided your host machine meets the storage and memory prerequisites. Choose this installation method if you want a custom setup. This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/eccafc12-8a7c-0010-82c7-eda71af511fa.html).
+SAP HANA 2.0, express edition is for Linux machines running specific installations, provided your host machine meets the storage and memory prerequisites. Choose this installation method if you want a custom setup. This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/eccafc12-8a7c-0010-82c7-eda71af511fa.html).
 
 ## Prerequisites
 - **Proficiency** Beginner
@@ -17,7 +17,7 @@ The SAP HANA, express edition is for Linux machines running specific installatio
 
 ## Details
 ### You will learn
-Download the binary image of SAP HANA, express edition, install the image on your Linux server, and install additional tools for express edition if desired.
+Download the binary image of SAP HANA 2.0, express edition, install the image on your Linux server, and install additional tools for your SAP HANA 2.0, express edition installation as desired.
 
 For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
 ### Time to Complete
@@ -100,11 +100,11 @@ Your server will need the following:
 
      > **Tip:** After you develop an application using SAP HANA, express edition, install Download Manager to a client machine and download the *clients only* to that client machine. You can then use the clients to connect to -- and test -- your HANA application, emulating a customer.  
 
-    - **Text analysis files for additional languages** - For languages other than English and German, these files are required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the **Server only** and **Server + applications** packages.) Download this and **`hxe.tgz`** to install these files. For the text analysis files installation procedure, see *Install Text Analysis Files* at [Start Using SAP HANA, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).
+    - **Text analysis files for additional languages** - For languages other than English and German, these files are required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the **Server only** and **Server + applications** packages.) Download this and **`hxe.tgz`** to install these files. For the text analysis files installation procedure, see *Install Text Analysis Files* at [Start Using SAP HANA 2.0, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).
 
 8. Click the **Download** button.
 
-## Install SAP HANA, express edition
+## Install SAP HANA 2.0, express edition
 1. Navigate to the directory where you wish to extract the installation files.
 
 2. Extract the contents of `hxe.tgz`, and `hxexsa.tgz` if you are also installing applications:
@@ -128,4 +128,4 @@ Your server will need the following:
 Installation of SAP HANA 2.0, express edition will take some time. Installation is successful when your command line reads `SAP HANA Express Edition System installed`.
 
 ## Next Steps
-- Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).
+- Start using SAP HANA 2.0, express edition. See tutorial [Start Using SAP HANA, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).
