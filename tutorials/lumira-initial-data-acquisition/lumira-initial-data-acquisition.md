@@ -23,11 +23,12 @@ How to acquire data into SAP BusinessObjects Lumira using sample MS Excel file.
 
     You can also press `Ctrl+N`.
 
-    ![Creating a new document in SAP BusinessObjects Lumira](Lum01-01.png)
+    ![Creating a new document in SAP BusinessObjects Lumira](lum01-01.jpg)
 
-    > In this example screenshots from SAP BusinessObjects Lumira version 1.30 in English are being used. They may be slightly different between versions and application languages.
+    > ### Note
+    > In this example screenshots from SAP BusinessObjects Lumira version 1.31 in English are being used. They may be slightly different between versions and application languages.
 
-2. Create a new Dataset by selecting **Microsoft Excel** as a source, pressing **Next**, and then selecting `BestRunCorp_Retail.xlsx` file from the your user’s directory `…\Documents\SAP Lumira Documents\Samples\`. SAP BusinessObjects Lumira installation comes with a few sample files, and this MS Excel file with data is just one of them.
+2. Create a new Dataset by selecting **Microsoft Excel** as a source, pressing **Next**, and then selecting `BestRunCorp_Retail.xlsx` file from the your user's directory `...\Documents\SAP Lumira Documents\Samples\`. SAP BusinessObjects Lumira installation comes with a few sample files, and this MS Excel file with data is just one of them.
 
     > If for any reason you do not have that file or that directory in your local installation, then download [`BestRunCorp_Retail.xlsx`](./BestRunCorp_Retail.xlsx) file.
 
