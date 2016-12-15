@@ -79,5 +79,9 @@ The basics of data visualization: creating charts suggested by the system or man
 
 9. Save the document.
 
+## Optional Steps
+
+ - If you want to further explore SAP BusinessObjects Lumira user tutorials, please check https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=449287573
+
 ## Next Steps
  - Time dimension and data drilling (coming soon)
