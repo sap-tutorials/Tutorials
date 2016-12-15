@@ -31,17 +31,17 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 3. For **Password** enter the temporary password **`HXEHana1`**  
 
-![Entering temporary password](hxe_password_20.PNG)
+    ![Entering temporary password](hxe_password_20.PNG)
 
-3. When prompted for **current (UNIX) password**, enter the temporary password again: **`HXEHana1`**
+4. When prompted for **current (UNIX) password**, enter the temporary password again: **`HXEHana1`**
 
-4. When prompted for **New password**, enter a strong password with at least 8 characters. If your password is not strong enough, the system logs you off and you must log in again.  
+5. When prompted for **New password**, enter a strong password with at least 8 characters. If your password is not strong enough, the system logs you off and you must log in again.  
 
->**Tip:** Your strong password should contain numbers, upper and lower case letters, and special characters. It cannot contain systematic values, like strings in ascending or descending numerical or alphabetical order.  Strong password example: **`5342_E#1_GcbaFd!`**  
+    >**Tip:** Your strong password should contain numbers, upper and lower case letters, and special characters. It cannot contain systematic values, like strings in ascending or descending numerical or alphabetical order.  Strong password example: **`5342_E#1_GcbaFd!`**  
 
->**Note:** Do not use this password example, since it is public and not secure. This example is for illustrative purposes only and must not be used on your system. Define your own strong password.
+    >**Note:** Do not use this password example, since it is public and not secure. This example is for illustrative purposes only and must not be used on your system. Define your own strong password.
 
-5. When prompted to **Retype new password**, enter your strong password again.
+6. When prompted to **Retype new password**, enter your strong password again.
 
     SAP HANA, express edition is now running.
 
@@ -192,7 +192,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
     xs apps
    ```
 
-   >**Note**: When you run the `xs apps` command for the first time, it may take 1-2 minutes for the system to return the list of XSA applications.
+    >**Note**: When you run the `xs apps` command for the first time, it may take 1-2 minutes for the system to return the list of XSA applications.
 
 5. Check that the application **`webide`** shows **STARTED** in the list of XSA applications , and has 1/1 instances. (If the list shows 0/1 in the instance column, the application is not started.)
 
@@ -224,7 +224,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
     >**Tip**: The command **`xs apps | grep xsa-admin`** returns the `xsa-admin` row only.
 
-10. In a browser on your laptop, enter the **`cockpit-admin-web-app`** URL you noted in step 6.
+10. In a browser on your laptop, enter the **`cockpit-admin-web-app`** URL you noted in step 8.
 
     The Cockpit logon page displays.
 
