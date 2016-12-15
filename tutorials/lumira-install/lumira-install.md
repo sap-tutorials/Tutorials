@@ -27,7 +27,7 @@ How to download the SAP BusinessObjects Lumira Desktop, and install it on your p
 
     ![Lumira Trial](lumira1-2a.jpg)
 
-    Once you reqeusted to sign you up the download of the SAP BusinessObjects Lumira starts.
+    Once requested the download of the SAP BusinessObjects Lumira starts.
 
     ![Lumira download](lumira1-3a.jpg)
 
