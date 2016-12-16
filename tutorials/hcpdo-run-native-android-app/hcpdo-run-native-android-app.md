@@ -305,7 +305,7 @@ The `ProductDataSingleton` keeps the same two variable names and simply replaces
 
 17. Also in the `getProducts()` method, a `do-while` loop wraps the `for` loop to iterate through all entities exposed by the Northwind OData service. This is required because the Northwind service enforces server-side paging which limits each request to 20 entities. If you want to see the value in the OData response, enter the following URL in your browser, go to the bottom of the response and look for `$skiptoken=`: <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$orderby=ProductID>
 
-    The SDK will handle any paging size for you (`$skiptoken` value), so you don’t need to know what it is when developing the app. After sending the first request, the `ODataEntitySet.getNextResourcePath()` method will generate any subsequent resource paths based on the received `skiptoken` value. The string returned by `getNextResourcePath()` will be null if all entities have been received. 
+    The SDK will handle any paging size for you (`$skiptoken` value), so you don't need to know what it is when developing the app. After sending the first request, the `ODataEntitySet.getNextResourcePath()` method will generate any subsequent resource paths based on the received `skiptoken` value. The string returned by `getNextResourcePath()` will be null if all entities have been received. 
 
     The full logic of `getProducts()` in pseudo code looks like this:
 

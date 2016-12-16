@@ -59,7 +59,7 @@ For more information on that please [see tutorial](https://hcp.sap.com/developer
   });  
 	```
 
-	Don’t remember just go back to your `iotmms` application and you can get them from there. Once you have that in place you will need to adjust the `graph` settings to match the values of your message type as well as your data values, change Slider Value to Temperature F.
+	Don't remember just go back to your `iotmms` application and you can get them from there. Once you have that in place you will need to adjust the `graph` settings to match the values of your message type as well as your data values, change Slider Value to Temperature F.
 
 	```javascript
   function createMeasureFeed() {
@@ -104,7 +104,7 @@ For more information on that please [see tutorial](https://hcp.sap.com/developer
   }
 	```
 
-7. Now in Eclipse, build the project using Maven. If you don’t have Maven, click on Help install new software. In the Work with line, start typing eclipse.
+7. Now in Eclipse, build the project using Maven. If you don't have Maven, click on Help install new software. In the Work with line, start typing eclipse.
 
 8. Open Collaboration, and look for `m2e-Maven Integration for Eclipse`
 
@@ -134,7 +134,7 @@ For more information on that please [see tutorial](https://hcp.sap.com/developer
 
     ![destinations](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/13.png)
 
-15. Click on Import From File, and browse to your file that you’ve created.
+15. Click on Import From File, and browse to your file that you've created.
 
     ![Import](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/14.png)
 

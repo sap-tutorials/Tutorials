@@ -113,7 +113,7 @@ In this tutorial you will learn how to extend the controller of a standard SAP F
 
     ![toast multiple days](toast-multiple-days.png)
 
-Congratulations, you’ve successfully extended a controller of a SAP Standard Fiori app.
+Congratulations, you've successfully extended a controller of a SAP Standard Fiori app.
 
 ## Next Steps
  - [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)

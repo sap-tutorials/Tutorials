@@ -27,7 +27,7 @@ Create a simple OData service connecting to your table and data.
 
 	![file name](2.png)
 
-3. You want to define an OData service to expose the business partner table. The syntax of the XSODATA service is relative easy for this use case. You need only define a namespace (your package path), the name of the HANA Table you will base the service from (`dev602.data::MD.BusinessPartner`) and the name of the OData entity (`BusinessPartners`). Therefore the content of the XSODATA file would be. Note: if you don’t want to type this code, we recommend that you cut and paste it from this web address `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex3_10`
+3. You want to define an OData service to expose the business partner table. The syntax of the XSODATA service is relative easy for this use case. You need only define a namespace (your package path), the name of the HANA Table you will base the service from (`dev602.data::MD.BusinessPartner`) and the name of the OData entity (`BusinessPartners`). Therefore the content of the XSODATA file would be. Note: if you don't want to type this code, we recommend that you cut and paste it from this web address `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex3_10`
 	
 	![odata service](3.png)
 	
@@ -43,8 +43,19 @@ Create a simple OData service connecting to your table and data.
 
 	![access metadata](5.png)
 	
-6. In order to view the data of the entity, you would append `BusinessPartners` to the end of the URL:	For Example:	`/xodata/businessPartners.xsodata/BusinessPartners?$format=json`	You are now able to see the data from the `businessPartner` table.  	![Business Partner data](6.png)
-7. You can also experiment with standard OData URL parameters like $top, $skip, or $filter.  These options are interpreted and handled by the OData service of the `XSEngine` for you.  You get complex service handling without any coding. For example the following URL would return only three business partner records and would skip the first five records.  Such parameters are helpful when implementing server side scrolling, filtering, or sorting in table UI elements.	For Example:	`/xsodata/businessPartners.xsodata/BusinessPartners?$top=3&$skip=5&$format=json`
+6. In order to view the data of the entity, you would append `BusinessPartners` to the end of the URL:
+
+	For Example:
+	`/xodata/businessPartners.xsodata/BusinessPartners?$format=json`
+
+	You are now able to see the data from the `businessPartner` table.  
+
+	![Business Partner data](6.png)
+7. You can also experiment with standard OData URL parameters like $top, $skip, or $filter.  These options are interpreted and handled by the OData service of the `XSEngine` for you.  You get complex service handling without any coding. For example the following URL would return only three business partner records and would skip the first five records.  Such parameters are helpful when implementing server side scrolling, filtering, or sorting in table UI elements.
+
+	For Example:
+	`/xsodata/businessPartners.xsodata/BusinessPartners?$top=3&$skip=5&$format=json`
+
 	![output](7.png) 
 
 ## Next Steps

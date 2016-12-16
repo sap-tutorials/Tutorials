@@ -42,7 +42,7 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 
     ![Username and Password](connect-to-hana-system-4-user-and-pass.png)
 
-5. Click the **Store user name and password in secure storage** checkbox so you won’t have to re-enter
+5. Click the **Store user name and password in secure storage** checkbox so you won't have to re-enter
 your credentials when re-connecting to the system. Next click **Finish** or press **Alt+f**.
 
     ![Click Finish](connect-to-hana-system-5-click-finish.png)
@@ -86,7 +86,7 @@ your credentials when re-connecting to the system. Next click **Finish** or pres
 
     ![Change Username and Password](add-streaming-server-4-change-username-and-password.png)
 
-5. Enter the streaming server’s credentials and check **Use Secure Storage for Streaming Credentials**. Press **OK** to continue.
+5. Enter the streaming server's credentials and check **Use Secure Storage for Streaming Credentials**. Press **OK** to continue.
 
     ![Enter Username and Password](add-streaming-server-5-enter-username-and-password.png)
 

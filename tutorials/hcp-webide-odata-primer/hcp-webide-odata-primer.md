@@ -14,7 +14,7 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 ## Details
 
 ### You will learn
-Throughout this tutorial series you’ve been working on an app that consumes an OData service. Since you are now familiar with using the content, its time to learn a bit more about what the OData protocol can do for a developer. In the next tutorial, you will learn how to apply these capabilities to your SAPUI5 app.
+Throughout this tutorial series you've been working on an app that consumes an OData service. Since you are now familiar with using the content, its time to learn a bit more about what the OData protocol can do for a developer. In the next tutorial, you will learn how to apply these capabilities to your SAPUI5 app.
 
 OData (Open Data Protocol) is an [OASIS open industry standard](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=odata) covering building and consuming RESTful APIs. The standard was initially created by Microsoft, and the committee is now chaired by a Microsoft and an SAP employee.
 

@@ -22,29 +22,111 @@ you will learn about the fundaments of the asynchronous nature of Node.js You wi
 1. Return to the Node.js module and the `server.js` source file. Add a second module require statement for `./exerciseAsync`
 
 	```
-	"use strict";	var xsjs  = require("sap-xsjs");	var xsenv = require("sap-xsenv");	var port  = process.env.PORT || 3000;	var server = require('http').createServer();	var express = require("express");	var node = require("./myNode"); 	var exerciseAsync = require("./exerciseAsync");
+	"use strict";
+
+	var xsjs  = require("sap-xsjs");
+	var xsenv = require("sap-xsenv");
+	var port  = process.env.PORT || 3000;
+	var server = require('http').createServer();
+	var express = require("express");
+	var node = require("./myNode"); 
+	var exerciseAsync = require("./exerciseAsync");
 	```
 
 2. Add an express route handler for this `exerciseAsync` module and pass the server variable in as well. 
 
 	```
-	app.use("/node", node());	app.use("/node/excAsync", exerciseAsync(server));
+	app.use("/node", node());
+	app.use("/node/excAsync", exerciseAsync(server));
 	```
 
 3. Create a new file in your `js` folder called `exerciseAsync.js`. 
 
 	![new file](3.png)
 
-4. Add the following code to your `exerciseAsync.js` file. You can look at this code if you want, but isn’t what we want you to focus on for this exercise. Instead this is really just a test framework. You will instead write the important parts of this exercise in a series of additional Node.js modules – each focusing on a different Node.js asynchronous aspect.
+4. Add the following code to your `exerciseAsync.js` file. You can look at this code if you want, but isn't what we want you to focus on for this exercise. Instead this is really just a test framework. You will instead write the important parts of this exercise in a series of additional Node.js modules – each focusing on a different Node.js asynchronous aspect.
 
 	```
-	“use strict";	var express = require("express");	var app = express(); 	var WebSocketServer = require("ws").Server;	var asyncLib = require("./async/async.js");	var dbAsync = require("./async/databaseAsync.js");	var dbAsync2 = require("./async/databaseAsync2.js");	var fileSync = require("./async/fileSync.js");	var fileAsync = require("./async/fileAsync.js");	var httpClient = require("./async/httpClient.js");		module.exports = function(server){				app.use(function(req, res){	    	res.send({ msg: "hello" });		});		var wss = new WebSocketServer({ 			server: server, 			path: "/node/excAsync"		});			wss.broadcast = function (data) {			var message = JSON.stringify({text: data});	    	for (var i in this.clients)	        	this.clients[i].send(message);	    	console.log("sent: %s", message);		};			wss.on("connection", function (ws) {	    	console.log("Connected");							ws.on('message', function (message) {	        	console.log('received: %s', message);	        	var data = JSON.parse(message);	        	switch(data.action){	        		case "async":	        			asyncLib.asyncDemo(wss);	        			break;	        		case "fileSync":	        	    	fileSync.fileDemo(wss);	        	    	break;	        		case "fileAsync":	        	    	fileAsync.fileDemo(wss);	        	    	break;  	        		case "httpClient":	        	    	httpClient.callService(wss);	        	    	break;    	        		case "dbAsync":	        	    	dbAsync.dbCall(wss);	        	    	break;  	        		case "dbAsync2":	        	    	dbAsync2.dbCall(wss);	        	    	break;         	           	        	          	    	        		default:						wss.broadcast('Error: Undefined Action: '+ data.action);						break;	        }	    });    		    	ws.send(JSON.stringify({	        	text: "Connected to Exercise 3"	    	}));			});				return app;	};
+	“use strict";
+	var express = require("express");
+	var app = express(); 
+	var WebSocketServer = require("ws").Server;
+	var asyncLib = require("./async/async.js");
+	var dbAsync = require("./async/databaseAsync.js");
+	var dbAsync2 = require("./async/databaseAsync2.js");
+	var fileSync = require("./async/fileSync.js");
+	var fileAsync = require("./async/fileAsync.js");
+	var httpClient = require("./async/httpClient.js");
+	
+	module.exports = function(server){
+	
+	
+		app.use(function(req, res){
+	    	res.send({ msg: "hello" });
+		});
+		var wss = new WebSocketServer({ 
+			server: server, 
+			path: "/node/excAsync"
+		});
+	
+		wss.broadcast = function (data) {
+			var message = JSON.stringify({text: data});
+	    	for (var i in this.clients)
+	        	this.clients[i].send(message);
+	    	console.log("sent: %s", message);
+		};
+	
+		wss.on("connection", function (ws) {
+	    	console.log("Connected");	
+			
+			ws.on('message', function (message) {
+	        	console.log('received: %s', message);
+	        	var data = JSON.parse(message);
+	        	switch(data.action){
+	        		case "async":
+	        			asyncLib.asyncDemo(wss);
+	        			break;
+	        		case "fileSync":
+	        	    	fileSync.fileDemo(wss);
+	        	    	break;
+	        		case "fileAsync":
+	        	    	fileAsync.fileDemo(wss);
+	        	    	break;  
+	        		case "httpClient":
+	        	    	httpClient.callService(wss);
+	        	    	break;    
+	        		case "dbAsync":
+	        	    	dbAsync.dbCall(wss);
+	        	    	break;  
+	        		case "dbAsync2":
+	        	    	dbAsync2.dbCall(wss);
+	        	    	break;         	           	        	          	    
+	        		default:
+						wss.broadcast('Error: Undefined Action: '+ data.action);
+						break;
+	        }
+	    });    	
+	    	ws.send(JSON.stringify({
+	        	text: "Connected to Exercise 3"
+	    	}));	
+		});
+		
+		return app;
+	};
 	```
 
 5. Look at the `package.json` file in the editor. You will see the dependencies section which lists all required libraries and their versions. Add the `ws` module to this dependencies section.
 
 	```
-	"sap-xsenv": "1.2.1",	"sap-xsjs": "1.4.0",	"express": "4.12.3",	"sap-hdbext": "1.1.2",    	"sap-xssec": "0.5.3",    	"passport": "0.2.1",    	"async": "latest",    	"ws": "latest"	},
+	"sap-xsenv": "1.2.1",
+	"sap-xsjs": "1.4.0",
+	"express": "4.12.3",
+	"sap-hdbext": "1.1.2",
+    	"sap-xssec": "0.5.3",
+    	"passport": "0.2.1",
+    	"async": "latest",
+    	"ws": "latest"
+	},
 	```
 
 6. You will also need a test user interface for this exercise.  Go to the `web/resources` folder and right mouse click.  Choose `Import->From` File System.
@@ -95,7 +177,7 @@ you will learn about the fundaments of the asynchronous nature of Node.js You wi
 
 	![async](17.png)
 
-18. What do you expect this code will output? From many other programming languages you would expect sequential processing and therefore the End output wouldn’t come until after the timer expired. However part of the power of Node.js is asynchronous non-blocking execution of many core elements. In test UI, press the Basic `Async` button.
+18. What do you expect this code will output? From many other programming languages you would expect sequential processing and therefore the End output wouldn't come until after the timer expired. However part of the power of Node.js is asynchronous non-blocking execution of many core elements. In test UI, press the Basic `Async` button.
 
 	![button](18.png)
 
@@ -106,15 +188,15 @@ you will learn about the fundaments of the asynchronous nature of Node.js You wi
 
 	![file sync](20.png)
 
-21. Test your `fileSync.js` from the UI test tool. As you might expect, everything is output in exactly the same order as the lines of code were listed in the application because all operations were synchronous. Program execution didn’t continue until each read operation had completely finished.
+21. Test your `fileSync.js` from the UI test tool. As you might expect, everything is output in exactly the same order as the lines of code were listed in the application because all operations were synchronous. Program execution didn't continue until each read operation had completely finished.
 
 	![test file](21.png)
 
-22. Now to look at `fileAsync.js`. Notice that the message output now is embedded as an in-line callback function. It doesn’t get executed until the read operation is complete, but the rest of the program flow continues and isn’t blocked by the file operation.
+22. Now to look at `fileAsync.js`. Notice that the message output now is embedded as an in-line callback function. It doesn't get executed until the read operation is complete, but the rest of the program flow continues and isn't blocked by the file operation.
 
 	![callback](22.png)
 
-23. Now run `fileAsync.js` from the test UI. The output of this exercise gives us very different results. Both after comments are outputted before either of the file contents.  Also if the first file had been significantly larger than the second, it’s possible that the second might have finished and output first. This has powerful implications to how you code applications.
+23. Now run `fileAsync.js` from the test UI. The output of this exercise gives us very different results. Both after comments are outputted before either of the file contents.  Also if the first file had been significantly larger than the second, it's possible that the second might have finished and output first. This has powerful implications to how you code applications.
 
 	![run file](23.png)
 
@@ -126,7 +208,7 @@ you will learn about the fundaments of the asynchronous nature of Node.js You wi
 
 	![test](25.png)
 
-26. Perhaps most interesting is that this non-blocking concept can also be extended to database access. This allows you to issue multiple requests to the underlying HANA database in parallel and without stopping the processing flow of the JavaScript application logic. Earlier in this section, you learned about making database access to HANA. For this section you’ve already coded the database requests in a reusable module, so you can concentrate on the asynchronous flow. First you have `databaseAsync.js`. This Issues a message, then calls two functions (`callHANA1` and `callHANA2`), then issues another message. This will execute two different queries in the HANA database.
+26. Perhaps most interesting is that this non-blocking concept can also be extended to database access. This allows you to issue multiple requests to the underlying HANA database in parallel and without stopping the processing flow of the JavaScript application logic. Earlier in this section, you learned about making database access to HANA. For this section you've already coded the database requests in a reusable module, so you can concentrate on the asynchronous flow. First you have `databaseAsync.js`. This Issues a message, then calls two functions (`callHANA1` and `callHANA2`), then issues another message. This will execute two different queries in the HANA database.
 
 	![database calls](26.png)
 

@@ -42,7 +42,7 @@ You will learn how to start SAP HANA Vora Tools and using two of them: SQL Edito
     ```
     > Spark SQL supports operating on a variety of data sources. Registering a table allows you to run SQL queries over its data.
 
-5. Run the following command to make sure you don’t have the `CUSTOMER_TEXT` table already created on your Vora engine.
+5. Run the following command to make sure you don't have the `CUSTOMER_TEXT` table already created on your Vora engine.
     ```sql
     DROP TABLE CUSTOMER_TEXT;
     ```

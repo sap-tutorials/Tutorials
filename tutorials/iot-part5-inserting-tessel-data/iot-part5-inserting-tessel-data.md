@@ -15,7 +15,7 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 ## Details
 ### You will learn  
-Now it’s time to modify a one of your existing Tessel module applications to insert data to HANA directly.
+Now it's time to modify a one of your existing Tessel module applications to insert data to HANA directly.
 For this part you are going to add two JavaScript functions to either the `climate.js` or `ambient.js` files created in Part 1. The first function you will insert will perform an “HTTP POST” just like you did manually using Postman
 
 ### Time to Complete

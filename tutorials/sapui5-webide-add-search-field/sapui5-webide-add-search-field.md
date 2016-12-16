@@ -13,8 +13,8 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 
 ## Details
 ### You will learn  
-You will add a `<SearchField>` control to the initial page of the application. We’ll add it as a child within the pages `subHeader` aggregation which expects a `<Bar>` control.
-To handle the search, we’ll specify a handler for the search field’s ‘search’ event. This handler `handleSearch` is defined in the view’s controller, and the search effect is achieved by adding a ‘contains string’ filter to the binding of the List control’s items aggregation.
+You will add a `<SearchField>` control to the initial page of the application. We'll add it as a child within the pages `subHeader` aggregation which expects a `<Bar>` control.
+To handle the search, we'll specify a handler for the search field's ‘search' event. This handler `handleSearch` is defined in the view's controller, and the search effect is achieved by adding a ‘contains string' filter to the binding of the List control's items aggregation.
 
 ### Time to Complete
 **10 Minutes**.
@@ -26,7 +26,13 @@ You will add a `<SearchField>` control to the initial page of the application. W
 1.  Open the `webapp/view/View1.view.xml` file, and add the following code to the `<Page>` element:
 
     ```xml
-    <subHeader>	 	<Bar>	 		<contentLeft>	 			<SearchField search="handleSearch" />	 		</contentLeft>	 	</Bar>	 </subHeader>
+    <subHeader>
+	 	<Bar>
+	 		<contentLeft>
+	 			<SearchField search="handleSearch" />
+	 		</contentLeft>
+	 	</Bar>
+	 </subHeader>
 	```
 	
     ![Adding a subHeader element](1a.png)
@@ -46,8 +52,21 @@ You will add a `<SearchField>` control to the initial page of the application. W
     
 
     ```javascript
-   		,		handleSearch : function (evt) {			// create model filter			var filters = [];			var query = evt.getParameter("query");			if (query && query.length > 0) {				var filter = new sap.ui.model.Filter("ProductName", sap.ui.model.FilterOperator.Contains, query);				filters.push(filter);			}
-						// update list binding			var list = this.getView().byId("List");			var binding = list.getBinding("items");			binding.filter(filters);		} 
+   		,
+		handleSearch : function (evt) {
+			// create model filter
+			var filters = [];
+			var query = evt.getParameter("query");
+			if (query && query.length > 0) {
+				var filter = new sap.ui.model.Filter("ProductName", sap.ui.model.FilterOperator.Contains, query);
+				filters.push(filter);
+			}
+			
+			// update list binding
+			var list = this.getView().byId("List");
+			var binding = list.getBinding("items");
+			binding.filter(filters);
+		} 
     ```
   
     ![Add the handleSearch method to the controller](2.png)

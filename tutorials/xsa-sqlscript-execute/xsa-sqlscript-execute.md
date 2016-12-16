@@ -47,7 +47,7 @@ In contrast to executing a string using EXEC, executing the string using EXECUTE
 
     ![count](7.png)
 
-8. Now change the CALL statement. This time insert the value for the input parameter as ‘OR 1 = 1’ as shown here. Run the CALL statement again.
+8. Now change the CALL statement. This time insert the value for the input parameter as ‘OR 1 = 1' as shown here. Run the CALL statement again.
 
     ![modify call statement](8.png)
 
