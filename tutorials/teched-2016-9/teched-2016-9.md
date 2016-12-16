@@ -63,7 +63,7 @@ The first step will be to configure and deploy the **Message Management Service 
 
 Click on the **Deploy Message Management Service** tile. It will deploy `iotmms` Java application for you in the background.
 
-The form should already be filled with your information like your account ID (p-number or s-number if you are SAP's customer or partner, or i-/d-number if you are SAP employee) with the world “trial” (no space between the p-number and trial), your user name etc.
+The form should already be filled with your information like your account ID (p-number or s-number if you are SAP's customer or partner, or i-/d-number if you are SAP employee) with the world "trial" (no space between the p-number and trial), your user name etc.
 
 Enter your **SAP HANA Cloud Platform** password, then click on **Deploy**.
 
@@ -111,7 +111,7 @@ Select the **IoT-MMS-User** (click the empty cell next to the Name to select the
 
 ![Authorizations](p6_8.png)
 
-Then under **Individual Users**, click **Assign** and enter your HCP user ID (e.g. your p-number ***without*** the word “trial” on the end).
+Then under **Individual Users**, click **Assign** and enter your HCP user ID (e.g. your p-number ***without*** the word "trial" on the end).
 
 ![Assign Role](p6_9.png)
 

@@ -193,11 +193,11 @@ HDI introduces the concept of the container as an abstraction of the Schema. The
       };
 	``` 
 	
-14. With the tables we created, you use a unique order id number as the primary key. Therefore you need a sequence to have an auto incrementing unique id generated when new data is inserted. Create a new sequence by right-clicking on the data folder and choosing “New”, then “File”.
+14. With the tables we created, you use a unique order id number as the primary key. Therefore you need a sequence to have an auto incrementing unique id generated when new data is inserted. Create a new sequence by right-clicking on the data folder and choosing "New", then "File".
 
     ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/10.png)
 
-15. Enter the name of the file as `orderId.hdbsequence`. Click “OK”.
+15. Enter the name of the file as `orderId.hdbsequence`. Click "OK".
 
     ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/11.png)
 

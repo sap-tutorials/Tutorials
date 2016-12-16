@@ -47,7 +47,7 @@ The autonomous transaction is independent from the main procedure transaction. C
 
 	![select statement](7.png)
 
-8. Another “Chuck” record was not inserted.  “Chuck Norris's” record was removed by the rollback (“Is that even possible…?”)  by using AUTONOMOUS TRANSACTION blocks, the code within is isolated from the rest of the mainline code and is treated as a separate transaction.
+8. Another "Chuck" record was not inserted.  "Chuck Norris's" record was removed by the rollback ("Is that even possible…?")  by using AUTONOMOUS TRANSACTION blocks, the code within is isolated from the rest of the mainline code and is treated as a separate transaction.
 
 	![results](8.png)
 	

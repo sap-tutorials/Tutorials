@@ -41,7 +41,7 @@ This procedure assumes you are using the trial edition of the SAP HANA Cloud Pla
 ￼
 5. With IoT services enabled, you can begin the steps necessary to connect your device and enable message communication. The first step will be to configure and deploy the Message Management Service (MMS). Click on the **Deploy Message Management Service** tile.
 
-6. Enter in your information in the fields, where your account ID is your p-number (or s-number if you are SAP's customer or partner, or i-/d-number if you are SAP employee) with the world “trial” (no space between the p-number and trial) and your user name is just your p-number.
+6. Enter in your information in the fields, where your account ID is your p-number (or s-number if you are SAP's customer or partner, or i-/d-number if you are SAP employee) with the world "trial" (no space between the p-number and trial) and your user name is just your p-number.
 ￼
     ![Deploy Service](p6_6a.png)
 
@@ -53,7 +53,7 @@ This procedure assumes you are using the trial edition of the SAP HANA Cloud Pla
 
     ![Authorizations](p6_8.png)
 
-9. Then under **Individual Users**, click **Assign** and enter your HCP user ID (e.g. your p-number without the word “trial” on the end).
+9. Then under **Individual Users**, click **Assign** and enter your HCP user ID (e.g. your p-number without the word "trial" on the end).
 
     ![Assign Role](p6_9.png)
 

@@ -27,7 +27,7 @@ You will also learn how to add a field to your app. This is useful since the tem
 
 ---
 
-1. The `UnitPrice` field is defined as a decimal number, with “scale” of 4 in the [OData service](http://services.odata.org/V2/Northwind/Northwind.svc/$metadata)
+1. The `UnitPrice` field is defined as a decimal number, with "scale" of 4 in the [OData service](http://services.odata.org/V2/Northwind/Northwind.svc/$metadata)
 
     ![View of OData model](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_1.png)
 
@@ -39,7 +39,7 @@ You will also learn how to add a field to your app. This is useful since the tem
     
     Now that you know how to round the number, the trick is to figure out where to use this approach.
 
-3. To make the change so it affects the master and detail views, you want to make the change as far “upstream” as possible, which is in the `_setModel` function of `Component.js`.
+3. To make the change so it affects the master and detail views, you want to make the change as far "upstream" as possible, which is in the `_setModel` function of `Component.js`.
     
     ![Beginning of `_setModel` function](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_3.png)
     

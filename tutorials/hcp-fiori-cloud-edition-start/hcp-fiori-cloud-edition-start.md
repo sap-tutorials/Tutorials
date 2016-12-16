@@ -29,11 +29,11 @@ In this tutorial you will learn how to get started with the SAP Fiori, Demo Clou
 
 3. At your first access you also will have to accept the "SAP Fiori, Demo Cloud Edition Terms of Use". Do that by clicking **I agree**. After that you will be able to try out all the apps. You can i.e. try the Inbox and approve some workflows.
 
-    In the following tutorials you can learn how to extend the standard apps. You have to activate the “Customize and Extend” mode of the SAP Fiori, Demo Cloud Edition. Go back to the home screen by clicking the **Home** icon. In the group "Welcome" you will find the “Customize and Extend” tile. Click on the tile.
+    In the following tutorials you can learn how to extend the standard apps. You have to activate the "Customize and Extend" mode of the SAP Fiori, Demo Cloud Edition. Go back to the home screen by clicking the **Home** icon. In the group "Welcome" you will find the "Customize and Extend" tile. Click on the tile.
     
     ![SAP Fiori, Demo Cloud Edition - Welcome screen](1.png)
     
-    You can also reach the “Customize and Extend” mode by clicking the Cloud icon in the upper right corner.
+    You can also reach the "Customize and Extend" mode by clicking the Cloud icon in the upper right corner.
 
     ![Get started!](7.png)
 
@@ -53,7 +53,7 @@ In this tutorial you will learn how to get started with the SAP Fiori, Demo Clou
     
     ![launchpad start](5.png)
 
-7. The app you want to extend in the next tutorials is "My Opportunities" in the Group “CRM”:
+7. The app you want to extend in the next tutorials is "My Opportunities" in the Group "CRM":
     
     ![Fiori launchpad group CRM](6.png)
 	

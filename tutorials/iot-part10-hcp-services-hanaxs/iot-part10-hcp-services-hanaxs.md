@@ -58,13 +58,13 @@ Now that your IoT Services are collecting data and you were able to view it your
 
 7. Now start (or restart) the `iotmms` Java application.
 
-8. With that finished you should be able to go back to your MDC instance and select the "Catalog" under the menu options along the top of the page and see your tables now listed under "SYSTEM" schema - if not return to the IoT Services and send another test message. ([see tutorial](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)). So provided you received the “200” status in your messages then you should now have data in your tables and can begin working on your XS application.
+8. With that finished you should be able to go back to your MDC instance and select the "Catalog" under the menu options along the top of the page and see your tables now listed under "SYSTEM" schema - if not return to the IoT Services and send another test message. ([see tutorial](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)). So provided you received the "200" status in your messages then you should now have data in your tables and can begin working on your XS application.
 
   ![Tables](9.png)
 
 9. Your table `T_IOT_XXXXXXXXXXXXX` will be the other item you need to make note of for use in a moment.
 
-10. Choose the “SAP HANA Web-based Development Workbench,” now right click on the top level, `Content`, and choose Create Application”. Choose the Empty Application” option and the “sub package” - `codejam.iotmmsxs`
+10. Choose the "SAP HANA Web-based Development Workbench," now right click on the top level, `Content`, and choose Create Application". Choose the Empty Application" option and the "sub package" - `codejam.iotmmsxs`
 
   ![new application](14.png)
 
@@ -89,7 +89,42 @@ Now that your IoT Services are collecting data and you were able to view it your
     > Make sure you replace `<MESSAGE_ID>` below with the name of your table with corresponding message type table, like `T_IOT_15B1E994B520C8D65A42`
 
     ```html
-    <!DOCTYPE HTML>     <html>     <head>       <meta http-equiv="X-UA-Compatible" content="IE=edge" />       <meta charset="UTF-8"/>       <title>My Sensor Data</title>       <script id='sap-ui-bootstrap'         src='/sap/ui5/1/resources/sap-ui-core.js'         data-sap-ui-theme='sap_goldreflection'         data-sap-ui-libs='sap.ui.core,sap.ui.commons,sap.ui.table'>       </script>       <script language="JavaScript">         var oModel = new sap.ui.model.odata.ODataModel("/codejam/iotmmsxs/services/iotservice.xsodata/", false);         var arrayHeaders = new Array();         oTable = new sap.ui.table.Table("test",{tableId: "tableID", visibleRowCount: 10});         //Bring the table onto the UI         oTable.placeAt("sensor_table");         //Table Column Definitions         var oMeta = oModel.getServiceMetadata();         var oControl;         for ( var i = 0; i < oMeta.dataServices.schema[0].entityType[0].property.length; i++) {            var property = oMeta.dataServices.schema[0].entityType[0].property[i];            oControl = new sap.ui.commons.TextField().bindProperty("value",property.name);            oTable.addColumn(new sap.ui.table.Column({label:new sap.ui.commons.Label({text: property.name}), template: oControl, sortProperty: property.name, filterProperty: property.name, filterOperator: sap.ui.model.FilterOperator.EQ, flexible: true, width: "125px" }));         }         oTable.setModel(oModel);         var sort1 = new sap.ui.model.Sorter("C_TIMESTAMP");         //Replace <MESSAGE_ID> below with the name of your table with corresponding message type table, like T_IOT_15B1E994B520C8D65A42         oTable.bindRows("/<MESSAGE_ID>",sort1);       </script>     </head>     <body>          <div id="sensor_table"/>     </body>     </html>    ```
+    <!DOCTYPE HTML>
+     <html>
+     <head>
+       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+       <meta charset="UTF-8"/>
+       <title>My Sensor Data</title>
+       <script id='sap-ui-bootstrap'
+         src='/sap/ui5/1/resources/sap-ui-core.js'
+         data-sap-ui-theme='sap_goldreflection'
+         data-sap-ui-libs='sap.ui.core,sap.ui.commons,sap.ui.table'>
+       </script>
+       <script language="JavaScript">
+         var oModel = new sap.ui.model.odata.ODataModel("/codejam/iotmmsxs/services/iotservice.xsodata/", false);
+         var arrayHeaders = new Array();
+         oTable = new sap.ui.table.Table("test",{tableId: "tableID", visibleRowCount: 10});
+         //Bring the table onto the UI
+         oTable.placeAt("sensor_table");
+         //Table Column Definitions
+         var oMeta = oModel.getServiceMetadata();
+         var oControl;
+         for ( var i = 0; i < oMeta.dataServices.schema[0].entityType[0].property.length; i++) {
+            var property = oMeta.dataServices.schema[0].entityType[0].property[i];
+            oControl = new sap.ui.commons.TextField().bindProperty("value",property.name);
+            oTable.addColumn(new sap.ui.table.Column({label:new sap.ui.commons.Label({text: property.name}), template: oControl, sortProperty: property.name, filterProperty: property.name, filterOperator: sap.ui.model.FilterOperator.EQ, flexible: true, width: "125px" }));
+         }
+         oTable.setModel(oModel);
+         var sort1 = new sap.ui.model.Sorter("C_TIMESTAMP");
+         //Replace <MESSAGE_ID> below with the name of your table with corresponding message type table, like T_IOT_15B1E994B520C8D65A42
+         oTable.bindRows("/<MESSAGE_ID>",sort1);
+       </script>
+     </head>
+     <body>
+          <div id="sensor_table"/>
+     </body>
+     </html>
+    ```
 
   ![new page](13.png)
 

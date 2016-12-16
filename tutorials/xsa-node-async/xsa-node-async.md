@@ -47,7 +47,7 @@ you will learn about the fundaments of the asynchronous nature of Node.js You wi
 4. Add the following code to your `exerciseAsync.js` file. You can look at this code if you want, but isn't what we want you to focus on for this exercise. Instead this is really just a test framework. You will instead write the important parts of this exercise in a series of additional Node.js modules – each focusing on a different Node.js asynchronous aspect.
 
 	```
-	“use strict";
+	"use strict";
 	var express = require("express");
 	var app = express(); 
 	var WebSocketServer = require("ws").Server;

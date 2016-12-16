@@ -26,7 +26,7 @@ SAP HANA XS are extended services applications based on JavaScript, HTML and CSS
 1. Login to the server provided during this event or to your own SAP HANA server and go to the SAP HANA Web Based Development Workbench
     `http://xx.xx.xx.xx/sap/hana/xs/ide/editor`
     Your login is: user name `CODEJAMMER` and `CodeJam2015` (or whichever username and password you have been given to login with)
-2. Once you have your editor loaded you will need to create a package name under the **CODEJAMMER** package with your name. This is done by right clicking on the **CODEJAMMER** package and choosing **New > Package** and then entering your name. If the **CODEJAMMER** package does not exist then simply create a new package under the **root** package which is simply the “Content” folder.
+2. Once you have your editor loaded you will need to create a package name under the **CODEJAMMER** package with your name. This is done by right clicking on the **CODEJAMMER** package and choosing **New > Package** and then entering your name. If the **CODEJAMMER** package does not exist then simply create a new package under the **root** package which is simply the "Content" folder.
 
     ![Repository View](p2_2.png)
 
@@ -94,7 +94,7 @@ SAP HANA XS are extended services applications based on JavaScript, HTML and CSS
 10. Once table definition file is saved it will activate and create your table. You will now need to create a stored procedure and an OData service file. The OData service file will allow you to access any data and set the connection to the stored procedure for enabling the insertion of new data into the table.
 11. To create a sequence (an incrementing number for the ID field in your table), right-click on your `myiot` package, select **New > File** and name the file `johndoe_id_seq.hdbsequence`.
 
-    You will notice the use of the “name” in these examples it is “JOHNDOE” so be sure to make the appropriate changes.
+    You will notice the use of the "name" in these examples it is "JOHNDOE" so be sure to make the appropriate changes.
 
     ![Sequence definition](p2_11.png)
 12. Enter the following content in your `.hdbsequence` file, and replace instances of `johndoe` and `JOHNDOE` with the name you used.
@@ -141,7 +141,7 @@ SAP HANA XS are extended services applications based on JavaScript, HTML and CSS
 
     END;
     ```
- This code will use the “types” you defined in the table definition and then do an insert to the table with the “value” passed to it.
+ This code will use the "types" you defined in the table definition and then do an insert to the table with the "value" passed to it.
 
 15. In order to activate or utilize this new procedure you will need to create an OData service. To do so, create another new file in your `myiot` package called `mydata.xsodata`.
 
@@ -155,7 +155,7 @@ SAP HANA XS are extended services applications based on JavaScript, HTML and CSS
      }
      ```
 
-17. Your service enabled table is almost ready for use. You also need to give some authorizations and to do this you will create a “ROLE”. Right-click on your `myiot` package and select **New > Role**. Enter `johndoe_myiot` for the role name (modify the name accordingly) and click **Create**.
+17. Your service enabled table is almost ready for use. You also need to give some authorizations and to do this you will create a "ROLE". Right-click on your `myiot` package and select **New > Role**. Enter `johndoe_myiot` for the role name (modify the name accordingly) and click **Create**.
 
      ![New role](p2_11a.png)
 

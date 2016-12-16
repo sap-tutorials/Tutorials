@@ -7,7 +7,7 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
  - **Proficiency:** Beginner
  - **System:** You must have an SAP HANA SPS10 system or higher with smart data streaming installed that you can connect to and use.
  - **Integrated Development Environment:** You must have SAP HANA Studio 2 installed with the streaming plug-in installed and configured.
- - This tutorial assumes you will be using the HANA SYSTEM user to connect to your HANA system and will refer to it as “SYSTEM”.
+ - This tutorial assumes you will be using the HANA SYSTEM user to connect to your HANA system and will refer to it as "SYSTEM".
 
 ## Next Steps
  - **Tutorials:** [Create a Streaming Project in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part2-create-streaming-project.html)

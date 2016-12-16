@@ -148,7 +148,7 @@ As stated earlier, in a distributed development project with multiple developers
   - Merging local changes with the main line becomes more and more complicated and time-consuming as the main line evolves.
   - From product quality standpoint, the risk of instability introduced by a new change increases when the distance between the original base of the change and the current main line version has increased.
 
-Every developer, whether working with the main line or with a feature branch, should push at least once per day. This principle seems easier to accomplish with feature branches, but in very active projects you have to balance that with the potentially high effort of merging or constantly rebasing. There is no "golden rule" or “one size fits all” solution.
+Every developer, whether working with the main line or with a feature branch, should push at least once per day. This principle seems easier to accomplish with feature branches, but in very active projects you have to balance that with the potentially high effort of merging or constantly rebasing. There is no "golden rule" or "one size fits all" solution.
 
 #### Key Learning
 

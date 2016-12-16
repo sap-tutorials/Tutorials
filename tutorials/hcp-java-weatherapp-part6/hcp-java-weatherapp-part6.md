@@ -181,12 +181,12 @@ In this tutorial you will implement a simple domain model and implement the corr
 
 17. Within Postman, enter `http://localhost:8080/weatherapp/api/v1/cities` in the URL input field and make sure to provide your username/password as `Basic Auth` parameters in the **Authorization** tab.
 
-    Afterwards, make sure to update the request by pressing the respective **Update request** button. That will then add the “Authorization” parameter as an HTTP header parameter to your request.
+    Afterwards, make sure to update the request by pressing the respective **Update request** button. That will then add the "Authorization" parameter as an HTTP header parameter to your request.
 
     ![Using a REST client to connect to the Java app](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-17.png)
 
 
-18. Once you execute the call, you'll see two empty brackets “[]” (indicating an empty array) after successful authentication. Don't worry, we haven't saved any cities as favorites yet, so that's just what we would expect.
+18. Once you execute the call, you'll see two empty brackets "[]" (indicating an empty array) after successful authentication. Don't worry, we haven't saved any cities as favorites yet, so that's just what we would expect.
 
     ![Server response to REST client](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-18.png)
 

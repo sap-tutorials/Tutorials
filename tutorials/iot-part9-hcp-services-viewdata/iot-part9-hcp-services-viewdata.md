@@ -30,7 +30,7 @@ For more information on that please [see tutorial](https://hcp.sap.com/developer
 
     ![git perspective](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/1.png)
 
-2. Choose “Clone a Git repository” using the following URL
+2. Choose "Clone a Git repository" using the following URL
 [https://github.com/SAP/iot-starterkit.git](https://github.com/SAP/iot-starterkit.git) which is the SAP official IoT Starter Kit.
 
     ![Clone repo](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/2.png)

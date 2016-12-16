@@ -14,7 +14,7 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 ## Details
 ### You will learn  
 In this exercise you will replace a couple of controls; one in the `View1` and the other in the `Detail` view. In the Master view, rather than the simple flat list item style presented by the `<StandardListItem>` control that is in use currently, you will present the overview of the products in a more appealing way by using the `<ObjectListItem>` control.
-In the Detail view, you will make a similar change, replacing the simple layout (currently afforded by the `<VBox>` control) with a more readable display thanks to the `<ObjectHeader>` control. Along the way you will add one more property to the i18n model (“currency”).
+In the Detail view, you will make a similar change, replacing the simple layout (currently afforded by the `<VBox>` control) with a more readable display thanks to the `<ObjectHeader>` control. Along the way you will add one more property to the i18n model ("currency").
 
 ### Time to Complete
 **10 Minutes**.
@@ -26,8 +26,19 @@ In this exercise you will replace a couple of controls; one in the `View1` and 
 1.  Open the `webapp/view/View1.view.xml` file, and replace the `<StandardListItem>` control with the following code:
 
     ```xml
-    <ObjectListItem type="Navigation"                    press="handleListItemPress"                    title="{ProductName}"                    number="{= ((${UnitPrice} * 100) / 100).toFixed(2) }"                    numberUnit="{i18n>currency}" >    	<attributes>    		<ObjectAttribute text="{QuantityPerUnit}" />    	</attributes>    	<firstStatus>    		<ObjectStatus text="{= ${Discontinued}? 'Discontinued' : 'Available' }"
-                          state="{= ${Discontinued}? 'Error' : 'Success' }" />    	</firstStatus>    </ObjectListItem>
+    <ObjectListItem type="Navigation"
+                    press="handleListItemPress"
+                    title="{ProductName}"
+                    number="{= ((${UnitPrice} * 100) / 100).toFixed(2) }"
+                    numberUnit="{i18n>currency}" >
+    	<attributes>
+    		<ObjectAttribute text="{QuantityPerUnit}" />
+    	</attributes>
+    	<firstStatus>
+    		<ObjectStatus text="{= ${Discontinued}? 'Discontinued' : 'Available' }"
+                          state="{= ${Discontinued}? 'Error' : 'Success' }" />
+    	</firstStatus>
+    </ObjectListItem>
     ```
     
     ![Replace StandardListItem](1.png)
@@ -43,7 +54,21 @@ In this exercise you will replace a couple of controls; one in the `View1` and 
 3.  Open the `webapp/view/Detail.view.xml`, and replace the `<VBox>` element with this code:
 
     ```xml
-    <ObjectHeader title="{ProductName}"	              number="{= ((${UnitPrice} * 100) / 100).toFixed(2) }"	              numberUnit="{i18n>currency}" >		<statuses>			<ObjectStatus text="{= ${Discontinued}? 'Discontinued' : 'Available' }"		                  state="{= ${Discontinued}? 'Error' : 'Success' }" />			<ObjectStatus text="{= (${UnitsOnOrder} > 0)? 'Ordered' : '' }"		                 state="Success" />		</statuses>		<attributes>			<ObjectAttribute text="Product #{ProductID}" />			<ObjectAttribute text="Category #{CategoryID}" />			<ObjectAttribute text="Supplier #{SupplierID}" />		</attributes>	</ObjectHeader>
+    <ObjectHeader title="{ProductName}"
+	              number="{= ((${UnitPrice} * 100) / 100).toFixed(2) }"
+	              numberUnit="{i18n>currency}" >
+		<statuses>
+			<ObjectStatus text="{= ${Discontinued}? 'Discontinued' : 'Available' }"
+		                  state="{= ${Discontinued}? 'Error' : 'Success' }" />
+			<ObjectStatus text="{= (${UnitsOnOrder} > 0)? 'Ordered' : '' }"
+		                 state="Success" />
+		</statuses>
+		<attributes>
+			<ObjectAttribute text="Product #{ProductID}" />
+			<ObjectAttribute text="Category #{CategoryID}" />
+			<ObjectAttribute text="Supplier #{SupplierID}" />
+		</attributes>
+	</ObjectHeader>
 	```
 
     ![Replace VBox with ObjectHeader](3.png)
