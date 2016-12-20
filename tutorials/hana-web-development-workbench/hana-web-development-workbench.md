@@ -40,7 +40,7 @@ Remember the instance runs for a limited time, so if you have to come back later
 
 ![Properties](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/3.png)
 
-Just click start to restart it. Also note it's only valid for 30 days.
+Just click start to restart it. Also note it’s only valid for 30 days.
 
 #### 2 more steps before we hit the editor
 

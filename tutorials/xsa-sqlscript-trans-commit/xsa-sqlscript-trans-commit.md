@@ -71,7 +71,7 @@ In this exercise will show the impact of a runtime error on DML statements and h
 
 	![run select](13.png)
 
-14. As you can see not only was the new record inserted into the `log.errors` table, but also "Chuck Norris" found its way into our `log.messages` table. The complete transaction will be committed, meaning any modification happened in this transaction will be persisted. A better solution for this are the autonomous transaction.
+14. As you can see not only was the new record inserted into the `log.errors` table, but also “Chuck Norris” found its way into our `log.messages` table. The complete transaction will be committed, meaning any modification happened in this transaction will be persisted. A better solution for this are the autonomous transaction.
 
 	![inserted records](14.png)
 

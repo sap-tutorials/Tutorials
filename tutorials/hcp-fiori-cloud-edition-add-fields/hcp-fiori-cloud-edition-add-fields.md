@@ -125,7 +125,7 @@ In this tutorial you will learn how to add a view element with custom fields to 
 
     ![Extended app with ales Organization and Distribution Channel](17.png)
 
-Congratulations, you've successfully extended an SAP standard Fiori app.
+Congratulations, you’ve successfully extended an SAP standard Fiori app.
 
 ## Next Steps
  - [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)

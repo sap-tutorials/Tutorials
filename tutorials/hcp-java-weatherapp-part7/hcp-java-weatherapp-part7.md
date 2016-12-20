@@ -19,7 +19,7 @@ In this tutorial you will enhance the persistence layer with a multi-tenancy fea
 
 ---
 
-1. First, we'll add the necessary annotations to the persistence `BaseObject` class. Open it and add the following two annotations to the class definition:
+1. First, we’ll add the necessary annotations to the persistence `BaseObject` class. Open it and add the following two annotations to the class definition:
 
     ```java
     @MappedSuperclass

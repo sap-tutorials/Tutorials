@@ -193,11 +193,11 @@ HDI introduces the concept of the container as an abstraction of the Schema. The
       };
 	``` 
 	
-14. With the tables we created, you use a unique order id number as the primary key. Therefore you need a sequence to have an auto incrementing unique id generated when new data is inserted. Create a new sequence by right-clicking on the data folder and choosing "New", then "File".
+14. With the tables we created, you use a unique order id number as the primary key. Therefore you need a sequence to have an auto incrementing unique id generated when new data is inserted. Create a new sequence by right-clicking on the data folder and choosing “New”, then “File”.
 
     ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/10.png)
 
-15. Enter the name of the file as `orderId.hdbsequence`. Click "OK".
+15. Enter the name of the file as `orderId.hdbsequence`. Click “OK”.
 
     ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/11.png)
 
@@ -219,7 +219,7 @@ HDI introduces the concept of the container as an abstraction of the Schema. The
 
 18. You also have the `hdbtabledata` development object. This is the replacement for the old `hdbti` development object. Although the syntax of this object is new, the purpose is the same – to allow the loading of initial data from `CSV` files it target tables during their creation. 
 
-	Create a file named `Purchase.hdbtabledata` and enter this text into it. Don't forget to save the file afterwards. 
+	Create a file named `Purchase.hdbtabledata` and enter this text into it. Don’t forget to save the file afterwards. 
 
 	```
 	{
@@ -313,7 +313,7 @@ HDI introduces the concept of the container as an abstraction of the Schema. The
 	0500000001,0000000033,20120102,0000000033,20120102,9000000001,0100000002,EUR,12493.73,10498.94,1994.79,N,I,I,I,I
 	```
 
-20. And data for the item table named `item.csv`.  Don't forget to save. 
+20. And data for the item table named `item.csv`.  Don’t forget to save. 
 
 	```
 	0500000000,0000000010,HT-1000,,EUR,1137.64,956,181.64,1,EA,20121204
@@ -352,7 +352,7 @@ HDI introduces the concept of the container as an abstraction of the Schema. The
 
 22. Create a procedures folder in the `src` folder. In the procedures folder you can create an `hdbprocedure` file via `New->Procedure`
 
-	>The syntax for stored procedures hasn't changed from previous levels of HANA.
+	>The syntax for stored procedures hasn’t changed from previous levels of HANA.
 
     ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/12.png)
 
@@ -391,7 +391,7 @@ HDI introduces the concept of the container as an abstraction of the Schema. The
 	    WHERE "CurrencyCode" = 'EUR'
 	```
 
-26. Now create a role named `dev602.hdbrole` and enter this code. Don't forget to save.
+26. Now create a role named `dev602.hdbrole` and enter this code. Don’t forget to save.
 
 	```
 	{
@@ -460,7 +460,7 @@ HDI introduces the concept of the container as an abstraction of the Schema. The
 
     ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/21.png)
 
-35. If you try to access the data in the view, however, even the technical user of the container doesn't have access because of the structured privilege we placed upon it. 
+35. If you try to access the data in the view, however, even the technical user of the container doesn’t have access because of the structured privilege we placed upon it. 
 
     ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/22.png)
 

@@ -23,7 +23,7 @@ In this tutorial, you will add implement language support for Dutch (`nl`) Spani
 
 **Background on i18n:**
 
-When loading an app, SAPUI5 will check the container's (in this case your browser's) language/local settings, then attempt to load the most specific locale resource bundle file, with graceful degradation down to a "catch-all" case. For example, with a Swiss German-based browser, and no explicit language-related URL parameters, the SAPUI5 runtime will attempt to load the following files in this order:
+When loading an app, SAPUI5 will check the container’s (in this case your browser’s) language/local settings, then attempt to load the most specific locale resource bundle file, with graceful degradation down to a “catch-all” case. For example, with a Swiss German-based browser, and no explicit language-related URL parameters, the SAPUI5 runtime will attempt to load the following files in this order:
 
 1.	`messageBundle_de_CH.properties`
 2.	`messageBundle_de.properties`
@@ -158,7 +158,7 @@ Strings in more specific resource bundles (loaded earlier) will take precedence 
     label_CurrentInventoryValue=Aktuelle Lagerbestand
     ```
 
-    Your new file should look like this. Note that the `messageBundle_de_CH.properties` file does not have a green dot because it hasn't been committed and pushed to your Git repository yet.
+    Your new file should look like this. Note that the `messageBundle_de_CH.properties` file does not have a green dot because it hasn’t been committed and pushed to your Git repository yet.
 
     ![de_CH strings](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_13.png)
 

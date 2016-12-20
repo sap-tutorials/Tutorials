@@ -20,7 +20,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 
 ---
 
-1. If you haven't done so yet, please start [Google Chrome](http://www.google.com/chrome/browser/desktop/) and install the [Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/) now.
+1. If you haven’t done so yet, please start [Google Chrome](http://www.google.com/chrome/browser/desktop/) and install the [Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/) now.
 
 1. Open ***Google Chrome***.
 

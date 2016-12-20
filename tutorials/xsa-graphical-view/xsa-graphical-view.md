@@ -24,42 +24,28 @@ You will learn about creating a graphical calculation views with dimension data.
     ![Import](1.png)
     
 2. Choose the file `data.zip` from the Download folder of your local client machine. Keep all other parameters the same. Press OK. Confirm that it is OK to overwrite the existing files. If the file is not available please check our [GIT repository](https://github.com/I809764/DEV602).
-    ![file select](2.png)
-    ![confirm](3.png) 
-    
+    ![file select](2.png)
+    ![confirm](3.png) 
+    
 3. Now that you have your database development objects, you are ready to build the module which will create them in the HANA database. This process technically executes a Node.js application which will call over to HANA and deploy these database artifacts into their container. Right mouse click on the db folder and choose *Build*.
-    ![Build](4.png) 
+    ![Build](4.png) 
 
-4. Similar to the run activity of the web module earlier; the status of the build will be displayed in a window in the lower right side of the IDE. 
-
-    If everything worked correctly, you should see that the build completed successfully.
-    ![Console output](5.png)
-
-5. There is a new database tool called the HANA Runtime Tools (or HRTT) that can be used to view and interact with HDI created content. Open a new browser tab and navigate to `https://<hostname>:51006` to access this tool, for `SAP HANA, express edition` you will need to navigate to `http://<hostname>:51018`
-    ![HRTT](6.png)
-
-6. You can explore some of the new tables and their content that have been imported. This is the SHINE (SAP HANA Interactive Education) content. 
-    ![SHINE](7.png)
-    
-7. Now you are ready to create our calculation views. From the `db/src` folder, right click and choose "New", then "Folder".  
-    ![SHINE](8.png)
-8. Enter the name of the folder as "models" and click "OK".  
-    ![SHINE](9.png)
-9. In the models sub-folder of your project, create a new calculation view based upon the expanded information for the products. This will require joining the products, texts, `businessPartner`, and address tables.
-
-    Right mouse click on the models package, choose New -> Calculation View
-    ![SHINE](10.png)
-10. Enter the name as PRODUCTS and a Label of Products View. 
-Choose DIMENSION as the data category.  A DIMENSON Calculation View will be very similar to the older Attribute View – A basic join with no aggregation.
-
-    Click "Create".
-    ![SHINE](11.png)
-11. You want to join several tables from our project.  Ultimately you will join `MD.Products`, `MD.BusinessPartner`, `MD.Addresses` and `Util.Texts` (twice).
-
-    In order to do so we have to create a join node for each join criteria. 
-
-    Start by creating a Join Node pressing the Create Join button.
-    ![SHINE](12.png)
+4. Similar to the run activity of the web module earlier; the status of the build will be displayed in a window in the lower right side of the IDE.     If everything worked correctly, you should see that the build completed successfully.
+    ![Console output](5.png)
+5. There is a new database tool called the HANA Runtime Tools (or HRTT) that can be used to view and interact with HDI created content. Open a new browser tab and navigate to `https://<hostname>:51006` to access this tool, for `SAP HANA, express edition` you will need to navigate to `http://<hostname>:51018`
+    ![HRTT](6.png)
+6. You can explore some of the new tables and their content that have been imported. This is the SHINE (SAP HANA Interactive Education) content. 
+    ![SHINE](7.png)
+    7. Now you are ready to create our calculation views. From the `db/src` folder, right click and choose “New”, then “Folder”.  
+    ![SHINE](8.png)
+8. Enter the name of the folder as “models” and click “OK”.  
+    ![SHINE](9.png)
+9. In the models sub-folder of your project, create a new calculation view based upon the expanded information for the products. This will require joining the products, texts, `businessPartner`, and address tables.    Right mouse click on the models package, choose New -> Calculation View
+    ![SHINE](10.png)
+10. Enter the name as PRODUCTS and a Label of Products View. Choose DIMENSION as the data category.  A DIMENSON Calculation View will be very similar to the older Attribute View – A basic join with no aggregation.    Click “Create”.
+    ![SHINE](11.png)
+11. You want to join several tables from our project.  Ultimately you will join `MD.Products`, `MD.BusinessPartner`, `MD.Addresses` and `Util.Texts` (twice).    In order to do so we have to create a join node for each join criteria.     Start by creating a Join Node pressing the Create Join button.
+    ![SHINE](12.png)
 
 12. As we have several joins to add drag this new join node down near the bottom of the design window.
     
@@ -85,12 +71,8 @@ Choose DIMENSION as the data category.  A DIMENSON Calculation View will be very
 
     ![SHINE](18.png)
     
-18. Switch to the Mapping tab. We can then select which columns we want from this part of the join. 
-
-	```
-    Select PRODUCTID, TYPECODE, CATEGORY, CURRENCY, PRICE, NAMEID, DESCID, PARTNERID, COMPANYNAME,and ADDRESES.ADDRESSID and then choose Add To Output.
-    ```
-    ![SHINE](19.png)
+18. Switch to the Mapping tab. We can then select which columns we want from this part of the join. 	```    Select PRODUCTID, TYPECODE, CATEGORY, CURRENCY, PRICE, NAMEID, DESCID, PARTNERID, COMPANYNAME,and ADDRESES.ADDRESSID and then choose Add To Output.    ```
+    ![SHINE](19.png)
 
 14. Optionally, you can change the name of a column as it becomes part of the view.  For example you might change CATEGORY to `ProductCategory`.
     

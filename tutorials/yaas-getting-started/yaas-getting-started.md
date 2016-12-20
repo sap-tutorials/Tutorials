@@ -36,7 +36,7 @@ You will learn how to create your own YaaS project. This project will provide ba
 
     > TIP: You can switch the Turn **Help On** toggle button in the left navigation panel to see prompts.
 
-2. SAP Hybris offers various YaaS functionalities grouped in to packages. Packages include a set of micro services and maintenance user interfaces called Builder modules. Each package has its distinct value proposition as well as a customer segment it addresses.   Your YaaS Project can use these packages if it first subscribes to them.  In order to support a YaaS storefront, your YaaS Project needs the functionality of 7 packages, so you need to subscribe to them now. Let's go through an example of subscribing to one package (Cart, beta package). The complete list of required packages is provided below:
+2. SAP Hybris offers various YaaS functionalities grouped in to packages. Packages include a set of micro services and maintenance user interfaces called Builder modules. Each package has its distinct value proposition as well as a customer segment it addresses.   Your YaaS Project can use these packages if it first subscribes to them.  In order to support a YaaS storefront, your YaaS Project needs the functionality of 7 packages, so you need to subscribe to them now. Let’s go through an example of subscribing to one package (Cart, beta package). The complete list of required packages is provided below:
 
     - Select your project, from **Projects** on the **Builder** home page.
     - From **Administration** menu in the left navigation, go to **Subscriptions**.
@@ -54,9 +54,9 @@ You will learn how to create your own YaaS project. This project will provide ba
     ![Package Project](add-package-toproject.PNG)
 
     - Click **Continue** and then **Subscribe Now** to finalize your subscription.
-    - Click **Configure It** to return to your project's main page.
+    - Click **Configure It** to return to your project’s main page.
     - In addition to **Cart (Beta)**, you need to subscribe to all **Checkout**, **Coupon Management**, **Customer Accounts**, **Order Management**, **Product Content** and **Site Management** packages. Follow the step 2 in order to subscribe to these packages.
-    - Confirm that you see **7** subscriptions listed in your in your YaaS project's subscription page.  
+    - Confirm that you see **7** subscriptions listed in your in your YaaS project’s subscription page.  
 
 3. Now that you have subscribed to these packages, your YaaS Project is now aware of them, but to be able to call the micro services in those packages, your YaaS Project needs to have a valid YaaS Client.  Create a new YaaS Client and select *all possible* required Scopes (permissions) while doing so. Follow the steps below:
 
@@ -67,7 +67,7 @@ You will learn how to create your own YaaS project. This project will provide ba
 
     ![Scope Assignment](client-scope-assignment.PNG)
 
-    - Complete the fields, such as in the example, and **Save** the form. Note that you can leave the Redirect URLs field blank. Confirm that you have one client listed in your project's client page.
+    - Complete the fields, such as in the example, and **Save** the form. Note that you can leave the Redirect URLs field blank. Confirm that you have one client listed in your project’s client page.
 
     ![Create Client](create-new-client.PNG)
 

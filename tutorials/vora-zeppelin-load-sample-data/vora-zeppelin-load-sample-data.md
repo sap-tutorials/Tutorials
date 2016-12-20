@@ -43,7 +43,7 @@ You will learn how to open Apache Zeppelin and how to load sample data.
 
     ![Running all statements from 0_DemoData notebook](vorazeppelin03.jpg)
 
-5. After all statements are finished you should see the interpreter's comment as "Command processed successfully with no results" for all paragraphs.
+5. After all statements are finished you should see the interpreter’s comment as "Command processed successfully with no results" for all paragraphs.
 
     ![All statements executed in 0_DemoData notebook](vorazeppelin04.jpg)    
 

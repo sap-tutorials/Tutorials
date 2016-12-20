@@ -14,8 +14,7 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
  - [Internet of Things (IoT) Using the Tessel to post data](http://www.sap.com/developer/tutorials/iot-part5-inserting-tessel-data.html)
 
 ## Details
-### You will learn  
-Checking the data you have inserted is simple. in this section you will view the data in the catalog and work with a few SQL queries.
+### You will learn  Checking the data you have inserted is simple. in this section you will view the data in the catalog and work with a few SQL queries.
 
 ### Time to Complete
 **10 Min**.
@@ -38,31 +37,19 @@ Checking the data you have inserted is simple. in this section you will view the
 
      ![Display Content](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part4-checking-data/p4_4.png)
 
-5. When you selected **Open Content**, the system executed the following SQL command to display the data:
-
-    ```sql
-    SELECT TOP 1000
+5. When you selected **Open Content**, the system executed the following SQL command to display the data:    ```sql    SELECT TOP 1000
     "ID",
     "TIMESTAMP",
     "TEMPERATURE",
     "HUMIDITY",
     "BRIGHTNESS"
-    FROM "JOHNDOE"."CODEJAMMER.johndoe.myiot::mydata.Data";
-    ```
-    To view the SQL window, click the **Edit SQL statement** button.
+    FROM "JOHNDOE"."CODEJAMMER.johndoe.myiot::mydata.Data";    ```
+    To view the SQL window, click the **Edit SQL statement** button.      ![SQL console](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part4-checking-data/p4_5.png)6. To see how many records there are (handy for later), you can modify the SQL to something like:
 
-      ![SQL console](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part4-checking-data/p4_5.png)
-
-6. To see how many records there are (handy for later), you can modify the SQL to something like:
-
-     ```sql
-     SELECT count(*)
-     FROM "JOHNDOE"."CODEJAMMER.johndoe.myiot::mydata.Data";
-     ```
+     ```sql     SELECT count(*)     FROM "JOHNDOE"."CODEJAMMER.johndoe.myiot::mydata.Data";     ```
      Which will show these results:
 
      ![results](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part4-checking-data/p4_6.png)
-￼
-     You'll only have as many records in there as you added with Postman, but after you insert data directly from the Tessel, you can return to this and section and check again.
-## Next Steps
+￼     You’ll only have as many records in there as you added with Postman, but after you insert data directly from the Tessel, you can return to this and section and check again.
+## Next Steps
  - [Internet of Things (IoT) Using the Tessel to post data](http://www.sap.com/developer/tutorials/iot-part5-inserting-tessel-data.html)

@@ -50,7 +50,7 @@ In this tutorial, set the target device configurations in SAP Web IDE which will
     - 	Windows: Android
     - 	Mac OS: iOS or Android
 
-7. In the **Plugins** section, you specify the plugins the application will use.  For this exercise, do not check any of the standard Cordova plugins. Click the "Kapsel" tab, and select `Logon Manager`.
+7. In the **Plugins** section, you specify the plugins the application will use.  For this exercise, do not check any of the standard Cordova plugins. Click the “Kapsel“ tab, and select `Logon Manager`.
 
 8. After selecting Logon Manager, the plugins section will update to allow you to select the type of server the app will connect to. Click the radio button next to **HANA Cloud Platform mobile services** and ensure your **HCPms Host** URL is correct.
 

@@ -31,14 +31,12 @@ Now that you have data stored in the system its time to display that data within
 
     ![Folders](2.png)
 
-3. Now in the HCP Cockpit select "Connectivity" in the left sidebar menu and now choose the Destinations. Then click on "Import From File", and through your directory structure to the folder `iot-starterkit-master > src > apps > ui5 > consumption > destinations` and select the file `iotmms`.
+3. Now in the HCP Cockpit select “Connectivity” in the left sidebar menu and now choose the Destinations. Then click on “Import From File”, and through your directory structure to the folder `iot-starterkit-master > src > apps > ui5 > consumption > destinations` and select the file `iotmms`.
 
 	 ![Destinations](3.png)
 
-4. Be sure to replace `%account_id%` with your Account ID e.g `d045495trial`. As well as `%User_id%` with your user User ID e.g `d045495`, enter your password and then save. Then repeat with the file `iotrdms`
-
-	 ![Destinations](4.png)
-5. Now under the "Services" section in the sidebar menu and choose the "SAP Web IDE"
+4. Be sure to replace `%account_id%` with your Account ID e.g `d045495trial`. As well as `%User_id%` with your user User ID e.g `d045495`, enter your password and then save. Then repeat with the file `iotrdms`	 ![Destinations](4.png)
+5. Now under the “Services” section in the sidebar menu and choose the “SAP Web IDE”
 
 	 ![Destinations](5.png)
 
@@ -53,7 +51,7 @@ Now that you have data stored in the system its time to display that data within
 	 ![code change](9.png)
 
 8. Open the `index.html` file and you can launch it as is.
-	 ![running app](7.png)
+	 ![running app](7.png)
 
 9. You can now use your expertise with SAPUI5 and start making modifications. Such as the following lines (158 to 164) controlling the `y axis`.
 

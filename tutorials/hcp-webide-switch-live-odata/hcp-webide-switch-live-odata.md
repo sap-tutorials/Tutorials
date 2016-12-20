@@ -116,7 +116,7 @@ Converting an app built on mock data to a live service requires editing only two
 
 11. Since you have the metadata displayed, copy the contents of the entire page from the opening `<edmx.Edmx>` element to the closing `</edmx.Edmx>` tag and replace the contents of the `model/metadata.xml` file in your project and save your edits.
 
-    >Note: do not include the first line of the web page that starts with "This XML file…"
+    >Note: do not include the first line of the web page that starts with “This XML file…”
 
     While updating this file is not necessary for the app to run, it should be done for future reference.
 
@@ -129,7 +129,7 @@ Converting an app built on mock data to a live service requires editing only two
 
     ![Master.view.xml List element](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_12.png)
 
-13. In the `List` element, the items attribute points to the primary collection (displayed in the "master" list of the app). It currently points to `SalesOrders` which is the name you assigned when you created your OData model. Change the items attribute to the collection name used in the final data model (from step 10 above: `SalesOrderCollection`).
+13. In the `List` element, the items attribute points to the primary collection (displayed in the “master” list of the app). It currently points to `SalesOrders` which is the name you assigned when you created your OData model. Change the items attribute to the collection name used in the final data model (from step 10 above: `SalesOrderCollection`).
 
     ![Updating Collection name](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_13.png)
 

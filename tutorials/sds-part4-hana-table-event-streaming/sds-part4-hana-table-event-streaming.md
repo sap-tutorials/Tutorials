@@ -36,7 +36,7 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 
     ![add machineref](add-hana-table/3-add-machineref.png)
 
-    Note: if you don't see the tables you have created, try right clicking the schema and selecting **Refresh**. Make sure to use the same schema you create the table with before. In this case, you are using SYSTEM.
+    Note: if you don’t see the tables you have created, try right clicking the schema and selecting **Refresh**. Make sure to use the same schema you create the table with before. In this case, you are using SYSTEM.
 
 4. Select **Reference**, **Inline** and then click **OK**.
 

@@ -56,7 +56,7 @@ HAT will launch the emulator/simulator and load the app.
 
     Field Name         | Value
     :----------------- | :-------------
-    Username           |  `<your HCP account without "trial" at the end>` e.g. `p12345678`
+    Username           |  `<your HCP account without “trial” at the end>` e.g. `p12345678`
     Password           | `<your HCP account password>`
 
     ![Registration screen](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/7.png)
