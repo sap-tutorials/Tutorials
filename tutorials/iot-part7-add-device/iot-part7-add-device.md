@@ -108,7 +108,7 @@ With the MMS service now deployed, and your user assigned the appropriate role i
     ![Viewing stored messages](p7_13.png)
 ￼
 
-14. Now you will post from an external REST client. In this step you will use [Postman Extension](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en) for Google Chrome.
+14. Now you will post from an external REST client. In this step you will use [Postman Extension](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) for Google Chrome.
 
     Once installed in Chrome open the Postman extension in incognito mode to avoid authentication issues in the same browser session with SAP HCP. For that you might need to allow the Postman extension to run in Chrome's incognito mode.
 
