@@ -19,7 +19,7 @@ SAP HANA 2.0, express edition is for Linux machines running specific installatio
 ### You will learn
 Download the binary image of SAP HANA 2.0, express edition, install the image on your Linux server, and install additional tools for your SAP HANA 2.0, express edition installation as desired.
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/hxe-ua-troubleshooting.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
 ### Time to Complete
 **Approximately 60 Minutes. Download and installation speeds will vary.**
 
