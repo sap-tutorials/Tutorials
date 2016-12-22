@@ -28,7 +28,7 @@ Installing SAP HANA 2.0, express edition installs a permanent 32 GB license auto
 
 2. The IP address is listed under the `eth0 interface` as `inet addr`. In the following example, the IP address is 10.172.90.53:
 
-  `etho Link encap:Ethernet HWaddr 00:0C:29:06:1F:93 inet addr:10.172.90.53`
+    `etho Link encap:Ethernet HWaddr 00:0C:29:06:1F:93 inet addr:10.172.90.53`
 
 ### Edit the `/etc/hosts` File
 
@@ -59,14 +59,14 @@ You must edit the **`/etc/hosts`** file on machines you want to use to access SA
 
 1. In a terminal, log in as the `<sid>adm` user:
 
-  `sudo su -l <sid>adm`
+    `sudo su -l <sid>adm`
 
 2. Enter `HDB info`. The following services must be running:
-  * `hdbnameserver`
-  * `hdbcompileserver`
-  * `hdbpreprocessor`
-  * `hdbwebdispatcher`
-  * `hdbdiserver` (if XSA is installed)
+    * `hdbnameserver`
+    * `hdbcompileserver`
+    * `hdbpreprocessor`
+    * `hdbwebdispatcher`
+    * `hdbdiserver` (if XSA is installed)
 
 2. If any services are not running, enter `HDB start`. When the prompt returns, the system is started.
 
@@ -93,8 +93,8 @@ If you installed the Applications package (`hxexsa.tgz`), test your XS installat
 3. View the list of XSA applications. Enter:  
     ```
     xs apps
-   ```
-   >**Note**: When you run the `xs apps` command for the first time, it may take 1-2 minutes for the system to return the list of XSA applications.
+    ```
+    >**Note**: When you run the `xs apps` command for the first time, it may take 1-2 minutes for the system to return the list of XSA applications.
 
 4. Check that the application **`cockpit-admin-web-app`** shows **STARTED** with 1/1 instances in the list of XSA applications.
 
@@ -110,7 +110,7 @@ If you installed the Applications package (`hxexsa.tgz`), test your XS installat
 
 7. If your site uses a proxy for connecting to HTTP and HTTPS servers, select _Cockpit Settings > Proxy_, then enable **Http(s) Proxy** and set the host, port, and non-proxy hosts.
 
-  >**Tip**: To find your proxy server information, in a terminal, enter `env | grep PROXY`
+    >**Tip**: To find your proxy server information, in a terminal, enter `env | grep PROXY`
 
 ### Test Web IDE (Applications Package Only)
 
@@ -156,16 +156,16 @@ SYSTEM is the database superuser and is not intended for day-to-day activities i
 
 1. In a terminal, log in as the `<sid>adm` user:
 
-  `sudo su -l <sid>adm`
+    `sudo su -l <sid>adm`
 
 2. Create a new admin user with the USER ADMIN system privilege:
 
-  `/usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u SYSTEM -p <SYSTEM-password> "CREATE USER <admin-username> PASSWORD <admin-password> NO FORCE_FIRST_PASSWORD_CHANGE;"`
-  `/usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u SYSTEM -p <SYSTEM-password> "GRANT USER ADMIN TO <admin-username> WITH ADMIN OPTION;"`
+    `/usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u SYSTEM -p <SYSTEM-password> "CREATE USER <admin-username> PASSWORD <admin-password> NO FORCE_FIRST_PASSWORD_CHANGE;"`
+    `/usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u SYSTEM -p <SYSTEM-password> "GRANT USER ADMIN TO <admin-username> WITH ADMIN OPTION;"`
 
 2. Use the new admin user to deactivate the SYSTEM user:
 
-  `/usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u <admin-username> -p <admin-password> "ALTER USER SYSTEM DEACTIVATE USER NOW;"`
+    `/usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u <admin-username> -p <admin-password> "ALTER USER SYSTEM DEACTIVATE USER NOW;"`
 
 ### Best Practices: Backups
 
