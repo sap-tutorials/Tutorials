@@ -7,7 +7,7 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Internet of Things (IoT) Setup the Tessel](http://www.sap.com/developer/how-tos/iot-tessel.html)
+ - **Tutorials:** [Internet of Things (IoT) Setup the Tessel](http://www.sap.com/developer/how-tos/2016/09/iot-tessel.html)
 
 
 ## Next Steps
@@ -136,7 +136,7 @@ You are now going to build a simple and quick SAP HANA XS application, if you al
      ![Sequence](p2_11c.png)
 
      ![Table](p2_11d.png)
-     
+
      ![Procedure](p2_11e.png)
 22. Now that you have a role defined you need to apply that role to your user. Be sure to SAVE the role before continuing! To apply the role to your user, click the small **link** icon in the editor and choose **Security**. When the page updates, unroll the **Users** hierarchy, and select **CODEJAMMER** (or which ever user you were given for this server).
 
