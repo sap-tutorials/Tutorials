@@ -66,7 +66,7 @@ Your server will need the following:
 
 3. Under **SAP HANA 2.0, express edition download manager**, click the download manager that matches your system: Linux or Windows.
 
-    If you have a Mac, or another type of machine, click “Platform-independent” for a platform-independent download manager.
+    If you have a Mac, or another type of machine, click "Platform-independent" for a platform-independent download manager.
 
     ![Registration Success page](HXE_register_success_20.PNG)
 

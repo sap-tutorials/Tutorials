@@ -223,7 +223,7 @@ user.
 
 10. In the `fragment_product_detail.xml` file, a few `android:layout` directives are used to control where the labels and values are shown on the page.
 
-    - The first two `TextView` blocks below make up the first “row” of data shown on the details page. The `android:layout_toRightOf` line ensures the “value” is to the right of the label.
+    - The first two `TextView` blocks below make up the first "row" of data shown on the details page. The `android:layout_toRightOf` line ensures the "value" is to the right of the label.
     - To control the position of each successive row, `android:layout_below` is used in the label `TextView` block and is set to the label `TextView` field above it. The corresponding value `TextView` block again uses `android:layout_toRightOf` directive.
 
     See the XML snippet below showing the layout controlling the position of the product name (first row) and unit price (second row). 
@@ -262,7 +262,7 @@ user.
 
     With the `view` classes covered, we will inspect the remaining packages.
 
-11. There is one class in the `com.northwind.nwandroid` package: `NorthwindApp`. The `NorthwindApp` class is a sub-class of the Android `Application` class, and its only purpose is to store the `ProductDataSingleton` as a “global” variable.
+11. There is one class in the `com.northwind.nwandroid` package: `NorthwindApp`. The `NorthwindApp` class is a sub-class of the Android `Application` class, and its only purpose is to store the `ProductDataSingleton` as a "global" variable.
 
 12. In the `com.northwind.services` package there are five classes used to handle the OData communication with Development & Operations and are application independent (they have no knowledge of the data being passed through). The only class in the app that uses them is the `ProductDataSingleton`.
 
@@ -305,7 +305,7 @@ The `ProductDataSingleton` keeps the same two variable names and simply replaces
 
 17. Also in the `getProducts()` method, a `do-while` loop wraps the `for` loop to iterate through all entities exposed by the Northwind OData service. This is required because the Northwind service enforces server-side paging which limits each request to 20 entities. If you want to see the value in the OData response, enter the following URL in your browser, go to the bottom of the response and look for `$skiptoken=`: <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$orderby=ProductID>
 
-    The SDK will handle any paging size for you (`$skiptoken` value), so you don’t need to know what it is when developing the app. After sending the first request, the `ODataEntitySet.getNextResourcePath()` method will generate any subsequent resource paths based on the received `skiptoken` value. The string returned by `getNextResourcePath()` will be null if all entities have been received. 
+    The SDK will handle any paging size for you (`$skiptoken` value), so you don't need to know what it is when developing the app. After sending the first request, the `ODataEntitySet.getNextResourcePath()` method will generate any subsequent resource paths based on the received `skiptoken` value. The string returned by `getNextResourcePath()` will be null if all entities have been received. 
 
     The full logic of `getProducts()` in pseudo code looks like this:
 

@@ -22,7 +22,7 @@ In this example, you will create a skeleton of an app using the Android Studio M
 
 ---
 
-1. Open Android Studio, and click on “Start a new Android Studio project”
+1. Open Android Studio, and click on "Start a new Android Studio project"
 
     ![start a new Android Studio project](mg6-2-01.png)
 

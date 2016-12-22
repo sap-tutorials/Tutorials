@@ -15,8 +15,8 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 ## Details
 ### You will learn  
-Now it’s time to modify a one of your existing Tessel module applications to insert data to HANA directly.
-For this part you are going to add two JavaScript functions to either the `climate.js` or `ambient.js` files created in Part 1. The first function you will insert will perform an “HTTP POST” just like you did manually using Postman
+Now it's time to modify a one of your existing Tessel module applications to insert data to HANA directly.
+For this part you are going to add two JavaScript functions to either the `climate.js` or `ambient.js` files created in Part 1. The first function you will insert will perform an "HTTP POST" just like you did manually using Postman
 
 ### Time to Complete
 **10 Min**.
@@ -45,7 +45,7 @@ For this part you are going to add two JavaScript functions to either the `clima
 
     ![hostname](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_2.png)
 
-3. One difference between this and “Postman” is that you need to add in your “Authorization” line. In “Postman” you entered the username and password and refreshed the headers. This calculated the authorization hash. Switch back to your Postman window and copy the entire **Authorization** value from the header tab.
+3. One difference between this and "Postman" is that you need to add in your "Authorization" line. In "Postman" you entered the username and password and refreshed the headers. This calculated the authorization hash. Switch back to your Postman window and copy the entire **Authorization** value from the header tab.
 
     ![basic authorization fron previous example](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_3.png)
 

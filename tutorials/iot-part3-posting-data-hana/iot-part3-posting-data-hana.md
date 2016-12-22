@@ -15,7 +15,7 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 ## Details
 ### You will learn  
-Now that your foundation in place it’s time to do a test of posting our data and then to try it with our device. To test you will be using the [Chrome Postman extension](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop).
+Now that your foundation in place it's time to do a test of posting our data and then to try it with our device. To test you will be using the [Chrome Postman extension](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop).
 
 ### Time to Complete
 **10 Min**.

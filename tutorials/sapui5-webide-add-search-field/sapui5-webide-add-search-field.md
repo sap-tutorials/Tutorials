@@ -13,8 +13,8 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 
 ## Details
 ### You will learn  
-You will add a `<SearchField>` control to the initial page of the application. We’ll add it as a child within the pages `subHeader` aggregation which expects a `<Bar>` control.
-To handle the search, we’ll specify a handler for the search field’s ‘search’ event. This handler `handleSearch` is defined in the view’s controller, and the search effect is achieved by adding a ‘contains string’ filter to the binding of the List control’s items aggregation.
+You will add a `<SearchField>` control to the initial page of the application. We'll add it as a child within the pages `subHeader` aggregation which expects a `<Bar>` control.
+To handle the search, we'll specify a handler for the search field's 'search' event. This handler `handleSearch` is defined in the view's controller, and the search effect is achieved by adding a 'contains string' filter to the binding of the List control's items aggregation.
 
 ### Time to Complete
 **10 Minutes**.

@@ -160,16 +160,16 @@ You will also add a Detail view and controller as well as alter the `View1` view
 
     > **Additional Information**
     
-    > As you are focusing on the separation of MVC, the definition of views with XML has a key benefit: You can’t get confused and mix up business logic (usually inside the controller) with the view implementation because XML doesn’t allow you to define methods to be executed. It requires you to refer to a method, which should be defined in the controller. Another aspect is that XML appears to be easier to read and write, as it’s a markup language. The SAPUI5 community prefers this type of view definition and in fact, most of the code samples in the documentation are using XML.
+    > As you are focusing on the separation of MVC, the definition of views with XML has a key benefit: You can't get confused and mix up business logic (usually inside the controller) with the view implementation because XML doesn't allow you to define methods to be executed. It requires you to refer to a method, which should be defined in the controller. Another aspect is that XML appears to be easier to read and write, as it's a markup language. The SAPUI5 community prefers this type of view definition and in fact, most of the code samples in the documentation are using XML.
 
-    > Inside of the page declaration, you are making use of the `<VBox>` UI component. `<VBox>` is a vertical aligned `<Flexbox>` element. It’s essentially a way to arrange all the elements inside of the `<VBox>` in a vertical order. You can imagine it as rows in a table. Every UI element will be placed below the earlier ones. In our case, we will place four “Text” elements in a vertical order.
+    > Inside of the page declaration, you are making use of the `<VBox>` UI component. `<VBox>` is a vertical aligned `<Flexbox>` element. It's essentially a way to arrange all the elements inside of the `<VBox>` in a vertical order. You can imagine it as rows in a table. Every UI element will be placed below the earlier ones. In our case, we will place four "Text" elements in a vertical order.
     
-    > Another important aspect is the declaration of “showNavButton” and the related “navButtonPress” event. While the first one enables the visibility of a “back” button, the latter one defines the function to be executed when this button is pressed. In our case, we assign the function “handleNavButtonPress” as event handler. This function will be implemented in the detail controller.
+    > Another important aspect is the declaration of "showNavButton" and the related "navButtonPress" event. While the first one enables the visibility of a "back" button, the latter one defines the function to be executed when this button is pressed. In our case, we assign the function "handleNavButtonPress" as event handler. This function will be implemented in the detail controller.
 
 
 
 
-    > You will implement one function to handle the back button press event. This method will use the “navTo” method of the router and initiate the navigation via the “home” route. The “onInit” method is more complex. The method expects a navigation parameter for the ProductId. It hooks into the “detail” route and executes the “_onRouteMatched” method to extract the ProductId and set the data binding for the Detail view.
+    > You will implement one function to handle the back button press event. This method will use the "navTo" method of the router and initiate the navigation via the "home" route. The "onInit" method is more complex. The method expects a navigation parameter for the ProductId. It hooks into the "detail" route and executes the "_onRouteMatched" method to extract the ProductId and set the data binding for the Detail view.
     
 12.  Run your application!  When you click on a row, the screen should slide sideways to show the detail view.  To return to the list, click the back arrow (in the upper left corner).
     

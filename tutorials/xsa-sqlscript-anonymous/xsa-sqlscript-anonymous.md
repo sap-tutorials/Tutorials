@@ -31,7 +31,7 @@ In this exercise we will show you how you can invoke SQLScript logic without the
 
     ![logic](3.png)
 
-4. Let’s assume the application executing this block only allows string types. Since we have no signature for defining this we are simply declaring the type of the table variable  `EX_TOP_3_EMP_PO_COMBINED_CNT`.  The columns will then be implicitly converted to the corresponding types. Between the BEGIN statement and the first SELECT statement, enter a DECLARE statement to declare an intermediate table variable called `EX_TOP_3_EMP_PO_COMBINED_CNT` as shown
+4. Let's assume the application executing this block only allows string types. Since we have no signature for defining this we are simply declaring the type of the table variable  `EX_TOP_3_EMP_PO_COMBINED_CNT`.  The columns will then be implicitly converted to the corresponding types. Between the BEGIN statement and the first SELECT statement, enter a DECLARE statement to declare an intermediate table variable called `EX_TOP_3_EMP_PO_COMBINED_CNT` as shown
 
     ![sql code](4.png)
 

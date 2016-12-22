@@ -31,7 +31,7 @@ In this exercise you will create a small procedure `get_po_header_data` with two
 
     ![Sample](3.png)
     
-4. Change the namespace from “Undefined” to `dev602.procedures`
+4. Change the namespace from "Undefined" to `dev602.procedures`
 
     ![Namespace](4.png)
 

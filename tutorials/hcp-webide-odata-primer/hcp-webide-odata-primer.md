@@ -14,7 +14,7 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 ## Details
 
 ### You will learn
-Throughout this tutorial series you’ve been working on an app that consumes an OData service. Since you are now familiar with using the content, its time to learn a bit more about what the OData protocol can do for a developer. In the next tutorial, you will learn how to apply these capabilities to your SAPUI5 app.
+Throughout this tutorial series you've been working on an app that consumes an OData service. Since you are now familiar with using the content, its time to learn a bit more about what the OData protocol can do for a developer. In the next tutorial, you will learn how to apply these capabilities to your SAPUI5 app.
 
 OData (Open Data Protocol) is an [OASIS open industry standard](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=odata) covering building and consuming RESTful APIs. The standard was initially created by Microsoft, and the committee is now chaired by a Microsoft and an SAP employee.
 
@@ -38,7 +38,7 @@ There is a wealth of information available at [http://www.odata.org](http://www.
 
 ---
 
-1. To help visualize an OData feed, it is useful to install a formatting extension in your browser. There are a few options available to select – the one used in this tutorial is “**JSONView**” and is available for Chrome, Firefox and Safari browsers. The process for installing an extension is similar across browsers, the Chrome steps are shown below.
+1. To help visualize an OData feed, it is useful to install a formatting extension in your browser. There are a few options available to select – the one used in this tutorial is "**JSONView**" and is available for Chrome, Firefox and Safari browsers. The process for installing an extension is similar across browsers, the Chrome steps are shown below.
 
     In Google Chrome, click the **menu** button and then select **Settings**.
 
@@ -84,7 +84,7 @@ There is a wealth of information available at [http://www.odata.org](http://www.
 8. The metadata document will show the individual fields, formats and navigation properties of all the collections. To view the metadata for *any* OData service, append `$metadata` at the end of the URL in your browser:
 
     - <http://services.odata.org/V2/Northwind/Northwind.svc/$metadata>
-    With the metadata displayed, scroll down to `<EntityType Name=”Product”>` which is the collection you are using. You may notice that there is a slight change in the naming. The collection `href` (or the external name) in step 7 is `Products`, and in the metadata the same collection's name is `Product`. The mapping of an `EntityType` to a collection name is defined in the `EntityContainer` elements. You will learn more about the OData model structure in the OData model tutorial.
+    With the metadata displayed, scroll down to `<EntityType Name="Product">` which is the collection you are using. You may notice that there is a slight change in the naming. The collection `href` (or the external name) in step 7 is `Products`, and in the metadata the same collection's name is `Product`. The mapping of an `EntityType` to a collection name is defined in the `EntityContainer` elements. You will learn more about the OData model structure in the OData model tutorial.
 
     ![Products Collection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_8.png)
 
@@ -106,7 +106,7 @@ There is a wealth of information available at [http://www.odata.org](http://www.
     ![Data from the Products collection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_10.png)
 
 
-11. Scroll to the bottom of the page and look for the `<link rel=”next”` entry. The Northwind service enforces server-side paging and will only pass 20 records at a time. The paging size (20) can be seen in the `$skiptoken=20` query option at the end of the “next” URL. A Web IDE generated app will automatically issue the “next” URL when you scroll to the bottom of the master list in your app. You can run your app and try this now. Look for the spinning “busy” UI element to appear briefly as the new request is sent and set loaded in.
+11. Scroll to the bottom of the page and look for the `<link rel="next"` entry. The Northwind service enforces server-side paging and will only pass 20 records at a time. The paging size (20) can be seen in the `$skiptoken=20` query option at the end of the "next" URL. A Web IDE generated app will automatically issue the "next" URL when you scroll to the bottom of the master list in your app. You can run your app and try this now. Look for the spinning "busy" UI element to appear briefly as the new request is sent and set loaded in.
 
     ![Next URL](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_11.png)
 
