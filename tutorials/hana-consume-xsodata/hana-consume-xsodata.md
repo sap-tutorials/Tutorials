@@ -43,7 +43,7 @@ On the web page, there is a link in the middle column for **Web-Based Developmen
 
 ### Create your main page
 
-Now that you have created your OData service in the previous tutorial it is time to actually incorporate your service into your application directly. For this you will create a new file called `ìndex.html` 
+Now that you have created your OData service in the previous tutorial it is time to actually incorporate your service into your application directly. For this you will create a new file called `index.html`
 
 What you will do now is add a basic table control using the SAPUI5 framework.
 
