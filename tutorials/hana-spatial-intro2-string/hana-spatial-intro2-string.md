@@ -1,7 +1,7 @@
 ---
 title: Intro to SAP HANA Spatial: Strings
 description: A string ('a curve' in more general) connects points
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana,-express-edition ]
+tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -12,33 +12,33 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 
 ## Details
 ### You will learn  
-You will continue learning basics of spatial processing now with ___strings___ (also known as ___curves___) data types.
+You will continue learning the basics of spatial processing now with the ___strings___ (also known as ___curves___) data types.
 
 ### Time to Complete
 **5 Min**.
 
 ---
 
-1. Open SQL Editor of your choice (web or desktop based) connected to your SAP HANA database instance.
+1. Open the SQL editor of your choice (web or desktop based) connected to your SAP HANA database instance.
 
     Type the following SQL statement.
     ```sql
     SELECT NEW ST_LineString('LineString (0 0, 4 3)').ST_Dimension() FROM dummy;
     ```
 
-    This query instantiate a line in the 2-dimensional Euclidean space and returns its dimension. In the example above it is a line connecting point (0, 0), ie. `X=0` and `Y=0`, with a point (4, 3),  ie. `X=4` and `Y=3`. The constructor is using ___WKT___. As explained in the previous tutorial, the Well-known text is a text markup language for representing vector geometry objects defined by the Open Geospatial Consortium (OGC).
+    This query instantiates a line in the 2-dimensional Euclidean space and returns its dimensions. In the example above it is a line connecting point (0, 0); i.e. `X=0` and `Y=0`, with a point (4, 3),  i.e. `X=4` and `Y=3`. The constructor is using ___Well-known Text (WKT)___. As explained in the previous tutorial, WKT is a text markup language for representing vector geometry objects defined by the Open Geospatial Consortium (OGC).
 
-2. Execute the query. The `ST_Dimension()` method will return `1`. In the exercise with the point the same method returned `0`.
+2. Execute the query. The `ST_Dimension()` method will return `1`. In the previous tutorial the same method applied to the point returned `0`.
 
     ![String Dimension](spatial0201.jpg)
 
-3. Differently from the point, the line has a length. Use the `ST_Length()` method to calculate it.
+3. Unlike a point, a line has length. Use the `ST_Length()` method to calculate it.
 
     ```sql
     SELECT NEW ST_LineString('LineString (0 0, 4 3)').ST_Length() FROM dummy;
     ```
 
-    Obviously accordingly to the Pythagorean Theorem the result will be `5` proving famous `3-4-5 Rule` used in practice to get a perfect right angle.
+    Obviously accordingly to the Pythagorean Theorem the result will be `5`. This proves the famous `3-4-5 Rule` used to get a perfect right angle.
 
     ![3-4-5 Rule](spatial0202.jpg)
 
@@ -48,13 +48,14 @@ You will continue learning basics of spatial processing now with ___strings___ (
     SELECT NEW ST_LineString('LineString (0 0, 3 4, 0 4, 0 0)').ST_asSVG() as SVG FROM dummy;
     ```
 
-    The method `ST_asSVG()` returns the spatial object from the query in an XML-based vector image format called as a Scalable Vector Graphics (`SVG`). SVG is supported by most of the modern web browsers.
+    The method `ST_asSVG()` returns the spatial object from the query in an XML-based vector image format called a ___Scalable Vector Graphics (`SVG`)___. SVG is supported by most of the modern web browsers.
 
-    Copy the content of the cell with SVG. Eg. by right click on it in SAP HANA web-based workbench and choosing **Details...**
+    Copy the content of the cell with SVG. In the SAP HANA web-based workbench right click on a the cell and choose **Details...**
 
     ![Copy SVG output](spatial0203.jpg)
 
-    Here is a slightly modified code - with added `width="160" height="120"` and thicker `stroke-width="1%"` instead of default `"0.1%"`
+    Here is slightly modified code. It has `width="160" height="120"` added and the default `stroke-width="0.1%"` changed to `stroke-width="1%"`
+
     ```xml
     <?xml version="1.0" standalone="no"?>
     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -64,7 +65,7 @@ You will continue learning basics of spatial processing now with ___strings___ (
     </svg>
     ```
 
-    Opening it in a web browser will allow you to see a drawn spatial object.
+    Opening the SVG code above in a web browser allows you to see a drawn spatial object.
 
     ![SVG output](spatial0204.jpg)
 
@@ -74,7 +75,7 @@ You will continue learning basics of spatial processing now with ___strings___ (
     SELECT NEW ST_CircularString('CircularString (0 0, 3 4, 0 4)').ST_asSVG() as SVG FROM dummy;
     ```
 
-    The first point is the start point of the segment. The second point is any point on the segment other than the start and end point. The third point is the end point of the segment. Here is an SVG representation of the above statement.
+    The first point is the start point of the segment. The second point is any point on the segment other than the start or end point. The third point is the end point of the segment. Here is an SVG representation of the above statement.
 
     ![3 points CircularString](spatial0205.jpg)
 
@@ -86,7 +87,7 @@ You will continue learning basics of spatial processing now with ___strings___ (
 
     ![5 points CircularString](spatial0206.jpg)
 
-    String as above that starts and ends at the same point is **closed**. Strings can be characterized as well by whether they are simple or not. **Simple** means a string that does not cross itself. A **ring** is a simple, closed string. The geometry above is a ring, accordingly to this definition in the spatial processing.
+    A string that starts and ends at the same point is **closed**. Above is an example. Strings can also be characterized by whether they are simple or not. A **simple** means a string that does not cross itself. A **ring** is a simple, closed string. The geometry above is a ring, according to this definition in spatial processing.
 
 6. All these characteristics can be tested and if needed used as **Spatial Predicates**. Spatial predicates are implemented as member functions that return 0 or 1.
 
@@ -122,7 +123,7 @@ You will continue learning basics of spatial processing now with ___strings___ (
 
     ![Circle](spatial0210.jpg)
 
-    Note this time you did not use an geometry constructor started with the key word `NEW`. Instead you used the method `ST_GeomFromText` that parses a string containing a representation of a geometry and creates a geometry value of the appropriate type. You use method `ST_GeometryType()` then to verify.
+    Note this time you did not use a geometry constructor using the `NEW` keyword. Instead you used the method `ST_GeomFromText` that parses a string containing a representation of a geometry and creates a geometry value of the appropriate type. You use method `ST_GeometryType()` then to verify.
 
     ![GeometryType](spatial0211.jpg)
 
