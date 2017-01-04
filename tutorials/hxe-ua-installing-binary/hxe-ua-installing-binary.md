@@ -34,8 +34,7 @@ Your server will need the following:
 
 - **OpenSSL .0.9.8**
 
-- One of the following operating system versions:
-    - **SUSE Linux Enterprise Server for SAP 12 SP1**
+- **SUSE Linux Enterprise Server for SAP 12 SP1**
 
 #### Hardware
 
@@ -72,10 +71,10 @@ Your server will need the following:
 
 4. Save the download manager installation file to your laptop and open it.
 
-  If your system displays a security warning when you open the file, accept the warning.
+    If your system displays a security warning when you open the file, accept the warning.
 
-  > **Note:**
-  > If you are inside a corporate firewall, you will be prompted for your proxy settings. Contact your IT administrator.
+    > **Note:**
+    > If you are inside a corporate firewall, you will be prompted for your proxy settings. Contact your IT administrator.
 
 5. In Download Manager, in the **Image** pull-down, select **Binary Installer**.
     ![Download Manager](HXE_download_manager.PNG)
@@ -98,7 +97,7 @@ Your server will need the following:
 
         - **`xs.onpremise.runtime.client_ntamd64.zip`** - Command-line tools for Windows that enable access to (and control of) the SAP HANA XS advanced run-time environment.
 
-     > **Tip:** After you develop an application using SAP HANA, express edition, install Download Manager to a client machine and download the *clients only* to that client machine. You can then use the clients to connect to -- and test -- your HANA application, emulating a customer.  
+    > **Tip:** After you develop an application using SAP HANA, express edition, install Download Manager to a client machine and download the *clients only* to that client machine. You can then use the clients to connect to -- and test -- your HANA application, emulating a customer.  
 
     - **Text analysis files for additional languages** - For languages other than English and German, these files are required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the **Server only** and **Server + applications** packages.) Download this and **`hxe.tgz`** to install these files. For the text analysis files installation procedure, see *Install Text Analysis Files* at [Start Using SAP HANA 2.0, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).
 
