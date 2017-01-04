@@ -344,6 +344,7 @@ These assumptions allow us to treat the entities *package* and *delivery unit* a
     :------------------------------------- | :------------------------------------------------------------------------- 
     Downstream Project Names               | `CI_Shine_master_testDeploy` 
     Parameters                             | `BUILD_JOB_NUMBER=${BUILD_NUMBER}` 
+                                           | `DELIVERY_UNIT=${DELIVERY_UNIT}` 
 
     Ignore the warning that the job entered does not yet exist. We will create it in the next step.
 
@@ -367,6 +368,7 @@ From a technical point of view, this job takes the build result (that is, the ex
     Name                   | Default Value
     :--------------------- | :------------------------------------------------------
     `BUILD_JOB_NUMBER`     | Leave empty
+    `DELIVERY_UNIT`        | Leave empty
     `HANA_HOST`            | `{fully qualified host name of the SAP HANA CI system}`
     `HANA_HTTP_PORT`       | `{SAP HANA http port: usually 43<instance number> (HTTPS) or 80<instance number> (HTTP)}`
 
