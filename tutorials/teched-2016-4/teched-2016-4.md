@@ -191,14 +191,14 @@ Find and replace all instances (three of them) of `<ObjectNamePlural>` (includin
 
 [ACCORDION-BEGIN [Step 15: ](Insert the "Related Contacts" label)]
 
-Find and replace all instances `<FirstColumnName>` in the `i18n.properties` file with `Related Contacts`.
+Find and replace all instances `<FirstColumnName>` (including the angle brackets) in the `i18n.properties` file with `Related Contacts`.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Insert the "Country" label)]
 
-Find and replace all instances `<LastColumnName>` in the `i18n.properties` file with `Country`.
+Find and replace all instances `<LastColumnName>` (including the angle brackets) in the `i18n.properties` file with `Country`.
 
 Save your edits.
 
