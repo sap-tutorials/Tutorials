@@ -62,7 +62,7 @@ Field Name       | Value
 :--------------- | :-------------
 `WebIDEEnabled`  | `true`
 `WebIDESystem`   | `gateway`
-`WebIDEUsage`    | `odata_gen`
+`WebIDEUsage`    | `odata_abap`
 
 Then click **Save**.
 
