@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>sapui5, products>sap-hana-cloud-platform, prod
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Commit your project to Git and deploy to the cloud](http://www.sap.com/developer/tutorials/teched-2016-5.html)
+ - **Tutorials:** [Commit your project to Git and deploy to the cloud](http://www.sap.com/developer/tutorials/teched-2016-6.html)
 
 
 ## Next Steps
@@ -20,20 +20,14 @@ Any mistakes you make can be removed by discarding your changes using the Git pa
 
 In this tutorial, you will add some additional data fields to the detail view (the right side of you app), change the icons used on the tabs, and finally add an XML `fragment` file to contain the display of information on one of the tabs in the app.
 
+![final result](te-2016-6-01.png)
+
 ### Time to Complete
 **15 Min**.
 
 ---
-[ACCORDION-BEGIN [Step 1: ](The fields you will add)]
 
-The first change you will make is to add four additional fields at the top of the Detail view.
-
-![final result](te-2016-6-01.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Open the Detail view)]
+[ACCORDION-BEGIN [Step 1: ](Open the Detail view)]
 
 Open the **SAP Web IDE**, and navigate in the **`te2016` > `webapp` > `view`** folder.
 
@@ -44,7 +38,7 @@ Double-click on `Detail.view.xml` to open it in the editor.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Inserting fields into the `ObjectHeader`)]
+[ACCORDION-BEGIN [Step 2: ](Inserting fields into the `ObjectHeader`)]
 
 Insert the code below into the `ObjectHeader` element.
 
@@ -68,18 +62,18 @@ Your XML file should look like this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Open the i18n file)]
+[ACCORDION-BEGIN [Step 3: ](Open the i18n file)]
 
 The `title` attributes in the snippet you inserted tell the app to look for the label of the data field in a centralized file.
 
-To add those labels, **`te2016` > `webapp` > `i18n`** folder and double-click the `i18n.properties` file.
+To add those labels, open the **`te2016` > `webapp` > `i18n`** folder and double-click the `i18n.properties` file.
 
 ![open i18n.properties](te-2016-6-04.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Inserting strings)]
+[ACCORDION-BEGIN [Step 4: ](Inserting strings)]
 
 Insert the text below at the end of the `i18n.properties` file just below the **Detail View** separator line and save your edits.
 
@@ -102,7 +96,7 @@ mapFragmentTitle=Map
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Run the app with new fields in the header)]
+[ACCORDION-BEGIN [Step 5: ](Run the app with new fields in the header)]
 
 With both files saved, click the **Run** button again to launch your app.
 
@@ -113,13 +107,13 @@ You should now see the four additional fields at the top of the detail view.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add a new file)]
+[ACCORDION-BEGIN [Step 6: ](Add a new file)]
 
-Before you make some additional changes to the `Detail.view.xml` file shortly, you will create a XML `fragment` file that you will link to the detail view.
+Before you make some additional changes to the `Detail.view.xml` file, you will create a XML `Fragment` file that you will link to the detail view.
 
-A Fragment is a light-weight UI components that do not have a dedicated "controller".
+A `Fragment` is a light-weight UI components that do not have a dedicated `controller`.
 
-Fragments are typically used in pop up screens (Dialog, Message boxes etc), and you will use one to control the data shown on the second tab of your app.
+`Fragments` are typically used in pop up screens (Dialog, Message boxes etc), and you will use one to control the data shown on the second tab of your app.
 
 Add a new file to your project by right-clicking on your **`view`** folder and select **New > File**.
 
@@ -128,7 +122,7 @@ Add a new file to your project by right-clicking on your **`view`** folder and s
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Name the new file)]
+[ACCORDION-BEGIN [Step 7: ](Name the new file)]
 
 Name the file `Map.fragment.xml` (the case is important) and click **OK**.
 
@@ -137,7 +131,7 @@ Name the file `Map.fragment.xml` (the case is important) and click **OK**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Add the content to the `Fragment` file)]
+[ACCORDION-BEGIN [Step 8: ](Add the content to the `Fragment` file)]
 
 Paste the XML below into the new `Map.fragment.xml` file and save your edits.
 
@@ -168,7 +162,7 @@ Your file should look like this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Add a new namespace)]
+[ACCORDION-BEGIN [Step 9: ](Add a new namespace)]
 
 Return to `Detail.view.xml`.
 
@@ -187,7 +181,7 @@ The top of your file should look like this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Update titles in the `IconTabFilter`s)]
+[ACCORDION-BEGIN [Step 10: ](Update titles in the `IconTabFilter`s)]
 
 Scroll down to the **`IconTabFilter`** elements.
 
@@ -214,7 +208,7 @@ text="{i18n>itf2Title}"
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Insert a `content` element for the first tab)]
+[ACCORDION-BEGIN [Step 11: ](Insert a `content` element for the first tab)]
 
 The next step is to set the content to be displayed in the first tab.
 
@@ -229,7 +223,7 @@ Add some line feeds between the `<content>` tags so your file looks like this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Deleting the `Table` element)]
+[ACCORDION-BEGIN [Step 12: ](Deleting the `Table` element)]
 
 This step will start the restructuring of the detail view where you will move the entire **`<Table>`** element from its current location and place it within the `<content>` element you just inserted.
 
@@ -240,7 +234,7 @@ Locate the entire **`<Table>`** element as shown below, cut the text (using CTRL
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Re-inserting the `Table` element)]
+[ACCORDION-BEGIN [Step 13: ](Re-inserting the `Table` element)]
 
 Paste the text you just cut within the **`<content>`** element you added above and save your changes.
 
@@ -249,7 +243,7 @@ Paste the text you just cut within the **`<content>`** element you added above a
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Changing a displayed field)]
+[ACCORDION-BEGIN [Step 14: ](Changing a displayed field)]
 
 The field displayed below the contact's full name is the `ContactKey` which is not useful to a user.
 
@@ -262,11 +256,11 @@ The detail view will now look like this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Insert a `content` element for the second tab)]
+[ACCORDION-BEGIN [Step 15: ](Insert a `content` element for the second tab)]
 
 The last part of the restructuring is to add in a `<content>` element for the second tab (the second `<IconTabFilter>` in the file) to load the `Fragment` file you created.
 
-Insert the XML snippet below before the closing tag of the second `<IconTabFilter>` as shown in the image below.
+Insert the XML snippet shown below before the closing tag of the second `<IconTabFilter>` as shown in the image below.
 
 ```xml
 <content>
@@ -279,7 +273,7 @@ Insert the XML snippet below before the closing tag of the second `<IconTabFilte
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Second `IconTabFilter` appearance)]
+[ACCORDION-BEGIN [Step 16: ](Second `IconTabFilter` appearance)]
 
 The section of the `Detail.view.xml` file for your second `<IconTabFilter>` should look like this:
 
@@ -288,37 +282,15 @@ The section of the `Detail.view.xml` file for your second `<IconTabFilter>` shou
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](Change object type in the view)]
 
-One last little edit to the detail view is to change the `ObjectNumber` element to an `ObjectIdentifier` element as shown below.
-
-XML to insert:
-
-```xml
- <ObjectIdentifier
-	title="{City}"
-	text="{CountryText}"/>
-```		 
-
-Element to change:
-
-![Object number](te-2016-6-18.png)
-
-Result:
-
-![Object identifier](te-2016-6-19.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 19: ](Opening the manifest file)]
+[ACCORDION-BEGIN [Step 17: ](Opening the manifest file)]
 
 The last change before running your app is to modify the `manifest.json` file located in **`te2016` > `webapp`**.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 20: ](Editing the App Descriptor)]
+[ACCORDION-BEGIN [Step 18: ](Editing the App Descriptor)]
 
 Insert the two lines below as shown in the image. If the file is opened in the **Descriptor Editor** mode, click the **Code Editor** tab at the bottom of the window to change the mode.
 
@@ -332,7 +304,7 @@ Insert the two lines below as shown in the image. If the file is opened in the *
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 21: ](Run your app)]
+[ACCORDION-BEGIN [Step 19: ](Run your app)]
 
 Save your edits and run your app. The two tabs in the detail view should look like the images below.
 
