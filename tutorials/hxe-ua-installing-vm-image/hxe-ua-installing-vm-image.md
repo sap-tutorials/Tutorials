@@ -44,7 +44,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 ### Machine Requirements
 
-Check if your machine has the recommended hardware to successfully install and run the express edition VM image.
+Check if your machine has the recommended hardware to successfully install and run the SAP HANA 2.0, express edition VM image.
 
 #### Software
 
@@ -65,7 +65,7 @@ Check if your machine has the recommended hardware to successfully install and r
 #### Install a `Hypervisor`
 
 Install a supported `hypervisor` on your machine if you don't have one already. `Hypervisors` are software products used for creating and running virtual machines.
-SAP HANA, express edition has been tested on these `hypervisors`:
+SAP HANA 2.0, express edition has been tested on these `hypervisors`:
 
 - [`VMware Player 7.1`](https://www.vmware.com/)
 
@@ -79,9 +79,9 @@ For the purposes of this tutorial, you will use the VMware Player.
 
 #### Install VMware Player
 
-VMware Player 7.1 is a `hypervisor` compatible with SAP HANA express edition. You can install any supported `hypervisor`, but examples in this tutorial use VMware Player 7.1.
+VMware Player 7.1 is a `hypervisor` compatible with SAP HANA 2.0, express edition. You can install any supported `hypervisor`, but examples in this tutorial use VMware Player 7.1.
 
-1. Download VMware Player from [`vmware.com`](http://www.vmware.com) and run the installer.  
+1. Download VMware Player from <http://www.vmware.com> and run the installer.  
 
 2. Ensure you're downloading the correct version for your machine.  
 
@@ -157,7 +157,7 @@ Register and then use the Download Manager to download a server-only virtual mac
 
 ### Import the OVA into `VMWare` Player
 
-Import the downloaded Open Virtual Appliance (OVA) file (either `hxe.ova` or `hxexsa.ova`) into your `hypervisor` to begin using SAP HANA, express edition.
+Import the downloaded Open Virtual Appliance (OVA) file (either `hxe.ova` or `hxexsa.ova`) into your `hypervisor` to begin using SAP HANA 2.0, express edition.
 
 1. Start VMware Player 7.1 and select *Open a Virtual Machine*.  
 

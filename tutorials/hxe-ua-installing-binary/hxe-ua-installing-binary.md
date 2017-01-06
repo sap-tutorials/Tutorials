@@ -77,7 +77,7 @@ Your server will need the following:
     > If you are inside a corporate firewall, you will be prompted for your proxy settings. Contact your IT administrator.
 
 5. In Download Manager, in the **Image** pull-down, select **Binary Installer**.
-    ![Download Manager](HXE_download_manager.PNG)
+    ![Download Manager](HXE_download_manager_Jan_06.PNG)
 
 6. Click **Browse** and select a directory where your downloads will be saved.
 
@@ -123,8 +123,6 @@ Your server will need the following:
 
     >**Note**
     > The master password you specify during installation is used for the `<sid>adm`,  `sapadm` OS users, the telemetry technical user, and the SYSTEM user. If you are installing the Applications package, this password is also used for the `XSA_ADMIN`, `XSA_DEV`, and `XSA_SHINE` users.
-
-Installation of SAP HANA 2.0, express edition will take some time. Installation is successful when your command line reads `SAP HANA Express Edition System installed`.
 
 ## Next Steps
 - Start using SAP HANA 2.0, express edition. See tutorial [Start Using SAP HANA, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).

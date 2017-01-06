@@ -22,39 +22,6 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 Installing SAP HANA 2.0, express edition installs a permanent 32 GB license automatically. No license configuration is required.
 
-### Record Your System's IP address
-
-1. In a terminal, enter: `/sbin/ifconfig`.
-
-2. The IP address is listed under the `eth0 interface` as `inet addr`. In the following example, the IP address is 10.172.90.53:
-
-    `etho Link encap:Ethernet HWaddr 00:0C:29:06:1F:93 inet addr:10.172.90.53`
-
-### Edit the `/etc/hosts` File
-
-You must edit the **`/etc/hosts`** file on machines you want to use to access SAP HANA, express edition. For example, edit **`/etc/hosts`** if you want to access any XS Advanced applications, or HANA Cockpit.
-
-#### Edit `/etc/hosts` on Windows
-
-1. Navigate to **`C:\Windows\System32\drivers\etc`**.
-
-2. In **Administrator** mode, open **hosts** in Notepad. See your operating system Help for information on opening applications in Administrator mode.
-
-3. In a new uncommented row, add the IP address and hostname of your SAP HANA, express edition server. Save your changes.
-
-    >**Tip**: Spacing is important. Make sure your hosts file in Notepad looks like this image.
-
-    ![Windows Host File](hxe_hosts_windows.png)
-
-#### Edit `/etc/hosts` on Linux
-
-1.	Access your Linux client editor.
-
-2.  Run this command:
-    ```
-    sudo sh -c 'echo <VM IP Address> $(hostname -f) >> /etc/hosts'\
-    ```
-
 ### Test Your Server installation
 
 1. In a terminal, log in as the `<sid>adm` user:
@@ -73,8 +40,6 @@ You must edit the **`/etc/hosts`** file on machines you want to use to access SA
 ### Test XSC and XSA (Applications Package Only)
 
 If you installed the Applications package (`hxexsa.tgz`), test your XS installations.
-
->**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
 
 1. Check that the `XSEngine` is running. Open a browser and enter:   
     ```
@@ -114,8 +79,6 @@ If you installed the Applications package (`hxexsa.tgz`), test your XS installat
 
 ### Test Web IDE (Applications Package Only)
 
->**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
-
 1. As the `<sid>adm` user, log in to XSA services:  
     ```
     xs login -u xsa_admin -p <password>
@@ -137,8 +100,6 @@ If you installed the Applications package (`hxexsa.tgz`), test your XS installat
 5. Log on to Web IDE using the `XSA_DEV` user.
 
 ### (Optional) Test your Installation using the HANA Eclipse Plugin
-
->**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
 
 Download and install the HANA Eclipse Plugin on a client machine and connect to SAP HANA, express edition.
 
@@ -263,7 +224,7 @@ If you downloaded the Applications (`hxexsa.tgz`) package, installation files fo
 
 ## (Optional) Install Text Analysis Files
 
-If you are using SAP HANA, express edition in a language other than English or German, you can download the **Text analysis files for additional languages** package in the Download Manager. This package contains the text analysis files for the HANA Text Analysis feature for languages other than English or German.
+If you are using SAP HANA 2.0, express edition in a language other than English or German, you can download the **Text analysis files for additional languages** package in the Download Manager. This package contains the text analysis files for the HANA Text Analysis feature for languages other than English or German.
 
 **Prerequisite**: You downloaded the package **Text analysis files for additional languages** using Download Manager.
 
