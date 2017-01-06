@@ -26,7 +26,7 @@ The previous tutorial introduced a number of OData query options that developers
 
 2. Open the **northwind** project folder and then the **view** folder. Double-click on `Master.view.xml`. Locate the `items` attribute in the `List` element.
 
-     The `items` attribute points to the primary collection (Products) of the Northwind OData service which is displayed in the “master” list of the app. Since this is the last part of the OData query, you will insert any query options in this attribute.
+     The `items` attribute points to the primary collection (Products) of the Northwind OData service which is displayed in the "master" list of the app. Since this is the last part of the OData query, you will insert any query options in this attribute.
 
      You may want to add some line breaks in your code to match the image below. It will make it simpler to change the `items` attribute in the steps below.
 

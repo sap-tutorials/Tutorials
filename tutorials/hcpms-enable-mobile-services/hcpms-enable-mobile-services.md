@@ -59,7 +59,7 @@ In this tutorial, you will enable and configure SAP HANA Cloud Platform mobile s
     Proxy Type                | `Internet`
     Authentication            | `AppToAppSSO`
 
-    Make sure the “Use default JDK truststore is checked.
+    Make sure the "Use default JDK truststore is checked.
 
     ![Destination 1](mg5-1-10.png)
 
@@ -74,7 +74,7 @@ In this tutorial, you will enable and configure SAP HANA Cloud Platform mobile s
     Proxy Type                | `Internet`
     Authentication            | `AppToAppSSO`
 
-    Make sure the “Use default JDK truststore is checked.
+    Make sure the "Use default JDK truststore is checked.
 
     ![Destination 2](mg5-1-11.png)
 

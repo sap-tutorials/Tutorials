@@ -49,7 +49,7 @@ With the MMS service now deployed, and your user assigned the appropriate role i
 
     ![ID value](p7_5b.png)
 
-5. Click the “back arrow” again to return the the IoT Services Cockpit. Click on **Device Types**, then the **+** symbol to create a new device. Give it a simple name that makes sense for what you are doing, like "`TesselClimate`". Now click the  **+ Add Message Type** to attach your previously created message type "`climateData`". Make sure the **Direction** is "From Device" and click **Create**.
+5. Click the "back arrow" again to return the the IoT Services Cockpit. Click on **Device Types**, then the **+** symbol to create a new device. Give it a simple name that makes sense for what you are doing, like "`TesselClimate`". Now click the  **+ Add Message Type** to attach your previously created message type "`climateData`". Make sure the **Direction** is "From Device" and click **Create**.
 
     ![New Device Type](p7_3.png)
 
@@ -79,7 +79,7 @@ With the MMS service now deployed, and your user assigned the appropriate role i
 
     `https://iotmmsYOURUSERtrial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/data/d000-e000-v000-i000-c000-e001`
 
-    Change `d000-e000-v000-i000-c000-e001` to your device’s ID (it is a GUID) you copied in step 8 above. Note: the GUID is the device ID, not its authorization token.
+    Change `d000-e000-v000-i000-c000-e001` to your device's ID (it is a GUID) you copied in step 8 above. Note: the GUID is the device ID, not its authorization token.
 
     Example: https://iotmmsp1234567trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/data/85e0ce4e-09bf-47ea-a5a9-a0469f642c20
 

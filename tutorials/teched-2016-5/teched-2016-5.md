@@ -41,9 +41,9 @@ Field             | Value
 :---------------- | :----------------
 Repository Name   | `te2016`
 Description       | `Repository for Partner Contacts app`
-    
+
 Make sure the **Create empty commit** box is checked, click **OK** and your repository will be created.
-    
+
 ![Create repo image](te-2016-5-02.png)
 
 [DONE]
@@ -73,12 +73,16 @@ Open **SAP Web IDE** in a browser window (or in an existing one), right-click on
 
 ![Initialize local git](te-2016-5-05.png)
 
+An alert box will appear in the upper right corner of your SAP Web IDE window.
+
+![Initialized local git alert](te-2016-5-05b.png)
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Link to remote repository)]
 
-Paste in the **Git Repository URL** you copied earlier and click **OK**.
+Click the **Set Remote** link in the alert and paste in the **Git Repository URL** you copied earlier. You can leave the **Add configuration for Gerrit** unchecked and click **OK**.
 
 This will initialize your local repository and link it to the Git repository in HCP.
 
@@ -118,7 +122,7 @@ When the **Merge "master"** dialog box opens, make sure the **origin/master** re
 ![Git Merge](te-2016-5-09.png)
 
 ![Git Merge master](te-2016-5-10.png)
-    
+
 At this point your Git repository is set up.
 
 The next steps will commit and push your project files to the repository.
@@ -137,7 +141,7 @@ You may select individual files to commit, but to commit all project files, clic
 
 [ACCORDION-BEGIN [Step 11: ](Enter a description for the commit)]
 
-Scroll down in the **Git pane** and enter a description (required for any commits) like `Initial commit of te2016 app`.
+Scroll down in the **Git pane** and enter a description (required for any commits) like `Initial commit`.
 
 ![commit description](te-2016-5-12.png)
 
@@ -205,10 +209,10 @@ In the **Deploy Application to SAP HANA Cloud Platform** dialog box, confirm tha
 
 [ACCORDION-BEGIN [Step 18: ](Open the active version of your app)]
 
-In the **Successfully Deployed** confirmation dialog, click the **Open the active version of the application link** to launch your app. 
- 
+In the **Successfully Deployed** confirmation dialog, click the **Open the active version of the application link** to launch your app.
+
 ![successful deployment](te-2016-5-19.png)
-    
+
 [DONE]
 [ACCORDION-END]
 

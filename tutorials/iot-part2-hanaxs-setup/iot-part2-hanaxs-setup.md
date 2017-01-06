@@ -24,7 +24,7 @@ You are now going to build a simple and quick SAP HANA XS application, if you al
 ---1. Login to the server provided during this event or to your own SAP HANA server and go to the SAP HANA Web Based Development Workbench
     `http://xx.xx.xx.xx/sap/hana/xs/ide/editor`
     Your login is: user name `CODEJAMMER` and `CodeJam2015` (or whichever username and password you have been given to login with)
-2. Once you have your editor loaded you will need to create a package name under the **CODEJAMMER** package with your name. This is done by right clicking on the **CODEJAMMER** package and choosing **New > Package** and then entering your name. If the **CODEJAMMER** package does not exist then simply create a new package under the **root** package which is simply the “Content” folder.
+2. Once you have your editor loaded you will need to create a package name under the **CODEJAMMER** package with your name. This is done by right clicking on the **CODEJAMMER** package and choosing **New > Package** and then entering your name. If the **CODEJAMMER** package does not exist then simply create a new package under the **root** package which is simply the "Content" folder.
 
     ![Repository View](p2_2.png)3. Then under your new package you will want to create another new package called `myiot`. This will be the package that you place all of our XS code under for our application.
 
@@ -77,7 +77,7 @@ You are now going to build a simple and quick SAP HANA XS application, if you al
 
     };  
     ```10. Once table definition file is saved it will activate and create your table. You will now need to create a stored procedure and an OData service file. The OData service file will allow you to access any data and set the connection to the stored procedure for enabling the insertion of new data into the table.
-11. To create a sequence (an incrementing number for the ID field in your table), right-click on your `myiot` package, select **New > File** and name the file `johndoe_id_seq.hdbsequence`.    You will notice the use of the “name” in these examples it is “JOHNDOE” so be sure to make the appropriate changes.    ![Sequence definition](p2_11.png)
+11. To create a sequence (an incrementing number for the ID field in your table), right-click on your `myiot` package, select **New > File** and name the file `johndoe_id_seq.hdbsequence`.    You will notice the use of the "name" in these examples it is "JOHNDOE" so be sure to make the appropriate changes.    ![Sequence definition](p2_11.png)
 12. Enter the following content in your `.hdbsequence` file, and replace instances of `johndoe` and `JOHNDOE` with the name you used.    ```    schema="JOHNDOE";    start_with=100;    minvalue=1;    cycles=false;    depends_on_table="CODEJAMMER.johndoe.myiot::mydata.Data";
     ```13. Now that you have your table and incrementing ID field you need to create the stored procedure that will insert new data into the table. Follow the same procedure as above to add new file to your `myiot` package and name it: `newdata.hdbprocedure`
 
@@ -110,7 +110,7 @@ You are now going to build a simple and quick SAP HANA XS application, if you al
 
     end if;
 
-    END;    ``` This code will use the “types” you defined in the table definition and then do an insert to the table with the “value” passed to it.15. In order to activate or utilize this new procedure you will need to create an OData service. To do so, create another new file in your `myiot` package called `mydata.xsodata`.
+    END;    ``` This code will use the "types" you defined in the table definition and then do an insert to the table with the "value" passed to it.15. In order to activate or utilize this new procedure you will need to create an OData service. To do so, create another new file in your `myiot` package called `mydata.xsodata`.
 
 16. Enter the following content in your `.xsodata` file, and make the appropriate name changes. This file will provide us the ability to read data but also insert data into our table.
 
@@ -119,7 +119,7 @@ You are now going to build a simple and quick SAP HANA XS application, if you al
     	"JOHNDOE"."CODEJAMMER.johndoe.myiot::mydata.Data" as "DATA"
     		create using "CODEJAMMER.johndoe.myiot::newdata";
      }
-     ```17. Your service enabled table is almost ready for use. You also need to give some authorizations and to do this you will create a “ROLE”. Right-click on your `myiot` package and select **New > Role**. Enter `johndoe_myiot` for the role name (modify the name accordingly) and click **Create**.
+     ```17. Your service enabled table is almost ready for use. You also need to give some authorizations and to do this you will create a "ROLE". Right-click on your `myiot` package and select **New > Role**. Enter `johndoe_myiot` for the role name (modify the name accordingly) and click **Create**.
 
      ![New role](p2_11a.png)
 
@@ -144,7 +144,7 @@ You are now going to build a simple and quick SAP HANA XS application, if you al
 
 23. Click the **+** symbol under the **Granted Roles** tab and search for the role you created (e.g. `johndoe`). Select your role, click **OK** and **Save**.￼
      ![Assign Role](p2_13.png)
-     Now it’s time to test...
+     Now it's time to test...
 
 ## Next Steps
  - [Internet of Things (IoT) Posting data with a REST Client](http://www.sap.com/developer/tutorials/iot-part3-posting-data-hana.html)

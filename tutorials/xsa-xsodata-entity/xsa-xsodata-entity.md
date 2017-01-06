@@ -19,7 +19,7 @@ The first example of this exercise was very simplistic because it only exposed o
 
 ---
 
-1. Returning to the editor, you should now create a new OData service named `purchaseOrders.xsodata` and extend it to include the `dev602.data::PO.Header` and `dev602.data::PO.Item` tables. Next create a navigation 1:many association. The new content of the definition file should look like this:	Note: if you don’t want to type this code, we recommend that you cut and paste it from this web address    	`http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex3_11`
+1. Returning to the editor, you should now create a new OData service named `purchaseOrders.xsodata` and extend it to include the `dev602.data::PO.Header` and `dev602.data::PO.Item` tables. Next create a navigation 1:many association. The new content of the definition file should look like this:	Note: if you don't want to type this code, we recommend that you cut and paste it from this web address    	`http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex3_11`
   	```
 	service namespace "dev602.services" {		"dev602.data::PO.Header"		as "POHeader" navigates ("Items" as "POItem");				"dev602.data::PO.Item"		as "POItem";				association "Items" 		principal "POHeader"("PURCHASEORDERID")		multiplicity "1"		dependent "POItem"("PURCHASEORDERID")		multiplicity "*";	}  	```  	
 2. Save, run and test using the same steps as in the previous section of this exercise. Notice that the base service definition now has two entities.

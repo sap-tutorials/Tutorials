@@ -67,7 +67,7 @@ After the destination is saved, you can click the **Check Connection** button to
 
 [ACCORDION-BEGIN [Step 3: ](Update the neo-app.json)]
 
-First let's _re-open_ the **SAP Web IDE**.
+First, _re-open_ the **SAP Web IDE**.
 
 From your [SAP HANA Cloud Platform cockpit](https://account.hanatrial.ondemand.com/cockpit), in the left-hand navigation bar, select **Services** and then click on the **SAP Web IDE** tile.
 
@@ -75,7 +75,7 @@ In the **SAP Web IDE** overview page, click **Open SAP Web IDE**.
 
 You will need to add the *Google Maps*  destination as a route available for your application by adding it to the `neo-app.json` file which is located under the `te2016` folder.
 
-Open the `neo-app.json` file and located the **routes** array.
+Open the `neo-app.json` file and locate the **routes** array.
 
 You will add this new route to that end of the array.
 

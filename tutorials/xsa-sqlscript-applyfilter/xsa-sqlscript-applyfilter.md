@@ -52,7 +52,7 @@ In contrast to EXEC and EXECUTE IMMEDIATE, `APPLY_FILTER` is SQL injection save.
 8. Enter the filter string for the input parameter as 
 
     ```
-    	'CATEGORY = ''Notebooks''' and click “Run”. 
+    	'CATEGORY = ''Notebooks''' and click "Run". 
 	```
 	
     ![filter string](8.png)

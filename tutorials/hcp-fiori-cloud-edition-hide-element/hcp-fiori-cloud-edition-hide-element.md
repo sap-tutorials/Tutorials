@@ -56,7 +56,7 @@ In this tutorial you will learn how to hide a view element from a standard SAP F
 
     ![Switch to Extensibility Mode](Switch-to-Extensibility-Mode.png)
 
-9. You’ll see that hovering over the views/controls on the left highlights them in sync in the Outline pane on the right.
+9. You'll see that hovering over the views/controls on the left highlights them in sync in the Outline pane on the right.
 
     ![Outline](Outline.png)
 
@@ -84,7 +84,7 @@ In this tutorial you will learn how to hide a view element from a standard SAP F
 
     ![Show extended elements details](Show-extended-elements-details.png)
 
-Congratulations, you’ve successfully hid a view element from a SAP Standard Fiori app.
+Congratulations, you've successfully hid a view element from a SAP Standard Fiori app.
 
 ## Next Steps
  - [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)

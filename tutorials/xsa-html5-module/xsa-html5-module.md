@@ -47,7 +47,7 @@ You will now create the HTML5 module to add basic web based content to your XSA 
 
     ![Module web](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-html5-module/3.png)
 
-5. This not only adds the necessary metadata to the web folder but also maintains the module entry in the project’s `mta.yaml` file within the project root.
+5. This not only adds the necessary metadata to the web folder but also maintains the module entry in the project's `mta.yaml` file within the project root.
 
     ![Module web](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-html5-module/4.png)
 
