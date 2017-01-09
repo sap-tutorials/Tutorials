@@ -1,11 +1,12 @@
 ---
 title: Start Using SAP HANA 2.0, express edition (Virtual Machine Method)
-description: Once you’ve downloaded the SAP HANA 2.0, express edition Virtual Machine package, start the server, change the default passwords to secure your system, and connect using client tools.
+description: Once you've downloaded the SAP HANA 2.0, express edition Virtual Machine package, start the server, change the default passwords to secure your system, and connect using client tools.
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:** [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
+ - Proxy information if behind a firewall.
 
  **Tip:** This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
 
@@ -43,11 +44,13 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 6. When prompted to **Retype new password**, enter your strong password again.
 
-    SAP HANA, express edition is now running.
+7. A configuration script will run if this is the first login. It will prompt you for a new `HANA database master` password, and ask for your proxy information if you are installing `hxexsa.ova`. Enter another strong password and add your proxy information (if applicable).
+
+    SAP HANA 2.0, express edition is now running.
 
 ### Test your Server Installation
 
-Verify that all required SAP HANA, express edition services are running properly.
+Verify that all required SAP HANA 2.0, express edition services are running properly.
 
 1. From the `hxehost:hxeadm>` command prompt enter:
     ```
@@ -78,52 +81,6 @@ Verify that all required SAP HANA, express edition services are running properly
     ```
 
     >**Note**: After restarting, allow sufficient time for all services to start running before proceeding.
-
-### Change the Default Password for SYSTEM User
-
-Changing the default SYSTEM user password can help secure your system.
-
-1. From the command prompt, change the SYSTEM password for `SystemDB`:  
-    ```
-    hdbsql -i 90 -d SystemDB -u SYSTEM -p HXEHana1
-    ```
-
-    Follow the command prompts to update the password. Exit `hdbsql`:
-    ```
-    \q
-    ```
-
-### Change the Default Passwords for Other Users
-
-1. Change the `XSA_ADMIN` user password for `SystemDB`:
-    ```
-    hdbsql -i 90 -d SystemDB -u XSA_ADMIN -p HXEHana1
-    ```
-
-    Follow the command prompts to update the password. Exit `hdbsql`:
-    ```
-    \q
-    ```
-
-2. Change the `XSA_DEV` password for `SystemDB`.
-    ```
-    hdbsql -i 90 -d SystemDB -u XSA_DEV -p HXEHana1
-    ```
-
-    Follow the command prompts to update the password. Exit `hdbsql`:
-    ```
-    \q
-    ```
-
-3. Change the `XSA_SHINE` password for `SystemDB`.
-    ```
-    hdbsql -i 90 -d SystemDB -u XSA_SHINE -p HXEHana1
-    ```
-
-    Follow the command prompts to update the password. Exit `hdbsql`:
-    ```
-    \q
-    ```
 
 ## Record Your VM's IP Address
 
@@ -265,7 +222,7 @@ For information on data backup, recovery, and log file growth, see the [SAP HANA
 
 >**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
 
-Download and install the HANA Eclipse Plugin to your host OS (not the VM guest) and connect to SAP HANA, express edition.
+Download and install the HANA Eclipse Plugin to your host OS (not the VM guest) and connect to SAP HANA 2.0, express edition.
 
 1. Download **Eclipse IDE for Java EE Developers** from Eclipse for [Neon](http://www.eclipse.org/neon/) or [Mars](http://www.eclipse.org/mars/) releases to your local file system.
 
@@ -361,7 +318,7 @@ If you downloaded the Server + Applications Virtual Machine (`hxexsa.ova`) packa
 
 ### (Optional) Install Text Analysis Files
 
-If you are using SAP HANA, express edition in a language other than English or German, you can download the **Text analysis files for additional languages** package in the Download Manager. This package contains the text analysis files for the HANA Text Analysis feature for languages other than English or German.
+If you are using SAP HANA 2.0, express edition in a language other than English or German, you can download the **Text analysis files for additional languages** package in the Download Manager. This package contains the text analysis files for the HANA Text Analysis feature for languages other than English or German.
 
 **Prerequisite**: You downloaded the package **Text analysis files for additional languages** using Download Manager.
 
