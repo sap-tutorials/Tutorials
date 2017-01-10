@@ -69,7 +69,7 @@ SAP HANA 2.0, express edition has been tested on these `hypervisors`:
 
 - [`VMware Workstation Player 12.x`](http://www.vmware.com/products/player/playerpro-evaluation.html)
 
-- [`VMware Workstation Player 7.x`]https://my.vmware.com/web/vmware/searchresults?client=my_download&site=my_download&proxystylesheet=my_download_en&gsa_lang=en&c=ALL&q=vmware+player.html)
+- [`VMware Workstation Player 7.x`](https://my.vmware.com/web/vmware/searchresults?client=my_download&site=my_download&proxystylesheet=my_download_en&gsa_lang=en&c=ALL&q=vmware+player.html)
 
 - [`VMware Workstation Pro 12.x`](http://www.vmware.com/products/workstation/workstation-evaluation.html)
 
