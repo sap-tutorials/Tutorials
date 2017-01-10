@@ -9,14 +9,20 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Prerequisites  
 
   - **Proficiency:** Intermediate
-  - [CD Pipeline Skeleton](http://go.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html)
-  - [Generic Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)
+  - [Source Code Versioning System](http://www.sap.com/developer/tutorials/ci-best-practices-scm.html)
+  - [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html)
+  - [Artifact Repository](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
+  - [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+  - [CD Pipeline Skeleton](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html)
+  - [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html)
 
 ## Next Steps
 
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
   
 ---
+
+> This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html). For all the examples to work properly make sure that you have followed the setup instructions for all components listed in the prerequisites box.
 
 For SAP HANA Extended Application Services (XS) classic model (XSC) development you can use either the SAP HANA Studio or the SAP HANA Development Workbench. For more details about installing and getting started, please refer to the product documentation.
 
@@ -43,7 +49,7 @@ After successful testing, the delivery manager determines whether to release the
 
 Figure: The CD process flow for SAP HANA XSC 
 
-The landscape setup required for this process is described in [Landscape Configuration](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html). The pipeline implementation by means of Jenkins jobs places real code into the skeleton, as described in [Sample Pipeline Configuration](http://go.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html).
+The landscape setup required for this process is described in [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html). The pipeline implementation by means of Jenkins jobs places real code into the skeleton, as described in [Sample Pipeline Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html).
 
 ![component setup](component-setup.png)
 
@@ -194,7 +200,7 @@ The steps below are preparation steps that bring the `SHINE` sources into a Gerr
 
 ##### Creating of the Gerrit project
 
-1. Create a project in Gerrit as described in [Generic Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html).
+1. Create a project in Gerrit as described in [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html).
 
 2. Clone the project to your local PC.
 
@@ -221,7 +227,7 @@ The steps below are preparation steps that bring the `SHINE` sources into a Gerr
     </project>
     ```
     
-    Enter appropriate values for `groupID` and `version`. The details are described in the part [CD Pipeline Skeleton](http://go.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html).
+    Enter appropriate values for `groupID` and `version`. The details are described in the part [CD Pipeline Skeleton](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html).
 
 7. In the local Git workspace, perform `git add`. Ensure that the directory `._SYS_REGI_settings`, which was created automatically by the SAP HANA Studio, is not committed into Git, since the existence of this directory will prevent other developers to create an own HANA repository workspace. Best practice is to add the pattern `._SYS_REGI_settings/*` into the `.gitignore` file. Perform a commit, and push the change into the central repository. The Gerrit project is now filled with the `SHINE` sources.
 
@@ -338,6 +344,7 @@ These assumptions allow us to treat the entities *package* and *delivery unit* a
     :------------------------------------- | :------------------------------------------------------------------------- 
     Downstream Project Names               | `CI_Shine_master_testDeploy` 
     Parameters                             | `BUILD_JOB_NUMBER=${BUILD_NUMBER}` 
+                                           | `DELIVERY_UNIT=${DELIVERY_UNIT}` 
 
     Ignore the warning that the job entered does not yet exist. We will create it in the next step.
 
@@ -361,6 +368,7 @@ From a technical point of view, this job takes the build result (that is, the ex
     Name                   | Default Value
     :--------------------- | :------------------------------------------------------
     `BUILD_JOB_NUMBER`     | Leave empty
+    `DELIVERY_UNIT`        | Leave empty
     `HANA_HOST`            | `{fully qualified host name of the SAP HANA CI system}`
     `HANA_HTTP_PORT`       | `{SAP HANA http port: usually 43<instance number> (HTTPS) or 80<instance number> (HTTP)}`
 
@@ -560,4 +568,4 @@ Replace the `hdbalm import` command in the release job with the `hdbalm transpor
 
 ## Next Steps
  
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

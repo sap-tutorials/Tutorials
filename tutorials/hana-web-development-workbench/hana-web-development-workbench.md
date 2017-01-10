@@ -7,10 +7,10 @@ tags: [ products>sap-hana, products>sap-hana-cloud-platform, tutorial>beginner]
 ## Prerequisites  
 You need a HANA account. Pick one of the following:
 - [Get a free account in HANA Cloud Platform](https://account.hanatrial.ondemand.com/register)
-- [Set up an account on Amazon AWS or Microsoft Azure](http://go.sap.com/developer/tutorials/hana-setup-cloud.html)
+- [Set up an account on Amazon AWS or Microsoft Azure](http://www.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 ## Next Steps
-[Access your first Data from a native SAP HANA Application](http://go.sap.com/developer/tutorials/hana-data-access-authorizations.html)
+[Access your first Data from a native SAP HANA Application](http://www.sap.com/developer/tutorials/hana-data-access-authorizations.html)
 
 ## Details
 ### You will learn  
@@ -40,7 +40,7 @@ Remember the instance runs for a limited time, so if you have to come back later
 
 ![Properties](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/3.png)
 
-Just click start to restart it. Also note it’s only valid for 30 days.
+Just click start to restart it. Also note it's only valid for 30 days.
 
 #### 2 more steps before we hit the editor
 
@@ -72,7 +72,7 @@ You are now in the Editor and can immediately start developing in HANA.
 
 #### Using HANA on Amazon AWS or Microsoft Azure
 
-If you choose the on-premise / stand alone server approach you will need to access the web page of your HANA server using the IP address of your server. Enter the address `http://XXX.XXX.XXX.XXX` to the address bar of your browser. (Replace `XXX.XXX.XXX.XXX` with the IP address of your server.) This is under the assumption that you have a instance of the [SAP HANA Developer Edition](http://go.sap.com/developer/tutorials/hana-setup-cloud.html)
+If you choose the on-premise / stand alone server approach you will need to access the web page of your HANA server using the IP address of your server. Enter the address `http://XXX.XXX.XXX.XXX` to the address bar of your browser. (Replace `XXX.XXX.XXX.XXX` with the IP address of your server.) This is under the assumption that you have a instance of the [SAP HANA Developer Edition](http://www.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 On the web page, there is a link for **Web-Based Development Workbench**. Click this link to start the workbench.
 

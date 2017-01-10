@@ -7,11 +7,11 @@ tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Create a basic native Android master-detail app](http://go.sap.com/developer/tutorials/hcpdo-basic-android-app.html)
+ - **Tutorials:** [Create a basic native Android master-detail app](http://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html)
  - Download and install the [SAP Mobile SDK](https://store.sap.com/sap/cpa/ui/resources/store/html/SolutionDetails.html?pid=0000013098)
 
 ## Next Steps
- - [Compile and run a native Android app on SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcpdo-run-native-android-app.html)
+ - [Compile and run a native Android app on SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcpdo-run-native-android-app.html)
 
 ## Details
 ### You will learn  
@@ -21,14 +21,14 @@ After running the SDK installer you will find the native SDK files in the instal
 
 To use the MAF Login Component you must import a number of Libraries and Resources. MAF Libraries were installed with the SMP SDK installer into the folder specified by you when you executed the installer. MAF is shipped with various resources including Android, iOS and Windows specific files like: images, layouts, localization, XML documents etc. 
 
-The procedure shown in this tutorial can be used for any of the Android activity types – including a “no activity” empty project. In this tutorial, we will use an application name, and UI activity titles that match the Android native app tutorial for the Northwind OData service.
+The procedure shown in this tutorial can be used for any of the Android activity types – including a "no activity" empty project. In this tutorial, we will use an application name, and UI activity titles that match the Android native app tutorial for the Northwind OData service.
 
 ### Time to Complete
 **15 Min**.
 
 ---
 
-1. Open the `NWAndroid` project you created in the [previous tutorial](http://go.sap.com/developer/tutorials/hcpdo-basic-android-app.html).
+1. Open the `NWAndroid` project you created in the [previous tutorial](http://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html).
 
 2. Right click on `app` and select **New > Module** from the context menu.
 
@@ -123,4 +123,4 @@ The procedure shown in this tutorial can be used for any of the Android activity
 
 
 ## Next Steps
- - [Compile and run a native Android app on SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcpdo-run-native-android-app.html)
+ - [Compile and run a native Android app on SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcpdo-run-native-android-app.html)

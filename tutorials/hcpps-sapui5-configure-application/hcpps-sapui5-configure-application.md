@@ -6,10 +6,10 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Test the "Forecast" HCP predictive service from a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
+  - **Tutorials:** [Test the "Forecast" HCP predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
 
 ## Next Steps
-  - [Visualize your predictive demo data set in a SAPUI5 application using an  OData service](http://go.sap.com/developer/tutorials/hcpps-sapui5-odata.html)
+  - [Visualize your predictive demo data set in a SAPUI5 application using an  OData service](http://www.sap.com/developer/tutorials/hcpps-sapui5-odata.html)
 
 ## Details
 ### You will learn
@@ -241,4 +241,4 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
     ![Run Button](13.png)
 
 ## Next Steps
-  - [Visualize your predictive demo data set in a SAPUI5 application using an  OData service](http://go.sap.com/developer/tutorials/hcpps-sapui5-odata.html)
+  - [Visualize your predictive demo data set in a SAPUI5 application using an  OData service](http://www.sap.com/developer/tutorials/hcpps-sapui5-odata.html)

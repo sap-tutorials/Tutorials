@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios ]
  - **Development machine:** Access to a Mac computer
 
 ## Next Steps
- - [Build your first Xcode & Swift App](http://go.sap.com/developer/tutorials/xcode-build-swift-app.html)
+ - [Build your first Xcode & Swift App](http://www.sap.com/developer/tutorials/xcode-build-swift-app.html)
 
 ## Details
 ### You will learn  
@@ -21,11 +21,11 @@ You will learn where to find the resources to get started with Swift development
 
 [ACCORDION-BEGIN [Step 1: ](Introduction)]
 
-The SAP HANA Cloud Platform SDK for iOS will enable companies and developers to quickly develop their own native apps, built with Swift, Apple’s modern programming language. These native apps for iPhone and iPad can take advantage of all the innovative iOS technologies.
+The SAP HANA Cloud Platform SDK for iOS will enable companies and developers to quickly develop their own native apps, built with Swift, Apple's modern programming language. These native apps for iPhone and iPad can take advantage of all the innovative iOS technologies.
 
 To develop applications using the SAP HANA Cloud Platform SDK for iOS, you will need to use the Xcode development environment and build your applications using the Swift programing language. Apple provides all the developer tools, resources, and programs to get started. Use the resources below to learn more about Swift, iOS, and the Apple Developer Enterprise Program.
 
-- Learn more about Swift, Apple’s modern and powerful programming language for iOS, `macOS`, tvOS, and watchOS: https://developer.apple.com/swift/
+- Learn more about Swift, Apple's modern and powerful programming language for iOS, `macOS`, tvOS, and watchOS: https://developer.apple.com/swift/
 
 - Get started with Apple enterprise developer resources: https://developer.apple.com/enterprise
 
@@ -53,8 +53,8 @@ To create your first project, click on "File \> New \> Project" in the menu bar.
 
 ![New Project Dialog](Tutorial-1-1.png)
 
-Choose "Single View Application", and click the „Next“ button.
-On the next screen you can enter several options for your projects, most of which you can keep default. You can use any name as your "Product Name", but for this tutorial, use `DemoApp`. You can also pick any name as "Organization Name", but this is mostly likely the name of your company. The organization identifier is also known as a bundle prefix and is a way to uniquely identify your company. It is usually the reverse domain name of your company. The bundle identifier is then generated automatically. Keep "Swift" as your programming language, ensure devices is set to „Universal“ and to make things simple, keep "Use Core Data", "Include Unit Tests" and "Include UI Tests" unchecked.
+Choose "Single View Application", and click the „Next" button.
+On the next screen you can enter several options for your projects, most of which you can keep default. You can use any name as your "Product Name", but for this tutorial, use `DemoApp`. You can also pick any name as "Organization Name", but this is mostly likely the name of your company. The organization identifier is also known as a bundle prefix and is a way to uniquely identify your company. It is usually the reverse domain name of your company. The bundle identifier is then generated automatically. Keep "Swift" as your programming language, ensure devices is set to „Universal" and to make things simple, keep "Use Core Data", "Include Unit Tests" and "Include UI Tests" unchecked.
 
 If the "Team" drop-down shows "None", you need to select a team from the drop-down list. A team has already been setup, you don't need to create one. Once a team is set, Xcode will be able to automatically sign your applications.
 
@@ -104,7 +104,7 @@ To edit the user interface of the application, bring up the storyboard designer 
 
 ![Story Board Editor](Tutorial-1-4.png)
 
-To add the text to the view, add a "Label". You can find the „Label“ control in the "Object Library" at the bottom of the context pane on the right. It is easiest by just entering "Label" in the filter bar at the far lower right.
+To add the text to the view, add a "Label". You can find the „Label" control in the "Object Library" at the bottom of the context pane on the right. It is easiest by just entering "Label" in the filter bar at the far lower right.
 
 ![Object Library](Tutorial-1-5.png)
 
@@ -148,4 +148,4 @@ Congratulations! You have just created, built and run your first application for
 [ACCORDION-END]
 
 ### Next Steps
- - [Build your first Xcode & Swift App](http://go.sap.com/developer/tutorials/xcode-build-swift-app.html)
+ - [Build your first Xcode & Swift App](http://www.sap.com/developer/tutorials/xcode-build-swift-app.html)

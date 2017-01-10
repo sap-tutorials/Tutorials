@@ -8,12 +8,12 @@ tags: [  tutorial>intermediate, products>sap-hybris-as-a-service-on-sap-hana-clo
  - **Background Knowledge:** You will get most from this tutorial if you already have basic knowledge of [Node.js](https://www.youtube.com/watch?v=pU9Q6oiQNd0), [Angular](https://docs.angularjs.org/guide/directive) and [Restangular](https://github.com/mgonto/restangular#starter-guide). If you are not already familiar with them and would like to dive into the code, you can follow the provided links to start learning.
  - **Software Requirements:** Java, Maven which you will download in this tutorial if not present.
  - **Tutorials**
-    - [Getting Started with YaaS](http://go.sap.com/developer/tutorials/yaas-getting-started.html)
-    - [Download and Run the Default YaaS Storefront](http://go.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)
+    - [Getting Started with YaaS](http://www.sap.com/developer/tutorials/yaas-getting-started.html)
+    - [Download and Run the Default YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)
 
 ## Next Steps
- - [Use Your Own YaaS Project to Back your YaaS Storefront](http://go.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
- - [Deploy a Micro Service Built on YaaS on the SAP HCP](http://go.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
+ - [Use Your Own YaaS Project to Back your YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
+ - [Deploy a Micro Service Built on YaaS on the SAP HCP](http://www.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
 
 ## Details
 ### You will learn  
@@ -68,5 +68,5 @@ Locate your `yaas-storefront` folder which we will refer to below as (1).
 In this tutorial you extended the YaaS Storefront functionality using the Tips micro service. The micro service provided tips to a button in the storefront in order to help undecided purchasers with their shopping. The next step will be to back the YaaS storefront with your own customized YaaS project.
 
 ## Next Steps
- - [Use Your Own YaaS Project to Back your YaaS Storefront](http://go.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
- - [Deploy a Micro Service Built on YaaS on the SAP HCP](http://go.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
+ - [Use Your Own YaaS Project to Back your YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
+ - [Deploy a Micro Service Built on YaaS on the SAP HCP](http://www.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)

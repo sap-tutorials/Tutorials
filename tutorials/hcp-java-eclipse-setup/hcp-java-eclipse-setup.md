@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-hana-cloud-pla
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Sign up for an account on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Sign up for an account on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
- - [Developing and Deploying a basic Java application on SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-java-basic-app.html)
+ - [Developing and Deploying a basic Java application on SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-java-basic-app.html)
 
 ## Details
 ### You will learn  
@@ -152,4 +152,4 @@ Congratulations: You have now installed the SAP HANA Cloud Platform Tools for Ja
  - (Online documentation) [Setting Up the Runtime Environment](https://help.hana.ondemand.com/help/frameset.htm?7613f000711e1014839a8273b0e91070.html)
 
 ## Next Steps
- - [Developing and Deploying a basic Java application on SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-java-basic-app.html)
+ - [Developing and Deploying a basic Java application on SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-java-basic-app.html)

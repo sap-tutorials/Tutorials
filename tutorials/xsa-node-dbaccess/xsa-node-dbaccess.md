@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Modules and Express](http://go.sap.com/developer/tutorials/xsa-node-modules.html)
+ - **Tutorials:** [Modules and Express](http://www.sap.com/developer/tutorials/xsa-node-modules.html)
 
 ## Next Steps
- - [Asynchronous Non-Blocking I/O](http://go.sap.com/developer/tutorials/xsa-node-async.html)
+ - [Asynchronous Non-Blocking I/O](http://www.sap.com/developer/tutorials/xsa-node-async.html)
 
 ## Details
 ### You will learn  
@@ -35,7 +35,7 @@ Learn how to connect to the SAP HANA database using Node.js
 	module.exports = function(){	  var app = express(); 	  passport.use("JWT", new xssec.JWTStrategy(xsenv.getServices({uaa:{tag:"xsuaa"}}).uaa));	  app.use(passport.initialize());		  app.use(	   passport.authenticate("JWT", {session: false}),	   xsHDBConn.middleware());		//Hello Router	  app.route("/")
 	```
 
-4. Now add a new route for `/dummy`  that gets the database `connection/client` from the express request object (`req.db`). Then create a prepared statement for the SELECT of `SESSION_USER` from dummy ([using the synonym we created](http://go.sap.com/developer/tutorials/xsa-hdi-module.html) ). Execute the statement and send the results as JSON in the response object. 
+4. Now add a new route for `/dummy`  that gets the database `connection/client` from the express request object (`req.db`). Then create a prepared statement for the SELECT of `SESSION_USER` from dummy ([using the synonym we created](http://www.sap.com/developer/tutorials/xsa-hdi-module.html) ). Execute the statement and send the results as JSON in the response object. 
 
 	```
 	//Simple Database Select - In-line Callbacks	app.route("/dummy")	  .get(function(req, res){	  var client = req.db;	  client.prepare(	  "select SESSION_USER from \"dev602.data::DUMMY\" ", 	     function (err, statement){	       statement.exec([],	       function (err, results) {	       if (err){	       res.type("text/plain").status(500).send("ERROR: " + err);	       }else{	       var result = JSON.stringify( { Objects: results });	       res.type("application/json").status(200).send(result);	     } }  );	   } );	}); 
@@ -59,7 +59,7 @@ Learn how to connect to the SAP HANA database using Node.js
 
 	![unauthorized](8.png)
 
-9. Click on the `web` folder and the run window should change to the details of the running HTML5 module.  Since its already running and we didn’t make any changes to it, you can just click on the Application link in the bottom left corner of the window to reopen it in your web browser. 
+9. Click on the `web` folder and the run window should change to the details of the running HTML5 module.  Since its already running and we didn't make any changes to it, you can just click on the Application link in the bottom left corner of the window to reopen it in your web browser. 
 
 	![web folder](9.png)
 
@@ -71,7 +71,7 @@ Learn how to connect to the SAP HANA database using Node.js
 
 	![path](11.png)
 
-12. You might have noticed that the default Node.js programming approach is to use callbacks/event handlers for each operation.  This is because even the different parts of a database request (connection, prepared statement, execution, etc) are all non-blocking operations.  While this provides considerable parallelization and performance opportunities; it can also make the code more difficult to read. As a bonus part of this exercise you can return to `myNode.js` and add a second route handler, `/dummy2` that performs the same select but uses the `async` module. This module doesn’t really change the runtime aspects of the code, but organizes the callback functions in an easier to read array instead of in-lining them within each other. 
+12. You might have noticed that the default Node.js programming approach is to use callbacks/event handlers for each operation.  This is because even the different parts of a database request (connection, prepared statement, execution, etc) are all non-blocking operations.  While this provides considerable parallelization and performance opportunities; it can also make the code more difficult to read. As a bonus part of this exercise you can return to `myNode.js` and add a second route handler, `/dummy2` that performs the same select but uses the `async` module. This module doesn't really change the runtime aspects of the code, but organizes the callback functions in an easier to read array instead of in-lining them within each other. 
 
 	```
 	//Simple Database Select - Async Waterfall	app.route("/dummy2")	  .get(function(req, res){	  var client = req.db;	 async.waterfall([	 function prepare(callback){	    client.prepare("select SESSION_USER from \"dev602.data::DUMMY\" ", 	  function(err,statement){callback(null, err, statement);});	  },	 	function execute(err, statement, callback){	   statement.exec([], function(execErr, results){callback(null,execErr,results);});	},	function response(err, results, callback){	 if(err){	 res.type("text/plain").status(500).send("ERROR: " + err);	}else{	 var result = JSON.stringify( { Objects: results });	 res.type("application/json").status(200).send(result);		}	callback();	} ]);	});
@@ -79,4 +79,4 @@ Learn how to connect to the SAP HANA database using Node.js
 
 
 ## Next Steps
- - [Asynchronous Non-Blocking I/O](http://go.sap.com/developer/tutorials/xsa-node-async.html)
+ - [Asynchronous Non-Blocking I/O](http://www.sap.com/developer/tutorials/xsa-node-async.html)

@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorial:** [Step 2 - Define the Bootstrap Template](http://go.sap.com/developer/tutorials/react-bootstrap-template.html)
+ - **Tutorial:** [Step 2 - Define the Bootstrap Template](http://www.sap.com/developer/tutorials/react-bootstrap-template.html)
 
 ## Next Steps
- - **Tutorial:** [Step 4 - Separate the files](http://go.sap.com/developer/tutorials/react-separate-files.html)
+ - **Tutorial:** [Step 4 - Separate the files](http://www.sap.com/developer/tutorials/react-separate-files.html)
 
 
 ## Details
@@ -362,7 +362,7 @@ For your reference, your `index.html` file should now look like this:
 - We make extensive use of lists in our tutorial.  [Bootstrap CSS - list groups](https://getbootstrap.com/components/#list-group)
 
 ## Next Steps
- - **Tutorial:** [Step 4 - Separate the files](http://go.sap.com/developer/tutorials/react-separate-files.html)
+ - **Tutorial:** [Step 4 - Separate the files](http://www.sap.com/developer/tutorials/react-separate-files.html)
 
 
 

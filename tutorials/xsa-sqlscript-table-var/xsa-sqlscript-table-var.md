@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Parallel Processing and Parameters](http://go.sap.com/developer/tutorials/xsa-sqlscript-parallel.html)
+ - **Tutorials:** [Parallel Processing and Parameters](http://www.sap.com/developer/tutorials/xsa-sqlscript-parallel.html)
 
 ## Next Steps
- - [Creating Scalar User Defined Functions](http://go.sap.com/developer/tutorials/xsa-sqlscript-scalar.html)
+ - [Creating Scalar User Defined Functions](http://www.sap.com/developer/tutorials/xsa-sqlscript-scalar.html)
 
 ## Details
 ### You will learn  
@@ -66,4 +66,4 @@ In this exercise you will modify the code of procedure `get_po_header_data` agai
 	
 
 ## Next Steps
- - [Creating Scalar User Defined Functions](http://go.sap.com/developer/tutorials/xsa-sqlscript-scalar.html)
+ - [Creating Scalar User Defined Functions](http://www.sap.com/developer/tutorials/xsa-sqlscript-scalar.html)

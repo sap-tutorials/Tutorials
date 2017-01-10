@@ -8,7 +8,7 @@ tags: [ products>sap-hana, products>sap-hana-cloud-platform, tutorial>beginner ]
  - You will need to have an account on either Microsoft Azure or Amazon AWS
 
 ## Next Steps
- - [HANA and the Web Development Workbench](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
+ - [HANA and the Web Development Workbench](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
 
 ## Details
 
@@ -21,7 +21,7 @@ This section takes about **10 minutes** to complete, and about **10 to 25 minute
 
 > ### Warning
 >Both the Amazon AWS and Microsoft Azure accounts will charge you for time on those cloud systems.
->If you want to create a free developer account - with no cloud VM charges - on the HANA Cloud Platform, do not follow this tutorial. [Sign up for an account](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html) here, and then proceed to the next tutorial.
+>If you want to create a free developer account - with no cloud VM charges - on the HANA Cloud Platform, do not follow this tutorial. [Sign up for an account](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html) here, and then proceed to the next tutorial.
 
 ---
 
@@ -35,7 +35,7 @@ This section takes about **10 minutes** to complete, and about **10 to 25 minute
 
     > ### Note
     >If you don't have an account on the sap.com website, you need to create one to access the Cloud Appliance Library.
-    >Go to the [SAP website](http://go.sap.com/index.html) and click *login* in the upper right corner to create an account.
+    >Go to the [SAP website](http://www.sap.com/index.html) and click *login* in the upper right corner to create an account.
 
     ![Solution Selection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/1.png)
 
@@ -145,4 +145,4 @@ For more detailed instructions, check out [Connecting to Microsoft Azure with SS
 ## Next Steps
 Make your very first steps on SAP HANA and develop a very simple "Hello World" application using the SAP HANA Web-based Development Workbench on the SAP HANA Cloud Platform.
 
- - [HANA and the Web Development Workbench](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
+ - [HANA and the Web Development Workbench](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html)

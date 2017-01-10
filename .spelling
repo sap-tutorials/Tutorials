@@ -1,4 +1,5 @@
 30-day
+Alexa
 Ambari
 AngularJS
 Ansible
@@ -35,6 +36,7 @@ Hadoop
 HCPms
 Heilman
 HelpDesk
+hoc
 hostname
 How-Tos
 IoT
@@ -56,11 +58,11 @@ Lumira
 macOS
 MacDown
 MySQL
-npm
 NetWeaver
 Node.js
 northwind
 Northwind
+npm
 OAuth
 OData
 OpenUI5
@@ -93,6 +95,8 @@ Servlet
 SQLScript
 ssh
 subselect
+supertype
+supertypes
 TechEd
 Tessel
 timestamp

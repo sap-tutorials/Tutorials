@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Using Execute Immediate](http://go.sap.com/developer/tutorials/xsa-sqlscript-execute.html)
+ - **Tutorials:** [Using Execute Immediate](http://www.sap.com/developer/tutorials/xsa-sqlscript-execute.html)
 
 ## Next Steps
- - [SQL vs Cursors vs Arrays vs Index-based Cell Access](http://go.sap.com/developer/tutorials/xsa-sqlscript-sql-cursor.html)
+ - [SQL vs Cursors vs Arrays vs Index-based Cell Access](http://www.sap.com/developer/tutorials/xsa-sqlscript-sql-cursor.html)
 
 ## Details
 ### You will learn  
@@ -52,7 +52,7 @@ In contrast to EXEC and EXECUTE IMMEDIATE, `APPLY_FILTER` is SQL injection save.
 8. Enter the filter string for the input parameter as 
 
     ```
-    	'CATEGORY = ''Notebooks''' and click “Run”. 
+    	'CATEGORY = ''Notebooks''' and click "Run". 
 	```
 	
     ![filter string](8.png)
@@ -71,4 +71,4 @@ In contrast to EXEC and EXECUTE IMMEDIATE, `APPLY_FILTER` is SQL injection save.
 
 
 ## Next Steps
- - [SQL vs Cursors vs Arrays vs Index-based Cell Access](http://go.sap.com/developer/tutorials/xsa-sqlscript-sql-cursor.html)
+ - [SQL vs Cursors vs Arrays vs Index-based Cell Access](http://www.sap.com/developer/tutorials/xsa-sqlscript-sql-cursor.html)

@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Asynchronous Non-Blocking I/O](http://go.sap.com/developer/tutorials/xsa-node-async.html)
+ - **Tutorials:** [Asynchronous Non-Blocking I/O](http://www.sap.com/developer/tutorials/xsa-node-async.html)
 
 ## Next Steps
- - [Web Sockets](http://go.sap.com/developer/tutorials/xsa-node-websockets.html)
+ - [Web Sockets](http://www.sap.com/developer/tutorials/xsa-node-websockets.html)
 
 ## Details
 ### You will learn  
@@ -95,4 +95,4 @@ Working with text bundles in Node.js
 
 
 ## Next Steps
- - [Web Sockets](http://go.sap.com/developer/tutorials/xsa-node-websockets.html)
+ - [Web Sockets](http://www.sap.com/developer/tutorials/xsa-node-websockets.html)

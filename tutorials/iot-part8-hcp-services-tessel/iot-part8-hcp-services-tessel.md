@@ -7,10 +7,10 @@ tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topi
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Internet of Things (IoT) Adding a new device to the IoT Services](http://go.sap.com/developer/tutorials/iot-part7-add-device.html)
+ - **Tutorials:** [Internet of Things (IoT) Adding a new device to the IoT Services](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)
 
 ## Next Steps
- - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
+ - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
 
 
 ## Details
@@ -23,7 +23,7 @@ Now its time to insert data from your Tessel to SAP IoT Services.
 
 ---
 
-1. Open your existing `climate.js` file in your editor and make these changes to the section after you assign the climate module to port “A” and before you actually read the temperature from the module itself.
+1. Open your existing `climate.js` file in your editor and make these changes to the section after you assign the climate module to port "A" and before you actually read the temperature from the module itself.
 
     These changes set the parameters needed to post your data. Notice you will need to make the changes for your information for the TOKEN, Account, Device ID, etc.
     If you are using the same code from the previous sections you will need to modify it to match your message type definition now.  
@@ -107,7 +107,7 @@ Now its time to insert data from your Tessel to SAP IoT Services.
     updateIoT(temp.toFixed(4), humid.toFixed(4));
     ```
 
-4. Check that your Tessel is still connected to Wi-Fi by running the command `tessel wifi -l`. If you do not get a response like that below, you should reconnect to the network with the command below with the correct SSID and password. If your access point has spaces in the name then just put it inside of quotes like this: `“Wifi name”`.
+4. Check that your Tessel is still connected to Wi-Fi by running the command `tessel wifi -l`. If you do not get a response like that below, you should reconnect to the network with the command below with the correct SSID and password. If your access point has spaces in the name then just put it inside of quotes like this: `"Wifi name"`.
 
     ```shell
     tessel wifi -n SSID -p password
@@ -129,4 +129,4 @@ Now its time to insert data from your Tessel to SAP IoT Services.
     ![Viewing new values in HCP](p8_8.png)
 
 ## Next Steps
-  - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
+  - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)

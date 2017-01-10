@@ -6,10 +6,10 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Round the currency field using JavaScript](http://go.sap.com/developer/tutorials/hcp-webide-round-currency.html)
+ - **Tutorials:** [Round the currency field using JavaScript](http://www.sap.com/developer/tutorials/hcp-webide-round-currency.html)
 
 ## Next Steps
- - [Implementing labels using the i18n (internationalization) features of SAPUI5](http://go.sap.com/developer/tutorials/hcp-webide-labels-i18n.html)
+ - [Implementing labels using the i18n (internationalization) features of SAPUI5](http://www.sap.com/developer/tutorials/hcp-webide-labels-i18n.html)
 
 ## Details
 
@@ -54,7 +54,7 @@ Ideally, an OData service should specify the currency symbol or currency type fo
     * Do a hard-reload or clear cache. See the note below.
 
 ## Remember the browser cache
-If the currency symbol does not show up, remember to clear the cache as described at the bottom of the [Add labels and a new field to your app](http://go.sap.com/developer/tutorials/hcp-webide-add-labels-field.html) tutorial.
+If the currency symbol does not show up, remember to clear the cache as described at the bottom of the [Add labels and a new field to your app](http://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html) tutorial.
 
 ## Next Steps
- - [Implementing labels using the i18n (internationalization) features of SAPUI5](http://go.sap.com/developer/tutorials/hcp-webide-labels-i18n.html)
+ - [Implementing labels using the i18n (internationalization) features of SAPUI5](http://www.sap.com/developer/tutorials/hcp-webide-labels-i18n.html)

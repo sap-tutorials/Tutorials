@@ -6,10 +6,10 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **Tutorials:** [Add a tab and additional fields to an SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-add-tab.html)
+ - **Tutorials:** [Add a tab and additional fields to an SAPUI5 app](http://www.sap.com/developer/tutorials/hcp-webide-add-tab.html)
 
 ## Next Steps
- - [Commit your project files to your HCP Git repository](http://go.sap.com/developer/tutorials/hcp-webide-commit-git.html)
+ - [Commit your project files to your HCP Git repository](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
 
 ## Details
 
@@ -18,7 +18,7 @@ There are times when a use case calls for the generation of a data field that is
 
 In this tutorial, you will learn how to generate a new field from data received from the OData service and display it on the detail view. You will also become familiar with a few of the features in the Google Chrome debugger.
 
-The field you will generate is an approximated “Current Inventory Value” based on inventory (Units in Stock), Unit Price and a fixed mark up percentage. Typically, the markup percentage and unit price would vary by product, region and other factors – but the intent here is simply to show how a field can be generated and displayed.
+The field you will generate is an approximated "Current Inventory Value" based on inventory (Units in Stock), Unit Price and a fixed mark up percentage. Typically, the markup percentage and unit price would vary by product, region and other factors – but the intent here is simply to show how a field can be generated and displayed.
 
 For this tutorial, you can assume:
  * The cost of each item is equal to: `UnitPrice / (1+markup)`
@@ -136,4 +136,4 @@ The field is calculated each time the detail view is displayed and is not persis
     ![cleaned up function](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_14.png)
 
 ## Next Steps
- - [Commit your project files to your HCP Git repository](http://go.sap.com/developer/tutorials/hcp-webide-commit-git.html)
+ - [Commit your project files to your HCP Git repository](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)

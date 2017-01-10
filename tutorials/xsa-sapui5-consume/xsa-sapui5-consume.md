@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Use OData Metadata to dynamically create the columns](http://go.sap.com/developer/tutorials/xsa-sapui5-metadata.html)
+ - **Tutorials:** [Use OData Metadata to dynamically create the columns](http://www.sap.com/developer/tutorials/xsa-sapui5-metadata.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -37,7 +37,7 @@ Consume an OData Service with Create Option
 	jQuery.sap.declare("sap.shineNext.odataBasic.Component");	sap.ui.core.UIComponent.extend("sap.shineNext.odataBasic.Component", {		init: function(){			jQuery.sap.require("sap.m.MessageBox");			jQuery.sap.require("sap.m.MessageToast");							    var oModel = new sap.ui.model.odata.ODataModel(			          "/xsodata/user2.xsodata/", true);		  	    oModel.setDefaultBindingMode(sap.ui.model.BindingMode.TwoWay);		  		oModel.attachRejectChange(this,function(oEvent){		  		    sap.m.MessageBox.alert("You are already editing another Entry! Please submit or reject your pending changes!");				});		  				    sap.ui.getCore().setModel(oModel, "userModel");  		          			sap.ui.core.UIComponent.prototype.init.apply(this, arguments);		},				createContent: function() {				var settings = {					ID: "odataBasic",					title: "OData Basic Exercise",					description: "SHINE service for OData Basic Exercise"				};						var oView = sap.ui.view({				id: "app",				viewName: "sap.shineNext.odataBasic.view.App",				type: "XML",				viewData: settings			});						 oView.setModel(sap.ui.getCore().getModel("userModel"), "userModel");   			return oView;		}	});
 	```
 
-5. Also in the `Component.js` change the page creation to new `sap.ui.xmlview(“app”, “view.App”)`
+5. Also in the `Component.js` change the page creation to new `sap.ui.xmlview("app", "view.App")`
 
 	```
 		var oView = sap.ui.view({			id: "app",			viewName: "sap.shineNext.odataBasic.view.App",			type: "XML",			viewData: settings		});
@@ -62,7 +62,7 @@ Consume an OData Service with Create Option
 	onInit : function(){		var model = new sap.ui.model.json.JSONModel({});                this.getView().setModel(model); 	},
 	```
 	
-11. For `callUserService`, you first need to get access to the model object. Next you need to create a JSON object with the service fields (`PERS_NO`, `FIRSTNAME`, `LASTNAME`, and `E_MAIL`). `PERS_NO` can get a hard coded value of “0000000000”.  The other fields should be read from the screen with the bound JSON model Finally you need to set a custom header of `content-type` with the value of `application/json;charset=utf-8` in the model. Then you can call the `model.create` function for the entity `/Users`. If you need help writing this code please refer to the solution at: `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex4_15`
+11. For `callUserService`, you first need to get access to the model object. Next you need to create a JSON object with the service fields (`PERS_NO`, `FIRSTNAME`, `LASTNAME`, and `E_MAIL`). `PERS_NO` can get a hard coded value of "0000000000".  The other fields should be read from the screen with the bound JSON model Finally you need to set a custom header of `content-type` with the value of `application/json;charset=utf-8` in the model. Then you can call the `model.create` function for the entity `/Users`. If you need help writing this code please refer to the solution at: `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex4_15`
 
 	```
 	callUserService : function() {		var oModel = sap.ui.getCore().getModel("userModel");		var result = this.getView().getModel().getData();		var oEntry = {};		oEntry.PERS_NO = "0000000000";		oEntry.FIRSTNAME = result.FirstName;		oEntry.LASTNAME = result.LastName;		oEntry.E_MAIL = result.Email;			oModel.setHeaders({"content-type" : "application/json;charset=utf-8"});		oModel.create("/Users", oEntry, null, function() {		    sap.m.MessageToast.show("Create successful");		}, this.onErrorCall);	},
@@ -90,4 +90,4 @@ Consume an OData Service with Create Option
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

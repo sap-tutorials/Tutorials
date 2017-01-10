@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA Vora Modeler: Unions in SQL View](http://go.sap.com/developer/tutorials/vora-modeler-view-union.html)
+ - **Tutorials:** [SAP HANA Vora Modeler: Unions in SQL View](http://www.sap.com/developer/tutorials/vora-modeler-view-union.html)
 
 ## Next Steps
- - [Loading sample data from different file formats](http://go.sap.com/developer/tutorials/vora-zeppelin-load-file-formats.html)
+ - [Loading sample data from different file formats](http://www.sap.com/developer/tutorials/vora-zeppelin-load-file-formats.html)
 
 ## Details
 ### You will learn  
@@ -63,4 +63,4 @@ You will learn how to use Modeler artifacts to create Group By, Aggregations, Or
     ![Results screen](voraaggr07.jpg)
 
 ## Next Steps
-- [Loading sample data from different file formats](http://go.sap.com/developer/tutorials/vora-zeppelin-load-file-formats.html)
+- [Loading sample data from different file formats](http://www.sap.com/developer/tutorials/vora-zeppelin-load-file-formats.html)

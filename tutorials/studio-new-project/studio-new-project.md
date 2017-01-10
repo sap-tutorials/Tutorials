@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana,-express-editio
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [How to download and install the HANA Eclipse plugin](http://go.sap.com/developer/how-tos/hxe-howto-eclipse.html)
+ - **Tutorials:** [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html)
 
 ## Next Steps
- - [SAP HANA Studio, Deploy your project](http://go.sap.com/developer/tutorials/studio-deploy-project.html)
+ - [SAP HANA Studio, Deploy your project](http://www.sap.com/developer/tutorials/studio-deploy-project.html)
 
 ## Details
 ### You will learn  
@@ -20,9 +20,9 @@ Setup your first project with SAP HANA Studio for the SAP HANA, express edition.
 ---
 
 1. From the previous tutorial you should now have your SAP HANA Studio connected to your SAP HANA, express edition. Therefore, the next step is to create a link to the SAP HANA repository.
-	
+
 	![connect repo](0.png)
-	
+
 2. Now that you have the repository linked you can create your first project. This initial project will be the basis for a series of tutorials.
 
 	![new project](1.png)
@@ -48,4 +48,4 @@ Setup your first project with SAP HANA Studio for the SAP HANA, express edition.
 	```
 
 ## Next Steps
-- [SAP HANA Studio, Deploy your project](http://go.sap.com/developer/tutorials/studio-deploy-project.html)
+- [SAP HANA Studio, Deploy your project](http://www.sap.com/developer/tutorials/studio-deploy-project.html)

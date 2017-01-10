@@ -9,7 +9,7 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>inte
  - Note: JDK 1.6 or 1.7 are required. If you have a later version of Java installed, please install [JDK 1.7](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk7-downloads-1880260.html) and temporarily change your `JAVA_HOME` environment variable to point to it.
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 2](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)
+ - [End-to-End Weather App Scenario Part 2](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)
 
 ## Details
 ### You will learn  
@@ -72,7 +72,7 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
 
     ![Changing the Servlet URL mapping](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-5.png)
 
-6. Now we need to do our first bit of coding. Navigate to the servlet’s `doGet()` method and replace the `TODO` comment with the following line of code and save your changes:
+6. Now we need to do our first bit of coding. Navigate to the servlet's `doGet()` method and replace the `TODO` comment with the following line of code and save your changes:
 
     ```javascript
     response.getWriter().println("Hello World!");
@@ -84,10 +84,10 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
 
 8. Choose the **Manually define a new Server** option and select the **SAP / Java Web Server** option from the server selection. Make sure to select **Java Web** as the server runtime environment.
 
-    Click on **Finish**. The internal browser is now started and displays the traditional message marking the first step into a new programmer’s journey.
+    Click on **Finish**. The internal browser is now started and displays the traditional message marking the first step into a new programmer's journey.
 
     ![Creating a new local Java Server to run your app](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-8.png)
 
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 2](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)
+ - [End-to-End Weather App Scenario Part 2](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)

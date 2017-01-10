@@ -6,10 +6,10 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Enable, deploy and configure the SAP HCP predictive services](http://go.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - **Tutorials:** [Enable, deploy and configure the SAP HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Next Steps
-  - [Test the OData services using a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-odata.html)
+  - [Test the OData services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
 
 ## Details
 ### You will learn
@@ -20,7 +20,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 
 ---
 
-1. If you haven’t done so yet, please start [Google Chrome](http://www.google.com/chrome/browser/desktop/) and install the [Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/) now.
+1. If you haven't done so yet, please start [Google Chrome](http://www.google.com/chrome/browser/desktop/) and install the [Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/) now.
 
 1. Open ***Google Chrome***.
 
@@ -41,5 +41,5 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
     ![Postman](3.png)
 
 ## Next Steps
-  - [Test the OData services using a REST client](http://go.sap.com/developer/tutorials/hcpps-rest-odata.html)
+  - [Test the OData services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
 

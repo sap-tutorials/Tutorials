@@ -7,12 +7,12 @@ tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topi
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:**  [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://go.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
+ - **Tutorials:**  [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
  - [Getting Started with the SAP HANA Cloud Platform Tools for Java](https://hcp.sap.com/developers/TutorialCatalog/jav100_01_java_setup_eclipse.html)
  - Note: JDK 1.6 or 1.7 are required. If you have a later version of Java installed, please install JDK 1.7 and temporarily change your `JAVA_HOME` environment variable to point to it.
 
 ## Next Steps
- - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://go.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+ - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
 
 
 ## Details
@@ -30,7 +30,7 @@ For more information on that please [see tutorial](https://hcp.sap.com/developer
 
     ![git perspective](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/1.png)
 
-2. Choose “Clone a Git repository” using the following URL
+2. Choose "Clone a Git repository" using the following URL
 [https://github.com/SAP/iot-starterkit.git](https://github.com/SAP/iot-starterkit.git) which is the SAP official IoT Starter Kit.
 
     ![Clone repo](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/2.png)
@@ -59,7 +59,7 @@ For more information on that please [see tutorial](https://hcp.sap.com/developer
   });  
 	```
 
-	Don’t remember just go back to your `iotmms` application and you can get them from there. Once you have that in place you will need to adjust the `graph` settings to match the values of your message type as well as your data values, change Slider Value to Temperature F.
+	Don't remember just go back to your `iotmms` application and you can get them from there. Once you have that in place you will need to adjust the `graph` settings to match the values of your message type as well as your data values, change Slider Value to Temperature F.
 
 	```javascript
   function createMeasureFeed() {
@@ -104,7 +104,7 @@ For more information on that please [see tutorial](https://hcp.sap.com/developer
   }
 	```
 
-7. Now in Eclipse, build the project using Maven. If you don’t have Maven, click on Help install new software. In the Work with line, start typing eclipse.
+7. Now in Eclipse, build the project using Maven. If you don't have Maven, click on Help install new software. In the Work with line, start typing eclipse.
 
 8. Open Collaboration, and look for `m2e-Maven Integration for Eclipse`
 
@@ -134,7 +134,7 @@ For more information on that please [see tutorial](https://hcp.sap.com/developer
 
     ![destinations](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/13.png)
 
-15. Click on Import From File, and browse to your file that you’ve created.
+15. Click on Import From File, and browse to your file that you've created.
 
     ![Import](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/14.png)
 
@@ -158,4 +158,4 @@ For more information on that please [see tutorial](https://hcp.sap.com/developer
 
 
 ## Next Steps
- - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://go.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+ - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)

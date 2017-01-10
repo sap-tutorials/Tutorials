@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios ]
 ## Prerequisites  
 - **Proficiency:** Beginner
 - **Development machine:** Access to a Mac computer
-- **Tutorials:** [Build your first Xcode & Swift App](http://go.sap.com/developer/tutorials/xcode-build-swift-app.html)
+- **Tutorials:** [Build your first Xcode & Swift App](http://www.sap.com/developer/tutorials/xcode-build-swift-app.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -22,7 +22,7 @@ How to debug your application and how to deploy your app to an iPad
 
 [ACCORDION-BEGIN [Step 1: ](Introduction to debugging in Xcode)]
 
-When the application is not doing exactly what you expect it to do, the need arises to examine portions of the application to be able to determine where the problem occurs. A breakpoint is usually very instrumental in this process. A breakpoint pauses an app during execution at a predetermined location, so that you can inspect the state of variables and the app’s control flow.
+When the application is not doing exactly what you expect it to do, the need arises to examine portions of the application to be able to determine where the problem occurs. A breakpoint is usually very instrumental in this process. A breakpoint pauses an app during execution at a predetermined location, so that you can inspect the state of variables and the app's control flow.
 
 ![Project Navigation](Tutorial-3-1-1.png)
 
@@ -42,7 +42,7 @@ Try to set the breakpoint on the same line as the illustration above by clicking
 
 [ACCORDION-BEGIN [Step 3: ](Start a debugging session)]
 
-To start a debugging session, just press the „Build and Run“ button. This will launch the simulator again if you closed it, and will start your application in the simulator. The breakpoint you set is in the section of the code that is run when the "OK" button is pressed. Enter your name in the text field and press the "OK" button. Once the app execution reaches the breakpoint, Xcode will show the position of the program counter, allowing you to have a closer look at the state of variables.
+To start a debugging session, just press the „Build and Run" button. This will launch the simulator again if you closed it, and will start your application in the simulator. The breakpoint you set is in the section of the code that is run when the "OK" button is pressed. Enter your name in the text field and press the "OK" button. Once the app execution reaches the breakpoint, Xcode will show the position of the program counter, allowing you to have a closer look at the state of variables.
 
 > Note that when the debugger opens, the navigation pane will also change from the Project Navigator to the Debug Navigator.
 
@@ -54,7 +54,7 @@ To see the value of `textField`, Ctrl-click the variable in the Variables View, 
 
 > `Printing description of self.textField: &lt;UITextField: 0x7fb76c407340; frame = (16 110; 343 30); text = 'John Doe'; clipsToBounds = YES; opaque = NO; autoresize = RM+BM; gestureRecognizers = &lt;NSArray: 0x608000242040&gt;; layer = &lt;CALayer: 0x608000225be0&gt;&gt;`
 
-In the example above you can see that the current value of the text attribute is „John Doe“. The output you will see in the Console will include the text that you entered.
+In the example above you can see that the current value of the text attribute is „John Doe". The output you will see in the Console will include the text that you entered.
 
 To resume execution of the application, press the **Continue/Pause** button in the debug bar:
 
@@ -106,7 +106,7 @@ Can you see how much memory your app is currently using?
 
 [ACCORDION-BEGIN [Step 7: ](Navigate the app to the breakpoint)]
 
-While the app is running on the iPad, enter your name again and press the **OK** button. This should go to the same portion of the app’s logic as you debugged before.
+While the app is running on the iPad, enter your name again and press the **OK** button. This should go to the same portion of the app's logic as you debugged before.
 
 When the app on the iPad encounters the breakpoint, you can see that Xcode highlights the line where the breakpoint was set and will show the Variables View. This means that Xcode does not only allow you to debug your apps in a simulator, but also on your device.
 
@@ -118,4 +118,4 @@ Congratulations, you have now deployed and debugged your self-built app to an iP
 [ACCORDION-END]
 
 ### Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

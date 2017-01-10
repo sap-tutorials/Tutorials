@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>cloud, topic>odata, topic>sapui5, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Getting started with the SAP Fiori, Demo Cloud Edition](http://go.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html)
+ - **Tutorials:** [Getting started with the SAP Fiori, Demo Cloud Edition](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html)
 
 ## Next Steps
- - [Add extended app to SAP Fiori launchpad](http://go.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
+ - [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
 
 ## Details
 ### You will learn  
@@ -125,7 +125,7 @@ In this tutorial you will learn how to add a view element with custom fields to 
 
     ![Extended app with ales Organization and Distribution Channel](17.png)
 
-Congratulations, you’ve successfully extended an SAP standard Fiori app.
+Congratulations, you've successfully extended an SAP standard Fiori app.
 
 ## Next Steps
- - [Add extended app to SAP Fiori launchpad](http://go.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
+ - [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)

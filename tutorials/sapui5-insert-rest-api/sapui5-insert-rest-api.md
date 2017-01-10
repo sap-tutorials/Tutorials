@@ -5,10 +5,11 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Register your App with an External API](http://go.sap.com/developer/tutorials/sapui5-register-app-api.html)
+ - **Tutorials:** [Register your App with an External API](http://www.sap.com/developer/tutorials/sapui5-register-app-api.html)
 
 ## Next Steps
- - Add paging to your External API call (Coming Soon)
+- [Add paging to your External API call](http://www.sap.com/developer/tutorials/sapui5-paging-api.html)
+
 
 ## Details
 ### You will learn  

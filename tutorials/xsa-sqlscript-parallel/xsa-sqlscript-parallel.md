@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Creating Stored Procedures](http://go.sap.com/developer/tutorials/xsa-sqlscript-stored-proc.html)
+ - **Tutorials:** [Creating Stored Procedures](http://www.sap.com/developer/tutorials/xsa-sqlscript-stored-proc.html)
 
 ## Next Steps
- - [Intermediate Table Variables](http://go.sap.com/developer/tutorials/xsa-sqlscript-table-var.html)
+ - [Intermediate Table Variables](http://www.sap.com/developer/tutorials/xsa-sqlscript-table-var.html)
 
 ## Details
 ### You will learn  
@@ -63,4 +63,4 @@ In this exercise we will modify the code of procedure `get_po_header_data`  so t
 
 
 ## Next Steps
- - [Intermediate Table Variables](http://go.sap.com/developer/tutorials/xsa-sqlscript-table-var.html)
+ - [Intermediate Table Variables](http://www.sap.com/developer/tutorials/xsa-sqlscript-table-var.html)

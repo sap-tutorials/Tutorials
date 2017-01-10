@@ -5,14 +5,14 @@ tags: [  tutorial>beginner, topic>sapui5 ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create a Destination for an External API](http://go.sap.com/developer/tutorials/sapui5-create-api-destination.html)
+ - **Tutorials:** [Create a Destination for an External API](http://www.sap.com/developer/tutorials/sapui5-create-api-destination.html)
 
 ## Next Steps
- - [Add an External API call to your app](http://go.sap.com/developer/tutorials/sapui5-insert-rest-api.html)
+ - [Add an External API call to your app](http://www.sap.com/developer/tutorials/sapui5-insert-rest-api.html)
 
 ## Details
 ### You will learn  
-What the reader should take away from this time investment. You can also add screenshot(s) to illustrate what they will do.
+Create a developer account on the API's website. This will allow you to be able to get a developer key and track details about the API usage from your application.
 
 ### Time to Complete
 **15 Min**.
@@ -147,4 +147,4 @@ Select **Create token** for you user on your development team. This will generat
 
 
 ## Next Steps
- - [Add an External API call to your app](http://go.sap.com/developer/tutorials/sapui5-insert-rest-api.html)
+ - [Add an External API call to your app](http://www.sap.com/developer/tutorials/sapui5-insert-rest-api.html)

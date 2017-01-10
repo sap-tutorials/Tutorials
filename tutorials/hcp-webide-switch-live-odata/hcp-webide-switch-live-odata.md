@@ -7,11 +7,11 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:**
-   - [Build an SAPUI5 app based on your data model and run it with mock data](http://go.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
-   - [Create an account on the Gateway Demo system](http://go.sap.com/developer/tutorials/gateway-demo-signup.html)
+   - [Build an SAPUI5 app based on your data model and run it with mock data](http://www.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
+   - [Create an account on the Gateway Demo system](http://www.sap.com/developer/tutorials/gateway-demo-signup.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 
@@ -57,8 +57,8 @@ Converting an app built on mock data to a live service requires editing only two
 
 3. To establish a baseline for the source code you have written so far, you will deploy it to SAP HANA Cloud Platform and commit the project to Git. If you aren't sure how to do this, refer to the two tutorials below:
 
-    - [HCP Deployment tutorial](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) (but select your current project not `northwind`)
-    - Commit the code to Git following the [Git Tutorial](http://go.sap.com/developer/tutorials/hcp-webide-commit-git.html)
+    - [HCP Deployment tutorial](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) (but select your current project not `northwind`)
+    - Commit the code to Git following the [Git Tutorial](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
 
 
 4. As mentioned above, the four files file to be changed are:
@@ -116,7 +116,7 @@ Converting an app built on mock data to a live service requires editing only two
 
 11. Since you have the metadata displayed, copy the contents of the entire page from the opening `<edmx.Edmx>` element to the closing `</edmx.Edmx>` tag and replace the contents of the `model/metadata.xml` file in your project and save your edits.
 
-    >Note: do not include the first line of the web page that starts with “This XML file…”
+    >Note: do not include the first line of the web page that starts with "This XML file…"
 
     While updating this file is not necessary for the app to run, it should be done for future reference.
 
@@ -129,7 +129,7 @@ Converting an app built on mock data to a live service requires editing only two
 
     ![Master.view.xml List element](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_12.png)
 
-13. In the `List` element, the items attribute points to the primary collection (displayed in the “master” list of the app). It currently points to `SalesOrders` which is the name you assigned when you created your OData model. Change the items attribute to the collection name used in the final data model (from step 10 above: `SalesOrderCollection`).
+13. In the `List` element, the items attribute points to the primary collection (displayed in the "master" list of the app). It currently points to `SalesOrders` which is the name you assigned when you created your OData model. Change the items attribute to the collection name used in the final data model (from step 10 above: `SalesOrderCollection`).
 
     ![Updating Collection name](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_13.png)
 
@@ -141,4 +141,4 @@ Converting an app built on mock data to a live service requires editing only two
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

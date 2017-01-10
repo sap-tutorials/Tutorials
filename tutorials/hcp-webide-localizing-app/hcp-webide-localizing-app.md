@@ -6,16 +6,16 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **Tutorials:** [Commit your project files to your HCP Git repository](http://go.sap.com/developer/tutorials/hcp-webide-commit-git.html)
+ - **Tutorials:** [Commit your project files to your HCP Git repository](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
 
 ## Next Steps
- - [An Open Data Protocol (OData) primer for developers](http://go.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
+ - [An Open Data Protocol (OData) primer for developers](http://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
 
 ## Details
 
 ### You will learn
 
-In the fourth tutorial of Mobile Guide #2, you extracted strings from the application into the internationalization (i18n) bundle of UI5. In subsequent tutorials, you continued this practice by placing all strings in the `messageBundle.properties` file.
+In the fourth tutorial of Mobile group 2, you extracted strings from the application into the internationalization (i18n) bundle of UI5. In subsequent tutorials, you continued this practice by placing all strings in the `messageBundle.properties` file.
 
 Using a single file not only makes it easy to update strings in the future, but it makes it trivial to localize the UI to different languages and locales. If you want to support multiple languages (English, Spanish, German, French, etc.) or multiple locale settings for a given language (e.g. UK vs US English, or German vs Swiss German) you can create separate files to store the localized strings.
 
@@ -38,22 +38,15 @@ Strings in more specific resource bundles (loaded earlier) will take precedence 
 
 ---
 
-1. Log into your [HCP account](https://account.hanatrial.ondemand.com), click on the **Account** tab and confirm that the Enable beta features check box is selected. If not, click the **Edit** button, check the box, and click Save.
+1. Log into your [HCP account](https://account.hanatrial.ondemand.com), click on the **Services** tab, scroll down until you see **SAP Translation Hub**, then click on the **SAP Translation Hub** tile.
 
-    >This step is required because the SAP Translation Hub service is currently in beta release.
-    ![Accounts tab](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_1.png)
+    ![Open Translation Hub page](mob3-3_1.png)
 
-2. Click on the **Services** tab, scroll down until you see **SAP Translation Hub**, then click on the **SAP Translation Hub** tile.
+2. Click the **Go To Service** link to open the **Translation Hub** service page.
 
-    ![Open Translation Hub page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_2.png)
+    ![Open Translation Hub page](mob3-3_2.png)
 
-3. Click on the **Enable** button. The status will change to **Processing**, then **Enabled**. Click on the **Go To Service** link to open the **Translation Hub** service page.
-
-    ![Enable Translation Hub](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_3a.png)
-
-    ![Open Translation Hub page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_3b.png)
-
-4. Click the **+** icon to create a new translation project and enter the following information in the **Create Translation Project page**. You will see a toast notification at the bottom of the screen with the selected languages. Click **Save** after entering all information. A toast notification is a non-modal UI element used to display brief alerts to a user.
+3. Click the **+** icon to create a new translation project and enter the following information in the **Create Translation Project page**. You will see a toast notification at the bottom of the screen with the selected languages. Click **Save** after entering all information. A toast notification is a non-modal UI element used to display brief alerts to a user.
 
 
     - **Field:** Value
@@ -67,7 +60,7 @@ Strings in more specific resource bundles (loaded earlier) will take precedence 
 
     ![Translation project fields](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_4.png)
 
-5. The Translation Hub will display the Project Details. Click **Get Translations** in the lower right corner of the window, enter your password and click **Submit** when prompted.
+4. The Translation Hub will display the Project Details. Click **Get Translations** in the lower right corner of the window, enter your password and click **Submit** when prompted.
 
     The Translation Hub service will create the appropriate `messageBundle_xx.properties` files and add them to your Git repository (but they will not be visible in your project folder until you complete the next two steps).
 
@@ -75,17 +68,17 @@ Strings in more specific resource bundles (loaded earlier) will take precedence 
 
     ![git password](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_5b.png)
 
-6. To review and optionally edit the translated text, click the **Edit** icon, and then select the desired language to review from the pull down menu.
+5. To review and optionally edit the translated text, click the **Edit** icon, and then select the desired language to review from the pull down menu.
 
     ![Edit translations](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_6.png)
-7. To change the suggested text for any of the fields (for instance use the German word `Ort` instead of `Stadt` for the `label_City` string) simply edit the field under **Translated Text**. Once your review and your edits are complete, click **Save**. If you don't make any edits, you can simply click **Cancel**.
+6. To change the suggested text for any of the fields (for instance use the German word `Ort` instead of `Stadt` for the `label_City` string) simply edit the field under **Translated Text**. Once your review and your edits are complete, click **Save**. If you don't make any edits, you can simply click **Cancel**.
 
     ![changing strings](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_7.png)
 
-8. If you have made changes you will need to click the **Get Translations** button again, and enter your git password for them to be saved to your repository.
+7. If you have made changes you will need to click the **Get Translations** button again, and enter your git password for them to be saved to your repository.
 
 
-9. Switch to your Web IDE tab, select the **Git Pane** on the right hand side of the window. Notice that:
+8. Switch to your Web IDE tab, select the **Git Pane** on the right hand side of the window. Notice that:
     *	The **northwind** repository and the **master** branch are selected
     * 	The new `messageBundle_xx.properties` files are not yet in your project.
 
@@ -93,7 +86,7 @@ Strings in more specific resource bundles (loaded earlier) will take precedence 
 
 
 
-10. To download the new language files, click on the **Pull** button.
+9. To download the new language files, click on the **Pull** button.
 
     ![Git pane pull button](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_10a.png)
 
@@ -112,9 +105,9 @@ Strings in more specific resource bundles (loaded earlier) will take precedence 
     ![Files added to project](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_10c.png)
 
 
-11. Double-click on the new files and you will see each has the same 31 entries as `messageBundle.properties`.
+10. Double-click on the new files and you will see each has the same 31 entries as `messageBundle.properties`.
 
-12. Mobile web, hybrid and native applications have the ability to support both language and locale (for example `de_CH` for Swiss German).
+11. Mobile web, hybrid and native applications have the ability to support both language and locale (for example `de_CH` for Swiss German).
 
     The SAP Translation Hub does not yet support Swiss German, so to add that language to your app, you will create a file with the appropriate name and copy in the strings provided below.
 
@@ -122,7 +115,7 @@ Strings in more specific resource bundles (loaded earlier) will take precedence 
 
     ![Create de_CH file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_12.png)
 
-13. Copy and paste the text below (these are Swiss German strings) into the new file and save your changes.
+12. Copy and paste the text below (these are Swiss German strings) into the new file and save your changes.
 
     ```xml
     masterTitle=Produkt
@@ -163,11 +156,11 @@ Strings in more specific resource bundles (loaded earlier) will take precedence 
     ![de_CH strings](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_13.png)
 
 
-14. Commit your new file to Git (following the same procedure as in the previous [tutorial](http://go.sap.com/developer/tutorials/hcp-webide-commit-git.html).
+13. Commit your new file to Git (following the same procedure as in the previous [tutorial](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html).
 
-15. Deploy your app to HCP (following the same procedure as in an earlier [tutorial](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) and open the new, active version of the app.
+14. Deploy your app to HCP (following the same procedure as in an earlier [tutorial](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) and open the new, active version of the app.
 
-16. To test the language support in the deployed app, we can utilize the SAPUI5 `sap-ui-language` URL parameter. To do so, just append `?sap-ui-language=xx_YY` to your application URL
+15. To test the language support in the deployed app, we can utilize the SAPUI5 `sap-ui-language` URL parameter. To do so, just append `?sap-ui-language=xx_YY` to your application URL
 
     - If your standard application URL looks like this:
         - `https://northwind-p12345678trial.dispatcher.hanatrial.ondemand.com/`
@@ -179,8 +172,8 @@ Strings in more specific resource bundles (loaded earlier) will take precedence 
         - `https://northwind-p12345678trial.dispatcher.hanatrial.ondemand.com/?sap-ui-language=es`
 
 
-17. As described in the introduction for this tutorial, when a user opens your app URL, the app will check the language and locale settings on the device, then load the appropriate strings file.
+16. As described in the introduction for this tutorial, when a user opens your app URL, the app will check the language and locale settings on the device, then load the appropriate strings file.
 
 
 ## Next Steps
- - [An Open Data Protocol (OData) primer for developers](http://go.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
+ - [An Open Data Protocol (OData) primer for developers](http://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)

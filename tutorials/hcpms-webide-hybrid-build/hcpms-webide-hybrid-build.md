@@ -6,16 +6,16 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:**
-   - [Connecting SAP Web IDE to the Hybrid App Toolkit](http://go.sap.com/developer/tutorials/hcpms-webide-hat-connection.html)
+   - [Connecting SAP Web IDE to the Hybrid App Toolkit](http://www.sap.com/developer/tutorials/hcpms-webide-hat-connection.html)
    - Additionally, you must have completed the tutorials below in the Web IDE series.  
-     - [Create a Destination on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
-     - [Build an app from an SAP Web IDE template](http://go.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
-     - [Deploy your mobile web app to SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+     - [Create a Destination on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+     - [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+     - [Deploy your mobile web app to SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
 
 
 
 ## Next Steps
- - Continue with the SAP Web IDE series [Add labels and a new field to your app](http://go.sap.com/developer/tutorials/hcp-webide-add-labels-field.html), and return to this tutorial to redeploy your updated mobile web app as a hybrid app.
+ - Continue with the SAP Web IDE series [Add labels and a new field to your app](http://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html), and return to this tutorial to redeploy your updated mobile web app as a hybrid app.
 
 ## Details
 ### You will learn  
@@ -56,7 +56,7 @@ HAT will launch the emulator/simulator and load the app.
 
     Field Name         | Value
     :----------------- | :-------------
-    Username           |  `<your HCP account without “trial” at the end>` e.g. `p12345678`
+    Username           |  `<your HCP account without "trial" at the end>` e.g. `p12345678`
     Password           | `<your HCP account password>`
 
     ![Registration screen](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/7.png)
@@ -73,9 +73,9 @@ HAT will launch the emulator/simulator and load the app.
 
     ![detail view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/10.png)
 
-11. If you have implemented a [second tab](http://go.sap.com/developer/tutorials/hcp-webide-add-tab.html) in your app, click it to see the data there.
+11. If you have implemented a [second tab](http://www.sap.com/developer/tutorials/hcp-webide-add-tab.html) in your app, click it to see the data there.
 
     ![detail view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/11.png)
 
 ## Next Steps
- - Continue with the SAP Web IDE series [Add labels and a new field to your app](http://go.sap.com/developer/tutorials/hcp-webide-add-labels-field.html), and return to this tutorial to redeploy your updated mobile web app as a hybrid app.
+ - Continue with the SAP Web IDE series [Add labels and a new field to your app](http://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html), and return to this tutorial to redeploy your updated mobile web app as a hybrid app.

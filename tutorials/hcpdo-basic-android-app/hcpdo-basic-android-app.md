@@ -6,11 +6,11 @@ tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile ]
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:** 
-   - [Create a native app in SAP HANA Cloud Platform mobile service for development and operations](http://go.sap.com/developer/tutorials/hcpdo-create-native-app.html)
+   - [Create a native app in SAP HANA Cloud Platform mobile service for development and operations](http://www.sap.com/developer/tutorials/hcpdo-create-native-app.html)
    - Download and install [Android Studio](https://developer.android.com/studio/index.html)
 
 ## Next Steps
- - [Configure Android Studio for mobile development](http://go.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html)
+ - [Configure Android Studio for mobile development](http://www.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html)
 
 ## Details
 ### You will learn  
@@ -22,7 +22,7 @@ In this example, you will create a skeleton of an app using the Android Studio M
 
 ---
 
-1. Open Android Studio, and click on “Start a new Android Studio project”
+1. Open Android Studio, and click on "Start a new Android Studio project"
 
     ![start a new Android Studio project](mg6-2-01.png)
 
@@ -82,4 +82,4 @@ In this example, you will create a skeleton of an app using the Android Studio M
 
 
 ## Next Steps
- - [Configure Android Studio for mobile development](http://go.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html)
+ - [Configure Android Studio for mobile development](http://www.sap.com/developer/tutorials/hcpdo-android-sdk-setup.html)

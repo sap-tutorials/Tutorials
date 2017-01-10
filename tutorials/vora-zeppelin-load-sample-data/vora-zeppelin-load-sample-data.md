@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Connect to SAP HANA Vora, developer edition](http://go.sap.com/developer/tutorials/vora-connect.html)
+ - **Tutorials:** [Connect to SAP HANA Vora, developer edition](http://www.sap.com/developer/tutorials/vora-connect.html)
 
 ## Next Steps
- - [Getting started with SAP HANA Vora Tools](http://go.sap.com/developer/tutorials/vora-tools-getting-started.html)
+ - [Getting started with SAP HANA Vora Tools](http://www.sap.com/developer/tutorials/vora-tools-getting-started.html)
 
 ## Details
 ### You will learn  
@@ -43,7 +43,7 @@ You will learn how to open Apache Zeppelin and how to load sample data.
 
     ![Running all statements from 0_DemoData notebook](vorazeppelin03.jpg)
 
-5. After all statements are finished you should see the interpreter’s comment as "Command processed successfully with no results" for all paragraphs.
+5. After all statements are finished you should see the interpreter's comment as "Command processed successfully with no results" for all paragraphs.
 
     ![All statements executed in 0_DemoData notebook](vorazeppelin04.jpg)    
 
@@ -52,4 +52,4 @@ You will learn how to open Apache Zeppelin and how to load sample data.
     ![All tables created](vorazeppelin05.jpg)
 
 ## Next Steps
- - [Getting started with SAP HANA Vora Tools](http://go.sap.com/developer/tutorials/vora-tools-getting-started.html)
+ - [Getting started with SAP HANA Vora Tools](http://www.sap.com/developer/tutorials/vora-tools-getting-started.html)

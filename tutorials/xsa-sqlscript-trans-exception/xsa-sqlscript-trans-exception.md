@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Using Index-based Cell Access](http://go.sap.com/developer/tutorials/xsa-sqlscript-usingindexbased.html)
+ - **Tutorials:** [Using Index-based Cell Access](http://www.sap.com/developer/tutorials/xsa-sqlscript-usingindexbased.html)
 
 ## Next Steps
- - [Using COMMIT Statement](http://go.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)
+ - [Using COMMIT Statement](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)
 
 ## Details
 ### You will learn  
@@ -53,7 +53,7 @@ In this example we will exchange the dates of the scalar input parameters to pre
 
 	![input parameter check](8.png)
 
-9. Click “Save”.
+9. Click "Save".
 
 	![save](9.png)
 
@@ -79,7 +79,7 @@ In this example we will exchange the dates of the scalar input parameters to pre
 	namespace dev602.data;	context log {		entity errors {    		ERROR_TIMESTAMP: UTCDateTime;    	PARAMETER: String(256);    	SQL_ERROR_CODE: Integer;    	SQL_ERROR_MESSAGE: String(5000); 		};		entity messages {    		ERROR_TIMESTAMP: UTCDateTime;    		PARAMETER: String(256);    		SQL_ERROR_CODE: Integer;    		SQL_ERROR_MESSAGE: String(5000); 		};	};
 	```
 	
-15. Click “Save”.
+15. Click "Save".
 
 	![save](15.png)
 
@@ -109,7 +109,7 @@ In this example we will exchange the dates of the scalar input parameters to pre
 	PROCEDURE "dev602.procedures::get_product_by_filter" (          IN im_product_filter_string varchar(5000),           IN im_start_date DATE,          IN im_end_date DATE,          OUT EX_PRODUCTS TABLE (                        PRODUCTID NVARCHAR(10),                        DELIVERYDATE DAYDATE,                        NUM_DELIVERED_PRODUCTS BIGINT,                        CUMULATIVE_SUM BIGINT ) )   	LANGUAGE SQLSCRIPT   	SQL SECURITY INVOKER    		--DEFAULT SCHEMA <default_schema_name>   		AS	BEGIN 	  DECLARE temp_date DATE;  	  DECLARE local_start_date DATE = :im_start_date;  	  DECLARE local_end_date DATE = :im_end_date;        	  DECLARE MYCOND CONDITION FOR SQL_ERROR_CODE 10001;      	BEGIN      	DECLARE EXIT HANDLER FOR MYCOND        	BEGIN	      		DECLARE parameter NVARCHAR(256) = 'start_date = '||                           :local_start_date ||                           ' end_date = '||                           :local_end_date;             	temp_date = :local_start_date;            	local_start_date = :local_end_date;            	local_end_date = :temp_date;            	INSERT INTO "dev602.data::log.errors"                  VALUES                  (current_timestamp, :parameter , ::SQL_ERROR_CODE, ::SQL_ERROR_MESSAGE);        	END;                   	if :im_start_date > :im_end_date THEN          		SIGNAL MYCOND SET MESSAGE_TEXT = 'Start date must be smaller then end date';        	END IF;               	END;	  pre_filtered_products =          SELECT * FROM "dev602.data::MD.Products" WHERE CATEGORY NOT IN ('Laser Printer');         		user_filtered_products = APPLY_FILTER(:pre_filtered_products, :im_product_filter_string ) ;  	filtered_items  =         select pi."PRODUCT.PRODUCTID" as PRODUCTID, pi.DELIVERYDATE 		from :user_filtered_products as p      inner join "dev602.data::PO.Item" as pi on p.productid = pi."PRODUCT.PRODUCTID"        where pi.DELIVERYDATE >= :local_start_date         AND pi.DELIVERYDATE <= :local_end_date;   	aggregated_filtered_items =           SELECT  PRODUCTID, DELIVERYDATE,                   COUNT(PRODUCTID) AS NUM_DELIVERED_PRODUCTS FROM :filtered_items                    GROUP BY PRODUCTID ,DELIVERYDATE                    ORDER BY PRODUCTID, DELIVERYDATE;                                                                            	  CALL "dev602.procedures::calculate_cumulative_sum_of_delivered_products"(		IM_PRODUCTS => :aggregated_filtered_items, 		EX_PRODUCTS => :products	);	   ex_products = select * from :PRODUCTS order by PRODUCTID, DELIVERYDATE;	END;
 	```
 	
-22. Click “Save”.
+22. Click "Save".
 
 	![save](22.png)
 
@@ -134,4 +134,4 @@ In this example we will exchange the dates of the scalar input parameters to pre
 	![error message](27.png)
 
 ## Next Steps
- - [Using COMMIT Statement](http://go.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)
+ - [Using COMMIT Statement](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)

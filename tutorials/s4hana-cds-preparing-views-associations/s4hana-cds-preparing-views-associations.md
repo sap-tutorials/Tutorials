@@ -5,10 +5,10 @@ tags: [  tutorial>beginner ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Creating basic view. Creating consumption view. ](http://go.sap.com/developer/tutorial-navigator.html)
+ - **Tutorials:** [Creating basic view. Creating consumption view. ](http://www.sap.com/developer/tutorial-navigator.html)
 
 ## Next Steps
-[Creating views association. ](http://go.sap.com/developer/tutorials/s4hana-cds-associations.html)
+[Creating views association. ](http://www.sap.com/developer/tutorials/s4hana-cds-associations.html)
 
 
 ## Details

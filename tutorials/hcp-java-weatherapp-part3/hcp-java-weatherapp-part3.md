@@ -5,10 +5,10 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>inte
 ---
 
 ## Prerequisites  
- - [End-to-End Weather App Scenario Part 2](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)
+ - [End-to-End Weather App Scenario Part 2](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 4](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)
+ - [End-to-End Weather App Scenario Part 4](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)
 
 ## Details
 ### You will learn  
@@ -63,7 +63,7 @@ In this tutorial you will learn how to add authentication and authorization to y
 
     ![Adding security settings to the web.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-1.png)
 
-2. After successful authentication the application can access users’ principal information using standard servlet APIs. To illustrate that, make the following changes to the `HelloWorldServlet`:
+2. After successful authentication the application can access users' principal information using standard servlet APIs. To illustrate that, make the following changes to the `HelloWorldServlet`:
 
     ```java
     /**
@@ -101,7 +101,7 @@ In this tutorial you will learn how to add authentication and authorization to y
     }
     ```
 
-    >Note: The reason we also had to implement the “doPost()” method is related to specifics of the SAML 2.0 authentication process  flow. For more information please refer to the [respective parts](https://help.hana.ondemand.com/help/frameset.htm?e637f62abb571014857cb0232adc43a7.html) of the SAP HANA Cloud Platform online documentation.
+    >Note: The reason we also had to implement the "doPost()" method is related to specifics of the SAML 2.0 authentication process  flow. For more information please refer to the [respective parts](https://help.hana.ondemand.com/help/frameset.htm?e637f62abb571014857cb0232adc43a7.html) of the SAP HANA Cloud Platform online documentation.
 
     ![Modifying the doGet() and doPost() methods in the Java Servlet](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-2.png)
 
@@ -114,14 +114,14 @@ In this tutorial you will learn how to add authentication and authorization to y
 
     At the bottom of that window there are four tabs: **Overview**, **Connectivity**, **Users** and **Loggers**.
 
-    Within the Users tab you can manage local users. Let’s create a simple test user with the user id “test” and a password of your choice. Save your changes.
+    Within the Users tab you can manage local users. Let's create a simple test user with the user id "test" and a password of your choice. Save your changes.
 
     ![Adding a user to the local Java Server](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-5.png)
 
-6. Now, when you navigate to the `HelloWorldServlet` with the URL <http://localhost:8080/weatherapp/hello> you’ll first be prompted to enter your user credentials before you are forwarded to the requested servlet. If the authentication was successful you should now see a personalized welcome message instead of the dull “Hello World!” we saw earlier.
+6. Now, when you navigate to the `HelloWorldServlet` with the URL <http://localhost:8080/weatherapp/hello> you'll first be prompted to enter your user credentials before you are forwarded to the requested servlet. If the authentication was successful you should now see a personalized welcome message instead of the dull "Hello World!" we saw earlier.
 
     ![Running the Java app with authentication enabled](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-6.png)
 
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 4](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)
+ - [End-to-End Weather App Scenario Part 4](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)

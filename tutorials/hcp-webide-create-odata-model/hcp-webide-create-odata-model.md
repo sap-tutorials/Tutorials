@@ -1,19 +1,19 @@
 ---
-title: Manually creating a data model to use in SAP Web IDE’s Mock Data server
+title: Manually creating a data model to use in SAP Web IDE's Mock Data server
 description: Learn how to create a data model in the Common Schema Definition Language (CSDL) using SAP Web IDE
 tags: [products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>mobile, topic>odata, tutorial>intermediate ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** While not required, it would be useful to complete the [An Open Data Protocol (OData) primer for developers](http://go.sap.com/developer/tutorials/hcp-webide-odata-primer.html) and be familiar with SAP Web IDE before beginning this tutorial.
+ - **Tutorials:** While not required, it would be useful to complete the [An Open Data Protocol (OData) primer for developers](http://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html) and be familiar with SAP Web IDE before beginning this tutorial.
 
 ## Next Steps
- - [Build an SAPUI5 app based on your data model and run it with mock data](http://go.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
+ - [Build an SAPUI5 app based on your data model and run it with mock data](http://www.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
 
 ## Details
 ### You will learn  
-In most cases, a live OData service will be available when building an application. For times when a service is not available, it is still possible to build apps with SAP Web IDE with a file-based data model and then run on simulated data (referred to as “mock data” in SAP Web IDE). Once the data service is available, the app can then be configured to run against the service rather than the mock data with no other changes. The mock data approach is also useful if you want to prototype an app and have realistic data appear in the UI.
+In most cases, a live OData service will be available when building an application. For times when a service is not available, it is still possible to build apps with SAP Web IDE with a file-based data model and then run on simulated data (referred to as "mock data" in SAP Web IDE). Once the data service is available, the app can then be configured to run against the service rather than the mock data with no other changes. The mock data approach is also useful if you want to prototype an app and have realistic data appear in the UI.
 
 In this tutorial, you will create an OData model with a Sales Order related data fields in two parts:
  - **Part 1:** Create the minimum data model needed to build a basic app based on one OData collection
@@ -32,7 +32,7 @@ The metadata document you will build for part 1 (one OData collection) will have
 Component         | Description
 :--------------   | :-------------
 XML declaration   | Not necessary for `.edmx` files, but useful to include if you want to view the file in an editor that supports XML syntax highlighting
-`Edmx` and `DataServices` elements | The “wrapper” for your data model
+`Edmx` and `DataServices` elements | The "wrapper" for your data model
 `Schema`          | Container for the `EntityTypes`, `Associations` and `EntityContainer` elements
 `EntityType`      | Defines the data model for the OData collection
 `EntityContainer` | Exposes the OData collection
@@ -293,8 +293,8 @@ XML declaration, `Edmx` and `DataServices` elements | Same as part 1
     Attribute                  | Purpose
     :------------------------- | :-------------
     `Name`                     | `FK\_SalesOrder_BusinessPartner` – must match the `Association` Name in the `NavigationProperty` element
-    `End #1`                     | Multiplicity: “0..1” – indicates that when a `SalesOrder` exists, it can have zero or one `BusinessPartner` entities associated <ul><li>Role: Allows the association to be bound to a `NavigationProperty`</li><li>Type: Must point to an entity type in the entity model</li></ul>
-    `End #2`                     | Multiplicity: “*” – indicates that when a BusinessPartner exists, it can have zero or more SalesOrder entities associated<ul><li>Role: Allows the association to be bound to a `NavigationProperty`</li><li>Type: Must point to an entity type in the entity model</li></ul>
+    `End #1`                     | Multiplicity: "0..1" – indicates that when a `SalesOrder` exists, it can have zero or one `BusinessPartner` entities associated <ul><li>Role: Allows the association to be bound to a `NavigationProperty`</li><li>Type: Must point to an entity type in the entity model</li></ul>
+    `End #2`                     | Multiplicity: "*" – indicates that when a BusinessPartner exists, it can have zero or more SalesOrder entities associated<ul><li>Role: Allows the association to be bound to a `NavigationProperty`</li><li>Type: Must point to an entity type in the entity model</li></ul>
     `ReferentialConstraint`     | This element asserts that the entity identified in the Principal Role must exist in order for the entity in the Dependent Role to exist. In this case, a `BusinessPartner` must exist in order to create a `SalesOrder`.  Also specified here are the unique identifiers (`BusinessPartnerKey` and `SalesOrderID`).
 
     Copy and paste the following text immediately after the `BusinessPartner` `</EntityType>` closing tag.
@@ -449,4 +449,4 @@ xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns="
  - Read up on the [OData Model Editor](https://help.hana.ondemand.com/webide_odatamodeler/frameset.htm)
 
 ## Next Steps
- - [Build an SAPUI5 app based on your data model and run it with mock data](http://go.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
+ - [Build an SAPUI5 app based on your data model and run it with mock data](http://www.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)

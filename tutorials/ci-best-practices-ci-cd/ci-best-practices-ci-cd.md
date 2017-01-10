@@ -12,8 +12,8 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ## Next Steps
  
-  - [Pipeline Suggestions](http://go.sap.com/developer/tutorials/ci-best-practices-pipelines.html)
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Pipeline Suggestions](http://www.sap.com/developer/tutorials/ci-best-practices-pipelines.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
 
 ---
 
@@ -103,7 +103,7 @@ The principle of the fetch - develop - rebase (merge) - push cycle is the same f
 
 The stories of developers who complain about broken builds and comments that "it works on my machine" are legendary. The solution is an automated, standardized build procedure with an automatically running "central build". The build result is the only reference to decide whether the project is broken or clean from a build perspective.
 
-For the sake of being reproducible for all team members, the build description must contain, and declare all the dependencies that are needed to execute the build, including the environment in which the build runs. Ideally, calling the build tool can be implemented as a bootstrapping mechanism that guarantees the proper, standardized installation of the build tools and checks their up-to-date state.  In this case, the developer doesn't need to worry about the installation at all, and the risk of build problems caused by improper installations on the developer’s PC is minimized.
+For the sake of being reproducible for all team members, the build description must contain, and declare all the dependencies that are needed to execute the build, including the environment in which the build runs. Ideally, calling the build tool can be implemented as a bootstrapping mechanism that guarantees the proper, standardized installation of the build tools and checks their up-to-date state.  In this case, the developer doesn't need to worry about the installation at all, and the risk of build problems caused by improper installations on the developer's PC is minimized.
 
 A build scheduler such as [Jenkins](https://jenkins.io/) is useful when operating a central build infrastructure:
 
@@ -134,7 +134,7 @@ Unit test frameworks are available for many source code technologies, most promi
 
 A good build process is not restricted to the pure role of syntactical validation of the source code and production of the build artifacts (which could ultimately turn out to be unusable from a functional point of view). The build also acts as a hurdle to ensure the functional correctness of the product (see also "Build Each Change").
 
-Implementing these tests early as part of the build that can be executed on the developer’s workstation saves time that might otherwise be required to address bugs discovered late in the development process.
+Implementing these tests early as part of the build that can be executed on the developer's workstation saves time that might otherwise be required to address bugs discovered late in the development process.
 
 #### Key Learning
 
@@ -148,7 +148,7 @@ As stated earlier, in a distributed development project with multiple developers
   - Merging local changes with the main line becomes more and more complicated and time-consuming as the main line evolves.
   - From product quality standpoint, the risk of instability introduced by a new change increases when the distance between the original base of the change and the current main line version has increased.
 
-Every developer, whether working with the main line or with a feature branch, should push at least once per day. This principle seems easier to accomplish with feature branches, but in very active projects you have to balance that with the potentially high effort of merging or constantly rebasing. There is no "golden rule" or “one size fits all” solution.
+Every developer, whether working with the main line or with a feature branch, should push at least once per day. This principle seems easier to accomplish with feature branches, but in very active projects you have to balance that with the potentially high effort of merging or constantly rebasing. There is no "golden rule" or "one size fits all" solution.
 
 #### Key Learning
 
@@ -213,7 +213,7 @@ Fix build errors as soon as they are identified; do not accumulate them.
 
 ### Keep the Build Fast
 
-The build and test steps that are executed automatically after proposing a change make up a central part of the developer’s workflow.
+The build and test steps that are executed automatically after proposing a change make up a central part of the developer's workflow.
 He or she should not have to wait too long for CI build and test results; therefore, good performance of CI builds, including tests, is of vital importance.
 
 There is always a conflict of interest: You want to integrate new changes into the main line as securely as possible. At the same time, building, validating, and especially scenario testing can be quite time consuming, thus conflicting with the desire for a fast build.
@@ -238,7 +238,7 @@ Balance between build performance and the number of tests that are required to b
 
 ### Test in a Clone of the Production Environment
 
-Different setups and different environments at different stages of a production pipeline are often cause of errors. What is obviously true with respect to the relationship between local builds on the developer’s PC on the one hand, and central builds on the other hand, cannot be omitted with respect to the relationship between test machines and productive landscape. Make sure that the machines on which scenario tests are executed are comparable to the final production landscape.
+Different setups and different environments at different stages of a production pipeline are often cause of errors. What is obviously true with respect to the relationship between local builds on the developer's PC on the one hand, and central builds on the other hand, cannot be omitted with respect to the relationship between test machines and productive landscape. Make sure that the machines on which scenario tests are executed are comparable to the final production landscape.
 
 The challenge lies in achieving this. When using traditional physical hardware with manually installed and configured software, it is almost impossible to avoid divergence: across time, production and test machines, or any two different environments, diverge.
 
@@ -316,5 +316,5 @@ Do deployment as automatic post-build step. Also deploy automatically to product
 
 ## Next Steps
  
-  - [Pipeline Suggestions](http://go.sap.com/developer/tutorials/ci-best-practices-pipelines.html)
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Pipeline Suggestions](http://www.sap.com/developer/tutorials/ci-best-practices-pipelines.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

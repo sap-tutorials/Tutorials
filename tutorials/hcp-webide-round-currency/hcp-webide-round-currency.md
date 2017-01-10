@@ -6,10 +6,10 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Add labels and a new field to your app](http://go.sap.com/developer/tutorials/hcp-webide-add-labels-field.html)
+ - **Tutorials:** [Add labels and a new field to your app](http://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html)
 
 ## Next Steps
- - [Insert a currency symbol for display](http://go.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)
+ - [Insert a currency symbol for display](http://www.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)
 
 ## Details
 
@@ -27,7 +27,7 @@ You will also learn how to add a field to your app. This is useful since the tem
 
 ---
 
-1. The `UnitPrice` field is defined as a decimal number, with “scale” of 4 in the [OData service](http://services.odata.org/V2/Northwind/Northwind.svc/$metadata)
+1. The `UnitPrice` field is defined as a decimal number, with "scale" of 4 in the [OData service](http://services.odata.org/V2/Northwind/Northwind.svc/$metadata)
 
     ![View of OData model](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_1.png)
 
@@ -39,7 +39,7 @@ You will also learn how to add a field to your app. This is useful since the tem
     
     Now that you know how to round the number, the trick is to figure out where to use this approach.
 
-3. To make the change so it affects the master and detail views, you want to make the change as far “upstream” as possible, which is in the `_setModel` function of `Component.js`.
+3. To make the change so it affects the master and detail views, you want to make the change as far "upstream" as possible, which is in the `_setModel` function of `Component.js`.
     
     ![Beginning of `_setModel` function](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_3.png)
     
@@ -74,7 +74,7 @@ You will also learn how to add a field to your app. This is useful since the tem
     ![Modified app](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_5.png)
 
 ## Remember the browser cache
-If the numbers are not rounded, remember to clear the cache as described at the bottom of the [Add labels and a new field to your app](http://go.sap.com/developer/tutorials/hcp-webide-add-labels-field.html) tutorial.
+If the numbers are not rounded, remember to clear the cache as described at the bottom of the [Add labels and a new field to your app](http://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html) tutorial.
 
 ## Next Step:
- - [Insert a currency symbol for display](http://go.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)
+ - [Insert a currency symbol for display](http://www.sap.com/developer/tutorials/hcp-webide-insert-currency-symbol.html)

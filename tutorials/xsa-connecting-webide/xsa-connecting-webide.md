@@ -7,10 +7,10 @@ tags: [products>sap-hana, products>sap-hana\,-express-edition, topic>big-data, t
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [How to create an SAP HANA Developer Edition in the Cloud](http://go.sap.com/developer/tutorials/hana-setup-cloud.html)
+ - **Tutorials:** [How to create an SAP HANA Developer Edition in the Cloud](http://www.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 ## Next Steps
- - [SAP HANA XS Advanced HTML5 Module](http://go.sap.com/developer/tutorials/xsa-html5-module.html)
+ - [SAP HANA XS Advanced HTML5 Module](http://www.sap.com/developer/tutorials/xsa-html5-module.html)
 
 
 ## Details
@@ -63,4 +63,4 @@ SAP HANA XS Advanced is the new development paradigm from SAP based around the C
 
 
 ## Next Steps
-  - [SAP HANA XS Advanced HTML5 Module](http://go.sap.com/developer/tutorials/xsa-html5-module.html)
+  - [SAP HANA XS Advanced HTML5 Module](http://www.sap.com/developer/tutorials/xsa-html5-module.html)

@@ -5,7 +5,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, produ
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Add custom fields to a standard SAP Fiori app](http://go.sap.com/developer/tutorials/hcp-fiori-cloud-edition-add-fields.html)
+ - **Tutorials:** [Add custom fields to a standard SAP Fiori app](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-add-fields.html)
 
 ## Details
 ### You will learn  
@@ -44,7 +44,7 @@ You successful tested the app you've extended in the [Add custom fields to a sta
 
     ![Select Icon](23.png)
 
-7. On the next screen select the items shown in the screenshot below. If you haven’t used the SAP Fiori Launchpad yet there will be no other options available.
+7. On the next screen select the items shown in the screenshot below. If you haven't used the SAP Fiori Launchpad yet there will be no other options available.
 
     ![Register to SAP Fiori launchpad - Assignment](24.png)
 
@@ -52,8 +52,8 @@ You successful tested the app you've extended in the [Add custom fields to a sta
 
     ![Successfully Registered](25.png)
 
-9. Click the link **Open SAP Fiori launchpad**. On the button you find the new tile “My Opportunities Extended” in the Sample Group:
+9. Click the link **Open SAP Fiori launchpad**. On the button you find the new tile "My Opportunities Extended" in the Sample Group:
 
     ![Fiori Launchpad with Sample Group and Tile My Opportunities Extended](26.png)
 
-Congratulations, you’ve successfully added your extended app to the standard SAP Fiori launchpad.
+Congratulations, you've successfully added your extended app to the standard SAP Fiori launchpad.

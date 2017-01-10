@@ -5,10 +5,10 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>inte
 ---
 
 ## Prerequisites  
- - [End-to-End Weather App Scenario Part 8](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)
+ - [End-to-End Weather App Scenario Part 8](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 10](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part10.html)
+ - [End-to-End Weather App Scenario Part 10](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part10.html)
 
 ## Details
 ### You will learn  
@@ -58,4 +58,4 @@ In this tutorial you will implement a simple responsive, mobile-compatible user 
 
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 10](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part10.html)
+ - [End-to-End Weather App Scenario Part 10](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part10.html)

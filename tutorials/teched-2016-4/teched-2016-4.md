@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create an SAP HANA Cloud Platform destination pointing to an SAP Gateway](http://go.sap.com/developer/tutorials/teched-2016-3.html)
+ - **Tutorials:** [Create an SAP HANA Cloud Platform destination pointing to an SAP Gateway](http://www.sap.com/developer/tutorials/teched-2016-3.html)
 
 ## Next Steps
- - [Commit your project to Git and deploy to the cloud](http://go.sap.com/developer/tutorials/teched-2016-5.html)
+ - [Commit your project to Git and deploy to the cloud](http://www.sap.com/developer/tutorials/teched-2016-5.html)
 
 ## Details
 ### You will learn  
@@ -33,7 +33,7 @@ In the left-hand navigation bar, select **Services**, then on the right panel, s
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open SAP Web IDE)]
-  
+
 From the **SAP Web IDE - Overview** page, click on the **Open SAP Web IDE** link which will open a new tab with the **Web IDE**.
 
 ![SAP Web IDE overview page](te-2016-4-02.png)
@@ -52,9 +52,14 @@ In **SAP Web IDE**, select from the menu bar **File > New > Project from Templat
 
 [ACCORDION-BEGIN [Step 4: ](Select the app template)]
 
-In the **Template Selection** step, select the **SAP Fiori Master-Detail Application** template and click **Next**.
+In the **Template Selection** step, select **SAP Innovation** under SAPUI5 Version.
 
-![start a new project from template](te-2016-4-04.png)
+![select SAPUI5 version category](te-2016-4-04.png)
+
+
+The list of templates will update. Select the **SAP Fiori Master-Detail Application** template and click **Next**.
+
+![start a new project from template](te-2016-4-04b.png)
 
 [DONE]
 [ACCORDION-END]
@@ -74,26 +79,18 @@ Click **Next**.
 
 [ACCORDION-BEGIN [Step 6: ](Select the data connection)]
 
-In the **Data Connection** step, on the left side, click on **Service URL** under **Sources**.
+In the **Data Connection** step, on the left side, verify **Service Catalog** under **Sources** is selected.
 
-Next, select the `SAP Gateway ES4` destination from the pull down list, and in the **Paste the service URL here** text box, enter:
-
-```
-/sap/opu/odata/IWBEP/GWDEMO
-```
+Next, select the `SAP Gateway ES4` destination from the pull down list.
 
 ![selecting your destination](te-2016-4-06.png)
-
-The hostname (from the destination) plus the rest of the service URL you just added make up the full URL to the SAP Gateway OData service document you will use.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Verify connection to the OData service)]
+[ACCORDION-BEGIN [Step 7: ](Select the OData service)]
 
-Click the **Test** button and log enter your SAP Gateway username and password if prompted.
-
-If the Service is displayed (as shown below), you were able to successfully connect to the SAP Gateway OData service. Click **Next**.
+Scroll down the list of services that appears and select the **`GWDEMO`** service then click **Next**.
 
 ![Connected to the service](te-2016-4-07.png)
 
@@ -106,14 +103,14 @@ In the next steps, you will enter a few sets of information related to titles an
 
 **Do not advance to the next screen until all fields have been completed.**
 
-In the **Application Settings** area, enter the following information: 
+In the **Application Settings** area, enter the following information:
 
 Field Name     | Value
 :------------- | :-------------
 Type           | `Standalone App`
 Title          | `Partner Contacts`
 Namespace      | `com.test.teched`
-Description    | `TechEd 2016 App Space application`
+Description    | `App Space application`
 
 ![Application Settings](te-2016-4-08.png)
 
@@ -122,7 +119,7 @@ Description    | `TechEd 2016 App Space application`
 
 [ACCORDION-BEGIN [Step 9: ](Specify data for the "master" view)]
 
-In the **Data Binding - Object** area, enter the following information: 
+In the **Data Binding - Object** area, enter the following information:
 
 Field Name                | Value
 :------------------------ | :-------------
@@ -171,7 +168,7 @@ Then navigate and expand **`webapp` > `i18n`**, and double-click the `i18n.prope
 
 [ACCORDION-BEGIN [Step 12: ](Insert the "Contacts" label)]
 
-Find and replace all instances (three of them) of `<LineItemNamePlural>` in the `i18n.properties` file with `Contacts`.
+Find and replace all instances (three of them) of `<LineItemNamePlural>` (including the angle brackets) in the `i18n.properties` file with `Contacts`.
 
 > Note: you can use CTRL+H to open the "Find and Replace" box which includes a "Replace All" function if you click on "All".
 
@@ -180,28 +177,28 @@ Find and replace all instances (three of them) of `<LineItemNamePlural>` in the 
 
 [ACCORDION-BEGIN [Step 13: ](Insert the "Business Partner" label)]
 
-Find and replace all instances (five of them) of `<ObjectName>` in the `i18n.properties` file with `Business Partner`.
+Find and replace all instances (five of them) of `<ObjectName>` (including the angle brackets) in the `i18n.properties` file with `Business Partner`.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Insert the "Business Partners" label)]
 
-Find and replace all instances (three of them) of `<ObjectNamePlural>` in the `i18n.properties` file with `Business Partners`.
+Find and replace all instances (three of them) of `<ObjectNamePlural>` (including the angle brackets) in the `i18n.properties` file with `Business Partners`.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Insert the "Related Contacts" label)]
 
-Find and replace all instances `<FirstColumnName>` in the `i18n.properties` file with `Related Contacts`.
+Find and replace all instances `<FirstColumnName>` (including the angle brackets) in the `i18n.properties` file with `Related Contacts`.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Insert the "Country" label)]
 
-Find and replace all instances `<LastColumnName>` in the `i18n.properties` file with `Country`.
+Find and replace all instances `<LastColumnName>` (including the angle brackets) in the `i18n.properties` file with `Country`.
 
 Save your edits.
 
@@ -233,4 +230,4 @@ You have just built an SAP Fiori UX app.
 [ACCORDION-END]
 
 ## Next Steps
- - [Commit your project to Git and deploy to the cloud](http://go.sap.com/developer/tutorials/teched-2016-5.html)
+ - [Commit your project to Git and deploy to the cloud](http://www.sap.com/developer/tutorials/teched-2016-5.html)

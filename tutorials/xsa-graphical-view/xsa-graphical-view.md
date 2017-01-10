@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Creating an HDI Module](http://go.sap.com/developer/tutorials/xsa-hdi-module.html)
+ - **Tutorials:** [Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)
 
 ## Next Steps
- - [Creating a Calculation View with a Cube data type and Star Join](http://go.sap.com/developer/tutorials/xsa-sqlscript-cube.html)
+ - [Creating a Calculation View with a Cube data type and Star Join](http://www.sap.com/developer/tutorials/xsa-sqlscript-cube.html)
 
 ## Details
 ### You will learn  
@@ -36,13 +36,13 @@ You will learn about creating a graphical calculation views with dimension data.
     ![HRTT](6.png)
 6. You can explore some of the new tables and their content that have been imported. This is the SHINE (SAP HANA Interactive Education) content. 
     ![SHINE](7.png)
-    7. Now you are ready to create our calculation views. From the `db/src` folder, right click and choose “New”, then “Folder”.  
+    7. Now you are ready to create our calculation views. From the `db/src` folder, right click and choose "New", then "Folder".  
     ![SHINE](8.png)
-8. Enter the name of the folder as “models” and click “OK”.  
+8. Enter the name of the folder as "models" and click "OK".  
     ![SHINE](9.png)
 9. In the models sub-folder of your project, create a new calculation view based upon the expanded information for the products. This will require joining the products, texts, `businessPartner`, and address tables.    Right mouse click on the models package, choose New -> Calculation View
     ![SHINE](10.png)
-10. Enter the name as PRODUCTS and a Label of Products View. Choose DIMENSION as the data category.  A DIMENSON Calculation View will be very similar to the older Attribute View – A basic join with no aggregation.    Click “Create”.
+10. Enter the name as PRODUCTS and a Label of Products View. Choose DIMENSION as the data category.  A DIMENSON Calculation View will be very similar to the older Attribute View – A basic join with no aggregation.    Click "Create".
     ![SHINE](11.png)
 11. You want to join several tables from our project.  Ultimately you will join `MD.Products`, `MD.BusinessPartner`, `MD.Addresses` and `Util.Texts` (twice).    In order to do so we have to create a join node for each join criteria.     Start by creating a Join Node pressing the Create Join button.
     ![SHINE](12.png)
@@ -164,4 +164,4 @@ You will learn about creating a graphical calculation views with dimension data.
     ![SHINE](42.png)
 
 ## Next Steps
- - [Creating a Calculation View with a Cube data type and Star Join](http://go.sap.com/developer/tutorials/xsa-sqlscript-cube.html)
+ - [Creating a Calculation View with a Cube data type and Star Join](http://www.sap.com/developer/tutorials/xsa-sqlscript-cube.html)

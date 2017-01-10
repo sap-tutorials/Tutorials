@@ -6,10 +6,10 @@ tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, pro
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:** 
-     - [Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE](http://go.sap.com/developer/tutorials/webide-github-branching.html)
+     - [Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE](http://www.sap.com/developer/tutorials/webide-github-branching.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -64,4 +64,4 @@ In this tutorial, you'll learn how to create and send pull requests so that the 
     ![Switch to master](p6_8c.png)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html) 
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html) 
