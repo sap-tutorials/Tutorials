@@ -44,7 +44,9 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 6. When prompted to **Retype new password**, enter your strong password again.
 
-7. A configuration script will run if this is the first login. It will prompt you for a new `HANA database master` password, and ask for your proxy information if you are installing `hxexsa.ova`. Enter another strong password and add your proxy information (if applicable).
+7. A configuration script will run if this is the first login. It will prompt you for a new `HANA database master` password, and ask for your proxy information if you are installing server + applications virtual machine. Enter a strong password and add your proxy information (if applicable).
+
+    >**Tip:** This configuration script changes the password for the SYSTEM user. If you installed the server + applications virtual machine, it also changes the passwords for these users: XSA_ADMIN, XSA_DEV, and XSA_SHINE. Make a note of the password, since you'll need it later.
 
     SAP HANA 2.0, express edition is now running.
 
@@ -163,7 +165,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
     Example:  `https://hxehost:53075`
 
-7. Log on to Web IDE using the `XSA_DEV` user. You specified the password earlier in this tutorial in the section **Change the Default Passwords for Other Users**.
+7. Log on to Web IDE using the `XSA_DEV` user. You specified the password at the beginning of this tutorial when you were prompted for a new `HANA database master` password.
 
 8. Go back to your VM. Check that the application **`cockpit-admin-web-app`** shows **STARTED** in the list of XSA applications and has 1/1 instances.
 
@@ -185,7 +187,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
     The Cockpit logon page displays.
 
-11. Log on to Cockpit as user `XSA_ADMIN`. You specified the password earlier in this tutorial in **Change the Default Passwords for Other Users**.    
+11. Log on to Cockpit as user `XSA_ADMIN`. You specified the password at the beginning of this tutorial when you were prompted for a new `HANA database master` password.    
 
 12. If you are inside a corporate firewall and use a proxy for connecting to http and https servers, you need to identify your proxy settings and add them to Cockpit.
 
