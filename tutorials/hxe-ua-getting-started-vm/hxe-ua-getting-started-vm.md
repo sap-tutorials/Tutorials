@@ -46,7 +46,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 7. A configuration script will run if this is the first login. It will prompt you for a new `HANA database master` password, and ask for your proxy information if you are installing server + applications virtual machine. Enter a strong password and add your proxy information (if applicable).
 
-    >**Tip:** This configuration script changes the password for the SYSTEM user. If you installed the server + applications virtual machine, it also changes the passwords for these users: XSA_ADMIN, XSA_DEV, and XSA_SHINE. Make a note of the password, since you'll need it later.
+    >**Tip:** This configuration script changes the password for the `SYSTEM` user. If you installed the server + applications virtual machine, it also changes the passwords for these users: `XSA_ADMIN`, `XSA_DEV`, and `XSA_SHINE`. Make a note of the password, since you'll need it later.
 
     SAP HANA 2.0, express edition is now running.
 
