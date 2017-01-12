@@ -197,7 +197,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
     Click on **Load Historical Data (From OData Service)**
 
-    Et voil‡!
+    Et voil√†!
 
     ![TimeSeries Demo Applications](8.png)
 
