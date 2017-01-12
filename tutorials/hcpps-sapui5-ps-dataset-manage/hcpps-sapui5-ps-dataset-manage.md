@@ -335,7 +335,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
     Click on **Retrieve List**, select an entry in the table. Then, click on **Delete Description**.
 
-    Et voil√†!
+    Et voil‡!
 
     ![TimeSeries Demo Applications](10.png)
 

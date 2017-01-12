@@ -263,9 +263,9 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
     Click on **Retrieve List**, select an entry in the table, then click on **Forecast in Synchronous Mode**.
 
-    Et voil√†!
+    Et voil‡!
 
-    ![TimeSeries Demo Applications](5.png)
+    ![TimeSeries Demo Applications](10.png)
 
 ## Next Steps
   - [Use the asynchronous Forecast HCP predictive service from a SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)
