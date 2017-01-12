@@ -97,7 +97,7 @@ Verify that all required SAP HANA 2.0, express edition services are running prop
 
     >**Note**: After restarting, allow sufficient time for all services to start running before proceeding.
 
-## Record Your `hxehost` IP Address
+### Record Your `hxehost` IP Address
 
 Record the `hxehost` IP address so you can reference it later to connect using SAP HANA client tools.
 
@@ -261,7 +261,7 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
 >**Tip**: The SAP EA Designer installer file `XSACHANAEAD00_0.ZIP` is located at
 >```    
-/usr/sap/HXE/home/HANA_EXPRESS_20/DATA_UNITS
+/usr/sap/HXE/home/HANA_EXPRESS_20/DATA_UNITS/XSA_CONTENT_10/XSACHANAEAD00_0.ZIP
 ```
 
 1. Log in as `hxeadm`.
@@ -279,7 +279,7 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
          ADMIN_PASSWORD: <tempPwd>
     ```    
 
-    >**Note**: Make sure that properties and ADMIN_PASSWORD are indented with spaces (not tab). There are two spaces in front of `properties`. There are four spaces in front of `ADMIN_PASSWORD`.
+    >**Important**: Make sure that properties and ADMIN_PASSWORD are indented with spaces (not tab). There are two spaces in front of `properties`. There are four spaces in front of `ADMIN_PASSWORD`.
 
     >**Note**: If you do not specify this temporary password file in your installation command, the installation will proceed normally, but you will not be able to log into SAP EA Designer. We recommend that your temporary password should contain 8 or more characters including a mix of numbers and uppercase and lowercase letters. Once installation is complete, you should delete this file.
 
@@ -290,7 +290,7 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
 4. Install the SAP EA Designer package using the following command, where `firstTime.mtaext` is the file containing the temporary administrator password:
     ```
-    xs install XSACHANAEAD00_0.zip -e firstTime.mtaext
+    xs install XSACHANAEAD00_0.ZIP -e firstTime.mtaext
     ```
 
 5. When the installation is complete enter the following command to confirm the status of SAP EA Designer:
