@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 How to perform security tasks to ensure that your security settings are not known outside your organization.
 
 ### Time to Complete
-**15-20 Min**.
+**5 Min**.
 
 ---
 
@@ -35,8 +35,6 @@ The **`change_key.sh`** utility:
 
 - Changes the encryption root keys. The script generates new keys, backs them up, and activates them.
 
->**Note**: The server will restart during the execution of **`change_key.sh`**.
-
 Follow this procedure to run the script:
 
 1. At the command prompt, type:
@@ -48,15 +46,14 @@ Follow this procedure to run the script:
 
 Prompt         | Description  |
 :-------------   | :-------------   |
-HANA Instance Number       | Accept the default (90).
--s `<instance SID>`          | Accept the default (HXE).
-Database System user password  | Password you set when you changed the default password for SYSTEM user during installation.
-Root key backup password            | The root key backup password is required to securely back up the root keys and subsequently restore the backed-up root keys during data recovery. For information on root key backup, see [Root Key Backup](https://help.sap.com/saphelp_hanaplatform/helpdata/en/39/730482d6944173b34c660c20963051/content.htm?frameset=/en/b3/0fda1483b34628802a8d62bd5d39df/frameset.htm&current_toc=/en/de/ec02ebbb57101483bdf3194c301d2e/plain.htm&node_id=81).
+HANA Instance Number       | Enter the default (90).
+System user password  | You specified this password when you were prompted for **HANA database master password**.
+Root key backup password            | Enter a strong password. The root key backup password is required to securely back up the root keys and subsequently restore the backed-up root keys during data recovery. For information on root key backup, see [Root Key Backup](https://help.sap.com/saphelp_hanaplatform/helpdata/en/39/730482d6944173b34c660c20963051/content.htm?frameset=/en/b3/0fda1483b34628802a8d62bd5d39df/frameset.htm&current_toc=/en/de/ec02ebbb57101483bdf3194c301d2e/plain.htm&node_id=81).
 Root key directory                  | A directory to store the root key backup password securely. Choose a non-temporary directory. For example `/usr/sap/HXE/HDB90`.
 
-Wait for the script to complete (3-5 minutes). The server will restart during script execution.
+Enter **Y** when prompted. The script runs. Wait for the `hxehost:hxeadm>` prompt to return (approximately 30 seconds).
 
-A **Done** message displays when the script is finished. New data will now be encrypted with the new keys.
+New data will now be encrypted with the new keys.
 
 ## Best Practices: Deactivate the SYSTEM user
 

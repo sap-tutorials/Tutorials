@@ -45,19 +45,35 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 6. When prompted to **Retype new password**, enter your strong password again.
 
-7. A configuration script will run if this is the first login. It will prompt you for a new `HANA database master` password, and ask for your proxy information if you are installing server + applications virtual machine. Enter a strong password and add your proxy information (if applicable).
+7. A configuration script will run if this is the first login. When prompted for **HANA database master password**, enter a strong password.
 
-The configuration script changes the `SYSTEM` user password to your user-specified password. If you installed the server + applications virtual machine, it also changes the user passwords for these users to the same user-specified password:
+    > **Tip:** Make a note of this password, since you'll need it later. You can enter the same password you used in step 5, or a new password.
 
-- `XSA_ADMIN`
+    Entering the **HANA database master password** changes the `SYSTEM` user password. If you installed the server + applications virtual machine, it also changes the user passwords for these users to the password you entered:
 
-- `XSA_DEV`
+    - `XSA_ADMIN`
 
-- `XSA_SHINE`
+    - `XSA_DEV`
 
-- `TEL_ADMIN`
+    - `XSA_SHINE`
 
-> **Tip:** Make a note of your user-specified password, since you'll need it later.
+    - `TEL_ADMIN`
+
+    The configuration script does not change any user passwords in the tenant database. (The tenant database is stopped by default when you install SAP HANA 2.0, express edition.) If you start a tenant database at a later time, you must manually change user passwords in the tenant database.
+
+8. When prompted to **Confirm "HANA database master password"**, enter the strong password again.
+
+9. When prompted **Do you need to use the proxy server to access the internet?** enter Y or N.
+
+    - Contact your IT administrator for your company's proxy settings. If you are inside a corporate firewall, you might use a proxy for connecting to http and https servers.
+
+    - If **Y**, enter your proxy host name, proxy port number, and (if desired) a comma-separated list of hosts that do not need a proxy. Proxy host name needs a fully qualified domain name.
+
+    - You will check your proxy settings using HANA Cockpit later in this tutorial.
+
+10. When prompted to **Proceed with configuration?** enter **Y**.    
+
+11. Wait for the success message **Congratulations! SAP HANA, express edition 2.0 is configured**.
 
 The configuration script does not change any user passwords in the tenant database. (The tenant database is stopped by default when you install SAP HANA 2.0, express edition.) If you start a tenant database at a later time, you must manually change user passwords in the tenant database.
 
@@ -161,6 +177,8 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
     xs login -u XSA_ADMIN -p <password> -s SAP
     ```  
 
+    You specified this password when you were prompted for **HANA database master password** at the beginning of this tutorial.
+
 3. Check for an API endpoint showing `https://hxehost:39030`. If you see this entry, XSA installed correctly.
 
 4. View the list of XSA applications. Enter:  
@@ -182,7 +200,9 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
     Example:  `https://hxehost:53075`
 
-7. Log on to Web IDE using the `XSA_DEV` user. You specified the password at the beginning of this tutorial when you were prompted for a new `HANA database master` password.
+7. Log on to Web IDE using the `XSA_DEV` user. You specified this password when you were prompted for **HANA database master password** at the beginning of this tutorial.
+
+    If you are prompted to change your password, follow the instructions.
 
 8. Go back to your VM. Check that the application **`cockpit-admin-web-app`** shows **STARTED** in the list of XSA applications and has 1/1 instances.
 
@@ -204,13 +224,13 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
     The Cockpit logon page displays.
 
-11. Log on to Cockpit as user `XSA_ADMIN`. You specified the password at the beginning of this tutorial when you were prompted for a new `HANA database master` password.    
+11. Log on to Cockpit as user `XSA_ADMIN`. You specified this password when you were prompted for **HANA database master password** at the beginning of this tutorial.     
 
-12. If you are inside a corporate firewall and use a proxy for connecting to http and https servers, you need to identify your proxy settings and add them to Cockpit.
+12. If you are inside a corporate firewall and use a proxy for connecting to http and https servers, check your proxy settings using SAP HANA Cockpit.
 
     >**Note**: If you are not inside a firewall, you can ignore this step and skip to the next topic.
 
-    - Contact your IT administrator for your company's proxy settings.
+    - You set your proxy settings earlier in this tutorial.
 
         In this example using Internet Explorer on Windows 10, notice how connections use a proxy server on port 8080.
 
@@ -220,15 +240,15 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
         ![Cockpit Proxy](hxe_cockpit_proxy.PNG)
 
-    - Under **Http(s) Proxy**, select **Enable**.
+    - Under **Http(s) Proxy**, verify that **Enable** is checked.
 
-        >**Note**: Enable the **Http(s) Proxy**, not the **Network Proxy**.
+        >**Note**: **Http(s) Proxy** should be enabled, not the **Network Proxy**.
 
-    - In **Host**, **Port**, and **Non Proxy Hosts**, enter the settings provided by your IT administrator.
+    - In **Host**, **Port**, and **Non Proxy Hosts**, verify the settings provided by your IT administrator.
 
         Make sure the host has a fully qualified domain name.
 
-    - Click **Save**.
+    - If you made any changes, click  **Save**.
 
 ### Best Practices: Backups
 
@@ -266,7 +286,7 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
 1. Log in as `hxeadm`.
 
-2. Create a text file, copy the following content to it, replacing the variable <tempPwd> with your choice of a temporary administrator password for the first login, and save it as `firstTime.mtaext`:
+2. Create a text file, copy the following content to it, replacing the variable <`tempPwd`> with your choice of a temporary administrator password for the first login, and save it as `firstTime.mtaext`:
 
     ```
     _schema-version: "2.0.0"
