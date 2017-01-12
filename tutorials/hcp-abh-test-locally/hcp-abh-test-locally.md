@@ -1,11 +1,11 @@
 ---
 title: Testing API Business Hub APIs with Curl
-description: description
+description: Try out an SAP API locally on your machine.
 tags: [  tutorial>beginner, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Getting Started with the SAP API Business Hub]([Test APIs locally with Curl](http://www.sap.com/developer/tutorials/hcp-abh-getting-started.html))
+ - **Tutorials:** [Getting Started with the SAP API Business Hub](http://www.sap.com/developer/tutorials/hcp-abh-getting-started.html)
 
 ## Next Steps
  - Add API Business Hub API to HCP (Coming soon!)
