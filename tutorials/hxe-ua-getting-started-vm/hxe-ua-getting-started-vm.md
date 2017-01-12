@@ -8,7 +8,8 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
  - **Tutorials:** [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
  - Proxy information if behind a firewall.
 
- **Tip:** This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
+<!--
+ **Tip:** This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html). -->
 
 ## Next Steps
  - [Configure SAP HANA, express edition Security](http://www.sap.com/developer/tutorials/hxe-ua-configure-security.html)
@@ -44,9 +45,23 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 6. When prompted to **Retype new password**, enter your strong password again.
 
-7. A configuration script will run if this is the first login. It will prompt you for a new `HANA database master` password, and ask for your proxy information if you are installing `hxexsa.ova`. Enter another strong password and add your proxy information (if applicable).
+7. A configuration script will run if this is the first login. It will prompt you for a new `HANA database master` password, and ask for your proxy information if you are installing server + applications virtual machine. Enter a strong password and add your proxy information (if applicable).
 
-    SAP HANA 2.0, express edition is now running.
+The configuration script changes the `SYSTEM` user password to your user-specified password. If you installed the server + applications virtual machine, it also changes the user passwords for these users to the same user-specified password:
+
+- `XSA_ADMIN`
+
+- `XSA_DEV`
+
+- `XSA_SHINE`
+
+- `TEL_ADMIN`
+
+> **Tip:** Make a note of your user-specified password, since you'll need it later.
+
+The configuration script does not change any user passwords in the tenant database. (The tenant database is stopped by default when you install SAP HANA 2.0, express edition.) If you start a tenant database at a later time, you must manually change user passwords in the tenant database.
+
+SAP HANA 2.0, express edition is now running.
 
 ### Test your Server Installation
 
@@ -82,9 +97,9 @@ Verify that all required SAP HANA 2.0, express edition services are running prop
 
     >**Note**: After restarting, allow sufficient time for all services to start running before proceeding.
 
-## Record Your VM's IP Address
+## Record Your `hxehost` IP Address
 
-Record the IP address of your VM so you can reference it later to connect using SAP HANA client tools.
+Record the `hxehost` IP address so you can reference it later to connect using SAP HANA client tools.
 
 1. At the command prompt, enter:  
     ```
@@ -99,27 +114,31 @@ Record the IP address of your VM so you can reference it later to connect using 
 
 ### Edit the `/etc/hosts` File
 
-You must edit the **`/etc/hosts`** file on the local machine in order to access any URL for express edition clients. For example, edit **`/etc/hosts`** if you want to access any XS Advanced applications, or HANA Cockpit.
+The `hxehost` IP address is private to the VM. In order for applications on your laptop (like your web browser) to access `hxehost`, add the `hxehost` IP address to your laptop's hostname map. The hostname map is your laptop's **`/etc/hosts`** file. You must edit **`/etc/hosts`** if you want to access any XS Advanced applications, or use HANA Cockpit, from your laptop.
 
 #### Edit `/etc/hosts` on Windows
+
+If you installed the VM installation package to a Windows machine, follow these steps to update the `etc/hosts` file.
 
 1. On your Windows laptop, navigate to **`C:\Windows\System32\drivers\etc`**.
 
 2. In **Administrator** mode, open **hosts** in Notepad. See your operating system Help for information on opening applications in Administrator mode.
 
-3. In a new uncommented row, add the VM IP address and **`hxehost`**. Save your changes.
+3. In a new uncommented row, add the IP address and **`hxehost`**. Save your changes.
 
     >**Tip**: Spacing is important. Make sure your hosts file in Notepad looks like this image.
 
     ![Windows Host File](hxe_hosts_windows.png)
 
-#### Edit `/etc/hosts` on Linux
+#### Edit `/etc/hosts` on Mac and Linux
 
-1.	From your Linux host OS (not the VM guest) access your Linux client editor.
+If you installed the VM installation package to a Mac or Linux machine, follow these steps to update the `etc/hosts` file.
 
-2.  Run this command:
+1.	On your Mac or Linux machine, start the Terminal application.
+
+2.  Edit the command to look like this:
     ```
-    sudo sh -c 'echo <VM IP Address> $(hostname -f) >> /etc/hosts'\
+    sudo sh - c 'echo <hxehost IP address>    hxehost >> /etc/hosts'
     ```
 
 ### Test XSC, XSA, and Web IDE (Server + Applications Virtual Machine Only)
@@ -130,10 +149,10 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 1. Check that the `XSEngine` is running. From your host OS (not the VM guest) open a browser and enter:   
     ```
-    http://<ip address of VM>:8090  
+    http://<hxehost IP address>:8090  
     ```
 
-    You recorded the IP address earlier in this tutorial in topic **Record Your VM's IP Address**. A success page displays. This indicates that XSC is running:  
+    You recorded the IP address earlier in this tutorial in topic **Record Your `hxehost` IP Address**. A success page displays. This indicates that XSC is running:  
 
     ![XSEngine Success Page](hxe_xs_success.PNG)
 
@@ -163,7 +182,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
     Example:  `https://hxehost:53075`
 
-7. Log on to Web IDE using the `XSA_DEV` user. You specified the password earlier in this tutorial in the section **Change the Default Passwords for Other Users**.
+7. Log on to Web IDE using the `XSA_DEV` user. You specified the password at the beginning of this tutorial when you were prompted for a new `HANA database master` password.
 
 8. Go back to your VM. Check that the application **`cockpit-admin-web-app`** shows **STARTED** in the list of XSA applications and has 1/1 instances.
 
@@ -185,7 +204,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
     The Cockpit logon page displays.
 
-11. Log on to Cockpit as user `XSA_ADMIN`. You specified the password earlier in this tutorial in **Change the Default Passwords for Other Users**.    
+11. Log on to Cockpit as user `XSA_ADMIN`. You specified the password at the beginning of this tutorial when you were prompted for a new `HANA database master` password.    
 
 12. If you are inside a corporate firewall and use a proxy for connecting to http and https servers, you need to identify your proxy settings and add them to Cockpit.
 
@@ -310,6 +329,8 @@ Installation files for SHINE for **XSC** are located at:
 ```
 
 To install SHINE for XSA, see the [SAP HANA Interactive Education (SHINE) for SAP HANA XS Advanced Model guide](http://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_for_SAP_HANA_XS_Advanced_Model_en.pdf).
+
+>**Note:** The HANA `JDBC` port number for SAP HANA, express edition is different than the default port number `30015` mentioned in [SAP HANA Interactive Education (SHINE) for SAP HANA XS Advanced Model guide](http://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_for_SAP_HANA_XS_Advanced_Model_en.pdf). You need to update the port parameter for the resources `CrossSchemaSys` and `CrossSchemaSysBi` in the `mtaext` file to `39013`.  
 
 If you downloaded the Server + Applications Virtual Machine (`hxexsa.ova`) package, installation files for SHINE for **XSA** are located at:
 ```

@@ -7,8 +7,8 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:** [Select the correct SAP HANA 2.0, express edition version](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-version.html)
-
- **Tip:**  This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
+<!--
+ **Tip:**  This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html). -->
 
 ## Next Steps
  - [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
@@ -67,19 +67,21 @@ Check if your machine has the recommended hardware to successfully install and r
 Install a supported `hypervisor` on your machine if you don't have one already. `Hypervisors` are software products used for creating and running virtual machines.
 SAP HANA 2.0, express edition has been tested on these `hypervisors`:
 
-- [`VMware Player 7.1`](https://www.vmware.com/)
+- [`VMware Workstation Player 12.x`](http://www.vmware.com/products/player/playerpro-evaluation.html)
 
-- [`VMware Workstation Pro 12.1`](https://www.vmware.com/)
+- [`VMware Workstation Player 7.x`](https://my.vmware.com/web/vmware/searchresults?client=my_download&site=my_download&proxystylesheet=my_download_en&gsa_lang=en&c=ALL&q=vmware+player.html)
 
-- [`VMware Fusion or VMware Fusion Pro 8.x`](https://www.vmware.com/)
+- [`VMware Workstation Pro 12.x`](http://www.vmware.com/products/workstation/workstation-evaluation.html)
 
-- [`Oracle VirtualBox`](https://www.virtualbox.org/)
+- [`VMware Fusion or VMware Fusion Pro 8.x`](http://www.vmware.com/products/fusion/fusion-evaluation.html)
 
-For the purposes of this tutorial, you will use the VMware Player.
+- [`Oracle VirtualBox`](https://www.virtualbox.org/wiki/Downloads)
+
+This tutorial uses VMware Player.
 
 #### Install VMware Player
 
-VMware Player 7.1 is a `hypervisor` compatible with SAP HANA 2.0, express edition. You can install any supported `hypervisor`, but examples in this tutorial use VMware Player 7.1.
+VMware Player is a `hypervisor` compatible with SAP HANA 2.0, express edition. You can install any supported `hypervisor`, but examples in this tutorial use VMware Player 7.1.
 
 1. Download VMware Player from <http://www.vmware.com> and run the installer.  
 
@@ -159,7 +161,7 @@ Register and then use the Download Manager to download a server-only virtual mac
 
 Import the downloaded Open Virtual Appliance (OVA) file (either `hxe.ova` or `hxexsa.ova`) into your `hypervisor` to begin using SAP HANA 2.0, express edition.
 
-1. Start VMware Player 7.1 and select *Open a Virtual Machine*.  
+1. Start VMware Player and select *Open a Virtual Machine*.  
 
     ![VMWare Player](hxe_vmware_import.PNG)
 
