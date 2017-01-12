@@ -8,7 +8,8 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
  - **Tutorials:** [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
  - Proxy information if behind a firewall.
 
- **Tip:** This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
+<!--
+ **Tip:** This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html). -->
 
 ## Next Steps
  - [Configure SAP HANA, express edition Security](http://www.sap.com/developer/tutorials/hxe-ua-configure-security.html)
@@ -46,9 +47,21 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 7. A configuration script will run if this is the first login. It will prompt you for a new `HANA database master` password, and ask for your proxy information if you are installing server + applications virtual machine. Enter a strong password and add your proxy information (if applicable).
 
-    >**Tip:** This configuration script changes the password for the `SYSTEM` user. If you installed the server + applications virtual machine, it also changes the passwords for these users: `XSA_ADMIN`, `XSA_DEV`, and `XSA_SHINE`. Make a note of the password, since you'll need it later.
+The configuration script changes the `SYSTEM` user password to your user-specified password. If you installed the server + applications virtual machine, it also changes the user passwords for these users to the same user-specified password:
 
-    SAP HANA 2.0, express edition is now running.
+- `XSA_ADMIN`
+
+- `XSA_DEV`
+
+- `XSA_SHINE`
+
+- `TEL_ADMIN`
+
+> **Tip:** Make a note of your user-specified password, since you'll need it later.
+
+The configuration script does not change any user passwords in the tenant database. (The tenant database is stopped by default when you install SAP HANA 2.0, express edition.) If you start a tenant database at a later time, you must manually change user passwords in the tenant database.
+
+SAP HANA 2.0, express edition is now running.
 
 ### Test your Server Installation
 
@@ -125,7 +138,7 @@ If you installed the VM installation package to a Mac or Linux machine, follow t
 
 2.  Edit the command to look like this:
     ```
-    sudo sh – c ‘echo <hxehost IP address>    hxehost >> /etc/hosts’
+    sudo sh - c 'echo <hxehost IP address>    hxehost >> /etc/hosts'
     ```
 
 ### Test XSC, XSA, and Web IDE (Server + Applications Virtual Machine Only)

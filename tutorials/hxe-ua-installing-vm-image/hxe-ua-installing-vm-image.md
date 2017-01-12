@@ -7,8 +7,8 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:** [Select the correct SAP HANA 2.0, express edition version](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-version.html)
-
- **Tip:**  This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
+<!--
+ **Tip:**  This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html). -->
 
 ## Next Steps
  - [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
@@ -77,7 +77,7 @@ SAP HANA 2.0, express edition has been tested on these `hypervisors`:
 
 - [`Oracle VirtualBox`](https://www.virtualbox.org/wiki/Downloads)
 
-For the purposes of this tutorial, you will use the VMware Player.
+This tutorial uses VMware Player.
 
 #### Install VMware Player
 
