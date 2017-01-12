@@ -310,7 +310,7 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
 To install SHINE for XSC, see the [SAP HANA Interactive Education (SHINE) guide](http://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_en.pdf).
 
->**Note:** The HANA `JDBC` port number for SAP HANA, express edition is different than the default port number `30015` mentioned in the SHINE guide. You need to update the port parameter for the resources `CrossSchemaSys` and `CrossSchemaSysBi` in the `mtaext` file to `30013`.  
+>**Note:** The HANA `JDBC` port number for SAP HANA, express edition is different than the default port number `30015` mentioned in the SHINE guide. You need to update the port parameter for the resources `CrossSchemaSys` and `CrossSchemaSysBi` in the `mtaext` file to `39013`.  
 
 Installation files for SHINE for **XSC** are located at:
 ```
