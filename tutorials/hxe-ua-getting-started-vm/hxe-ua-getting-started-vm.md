@@ -84,9 +84,9 @@ Verify that all required SAP HANA 2.0, express edition services are running prop
 
     >**Note**: After restarting, allow sufficient time for all services to start running before proceeding.
 
-## Record Your VM's IP Address
+## Record Your `hxehost` IP Address
 
-Record the IP address of your VM so you can reference it later to connect using SAP HANA client tools.
+Record the `hxehost` IP address so you can reference it later to connect using SAP HANA client tools.
 
 1. At the command prompt, enter:  
     ```
@@ -101,27 +101,31 @@ Record the IP address of your VM so you can reference it later to connect using 
 
 ### Edit the `/etc/hosts` File
 
-You must edit the **`/etc/hosts`** file on the local machine in order to access any URL for express edition clients. For example, edit **`/etc/hosts`** if you want to access any XS Advanced applications, or HANA Cockpit.
+The `hxehost` IP address is private to the VM. In order for applications on your laptop (like your web browser) to access `hxehost`, add the `hxehost` IP address to your laptop's hostname map. The hostname map is your laptop's **`/etc/hosts`** file. You must edit **`/etc/hosts`** if you want to access any XS Advanced applications, or use HANA Cockpit, from your laptop.
 
 #### Edit `/etc/hosts` on Windows
+
+If you installed the VM installation package to a Windows machine, follow these steps to update the `etc/hosts` file.
 
 1. On your Windows laptop, navigate to **`C:\Windows\System32\drivers\etc`**.
 
 2. In **Administrator** mode, open **hosts** in Notepad. See your operating system Help for information on opening applications in Administrator mode.
 
-3. In a new uncommented row, add the VM IP address and **`hxehost`**. Save your changes.
+3. In a new uncommented row, add the IP address and **`hxehost`**. Save your changes.
 
     >**Tip**: Spacing is important. Make sure your hosts file in Notepad looks like this image.
 
     ![Windows Host File](hxe_hosts_windows.png)
 
-#### Edit `/etc/hosts` on Linux
+#### Edit `/etc/hosts` on Mac and Linux
 
-1.	From your Linux host OS (not the VM guest) access your Linux client editor.
+If you installed the VM installation package to a Mac or Linux machine, follow these steps to update the `etc/hosts` file.
 
-2.  Run this command:
+1.	On your Mac or Linux machine, start the Terminal application.
+
+2.  Edit the command to look like this:
     ```
-    sudo sh -c 'echo <VM IP Address> $(hostname -f) >> /etc/hosts'\
+    sudo sh – c ‘echo <hxehost IP address>    hxehost >> /etc/hosts’
     ```
 
 ### Test XSC, XSA, and Web IDE (Server + Applications Virtual Machine Only)
@@ -132,10 +136,10 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 1. Check that the `XSEngine` is running. From your host OS (not the VM guest) open a browser and enter:   
     ```
-    http://<ip address of VM>:8090  
+    http://<hxehost IP address>:8090  
     ```
 
-    You recorded the IP address earlier in this tutorial in topic **Record Your VM's IP Address**. A success page displays. This indicates that XSC is running:  
+    You recorded the IP address earlier in this tutorial in topic **Record Your `hxehost` IP Address**. A success page displays. This indicates that XSC is running:  
 
     ![XSEngine Success Page](hxe_xs_success.PNG)
 
@@ -305,6 +309,8 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 ### (Optional) Install SAP HANA Interactive Education (SHINE) (`hxexsa.ova` Server + Applications Virtual Machine Only)
 
 To install SHINE for XSC, see the [SAP HANA Interactive Education (SHINE) guide](http://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_en.pdf).
+
+>**Note:** The HANA `JDBC` port number for SAP HANA, express edition is different than the default port number `30015` mentioned in the SHINE guide. You need to update the port parameter for the resources `CrossSchemaSys` and `CrossSchemaSysBi` in the `mtaext` file to `30013`.  
 
 Installation files for SHINE for **XSC** are located at:
 ```
