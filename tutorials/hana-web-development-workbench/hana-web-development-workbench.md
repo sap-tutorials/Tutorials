@@ -22,13 +22,13 @@ You need a HANA account. Pick one of the following:
 Beginners might take **10-15 minutes** to execute this tutorial.
 
 > ### Information
->The full application build in this tutorial can be found [in this GitHub repository](https://github.com/SAP/cloud-hana-helloworld/).
+>The full application built in this tutorial can be found [in this GitHub repository](https://github.com/SAP/cloud-hana-helloworld/).
 
 ### Using HANA Cloud Platform
 Each Trial HANA instance comes with the HANA Web-based Development Workbench. The workbench allows you to develop on HANA without the need to set up a local development environment.
 
 Login to the [HANA Cloud Cockpit](https://account.hanatrial.ondemand.com/cockpit) with your free developer edition account.
-Choose Databases & Schemas. You will need to create your new instance, to do this simple give it a name, enable web access and of course give a password. This password you will need to remember as it is the password for your SYSTEM user and how you will be able to access the server.
+Choose Databases & Schemas. You will need to create your new instance. To do this simply give it a name, enable web access and of course give a password. This password you will need to remember as it is the password for your SYSTEM user and how you will be able to access the server.
 
 ![New Database and Schema](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/1.png)
 
@@ -52,7 +52,7 @@ Once your authorizations have applied, you should then select the "Manage Roles 
 
 ![System User](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/5.png)
 
-Here you can create a new user, this is recommended so you do not risk the "SYSTEM" user.
+Here you can create a new user. This is recommended so you do not risk the "SYSTEM" user.
 
 ![Copy User](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/6.png)
 
