@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, products>sap-hana-cloud-platform ]
  - **Tutorials:** [Getting Started with the SAP API Business Hub](http://www.sap.com/developer/tutorials/hcp-abh-getting-started.html)
 
 ## Next Steps
- - Add API Business Hub API to HCP (Coming soon!)
+ - [Add API Business Hub API in UI5](http://www.sap.com/developer/tutorials/hcp-abh-api-ui5-app.html)
 
 ## Details
 ### You will learn  
@@ -127,4 +127,4 @@ If you just add in the above line and try to run the code, you will find it does
 
 
 ## Next Steps
- - Add API Business Hub API to HCP (Coming soon!)
+ - [Add API Business Hub API in UI5](http://www.sap.com/developer/tutorials/hcp-abh-api-ui5-app.html)
