@@ -35,7 +35,7 @@ Installing SAP HANA 2.0, express edition installs a permanent 32 GB license auto
     * `hdbwebdispatcher`
     * `hdbdiserver` (if XSA is installed)
 
-2. If any services are not running, enter `HDB start`. When the prompt returns, the system is started.
+3. If any services are not running, enter `HDB start`. When the prompt returns, the system is started.
 
 ### Test XSC and XSA (Applications Package Only)
 
