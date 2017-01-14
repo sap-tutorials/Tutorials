@@ -84,7 +84,7 @@ SAP HANA 2.0, express edition is now running.
 Verify that all required SAP HANA 2.0, express edition services are running properly.
 
 1. From the `hxehost:hxeadm>` command prompt enter:
-    ```
+    ```bash
     HDB info
     ```  
 
@@ -107,7 +107,7 @@ Verify that all required SAP HANA 2.0, express edition services are running prop
 2. If you don't see these services, restart the database.  
 
     Enter:  
-    ```
+    ```bash
     HDB stop && HDB start
     ```
 
@@ -118,7 +118,7 @@ Verify that all required SAP HANA 2.0, express edition services are running prop
 Record the `hxehost` IP address so you can reference it later to connect using SAP HANA client tools.
 
 1. At the command prompt, enter:  
-    ```
+    ```bash
     /sbin/ifconfig
     ```
 
@@ -164,7 +164,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 >**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
 
 1. Check that the `XSEngine` is running. From your host OS (not the VM guest) open a browser and enter:   
-    ```
+    ```bash
     http://<hxehost IP address>:8090  
     ```
 
@@ -172,8 +172,9 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
     ![XSEngine Success Page](hxe_xs_success.PNG)
 
-2. Go back to your VM. Log in to XSA services:  
-    ```
+2. Go back to your VM. Log in to XSA services:
+
+    ```bash
     xs login -u XSA_ADMIN -p <password> -s SAP
     ```  
 
@@ -182,7 +183,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 3. Check for an API endpoint showing `https://hxehost:39030`. If you see this entry, XSA installed correctly.
 
 4. View the list of XSA applications. Enter:  
-    ```
+    ```bash
     xs apps
    ```
 
@@ -280,7 +281,7 @@ SAP EA Designer lets you capture, analyze, and present your organization's lands
 Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `xs` command line tool.
 
 >**Tip**: The SAP EA Designer installer file `XSACHANAEAD00_0.ZIP` is located at
->```    
+>```bash    
 /usr/sap/HXE/home/HANA_EXPRESS_20/DATA_UNITS/XSA_CONTENT_10/XSACHANAEAD00_0.ZIP
 ```
 
@@ -288,7 +289,9 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
 2. Create a text file, copy the following content to it, replacing the variable <`tempPwd`> with your choice of a temporary administrator password for the first login, and save it as `firstTime.mtaext`:
 
-    ```
+    >**Important**: Incorrect indentation causes errors. If you are copying code, make sure that `- name`, `properties` and `ADMIN_PASSWORD` are indented with spaces, not tab. There are two spaces in front of `- name:`. There are two spaces in front of `properties`. There are four spaces in front of `ADMIN_PASSWORD`.
+
+    ```bash
     _schema-version: "2.0.0"
     ID: com.sap.hana.eadesigner.ext
     extends: com.sap.hana.eadesigner
@@ -299,24 +302,26 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
          ADMIN_PASSWORD: <tempPwd>
     ```    
 
-    >**Important**: Make sure that properties and ADMIN_PASSWORD are indented with spaces (not tab). There are two spaces in front of `properties`. There are four spaces in front of `ADMIN_PASSWORD`.
-
     >**Note**: If you do not specify this temporary password file in your installation command, the installation will proceed normally, but you will not be able to log into SAP EA Designer. We recommend that your temporary password should contain 8 or more characters including a mix of numbers and uppercase and lowercase letters. Once installation is complete, you should delete this file.
 
 3. Login to the XSA environment with the following command and enter your credentials when prompted:
-    ```
+
+    ```bash
     xs login -a https://<hostname>:39030
     ```
 
 4. Install the SAP EA Designer package using the following command, where `firstTime.mtaext` is the file containing the temporary administrator password:
-    ```
+
+    ```bash
     xs install XSACHANAEAD00_0.ZIP -e firstTime.mtaext
     ```
 
 5. When the installation is complete enter the following command to confirm the status of SAP EA Designer:
-    ```
+
+    ```bash
     xs apps
     ```
+
     The output will include all the applications of your organization and space. You should see:   
 
     - `eadesigner` - The SAP EA Designer application
@@ -344,7 +349,8 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 To install SHINE for XSC, see the [SAP HANA Interactive Education (SHINE) guide](http://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_en.pdf).
 
 Installation files for SHINE for **XSC** are located at:
-```
+
+```bash
 /usr/sap/HXE/home/HANA_EXPRESS_20/DATA_UNITS/HCO_HANA_SHINE
 ```
 
@@ -353,7 +359,8 @@ To install SHINE for XSA, see the [SAP HANA Interactive Education (SHINE) for SA
 >**Note:** The HANA `JDBC` port number for SAP HANA, express edition is different than the default port number `30015` mentioned in [SAP HANA Interactive Education (SHINE) for SAP HANA XS Advanced Model guide](http://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_for_SAP_HANA_XS_Advanced_Model_en.pdf). You need to update the port parameter for the resources `CrossSchemaSys` and `CrossSchemaSysBi` in the `mtaext` file to `39013`.  
 
 If you downloaded the Server + Applications Virtual Machine (`hxexsa.ova`) package, installation files for SHINE for **XSA** are located at:
-```
+
+```bash
 /usr/sap/HXE/home/HANA_EXPRESS_20/DATA_UNITS/XSA_CONTENT_10
 ```
 
@@ -368,7 +375,8 @@ If you are using SAP HANA 2.0, express edition in a language other than English 
 2. Navigate to `/hana/shared/HXE/exe/linuxx86_64/hdb/lexicon`.
 
 3. Extract the contents of `additional_lang.tgz` to this directory:
-    ```
+
+    ```bash
     tar -xvzf <download_path>/additional_lang.tgz
     ```
 
