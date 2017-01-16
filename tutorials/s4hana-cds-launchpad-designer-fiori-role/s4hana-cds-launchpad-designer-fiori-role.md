@@ -85,22 +85,28 @@ After successfully login , enter the ABAP transaction `su01` (1) for user mainte
   ![Launchpad15](LauchpadDesignerRoleAssignt11.png)
   7. Add additional role following the steps described above: `SAP_BR_ANALYTICS_SPECIALIST`
       ![Launchpad16](LauchpadDesignerRoleAssignt13.png)
+  <br>
   8. Add additional role following the the steps described above : `SAP_BR_EMPLOYEE`
       ![Launchpad17](LauchpadDesignerRoleAssignt14.png)
       ![Launchpad18](LauchpadDesignerRoleAssignt15.png)
+<br>
   9. Add additional role following the the steps described above : `ZSAP_UI2_ADMIN_700`
       ![Launchpad19](LauchpadDesignerRoleAssignt16.png)
       ![Launchpad20](LauchpadDesignerRoleAssignt17.png)
+<br>
   10. Add additional role following the the steps described above: `ZSAP_UI2_USER_700`
       ![Launchpad21](LauchpadDesignerRoleAssignt18.png)                                                                            
-      ![Launchpad22](LauchpadDesignerRoleAssignt19.png)   
+      ![Launchpad22](LauchpadDesignerRoleAssignt19.png)
+<br>  
   11. Add additional role following the steps described above : `Z_RDS_BR`
       ![Launchpad23](LauchpadDesignerRoleAssignt20.png)
       ![Launchpad24](LauchpadDesignerRoleAssignt21.png)
+  <br>
   12. Add additional role following the steps described above: `Z_RT_ADMIN`
       ![Launchpad25](LauchpadDesignerRoleAssignt22.png)  
       ![Launchpad26](LauchpadDesignerRoleAssignt23.png)  
       Save the changes you made and close the SAP Logon.
+<br>
   13. Go back to Fiori Launchpad  Designer restart and logon to it by clicking on the link (1) to access the Login screen of the Fiori Launchpad Designer
       ![Launchpad27](Lauchnpad1png.png)
     While in the Fiori Launchpad Designer you would be able to see several groups related to purchasing Business Roles as well as some groups for creating KPI.
