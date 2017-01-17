@@ -1,5 +1,5 @@
 ---
-title: Using APPLY FILTER statement 
+title: Using APPLY FILTER statement
 description: Leveraging SQLScript in Stored Procedures & User Defined Functions
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
@@ -13,6 +13,8 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ## Details
 ### You will learn  
 In contrast to EXEC and EXECUTE IMMEDIATE, `APPLY_FILTER` is SQL injection save. Furthermore the result of the `APPLY_FILTER` will be assigned to a table variable. This allows further processing of the result by referring to the table variable. As `APPLY_FILTER` does not allow executing dynamic `DML/DDL` statements the procedure can be flagged read only which allows further optimization.
+
+**Please note - This tutorial is based on SPS11**
 
 ### Time to Complete
 **15 Min**.
@@ -31,12 +33,12 @@ In contrast to EXEC and EXECUTE IMMEDIATE, `APPLY_FILTER` is SQL injection save.
 
     ![modify statement](3.png)
 
-4. The completed code should be very similar to this. If you do not wish to type this code, you can reference the solution web page at `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex2_18` 
+4. The completed code should be very similar to this. If you do not wish to type this code, you can reference the solution web page at `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex2_18`
 
     ```
-    PROCEDURE "dev602.procedures::get_product_by_filter" (          IN im_product_filter_string varchar(5000),           OUT ex_user_filtered_products "dev602.data::MD.Products" )   LANGUAGE SQLSCRIPT   SQL SECURITY INVOKER   --DEFAULT SCHEMA <default_schema_name>   READS SQL DATA  AS	BEGIN   	pre_filtered_products =          SELECT * FROM "dev602.data::MD.Products" WHERE CATEGORY NOT IN ('Laser printers');       	ex_user_filtered_products = APPLY_FILTER(:pre_filtered_products, :im_product_filter_string ) ;	END
+    PROCEDURE "dev602.procedures::get_product_by_filter" (          IN im_product_filter_string varchar(5000),          OUT ex_user_filtered_products "dev602.data::MD.Products" )   LANGUAGE SQLSCRIPT   SQL SECURITY INVOKER   --DEFAULT SCHEMA <default_schema_name>   READS SQL DATA  AS	BEGIN  	pre_filtered_products =         SELECT * FROM "dev602.data::MD.Products" WHERE CATEGORY NOT IN ('Laser printers');	ex_user_filtered_products = APPLY_FILTER(:pre_filtered_products, :im_product_filter_string ) ;	END
     ```
-        
+
 5. Click "Save".
 
     ![save](5.png)
@@ -49,12 +51,12 @@ In contrast to EXEC and EXECUTE IMMEDIATE, `APPLY_FILTER` is SQL injection save.
 
     ![format code](7.png)
 
-8. Enter the filter string for the input parameter as 
+8. Enter the filter string for the input parameter as
 
     ```
-    	'CATEGORY = ''Notebooks''' and click "Run". 
+    	'CATEGORY = ''Notebooks''' and click "Run".
 	```
-	
+
     ![filter string](8.png)
 
 9. Once again, the results are displayed, but this time they are passed through a parameter which you are able to access for further processing.
