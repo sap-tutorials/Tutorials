@@ -10,9 +10,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ## Next Steps
  - [Using Execute Immediate](http://www.sap.com/developer/tutorials/xsa-sqlscript-execute.html)
 
-## Details 
+## Details
 ### You will learn  
 In this exercise, you will learn the differences between dynamic SQL (EXEC, EXECUTE IMMEDIATE) and applying a dynamic filter.
+**Please note - This tutorial is based on SPS11**
 
 ### Time to Complete
 **10 Min**.
@@ -22,7 +23,7 @@ In this exercise, you will learn the differences between dynamic SQL (EXEC, EXEC
 1. Right click on the procedures folder and choose "New", then "Procedure".
 
 	![new procedure](1.png)
-	
+
 2. Enter the name of the procedure as `get_product_by_filter`.  Click the drop down box for "Schema".
 
 	![procedure name](2.png)
@@ -38,7 +39,7 @@ In this exercise, you will learn the differences between dynamic SQL (EXEC, EXEC
 5. Between the BEGIN and END statements, insert the EXEC statements as shown.  The completed code should look similar to this. If you do not wish to type this code, you can reference the solution web page at `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex2_17`
 
     ```
-    PROCEDURE "dev602.procedures::get_product_by_filter" (              IN im_product_filter_string VARCHAR(5000) )   LANGUAGE SQLSCRIPT   SQL SECURITY INVOKER   --DEFAULT SCHEMA <default_schema_name>   AS	BEGIN	EXEC 'SELECT count(*) FROM "dev602.data::MD.Products" where CATEGORY NOT IN (''Laser printers'')'       || :im_product_filter_string  ;	END
+    PROCEDURE "dev602.procedures::get_product_by_filter" (              IN im_product_filter_string VARCHAR(5000) )   LANGUAGE SQLSCRIPT   SQL SECURITY INVOKER   --DEFAULT SCHEMA <default_schema_name>   AS	BEGIN	EXEC 'SELECT count(*) FROM "dev602.data::MD.Products" where CATEGORY NOT IN (''Laser printers'')'      || :im_product_filter_string  ;	END
     ```
 
 6. Save the procedure

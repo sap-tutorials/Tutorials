@@ -1,21 +1,19 @@
 ---
-title: SAP HANA XS Advanced, Connecting to the WebIDE to begin development
-description: Part 1 of 3, Explore how to connect to the SAP Web IDE for SAP HANA to begin development.
-tags: [products>sap-hana, products>sap-hana\,-express-edition, topic>big-data, tutorial>beginner ]
+title: SAP HANA XS Advanced, Creating a Project in SAP Web IDE
+description: Part 2 of 4, Explore how to connect to the SAP Web IDE for SAP HANA to begin development.
+tags: [tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, topic>big-data, tutorial>beginner ]
 
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [How to create an SAP HANA Developer Edition in the Cloud](http://www.sap.com/developer/tutorials/hana-setup-cloud.html)
+ - **Tutorials:** [Connecting to the Web IDE and cloning a Git Repository to begin development](http://www.sap.com/developer/tutorials/xsa-clone-repository-git.html)
 
 ## Next Steps
  - [SAP HANA XS Advanced HTML5 Module](http://www.sap.com/developer/tutorials/xsa-html5-module.html)
 
 
 ## Details
-### You will learn  
-SAP HANA XS Advanced is the new development paradigm from SAP based around the Cloud Foundry concepts and architectures. To begin with you will need see how to connect to the SAP Web IDE for SAP HANA.
+SAP HANA XS Advanced is the new development paradigm from SAP based around the Cloud Foundry concepts and architectures. To begin with you will need to create a Project.
 
 
 ### Time to Complete
@@ -23,44 +21,48 @@ SAP HANA XS Advanced is the new development paradigm from SAP based around the C
 
 ---
 
-1. Launch the SAP Web IDE for SAP HANA at the following URL in your web browser. The `hostname` of course is the hostname of the SAP HANA Developer Edition that you created in the previous tutorial. Remember for XSA you will need to use the hostname and not the IP address of the server, instructions are found on the server landing page itself.
-
-    `http://<hostname>:53075/`
-
-    User: `WORKSHOP_01`
-    Password: `HanaRocks2016` or what you changed it to
-
-    or you can use
-
-    User: `CODEJAMMER`
-    Password: `CodeJam2016` or what you changed it to
-
-    ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-connecting-webide/1.png)
-
-2. We will begin by creating a new project from template. Use `File->New->Project from Template`
+[ACCORDION-BEGIN [Step 1: ](Create Project from template)]
+We will begin by creating a new project from template. Use `File->New->Project from Template`
 
     ![New Project](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-connecting-webide/2.png)
 
-3. Choose Multi-Target Application Project and then press Next.
+[DONE]
+[ACCORDION-END]
 
-    ![Project Template](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-connecting-webide/3.png)
+[ACCORDION-BEGIN [Step 2: ](Multi Target Project)]
+ Choose Multi-Target Application Project and then press Next.
 
-4. Enter the project name `DEV602`. Press Next.
+![Project Template](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-connecting-webide/3.png)
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 3: ](Enter Name and Description)]
+ Enter the project name `DEV602`. Press Next.
 
     ![Project Name](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-connecting-webide/4.png)
 
-5. You can optionally enter a description for your new application and then press Next.
+You can optionally enter a description for your new application. Set the Space to DEV (or your system specific development space chosen by your system administrator). Then press Next.
 
     ![Project Name](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-connecting-webide/5.png)
 
-6. Press Finish to complete the wizard and generate your new project.
+>What are spaces? The concept of Spaces and Organizations were introduced as of SPS12. Spaces are meant to group common resources and different applications that can access them. When an application is deployed into a space, it has access to existing user authorizations or data storage created within that space. A space belongs in an organization, together with other spaces.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Complete Wizard)]
+Press Finish to complete the wizard and generate your new project.
 
     ![Finish Project](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-connecting-webide/6.png)
 
-7. Your empty project has been created.
-    
+Your empty project has been created.
+
     ![Finish Project](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-connecting-webide/7.png)
 
+[DONE]
+[ACCORDION-END]
 
 ## Next Steps
   - [SAP HANA XS Advanced HTML5 Module](http://www.sap.com/developer/tutorials/xsa-html5-module.html)
