@@ -14,11 +14,11 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
   - [Artifact Repository](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
   - [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
   - [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html)
-  
+
 ## Next Steps
 
   - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-  
+
 ---
 
 > This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html). For all the examples working properly make sure that you have followed the setup instructions for all components listed in the prerequisites box.
@@ -26,9 +26,9 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ### 1. Introduction
 
-For Fiori and SAPUI5 development there is a lot of infrastructure available to support single developers who are creating and maintaining SAPUI5 or Fiori projects. SAP Web IDE provides a rich tool set to support single developers or small teams; for example, wizards that generate a skeleton, and the metadata files that are required for new projects. The larger the team, however, the more urgent the need for an automated CI process based on a central build that includes automated testing and code quality checks.
+For Fiori and SAPUI5 development there is a lot of infrastructure available to support single developers who are creating and maintaining SAPUI5 or Fiori projects. SAP Web IDE provides a rich tool set to support single developers or small teams; for example, wizards that generate a skeleton, and the metadata files that are required for new projects. The larger the team is, however, the more urgent is the need for an automated CI process based on a central build that includes automated testing and code quality checks.
 
-The runtime used in this chapter's scenario is an ABAP front-end server. ABAP systems are usually part of large landscapes, in which change processes are managed by life-cycle management tools using ABAP transport requests. The most common ABAP system setup is a staging landscape that consists of a development system, an acceptance testing system and a productive system. The systems are linked to each other in this order by transport relationships. Usually, direct modification of objects in the productive system is not permitted. Instead, changes must be applied to the development system under governance of a transport request. The change makes its way to the productive system only through the transport request.
+The runtime used in this chapter's scenario is an ABAP front-end server. ABAP systems are usually part of large landscapes, in which change processes are managed by life-cycle management tools using ABAP transport requests. The most common ABAP system setup is a staging landscape that consists of a development system, an acceptance testing system and a productive system. The systems are linked to each other in this order by transport relationships. Usually, direct modification of objects in the productive system is not permitted. Instead, changes must be applied to the development system under governance of a transport request. The changes make their way to the productive system only through the transport request.
 
 The CI process can coexist with the ABAP life-cycle management process in the following way: the CI process ensures the quality of the code that is implemented outside the ABAP system. It converts the sources into the correct format (mainly minification and preload generation), runs automated tests and code checks, and finally produces an artifact that is ready to be uploaded to the ABAP development system. From this point, ABAP life-cycle management takes control and governs the delivery process, which usually includes transporting the changes into the test system, and later into the productive system. From the perspective of software delivery to production, ABAP life-cycle management is the leading process; the CI process supports development, and is a preparation step for providing the objects being uploaded into the ABAP development system.
 
@@ -49,23 +49,25 @@ Figure 1: The high-level process flow
 
 1. Developers use SAP Web IDE to work on a SAPUI5 or Fiori project. For immediate testing, they run the application directly from SAP Web IDE on SAP HANA Cloud Platform.
 
-2. In SAP Web IDE, the developer creates a commit and pushes it into the `master` branch of the central Git instance.
+2. In SAP Web IDE, the developer creates a commit and pushes it for review to the Gerrit instance.
 
-3. The CI build starts. It executes the following steps:
+3. The voter build starts and executes static code checks and automated tests.
 
-    1. Static code checks for JavaScript.
+4. The change is reviewed by another person. Provided the assessment of the change was positive and the voter build successful, the change is merged into the master branch.
 
-    2. Automated tests.
-    
-    3. Minification: the load on the network can be reduced by removing all comments and white spaces from the JavaScript sources.
+5. The CI build starts. It executes the following steps:
 
-    4. Preload generation: when a SAPUI5 or Fiori application is called from the browser, a lot of resources are usually downloaded, causing a high number of requests from the browser to the server. This can significantly be improved by merging all JavaScript files into one single file.
-  
-Note: This process does not yet contain a review or validation step. Developer's changes are pushed directly into the master branch of the central Git server. There are various ways to implement a review and validation step before merging changes into the `master` branch including the following:
-    
-- If you are using GitHub, you can use pull requests to pre-validate and prepare changes. Install build hooks that trigger CI-like builds on the underlying feature branches. For information about implementing this method, see [Generic Project with CI using Cloud Services](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html).
+    - Static code checks for JavaScript.
 
-- The scenario we detail in this chapter uses feature branches in the central Git repository. CI-like builds are triggered whenever a change is pushed into the feature branch. Feature branches are manually merged into the `master` branch where the CI build is running. The central Git repository can be hosted by a Gerrit instance, which controls the access permissions. Review and voter features are not used.
+    - Automated tests.
+
+    - Minification: the load on the network can be reduced by removing all comments and white spaces from the JavaScript sources.
+
+    - Preload generation: when a SAPUI5 or Fiori application is called from the browser, a lot of resources are usually downloaded, causing a high number of requests from the browser to the server. This can significantly be improved by merging all JavaScript files into one single file.
+
+    - Packaging the application into a zip file.
+
+Note: If you are using GitHub instead of Gerrit, you can use pull requests to pre-validate and prepare changes. You need to install build hooks that trigger CI-like builds on the underlying feature branches. For information about implementing this method, see [Generic Project with CI using Cloud Services](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html).
 
 The task runner tool used is Grunt, which is a common open source tool for processing JavaScript applications. The Grunt ecosystem offers many open source plugins that perform tasks such as minification or static code analysis. The preload generation is performed by a plugin that is published by the SAP OpenUI5 project.
 
@@ -77,10 +79,10 @@ What we describe here is intended to be used only as an example. You can use a d
 
 #### B. Overview: the Delivery Process Using ABAP Life-Cycle Management
 
-The extent to which automation is applied, with respect to the import of the SAPUI5 or Fiori application into the ABAP development system, depends on local requirements. We describe two alternative approaches: The first fully automates the transport request creation, the application upload, and the release of the transport request; the second assumes that the transport request is created and released manually - only the application upload using the given transport request is automatically triggered by a successful CI build. The solution that fits your enterprise most efficiently may strike a different balance between manual and automatic processes; you may even decide that the upload to the ABAP system remains a strictly manual step.
+The extent to which automation is applied, with respect to the import of the SAPUI5 or Fiori application into the ABAP development system, depends on local requirements. We describe two alternative approaches: The first one fully automates the transport request creation, the application upload, and the release of the transport request; the second one assumes that the transport request is created and released manually - only the application upload using the given transport request is automatically triggered by a successful CI build. The solution that fits your enterprise most efficiently may strike a different balance between manual and automatic processes; you may even decide that the upload to the ABAP system remains a strictly manual step.
 
 - Triggered immediately after a successful CI build for one change, the build scheduler automatically creates a new, individual transport request in the ABAP development system, uploads the application to the ABAP system and releases the transport request. The person who is responsible for transports imports the transport requests to the ABAP test system. Figure 2 shows the process flow. The advantage of this approach is complete automation, a disadvantage may be the loss of control in creating of transport requests.
-    
+
     ![Figure 2: Process for Fiori development with automatic transport request creation](fiori-1c.png)
 
     Figure 2: Process for Fiori development with automatic transport request creation
@@ -103,7 +105,7 @@ The scenario described here builds on the chapters that describe how to set up a
 ### 2. Prerequisites
 
 - An account on SAP HANA Cloud Platform.
-- An SAP HANA Cloud Connector as reverse proxy to pass requests from SAP Web IDE to your corporate Git installation. 
+- An SAP HANA Cloud Connector as reverse proxy to pass requests from SAP Web IDE to your corporate Git installation.
 
 > [SAP HANA Cloud Platform Documentation](https://help.hana.ondemand.com/help/frameset.htm?e9137493bb57101492c6858c8d6b0b62.html)  
 > [SAP HANA Cloud Platform Cockpit](https://account.hana.ondemand.com)  
@@ -122,51 +124,65 @@ You can either use SAP Web IDE on SAP HANA Cloud Platform, or alternatively, you
 
 #### Procedure
 
-1. If you are using SAP Web IDE on SAP HANA Cloud Platform, follow the instructions here:
+1. In Gerrit, create a project with a `master` branch as described in [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html).
+
+2. If you are using SAP Web IDE on SAP HANA Cloud Platform, follow the instructions here:
 
     > [Opening SAP Web IDE](https://help.hana.ondemand.com/webide/frameset.htm?51321a804b1a4935b0ab7255447f5f84.html)
-        
+
     If you are working with SAP Web IDE Personal Edition, install it and start it as described here:
-    
+
     > [SAP Web IDE Personal Edition](https://help.hana.ondemand.com/webide/frameset.htm?5b8bca3147ee4dfd99be8aaf6bd4f421.html)
-    
+
     In either case, we assume that you are now logged in to SAP Web IDE.
-  
-2. In SAP Web IDE, go to **Tools > Preferences > Git settings**. Enter your Git user name and email address, and save your settings.
 
-3. In Gerrit, create a project with a `master` branch as described in [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html).
+3. In SAP Web IDE, go to **Tools > Preferences > Git settings**. Enter your Git user name and email address, and save your settings.
 
-4. Select the workspace folder, then select one of the following options::
+4. Select the workspace folder, then select one of the following options:
 
     - If you are creating a new Fiori project, select **New > Project from Template**.
-    
+
     - If you are running through a demo, select **New > Project from Sample Application**.
 
     In both cases, the next steps are identical.
 
     ![Sample Application in SAP Web IDE](fiori-2.png)
-    
-5. Mark the newly created project and select **Git > Initialize Local Repository**. Enter the following data:
+
+5. Mark the new project and select **Git > Initialize Local Repository**.
+
+6. Mark the new project again and select **Git > Set Remote**. Enter the following data:
 
     - Name: `origin`
-    
-    - URL: `<The SSH-based URL of the Gerrit project you just created>`
-    
+
+    - URL: `<The HTTPS-based URL of the Gerrit project that you just have created>`
+
+    - Select **Add configuration for Gerrit**.
+
     - Press **OK**.
 
-6. On the right sidebar of SAP Web IDE, open the Git pane. Mark **Stage All** and enter a commit description. Press **Commit**.
+    ![Git Set Remote Dialog](git-set-remote.png)
+
+7. On the right sidebar of SAP Web IDE, open the Git pane. Scroll down, mark **Amend Changes** and press **Commit**. This step injects a change ID into the already existing initial commit, which is required to be able to be pushed to Gerrit for review.
+
+    ![Amend Git commit](git-amend-first-commit.png)
+
+8. On the right sidebar of SAP Web IDE, open the Git pane. Mark **Stage All** and enter a commit description. Press **Commit**.
 
     ![Initial Commit](fiori-git-commit.png)
 
-7. In the Git pane, select **Pull** to merge the version graphs of the local Git repository in SAP Web IDE and the remote repository. You may check it in the Git history pane.
+9. In the Git pane, select **Pull** to merge the version graphs of the local Git repository in SAP Web IDE and the remote repository. You may check it in the Git history pane.
 
     ![Amend Initial Commit](fiori-6.png)
 
-8. To propagate your changes from SAP Web IDE to the central Git repository, return to the Git pane, and select **Push > origin/master**.
+10. To propagate your changes from SAP Web IDE to Gerrit, return to the Git pane, and select **Push > origin/master**.
 
     ![Initial Commit](fiori-git-push.png)
 
-The changes are now merged into the `master` branch on the central Git repository.
+11. Open the Gerrit front end. You see your pushed changes (the Initial commit, the merge commit and the last commit containing all project files) offered for review in Gerrit.
+
+    ![Changes in Gerrit](fiori-gerrit-initial-commits.png)
+
+12. Review the changes in Gerrit and submit them such that they are merged to the `master` branch.
 
 
 ### 4. Installing Node.js Jenkins Slave Machine
@@ -179,13 +195,13 @@ Grunt requires Node.js and the included package manager npm.
 
     > [Node.js Home Page](https://Nodejs.org/en/)   
     > [Node.js Downloads](https://nodejs.org/en/download/)
-    
+
     You can install the `tar.gz` package on Linux in any directory. We recommend that you define a common installation directory on all your Jenkins slave machines.
 
 2. Open the Jenkins front end, and go to **Manage Jenkins > Manage Plugins > Available**. Select **Node.js Plugin** and start the installation.
-    
+
     Although the primary feature offered by this plugin (using JavaScript directly in job implementations) is not used in our example, it does handle multiple Node.js versions in parallel, allowing you to choose the appropriate one at the job level.
-    
+
 3. In the Jenkins front end, go to **Manage Jenkins > Configure System**. Scroll down to the **Node.js** section and select **Node.js installations**. Enter the path to the Node.js binaries and an appropriate name for this installation. The name is referred to by build job definitions.
 
 
@@ -202,7 +218,7 @@ This scenario has been tested with the Grunt plugin versions that are described 
 2. Select your project folder, choose **New > File** and enter `package.json` as name.
 
 3. Copy the content of `package.json` from the appendix and paste it into the new file.
-    
+
 4. Adapt the `package.json` file to your context by entering the following values:
 
     - Name of the package
@@ -214,7 +230,7 @@ This scenario has been tested with the Grunt plugin versions that are described 
 5. Select your project folder, choose **New > File** and enter `Gruntfile.js` as its name.
 
 6. Copy the content of `Gruntfile.js` from the appendix and paste it into the new file.
-   
+
 7. In the Git pane, stage the two new files, enter a commit description and select **Commit and Push**.
 
 
@@ -236,7 +252,7 @@ You may clone the Git repository to your local machine either using SAP Web IDE 
     ```
 
     The `npm install` command installs all needed Node.js modules into the project folder. To avoid versioning them with Git, add a line containing `node_modules*` into the `.gitignore` file.
-    
+
 4. Do some example changes, rerun the Grunt build and finally create a Git commit and push it to Gerrit.
 
 
@@ -267,7 +283,7 @@ We create the job for the CI build on the current `master` snapshot, which is tr
     Mask password parameters               | `checked`
     Provide Node & npm bin/folder to PATH  | `checked`
     Installation                           | `<The node installation name as defined above>`
-    
+
 3. In the **Build** section, select **Add build step > Execute shell**. In the **Command** field, enter the following code:
 
     ```
@@ -282,7 +298,40 @@ We create the job for the CI build on the current `master` snapshot, which is tr
 To test the job, apply a local change on your project, create a Git commit and push it to the `master` branch in Gerrit. After two minutes, the CI build starts running.
 
 
-### 8. Enabling the Jenkins Slave to Perform RFC Calls
+### 8. Creating the Voter Build
+
+We create the voter build as a copy of the CI build and modify the configuration.
+
+1. Open Jenkins, select **New Item** to create a new job for the voter build, enter an appropriate item name (in our example `VO_nw.epm.refapps.ext.shop_master`), and enter `CI_nw.epm.refapps.ext.shop_master` into the filed **Copy existing item**. Select **OK**.
+
+2. In the **Source Code Management** section, change the following configuration entries:
+
+    Field                            | Value
+    :------------------------------- | :----------------------------------------
+    Source Code Management: Ref spec | `refs/changes/*:refs/changes/*`
+    Branches to build                | `$GERRIT_REFSPEC`
+
+3. In the **Build Triggers** section, unselect **Poll SCM** and select **Gerrit event** instead. Enter the following data:
+
+    Field                           | Value
+    :------------------------------ | :----------------------------------------
+    Choose a Server                 | `<the Gerrit server you already have defined in Jenkins>`
+    Add                             | `Patchset Created`
+    Gerrit Project                  | Plain: `<the Gerrit project name>`; Branches Plain: `master`
+
+4. In the **Command** field of the **Build** section, remove the `zip` target from the Grunt call since the creation of the zip file is not needed in the voter build:
+
+    ```
+    npm install
+    grunt --no-color default
+    ```
+
+5. Save.
+
+You may test the voter and the CI build jobs: apply a local change on your project, create a Git commit and push it to Gerrit. The voter build is triggered immediately. Provided, your change does not contain build errors, verify and submit it in Gerrit. After two minutes, the CI build starts running.
+
+
+### 9. Enabling the Jenkins Slave to Perform RFC Calls
 
 The next step of the CI process is uploading the application into the ABAP development system. The technical tool for the communication between the CI server (Jenkins in this example) and the ABAP system is the SAP NetWeaver RFC (remote function call) library, which executes remote-enabled ABAP function modules from remote locations. From inside a Grunt build, the library is used via the Node.js wrapper `node-rfc`. The SAP NetWeaver RFC Library must be installed on the Jenkins slave machine. You can download it from the Software Downloads page of SAP ONE Support Launchpad.
 
@@ -314,17 +363,17 @@ To install the library, ensure the `g++` compiler collection package has first b
 
     > [SAP NW RFC Installation on the node-rfc](http://sap.github.io/node-rfc/install.html)
 
-    
+
 4. Still as user `root`, create a new file `/etc/ld.so.conf.d/nwrfcsdk.conf` with the following content:
 
     ```
     # include nwrfcsdk
     /opt/sap/nwrfcsdk/lib
     ```
-    
+
     The directory you enter must reflect your actual installation directory.
-    
-5. From the command line, run `ldconfig` which sets symbolic links to the dynamic libraries so they can be found at runtime. 
+
+5. From the command line, run `ldconfig` which sets symbolic links to the dynamic libraries so they can be found at runtime.
 
 6. Make sure that the variable `SAPNWRFC_HOME` pointing to the RFC library directory is set in the environment of user `jenkins`. If `bash` is the login shell, we recommend that you add a line similar to the one below into the `.bashrc` file of the user `jenkins`:
 
@@ -333,7 +382,7 @@ To install the library, ensure the `g++` compiler collection package has first b
     ```
 
 
-### 9. Creating a Jenkins Job for RFC Calls
+### 10. Creating a Jenkins Job for RFC Calls
 
 The example uploads the application into the ABAP development system as a separate Jenkins job. This corresponds to the separation of the CI build on one side from ABAP life-cycle management on the other side. Accordingly, create a new file `Gruntfile_ABAP.js` that is separate from the already existing file `Gruntfile.js`. `Gruntfile_ABAP.js` implements `node-rfc` module calls inside Grunt tasks for different purposes: transport request creation, application upload and transport request release. Depending on the scenario (full automation or manual creation of transport requests), the appropriate tasks are passed to the `grunt` command as parameters.
 
@@ -357,7 +406,7 @@ The upload of the zipped application is done by a pull from the ABAP system: it 
     `ABAP_DEVELOPMENT_CLIENT`   | `<empty>`
     `CI_BUILD_NUMBER`           | `<empty>`
     `GIT_COMMIT`                | `<empty>`
-    
+
 3. Continue entering data into the job configuration:
 
     Field                                  | Value
@@ -379,9 +428,9 @@ The upload of the zipped application is done by a pull from the ABAP system: it 
     Project name                           | `CI_nw.epm.refapps.ext.shop_master`
     Which build                            | `Upstream build that triggered this job`
     Artifacts to copy                      | `**`
-    
+
     This simple example uses the Jenkins archive mechanism to pass the zipped application from the CI build job to this one. Also, the Grunt build file is passed this way, which avoids cloning the source code repository.
-    
+
 5. Add a second build step **Execute shell** and enter as **Command**:
 
     ```
@@ -394,17 +443,17 @@ The upload of the zipped application is done by a pull from the ABAP system: it 
     The `node-rfc` library is not available from the public npm repository; you must download it from GitHub. Its installation includes an automatically triggered compilation step against the installed native RFC library. The symbolic link is necessary to ensure that the library just compiled can be found. `Gruntfile_ABAP.js` (created in a subsequent step) contains the definition of the tasks given here. The task `createTransportRequest` creates a transport request in the ABAP system. The connection data comes from the job parameters and the masked credentials that are defined below. The number of the transport request persists in the job workspace in a file named `target/CTS_Data.txt` from where it can be fetched by the other tasks.
 
     The task `uploadToABAP` uploads the application as zip file into the ABAP system. The transport request number is read from the data file.
-    
+
     The task `releaseTransport` releases the transport request, including all the transport tasks inside it.
 
     This example implementation corresponds to the fully automated scenario.
-    
+
 6. Save.
 
 7. In Jenkins, go to **Manage Jenkins > Configure System > Global Passwords**.
 
 8. Define the credentials for accessing the ABAP system to upload the application. Add the names `ABAP_DEVELOPMENT_USER`, and `ABAP_DEVELOPMENT_PASSWORD`, and set their correct values. The values of these variables are masked in the build log.
-    
+
 9. Save.
 
 This configuration disables parallel execution of this job. To avoid conflicts due to locked objects in the transport request, do not enable it.
@@ -432,29 +481,29 @@ The job just defined must be automatically triggered after successful execution 
     ```
     package.json, Gruntfile_ABAP.js, target/*-opt-static-abap.zip
     ```
-        
+
 4. Add a second **Post-build Action** of type **Trigger parametrized build on other projects** and enter the following data:
 
     Field                                  | Value
     :------------------------------------- | :------------------------------------------
     Projects to build                      | `AI_nw.epm.refapps.ext.shop_master`
     Trigger when build is                  | `Stable`
-    
+
     To ensure that the parameters of this job are forwarded to the sequel job, select **Add Parameters > Current build parameters**.
-    
+
     Select **Add Parameters > Predefined Parameters** and enter the following:
-    
+
     ```
     CI_BUILD_NUMBER=$BUILD_NUMBER
     GIT_COMMIT=$GIT_COMMIT
     ```
-    
-    The Git commit ID and the CI build number can then be written by the upload job into the change request text field. 
-    
+
+    The Git commit ID and the CI build number can then be written by the upload job into the change request text field.
+
 5. Save.
 
 
-### 10. Preparing the ABAP Development System
+### 11. Preparing the ABAP Development System
 
 The SAPUI5/Fiori application needs to be assigned to an ABAP package.
 
@@ -463,22 +512,22 @@ The SAPUI5/Fiori application needs to be assigned to an ABAP package.
 2. Enter transaction `se80`, select **Repository Browser**, then select `Package`. Enter an appropriate name. You may also want to create sub-packages.
 
     ![Package creation in the ABAP system](abap-workbench-1.png)
-    
-    Create a transport request by pressing **Create**. In the dialog, enter an appropriate description and **Save**. 
-    
+
+    Create a transport request by pressing **Create**. In the dialog, enter an appropriate description and **Save**.
+
     ![Creation of a transport request](abap-workbench-2.png)
-    
+
 3. Release the transport request. In the object navigator of transaction `se80`, open the **Transport Organizer** tab, select the transport request just created and its contained task. Release both.
 
     ![Release of the transport request](abap-workbench-3.png)
 
 
-### 11. Creating the Grunt File for RFC Calls
+### 12. Creating the Grunt File for RFC Calls
 
-The RFC features are implemented in a second Grunt file named `Gruntfile_ABAP.js`. The main purpose of this file is to wrap the `node-rfc` library as Grunt tasks. Additional documentation for the `node-rfc` library is available using the following links: 
+The RFC features are implemented in a second Grunt file named `Gruntfile_ABAP.js`. The main purpose of this file is to wrap the `node-rfc` library as Grunt tasks. Additional documentation for the `node-rfc` library is available using the following links:
 
 > [Node.js RFC connector Documentation](http://sap.github.io/node-rfc/)  
-> [Node.js RFC connector on GitHub](https://github.com/SAP/node-rfc) 
+> [Node.js RFC connector on GitHub](https://github.com/SAP/node-rfc)
 
 #### Procedure
 
@@ -487,13 +536,13 @@ The RFC features are implemented in a second Grunt file named `Gruntfile_ABAP.js
 2. Select your project folder, choose **New > File** and enter `Gruntfile_ABAP.js` as the file name.
 
 3. Copy the content of `Gruntfile_ABAP.js` from the appendix and paste it into the new file.
-   
+
 4. In the Git pane, stage the new file, enter a commit description and select **Commit and Push**.
 
 Within two minutes, you should see the CI build start. When it finishes, it triggers the ABAP upload build.
 
 
-### 12. Roundtrip through the CI Process
+### 13. Roundtrip through the CI Process
 
 Everything is now in place to execute a roundtrip through the CI process.
 
@@ -505,16 +554,20 @@ The following steps simulate the actions that are performed many times each day 
 
 2. Create a Git commit and push it to Gerrit.
 
-3. Monitor the CI build. Check the result: open transaction `se80` in SAP Logon and navigate to the package. Verify that the application has been uploaded.
+3. Monitor the voter build and open Gerrit to view the voting of Jenkins on your change.
 
-4. Monitor the transports. Open transaction `stms` in SAP Logon and navigate to **Import overview**. Select your target system - the ABAP test system in our example - and display the import queue. A new request entry is waiting to be imported.
+4. Review and submit the change in Gerrit. Within 2 minutes after submission, the CI build starts.
+
+5. Monitor the CI build. Check the result: open transaction `se80` in SAP Logon and navigate to the package. Verify that the application has been uploaded.
+
+6. Monitor the transports. Open transaction `stms` in SAP Logon and navigate to **Import overview**. Select your target system - the ABAP test system in our example - and display the import queue. A new request entry is waiting to be imported.
 
     ![Transaction `stms`: import queue](stms-1.png)
 
 
-### 13. Static Code Analysis with ESLint
+### 14. Static Code Analysis with ESLint
 
-ESLint is a commonly used static code analysis tool for JavaScript. This section discusses, at a very high level, how to integrate ESLint into the Grunt build. 
+ESLint is a commonly used static code analysis tool for JavaScript. This section discusses, at a very high level, how to integrate ESLint into the Grunt build.
 
 > [ESLint Home](http://eslint.org/)
 
@@ -526,11 +579,11 @@ ESLint is a commonly used static code analysis tool for JavaScript. This section
     npm install -g eslint
     eslint --init
     ```
-    
+
     You can find additional information at the following location:
 
     > [ESLint on the npm repository](https://www.npmjs.com/package/eslint)
-    
+
     Depending on the configuration format you have chosen, there is now a new file, named, for example, `.eslintrc.json`. You may later reconfigure this file by switching rules on and off according to your requirements.
 
 2. Open `Gruntfile.js`. Switch on ESLint tests by adding the `eslint` sub task into the `default` task:
@@ -542,7 +595,7 @@ ESLint is a commonly used static code analysis tool for JavaScript. This section
     ```
 
     Verify that the name of the ESLint configuration file is correct:
-    
+
     ```
         "eslint": {
             options: {
@@ -555,7 +608,7 @@ ESLint is a commonly used static code analysis tool for JavaScript. This section
 3. Commit the change and push. Monitor the CI build result.
 
 
-### 14. Code Page Check
+### 15. Code Page Check
 
 Uploading the zipped application to the ABAP system requires you to specify a code page. As the default, the standard code page of SAP GUI is used. However, this may differ from the code pages used by developers who are developing the SAP UI5 or Fiori application. We recommend that you define a standard code page. UTF8 is a good candidate for such a standard, and our example follows this. You may want to choose a different code page that depends on the majority of locales used by developers in your organization. The rule is enforced by the `grunt-encoding` plugin which checks the source files for their correct encoding.
 
@@ -570,7 +623,7 @@ Uploading the zipped application to the ABAP system requires you to specify a co
     ```
 
     Check whether UTF-8 is the correct encoding for your use case. Eventually, change it according to your setup:
-    
+
     ```
         "encoding": {
             options: {
@@ -581,20 +634,19 @@ Uploading the zipped application to the ABAP system requires you to specify a co
 2. Commit the change and push. Monitor the CI build result.
 
 
-### 15. Automated Testing
+### 16. Automated Testing
 
 The examples given above are intended only to give you an impression of how checks can be handled in Grunt. There are many frameworks available for automated unit testing and application testing and the "best" option to use depends on the explicit project setup. We do not provide a specific recommendation. In general, the `Gruntfile.js` will grow with additional checks as your code quality requirements increase.
 
 
+### 17. Alternative Approach Using Manual Transport Request Creation
 
-### 16. Alternative Approach Using Manual Transport Request Creation
-
-This section discusses an alternative process in which transport requests are created manually. It is intended only to give you an idea of how you might adapt the automated process. 
+This section discusses an alternative process in which transport requests are created manually. It is intended only to give you an idea of how you might adapt the automated process.
 
 
 #### Procedure
 
-##### A: Creating the Registration Job for the Transport Request 
+##### A: Creating the Registration Job for the Transport Request
 
 An open transport request must exist in the system, with its number made available to the upload task by a registration job. This registration job is manually triggered by the quality manager or any other responsible person immediately after creating the transport request in the ABAP system. The job takes the transport request number as an argument and stores it in Jenkins to be fetched by the CI build job, which must be modified accordingly.
 
@@ -653,7 +705,7 @@ A transport request must be available such that the application can be uploaded 
 2. Enter the transport organizer via transaction `se09` and press **Create**.
 
     ![Transaction `se09`, entry](se09-1.png)
-    
+
 3. Select **Workbench request**.
 
     ![Transaction `se09`, request creation](se09-2.png)
@@ -661,7 +713,7 @@ A transport request must be available such that the application can be uploaded 
 4. Enter a description and press **Save**.
 
     ![Transaction `se09`, request creation dialog](se09-3.png)
-    
+
 5. Copy the number of the transport request just created.
 
     ![Transaction `se09`, transport request created](se09-4.png)
@@ -669,7 +721,7 @@ A transport request must be available such that the application can be uploaded 
 6. Open the job `TR_nw.epm.refapps.ext.shop_master` in Jenkins. Select **Build with Parameters** and enter the transport request number.
 
     ![Registring the transport request in Jenkins](transport-request-jenkins.png)
-    
+
 7. Select **Build**.
 
 
@@ -693,7 +745,7 @@ At predefined times, for example once a day, the responsible person releases the
 3. In transaction `se09`, select the transport request that was in use before and release it.
 
 
-### 17. (Optional) Using Nexus as the Artifact Repository
+### 18. (Optional) Using Nexus as the Artifact Repository
 
 Due to access restrictions, HTTP requests from the ABAP development system to Jenkins for fetching the application zip file might be disabled. In this situation, you might want to use a Nexus repository to temporarily store the artifact. To do so, modify the jobs for the CI build and the ABAP import accordingly.
 
@@ -711,7 +763,7 @@ Due to access restrictions, HTTP requests from the ABAP development system to Je
     npm install
     node_modules/grunt-cli/bin/grunt --no-color default createZip deployToNexus
     ```
-    
+
 4. In the **Post-build Action > Archive the artifacts** step, remove the zip file entry:
 
     ```
@@ -1037,7 +1089,7 @@ node_modules/grunt-cli/bin/grunt --gruntfile Gruntfile_ABAP.js createTransportRe
 Alternatively, you can execute the upload without first creating a transport request, passing the transport request number as an argument similar to the following:
 
 ```
-node_modules/grunt-cli/bin/grunt --gruntfile Gruntfile_ABAP.js uploadToABAP:<transport request number> 
+node_modules/grunt-cli/bin/grunt --gruntfile Gruntfile_ABAP.js uploadToABAP:<transport request number>
 ```
 
 Implementing the Grunt tasks is straightforward using the `node-rfc` module documentation.

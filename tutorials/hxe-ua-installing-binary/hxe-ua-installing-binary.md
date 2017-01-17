@@ -27,12 +27,9 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 ### Machine Requirements
 Your server will need the following:
 
-
 #### Software
 
 - **Java Runtime Environment** (JRE) 8 or higher. If you are planning to install the SAP HANA 2.0 express edition Download Manager for Windows or Linux, you need the 64-bit JRE. If you are planning to install the platform-independent Download Manager, you can use either the 32- or 64-bit JRE.
-
-- **OpenSSL .0.9.8**
 
 - **SUSE Linux Enterprise Server for SAP 12 SP1**
 
@@ -45,7 +42,6 @@ Your server will need the following:
 - **HDD** 120 GB HDD recommended
 
 - **Cores** 2 cores (4 recommended)
-
 
 ### Download the Installer Files
 
@@ -77,7 +73,7 @@ Your server will need the following:
     > If you are inside a corporate firewall, you will be prompted for your proxy settings. Contact your IT administrator.
 
 5. In Download Manager, in the **Image** pull-down, select **Binary Installer**.
-    ![Download Manager](HXE_download_manager.PNG)
+    ![Download Manager](HXE_download_manager_Jan_06.PNG)
 
 6. Click **Browse** and select a directory where your downloads will be saved.
 
@@ -85,13 +81,13 @@ Your server will need the following:
 
     - **Server only installer** - Downloads **`hxe.tgz`**; the SAP HANA 2.0, express edition server with Application Function Library. **This file is necessary for installing SAP HANA 2.0, express edition**.  
 
-    - **Applications** - Downloads optional package **`hxexsa.tgz`**; XSA, Web IDE, SAP HANA cockpit, and EA Designer. Download this and **`hxe.tgz`** to install those applications.  
+    - **Applications** - Downloads the optional package **`hxexsa.tgz`**; XSA, Web IDE, SAP HANA cockpit, and EA Designer. Download this and **`hxe.tgz`** to install those applications.  
 
     - **Clients** - Downloads a zip file containing four compressed client-tools bundles. Use the client packages to access developed express edition applications from a client PC. See [How to Install the SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html).
 
-        - **`hdb_client_linux.tgz`** - Reduced HANA client for Linux 64 bit. Contains the HANA client package, drivers, and required licenses.
+        - **`hdb_client_linux.tgz`** - Reduced HANA client for Linux 64-bit. Contains the HANA client package, drivers, and required licenses.
 
-        - **`hdb_client_windows.zip`** - Reduced HANA client for Windows 64 bit. Contains the HANA client package, drivers, and required licenses.
+        - **`hdb_client_windows.zip`** - Reduced HANA client for Windows 64-bit. Contains the HANA client package, drivers, and required licenses.
 
         - **`xs.onpremise.runtime.client_linuxx86_64.zip`** - Command-line tools for Linux that enable access to (and control of) the SAP HANA XS advanced run-time environment.
 
@@ -104,6 +100,10 @@ Your server will need the following:
 8. Click the **Download** button.
 
 ## Install SAP HANA 2.0, express edition
+
+>**Note:**
+> You may have to disable your firewall for SAP HANA 2.0, express edition to install successfully.
+
 1. Navigate to the directory where you wish to extract the installation files.
 
 2. Extract the contents of `hxe.tgz`, and `hxexsa.tgz` if you are also installing applications:
@@ -111,8 +111,13 @@ Your server will need the following:
     `tar -xvzf <download_path>/hxe.tgz`
     `tar -xvzf <download_path>/hxexsa.tgz`
 
-    >**Tip**
+    >**Tip:**
     > Run the tar command from the command shell as shown, rather than using a GUI-based extraction tool.
+
+    >**Tip:**
+    > You may have to give these files run permissions. Example:
+
+    > `chmod -R 777 <download_path>/hxe.tgz`
 
 3. Navigate to the directory where you extracted the files and run `./setup_hxe.sh` as the root user:
 
@@ -121,10 +126,8 @@ Your server will need the following:
 
 4. Follow the prompts to configure your installation.
 
-    >**Note**
+    >**Note:**
     > The master password you specify during installation is used for the `<sid>adm`,  `sapadm` OS users, the telemetry technical user, and the SYSTEM user. If you are installing the Applications package, this password is also used for the `XSA_ADMIN`, `XSA_DEV`, and `XSA_SHINE` users.
-
-Installation of SAP HANA 2.0, express edition will take some time. Installation is successful when your command line reads `SAP HANA Express Edition System installed`.
 
 ## Next Steps
 - Start using SAP HANA 2.0, express edition. See tutorial [Start Using SAP HANA, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).

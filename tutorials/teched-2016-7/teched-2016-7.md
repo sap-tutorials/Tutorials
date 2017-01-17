@@ -67,7 +67,7 @@ After the destination is saved, you can click the **Check Connection** button to
 
 [ACCORDION-BEGIN [Step 3: ](Update the neo-app.json)]
 
-First let's _re-open_ the **SAP Web IDE**.
+First, _re-open_ the **SAP Web IDE**.
 
 From your [SAP HANA Cloud Platform cockpit](https://account.hanatrial.ondemand.com/cockpit), in the left-hand navigation bar, select **Services** and then click on the **SAP Web IDE** tile.
 
@@ -75,7 +75,7 @@ In the **SAP Web IDE** overview page, click **Open SAP Web IDE**.
 
 You will need to add the *Google Maps*  destination as a route available for your application by adding it to the `neo-app.json` file which is located under the `te2016` folder.
 
-Open the `neo-app.json` file and located the **routes** array.
+Open the `neo-app.json` file and locate the **routes** array.
 
 You will add this new route to that end of the array.
 
@@ -274,11 +274,22 @@ When you click on an item for more details, your page should look like the image
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 10: ](Commit your edits to Git)]
+
+Once you are satisfied with how your app looks, commit your changes to the Git repository. You can refer to the [previous tutorial](http://www.sap.com/developer/tutorials/teched-2016-5.html) (steps 10-14).
+
+In addition to being a best practice (creating snapshots of your project in Git that you can revert to in case errors are injected later), the edits to the `i18n.properties` file will be available for translation in the next tutorial.
+
+If you complete the optional steps below, you should commit your edits after those steps as well.
+
+[DONE]
+[ACCORDION-END]
+
 ### Optional
 
 Follow the below steps to make your map more unique.
 
-[ACCORDION-BEGIN [Step 10: ](Read about Styled Google Maps API)]
+[ACCORDION-BEGIN [Step 11: ](Read about Styled Google Maps API)]
 You can modify the URL created in the `formatter.js` to change features in the outputted map image.
 
 You can modify the URL to include a new `style` for example by indicating the `feature` to update, the `element` within the feature to modify, and the `color` to change the element to.
@@ -288,7 +299,7 @@ For more information on styling the map with Google, visit their [Styled Maps AP
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Add color to your map)]
+[ACCORDION-BEGIN [Step 12: ](Add color to your map)]
 
 Go to your `formatter.js` file, and modify the URL to include the new style.
 

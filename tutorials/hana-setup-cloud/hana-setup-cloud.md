@@ -52,7 +52,7 @@ This section takes about **10 minutes** to complete, and about **10 to 25 minute
 7. Optionally you can switch to the "Advanced" mode where you will have additional selections to make. Steps 8 through 11 will cover the "advanced" selection.  
 
 8. From the advanced mode the first step is to select your account.  
-	
+
 	![Account Selection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/3.png)
 
 9. Next you will need to give details for this instance such as name and description as well as the network, subnet and whether you want the instance to have a static IP address.
@@ -137,7 +137,7 @@ For more detailed instructions, check out [Connecting to Microsoft Azure with SS
 ### A few notes
 - Some corporate firewalls may not allow SSH to Amazon cloud.  You may have to work with your IT organization to resolve this.
 - User `hdbadm` owns sap software in the Linux instance. To restart the database without restarting the entire Linux instance, switch to user `hdbadm` and perform stop and start operations using the following commands:
-  - `su – hdbadm` To switch user.
+  - `su - hdbadm` To switch user.
   - `./HDB stop` Command to stop HANA DB
   - `./HDB start` Command to start HANA DB
 - The default password of user `hdbadm` is `HANAabcd1234`. You should change this password using the Linux command `passwd hdbadm` after creating your instance. Enter your new password (described above) when HANA Studio prompts you for the `<SID>adm` logon to perform administrative tasks.

@@ -162,7 +162,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 1. Create a file named the `DatasetList.js` file in the `hcppredictiveservicesdemo\webapp\fragment\dataset` directory and add the following code.
 
     This JavaScript file will be used and extended whenever the `DatasetList` fragment is used. It includes the functions used to process the 'Press' events on the controls.
-    
+
     ```javascript
     sap.ui.define([
       "sap/ui/core/mvc/Controller",
@@ -341,4 +341,3 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
 ## Next Steps
   - [Use the synchronous Forecast HCP predictive service from a SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
-

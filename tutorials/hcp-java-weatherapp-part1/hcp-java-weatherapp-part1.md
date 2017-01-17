@@ -5,7 +5,7 @@ tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>inte
 ---
 
 ## Prerequisites  
- - [Getting Started with the SAP HANA Cloud Platform Tools for Java](https://hcp.sap.com/developers/TutorialCatalog/jav100_01_java_setup_eclipse.html)
+ - [Getting Started with the SAP HANA Cloud Platform Tools for Java](http://www.sap.com/developer/tutorials/hcp-java-eclipse-setup.html)
  - Note: JDK 1.6 or 1.7 are required. If you have a later version of Java installed, please install [JDK 1.7](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk7-downloads-1880260.html) and temporarily change your `JAVA_HOME` environment variable to point to it.
 
 ## Next Steps
