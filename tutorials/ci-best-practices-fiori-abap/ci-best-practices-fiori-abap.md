@@ -435,12 +435,10 @@ The upload of the zipped application is done by a pull from the ABAP system: it 
 
     ```
     npm install
-    npm install https://github.com/SAP/node-rfc.git
-    ln -s rfc-v4.4.3.node node_modules/node-rfc/build/linux_x64/rfc
     node_modules/grunt-cli/bin/grunt --no-color --gruntfile Gruntfile_ABAP.js createTransportRequest uploadToABAP releaseTransport
     ```
 
-    The `node-rfc` library is not available from the public npm repository; you must download it from GitHub. Its installation includes an automatically triggered compilation step against the installed native RFC library. The symbolic link is necessary to ensure that the library just compiled can be found. `Gruntfile_ABAP.js` (created in a subsequent step) contains the definition of the tasks given here. The task `createTransportRequest` creates a transport request in the ABAP system. The connection data comes from the job parameters and the masked credentials that are defined below. The number of the transport request persists in the job workspace in a file named `target/CTS_Data.txt` from where it can be fetched by the other tasks.
+    `Gruntfile_ABAP.js` (created in a subsequent step) contains the definition of the tasks given here. The task `createTransportRequest` creates a transport request in the ABAP system. The connection data comes from the job parameters and the masked credentials that are defined below. The number of the transport request persists in the job workspace in a file named `target/CTS_Data.txt` from where it can be fetched by the other tasks.
 
     The task `uploadToABAP` uploads the application as zip file into the ABAP system. The transport request number is read from the data file.
 
@@ -683,8 +681,6 @@ An open transport request must exist in the system, with its number made availab
 
     ```
     npm install
-    npm install https://github.com/SAP/node-rfc.git
-    ln -s rfc-v4.4.3.node node_modules/node-rfc/build/linux_x64/rfc
     node_modules/grunt-cli/bin/grunt --no-color --gruntfile Gruntfile_ABAP.js uploadToABAP
     ```
 
@@ -817,11 +813,12 @@ You will need to enter some data manually, as the name and the version of your p
     "grunt-mkdir": "1.0.0",
     "grunt-nexus-deployer": "0.0.8",
     "grunt-openui5": "0.9.0",
-    "grunt-rename": "0.1.4",
-    "grunt-zip": "0.17.1"
+    "grunt-zip": "0.17.1",
+    "node-rfc": "0.1.11"
   }
 }
 ```
+
 
 #### `Gruntfile.js`
 
