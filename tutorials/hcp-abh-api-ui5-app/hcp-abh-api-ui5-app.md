@@ -5,7 +5,7 @@ tags: [  tutorial>beginner, topic>sapui5, products>sap-hana-cloud-platform, prod
 ---
 
 ## Prerequisites  
- - [Test APIs locally with Curl](http://www.sap.com/developer/tutorials/hcp-abh-test-locally.html)
+ - **Tutorials:** [Test APIs locally with Curl](http://www.sap.com/developer/tutorials/hcp-abh-test-locally.html)
 
 
 ## Next Steps

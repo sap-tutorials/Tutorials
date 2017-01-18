@@ -44,6 +44,9 @@ This will direct you to the homepage for the SAP API Business Hub.
 
 ![SAP API Business Hub homepage](4.png)
 
+You can access the SAP API Business hub through HCP or by just visiting their website by going to [api.sap.com](http://api.sap.com).
+
+
 [DONE]
 [ACCORDION-END]
 
