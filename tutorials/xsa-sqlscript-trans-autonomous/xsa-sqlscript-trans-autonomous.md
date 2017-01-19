@@ -1,7 +1,7 @@
 ---
 title: Using Autonomous Transactions
 description: Leveraging SQLScript in Stored Procedures & User Defined Functions through the use of Autonomous transactions
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
@@ -14,6 +14,8 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ### You will learn  
 The autonomous transaction is independent from the main procedure transaction. Changes made and committed by an autonomous transaction can be stored in persistency regardless of `commit/rollback` of the main transaction. The end of the autonomous transaction block has an implicit commit.
 
+**Please note - This tutorial is based on SPS11**
+
 ### Time to Complete
 **15 Min**.
 
@@ -22,7 +24,7 @@ The autonomous transaction is independent from the main procedure transaction. C
 1. Return to the procedure called `get_product_by_filter`.
 
 	![procedure editor](1.png)
-	
+
 2. Remove the COMMIT statement, and instead wrap the INSERT statement with an AUTONOMOUS TRANSACTION block as shown.
 
 	![insert statement](2.png)
@@ -43,14 +45,14 @@ The autonomous transaction is independent from the main procedure transaction. C
 
 	![new row](6.png)
 
-7. Select the SELECT statement for the `log.messages` table and click "Run" to execute it. 
+7. Select the SELECT statement for the `log.messages` table and click "Run" to execute it.
 
 	![select statement](7.png)
 
 8. Another "Chuck" record was not inserted.  "Chuck Norris's" record was removed by the rollback ("Is that even possible…?")  by using AUTONOMOUS TRANSACTION blocks, the code within is isolated from the rest of the mainline code and is treated as a separate transaction.
 
 	![results](8.png)
-	
+
 
 ## Next Steps
  - [SAP HANA XS Advanced Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)

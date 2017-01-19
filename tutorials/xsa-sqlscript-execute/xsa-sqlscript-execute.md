@@ -1,5 +1,5 @@
 ---
-title: SQL Execute Immediate 
+title: SQL Execute Immediate
 description: Leveraging SQLScript in Stored Procedures & User Defined Functions
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
@@ -13,6 +13,7 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ## Details
 ### You will learn  
 In contrast to executing a string using EXEC, executing the string using EXECUTE IMMEDIATE returns a result set.
+**Please note - This tutorial is based on SPS11**
 
 ### Time to Complete
 **10 Min**.
@@ -22,7 +23,7 @@ In contrast to executing a string using EXEC, executing the string using EXECUTE
 1. Switch back to the procedure editor.
 
     ![procedure editor](1.png)
-    
+
 2. Switch back to the procedure editor. Replace the EXEC keyword with EXECUTE IMMEDIATE
 
     ![execute immediate](2.png)

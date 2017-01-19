@@ -15,7 +15,11 @@ module.exports = function(file, line, callback) {
             new RegExp('\\[(.{1,2}|\\s{1,})\\]\\(.*\\)'), // conventions of alt-text for images are not observed (at least 3 characters, not only spaces)
             new RegExp('\\>###'), // avoid message box typo //(^\s*(\>){1,})\s*(\w){1,}
             new RegExp('\\[.*\]\\(.*\\.exe\\)'), // prohibit suspicious filetypes
-            new RegExp('\\[.*\\]\\(\\)') //\[.*\]\(\)
+            new RegExp('\\[.*\\]\\(\\)'), //\[.*\]\(\)
+            new RegExp('\u201C'), //left double quote
+            new RegExp('\u201D'), //right double quote
+            new RegExp('\u2018'), //left single quote
+            new RegExp('\u2019') //right single quote
         ]
 
         //messages for regular expressions
@@ -27,7 +31,11 @@ module.exports = function(file, line, callback) {
             "conventions of alt-text for link/image are not observed (at least 3 characters, not only spaces)",
             "no message box typo",
             "no suspicious file types in links",
-            "empty URL field"
+            "empty URL field",
+            "curly quotes found. change to straight using quotes key",
+            "curly quotes found. change to straight using quotes key",
+            "curly single quotes found. change to straight using apostrophe key",
+            "curly single quotes found. change to straight using apostrophe key"
         ]
 
         //check line with every regex
