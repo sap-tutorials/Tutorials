@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>abap-development ]
  - Download and install the latest Eclipse IDE from [Eclipse ](http://www.eclipse.org/) site
 
 ## Next Steps
-Display database content and run SQL queries(coming soon)
+[Display database content and run SQL queries](http://www.sap.com/developer/tutorials/abap-display-data-queries.html)
 
 ## Details
 ### You will learn  
@@ -116,4 +116,4 @@ The ABAP Project has been created. It represents a system connection to your cho
 
 
 ## Next Steps
- Display database content and run SQL queries(coming soon)
+ [Display database content and run SQL queries](http://www.sap.com/developer/tutorials/abap-display-data-queries.html)

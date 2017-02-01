@@ -5,11 +5,11 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ---
 
 ## Prerequisites  
- Create an ABAP project in Eclipse(coming soon)
+ [Create an ABAP project in Eclipse](http://www.sap.com/developer/tutorials/abap-create-project.html)
 
 
 ## Next Steps
-Create and run an ABAP application(coming soon)
+[Create and run an ABAP application](http://www.sap.com/developer/tutorials/abap-create-basic-app.html)
 
 
 ## Details
@@ -224,4 +224,4 @@ Check that the output on the right hand side contains the company name. You will
 [ACCORDION-END]
 
 ## Next Steps
- Create and run an ABAP application (coming soon)
+[Create and run an ABAP application](http://www.sap.com/developer/tutorials/abap-create-basic-app.html)
