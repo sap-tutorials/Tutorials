@@ -13,7 +13,9 @@ tags: [  tutorial>beginner, topic>sapui5, products>sap-hana-cloud-platform, prod
 
 ## Details
 ### You will learn  
-In this tutorial, you will build a basic UI5 application that uses data from the SAP Success Factors API, that you test in the SAP Business Hub, to populate a set of tiles. Each User will have a tile that displays relevant information about that person.
+In this tutorial, you will build a basic UI5 application that uses data from the SAP Success Factors API, that you test in the SAP Business Hub, to populate a set of tiles based on the pre-generated code provided in the API Business Hub. Each User will have a tile that displays relevant information about that person.
+
+> It is important to note that in UI5, it is recommended to use an `ODataModel` with an `OData` service, which is what the Success Factors APIs provided in the API Business Hub are, as UI5 will optimize the data parsing for you. This tutorial uses the pre-generated AJAX REST call available in the code snippets section of the API Business Hub. Using an `ODataModel` is the best practice for UI5 applications but it is not covered in this tutorial. You can find more information about `ODataModels` in the [UI5 Demo Kit](https://sapui5.hana.ondemand.com/#docs/guide/6c47b2b39db9404582994070ec3d57a2.html).
 
 ![final output of the UI5 app that includes data from Success Factors](final.png)
 
