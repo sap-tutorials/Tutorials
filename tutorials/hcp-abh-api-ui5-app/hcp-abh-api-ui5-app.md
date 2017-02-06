@@ -5,7 +5,7 @@ tags: [  tutorial>beginner, topic>sapui5, products>sap-hana-cloud-platform, prod
 ---
 
 ## Prerequisites  
- - [Test APIs locally with Curl](http://www.sap.com/developer/tutorials/hcp-abh-test-locally.html)
+ - **Tutorials:** [Test APIs locally with Curl](http://www.sap.com/developer/tutorials/hcp-abh-test-locally.html)
 
 
 ## Next Steps
@@ -64,7 +64,7 @@ onInit: function() {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get Javascript pre-generated code)]
+[ACCORDION-BEGIN [Step 2: ](Get JavaScript pre-generated code)]
 In the [API Business Hub](https://api.sap.com), select **Subscriptions** from the side menu. Once in Subscriptions, select your `TutorialApp` to find your API Package subscriptions. Click the **SAP Success Factors** package.
 
 ![location of subscriptions in API Business Hub](10.png)
@@ -77,9 +77,9 @@ Open the API to find the methods. Click the **Show/Hide** toggle to show the met
 
 ![how to find the API methods and get the pre-generated code](12.png)
 
-Pick the **Javascript** tab and then click the **Copy to Clipboard** button.
+Pick the **JavaScript** tab and then click the **Copy to Clipboard** button.
 
-![Javascript pre-generated code for API call](13.png)
+![JavaScript pre-generated code for API call](13.png)
 
 [DONE]
 [ACCORDION-END]
@@ -105,13 +105,13 @@ Back in your Web IDE, in the controller file, **add the copied code from the API
 
 ![path to run your application](16.png)
 
-You should see a blank application with a title of **Title**. The pre-generated put the results of the API in the developer console. To find the results, take a look at the console. To get there, in your browser menu, go to **View** > **Developer Tools** > **Javascript Console**.
+You should see a blank application with a title of **Title**. The pre-generated put the results of the API in the developer console. To find the results, take a look at the console. To get there, in your browser menu, go to **View** > **Developer Tools** > **JavaScript Console**.
 
 >The path to get to the developer tools might be slightly different on your computer based on your browser and operating system.
 
 ![path to find the developer tools in the browser](17.png)
 
-If you API call was successful, you should see the JSON in your Javascript console.
+If you API call was successful, you should see the JSON in your JavaScript console.
 
 ![image of successful API result](18.png)
 
@@ -130,7 +130,7 @@ Back in your controller, **add in your query parameters to the URL** so that the
 
 **SAVE** your changes and **RUN** your application. Looking in the console, you should only see 5 results with a much smaller data set for each result.
 
-![updated results in the Javascript console](20.png)
+![updated results in the JavaScript console](20.png)
 
 [DONE]
 [ACCORDION-END]

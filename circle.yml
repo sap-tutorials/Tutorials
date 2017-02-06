@@ -2,7 +2,7 @@ machine:
   timezone:
     America/Los_Angeles
   node:
-    version: 4.2.2
+    version: 4.6.1
 dependencies:
   override:
     - npm install --production

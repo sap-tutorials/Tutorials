@@ -27,6 +27,7 @@ Dbspace
 Dbspaces
 DesignStudio
 DevOps
+enablement
 EclipseLink
 Envinject
 ESLint
@@ -56,7 +57,7 @@ Kapsel
 Lifecycle
 Lumira
 macOS
-MacDown
+MobiLink
 MySQL
 NetWeaver
 Node.js
@@ -107,6 +108,7 @@ truststore
 tvOS
 UDFs
 UI5
+UltraLite
 UTC
 util
 VMware

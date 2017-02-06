@@ -153,7 +153,8 @@ If you installed the VM installation package to a Mac or Linux machine, follow t
 1.	On your Mac or Linux machine, start the Terminal application.
 
 2.  Edit the command to look like this:
-    ```
+
+    ```bash
     sudo sh - c 'echo <hxehost IP address>    hxehost >> /etc/hosts'
     ```
 
@@ -163,7 +164,8 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 >**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
 
-1. Check that the `XSEngine` is running. From your host OS (not the VM guest) open a browser and enter:   
+1. Check that the `XSEngine` is running. From your host OS (not the VM guest) open a browser and enter:
+
     ```bash
     http://<hxehost IP address>:8090  
     ```
@@ -183,9 +185,10 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 3. Check for an API endpoint showing `https://hxehost:39030`. If you see this entry, XSA installed correctly.
 
 4. View the list of XSA applications. Enter:  
+
     ```bash
     xs apps
-   ```
+    ```
 
     >**Note**: When you run the `xs apps` command for the first time, it may take 1-2 minutes for the system to return the list of XSA applications.
 
