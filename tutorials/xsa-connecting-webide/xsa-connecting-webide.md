@@ -21,7 +21,7 @@ As of SPS12, all design-time artifacts are stored in Git instead of the HANA dat
 
 Launch the SAP Web IDE for SAP HANA at the following URL in your web browser. The `hostname` of course is the hostname of the SAP HANA Developer Edition that you created in the previous tutorial. Remember for XSA you will need to use the hostname and not the IP address of the server, instructions are found on the server landing page itself.
 
-`http://<hostname>:53075/`
+`http://<hostname>:53075/` or `https://<hostname>:53075/`
 
 User: `WORKSHOP_01`
 Password: `HanaRocks2016` or what you changed it to
@@ -64,7 +64,7 @@ Complete the form, adding a name and description and click on **Create Repositor
 
 [ACCORDION-BEGIN [Step 4: ](Clone the Repository into the Workspace)]
 
-Form the GitHub page, copy the URL of the repository from the **Clone or Download** menu
+From the GitHub page, copy the URL of the repository from the **Clone or Download** menu
 ![Use the Clone or Download button from the right corner](3_1.png)
 
 Return to the SAP Web IDE for SAP HANA. Right click on the Workspace and choose **Clone Repository** from the Git menu.
