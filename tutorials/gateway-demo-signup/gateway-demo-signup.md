@@ -22,7 +22,7 @@ How to create an account on the Gateway Demo System (ES4).  At the end of this t
 
 First we need to create an account on the Gateway System.  The system will use your sap.com profile information to create the account.
 
-Click this link in your browser: [Gateway Registration system](http://register.sapdevcenter.com/).
+Click this link in your browser: [Gateway Registration system](https://supsignformsb03be6e80.us1.hana.ondemand.com/SUPSignForms/).
 
 > **Note:** In order to sign up for an account on the Gateway Demo System, you must have an account on **sap.com**.  To register for an account on sap.com, navigate to [http://sap.com](http://www.sap.com/index.html), and then click on the **person icon** in the upper left hand corner of the web page. Once your account is set up, you can continue to register.
 
