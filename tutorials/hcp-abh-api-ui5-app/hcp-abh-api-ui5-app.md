@@ -13,7 +13,9 @@ tags: [  tutorial>beginner, topic>sapui5, products>sap-hana-cloud-platform, prod
 
 ## Details
 ### You will learn  
-In this tutorial, you will build a basic UI5 application that uses data from the SAP Success Factors API, that you test in the SAP Business Hub, to populate a set of tiles. Each User will have a tile that displays relevant information about that person.
+In this tutorial, you will build a basic UI5 application that uses data from the SAP Success Factors API, that you test in the SAP Business Hub, to populate a set of tiles based on the pre-generated code provided in the API Business Hub. Each User will have a tile that displays relevant information about that person.
+
+> It is important to note that in UI5, it is recommended to use an `ODataModel` with an `OData` service, which is what the Success Factors APIs provided in the API Business Hub are, as UI5 will optimize the data parsing for you. This tutorial uses the pre-generated AJAX REST call available in the code snippets section of the API Business Hub. Using an `ODataModel` is the best practice for UI5 applications but it is not covered in this tutorial. You can find more information about `ODataModels` in the [UI5 Demo Kit](https://sapui5.hana.ondemand.com/#docs/guide/6c47b2b39db9404582994070ec3d57a2.html).
 
 ![final output of the UI5 app that includes data from Success Factors](final.png)
 
@@ -64,7 +66,7 @@ onInit: function() {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get Javascript pre-generated code)]
+[ACCORDION-BEGIN [Step 2: ](Get JavaScript pre-generated code)]
 In the [API Business Hub](https://api.sap.com), select **Subscriptions** from the side menu. Once in Subscriptions, select your `TutorialApp` to find your API Package subscriptions. Click the **SAP Success Factors** package.
 
 ![location of subscriptions in API Business Hub](10.png)
@@ -77,9 +79,9 @@ Open the API to find the methods. Click the **Show/Hide** toggle to show the met
 
 ![how to find the API methods and get the pre-generated code](12.png)
 
-Pick the **Javascript** tab and then click the **Copy to Clipboard** button.
+Pick the **JavaScript** tab and then click the **Copy to Clipboard** button.
 
-![Javascript pre-generated code for API call](13.png)
+![JavaScript pre-generated code for API call](13.png)
 
 [DONE]
 [ACCORDION-END]
@@ -105,13 +107,13 @@ Back in your Web IDE, in the controller file, **add the copied code from the API
 
 ![path to run your application](16.png)
 
-You should see a blank application with a title of **Title**. The pre-generated put the results of the API in the developer console. To find the results, take a look at the console. To get there, in your browser menu, go to **View** > **Developer Tools** > **Javascript Console**.
+You should see a blank application with a title of **Title**. The pre-generated put the results of the API in the developer console. To find the results, take a look at the console. To get there, in your browser menu, go to **View** > **Developer Tools** > **JavaScript Console**.
 
 >The path to get to the developer tools might be slightly different on your computer based on your browser and operating system.
 
 ![path to find the developer tools in the browser](17.png)
 
-If you API call was successful, you should see the JSON in your Javascript console.
+If you API call was successful, you should see the JSON in your JavaScript console.
 
 ![image of successful API result](18.png)
 
@@ -130,7 +132,7 @@ Back in your controller, **add in your query parameters to the URL** so that the
 
 **SAVE** your changes and **RUN** your application. Looking in the console, you should only see 5 results with a much smaller data set for each result.
 
-![updated results in the Javascript console](20.png)
+![updated results in the JavaScript console](20.png)
 
 [DONE]
 [ACCORDION-END]

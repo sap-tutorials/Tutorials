@@ -7,7 +7,7 @@ tags: [products>sap-hana, products>sap-hana\,-express-edition, topic>big-data, t
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA XS Advanced Connect to Web IDE and clone Git Repository](http://www.sap.com/developer/tutorials/xsa-clone-repository-git.html)
+ - **Tutorials:** [SAP HANA XS Advanced Connect to Web IDE and clone Git Repository](http://www.sap.com/developer/tutorials/xsa-connecting-webide.html)
 
 ## Next Steps
  - [SAP HANA XS Advanced Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)
@@ -53,7 +53,7 @@ You will now create the HTML5 module to add basic web based content to your XSA 
 
 6. You need to add `dev602_01-uaa` as a dependent service/resource to the `mta.yaml` file. This is because you have user authentication required to access your application. Save your file. Remember the YAML format is very position sensitive so no tabs and be careful of how many spaces you use.
 
-    ```
+```
   _schema-version: '2.0'
   ID: Test_WebIDE_Repo_SPS12
   version: 0.0.1
@@ -71,7 +71,7 @@ You will now create the HTML5 module to add basic web based content to your XSA 
 	    parameters:
 	      config_path: ./xs-security.json  
 
-    ```
+```
 > What is this `mta.yaml` file for? We have so far created a Multi target Application, that is, an application that will contain different modules, such as an HTML5 module and some database artifacts within a HANA Database Module. This file is a design-time descriptor, that will be used by the platform to create a deployment descriptor. This file contains information related to the application (ID, version, description) as well as resources, modules and parameters that will be deployed and required at runtime.
 
 
@@ -80,16 +80,16 @@ You will now create the HTML5 module to add basic web based content to your XSA 
 
     >REMEMBER: You must also install the LATEST version of XSA command line tools!! These can be downloaded from the SAP HANA Developer Edition directly or via the [SAP Service Marketplace](https://websmp208.sap-ag.de/~SAPIDP/002006825000000234912001E)
 
-
-    ```
-    xs login -a http://<hostname>:30030 -o orgname -s DEV -u WORKSHOP_01 -p HanaRocks2016
-    ```
+```
+xs login -a http://<hostname>:30030 -o orgname -s DEV -u WORKSHOP_01 -p HanaRocks2016
+```
 
     If you have used the CODEJAMMER user then the command would look different.    
 
-    ```
-    xs login -a http://<hostname>:30030 -o orgname -s DEV -u CODEJAMMER -p CodeJam2016
-    ```
+```
+xs login -a http://<hostname>:30030 -o orgname -s DEV -u CODEJAMMER -p CodeJam2016
+
+```
 
     Remember to change `-o hanapm` or `-o HANAExpress` if you are using SAP HANA Express.
 
@@ -102,9 +102,10 @@ You will now create the HTML5 module to add basic web based content to your XSA 
 
 8. To create the UAA service issue the following command:
 
-	```
-	xs create-service xsuaa default dev602_01-uaa
-	```
+```
+xs create-service xsuaa default dev602_01-uaa
+
+```
 
     ![Command line UAA](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-html5-module/6.png)
 
@@ -115,13 +116,14 @@ You will now create the HTML5 module to add basic web based content to your XSA 
 
 10. The HTML5 module is configured via the file `xs-app.json`. In this file we can map the routes to destinations we defined in the `mta.yaml`. We can also set authentication and other options. Go ahead and change the `authenticationMethod` to route.
 
-	```
+```
 	{
 		"welcomeFile": "index.html",
 		"authenticationMethod": "route",
 		"routes": [ ]
 	}
-	```
+
+```
 
 11. Your initial development is done and you are ready to deploy your application onto the XS Advanced server. Highlight the web folder and press Run. This will perform a build, then deploy the service onto the server.  If successful it will open a new browser tab to the default page of this web service.
 
