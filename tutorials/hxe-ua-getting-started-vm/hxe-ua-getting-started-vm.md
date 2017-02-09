@@ -380,7 +380,7 @@ If you are using SAP HANA 2.0, express edition in a language other than English 
 
 1. Log in as `hxeadm`.
 
-2. Navigate to `/hana/shared/<SID>/exe/linuxx86_64/hdb/lexicon`.
+2. Navigate to `/hana/shared/HXE/exe/linuxx86_64/hdb/lexicon`.
 
 3. Extract the contents of `additional_lang.tgz` to this directory:
 
