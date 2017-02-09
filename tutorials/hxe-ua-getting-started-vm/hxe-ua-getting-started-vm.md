@@ -39,7 +39,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 5. When prompted for **New password**, enter a strong password with at least 8 characters. If your password is not strong enough, the system logs you off and you must log in again.  
 
-    >**Tip:** Your strong password should contain numbers, upper and lower case letters, and special characters. It cannot contain systematic values, like strings in ascending or descending numerical or alphabetical order.  Strong password example: **`5342_E#1_GcbaFd!`**  
+    >**Tip:** SAP HANA, express edition uses standard UNIX password rules. Your strong password should contain numbers, upper and lower case letters, and special characters. It cannot contain systematic values, like strings in ascending or descending numerical or alphabetical order. Strong password example: **`5342_E#1_GcbaFd!`**  
 
     >**Note:** Do not use this password example, since it is public and not secure. This example is for illustrative purposes only and must not be used on your system. Define your own strong password.
 
@@ -115,7 +115,7 @@ Verify that all required SAP HANA 2.0, express edition services are running prop
 
 ### Record Your `hxehost` IP Address
 
-Record the `hxehost` IP address so you can reference it later to connect using SAP HANA client tools.
+Record the `hxehost` IP address so you can use it later when connecting to the server using SAP HANA client tools.
 
 1. At the command prompt, enter:  
     ```bash
@@ -177,7 +177,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 2. Go back to your VM. Log in to XSA services:
 
     ```bash
-    xs login -u XSA_ADMIN -p <password> -s SAP
+    xs login -u XSA_ADMIN -p "<password>" -s SAP
     ```  
 
     You specified this password when you were prompted for **HANA database master password** at the beginning of this tutorial.
@@ -193,6 +193,8 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
     >**Note**: When you run the `xs apps` command for the first time, it may take 1-2 minutes for the system to return the list of XSA applications.
 
 5. Check that the application **`webide`** shows **STARTED** in the list of XSA applications , and has 1/1 instances. (If the list shows 0/1 in the instance column, the application is not started.)
+
+    >**Note** Normally it only takes a few minutes for XSA services to start. However. depending on your machine, it can take over 30 minutes for XSA services to begin. If the service doesn't show STARTED and doesn't show 1/1 instances, keep waiting until the service is enabled.
 
     Make a note of the URL for `webide`.
 
@@ -210,6 +212,8 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 8. Go back to your VM. Check that the application **`cockpit-admin-web-app`** shows **STARTED** in the list of XSA applications and has 1/1 instances.
 
+    >**Note** Normally it only takes a few minutes for XSA services to start. However. depending on your machine, it can take over 30 minutes for XSA services to begin. If the service doesn't show STARTED and doesn't show 1/1 instances, keep waiting until the service is enabled.
+
     Make a note of the URL for `cockpit-admin-web-app`.
 
     ![Cockpit URL](hxe_xsa_cockpit.PNG)
@@ -218,6 +222,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 9. Check that the application **`xsa-admin`** shows **STARTED** in the list of XSA applications and has 1/1 instances.
 
+    >**Note** Normally it only takes a few minutes for XSA services to start. However. depending on your machine, it can take over 30 minutes for XSA services to begin. If the service doesn't show STARTED and doesn't show 1/1 instances, keep waiting until the service is enabled.
     Make a note of the URL for `xsa-admin`.
 
     ![XSA_ADMIN URL](hxe_xsa_xsaadmin.PNG)
@@ -375,7 +380,7 @@ If you are using SAP HANA 2.0, express edition in a language other than English 
 
 1. Log in as `hxeadm`.
 
-2. Navigate to `/hana/shared/HXE/exe/linuxx86_64/hdb/lexicon`.
+2. Navigate to `/hana/shared/<SID>/exe/linuxx86_64/hdb/lexicon`.
 
 3. Extract the contents of `additional_lang.tgz` to this directory:
 
