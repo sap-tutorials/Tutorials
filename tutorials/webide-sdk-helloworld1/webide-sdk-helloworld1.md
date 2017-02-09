@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, produ
 
 
 ## Next Steps
- - [Change Code in a Plugin](http://www.sap.com/developer/tutorials/webide-sdk-helloworld2.html)
+ - [Change Code in a Plugin]
 
 
 ## Details
@@ -67,4 +67,4 @@ In the new browser tab, use the plugin by going to the **Tools** menu and select
 
 
 ## Next Steps
-- [Change Code in a Plugin](http://www.sap.com/developer/tutorials/webide-sdk-helloworld2.html)
+- [Change Code in a Plugin]

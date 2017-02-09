@@ -5,11 +5,11 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, produ
 ---
 
 ## Prerequisites  
- - [Create a New Plugin Project](http://www.sap.com/developer/tutorials/webide-sdk-helloworld1.html)
+ - [Create a New Plugin Project]
 
 
 ## Next Steps
-- [Deploying a Feature to SAP Cloud Platform](http://www.sap.com/developer/tutorials/webide-sdk-helloworld3.html)
+- [Deploying a Feature to SAP Cloud Platform]
 
 ## Details
 ### You will learn  
@@ -54,4 +54,4 @@ You can open the same dialog as in the previous tutorial, but now the menu item 
 [ACCORDION-END]
 
 ## Next Steps
-- [Deploying a Feature to SAP Cloud Platform](http://www.sap.com/developer/tutorials/webide-sdk-helloworld3.html)
+- [Deploying a Feature to SAP Cloud Platform]

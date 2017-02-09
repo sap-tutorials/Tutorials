@@ -5,9 +5,9 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, produ
 ---
 
 ## Prerequisites  
- - [Create a New Plugin Project](http://www.sap.com/developer/tutorials/webide-sdk-helloworld1.html)
+ - [Create a New Plugin Project]
  or
- - [Change Code in a Plugin](http://www.sap.com/developer/tutorials/webide-sdk-helloworld2.html)
+ - [Change Code in a Plugin]
  or
  - Create a working plugin.
 
@@ -49,4 +49,4 @@ The application URL is shown under **Active Version**. Save this link for later 
 
 
 ## Next Steps
-- [Creating a Destination for Consuming a Plugin](http://www.sap.com/developer/tutorials/webide-sdk-helloworld4.html)
+- [Creating a Destination for Consuming a Plugin]
