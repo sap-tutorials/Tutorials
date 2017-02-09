@@ -5,7 +5,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, produ
 ---
 
 ## Prerequisites  
- - [Creating a Destination for Consuming a Plugin]
+ - [Creating a Destination for Consuming a Plugin](http://www.sap.com/developer/tutorials/webide-sdk-helloworld4.html)
 
 
 ## Next Steps
