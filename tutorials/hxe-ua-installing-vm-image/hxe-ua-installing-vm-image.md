@@ -13,6 +13,9 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ## Next Steps
  - [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
 
+## Disclaimer
+SAP HANA, express edition is officially supported on SLES and RHEL. SAP Community members have been successful in running SAP HANA, express edition on other Linux operating systems that are not formally supported by SAP, such as Ubuntu, `openSUSE` and Fedora. SAP is not committing to resolving any issues that may arise from running SAP HANA, express edition on these platforms.
+
 ## Details
 ### You will learn  
 How to download the VM image of SAP HANA 2.0, express edition, install the image on your laptop, and get started.
@@ -62,7 +65,7 @@ Check if your machine has the recommended hardware to successfully install and r
 
 - **Hardware `Virtualization`** - (Intel processors only) For Intel processors, `virtualization` is a BIOS setting known as either *Intel `Virtualization` Technology* or *Intel `VT`*. Go to [Determine If Your Processor Supports Intel `Virtualization` Technology](http://www.intel.com/content/www/us/en/support/processors/000005486.html) to determine if your processor is capable of supporting `virtualization`. If `virtualization` is turned off on your `virtualization-capable` machine, consult documentation from your machine vendor on how to enable `virtualization` technology (or Intel `VT`) in the BIOS.
 
-#### Install a `Hypervisor`
+#### Supported `Hypervisors`
 
 Install a supported `hypervisor` on your machine if you don't have one already. `Hypervisors` are software products used for creating and running virtual machines.
 SAP HANA 2.0, express edition has been tested on these `hypervisors`:
@@ -79,11 +82,11 @@ SAP HANA 2.0, express edition has been tested on these `hypervisors`:
 
 This tutorial uses VMware Player.
 
-#### Install VMware Player
+#### Install `Hypervisor`
 
-VMware Player is a `hypervisor` compatible with SAP HANA 2.0, express edition. You can install any supported `hypervisor`, but examples in this tutorial use VMware Player 7.1.
+VMware Player is a `hypervisor` compatible with SAP HANA 2.0, express edition. You can install any supported `hypervisor`, but examples in this tutorial use VMware Player.
 
-1. Download VMware Player from <http://www.vmware.com> and run the installer.  
+1. Download VMware Player from [http://www.vmware.com](http://www.vmware.com/products/player/playerpro-evaluation.html) and run the installer.  
 
 2. Ensure you're downloading the correct version for your machine.  
 
