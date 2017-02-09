@@ -18,6 +18,7 @@ How to prepare an Amazon Web Services account on which you will setup an ABAP on
 **10 Min**.
 
 ---
+[ACCORDION-BEGIN [Step 1: ](Identity and Access Management)]
 
 1. Navigate to <https://aws.amazon.com> and sign up for an AWS account if you don't have one already
 
@@ -27,27 +28,40 @@ How to prepare an Amazon Web Services account on which you will setup an ABAP on
 3. In the AWS console, enter the **Identity and Access Management section (IAM section)**
     ![Identity and Access Management section](iam_section.png)
 
-4. Create an AWS user, e.g. called `sap_cal_user` and download the access key and secret key of this user. These credentials you need to provide later on in the SAP Cloud      Appliance Library in order to be able to access the AWS instance
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Create new AWS user)]
+
+1. Create an AWS user, e.g. called `sap_cal_user` and download the access key and secret key of this user. These credentials you need to provide later on in the SAP Cloud      Appliance Library in order to be able to access the AWS instance
     ![Create AWS user](create_aws_user.png)
 
-5. Enter the user name
+2. Enter the user name
     ![AWS Username](enter_aws_username.png)
 
-6. Download the credentials and click on 'Close'
+3. Download the credentials and click on 'Close'
     ![Download AWS Credentials](download_credentials.png)
 
-7. Create a group, e.g. called `sap_cal_group`
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Create new AWS group)]
+
+1. Create a group, e.g. called `sap_cal_group`
     ![Create group](create_aws_group.png)
 
-8. Select **Administrator Access as Policy Template** for the newly created group. This will assign administrator permissions to the group.
+2. Select **Administrator Access as Policy Template** for the newly created group. This will assign administrator permissions to the group.
     ![Administrator Access Policy Step 1](admin_access_policy.png)
     ![Administrator Access Policy Step 2](admin_access_policy2.png)
 
-9. Assign the newly created AWS user to this group.
+3. Assign the newly created AWS user to this group.
     ![Assign AWS user to group step 1](assign_user_to_group.png)
     ![Assign AWS user to group step 2](assign_user_to_group2.png)
     ![Assign AWS user to group step 3](assign_user_to_group3.png)
 
+[DONE]
+[ACCORDION-END]
 
 ## Next Steps
-[Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud (coming soon)](/developer/tutorials/hcp-prepare-cal-account.html)
+[Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud (coming soon)](/developer/tutorials/sapcp-prepare-cal-account.html)
