@@ -5,11 +5,11 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  
- - [HANA Express Edition - Install Dependencies for Ubuntu on Google Cloud Platform](../hxe_install_dependencies/hxe_install_dependencies.html)
+ - [HANA Express Edition - Install Dependencies for Ubuntu on Google Cloud Platform](http://www.sap.com/developer/tutorials/hxe_install_dependencies.html)
 
 
 ## Next Steps
- - [HANA Express Edition - Execute the Installation script and finish setup](../hxe-gcp-install-hana-express-edition/hxe-gcp-install-hana-express-edition.html)
+ - [HANA Express Edition - Execute the Installation script and finish setup](http://www.sap.com/developer/tutorials/hxe-gcp-install-hana-express-edition.html)
 
 ## Disclaimer
 SAP HANA, express edition (HXE) is officially supported on SLES and RHEL. SAP Community members have been successful in running HXE on other Linux operating systems that are not formally supported by SAP, such as Ubuntu, openSUSE and Fedora. SAP is not committing to resolving any issues that may arise from running HXE on these platforms.
@@ -115,4 +115,4 @@ Look for a line containing variable `local_hostname=hostname -f` and replace it 
 
 
 ## Next Steps
-- [HANA Express Edition - Execute the Installation script and finish setup](../hxe-gcp-install-hana-express-edition/hxe-gcp-install-hana-express-edition.html)
+- [HANA Express Edition - Execute the Installation script and finish setup](http://www.sap.com/developer/tutorials/hxe-gcp-install-hana-express-edition.html)

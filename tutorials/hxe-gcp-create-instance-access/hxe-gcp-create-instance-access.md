@@ -10,8 +10,8 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana\,-exp
 
 
 ## Next Steps
-  - [Install Dependencies for Ubuntu on Google Cloud Platform](../hxe-gcp-install-dependencies/hxe-gcp-install-dependencies.html)
-  - [**OPTIONAL** - Setup PuTTY and WinSCP to access your HANA Express Edition instance on Google Cloud Platform](../hxe-gcp-setup-putty-winscp-windows/hxe-gcp-setup-putty-winscp-windows.html)  
+  - [Install Dependencies for Ubuntu on Google Cloud Platform](http://www.sap.com/developer/tutorials/hxe-gcp-install-dependencies.html)
+  - [**OPTIONAL** - Setup PuTTY and WinSCP to access your HANA Express Edition instance on Google Cloud Platform](http://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)  
 
 ## Disclaimer
 SAP HANA, express edition (HXE) is officially supported on SLES and RHEL. SAP Community members have been successful in running HXE on other Linux operating systems that are not formally supported by SAP, such as Ubuntu, openSUSE and Fedora. SAP is not committing to resolving any issues that may arise from running HXE on these platforms.
@@ -125,7 +125,7 @@ Since this step may take a while depending on your connection, you can move on w
 
 
 ## Optional
-- [Setup Putty and WinSCP in your Windows PC](../hxe-gcp-setup-putty-winscp-windows/hxe-gcp-setup-putty-winscp-windows.html)
+- [Setup Putty and WinSCP in your Windows PC](http://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
 
 ## Next Steps
-- [Install Dependencies in Ubuntu on Google Cloud Platform](../hxe-gcp-install-dependencies/hxe-gcp-install-dependencies.html)
+- [Install Dependencies in Ubuntu on Google Cloud Platform](http://www.sap.com/developer/tutorials/hxe-gcp-install-dependencies.html)

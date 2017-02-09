@@ -5,7 +5,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  
- - [HANA Express Edition - Extract installation Files and Configure Firewall Rules](../hxe-gcp-extract-files-configure-firewall/hxe-gcp-extract-files-configure-firewall.html)
+ - [HANA Express Edition - Extract installation Files and Configure Firewall Rules](http://www.sap.com/developer/tutorials/hxe-gcp-extract-files-configure-firewall.html)
 
 
 ## Next Steps
