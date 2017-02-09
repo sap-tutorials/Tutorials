@@ -23,31 +23,34 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, produ
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Modify i18n strings)]
-1. In the workspace, go to **`coolproject`** | **client** | **`coolplugin`** | **i18n** and double-click the `i18n.properties` file.
-2. Change the following strings:<table><tbody><tr><th>Key</th><th>Value</th></tr>
-<tr><td>`command_helloworld`</td><td>`Welcome`</td></tr>
-<tr><td>`commandgroup_sample`</td><td>`Greetings`</td></tr></tbody></table>  
-3. Click **Save**.
+
+In the workspace, go to **`coolproject` > client > `coolplugin` > i18n** and double-click the `i18n.properties` file, change the following strings and click **Save**.
+
+Old Value              | New Value
+:--------------------- | :-------------
+`command_helloworld`   | `Welcome`
+`commandgroup_sample`  | `Greetings`
+
   ![Modify i18n strings](Step1-i18n.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Change menu by configuring an API service)]
-1. In the workspace, go to **`coolproject`** | **client** | **`coolplugin`** and double-click the `plugin.json` file.
+
+In the workspace, go to **`coolproject` > client > `coolplugin`** and double-click the `plugin.json` file, Change all occurrences of `tools` to `edit` then click **Save**.
+
 ![Modify i18n strings](Step2-pluginjson.png)
-2. Change all occurrences of `tools` to `edit`.                
-3. Click **Save**.
 
 [DONE]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 3: ](Test the plugin)]
-In the Workspace, right-click the **`plugin.json`** file and choose **Run** | **Run As Plugin**.
-SAP Web IDE opens in a new browser tab called **Debug Mode**.
 
-You can open the same dialog as in the previous tutorial, but now the menu item is located in the **Edit** menu and is called **Greetings** | **Welcome**.
+In the Workspace, right-click the **`plugin.json`** file and choose **Run* > Run As Plugin**. SAP Web IDE opens in a new browser tab called **Debug Mode**.
+
+You can open the same dialog as in the previous tutorial, but now the menu item is located in the **Edit** menu and is called **Greetings > Welcome**.
 
 
 [DONE]
