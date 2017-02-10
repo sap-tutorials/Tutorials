@@ -25,6 +25,8 @@ How to start the server, change the default passwords to secure your system, and
 
 For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
 
+[ACCORDION-BEGIN [Step 1: ](Start SAP HANA 2.0, express edition)]
+
 ### Start SAP HANA 2.0, express edition
 
 1. Start the `hypervisor` and power on (or click **Play** on) your express edition VM.
@@ -79,6 +81,10 @@ The configuration script does not change any user passwords in the tenant databa
 
 SAP HANA 2.0, express edition is now running.
 
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Test the Installation)]
+
 ### Test your Server Installation
 
 Verify that all required SAP HANA 2.0, express edition services are running properly.
@@ -113,6 +119,10 @@ Verify that all required SAP HANA 2.0, express edition services are running prop
 
     >**Note**: After restarting, allow sufficient time for all services to start running before proceeding.
 
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Record Your `hxehost` IP Address)]
+
 ### Record Your `hxehost` IP Address
 
 Record the `hxehost` IP address so you can use it later when connecting to the server using SAP HANA client tools.
@@ -127,6 +137,10 @@ Record the `hxehost` IP address so you can use it later when connecting to the s
     In the following example, the IP address is 172.25.86.13:  
 
     ![VM IP address](hxe_ua_ip_address.PNG)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Edit `/etc/hosts` File)]    
 
 ### Edit the `/etc/hosts` File
 
@@ -157,6 +171,10 @@ If you installed the VM installation package to a Mac or Linux machine, follow t
     ```bash
     sudo sh - c 'echo <hxehost IP address>    hxehost >> /etc/hosts'
     ```
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Test XSC, XSA, and Web IDE (Server + Applications Virtual Machine Only))]
 
 ### Test XSC, XSA, and Web IDE (Server + Applications Virtual Machine Only)
 
@@ -259,12 +277,19 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
     - If you made any changes, click  **Save**.
 
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Best Practice: ](Backups)]
+
 ### Best Practices: Backups
 
 Get in the habit of making regular data backups to save your work.
 
 For information on data backup, recovery, and log file growth, see the [SAP HANA 2.0 Administration Guide](http://help.sap.com/saphelp_hanaplatform/helpdata/en/00/0ca1e3486640ef8b884cdf1a050fbb/frameset.htm).
 
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Optional Configuration)]
 
 ### (Optional) Test your Installation using the HANA Eclipse Plugin
 
@@ -388,6 +413,7 @@ If you are using SAP HANA 2.0, express edition in a language other than English 
     tar -xvzf <download_path>/additional_lang.tgz
     ```
 
+[ACCORDION-END]
 
 ## Next Steps
  - [Configure SAP HANA 2.0, express edition Security](http://www.sap.com/developer/tutorials/hxe-ua-configure-security.html)
