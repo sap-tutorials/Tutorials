@@ -9,8 +9,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 
 
 ## Next Steps
- - Intro to SAP HANA Geospatial: Spatial Reference Systems (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Intro to SAP HANA Geospatial: Spatial Reference Systems](http://www.sap.com/developer/tutorials/hana-spatial-intro6-srs.html)
 
 ## Details
 ### You will learn  
@@ -134,5 +133,4 @@ SELECT NEW ST_Point('POINT Z(0 0 0.5)').ST_Buffer(2).ST_CoordDim() from DUMMY;
 
 
 ## Next Steps
-- Intro to SAP HANA Geospatial: Spatial Reference Systems (coming soon), or
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Intro to SAP HANA Geospatial: Spatial Reference Systems](http://www.sap.com/developer/tutorials/hana-spatial-intro6-srs.html)
