@@ -13,6 +13,9 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ## Next Steps
  - [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
 
+## Disclaimer
+SAP HANA, express edition is officially supported on SLES and RHEL. SAP Community members have been successful in running SAP HANA, express edition on other Linux operating systems that are not formally supported by SAP, such as Ubuntu, `openSUSE` and Fedora. SAP is not committing to resolving any issues that may arise from running SAP HANA, express edition on these platforms.
+
 ## Details
 ### You will learn  
 How to download the VM image of SAP HANA 2.0, express edition, install the image on your laptop, and get started.
@@ -22,12 +25,14 @@ How to download the VM image of SAP HANA 2.0, express edition, install the image
 
 ---
 
+>**Note**: This tutorial assumes you are installing SAP HANA 2.0, express edition, not SAP HANA 1.0 SP 12, express edition. If you are installing SP 12, stop reading this tutorial and consult the documentation you downloaded with the SP 12 software package.
+
+[ACCORDION-BEGIN [Pre-Installation Info: ](Before you Begin)]
+
 ### Important Changes in SAP HANA 2.0, express edition
 
 - The instance number has changed from `00` to `90`.
 - Tenant database (HXE) is deactivated on startup to save system resources.
-
->**Note**: This tutorial assumes you are installing SAP HANA 2.0, express edition, not SAP HANA 1.0 SP 12, express edition. If you are installing SP 12, stop reading this tutorial and consult the documentation you downloaded with the SP 12 software package.
 
 ### What is the Virtual Machine Installation Method?
 
@@ -41,6 +46,9 @@ The Virtual Machine method installs:
 
 For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
 
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Pre-Installation Info: ](Requirements)]
 
 ### Machine Requirements
 
@@ -62,7 +70,7 @@ Check if your machine has the recommended hardware to successfully install and r
 
 - **Hardware `Virtualization`** - (Intel processors only) For Intel processors, `virtualization` is a BIOS setting known as either *Intel `Virtualization` Technology* or *Intel `VT`*. Go to [Determine If Your Processor Supports Intel `Virtualization` Technology](http://www.intel.com/content/www/us/en/support/processors/000005486.html) to determine if your processor is capable of supporting `virtualization`. If `virtualization` is turned off on your `virtualization-capable` machine, consult documentation from your machine vendor on how to enable `virtualization` technology (or Intel `VT`) in the BIOS.
 
-#### Install a `Hypervisor`
+#### Supported `Hypervisors`
 
 Install a supported `hypervisor` on your machine if you don't have one already. `Hypervisors` are software products used for creating and running virtual machines.
 SAP HANA 2.0, express edition has been tested on these `hypervisors`:
@@ -79,15 +87,23 @@ SAP HANA 2.0, express edition has been tested on these `hypervisors`:
 
 This tutorial uses VMware Player.
 
-#### Install VMware Player
+[ACCORDION-END]
 
-VMware Player is a `hypervisor` compatible with SAP HANA 2.0, express edition. You can install any supported `hypervisor`, but examples in this tutorial use VMware Player 7.1.
+[ACCORDION-BEGIN [Step 1: ](Install a Hypervisor)]
 
-1. Download VMware Player from <http://www.vmware.com> and run the installer.  
+### Install a `Hypervisor`
+
+VMware Player is a `hypervisor` compatible with SAP HANA 2.0, express edition. You can install any supported `hypervisor`, but examples in this tutorial use VMware Player.
+
+1. Download VMware Player from [http://www.vmware.com](http://www.vmware.com/products/player/playerpro-evaluation.html) and run the installer.  
 
 2. Ensure you're downloading the correct version for your machine.  
 
 3. Register when prompted and follow the setup instructions.
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Download the VM Package)]
 
 ### Download the VM Package using the Download Manager
 
@@ -157,6 +173,10 @@ Register and then use the Download Manager to download a server-only virtual mac
 
     ![Download complete](hxe_download_complete.PNG)
 
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Import the OVA)]
+
 ### Import the OVA into `VMWare` Player
 
 Import the downloaded Open Virtual Appliance (OVA) file (either `hxe.ova` or `hxexsa.ova`) into your `hypervisor` to begin using SAP HANA 2.0, express edition.
@@ -170,6 +190,8 @@ Import the downloaded Open Virtual Appliance (OVA) file (either `hxe.ova` or `hx
 3. Accept the defaults and click **Import**. The VM imports. The import process takes approximately 5 minutes for `hxe.ova`, and 5-10 minutes for `hxexsa.ova`.
 
 4. Power on your VM.
+
+[ACCORDION-END]
 
 ## Next Steps
  - Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)

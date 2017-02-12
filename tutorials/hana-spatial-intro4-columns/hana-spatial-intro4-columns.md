@@ -1,6 +1,6 @@
 ---
 title: Intro to SAP HANA Spatial: Spatial columns
-description: Using columns that support spatial data
+description: Using table columns that support spatial data
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
@@ -8,19 +8,18 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
  - **Tutorials:** [Intro to SAP HANA Spatial: Polygons](http://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
 
 ## Next Steps
- - Intro to SAP HANA Spatial: 3rd dimension (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Intro to SAP HANA Spatial: Z and M coordinates](http://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
 
 ## Details
 ### You will learn  
-In previous tutorials you learned how to create spatial objects and run selected methods to perform some calculations using them. Now it's time to learn how to store, retrieve and process spatial data in SAP HANA tables. You will learn as well about the Spatial type hierarchy.
+In previous tutorials you learned how to create spatial objects and run selected methods to perform some calculations using them. Now it's time to learn how to store, retrieve and process spatial data in SAP HANA tables. In addition, you will learn about the Spatial type hierarchy.
 
 ### Time to Complete
 **10 Min**.
 
 ---
 
-1. For the purpose of this tutorial create a schema `TESTSGEO` or use any other schema in your instance, where you have a privilege for creating tables.
+1. For the purpose of this tutorial, create a schema `TESTSGEO` or use any other schema in your instance, where you have privileges for creating tables.
 
     ```sql
     CREATE SCHEMA TESTSGEO;
@@ -33,9 +32,9 @@ In previous tutorials you learned how to create spatial objects and run selected
 
     >Spatial columns are not supported in SAP HANA row tables.
 
-    Column type `ST_GEOMETRY` supports multidimensional spatial data for the following spatial data types: `ST_CircularString`, `ST_GeometryCollection`, `ST_LineString`, `ST_MultiLineString`, `ST_MultiPoint`, `ST_MultiPolygon`, `ST_Point`, and `ST_Polygon`.
+    The column type `ST_GEOMETRY` supports multidimensional spatial data for the following spatial data types: `ST_CircularString`, `ST_GeometryCollection`, `ST_LineString`, `ST_MultiLineString`, `ST_MultiPoint`, `ST_MultiPolygon`, `ST_Point`, and `ST_Polygon`.
 
-    `ST_GEOMETRY` is a core component of the SQL Multimedia (`SQL/MM`) standard for storing and accessing geospatial data. `SQL-MM` follows object-oriented approach. The term **geometry** means the overarching type for objects such as points, strings, and polygons. The geometry type is the supertype for all supported spatial data types.
+    `ST_GEOMETRY` is a core component of the SQL Multimedia (`SQL/MM`) standard for storing and accessing geospatial data. `SQL-MM` follows an object-oriented approach. **Geometry** is the overarching type for objects such as points, strings, and polygons. The geometry type is the supertype for all supported spatial data types.
 
     The following diagram is taken from official SAP HANA Spatial Reference Guide and illustrates the hierarchy of the `ST_Geometry` data types:
 
@@ -44,10 +43,10 @@ In previous tutorials you learned how to create spatial objects and run selected
     Object-oriented properties of spatial data types:
     - A subtype (or derived type) is more specific than its supertype (or base type).
     - A subtype inherits all methods from all supertypes. For example, `ST_Polygon` values can call methods defined for the `ST_Geometry`.
-    - A value of a subtype can be automatically converted to any of its supertypes. For example, an `ST_Point` value can be used where a `ST_Geometry` parameter is required.
+    - A value of a subtype can be automatically converted to any of its supertypes. For example, an `ST_Point` value can be used where an `ST_Geometry` parameter is required.
     - A column or variable of type `ST_Geometry` can store spatial values of any type.
 
-3. Create and load data into `SpatialShapes` table. This example is taken from SAP HANA Spatial Reference, so that you can run exercises from the official help as well.
+3. Create and load data into the `SpatialShapes` table. This example is taken from the SAP HANA Spatial Reference, so that you can run exercises from the official help as well.
 
     ```sql
     CREATE COLUMN TABLE SpatialShapes
@@ -78,7 +77,7 @@ In previous tutorials you learned how to create spatial objects and run selected
     INSERT INTO SpatialShapes VALUES(15, NEW ST_POLYGON());
     ```
 
-    Check shapes you loaded, including types of geometries and what geometry values represent empty sets.
+    Now, check the shapes you loaded, including types of geometries and which geometry values represent empty sets.
 
     ```sql
     SELECT SHAPEID, SHAPE.ST_asWKT(), SHAPE.ST_GeometryType(), SHAPE.ST_isEmpty()
@@ -101,17 +100,17 @@ In previous tutorials you learned how to create spatial objects and run selected
 
     ![LineString Union](spatial0403.jpg)
 
-    Or if presented graphically
+    Presented graphically, it looks like the diagram below:
 
     ![LineString Union SVG](spatial0404.jpg)
 
-    Note as well spatial predicates used in the query above to select only geometries of `LineString` type and only those not empty.
+    Also note that spatial predicates were used in the query above to select only geometries of type `LineString` type and only those that are not empty.
 
 5. Two more important aggregate methods are
-    - `ST_ConvexHullAggr()` returning the convex hull for all of the geometries in a group, also known as "rubber band",
-    - `ST_EnvelopeAggr()` returning the bounding rectangle for all of the geometries in a group.
+    - `ST_ConvexHullAggr()` which returns the convex hull for all of the geometries in a group, known as "rubber band" method,
+    - `ST_EnvelopeAggr()` which returns the bounding rectangle for all of the geometries in a group.
 
-    Execute this query to best illustrate both types of aggregations. It is using as well set operation method `ST_Union()` returning the geometry value that represents the point set union of two geometries.
+    Execute this query to best illustrate both types of aggregations. It uses the set operation method `ST_Union()` to return the geometry value that represents the point set union of two geometries.
 
     ```sql
     SELECT
@@ -121,11 +120,11 @@ In previous tutorials you learned how to create spatial objects and run selected
     WHERE SHAPE.ST_isEmpty()=0 and SHAPE.ST_GeometryType() = 'ST_LineString';
     ```
 
-    Please note the use of `ST_Boundary()` method to convert a polygon (which is a result of the aggregation) into just a curve surrounding the shape, so that combined geometries are all visible.
+    Please note the use of the `ST_Boundary()` method to convert a polygon (which is a result of the aggregation) into just a curve surrounding the shape, so that the combined geometries are all visible.
 
     ![Other type of aggregations](spatial0405.jpg)
 
-    Seeing is believing, so here are the graphical outputs (with slightly modified SVG to draw shapes of aggregates in red)
+    Seeing is believing, so here are the graphical outputs (with slightly modified SVG to draw the shapes of the aggregates in red)
 
     The result of `ST_ConvexHullAggr()`:
 
@@ -136,8 +135,7 @@ In previous tutorials you learned how to create spatial objects and run selected
     ![result of ST_EnvelopeAggr()](spatial0407.jpg)
 
 ### Optional
-- Check SAP HANA Spatial Reference at http://help.sap.com/hana_platform for the complete list of objects and methods
+- Check the SAP HANA Spatial Reference at http://help.sap.com/hana_platform for the complete list of objects and methods
 
 ## Next Steps
- - Intro to SAP HANA Spatial: 3rd dimension (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Intro to SAP HANA Spatial: Z and M coordinates](http://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
