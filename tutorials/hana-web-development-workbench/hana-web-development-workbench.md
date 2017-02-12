@@ -5,9 +5,9 @@ tags: [ products>sap-hana, products>sap-hana-cloud-platform, tutorial>beginner]
 ---
 
 ## Prerequisites  
-You need a HANA account. Pick one of the following:
+You need a HANA account or server. Pick one of the following:
 - [Get a free account in HANA Cloud Platform](https://account.hanatrial.ondemand.com/register)
-- [Set up an account on Amazon AWS or Microsoft Azure](http://www.sap.com/developer/tutorials/hana-setup-cloud.html)
+- [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html)
 
 ## Next Steps
 [Access your first Data from a native SAP HANA Application](http://www.sap.com/developer/tutorials/hana-data-access-authorizations.html)
@@ -21,11 +21,9 @@ You need a HANA account. Pick one of the following:
 ### Time to Compete
 Beginners might take **10-15 minutes** to execute this tutorial.
 
-> ### Information
->The full application built in this tutorial can be found [in this GitHub repository](https://github.com/SAP/cloud-hana-helloworld/).
+[ACCORDION-BEGIN [Step 1: Using HANA Cloud Platform](Using HANA Cloud Platform)]
 
-### Using HANA Cloud Platform
-Each Trial HANA instance comes with the HANA Web-based Development Workbench. The workbench allows you to develop on HANA without the need to set up a local development environment.
+Each Trial HANA MDC instance comes with the HANA Web-based Development Workbench. The workbench allows you to develop on HANA without the need to set up a local development environment.
 
 Login to the [HANA Cloud Cockpit](https://account.hanatrial.ondemand.com/cockpit) with your free developer edition account.
 Choose Databases & Schemas. You will need to create your new instance. To do this simply give it a name, enable web access and of course give a password. This password you will need to remember as it is the password for your SYSTEM user and how you will be able to access the server.
@@ -42,7 +40,7 @@ Remember the instance runs for a limited time, so if you have to come back later
 
 Just click start to restart it. Also note it's only valid for 30 days.
 
-#### 2 more steps before we hit the editor
+**Couple of more steps before we hit the editor**
 
 You'll need to click on the "Admin Cockpit" first to trigger the authorizations you will need going forward.
 
@@ -70,15 +68,16 @@ With that completed we can now log into the "SAP HANA Web Based Development Work
 
 You are now in the Editor and can immediately start developing in HANA.
 
-#### Using HANA on Amazon AWS or Microsoft Azure
+[ACCORDION-END]
 
-If you choose the on-premise / stand alone server approach you will need to access the web page of your HANA server using the IP address of your server. Enter the address `http://XXX.XXX.XXX.XXX` to the address bar of your browser. (Replace `XXX.XXX.XXX.XXX` with the IP address of your server.) This is under the assumption that you have a instance of the [SAP HANA Developer Edition](http://www.sap.com/developer/tutorials/hana-setup-cloud.html)
+[ACCORDION-BEGIN [Step 2: Using SAP HANA, express edition](Using SAP HANA, express edition)]
 
-On the web page, there is a link for **Web-Based Development Workbench**. Click this link to start the workbench.
+For HXE enter the address `http://hxehost:8090/sap/hana/ide/` in to the address bar of your browser. This works provided you have the `Server + Applications` version or if you followed these [steps](https://blogs.sap.com/2016/10/28/enhancing-hxe-server-image/) to add the XSC tooling to your `Server Only` instance.
 
-From this point differences in the tutorials are around the initial starting point, in the SAP HANA Developer Edition the user `CODEJAMMER` has a package called `CODEJAMMER` which you would then place the initial package in the next section under.
+[ACCORDION-END]
 
-### Create Package for your Application
+[ACCORDION-BEGIN [Step 3: Create Package for your Application](Create Package for your Application)]
+
 The first step to start developing a SAP HANA application with SAP HANA Web-based Development Workbench is to create a new package for the application.
 
 Here we will create a package called `codejam`, Right-Click on the content folder on the left, and enter the package details.
@@ -91,7 +90,10 @@ Now you have a package that is waiting for your code, now we will Right-Click on
 
 This step will generate 3 files, the `.xsapp`, `.xsaccess` and an `index.html`.
 
-### Now Create the Application
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: Now Create the Application](Now Create the Application)]
+
 Now is the time to actually create some application code. In SAP HANA XSC application code essentially is JavaScript code provided in `.xsjs` files. Now such a file will be created.
 
 Open the context menu of the `codejam` package by right-clicking on the name and choose Create File. Enter `mylibrary.xsjs` as file name and save with Enter:
@@ -113,7 +115,10 @@ Save the file using the Save button or by pressing `ctrl+s`. Again, the successf
 
 ![Save file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/16.png)
 
-### Deploy, Run and Test the Application
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: Deploy, Run and Test the Application](Deploy, Run and Test the Application)]
+
 Now the application is ready to be tested. As you are developing with the SAP HANA Web-based Development Workbench the application is already deployed and activated to your SAP HANA Trial Instance. So you can immediately continue to test it:
 
 Select the `mylibrary.xsjs` file to enable the Run on Server in the toolbar. Then click the Run on Server button:
@@ -124,7 +129,7 @@ The application will open in your browser and greet you with the beginning of yo
 
 Congratulations: You just have your first own native SAP HANA application running on SAP HANA Cloud Platform!
 
+[ACCORDION-END]
+
 ### Related information
 [SAP HANA Development Information - official documentation](http://help.sap.com/hana_platform#section6)
-
-*This tutorial is part of the SAP HANA and SAP HANA Cloud Platform tutorials set.*
