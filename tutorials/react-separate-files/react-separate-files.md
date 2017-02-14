@@ -222,8 +222,8 @@ Your project should now contain three files.  Here is the complete text of each 
 
     		<script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
         	<script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
-        	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
         	<script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.30.5/react-bootstrap.js"></script>
+        	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
 
     		<script src="/js/main.js" type="text/babel"></script>
     		<link href="/css/main.css" rel="stylesheet">
