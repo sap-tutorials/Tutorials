@@ -5,7 +5,7 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ---
 
 ## Prerequisites  
-Create an ABAP project in Eclipse (coming soon)
+[Create an ABAP project in Eclipse](http://www.sap.com/developer/tutorials/abap-create-project.html)
 
 
 ## Next Steps

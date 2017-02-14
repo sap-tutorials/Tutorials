@@ -65,12 +65,12 @@ SYSTEM is the database `superuser` and is not intended for day-to-day activities
 
 2. Create a new admin user with the USER ADMIN system privilege:
 
-    `/usr/sap/HXE/HDB90/exe/hdbsql -i 90 -d SystemDB -u SYSTEM -p <SYSTEM-password> "CREATE USER <admin-username> PASSWORD <admin-password> NO FORCE_FIRST_PASSWORD_CHANGE;"`
-    `/usr/sap/HXE/HDB90/exe/hdbsql -i 90 -d SystemDB -u SYSTEM -p <SYSTEM-password> "GRANT USER ADMIN TO <admin-username> WITH ADMIN OPTION;"`
+    `/usr/sap/HXE/HDB90/exe/hdbsql -i 90 -d SystemDB -u SYSTEM -p "<SYSTEM-password>" "CREATE USER <admin-username> PASSWORD <admin-password> NO FORCE_FIRST_PASSWORD_CHANGE;"`
+    `/usr/sap/HXE/HDB90/exe/hdbsql -i 90 -d SystemDB -u SYSTEM -p "<SYSTEM-password>" "GRANT USER ADMIN TO <admin-username> WITH ADMIN OPTION;"`
 
 2. Use the new admin user to deactivate the SYSTEM user:
 
-    `/usr/sap/HXE/HDB90/exe/hdbsql -i 90 -d SystemDB -u <admin-username> -p <admin-password> "ALTER USER SYSTEM DEACTIVATE USER NOW;"`
+    `/usr/sap/HXE/HDB90/exe/hdbsql -i 90 -d SystemDB -u <admin-username> -p "<admin-password>" "ALTER USER SYSTEM DEACTIVATE USER NOW;"`
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

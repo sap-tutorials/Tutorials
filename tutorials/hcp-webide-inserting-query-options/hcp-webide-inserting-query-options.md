@@ -68,7 +68,7 @@ The previous tutorial introduced a number of OData query options that developers
     this._oView = this.getView();
     ```
 
-    ![_oView variable](mob3-5_7.png)
+    ![oView variable](mob3-5_7.png)
 
 8. At the bottom on the `onInit` function, insert the code snippet below which adds an `attachAfterRendering` function which defines the parameters for the [UI5 Filter](https://openui5.hana.ondemand.com/docs/api/symbols/sap.ui.model.Filter.html), creates a new `Filter` object, gets the list binding and applies the filter:
 
