@@ -1,11 +1,11 @@
 ---
 title: HANA Express Edition - Extract installation Files and Configure Firewall Rules
-description: This is tthe tutorialThis tutorial will guide you through the extraction process of the installation files for HANA Express Edition. You will also enter the necessary firewall rules to enable traffic into the correct ports.
+description: This tutorial will guide you through the extraction process of the installation files for HANA Express Edition. You will also enter the necessary firewall rules to enable traffic into the correct ports.
 tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  
- - [HANA Express Edition - Install Dependencies for Ubuntu on Google Cloud Platform](http://www.sap.com/developer/tutorials/hxe_install_dependencies.html)
+ - [HANA Express Edition - Install Dependencies for Ubuntu on Google Cloud Platform](http://www.sap.com/developer/tutorials/hxe-gcp-install-dependencies.html)
 
 
 ## Next Steps
@@ -68,13 +68,13 @@ gcloud compute firewall-rules create rule8 --allow tcp:50000-50050
 If you are installing the XS Advanced tools, you also need to add the following rules:
 
 ```
-gcloud compute firewall-rules create rule8 --allow tcp:38326
-gcloud compute firewall-rules create rule9 --allow tcp:39228
-gcloud compute firewall-rules create rule10 --allow tcp:49000-49100
-gcloud compute firewall-rules create rule11 --allow tcp:55752
-gcloud compute firewall-rules create rule12 --allow tcp:53001-53100
-gcloud compute firewall-rules create rule13 --allow tcp:51000-51100
-gcloud compute firewall-rules create rule14 --allow tcp:55742
+gcloud compute firewall-rules create rule9 --allow tcp:38326
+gcloud compute firewall-rules create rule10 --allow tcp:39228
+gcloud compute firewall-rules create rule11 --allow tcp:49000-49100
+gcloud compute firewall-rules create rule12 --allow tcp:55752
+gcloud compute firewall-rules create rule13 --allow tcp:53001-53100
+gcloud compute firewall-rules create rule14 --allow tcp:51000-51100
+gcloud compute firewall-rules create rule15 --allow tcp:55742
 ```
 
 You can confirm all the rules have been processed using command

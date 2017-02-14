@@ -198,4 +198,4 @@ For example:
 
 
 ## Next Steps
-- [Install Dependencies for Ubuntu on Google Cloud Platform](http://www.sap.com/developer/tutorials/hxe-gcp-install-dependencies.html)
+- [Extract Files and Configure Firewall](http://www.sap.com/developer/tutorials/hxe-gcp-extract-files-configure-firewall.html)

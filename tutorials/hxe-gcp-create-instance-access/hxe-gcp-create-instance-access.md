@@ -108,6 +108,13 @@ The web SSH client is a good option for quick and background tasks, as it is int
 
 For longer tasks such as file uploads or installations, use a client with a good handling of network micro-cuts.
 
+Just in case, run the following command to make sure your `gcloud` console is updated:
+
+```
+gcloud components update
+
+```
+
 [DONE]
 [ACCORDION-END]
 
