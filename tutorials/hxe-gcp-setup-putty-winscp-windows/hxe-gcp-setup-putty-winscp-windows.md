@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  
- - [Create and Access Instance on Google Cloud Platform - Server + XS Advanced](../hxe-gcp-create-instance-access/hxe-gcp-create-instance-access.html)
+ - [Create and Access Instance on Google Cloud Platform - Server + XS Advanced](http://www.sap.com/developer/tutorials/hxe-gcp-create-instance-access.html)
 
 
 ## Next Steps
- -  [Install Dependencies for Ubuntu on Google Cloud Platform](../hxe-gcp-install-dependencies/hxe-gcp-install-dependencies.html)
+ -  [Install Dependencies for Ubuntu on Google Cloud Platform](http://www.sap.com/developer/tutorials/hxe-gcp-install-dependencies.html)
 
 ## Disclaimer
 SAP HANA, express edition (HXE) is officially supported on SLES and RHEL. SAP Community members have been successful in running HXE on other Linux operating systems that are not formally supported by SAP, such as Ubuntu, openSUSE and Fedora. SAP is not committing to resolving any issues that may arise from running HXE on these platforms.
@@ -84,4 +84,4 @@ Browse for the `.ppk` file WinSCP generated in the previous step. Alternatively,
 
 
 ## Next Steps
-- [Install Dependencies for Ubuntu on Google Cloud Platform](../hxe-gcp-install-dependencies/hxe-gcp-install-dependencies.html)
+- [Install Dependencies for Ubuntu on Google Cloud Platform](http://www.sap.com/developer/tutorials/hxe-gcp-install-dependencies.html)

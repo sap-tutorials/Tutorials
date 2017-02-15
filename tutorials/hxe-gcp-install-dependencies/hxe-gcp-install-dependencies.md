@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  
- - [HANA Express Edition - Create and Access Instance on Google Cloud Platform - Server + XS Advanced](../hxe-gcp-create-instance-access/hxe-gcp-create-instance-access.html)
+ - [HANA Express Edition - Create and Access Instance on Google Cloud Platform - Server + XS Advanced](http://www.sap.com/developer/tutorials/hxe-gcp-create-instance-access.html)
 
 ## Next Steps
- - [HANA Express Edition - Extract installation Files and Configure Firewall Rules](../hxe-gcp-extract-files-configure-firewall/hxe-gcp-extract-files-configure-firewall.html)
+ - [HANA Express Edition - Extract installation Files and Configure Firewall Rules](http://www.sap.com/developer/tutorials/hxe-gcp-extract-files-configure-firewall.html)
 
 ## Disclaimer
 SAP HANA, express edition (HXE) is officially supported on SLES and RHEL. SAP Community members have been successful in running HXE on other Linux operating systems that are not formally supported by SAP, such as Ubuntu, openSUSE and Fedora. SAP is not committing to resolving any issues that may arise from running HXE on these platforms.
@@ -198,4 +198,4 @@ For example:
 
 
 ## Next Steps
-- [Install Dependencies for Ubuntu on Google Cloud Platform](../hxe-gcp-install-dependencies/hxe-gcp-install-dependencies.html)
+- [Extract Files and Configure Firewall](http://www.sap.com/developer/tutorials/hxe-gcp-extract-files-configure-firewall.html)
