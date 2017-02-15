@@ -4,7 +4,7 @@ description: Step #4: Move the CSS and JavaScript in to separate files on the we
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner 
+ - **Proficiency:** Beginner
  - **Tutorial:** [Step 3 - Create the Bootstrap Template](http://www.sap.com/developer/tutorials/react-add-javascript.html)
 
 ## Next Steps
@@ -38,9 +38,9 @@ First, let's move the JavaScript out of our application, and in to a proper plac
 1.  Right click on the folder `HelloReact` and select **New** --> **Folder**
 
     ![Add new JS folder](1-1.png)
-    
+
 2.  Name the folder `js`, and click **OK**
-    
+
     ![Name the folder js](1-2.png)
 
 3.  Next, right click on the new `js` folder, and select **New** --> **File**
@@ -78,7 +78,7 @@ First, let's move the JavaScript out of our application, and in to a proper plac
     		);
         }
     });
-    
+
     var ProductList = React.createClass({
     	render: function() {
     		return (
@@ -88,9 +88,9 @@ First, let's move the JavaScript out of our application, and in to a proper plac
     				<ListBox />
     			</div>
     		)
-    	}	
+    	}
     });
-    
+
     ReactDOM.render(
         <ProductList />,
         document.getElementById('product-list')
@@ -112,13 +112,13 @@ First, let's move the JavaScript out of our application, and in to a proper plac
 7.  Insert a link to the new file, so that the `index.html` file loads your new JavaScript file.  
 
     Under the `</style>` tag, add the following HTML
-    
+
     ```html
     <script src="/js/main.js" type="text/babel"></script>
     ```
 
     ![Link the new JavaScript file to the HTML file](1-7.png)
-    
+
 8.  Run your application.  The page should look exactly the same, as the JavaScript now runs from an external file.
 
     ![Run - no changes should appear](no-changes.png)
@@ -133,7 +133,7 @@ Follow the same procedures to move the CSS file
 1.  Right click on the folder `HelloReact` and select **New** --> **Folder**
 
     ![Add a new CSS folder](2-1.png)
-    
+
 2.  Name the folder `css`, and click **OK**
 
     ![Name the folder css](2-2.png)
@@ -153,20 +153,20 @@ Follow the same procedures to move the CSS file
         display: flex;
         align-items: baseline;
     }
-    
+
     .vertical-align .top {
         align-self: baseline;
     }
-    
+
     .vertical-align .center {
         align-self: center;
     }
-    
+
     .available {
         color: green;
         font-weight: bold;
     }
-    
+
     .discontinued {
         color: red;
         font-weight: bold;
@@ -182,13 +182,13 @@ Follow the same procedures to move the CSS file
 7.  Insert a link to the new file, so that the `index.html` file loads your new JavaScript file.  
 
     Under the last `<script>` tag (the one you just inserted), add the following HTML:
-    
+
     ```html
     <link href="/css/main.css" rel="stylesheet">
     ```
 
     ![Link the CSS file to the HTML file](2-7.png)
-    
+
 8.  Run your application.  The page should look exactly the same, as the CSS file now loads from an external file.
 
     ![Run - no changes should appear](no-changes.png)
@@ -207,38 +207,39 @@ Your project should now contain three files.  Here is the complete text of each 
     <html lang="en">
     	<head>
     		<meta charset="utf-8">
-    		
-    		<script src="https://code.jquery.com/jquery-3.1.0.min.js" 
-    			integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" 
+
+    		<script src="https://code.jquery.com/jquery-3.1.0.min.js"
+    			integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
     			crossorigin="anonymous"></script>
-    			
-    		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-    			rel="stylesheet" 
+
+    		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    			rel="stylesheet"
     			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     			crossorigin="anonymous">
-    		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
-    			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+    		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+    			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     			crossorigin="anonymous"></script>
-    			
+
     		<script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
         	<script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+        	<script src="https://cdnjs.cloudflare.com/ajax/libs/react-bootstrap/0.30.5/react-bootstrap.js"></script>
         	<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
-    			
+
     		<script src="/js/main.js" type="text/babel"></script>
     		<link href="/css/main.css" rel="stylesheet">
-    
+
     	</head>
-    	
+
     	<body>
-    		
+
     	    <div class="container">
     			<div id="product-list"></div>
     		</div>
-    
+
     	</body>
     </html>
     ```
-   
+
 -  `main.css`
 
     ```css
@@ -262,7 +263,7 @@ Your project should now contain three files.  Here is the complete text of each 
     }
     ```
 
--  `main.js` 
+-  `main.js`
 
     ```javascript
     var ListBox = React.createClass({
@@ -289,7 +290,7 @@ Your project should now contain three files.  Here is the complete text of each 
     		);
         }
     });
-    
+
     var ProductList = React.createClass({
     	render: function() {
     		return (
@@ -299,9 +300,9 @@ Your project should now contain three files.  Here is the complete text of each 
     				<ListBox />
     			</div>
     		)
-    	}	
+    	}
     });
-    
+
     ReactDOM.render(
         <ProductList />,
         document.getElementById('product-list')
