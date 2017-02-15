@@ -26,8 +26,8 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 For SAP HANA Extended Application Services (XS) classic model (XSC) development you can use either the SAP HANA Studio or the SAP HANA Development Workbench. For more details about installing and getting started, please refer to the product documentation.
 
-> [SAP HANA Developer Guide for SAP HANA Studio](http://help.sap.com/hana/SAP_HANA_Developer_Guide_for_SAP_HANA_Studio_en.pdf)  
-> [SAP HANA Developer Guide for SAP HANA Web Workbench](http://help.sap.com/hana/SAP_HANA_Developer_Guide_for_SAP_HANA_Web_Workbench_en.pdf)
+> [SAP HANA Developer Guide for SAP HANA Studio](https://help.sap.com/hana/SAP_HANA_Developer_Guide_for_SAP_HANA_Studio_en.pdf)  
+> [SAP HANA Developer Guide for SAP HANA Web Workbench](https://help.sap.com/hana/SAP_HANA_Developer_Guide_for_SAP_HANA_Web_Workbench_en.pdf)
 
 A developer working on an SAP HANA XSC application works directly in the SAP HANA repository using the SAP HANA Studio. Design-time objects are modified first as an inactive version in the SAP HANA repository, then activated afterwards. As a best practice, we recommend that developers on large teams use their own SAP HANA systems for development to avoid conflicts with other developers. For a CI-based process, changes in the SAP HANA sources are stored in Git; this is where developers push their changes to.
 
@@ -71,9 +71,9 @@ The scenario discussed throughout this chapter is only an example intended to de
 - Install SAP HANA Systems (instance for development, the CI process, test and productive system)
 - Install SAP HANA Studio on your local PC
 
-> SAP Help Portal: http://help.sap.com/saphelp_hanaplatform/helpdata/en/8c/d2fc57041f437e9dc95f07a5e48e4d/content.htm  
-> SAP HANA Server Installation Guide: http://help.sap.com/hana/SAP_HANA_Server_Installation_Guide_en.pdf  
-> SAP HANA Studio Installation Guide: http://help.sap.com/hana/SAP_HANA_Studio_Installation_Update_Guide_en.pdf
+> SAP Help Portal: https://help.sap.com/saphelp_hanaplatform/helpdata/en/8c/d2fc57041f437e9dc95f07a5e48e4d/content.htm  
+> SAP HANA Server Installation Guide: https://help.sap.com/hana/SAP_HANA_Server_Installation_Guide_en.pdf  
+> SAP HANA Studio Installation Guide: https://help.sap.com/hana/SAP_HANA_Studio_Installation_Update_Guide_en.pdf
 
 
 ### Preparing the SAP HANA systems
@@ -131,9 +131,9 @@ The SAP HANA Client installation contains the following command line tools:
 
 For additional information enter the tool name on the command line followed by the argument `help`.
 
-> SAP HANA Client Installation and Update Guide: http://help.sap.com/hana/sap_hana_client_installation_update_guide_en.pdf  
+> SAP HANA Client Installation and Update Guide: https://help.sap.com/hana/sap_hana_client_installation_update_guide_en.pdf  
 > `hdbalm` documentation in the SAP Help Portal: https://help.sap.com/saphelp_hanaplatform/helpdata/en/b9/2b9bdc457c42ba920e3ed6b09e4463/content.htm  
-> `hdbuserstore` documentation in the SAP Help Portal: http://help.sap.com/saphelp_hanaplatform/helpdata/en/dd/95ac9dbb571014a7d7f0234d762fdb/content.htm
+> `hdbuserstore` documentation in the SAP Help Portal: https://help.sap.com/saphelp_hanaplatform/helpdata/en/dd/95ac9dbb571014a7d7f0234d762fdb/content.htm
 
 
 #### Procedure
@@ -236,7 +236,7 @@ The steps below are preparation steps that bring the `SHINE` sources into a Gerr
 
 For general information about working with the SAP HANA Studio, please use the product documentation:
 
-> [SAP HANA Developer Guide for SAP HANA Studio](http://help.sap.com/hana/SAP_HANA_Developer_Guide_for_SAP_HANA_Studio_en.pdf)  
+> [SAP HANA Developer Guide for SAP HANA Studio](https://help.sap.com/hana/SAP_HANA_Developer_Guide_for_SAP_HANA_Studio_en.pdf)  
 
 When developers check out sources from the SAP HANA repository to a local workspace to store them in Git, they must ensure that all sources have already been activated in the SAP HANA repository of the development system. The checkout mechanism always uses the newest version, which might be either an active or inactive one. Checking out partially activated sources leads to an inconsistent source state in Git.
 

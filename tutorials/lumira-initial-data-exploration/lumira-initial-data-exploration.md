@@ -27,7 +27,7 @@ How to understand the dataset that has been added to SAP BusinessObjects Lumira.
 
     All of columns became **Dimensions** to analyse data. Dimensions with numeric data have been additionally recognized by SAP BusinessObjects Lumira as **Measures**, which can be used for numerical analysis using different types of aggregation. Aggregation of the type `Sum` is the default for all measures.
 
-    > You can check UI components terminology of SAP BusinessObjects Lumira by downloading the ***Terminology Quick Reference*** from User Guides available at [SAP BusinessObjects Lumira help portal](http://help.sap.com/lumira#section2).
+    > You can check UI components terminology of SAP BusinessObjects Lumira by downloading the ***Terminology Quick Reference*** from User Guides available at [SAP BusinessObjects Lumira help portal](https://help.sap.com/lumira#section2).
 
 2. To better understand values of dimensions in your dataset switch display of the Data pane to **Facets**.
 
@@ -62,7 +62,7 @@ How to understand the dataset that has been added to SAP BusinessObjects Lumira.
     ![Remove filter from the Filters bar](Lum02-07.png)
 
 ### Optional
- - You can learn more about data exploration from the product's official [user guide](http://help.sap.com/lumira#section2) for SAP BusinessObjects Lumira
+ - You can learn more about data exploration from the product's official [user guide](https://help.sap.com/lumira#section2) for SAP BusinessObjects Lumira
 
 ## Next Steps
 - [Basics of data visualization](http://www.sap.com/developer/tutorials/lumira-initial-data-visualization.html)

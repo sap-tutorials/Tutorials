@@ -93,7 +93,7 @@ SAP HANA Vora leverages and extends the Apache Spark execution framework to prov
     Ideally you should remember to manually **Suspend** the instance every time you take a break in using the instance. This will stop the instance in AWS, so the cloud provider will not charge you for using resources when you do not work with SAP HANA Vora.
 
 ### Optional
- - Review the [SAP HANA Vora documentation](http://help.sap.com/hana_vora_re)
+ - Review the [SAP HANA Vora documentation](https://help.sap.com/hana_vora_re)
  - Review the [SAP Cloud Appliance Library (CAL) documentation](https://calstatic.hana.ondemand.com/res/~1472020269624~/docEN/index.html)
 
 ## Next Steps

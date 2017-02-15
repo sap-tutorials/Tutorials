@@ -132,7 +132,7 @@ SYSTEM is the database superuser and is not intended for day-to-day activities i
 
 Make regular data backups to save your work.
 
-For information on data backup, recovery, and log file growth, see the [SAP HANA 2.0 Administration Guide](http://help.sap.com/saphelp_hanaplatform/helpdata/en/00/0ca1e3486640ef8b884cdf1a050fbb/frameset.htm).
+For information on data backup, recovery, and log file growth, see the [SAP HANA 2.0 Administration Guide](https://help.sap.com/saphelp_hanaplatform/helpdata/en/00/0ca1e3486640ef8b884cdf1a050fbb/frameset.htm).
 
 ## (Optional) Install SAP Enterprise Architecture Designer (Applications Package Only)
 
@@ -208,7 +208,7 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
 ## (Optional) Install SAP HANA Interactive Education (SHINE)
 
-To install SHINE for XSC, see the [SAP HANA Interactive Education (SHINE) guide](http://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_en.pdf).
+To install SHINE for XSC, see the [SAP HANA Interactive Education (SHINE) guide](https://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_en.pdf).
 
 >**Note:** The HANA `JDBC` port number for SAP HANA, express edition is different than the default port number `30015` mentioned in the SHINE guide. You need to update the port parameter for the resources `CrossSchemaSys` and `CrossSchemaSysBi` in the `mtaext` file to `3<instance-number>13`.  
 
@@ -217,7 +217,7 @@ Installation files for SHINE for **XSC** are located at:
 <extracted_path>/HANA_EXPRESS_20/DATA_UNITS/HCO_HANA_SHINE
 ```
 
-To install SHINE for XSA, see the [SAP HANA Interactive Education (SHINE) for SAP HANA XS Advanced Model guide](http://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_for_SAP_HANA_XS_Advanced_Model_en.pdf).
+To install SHINE for XSA, see the [SAP HANA Interactive Education (SHINE) for SAP HANA XS Advanced Model guide](https://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_for_SAP_HANA_XS_Advanced_Model_en.pdf).
 
 If you downloaded the Applications (`hxexsa.tgz`) package, installation files for SHINE for **XSA** are located at:
 ```

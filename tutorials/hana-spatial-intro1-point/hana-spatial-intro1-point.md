@@ -73,7 +73,7 @@ You will learn the basics of spatial processing starting with points, and use th
     ![Return dimension](spatial0105.jpg)
 
 ### Optional
- - Visit the SAP HANA Spatial Reference at http://help.sap.com/hana_platform
+ - Visit the SAP HANA Spatial Reference at https://help.sap.com/hana_platform
 
 ## Next Steps
  - [SAP HANA Spatial: Strings](http://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
