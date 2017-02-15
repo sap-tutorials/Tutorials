@@ -13,6 +13,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ## Next Steps
  - [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
 
+
 ## Disclaimer
 SAP HANA, express edition is officially supported on SLES and RHEL. SAP Community members have been successful in running SAP HANA, express edition on other Linux operating systems that are not formally supported by SAP, such as Ubuntu, `openSUSE` and Fedora. SAP is not committing to resolving any issues that may arise from running SAP HANA, express edition on these platforms.
 
@@ -25,7 +26,7 @@ How to download the VM image of SAP HANA 2.0, express edition, install the image
 
 ---
 
->**Note**: This tutorial assumes you are installing SAP HANA 2.0, express edition, not SAP HANA 1.0 SP 12, express edition. If you are installing SP 12, stop reading this tutorial and consult the documentation you downloaded with the SP 12 software package.
+>**Note**: This tutorial assumes you are installing SAP HANA 2.0, express edition, not SAP HANA 1.0 SP 12, express edition. If you are installing SP 12, stop reading this tutorial and consult the documentation you downloaded with the SP 12 software package. If you already have a working SP 12 installation and want to upgrade to SAP HANA 2.0, express edition without losing any data, see [How to Upgrade to SAP HANA 2.0, express edition (Virtual Machine)](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-upgrade-vm.html).
 
 [ACCORDION-BEGIN [Pre-Installation Info: ](Before you Begin)]
 
