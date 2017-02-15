@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ## Prerequisites
  - **Proficiency:** Beginner
  - **Tutorials:** [Create a New User and Assign Permissions](coming soon)
- - **Files:** Download the [Data Files](coming soon) zip and decompress it to get the individual data files. These "CSV" data files contains the data for their respective tables and is needed for the import procedure. Copy all the data files into the "`/hana/shared/<SID>/HDB00/work/TPCH_DATA/`" directory on your HANA Dynamic Tiering host ("`<SID>`" is your system's System Id). This directory also assumes that you are using instance "00". The actual directory format is: "`/hana/shared/<SID>/HDB<instance_number>/<workspace_name>/TPCH_DATA`" and the typical workspace name is "default".
+ - **Files:** Download the [Data Files](coming soon) zip and decompress it to get the individual data files. These "`CSV`" data files contains the data for their respective tables and is needed for the import procedure. Copy all the data files into the "`/hana/shared/<SID>/HDB00/work/TPCH_DATA/`" directory on your HANA Dynamic Tiering host ("`<SID>`" is your system's System Id). This directory also assumes that you are using instance "00". The actual directory format is: "`/hana/shared/<SID>/HDB<instance_number>/<workspace_name>/TPCH_DATA`" and the typical workspace name is "default".
 
 ## Next Steps
  - **Tutorials:** [Converting Between an In-Memory Table and an Extended Table](coming soon)
@@ -22,9 +22,9 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create Tables)]
-This tutorial is a continuation from previous tutorials. It assumes that you have created a "TPCH" user with the correct permissions and signed onto your system in Studio with the user. In **SAP HANA Administration Console** perspective, right click on your system connection signed on with the "TPCH" user (format: `<SID> (TPCH)`) and select **Open SQL Console**.
+This tutorial is a continuation from previous tutorials. It assumes that you have created a "`TPCH`" user with the correct permissions and signed onto your system in Studio with the user. In **SAP HANA Administration Console** perspective, right click on your system connection signed on with the "`TPCH`" user (format: `<SID> (TPCH)`) and select **Open SQL Console**.
 
-![Open SQL Console](create-table/open-sql-console.png)
+![Open SQL Console](open-sql-console.png)
 
 Copy and paste the script below into the SQL console, then click the Execute button to create the in-memory column store tables. You can also press **F8**.
 
@@ -168,11 +168,11 @@ ALTER TABLE "TPCH"."SUPPLIER_CS"
       ON DELETE RESTRICT ON UPDATE RESTRICT;
 ```
 
-![Create Colume Store Table](create-table/create-cs-table.png)
+![Create Colume Store Table](create-cs-table.png)
 
 Verify that everything executed successfully without error.
 
-![Success CS](create-table/success-cs.png)
+![Success CS](success-cs.png)
 
 Now replace the code in the SQL console with the script below and then click the Execute button to create the Dynamic Tiering tables. You can also press **F8**.
 
@@ -271,19 +271,19 @@ CREATE TABLE "TPCH"."SUPPLIER_DT" (
 ) USING EXTENDED STORAGE;
 ```
 
-![Create Dynamic Tiering Table](create-table/create-dt-table.png)
+![Create Dynamic Tiering Table](create-dt-table.png)
 
 Again, verify everything executed correctly.
 
-![Success DT](create-table/success-dt.png)
+![Success DT](success-dt.png)
 
 In the **Systems** view on the left hand side, expand to **Catalog** > **TPCH** > **Tables**. Right click on table and select **Refresh**. You can also press **F5**.
 
-![Refresh Table](create-table/refresh-table.png)
+![Refresh Table](refresh-table.png)
 
 After Studio finishes refreshing, you should see the tables listed below under the **Tables** folder. The Dynamic Tiering tables (suffix "DT") will also have "EXTENDED" displayed after the table name, while the in-memory column store tables (suffix "CS") will not.
 
-![Table Created](create-table/table_created.png)
+![Table Created](table_created.png)
 
 [DONE]
 [ACCORDION-END]
@@ -291,13 +291,13 @@ After Studio finishes refreshing, you should see the tables listed below under t
 [ACCORDION-BEGIN [Step 2: ](Script Explanation)]
 The key syntax difference when creating a Dynamic Tiering table is the addition of the "USING EXTENDED STORAGE" clause to the "CREATE TABLE" statement as seen in the picture below. You may also notice that it did not explicitly state that the Dynamic Tiering tables should be "COLUMN" tables. All Dynamic Tiering tables are stored as columnar tables, so the use of "CREATE COLUMN TABLE" vs "CREATE TABLE" is optional.
 
-![Create Table Statements Comparison](create-table/in-memory-and-dt-comparison.png)
+![Create Table Statements Comparison](in-memory-and-dt-comparison.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Download Data Files and Copy to HANA Directory)]
-One of the prerequisites of this tutorial is that you have copied the data files onto your SAP HANA system. Before proceeding, please download the [Data Files](https://s3.amazonaws.com/sapiq/Dynamic+Tiering+Quick+Start+Guide/SAP+HANA+Dynamic+Tiering+Quick+Start+Guide+-+Supporting+Files.zip) zip and decompress it to get the individual data files. These "CSV" data files contains the data for their respective tables and is needed for the import procedure. Copy all the data files into the "`/hana/shared/<SID>/HDB00/work/TPCH_DATA/`" directory on your HANA Dynamic Tiering host. "`<SID>`" is your system's System ID. For example, the `<SID>` as seen in the pictures in step 1 is `HA1` This directory also assumes that you are using instance "00". The actual directory format is: "`/hana/shared/<SID>/HDB<instance_number>/<workspace_name>/TPCH_DATA`" and the typical workspace name is "default".
+One of the prerequisites of this tutorial is that you have copied the data files onto your SAP HANA system. Before proceeding, please download the [Data Files](https://s3.amazonaws.com/sapiq/Dynamic+Tiering+Quick+Start+Guide/SAP+HANA+Dynamic+Tiering+Quick+Start+Guide+-+Supporting+Files.zip) zip and decompress it to get the individual data files. These "`CSV`" data files contains the data for their respective tables and is needed for the import procedure. Copy all the data files into the "`/hana/shared/<SID>/HDB00/work/TPCH_DATA/`" directory on your HANA Dynamic Tiering host. "`<SID>`" is your system's System ID. For example, the `<SID>` as seen in the pictures in step 1 is `HA1` This directory also assumes that you are using instance "00". The actual directory format is: "`/hana/shared/<SID>/HDB<instance_number>/<workspace_name>/TPCH_DATA`" and the typical workspace name is "default".
 
 [DONE]
 [ACCORDION-END]
@@ -305,9 +305,9 @@ One of the prerequisites of this tutorial is that you have copied the data files
 [ACCORDION-BEGIN [Step 4: ](Import Data into Tables)]
 In **SAP HANA Administration Console** perspective, right click on your system signed on with the TPCH user (format: `<sid> (TPCH)`) and select **Open SQL Console**.
 
-![Open SQL Console](import-data/open-sql-console.png)
+![Open SQL Console](open-sql-console.png)
 
-Copy and paste the script below in to the SQL console. Replace "`<SID>`" with your system's System Id. Then press the Execute button to import data from the "CSV" files in to the in-memory tables. You can also press **F8**. Verify everything executed successfully.
+Copy and paste the script below in to the SQL console. Replace "`<SID>`" with your system's System Id. Then press the Execute button to import data from the "`CSV`" files in to the in-memory tables. You can also press **F8**. Verify everything executed successfully.
 
 ``` sql
 IMPORT FROM CSV FILE '/hana/shared/<SID>/HDB00/work/TPCH_DATA/Region.csv'
@@ -341,13 +341,13 @@ INTO TPCH.PARTSUPP_CS
   WITH THREADS 4 BATCH 10000;
 ```
 
-![Import Column Store](import-data/import-cs.png)
+![Import Column Store](import-cs.png)
 
->Note: If you encounter an error stating "`Could not execute 'import…''… Please check configuration: csv_import_path_filter.`", then in the **Systems** tab,  double click your system (`<sid> (SYSTEM)`) to open the Administration screen. Navigate to the **Configuration** tab and enter "`enable_csv_import_path_filter`" in the **Filter** search bar. Change both values under the **System** column to "`false`" (either double click the cell or right click and choose **Change…**). The Default column values will be true. Follow the numbered steps in the following picture for more clarification. 
+>Note: If you encounter an error stating "`Could not execute 'import…''… Please check configuration: csv_import_path_filter.`", then in the **Systems** tab,  double click your system (`<sid> (SYSTEM)`) to open the Administration screen. Navigate to the **Configuration** tab and enter "`enable_csv_import_path_filter`" in the **Filter** search bar. Change both values under the **System** column to "`false`" (either double click the cell or right click and choose **Change…**). The Default column values will be true. Follow the numbered steps in the following picture for more clarification.
 
-![Error](import-data/error.png)
+![Error](error.png)
 
-Delete the code in the SQL Console. Then copy and paste the script below into the SQL console. Replace "`<SID>`" with your system's System Id. Then press the Execute button to import data from the "CSV" files in to the extended tables. Verify everything executed successfully.
+Delete the code in the SQL Console. Then copy and paste the script below into the SQL console. Replace "`<SID>`" with your system's System Id. Then press the Execute button to import data from the "`CSV`" files in to the extended tables. Verify everything executed successfully.
 
 ``` sql
 IMPORT FROM CSV FILE '/hana/shared/<SID>/HDB00/work/TPCH_DATA/Region.csv'
@@ -375,13 +375,13 @@ IMPORT FROM CSV FILE '/hana/shared/<SID>/HDB00/work/TPCH_DATA/PartSupp.csv'
  INTO TPCH.PARTSUPP_DT;
 ```
 
-![Import Dynamic Tiering](import-data/import-dt.png)
+![Import Dynamic Tiering](import-dt.png)
 
 Go to the **System** tab on the left side. By clicking the drop down arrow,  expand **Catalog** > **TPCH** > **Tables**. Right click on any table (e.g. **`CUSTOMER_CS`**) and select **Open Data Preview** to query data from that table. You should be able to see that the table is not empty and that the table has been successfully imported. Repeat the check for all tables in the Tables folder.
 
-![Open Data Preview](import-data/open-data.png)
+![Open Data Preview](open-data.png)
 
-![Data Preview](import-data/data-preview.png)
+![Data Preview](data-preview.png)
 
 [DONE]
 [ACCORDION-END]

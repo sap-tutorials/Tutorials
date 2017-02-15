@@ -23,16 +23,16 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 
 [ACCORDION-BEGIN [Step 1: ](Query From Both In-Memory and Dynamic Tiering Tables)]
 You may have many cases where you only need to access data either from the in-memory table instance (`ORDERS_CS`) or from the Dynamic Tiering table instance (`ORDERS_DT`). However you will also likely have use cases where you need to query the full data set across both table instances, which can be done with a union.
-Run the script below in a SQL Console to query data from both in-memory and Dynamic Tiering tables using a UNION.
+Run the script below in a SQL Console to query data from both in-memory and Dynamic Tiering tables using a `UNION`.
 
 ```sql
 SELECT * FROM "TPCH"."ORDERS_CS"
 UNION ALL
 SELECT * FROM "TPCH"."ORDERS_DT"
 ```
->Note: Since we are explicitly managing the data set between `ORDERS_CS` and `ORDERS_DT` to ensure that data is not duplicated between the 2 tables, we can use the UNION ALL variation of the UNION clause, which is faster because it doesn't eliminate duplicate records in the combined result set.
+>Note: Since we are explicitly managing the data set between `ORDERS_CS` and `ORDERS_DT` to ensure that data is not duplicated between the 2 tables, we can use the `UNION ALL` variation of the `UNION` clause, which is faster because it doesn't eliminate duplicate records in the combined result set.
 
-![Union](images/union.png)
+![Union](union.png)
 
 [DONE]
 [ACCORDION-END]
@@ -47,11 +47,11 @@ CREATE VIEW "TPCH"."ORDERS_ALL_VIEW" AS
   SELECT * FROM "TPCH"."ORDERS_DT";
 ```
 
-![Create View](images/create-view.png)
+![Create View](create-view.png)
 
 Verify the script executed correctly.
 
-![Create View Success](images/create-view-success.png)
+![Create View Success](create-view-success.png)
 
 After successfully creating a view, you can query against the `"TPCH"."ORDERS_ALL_VIEW"` whenever you need to access the combined data set. For example, if you want to query order records that are between 6 months and 18 months old, you can execute the query below.
 
@@ -62,7 +62,7 @@ SELECT "TPCH"."ORDERS_ALL_VIEW".* FROM "TPCH"."ORDERS_ALL_VIEW"
           AND ADD_YEARS(CURRENT_DATE, -0.5)
 ```
 
-![Query View](images/query-view.png)
+![Query View](query-view.png)
 
 [DONE]
 [ACCORDION-END]

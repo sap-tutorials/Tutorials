@@ -43,7 +43,7 @@ In this module we will create a multistore table that uses single level Range pa
 
 ![Range Partition](MultistoreRange2.png)
 
-> Note: We will store ranges 1 to 4 in EXTENDED STORAGE and range 5 and "OTHERS" in the in-memory DEFAULT STORAGE. The "OTHERS" range is optional but if it is created, it is always in DEFAULT STORAGE.
+> Note: We will store ranges 1 to 4 in EXTENDED STORAGE and range 5 and "`OTHERS`" in the in-memory DEFAULT STORAGE. The "`OTHERS`" range is optional but if it is created, it is always in DEFAULT STORAGE.
 
 /Ignore this text. Used for formatting purposes./
 
@@ -96,12 +96,12 @@ PARTITION BY RANGE ("L_ORDERKEY")
 	)
 );
 ```
-  The above script will create a table called LINEITEM_MS. The partitions defined for DEFAULT STORAGE will hold any records with L_ORDERKEY  values between 2,000,000 and 4,999,999, or L_ORDERKEY values that do not fall under any other specified range. The partitions defined for EXTENDED STORAGE will hold any records with L_ORDERKEY values between 0 and 49,999; 50,000 and 199,999; 200,000 and 499,999;  or 500,000 and 1,999,999.
+  The above script will create a table called "`LINEITEM_MS`". The partitions defined for DEFAULT STORAGE will hold any records with `L_ORDERKEY` values between 2,000,000 and 4,999,999, or `L_ORDERKEY` values that do not fall under any other specified range. The partitions defined for EXTENDED STORAGE will hold any records with `L_ORDERKEY` values between 0 and 49,999; 50,000 and 199,999; 200,000 and 499,999;  or 500,000 and 1,999,999.
 
-  After executing the CREATE TABLE statement, refresh TPCH schema and make sure you see LINEITEM_MS as seen below.
+  After executing the "`CREATE TABLE`" statement, refresh `TPCH` schema and make sure you see "`LINEITEM_MS`" as seen below.
 
 ![LINEITEM_MS](LINEITEM_MS.png)
->Note: Notice how the multistore table does not show an "EXTENDED" or other attributes in Studio
+>Note: Notice how the multistore table does not show an "`EXTENDED`" or other attributes in Studio
 
 [DONE]
 [ACCORDION-END]
@@ -131,7 +131,7 @@ Execute the following in a SQL Console to view the ranges created in your range 
 select * from TABLE_PARTITIONS where TABLE_NAME = 'LINEITEM_MS'
 ```
 
-You should see the following once you execute the statement above. Notice how "`LEVEL_1_RANGE_MIN_VALUE`" and  "`LEVEL_1_RANGE_MAX_VALUE`" for row 6 is empty. The  reason for it being empty is because it represents "OTHERS". Remember that "OTHERS" does not have a set minimum value nor a maximum value, it simply collects anything that does not fall under any of the other partitions. If you scroll right, you will see a column labelled "STORAGE_TYPE" which shows you what the storage type for each partition is.
+You should see the following once you execute the statement above. Notice how "`LEVEL_1_RANGE_MIN_VALUE`" and  "`LEVEL_1_RANGE_MAX_VALUE`" for row 6 is empty. The reason for it being empty is because it represents "`OTHERS`". Remember that "`OTHERS`" does not have a set minimum value nor a maximum value, it simply collects anything that does not fall under any of the other partitions. If you scroll right, you will see a column labelled "`STORAGE_TYPE`" which shows you what the storage type for each partition is.
 
 ![View Range](ViewRange.png)
 
@@ -141,7 +141,7 @@ To check that data has gone into DEFAULT STORAGE, execute the following in a SQL
 ``` sql
 SELECT * FROM M_CS_TABLES where TABLE_NAME = 'LINEITEM_MS' AND SCHEMA_NAME = 'TPCH'
 ```
-Remember that PART_ID 1 and 6 represent partitions in DEFAULT STORAGE and the "MEMORY_SIZE_IN_TOTAL" column shows data has indeed been put into those partitions.
+Remember that `PART_ID` 1 and 6 represent partitions in DEFAULT STORAGE and the "`MEMORY_SIZE_IN_TOTAL`" column shows data has indeed been put into those partitions.
 ![Data Check CS](DataCheckCS.png)
 
 To check that data has gone into EXTENDED STORAGE, execute the following in a SQL Console:
@@ -150,7 +150,7 @@ SELECT * FROM M_ES_TABLES where TABLE_NAME = 'LINEITEM_MS' AND SCHEMA_NAME = 'TP
 ```
 
 ![Data Check ES](DataCheckES.png)
-Notice that only 1 partition is shown in EXTENDED STORAGE and that it has a PART_ID of -1. The PART_ID is -1 because although logically, the Dynamic Tiering portion has multiple partitions within it, physically the Dynamic Tiering portion is stored as a single table. Since the data for the LINEITEM_MS partitions in EXTENDED STORAGE are in a single physical partition, we can't tell how much data is in each logical partition. However, we can see from the TABLE_SIZE column that data has been stored in EXTENDED STORAGE for the LINEITEM_MS table.
+Notice that only 1 partition is shown in EXTENDED STORAGE and that it has a `PART_ID` of -1. The `PART_ID` is -1 because although logically, the Dynamic Tiering portion has multiple partitions within it, physically the Dynamic Tiering portion is stored as a single table. Since the data for the "`LINEITEM_MS`" partitions in EXTENDED STORAGE are in a single physical partition, we can't tell how much data is in each logical partition. However, we can see from the "`TABLE_SIZE`" column that data has been stored in EXTENDED STORAGE for the "`LINEITEM_MS`" table.
 
 [DONE]
 [ACCORDION-END]

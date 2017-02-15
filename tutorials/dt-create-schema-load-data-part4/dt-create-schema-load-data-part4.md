@@ -23,19 +23,19 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 [ACCORDION-BEGIN [Step 1: ](Convert to an In-Memory Table Using Studio)]
 In **SAP HANA Administration Console** perspective, go to the **System** view on the left side. By clicking the drop down arrow, expand **Catalog** > **TPCH** > **Tables**. Right click on the table **`NATION_DT`** and select **Do Not Use Extended Storage** to convert the table into an in-memory table.
 
-![Do Not Use Extended Storage](studio/not-es.png)
+![Do Not Use Extended Storage](not-es.png)
 
 When prompted to confirm the action, click **Yes**.
 
-![Confirm Disable Extended Storage](studio/comfirm-not-es.png)
+![Confirm Disable Extended Storage](comfirm-not-es.png)
 
 Once the conversion is complete, a pop up window will appear verifying that the change has been made, click **OK** to close the window.
 
-![Verify Not Use Extended Storage](studio/verify-not-es.png)
+![Verify Not Use Extended Storage](verify-not-es.png)
 
-Verify the table has been correctly converted. You should see that the **`NATION_DT`** table no longer has the "EXTENDED" attribute and is now an in-memory table.
+Verify the table has been correctly converted. You should see that the **`NATION_DT`** table no longer has the "`EXTENDED`" attribute and is now an in-memory table.
 
-![Converted to In-memory](studio/converted-to-in-memory.png)
+![Converted to In-memory](converted-to-in-memory.png)
 
 [DONE]
 [ACCORDION-END]
@@ -43,19 +43,19 @@ Verify the table has been correctly converted. You should see that the **`NATION
 [ACCORDION-BEGIN [Step 2: ](Convert to an Extended Table Using Studio)]
 Right click on the table **`NATION_DT`**, which is now an in-memory table, and select **Use Extended Storage**.
 
-![Use Extended Storage](studio/use-es.png)
+![Use Extended Storage](use-es.png)
 
 In the "Use Extended Storage" pop up window, keep all the options as default. Click the **Move** button to proceed.
 
-![Move](studio/move.png)
+![Move](move.png)
 
 Once the conversion is complete, a pop up window will appear verifying that the change has been made, click **OK** to close the window.
 
-![Confirm Using Extended Storage](studio/confirm-es.png)
+![Confirm Using Extended Storage](confirm-es.png)
 
-Verify the table has been correctly converted. You should see that the **`NATION_DT`** table has the "EXTENDED" attribute and is now an extended table.
+Verify the table has been correctly converted. You should see that the **`NATION_DT`** table has the "`EXTENDED`" attribute and is now an extended table.
 
-![Converted to Extended Storage](studio/converted-es.png)
+![Converted to Extended Storage](converted-es.png)
 
 [DONE]
 [ACCORDION-END]
@@ -63,7 +63,7 @@ Verify the table has been correctly converted. You should see that the **`NATION
 [ACCORDION-BEGIN [Step 3: ](Convert to an In-Memory Table Using SQL script)]
 Right click on your system and select **Open SQL Console** to open a new SQL console.
 
-![SQL Console](script/sql-console.png)
+![SQL Console](sql-console.png)
 
 Copy and paste the script below into the console. Then press the Execute button to run the script.
 
@@ -71,15 +71,15 @@ Copy and paste the script below into the console. Then press the Execute button 
 ALTER TABLE "TPCH"."NATION_DT" NOT USING EXTENDED STORAGE
 ```
 
-![Run Not ES](script/run-not-es.png)
+![Run Not ES](run-not-es.png)
 
 Refresh the **Tables** folder by right clicking on it and then selecting **Refresh**. You can also press **F5**.
 
-![Refresh](script/refresh.png)
+![Refresh](refresh.png)
 
-After the refresh is completed, you should see that the **`NATION_DT`** table no longer has the "EXTENDED" attribute and is now an in-memory table.
+After the refresh is completed, you should see that the **`NATION_DT`** table no longer has the "`EXTENDED`" attribute and is now an in-memory table.
 
-![Converted to In-memory](studio/converted-to-in-memory.png)
+![Converted to In-memory](converted-to-in-memory.png)
 
 [DONE]
 [ACCORDION-END]
@@ -90,13 +90,13 @@ Open a new SQL console and paste the script below into the console. Then press t
 ``` sql
 ALTER TABLE "TPCH"."NATION_DT" USING EXTENDED STORAGE
 ```
-Notice that the difference between the "ALTER TABLE" statement here and the previous section is the removal of "NOT".
+Notice that the difference between the "`ALTER TABLE`" statement here and the previous section is the removal of "`NOT`".
 
-![Run ES](script/run-es.png)
+![Run ES](run-es.png)
 
-Refresh the **Tables** folder and you should see that the **`NATION_DT`** table has the "EXTENDED" attribute and is now an extended table.
+Refresh the **Tables** folder and you should see that the **`NATION_DT`** table has the "`EXTENDED`" attribute and is now an extended table.
 
-![Converted to In-memory](studio/converted-to-extended.png)
+![Converted to In-memory](converted-to-extended.png)
 
 [DONE]
 [ACCORDION-END]
@@ -106,14 +106,14 @@ In SAP HANA 2.0, Dynamic Tiering tables do not support foreign keys between two 
 
 Since Dynamic Tiering tables do not support foreign keys yet, the change from an extended table to in-memory is always possible (because extended tables would not have any foreign key attached to them), but in-memory to extended storage might be restricted due to foreign key constraints.
 
-You can verify which tables in the TPCH schema are part of a foreign key constraint by executing the following statement in a SQL Console:
+You can verify which tables in the `TPCH` schema are part of a foreign key constraint by executing the following statement in a SQL Console:
 
 ``` sql
 SELECT * FROM "SYS"."REFERENTIAL_CONSTRAINTS"
   WHERE SCHEMA_NAME='TPCH'
 ```
 
-![Foreign Key](script/foreign-key.png)
+![Foreign Key](foreign-key.png)
 
 You can look at the columns: `TABLE_NAME`, `REFERENCED_TABLE_NAME` and `CONSTRAINT_NAME` to identify which tables have the foreign key constraint on them and what the constraint is. Examples of tables that hold a foreign key constraint in this schema are `ORDERS_CS`, `CUSTOMER_CS`, `SUPPLIER_CS`, `LINEITEM_CS`, `NATION_CS` and `REGION_CS`. Therefore, these tables cannot be converted to extended tables, unless the foreign key is dropped.
 

@@ -25,7 +25,7 @@ Currently the `LINEITEM_DT` table contains identical information to the `LINEITE
 
 In **SAP HANA Administration Console** perspective, go to the **System** view on the left side. Select your system and open a SQL console.
 
-![Open SQL Console](images/sql-console.png)
+![Open SQL Console](sql-console.png)
 
 ``` sql
 TRUNCATE TABLE "TPCH"."LINEITEM_DT";
@@ -33,31 +33,31 @@ TRUNCATE TABLE "TPCH"."LINEITEM_DT";
 SELECT * FROM "TPCH"."LINEITEM_DT";
 ```
 
-![Delete Data](images/delete-data.png)
+![Delete Data](delete-data.png)
 
 The result should be empty to indicate the data has been deleted.
 
-![Empty Result](images/empty-result.png)
+![Empty Result](empty-result.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Turning off Auto Commit)]
-By default, SQL Console connections from HANA Studio to your HANA system are created with the Auto Commit option turned "On". The Auto Commit option automatically issues a commit after each statement that is executed against the server. You need to change Auto Commit to "off" in order to execute the migration script, which executes two statements, as a single atomic transaction.
+By default, SQL Console connections from HANA Studio to your HANA system are created with the Auto Commit option turned "On". The Auto Commit option automatically issues a commit after each statement that is executed against the server. You need to change Auto Commit to "Off" in order to execute the migration script, which executes two statements, as a single atomic transaction.
 
 Open a new SQL console connected to your system, right click on your system and select **Open SQL Console**.
 
-![Open SQL Console](images/sql-console.png)
+![Open SQL Console](sql-console.png)
 
 To check and change the "Auto Commit" setting, click to open the **Properties** tab in the bottom right panel.
 
-![Properties](images/properties.png)
+![Properties](properties.png)
 
 >Note: If the Properties tab is blank, double check that you are connected to a HANA server and then click inside the **Properties** tab to set the focus and press the **F5** function key to refresh the view.
 
 Click on the value cell for **Auto Commit** and change it to **Off**.
 
-![Auto Commit](images/auto-commit.png)
+![Auto Commit](auto-commit.png)
 
 [DONE]
 [ACCORDION-END]
@@ -71,11 +71,11 @@ Note:	Since HANA uses snapshot isolation, "REPEATABLE READ" and "SERIALIZABLE" i
 
 To change the isolation level, click on the **Isolation Level** field in the **Properties** tab and choose **REPEATABLE READ**.
 
-![Isolation Level](images/isolation.png)
+![Isolation Level](isolation.png)
 
 Left click on the SQL console, and you should be prompted by a "Rollback Connection" pop up. Click **OK** to set the isolation level.
 
-![Rollback Connection](images/rollback-connection.png)
+![Rollback Connection](rollback-connection.png)
 
 [DONE]
 [ACCORDION-END]
@@ -98,7 +98,7 @@ COMMIT;
 
 Table `LINEITEM_CS` has records with ship dates ranging from Jan 2, 2012 (2012-1-2) to Dec 1, 2018 (2018-12-1). For the purpose of this lesson, you will be migrating records older than Jan 1, 2015 (2015-1-1) from the `ORDERS_CS` table to the `ORDERS_DT` table.
 
-![Migrate Data](images/migrate.png)
+![Migrate Data](migrate.png)
 
 Verify that the data has been inserted into the **`LINEITEM_DT`** table either by executing the query below or by right clicking on the table in the catalogue and choosing **Open Data Preview**.
 
@@ -106,7 +106,7 @@ Verify that the data has been inserted into the **`LINEITEM_DT`** table either b
  SELECT * FROM "TPCH"."LINEITEM_DT";
 ```
 
-![Verify Extended Storage](images/verify-dt.png)
+![Verify Extended Storage](verify-dt.png)
 
 Verify that the data has been deleted from the **`LINEITEM_CS`** table by executing the query below and confirming that no records are returned.
 
@@ -114,7 +114,7 @@ Verify that the data has been deleted from the **`LINEITEM_CS`** table by execut
 SELECT * FROM "TPCH"."LINEITEM_CS" WHERE "TPCH"."LINEITEM_CS"."L_SHIPDATE" < '2015-1-1';
 ```
 
-![Verify Column Store](images/verify-cs.png)
+![Verify Column Store](verify-cs.png)
 
 [DONE]
 [ACCORDION-END]
