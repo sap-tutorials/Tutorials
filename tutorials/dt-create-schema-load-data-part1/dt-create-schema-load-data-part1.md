@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
  - **Integrated Development Environment:** Basic working knowledge of SAP HANA Studio. E.g. You should be able to connect to your HANA instance from SAP HANA Studio and feel comfortable with executing simple queries.
 
 ## Next Steps
- - **Tutorials:** [Create a New User and Assign Permissions](coming soon)
+ - **Tutorials:** [Create a New User and Assign Permissions](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part2.html)
 
 ## Details
 ### You will learn
@@ -83,4 +83,4 @@ The "CREATE EXTENDED STORAGE" statement creates the warm store and the required 
 [ACCORDION-END]
 
 ## Next Steps
-  - **Tutorials:** [Create a New User and Assign Permissions](coming soon)
+  - **Tutorials:** [Create a New User and Assign Permissions](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part2.html)

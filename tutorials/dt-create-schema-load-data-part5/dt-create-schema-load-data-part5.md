@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Converting Between an In-Memory Table and an Extended Table](coming soon)
+ - **Tutorials:** [Converting Between an In-Memory Table and an Extended Table](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part4.html)
 
 ## Next Steps
- - **Tutorials:** [Migrate Records in Related Tables Using Stored Procedure](coming soon)
+ - **Tutorials:** [Migrate Records in Related Tables Using Stored Procedure](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part6.html)
 
 ## Details
 ### You will learn
@@ -120,4 +120,4 @@ SELECT * FROM "TPCH"."LINEITEM_CS" WHERE "TPCH"."LINEITEM_CS"."L_SHIPDATE" < '20
 [ACCORDION-END]
 
 ## Next Steps
-- **Tutorials:** [Migrate Records in Related Tables Using Stored Procedure](coming soon)
+- **Tutorials:** [Migrate Records in Related Tables Using Stored Procedure](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part6.html)

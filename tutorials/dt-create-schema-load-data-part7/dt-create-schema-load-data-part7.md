@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Migrate Records in Related Tables Using Stored Procedure](coming soon)
+ - **Tutorials:** [Migrate Records in Related Tables Using Stored Procedure](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part6.html)
 
 ## Next Steps
- - **Tutorials:** [Multi-Store Tables](coming soon)
+ - **Tutorials:** [Multi-Store Tables](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part8.html)
 
 ## Details
 ### You will learn
@@ -68,4 +68,4 @@ SELECT "TPCH"."ORDERS_ALL_VIEW".* FROM "TPCH"."ORDERS_ALL_VIEW"
 [ACCORDION-END]
 
 ## Next Steps
-- **Tutorials:** [Multi-Store Tables](coming soon)
+- **Tutorials:** [Multi-Store Tables](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part8.html)
