@@ -135,7 +135,7 @@ In previous tutorials you learned how to create spatial objects and run selected
     ![result of ST_EnvelopeAggr()](spatial0407.jpg)
 
 ### Optional
-- Check the SAP HANA Spatial Reference at http://help.sap.com/hana_platform for the complete list of objects and methods
+- Check the SAP HANA Spatial Reference at https://help.sap.com/hana_platform for the complete list of objects and methods
 
 ## Next Steps
  - [Intro to SAP HANA Spatial: Z and M coordinates](http://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)

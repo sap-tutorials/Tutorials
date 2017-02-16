@@ -18,11 +18,14 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 ### Time to Complete
 **20 Min.**
 ---
-### The SAP HANA, express-edition License
+
+[ACCORDION-BEGIN [Info: ](The SAP HANA, express edition License)]
 
 Installing SAP HANA 2.0, express edition installs a permanent 32 GB license automatically. No license configuration is required.
 
-### Test Your Server installation
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Test Your Server Installation)]
 
 1. In a terminal, log in as the `<sid>adm` user:
 
@@ -37,7 +40,9 @@ Installing SAP HANA 2.0, express edition installs a permanent 32 GB license auto
 
 2. If any services are not running, enter `HDB start`. When the prompt returns, the system is started.
 
-### Test XSC and XSA (Applications Package Only)
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Test XSC and XSA (Applications Package Only))]
 
 If you installed the Applications package (`hxexsa.tgz`), test your XS installations.
 
@@ -52,7 +57,7 @@ If you installed the Applications package (`hxexsa.tgz`), test your XS installat
 
 2. As the `<sid>adm` user, log in to XSA services:  
     ```
-    xs login -u xsa_admin -p <password>
+    xs login -u xsa_admin -p "<password>"
     ```  
 
 3. View the list of XSA applications. Enter:  
@@ -62,6 +67,8 @@ If you installed the Applications package (`hxexsa.tgz`), test your XS installat
     >**Note**: When you run the `xs apps` command for the first time, it may take 1-2 minutes for the system to return the list of XSA applications.
 
 4. Check that the application **`cockpit-admin-web-app`** shows **STARTED** with 1/1 instances in the list of XSA applications.
+
+    >**Note** Normally it only takes a few minutes for XSA services to start. However. depending on your machine, it can take over 30 minutes for XSA services to begin. If the service doesn't show STARTED and doesn't show 1/1 instances, keep waiting until the service is enabled.
 
     Make a note of the URL for `cockpit-admin-web-app`.
 
@@ -77,11 +84,13 @@ If you installed the Applications package (`hxexsa.tgz`), test your XS installat
 
     >**Tip**: To find your proxy server information, in a terminal, enter `env | grep PROXY`
 
-### Test Web IDE (Applications Package Only)
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Test Web IDE (Applications Package Only))]
 
 1. As the `<sid>adm` user, log in to XSA services:  
     ```
-    xs login -u xsa_admin -p <password>
+    xs login -u xsa_admin -p "<password>"
     ```  
 
 2. View the status of the `webide` application. Enter:  
@@ -99,6 +108,37 @@ If you installed the Applications package (`hxexsa.tgz`), test your XS installat
 
 5. Log on to Web IDE using the `XSA_DEV` user.
 
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Best Practice: ](Deactivate the SYSTEM user)]
+
+SYSTEM is the database superuser and is not intended for day-to-day activities in production systems. For better security, you can create other database users with only the privileges that they require for their tasks (for example, user administration), then deactivate the SYSTEM user.
+
+1. In a terminal, log in as the `<sid>adm` user:
+
+    `sudo su -l <sid>adm`
+
+2. Create a new admin user with the USER ADMIN system privilege:
+
+    `/usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u SYSTEM -p "<SYSTEM-password>" "CREATE USER <admin-username> PASSWORD <admin-password> NO FORCE_FIRST_PASSWORD_CHANGE;"`
+    `/usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u SYSTEM -p "<SYSTEM-password>" "GRANT USER ADMIN TO <admin-username> WITH ADMIN OPTION;"`
+
+2. Use the new admin user to deactivate the SYSTEM user:
+
+    `/usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u <admin-username> -p "<admin-password>" "ALTER USER SYSTEM DEACTIVATE USER NOW;"`
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Best Practice: ](Backups)]
+
+Make regular data backups to save your work.
+
+For information on data backup, recovery, and log file growth, see the [SAP HANA 2.0 Administration Guide](https://help.sap.com/saphelp_hanaplatform/helpdata/en/00/0ca1e3486640ef8b884cdf1a050fbb/frameset.htm).
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Optional Configuration)]
+
 ### (Optional) Test your Installation using the HANA Eclipse Plugin
 
 Download and install the HANA Eclipse Plugin on a client machine and connect to SAP HANA, express edition.
@@ -111,30 +151,7 @@ Download and install the HANA Eclipse Plugin on a client machine and connect to 
 
 4. Follow the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html).
 
-### Best Practices: Deactivate the SYSTEM user
-
-SYSTEM is the database superuser and is not intended for day-to-day activities in production systems. For better security, you can create other database users with only the privileges that they require for their tasks (for example, user administration), then deactivate the SYSTEM user.
-
-1. In a terminal, log in as the `<sid>adm` user:
-
-    `sudo su -l <sid>adm`
-
-2. Create a new admin user with the USER ADMIN system privilege:
-
-    `/usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u SYSTEM -p <SYSTEM-password> "CREATE USER <admin-username> PASSWORD <admin-password> NO FORCE_FIRST_PASSWORD_CHANGE;"`
-    `/usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u SYSTEM -p <SYSTEM-password> "GRANT USER ADMIN TO <admin-username> WITH ADMIN OPTION;"`
-
-2. Use the new admin user to deactivate the SYSTEM user:
-
-    `/usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u <admin-username> -p <admin-password> "ALTER USER SYSTEM DEACTIVATE USER NOW;"`
-
-### Best Practices: Backups
-
-Make regular data backups to save your work.
-
-For information on data backup, recovery, and log file growth, see the [SAP HANA 2.0 Administration Guide](http://help.sap.com/saphelp_hanaplatform/helpdata/en/00/0ca1e3486640ef8b884cdf1a050fbb/frameset.htm).
-
-## (Optional) Install SAP Enterprise Architecture Designer (Applications Package Only)
+### (Optional) Install SAP Enterprise Architecture Designer (Applications Package Only)
 
 >**Note**: Installing additional features requires greater system resources and may impact performance.
 
@@ -206,9 +223,10 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
     You will be prompted to change the password and then logged in as administrator of SAP EA Designer.     
 
-## (Optional) Install SAP HANA Interactive Education (SHINE)
 
-To install SHINE for XSC, see the [SAP HANA Interactive Education (SHINE) guide](http://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_en.pdf).
+### (Optional) Install SAP HANA Interactive Education (SHINE)
+
+To install SHINE for XSC, see the [SAP HANA Interactive Education (SHINE) guide](https://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_en.pdf).
 
 >**Note:** The HANA `JDBC` port number for SAP HANA, express edition is different than the default port number `30015` mentioned in the SHINE guide. You need to update the port parameter for the resources `CrossSchemaSys` and `CrossSchemaSysBi` in the `mtaext` file to `3<instance-number>13`.  
 
@@ -217,14 +235,14 @@ Installation files for SHINE for **XSC** are located at:
 <extracted_path>/HANA_EXPRESS_20/DATA_UNITS/HCO_HANA_SHINE
 ```
 
-To install SHINE for XSA, see the [SAP HANA Interactive Education (SHINE) for SAP HANA XS Advanced Model guide](http://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_for_SAP_HANA_XS_Advanced_Model_en.pdf).
+To install SHINE for XSA, see the [SAP HANA Interactive Education (SHINE) for SAP HANA XS Advanced Model guide](https://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_for_SAP_HANA_XS_Advanced_Model_en.pdf).
 
 If you downloaded the Applications (`hxexsa.tgz`) package, installation files for SHINE for **XSA** are located at:
 ```
 <extracted_path>/HANA_EXPRESS_20/DATA_UNITS/XSA_CONTENT_10
 ```
 
-## (Optional) Install Text Analysis Files
+### (Optional) Install Text Analysis Files
 
 If you are using SAP HANA 2.0, express edition in a language other than English or German, you can download the **Text analysis files for additional languages** package in the Download Manager. This package contains the text analysis files for the HANA Text Analysis feature for languages other than English or German.
 
@@ -238,6 +256,8 @@ If you are using SAP HANA 2.0, express edition in a language other than English 
     ```
     tar -xvzf <download_path>/additional_lang.tgz
     ```
+
+[ACCORDION-END]
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

@@ -132,4 +132,4 @@ Congratulations: You just have your first own native SAP HANA application runnin
 [ACCORDION-END]
 
 ### Related information
-[SAP HANA Development Information - official documentation](http://help.sap.com/hana_platform#section6)
+[SAP HANA Development Information - official documentation](https://help.sap.com/hana_platform#section6)

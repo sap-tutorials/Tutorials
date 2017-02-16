@@ -123,6 +123,6 @@ You have completed the exercise! You are now able to:
 ### Optional - Getting Help
 If you need addition help resources beyond this document, we would suggest the following content:
 
-* The [Online Help](http://help.sap.com/hana/SAP_HANA_Developer_Guide_en.pdf)
+* The [Online Help](https://help.sap.com/hana/SAP_HANA_Developer_Guide_en.pdf)
 * The integrated help within SAP HANA Studio (content identical to the above mentioned online help)
 * SAPUI5 SDK (installed on your HANA Server) ```/sap/ui5/1/sdk/index.html#content/Overview.html```

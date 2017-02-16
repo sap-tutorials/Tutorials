@@ -52,5 +52,5 @@ Congratulations: You have just enabled a simple REST interface for your applicat
 [ACCORDION-END]
 
 ### Optional: Related Information
-[SAP HANA Development Information - Official Documentation](http://help.sap.com/hana_platform#section6)
+[SAP HANA Development Information - Official Documentation](https://help.sap.com/hana_platform#section6)
 

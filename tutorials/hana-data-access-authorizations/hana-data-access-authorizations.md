@@ -232,5 +232,5 @@ Congratulations: You have just accessed your first data on SAP HANA!
 [ACCORDION-END]
 
 ### Optional: Related Information
-[SAP HANA Development Information - Official Documentation](http://help.sap.com/hana_platform#section6)
+[SAP HANA Development Information - Official Documentation](https://help.sap.com/hana_platform#section6)
 
