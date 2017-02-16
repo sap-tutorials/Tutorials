@@ -45,7 +45,7 @@ You will learn how to connect to your SAP HANA Vora instance to manage it. There
 
     >Please refer to Apache Ambari official documentation if you need additional information and training how to use it.
 
-    >For detailed review of all SAP HANA Vora components and their purpose please review [SAP HANA Vora help](http://help.sap.com/hana_vora_re)
+    >For detailed review of all SAP HANA Vora components and their purpose please review [SAP HANA Vora help](https://help.sap.com/hana_vora_re)
 
     ![Apache Ambari web UI - main screen](voraconnect04.jpg)
 
