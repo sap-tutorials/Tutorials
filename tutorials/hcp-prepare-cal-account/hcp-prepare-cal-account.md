@@ -69,7 +69,7 @@ How to setup SAP Cloud Appliance Library account and then install preconfigured 
 
 [ACCORDION-BEGIN [Step 3: ](Using the AWS instance)]
 
-Once the AWS instance has been started, you can connect to it and use the installed SAP NetWeaver Application Server for ABAP. There is also a SAP HANA Cloud Connector installed and running on the AWS instance. You can use it for your on-premise extension scenarios in which you connect HCP applications to the ABAP system on AWS. <!-- How to do this is also described in tutorial [How-to develop an on-premise extension using `JCo/RFC`] (https://www.sap.com/developer/tutorials/hcp-scc-onpremise-extension-jco-rfc.html) -->
+Once the AWS instance has been started, you can connect to it and use the installed SAP NetWeaver Application Server for ABAP. There is also a SAP HANA Cloud Connector installed and running on the AWS instance. You can use it for your on-premise extension scenarios in which you connect HCP applications to the ABAP system on AWS. <!-- How to do this is also described in tutorial [Deploy an JCo/RFC based on-premise extension using SAP HANA Cloud Connector] (https://www.sap.com/developer/tutorials/hcp-scc-onpremise-extension-jco-rfc.html) -->
 
 Details how to connect and use the AWS image are described in [this PDF document](https://caldocs.hana.ondemand.com/caldocs/help/Getting%20started%20guide%20ABAP%20NetWeaver%207.5%20on%20SAP%20HANA.pdf). We briefly summarize the most important points:
 
