@@ -5,12 +5,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 ---
 
 ## Prerequisites  
- - [Working with Time Series using Apache Zeppelin](vora-cal-zeppelin5.html)
+ - [Working with Time Series using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin5.html)
 
 
 ## Next Steps
- - [Working with Document Store Engine in SAP HANA Vora] (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Working with Document Store Engine in SAP HANA Vora](http://www.sap.com/developer/tutorials/vora-cal-zeppelin7.html)
 
 ## Details
 ### You will learn  
@@ -70,5 +69,4 @@ Final step of this tutorial is to create a table from your ORC based file and se
 
 
 ## Next Steps
- - [Working with Document Store Engine in SAP HANA Vora] (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Working with Document Store Engine in SAP HANA Vora](http://www.sap.com/developer/tutorials/vora-cal-zeppelin7.html)

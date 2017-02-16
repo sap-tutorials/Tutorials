@@ -5,12 +5,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 ---
 
 ## Prerequisites  
- - [Working with Graph Engine using Apache Zeppelin](vora-cal-zeppelin4.html)
+ - [Working with Graph Engine using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin4.html)
 
 
 ## Next Steps
- - [Working with ORC and Parquet Files using Apache Zeppelin] (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Working with ORC and Parquet Files using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin6.html)
 
 ## Details
 ### You will learn  
@@ -44,5 +43,4 @@ Next we determine the trend of sales over a time period, multi column analysis o
 [ACCORDION-END]
 
 ## Next Steps
- - [Working with ORC and Parquet Files using Apache Zeppelin] (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Working with ORC and Parquet Files using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin6.html)

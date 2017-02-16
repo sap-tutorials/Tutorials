@@ -5,12 +5,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 ---
 
 ## Prerequisites  
- - [Working with Hierarchies using Apache Zeppelin ](vora-cal-zeppelin2.html)
+ - [Working with Hierarchies using Apache Zeppelin ](http://www.sap.com/developer/tutorials/vora-cal-zeppelin2.html)
 
 
 ## Next Steps
- - [Working with Graph Engine using Apache Zeppelin] (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Working with Graph Engine using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin4.html)
 
 ## Details
 ### You will learn  
@@ -58,5 +57,4 @@ ON COMPLAINTS_DISK.COMPLAINT_ID = PRODUCTS.COMPLAINT_ID
 
 
 ## Next Steps
-- [Working with Graph Engine using Apache Zeppelin] (coming soon), or
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Working with Graph Engine using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin4.html)

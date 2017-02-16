@@ -5,19 +5,18 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 ---
 
 ## Prerequisites  
- - [Working with Tables and Views using Apache Zeppelin](vora-cal-zeppelin0.html)
+ - [Working with Tables and Views using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin0.html)
 
 
 ## Next Steps
- - [Working with Disk Engine using Apache Zeppelin] (coming soon), or
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Working with Disk Engine using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin3.html)
 
 ## Details
 ### You will learn  
 You will learn how to load tables with parent-child relationship between data items, and then create and query hierarchies.
 
 ### Time to Complete
-**5 Min**
+**10 Min**
 
 ---
 
@@ -67,5 +66,4 @@ Select data by hierarchy level (`4` in this example).
 
 
 ## Next Steps
-- [Working with Disk Engine using Apache Zeppelin] (coming soon), or
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Working with Disk Engine using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin3.html)
