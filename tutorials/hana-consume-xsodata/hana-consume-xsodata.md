@@ -67,10 +67,10 @@ Now to add in JavaScript code to to add the UI5 control. Add this code in right 
         
         //Define the columns and the control templates to be used
         var oColumn = new sap.ui.table.Column({
-        	label: new sap.ui.commons.Label({text: "Genre"}),
-        	template: new sap.ui.commons.TextView().bindProperty("text", "GENRE"),
-        	sortProperty: "GENRE",
-        	filterProperty: "GENRE",
+        	label: new sap.ui.commons.Label({text: "Category"}),
+        	template: new sap.ui.commons.TextView().bindProperty("text", "CATEGORY"),
+        	sortProperty: "CATEGORY",
+        	filterProperty: "CATEGORY",
         	width: "100px"
         });
         oTable.addColumn(oColumn);
@@ -78,9 +78,9 @@ Now to add in JavaScript code to to add the UI5 control. Add this code in right 
         //Define the columns and the control templates to be used
         var oColumn = new sap.ui.table.Column({
         	label: new sap.ui.commons.Label({text: "Name"}),
-        	template: new sap.ui.commons.TextView().bindProperty("text", "NAME"),
-        	sortProperty: "NAME",
-        	filterProperty: "NAME",
+        	template: new sap.ui.commons.TextView().bindProperty("text", "BOOKNAME"),
+        	sortProperty: "BOOKNAME",
+        	filterProperty: "BOOKNAME",
         	width: "100px"
         });
         oTable.addColumn(oColumn);
