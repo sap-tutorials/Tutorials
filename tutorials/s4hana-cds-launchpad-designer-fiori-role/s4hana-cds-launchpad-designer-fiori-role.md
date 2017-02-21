@@ -1,7 +1,7 @@
 ---
-title: Creating simple tiles within Fiori Launchpad
-description: Creating a tile within Fiori Launchpad based on an CDS Odata Service
-tags: [ tutorial>intermediate, topic>s4hana, topic>core data services, topic>fiori tile, products>sap-s4hana on-premise ]
+title: Creating simple Fiori launchpad tiles based on an CDS OData Service
+description: Creating a tile within Fiori Launchpad based on an CDS OData Service
+tags: [ tutorial>intermediate, products>sap-s-4hana ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
@@ -12,10 +12,10 @@ tags: [ tutorial>intermediate, topic>s4hana, topic>core data services, topic>fio
 
 ## Details
 ### You will learn  
-- How to create a tile within Fiori Launchpad .
+- How to create a tile within Fiori Launchpad
 
 ### Time to Complete
-**15-20 Min**.
+**15 Min**.
 
 ---
 
@@ -34,6 +34,7 @@ and afterwards(4) click on Log On button.
 `/sap/bc/ui5_ui5/sap/arsrvc_upb_admn/main.html`
 
     ![Launchpad3](Lauchnpad3.png)
+
 Afterwards hit the Enter taste from your keyboard.
 We are now able to see lots of tiles because new profiles were already assigned to the user S4H.
 
@@ -113,8 +114,6 @@ After successfully login , enter the ABAP transaction `su01` (1) for user mainte
     You will also see the group `Z_RDS_BCG`.
         ![Launchpad28](LauchpadDesignerRoleAssigntFinal.png)
 
-### Optional
- - Put any option steps here or remove this section if not applicable.
 
 ## Next Steps
  - [Building simple tile](http://go.sap.com/developer/tutorials/s4hana-cds-building-simple-tile.html)

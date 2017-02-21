@@ -1,11 +1,11 @@
 ---
 title: Building simple tiles within Fiori Launchpad
 description: Build a tile within Fiori Launchpad based on an CDS Odata Service
-tags: [ tutorial>intermediate, topic>s4hana, topic>core data services, topic>fiori tile, products>sap-s4hana on-premise ]
+tags: [ tutorial>intermediate, products>sap-s-4hana ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Do this tutorial first](http://sap.com/developer/tutorials/s4hana-cds-launchpad-designer-fiori-role.html)
+ - **Tutorials:** [Creating simple tiles within Fiori Launchpad](http://sap.com/developer/tutorials/s4hana-cds-launchpad-designer-fiori-role.html)
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://sap.com/developer/tutorials.html)
