@@ -322,7 +322,7 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
 2. Create a text file, copy the following content to it, replacing the variable <`tempPwd`> with your choice of a temporary administrator password for the first login, and save it as `firstTime.mtaext`:
 
-    >**Important**: Incorrect indentation causes errors. If you are copying code, make sure that `- name`, `properties` and `ADMIN_PASSWORD` are indented with spaces, not tab. There are two spaces in front of `- name:`. There are two spaces in front of `properties`. There are four spaces in front of `ADMIN_PASSWORD`.
+    >**Important**: Incorrect indentation causes errors. If you are copying code, make sure that `- name`, `properties` and `ADMIN_PASSWORD` are indented with spaces, not tab. There are two spaces in front of `- name:`. There are four spaces in front of `properties`. There are six  spaces in front of `ADMIN_PASSWORD`.
 
     ```bash
     _schema-version: "2.0.0"
@@ -331,8 +331,8 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
     modules:
       - name: eadesigner-backend
-      properties:
-         ADMIN_PASSWORD: <tempPwd>
+        properties:
+          ADMIN_PASSWORD: <tempPwd>
     ```    
 
     >**Note**: If you do not specify this temporary password file in your installation command, the installation will proceed normally, but you will not be able to log into SAP EA Designer. We recommend that your temporary password should contain 8 or more characters including a mix of numbers and uppercase and lowercase letters. Once installation is complete, you should delete this file.
