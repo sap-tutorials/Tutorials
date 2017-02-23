@@ -18,7 +18,7 @@ You need a HANA account or server. Pick one of the following:
 2. How to develop a simple server-side application.
 3. How to publish and run an application.
 
-### Time to Compete
+### Time to Complete
 Beginners might take **10-15 minutes** to execute this tutorial.
 
 [ACCORDION-BEGIN [Step 1: ](Using HANA Cloud Platform)]
