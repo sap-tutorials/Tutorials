@@ -162,7 +162,7 @@ Next, prefix the column names with the ERP table name `scarr`:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add Annotation for Object representative key)]
+[ACCORDION-BEGIN [Step 7: ](Add annotation for Object representative key)]
 
 Insert after line 7 an additional annotation for object representative key:
 
