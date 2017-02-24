@@ -1,7 +1,7 @@
 ---
 title: Creating a New Plugin Project
 description: In this tutorial, you will create your first plugin for SAP Web IDE. A plugin is a way to develop new functionality for the SAP Web IDE, and one or more plugins are delivered within a SAP Web IDE project called a feature.
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, products>sap-web-ide, products>sap-web-ide-plug-ins ]
 ---
 
 ## Prerequisites  

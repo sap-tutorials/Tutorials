@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Selectively Move Data Between In-Memory and Extended Tables](coming soon)
+ - **Tutorials:** [Selectively Move Data Between In-Memory and Extended Tables](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part5.html)
 
 ## Next Steps
- - **Tutorials:** [View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View](coming soon)
+ - **Tutorials:** [View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part7.html)
 
 ## Details
 ### You will learn
@@ -50,7 +50,7 @@ Verify everything executed correctly.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create Migration Stored Procedure)]
-In the last tutorial section [Selectively Move Data Between In-Memory and Extended Tables](coming soon) we manually created a transaction that executed the "`INSERT`" and "`DELETE`" statements as an atomic operation to migrate the data between a single in-memory and a single extended table. We are now going to go a step further and use a stored procedure to execute the required statements to migrate data for 2 related tables as a single transaction. Using a stored procedure simplifies the process of migrating the data and also ensures that the full migration process of inserting and deleting is consistently executed.
+In the last tutorial section [Selectively Move Data Between In-Memory and Extended Tables](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part5.html) we manually created a transaction that executed the "`INSERT`" and "`DELETE`" statements as an atomic operation to migrate the data between a single in-memory and a single extended table. We are now going to go a step further and use a stored procedure to execute the required statements to migrate data for 2 related tables as a single transaction. Using a stored procedure simplifies the process of migrating the data and also ensures that the full migration process of inserting and deleting is consistently executed.
 
 Now you will create a stored procedure to migrate data older than a year, from the in-memory tables over to the Dynamic Tiering tables. The `Migrate_Aged_Orders()` stored procedure migrates historical data from in-memory `ORDERS_CS` and `LINEITEM_CS` tables to the Dynamic Tiering tables `ORDERS_DT` and `LINEITEM_DT` respectively. Copy and paste the script below into a SQL console. Then press the Execute button to create the procedure and verify it executed correctly.
 
@@ -124,4 +124,4 @@ SELECT * FROM "TPCH"."LINEITEM_CS" WHERE "TPCH"."LINEITEM_CS"."L_SHIPDATE" < '20
 [ACCORDION-END]
 
 ## Next Steps
-- **Tutorials:** [View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View](coming soon)
+- **Tutorials:** [View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part7.html)

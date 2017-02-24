@@ -1,12 +1,11 @@
 ---
 title: Creating OData Services
 description: Creating OData Services(Core Data Services)
-tags: [  tutorial>beginner ]
+tags: [  tutorial>beginner, products>sap-s-4hana ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Creating Consumption views based on basic/interface views.
-  ](http://www.sap.com/developer/tutorial-navigator.html)
+ - **Tutorials:** [Core Data Services, creating Associations (Joins)](http://www.sap.com/developer/tutorials/s4hana-cds-associations.html)
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
