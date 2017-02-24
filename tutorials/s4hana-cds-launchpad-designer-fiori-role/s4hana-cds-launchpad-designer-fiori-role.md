@@ -25,7 +25,7 @@ Access the Fiori Launchpad Designer by opening the welcome page that came with S
 
 ![Launchpad1 ](Lauchnpad1png.png)
 
-From the above welcome page, click on the link (1 in the screenshot below) to access the Login screen of the Fiori Launchpad Designer.
+From the above welcome page, click on the link (1 in the screenshot above) to access the Login screen of the Fiori Launchpad Designer.
 
 ![Launchpad2](Lauchnpad2.png)
 
