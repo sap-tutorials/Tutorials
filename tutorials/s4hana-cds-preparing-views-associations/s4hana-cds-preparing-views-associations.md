@@ -5,7 +5,9 @@ tags: [  tutorial>beginner, products>sap-s-4hana ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Creating basic view. Creating consumption view. ](http://www.sap.com/developer/tutorial-navigator.html)
+ - **Tutorials:**
+ - [Creating basic view](http://www.sap.com/developer/tutorials/s4hana-cds-creating-basic-view.html)  
+ - [Creating consumption view](http://www.sap.com/developer/tutorials/s4hana-cds-creating-consumption-view.html)
 
 ## Next Steps
 [Creating views association](http://www.sap.com/developer/tutorials/s4hana-cds-associations.html)
@@ -162,7 +164,7 @@ Next, prefix the column names with the ERP table name `scarr`:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add annotation for Object representative key)]
+[ACCORDION-BEGIN [Step 7: ](Add Annotation for Object representative key)]
 
 Insert after line 7 an additional annotation for object representative key:
 
