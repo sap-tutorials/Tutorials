@@ -8,7 +8,7 @@ tags: [ tutorial>intermediate, products>sap-s-4hana ]
  - **Tutorials:** [Creating OData based on CDS Views. ](http://sap.com/developer/tutorials/s4hana-cds-creating-odata-service.html)
 
 ## Next Steps
- [Building simple tile](http://sap.com/developer/tutorials/s4hana-cds-building-simple-tile.html)
+ [Building simple tiles](http://sap.com/developer/tutorials/s4hana-cds-building-simple-tile.html)
 
 ## Details
 ### You will learn  
