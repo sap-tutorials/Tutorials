@@ -1,7 +1,7 @@
 ---
-title: SAP HCP predictive services, Setup a HANA user account for the HCP predictive services
-description: Configure a user account with the relevant roles and privileges to use the SAP HCP predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
+title: SAP Cloud Platform predictive services, Setup a HANA user account for the SAP Cloud Platform predictive services
+description: Configure a user account with the relevant roles and privileges to use the SAP Cloud Platform predictive services
+tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
@@ -15,7 +15,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 ### You will learn
   - How to create a new user account on your HANA MDC instance using the ***SAP HANA Cockpit***. Each Trial HANA MDC instance comes with a ***HANA System Account***. This user account shall be used only to execute "System" related activities.
   In the "real world", it is uncommon to use this user account to develop an "end-user" application.
-  - What are the user roles and privileges required on HANA to use the SAP HCP predictive services. As the SAP HCP predictive services use the HANA Automated Predictive Library, it is required to configure the user roles and privileges accordingly.
+  - What are the user roles and privileges required on HANA to use the SAP Cloud Platform predictive services. As the SAP Cloud Platform predictive services use the HANA Automated Predictive Library, it is required to configure the user roles and privileges accordingly.
 
 ### Time to Complete
   **5 minutes**

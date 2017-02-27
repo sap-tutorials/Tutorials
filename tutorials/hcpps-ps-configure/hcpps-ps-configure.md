@@ -1,7 +1,7 @@
 ---
-title: SAP HCP predictive services, Enable, deploy and configure the SAP HCP predictive services
-description: Enable, deploy and configure the SAP HCP predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
+title: SAP Cloud Platform predictive services, Enable, deploy and configure the SAP Cloud Platform predictive services
+description: Enable, deploy and configure the SAP Cloud Platform predictive services
+tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
@@ -9,23 +9,23 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
   - **Tutorials:** [Expose your predictive demo dataset as an OData service](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
 
 ## Next Steps
-  - [Install a REST client to interact with the HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
+  - [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
 
 ## Details
 ### You will learn
-  - How to enable, deploy and configure the HCP predictive services for your HCP Developer Account
+  - How to enable, deploy and configure the SAP Cloud Platform predictive services for your SAP Cloud Platform Developer Account
 
 ### Time to Complete
   **10 minutes**
 
 [ACCORDION-BEGIN [Step 1: ](Enable the Predictive Services)]
-Let's go back to the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
+Let's go back to the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
 
-Click on your ***HCP Account name*** as highlighted on the below screenshot.
+Click on your ***SAP Cloud Platform Account name*** as highlighted on the below screenshot.
 
-> If you are unclear with what is your HCP account name, you can refer to the following blog entry: [SAP HANA Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
-![SAP HANA Cloud Platform Cockpit](01.png)
+![SAP Cloud Platform Cockpit](01.png)
 
 On the left side bar, click on **Services**.
 
@@ -58,9 +58,9 @@ Click on the tile
 
 ![Cloud for Predictive Analytics](06.png)
 
-In order to deploy the ***Cloud for Predictive Analytics*** services application in your ***Your Personal Developer Account***, you  need to provide your ***HCP Account Password*** as highlighted on the screenshot.
+In order to deploy the ***Cloud for Predictive Analytics*** services application in your ***Your Personal Developer Account***, you  need to provide your ***SAP Cloud Platform Account Password*** as highlighted on the screenshot.
 
-The other settings, like ***HCP Account User Name***, will be filled with your current information.
+The other settings, like ***SAP Cloud Platform Account User Name***, will be filled with your current information.
 
 Click on **Deploy**
 
@@ -104,19 +104,19 @@ Click on **Save**
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Assign the roles to your user)]
-Now, you need to configure security settings for your ***HCP Account***.
+Now, you need to configure security settings for your ***SAP Cloud Platform Account***.
 
 On the left side bar, navigate in **Security**, then click on **Roles**  
 
 ![Binding](13.png)
 
-Assign to your ***HCP Account User*** the `C4PA-User` and `C4PA-Admin` roles using the **Assign** button as highlighted on the screenshot.
+Assign to your ***SAP Cloud Platform Account User*** the `C4PA-User` and `C4PA-Admin` roles using the **Assign** button as highlighted on the screenshot.
 
-Your ***HCP Account User Name*** was displayed during the ***Deploy*** step.
+Your ***SAP Cloud Platform Account User Name*** was displayed during the ***Deploy*** step.
 
 And in case you are using a trial account, make sure you don't include the "trial" at the end.
 
-> If you are unclear with what is your HCP account name, you can refer to the following blog entry: [SAP HANA Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 The `C4PA-User` will enable your user to consume the services and the `C4PA-Admin` to administer the `C4PA` application.
 
@@ -162,10 +162,10 @@ Click on the **Administration** tile
 
 ![Application](19.png)
 
-Status is green! Congrats, you have configured the HCP predictive services on your HCP trial account.
+Status is green! Congrats, you have configured the SAP Cloud Platform predictive services on your SAP Cloud Platform trial account.
 
 ![Application](20.png)    
 [DONE]
 [ACCORDION-END]
 ## Next Steps
-  - [Install a REST client to interact with the HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
+  - [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)

@@ -1,7 +1,7 @@
 ---
-title: SAP HCP predictive services, Access your predictive demo data set using an OData services from a REST client
+title: SAP Cloud Platform predictive services, Access your predictive demo data set using an OData services from a REST client
 description: Using a REST client, you will interact with an OData services and get access to your predictive demo data set
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, topic>odata ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>odata ]
 ---
 
 ## Prerequisites
@@ -19,7 +19,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
   - Filter & sort the data from an OData Service deployed on your HANA HCP instance
 
   **Note:**
-    - The OData version 2.0 URI convention is supported by HANA XS Classic, which is currently used on the HANA Cloud Platform
+    - The OData version 2.0 URI convention is supported by HANA XS Classic, which is currently used on the SAP Cloud Platform
     http://www.odata.org/documentation/odata-version-2-0/uri-conventions/
 
 ### Time to Complete
@@ -34,7 +34,7 @@ Therefore you can replace any occurrence of the token by the value listed above.
 <code><b>&lt;HANA instance id&gt;</b></code>  | as created previously, should be `mdc`
 <code><b>&lt;HANA URL&gt;</b></code> | `http://<`<code><b>HANA instance id</b></code>`><`<code><b>HCP account name</b></code>`>.hanatrial.ondemand.com`
 >
-> If you are unclear with what is your HCP account name, you can refer to the following blog entry: [SAP HANA Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+> If you are unclear with what is your HCP account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 [ACCORDION-BEGIN [Step 1: ](Get the service definition)]
 Open ***Postman***.

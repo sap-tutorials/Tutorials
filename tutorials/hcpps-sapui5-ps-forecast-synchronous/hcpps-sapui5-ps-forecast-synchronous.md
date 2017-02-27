@@ -1,7 +1,7 @@
 ---
-title: SAP HCP predictive services, Use the synchronous Forecast HCP predictive service from a SAPUI5 application
+title: SAP Cloud Platform predictive services, Use the synchronous Forecast HCP predictive service from a SAPUI5 application
 description: You will extend your application with the use the synchronous mode from the "Forecast" HCP predictive service
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, topic>sapui5 ]
+tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
@@ -20,11 +20,11 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
 ---
 
-1. Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
+1. Log into the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
 
     Click on your ***HCP Account*** identifier (which ends with *trial*) as highlighted on the below screenshot.
 
-    ![SAP HANA Cloud Platform Cockpit](1.png)
+    ![SAP Cloud Platform Cockpit](1.png)
 
 1. On the left side bar, you can navigate in **Applications** > **HTML5 Applications**.
 
@@ -134,7 +134,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
     ```xml
     <mvc:View controllerName="demo.controller.forecast.ForecastSynchronous" xmlns:html="http://www.w3.org/1999/xhtml"
       xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form">
-      <Panel expandable="true" expanded="false" headerText="Forecast with the HCP predictive services (Synchronous)" class="sapUiResponsiveMargin"
+      <Panel expandable="true" expanded="false" headerText="Forecast with the SAP Cloud Platform predictive services (Synchronous)" class="sapUiResponsiveMargin"
         width="auto" height="auto">
         <form:SimpleForm editable="true" layout="ResponsiveGridLayout" class="editableForm">
           <form:content>
@@ -159,7 +159,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
 1. Open the `ForecastSynchronous.controller.js` file in the `hcppredictiveservicesdemo\webapp\controller\forecast` directory and add the following after the last function (make sure you include a comma between each functions) .
 
-    The controller includes the functions used to process the 'Press' events on the controls added in the view and process the `AJAX` calls to the HCP predictive services.
+    The controller includes the functions used to process the 'Press' events on the controls added in the view and process the `AJAX` calls to the SAP Cloud Platform predictive services.
     It 'extends' the `DataSetList` JavaScript file created earlier as our view uses the `DatasetList` fragment.
 
     ```javascript

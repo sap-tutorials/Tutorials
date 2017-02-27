@@ -1,29 +1,29 @@
 ---
-title: SAP HCP predictive services, Setup your HCP trial SAP HANA MDC instance
-description: Learn how to setup a SAP HANA MDC instance to be used with the SAP HCP predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform  ]
+title: SAP Cloud Platform predictive services, Setup your SAP Cloud Platform trial SAP HANA MDC instance
+description: Learn how to setup a SAP HANA MDC instance to be used with the SAP Cloud Platform predictive services
+tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform  ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - [Sign up for an free trial account on SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+  - [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-  - [Setup a HANA user account for the HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+  - [Setup a HANA user account for the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
 
 ## Details
 ### You will learn
-  - How to setup a SAP HANA MDC (Multi-Database Container) instance on the SAP HANA Cloud Platform. This instance will be used to store the datasets to be used with the predictive services.
+  - How to setup a SAP HANA MDC (Multi-Database Container) instance on the SAP Cloud Platform. This instance will be used to store the datasets to be used with the predictive services.
 
 ### Time to Complete
   **10 minutes**
 
-[ACCORDION-BEGIN [Step 1: ](Access your HANA Cloud Platform account)]
-Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
+[ACCORDION-BEGIN [Step 1: ](Access your SAP Cloud Platform account)]
+Log into the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
 
-![SAP HANA Cloud Platform Cockpit](01.png)
+![SAP Cloud Platform Cockpit](01.png)
 
-Click on the ***HCP Developer Account*** link as highlighted on the below screenshot. By default, it ends with *trial* in fact is your account display name and can be changed using the pen icon)
+Click on the ***SAP Cloud Platform Developer Account*** link as highlighted on the below screenshot. By default, it ends with *trial* in fact is your account display name and can be changed using the pen icon)
 
 ![Your Personal Developer Account](02.png)
 [DONE]
@@ -103,4 +103,4 @@ You are in the ***SAP HANA Cockpit***.
 [ACCORDION-END]
 
 ## Next Steps
-  - [Setup a HANA user account for the HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+  - [Setup a HANA user account for the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)

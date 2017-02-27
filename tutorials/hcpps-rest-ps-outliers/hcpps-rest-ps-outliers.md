@@ -1,12 +1,12 @@
 ---
-title: SAP HCP predictive services, Test the "Outliers" HCP predictive service from a REST client
+title: SAP Cloud Platform predictive services, Test the "Outliers" HCP predictive service from a REST client
 description: Using a REST client, you will test the "Outliers" HCP predictive service from a REST client
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the "Key Influencer" HCP predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
+  - **Tutorials:** [Test the "Key Influencer" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
 
 ## Next Steps
   - [Configure a SAPUI5 application to interact with the HCP predictive](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
@@ -14,9 +14,9 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 ## Details
 
 ### You will learn
- - How to use the "Outliers" HCP predictive services from a REST Client.
+ - How to use the "Outliers" SAP Cloud Platform predictive services from a REST Client.
 
-Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" HCP predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
+Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
 
 ### Time to Complete
   **10 minutes**
@@ -29,7 +29,7 @@ Therefore you can replace any occurrence of the token by the value listed above.
 <code><b>&lt;HCP account name&gt;</b></code>  | on a developer trial account, it should end by `trial`
 <code><b>&lt;C4PA URL&gt;</b></code> | `http://aac4paservices<`<code><b>HCP account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
 >
-> If you are unclear with what is your HCP account name, you can refer to the following blog entry: [SAP HANA Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+> If you are unclear with what is your HCP account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 [ACCORDION-BEGIN [Info:](A short description of the Outliers service)]
 The Outliers service identifies the odd profiles of a dataset whose target indicator is significantly different from what is expected.
@@ -95,7 +95,7 @@ class | Variable indicating whether or not the salary of the individual is great
 
 First we need to register the dataset.
 
-As described in the **Step 1: Register a dataset** from the [Test the "Data Set" HCP predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial, register the Census dataset using the following elements:
+As described in the **Step 1: Register a dataset** from the [Test the "Data Set" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial, register the Census dataset using the following elements:
 
 Field Name     | Value
 -------------- | --------------
@@ -163,7 +163,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   ]  
 }
 ```
-> Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" HCP predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
+> Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
 
 With these settings, we will get a scoring equation as SQL for HANA to predict the probability of the class variable to be a 1, excluding the "id", "sex", "race" variables from the analysis. It will also adjust the dataset description with proper settings.
 
@@ -248,7 +248,7 @@ We can see that 356 records out of the 48842 are marked as outliers, where the d
 [ACCORDION-END]    
 
 ### Optional
-For more details on the HCP predictive services, you can check the following URL:
+For more details on the SAP Cloud Platform predictive services, you can check the following URL:
   - `<`<code><b>C4PA URL</b></code>`>/raml/index.html?raml=../aa-cloud-services.raml`
 
 ## Next Steps

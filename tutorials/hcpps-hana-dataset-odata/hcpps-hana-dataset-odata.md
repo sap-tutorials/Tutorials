@@ -1,7 +1,7 @@
 ---
-title: SAP HCP predictive services, Expose your predictive demo dataset as an OData service
-description: Expose the demo data to be used with the SAP HCP predictive services as an OData services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, topic>odata ]
+title: SAP Cloud Platform predictive services, Expose your predictive demo dataset as an OData service
+description: Expose the demo data to be used with the SAP Cloud Platform predictive services as an OData services
+tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>odata ]
 ---
 
 ## Prerequisites
@@ -9,11 +9,11 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
   - **Tutorials:** [Import a predictive demo dataset in your SAP HANA](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - [Enable, deploy and configure the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Details
 ### You will learn
-  - How to create an ***OData*** service to expose a table stored in the HANA HCP instance
+  - How to create an ***OData*** service to expose a table stored in the HANA SAP Cloud Platform instance
 
   **Note:**
     - The OData service will be used in a SAPUI5 application to render the data in a graph or a table, and is not used by the predictive services.
@@ -113,4 +113,4 @@ Later, you will be using this OData service, so you should save the highlighted 
 [ACCORDION-END]
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - [Enable, deploy and configure the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)

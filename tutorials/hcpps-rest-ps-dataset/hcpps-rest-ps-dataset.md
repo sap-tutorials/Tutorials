@@ -1,7 +1,7 @@
 ---
-title: SAP HCP predictive services, Test the "Data Set" HCP predictive services using a REST client
-description: Using a REST client, you will test the "Data Set" HCP predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
+title: SAP Cloud Platform predictive services, Test the "Data Set" SAP Cloud Platform predictive services using a REST client
+description: Using a REST client, you will test the "Data Set" SAP Cloud Platform predictive services
+tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
@@ -13,8 +13,8 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
 
 ## Details
 ### You will learn
-  - How to "Register" your data set with the HCP predictive services using a REST Client.
-  In order to use any of the HCP predictive services, you will need a registered dataset. When registering a dataset, you will define and store the structure of the dataset which will be used by the other services.
+  - How to "Register" your data set with the SAP Cloud Platform predictive services using a REST Client.
+  In order to use any of the SAP Cloud Platform predictive services, you will need a registered dataset. When registering a dataset, you will define and store the structure of the dataset which will be used by the other services.
   We upload 3 datasets in one of the previous steps, but we will be using the `CashFlow` dataset as an example here. You can replicate the steps for the other 2 datasets.
 
 ### Time to Complete
@@ -28,7 +28,7 @@ Therefore you can replace any occurrence of the token by the value listed above.
 <code><b>&lt;HCP account name&gt;</b></code>  | on a developer trial account, it should end by `trial`
 <code><b>&lt;C4PA URL&gt;</b></code> | `http://aac4paservices<`<code><b>HCP account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
 >
-> If you are unclear with what is your HCP account name, you can refer to the following blog entry: [SAP HANA Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+> If you are unclear with what is your HCP account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 [ACCORDION-BEGIN [Step 1: ](Register a dataset)]
 Open a new tab in ***Postman***.
@@ -71,7 +71,7 @@ Click on **Send** an additional 4 or 5 times, so you will have multiple dataset 
 
 1. It will now display the data set registration identifier, the number of rows and the variable descriptions.
 
-Now, we can use the `ID` value to reference the registered dataset with other HCP predictive services calls.
+Now, we can use the `ID` value to reference the registered dataset with other SAP Cloud Platform predictive services calls.
 
 The below extract was shortened to ease the reading.
 ```
@@ -221,7 +221,7 @@ You have now listed all the data set registered in your environment.
 [ACCORDION-END]
 
 ### Optional
-For more details on the HCP predictive services, you can check the following URL:
+For more details on the SAP Cloud Platform predictive services, you can check the following URL:
   - `<`<code><b>C4PA URL</b></code>`>/raml/index.html?raml=../aa-cloud-services.raml`
 
 ## Next Steps

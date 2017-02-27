@@ -1,19 +1,19 @@
 ---
-title: SAP HCP predictive services, Test the "Forecast" HCP predictive service from a REST client
+title: SAP Cloud Platform predictive services, Test the "Forecast" HCP predictive service from a REST client
 description: Using a REST client, you will test the "Forecast" HCP predictive service from a REST client
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the "Data Set" HCP predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - **Tutorials:** [Test the "Data Set" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
 
 ## Next Steps
-  - [Test the "Key Influencer" HCP predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
+  - [Test the "Key Influencer" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
 
 ## Details
 ### You will learn
- - How to use the "Forecast" HCP predictive services from a REST Client in both synchronous and asynchronous mode.
+ - How to use the "Forecast" SAP Cloud Platform predictive services from a REST Client in both synchronous and asynchronous mode.
  The asynchronous mode will create a job with a status that you can check the status for completion.
 
 ### Time to Complete
@@ -27,7 +27,7 @@ Therefore you can replace any occurrence of the token by the value listed above.
 <code><b>&lt;HCP account name&gt;</b></code>  | on a developer trial account, it should end by `trial`
 <code><b>&lt;C4PA URL&gt;</b></code> | `http://aac4paservices<`<code><b>HCP account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
 >
-> If you are unclear with what is your HCP account name, you can refer to the following blog entry: [SAP HANA Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+> If you are unclear with what is your HCP account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 [ACCORDION-BEGIN [Info:](A short description of the Forecast service)]
 The Forecasts service analyzes a dataset containing the successive values of a target indicator over time to predict the next values.
@@ -361,8 +361,8 @@ URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/forecast/1`
 [ACCORDION-END]
 
 ### Optional
-For more details on the HCP predictive services, you can check the following URL:
+For more details on the SAP Cloud Platform predictive services, you can check the following URL:
   - `<`<code><b>C4PA URL</b></code>`>/raml/index.html?raml=../aa-cloud-services.raml`
 
 ## Next Steps
-  - [Test the "Key Influencer" HCP predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
+  - [Test the "Key Influencer" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
