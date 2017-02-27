@@ -16,30 +16,38 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
   - How to install the [Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/).
 
 ### Time to Complete
-  **1 minutes**.
+  **2 minutes**.
 
----
+[ACCORDION-BEGIN [Step 1: ](Install Google Chrome)]
+If you haven't done so yet, please install [Google Chrome](http://www.google.com/chrome/browser/desktop/).
 
-1. If you haven't done so yet, please start [Google Chrome](http://www.google.com/chrome/browser/desktop/) and install the [Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/) now.
+[DONE]
+[ACCORDION-END]
 
-1. Open ***Google Chrome***.
+[ACCORDION-BEGIN [Step 2: ](Install Google Chrome Postman)]
+Open ***Google Chrome*** and install the [Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/) now.
 
-    Click on **Apps**
+[DONE]
+[ACCORDION-END]
 
-    ![Google Chrome](1.png)
+[ACCORDION-BEGIN [Step 3: ](Start Postman)]
+Click on **Apps**
 
-    Click on the **Postman** icon
+![Google Chrome](01.png)
 
-1. You will get access to all the ***Google Chrome*** installed extension.
+Click on the **Postman** icon
 
-    Click on **Postman**
+You will get access to all the ***Google Chrome*** installed extension.
 
-    ![Postman](2.png)
+Click on **Postman**
 
-1. You are all set to move to the next tutorial.
+![Postman](02.png)
 
-    ![Postman](3.png)
+You are all set to move to the next tutorial.
+
+![Postman](03.png)
+[DONE]
+[ACCORDION-END]
 
 ## Next Steps
   - [Test the OData services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
-
