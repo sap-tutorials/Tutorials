@@ -1,7 +1,7 @@
 ---
 title: Creating a Destination for Consuming a Plugin
 description: In this tutorial, you will create a destination so that all SAP Web IDE developers using your account can activate and use the plugin. In order for SAP Web IDE to recognize and consume the new feature, you need to create a destination with the application URL of your feature application.
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, products>sap-web-ide, products>sap-web-ide-plug-ins ]
 ---
 
 ## Prerequisites  
