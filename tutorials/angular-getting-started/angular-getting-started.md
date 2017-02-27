@@ -1,11 +1,11 @@
 ---
 title: AngularJS as a Front End - Getting Started
 description: Step #1: Get started writing a simple AngularJS application.
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner 
- - **Tutorials:** You will need a HANA Cloud Platform (HCP) trial account for this tutorial series.  [Create an HCP Trial Account](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Proficiency:** Beginner
+ - **Tutorials:** You will need a SAP Cloud Platform trial account for this tutorial series.  [Create an SAP Cloud Platform Trial Account](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
 #### AngularJS Series
@@ -26,26 +26,26 @@ In this tutorial series, we will explore another technology for Single Page Appl
 
 ### Connect to SAP Web IDE
 
-1.  Open your HANA Cloud Platform account (if you have a free developer account, click [HERE](https://account.hanatrial.ondemand.com/) to open the console.)
+1.  Open your SAP Cloud Platform account (if you have a free developer account, click [HERE](https://account.hanatrial.ondemand.com/) to open the console.)
 
-    >**Trouble logging in?** If you have trouble logging in to your HANA Cloud Platform Cockpit, and you are using a company account (one provided by your employer), it is possible that the Cloud access has been locked.  Create a new FREE trial account by clicking the link above, and use your personal email address to set up the new account.
+    >**Trouble logging in?** If you have trouble logging in to your SAP Cloud Platform Cockpit, and you are using a company account (one provided by your employer), it is possible that the Cloud access has been locked.  Create a new FREE trial account by clicking the link above, and use your personal email address to set up the new account.
 
-    ![HANA Cloud Platform Developer Account Login Screen](1-1.png)
+    ![SAP Cloud Platform Developer Account Login Screen](1-1.png)
 
-2.  You should now be in the SAP HANA Cloud Platform Cockpit, as shown below.  Click on the **Services** menu item on the left.  
+2.  You should now be in the SAP Cloud Platform Cockpit, as shown below.  Click on the **Services** menu item on the left.  
 
     Next, click on the **SAP Web IDE** box.  You may need to scroll down to find this box.
 
     >**Enabled**: If the box does **NOT** say Enabled, click the **Not Enabled** button to enable this feature.  In the screen that appears, click the **Enable** button at the top of the page to confirm this feature is set up.
 
-    ![HCP Console - Web IDE services button and box](1-2.png)
-    
+    ![SAP Cloud Platform Console - Web IDE services button and box](1-2.png)
+
 3.  In the SAP Web IDE screen, you will see a paragraph called *Service Description*.  At the bottom of the paragraph, there is a link called **Open SAP Web IDE**.  Click this link
 
-    ![HCP Console - Open Web IDE link](1-3.png)
+    ![SAP Cloud Platform Console - Open Web IDE link](1-3.png)
 
 4.  A new tab (or window) will open, and the Web IDE will load.
-    
+
     ![Web IDE Loading](1-4a.png)
 
     ![Web IDE start screen](1-4b.png)
@@ -98,7 +98,7 @@ In this tutorial series, we will explore another technology for Single Page Appl
     <body>
         Hello Angular!
     </body>
-    
+
     </html>
     ```
 
@@ -118,4 +118,3 @@ Yes, you can.   We are using Web IDE because it provides an unlimited, free, dev
 
 ## Next Steps
  - **Tutorials:** Step 2 [Create the Bootstrap Template](http://www.sap.com/developer/tutorials/angular-bootstrap-template.html)
-

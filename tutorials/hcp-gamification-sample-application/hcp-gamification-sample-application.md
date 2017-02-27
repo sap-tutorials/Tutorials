@@ -1,24 +1,24 @@
 ---
 title: Create the gamified HelpDesk application
 description: Generate demo content for a sample gamified application and use the application.
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Enable and configure the SAP HANA Cloud Platform, gamification service](http://www.sap.com/developer/tutorials/hcp-gamification-service-enable.html)
+ - **Tutorials:** [Enable and configure the SAP Cloud Platform, gamification service](http://www.sap.com/developer/tutorials/hcp-gamification-service-enable.html)
 ## Next Steps
- - [Deploy gamified HelpDesk application to the SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)
+ - [Deploy gamified HelpDesk application to the SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will see what gamification on the SAP HANA Cloud Platform looks like through interacting with the gamified HelpDesk application that was automatically assigned to your account when you activated the gamification service.
+In this tutorial, you will see what gamification on the SAP Cloud Platform looks like through interacting with the gamified HelpDesk application that was automatically assigned to your account when you activated the gamification service.
 
 ### Time to Complete
 **10 Min**.
 
 ---
 
-1. In your Web browser, open the cockpit of the [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com/cockpit). Then select **Services** from the left-hand navigation.
+1. In your Web browser, open the cockpit of the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit). Then select **Services** from the left-hand navigation.
 
     ![Selecting Services](1.png)
 
@@ -72,4 +72,4 @@ In this tutorial, you will see what gamification on the SAP HANA Cloud Platform 
     ![Badges](14.png)
 
 ## Next Steps
- - [Deploy gamified HelpDesk application to the SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)
+ - [Deploy gamified HelpDesk application to the SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)

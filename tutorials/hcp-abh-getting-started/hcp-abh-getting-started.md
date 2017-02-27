@@ -1,7 +1,7 @@
 ---
 title: Getting started with the SAP API Business Hub
 description: Learn how to find and test the API Business Hub.
-tags: [  tutorial>beginner, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -12,19 +12,19 @@ tags: [  tutorial>beginner, products>sap-hana-cloud-platform ]
 
 ## Details
 ### You will learn  
-Want to learn more about the new SAP API Business Hub? Not sure where to get started? Find more about how to find and enable the SAP API Business Hub in your SAP HANA Cloud Platform instance. Once you are in the SAP API Business Hub, start learning about and testing one of the many available APIs.
+Want to learn more about the new SAP API Business Hub? Not sure where to get started? Find more about how to find and enable the SAP API Business Hub in your SAP Cloud Platform instance. Once you are in the SAP API Business Hub, start learning about and testing one of the many available APIs.
 
 ### Time to Complete
 **15 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open SAP HANA Cloud Platform Services)]
-Open your [SAP HANA Cloud Platform Cockpit](https://account.hanatrial.ondemand.com/cockpit). If you do not have an account yet, sign up for a free trial account first.
+[ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform Services)]
+Open your [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com/cockpit). If you do not have an account yet, sign up for a free trial account first.
 
-In your HCP account, select **Services** from the side menu.
+In your SAP Cloud Platform account, select **Services** from the side menu.
 
-![service in HCP menu](1.png)
+![service in SAP Cloud Platform menu](1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -32,19 +32,19 @@ In your HCP account, select **Services** from the side menu.
 [ACCORDION-BEGIN [Step 2: ](Open SAP API Business Hub)]
 In the **Services** catalog, search for _SAP API_. You should see 2 results. The SAP API Business Hub is the service you are looking for.
 
-![API Services in HCP](2.png)
+![API Services in SAP Cloud Platform](2.png)
 
 Select the **SAP API Business Hub** service. If it is not already enabled, do so on the service page.
 
 Once the service is enabled, select **Go to Service**.
 
-![HCP API Business Hub page](3.png)
+![SAP Cloud Platform API Business Hub page](3.png)
 
 This will direct you to the homepage for the SAP API Business Hub.
 
 ![SAP API Business Hub homepage](4.png)
 
-You can access the SAP API Business hub through HCP or by just visiting their website by going to <http://api.sap.com>.
+You can access the SAP API Business hub through SAP Cloud Platform or by just visiting their website by going to <http://api.sap.com>.
 
 
 [DONE]

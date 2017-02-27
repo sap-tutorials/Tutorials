@@ -1,7 +1,7 @@
 ---
 title: Configure Android Studio for mobile development
-description: Configure an Android Studio project for mobile development with SAP HANA Cloud Platform Development and Operations
-tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>sap-hana-cloud-platform ]
+description: Configure an Android Studio project for mobile development with SAP Cloud Platform Development and Operations
+tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>sap-cloud-platform ]
 
 ---
 
@@ -11,7 +11,7 @@ tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>
  - Download and install the [SAP Mobile SDK](https://store.sap.com/sap/cpa/ui/resources/store/html/SolutionDetails.html?pid=0000013098)
 
 ## Next Steps
- - [Compile and run a native Android app on SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcpdo-run-native-android-app.html)
+ - [Compile and run a native Android app on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcpdo-run-native-android-app.html)
 
 ## Details
 ### You will learn  
@@ -123,4 +123,4 @@ The procedure shown in this tutorial can be used for any of the Android activity
 
 
 ## Next Steps
- - [Compile and run a native Android app on SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcpdo-run-native-android-app.html)
+ - [Compile and run a native Android app on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcpdo-run-native-android-app.html)

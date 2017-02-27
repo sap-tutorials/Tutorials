@@ -1,7 +1,7 @@
 ---
-title: Deploy a Micro Service Built on YaaS on the SAP HCP
-description: In this tutorial you will set up a cloud account on the HANA Cloud Platform through your YaaS project. You will then deploy your Tips micro service to the cloud and point your Storefront to it.
-tags: [  tutorial>intermediate, topic>cloud, products>sap-hana-cloud-platform, products>sap-hybris-as-a-service-on-sap-hana-cloud-platform>sap-hybris-as-a-service-on-sap-hana-cloud-platform ]
+title: Deploy a Micro Service Built on YaaS on the SAP Cloud Platform
+description: In this tutorial you will set up a cloud account on the SAP Cloud Platform through your YaaS project. You will then deploy your Tips micro service to the cloud and point your Storefront to it.
+tags: [  tutorial>intermediate, topic>cloud, products>sap-cloud-platform, products>sap-hybris-as-a-service-on-sap-hana-cloud-platform>sap-hybris-as-a-service-on-sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
@@ -18,7 +18,7 @@ tags: [  tutorial>intermediate, topic>cloud, products>sap-hana-cloud-platform, p
 
 ## Details
 ### You will learn  
-You will learn how to deploy a micro service to the SAP HCP. As an example you will use the Tips micro service created in the [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html) tutorial. In order to deploy a micro service you will need to set up your Cloud Foundry Command Line interface and create a SAP HCP account. In the end you will run the micro service on the cloud.
+You will learn how to deploy a micro service to the SAP Cloud Platform. As an example you will use the Tips micro service created in the [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html) tutorial. In order to deploy a micro service you will need to set up your Cloud Foundry Command Line interface and create a SAP Cloud Platform account. In the end you will run the micro service on the cloud.
 
 ### Time to Complete
 **20 Min**.
@@ -29,21 +29,21 @@ You will learn how to deploy a micro service to the SAP HCP. As an example you w
 
     ![CF Command](cf-command.PNG)
 
-2. Set the Cloud Foundry CLI's endpoint to SAP's HCP address, by running the command: `cf api https://api.cf.us10.hana.ondemand.com`
+2. Set the Cloud Foundry CLI's endpoint to SAP's SAP Cloud Platform address, by running the command: `cf api https://api.cf.us10.hana.ondemand.com`
 
     ![CF Endpoint](cf-cli-endpoint.PNG)
 
-3. Go to **Builder**. Choose the YaaS Project which you created in the **Getting Started with YaaS** tutorial to subscribe to the **HCP, starter edition for cloud foundry services (beta)** package. This package allows you to develop, deploy and run services and applications.
+3. Go to **Builder**. Choose the YaaS Project which you created in the **Getting Started with YaaS** tutorial to subscribe to the **SAP Cloud Platform, starter edition for cloud foundry services (beta)** package. This package allows you to develop, deploy and run services and applications.
     - Open your YaaS Projects **Administration** page.
-    - Click **Subscription**, select **+ Subscription**, select the *Beta Worldwide* tab, and subscribe to the package called **HCP, STARTER EDITION FOR CLOUD FOUNDRY SERVICES (BETA)** in there.
+    - Click **Subscription**, select **+ Subscription**, select the *Beta Worldwide* tab, and subscribe to the package called **SAP Cloud Platform, STARTER EDITION FOR CLOUD FOUNDRY SERVICES (BETA)** in there.
 
-4. Wait 10 seconds and your package will appear in **Builder in your YaaS Project***. If your package did not appear, log out and back in to the YaaS Builder, find your project, and you should see **SAP HANA Cloud Platform** in your YaaS Project's Menu on the left side of the page. Select the **SAP HANA Cloud Platform** menu and click **Create** to activate your HCP account. This will trigger the email mentioned in the next step.
+4. Wait 10 seconds and your package will appear in **Builder in your YaaS Project***. If your package did not appear, log out and back in to the YaaS Builder, find your project, and you should see **SAP Cloud Platform** in your YaaS Project's Menu on the left side of the page. Select the **SAP Cloud Platform** menu and click **Create** to activate your SAP Cloud Platform account. This will trigger the email mentioned in the next step.
 
-5. You should now get an email from **HCP**, guiding you through steps to **activate** your HCP account.
+5. You should now get an email from **SAP Cloud Platform**, guiding you through steps to **activate** your SAP Cloud Platform account.
 
-    > NOTE: You can skip this step if you already have an **HCP** Account.
+    > NOTE: You can skip this step if you already have an **SAP Cloud Platform** Account.
 
-6. You can then log in using the command `cf login`. After entering your credentials, your HCP Cloud foundry account will be ready to deploy to.
+6. You can then log in using the command `cf login`. After entering your credentials, your SAP Cloud Platform Cloud foundry account will be ready to deploy to.
 
 7. Familiarize yourself with the `manifest.yml` file which is located on the root folder of your Tips Service in your folder `(2)/yaasbite200`. This is the file that instructs your **Cloud Foundry CLI** where and how to deploy your war file.
 
@@ -57,7 +57,7 @@ You will learn how to deploy a micro service to the SAP HCP. As an example you w
 
 10. Push the war file to the cloud, by running `cf push` from the same location. This will use the information in `manifest.yml` to guide the deployment.
 
-    > NOTE: The default HCP settings require the secure, https protocol. Therefore you must use https for all calls to your deployed services and when accessing your website in the cloud @ https://
+    > NOTE: The default SAP Cloud Platform settings require the secure, https protocol. Therefore you must use https for all calls to your deployed services and when accessing your website in the cloud @ https://
 
 11. Run `cf apps` to check whether the war file was successfully deployed and started and note the URL where it is running. It should be something like `yourAppsName.cfapps.us10.hana.ondemand.com`.
 
@@ -65,7 +65,7 @@ You will learn how to deploy a micro service to the SAP HCP. As an example you w
 
 12. Now that your service has been deployed to the cloud, you could access it directly from your StoreFront. However, YaaS is all about security, so instead we should  register this service in the YaaS Builder, so that instead, we can access it via the YaaS Security Proxy.  To register your service on YaaS:
     - Go to your YaaS Project's page.
-    - Select **Services**, select **+ Service** and here you need to add the URL to your service on HCP: `yourAppsName.cfapps.us10.hana.ondemand.com`.
+    - Select **Services**, select **+ Service** and here you need to add the URL to your service on SAP Cloud Platform: `yourAppsName.cfapps.us10.hana.ondemand.com`.
     - Enter the other required fields and then click **Save**.
 
     ![Register Service](register-service.PNG)
@@ -86,7 +86,7 @@ tipsEndpoint: {
 
 
 ### Summary
-In this tutorial you learned how to deploy a micro service based on YaaS to the HANA Cloud Platform, and how to modify your storefront to communicate with it.
+In this tutorial you learned how to deploy a micro service based on YaaS to the SAP Cloud Platform, and how to modify your storefront to communicate with it.
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

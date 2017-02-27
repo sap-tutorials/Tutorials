@@ -1,7 +1,7 @@
 ---
 title: AngularJS - Boostrap Forms
 description: Step #7:  Use the Boostrap forms to clean up the dialog box, and introduce input fields.
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 

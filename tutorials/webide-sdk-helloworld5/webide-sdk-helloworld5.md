@@ -1,7 +1,7 @@
 ---
 title: Activate a Plugin
 description: In this tutorial, you will activate a plugin in your SAP Web IDE environment. Once you or an administrator have created a destination to a plugin, the plugin becomes visible in your SAP Web IDE and you can activate it.
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, products>sap-web-ide, products>sap-web-ide-plug-ins ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-web-ide, products>sap-web-ide-plug-ins ]
 ---
 
 ## Prerequisites  

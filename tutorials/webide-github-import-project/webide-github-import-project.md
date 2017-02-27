@@ -1,7 +1,7 @@
 ---
 title: Creating a project in SAP Web IDE and importing it into GitHub
 description: Part 3 of 6, Collaborative Development Using GitHub and SAP Web IDE
-tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-hana-cloud-platform ]
+tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
@@ -21,7 +21,7 @@ In this tutorial, you'll learn how to import an existing SAP Web IDE project int
 
 ---
 
-1. Go to [https://account.hanatrial.ondemand.com](https://account.hanatrial.ondemand.com) and log in to your SAP HANA Cloud Platform cockpit.
+1. Go to [https://account.hanatrial.ondemand.com](https://account.hanatrial.ondemand.com) and log in to your SAP Cloud Platform cockpit.
 
 2. To open SAP Web IDE, click on the **Services** tab in the navigation bar, scroll down and then click the **SAP Web IDE** tile to open the SAP Web IDE service page.
 

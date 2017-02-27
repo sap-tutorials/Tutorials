@@ -1,7 +1,7 @@
 ---
 title: SAP HANA XS Classic, Consume XSODATA in your SAP HANA XSC Application
 description: In this tutorial you will incorporate your XSODATA into your SAP HANA XSC application.
-tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
+tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
 ---
 
 ## Prerequisites  

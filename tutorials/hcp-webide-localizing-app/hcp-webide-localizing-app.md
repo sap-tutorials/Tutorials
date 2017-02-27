@@ -1,12 +1,12 @@
 ---
 title: Localizing your SAPUI5 app
 description: Learn how to support multiple languages in your app using the SAP Translation Hub, and how to manually add a language-locale combination.
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, tutorial>intermediate]
+tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, tutorial>intermediate]
 ---
 
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **Tutorials:** [Commit your project files to your HCP Git repository](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
+ - **Tutorials:** [Commit your project files to your SAP Cloud Platform Git repository](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
 
 ## Next Steps
  - [An Open Data Protocol (OData) primer for developers](http://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
@@ -19,7 +19,7 @@ In the fourth tutorial of Mobile group 2, you extracted strings from the applica
 
 Using a single file not only makes it easy to update strings in the future, but it makes it trivial to localize the UI to different languages and locales. If you want to support multiple languages (English, Spanish, German, French, etc.) or multiple locale settings for a given language (e.g. UK vs US English, or German vs Swiss German) you can create separate files to store the localized strings.
 
-In this tutorial, you will add implement language support for Dutch (`nl`) Spanish (`es`), German (`de`), with the base file covering English (`en`) via the HANA Cloud Platform Translation Hub. Additionally, strings are provided for Swiss German (`de_CH`) to demonstrate language and locale support. After running the app, you will test that the runtime loads the correct files by setting the language/locale in your browser.
+In this tutorial, you will add implement language support for Dutch (`nl`) Spanish (`es`), German (`de`), with the base file covering English (`en`) via the SAP Cloud Platform Translation Hub. Additionally, strings are provided for Swiss German (`de_CH`) to demonstrate language and locale support. After running the app, you will test that the runtime loads the correct files by setting the language/locale in your browser.
 
 **Background on i18n:**
 
@@ -31,14 +31,14 @@ When loading an app, SAPUI5 will check the container's (in this case your browse
 
 Strings in more specific resource bundles (loaded earlier) will take precedence over strings for the same translation keys in less specific resource bundles (loaded later).
 
- >An important point: Before you begin, make sure you have deployed the current version of your app to SAP HANA Cloud Platform. This ensures that your latest code is checked into your Git Repository and is available to the Translation Hub service.
+ >An important point: Before you begin, make sure you have deployed the current version of your app to SAP Cloud Platform. This ensures that your latest code is checked into your Git Repository and is available to the Translation Hub service.
 
 ### Time to Complete
 **20 min**
 
 ---
 
-1. Log into your [HCP account](https://account.hanatrial.ondemand.com), click on the **Services** tab, scroll down until you see **SAP Translation Hub**, then click on the **SAP Translation Hub** tile.
+1. Log into your [SAP Cloud Platform account](https://account.hanatrial.ondemand.com), click on the **Services** tab, scroll down until you see **SAP Translation Hub**, then click on the **SAP Translation Hub** tile.
 
     ![Open Translation Hub page](mob3-3_1.png)
 
@@ -56,7 +56,7 @@ Strings in more specific resource bundles (loaded earlier) will take precedence 
     - **Target Languages:** Click on the menu and check: `Dutch, French, German, Spanish`
     - **Domain:** `Basis`
 
-    > Note: The application name must be lower case, and match the HTML5 Application name in your git repository. To check your app name, go to your HCP Cockpit and click on Git Repositories in the left navigation bar.)
+    > Note: The application name must be lower case, and match the HTML5 Application name in your git repository. To check your app name, go to your SAP Cloud Platform Cockpit and click on Git Repositories in the left navigation bar.)
 
     ![Translation project fields](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_4.png)
 
@@ -90,7 +90,7 @@ Strings in more specific resource bundles (loaded earlier) will take precedence 
 
     ![Git pane pull button](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_10a.png)
 
-    Login in with your HCP credentials when prompted. You will see a progress indicator on the Pull button as the new `messageBundle_xx.properties` files are added to your project folder.
+    Login in with your SAP Cloud Platform credentials when prompted. You will see a progress indicator on the Pull button as the new `messageBundle_xx.properties` files are added to your project folder.
 
     ![Git pane](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_10b.png)
 
@@ -158,7 +158,7 @@ Strings in more specific resource bundles (loaded earlier) will take precedence 
 
 13. Commit your new file to Git (following the same procedure as in the previous [tutorial](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html).
 
-14. Deploy your app to HCP (following the same procedure as in an earlier [tutorial](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) and open the new, active version of the app.
+14. Deploy your app to SAP Cloud Platform (following the same procedure as in an earlier [tutorial](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) and open the new, active version of the app.
 
 15. To test the language support in the deployed app, we can utilize the SAPUI5 `sap-ui-language` URL parameter. To do so, just append `?sap-ui-language=xx_YY` to your application URL
 

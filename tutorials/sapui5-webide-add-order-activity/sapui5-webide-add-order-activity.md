@@ -1,7 +1,7 @@
 ---
 title: SAPUI5 - Add an order activity
 description: Add a button to a detail page, to trigger an process
-tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner 
@@ -21,7 +21,7 @@ In that bar, you will add a Button control to the right side of the footer bar i
 **10 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 
 1.  Open the `webapp/i18n/i18n.properties` file, and add the following four lines to the bottom:

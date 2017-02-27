@@ -11,7 +11,7 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 
 ## Next Steps
- - [Internet of Things (IoT) Explore the SAP HCP IoT Services](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
+ - [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
 
 ## Details
 ### You will learn  
@@ -175,4 +175,4 @@ updateIoT(temp.toFixed(4), humid.toFixed(4));
 
 
 ## Next Steps
- - [Internet of Things (IoT) Explore the SAP HCP IoT Services](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
+ - [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)

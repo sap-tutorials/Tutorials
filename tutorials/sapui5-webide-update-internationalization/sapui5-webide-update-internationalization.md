@@ -1,7 +1,7 @@
 ---
 title: SAPUI5 - Update Internationalization (i18n)
 description: Add internationalization (i18n) files, and add language specific text
-tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner 
@@ -19,7 +19,7 @@ Set proper titles to `View1` and `Detail` page by updating the resource model (a
 **5 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 
 1.  Open the `webapp/i18n/i18n.properties` file, and update the entire with the following lines.

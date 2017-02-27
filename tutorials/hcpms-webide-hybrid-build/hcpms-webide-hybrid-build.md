@@ -1,16 +1,16 @@
 ---
 title: Build and run a hybrid app with SAP Web IDE and Hybrid App Toolkit
 description: Utilize the Hybrid App Toolkit to build a downloadable hybrid app and run it on a device or simulator
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>sapui5, tutorial>intermediate ]
+tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>sapui5, tutorial>intermediate ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:**
    - [Connecting SAP Web IDE to the Hybrid App Toolkit](http://www.sap.com/developer/tutorials/hcpms-webide-hat-connection.html)
    - Additionally, you must have completed the tutorials below in the Web IDE series.  
-     - [Create a Destination on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+     - [Create a Destination on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
      - [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
-     - [Deploy your mobile web app to SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+     - [Deploy your mobile web app to SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
 
 
 
@@ -52,12 +52,12 @@ HAT will launch the emulator/simulator and load the app.
 
     ![Local signing key](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/6.png)
 
-7. The app will launch on the emulator, simulator or device, and the display the registration screen. Enter your HCP Username and Password, verify that **Secure** is enabled,  then click on **Register**.
+7. The app will launch on the emulator, simulator or device, and the display the registration screen. Enter your SAP Cloud Platform Username and Password, verify that **Secure** is enabled,  then click on **Register**.
 
     Field Name         | Value
     :----------------- | :-------------
-    Username           |  `<your HCP account without "trial" at the end>` e.g. `p12345678`
-    Password           | `<your HCP account password>`
+    Username           |  `<your SAP Cloud Platform account without "trial" at the end>` e.g. `p12345678`
+    Password           | `<your SAP Cloud Platform account password>`
 
     ![Registration screen](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/7.png)
 
@@ -65,7 +65,7 @@ HAT will launch the emulator/simulator and load the app.
 
     ![Passcode screen](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/8.png)
 
-9. The app will go retrieve the data through HCPms and display the master (list) view.
+9. The app will go retrieve the data through SAP Cloud Platform mobile services and display the master (list) view.
 
     ![master view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/9.png)
 

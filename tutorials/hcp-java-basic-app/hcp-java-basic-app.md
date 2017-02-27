@@ -1,25 +1,25 @@
 ---
-title: Developing and deploying a basic Java application on SAP HANA Cloud Platform
-description: Develop and deploy your first Java application using the SAP HANA Cloud Platform Tools for Java
-tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-hana-cloud-platform ]
+title: Developing and deploying a basic Java application on SAP Cloud Platform
+description: Develop and deploy your first Java application using the SAP Cloud Platform Tools for Java
+tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Configuring Eclipse with SAP HANA Cloud Platform Tools for Java](http://www.sap.com/developer/tutorials/hcp-java-eclipse-setup.html)
+ - **Tutorials:** [Configuring Eclipse with SAP Cloud Platform Tools for Java](http://www.sap.com/developer/tutorials/hcp-java-eclipse-setup.html)
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
-In this tutorial you will create a Dynamic Web project, a servlet to respond to a browser request and after running it in your local development environment, deploy it to SAP HANA Cloud Platform.
+In this tutorial you will create a Dynamic Web project, a servlet to respond to a browser request and after running it in your local development environment, deploy it to SAP Cloud Platform.
 
 ### Time to Complete
 **15 Min**.
 
 ---
 
-1. The first step in building your application is to create a new Dynamic Web Project. Open your Eclipse IDE with the installed SAP HANA Cloud Platform Tools. Make sure the **Java EE perspective** is open by choosing **Window > Open Perspective > Other**.
+1. The first step in building your application is to create a new Dynamic Web Project. Open your Eclipse IDE with the installed SAP Cloud Platform Tools. Make sure the **Java EE perspective** is open by choosing **Window > Open Perspective > Other**.
 
     ![open other perspective](jav100-2-open_other_perspective.png)
 
@@ -34,23 +34,23 @@ In this tutorial you will create a Dynamic Web project, a servlet to respond to 
 4. In the Eclipse main menu choose **File > New > Dynamic Web Project** to open the respective wizard.
 
     ![open wizard](jav100-2-new_dynamic_web_project.png)
-    
-5. In the **New Dynamic Web Project Wizard** define the **Project name** to be `helloworld`. Make sure the **Target Runtime** is set to `Java Web`, the Server Runtime Environment that has been created in the tutorial [Configuring Eclipse with SAP HANA Cloud Platform Tools for Java](http://www.sap.com/developer/tutorials/hcp-java-eclipse-setup.html). Leave all other settings untouched and click **Finish** to create the project.
+
+5. In the **New Dynamic Web Project Wizard** define the **Project name** to be `helloworld`. Make sure the **Target Runtime** is set to `Java Web`, the Server Runtime Environment that has been created in the tutorial [Configuring Eclipse with SAP Cloud Platform Tools for Java](http://www.sap.com/developer/tutorials/hcp-java-eclipse-setup.html). Leave all other settings untouched and click **Finish** to create the project.
 
     ![project wizard](jav100-2-dynamic_web_project_wizard.png)
 
     The `helloworld` project is now ready for your code.
-    
+
     ![hello world project](jav100-2-helloworld_project_available.png)
 
 6. In Java EE, web applications are implemented as `Servlets`. On the newly created `helloworld` project node, open the context menu with a right-click and choose **New > Servlet** to open the Create Servlet wizard.
 
-    ![open servlet wizard](jav100-2-new_servlet.png) 
+    ![open servlet wizard](jav100-2-new_servlet.png)
 
 
 7. In the Create Servlet wizard enter `helloworld` as Java package and `HelloWorldServlet` as Class name. This will create Java classes with the respective package and name. Choose **Next**.
 
-    ![create servlet wizard](jav100-2-create_servlet_wizard_1.png) 
+    ![create servlet wizard](jav100-2-create_servlet_wizard_1.png)
 
 8. You will want this Servlet to be accessible via the URL `<servername>/helloworld`, for example `http://localhost:8080/helloworld`. For this we will set the URL mapping to `\`. For this select `/HelloWorldServlet` in the **URL mappings** field and choose **Edit**.
 
@@ -59,7 +59,7 @@ In this tutorial you will create a Dynamic Web project, a servlet to respond to 
 9. In the **Pattern** field, replace the current value with just `/`. Confirm with **OK**.
 
     ![URL mapping](jav100-2-url_mapping.png)
- 
+
 10. Click **Finish** to generate the servlet.
 
     ![finish servlet wizard](jav100-2-create_servlet_wizard_3.png)
@@ -67,7 +67,7 @@ In this tutorial you will create a Dynamic Web project, a servlet to respond to 
 11. The Java Editor will open the corresponding `HelloWorldServlet` class in the editor pane. You will also find the `Servlet` under the **`helloworld` project node > Java Resources > `src` > `helloworld` > `HelloWorldServlet.java`**
 
     ![servlet in editor](jav100-2-helloworld_servlet_open.png)
-    
+
 12. Next, you will edit the Servlet to output the classical "Hello World". For this you will modify the `doGet()` method and add the following code and save your changes.
 
 
@@ -81,15 +81,15 @@ In this tutorial you will create a Dynamic Web project, a servlet to respond to 
     ```
 
     ![updated `doGet` method](jav100-2-change_and_save_doget.png)
- 
+
 
     The application is now ready to run.
 
-13. To test your application before deploying it to the SAP HANA Cloud Platform you can run it on a local runtime. To do this, do the following:
+13. To test your application before deploying it to the SAP Cloud Platform you can run it on a local runtime. To do this, do the following:
 
     Navigate to your `HelloWorldServlet.java` via the **`helloworld` project node > Java Resources > `src` > `helloworld` > `HelloWorldServlet.java`**. Open the context menu on the `Servlet` with a right-click and choose the **Run on Server** option.
 
-    ![run on server](jav100-2-run_on_server.png) 
+    ![run on server](jav100-2-run_on_server.png)
 
 
 14. Make sure that **Manually define a new server** is selected and choose **SAP > Java Web Server** as server type. Leave all other settings unchanged and click **Finish**.
@@ -100,35 +100,35 @@ In this tutorial you will create a Dynamic Web project, a servlet to respond to 
 
     ![App running](jav100-2-helloworld_local.png)
 
-16. To run your application on the SAP HANA Cloud Platform you will choose a different server to run it. Again, navigate to your `HelloWorldServlet.java` via the **`helloworld` project node > Java Resources > `src` > `helloworld` > `HelloWorldServlet.java`**. Open the context menu on the Servlet with a right-click and choose the **Run on Server** option.
+16. To run your application on the SAP Cloud Platform you will choose a different server to run it. Again, navigate to your `HelloWorldServlet.java` via the **`helloworld` project node > Java Resources > `src` > `helloworld` > `HelloWorldServlet.java`**. Open the context menu on the Servlet with a right-click and choose the **Run on Server** option.
 
     ![run on server](jav100-2-run_on_server.png)
 
-17. As before, make sure that **Manually define a new server** is selected. This time choose **SAP > SAP HANA Cloud Platform** as server type. Make sure to set the **Landscape host** to `hanatrial.ondemand.com`. Leave all other settings unchanged and choose Next.
+17. As before, make sure that **Manually define a new server** is selected. This time choose **SAP > SAP Cloud Platform** as server type. Make sure to set the **Landscape host** to `hanatrial.ondemand.com`. Leave all other settings unchanged and choose Next.
 
     ![run on server - cloud](jav100-2-create_cloud_server.png)
 
     > Note: The used Landscape host `hanatrial.ondemand.com` is only valid if you are using a free Developer Account. Please change the landscape host if you want to use a productive account. The respective landscape hosts can be found in the [official documentation](https://help.hana.ondemand.com/help/frameset.htm?e4986153bb571014a2ddc2fdd682ee90.html).
-    
-    
-18. On the next wizard page specify the Application name to be `helloworld`, provide the login information for your SAP HANA Cloud Platform account and click **Finish**:
+
+
+18. On the next wizard page specify the Application name to be `helloworld`, provide the login information for your SAP Cloud Platform account and click **Finish**:
 
     Field Name     | Value
     :------------- | :-------------
-    Account Name   | Your SAP HANA Cloud Platform account name, for example `p1234567890trial`
-    Username       | Your SAP HANA Cloud Platform account name, for example `p1234567890` and your password 
+    Account Name   | Your SAP Cloud Platform account name, for example `p1234567890trial`
+    Username       | Your SAP Cloud Platform account name, for example `p1234567890` and your password
 
     ![app name](jav100-2-cloud_server_data.png)
 
 19. A Cloud server will start that has your `helloworld` application deployed. After the server is ready your application will be opened in a browser in Eclipse and greet you with Hello World!. In the **Servers** view you can also see the running server with your application deployed
 
-    ![app running in HCP](jav100-2-helloworld_cloud.png)
+    ![app running in SAP Cloud Platform](jav100-2-helloworld_cloud.png)
 
-    Congratulations: You have your first application running on the SAP HANA Cloud Platform!
+    Congratulations: You have your first application running on the SAP Cloud Platform!
 
 
 ### Optional
-Now that you are familiar with the basic routine of developing applications and deploying them locally and to the cloud, you may want to check out the [samples](https://help.hana.ondemand.com/help/frameset.htm?937ce0d172bb101490cf767db0e91070.html) provided as part of the SAP HANA Cloud Platform SDK.
+Now that you are familiar with the basic routine of developing applications and deploying them locally and to the cloud, you may want to check out the [samples](https://help.hana.ondemand.com/help/frameset.htm?937ce0d172bb101490cf767db0e91070.html) provided as part of the SAP Cloud Platform SDK.
 
 Related Information
 
