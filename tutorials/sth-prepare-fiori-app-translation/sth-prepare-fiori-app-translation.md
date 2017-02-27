@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>sap-translation-hub, products>sap-hana-cloud-p
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Enable the SAP Translation Hub service](sth-enable)
+ - **Tutorials:** [Enable the SAP Translation Hub service](http://www.sap.com/developer/tutorials/sth-enable.html)
 
 ## Next Steps
-- [Translate your app with SAP Translation Hub]
+- [Translate your app with SAP Translation Hub](http://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)
 
 ## Details
 ### You will learn  
@@ -159,4 +159,4 @@ To make things look more realistic, the app uses mock data:
 
 
 ## Next Steps
-- [Translate your app with SAP Translation Hub]
+- [Translate your app with SAP Translation Hub](http://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)

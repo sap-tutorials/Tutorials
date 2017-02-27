@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>sap-translation-hub, products>sap-hana-cloud-p
  - **Tutorials:** [Sign up for an free trial account on SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
- - [Prepare a sample Fiori app for translation]
+ - [Prepare a sample Fiori app for translation](http://www.sap.com/developer/tutorials/sth-prepare-fiori-app-translation.html)
 
 ## Details
 ### You will learn  
@@ -67,4 +67,4 @@ You can now use the SAP Translation Hub service.
 [ACCORDION-END]
 
 ## Next Steps
- - [Prepare a sample Fiori app for translation]
+ - [Prepare a sample Fiori app for translation](http://www.sap.com/developer/tutorials/sth-prepare-fiori-app-translation.html)

@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>sap-translation-hub, products>sap-hana-cloud-p
 
 ## Prerequisites  
  - **Proficiency:** Beginner
-  - **Tutorials:** [Prepare a sample Fiori app for translation]
+  - **Tutorials:** [Prepare a sample Fiori app for translation](http://www.sap.com/developer/tutorials/sth-prepare-fiori-app-translation.html)
  - **Tutorials:** [Commit your project to Git and deploy to the cloud](http://www.sap.com/developer/tutorials/teched-2016-5.html) - This tutorial contains a Git repository called `te2016`. To make it easier to follow the steps in the translation tutorial, use the name of the project you created for the sample Fiori app in SAP Web IDE instead (`nwepmrefappsextshop`). Do not open the active version of the app, as described in the last step.
 
 ## Next Steps
