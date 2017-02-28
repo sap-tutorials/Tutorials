@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, produ
 
 
 ## Next Steps
- - [Activate a Plugin](http://www.sap.com/developer/tutorials/webide-sdk-helloworld5.html)
+ - [Activating a Plugin](http://www.sap.com/developer/tutorials/webide-sdk-helloworld5.html)
 
 ## Details
 ### You will learn  
@@ -69,4 +69,4 @@ Choose **Save**.
 
 
 ## Next Steps
-- [Activate a Plugin](http://www.sap.com/developer/tutorials/webide-sdk-helloworld5.html)
+- [Activating a Plugin](http://www.sap.com/developer/tutorials/webide-sdk-helloworld5.html)
