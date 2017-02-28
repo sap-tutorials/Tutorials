@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform
  - **Tutorials:** [Prepare an Amazon Web Services account for setting up ABAP on-premise system](https://www.sap.com/developer/tutorials/hcp-prepare-aws-account.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+[Deploy an JCo/RFC based on-premise extension using SAP HANA Cloud Connector](https://www.sap.com/developer/tutorials/hcp-scc-onpremise-extension-jco-rfc.html)
 
 ## Details
 ### You will learn  
@@ -94,7 +94,7 @@ Details how to connect and use the AWS image are described in [this PDF document
 [ACCORDION-END]
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+[Deploy an JCo/RFC based on-premise extension using SAP HANA Cloud Connector](https://www.sap.com/developer/tutorials/hcp-scc-onpremise-extension-jco-rfc.html)
 
 ## Related Information
 
