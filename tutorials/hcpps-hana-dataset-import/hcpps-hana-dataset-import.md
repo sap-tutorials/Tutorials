@@ -1,19 +1,19 @@
 ---
-title: SAP Cloud Platform predictive services, Import a predictive demo dataset in your SAP HANA
+title: SAP Cloud Platform predictive services, Import a series of predictive demo dataset in your SAP HANA MDC instance
 description: Import a demo data to be used with the SAP Cloud Platform predictive services
 tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
-  - **Proficiency:** Beginner
-  - **Tutorials:** [Setup a HANA user account for the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+- **Proficiency:** Beginner
+- **Tutorials:** [Setup a HANA user account for the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
 
 ## Next Steps
-  - [Expose your predictive demo dataset as an OData service](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
+- [Expose your predictive demo datasets as HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
 
 ## Details
 ### You will learn
-  - How to import the scenarios datasets in your SAP Cloud Platform HANA instance.
+  - How to import the scenarios datasets in your SAP Cloud Platform HANA MDC instance.
 
 ### Time to Complete
   **5 minutes**
@@ -31,13 +31,13 @@ This is why we choose to have the dataset as "insert" statement files.
 Depending on your area of interest you can pick those of interest and download the files locally.
 
   - **Cash Flow**: contains historical cash flow data and date related indicators
-    - [`link`](demo.forecast.sql.txt).
+    - [`link`](demo.cashflow.sql.txt).
   - **Census**: contains 14 characteristics of an individual extracted from a census dataset associated to an indicator equal to 1 when the individual earned more than fifty thousand dollars the previous year, else 0 (excerpt from the American Census Bureau database, completed in 1994 by Barry Becker, source: http://www.census.gov/).
-    - [`link 1`](demo.forecast.sql.1.txt)
-    - [`link 2`](demo.forecast.sql.2.txt)
-    - [`link 3`](demo.forecast.sql.3.txt)
-    - [`link 4`](demo.forecast.sql.4.txt)
-    - [`link 5`](demo.forecast.sql.5.txt)
+    - [`link 1`](demo.census.sql.1.txt)
+    - [`link 2`](demo.census.sql.2.txt)
+    - [`link 3`](demo.census.sql.3.txt)
+    - [`link 4`](demo.census.sql.4.txt)
+    - [`link 5`](demo.census.sql.5.txt)
   - **E-Commerce**: contains a single day of Web traffic from an E-commerce site in December 1999.
     - [`link`](demo.transaction.sql.txt).
 
@@ -73,4 +73,4 @@ Right click on **Catalog**, then click on **Refresh**. A `DEMO` schema was creat
 [ACCORDION-END]
 
 ## Next Steps
-  - [Expose your predictive demo dataset as an OData service](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
+- [Expose your predictive demo datasets as HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
