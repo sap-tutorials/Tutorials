@@ -1,15 +1,14 @@
 ---
 title: Intro to SAP HANA Spatial: Polygons
 description: A polygon defines a region of space
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\\,-express-edition ]
+tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:** [Intro to SAP HANA Spatial: Strings](http://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
 
 ## Next Steps
- - [Tables with spatial columns](http://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html), or
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Intro to SAP HANA Spatial: Tables with spatial columns](http://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
 
 ## Details
 ### You will learn  
@@ -30,7 +29,7 @@ You will continue learning basics of spatial processing now with ___polygons___ 
     ```
     This query instantiates a surface in the 2-dimensional Euclidean space and returns its dimensions. In the example above it is a polygon defined by an external ring with the shape of a triangle connecting points (0, 0); i.e., `X=0` and `Y=0`, with points (4, 0) and (4, 3) and an internal ring with the shape of a square. The constructor is using ___Well-known text (WKT)___. As explained in the previous tutorial, WKT is a text markup language for representing vector geometry objects defined by the Open Geospatial Consortium (OGC).
 
-    Below is an SVG modified to fill a geometry with the color `fill="yellow"` to better illustrate the meaning of the external and internal rings of polygons.
+    Below is an SVG modified to fill a geometry with the color using `fill="yellow"` to better illustrate the meaning of the external and internal rings of polygons.
 
     ![Polygon with 2 rings](spatial0301.jpg)
 
@@ -120,5 +119,4 @@ You will continue learning basics of spatial processing now with ___polygons___ 
 - See the SAP HANA Spatial Reference at http://help.sap.com/hana_platform for the complete list of objects and methods
 
 ## Next Steps
- - [Tables with spatial columns](http://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html), or
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Intro to SAP HANA Spatial: Tables with spatial columns](http://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)

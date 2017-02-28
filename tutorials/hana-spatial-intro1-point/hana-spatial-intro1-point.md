@@ -5,7 +5,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **System access:** You have developer access SAP HANA database instance, for example SAP HANA Express edition, or MDC instance in SAP HANA Cloud Platform Trial.
+ - **System access:** You have developer access to SAP HANA database instance, for example [SAP HANA, express edition](http://www.sap.com/developer/topics/sap-hana-express.html), or [SAP HANA MDC instance in SAP HANA Cloud Platform Trial account](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html).
 
 ## Next Steps
  - [SAP HANA Spatial: Strings](http://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)

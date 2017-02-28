@@ -14,36 +14,15 @@ tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-pla
 ## Details
 
 ### You will learn  
-How to create a simple `xsodata` service.
+How to consume a simple `xsodata` service.
 
 ### Time to Complete
 Beginners might take **10 minutes** to execute this tutorial.
 
 
-### Open the Web-based Development Workbench
+[ACCORDION-BEGIN [Step 1: Modify your Index](Modify your Index)]
 
-#### Using the SAP HANA Developer Edition or SAP HANA Cloud Platform
-The workbench allows you to develop on HANA without the need to set up a local development environment.
-
-Login to the [HANA Cloud Cockpit](https://account.hanatrial.ondemand.com/cockpit) with your free developer edition account.
-
-![Databases and schemas](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-consume-xsodata/1.png)
-
-Choose Databases and Schemas, and choose then the instance that you created in the previous tutorials. From here you can access the Workbench.
-
-![Individual instance](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-consume-xsodata/2.png)
-
-You are now in the Editor and can immediately start developing in HANA.
-
-#### Using HANA on Amazon AWS or Microsoft Azure
-
-Access the web page of your HANA server using the IP address of your server.  Enter the address `http://XXX.XXX.XXX.XXX` to the address bar of your browser. (Replace `XXX.XXX.XXX.XXX` with the IP address of your server.)
-
-On the web page, there is a link in the middle column for **Web-Based Development Workbench**.  Click this link to start the workbench.
-
-### Create your main page
-
-Now that you have created your OData service in the previous tutorial it is time to actually incorporate your service into your application directly. For this you will create a new file called `index.html`
+Now that you have created your OData service in the previous tutorial it is time to actually incorporate your service into your application directly. For this you will modify the file called `index.html`
 
 What you will do now is add a basic table control using the SAPUI5 framework.
 
@@ -68,12 +47,14 @@ What you will do now is add a basic table control using the SAPUI5 framework.
 </html>
 ```
 
-### Incorporate your `xsodata` service
+[ACCORDION-END]
 
-Now to add in JavaScript code to to add the UI5 control.
+[ACCORDION-BEGIN [Step 2: Incorporate your service](Incorporate your service)]
+
+Now to add in JavaScript code to to add the UI5 control. Add this code in right before the `</body>` line at the bottom of the page.
 
 ```
-    <SCRIPT language="JavaScript">
+    <script language="JavaScript">
         var aData;
         
         //Create an instance of the table control
@@ -119,6 +100,10 @@ Now to add in JavaScript code to to add the UI5 control.
 	</script>
 ```
 
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: Call your service](Call your service)]
+
 The last bit is to add the call to the service to your code and you will have a complete application, or at least complete in the sense that is shows your data. Add the following bit right after your variable definition `var aData`
 
 ```
@@ -134,22 +119,20 @@ The last bit is to add the call to the service to your code and you will have a 
         });
 ```
 
-### Deploy, Run and Test the Application
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: Deploy, Run and Test the Application](Deploy, Run and Test the Application)]
 
 Now the application is ready to be tested. As you are developing with the SAP HANA Web-based Development Workbench the application is already deployed and activated. So you can immediately continue to test it:
 
 Select the `index.html` file to enable the Run on Server in the toolbar. Then click the Run on Server button:
 
-The application will open in your browser and greet you with Hello World:
+The application will open in your browser and greet you with My Library:
 
-![Table of data](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-consume-xsodata/3.png)
+![Table of data](3.png)
 
+[ACCORDION-END]
 
 ### Optional: Related Information
 [SAP HANA Development Information - Official Documentation](http://help.sap.com/hana_platform#section6)
 
-
-*This tutorial is part of the SAP HANA and SAP HANA Cloud Platform tutorials set.*
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
