@@ -62,7 +62,7 @@ Manager                   | Makes investment decisions about infrastructure, too
 Quality Manager           | Responsible for product quality. Defines and decides on the processes that ensure the quality level.
 Delivery Manager          | Responsible for the shipment and deployment of the product to production. Relies on the quality and defines the deployment process.
 Build Operator            | Operates the technical components for a CI/CD infrastructure.
-Build Engineer            | Implements the CI/CD process on top of the technical components. Implements and supports the product-specific requirements to be implemented in the build and test procedures. The person in this role might be an expert of the software technology in which the product is implemented.
+Build Engineer            | Implements the CI/CD process on top of the technical components. Implements and supports the product-specific requirements to be implemented in the build and test procedures. The person in this role might be an expert of the software technology in which the product is implemented. 
 Developer engaged in CI   | Implements the build scripts and tests in collaboration with the Build Engineer. An expert of the software technology in which the product is implemented.
 
 ### Navigate through the relevant parts of the Guide
@@ -73,20 +73,20 @@ Role: The part is of interest for the stated role
 Part of the Guide      | Roles of interest
 :--------------------- | :----------------
 **1. [Introduction and Navigator (this document)](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)** | **Manager, Quality Manager, Delivery Manager, Build Operator, Build Engineer, Developer**
-**2. Continuous Integration and Delivery** |
+**2. Continuous Integration and Delivery** | 
 2.1. [CI/CD Practices: The Practices and Principles of CI and CD](http://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)   | **Manager, Quality Manager, Delivery Manager**, Build Operator, Build Engineer, Developer
 2.2. [Pipeline Suggestions: Patterns for a CI/CD pipeline](http://www.sap.com/developer/tutorials/ci-best-practices-pipelines.html)   | Manager, **Quality Manager, Delivery Manager**, Build Operator, **Build Engineer**, Developer
-**3. CI/CD Landscape - Component Setup**   |
+**3. CI/CD Landscape - Component Setup**   | 
 3.1. [Source Code Versioning System: Setting up a Git/Gerrit Instance](http://www.sap.com/developer/tutorials/ci-best-practices-scm.html)     | **Build Operator**
 3.2. [Build Scheduler: Setting up a Jenkins Instance](http://www.sap.com/developer/tutorials/ci-best-practices-build.html)       | **Build Operator**
 3.3. [Artifact Repository: Setting up a Nexus Instance](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)       | **Build Operator**
 3.4. [Landscape Configuration: Configuring the CI Component Landscape](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)       | **Build Operator**, Build Engineer
 3.5. [CD Pipeline Skeleton: Setup of a continuous delivery pipeline](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html)       | **Build Operator**, Build Engineer
-**4. CI/CD Process Setup**                |
+**4. CI/CD Process Setup**                | 
 4.1. [Generic Project: Configuring the CI System for Maven-based Generic Java Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html)                 | Build Operator, **Build Engineer**, Developer
 4.2. [Java Web on SAP Cloud Platform: Configuring the CI System for Maven-based Java Web Project](http://www.sap.com/developer/tutorials/ci-best-practices-java-hcp.html) | Build Operator, **Build Engineer**, Developer
 4.3. [SAP HANA Extended Application Services (XS), Classic Model: Configuring the CI System](http://www.sap.com/developer/tutorials/ci-best-practices-xsc.html) | Build Operator, **Build Engineer**, Developer
 4.4. [SAPUI5/SAP Fiori on ABAP Front End Server: Implementing the CI Pipeline](http://www.sap.com/developer/tutorials/ci-best-practices-fiori-abap.html) | Build Operator, **Build Engineer**, Developer
-**5. CI/CD Process Setup using SCM and build services on the cloud**  |
+**5. CI/CD Process Setup using SCM and build services on the cloud**  | 
 5.1. [Generic Project with CI using Cloud Services: Configuring the CI infrastructure for a generic Java project using the cloud services of GitHub and Travis CI](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html) | Build Operator, **Build Engineer**, Developer
 5.2. [Java Web on SAP Cloud Platform with CI using Cloud Services: Configuring the CI infrastructure for a Java web project on SAP Cloud Platform using the cloud services of GitHub and Travis CI](http://www.sap.com/developer/tutorials/ci-best-practices-java-hcp-cloud.html) | Build Operator, **Build Engineer**, Developer
