@@ -1,7 +1,7 @@
 ---
 title: Build an SAPUI5 app based on your data model and run it with mock data
 description: Learn how to build an app with the SAP Web IDE template based on your manually created data model
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>intermediate ]
+tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>intermediate ]
 ---
 
 ## Prerequisites  
@@ -17,9 +17,9 @@ In the previous tutorial you created an OData entity model by hand. In this tuto
 
 The steps in this tutorial assume that you are familiar with the Web IDE menu and template wizard, and have created an OData model in the previous tutorial. If you are not familiar with Web IDE, it is suggested that you complete the following three tutorials first:
 
- - [Create a Destination on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+ - [Create a Destination on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
  - [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
- - [Deploy your mobile web app to SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+ - [Deploy your mobile web app to SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
 
 ### Time to Complete
 

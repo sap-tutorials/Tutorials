@@ -1,7 +1,7 @@
 ---
-title: SAP HCP predictive services, Visualize your predictive demo data set
+title: SAP Cloud Platform predictive services, Visualize your predictive demo data set
 description: Using the configured destination for the OData service, you will extend your application to visualize the predictive demo dataset
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, topic>sapui5, topic>odata ]
+tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, topic>sapui5, topic>odata ]
 ---
 
 ## Prerequisites
@@ -20,11 +20,11 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
 ---
 
-1. Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
+1. Log into the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
 
     Click on your ***HCP Account*** identifier (which ends with *trial*) as highlighted on the below screenshot.
 
-    ![SAP HANA Cloud Platform Cockpit](1.png)
+    ![SAP Cloud Platform Cockpit](1.png)
 
 1. On the left side bar, you can navigate in **Applications** > **HTML5 Applications**.
 

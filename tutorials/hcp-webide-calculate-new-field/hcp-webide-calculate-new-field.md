@@ -1,7 +1,7 @@
 ---
 title: Calculate and display a new field in an SAPUI5 app
 description: Compute a new field from data in the OData service and display it in your app.
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>intermediate ]
+tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>intermediate ]
 ---
 
 ## Prerequisites
@@ -9,7 +9,7 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
  - **Tutorials:** [Add a tab and additional fields to an SAPUI5 app](http://www.sap.com/developer/tutorials/hcp-webide-add-tab.html)
 
 ## Next Steps
- - [Commit your project files to your HCP Git repository](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
+ - [Commit your project files to your SAP Cloud Platform Git repository](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
 
 ## Details
 
@@ -34,7 +34,7 @@ The field is calculated each time the detail view is displayed and is not persis
 
 ---
 
-1. Log into your HCP account and open SAP Web IDE in a Google Chrome browser.
+1. Log into your SAP Cloud Platform account and open SAP Web IDE in a Google Chrome browser.
 
     Open the **northwind** project folder and then the **view** folder. Double-click on `Detail.controller.js`, and scroll down to the `bindView` function.
 
@@ -131,9 +131,9 @@ The field is calculated each time the detail view is displayed and is not persis
 
 13. Click the **Resume script execution** button to allow the execution to continue. If you look in the detail view header, you will see the Current Inventory Value field displayed.
 
-14. For clean-up, you can remove the `debugger;` statement in `Detail.controller.js` along with the blank lines, save your changes and re-deploy to HCP.  
+14. For clean-up, you can remove the `debugger;` statement in `Detail.controller.js` along with the blank lines, save your changes and re-deploy to SAP Cloud Platform.  
 
     ![cleaned up function](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_14.png)
 
 ## Next Steps
- - [Commit your project files to your HCP Git repository](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
+ - [Commit your project files to your SAP Cloud Platform Git repository](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)

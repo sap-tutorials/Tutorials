@@ -1,11 +1,11 @@
 ---
 title: Prepare an Amazon Web Services account for setting up ABAP on-premise system
 description: Learn how to prepare AWS account on which ABAP on-premise system  image is installed next
-tags: [  tutorial>beginner, topic>abap-development, topic>cloud, topic>java, products>sap-hana-cloud-platform, products>cloud-connector-for-sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>abap-development, topic>cloud, topic>java, products>sap-cloud-platform, products>cloud-connector-for-sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Get your own free Developer Account for SAP HANA Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Get your own free Developer Account for SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)

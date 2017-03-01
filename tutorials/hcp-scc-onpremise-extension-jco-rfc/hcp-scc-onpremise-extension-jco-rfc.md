@@ -5,7 +5,7 @@ tags: [  tutorial>beginner, topic>cloud, products>cloud-connector-for-sap-hana-c
 ---
 
 ## Prerequisites  
-  - [Sign up for a free trial account on SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+  - [Sign up for a free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
   - [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](http://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html)
 
 
@@ -43,7 +43,7 @@ Download the [compiled version of the sample project](https://github.com/SAP/clo
 
 > If you want to take a look at the code clone our Git repository or explore it directly online using the GitHub webpage: https://github.com/SAP/cloud-personslist-scenario/tree/Extensions-005
 
-Open the [cloud cockpit](https://account.hanatrial.ondemand.com/cockpit) and logon with your HCP user.
+Open the [cloud cockpit](https://account.hanatrial.ondemand.com/cockpit) and logon with your SAP Cloud Platform user.
 
 Navigate to **Applications > Java Applications** and select **Deploy Application**. A Dialog will open. Select the `war` file you just downloaded and choose a name for the application. Now click on **Deploy**.
 
@@ -51,7 +51,7 @@ Navigate to **Applications > Java Applications** and select **Deploy Application
 
 ![Deploy war-file using cloud cockpit](deploy-war.png)
 
-The application is now deployed to your HCP account. This will take some time.
+The application is now deployed to your SAP Cloud Platform account. This will take some time.
 
 [DONE]
 [ACCORDION-END]
@@ -61,7 +61,7 @@ Now you need to configure the destination used by the application to access the 
 
 Go to **`D:/sap_hcp_scc/`** using the Windows Explorer and rename file `dest_sflight.jcoDestination` to `dest_sflight`.
 
-Open the [HCP cloud cockpit](https://account.hanatrial.ondemand.com/cockpit) in the browser and log on to your HCP account.
+Open the [SAP Cloud Platform cloud cockpit](https://account.hanatrial.ondemand.com/cockpit) in the browser and log on to your SAP Cloud Platform account.
 
 Navigate into **Java Applications** and select the application you just deployed then navigate into **Destinations**.
 
@@ -81,10 +81,10 @@ To connect the cloud connector to your account, follow the steps described in th
 
 - choose **`Master (Primary Installation)`**
 - select **`hanatrial.hana.ondemand.com`** as landscape host
-- specify your account name, your HCP user and password
+- specify your account name, your SAP Cloud Platform user and password
 - don't specify an HTTPS proxy.
 
-Now the Cloud Connector should be connected to your HCP account and you should see a screen similar to the one in the screenshot below.
+Now the Cloud Connector should be connected to your SAP Cloud Platform account and you should see a screen similar to the one in the screenshot below.
     ![How the SAP Cloud Connector should look like](how-scc-should-look-like.png)
 
 Navigate to the **Access Control** view of the cloud connector and click the **Import...** button.
@@ -105,9 +105,9 @@ Now you have imported the configuration of the ABAP system and the RFC resources
 
 ### Optional
 [ACCORDION-BEGIN [Step 5: ](Testing the application)]
-Now the SFLIGHT application has been deployed to your HCP account, the needed destination has been configured, and the cloud connector has been connected and configured as well. The application can now be used. Test it by starting it in the browser:
+Now the SFLIGHT application has been deployed to your SAP Cloud Platform account, the needed destination has been configured, and the cloud connector has been connected and configured as well. The application can now be used. Test it by starting it in the browser:
 
-  - Open the [cloud cockpit](https://account.hanatrial.ondemand.com/cockpit) and log on again with your HCP user.
+  - Open the [cloud cockpit](https://account.hanatrial.ondemand.com/cockpit) and log on again with your SAP Cloud Platform user.
   - Navigate into **Java Applications** and drill into your application.
   - Start the SFLIGHT application by clicking the URL visible under **Application URLs**. This should bring up the application. You can now select a flight departure and arrival airport, e.g. `Frankfurt` and `New York`, then click the **Search** button. This should then list the available flights.
 

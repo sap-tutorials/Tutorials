@@ -1,12 +1,12 @@
 ---
 title: Creating a new viz extension project
 description: A step-by-step guide on how to get started with building a visualization extension for SAP Lumira using SAP Web IDE
-tags: [  tutorial>beginner, products>sap-lumira, products>sap-hana-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>beginner, products>sap-lumira, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
-    - [Sign up for an account on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+    - [Sign up for an account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
     - [Install and Deploy SAP Lumira extensions](http://www.sap.com/developer/tutorials/lumira-extensions-intro.html)
 
 ## Next Steps
@@ -34,11 +34,11 @@ This tutorial will cover:
 
 ---
 
-1. First, you need to set up your development environment in SAP Web IDE. For this, you need to set up your SAP HANA Cloud Platform (HCP) account so that you can use SAP Web IDE. Please refer to the tutorial [Sign up for an account on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html) for a step-by-step guide on how to do so.
+1. First, you need to set up your development environment in SAP Web IDE. For this, you need to set up your SAP Cloud Platform account so that you can use SAP Web IDE. Please refer to the tutorial [Sign up for an account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html) for a step-by-step guide on how to do so.
 
-2. After setting up your HCP account, you should be on this page, which is your HCP Cockpit
+2. After setting up your SAP Cloud Platform account, you should be on this page, which is your SAP Cloud Platform Cockpit
 
-    ![HCP Cockpit](lumira4_2.png)   
+    ![SAP Cloud Platform Cockpit](lumira4_2.png)   
 
 3. In the left menu panel, go to **Services** and scroll down to the **Dev & Ops** section and select **SAP Web IDE**.
     ![SAP Web IDE URL](lumira4_4a.png)

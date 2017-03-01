@@ -1,7 +1,7 @@
 ---
 title: Internet of Things (IoT) made easy
 description: The idea behind this tutorial is quickly show how to add a device and capture sensor data in the cloud.
-tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>internet-of-things, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites  
@@ -13,8 +13,8 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-cloud-pl
 
 ## Details
 ### You will learn  
-- How to add a device type, message type and device to the IoT Services of SAP HANA Cloud Platform (HCP)
-- How to modify JavaScript code on your device to send data to the SAP HANA Cloud Platform (HCP)
+- How to add a device type, message type and device to the IoT Services of SAP Cloud Platform
+- How to modify JavaScript code on your device to send data to the SAP Cloud Platform
 
 This tutorial will take you through the steps at a rapid pace, if you'd like more details please contact one of our support staff.
 
@@ -29,13 +29,13 @@ However, you could just as easily use a Raspberry Pi, Arduino, or any number of 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Connection to the SAP HANA Cloud Platform)]
+[ACCORDION-BEGIN [Step 1: ](Connection to the SAP Cloud Platform)]
 
-Log into [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
 
 Make sure you are using the **Europe (Trial)** landscape, and click on your account name to open the cockpit view.
 
-![HCP Trial Account](1.png)
+![SAP Cloud Platform Trial Account](1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -65,7 +65,7 @@ Click on the **Deploy Message Management Service** tile. It will deploy `iotmms`
 
 The form should already be filled with your information like your account ID (p-number or s-number if you are SAP's customer or partner, or i-/d-number if you are SAP employee) with the world "trial" (no space between the p-number and trial), your user name etc.
 
-Enter your **SAP HANA Cloud Platform** password, then click on **Deploy**.
+Enter your **SAP Cloud Platform** password, then click on **Deploy**.
 
 ![Deploy Service](p6_6a.png)
 
@@ -78,7 +78,7 @@ Once the `iotmms` Java application is successfully deployed (created), you will 
 
 The data binding allow the data you are sending from the device to the system to be stored for later access and the authorization will grant the access to Message Management System to your user.
 
-Return to the **SAP HANA Cloud Platform Cockpit**, and in the left navigation bar select **Applications > Java Applications**.
+Return to the **SAP Cloud Platform Cockpit**, and in the left navigation bar select **Applications > Java Applications**.
 
 You will see the `iotmms` application you just deployed.
 
@@ -111,7 +111,7 @@ Select the **IoT-MMS-User** (click the empty cell next to the Name to select the
 
 ![Authorizations](p6_8.png)
 
-Then under **Individual Users**, click **Assign** and enter your HCP user ID (e.g. your p-number ***without*** the word "trial" on the end).
+Then under **Individual Users**, click **Assign** and enter your SAP Cloud Platform user ID (e.g. your p-number ***without*** the word "trial" on the end).
 
 ![Assign Role](p6_9.png)
 
@@ -238,7 +238,7 @@ var authToken = '<auth token of the device>';
 ```
 
 You will modify:
- - The `accountOwner` line to add your own HCP Account User ID which starts with either an `S`, `P`, `I`, `D` or `C`.
+ - The `accountOwner` line to add your own SAP Cloud Platform Account User ID which starts with either an `S`, `P`, `I`, `D` or `C`.
  - The `messageTypeID` is the ID of the message type you created, and not the name of the message type.
  - The `deviceId` is the ID of the device you created, not to be confused with the `token`
  - The `authToken` line contains the token of the device (not the device type!). You received it in the pop-up window after creating your device. But if missed it, then regenerate this token from Device screen once again.
@@ -269,9 +269,9 @@ Provided your JavaScript file was modified properly with the correct items your 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](See your data in SAP HANA Cloud Platform)]
+[ACCORDION-BEGIN [Step 14: ](See your data in SAP Cloud Platform)]
 
-If you now go back to the **IoT Services Cockpit** in HCP you can see those newly created entries.
+If you now go back to the **IoT Services Cockpit** in SAP Cloud Platform you can see those newly created entries.
 
 Click on **Send and view messages, or perform other actions**.
 

@@ -1,7 +1,7 @@
 ---
-title: Commit your project files to your HCP Git repository
-description: Learn how to commit and push your project files to the Git repository built into your HCP account.
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>mobile, tutorial>intermediate]
+title: Commit your project files to your SAP Cloud Platform Git repository
+description: Learn how to commit and push your project files to the Git repository built into your SAP Cloud Platform account.
+tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>mobile, tutorial>intermediate]
 ---
 
 ## Prerequisites
@@ -14,7 +14,7 @@ tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, top
 ## Details
 
 ### You will learn
-[Git](https://try.github.io/levels/1/challenges/1) is a widely used source code management system for software development, and is built into your SAP HANA Cloud Platform account, and integrated with SAP Web IDE.
+[Git](https://try.github.io/levels/1/challenges/1) is a widely used source code management system for software development, and is built into your SAP Cloud Platform account, and integrated with SAP Web IDE.
 
 There are many reasons why you might want to use a source code management tool. Some obvious ones are:
 
@@ -41,7 +41,7 @@ Decoration                                                   | Meaning
 
 ---
 
-1. Open your HCP Cockpit view, click on **Repositories > Git Repositories**.
+1. Open your SAP Cloud Platform Cockpit view, click on **Repositories > Git Repositories**.
 
     ![Git Repositories](mg3-3-01.png)
 
@@ -72,7 +72,7 @@ Decoration                                                   | Meaning
 
     ![Initialize local git](mg3-3-06.png)
 
-7. Paste in the **Git Repository URL** you copied earlier and click **OK**. This will initialize your local repository and link it to the Git repository in HCP.
+7. Paste in the **Git Repository URL** you copied earlier and click **OK**. This will initialize your local repository and link it to the Git repository in SAP Cloud Platform.
 
     ![Initialize with remote git URL](mg3-3-07.png)
 
@@ -82,7 +82,7 @@ Decoration                                                   | Meaning
 
     ![Git pane](mg3-3-08.png)
 
-9. So you can see remote branches in the HCP Git repository, click the **Fetch** button on the Git pane and log in with your HCP account credentials if prompted. When the **Changes Fetched** dialog box opens, click **OK**.
+9. So you can see remote branches in the SAP Cloud Platform Git repository, click the **Fetch** button on the Git pane and log in with your SAP Cloud Platform account credentials if prompted. When the **Changes Fetched** dialog box opens, click **OK**.
 
     ![Git Fetch](mg3-3-09.png)
 
@@ -114,7 +114,7 @@ Decoration                                                   | Meaning
 
     ![commit description](mg3-3-16.png)
 
-6. In the **Push Changes to a remote branch** dialog box, select **origin/master**, click **OK** and log in with your HCP credentials if prompted.
+6. In the **Push Changes to a remote branch** dialog box, select **origin/master**, click **OK** and log in with your SAP Cloud Platform credentials if prompted.
 
     ![commit description](mg3-3-17.png)
 

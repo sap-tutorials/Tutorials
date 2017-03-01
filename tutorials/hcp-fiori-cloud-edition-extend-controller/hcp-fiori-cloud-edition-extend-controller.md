@@ -35,9 +35,9 @@ In this tutorial you will learn how to extend the controller of a standard SAP F
 
     ![Create App Extension](Create-App-Extension.png)
 
-4. You have to login to the SAP HANA Cloud Platform. Please provide your credentials and then click **Login**.
+4. You have to login to the SAP Cloud Platform. Please provide your credentials and then click **Login**.
 
-    ![Login to the SAP HANA Cloud Platform](Login-to-SAP-HANA-Cloud-Platform.png)
+    ![Login to the SAP Cloud Platform](Login-to-SAP-HANA-Cloud-Platform.png)
 
 
 5. Click **OK** to accept the project name.

@@ -1,13 +1,13 @@
 ---
 title: Internet of Things (IoT) Adding a new device to the IoT Services
 description: Part 7 of 10, Add a new device to your IoT Services
-tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
+tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Internet of Things (IoT) Explore the SAP HCP IoT Services](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
+ - **Tutorials:** [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
 
 
 ## Next Steps
@@ -23,7 +23,7 @@ With the MMS service now deployed, and your user assigned the appropriate role i
 
 ---
 
-1. From the HCP cockpit, select **Java Applications** then select the `iotmms` application. Open the **Message Management Service Cockpit** by clicking on the **Application URL**.
+1. From the SAP Cloud Platform cockpit, select **Java Applications** then select the `iotmms` application. Open the **Message Management Service Cockpit** by clicking on the **Application URL**.
 
     ![Application URL](p7_1.png)
 
@@ -110,7 +110,7 @@ With the MMS service now deployed, and your user assigned the appropriate role i
 
 14. Now you will post from an external REST client. In this step you will use [Postman Extension](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) for Google Chrome.
 
-    Once installed in Chrome open the Postman extension in incognito mode to avoid authentication issues in the same browser session with SAP HCP. For that you might need to allow the Postman extension to run in Chrome's incognito mode.
+    Once installed in Chrome open the Postman extension in incognito mode to avoid authentication issues in the same browser session with SAP Cloud Platform. For that you might need to allow the Postman extension to run in Chrome's incognito mode.
 
     ![Postman extension in incognito mode](p7_14v.png)
 
@@ -129,7 +129,7 @@ With the MMS service now deployed, and your user assigned the appropriate role i
     {"mode":"sync", "messageType":"m0t0y0p0e1", "messages":[{"Humidity":25.8, "Temperature": 21.6, "timestamp":"2016-11-15T08:46:37.930Z"}]}
     ```
 
-17. Click **Send** and you should receive a message similar to when you used the HCP simple client.￼ This indicates that your POST was successful and if you return to the "Display Stored Messages" you will see your new entry.
+17. Click **Send** and you should receive a message similar to when you used the SAP Cloud Platform simple client.￼ This indicates that your POST was successful and if you return to the "Display Stored Messages" you will see your new entry.
 
     If you receive `40x` authorization error in return, then check if you are running Postman client in Chrome's incognito mode.
 

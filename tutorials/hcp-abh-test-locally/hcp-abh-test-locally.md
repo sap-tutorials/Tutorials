@@ -1,7 +1,7 @@
 ---
 title: Testing API Business Hub APIs with Curl
 description: Try out an SAP API locally on your machine.
-tags: [  tutorial>beginner, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -21,7 +21,7 @@ You have already discovered what the API Business Hub is and learned how to test
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create an application in API Hub)]
-If you ever need to get back to the API Business Hub and can't remember how to get there from HANA Cloud Platform, you can always just go to `api.sap.com`.
+If you ever need to get back to the API Business Hub and can't remember how to get there from SAP Cloud Platform, you can always just go to `api.sap.com`.
 
 To use one of the APIs outside of the API Hub, you will need to get an application key. To obtain an application key, you need to subscribe to the API. On the Success Factors API Package page, locate the **Subscribe** button in the top right corner. Click **Subscribe**.
 

@@ -1,7 +1,7 @@
 ---
 title: End-to-End Weather App Scenario Part 2
 description: Adding a simple web page to a Java app
-tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
+tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
 ---
 
 ## Prerequisites  

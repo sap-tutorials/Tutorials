@@ -1,7 +1,7 @@
 ---
 title: End-to-End Weather App Scenario Part 3
 description: Adding authentication and authorization to your Java app.
-tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
+tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
 ---
 
 ## Prerequisites  
@@ -17,7 +17,7 @@ In this tutorial you will learn how to add authentication and authorization to y
 ### Time to Complete
 **10 min**
 
- >Please note that HCP adheres to Java standards to manage authentication and authorization.
+ >Please note that SAP Cloud Platform adheres to Java standards to manage authentication and authorization.
 
 ---
 
@@ -55,7 +55,7 @@ In this tutorial you will learn how to add authentication and authorization to y
     </auth-constraint>
     </security-constraint>
     <security-role>
-    <description>All SAP HANA Cloud Platform users</description>
+    <description>All SAP Cloud Platform users</description>
     <role-name>Everyone</role-name>
     </security-role>
     </web-app>
@@ -101,7 +101,7 @@ In this tutorial you will learn how to add authentication and authorization to y
     }
     ```
 
-    >Note: The reason we also had to implement the "doPost()" method is related to specifics of the SAML 2.0 authentication process  flow. For more information please refer to the [respective parts](https://help.hana.ondemand.com/help/frameset.htm?e637f62abb571014857cb0232adc43a7.html) of the SAP HANA Cloud Platform online documentation.
+    >Note: The reason we also had to implement the "doPost()" method is related to specifics of the SAML 2.0 authentication process  flow. For more information please refer to the [respective parts](https://help.hana.ondemand.com/help/frameset.htm?e637f62abb571014857cb0232adc43a7.html) of the SAP Cloud Platform online documentation.
 
     ![Modifying the doGet() and doPost() methods in the Java Servlet](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-2.png)
 

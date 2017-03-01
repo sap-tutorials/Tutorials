@@ -1,7 +1,7 @@
 ---
 title: AngularJS - Create the Bootstrap Template
 description: Step #2: Set up the Bootstrap page template.
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 

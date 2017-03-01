@@ -1,33 +1,33 @@
 ---
-title: Create a hybrid app in SAP HANA Cloud Platform mobile services for development and operations
-description: Learn how to create a hybrid app definition in SAP HANA Cloud Platform mobile services for development and operations
-tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>mobile, tutorial>intermediate]
+title: Create a hybrid app in SAP Cloud Platform mobile services for development and operations
+description: Learn how to create a hybrid app definition in SAP Cloud Platform mobile services for development and operations
+tags: [ products>sap-cloud-platform, topic>cloud, topic>mobile, tutorial>intermediate]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:**
-   - [Enable SAP HANA Cloud Platform mobile services for development and operations](http://www.sap.com/developer/tutorials/hcpms-enable-mobile-services.html)
+   - [Enable SAP Cloud Platform mobile services for development and operations](http://www.sap.com/developer/tutorials/hcpms-enable-mobile-services.html)
    - You must have completed at least the three tutorials below in the Web IDE series:  
-     - [Create a Destination on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+     - [Create a Destination on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
      - [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
-     - [Deploy your mobile web app to SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+     - [Deploy your mobile web app to SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
 
 ## Next Steps
  - [Configure an SAP Web IDE project for hybrid builds](http://www.sap.com/developer/tutorials/hcpms-webide-hybrid-config.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will learn how to create (or define) an app in SAP HANA Cloud Platform mobile services for development and operations. This process is very similar to to the creation of a Destination in HCP, and allows your Development & Operations instance know how to handle incoming application requests (registration, authentication and data).
+In this tutorial, you will learn how to create (or define) an app in SAP Cloud Platform mobile services for development and operations. This process is very similar to to the creation of a Destination in SAP Cloud Platform, and allows your Development & Operations instance know how to handle incoming application requests (registration, authentication and data).
 
 ### Time to Complete
 **5 Min**.
 
 ---
 
-1. Go to your [HCP Cockpit](https://account.hanatrial.ondemand.com) and log on.
+1. Go to your [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com) and log on.
 
 
-2. From the SAP HANA Cloud Platform Cockpit page, click **Services** in the navigation bar, scroll down until you see the Mobile Services group then click on the **Development & Operations** tile.
+2. From the SAP Cloud Platform Cockpit page, click **Services** in the navigation bar, scroll down until you see the Mobile Services group then click on the **Development & Operations** tile.
 
     ![Services tab](mg5-2-02.png)
 
