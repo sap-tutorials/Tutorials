@@ -59,7 +59,7 @@ In this tutorial you will learn how to add a view element with custom fields to 
 
 7. Log in when prompted.
 
-    ![Login to the SAP HANA Cloud Platform](10.png)
+    ![Login to the SAP Cloud Platform](10.png)
 
 8. On the next screen specify a Project Name, you can use the default name provided.
 

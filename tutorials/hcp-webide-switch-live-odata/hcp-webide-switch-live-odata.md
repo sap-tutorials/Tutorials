@@ -1,7 +1,7 @@
 ---
 title: Switch your app from mock data to a live OData service
 description: After running your app with mock data, learn how to switch it to a live OData service
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, products>sap-gateway, tutorial>intermediate ]
+tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, products>sap-gateway, tutorial>intermediate ]
 ---
 
 ## Prerequisites  
@@ -32,7 +32,7 @@ Converting an app built on mock data to a live service requires editing only two
     > For reference, the service document URL you will use is: <https://sapes4.sapdevcenter.com/sap/opu/odata/IWBEP/GWDEMO>
 
 
-2. To provide access to the service, you will need create a destination in HCP. Open a browser window to your HCP Cockpit, click on **Destinations**, then **New Destination**. Enter the field values and **Additional Properties** below and click **Save**.
+2. To provide access to the service, you will need create a destination in SAP Cloud Platform. Open a browser window to your SAP Cloud Platform Cockpit, click on **Destinations**, then **New Destination**. Enter the field values and **Additional Properties** below and click **Save**.
 
     Field Name     | Value
     :------------- | :-------------
@@ -55,9 +55,9 @@ Converting an app built on mock data to a live service requires editing only two
     `WebIDEUsage`    | `odata_gen`
 
 
-3. To establish a baseline for the source code you have written so far, you will deploy it to SAP HANA Cloud Platform and commit the project to Git. If you aren't sure how to do this, refer to the two tutorials below:
+3. To establish a baseline for the source code you have written so far, you will deploy it to SAP Cloud Platform and commit the project to Git. If you aren't sure how to do this, refer to the two tutorials below:
 
-    - [HCP Deployment tutorial](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) (but select your current project not `northwind`)
+    - [SAP Cloud Platform Deployment tutorial](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) (but select your current project not `northwind`)
     - Commit the code to Git following the [Git Tutorial](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
 
 
@@ -137,7 +137,7 @@ Converting an app built on mock data to a live service requires editing only two
 
     ![App running against Gateway OData service](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_14.png)
 
-15. You should now commit and push your edits to Git and redeploy the app to HCP.
+15. You should now commit and push your edits to Git and redeploy the app to SAP Cloud Platform.
 
 
 ## Next Steps

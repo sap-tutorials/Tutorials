@@ -1,29 +1,29 @@
 ---
-title: Configuring Eclipse with SAP HANA Cloud Platform Tools for Java
-description: A step-by-step procedure to configure the Eclipse IDE with for Java development on SAP HANA Cloud Platform
-tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-hana-cloud-platform ]
+title: Configuring Eclipse with SAP Cloud Platform Tools for Java
+description: A step-by-step procedure to configure the Eclipse IDE with for Java development on SAP Cloud Platform
+tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Sign up for an account on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Sign up for an account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
- - [Developing and Deploying a basic Java application on SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-java-basic-app.html)
+ - [Developing and Deploying a basic Java application on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-java-basic-app.html)
 
 ## Details
 ### You will learn  
 In this tutorial you'll learn everything you need to know to setup your local development environment based on Eclipse. The main steps are:
 
  - Downloading Eclipse
- - Installing SAP HANA Cloud Platform Tools for Java in your Eclipse IDE
- - Installing the SAP HANA Cloud Platform Software Development Kit
+ - Installing SAP Cloud Platform Tools for Java in your Eclipse IDE
+ - Installing the SAP Cloud Platform Software Development Kit
 
 ### Time to Complete
 **15 Min**.
 
 ---
 
-1. To make use of the SAP HANA Cloud Platform Tools for Java you first need to have a supported version of Eclipse installed on your computer. The Eclipse Neon version is recommended.
+1. To make use of the SAP Cloud Platform Tools for Java you first need to have a supported version of Eclipse installed on your computer. The Eclipse Neon version is recommended.
 
     [Open the Download site for Eclipse](http://www.eclipse.org/downloads/eclipse-packages/) and click on the **Eclipse IDE for Java EE Developers** link
 
@@ -54,7 +54,7 @@ In this tutorial you'll learn everything you need to know to setup your local de
 
 
 
-8. Now that you have installed Eclipse, you need to install the SAP HANA Cloud Platform tools for Java. This is done following the standard approach of Eclipse to install plugins.
+8. Now that you have installed Eclipse, you need to install the SAP Cloud Platform tools for Java. This is done following the standard approach of Eclipse to install plugins.
 
     From the Eclipse menu, choose **Help > Install New Software...**
 
@@ -64,11 +64,11 @@ In this tutorial you'll learn everything you need to know to setup your local de
 
     ![Add update site](jav100-1-add_update_site.png)
 
-10. Select **SAP HANA Cloud Platform Tools** and click **Next**.
+10. Select **SAP Cloud Platform Tools** and click **Next**.
 
     > Note: If Eclipse is not able to find the tools then please check your network settings. You might need to configure a proxy, in particular if you are working from a corporate network. How-to setup a proxy in Eclipse is explained in the [Installing SAP Development Tools for Eclipse](https://help.hana.ondemand.com/help/frameset.htm?76137a37711e1014839a8273b0e91070.html) section of the official online documentation.
 
-    ![Choose HCP Tools](jav100-1-choose_sap_hana_cloud_platform_tools.png)
+    ![Choose SAP Cloud Platform Tools](jav100-1-choose_sap_hana_cloud_platform_tools.png)
 
 
 11. On the **Install Details** page click **Next**.
@@ -84,9 +84,9 @@ In this tutorial you'll learn everything you need to know to setup your local de
 
     ![Restart Eclipse](jav100-1-restart_eclipse.png)
 
-14. After Eclipse restarts, close the Eclipse **Welcome Page**. You now have the SAP HANA Cloud Platform Tools for Java installed in Eclipse.
+14. After Eclipse restarts, close the Eclipse **Welcome Page**. You now have the SAP Cloud Platform Tools for Java installed in Eclipse.
 
-15. The next step is to download and install the SAP HANA Cloud Platform SDK, which contains all the required artifacts to setup a local development environment as well as the [console client](https://help.hana.ondemand.com/help/frameset.htm?76132306711e1014839a8273b0e91070.html) used to interact with your cloud account.
+15. The next step is to download and install the SAP Cloud Platform SDK, which contains all the required artifacts to setup a local development environment as well as the [console client](https://help.hana.ondemand.com/help/frameset.htm?76132306711e1014839a8273b0e91070.html) used to interact with your cloud account.
 
     The SDK comes in different flavors:
 
@@ -117,7 +117,7 @@ In this tutorial you'll learn everything you need to know to setup your local de
     > Note: To familiarize yourself further with the content of the SDK, especially note the location of the [console client](https://help.hana.ondemand.com/help/frameset.htm?76132306711e1014839a8273b0e91070.html) within the tools directory and the provided samples in a respective samples directory. Also, you might be interested to learn about the [supported APIs](https://help.hana.ondemand.com/help/frameset.htm?e836a95cbb571014b3c4c422837fcde4.html).
 
 
-19. The next thing to do is to configure the SAP HANA CLoud Platform Tools for Java so they make use of the just downloaded SDK. From the Eclipse IDE main menu, choose **Window > Preferences**.
+19. The next thing to do is to configure the SAP SAP Cloud Platform Tools for Java so they make use of the just downloaded SDK. From the Eclipse IDE main menu, choose **Window > Preferences**.
 
     ![Open preferences](jav100-1-open_preferences.png)
 
@@ -133,11 +133,11 @@ In this tutorial you'll learn everything you need to know to setup your local de
 
     ![Provide SDK](jav100-1-provide_sdk.png)
 
-23. With this a new Java Web runtime is now available that will be used for your SAP HANA Cloud Platform projects. You can now close the dialog by clicking **OK**
+23. With this a new Java Web runtime is now available that will be used for your SAP Cloud Platform projects. You can now close the dialog by clicking **OK**
 
     ![Java Web Added](jav100-1-javaweb_added.png)
 
-Congratulations: You have now installed the SAP HANA Cloud Platform Tools for Java and are ready to start with your Java project on SAP HANA Cloud Platform.
+Congratulations: You have now installed the SAP Cloud Platform Tools for Java and are ready to start with your Java project on SAP Cloud Platform.
 
 
 
@@ -152,4 +152,4 @@ Congratulations: You have now installed the SAP HANA Cloud Platform Tools for Ja
  - (Online documentation) [Setting Up the Runtime Environment](https://help.hana.ondemand.com/help/frameset.htm?7613f000711e1014839a8273b0e91070.html)
 
 ## Next Steps
- - [Developing and Deploying a basic Java application on SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-java-basic-app.html)
+ - [Developing and Deploying a basic Java application on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-java-basic-app.html)

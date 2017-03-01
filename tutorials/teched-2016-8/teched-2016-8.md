@@ -1,7 +1,7 @@
 ---
 title: Translate your app into multiple languages
-description: Use the SAP HANA Cloud Platform Translation Hub to automatically generate i18n (internationalization) files for multiple languages
-tags: [  tutorial>beginner, products>sap-hana-cloud-platform, products>sap-web-ide ]
+description: Use the SAP Cloud Platform Translation Hub to automatically generate i18n (internationalization) files for multiple languages
+tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 
 ## Prerequisites  
@@ -22,9 +22,9 @@ Examples of language settings are `en` for English, `de` for German. Language an
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open your HCP cockpit)]
+[ACCORDION-BEGIN [Step 1: ](Open your SAP Cloud Platform cockpit)]
 
-Log into your [HCP account](https://account.hanatrial.ondemand.com), click on the **Services** in the left-hand navigation bar.
+Log into your [SAP Cloud Platform account](https://account.hanatrial.ondemand.com), click on the **Services** in the left-hand navigation bar.
 
 [DONE]
 [ACCORDION-END]
@@ -124,9 +124,9 @@ If you check the `i18n` folder in your project, you will see the two new files:
 
 [ACCORDION-BEGIN [Step 10: ](Commit files, and deploy to the cloud)]
 
-Commit your new files to **Git** and deploy the application to HCP (following the same procedure as in the previous [tutorial](http://www.sap.com/developer/tutorials/teched-2016-5.html).
+Commit your new files to **Git** and deploy the application to SAP Cloud Platform (following the same procedure as in the previous [tutorial](http://www.sap.com/developer/tutorials/teched-2016-5.html).
 
-Right-click on your **`te2016`** project folder, and select **Deploy > Deploy to SAP HANA Cloud Platform** and click **Deploy**.
+Right-click on your **`te2016`** project folder, and select **Deploy > Deploy to SAP Cloud Platform** and click **Deploy**.
 
 [DONE]
 [ACCORDION-END]

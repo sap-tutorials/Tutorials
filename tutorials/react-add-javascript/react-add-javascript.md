@@ -1,7 +1,7 @@
 ---
 title: React JS - Add the React JavaScript
 description: Step #3: Add the React JavaScript to the file
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -58,7 +58,7 @@ Open the Web IDE, and then open your `index.html` page.
     >
     > The previous HTML standard (HTML 4) specified the ISO-8859-1 character set as the default.  When HTML5 was released, the specification was updated to default to UTF-8.  UTF-8 is a much more flexibile character set, and can support languages from all over the world.
     >
-    > The React framework defaults to reading ISO-8859-1 characters.  So, if we don't tell it to use UTF-8 (which is what HANA Cloud Platform uses), React will not understand the characters and will throw several syntax errors.
+    > The React framework defaults to reading ISO-8859-1 characters.  So, if we don't tell it to use UTF-8 (which is what SAP Cloud Platform uses), React will not understand the characters and will throw several syntax errors.
     >
     > The tag `<meta charset="">` is now the recommended best practice in all HTML.
 

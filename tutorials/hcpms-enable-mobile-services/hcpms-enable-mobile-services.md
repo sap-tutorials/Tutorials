@@ -1,27 +1,27 @@
 ---
-title: Enable SAP HANA Cloud Platform mobile services for development and operations
-description: Enable and configure the mobile services for development and operations in SAP HANA Cloud Platform
-tags: [products>sap-hana-cloud-platform, topic>cloud, topic>mobile, tutorial>intermediate ]
+title: Enable SAP Cloud Platform mobile services for development and operations
+description: Enable and configure the mobile services for development and operations in SAP Cloud Platform
+tags: [products>sap-cloud-platform, topic>cloud, topic>mobile, tutorial>intermediate ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
 
 ## Next Steps
- - [Create an app in SAP HANA Cloud Platform mobile services](http://www.sap.com/developer/tutorials/hcpms-create-hybrid-app.html)
+ - [Create an app in SAP Cloud Platform mobile services](http://www.sap.com/developer/tutorials/hcpms-create-hybrid-app.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will enable and configure SAP HANA Cloud Platform mobile services for development and operations in your trial account.  Once configured, you can use mobile services to run hybrid and native apps on SAP HANA Cloud Platform
+In this tutorial, you will enable and configure SAP Cloud Platform mobile services for development and operations in your trial account.  Once configured, you can use mobile services to run hybrid and native apps on SAP Cloud Platform
 
 ### Time to Complete
 **5 Min**.
 
 ---
 
-1. Go to your [HCP Cockpit](https://account.hanatrial.ondemand.com) and log on.
+1. Go to your [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com) and log on.
 
 
-2. From the SAP HANA Cloud Platform Cockpit page, click **Services** in the navigation bar, scroll down until you see the Mobile Services group then click on the **Development & Operations** tile.
+2. From the SAP Cloud Platform Cockpit page, click **Services** in the navigation bar, scroll down until you see the Mobile Services group then click on the **Development & Operations** tile.
 
     ![Subscriptions tab](mg5-1-02.png)
 
@@ -46,7 +46,7 @@ In this tutorial, you will enable and configure SAP HANA Cloud Platform mobile s
     ![Role assigned](mg5-1-07.png)
 
 
-9. The next step is to create two HCP Destinations. To display the navigation bar, click on your **User ID** link again (near the top left of the window), click on the **Destinations** tab, then click on **New Destination**.
+9. The next step is to create two SAP Cloud Platform Destinations. To display the navigation bar, click on your **User ID** link again (near the top left of the window), click on the **Destinations** tab, then click on **New Destination**.
 
 10. For the first Destination, complete the form with the info below, and click Save.
 
@@ -80,4 +80,4 @@ In this tutorial, you will enable and configure SAP HANA Cloud Platform mobile s
 
 
 ## Next Steps
- - [Create an app in SAP HANA Cloud Platform mobile services](http://www.sap.com/developer/tutorials/hcpms-create-hybrid-app.html)
+ - [Create an app in SAP Cloud Platform mobile services](http://www.sap.com/developer/tutorials/hcpms-create-hybrid-app.html)

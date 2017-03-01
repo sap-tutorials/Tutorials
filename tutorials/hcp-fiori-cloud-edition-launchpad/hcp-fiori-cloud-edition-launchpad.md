@@ -1,7 +1,7 @@
 ---
 title: Add extended app to SAP Fiori launchpad
 description: Deploy your exteded app to the SAP Fiori launchpad
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -11,22 +11,22 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, produ
 ### You will learn  
 In this tutorial you will learn how to deploy an extended app to the SAP Fiori launchpad. The key steps are:
 
-- Deploy the app to the SAP HANA Cloud Platform
+- Deploy the app to the SAP Cloud Platform
 - Deploy the app to the SAP Fiori launchpad
 
 ### Time to Complete
 **5 Min**.
 
 ---
-You successful tested the app you've extended in the [Add custom fields to a standard SAP Fiori app] tutorial? Now it is time to deploy it the SAP HANA Cloud Platform. 
+You successful tested the app you've extended in the [Add custom fields to a standard SAP Fiori app] tutorial? Now it is time to deploy it the SAP Cloud Platform. 
 
-1. Right click on the project and choose **Deploy > Deploy to SAP HANA Cloud Platform**:
+1. Right click on the project and choose **Deploy > Deploy to SAP Cloud Platform**:
 
-    ![Deploy > Deploy to SAP HANA Cloud Platform](18.png)
+    ![Deploy > Deploy to SAP Cloud Platform](18.png)
 
 2. You should get the following pop-up. Keep the default settings. Confirm the screen by clicking **deploy**:
 
-    ![Deploy to SAP HANA Cloud Platform](19.png)
+    ![Deploy to SAP Cloud Platform](19.png)
 
 3. When the deploy was successful you can directly continue to register your extended app to the SAP Fiori launchpad. Click on the **Register to SAP Fiori launchpad** button to do so:
 

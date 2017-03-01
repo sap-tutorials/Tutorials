@@ -1,7 +1,7 @@
 ---
-title: SAP HCP predictive services, Expose your predictive demo dataset as an OData service
-description: Expose the demo data to be used with the SAP HCP predictive services as an OData services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, topic>odata ]
+title: SAP Cloud Platform predictive services, Expose your predictive demo dataset as an OData service
+description: Expose the demo data to be used with the SAP Cloud Platform predictive services as an OData services
+tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>odata ]
 ---
 
 ## Prerequisites
@@ -9,84 +9,108 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform, 
   - **Tutorials:** [Import a predictive demo dataset in your SAP HANA](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - [Enable, deploy and configure the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Details
 ### You will learn
-  - How to use the create an ***OData*** service to expose a table stored in the HANA HCP instance
+  - How to create an ***OData*** service to expose a table stored in the HANA SAP Cloud Platform instance
+
+  **Note:**
+    - The OData service will be used in a SAPUI5 application to render the data in a graph or a table, and is not used by the predictive services.
+    - The predictive services only consumes data stored inside of your HANA instance.**
 
 ### Time to Complete
   **5 minutes**
 
----
+[ACCORDION-BEGIN [Step 1: ](Open the Content Editor)]
+Open the ***SAP HANA Web-based Development Workbench*** on your trial HANA instance connected `HANA User Account`, click on **Editor**.
 
-1. Open the ***SAP HANA Web-based Development Workbench*** on your trial HANA instance connected `HANA User Account`, click on **Editor**.
+![SAP HANA Web-based Development Workbench](01.png)
 
-    ![SAP HANA Web-based Development Workbench](1.png)
+[DONE]
+[ACCORDION-END]
 
-1. Right click on **Content**, then click on **Create Application**.
+[ACCORDION-BEGIN [Step 2: ](Create an application)]
+Right click on **Content**, then click on **Create Application**.
 
-    ![SAP HANA Web-based Development Workbench](2-1.png)
+![SAP HANA Web-based Development Workbench](02.png)
 
-1. Complete the form following properties:
+Complete the form following properties:
 
-    - ***Package***: `public.timeseries.odata`
+- ***Package***: `public.predictive.odata`
 
-    Click on **Create**
+Click on **Create**
 
-    ![New Application](5.png)
+![New Application](03.png)
 
-1. Expand the tree structure and reach the `public.timeseries.odata` package.
+[DONE]
+[ACCORDION-END]
 
-    Right click on `odata`, then navigate the menu **New** > **File**.
+[ACCORDION-BEGIN [Step 3: ](Create the XS OData service)]
+Expand the tree structure and reach the `public.predictive.odata` package.
 
-    ![SAP HANA Web-based Development Workbench](6.png)
+Right click on `odata`, then navigate the menu **New** > **File**.
 
-1. Complete the form following properties:
+![SAP HANA Web-based Development Workbench](6.png)
 
-    - ***File Name***: `timeseries.xsodata`
+Complete the form following properties:
 
-    Click on **Create**
+- ***File Name***: `predictive.xsodata`
 
-    ![New Package](7.png)
+Click on **Create**
 
-1. Enter the following code in the file:
+![New Package](04.png)
 
-    ```
-    service {
-      "DEMO"."TIME_SERIES" as "TimeSeriesData";
-    }
-    settings {
-      support null;
-    }
-    ```
+Enter the following code in the file:
 
-    This is the OData Service declaration for the `TIMESERIES` table located in the `DEMO` schema which we will now reference as `TimeSeriesData`
+```
+service {
+  "DEMO"."CashFlow"     as "CashFlowData";
+  "DEMO"."Census"       as "CensusData";
+  "DEMO"."Transactions" as "TransactionsData";
+}
+settings {
+  support null;
+}
+```
+**Note: if you didn't import all the datasets provided in the previous step, then file will not get activated, and the console will show you an error message.**
 
-    Click on the ![save](0-save.png) button in the top menu bar
+This is the OData Service declaration for the datasets located in the `DEMO` schema.
+[DONE]
+[ACCORDION-END]
 
-    ![XS OData](8.png)
+[ACCORDION-BEGIN [Step 4: ](Test the XS OData service)]
+Click on the ![save](0-save.png) button in the top menu bar
 
-1. You can now test your service by clicking on the ![run](0-run.png) button in the top menu bar.
+![XS OData](05.png)
 
-    This will list all the services defined in your `xsodata` file.
+You can now test your service by clicking on the ![run](0-run.png) button in the top menu bar.
 
-    ```xml
-    <service xml:base="https://trialXYZtrial.hanatrial.ondemand.com:443/public/timeseries/odata/timeseries.xsodata/">
-      <workspace>
-        <atom:title>Default</atom:title>
-        <collection href="TimeSeriesData">
-          <atom:title>TimeSeriesData</atom:title>
-        </collection>
-      </workspace>
-    </service>
-    ```
+This will list all the services defined in your `xsodata` file.
 
-    ![OData Service List](9.png)
+```
+<service xmlns:atom="http://www.w3.org/2005/Atom" xmlns:app="http://www.w3.org/2007/app" xmlns="http://www.w3.org/2007/app" xml:base="https://mdcxxxxxxxxxtrial.hanatrial.ondemand.com:443/public/predictive/odata/predictive.xsodata/">
+  <workspace>
+    <atom:title>Default</atom:title>
+    <collection href="CashFlowData">
+      <atom:title>CashFlowData</atom:title>
+    </collection>
+    <collection href="CensusData">
+      <atom:title>CensusData</atom:title>
+    </collection>
+    <collection href="TransactionsData">
+      <atom:title>TransactionsData</atom:title>
+    </collection>
+  </workspace>
+</service>
+```
 
-    Later, you will be using this OData service, so you should save the highlighted URL in a notepad as your ***OData Service URL***.
+![OData Service List](06.png)
 
-    Note that the URL include your HCP Account Identifier (represented as `XYZ`).
+Later, you will be using this OData service, so you should save the highlighted URL in a notepad as your ***OData Service URL***.
+
+[DONE]
+[ACCORDION-END]
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - [Enable, deploy and configure the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)

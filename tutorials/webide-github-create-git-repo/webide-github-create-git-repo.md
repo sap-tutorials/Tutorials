@@ -1,7 +1,7 @@
 ---
 title: Creating a Git repository within a GitHub organization
 description: Part 2 of 6, Collaborative Development Using GitHub and SAP Web IDE
-tags: [ tutorial>beginner, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-hana-cloud-platform ]
+tags: [ tutorial>beginner, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

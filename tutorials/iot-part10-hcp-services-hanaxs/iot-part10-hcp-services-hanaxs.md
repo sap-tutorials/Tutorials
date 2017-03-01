@@ -1,7 +1,7 @@
 ---
 title: Internet of Things (IoT) Viewing your Tessel data from IoT Services through SAP HANA XS
 description: Part 10 of 10, Now connect your IoT Services to an SAP HANA MDC instance and show the data using SAP HANA XS
-tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
+tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
 ---
 
@@ -52,7 +52,7 @@ Now that your IoT Services are collecting data and you were able to view it your
 
   ![Roles](7.png)
 
-7. Now return to your Java applications within the SAP HANA Cloud Platform and choose the `iotmms` application and then the data bindings option. Delete the existing binding to `XXXXXXtrial.iotmms.web` database. Then create a  new binding to your new HANA MDC instance.
+7. Now return to your Java applications within the SAP Cloud Platform and choose the `iotmms` application and then the data bindings option. Delete the existing binding to `XXXXXXtrial.iotmms.web` database. Then create a  new binding to your new HANA MDC instance.
 
   ![Tables](8.png)
 

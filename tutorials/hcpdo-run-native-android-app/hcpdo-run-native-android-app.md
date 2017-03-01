@@ -1,7 +1,7 @@
 ---
-title: Compile and run a native Android app on SAP HANA Cloud Platform
-description: Clone a GitHub repository, import it into your project, run it on SAP HANA Cloud Platform mobile services for development and operations then review the main classes and methods.
-tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>sap-hana-cloud-platform ]
+title: Compile and run a native Android app on SAP Cloud Platform
+description: Clone a GitHub repository, import it into your project, run it on SAP Cloud Platform mobile services for development and operations then review the main classes and methods.
+tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>sap-cloud-platform ]
 
 ---
 
@@ -17,7 +17,7 @@ tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>
 ## Details
 ### You will learn  
 
-In this tutorial you will review and run a native Android version of the Northwind hybrid app (from [Mobile Groups 1-3](http://www.sap.com/developer/tutorial-navigator.beginner.html)) and run it on SAP HANA Cloud Platform mobile services for development and operations. You will use Android Studio and elements of the SAP Mobile Platform SDK to build the app, and access the same Northwind OData service used in the mobile web and hybrid tutorials. 
+In this tutorial you will review and run a native Android version of the Northwind hybrid app (from [Mobile Groups 1-3](http://www.sap.com/developer/tutorial-navigator.beginner.html)) and run it on SAP Cloud Platform mobile services for development and operations. You will use Android Studio and elements of the SAP Mobile Platform SDK to build the app, and access the same Northwind OData service used in the mobile web and hybrid tutorials. 
 
 If you have not completed the tutorials in [Mobile Groups 1-3](http://www.sap.com/developer/tutorial-navigator.beginner.html) – it would be best to work through those first to become familiar with the OData service used.
 
@@ -64,9 +64,9 @@ The source code is available in GitHub, and after a walk-through of the code in 
 
     Field Name         | Value
     :----------------- | :-------------
-    Server URL         | replace `s123456` with your HCP trial account ID
+    Server URL         | replace `s123456` with your SAP Cloud Platform trial account ID
     Login Credentials  | Change `s123456` to your account ID
-    Password           | enter your HCP trial account password
+    Password           | enter your SAP Cloud Platform trial account password
  
 
     Click **Next**
@@ -325,11 +325,11 @@ The `ProductDataSingleton` keeps the same two variable names and simply replaces
 ## Customizing the code
 1. To simplify the log on process, change the default server URL and username to match your account. Open the `app/src/main/res/values/strings.xml` file.  
 
-    - Replace `s123456` in the `SERVER_URL` line to match your HCP trial account number:
+    - Replace `s123456` in the `SERVER_URL` line to match your SAP Cloud Platform trial account number:
 
     `<string name="SERVER_URL">hcpms-s123456trial.hanatrial.ondemand.com</string>`
 
-    - Replace `s123456` in the `USERNAME` line to match your HCP trial account number:
+    - Replace `s123456` in the `USERNAME` line to match your SAP Cloud Platform trial account number:
 
     `<string name="SERVER_URL">s123456</string>`
 

@@ -1,7 +1,7 @@
 ---
 title: AngularJS - Separate the JavaScript and CSS files
 description: Step #4: Move the CSS and JavaScript code from the HTML page to separate files on the web server.
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 

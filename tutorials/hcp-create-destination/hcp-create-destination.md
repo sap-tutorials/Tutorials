@@ -1,13 +1,13 @@
 ---
-title: Create a Destination on HANA Cloud Platform
-description: Create a Destination to allow HANA Cloud Platform to read/write data
-tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>mobile, topic>odata, tutorial>beginner ]
+title: Create a Destination on SAP Cloud Platform
+description: Create a Destination to allow SAP Cloud Platform to read/write data
+tags: [ products>sap-cloud-platform, topic>cloud, topic>mobile, topic>odata, tutorial>beginner ]
 ---
 
 ## Prerequisites
  - **Proficiency:** Beginner
  - **Tutorials:**  This tutorial is used in several different series.  Choose the series to move backward:
-     - **Mobile Application Series**  [Sign up for an account on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+     - **Mobile Application Series**  [Sign up for an account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
      - **SAPUI5 with Web IDE Series** [Create an empty UI5 Web IDE project](https://www.sap.com/developer/tutorials/sapui5-webide-create-project.html)
 
 ## Next Steps
@@ -29,9 +29,9 @@ Northwind comes in several versions.  The tutorials currently use either V2 (<ht
 
 ---
 
-1. Go to <https://account.hanatrial.ondemand.com> and log in to your HCP cockpit.
+1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
 
-    ![HCP log in page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_1.png)
+    ![SAP Cloud Platform log in page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_1.png)
 
 2. Select the **Destinations** tab on the left side, and then click on **New Destination** to open a new destination configuration form.
 
@@ -58,7 +58,7 @@ Northwind comes in several versions.  The tutorials currently use either V2 (<ht
     `WebIDESystem`   | `Northwind_Data`
     `WebIDEUsage`    | `odata_gen`
 
-    ![Completed HCP destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_3.png)
+    ![Completed SAP Cloud Platform destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_3.png)
 
 4. Click **Save**, and that's it.  You are ready for the next step in your tutorial.
 

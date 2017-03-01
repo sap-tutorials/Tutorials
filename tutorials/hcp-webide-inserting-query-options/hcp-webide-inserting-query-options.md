@@ -1,7 +1,7 @@
 ---
 title: Inserting OData query options into your SAPUI5 app
 description: Learn how to insert OData query options to your SAPUI5 app
-tags: [products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>intermediate ]
+tags: [products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>intermediate ]
 ---
 
 ## Prerequisites  
@@ -20,7 +20,7 @@ The previous tutorial introduced a number of OData query options that developers
 
 ---
 
-1. Log into your [HCP account](https://account.hanatrial.ondemand.com) and open SAP Web IDE tab in a Google Chrome browser. Ensure that your latest code has been committed to your git repository. If so, you should have green dots next to the folders and files in your project (as shown below). If not, [commit your files to Git now](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html).
+1. Log into your [SAP Cloud Platform account](https://account.hanatrial.ondemand.com) and open SAP Web IDE tab in a Google Chrome browser. Ensure that your latest code has been committed to your git repository. If so, you should have green dots next to the folders and files in your project (as shown below). If not, [commit your files to Git now](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html).
 
      ![Project folder](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_1.png)
 

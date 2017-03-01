@@ -1,7 +1,7 @@
 ---
-title: SAP HCP predictive services, Configure a SAPUI5 application from the project template
-description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the OData service and the HCP predictive services
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, topic>sapui5 ]
+title: SAP Cloud Platform predictive services, Configure a SAPUI5 application from the project template
+description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the OData service and the SAP Cloud Platform predictive services
+tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
@@ -13,7 +13,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
 ## Details
 ### You will learn
-  - How to add a Destination which will enable the use of an OData Service and the HCP predictive services deployed on HCP
+  - How to add a Destination which will enable the use of an OData Service and the SAP Cloud Platform predictive services deployed on HCP
   - How to create a SAPUI5 application from a template
 
 ### Time to Complete
@@ -21,11 +21,11 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
 
 ---
 
-1. Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
+1. Log into the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
 
     Click on your ***HCP Account*** identifier (which ends with *trial*) as highlighted on the below screenshot.
 
-    ![SAP HANA Cloud Platform Cockpit](1.png)
+    ![SAP Cloud Platform Cockpit](1.png)
 
 1. On the left side bar, you can navigate in **Connectivity** > **Destinations**.
 

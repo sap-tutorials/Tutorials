@@ -1,7 +1,7 @@
 ---
 title: AngularJS - Add Dynamic and Custom Filters
 description: Step #8:  Add components for currency, style, and to dynamically filter the list.
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
