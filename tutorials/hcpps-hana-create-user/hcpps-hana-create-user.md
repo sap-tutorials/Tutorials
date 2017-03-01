@@ -6,10 +6,10 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Create a new HANA MDC instance](http://www.sap.com/developer/tutorials/hcpps-hana-create-mdc-instance.html)
+  - **Tutorials:** [Create a new HANA MDC instance on the SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcpps-hana-create-mdc-instance.html)
 
 ## Next Steps
-  - [Import a predictive demo dataset in your SAP HANA  instance](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
+  - [Import a series of predictive demo dataset in your SAP HANA MDC instance](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
 
 ## Details
 ### You will learn
@@ -102,4 +102,4 @@ Your ***HANA User Account*** is now configured.
 [ACCORDION-END]
 
 ## Next Steps
-  - [Import a predictive demo dataset in your SAP HANA  instance](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
+  - [Import a series of predictive demo dataset in your SAP HANA MDC instance](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)

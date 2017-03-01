@@ -1,15 +1,15 @@
 ---
-title: SAP Cloud Platform predictive services, Test the "Data Set" SAP Cloud Platform predictive services using a REST client
-description: Using a REST client, you will test the "Data Set" SAP Cloud Platform predictive services
+title: SAP Cloud Platform predictive services, Test the "Dataset" SAP Cloud Platform predictive services using a REST client
+description: Using a REST client, you will test the "Dataset" SAP Cloud Platform predictive services
 tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Access your predictive demo data set using an OData services from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
+  - **Tutorials:** [Access your predictive demo data set using a HANA XS OData services from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
 
 ## Next Steps
-  - [Test the "Forecast" HCP predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
+  - [Test the "Forecast" SAP Cloud Platform predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
 
 ## Details
 ### You will learn
@@ -25,10 +25,10 @@ Therefore you can replace any occurrence of the token by the value listed above.
 >
 > Token               | Value
 ------------------- | -------------
-<code><b>&lt;HCP account name&gt;</b></code>  | on a developer trial account, it should end by `trial`
-<code><b>&lt;C4PA URL&gt;</b></code> | `http://aac4paservices<`<code><b>HCP account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
+<code><b>&lt;SAP Cloud Platform account name&gt;</b></code>  | on a developer trial account, it should end by `trial`
+<code><b>&lt;C4PA URL&gt;</b></code> | `http://aac4paservices<`<code><b>SAP Cloud Platform account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
 >
-> If you are unclear with what is your HCP account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 [ACCORDION-BEGIN [Step 1: ](Register a dataset)]
 Open a new tab in ***Postman***.
@@ -47,11 +47,11 @@ Select the **Authorization** tab and fill in the following information:
 Field Name     | Value
 -------------- | -------------
 Type           | `Basic Auth`
-Username       | your ***HCP Account*** login*
-Password*      | your ***HCP Account*** password
+Username       | your ***SAP Cloud Platform Account*** login*
+Password*      | your ***SAP Cloud Platform Account*** password
 
 **Note:**
-  Your HCP Account login is usually the email address used to register your ***HCP*** account.
+  Your SAP Cloud Platform Account login is usually the email address used to register your ***SAP Cloud Platform*** account.
 
 ![Postman URL](02.png)
 
@@ -225,4 +225,4 @@ For more details on the SAP Cloud Platform predictive services, you can check th
   - `<`<code><b>C4PA URL</b></code>`>/raml/index.html?raml=../aa-cloud-services.raml`
 
 ## Next Steps
-  - [Test the "Forecast" HCP predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
+  - [Test the "Forecast" SAP Cloud Platform predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)

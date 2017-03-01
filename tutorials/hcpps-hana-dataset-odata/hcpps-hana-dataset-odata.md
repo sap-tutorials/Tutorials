@@ -1,6 +1,6 @@
 ---
-title: SAP Cloud Platform predictive services, Expose your predictive demo dataset as an OData service
-description: Expose the demo data to be used with the SAP Cloud Platform predictive services as an OData services
+title: SAP Cloud Platform predictive services, Expose your predictive demo dataset as HANA XS OData services
+description: Expose the demo data to be used with the SAP Cloud Platform predictive services as HANA XS OData services
 tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>odata ]
 ---
 
@@ -13,17 +13,18 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic
 
 ## Details
 ### You will learn
-  - How to create an ***OData*** service to expose a table stored in the HANA SAP Cloud Platform instance
+  - How to create a HANA XS OData services to expose table data stored in a SAP Cloud Platform HANA MDC instance
 
-  **Note:**
-    - The OData service will be used in a SAPUI5 application to render the data in a graph or a table, and is not used by the predictive services.
-    - The predictive services only consumes data stored inside of your HANA instance.**
+>**Note:**
+- The HANA XS OData service will be used in a SAPUI5 application to render the data in a graph or a table, and is not used by the predictive services.
+- The predictive services only consumes data stored inside of your HANA instances.**
 
 ### Time to Complete
   **5 minutes**
 
 [ACCORDION-BEGIN [Step 1: ](Open the Content Editor)]
-Open the ***SAP HANA Web-based Development Workbench*** on your trial HANA instance connected `HANA User Account`, click on **Editor**.
+
+Open the ***SAP HANA Web-based Development Workbench*** on your trial HANA instance connected **HANA User Account**, click on **Editor**.
 
 ![SAP HANA Web-based Development Workbench](01.png)
 
@@ -46,12 +47,10 @@ Click on **Create**
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create the XS OData service)]
+[ACCORDION-BEGIN [Step 3: ](Create a HANA XS OData service)]
 Expand the tree structure and reach the `public.predictive.odata` package.
 
 Right click on `odata`, then navigate the menu **New** > **File**.
-
-![SAP HANA Web-based Development Workbench](6.png)
 
 Complete the form following properties:
 
@@ -73,13 +72,12 @@ settings {
   support null;
 }
 ```
-**Note: if you didn't import all the datasets provided in the previous step, then file will not get activated, and the console will show you an error message.**
+**Note: if you didn't import all the datasets provided in the previous step, then when saving the file, it will not get activated, and the console will show you an error message. **
 
-This is the OData Service declaration for the datasets located in the `DEMO` schema.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test the XS OData service)]
+[ACCORDION-BEGIN [Step 4: ](Test the HANA XS OData service)]
 Click on the ![save](0-save.png) button in the top menu bar
 
 ![XS OData](05.png)
@@ -107,7 +105,7 @@ This will list all the services defined in your `xsodata` file.
 
 ![OData Service List](06.png)
 
-Later, you will be using this OData service, so you should save the highlighted URL in a notepad as your ***OData Service URL***.
+Later, you will be using this HANA XS OData service, so you should save the highlighted URL in a notepad as your ***HANA XS OData Service URL***.
 
 [DONE]
 [ACCORDION-END]

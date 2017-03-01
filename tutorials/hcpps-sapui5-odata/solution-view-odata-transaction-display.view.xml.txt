@@ -1,0 +1,40 @@
+<mvc:View controllerName="sapui5demo.controller.odata.transaction.display" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:controls="sap.viz.ui5.controls" xmlns:feeds="sap.viz.ui5.controls.common.feeds" xmlns:data="sap.viz.ui5.data"
+	xmlns:table="sap.ui.table">
+	<Toolbar>
+		<ToolbarSpacer/>
+		<Button icon="sap-icon://refresh" text="Load Data" tooltip="Reinitialize Model" press="onLoadData"/>
+		<ToolbarSpacer/>
+	</Toolbar>
+	<Panel expandable="false" expanded="true" visible="{= typeof ${transaction>/data} !== 'undefined'}">
+		<!-- A table with the transaction data. It will be populated when the button is pressed-->
+		<table:Table rows="{transaction>/data}" enableBusyIndicator="true" visibleRowCount="5" width="100%" selectionMode="None">
+			<table:columns>
+				<table:Column sortProperty="UserID" filterProperty="UserID" filterType="sap.ui.model.type.Integer">
+					<Label text="User ID"/>
+					<table:template>
+						<Text text="{transaction>UserID}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="ItemPurchased" filterProperty="ItemPurchased">
+					<Label text="Item Purchased"/>
+					<table:template>
+						<Text text="{transaction>ItemPurchased}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="Date_PutInCaddyString" filterProperty="Date_PutInCaddyString">
+					<Label text="Date Put In Caddy"/>
+					<table:template>
+						<Text text="{transaction>Date_PutInCaddyString}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="TransactionID" filterProperty="TransactionID" filterType="sap.ui.model.type.Integer">
+					<Label text="Transaction ID"/>
+					<table:template>
+						<Text text="{transaction>TransactionID}"/>
+					</table:template>
+				</table:Column>
+			</table:columns>
+		</table:Table>
+	</Panel>
+</mvc:View>

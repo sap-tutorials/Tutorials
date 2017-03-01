@@ -1,0 +1,100 @@
+<mvc:View controllerName="sapui5demo.controller.odata.census.display" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:controls="sap.viz.ui5.controls" xmlns:feeds="sap.viz.ui5.controls.common.feeds" xmlns:data="sap.viz.ui5.data"
+	xmlns:table="sap.ui.table">
+	<Toolbar>
+		<ToolbarSpacer/>
+		<Button icon="sap-icon://refresh" text="Load Data" tooltip="Reinitialize Model" press="onLoadData"/>
+		<ToolbarSpacer/>
+	</Toolbar>
+	<Panel expandable="false" expanded="true" visible="{= typeof ${census>/data} !== 'undefined'}">
+		<!-- A table with the census data. It will be populated when the button is pressed-->
+		<table:Table rows="{census>/data}" enableBusyIndicator="true" visibleRowCount="5" width="100%" selectionMode="None">
+			<table:columns>
+				<table:Column sortProperty="age" filterProperty="age" filterType="sap.ui.model.type.Integer">
+					<Label text="Age"/>
+					<table:template>
+						<Text text="{census>age}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="workclass" filterProperty="workclass">
+					<Label text="Workclass"/>
+					<table:template>
+						<Text text="{census>workclass}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="fnlwgt" filterProperty="fnlwgt">
+					<Label text="Financial Weight"/>
+					<table:template>
+						<Text text="{census>fnlwgt}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="education" filterProperty="education">
+					<Label text="Education"/>
+					<table:template>
+						<Text text="{census>education}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="education_num" filterProperty="education_num" filterType="sap.ui.model.type.Integer">
+					<Label text="Years of education"/>
+					<table:template>
+						<Text text="{census>education_num}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="marital_status" filterProperty="marital_status">
+					<Label text="Marital Status"/>
+					<table:template>
+						<Text text="{census>marital_status}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="occupation" filterProperty="occupation">
+					<Label text="Occupation"/>
+					<table:template>
+						<Text text="{census>occupation}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="relationship" filterProperty="relationship">
+					<Label text="Relationship"/>
+					<table:template>
+						<Text text="{census>relationship}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="race" filterProperty="race">
+					<Label text="Race"/>
+					<table:template>
+						<Text text="{census>race}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="sex" filterProperty="sex">
+					<Label text="Sex"/>
+					<table:template>
+						<Text text="{census>sex}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="capital_gain" filterProperty="capital_gain" filterType="sap.ui.model.type.Integer">
+					<Label text="Captial Gain"/>
+					<table:template>
+						<Text text="{census>capital_gain}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="capital_loss" filterProperty="capital_loss" filterType="sap.ui.model.type.Integer">
+					<Label text="Capital Loss"/>
+					<table:template>
+						<Text text="{census>capital_loss}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="native_country" filterProperty="native_country">
+					<Label text="Native Country"/>
+					<table:template>
+						<Text text="{census>native_country}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="class" filterProperty="class" filterType="sap.ui.model.type.Integer">
+					<Label text="Class"/>
+					<table:template>
+						<Text text="{census>class}" id="class"/>
+					</table:template>
+				</table:Column>
+			</table:columns>
+		</table:Table>
+	</Panel>
+</mvc:View>

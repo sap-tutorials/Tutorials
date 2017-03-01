@@ -31,7 +31,7 @@ This is why we choose to have the dataset as "insert" statement files.
 Depending on your area of interest you can pick those of interest and download the files locally.
 
   - **Cash Flow**: contains historical cash flow data and date related indicators
-    - [`link`](demo.cashflow.sql.txt).
+    - [`link`](demo.cashflow.sql.txt)
   - **Census**: contains 14 characteristics of an individual extracted from a census dataset associated to an indicator equal to 1 when the individual earned more than fifty thousand dollars the previous year, else 0 (excerpt from the American Census Bureau database, completed in 1994 by Barry Becker, source: http://www.census.gov/).
     - [`link 1`](demo.census.sql.1.txt)
     - [`link 2`](demo.census.sql.2.txt)

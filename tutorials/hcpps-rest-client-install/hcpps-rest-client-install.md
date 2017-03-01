@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
   - **Tutorials:** [Enable, deploy and configure the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Next Steps
-  - [Test the OData services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
+  - [Test the HANA XS OData services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
 
 ## Details
 ### You will learn
@@ -46,8 +46,9 @@ Click on **Postman**
 You are all set to move to the next tutorial.
 
 ![Postman](03.png)
+
 [DONE]
 [ACCORDION-END]
 
 ## Next Steps
-  - [Test the OData services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
+  - [Test the HANA XS OData services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)

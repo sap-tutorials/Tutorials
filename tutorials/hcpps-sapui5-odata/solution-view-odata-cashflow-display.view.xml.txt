@@ -1,0 +1,48 @@
+<mvc:View controllerName="sapui5demo.controller.odata.cashflow.display" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:controls="sap.viz.ui5.controls" xmlns:feeds="sap.viz.ui5.controls.common.feeds" xmlns:data="sap.viz.ui5.data"
+	xmlns:table="sap.ui.table">
+	<Toolbar>
+		<ToolbarSpacer/>
+		<Button icon="sap-icon://refresh" text="Load Data" tooltip="Reinitialize Model" press="onLoadData"/>
+		<ToolbarSpacer/>
+	</Toolbar>
+	<Panel expandable="false" expanded="true" visible="{= typeof ${cashflow>/data} !== 'undefined'}">
+		<!-- A Viz frame to display the data in a 'time series' chart-->
+		<controls:VizFrame id="idHistoricalDataVizFrame" uiConfig="{applicationSet:'fiori'}" vizType='timeseries_line'
+			vizProperties="{title:{visible:false,text:'Historical Data'},general:{background:{color:'#DDEEF1'}},legend:{visible:false},plotArea:{adjustScale:true},timeAxis:{label:{showFirstLastDataOnly:true}},interaction:{selectability:{mode:'exclusive'}}}"
+			renderComplete="onRenderCompleteHistoricalDataVizFrame" width="100%">
+			<controls:dataset>
+				<data:FlattenedDataset data="{cashflow>/data}">
+					<data:dimensions>
+						<data:DimensionDefinition name="Date" value="{DateString}" dataType='Date'/>
+					</data:dimensions>
+					<data:measures>
+						<data:MeasureDefinition name='Cash' value='{Cash}'/>
+					</data:measures>
+				</data:FlattenedDataset>
+			</controls:dataset>
+			<controls:feeds>
+				<feeds:FeedItem uid="valueAxis" type="Measure" values="Cash"/>
+				<feeds:FeedItem uid="timeAxis" type="Dimension" values="Date"/>
+			</controls:feeds>
+		</controls:VizFrame>
+		<controls:Popover id="idHistoricalDataPopover"></controls:Popover>
+		<!-- A table with the historical data. It will be populated when the button is pressed-->
+		<table:Table rows="{cashflow>/data}" enableBusyIndicator="true" visibleRowCount="5" width="100%" selectionMode="None">
+			<table:columns>
+				<table:Column sortProperty="DateString" filterProperty="DateString">
+					<Label text="Date"/>
+					<table:template>
+						<Text text="{cashflow>DateString}"/>
+					</table:template>
+				</table:Column>
+				<table:Column sortProperty="Cash" filterProperty="Cash">
+					<Label text="Cash"/>
+					<table:template>
+						<Text text="{cashflow>Cash}"/>
+					</table:template>
+				</table:Column>
+			</table:columns>
+		</table:Table>
+	</Panel>
+</mvc:View>

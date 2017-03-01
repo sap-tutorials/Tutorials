@@ -1,6 +1,6 @@
 ---
-title: SAP Cloud Platform predictive services, Test the "Key Influencer" HCP predictive service from a REST client
-description: Using a REST client, you will test the "Key Influencer" HCP predictive service from a REST client
+title: SAP Cloud Platform predictive services, Test the "Key Influencer" SAP Cloud Platform predictive service from a REST client
+description: Using a REST client, you will test the "Key Influencer" SAP Cloud Platform predictive service from a REST client
 tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
 ---
 
@@ -25,10 +25,10 @@ Therefore you can replace any occurrence of the token by the value listed above.
 >
 > Token               | Value
 ------------------- | -------------
-<code><b>&lt;HCP account name&gt;</b></code>  | on a developer trial account, it should end by `trial`
-<code><b>&lt;C4PA URL&gt;</b></code> | `http://aac4paservices<`<code><b>HCP account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
+<code><b>&lt;SAP Cloud Platform account name&gt;</b></code>  | on a developer trial account, it should end by `trial`
+<code><b>&lt;C4PA URL&gt;</b></code> | `http://aac4paservices<`<code><b>SAP Cloud Platform account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
 >
-> If you are unclear with what is your HCP account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 [ACCORDION-BEGIN [Info:](A short description of the Key Influencer service)]
 The Key Influencers service analyzes a dataset to identify the variables with an influence on a specified target variable.
@@ -70,14 +70,14 @@ age | Age of individuals | Any numerical value greater than 17
 workclass | Employer category of individuals | Private, Self-employed-not-inc, ...
 fnlwgt | Weight variable, allowing each individual to represent a certain percentage of the population | Any numerical value, such as 0, 2341 or 205019
 education | Level of study, represented by a schooling level, or by the title of the degree earned | 11th, Bachelors
-education-num | Number of years of study, represented by a numerical value | A numerical value between 1 and 16
-marital-status | Marital status | Divorced, Never-married, ...
+education_num | Number of years of study, represented by a numerical value | A numerical value between 1 and 16
+marital_status | Marital status | Divorced, Never-married, ...
 occupation | Job classification | Sales, Handlers-cleaners, ...
 relationship | Position in family | Husband, Wife, ...
 race | Ethnicity |
 sex | Gender | Male, Female, ...
-capital-gain | Annual capital gains | Any numerical value
-capital-loss | Annual capital losses | Any numerical value
+capital_gain | Annual capital gains | Any numerical value
+capital_loss | Annual capital losses | Any numerical value
 native country | Country of origin| United States, France, ...
 class | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
 
@@ -124,8 +124,8 @@ Select the **Authorization** tab and fill in the following information:
 Field Name     | Value
 :------------- | :-------------
 Type           | `Basic Auth`
-Username       | your ***HCP Account*** login (usually the email address used to register your ***HCP*** account)
-Password*      | your ***HCP Account*** password
+Username       | your ***SAP Cloud Platform Account*** login (usually the email address used to register your ***SAP Cloud Platform*** account)
+Password*      | your ***SAP Cloud Platform Account*** password
 
 ![Postman URL](02.png)
 

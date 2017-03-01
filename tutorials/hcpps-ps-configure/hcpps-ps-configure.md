@@ -6,14 +6,14 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Expose your predictive demo dataset as an OData service](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
+  - **Tutorials:** [Expose your predictive demo dataset as a HANA XS OData service](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
 
 ## Next Steps
   - [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
 
 ## Details
 ### You will learn
-  - How to enable, deploy and configure the SAP Cloud Platform predictive services for your SAP Cloud Platform Developer Account
+  - How to enable, deploy and configure the SAP Cloud Platform predictive services for your SAP Cloud Platform developer Account
 
 ### Time to Complete
   **10 minutes**
@@ -40,6 +40,7 @@ Click on **Enable**
 ![Predictive Services](03.png)
 
 Once enable, you will need to deploy the ***Cloud for Predictive Analytics*** application.
+
 [DONE]
 [ACCORDION-END]
 
@@ -99,7 +100,8 @@ Enter your ***HANA User Account*** login (`HCPPSTRIAL`) and password (`Welcome16
 
 Click on **Save**
 
-![New Binding](12.png)  
+![New Binding](12.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -164,8 +166,10 @@ Click on the **Administration** tile
 
 Status is green! Congrats, you have configured the SAP Cloud Platform predictive services on your SAP Cloud Platform trial account.
 
-![Application](20.png)    
+![Application](20.png)   
+
 [DONE]
 [ACCORDION-END]
+
 ## Next Steps
   - [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
