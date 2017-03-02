@@ -54,6 +54,7 @@ Create a new directory structure for **`webapp\controller\odata\cashflow`** eith
 Create a new file **`display.controller.js`** in `webapp\controller\odata\cashflow` either using the "File" menu or using the right click menu.
 
 Our goals are here to add a function where:
+
   - we call the HANA XS OData service and populate a JSON model with the retrieved data (`onLoadData`)
   - we connect the `VizFrame` and the `PopOver` so that you will get a message box when you click on the graph (`onRenderCompleteHistoricalDataVizFrame`)
 
@@ -130,6 +131,7 @@ Create a new directory structure for **`webapp\view\odata\cashflow`** either usi
 Create a new file **`display.view.xml`** in `webapp\view\odata\cashflow` either using the "File" menu or using the right click menu.
 
 The view will contain:
+
   - a button that will trigger the HANA XS OData service and load the data
   - a `VizFrame` to display the Cash Flow data as a time series line
   - a `PopOver` that will appear when you click on one of the data point in the `VizFrame`
@@ -199,6 +201,7 @@ Create a new directory structure for **`webapp\controller\odata\census`** either
 Create a new file **`display.controller.js`** in `webapp\controller\odata\census` either using the "File" menu or using the right click menu.
 
 Our goals are here to add a function where:
+
   - we call the HANA XS OData service and populate a JSON model with the retrieved data (`onLoadData`)
 
 Add the following content:
@@ -258,6 +261,7 @@ Create a new directory structure for **`webapp\view\odata\census`** either using
 Create a new file **`display.view.xml`** in `webapp\view\odata\census` either using the "File" menu or using the right click menu.
 
 The view will contain:
+
   - a button that will trigger the HANA XS OData service and load the data
   - a table with the values
 
@@ -377,6 +381,7 @@ Create a new directory structure for **`webapp\controller\odata\transaction`** e
 Create a new file **`display.controller.js`** in `webapp\controller\odata\transaction` either using the "File" menu or using the right click menu.
 
 Our goals are here to add a function where:
+
   - we call the HANA XS OData service and populate a JSON model with the retrieved data (`onLoadData`)
 
 Add the following content:
@@ -446,6 +451,7 @@ Create a new directory structure for **`webapp\view\odata\transaction`** either 
 Create a new file **`display.view.xml`** in `webapp\view\odata\transaction` either using the "File" menu or using the right click menu.
 
 The view will contain:
+
   - a button that will trigger the OData service and load the data
   - a table with the values
 

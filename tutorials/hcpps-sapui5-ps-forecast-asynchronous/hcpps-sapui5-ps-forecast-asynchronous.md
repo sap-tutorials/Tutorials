@@ -146,8 +146,10 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
 
 The view will contain:
+
   - a button that will trigger the "Get Dataset List" service
   - use the fragments previously created to display:
+
   - the list of registered datasets
   - the selected dataset header description
   - the service parameters form
@@ -191,6 +193,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 5: ](Job status fragment)]
 
 The fragment will contain:
+
   - the current status of a job
 
 Create a new file **`JobStatus.fragment.xml`** in `webapp\fragment\job` either using the "File" menu or using the right click menu.

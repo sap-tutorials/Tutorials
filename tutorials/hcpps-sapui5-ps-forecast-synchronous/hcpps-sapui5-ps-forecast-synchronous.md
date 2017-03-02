@@ -55,6 +55,7 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 The fragment will reuse some of the code that was used in the [Manage your registered "Datasets" using the SAP Cloud Platform predictive service in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html) tutorial.
 
 The fragment will contain:
+
   - a table with the list of registered datasets details
 
 The only notable difference is that we will be using a specific model to store the data (`dataset_fragment`).
@@ -109,6 +110,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 3: ](Registered dataset header description)]
 
 The fragment will contain:
+
   - a form displaying the dataset "header" description (ID, name number of rows & columns)
 
 Create a new file **`DatasetHeader.fragment.xml`** in `webapp\fragment\dataset` either using the "File" menu or using the right click menu.
@@ -162,6 +164,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 4: ](Forecast service parameters fragment)]
 
 The fragment will contain:
+
   - a form displaying the input fields for the Forecast service parameters
 
 Create a new directory structure for **`webapp\fragment\forecast`** either using the "File" menu or using the right click menu.
@@ -228,6 +231,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 5: ](Forecast service results fragment)]
 
 The fragment will contain:
+
   - a form displaying the Forecast service results
 
 Create a new directory structure for **`webapp\fragment\forecast`** either using the "File" menu or using the right click menu.
@@ -337,6 +341,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 6: ](Create a new JavaScript library for the fragment)]
 
 The library will contain a function where:
+
   - we process the call to the "Dataset List" SAP Cloud Platform predictive services and return the list of registered dataset.
   - we process the call to the "Dataset Description" SAP Cloud Platform predictive services and return the dataset detailed description.
 
@@ -535,6 +540,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 8: ](Create a new view)]
 
 The view will contain:
+
   - a button that will trigger the "Get Dataset List" service
   - use the fragments previously created to display:
 		- the list of registered datasets

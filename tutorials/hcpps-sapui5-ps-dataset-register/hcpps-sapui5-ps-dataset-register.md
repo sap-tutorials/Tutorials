@@ -50,6 +50,7 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
 
 The controller will contain a function where:
+
   - we process the call to the "Register Dataset" SAP Cloud Platform predictive services and return the dataset identifier along with the dataset description.
 
 Create a new directory structure for **`webapp\controller\dataset`** either using the "File" menu or using the right click menu.
@@ -127,6 +128,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
 
 The view will contain:
+
   - a select list with the list of dataset (built manually)
   - a button that will trigger the "Register Dataset" service
   - a table with the returned data
