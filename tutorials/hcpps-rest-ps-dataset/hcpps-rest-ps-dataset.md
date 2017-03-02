@@ -97,6 +97,7 @@ The below extract was shortened to ease the reading.
   ]
 }
 ```
+
 [DONE]
 [ACCORDION-END]
 
@@ -217,6 +218,7 @@ Select the **Authorization** tab and fill in the same details as in the previous
 Click on **Send**
 
 You have now listed all the data set registered in your environment.
+
 [DONE]
 [ACCORDION-END]
 

@@ -52,11 +52,11 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 The controller will contain a function where:
 - we process the call to the "Register Dataset" SAP Cloud Platform predictive services and return the dataset identifier along with the dataset description.
 
-Create a new directory structure for **`hcppredictiveservicesdemo\webapp\controller\dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp\controller\dataset`** either using the "File" menu or using the right click menu.
 
-Create a new file **`register.controller.js`** in `hcppredictiveservicesdemo\webapp\controller\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`register.controller.js`** in `webapp\controller\dataset` either using the "File" menu or using the right click menu.
 
-Open the `hcppredictiveservicesdemo\webapp\controller\dataset\register.controller.js` file and add the following code:
+Open the `webapp\controller\dataset\register.controller.js` file and add the following code:
 
 ```js
 sap.ui.define([
@@ -134,11 +134,11 @@ The view will contain:
 > **Note:** the reason we use here a static select list is to avoid user errors.
 This list can be dynamically generated using an additional HANA XS OData service, that will select the proper tables from the HANA database.
 
-Create a new directory structure for **`hcppredictiveservicesdemo\webapp\view\dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp\view\dataset`** either using the "File" menu or using the right click menu.
 
-Create a new file **`register.view.xml`** in `hcppredictiveservicesdemo\webapp\view\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`register.view.xml`** in `webapp\view\dataset` either using the "File" menu or using the right click menu.
 
-Open the `hcppredictiveservicesdemo\webapp\view\dataset\register.view.xml` file and add the following code:
+Open the `webapp\view\dataset\register.view.xml` file and add the following code:
 
 ```xml
 <mvc:View controllerName="sapui5demo.controller.dataset.register" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
@@ -230,7 +230,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 4: ](Extend the default view)]
 
-Edit the `demo.view.xml` file located in the `hcppredictiveservicesdemo\webapp\view`.
+Edit the `demo.view.xml` file located in the `webapp\view`.
 
 Inside the `<detailPages>` element add the following element:
 

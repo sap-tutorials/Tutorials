@@ -53,11 +53,11 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
 
-Create a new directory structure for **`hcppredictiveservicesdemo\webapp\controller\dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp\controller\dataset`** either using the "File" menu or using the right click menu.
 
-Create a new file **`manage.controller.js`** in `hcppredictiveservicesdemo\webapp\controller\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`manage.controller.js`** in `webapp\controller\dataset` either using the "File" menu or using the right click menu.
 
-Open the `hcppredictiveservicesdemo\webapp\controller\dataset\manage.controller.js` file and add the following code:
+Open the `webapp\controller\dataset\manage.controller.js` file and add the following code:
 
 ```js
 sap.ui.define([
@@ -83,11 +83,11 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
 
-Create a new directory structure for **`hcppredictiveservicesdemo\webapp\view\dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp\view\dataset`** either using the "File" menu or using the right click menu.
 
-Create a new file **`register.view.xml`** in `hcppredictiveservicesdemo\webapp\view\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`register.view.xml`** in `webapp\view\dataset` either using the "File" menu or using the right click menu.
 
-Open the `hcppredictiveservicesdemo\webapp\view\dataset\manage.view.xml` file and add the following code:
+Open the `webapp\view\dataset\manage.view.xml` file and add the following code:
 
 ```xml
 <mvc:View controllerName="sapui5demo.controller.dataset.manage" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
@@ -104,7 +104,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 4: ](Extend the default view)]
 
-Edit the `demo.view.xml` file located in the `hcppredictiveservicesdemo\webapp\view`.
+Edit the `demo.view.xml` file located in the `webapp\view`.
 
 Inside the `<detailPages>` element add the following element:
 
@@ -130,7 +130,7 @@ The view will contain:
 - a button that will trigger the "Get Dataset List" service
 - a table with the list of registered datasets
 
-Open the `hcppredictiveservicesdemo\webapp\controller\dataset\manage.controller.js` file and add the following code right after the `onInit` function (don't forget to use a comma to separate them):
+Open the `webapp\controller\dataset\manage.controller.js` file and add the following code right after the `onInit` function (don't forget to use a comma to separate them):
 
 ```js
 getDatasetList: function() {
@@ -172,7 +172,7 @@ getDatasetList: function() {
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Open the `hcppredictiveservicesdemo\webapp\view\dataset\manage.view.xml` file and add the following code inside the `mvc:View` element:
+Open the `webapp\view\dataset\manage.view.xml` file and add the following code inside the `mvc:View` element:
 
 ```xml
 <Toolbar>
@@ -234,7 +234,7 @@ You will add to the controller a function where:
 You will add to the view:
 - a table with the dataset variables detailed description
 
-Open the `hcppredictiveservicesdemo\webapp\controller\dataset\manage.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
+Open the `webapp\controller\dataset\manage.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
 ```js
 getDatasetDescription: function(oControlEvent) {
@@ -281,7 +281,7 @@ getDatasetDescription: function(oControlEvent) {
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Open the `hcppredictiveservicesdemo\webapp\view\dataset\manage.view.xml` file and add the following code inside the `mvc:View` element after the previous code:
+Open the `webapp\view\dataset\manage.view.xml` file and add the following code inside the `mvc:View` element after the previous code:
 
 ```xml
 <Panel expandable="false" expanded="true" visible="{= typeof ${dataset_manage>/dataset} !== 'undefined'}">
@@ -372,7 +372,7 @@ You will add to the controller a function where:
 You will add to the view:
 - a button that will trigger the "Delete Dataset" service
 
-Open the `hcppredictiveservicesdemo\webapp\controller\dataset\manage.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
+Open the `webapp\controller\dataset\manage.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
 ```js
 deleteDataset: function(event) {
@@ -419,7 +419,7 @@ deleteDataset: function(event) {
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Open the `hcppredictiveservicesdemo\webapp\view\dataset\manage.view.xml` file and add the following code inside the `mvc:View` element after the previous code:
+Open the `webapp\view\dataset\manage.view.xml` file and add the following code inside the `mvc:View` element after the previous code:
 
 ```xml
 <Toolbar visible="{= typeof ${dataset_manage>/dataset} !== 'undefined'}">
@@ -453,7 +453,7 @@ You will add to the controller a function where:
 You will add to the view:
 - a button that will trigger the "Update Dataset Variables" service
 
-Open the `hcppredictiveservicesdemo\webapp\controller\dataset\manage.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
+Open the `webapp\controller\dataset\manage.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
 ```js
 updateDataset: function(event) {
@@ -503,7 +503,7 @@ updateDataset: function(event) {
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Open the `hcppredictiveservicesdemo\webapp\view\dataset\manage.view.xml` file and replace the following element which replace the text control for `value` attribute by an action select control:
+Open the `webapp\view\dataset\manage.view.xml` file and replace the following element which replace the text control for `value` attribute by an action select control:
 
 ```xml
 <Text text="{dataset_manage>value}"/>

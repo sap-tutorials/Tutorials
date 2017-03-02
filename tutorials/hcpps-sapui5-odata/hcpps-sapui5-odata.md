@@ -49,9 +49,9 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 
 [ACCORDION-BEGIN [Step 2: ](Display the Cash Flow data)]
 
-Create a new directory structure for **`hcppredictiveservicesdemo\webapp\controller\odata\cashflow`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp\controller\odata\cashflow`** either using the "File" menu or using the right click menu.
 
-Create a new file **`display.controller.js`** in `hcppredictiveservicesdemo\webapp\controller\odata\cashflow` either using the "File" menu or using the right click menu.
+Create a new file **`display.controller.js`** in `webapp\controller\odata\cashflow` either using the "File" menu or using the right click menu.
 
 Our goals are here to add a function where:
 - we call the HANA XS OData service and populate a JSON model with the retrieved data (`onLoadData`)
@@ -125,9 +125,9 @@ sap.ui.define([
 ```
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Create a new directory structure for **`hcppredictiveservicesdemo\webapp\view\odata\cashflow`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp\view\odata\cashflow`** either using the "File" menu or using the right click menu.
 
-Create a new file **`display.view.xml`** in `hcppredictiveservicesdemo\webapp\view\odata\cashflow` either using the "File" menu or using the right click menu.
+Create a new file **`display.view.xml`** in `webapp\view\odata\cashflow` either using the "File" menu or using the right click menu.
 
 The view will contain:
 - a button that will trigger the HANA XS OData service and load the data
@@ -194,9 +194,9 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 3: ](Display the Census data)]
 
-Create a new directory structure for **`hcppredictiveservicesdemo\webapp\controller\odata\census`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp\controller\odata\census`** either using the "File" menu or using the right click menu.
 
-Create a new file **`display.controller.js`** in `hcppredictiveservicesdemo\webapp\controller\odata\census` either using the "File" menu or using the right click menu.
+Create a new file **`display.controller.js`** in `webapp\controller\odata\census` either using the "File" menu or using the right click menu.
 
 Our goals are here to add a function where:
 - we call the HANA XS OData service and populate a JSON model with the retrieved data (`onLoadData`)
@@ -253,9 +253,9 @@ sap.ui.define([
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Create a new directory structure for **`hcppredictiveservicesdemo\webapp\view\odata\census`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp\view\odata\census`** either using the "File" menu or using the right click menu.
 
-Create a new file **`display.view.xml`** in `hcppredictiveservicesdemo\webapp\view\odata\census` either using the "File" menu or using the right click menu.
+Create a new file **`display.view.xml`** in `webapp\view\odata\census` either using the "File" menu or using the right click menu.
 
 The view will contain:
 - a button that will trigger the HANA XS OData service and load the data
@@ -372,9 +372,9 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 4: ](Display the E-Commerce Transactions data)]
 
-Create a new directory structure for **`hcppredictiveservicesdemo\webapp\controller\odata\transaction`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp\controller\odata\transaction`** either using the "File" menu or using the right click menu.
 
-Create a new file **`display.controller.js`** in `hcppredictiveservicesdemo\webapp\controller\odata\transaction` either using the "File" menu or using the right click menu.
+Create a new file **`display.controller.js`** in `webapp\controller\odata\transaction` either using the "File" menu or using the right click menu.
 
 Our goals are here to add a function where:
 - we call the HANA XS OData service and populate a JSON model with the retrieved data (`onLoadData`)
@@ -441,9 +441,9 @@ sap.ui.define([
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Create a new directory structure for **`hcppredictiveservicesdemo\webapp\view\odata\transaction`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp\view\odata\transaction`** either using the "File" menu or using the right click menu.
 
-Create a new file **`display.view.xml`** in `hcppredictiveservicesdemo\webapp\view\odata\transaction` either using the "File" menu or using the right click menu.
+Create a new file **`display.view.xml`** in `webapp\view\odata\transaction` either using the "File" menu or using the right click menu.
 
 The view will contain:
 - a button that will trigger the OData service and load the data
@@ -500,7 +500,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 5: ](Edit the default view)]
 
-Edit the `demo.view.xml` file located in the `hcppredictiveservicesdemo\webapp\view`.
+Edit the `demo.view.xml` file located in the `webapp\view`.
 
 Inside the `<detailPages>` element add the following elements:
 
@@ -547,13 +547,13 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-- [`hcppredictiveservicesdemo\webapp\controller\odata\cashflow\display.controller.js`](solution-controller-odata-cashflow-display.controller.js.txt)
-- [`hcppredictiveservicesdemo\webapp\controller\odata\census\display.controller.js`](solution-controller-odata-census-display.controller.js.txt)
-- [`hcppredictiveservicesdemo\webapp\controller\odata\transaction\display.controller.js`](solution-controller-odata-transaction-display.controller.js.txt)
-- [`hcppredictiveservicesdemo\webapp\view\odata\cashflow\display.view.xml`](solution-view-odata-cashflow-display.view.xml.txt)
-- [`hcppredictiveservicesdemo\webapp\view\odata\census\display.view.xml`](solution-view-odata-census-display.view.xml.txt)
-- [`hcppredictiveservicesdemo\webapp\view\odata\transaction\display.view.xml`](solution-view-odata-transaction-display.view.xml.txt)
-- [`hcppredictiveservicesdemo\webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+- [`webapp\controller\odata\cashflow\display.controller.js`](solution-controller-odata-cashflow-display.controller.js.txt)
+- [`webapp\controller\odata\census\display.controller.js`](solution-controller-odata-census-display.controller.js.txt)
+- [`webapp\controller\odata\transaction\display.controller.js`](solution-controller-odata-transaction-display.controller.js.txt)
+- [`webapp\view\odata\cashflow\display.view.xml`](solution-view-odata-cashflow-display.view.xml.txt)
+- [`webapp\view\odata\census\display.view.xml`](solution-view-odata-census-display.view.xml.txt)
+- [`webapp\view\odata\transaction\display.view.xml`](solution-view-odata-transaction-display.view.xml.txt)
+- [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]

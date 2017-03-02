@@ -31,7 +31,7 @@ Open the ***SAP HANA Web-based Development Workbench*** on your trial HANA insta
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an application)]
+[ACCORDION-BEGIN [Step 2: ](Create an empty HANA application)]
 Right click on **Content**, then click on **Create Application**.
 
 ![SAP HANA Web-based Development Workbench](02.png)

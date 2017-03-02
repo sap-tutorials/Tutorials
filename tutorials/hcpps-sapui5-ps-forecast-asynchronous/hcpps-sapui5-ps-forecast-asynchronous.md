@@ -51,9 +51,9 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 
 For the moment we will just add the "Get Dataset List" functions and the "Forecast" similar to what we did in the previous tutorial.
 
-Create a new file **`asynchronous.controller.js`** in `hcppredictiveservicesdemo\webapp\controller\forecast` either using the "File" menu or using the right click menu.
+Create a new file **`asynchronous.controller.js`** in `webapp\controller\forecast` either using the "File" menu or using the right click menu.
 
-Open the `hcppredictiveservicesdemo\webapp\controller\forecast\asynchronous.controller.js` file and add the following code:
+Open the `webapp\controller\forecast\asynchronous.controller.js` file and add the following code:
 
 ```js
 sap.ui.define([
@@ -152,9 +152,9 @@ The view will contain:
   - the selected dataset header description
   - the service parameters form
 
-Create a new file **`asynchronous.view.xml`** in `hcppredictiveservicesdemo\webapp\view\forecast` either using the "File" menu or using the right click menu.
+Create a new file **`asynchronous.view.xml`** in `webapp\view\forecast` either using the "File" menu or using the right click menu.
 
-Open the `hcppredictiveservicesdemo\webapp\view\forecast\asynchronous.view.xml` file and add the following code:
+Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following code:
 
 ```xml
 <mvc:View controllerName="sapui5demo.controller.forecast.asynchronous" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
@@ -193,9 +193,9 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 The fragment will contain:
 - the current status of a job
 
-Create a new file **`JobStatus.fragment.xml`** in `hcppredictiveservicesdemo\webapp\fragment\job` either using the "File" menu or using the right click menu.
+Create a new file **`JobStatus.fragment.xml`** in `webapp\fragment\job` either using the "File" menu or using the right click menu.
 
-Open the `hcppredictiveservicesdemo\webapp\controller\fragment\job\JobStatus.fragment.xml` file and add the following code:
+Open the `webapp\controller\fragment\job\JobStatus.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
@@ -238,7 +238,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 6: ](Add the "check job status")]
 
-Open the `hcppredictiveservicesdemo\webapp\controller\forecast\asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
+Open the `webapp\controller\forecast\asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
 ```js
 checkStatus: function() {
@@ -284,7 +284,7 @@ checkStatus: function() {
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Open the `hcppredictiveservicesdemo\webapp\view\forecast\asynchronous.view.xml` file and add the following code at the end of the view after the last `Toolbar` element:
+Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following code at the end of the view after the last `Toolbar` element:
 
 ```xml
 <Panel expandable="false" visible="{= typeof ${job_fragment>/job} !== 'undefined'}">
@@ -305,7 +305,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 7: ](Add the "get job result")]
 
-Open the `hcppredictiveservicesdemo\webapp\controller\forecast\asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
+Open the `webapp\controller\forecast\asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
 ```js
 getResults: function() {
@@ -352,7 +352,7 @@ getResults: function() {
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Open the `hcppredictiveservicesdemo\webapp\view\forecast\asynchronous.view.xml` file and add the following code at the end of the view after the last `Toolbar` element:
+Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following code at the end of the view after the last `Toolbar` element:
 
 ```xml
 <Toolbar visible="{= typeof ${job_fragment>/job} !== 'undefined'}">
@@ -371,7 +371,7 @@ Open the `hcppredictiveservicesdemo\webapp\view\forecast\asynchronous.view.xml` 
 
 [ACCORDION-BEGIN [Step 8: ](Add the "delete job result")]
 
-Open the `hcppredictiveservicesdemo\webapp\controller\forecast\asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
+Open the `webapp\controller\forecast\asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
 ```js
 deleteResults: function() {
@@ -419,7 +419,7 @@ deleteResults: function() {
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Open the `hcppredictiveservicesdemo\webapp\view\forecast\asynchronous.view.xml` file and add the following code at the end of the view after the last `Toolbar` element:
+Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following code at the end of the view after the last `Toolbar` element:
 
 ```xml
 <Toolbar visible="{= typeof ${forecast_fragment>/model} !== 'undefined'}">
@@ -434,7 +434,7 @@ Open the `hcppredictiveservicesdemo\webapp\view\forecast\asynchronous.view.xml` 
 
 [ACCORDION-BEGIN [Step 9: ](Extend the default view)]
 
-Edit the `demo.view.xml` file located in the `hcppredictiveservicesdemo\webapp\view`.
+Edit the `demo.view.xml` file located in the `webapp\view`.
 
 Inside the `<detailPages>` element add the following element:
 

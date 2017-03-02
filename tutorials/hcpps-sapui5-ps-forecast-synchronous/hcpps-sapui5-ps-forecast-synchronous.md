@@ -61,11 +61,11 @@ The only notable difference is that we will be using a specific model to store t
 
 For more details on fragment, please refer to the [XML Templating documentation](https://sapui5.hana.ondemand.com/#docs/guide/5ee619fc1370463ea674ee04b65ed83b.html).
 
-Create a new directory structure for **`hcppredictiveservicesdemo\webapp\fragment\dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp\fragment\dataset`** either using the "File" menu or using the right click menu.
 
-Create a new file **`DatasetList.fragment.xml`** in `hcppredictiveservicesdemo\webapp\fragment\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`DatasetList.fragment.xml`** in `webapp\fragment\dataset` either using the "File" menu or using the right click menu.
 
-Open the `hcppredictiveservicesdemo\webapp\controller\fragment\dataset\DatasetList.fragment.xml` file and add the following code:
+Open the `webapp\controller\fragment\dataset\DatasetList.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:table="sap.ui.table">
@@ -111,9 +111,9 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 The fragment will contain:
 - a form displaying the dataset "header" description (ID, name number of rows & columns)
 
-Create a new file **`DatasetHeader.fragment.xml`** in `hcppredictiveservicesdemo\webapp\fragment\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`DatasetHeader.fragment.xml`** in `webapp\fragment\dataset` either using the "File" menu or using the right click menu.
 
-Open the `hcppredictiveservicesdemo\webapp\controller\fragment\dataset\DatasetHeader.fragment.xml` file and add the following code:
+Open the `webapp\controller\fragment\dataset\DatasetHeader.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table">
@@ -164,11 +164,11 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 The fragment will contain:
 - a form displaying the input fields for the Forecast service parameters
 
-Create a new directory structure for **`hcppredictiveservicesdemo\webapp\fragment\forecast`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp\fragment\forecast`** either using the "File" menu or using the right click menu.
 
-Create a new file **`ServiceForm.fragment.xml`** in `hcppredictiveservicesdemo\webapp\fragment\forecast` either using the "File" menu or using the right click menu.
+Create a new file **`ServiceForm.fragment.xml`** in `webapp\fragment\forecast` either using the "File" menu or using the right click menu.
 
-Open the `hcppredictiveservicesdemo\webapp\controller\fragment\forecast\ServiceForm.fragment.xml` file and add the following code:
+Open the `webapp\controller\fragment\forecast\ServiceForm.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
@@ -230,11 +230,11 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 The fragment will contain:
 - a form displaying the Forecast service results
 
-Create a new directory structure for **`hcppredictiveservicesdemo\webapp\fragment\forecast`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp\fragment\forecast`** either using the "File" menu or using the right click menu.
 
-Create a new file **`ServiceResult.fragment.xml`** in `hcppredictiveservicesdemo\webapp\fragment\forecast` either using the "File" menu or using the right click menu.
+Create a new file **`ServiceResult.fragment.xml`** in `webapp\fragment\forecast` either using the "File" menu or using the right click menu.
 
-Open the `hcppredictiveservicesdemo\webapp\controller\fragment\forecast\ServiceResult.fragment.xml` file and add the following code:
+Open the `webapp\controller\fragment\forecast\ServiceResult.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table">
@@ -342,9 +342,9 @@ The library will contain a function where:
 
 These functions will be triggered either on a click or row change event on the table added previously from the main controller.
 
-Create a new file **`DatasetList.js`** in `hcppredictiveservicesdemo\webapp\fragment\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`DatasetList.js`** in `webapp\fragment\dataset` either using the "File" menu or using the right click menu.
 
-Open the `hcppredictiveservicesdemo\webapp\fragment\dataset\DatasetList.js` file and add the following code:
+Open the `webapp\fragment\dataset\DatasetList.js` file and add the following code:
 
 ```js
 sap.ui.define([
@@ -440,11 +440,11 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 7: ](Create a new controller)]
 
-Create a new directory structure for **`hcppredictiveservicesdemo\webapp\controller\forecast`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp\controller\forecast`** either using the "File" menu or using the right click menu.
 
-Create a new file **`synchronous.controller.js`** in `hcppredictiveservicesdemo\webapp\controller\forecast` either using the "File" menu or using the right click menu.
+Create a new file **`synchronous.controller.js`** in `webapp\controller\forecast` either using the "File" menu or using the right click menu.
 
-Open the `hcppredictiveservicesdemo\webapp\controller\forecast\synchronous.controller.js` file and add the following code:
+Open the `webapp\controller\forecast\synchronous.controller.js` file and add the following code:
 
 ```js
 sap.ui.define([
@@ -542,11 +542,11 @@ The view will contain:
   - the service parameters form
 - a button that will trigger the "Forecast" service in synchronous mode
 
-Create a new directory structure for **`hcppredictiveservicesdemo\webapp\view\forecast`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp\view\forecast`** either using the "File" menu or using the right click menu.
 
-Create a new file **`synchronous.view.xml`** in `hcppredictiveservicesdemo\webapp\view\forecast` either using the "File" menu or using the right click menu.
+Create a new file **`synchronous.view.xml`** in `webapp\view\forecast` either using the "File" menu or using the right click menu.
 
-Open the `hcppredictiveservicesdemo\webapp\view\forecast\synchronous.view.xml` file and add the following code:
+Open the `webapp\view\forecast\synchronous.view.xml` file and add the following code:
 
 ```xml
 <mvc:View controllerName="sapui5demo.controller.forecast.synchronous" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
@@ -584,7 +584,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 9: ](Extend the default view)]
 
-Edit the `demo.view.xml` file located in the `hcppredictiveservicesdemo\webapp\view`.
+Edit the `demo.view.xml` file located in the `webapp\view`.
 
 Inside the `<detailPages>` element add the following element:
 

@@ -82,6 +82,7 @@ LastWMonth <br/> BeforeLastWMonth | Boolean variables that indicates if the info
 WorkingDaysIndices <br/> ReverseWorkingDaysIndices | Indices or reverse indices of the working days | An integer value
 MondayMonthInd <br/> TuesdayMonthInd <br/> WednesdayMonthInd <br/> ThursdayMonthInd <br/> FridayMonthInd | Indices of the week days in the month | An integer value
 Last5WDaysInd <br/> Last4WDaysInd | Indices of the 5 or 4 last working days of the month | An integer value
+
 [DONE]
 [ACCORDION-END]
 
@@ -114,7 +115,6 @@ Request Type   | `POST`
 URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/<`ID`>/variables/update`
 
 > Make sure you replace the `ID` token in the URL with the one returned by the previous service call.
-
 
 ```json
 [
@@ -262,6 +262,7 @@ Here is the result:
 ```
 
 You can try to run the model with the following date "2002-01-01", where there is no more real value for the `Cash` column.
+
 [DONE]
 [ACCORDION-END]    
 

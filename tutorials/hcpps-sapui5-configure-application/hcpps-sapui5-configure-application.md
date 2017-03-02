@@ -103,7 +103,7 @@ Click on **Save**
 
 ![New Destinations](05.png)
 
-You can use the **Test Connectivity** button ![HTML5 Applications](3-3.png) next to each **Destination** to validate our configuration.
+You can use the **Test Connectivity** button ![HTML5 Applications](0-check.png) next to each **Destination** to validate our configuration.
 
 [DONE]
 [ACCORDION-END]
@@ -235,9 +235,9 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 6: ](Update the default view : `demo.view.xml`)]
 
-The default view created is located in `hcppredictiveservicesdemo\webapp\view\demo.view.xml`. We will update the view to prepare for the next steps.
+The default view created is located in `webapp\view\demo.view.xml`. We will update the view to prepare for the next steps.
 
-Open the `hcppredictiveservicesdemo\webapp\view\demo.view.xml` file and replace the existing code with the following code:
+Open the `webapp\view\demo.view.xml` file and replace the existing code with the following code:
 
 ```xml
 <mvc:View controllerName="xxxxx.controller.demo" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
@@ -306,9 +306,9 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S).
 
 [ACCORDION-BEGIN [Step 7: ](Update the default controller : `demo.controller.js`)]
 
-The default controller is located in `hcppredictiveservicesdemo\webapp\controller\demo.controller.js`. We will update the view to prepare for the next steps.
+The default controller is located in `webapp\controller\demo.controller.js`. We will update the view to prepare for the next steps.
 
-Open the `hcppredictiveservicesdemo\webapp\controller\demo.controller.js` file and replace the existing code with the following code:
+Open the `webapp\controller\demo.controller.js` file and replace the existing code with the following code:
 
 ```js
 sap.ui.define([
@@ -373,7 +373,7 @@ This will open a web page with the following content:
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-- [`webapp\neo-app.json`](solution-neo-app.json.txt)
+- [`neo-app.json`](solution-neo-app.json.txt)
 - [`webapp\controller\demo.controller.js`](solution-controller-demo.controller.js.txt)
 - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
 
