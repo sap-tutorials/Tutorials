@@ -16,7 +16,7 @@ This solution shows how to use Arrays data iteration as well as the result creat
 **Please note - This tutorial is based on SPS11**
 
 ### Time to Complete
-**XX Min**.
+**15 Min**.
 
 ---
 
@@ -47,7 +47,48 @@ This solution shows how to use Arrays data iteration as well as the result creat
 7. The completed code should look like the following. If you do not wish to type this code, you can reference the solution web page at `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex2_22`
 
 	```
-	PROCEDURE "dev602.procedures::calculate_cumulative_sum_of_delivered_products" (    IN IM_PRODUCTS TABLE ( PRODUCTID NVARCHAR(10),                             DELIVERYDATE DAYDATE,                          NUM_DELIVERED_PRODUCTS BIGINT ),    OUT EX_PRODUCTS TABLE ( PRODUCTID NVARCHAR(10),                            DELIVERYDATE DAYDATE,                            NUM_DELIVERED_PRODUCTS BIGINT,                          CUMULATIVE_SUM BIGINT )  )   LANGUAGE SQLSCRIPT   SQL SECURITY INVOKER   READS SQL DATA AS	BEGIN    DECLARE PRODUCTID    NVARCHAR(10) ARRAY;    DECLARE DELIVERYDATE     DAYDATE      ARRAY;    DECLARE NUM_DELIVERED_PRODUCTS BIGINT       ARRAY;    DECLARE CUMULATIVE_SUM  BIGINT       ARRAY;    DECLARE tmp_cumulated BIGINT       = 0;    DECLARE i             INTEGER      = 1;    PRODUCTID   = ARRAY_AGG( :IM_PRODUCTS.PRODUCTID );    DELIVERYDATE = ARRAY_AGG( :IM_PRODUCTS.DELIVERYDATE );    NUM_DELIVERED_PRODUCTS = ARRAY_AGG( :IM_PRODUCTS.NUM_DELIVERED_PRODUCTS );    FOR i IN 1..CARDINALITY(:PRODUCTID) DO       IF :tmp_productid <> :PRODUCTID[:i] THEN         tmp_productid  = :PRODUCTID[:i];         CUMULATIVE_SUM[:i] = :NUM_DELIVERED_PRODUCTS[:i];       ELSE         CUMULATIVE_SUM[:i] = :CUMULATIVE_SUM[:i-1]                    + :NUM_DELIVERED_PRODUCTS[:i];       END IF;    END FOR;    ex_products = UNNEST( :PRODUCTID, :DELIVERYDATE, :NUM_DELIVERED_PRODUCTS, :CUMULATIVE_SUM)                 AS ( PRODUCTID, DELIVERYDATE, NUM_DELIVERED_PRODUCTS, CUMULATIVE_SUM );	END
+	PROCEDURE "dev602.procedures::calculate_cumulative_sum_of_delivered_products" (
+    IN IM_PRODUCTS TABLE ( PRODUCTID NVARCHAR(10),  
+                           DELIVERYDATE DAYDATE,
+                          NUM_DELIVERED_PRODUCTS BIGINT ),
+    OUT EX_PRODUCTS TABLE ( PRODUCTID NVARCHAR(10),
+                            DELIVERYDATE DAYDATE,
+                            NUM_DELIVERED_PRODUCTS BIGINT,
+                          CUMULATIVE_SUM BIGINT )  )
+   LANGUAGE SQLSCRIPT
+   SQL SECURITY INVOKER
+   READS SQL DATA AS
+	BEGIN
+
+    DECLARE PRODUCTID    NVARCHAR(10) ARRAY;
+    DECLARE DELIVERYDATE     DAYDATE      ARRAY;
+    DECLARE NUM_DELIVERED_PRODUCTS BIGINT       ARRAY;
+    DECLARE CUMULATIVE_SUM  BIGINT       ARRAY;
+
+
+    DECLARE tmp_cumulated BIGINT       = 0;
+    DECLARE i             INTEGER      = 1;
+
+    PRODUCTID   = ARRAY_AGG( :IM_PRODUCTS.PRODUCTID );
+    DELIVERYDATE = ARRAY_AGG( :IM_PRODUCTS.DELIVERYDATE );
+    NUM_DELIVERED_PRODUCTS = ARRAY_AGG( :IM_PRODUCTS.NUM_DELIVERED_PRODUCTS );
+
+    FOR i IN 1..CARDINALITY(:PRODUCTID) DO
+
+       IF :tmp_productid <> :PRODUCTID[:i] THEN
+         tmp_productid  = :PRODUCTID[:i];
+         CUMULATIVE_SUM[:i] = :NUM_DELIVERED_PRODUCTS[:i];
+       ELSE
+         CUMULATIVE_SUM[:i] = :CUMULATIVE_SUM[:i-1]
+                    + :NUM_DELIVERED_PRODUCTS[:i];
+       END IF;
+
+    END FOR;
+
+    ex_products = UNNEST( :PRODUCTID, :DELIVERYDATE, :NUM_DELIVERED_PRODUCTS, :CUMULATIVE_SUM)
+                 AS ( PRODUCTID, DELIVERYDATE, NUM_DELIVERED_PRODUCTS, CUMULATIVE_SUM );
+
+	END
 	```
 
 8. Click "Save".
