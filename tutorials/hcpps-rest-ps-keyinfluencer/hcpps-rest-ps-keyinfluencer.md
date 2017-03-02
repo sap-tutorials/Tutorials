@@ -438,7 +438,7 @@ The performances a roughly the same as we limited the analysis to only 2 attribu
 
 ### Optional
 For more details on the SAP Cloud Platform predictive services, you can check the following URL:
-  - `<`<code><b>C4PA URL</b></code>`>/raml/index.html?raml=../aa-cloud-services.raml`
+  - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
 
 ## Next Steps
   - [Test the "Outliers" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)

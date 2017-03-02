@@ -224,7 +224,7 @@ You have now listed all the data set registered in your environment.
 
 ### Optional
 For more details on the SAP Cloud Platform predictive services, you can check the following URL:
-  - `<`<code><b>C4PA URL</b></code>`>/raml/index.html?raml=../aa-cloud-services.raml`
+  - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
 
 ## Next Steps
   - [Test the "Forecast" SAP Cloud Platform predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)

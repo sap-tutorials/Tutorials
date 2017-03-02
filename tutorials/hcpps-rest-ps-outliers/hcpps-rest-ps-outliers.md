@@ -249,7 +249,7 @@ We can see that 356 records out of the 48842 are marked as outliers, where the d
 
 ### Optional
 For more details on the SAP Cloud Platform predictive services, you can check the following URL:
-  - `<`<code><b>C4PA URL</b></code>`>/raml/index.html?raml=../aa-cloud-services.raml`
+  - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
 
 ## Next Steps
   - [Configure a SAPUI5 application to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
