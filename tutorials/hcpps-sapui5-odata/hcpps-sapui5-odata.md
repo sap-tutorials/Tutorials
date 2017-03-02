@@ -54,8 +54,8 @@ Create a new directory structure for **`webapp\controller\odata\cashflow`** eith
 Create a new file **`display.controller.js`** in `webapp\controller\odata\cashflow` either using the "File" menu or using the right click menu.
 
 Our goals are here to add a function where:
-- we call the HANA XS OData service and populate a JSON model with the retrieved data (`onLoadData`)
-- we connect the `VizFrame` and the `PopOver` so that you will get a message box when you click on the graph (`onRenderCompleteHistoricalDataVizFrame`)
+  - we call the HANA XS OData service and populate a JSON model with the retrieved data (`onLoadData`)
+  - we connect the `VizFrame` and the `PopOver` so that you will get a message box when you click on the graph (`onRenderCompleteHistoricalDataVizFrame`)
 
 Add the following content:
 
@@ -130,10 +130,10 @@ Create a new directory structure for **`webapp\view\odata\cashflow`** either usi
 Create a new file **`display.view.xml`** in `webapp\view\odata\cashflow` either using the "File" menu or using the right click menu.
 
 The view will contain:
-- a button that will trigger the HANA XS OData service and load the data
-- a `VizFrame` to display the Cash Flow data as a time series line
-- a `PopOver` that will appear when you click on one of the data point in the `VizFrame`
-- a table with the values
+  - a button that will trigger the HANA XS OData service and load the data
+  - a `VizFrame` to display the Cash Flow data as a time series line
+  - a `PopOver` that will appear when you click on one of the data point in the `VizFrame`
+  - a table with the values
 
 Add the following content:
 
@@ -199,7 +199,7 @@ Create a new directory structure for **`webapp\controller\odata\census`** either
 Create a new file **`display.controller.js`** in `webapp\controller\odata\census` either using the "File" menu or using the right click menu.
 
 Our goals are here to add a function where:
-- we call the HANA XS OData service and populate a JSON model with the retrieved data (`onLoadData`)
+  - we call the HANA XS OData service and populate a JSON model with the retrieved data (`onLoadData`)
 
 Add the following content:
 
@@ -258,8 +258,8 @@ Create a new directory structure for **`webapp\view\odata\census`** either using
 Create a new file **`display.view.xml`** in `webapp\view\odata\census` either using the "File" menu or using the right click menu.
 
 The view will contain:
-- a button that will trigger the HANA XS OData service and load the data
-- a table with the values
+  - a button that will trigger the HANA XS OData service and load the data
+  - a table with the values
 
 Add the following content:
 
@@ -377,7 +377,7 @@ Create a new directory structure for **`webapp\controller\odata\transaction`** e
 Create a new file **`display.controller.js`** in `webapp\controller\odata\transaction` either using the "File" menu or using the right click menu.
 
 Our goals are here to add a function where:
-- we call the HANA XS OData service and populate a JSON model with the retrieved data (`onLoadData`)
+  - we call the HANA XS OData service and populate a JSON model with the retrieved data (`onLoadData`)
 
 Add the following content:
 
@@ -446,8 +446,8 @@ Create a new directory structure for **`webapp\view\odata\transaction`** either 
 Create a new file **`display.view.xml`** in `webapp\view\odata\transaction` either using the "File" menu or using the right click menu.
 
 The view will contain:
-- a button that will trigger the OData service and load the data
-- a table with the values
+  - a button that will trigger the OData service and load the data
+  - a table with the values
 
 Add the following content:
 
@@ -547,13 +547,13 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-- [`webapp\controller\odata\cashflow\display.controller.js`](solution-controller-odata-cashflow-display.controller.js.txt)
-- [`webapp\controller\odata\census\display.controller.js`](solution-controller-odata-census-display.controller.js.txt)
-- [`webapp\controller\odata\transaction\display.controller.js`](solution-controller-odata-transaction-display.controller.js.txt)
-- [`webapp\view\odata\cashflow\display.view.xml`](solution-view-odata-cashflow-display.view.xml.txt)
-- [`webapp\view\odata\census\display.view.xml`](solution-view-odata-census-display.view.xml.txt)
-- [`webapp\view\odata\transaction\display.view.xml`](solution-view-odata-transaction-display.view.xml.txt)
-- [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`webapp\controller\odata\cashflow\display.controller.js`](solution-controller-odata-cashflow-display.controller.js.txt)
+  - [`webapp\controller\odata\census\display.controller.js`](solution-controller-odata-census-display.controller.js.txt)
+  - [`webapp\controller\odata\transaction\display.controller.js`](solution-controller-odata-transaction-display.controller.js.txt)
+  - [`webapp\view\odata\cashflow\display.view.xml`](solution-view-odata-cashflow-display.view.xml.txt)
+  - [`webapp\view\odata\census\display.view.xml`](solution-view-odata-census-display.view.xml.txt)
+  - [`webapp\view\odata\transaction\display.view.xml`](solution-view-odata-transaction-display.view.xml.txt)
+  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]

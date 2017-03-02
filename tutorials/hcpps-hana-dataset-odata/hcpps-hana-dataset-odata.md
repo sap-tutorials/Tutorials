@@ -16,8 +16,8 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic
   - How to create a HANA XS OData services to expose table data stored in a SAP Cloud Platform HANA MDC instance
 
 >**Note:**
-- The HANA XS OData service will be used in a SAPUI5 application to render the data in a graph or a table, and is not used by the predictive services.
-- The predictive services only consumes data stored inside of your HANA instances.**
+  - The HANA XS OData service will be used in a SAPUI5 application to render the data in a graph or a table, and is not used by the predictive services.
+  - The predictive services only consumes data stored inside of your HANA instances.**
 
 ### Time to Complete
   **5 minutes**
@@ -38,7 +38,7 @@ Right click on **Content**, then click on **Create Application**.
 
 Complete the form following properties:
 
-- ***Package***: `public.predictive.odata`
+  - ***Package***: `public.predictive.odata`
 
 Click on **Create**
 
@@ -54,7 +54,7 @@ Right click on `odata`, then navigate the menu **New** > **File**.
 
 Complete the form following properties:
 
-- ***File Name***: `predictive.xsodata`
+  - ***File Name***: `predictive.xsodata`
 
 Click on **Create**
 

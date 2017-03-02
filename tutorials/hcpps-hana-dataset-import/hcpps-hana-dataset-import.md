@@ -5,11 +5,11 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
-- **Proficiency:** Beginner
-- **Tutorials:** [Setup a HANA user account for the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+  - **Proficiency:** Beginner
+  - **Tutorials:** [Setup a HANA user account for the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
 
 ## Next Steps
-- [Expose your predictive demo datasets as HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
+  - [Expose your predictive demo datasets as HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
 
 ## Details
 ### You will learn
@@ -73,4 +73,4 @@ Right click on **Catalog**, then click on **Refresh**. A `DEMO` schema was creat
 [ACCORDION-END]
 
 ## Next Steps
-- [Expose your predictive demo datasets as HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
+  - [Expose your predictive demo datasets as HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)

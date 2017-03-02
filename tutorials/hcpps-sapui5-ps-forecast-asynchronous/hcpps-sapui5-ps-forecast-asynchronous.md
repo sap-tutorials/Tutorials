@@ -13,7 +13,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, t
 
 ## Details
 ### You will learn
-- How to add a SAPUI5 controller to interact with the "Forecast" SAP Cloud Platform predictive service in your SAPUI5 application with the asynchronous mode
+  - How to add a SAPUI5 controller to interact with the "Forecast" SAP Cloud Platform predictive service in your SAPUI5 application with the asynchronous mode
 
 > **Note:** our goal here is to mimic what was done using the REST Client around the "Forecast" services
 
@@ -146,8 +146,8 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
 
 The view will contain:
-- a button that will trigger the "Get Dataset List" service
-- use the fragments previously created to display:
+  - a button that will trigger the "Get Dataset List" service
+  - use the fragments previously created to display:
   - the list of registered datasets
   - the selected dataset header description
   - the service parameters form
@@ -191,7 +191,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 5: ](Job status fragment)]
 
 The fragment will contain:
-- the current status of a job
+  - the current status of a job
 
 Create a new file **`JobStatus.fragment.xml`** in `webapp\fragment\job` either using the "File" menu or using the right click menu.
 
@@ -471,10 +471,10 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-- [`webapp\fragment\job\JobStatus.fragment.xml`](solution-controller-job-JobStatus.fragment.xml.txt)
-- [`webapp\controller\forecast\asynchronous.controller.js`](solution-controller-forecast-asynchronous.controller.js.txt)
-- [`webapp\view\forecast\asynchronous.view.xml`](solution-view-forecast-asynchronous.view.xml.txt)
-- [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`webapp\fragment\job\JobStatus.fragment.xml`](solution-controller-job-JobStatus.fragment.xml.txt)
+  - [`webapp\controller\forecast\asynchronous.controller.js`](solution-controller-forecast-asynchronous.controller.js.txt)
+  - [`webapp\view\forecast\asynchronous.view.xml`](solution-view-forecast-asynchronous.view.xml.txt)
+  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]

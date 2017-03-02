@@ -32,7 +32,7 @@ From the ***SAP HANA Cockpit*** and connected with the ***HANA System Account***
 
 In order to allow the **SYSTEM** user to run any SQL statement, you will need to grant him the following role:
 
-- `sap.hana.ide.roles::Developer`
+  - `sap.hana.ide.roles::Developer`
 
 Under **Security**, expand **Users**, then double click on **SYSTEM**.
 

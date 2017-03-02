@@ -191,14 +191,14 @@ With these settings, we will forecast the next 5 values of the Cash variable aft
 
 Click on **Send**
 
-Congratulations! You have just run the forecast service on the `Cash` variable and requested the next 10 values after the reference date (2001-12-01).
+Congratulations! You have just run the forecast service on the `Cash` variable and requested the next 5 values after the reference date (2001-12-01).
 
 In the output you will get the following information:
-- `forecastValue`: the forecast values
-- `realValue`: the current values in case you have provided a reference date where you already have the target value, and your goal is more to confirm that the real value follows a trend or is between boundaries
-- `errorBarHigherBound` & `errorBarLowerBound`: the upper and lower limit of the confidence interval for the forecast value (+/-5%)
-- model information: the structure of the forecast model
-- model performance: the accuracy indicators
+  - `forecastValue`: the forecast values
+  - `realValue`: the current values in case you have provided a reference date where you already have the target value, and your goal is more to confirm that the real value follows a trend or is between boundaries
+  - `errorBarHigherBound` & `errorBarLowerBound`: the upper and lower limit of the confidence interval for the forecast value (+/-5%)
+  - model information: the structure of the forecast model
+  - model performance: the accuracy indicators
 
 Here is the result:
 

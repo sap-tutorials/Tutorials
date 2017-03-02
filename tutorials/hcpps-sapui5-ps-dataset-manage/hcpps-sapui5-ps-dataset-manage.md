@@ -13,7 +13,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, t
 
 ## Details
 ### You will learn
-- How to use the other "Dataset" SAP Cloud Platform predictive service in your SAPUI5 application in order to:
+  - How to use the other "Dataset" SAP Cloud Platform predictive service in your SAPUI5 application in order to:
   - list registered datasets
   - view a dataset fields description
   - delete a dataset registration
@@ -124,11 +124,11 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 5: ](List registered datasets)]
 
 The controller will contain a function where:
-- we process the call to the "Dataset List" SAP Cloud Platform predictive services and return the list of registered dataset.
+  - we process the call to the "Dataset List" SAP Cloud Platform predictive services and return the list of registered dataset.
 
 The view will contain:
-- a button that will trigger the "Get Dataset List" service
-- a table with the list of registered datasets
+  - a button that will trigger the "Get Dataset List" service
+  - a table with the list of registered datasets
 
 Open the `webapp\controller\dataset\manage.controller.js` file and add the following code right after the `onInit` function (don't forget to use a comma to separate them):
 
@@ -228,11 +228,11 @@ Et voilà!
 [ACCORDION-BEGIN [Step 6: ](Get dataset fields description)]
 
 You will add to the controller a function where:
-- we process the call to the "Dataset Description" SAP Cloud Platform predictive services and return the dataset detailed description.
-- this function will be triggered either on a click or row change event on the table added previously
+  - we process the call to the "Dataset Description" SAP Cloud Platform predictive services and return the dataset detailed description.
+  - this function will be triggered either on a click or row change event on the table added previously
 
 You will add to the view:
-- a table with the dataset variables detailed description
+  - a table with the dataset variables detailed description
 
 Open the `webapp\controller\dataset\manage.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
@@ -367,10 +367,10 @@ Et voilà!
 [ACCORDION-BEGIN [Step 7: ](Delete a dataset registration)]
 
 You will add to the controller a function where:
-- we process the call to the "Delete Dataset" SAP Cloud Platform predictive services.
+  - we process the call to the "Delete Dataset" SAP Cloud Platform predictive services.
 
 You will add to the view:
-- a button that will trigger the "Delete Dataset" service
+  - a button that will trigger the "Delete Dataset" service
 
 Open the `webapp\controller\dataset\manage.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
@@ -448,10 +448,10 @@ Et voilà!
 [ACCORDION-BEGIN [Step 8: ](Update the dataset variable description)]
 
 You will add to the controller a function where:
-- we process the call to the "Update Dataset Variables" SAP Cloud Platform predictive services.
+  - we process the call to the "Update Dataset Variables" SAP Cloud Platform predictive services.
 
 You will add to the view:
-- a button that will trigger the "Update Dataset Variables" service
+  - a button that will trigger the "Update Dataset Variables" service
 
 Open the `webapp\controller\dataset\manage.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
@@ -552,12 +552,12 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-- [`webapp\controller\dataset\manage.controller.js`](solution-controller-dataset-manage.controller.js.txt)
-- [`webapp\view\dataset\manage.view.xml`](solution-view-dataset-manage.view.xml.txt)
-- [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`webapp\controller\dataset\manage.controller.js`](solution-controller-dataset-manage.controller.js.txt)
+  - [`webapp\view\dataset\manage.view.xml`](solution-view-dataset-manage.view.xml.txt)
+  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]
 
 ## Next Steps
-- [Implement the "Forecast" SAP Cloud Platform predictive service from a SAPUI5 application using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
+  - [Implement the "Forecast" SAP Cloud Platform predictive service from a SAPUI5 application using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)

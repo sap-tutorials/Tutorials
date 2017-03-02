@@ -373,9 +373,9 @@ This will open a web page with the following content:
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-- [`neo-app.json`](solution-neo-app.json.txt)
-- [`webapp\controller\demo.controller.js`](solution-controller-demo.controller.js.txt)
-- [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`neo-app.json`](solution-neo-app.json.txt)
+  - [`webapp\controller\demo.controller.js`](solution-controller-demo.controller.js.txt)
+  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]
