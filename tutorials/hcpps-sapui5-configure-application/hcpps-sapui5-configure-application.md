@@ -31,9 +31,9 @@ Therefore you can replace any occurrence of the token by the value listed above.
 > Token               | Value
 ------------------- | -------------
 <code><b>&lt;HCP account name&gt;</b></code>  | on a developer trial account, it should end by `trial`
-<code><b>&lt;C4PA URL&gt;</b></code> | `http://aac4paservices<`<code><b>HCP account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
+<code><b>&lt;C4PA URL&gt;</b></code> | `https://aac4paservices<`<code><b>HCP account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
 <code><b>&lt;HANA instance id&gt;</b></code>  | as created previously, should be `mdc`
-<code><b>&lt;HANA URL&gt;</b></code> | `http://<`<code><b>HANA instance id</b></code>`><`<code><b>HCP account name</b></code>`>.hanatrial.ondemand.com`
+<code><b>&lt;HANA URL&gt;</b></code> | `https://<`<code><b>HANA instance id</b></code>`><`<code><b>HCP account name</b></code>`>.hanatrial.ondemand.com`
 <code><b>&lt;HANA User&gt;</b></code> | `HCPPSTRIAL`
 <code><b>&lt;HANA Password&gt;</b></code> | `Welcome16`
 >
