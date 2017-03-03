@@ -14,11 +14,10 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, t
 ## Details
 ### You will learn
   - How to use the other "Dataset" SAP Cloud Platform predictive service in your SAPUI5 application in order to:
-
-  - list registered datasets
-  - view a dataset fields description
-  - delete a dataset registration
-  - update a dataset description
+    - list registered datasets
+    - view a dataset fields description
+    - delete a dataset registration
+    - update a dataset description
 
 > **Note:** our goal here is to mimic what was done using the REST Client around the "Dataset" services
 

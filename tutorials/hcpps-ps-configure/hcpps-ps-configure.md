@@ -25,6 +25,8 @@ Click on your ***SAP Cloud Platform Account name*** as highlighted on the below 
 
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
+-
+
 ![SAP Cloud Platform Cockpit](01.png)
 
 On the left side bar, click on **Services**.
@@ -90,6 +92,8 @@ On the left side bar, navigate in **Configuration**, then click on **Data Source
 
 The data source binding will allow the ***Cloud for Predictive Analytics*** to locate the data to be consumed by the service and execute the ***SAP HANA Automated Predictive Library*** (`APL`) on it, but also to persist a set on internal tables.
 
+![New Binding](12.png)
+
 Click on **New Binding**
 
 ![New Binding](11.png)
@@ -100,7 +104,7 @@ Enter your ***HANA User Account*** login (`HCPPSTRIAL`) and password (`Welcome16
 
 Click on **Save**
 
-![New Binding](12.png)
+![Binding](13.png)
 
 [DONE]
 [ACCORDION-END]
@@ -110,19 +114,19 @@ Now, you need to configure security settings for your ***SAP Cloud Platform Acco
 
 On the left side bar, navigate in **Security**, then click on **Roles**  
 
-![Binding](13.png)
+![Roles](14.png)
 
-Assign to your ***SAP Cloud Platform Account User*** the `C4PA-User` and `C4PA-Admin` roles using the **Assign** button as highlighted on the screenshot.
-
-Your ***SAP Cloud Platform Account User Name*** was displayed during the ***Deploy*** step.
-
-And in case you are using a trial account, make sure you don't include the "trial" at the end.
+Assign the **`C4PA-User`** and **`C4PA-Admin`** roles using the **Assign** button to your SAP Cloud Platform Account User.
 
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+>
+> Your ***SAP Cloud Platform Account User Name*** was displayed during the ***Deploy*** step.
+>
+> And in case you are using a trial account, make sure you don't include the "trial" at the end.
+
+-
 
 The `C4PA-User` will enable your user to consume the services and the `C4PA-Admin` to administer the `C4PA` application.
-
-![Roles](14.png)
 
 [DONE]
 [ACCORDION-END]
@@ -164,7 +168,7 @@ Click on the **Administration** tile
 
 ![Application](19.png)
 
-Status is green! Congrats, you have configured the SAP Cloud Platform predictive services on your SAP Cloud Platform trial account.
+Status is green! Congrats, you have configured the SAP Cloud Platform predictive services on your SAP Cloud Platform account.
 
 ![Application](20.png)   
 

@@ -47,7 +47,7 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create the controller for the Cash Flow data)]
+[ACCORDION-BEGIN [Step 2: ](Create the Cash Flow data controller)]
 
 Create a new directory structure for **`webapp\controller\odata\cashflow`** either using the "File" menu or using the right click menu.
 
@@ -131,7 +131,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create the view for the Cash Flow data)]
+[ACCORDION-BEGIN [Step 3: ](Create the Cash Flow data view)]
 
 Create a new directory structure for **`webapp\view\odata\cashflow`** either using the "File" menu or using the right click menu.
 
@@ -201,7 +201,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create the controller for the Census data)]
+[ACCORDION-BEGIN [Step 4: ](Create Census data controller)]
 
 Create a new directory structure for **`webapp\controller\odata\census`** either using the "File" menu or using the right click menu.
 
@@ -267,7 +267,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create the view for the Census data)]
+[ACCORDION-BEGIN [Step 5: ](Create Census data view)]
 
 Create a new directory structure for **`webapp\view\odata\census`** either using the "File" menu or using the right click menu.
 
@@ -387,7 +387,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create the controller for the E-Commerce data)]
+[ACCORDION-BEGIN [Step 6: ](Create the E-Commerce data controller)]
 
 Create a new directory structure for **`webapp\controller\odata\transaction`** either using the "File" menu or using the right click menu.
 
@@ -465,7 +465,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create the view for the E-Commerce data)]
+[ACCORDION-BEGIN [Step 7: ](Create the E-Commerce data view)]
 
 Create a new directory structure for **`webapp\view\odata\transaction`** either using the "File" menu or using the right click menu.
 
@@ -565,7 +565,6 @@ Select the dataset you want to display, then press the `Load Data` button.
 Et voilà!
 
 ![Dataset](05.png)
-
 
 [DONE]
 [ACCORDION-END]

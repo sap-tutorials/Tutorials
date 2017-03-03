@@ -62,7 +62,7 @@ Click on **Create**
 
 Enter the following code in the file:
 
-```
+```js
 service {
   "DEMO"."CashFlow"     as "CashFlowData";
   "DEMO"."Census"       as "CensusData";
@@ -72,7 +72,10 @@ settings {
   support null;
 }
 ```
-**Note: if you didn't import all the datasets provided in the previous step, then when saving the file, it will not get activated, and the console will show you an error message. **
+
+>**Note**: if you didn't import all the datasets provided in the previous step, then when saving the file, it will not get activated, and the console will show you an error message. 
+
+-
 
 [DONE]
 [ACCORDION-END]

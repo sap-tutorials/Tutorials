@@ -136,6 +136,8 @@ The view will contain:
 > **Note:** the reason we use here a static select list is to avoid user errors.
 This list can be dynamically generated using an additional HANA XS OData service, that will select the proper tables from the HANA database.
 
+-
+
 Create a new directory structure for **`webapp\view\dataset`** either using the "File" menu or using the right click menu.
 
 Create a new file **`register.view.xml`** in `webapp\view\dataset` either using the "File" menu or using the right click menu.

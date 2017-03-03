@@ -56,7 +56,7 @@ Click on **Save**
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Wait for the creation to finish)]
-It will take about 5 to 10 minutes for the creation process to complete.
+It will take about 5 to 10 minutes for the creation process to complete. So, now is a good time to get a coffee refill!
 
 ![Database Events](05.png)
 

@@ -58,8 +58,6 @@ The fragment will contain:
 
   - a table with the list of registered datasets details
 
-The only notable difference is that we will be using a specific model to store the data (`dataset_fragment`).
-
 For more details on fragment, please refer to the [XML Templating documentation](https://sapui5.hana.ondemand.com/#docs/guide/5ee619fc1370463ea674ee04b65ed83b.html).
 
 Create a new directory structure for **`webapp\fragment\dataset`** either using the "File" menu or using the right click menu.

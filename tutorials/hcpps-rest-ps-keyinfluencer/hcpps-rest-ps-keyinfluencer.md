@@ -34,21 +34,26 @@ Therefore you can replace any occurrence of the token by the value listed above.
 The Key Influencers service analyzes a dataset to identify the variables with an influence on a specified target variable.
 
 This service:
+
  - Identifies the variables with an influence on a specified target ordered by decreasing contribution
  - Returns detailed information on the grouped categories for each contributive variable
  - Provides indicators on the reliability of the results
 
 > **Note**: The target variable must be either binary nominal or continuous. Multinomial targets are not supported.
 
+-
+
 To summarize, in order to execute the key influencer service, you will need a dataset with:
+
  - a target variable for which you want to find the influencers variables
  - a set of variables that potentially influence the target variable.
 
 Optionally, you can define the following parameters to enhance your analysis:
+
  - auto-selection: flag that indicates if you want to shorten the number of retained influencers
  - number of influencers: the number of key influencers to return
  - skipped variables: a list of variables to skip from the analysis
- - target value: in the case of binary target variable, it indicates the target variable value of interest. By default the value withe lowest frequency will be picked.
+ - target value: in the case of binary target variable, it indicates the target variable value of interest. By default the value with the lowest frequency will be picked.
  - variable description: a more details description of the dataset
 
 [DONE]
@@ -61,6 +66,8 @@ The dataset will be using during this tutorial is extracted from the sample data
 The Census sample data file that you will use to follow the scenarios for Regression/Classification and Segmentation/Clustering is an excerpt from the American Census Bureau database, completed in 1994 by Barry Becker.
 
 > **Note:** For more information about the American Census Bureau, see http://www.census.govInformation published on non-SAP site.
+
+-
 
 This file presents the data on 48,842 individual Americans, of at least 17 years of age. Each individual is characterized by 15 data items. These data, or variables, are described in the following table.
 
@@ -97,7 +104,7 @@ URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/sync`
 
 ```json
 {
-"hanaURL":"DEMO/Census"
+  "hanaURL":"DEMO/Census"
 }
 ```
 
@@ -141,6 +148,8 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 }
 ```
 > Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
+
+-
 
 With these settings, we will get the top 2 influencers of the class variable, excluding the "id", "sex", "race" variables from the analysis.
 
@@ -397,6 +406,8 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 }
 ```
 > Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the previous tutorial.
+
+-
 
 Click on **Send**
 

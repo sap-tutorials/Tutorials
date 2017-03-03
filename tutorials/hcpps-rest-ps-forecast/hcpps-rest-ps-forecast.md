@@ -33,6 +33,7 @@ Therefore you can replace any occurrence of the token by the value listed above.
 The Forecasts service analyzes a dataset containing the successive values of a target indicator over time to predict the next values.
 
 This service:
+
  - Analyzes a time series and generates forecasts based on identified patterns
  - Returns forecast and real values for past data of the time series
  - Provides confidence intervals computed for each forecast
@@ -47,17 +48,22 @@ The granularity of the prediction is the same as the granularity used in the dat
 > If you use extra-predictive variables, which are variables other than date and target indicator, their values must be known for each date of the forecasts.
 > The service may return forecasts without error bars beyond the maximum confident horizon.
 
+-
+
 To summarize, in order to execute the forecast service, you will need a dataset with:
+
  - a date variable
  - a variable to predict (usually a continuous number variable), the target variable
  - optionally a set of "extra" predictors which can be used to better predict the forecast variable
 
 The parameters required to run the service are:
+
  - a dataset identifier (registered with the Dataset service)
  - the name of the date and the target variable
  - a number of forecast to be computed
 
 Optionally, you can define the following parameters to enhance your analysis:
+
  - the reference date (date after which the entries are call predictions), if none is specified then the last date will be used
  - number of past values in the output: the number of past data to return with the forecasts (default value is 0)
  - skipped variables: a list of variables to skip from the analysis
@@ -101,7 +107,7 @@ URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/sync`
 
 ```json
 {
-"hanaURL":"DEMO/CashFlow"
+  "hanaURL":"DEMO/CashFlow"
 }
 ```
 
@@ -185,7 +191,10 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   "referenceDate" : "2001-12-01"
 }
 ```
+
 > Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the previous tutorial.
+
+-
 
 With these settings, we will forecast the next 5 values of the Cash variable after the 1st of December 2001.
 
@@ -194,6 +203,7 @@ Click on **Send**
 Congratulations! You have just run the forecast service on the `Cash` variable and requested the next 5 values after the reference date (2001-12-01).
 
 In the output you will get the following information:
+
   - `forecastValue`: the forecast values
   - `realValue`: the current values in case you have provided a reference date where you already have the target value, and your goal is more to confirm that the real value follows a trend or is between boundaries
   - `errorBarHigherBound` & `errorBarLowerBound`: the upper and lower limit of the confidence interval for the forecast value (+/-5%)
@@ -295,6 +305,8 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 }
 ```
 > Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the previous tutorial.
+
+-
 
 Click on **Send**
 

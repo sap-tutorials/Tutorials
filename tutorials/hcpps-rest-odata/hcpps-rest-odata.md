@@ -79,6 +79,7 @@ It will now display the list of OData services registered in the `predictive.xso
     </workspace>
 </service>
 ```
+
 [DONE]
 [ACCORDION-END]
 
@@ -168,6 +169,7 @@ Click **Send**
     </edmx:DataServices>
 </edmx:Edmx>
 ```
+
 [DONE]
 [ACCORDION-END]
 

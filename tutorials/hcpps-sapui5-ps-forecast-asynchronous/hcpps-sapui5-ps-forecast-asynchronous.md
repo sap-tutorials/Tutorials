@@ -79,7 +79,7 @@ sap.ui.define([
 		getDatasetDescription: function(event) {
 			DatasetList.prototype.getDatasetDescription.apply(this, arguments);
 		},
-    forecast: function(event) {
+		forecast: function(event) {
     	// set the busy indicator to avoid multi clicks
     	var oBusyIndicator = new sap.m.BusyDialog();
     	oBusyIndicator.open();
@@ -136,6 +136,7 @@ sap.ui.define([
   });
 });    
 ```
+
 You can notice that the service call is almost the same (minor change in the URL), but the returned payload is not the model but the job details.
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
@@ -149,10 +150,9 @@ The view will contain:
 
   - a button that will trigger the "Get Dataset List" service
   - use the fragments previously created to display:
-
-  - the list of registered datasets
-  - the selected dataset header description
-  - the service parameters form
+    - the list of registered datasets
+    - the selected dataset header description
+    - the service parameters form
 
 Create a new file **`asynchronous.view.xml`** in `webapp\view\forecast` either using the "File" menu or using the right click menu.
 
@@ -239,7 +239,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add the "check job status")]
+[ACCORDION-BEGIN [Step 6: ](Add the "check job status" function)]
 
 Open the `webapp\controller\forecast\asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
@@ -305,8 +305,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 7: ](Add the "get job result")]
+[ACCORDION-BEGIN [Step 7: ](Add the "get job result" function)]
 
 Open the `webapp\controller\forecast\asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 

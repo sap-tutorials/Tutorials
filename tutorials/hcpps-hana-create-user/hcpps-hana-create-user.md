@@ -47,6 +47,7 @@ Using the ![navigation](0-navigation.png) menu bar icon, select **Catalog**.
 The following screen should appear:
 
 ![SAP HANA Web-based Development Workbench](03.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -82,6 +83,7 @@ GRANT REPO.ACTIVATE_IMPORTED_OBJECTS on "public" TO HCPPSTRIAL;
 Click on the ![Logout](0-run.png) **Run** button or press **F8**.
 
 ![SAP HANA Web-based Development Workbench Login](04.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -95,9 +97,8 @@ Now, you need to connect with your **`HCPPSTRIAL`** ***HANA User Account***.
 
 Enter **`HCPPSTRIAL`** as ***Username*** user name and **`Welcome16`** as ***Password***, click on **Logon**.
 
-Your ***HANA User Account*** is now configured.
+If you can login, then your ***HANA User Account*** is properly configured.
 
-![SAP HANA Web-based Development Workbench](06.png)
 [DONE]
 [ACCORDION-END]
 

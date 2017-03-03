@@ -35,9 +35,10 @@ Therefore you can replace any occurrence of the token by the value listed above.
 The Outliers service identifies the odd profiles of a dataset whose target indicator is significantly different from what is expected.
 
 This service:
- - Identifies outliers contained in a dataset with regard to a target indicator
- - Ranks the outliers to get the oddest on top
- - Provides the reasons why an identified outlier is odd
+
+  - Identifies outliers contained in a dataset with regard to a target indicator
+  - Ranks the outliers to get the oddest on top
+  - Provides the reasons why an identified outlier is odd
 
 In general, an outlier can either result from a data quality issue to correct or represent a suspicious case to investigate.
 
@@ -45,18 +46,20 @@ An observation is considered an outlier if the difference between its "predicted
 
 Reasons will list the variables whose values have the most influence in the score. For each variables, the contribution corresponding to the score is compared to its contribution for the whole population. The variables for which the contribution is the most differential are selected as the most important reason.
 
->**Note:** The target of the dataset must be either binary or continuous. Multinomial targets are not supported.
+**Note:** The target of the dataset must be either binary or continuous. Multinomial targets are not supported.
 
 To summarize, in order to execute the outliers service, you need a dataset with:
- - a target variable
- - a set of variables that will be analyzed
+
+  - a target variable
+  - a set of variables that will be analyzed
 
 Optionally, you can define the following parameters to enhance your analysis:
- - number of outliers : number of outliers to return
- - number of reasons" : number of reasons to return for each outlier
- - weight variable: column to be used to increase the importance of a row
- - skipped variables: a list of variables to skip from the analysis
- - variable description: a more details description of the dataset
+
+  - number of outliers : number of outliers to return
+  - number of reasons : number of reasons to return for each outlier
+  - weight variable: column to be used to increase the importance of a row
+  - skipped variables: a list of variables to skip from the analysis
+  - variable description: a more details description of the dataset
 
 [DONE]
 [ACCORDION-END]
@@ -68,6 +71,8 @@ The dataset will be using during this tutorial is extracted from the sample data
 The Census sample data file that you will use to follow the scenarios for Regression/Classification and Segmentation/Clustering is an excerpt from the American Census Bureau database, completed in 1994 by Barry Becker.
 
 > **Note:** For more information about the American Census Bureau, see http://www.census.govInformation published on non-SAP site.
+
+-
 
 This file presents the data on 48,842 individual Americans, of at least 17 years of age. Each individual is characterized by 15 data items. These data, or variables, are described in the following table.
 
@@ -165,6 +170,8 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 ```
 > Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
 
+-
+
 With these settings, we will get a scoring equation as SQL for HANA to predict the probability of the class variable to be a 1, excluding the "id", "sex", "race" variables from the analysis. It will also adjust the dataset description with proper settings.
 
 Click on **Send**
@@ -243,6 +250,12 @@ Here is the result:
 ```
 
 We can see that 356 records out of the 48842 are marked as outliers, where the difference between the "predicted value" and the "real value" exceeds the value of the error bar. The list is sorted by descending order to give first the records with the highest difference.
+
+You can also play with the following parameters and check the differences:
+- number of outliers : ask for 10, 50 and 100
+- number of reasons" : ask for 1,5 and 10
+- skipped variables: exclude "`marital_status`"
+- variable description: for example as an ordinal variable
 
 [DONE]
 [ACCORDION-END]    

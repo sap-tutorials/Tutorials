@@ -14,8 +14,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
 ## Details
 ### You will learn
   - How to "Register" your data set with the SAP Cloud Platform predictive services using a REST Client.
-  In order to use any of the SAP Cloud Platform predictive services, you will need a registered dataset. When registering a dataset, you will define and store the structure of the dataset which will be used by the other services.
-  We upload 3 datasets in one of the previous steps, but we will be using the `CashFlow` dataset as an example here. You can replicate the steps for the other 2 datasets.
+
 
 ### Time to Complete
   **10 minutes**
@@ -29,6 +28,25 @@ Therefore you can replace any occurrence of the token by the value listed above.
 <code><b>&lt;C4PA URL&gt;</b></code> | `https://aac4paservices<`<code><b>Account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
 >
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+
+[ACCORDION-BEGIN [Info:](A short description of the Dataset service)]
+
+In order to use any of the SAP Cloud Platform predictive services, you will need a registered dataset.
+
+When registering a dataset, you will define and store the structure of the dataset which will be used by the other services.
+
+We upload 3 datasets in one of the previous steps, but we will be using the `CashFlow` dataset as an example here. You can replicate the steps for the other 2 datasets.
+
+This service:
+
+ - Analyze the database object DDL to return you the name and the data type of each columns
+ - Analyze a few hundreds rows to determine the value type of the column (continuous, nominal or ordinal)
+ - Get the number of rows and columns
+
+Once registered, you will be able to use the dataset "ID" to call the other services.
+
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Register a dataset)]
 Open a new tab in ***Postman***.
@@ -50,8 +68,10 @@ Type           | `Basic Auth`
 Username       | your ***SAP Cloud Platform Account*** login*
 Password*      | your ***SAP Cloud Platform Account*** password
 
-**Note:**
-  Your SAP Cloud Platform Account login is usually the email address used to register your ***SAP Cloud Platform*** account.
+>**Note:**
+Your SAP Cloud Platform Account login is usually the email address used to register your ***SAP Cloud Platform*** account.
+
+-
 
 ![Postman URL](02.png)
 
@@ -59,7 +79,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 
 ```json
 {
-"hanaURL":"DEMO/CashFlow"
+  "hanaURL":"DEMO/CashFlow"
 }
 ```
 
@@ -67,9 +87,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 
 Click on **Send**
 
-Click on **Send** an additional 4 or 5 times, so you will have multiple dataset registered.
-
-1. It will now display the data set registration identifier, the number of rows and the variable descriptions.
+It will now display the data set registration identifier, the number of rows and the variable descriptions.
 
 Now, we can use the `ID` value to reference the registered dataset with other SAP Cloud Platform predictive services calls.
 
@@ -97,6 +115,8 @@ The below extract was shortened to ease the reading.
   ]
 }
 ```
+
+Click on **Send** an additional 4 or 5 times, so you will have multiple dataset registered.
 
 [DONE]
 [ACCORDION-END]
@@ -148,6 +168,8 @@ You should receive the description of the first variable from your data set.
 >
 >To check which version you are currently using, please go to the following URL and check the `X-Maven-Project-Version` property:
 >  - <<code><b>C4PA URL</b></code>>/adminUI/index.html#/about
+
+-
 
 By default, the variable storage and value type (nominal, continuous,  ordinal) properties returned by the registration service are "guessed" from the data, which may sometime be inaccurate.
 
