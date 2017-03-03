@@ -4,13 +4,10 @@ sap.ui.define([
 ], function(Controller, MessageToast) {
 	"use strict";
 
-	return Controller.extend("demohcppredictiveservicesdemo.controller.demo", {
+	return Controller.extend("xxxxxx.controller.demo", {
 		onInit: function() {
 			if (typeof sap.ui.getCore().getModel() === 'undefined') {
 				sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel());
-				// MessageToast.show("onInit JSONModel", {
-				// 	duration: 5000
-				// });
 			}
 		},
 		getSplitAppObj: function() {

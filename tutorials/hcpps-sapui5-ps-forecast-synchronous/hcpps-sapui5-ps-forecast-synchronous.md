@@ -555,7 +555,7 @@ Create a new file **`synchronous.view.xml`** in `webapp\view\forecast` either us
 Open the `webapp\view\forecast\synchronous.view.xml` file and add the following code:
 
 ```xml
-<mvc:View controllerName="sapui5demo.controller.forecast.synchronous" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View controllerName="sapui5demo.controller.forecast.synchronous" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Toolbar>

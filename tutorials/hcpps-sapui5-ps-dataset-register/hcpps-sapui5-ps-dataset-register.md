@@ -143,7 +143,7 @@ Create a new file **`register.view.xml`** in `webapp\view\dataset` either using 
 Open the `webapp\view\dataset\register.view.xml` file and add the following code:
 
 ```xml
-<mvc:View controllerName="sapui5demo.controller.dataset.register" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View controllerName="sapui5demo.controller.dataset.register" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<form:SimpleForm title="Please select a dataset from the list then press Register">

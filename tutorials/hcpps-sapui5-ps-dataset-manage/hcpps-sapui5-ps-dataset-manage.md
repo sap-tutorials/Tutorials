@@ -67,10 +67,10 @@ sap.ui.define([
 ], function(Controller, MessageToast) {
 	"use strict";
 
-	return Controller.extend("sapui5demo.controller.dataset.register", {
-		onInit: function() {
+	return Controller.extend("sapui5demo.controller.dataset.manage", {
+    onInit: function() {
 			if (typeof sap.ui.getCore().getModel() === 'undefined') {
-				this.getView().setModel(new sap.ui.model.json.JSONModel(), "dataset_register");
+				this.getView().setModel(new sap.ui.model.json.JSONModel(), "dataset_manage");
 			}
 		}
 	});
@@ -91,7 +91,7 @@ Create a new file **`register.view.xml`** in `webapp\view\dataset` either using 
 Open the `webapp\view\dataset\manage.view.xml` file and add the following code:
 
 ```xml
-<mvc:View controllerName="sapui5demo.controller.dataset.manage" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View controllerName="sapui5demo.controller.dataset.manage" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:core="sap.ui.core"
 	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 
@@ -137,39 +137,39 @@ Open the `webapp\controller\dataset\manage.controller.js` file and add the follo
 
 ```js
 getDatasetList: function() {
-	// set the busy indicator to avoid multi clicks
-	var oBusyIndicator = new sap.m.BusyDialog();
-	oBusyIndicator.open();
+  // set the busy indicator to avoid multi clicks
+  var oBusyIndicator = new sap.m.BusyDialog();
+  oBusyIndicator.open();
 
-	// get the current view
-	var oView = this.getView();
+  // get the current view
+  var oView = this.getView();
 
-	// get the model
-	var oModel = oView.getModel("dataset_manage");
+  // get the model
+  var oModel = oView.getModel("dataset_manage");
 
-	// call the service and define call back methods
-	$.ajax({
-		headers: {
-			'Accept': 'application/json',
-			'Content-Type': 'application/json'
-		},
-		url: "/HCPps/api/analytics/dataset",
-		type: "GET",
-		async: false,
-		success: function(data) {
-			try {
-				//Save data set description data in the model
-				oModel.setProperty("/datasets", data);
-			} catch (err) {
-				MessageToast.show("Caught - dataset manage get list [ajax success] :" + err.message);
-			}
-			oBusyIndicator.close();
-		},
-		error: function(request, status, error) {
-			MessageToast.show("Caught - dataset manage get list [ajax error] :" + request.responseText);
-			oBusyIndicator.close();
-		}
-	});
+  // call the service and define call back methods
+  $.ajax({
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    url: "/HCPps/api/analytics/dataset",
+    type: "GET",
+    async: false,
+    success: function(data) {
+      try {
+        //Save data set description data in the model
+        oModel.setProperty("/datasets", data);
+      } catch (err) {
+        MessageToast.show("Caught - dataset manage get list [ajax success] :" + err.message);
+      }
+      oBusyIndicator.close();
+    },
+    error: function(request, status, error) {
+      MessageToast.show("Caught - dataset manage get list [ajax error] :" + request.responseText);
+      oBusyIndicator.close();
+    }
+  });
 }
 ```
 

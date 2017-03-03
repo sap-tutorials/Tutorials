@@ -1,4 +1,4 @@
-<mvc:View controllerName="demohcppredictiveservicesdemo.controller.demo" xmlns:html="http://www.w3.org/1999/xhtml"
+<mvc:View controllerName="xxxxxx.controller.demo" xmlns:html="http://www.w3.org/2000/xhtml"
 	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<SplitApp id="SplitAppDemo" initialMaster="master" initialDetail="detail">
@@ -47,7 +47,7 @@
 			</Page>
 		</masterPages>
 		<detailPages>
-			<Page id="detail" title="Test the HCP Predictive Service in a SAPUI5 application">
+			<Page id="detail" title="Test the SAP Cloud Platform Predictive Service in a SAPUI5 application">
 				<content></content>
 			</Page>
 			<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Cloud Platform predictive services (Asynchronous Mode)">

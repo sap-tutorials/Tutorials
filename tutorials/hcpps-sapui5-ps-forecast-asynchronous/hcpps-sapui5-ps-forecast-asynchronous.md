@@ -159,7 +159,7 @@ Create a new file **`asynchronous.view.xml`** in `webapp\view\forecast` either u
 Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following code:
 
 ```xml
-<mvc:View controllerName="sapui5demo.controller.forecast.asynchronous" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View controllerName="sapui5demo.controller.forecast.asynchronous" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Toolbar>
