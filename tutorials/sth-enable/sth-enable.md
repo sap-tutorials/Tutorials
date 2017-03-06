@@ -1,12 +1,12 @@
 ---
 title: Enable the SAP Translation Hub service
-description: Enable the SAP Translation Hub service in the SAP HANA Cloud Platform cockpit.
-tags: [  tutorial>beginner, topic>sap-translation-hub, products>sap-hana-cloud-platform ]
+description: Enable the SAP Translation Hub service in the SAP Cloud Platform cockpit.
+tags: [  tutorial>beginner, topic>sap-translation-hub, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Sign up for an free trial account on SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
  - [Prepare a sample Fiori app for translation](http://www.sap.com/developer/tutorials/sth-prepare-fiori-app-translation.html)
@@ -21,7 +21,7 @@ To use SAP Translation Hub, you first need to enable the service in the cockpit.
 ---
 [ACCORDION-BEGIN [Step 1: ](Choose tile for developer account)]
 
-In the SAP HANA Cloud Platform cockpit, choose the tile for your personal developer account.
+In the SAP Cloud Platform cockpit, choose the tile for your personal developer account.
 
 ![access menu to open service catalog](sth-choose-dev-tile.png)
 
