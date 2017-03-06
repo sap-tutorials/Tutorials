@@ -175,7 +175,7 @@ Our examples are restricted to Linux as the operating system for the slaves, as 
 #### Prerequisites
 
 - Install Java JDK 1.7.0 or higher on the slave machine to run the Jenkins slave process. Add the path to the `java` command to the `PATH` environment variable of the machine.
-- (MO) If you plan to compile Java applications (for example running on HCP) on the slave, also install SAP JVM 7.1.
+- (MO) If you plan to compile Java applications (for example running on SAP Cloud Platform) on the slave, also install SAP JVM 7.1.
 
     > [SAP JVM download](https://tools.hana.ondemand.com/#cloud)  
     > [SAP JVM installation guide](https://help.hana.ondemand.com/help/frameset.htm?76137f42711e1014839a8273b0e91070.html)

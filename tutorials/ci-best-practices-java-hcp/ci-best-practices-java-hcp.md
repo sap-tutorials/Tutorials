@@ -28,7 +28,7 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 The example shown here uses samples that are delivered as part of the SDK installation for Java Web development. These samples contain some web applications that are built using Maven and share a common parent `pom.xml`. Documentation and resources for Java web application development:
 
 > Documentation: https://help.hana.ondemand.com/help/frameset.htm?e66f3eecbb5710148397a19b46c4979b.html  
-> Tutorial: http://www.sap.com/developer/tutorials/hcp-java-basic-app.html  
+> Tutorial: http://www.sap.com/developer/tutorials/hcp-java-basic-app.html
 > SDK installation guide: https://help.hana.ondemand.com/help/frameset.htm?7613843c711e1014839a8273b0e91070.html  
 > SDK Download: https://tools.hana.ondemand.com/#cloud
 
@@ -305,7 +305,7 @@ Make the following changes to the job `VO_neo-java-web-sdk-samples_master_build`
 3. In the **Build** section, enter as **Goals and options**:
 
     ```
-    clean verify -P cloud-integration-tests -Dhttps.proxyHost=<your proxy host> -Dhttps.proxyPort=<your proxy port> -Dsap.cloud.account=${HCP_VOTER_ACCOUNT} -Dsap.cloud.username=${HCP_USER} -Dsap.cloud.password=${HCP_PASSWORD} -Dsap.cloud.host=hanatrial.ondemand.com
+    clean verify -P cloud-integration-tests -Dhttps.proxyHost=<your proxy host> -Dhttps.proxyPort=<your proxy port> -Dsap.cloud.account=${SAPCP_VOTER_ACCOUNT} -Dsap.cloud.username=${SAPCP_USER} -Dsap.cloud.password=${SAPCP_PASSWORD} -Dsap.cloud.host=hanatrial.ondemand.com
     ```
 
 4. Save.
@@ -315,7 +315,7 @@ Make the following changes to the job `VO_neo-java-web-sdk-samples_master_build`
 
 1. In Jenkins, go to **Manage Jenkins > Configure System > Global Passwords**.
 
-2. Define your credential data by creating new entries for the names `HCP_USER`, `HCP_VOTER_ACCOUNT` and `HCP_PASSWORD`.  
+2. Define your credential data by creating new entries for the names `SAPCP_USER`, `SAPCP_VOTER_ACCOUNT` and `SAPCP_PASSWORD`.  
     The values of these variables will be masked in the build log.
     
 3. Save.
@@ -352,11 +352,11 @@ Concerning the run time for automatic scenario test execution, what was said for
     BUILD_JOB_NUMBER=${BUILD_NUMBER}
     ```
  
-5. In the Maven Goal definition of the **Build** section, change the variable name for the account to `${HCP_CI_ACCOUNT}`.
+5. In the Maven Goal definition of the **Build** section, change the variable name for the account to `${SAPCP_CI_ACCOUNT}`.
  
 6. Save.
 
-7. In **Manage Jenkins > Configure System > Global Passwords**, add `HCP_CI_ACCOUNT` and save.
+7. In **Manage Jenkins > Configure System > Global Passwords**, add `SAPCP_CI_ACCOUNT` and save.
 
 
 ### Test Deploy job
@@ -412,17 +412,17 @@ In contrast to the build job, we choose now a freestyle project instead of a Mav
 
     # stop running application
     mvn neo-java-web:stop -P cloud-integration-tests -Dhttps.proxyHost=<your proxy host> -Dhttps.proxyPort=<your proxy port> \
-    -Dsap.cloud.account=${HCP_TEST_ACCOUNT} -Dsap.cloud.username=${HCP_USER} -Dsap.cloud.password=${HCP_PASSWORD} \
+    -Dsap.cloud.account=${SAPCP_TEST_ACCOUNT} -Dsap.cloud.username=${SAPCP_USER} -Dsap.cloud.password=${SAPCP_PASSWORD} \
     -Dsap.cloud.host=hanatrial.ondemand.com
 
     # deploy the application
     mvn neo-java-web:deploy -P cloud-integration-tests -Dhttps.proxyHost=<your proxy host> -Dhttps.proxyPort=<your proxy port> \
-    -Dsap.cloud.account=${HCP_TEST_ACCOUNT} -Dsap.cloud.username=${HCP_USER} -Dsap.cloud.password=${HCP_PASSWORD} \
+    -Dsap.cloud.account=${SAPCP_TEST_ACCOUNT} -Dsap.cloud.username=${SAPCP_USER} -Dsap.cloud.password=${SAPCP_PASSWORD} \
     -Dsap.cloud.host=hanatrial.ondemand.com
 
     # start the application
     mvn neo-java-web:start -P cloud-integration-tests -Dhttps.proxyHost=<your proxy host> -Dhttps.proxyPort=<your proxy port> \
-    -Dsap.cloud.account=${HCP_TEST_ACCOUNT} -Dsap.cloud.username=${HCP_USER} -Dsap.cloud.password=${HCP_PASSWORD} \
+    -Dsap.cloud.account=${SAPCP_TEST_ACCOUNT} -Dsap.cloud.username=${SAPCP_USER} -Dsap.cloud.password=${SAPCP_PASSWORD} \
     -Dsap.cloud.host=hanatrial.ondemand.com
     ```
     
@@ -438,7 +438,7 @@ In contrast to the build job, we choose now a freestyle project instead of a Mav
     
 7. Save the job definition.
 
-8. In **Manage Jenkins > Configure System > Global Passwords**, add `HCP_TEST_ACCOUNT` and save.
+8. In **Manage Jenkins > Configure System > Global Passwords**, add `SAPCP_TEST_ACCOUNT` and save.
 
 
 ### Release job
@@ -463,13 +463,13 @@ It differs from the latter in the productive SAP Cloud Platform account as deplo
     -Dfile=target/explore-ui5.war -DrepositoryId=nexusCIProcess -Dpackaging=war -DpomFile=pom.xml
     ```
 
-3. Replace the occurrences of `${HCP_TEST_ACCOUNT}` by `${HCP_PROD_ACCOUNT}`.
+3. Replace the occurrences of `${SAPCP_TEST_ACCOUNT}` by `${SAPCP_PROD_ACCOUNT}`.
 
 4. Remove the post-build action. This job does not have a downstream project.
 
 5. Save.
 
-6. In **Manage Jenkins > Configure System > Global Passwords**, add `HCP_PROD_ACCOUNT` and save.
+6. In **Manage Jenkins > Configure System > Global Passwords**, add `SAPCP_PROD_ACCOUNT` and save.
 
 ### Setup of the pipeline
 

@@ -1059,6 +1059,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-cssmin");
+    grunt.loadNpmTasks("grunt-encoding");
     grunt.loadNpmTasks("grunt-zip");
     grunt.loadNpmTasks("grunt-openui5");
     grunt.loadNpmTasks("grunt-nexus-deployer");
