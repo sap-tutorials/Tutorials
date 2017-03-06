@@ -541,9 +541,9 @@ The view will contain:
 
   - a button that will trigger the "Get Dataset List" service
   - use the fragments previously created to display:
-		- the list of registered datasets
-		- the selected dataset header description
-		- the service parameters form
+    - the list of registered datasets
+    - the selected dataset header description
+    - the service parameters form
   - a button that will trigger the "Forecast" service in synchronous mode
 
 Create a new directory structure for **`webapp\view\forecast`** either using the "File" menu or using the right click menu.
