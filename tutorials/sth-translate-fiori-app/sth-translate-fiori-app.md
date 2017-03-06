@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, topic>sap-translation-hub, products>sap-cloud-platfo
 
 ## Details
 ### You will learn  
-You will translate a sample Fiori app using the translation service from the *SAP Translation Hub*.
+You will translate a sample Fiori app using SAP Translation Hub.
 
 ### Time to Complete
 **10 Min**.
