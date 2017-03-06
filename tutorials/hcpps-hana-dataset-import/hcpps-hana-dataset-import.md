@@ -5,11 +5,11 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
-- **Proficiency:** Beginner
-- **Tutorials:** [Setup a HANA user account for the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+  - **Proficiency:** Beginner
+  - **Tutorials:** [Setup a HANA user account for the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
 
 ## Next Steps
-- [Expose your predictive demo datasets as HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
+  - [Expose your predictive demo datasets as HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
 
 ## Details
 ### You will learn
@@ -31,8 +31,8 @@ This is why we choose to have the dataset as "insert" statement files.
 Depending on your area of interest you can pick those of interest and download the files locally.
 
   - **Cash Flow**: contains historical cash flow data and date related indicators
-    - [`link`](demo.cashflow.sql.txt).
-  - **Census**: contains 14 characteristics of an individual extracted from a census dataset associated to an indicator equal to 1 when the individual earned more than fifty thousand dollars the previous year, else 0 (excerpt from the American Census Bureau database, completed in 1994 by Barry Becker, source: http://www.census.gov/).
+    - [`link`](demo.cashflow.sql.txt)
+  - **Census**: contains 14 characteristics of an individual extracted from a census dataset associated to an indicator equal to 1 when the individual earned more than fifty thousand dollars the previous year, else 0 (excerpt from the American Census Bureau database, completed in 1994 by Barry Becker, source: http://www.census.gov/)
     - [`link 1`](demo.census.sql.1.txt)
     - [`link 2`](demo.census.sql.2.txt)
     - [`link 3`](demo.census.sql.3.txt)
@@ -52,6 +52,7 @@ Open the ***SAP HANA Web-based Development Workbench*** on your trial HANA insta
 Click on the **Open SQL Console** ![open](0-opensqlconsole.png) icon or press CTRL+ALT+C.
 
 ![SAP HANA Web-based Development Workbench](02.png?)
+
 [DONE]
 [ACCORDION-END]
 
@@ -69,8 +70,9 @@ Each files may take a few seconds to process (up to a minute each sometime I not
 Right click on **Catalog**, then click on **Refresh**. A `DEMO` schema was created with the relevant tables.
 
 ![Catalog](04.png)
+
 [DONE]
 [ACCORDION-END]
 
 ## Next Steps
-- [Expose your predictive demo datasets as HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
+  - [Expose your predictive demo datasets as HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)

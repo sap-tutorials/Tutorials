@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
   - **Tutorials:** [Enable, deploy and configure the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Next Steps
-  - [Test the OData services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
+  - [Test the HANA XS OData services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
 
 ## Details
 ### You will learn
@@ -24,13 +24,19 @@ If you haven't done so yet, please install [Google Chrome](http://www.google.com
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install Google Chrome Postman)]
-Open ***Google Chrome*** and install the [Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/) now.
+[ACCORDION-BEGIN [Step 2: ](Install the Postman extension for Chrome)]
+Open ***Google Chrome*** and install the [Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/).
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Start Postman)]
+[ACCORDION-BEGIN [Step 3: ](Install the Postman Interceptor extension for Chrome)]
+Install the [Postman Interceptor extension](https://chrome.google.com/webstore/detail/postman-interceptor/aicmkgpgakddgnaphhhpliifpcfhicfo).
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Configure Postman)]
 Click on **Apps**
 
 ![Google Chrome](01.png)
@@ -43,11 +49,24 @@ Click on **Postman**
 
 ![Postman](02.png)
 
-You are all set to move to the next tutorial.
+You are almost set to move to the next tutorial.
 
 ![Postman](03.png)
+
+Enable the Interceptor by clicking on the Interceptor icon as highlighted.
+
+![Postman](04.png)
+
+Click on the "Tools" icon ![Postman](06.png), then select "Settings" from the menu.
+
+Enable the "Automatically follow redirects" option as highlighted.
+
+![Postman](05.png)
+
+Now, you can to move to the next tutorial.
+
 [DONE]
 [ACCORDION-END]
 
 ## Next Steps
-  - [Test the OData services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
+  - [Test the HANA XS OData services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)

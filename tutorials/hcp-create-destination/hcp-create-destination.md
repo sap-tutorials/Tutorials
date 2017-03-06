@@ -5,15 +5,15 @@ tags: [ products>sap-cloud-platform, topic>cloud, topic>mobile, topic>odata, tut
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
- - **Tutorials:**  This tutorial is used in several different series.  Choose the series to move backward:
-     - **Mobile Application Series**  [Sign up for an account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
-     - **SAPUI5 with Web IDE Series** [Create an empty UI5 Web IDE project](https://www.sap.com/developer/tutorials/sapui5-webide-create-project.html)
+- **Proficiency:** Beginner
+- **Tutorials:**  This tutorial is used in several different series.  Choose the series to move backward:
+ - **Mobile Application Series**  [Sign up for an account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **SAPUI5 with Web IDE Series** [Create an empty UI5 Web IDE project](https://www.sap.com/developer/tutorials/sapui5-webide-create-project.html)
 
 ## Next Steps
 - This tutorial is used in several different series.  Choose the correct series below to move forward.
-    - **Mobile Application series** [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
-    - **SAPUI5 with Web IDE Series** [Set up the `datasource` in the application](https://www.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
+- **Mobile Application series** [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+- **SAPUI5 with Web IDE Series** [Set up the `datasource` in the application](https://www.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
 
 ## Details
 
@@ -29,38 +29,67 @@ Northwind comes in several versions.  The tutorials currently use either V2 (<ht
 
 ---
 
-1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
 
-    ![SAP Cloud Platform log in page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_1.png)
+[ACCORDION-BEGIN [Step 1: ](Log into SAP Cloud Platform)]
 
-2. Select the **Destinations** tab on the left side, and then click on **New Destination** to open a new destination configuration form.
+Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
 
-    ![Web IDE Destination tab](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_2.png)
+![SAP Cloud Platform log in page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_1.png)
 
-3. Enter/confirm all fields in the Destination configuration section with the information below.
+[DONE]
+[ACCORDION-END]
 
-    Field Name     | Value
-    :------------- | :-------------
-    Name           | `Northwind`
-    Type           | `HTTP`
-    Description    | `Northwind OData Service`
-    URL            | `http://services.odata.org`
-    Proxy Type     | `Internet`
-    Authentication | `NoAuthentication`
+[ACCORDION-BEGIN [Step 2: ](Create new destination)]
 
-    > Do **not** use the entire path for the URL.  The URL should only be `http://services.odata.org`
+Select the **Destinations** tab on the left side, and then click on **New Destination** to open a new destination configuration form.
 
-    Add three **Additional Properties** fields by clicking on the **New Property** button once for each property.
+![Web IDE Destination tab](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_2.png)
 
-    Field Name       | Value
-    :--------------- | :-------------
-    `WebIDEEnabled`  | `true`
-    `WebIDESystem`   | `Northwind_Data`
-    `WebIDEUsage`    | `odata_gen`
+[DONE]
+[ACCORDION-END]
 
-    ![Completed SAP Cloud Platform destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_3.png)
+[ACCORDION-BEGIN [Step 3: ](Confirm data)]
 
-4. Click **Save**, and that's it.  You are ready for the next step in your tutorial.
+Enter/confirm all fields in the Destination configuration section with the information below.
+
+Field Name     | Value
+:------------- | :-------------
+Name           | `Northwind`
+Type           | `HTTP`
+Description    | `Northwind OData Service`
+URL            | `http://services.odata.org`
+Proxy Type     | `Internet`
+Authentication | `NoAuthentication`
+
+> Do **not** use the entire path for the URL.  The URL should only be `http://services.odata.org`
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Add properties)]
+
+
+Add three **Additional Properties** fields by clicking on the **New Property** button once for each property.
+
+Field Name       | Value
+:--------------- | :-------------
+`WebIDEEnabled`  | `true`
+`WebIDESystem`   | `Northwind_Data`
+`WebIDEUsage`    | `odata_gen`
+
+![Completed SAP Cloud Platform destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_3.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Save your files)]
+
+Click **Save**, and that's it.  You are ready for the next step in your tutorial.
+
+[DONE]
+[ACCORDION-END]
+
 
 ## Next Steps
 Several of the tutorial series create a Northwind destination.  To return to your tutorial series, pick the series from the list below:

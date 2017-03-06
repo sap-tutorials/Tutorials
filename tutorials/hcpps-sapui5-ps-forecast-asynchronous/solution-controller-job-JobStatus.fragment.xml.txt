@@ -1,0 +1,31 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
+	<form:Form editable="true" >
+		<form:title>
+			<core:Title text="Job status"/>
+		</form:title>
+		<form:layout>
+			<form:ResponsiveGridLayout/>
+		</form:layout>
+		<form:formContainers>
+			<form:FormContainer>
+				<form:formElements>
+					<form:FormElement label="Job ID">
+						<form:fields>
+							<Text text="{job_fragment>/job/ID}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Status">
+						<form:fields>
+							<Text text="{job_fragment>/job/status}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Service type">
+						<form:fields>
+							<Text text="{job_fragment>/job/type}"/>
+						</form:fields>
+					</form:FormElement>
+				</form:formElements>
+			</form:FormContainer>
+		</form:formContainers>
+	</form:Form>
+</core:FragmentDefinition>

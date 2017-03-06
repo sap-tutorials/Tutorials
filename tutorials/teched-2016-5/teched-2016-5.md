@@ -178,7 +178,7 @@ You will see a confirmation alert appear briefly in the top-right corner of the 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Deploy app on SAP Cloud Platform]
+[ACCORDION-BEGIN [Step 15: ](Deploy app on SAP Cloud Platform)]
 
 Deploying your app, is very simple.
 

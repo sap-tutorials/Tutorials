@@ -23,22 +23,16 @@ Log into the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondeman
 
 ![SAP Cloud Platform Cockpit](01.png)
 
-Click on the ***SAP Cloud Platform Developer Account*** link as highlighted on the below screenshot. By default, it ends with *trial* in fact is your account display name and can be changed using the pen icon)
+Click on the ***SAP Cloud Platform developer Account*** link as highlighted on the below screenshot. By default, it ends with *trial* in fact is your account display name and can be changed using the pen icon)
 
 ![Your Personal Developer Account](02.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Access the Persistence services)]
+[ACCORDION-BEGIN [Step 2: ](Create your HANA MDC instance)]
 
 On the left side bar, you can navigate in **Persistence** > **Databases & Schemas**.
-
-![Databases & Schemas](03.png)
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Create your HANA MDC instance)]
-You are now on the ***Databases & Schemas*** overview page.
 
 ![Databases & Schemas](03.png)
 
@@ -57,21 +51,23 @@ System User Password | `Welcome16`
 You can choose other values for theses properties. As reference them across several tutorials, you should remember the **System User Password** as your ***HANA System Account Password***.
 
 Click on **Save**
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Wait for the creation to finish)]
-It will take about 5 to 10 minutes for the creation process to complete.
+[ACCORDION-BEGIN [Step 3: ](Wait for the creation to finish)]
+It will take about 5 to 10 minutes for the creation process to complete. So, now is a good time to get a coffee refill!
 
 ![Database Events](05.png)
 
 You can refresh the page by hitting F5.
 
 Once you see the *Database started successfully* event appears in the list, you can proceed with the next step.
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Finalize your HANA MDC instance setup)]
+[ACCORDION-BEGIN [Step 4: ](Finalize your HANA MDC instance setup)]
 Once the HANA MDC instance is created, you will need to connect to the ***SAP HANA Cockpit*** at least once using the *HANA System User* in order to finalize the system account setup and add all the necessary roles.
 
 Click on **SAP HANA Cockpit**.
@@ -99,6 +95,7 @@ Then click on **Continue**
 You are in the ***SAP HANA Cockpit***.
 
 ![SAP HANA Cockpit](10.png)
+
 [DONE]
 [ACCORDION-END]
 
