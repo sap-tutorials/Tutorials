@@ -5,11 +5,11 @@ tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>ht
 ---
 
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Tutorials:** [Manually creating a data model to use in SAP Web IDE's Mock Data server](http://www.sap.com/developer/tutorials/hcp-webide-create-odata-model.html)
+- **Proficiency:** Intermediate
+- **Tutorials:** [Manually creating a data model to use in SAP Web IDE's Mock Data server](http://www.sap.com/developer/tutorials/hcp-webide-create-odata-model.html)
 
 ## Next Steps
- - [Switch your app from mock data to a live OData service](http://www.sap.com/developer/tutorials/hcp-webide-switch-live-odata.html)
+- [Switch your app from mock data to a live OData service](http://www.sap.com/developer/tutorials/hcp-webide-switch-live-odata.html)
 
 ## Details
 ### You will learn  
@@ -17,9 +17,9 @@ In the previous tutorial you created an OData entity model by hand. In this tuto
 
 The steps in this tutorial assume that you are familiar with the Web IDE menu and template wizard, and have created an OData model in the previous tutorial. If you are not familiar with Web IDE, it is suggested that you complete the following three tutorials first:
 
- - [Create a Destination on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
- - [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
- - [Deploy your mobile web app to SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+- [Create a Destination on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+- [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+- [Deploy your mobile web app to SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
 
 ### Time to Complete
 
@@ -27,112 +27,167 @@ The steps in this tutorial assume that you are familiar with the Web IDE menu an
 
 ---
 
-1. The first step is to download the `m104metadata_nav.edmx` file you created in the previous tutorial. Open Web IDE in Google Chrome and expand the **Metadata** folder.
+[ACCORDION-BEGIN [Step 1: ](Download and export file from previous tutorial)]
 
-2. Right-click on the `m104metadata_nav.edmx` file and select **Export**. This will download the file to your browser's default Downloads directory.
+The first step is to download the `m104metadata_nav.edmx` file you created in the previous tutorial. Open Web IDE in Google Chrome and expand the **Metadata** folder.
 
-3. In Web IDE, select the **File** menu and then **New > Project from Template**.
+Right-click on the `m104metadata_nav.edmx` file and select **Export**. This will download the file to your browser's default Downloads directory.
 
-    ![New project from template](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_3.png)
+[DONE]
+[ACCORDION-END]
 
-4. On the **Template Selection** page, click on the **Category** pulldown menu (where you see **Featured**) and select **SAPUI5 Mobile Application**.
+[ACCORDION-BEGIN [Step 2: ](Create new project)]
 
-    ![Template selection 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_4a.png)
+In Web IDE, select the **File** menu and then **New > Project from Template**.
 
-    When the mobile templates are displayed, select the **SAPUI5 Master Detail Kapsel Application** template, then click **Next**.
+![New project from template](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_3.png)
 
-    ![Template selection 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_4b.png)
+On the **Template Selection** page, click on the **Category** pulldown menu (where you see **Featured**) and select **SAPUI5 Mobile Application**.
+
+![Template selection 1](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_4a.png)
+
+When the mobile templates are displayed, select the **SAPUI5 Master Detail Kapsel Application** template, then click **Next**.
+
+![Template selection 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_4b.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Name file and choose connection)]
+
+On the **Basic Information** screen, enter `SalesOrder` for the Project Name and click **Next**.
+
+On the **Data Connection** screen, under **Sources** select **File System**. Then click the **Browse…** button and navigate to the `m104metadata_nav.edmx` file you downloaded, click **Open**, then click **Next**.
+
+![Data Connection screen](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_6.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Customize fields)]
+
+Fill in the Template Customization screen fields with the information below, and complete the template wizard.
+
+Field              |  Value  
+:------------------| :-----------
+Project Namespace  | `salesapp`
+
+**Master Section**
+
+Field               |  Value  
+:-------------------| :-----------
+Title               | `Sales Orders`
+OData Collection    | `SalesOrders`
+Search Placeholder  | `Search for Customer Name`
+Search Tooltip      | `Enter Customer Name`
+Search Field        | `CustomerName`
+
+**Main Data Fields**
+
+Field               |  Value
+:-------------------| :-----------
+Item Title          | `CustomerName`
+Numeric Attribute   | `TotalSum`
+Units Attribute     | `Currency`
+
+**Detail Section**
+
+Field                   |  Value
+:-----------------------| :-----------
+Title                   | `Sales Order Details`
+Additional Attribute 1  | `Status`
+Additional Attribute 2  | `Note`
 
 
-5. On the **Basic Information** screen, enter `SalesOrder` for the Project Name and click **Next**.
+**Information Section**
 
-6. On the **Data Connection** screen, under **Sources** select **File System**. Then click the **Browse…** button and navigate to the `m104metadata_nav.edmx` file you downloaded, click **Open**, then click **Next**.
-
-    ![Data Connection screen](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_6.png)
-
-7. Fill in the Template Customization screen fields with the information below, and complete the template wizard.
-
-    Field              |  Value  
-    :------------------| :-----------
-    Project Namespace  | `salesapp`
-
-    **Master Section**
-
-    Field               |  Value  
-    :-------------------| :-----------
-    Title               | `Sales Orders`
-    OData Collection    | `SalesOrders`
-    Search Placeholder  | `Search for Customer Name`
-    Search Tooltip      | `Enter Customer Name`
-    Search Field        | `CustomerName`
-
-    **Main Data Fields**
-
-    Field               |  Value
-    :-------------------| :-----------
-    Item Title          | `CustomerName`
-    Numeric Attribute   | `TotalSum`
-    Units Attribute     | `Currency`
-
-    **Detail Section**
-
-    Field                   |  Value
-    :-----------------------| :-----------
-    Title                   | `Sales Order Details`
-    Additional Attribute 1  | `Status`
-    Additional Attribute 2  | `Note`
+Field                   |  Value
+:-----------------------| :-----------
+OData Navigations       | `BusinessPartner`
+Navigation Attribute 1  | `Company`
+Navigation Attribute 2  | `EmailAddress`
+Navigation Attribute 3  | `TelephoneNumber`
 
 
-    **Information Section**
+[DONE]
+[ACCORDION-END]
 
-    Field                   |  Value
-    :-----------------------| :-----------
-    OData Navigations       | `BusinessPartner`
-    Navigation Attribute 1  | `Company`
-    Navigation Attribute 2  | `EmailAddress`
-    Navigation Attribute 3  | `TelephoneNumber`
+[ACCORDION-BEGIN [Step 5: ](Run with mock data)]
 
+When the project is generated, open the `SalesOrder` project folder, right-click on `index.html` and select **Run > Run with Mock Data**.
 
-8. When the project is generated, open the `SalesOrder` project folder, right-click on `index.html` and select **Run > Run with Mock Data**.
-
-    ![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_8.png)
+![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_8.png)
 
 
-9. The app will open (and you will see a Toast notification that it is running with Mock Data). The data shown is generated by the Mock Data server (based on the Property names and types specified in the OData model).
+The app will open (and you will see a Toast notification that it is running with Mock Data). The data shown is generated by the Mock Data server (based on the Property names and types specified in the OData model).
 
-    ![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_9.png)
+![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_9.png)
 
-10. To make the data more realistic, you can create a JSON file with predefined data. Switch back to the `SalesOrder` project, expand the **model** folder, right-click on the `metadata.xml` file and select **Edit Mock Data**.
+[DONE]
+[ACCORDION-END]
 
-    ![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_10.png)
+[ACCORDION-BEGIN [Step 6: ](Change the mock data)]
 
-11. The **Edit Mock Data** window opens where you have the ability to select the collection (`SalesOrders` or `BusinessPartners`) then Add or Delete a row of data. You can also **Generate Random Data** which will create ten of rows of data similar to what you saw when the app was running.
+To make the data more realistic, you can create a JSON file with predefined data. Switch back to the `SalesOrder` project, expand the **model** folder, right-click on the `metadata.xml` file and select **Edit Mock Data**.
 
-    ![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_11.png)
+![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_10.png)
 
-    The check box for the **Use the data above as my mock data source** sets the data in this view as the source for the data when the app is run again.
+The **Edit Mock Data** window opens where you have the ability to select the collection (`SalesOrders` or `BusinessPartners`) then Add or Delete a row of data. You can also **Generate Random Data** which will create ten of rows of data similar to what you saw when the app was running.
 
-12. To get some initial data populated in the table, select the `SalesOrders` entity set and click the **Generate Random Data** button. You can scroll right/left to view all of the columns (one for each Property in the data model).
+![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_11.png)
 
-    ![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_12.png)
+The check box for the **Use the data above as my mock data source** sets the data in this view as the source for the data when the app is run again.
 
-13. You can edit individual fields by selecting the generated text and entering your values. The most visible fields in the app are `CustomerName`, `TotalSum` and `Currency`, so just changing those will have a big effect on the appearance. To update those fields in your mock data, select the `SalesOrders` entity set, and scroll right to the column labeled `TOTALSUM (DECIMAL)`, select the cells in the column one at a time and enter your own values.
+[DONE]
+[ACCORDION-END]
 
-    Repeat this step for the `CUSTOMERNAME (STRING)` and `CURRENCY (STRING)` fields.
+[ACCORDION-BEGIN [Step 7: ](Generate random data)]
 
-    ![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_13.png)
+To get some initial data populated in the table, select the `SalesOrders` entity set and click the **Generate Random Data** button. You can scroll right/left to view all of the columns (one for each Property in the data model).
 
-14. Select the `BusinessPartners` Entity set and click the **Generate Random Data** button to generate data for that collection and click OK. Web IDE will add two files to your `SalesOrder/model` folder: `SalesOrders.json` and `BusinessPartners.json`.
+![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_12.png)
 
-    ![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_14.png)
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Edit individual fields)]
+
+You can edit individual fields by selecting the generated text and entering your values. The most visible fields in the app are `CustomerName`, `TotalSum` and `Currency`, so just changing those will have a big effect on the appearance. To update those fields in your mock data, select the `SalesOrders` entity set, and scroll right to the column labeled `TOTALSUM (DECIMAL)`, select the cells in the column one at a time and enter your own values.
+
+Repeat this step for the `CUSTOMERNAME (STRING)` and `CURRENCY (STRING)` fields.
+
+![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_13.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Generate more data)]
+
+Select the `BusinessPartners` Entity set and click the **Generate Random Data** button to generate data for that collection and click OK. Web IDE will add two files to your `SalesOrder/model` folder: `SalesOrders.json` and `BusinessPartners.json`.
+
+![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_14.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Run again with mock data)]
 
 15. Run your app again (with mock data) and you will see your updated fields displayed.
 
-    ![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_15.png)
+![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_15.png)
 
-16. If you need to edit a lot of data or if you want to import existing data for prototyping purposes you can convert the JSON files to CSV (or other formats) and edit the data in a spreadsheet program (like Microsoft Excel), then convert it back to JSON. There are a number of websites online that have JSON to CSV and CSV to JSON tools.
+[DONE]
+[ACCORDION-END]
 
-    To add the data back to your project, you can simply open and replace the content of the JSON files in your project.
+[ACCORDION-BEGIN [Step 11: ](Convert between formats for easier editing)]
+
+If you need to edit a lot of data or if you want to import existing data for prototyping purposes you can convert the JSON files to CSV (or other formats) and edit the data in a spreadsheet program (like Microsoft Excel), then convert it back to JSON. There are a number of websites online that have JSON to CSV and CSV to JSON tools.
+
+To add the data back to your project, you can simply open and replace the content of the JSON files in your project.
+
+[DONE]
+[ACCORDION-END]
+
 
 ## Next Steps
- - [Switch your app from mock data to a live OData service](http://www.sap.com/developer/tutorials/hcp-webide-switch-live-odata.html)
+- [Switch your app from mock data to a live OData service](http://www.sap.com/developer/tutorials/hcp-webide-switch-live-odata.html)
