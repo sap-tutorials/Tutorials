@@ -4,18 +4,18 @@ description: Utilize the Hybrid App Toolkit to build a downloadable hybrid app a
 tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>sapui5, tutorial>intermediate ]
 ---
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Tutorials:**
-   - [Connecting SAP Web IDE to the Hybrid App Toolkit](http://www.sap.com/developer/tutorials/hcpms-webide-hat-connection.html)
-   - Additionally, you must have completed the tutorials below in the Web IDE series.  
-     - [Create a Destination on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
-     - [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
-     - [Deploy your mobile web app to SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+- **Proficiency:** Intermediate
+- **Tutorials:**
+- [Connecting SAP Web IDE to the Hybrid App Toolkit](http://www.sap.com/developer/tutorials/hcpms-webide-hat-connection.html)
+- Additionally, you must have completed the tutorials below in the Web IDE series.  
+- [Create a Destination on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+- [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+- [Deploy your mobile web app to SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
 
 
 
 ## Next Steps
- - Continue with the SAP Web IDE series [Add labels and a new field to your app](http://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html), and return to this tutorial to redeploy your updated mobile web app as a hybrid app.
+- Continue with the SAP Web IDE series [Add labels and a new field to your app](http://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html), and return to this tutorial to redeploy your updated mobile web app as a hybrid app.
 
 ## Details
 ### You will learn  
@@ -27,55 +27,110 @@ When compiled, your Web IDE generated mobile web app will be packaged using the 
 
 ---
 
-1. In SAP Web IDE display the Console by selecting **View > Console**.
+[ACCORDION-BEGIN [Step 1: ](Open Web IDE console)]
 
-    ![open console](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/1.png)
+In SAP Web IDE, view the Console by selecting **View > Console**.
 
-2. The Console is displayed in the lower part of the window and can be resized by dragging the top of the frame up or down. The console messages will allow you to monitor the compilation process.
+![open console](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/1.png)
 
-    ![console](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/2.png)
+The Console is displayed in the lower part of the window and can be resized by dragging the top of the frame up or down. The console messages will allow you to monitor the compilation process.
 
-3. Right-click on the `northwind` project folder. Select **Deploy > Deploy to local Hybrid App Toolkit**.
+![console](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/2.png)
 
-    ![start deployment](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/3.png)
 
-4. Deployment will start. You can view the progress in the console, and when it is complete you will see the dialog box below. Click **OK** to close it.
+[DONE]
+[ACCORDION-END]
 
-    ![start deployment](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/4.png)
+[ACCORDION-BEGIN [Step 2: ](Deploy)]
 
-5. To run the hybrid app, right click on the `northwind` project folder, then select **Run > Run on > Android Emulator** (or **iOS Simulator** if you are using a Mac). You can also run it on an Android or iOS device if you prefer.
+Right-click on the `northwind` project folder. Select **Deploy > Deploy to local Hybrid App Toolkit**.
 
-    ![run on Android Emulator](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/5.png)
+![start deployment](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/3.png)
 
-6. At the prompt for the signing key, select **Test Key** and click **OK**.
+Deployment will start. You can view the progress in the console, and when it is complete you will see the dialog box below. Click **OK** to close it.
+
+![start deployment](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/4.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Run the app in the emulator)]
+
+To run the hybrid app, right click on the `northwind` project folder, then select **Run > Run on > Android Emulator** (or **iOS Simulator** if you are using a Mac). You can also run it on an Android or iOS device if you prefer.
+
+![run on Android Emulator](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/5.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Use test key)]
+
+At the prompt for the signing key, select **Test Key** and click **OK**.
 HAT will launch the emulator/simulator and load the app.
 
-    ![Local signing key](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/6.png)
+![Local signing key](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/6.png)
 
-7. The app will launch on the emulator, simulator or device, and the display the registration screen. Enter your SAP Cloud Platform Username and Password, verify that **Secure** is enabled,  then click on **Register**.
 
-    Field Name         | Value
-    :----------------- | :-------------
-    Username           |  `<your SAP Cloud Platform account without "trial" at the end>` e.g. `p12345678`
-    Password           | `<your SAP Cloud Platform account password>`
+[DONE]
+[ACCORDION-END]
 
-    ![Registration screen](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/7.png)
+[ACCORDION-BEGIN [Step 5: ](Register your app)]
 
-8. You can enter an App Passcode if you would like. To run the app without a passcode, click **Disable Passcode**, then click on **Submit**.
+The app will launch on the emulator, simulator or device, and then display the registration screen. Enter your SAP Cloud Platform Username and Password, verify that **Secure** is enabled,  then click on **Register**.
 
-    ![Passcode screen](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/8.png)
+Field Name         | Value
+:----------------- | :-------------
+Username           |  `<your SAP Cloud Platform account without "trial" at the end>` e.g. `p12345678`
+Password           | `<your SAP Cloud Platform account password>`
 
-9. The app will go retrieve the data through SAP Cloud Platform mobile services and display the master (list) view.
+![Registration screen](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/7.png)
 
-    ![master view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/9.png)
 
-10. Click on one of the items in the list to view the details page, and scroll down to view the rest of the details. Depending on far you have gotten in the Web IDE tutorials, your screen may look different that shown here.
+[DONE]
+[ACCORDION-END]
 
-    ![detail view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/10.png)
+[ACCORDION-BEGIN [Step 6: ](Choose password)]
 
-11. If you have implemented a [second tab](http://www.sap.com/developer/tutorials/hcp-webide-add-tab.html) in your app, click it to see the data there.
+You can enter an App Passcode if you would like. To run the app without a passcode, click **Disable Passcode**, then click on **Submit**.
 
-    ![detail view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/11.png)
+![Passcode screen](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/8.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](View data)]
+
+The app will retrieve the data through SAP Cloud Platform mobile services and display the master (list) view.
+
+![master view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/9.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](View details)]
+
+Click on one of the items in the list to view the details page, and scroll down to view the rest of the details. Depending on far you have gotten in the Web IDE tutorials, your screen may look different that shown here.
+
+![detail view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/10.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](View data on other tab)]
+
+If you have implemented a [second tab](http://www.sap.com/developer/tutorials/hcp-webide-add-tab.html) in your app, click it to see the data there.
+
+![detail view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/11.png)
+
+
+[DONE]
+[ACCORDION-END]
+
 
 ## Next Steps
- - Continue with the SAP Web IDE series [Add labels and a new field to your app](http://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html), and return to this tutorial to redeploy your updated mobile web app as a hybrid app.
+- Continue with the SAP Web IDE series [Add labels and a new field to your app](http://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html), and return to this tutorial to redeploy your updated mobile web app as a hybrid app.
