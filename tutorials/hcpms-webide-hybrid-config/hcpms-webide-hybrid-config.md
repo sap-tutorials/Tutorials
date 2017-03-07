@@ -72,7 +72,7 @@ In the **Platforms** section, select the options applicable for your development
 
 [ACCORDION-BEGIN [Step 5: ](Configure plug-ins)]
 
-In the **Plugins** section, you specify the plugins the application will use.  For this exercise, do not check any of the standard Cordova plugins. Click the **Kapsel** tab, and select **Logon Manager**.
+In the **Plugins** section, you specify the plugins the application will use.  For this exercise, do not check any of the standard Cordova plugins. Click the **Kapsel** tab, and select **Logon Manager**.
 
 After selecting Logon Manager, the plugins section will update to allow you to select the type of server the app will connect to. Click the radio button next to **SAP Cloud Platform mobile services** and ensure your **HCPms Host** URL is correct.
 
