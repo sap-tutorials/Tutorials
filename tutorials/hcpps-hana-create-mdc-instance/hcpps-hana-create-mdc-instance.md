@@ -67,8 +67,20 @@ Once you see the *Database started successfully* event appears in the list, you 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Finalize your HANA MDC instance setup)]
-Once the HANA MDC instance is created, you will need to connect to the ***SAP HANA Cockpit*** at least once using the *HANA System User* in order to finalize the system account setup and add all the necessary roles.
+[ACCORDION-BEGIN [Step 4: ](Restart the database)]
+Now that we have our HANA MDC instance, we will simply restart it to clear some cache and free up some resources.
+
+Click on **Stop**.
+
+Once the database is stopped, Click on **Start**.
+
+![Trial Database Overview](06.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Finalize your HANA MDC instance setup)]
+Now, you will need to connect to the ***SAP HANA Cockpit*** at least once using the *HANA System User* in order to finalize the system account setup and add all the necessary roles.
 
 Click on **SAP HANA Cockpit**.
 
