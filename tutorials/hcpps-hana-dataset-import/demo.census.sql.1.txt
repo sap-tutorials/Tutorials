@@ -1,5 +1,7 @@
 CREATE SCHEMA "DEMO";
 
+SET SCHEMA "DEMO";
+
 DROP TABLE "DEMO"."Census";
 
 CREATE COLUMN TABLE "DEMO"."Census" ("id" BIGINT CS_FIXED NOT NULL , "age" TINYINT CS_INT, "workclass" NVARCHAR(50), "fnlwgt" INTEGER CS_INT, "education" NVARCHAR(50), "education_num" TINYINT CS_INT, "marital_status" NVARCHAR(50), "occupation" NVARCHAR(50), "relationship" NVARCHAR(50), "race" NVARCHAR(50), "sex" NVARCHAR(10), "capital_gain" BIGINT CS_FIXED, "capital_loss" BIGINT CS_FIXED, "hours_per_week" TINYINT CS_INT, "native_country" NVARCHAR(50), "class" SMALLINT CS_INT, PRIMARY KEY ("id"));
