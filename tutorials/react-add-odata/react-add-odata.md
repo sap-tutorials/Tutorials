@@ -24,7 +24,7 @@ In this tutorial series, we will explore another technology for Single Page Appl
 #### REACT tutorial series
 **Step 6**: Convert the React components to pull data from a web based [OData reference](http://www.odata.org/odata-services/) service.  The data source is called `Northwind`, and appears under the `ODAta v3` tab.  
 
-**NOTE** If you have not yet set up the Northwind destination in the SAP Cloud Platform cockipt, you must do that first.  Follow the steps below, in the *Warning* dialog box, to make sure this is set up correctly.
+**NOTE** If you have not yet set up the Northwind destination in the SAP Cloud Platform cockpit, you must do that first.  Follow the steps below, in the *Warning* dialog box, to make sure this is set up correctly.
 
 The steps for this tutorial are:
 
@@ -149,9 +149,9 @@ The steps for this tutorial are:
 
 #### Using SAP Cloud Platform Destinations
 
-The sample application uses the [SAP Cloud Platform destinations](https://help.hana.ondemand.com/help/frameset.htm?e4f1d97cbb571014a247d10f9f9a685d.html) to access the sample data.  
+The sample application uses the [SAP Cloud Platform (HCP) destinations](https://help.hana.ondemand.com/help/frameset.htm?e4f1d97cbb571014a247d10f9f9a685d.html) to access the sample data.  
 
-We do this using the `neo-app.json` file.  This is the [Application Descriptor File](https://help.hana.ondemand.com/help/frameset.htm?aed1ffa3f3e741b3a4573c9e475aa2a4.html), and can be used to configure your application running inside SAP Cloud Platform.
+We do this using the `neo-app.json` file.  This is the [Application Descriptor File](https://help.hana.ondemand.com/help/frameset.htm?aed1ffa3f3e741b3a4573c9e475aa2a4.html), and can be used to configure your application running inside HCP.
 
 **Why doesn't the sample application just connect directly to the OData test service?**
 

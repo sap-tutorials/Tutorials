@@ -80,14 +80,14 @@ The file presents daily measures of cash flows from January 2, 1998 to September
 
 Variable | Description | Example of values
 --------------|--------------|--------------
-Date | Day, month and year of the readings | A date in the format yyyy-mm-dd such as 1998-01-02
+Date | Day, month and year of the readings | A date in the format `yyyy-mm-dd` such as 1998-01-02
 Cash | Cash flow | A numerical value with n decimals
-BeforeLastMonday <br/> LastMonday <br/> BeforeLastTuesday <br/> LastTuesday <br/> BeforeLastWednesday <br/> LastWednesday <br/> BeforeLastThursday <br/> LastThursday <br/> BeforeLastFriday <br/> LastFriday | Boolean variables that indicates if the information is true or false | 1 if the information is true.
-Last5WDays <br/> Last4WDays | Boolean variables that indicate if the date is in the 5 or 4 last working days of the month | 1 if the information is true.
-LastWMonth <br/> BeforeLastWMonth | Boolean variables that indicates if the information is true or false | 1 if the information is true.
-WorkingDaysIndices <br/> ReverseWorkingDaysIndices | Indices or reverse indices of the working days | An integer value
-MondayMonthInd <br/> TuesdayMonthInd <br/> WednesdayMonthInd <br/> ThursdayMonthInd <br/> FridayMonthInd | Indices of the week days in the month | An integer value
-Last5WDaysInd <br/> Last4WDaysInd | Indices of the 5 or 4 last working days of the month | An integer value
+`BeforeLastMonday` <br/> `LastMonday` <br/> `BeforeLastTuesday` <br/> `LastTuesday` <br/> `BeforeLastWednesday` <br/> `LastWednesday` <br/> `BeforeLastThursday` <br/> `LastThursday` <br/> `BeforeLastFriday` <br/> `LastFriday` | Boolean variables that indicate if the information is true or false | 1 if the information is true.
+`Last5WDays` <br/> `Last4WDays` | Boolean variables that indicate if the date is in the 5 or 4 last working days of the month | 1 if the information is true.
+`LastWMonth` <br/> `BeforeLastWMonth` | Boolean variables that indicate if the information is true or false | 1 if the information is true.
+`WorkingDaysIndices` <br/> `ReverseWorkingDaysIndices` | Indices or reverse indices of the working days | An integer value
+`MondayMonthInd` <br/> `TuesdayMonthInd` <br/> `WednesdayMonthInd` <br/> `ThursdayMonthInd` <br/> `FridayMonthInd` | Indices of the week days in the month | An integer value
+`Last5WDaysInd` <br/> `Last4WDaysInd` | Indices of the 5 or 4 last working days of the month | An integer value
 
 [DONE]
 [ACCORDION-END]

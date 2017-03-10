@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition ]
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html) 
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Disclaimer
 SAP HANA, express edition (HXE) is officially supported on SLES and RHEL. SAP Community members have been successful in running HXE on other Linux operating systems that are not formally supported by SAP, such as Ubuntu, openSUSE and Fedora. SAP is not committing to resolving any issues that may arise from running HXE on these platforms.
@@ -82,7 +82,7 @@ The system ID you want to use. As you will probably use the tutorials on the man
 
  ![Master Password](6.png)
 
- > If you are installing the Applications package, this password is also used for the XSA_ADMIN, XSA_DEV, and XSA_SHINE users.
+ > If you are installing the Applications package, this password is also used for the `XSA_ADMIN`, `XSA_DEV`, and `XSA_SHINE` users.
 
  Hit **Enter**. The best is about to come.
 
@@ -121,7 +121,7 @@ Finally, the command-line Lifecycle Management program can check the installatio
 
 [ACCORDION-BEGIN [Step 5: ](Reset the resources for your Virtual Machine)]
 
-Switch to the `<sid>adm` user. If your System ID is `HXE`, the user will be `hxeadm`. Stop the database using program `HDB` from the adminsitrator´s home directory:
+Switch to the `<sid>adm` user. If your System ID is `HXE`, the user will be `hxeadm`. Stop the database using program `HDB` from the administrator´s home directory:
 
 ```
  su hxeadm
@@ -156,7 +156,7 @@ Remember to set you hosts file in your local computer with the pair <<external I
 
 ![hosts file](9.png)
 
-Where the 104.109.XXX.XXX stands for the external IP and the `ubuntu-1604-lts` value stands for the name of the host that you have set up in the server.
+Where the  `104.109.XXX.XXX` stands for the external IP and the `ubuntu-1604-lts` value stands for the name of the host that you have set up in the server.
 
 Enjoy your HANA Express Edition Instance!
 
