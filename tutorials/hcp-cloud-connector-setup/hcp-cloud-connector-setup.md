@@ -148,7 +148,7 @@ The main page of the cloud connector administration UI will appear. If the conne
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Configure on-premises resources)]
+[ACCORDION-BEGIN [Step 12: ](Configure on-premise resources)]
 
 Now that you have connected the cloud connector to your cloud account, you still need to configure the on-premise resources that will be made accessible to the applications running in your cloud account. By default, **none** of the on-premise systems and resources are available after the installation of the cloud connector.
 
@@ -186,7 +186,7 @@ For more information on how to configure HTTP or RFC resources, see [Configure H
 [ACCORDION-END]
 
 ### Notes
-This tutorial has described the minimum steps required to install the cloud connector. For production use of the cloud connector, you should also follow the [recommendations regarding secure setup](https://help.hana.ondemand.com/help/frameset.htm?e7ea82a4bb571014a4ceb61cb7e3d31f.html) in the online documentation, and read the [cloud connector operator's guide](https://help.hana.ondemand.com/help/frameset.htm?1e862dd6985a48ca9f15ffc8342838c4.html).
+This tutorial has described the minimum steps required to install the cloud connector. For productive use of the cloud connector, you should also follow the [recommendations regarding secure setup](https://help.hana.ondemand.com/help/frameset.htm?e7ea82a4bb571014a4ceb61cb7e3d31f.html) in the online documentation, and read the [cloud connector operator's guide](https://help.hana.ondemand.com/help/frameset.htm?1e862dd6985a48ca9f15ffc8342838c4.html).
 
 
 ### Optional
