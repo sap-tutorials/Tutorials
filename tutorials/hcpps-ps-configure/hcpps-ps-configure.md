@@ -1,19 +1,22 @@
 ---
 title: SAP Cloud Platform predictive services, Enable, deploy and configure the SAP Cloud Platform predictive services
 description: Enable, deploy and configure the SAP Cloud Platform predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-for-predictive-service]
 ---
 
 ## Prerequisites
-  - **Proficiency:** Beginner
-  - **Tutorials:** [Expose your predictive demo dataset as a HANA XS OData service](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
+- **Proficiency:** Beginner
+- **Tutorials:** [Expose your predictive demo dataset as a HANA XS OData service](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
 
 ## Next Steps
-  - [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
+- If you are running on the SAP Cloud Platform trial edition, you should continue with:
+  [How to update the database pool configuration of the SAP Cloud Platform predictive services](https://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
+- else with:
+  [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
 
 ## Details
 ### You will learn
-  - How to enable, deploy and configure the SAP Cloud Platform predictive services for your SAP Cloud Platform developer Account
+- How to enable, deploy and configure the SAP Cloud Platform predictive services for your SAP Cloud Platform developer Account
 
 ### Time to Complete
   **10 minutes**
@@ -176,4 +179,7 @@ Status is green! Congrats, you have configured the SAP Cloud Platform predictive
 [ACCORDION-END]
 
 ## Next Steps
-  - [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
+- If you are running on the SAP Cloud Platform trial edition, you should continue with:
+  [How to update the database pool configuration of the SAP Cloud Platform predictive services](https://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
+- else with:
+  [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
