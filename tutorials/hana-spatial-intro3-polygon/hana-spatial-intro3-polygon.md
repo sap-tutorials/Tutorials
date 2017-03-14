@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 You will continue learning basics of spatial processing now with ___polygons___ (also known as ___surfaces___) data types.
 
 ### Time to Complete
-**5 Min**
+**5 Min**.
 
 ---
 
@@ -60,7 +60,7 @@ SELECT NEW ST_Polygon('Polygon ((0 0, 4 0, 0 3, 0 0))').ST_Area() FROM dummy;
 
 Please note the double round brackets, as this polygon consists of only an external ring.
 
-This statement calculates the area of right triangle (also known as 'right-angled triangle'), with catheti (also known as legs) having lengths of 3 and 4. Obviously the area is half of 3*4 and equals 6.
+This statement calculates the area of right triangle (also known as 'right-angled triangle'), with `catheti` (also known as legs) having lengths of 3 and 4. Obviously the area is half of 3*4 and equals 6.
 
 ![Area of the polygon](spatial0302.jpg)
 
