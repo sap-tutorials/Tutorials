@@ -96,7 +96,7 @@ The network and subnet sections can use the default settings.  When you are read
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Configure VM)]
+[ACCORDION-BEGIN [Step 8: ](Choose VM)]
 
 Choose the virtual machine (VM) size you want to use. Larger virtual machines can handle more data, and process faster, but cost more money. (The cost per hour on the screen is updated based on your selection.)
 
