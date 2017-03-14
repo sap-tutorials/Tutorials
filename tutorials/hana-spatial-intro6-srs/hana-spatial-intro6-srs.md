@@ -88,6 +88,7 @@ More spatial reference systems can be manually created or loaded into the SAP HA
 
 ### Optional
 - Read SAP HANA Spatial Reference for more details at https://help.sap.com/hana_platform
+- Read how to turn shape file into ASCII art map at https://blogs.sap.com/2017/02/13/ascii-art-map-of-the-world-using-sap-hana-geospatial-processing/
 
 ## Next Steps
 - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or search in the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

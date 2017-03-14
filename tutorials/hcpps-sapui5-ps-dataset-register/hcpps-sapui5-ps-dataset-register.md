@@ -1,200 +1,280 @@
 ---
-title: SAP Cloud Platform predictive services, Register a "Data Set" HCP predictive service from a SAPUI5 application
-description: You will extend your application with the "Data Set" HCP predictive service
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, topic>sapui5 ]
+title: SAP Cloud Platform predictive services, Implement the "Register Dataset" SAP Cloud Platform predictive services in your SAPUI5 application
+description: You will extend your application with the "Register Dataset" SAP Cloud Platform predictive service
+tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Visualize your predictive demo data set in a SAPUI5 application using an  OData service](http://www.sap.com/developer/tutorials/hcpps-sapui5-odata.html)
+  - **Tutorials:** [Visualize your predictive demo datasets in a SAPUI5 application using an HANA XS OData service](http://www.sap.com/developer/tutorials/hcpps-sapui5-odata.html)
 
 ## Next Steps
-  - [Manage your "Data Set" in the HCP predictive service from a SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
+  - [Manage the registered "Dataset" using SAP Cloud Platform predictive services in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
 
 ## Details
 ### You will learn
-  - How to implement the  "Data Set" HCP predictive service in a SAPUI5 application
+  - How to add a SAPUI5 controller to interact with the "Register Dataset" SAP Cloud Platform predictive service in your SAPUI5 application
+  - How to add a SAPUI5 view to display the output of the "Register Dataset" SAP Cloud Platform predictive service call
+  - How to extend the default view and the newly created view
 
 ### Time to Complete
   **10 minutes**
 
----
+[ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
-1. Log into the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
+Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
 
-    Click on your ***HCP Account*** identifier (which ends with *trial*) as highlighted on the below screenshot.
+Click on your ***SAP Cloud Platform Account Name*** as highlighted on the below screenshot.
 
-    ![SAP Cloud Platform Cockpit](1.png)
+![SAP HANA Cloud Platform Cockpit](01.png)
 
-1. On the left side bar, you can navigate in **Applications** > **HTML5 Applications**.
+On the left side bar, you can navigate in **Services**, then using the search box enter `Web IDE`.
 
-    ![HTML5 Applications](2.png)
+![Web IDE](02.png)
 
-1. Click on the **Edit Application** ![HTML5 Applications](3-1.png) icon for the `hcppredictiveservicesdemo` application.
+Click on the tile, then click on **Open SAP Web IDE**.
 
-    ![HTML5 Applications](3.png)
+![Web IDE](03.png)
 
-1. This will open the ***SAP Web IDE*** where you have previously created the `hcppredictiveservicesdemo` application using the project template.
+You will get access to the **SAP Web IDE** main page:
 
-    ![HTML5 Applications](4.png)
+![Web IDE](04.png)
 
-1. Create a new file called `DatasetRegister.view.xml` in the `hcppredictiveservicesdemo\webapp\view\dataset` and add the following content.
+This will open the ***SAP Web IDE*** where you have previously created the `hcppredictiveservicesdemo` application using the project template.
 
-    The view displays a form where the user can select the HANA schema and table to be used to register the dataset.
-    Once registered, it will display the dataset description.
+![HTML5 Applications](04.png)
 
-    ```xml
-    <mvc:View controllerName="demo.controller.dataset.DatasetRegister"
-      xmlns:html="http://www.w3.org/1999/xhtml"
-      xmlns:mvc="sap.ui.core.mvc"
-      xmlns="sap.m"
-      xmlns:form="sap.ui.layout.form"
-      xmlns:table="sap.ui.table"
-      xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-      <Panel expandable="true" expanded="false" headerText="Register a Data Set in the SAP Cloud Platform predictive services" width="auto"
-        class="sapUiResponsiveMargin">
-        <form:SimpleForm editable="true" layout="ResponsiveGridLayout" class="editableForm">
-          <form:content>
-            <Label text="HANA Schema" labelFor="idInputHANASchema"/>
-            <Input id="idInputHANASchema" width="200px" value="DEMO"/>
-            <Label text="HANA Table" labelFor="idInputHANATable"/>
-            <Input id="idInputHANATable" width="200px" value="TIME_SERIES"/>
-            <Button text="Register Description" type="Default" press="onDataSetRegister"/>
-          </form:content>
-        </form:SimpleForm>
-        <Panel expandable="false" expanded="true" visible="{= typeof ${/dataSetData} !== 'undefined' &amp;&amp; ${/function} === 'DatasetRegister'}">
-          <form:SimpleForm editable="false" layout="ResponsiveGridLayout" class="editableForm">
-            <form:content>
-              <Label text="Identifier"></Label>
-              <Text text="{/dataSetData/ID}"/>
-              <Label text="Name"></Label>
-              <Text text="{/dataSetData/name}"/>
-              <Label text="Number Of Rows"></Label>
-              <Text text="{/dataSetData/numberOfRows}"/>
-              <Label text="Number Of Columns"></Label>
-              <Text text="{/dataSetData/numberOfColumns}"/>
-            </form:content>
-          </form:SimpleForm>
-          <table:Table rows="{/dataSetData/variables}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5" width="100%">
-            <table:columns>
-              <table:Column>
-                <Label text="Position"/>
-                <table:template>
-                  <Text text="{position}"/>
-                </table:template>
-              </table:Column>
-              <table:Column>
-                <Label text="Name"/>
-                <table:template>
-                  <Text text="{name}"/>
-                </table:template>
-              </table:Column>
-              <table:Column>
-                <Label text="Storage"/>
-                <table:template>
-                  <Text text="{storage}"/>
-                </table:template>
-              </table:Column>
-              <table:Column>
-                <Label text="Value Type"/>
-                <table:template>
-                  <Text text="{value}"/>
-                </table:template>
-              </table:Column>
-            </table:columns>
-          </table:Table>
-        </Panel>
-      </Panel>
-    </mvc:View>
-    ```
+[DONE]
+[ACCORDION-END]
 
-    The view defines a form where the user can enter the name of the HANA schema and table to be used in the HCP predictive service data set registration process. It also define a table where the result is displayed.
+[ACCORDION-BEGIN [Step 2: ](Create a new controller)]
 
-1. Create a file named the `DatasetRegister.controller.js` file in the `hcppredictiveservicesdemo\webapp\controller\dataset` directory and add the following code.
+The controller will contain a function where:
 
-    The controller includes the functions used to process the 'Press' events on the controls added in the view and process the `AJAX` calls to the SAP Cloud Platform predictive services.
+  - we process the call to the "Register Dataset" SAP Cloud Platform predictive services and return the dataset identifier along with the dataset description.
 
-    ```javascript
-    sap.ui.define([
-      "sap/ui/core/mvc/Controller",
-      "sap/m/MessageToast"
-    ], function(Controller, MessageToast) {
-      "use strict";
+Create a new directory structure for **`webapp\controller\dataset`** either using the "File" menu or using the right click menu.
 
-      return Controller.extend("demo.controller.dataset.DatasetRegister", {
-        onDataSetRegister: function() {
-          // set the busy indicator to avoid multi clicks
-          var oBusyIndicator = new sap.m.BusyDialog();
-          oBusyIndicator.open();
+Create a new file **`register.controller.js`** in `webapp\controller\dataset` either using the "File" menu or using the right click menu.
 
-          // get the service parameters value
-          var sHANASchema = this.getView().byId("idInputHANASchema").getValue();
-          var sHANATable = this.getView().byId("idInputHANATable").getValue();
-          // define the service parameters
-          var param = {
-            hanaURL: sHANASchema + "/" + sHANATable
-          };
-          // call the service and define call back methods
-          $.ajax({
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-            url: "/HCPps/api/analytics/dataset/sync",
-            type: "POST",
-            data: JSON.stringify(param),
-            dataType: "json",
-            async: false,
-            success: function(data) {
-              try {
-                //Save data set description data in the model
-                sap.ui.getCore().getModel().setProperty("/dataSetData", data);
-                sap.ui.getCore().getModel().setProperty("/function", "DatasetRegister");
-                oBusyIndicator.close();
-              } catch (err) {
-                MessageToast.show("Caught - onDataSetRegister[ajax success] :" + err.message);
-              }
-              oBusyIndicator.close();
-            },
-            error: function(request, status, error) {
-              MessageToast.show("Caught - onDataSetRegister[ajax error] :" + request.responseText);
-              oBusyIndicator.close();
-            }
-          });
-        }
-      });
-    });
-    ```
+Open the `webapp\controller\dataset\register.controller.js` file and add the following code:
 
-1. Edit the `demo.view.xml` file located in the `hcppredictiveservicesdemo\webapp\view` and replace the existing code by the following one:
+```js
+sap.ui.define([
+	"sap/ui/core/mvc/Controller",
+	"sap/m/MessageToast"
+], function(Controller, MessageToast) {
+	"use strict";
 
-    Here we simply extend the main view.
+	return Controller.extend("sapui5demo.controller.dataset.register", {
+		onInit: function() {
+			if (typeof sap.ui.getCore().getModel() === 'undefined') {
+				this.getView().setModel(new sap.ui.model.json.JSONModel(), "dataset_register");
+			}
+		},
+		register: function(oEvent) {
+			// set the busy indicator to avoid multi clicks
+			var oBusyIndicator = new sap.m.BusyDialog();
+			oBusyIndicator.open();
 
-    ```xml
-    <mvc:View controllerName="demo.controller.demo"
-      xmlns:html="http://www.w3.org/1999/xhtml"
-      xmlns:mvc="sap.ui.core.mvc"
-      xmlns="sap.m">
-      <App>
-        <pages>
-          <Page title="Developing with HCPps and SAPUI5">
-            <content>
-              <mvc:XMLView viewName="demo.view.dataset.DatasetRegister"/>
-              <mvc:XMLView viewName="demo.view.odata.ODataDisplay"/>
-            </content>
-          </Page>
-        </pages>
-      </App>
-    </mvc:View>
-    ```
+			var oList = this.getView().byId(oEvent.getSource().getCustomData()[0].getValue());
+			// define the service parameters
+			var param = {
+				hanaURL: oList.getSelectedItem().getKey()
+			};
 
-1. You can save all modified files by pressing `CTRL+SHIFT+S`. Then, click on the **Run** icon ![Run Applications](0-run.png) or press `ALT+F5`.
+			// get the current view
+			var oView = this.getView();
 
-    Click on **Register Description**
+			// get the model
+			var oModel = oView.getModel("dataset_register");
 
-    Et voilà!
+			// call the service and define call back methods
+			$.ajax({
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+				url: "/HCPps/api/analytics/dataset/sync",
+				type: "POST",
+				data: JSON.stringify(param),
+				dataType: "json",
+				async: false,
+				success: function(data) {
+					try {
+						//Save data set description data in the model
+						oModel.setProperty("/dataset", data);
+						oBusyIndicator.close();
+					} catch (err) {
+						MessageToast.show("Caught - dataset register[ajax success] :" + err.message);
+					}
+					oBusyIndicator.close();
+				},
+				error: function(request, status, error) {
+					MessageToast.show("Caught - dataset register[ajax error] :" + request.responseText);
+					oBusyIndicator.close();
+				}
+			});
+		}
+	});
+});
+```
 
-    ![TimeSeries Demo Applications](8.png)
+Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Create a new view)]
+
+The view will contain:
+
+  - a select list with the list of dataset (built manually)
+  - a button that will trigger the "Register Dataset" service
+  - a table with the returned data
+
+> **Note:** the reason we use here a static select list is to avoid user errors.
+This list can be dynamically generated using an additional HANA XS OData service, that will select the proper tables from the HANA database.
+
+-
+
+Create a new directory structure for **`webapp\view\dataset`** either using the "File" menu or using the right click menu.
+
+Create a new file **`register.view.xml`** in `webapp\view\dataset` either using the "File" menu or using the right click menu.
+
+Open the `webapp\view\dataset\register.view.xml` file and add the following code:
+
+```xml
+<mvc:View controllerName="sapui5demo.controller.dataset.register" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<form:SimpleForm title="Please select a dataset from the list then press Register">
+		<FlexBox>
+			<InputListItem label="Datasets">
+				<Select id="idSelectDataset">
+					<core:Item key="DEMO/CashFlow" text="Cash Flow (DEMO/CashFlow)"/>
+					<core:Item key="DEMO/Census" text="Census (DEMO/Census)"/>
+					<core:Item key="DEMO/Transactions" text="E-Commerce transactions (DEMO/Transactions)"/>
+				</Select>
+			</InputListItem>
+		</FlexBox>
+		<FlexBox><Button text="Register dataset" type="Default" press="register" custom:input="idSelectDataset"/></FlexBox>
+	</form:SimpleForm>
+	<Panel expandable="false" expanded="true" visible="{= typeof ${dataset_register>/dataset} !== 'undefined'}">
+		<form:Form editable="false" class="isReadonly">
+			<form:title>
+				<core:Title text="Dataset Registration Details"/>
+			</form:title>
+			<form:layout>
+				<form:ResponsiveGridLayout columnsL="1" columnsM="1"/>
+			</form:layout>
+			<form:formContainers>
+				<form:FormContainer>
+					<form:formElements>
+						<form:FormElement label="Dataset ID">
+							<form:fields>
+								<Text text="{dataset_register>/dataset/ID}"/>
+							</form:fields>
+						</form:FormElement>
+						<form:FormElement label="Dataset Name">
+							<form:fields>
+								<Text text="{dataset_register>/dataset/name}"/>
+							</form:fields>
+						</form:FormElement>
+						<form:FormElement label="Number Of rows">
+							<form:fields>
+								<Text text="{dataset_register>/dataset/numberOfRows}"/>
+							</form:fields>
+						</form:FormElement>
+						<form:FormElement label="Number Of Columns">
+							<form:fields>
+								<Text text="{dataset_register>/dataset/numberOfColumns}"/>
+							</form:fields>
+						</form:FormElement>
+					</form:formElements>
+				</form:FormContainer>
+			</form:formContainers>
+		</form:Form>
+		<table:Table rows="{dataset_register>/dataset/variables}" enableBusyIndicator="true" selectionMode="None" visibleRowCount="5" width="100%">
+			<table:columns>
+				<table:Column>
+					<Label text="Position"/>
+					<table:template>
+						<Text text="{dataset_register>position}"/>
+					</table:template>
+				</table:Column>
+				<table:Column>
+					<Label text="Name"/>
+					<table:template>
+						<Text text="{dataset_register>name}"/>
+					</table:template>
+				</table:Column>
+				<table:Column>
+					<Label text="Storage"/>
+					<table:template>
+						<Text text="{dataset_register>storage}"/>
+					</table:template>
+				</table:Column>
+				<table:Column>
+					<Label text="Value Type"/>
+					<table:template>
+						<Text text="{dataset_register>value}"/>
+					</table:template>
+				</table:Column>
+			</table:columns>
+		</table:Table>
+	</Panel>
+</mvc:View>
+```
+
+Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Extend the default view)]
+
+Edit the `demo.view.xml` file located in the `webapp\view`.
+
+Inside the `<detailPages>` element add the following element:
+
+```xml
+<Page id="detail_dataset_register" title="Register your Dataset with the SAP Cloud Platform predictive services">
+  <content>
+    <mvc:XMLView viewName="sapui5demo.view.dataset.register"/>
+  </content>
+</Page>
+```
+
+Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Run the application)]
+
+Then, click on the **Run** icon ![Run Applications](0-run.png) or press `ALT+F5`.
+
+On the left panel, you should see an item labeled `Dataset Services`, click on it. Then click on `Register`
+
+Select the dataset you want to register from the list, then press the `Register Dataset` button.
+
+Et voilà!
+![Applications](05.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Solution: ](Created and modified files)]
+
+In case you are having problems when running the application, please find bellow the created and modified files:
+
+  - [`webapp\controller\dataset\register.controller.js`](solution-controller-dataset-register.controller.js.txt)
+  - [`webapp\view\dataset\register.view.xml`](solution-view-dataset-register.view.xml.txt)
+  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+
+[DONE]
+[ACCORDION-END]
 
 ## Next Steps
-  - [Manage your "Data Set" in the HCP predictive service from a SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
+  - [Manage your "Data Set" in the SAP Cloud Platform predictive service from a SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)

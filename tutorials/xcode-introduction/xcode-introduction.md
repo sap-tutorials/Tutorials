@@ -38,9 +38,9 @@ To develop applications using the SAP Cloud Platform SDK for iOS, you will need 
 
 [ACCORDION-BEGIN [Step 2: ](About Xcode)]
 
-Xcode is used to build apps for iPhone and iPad, as well as apps for Mac, Apple Watch and Apple TV. These tutorials are based on Xcode 8.1, released on October 27, 2016. Xcode 8.1 is the latest version of Apple's integrated development environment (IDE) and is completely free.
+Xcode is used to build apps for iPhone and iPad, as well as apps for Mac, Apple Watch and Apple TV. These tutorials are based on Xcode 8.1, released on October 27, 2016. Xcode 8.1 is the latest version of Apple's integrated development environment (IDE) and is completely free. If you want to code along with the tutorials, you can download Xcode from https://developer.apple.com/download/ or directly from the [Mac App Store](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12). You can use Xcode not only to build apps for iPhone and iPads, but you can use it to build apps for Mac, Apple Watch and Apple TV as well.
 
-> Note: Xcode has already been installed for you on the computers provided at SAP TechEd.
+When you download Xcode from Apple's developer website or from the Mac App Store, you will need an Apple ID. If you have used an Apple device before, it is likely that you already have an Apple ID. Otherwise you will be able to created one for free. Once you have downloaded Xcode you can double click the downloaded file to install Xcode. The installation is very simple and no input is required.
 
 Select Xcode from the Dock at the bottom of the screen. Once you have started Xcode you should see the word "Xcode" in menu bar at the top left of the screen.
 

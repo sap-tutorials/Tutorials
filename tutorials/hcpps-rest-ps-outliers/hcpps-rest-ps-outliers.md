@@ -1,7 +1,7 @@
 ---
-title: SAP Cloud Platform predictive services, Test the "Outliers" HCP predictive service from a REST client
-description: Using a REST client, you will test the "Outliers" HCP predictive service from a REST client
-tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
+title: SAP Cloud Platform predictive services, Test the "Outliers" SAP Cloud Platform predictive service from a REST client
+description: Using a REST client, you will test the "Outliers" SAP Cloud Platform predictive service from a REST client
+tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
   - **Tutorials:** [Test the "Key Influencer" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
 
 ## Next Steps
-  - [Configure a SAPUI5 application to interact with the HCP predictive](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+  - [Configure a SAPUI5 application to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
 
 ## Details
 
@@ -26,18 +26,19 @@ Therefore you can replace any occurrence of the token by the value listed above.
 >
 > Token               | Value
 ------------------- | -------------
-<code><b>&lt;HCP account name&gt;</b></code>  | on a developer trial account, it should end by `trial`
-<code><b>&lt;C4PA URL&gt;</b></code> | `http://aac4paservices<`<code><b>HCP account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
+<code><b>&lt;Account name&gt;</b></code>  | your SAP Cloud Platform account name. On a developer trial account, it should end by `trial`
+<code><b>&lt;C4PA URL&gt;</b></code> | `https://aac4paservices<`<code><b>Account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
 >
-> If you are unclear with what is your HCP account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 [ACCORDION-BEGIN [Info:](A short description of the Outliers service)]
 The Outliers service identifies the odd profiles of a dataset whose target indicator is significantly different from what is expected.
 
 This service:
- - Identifies outliers contained in a dataset with regard to a target indicator
- - Ranks the outliers to get the oddest on top
- - Provides the reasons why an identified outlier is odd
+
+  - Identifies outliers contained in a dataset with regard to a target indicator
+  - Ranks the outliers to get the oddest on top
+  - Provides the reasons why an identified outlier is odd
 
 In general, an outlier can either result from a data quality issue to correct or represent a suspicious case to investigate.
 
@@ -45,18 +46,20 @@ An observation is considered an outlier if the difference between its "predicted
 
 Reasons will list the variables whose values have the most influence in the score. For each variables, the contribution corresponding to the score is compared to its contribution for the whole population. The variables for which the contribution is the most differential are selected as the most important reason.
 
->**Note:** The target of the dataset must be either binary or continuous. Multinomial targets are not supported.
+**Note:** The target of the dataset must be either binary or continuous. Multinomial targets are not supported.
 
 To summarize, in order to execute the outliers service, you need a dataset with:
- - a target variable
- - a set of variables that will be analyzed
+
+  - a target variable
+  - a set of variables that will be analyzed
 
 Optionally, you can define the following parameters to enhance your analysis:
- - number of outliers : number of outliers to return
- - number of reasons" : number of reasons to return for each outlier
- - weight variable: column to be used to increase the importance of a row
- - skipped variables: a list of variables to skip from the analysis
- - variable description: a more details description of the dataset
+
+  - number of outliers : number of outliers to return
+  - number of reasons : number of reasons to return for each outlier
+  - weight variable: column to be used to increase the importance of a row
+  - skipped variables: a list of variables to skip from the analysis
+  - variable description: a more details description of the dataset
 
 [DONE]
 [ACCORDION-END]
@@ -69,24 +72,26 @@ The Census sample data file that you will use to follow the scenarios for Regres
 
 > **Note:** For more information about the American Census Bureau, see http://www.census.govInformation published on non-SAP site.
 
+-
+
 This file presents the data on 48,842 individual Americans, of at least 17 years of age. Each individual is characterized by 15 data items. These data, or variables, are described in the following table.
 
 Variable | Description | Example of Values
 -------------- | -------------- | --------------
-age | Age of individuals | Any numerical value greater than 17
-workclass | Employer category of individuals | Private, Self-employed-not-inc, ...
-fnlwgt | Weight variable, allowing each individual to represent a certain percentage of the population | Any numerical value, such as 0, 2341 or 205019
-education | Level of study, represented by a schooling level, or by the title of the degree earned | 11th, Bachelors
-education-num | Number of years of study, represented by a numerical value | A numerical value between 1 and 16
-marital-status | Marital status | Divorced, Never-married, ...
-occupation | Job classification | Sales, Handlers-cleaners, ...
-relationship | Position in family | Husband, Wife, ...
-race | Ethnicity |
-sex | Gender | Male, Female, ...
-capital-gain | Annual capital gains | Any numerical value
-capital-loss | Annual capital losses | Any numerical value
-native country | Country of origin| United States, France, ...
-class | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
+`age` | Age of individuals | Any numerical value greater than 17
+`workclass` | Employer category of individuals | Private, Self-employed-not-inc, ...
+`fnlwgt` | Weight variable, allowing each individual to represent a certain percentage of the population | Any numerical value, such as 0, 2341 or 205019
+`education` | Level of study, represented by a schooling level, or by the title of the degree earned | 11th, Bachelors
+`education-num` | Number of years of study, represented by a numerical value | A numerical value between 1 and 16
+`marital-status` | Marital status | Divorced, Never-married, ...
+`occupation` | Job classification | Sales, Handlers-cleaners, ...
+`relationship` | Position in family | Husband, Wife, ...
+`race` | Ethnicity |
+`sex` | Gender | Male, Female, ...
+`capital-gain` | Annual capital gains | Any numerical value
+`capital-loss` | Annual capital losses | Any numerical value
+`native country` | Country of origin| United States, France, ...
+`class` | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
 
 [DONE]
 [ACCORDION-END]  
@@ -131,8 +136,8 @@ Select the **Authorization** tab and fill in the following information:
 Field Name     | Value
 :------------- | :-------------
 Type           | `Basic Auth`
-Username       | your ***HCP Account*** login (usually the email address used to register your ***HCP*** account)
-Password*      | your ***HCP Account*** password
+Username       | your ***SAP Cloud Platform Account*** login (usually the email address used to register your ***SAP Cloud Platform*** account)
+Password*      | your ***SAP Cloud Platform Account*** password
 
 ![Postman URL](02.png)
 
@@ -164,6 +169,8 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 }
 ```
 > Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
+
+-
 
 With these settings, we will get a scoring equation as SQL for HANA to predict the probability of the class variable to be a 1, excluding the "id", "sex", "race" variables from the analysis. It will also adjust the dataset description with proper settings.
 
@@ -244,12 +251,18 @@ Here is the result:
 
 We can see that 356 records out of the 48842 are marked as outliers, where the difference between the "predicted value" and the "real value" exceeds the value of the error bar. The list is sorted by descending order to give first the records with the highest difference.
 
+You can also play with the following parameters and check the differences:
+- number of outliers : ask for 10, 50 and 100
+- number of reasons" : ask for 1,5 and 10
+- skipped variables: exclude "`marital_status`"
+- variable description: for example as an ordinal variable
+
 [DONE]
 [ACCORDION-END]    
 
 ### Optional
 For more details on the SAP Cloud Platform predictive services, you can check the following URL:
-  - `<`<code><b>C4PA URL</b></code>`>/raml/index.html?raml=../aa-cloud-services.raml`
+  - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
 
 ## Next Steps
-  - [Configure a SAPUI5 application to interact with the HCP predictive](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+  - [Configure a SAPUI5 application to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)

@@ -152,7 +152,7 @@ Your server will need the following:
 4. Follow the prompts to configure your installation.
 
     >**Note:**
-    > The master password you specify during installation is used for the `<sid>adm`,  `sapadm` OS users, the telemetry technical user, and the SYSTEM user. If you are installing the Applications package, this password is also used for the `XSA_ADMIN`, `XSA_DEV`, and `XSA_SHINE` users.
+    > The master password you specify during installation is used for the `<sid>adm`,  `sapadm` OS users, the telemetry technical user, and the SYSTEM user. If you are installing the Applications package, this password is also used for the `XSA_ADMIN`, `XSA_DEV`, and `XSA_SHINE` users. `A1a` (Upper case letters, numbers, lowercase letters) is the default policy to set master password. Special characters are NOT allowed at this time. You will need to modify your password policy to allow special characters in the password.
 
 [DONE] [ACCORDION-END]
 

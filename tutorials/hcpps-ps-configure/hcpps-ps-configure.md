@@ -1,19 +1,22 @@
 ---
 title: SAP Cloud Platform predictive services, Enable, deploy and configure the SAP Cloud Platform predictive services
 description: Enable, deploy and configure the SAP Cloud Platform predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-for-predictive-service]
 ---
 
 ## Prerequisites
-  - **Proficiency:** Beginner
-  - **Tutorials:** [Expose your predictive demo dataset as an OData service](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
+- **Proficiency:** Beginner
+- **Tutorials:** [Expose your predictive demo dataset as a HANA XS OData service](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
 
 ## Next Steps
-  - [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
+- If you are running on the SAP Cloud Platform trial edition, you should continue with:
+  [How to update the database pool configuration of the SAP Cloud Platform predictive services](https://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
+- else with:
+  [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
 
 ## Details
 ### You will learn
-  - How to enable, deploy and configure the SAP Cloud Platform predictive services for your SAP Cloud Platform Developer Account
+- How to enable, deploy and configure the SAP Cloud Platform predictive services for your SAP Cloud Platform developer Account
 
 ### Time to Complete
   **10 minutes**
@@ -24,6 +27,8 @@ Let's go back to the [***SAP Cloud Platform Cockpit***](http://account.hanatrial
 Click on your ***SAP Cloud Platform Account name*** as highlighted on the below screenshot.
 
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+
+-
 
 ![SAP Cloud Platform Cockpit](01.png)
 
@@ -40,6 +45,7 @@ Click on **Enable**
 ![Predictive Services](03.png)
 
 Once enable, you will need to deploy the ***Cloud for Predictive Analytics*** application.
+
 [DONE]
 [ACCORDION-END]
 
@@ -89,6 +95,8 @@ On the left side bar, navigate in **Configuration**, then click on **Data Source
 
 The data source binding will allow the ***Cloud for Predictive Analytics*** to locate the data to be consumed by the service and execute the ***SAP HANA Automated Predictive Library*** (`APL`) on it, but also to persist a set on internal tables.
 
+![New Binding](12.png)
+
 Click on **New Binding**
 
 ![New Binding](11.png)
@@ -99,7 +107,8 @@ Enter your ***HANA User Account*** login (`HCPPSTRIAL`) and password (`Welcome16
 
 Click on **Save**
 
-![New Binding](12.png)  
+![Binding](13.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -108,19 +117,19 @@ Now, you need to configure security settings for your ***SAP Cloud Platform Acco
 
 On the left side bar, navigate in **Security**, then click on **Roles**  
 
-![Binding](13.png)
+![Roles](14.png)
 
-Assign to your ***SAP Cloud Platform Account User*** the `C4PA-User` and `C4PA-Admin` roles using the **Assign** button as highlighted on the screenshot.
-
-Your ***SAP Cloud Platform Account User Name*** was displayed during the ***Deploy*** step.
-
-And in case you are using a trial account, make sure you don't include the "trial" at the end.
+Assign the **`C4PA-User`** and **`C4PA-Admin`** roles using the **Assign** button to your SAP Cloud Platform Account User.
 
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+>
+> Your ***SAP Cloud Platform Account User Name*** was displayed during the ***Deploy*** step.
+>
+> And in case you are using a trial account, make sure you don't include the "trial" at the end.
+
+-
 
 The `C4PA-User` will enable your user to consume the services and the `C4PA-Admin` to administer the `C4PA` application.
-
-![Roles](14.png)
 
 [DONE]
 [ACCORDION-END]
@@ -162,10 +171,15 @@ Click on the **Administration** tile
 
 ![Application](19.png)
 
-Status is green! Congrats, you have configured the SAP Cloud Platform predictive services on your SAP Cloud Platform trial account.
+Status is green! Congrats, you have configured the SAP Cloud Platform predictive services on your SAP Cloud Platform account.
 
-![Application](20.png)    
+![Application](20.png)   
+
 [DONE]
 [ACCORDION-END]
+
 ## Next Steps
-  - [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
+- If you are running on the SAP Cloud Platform trial edition, you should continue with:
+  [How to update the database pool configuration of the SAP Cloud Platform predictive services](https://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
+- else with:
+  [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)

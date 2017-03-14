@@ -23,7 +23,7 @@ In this tutorial series, we will explore another technology for Single Page Appl
 #### REACT tutorial series
 **Step 3**: Add the React JavaScript code to the web application.   This step will take the existing bootstrap template, which defined the layout of the page, and start to move that HTML in to React components.  The React components are written in JavaScript, and use JMX as a template for the HTML fragments they replace.
 
-This will inovlve the following steps:
+This will involve the following steps:
 
 1.  Add the React JavaScript libraries
 2.  Set up the React framework
@@ -72,7 +72,7 @@ Open the Web IDE, and then open your `index.html` page.
 Next, we will create a JavaScript section to define our application.  In this example, we will put the code in our `index.html` file, for convenience.  Later, we will move this over to a separate file, which is the standard convention for working with large JavaScript applications.
 
 
-1.  Add a `<script>` element to the end of your `<head>` section.  Add the folloiwng code:
+1.  Add a `<script>` element to the end of your `<head>` section.  Add the following code:
 
     >**WARNING** The placement of this script element is critical!  The script must be **after** the "import" of your React code.
 

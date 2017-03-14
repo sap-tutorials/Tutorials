@@ -1,7 +1,7 @@
 ---
-title: SAP Cloud Platform predictive services, Access your predictive demo data set using an OData services from a REST client
-description: Using a REST client, you will interact with an OData services and get access to your predictive demo data set
-tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>odata ]
+title: SAP Cloud Platform predictive services, Access your predictive demo data set using a HANA XS OData services from a REST client
+description: Using a REST client, you will interact with a HANA XS OData services and get access to your predictive demo datasets
+tags: [ tutorial>beginner, products>sap-cloud-platform, topic>odata ]
 ---
 
 ## Prerequisites
@@ -9,14 +9,14 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic
   - **Tutorials:** [Install a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
 
 ## Next Steps
-  - [Test the "Data Set" HCP predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - [Test the "Dataset" SAP Cloud Platform predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
 
 ## Details
 ### You will learn
-  - What is the URL of an OData Service deployed on your HANA HCP instance using a REST Client
-  - Get access to the service definition and the metadata of an OData Service deployed on your HANA HCP instance
-  - Get access to the data of an OData Service deployed on your HANA HCP instance
-  - Filter & sort the data from an OData Service deployed on your HANA HCP instance
+  - What is the URL of a HANA XS OData Service deployed on your HANA SAP Cloud Platform instance using a REST Client
+  - Get access to the service definition and the metadata of an HANA XS OData Service deployed on your HANA SAP Cloud Platform instance
+  - Get access to the data of a HANA XS OData Service deployed on your HANA SAP Cloud Platform instance
+  - Filter & sort the data from a HANA XS OData Service deployed on your HANA SAP Cloud Platform instance
 
   **Note:**
     - The OData version 2.0 URI convention is supported by HANA XS Classic, which is currently used on the SAP Cloud Platform
@@ -30,11 +30,11 @@ Therefore you can replace any occurrence of the token by the value listed above.
 >
 > Token               | Value
 ------------------- | -------------
-<code><b>&lt;HCP account name&gt;</b></code>  | on a developer trial account, it should end by `trial`
+<code><b>&lt;Account name&gt;</b></code>  | your SAP Cloud Platform account name. On a developer trial account, it should end by `trial`
 <code><b>&lt;HANA instance id&gt;</b></code>  | as created previously, should be `mdc`
-<code><b>&lt;HANA URL&gt;</b></code> | `http://<`<code><b>HANA instance id</b></code>`><`<code><b>HCP account name</b></code>`>.hanatrial.ondemand.com`
+<code><b>&lt;HANA URL&gt;</b></code> | `http://<`<code><b>HANA instance id</b></code>`><`<code><b>Account name</b></code>`>.hanatrial.ondemand.com`
 >
-> If you are unclear with what is your HCP account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 [ACCORDION-BEGIN [Step 1: ](Get the service definition)]
 Open ***Postman***.
@@ -79,6 +79,7 @@ It will now display the list of OData services registered in the `predictive.xso
     </workspace>
 </service>
 ```
+
 [DONE]
 [ACCORDION-END]
 
@@ -168,6 +169,7 @@ Click **Send**
     </edmx:DataServices>
 </edmx:Edmx>
 ```
+
 [DONE]
 [ACCORDION-END]
 
@@ -290,6 +292,7 @@ URL            | `<`<code><b>HANA URL</b></code>`>/public/predictive/odata/predi
 Click **Send**
 
 This will return only 21 items.
+
 [DONE]
 [ACCORDION-END]
 
@@ -306,9 +309,8 @@ Click **Send**
 [DONE]
 [ACCORDION-END]
 
-
 ### Optional
   - For more tutorials on OData, you can check [An Open Data Protocol (OData) primer for developers](http://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
 
 ## Next Steps
-  - [Test the "Data Set" HCP predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - [Test the "Dataset" SAP Cloud Platform predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
