@@ -1,7 +1,7 @@
 ---
 title: SAP Cloud Platform predictive services, Import a series of predictive demo dataset in your SAP HANA MDC instance
 description: Import a demo data to be used with the SAP Cloud Platform predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites

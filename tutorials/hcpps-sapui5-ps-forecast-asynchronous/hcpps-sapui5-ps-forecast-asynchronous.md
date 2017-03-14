@@ -1,7 +1,7 @@
 ---
 title: SAP Cloud Platform predictive services, Implement the "Forecast" SAP Cloud Platform predictive service from a SAPUI5 application using the asynchronous mode
 description: You will extend your application with the "Forecast" SAP Cloud Platform predictive service using the asynchronous mode
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, topic>sapui5 ]
+tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites

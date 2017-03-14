@@ -1,7 +1,7 @@
 ---
 title: SAP Cloud Platform predictive services, Expose your predictive demo dataset as HANA XS OData services
 description: Expose the demo data to be used with the SAP Cloud Platform predictive services as HANA XS OData services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>odata ]
+tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-hana, products>sap-cloud-platform, topic>odata ]
 ---
 
 ## Prerequisites
@@ -73,7 +73,7 @@ settings {
 }
 ```
 
->**Note**: if you didn't import all the datasets provided in the previous step, then when saving the file, it will not get activated, and the console will show you an error message. 
+>**Note**: if you didn't import all the datasets provided in the previous step, then when saving the file, it will not get activated, and the console will show you an error message.
 
 -
 

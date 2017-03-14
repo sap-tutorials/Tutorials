@@ -1,7 +1,7 @@
 ---
 title: SAP Cloud Platform predictive services, Manage your registered "Datasets" using the SAP Cloud Platform predictive service in your SAPUI5 application
 description: You will extend your application with additional "Dataset" SAP Cloud Platform predictive services
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, topic>sapui5 ]
+tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites

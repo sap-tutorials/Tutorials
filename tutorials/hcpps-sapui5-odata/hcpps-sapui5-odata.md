@@ -1,7 +1,7 @@
 ---
 title: SAP Cloud Platform predictive services, Visualize your predictive demo datasets
 description: Using the configured destination for the HANA XS OData service, you will extend your application to visualize the predictive demo datasets
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, topic>sapui5, topic>odata ]
+tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, products>sap-cloud-platform, topic>sapui5, topic>odata ]
 ---
 
 ## Prerequisites

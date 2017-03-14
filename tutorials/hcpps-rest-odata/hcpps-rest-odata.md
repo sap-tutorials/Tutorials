@@ -1,7 +1,7 @@
 ---
 title: SAP Cloud Platform predictive services, Access your predictive demo data set using a HANA XS OData services from a REST client
 description: Using a REST client, you will interact with a HANA XS OData services and get access to your predictive demo datasets
-tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>odata ]
+tags: [ tutorial>beginner, products>sap-cloud-platform, topic>odata ]
 ---
 
 ## Prerequisites
