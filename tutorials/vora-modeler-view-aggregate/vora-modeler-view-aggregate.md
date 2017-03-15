@@ -1,11 +1,11 @@
 ---
-title: SAP HANA Vora Modeler: Aggregation in SQL View
-description: SAP HANA Vora Modeler: Aggregation in SQL View
+title: SAP Vora Modeler: Aggregation in SQL View
+description: SAP Vora Modeler: Aggregation in SQL View
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA Vora Modeler: Unions in SQL View](http://www.sap.com/developer/tutorials/vora-modeler-view-union.html)
+ - **Tutorials:** [SAP Vora Modeler: Unions in SQL View](http://www.sap.com/developer/tutorials/vora-modeler-view-union.html)
 
 ## Next Steps
  - [Loading sample data from different file formats](http://www.sap.com/developer/tutorials/vora-zeppelin-load-file-formats.html)

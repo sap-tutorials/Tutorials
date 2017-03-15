@@ -1,6 +1,6 @@
 ---
 title: Working with ORC and Parquet Files using Apache Zeppelin
-description: SAP HANA Vora supports popular file types in data management namely ORC and Parquet files
+description: SAP Vora supports popular file types in data management namely ORC and Parquet files
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 ---
 
@@ -9,11 +9,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 
 
 ## Next Steps
- - [Working with Document Store Engine in SAP HANA Vora](http://www.sap.com/developer/tutorials/vora-cal-zeppelin7.html)
+ - [Working with Document Store Engine in SAP Vora](http://www.sap.com/developer/tutorials/vora-cal-zeppelin7.html)
 
 ## Details
 ### You will learn  
-You will learn how to load data from ORC and Parquet files into SAP HANA Vora engine.
+You will learn how to load data from ORC and Parquet files into SAP Vora engine.
 
 ### Time to Complete
 **5 Min**
@@ -21,7 +21,7 @@ You will learn how to load data from ORC and Parquet files into SAP HANA Vora en
 ---
 
 [ACCORDION-BEGIN [Step 1: ](ORD and Parquet file types)]
-Next up you will look into working with popular file types in data management namely ORC and Parquet files, the smallest, fastest columnar storage for Hadoop workloads. SAP HANA Vora supports both file types.
+Next up you will look into working with popular file types in data management namely ORC and Parquet files, the smallest, fastest columnar storage for Hadoop workloads. SAP Vora supports both file types.
 
 **Apache ORC** is a self-describing type-aware columnar file format designed for Hadoop workloads. It is optimized for large streaming reads, but with integrated support for finding required rows quickly.
 
@@ -69,4 +69,4 @@ Final step of this tutorial is to create a table from your ORC based file and se
 
 
 ## Next Steps
- - [Working with Document Store Engine in SAP HANA Vora](http://www.sap.com/developer/tutorials/vora-cal-zeppelin7.html)
+ - [Working with Document Store Engine in SAP Vora](http://www.sap.com/developer/tutorials/vora-cal-zeppelin7.html)

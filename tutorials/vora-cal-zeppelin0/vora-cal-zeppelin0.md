@@ -36,7 +36,7 @@ Interactive browser-based notebooks enable data engineers, data analysts and dat
 
 You will use Apache Zeppelin to create, load and explore data in the Vora platform using the various engine capabilities such as time series, document engine, graph engine, disk engine, but also access external data sources such as SAP HANA.
 
-Zeppelin makes use of the HANA Vora Spark Extension library by invoking it with the `%vora` interpreter key word in each paragraph.  
+Zeppelin makes use of the SAP Vora Spark Extension library by invoking it with the `%vora` interpreter key word in each paragraph.  
 
 To use Apache Zeppelin pre-installed on SAP Vora, developer edition, run a modern web browser of your choice and open `http://IP_ADDRESS:9099`
 ![Open Zeppelin](zep0_01.jpg)

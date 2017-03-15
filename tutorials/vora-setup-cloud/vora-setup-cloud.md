@@ -1,6 +1,6 @@
 ---
-title: How to create SAP HANA Vora developer edition in the Cloud
-description: Create SAP HANA Vora developer edition in the public cloud using SAP Cloud Appliance Library (CAL)
+title: How to create SAP Vora developer edition in the Cloud
+description: Create SAP Vora developer edition in the public cloud using SAP Cloud Appliance Library (CAL)
 tags: [  tutorial>beginner, products>sap-hana-vora, topic>big-data ]
 ---
 ## Prerequisites  
@@ -9,11 +9,11 @@ tags: [  tutorial>beginner, products>sap-hana-vora, topic>big-data ]
  - You have understanding of cloud infrastructure
 
 ## Next Steps
- - [Connect to SAP HANA Vora instance to manage it] (http://www.sap.com/developer/tutorials/vora-connect.html)
+ - [Connect to SAP Vora instance to manage it] (http://www.sap.com/developer/tutorials/vora-connect.html)
 
 ## Details
 ### You will learn  
-How to create a SAP HANA Vora instance, developer edition, in your cloud provider, using the SAP Cloud Appliance Library (CAL) system. SAP HANA Vora, developer edition, is covered by the Developer License Agreement, which you will need to accept in order to be able to get access to it.
+How to create a SAP Vora instance, developer edition, in your cloud provider, using the SAP Cloud Appliance Library (CAL) system. SAP Vora, developer edition, is covered by the Developer License Agreement, which you will need to accept in order to be able to get access to it.
 This tutorial provides step by step instructions to walk you through the initial setup process.
 
 ### Time to Complete
@@ -21,11 +21,11 @@ This tutorial provides step by step instructions to walk you through the initial
 
 ---
 
-SAP HANA Vora leverages and extends the Apache Spark execution framework to provide enriched interactive analytics on Hadoop. SAP HANA Vora is designed to add insight across large volumes of operational and contextual data taken from enterprise applications, data warehouses, data lakes and edge Internet of Things sensors.
+SAP Vora leverages and extends the Apache Spark execution framework to provide enriched interactive analytics on Hadoop. SAP Vora is designed to add insight across large volumes of operational and contextual data taken from enterprise applications, data warehouses, data lakes and edge Internet of Things sensors.
 
->SAP HANA Vora is a software working in the **distributed environment**, i.e. the one that usually consists of at least several computing nodes. But in case of the **developer edition** the SAP HANA Vora software has been modified to allow you to practice with a single node instance.
+>SAP Vora is a software working in the **distributed environment**, i.e. the one that usually consists of at least several computing nodes. But in case of the **developer edition** the SAP Vora software has been modified to allow you to practice with a single node instance.
 
-1. Currently the instance of SAP HANA Vora developer edition can be created only in [Amazon Web Services](http://aws.amazon.com/account/). Make sure you have an account there.
+1. Currently the instance of SAP Vora developer edition can be created only in [Amazon Web Services](http://aws.amazon.com/account/). Make sure you have an account there.
 
     >While SAP does not charge you for [developer editions of products](http://www.sap.com/developer/trials-downloads.html), Amazon will charge you for the usage of their infrastructure resources in the cloud, like computing, storage, network etc.
 
@@ -35,17 +35,17 @@ SAP HANA Vora leverages and extends the Apache Spark execution framework to prov
 
 3. In the CAL cockpit select **Solutions** to list all solutions available for your account. Reduce the list to **Free Solutions** and type `vora` in the search box.
 
-    Open the details of the `SAP HANA Vora, developer edition` solution. CAL's "solution" is the definition, and not yet the physical instance.
+    Open the details of the `SAP Vora, developer edition` solution. CAL's "solution" is the definition, and not yet the physical instance.
 
-    ![Locate SAP HANA Vora developer edition solution in CAL](vorasetup01.jpg)
+    ![Locate SAP Vora developer edition solution in CAL](vorasetup01.jpg)
 
-4. Review information about the `SAP HANA Vora, developer edition` solution, like descriptions, Terms and Conditions, template configuration etc.
+4. Review information about the `SAP Vora, developer edition` solution, like descriptions, Terms and Conditions, template configuration etc.
 
     Download and keep locally the **Getting Started Guide**. In this guide you will find important details, including software components and versions pre-installed, network configuration, default users and passwords etc. Make sure you review this document.
 
     Click **Create Instance**.
 
-    ![Details overview of SAP HANA Vora developer edition solution](vorasetup02.jpg)
+    ![Details overview of SAP Vora developer edition solution](vorasetup02.jpg)
 
 5. On **Create Instance** screen choose the CAL account, where the instance to be created. In the example below the CAL account is `Default` and it is linked with the AWS account in Amazon Web Services.
 
@@ -66,9 +66,9 @@ SAP HANA Vora leverages and extends the Apache Spark execution framework to prov
 
     The instance build will start. It should take about 30 minutes.
 
-    ![The creation of the SAP HANA Vora developer edition instance is started](vorasetup05.jpg)
+    ![The creation of the SAP Vora developer edition instance is started](vorasetup05.jpg)
 
-7. Once your instance of SAP HANA Vora is fully activated you can see it among your CAL's **Instances** with `Active` status.
+7. Once your instance of SAP Vora is fully activated you can see it among your CAL's **Instances** with `Active` status.
 
     ![The instance is Active in CAL](vorasetup06.jpg)
 
@@ -90,11 +90,11 @@ SAP HANA Vora leverages and extends the Apache Spark execution framework to prov
 
     Important thing is CAL's **Schedule** configuration. Using it will help you to save costs. The initial default schedule is configured during the instance creation in the CAL's Basic Mode. It can be edited.
 
-    Ideally you should remember to manually **Suspend** the instance every time you take a break in using the instance. This will stop the instance in AWS, so the cloud provider will not charge you for using resources when you do not work with SAP HANA Vora.
+    Ideally you should remember to manually **Suspend** the instance every time you take a break in using the instance. This will stop the instance in AWS, so the cloud provider will not charge you for using resources when you do not work with SAP Vora.
 
 ### Optional
- - Review the [SAP HANA Vora documentation](https://help.sap.com/hana_vora_re)
+ - Review the [SAP Vora documentation](https://help.sap.com/hana_vora_re)
  - Review the [SAP Cloud Appliance Library (CAL) documentation](https://calstatic.hana.ondemand.com/res/~1472020269624~/docEN/index.html)
 
 ## Next Steps
- - [Connect to SAP HANA Vora instance to manage it] (http://www.sap.com/developer/tutorials/vora-connect.html)
+ - [Connect to SAP Vora instance to manage it] (http://www.sap.com/developer/tutorials/vora-connect.html)
