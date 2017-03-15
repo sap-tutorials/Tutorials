@@ -1,6 +1,6 @@
 ---
-title: SAP Cloud Platform predictive services, Setup your SAP Cloud Platform trial SAP HANA MDC instance
-description: Learn how to setup a SAP HANA MDC instance to be used with the SAP Cloud Platform predictive services
+title: SAP Cloud for predictive services, Setup your trial SAP HANA MDC instance
+description: Learn how to setup a SAP HANA MDC instance to be used with the SAP Cloud for predictive services
 tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-hana, products>sap-cloud-platform  ]
 ---
 
@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>s
   - [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-  - [Setup a HANA user account for the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+  - [Setup a HANA user account](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
 
 ## Details
 ### You will learn
@@ -112,4 +112,4 @@ You are in the ***SAP HANA Cockpit***.
 [ACCORDION-END]
 
 ## Next Steps
-  - [Setup a HANA user account for the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+  - [Setup a HANA user account](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)

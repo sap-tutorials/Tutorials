@@ -1,12 +1,12 @@
 ---
-title: SAP Cloud Platform predictive services, Import a series of predictive demo dataset in your SAP HANA MDC instance
-description: Import a demo data to be used with the SAP Cloud Platform predictive services
+title: SAP Cloud for predictive services, Import a series of predictive demo dataset
+description: Import a demo data to be used with the SAP Cloud for predictive services
 tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Setup a HANA user account for the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+  - **Tutorials:** [Setup a HANA user account](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
 
 ## Next Steps
   - [Expose your predictive demo datasets as HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)

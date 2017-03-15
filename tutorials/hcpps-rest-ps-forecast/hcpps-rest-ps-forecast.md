@@ -1,19 +1,19 @@
 ---
-title: SAP Cloud Platform predictive services, Test the "Forecast" SAP Cloud Platform predictive service from a REST client
+title: SAP Cloud for predictive services, Test the "Forecast" service
 description: Using a REST client, you will test the "Forecast" SAP Cloud Platform predictive service from a REST client
 tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the "Dataset" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - **Tutorials:** [Test the "Dataset" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
 
 ## Next Steps
-  - [Test the "Key Influencer" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
+  - [Test the "Key Influencer" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
 
 ## Details
 ### You will learn
- - How to use the "Forecast" SAP Cloud Platform predictive services from a REST Client in both synchronous and asynchronous mode.
+ - How to use the "Forecast" SAP Cloud for predictive services from a REST Client in both synchronous and asynchronous mode.
  The asynchronous mode will create a job with a status that you can check the status for completion.
 
 ### Time to Complete
@@ -374,8 +374,8 @@ URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/forecast/1`
 [ACCORDION-END]
 
 ### Optional
-For more details on the SAP Cloud Platform predictive services, you can check the following URL:
+For more details on the SAP Cloud for predictive services, you can check the following URL:
   - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
 
 ## Next Steps
-  - [Test the "Key Influencer" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
+  - [Test the "Key Influencer" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)

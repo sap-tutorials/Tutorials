@@ -1,15 +1,15 @@
 ---
-title: SAP Cloud Platform predictive services, Expose your predictive demo dataset as HANA XS OData services
-description: Expose the demo data to be used with the SAP Cloud Platform predictive services as HANA XS OData services
+title: SAP Cloud for predictive services, Expose your predictive demo dataset as HANA XS OData services
+description: Expose the demo data to be used with the SAP Cloud for predictive services as HANA XS OData services
 tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-hana, products>sap-cloud-platform, topic>odata ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Import a predictive demo dataset in your SAP HANA](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
+  - **Tutorials:** [Import a series of predictive demo dataset](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Details
 ### You will learn
@@ -114,4 +114,4 @@ Later, you will be using this HANA XS OData service, so you should save the high
 [ACCORDION-END]
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)

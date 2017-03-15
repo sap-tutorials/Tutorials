@@ -1,21 +1,21 @@
 ---
-title: SAP Cloud Platform predictive services, Test the "Key Influencer" SAP Cloud Platform predictive service from a REST client
+title: SAP Cloud for predictive services, Test the "Key Influencer" service
 description: Using a REST client, you will test the "Key Influencer" SAP Cloud Platform predictive service from a REST client
 tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the "Forecast" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
+  - **Tutorials:** [Test the "Forecast" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
 
 ## Next Steps
-  - [Test the "Outliers" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)
+  - [Test the "Outliers" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)
 
 ## Details
 ### You will learn
- - How to use the "Key Influencer" SAP Cloud Platform predictive services from a REST Client.
+ - How to use the "Key Influencer" SAP Cloud for predictive services from a REST Client.
 
- Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
+ Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
 
 ### Time to Complete
   **10 minutes**
@@ -95,7 +95,7 @@ class | Variable indicating whether or not the salary of the individual is great
 
 First we need to register the dataset.
 
-As described in the **Step 1: Register a dataset** from the [Test the "Data Set" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial, register the Census dataset using the following elements:
+As described in the **Step 1: Register a dataset** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial, register the Census dataset using the following elements:
 
 Field Name     | Value
 -------------- | --------------
@@ -147,7 +147,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   "skippedVariables" : ["id", "sex", "race"]
 }
 ```
-> Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
+> Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
 
 -
 
@@ -448,8 +448,8 @@ The performances a roughly the same as we limited the analysis to only 2 attribu
 [ACCORDION-END]
 
 ### Optional
-For more details on the SAP Cloud Platform predictive services, you can check the following URL:
+For more details on the SAP Cloud for predictive services, you can check the following URL:
   - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
 
 ## Next Steps
-  - [Test the "Outliers" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)
+  - [Test the "Outliers" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)

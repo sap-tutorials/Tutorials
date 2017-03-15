@@ -1,15 +1,15 @@
 ---
-title: SAP Cloud Platform predictive services, Install a REST client
-description: Install a REST client to be used to interact with the SAP Cloud Platform predictive services
+title: SAP Cloud for predictive services, Install a REST client
+description: Install a REST client to interact with the SAP Cloud for predictive services
 tags: [ tutorial>beginner, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Enable, deploy and configure the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - **Tutorials:** [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Next Steps
-  - [Test the HANA XS OData services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
+  - [Test the HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
 
 ## Details
 ### You will learn
@@ -69,4 +69,4 @@ Now, you can to move to the next tutorial.
 [ACCORDION-END]
 
 ## Next Steps
-  - [Test the HANA XS OData services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
+  - [Test the HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)

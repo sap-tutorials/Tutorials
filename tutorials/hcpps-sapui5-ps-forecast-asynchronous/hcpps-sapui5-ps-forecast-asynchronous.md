@@ -1,12 +1,12 @@
 ---
-title: SAP Cloud Platform predictive services, Implement the "Forecast" SAP Cloud Platform predictive service from a SAPUI5 application using the asynchronous mode
-description: You will extend your application with the "Forecast" SAP Cloud Platform predictive service using the asynchronous mode
+title: SAP Cloud for predictive services & SAPUI5, Implement the "Forecast" service synchronous mode
+description: You will extend your application with the "Forecast" service using the asynchronous mode
 tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Implement the "Forecast" SAP Cloud Platform predictive service from a SAPUI5 application using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
+  - **Tutorials:** [Implement the "Forecast" service asynchronous mode in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
 
 ## Next Steps
   - This was the end of the tutorial series. Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
@@ -441,7 +441,7 @@ Edit the `demo.view.xml` file located in the `webapp\view`.
 Inside the `<detailPages>` element add the following element:
 
 ```xml
-<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Cloud Platform predictive services (Asynchronous Mode)">
+<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Cloud for predictive services (Asynchronous Mode)">
   <content>
     <mvc:XMLView viewName="sapui5demo.view.forecast.asynchronous"/>
   </content>

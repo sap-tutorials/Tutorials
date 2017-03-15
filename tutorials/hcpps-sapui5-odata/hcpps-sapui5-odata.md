@@ -1,15 +1,15 @@
 ---
-title: SAP Cloud Platform predictive services, Visualize your predictive demo datasets
+title: SAP Cloud for predictive services & SAPUI5, Visualize your predictive demo datasets
 description: Using the configured destination for the HANA XS OData service, you will extend your application to visualize the predictive demo datasets
 tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, products>sap-cloud-platform, topic>sapui5, topic>odata ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Configure a SAPUI5 application to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+  - **Tutorials:** [Configure a SAPUI5 application to interact with the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
 
 ## Next Steps
-  - [Implement the "Register Dataset" SAP Cloud Platform predictive services in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
+  - [Implement the "Register Dataset" SAP Cloud for predictive services in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
 
 ## Details
 ### You will learn
@@ -588,4 +588,4 @@ In case you are having problems when running the application, please find bellow
  - Play with the `ajax` URL in the controllers to filter the retrieved data from the HANA XS OData service
 
 ## Next Steps
-  - [Implement the "Register Dataset" SAP Cloud Platform predictive services in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
+  - [Implement the "Register Dataset" SAP Cloud for predictive services in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)

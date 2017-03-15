@@ -1,5 +1,5 @@
 ---
-title: SAP Cloud Platform predictive services, Implement the "Register Dataset" SAP Cloud Platform predictive services in your SAPUI5 application
+title: SAP Cloud for predictive services & SAPUI5, Implement the "Register Dataset" services
 description: You will extend your application with the "Register Dataset" SAP Cloud Platform predictive service
 tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
@@ -9,7 +9,7 @@ tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, produc
   - **Tutorials:** [Visualize your predictive demo datasets in a SAPUI5 application using an HANA XS OData service](http://www.sap.com/developer/tutorials/hcpps-sapui5-odata.html)
 
 ## Next Steps
-  - [Manage the registered "Dataset" using SAP Cloud Platform predictive services in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
+  - [Manage the registered "Dataset" using SAP Cloud for predictive services in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
 
 ## Details
 ### You will learn
@@ -51,7 +51,7 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 
 The controller will contain a function where:
 
-  - we process the call to the "Register Dataset" SAP Cloud Platform predictive services and return the dataset identifier along with the dataset description.
+  - we process the call to the "Register Dataset" SAP Cloud for predictive services and return the dataset identifier along with the dataset description.
 
 Create a new directory structure for **`webapp\controller\dataset`** either using the "File" menu or using the right click menu.
 
@@ -239,7 +239,7 @@ Edit the `demo.view.xml` file located in the `webapp\view`.
 Inside the `<detailPages>` element add the following element:
 
 ```xml
-<Page id="detail_dataset_register" title="Register your Dataset with the SAP Cloud Platform predictive services">
+<Page id="detail_dataset_register" title="Register your Dataset with the SAP Cloud for predictive services">
   <content>
     <mvc:XMLView viewName="sapui5demo.view.dataset.register"/>
   </content>
