@@ -4,8 +4,8 @@ description: Deploy your exteded app to the SAP Fiori launchpad
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Add custom fields to a standard SAP Fiori app](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-add-fields.html)
+- **Proficiency:** Beginner
+- **Tutorials:** [Add custom fields to a standard SAP Fiori app](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-add-fields.html)
 
 ## Details
 ### You will learn  
@@ -18,42 +18,79 @@ In this tutorial you will learn how to deploy an extended app to the SAP Fiori l
 **5 Min**.
 
 ---
-You successful tested the app you've extended in the [Add custom fields to a standard SAP Fiori app] tutorial? Now it is time to deploy it the SAP Cloud Platform. 
+You successful tested the app you've extended in the [Add custom fields to a standard SAP Fiori app] tutorial? Now it is time to deploy it the SAP Cloud Platform.
 
-1. Right click on the project and choose **Deploy > Deploy to SAP Cloud Platform**:
 
-    ![Deploy > Deploy to SAP Cloud Platform](18.png)
 
-2. You should get the following pop-up. Keep the default settings. Confirm the screen by clicking **deploy**:
+[ACCORDION-BEGIN [Step 1: ](Deploy to SAP Cloud Platform)]
 
-    ![Deploy to SAP Cloud Platform](19.png)
+Right click on the project and choose **Deploy > Deploy to SAP Cloud Platform**:
 
-3. When the deploy was successful you can directly continue to register your extended app to the SAP Fiori launchpad. Click on the **Register to SAP Fiori launchpad** button to do so:
+![Deploy > Deploy to SAP Cloud Platform](18.png)
 
-    ![Successfully Deployed](20.png)
+You should get the following pop-up. Keep the default settings. Confirm the screen by clicking **deploy**:
 
-4. When the wizard starts, change the **Description** to `My Opportunities Extended`:
+![Deploy to SAP Cloud Platform](19.png)
 
-    ![Register to SAP Fiori launchpad - General Information](21.png)
+[DONE]
+[ACCORDION-END]
 
-5. On the next screen keep the **Title** as `My Opportunities` and the **Subtitle** with `Extended`:
+[ACCORDION-BEGIN [Step 2: ](Register to SAP Fiori launchpad)]
 
-    ![Register to SAP Fiori launchpad - Tile Configuration](22.png)
+When the deploy was successful you can directly continue to register your extended app to the SAP Fiori launchpad. Click on the **Register to SAP Fiori launchpad** button to do so:
 
-6. Click the **Browse** button and enter `opp` to search for `opportunity` related icons. Select the icon for `opportunities` and click **Done**.
+![Successfully Deployed](20.png)
 
-    ![Select Icon](23.png)
+[DONE]
+[ACCORDION-END]
 
-7. On the next screen select the items shown in the screenshot below. If you haven't used the SAP Fiori Launchpad yet there will be no other options available.
+[ACCORDION-BEGIN [Step 3: ](Change description)]
 
-    ![Register to SAP Fiori launchpad - Assignment](24.png)
+When the wizard starts, change the **Description** to `My Opportunities Extended`:
 
-8. Click **Next** and **Finish**. You should get this confirmation:
+![Register to SAP Fiori launchpad - General Information](21.png)
 
-    ![Successfully Registered](25.png)
+[DONE]
+[ACCORDION-END]
 
-9. Click the link **Open SAP Fiori launchpad**. On the button you find the new tile "My Opportunities Extended" in the Sample Group:
+[ACCORDION-BEGIN [Step 4: ](Leave title)]
 
-    ![Fiori Launchpad with Sample Group and Tile My Opportunities Extended](26.png)
+On the next screen keep the **Title** as `My Opportunities` and the **Subtitle** with `Extended`:
+
+![Register to SAP Fiori launchpad - Tile Configuration](22.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Select the icon)]
+
+Click the **Browse** button and enter `opp` to search for `opportunity` related icons. Select the icon for `opportunities` and click **Done**.
+
+![Select Icon](23.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Select options and complete registration)]
+
+On the next screen select the items shown in the screenshot below. If you haven't used the SAP Fiori Launchpad yet there will be no other options available.
+
+![Register to SAP Fiori launchpad - Assignment](24.png)
+
+Click **Next** and **Finish**. You should get this confirmation:
+
+![Successfully Registered](25.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Open SAP Fiori launchpad)]
+
+Click the link **Open SAP Fiori launchpad**. On the button you find the new tile "My Opportunities Extended" in the Sample Group:
+
+![Fiori Launchpad with Sample Group and Tile My Opportunities Extended](26.png)
 
 Congratulations, you've successfully added your extended app to the standard SAP Fiori launchpad.
+
+[DONE]
+[ACCORDION-END]
