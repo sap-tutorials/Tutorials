@@ -27,7 +27,7 @@ An organization, for example, is basically a hierarchy where the connections bet
 
 Since it is very difficult to use standard SQL to work with and perform analysis on hierarchical data, Spark SQL has been enhanced to provide missing hierarchy functionality. Extensions to Spark SQL support hierarchical queries that make it possible to define a ___hierarchical DataFrame___ and perform custom hierarchical UDFs on it. This allows you, for example, to define an organization's hierarchy and perform complex aggregations, such as calculating the average age of all second-level managers or the aggregate salaries of different departments.
 
-Since the SAP HANA Vora execution engine supports hierarchies, support has been added for pushing down hierarchical queries to SAP HANA Vora using the data source implementation.
+Since the SAP Vora execution engine supports hierarchies, support has been added for pushing down hierarchical queries to SAP Vora using the data source implementation.
 
 
 [DONE]

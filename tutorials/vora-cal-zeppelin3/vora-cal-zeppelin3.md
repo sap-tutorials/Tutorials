@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 
 ## Details
 ### You will learn  
-You will learn how to process data using SAP HANA Vora disk engine.
+You will learn how to process data using SAP Vora disk engine.
 
 ### Time to Complete
 **15 Min**
@@ -21,7 +21,7 @@ You will learn how to process data using SAP HANA Vora disk engine.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Disk Engine)]
-Besides the SAP HANA Vora relational in-memory engine, SAP HANA Vora also provides the following execution engines: document store, graph engine, time series engine, and disk engine.
+Besides the SAP Vora relational in-memory engine, SAP Vora also provides the following execution engines: document store, graph engine, time series engine, and disk engine.
 
 These engines are integrated into Spark as either a Spark SQL data source (full integration) or raw data source (partial integration).
 

@@ -1,11 +1,11 @@
 ---
-title: Working with the SAP HANA Vora Tools
+title: Working with the SAP Vora Tools
 description: Vora tools provide a data browser for viewing and exporting data in tables and views, an SQL editor for creating and running SQL scripts, and a modeller for creating data models
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 ---
 
 ## Prerequisites  
- - [Working with Document Store Engine in SAP HANA Vora](http://www.sap.com/developer/tutorials/vora-cal-zeppelin7.html)
+ - [Working with Document Store Engine in SAP Vora](http://www.sap.com/developer/tutorials/vora-cal-zeppelin7.html)
 
 
 ## Next Steps
@@ -20,16 +20,16 @@ You will learn how to use Data Browser and Modeler from Vora Tools.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](SAP HANA Vora Tools)]
-The SAP HANA Vora tools provide a data browser for viewing and exporting data in tables and views, an SQL editor for creating and running SQL scripts, and a modeler for creating data models.
+[ACCORDION-BEGIN [Step 1: ](SAP Vora Tools)]
+The SAP Vora tools provide a data browser for viewing and exporting data in tables and views, an SQL editor for creating and running SQL scripts, and a modeler for creating data models.
 
-SAP HANA Vora makes available OLAP-style capabilities for data on Hadoop, in particular, a hierarchy implementation that allows you to define hierarchical data structures and perform complex computations on different levels of data.
+SAP Vora makes available OLAP-style capabilities for data on Hadoop, in particular, a hierarchy implementation that allows you to define hierarchical data structures and perform complex computations on different levels of data.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Accessing the Tools)]
-You can access the SAP HANA Vora tools via web browser on the port 9225 of the Vora host: `http://<IP_ADDRESS>:9225`. In your SAP HANA Vora, developer edition, you can use user `vora`.
+You can access the SAP Vora tools via web browser on the port 9225 of the Vora host: `http://<IP_ADDRESS>:9225`. In your SAP Vora, developer edition, you can use user `vora`.
 
 The initial screen appears as follows.
 ![Logon to Tools](vtools_01.jpg)
