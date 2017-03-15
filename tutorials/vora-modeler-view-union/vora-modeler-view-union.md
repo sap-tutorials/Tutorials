@@ -1,14 +1,14 @@
 ---
-title: SAP HANA Vora Modeler: Unions in SQL View
-description: SAP HANA Vora Modeler: Unions in SQL View
+title: SAP Vora Modeler: Unions in SQL View
+description: SAP Vora Modeler: Unions in SQL View
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Getting started with SAP HANA Vora Modeler: Creating SQL views](http://www.sap.com/developer/tutorials/vora-modeler-getting-started.html)
+ - **Tutorials:** [Getting started with SAP Vora Modeler: Creating SQL views](http://www.sap.com/developer/tutorials/vora-modeler-getting-started.html)
 
 ## Next Steps
- - [SAP HANA Vora Modeler: Aggregation in SQL View](http://www.sap.com/developer/tutorials/vora-modeler-view-aggregate.html)
+ - [SAP Vora Modeler: Aggregation in SQL View](http://www.sap.com/developer/tutorials/vora-modeler-view-aggregate.html)
 
 ## Details
 ### You will learn  
@@ -87,4 +87,4 @@ You will learn how to use Modeler artifacts to add union to previously created S
     ![Execute view with union](voraunion09.jpg)
 
 ## Next Steps
- - [SAP HANA Vora Modeler: Aggregation in SQL View](http://www.sap.com/developer/tutorials/vora-modeler-view-aggregate.html)
+ - [SAP Vora Modeler: Aggregation in SQL View](http://www.sap.com/developer/tutorials/vora-modeler-view-aggregate.html)

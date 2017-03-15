@@ -4,17 +4,17 @@ description: This tutorial shows you how to hide a view element from a standard 
 tags: [  tutorial>beginner, topic>cloud, topic>sapui5, products>sap-web-ide ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Getting started with the SAP Fiori, Demo Cloud Edition](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html)
+- **Proficiency:** Beginner
+- **Tutorials:** [Getting started with the SAP Fiori, Demo Cloud Edition](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html)
 
 ## Next Steps
- - [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
+- [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
 
 ## Details
 ### You will learn  
 In this tutorial you will learn how to hide a view element from a standard SAP Fiori app. The app that you will extended in this tutorial is "My Leave Requests". The key steps are:
 
-- Start the extension using the extension pane in SAP Web IDE 
+- Start the extension using the extension pane in SAP Web IDE
 - Locate the view element to hide
 - Test the app
 
@@ -23,68 +23,125 @@ In this tutorial you will learn how to hide a view element from a standard SAP F
 
 ---
 
-1. Please make sure that you have worked through the tutorial [Getting started with the SAP Fiori, Demo Cloud Edition](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html). Log into the SAP Fiori Demo Cloud Edition and locate the group **Human Capital Management**. Click on the **My Leave Requests** tile.
 
-    ![SAP Fiori launchpad group Human Capital Management](Launchpag-My-Leave-Requests.png)
+[ACCORDION-BEGIN [Step 1: ](Log into the SAP Fiori Demo Cloud Edition)]
 
-2. Open the Standard app and familiarize yourself with how it appears. To start extending the app click on the gear wheel icon on the top right beside your name and choose **Develop Apps**:
+Please make sure that you have worked through the tutorial [Getting started with the SAP Fiori, Demo Cloud Edition](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html). Log into the SAP Fiori Demo Cloud Edition and locate the group **Human Capital Management**. Click on the **My Leave Requests** tile.
 
-    ![Options menu](8.png)
+![SAP Fiori launchpad group Human Capital Management](Launchpag-My-Leave-Requests.png)
 
-3. You will be forwarded to a screen called "Create App Extension" where you find instructions for the next steps. Click the **Launch SAP Web IDE** button. You may have to click this button twice as the new tab may remain empty on the first attempt.
+[DONE]
+[ACCORDION-END]
 
-    ![Create App Extension](Create-App-Extension.png)
+[ACCORDION-BEGIN [Step 2: ](Open the Standard app)]
 
-4. You have to login to the SAP Cloud Platform. Please provide your credentials and then click **Login**.
+Open the Standard app and familiarize yourself with how it appears. To start extending the app click on the gear wheel icon on the top right beside your name and choose **Develop Apps**:
 
-    ![Login to the SAP Cloud Platform](Login-to-SAP-HANA-Cloud-Platform.png)
+![Options menu](8.png)
 
+[DONE]
+[ACCORDION-END]
 
-5. Click **OK** to accept the project name.
+[ACCORDION-BEGIN [Step 3: ](Launch SAP Web IDE)]
 
-    ![Extension Project Name](Extension-Project-Name.png)
+You will be forwarded to a screen called "Create App Extension" where you find instructions for the next steps. Click the **Launch SAP Web IDE** button. You may have to click this button twice as the new tab may remain empty on the first attempt.
 
-6. The SAP Web IDE is launched with your extension project created.
+![Create App Extension](Create-App-Extension.png)
 
-    ![Project in SAP Web IDE](Project-in-SAP-Web-IDE.png)
+[DONE]
+[ACCORDION-END]
 
-7. With your extension project folder selected, the graphical extensibility pane is the easiest way to preview the app and extend it. Start it via **Tools > Extensibility Pane**. 
+[ACCORDION-BEGIN [Step 4: ](Log into SAP Cloud Platform)]
 
-    ![Extensibility Pane](Extensibility-Pane.png)
+You have to log into the SAP Cloud Platform. Please provide your credentials and then click **Login**.
 
-8. In order to select the view/control to extend, change from **Preview Mode** to **Extensibility Mode**.
+![Login to the SAP Cloud Platform](Login-to-SAP-HANA-Cloud-Platform.png)
 
-    ![Switch to Extensibility Mode](Switch-to-Extensibility-Mode.png)
+[DONE]
+[ACCORDION-END]
 
-9. You'll see that hovering over the views/controls on the left highlights them in sync in the Outline pane on the right.
+[ACCORDION-BEGIN [Step 5: ](Accept the project name)]
 
-    ![Outline](Outline.png)
+Click **OK** to accept the project name.
 
-10. Clicking a control in the graphical pane or in the Outline pane will change its color in the graphical pane to pink and highlights it in the Outline pane in blue. You can continue to hover over the graphical pane.
+![Extension Project Name](Extension-Project-Name.png)
 
-    ![Control selected](Control-selected.png)
+The SAP Web IDE is launched with your extension project created.
 
-11. There are several ways to extend a control. You will use the Outline pane to make the change. Select the **Legend** either in the graphical pane or the Outline pane. Go to the Outline pane, **right click** the blue highlighted item `LRS4_LEGEN` and select **Hide Control**
+![Project in SAP Web IDE](Project-in-SAP-Web-IDE.png)
 
-    ![Hide Control](Hide-Control.png)
+[DONE]
+[ACCORDION-END]
 
-12. You receive a notification that the change was implemented. Click **Refresh** to view the change. 
+[ACCORDION-BEGIN [Step 6: ](Open the graphical extensibility pane)]
 
-    ![Control was hidden](Control-was-hidden.png)
+With your extension project folder selected, the graphical extensibility pane is the easiest way to preview the app and extend it. Start it via **Tools > Extensibility Pane**.
 
-13. Note that the legend is now gone from the graphical pane, but still present (listed as hidden) in the outline pane.
+![Extensibility Pane](Extensibility-Pane.png)
 
-    ![legend is gone from the graphical pane but present in the outline pane](Outline-shows-hidden-status.png)
+[DONE]
+[ACCORDION-END]
 
-14. An interesting feature of the Web IDE is to view a list of controls that are extended. Select **Show extended elements** in the Outline Pane filter pulldown menu. 
+[ACCORDION-BEGIN [Step 7: ](Switch to extensibility mode)]
 
-    ![Show extended elements](Show-extended-elements.png)
+In order to select the view/control to extend, change from **Preview Mode** to **Extensibility Mode**.
 
-15. You will see that the legend you just hid is the only control shown.
+![Switch to Extensibility Mode](Switch-to-Extensibility-Mode.png)
 
-    ![Show extended elements details](Show-extended-elements-details.png)
+You'll see that hovering over the views/controls on the left highlights them in sync in the Outline pane on the right.
+
+![Outline](Outline.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Explore the graphical pane)]
+
+Clicking a control in the graphical pane or in the Outline pane will change its color in the graphical pane to pink and highlights it in the Outline pane in blue. You can continue to hover over the graphical pane.
+
+![Control selected](Control-selected.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Hide control)]
+
+There are several ways to extend a control. You will use the Outline pane to make the change. Select the **Legend** either in the graphical pane or the Outline pane. Go to the Outline pane, **right click** the blue highlighted item `LRS4_LEGEN` and select **Hide Control**
+
+![Hide Control](Hide-Control.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Refresh the view)]
+
+You receive a notification that the change was implemented. Click **Refresh** to view the change.
+
+![Control was hidden](Control-was-hidden.png)
+
+Note that the legend is now gone from the graphical pane, but still present (listed as hidden) in the outline pane.
+
+![legend is gone from the graphical pane but present in the outline pane](Outline-shows-hidden-status.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 11: ](Show extended elements)]
+
+An interesting feature of the Web IDE is to view a list of controls that are extended. Select **Show extended elements** in the Outline Pane filter pulldown menu.
+
+![Show extended elements](Show-extended-elements.png)
+
+You will see that the legend you just hid is the only control shown.
+
+![Show extended elements details](Show-extended-elements-details.png)
 
 Congratulations, you've successfully hid a view element from a SAP Standard Fiori app.
 
+[DONE]
+[ACCORDION-END]
+
+
+
 ## Next Steps
- - [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
+- [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)

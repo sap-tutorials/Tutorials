@@ -1,19 +1,19 @@
 ---
-title: SAP Cloud Platform predictive services, Test the "Dataset" SAP Cloud Platform predictive services using a REST client
-description: Using a REST client, you will test the "Dataset" SAP Cloud Platform predictive services
+title: Test the "Dataset" service
+description: Using a REST client, you will test the "Dataset" SAP Cloud for predictive services
 tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Access your predictive demo data set using a HANA XS OData services from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
+  - **Tutorials:** [Test the HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
 
 ## Next Steps
-  - [Test the "Forecast" SAP Cloud Platform predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
+  - [Test the "Forecast" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
 
 ## Details
 ### You will learn
-  - How to "Register" your data set with the SAP Cloud Platform predictive services using a REST Client.
+  - How to "Register" your data set with the SAP Cloud for predictive services using a REST Client.
 
 
 ### Time to Complete
@@ -31,7 +31,7 @@ Therefore you can replace any occurrence of the token by the value listed above.
 
 [ACCORDION-BEGIN [Info:](A short description of the Dataset service)]
 
-In order to use any of the SAP Cloud Platform predictive services, you will need a registered dataset.
+In order to use any of the SAP Cloud for predictive services, you will need a registered dataset.
 
 When registering a dataset, you will define and store the structure of the dataset which will be used by the other services.
 
@@ -89,7 +89,7 @@ Click on **Send**
 
 It will now display the data set registration identifier, the number of rows and the variable descriptions.
 
-Now, we can use the `ID` value to reference the registered dataset with other SAP Cloud Platform predictive services calls.
+Now, we can use the `ID` value to reference the registered dataset with other SAP Cloud for predictive services calls.
 
 The below extract was shortened to ease the reading.
 ```
@@ -245,8 +245,8 @@ You have now listed all the data set registered in your environment.
 [ACCORDION-END]
 
 ### Optional
-For more details on the SAP Cloud Platform predictive services, you can check the following URL:
+For more details on the SAP Cloud for predictive services, you can check the following URL:
   - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
 
 ## Next Steps
-  - [Test the "Forecast" SAP Cloud Platform predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
+  - [Test the "Forecast" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)

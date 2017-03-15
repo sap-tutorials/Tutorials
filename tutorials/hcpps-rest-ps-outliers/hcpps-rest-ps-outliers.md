@@ -1,22 +1,22 @@
 ---
-title: SAP Cloud Platform predictive services, Test the "Outliers" SAP Cloud Platform predictive service from a REST client
+title: Test the "Outliers" service
 description: Using a REST client, you will test the "Outliers" SAP Cloud Platform predictive service from a REST client
 tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the "Key Influencer" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
+  - **Tutorials:** [Test the "Key Influencer" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
 
 ## Next Steps
-  - [Configure a SAPUI5 application to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+  - [Configure a SAPUI5 application from a project template](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
 
 ## Details
 
 ### You will learn
- - How to use the "Outliers" SAP Cloud Platform predictive services from a REST Client.
+ - How to use the "Outliers" SAP Cloud for predictive services from a REST Client.
 
-Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
+Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
 
 ### Time to Complete
   **10 minutes**
@@ -100,7 +100,7 @@ Variable | Description | Example of Values
 
 First we need to register the dataset.
 
-As described in the **Step 1: Register a dataset** from the [Test the "Data Set" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial, register the Census dataset using the following elements:
+As described in the **Step 1: Register a dataset** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial, register the Census dataset using the following elements:
 
 Field Name     | Value
 -------------- | --------------
@@ -168,7 +168,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   ]  
 }
 ```
-> Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
+> Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
 
 -
 
@@ -261,8 +261,8 @@ You can also play with the following parameters and check the differences:
 [ACCORDION-END]    
 
 ### Optional
-For more details on the SAP Cloud Platform predictive services, you can check the following URL:
+For more details on the SAP Cloud for predictive services, you can check the following URL:
   - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
 
 ## Next Steps
-  - [Configure a SAPUI5 application to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+  - [Configure a SAPUI5 application from a project template](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)

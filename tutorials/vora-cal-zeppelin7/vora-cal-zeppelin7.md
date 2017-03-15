@@ -1,5 +1,5 @@
 ---
-title: Working with Document Store Engine in SAP HANA Vora
+title: Working with Document Store Engine in SAP Vora
 description: Document Store is a distributed in-memory JSON document store that supports rich query processing over JSON data
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 ---
@@ -9,11 +9,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 
 
 ## Next Steps
-- [Working with the SAP HANA Vora Tools ](http://www.sap.com/developer/tutorials/vora-cal-toolsintro.html)
+- [Working with the SAP Vora Tools ](http://www.sap.com/developer/tutorials/vora-cal-toolsintro.html)
 
 ## Details
 ### You will learn  
-You will learn how to process JSON data using SAP HANA Vora document store engine.
+You will learn how to process JSON data using SAP Vora document store engine.
 
 ### Time to Complete
 **10 Min**
@@ -45,4 +45,4 @@ Run and complete the remainder of the paragraphs in this notebook.
 [ACCORDION-END]
 
 ## Next Steps
-- [Working with the SAP HANA Vora Tools ](http://www.sap.com/developer/tutorials/vora-cal-toolsintro.html)
+- [Working with the SAP Vora Tools ](http://www.sap.com/developer/tutorials/vora-cal-toolsintro.html)

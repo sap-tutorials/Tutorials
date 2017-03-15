@@ -1,5 +1,5 @@
 ---
-title: Using hierarchies in SAP HANA Vora
+title: Using hierarchies in SAP Vora
 description: Hierarchical data structures define a parent-child relationship between different data items, providing an abstraction that makes it possible to perform complex computations on different levels of data.
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
 ---
@@ -19,9 +19,9 @@ You will learn how to load tables with parent-child relationship between data it
 
 ---
 
-1. SAP HANA Vora introduces support for hierarchies by enhancing Spark SQL to provide missing functionality. Extensions to Spark SQL support hierarchical queries that make it possible to define a hierarchical DataFrame and perform custom hierarchical UDFs on it.
+1. SAP Vora introduces support for hierarchies by enhancing Spark SQL to provide missing functionality. Extensions to Spark SQL support hierarchical queries that make it possible to define a hierarchical DataFrame and perform custom hierarchical UDFs on it.
 
-    For this tutorial the SAP HANA Vora, developer edition, has already sample files preloaded into HDFS. You can see them by executing following statements in the host's operating system as user `vora`.
+    For this tutorial the SAP Vora, developer edition, has already sample files preloaded into HDFS. You can see them by executing following statements in the host's operating system as user `vora`.
 
     ```shell
     hdfs dfs -ls officers.csv addresses.csv
@@ -83,7 +83,7 @@ You will learn how to load tables with parent-child relationship between data it
 
     ![Join hierarchy view with table](vorahier04.jpg)
 
-6. SAP HANA Vora provides user-defined functions (UDFs) to be used with hierarchies.
+6. SAP Vora provides user-defined functions (UDFs) to be used with hierarchies.
 
     Run the query that returns the rank of the descendants of the root. It uses `is_parent(u,v)` and `is_root(u)` hierarchy functions.
 

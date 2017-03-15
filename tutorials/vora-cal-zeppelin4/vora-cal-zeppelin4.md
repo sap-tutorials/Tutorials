@@ -1,6 +1,6 @@
 ---
 title: Working with Graph Engine using Apache Zeppelin
-description: Graph engine is a distributed in-memory engine that supports graph processing and allows execution of typical graph operations on data stored in SAP HANA Vora
+description: Graph engine is a distributed in-memory engine that supports graph processing and allows execution of typical graph operations on data stored in SAP Vora
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 ---
 
@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 
 ## Details
 ### You will learn  
-You will learn how to process data using SAP HANA Vora graph engine.
+You will learn how to process data using SAP Vora graph engine.
 
 ### Time to Complete
 **15 Min**
@@ -21,7 +21,7 @@ You will learn how to process data using SAP HANA Vora graph engine.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Graph Engine)]
-The SAP HANA Vora Graph engine is a distributed in-memory engine that supports graph processing and allows execution of typical graph operations on data stored in SAP HANA Vora.
+The SAP Vora Graph engine is a distributed in-memory engine that supports graph processing and allows execution of typical graph operations on data stored in SAP Vora.
 
 The graph engine uses a native, node-centric graph store for high performance analytical query processing. It supports directed and undirected graphs and has an underlying property graph model. Properties can currently be specified on nodes only, not on edges.
 A graph consists of a set of nodes and accompanying metadata. A node has a type, a set of primitive-typed properties, and a set of outgoing edges. In undirected graphs, outgoing and incoming edges are equivalent. Like nodes, edges and properties are also typed. A distinction is made between the sets of node types, edge types, and property types. Therefore it is possible, but not recommended, to use the same names for node, property, and edge types. Edge properties are not supported.
