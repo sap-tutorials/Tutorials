@@ -1,5 +1,5 @@
 ---
-title: SAP Cloud for predictive services, Install a REST client
+title: Install a REST client
 description: Install a REST client to interact with the SAP Cloud for predictive services
 tags: [ tutorial>beginner, products>sap-cloud-platform ]
 ---

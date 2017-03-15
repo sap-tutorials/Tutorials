@@ -1,5 +1,5 @@
 ---
-title: SAP Cloud for predictive services, Test the "Outliers" service
+title: Test the "Outliers" service
 description: Using a REST client, you will test the "Outliers" SAP Cloud Platform predictive service from a REST client
 tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-cloud-platform ]
 ---

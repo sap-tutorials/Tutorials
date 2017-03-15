@@ -1,5 +1,5 @@
 ---
-title: SAP Cloud for predictive services, Expose your predictive demo dataset as HANA XS OData services
+title: Expose your predictive demo dataset as HANA XS OData services
 description: Expose the demo data to be used with the SAP Cloud for predictive services as HANA XS OData services
 tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-hana, products>sap-cloud-platform, topic>odata ]
 ---

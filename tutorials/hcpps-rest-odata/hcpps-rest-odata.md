@@ -1,5 +1,5 @@
 ---
-title: SAP Cloud for predictive services, Test the HANA XS OData services
+title: Test the HANA XS OData services
 description: Using a REST client, you will interact with a HANA XS OData services and get access to your predictive demo datasets
 tags: [ tutorial>beginner, products>sap-cloud-platform, topic>odata ]
 ---

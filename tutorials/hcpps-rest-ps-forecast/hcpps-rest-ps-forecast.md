@@ -1,5 +1,5 @@
 ---
-title: SAP Cloud for predictive services, Test the "Forecast" service
+title: Test the "Forecast" service
 description: Using a REST client, you will test the "Forecast" SAP Cloud Platform predictive service from a REST client
 tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-cloud-platform ]
 ---
