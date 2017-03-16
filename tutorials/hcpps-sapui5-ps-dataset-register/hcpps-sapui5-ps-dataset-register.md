@@ -9,6 +9,7 @@ tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, produc
   - **Tutorials:** [Visualize your predictive demo datasets in a SAPUI5 application using an HANA XS OData service](http://www.sap.com/developer/tutorials/hcpps-sapui5-odata.html)
 
 ## Next Steps
+  - [Manage the registered "Dataset"](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
 
 ## Details
 ### You will learn
