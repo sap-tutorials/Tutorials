@@ -1,15 +1,15 @@
 ---
-title: SAP Cloud for predictive services & SAPUI5, Manage your registered "Datasets"
+title: Manage your registered "Datasets"
 description: You will extend your application with additional "Dataset" SAP Cloud for predictive services
 tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Implement the "Register Dataset" SAP Cloud for predictive services in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
+  - **Tutorials:** [Implement the "Register Dataset" service](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
 
 ## Next Steps
-  - [Implement the "Forecast" SAP Cloud Platform predictive service from a SAPUI5 application using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
+  - [Implement the "Forecast" service using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
 
 ## Details
 ### You will learn
@@ -568,4 +568,4 @@ In case you are having problems when running the application, please find bellow
 [ACCORDION-END]
 
 ## Next Steps
-  - [Implement the "Forecast" SAP Cloud Platform predictive service from a SAPUI5 application using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
+  - [Implement the "Forecast" service using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)

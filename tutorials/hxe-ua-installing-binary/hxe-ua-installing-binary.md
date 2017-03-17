@@ -12,8 +12,6 @@ SAP HANA 2.0, express edition is for Linux machines running specific installatio
 >**Tip:**
 > If you are installing a SUSE Linux Enterprise Server for SAP for the first time, register your copy. You may need to install add-on packages later, and add-ons are only available to registered user. Register and download a 60 day evaluation of SUSE Linux Enterprise for SAP at: <https://www.suse.com/products/sles-for-sap/download>.
 
->**Note:**
-> This tutorial is for SAP HANA 2.0, express edition. If you are currently using SAP HANA 1.0, express edition and wish to upgrade, see [How to Upgrade to SAP HANA 2.0, express edition (Binary Installer)](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-upgrade-binary.html).
 
 ## Next Steps
 - Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).

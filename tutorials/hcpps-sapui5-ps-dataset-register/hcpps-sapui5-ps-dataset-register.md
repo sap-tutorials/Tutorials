@@ -1,5 +1,5 @@
 ---
-title: SAP Cloud for predictive services & SAPUI5, Implement the "Register Dataset" services
+title: Implement the "Register Dataset" services
 description: You will extend your application with the "Register Dataset" SAP Cloud Platform predictive service
 tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
@@ -9,7 +9,7 @@ tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, produc
   - **Tutorials:** [Visualize your predictive demo datasets in a SAPUI5 application using an HANA XS OData service](http://www.sap.com/developer/tutorials/hcpps-sapui5-odata.html)
 
 ## Next Steps
-  - [Manage the registered "Dataset" using SAP Cloud for predictive services in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
+  - [Manage the registered "Dataset"](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
 
 ## Details
 ### You will learn

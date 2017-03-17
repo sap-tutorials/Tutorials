@@ -1,15 +1,15 @@
 ---
-title: SAP Cloud for predictive services & SAPUI5, Implement the "Forecast" service synchronous mode
+title: Implement the "Forecast" service synchronous mode
 description: You will extend your application with the "Forecast" service using the synchronous mode
 tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Manage registered predictive "datasets" in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
+  - **Tutorials:** [Manage registered predictive "datasets"](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
 
 ## Next Steps
-  - [Implement the "Forecast" service asynchronous mode in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)
+  - [Implement the "Forecast" service asynchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)
 
 ## Details
 ### You will learn
@@ -52,7 +52,7 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 
 [ACCORDION-BEGIN [Step 2: ](Registered dataset list fragment)]
 
-The fragment will reuse some of the code that was used in the [Manage your registered "Datasets" using the SAP Cloud Platform predictive service in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html) tutorial.
+The fragment will reuse some of the code that was used in the [Manage your registered "Datasets"](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html) tutorial.
 
 The fragment will contain:
 
@@ -636,4 +636,4 @@ In case you are having problems when running the application, please find bellow
 [ACCORDION-END]
 
 ## Next Steps
-  - [Implement the "Forecast" service asynchronous mode in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)
+  - [Implement the "Forecast" service asynchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)

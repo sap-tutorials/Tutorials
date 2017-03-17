@@ -1,7 +1,7 @@
 ---
 title: Prepare sample Fiori app for translation
 description: Create an app based on a sample Fiori app and prepare it for translation with SAP Translation Hub.
-tags: [  tutorial>beginner, topic>sap-translation-hub, products>sap-hana-cloud-platform, topic>sap-fiori-app ]
+tags: [  tutorial>beginner, topic>sap-translation-hub, products>sap-cloud-platform, topic>sap-fiori-app ]
 ---
 
 ## Prerequisites  
@@ -9,6 +9,7 @@ tags: [  tutorial>beginner, topic>sap-translation-hub, products>sap-hana-cloud-p
  - **Tutorials:** [Enable the SAP Translation Hub service](http://www.sap.com/developer/tutorials/sth-enable.html)
 
 ## Next Steps
+- [Commit your project to Git and deploy to the cloud](http://www.sap.com/developer/tutorials/teched-2016-5.html) - This tutorial contains a Git repository called `te2016`. To make it easier to follow the steps in the translation tutorial, use the name of the project you created for the sample Fiori app in SAP Web IDE instead (`nwepmrefappsextshop`). Do not open the active version of the app, as described in the last step.
 - [Translate your app with SAP Translation Hub](http://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)
 
 ## Details

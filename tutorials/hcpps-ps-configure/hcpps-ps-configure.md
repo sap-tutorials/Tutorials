@@ -182,4 +182,4 @@ Status is green! Congrats, you have configured the SAP Cloud for predictive serv
 - If you are running on the SAP Cloud Platform trial edition, you should continue with:
   [How to update the database pool configuration of the SAP Cloud for predictive services](https://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
 - else with:
-  [Install a REST client to interact with the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
+  [Install a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
