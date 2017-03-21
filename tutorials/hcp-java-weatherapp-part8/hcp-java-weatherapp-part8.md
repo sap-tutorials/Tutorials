@@ -1,15 +1,15 @@
 ---
 title: End-to-End Weather App Scenario Part 8
 description: Use the Connectivity Service to access external (backend) systems.
-tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
+tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
 ---
 
 ## Prerequisites  
- - [End-to-End Weather App Scenario Part 7](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part7.html)
+ - [End-to-End Weather App Scenario Part 7](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part7.html)
  - Register for an API Key from [openweathermap.org](http://openweathermap.org/appid)
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 9](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)
+ - [End-to-End Weather App Scenario Part 9](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)
 
 ## Details
 ### You will learn  
@@ -17,7 +17,7 @@ In this tutorial you will learn how to use the [Connectivity Service](https://he
 
 For this part of the series, you will consume a RESTful weather service that returns data in JSON format: <http://openweathermap.org/api>.
 
- >Note: In order to consume the openweathermap API you need to apply for an API key as outlined here: <http://openweathermap.org/appid>. But don’t worry, that’s easy to do and won’t take longer than two minutes!
+ >Note: In order to consume the openweathermap API you need to apply for an API key as outlined here: <http://openweathermap.org/appid>. But don't worry, that's easy to do and won't take longer than two minutes!
 
 
 ### Time to Complete
@@ -76,7 +76,7 @@ For this part of the series, you will consume a RESTful weather service that ret
 
     ![Testing the new weather destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-6.png)
 
-7. One more thing: it would actually be nice to be able to traverse the path and query for weather information in a more RESTful manner via a URL pattern like: `/api/v1/cities/{id}/weather`. Let’s add a respective method to the `FavoriteCityService` class:
+7. One more thing: it would actually be nice to be able to traverse the path and query for weather information in a more RESTful manner via a URL pattern like: `/api/v1/cities/{id}/weather`. Let's add a respective method to the `FavoriteCityService` class:
 
     ```java
     @GET
@@ -108,4 +108,4 @@ For this part of the series, you will consume a RESTful weather service that ret
 
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 9](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)
+ - [End-to-End Weather App Scenario Part 9](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)

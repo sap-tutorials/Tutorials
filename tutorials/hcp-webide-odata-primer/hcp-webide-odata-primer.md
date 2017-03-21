@@ -1,36 +1,36 @@
 ---
 title: An Open Data Protocol (OData) primer for developers
 description: Learn how to explore the data in an OData service, and the functionality included in the service.
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>mobile, topic>odata, tutorial>intermediate ]
+tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>mobile, topic>odata, tutorial>intermediate ]
 ---
 
 ## Prerequisites
- - **Proficiency:** Intermediate
- - **Tutorials:** [Localizing your SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-localizing-app.html)
+- **Proficiency:** Intermediate
+- **Tutorials:** [Localizing your SAPUI5 app](http://www.sap.com/developer/tutorials/hcp-webide-localizing-app.html)
 
 ## Next Steps
- - [Inserting OData query options into your SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-inserting-query-options.html)
+- [Inserting OData query options into your SAPUI5 app](http://www.sap.com/developer/tutorials/hcp-webide-inserting-query-options.html)
 
 ## Details
 
 ### You will learn
-Throughout this tutorial series you’ve been working on an app that consumes an OData service. Since you are now familiar with using the content, its time to learn a bit more about what the OData protocol can do for a developer. In the next tutorial, you will learn how to apply these capabilities to your SAPUI5 app.
+Throughout this tutorial series you've been working on an app that consumes an OData service. Since you are now familiar with using the content, its time to learn a bit more about what the OData protocol can do for a developer. In the next tutorial, you will learn how to apply these capabilities to your SAPUI5 app.
 
 OData (Open Data Protocol) is an [OASIS open industry standard](https://www.oasis-open.org/committees/tc_home.php?wg_abbrev=odata) covering building and consuming RESTful APIs. The standard was initially created by Microsoft, and the committee is now chaired by a Microsoft and an SAP employee.
 
 There is a wealth of information available at [http://www.odata.org](http://www.odata.org/), but this tutorial will focus on a few practical aspects that will help you in future projects. The topics covered are:
 
- - Browser extension to view JSON easily
- - OData URI format
- - Service Document and metadata
- - Query options:
-  - `$format`
-  - `$top`
-  - `$skiptoken`
-  - `$orderby`
-  - `$filter`
-  - `$select`
-  - `$expand`
+- Browser extension to view JSON easily
+- OData URI format
+- Service Document and metadata
+- Query options:
+    - `$format`
+    - `$top`
+    - `$skiptoken`
+    - `$orderby`
+    - `$filter`
+    - `$select`
+    - `$expand`
 
 
 ### Time to Complete
@@ -38,206 +38,306 @@ There is a wealth of information available at [http://www.odata.org](http://www.
 
 ---
 
-1. To help visualize an OData feed, it is useful to install a formatting extension in your browser. There are a few options available to select – the one used in this tutorial is “**JSONView**” and is available for Chrome, Firefox and Safari browsers. The process for installing an extension is similar across browsers, the Chrome steps are shown below.
+[ACCORDION-BEGIN [Step 1: ](Get browser extension)]
 
-    In Google Chrome, click the **menu** button and then select **Settings**.
+To help visualize an OData feed, it is useful to install a formatting extension in your browser. There are a few options available to select 7#151; the one used in this tutorial is "**JSONView**" and is available for Chrome, Firefox and Safari browsers. The process for installing an extension is similar across browsers, the Chrome steps are shown below.
 
-    ![Open Chrome Settings](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_1.png)
+In Google Chrome, click the **menu** button and then select **Settings**.
 
-2. Click on Extensions and then at the bottom of the page, click on Get more extensions.
+![Open Chrome Settings](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_1.png)
 
-    ![Get more extensions](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_2.png)
 
-3. In the chrome web store, type `JSONView` in the search box, hit enter and scroll to the Extensions part of the results to find `JSONView`. Click the **Add to Chrome** button.
 
-    ![Find JSONView](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_3.png)
+Click on Extensions and then at the bottom of the page, click on Get more extensions.
 
-4. In the dialog box, click **Add extension**.
+![Get more extensions](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_2.png)
 
-    ![Add JSONView](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_4.png)
+[DONE]
+[ACCORDION-END]
 
-5. JSONView is now installed and enabled.
+[ACCORDION-BEGIN [Step 2: ](Install extension)]
 
-    ![JSONView installed](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_5.png)
+In the chrome web store, type `JSONView` in the search box, hit enter and scroll to the Extensions part of the results to find `JSONView`. Click the **Add to Chrome** button.
 
-6. The format of an OData URL is shown below.
+![Find JSONView](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_3.png)
 
-    ![OData URL format](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_6.png)
+In the dialog box, click **Add extension**.
 
-    For the Northwind service you have been using the URI (from host to `ServiceRoot`) is:
+![Add JSONView](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_4.png)
 
-    - <http://services.odata.org/V2/Northwind/Northwind.svc/>
 
-    This URL points to a Service Document, which for OData, exposes two key things:
 
-    - The entity sets, functions and singletons that can be retrieved
-    - A metadata document (which shows the packaging format of the data)
+JSONView is now installed and enabled.
 
-    To view the entity sets, open the link above in a new browser tab.
+![JSONView installed](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_5.png)
 
-    > Note: if you would like to access an SAP Gateway server, see the Optional section at the end of this tutorial for the free Gateway trial sign up link and OData service URL.
+[DONE]
+[ACCORDION-END]
 
-7. As you scroll through the page, you will see all of the entity sets (or collections) listed. You have been using the `Products` and `Suppliers` collections.
+[ACCORDION-BEGIN [Step 3: ](Review OData URLs)]
 
-    ![Northwind Service Document](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_7.png)
+The format of an OData URL is shown below.
 
-8. The metadata document will show the individual fields, formats and navigation properties of all the collections. To view the metadata for *any* OData service, append `$metadata` at the end of the URL in your browser:
+![OData URL format](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_6.png)
 
-    - <http://services.odata.org/V2/Northwind/Northwind.svc/$metadata>
-    With the metadata displayed, scroll down to `<EntityType Name=”Product”>` which is the collection you are using. You may notice that there is a slight change in the naming. The collection `href` (or the external name) in step 7 is `Products`, and in the metadata the same collection's name is `Product`. The mapping of an `EntityType` to a collection name is defined in the `EntityContainer` elements. You will learn more about the OData model structure in the OData model tutorial.
+For the Northwind service you have been using the URI (from host to `ServiceRoot`) is:
 
-    ![Products Collection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_8.png)
+- <http://services.odata.org/V2/Northwind/Northwind.svc/>
 
-9. In your app, you have used the fields displayed including the `NavigationProperty` entry that points to `Suppliers`.
+This URL points to a Service Document, which for OData, exposes two key things:
 
-    In "OData parlance", a `NavigationProperty` is a link from an Entry to one or more related Entries. In your app, Web IDE used the link from `Products` to `Suppliers` to display some supplier information in the information tab. Specifically, the Supplier `CompanyName`, `Phone` and `Address` fields.
+- The entity sets, functions and singletons that can be retrieved
+- A metadata document (which shows the packaging format of the data)
 
-    If you want to add other supplier fields to the Supplier tab – you would just need to enter the the appropriate `Label` and `Text` elements to the `DetailInfoForm.fragment.xml` file.
+To view the entity sets, open the link above in a new browser tab.
 
-    ![Supplier Collection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_9.png)
+> Note: if you would like to access an SAP Gateway server, see the Optional section at the end of this tutorial for the free Gateway trial sign up link and OData service URL.
 
+[DONE]
+[ACCORDION-END]
 
-10. Viewing the metadata is a quick way to see what data is available, but it is also useful to view the data itself. To see a set of data from a collection, simply enter the URL to the service document followed by the collection of interest. For the `Products` collection, it is:
+[ACCORDION-BEGIN [Step 3: ](Review collections)]
 
-    - <http://services.odata.org/V2/Northwind/Northwind.svc/Products>
+As you scroll through the page, you will see all of the entity sets (or collections) listed. You have been using the `Products` and `Suppliers` collections.
 
-    By adding `Products` to the URL here, you are specifying the `ResourcePath` portion of the URL (refer to step 6 above). The first set of data (20 records) is displayed in XML format.
+![Northwind Service Document](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_7.png)
 
-    ![Data from the Products collection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_10.png)
+[DONE]
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 4: ](Review metadata)]
 
-11. Scroll to the bottom of the page and look for the `<link rel=”next”` entry. The Northwind service enforces server-side paging and will only pass 20 records at a time. The paging size (20) can be seen in the `$skiptoken=20` query option at the end of the “next” URL. A Web IDE generated app will automatically issue the “next” URL when you scroll to the bottom of the master list in your app. You can run your app and try this now. Look for the spinning “busy” UI element to appear briefly as the new request is sent and set loaded in.
+The metadata document will show the individual fields, formats and navigation properties of all the collections. To view the metadata for *any* OData service, append `$metadata` at the end of the URL in your browser:
 
-    ![Next URL](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_11.png)
+- <http://services.odata.org/V2/Northwind/Northwind.svc/$metadata>
+With the metadata displayed, scroll down to `<EntityType Name="Product">` which is the collection you are using. You may notice that there is a slight change in the naming. The collection `href` (or the external name) in step 7 is `Products`, and in the metadata the same collection's name is `Product`. The mapping of an `EntityType` to a collection name is defined in the `EntityContainer` elements. You will learn more about the OData model structure in the OData model tutorial.
 
+![Products Collection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_8.png)
 
-12. The XML format of the OData response includes a lot of extra characters that makes the output difficult to read. You can add a query option to the URL to change the format to JSON, and with JSONView installed, some formatting and color-coding makes it more "human-readable".
+[DONE]
+[ACCORDION-END]
 
-    After the resource path, multiple query options can be added. Following standard HTTP query string formats, the first option will be pre-pended with a `?`, and any successive ones will be pre-pended with a `&`. To request the response in JSON, use the query option: `$format=json` pre-pended with a `?`.
+[ACCORDION-BEGIN [Step 5: ](Review and add fields)]
 
-    - <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json>
+In your app, you have used the fields displayed including the `NavigationProperty` entry that points to `Suppliers`.
 
-    You can see how there is less text shown, along with the color-coding and formatting of JSONView improves the readability.
+In "OData parlance", a `NavigationProperty` is a link from an Entry to one or more related Entries. In your app, Web IDE used the link from `Products` to `Suppliers` to display some supplier information in the information tab. Specifically, the Supplier `CompanyName`, `Phone` and `Address` fields.
 
-    ![JSON format](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_12.png)
+If you want to add other supplier fields to the Supplier tab – you would just need to enter the appropriate `Label` and `Text` elements to the `DetailInfoForm.fragment.xml` file.
 
-13. Some OData services do not enforce server-side paging, and will send a large amount of data for each request. To limit the set of data sent, include the `$top=x` query option, where x is any integer. `$top=1` will request only the first record, `$top=5` requests the first five.
+![Supplier Collection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_9.png)
 
-    Enter `$top=1` to view the first record only (be sure to pre-pend it with a `&` since it is the second query option).
+[DONE]
+[ACCORDION-END]
 
-    - <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=1>
+[ACCORDION-BEGIN [Step 6: ](Review data)]
 
-    ![top query option](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_13.png)
+Viewing the metadata is a quick way to see what data is available, but it is also useful to view the data itself. To see a set of data from a collection, simply enter the URL to the service document followed by the collection of interest. For the `Products` collection, it is:
 
-14. To see the 6th and 7th records, add the `$skiptoken=5` query option and change `$top` to 2. The `$skiptoken` will make the service skip over the `skiptoken` many records before it sends data. Changing `$top` to `2` will return two records, rather than just one.
+- <http://services.odata.org/V2/Northwind/Northwind.svc/Products>
 
-    - <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$skiptoken=5>
+By adding `Products` to the URL here, you are specifying the `ResourcePath` portion of the URL (refer to step 6 above). The first set of data (20 records) is displayed in XML format.
 
-    ![6th and 7th records](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_14.png)
+![Data from the Products collection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_10.png)
 
 
-15. A shorthand way of referring to individual records is to put the record number in parenthesis after the Collection name. To view the 22nd record in `Products`, use the URL below:
+[DONE]
+[ACCORDION-END]
 
-    - <http://services.odata.org/V2/Northwind/Northwind.svc/Products(22)?$format=json>
+[ACCORDION-BEGIN [Step 7: ](Run app to see paging)]
 
-    ![Shorthand-22](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_15.png)
+Scroll to the bottom of the page and look for the `<link rel="next"` entry. The Northwind service enforces server-side paging and will only pass 20 records at a time. The paging size (20) can be seen in the `$skiptoken=20` query option at the end of the "next" URL. A Web IDE generated app will automatically issue the "next" URL when you scroll to the bottom of the master list in your app. You can run your app and try this now. Look for the spinning "busy" UI element to appear briefly as the new request is sent and set loaded in.
 
+![Next URL](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_11.png)
 
-16. In the metadata, the `ProductID` is set as the key for the collection. This means that any data returned will be sorted by `ProductID`, as evidenced in the screenshots above (`ProductID` of 1, 6, 7, 22 etc.).
+[DONE]
+[ACCORDION-END]
 
-    ![Key field](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_16.png)
+[ACCORDION-BEGIN [Step 8: ](Enhance format for readability)]
 
+The XML format of the OData response includes a lot of extra characters that makes the output difficult to read. You can add a query option to the URL to change the format to JSON, and with JSONView installed, some formatting and color-coding makes it more "human-readable".
 
-17. You can specify that the results should be returned sorted on a different field by using the `$orderby=<FieldName>` query option. It is easier for a person to find a desired product if the list was sorted alphanumerically by `ProductName`. To see this in action, use the URL below that includes the `$orderby=ProductName` query option.
+After the resource path, multiple query options can be added. Following standard HTTP query string formats, the first option will be pre-pended with a `?`, and any successive ones will be pre-pended with a `&`. To request the response in JSON, use the query option: `$format=json` pre-pended with a `?`.
 
-    - <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$orderby=ProductName>
+- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json>
 
-    You can see that the records are returned in alphanumerical order (`ProductID`s 17 and 3 respectively).
+You can see how there is less text shown, along with the color-coding and formatting of JSONView improves the readability.
 
-    ![orderby ProductName](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_17.png)
+![JSON format](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_12.png)
 
+[DONE]
+[ACCORDION-END]
 
-18. By default, the `$orderby` option sorts in ascending order. To sort by descending order, append "` desc`" (with the space) after the `orderby` field. The browser will encode the space as `%20` and the results are returned in descending alphanumerical order.
+[ACCORDION-BEGIN [Step 9: ](Set number of records to return)]
 
-    - <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$orderby=ProductName\ desc>
+Some OData services do not enforce server-side paging, and will send a large amount of data for each request. To limit the set of data sent, include the `$top=x` query option, where x is any integer. `$top=1` will request only the first record, `$top=5` requests the first five.
 
-    ![orderby ProductName descending](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_18.png)
+Enter `$top=1` to view the first record only (be sure to pre-pend it with a `&` since it is the second query option).
 
-19. A very useful query option to highlight is the filter expression (`$filter`). A `filter` expression can be simple logical operators (`equal`, `greater than`, `less than`, etc.) include basic math (`add`, `subtract`, `multiply` and `delete`) and functions (`string`, `data`, `math` and `type` functions), and combinations of all.
+- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=1>
 
-    A simple example of filtering would be to see which products in the Northwind service are discontinued (the link below will show eight results). The query option string is: `$filter=Discontinued eq true`
+![top query option](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_13.png)
 
-    - <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$orderby=ProductName&$filter=Discontinued\ eq\ true>
+[DONE]
+[ACCORDION-END]
 
-    To exclude those from an app, you would simply change the `eq` (equal) to `ne` (not equal).
+[ACCORDION-BEGIN [Step 10: ](Skipping over records)]
 
-    ![filter Discontinued = true](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_19.png)
+To see the 6th and 7th records, add the `$skiptoken=5` query option and change `$top` to 2. The `$skiptoken` will make the service skip over the `skiptoken` many records before it sends data. Changing `$top` to `2` will return two records, rather than just one.
 
+- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$skiptoken=5>
 
-20. To get a list of products with a `UnitPrice` greater than 100 and not discontinued, the query option string would be: `$filter=Discontinued eq false and UnitPrice gt 100`. Here, `gt` stands for "greater than".
+![6th and 7th records](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_14.png)
 
-    - <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$orderby=ProductName&$filter=Discontinued\ eq\ false\ and\ UnitPrice\ gt\ 100>
 
-    ![UnitPrice > 100 and not discontinued](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_20.png)
+[DONE]
+[ACCORDION-END]
 
-    >For a full list of filter options with examples, please see the URI conventions link shown in the last step of this tutorial.
+[ACCORDION-BEGIN [Step 11: ](Create URL for individual records)]
 
+A shorthand way of referring to individual records is to put the record number in parenthesis after the Collection name. To view the 22nd record in `Products`, use the URL below:
 
-21. The `$select` query option specifies a subset of the full collection properties to return which is useful is you want to minimize the amount of data sent or received to the app. For example, to return only the `ProductNam`, `UnitPrice` and `Supplier` use this URL:
+- <http://services.odata.org/V2/Northwind/Northwind.svc/Products(22)?$format=json>
 
-    - <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier>
+![Shorthand-22](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_15.png)
 
-    ![selecting a subset of fields](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_21.png)
+[DONE]
+[ACCORDION-END]
 
-22. Since `Supplier` is a `NavigationProperty`, it is returned as a URI. You can use the `$expand` query option to have the server include those properties in the response (as opposed to just the URI):
+[ACCORDION-BEGIN [Step 12: ](Set sort-by field)]
 
-    - <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier&$expand=Supplier>
+In the metadata, the `ProductID` is set as the key for the collection. This means that any data returned will be sorted by `ProductID`, as evidenced in the screenshots above (`ProductID` of 1, 6, 7, 22 etc.).
 
-    ![Expand a NavigationProperty field](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_22.png)
+![Key field](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_16.png)
 
-23. Building on the last example, in this final query you will combine a few of the query options together:
 
-    - `$format` – return the results in JSON format
-    - `$select` – return three fields (`ProductName`, `UnitPrice` and `Supplier`)
-    - `$expand` – expand the Supplier `NavigationProperty`
-    - `$filter` – filter the response based on a field name in the `Supplier` collection where (`CompanyName` starts with `Grand`)
+You can specify that the results should be returned sorted on a different field by using the `$orderby=<FieldName>` query option. It is easier for a person to find a desired product if the list was sorted alphanumerically by `ProductName`. To see this in action, use the URL below that includes the `$orderby=ProductName` query option.
 
-    - <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier&$expand=Supplier&$filter=startswith(Supplier/CompanyName,\ \'Grand\')>
+- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$orderby=ProductName>
 
-    ![Complex query results](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_23.png)
+You can see that the records are returned in alphanumerical order (`ProductID`s 17 and 3 respectively).
 
+![orderby ProductName](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_17.png)
 
-24. As you have seen, there is quite a bit of capability exposed in an OData service. The advantage to the developer is the application logic that you would otherwise have to create and maintain in code can be delivered by the OData service. You will learn how to do this in the next tutorial.
+[DONE]
+[ACCORDION-END]
 
-26. There are many OData resources available on the web. A few are listed below:
+[ACCORDION-BEGIN [Step 13: ](Set sort order)]
 
-    - OData tutorial: <http://www.odata.org/getting-started/basic-tutorial/>
-    - OData URI conventions: <http://www.odata.org/documentation/odata-version-2-0/uri-conventions/>
-    - OData viewer and query builder: <http://pragmatiqa.com/xodata/>
+By default, the `$orderby` option sorts in ascending order. To sort by descending order, append "` desc`" (with the space) after the `orderby` field. The browser will encode the space as `%20` and the results are returned in descending alphanumerical order.
 
-    >To use the OData viewer, select **Metadata URL** under **Choose Access Option** and enter `http://services.odata.org/V2/Northwind/Northwind.svc/$metadata`
+- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$orderby=ProductName\ desc>
+
+![orderby ProductName descending](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_18.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 14: ](Add filters)]
+
+A very useful query option to highlight is the filter expression (`$filter`). A `filter` expression can be simple logical operators (`equal`, `greater than`, `less than`, etc.) include basic math (`add`, `subtract`, `multiply` and `delete`) and functions (`string`, `data`, `math` and `type` functions), and combinations of all.
+
+A simple example of filtering would be to see which products in the Northwind service are discontinued (the link below will show eight results). The query option string is: `$filter=Discontinued eq true`
+
+- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$orderby=ProductName&$filter=Discontinued\ eq\ true>
+
+To exclude those from an app, you would simply change the `eq` (equal) to `ne` (not equal).
+
+![filter Discontinued = true](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_19.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 15: ](Add other query parameters)]
+
+To get a list of products with a `UnitPrice` greater than 100 and not discontinued, the query option string would be: `$filter=Discontinued eq false and UnitPrice gt 100`. Here, `gt` stands for "greater than".
+
+- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$orderby=ProductName&$filter=Discontinued\ eq\ false\ and\ UnitPrice\ gt\ 100>
+
+![UnitPrice > 100 and not discontinued](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_20.png)
+
+>For a full list of filter options with examples, please see the URI conventions link shown in the last step of this tutorial.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 16: ](Get subset of collection)]
+
+The `$select` query option specifies a subset of the full collection properties to return which is useful is you want to minimize the amount of data sent or received to the app. For example, to return only the `ProductNam`, `UnitPrice` and `Supplier` use this URL:
+
+- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier>
+
+![selecting a subset of fields](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_21.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 17: ](Expand the query)]
+
+Since `Supplier` is a `NavigationProperty`, it is returned as a URI. You can use the `$expand` query option to have the server include those properties in the response (as opposed to just the URI):
+
+- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier&$expand=Supplier>
+
+![Expand a NavigationProperty field](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_22.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 18: ](Combine query options)]
+
+Building on the last example, in this final query you will combine a few of the query options together:
+
+- `$format` – return the results in JSON format
+- `$select` – return three fields (`ProductName`, `UnitPrice` and `Supplier`)
+- `$expand` – expand the Supplier `NavigationProperty`
+- `$filter` – filter the response based on a field name in the `Supplier` collection where (`CompanyName` starts with `Grand`)
+
+-  `<http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier&$expand=Supplier&$filter=startswith(Supplier/CompanyName,\ \'Grand\')>`
+
+![Complex query results](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_23.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 19: ](Wrap-up)]
+
+As you have seen, there is quite a bit of capability exposed in an OData service. The advantage to the developer is the application logic that you would otherwise have to create and maintain in code can be delivered by the OData service. You will learn how to do this in the next tutorial.
+
+
+There are many OData resources available on the web. A few are listed below:
+
+- OData tutorial: <http://www.odata.org/getting-started/basic-tutorial/>
+- OData URI conventions: <http://www.odata.org/documentation/odata-version-2-0/uri-conventions/>
+- OData viewer and query builder: <http://pragmatiqa.com/xodata/>
+
+>To use the OData viewer, select **Metadata URL** under **Choose Access Option** and enter `http://services.odata.org/V2/Northwind/Northwind.svc/$metadata`
+
+[DONE]
+[ACCORDION-END]
+
+
 
 ### Summary
 
 Here is a short summary of the various URLs and query options covered in this tutorial:
 
- Comments                   |  URL
- :-------------------------| :-------------
- Service Document             |  <http://services.odata.org/V2/Northwind/Northwind.svc/>
- Metadata Document            |  <http://services.odata.org/V2/Northwind/Northwind.svc/$metadata>
- View a Collection            |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products>
- Collection with `$skiptoken` |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$skiptoken=20>
- Use `$format` to output JSON  |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json>
- `$top=1` to return the first record only (as JSON) |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=1>
- `$skiptoken=5` to skip the first five records, `$top=2` to return the next two records (# 6 and #7) |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$skiptoken=5>
- Use Collection(XYZ) to return a specific record number |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products(22)?$format=json>
- `$orderby=<EntityType>` to return records sorted by a field other than the key |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$orderby=ProductName>
- `$orderby=<EntityType> desc` to return records sorted by a field other than the key in descending order | <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$orderby=ProductName%20desc>
- `$filter` to return only records that satisfy a single logical test |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$orderby=ProductName&$filter=Discontinued%20eq%20true>
- `$filter` to return records that satisfy two logical tests |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$orderby=ProductName&$filter=Discontinued%20eq%20false%20and%20UnitPrice%20gt%20100>
- `$select` to define a subset of fields to return |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier>
- `$select` to define a subset of fields to return and `$expand` to include a `NavigationProperty` linked entity in the results |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier&$expand=Supplier>
- A combination example with `$format`, `$select`, `$expand` and `$filter` |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier&$expand=Supplier&$filter=startswith(Supplier/CompanyName,%20%27Grand%27)>
+Comments                   |  URL
+:-------------------------| :-------------
+Service Document             |  <http://services.odata.org/V2/Northwind/Northwind.svc/>
+Metadata Document            |  <http://services.odata.org/V2/Northwind/Northwind.svc/$metadata>
+View a Collection            |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products>
+Collection with `$skiptoken` |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$skiptoken=20>
+Use `$format` to output JSON  |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json>
+`$top=1` to return the first record only (as JSON) |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=1>
+`$skiptoken=5` to skip the first five records, `$top=2` to return the next two records (# 6 and #7) |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$skiptoken=5>
+Use Collection(XYZ) to return a specific record number |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products(22)?$format=json>
+`$orderby=<EntityType>` to return records sorted by a field other than the key |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$orderby=ProductName>
+`$orderby=<EntityType> desc` to return records sorted by a field other than the key in descending order | <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$orderby=ProductName%20desc>
+`$filter` to return only records that satisfy a single logical test |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$orderby=ProductName&$filter=Discontinued%20eq%20true>
+`$filter` to return records that satisfy two logical tests |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$orderby=ProductName&$filter=Discontinued%20eq%20false%20and%20UnitPrice%20gt%20100>
+`$select` to define a subset of fields to return |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier>
+`$select` to define a subset of fields to return and `$expand` to include a `NavigationProperty` linked entity in the results |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier&$expand=Supplier>
+A combination example with `$format`, `$select`, `$expand` and `$filter` |  <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$select=ProductName,UnitPrice,Supplier&$expand=Supplier&$filter=startswith(Supplier/CompanyName,%20%27Grand%27)>
 
 
 
@@ -247,16 +347,16 @@ If you would like to build an app similar to what you have done in this tutorial
 
 The two OData Service document URLs are:
 
- - <https://sapes4.sapdevcenter.com/sap/opu/odata/IWBEP/GWDEMO/>
- - <https://sapes4.sapdevcenter.com/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT/>
+- <https://sapes4.sapdevcenter.com/sap/opu/odata/IWBEP/GWDEMO/>
+- <https://sapes4.sapdevcenter.com/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT/>
 
 To build an app like what you have now, but with data from SAP Gateway you simply need to:
 
- - Create an HCP destination pointing to `https://sapes4.sapdevcenter.com` following an [earlier tutorial procedure](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
- - Enter the remaining part of the URL in the Data Connection portion of the Web IDE template customization. For the two URLs above, they would be:
-  - `/sap/opu/odata/IWBEP/GWDEMO`
-  - `/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT`
+- Create an SAP Cloud Platform destination pointing to `https://sapes4.sapdevcenter.com` following an [earlier tutorial procedure](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+- Enter the remaining part of the URL in the Data Connection portion of the Web IDE template customization. For the two URLs above, they would be:
+- `/sap/opu/odata/IWBEP/GWDEMO`
+- `/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT`
 
 
 ## Next Steps
- - [Inserting OData query options into your SAPUI5 app](http://go.sap.com/developer/tutorials/hcp-webide-inserting-query-options.html)
+- [Inserting OData query options into your SAPUI5 app](http://www.sap.com/developer/tutorials/hcp-webide-inserting-query-options.html)

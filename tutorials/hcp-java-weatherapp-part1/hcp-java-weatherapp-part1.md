@@ -1,15 +1,15 @@
 ---
 title: End-to-End Weather App Scenario Part 1
-description: Create a basic Java app in SAP HANA Cloud Platform
-tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
+description: Create a basic Java app in SAP Cloud Platform
+tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
 ---
 
 ## Prerequisites  
- - [Getting Started with the SAP HANA Cloud Platform Tools for Java](https://hcp.sap.com/developers/TutorialCatalog/jav100_01_java_setup_eclipse.html)
+ - [Getting Started with the SAP Cloud Platform Tools for Java](http://www.sap.com/developer/tutorials/hcp-java-eclipse-setup.html)
  - Note: JDK 1.6 or 1.7 are required. If you have a later version of Java installed, please install [JDK 1.7](http://www.oracle.com/technetwork/pt/java/javase/downloads/jdk7-downloads-1880260.html) and temporarily change your `JAVA_HOME` environment variable to point to it.
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 2](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)
+ - [End-to-End Weather App Scenario Part 2](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)
 
 ## Details
 ### You will learn  
@@ -18,15 +18,15 @@ In this tutorial series you will start from zero and develop a fully operational
 
 The constituent parts of this tutorial series cover the following:
 
- - How to create a simple web application on HCP
+ - How to create a simple web application on SAP Cloud Platform
  - How to apply authentication and authorization
  - How to expose business functionality as an external RESTful API
  - How to add JPA-based persistence to your web app
- - How to leverage the multi-tenancy features of SAP HANA Cloud Platform
+ - How to leverage the multi-tenancy features of SAP Cloud Platform
  - How to use the connectivity service to consume external services
  - How to add a mobile-friendly UI5-based user interface to the web application
 
-In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and the local SAP HANA Cloud Platform (HCP) tooling have been properly installed and configured.
+In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and the local SAP Cloud Platform tooling have been properly installed and configured.
 
 ### Time to Complete
 **10 min**
@@ -72,7 +72,7 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
 
     ![Changing the Servlet URL mapping](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-5.png)
 
-6. Now we need to do our first bit of coding. Navigate to the servlet’s `doGet()` method and replace the `TODO` comment with the following line of code and save your changes:
+6. Now we need to do our first bit of coding. Navigate to the servlet's `doGet()` method and replace the `TODO` comment with the following line of code and save your changes:
 
     ```javascript
     response.getWriter().println("Hello World!");
@@ -84,10 +84,10 @@ In Part 1, you will develop a basic Java app to ensure that both Eclipse IDE and
 
 8. Choose the **Manually define a new Server** option and select the **SAP / Java Web Server** option from the server selection. Make sure to select **Java Web** as the server runtime environment.
 
-    Click on **Finish**. The internal browser is now started and displays the traditional message marking the first step into a new programmer’s journey.
+    Click on **Finish**. The internal browser is now started and displays the traditional message marking the first step into a new programmer's journey.
 
     ![Creating a new local Java Server to run your app](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-8.png)
 
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 2](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)
+ - [End-to-End Weather App Scenario Part 2](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)

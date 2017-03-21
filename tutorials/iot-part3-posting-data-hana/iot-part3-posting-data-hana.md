@@ -7,15 +7,15 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Internet of Things (IoT) Setup SAP HANA XS (On-premise or stand-alone server)](http://go.sap.com/developer/tutorials/iot-part2-hanaxs-setup.html)
+ - **Tutorials:** [Internet of Things (IoT) Setup SAP HANA XS (On-premise or stand-alone server)](http://www.sap.com/developer/tutorials/iot-part2-hanaxs-setup.html)
 
 
 ## Next Steps
- - [Internet of Things (IoT) Check your data](http://go.sap.com/developer/tutorials/iot-part4-checking-data.html)
+ - [Internet of Things (IoT) Check your data](http://www.sap.com/developer/tutorials/iot-part4-checking-data.html)
 
 ## Details
 ### You will learn  
-Now that your foundation in place it’s time to do a test of posting our data and then to try it with our device. To test you will be using the [Chrome Postman extension](https://chrome.google.com/webstore/detail/postman-rest-client/fdmmgilgnpjigdojojpjoooidkmcomcm?hl=en).
+Now that your foundation in place it's time to do a test of posting our data and then to try it with our device. To test you will be using the [Chrome Postman extension](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop).
 
 ### Time to Complete
 **10 Min**.
@@ -58,4 +58,4 @@ Now that your foundation in place it’s time to do a test of posting our data a
 8. You can modify the values in the POST body and send a few more requests to add a bit more data if you'd like (but it is not required).
 
 ## Next Steps
- - [Internet of Things (IoT) Check your data](http://go.sap.com/developer/tutorials/iot-part4-checking-data.html)
+ - [Internet of Things (IoT) Check your data](http://www.sap.com/developer/tutorials/iot-part4-checking-data.html)

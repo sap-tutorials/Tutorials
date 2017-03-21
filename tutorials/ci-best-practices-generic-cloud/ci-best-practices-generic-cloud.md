@@ -9,11 +9,11 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Prerequisites
 
   - **Proficiency:** Intermediate
-  - [Generic Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)
+  - [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html)
   
 ## Next Steps
 
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
 
 ---
 
@@ -68,7 +68,7 @@ Figure 1: The component landscape
     git clone {The URL of the new GitHub project}
     ```
 
-4. Add the initial project files into the Git workspace. For example, add the following files including the content located in the appendix of the [Generic Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html):
+4. Add the initial project files into the Git workspace. For example, add the following files including the content located in the appendix of the [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html):
 
     ```
     {git repository root}/pom.xml
@@ -152,5 +152,5 @@ Figure 2: The CI process with pull requests in GitHub.
 
 ## Next Steps
 
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
   

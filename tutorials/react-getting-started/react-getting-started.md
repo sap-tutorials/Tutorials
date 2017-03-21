@@ -1,15 +1,15 @@
 ---
 title: React JS - Getting started
-description: Step #1: Start to build a React JavaScript project using SAP Web IDE on HANA Cloud Platform
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+description: Step #1: Start to build a React JavaScript project using SAP Web IDE on SAP Cloud Platform
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Trial Account** You will need a HANA Cloud Platform (HCP) trial account for this tutorial series.  [Create an HCP Trial Account](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Trial Account** You will need a SAP Cloud Platform trial account for this tutorial series.  [Create an SAP Cloud Platform Trial Account](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 
 ## Next Steps
-- **Tutorial** [Step 2 - Create the Bootstrap Template](http://go.sap.com/developer/tutorials/react-bootstrap-template.html)
+- **Tutorial** [Step 2 - Create the Bootstrap Template](http://www.sap.com/developer/tutorials/react-bootstrap-template.html)
 
 ## Details
 ### You will learn  
@@ -21,7 +21,7 @@ In this tutorial series, we will explore another technology for Single Page Appl
 ---
 
 #### REACT tutorial series
-**Step 1**: Welcome to the tutorial series on React JS.  React is a great front end development tool for building Single Page Applications (SPA).  It is one of several possible options to build Views (using the [Model View Controller paradigm) in HTML5 browsers that will run in HANA Cloud Platform.
+**Step 1**: Welcome to the tutorial series on React JS.  React is a great front end development tool for building Single Page Applications (SPA).  It is one of several possible options to build Views (using the [Model View Controller paradigm) in HTML5 browsers that will run in SAP Cloud Platform.
 
 This first tutorial will start by opening the IDE and getting the basic parts of the project configured.  Here are the detailed steps:
 
@@ -32,15 +32,15 @@ This first tutorial will start by opening the IDE and getting the basic parts of
 
 ### Connect to the SAP Web IDE
 
-1.  Open the [HANA Cloud Platform console](https://account.hanatrial.ondemand.com/)
+1.  Open the [SAP Cloud Platform console](https://account.hanatrial.ondemand.com/)
 
     > **Can not create a developer account?**
     >
-    > If you have trouble logging in to your HANA Cloud Platform Cockpit, and you are using a company account (one provided by your employer), it is possible that the Cloud access has been locked.  Create a new FREE trial account by clicking the link above, and use your personal email address to set up the new account.
+    > If you have trouble logging in to your SAP Cloud Platform Cockpit, and you are using a company account (one provided by your employer), it is possible that the Cloud access has been locked.  Create a new FREE trial account by clicking the link above, and use your personal email address to set up the new account.
 
-    ![HANA Cloud Platform Developer Account Login Screen](1-1.png)
+    ![SAP Cloud Platform Developer Account Login Screen](1-1.png)
 
-2.  You should now be in the SAP HANA Cloud Platform Cockpit, as shown below.  Click on the **Services** menu item on the left.  
+2.  You should now be in the SAP Cloud Platform Cockpit, as shown below.  Click on the **Services** menu item on the left.  
 
     Next, click on the **SAP Web IDE** box.  You may need to scroll down to find this box.
 
@@ -48,11 +48,11 @@ This first tutorial will start by opening the IDE and getting the basic parts of
     >
     > If the box does **NOT** say Enabled, click the **Not Enabled** button to enable this feature.  In the screen that appears, click the **Enable** button at the top of the page to confirm this feature is set up.
 
-    ![HCP Console - Web IDE services button and box](1-2.png)
+    ![SAP Cloud Platform Console - Web IDE services button and box](1-2.png)
 
 3.  In the SAP Web IDE screen, you will see a paragraph called *Service Description*.  At the bottom of the paragraph, there is a link called **Open SAP Web IDE**.  Click this link
 
-    ![HCP Console - Open Web IDE link](1-3.png)
+    ![SAP Cloud Platform Console - Open Web IDE link](1-3.png)
 
 4.  A new tab (or window) will open, and the Web IDE will load.
 
@@ -131,4 +131,4 @@ This first tutorial will start by opening the IDE and getting the basic parts of
 Yes, you can.   We are using Web IDE because it provides an unlimited, free, developer account.  It also has a built-in web front end, so that you can test your code immediately.  And, it has a pretty good HTML and JavaScript editing system.  But there are plenty of other development IDE's, including Eclipse, that would work as well.  Feel free to use the one that your company is using, or try out a new one.
 
 ## Next Steps
- - **Tutorial** [Step 2 - Create the Bootstrap Template](http://go.sap.com/developer/tutorials/react-bootstrap-template.html)
+ - **Tutorial** [Step 2 - Create the Bootstrap Template](http://www.sap.com/developer/tutorials/react-bootstrap-template.html)

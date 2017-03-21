@@ -1,14 +1,14 @@
 ---
 title: React JS - Define the Bootstrap Template
 description: Step #2: Define the initial page design and layout using Bootstrap
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorial:** [Step 1 - Getting started with REACT](http://go.sap.com/developer/tutorials/react-getting-started.html)
+ - **Tutorial:** [Step 1 - Getting started with REACT](http://www.sap.com/developer/tutorials/react-getting-started.html)
 
 ## Next Steps
- - **Tutorial:** [Step 3 - Add the React JavaScript](http://go.sap.com/developer/tutorials/react-add-javascript.html)
+ - **Tutorial:** [Step 3 - Add the React JavaScript](http://www.sap.com/developer/tutorials/react-add-javascript.html)
 
 
 ## Details
@@ -399,4 +399,4 @@ Just as a reference, your `index.html` file should now look like this:
 ---
 
 ## Next Steps
- - **Tutorial:** [Step 3 - Add the React JavaScript](http://go.sap.com/developer/tutorials/react-add-javascript.html)
+ - **Tutorial:** [Step 3 - Add the React JavaScript](http://www.sap.com/developer/tutorials/react-add-javascript.html)

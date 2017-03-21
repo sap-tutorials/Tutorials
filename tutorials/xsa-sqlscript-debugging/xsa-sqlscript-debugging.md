@@ -5,21 +5,22 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Creating Table User Defined Functions](http://go.sap.com/developer/tutorials/xsa-sqlscript-table-user.html)
+ - **Tutorials:** [Creating Table User Defined Functions](http://www.sap.com/developer/tutorials/xsa-sqlscript-table-user.html)
 
 ## Next Steps
- - [Anonymous Blocks](http://go.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)
+ - [Anonymous Blocks](http://www.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)
 
 ## Details
 ### You will learn  
 In the following exercise we will show how to debug a procedure using the SQLScript debugger. This includes setting breakpoints, evaluating expressions and intermediate results.
+**Please note - This tutorial is based on SPS11**
 
 ### Time to Complete
 **10 Min**.
 
 ---
 
-1. Go to the HRTT page and open the procedure called `dev602.procedures::get_po_header_data`. 
+1. Go to the HRTT page and open the procedure called `dev602.procedures::get_po_header_data`.
 
     ![HRTT](1.png)
 
@@ -112,4 +113,4 @@ In the following exercise we will show how to debug a procedure using the SQLScr
     ![results](23.png)
 
 ## Next Steps
- - [Anonymous Blocks](http://go.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)
+ - [Anonymous Blocks](http://www.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)

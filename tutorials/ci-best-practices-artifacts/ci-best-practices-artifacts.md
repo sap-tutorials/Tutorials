@@ -12,10 +12,13 @@ tags: [  tutorial>intermediate, tutorial:type/project  ]
 
 ## Next Steps
  
-  - [Landscape Configuration](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
   
 ---
+
+> The purpose of this guide is to enable you to do first steps in designing your own CI processes using components like Gerrit, Jenkins and Nexus. These setup instructions for these components serve educational purposes only and are not meant as reference setup for productive purposes; for productive use, refer to the official component documentation.
+
 
 What we offer in this part is not more than a basic recipe to set up a minimum installation including only those components on Linux that we consider as absolutely necessary to run a CI/CD process for development with SAP. However, the setup best suited to your concrete requirements cannot be part of this document because it highly depends on your concrete local situation, the network setup, the overall landscape into which the CI/CD process will be embedded, and so on. Therefore, we will restrict ourselves here to showing only the principles and the core elements.
 
@@ -30,11 +33,11 @@ There are a lot of artifact repositories on the market that would fit our purpos
 ### Nexus
 
 Nexus is a repository manager, this means it is able to host many repositories. These may play different roles in the software development and release process (like snapshot and release repositories). Furthermore, it's possible to have repositories supporting different technical formats.
-This document refers to a Nexus 2 release. In the future, Nexus 3 might also be appropriate, but there are still some features missing in release 3 in comparison to 2 (status April 2016).
+This document refers to a Nexus 2 release.
 
-> Homepage: http://www.sonatype.org/nexus  
-> Downloads: http://www.sonatype.org/nexus/go  
-> Installation guide: https://books.sonatype.com/nexus-book/reference/installing.html
+> [Nexus](http://www.sonatype.org/nexus)  
+> [Nexus Downloads](http://www.sonatype.org/nexus/go)  
+> [Nexus Installation Guide](https://books.sonatype.com/nexus-book/reference/installing.html)
 
 #### Prerequisites
 
@@ -51,7 +54,7 @@ This document refers to a Nexus 2 release. In the future, Nexus 3 might also be 
 
 4. Extract the downloaded Nexus installation archive into `/data/nexus`.
 
-5. Go into the configuration directory (which should be something like `/data/nexus/nexus-{release}/conf/`) and open the file `nexus.properties`. 
+5. Go into the configuration directory (which should be something like `/data/nexus/nexus-<release>/conf/`) and open the file `nexus.properties`. 
     In this document, we will keep the settings as they are, especially the default setting of the port Nexus is running with. But in your setup, you may choose whatever port is appropriate.
 
     ```
@@ -62,19 +65,19 @@ This document refers to a Nexus 2 release. In the future, Nexus 3 might also be 
 
     ```
     cd /usr/local
-    ln -s /data/nexus/{the versioned nexus installation directory} nexus
+    ln -s /data/nexus/<the versioned nexus installation directory> nexus
     ln -s /data/nexus/sonatype-work sonatype-work
     ```
 
-    Please note that the directory `sonatype-work` does not yet exist but will be created on startup of the Nexus application.
+    If the directory `sonatype-work` does not yet exist, it will be created on startup of the Nexus application.
 
-7. Switch to user `nexus` again and start Nexus with a browser on port 8081.
+7. Switch to user `nexus` again and start Nexus.
 
     ```
     /usr/local/nexus/bin/nexus start
     ```
 
-8. Open the URL `http://{nexus host}:8081/nexus`. You should now be able to access Nexus and you should see some default repositories already configured, especially two of them named `Snapshots` and `Releases`.  
+8. Open the URL `http://<nexus host>:8081/nexus`. You should now be able to access Nexus and you should see some default repositories already configured, especially two of them named `Snapshots` and `Releases`.  
 
     ![Repositories](artifact-repository-1.png)
     
@@ -84,10 +87,12 @@ This document refers to a Nexus 2 release. In the future, Nexus 3 might also be 
     
 9. To make Nexus productively runnable and secure, please follow the post-install checklist of the official documentation.
  
-    > Documentation: https://books.sonatype.com/nexus-book/reference/install-sect-repoman-post-install.html   
+    > [Nexus Post-Install Checklist](https://books.sonatype.com/nexus-book/reference/install-sect-repoman-post-install.html)  
 
+
+> The content of this document is for guidance purposes only. No warranty or guarantees are provided.
 
 ## Next Steps
  
-  - [Landscape Configuration](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

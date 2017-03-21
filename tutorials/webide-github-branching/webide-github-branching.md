@@ -1,15 +1,15 @@
 ---
 title: Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE
 description: Part 5 of 6, Collaborative Development Using GitHub and SAP Web IDE
-tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-hana-cloud-platform ]
+tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:** 
-    - [Creating issues, setting milestones and assigning issues to collaborators](http://go.sap.com/developer/tutorials/webide-github-issues-milestones.html)
+    - [Creating issues, setting milestones and assigning issues to collaborators](http://www.sap.com/developer/tutorials/webide-github-issues-milestones.html)
 
 ## Next Steps
-- [Merging branches back into master branch in GitHub using Pull Requests](http://go.sap.com/developer/tutorials/webide-github-merge-pull-request.html)
+- [Merging branches back into master branch in GitHub using Pull Requests](http://www.sap.com/developer/tutorials/webide-github-merge-pull-request.html)
 
 ## Details
 ### You will learn  
@@ -23,7 +23,7 @@ In this tutorial, you'll learn how your collaborators can create branches in Git
 
 ---
 
-1. Go to [https://account.hanatrial.ondemand.com](https://account.hanatrial.ondemand.com) and log in to your SAP HANA Cloud Platform cockpit.
+1. Go to [https://account.hanatrial.ondemand.com](https://account.hanatrial.ondemand.com) and log in to your SAP Cloud Platform cockpit.
 
 2. To open SAP Web IDE, click on the **Services** tab in the navigation bar, scroll down and then click the **SAP Web IDE** tile to open the SAP Web IDE service page.
 
@@ -79,4 +79,4 @@ In this tutorial, you'll learn how your collaborators can create branches in Git
 
 
 ## Next Steps
- - [Merging branches back into master branch in GitHub using Pull Requests](http://go.sap.com/developer/tutorials/webide-github-merge-pull-request.html)
+ - [Merging branches back into master branch in GitHub using Pull Requests](http://www.sap.com/developer/tutorials/webide-github-merge-pull-request.html)

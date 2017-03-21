@@ -12,10 +12,13 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ## Next Steps
  
-  - [Artifact Repository](http://go.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Artifact Repository](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
   
 ---
+
+
+> The purpose of this guide is to enable you to do first steps in designing your own CI processes using components like Gerrit, Jenkins and Nexus. These setup instructions for these components serve educational purposes only and are not meant as reference setup for productive purposes; for productive use, refer to the official component documentation.
 
 What we offer in this part is not more than a basic recipe to set up a minimum installation including only those components on Linux that we consider as absolutely necessary to run a CI/CD process for development with SAP. However, the setup best suited to your concrete requirements cannot be part of this document because it highly depends on your concrete local situation, the network setup, the overall landscape into which the CI/CD process will be embedded, and so on. Therefore, we will restrict ourselves here to showing only the principles and the core elements.
 
@@ -23,9 +26,10 @@ If you are interested in other examples of CI/CD processes with a focus on speci
 
 Note: This document is restricted to the description of component installation on Linux. For installation on Windows, we refer to the installation documentation on the web.
 
-The build scheduler is the component where you define build procedures and trigger builds. One of the most popular build schedulers is Jenkins, but other solutions, especially on the cloud, are possible as well. 
 
-### Jenkins Basics
+### 1. Introduction
+
+The build scheduler is the component where you define build procedures and trigger builds. One of the most popular build schedulers is Jenkins, but other solutions, especially on the cloud, are possible as well. 
 
 Jenkins integrates well with polling (Gerrit) or event-based mechanisms (GitHub). It is available as an open source tool and has a large community that provides plugins for any purpose. It is easy to write plugins for Jenkins as well.
 
@@ -43,12 +47,12 @@ This document describes a master-slave installation. Even if you decide on a mas
 
 Our description is based on Jenkins version 1.647. In the case you use Jenkins 2, all what is described also works, but the navigation might have changed, and some of the core features have been moved to plugins which must be installed in addition to the mentioned ones.
 
-### Jenkins Master
+### 2. Jenkins Master
 
 This section describes how to set up the Jenkins master.
 
-> Homepage, Downloads: https://jenkins-ci.org  
-> Installation guide: https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins
+> [Jenkins, downloads](https://jenkins-ci.org)  
+> [Jenkins installation guide](https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins)
 
 #### Prerequisites
 
@@ -68,13 +72,13 @@ This section describes how to set up the Jenkins master.
     chown jenkins /data/jenkins
     ```
 
-4. From the Jenkins web site, download the installation package fitting to your Linux distribution and install the package on the hosting machine.
+4. To make the installation easy, download the fitting installation package to your Linux distribution from the Jenkins web site, and install the package on the hosting machine. For example, if you use SUSE or Redhat Linux, download the corresponding `rpm` package and install it with the package manager (`zypper` or `rpm` in this case) on the machine. Consult the official Jenkins documentation for details concerning your Linux platform.
 
-5. Configure the Jenkins home, the Java home directory, the Jenkins daemon user and the Jenkins port. The location may differ between various Linux distributions, for example on `SuSE Linux`, it located in `/etc/sysconfig/jenkins`. 
+5. Configure the Jenkins home, the Java home directory, the Jenkins daemon user and the Jenkins port. The location may differ between various Linux distributions, for example on `SUSE Linux`, it is located in `/etc/sysconfig/jenkins`. 
 
     ```
     JENKINS_HOME="/data/jenkins"
-    JENKINS_JAVA_HOME={Java home of your Java JDK installation}
+    JENKINS_JAVA_HOME=<Java home of your Java JDK installation>
     JENKINS_USER="jenkins"
     JENKINS_PORT="8082"
     ```
@@ -85,16 +89,16 @@ This section describes how to set up the Jenkins master.
     - Log in as `jenkins` onto the Jenkins master machine.
     - Create an RSA key (`id_rsa`, `id_rsa.pub`) pair in the `.ssh` directory of the `jenkins` home  directory (in our example `/home/Jenkins/.ssh`):
 
-    ```
-    mkdir /home/jenkins/.ssh
-    chmod 700 /home/jenkins/.ssh
-    cd /home/jenkins/.ssh
-    ssh-keygen
-    ```
+        ```
+        mkdir /home/jenkins/.ssh
+        chmod 700 /home/jenkins/.ssh
+        cd /home/jenkins/.ssh
+        ssh-keygen
+        ```
 
     - You will need a copy of the public key file later on during the setup of the Jenkins slave (see below).
 
-7. Start the Jenkins daemon. Log in to the Jenkins master machine as `root` and execute:
+7. Start the Jenkins daemon. This step might depend on the Linux distribution and the way you have installed Jenkins. For SUSE Linux, log in to the Jenkins master machine as `root` and execute:
 
     ```
     service jenkins start
@@ -159,34 +163,34 @@ This section describes how to set up the Jenkins master.
 - Since the Jenkins master constitutes a single point of failure, we also recommend ensuring some additional isolation from the rest of the network with a firewall.
 
 
-### Jenkins Slave
+### 3. Jenkins Slave
 
 If you are planning to run a master-only scenario, you do not need a slave machine. However this section also contains some considerations for the master in a master-only approach; if this is your scenario follow only those steps that are marked with "master-only (MO)". If you plan to run a separate slave, follow all the steps.
 
 Our examples are restricted to Linux as the operating system for the slaves, as we discuss only build technologies that do not depend on the underlying platform (like Java or Node.js). No explicit Jenkins software installation is required on the slave machines, other than some basic tools that are needed to run a build, like Java, Git and Maven. The Jenkins master connects to the slave using SSH and places the slave jar file on it, which then starts automatically.
 
-> Homepage: https://jenkins-ci.org  
-> Installation guide: https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines
+> [Jenkins](https://jenkins-ci.org)  
+> [Jenkins installation guide](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines)
 
 #### Prerequisites
 
 - Install Java JDK 1.7.0 or higher on the slave machine to run the Jenkins slave process. Add the path to the `java` command to the `PATH` environment variable of the machine.
-- (MO) If you plan to compile Java applications (for example running on HCP) on the slave, also install SAP JVM 7.1.
+- (MO) If you plan to compile Java applications (for example running on SAP Cloud Platform) on the slave, also install SAP JVM 7.1.
 
-    > Downloads: https://tools.hana.ondemand.com/#cloud  
-    > Installation guide: https://help.hana.ondemand.com/help/frameset.htm?76137f42711e1014839a8273b0e91070.html
+    > [SAP JVM download](https://tools.hana.ondemand.com/#cloud)  
+    > [SAP JVM installation guide](https://help.hana.ondemand.com/help/frameset.htm?76137f42711e1014839a8273b0e91070.html)
     
 - (MO) Git installation.
 
-    > Homepage: https://git-scm.com  
-    > Downloads: https://git-scm.com/downloads  
-    > Installation guide: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git  
+    > [Git](https://git-scm.com)  
+    > [Git download](https://git-scm.com/downloads)  
+    > [Git installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)  
     
 - (MO) Maven installation. The recommended version is Maven 3.0.5. Later versions might lead to build errors due to plugin incompatibilities.
 
-    > Homepage: https://maven.apache.org  
-    > Downloads: https://maven.apache.org/download.cgi  
-    > Installation guide: https://maven.apache.org/install.html
+    > [Maven](https://maven.apache.org)  
+    > [Maven download](https://maven.apache.org/download.cgi)  
+    > [Maven installation guide](https://maven.apache.org/install.html)
 
 #### Procedure
 
@@ -208,14 +212,14 @@ Our examples are restricted to Linux as the operating system for the slaves, as 
 
     Field                  | Value 
     :--------------------- | :-------------------------------------- 
-    Name                   | `{Any logical name, for example the hostname}`
-    Description            | `{Any description}`
-    Number of executors    | `{Number of parallel builds that are executable on the node. This depends on the load your build jobs produces and the available resources on the machine. Start with 1 or 2 and try to increase it.}`
+    Name                   | `<Any logical name, for example the hostname>`
+    Description            | `<Any description>`
+    Number of executors    | `<Number of parallel builds that are executable on the node. This depends on the load your build jobs produces and the available resources on the machine. Start with 1 or 2 and try to increase it.>`
     Remote root directory  | `/data/jenkins` 
     Labels                 | `builds`
     Usage                  | `Utilize this node as much as possible`
     Launch method          | `Launch slave agents on UNIX machines via SSH`
-    Host | `{DNS name of the Jenkins slave}`
+    Host                   | `<DNS name of the Jenkins slave>`
     Credentials            | `jenkins`.
     
     In the case that you have installed a newer Credentials Binding Plugin version and the credential `jenkins` is not yet defined, press **Add**, choose the **Jenkins** provider and enter the following values:
@@ -233,7 +237,7 @@ Our examples are restricted to Linux as the operating system for the slaves, as 
 
     Field                  | Value 
     :--------------------- | :-------------------------------------- 
-    Java Path              | `{Path to the Java executable used by the slave process. This may differ from the SAP JVM to be used for the builds.}`
+    Java Path              | `<Path to the Java executable used by the slave process. This may differ from the SAP JVM to be used for the builds.>`
     Availability           | `Keep this slave on-line as much as possible`
 
 10. **Save**.
@@ -251,7 +255,7 @@ Our examples are restricted to Linux as the operating system for the slaves, as 
     Maven installations   | Click **Add Maven**
     Name                  | `mvn`
     Install automatically | `unchecked`
-    `MAVEN_HOME`          | Maven home path of the Maven installation directory on the slave or master (in the master-only scenario)
+    `MAVEN_HOME`          | `<Maven home path of the Maven installation directory on the slave or master (in the master-only scenario)>`
     
 13. Either the slave connects automatically or you must explicitly select the **Connect** button. You see the executors readily waiting for jobs.
 
@@ -261,7 +265,9 @@ Our examples are restricted to Linux as the operating system for the slaves, as 
 - When you work with many slaves, you have to create many identical copies of the Maven `settings.xml` file. You may also want to implement a publication mechanism to do it automatically.
 
 
+> The content of this document is for guidance purposes only. No warranty or guarantees are provided.
+
 ## Next Steps
  
-  - [Artifact Repository](http://go.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Artifact Repository](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

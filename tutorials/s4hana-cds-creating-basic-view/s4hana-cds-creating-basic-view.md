@@ -1,193 +1,233 @@
 ---
 title: Creating basic/interface views in Open Core Data Services
 description: Creating basic view  in Open Core Data Services also know as interface view
-tags: [  tutorial>beginner ]
+tags: [  tutorial>beginner, products>sap-s-4hana ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Setting and starting an S4/HANA CAL instance and connecting to a Window instance on Amazon Web Services. ](http://go.sap.com/developer/tutorials/hana-setup-cloud.html)
+ - **Tutorials:** [Setting and starting an S4/HANA CAL instance and connecting to a Window instance on Amazon Web Services. ](http://www.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 ## Next Steps
-[Creating consumption view based on basic/interface view. ](http://go.sap.com/developer/tutorials/s4hana-cds-creating-consumption-view.html)
+[Creating consumption view based on basic/interface view. ](http://www.sap.com/developer/tutorials/s4hana-cds-creating-consumption-view.html)
 
 
 ## Details
-You will learn  
-- How to create a basic view on top of data content in the  demo table SCARR from ABAP system.
+### You will learn  
+How to create a basic view on top of data content in the demo table SCARR from ABAP system.
 
 ### Time to Complete
- Beginners might take **15-25 minutes** to execute this tutorial.
+**15-25 Min**
 
 ---
 
-1. To prepare the ABAP perspective, make sure that your Eclipse framework from the S/4HANA instance is opened in the ABAP perspective:
+[ACCORDION-BEGIN [Step 1: ](Prepare the ABAP perspective)]
 
-    ![Basic view from the ABAP perspective](BasicView1_Abapperspective.png)
+To prepare the ABAP perspective, make sure that your Eclipse framework from the S/4HANA instance is opened in the ABAP perspective:
 
-2. With the ABAP Eclipse perspective displayed, make sure you are in the Project Explorer tab. Here you will create in the `TMP-SHA` Package a new repository ABAP object for type DDL source.
+![Basic view from the ABAP perspective](BasicView1_Abapperspective.png)
 
-    Select the package `TMP-SHA`. Right-click on the selected package, select `New` and then press `Others ABAP Repository Objects`, in the opened  ABAP Repository Object window scroll down to the folder `Core Data Services`. Expand the folder `Core Data Services`, select `DDL Source` and press `Finish`.  
+With the ABAP Eclipse perspective displayed, make sure you are in the **Project Explorer** tab. Here you will create in the `TMP-SHA` Package a new repository ABAP object for type DDL source.
 
-    ![ Basic view](BasicView2.png)
+Select the package `TMP-SHA`. Right-click on the selected package, select **New** and then select **Other ABAP Repository Object**. In the opened  ABAP Repository Object window scroll down to the folder **Core Data Services**. Expand the folder, select **DDL Source** and click **Finish**.  
 
-    ![Basic view](BasicView3.png)
+![ Basic view](BasicView2.png)
 
-3. In the new **DDL Source (Specify a value for field Name)** window, confirm the values for **Project** and **Package** are as shown in the table below. .
+![Basic view](BasicView3.png)
 
-    Field Name        | Value
-    :---------------- | :-------------
-    Project           | `S4H_100_sha_en`
-    Package           | `$TMP`
+In the new **DDL Source (Specify a value for field Name)** window, confirm that the values for **Project** and **Package** are as shown in the table below.
+
+Field Name        | Value
+:---------------- | :-------------
+Project           | `S4H_100_sha_en`
+Package           | `$TMP`
 
 
-    ![Basic view](BasicView4.png)
+![Basic view](BasicView4.png)
 
-    Enter the values for **Name** and **Description** then click **Finish**
-    
-    Field Name        | Value
-    :---------------- | :-------------
-    Name              | `ZXSHI_AIRLINE`
-    Description       | `Northwind OData Service`
-    
-    ![Basic view](BasicView5.png)
+Enter the values for **Name** and **Description** then click **Finish**
 
-4. In the **New DDL Source (Templates Select one of the available templates)** window, select **Define View** and press **Finish**.
+Field Name        | Value
+:---------------- | :-------------
+Name              | `ZXSHI_AIRLINE`
+Description       | `Northwind OData Service`
 
-    ![Basic view](BasicView6.png)
+![Basic view](BasicView5.png)
 
-5. Code for the new created view named `ZXSHI_AIRLINE` is generated:
 
-    ![Basic view](BasicView7.png)
+[DONE]
+[ACCORDION-END]
 
-6. At the line 5 of the generated code, replace `data source name` with the ABAP table `scarr`.  To achieve this delete  the text `data source name` and then enter `sca` followed by the combination `Crtl + Space bar`. Doing so a window will appear when you will select `scarr-data`.
+[ACCORDION-BEGIN [Step 2: ](Change data source)]
 
-    ![Basic view](BasicView8.png)
+In the **New DDL Source (Templates Select one of the available templates)** window, select **Define View** and click **Finish**.
 
-7. Open the ERP System (by clicking the SAP Log On icon) `S4H Client 100`.
+![Basic view](BasicView6.png)
+
+Code for the newly created view named `ZXSHI_AIRLINE` is generated:
+
+![Basic view](BasicView7.png)
+
+At line 5 of the generated code, replace `data source name` with the ABAP table `scarr`.  To achieve this, delete  the text `data source name` and then enter `sca` followed by the combination **Ctrl + Space bar**. A window will appear when you will select `scarr-data`.
+
+![Basic view](BasicView8.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Edit table)]
+
+Open the ERP System (by clicking the SAP Log On icon) `S4H Client 100`.
 Enter the User and Password values below and click **Enter**.
 
-    Field Name        | Value
-    :---------------- | :-------------
-    Name              | `sha`
-    Description       | `Welcome1`
-    
-    ![Basic view](BasicView9.png)   
+Field Name        | Value
+:---------------- | :-------------
+Name              | `sha`
+Description       | `Welcome1`
 
-8. In the next window enter the ABAP transaction `se16` and afterward press the `Enter` button.
+![Basic view](BasicView9.png)   
 
-    ![Basic view](BasicView10.png)
+In the next window enter the ABAP transaction `se16`, then click **Enter**.
 
-9. In the next window enter `scarr` as Table Name and press the Table Contents icon.
+![Basic view](BasicView10.png)
 
-    ![Basic view](BasicView11.png)
+In the next window enter `scarr` as the Table Name and click the **Table Contents** icon.
 
-    The content of the table `scarr` will be displayed. Confirm that the table has 18 entries.
+![Basic view](BasicView11.png)
 
-    ![Basic view](BasicView12.png)
+The content of the table `scarr` will be displayed. Confirm that the table has 18 entries.
 
-10. Now switch back to the project explorer view of the Eclipse ABAP perspective. You will now enhance the code by inserting the columns of the table `scarr`. To achieve this, position the mouse pointer before the bracket near the table name `scarr`, press `Ctrl + Space bar`. Within the displayed window select **Insert all elements** and click **Enter**.
+![Basic view](BasicView12.png)
 
-    ![Basic view](BasicView13.png)
+[DONE]
+[ACCORDION-END]
 
-11. All the columns of the table `scarr` are now inserted in the previous code. Enhance each column with an Alias as following:
+[ACCORDION-BEGIN [Step 4: ](Insert columns)]
 
-    Line number       | Value
-    :---------------- | :-------------
-    Line 6:           | `scarr.carrid` as `Airline`,
-    Line 7:           | `scarr.currcode` as `AirlineLocalCurrency`
-    Line 8:           | `scarr.url` as `AirlineURL`
+Now switch back to the project explorer view of the Eclipse ABAP perspective. You will now enhance the code by inserting the columns of the table `scarr`. To achieve this, position the mouse pointer before the bracket near the table name `scarr`, press **Ctrl + Space bar**. Within the displayed window select **Insert all elements** and click **Enter**.
 
-12. Expand the folder **`$TMP-SHA`** in the left panel, then  expand its subfolder **`Core Data Services`**. Doing so, you will see in the subfolder **`Data Definitions`** the newly created basic view named **`ZXSHI_AIRLINE`**.
+![Basic view](BasicView13.png)
 
-    ![Basic view](BasicView14.png)
+All the columns of the table `scarr` are now inserted in the previous code. Enhance each column with an Alias as following:
 
-13. To display the content of the basic view `ZXSHI_AIRLINE`, in the left panel, select and right-click on the view **`ZXSHI_AIRLINE`**, select **Open With >  Data Preview**.  
+Line number       | Value
+:---------------- | :-------------
+Line 6:           | `scarr.carrid` as `Airline`,
+Line 7:           | `scarr.currcode` as `AirlineLocalCurrency`
+Line 8:           | `scarr.url` as `AirlineURL`
 
-    ![Basic view](BasicView15.png)
+Expand the folder **`$TMP-SHA`** in the left panel, then  expand its subfolder **`Core Data Services`**. You will see in the  **`Data Definitions`** subfolder the newly created basic view named **`ZXSHI_AIRLINE`**.
 
-14. In the newly opened window, the content of the basic view **`ZXSHI_AIRLINE`** is displayed , showing 18 rows in three columns.
+![Basic view](BasicView14.png)
 
-    ![Basic view](BasicView16.png)
+[DONE]
+[ACCORDION-END]
 
-15. Switch back to the generated code of the basic view. There you will enhance the lines marked in blue in the image below.
+[ACCORDION-BEGIN [Step 5: ](Check view)]
 
-     ![Basic view](BasicView17.png)
+To display the content of the basic view `ZXSHI_AIRLINE`, in the left panel, select and right-click on the view **`ZXSHI_AIRLINE`** and select **Open With >  Data Preview**.  
 
-16. In the code area, replace texts as follows:
+![Basic view](BasicView15.png)
 
-    Line number       | Value
-    :---------------- | :-------------
-    Line 1:           | `sql_view_name` with `ZXSHIAIRLINE`
-    Line 4:           | `Airline, private..` with `Airline`
+In the newly opened window, the content of the basic view **`ZXSHI_AIRLINE`** is displayed , showing 18 rows in three columns.
 
-    After Airline, insert a new annotation as follows: 
-    
-    ```abap
-    @VDM.view.Type:#BASIC
-    ```
+![Basic view](BasicView16.png)
 
-    ![Basic view](BasicView18.png)
 
-    ![Basic view](BasicView19.png)
 
-    ![Basic view](BasicView20.png)
+[DONE]
+[ACCORDION-END]
 
-    ![Basic view](BasicView21.png)
+[ACCORDION-BEGIN [Step 6: ](Edit fields)]
 
-17. After line 5, insert line 6 with a new annotation:
+Switch back to the generated code of the basic view. There you will alter the lines marked in blue in the image below.
 
-    ```abap
-    @Analytics: DataCategory: #DIMENSION
-    ```
+![Basic view](BasicView17.png)
 
-    ![Basic view](BasicView22.png)
+In the code area, replace text as follows:
 
-    ![Basic view](BasicView23.png)
+Line number       | Value
+:---------------- | :-------------
+Line 1:           | `sql_view_name` with `ZXSHIAIRLINE`
+Line 4:           | `Airline, private..` with `Airline`
 
-    ![Basic view](BasicView25.png)
+After Airline, insert a new annotation as follows:
 
-18. Enhance the code by inserting two new annotations as follows:
+```abap
+@VDM.view.Type:#BASIC
+```
 
-    - (1) after the line including `scarr.carrid` as `Airline` insert `@Semantics.currencyCode: true`
-    - (2) after the line including `scarr.currcode` as `AirlineLocalCurrency` insert `@Semantics.url: true`
+![Basic view](BasicView18.png)
 
-     ![Basic view](BasicView26.png)
+![Basic view](BasicView19.png)
 
-19. In the line 3 of the code, replace `CHECK` with `NOT_REQUIRED`
+![Basic view](BasicView20.png)
 
-    ![Basic view](BasicView27.png)
+![Basic view](BasicView21.png)
 
-20. In the right panel, select and right-click on the view **`ZXSHI_AIRLINE`**, select **Open With > Data Preview**
+After line 5, insert line 6 with a new annotation:
 
-    ![Basic view](BasicView28.png)
+```abap
+@Analytics: DataCategory: #DIMENSION
+```
 
-    ![Basic view](BasicView29.png)
+![Basic view](BasicView22.png)
 
-    > Note: You can copy this content from here and paste it to the code editor of your ABAP perspective as well instead of enhancing the generated code on your own:
+![Basic view](BasicView23.png)
 
-    ```abap
-    @AbapCatalog.sqlViewName: 'ZXSHIAIRLINE'
-    @AbapCatalog.compiler.compareFilter: true
-    @AccessControl.authorizationCheck: #NOT_REQUIRED
-    @EndUserText.label: 'Airline'
-    @VDM.viewType: #BASIC
-    @Analytics.dataCategory: #DIMENSION
-    define view ZxshI_Airline as select from scarr{
-    key scarr.carrid as Airline,
-    @Semantics.currencyCode: true
-    scarr.currcode as AirlineLocalCurrency,
-    @Semantics.url: true
-    scarr.url as AirlineURL    
-    }
-    ```
+![Basic view](BasicView25.png)
 
-**Notes**
-> Although SAP offers trial editions for free you will still have to cover the costs for running these trial editions on AWS!
+[DONE]
+[ACCORDION-END]
 
-### Related information
-This tutorial is part of the S/4HANA Core Data Services
+[ACCORDION-BEGIN [Step 7: ](Insert annotations)]
 
-1. [Amazon Web Services](http://aws.amazon.com/)
-2. [SAP Cloud Appliance Library (CAL)](https://scn.sap.com/community/cloud-appliance-library)
-3. [Alternative AWS Deployment for SAP Trials provided as Virtual Appliance](https://scn.sap.com/docs/DOC-46908)
-4. [Virtual Private Cloud with VPN Access for SAP Trials provided as Virtual Appliance](https://scn.sap.com/docs/DOC-46629)
+Insert two new annotations as follows:
+
+- After the line including `scarr.carrid` as `Airline` insert `@Semantics.currencyCode: true` (see number 1 in the following screenshot).
+- After the line including `scarr.currcode` as `AirlineLocalCurrency` insert `@Semantics.url: true` (see number 2 in the following screenshot).
+
+![Basic view](BasicView26.png)
+
+In line 3 of the code, replace `CHECK` with `NOT_REQUIRED`, as shown here.
+
+![Basic view](BasicView27.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Check complete code)]
+
+In the right panel, select and right-click on the view **`ZXSHI_AIRLINE`**, select **Open With > Data Preview**
+
+![Basic view](BasicView28.png)
+
+![Basic view](BasicView29.png)
+
+> Note: You can copy this content from here and paste it to the code editor of your ABAP perspective as well instead of enhancing the generated code on your own:
+
+```abap
+@AbapCatalog.sqlViewName: 'ZXSHIAIRLINE'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'Airline'
+@VDM.viewType: #BASIC
+@Analytics.dataCategory: #DIMENSION
+define view ZxshI_Airline as select from scarr{
+key scarr.carrid as Airline,
+@Semantics.currencyCode: true
+scarr.currcode as AirlineLocalCurrency,
+@Semantics.url: true
+scarr.url as AirlineURL    
+}
+```
+
+[DONE]
+[ACCORDION-END]
+
+### Notes
+Although SAP offers trial editions for free you will still have to cover the costs for running these trial editions on AWS. This tutorial is part of the S/4HANA Core Data Services. More information can be found in these documents.
+
+- [Amazon Web Services](http://aws.amazon.com/)
+- [SAP Cloud Appliance Library (CAL)](https://scn.sap.com/community/cloud-appliance-library)
+- [Alternative AWS Deployment for SAP Trials provided as Virtual Appliance](https://scn.sap.com/docs/DOC-46908)
+- [Virtual Private Cloud with VPN Access for SAP Trials provided as Virtual Appliance](https://scn.sap.com/docs/DOC-46629)

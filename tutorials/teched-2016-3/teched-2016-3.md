@@ -1,27 +1,27 @@
 ---
-title: Create an SAP HANA Cloud Platform destination pointing to an SAP Gateway
+title: Create an SAP Cloud Platform destination pointing to an SAP Gateway
 description: Create a new destination pointing to the SAP Gateway Demo System
-tags: [  tutorial>beginner, topic>cloud, products>sap-gateway, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-gateway, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create an account on the Gateway Demo system](http://go.sap.com/developer/tutorials/gateway-demo-signup.html)
+ - **Tutorials:** [Create an account on the Gateway Demo system](http://www.sap.com/developer/tutorials/gateway-demo-signup.html)
 
 ## Next Steps
- - [Build an SAP Fiori UX app with SAP Gateway data](http://go.sap.com/developer/tutorials/teched-2016-4.html)
+ - [Build an SAP Fiori UX app with SAP Gateway data](http://www.sap.com/developer/tutorials/teched-2016-4.html)
 
 ## Details
 ### You will learn  
-You will create a destination (a server end-point where HCP can send or receive data) that points to an SAP Gateway OData service.
+You will create a destination (a server end-point where SAP Cloud Platform can send or receive data) that points to an SAP Gateway OData service.
 
 ### Time to Complete
 **< 5 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log into your HCP account)]
-Log into [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+[ACCORDION-BEGIN [Step 1: ](Log into your SAP Cloud Platform account)]
+Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
 
 Make sure you are using the **Europe (Trial)** landscape, and click on your account name as highlighted on the screenshot to open the cockpit view.
 
@@ -62,7 +62,7 @@ Field Name       | Value
 :--------------- | :-------------
 `WebIDEEnabled`  | `true`
 `WebIDESystem`   | `gateway`
-`WebIDEUsage`    | `odata_gen`
+`WebIDEUsage`    | `odata_abap`
 
 Then click **Save**.
 
@@ -84,4 +84,4 @@ Note that the **Check Connection** operation is not validating your user credent
 
 
 ## Next Steps
- - [Build an SAP Fiori UX app with SAP Gateway data](http://go.sap.com/developer/tutorials/teched-2016-4.html)
+ - [Build an SAP Fiori UX app with SAP Gateway data](http://www.sap.com/developer/tutorials/teched-2016-4.html)

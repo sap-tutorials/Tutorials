@@ -1,14 +1,14 @@
 ---
 title: React JS - Examine child to parent communication
 description: Step #9: Add a filter, use it to show parent-child-parent component communication.
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner 
- - **Tutorial:** [Step 8 - Create child components](http://go.sap.com/developer/tutorials/react-child-components.html)
+ - **Proficiency:** Beginner
+ - **Tutorial:** [Step 8 - Create child components](http://www.sap.com/developer/tutorials/react-child-components.html)
 
 ## Next Steps
- - This is the end of the tutorial series.  [Return to the tutorial navigator.](http://go.sap.com/developer/tutorial-navigator.html)
+ - This is the end of the tutorial series.  [Return to the tutorial navigator.](http://www.sap.com/developer/tutorial-navigator.html)
 
 
 ## Details
@@ -21,18 +21,18 @@ In this tutorial series, we will explore another technology for Single Page Appl
 ---
 
 #### REACT tutorial series
-**Step 9**: One important detail of REACT is how to communicate from one component to another.  Communicating from parent to child is easy.  A parent sends a child properties (or `props`) and the child receives these read-only variables.  Communcation from the child to the parent is a little harder, but has a lot of value. 
+**Step 9**: One important detail of REACT is how to communicate from one component to another.  Communicating from parent to child is easy.  A parent sends a child properties (or `props`) and the child receives these read-only variables.  Communication from the child to the parent is a little harder, but has a lot of value. 
 
 This tutorial will set up a new component to filter the list of products.  The new component, a filter entry box, will then communicate back to the parent so that the parent can take action on the list.
 
- 
+
 ---
 ### Add a filter component
 
 1.  First, create a new component for the Filter input box.  This box will hold the filter entry and then send the text back to the callback function.
 
     Open the `main.js` file, and add the following new JavaScript code to the top of the file (under the variable declarations):
-    
+
     ```javascript
     var FilterEntryBox = React.createClass({
     	getInitialState: function() {
@@ -46,7 +46,7 @@ This tutorial will set up a new component to filter the list of products.  The n
     	},
     	render: function() {
     		return(
-    			<Input type="text" 
+    			<Input type="text"
     				value={this.state.filterText}
     				placeholder="Filter Product Name"
     				onChange={this.onTextChange}/>
@@ -54,16 +54,16 @@ This tutorial will set up a new component to filter the list of products.  The n
     	}
     });
     ```
-    
+
     ![Add the filter component](1-1.png)
 
 
 2.  The next step is to add this filter input box to the title bar.  
 
     Adding a component to the side of the title bar will require a change to the Bootstrap layout.  A single component can be put on either side (left or right).  But multiple components need to be set up as an unordered list (`<ul>`) so that they are rendered in the proper order.  
-    
+
     To do this, scroll down to the `TitleBar` component.  **Replace** the existing `<div className="nav navbar-nav navbar-right">` section with this new JMX code:
-    
+
     ```javascript
     <ul className="nav navbar-nav navbar-right">
     	<li className="navbar-form form-group">
@@ -80,9 +80,9 @@ This tutorial will set up a new component to filter the list of products.  The n
 3.  The last step is to update the `ProductList` component.  This component owns the list of products, so the actual work of filtering will occur here.  
 
     There are three changes required.  First, add a variable to the initial state, to hold the original unfiltered list.
-    
+
     Scroll down to the `ProductList` component, and replace the `getInitialState:` section with the following code:
-    
+
     ```javascript
     getInitialState: function() {
         return {
@@ -91,15 +91,15 @@ This tutorial will set up a new component to filter the list of products.  The n
         	selectedRow: null,
         };
     },
-    ``` 
-    
+    ```
+
     ![Add the new initial state variable](1-3.png)
 
 
 4.  The second change to `ProductList` is to add a callback method for the filter text.  This method will receive the user-entered filter text, and will then filter the display list.  When this method sets the new filtered list in the state, the component will re-render the entire list automatically.
 
     Add the following new JavaScript to the `ProductList` component, under the `componentDidMount` section:
-    
+
     ```javascript
     titleBarFilter: function( text ) {
     	if ( text.trim().length > 0 ) {
@@ -113,14 +113,14 @@ This tutorial will set up a new component to filter the list of products.  The n
     	}
     },
     ```
-    
+
     ![Add the callback function](1-4.png)
 
 
 5.  The third change to `ProductList` is to send the callback to the `<TitleBar>` component.  
 
     Scroll down to the `render:` method, and **replace** the `<TitleBar>` component with this new JMX:
-    
+
     ```javascript
     <TitleBar count={this.state.products.length} filterCallback={this.titleBarFilter}/>
     ```
@@ -131,9 +131,9 @@ This tutorial will set up a new component to filter the list of products.  The n
 6.  Run the application.  Enter some text in the new filter input in the title bar, and the list will filter automatically.
 
     ![Add text to the filter input box](1-6a.png)
-    
+
     ![List is filtered](1-6b.png)
-    
+
 ---
 ## Additional Information
 
@@ -164,7 +164,7 @@ var FilterEntryBox = React.createClass({
 	},
 	render: function() {
 		return(
-			<Input type="text" 
+			<Input type="text"
 				value={this.state.filterText}
 				placeholder="Filter Product Name"
 				onChange={this.onTextChange}/>
@@ -181,7 +181,7 @@ var CategoryDisplay = React.createClass({
 	},
 	componentDidMount: function() {
 		var odataUrl = "/Northwind/V3/Northwind/Northwind.svc/";
-		
+
 		$.ajax({
 			url: odataUrl + "Categories" ,
 			dataType: 'json',
@@ -228,7 +228,7 @@ var CurrencyDisplay = React.createClass({
 		var computedPrice = new Number( this.props.value );
 		computedPrice = Math.round( computedPrice * 100 )/100;
 		computedPrice = computedPrice.toFixed(2).toLocaleString();
-		
+
 		return(
 			<span>
 				{computedPrice}
@@ -243,7 +243,7 @@ var ModalProductDetail = React.createClass({
 		return {
 			OrderCount: "",
 			orderSubmitted: false,
-		}	
+		}
 	},
 	onOrderChange: function(event) {
 		this.setState({OrderCount: event.target.value});
@@ -252,7 +252,7 @@ var ModalProductDetail = React.createClass({
 		this.setState({
 			orderSubmitted: true,
 		});
-		
+
 		setTimeout( this.closeAndReset, 2000 );
 	},
 	closeAndReset: function() {
@@ -315,7 +315,7 @@ var ModalProductDetail = React.createClass({
 							</form>
 						</div>
 						<div className="modal-footer">
-							<Button bsStyle="primary" onClick={this.onSaveClick} 
+							<Button bsStyle="primary" onClick={this.onSaveClick}
 								disabled={this.state.OrderCount == "" || this.state.orderSubmitted}>Save</Button>
 							<Button onClick={this.closeAndReset}>Close</Button>
 						</div>
@@ -334,7 +334,7 @@ var TitleBar = React.createClass({
 					<div className="navbar-header">
 						<div className="navbar-brand">Product Overview</div>
 					</div>
-					
+
 					<ul className="nav navbar-nav navbar-right">
         				<li className="navbar-form form-group">
         					<FilterEntryBox callback={this.props.filterCallback} />
@@ -344,15 +344,15 @@ var TitleBar = React.createClass({
         				</li>
         			</ul>
 				</div>
-			</nav>	
-		)	
+			</nav>
+		)
 	}
 });
 
 var ListBox = React.createClass({
     render: function() {
         return (
-			<button type="button" className="list-group-item" id="product-list" 
+			<button type="button" className="list-group-item" id="product-list"
 					onClick={this.props.clickEvent} >
 				<div className="row vertical-align">
 					<div className="col-sm-8 top">
@@ -384,14 +384,14 @@ var ProductList = React.createClass({
 	},
 	onListBoxClick: function( row ) {
 		this.setState({selectedRow: row});
-		
+
 		setTimeout( function() {
-			$('#product-detail').modal("show");	
+			$('#product-detail').modal("show");
 		});
 	},
 	componentDidMount: function() {
 		var odataUrl = "/Northwind/V3/Northwind/Northwind.svc/";
-		
+
 		$.ajax({
 			url: odataUrl + "Products" ,
 			dataType: 'json',
@@ -423,7 +423,7 @@ var ProductList = React.createClass({
 	render: function() {
 		var productListBoxes = this.state.products.map( function(row) {
 			return(
-				<ListBox row={row} key={row.ProductName} 
+				<ListBox row={row} key={row.ProductName}
 					clickEvent={this.onListBoxClick.bind(this, row)}/>		
 			);
 		}.bind(this) )
@@ -434,11 +434,11 @@ var ProductList = React.createClass({
 				<div className="list-group">
 					{productListBoxes}
 				</div>
-				{this.state.selectedRow == null ? null : 
+				{this.state.selectedRow == null ? null :
 					<ModalProductDetail row={this.state.selectedRow} /> }
 			</div>
 		)
-	}	
+	}
 });
 
 ReactDOM.render(
@@ -450,4 +450,4 @@ ReactDOM.render(
 ---
 
 ## Next Steps
- - This is the end of the tutorial series.  [Return to the tutorial navigator.](http://go.sap.com/developer/tutorial-navigator.html)
+ - This is the end of the tutorial series.  [Return to the tutorial navigator.](http://www.sap.com/developer/tutorial-navigator.html)

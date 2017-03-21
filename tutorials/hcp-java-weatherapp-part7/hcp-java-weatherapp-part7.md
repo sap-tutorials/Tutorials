@@ -1,14 +1,14 @@
 ---
 title: End-to-End Weather App Scenario Part 7
 description: Enhancing the persistence layer for multi-tenency
-tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
+tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
 ---
 
 ## Prerequisites  
- - [End-to-End Weather App Scenario Part 6](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part6.html)
+ - [End-to-End Weather App Scenario Part 6](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part6.html)
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 8](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)
+ - [End-to-End Weather App Scenario Part 8](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)
 
 ## Details
 ### You will learn  
@@ -19,7 +19,7 @@ In this tutorial you will enhance the persistence layer with a multi-tenancy fea
 
 ---
 
-1. First, we’ll add the necessary annotations to the persistence `BaseObject` class. Open it and add the following two annotations to the class definition:
+1. First, we'll add the necessary annotations to the persistence `BaseObject` class. Open it and add the following two annotations to the class definition:
 
     ```java
     @MappedSuperclass
@@ -62,4 +62,4 @@ In this tutorial you will enhance the persistence layer with a multi-tenancy fea
 
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 8](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)
+ - [End-to-End Weather App Scenario Part 8](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)

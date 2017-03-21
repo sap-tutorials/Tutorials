@@ -7,12 +7,12 @@ tags: [  tutorial>intermediate, products>sap-hybris-as-a-service-on-sap-hana-clo
  - **Proficiency:** Intermediate
  - **Background Knowledge:** If you are not already familiar with [Node.js](https://www.youtube.com/watch?v=pU9Q6oiQNd0), follow this link to learn more. You will use it in this tutorial. The YaaS Storefront is based on  [Angular](https://docs.angularjs.org/guide/directive) and [Restangular](https://github.com/mgonto/restangular#starter-guide). If you are not already familiar with them and would like to dive into the code, you can follow the provided links to start learning.
  - **Tutorials:**
-    - [Getting Started with YaaS](http://go.sap.com/developer/tutorials/yaas-getting-started.html)
-    - [Download and Run the Default YaaS Storefront](http://go.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)
-    - [Use Your Own YaaS Project to Back your YaaS Storefront](http://go.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
+    - [Getting Started with YaaS](http://www.sap.com/developer/tutorials/yaas-getting-started.html)
+    - [Download and Run the Default YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)
+    - [Use Your Own YaaS Project to Back your YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
 
 ## Next Steps
- - [Deploy a Micro Service Built on YaaS on the SAP HCP](http://go.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
+ - [Deploy a Micro Service Built on YaaS on the SAP Cloud Platform](http://www.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
 
 ## Details
 ### You will learn  
@@ -62,7 +62,7 @@ In this tutorial you will use your own YaaS Project which you created earlier to
 In this tutorial, you modified your storefront to talk with your own YaaS Project in the backend rather than the default YaaS Project. This gave you complete control over the content of the Storefront, such as its products and banners, and much more that you have yet to explore.   
 
 ## Next Steps
- - [Deploy a Micro Service Built on YaaS on the SAP HCP](http://go.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
+ - [Deploy a Micro Service Built on YaaS on the SAP Cloud Platform](http://www.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
 
 ### Optional
 6. Create a category and assign your products to it.

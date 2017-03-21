@@ -1,18 +1,19 @@
 ---
-title: SQL Execute Immediate 
+title: SQL Execute Immediate
 description: Leveraging SQLScript in Stored Procedures & User Defined Functions
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Using Dynamic SQL vs Dynamic Filtering](http://go.sap.com/developer/tutorials/xsa-sqlscript-dynamic.html)
+ - **Tutorials:** [Using Dynamic SQL vs Dynamic Filtering](http://www.sap.com/developer/tutorials/xsa-sqlscript-dynamic.html)
 
 ## Next Steps
- - [Using APPLY FILTER](http://go.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)
+ - [Using APPLY FILTER](http://www.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)
 
 ## Details
 ### You will learn  
 In contrast to executing a string using EXEC, executing the string using EXECUTE IMMEDIATE returns a result set.
+**Please note - This tutorial is based on SPS11**
 
 ### Time to Complete
 **10 Min**.
@@ -22,7 +23,7 @@ In contrast to executing a string using EXEC, executing the string using EXECUTE
 1. Switch back to the procedure editor.
 
     ![procedure editor](1.png)
-    
+
 2. Switch back to the procedure editor. Replace the EXEC keyword with EXECUTE IMMEDIATE
 
     ![execute immediate](2.png)
@@ -39,7 +40,7 @@ In contrast to executing a string using EXEC, executing the string using EXECUTE
 
     ![result](5.png)
 
-6. Now change the CALL statement again, this time insert the value for the input parameter as ‘ ‘ as shown here. Run the CALL statement again
+6. Now change the CALL statement again, this time insert the value for the input parameter as ' ' as shown here. Run the CALL statement again
 
     ![modify call statement](6.png)
 
@@ -47,7 +48,7 @@ In contrast to executing a string using EXEC, executing the string using EXECUTE
 
     ![count](7.png)
 
-8. Now change the CALL statement. This time insert the value for the input parameter as ‘OR 1 = 1’ as shown here. Run the CALL statement again.
+8. Now change the CALL statement. This time insert the value for the input parameter as 'OR 1 = 1' as shown here. Run the CALL statement again.
 
     ![modify call statement](8.png)
 
@@ -56,4 +57,4 @@ In contrast to executing a string using EXEC, executing the string using EXECUTE
     ![new count](9.png)
 
 ## Next Steps
- - [Using APPLY FILTER](http://go.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)
+ - [Using APPLY FILTER](http://www.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)

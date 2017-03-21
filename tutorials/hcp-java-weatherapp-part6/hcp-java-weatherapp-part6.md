@@ -1,14 +1,14 @@
 ---
 title: End-to-End Weather App Scenario Part 6
 description: Adding persistence to your app using JPA (Java Persistence API)
-tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
+tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
 ---
 
 ## Prerequisites  
-- [End-to-End Weather App Scenario Part 5](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part5.html)
+- [End-to-End Weather App Scenario Part 5](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part5.html)
 
 ## Next Steps
-- [End-to-End Weather App Scenario Part 7](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part7.html)
+- [End-to-End Weather App Scenario Part 7](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part7.html)
 
 ## Details
 ### You will learn  
@@ -19,7 +19,7 @@ In this tutorial you will implement a simple domain model and implement the corr
 
 ---
 
-1. Let’s create a base class for our domain model first. That’s usually considered best practices as it provides us with a central place to add common functionality to be shared across all domain model objects on later. For that purpose, select New > Class from the context menu entry on the `weatherapp` project and provide the following details:
+1. Let's create a base class for our domain model first. That's usually considered best practices as it provides us with a central place to add common functionality to be shared across all domain model objects on later. For that purpose, select New > Class from the context menu entry on the `weatherapp` project and provide the following details:
 
     - **Package name:** `com.sap.hana.cloud.samples.weatherapp.model`
     - **Classname:** `BaseObject`
@@ -37,7 +37,7 @@ In this tutorial you will implement a simple domain model and implement the corr
 
 4. Replace the contents of the `FavoriteCity.java` file with [this code from GitHub](https://raw.githubusercontent.com/SAP/cloud-weatherapp/6b77dcac5a8de14ea2326fa770f941e08c5d8419/src/main/java/com/sap/hana/cloud/samples/weatherapp/model/FavoriteCity.java) and save your changes.
 
-5. Next, we need to create a configuration file for our persistence layer. By Maven conventions, these non-source code artifacts should be located in a separate source code folder called: `src/main/resources`. Hence, let’s create that source folder via the corresponding context menu entry on the **Java Resources** node in the Project Explorer: **New > Source Folder**. Provide the following information:
+5. Next, we need to create a configuration file for our persistence layer. By Maven conventions, these non-source code artifacts should be located in a separate source code folder called: `src/main/resources`. Hence, let's create that source folder via the corresponding context menu entry on the **Java Resources** node in the Project Explorer: **New > Source Folder**. Provide the following information:
 
     - **Project name:** `weatherapp`
     - **Folder name:** `src/main/resources`
@@ -181,15 +181,15 @@ In this tutorial you will implement a simple domain model and implement the corr
 
 17. Within Postman, enter `http://localhost:8080/weatherapp/api/v1/cities` in the URL input field and make sure to provide your username/password as `Basic Auth` parameters in the **Authorization** tab.
 
-    Afterwards, make sure to update the request by pressing the respective **Update request** button. That will then add the “Authorization” parameter as an HTTP header parameter to your request.
+    Afterwards, make sure to update the request by pressing the respective **Update request** button. That will then add the "Authorization" parameter as an HTTP header parameter to your request.
 
     ![Using a REST client to connect to the Java app](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-17.png)
 
 
-18. Once you execute the call, you’ll see two empty brackets “[]” (indicating an empty array) after successful authentication. Don’t worry, we haven’t saved any cities as favorites yet, so that’s just what we would expect.
+18. Once you execute the call, you'll see two empty brackets "[]" (indicating an empty array) after successful authentication. Don't worry, we haven't saved any cities as favorites yet, so that's just what we would expect.
 
     ![Server response to REST client](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-18.png)
 
 
 ## Next Steps
-- [End-to-End Weather App Scenario Part 7](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part7.html)
+- [End-to-End Weather App Scenario Part 7](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part7.html)

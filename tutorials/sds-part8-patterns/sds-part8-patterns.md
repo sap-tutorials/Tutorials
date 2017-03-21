@@ -5,10 +5,10 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Run and Test a Project in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part7-testing.html)
+ - **Tutorials:** [Run and Test a Project in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part7-testing.html)
 
 ## Next Steps
- - **Tutorials:** [Custom Flex Operators with Advanced CCL in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part9-flex-operators.html)
+ - **Tutorials:** [Custom Flex Operators with Advanced CCL in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part9-flex-operators.html)
 
 ## Details
 ### You will learn  
@@ -123,4 +123,4 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 
 
 ## Next Steps
- - **Tutorials:** [Custom Flex Operators with Advanced CCL in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part9-flex-operators.html)
+ - **Tutorials:** [Custom Flex Operators with Advanced CCL in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part9-flex-operators.html)

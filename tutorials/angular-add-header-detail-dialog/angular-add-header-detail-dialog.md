@@ -1,14 +1,14 @@
 ---
 title: AngularJS - Add a header and modal dialog
 description: Step #6: Adding a header to the Bootstrap page, and a modal dialog box for product details.
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorials** Step #5 [Add OData to the application](http://go.sap.com/developer/tutorials/angular-add-odata.html)
+ - **Tutorials** Step #5 [Add OData to the application](http://www.sap.com/developer/tutorials/angular-add-odata.html)
 
 ## Next Steps
- - **Tutorials** Step 7 [Add a Form to your application](http://go.sap.com/developer/tutorials/angular-forms-intro.html)  
+ - **Tutorials** Step 7 [Add a Form to your application](http://www.sap.com/developer/tutorials/angular-forms-intro.html)  
 
 ## Details
 ### You will learn  
@@ -198,4 +198,4 @@ The `ng-click` attribute has sent the selected row to the function `selectProduc
 - [`ng-click`](https://docs.angularjs.org/api/ng/directive/ngClick) - Route a click event to an Angular function.
 
 ## Next Steps
- - **Tutorials** Step 7 [Add a Form to your application](http://go.sap.com/developer/tutorials/angular-forms-intro.html) 
+ - **Tutorials** Step 7 [Add a Form to your application](http://www.sap.com/developer/tutorials/angular-forms-intro.html) 

@@ -5,10 +5,10 @@ tags: [  tutorial>intermediate, topic>odata, products>sap-hana, products>sap-han
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [SAP HANA XS Advanced, Creating a Node.js Module](http://go.sap.com/developer/tutorials/xsa-xsjs-xsodata.html)
+ - **Tutorials:** [SAP HANA XS Advanced, Creating a Node.js Module](http://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html)
 
 ## Next Steps
- - [Create and OData Service with Entity Relationship](http://go.sap.com/developer/tutorials/xsa-xsodata-entity.html)
+ - [Create and OData Service with Entity Relationship](http://www.sap.com/developer/tutorials/xsa-xsodata-entity.html)
 
 ## Details
 ### You will learn  
@@ -27,7 +27,7 @@ Create a simple OData service connecting to your table and data.
 
 	![file name](2.png)
 
-3. You want to define an OData service to expose the business partner table. The syntax of the XSODATA service is relative easy for this use case. You need only define a namespace (your package path), the name of the HANA Table you will base the service from (`dev602.data::MD.BusinessPartner`) and the name of the OData entity (`BusinessPartners`). Therefore the content of the XSODATA file would be. Note: if you don’t want to type this code, we recommend that you cut and paste it from this web address `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex3_10`
+3. You want to define an OData service to expose the business partner table. The syntax of the XSODATA service is relative easy for this use case. You need only define a namespace (your package path), the name of the HANA Table you will base the service from (`dev602.data::MD.BusinessPartner`) and the name of the OData entity (`BusinessPartners`). Therefore the content of the XSODATA file would be. Note: if you don't want to type this code, we recommend that you cut and paste it from this web address `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex3_10`
 	
 	![odata service](3.png)
 	
@@ -48,4 +48,4 @@ Create a simple OData service connecting to your table and data.
 	![output](7.png) 
 
 ## Next Steps
- - [Create and OData Service with Entity Relationship](http://go.sap.com/developer/tutorials/xsa-xsodata-entity.html)
+ - [Create and OData Service with Entity Relationship](http://www.sap.com/developer/tutorials/xsa-xsodata-entity.html)

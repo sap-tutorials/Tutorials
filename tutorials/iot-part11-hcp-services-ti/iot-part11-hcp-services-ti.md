@@ -1,20 +1,20 @@
 ---
 title: Internet of Things (IoT) Connecting your TI SensorTag to IoT Services
 description: Internet of Things (IoT) Connecting your TI SensorTag to IoT Services
-tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-cloud-platform, products>sap-hana ]
+tags: [  tutorial>beginner, topic>internet-of-things, products>sap-cloud-platform, products>sap-hana ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:** 
-   - [Sign up for an free trial account on SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
+   - [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
    - Internet of Things (IoT) Setup your Environment for the TI SensorTag (Coming soon)
 
 ## Next Steps
- - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
+ - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://www.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
 
 ## Details
 ### You will learn  
-In the previous tutorial you saw how to add your message type, device type and devices to the IoT Services of the SAP HANA Cloud Platform. Now those instructions were based on using a Tessel device however you can just as easily use a different device such as a TI `SensorTag`.
+In the previous tutorial you saw how to add your message type, device type and devices to the IoT Services of the SAP Cloud Platform. Now those instructions were based on using a Tessel device however you can just as easily use a different device such as a TI `SensorTag`.
 
 ### Time to Complete
 **10 Min**.
@@ -30,7 +30,7 @@ In the previous tutorial you saw how to add your message type, device type and d
 	 *  Craig Cmehil, SAP SE (c) 2015
 	*/
 	
-	/* Choose the proper HTTP or HTTPS, HCP requires HTTPS */
+	/* Choose the proper HTTP or HTTPS, SAP Cloud Platform requires HTTPS */
 	var http = require('https');
 	
 	var SensorTag = require('sensortag');
@@ -42,7 +42,7 @@ In the previous tutorial you saw how to add your message type, device type and d
 	var date = new Date();
 	var time = date.getTime ();
 
-	// SAP HANA Cloud Platform connection details
+	// SAP Cloud Platform connection details
 	var portIoT = 443;
 	var pathIoT = '/com.sap.iotservices.mms/v1/api/http/data/';
 	var hostIoT = 'iotmmsXXXXXXXXXXtrial.hanatrial.ondemand.com';
@@ -212,4 +212,4 @@ In the previous tutorial you saw how to add your message type, device type and d
 
 
 ## Next Steps
- - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://go.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
+ - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://www.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)

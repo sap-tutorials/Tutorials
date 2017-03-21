@@ -1,27 +1,27 @@
 ---
 title: SAPUI5 - Add an order activity
 description: Add a button to a detail page, to trigger an process
-tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner 
-- **How-To** [Start this tutorial series](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
-- **Tutorials:** This tutorial is part of a series.  The previous tutorial is step 9: [SAPUI5 - Add a search field](http://go.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
+- **How-To** [Start this tutorial series](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+- **Tutorials:** This tutorial is part of a series.  The previous tutorial is step 9: [SAPUI5 - Add a search field](http://www.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
 
 ## Next Steps
- - This is the end of this tutorial series.  Return to the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - This is the end of this tutorial series.  Return to the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
 You will add a footer bar (a Bar control within the footer aggregation of the Page) to our Detail view.  
 
-In that bar, you will add a Button control to the right side of the footer bar in the Detail view, and in the corresponding controller we’ll define the function to be called (`handleOrder`) when the Button’s ‘press’ event is fired. Then you will simulate the order process by displaying a `MessageBox` pop-up control and then showing a `MessageToast`. For this, you will need to show some texts. Hence, you will add placeholders into the `i18n.properties` file we set up earlier. 
+In that bar, you will add a Button control to the right side of the footer bar in the Detail view, and in the corresponding controller we'll define the function to be called (`handleOrder`) when the Button's 'press' event is fired. Then you will simulate the order process by displaying a `MessageBox` pop-up control and then showing a `MessageToast`. For this, you will need to show some texts. Hence, you will add placeholders into the `i18n.properties` file we set up earlier. 
 
 ### Time to Complete
 **10 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](https://go.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 
 1.  Open the `webapp/i18n/i18n.properties` file, and add the following four lines to the bottom:

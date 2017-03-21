@@ -1,14 +1,14 @@
 ---
 title: SAP HANA XS Classic, Access your first data in a SAP HANA XSC Application
 description: In this tutorial you will make your very first steps to access data in SAP HANA. This tutorial will write a SAP HANA XSC application, using the Web-based Development Workbench.
-tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
+tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
 ---
 
 ## Prerequisites  
-- [Develop your first SAP HANA XSC application](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
+- [Develop your first SAP HANA XSC application](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
 
 ## Next Steps
-- [Enable XSODATA in your SAP HANA XSC application](http://go.sap.com/developer/tutorials/hana-xsodata.html)
+- [Enable XSODATA in your SAP HANA XSC application](http://www.sap.com/developer/tutorials/hana-xsodata.html)
 
 ## Details
 
@@ -17,58 +17,41 @@ tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-pla
 2. Importing data automatically via a CSV file.
 3. Preparing and executing a very simple SQL query on the table.
 
-> ### Information
->The full application build in this tutorial can be found [in this GitHub repository](https://github.com/SAPDocuments/Tutorials).
-
 ### Time to Complete
 Beginners might take **10-15 minutes** to execute this tutorial.
 
+[ACCORDION-BEGIN [Step 1: Create your data sub package](Create your data sub package)]
 
-### Open the Web-based Development Workbench
+Your first step will be to create a package to organize your files. To do this you will create a new package under your existing `codejam` package and call it `data`.
 
-#### Using the SAP HANA Developer Edition or SAP HANA Cloud Platform
-The workbench allows you to develop on HANA without the need to set up a local development environment.
+![New package](3.png)
 
-Login to the [HANA Cloud Cockpit](https://account.hanatrial.ondemand.com/cockpit) with your free developer edition account.
+![data package](4.png)
 
-![Databases and Schemas](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/1.png)
+[ACCORDION-END]
 
-Choose Databases and Schemas, and choose then the instance that you created in the previous tutorials. From here you can access the Workbench.
+[ACCORDION-BEGIN [Step 2: Create your schema](Create your schema)]
 
-![Individual instance](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/2.png)
+Now that you have a location for your objects you will create your schema file, this will be a new file called `MYCJ` which is short for "My CodeJam" but you can actually call it anything you like. Remember to include the `.hdbschema` ending.
 
-You are now in the Editor and can immediately start developing in HANA.
+![New file](5.png)
 
-#### Using HANA on Amazon AWS or Microsoft Azure
+![Schema name](6.png)
 
-Access the web page of your HANA server using the IP address of your server.  Enter the address `http://XXX.XXX.XXX.XXX` to the address bar of your browser. (Replace `XXX.XXX.XXX.XXX` with the IP address of your server.)
+```js
+schema_name="MYCJ";
+```
+[ACCORDION-END]
 
-On the web page, there is a link in the middle column for **Web-Based Development Workbench**.  Click this link to start the workbench.
+[ACCORDION-BEGIN [Step 3: Create your table](Create your table)]
 
+Now that you have a home for your table and other data objects, you will go ahead and define a simple table. So it's time for a new file called `mydata.hdbdd`, again you can call it whatever you like but remember the `.hdbdd` ending.
 
-### Create your catalog object
+![New table](8.png)
 
-Our first step will be to create a package to organize our files. To do this we will create a new package under our existing `codejam` package and call it `data`.
+In this file you will define your table entities.
 
-![New package](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/3.png)
-
-![data package](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/4.png)
-
-Now that we have a location for our objects we will create our schema file, this will be a new file called `MYCJ` which is short for "My CodeJam" but you can actually call it anything you like.
-
-![New file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/5.png)
-
-![Schema name](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/6.png)
-
-![Schema name](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/7.png)
-
-Now that we have a home for our table, we will go ahead and define a simple table. So it's time for a new file called `mydata.hdbdd`, again you can call it whatever you like.
-
-![New table](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/8.png)
-
-In this file we will define our table entities.
-
-![table definition](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/9.png)
+![table definition](9.png)
 
 ```
 namespace codejam.data;
@@ -93,64 +76,95 @@ context mydata {
 
 Once you save this, you should see (provided no mistakes in typing) the following output in the console.
 
-![Output](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/10.png)
+![Output](10.png)
 
-Now for a bit of sample data into our CSV file and then we can automatically import that into the new table.
+[ACCORDION-END]
 
-![CSV file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/11.png)
+[ACCORDION-BEGIN [Step 4: Sample data import](Sample data import)]
 
-![CSV content](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/12.png)
+Now for a bit of sample data into your CSV file and then you can automatically import that into the new table.
 
-Now we will create the automatic import file.
+![CSV file](11.png)
 
-![HDBTI file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/13.png)
+![CSV content](12.png)
 
-![Ready to import](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/14.png)
+```
+1,Learning SAP HANA,Educational,2016-01-29 09:00:00
+2,History of SAP HANA,Educational,2016-01-29 09:00:00
+3,Coding in SAP HANA,Educational,2016-01-29 09:00:00
+4,Work Life and Finding Balance,Educational,2016-01-29 09:00:00
+5,Coolness of being an Evangelist,Educational,2016-01-29 09:00:00
+```
 
-Once we save the file, our data should automatically import into our table.
+Now you will create the automatic import file, you can name the file anything you like but ensure it has the `.hdbti` ending.
 
-In order to now view our data we will need to ensure our user has access to it, for this we will need to create a new role and assign it to our user.
+![HDBTI file](13.png)
 
-![New role](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/15.png)
+![Ready to import](14.png)
 
-![Role name](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/16.png)
+```
+import	= 	[ 
+    			{ 
+					cdstable  =	"codejam.data::mydata.Book";
+					file = "codejam.data:simple_book:list.csv"; 	     
+					header = false;		
+    			} 
+     		];
+```
 
-![Objects](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/17.png)
+Once you save the file, your data should automatically import into your table.
 
-![Tables](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/18.png)
+[ACCORDION-END]
 
-![Security](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/19.png)
+[ACCORDION-BEGIN [Step 5: Create a role for access](Create a role for access)]
 
-Now we will need to open the "Security" tab and add this new role to our user.
+In order to now view the data you will need to ensure your user has access to it, for this you will need to create a new role and assign it to your user, this is the one that you log into the system with or any additional users your wish to have access to your objects.
 
-![Security tab - User](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/20.png)
+![New role](15.png)
 
-![Add role](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/21.png)
+![Role name](16.png)
 
-![Add object to role](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/22.png)
+![Objects](17.png)
 
-There now we are set to view the data from the "Catalog" tab.
+![Tables](18.png)
 
-![Edit user](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/23.png)
+![Security](19.png)
 
-![Add role to user](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/24.png)
+[ACCORDION-END]
 
-![Table Definition](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/25.png)
+[ACCORDION-BEGIN [Step 6: Assigning the role to your user](Assigning the role to your user)]
 
-The resulting view shows the SQL query executed when we clicked the "Open Content" button.
+Now you will need to open the "Security" tab and add this new role to your user.
 
-![Table content](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/26.png)
+![Security tab - User](20.png)
 
-Now let's access this data from a SAP HANA application.
+![Add role](21.png)
 
+![Add object to role](22.png)
 
-### Access Data from a HANA Application
+[ACCORDION-END]
 
-You must have finished the previous tutorial ["Hello World! Develop your first HANA Application using Web-based Development Workbench"](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html) so that you have a working hello world application ready.
+[ACCORDION-BEGIN [Step 7: View your table](View your table)]
 
-Go back to the Editor and open the already existing `mylibrary.xsjs`.
+Now you are set to view the data from the "Catalog" tab.
 
-![Initial file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/27.png)
+![Edit user](23.png)
+
+![Add role to user](24.png)
+
+![Table Definition](25.png)
+
+The resulting view shows the SQL query executed when you clicked the "Open Content" button.
+
+![Table content](26.png)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: Access your data via coding](Access your data via coding)]
+
+From the editor you will open the existing `mylibrary.xsjs` and modify the code.
+
+![Initial file](27.png)
 
 Replace the current code in the `mylibrary.xsjs` file with the following code that opens a database connection, prepares a simple SQL statement, executes it and returns the result of the query:
 
@@ -189,7 +203,7 @@ $.response.setBody(output);
 
 Save the file using the Save button or by pressing `ctrl+s`. Again, the successful save is confirmed in the console.
 
-![Modified initial page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/28.png)
+![Modified initial page](28.png)
 
 Now you are ready to run the application.
 
@@ -201,8 +215,9 @@ You can even loop through all records like this,
     }
 ```
 
+[ACCORDION-END]
 
-### Deploy, Run and Test the Application
+[ACCORDION-BEGIN [Step 9: Deploy, Run and Test the Application](Deploy, Run and Test the Application)]
 
 Now the application is ready to be tested. As you are developing with the Web-based Development Workbench the application is already deployed and activated so you can immediately continue to test it.
 
@@ -210,13 +225,12 @@ Select the `mylibrary.xsjs` file to enable the Run on Server in the toolbar. The
 
 The application will open in your browser and greet you with **My Personal Library** and the just accessed data from your table:
 
-![Running example](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-data-access-authorizations/29.png)
+![Running example](29.png)
 
 Congratulations: You have just accessed your first data on SAP HANA!
 
+[ACCORDION-END]
 
 ### Optional: Related Information
-[SAP HANA Development Information - Official Documentation](http://help.sap.com/hana_platform#section6)
+[SAP HANA Development Information - Official Documentation](https://help.sap.com/hana_platform#section6)
 
-
-*This tutorial is part of the SAP HANA and SAP HANA Cloud Platform tutorials set.*

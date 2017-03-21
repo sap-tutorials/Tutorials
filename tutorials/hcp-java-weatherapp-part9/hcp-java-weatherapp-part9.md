@@ -1,14 +1,14 @@
 ---
 title: End-to-End Weather App Scenario Part 9
 description: Implement a responsive UI using OpenUI5
-tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
+tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
 ---
 
 ## Prerequisites  
- - [End-to-End Weather App Scenario Part 8](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)
+ - [End-to-End Weather App Scenario Part 8](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 10](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part10.html)
+ - [End-to-End Weather App Scenario Part 10](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part10.html)
 
 ## Details
 ### You will learn  
@@ -58,4 +58,4 @@ In this tutorial you will implement a simple responsive, mobile-compatible user 
 
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 10](http://go.sap.com/developer/tutorials/hcp-java-weatherapp-part10.html)
+ - [End-to-End Weather App Scenario Part 10](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part10.html)

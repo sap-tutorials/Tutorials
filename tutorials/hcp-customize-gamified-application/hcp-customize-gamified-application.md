@@ -1,122 +1,179 @@
 ---
-title: Customize game mechanics of HelpDesk application in SAP HANA Cloud Platform
-description: Manually customize the game mechanics of the gamified HelpDesk application using the Gamification Workbench on the SAP HANA Cloud Platform.
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform ]
+title: Customize game mechanics of HelpDesk application in SAP Cloud Platform
+description: Manually customize the game mechanics of the gamified HelpDesk application using the Gamification Workbench on the SAP Cloud Platform.
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Deploy gamified HelpDesk application to SAP HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)
+- **Proficiency:** Beginner
+- **Tutorials:** [Deploy gamified HelpDesk application to SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will tweak the game mechanics of the HelpDesk application manually using the Gamification Workbench on the SAP HANA Cloud Platform. You will increase the number of experience points the user receives for solving sample tickets and increase the total points for solving sample critical tickets. As a result of that change, you will also have to adapt the game levels.
+In this tutorial, you will tweak the game mechanics of the HelpDesk application manually using the Gamification Workbench on the SAP Cloud Platform. You will increase the number of experience points the user receives for solving sample tickets and increase the total points for solving sample critical tickets. As a result of that change, you will also have to adapt the game levels.
 
 ### Time to Complete
 **20 Min**.
 
 ---
 
-1. In your Web browser, open the cockpit of the [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com/cockpit). Then select **Services** from the left-hand navigation and click the **Gamification Service**.
+[ACCORDION-BEGIN [Step 1: ](Open Gamification service)]
 
-    ![Open Gamification Service](1.png)
+In your Web browser, open the cockpit of the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit). Then select **Services** from the left-hand navigation and click the **Gamification Service**.
 
-2. Click **Go to Service**.
+![Open Gamification Service](1.png)
 
-    ![Go to Service](2.png)
 
-    >You can bookmark this page for ease of access in the future.
+Click **Go to Service**.
 
-3. Select the **`HelpDesk`** application from the drop-down menu in the upper-right corner.
+![Go to Service](2.png)
 
-    ![Select HelpDesk Application](3.png)
+>You can bookmark this page for ease of access in the future.
 
-4. To get an overview of existing rules, navigate to the **Game Mechanics** tab and select **Rules** from the second level navigation bar.
+[DONE]
+[ACCORDION-END]
 
-    ![Check Rules](4.png)
+[ACCORDION-BEGIN [Step 2: ](Select HelpDesk application)]
 
-5. Open the rule **`GiveXP`** by clicking on it. Select the **Consequence** tab under **Rule Logic**.
+Select the **`HelpDesk`** application from the drop-down menu in the upper-right corner.
 
-    ![Open XP Rule](5.png)
+![Select HelpDesk Application](3.png)
 
-6. Select **Edit** and increase the number of **`Experience Points`** that users receive when they respond to a ticket from `1` to `3`.
+[DONE]
+[ACCORDION-END]
 
-    ![Change XP Points](6.png)
+[ACCORDION-BEGIN [Step 3: ](View existing rules)]
 
-    ```java
-    updateAPIv1.givePointsToPlayer($playerid, 'Experience Points', 3, 'Ticket processed');
-    update(engine.getPlayerById($playerid));
-    ```
+To get an overview of existing rules, navigate to the **Game Mechanics** tab and select **Rules** from the second level navigation bar.
 
-7. Click **Save**.
+![Check Rules](4.png)
 
-    ![Save Experience Points](7.png)
+[DONE]
+[ACCORDION-END]
 
-8. Open the rule **`GiveCT`** by clicking on it. Select the **Consequence** tab under **Rule Logic**.
+[ACCORDION-BEGIN [Step 4: ](Edit rule logic)]
 
-    ![Open CT Rule](8.png)
+Open the rule **`GiveXP`** by clicking on it. Select the **Consequence** tab under **Rule Logic**.
 
-9. Select **Edit** and increase the number of **`Experience Points`** that users receive when they respond to a critical ticket from `2` to `7`.
+![Open XP Rule](5.png)
 
-    ![Change CT XP Points](9.png)
+Select **Edit** and increase the number of **`Experience Points`** that users receive when they respond to a ticket from `1` to `3`.
 
-    ```java
-    updateAPIv1.givePointsToPlayer($playerid, 'Critical Tickets', 1, 'Critical ticket processed');
-    updateAPIv1.givePointsToPlayer($playerid, 'Experience Points', 7, 'Critical ticket processed');
-    update(engine.getPlayerById($playerid));
-    ```
+![Change XP Points](6.png)
 
-10. Click **Save**.
+```java
+updateAPIv1.givePointsToPlayer($playerid, 'Experience Points', 3, 'Ticket processed');
+update(engine.getPlayerById($playerid));
+```
 
-    ![Save Experience Points](10.png)
+Click **Save**.
 
-    >**`Experience Points`** for responding to critical tickets are given in addition to **`Experience Points`** given for processing any ticket. In other words, users will now receive 10 points when solving a critical ticket (7 critical points plus 3 points for solving any ticket).
+![Save Experience Points](7.png)
 
-11. You can ensure that these rules were successfully updated by checking the notification center in the upper right-hand corner.
+[DONE]
+[ACCORDION-END]
 
-    ![Notification Center](11.png)
+[ACCORDION-BEGIN [Step 5: ](Edit more logic)]
 
-12. Still in **Game Mechanics**, select **Levels** from the second level navigation bar.
+Open the rule **`GiveCT`** by clicking on it. Select the **Consequence** tab under **Rule Logic**.
 
-    ![Levels Tab](12.png)
+![Open CT Rule](8.png)
 
-13. Select all the levels in the table and choose **Delete**.
+Select **Edit** and increase the number of **`Experience Points`** that users receive when they respond to a critical ticket from `2` to `7`.
 
-    ![Delete Levels](13.png)
+![Change CT XP Points](9.png)
 
-14. Click **Add**. Enter a **Name**, make sure that **Experience Points** are selected in the **Points** drop-down, and enter a value in the **Point Threshold**. Click **Save**.
+```java
+updateAPIv1.givePointsToPlayer($playerid, 'Critical Tickets', 1, 'Critical ticket processed');
+updateAPIv1.givePointsToPlayer($playerid, 'Experience Points', 7, 'Critical ticket processed');
+update(engine.getPlayerById($playerid));
+```
 
-    ![Create Levels](14.png)
+Click **Save**.
 
-15. Repeat the previous step three to five times until you have a variety of levels.
+![Save Experience Points](10.png)
 
-    >Start with a level with a small threshold, so that newly registered users will have a level already assigned.
+>**`Experience Points`** for responding to critical tickets are given in addition to **`Experience Points`** given for processing any ticket. In other words, users will now receive 10 points when solving a critical ticket (7 critical points plus 3 points for solving any ticket).
 
-16. Launch the gamified HelpDesk application by first selecting **Help** in the upper-right corner.
+[DONE]
+[ACCORDION-END]
 
-    ![Help Button](16.png)
+[ACCORDION-BEGIN [Step 6: ](Verify updates)]
 
-    Then clicking **Open HelpDesk** from the pop-up window.
+You can ensure that these rules were successfully updated by checking the notification center in the upper right-hand corner.
 
-    ![Open HelpDesk](17.png)
+![Notification Center](11.png)
 
-17. Select **continue** when the home screen of the sample gamified HelpDesk application appears.
+[DONE]
+[ACCORDION-END]
 
-    ![Enter HelpDesk Application](18.png)
+[ACCORDION-BEGIN [Step 7: ](Delete levels)]
 
-18. To see your new game mechanics in action, first respond to one of the generated sample tickets.
+Still in **Game Mechanics**, select **Levels** from the second level navigation bar.
 
-    ![Respond to Ticket](19.png)
+![Levels Tab](12.png)
 
-    Then click your name in the upper-right corner to go to your profile.
+Select all the levels in the table and choose **Delete**.
 
-    ![Go to Profile](20.png)
+![Delete Levels](13.png)
 
-    In your profile, you should see the new levels (green box) as well as the increased number of experience points you received (red box).
+[DONE]
+[ACCORDION-END]
 
-    ![See Results](21.png)
+[ACCORDION-BEGIN [Step 8: ](Create levels)]
+
+Click **Add**. Enter a **Name**, make sure that **Experience Points** are selected in the **Points** drop-down, and enter a value in the **Point Threshold**. Click **Save**.
+
+![Create Levels](14.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Add more levels)]
+
+Repeat the previous step three to five times until you have a variety of levels.
+
+>Start with a level with a small threshold, so that newly registered users will have a level already assigned.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Launch the gamified app)]
+
+Launch the gamified HelpDesk application by first selecting **Help** in the upper-right corner.
+
+![Help Button](16.png)
+
+Then click **Open HelpDesk** from the pop-up window.
+
+![Open HelpDesk](17.png)
+
+Select **continue** when the home screen of the sample gamified HelpDesk application appears.
+
+![Enter HelpDesk Application](18.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 11: ](Test game features)]
+
+To see your new game mechanics in action, first respond to one of the generated sample tickets.
+
+![Respond to Ticket](19.png)
+
+Then click your name in the upper-right corner to go to your profile.
+
+![Go to Profile](20.png)
+
+In your profile, you should see the new levels (green box) as well as the increased number of experience points you received (red box).
+
+![See Results](21.png)
+
+[DONE]
+[ACCORDION-END]
+
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

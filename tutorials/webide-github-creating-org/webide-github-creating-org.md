@@ -1,7 +1,7 @@
 ---
 title: Creating a GitHub organization and adding collaborators
 description: Part 1 of 6, Collaborative Development Using GitHub and SAP Web IDE
-tags: [ tutorial>beginner, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-hana-cloud-platform ]
+tags: [ tutorial>beginner, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
 
 ---
 
@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, topic>github, topic>cloud, products>sap-hana, product
  - **Proficiency:** Beginner
 
 ## Next Steps
- - [Create a Git repository within the GitHub Organization](http://go.sap.com/developer/tutorials/webide-github-create-git-repo.html)
+ - [Create a Git repository within the GitHub Organization](http://www.sap.com/developer/tutorials/webide-github-create-git-repo.html)
 
 ## Details
 ### You will learn  
@@ -61,4 +61,4 @@ In this tutorial, you'll learn how to create an organization in GitHub and add c
 8. Click on **Join** and now the organization will have the collaborator added!
 
 ## Next Steps
- - [Create a Git repository within the Organization](http://go.sap.com/developer/tutorials/webide-github-create-git-repo.html)
+ - [Create a Git repository within the Organization](http://www.sap.com/developer/tutorials/webide-github-create-git-repo.html)

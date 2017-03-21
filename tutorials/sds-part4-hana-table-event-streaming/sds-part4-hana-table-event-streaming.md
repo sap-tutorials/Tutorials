@@ -5,10 +5,10 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Filter and Output to SAP HANA Table in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part3-simplefilter-hanatable.html)
+ - **Tutorials:** [Filter and Output to SAP HANA Table in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part3-simplefilter-hanatable.html)
 
 ## Next Steps
- - **Tutorials:** [Using an Aggregate Window in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part5-add-aggregate-window.html)
+ - **Tutorials:** [Using an Aggregate Window in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part5-add-aggregate-window.html)
 
 ## Details
 ### You will learn  
@@ -36,7 +36,7 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 
     ![add machineref](add-hana-table/3-add-machineref.png)
 
-    Note: if you don’t see the tables you have created, try right clicking the schema and selecting **Refresh**. Make sure to use the same schema you create the table with before. In this case, you are using SYSTEM.
+    Note: if you don't see the tables you have created, try right clicking the schema and selecting **Refresh**. Make sure to use the same schema you create the table with before. In this case, you are using SYSTEM.
 
 4. Select **Reference**, **Inline** and then click **OK**.
 
@@ -99,4 +99,4 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 
 
 ## Next Steps
- - **Tutorials:** [Using an Aggregate Window in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part5-add-aggregate-window.html)
+ - **Tutorials:** [Using an Aggregate Window in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part5-add-aggregate-window.html)

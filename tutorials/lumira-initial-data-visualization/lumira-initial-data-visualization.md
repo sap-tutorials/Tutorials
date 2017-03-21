@@ -5,7 +5,7 @@ tags: [  tutorial>beginner, products>sap-lumira ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Initial data exploration in SAP BusinessObjects Lumira](http://go.sap.com/developer/tutorials/lumira-initial-data-exploration.html)
+ - **Tutorials:** [Initial data exploration in SAP BusinessObjects Lumira](http://www.sap.com/developer/tutorials/lumira-initial-data-exploration.html)
 
 ## Next Steps
  - Time dimension and data drilling (coming soon)
@@ -78,6 +78,10 @@ The basics of data visualization: creating charts suggested by the system or man
     ![Display options for measures in SAP BusinessObjects Lumira](Lum03-09.png)
 
 9. Save the document.
+
+## Optional Steps
+
+ - If you want to further explore SAP BusinessObjects Lumira user tutorials, please check https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=449287573
 
 ## Next Steps
  - Time dimension and data drilling (coming soon)

@@ -1,108 +1,130 @@
 ---
-title: Sign up for an free trial account on SAP HANA Cloud Platform
-description: How to sign up for a free trial account on SAP HANA Cloud Platform (HCP)
-tags: [ products>sap-hana-cloud-platform, topic>cloud, tutorial>beginner ]
+title: Sign up for a free trial account on SAP Cloud Platform
+description: How to sign up for a free trial account on SAP Cloud Platform
+tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner ]
 ---
 
 ## Prerequisites
  - **Proficiency:** Beginner
 
 ## Next Steps
- - Go to the [AppSpace landing](http://go.sap.com/developer/app-space-page.html) page
- - For SAP HANA development: [SAP HANA XSC basic development](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
- - For Mobile development [Create and deploy an app in the cloud series](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
- - For SAP HCP predictive services development: [Create a new HANA MDC instance](http://go.sap.com/developer/tutorials/hcpps-hana-create-mdc-instance.html)
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Go to the [AppSpace landing](http://www.sap.com/developer/app-space.html) page
+ - For SAP HANA development: [SAP HANA XSC basic development](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
+ - For Mobile development [Create and deploy an app in the cloud series](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+ - For SAP Cloud Platform predictive services development: [Create a new HANA MDC instance](http://www.sap.com/developer/tutorials/hcpps-hana-create-mdc-instance.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 
 ## Details
 ### You will learn  
-This is a simple 8 step tutorial to walk through signing up for an account on HANA Cloud Platform.
-
-> ### Note
->If you already have an account on HANA Cloud Platform (HCP), you can go directly to the HANA Cloud Platform Cockpit and then move on to the next tutorial.
+You will register with the SAP website and then "upgrade" your account (at no cost) for the SAP Cloud Platform trial.
 
 ### Time to Complete
 **5 mins**
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Register for the SAP HANA Cloud Platform trial)]
+[ACCORDION-BEGIN [Step 1: ](Log into the SAP website)]
 
-Go to the [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com/) website and click on the **Register** button.
+At the upper-right corner of this tutorial page (or any page on `www.sap.com` ), click the **Log On** icon. If you have an account on `www.sap.com` (e.g. an S, C, D or I number) you can enter it or the associated email along with your password.
 
-![HCP registration page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-trial-account/hcp_signup1.png)
+![log on icon](sci-01.png)
+
+If you don't have an account yet, you can select one of the other login methods or click **Register** to create an account.
+
+![log on dialog](sci-02.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Register at sap.com)]
+If you clicked **Register** in the previous step, you will see a **Register dialog**. Fill in the required fields, and click **Register**.
+
+![register dialog](sci-02.1.png)
+
+You will get a message that an activation link has been sent to you.
+
+![Activate](hcp_signup3.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Activate your account)]
+
+Once again in the upper-right corner of this tutorial page (or any page on `www.sap.com`) click on the **Log On** button.
+
+Enter the same credentials you used to log into the `SAP.com` website.
+
+![log into SAP](log-into-sap.png)
+
+If you have just registered in the step above you may get a log-in error until you activate your account via the email link sent.
+
+![not activated](not-activated.png)
+
+After activating your account, you will see the following screen. Click continue.
+
+![successful activation](successful-activation.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Add the SAP.com registration to your SAP Cloud Identity account)]
+
+After activation, or if you already had an SAP account, go to the [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/) (<https://account.hanatrial.ondemand.com/>) page and click on the **Log On** button.
+
+![SAP Cloud Platform trial home page ](hcp-04.png)
+
+Assuming you don't already have a SAP Cloud Platform trial account, you will see an **Upgrade your account for SAP.com** dialog. If so, fill out all fields and click **Register**. This simply adds the SAP.com registration to your login account on SAP Cloud Identity. There is no cost associated with this registration.
+
+![upgrade account dialog](sci-03.png)
+
+[DONE]
+[ACCORDION-END]
+<!--
+[ACCORDION-BEGIN [Step 4: ](Verify you are logged in)]
+
+The icon in the upper-right corner of this tutorial page (or any page on `www.sap.com` ), will update to show a generic profile symbol, or an avatar image if you've uploaded one.
+
+![logged in](sci-04.png)
 
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Registration Form)]
+[ACCORDION-BEGIN [Step 5: ](Log into SAP Cloud Platform Trial system)]
 
-Fill out the Registration form and scroll to the bottom of the *Terms and Conditions* area to select the last checkbox, then click the **Register** button.
+Go to the [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/) (<https://account.hanatrial.ondemand.com/>) page and click on the **Log On** button.
 
-![HCP registration form](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-trial-account/hcp_signup2.png)
+![SAP Cloud Platform trial home page ](hcp-04.png)
 
-[DONE]
-[ACCORDION-END]
+Enter the same credentials you used to log into the `SAP.com` website.
 
-[ACCORDION-BEGIN [Step 3: ](Registration acknowledgement)]
+![SAP Cloud Platform log in](hcp-05.png)
 
-You will see the registration acknowledgement. Click **Close**.
-
-![HCP registration confirmation page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-trial-account/hcp_signup3.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Registration email)]
+[ACCORDION-BEGIN [Step 5: ](Accept trial terms and conditions)]
 
-Go to your email client and look for the Registration email, click on the **Click here to activate your account** button.
+You will be prompted with the legal disclaimer dialog box;  check the box and click **Accept** to continue.
 
-![HCP trial account activation email](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-trial-account/hcp_signup4.png)
+![SAP Cloud Platform terms and conditions](hcp-06.png)
+
+[DONE]
+[ACCORDION-END] -->
+
+[ACCORDION-BEGIN [Step 5: ](SAP Cloud Platform cockpit)]
+
+Once you have accepted the Terms and Conditions and registered, the SAP Cloud Platform cockpit will load.
+
+![SAP Cloud Platform cockpit](hcp-07.png)
 
 [DONE]
 [ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Trial activation)]
-
-A web page opens and you will see that your account was activated. Click **Continue** to go back to the [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com) website and  log in.
-
-![HCP trial account activation confirmation](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-trial-account/hcp_signup5.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Log in)]
-
-Log in with your email and HCP account password on your laptop/desktop.
-
-![HCP login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-trial-account/hcp_signup6.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7: ](Welcome screen)]
-
-At the welcome screen click **Continue**.
-
-![HCP welcome page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-trial-account/hcp_signup7.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](News and Announcements)]
-
-When the HCP Cockpit loads, you can review the News and Announcements or skip them by clicking **Close**.
-
-![HCP Cockpit with news and announcements](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-trial-account/hcp_signup8.png)
-
-[DONE]
-[ACCORDION-END]
- 
 
 ## Next Steps
- - Go to the [AppSpace landing](http://go.sap.com/developer/app-space-page.html) page
- - For SAP HANA development: [SAP HANA XSC basic development](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
- - For Mobile development [Create and deploy an app in the cloud series](http://go.sap.com/developer/tutorials/hcp-create-destination.html)
- - For SAP HCP predictive services development: [Create a new HANA MDC instance](http://go.sap.com/developer/tutorials.html?link=hcpps-hana-create-mdc-instance.html)
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+ - Go to the [AppSpace landing](http://www.sap.com/developer/app-space.html) page
+ - For SAP HANA development: [SAP HANA XSC basic development](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
+ - For Mobile development [Create and deploy an app in the cloud series](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+ - For SAP Cloud Platform predictive services development: [Create a new HANA MDC instance](http://www.sap.com/developer/tutorials.html?link=hcpps-hana-create-mdc-instance.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

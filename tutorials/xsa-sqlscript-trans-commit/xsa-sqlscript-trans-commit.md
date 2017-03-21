@@ -5,14 +5,16 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Using Exception Handling](http://go.sap.com/developer/tutorials/xsa-sqlscript-trans-exception.html)
+ - **Tutorials:** [Using Exception Handling](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-exception.html)
 
 ## Next Steps
- - [Using Autonomous Transactions](http://go.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)
+ - [Using Autonomous Transactions](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)
 
 ## Details
 ### You will learn  
 In this exercise will show the impact of a runtime error on DML statements and how to prevent it using COMMIT.
+
+**Please note - This tutorial is based on SPS11**
 
 ### Time to Complete
 **15 Min**.
@@ -43,7 +45,7 @@ In this exercise will show the impact of a runtime error on DML statements and h
 
 	![procedure editor](6.png)
 
-7. Insert a DML statement  for the sake of showing the behavior of COMMIT. Insert this INSERT statement with BEGIN and END blocks after the DECLARE statements as shown. 
+7. Insert a DML statement  for the sake of showing the behavior of COMMIT. Insert this INSERT statement with BEGIN and END blocks after the DECLARE statements as shown.
 
 	![insert DML statement](7.png)
 
@@ -63,7 +65,7 @@ In this exercise will show the impact of a runtime error on DML statements and h
 
 	![select statement](11.png)
 
-12. You will now notice that the new row has been inserted into the log table even though there was an error and a ROLLBACK was executed. 
+12. You will now notice that the new row has been inserted into the log table even though there was an error and a ROLLBACK was executed.
 
 	![rollback](12.png)
 
@@ -71,10 +73,10 @@ In this exercise will show the impact of a runtime error on DML statements and h
 
 	![run select](13.png)
 
-14. As you can see not only was the new record inserted into the `log.errors` table, but also “Chuck Norris” found its way into our `log.messages` table. The complete transaction will be committed, meaning any modification happened in this transaction will be persisted. A better solution for this are the autonomous transaction.
+14. As you can see not only was the new record inserted into the `log.errors` table, but also "Chuck Norris" found its way into our `log.messages` table. The complete transaction will be committed, meaning any modification happened in this transaction will be persisted. A better solution for this are the autonomous transaction.
 
 	![inserted records](14.png)
 
 
 ## Next Steps
- - [Using Autonomous Transactions](http://go.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)
+ - [Using Autonomous Transactions](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)

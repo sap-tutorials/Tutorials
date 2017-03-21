@@ -1,14 +1,14 @@
 ---
 title: React JS - Convert to dynamic components
 description: Step #5: Convert React components from static to dynamic
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorial:** [Step 4 - Separate the files](http://go.sap.com/developer/tutorials/react-separate-files.html)
+ - **Tutorial:** [Step 4 - Separate the files](http://www.sap.com/developer/tutorials/react-separate-files.html)
 
 ## Next Steps
- - **Tutorial:** [Step 6 - Add REST OData retrieval](http://go.sap.com/developer/tutorials/react-add-odata.html)
+ - **Tutorial:** [Step 6 - Add REST OData retrieval](http://www.sap.com/developer/tutorials/react-add-odata.html)
 
 
 ## Details
@@ -296,7 +296,7 @@ ReactDOM.render(
 ---
 
 ## Next Steps
- - **Tutorial:** [Step 6 - Add REST OData retrieval](http://go.sap.com/developer/tutorials/react-add-odata.html)
+ - **Tutorial:** [Step 6 - Add REST OData retrieval](http://www.sap.com/developer/tutorials/react-add-odata.html)
 
 
 

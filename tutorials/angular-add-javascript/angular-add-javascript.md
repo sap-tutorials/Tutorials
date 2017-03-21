@@ -1,15 +1,15 @@
 ---
 title: AngularJS - Add the AngularJS JavaScript
 description: Step #3: Add the JavaScript to the static page, creating a dynamic page
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
 #### AngularJS Series
-- **Tutorials** Step 2 [Create the Bootstrap Template](http://go.sap.com/developer/tutorials/angular-bootstrap-template.html)
+- **Tutorials** Step 2 [Create the Bootstrap Template](http://www.sap.com/developer/tutorials/angular-bootstrap-template.html)
 
 ## Next Steps
-- **Tutorials** Step 4 [Separate the JavaScript and CSS Files](http://go.sap.com/developer/tutorials/angular-separate-files.html) 
+- **Tutorials** Step 4 [Separate the JavaScript and CSS Files](http://www.sap.com/developer/tutorials/angular-separate-files.html) 
 
 ## Details
 ### You will learn  
@@ -238,4 +238,4 @@ In our list, we have a boolean called `Discontinued`.  But we don't want to disp
 - [`ng-repeat`](https://docs.angularjs.org/api/ng/directive/ngRepeat) - the AngularJS loop function
 
 ## Next Steps
-- **Tutorials** Step 4 [Separate the JavaScript and CSS Files](http://go.sap.com/developer/tutorials/angular-separate-files.html) 
+- **Tutorials** Step 4 [Separate the JavaScript and CSS Files](http://www.sap.com/developer/tutorials/angular-separate-files.html) 

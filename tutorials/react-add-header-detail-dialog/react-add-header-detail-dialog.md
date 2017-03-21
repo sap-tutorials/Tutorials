@@ -1,14 +1,14 @@
 ---
 title: React JS - Add header and modal dialog
 description: Step #7: Extend the application with a list header and a modal dialog for product details.
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorial:** [Step 6 - Add REST OData retrieval](http://go.sap.com/developer/tutorials/react-add-odata.html)
+ - **Tutorial:** [Step 6 - Add REST OData retrieval](http://www.sap.com/developer/tutorials/react-add-odata.html)
 
 ## Next Steps
- - **Tutorial:** [Step 8 - Create child components](http://go.sap.com/developer/tutorials/react-child-components.html)
+ - **Tutorial:** [Step 8 - Create child components](http://www.sap.com/developer/tutorials/react-child-components.html)
 
 
 ## Details
@@ -411,4 +411,4 @@ ReactDOM.render(
 ```
 
 ## Next Steps
- - **Tutorial:** [Step 8 - Create child components](http://go.sap.com/developer/tutorials/react-child-components.html)
+ - **Tutorial:** [Step 8 - Create child components](http://www.sap.com/developer/tutorials/react-child-components.html)

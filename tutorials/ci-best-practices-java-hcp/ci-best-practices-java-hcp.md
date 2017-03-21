@@ -1,6 +1,6 @@
 ---
 
-title: Continuous Integration (CI) Best Practices with SAP: Java Web on SAP HANA Cloud Platform
+title: Continuous Integration (CI) Best Practices with SAP: Java Web on SAP Cloud Platform
 description: Part 4.2: Configuring the CI system for Maven-based Java Web project.
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
@@ -9,41 +9,47 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Prerequisites  
 
   - **Proficiency:** Intermediate
-  - [Pipeline Skeleton](http://go.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) 
-  - [Generic Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html)
+  - [Source Code Versioning System](http://www.sap.com/developer/tutorials/ci-best-practices-scm.html)
+  - [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html)
+  - [Artifact Repository](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
+  - [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+  - [Pipeline Skeleton](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) 
+  - [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html)
 
 ## Next Steps
 
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
   
 ---
+
+> This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html). For all the examples to work properly make sure that you have followed the setup instructions for all components listed in the prerequisites box.
 
 
 The example shown here uses samples that are delivered as part of the SDK installation for Java Web development. These samples contain some web applications that are built using Maven and share a common parent `pom.xml`. Documentation and resources for Java web application development:
 
 > Documentation: https://help.hana.ondemand.com/help/frameset.htm?e66f3eecbb5710148397a19b46c4979b.html  
-> Tutorial: https://hcp.sap.com/developers/TutorialCatalog/jav100_2_java_hello_world.html  
+> Tutorial: http://www.sap.com/developer/tutorials/hcp-java-basic-app.html
 > SDK installation guide: https://help.hana.ondemand.com/help/frameset.htm?7613843c711e1014839a8273b0e91070.html  
 > SDK Download: https://tools.hana.ondemand.com/#cloud
 
 The samples can be built without any further prerequisites. The dependencies listed in the `pom.xml` are all available on the Maven central repository. This includes the SAP Java Web SDK itself that does not need to be installed on the build server.
 
 We will setup a Continuous Delivery pipeline for one of the sample applications applying what was shown in the 
-[Pipeline Skeleton](http://go.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) part. We will use the following infrastructure: 
+[Pipeline Skeleton](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) part. We will use the following infrastructure: 
 
-![Java Web on SAP HANA Cloud Platform, CI Process Landscape](java-web-on-hcp-1.png)
+![Java Web on SAP Cloud Platform, CI Process Landscape](java-web-on-hcp-1.png)
 
-In our scenario we assume that a Java Web developer works with a local Eclipse development environment and Git as the versioning tool. The developer also owns a developer account in HCP to deploy and test the application manually. Commits in Git are not pushed directly into the `master` branch, but to Gerrit for voting. A voter build is automatically triggered to guarantee build and component test quality even before the commit is merged into `master`. We will show in our example how to include automated scenario tests by automatically deploying the application to a runtime. For the latter, two alternatives are possible: a JEE instance which is created on-the-fly on the build server or an account on SAP HANA Cloud Platform.
+In our scenario we assume that a Java Web developer works with a local Eclipse development environment and Git as the versioning tool. The developer also owns a developer account in SAP Cloud Platform to deploy and test the application manually. Commits in Git are not pushed directly into the `master` branch, but to Gerrit for voting. A voter build is automatically triggered to guarantee build and component test quality even before the commit is merged into `master`. We will show in our example how to include automated scenario tests by automatically deploying the application to a runtime. For the latter, two alternatives are possible: a JEE instance which is created on-the-fly on the build server or an account on SAP Cloud Platform.
 
-After successful voter build and an eventual review by another developer, the commit is merged into `master` by the developer or a responsible person. This event triggers the CI build, which is implemented similarly to the voter build containing compilation, component and scenario tests on either a local JEE runtime or the SAP HANA Cloud Platform. The build result will be archived on Jenkins, so there is no need to rebuild the software in subsequent pipeline steps.
+After successful voter build and an eventual review by another developer, the commit is merged into `master` by the developer or a responsible person. This event triggers the CI build, which is implemented similarly to the voter build containing compilation, component and scenario tests on either a local JEE runtime or the SAP Cloud Platform. The build result will be archived on Jenkins, so there is no need to rebuild the software in subsequent pipeline steps.
 
-We will then implement a deploy job for acceptance tests. The quality manager triggers it manually to deploy the application to a test account on SAP HANA Cloud Platform. Manual testers are assumed to execute the acceptance test.
+We will then implement a deploy job for acceptance tests. The quality manager triggers it manually to deploy the application to a test account on SAP Cloud Platform. Manual testers are assumed to execute the acceptance test.
 
-When the acceptance test was successful, the delivery manager can decide to trigger the release of the application. The artifact is uploaded to Nexus and the application is deployed to the productive SAP HANA Cloud Platform account.
+When the acceptance test was successful, the delivery manager can decide to trigger the release of the application. The artifact is uploaded to Nexus and the application is deployed to the productive SAP Cloud Platform account.
 
-![Java Web on SAP HANA Cloud Platform, CI Process Landscape](java-web-on-hcp-sequence.png)
+![Java Web on SAP Cloud Platform, CI Process Landscape](java-web-on-hcp-sequence.png)
 
-Thus, several accounts on SAP HANA Cloud Platform are needed to separate the different concerns within the whole pipeline and to ensure that different deployed versions of the application in different quality stages do not get in conflict with each other. Note that the name of the deployed application does not change.
+Thus, several accounts on SAP Cloud Platform are needed to separate the different concerns within the whole pipeline and to ensure that different deployed versions of the application in different quality stages do not get in conflict with each other. Note that the name of the deployed application does not change.
 
 In principle, it would be possible to work with less accounts by sharing one for different concerns. But then, additional care must be taken to avoid conflicts. There are different possibilities:
 
@@ -56,7 +62,7 @@ We just mention the possibility and will not go into the details.
 ### Preparation of the Project
 
 We will call our project `neo-java-web-sdk-samples`. To set up the Gerrit project, execute the corresponding steps as described in
-[Generic Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html). The `samples` folder in the SAP HANA Cloud Platform SDK contains a Maven parent project with a couple of modules. We do not want to build all the modules in this example but restrict ourselves on the `explore-ui5` module only. The others do not need to be included into the Gerrit project, and in the parent `pom.xml`, place them into comments:
+[Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html). The `samples` folder in the SAP Cloud Platform SDK contains a Maven parent project with a couple of modules. We do not want to build all the modules in this example but restrict ourselves on the `explore-ui5` module only. The others do not need to be included into the Gerrit project, and in the parent `pom.xml`, place them into comments:
 
 ```
     <modules>
@@ -77,12 +83,12 @@ We do not use Maven snapshot versions, hence ensure that the version number in t
 
 ### Voter Build: Preparation of the Java Compilation
 
-To configure the voter build, execute the corresponding steps as described in part [Generic Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html), but take `neo-java-web-sdk-samples` as project name and use the sources from the sample. We assume now that a voter job is created on Jenkins with the name `VO_neo-java-web-sdk-samples_master_build`.
+To configure the voter build, execute the corresponding steps as described in part [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html), but take `neo-java-web-sdk-samples` as project name and use the sources from the sample. We assume now that a voter job is created on Jenkins with the name `VO_neo-java-web-sdk-samples_master_build`.
 
 
 ### Voter Build: Scenario Tests on the Build Server
 
-The SAP `neo-java-web-maven-plugin` provides a client API to SAP HANA Cloud Platform, enabling the build to issue commands there, for example, starting, stopping or deploying an application. The plugin also includes a local mode that enables you to launch a local runtime and to deploy the application there, which is much faster than deploying over the network directly to SAP HANA Cloud Platform.
+The SAP `neo-java-web-maven-plugin` provides a client API to SAP Cloud Platform, enabling the build to issue commands there, for example, starting, stopping or deploying an application. The plugin also includes a local mode that enables you to launch a local runtime and to deploy the application there, which is much faster than deploying over the network directly to SAP Cloud Platform.
 We describe both alternatives, and it is up to you to decide which one is appropriate for your scenario. 
 
 > Documentation: https://help.hana.ondemand.com/help/frameset.htm?4cbdab6e2eb14c92ab76540ffb32174c.html
@@ -203,26 +209,26 @@ Rerun the build by pushing a small change. When you open the log, you see the lo
 started, and the tests, including Selenium tests, executed.
 
 
-### Voter Build: Scenario Tests on SAP HANA Cloud Platform
+### Voter Build: Scenario Tests on SAP Cloud Platform
 
-We will now change the configuration such that the scenario tests are executed on a developer account on the SAP HANA Cloud Platform trial landscape.
+We will now change the configuration such that the scenario tests are executed on a developer account on the SAP Cloud Platform trial landscape.
 
-You must have a valid development account on SAP HANA Cloud Platform. Do not use your personal user ID for the deployment; instead, use a machine user that you create on SAP HANA Cloud Platform and grant the deploy permissions to.
+You must have a valid development account on SAP Cloud Platform. Do not use your personal user ID for the deployment; instead, use a machine user that you create on SAP Cloud Platform and grant the deploy permissions to.
 
-The deployment to SAP HANA Cloud Platform is performed in the Maven build using the SAP `neo-java-web-maven-plugin`. By activating the Maven profile `cloud-integration-tests`, the build stops the application that is still running in the SAP HANA Cloud Platform account, deploys the new artifact and restarts the application. After the test execution, the application is stopped again.
+The deployment to SAP Cloud Platform is performed in the Maven build using the SAP `neo-java-web-maven-plugin`. By activating the Maven profile `cloud-integration-tests`, the build stops the application that is still running in the SAP Cloud Platform account, deploys the new artifact and restarts the application. After the test execution, the application is stopped again.
 
 #### Prerequisites
 
-- A developer account on the SAP HANA Cloud Platform trial landscape.
+- A developer account on the SAP Cloud Platform trial landscape.
  
 > Documentation: https://help.hana.ondemand.com/help/frameset.htm?975c8fc61a384668a82e91c8448deb0b.html  
-> SAP HANA Cloud Platform Cockpit: https://account.hanatrial.ondemand.com
+> SAP Cloud Platform Cockpit: https://account.hanatrial.ondemand.com
 
 #### Procedure
 
 ##### Create an additional user for your account.
 
-1. Open the SAP HANA Cloud Platform Cockpit and ensure that you are on the **Log on > Register** start page. If you still see your personal Cockpit view, simply log off.
+1. Open the SAP Cloud Platform Cockpit and ensure that you are on the **Log on > Register** start page. If you still see your personal Cockpit view, simply log off.
 
 2. Click **Register** and fill out the form. Use a different e-mail address than your personal account. Click **Register**.
 
@@ -237,9 +243,9 @@ The deployment to SAP HANA Cloud Platform is performed in the Maven build using 
     ```
     export https_proxy=<URL of your HTTPS proxy>
     export http_proxy=<URL of your HTTP proxy>
-    cd <the installation directory of your SAP HANA Cloud Platform SDK>/tools
-    ./neo.sh list-applications --host https://hanatrial.ondemand.com --account <your HCP account>\
-      --user <your HCP user> --password <your HCP password>
+    cd <the installation directory of your SAP Cloud Platform SDK>/tools
+    ./neo.sh list-applications --host https://hanatrial.ondemand.com --account <your SAP Cloud Platform account>\
+      --user <your SAP Cloud Platform user> --password <your SAP Cloud Platform password>
     ```
      
     You see the applications installed in your account.
@@ -299,7 +305,7 @@ Make the following changes to the job `VO_neo-java-web-sdk-samples_master_build`
 3. In the **Build** section, enter as **Goals and options**:
 
     ```
-    clean verify -P cloud-integration-tests -Dhttps.proxyHost=<your proxy host> -Dhttps.proxyPort=<your proxy port> -Dsap.cloud.account=${HCP_VOTER_ACCOUNT} -Dsap.cloud.username=${HCP_USER} -Dsap.cloud.password=${HCP_PASSWORD} -Dsap.cloud.host=hanatrial.ondemand.com
+    clean verify -P cloud-integration-tests -Dhttps.proxyHost=<your proxy host> -Dhttps.proxyPort=<your proxy port> -Dsap.cloud.account=${SAPCP_VOTER_ACCOUNT} -Dsap.cloud.username=${SAPCP_USER} -Dsap.cloud.password=${SAPCP_PASSWORD} -Dsap.cloud.host=hanatrial.ondemand.com
     ```
 
 4. Save.
@@ -309,12 +315,12 @@ Make the following changes to the job `VO_neo-java-web-sdk-samples_master_build`
 
 1. In Jenkins, go to **Manage Jenkins > Configure System > Global Passwords**.
 
-2. Define your credential data by creating new entries for the names `HCP_USER`, `HCP_VOTER_ACCOUNT` and `HCP_PASSWORD`.  
+2. Define your credential data by creating new entries for the names `SAPCP_USER`, `SAPCP_VOTER_ACCOUNT` and `SAPCP_PASSWORD`.  
     The values of these variables will be masked in the build log.
     
 3. Save.
 
-Start the job by pushing a small change. You see the job deploying onto SAP HANA Cloud Platform and executing the scenario tests.
+Start the job by pushing a small change. You see the job deploying onto SAP Cloud Platform and executing the scenario tests.
 
 
 ### CI build
@@ -323,15 +329,15 @@ You can use the voter build as a template for the CI build job. In this example 
 Concerning the run time for automatic scenario test execution, what was said for the voter builds also applies to the CI build. Thus most of the job configuration can be taken from the voter build with few differences:
 
 - The merge into the `master` branch is the event that triggers the build.
-- The CI build is part of the continuous delivery pipeline, and thus configuration for archiving the artifact and definition of the subsequent job as described in [Pipeline Skeleton](http://go.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) is needed.
-- The CI build deploys to a different SAP HANA Cloud Platform account. We assume in this example that the user credentials remain unchanged, but you may decide to use different deploy users.
+- The CI build is part of the continuous delivery pipeline, and thus configuration for archiving the artifact and definition of the subsequent job as described in [Pipeline Skeleton](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) is needed.
+- The CI build deploys to a different SAP Cloud Platform account. We assume in this example that the user credentials remain unchanged, but you may decide to use different deploy users.
 
 #### Procedure
 
 1. Open the job definition.
 
 2. Change the **Gerrit Trigger** section according to the needs of the CI build as described in 
-    [Generic Project](http://go.sap.com/developer/tutorials/ci-best-practices-generic.html).
+    [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html).
 
 3. Select **Add post-build action > Archive the artifacts**. Enter
 
@@ -346,11 +352,11 @@ Concerning the run time for automatic scenario test execution, what was said for
     BUILD_JOB_NUMBER=${BUILD_NUMBER}
     ```
  
-5. In the Maven Goal definition of the **Build** section, change the variable name for the account to `${HCP_CI_ACCOUNT}`.
+5. In the Maven Goal definition of the **Build** section, change the variable name for the account to `${SAPCP_CI_ACCOUNT}`.
  
 6. Save.
 
-7. In **Manage Jenkins > Configure System > Global Passwords**, add `HCP_CI_ACCOUNT` and save.
+7. In **Manage Jenkins > Configure System > Global Passwords**, add `SAPCP_CI_ACCOUNT` and save.
 
 
 ### Test Deploy job
@@ -406,17 +412,17 @@ In contrast to the build job, we choose now a freestyle project instead of a Mav
 
     # stop running application
     mvn neo-java-web:stop -P cloud-integration-tests -Dhttps.proxyHost=<your proxy host> -Dhttps.proxyPort=<your proxy port> \
-    -Dsap.cloud.account=${HCP_TEST_ACCOUNT} -Dsap.cloud.username=${HCP_USER} -Dsap.cloud.password=${HCP_PASSWORD} \
+    -Dsap.cloud.account=${SAPCP_TEST_ACCOUNT} -Dsap.cloud.username=${SAPCP_USER} -Dsap.cloud.password=${SAPCP_PASSWORD} \
     -Dsap.cloud.host=hanatrial.ondemand.com
 
     # deploy the application
     mvn neo-java-web:deploy -P cloud-integration-tests -Dhttps.proxyHost=<your proxy host> -Dhttps.proxyPort=<your proxy port> \
-    -Dsap.cloud.account=${HCP_TEST_ACCOUNT} -Dsap.cloud.username=${HCP_USER} -Dsap.cloud.password=${HCP_PASSWORD} \
+    -Dsap.cloud.account=${SAPCP_TEST_ACCOUNT} -Dsap.cloud.username=${SAPCP_USER} -Dsap.cloud.password=${SAPCP_PASSWORD} \
     -Dsap.cloud.host=hanatrial.ondemand.com
 
     # start the application
     mvn neo-java-web:start -P cloud-integration-tests -Dhttps.proxyHost=<your proxy host> -Dhttps.proxyPort=<your proxy port> \
-    -Dsap.cloud.account=${HCP_TEST_ACCOUNT} -Dsap.cloud.username=${HCP_USER} -Dsap.cloud.password=${HCP_PASSWORD} \
+    -Dsap.cloud.account=${SAPCP_TEST_ACCOUNT} -Dsap.cloud.username=${SAPCP_USER} -Dsap.cloud.password=${SAPCP_PASSWORD} \
     -Dsap.cloud.host=hanatrial.ondemand.com
     ```
     
@@ -432,21 +438,21 @@ In contrast to the build job, we choose now a freestyle project instead of a Mav
     
 7. Save the job definition.
 
-8. In **Manage Jenkins > Configure System > Global Passwords**, add `HCP_TEST_ACCOUNT` and save.
+8. In **Manage Jenkins > Configure System > Global Passwords**, add `SAPCP_TEST_ACCOUNT` and save.
 
 
 ### Release job
 
 The release job named `CI_neo-java-web-sdk-samples_master_release` is mostly a copy of the test deploy job.
 
-It differs from the latter in the productive SAP HANA Cloud Platform account as deployment target and an additional step for uploading the artifacts to Nexus. There is no post-build action for subsequent jobs.
+It differs from the latter in the productive SAP Cloud Platform account as deployment target and an additional step for uploading the artifacts to Nexus. There is no post-build action for subsequent jobs.
 
 #### Procedure
 
 1. Open the Jenkins front end and go to **New Item**, select **Freestyle project**.  
     Enter `CI_neo-java-web-sdk-samples_master_release` as name, select **Copy existing item** and enter `CI_neo-java-web-sdk-samples_master_testDeploy`.
 
-2. In the command input of the **Execute shell** build step, add the following lines just before the SAP HANA Cloud Platform SDK installation command:
+2. In the command input of the **Execute shell** build step, add the following lines just before the SAP Cloud Platform SDK installation command:
 
     ```
     # upload to the Nexus release repository. Do not forget the parent pom
@@ -457,17 +463,17 @@ It differs from the latter in the productive SAP HANA Cloud Platform account as 
     -Dfile=target/explore-ui5.war -DrepositoryId=nexusCIProcess -Dpackaging=war -DpomFile=pom.xml
     ```
 
-3. Replace the occurrences of `${HCP_TEST_ACCOUNT}` by `${HCP_PROD_ACCOUNT}`.
+3. Replace the occurrences of `${SAPCP_TEST_ACCOUNT}` by `${SAPCP_PROD_ACCOUNT}`.
 
 4. Remove the post-build action. This job does not have a downstream project.
 
 5. Save.
 
-6. In **Manage Jenkins > Configure System > Global Passwords**, add `HCP_PROD_ACCOUNT` and save.
+6. In **Manage Jenkins > Configure System > Global Passwords**, add `SAPCP_PROD_ACCOUNT` and save.
 
 ### Setup of the pipeline
 
-We apply the steps which are described in the [Pipeline Skeleton](http://go.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) part to
+We apply the steps which are described in the [Pipeline Skeleton](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) part to
 our scenario. 
 
 
@@ -486,4 +492,4 @@ our scenario.
 
 ## Next Steps
 
-  - [Back to the Navigator](http://go.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

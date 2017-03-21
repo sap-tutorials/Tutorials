@@ -1,14 +1,14 @@
 ---
 title: React JS - Create children components in React
-description: Step #8: Break apart the large main componnets, moving functionality to child components
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+description: Step #8: Break apart the large main components, moving functionality to child components
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner 
- - **Tutorial:** [Step 7 - Add a header and a detail modal dialog](http://go.sap.com/developer/tutorials/react-add-header-detail-dialog.html)
+ - **Proficiency:** Beginner
+ - **Tutorial:** [Step 7 - Add a header and a detail modal dialog](http://www.sap.com/developer/tutorials/react-add-header-detail-dialog.html)
 
 ## Next Steps
- - **Tutorial:** [Step 9 - Examine child to parent communication](http://go.sap.com/developer/tutorials/react-add-filter.html)
+ - **Tutorial:** [Step 9 - Examine child to parent communication](http://www.sap.com/developer/tutorials/react-add-filter.html)
 
 
 ## Details
@@ -30,7 +30,7 @@ Here are the detailed steps:
 1.  Create a currency child component
 2.  Create an Available or Discontinued status component
 3.  Add a Category display component
- 
+
 ---
 
 ### Create a currency child component
@@ -40,14 +40,14 @@ The currency in both the list and the detail is still the raw data coming from t
 1.  Start by adding a new currency component to the JavaScript file.  
 
     Open the `main.js` file, and add the following code at the top, directly underneath the variable declarations:
-    
+
     ```javascript
     var CurrencyDisplay = React.createClass({
     	render: function() {
     		var computedPrice = new Number( this.props.value );
     		computedPrice = Math.round( computedPrice * 100 )/100;
     		computedPrice = computedPrice.toFixed(2).toLocaleString();
-    		
+
     		return(
     			<span>
     				{computedPrice}
@@ -73,7 +73,7 @@ The currency in both the list and the detail is still the raw data coming from t
     <Static className="col-sm-9">
     	<CurrencyDisplay value={this.props.row.UnitPrice} />
     </Static>
-    ``` 
+    ```
 
 4.  Run your application.  The currency will now be displayed with two decimal points in both the  list and the dialog box:
 
@@ -139,7 +139,7 @@ In this case, we will use the properties of the component to store the Categorie
     	},
     	componentDidMount: function() {
     		var odataUrl = "/Northwind/V3/Northwind/Northwind.svc/";
-    		
+
     		$.ajax({
     			url: odataUrl + "Categories" ,
     			dataType: 'json',
@@ -203,7 +203,7 @@ var CategoryDisplay = React.createClass({
 	},
 	componentDidMount: function() {
 		var odataUrl = "/Northwind/V3/Northwind/Northwind.svc/";
-		
+
 		$.ajax({
 			url: odataUrl + "Categories" ,
 			dataType: 'json',
@@ -250,7 +250,7 @@ var CurrencyDisplay = React.createClass({
 		var computedPrice = new Number( this.props.value );
 		computedPrice = Math.round( computedPrice * 100 )/100;
 		computedPrice = computedPrice.toFixed(2).toLocaleString();
-		
+
 		return(
 			<span>
 				{computedPrice}
@@ -265,7 +265,7 @@ var ModalProductDetail = React.createClass({
 		return {
 			OrderCount: "",
 			orderSubmitted: false,
-		}	
+		}
 	},
 	onOrderChange: function(event) {
 		this.setState({OrderCount: event.target.value});
@@ -274,7 +274,7 @@ var ModalProductDetail = React.createClass({
 		this.setState({
 			orderSubmitted: true,
 		});
-		
+
 		setTimeout( this.closeAndReset, 2000 );
 	},
 	closeAndReset: function() {
@@ -337,7 +337,7 @@ var ModalProductDetail = React.createClass({
 							</form>
 						</div>
 						<div className="modal-footer">
-							<Button bsStyle="primary" onClick={this.onSaveClick} 
+							<Button bsStyle="primary" onClick={this.onSaveClick}
 								disabled={this.state.OrderCount == "" || this.state.orderSubmitted}>Save</Button>
 							<Button onClick={this.closeAndReset}>Close</Button>
 						</div>
@@ -356,20 +356,20 @@ var TitleBar = React.createClass({
 					<div className="navbar-header">
 						<div className="navbar-brand">Product Overview</div>
 					</div>
-					
+
 					<div className="nav navbar-nav navbar-right">
 						<p className="navbar-text">Items: {this.props.count}</p>
 					</div>
 				</div>
-			</nav>	
-		)	
+			</nav>
+		)
 	}
 });
 
 var ListBox = React.createClass({
     render: function() {
         return (
-			<button type="button" className="list-group-item" id="product-list" 
+			<button type="button" className="list-group-item" id="product-list"
 					onClick={this.props.clickEvent} >
 				<div className="row vertical-align">
 					<div className="col-sm-8 top">
@@ -401,15 +401,15 @@ var ProductList = React.createClass({
 
 	onListBoxClick: function( row ) {
 		this.setState({selectedRow: row});
-		
+
 		setTimeout( function() {
-			$('#product-detail').modal("show");	
+			$('#product-detail').modal("show");
 		});
 	},
-	
+
 	componentDidMount: function() {
 		var odataUrl = "/Northwind/V3/Northwind/Northwind.svc/";
-		
+
 		$.ajax({
 			url: odataUrl + "Products" ,
 			dataType: 'json',
@@ -424,11 +424,11 @@ var ProductList = React.createClass({
 			alert( "An error occurred while retrieving data from the server: " + textStatus );
 		});
 	},
-  
+
 	render: function() {
 		var productListBoxes = this.state.products.map( function(row) {
 			return(
-				<ListBox row={row} key={row.ProductName} 
+				<ListBox row={row} key={row.ProductName}
 					clickEvent={this.onListBoxClick.bind(this, row)}/>		
 			);
 		}.bind(this) )
@@ -439,11 +439,11 @@ var ProductList = React.createClass({
 				<div className="list-group">
 					{productListBoxes}
 				</div>
-				{this.state.selectedRow == null ? null : 
+				{this.state.selectedRow == null ? null :
 					<ModalProductDetail row={this.state.selectedRow} /> }
 			</div>
 		)
-	}	
+	}
 });
 
 ReactDOM.render(
@@ -455,4 +455,4 @@ ReactDOM.render(
 ---
 
 ## Next Steps
- - **Tutorial:** [Step 9 - Examine child to parent communication](http://go.sap.com/developer/tutorials/react-add-filter.html)
+ - **Tutorial:** [Step 9 - Examine child to parent communication](http://www.sap.com/developer/tutorials/react-add-filter.html)

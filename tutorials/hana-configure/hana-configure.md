@@ -1,15 +1,15 @@
 ---
 title: SAP HANA XS Classic, Getting started with SAP HANA and connecting the Web Workbench
 description: Access your first data in a native SAP HANA Application.
-tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
+tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
 ---
 ## Prerequisites  
-[How to create an SAP HANA Developer Edition in the Cloud](http://go.sap.com/developer/tutorials/hana-setup-cloud.html)
+[How to create an SAP HANA Developer Edition in the Cloud](http://www.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 ## Next Steps
-- [Develop your first SAP HANA XSC application](http://go.sap.com/developer/tutorials/hana-web-development-workbench.html)
+- [Develop your first SAP HANA XSC application](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
 
- 
+
 ## Details
 ### You will learn  
 1. How to use HANA Studio Perspectives
@@ -18,25 +18,34 @@ tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-pla
 
 
 ### Time to Compete
-Beginners will take **20 minutes** to finish this tutorial.
+**20 Min**.
 
-### Host Configuration
-Access your HANA instance that was created in ["How to create an SAP HANA Developer Edition in the Cloud"](http://go.sap.com/developer/tutorials/hana-setup-cloud.html).
+[ACCORDION-BEGIN [Step 1: ](Host Configuration)]
+
+
+Access your HANA instance that was created in ["How to create an SAP HANA Developer Edition in the Cloud"](http://www.sap.com/developer/tutorials/hana-setup-cloud.html).
 
 Chose Notepad as the Open with Editor.
 
-Replace the current IP address in front of the hostname ```hanapm``` with the specific IP address for this workshop which was supplied by your instructor.
+Replace the current IP address in front of the hostname `hanapm` with the specific IP address for this workshop which was supplied by your instructor.
 
 Save the content and exit Notepad.
 
-### HANA Studio Configuration
-### Adding the HANA Studio Perspectives
+[DONE]
+[ACCORDION-END]
 
-Open the HANA Studio via the Windows Start menu or via the Icon on your Start bar.
+[ACCORDION-BEGIN [Step 2: ](HANA Studio Configuration)]
 
-If your HANA Studio opens to the following Overview screen, simply press Workbench to return to the full Studio tooling:
+To add the HANA Studio Perspectives, open the HANA Studio via the Windows Start menu or via the Icon on your Start bar.
+
+If your HANA Studio opens to the following Overview screen, simply press **Workbench** to return to the full Studio tooling:
 
 ![Studio Overview](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/4.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](SAP HANA Development perspective)]
 
 To support the new developer centric workflow, there are two additional Eclipse Perspectives which have been added to SAP HANA Studio. These are not displayed by default.
 
@@ -48,6 +57,11 @@ Add the SAP HANA Development perspective. This is the perspective you should be 
 
 ![HANA Development](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/6.png)
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Add the Debug perspective)]
+
 Repeat the step and add the Debug perspective:
 
 ![Debug](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/7.png)
@@ -56,31 +70,39 @@ After adding these two new perspectives, you may also still see the initial SAP 
 
 ![Close](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/8.png)
 
-### Create a connection to the HANA server
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Create a connection to the HANA server)]
 
 Make sure you are in the SAP HANA Development perspective by clicking on the button:
 
 ![Add System](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/9.png)
 
-Click on the ```Systems``` view.  Right click in the white space below this tab and choose ```Add System...```.
+Click on the **Systems** view.  Right click in the white space below this tab and choose **Add System...**.
 
 ![Properties](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/10.png)
 
-Input the server hostname: ```hanapm```
+- Input the server hostname: `hanapm`
 
-Input the instance number: ```00```
+- Input the instance number: `00`
 
-Enter a meaningful description of your choice. Press the ```Next``` button:
+- Enter a meaningful description of your choice. Press the **Next** button:
 
 ![Description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/11.png)
 
-Enter the user id and password. The user id should be ```WORKSHOP_<Group Number>```. Your group number is ```01```. For this tutorial, your user id is ```WORKSHOP_01```.
+[DONE]
+[ACCORDION-END]
 
-Enter the password: ```HANARocks2015```
+[ACCORDION-BEGIN [Step 6: ](Enter credentials for service)]
+
+Enter the user id and password. The user id should be `WORKSHOP_<Group Number>`. Your group number is `01`. For this tutorial, your user id is `WORKSHOP_01`.
+
+Enter the password: `HANARocks2015`
 
 Click Store user name and password in secure storage.
 
-Click ```Finish```:
+Click **Finish**:
 
 ![Password](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/12.png)
 
@@ -91,12 +113,17 @@ You should now have a new connection with your specific user id for the HANA sys
 
 ![System View](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/13.png)
 
-### Create a Repository Workspace
-Switch to the ```SAP HANA Repositories``` view. You should see the system entry you created in the previous step and a default Workspace. Right mouse click and choose ```Create Repository Workspace```:
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Create a Repository Workspace)]
+
+
+Switch to the **SAP HANA Repositories** view. You should see the system entry you created in the previous step and a default Workspace. Right mouse click and choose **Create Repository Workspace**:
 
 ![Workspace](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/14.png)
 
-Confirm the file system location on your local machine which will hold the local copy of this Workspace. Click ```Finish```:
+Confirm the file system location on your local machine which will hold the local copy of this Workspace. Click **Finish**:
 
 ![Finish](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/15.png)
 
@@ -106,6 +133,11 @@ You should now see the local workspace mapped to the remote workspace in the SAP
 
 > ### Note
 >Your System ID, User ID, Hostname, and System Numbers will be different than those displayed in subsequent screen shots. For this reason we have often blurred this information in screen shots to avoid confusion.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](View your work)]
 
 To view what you have just created, deployed and activated you can view the URL on the server via your web browser.
 
@@ -118,11 +150,15 @@ You have completed the exercise! You are now able to:
 - Create a schema
 - Create access control files
 - Grant access to the schema
-- Create an ```index.html``` file to test your setup
+- Create an `index.html` file to test your setup
+
+[DONE]
+[ACCORDION-END]
+
 
 ### Optional - Getting Help
 If you need addition help resources beyond this document, we would suggest the following content:
 
-* The [Online Help](http://help.sap.com/hana/SAP_HANA_Developer_Guide_en.pdf)
+* The [Online Help](https://help.sap.com/hana/SAP_HANA_Developer_Guide_en.pdf)
 * The integrated help within SAP HANA Studio (content identical to the above mentioned online help)
-* SAPUI5 SDK (installed on your HANA Server) ```/sap/ui5/1/sdk/index.html#content/Overview.html```
+* SAPUI5 SDK (installed on your HANA Server) `/sap/ui5/1/sdk/index.html#content/Overview.html`

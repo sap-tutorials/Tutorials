@@ -1,14 +1,14 @@
 ---
 title: AngularJS - Create the Bootstrap Template
 description: Step #2: Set up the Bootstrap page template.
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
- - **Tutorials** Step #1 [AngularJS Getting Started](http://go.sap.com/developer/tutorials/angular-getting-started.html) 
+ - **Tutorials** Step #1 [AngularJS Getting Started](http://www.sap.com/developer/tutorials/angular-getting-started.html) 
 
 ## Next Steps
- - **Tutorials** Step #3 [Add the AngularJS JavaScript](http://go.sap.com/developer/tutorials/angular-add-javascript.html) 
+ - **Tutorials** Step #3 [Add the AngularJS JavaScript](http://www.sap.com/developer/tutorials/angular-add-javascript.html) 
 
  
 ## Details
@@ -306,5 +306,5 @@ So, now that we have Bootstrap, let's set up the template for our application.
  - [Bootstrap](https://getbootstrap.com/) - get more information about Bootstrap.
         
 ## Next Steps
- - **Tutorials** Step #3 [Add the AngularJS JavaScript](http://go.sap.com/developer/tutorials/angular-add-javascript.html) 
+ - **Tutorials** Step #3 [Add the AngularJS JavaScript](http://www.sap.com/developer/tutorials/angular-add-javascript.html) 
 

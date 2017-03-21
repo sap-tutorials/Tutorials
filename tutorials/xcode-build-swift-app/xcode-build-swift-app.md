@@ -1,15 +1,15 @@
 ---
 title: Build a basic Swift app with Xcode
 description: Build your first iOS app using the Swift programming language in Xcode.
-tags: [  tutorial>beginner, topic>mobile, operating_system>ios ]
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Introduction to iOS development resources and Xcode](http://go.sap.com/developer/tutorials/xcode-introduction.html)
+ - **Tutorials:** [Introduction to iOS development resources and Xcode](http://www.sap.com/developer/tutorials/xcode-introduction.html)
 
 ## Next Steps
- - [Debug and deploy the iOS app to an iPad](http://go.sap.com/developer/tutorials/xcode-debug-deploy.html)
+ - [Debug and deploy the iOS app to an iPad](http://www.sap.com/developer/tutorials/xcode-debug-deploy.html)
 
 ## Details
 ### You will learn  
@@ -89,7 +89,7 @@ To create an Outlet from the **Text Field** to the view controller, hold down th
   - Set the **Name** field to `textField`.
   - Press **Connect** to finalize the changes:
 
-  ![Creating an outlet](xcode-swift-04.png)
+ ![Creating an outlet](xcode-swift-04.gif)
 
 [DONE]
 [ACCORDION-END]
@@ -141,7 +141,7 @@ To create an Action from the **Button** to the view controller, hold down the **
   - Set the **Type** drop-down to `UIButton`.
   - Press **Connect** to finalize the changes:
 
-  ![Creating an Action](xcode-swift-05.png)
+  ![Creating an Action](xcode-swift-05.gif)
 
 [DONE]
 [ACCORDION-END]
@@ -213,7 +213,7 @@ In this part you create a **Segue** to the second view. The word 'Segue' is deri
 
 To create a Segue, **Ctrl-drag** the just created **Button** and drop it onto the **Navigation Controller**. In the pop-up that displays, select **Action Segue &gt; Show**:
 
-![Create a Segue](xcode-swift-07.png)
+![Create a Segue](xcode-swift-07.gif)
 
 [DONE]
 [ACCORDION-END]
@@ -357,4 +357,4 @@ The table view is now assigned to the view controller.
 [ACCORDION-END]
 
 ### Next Steps
- - [Debug and deploy the iOS app to an iPad](http://go.sap.com/developer/tutorials/xcode-debug-deploy.html)
+ - [Debug and deploy the iOS app to an iPad](http://www.sap.com/developer/tutorials/xcode-debug-deploy.html)

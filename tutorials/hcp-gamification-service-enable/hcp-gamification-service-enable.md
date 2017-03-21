@@ -1,66 +1,99 @@
 ---
-title: Enable and configure the SAP HANA Cloud Platform, gamification service
-description: In SAP HANA Cloud Platform, configure the user roles and connectivity destinations necessary to use the gamification service.
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform ]
+title: Enable and configure the SAP Cloud Platform, gamification service
+description: In SAP Cloud Platform, configure the user roles and connectivity destinations necessary to use the gamification service.
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Sign up for an account on HANA Cloud Platform](http://go.sap.com/developer/tutorials/hcp-create-trial-account.html)
+- **Proficiency:** Beginner
+- **Tutorials:** [Sign up for an account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
- - [Create the gamified HelpDesk application](http://go.sap.com/developer/tutorials/hcp-gamification-sample-application.html)
+- [Create the gamified HelpDesk application](http://www.sap.com/developer/tutorials/hcp-gamification-sample-application.html)
 
 ## Details
 ### You will learn  
-How to enable the gamification service in your SAP HANA Cloud Platform account as well as what roles and destination configurations are necessary to develop gamified applications.
+How to enable the gamification service in your SAP Cloud Platform account as well as what roles and destination configurations are necessary to develop gamified applications.
 
 ### Time to Complete
 **5 Min**.
 
 ---
 
-1. In your Web browser, open the cockpit of the [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com/cockpit). Then select **Services** from the left-hand navigation.
+[ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform Cockpit)]
 
-    ![Selecting Services](1.png)
+In your Web browser, open the cockpit of the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit). Then select **Services** from the left-hand navigation.
 
-2. Select **Gamification Service** and click **Enable** to enable the service.
+![Selecting Services](1.png)
 
-    ![Not Enabled Gamification Service](3.png)
+[DONE]
+[ACCORDION-END]
 
-    A gamification service subscription is now assigned to your account.
+[ACCORDION-BEGIN [Step 2: ](Enable gamification service)]
 
-    ![Enabled Gamification Service](2.png)
-3. Click **Configure Gamification Service**.
+Select **Gamification Service** and click **Enable** to enable the service.
 
-    ![Configure Gamification Service](4.png)
+![Not Enabled Gamification Service](3.png)
 
-4. Select **Roles** from the left-hand navigation.
+A gamification service subscription is now assigned to your account.
 
-    ![Configure Roles](5.png)
+![Enabled Gamification Service](2.png)
 
-    Verify that the following roles have been assigned to your user:
-    - **`AppStandard`**
-    - **`AppAdmin`**
-    - **`GamificationReviewer`**
-    - **`GamificationDesigner`**
-    - **`TenantOperator`**
-    - **`helpdesk`**
+[DONE]
+[ACCORDION-END]
 
-    ![Verify Roles](6.png)
-5. Back in the Cockpit, select **Destinations** from the left-hand navigation. Verify that the **`gsdest`** and **`gswidgetdest`** destinations required by the gamification service are listed.
+[ACCORDION-BEGIN [Step 3: ](Configure gamification service)]
 
-    ![Account-level Destinations](7.png)
+Click **Configure Gamification Service**.
 
-    > Do NOT click the **Destinations** button in the gamification service itself.
+![Configure Gamification Service](4.png)
 
-6. Click the **Edit** button to open the **`gsdest`** destination for editing.
+[DONE]
+[ACCORDION-END]
 
-    ![Verifying Destinations](8.png)
+[ACCORDION-BEGIN [Step 4: ](Verify roles)]
 
-    Verify that **User** is your SAP ID user and replace the default **Password** mask with your SAP ID user password. Click **Save**.
+Select **Roles** from the left-hand navigation.
 
-    ![Configure Destination](9.png)
+![Configure Roles](5.png)
+
+Verify that the following roles have been assigned to your user:
+- **`AppStandard`**
+- **`AppAdmin`**
+- **`GamificationReviewer`**
+- **`GamificationDesigner`**
+- **`TenantOperator`**
+- **`helpdesk`**
+
+![Verify Roles](6.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Check destinations)]
+
+Back in the Cockpit, select **Destinations** from the left-hand navigation. Verify that the **`gsdest`** and **`gswidgetdest`** destinations required by the gamification service are listed.
+
+![Account-level Destinations](7.png)
+
+> Do NOT click the **Destinations** button in the gamification service itself.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Edit destination)]
+
+Click the **Edit** button to open the **`gsdest`** destination for editing.
+
+![Verifying Destinations](8.png)
+
+Verify that **User** is your SAP ID user and replace the default **Password** mask with your SAP ID user password. Click **Save**.
+
+![Configure Destination](9.png)
+
+[DONE]
+[ACCORDION-END]
+
 
 ## Next Steps
 
-- [Create the gamified HelpDesk application](http://go.sap.com/developer/tutorials/hcp-gamification-sample-application.html)
+- [Create the gamified HelpDesk application](http://www.sap.com/developer/tutorials/hcp-gamification-sample-application.html)

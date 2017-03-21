@@ -1,19 +1,19 @@
 ---
 title: Translate your app into multiple languages
-description: Use the SAP HANA Cloud Platform Translation Hub to automatically generate i18n (internationalization) files for multiple languages
-tags: [  tutorial>beginner, products>sap-hana-cloud-platform, products>sap-web-ide ]
+description: Use the SAP Cloud Platform Translation Hub to automatically generate i18n (internationalization) files for multiple languages
+tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Add a map display to your app](http://go.sap.com/developer/tutorials/teched-2016-7.html)
+ - **Tutorials:** [Add a map display to your app](http://www.sap.com/developer/tutorials/teched-2016-7.html)
 
 ## Next Steps
- - [ABC Analysis with SAP HANA PAL](http://go.sap.com/developer/tutorials/teched-2016-10.html)
+ - [ABC Analysis with SAP HANA PAL](http://www.sap.com/developer/tutorials/teched-2016-10.html)
 
 ## Details
 ### You will learn  
-Throughout this series you have inserted a number of labels into an `i18n` (internationalization) file in your project (`i18n.properties`). In addition to having all the strings in your app collected in one file (and therefore easy to update), SAPUI5 can load different language files based on your device language and locale settings. 
+Throughout this series you have inserted a number of labels into an `i18n` (internationalization) file in your project (`i18n.properties`). In addition to having all the strings in your app collected in one file (and therefore easy to update), SAPUI5 can load different language files based on your device language and locale settings.
 
 Examples of language settings are `en` for English, `de` for German. Language and locale combinations allow for dialects of languages such as `en_UK` and `en_US` for British and American English. SAPUI5 will also allow an app to select the most appropriate language. If a device is set to `de_CH` for Swiss German, but that file isn't included in the app, it will look for a `de` (German) file to load.
 
@@ -22,40 +22,16 @@ Examples of language settings are `en` for English, `de` for German. Language an
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enable beta services)]
+[ACCORDION-BEGIN [Step 1: ](Open your SAP Cloud Platform cockpit)]
 
-Since the **SAP Translation Hub** service is currently in beta release, you need to verify that your HCP account is configured for enabling beta services.
-
-Log into [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
-
-Make sure you are using the **Europe (Trial)** landscape, then click on the **pencil** icon next to your account ID.
-
-![Accounts settings](te-2016-8-01.png)
+Log into your [SAP Cloud Platform account](https://account.hanatrial.ondemand.com), click on the **Services** in the left-hand navigation bar.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Beta services checkbox)]
+[ACCORDION-BEGIN [Step 2: ](Open the SAP Translation Hub overview page)]
 
-If **Beta Features** is not checked, check it and click **Save**. If it is checked click **Cancel**.
-
-![Beta services checkbox](te-2016-8-02.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Open your HCP cockpit)]
-
-Click on your **Account ID** to return to your HCP cockpit.
-
-![open cockpit](te-2016-8-03.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Open the SAP Translation Hub overview page)]
-
-Select **Services** in the left-hand navigation bar, and scroll down until you see the **SAP Translation Hub** tile.
+Scroll down until you see the **SAP Translation Hub** tile.
 
 Click on the tile to open the overview page.
 
@@ -64,9 +40,7 @@ Click on the tile to open the overview page.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Enable and Go To Service)]
-
-If the **SAP Translation Hub** is not enabled, click on the blue **Enable** button, and wait for the green **Enabled** badge to appear.
+[ACCORDION-BEGIN [Step 3: ](Go To Service)]
 
 Click on the **Go to Service** link.
 
@@ -75,16 +49,16 @@ Click on the **Go to Service** link.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create a new translation project)]
+[ACCORDION-BEGIN [Step 4: ](Create a new translation project)]
 
-When the Translation Hub page loads, click the **+** icon at the bottom of the window, and then select **Git Project** to create a new translation process. 
+When the Translation Hub page loads, click the **+** icon at the bottom of the window, and then select **Git Project** to create a new translation process.
 
 ![Accounts settings](te-2016-8-06.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Fill in project details)]
+[ACCORDION-BEGIN [Step 5: ](Fill in project details)]
 
 Fill in the project details as shown below:
 
@@ -103,9 +77,9 @@ Click on **Save**
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Initiate translations)]
+[ACCORDION-BEGIN [Step 6: ](Initiate translations)]
 
-Once the project is created click the green **Get Translations** button, and log in if prompted. 
+Once the project is created click the green **Get Translations** button, and log in if prompted.
 
 ![Accounts settings](te-2016-8-08.png)
 
@@ -114,7 +88,7 @@ Once the project is created click the green **Get Translations** button, and log
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Translation completion)]
+[ACCORDION-BEGIN [Step 7: ](Translation completion)]
 
 You will see the "All done." toast message at the bottom of the screen when the translations are complete.
 
@@ -123,11 +97,11 @@ You will see the "All done." toast message at the bottom of the screen when the 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Pull translated files to Web IDE)]
+[ACCORDION-BEGIN [Step 8: ](Pull translated files to Web IDE)]
 
 Return to **SAP Web IDE** and open the **Git** pane.
 
-You will notice that there is only the original `i18n.properties` file in your project folder. 
+You will notice that there is only the original `i18n.properties` file in your project folder.
 
 In the **Git pane**, click the **Pull** button to pull the translated files from your **Git** repository to your local project folder.
 
@@ -136,30 +110,30 @@ In the **Git pane**, click the **Pull** button to pull the translated files from
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Confirm translated files in project)]
+[ACCORDION-BEGIN [Step 9: ](Confirm translated files in project)]
 
 If you check the `i18n` folder in your project, you will see the two new files:
 
  - `i18n_de.properties`
  - `i18n_es.properties`
- 
+
 ![Accounts settings](te-2016-8-14.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Commit files, and deploy to the cloud)]
+[ACCORDION-BEGIN [Step 10: ](Commit files, and deploy to the cloud)]
 
-Commit your new files to **Git** and deploy the application to HCP (following the same procedure as in the previous [tutorial](http://go.sap.com/developer/tutorials/teched-2016-5.html).
+Commit your new files to **Git** and deploy the application to SAP Cloud Platform (following the same procedure as in the previous [tutorial](http://www.sap.com/developer/tutorials/teched-2016-5.html).
 
-Right-click on your **`te2016`** project folder, and select **Deploy > Deploy to SAP HANA Cloud Platform** and click **Deploy**.
+Right-click on your **`te2016`** project folder, and select **Deploy > Deploy to SAP Cloud Platform** and click **Deploy**.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Testing your language files)]
+[ACCORDION-BEGIN [Step 11: ](Testing your language files)]
 
-To test the language support in the deployed app, we can utilize the SAPUI5 `sap-ui-language` URL parameter. 
+To test the language support in the deployed app, we can utilize the SAPUI5 `sap-ui-language` URL parameter.
 
 To do so, just append `?sap-ui-language=xx_YY` to your application URL
 
@@ -173,7 +147,7 @@ To do so, just append `?sap-ui-language=xx_YY` to your application URL
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Run the app on your phone)]
+[ACCORDION-BEGIN [Step 12: ](Run the app on your phone)]
 
 If your device is set to either the German or Spanish locale, then the app will check the language and locale settings on the device, and load the appropriate strings file.
 
@@ -181,4 +155,4 @@ If your device is set to either the German or Spanish locale, then the app will 
 [ACCORDION-END]
 
 ## Next Steps
- - [ABC Analysis with SAP HANA PAL](http://go.sap.com/developer/tutorials/teched-2016-10.html)
+ - [ABC Analysis with SAP HANA PAL](http://www.sap.com/developer/tutorials/teched-2016-10.html)

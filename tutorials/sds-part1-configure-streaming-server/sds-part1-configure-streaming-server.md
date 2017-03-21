@@ -7,10 +7,10 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
  - **Proficiency:** Beginner
  - **System:** You must have an SAP HANA SPS10 system or higher with smart data streaming installed that you can connect to and use.
  - **Integrated Development Environment:** You must have SAP HANA Studio 2 installed with the streaming plug-in installed and configured.
- - This tutorial assumes you will be using the HANA SYSTEM user to connect to your HANA system and will refer to it as “SYSTEM”.
+ - This tutorial assumes you will be using the HANA SYSTEM user to connect to your HANA system and will refer to it as "SYSTEM".
 
 ## Next Steps
- - **Tutorials:** [Create a Streaming Project in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part2-create-streaming-project.html)
+ - **Tutorials:** [Create a Streaming Project in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part2-create-streaming-project.html)
 
 ## Details
 ### You will learn
@@ -42,7 +42,7 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 
     ![Username and Password](connect-to-hana-system-4-user-and-pass.png)
 
-5. Click the **Store user name and password in secure storage** checkbox so you won’t have to re-enter
+5. Click the **Store user name and password in secure storage** checkbox so you won't have to re-enter
 your credentials when re-connecting to the system. Next click **Finish** or press **Alt+f**.
 
     ![Click Finish](connect-to-hana-system-5-click-finish.png)
@@ -86,7 +86,7 @@ your credentials when re-connecting to the system. Next click **Finish** or pres
 
     ![Change Username and Password](add-streaming-server-4-change-username-and-password.png)
 
-5. Enter the streaming server’s credentials and check **Use Secure Storage for Streaming Credentials**. Press **OK** to continue.
+5. Enter the streaming server's credentials and check **Use Secure Storage for Streaming Credentials**. Press **OK** to continue.
 
     ![Enter Username and Password](add-streaming-server-5-enter-username-and-password.png)
 
@@ -138,4 +138,4 @@ your credentials when re-connecting to the system. Next click **Finish** or pres
     ![Discover Schema](configure-data-service-8-discover-schema.png)
 
 ## Next Steps
-- **Tutorials:** [Create a Streaming Project in SAP HANA Smart Data Streaming](http://go.sap.com/developer/tutorials/sds-part2-create-streaming-project.html)
+- **Tutorials:** [Create a Streaming Project in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part2-create-streaming-project.html)
