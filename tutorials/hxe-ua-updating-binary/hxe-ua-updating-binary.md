@@ -1,6 +1,7 @@
 ---
 title: Updating SAP HANA, express edition (Binary Installer)
 description: Update SAP HANA 2.0, express edition when new patches are released.
+primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 

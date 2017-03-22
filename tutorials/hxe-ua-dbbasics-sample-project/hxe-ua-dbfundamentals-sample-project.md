@@ -1,6 +1,7 @@
 ---
-title: Database Basics: Sample Project
+title: Database Fundamentals - Sample Project
 description: For this beginner tutorial, you will load data onto your SAP HANA 2.0, express edition installation and preview that data. You will learn how to create a new user, create a schema,  upload .csv data to your SAP HANA 2.0, express edition installation, create a new package, load and connect the .csv data to that package, and then edit and preview that data.
+primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 
@@ -14,14 +15,14 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Details
 ### You will learn  
-How to use SAP HANA Studio load data onto your SAP HANA 2.0, express edition installation and create the proper user and schema, create a package, load data to that package, and preview that data.
+How to use SAP HANA Studio to load data onto your SAP HANA 2.0, express edition installation and create the proper user and schema, create a package, load data to that package, and preview that data.
 .
 
 ### Time to Complete
 **15 Min**
 
 ---
-IN SAP HANA Studio, do the following:
+In SAP HANA Studio, do the following:
 
 
 [ACCORDION-BEGIN [Step 1: ](Create a New User)]
@@ -232,7 +233,7 @@ Here is an example: ![Connect Data](connecting_data2.png)
 
     - Under the _Label_ column, you can provide new names for your columns.
 
-    - You can also hide any columns by selecting its **Hidden** column box.
+    - You may hide any columns by selecting its **Hidden** column box.
 
 5. Click _Save and Validate_ ![check](Check.png) to save and check your changes.
 
