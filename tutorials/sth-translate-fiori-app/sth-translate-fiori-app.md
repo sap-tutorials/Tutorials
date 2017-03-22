@@ -1,7 +1,8 @@
 ---
 title: Translate a sample Fiori app
 description: Use SAP Translation Hub to translate your Fiori app.
-tags: [  tutorial>beginner, topic>sap-translation-hub, products>sap-cloud-platform, topic>sap-fiori-app ]
+primary_tag: topic>sap-translation-hub
+tags: [  tutorial>beginner, topic>sap-translation-hub, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites  
