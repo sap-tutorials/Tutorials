@@ -1,6 +1,7 @@
 ---
 title: Translate your application using the SAP Translation Hub
 description: A successful application has to target a global audience, and software needs to speak its language. To translate your application, you need to separate the code from your text and translate these texts. The SAP Translation Hub can help you with machine translations of these text files. SAP Translation Hub is an SAP Cloud Platform service that opens the door to the wealth of SAP's translation assets accumulated over 30 years across multiple products and languages.
+primary_tag: operating-system>ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, products>sap-cloud-platform ]
 ---
 

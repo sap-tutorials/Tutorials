@@ -1,6 +1,7 @@
 ---
 title: Configure back-end connection
 description: Fiori iOS apps communicate with backend enterprise systems primarily by using OData. In this tutorial you will create a back-end connection to an OData datasource for your application.
+primary_tag: operating-system>ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-cloud-platform ]
 ---
 ## Prerequisites  

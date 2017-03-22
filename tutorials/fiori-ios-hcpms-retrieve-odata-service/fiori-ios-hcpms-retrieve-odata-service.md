@@ -1,6 +1,7 @@
 ---
 title: Read data from the ES4 back-end and present it in the iOS app
 description: Now the device has been properly registered in the SAP Cloud Platform Mobile Services back-end, it should be possible to reach the OData service provided by the SAP ES4 back-end. This tutorial will implement a service call to the OData back-end and show the results in a table in the iOS app.
+primary_tag: operating-system>ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>cloud, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 

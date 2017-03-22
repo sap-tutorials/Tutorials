@@ -1,6 +1,7 @@
 ---
 title: Device registration
 description: Before you can access the back-end services, you need to register the device in order to get access. This tutorial will guide you on how you can build an application that allows the user perform this registration.
+primary_tag: operating-system>ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>security, products>sap-cloud-platform ]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Administer application configuration and security
 description: Create an application definition that enables you to manage the application. The application definition includes a unique application identifier, connections to the back-end data source, and optionally, other application-specific settings.
+primary_tag: operating-system>ios
 tags: [  tutorial>beginner, operating-system>ios, products>sap-cloud-platform ]
 ---
 ## Prerequisites  

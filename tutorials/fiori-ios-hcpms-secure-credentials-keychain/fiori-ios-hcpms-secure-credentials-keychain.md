@@ -1,6 +1,7 @@
 ---
 title: Securely store User Credentials and Application Connection ID in the iOS keychain
 description: When an app registers with the SAP Cloud Platform Mobile Services, an Application Connection ID is returned. This ID, together with the user's credentials need to be stored securely as they are needed for successive calls. The iOS keychain provides a secure storage mechanism and secures data by encrypting it before storing it in the file system, relieving you of the need to implement complicated encryption algorithms.
+primary_tag: operating-system>ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>security ]
 ---
 

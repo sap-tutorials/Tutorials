@@ -1,6 +1,7 @@
 ---
 title: Verify whether your application has been registered
 description: When the application is launched, it should check whether the application is properly registered with the SAP Cloud Platform Mobile Service. Only when it is registered, it allowed to access back-end services.
+primary_tag: operating-system>ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>cloud, topic>mobile, products>sap-cloud-platform ]
 ---
 
