@@ -1,6 +1,7 @@
 ---
 title: Deploy gamified HelpDesk application to SAP Cloud Platform
 description: Build HelpDesk application in Eclipse then perform a standalone deployment to your SAP Cloud Platform account.
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  

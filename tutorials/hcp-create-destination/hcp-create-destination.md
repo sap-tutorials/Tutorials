@@ -1,6 +1,7 @@
 ---
 title: Create a Destination on SAP Cloud Platform
 description: Create a Destination to allow SAP Cloud Platform to read/write data
+primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, topic>cloud, topic>mobile, topic>odata, tutorial>beginner ]
 ---
 

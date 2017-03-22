@@ -1,6 +1,7 @@
 ---
 title: Getting started with the SAP Fiori, Demo Cloud Edition
 description: This tutorial get's you started with the SAP Fiori, Demo Cloud Edition
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
