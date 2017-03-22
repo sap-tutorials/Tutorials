@@ -19,145 +19,193 @@ In this tutorial you will learn how to separate your code from your texts, colle
 
 ---
 
-1. **Create a small app to work with**
-    To create your first project, click on **File > New > Project** in the menu bar. When you do so, you will be presented with a number of application templates. Choose **Single View Application**, and click the **Next** button. On the next screen, please enter the project options below and press **Next**:
+[ACCORDION-BEGIN [Step 1: ](Create a small app to work with)]
 
-    |Field Name                 | Value                     |
-    |---------------------------|---------------------------|
-    |Product Name               | `DemoApp`                 |
-    |Organization Identifier    | `com.sap.tutorial.swift`  |
-    |Language                   | `Swift`                   |
-    |Devices                    | `Universal`               |
+To create your first project, click on **File > New > Project** in the menu bar. When you do so, you will be presented with a number of application templates. Choose **Single View Application**, and click the **Next** button. On the next screen, please enter the project options below and press **Next**:
 
-    Choose an appropriate location for your project and click on the **Create** button.
+|Field Name                 | Value                     |
+|---------------------------|---------------------------|
+|Product Name               | `DemoApp`                 |
+|Organization Identifier    | `com.sap.tutorial.swift`  |
+|Language                   | `Swift`                   |
+|Devices                    | `Universal`               |
 
-2. **Create a simple view containing two labels and a button**
-    In the **Project Navigator** click on the **`Main.storyboard`** file. This should show a scene with just one View.
+Choose an appropriate location for your project and click on the **Create** button.
 
-    Add two labels to the view and make sure they are in the center and cover the entire width of the view. The text of the labels should be set to `Welcome!` and `English`. Make sure the Welcome label is slightly larger and set to bold, to make it appear as a title.
+[DONE]
+[ACCORDION-END]
 
-    Also add a button and set the text attribute of the button to `Confirm`. Your view should look similar to this:
+[ACCORDION-BEGIN [Step 2: ](Create a simple view containing two labels and a button)]
 
-    ![Simple application view](image-1.png)
+In the **Project Navigator** click on the **`Main.storyboard`** file. This should show a scene with just one View.
 
-3. **Run the application and inspect the screen**
-    Run the app by pressing the **Build and Run** button at the top left section of the toolbar. The simulator will start and will show the view you just constructed.
+Add two labels to the view and make sure they are in the center and cover the entire width of the view. The text of the labels should be set to `Welcome!` and `English`. Make sure the Welcome label is slightly larger and set to bold, to make it appear as a title.
 
-    ![Application login screen](image-2.png)
+Also add a button and set the text attribute of the button to `Confirm`. Your view should look similar to this:
 
-    As you can see from the screenshot, you will need to localize 3 items:
+![Simple application view](image-1.png)
 
-    - `Welcome!` title
-    - `English` label
-    - `Confirm` button
+[DONE]
+[ACCORDION-END]
 
-4. **Set the application's target languages**
-    Click on **`DemoApp`** in the **Project Navigator** and subsequently on the **`DemoApp`** project in the **Project and targets** list. Make sure the **Info** tab is selected in the editor section of the screen.
+[ACCORDION-BEGIN [Step 3: ](Run the application and inspect the screen)]
 
-    The **Info** tab contains a section called **Localizations**, in which all languages are listed that are supported by the app. To add a new language, click on the **+**-button near the bottom of this section and select 'German'.
+Run the app by pressing the **Build and Run** button at the top left section of the toolbar. The simulator will start and will show the view you just constructed.
 
-    ![Add language](image-3.png)
+![Application login screen](image-2.png)
 
-    A dialog will appear showing the resource files that could be localized.
+As you can see from the screenshot, you will need to localize 3 items:
 
-    ![Select resource files](image-4.png)
+- `Welcome!` title
+- `English` label
+- `Confirm` button
 
-    Keep both files checked and press the **Finish** button.
+[DONE]
+[ACCORDION-END]
 
-    You should now see that German has been added:
+[ACCORDION-BEGIN [Step 4: ](Set the application's target languages)]
 
-    ![List of languages](image-5.png)
+Click on **`DemoApp`** in the **Project Navigator** and subsequently on the **`DemoApp`** project in the **Project and targets** list. Make sure the **Info** tab is selected in the editor section of the screen.
 
-5. **Inspect the `main.storyboard`'s translations**
-    If you have a look at the **Project Navigator**, you can see that there is now an expand-icon in on the left of the `main.storyboard` file. If you click on the **expand-icon** to expand the `main.storyboard` file, you will noticed that it now contains two translations. One for the original language, and one for the language you just added:
+The **Info** tab contains a section called **Localizations**, in which all languages are listed that are supported by the app. To add a new language, click on the **+**-button near the bottom of this section and select 'German'.
 
-    ![Localizations of storyboard](image-6.png)
+![Add language](image-3.png)
 
-    If you click on the `Main.strings (German)` file, a text-editor pops up, which is showing you all strings present in the application's storyboard. However, these strings are still in English, while this is supposed to be the German translation.
+A dialog will appear showing the resource files that could be localized.
 
-    ![Translation editor](image-7.png)
+![Select resource files](image-4.png)
 
-6. **Enable the Translation Hub service**
-    If you are using the Translation Hub for the first time, you will notice that the service is not enabled yet:
+Keep both files checked and press the **Finish** button.
 
-    ![Translation hub service](image-8.png)
+You should now see that German has been added:
 
-    To find the Translation Hub service, select **Services** from the main menu, and look for **SAP Translation Hub** tile in the `DevOps` section. To enable the service, click on the **SAP Translation Hub** tile and click the **Enable** button.
+![List of languages](image-5.png)
 
-    ![Enable Translation Hub](image-9.png)
+[DONE]
+[ACCORDION-END]
 
-    Once the service has been enabled, `Not Enabled` will change into `Enabled` and the **Enable** button will disappear.
+[ACCORDION-BEGIN [Step 5: ](Inspect the main.storyboard's translations)]
 
-7. **Create a translation project for your app**
-    To start the Translation Hub cockpit, click on the **Go to service** link in the service details page:
+If you have a look at the **Project Navigator**, you can see that there is now an expand-icon in on the left of the `main.storyboard` file. If you click on the **expand-icon** to expand the `main.storyboard` file, you will noticed that it now contains two translations. One for the original language, and one for the language you just added:
 
-    ![Go to service](image-10.png)
+![Localizations of storyboard](image-6.png)
 
-    In the Translation Hub cockpit, create a new project by clicking on the **+**-button in the bottom of the screen. In the pop-up menu, pick the **File Upload** option:
+If you click on the `Main.strings (German)` file, a text-editor pops up, which is showing you all strings present in the application's storyboard. However, these strings are still in English, while this is supposed to be the German translation.
 
-    ![Go to service](image-11.png)
+![Translation editor](image-7.png)
 
-    In the project details screen enter values below:
+[DONE]
+[ACCORDION-END]
 
-    |Field Name                 | Value                     |
-    |---------------------------|---------------------------|
-    |Project Name               | `demoapp`                 |
-    |File Type                  | `iOS Strings File`        |
-    |Domain                     | `Basis`                   |
-    |Target Languages           | `German`                  |
+[ACCORDION-BEGIN [Step 6: ](Enable the Translation Hub service)]
 
-    After entering these values, click on the **Save** button.
+If you are using the Translation Hub for the first time, you will notice that the service is not enabled yet:
 
-    ![Translation Project details](image-12.png)
+![Translation hub service](image-8.png)
 
-    > Note: The domain that is entered here represents the context from which translations have to been taken. For example, the English word `Order` can have several meanings. To make sure the right meaning is selected for the translation, the context can be indicated by selecting the **Domain** value.
+To find the Translation Hub service, select **Services** from the main menu, and look for **SAP Translation Hub** tile in the `DevOps` section. To enable the service, click on the **SAP Translation Hub** tile and click the **Enable** button.
 
-8. **Upload the string file from the Xcode project**
-    To upload a file, click on the **Upload File** button. In the file explorer you can then navigate to the project folder of your Xcode project. In the project structure you can selected file `de.lproj/Main.strings`, which is the file you opened in the editor in step 5.
+![Enable Translation Hub](image-9.png)
 
-    ![Upload file](image-13.png)
+Once the service has been enabled, `Not Enabled` will change into `Enabled` and the **Enable** button will disappear.
 
-9. **Inspect the translation**
-    After uploading the file, the file is getting translated by the SAP Translation Hub. When this is done, you will be able to see the translations in the **Translations** tab:
+[DONE]
+[ACCORDION-END]
 
-    ![Upload file](image-14.png)
+[ACCORDION-BEGIN [Step 7: ](Create a translation project for your app)]
 
-    In this screen you will see the original text and the text has been translated to. On top of that, you will see a few additional columns.
+To start the Translation Hub cockpit, click on the **Go to service** link in the service details page:
 
-    > The **Translation Provider** indicates where the translation comes from . MLTR stands for the Central Multilingual Text Repository that has been accumulated by SAP in over 30 years, across multiple products and in up to 39 languages.
+![Go to service](image-10.png)
 
-    >The **Quality index** shows the estimated translation quality based on ratings that language specialists provide. The higher the number on a scale from 0-100, the better the quality.
+In the Translation Hub cockpit, create a new project by clicking on the **+**-button in the bottom of the screen. In the pop-up menu, pick the **File Upload** option:
 
-    If the translation is not correct and needs to be changed, you can make the changes from this screen as well.
+![Go to service](image-11.png)
 
-    Change the word `Englisch` to `Deutsch` as it should not be translated, but should indicate the language:
+In the project details screen enter values below:
 
-    ![Make manual changes](image-15.png)
+|Field Name                 | Value                     |
+|---------------------------|---------------------------|
+|Project Name               | `demoapp`                 |
+|File Type                  | `iOS Strings File`        |
+|Domain                     | `Basis`                   |
+|Target Languages           | `German`                  |
 
-    After changing the translation, press the **Save** button.
+After entering these values, click on the **Save** button.
 
-10. **Download the translation and insert it into the project**
-    To download the project, click on the **Download Translations** button. Your browser will then download the translated files as zip-file.
+![Translation Project details](image-12.png)
 
-    Once is it download, open it with the finder and copy the translated `Main.strings` file to your Xcode project, overwriting the file that was already present:
+> Note: The domain that is entered here represents the context from which translations have to been taken. For example, the English word `Order` can have several meanings. To make sure the right meaning is selected for the translation, the context can be indicated by selecting the **Domain** value.
 
-    ![Copy the translated file to your Xcode project](image-16.png)
+[DONE]
+[ACCORDION-END]
 
-11. **Switch back to Xcode and verify the result**
-    When you copied the file, Xcode should have found out that the file changed, and the file should have been reloaded. Instead of the English translation, it should now show the German translation:
+[ACCORDION-BEGIN [Step 8: ](Upload the string file from the Xcode project)]
 
-    ![German translation in Xcode](image-17.png)
+To upload a file, click on the **Upload File** button. In the file explorer you can then navigate to the project folder of your Xcode project. In the project structure you can selected file `de.lproj/Main.strings`, which is the file you opened in the editor in step 5.
 
-12. **Run the application in German**
-    When you run the app by pressing the **Build and Run** button at the top left section of the toolbar, the app will show in English. To make the German translation visible, click on the **Scheme** button (it says `DemoApp`), in the top left section of the toolbar, and click on **Edit Scheme**. Within the **Scheme editor** select **Run** from the master section and make sure tab **Options** is selected. Change the **Application Language** to **German** and press the **Close** button.
+![Upload file](image-13.png)
 
-    ![Change schema to German](image-18.png)
+[DONE]
+[ACCORDION-END]
 
-    If you run the app by pressing the **Build and Run** button at the top left section of the toolbar, the app will be running in German.
+[ACCORDION-BEGIN [Step 9: ](Inspect the translation)]
 
-    ![German app](image-19.png)
+After uploading the file, the file is getting translated by the SAP Translation Hub. When this is done, you will be able to see the translations in the **Translations** tab:
 
-    > Note: You could achieve a similar result by changing the system language of your emulator or iOS device to German in **Settings > General > Language & Region > iPhone Language** and relaunching the app.
+![Upload file](image-14.png)
+
+In this screen you will see the original text and the text has been translated to. On top of that, you will see a few additional columns.
+
+> The **Translation Provider** indicates where the translation comes from . MLTR stands for the Central Multilingual Text Repository that has been accumulated by SAP in over 30 years, across multiple products and in up to 39 languages.
+
+>The **Quality index** shows the estimated translation quality based on ratings that language specialists provide. The higher the number on a scale from 0-100, the better the quality.
+
+If the translation is not correct and needs to be changed, you can make the changes from this screen as well.
+
+Change the word `Englisch` to `Deutsch` as it should not be translated, but should indicate the language:
+
+![Make manual changes](image-15.png)
+
+After changing the translation, press the **Save** button.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Download the translation and insert it into the project)]
+
+To download the project, click on the **Download Translations** button. Your browser will then download the translated files as zip-file.
+
+Once is it download, open it with the finder and copy the translated `Main.strings` file to your Xcode project, overwriting the file that was already present:
+
+![Copy the translated file to your Xcode project](image-16.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 11: ](Switch back to Xcode and verify the result)]
+
+When you copied the file, Xcode should have found out that the file changed, and the file should have been reloaded. Instead of the English translation, it should now show the German translation:
+
+![German translation in Xcode](image-17.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 12: ](Run the application in German)]
+
+When you run the app by pressing the **Build and Run** button at the top left section of the toolbar, the app will show in English. To make the German translation visible, click on the **Scheme** button (it says `DemoApp`), in the top left section of the toolbar, and click on **Edit Scheme**. Within the **Scheme editor** select **Run** from the master section and make sure tab **Options** is selected. Change the **Application Language** to **German** and press the **Close** button.
+
+![Change schema to German](image-18.png)
+
+If you run the app by pressing the **Build and Run** button at the top left section of the toolbar, the app will be running in German.
+
+![German app](image-19.png)
+
+> Note: You could achieve a similar result by changing the system language of your emulator or iOS device to German in **Settings > General > Language & Region > iPhone Language** and relaunching the app.
+
+[DONE]
+[ACCORDION-END]
 
 ## Next Steps
 - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
