@@ -1,6 +1,7 @@
 ---
 title: HANA Express Edition - Execute the Installation script and finish setup
 description: This tutorial will guide you through the execution of the installation scripts to set your HANA Express Edition platform up.
+primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition ]
 ---
 

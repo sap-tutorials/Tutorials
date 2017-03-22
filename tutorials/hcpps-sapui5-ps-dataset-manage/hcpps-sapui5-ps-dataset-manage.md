@@ -1,6 +1,7 @@
 ---
 title: Manage your registered "Datasets"
 description: You will extend your application with additional "Dataset" SAP Cloud for predictive services
+primary_tag: products>sap-cloud-platform
 tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 

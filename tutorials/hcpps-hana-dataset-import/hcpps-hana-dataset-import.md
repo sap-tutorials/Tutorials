@@ -1,6 +1,7 @@
 ---
 title: Import a series of predictive demo dataset
 description: Import a demo data to be used with the SAP Cloud for predictive services
+primary_tag: products>sap-hana
 tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-hana, products>sap-cloud-platform ]
 ---
 

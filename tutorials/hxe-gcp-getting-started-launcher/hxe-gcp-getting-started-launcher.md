@@ -1,6 +1,7 @@
 ---
 title: SAP HANA, express edition, in Google Cloud Platform Launcher
 description: This getting started guide will walk you through the basics of launching SAP HANA, express edition, on Google Cloud Platform using the Launcher.
+primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 

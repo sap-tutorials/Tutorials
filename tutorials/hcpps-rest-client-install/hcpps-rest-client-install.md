@@ -1,6 +1,7 @@
 ---
 title: Install a REST client
 description: Install a REST client to interact with the SAP Cloud for predictive services
+primary_tag: products>sap-hana
 tags: [ tutorial>beginner, products>sap-cloud-platform ]
 ---
 
