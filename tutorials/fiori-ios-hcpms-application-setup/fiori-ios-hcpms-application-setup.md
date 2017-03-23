@@ -5,11 +5,11 @@ primary_tag: operating-system>ios
 tags: [  tutorial>beginner, operating-system>ios, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner | Intermediate | Advanced
- - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Proficiency:** Beginner
+ - **Tutorials:** [Enable SAP Cloud Platform mobile services](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
 
 ## Next Steps
- - **Tutorials:** [Configure a back-end connection](fiori-ios-hcpms-backend-connection)
+ - **Tutorials:** [Configure a back-end connection](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-backend-connection.html)
 
 ## Details
 ### You will learn  
@@ -32,47 +32,59 @@ Technically it would be possible to skip this step and access an OData services 
 
 This tutorial described how you can configure a mobile app in SAP Cloud Platform Mobile Services.
 
-1. **Make sure mobile services are enabled in your account**
+[ACCORDION-BEGIN [Step 1: ](Make sure mobile services are enabled in your account)]
 
-    Got to the SAP Cloud Platform cockpit and click on **Services** in the main menu. In the `Services` page, make sure that under `Mobile Services` the `Development & Operations` service is enabled. If it is not enabled, enable it by clicking on it an pressing the **Enable** button.
+Got to the SAP Cloud Platform cockpit and click on **Services** in the main menu. In the `Services` page, make sure that under `Mobile Services` the `Development & Operations` service is enabled. If it is not enabled, please enable it by following tutorial [Enable SAP Cloud Platform mobile services](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html).
 
-    ![Enable Mobile Services](image-1.png)
+![Enable Mobile Services](image-1.png)
 
-2. **Go to the Mobile Services cockpit and bookmark it**
+[DONE]
+[ACCORDION-END]
 
-    After you clicked on the `Development & Operations` tile in the services list, you will see a link called **Go to Service**. Follow this link to go to the mobile services cockpit.
+[ACCORDION-BEGIN [Step 2: ](Go to the Mobile Services cockpit and bookmark it)]
 
-    As it is likely that you need to return to this cockpit after you have created the application ID, it is advisable to bookmark the page by pressing **⌘D** (Control-D on Windows).
+After you clicked on the `Development & Operations` tile in the services list, you will see a link called **Go to Service**. Follow this link to go to the mobile services cockpit.
 
-    ![Mobile Services Cockpit](image-2.png)
+As it is likely that you need to return to this cockpit after you have created the application ID, it is advisable to bookmark the page by pressing **⌘D** (Control-D on Windows).
 
-3. **Create the application**
+![Mobile Services Cockpit](image-2.png)
 
-    To create the application, click on the **Applications** tile to go to the list of applications that you have already defined. When you do this for the first time, this list will be empty. A new application can be created by clicking on the **Create Application** button:
+[DONE]
+[ACCORDION-END]
 
-    ![Applications list](image-3.png)
+[ACCORDION-BEGIN [Step 3: ](Create the application)]
 
-    A dialog will open, allowing you to enter the application details:
+To create the application, click on the **Applications** tile to go to the list of applications that you have already defined. When you do this for the first time, this list will be empty. A new application can be created by clicking on the **Create Application** button:
 
-    ![Applications details](image-4.png)
+![Applications list](image-3.png)
 
-    Enter the details below:
+A dialog will open, allowing you to enter the application details:
 
-    Field Name                | Value
-    :-------------            | :-------------
-    Application ID            | `com.sap.tutorial.demoapp`
-    Name                      | `Demo Application`
-    type                      | `Native`
-    Ignore case for User Name | `checked`
-    Security Configuration    | `Basic`
+![Applications details](image-4.png)
 
-4. **Go back to the cockpit**
+Enter the details below:
 
-    After entering the application details press the **Save** button to save the new application. When the application is saved, you will be able to define more application configuration details. You will do this in the next tutorial, in which you will define the back-end connection. For now, just go back to the Mobile Services Cockpit by clicking on the `Home` button in the main menu.
+Field Name                | Value
+:-------------            | :-------------
+Application ID            | `com.sap.tutorial.demoapp`
+Name                      | `Demo Application`
+type                      | `Native`
+Ignore case for User Name | `checked`
+Security Configuration    | `Basic`
 
-    When you have the cockpit on your screen, you can now see that you have defined one Application:
+[DONE]
+[ACCORDION-END]
 
-    ![One application in Mobile Services Cockpit](image-5.png)
+[ACCORDION-BEGIN [Step 4: ](Go back to the cockpit)]
+
+After entering the application details press the **Save** button to save the new application. When the application is saved, you will be able to define more application configuration details. You will do this in the next tutorial, in which you will define the back-end connection. For now, just go back to the Mobile Services Cockpit by clicking on the `Home` button in the main menu.
+
+When you have the cockpit on your screen, you can now see that you have defined one Application:
+
+![One application in Mobile Services Cockpit](image-5.png)
+
+[DONE]
+[ACCORDION-END]
 
 ## Next Steps
- - **Tutorials:** [Configure a back-end connection](fiori-ios-hcpms-backend-connection)
+ - **Tutorials:** [Configure a back-end connection](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-backend-connection.html)
