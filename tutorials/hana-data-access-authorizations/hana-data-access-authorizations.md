@@ -108,7 +108,7 @@ Now you will create the automatic import file, you can name the file anything yo
 import	= 	[
     			{
 					cdstable  =	"codejam.data::mydata.Book";
-					file = "codejam.data:simple_book:list.csv"; 	     
+					file = "codejam.data:sample_book:list.csv"; 	     
 					header = false;		
     			}
      		];
