@@ -1,7 +1,8 @@
 ---
 title: SAP HANA Studio, Display your Application
 description: Import Data to your SAP HANA system
-tags: [  tutorial>beginner, products>sap-hana, products>sap-hana,-express-edition, products>sap-hana-studio ]
+primary_tag: products>sap-hana
+tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-hana-studio ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -36,7 +37,7 @@ Now that you have data it's time to display it in some way as well as enable acc
 	![New file](3.png)
 	![New file](4.png)
 
-4. Now that you can access the data it is time to enhance your `index.html` page with a bit of magic in the way of Google Maps. 
+4. Now that you can access the data it is time to enhance your `index.html` page with a bit of magic in the way of Google Maps.
 
 	```
 	<!DOCTYPE html>
@@ -62,7 +63,7 @@ Now that you have data it's time to display it in some way as well as enable acc
 
 	<script>
 	  	var map;
-		
+
 		function initMap() {
 			map = new google.maps.Map(document.getElementById('map'), {
 				center: {lat: -34.397, lng: 150.644},
@@ -89,7 +90,7 @@ Now that you have data it's time to display it in some way as well as enable acc
 			  	}
 			}); 	
 		}
-		
+
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?callback=initMap&key=YOUR_API_KEY"></script>
   </body>
@@ -98,7 +99,7 @@ Now that you have data it's time to display it in some way as well as enable acc
 5. With a bit of magic you should now be able to see your data on a map once you have saved and activated it to the server.
 
 	![New file](6.png)
-		
+
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

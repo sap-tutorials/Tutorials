@@ -1,6 +1,7 @@
 ---
 title: Connect to SAP Vora, developer edition
 description: Connect to your SAP Vora, developer edition, hosted in the public cloud
+primary_tag: products>sap-hana-vora
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
 ---
 ## Prerequisites  

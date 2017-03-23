@@ -1,6 +1,7 @@
 ---
 title: Loading sample data using Apache Zeppelin
 description: You will use Apache Zeppelin to create tables and load sample data from files already created in HDFS in SAP Vora, developer edition, on CAL.
+primary_tag: products>sap-hana-vora
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
 ---
 ## Prerequisites  

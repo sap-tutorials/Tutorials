@@ -1,6 +1,7 @@
 ---
 title: Translate your app into multiple languages
 description: Use the SAP Cloud Platform Translation Hub to automatically generate i18n (internationalization) files for multiple languages
+primary_tag: topic>sap-translation-hub
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 
@@ -124,7 +125,7 @@ If you check the `i18n` folder in your project, you will see the two new files:
 
 [ACCORDION-BEGIN [Step 10: ](Commit files, and deploy to the cloud)]
 
-Commit your new files to **Git** and deploy the application to SAP Cloud Platform (following the same procedure as in the previous [tutorial](http://www.sap.com/developer/tutorials/teched-2016-5.html).
+Commit your new files to **Git** and deploy the application to SAP Cloud Platform(following the same procedure as in the previous [tutorial](http://www.sap.com/developer/tutorials/teched-2016-5.html).
 
 Right-click on your **`te2016`** project folder, and select **Deploy > Deploy to SAP Cloud Platform** and click **Deploy**.
 
