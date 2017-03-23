@@ -1,8 +1,8 @@
 ---
 title: Prepare sample Fiori app for translation
 description: Create an app based on a sample Fiori app and prepare it for translation with SAP Translation Hub.
-primary_tag: topic>sap-translation-hub
-tags: [  tutorial>beginner, topic>sap-translation-hub, products>sap-cloud-platform, topic>sapui5 ]
+primary_tag: products>sap-translation-hub>sap-translation-hub
+tags: [  tutorial>beginner, products>sap-translation-hub>sap-translation-hub, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites  
