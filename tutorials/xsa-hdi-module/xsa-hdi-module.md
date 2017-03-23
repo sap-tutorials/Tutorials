@@ -1,6 +1,7 @@
 ---
 title: SAP HANA XS Advanced, Creating an HDI Module
 description: Part 3 of 3, Create your first HDI module for database content within your XSA application
+primary_tag: products>sap-hana
 tags: [products>sap-hana, products>sap-hana\,-express-edition, topic>big-data, tutorial>beginner ]
 
 ---
@@ -38,7 +39,7 @@ HANA Deployment Infrastructure was introduced with SPS11, and is thoroughly expl
 
     ![Create module](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/2.png)
 
-3. Leave the Namespace blank. Press Next.
+3. Leave the Namespace blank (they are not of any use anymore) and enter a name for the schema and check the `Build Module after creation` tick box. Press Next.
 
     ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/3.png)
 
@@ -50,44 +51,18 @@ HANA Deployment Infrastructure was introduced with SPS11, and is thoroughly expl
 
     ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/5.png)
 
+    You will be able to see some of the additional files that the module creation wizard created if you choose `View->Show Hidden Files`  
 
-6. You can now add a configuration parameter to the database resource in the `mta.yaml`  file, to choose the generated Schema Name upon installation. This configuration will not be used when building from the Web IDE, but only when installation from a full MTAR. Add the configuration to name your schema `dev602`:
+    ![Show hidden files](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/6.png)
 
-	```
-parameters:
- config:
-  schema: dev602
-	```
-![Add schema configuration to YAML](5_1_git.png)
-
-Remember to **Save**.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create CDS Table)]
 
-You will be able to see some of the additional files that the module creation wizard created if you choose `View->Show Hidden Files`  
-
-![Show hidden files](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/6.png)
 
 The `db/src` folder is where your actual database development objects belong. There are two configuration files in the root of this folder. The `.hdiconfig` file maps the file extensions to the specific server side activation plug-ins. This way you can choose any file extensions you wish to use as long as you map them to the correct plug-ins. However we will use the default mappings for now.
-
-The `.hdinamespace` file configures the package namespace for your development objects. As we no longer use the HANA Repository to hold design time objects and namespaces are kept only for backward compatibility, it is recommended to avoid using them in new applications.
-
-Replace the existing content of the `.hdinamespace` file:
-
-![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/7.png)
-
-With this code:
-
-```
-{
-    "name":    "",
-    "subfolder": "ignore"
-}
-```
-Remember to **Save**.
 
 In the `src` folder we will create several development objects. First create a folder called `data` in the `src` folder.
 
@@ -99,11 +74,11 @@ Name the new CDS file `PurchaseOrder` and press Create
 
 ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/9.png)
 
-`hdbcds` is the new file extension replacing `hdbdd`. It contains the table and view definitions. We are creating a simple Purchase Order Header and Item data model.
+As of SPS12, `hdbcds` is the new file extension replacing `hdbdd`. It contains the table and view definitions. We are creating a simple Purchase Order Header and Item data model.
 
 The syntax is the same as `CDS-based` development objects previously. You will review this content in the next step.
 
-	```
+```
 
 	context PurchaseOrder {
 	type BusinessKey : String(10);
@@ -172,9 +147,13 @@ The syntax is the same as `CDS-based` development objects previously. You will r
 	      DELIVERYDATE as "DeliveryDate1"
 	   } with structured privilege check;
 	};
-	```
-  [DONE]
-  [ACCORDION-END]
+
+```
+
+Save the artifact after entering this code.
+
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Review CDS Entities and Types)]
 
@@ -236,7 +215,7 @@ The log should say that the Build of your project has completed successfully:
 
 ![Build Project - Console](9_2.png)
 
-> Hint: If the Console does not appear automatically, you can call or hide it in View -> Console
+> Hint: As of HANA 2.0, you can choose to build just this one file
 
 [DONE]
 [ACCORDION-END]
@@ -253,7 +232,7 @@ Enter the name of the file as `orderId.hdbsequence`. Click "OK".
 
 Create a non-cycling sequence within your schema starting from 200000000 and ending with 299999999. Make it dependent upon your header table with the full package id on the front of the header table name. Save your sequence file.
 
-	```
+```
 	SEQUENCE "orderId"
 	INCREMENT BY 1 START WITH 200000000
 	MINVALUE 1 MAXVALUE 2999999999
@@ -261,25 +240,28 @@ Create a non-cycling sequence within your schema starting from 200000000 and end
 	RESET BY
 	SELECT IFNULL(MAX(PURCHASEORDERID), 0)+1
 	FROM "PurchaseOrder.Header"
-	```
+```
 
-**Build** the `hdb` folder again.
+**Build** the `orderId.hdbsequence` file by right-clicking on it and selecting `Build Selected Files`.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check the HANA Runtime Tool)]
+[ACCORDION-BEGIN [Step 5: ](Check the Database Explorer)]
 
-Open the HANA Runtime Tools from the `Tools -> SAP HANA Runtime Tools`.  Alternatively, you can open a new browser tab and navigate to `http://<hostname>:51006` to access this tool. For `SAP HANA, express edition` you will need to navigate to `http://<hostname>:51018`
+It is now time to check what you have created so far. Open the Database Explorer from the `Tools -> Database Explorer` menu.  
 
-Click on the Search HDI Containers button
+>In SPS12, this was known as the `HANA Runtime Tool` and it was separate from the Web IDE. You can open a new browser tab and navigate to `http://<hostname>:51006` to access this tool. For `SAP HANA, express edition` you will need to navigate to `http://<hostname>:51018`
+
+Click on the **+** sign:
+
 ![Login](11_2.png)
 
-Search for your container based on your user name or the repository name. Select it and click **Connect**.
+Search for your container based on your user name or the repository name. Select it, insert `db` as a display name and click **OK**.
 
 ![Login](11_3.png)
 
-You can now see the table definitions and contents you have created so far:
+You can now see the container, table definitions and contents you have created so far:
 
 ![Login](11_4.png)
 
@@ -290,7 +272,9 @@ You can now see the table definitions and contents you have created so far:
 
 You may want to deliver an initial set of data within a table – particular a configuration table. In this exercises we will learn how to create automatic data load configuration and the accompanying `CSV` files for just such a situation.
 
-The data load for table requires two files – 1. An `csv` (comma separated) file which holds the data you want to load. 2. An `hdbtabledata` file which specifies the target table for a source `csv` file.
+The data load for table requires two files:
+ 1. A `csv` (comma separated) file which holds the data you want to load.
+ 2. An `hdbtabledata` file which specifies the target table for a source `csv` file.
 
 You also have the `hdbtabledata` development object. This is the replacement for the old `hdbti` development object. Although the syntax of this object is new, the purpose is the same – to allow the loading of initial data from `CSV` files it target tables during their creation.
 
@@ -379,18 +363,18 @@ Create a file named `Purchase.hdbtabledata` and enter this text into it. Don't f
 		}
 	}]
 	}
-	```
+```
 
 You need some `CSV` files to hold some initial test data to be loaded by the `hdbtabledata` configuration file. Enter this data into a file named `header.csv` and save it.
 
-	```
-	0500000000,0000000033,20120101,0000000033,20120101,9000000001,0100000000,EUR,13224.47,11113,2111.47,N,I,I,I,I
-	0500000001,0000000033,20120102,0000000033,20120102,9000000001,0100000002,EUR,12493.73,10498.94,1994.79,N,I,I,I,I
-	```
+```
+0500000000,0000000033,20120101,0000000033,20120101,9000000001,0100000000,EUR,13224.47,11113,2111.47,N,I,I,I,I
+0500000001,0000000033,20120102,0000000033,20120102,9000000001,0100000002,EUR,12493.73,10498.94,1994.79,N,I,I,I,I
+```
 
 And data for the item table named `item.csv`.  Don't forget to **save**.
 
-	```
+```
 0500000000,0000000010,HT-1000,,EUR,1137.64,956,181.64,1,EA,20121204
 0500000000,0000000020,HT-1091,,EUR,61.88,52,9.88,2,EA,20121204
 0500000000,0000000030,HT-6100,,EUR,1116.22,938,178.22,2,EA,20121204
@@ -411,9 +395,13 @@ And data for the item table named `item.csv`.  Don't forget to **save**.
 0500000001,0000000080,HT-2026,,USD,107.06,89.97,17.09,3,EA,20121204
 0500000001,0000000090,HT-1002,,USD,3736.6,3140,596.6,2,EA,20121204
 0500000001,0000000100,HT-1100,,USD,320.94,269.7,51.24,3,EA,20121204
-	```
+```
 
-> You will see the data in the tables by pressing **Content** in HRTT.
+**Build** the `hdb` module and go back to the Database Explorer. Right-click on any of the tables and you will see data.
+
+![Database Explorer and ](11_5.png)
+
+Notice the column names where you used the complex type definition called `History`.
 
 [DONE]
 [ACCORDION-END]
@@ -421,7 +409,7 @@ And data for the item table named `item.csv`.  Don't forget to **save**.
 [ACCORDION-BEGIN [Step 7: ](Create Synonyms)]
  You also need synonyms now to access any table or view outside of our container.  Therefore you will create an `hdbsynonym` to allow the access the dummy view.
 
- When you click on `New -> File`, name the file `general.hdbsynonym`. The extension will make the IDE open the synonym editor automatically. Fill in the details for the dummy view:
+ When you click on `New -> File`, name the file `sys.hdbsynonym`. The extension will make the IDE open the synonym editor automatically. Fill in the details for the dummy view in a synonym called `_DUMMY`
 
 ![Any synonym name, table name dummy and schema name SYS](11_1.png)
 
@@ -429,7 +417,8 @@ And data for the item table named `item.csv`.  Don't forget to **save**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Create Procedures)]
-1. Create a `procedures` folder in the `src` folder. In the procedures folder you can create an `hdbprocedure` file via `New->Procedure`
+
+Create a `procedures` folder in the `src` folder. In the procedures folder you can create an `hdbprocedure` file via `New->Procedure`
 
 	>The syntax for stored procedures hasn't changed from previous levels of HANA.
 
@@ -439,11 +428,11 @@ With name `getPOItems`
 
 ![getPOItems](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/13.png)
 
-2. Here is the source of `getPOItems.hdbprocedure`
+Here is the source of `getPOItems.hdbprocedure`
 
-	```
-  PROCEDURE "getPOItems" ( OUT ex_addresses "PurchaseOrder.Item" )
-     LANGUAGE SQLSCRIPT
+```
+PROCEDURE "getPOItems" ( OUT ex_addresses "PurchaseOrder.Item" )
+   LANGUAGE SQLSCRIPT
      SQL SECURITY INVOKER
      --DEFAULT SCHEMA <default_schema_name>
      READS SQL DATA AS
@@ -456,30 +445,32 @@ With name `getPOItems`
   	     select *
   	              from "PurchaseOrder.Item";
   END
-	```
+```
 
-  [DONE]
-  [ACCORDION-END]
+Remember to **Save**.
+
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Create Roles)]
 
- All access to our HDI database objects from XSA is done automatically by the HDI container technical user. However if you want to allow access via other database users (for use cases such as external reporting tools) you must create a database role. Create another folder called `roles`.
+All access to our HDI database objects from XSA is done automatically by the HDI container technical user. However if you want to allow access via other database users (for use cases such as external reporting tools) you must create a database role. The same applies if you want to add additional privileges to the technical user. Create another folder called `roles`.
 
-1. First you need to create a structured privilege. This is the logical successor to the analytic privilege and allows us to perform instance filtering for our `CDS` view you created earlier. Enter this code into the file `PurchaseOrder.hdbstructuredprivilege` and save.
+First, you need to create a structured privilege. This is the logical successor to the analytic privilege and allows us to perform instance filtering for our `CDS` view you created earlier. Enter this code into the file `PurchaseOrder.hdbstructuredprivilege` and save.
 
 This will limit the access to your view to only allow users with this privilege to see items for Euros.
 
-	```
+```
 	STRUCTURED PRIVILEGE
 	    "PO_VIEW_PRIVILEGE"
 	    FOR SELECT ON
 	    "PurchaseOrder.ItemView"
 	    WHERE "CurrencyCode" = 'EUR'
-	```
+```
 
-2. Now create a role named `admin.hdbrole` and enter this code. Don't forget to save.
+Now create a role named `admin.hdbrole` and enter this code. Don't forget to save.
 
-	```
+```
   {
   	"role":{
   		"name": "admin",
@@ -504,11 +495,13 @@ This will limit the access to your view to only allow users with this privilege 
         }
   }
 
-	```
+```
 
-3. Finally, this role needs to be granted to our technical user. In order for this to be automatic, we will create a specific folder and role in the `src` folder.
+
+Finally, this role needs to be granted to our technical user. In order for this to be automatic, we will create a specific folder and role in the `src` folder.
 Create a folder named `defaults` in `src`. Inside this folder, create a file named `default_access_role.hdbrole` with the following contents:
-	```
+
+```
 {
 	"role":{
 		"name": "default_access_role",
@@ -518,9 +511,13 @@ Create a folder named `defaults` in `src`. Inside this folder, create a file nam
 	}
 }
 
-	```
+```
 
-We are now ready to perform the final **Build**. HDB modules are now complete and can be checked in HRTT.
+This is what the folder structure finally looks like:
+
+![Folder structure in Web IDE for SAP HANA](24.png)
+
+We are now ready to perform the final **Build**. HDB modules are now complete and can be checked in the Database Explorer.
 
 [DONE]
 [ACCORDION-END]
