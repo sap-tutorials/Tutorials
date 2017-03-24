@@ -1,6 +1,7 @@
 ---
 title: Getting started with SAP Vora Tools
 description: Getting started with SAP Vora Tools using SQL Editor and Data Browser
+primary_tag: products>sap-hana-vora
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
 ---
 ## Prerequisites  

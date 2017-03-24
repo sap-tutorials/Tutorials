@@ -1,6 +1,7 @@
 ---
 title: Create an ABAP project in Eclipse
 description: Learn how to configure the Eclipse IDE with the ABAP Development Tools for SAP NetWeaver (ADT) and create an ABAP project
+primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development ]
 ---
 

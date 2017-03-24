@@ -1,6 +1,7 @@
 ---
 title: Build an SAP Fiori UX app with SAP Gateway data
 description: Build an app using the SAP Web IDE Fiori template
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 

@@ -1,10 +1,13 @@
 ---
 title: Deploy an JCo / RFC based on-premise extension using SAP HANA Cloud Connector
 description: Deploy an on-premise extension which uses RFC via JCo. The scenario used in this tutorial is based on the well-known `SFLIGHT` model available as default sample content in all ABAP systems.
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>cloud-connector-for-sap-cloud-platform ]
 ---
 
 ## Prerequisites  
+- **Proficiency:** Beginner
+- **Tutorials:**
   - [Sign up for a free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
   - [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](http://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html)
 
@@ -73,7 +76,7 @@ Click on the **Import Destination** button and select the file `D:/sap_hcp_scc/d
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Configuring the SAP HANA Cloud connector)]
-Now you will connect the SAP HANA Cloud connector to your free developer account and configure the ABAP system and `BAPIs` used by the `sflight` application.
+Now you will connect the SAP HANA Cloud connector to your free developer account and configure the ABAP system and BAPIs used by the `sflight` application.
 
 Start the cloud connector administration UI using the Firefox browser provided on the desktop of the AWS instance with URL `https://abapci.dummy.nodomain:8443`, and logon with user `Administrator` and password as `manage`. Later it asks you to change the password
 
@@ -174,7 +177,7 @@ The application is using [Apache CXF](https://cxf.apache.org/) and the [Spring F
 </dependency>
 ```
 
-How to use CXF in combination with Spring is described in more detail on [the Apache Website](https://cxf.apache.org/docs/jaxrs-services-configuration.html). In short, these two libraries combined provide a simple-to-use framework to define REST services in `POJOs`, taking care for all the boilerplate code of receiving and sending HTTP requests for you. It thus allows you to focus on the business logic and makes development of REST services easy as 1-2-3.
+How to use CXF in combination with Spring is described in more detail on [the Apache Website](https://cxf.apache.org/docs/jaxrs-services-configuration.html). In short, these two libraries combined provide a simple-to-use framework to define REST services in POJOs, taking care for all the boilerplate code of receiving and sending HTTP requests for you. It thus allows you to focus on the business logic and makes development of REST services easy as 1-2-3.
 
 To understand how the REST services of the sample application are implemented, you need to look into the [`springrest-context.xml`](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/src/main/webapp/WEB-INF/springrest-context.xml) file located under the [`/src/main/webapp/WEB-INF`](https://github.com/SAP/cloud-personslist-scenario/tree/Extensions-005/sflight-web/src/main/webapp/WEB-INF) folder of the project. There, a Spring bean is defined with the name **`flightService`**. This bean is implemented by the Java class [`com.sap.cloudlabs.connectivity.sflight.FlightService`](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/src/main/java/com/sap/cloudlabs/connectivity/sflight/FlightService.java). Using CXF and Spring annotations, the `FlightService` class is a simple POJO which provides the GET and POST service endpoints listed above. A small code fragment that shows how the definition of the REST service is done is shown here:
 
@@ -202,7 +205,7 @@ The `FlightService` class delegates all calls to a `FlightProvider` object which
 
 Right now, there is only one implementation of the `FlightProvider` interface: [`com.sap.cloudlabs.connectivity.sflight.jco.JCoFlightProvider`](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/src/main/java/com/sap/cloudlabs/connectivity/sflight/jco/JCoFlightProvider.java). The `JCoFlightProvider` class uses the Java Connector (JCo) API to make RFC calls directly against the ABAP system. Of course, all the communication is encrypted and secured via the cloud connector. You can use JCo in exactly the same way as you might know it from SAP NetWeaver Application Server Java. A tutorial how to work with JCo can be found [in the SAP Business Objects Documentation](https://help.sap.com/businessobject/product_guides/hci1/en/SAPJCo_Doku_3.0_EN.pdf). The `JCoFlightProvider` class requires an RFC destination called `dest_sflight`.
 
-Note that the `JCoFlightProvider` class not only fetches data from the ABAP system, but also writes back a flight booking transaction to the ABAP system. The `BAPIs` called by the application on the ABAP system are:
+Note that the `JCoFlightProvider` class not only fetches data from the ABAP system, but also writes back a flight booking transaction to the ABAP system. The BAPIs called by the application on the ABAP system are:
 
   - `BAPI_SFLIGHT_GETLIST`
   - `BAPI_SFLIGHT_GETDETAIL`

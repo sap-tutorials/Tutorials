@@ -1,6 +1,7 @@
 ---
 title: Deploy your mobile web app to SAP Cloud Platform
 description: Deploy your app to SAP Cloud Platform and access it from your desktop and mobile devices
+primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>mobile, topic>odata, topic>html5, tutorial>beginner ]
 ---
 ## Prerequisites

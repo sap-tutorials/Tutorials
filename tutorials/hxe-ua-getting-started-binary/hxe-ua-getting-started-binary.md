@@ -1,7 +1,8 @@
 ---
 title: Start Using SAP HANA 2.0, express edition (Binary Installer Method)
 description: Explore how to connect to the SAP Web IDE for SAP HANA, Express Edition to start developing your project.
-tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana\,-express-edition 
+tags: [  tutorial>beginner, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites
 - **Proficiency:** Beginner
@@ -169,11 +170,11 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
 2. Create a temporary password file and change the password. This password change is mandatory.
 
-  - Navigate to `<extracted_path>/HANA_EXPRESS_20/DATA_UNITS/XSA_CONTENT_10/`
+    - Navigate to `<extracted_path>/HANA_EXPRESS_20/DATA_UNITS/XSA_CONTENT_10/`
 
-  - Locate the `mtaext` file `XSAC_HANA_EADESIGNER-1.0.05-mtaext.mtaext`. Make a copy of the file and edit the `ADMIN_PASSWORD`.
+    - Locate the `mtaext` file `XSAC_HANA_EADESIGNER-1.0.05-mtaext.mtaext`. Make a copy of the file and edit the `ADMIN_PASSWORD`.
 
-      >**Note**: We recommend that your temporary password should contain 8 or more characters including a mix of numbers and uppercase and lowercase letters.
+    >**Note**: We recommend that your temporary password should contain 8 or more characters including a mix of numbers and uppercase and lowercase letters.
 
 3. Login to the XSA environment with the following command and enter your credentials when prompted:
 

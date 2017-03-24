@@ -1,14 +1,15 @@
 ---
 title: Add custom fields to a standard SAP Fiori app
 description: This tutorial shows you how to add  custom fields and view elements to a standard SAP Fiori app.
-tags: [  tutorial>beginner, topic>cloud, topic>odata, topic>sapui5, products>sap-web-ide ]
+primary_tag: products>sap-cloud-platform
+tags: [  tutorial>beginner, topic>cloud, topic>odata, topic>sapui5, products>sap-web-ide, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
 - **Tutorials:** [Getting started with the SAP Fiori, Demo Cloud Edition](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html)
 
 ## Next Steps
-- [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
+- [Hide view element from a standard SAP Fiori app](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-hide-element.html)
 
 ## Details
 ### You will learn  
@@ -196,4 +197,4 @@ Congratulations, you've successfully extended an SAP standard Fiori app.
 
 
 ## Next Steps
-- [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
+- [Hide view element from a standard SAP Fiori app](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-hide-element.html)

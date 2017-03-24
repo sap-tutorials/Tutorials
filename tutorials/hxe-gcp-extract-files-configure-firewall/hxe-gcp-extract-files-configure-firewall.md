@@ -1,7 +1,8 @@
 ---
 title: HANA Express Edition - Extract installation Files and Configure Firewall Rules
 description: This tutorial will guide you through the extraction process of the installation files for HANA Express Edition. You will also enter the necessary firewall rules to enable traffic into the correct ports.
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana\,-express-edition 
+tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition  ]
 ---
 
 ## Prerequisites  

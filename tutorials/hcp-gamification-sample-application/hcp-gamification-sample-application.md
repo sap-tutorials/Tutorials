@@ -1,6 +1,7 @@
 ---
 title: Create the gamified HelpDesk application
 description: Generate demo content for a sample gamified application and use the application.
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
@@ -117,8 +118,6 @@ Respond to each message in your queue and verify that points and badges are awar
 
 [DONE]
 [ACCORDION-END]
-
-
 
 ## Next Steps
 - [Deploy gamified HelpDesk application to the SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)

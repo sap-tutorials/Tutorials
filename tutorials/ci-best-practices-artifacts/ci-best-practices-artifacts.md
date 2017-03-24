@@ -2,19 +2,20 @@
 
 title: Continuous Integration (CI) Best Practices with SAP: Artifact Repository
 description: Part 3.3: Setting up a Nexus Instance.
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project  ]
 
 ---
 
 ## Prerequisites
 
-  - **Proficiency:** Intermediate
+- **Proficiency:** Intermediate
 
 ## Next Steps
- 
-  - [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-  
+
+- [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+- [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+
 ---
 
 > The purpose of this guide is to enable you to do first steps in designing your own CI processes using components like Gerrit, Jenkins and Nexus. These setup instructions for these components serve educational purposes only and are not meant as reference setup for productive purposes; for productive use, refer to the official component documentation.
@@ -43,56 +44,102 @@ This document refers to a Nexus 2 release.
 
 - An appropriate Java JDK version for Nexus is installed on the machine.
 
-#### Procedure
 
-1. On the nexus machine, create an OS user `nexus`. Any other OS user that will run the Nexus application will work as well, but this is the name we will use in this document.
 
-2. Create a Nexus installation directory owned by `nexus`. In this document, we will use `/data/nexus`, but any other directory that follows the respective conventions will work as well.
-    Ensure that the file partition of the directory is big enough to store all the Nexus data including the binary artifacts uploaded to Nexus.
+[ACCORDION-BEGIN [Step 1: ](Create OS user)] ￼
 
-3. Log on as `nexus`.
+On the nexus machine, create an OS user `nexus`. Any other OS user that will run the Nexus application will work as well, but this is the name we will use in this document.
 
-4. Extract the downloaded Nexus installation archive into `/data/nexus`.
+[DONE]
+[ACCORDION-END]
 
-5. Go into the configuration directory (which should be something like `/data/nexus/nexus-<release>/conf/`) and open the file `nexus.properties`. 
-    In this document, we will keep the settings as they are, especially the default setting of the port Nexus is running with. But in your setup, you may choose whatever port is appropriate.
+[ACCORDION-BEGIN [Step 2: ](Create a Nexus installation directory)] ￼
 
-    ```
-    application-port=8081
-    ``` 
+Create a Nexus installation directory owned by `nexus`. In this document, we will use `/data/nexus`, but any other directory that follows the respective conventions will work as well.
+Ensure that the file partition of the directory is big enough to store all the Nexus data including the binary artifacts uploaded to Nexus.
 
-6. Switch to user `root` and create symbolic links as recommended by the Nexus installation guide:
+[DONE]
+[ACCORDION-END]
 
-    ```
-    cd /usr/local
-    ln -s /data/nexus/<the versioned nexus installation directory> nexus
-    ln -s /data/nexus/sonatype-work sonatype-work
-    ```
+[ACCORDION-BEGIN [Step 3: ](Log on)] ￼
 
-    If the directory `sonatype-work` does not yet exist, it will be created on startup of the Nexus application.
+Log on as `nexus`.
 
-7. Switch to user `nexus` again and start Nexus.
+[DONE]
+[ACCORDION-END]
 
-    ```
-    /usr/local/nexus/bin/nexus start
-    ```
+[ACCORDION-BEGIN [Step 4: ](Extract the download)] ￼
 
-8. Open the URL `http://<nexus host>:8081/nexus`. You should now be able to access Nexus and you should see some default repositories already configured, especially two of them named `Snapshots` and `Releases`.  
+Extract the downloaded Nexus installation archive into `/data/nexus`.
 
-    ![Repositories](artifact-repository-1.png)
-    
-    Also, there is a user `deployment` that has access permissions for uploading artifacts. The default user for administrator access is `admin/admin123`.
-    
-    ![Repositories](artifact-repository-2.png)
-    
-9. To make Nexus productively runnable and secure, please follow the post-install checklist of the official documentation.
- 
-    > [Nexus Post-Install Checklist](https://books.sonatype.com/nexus-book/reference/install-sect-repoman-post-install.html)  
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Open cofiguration file)] ￼
+
+Go into the configuration directory (which should be something like `/data/nexus/nexus-<release>/conf/`) and open the file `nexus.properties`.
+In this document, we will keep the settings as they are, especially the default setting of the port Nexus is running with. But in your setup, you may choose whatever port is appropriate.
+
+```
+application-port=8081
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Create sym links)] ￼
+
+Switch to user `root` and create symbolic links as recommended by the Nexus installation guide:
+
+```
+cd /usr/local
+ln -s /data/nexus/<the versioned nexus installation directory> nexus
+ln -s /data/nexus/sonatype-work sonatype-work
+```
+
+If the directory `sonatype-work` does not yet exist, it will be created on startup of the Nexus application.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Switch user)] ￼
+
+Switch to user `nexus` again and start Nexus.
+
+```
+/usr/local/nexus/bin/nexus start
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](View repositories)] ￼
+
+Open the URL `http://<nexus host>:8081/nexus`. You should now be able to access Nexus and you should see some default repositories already configured, especially two of them named `Snapshots` and `Releases`.  
+
+![Repositories](artifact-repository-1.png)
+
+Also, there is a user `deployment` that has access permissions for uploading artifacts. The default user for administrator access is `admin/admin123`.
+
+![Repositories](artifact-repository-2.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Follow post-install checklist)] ￼
+
+To make Nexus productively runnable and secure, please follow the post-install checklist of the official documentation.
+
+> [Nexus Post-Install Checklist](https://books.sonatype.com/nexus-book/reference/install-sect-repoman-post-install.html)  
+
+[DONE]
+[ACCORDION-END]
+
 
 
 > The content of this document is for guidance purposes only. No warranty or guarantees are provided.
 
 ## Next Steps
- 
-  - [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+
+- [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+- [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

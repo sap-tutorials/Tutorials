@@ -1,6 +1,7 @@
 ---
 title: Configure a SAPUI5 application from the project template
 description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the HANA XS OData service and the SAP Cloud for predictive services
+primary_tag: products>sap-cloud-platform
 tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 

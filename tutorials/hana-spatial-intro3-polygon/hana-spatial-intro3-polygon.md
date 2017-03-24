@@ -1,7 +1,8 @@
 ---
 title: Intro to SAP HANA Spatial: Polygons
 description: A polygon defines a region of space
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana,-express-edition ]
+primary_tag: products>sap-hana
+tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner

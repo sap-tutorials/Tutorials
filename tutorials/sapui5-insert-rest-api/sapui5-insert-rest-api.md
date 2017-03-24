@@ -1,15 +1,15 @@
 ---
 title: Add an External API call to your app (Slack)
 description: Call an external API and display the data in a table
+primary_tag: topic>sapui5
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Register your App with an External API](http://www.sap.com/developer/tutorials/sapui5-register-app-api.html)
+ - **Tutorials:** Register your App with an External API
 
 ## Next Steps
-- [Add paging to your External API call](http://www.sap.com/developer/tutorials/sapui5-paging-api.html)
-
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -270,4 +270,4 @@ $.ajax({
 [ACCORDION-END]
 
 ## Next Steps
- - Add paging to your External API call (Coming Soon)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
