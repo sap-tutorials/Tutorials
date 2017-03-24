@@ -1,8 +1,8 @@
 ---
 title: Setup PuTTY and WinSCP to access your HANA Express Edition on Google Cloud Platform
 description: This is an optional step in the tutorial series to setup a HANA Express Edition on Google Cloud Platform. This tutorial will guide you through the setup of two of the most popular clients to access your Ubuntu Virtual Machine on a Windows PC.
-primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana\,-express-edition 
+tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition  ]
 ---
 
 ## Prerequisites  

@@ -2,7 +2,7 @@
 title: Google App Engine Setup
 description: Setup Google App Engine
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, products>sap-hana\,-express-edition ]
+tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 
 ## Prerequisites  

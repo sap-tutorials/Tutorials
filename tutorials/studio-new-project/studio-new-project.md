@@ -2,7 +2,7 @@
 title: SAP HANA Studio, Setup a new project
 description: Setup a new project using the SAP HANA Studio
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-hana-studio ]
+tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition , products>sap-hana-studio ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

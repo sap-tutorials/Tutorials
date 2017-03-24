@@ -1,8 +1,8 @@
 ---
 title: Configure SAP HANA 2.0, express edition Security
 description: Your SAP HANA, express edition installation has several preconfigured security settings. Before using SAP HANA, express edition, complete these security tasks.
-primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana\,-express-edition 
+tags: [  tutorial>beginner, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

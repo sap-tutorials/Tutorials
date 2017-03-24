@@ -2,7 +2,7 @@
 title: SAP HANA Studio, Deploy Project
 description: Deploy your project to the SAP HANA repository
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-hana-studio ]
+tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition , products>sap-hana-studio ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner

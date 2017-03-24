@@ -2,7 +2,7 @@
 title: Modules within Node.js SAP HANA applications
 description: Working with Node.js modules
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition ]
+tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate

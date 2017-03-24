@@ -2,7 +2,7 @@
 title: Google App Engine Webapp
 description: Implement a full web application with port listening and continuous interaction with SAP HANA
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, products>sap-hana\,-express-edition ]
+tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 
 ## Prerequisites  

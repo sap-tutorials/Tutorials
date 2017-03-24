@@ -2,7 +2,7 @@
 title: Consume a Basic OData Service
 description: Consume a Basic OData Service within UI5 binding the service to a Table
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition ]
+tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate

@@ -2,7 +2,7 @@
 title: Use oData Metadata to dynamically create the columns
 description: Use oData Metadata to dynamically create the columns
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition ]
+tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate

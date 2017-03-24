@@ -2,7 +2,7 @@
 title: SAPUI5 User Interface
 description: Creating a SAPUI5 user interface in XSA
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition ]
+tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate

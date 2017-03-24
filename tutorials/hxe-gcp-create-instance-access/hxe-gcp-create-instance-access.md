@@ -1,8 +1,8 @@
 ---
 title: HANA Express Edition - Create and Access your Virtual Machine Instance on Google Cloud Platform
 description: This tutorial will show you how to setup a Virtual Machine on  Google Cloud Platform using Ubuntu to run HANA Express Edition. This is the first of six of tutorials and will guide you through installing the server and the XS Advanced applications.
-primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana\,-express-edition 
+tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana\,-express-edition  ]
 ---
 
 ## Prerequisites  

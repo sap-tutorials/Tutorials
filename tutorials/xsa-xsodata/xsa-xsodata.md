@@ -2,7 +2,7 @@
 title: Creating a Simple OData Service
 description: Creating a Simple OData Service
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>odata, products>sap-hana, products>sap-hana\,-express-edition  ]
+tags: [  tutorial>intermediate, topic>odata, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate

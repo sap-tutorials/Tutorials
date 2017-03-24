@@ -2,7 +2,7 @@
 title: Consume an OData Service with Create Option
 description: Consume an OData Service with Create Option
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition ]
+tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
