@@ -170,7 +170,7 @@ func loadData() {
 }
 ```
 
-After pressing **⌘+B** to build the application, the exclamation mark in front of the `loadData()` line should have disappeared. The loadData will be implemented in follow-up tutorial [Read data from the ES4 back-end and present it in the iOS app](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-retrieve-odata-service.html)
+After pressing **⌘+B** to build the application, the exclamation mark in front of the `loadData()` line should have disappeared. The `loadData` will be implemented in follow-up tutorial [Read data from the ES4 back-end and present it in the iOS app](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-retrieve-odata-service.html)
 
 ![Implement UITableViewController](image-6.png)
 

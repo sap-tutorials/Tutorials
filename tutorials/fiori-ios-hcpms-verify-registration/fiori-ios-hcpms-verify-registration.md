@@ -130,7 +130,7 @@ After pressing **⌘+B** to build the project, you shouldn't see any exclamation
 
 The `isRegistered` function will build a request performing a `GET` request from the service URL, containing the previously retrieved `appcid` and an basic authentication string in request headers.
 
-When request results in a HTTP status `200 (OK)`, the `appcid` is still valid. If there is another status, an error occurred, or the application ID is not valid anymore. If the `appcid` is not valid anymore, the service will return http status `404 (not found)` in that case, the appcid and the credentials that were stored in the iOS keychain are invalidated by deleting them from the keychain.
+When request results in a HTTP status `200 (OK)`, the `appcid` is still valid. If there is another status, an error occurred, or the application ID is not valid anymore. If the `appcid` is not valid anymore, the service will return http status `404 (not found)` in that case, the `appcid` and the credentials that were stored in the iOS keychain are invalidated by deleting them from the keychain.
 
 > Note: As it doesn't make sense for the application to start retrieving data if the connection ID is invalid, the function is run synchronously and will only return when the connection status has been determined. Do encapsulate the asynchronous `dataTask` into a synchronous function, a semaphore is used. To find out more about semaphores, please refer to the [Apple API reference](https://developer.apple.com/reference/dispatch/dispatchsemaphore).
 
