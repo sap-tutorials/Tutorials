@@ -1,5 +1,5 @@
 ---
-title: End-to-End Weather App Scenario Part 6
+title: Adding persistence to your app using JPA (Java Persistence API)
 description: Adding persistence to your app using JPA (Java Persistence API)
 primary_tag: topic>java
 tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]

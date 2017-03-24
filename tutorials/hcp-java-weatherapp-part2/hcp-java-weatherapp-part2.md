@@ -1,5 +1,5 @@
 ---
-title: End-to-End Weather App Scenario Part 2
+title: Adding a simple web page to a Java app
 description: Adding a simple web page to a Java app
 primary_tag: topic>java
 tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]

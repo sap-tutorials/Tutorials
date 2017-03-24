@@ -1,5 +1,5 @@
 ---
-title: End-to-End Weather App Scenario Part 9
+title: Implement a responsive UI using OpenUI5
 description: Implement a responsive UI using OpenUI5
 primary_tag: topic>java
 tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
