@@ -44,7 +44,7 @@ Setup your first project with SAP HANA Studio for the SAP HANA, express edition.
 
 	![new files](7.png)
 	
-	or simply the "File" - "New" option and manually type the name `.xsapp` and `.xsacess` being sure to incude the `.` first.
+	or simply the "File" - "New" option and manually type the name `.xsapp` and `.xsacess` being sure to include the `.` first.
 	
 	![new files](4.png)
 

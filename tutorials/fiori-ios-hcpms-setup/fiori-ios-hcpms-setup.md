@@ -1,6 +1,7 @@
 ---
 title: Enable SAP Cloud Platform mobile services
 description: Enable SAP Cloud Platform mobile services.
+primary_tag: operating_system>ios
 tags: [  tutorial>beginner, topic>mobile, operating_system>ios, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
