@@ -5,7 +5,7 @@ primary_tag: operating-system>ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner | Intermediate | Advanced
+ - **Proficiency:** Beginner
  - **ES4 Account:** You need to have an account on the ES4 system. Read [this document](https://archive.sap.com/documents/docs/DOC-40986) on how to get one.
  - **Tutorials:** [Administer application configuration and security](http://go.sap.com/developer/tutorials.html?fiori-ios-hcpms-application-setup)
 
