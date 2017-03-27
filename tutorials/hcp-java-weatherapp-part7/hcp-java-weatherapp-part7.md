@@ -1,5 +1,5 @@
 ---
-title: End-to-End Weather App Scenario Part 7
+title: Enhancing the persistence layer for multi-tenency
 description: Enhancing the persistence layer for multi-tenency
 primary_tag: topic>java
 tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]

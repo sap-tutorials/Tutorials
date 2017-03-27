@@ -1,5 +1,5 @@
 ---
-title: End-to-End Weather App Scenario Part 1
+title: Create a basic Java app in SAP Cloud Platform
 description: Create a basic Java app in SAP Cloud Platform
 primary_tag: topic>java
 tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]

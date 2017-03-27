@@ -1,5 +1,5 @@
 ---
-title: End-to-End Weather App Scenario Part 10
+title: Deploying your Java app to SAP Cloud Platform
 description: Deploying your Java app to SAP Cloud Platform
 primary_tag: topic>java
 tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]

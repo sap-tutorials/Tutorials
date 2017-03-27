@@ -1,5 +1,5 @@
 ---
-title: End-to-End Weather App Scenario Part 4
+title: Convert your app to a Maven-based project
 description: Convert your app to a Maven-based project
 primary_tag: topic>java
 tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]

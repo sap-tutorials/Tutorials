@@ -1,5 +1,5 @@
 ---
-title: End-to-End Weather App Scenario Part 3
+title: Adding authentication and authorization to your Java app
 description: Adding authentication and authorization to your Java app.
 primary_tag: topic>java
 tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]

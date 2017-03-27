@@ -72,7 +72,7 @@ This function will take two parameters.
 - The first parameter is the OData path that should be read. This parameter will be appended to the service root. To retrieve a list of traveling agencies, the OData path should be `/TravelAgencies`.
 - The second parameter should contain a call-back function that is called when the request was completed. In Swift terminology this is often called a `completion handler`.
 
-The function will create a GET request to the OData service using the service root and the path provided as a parameter. It will addd the `appcid` and user's credentials from the iOS keyring and then send in to the back-end service.
+The function will create a GET request to the OData service using the service root and the path provided as a parameter. It will add the `appcid` and user's credentials from the iOS keyring and then send in to the back-end service.
 
 When the request is complete, the completion handler is called containing either and error message of the response. This allows the caller to show the result of the read request.
 
@@ -123,7 +123,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 }
 ```
 
-With the definition of this functions, the `TableView` will retrieve data from the `tableData` array to fill the table. However, the `tableData` array is still empty. To fill the `tableData` array, the loadData function should be implemented, which is described in the next step.
+With the definition of this functions, the `TableView` will retrieve data from the `tableData` array to fill the table. However, the `tableData` array is still empty. To fill the `tableData` array, the `loadData` function should be implemented, which is described in the next step.
 
 [DONE]
 [ACCORDION-END]

@@ -99,7 +99,7 @@ private func deleteSecureObject(forKey key: String) {
 }
 ```
 
-These functions allow setting of key-value pairs into the iOS keychain, leveraging the KeychainWrapper that was copied into the project in the previous step. It is convenient to do this through helper functions instead of calling the `KeyChain` class directly. This allows you to very easily change the implementation of these function in case the need arises to e.g. switch to `SecureKeyValueStore`.
+These functions allow setting of key-value pairs into the iOS keychain, leveraging the `KeychainWrapper` that was copied into the project in the previous step. It is convenient to do this through helper functions instead of calling the `KeyChain` class directly. This allows you to very easily change the implementation of these function in case the need arises to e.g. switch to `SecureKeyValueStore`.
 
 [DONE]
 [ACCORDION-END]
