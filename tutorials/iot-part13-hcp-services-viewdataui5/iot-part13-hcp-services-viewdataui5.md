@@ -1,7 +1,7 @@
 ---
 title: Internet of Things (IoT) Viewing your Tessel data from IoT Services
 description: Now it is time to display your stored data from your Tessel device using SAPUI5 and SAP Web IDE
-tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
+tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
 ---
 
@@ -31,7 +31,7 @@ Now that you have data stored in the system its time to display that data within
 
     ![Folders](2.png)
 
-3. Now in the HCP Cockpit select "Connectivity" in the left sidebar menu and now choose the Destinations. Then click on "Import From File", and through your directory structure to the folder `iot-starterkit-master > src > apps > ui5 > consumption > destinations` and select the file `iotmms`.
+3. Now in the SAP Cloud Platform Cockpit select "Connectivity" in the left sidebar menu and now choose the Destinations. Then click on "Import From File", and through your directory structure to the folder `iot-starterkit-master > src > apps > ui5 > consumption > destinations` and select the file `iotmms`.
 
 	 ![Destinations](3.png)
 

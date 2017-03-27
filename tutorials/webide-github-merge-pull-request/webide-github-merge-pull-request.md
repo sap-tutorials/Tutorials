@@ -1,7 +1,7 @@
 ---
 title: Merging branches back into master branch in GitHub using Pull Requests
 description: Part 6 of 6, Collaborative Development Using GitHub and SAP Web IDE
-tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-hana-cloud-platform ]
+tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate

@@ -1,7 +1,7 @@
 ---
 title: SAP HANA XS Classic, Getting started with SAP HANA and connecting the Web Workbench
 description: Access your first data in a native SAP HANA Application.
-tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
+tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
 ---
 ## Prerequisites  
 [How to create an SAP HANA Developer Edition in the Cloud](http://www.sap.com/developer/tutorials/hana-setup-cloud.html)
@@ -123,6 +123,6 @@ You have completed the exercise! You are now able to:
 ### Optional - Getting Help
 If you need addition help resources beyond this document, we would suggest the following content:
 
-* The [Online Help](http://help.sap.com/hana/SAP_HANA_Developer_Guide_en.pdf)
+* The [Online Help](https://help.sap.com/hana/SAP_HANA_Developer_Guide_en.pdf)
 * The integrated help within SAP HANA Studio (content identical to the above mentioned online help)
 * SAPUI5 SDK (installed on your HANA Server) ```/sap/ui5/1/sdk/index.html#content/Overview.html```

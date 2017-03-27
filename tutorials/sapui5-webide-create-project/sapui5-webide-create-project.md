@@ -1,7 +1,7 @@
 ---
 title: SAP UI5 - Create an empty UI5 Web IDE project
 description: Start working with the Web IDE editor, and create a new empty UI5 Web IDE project
-tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
@@ -20,7 +20,7 @@ How to create a new, empty, SAP Web IDE project.
 **2-3 Minutes**.
 
 ---
-> **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+> **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 1.  Go to your SAP Web IDE.  
 

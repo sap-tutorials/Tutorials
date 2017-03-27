@@ -1,25 +1,25 @@
 ---
-title: Enable and configure the SAP HANA Cloud Platform, gamification service
-description: In SAP HANA Cloud Platform, configure the user roles and connectivity destinations necessary to use the gamification service.
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform ]
+title: Enable and configure the SAP Cloud Platform, gamification service
+description: In SAP Cloud Platform, configure the user roles and connectivity destinations necessary to use the gamification service.
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Sign up for an account on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Sign up for an account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
  - [Create the gamified HelpDesk application](http://www.sap.com/developer/tutorials/hcp-gamification-sample-application.html)
 
 ## Details
 ### You will learn  
-How to enable the gamification service in your SAP HANA Cloud Platform account as well as what roles and destination configurations are necessary to develop gamified applications.
+How to enable the gamification service in your SAP Cloud Platform account as well as what roles and destination configurations are necessary to develop gamified applications.
 
 ### Time to Complete
 **5 Min**.
 
 ---
 
-1. In your Web browser, open the cockpit of the [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com/cockpit). Then select **Services** from the left-hand navigation.
+1. In your Web browser, open the cockpit of the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit). Then select **Services** from the left-hand navigation.
 
     ![Selecting Services](1.png)
 

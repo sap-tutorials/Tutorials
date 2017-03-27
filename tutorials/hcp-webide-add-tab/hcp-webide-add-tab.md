@@ -1,7 +1,7 @@
 ---
 title: Add a tab and additional fields to an SAPUI5 app
 description: Learn how to add an additional tab, and more data fields to an SAPUI5 app.
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>intermediate ]
+tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>intermediate ]
 ---
 
 ## Prerequisites
@@ -28,7 +28,7 @@ When you created your initial app, SAP Web IDE template included one tab contain
 
 ### Change the icon for the Supplier tab
 
-1. Log into your HCP account and open SAP Web IDE in a Google Chrome browser.
+1. Log into your SAP Cloud Platform account and open SAP Web IDE in a Google Chrome browser.
 
     Open the `northwind` project folder and then the `view` folder. Right-click on `Detail.view.xml` and select **Open With > Layout Editor** (you must use Google Chrome to open the Layout Editor).
 
@@ -216,7 +216,7 @@ layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" title="{i18n>
 
     ![products tab](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_supplier_fields_4b.png)
 
-5. You can now re-deploy the app to HCP so you will be able to see your changes on your mobile device.
+5. You can now re-deploy the app to SAP Cloud Platform so you will be able to see your changes on your mobile device.
 
 ## Next Steps
  - [Calculate and display a new field in an SAPUI5 app](http://www.sap.com/developer/tutorials/hcp-webide-calculate-new-field.html)

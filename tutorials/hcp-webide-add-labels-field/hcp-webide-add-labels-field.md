@@ -1,12 +1,12 @@
 ---
 title: Add labels and a new field to your app
 description: Learn how to insert labels into the detail view of your app and add additional fields.
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>beginner ]
+tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, tutorial>beginner ]
 ---
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Deploy your mobile web app to SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+ - **Tutorials:** [Deploy your mobile web app to SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
 
 ## Next Steps
  - [Round the currency field using JavaScript](http://www.sap.com/developer/tutorials/hcp-webide-round-currency.html)

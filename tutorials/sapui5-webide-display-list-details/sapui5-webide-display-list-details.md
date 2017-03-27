@@ -1,7 +1,7 @@
 ---
 title: SAPUI5 - Display List Element Details
 description: Add details to a list, making it a multi-line list element
-tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
@@ -21,7 +21,7 @@ You will also add a Detail view and controller as well as alter the `View1` view
 **10-15 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 
 1.  Open the `webapp/view/View1.view.xml` file, and change the `<StandardListItem type="Active">` tag to read:
@@ -181,5 +181,5 @@ You will also add a Detail view and controller as well as alter the `View1` view
  - Part 7 is next: [Update Internationalization](http://www.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
 
 ## Additional Reading
-- [Routing with mandatory parameters](http://help.sap.com/saphelp_nw75/helpdata/en/f9/6d2522a5ca4382a274ae3c6d002ca0/content.htm)
+- [Routing with mandatory parameters](https://help.sap.com/saphelp_nw75/helpdata/en/f9/6d2522a5ca4382a274ae3c6d002ca0/content.htm)
 - [`<VBox>`](https://sapui5.hana.ondemand.com/docs/api/symbols/sap.m.VBox.html)

@@ -1,14 +1,14 @@
 ---
 title: Internet of Things (IoT) Viewing your Tessel data from IoT Services
 description: Part 9 of 10, Now it is time to display your stored data from your Tessel device
-tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
+tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**  [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
- - [Getting Started with the SAP HANA Cloud Platform Tools for Java](http://www.sap.com/developer/tutorials/hcp-java-eclipse-setup.html)
+ - [Getting Started with the SAP Cloud Platform Tools for Java](http://www.sap.com/developer/tutorials/hcp-java-eclipse-setup.html)
  - Note: JDK 1.6 or 1.7 are required. If you have a later version of Java installed, please install JDK 1.7 and temporarily change your `JAVA_HOME` environment variable to point to it.
 
 ## Next Steps
@@ -17,7 +17,7 @@ tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topi
 
 ## Details
 ### You will learn  
-Now that you have data stored in the system its time to display that data within an application. To do that you need to create a new application that can interface with data service and display the data our device has been generating. What you will find next are the steps necessary to do just that. You will need your Eclipse environment setup, basic knowledge in using Eclipse as well as GitHub set up and some basic Java programming skills. It will also assume that you have already connected your Eclipse environment to your HCP Trial account.
+Now that you have data stored in the system its time to display that data within an application. To do that you need to create a new application that can interface with data service and display the data our device has been generating. What you will find next are the steps necessary to do just that. You will need your Eclipse environment setup, basic knowledge in using Eclipse as well as GitHub set up and some basic Java programming skills. It will also assume that you have already connected your Eclipse environment to your SAP Cloud Platform Trial account.
 For more information on that please [see tutorial](http://www.sap.com/developer/tutorials/hcp-java-eclipse-setup.html)
 
 
@@ -120,17 +120,17 @@ For more information on that please [see tutorial](http://www.sap.com/developer/
 
 	For the goals, enter `clean install`
 
-11. Now jump back over to your HCP Trial account Cockpit and choose `Java Applications` then select the `Deploy Applications`.
+11. Now jump back over to your SAP Cloud Platform Trial account Cockpit and choose `Java Applications` then select the `Deploy Applications`.
 
 	![Deploy Applications](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/11.png)
 
 12. Find your `.war` file, give it a name and click deploy. When it has been loaded, click Done (not Start)
 
-13. Back inside of Eclipse, find the `iotmms` file in the destinations file. You are going to import that into the HCP. Modify the file so that it uses your account.
+13. Back inside of Eclipse, find the `iotmms` file in the destinations file. You are going to import that into the SAP Cloud Platform. Modify the file so that it uses your account.
 
     ![destination file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/12.png)
 
-14. Now in the HCP Cockpit select your new application under your `Java Applications` then choose the `Destinations`.
+14. Now in the SAP Cloud Platform Cockpit select your new application under your `Java Applications` then choose the `Destinations`.
 
     ![destinations](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/13.png)
 

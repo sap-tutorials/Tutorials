@@ -1,7 +1,7 @@
 ---
 title: End-to-End Weather App Scenario Part 7
 description: Enhancing the persistence layer for multi-tenency
-tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
+tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
 ---
 
 ## Prerequisites  

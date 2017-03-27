@@ -1,7 +1,7 @@
 ---
 title: Creating a GitHub organization and adding collaborators
 description: Part 1 of 6, Collaborative Development Using GitHub and SAP Web IDE
-tags: [ tutorial>beginner, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-hana-cloud-platform ]
+tags: [ tutorial>beginner, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
 
 ---
 

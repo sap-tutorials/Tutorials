@@ -1,7 +1,7 @@
 ---
-title: Compile and run a native Android app on SAP HANA Cloud Platform
-description: Clone a GitHub repository, import it into your project, run it on SAP HANA Cloud Platform mobile services for development and operations then review the main classes and methods.
-tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>sap-hana-cloud-platform ]
+title: Compile and run a native Android app on SAP Cloud Platform
+description: Clone a GitHub repository, import it into your project, run it on SAP Cloud Platform mobile services for development and operations then review the main classes and methods.
+tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>sap-cloud-platform ]
 
 ---
 
@@ -17,7 +17,7 @@ tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>
 ## Details
 ### You will learn  
 
-In this tutorial you will review and run a native Android version of the Northwind hybrid app (from [Mobile Groups 1-3](http://www.sap.com/developer/tutorial-navigator.beginner.html)) and run it on SAP HANA Cloud Platform mobile services for development and operations. You will use Android Studio and elements of the SAP Mobile Platform SDK to build the app, and access the same Northwind OData service used in the mobile web and hybrid tutorials. 
+In this tutorial you will review and run a native Android version of the Northwind hybrid app (from [Mobile Groups 1-3](http://www.sap.com/developer/tutorial-navigator.beginner.html)) and run it on SAP Cloud Platform mobile services for development and operations. You will use Android Studio and elements of the SAP Mobile Platform SDK to build the app, and access the same Northwind OData service used in the mobile web and hybrid tutorials. 
 
 If you have not completed the tutorials in [Mobile Groups 1-3](http://www.sap.com/developer/tutorial-navigator.beginner.html) – it would be best to work through those first to become familiar with the OData service used.
 
@@ -64,9 +64,9 @@ The source code is available in GitHub, and after a walk-through of the code in 
 
     Field Name         | Value
     :----------------- | :-------------
-    Server URL         | replace `s123456` with your HCP trial account ID
+    Server URL         | replace `s123456` with your SAP Cloud Platform trial account ID
     Login Credentials  | Change `s123456` to your account ID
-    Password           | enter your HCP trial account password
+    Password           | enter your SAP Cloud Platform trial account password
  
 
     Click **Next**
@@ -92,7 +92,7 @@ Now that the app is running, you will take a closer look at the MAF Logon implem
 
     ![MAF logon flow](mg6-4-2-01.png)
     
-    As you can tell from running the app, a number of customizations have already been made.  These can be found in the `MAFLogonActivity.onCreate()` method, along with a few strings extracted to the `strings.xml` file in `app/res/values`. The key methods that are implemented in the `MAFLogonActivity` are detailed in the [SAP online docs](http://help.sap.com/saphelp_smp3012sdk/helpdata/en/7c/09250170061014bb05d2c9cd16418c/content.htm).
+    As you can tell from running the app, a number of customizations have already been made.  These can be found in the `MAFLogonActivity.onCreate()` method, along with a few strings extracted to the `strings.xml` file in `app/res/values`. The key methods that are implemented in the `MAFLogonActivity` are detailed in the [SAP online docs](https://help.sap.com/saphelp_smp3012sdk/helpdata/en/7c/09250170061014bb05d2c9cd16418c/content.htm).
 
 2. The first obvious changes are that the splash screen and SAP Mobile Place on-boarding screen have been suppressed. There are a number of fields that can be shown or hidden on the Login details screen. In the tutorial, we show only the Server URL, Username and Password fields.
 
@@ -325,11 +325,11 @@ The `ProductDataSingleton` keeps the same two variable names and simply replaces
 ## Customizing the code
 1. To simplify the log on process, change the default server URL and username to match your account. Open the `app/src/main/res/values/strings.xml` file.  
 
-    - Replace `s123456` in the `SERVER_URL` line to match your HCP trial account number:
+    - Replace `s123456` in the `SERVER_URL` line to match your SAP Cloud Platform trial account number:
 
     `<string name="SERVER_URL">hcpms-s123456trial.hanatrial.ondemand.com</string>`
 
-    - Replace `s123456` in the `USERNAME` line to match your HCP trial account number:
+    - Replace `s123456` in the `USERNAME` line to match your SAP Cloud Platform trial account number:
 
     `<string name="SERVER_URL">s123456</string>`
 
@@ -380,8 +380,8 @@ Next time you run the app, watch the `logcat` tab for the logged output.
 
 A few key online help documents:
 
- - MAF Logon ([Android](http://help.sap.com/saphelp_smp3012sdk/helpdata/en/7c/091bd970061014ac2acc7e572c5d59/content.htm?frameset=/en/dc/74ea98916d4baf9780bbcd929c1a9f/frameset.htm&current_toc=/en/7c/01cda6700610149b10c2f2a86d335b/plain.htm&node_id=239&show_children=false)), ([iOS](http://help.sap.com/saphelp_smp3012sdk/helpdata/en/7c/05845970061014a4fba37e8d86fdfb/content.htm?frameset=/en/7c/091bd970061014ac2acc7e572c5d59/frameset.htm&current_toc=/en/7c/01cda6700610149b10c2f2a86d335b/plain.htm&node_id=12&show_children=false)) 
- - OData consumption: ([Android](http://help.sap.com/saphelp_smp3012sdk/helpdata/en/41/1d6619789c4b138069588bb13d3abb/content.htm?frameset=/en/dd/00cdc8192c40f2bcddd6374ec1f4e6/frameset.htm&current_toc=/en/7c/01cda6700610149b10c2f2a86d335b/plain.htm&node_id=279&show_children=false)), ([iOS](http://help.sap.com/saphelp_smp3012sdk/helpdata/en/dd/00cdc8192c40f2bcddd6374ec1f4e6/content.htm?frameset=/en/7c/05845970061014a4fba37e8d86fdfb/frameset.htm&current_toc=/en/7c/01cda6700610149b10c2f2a86d335b/plain.htm&node_id=59&show_children=false))
+ - MAF Logon ([Android](https://help.sap.com/saphelp_smp3012sdk/helpdata/en/7c/091bd970061014ac2acc7e572c5d59/content.htm?frameset=/en/dc/74ea98916d4baf9780bbcd929c1a9f/frameset.htm&current_toc=/en/7c/01cda6700610149b10c2f2a86d335b/plain.htm&node_id=239&show_children=false)), ([iOS](https://help.sap.com/saphelp_smp3012sdk/helpdata/en/7c/05845970061014a4fba37e8d86fdfb/content.htm?frameset=/en/7c/091bd970061014ac2acc7e572c5d59/frameset.htm&current_toc=/en/7c/01cda6700610149b10c2f2a86d335b/plain.htm&node_id=12&show_children=false)) 
+ - OData consumption: ([Android](https://help.sap.com/saphelp_smp3012sdk/helpdata/en/41/1d6619789c4b138069588bb13d3abb/content.htm?frameset=/en/dd/00cdc8192c40f2bcddd6374ec1f4e6/frameset.htm&current_toc=/en/7c/01cda6700610149b10c2f2a86d335b/plain.htm&node_id=279&show_children=false)), ([iOS](https://help.sap.com/saphelp_smp3012sdk/helpdata/en/dd/00cdc8192c40f2bcddd6374ec1f4e6/content.htm?frameset=/en/7c/05845970061014a4fba37e8d86fdfb/frameset.htm&current_toc=/en/7c/01cda6700610149b10c2f2a86d335b/plain.htm&node_id=59&show_children=false))
 
 
 ## Next Steps

@@ -1,7 +1,7 @@
 ---
 title: Deploying a Feature to SAP Cloud Platform
 description: In this tutorial, you will deploy your feature (including all the plugins inside) to SAP Cloud Platform. This enables other developers to load and use your plugin.
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-web-ide, products>sap-web-ide-plug-ins ]
 ---
 
 ## Prerequisites  

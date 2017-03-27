@@ -1,7 +1,7 @@
 ---
 title: SAP HANA XS Classic, Consume XSODATA in your SAP HANA XSC Application
 description: In this tutorial you will incorporate your XSODATA into your SAP HANA XSC application.
-tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
+tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
 ---
 
 ## Prerequisites  
@@ -67,10 +67,10 @@ Now to add in JavaScript code to to add the UI5 control. Add this code in right 
         
         //Define the columns and the control templates to be used
         var oColumn = new sap.ui.table.Column({
-        	label: new sap.ui.commons.Label({text: "Genre"}),
-        	template: new sap.ui.commons.TextView().bindProperty("text", "GENRE"),
-        	sortProperty: "GENRE",
-        	filterProperty: "GENRE",
+        	label: new sap.ui.commons.Label({text: "Category"}),
+        	template: new sap.ui.commons.TextView().bindProperty("text", "CATEGORY"),
+        	sortProperty: "CATEGORY",
+        	filterProperty: "CATEGORY",
         	width: "100px"
         });
         oTable.addColumn(oColumn);
@@ -78,9 +78,9 @@ Now to add in JavaScript code to to add the UI5 control. Add this code in right 
         //Define the columns and the control templates to be used
         var oColumn = new sap.ui.table.Column({
         	label: new sap.ui.commons.Label({text: "Name"}),
-        	template: new sap.ui.commons.TextView().bindProperty("text", "NAME"),
-        	sortProperty: "NAME",
-        	filterProperty: "NAME",
+        	template: new sap.ui.commons.TextView().bindProperty("text", "BOOKNAME"),
+        	sortProperty: "BOOKNAME",
+        	filterProperty: "BOOKNAME",
         	width: "100px"
         });
         oTable.addColumn(oColumn);
@@ -134,5 +134,5 @@ The application will open in your browser and greet you with My Library:
 [ACCORDION-END]
 
 ### Optional: Related Information
-[SAP HANA Development Information - Official Documentation](http://help.sap.com/hana_platform#section6)
+[SAP HANA Development Information - Official Documentation](https://help.sap.com/hana_platform#section6)
 

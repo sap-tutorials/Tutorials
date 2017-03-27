@@ -1,7 +1,7 @@
 ---
-title: SAP HCP predictive services, Enable, deploy and configure the SAP HCP predictive services
-description: Enable, deploy and configure the SAP HCP predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
+title: SAP Cloud Platform predictive services, Enable, deploy and configure the SAP Cloud Platform predictive services
+description: Enable, deploy and configure the SAP Cloud Platform predictive services
+tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
@@ -9,136 +9,163 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-cloud-platform ]
   - **Tutorials:** [Expose your predictive demo dataset as an OData service](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
 
 ## Next Steps
-  - [Install a REST client to interact with the HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
+  - [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
 
 ## Details
 ### You will learn
-  - How to enable, deploy and configure the HCP predictive services for your HCP Developer Account
+  - How to enable, deploy and configure the SAP Cloud Platform predictive services for your SAP Cloud Platform Developer Account
 
 ### Time to Complete
   **10 minutes**
 
----
+[ACCORDION-BEGIN [Step 1: ](Enable the Predictive Services)]
+Let's go back to the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
 
-1. Let's go back to the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
+Click on your ***SAP Cloud Platform Account name*** as highlighted on the below screenshot.
 
-    Click on your ***HCP Account*** identifier (which ends with *trial*) as highlighted on the below screenshot.
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
-    ![SAP HANA Cloud Platform Cockpit](1.png)
+![SAP Cloud Platform Cockpit](01.png)
 
-1. On the left side bar, click on **Services**.
+On the left side bar, click on **Services**.
 
-    Click on the **Predictive Services** tile
+Click on the **Predictive Services** tile
 
-    ![Services](2.png)
+![Services](02.png)
 
-1. By default, the ***Predictive Services*** are not enabled.
+By default, the ***Predictive Services*** are not enabled.
 
-    Click on **Enable**
+Click on **Enable**
 
-    ![Predictive Services](3.png)
+![Predictive Services](03.png)
 
-1. Once enable, you will need to deploy the ***Cloud for Predictive Analytics*** application.
+Once enable, you will need to deploy the ***Cloud for Predictive Analytics*** application.
+[DONE]
+[ACCORDION-END]
 
-    Click on **Go To Service**
+[ACCORDION-BEGIN [Step 2: ](Deploy the Cloud for Predictive Analytics application)]
+Click on **Go To Service**
 
-    ![Predictive Services](4.png)
+![Predictive Services](04.png)
 
-1. You might receive the following information message that you may need to upgrade your ***Cloud for Predictive Analytics*** services application (***C4PA***) which we will do next.
+You might receive the following information message, just click on **OK**
 
-    Click on **OK**
+![Cloud for Predictive Analytics](05.png)
 
-    ![Cloud for Predictive Analytics](5.png)
+Next, you can deploy the ***Cloud for Predictive Analytics*** services application.
 
-    Next, you can deploy the ***Cloud for Predictive Analytics*** services application.
+Click on the tile
 
-    Click on the tile
+![Cloud for Predictive Analytics](06.png)
 
-    ![Cloud for Predictive Analytics](5-1.png)
+In order to deploy the ***Cloud for Predictive Analytics*** services application in your ***Your Personal Developer Account***, you  need to provide your ***SAP Cloud Platform Account Password*** as highlighted on the screenshot.
 
-1. In order to deploy the ***Cloud for Predictive Analytics*** services application in your ***Your Personal Developer Account***, you just need to provide your ***HCP Account Password*** as highlighted on the screenshot. The other settings, like ***HCP Account User Name***, will be filled with your current information.
+The other settings, like ***SAP Cloud Platform Account User Name***, will be filled with your current information.
 
-    Click on **Deploy**
+Click on **Deploy**
 
-    ![Cloud for Predictive Analytics](6.png)
+![Cloud for Predictive Analytics](07.png)
 
-    Click on **OK** to confirm the deployment
+Click on **OK** to confirm the deployment
 
-    ![Cloud for Predictive Analytics](6-1.png)
+![Cloud for Predictive Analytics](08.png)
 
-1. Once deployed, you will be provided with the ***Application Dashboard*** URL.
+[DONE]
+[ACCORDION-END]
 
-    Click on the highlighted link
+[ACCORDION-BEGIN [Step 3: ](Configure the data source binding)]
 
-    ![Cloud for Predictive Analytics](7.png)
+Once deployed, you will be provided with the ***Application Dashboard*** URL.
 
-1. Now, you need to add you a data source binding to your trial HANA instance.
+Click on the highlighted link
 
-    On the left side bar, navigate in **Configuration**, then click on **Data Source Binding**
+![Cloud for Predictive Analytics](09.png)
 
-    ![Cloud for Predictive Analytics](8.png)
+Now, you need to add you a data source binding to your trial HANA MDC instance.
 
-1. The data source binding will allow the ***Cloud for Predictive Analytics*** to locate the data to be consumed by the service and execute the ***SAP HANA Automated Predictive Library*** (`APL`) on it, but also to persist a set on internal tables.
+On the left side bar, navigate in **Configuration**, then click on **Data Source Binding**
 
-    Click on **New Binding**
+![Cloud for Predictive Analytics](10.png)
 
-    ![New Binding](9.png)
+The data source binding will allow the ***Cloud for Predictive Analytics*** to locate the data to be consumed by the service and execute the ***SAP HANA Automated Predictive Library*** (`APL`) on it, but also to persist a set on internal tables.
 
-    Enter your ***HANA User Account*** login (`HCPPSTRIAL`) and password (`Welcome16`).
+Click on **New Binding**
 
-    Click on **Save**
+![New Binding](11.png)
 
-    ![New Binding](9-1.png)  
+It should propose you by default your HANA MDC instance (named `mdc`) we just created.
 
-1. Now, you need to configure security settings for your ***HCP Account***.
+Enter your ***HANA User Account*** login (`HCPPSTRIAL`) and password (`Welcome16`).
 
-    On the left side bar, navigate in **Security**, then click on **Roles**  
+Click on **Save**
 
-    ![Binding](10.png)
+![New Binding](12.png)  
+[DONE]
+[ACCORDION-END]
 
-1. Assign to the `C4PA-User` and `C4PA-Admin` role your ***HCP Account User Name*** (which was displayed during the ***Deploy*** step, should start with a lower case letter like "p", "s", "i", "c" or "d" depending on the type of SAP account you have) using the **Assign** button as highlighted on the screenshot.
-    
-	Make sure you don't include the "trial" at the end.
+[ACCORDION-BEGIN [Step 4: ](Assign the roles to your user)]
+Now, you need to configure security settings for your ***SAP Cloud Platform Account***.
 
-    ![Roles](11.png)
+On the left side bar, navigate in **Security**, then click on **Roles**  
 
-1. Now, you need to configure the authentication schemes for the application.
+![Binding](13.png)
 
-    On the left side bar, navigate in **Security**, then click on **Authentication Configuration**
+Assign to your ***SAP Cloud Platform Account User*** the `C4PA-User` and `C4PA-Admin` roles using the **Assign** button as highlighted on the screenshot.
 
-    Enable the **Custom** mode
+Your ***SAP Cloud Platform Account User Name*** was displayed during the ***Deploy*** step.
 
-    Check **User name and password** and **Client certificate** for the ***FORM*** authentication scheme
+And in case you are using a trial account, make sure you don't include the "trial" at the end.
 
-    Click on **Save**
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
-    ![Authentication](12.png)
+The `C4PA-User` will enable your user to consume the services and the `C4PA-Admin` to administer the `C4PA` application.
 
-    You receive next an alert that the changes will be applied on the next restart, which is what we will do next.
+![Roles](14.png)
 
-    ![Authentication](12-1.png)
+[DONE]
+[ACCORDION-END]
 
-1. Go back to the ***Overview*** page (via the left menu bar).
+[ACCORDION-BEGIN [Step 5: ](Modify the Authentication scheme)]
+Now, you need to modify the authentication schemes for the `C4PA` application.
 
-    Click on **Start**
+This will simplify the way we will build a SAPUI5 application that consumes these services.
 
-    ![Overview](13.png)
+On the left side bar, navigate in **Security**, then click on **Authentication Configuration**
 
-1. Once started, you will be provided with the **Application URLs** which will give us access to the online documentation and the administration panels.
+Enable the **Custom** mode
 
-    Click on the ***Application URLs*** link
+Check **User name and password** and **Client certificate** for the ***FORM*** authentication scheme
 
-    ![Overview](14.png)
+Click on **Save**
 
-    Later, you will be using the ***Application URLs***, so you should save the highlighted URL in a notepad as your ***C4PA Application URL***.
+![Authentication](15.png)
 
-    Click on the **Administration** tile
+Next, you will receive next an alert regarding the fact that the changes will be applied on the next restart, which is what we will do next.
 
-    ![Application](14-1.png)
+![Authentication](16.png)
 
-1. Status is green! Congrats, you have configured the HCP predictive services on your HCP trial account.
+Go back to the ***Overview*** page (via the left menu bar).
 
-    ![Application](15.png)    
+Click on **Start**
 
+![Overview](17.png)
+
+Once started, you will be provided with the **Application URLs** which will give us access to the online documentation and the administration panels.
+
+Click on the ***Application URLs*** link
+
+![Overview](18.png)
+
+Later, you will be using the ***Application URLs***, so you should save the highlighted URL in a notepad as your ***C4PA Application URL***.
+
+Click on the **Administration** tile
+
+![Application](19.png)
+
+Status is green! Congrats, you have configured the SAP Cloud Platform predictive services on your SAP Cloud Platform trial account.
+
+![Application](20.png)    
+[DONE]
+[ACCORDION-END]
 ## Next Steps
-  - [Install a REST client to interact with the HCP predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
+  - [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)

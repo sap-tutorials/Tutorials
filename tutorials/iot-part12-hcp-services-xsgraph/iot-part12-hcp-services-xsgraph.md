@@ -1,7 +1,7 @@
 ---
 title: Internet of Things (IoT) Viewing your Tessel data in a dynamic graph
 description: Now connect your IoT Services to an SAP HANA MDC instance and show the data using SAP HANA XS
-tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
+tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
 ---
 

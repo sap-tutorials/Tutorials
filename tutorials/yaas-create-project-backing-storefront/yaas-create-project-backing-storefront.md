@@ -12,7 +12,7 @@ tags: [  tutorial>intermediate, products>sap-hybris-as-a-service-on-sap-hana-clo
     - [Use Your Own YaaS Project to Back your YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
 
 ## Next Steps
- - [Deploy a Micro Service Built on YaaS on the SAP HCP](http://www.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
+ - [Deploy a Micro Service Built on YaaS on the SAP Cloud Platform](http://www.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
 
 ## Details
 ### You will learn  
@@ -62,7 +62,7 @@ In this tutorial you will use your own YaaS Project which you created earlier to
 In this tutorial, you modified your storefront to talk with your own YaaS Project in the backend rather than the default YaaS Project. This gave you complete control over the content of the Storefront, such as its products and banners, and much more that you have yet to explore.   
 
 ## Next Steps
- - [Deploy a Micro Service Built on YaaS on the SAP HCP](http://www.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
+ - [Deploy a Micro Service Built on YaaS on the SAP Cloud Platform](http://www.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
 
 ### Optional
 6. Create a category and assign your products to it.

@@ -1,7 +1,7 @@
 ---
 title: An Open Data Protocol (OData) primer for developers
 description: Learn how to explore the data in an OData service, and the functionality included in the service.
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>mobile, topic>odata, tutorial>intermediate ]
+tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>mobile, topic>odata, tutorial>intermediate ]
 ---
 
 ## Prerequisites
@@ -252,7 +252,7 @@ The two OData Service document URLs are:
 
 To build an app like what you have now, but with data from SAP Gateway you simply need to:
 
- - Create an HCP destination pointing to `https://sapes4.sapdevcenter.com` following an [earlier tutorial procedure](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+ - Create an SAP Cloud Platform destination pointing to `https://sapes4.sapdevcenter.com` following an [earlier tutorial procedure](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
  - Enter the remaining part of the URL in the Data Connection portion of the Web IDE template customization. For the two URLs above, they would be:
   - `/sap/opu/odata/IWBEP/GWDEMO`
   - `/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT`

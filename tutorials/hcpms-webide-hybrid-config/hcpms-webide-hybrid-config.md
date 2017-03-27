@@ -1,12 +1,12 @@
 ---
 title: Configure an SAP Web IDE project for hybrid builds
 description: Learn how to modify the Device Configurations settings of a mobile web project for a hybrid build
-tags: [products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, tutorial>intermediate ]
+tags: [products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, tutorial>intermediate ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Create an app in SAP HANA Cloud Platform mobile services](http://www.sap.com/developer/tutorials/hcpms-create-hybrid-app.html)
+ - **Tutorials:** [Create an app in SAP Cloud Platform mobile services](http://www.sap.com/developer/tutorials/hcpms-create-hybrid-app.html)
 
 
 ## Next Steps
@@ -52,7 +52,7 @@ In this tutorial, set the target device configurations in SAP Web IDE which will
 
 7. In the **Plugins** section, you specify the plugins the application will use.  For this exercise, do not check any of the standard Cordova plugins. Click the "Kapsel" tab, and select `Logon Manager`.
 
-8. After selecting Logon Manager, the plugins section will update to allow you to select the type of server the app will connect to. Click the radio button next to **HANA Cloud Platform mobile services** and ensure your **HCPms Host** URL is correct.
+8. After selecting Logon Manager, the plugins section will update to allow you to select the type of server the app will connect to. Click the radio button next to **SAP Cloud Platform mobile services** and ensure your **HCPms Host** URL is correct.
 
     > Note: Do not use the `hcpmsadmin-pxxxxxxxxx` form of the URL here.
 

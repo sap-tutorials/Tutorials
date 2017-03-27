@@ -285,7 +285,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 Get in the habit of making regular data backups to save your work.
 
-For information on data backup, recovery, and log file growth, see the [SAP HANA 2.0 Administration Guide](http://help.sap.com/saphelp_hanaplatform/helpdata/en/00/0ca1e3486640ef8b884cdf1a050fbb/frameset.htm).
+For information on data backup, recovery, and log file growth, see the [SAP HANA 2.0 Administration Guide](https://help.sap.com/saphelp_hanaplatform/helpdata/en/00/0ca1e3486640ef8b884cdf1a050fbb/frameset.htm).
 
 [ACCORDION-END]
 
@@ -322,7 +322,7 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
 2. Create a text file, copy the following content to it, replacing the variable <`tempPwd`> with your choice of a temporary administrator password for the first login, and save it as `firstTime.mtaext`:
 
-    >**Important**: Incorrect indentation causes errors. If you are copying code, make sure that `- name`, `properties` and `ADMIN_PASSWORD` are indented with spaces, not tab. There are two spaces in front of `- name:`. There are two spaces in front of `properties`. There are four spaces in front of `ADMIN_PASSWORD`.
+    >**Important**: Incorrect indentation causes errors. If you are copying code, make sure that `- name`, `properties` and `ADMIN_PASSWORD` are indented with spaces, not tab. There are two spaces in front of `- name:`. There are four spaces in front of `properties`. There are six  spaces in front of `ADMIN_PASSWORD`.
 
     ```bash
     _schema-version: "2.0.0"
@@ -331,8 +331,8 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
     modules:
       - name: eadesigner-backend
-      properties:
-         ADMIN_PASSWORD: <tempPwd>
+        properties:
+          ADMIN_PASSWORD: <tempPwd>
     ```    
 
     >**Note**: If you do not specify this temporary password file in your installation command, the installation will proceed normally, but you will not be able to log into SAP EA Designer. We recommend that your temporary password should contain 8 or more characters including a mix of numbers and uppercase and lowercase letters. Once installation is complete, you should delete this file.
@@ -379,7 +379,7 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
 ### (Optional) Install SAP HANA Interactive Education (SHINE) (`hxexsa.ova` Server + Applications Virtual Machine Only)
 
-To install SHINE for XSC, see the [SAP HANA Interactive Education (SHINE) guide](http://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_en.pdf).
+To install SHINE for XSC, see the [SAP HANA Interactive Education (SHINE) guide](https://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_en.pdf).
 
 Installation files for SHINE for **XSC** are located at:
 
@@ -387,9 +387,9 @@ Installation files for SHINE for **XSC** are located at:
 /usr/sap/HXE/home/HANA_EXPRESS_20/DATA_UNITS/HCO_HANA_SHINE
 ```
 
-To install SHINE for XSA, see the [SAP HANA Interactive Education (SHINE) for SAP HANA XS Advanced Model guide](http://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_for_SAP_HANA_XS_Advanced_Model_en.pdf).
+To install SHINE for XSA, see the [SAP HANA Interactive Education (SHINE) for SAP HANA XS Advanced Model guide](https://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_for_SAP_HANA_XS_Advanced_Model_en.pdf).
 
->**Note:** The HANA `JDBC` port number for SAP HANA, express edition is different than the default port number `30015` mentioned in [SAP HANA Interactive Education (SHINE) for SAP HANA XS Advanced Model guide](http://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_for_SAP_HANA_XS_Advanced_Model_en.pdf). You need to update the port parameter for the resources `CrossSchemaSys` and `CrossSchemaSysBi` in the `mtaext` file to `39013`.  
+>**Note:** The HANA `JDBC` port number for SAP HANA, express edition is different than the default port number `30015` mentioned in [SAP HANA Interactive Education (SHINE) for SAP HANA XS Advanced Model guide](https://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_for_SAP_HANA_XS_Advanced_Model_en.pdf). You need to update the port parameter for the resources `CrossSchemaSys` and `CrossSchemaSysBi` in the `mtaext` file to `39013`.  
 
 If you downloaded the Server + Applications Virtual Machine (`hxexsa.ova`) package, installation files for SHINE for **XSA** are located at:
 

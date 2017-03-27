@@ -1,14 +1,14 @@
 ---
 title: Build an app from an SAP Web IDE template
 description: Build an app using the SAP Web IDE template wizard
-tags: [ products>sap-hana-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>beginner ]
+tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>beginner ]
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Create a Destination on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+ - **Tutorials:** [Create a Destination on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
 
 ## Next Steps
- - [Deploy an app to SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+ - [Deploy an app to SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
 
 ## Details
 
@@ -21,13 +21,13 @@ You will be setting a few configurations, then filling out a few forms in this s
 **10 min**
 
 
-1. Go to <https://account.hanatrial.ondemand.com> and log in to your HCP cockpit.
+1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
 
-    ![HCP login page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_1.png)
+    ![SAP Cloud Platform login page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_1.png)
 
 2. To open SAP Web IDE, click on the **Services** tab in the navigation bar, scroll down and then click the **SAP Web IDE** tile to open the SAP Web IDE service page.
 
-    ![HCP Subscriptions page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_2.png)
+    ![SAP Cloud Platform Subscriptions page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_2.png)
 
 3. On the service page, click on the **Open SAP Web IDE** link to open Web IDE in a new browser tab.
 
@@ -63,20 +63,20 @@ You will be setting a few configurations, then filling out a few forms in this s
 
     ![Selecting the SAP Web IDE data source](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_10.png)
 
-11.  If you only have one *`WebIDEEnabled`* destination in HCP, it will be selected automatically. If you don't see the **Northwind OData Service** selected (the destination your created in the previous tutorial), click on the pull down menu and select it.
+11.  If you only have one **`WebIDEEnabled`** destination in SAP Cloud Platform, it will be selected automatically. If you don't see the **Northwind OData Service** selected (the destination your created in the previous tutorial), click on the pull down menu and select it.
 
-    > Note: If you don't see the the **Northwind OData Service** in the pull down menu, go back to your destination in the HCP cockpit and double-check the entries from the previous tutorial. If you make changes, reload Web IDE, then restart the procedure in this tutorial.
+    > Note: If you don't see the the **Northwind OData Service** in the pull down menu, go back to your destination in the SAP Cloud Platform cockpit and double-check the entries from the previous tutorial. If you make changes, reload Web IDE, then restart the procedure in this tutorial.
 
     ![Data connection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_11.png)
 
-12. After selecting the Northwind OData Service entry, enter the relative path (see below) to the OData service you will use in the field under the drop-down list-box (where it says "Paste URL here"). Be sure not to include any trailing space characters. 
+12. After selecting the Northwind OData Service entry, enter the relative path (see below) to the OData service you will use in the field under the drop-down list-box (where it says "Paste URL here"). Be sure not to include any trailing space characters.
 
-    The relative path to enter is: 
-    
+    The relative path to enter is:
+
     ```
     /V3/Northwind/Northwind.svc
     ```
-    
+
     The URL you entered for your destination plus the relative path you enter here points to the OData Service you will use for your app.
 
     ![Using the SAP Web IDE service pulldown menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_12.png)
@@ -147,4 +147,4 @@ You will be setting a few configurations, then filling out a few forms in this s
     ![Finished mobile web app running in preview mode](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_21.png)
 
 ## Next Steps
- - [Deploy an app to SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+ - [Deploy an app to SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)

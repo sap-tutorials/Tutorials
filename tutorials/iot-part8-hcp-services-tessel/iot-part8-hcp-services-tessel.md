@@ -1,7 +1,7 @@
 ---
 title: Internet of Things (IoT) Connecting your Tessel to IoT Services
 description: Part 8 of 10, Now connect your Tessel device to the IoT Services for sending data
-tags: [products>sap-hana, products>sap-hana-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
+tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
 ---
 
@@ -121,12 +121,12 @@ Now its time to insert data from your Tessel to SAP IoT Services.
     tessel run climate.js
     ```
 
-    ![Posting to HCP](p8_7.png)
+    ![Posting to SAP Cloud Platform](p8_7.png)
 
 
 6. Return to the **IoT Services Cockpit**, click the **View messages received, use sample clients, etc.** tile, click the **View stored messages** tile, then select your **table**. You will see the latest messages showing up there. You can also click the **REFRESH** button as your script runs.
 
-    ![Viewing new values in HCP](p8_8.png)
+    ![Viewing new values in SAP Cloud Platform](p8_8.png)
 
 ## Next Steps
   - [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)

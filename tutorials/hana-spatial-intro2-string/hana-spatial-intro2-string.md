@@ -128,7 +128,7 @@ You will continue learning the basics of spatial processing now with the ___stri
     ![GeometryType](spatial0211.jpg)
 
 ### Optional
- - Check SAP HANA Spatial Reference at http://help.sap.com/hana_platform
+ - Check SAP HANA Spatial Reference at https://help.sap.com/hana_platform
 
 ## Next Steps
  - [Intro to SAP HANA Spatial: Polygons](http://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)

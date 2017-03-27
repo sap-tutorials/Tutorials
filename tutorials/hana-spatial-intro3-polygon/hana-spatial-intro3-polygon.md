@@ -116,7 +116,7 @@ You will continue learning basics of spatial processing now with ___polygons___ 
     ![Circle distance](spatial0308.jpg)
 
 ### Optional
-- See the SAP HANA Spatial Reference at http://help.sap.com/hana_platform for the complete list of objects and methods
+- See the SAP HANA Spatial Reference at https://help.sap.com/hana_platform for the complete list of objects and methods
 
 ## Next Steps
  - [Intro to SAP HANA Spatial: Tables with spatial columns](http://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)

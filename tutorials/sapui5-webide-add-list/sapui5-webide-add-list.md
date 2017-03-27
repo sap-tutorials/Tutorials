@@ -1,7 +1,7 @@
 ---
 title: SAPUI5 - Add a list to the view
 description: Add a list view to a UI5 page
-tags: [ tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
+tags: [ tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner 
@@ -19,7 +19,7 @@ Add a list to first XML view (`View1.xml`). The list will display data from the 
 **15 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 
 1.  Open the file `webapp/view/View1.view.xml` in your editor.  

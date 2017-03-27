@@ -19,12 +19,9 @@ Cmehil
 CodeJam
 data-center
 DataFrame
+DataFrames
 DataSource
 datasources
-dbspace
-dbspaces
-Dbspace
-Dbspaces
 DesignStudio
 DevOps
 EclipseLink
@@ -69,6 +66,7 @@ Northwind
 npm
 OAuth
 OData
+OLAP
 openSSL
 openSUSE
 OpenUI5
@@ -116,6 +114,7 @@ truststore
 tvOS
 UDFs
 UI5
+unpartitioned
 UTC
 util
 VMware

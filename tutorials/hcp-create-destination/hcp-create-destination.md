@@ -1,19 +1,19 @@
 ---
-title: Create a Destination on HANA Cloud Platform
-description: Create a Destination to allow HANA Cloud Platform to read/write data
-tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>mobile, topic>odata, tutorial>beginner ]
+title: Create a Destination on SAP Cloud Platform
+description: Create a Destination to allow SAP Cloud Platform to read/write data
+tags: [ products>sap-cloud-platform, topic>cloud, topic>mobile, topic>odata, tutorial>beginner ]
 ---
 
 ## Prerequisites
  - **Proficiency:** Beginner
  - **Tutorials:**  This tutorial is used in several different series.  Choose the series to move backward:
-     - **Mobile Application Series**  [Sign up for an account on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
-     - **SAPUI5 with Web IDE Series** [Create an empty UI5 Web IDE project](http://www.sap.com/developer/tutorials/sapui5-webide-create-project.html)
+     - **Mobile Application Series**  [Sign up for an account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+     - **SAPUI5 with Web IDE Series** [Create an empty UI5 Web IDE project](https://www.sap.com/developer/tutorials/sapui5-webide-create-project.html)
 
 ## Next Steps
 - This tutorial is used in several different series.  Choose the correct series below to move forward.
     - **Mobile Application series** [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
-    - **SAPUI5 with Web IDE Series** [Set up the `datasource` in the application](http://www.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
+    - **SAPUI5 with Web IDE Series** [Set up the `datasource` in the application](https://www.sap.com/developer/tutorials/sapui5-webide-setup-datasource.html)
 
 ## Details
 
@@ -22,20 +22,20 @@ Destinations are used for the outbound communication of your application to a re
 
 The data source you will use in this tutorial series is called "Northwind", which is a publicly accessible OData source hosted by <http://www.odata.org>:
 
-The data source URL is <http://services.odata.org/V2/Northwind/Northwind.svc/>
+Northwind comes in several versions.  The tutorials currently use either V2 (<http://services.odata.org/V2/Northwind/Northwind.svc/>) or V3 (<http://services.odata.org/V3/Northwind/Northwind.svc/>).  To support both versions, and other versions that may be added later, you will create a generic connection to the Northwind service.  The exact path - and exact version - will be configured in later tutorials.
 
 ### Time to Complete
-**< 5 min**
+**less than 5 minutes**
 
 ---
 
-1. Go to <https://account.hanatrial.ondemand.com> and log in to your HCP cockpit.
+1. Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
 
-    ![HCP log in page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_1.png)
+    ![SAP Cloud Platform log in page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_1.png)
 
-2. In the left-hand navigation bar, select **Connectivity > Destinations** then click on **New Destination** to open a new destination configuration form.
+2. Select the **Destinations** tab on the left side, and then click on **New Destination** to open a new destination configuration form.
 
-    ![HCP Destination](mob1-1_2.png)
+    ![Web IDE Destination tab](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_2.png)
 
 3. Enter/confirm all fields in the Destination configuration section with the information below.
 
@@ -48,6 +48,8 @@ The data source URL is <http://services.odata.org/V2/Northwind/Northwind.svc/>
     Proxy Type     | `Internet`
     Authentication | `NoAuthentication`
 
+    > Do **not** use the entire path for the URL.  The URL should only be `http://services.odata.org`
+
     Add three **Additional Properties** fields by clicking on the **New Property** button once for each property.
 
     Field Name       | Value
@@ -56,7 +58,7 @@ The data source URL is <http://services.odata.org/V2/Northwind/Northwind.svc/>
     `WebIDESystem`   | `Northwind_Data`
     `WebIDEUsage`    | `odata_gen`
 
-    ![Completed HCP destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_3.png)
+    ![Completed SAP Cloud Platform destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_3.png)
 
 4. Click **Save**, and that's it.  You are ready for the next step in your tutorial.
 
@@ -64,4 +66,4 @@ The data source URL is <http://services.odata.org/V2/Northwind/Northwind.svc/>
 Several of the tutorial series create a Northwind destination.  To return to your tutorial series, pick the series from the list below:
 
 - [**Mobile Application series** - Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
-- [**SAPUI5 with Web IDE series** - Create an empty UI5 Web IDE project](http://www.sap.com/developer/tutorials/sapui5-webide-create-project.html)
+- [**SAPUI5 with Web IDE series** - Create an empty UI5 Web IDE project](https://www.sap.com/developer/tutorials/sapui5-webide-create-project.html)

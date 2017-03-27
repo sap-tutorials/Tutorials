@@ -87,7 +87,7 @@ More spatial reference systems can be manually created or loaded into the SAP HA
 [ACCORDION-END]
 
 ### Optional
-- Read SAP HANA Spatial Reference for more details at http://help.sap.com/hana_platform
+- Read SAP HANA Spatial Reference for more details at https://help.sap.com/hana_platform
 
 ## Next Steps
 - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or search in the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

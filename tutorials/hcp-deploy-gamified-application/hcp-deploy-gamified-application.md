@@ -1,7 +1,7 @@
 ---
-title: Deploy gamified HelpDesk application to SAP HANA Cloud Platform
-description: Build HelpDesk application in Eclipse then perform a standalone deployment to your SAP HANA Cloud Platform account.
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform ]
+title: Deploy gamified HelpDesk application to SAP Cloud Platform
+description: Build HelpDesk application in Eclipse then perform a standalone deployment to your SAP Cloud Platform account.
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -10,11 +10,11 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform ]
      - Configure Eclipse environment for Maven projects (Coming soon)
 
 ## Next Steps
- - [Customize game mechanics of HelpDesk application in SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-customize-gamified-application.html)
+ - [Customize game mechanics of HelpDesk application in SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-customize-gamified-application.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will retrieve the gamified HelpDesk application from GitHub, import it to Eclipse and deploy it to the SAP HANA Cloud Platform. From within the cloud platform, you will then configure the authorization settings for your gamified application by assigning appropriate roles.
+In this tutorial, you will retrieve the gamified HelpDesk application from GitHub, import it to Eclipse and deploy it to the SAP Cloud Platform. From within the cloud platform, you will then configure the authorization settings for your gamified application by assigning appropriate roles.
 
 ### Time to Complete
 **15 Min**.
@@ -44,7 +44,7 @@ In this tutorial, you will retrieve the gamified HelpDesk application from GitHu
 
     ![Set Up Java Web Runtime Environment](5.png)
 
-    - Select **Use Java Web SDK from the following location**, confirm or browse to the location of the HANA Cloud Platform SDK, and choose **Finish**
+    - Select **Use Java Web SDK from the following location**, confirm or browse to the location of the SAP Cloud Platform SDK, and choose **Finish**
     - In the **Preferences** window, choose **OK**
 
     ![Set Up Java Web Runtime Environment](6.png)
@@ -53,7 +53,7 @@ In this tutorial, you will retrieve the gamified HelpDesk application from GitHu
 
     ![Run Project on Server](7.png)
 
-8. Select **SAP** > **SAP HANA Cloud Platform** as the server, verify `hanatrial.ondemand.com` as the **Landscape host**, and choose **Next**.
+8. Select **SAP** > **SAP Cloud Platform** as the server, verify `hanatrial.ondemand.com` as the **Landscape host**, and choose **Next**.
 
     ![Define Server](9.png)
 
@@ -61,7 +61,7 @@ In this tutorial, you will retrieve the gamified HelpDesk application from GitHu
 
     ![Name Application on Server](10.png)
 
-10. In your Web browser, open the cockpit of the [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com/cockpit). Select **Java Applications** from the left-hand navigation and you should see the **`helpdesk`** application listed. Once the application is fully started, click on the name of the application.
+10. In your Web browser, open the cockpit of the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit). Select **Java Applications** from the left-hand navigation and you should see the **`helpdesk`** application listed. Once the application is fully started, click on the name of the application.
 
     ![Select HelpDesk Application](11.png)
 
@@ -78,4 +78,4 @@ In this tutorial, you will retrieve the gamified HelpDesk application from GitHu
     ![Successfully Launched HelpDesk Application](14.png)
 
 ## Next Steps
- - [Customize game mechanics of HelpDesk application in SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-customize-gamified-application.html)
+ - [Customize game mechanics of HelpDesk application in SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-customize-gamified-application.html)

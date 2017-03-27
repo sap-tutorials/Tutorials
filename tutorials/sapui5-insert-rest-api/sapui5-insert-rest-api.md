@@ -1,7 +1,7 @@
 ---
 title: Add an External API call to your app (Slack)
 description: Call an external API and display the data in a table
-tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -65,7 +65,7 @@ If you created a new application, your `neo-app.json` should match the image bel
 
 **SAVE** your changes.
 
-> If you have not refreshed your Web IDE since you added the new Slack destination to your HCP trial account, please do so now. Web IDE needs to be refreshed before being able to run your application with a new destination.
+> If you have not refreshed your Web IDE since you added the new Slack destination to your SAP Cloud Platform trial account, please do so now. Web IDE needs to be refreshed before being able to run your application with a new destination.
 
 [DONE]
 [ACCORDION-END]

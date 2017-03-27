@@ -1,25 +1,25 @@
 ---
-title: Customize game mechanics of HelpDesk application in SAP HANA Cloud Platform
-description: Manually customize the game mechanics of the gamified HelpDesk application using the Gamification Workbench on the SAP HANA Cloud Platform.
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform ]
+title: Customize game mechanics of HelpDesk application in SAP Cloud Platform
+description: Manually customize the game mechanics of the gamified HelpDesk application using the Gamification Workbench on the SAP Cloud Platform.
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Deploy gamified HelpDesk application to SAP HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)
+ - **Tutorials:** [Deploy gamified HelpDesk application to SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will tweak the game mechanics of the HelpDesk application manually using the Gamification Workbench on the SAP HANA Cloud Platform. You will increase the number of experience points the user receives for solving sample tickets and increase the total points for solving sample critical tickets. As a result of that change, you will also have to adapt the game levels.
+In this tutorial, you will tweak the game mechanics of the HelpDesk application manually using the Gamification Workbench on the SAP Cloud Platform. You will increase the number of experience points the user receives for solving sample tickets and increase the total points for solving sample critical tickets. As a result of that change, you will also have to adapt the game levels.
 
 ### Time to Complete
 **20 Min**.
 
 ---
 
-1. In your Web browser, open the cockpit of the [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com/cockpit). Then select **Services** from the left-hand navigation and click the **Gamification Service**.
+1. In your Web browser, open the cockpit of the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit). Then select **Services** from the left-hand navigation and click the **Gamification Service**.
 
     ![Open Gamification Service](1.png)
 

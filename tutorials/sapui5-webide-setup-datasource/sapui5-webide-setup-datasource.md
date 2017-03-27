@@ -1,7 +1,7 @@
 ---
 title: SAPUI5 - Setup the DataSource in the local application
 description: Once the datasource has been defined, configure the local application to use the data.
-tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner 
@@ -12,13 +12,13 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-p
 
 ## Details
 ### You will learn  
-Now that you have set up a Destination in the HANA Cloud Platform (HCP) cockpit, you will connect that destination to your local application.  
+Now that you have set up a Destination in the SAP Cloud Platform cockpit, you will connect that destination to your local application.  
 
 ### Time to Complete
 **15 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 ---
 There are three steps to connect the OData service to your application.  
@@ -31,7 +31,7 @@ There are three steps to connect the OData service to your application.
 ---
 ### Define the Data source
 
-In a [previous tutorial](http://www.sap.com/developer/tutorials/hcp-create-destination.html) the OData test service called "Northwind" was set up for all HANA Cloud Platform applicaitons.  Next, this specific applicaiton must connect to that "Destination".  
+In a [previous tutorial](http://www.sap.com/developer/tutorials/hcp-create-destination.html) the OData test service called "Northwind" was set up for all SAP Cloud Platform applicaitons.  Next, this specific applicaiton must connect to that "Destination".  
 
 
 1.  Open the `webapp/mainfest.json` file, by double clicking on the file.

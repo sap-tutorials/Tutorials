@@ -1,29 +1,29 @@
 ---
-title: Create a native app in SAP HANA Cloud Platform mobile service for development and operations
-description: Learn how to create a native app definition in SAP HANA Cloud Platform mobile service for development and operations
-tags: [  tutorial>intermediate, topic>cloud, topic>mobile, products>sap-hana-cloud-platform ]
+title: Create a native app in SAP Cloud Platform mobile service for development and operations
+description: Learn how to create a native app definition in SAP Cloud Platform mobile service for development and operations
+tags: [  tutorial>intermediate, topic>cloud, topic>mobile, products>sap-cloud-platform ]
 
 ---
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:** 
-   - [Sign up for an account on HANA Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
-   - [Enable SAP HANA Cloud Platform mobile services for development and operations](http://www.sap.com/developer/tutorials/hcpms-enable-mobile-services.html)
+   - [Sign up for an account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+   - [Enable SAP Cloud Platform mobile services for development and operations](http://www.sap.com/developer/tutorials/hcpms-enable-mobile-services.html)
 
 ## Next Steps
  - [Create a basic native Android master-detail app](http://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html)
 
 ## Details
 ### You will learn  
-Creating an app in SAP HANA Cloud Platform mobile service for development and operations will provide a server URL that a native mobile app will use for logon, registration and data access.
+Creating an app in SAP Cloud Platform mobile service for development and operations will provide a server URL that a native mobile app will use for logon, registration and data access.
 
 ### Time to Complete
 **5 Min**.
 
 ---
 
-1. Log on to your [HANA Cloud Platform account](https://account.hanatrial.ondemand.com/cockpit), click on the **Services** tab, click on  the **Development & Operations** tile. On the **Development & Operations** status page, click the **Go to Service** link to open the Development & Operations cockpit.
+1. Log on to your [SAP Cloud Platform account](https://account.hanatrial.ondemand.com/cockpit), click on the **Services** tab, click on  the **Development & Operations** tile. On the **Development & Operations** status page, click the **Go to Service** link to open the Development & Operations cockpit.
 
 2. Click on the **Applications** tile or on **Applications** in the left navigation bar.
 

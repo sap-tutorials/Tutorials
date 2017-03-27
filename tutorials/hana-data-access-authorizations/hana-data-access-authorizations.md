@@ -1,7 +1,7 @@
 ---
 title: SAP HANA XS Classic, Access your first data in a SAP HANA XSC Application
 description: In this tutorial you will make your very first steps to access data in SAP HANA. This tutorial will write a SAP HANA XSC application, using the Web-based Development Workbench.
-tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
+tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
 ---
 
 ## Prerequisites  
@@ -232,5 +232,5 @@ Congratulations: You have just accessed your first data on SAP HANA!
 [ACCORDION-END]
 
 ### Optional: Related Information
-[SAP HANA Development Information - Official Documentation](http://help.sap.com/hana_platform#section6)
+[SAP HANA Development Information - Official Documentation](https://help.sap.com/hana_platform#section6)
 
