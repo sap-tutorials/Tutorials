@@ -2,6 +2,7 @@
 
 title: Continuous Integration (CI) Best Practices with SAP: Java Web on SAP Cloud Platform with CI on Cloud
 description: Part 5.2: Configuring cloud-based CI system for Maven-based Java Web on SAP Cloud Platform project.
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ---
@@ -21,7 +22,7 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 This section continues what is discussed in [Generic Project (Pure Java) Using Cloud Services](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html), applying the approach using GitHub and Travis CI as cloud services to sample code that is delivered as part of the SDK installation for Java Web development. The sample discussed here contains some web applications that are built using Maven and share a common parent `pom.xml` file. Documentation and resources for Java web application development include the following:
 
 > Documentation: https://help.hana.ondemand.com/help/frameset.htm?e66f3eecbb5710148397a19b46c4979b.html  
-> Tutorial: http://www.sap.com/developer/tutorials/hcp-java-basic-app.html
+> Tutorial: https://hcp.sap.com/developers/TutorialCatalog/jav100_2_java_hello_world.html  
 > SDK installation guide: https://help.hana.ondemand.com/help/frameset.htm?7613843c711e1014839a8273b0e91070.html  
 > SDK Download: https://tools.hana.ondemand.com/#cloud
 
@@ -40,13 +41,13 @@ Follow the instructions for creating the GitHub project and a Travis CI build as
 > SDK installation guide: https://help.hana.ondemand.com/help/frameset.htm?7613843c711e1014839a8273b0e91070.html  
 > Downloads: https://tools.hana.ondemand.com/#cloud
 
-This example uses the project name `java_hcp_project`.
+This example uses the project name `java_sapcp_project`.
 
 #### Procedure
 
-1. In GitHub, create a new repository named `java_hcp_project` and clone it to your local machine as described in [Generic Project (Pure Java) Using Cloud Services](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html), steps 1-4.
+1. In GitHub, create a new repository named `java_sapcp_project` and clone it to your local machine as described in [Generic Project (Pure Java) Using Cloud Services](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html), steps 1-4.
 
-2. The `samples` folder in the SAP Cloud Platform SDK contains a Maven parent project that includes a couple of modules. Copy the sources of this Maven project into your cloned `java_hcp_project` repository root folder. For this example, we are going to use only the `explore-ui5` module; use comments in the parent `pom.xml` file to not include the other modules in the Gerrit project:
+2. The `samples` folder in the SAP Cloud Platform SDK contains a Maven parent project that includes a couple of modules. Copy the sources of this Maven project into your cloned `java_sapcp_project` repository root folder. For this example, we are going to use only the `explore-ui5` module; use comments in the parent `pom.xml` file to not include the other modules in the Gerrit project:
 
     ```
     <modules>
@@ -197,7 +198,7 @@ Travis CI enables you to customize the build, that is, to define environment var
     <sap.cloud.application>${env.TRAVIS_BRANCH}${env.TRAVIS_BUILD_NUMBER}</sap.cloud.application>
     ```
 
-    The application name is generated from the branch and the build number. Any build produces a unique application name that is also well-categorized by branch. Ensure that the resulting name adheres to the application naming rules for HCP.  
+    The application name is generated from the branch and the build number. Any build produces a unique application name that is also well-categorized by branch. Ensure that the resulting name adheres to the application naming rules for SAP Cloud Platform.  
 
     > Rules for deployment: https://help.hana.ondemand.com/help/frameset.htm?937db4fa204c456f9b7820f83bc87118.html
 

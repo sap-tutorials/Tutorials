@@ -2,6 +2,7 @@
 
 title: Continuous Integration (CI) Best Practices with SAP: Introduction and Navigator
 description: Part 1: Introduction and Navigation through the Best Practices Guide
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ---
@@ -35,7 +36,7 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 An efficient software development process is vital for success in building business applications on SAP cloud or on-premise platforms.
 
-This guide discusses some basic principles for software development that are derived from the process definitions for Continuous Integration (CI) and Continuous Delivery (CD). We provide best practices to support establishing your application development processes especially for SAP Cloud Platform but also for other SAP technologies.
+This guide discusses some basic principles for software development that are derived from the process definitions for Continuous Integration (CI) and Continuous Delivery (CD). We provide best practices to support establishing your application development processes especially for SAP Cloud Platform (SAP Cloud Platform) but also for other SAP technologies.
 
 Our customers have requested in-depth guidance for an end-to-end CI process. SAP offers several tools to address single aspects, such as the SAP Web IDE in SAP Cloud Platform. The goal of this guide is to provide a "big picture" on CI or CD processes and to give showcases how to set them up using widely adopted complementary tools. The choice of tools should be considered as examples. Other tools fulfilling the same purpose will work as well.
 

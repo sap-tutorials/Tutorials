@@ -2,6 +2,7 @@
 
 title: CI Best Practices Guide: SAPUI5/SAP Fiori on ABAP Front-End Server
 description: Part 4.4: Implementing the CI pipeline to build an SAPUI5/SAP Fiori application on ABAP Front-End Server.
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ---
@@ -1059,6 +1060,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-cssmin");
+    grunt.loadNpmTasks("grunt-encoding");
     grunt.loadNpmTasks("grunt-zip");
     grunt.loadNpmTasks("grunt-openui5");
     grunt.loadNpmTasks("grunt-nexus-deployer");

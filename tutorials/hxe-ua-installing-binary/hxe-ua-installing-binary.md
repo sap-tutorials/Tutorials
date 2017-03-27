@@ -1,7 +1,8 @@
 ---
 title: Installing SAP HANA 2.0, express edition (Binary Installer Method)
 description: You may install SAP HANA 2.0, express edition on a Linux server using the HANA Database Lifecycle Manager (hdblcm) tool.
-tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana\,-express-edition 
+tags: [  tutorial>beginner, products>sap-hana\,-express-edition  ]
 ---
 SAP HANA 2.0, express edition is for Linux machines running specific installations, provided your host machine meets the storage and memory prerequisites. Choose this installation method if you want a custom setup. This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/eccafc12-8a7c-0010-82c7-eda71af511fa.html).
 
@@ -11,9 +12,6 @@ SAP HANA 2.0, express edition is for Linux machines running specific installatio
 
 >**Tip:**
 > If you are installing a SUSE Linux Enterprise Server for SAP for the first time, register your copy. You may need to install add-on packages later, and add-ons are only available to registered user. Register and download a 60 day evaluation of SUSE Linux Enterprise for SAP at: <https://www.suse.com/products/sles-for-sap/download>.
-
->**Note:**
-> This tutorial is for SAP HANA 2.0, express edition. If you are currently using SAP HANA 1.0, express edition and wish to upgrade, see [How to Upgrade to SAP HANA 2.0, express edition (Binary Installer)](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-upgrade-binary.html).
 
 ## Next Steps
 - Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).
@@ -152,7 +150,7 @@ Your server will need the following:
 4. Follow the prompts to configure your installation.
 
     >**Note:**
-    > The master password you specify during installation is used for the `<sid>adm`,  `sapadm` OS users, the telemetry technical user, and the SYSTEM user. If you are installing the Applications package, this password is also used for the `XSA_ADMIN`, `XSA_DEV`, and `XSA_SHINE` users.
+    > The master password you specify during installation is used for the `<sid>adm`,  `sapadm` OS users, the telemetry technical user, and the SYSTEM user. If you are installing the Applications package, this password is also used for the `XSA_ADMIN`, `XSA_DEV`, and `XSA_SHINE` users. `A1a` (Upper case letters, numbers, lowercase letters) is the default policy to set master password. Special characters are NOT allowed at this time. You will need to modify your password policy to allow special characters in the password.
 
 [DONE] [ACCORDION-END]
 

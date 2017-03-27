@@ -1,16 +1,17 @@
 ---
 title: Deploy gamified HelpDesk application to SAP Cloud Platform
 description: Build HelpDesk application in Eclipse then perform a standalone deployment to your SAP Cloud Platform account.
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:**
-     - [Create the gamified HelpDesk application](http://www.sap.com/developer/tutorials/hcp-gamification-sample-application.html)
-     - Configure Eclipse environment for Maven projects (Coming soon)
+- **Proficiency:** Beginner
+- **Tutorials:**
+ - [Create the gamified HelpDesk application](http://www.sap.com/developer/tutorials/hcp-gamification-sample-application.html)
+ - Configure Eclipse environment for Maven projects (Coming soon)
 
 ## Next Steps
- - [Customize game mechanics of HelpDesk application in SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-customize-gamified-application.html)
+- [Customize game mechanics of HelpDesk application in SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-customize-gamified-application.html)
 
 ## Details
 ### You will learn  
@@ -21,61 +22,104 @@ In this tutorial, you will retrieve the gamified HelpDesk application from GitHu
 
 ---
 
-1. Download the [ZIP file of the sources](https://github.com/SAP/gamification-demo-app/archive/master.zip) of the gamified HelpDesk application from [GitHub](https://github.com/SAP/gamification-demo-app).
 
-    ![Download Zip](1.png)
+[ACCORDION-BEGIN [Step 1: ](Download the gamified HelpDesk app)]
 
-2. Extract the archive to your local drive.
+Download the [ZIP file of the sources](https://github.com/SAP/gamification-demo-app/archive/master.zip) of the gamified HelpDesk application from [GitHub](https://github.com/SAP/gamification-demo-app).
 
-3. In Eclipse, switch to the **Java EE** perspective.
+![Download Zip](1.png)
 
-4. Choose **File** > **Import** > **Maven** > **Existing Maven Projects**
+Extract the archive to your local drive.
 
-    ![Create Maven Project](3.png)
+[DONE]
+[ACCORDION-END]
 
-5. Navigate to the folder in which you extracted the GitHub archive, and choose **Finish**.
+[ACCORDION-BEGIN [Step 2: ](Import project)]
 
-    ![Build Maven Project](4.png)
+In Eclipse, switch to the **Java EE** perspective.
 
-6. Setup the Java Web runtime environment in Eclipse:
-    - Choose **Window** > **Preferences**
-    - Scroll to **Server**, select **Runtime Environments** and click **Add**
-    - In the **New Server Runtime Environment** dialogue box, select **SAP** > **Java Web** and choose **Next**
+Choose **File** > **Import** > **Maven** > **Existing Maven Projects**
+
+![Create Maven Project](3.png)
+
+Navigate to the folder in which you extracted the GitHub archive, and choose **Finish**.
+
+![Build Maven Project](4.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Set up the Java Web runtime)]
+
+Set up the Java Web runtime environment in Eclipse:
+
+- Choose **Window** > **Preferences**
+- Scroll to **Server**, select **Runtime Environments** and click **Add**
+- In the **New Server Runtime Environment** dialogue box, select **SAP** > **Java Web** and choose **Next**
 
     ![Set Up Java Web Runtime Environment](5.png)
 
-    - Select **Use Java Web SDK from the following location**, confirm or browse to the location of the SAP Cloud Platform SDK, and choose **Finish**
-    - In the **Preferences** window, choose **OK**
+- Select **Use Java Web SDK from the following location**, confirm or browse to the location of the SAP Cloud Platform SDK, and choose **Finish**
+- In the **Preferences** window, choose **OK**
 
     ![Set Up Java Web Runtime Environment](6.png)
 
-7. Back in the Project Explorer, right-click on the **`helpdesk`** project and from the context menu choose **Run As** > **Run on Server**.
+[DONE]
+[ACCORDION-END]
 
-    ![Run Project on Server](7.png)
+[ACCORDION-BEGIN [Step 4: ](Run on server)]
 
-8. Select **SAP** > **SAP Cloud Platform** as the server, verify `hanatrial.ondemand.com` as the **Landscape host**, and choose **Next**.
+Back in the Project Explorer, right-click on the **`helpdesk`** project and from the context menu choose **Run As** > **Run on Server**.
 
-    ![Define Server](9.png)
+![Run Project on Server](7.png)
 
-9. Name your application `helpdesk`, select the **Java Web** from the **Runtime** menu and verify that the values in the **Account name**, **User name**, and **Password** fields are accurate. Choose **Finish**.
+Select **SAP** > **SAP Cloud Platform** as the server, verify `hanatrial.ondemand.com` as the **Landscape host**, and choose **Next**.
 
-    ![Name Application on Server](10.png)
+![Define Server](9.png)
 
-10. In your Web browser, open the cockpit of the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit). Select **Java Applications** from the left-hand navigation and you should see the **`helpdesk`** application listed. Once the application is fully started, click on the name of the application.
+[DONE]
+[ACCORDION-END]
 
-    ![Select HelpDesk Application](11.png)
+[ACCORDION-BEGIN [Step 5: ](Name your application)]
 
-11. Select **Roles** from the left-hand navigation, select the **`helpdesk`** role, and assign your user to it.
+Name your application `helpdesk`, select the **Java Web** from the **Runtime** menu and verify that the values in the **Account name**, **User name**, and **Password** fields are accurate. Choose **Finish**.
 
-    ![Assign User to Role](12.png)
+![Name Application on Server](10.png)
 
-12. Select **Overview** from the left-hand navigation and click on the URL provided under **Application URLs** to launch the application in a new browser window.
+[DONE]
+[ACCORDION-END]
 
-    ![Application URL](13.png)
+[ACCORDION-BEGIN [Step 6: ](Select the HelpDesk application)]
 
-    > If configured correctly, your browser should open the following page:
+In your Web browser, open the cockpit of the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit). Select **Java Applications** from the left-hand navigation and you should see the **`helpdesk`** application listed. Once the application is fully started, click on the name of the application.
 
-    ![Successfully Launched HelpDesk Application](14.png)
+![Select HelpDesk Application](11.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Assign role)]
+
+Select **Roles** from the left-hand navigation, select the **`helpdesk`** role, and assign your user to it.
+
+![Assign User to Role](12.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Launch the app)]
+
+Select **Overview** from the left-hand navigation and click on the URL provided under **Application URLs** to launch the application in a new browser window.
+
+![Application URL](13.png)
+
+> If configured correctly, your browser should open the following page:
+
+![Successfully Launched HelpDesk Application](14.png)
+
+[DONE]
+[ACCORDION-END]
+
 
 ## Next Steps
- - [Customize game mechanics of HelpDesk application in SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-customize-gamified-application.html)
+- [Customize game mechanics of HelpDesk application in SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-customize-gamified-application.html)

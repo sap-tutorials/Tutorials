@@ -1,14 +1,15 @@
 ---
 title: Add paging to your External API call (Slack)
 description: Limit the page size of your API call and introduce paging to enhance performance
+primary_tag: topic>sapui5
 tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-web-ide ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Add an API call to your app](http://www.sap.com/developer/tutorials/sapui5-insert-rest-api.html)
+ - **Tutorials:** Add an API call to your app
 
 ## Next Steps
- - [Add navigation with your API call](http://www.sap.com/developer/tutorials/sapui5-navigate-api.html)
+ - Add navigation with your API call
 
 ## Details
 ### You will learn  
@@ -259,4 +260,4 @@ Make sure all your changes are saved and **RUN** your application. For testing p
 
 
 ## Next Steps
- - [Add navigation with your API call](http://www.sap.com/developer/tutorials/sapui5-navigate-api.html)
+ - Add navigation with your API call

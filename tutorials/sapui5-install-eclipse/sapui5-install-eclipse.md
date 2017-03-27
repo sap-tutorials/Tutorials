@@ -1,6 +1,7 @@
 ---
 title: Configuring Eclipse with SAPUI5.
 description: A step-by-step procedure to install the Eclipse IDE and SAPUI5 Library.
+primary_tag: topic>sapui5
 tags: [  tutorial>beginner, topic>html5 ]
 ---
 ## Prerequisites

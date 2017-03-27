@@ -1,14 +1,15 @@
 ---
 title: Using Autonomous Transactions
 description: Leveraging SQLScript in Stored Procedures & User Defined Functions through the use of Autonomous transactions
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana,-express-edition ]
+primary_tag: products>sap-hana
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Tutorials:** [Using COMMIT Statement](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)
+- **Proficiency:** Intermediate
+- **Tutorials:** [Using COMMIT Statement](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)
 
 ## Next Steps
- - [SAP HANA XS Advanced Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)
+- [SAP HANA XS Advanced Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)
 
 ## Details
 ### You will learn  
@@ -21,38 +22,58 @@ The autonomous transaction is independent from the main procedure transaction. C
 
 ---
 
-1. Return to the procedure called `get_product_by_filter`.
+[ACCORDION-BEGIN [Step 1: ](Edit previous procedure)]
 
-	![procedure editor](1.png)
+Return to the procedure called `get_product_by_filter`.
 
-2. Remove the COMMIT statement, and instead wrap the INSERT statement with an AUTONOMOUS TRANSACTION block as shown.
+![procedure editor](1.png)
 
-	![insert statement](2.png)
+Remove the COMMIT statement, and instead wrap the INSERT statement with an AUTONOMOUS TRANSACTION block as shown.
 
-3. Click "Save".
+![insert statement](2.png)
 
-	![save](3.png)
+Click "Save".
 
-4. Use what you have learned already and perform a build on your `hdb` module. Then return to the HRTT page and make sure the input parameters are as shown and run the CALL statement again.
+![save](3.png)  
 
-	![HRTT](4.png)
+[DONE]
+[ACCORDION-END]
 
-5. You will still get the error for invalid column.  Select the SELECT statement for the `log.errors` table and click "Run" to execute it.
+[ACCORDION-BEGIN [Step 2: ](Build and run `log.errors` SELECT)]
 
-	![select statement](5.png)
+Use what you have learned already and perform a build on your `hdb` module. Then return to the HRTT page and make sure the input parameters are as shown and run the CALL statement again.
 
-6. You will now notice that a new row was entered into the `log.errors` table
+![HRTT](4.png)
 
-	![new row](6.png)
+You will still get the error for invalid column.  Select the SELECT statement for the `log.errors` table and click "Run" to execute it.
 
-7. Select the SELECT statement for the `log.messages` table and click "Run" to execute it.
+![select statement](5.png)
 
-	![select statement](7.png)
+[DONE]
+[ACCORDION-END]
 
-8. Another "Chuck" record was not inserted.  "Chuck Norris's" record was removed by the rollback ("Is that even possible…?")  by using AUTONOMOUS TRANSACTION blocks, the code within is isolated from the rest of the mainline code and is treated as a separate transaction.
+[ACCORDION-BEGIN [Step 3: ](Run `log.messages` SELECT)]
 
-	![results](8.png)
+You will now notice that a new row was entered into the `log.errors` table
+
+![new row](6.png)
+
+Select the SELECT statement for the `log.messages` table and click "Run" to execute it.
+
+![select statement](7.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Examine results)]
+
+Another "Chuck" record was not inserted.  "Chuck Norris's" record was removed by the rollback ("Is that even possible…?")  by using AUTONOMOUS TRANSACTION blocks, the code within is isolated from the rest of the mainline code and is treated as a separate transaction.
+
+![results](8.png)
+
+[DONE]
+[ACCORDION-END]
 
 
 ## Next Steps
- - [SAP HANA XS Advanced Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)
+- [SAP HANA XS Advanced Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)

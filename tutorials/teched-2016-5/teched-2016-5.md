@@ -1,6 +1,7 @@
 ---
 title: Commit your project to Git and deploy to the cloud
 description: Create a git repository for your project, add your project files and then deploy  your app on SAP Cloud Platform
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 
@@ -84,7 +85,7 @@ An alert box will appear in the upper right corner of your SAP Web IDE window.
 
 Click the **Set Remote** link in the alert and paste in the **Git Repository URL** you copied earlier. You can leave the **Add configuration for Gerrit** unchecked and click **OK**.
 
-This will initialize your local repository and link it to the Git repository in SAP Cloud Platform.
+This will initialize your local repository and link it to the Git repository in HCP.
 
 ![Initialize with remote git URL](te-2016-5-06.png)
 
@@ -178,13 +179,13 @@ You will see a confirmation alert appear briefly in the top-right corner of the 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Deploy app on SAP Cloud Platform]
+[ACCORDION-BEGIN [Step 15: ](Deploy app on HCP)]
 
 Deploying your app, is very simple.
 
 Right-click on your **`te2016`** project folder, and select **Deploy > Deploy to SAP Cloud Platform**.
 
-![deploy to SAP Cloud Platform menu](te-2016-5-16.png)
+![deploy to SAP Cloud Platformmenu](te-2016-5-16.png)
 
 [DONE]
 [ACCORDION-END]

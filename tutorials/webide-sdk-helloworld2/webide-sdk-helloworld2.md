@@ -1,6 +1,7 @@
 ---
 title: Changing Code in a Plugin
 description: In this tutorial, you will change some of the code in a plugin, and see how to configure an API service.
+primary_tag: products>sap-web-ide
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-web-ide, products>sap-web-ide-plug-ins ]
 ---
 

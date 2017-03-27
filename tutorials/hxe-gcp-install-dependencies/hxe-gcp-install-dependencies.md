@@ -1,7 +1,8 @@
 ---
 title: HANA Express Edition - Install Dependencies for Ubuntu on Google Cloud Platform
-description: Install dependencies in your Ubuntu OS image on Google Clpud Platform before installing HANA Express Edition
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition ]
+description: Install dependencies in your Ubuntu OS image on Google Cloud Platform before installing HANA Express Edition
+primary_tag: products>sap-hana\,-express-edition 
+tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition  ]
 ---
 
 ## Prerequisites  

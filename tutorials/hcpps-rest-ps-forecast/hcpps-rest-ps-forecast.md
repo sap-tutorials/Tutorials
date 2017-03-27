@@ -1,19 +1,20 @@
 ---
-title: SAP Cloud Platform predictive services, Test the "Forecast" HCP predictive service from a REST client
-description: Using a REST client, you will test the "Forecast" HCP predictive service from a REST client
-tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
+title: Test the "Forecast" service
+description: Using a REST client, you will test the "Forecast" SAP Cloud Platform predictive service from a REST client
+primary_tag: products>sap-hana
+tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the "Data Set" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - **Tutorials:** [Test the "Dataset" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
 
 ## Next Steps
-  - [Test the "Key Influencer" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
+  - [Test the "Key Influencer" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
 
 ## Details
 ### You will learn
- - How to use the "Forecast" SAP Cloud Platform predictive services from a REST Client in both synchronous and asynchronous mode.
+ - How to use the "Forecast" SAP Cloud for predictive services from a REST Client in both synchronous and asynchronous mode.
  The asynchronous mode will create a job with a status that you can check the status for completion.
 
 ### Time to Complete
@@ -24,15 +25,16 @@ Therefore you can replace any occurrence of the token by the value listed above.
 >
 > Token               | Value
 ------------------- | -------------
-<code><b>&lt;HCP account name&gt;</b></code>  | on a developer trial account, it should end by `trial`
-<code><b>&lt;C4PA URL&gt;</b></code> | `http://aac4paservices<`<code><b>HCP account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
+<code><b>&lt;Account name&gt;</b></code>  | your SAP Cloud Platform account name. On a developer trial account, it should end by `trial`
+<code><b>&lt;C4PA URL&gt;</b></code> | `https://aac4paservices<`<code><b>Account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
 >
-> If you are unclear with what is your HCP account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 [ACCORDION-BEGIN [Info:](A short description of the Forecast service)]
 The Forecasts service analyzes a dataset containing the successive values of a target indicator over time to predict the next values.
 
 This service:
+
  - Analyzes a time series and generates forecasts based on identified patterns
  - Returns forecast and real values for past data of the time series
  - Provides confidence intervals computed for each forecast
@@ -47,17 +49,22 @@ The granularity of the prediction is the same as the granularity used in the dat
 > If you use extra-predictive variables, which are variables other than date and target indicator, their values must be known for each date of the forecasts.
 > The service may return forecasts without error bars beyond the maximum confident horizon.
 
+-
+
 To summarize, in order to execute the forecast service, you will need a dataset with:
+
  - a date variable
  - a variable to predict (usually a continuous number variable), the target variable
  - optionally a set of "extra" predictors which can be used to better predict the forecast variable
 
 The parameters required to run the service are:
+
  - a dataset identifier (registered with the Dataset service)
  - the name of the date and the target variable
  - a number of forecast to be computed
 
 Optionally, you can define the following parameters to enhance your analysis:
+
  - the reference date (date after which the entries are call predictions), if none is specified then the last date will be used
  - number of past values in the output: the number of past data to return with the forecasts (default value is 0)
  - skipped variables: a list of variables to skip from the analysis
@@ -74,14 +81,15 @@ The file presents daily measures of cash flows from January 2, 1998 to September
 
 Variable | Description | Example of values
 --------------|--------------|--------------
-Date | Day, month and year of the readings | A date in the format yyyy-mm-dd such as 1998-01-02
+Date | Day, month and year of the readings | A date in the format `yyyy-mm-dd` such as 1998-01-02
 Cash | Cash flow | A numerical value with n decimals
-BeforeLastMonday <br/> LastMonday <br/> BeforeLastTuesday <br/> LastTuesday <br/> BeforeLastWednesday <br/> LastWednesday <br/> BeforeLastThursday <br/> LastThursday <br/> BeforeLastFriday <br/> LastFriday | Boolean variables that indicates if the information is true or false | 1 if the information is true.
-Last5WDays <br/> Last4WDays | Boolean variables that indicate if the date is in the 5 or 4 last working days of the month | 1 if the information is true.
-LastWMonth <br/> BeforeLastWMonth | Boolean variables that indicates if the information is true or false | 1 if the information is true.
-WorkingDaysIndices <br/> ReverseWorkingDaysIndices | Indices or reverse indices of the working days | An integer value
-MondayMonthInd <br/> TuesdayMonthInd <br/> WednesdayMonthInd <br/> ThursdayMonthInd <br/> FridayMonthInd | Indices of the week days in the month | An integer value
-Last5WDaysInd <br/> Last4WDaysInd | Indices of the 5 or 4 last working days of the month | An integer value
+`BeforeLastMonday` <br/> `LastMonday` <br/> `BeforeLastTuesday` <br/> `LastTuesday` <br/> `BeforeLastWednesday` <br/> `LastWednesday` <br/> `BeforeLastThursday` <br/> `LastThursday` <br/> `BeforeLastFriday` <br/> `LastFriday` | Boolean variables that indicate if the information is true or false | 1 if the information is true.
+`Last5WDays` <br/> `Last4WDays` | Boolean variables that indicate if the date is in the 5 or 4 last working days of the month | 1 if the information is true.
+`LastWMonth` <br/> `BeforeLastWMonth` | Boolean variables that indicate if the information is true or false | 1 if the information is true.
+`WorkingDaysIndices` <br/> `ReverseWorkingDaysIndices` | Indices or reverse indices of the working days | An integer value
+`MondayMonthInd` <br/> `TuesdayMonthInd` <br/> `WednesdayMonthInd` <br/> `ThursdayMonthInd` <br/> `FridayMonthInd` | Indices of the week days in the month | An integer value
+`Last5WDaysInd` <br/> `Last4WDaysInd` | Indices of the 5 or 4 last working days of the month | An integer value
+
 [DONE]
 [ACCORDION-END]
 
@@ -100,7 +108,7 @@ URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/sync`
 
 ```json
 {
-"hanaURL":"DEMO/CashFlow"
+  "hanaURL":"DEMO/CashFlow"
 }
 ```
 
@@ -114,7 +122,6 @@ Request Type   | `POST`
 URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/<`ID`>/variables/update`
 
 > Make sure you replace the `ID` token in the URL with the one returned by the previous service call.
-
 
 ```json
 [
@@ -151,7 +158,7 @@ URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/<`ID`>/
 
 [ACCORDION-BEGIN [Step 2: ](Run the Forecast service in synchronous mode)]
 
-With the synchronous mode, the HCP predictive service will be waiting until the operation completes to return the response.
+With the synchronous mode, the SAP Cloud Platform predictive service will be waiting until the operation completes to return the response.
 
 Open a new tab in ***Postman***.
 
@@ -169,8 +176,8 @@ Select the **Authorization** tab and fill in the following information:
 Field Name     | Value
 :------------- | :-------------
 Type           | `Basic Auth`
-Username       | your ***HCP Account*** login (usually the email address used to register your ***HCP*** account)
-Password*      | your ***HCP Account*** password
+Username       | your ***SAP Cloud Platform Account*** login (usually the email address used to register your ***SAP Cloud Platform*** account)
+Password*      | your ***SAP Cloud Platform Account*** password
 
 ![Postman URL](02.png)
 
@@ -185,20 +192,24 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   "referenceDate" : "2001-12-01"
 }
 ```
+
 > Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the previous tutorial.
+
+-
 
 With these settings, we will forecast the next 5 values of the Cash variable after the 1st of December 2001.
 
 Click on **Send**
 
-Congratulations! You have just run the forecast service on the `Cash` variable and requested the next 10 values after the reference date (2001-12-01).
+Congratulations! You have just run the forecast service on the `Cash` variable and requested the next 5 values after the reference date (2001-12-01).
 
 In the output you will get the following information:
-- `forecastValue`: the forecast values
-- `realValue`: the current values in case you have provided a reference date where you already have the target value, and your goal is more to confirm that the real value follows a trend or is between boundaries
-- `errorBarHigherBound` & `errorBarLowerBound`: the upper and lower limit of the confidence interval for the forecast value (+/-5%)
-- model information: the structure of the forecast model
-- model performance: the accuracy indicators
+
+  - `forecastValue`: the forecast values
+  - `realValue`: the current values in case you have provided a reference date where you already have the target value, and your goal is more to confirm that the real value follows a trend or is between boundaries
+  - `errorBarHigherBound` & `errorBarLowerBound`: the upper and lower limit of the confidence interval for the forecast value (+/-5%)
+  - model information: the structure of the forecast model
+  - model performance: the accuracy indicators
 
 Here is the result:
 
@@ -262,6 +273,7 @@ Here is the result:
 ```
 
 You can try to run the model with the following date "2002-01-01", where there is no more real value for the `Cash` column.
+
 [DONE]
 [ACCORDION-END]    
 
@@ -294,6 +306,8 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 }
 ```
 > Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the previous tutorial.
+
+-
 
 Click on **Send**
 
@@ -361,8 +375,8 @@ URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/forecast/1`
 [ACCORDION-END]
 
 ### Optional
-For more details on the SAP Cloud Platform predictive services, you can check the following URL:
-  - `<`<code><b>C4PA URL</b></code>`>/raml/index.html?raml=../aa-cloud-services.raml`
+For more details on the SAP Cloud for predictive services, you can check the following URL:
+  - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
 
 ## Next Steps
-  - [Test the "Key Influencer" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
+  - [Test the "Key Influencer" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)

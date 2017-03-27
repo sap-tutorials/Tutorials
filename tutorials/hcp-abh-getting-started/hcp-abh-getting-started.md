@@ -1,14 +1,14 @@
 ---
 title: Getting started with the SAP API Business Hub
 description: Learn how to find and test the API Business Hub.
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** This is the first tutorial in this series.
 
 ## Next Steps
- - [Test APIs locally with Curl](http://www.sap.com/developer/tutorials/hcp-abh-test-locally.html)
+ - Test APIs locally with Curl
 
 ## Details
 ### You will learn  
@@ -24,7 +24,7 @@ Open your [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com/co
 
 In your SAP Cloud Platform account, select **Services** from the side menu.
 
-![service in SAP Cloud Platform menu](1.png)
+![service in SAP Cloud Platformmenu](1.png)
 
 [DONE]
 [ACCORDION-END]
@@ -32,7 +32,7 @@ In your SAP Cloud Platform account, select **Services** from the side menu.
 [ACCORDION-BEGIN [Step 2: ](Open SAP API Business Hub)]
 In the **Services** catalog, search for _SAP API_. You should see 2 results. The SAP API Business Hub is the service you are looking for.
 
-![API Services in SAP Cloud Platform](2.png)
+![API Services in HCP](2.png)
 
 Select the **SAP API Business Hub** service. If it is not already enabled, do so on the service page.
 
@@ -45,7 +45,6 @@ This will direct you to the homepage for the SAP API Business Hub.
 ![SAP API Business Hub homepage](4.png)
 
 You can access the SAP API Business hub through SAP Cloud Platform or by just visiting their website by going to <http://api.sap.com>.
-
 
 [DONE]
 [ACCORDION-END]
@@ -109,4 +108,4 @@ Feel free to keep playing around in the SAP API Business Hub to better understan
 
 
 ## Next Steps
- - [Test APIs locally with Curl](http://www.sap.com/developer/tutorials/hcp-abh-test-locally.html)
+ - Test APIs locally with Curl

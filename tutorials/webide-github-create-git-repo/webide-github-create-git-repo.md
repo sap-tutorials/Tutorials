@@ -1,11 +1,12 @@
 ---
 title: Creating a Git repository within a GitHub organization
-description: Part 2 of 6, Collaborative Development Using GitHub and SAP Web IDE
-tags: [ tutorial>beginner, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
+description: PCollaborative Development Using GitHub and SAP Web IDE
+primary_tag: products>sap-web-ide
+tags: [ tutorial>beginner, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** 
+ - **Tutorials:**
   - [Creating a GitHub organization and adding collaborators](http://www.sap.com/developer/tutorials/webide-github-creating-org.html)
 
 ## Next Steps
@@ -13,7 +14,7 @@ tags: [ tutorial>beginner, topic>github, topic>cloud, products>sap-hana, product
 
 ## Details
 ### You will learn  
-In this tutorial, you'll learn how to create a Git repository within a GitHub organization. 
+In this tutorial, you'll learn how to create a Git repository within a GitHub organization.
 
 ### Time to Complete
 **5 Min**.
@@ -41,7 +42,7 @@ In this tutorial, you'll learn how to create a Git repository within a GitHub or
 6. At the commit screen, enter a short description for commit reason and then click on the **Commit new file** button.
 
     ![Committing readme file](p2_6.png)
-  
+
 6. Your Git repository is ready!
 
 ## Next Steps

@@ -1,14 +1,15 @@
 ---
 title: Debugging Stored Procedures
 description: Leveraging SQLScript in Stored Procedures & User Defined Functions
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Tutorials:** [Creating Table User Defined Functions](http://www.sap.com/developer/tutorials/xsa-sqlscript-table-user.html)
+- **Proficiency:** Intermediate
+- **Tutorials:** [Creating Table User Defined Functions](http://www.sap.com/developer/tutorials/xsa-sqlscript-table-user.html)
 
 ## Next Steps
- - [Anonymous Blocks](http://www.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)
+- [Anonymous Blocks](http://www.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)
 
 ## Details
 ### You will learn  
@@ -20,97 +21,139 @@ In the following exercise we will show how to debug a procedure using the SQLScr
 
 ---
 
-1. Go to the HRTT page and open the procedure called `dev602.procedures::get_po_header_data`.
+[ACCORDION-BEGIN [Step 1: ](Start the debugger)]
 
-    ![HRTT](1.png)
+Go to the HRTT page and open the procedure called `dev602.procedures::get_po_header_data`.
 
-2. From the menu, click SQL Debugger, then Debug Settings.
+![HRTT](1.png)
 
-    ![SQL debugger](2.png)
+From the menu, click SQL Debugger, then Debug Settings.
 
-3. For the service name, click the drop down box.
+![SQL debugger](2.png)
 
-    ![service name](3.png)
+For the service name, click the drop down box.
 
-4. Choose your container associated with your user id.  Click "OK".
+![service name](3.png)
 
-    ![container](4.png)
+Choose your container associated with your user id.  Click "OK".
 
-5. Click the "Connect" button.
+![container](4.png)
 
-    ![connect](5.png)
+Click the "Connect" button.
 
-6. Click "Apply", then "Close".
+![connect](5.png)
 
-    ![apply](6.png)
+Click "Apply", then "Close".
 
-7. Set breakpoints at the lines shown here by simply clicking on the line number.
+![apply](6.png)
 
-    ![breakpoints](7.png)
+[DONE]
+[ACCORDION-END]
 
-8. Click "Invoke Procedure".
+[ACCORDION-BEGIN [Step 2: ](Set breakpoints)]
 
-    ![invoke](8.png)
+Set breakpoints at the lines shown here by simply clicking on the line number.
 
-9. A new SQL tab will be opened.  Click on the "Run" button.
+![breakpoints](7.png)
 
-    ![SQL tab](9.png)
+Click **Invoke Procedure**.
 
-10. Execution of the procedure has started, and a debugger pane is now visible which is displayed on the right. You can see all of the variables and parameters for this procedure.  You might notice that this pane is currently not showing the intermediate table variables at this point.
+![invoke](8.png)
 
-    ![execute procedure](10.png)
+A new SQL tab will be opened.  Click on the **Run** button.
 
-11. Click the "Step Over" button.
+![SQL tab](9.png)
 
-    ![step over](11.png)
+[DONE]
+[ACCORDION-END]
 
-12. You will notice that execution has continued to the next statement. In the debugger pane, a new local variable has been added. This is because it is not defined explicitly will be implicitly declared at runtime during first usage.
+[ACCORDION-BEGIN [Step 3: ](View the debugger pane)]
 
-    ![next step](12.png)
+Execution of the procedure has started, and a debugger pane is now visible which is displayed on the right. You can see all of the variables and parameters for this procedure.  You might notice that this pane is currently not showing the intermediate table variables at this point.
 
-13. To see the data for this intermediate table variable, right click on it and choose "Display Content".
+![execute procedure](10.png)
 
-    ![display content](13.png)
+[DONE]
+[ACCORDION-END]
 
-14. A new window is then opened showing the data in the table. Review the data and close the window by clicking the "X" in the upper right hand corner.
+[ACCORDION-BEGIN [Step 4: ](Use step over)]
 
-    ![review data](14.png)
+Click the **Step Over** button.
 
-15. Click the "Toggle Expression Editor" button.
+![step over](11.png)
 
-    ![toggle expression editor](15.png)
+You will notice that execution has continued to the next statement. In the debugger pane, a new local variable has been added. This is because it is not defined explicitly will be implicitly declared at runtime during first usage.
 
-16. In the yellow box that appears below, enter a SELECT statement as shown here and hit "Enter".
+![next step](12.png)
 
-    ![select statement](16.png)
+To see the data for this intermediate table variable, right click on it and choose "Display Content".
 
-17. You will notice the expression is then added to the "Expressions" section above.
+![display content](13.png)
 
-    ![expressions](17.png)
+A new window is then opened showing the data in the table. Review the data and close the window by clicking the "X" in the upper right hand corner.
 
-18. Right click on the expression and choose "Display Content".
+![review data](14.png)
 
-    ![display content](18.png)
+[DONE]
+[ACCORDION-END]
 
-19. Review the results and close the window by clicking the "X".
+[ACCORDION-BEGIN [Step 5: ](View expression editor)]
 
-    ![review results](19.png)
+Click the **Toggle Expression Editor** button.
 
-20. Once again click the "Step Over" button. Notice the next intermediate table variables is also added.  You can review the data in this table as well.
+![toggle expression editor](15.png)
 
-    ![step over](20.png)
+In the yellow box that appears below, enter a SELECT statement as shown here and hit **Enter**.
 
-21. Continue to step through the code and when execution stops at the END statement of the procedure, display the contents of the output parameter the same way you did for the intermediate table variables. Finally, close the window by clicking the "X".
+![select statement](16.png)
 
-    ![continue steps](21.png)
+You will notice the expression is then added to the "Expressions" section above.
 
-22. Click the "Resume" button.
+![expressions](17.png)
 
-    ![resume](22.png)
+[DONE]
+[ACCORDION-END]
 
-23. Execution of the procedure is now completed. Return to the SQL tab and check the results.
+[ACCORDION-BEGIN [Step 6: ](View expressions)]
 
-    ![results](23.png)
+Right click on the expression and choose **Display Content**.
+
+![display content](18.png)
+
+Review the results and close the window by clicking the "X".
+
+![review results](19.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Check output)]
+
+Once again click the **Step Over** button. Notice the next intermediate table variables is also added.  You can review the data in this table as well.
+
+![step over](20.png)
+
+Continue to step through the code and when execution stops at the END statement of the procedure, display the contents of the output parameter the same way you did for the intermediate table variables. Finally, close the window by clicking the "X".
+
+![continue steps](21.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Resume execution)]
+
+Click the **Resume** button.
+
+![resume](22.png)
+
+Execution of the procedure is now completed. Return to the SQL tab and check the results.
+
+![results](23.png)
+
+[DONE]
+[ACCORDION-END]
+
+
 
 ## Next Steps
- - [Anonymous Blocks](http://www.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)
+- [Anonymous Blocks](http://www.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)
