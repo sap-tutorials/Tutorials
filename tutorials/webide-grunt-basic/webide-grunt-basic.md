@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>cloud, topic>html5, topic>sapui5, products>sap
 - **Proficiency:** Beginner
 
 ## Next Steps
-- [Using Other Grunt Plugins in SAP Web IDE]
+- **Tutorials** [Using Other Grunt Plugins in SAP Web IDE](http://www.sap.com/developer/tutorials/webide-grunt-plugins.html)
 
 
 ## Details
@@ -116,4 +116,4 @@ You can see any build errors in the console, which you can display by going to *
 
 
 ## Next Steps
-- [Using Other Grunt Plugins in SAP Web IDE]
+- **Tutorials** [Using Other Grunt Plugins in SAP Web IDE](http://www.sap.com/developer/tutorials/webide-grunt-plugins.html)
