@@ -1,6 +1,7 @@
 ---
 title: Building simple tiles within Fiori Launchpad
 description: Build a tile within Fiori Launchpad based on an CDS Odata Service
+primary_tag: products>sap-s-4hana
 tags: [ tutorial>intermediate, products>sap-s-4hana ]
 ---
 ## Prerequisites  

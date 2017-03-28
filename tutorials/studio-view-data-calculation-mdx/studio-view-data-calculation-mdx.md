@@ -1,6 +1,7 @@
 ---
 title: SAP HANA Studio, Build a Calculation View and View the Data in MS Excel
 description: In this tutorial, you will go through all the steps to import data from a MS Excel Spreadsheet, model a simple Calculation view and viewing the results in  a pivot table  using  the HANA MDX connector.
+primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-studio ]
 ---
 

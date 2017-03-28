@@ -2,6 +2,7 @@
 
 title: Continuous Integration (CI) Best Practices with SAP: Build Scheduler
 description: Part 3.2: Setting up a Jenkins Instance.
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ---

@@ -1,14 +1,15 @@
 ---
 title: Basics of data visualization in SAP BusinessObjects Lumira
 description: Basics of visual data discovery
+primary_tag: products>sap-lumira
 tags: [  tutorial>beginner, products>sap-lumira ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Initial data exploration in SAP BusinessObjects Lumira](http://www.sap.com/developer/tutorials/lumira-initial-data-exploration.html)
+- **Proficiency:** Beginner
+- **Tutorials:** [Initial data exploration in SAP BusinessObjects Lumira](http://www.sap.com/developer/tutorials/lumira-initial-data-exploration.html)
 
 ## Next Steps
- - Time dimension and data drilling (coming soon)
+- Time dimension and data drilling (coming soon)
 
 ## Details
 ### You will learn  
@@ -19,69 +20,113 @@ The basics of data visualization: creating charts suggested by the system or man
 
 ---
 
-1. Switch to **Visualize** room.
 
-    By default it displays **Chart Builder** in **visualization tools**, and **Vertical Orientation** of **Measures and Dimensions** pane.
+[ACCORDION-BEGIN [Step 1: ](Switch to Visualize room)] ￼
 
-    ![Layout of Visualize room in SAP BusinessObjects Lumira](Lum03-01a.png)
+Switch to **Visualize** room.
 
-2. For now you will focus on manual data discovery using visualizations.
+By default it displays **Chart Builder** in **visualization tools**, and **Vertical Orientation** of **Measures and Dimensions** pane.
 
-    Start with simple **Column Chart**, which you should select from **Chart Picker**. Next, drag `Sales Revenue` from Measures and drop it on **Chart Canvas**. Then drag `Lines` from Dimensions to the Chart Canvas as well.
+![Layout of Visualize room in SAP BusinessObjects Lumira](Lum03-01a.png)
 
-    > You could as well drop these attributes to **Shelves**.
+[DONE]
+[ACCORDION-END]
 
-    You should get a column chart like this.
+[ACCORDION-BEGIN [Step 2: ](View column chart)] ￼
 
-    ![Simple column chart in SAP BusinessObjects Lumira](Lum03-02.png)
+For now you will focus on manual data discovery using visualizations.
 
-     A human eye can immediately spot that the best selling line of products was `Sweat-T-Shirts`.
+Start with simple **Column Chart**, which you should select from **Chart Picker**. Next, drag `Sales Revenue` from Measures and drop it on **Chart Canvas**. Then drag `Lines` from Dimensions to the Chart Canvas as well.
 
-3. Let's sort lines of products by sales revenue on the chart.
+> You could as well drop these attributes to **Shelves**.
 
-    For that just move the mouse over `Sales Revenue` in the Shelves, then click on **Settings** icon that appears, and choose **Sort Descending**.
+You should get a column chart like this.
 
-    ![Sorting on the chart in SAP BusinessObjects lumira](Lum03-03.png)
+![Simple column chart in SAP BusinessObjects Lumira](Lum03-02.png)
 
-4. You can change predefined palette of colors used in a chart by clicking on **Settings** icon in the canvas, and selecting **Choose Colors...**.
+A human eye can immediately spot that the best selling line of products was `Sweat-T-Shirts`.
 
-    ![Choose colors for charts in SAP BusinessObjects Lumira](Lum03-04.png)
+[DONE]
+[ACCORDION-END]
 
-    SAP BusinessObjects Lumira offers a long list of predefined palettes, which can be modified or new palettes can be defined by you.
+[ACCORDION-BEGIN [Step 3: ](Sort products)] ￼
 
-    ![List of palettes in SAP BusinessObjects Lumira](Lum03-05.png)
+Let's sort lines of products by sales revenue on the chart.
 
-5. Click on the **+** in the visualization gallery to create a new visualization. The previous one - the column chart - is remembered in the gallery.
+For that just move the mouse over `Sales Revenue` in the Shelves, then click on **Settings** icon that appears, and choose **Sort Descending**.
 
-    ![A new visualization is created in SAP BusinessObjects Lumira](Lum03-06.png)
+![Sorting on the chart in SAP BusinessObjects lumira](Lum03-03.png)
 
-6. For this newly created visualization choose **Numeric Point** chart and add `Customer Satisfaction` as a measure.
+[DONE]
+[ACCORDION-END]
 
-    ![Numeric Point chart in SAP BusinessObjects Lumira](Lum03-07.png)
+[ACCORDION-BEGIN [Step 4: ](Choose colors)] ￼
 
-    > Numeric Point chart is often used at the later stage in data stories, as you will see in corresponding tutorials.
+You can change predefined palette of colors used in a chart by clicking on **Settings** icon in the canvas, and selecting **Choose Colors...**.
 
-7. Summarized customer satisfaction scores do not make sense. You need to display an average score.
+![Choose colors for charts in SAP BusinessObjects Lumira](Lum03-04.png)
 
-    To do that click on **Options** icon next to `Customer Satisfaction` measure and from **Change Aggregation** choose **Average**.
+SAP BusinessObjects Lumira offers a long list of predefined palettes, which can be modified or new palettes can be defined by you.
 
-    You can see now that the average Customer Satisfaction score across all countries, products and years is 0.88.
+![List of palettes in SAP BusinessObjects Lumira](Lum03-05.png)
 
-    ![Average Customer Satisfaction displayed in SAP BusinessObjects Lumira](Lum03-08.png)
+[DONE]
+[ACCORDION-END]
 
-8. Now you should change the way Customer Satisfaction displayed to the percentage format.
+[ACCORDION-BEGIN [Step 5: ](Create new visualization)] ￼
 
-    To do that click on **Options** icon next to `Customer Satisfaction` measure and choose **Display Formatting...**
+Click on the **+** in the visualization gallery to create a new visualization. The previous one - the column chart - is remembered in the gallery.
 
-    Now change value format to **Percentage** and **Number of decimals** to `1`. Accept changes.
+![A new visualization is created in SAP BusinessObjects Lumira](Lum03-06.png)
 
-    ![Display options for measures in SAP BusinessObjects Lumira](Lum03-09.png)
+[DONE]
+[ACCORDION-END]
 
-9. Save the document.
+[ACCORDION-BEGIN [Step 6: ](Add a Customer Satisfaction measure)] ￼
 
-## Optional Steps
+For this newly created visualization choose **Numeric Point** chart and add `Customer Satisfaction` as a measure.
 
- - If you want to further explore SAP BusinessObjects Lumira user tutorials, please check https://wiki.scn.sap.com/wiki/pages/viewpage.action?pageId=449287573
+![Numeric Point chart in SAP BusinessObjects Lumira](Lum03-07.png)
+
+> Numeric Point chart is often used at the later stage in data stories, as you will see in corresponding tutorials.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Display average score)] ￼
+
+Summarized customer satisfaction scores do not make sense. You need to display an average score.
+
+To do that click on **Options** icon next to `Customer Satisfaction` measure and from **Change Aggregation** choose **Average**.
+
+You can see now that the average Customer Satisfaction score across all countries, products and years is 0.88.
+
+![Average Customer Satisfaction displayed in SAP BusinessObjects Lumira](Lum03-08.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Change to percentage format)] ￼
+
+Now you should change the way Customer Satisfaction displayed to the percentage format.
+
+To do that click on **Options** icon next to `Customer Satisfaction` measure and choose **Display Formatting...**
+
+Now change value format to **Percentage** and **Number of decimals** to `1`. Accept changes.
+
+![Display options for measures in SAP BusinessObjects Lumira](Lum03-09.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Save)] ￼
+
+Save the document.
+
+[DONE]
+[ACCORDION-END]
+
+
 
 ## Next Steps
- - Time dimension and data drilling (coming soon)
+- Time dimension and data drilling (coming soon)

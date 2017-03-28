@@ -1,12 +1,13 @@
 ---
 title: Core Data Services, creating Associations (Joins)
 description: Core Data Services, creating Associations (Joins)
+primary_tag: products>sap-s-4hana
 tags: [  tutorial>beginner, products>sap-s-4hana ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
- - [Core Data  Services](https://www.sap.com/developer/tutorials/s4hana-cds-associations.html) 
+ - [Core Data  Services](https://www.sap.com/developer/tutorials/s4hana-cds-associations.html)
  - [Preparing views for Associations/Joins](http://www.sap.com/developer/tutorials/s4hana-cds-preparing-views-associations.html)
 
 ## Next Steps

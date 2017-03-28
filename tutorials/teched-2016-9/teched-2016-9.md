@@ -1,6 +1,7 @@
 ---
 title: Internet of Things (IoT) made easy
 description: The idea behind this tutorial is quickly show how to add a device and capture sensor data in the cloud.
+primary_tag: topic>internet-of-things
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-cloud-platform ]
 ---
 
@@ -13,8 +14,8 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-cloud-platfor
 
 ## Details
 ### You will learn  
-- How to add a device type, message type and device to the IoT Services of SAP Cloud Platform
-- How to modify JavaScript code on your device to send data to the SAP Cloud Platform
+- How to add a device type, message type and device to the IoT Services of SAP Cloud Platform (HCP)
+- How to modify JavaScript code on your device to send data to the SAP Cloud Platform (HCP)
 
 This tutorial will take you through the steps at a rapid pace, if you'd like more details please contact one of our support staff.
 
@@ -35,7 +36,7 @@ Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening
 
 Make sure you are using the **Europe (Trial)** landscape, and click on your account name to open the cockpit view.
 
-![SAP Cloud Platform Trial Account](1.png)
+![SAP Cloud Platform trial Account](1.png)
 
 [DONE]
 [ACCORDION-END]

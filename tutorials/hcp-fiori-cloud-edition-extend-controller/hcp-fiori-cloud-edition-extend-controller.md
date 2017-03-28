@@ -1,14 +1,15 @@
 ---
 title: Extend controller of a standard SAP Fiori app
 description: This tutorial shows you how to extend the controller of a standard SAP Fiori app.
-tags: [  tutorial>beginner, topic>cloud, topic>sapui5, products>sap-web-ide ]
+primary_tag: products>sap-cloud-platform
+tags: [  tutorial>beginner, topic>cloud, topic>sapui5, products>sap-web-ide, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Getting started with the SAP Fiori, Demo Cloud Edition](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html)
+- **Tutorials:** [Hide view element from a standard SAP Fiori app](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-hide-element.html)
 
 ## Next Steps
-- [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
+- [Add extended app to the SAP Fiori Launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
 
 ## Details
 ### You will learn  
@@ -193,4 +194,4 @@ Congratulations, you've successfully extended a controller of a SAP Standard Fio
 
 
 ## Next Steps
-- [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
+- [Add extended app to the SAP Fiori Launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)

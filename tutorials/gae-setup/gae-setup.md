@@ -1,7 +1,8 @@
 ---
 title: Google App Engine Setup
-description: Setup Google App Engine 
-tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, products>sap-hana\,-express-edition ]
+description: Setup Google App Engine
+primary_tag: products>sap-hana
+tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 
 ## Prerequisites  
@@ -40,7 +41,7 @@ You can name the project whatever you like, in this tutorial the name `sapdevs-s
 
 ![created project](3.png)
 
-With the project now created and associated with a billing account you are now able to begin development. 
+With the project now created and associated with a billing account you are now able to begin development.
 
 ![development](4.png)
 
@@ -67,7 +68,7 @@ In this tutorial the repository was named to match the project name, `sapdevs-sa
 
 [ACCORDION-BEGIN [Step 4: Link Repository](Link Repository)]
 
-Now that the new repository is created it is still empty. The next step is to link the repository, clone or push code to it. 
+Now that the new repository is created it is still empty. The next step is to link the repository, clone or push code to it.
 
 In this particular case, the choice has been to use the "mirror" option and to accomplish that means that a new repository will need to be created in GitHub or Bitbucket first.
 
@@ -122,4 +123,3 @@ Once it is cloned you will see the code in your directory.
 
 ## Next Steps
  - [Google App Engine install HDB](https://www.sap.com/developer/tutorials/gae-nodehdb.html)
-

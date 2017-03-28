@@ -1,6 +1,7 @@
 ---
 title: Working with Disk Engine using Apache Zeppelin
 description: Disk-based storage allows you to use relational capabilities without loading data into memory.
+primary_tag: products>sap-hana-vora
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 ---
 

@@ -1,7 +1,8 @@
 ---
-title: Google App Engine Webapp 
+title: Google App Engine Webapp
 description: Implement a full web application with port listening and continuous interaction with SAP HANA
-tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana
+tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 
 ## Prerequisites  
@@ -107,7 +108,7 @@ You can stream logs from the command line by running:
   $ gcloud app logs tail -s default
 To view your application in the web browser run:
   $ gcloud app browse
-admin_@sapdevs-sample-1:~/src/sapdevs_sample_1$ 
+admin_@sapdevs-sample-1:~/src/sapdevs_sample_1$
 ```
 
 [DONE]
@@ -122,7 +123,7 @@ In order to access your now deployed app you will need to go to the `App Engine`
 ![app engine dashboard](4.png)
 
 Clicking the URL in the right corner will load the app itself.
- 
+
 `System Version: 2.00.000.00.1479874437 (fa/hana2sp00)`
 
 [DONE]

@@ -1,6 +1,7 @@
 ---
 title: SAP Vora Modeler: Aggregation in SQL View
 description: SAP Vora Modeler: Aggregation in SQL View
+primary_tag: products>sap-hana-vora
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
 ---
 ## Prerequisites  

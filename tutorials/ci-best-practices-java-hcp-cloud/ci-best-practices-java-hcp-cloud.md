@@ -2,6 +2,7 @@
 
 title: Continuous Integration (CI) Best Practices with SAP: Java Web on SAP Cloud Platform with CI on Cloud
 description: Part 5.2: Configuring cloud-based CI system for Maven-based Java Web on SAP Cloud Platform project.
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ---
@@ -44,7 +45,7 @@ This example uses the project name `java_sapcp_project`.
 
 #### Procedure
 
-1. In GitHub, create a new repository named `java_sapcp_project` and clone it to your local machine as described in [Generic Project (Pure Java) Using Cloud Services](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html), steps 1-4.
+1. In GitHub, create a new repository named `java_sapcp_project` and clone it to your local machine as described in [Generic Project (Pure Java) Using Cloud Services](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html), steps 1-3.
 
 2. The `samples` folder in the SAP Cloud Platform SDK contains a Maven parent project that includes a couple of modules. Copy the sources of this Maven project into your cloned `java_sapcp_project` repository root folder. For this example, we are going to use only the `explore-ui5` module; use comments in the parent `pom.xml` file to not include the other modules in the Gerrit project:
 
@@ -62,7 +63,7 @@ This example uses the project name `java_sapcp_project`.
     </modules>
     ```
 
-3. Continue setting up the GitHub project and Travis CI build as described in [Generic Project (Pure Java) Using Cloud Services](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html), steps 6-11. The result is a successful build of the `explore-ui5` application on Travis CI.
+3. Continue setting up the GitHub project and Travis CI build as described in [Generic Project (Pure Java) Using Cloud Services](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html), steps 5-10. The result is a successful build of the `explore-ui5` application on Travis CI.
 
 
 ### Deployment to SAP Cloud Platform

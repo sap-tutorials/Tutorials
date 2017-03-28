@@ -1,15 +1,16 @@
 ---
 title: React JS - Add REST OData retrieval
-description: Step #6: Add dynamically retrieved data with OData support
+description: Add dynamically retrieved data with OData support
+primary_tag: topic>html5
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Northwind Destination** [Set up the Northwind service destination in the SAP Cloud Platform cockpit](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
- - **Tutorial:** [Step 5 - Convert components from static to dynamic](http://www.sap.com/developer/tutorials/react-dynamic-components.html)
+- **Proficiency:** Beginner
+- **Northwind Destination** [Set up the Northwind service destination in the SAP Cloud Platform cockpit](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+- **Tutorial:** [Convert components from static to dynamic](http://www.sap.com/developer/tutorials/react-dynamic-components.html)
 
 ## Next Steps
- - **Tutorial:** [Step 7 - Add a header and a detail modal dialog](http://www.sap.com/developer/tutorials/react-add-header-detail-dialog.html)
+- **Tutorial:** [Add a header and a detail modal dialog](http://www.sap.com/developer/tutorials/react-add-header-detail-dialog.html)
 
 
 ## Details
@@ -33,7 +34,8 @@ The steps for this tutorial are:
 
 ---
 
-### Configure the Northwind Test data in Web IDE.
+[ACCORDION-BEGIN [Step 1: ](Configure the Northwind test data in Web IDE)] ￼
+
 
 > Warning
 >
@@ -46,96 +48,126 @@ The steps for this tutorial are:
 > If you do not see a Destination called `Northwind`, go to the **[Create a Destination](http://www.sap.com/developer/tutorials/hcp-create-destination.html)** tutorial.  When you are finished, return here.
 >
 
-1.  Create a new file in your project.  Select the `HelloReact` project, and then right click.  Choose **New** --> **File**.
+[DONE]
+[ACCORDION-END]
 
-    ![Create a new file](1-1.png)
+[ACCORDION-BEGIN [Step 2: ](Create new file)] ￼￼
 
-2. Enter the name `neo-app.json`, and then click OK.
+Create a new file in your project.  Select the `HelloReact` project, and then right click.  Choose **New** --> **File**.
 
-    ![Call the file neo-app.json](1-2.png)
-
-    > **IMPORTANT**
-    >
-    > The new file should be in the `HelloAngular` directory, as shown here:
-    >
-    > ![Correct file location](1-3.png)
-    >
-
-3.  Add the following code to the `neo-app.json` file, and then click **Save**
-
-    ```xml
-    {
-    	"routes": [{
-    		"path": "/Northwind",
-    		"target": {
-    			"type": "destination",
-    			"name": "Northwind"
-    		},
-    		"description": "Northwind ODATA service"
-    	}]
-    }
-    ```
-
-    ![Add the destination information](1-4.png)
-
----
-
-### Change the test data to the OData source
-
-1.  Remove the test data from the JavaScript file.
-
-    In the `main.js` file, select all of the test data (starting with `var testData =`, and delete it.
-
-    >Don't forget to save your file.
-
-    ![delete the test data](2-1.png)   
-
-2.  Scroll down to the `ProductList` component.  This component will set the initial state to an empty array.  After it is placed on the screen, it will call the OData server and request the information.  When that information comes back, this component will then update the list.
-
-    **Add** the following JavaScript code to the top of the `ProductList` component:
-
-    ```javascript
-    getInitialState: function() {
-    	return {products: []};
-    },
-
-    componentDidMount: function() {
-    	var odataUrl = "/Northwind/V3/Northwind/Northwind.svc/";
-
-    	$.ajax({
-    		url: odataUrl + "Products" ,
-    		dataType: 'json',
-    		cache: false
-    	})
-    	.done( function( data, textStatus, jqXHR ) {
-    			this.setState( {products: data.value } )
-    		}.bind(this)
-    	)
-    	.fail( function( jqXHR, textStatus, errorThrown ) {
-    		console.log("Error", jqXHR, textStatus, errorThrown );
-    		alert( "An error occurred while retrieving data from the server: " + textStatus );
-    	});
-    },
-    ```
-
-    ![Set the initial state, call AJAX to retrieve data](2-2.png)
-
-3.  Next, update the `render:` function, to use the new state data.
-
-    select the line `var productListBoxes = testData.map( function(row) {` and **replace** it with:
-
-    ```javascript
-    var productListBoxes = this.state.products.map( function(row) {
-    ```
-
-    ![Update the render function to use the state variable](2-3.png)
-
-4.  Run your application.  20 rows of data should be displayed, coming from the OData test server.
-
-    ![OData data now displayed on the screen](2-4.png)
+![Create a new file](1-1.png)
 
 
----
+Enter the name `neo-app.json`, and then click OK.
+
+![Call the file neo-app.json](1-2.png)
+
+> **IMPORTANT**
+>
+> The new file should be in the `HelloAngular` directory, as shown here:
+>
+> ![Correct file location](1-3.png)
+>
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Add JSON to file)] ￼
+
+Add the following code to the `neo-app.json` file, and then click **Save**
+
+```xml
+{
+	"routes": [{
+		"path": "/Northwind",
+		"target": {
+			"type": "destination",
+			"name": "Northwind"
+		},
+		"description": "Northwind ODATA service"
+	}]
+}
+```
+
+![Add the destination information](1-4.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Remove the test data)] ￼
+
+Remove the test data from the JavaScript file.
+
+In the `main.js` file, select all of the test data (starting with `var testData =`, and delete it.
+
+>Don't forget to save your file.
+
+![delete the test data](2-1.png)   
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Add JavaScript to ProductList component)] ￼
+
+Scroll down to the `ProductList` component.  This component will set the initial state to an empty array.  After it is placed on the screen, it will call the OData server and request the information.  When that information comes back, this component will then update the list.
+
+**Add** the following JavaScript code to the top of the `ProductList` component:
+
+```javascript
+getInitialState: function() {
+	return {products: []};
+},
+
+componentDidMount: function() {
+	var odataUrl = "/Northwind/V3/Northwind/Northwind.svc/";
+
+	$.ajax({
+		url: odataUrl + "Products" ,
+		dataType: 'json',
+		cache: false
+	})
+	.done( function( data, textStatus, jqXHR ) {
+			this.setState( {products: data.value } )
+		}.bind(this)
+	)
+	.fail( function( jqXHR, textStatus, errorThrown ) {
+		console.log("Error", jqXHR, textStatus, errorThrown );
+		alert( "An error occurred while retrieving data from the server: " + textStatus );
+	});
+},
+```
+
+![Set the initial state, call AJAX to retrieve data](2-2.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Update the render function)] ￼
+
+Next, update the `render:` function, to use the new state data.
+
+select the line `var productListBoxes = testData.map( function(row) {` and **replace** it with:
+
+```javascript
+var productListBoxes = this.state.products.map( function(row) {
+```
+
+![Update the render function to use the state variable](2-3.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Run the app)] ￼
+
+Run your application.  20 rows of data should be displayed, coming from the OData test server.
+
+![OData data now displayed on the screen](2-4.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Review further information)] ￼
 
 ## Additional Information
 
@@ -163,81 +195,88 @@ Second, when the browser attempts to get data from <https://services.odata.org/>
 
 We work around this by having SAP Cloud Platform talk to <http://services.odata.org/> directly.  This avoids the HTTPS connection, and works around the bug.
 
----
+[DONE]
+[ACCORDION-END]
 
-## Final Code
+[ACCORDION-BEGIN [Step 9: ](Review final code)] ￼
 
 The only code we have modified in this tutorial is `main.js`.  Here is the current state of that file:
 
 ```javascript
 var ListBox = React.createClass({
-    render: function() {
-        return (
-			<button type="button" className="list-group-item" id="product-list">
-				<div className="row vertical-align">
-					<div className="col-sm-8 top">
-						<h4>{this.props.row.ProductName}</h4>
-						<p> {this.props.row.QuantityPerUnit}</p>
-					</div>
-					<div className="col-sm-3 text-right top">
-						<h4>
-							{this.props.row.UnitPrice}
-							<small className="text-muted"> EUR</small>
-						</h4>
-						<p>{this.props.row.Discontinued ? "Discontinued" : "Available"}</p>
-					</div>
-					<div className="col-sm-1 center">
-						<span className="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>
-					</div>
-				</div>
-			</button>
-		);
-    }
+render: function() {
+    return (
+	<button type="button" className="list-group-item" id="product-list">
+		<div className="row vertical-align">
+			<div className="col-sm-8 top">
+				<h4>{this.props.row.ProductName}</h4>
+				<p> {this.props.row.QuantityPerUnit}</p>
+			</div>
+			<div className="col-sm-3 text-right top">
+				<h4>
+					{this.props.row.UnitPrice}
+					<small className="text-muted"> EUR</small>
+				</h4>
+				<p>{this.props.row.Discontinued ? "Discontinued" : "Available"}</p>
+			</div>
+			<div className="col-sm-1 center">
+				<span className="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>
+			</div>
+		</div>
+	</button>
+);
+}
 });
 
 var ProductList = React.createClass({
-	getInitialState: function() {
-		return {products: []};
-	},
+getInitialState: function() {
+return {products: []};
+},
 
-	componentDidMount: function() {
-		var odataUrl = "/Northwind/V3/Northwind/Northwind.svc/";
+componentDidMount: function() {
+var odataUrl = "/Northwind/V3/Northwind/Northwind.svc/";
 
-		$.ajax({
-			url: odataUrl + "Products" ,
-			dataType: 'json',
-			cache: false
-		})
-		.done( function( data, textStatus, jqXHR ) {
-				this.setState( {products: data.value } )
-			}.bind(this)
-		)
-		.fail( function( jqXHR, textStatus, errorThrown ) {
-			console.log("Error", jqXHR, textStatus, errorThrown );
-			alert( "An arror occurred while retrieving data from the server: " + textStatus );
-		});
-	},
+$.ajax({
+	url: odataUrl + "Products" ,
+	dataType: 'json',
+	cache: false
+})
+.done( function( data, textStatus, jqXHR ) {
+		this.setState( {products: data.value } )
+	}.bind(this)
+)
+.fail( function( jqXHR, textStatus, errorThrown ) {
+	console.log("Error", jqXHR, textStatus, errorThrown );
+	alert( "An arror occurred while retrieving data from the server: " + textStatus );
+});
+},
 
-	render: function() {
-		var productListBoxes = this.state.products.map( function(row) {
-			return(
-				<ListBox row={row} key={row.ProductName} />		
-			);
-		})
+render: function() {
+var productListBoxes = this.state.products.map( function(row) {
+	return(
+		<ListBox row={row} key={row.ProductName} />		
+	);
+})
 
-		return (
-			<div className="list-group">
-				{productListBoxes}
-			</div>
-		)
-	}
+return (
+	<div className="list-group">
+		{productListBoxes}
+	</div>
+)
+}
 });
 
 ReactDOM.render(
-    <ProductList />,
-    document.getElementById('product-list')
+<ProductList />,
+document.getElementById('product-list')
 );
 ```
 
+[DONE]
+[ACCORDION-END]
+
+
+
+
 ## Next Steps
- - **Tutorial:** [Step 7 - Add a header and a detail modal dialog](http://www.sap.com/developer/tutorials/react-add-header-detail-dialog.html)
+- **Tutorial:** [Add a header and a detail modal dialog](http://www.sap.com/developer/tutorials/react-add-header-detail-dialog.html)

@@ -1,14 +1,15 @@
 ---
 title: SQL Execute Immediate
 description: Leveraging SQLScript in Stored Procedures & User Defined Functions
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Tutorials:** [Using Dynamic SQL vs Dynamic Filtering](http://www.sap.com/developer/tutorials/xsa-sqlscript-dynamic.html)
+- **Proficiency:** Intermediate
+- **Tutorials:** [Using Dynamic SQL vs Dynamic Filtering](http://www.sap.com/developer/tutorials/xsa-sqlscript-dynamic.html)
 
 ## Next Steps
- - [Using APPLY FILTER](http://www.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)
+- [Using APPLY FILTER](http://www.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)
 
 ## Details
 ### You will learn  
@@ -20,41 +21,65 @@ In contrast to executing a string using EXEC, executing the string using EXECUTE
 
 ---
 
-1. Switch back to the procedure editor.
+[ACCORDION-BEGIN [Step 1: ](Build your module)]
 
-    ![procedure editor](1.png)
+Switch to the procedure editor.
 
-2. Switch back to the procedure editor. Replace the EXEC keyword with EXECUTE IMMEDIATE
+![procedure editor](1.png)
 
-    ![execute immediate](2.png)
+Replace the EXEC keyword with EXECUTE IMMEDIATE
+
+![execute immediate](2.png)
 
 3. Click "Save".
 
-    ![save](3.png)
+![save](3.png)
 
-4. Use what you have learned already and perform a build on your `hdb` module. Then return to the HRTT page run the call statement again.
+Use what you have learned already and perform a build on your `hdb` module.
 
-    ![HRTT](4.png)
+[DONE]
+[ACCORDION-END]
 
-5. You will notice the implicit result set is now returned to the console.  But you still cannot work further on this result set.
+[ACCORDION-BEGIN [Step 2: ](Run the call statement)]
 
-    ![result](5.png)
+Return to the HRTT page run the call statement again.
 
-6. Now change the CALL statement again, this time insert the value for the input parameter as ' ' as shown here. Run the CALL statement again
+![HRTT](4.png)
 
-    ![modify call statement](6.png)
+You will notice the implicit result set is now returned to the console.  But you still cannot work further on this result set.
 
-7. You will notice the count is 10, which refers to all products except for `Laser printers`.
+![result](5.png)
 
-    ![count](7.png)
+[DONE]
+[ACCORDION-END]
 
-8. Now change the CALL statement. This time insert the value for the input parameter as 'OR 1 = 1' as shown here. Run the CALL statement again.
+[ACCORDION-BEGIN [Step 3: ](Change the CALL statement)]
 
-    ![modify call statement](8.png)
+Now change the CALL statement again, this time insert the value for the input parameter as ' ' as shown here. Run the CALL statement again
 
-9. You will notice the count is now much higher, 106.  This illustrates the possibility of SQL injection. The always true `OR-condition` (1=1) will enforce that the complete `where-condition` will be evaluated to true for each record.
+![modify call statement](6.png)
 
-    ![new count](9.png)
+You will notice the count is 10, which refers to all products except for `Laser printers`.
+
+![count](7.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Change CALL statement again)]
+
+Now change the CALL statement. This time insert the value for the input parameter as 'OR 1 = 1' as shown here. Run the CALL statement again.
+
+![modify call statement](8.png)
+
+You will notice the count is now much higher, 106.  This illustrates the possibility of SQL injection. The always true `OR-condition` (1=1) will enforce that the complete `where-condition` will be evaluated to true for each record.
+
+![new count](9.png)
+
+[DONE]
+[ACCORDION-END]
+
+
 
 ## Next Steps
- - [Using APPLY FILTER](http://www.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)
+- [Using APPLY FILTER](http://www.sap.com/developer/tutorials/xsa-sqlscript-applyfilter.html)

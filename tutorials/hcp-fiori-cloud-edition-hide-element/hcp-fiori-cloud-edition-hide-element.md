@@ -1,14 +1,15 @@
 ---
 title: Hide view element from a standard SAP Fiori app
 description: This tutorial shows you how to hide a view element from a standard SAP Fiori app.
-tags: [  tutorial>beginner, topic>cloud, topic>sapui5, products>sap-web-ide ]
+primary_tag: products>sap-cloud-platform
+tags: [  tutorial>beginner, topic>cloud, topic>sapui5, products>sap-web-ide, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Getting started with the SAP Fiori, Demo Cloud Edition](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html)
+- **Tutorials:** [Add custom fields to a standard SAP Fiori app](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-add-fields.html)
 
 ## Next Steps
-- [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
+- [Extend controller of a standard SAP Fiori app](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-extend-controller.html)
 
 ## Details
 ### You will learn  
@@ -144,4 +145,4 @@ Congratulations, you've successfully hid a view element from a SAP Standard Fior
 
 
 ## Next Steps
-- [Add extended app to SAP Fiori launchpad](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-launchpad.html)
+- [Extend controller of a standard SAP Fiori app](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-extend-controller.html)

@@ -1,15 +1,16 @@
 ---
 title: AngularJS as a Front End - Getting Started
-description: Step #1: Get started writing a simple AngularJS application.
+description: Get started writing a simple AngularJS application.
+primary_tag: topic>html5
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** You will need a SAP Cloud Platform trial account for this tutorial series.  [Create an SAP Cloud Platform Trial Account](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** You will need a SAP Cloud Platform (HCP) trial account for this tutorial series.  [Create an SAP Cloud Platform trial Account](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
 #### AngularJS Series
- - **Tutorials:** Step 2 [Create the Bootstrap Template](http://www.sap.com/developer/tutorials/angular-bootstrap-template.html)
+ - **Tutorials:** [Create the Bootstrap Template](http://www.sap.com/developer/tutorials/angular-bootstrap-template.html)
 
 ## Details
 ### You will learn  
@@ -20,7 +21,7 @@ In this tutorial series, we will explore another technology for Single Page Appl
 
 ---
 #### AngularJS series
-**Step 1**: Connect to the SAP Web IDE (free for development use), and then get a simple project set up for our future tutorials.
+Connect to the SAP Web IDE (free for development use), and then get a simple project set up for our future tutorials.
 
 ---
 
@@ -38,11 +39,11 @@ In this tutorial series, we will explore another technology for Single Page Appl
 
     >**Enabled**: If the box does **NOT** say Enabled, click the **Not Enabled** button to enable this feature.  In the screen that appears, click the **Enable** button at the top of the page to confirm this feature is set up.
 
-    ![SAP Cloud Platform Console - Web IDE services button and box](1-2.png)
+    ![SAP Cloud PlatformConsole - Web IDE services button and box](1-2.png)
 
 3.  In the SAP Web IDE screen, you will see a paragraph called *Service Description*.  At the bottom of the paragraph, there is a link called **Open SAP Web IDE**.  Click this link
 
-    ![SAP Cloud Platform Console - Open Web IDE link](1-3.png)
+    ![SAP Cloud PlatformConsole - Open Web IDE link](1-3.png)
 
 4.  A new tab (or window) will open, and the Web IDE will load.
 
@@ -117,4 +118,4 @@ In this tutorial series, we will explore another technology for Single Page Appl
 Yes, you can.   We are using Web IDE because it provides an unlimited, free, developer account.  It also has a built-in web front end, so that you can test your code immediately.  And, it has a pretty good HTML and JavaScript editing system.  But there are plenty of other development IDE's, including Eclipse, that would work as well.  Feel free to use the one that your company is using, or try out a new one.
 
 ## Next Steps
- - **Tutorials:** Step 2 [Create the Bootstrap Template](http://www.sap.com/developer/tutorials/angular-bootstrap-template.html)
+ - **Tutorials:** [Create the Bootstrap Template](http://www.sap.com/developer/tutorials/angular-bootstrap-template.html)

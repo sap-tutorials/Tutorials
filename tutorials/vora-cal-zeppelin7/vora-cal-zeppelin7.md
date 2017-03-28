@@ -1,6 +1,7 @@
 ---
 title: Working with Document Store Engine in SAP Vora
 description: Document Store is a distributed in-memory JSON document store that supports rich query processing over JSON data
+primary_tag: products>sap-hana-vora
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 ---
 

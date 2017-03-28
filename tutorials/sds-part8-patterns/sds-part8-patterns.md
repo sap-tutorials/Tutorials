@@ -1,6 +1,7 @@
 ---
 title: Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming
 description: Part 8 of 9. Define and watch for patterns in events. Use CCL Editor.
+primary_tag: products>sap-hana-smart-data-streaming
 tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-hana-studio ]
 ---
 ## Prerequisites  

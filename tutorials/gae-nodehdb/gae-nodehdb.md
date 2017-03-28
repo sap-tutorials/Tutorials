@@ -1,7 +1,8 @@
 ---
-title: Google App Engine install HDB 
+title: Google App Engine install HDB
 description: Install the HDB library for Node.js
-tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana
+tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 
 ## Prerequisites  
@@ -14,7 +15,7 @@ tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, product
 
 ## Details
 ### You will learn  
-Now that you have your initial setup in place it is time to generate your initial application and install the HDB libraries. 
+Now that you have your initial setup in place it is time to generate your initial application and install the HDB libraries.
 
 ### Time to Complete
 **15 Min**
@@ -23,7 +24,7 @@ Now that you have your initial setup in place it is time to generate your initia
 
 [ACCORDION-BEGIN [Step 1: Initialize your Application](Initialize your Application)]
 
-There are multiple ways to work with your source code and your repository. The following describes only one way. 
+There are multiple ways to work with your source code and your repository. The following describes only one way.
 
 ![local repo](1.png)
 
@@ -93,7 +94,7 @@ To install the [HDB library](https://github.com/SAP/node-hdb) you will run the f
 
 `npm install hdb --save`
 
-This will automatically install the library locally and add the dependency to the `package.json` file so the system understands to also install the library when you deploy the application. 
+This will automatically install the library locally and add the dependency to the `package.json` file so the system understands to also install the library when you deploy the application.
 
 ![installed library](4.png)
 
@@ -111,7 +112,7 @@ Now to begin with the actual coding. To make life easy you should grab the `clie
   "user": "CODEJAMMER",
   "dbn" : "DB1",
   "password": "XXXXXXX"
-} 
+}
 ```
 From this point you will need to create a new file called `app.js` which will contain the main coding. For the purposes of this example the code will grab the version of the SAP HANA database from the system and output it to the console. A more complex example would also have a web server listening port and output the value to a webpage loaded via the browser.
 
@@ -182,13 +183,13 @@ Now you can execute the `npm start` command again to test the application or you
 
 You will first need to choose the deployment region, as this is Node.js based be sure to choose the region with a flexible environment.
 
-![deploy](8.png) 
+![deploy](8.png)
 
 Now as the code does not work for continuous input and output with no listening ports the deployment will give an error, but it will also give the output.
 
 ```
 Updating service [default]...failed.                                                                                                                                        
-ERROR: (gcloud.app.deploy) Error Response: [9] 
+ERROR: (gcloud.app.deploy) Error Response: [9]
 Application startup error:
 > sapdevs_sample_1@1.0.0 start /app
 > node app.js

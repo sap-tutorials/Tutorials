@@ -1,14 +1,15 @@
 ---
 title: Call another method in the External API (Slack)
 description: Find more information from an external API using a second method call
+primary_tag: topic>sapui5
 tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-web-ide ]
 ---
 ## Prerequisites  
  - **Proficiency:**  Intermediate
- - **Tutorials:** [Add navigation with your API call](http://www.sap.com/developer/tutorials/sapui5-navigate-api.html)
+ - **Tutorials:** Add navigation with your API call
 
 ## Next Steps
- - This is the last tutorial in this series. Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -108,4 +109,4 @@ Make sure all your changes are saved and **RUN** your application. You should no
 
 
 ## Next Steps
- - This is the last tutorial in this series. Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

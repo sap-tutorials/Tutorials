@@ -1,6 +1,7 @@
 ---
 title: Manually creating a data model to use in SAP Web IDE's Mock Data server
 description: Learn how to create a data model in the Common Schema Definition Language (CSDL) using SAP Web IDE
+primary_tag: products>sap-cloud-platform
 tags: [products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>mobile, topic>odata, tutorial>intermediate ]
 ---
 

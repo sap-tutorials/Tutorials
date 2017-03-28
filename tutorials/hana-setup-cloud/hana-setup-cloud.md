@@ -1,10 +1,12 @@
 ---
 title: How to create an SAP HANA Developer Edition in the Cloud
 description: This tutorial will help you create a HANA instance in one of the two public cloud providers:  Amazon AWS or Microsoft Azure.
+primary_tag: products>sap-hana
 tags: [ products>sap-hana, products>sap-cloud-platform, tutorial>beginner ]
 ---
 
 ## Prerequisites  
+- **Proficiency:** Beginner
 - You will need to have an account on either Microsoft Azure or Amazon AWS
 
 ## Next Steps

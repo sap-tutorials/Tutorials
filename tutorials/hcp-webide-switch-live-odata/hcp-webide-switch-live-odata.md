@@ -1,6 +1,7 @@
 ---
 title: Switch your app from mock data to a live OData service
 description: After running your app with mock data, learn how to switch it to a live OData service
+primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, products>sap-gateway, tutorial>intermediate ]
 ---
 
