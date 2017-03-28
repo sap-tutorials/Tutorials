@@ -12,10 +12,10 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
   - **Proficiency:** Intermediate
 
 ## Next Steps
-
+ 
   - [Artifact Repository](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
   - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-
+  
 ---
 
 
@@ -30,7 +30,7 @@ Note: This document is restricted to the description of component installation o
 
 ### 1. Introduction
 
-The build scheduler is the component where you define build procedures and trigger builds. One of the most popular build schedulers is Jenkins, but other solutions, especially on the cloud, are possible as well.
+The build scheduler is the component where you define build procedures and trigger builds. One of the most popular build schedulers is Jenkins, but other solutions, especially on the cloud, are possible as well. 
 
 Jenkins integrates well with polling (Gerrit) or event-based mechanisms (GitHub). It is available as an open source tool and has a large community that provides plugins for any purpose. It is easy to write plugins for Jenkins as well.
 
@@ -41,7 +41,7 @@ Therefore, there are some important differences:
 - The Jenkins master process runs using a dedicated JDK version on the master.
 - The Jenkins slave process or processes run using a dedicated JDK version on the slave.
 - When compiling java, build processes on the slaves may run with custom JDKs.
-
+ 
 In addition, you can run Jenkins also as a one-instance installation which means builds can run directly on the master without using a slave. For very small projects and for process startup, this approach might be sufficient. However, when projects become bigger and the requirements for professional operation increase, you may find that it is necessary to use a master-slave operation. One aspect to consider is that the Jenkins master is a single point of failure in the build landscape that should not be exposed to direct neighborhood of rather uncontrollable processes started inside a running build.
 
 This document describes a master-slave installation. Even if you decide on a master-only approach, please also read through the Jenkins slave section, since it describes the additional steps to be done on the master.
@@ -67,7 +67,7 @@ This section describes how to set up the Jenkins master.
 2.  Create an OS user `jenkins`. This is the user name used throughout this example; however, you can use any other OS user that runs the Jenkins daemon.
 
 3. Create a Jenkins data directory owned by `jenkins`. This example uses `/data/jenkins`, but any other directory that follows the respective conventions works as well. Ensure that the file partition of the directory is large enough to store all of the Jenkins data. Keep in mind that all build logs (including those for builds that are running on slaves) are stored inside this directory.
-
+    
     ```
     mkdir -p /data/jenkins
     chown jenkins /data/jenkins
@@ -75,7 +75,7 @@ This section describes how to set up the Jenkins master.
 
 4. To make the installation easy, download the fitting installation package to your Linux distribution from the Jenkins web site, and install the package on the hosting machine. For example, if you use SUSE or Redhat Linux, download the corresponding `rpm` package and install it with the package manager (`zypper` or `rpm` in this case) on the machine. Consult the official Jenkins documentation for details concerning your Linux platform.
 
-5. Configure the Jenkins home, the Java home directory, the Jenkins daemon user and the Jenkins port. The location may differ between various Linux distributions, for example on `SUSE Linux`, it is located in `/etc/sysconfig/jenkins`.
+5. Configure the Jenkins home, the Java home directory, the Jenkins daemon user and the Jenkins port. The location may differ between various Linux distributions, for example on `SUSE Linux`, it is located in `/etc/sysconfig/jenkins`. 
 
     ```
     JENKINS_HOME="/data/jenkins"
@@ -106,13 +106,13 @@ This section describes how to set up the Jenkins master.
     ```
 
     You see a Jenkins process running as user `jenkins`.
-
+   
 8. Open a browser and access the Jenkins master on port 8082. You see the Jenkins master main page.
 
 9. To enable features that will be used throughout our guide, you must install some plugins. To use the Jenkins plugin download and installation mechanism, you must configure a proxy. On the Jenkins main page, go to **Manage Jenkins > Manage Plugins > Advanced**, enter the needed proxy settings specific to your environment, press on **Submit** and then on **Check now** to get the plugin information updated.
 
     ![Jenkins Configuration](build-scheduler-1.png)
-
+    
     ![HTTP Proxy Configuration](build-scheduler-2.png)
 
 10. Select **Manage Jenkins > Manage Plugins > Available**, then choose the following plugins:
@@ -125,7 +125,7 @@ This section describes how to set up the Jenkins master.
     - **Gerrit Trigger**.
     - **Git plugin**.
     - **Workspace Cleanup Plugin**.
-
+  
 11. Choose **Download now and install after restart**.
 
 12. On the installation progress page, you may check **Restart Jenkins when installation is complete** to immediately trigger the restart. Alternatively, log in as `root` onto the Jenkins master machine and execute:
@@ -142,9 +142,9 @@ This section describes how to set up the Jenkins master.
 
     Field        | Value |
     :----------- | :--------  
-    Scope	     | `Global`
-    Username     | `jenkins`
-    Private Key  | `From the Jenkins master ~/.ssh`
+    Scope	     | `Global` 
+    Username     | `jenkins` 
+    Private Key  | `From the Jenkins master ~/.ssh` 
 
 15. If you are using the master itself for running builds, open **Manage Jenkins > Configure System** and go the **JDK** section.   
     Select **JDK installations...** and choose **Add JDK**.
@@ -154,7 +154,7 @@ This section describes how to set up the Jenkins master.
     - Enter the `JAVA_HOME` directory of the JDK installation.
 
     You will later enter JDKs for the slaves here also.
-
+ 
 16. Save.
 
 
@@ -180,13 +180,13 @@ Our examples are restricted to Linux as the operating system for the slaves, as 
 
     > [SAP JVM download](https://tools.hana.ondemand.com/#cloud)  
     > [SAP JVM installation guide](https://help.hana.ondemand.com/help/frameset.htm?76137f42711e1014839a8273b0e91070.html)
-
+    
 - (MO) Git installation.
 
     > [Git](https://git-scm.com)  
     > [Git download](https://git-scm.com/downloads)  
     > [Git installation guide](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)  
-
+    
 - (MO) Maven installation. The recommended version is Maven 3.0.5. Later versions might lead to build errors due to plugin incompatibilities.
 
     > [Maven](https://maven.apache.org)  
@@ -211,33 +211,33 @@ Our examples are restricted to Linux as the operating system for the slaves, as 
 
 8. Configure the node using the following values:
 
-    Field                  | Value
-    :--------------------- | :--------------------------------------
+    Field                  | Value 
+    :--------------------- | :-------------------------------------- 
     Name                   | `<Any logical name, for example the hostname>`
     Description            | `<Any description>`
     Number of executors    | `<Number of parallel builds that are executable on the node. This depends on the load your build jobs produces and the available resources on the machine. Start with 1 or 2 and try to increase it.>`
-    Remote root directory  | `/data/jenkins`
+    Remote root directory  | `/data/jenkins` 
     Labels                 | `builds`
     Usage                  | `Utilize this node as much as possible`
     Launch method          | `Launch slave agents on UNIX machines via SSH`
     Host                   | `<DNS name of the Jenkins slave>`
     Credentials            | `jenkins`.
-
+    
     In the case that you have installed a newer Credentials Binding Plugin version and the credential `jenkins` is not yet defined, press **Add**, choose the **Jenkins** provider and enter the following values:
-
-    Field                  | Value
-    :--------------------- | :--------------------------------------
+    
+    Field                  | Value 
+    :--------------------- | :-------------------------------------- 
     Domain                 | `Global credentials (unrestricted)`
     Kind                   | `SSH Username with private key`
     Username               | `jenkins`
     Private key            | `From the Jenkins master ~/.ssh`
-
+    
     Press **Add**
-
+    
 9. Choose the **Advanced** button and continue with the configuration.
 
-    Field                  | Value
-    :--------------------- | :--------------------------------------
+    Field                  | Value 
+    :--------------------- | :-------------------------------------- 
     Java Path              | `<Path to the Java executable used by the slave process. This may differ from the SAP JVM to be used for the builds.>`
     Availability           | `Keep this slave on-line as much as possible`
 
@@ -257,7 +257,7 @@ Our examples are restricted to Linux as the operating system for the slaves, as 
     Name                  | `mvn`
     Install automatically | `unchecked`
     `MAVEN_HOME`          | `<Maven home path of the Maven installation directory on the slave or master (in the master-only scenario)>`
-
+    
 13. Either the slave connects automatically or you must explicitly select the **Connect** button. You see the executors readily waiting for jobs.
 
 #### Further Enhancements
@@ -269,6 +269,6 @@ Our examples are restricted to Linux as the operating system for the slaves, as 
 > The content of this document is for guidance purposes only. No warranty or guarantees are provided.
 
 ## Next Steps
-
+ 
   - [Artifact Repository](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
   - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
