@@ -11,11 +11,11 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
   - **Proficiency:** Intermediate
   - [CI/CD Practices](http://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)
-
+  
 ## Next Steps
-
+ 
   - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-
+  
 ---
 
 
@@ -100,7 +100,7 @@ Now we have reached the point from where on the sequel processes differ in the t
 
 We assume that the successfully built artifact still requires additional acceptance tests, which may include both automatic and manual parts but which are in general too exhaustive to be executed within the CI build.
 
-The upload to the artifact repository has similar as in the case of the voter build the sole purpose to temporarily store the artifact for being fetched by sequel process steps.
+The upload to the artifact repository has similar as in the case of the voter build the sole purpose to temporarily store the artifact for being fetched by sequel process steps. 
 
 
 #### Acceptance Test
@@ -124,8 +124,8 @@ The following list gives you an idea of what could be part of a full-fledged qua
   - Security scans and IP scans (these usually operate on sources and hence could be part of the CI build)
   - Translation
   - Artifact signing
-
-A software version that has successfully passed the acceptance test is ready to be instantly deployed to the productive system.
+  
+A software version that has successfully passed the acceptance test is ready to be instantly deployed to the productive system. 
 
 
 #### The Release
@@ -155,5 +155,6 @@ What was discussed here so far is the process for integration into the main line
 
 
 ## Next Steps
-
+ 
   - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  

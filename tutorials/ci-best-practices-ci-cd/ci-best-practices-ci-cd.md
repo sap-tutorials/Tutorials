@@ -12,7 +12,7 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
   - **Proficiency:** Intermediate
 
 ## Next Steps
-
+ 
   - [Pipeline Suggestions](http://www.sap.com/developer/tutorials/ci-best-practices-pipelines.html)
   - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
 
@@ -84,7 +84,7 @@ After rebasing, the developer can push the change safely into the current main l
 
 Imagine the following more complex scenario:
 
-  - A lot of developers, for example, more than 10, are working on the project.
+  - A lot of developers, for example, more than 10, are working on the project. 
   - Not all changes are meant to be integrated at once into the main line. It is a common practice of especially big organizations that larger features and prototyping are isolated from the main line first and integrated into it at a later point in time.
 
 In these cases, so-called feature branches, which are created for a given amount of time as children of the main line, are the common solution.
@@ -93,7 +93,7 @@ In these cases, so-called feature branches, which are created for a given amount
 
 Developers who work on a dedicated feature are not working directly with the main line, but with a feature branch. Though the mechanism is the same, the developers of the feature are using the feature branch as their integration branch. It becomes interesting when the team decides that a feature is ready to be integrated into the main line. A responsible person must rebase all the changes in the feature branch to the current version of the main line. Similar to the single developer scenario, this means that the current version of the main line is merged into the feature branch to make the current version of the feature branch a successor of the current version of the main line. This can cause a high merging effort. Therefore, you should rebase changes as frequently as possible.
 
-The principle of the fetch - develop - rebase (merge) - push cycle is the same for any level of the branch hierarchy of the development project. Even sub-feature branches that are essentially children of the feature branches can be handled in this way.
+The principle of the fetch - develop - rebase (merge) - push cycle is the same for any level of the branch hierarchy of the development project. Even sub-feature branches that are essentially children of the feature branches can be handled in this way. 
 
 #### Key Learning
 
@@ -153,14 +153,14 @@ Every developer, whether working with the main line or with a feature branch, sh
 
 #### Key Learning
 
-Integrate in small steps. Do not accumulate changes and attempt bulk merges into the main line.
+Integrate in small steps. Do not accumulate changes and attempt bulk merges into the main line. 
 
 
 ### Build Each Change
 
 Each change must be integrated into the main line at some point. However, each single change bears the risk of destabilizing the main line, and affecting other developers who rely on its integrity. To balance the conflicting interests, a continuous build mechanism  builds each change to be integrated into the main line. This may be the principle that represents best the basic idea of a CI process.
 
-The typical CI build stores any commit in the main line as soon as it integrated there, and tests the build result automatically. This enables the developer or team to identify whether the change does any harm. To maintain constant monitoring of the quality of the main line, a CI build is mandatory.
+The typical CI build stores any commit in the main line as soon as it integrated there, and tests the build result automatically. This enables the developer or team to identify whether the change does any harm. To maintain constant monitoring of the quality of the main line, a CI build is mandatory. 
 
 A broken CI build requires immediate action as it indicates a severe problem with the quality of the main line. Developers must fix this as soon as possible, so it can be built again and development can continue. This is potentially rather expensive since, depending on the frequency of commits being entered into the main line, a broken build blocks the entire evolution of the main line. It is much cheaper to avoid this situation in the first place.
 
@@ -170,7 +170,7 @@ It is impossible to avoid broken main lines completely; however, you can avoid m
 
 The developer first proposes a change that is not yet integrated into the main line, using for example a "push for review" in Gerrit or the "pull request" mechanism in GitHub. Builds can be scheduled automatically on the proposed change before it is integrated into the main line. The voter build is measuring the quality of a change, identifying problems before they pollute the main line and require re-work.
 
-Voter builds alone are not sufficient to prevent quality issues in the main line, as source code versions on which voter builds run differ, in general, from the versions on the main line.
+Voter builds alone are not sufficient to prevent quality issues in the main line, as source code versions on which voter builds run differ, in general, from the versions on the main line. 
 
 Assume a simple scenario, where changes run into the main line sequentially without overlapping. The figure below shows that one developer creates a change based on version 2 and proposes it. After a successful build, it is merged into the main line as version 3. Another developer may take this new version as a basis for his change, which is finally integrated as version 4 into the main line.
 
@@ -235,7 +235,7 @@ For scheduled builds, we recommend that you reuse the build results from the mos
 
 #### Key Learning
 
-Balance between build performance and the number of tests that are required to be run inside the CI build.
+Balance between build performance and the number of tests that are required to be run inside the CI build. 
 
 ### Test in a Clone of the Production Environment
 
@@ -269,7 +269,7 @@ The approach "just store the artifacts to a central share" can cause problems wh
   - More than one version has to be kept.
   - The application has to be built for more than one platform.
   - More than one build variant is needed, and so on.  
-
+  
 A central repository for artifacts is the appropriate solution for storing and providing build results for developers as well as for other processes that may rely on artifacts. There are some products offered on the market. In the Java world, Nexus is one of the most common ones.
 
 #### Key Learning
@@ -284,7 +284,7 @@ The status of the build process, and therefore the quality of the product, must 
   - Was my last (or any) change built?
   - Was it tested?
   - What were the build and test results and was my change merged into the main line?
-
+  
 The same questions apply to a change of another developer that I am relying on.
 
 After a change was committed by a developer, it is processed in the CI process chain. Different tools are involved: the source code management tool, the build scheduler, the test landscape, the artifact repository and maybe some others. At any point in time, a change is in a dedicated state (for example, pushed, waiting for build, built with success/error, being tested, and so on) and might be processed by one of the listed components. Everybody must be able to easily get the status information on every single change.
@@ -316,6 +316,6 @@ Do deployment as automatic post-build step. Also deploy automatically to product
 
 
 ## Next Steps
-
+ 
   - [Pipeline Suggestions](http://www.sap.com/developer/tutorials/ci-best-practices-pipelines.html)
   - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
