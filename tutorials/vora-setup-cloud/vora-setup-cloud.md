@@ -1,6 +1,7 @@
 ---
 title: How to create SAP Vora developer edition in the Cloud
 description: Create SAP Vora developer edition in the public cloud using SAP Cloud Appliance Library (CAL)
+primary_tag: products>sap-hana-vora
 tags: [  tutorial>beginner, products>sap-hana-vora, topic>big-data ]
 ---
 ## Prerequisites  

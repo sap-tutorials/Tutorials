@@ -1,11 +1,13 @@
 ---
 title: Intro to SAP HANA Geospatial: Spatial Reference Systems
 description: In the context of spatial databases, the defined space in which geometries are described is called a spatial reference system (SRS).
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana
+tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 
 ## Prerequisites  
- - [Intro to SAP HANA Spatial: Z and M coordinates](http://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
+- **Proficiency:** Beginner
+ - **Tutorials:** [Intro to SAP HANA Spatial: Z and M coordinates](http://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
 
 
 ## Next Steps

@@ -1,16 +1,17 @@
 ---
 title: Internet of Things (IoT) Viewing your Tessel data from IoT Services
 description: Now it is time to display your stored data from your Tessel device using SAPUI5 and SAP Web IDE
+primary_tag: topic>internet-of-things
 tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:**  [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
+- **Proficiency:** Beginner
+- **Tutorials:**  [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
 
 ## Next Steps
- - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+- [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
 
 
 ## Details
@@ -23,47 +24,92 @@ Now that you have data stored in the system its time to display that data within
 
 ---
 
-1. Go to [IoT Starter Kit](https://github.com/SAP/iot-starterkit). Choose either to download the ZIP file. 
+[DONE]
+[ACCORDION-END]
 
-    ![Repo](1.png)
+[ACCORDION-BEGIN [Step 1: ](Download IoT Starter Kit)] ￼
 
-2. Unpack the archive and navigate to the folder `iot-starterkit-master > src > apps > ui5 > consumption > src` here you will find a file `neo-app.json` and a folder `webapp` you will need to compress or pack these two items into a new archive file (`ZIP`).
+Go to [IoT Starter Kit](https://github.com/SAP/iot-starterkit). Choose either to download the ZIP file.
 
-    ![Folders](2.png)
+![Repo](1.png)
 
-3. Now in the SAP Cloud Platform Cockpit select "Connectivity" in the left sidebar menu and now choose the Destinations. Then click on "Import From File", and through your directory structure to the folder `iot-starterkit-master > src > apps > ui5 > consumption > destinations` and select the file `iotmms`.
+[DONE]
+[ACCORDION-END]
 
-	 ![Destinations](3.png)
+[ACCORDION-BEGIN [Step 2: ](Unpack and create new archive)] ￼
 
-4. Be sure to replace `%account_id%` with your Account ID e.g `d045495trial`. As well as `%User_id%` with your user User ID e.g `d045495`, enter your password and then save. Then repeat with the file `iotrdms`	 ![Destinations](4.png)
-5. Now under the "Services" section in the sidebar menu and choose the "SAP Web IDE"
+Unpack the archive and navigate to the folder `iot-starterkit-master > src > apps > ui5 > consumption > src` here you will find a file `neo-app.json` and a folder `webapp` you will need to compress or pack these two items into a new archive file (`ZIP`).
 
-	 ![Destinations](5.png)
+![Folders](2.png)
 
-6. Next import a new project from your local file system, this will be the new archive you created. Then select the path.
+[DONE]
+[ACCORDION-END]
 
-	 ![import](6.png)
-	 
-7. Open the `	main.view.js` file and you will need to modify the name of the OData field to match that of your Message Type. In the case of the climate example that would be changing line 120 to `value: "{odata>C_TEMPERATURE}"` instead of the `value: "{odata>C_VALUE}"`
+[ACCORDION-BEGIN [Step 3: ](Import file)] ￼
 
-	 ![main view](8.png)
-	 
-	 ![code change](9.png)
+Now in the SAP Cloud Platform cockpit select "Connectivity" in the left sidebar menu and now choose the Destinations. Then click on "Import From File", and through your directory structure to the folder `iot-starterkit-master > src > apps > ui5 > consumption > destinations` and select the file `iotmms`.
 
-8. Open the `index.html` file and you can launch it as is.
-	 ![running app](7.png)
+![Destinations](3.png)
 
-9. You can now use your expertise with SAPUI5 and start making modifications. Such as the following lines (158 to 164) controlling the `y axis`.
+[DONE]
+[ACCORDION-END]
 
-	```
-				yAxis: new sap.viz.ui5.types.Axis({
-				scale: new sap.viz.ui5.types.Axis_scale({
-					fixedRange: false,
-					minValue: 20,
-					maxValue: 40
-				})
-			}),
-	```
+[ACCORDION-BEGIN [Step 4: ](Replace account and user ID)] ￼
+
+Be sure to replace `%account_id%` with your Account ID e.g `d045495trial`. As well as `%User_id%` with your user User ID e.g `d045495`, enter your password and then save. Then repeat with the file `iotrdms`![Destinations](4.png)
+[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 5: ](Open SAP Web IDE)] ￼Now under the "Services" section in the sidebar menu and choose the "SAP Web IDE"
+
+![Destinations](5.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Import a new project)] ￼
+
+Next import a new project from your local file system, this will be the new archive you created. Then select the path.
+
+![import](6.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Change OData field name)] ￼
+
+Open the `	main.view.js` file and you will need to modify the name of the OData field to match that of your Message Type. In the case of the climate example that would be changing line 120 to `value: "{odata>C_TEMPERATURE}"` instead of the `value: "{odata>C_VALUE}"`
+
+![main view](8.png)
+
+![code change](9.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Launch the index file)] ￼
+
+Open the `index.html` file and you can launch it as is.
+![running app](7.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Add code to project)] ￼
+
+You can now use your expertise with SAPUI5 and start making modifications. Such as the following lines (158 to 164) controlling the `y axis`.
+
+```
+		yAxis: new sap.viz.ui5.types.Axis({
+		scale: new sap.viz.ui5.types.Axis_scale({
+			fixedRange: false,
+			minValue: 20,
+			maxValue: 40
+		})
+	}),
+```
+
+[DONE]
+[ACCORDION-END]
+
+
 
 ## Next Steps
- - [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+- [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)

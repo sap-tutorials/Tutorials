@@ -1,14 +1,15 @@
 ---
-title: React JS - Convert to dynamic components
-description: Step #5: Convert React components from static to dynamic
+title: Convert to dynamic components
+description: Convert React components from static to dynamic
+primary_tag: topic>html5
 tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner 
- - **Tutorial:** [Step 4 - Separate the files](http://www.sap.com/developer/tutorials/react-separate-files.html)
+- **Proficiency:** Beginner
+- **Tutorial:** [Separate the files](http://www.sap.com/developer/tutorials/react-separate-files.html)
 
 ## Next Steps
- - **Tutorial:** [Step 6 - Add REST OData retrieval](http://www.sap.com/developer/tutorials/react-add-odata.html)
+- **Tutorial:** [Add REST OData retrieval](http://www.sap.com/developer/tutorials/react-add-odata.html)
 
 
 ## Details
@@ -30,277 +31,308 @@ These are the steps:
 1.  Convert the list item to use dynamic data
 2.  Pass properties from the parent to the child
 3.  Add a loop and pass each row to the list
- 
+
 ---
 
-### Convert the list item to use dynamic data
+
+[ACCORDION-BEGIN [Step 1: ](Add test data)]
 
 The main goal of REACT is to take data from the Model (using the MVC design philosophy) and display it on the screen.  REACT handles this by using curly braces `{}` to mark variables (instead of static text).  The first goal is to modify the list to show variables.
 
 
 1.  Open the `main.js` file, and add some test data to the top.  Add the following JavaScript to the top of the file:
 
-    ```javascript
-    var testData = 
-    { 
-    	ProductID:0,
-    	ProductName: "Test Product 1",
-    	QuantityPerUnit: "100 units per box",
-    	UnitPrice: "49.75",
-    	Discontinued: false
-    };
-    ```
+```javascript
+var testData =
+{
+	ProductID:0,
+	ProductName: "Test Product 1",
+	QuantityPerUnit: "100 units per box",
+	UnitPrice: "49.75",
+	Discontinued: false
+};
+```
 
-    ![Add test data directly to the JavaScript](1-1.png)
+![Add test data directly to the JavaScript](1-1.png)
 
-2.  Now, scroll down to the `ListBox` component.  There are four data pieces we need to modify.  Start by selecting the first `<div className="col-sm-8 top">` section, and replace it with the following JavaScript:
+[DONE]
+[ACCORDION-END]
 
-    > The pre-compiler looks for items surrounded by curly brackets.  Those items are treated as JavaScript variables, instead of static text.  
+[ACCORDION-BEGIN [Step 2: ](Edit attributes)]
 
-    ```javascript
-    <div className="col-sm-8 top">
-        <h4>{testData.ProductName}</h4>
-        <p> {testData.QuantityPerUnit}</p>
-    </div>
-    ```
+Now, scroll down to the `ListBox` component.  There are four data pieces we need to modify.  Start by selecting the first `<div className="col-sm-8 top">` section, and replace it with the following JavaScript:
 
-    ![Modify the first two attributes](1-2.png)
+> The pre-compiler looks for items surrounded by curly brackets.  Those items are treated as JavaScript variables, instead of static text.  
 
-3.  Next, select the next `<div>` tag, and replace it with the following JavaScript
+```javascript
+<div className="col-sm-8 top">
+    <h4>{testData.ProductName}</h4>
+    <p> {testData.QuantityPerUnit}</p>
+</div>
+```
 
-    ```javascript
-    <div className="col-sm-3 text-right top">
-        <h4>
-            {testData.UnitPrice}
-            <small className="text-muted"> EUR</small>
-        </h4>
-        <p>{testData.Discontinued ? "Discontinued" : "Available"}</p>
-    </div>
-    ```
-
-    ![Modify the last two attributes](1-3.png)
-
-4.  Run your application.  There will be three list boxes, and the data will now match the `testData` variable we added to our code.
-
-    ![Three rows with test data in each row](1-4.png)
+![Modify the first two attributes](1-2.png)
 
 
----
+Next, select the next `<div>` tag, and replace it with the following JavaScript
 
-### Pass properties from the parent to the child
+```javascript
+<div className="col-sm-3 text-right top">
+    <h4>
+        {testData.UnitPrice}
+        <small className="text-muted"> EUR</small>
+    </h4>
+    <p>{testData.Discontinued ? "Discontinued" : "Available"}</p>
+</div>
+```
+
+![Modify the last two attributes](1-3.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Run the application)]
+
+Run your application.  There will be three list boxes, and the data will now match the `testData` variable we added to our code.
+
+![Three rows with test data in each row](1-4.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Add dynamic data elements)]
 
 > Up to this point, our REACT components have used static data to display on the screen.  In order to display dynamic data, the components must be modified to recognize local variables.
-> 
+>
 > In REACT, data can be one of two different types.  
 >
 > - The properties values (or `props`) is data that is passed to the component as read-only.  This is a one way transmission of data from the parent to the child, and there is no expectation that the data will change after it is rendered.  This is useful when sending data to be rendered that will not be modified
 > - The state values (or `state`).  State values are designed to be updated dynamically (hence the name "state").  These values can be changed by both the parent or child, and these values can change during runtime.
-> 
+>
 > Our data will eventually come from a server, but the components that display the data will always have static copies of that data.  In this case, our `ListBox` will use properties.  Eventually, our `ProductList` component will use state data.  That is coming up in a later tutorial.
 
 
-1.  Open the `main.js` file, and scroll down to the `ProductList` component.  Select **all three** `ListBox` components inside the `render` method, and replace them with this JavaScript:
+Open the `main.js` file, and scroll down to the `ProductList` component.  Select **all three** `ListBox` components inside the `render` method, and replace them with this JavaScript:
 
-    ```javascript
-    <ListBox row={testData} />
-    ```
+```javascript
+<ListBox row={testData} />
+```
 
-    ![Add dynamic data to the ListBox component call](2-1.png)
+![Add dynamic data to the ListBox component call](2-1.png)
 
-2.  Scroll up to the `ListBox` component.  **Replace** each instance of the word `testData` with the following text:
+[DONE]
+[ACCORDION-END]
 
-    ```javascript
-    this.props.row
-    ```
+[ACCORDION-BEGIN [Step 5: ](Replace test data)]
 
-    ![Change Property for ProductName](2-2a.png)
+Scroll up to the `ListBox` component.  **Replace** each instance of the word `testData` with the following text:
 
-    ![Change Property for QuantityPerUnit](2-2b.png)
+```javascript
+this.props.row
+```
 
-    ![Change Property for UnitPrice](2-2c.png)
+![Change Property for ProductName](2-2a.png)
 
-    ![Change Property for Discontinued](2-2d.png)
+![Change Property for QuantityPerUnit](2-2b.png)
 
-3.  Now run the application.  There will be only one row, and the row will still have the test data inside it.
+![Change Property for UnitPrice](2-2c.png)
 
-    ![Single row with the test data displayed](2-3.png)
-    
----
+![Change Property for Discontinued](2-2d.png)
 
-### Add a loop and pass each row to the list
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Run the application)]
+
+Now run the application.  There will be only one row, and the row will still have the test data inside it.
+
+![Single row with the test data displayed](2-3.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Add test data object)]
 
 To display multiple rows of data, the `ProductList` component will need to be modified to loop through data and use a `ListBox` for each row.  
 
+Start by replacing the `testData` with an array of test data.  Select the `testData` variable, and **replace** it with the following JavaScript:
 
-1.  Start by replacing the `testData` with an array of test data.  Select the `testData` variable, and **replace** it with the following JavaScript:
+```javascript
+var testData = [
+    {
+      ProductID: 0,
+    	ProductName: "Test Product 1",
+    	QuantityPerUnit: "100 units per box",
+    	UnitPrice: "49.75",
+    	Discontinued: false
+    },
+    {
+      ProductID: 1,
+    	ProductName: "Test Product 2",
+    	QuantityPerUnit: "20 cases per pallet",
+    	UnitPrice: "168.77",
+    	Discontinued: false
+    },
+    {
+      ProductID: 2,
+    	ProductName: "Test Product 3",
+    	QuantityPerUnit: "20 per box, 20 boxes",
+    	UnitPrice: "4953.75",
+    	Discontinued: false
+    },
+    {
+      ProductID: 3,
+    	ProductName: "Test Product 4",
+    	QuantityPerUnit: "65 individually wrapped",
+    	UnitPrice: "112.50",
+    	Discontinued: true
+    }
+];
+```
 
-    ```javascript
-    var testData = [
-        { 
-          ProductID: 0,
-        	ProductName: "Test Product 1",
-        	QuantityPerUnit: "100 units per box",
-        	UnitPrice: "49.75",
-        	Discontinued: false
-        },
-        { 
-          ProductID: 1,
-        	ProductName: "Test Product 2",
-        	QuantityPerUnit: "20 cases per pallet",
-        	UnitPrice: "168.77",
-        	Discontinued: false
-        },
-        { 
-          ProductID: 2,
-        	ProductName: "Test Product 3",
-        	QuantityPerUnit: "20 per box, 20 boxes",
-        	UnitPrice: "4953.75",
-        	Discontinued: false
-        },
-        { 
-          ProductID: 3,
-        	ProductName: "Test Product 4",
-        	QuantityPerUnit: "65 individually wrapped",
-        	UnitPrice: "112.50",
-        	Discontinued: true
-        }
-    ];
-    ```
+![Modify testData to an array](3-1.png)
 
-    ![Modify testData to an array](3-1.png)
+[DONE]
+[ACCORDION-END]
 
-2.  In order to work through the array, we could use a `for()` loop.  Instead, JavaScript has a more powerful method called `map()`, which can transform an entire array at one time.    
+[ACCORDION-BEGIN [Step 8: ](Iterate over data)]
 
-    Scroll down to the `ProductList` component.  Select the entire `return()` function, and **replace** it with the following JavaScript:
-    
-    ```javascript
-    render: function() {
-    	var productListBoxes = testData.map( function(row) {
-    		return(
-    			<ListBox row={row} key={row.ProductName} />		
-    		);
-    	})
-    	
-    	console.log(productListBoxes);
-    
-    	return (
-    		<div className="list-group">
-    			{productListBoxes}
-    		</div>
-    	)
-    }	
-    ```
+In order to work through the array, we could use a `for()` loop.  Instead, JavaScript has a more powerful method called `map()`, which can transform an entire array at one time.    
 
-    ![Modify productListBoxes to use array](3-2.png)
+Scroll down to the `ProductList` component.  Select the entire `return()` function, and **replace** it with the following JavaScript:
 
-3.  Run the application.  Four rows of data will be displayed, each corresponding to a row in our `testData` variable.
+```javascript
+render: function() {
+	var productListBoxes = testData.map( function(row) {
+		return(
+			<ListBox row={row} key={row.ProductName} />		
+		);
+	})
 
-    ![All rows of testdata displayed](3-3.png)
+	console.log(productListBoxes);
 
----
+	return (
+		<div className="list-group">
+			{productListBoxes}
+		</div>
+	)
+}
+```
 
-## Additional Information
+![Modify productListBoxes to use array](3-2.png)
 
-#### JavaScript
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Run the application)]
+
+Run the application.  Four rows of data will be displayed, each corresponding to a row in our `testData` variable.
+
+![All rows of testdata displayed](3-3.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Review additional information)]
+
+JavaScript:
 
 - Instead of a `for()` loop, this tutorial used the [JavaScript array map() function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
----
+[DONE]
+[ACCORDION-END]
 
-### Final Code
+[ACCORDION-BEGIN [Step 12: ](Review final code)]
 
 This tutorial has only modified the `main.js` file.  Here is the final code for that file:
 
 ```javascript
 var testData = [
-	{ 
-		ProductID:0,
-		ProductName: "Test Product 1",
-		QuantityPerUnit: "100 units per box",
-		UnitPrice: "49.75",
-		Discontinued: false
-	},
-	{ 
-		ProductID:1,
-		ProductName: "Test Product 2",
-		QuantityPerUnit: "20 cases per pallet",
-		UnitPrice: "168.77",
-		Discontinued: false
-	},
-	{ 
-		ProductID:2,
-		ProductName: "Test Product 3",
-		QuantityPerUnit: "20 per box, 20 boxes",
-		UnitPrice: "4953.75",
-		Discontinued: false
-	},
-	{ 
-		ProductID:3,
-		ProductName: "Test Product 4",
-		QuantityPerUnit: "65 individually wrapped",
-		UnitPrice: "112.50",
-		Discontinued: true
-	}
+{
+ProductID:0,
+ProductName: "Test Product 1",
+QuantityPerUnit: "100 units per box",
+UnitPrice: "49.75",
+Discontinued: false
+},
+{
+ProductID:1,
+ProductName: "Test Product 2",
+QuantityPerUnit: "20 cases per pallet",
+UnitPrice: "168.77",
+Discontinued: false
+},
+{
+ProductID:2,
+ProductName: "Test Product 3",
+QuantityPerUnit: "20 per box, 20 boxes",
+UnitPrice: "4953.75",
+Discontinued: false
+},
+{
+ProductID:3,
+ProductName: "Test Product 4",
+QuantityPerUnit: "65 individually wrapped",
+UnitPrice: "112.50",
+Discontinued: true
+}
 ];
 
 var ListBox = React.createClass({
-    render: function() {
-        return (
-			<button type="button" className="list-group-item" id="product-list">
-				<div className="row vertical-align">
-					<div className="col-sm-8 top">
-						<h4>{this.props.row.ProductName}</h4>
-						<p> {this.props.row.QuantityPerUnit}</p>
-					</div>
-					<div className="col-sm-3 text-right top">
-						<h4>
-							{this.props.row.UnitPrice}
-							<small className="text-muted"> EUR</small>
-						</h4>
-						<p>{this.props.row.Discontinued ? "Discontinued" : "Available"}</p>
-					</div>
-					<div className="col-sm-1 center">
-						<span className="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>
-					</div>
-				</div>
-			</button>
-		);
-    }
+render: function() {
+    return (
+	<button type="button" className="list-group-item" id="product-list">
+		<div className="row vertical-align">
+			<div className="col-sm-8 top">
+				<h4>{this.props.row.ProductName}</h4>
+				<p> {this.props.row.QuantityPerUnit}</p>
+			</div>
+			<div className="col-sm-3 text-right top">
+				<h4>
+					{this.props.row.UnitPrice}
+					<small className="text-muted"> EUR</small>
+				</h4>
+				<p>{this.props.row.Discontinued ? "Discontinued" : "Available"}</p>
+			</div>
+			<div className="col-sm-1 center">
+				<span className="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>
+			</div>
+		</div>
+	</button>
+);
+}
 });
 
 var ProductList = React.createClass({
-	render: function() {
-		var productListBoxes = testData.map( function(row) {
-			return(
-				<ListBox row={row} key={row.ProductName} />		
-			);
-		})
-		
-		console.log(productListBoxes);
-	
-		return (
-			<div className="list-group">
-				{productListBoxes}
-			</div>
-		)
-	}	
+render: function() {
+var productListBoxes = testData.map( function(row) {
+	return(
+		<ListBox row={row} key={row.ProductName} />		
+	);
+})
+
+console.log(productListBoxes);
+
+return (
+	<div className="list-group">
+		{productListBoxes}
+	</div>
+)
+}
 });
 
 ReactDOM.render(
-    <ProductList />,
-    document.getElementById('product-list')
+<ProductList />,
+document.getElementById('product-list')
 );
 ```
+
+[DONE]
+[ACCORDION-END]
 
 
 ---
 
 ## Next Steps
- - **Tutorial:** [Step 6 - Add REST OData retrieval](http://www.sap.com/developer/tutorials/react-add-odata.html)
-
-
-
-
-
-
- 
+- **Tutorial:** [Add REST OData retrieval](http://www.sap.com/developer/tutorials/react-add-odata.html)

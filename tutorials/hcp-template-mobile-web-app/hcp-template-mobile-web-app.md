@@ -1,6 +1,7 @@
 ---
 title: Build an app from an SAP Web IDE template
 description: Build an app using the SAP Web IDE template wizard
+primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>beginner ]
 ---
 ## Prerequisites
@@ -116,7 +117,7 @@ If you only have one **`WebIDEEnabled`** destination in SAP Cloud Platform, it w
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Add Odata path)]
+[ACCORDION-BEGIN [Step 10: ](Add OData path)]
 
 After selecting the Northwind OData Service entry, enter the relative path (see below) to the OData service you will use in the field under the drop-down list-box (where it says "Paste URL here"). Be sure not to include any trailing space characters.
 
@@ -229,7 +230,7 @@ To run your application, select the `index.html` file, and click the **Run** but
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](View completed app)]
+[ACCORDION-BEGIN [Step 18: ](View completed app)]
 
 Congratulations! You've developed your application that shows the products and supplier data!
 

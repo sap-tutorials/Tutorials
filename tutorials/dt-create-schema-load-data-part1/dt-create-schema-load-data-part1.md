@@ -1,6 +1,7 @@
 ---
 title: Create Extended Storage
-description: Part 1 of 8. Create extended storage for Dynamic Tiering.
+description: Create extended storage for Dynamic Tiering.
+primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
 ## Prerequisites

@@ -1,11 +1,12 @@
 ---
 title: Creating issues, setting milestones and assigning issues to collaborators
-description: Part 4 of 6, Collaborative Development Using GitHub and SAP Web IDE
-tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
+description: Collaborative Development Using GitHub and SAP Web IDE
+primary_tag: products>sap-web-ide
+tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** 
+ - **Tutorials:**
   - [Creating project in SAP Web IDE and importing it into GitHub](http://www.sap.com/developer/tutorials/webide-github-import-project.html)
 
 ## Next Steps
@@ -27,11 +28,11 @@ In this tutorial, you'll learn how to create issues, set milestones for delivery
 
     ![GitHub issues](p4_2.png)
 
-3. Enter the details about the change required. 
+3. Enter the details about the change required.
 
-    a. In this instance, you will create 2 issues, one issue to remove **Ordered by** label from the Purchase Order header and the other issue to add a **Product ID** column to the Order Details table. 
+    a. In this instance, you will create 2 issues, one issue to remove **Ordered by** label from the Purchase Order header and the other issue to add a **Product ID** column to the Order Details table.
 
-    b. Click on the **Labels** and assign it as **Enhancement**. Labels can be used to categorize issues into bug/enhancements and custom labels even. 
+    b. Click on the **Labels** and assign it as **Enhancement**. Labels can be used to categorize issues into bug/enhancements and custom labels even.
 
     ![GitHub issues](p4_3b.png)
 
@@ -49,21 +50,21 @@ In this tutorial, you'll learn how to create issues, set milestones for delivery
 
     ![Issue created](p4_4.png)
 
-5. You can assign deadlines for milestones. 
+5. You can assign deadlines for milestones.
 
     a. To do this, click on **Issues** tab of your GitHub organization repository. Then click on the **Milestones** tab.
 
     ![Milestone tab](p4_5a.png)
-    
+
     b. Click on **Edit** and assign a due date.
 
     ![Milestone tab](p4_5b.png)
-    
+
     C. Click on **Save changes** to update the milestone.
 
-  
+
     ![Update milestones](p4_5c.png)
-    
+
 6. Similarly, you can create new milestones, update existing ones and check for status of current milestones from this page.
 
     ![Milestones status](p4_6.png)

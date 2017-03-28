@@ -1,6 +1,7 @@
 ---
 title: Creating OData Services
 description: Creating OData Services(Core Data Services)
+primary_tag: products>sap-s-4hana
 tags: [  tutorial>beginner, products>sap-s-4hana ]
 ---
 ## Prerequisites  

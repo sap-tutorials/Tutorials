@@ -1,6 +1,7 @@
 ---
 title: SAPUI5 extending a simple Control
 description: Part 1 of 4. In this tutorial you will learn how to extend a simple UI5 control.
+primary_tag: topic>sapui5
 tags: [  tutorial>beginner, topic>html5 ]
 ---
 ## Prerequisites  
@@ -76,7 +77,7 @@ Understand the basic flow of control and it's required parameters.
   			 });
       oLabel.placeAt("content_1");
     ```
-    
+
     ![step_four](img-4.png)
 
 6. Your final code will look like this:

@@ -1,11 +1,12 @@
 ---
 title: Creating a project in SAP Web IDE and importing it into GitHub
-description: Part 3 of 6, Collaborative Development Using GitHub and SAP Web IDE
-tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
+description: Collaborative Development Using GitHub and SAP Web IDE
+primary_tag: products>sap-web-ide
+tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** 
+ - **Tutorials:**
   - [Create a repo within the Organization](http://www.sap.com/developer/tutorials/webide-github-create-git-repo.html)
   - [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
 
@@ -54,7 +55,7 @@ In this tutorial, you'll learn how to import an existing SAP Web IDE project int
 8. Next, commit the project files to the local Git repository by clicking on **Stage all** checkbox, enter a commit description and then click on the **Commit** button.
 
     ![Git changes committed](p3_8.png)
-  
+
 9. Next to synchronize GitHub repository and local repository changes, click on the **Pull** button. Enter your GitHub credentials.
 
     ![Pull GitHub changes](p3_9.png)

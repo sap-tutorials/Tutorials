@@ -1,18 +1,21 @@
 ---
 title: SAP HANA XS Classic, Develop your first SAP HANA XSC Application
 description: In this tutorial you will make your very first SAP HANA XSC application using the SAP HANA Web-based Development Workbench.
+primary_tag: products>sap-hana
 tags: [ products>sap-hana, products>sap-cloud-platform, tutorial>beginner]
 ---
 
 ## Prerequisites  
-You need a HANA account or server. Pick one of the following:
-- [Get a free account in SAP Cloud Platform](https://account.hanatrial.ondemand.com/register)
-- [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html)
+ - **Proficiency:** Beginner
+ - **Tutorials:** You need a HANA account or server. Pick one of the following:
+   - [Get a free account in SAP Cloud Platform](https://account.hanatrial.ondemand.com/register)
+   - [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html)
 
 ## Next Steps
 [Access your first Data from a native SAP HANA Application](http://www.sap.com/developer/tutorials/hana-data-access-authorizations.html)
 
 ## Details
+
 ### You will learn  
 1. How to use the SAP HANA Web-based Development Workbench.
 2. How to develop a simple server-side application.

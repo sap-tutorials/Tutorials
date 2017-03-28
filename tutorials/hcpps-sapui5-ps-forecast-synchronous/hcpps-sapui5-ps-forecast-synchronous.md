@@ -1,6 +1,7 @@
 ---
 title: Implement the "Forecast" service synchronous mode
 description: You will extend your application with the "Forecast" service using the synchronous mode
+primary_tag: products>sap-cloud-platform
 tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 

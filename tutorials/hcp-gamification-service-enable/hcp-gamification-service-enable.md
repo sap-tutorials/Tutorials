@@ -1,6 +1,7 @@
 ---
 title: Enable and configure the SAP Cloud Platform, gamification service
 description: In SAP Cloud Platform, configure the user roles and connectivity destinations necessary to use the gamification service.
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  

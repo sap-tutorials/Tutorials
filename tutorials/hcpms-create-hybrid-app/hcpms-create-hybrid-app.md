@@ -1,6 +1,7 @@
 ---
 title: Create a hybrid app in SAP Cloud Platform mobile services for development and operations
 description: Learn how to create a hybrid app definition in SAP Cloud Platform mobile services for development and operations
+primary_tag: topic>mobile
 tags: [ products>sap-cloud-platform, topic>cloud, topic>mobile, tutorial>intermediate]
 ---
 ## Prerequisites  

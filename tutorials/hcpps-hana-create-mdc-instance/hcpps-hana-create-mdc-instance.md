@@ -1,6 +1,7 @@
 ---
 title: Setup your trial SAP HANA MDC instance
 description: Learn how to setup a SAP HANA MDC instance to be used with the SAP Cloud for predictive services
+primary_tag: products>sap-hana
 tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-hana, products>sap-cloud-platform  ]
 ---
 

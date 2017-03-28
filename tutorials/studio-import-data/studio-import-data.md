@@ -1,7 +1,8 @@
 ---
 title: SAP HANA Studio, Import Data
 description: Import Data to your SAP HANA system
-tags: [  tutorial>beginner, products>sap-hana, products>sap-hana,-express-edition, products>sap-hana-studio ]
+primary_tag: products>sap-hana
+tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition , products>sap-hana-studio ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
