@@ -10,7 +10,7 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
  - **Tutorials:** [Offline OData - Error handling](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-errorhandling.html)
 
 ## Next Steps
- - [SAML and OAuth 2 authentication](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-saml-oauth.html)
+ - [SAML and OAuth 2 authentication](https://www.sap.com/developer/tutorials/fiori-ios-scpms-saml-oauth.html)
 
 ## Details
 ### You will learn  
@@ -281,4 +281,4 @@ If you now close the application and open it again, it will not ask for your use
 [ACCORDION-END]
 
 ## Next Steps
-- [SAML and OAuth 2 authentication](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-saml-oauth.html)
+- [SAML and OAuth 2 authentication](https://www.sap.com/developer/tutorials/fiori-ios-scpms-saml-oauth.html)
