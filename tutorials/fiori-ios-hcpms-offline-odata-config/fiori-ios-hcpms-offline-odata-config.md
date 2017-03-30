@@ -22,7 +22,7 @@ In this tutorial, you will learn to use configure your application and SAP Cloud
 
 ---
 
-To user the Offline OData service, it is not necessary to to add any specific configuration to your application. In that case, SAP Cloud Platform mobile services will apply defaults that will make a good amount of applications run smoothly.
+To use the Offline OData service, it is not necessary to to add any specific configuration to your application. In that case, SAP Cloud Platform mobile services will apply defaults that will make a good amount of applications run smoothly.
 
 However, the Offline OData service can be configured to best meet the needs of your use cases.
 
