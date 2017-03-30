@@ -30,9 +30,9 @@ When data from the OData back-end connection has been retrieved, the travel agen
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Add a read function in the HCPms class)]
+[ACCORDION-BEGIN [Step 1: ](Add a read function in the `SAPcpms` class)]
 
-In the **Project Navigator**, click on the `HCPms.swift` file. This file contains quite some code already that was built in the previous tutorials. Most of the code is revolving around registration and securely storing the credentials and Application Connection ID. However, the functions that interact with the service back-end is still missing. Add the `read` function below underneath your `register` function:
+In the **Project Navigator**, click on the `SAPcpms.swift` file. This file contains quite some code already that was built in the previous tutorials. Most of the code is revolving around registration and securely storing the credentials and Application Connection ID. However, the functions that interact with the service back-end is still missing. Add the `read` function below underneath your `register` function:
 
 ```swift
 func read(path: String, completion: @escaping (Bool, Any?) -> Void) {
@@ -138,7 +138,7 @@ Replace the current `loadData` function with the function below:
 
 ```swift
 func loadData() {
-    HCPms.shared.read(path: "/TravelAgencies?$select=NAME&$orderby=NAME") {
+    SAPcpms.shared.read(path: "/TravelAgencies?$select=NAME&$orderby=NAME") {
         (success: Bool, result: Any?) in
         if (success) {
             guard let root = result as? [String: Any], let d = root["d"] as? [String: Any], let results = d["results"] as? [[String: Any]] else {
@@ -166,7 +166,7 @@ func loadData() {
 }
 ```
 
-The `loadData` function calls the `read` function in the  `HCPms`. It will pass parameter `/TravelAgencies?$select=NAME&$orderby=NAME` as OData path parameter. This means that we only need attribute `NAME` of each travel agency and that the result list should be ordered by `NAME`.
+The `loadData` function calls the `read` function in the  `SAPcpms`. It will pass parameter `/TravelAgencies?$select=NAME&$orderby=NAME` as OData path parameter. This means that we only need attribute `NAME` of each travel agency and that the result list should be ordered by `NAME`.
 
 The second parameter is a completion handler that is called when the response has been received.
 

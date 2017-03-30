@@ -1,8 +1,8 @@
 ---
 title: Sample OData services
 description: Using the sample OData service included with the SAP Cloud Platform Mobile Services account.
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>mobile, operating_system>ios, products>sap-cloud-platform ]
+primary_tag: products>sap-cloud-platform-sdk-for-ios
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

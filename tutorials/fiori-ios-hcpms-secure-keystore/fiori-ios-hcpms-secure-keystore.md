@@ -1,8 +1,8 @@
 ---
 title: Basic Authentication and Secure Key Store
 description: Authenticate using Basic Authentication and store credentials in secure key store.
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>intermediate, topic>mobile, operating_system>ios, products>sap-cloud-platform ]
+primary_tag: products>sap-cloud-platform-sdk-for-ios
+tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
@@ -55,7 +55,7 @@ First, you need a few extra imports. Below the already existing `Foundation` imp
 
 ```swift
 import UIKit
-import HCPFoundation
+import SAPFoundation
 ```
 
 [DONE]
@@ -72,7 +72,7 @@ class KeystoreAuthenticator: NSObject, URLSessionTaskDelegate {
     private let encryptionKey = "mySuperStrongEncryptionKey"	    
     private var username: String!
     private var password: String!
-    private var urlSession: HCPURLSession!
+    private var urlSession: SAPURLSession!
 }    
 ```
 
@@ -126,9 +126,9 @@ Now, add a method which will challenge the authentication. Below the just added 
 
 ```swift
 public func authenticate() {
-    let hcpmsHTTPObserver = HCPmsHTTPObserver(applicationID: Constants.appId)
-    urlSession = HCPURLSession(urlSessionDelegate: self)
-    urlSession.register(hcpmsHTTPObserver)
+    let sapcpmsObserver = SAPcpmsObserver(applicationID: Constants.appId)
+    urlSession = SAPURLSession(urlSessionDelegate: self)
+    urlSession.register(sapcpmsObserver)
     var request = URLRequest(url: URL(string: Constants.appUrl)!)
     request.httpMethod = "GET"
 

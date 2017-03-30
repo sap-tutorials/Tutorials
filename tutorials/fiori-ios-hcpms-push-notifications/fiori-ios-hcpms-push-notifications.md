@@ -1,8 +1,8 @@
 ---
 title: Push notifications
 description: Implement push notifications into your application with SAP Cloud Platform, mobile services.
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>intermediate, topic>mobile, operating_system>ios ]
+primary_tag: products>sap-cloud-platform-sdk-for-ios
+tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
@@ -270,7 +270,7 @@ Go back to your **SAP Cloud Platform Mobile Services Cockpit** and navigate to *
 In the **Push Desk**, find your device using the filter options, and enter the following content in the **Message** area:
 
 ```
-HCPms says: 'How do you like the tutorials so far?    
+SAPcpms says: 'How do you like the tutorials so far?    
 ```
 
 If you click **Send**, your device should now receive a new push notification:

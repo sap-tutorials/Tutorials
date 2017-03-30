@@ -1,8 +1,8 @@
 ---
 title: Installing the SAP Cloud Platform for iOS SDK
 description: Installing the SAP Cloud Platform for iOS SDK files into your project.
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>mobile, operating_system>ios, products>sap-cloud-platform ]
+primary_tag: products>sap-cloud-platform-sdk-for-ios
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

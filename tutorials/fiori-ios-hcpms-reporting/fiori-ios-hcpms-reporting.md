@@ -1,8 +1,8 @@
 ---
 title: Manage usage statistics on SAP Cloud Platform Mobile Services
 description: Manage usage statistics on SAP Cloud Platform Mobile Services.
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>mobile, operating_system>ios, products>sap-cloud-platform ]
+primary_tag: products>sap-cloud-platform-sdk-for-ios
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

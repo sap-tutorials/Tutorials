@@ -1,8 +1,8 @@
 ---
 title: Create an application definition
 description: Create an application definition that enables you to manage the application. The application definition includes a unique application identifier, connections to the back-end data source, and optionally, other application-specific settings.
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, operating-system>ios, products>sap-cloud-platform ]
+primary_tag: products>sap-cloud-platform-sdk-for-ios
+tags: [  tutorial>beginner, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

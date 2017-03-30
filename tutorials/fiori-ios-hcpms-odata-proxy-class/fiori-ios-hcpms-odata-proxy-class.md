@@ -1,8 +1,8 @@
 ---
 title: Connecting to OData service (Proxy class)
 description: Connecting to OData service using a generated / hand-built proxy class
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>mobile, operating_system>ios, products>sap-cloud-platform ]
+primary_tag: products>sap-cloud-platform-sdk-for-ios
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
@@ -121,7 +121,7 @@ A proxy class for the OData service would have the following three main parts:
 In its entirety, for your most basic OData service with the single User entity, the Proxy file will be like this:
 
 ```swift
-import HCPOData
+import SAPOData
 import Foundation
 
 open class User: EntityValue {

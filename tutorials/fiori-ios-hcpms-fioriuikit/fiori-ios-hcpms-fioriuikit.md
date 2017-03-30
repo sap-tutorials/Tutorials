@@ -1,8 +1,8 @@
 ---
 title: Implement Fiori for iOS controls
 description: Implement Fiori for iOS controls
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>mobile, operating_system>ios, products>sap-cloud-platform ]
+primary_tag: products>sap-cloud-platform-sdk-for-ios
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
@@ -21,40 +21,25 @@ You will learn to implement SAP Fiori for iOS controls, and style your applicati
 
 ---
 
-In the previous tutorials, you created and build upon an application which utilized the technical parts of the SAP HCP for iOS SDK. The application itself still had the 'traditional' iOS look and feel.
+In the previous tutorials, you created and build upon an application which utilized the technical parts of the SAP Cloud Platform SDK for iOS. The application itself still had the 'traditional' iOS look and feel.
 In this tutorial, you will implement the use of a Fiori for iOS control (the **Object Cell**), as well as change the general appearance of the application conform the SAP Fiori for iOS standards. When finished, your application will look like this:
 
 ![Xcode](fiori-ios-hcpms-fioriuikit-08.png)
 
-[ACCORDION-BEGIN [Step 1: ](Add FioriUIKit to your project)]
+[ACCORDION-BEGIN [Step 1: ](Check whether SAPFiori framework is added your project)]
 
 Open the Xcode project, and locate the **Demo > Frameworks** group. Expand the group.
 
-Switch to **Finder**, and navigate to the `Debug-fat` location which contain the stored framework files. Drag the `FioriUIKit.framework` file to the expanded **Frameworks** folder.
-
-In the dialog, make sure to select **Copy items if needed** and click **Finish**
+Make sure the `SAPFiori` framework file is listed:
 
 ![Xcode](fiori-ios-hcpms-fioriuikit-01.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Add framework file to Embedded Binaries)]
-
-Navigate to `Demo` and from the **General** tab, scroll down to **Embedded Binaries**. Click the **+** button.
-
-![Xcode](fiori-ios-hcpms-fioriuikit-02.png)
-
-In the dialog, select the `FioriUIKit.framework` file.
-
-![Xcode](fiori-ios-hcpms-fioriuikit-03.png)
-
-> If, after adding it to the **Embedded Libraries**, two `FioriUIKit` entries are visible under **Linked Frameworks and Libraries**, then remove that second entry.
+If it's not, copy the file from the SDK's `Release-fat` directory to the **Embedded Binaries** section of your project configuration.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add Tablle View Cell to Table View)]
+[ACCORDION-BEGIN [Step 2: ](Add Table View Cell to Table View)]
 
 Open the project's **Storyboard**. Locate the **Master** Table View and drag a new **Table View Cell** control from the **Object Library** to the **Table View**:
 
@@ -63,7 +48,7 @@ Open the project's **Storyboard**. Locate the **Master** Table View and drag a n
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Change Table View Cell properties)]
+[ACCORDION-BEGIN [Step 3: ](Change Table View Cell properties)]
 
 With the newly added **Table View Cell** selected, switch to it's **Attributes Inspector**.
 
@@ -86,21 +71,21 @@ Set the following properties:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Change Table View Cell class to FioriUIKit's Object Cell)]
+[ACCORDION-BEGIN [Step 4: ](Change Table View Cell class to SAPFiori's Object Cell)]
 
 Switch to the Object Cell's **Identity Inspector**, and change the class and module to the Fiori **Object Cell** control:
 
 | Property | Value |
 |----|----|
 | Class | `ObjectCell` |
-| Module | `FioriUIKit` |
+| Module | `SAPFiori` |
 
 ![Xcode](fiori-ios-hcpms-fioriuikit-06.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Bind model data to Object Cell)]
+[ACCORDION-BEGIN [Step 5: ](Bind model data to Object Cell)]
 
 Now, you need to implement logic to bind the **Object Cell**'s display properties to the model data.
 
@@ -109,7 +94,7 @@ Open the file `ProductsMasterTableDelegate.swift` under `Demo > TableDelegates >
 First, import the Fiori UI Kit module:
 
 ```swift
-import FioriUIKit
+import SAPFiori
 ```
 
 Locate the following function:
@@ -162,54 +147,9 @@ Finally, now you have the reference to the Fiori Object Cell control, you then b
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add Fiori style to Navigation Bar)]
+[ACCORDION-BEGIN [Step 6: ](Build and run the application)]
 
-The Master Table View for the Products entity is now prepared to use a custom Object Cell from the `FioriUIKit` module. To finalize the Fiori look and feel, you only need to skin the **Navigation Bar**.
-
-Open `AppDelegate.swift` and add an import statement for the `FioriUIKit` module:
-
-```swift
-import FioriUIKit
-```
-
-Locate the following function:
-
-```swift
-func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
-    UIApplication.shared.registerForRemoteNotifications()
-    let center = UNUserNotificationCenter.current()
-    center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
-        // Enable or disable features based on authorization.
-    }
-    center.delegate = self
-    return true
-}
-```
-
-Just above the `return true` statement, add the following code:
-
-```swift
-UINavigationBar.appearance().tintColor = UIColor.preferredFioriColor(forStyle: .tintColorLight)
-UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-UINavigationBar.appearance().barTintColor = UIColor.preferredFioriColor(forStyle: .backgroundGradientTop)
-UINavigationBar.appearance().isTranslucent = false
-UINavigationBar.appearance().barStyle = .black
-UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-UINavigationBar.appearance().shadowImage = UIImage()
-
-UIApplication.shared.statusBarStyle = .lightContent
-
-window?.tintColor = UIColor.preferredFioriColor(forStyle: .tintColorLight)
-```
-
-This will style the Navigation Bar with the standard, preferred Fiori for iOS look and feel.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Build and run the application)]
-
-Build and run the application. After logging in, you will notice the **Navigation Bar** now has the Fiori for iOS look and feel:
+The Master Table View for the Products entity is now prepared to use a custom Object Cell from the `SAPFiori` module. Build and run the application.
 
 ![Xcode](fiori-ios-hcpms-fioriuikit-07.png)
 
@@ -220,7 +160,7 @@ Click the **Products** item. You should now see the master list with **Object Ce
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Add segue to Object Cell)]
+[ACCORDION-BEGIN [Step 7: ](Add segue to Object Cell)]
 
 If you now try to click an Object Cell to show the details for that entity, nothing happens. This is as expected, since you haven't created a **Segue** from the new **Object Cell** to the **Detail** page. You can solve this by adding the segue yourself:
 

@@ -1,8 +1,8 @@
 ---
 title: Offline OData  - Error handling
 description: How to gracefully handle errors in an offline OData scenario
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>intermediate, topic>mobile, operating_system>ios, products>sap-cloud-platform ]
+primary_tag: products>sap-cloud-platform-sdk-for-ios
+tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate

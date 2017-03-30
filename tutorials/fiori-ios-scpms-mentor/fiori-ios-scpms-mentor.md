@@ -1,8 +1,8 @@
 ---
 title: Using the SAP Fiori for iOS Mentor app
 description: Use the SAP Fiori for iOS Mentor app on your iPad to explore and modify Fiori controls which you then transfer to your Xcode project
-primary_tag: operating-system>ios
-tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-cloud-platform ]
+primary_tag: products>sap-cloud-platform-sdk-for-ios
+tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 
 ## Prerequisites  

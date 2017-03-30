@@ -1,8 +1,8 @@
 ---
 title: Application logging and tracing
 description: Logging and tracing using the SAP Cloud Platform SDK for iOS.
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>mobile, operating_system>ios, products>sap-cloud-platform ]
+primary_tag: products>sap-cloud-platform-sdk-for-ios
+tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -23,7 +23,7 @@ In this tutorial, you will learn to use the logging functionality which is part 
 
 The SAP Cloud Platform SDK for iOS provides you with sophisticated functionality which allows you to implement logging and tracing in your application. In addition, you can configure specific logging settings in SAP Cloud Platform Mobile Services, which can be mirrored in your application using the `SAPcpmsSettings` class.
 
-The actual logging is provided by the `Logger` class, which is part of the `HCPFoundation` SDK module.
+The actual logging is provided by the `Logger` class, which is part of the `SAPCommon` SDK module.
 
 [ACCORDION-BEGIN [Step 1: ](Referencing the Logger class)]
 
@@ -37,7 +37,7 @@ public class func shared(withName name: String) -> Logger
 You provide function `shared` a String with the name of your class, and it will return the `Logger` object for that class. So, in your class file `MyViewController.swift`, it would thus look like the following:
 
 ```swift
-import HCPFoundation
+import SAPCommon
 
 class MyViewController: UIViewController {
 
