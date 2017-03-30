@@ -1,5 +1,5 @@
 ---
-title: Offline OData - Configuration
+title: Configure the behavior of Offline OData
 description: Configure the behavior of the Offline OData Service
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]

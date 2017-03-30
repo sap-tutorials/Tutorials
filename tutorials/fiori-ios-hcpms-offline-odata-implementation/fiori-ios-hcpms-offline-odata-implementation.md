@@ -1,5 +1,5 @@
 ---
-title: Offline OData - Implementation
+title: Implement Offline OData in your application
 description: Implement the coding into your application for use with offline OData.
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
