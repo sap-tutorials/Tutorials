@@ -1,5 +1,5 @@
 ---
-title: Database Fundamentals - Sample Project
+title: Sample Project
 description: For this beginner tutorial, you will load data onto your SAP HANA 2.0, express edition installation and preview that data. You will learn how to create a new user, create a schema,  upload .csv data to your SAP HANA 2.0, express edition installation, create a new package, load and connect the .csv data to that package, and then edit and preview that data.
 primary_tag: products>sap-hana\,-express-edition  
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
@@ -11,6 +11,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 
 
 ## Next Steps
+ - [Create a Tenant Database](https://www.sap.com/developer/how-tos/2017/03/hxe-ua-dbfundamentals-tenantdb.html)
  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
@@ -266,4 +267,5 @@ Here is an example: ![Data Preview](preview_data1.png)
 
 
 ## Next Steps
+- [Create a Tenant Database](https://www.sap.com/developer/how-tos/2017/03/hxe-ua-dbfundamentals-tenantdb.html)
 - Select another SAP HANA 2.0, express edition tutorial from the [Tutorial Navigator](http://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
