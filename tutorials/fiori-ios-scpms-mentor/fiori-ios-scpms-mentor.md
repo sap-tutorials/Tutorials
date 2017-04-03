@@ -124,9 +124,9 @@ Method `tableView(cellForRowAt)` returns a `FUITimelineCell` instance, and has t
 
 [ACCORDION-BEGIN [Step 8: ](Implement the copied code)]
 
-If you were using a dedicated table view controller, you could simply copy the copied methods in the table view controller. The SDK Assistant, on the other hand, uses a single `MasterViewController` with delegates for each entity in the model, so you need to adjust a bit. Would you simply copy the code to the `MasterViewController`, all entities master table view would use the same `FUITimelineCell`.
+If you were using a dedicated table view controller, you could simply copy the copied methods from the Mentor app into the table view controller. The SDK Assistant, on the other hand, uses a single `MasterViewController` with delegates for each entity in the model, so you need to adjust a bit. If you do not ajust and simply copy the code to the `MasterViewController`, all entities master table view would use the same `FUITimelineCell`.
 
-In this example, you just want to implement the `FUITimelineCell` for the `ProductCategories` master table delegate.
+In this example, however, you just want to implement the `FUITimelineCell` for the `ProductCategories` master table delegate.
 
 Similar to the previous tutorial, drag a **Table View Cell** to the **Master Table View Controller**.
 
