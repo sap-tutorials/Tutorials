@@ -124,7 +124,7 @@ Method `tableView(cellForRowAt)` returns a `FUITimelineCell` instance, and has t
 
 [ACCORDION-BEGIN [Step 8: ](Implement the copied code)]
 
-If you were using a dedicated table view controller, you could simply copy the copied methods from the Mentor app into the table view controller. The SDK Assistant, on the other hand, uses a single `MasterViewController` with delegates for each entity in the model, so you need to adjust a bit. If you do not ajust and simply copy the code to the `MasterViewController`, all entities master table view would use the same `FUITimelineCell`.
+If you were using a dedicated table view controller, you could simply copy the copied methods from the Mentor app into the table view controller. The SDK Assistant, on the other hand, uses a single `MasterViewController` with delegates for each entity in the model, so you need to adjust a bit. If you do not adjust and simply copy the code to the `MasterViewController`, all entities master table view would use the same `FUITimelineCell`.
 
 In this example, however, you just want to implement the `FUITimelineCell` for the `ProductCategories` master table delegate.
 
@@ -136,17 +136,17 @@ With the newly added **Table View Cell** selected, switch to it's **Attributes I
 
 Set the following properties:
 
-| Property | Value |
-|----|----|
-| Style | Basic |
-| Identifier | `TimelineCell` |
+| Property   | Value
+|----------- |-------------
+| Style      | Basic
+| Identifier | `TimelineCell`
 
 Switch to the cell's **Identity Inspector**, and change the class and module to the Fiori **Timeline Cell** control:
 
-| Property | Value |
-|----|----|
-| Class | `FUITimelineCell` |
-| Module | `SAPFiori` |
+| Property | Value
+|--------- | -----
+| Class    | `FUITimelineCell`
+| Module   | `SAPFiori`
 
 Now, you need to implement logic to bind the **Object Cell**'s display properties to the model data.
 
