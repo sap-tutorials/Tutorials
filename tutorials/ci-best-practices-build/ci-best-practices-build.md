@@ -171,7 +171,7 @@ If you are planning to run a master-only scenario, you do not need a slave machi
 Our examples are restricted to Linux as the operating system for the slaves, as we discuss only build technologies that do not depend on the underlying platform (like Java or Node.js). No explicit Jenkins software installation is required on the slave machines, other than some basic tools that are needed to run a build, like Java, Git and Maven. The Jenkins master connects to the slave using SSH and places the slave jar file on it, which then starts automatically.
 
 > [Jenkins](https://jenkins-ci.org)  
-> [Jenkins installation guide](https://wiki.jenkins-ci.org/display/JENKINS/Step+by+step+guide+to+set+up+master+and+slave+machines)
+> [Jenkins: Distributed builds](https://wiki.jenkins-ci.org/display/JENKINS/Distributed+builds)
 
 #### Prerequisites
 
