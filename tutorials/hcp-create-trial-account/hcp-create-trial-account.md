@@ -1,6 +1,6 @@
 ---
 title: Sign up for a free trial account on SAP Cloud Platform
-description: How to sign up for a free trial account on SAP Cloud Platform (HCP)
+description: How to sign up for a free trial account on SAP Cloud Platform
 primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner ]
 ---

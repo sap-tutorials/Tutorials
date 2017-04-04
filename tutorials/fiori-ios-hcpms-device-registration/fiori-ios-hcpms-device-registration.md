@@ -149,7 +149,7 @@ Add the code in the section below just below the `didReceiveMemoryWarning` funct
 ```swift
 override func viewWillAppear(_ animated: Bool) {
     self.title = "Demo application"
-    if (!HCPms.shared.isRegistered()) {
+    if (!SAPcpms.shared.isRegistered()) {
         DispatchQueue.main.async {
             let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Login") as UIViewController!
             self.present(viewController, animated: true, completion: nil)
@@ -160,7 +160,7 @@ override func viewWillAppear(_ animated: Bool) {
 }
 ```
 
-After inserting the code above you will notice that two exclamation marks are appearing. Class `HCPms` doesn't exist yet, and function `loadData` is also not present yet.
+After inserting the code above you will notice that two exclamation marks are appearing. Class `SAPcpms` doesn't exist yet, and function `loadData` is also not present yet.
 
 to implement `loadData`, just insert the code below just below the `Table view data source` marking:
 
@@ -184,26 +184,26 @@ Now a subclass of `UITableViewController` has been created, the **Table View Con
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Implement the HCPms class)]
+[ACCORDION-BEGIN [Step 8: ](Implement the SAPcpms class)]
 
-In the previous step, you already saw the reference to the HCPms class. This class needs to be implemented before our new code will be able to run.
+In the previous step, you already saw the reference to the `SAPcpms` class. This class needs to be implemented before our new code will be able to run.
 
 To implement this new class, from the top menu, select **File > New > File...** and from the dialog, select Cocoa Touch Class. Click Next.
 In the dialog that appears, enter the following:
 
 Field Name                  | Value
 :-------------              | :-------------
-class                       | `HCPms`
+class                       | `SAPcpms`
 Subclass of                 | `NSObject`
 
-Once the class `HCPms.swift` file is visible in the **Project Navigator**, click it to view it's content. Replace the content with the content below:
+Once the class `SAPcpms.swift` file is visible in the **Project Navigator**, click it to view it's content. Replace the content with the content below:
 
 ```swift
 import UIKit
 
-class HCPms: NSObject {
+class SAPcpms: NSObject {
 
-    static public let shared = HCPms()
+    static public let shared = SAPcpms()
 
     private var registered: Bool = false;
 
@@ -215,7 +215,7 @@ class HCPms: NSObject {
 
 The code above will pretend the user is not registered yet and always return false.
 
-After implementing the `HCPms` class, switch back to the `TableViewController` using the **Project Navigator**. Make sure there are no exclamation marks anymore after building the project (**⌘+B**).
+After implementing the `SAPcpms` class, switch back to the `TableViewController` using the **Project Navigator**. Make sure there are no exclamation marks anymore after building the project (**⌘+B**).
 
 [DONE]
 [ACCORDION-END]
@@ -245,7 +245,7 @@ This logic is implemented by implementing function `onLoginPress`:
 
 ```swift
 @IBAction func onLoginPress(_ sender: UIButton) {
-    HCPms.shared.register(userId: hcpUserId.text!, password: hcpPassword.text!) {
+    SAPcpms.shared.register(userId: hcpUserId.text!, password: hcpPassword.text!) {
         (success: Bool, msg: String) in
         if (success) {
             DispatchQueue.main.async {
@@ -263,7 +263,7 @@ This logic is implemented by implementing function `onLoginPress`:
 }
 ```
 
-The code above will call the register function in the HCPms class and will pass the entered user ID and password. It will also pass a closure to the register function implementing the functionality that should be executed on success or error.
+The code above will call the register function in the `SAPcpms` class and will pass the entered user ID and password. It will also pass a closure to the register function implementing the functionality that should be executed on success or error.
 
 > Note: To learn more about closures in Swift 3 please refer to the [Closures chapter](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html) in the The Swift Programming Language.
 
@@ -271,9 +271,9 @@ The `ViewController` should now look like this:
 
 ![Implement ViewController](image-7.png)
 
-After inserting the code above you will notice that an exclamation marks is appearing in front of line `HCPms.shared.register`. Class `HCPms` doesn't contain function `register` yet.
+After inserting the code above you will notice that an exclamation marks is appearing in front of line `SAPcpms.shared.register`. Class `SAPcpms` doesn't contain function `register` yet.
 
-This function needs to be implemented, but first switch back to the **Standard editor** by clicking on the button in right section of the toolbar containing five horizontal lines. When you are back in the storyboard editor, click `HCPms.swift` from the **Project Navigator** to see the source code of the HCPms class. In the `HCPms` class add the `register` function below the `isRegistered` function:
+This function needs to be implemented, but first switch back to the **Standard editor** by clicking on the button in right section of the toolbar containing five horizontal lines. When you are back in the storyboard editor, click `SAPcpms.swift` from the **Project Navigator** to see the source code of the `SAPcpms` class. In the `SAPcpms` class add the `register` function below the `isRegistered` function:
 
 ```swift
 func register(userId: String, password: String, completion: @escaping (Bool, String) -> Void) {
@@ -284,9 +284,9 @@ func register(userId: String, password: String, completion: @escaping (Bool, Str
 
 This function will pretend that the registration was successful and will mediately call the `completion` call-back function after it has set class variable `registered` to true. The latter will prevent the table view to navigate back to the login view again.
 
-The `HCPms` class should now look like this:
+The `SAPcpms` class should now look like this:
 
-![Implement HCPms](image-8.png)
+![Implement SAPcpms](image-8.png)
 
 [DONE]
 [ACCORDION-END]
@@ -295,9 +295,9 @@ The `HCPms` class should now look like this:
 
 When you launch the application, you should very briefly see the table view. Once the app finds out that the user isn't registered yet, it will show the login view.
 
-When you click the login button (user ID and password aren't relevant yet), the `register` function in the `HCPms` class is launched and after successful completion the app will navigate back to to table view.
+When you click the login button (user ID and password aren't relevant yet), the `register` function in the `SAPcpms` class is launched and after successful completion the app will navigate back to to table view.
 
-With this the navigation flow of the app is ready, but the mocked-up functions in the `HCPms` class still need work.
+With this the navigation flow of the app is ready, but the mocked-up functions in the `SAPcpms` class still need work.
 
 [DONE]
 [ACCORDION-END]
@@ -310,19 +310,19 @@ The URL that needs to be used to register the device is a composition of:
 - SAP Cloud Platform landscape URL (e.g. `hanatrial.ondemand.com`)
 - Application ID (`com.sap.tutorial.demoapp`)
 
-To compose the URL in the HCPms class, add following code just below the line `static public let shared = HCPms()`:
+To compose the URL in the `SAPcpms` class, add following code just below the line `static public let shared = SAPcpms()`:
 
 ```swift
-private let hcpAccountId = "<your account ID, e.g. p12345678trial>"
-private let hcpLandscape = "hanatrial.ondemand.com"
-private let hcpAppId = "com.sap.tutorial.demoapp"
+private let scpAccountId = "<your account ID, e.g. p12345678trial>"
+private let scpLandscape = "hanatrial.ondemand.com"
+private let scpAppId = "com.sap.tutorial.demoapp"
 
 private lazy var connectionRoot: String = {
-    return "https://hcpms-\(self.hcpAccountId).\(self.hcpLandscape)/odata/applications/latest/\(self.hcpAppId)/Connections"
+    return "https://hcpms-\(self.scpAccountId).\(self.scpLandscape)/odata/applications/latest/\(self.scpAppId)/Connections"
 }()
 ```
 
-> Note: Please do replace the `hcpAccountId` string with your own account ID.
+> Note: Please do replace the `scpAccountId` string with your own account ID.
 
 This section will allow you to use `connectionRoot` similar to a variable in your code. Once the variable is being used, it is quickly calculated.
 
@@ -387,7 +387,7 @@ func dicToJson(dic: Dictionary<String, String>) -> Data {
 }
 ```
 
-Function `createBasicAuthString` takes the `userId` and `password` from the HCPms object instance and turns them into a Basic Authentication string. Function `dicToJson` turns the `registrationInfo` dictionary object and turns it into a JSON structure. This function is used to convert the payload from a swift dictionary object to a JSON string that can be sent in the payload of the registration request.
+Function `createBasicAuthString` takes the `userId` and `password` from the `SAPcpms` object instance and turns them into a Basic Authentication string. Function `dicToJson` turns the `registrationInfo` dictionary object and turns it into a JSON structure. This function is used to convert the payload from a swift dictionary object to a JSON string that can be sent in the payload of the registration request.
 
 [DONE]
 [ACCORDION-END]

@@ -81,7 +81,7 @@ When you dropped the two files into your project, Xcode will show a message box 
 
 [ACCORDION-BEGIN [Step 4: ](Add helper functions for secure settings)]
 
-To save, retrieve and delete values from the keychain, add a few helper functions to the `HCPms` class. Open the `HCPms.swift` file from the **Project Navigator** by clicking on it.
+To save, retrieve and delete values from the keychain, add a few helper functions to the `SAPcpms` class. Open the `SAPcpms.swift` file from the **Project Navigator** by clicking on it.
 
 Add the code below to the bottom of the class, underneath the register function, just before the last closing bracket:
 
@@ -106,9 +106,9 @@ These functions allow setting of key-value pairs into the iOS keychain, leveragi
 
 [ACCORDION-BEGIN [Step 5: ](Remove variable declaration userId and password)]
 
-Instead of the keeping the user ID and password in a variable in the `HCPms` class, the keyring function should be used. As as result of this, the `userId` and `password` variable are not necessary anymore.
+Instead of the keeping the user ID and password in a variable in the `SAPcpms` class, the keyring function should be used. As as result of this, the `userId` and `password` variable are not necessary anymore.
 
-Remove the following two lines from the top parts of the `HCPms` class:
+Remove the following two lines from the top parts of the `SAPcpms` class:
 
 ```swift
 private var userId:String? = nil
