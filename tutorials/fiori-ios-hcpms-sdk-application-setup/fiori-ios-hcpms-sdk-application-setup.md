@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, operating-system>ios, products>sap-cloud-platform, p
  - **Tutorials:** [Enable SAP Cloud Platform, mobile services](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
 
 ## Next Steps
- - [Configure a back-end connection (Sample OData service)](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-sample-odata-service.html)
+ - [Implement Fiori for iOS controls](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-fioriuikit.html)
 
 ## Details
 ### You will learn  
@@ -87,4 +87,4 @@ When you have the cockpit on your screen, you can now see that you have defined 
 [ACCORDION-END]
 
 ## Next Steps
- - [Configure a back-end connection (Sample OData service)](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-sample-odata-service.html)
+ - [Implement Fiori for iOS controls](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-fioriuikit.html)

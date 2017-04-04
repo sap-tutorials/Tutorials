@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
  - **Proficiency:** Intermediate
  - **Development machine:** Access to a Mac computer
  - **Apple ID:** A paid Apple developer account is required
- - **Tutorials:** [Create an app using the SDK Assistant](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)
+ - **Tutorials:** [Using the SAP Fiori for iOS Mentor app](https://www.sap.com/developer/tutorials/fiori-ios-scpms-mentor.html)
 
 ## Next Steps
  - [Application logging and tracing](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-application-logging.html)
@@ -220,7 +220,9 @@ func application(_ application: UIApplication, willFinishLaunchingWithOptions la
 }
 ```
 
-First, the device registers for remote notifications by calling the following method:
+First, the device registers for remote notifications by calling the method `registerForRemoteNotification`. Then, you have specified the types of notifications your app will support, as well as added a reference to the notification settings class, which enables your application for the push notifications to be received. This will result in your application to display the **"App Name" Would Like to Send You Notifications** confirmation dialog.
+
+Let's look at the `registerForRemoteNotification` method. In this method, a reference to the SDK Foundation class `SAPcpmsRemoteNotificationClient` is made. With this API, you will upload the received device token to SAP Cloud Platform Mobile Services:
 
 ```swift
 func registerForRemoteNotification() -> Void {
@@ -240,9 +242,7 @@ func registerForRemoteNotification() -> Void {
 }
 ```
 
-With these lines, you have specified the types of notifications your app will support, as well as added a reference to the notification settings class, which enables your application for the push notifications to be received. This will result in your application to display the **"App Name" Would Like to Send You Notifications** confirmation dialog.
-
-Now you can receive notifications, but your application also needs to respond to them in a useful manner. Therefor, two delegate methods are implemented:
+With these two methods, you can receive notifications, but your application also needs to respond to them in a useful manner. Therefor, two delegate methods are implemented:
 
 ```swift
 // Called to let your app know which action was selected by the user for a given notification.
