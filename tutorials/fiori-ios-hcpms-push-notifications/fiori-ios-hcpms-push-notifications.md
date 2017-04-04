@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
  - **Proficiency:** Intermediate
  - **Development machine:** Access to a Mac computer
  - **Apple ID:** A paid Apple developer account is required
- - **Tutorials:** [Create an app using the SDK Assistant](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)
+ - **Tutorials:** [Using the SAP Fiori for iOS Mentor app](https://www.sap.com/developer/tutorials/fiori-ios-scpms-mentor.html)
 
 ## Next Steps
  - [Application logging and tracing](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-application-logging.html)
@@ -241,7 +241,7 @@ func registerForRemoteNotification() -> Void {
     })
 }
 ```
- 
+
 With these two methods, you can receive notifications, but your application also needs to respond to them in a useful manner. Therefor, two delegate methods are implemented:
 
 ```swift

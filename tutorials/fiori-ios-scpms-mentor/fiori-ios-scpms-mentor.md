@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-clo
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Push Notifications](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
 
 ## Details
 ### You will learn  
@@ -224,4 +224,4 @@ Build and run the application. After logging in, click the **Product Categories*
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Push Notifications](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
