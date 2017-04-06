@@ -6,11 +6,11 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>securi
 ---
 
 ## Prerequisites  
- - [Device registration](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-device-registration.html)
+ - [Device registration](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-device-registration.html)
 
 
 ## Next Steps
- - [Verify whether your application has been registered](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-verify-registration.html)
+ - [Verify whether your application has been registered](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-verify-registration.html)
 
 ## Details
 ### You will learn  
@@ -297,4 +297,4 @@ func register(userId: String, password: String, completion: @escaping (Bool, Str
 [ACCORDION-END]
 
 ## Next Steps
-- [Verify whether your application has been registered](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-verify-registration.html)
+- [Verify whether your application has been registered](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-verify-registration.html)

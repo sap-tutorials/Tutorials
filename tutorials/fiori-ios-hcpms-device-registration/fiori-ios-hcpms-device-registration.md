@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>securi
 ---
 
 ## Prerequisites  
- - [Configure back-end connection](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-backend-connection.html)
+ - [Configure back-end connection](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-backend-connection.html)
 
 ## Next Steps
- - [Securely store User Credentials and Application Connection ID in the iOS keychain](http://go.sap.com/developer/tutorials.html?fiori-ios-hcpms-secure-credentials-keychain.html)
+ - [Securely store User Credentials and Application Connection ID in the iOS keychain](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-secure-credentials-keychain.html)
 
 ## Details
 ### You will learn  
@@ -559,4 +559,4 @@ When you click on the tile, you should see the list of registrations. The regist
 [ACCORDION-END]
 
 ## Next Steps
-- [Securely store User Credentials and Application Connection ID in the iOS keychain](http://go.sap.com/developer/tutorials.html?fiori-ios-hcpms-secure-credentials-keychain.html)
+- [Securely store User Credentials and Application Connection ID in the iOS keychain](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-secure-credentials-keychain.html)
