@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>cloud, topic>mobile,
 ---
 
 ## Prerequisites  
- - [Verify whether your application has been registered](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-verify-registration.html)
+ - [Verify whether your application has been registered](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-verify-registration.html)
 
 ## Next Steps
- - [Translate your application using the SAP Translation Hub](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-translation-service.html)
+ - [Translate your application using the SAP Translation Hub](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-translation-service.html)
 
 ## Details
 ### You will learn  
@@ -253,4 +253,4 @@ Optionally add a button to your app, allowing you to refresh the table contents.
 [ACCORDION-END]
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Translate your application using the SAP Translation Hub](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-translation-service.html)

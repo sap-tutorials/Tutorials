@@ -1,23 +1,21 @@
 ---
 title: Download and Run the Default YaaS Storefront
 description: The YaaS Storefront is a fully customizable, feature-rich, default shopping web site, from which you can create your very own online shop.  YaaS looks after all the tricky details: security, authorization, payment and cart workflows, etc., so that you can focus on more interesting topics, like personalization and overall coolness of your online shop.  In this tutorial, you will download, run and explore the default YaaS Storefront.
-primary_tag: products>sap-cloud-platform
+primary_tag: products>sap-hybris-as-a-service-on-sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-hybris-as-a-service-on-sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Background Knowledge:** The YaaS Storefront is based on [Node.js](https://www.youtube.com/watch?v=pU9Q6oiQNd0),  [Angular](https://docs.angularjs.org/guide/directive) and [Restangular](https://github.com/mgonto/restangular#starter-guide). If you are not already familiar with these, and would like to dive into the code, you can follow the provided links to start learning.
-- **Software Requirements:** Git and Node, which we will be downloading in this tutorial.
-- **Tutorials**
-- Getting Started with YaaS
+- **Tutorials** [Getting Started with YaaS](http://www.sap.com/developer/tutorials/yaas-getting-started.html))
 
 ## Next Steps
-- Extend your YaaS StoreFront's Functionality with a YaaS Micro Service
-- Use Your Own YaaS Project to Back your YaaS Storefront
+- [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
 
 ## Details
 ### You will learn  
 In this tutorial you will learn how to create your own e-commerce shop in minutes with the YaaS Storefront.
+
+The YaaS Storefront is based on [Node.js](https://www.youtube.com/watch?v=pU9Q6oiQNd0),  [Angular](https://docs.angularjs.org/guide/directive) and [Restangular](https://github.com/mgonto/restangular#starter-guide). If you are not already familiar with these, and would like to dive into the code, you can follow the provided links to start learning.
 
 ### Time to Complete
 **10 Min**.
@@ -62,7 +60,7 @@ Start a local web server
 
 - Run the command `npm start` to start a local web server.  If your command prompt looks like the following image, you will know that the server is running.
 
-    ![Server Running](local-web-server-running.PNG)
+![Server Running](local-web-server-running.PNG)
 
 [DONE]
 [ACCORDION-END]
@@ -73,17 +71,13 @@ Open your own default Storefront
 
 - Open a browser (we like Chrome) and go to `http://localhost:9000` where you should see your own StoreFront, ready for your pimping skills.
 - Verify you can see and browse products in the Storefront.
-    ![Verify Browse](verify-browse-products.PNG)
+
+![Verify Browse](verify-browse-products.PNG)
+
+You now have seen a default YaaS Storefront running locally on your machine. The next step is to customize and personalize it.  In the next tutorial you will add a feature to the StoreFront called "Mr Tip".  When browsing products, the undecided purchaser can click on "Mr Tip" to get advice, with helpful responses such as "Absolutely yes!!" and "One word: No".
 
 [DONE]
 [ACCORDION-END]
 
-
-
-### Summary
-
-You now have seen a default YaaS Storefront running locally on your machine. The next step is to customize and personalize it.  In the next tutorial you will add a feature to the StoreFront called "Mr Tip".  When browsing products, the undecided purchaser can click on "Mr Tip" to get advice, with helpful responses such as "Oh My God, like totally yes!!" and "One word: No".
-
 ## Next Steps
-- Extend your YaaS StoreFront's Functionality with a YaaS Micro Service
-- Use Your Own YaaS Project to Back your YaaS Storefront
+- [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)

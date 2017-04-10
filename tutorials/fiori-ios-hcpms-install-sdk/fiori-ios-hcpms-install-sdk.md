@@ -7,7 +7,6 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Debug and deploy the iOS app to an iPad](https://go.sap.com/developer/tutorials/xcode-debug-deploy.html)
 
 ## Next Steps
  - [Enable SAP Cloud Platform, mobile services](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
@@ -29,7 +28,7 @@ Download the `SAP-CP-SDK-for-iOS.dmg` disk image file. Double-clicking the file 
 
 ![Adding files dialog](fiori-ios-hcpms-install-sdk-01.png)
 
-1.  Application `SAP Cloud Platform SDK for iOS Assistant` will be covered in tutorial [Creating an app using the SDK Assistant](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html).
+1.  Application `SAP Cloud Platform SDK for iOS Assistant` will be covered in tutorial [Creating an app using the SDK Assistant](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html).
 2.  Folder `Documentation` contains the API docs for the SDK.
 3.  Folder `Tools` contain scripts to generate OData proxy classes manually
 3.  Folder `Frameworks` contain the actual SDK framework files.

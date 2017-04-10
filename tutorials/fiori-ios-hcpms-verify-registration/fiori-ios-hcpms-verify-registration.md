@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>cloud, topic>mobile,
 ---
 
 ## Prerequisites  
- - [Securely store User Credentials and Application Connection ID in the iOS keychain](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-secure-credentials-keychain.html)
+ - [Securely store User Credentials and Application Connection ID in the iOS keychain](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-secure-credentials-keychain.html)
 
 ## Next Steps
- - [Read data from the ES4 back-end and present it in the iOS app](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-retrieve-odata-service.html)
+ - [Read data from the ES4 back-end and present it in the iOS app](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-retrieve-odata-service.html)
 
 ## Details
 ### You will learn  
@@ -175,4 +175,4 @@ At the same time, you will see the text below in your Xcode console:
 [ACCORDION-END]
 
 ## Next Steps
-- [Read data from the ES4 back-end and present it in the iOS app](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-retrieve-odata-service.html)
+- [Read data from the ES4 back-end and present it in the iOS app](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-retrieve-odata-service.html)
