@@ -5,11 +5,11 @@ primary_tag: operating-system>ios
 tags: [  tutorial>beginner, operating-system>ios, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Enable SAP Cloud Platform mobile services](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
+- **Proficiency:** Beginner
+- **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
- - **Tutorials:** [Configure a back-end connection](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-backend-connection.html)
+- **Tutorials:** [Configure a back-end connection](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-backend-connection.html)
 
 ## Details
 ### You will learn  
@@ -34,7 +34,7 @@ This tutorial described how you can configure a mobile app in SAP Cloud Platform
 
 [ACCORDION-BEGIN [Step 1: ](Make sure mobile services are enabled in your account)]
 
-Got to the SAP Cloud Platform cockpit and click on **Services** in the main menu. In the `Services` page, make sure that under `Mobile Services` the `Development & Operations` service is enabled. If it is not enabled, please enable it by following tutorial [Enable SAP Cloud Platform mobile services](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html).
+Got to the SAP Cloud Platform cockpit and click on **Services** in the main menu. In the `Services` page, make sure that under `Mobile Services` the `Development & Operations` service is enabled. If it is not enabled, enable it by clicking on it an pressing the **Enable** button.
 
 ![Enable Mobile Services](image-1.png)
 
@@ -86,5 +86,6 @@ When you have the cockpit on your screen, you can now see that you have defined 
 [DONE]
 [ACCORDION-END]
 
+
 ## Next Steps
- - **Tutorials:** [Configure a back-end connection](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-backend-connection.html)
+- **Tutorials:** [Configure a back-end connection](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-backend-connection.html)

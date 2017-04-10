@@ -106,7 +106,7 @@ The scenario described here builds on the chapters that describe how to set up a
 ### 2. Prerequisites
 
 - An account on SAP Cloud Platform.
-- An SAP HANA Cloud Connector as reverse proxy to pass requests from SAP Web IDE to your corporate Git installation.
+- SAP Cloud Connector as reverse proxy to pass requests from SAP Web IDE to your corporate Git installation.
 
 > [SAP Cloud Platform Documentation](https://help.hana.ondemand.com/help/frameset.htm?e9137493bb57101492c6858c8d6b0b62.html)  
 > [SAP Cloud Platform Cockpit](https://account.hana.ondemand.com)  

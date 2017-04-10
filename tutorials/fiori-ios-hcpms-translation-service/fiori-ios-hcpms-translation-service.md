@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, products>sap
 ---
 
 ## Prerequisites  
- - [Introduction to iOS development resources and Xcode](https://www.sap.com/developer/tutorials/xcode-introduction.html)
+- [Introduction to iOS development resources and Xcode](https://www.sap.com/developer/tutorials/xcode-introduction.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -20,7 +20,8 @@ In this tutorial you will learn how to separate your code from your texts, colle
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a small app to work with)]
+[ACCORDION-BEGIN [Step 1: ](Create a small app)]
+
 
 To create your first project, click on **File > New > Project** in the menu bar. When you do so, you will be presented with a number of application templates. Choose **Single View Application**, and click the **Next** button. On the next screen, please enter the project options below and press **Next**:
 
@@ -208,5 +209,7 @@ If you run the app by pressing the **Build and Run** button at the top left sect
 [DONE]
 [ACCORDION-END]
 
+
+
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
