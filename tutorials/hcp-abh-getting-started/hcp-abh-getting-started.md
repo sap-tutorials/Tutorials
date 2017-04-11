@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, products>sap-cloud-platform ]
  - **Proficiency:** Beginner
 
 ## Next Steps
- - Test APIs locally with Curl
+ - [Testing API Business Hub APIs with Curl](https://www.sap.com/developer/tutorials/hcp-abh-test-locally.html)
 
 ## Details
 ### You will learn  
@@ -108,4 +108,4 @@ Feel free to keep playing around in the SAP API Business Hub to better understan
 
 
 ## Next Steps
- - Test APIs locally with Curl
+ - [Testing API Business Hub APIs with Curl](https://www.sap.com/developer/tutorials/hcp-abh-test-locally.html)
