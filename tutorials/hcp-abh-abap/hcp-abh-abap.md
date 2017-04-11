@@ -17,13 +17,15 @@ tags: [  tutorial>beginner, topic>abap-development  ]
 ### You will learn  
 In this tutorial, you will learn how to use the pre-generated code from the SAP API Business Hub in an ABAP report. You will need to have configured your ABAP system to make an HTTP request.
 
+Configuring the proxy settings is not a required step for all systems. Verify that your system needs to have the proxy configured before completing steps 1 through 3.
+
 ### Time to Complete
 **15 Min**
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Configure your ABAP Proxy)]
-In your ABAP system, launch  the SAP Logon Screen.
+From the SAP Logon pad, launch the SAP Logon screen.
 
 ![ABAP SAP logon screen](1-39.png)
 
@@ -92,7 +94,7 @@ Provide the following details on the **Program Attributes** screen.
 |:--------|:--------|
 | Title | testing API |
 | Type | Executable program |
-| Status | Test Program |
+| OPTIONAL: Status | Test Program |
 
 **Save**, **Activate**, and **Execute** the report.
 
