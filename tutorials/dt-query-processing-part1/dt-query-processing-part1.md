@@ -8,10 +8,10 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
  - **Proficiency:** Beginner
  - **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed. For older systems, please refer to [Dynamic Tiering Quick Start Guide - Lesson 2 - Query Processing in SAP HANA Dynamic Tiering](http://go.sap.com/documents/2016/06/3eb50dbc-757c-0010-82c7-eda71af511fa.html) for instructions.
  - **Integrated Development Environment:** Basic working knowledge of SAP HANA Studio. E.g. You should be able to connect to your HANA instance from SAP HANA Studio and feel comfortable with executing simple queries.
- - **Tutorials:** [Create Tables and Import Data](coming soon). This includes the `TPCH` user with all the permissions and the created tables with all the sample data loaded.
+ - **Tutorials:** [Create Tables and Import Data](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part3.html). This includes the `TPCH` user with all the permissions and the created tables with all the sample data loaded.
 
 ## Next Steps
- - **Tutorials:** [Compare Prepared and Executed Plan](coming soon)
+ - **Tutorials:** [Compare Prepared and Executed Plan](https://www.sap.com/developer/tutorials/dt-query-processing-part2.html)
 
 ## Details
 ### You will learn
@@ -139,4 +139,4 @@ You will now be able to view the Prepared Query Plan for the extended table.
 [ACCORDION-END]
 
 ## Next Steps
-- **Tutorials:** [Compare Prepared and Executed Plan](coming soon)
+- **Tutorials:** [Compare Prepared and Executed Plan](https://www.sap.com/developer/tutorials/dt-query-processing-part2.html)

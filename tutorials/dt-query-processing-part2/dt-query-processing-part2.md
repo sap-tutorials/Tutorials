@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Visualize a Graphical Query Plan](coming soon)
+ - **Tutorials:** [Visualize a Graphical Query Plan](https://www.sap.com/developer/tutorials/dt-query-processing-part1.html)
 
 ## Next Steps
- - **Tutorials:** [Table Statistics and its Effect on Query Plans](coming soon)
+ - **Tutorials:** [Table Statistics and its Effect on Query Plans](https://www.sap.com/developer/tutorials/dt-query-processing-part3.html)
 
 ## Details
 ### You will learn
@@ -139,4 +139,4 @@ You can get more detailed information by hovering over an element in the plan as
 [ACCORDION-END]
 
 ## Next Steps
-- **Tutorials:** [Table Statistics and its Effect on Query Plans](coming soon)
+- **Tutorials:** [Table Statistics and its Effect on Query Plans](https://www.sap.com/developer/tutorials/dt-query-processing-part3.html)
