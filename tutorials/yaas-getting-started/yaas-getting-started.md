@@ -1,15 +1,15 @@
 ---
 title: Getting Started with YaaS
 description: In this tutorial, you will get started with YaaS and create a YaaS project. You will learn about the YaaS Builder and the YaaS Market.
-primary_tag: products>sap-cloud-platform
+primary_tag: products>sap-hybris-as-a-service-on-sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-hybris-as-a-service-on-sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
 
 ## Next Steps
-- Download and Run the Default YaaS Storefront
-- Extend the YaaS Storefront's Functionality
+
+- [Download and Run the Default YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)
 
 ## Details
 ### You will learn  
@@ -19,8 +19,6 @@ You will learn how to create your own YaaS project. This project will provide ba
 **10 Min**.
 
 ---
-
-
 
 [ACCORDION-BEGIN [Step 1: ](Register and sign in to Builder)] ￼
 
@@ -52,6 +50,7 @@ Complete the fields with the required information and save the form.
 
 > TIP: You can switch the Turn **Help On** toggle button in the left navigation panel to see prompts.
 
+
 [DONE]
 [ACCORDION-END]
 
@@ -64,7 +63,7 @@ SAP Hybris offers various YaaS functionalities grouped in to packages. Packages 
 - Use the **+ Subscription** button. You are then redirected to the **YaaS Market**.
 - Click on **Beta Packages**. Beta packages are available free of charge and are intended for testing purposes in non-productive environments. They provide the same functionality as standard packages, but the number of requests or API calls per month is limited.
 
-    ![Yaas Market](yaas-market.PNG)
+![Yaas Market](yaas-market.PNG)
 
 [DONE]
 [ACCORDION-END]
@@ -125,13 +124,11 @@ Complete the fields, such as in the example, and **Save** the form.
 
 ![Create Client](create-new-client.PNG)
 
+In this step, you created your own YaaS project and a YaaS client. You also learned how to subscribe to different packages on YaaS Market. The next step is downloading and running a default YaaS Storefront project which runs locally on your machine. You will browse through a storefront which is populated with products and services.
+
 [DONE]
 [ACCORDION-END]
 
 
-### Summary
-In this step, you created your own YaaS project and a YaaS client. You also learned how to subscribe to different packages on YaaS Market. The next step is downloading and running a default YaaS Storefront project which runs locally on your machine. You will browse through a storefront which is populated with products and services.    
-
 ## Next Steps
-- Download and Run the Default YaaS Storefront
-- Extend the YaaS Storefront's Functionality
+- [Download and Run the Default YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)

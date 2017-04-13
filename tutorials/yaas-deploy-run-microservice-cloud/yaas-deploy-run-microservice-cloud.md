@@ -1,22 +1,21 @@
 ---
 title: Deploy a Micro Service Built on YaaS on the SAP Cloud Platform
 description: In this tutorial you will set up a cloud account on the SAP Cloud Platform through your YaaS project. You will then deploy your Tips micro service to the cloud and point your Storefront to it.
-primary_tag: products>sap-cloud-platform
+primary_tag: products>sap-hybris-as-a-service-on-sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-hybris-as-a-service-on-sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Background Knowledge:**  You will get most from this tutorial if you already have basic knowledge of [Node.js](https://www.youtube.com/watch?v=pU9Q6oiQNd0), [Angular](https://docs.angularjs.org/guide/directive) and [Restangular](https://github.com/mgonto/restangular#starter-guide). If you are not already familiar with them and would like to dive into the code, you can follow the provided links to start learning.
-- **Software Requirements:** Cloud Foundry CLI (Command line interface), Maven which we will download in this tutorial.
-- **Tutorials:**
-- Getting Started with YaaS
-- Download and Run the Default YaaS Storefront    
-- Extend the YaaS Storefront's Functionality with a Micro Service
-- Use Your Own YaaS Project to Back your Storefront
+- **Tutorials:** [Use Your Own YaaS Project to Back your YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
+
+## Next Steps
+ - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
 In this tutorial you will learn how to deploy a micro service to the SAP Cloud Platform. As an example you will use the Tips micro service created in **Extend the YaaS Storefront's Functionality with a Micro Service** tutorial. In order to deploy a micro service you will need to set up your Cloud Foundry Command Line interface and create a SAP Cloud Platform account. In the end you will run the micro service on the cloud.
+
+You will get most from this tutorial if you already have basic knowledge of [Node.js](https://www.youtube.com/watch?v=pU9Q6oiQNd0), [Angular](https://docs.angularjs.org/guide/directive) and [Restangular](https://github.com/mgonto/restangular#starter-guide). If you are not already familiar with them and would like to dive into the code, you can follow the provided links to start learning.
 
 ### Time to Complete
 **20 Min**.
@@ -132,6 +131,5 @@ Now that your service has been deployed to the cloud, you could access it direct
 [DONE]
 [ACCORDION-END]
 
-
-### Summary
-In this tutorial you learned how to deploy a micro service based on YaaS on SAP Cloud Platform and run the service.
+## Next Steps
+ - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
