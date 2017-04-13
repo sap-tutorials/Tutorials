@@ -135,7 +135,7 @@ The first method calls the offline store's `upload` method. Upon finishing -- wh
 
 If the upload was successful, it is simply logged. If it failed, an error is logged, and some counteraction should be taken.
 
->   Now, for an actual collision to happen, you need to update the data on the backend -- either lock update or delete a record. If you run these tutorials against an SAP ECC or ES4 backend, you could easily do that in the backend itself. If you're connecting against the sample OData service of SAP Cloud Platform Mobile Services, it takes some more steps.
+>   Now, for an actual collision to happen, you need to update the data on the backend -- either lock update or delete a record. If you run these tutorials against an SAP ECC or ES4 backend, you could easily do that in the backend itself. If you're connecting against the sample OData service of SAP Cloud Platform mobile service for development and operations, it takes some more steps.
 
 >   1.  Create a new, online OData application using the SDK Assistant, using the same application namespace as the offline application for this tutorial.
 >   2.  Have the offline application run on a physical device, and the new, online application run on the Xcode Simulator (or a separate device)

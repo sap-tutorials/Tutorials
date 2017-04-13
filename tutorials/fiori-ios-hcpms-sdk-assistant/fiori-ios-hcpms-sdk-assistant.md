@@ -32,7 +32,7 @@ Open a **Finder** window and navigate to the location you stored the SAP Cloud P
 
 The SDK Assistant runs on any Mac computer running OS X El Capitan 10.11.5 or higher.
 
-Upon first loading, you are greeted with a welcome message, indicating the SDK Assistant needs to gather some data from SAP Cloud Platform Mobile Services first:
+Upon first loading, you are greeted with a welcome message, indicating the SDK Assistant needs to gather some data from SAP Cloud Platform mobile service for development and operations first:
 
 ![SDK Assistant](fiori-ios-hcpms-sdk-assistant-16.png)
 
@@ -49,14 +49,14 @@ Click the **Settings** button. It will display an empty, initial configuration:
 
 ![SDK Assistant](fiori-ios-hcpms-sdk-assistant-02.png)
 
-Before you can create an application using the SDK Assistant, you need to setup your SAP Cloud Platform Mobile Services configuration, and specify the path to the SAP Cloud Platform SDK for iOS framework files.
+Before you can create an application using the SDK Assistant, you need to setup your SAP Cloud Platform mobile service for development and operations configuration, and specify the path to the SAP Cloud Platform SDK for iOS framework files.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Specify SAP Cloud Mobile Services details)]
 
-Select the **Add new SAP Cloud Platform Mobile Services Configuration** option from the drop-down box. It will open a new dialog where you specify your SAP Cloud Platform Mobile Services configuration:
+Select the **Add new SAP Cloud Platform mobile service for development and operations Configuration** option from the drop-down box. It will open a new dialog where you specify your SAP Cloud Platform mobile service for development and operations configuration:
 
 ![SDK Assistant](fiori-ios-hcpms-sdk-assistant-03.png)
 
@@ -64,10 +64,10 @@ Enter the following details:
 
 | Field | Value |
 |----|----|
-| `Name` | A descriptive name for your configuration, for instance 'SAP Cloud Platform Mobile Services trial' |
+| `Name` | A descriptive name for your configuration, for instance 'SAP Cloud Platform mobile service for development and operations trial' |
 | `SAPcpms Admin API URL` | `https://hcpms-<your ID>trial.hanatrial.ondemand.com` |
 | `SAPcpms Admin UI URL` | `https://hcpmsadmin-<your ID>trial.dispatcher.hanatrial.ondemand.com/` |
-| `User` | Your SAP Cloud Platform Mobile Services user ID (should have Administrator role) |
+| `User` | Your SAP Cloud Platform mobile service for development and operations user ID (should have Administrator role) |
 | `Password` | Password for your user ID |
 
 > If you are using a productive SAP Cloud Platform account, use the following URL's matching your subscription:
@@ -100,7 +100,7 @@ Enter the following details:
 > | `SAPcpms Admin API URL` | `https://mobile-<your ID>.ap1.hana.ondemand.com` |
 > | `SAPcpms Admin UI URL` | `https://mobile-<your ID>.dispatcher.ap1.hanatrial.ondemand.com/` |
 
-Click **Save** to store your SAP Cloud Platform Mobile Services configuration.
+Click **Save** to store your SAP Cloud Platform mobile service for development and operations configuration.
 
 [DONE]
 [ACCORDION-END]
@@ -143,7 +143,7 @@ Select the **Use Existing** tab:
 
 ![SDK Assistant](fiori-ios-hcpms-sdk-assistant-05.png)
 
-Click the **Select from SAP Cloud Platform mobile services** button, and from the dialog, select the `com.sap.tutorial.demoapp.Demo` application from the list:
+Click the **Select from SAP Cloud Platform mobile service for development and operations** button, and from the dialog, select the `com.sap.tutorial.demoapp.Demo` application from the list:
 
 Click **OK** when done. The application identifier and application name are now pre-filled.
 
@@ -156,7 +156,7 @@ Click **Next** to continue.
 
 [ACCORDION-BEGIN [Step 7: ](Select the back end connection)]
 
-In the next screen, the available OData connection is displayed. Since you already defined an OData connection when creating the application on SAP Cloud Platform Mobile Services, it is listed here and set as the primary.
+In the next screen, the available OData connection is displayed. Since you already defined an OData connection when creating the application on SAP Cloud Platform mobile service for development and operations, it is listed here and set as the primary.
 
 ![SDK Assistant](fiori-ios-hcpms-sdk-assistant-07.png)
 
@@ -227,9 +227,9 @@ Click the **Allow** button to allow receiving of push notifications.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Log on to the application via SAP Cloud Platform Mobile Services)]
+[ACCORDION-BEGIN [Step 12: ](Log on to the application via SAP Cloud Platform mobile service for development and operations)]
 
-At the **Logon** screen in your app, enter your **SAP Cloud Platform Mobile Services login credentials** and click the **Log in** button:
+At the **Logon** screen in your app, enter your **SAP Cloud Platform mobile service for development and operations login credentials** and click the **Log in** button:
 
 ![SDK Assistant](fiori-ios-hcpms-sdk-assistant-15.png)
 

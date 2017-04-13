@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
  - **Development machine:** Access to a Mac computer
 
 ## Next Steps
- - [Enable SAP Cloud Platform, mobile services](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
+ - [Enable SAP Cloud Platform mobile service for development and operations](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
 
 ## Details
 ### You will learn  
@@ -38,7 +38,7 @@ Download the `SAP-CP-SDK-for-iOS.dmg` disk image file. Double-clicking the file 
     | Filename | Description |
     |---|---|
     | `SAPCommon.framework` | Includes fundamental components that integrate the application with SAP Cloud Platform mobile service for development and operations, such as logging, that are also used by other framework components|
-    | `SAPFoundation.framework` | Includes components that integrate the application with SAP Cloud Platform mobile services, including communication, authentication, caching, remote notifications, and so on |
+    | `SAPFoundation.framework` | Includes components that integrate the application with SAP Cloud Platform mobile service for development and operations, including communication, authentication, caching, remote notifications, and so on |
     | `SAPOData.framework` | Use the `SAPOData` component to interact with an OData endpoint. `SAPOData` parses OData payloads, produces OData requests, and handles responses for OData versions 2 and 4. |
     | `SAPOfflineOData.framework` | Use the `SAPOfflineOData` component to add offline capability to your application. |
     | `SAPFiori.framework` | Includes a number of UI components which implement the Fiori Design Language. These inherit from the Apple `UIKit` components. |
@@ -100,4 +100,4 @@ Expand the **Link Binary With Libraries** panel, and make sure the three SDK fil
 [ACCORDION-END]
 
 ## Next Steps
- - [Enable SAP Cloud Platform, mobile services](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
+ - [Enable SAP Cloud Platform mobile service for development and operations](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)

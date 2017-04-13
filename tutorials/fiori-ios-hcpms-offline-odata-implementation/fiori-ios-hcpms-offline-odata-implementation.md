@@ -14,14 +14,14 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
 
 ## Details
 ### You will learn  
-In this tutorial, you will implement the coding for use with offline OData into your application, and use the SAP Cloud Platform Mobile Services offline configuration settings.
+In this tutorial, you will implement the coding for use with offline OData into your application, and use the SAP Cloud Platform mobile service for development and operations offline configuration settings.
 
 ### Time to Complete
 **15 Min**.
 
 ---
 
-In the previous tutorial, you have finalized the offline configuration in SAP Cloud Platform Mobile Services. In this tutorial, you will implement the necessary coding so your application can use OData while offline.
+In the previous tutorial, you have finalized the offline configuration in SAP Cloud Platform mobile service for development and operations. In this tutorial, you will implement the necessary coding so your application can use OData while offline.
 
 If you now switch on Airplane mode, and try opening a collection from the app, you will see a message similar to this:
 
@@ -139,7 +139,7 @@ init(urlSession: SAPURLSession) {
 
 [ACCORDION-BEGIN [Step 7: ](Build and run the application)]
 
-Try to build and run the app. If all goes well, the build will succeed and you will be asked to enter your SAP Cloud Platform Mobile Services login credentials at the authentication screen. Once logged in, click on any of the entities to show the master data. Most likely you will receive the following response:
+Try to build and run the app. If all goes well, the build will succeed and you will be asked to enter your SAP Cloud Platform mobile service for development and operations login credentials at the authentication screen. Once logged in, click on any of the entities to show the master data. Most likely you will receive the following response:
 
 ![Offline OData implementation](fiori-ios-hcpms-offline-odata-implementation-05.png)
 

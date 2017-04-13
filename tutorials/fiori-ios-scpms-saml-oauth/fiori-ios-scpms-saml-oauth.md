@@ -68,7 +68,7 @@ Click **Save** to store the metadata.
 
 [ACCORDION-BEGIN [Step 2: ](Switch to SAML-based authentication)]
 
-Open a browser window to your SAP Cloud Platform Mobile Services Admin cockpit, and navigate to **Applications**.
+Open a browser window to your SAP Cloud Platform mobile service for development and operations Admin cockpit, and navigate to **Applications**.
 
 In the list of applications, in column **Actions** click the **cog-wheel icon** for your application and click **Configure** from the actions menu.
 
@@ -154,7 +154,7 @@ From the **Home screen**, tap the **Demo** application icon. Notice how you will
 
 [ACCORDION-BEGIN [Step 6: ](Switch to OAuth-based authentication)]
 
-Open a browser window to your SAP Cloud Platform Mobile Services Admin cockpit, and navigate to **Applications**.
+Open a browser window to your SAP Cloud Platform mobile service for development and operations Admin cockpit, and navigate to **Applications**.
 
 In the list of applications, in column **Actions** click the **cog-wheel icon** for your application and click **Configure** from the actions menu.
 
@@ -220,7 +220,7 @@ Build and run the application. Upon first run, you will notice the login screen 
 
 Enter your SAP Cloud Platform user credentials, tick the **Remember me** checkbox, and click **Log On**.
 
-You will now see a screen where SAP Cloud Platform Mobile Services asks you to authorize the app for authentication using the platform.
+You will now see a screen where SAP Cloud Platform mobile service for development and operations asks you to authorize the app for authentication using the platform.
 
 ![SAPcpms Application Security Configuration](fiori-ios-scpms-saml-oauth-11.png)
 
