@@ -1,6 +1,6 @@
 ---
 title: Read data from the ES4 back-end and present it in the iOS app
-description: Now the device has been properly registered in the SAP Cloud Platform Mobile Services back-end, it should be possible to reach the OData service provided by the SAP ES4 back-end. This tutorial will implement a service call to the OData back-end and show the results in a table in the iOS app.
+description: Now the device has been properly registered in the SAP Cloud Platform mobile service for development and operations back-end, it should be possible to reach the OData service provided by the SAP ES4 back-end. This tutorial will implement a service call to the OData back-end and show the results in a table in the iOS app.
 primary_tag: operating-system>ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>cloud, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
@@ -13,7 +13,7 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>cloud, topic>mobile,
 
 ## Details
 ### You will learn  
-Now the device has been properly registered in the SAP Cloud Platform Mobile Services back-end, it should be possible to reach the OData service provided by the SAP ES4 back-end. You will learn how to format your request to the SAP Cloud Platform Mobile Services and have it passed through to OData back-end that was set-up in a previous tutorial.
+Now the device has been properly registered in the SAP Cloud Platform mobile service for development and operations back-end, it should be possible to reach the OData service provided by the SAP ES4 back-end. You will learn how to format your request to the SAP Cloud Platform mobile service for development and operations and have it passed through to OData back-end that was set-up in a previous tutorial.
 
 ### Time to Complete
 **15 Min**
@@ -21,9 +21,9 @@ Now the device has been properly registered in the SAP Cloud Platform Mobile Ser
 ---
 
 [ACCORDION-BEGIN [Introduction: ](Goal)]
-In the previous set of tutorials, you have setup a connection to the SAP Cloud Platform Mobile Service and and have registered your device. The device registration result in an Application Connection Identifier (`appcid`). The `appcid`, along with the user's credentials should be passed in all requests to the OData back-end services.
+In the previous set of tutorials, you have setup a connection to the SAP Cloud Platform mobile service for development and operations and and have registered your device. The device registration result in an Application Connection Identifier (`appcid`). The `appcid`, along with the user's credentials should be passed in all requests to the OData back-end services.
 
-Not the registration is done, it it time to connect to the actual OData service, which you exposed to the SAP Cloud Platform Mobile Services in tutorial [Configure back-end connection](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-backend-connection.html). There are multiple entities available in the ES4 OData service. In this tutorial the `TravelAgencies` entity will be read.
+Not the registration is done, it it time to connect to the actual OData service, which you exposed to the SAP Cloud Platform mobile service for development and operations in tutorial [Configure back-end connection](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-backend-connection.html). There are multiple entities available in the ES4 OData service. In this tutorial the `TravelAgencies` entity will be read.
 
 When data from the OData back-end connection has been retrieved, the travel agencies details will be inserted into the table displayed in the app.
 

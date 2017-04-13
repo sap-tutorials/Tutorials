@@ -1,6 +1,6 @@
 ---
-title: Enable SAP Cloud Platform mobile services
-description: Enable SAP Cloud Platform mobile services.
+title: Enable SAP Cloud Platform mobile service for development and operations
+description: Enable SAP Cloud Platform mobile service for development and operations.
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
 
 ## Details
 ### You will learn  
-In this tutorial, you will enable and configure SAP Cloud Platform mobile services for development and operations in your trial account.  Once configured, you can use mobile services to run native iOS apps on SAP Cloud Platform
+In this tutorial, you will enable and configure SAP Cloud Platform mobile service for development and operations in your trial account.  Once configured, you can use mobile services to run native iOS apps on SAP Cloud Platform
 
 ### Time to Complete
 **5 Min**.
@@ -27,7 +27,7 @@ Go to your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com) 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Navigate to SAP Cloud Platform Mobile Services)]
+[ACCORDION-BEGIN [Step 2: ](Navigate to SAP Cloud Platform mobile service for development and operations)]
 
 From the SAP Cloud Platform Cockpit page, click **Services** in the navigation bar, scroll down until you see the Mobile Services group then click on the **Development & Operations** tile.
 

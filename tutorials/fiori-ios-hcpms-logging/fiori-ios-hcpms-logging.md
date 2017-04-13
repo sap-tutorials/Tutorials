@@ -1,6 +1,6 @@
 ---
-title: Logging and tracing in SAP Cloud Platform Mobile Services
-description: Logging and tracing overview in the SAP Cloud Platform Mobile Services Administration Cockpit.
+title: Logging and tracing in SAP Cloud Platform mobile service for development and operations
+description: Logging and tracing overview in the SAP Cloud Platform mobile service for development and operations Administration Cockpit.
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -10,20 +10,20 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
  - **Tutorials:** [Application logging and tracing](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-application-logging.html)
 
 ## Next Steps
- - [Manage usage statistics on SAP Cloud Platform Mobile Services](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-reporting.html)
+ - [Manage usage statistics on SAP Cloud Platform mobile service for development and operations](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-reporting.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will learn to use the logging functionality and configurations available in SAP Cloud Platform Mobile Services. You will also learn how to set logging levels, enable application traces, and view logs and traces.
+In this tutorial, you will learn to use the logging functionality and configurations available in SAP Cloud Platform mobile service for development and operations. You will also learn how to set logging levels, enable application traces, and view logs and traces.
 
 ### Time to Complete
 **15 Min**.
 
 ---
 
-SAP Cloud Platform, mobile service for development and operations provides administrators, developers and support staff with extensive logs and traces functionality to troubleshoot application issues. You can control the amount of information that is captured by setting the log level for individual logging components. Logs and traces are automatically synchronized with the server when an application is launched or switched to foreground or background on the client.
+SAP Cloud Platform mobile service for development and operations provides administrators, developers and support staff with extensive logs and traces functionality to troubleshoot application issues. You can control the amount of information that is captured by setting the log level for individual logging components. Logs and traces are automatically synchronized with the server when an application is launched or switched to foreground or background on the client.
 
-[ACCORDION-BEGIN [Step 1: ](Examine the SAP Cloud Platform Mobile Services log settings)]
+[ACCORDION-BEGIN [Step 1: ](Examine the SAP Cloud Platform mobile service for development and operations log settings)]
 
 Go to your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com) and log on. Navigate to **Logs > Log Settings**
 
@@ -72,4 +72,4 @@ Now you have lowered the logging levels, try run your iOS application again, and
 [ACCORDION-END]
 
 ## Next Steps
- - [Manage usage statistics on SAP Cloud Platform Mobile Services](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-reporting.html)
+ - [Manage usage statistics on SAP Cloud Platform mobile service for development and operations](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-reporting.html)
