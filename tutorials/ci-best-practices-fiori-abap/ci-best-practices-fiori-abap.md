@@ -199,7 +199,7 @@ Grunt requires Node.js and the included package manager npm.
 
     You can install the `tar.gz` package on Linux in any directory. We recommend that you define a common installation directory on all your Jenkins slave machines.
 
-2. Open the Jenkins front end, and go to **Manage Jenkins > Manage Plugins > Available**. Select **NodeJS Plugin** and start the installation.
+2. Open the Jenkins front end, and go to **Manage Jenkins > Manage Plugins > Available**. Select **Node.js Plugin** and start the installation.
 
     Although the primary feature offered by this plugin (using JavaScript directly in job implementations) is not used in our example, it does handle multiple Node.js versions in parallel, allowing you to choose the appropriate one at the job level.
 
