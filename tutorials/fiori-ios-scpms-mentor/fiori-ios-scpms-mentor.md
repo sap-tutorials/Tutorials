@@ -1,6 +1,6 @@
 ---
-title: Using the SAP Fiori for iOS Mentor app
-description: Use the SAP Fiori for iOS Mentor app on your iPad to explore and modify Fiori controls which you then transfer to your Xcode project
+title: Using the SAP Fiori Mentor app
+description: Use the SAP Fiori Mentor app on your iPad to explore and modify Fiori controls which you then transfer to your Xcode project
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -17,27 +17,27 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-clo
 
 ## Details
 ### You will learn  
-In the last blog, you added a Fiori Object Cell to a table view. Unfortunately, the Xcode Storyboard does not allow previews of third-party UI elements when contained in a binary framework file, such as the Fiori UI elements in the SAP Cloud Platform for iOS SDK. In this blog, you will learn to use the SAP Fiori for iOS Mentor iPad app to explore the various Fiori for iOS UI elements, modify them to your taste, and then transfer the generated code to your Xcode project.
+In the last blog, you added a Fiori Object Cell to a table view. Unfortunately, the Xcode Storyboard does not allow previews of third-party UI elements when contained in a binary framework file, such as the Fiori UI elements in the SAP Cloud Platform for iOS SDK. In this blog, you will learn to use the SAP Fiori Mentor iPad app to explore the various Fiori for iOS UI elements, modify them to your taste, and then transfer the generated code to your Xcode project.
 
 ### Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download the SAP Fiori for iOS Mentor app from the App Store)]
+[ACCORDION-BEGIN [Step 1: ](Download the SAP Fiori Mentor app from the App Store)]
 
-On your iPad running iOS 10, open the **App Store** application. In the search bar on the top-right, enter **SAP Fiori for iOS Mentor** and press **Search**.
+On your iPad running iOS 10, open the **App Store** application. In the search bar on the top-right, enter **SAP Fiori Mentor** and press **Search**.
 
-At the search results screen, tap the **Get** button next to the **SAP Fiori for iOS Mentor** app icon. The app will now download and install on your device.
+At the search results screen, tap the **Get** button next to the **SAP Fiori Mentor** app icon. The app will now download and install on your device.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Explore the SAP Fiori for iOS Mentor app)]
+[ACCORDION-BEGIN [Step 2: ](Explore the SAP Fiori Mentor app)]
 
-Tap the **SAP Fiori for iOS Mentor** icon on your iPad's home screen. The app's **landing page** is now shown:
+Tap the **SAP Fiori Mentor** icon on your iPad's home screen. The app's **landing page** is now shown:
 
-![SAP Fiori for iOS Mentor app](fiori-ios-scpms-mentor-01.png)
+![SAP Fiori Mentor app](fiori-ios-scpms-mentor-01.png)
 
 At the top, you see tiles linking to online documentation about the **Apple and SAP partnership**, the **SDK Documentation**, **iOS Development** tutorials from Apple, etc.
 
@@ -55,7 +55,7 @@ The next row lists the SDK's **Foundation Components** concepts such as Authenti
 
 At the **Fiori UI Components** tile row, click the **See All** button. A page with all possible Fiori UI Components are shown:
 
-![SAP Fiori for iOS Mentor app](fiori-ios-scpms-mentor-02.png)
+![SAP Fiori Mentor app](fiori-ios-scpms-mentor-02.png)
 
 Scroll through the page to get an idea of the available Fiori UI Components.
 
@@ -66,7 +66,7 @@ Scroll through the page to get an idea of the available Fiori UI Components.
 
 Scroll to the bottom of the page, and locate the **Timeline Cell** component tile. Click the tile, and the details page for this control are shown:
 
-![SAP Fiori for iOS Mentor app](fiori-ios-scpms-mentor-03.png)
+![SAP Fiori Mentor app](fiori-ios-scpms-mentor-03.png)
 
 At the top, you see details about the control, as well as the Swift class name for the control, `FUITimelineCell`.
 
@@ -81,11 +81,11 @@ A preview of the control is displayed according to the currently selected style.
 
 At the lower-right of the screen are three buttons. Tap the **Settings** button (the button with the 3 dots). A **Settings Pop-out** is now displayed:
 
-![SAP Fiori for iOS Mentor app](fiori-ios-scpms-mentor-04.png)
+![SAP Fiori Mentor app](fiori-ios-scpms-mentor-04.png)
 
 If you now change some properties for the control, you will see the changes are reflected immediately in the control's preview:
 
-![SAP Fiori for iOS Mentor app](fiori-ios-scpms-mentor-05.png)
+![SAP Fiori Mentor app](fiori-ios-scpms-mentor-05.png)
 
 [DONE]
 [ACCORDION-END]
@@ -94,13 +94,13 @@ If you now change some properties for the control, you will see the changes are 
 
 If you are happy with the way your modified Timeline Cell component looks, click the **Code Sample** button (the button displaying `</>`). A code sample is being generated based on the preferences you defined in the **Settings Pop out**:
 
-![SAP Fiori for iOS Mentor app](fiori-ios-scpms-mentor-06.png)
+![SAP Fiori Mentor app](fiori-ios-scpms-mentor-06.png)
 
 The code sample shows a standalone example, but it is fairly easy to implement the sample code in your own project.
 
 Tap the **Select All** button in the top-right. The sample code is now selected, and the selection action buttons are shown:
 
-![SAP Fiori for iOS Mentor app](fiori-ios-scpms-mentor-07.png)
+![SAP Fiori Mentor app](fiori-ios-scpms-mentor-07.png)
 
 Click the **Copy** action button.
 
@@ -109,15 +109,15 @@ Click the **Copy** action button.
 
 [ACCORDION-BEGIN [Step 7: ](Examine the copied code)]
 
-On your Mac, open a text editor of your choice, and using the [Universal Clipboard](https://support.apple.com/kb/PH25168) paste the copied code from the SAP Fiori for iOS Mentor app to the editor:
+On your Mac, open a text editor of your choice, and using the [Universal Clipboard](https://support.apple.com/kb/PH25168) paste the copied code from the SAP Fiori Mentor app to the editor:
 
-![SAP Fiori for iOS Mentor app](fiori-ios-scpms-mentor-08.png)
+![SAP Fiori Mentor app](fiori-ios-scpms-mentor-08.png)
 
 As you see, the sample code generates an example implementation extending from a `UITableViewController`. In the constructor, it declares a variable for the cell identifier.
 
 In method `viewDidLoad()`, it sets up the table view with a specific height, style, and registers a `FUITimelineCell` class as the table cell.
 
-Method `tableView(cellForRowAt)` returns a `FUITimelineCell` instance, and has the exact properties set you have selected in the SAP Fiori for iOS Mentor app.
+Method `tableView(cellForRowAt)` returns a `FUITimelineCell` instance, and has the exact properties set you have selected in the SAP Fiori Mentor app.
 
 [DONE]
 [ACCORDION-END]
@@ -130,7 +130,7 @@ In this example, however, you just want to implement the `FUITimelineCell` for t
 
 Similar to the previous tutorial, drag a **Table View Cell** to the **Master Table View Controller**.
 
-![SAP Fiori for iOS Mentor app](fiori-ios-scpms-mentor-09.png)
+![SAP Fiori Mentor app](fiori-ios-scpms-mentor-09.png)
 
 With the newly added **Table View Cell** selected, switch to it's **Attributes Inspector**.
 
@@ -217,7 +217,7 @@ timelineCell.eventText =  String(describing: productcategory.numberOfProducts)
 
 Build and run the application. After logging in, click the **Product Categories** item. You should now see the master list with **Timeline Cell** items displaying the various properties of the **Product Category** entities:
 
-![SAP Fiori for iOS Mentor app](fiori-ios-scpms-mentor-10.png)
+![SAP Fiori Mentor app](fiori-ios-scpms-mentor-10.png)
 
 [DONE]
 [ACCORDION-END]
