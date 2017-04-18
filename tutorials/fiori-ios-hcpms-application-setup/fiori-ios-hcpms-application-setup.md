@@ -20,9 +20,9 @@ How to setup the application for a mobile application that allows you to manage 
 
 ---
 
-The SAP Cloud Platform Mobile Services provides various mobile centric services, such as authentication, device registration, logging and proxying of back-end services. All these services are app specific. This allows having several that are setup using different settings.
+The SAP Cloud Platform mobile service for development and operations provides various mobile centric services, such as authentication, device registration, logging and proxying of back-end services. All these services are app specific. This allows having several that are setup using different settings.
 
-Technically it would be possible to skip this step and access an OData services directly, but leveraging the SAP Cloud Platform Mobile services has several advantages:
+Technically it would be possible to skip this step and access an OData services directly, but leveraging the SAP Cloud Platform mobile service for development and operations has several advantages:
 
 - Your app is always communicating with the same Mobile Services end-point. If you want to use another service, you don't have to change the app, as the eventual end-point stays hidden for the app. It suffices to point your mobile services end-point to the new service.
 - Mobile services contains a device registration feature that allows a device to be de-authorized when the device is e.g. lost.
@@ -30,7 +30,7 @@ Technically it would be possible to skip this step and access an OData services 
 - Mobile services provide out-of-the-box features to configure your app on an app-specific, user-specific or device-specific level. It is e.g. possible to set a particular device of a user to debugging-level to gain better insight into what is happening with the application
 - Mobile services provides analytics features to monitor usage of your application per platform, device type or user group.
 
-This tutorial described how you can configure a mobile app in SAP Cloud Platform Mobile Services.
+This tutorial described how you can configure a mobile app in SAP Cloud Platform mobile service for development and operations.
 
 [ACCORDION-BEGIN [Step 1: ](Make sure mobile services are enabled in your account)]
 

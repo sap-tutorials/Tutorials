@@ -13,7 +13,7 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>securi
 
 ## Details
 ### You will learn  
-You will learn how to build an application that allows a user to log-in and performs device registration on the SAP Cloud Platform mobile services.
+You will learn how to build an application that allows a user to log-in and performs device registration on the SAP Cloud Platform mobile service for development and operations.
 
 ### Time to Complete
 **30 Min**
@@ -24,20 +24,20 @@ You will learn how to build an application that allows a user to log-in and perf
 
 The application that you will create in this and the following set of tutorials will be an application that shows a table of traveling agencies that is exposed as an OData services on the ES4 system.
 
-Before the application can show these traveling agencies, the user needs to be authenticated and the application needs to register itself with the SAP Cloud Platform Mobile Services. Only once an application is registered, the SAP Cloud Platform Mobile Services will allow access to the configured back-end connections.
+Before the application can show these traveling agencies, the user needs to be authenticated and the application needs to register itself with the SAP Cloud Platform mobile service for development and operations. Only once an application is registered, the SAP Cloud Platform mobile service for development and operations will allow access to the configured back-end connections.
 
 Please find a schematic overview of how this work in the image below:
 
 ![Registration process](image-1.png)
 
 1. The user enters credentials in the application
-2. Once the user has entered his credentials, the app will register the app with the SAP Cloud Platform Mobile Services.
-3. When the registration was carried out successfully, the SAP Cloud Platform Mobile Services will return an application connection ID (`appcid` in short).
+2. Once the user has entered his credentials, the app will register the app with the SAP Cloud Platform mobile service for development and operations.
+3. When the registration was carried out successfully, the SAP Cloud Platform mobile service for development and operations will return an application connection ID (`appcid` in short).
 4. When the application send a request for back-end data to the SAP Cloud Platform, the `appcid` should be include in the header of the request. If the `appcid` is missing, the app will not get access to the back-end data.
 5. If a valid `appcid` is present and correct authentication details are passed in the request, SAP Cloud Platform's mobile services will work as a proxy and retrieve the requested data from ES4.
 6. When the response from ES4 has been received, it will be passed to the application. With this data, the application can then show a table containing the retrieved details.
 
-> Note: This tutorial will not be leveraging the Fiori iOS SDK, but is intended to get a better understanding of the internals of the SAP Cloud Platform Mobile Services and how they should interact with a native mobile application.
+> Note: This tutorial will not be leveraging the Fiori iOS SDK, but is intended to get a better understanding of the internals of the SAP Cloud Platform mobile service for development and operations and how they should interact with a native mobile application.
 
 Please follow the steps below to build the registration portion of this app.
 
@@ -97,7 +97,7 @@ Your storyboard should now look like the image below:
 
 [ACCORDION-BEGIN [Step 4: ](Add a login view)]
 
-The user cannot make any calls to the back-end without logging in an registering. Hence, a login screen would be necessary to perform authentication with the SAP Cloud Platform Mobile Services back-end.
+The user cannot make any calls to the back-end without logging in an registering. Hence, a login screen would be necessary to perform authentication with the SAP Cloud Platform mobile service for development and operations back-end.
 
 To add the login view:
 
@@ -331,7 +331,7 @@ This section will allow you to use `connectionRoot` similar to a variable in you
 
 [ACCORDION-BEGIN [Step 13: ](Determining registration payload)]
 
-When the app registers itself with the SAP Cloud Platform mobile services, it needs to pass the device type, model and username in the payload of the request.
+When the app registers itself with the SAP Cloud Platform mobile service for development and operations, it needs to pass the device type, model and username in the payload of the request.
 
 For the payload a similar approach is taken as for the `connectionRoot`, in which a variable is prepared containing the data in the payload:
 
@@ -438,7 +438,7 @@ func register(userId: String, password: String, completion: @escaping (Bool, Str
 }
 ```
 
-With this implementation of the `register` function, the registration process will now perform a registration on the SAP Cloud Platform Mobile Services back-end by:
+With this implementation of the `register` function, the registration process will now perform a registration on the SAP Cloud Platform mobile service for development and operations back-end by:
 
 - Setting the object instance variables `userId` and `password` to the `userId` and `password` that have been provided as function parameters. These will be used by the function that creates the basic authentication header string.
 - Setting up the request, including the basic authentication string if it can be assembled successfully.
@@ -448,9 +448,9 @@ With this implementation of the `register` function, the registration process wi
 - The data task is then executed
 - Once the data task calls the completion closure the guard statement checks whether data has been returned and the error parameter is nil. If it isn't, the register function will call it's completion closure indicating that an error occurred.
 - Next, the the http response status is checked. On registration status 201 (Created) is expected. Anything else should result in an error and call the completion closure accordingly.
-- In the last section of the closure, the JSON response is being read and an attempt will be made to read the application connection ID (`appcid`) that has been assigned by the SAP Cloud Platform Mobile Services. The application connection Id, is found in the JSON structure as `d.ApplicationConnectionId`. You may note here that the guard statement has multiple conditions. Guard will check only one condition at a time. Only if first is true then it will check next otherwise it will executes else part.
+- In the last section of the closure, the JSON response is being read and an attempt will be made to read the application connection ID (`appcid`) that has been assigned by the SAP Cloud Platform mobile service for development and operations. The application connection Id, is found in the JSON structure as `d.ApplicationConnectionId`. You may note here that the guard statement has multiple conditions. Guard will check only one condition at a time. Only if first is true then it will check next otherwise it will executes else part.
 
-Please find an example of a JSON response returned by the SAP Cloud Platform Mobile services below for reference:
+Please find an example of a JSON response returned by the SAP Cloud Platform mobile service for development and operations below for reference:
 
 ```json
 {
@@ -545,11 +545,11 @@ When the **Login** button is pressed, you should see that a few lines are added 
 
 ![Debug console](image-9.png)
 
-In the last line you should see the connection ID that has been assigned by the SAP Cloud Platform Mobile Services.
+In the last line you should see the connection ID that has been assigned by the SAP Cloud Platform mobile service for development and operations.
 
-If you now go to the cockpit of SAP Cloud Platform Mobile Service for Development and Operations, you should see that the **Registrations and User** tile has increased:
+If you now go to the cockpit of SAP Cloud Platform mobile service for development and operations, you should see that the **Registrations and User** tile has increased:
 
-![Cockpit of SAP Cloud Platform Mobile Service for Development and Operations](image-10.png)
+![Cockpit of SAP Cloud Platform mobile service for development and operations](image-10.png)
 
 When you click on the tile, you should see the list of registrations. The registration that has just been created should have a connection ID as the connection ID that was returned in the debug console in Xcode.
 

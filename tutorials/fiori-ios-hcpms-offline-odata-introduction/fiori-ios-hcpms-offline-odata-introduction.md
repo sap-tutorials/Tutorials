@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Manage usage statistics on SAP Cloud Platform Mobile Services](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-reporting.html)
+ - **Tutorials:** [Manage usage statistics on SAP Cloud Platform mobile service for development and operations](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-reporting.html)
 
 
 ## Next Steps
@@ -69,7 +69,7 @@ Please find a schematic representation of the creation and population of the dat
 
 ![Initial Download sequence](image-2.png)
 
-When a database is being opened for the first time, the app sends the defining queries over to the SAP Cloud Platform Mobile Services. At the SAP Cloud Platform Mobile Services back-end is determined whether a client store already exists for the device being used. If it doesn't. SAP Cloud Platform Mobile Services will pull the metadata from the originating OData service and will create a table for each of the defined queries. Once the tables have been created, the tables are synchronized by retrieving the data from the originating OData service. Once the table is fully synchronized on the SAP Cloud Platform Mobile Services back-end, the table is synchronized to the Offline UltraLite store on the client using the MobiLink protocol.
+When a database is being opened for the first time, the app sends the defining queries over to the SAP Cloud Platform mobile service for development and operations. At the SAP Cloud Platform mobile service for development and operations back-end is determined whether a client store already exists for the device being used. If it doesn't. SAP Cloud Platform mobile service for development and operations will pull the metadata from the originating OData service and will create a table for each of the defined queries. Once the tables have been created, the tables are synchronized by retrieving the data from the originating OData service. Once the table is fully synchronized on the SAP Cloud Platform mobile service for development and operations back-end, the table is synchronized to the Offline UltraLite store on the client using the MobiLink protocol.
 
 [DONE]
 [ACCORDION-END]
@@ -82,20 +82,20 @@ Please find a schematic representation of the request for refresh sequence below
 
 ![Request for Refresh sequence](image-3.png)
 
-When the database is being refreshed the the app sends the defining queries over to the SAP Cloud Platform Mobile Services. If the originating OData service supports delta-token, the client store on the SAP Cloud Platform Mobile Services is refreshed using delta-tokens, otherwise a full refresh of the client store is performed. Once the client store is in sync all changes are sent to the client using the MobiLink protocol.
+When the database is being refreshed the the app sends the defining queries over to the SAP Cloud Platform mobile service for development and operations. If the originating OData service supports delta-token, the client store on the SAP Cloud Platform mobile service for development and operations is refreshed using delta-tokens, otherwise a full refresh of the client store is performed. Once the client store is in sync all changes are sent to the client using the MobiLink protocol.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Data Flush sequence)]
 
-After a user has entered data, and when the user is back online again, the entered data needs to be uploaded to the originating OData service. This is achieved by collecting all requests that need to be executed in the Offline store on the device, synchronizing them to the SAP Cloud Platform Mobile Services back-end, and from there they will be played back on the originating OData service in the same order as in which they were received.
+After a user has entered data, and when the user is back online again, the entered data needs to be uploaded to the originating OData service. This is achieved by collecting all requests that need to be executed in the Offline store on the device, synchronizing them to the SAP Cloud Platform mobile service for development and operations back-end, and from there they will be played back on the originating OData service in the same order as in which they were received.
 
 Please find a schematic representation of the data flush sequence below:
 
 ![Data flush sequence](image-4.png)
 
-In the diagram, you can see that the requests are being sent to the offline store on the device, in which the changes are captured. Once the user goes online and flushes his data, the request queue is being synchronized to the SAP Cloud Platform Mobile Services back-end. From there, SAP Cloud Platform Mobile Services will playback each request to the originating OData service. All errors along with their original requests are stored in the Error Archive, which manifest itself as an OData entity set named `ErrorArchive`.
+In the diagram, you can see that the requests are being sent to the offline store on the device, in which the changes are captured. Once the user goes online and flushes his data, the request queue is being synchronized to the SAP Cloud Platform mobile service for development and operations back-end. From there, SAP Cloud Platform mobile service for development and operations will playback each request to the originating OData service. All errors along with their original requests are stored in the Error Archive, which manifest itself as an OData entity set named `ErrorArchive`.
 
 [DONE]
 [ACCORDION-END]
@@ -113,7 +113,7 @@ Events that happened during synchronization can be retrieved in a similar fashio
 
 [ACCORDION-BEGIN [Step 6: ](Configuration of the SAP Cloud Platform)]
 
-To leverage the offline store features it is not necessary to add any specific configuration to your application. In that case, SAP Cloud Platform mobile services will apply defaults that will make a good amount of applications run smoothly.
+To leverage the offline store features it is not necessary to add any specific configuration to your application. In that case, SAP Cloud Platform mobile service for development and operations will apply defaults that will make a good amount of applications run smoothly.
 
 However, it is possible to tune the configuration of offline applications to optimize offline performance by defining e.g.:
 

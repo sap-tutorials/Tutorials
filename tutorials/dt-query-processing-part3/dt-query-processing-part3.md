@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Compare Prepared and Executed Plan](coming soon)
+ - **Tutorials:** [Compare Prepared and Executed Plan](https://www.sap.com/developer/tutorials/dt-query-processing-part2.html)
 
 ## Next Steps
- - **Tutorials:** [Detailed Query Plan and Indexes](coming soon)
+ - **Tutorials:** [Detailed Query Plan and Indexes](https://www.sap.com/developer/tutorials/dt-query-processing-part4.html)
 
 ## Details
 ### You will learn
@@ -132,4 +132,4 @@ Looking at the output in this example, you will notice that both the estimated #
 [ACCORDION-END]
 
 ## Next Steps
-- **Tutorials:** [Detailed Query Plan and Indexes](coming soon)
+- **Tutorials:** [Detailed Query Plan and Indexes](https://www.sap.com/developer/tutorials/dt-query-processing-part4.html)

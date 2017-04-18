@@ -14,7 +14,7 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-clo
 
 ## Details
 ### You will learn  
-You will learn how to create configure a back-end connection in your SAP Cloud Platform Mobile Services account, which will allow you to securely connect to your back-end service from your mobile application.
+You will learn how to create configure a back-end connection in your SAP Cloud Platform mobile service for development and operations account, which will allow you to securely connect to your back-end service from your mobile application.
 
 ### Time to Complete
 **15 Min**.
@@ -109,7 +109,7 @@ After saving the connection details, you should see a message toast saying that 
 
 You can now press the **Home** button to go back to the cockpit. In the cockpit, you will see that the number of connections is now 1:
 
-![SAP Cloud Platform Mobile Services Cockpit](image-9.png)
+![SAP Cloud Platform mobile service for development and operations Cockpit](image-9.png)
 
 [DONE]
 [ACCORDION-END]

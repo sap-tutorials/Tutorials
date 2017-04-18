@@ -1,8 +1,8 @@
 ---
 title: Setup a HANA user account
 description: Configure a user account with the relevant roles and privileges to use the SAP Cloud for predictive services
-primary_tag: products>sap-hana
-tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-hana, products>sap-cloud-platform ]
+primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
