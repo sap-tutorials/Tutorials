@@ -1,6 +1,7 @@
 ---
 title: SAPUI5 - Enable Routing
 description: Enable routing to move from one view to another
+primary_tag: topic>sapui5
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
@@ -108,7 +109,7 @@ definition (`webapp/Component.js`).
     ```javascript
     "viewName": "HelloWorld.view.App",
     ```
-    
+
     ![Update manifest.json to use new view](13.png)
 
 

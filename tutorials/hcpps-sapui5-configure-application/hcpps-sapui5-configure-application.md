@@ -1,12 +1,13 @@
 ---
-title: SAP Cloud Platform predictive services, Configure a SAPUI5 application from the project template
-description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the HANA XS OData service and the SAP Cloud Platform predictive services
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, topic>sapui5 ]
+title: Configure a SAPUI5 application from the project template
+description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the HANA XS OData service and the SAP Cloud for predictive services
+primary_tag: products>sap-cloud-platform-predictive-service
+tags: [ tutorial>intermediate, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Test the "Outliers" SAP Cloud Platform predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)
+  - **Tutorials:** [Test the "Outliers" service using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)
 
 ## Next Steps
   - [Visualize your predictive demo datasets in a SAPUI5 application using an HANA XS OData service](http://www.sap.com/developer/tutorials/hcpps-sapui5-odata.html)
@@ -17,9 +18,9 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
   - How to create a SAPUI5 application from a template using the SAP Web IDE
   - How to add a destination to your SAPUI5 application
   - Run your SAPUI5 application
-
+>
 > **Note:**
-The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Cloud Platform predictive services.
+The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Cloud for predictive services.
 For more content on SAPUI5, you can check the dedicated SAPUI5 tutorials or the online SAPUI5 documentation available here: https://sapui5.hana.ondemand.com
 
 ### Time to Complete
@@ -30,10 +31,10 @@ Therefore you can replace any occurrence of the token by the value listed above.
 >
 > Token               | Value
 ------------------- | -------------
-<code><b>&lt;HCP account name&gt;</b></code>  | on a developer trial account, it should end by `trial`
-<code><b>&lt;C4PA URL&gt;</b></code> | `http://aac4paservices<`<code><b>HCP account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
+<code><b>&lt;Account name&gt;</b></code>  | your SAP Cloud Platform account name. On a developer trial account, it should end by `trial`
+<code><b>&lt;C4PA URL&gt;</b></code> | `https://aac4paservices<`<code><b>Account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
 <code><b>&lt;HANA instance id&gt;</b></code>  | as created previously, should be `mdc`
-<code><b>&lt;HANA URL&gt;</b></code> | `http://<`<code><b>HANA instance id</b></code>`><`<code><b>HCP account name</b></code>`>.hanatrial.ondemand.com`
+<code><b>&lt;HANA URL&gt;</b></code> | `https://<`<code><b>HANA instance id</b></code>`><`<code><b>Account name</b></code>`>.hanatrial.ondemand.com`
 <code><b>&lt;HANA User&gt;</b></code> | `HCPPSTRIAL`
 <code><b>&lt;HANA Password&gt;</b></code> | `Welcome16`
 >
@@ -42,7 +43,7 @@ Therefore you can replace any occurrence of the token by the value listed above.
 [ACCORDION-BEGIN [Step 1: ](Create your destination)]
 Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
 
-Click on your ***HCP Account*** identifier (which ends with *trial*) as highlighted on the below screenshot.
+Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial*) as highlighted on the below screenshot.
 
 ![SAP HANA Cloud Platform Cockpit](01.png)
 
@@ -91,7 +92,9 @@ URL                  | `<C4PA URL>`
 Proxy Type           | `Internet`
 Authentication       | `AppToAppSSO`
 
-> Make sure you update the URL with your HCP Account identifier.
+> Make sure you update the URL with your SAP Cloud Platform Account identifier.
+
+-
 
 Then you will need to add the following properties to the destination:
 
@@ -160,8 +163,6 @@ View Name            | `demo`
 
 Your template project is created! Let's continue, and add the "destinations" previously created in the SAP Cloud Platform cockpit.
 
-> **Note:**  there are multiple ways to add your destinations in a SAPUI5 application depending on the type of destinations. Here, we will simply add them manually in the `neo-app.json` file.
-
 Open the `neo-app.json` file and update the file like this:
 
 ```json
@@ -204,16 +205,17 @@ Open the `neo-app.json` file and update the file like this:
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
+> **Note:**  there are multiple ways to add your destinations in a SAPUI5 application depending on the type of destinations. Here, we will simply add them manually in the `neo-app.json` file.
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Update the namespace definition)]
 
-Due to recent updates in the SAPUI5 template in the Web IDE, the namespace that you have set in the wizards might not be properly reflected in the created application.
+**Due to recent updates in the SAPUI5 template in the Web IDE, the namespace that you have set in the wizards might not be properly reflected in the created application.
+To avoid any problem with the tutorials code, we will use a new namespace.**
 
-To avoid any problem with the tutorials code, we will manually add a new namespace that we will use.
-
-Open the `index.html` file in the `hcppredictiveservicesdemo\webapp` directory and add the following `resourceroots` to the existing list.
+Open the `index.html` file in the `webapp` directory and add the following `resourceroots` to the existing list.
 
 Replace the following line of code
 
@@ -226,7 +228,11 @@ by
 data-sap-ui-resourceroots='{"xxxxx": "", "sapui5demo": ""}'
 ```
 
-The `xxxxx` is the namespace generated by the template wizard.
+> **Note: The '`xxxxx`' represent the current application namespace that was generated by the template wizard.
+It should be equal to `demo`, but some version of the template will generate something like '`demohcppredictiveservicesdemo`' or '`hcppredictiveservicesdemo`'.
+Take a note of that value as you will need to replace a few occurrences of "`xxxxx`" by this value in the code provided the next steps**
+
+-
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
@@ -240,8 +246,8 @@ The default view created is located in `webapp\view\demo.view.xml`. We will upda
 Open the `webapp\view\demo.view.xml` file and replace the existing code with the following code:
 
 ```xml
-<mvc:View controllerName="xxxxx.controller.demo" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
-  xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
+<mvc:View controllerName="xxxxx.controller.demo" xmlns:html="http://www.w3.org/2000/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<SplitApp id="SplitAppDemo" initialMaster="master" initialDetail="detail">
 		<masterPages>
@@ -289,7 +295,7 @@ Open the `webapp\view\demo.view.xml` file and replace the existing code with the
 			</Page>
 		</masterPages>
 		<detailPages>
-			<Page id="detail" title="Test the HCP Predictive Service in a SAPUI5 application">
+			<Page id="detail" title="Test the SAP Cloud Platform Predictive Service in a SAPUI5 application">
 				<content></content>
 			</Page>
 		</detailPages>
@@ -297,7 +303,9 @@ Open the `webapp\view\demo.view.xml` file and replace the existing code with the
 </mvc:View>
 ```
 
-> **Note**: make sure you keep the initial `xxxxx` namespace in the first line
+> **Note: The '`xxxxx`' represent your application namespace that was generated by the template wizard. Make sure you are replacing the '`xxxxx`' by your value as described in step 5.**
+
+-
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S).
 
@@ -321,11 +329,8 @@ sap.ui.define([
 		onInit: function() {
 			if (typeof sap.ui.getCore().getModel() === 'undefined') {
 				sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel());
-				// MessageToast.show("onInit JSONModel", {
-				// 	duration: 5000
-				// });
 			}
-		},	    
+		},
 		getSplitAppObj: function() {
 			var result = sap.ui.getCore().byId(this.createId("SplitAppDemo"));
 			if (!result) {
@@ -348,8 +353,12 @@ sap.ui.define([
 		}
 	});
 });
+
 ```
-> **Note**: make sure you keep the initial `xxxxx` namespace in the 7th line
+
+> **Note: The '`xxxxx`' represent your application namespace that was generated by the template wizard. Make sure you are replacing the '`xxxxx`' by your value as described in step 5.**
+
+-
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
@@ -373,9 +382,9 @@ This will open a web page with the following content:
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-- [`neo-app.json`](solution-neo-app.json.txt)
-- [`webapp\controller\demo.controller.js`](solution-controller-demo.controller.js.txt)
-- [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`neo-app.json`](solution-neo-app.json.txt)
+  - [`webapp\controller\demo.controller.js`](solution-controller-demo.controller.js.txt)
+  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]

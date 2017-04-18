@@ -1,12 +1,13 @@
 ---
 title: Translate a Java app
 description: Use SAP Translation Hub to translate the UI texts for a Java app that you develop in Eclipse.
-tags: [  tutorial>beginner, topic>sap-translation-hub, products>sap-hana-cloud-platform, topic>sap-fiori-app ]
+primary_tag: products>sap-translation-hub>sap-translation-hub
+tags: [  tutorial>beginner, products>sap-translation-hub>sap-translation-hub, products>sap-cloud-platform, topic>sap-fiori-app, topic>java ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Enable the SAP Translation Hub service](http://www.sap.com/developer/tutorials/sth-enable.html)
+  - **Tutorials:** [Enable the SAP Translation Hub service](http://www.sap.com/developer/tutorials/sth-enable.html)
  - **Tutorials:** [Install and configure Eclipse environment](https://github.com/SAP/cloud-espm-v2#1-quick-start-guide) Complete the **1. Quick start guide** section.
 
 ## Next Steps
@@ -40,7 +41,7 @@ Before you get started with the translation process, open the `i18n.properties` 
 
 [ACCORDION-BEGIN [Step 3: ](Choose tile for developer account)]
 
-In the [SAP HANA Cloud Platform cockpit](https://account.hanatrial.ondemand.com), choose the tile for your personal developer account.
+In the [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com), choose the tile for your personal developer account.
 
 ![access menu to open service catalog](sth-choose-dev-tile.png)
 

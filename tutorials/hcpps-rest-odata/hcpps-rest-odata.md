@@ -1,7 +1,8 @@
 ---
-title: SAP Cloud Platform predictive services, Access your predictive demo data set using a HANA XS OData services from a REST client
+title: Test the HANA XS OData services
 description: Using a REST client, you will interact with a HANA XS OData services and get access to your predictive demo datasets
-tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>odata ]
+primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-cloud-platform, topic>odata ]
 ---
 
 ## Prerequisites
@@ -9,7 +10,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic
   - **Tutorials:** [Install a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
 
 ## Next Steps
-  - [Test the "Dataset" SAP Cloud Platform predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - [Test the "Dataset" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
 
 ## Details
 ### You will learn
@@ -79,6 +80,7 @@ It will now display the list of OData services registered in the `predictive.xso
     </workspace>
 </service>
 ```
+
 [DONE]
 [ACCORDION-END]
 
@@ -168,6 +170,7 @@ Click **Send**
     </edmx:DataServices>
 </edmx:Edmx>
 ```
+
 [DONE]
 [ACCORDION-END]
 
@@ -311,4 +314,4 @@ Click **Send**
   - For more tutorials on OData, you can check [An Open Data Protocol (OData) primer for developers](http://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
 
 ## Next Steps
-  - [Test the "Dataset" SAP Cloud Platform predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - [Test the "Dataset" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)

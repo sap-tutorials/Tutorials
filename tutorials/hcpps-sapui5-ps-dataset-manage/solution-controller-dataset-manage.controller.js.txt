@@ -146,8 +146,6 @@ sap.ui.define([
 					"name": variables[i].name,
 					"value": variables[i].value
 				};
-				// param[i].name = variables[i].name;
-				// param[i].value = variables[i].value;
 			}
 
 			// call the service and define call back methods

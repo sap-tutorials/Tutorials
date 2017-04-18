@@ -1,6 +1,7 @@
 ---
 title: Sign up for a free trial account on SAP Cloud Platform
 description: How to sign up for a free trial account on SAP Cloud Platform
+primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner ]
 ---
 
@@ -98,7 +99,7 @@ Go to the [SAP Cloud Platform Trial](https://account.hanatrial.ondemand.com/) (<
 
 Enter the same credentials you used to log into the `SAP.com` website.
 
-![SAP Cloud Platform log in](hcp-05.png)
+![SAP Cloud Platformlog in](hcp-05.png)
 
 
 [DONE]
@@ -108,7 +109,7 @@ Enter the same credentials you used to log into the `SAP.com` website.
 
 You will be prompted with the legal disclaimer dialog box;  check the box and click **Accept** to continue.
 
-![SAP Cloud Platform terms and conditions](hcp-06.png)
+![SAP Cloud Platformterms and conditions](hcp-06.png)
 
 [DONE]
 [ACCORDION-END] -->

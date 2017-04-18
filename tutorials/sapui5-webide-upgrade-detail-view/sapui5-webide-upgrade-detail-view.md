@@ -1,15 +1,16 @@
 ---
 title: SAPUI5 - Improve the list and detail view
 description: Multi-line list items using ObjectListItem and ObjectHeader controls
+primary_tag: topic>sapui5
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
-- **Proficiency:** Beginner 
-- **How-To** [Start this tutorial series](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
-- **Tutorials:** This tutorial is part of a series.  The previous tutorial is Part 7 [Update Internationalization](http://www.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
+- **Proficiency:** Beginner
+- **How-To** [Start this tutorial series](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+- **Tutorials:** This tutorial is part of a series.  The previous tutorial is Part 7 [Update Internationalization](https://www.sap.com/developer/tutorials/sapui5-webide-update-internationalization.html)
 
 ## Next Steps
- - The next tutorial is Part 9: [Add a search field](http://www.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
+ - The next tutorial is Part 9: [Add a search field](https://www.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
 
 ## Details
 ### You will learn  
@@ -20,7 +21,7 @@ In this exercise you will replace a couple of controls; one in the `View1` and 
 **10 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 
 1.  Open the `webapp/view/View1.view.xml` file, and replace the `<StandardListItem>` control with the following code:
@@ -29,17 +30,17 @@ In this exercise you will replace a couple of controls; one in the `View1` and 
     <ObjectListItem type="Navigation"                    press="handleListItemPress"                    title="{ProductName}"                    number="{= ((${UnitPrice} * 100) / 100).toFixed(2) }"                    numberUnit="{i18n>currency}" >    	<attributes>    		<ObjectAttribute text="{QuantityPerUnit}" />    	</attributes>    	<firstStatus>    		<ObjectStatus text="{= ${Discontinued}? 'Discontinued' : 'Available' }"
                           state="{= ${Discontinued}? 'Error' : 'Success' }" />    	</firstStatus>    </ObjectListItem>
     ```
-    
+
     ![Replace StandardListItem](1.png)
-  
+
 2.  Open the file `webapp/i18n/i18n.properties`, and add a placeholder for the EURO currency:
 
     ```
     currency=EUR
     ```
-    
+
     ![Update i18n file](2.png)
-  
+
 3.  Open the `webapp/view/Detail.view.xml`, and replace the `<VBox>` element with this code:
 
     ```xml
@@ -53,16 +54,15 @@ In this exercise you will replace a couple of controls; one in the `View1` and 
 	 ![View of master list](4a.png)
 
     The detail list will also have a new layout, with more information and better design:
-    
+
 	 ![View of detail screen](4b.png)
 
 
 ## Next Steps
- - The next tutorial is Part 9: [Add a search field](http://www.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
+ - The next tutorial is Part 9: [Add a search field](https://www.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
 
 ## Additional Information
 - [Expression Binding](http://anz.mygraebe.de/new-ui5/#7)
 - [`<List>` element](https://sapui5.hana.ondemand.com/explored.html#/entity/sap.m.List/samples)
 - [`<ObjectHeader>` element](https://sapui5.hana.ondemand.com/explored.html#/entity/sap.m.ObjectHeader/samples)
 - [`<ObjectListItem>` element](https://sapui5.hana.ondemand.com/explored.html#/entity/sap.m.ObjectListItem/samples)
-

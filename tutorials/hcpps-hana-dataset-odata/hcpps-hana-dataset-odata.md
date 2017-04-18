@@ -1,23 +1,24 @@
 ---
-title: SAP Cloud Platform predictive services, Expose your predictive demo dataset as HANA XS OData services
-description: Expose the demo data to be used with the SAP Cloud Platform predictive services as HANA XS OData services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>odata ]
+title: Expose your predictive demo dataset as HANA XS OData services
+description: Expose the demo data to be used with the SAP Cloud for predictive services as HANA XS OData services
+primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, products>sap-hana, products>sap-cloud-platform, topic>odata ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Import a predictive demo dataset in your SAP HANA](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
+  - **Tutorials:** [Import a series of predictive demo dataset](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Details
 ### You will learn
   - How to create a HANA XS OData services to expose table data stored in a SAP Cloud Platform HANA MDC instance
 
 >**Note:**
-- The HANA XS OData service will be used in a SAPUI5 application to render the data in a graph or a table, and is not used by the predictive services.
-- The predictive services only consumes data stored inside of your HANA instances.**
+  - The HANA XS OData service will be used in a SAPUI5 application to render the data in a graph or a table, and is not used by the predictive services.
+  - The predictive services only consumes data stored inside of your HANA instances.**
 
 ### Time to Complete
   **5 minutes**
@@ -38,7 +39,7 @@ Right click on **Content**, then click on **Create Application**.
 
 Complete the form following properties:
 
-- ***Package***: `public.predictive.odata`
+  - ***Package***: `public.predictive.odata`
 
 Click on **Create**
 
@@ -54,7 +55,7 @@ Right click on `odata`, then navigate the menu **New** > **File**.
 
 Complete the form following properties:
 
-- ***File Name***: `predictive.xsodata`
+  - ***File Name***: `predictive.xsodata`
 
 Click on **Create**
 
@@ -62,7 +63,7 @@ Click on **Create**
 
 Enter the following code in the file:
 
-```
+```js
 service {
   "DEMO"."CashFlow"     as "CashFlowData";
   "DEMO"."Census"       as "CensusData";
@@ -72,7 +73,10 @@ settings {
   support null;
 }
 ```
-**Note: if you didn't import all the datasets provided in the previous step, then when saving the file, it will not get activated, and the console will show you an error message. **
+
+>**Note**: if you didn't import all the datasets provided in the previous step, then when saving the file, it will not get activated, and the console will show you an error message.
+
+-
 
 [DONE]
 [ACCORDION-END]
@@ -111,4 +115,4 @@ Later, you will be using this HANA XS OData service, so you should save the high
 [ACCORDION-END]
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)

@@ -1,21 +1,22 @@
 ---
-title: SAP Cloud Platform predictive services, Setup a HANA user account for the SAP Cloud Platform predictive services
-description: Configure a user account with the relevant roles and privileges to use the SAP Cloud Platform predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
+title: Setup a HANA user account
+description: Configure a user account with the relevant roles and privileges to use the SAP Cloud for predictive services
+primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Create a new HANA MDC instance on the SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcpps-hana-create-mdc-instance.html)
+  - **Tutorials:** [Create a HANA MDC instance](http://www.sap.com/developer/tutorials/hcpps-hana-create-mdc-instance.html)
 
 ## Next Steps
-  - [Import a series of predictive demo dataset in your SAP HANA MDC instance](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
+  - [Import a series of predictive demo dataset](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
 
 ## Details
 ### You will learn
   - How to create a new user account on your HANA MDC instance using the ***SAP HANA Cockpit***. Each Trial HANA MDC instance comes with a ***HANA System Account***. This user account shall be used only to execute "System" related activities.
   In the "real world", it is uncommon to use this user account to develop an "end-user" application.
-  - What are the user roles and privileges required on HANA to use the SAP Cloud Platform predictive services. As the SAP Cloud Platform predictive services use the HANA Automated Predictive Library, it is required to configure the user roles and privileges accordingly.
+  - What are the user roles and privileges required on HANA to use the SAP Cloud for predictive services. As the SAP Cloud for predictive services use the HANA Automated Predictive Library, it is required to configure the user roles and privileges accordingly.
 
 ### Time to Complete
   **5 minutes**
@@ -32,7 +33,7 @@ From the ***SAP HANA Cockpit*** and connected with the ***HANA System Account***
 
 In order to allow the **SYSTEM** user to run any SQL statement, you will need to grant him the following role:
 
-- `sap.hana.ide.roles::Developer`
+  - `sap.hana.ide.roles::Developer`
 
 Under **Security**, expand **Users**, then double click on **SYSTEM**.
 
@@ -47,6 +48,7 @@ Using the ![navigation](0-navigation.png) menu bar icon, select **Catalog**.
 The following screen should appear:
 
 ![SAP HANA Web-based Development Workbench](03.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -82,6 +84,7 @@ GRANT REPO.ACTIVATE_IMPORTED_OBJECTS on "public" TO HCPPSTRIAL;
 Click on the ![Logout](0-run.png) **Run** button or press **F8**.
 
 ![SAP HANA Web-based Development Workbench Login](04.png)
+
 [DONE]
 [ACCORDION-END]
 
@@ -95,11 +98,10 @@ Now, you need to connect with your **`HCPPSTRIAL`** ***HANA User Account***.
 
 Enter **`HCPPSTRIAL`** as ***Username*** user name and **`Welcome16`** as ***Password***, click on **Logon**.
 
-Your ***HANA User Account*** is now configured.
+If you can login, then your ***HANA User Account*** is properly configured.
 
-![SAP HANA Web-based Development Workbench](06.png)
 [DONE]
 [ACCORDION-END]
 
 ## Next Steps
-  - [Import a series of predictive demo dataset in your SAP HANA MDC instance](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
+  - [Import a series of predictive demo dataset](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)

@@ -1,19 +1,20 @@
 ---
-title: SAP Cloud Platform predictive services, Implement the "Forecast" SAP Cloud Platform predictive service from a SAPUI5 application using the asynchronous mode
-description: You will extend your application with the "Forecast" SAP Cloud Platform predictive service using the asynchronous mode
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, topic>sapui5 ]
+title: Implement the "Forecast" service synchronous mode
+description: You will extend your application with the "Forecast" service using the asynchronous mode
+primary_tag: products>sap-cloud-platform-predictive-service
+tags: [ tutorial>intermediate, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Implement the "Forecast" SAP Cloud Platform predictive service from a SAPUI5 application using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
+  - **Tutorials:** [Implement the "Forecast" service asynchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
 
 ## Next Steps
   - This was the end of the tutorial series. Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn
-- How to add a SAPUI5 controller to interact with the "Forecast" SAP Cloud Platform predictive service in your SAPUI5 application with the asynchronous mode
+  - How to add a SAPUI5 controller to interact with the "Forecast" SAP Cloud Platform predictive service in your SAPUI5 application with the asynchronous mode
 
 > **Note:** our goal here is to mimic what was done using the REST Client around the "Forecast" services
 
@@ -79,7 +80,7 @@ sap.ui.define([
 		getDatasetDescription: function(event) {
 			DatasetList.prototype.getDatasetDescription.apply(this, arguments);
 		},
-    forecast: function(event) {
+		forecast: function(event) {
     	// set the busy indicator to avoid multi clicks
     	var oBusyIndicator = new sap.m.BusyDialog();
     	oBusyIndicator.open();
@@ -136,6 +137,7 @@ sap.ui.define([
   });
 });    
 ```
+
 You can notice that the service call is almost the same (minor change in the URL), but the returned payload is not the model but the job details.
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
@@ -146,18 +148,19 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
 
 The view will contain:
-- a button that will trigger the "Get Dataset List" service
-- use the fragments previously created to display:
-  - the list of registered datasets
-  - the selected dataset header description
-  - the service parameters form
+
+  - a button that will trigger the "Get Dataset List" service
+  - use the fragments previously created to display:
+    - the list of registered datasets
+    - the selected dataset header description
+    - the service parameters form
 
 Create a new file **`asynchronous.view.xml`** in `webapp\view\forecast` either using the "File" menu or using the right click menu.
 
 Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following code:
 
 ```xml
-<mvc:View controllerName="sapui5demo.controller.forecast.asynchronous" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View controllerName="sapui5demo.controller.forecast.asynchronous" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Toolbar>
@@ -191,7 +194,8 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 5: ](Job status fragment)]
 
 The fragment will contain:
-- the current status of a job
+
+  - the current status of a job
 
 Create a new file **`JobStatus.fragment.xml`** in `webapp\fragment\job` either using the "File" menu or using the right click menu.
 
@@ -236,7 +240,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add the "check job status")]
+[ACCORDION-BEGIN [Step 6: ](Add the "check job status" function)]
 
 Open the `webapp\controller\forecast\asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
@@ -302,8 +306,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 7: ](Add the "get job result")]
+[ACCORDION-BEGIN [Step 7: ](Add the "get job result" function)]
 
 Open the `webapp\controller\forecast\asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
@@ -439,7 +442,7 @@ Edit the `demo.view.xml` file located in the `webapp\view`.
 Inside the `<detailPages>` element add the following element:
 
 ```xml
-<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Cloud Platform predictive services (Asynchronous Mode)">
+<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Cloud for predictive services (Asynchronous Mode)">
   <content>
     <mvc:XMLView viewName="sapui5demo.view.forecast.asynchronous"/>
   </content>
@@ -471,10 +474,10 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-- [`webapp\fragment\job\JobStatus.fragment.xml`](solution-controller-job-JobStatus.fragment.xml.txt)
-- [`webapp\controller\forecast\asynchronous.controller.js`](solution-controller-forecast-asynchronous.controller.js.txt)
-- [`webapp\view\forecast\asynchronous.view.xml`](solution-view-forecast-asynchronous.view.xml.txt)
-- [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`webapp\fragment\job\JobStatus.fragment.xml`](solution-controller-job-JobStatus.fragment.xml.txt)
+  - [`webapp\controller\forecast\asynchronous.controller.js`](solution-controller-forecast-asynchronous.controller.js.txt)
+  - [`webapp\view\forecast\asynchronous.view.xml`](solution-view-forecast-asynchronous.view.xml.txt)
+  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]

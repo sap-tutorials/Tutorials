@@ -1,7 +1,8 @@
 ---
-title: SAP Cloud Platform predictive services, Implement the "Register Dataset" SAP Cloud Platform predictive services in your SAPUI5 application
+title: Implement the "Register Dataset" services
 description: You will extend your application with the "Register Dataset" SAP Cloud Platform predictive service
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, topic>sapui5 ]
+primary_tag: products>sap-cloud-platform-predictive-service
+tags: [ tutorial>intermediate, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
@@ -9,7 +10,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, t
   - **Tutorials:** [Visualize your predictive demo datasets in a SAPUI5 application using an HANA XS OData service](http://www.sap.com/developer/tutorials/hcpps-sapui5-odata.html)
 
 ## Next Steps
-  - [Manage the registered "Dataset" using SAP Cloud Platform predictive services in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
+  - [Manage the registered "Dataset"](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
 
 ## Details
 ### You will learn
@@ -50,7 +51,8 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
 
 The controller will contain a function where:
-- we process the call to the "Register Dataset" SAP Cloud Platform predictive services and return the dataset identifier along with the dataset description.
+
+  - we process the call to the "Register Dataset" SAP Cloud for predictive services and return the dataset identifier along with the dataset description.
 
 Create a new directory structure for **`webapp\controller\dataset`** either using the "File" menu or using the right click menu.
 
@@ -127,12 +129,15 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
 
 The view will contain:
-- a select list with the list of dataset (built manually)
-- a button that will trigger the "Register Dataset" service
-- a table with the returned data
+
+  - a select list with the list of dataset (built manually)
+  - a button that will trigger the "Register Dataset" service
+  - a table with the returned data
 
 > **Note:** the reason we use here a static select list is to avoid user errors.
 This list can be dynamically generated using an additional HANA XS OData service, that will select the proper tables from the HANA database.
+
+-
 
 Create a new directory structure for **`webapp\view\dataset`** either using the "File" menu or using the right click menu.
 
@@ -141,7 +146,7 @@ Create a new file **`register.view.xml`** in `webapp\view\dataset` either using 
 Open the `webapp\view\dataset\register.view.xml` file and add the following code:
 
 ```xml
-<mvc:View controllerName="sapui5demo.controller.dataset.register" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View controllerName="sapui5demo.controller.dataset.register" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<form:SimpleForm title="Please select a dataset from the list then press Register">
@@ -235,7 +240,7 @@ Edit the `demo.view.xml` file located in the `webapp\view`.
 Inside the `<detailPages>` element add the following element:
 
 ```xml
-<Page id="detail_dataset_register" title="Register your Dataset with the SAP Cloud Platform predictive services">
+<Page id="detail_dataset_register" title="Register your Dataset with the SAP Cloud for predictive services">
   <content>
     <mvc:XMLView viewName="sapui5demo.view.dataset.register"/>
   </content>
@@ -265,9 +270,9 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-- [`webapp\controller\dataset\register.controller.js`](solution-controller-dataset-register.controller.js.txt)
-- [`webapp\view\dataset\register.view.xml`](solution-view-dataset-register.view.xml.txt)
-- [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`webapp\controller\dataset\register.controller.js`](solution-controller-dataset-register.controller.js.txt)
+  - [`webapp\view\dataset\register.view.xml`](solution-view-dataset-register.view.xml.txt)
+  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]

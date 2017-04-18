@@ -1,15 +1,16 @@
 ---
-title: SAP Cloud Platform predictive services, Implement the "Forecast" SAP Cloud Platform predictive service from a SAPUI5 application using the synchronous mode
-description: You will extend your application with the "Forecast" SAP Cloud Platform predictive service using the synchronous mode
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, topic>sapui5 ]
+title: Implement the "Forecast" service synchronous mode
+description: You will extend your application with the "Forecast" service using the synchronous mode
+primary_tag: products>sap-cloud-platform-predictive-service
+tags: [ tutorial>intermediate, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Manage your registered "Datasets" using the SAP Cloud Platform predictive service in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
+  - **Tutorials:** [Manage registered predictive "datasets"](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
 
 ## Next Steps
-  - [Implement the "Forecast" SAP Cloud Platform predictive service from a SAPUI5 application using the asynchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)
+  - [Implement the "Forecast" service asynchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)
 
 ## Details
 ### You will learn
@@ -52,12 +53,11 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 
 [ACCORDION-BEGIN [Step 2: ](Registered dataset list fragment)]
 
-The fragment will reuse some of the code that was used in the [Manage your registered "Datasets" using the SAP Cloud Platform predictive service in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html) tutorial.
+The fragment will reuse some of the code that was used in the [Manage your registered "Datasets"](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html) tutorial.
 
 The fragment will contain:
-- a table with the list of registered datasets details
 
-The only notable difference is that we will be using a specific model to store the data (`dataset_fragment`).
+  - a table with the list of registered datasets details
 
 For more details on fragment, please refer to the [XML Templating documentation](https://sapui5.hana.ondemand.com/#docs/guide/5ee619fc1370463ea674ee04b65ed83b.html).
 
@@ -109,7 +109,8 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 3: ](Registered dataset header description)]
 
 The fragment will contain:
-- a form displaying the dataset "header" description (ID, name number of rows & columns)
+
+  - a form displaying the dataset "header" description (ID, name number of rows & columns)
 
 Create a new file **`DatasetHeader.fragment.xml`** in `webapp\fragment\dataset` either using the "File" menu or using the right click menu.
 
@@ -162,7 +163,8 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 4: ](Forecast service parameters fragment)]
 
 The fragment will contain:
-- a form displaying the input fields for the Forecast service parameters
+
+  - a form displaying the input fields for the Forecast service parameters
 
 Create a new directory structure for **`webapp\fragment\forecast`** either using the "File" menu or using the right click menu.
 
@@ -228,7 +230,8 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 5: ](Forecast service results fragment)]
 
 The fragment will contain:
-- a form displaying the Forecast service results
+
+  - a form displaying the Forecast service results
 
 Create a new directory structure for **`webapp\fragment\forecast`** either using the "File" menu or using the right click menu.
 
@@ -337,8 +340,9 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 6: ](Create a new JavaScript library for the fragment)]
 
 The library will contain a function where:
-- we process the call to the "Dataset List" SAP Cloud Platform predictive services and return the list of registered dataset.
-- we process the call to the "Dataset Description" SAP Cloud Platform predictive services and return the dataset detailed description.
+
+  - we process the call to the "Dataset List" SAP Cloud for predictive services and return the list of registered dataset.
+  - we process the call to the "Dataset Description" SAP Cloud for predictive services and return the dataset detailed description.
 
 These functions will be triggered either on a click or row change event on the table added previously from the main controller.
 
@@ -535,12 +539,13 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 [ACCORDION-BEGIN [Step 8: ](Create a new view)]
 
 The view will contain:
-- a button that will trigger the "Get Dataset List" service
-- use the fragments previously created to display:
-  - the list of registered datasets
-  - the selected dataset header description
-  - the service parameters form
-- a button that will trigger the "Forecast" service in synchronous mode
+
+  - a button that will trigger the "Get Dataset List" service
+  - use the fragments previously created to display:
+    - the list of registered datasets
+    - the selected dataset header description
+    - the service parameters form
+  - a button that will trigger the "Forecast" service in synchronous mode
 
 Create a new directory structure for **`webapp\view\forecast`** either using the "File" menu or using the right click menu.
 
@@ -549,7 +554,7 @@ Create a new file **`synchronous.view.xml`** in `webapp\view\forecast` either us
 Open the `webapp\view\forecast\synchronous.view.xml` file and add the following code:
 
 ```xml
-<mvc:View controllerName="sapui5demo.controller.forecast.synchronous" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View controllerName="sapui5demo.controller.forecast.synchronous" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Toolbar>
@@ -589,7 +594,7 @@ Edit the `demo.view.xml` file located in the `webapp\view`.
 Inside the `<detailPages>` element add the following element:
 
 ```xml
-<Page id="detail_forecast_synchronous" title="Forecast with the SAP Cloud Platform predictive services (Synchronous Mode)">
+<Page id="detail_forecast_synchronous" title="Forecast with the SAP Cloud for predictive services (Synchronous Mode)">
   <content>
     <mvc:XMLView viewName="sapui5demo.view.forecast.synchronous"/>
   </content>
@@ -619,17 +624,17 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-- [`webapp\fragment\dataset\DatasetHeader.fragment.xml`](solution-fragment-dataset-DatasetHeader.fragment.xml.txt)
-- [`webapp\fragment\dataset\DatasetList.fragment.xml`](solution-fragment-dataset-DatasetList.fragment.xml.txt)
-- [`webapp\fragment\dataset\DatasetList.js`](solution-fragment-dataset-DatasetList.js.txt)
-- [`webapp\fragment\forecast\ServiceForm.fragment.xml`](solution-controller-forecast-ServiceForm.fragment.xml.txt)
-- [`webapp\fragment\forecast\ServiceResult.fragment.xml`](solution-controller-forecast-ServiceResult.fragment.xml.txt)
-- [`webapp\controller\forecast\synchronous.controller.js`](solution-controller-forecast-synchronous.controller.js.txt)
-- [`webapp\view\forecast\synchronous.view.xml`](solution-view-forecast-synchronous.view.xml.txt)
-- [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`webapp\fragment\dataset\DatasetHeader.fragment.xml`](solution-fragment-dataset-DatasetHeader.fragment.xml.txt)
+  - [`webapp\fragment\dataset\DatasetList.fragment.xml`](solution-fragment-dataset-DatasetList.fragment.xml.txt)
+  - [`webapp\fragment\dataset\DatasetList.js`](solution-fragment-dataset-DatasetList.js.txt)
+  - [`webapp\fragment\forecast\ServiceForm.fragment.xml`](solution-controller-forecast-ServiceForm.fragment.xml.txt)
+  - [`webapp\fragment\forecast\ServiceResult.fragment.xml`](solution-controller-forecast-ServiceResult.fragment.xml.txt)
+  - [`webapp\controller\forecast\synchronous.controller.js`](solution-controller-forecast-synchronous.controller.js.txt)
+  - [`webapp\view\forecast\synchronous.view.xml`](solution-view-forecast-synchronous.view.xml.txt)
+  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]
 
 ## Next Steps
-- [Implement the "Forecast" SAP Cloud Platform predictive service from a SAPUI5 application using the asynchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)
+  - [Implement the "Forecast" service asynchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)

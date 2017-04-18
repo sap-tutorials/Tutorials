@@ -1,7 +1,8 @@
 ---
 title: Translate a sample Fiori app
 description: Use SAP Translation Hub to translate your Fiori app.
-tags: [  tutorial>beginner, topic>sap-translation-hub, products>sap-hana-cloud-platform, topic>sap-fiori-app ]
+primary_tag: products>sap-translation-hub>sap-translation-hub
+tags: [  tutorial>beginner, products>sap-translation-hub>sap-translation-hub, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites  
@@ -15,15 +16,15 @@ tags: [  tutorial>beginner, topic>sap-translation-hub, products>sap-hana-cloud-p
 
 ## Details
 ### You will learn  
-You will translate a sample Fiori app using the translation service from the *SAP Translation Hub*.
+You will translate a sample Fiori app using SAP Translation Hub.
 
 ### Time to Complete
 **10 Min**.
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Open SAP Translation Hub in the service catalog of the SAP Hana Cloud Platform Cockpit)]
+[ACCORDION-BEGIN [Step 1: ](Open SAP Translation Hub in the service catalog of the SAP Cloud Platform Cockpit)]
 
-In the service catalog of the SAP HANA Cloud Platform cockpit, locate the **SAP Translation Hub** service by searching for `Translation`. Click the tile and choose **Go to Service**.
+In the service catalog of the SAP Cloud Platform cockpit, locate the **SAP Translation Hub** service by searching for `Translation`. Click the tile and choose **Go to Service**.
 
 ![Open SAP Translation Hub](sth-translate-fiori-app-go-to-sth.png)
 
@@ -113,7 +114,7 @@ A success message appears in the top right of the SAP Web IDE window.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Check i8n properties files in SAP Web IDE)]
+[ACCORDION-BEGIN [Step 8: ](Check i18n properties files in SAP Web IDE)]
 
 The **i18n** folder in your project now contains properties files for the target languages that you selected in your project. To see the translations, open any of the properties files by double-clicking the files.
 
