@@ -1,7 +1,8 @@
 ---
 title: Getting started
 description: Start to build a React JavaScript project using SAP Web IDE on SAP Cloud Platform
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
+primary_tag: products>sap-cloud-platform
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
