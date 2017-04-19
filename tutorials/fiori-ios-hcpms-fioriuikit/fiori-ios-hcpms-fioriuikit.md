@@ -56,8 +56,8 @@ Set the following properties:
 
 | Property | Value |
 |----|----|
-| Style | Basic |
-| Identifier | `ObjectCell` |
+| Style | Custom |
+| Identifier | `FUIObjectTableViewCell` |
 | Selection | Blue |
 | Accessory | Disclosure Indicator |
 | Indentation Level | 1 |
@@ -66,7 +66,7 @@ Set the following properties:
 
 ![Xcode](fiori-ios-hcpms-fioriuikit-05.png)
 
-> Since you specified an **Identifier** name `ObjectCell`, you will notice this name is now reflected in the Storyboard designer's **Document Outline**.
+> Since you specified an **Identifier** name `FUIObjectTableViewCell`, you will notice this name is now reflected in the Storyboard designer's **Document Outline**.
 
 [DONE]
 [ACCORDION-END]
@@ -77,7 +77,7 @@ Switch to the Object Cell's **Identity Inspector**, and change the class and mod
 
 | Property | Value |
 |----|----|
-| Class | `ObjectCell` |
+| Class | `FUIObjectTableViewCell` |
 | Module | `SAPFiori` |
 
 ![Xcode](fiori-ios-hcpms-fioriuikit-06.png)
@@ -116,9 +116,9 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 
     let product = self.entities[indexPath.row] as! Product
 
-    let cell = tableView.dequeueReusableCell(withIdentifier: "ObjectCell",
+    let cell = tableView.dequeueReusableCell(withIdentifier: "FUIObjectTableViewCell",
                                              for: indexPath as IndexPath)
-    guard let objectCell = cell as? ObjectCell else {
+    guard let objectCell = cell as? FUIObjectTableViewCell else {
         return cell
     }
 
@@ -140,7 +140,7 @@ The above code does the following:
 
 First, increase the row hight since the Object Cell is higher than the standard table cell.
 
-Then a reference is created to the added Object Cell with identifier `ObjectCell`.
+Then a reference is created to the added Object Cell with identifier `FUIObjectTableViewCell`.
 
 Finally, now you have the reference to the Fiori Object Cell control, you then bind the model properties to the control properties and return the instance of that control.
 
