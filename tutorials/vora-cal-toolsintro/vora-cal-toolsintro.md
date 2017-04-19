@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Working with SAP HANA data source](https://www.sap.com/developer/tutorials/vora-cal-hana-datasource.html)
 
 ## Details
 ### You will learn  
@@ -122,4 +122,4 @@ The modelled view is now ready for reporting. Click on the **Data Browser** in V
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Working with SAP HANA data source](https://www.sap.com/developer/tutorials/vora-cal-hana-datasource.html)
