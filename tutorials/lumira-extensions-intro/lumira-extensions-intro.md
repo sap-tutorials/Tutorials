@@ -1,7 +1,8 @@
 ---
 title: Install and deploy SAP Lumira extensions
 description: Downloading, installing and deploying a sample visualization extension in SAP Lumira
-tags: [  tutorial>beginner, products>sap-lumira]
+primary_tag: products>sap-businessobjects-lumira
+tags: [  tutorial>beginner, products>sap-businessobjects-lumira]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

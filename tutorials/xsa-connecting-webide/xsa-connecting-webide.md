@@ -22,7 +22,9 @@ As of SPS12, all design-time artifacts are stored in Git instead of the HANA dat
 
 Launch the SAP Web IDE for SAP HANA at the following URL in your web browser. The `hostname` of course is the hostname of the SAP HANA Developer Edition that you created in the previous tutorial. Remember for XSA you will need to use the hostname and not the IP address of the server, instructions are found on the server landing page itself.
 
+
 `https://<hostname>:53075/`
+
 
 User: `XSA_DEV`
 Password: The password provided when you set up HANA Express
@@ -79,7 +81,9 @@ Enter authentication details:
 - User:  `<Your GitHub User ID>`
 - Password:  `<You've guessed: Your GitHub password!>`
 
+
 Tick the **Remember me** box so it will not ask again for the remainder of the session.
+
 
 If successful, you will see the repository folder in your workspace, which is now connected to the git repository.
 ![Git is cloned into SAP HANA Web IDE](4_3.png)
@@ -97,9 +101,11 @@ Right-click on the folder for the repository and select **Project Settings**
 
 ![Project Settings for Git repository](5.png)
 
+
 Select the proper space (probably, development) from the list of available spaces, or use the space setup by the System Administrator:
 
 ![Select development space](6.png)
+
 
 
 >If you cannot find an appropriate Space, you may need to enable it or configure your user by going to the `Organization and Space Management` in `https://your host:51015/index.html` (or asking your System Administrator).

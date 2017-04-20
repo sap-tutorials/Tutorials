@@ -1,11 +1,13 @@
 ---
 title: Intro to SAP HANA Spatial: Z and M coordinates
 description: Geometries can optionally have Z (3rd dimension) and M (measure) values associated with each point in addition to X and Y coordinates
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana
+tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 
 ## Prerequisites  
- - [Intro to SAP HANA Spatial: Spatial columns](http://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
+- **Proficiency:** Beginner
+ - **Tutorials:** [Intro to SAP HANA Spatial: Spatial columns](http://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
 
 
 ## Next Steps
@@ -129,7 +131,7 @@ SELECT NEW ST_Point('POINT Z(0 0 0.5)').ST_Buffer(2).ST_CoordDim() from DUMMY;
 [ACCORDION-END]
 
 ### Optional
-- Check SAP HANA Spatial Reference at http://help.sap.com/hana_platform
+- Check SAP HANA Spatial Reference at https://help.sap.com/hana_platform
 
 
 ## Next Steps

@@ -1,6 +1,7 @@
 ---
 title: SAP HANA Studio, Build a Calculation View and View the Data in MS Excel
 description: In this tutorial, you will go through all the steps to import data from a MS Excel Spreadsheet, model a simple Calculation view and viewing the results in  a pivot table  using  the HANA MDX connector.
+primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-studio ]
 ---
 
@@ -48,7 +49,7 @@ Click `Next`, add a name for a schema and for the Data Definition (`.hdbdd`) fil
 
 ![Add schema and DDL](4_createproject.png)
 
-You can now declare a context in a Core Data Services (CDS) artifact. This context will serve as a group for the two design-time entities (tables) that will hold the data you will import and the datatypes you will create.
+You can now declare a context in a Core Data Services (CDS) artifact. This context will serve as a group for the two design-time entities (tables) that will hold the data you will import and the data types you will create.
 
 Enter the following code into the `.hdbdd` file:
 
@@ -131,7 +132,7 @@ Right-click on the project, go down to `Team` and click on the `Activate All` bu
 
 [ACCORDION-BEGIN [Step 3: ](Grant permissions to the newly created schema)]
 
-From the `Systems` tab, open the `Security` folder and look for your user ID. Double-click on it to open your User Adminsitration page.
+From the `Systems` tab, open the `Security` folder and look for your user ID. Double-click on it to open your User Administration page.
 
 ![System Tab](6_systemtab.png)
 
@@ -217,7 +218,7 @@ Add two projection nodes by dragging and dropping `Projection` nodes from the No
 
 ![Drag and drop projection nodes](15_projection nodes.png)
 
-Hover on the nodes and a **+** sign wil appear on the right.
+Hover on the nodes and a **+** sign will appear on the right.
 
 ![Add table clicking on the plus sign](16_addtable.png)
 
@@ -273,7 +274,7 @@ Enter the connection details to your SAP HANA database and test the connection b
 
 ![Connection details for hana](25_Connectiondetails.png)
 
-> Hint: You can right-click on the system, and open `Properties` to see your IP or host name followed by port 3xx15, where xx is your instance number.
+> Hint: You can right-click on the system, and open `Properties` to see your IP or host name followed by port `3xx15`, where xx is your instance number.
 
 After the connection is established, choose the package  (`database` to MS Excel) and the calculation view (also known as, `Cube`) and then click **Finish**.
 

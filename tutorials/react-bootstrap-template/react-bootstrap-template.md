@@ -1,14 +1,15 @@
 ---
 title: React JS - Define the Bootstrap Template
-description: Step #2: Define the initial page design and layout using Bootstrap
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+description: Define the initial page design and layout using Bootstrap
+primary_tag: topic>html5
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner 
- - **Tutorial:** [Step 1 - Getting started with REACT](http://www.sap.com/developer/tutorials/react-getting-started.html)
+- **Proficiency:** Beginner
+- **Tutorial:** [Getting started with REACT](http://www.sap.com/developer/tutorials/react-getting-started.html)
 
 ## Next Steps
- - **Tutorial:** [Step 3 - Add the React JavaScript](http://www.sap.com/developer/tutorials/react-add-javascript.html)
+- **Tutorial:** [Add the React JavaScript](http://www.sap.com/developer/tutorials/react-add-javascript.html)
 
 
 ## Details
@@ -36,74 +37,94 @@ The steps are:
 
 ---
 
-### Set up Bootstrap
+[ACCORDION-BEGIN [Step 1: ](Add jQuery reference)] ￼
 
 Instead of downloading the Bootstrap files directly, we will use a set of HTML tags to automatically download the entire framework when we need it.
 
-1.  Open your `index.html` file.
+Open your `index.html` file.
+
+First, we will need the jQuery toolkit.  Add the following line to your `index.html` file, between the two `<head>` tags:
+
+```html
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+```
+
+![Add jQuery template](1-2.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Add Bootstrap reference)] ￼
+
+Next, we will add the Bootstrap framework.  Add the following lines to your `index.html` file, under the previous jQuery line:
+
+>**Don't forget to save your file!**
+
+```HTML
+<link   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+rel="stylesheet"
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+crossorigin="anonymous"></script>
+```
 
 
-2.  First, we will need the jQuery toolkit.  Add the following line to your `index.html` file, between the two `<head>` tags:
+![Add bootstrap framework](1-3.png)
 
-    ```html
-    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-    ```
+[DONE]
+[ACCORDION-END]
 
-    ![Add jQuery template](1-2.png)
+[ACCORDION-BEGIN [Step 3: ](Replace HTML tag)] ￼
 
-3.  Next, we will add the Bootstrap framework.  Add the following lines to your `index.html` file, under the previous jQuery line:
+Now, we will start to use the HTML in our project.  First, we will need to change the `<html>` tag at the top of the page.  Replace that tag with this HTML:
 
-    >**Don't forget to save your file!**
+```html
+<html lang="en">
+```
 
-    ```HTML
-    <link   href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-			crossorigin="anonymous">
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-			crossorigin="anonymous"></script>
-    ```
+![Add language to the html tag](1-4.png)
 
+[DONE]
+[ACCORDION-END]
 
-    ![Add bootstrap framework](1-3.png)
+[ACCORDION-BEGIN [Step 4: ](Replace body)] ￼
 
-4.  Now, we will start to use the HTML in our project.  First, we will need to change the `<html>` tag at the top of the page.  Replace that tag with this HTML:
+Next, select the line `Hello React!` in between our two `<body>` tags, and replace it with this HTML:
 
-    ```html
-    <html lang="en">
-    ```
+```html
+<div class="container">
+<div class="row">
+<div class="col-sm-6">
+<p>This is the "first" column.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+<div class="col-sm-6">
+<p>And this is the "second" column.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+</div>
+</div>
+```
 
-    ![Add language to the html tag](1-4.png)
+> Some of the text may run off the side of the editor.  That's fine, we are just using it to display the features of our layout.
 
-5.  Next, select the line `Hello React!` in between our two `<body>` tags, and replace it with this HTML:
+![Add lorem ipsum to the html](1-5.png)
 
-    ```html
-    <div class="container">
-		<div class="row">
-			<div class="col-sm-6">
-				<p>This is the "first" column.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-			<div class="col-sm-6">
-				<p>And this is the "second" column.</p>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-			</div>
-		</div>
-	</div>
-    ```
+[DONE]
+[ACCORDION-END]
 
-    > Some of the text may run off the side of the editor.  That's fine, we are just using it to display the features of our layout.
+[ACCORDION-BEGIN [Step 5: ](Run the application)] ￼
 
-    ![Add lorem ipsum to the html](1-5.png)
+Run the application, and you will see the following screen:
 
-5.  Run the application, and you will see the following screen:
+![display 2 column bootstrap output](1-6.png)
 
-    ![display 2 column bootstrap output](1-6.png)
+[DONE]
+[ACCORDION-END]
 
----
-
-### Understanding the Bootstrap layout system
+[ACCORDION-BEGIN [Step 6: ](Review Bootstrap functionality)] ￼
 
 Bootstrap has several benefits that we are using here.  
 
@@ -125,278 +146,327 @@ Second, Bootstrap offers a clean form design.  Each form element is clearly defi
 
 There are a lot of additional capabilities, like dialog boxes, alerts, and other elements that can also be used to make your page.  Check out the [Bootstrap CSS](https://getbootstrap.com/css/), [Bootstrap Components](https://getbootstrap.com/components/), and [Bootstrap JavaScript](https://getbootstrap.com/javascript/) pages for more details.
 
----
+[DONE]
+[ACCORDION-END]
 
-### Setting up the page template
+[ACCORDION-BEGIN [Step 7: ](Add a list-group to the page)] ￼
 
 So, now that we have Bootstrap, let's set up the template for our application.  
 
-1.  We want to start by creating a list on the screen, for our list of products.  To do that, we will add a `.list-group` to the page.  
+We want to start by creating a list on the screen, for our list of products.  To do that, we will add a `.list-group` to the page.  
 
-    Starting with the `<div class="container">` tag, replace the existing HTML with this new code:
+Starting with the `<div class="container">` tag, replace the existing HTML with this new code:
 
-    ```html
-    <div class="list-group">
-		<button type="button" class="list-group-item">
-			<h4>Product A</h4>
-		</button>
-	</div>
-    ```
+```html
+<div class="list-group">
+<button type="button" class="list-group-item">
+<h4>Product A</h4>
+</button>
+</div>
+```
 
-    ![Add list group to html](3-1.png)
+![Add list group to html](3-1.png)
 
-    When you run your application, it should look like this:
+When you run your application, it should look like this:
 
-    ![Display list group](3-1b.png)
+![Display list group](3-1b.png)
 
-2.  Now that we have the basic framework for a list, let's add in more details in to each row.
+[DONE]
+[ACCORDION-END]
 
-    For each row, we would like to display the following information:
+[ACCORDION-BEGIN [Step 8: ](Add fields)] ￼
 
-    * Product Name
-    * Packaging Description
-    * Price (including currency)
-    * Availability
+Now that we have the basic framework for a list, let's add in more details in to each row.
 
-    Let's add them to the box.  Copy the following html code, and add it between the `<h4>` and `<button>` tags:
+For each row, we would like to display the following information:
 
-    ```html
-    <p>Description</p>
-    <p>Price in Euros</p>
-    <p>Available?</p>
-	```
+* Product Name
+* Packaging Description
+* Price (including currency)
+* Availability
 
-    ![Add fields to the list](3-2.png)
+Let's add them to the box.  Copy the following html code, and add it between the `<h4>` and `<button>` tags:
 
-    Run your application, and you will see the following screen:
+```html
+<p>Description</p>
+<p>Price in Euros</p>
+<p>Available?</p>
+```
 
-    ![Display the list fields](3-2b.png)
+![Add fields to the list](3-2.png)
 
-3.  Now we have the fields, but the box doesn't look very organized.  So, lets use Bootstrap again to organize the box.  To do this, we are going to use the nesting feature to embed a row **inside** of an existing element.  
+Run your application, and you will see the following screen:
 
-    To do this, let's split the box in to two sides, left and right, and move the elements inside the box.
+![Display the list fields](3-2b.png)
 
-    Change the code inside the `<button>` tag to the following:
+[DONE]
+[ACCORDION-END]
 
-    ```html
-    <div class="row">
-		<div class="col-sm-8">
-			<h4>Top label</h4>
-			<p>Description</p>
-		</div>
-		<div class="col-sm-3 text-right">
-			<p>Price in Euros</p>
-			<p>Available</p>
-		</div>
-    </div>
-    ```
+[ACCORDION-BEGIN [Step 9: ](Embed a row in existing element)] ￼
 
-    ![Change list to 2 column layout](3-3.png)
+Now we have the fields, but the box doesn't look very organized.  So, lets use Bootstrap again to organize the box.  To do this, we are going to use the nesting feature to embed a row **inside** of an existing element.  
 
-    Run your application:
+To do this, let's split the box in to two sides, left and right, and move the elements inside the box.
 
-    ![Display 2 column layout](3-3b.png)
+Change the code inside the `<button>` tag to the following:
 
-4.  Now, let's make the text look better, and also add in the currency to the box.  Change the HTML inside the `<div class="row">` tags to this:
+```html
+<div class="row">
+<div class="col-sm-8">
+<h4>Top label</h4>
+<p>Description</p>
+</div>
+<div class="col-sm-3 text-right">
+<p>Price in Euros</p>
+<p>Available</p>
+</div>
+</div>
+```
 
-    ```html
-    <div class="col-sm-8">
-    	<h4>Top label</h4>
-    	<p>10 boxes at 20 bags</p>
-    </div>
-    <div class="col-sm-3 text-right">
-    	<h4>
-    		99.99
-    		<small class="text-muted">EUR</small>
-    	</h4>
-    	<p class="available">Available</p>
-    </div>
-    ```
+![Change list to 2 column layout](3-3.png)
 
-    ![Modify text to make pretty](3-4.png)
+Run your application:
 
-    Now run your application:
+![Display 2 column layout](3-3b.png)
 
-    ![Display new pretty listbox](3-4b.png)
+[DONE]
+[ACCORDION-END]
 
-5.  Hey, that looks better!  But one more element.  We want the user to know they can click on the list (which is why we made each list element a button in the first place), to get more details about this item.  To make this clear, we will add a chevron to the end of the row.
+[ACCORDION-BEGIN [Step 10: ](Edit row styles)] ￼
 
-    Add the following HTML under your last `</div>` tag in the button:
+Now, let's make the text look better, and also add in the currency to the box.  Change the HTML inside the `<div class="row">` tags to this:
 
-    ```html
-    <div class="col-sm-1">
-        <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>
-    </div>
-	```
+```html
+<div class="col-sm-8">
+<h4>Top label</h4>
+<p>10 boxes at 20 bags</p>
+</div>
+<div class="col-sm-3 text-right">
+<h4>
+99.99
+<small class="text-muted">EUR</small>
+</h4>
+<p class="available">Available</p>
+</div>
+```
 
-    ![Add chevron to the end of the listbox](3-5.png)
+![Modify text to make pretty](3-4.png)
 
-	Run your application, and it should look like this:
+Now run your application:
 
-    ![Display list with chevron](3-5b.png)
+![Display new pretty listbox](3-4b.png)
 
----
+[DONE]
+[ACCORDION-END]
 
-### Add custom CSS elements to the page
+[ACCORDION-BEGIN [Step 11: ](Add chevron)] ￼
 
-1.  The chevron, however, is now on the top of the box.  What if we wanted to center it?  We can do that as well.  To do this, we will introduce CSS directly in to the components.  
+Hey, that looks better!  But one more element.  We want the user to know they can click on the list (which is why we made each list element a button in the first place), to get more details about this item.  To make this clear, we will add a chevron to the end of the row.
 
-    The CSS allows us to add (or override) any layout decisions on the page.  CSS is how Bootstrap builds the page, so we are working in the same language to change or modify the look and feel.  
+Add the following HTML under your last `</div>` tag in the button:
 
-    Normally, CSS is put in a separate file, but to make things easier, we will add it to our HTML page directly.
+```html
+<div class="col-sm-1">
+<span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>
+</div>
+```
 
-    Start by adding this code to your `<head>` element, at the end
+![Add chevron to the end of the listbox](3-5.png)
 
-    ```html
-    <style>
-    	.vertical-align {
-    		display: flex;
-    		align-items: baseline;
-    	}
+Run your application, and it should look like this:
 
-    	.vertical-align .top {
-    		align-self: baseline;
-    	}
+![Display list with chevron](3-5b.png)
 
-    	.vertical-align .center {
-    		align-self: center;
-    	}
-    </style>
-	```
+[DONE]
+[ACCORDION-END]
 
-    ![Add custom CSS for vertical alignment](4-1.png)
+[ACCORDION-BEGIN [Step 12: ](Add custom CSS)] ￼
 
-2.  Now, change the HTML in your `<button>` tags, adding the following text to each `class=` attribute.
+The chevron, however, is now on the top of the box.  What if we wanted to center it?  We can do that as well.  To do this, we will introduce CSS directly in to the components.  
 
-    * Add the CSS style `vertical-align` to the `<div class="row">` tag:
+The CSS allows us to add (or override) any layout decisions on the page.  CSS is how Bootstrap builds the page, so we are working in the same language to change or modify the look and feel.  
 
-      ![Add vertical-align class](4-2a.png)
+Normally, CSS is put in a separate file, but to make things easier, we will add it to our HTML page directly.
 
-    * Add the CSS style `top` to each of the first two `<div class="col-sm-__">` tags:
+Start by adding this code to your `<head>` element, at the end
 
-      ![add top class](4-2b.png)
+```html
+<style>
+.vertical-align {
+display: flex;
+align-items: baseline;
+}
 
-      ![add top class](4-2c.png)
+.vertical-align .top {
+align-self: baseline;
+}
 
-    * Finally, add the CSS style `center` to the last `<div class-"col-sm-1">` tag.  
+.vertical-align .center {
+align-self: center;
+}
+</style>
+```
 
-      ![add center class](4-2d.png)
+![Add custom CSS for vertical alignment](4-1.png)
 
-    Your code should now look like this:
+[DONE]
+[ACCORDION-END]
 
-    ![Code with all new class attributes](4-2e.png)
+[ACCORDION-BEGIN [Step 13: ](Add styles)] ￼
 
-3.  Run your application.  The chevron should now be in the center of the box:
+Now, change the HTML in your `<button>` tags, adding the following text to each `class=` attribute.
 
-    ![Display list with chevron centered vertically](4-3.png)
+Add the CSS style `vertical-align` to the `<div class="row">` tag:
 
-4.  Finally, we will add in a touch of color.  When a product is available, we will use the color green.  When it is discontinued, we will change the color to red.
+![Add vertical-align class](4-2a.png)
 
-    Add the following CSS to the inside of your `<style>` tag at the top:
+Add the CSS style `top` to each of the first two `<div class="col-sm-__">` tags:
 
-    ```html
-    .available {
-    	color: green;
-    	font-weight: bold;
-    }
+![add top class](4-2b.png)
 
-    .discontinued {
-    	color: red;
-    	font-weight: bold;
-    }
-    ```
+![add top class](4-2c.png)
 
-    ![Add available and discontinued css](4-4.png)
+Finally, add the CSS style `center` to the last `<div class-"col-sm-1">` tag.  
 
-5.  Now, run your application.  You will see the word *Available* is now in green
+![add center class](4-2d.png)
 
-    ![Display output with new css](4-5.png)
+Your code should now look like this:
 
----
+![Code with all new class attributes](4-2e.png)
 
-## Additional Information
- - [Bootstrap](https://getbootstrap.com/) - get more information about Bootstrap.
- - [jQuery](https://jquery.com/) - a toolkit to easily manipulate web pages.
+[DONE]
+[ACCORDION-END]
 
----
+[ACCORDION-BEGIN [Step 14: ](Test the application)] ￼
 
-## Final code
+Run your application.  The chevron should now be in the center of the box:
+
+![Display list with chevron centered vertically](4-3.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 15: ](Edit colros)] ￼
+
+Finally, we will add in a touch of color.  When a product is available, we will use the color green.  When it is discontinued, we will change the color to red.
+
+Add the following CSS to the inside of your `<style>` tag at the top:
+
+```html
+.available {
+color: green;
+font-weight: bold;
+}
+
+.discontinued {
+color: red;
+font-weight: bold;
+}
+```
+
+![Add available and discontinued css](4-4.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 16: ](Run the application)] ￼
+
+Now, run your application.  You will see the word *Available* is now in green
+
+![Display output with new css](4-5.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 17: ](Review additional information)] ￼
+
+- [Bootstrap](https://getbootstrap.com/) - get more information about Bootstrap.
+- [jQuery](https://jquery.com/) - a toolkit to easily manipulate web pages.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 18: ](Review final code)] ￼
 
 Just as a reference, your `index.html` file should now look like this:
 
 ```html
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<script src="https://code.jquery.com/jquery-3.1.0.min.js"
-			integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
-			crossorigin="anonymous"></script>
+<head>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"
+integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+crossorigin="anonymous"></script>
 
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-			crossorigin="anonymous">
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-			integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-			crossorigin="anonymous"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+rel="stylesheet"
+integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+crossorigin="anonymous"></script>
 
-		<style>
-	    	.vertical-align {
-	    		display: flex;
-	    		align-items: baseline;
-	    	}
+<style>
+.vertical-align {
+display: flex;
+align-items: baseline;
+}
 
-	    	.vertical-align .top {
-	    		align-self: baseline;
-	    	}
+.vertical-align .top {
+align-self: baseline;
+}
 
-	    	.vertical-align .center {
-	    		align-self: center;
-	    	}
+.vertical-align .center {
+align-self: center;
+}
 
-	    	.available {
-		    	color: green;
-		    	font-weight: bold;
-		    }
+.available {
+color: green;
+font-weight: bold;
+}
 
-		    .discontinued {
-		    	color: red;
-		    	font-weight: bold;
-		    }
-	    </style>
+.discontinued {
+color: red;
+font-weight: bold;
+}
+</style>
 
-    </head>
+</head>
 
-    <body>
+<body>
 
-	    <div class="container">
-			<div class="list-group">
-				<button type="button" class="list-group-item">
-					<div class="row vertical-align">
-						<div class="col-sm-8 top">
-					    	<h4>Top label</h4>
-					    	<p>10 boxes at 20 bags</p>
-					    </div>
-					    <div class="col-sm-3 text-right top">
-					    	<h4>
-					    		99.99
-					    		<small class="text-muted">EUR</small>
-					    	</h4>
-					    	<p class="available">Available</p>
-					    </div>
-					    <div class="col-sm-1 center">
-					        <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>
-					    </div>
-				    </div>
-				</button>
-			</div>
-		</div>
+<div class="container">
+<div class="list-group">
+<button type="button" class="list-group-item">
+<div class="row vertical-align">
+<div class="col-sm-8 top">
+  	<h4>Top label</h4>
+  	<p>10 boxes at 20 bags</p>
+  </div>
+  <div class="col-sm-3 text-right top">
+  	<h4>
+  		99.99
+  		<small class="text-muted">EUR</small>
+  	</h4>
+  	<p class="available">Available</p>
+  </div>
+  <div class="col-sm-1 center">
+      <span class="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>
+  </div>
+</div>
+</button>
+</div>
+</div>
 
-	</body>
+</body>
 </html>
 ```
+
+[DONE]
+[ACCORDION-END]
+
 
 ---
 
 ## Next Steps
- - **Tutorial:** [Step 3 - Add the React JavaScript](http://www.sap.com/developer/tutorials/react-add-javascript.html)
+- **Tutorial:** [Add the React JavaScript](http://www.sap.com/developer/tutorials/react-add-javascript.html)

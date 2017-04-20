@@ -1,14 +1,15 @@
 ---
 title: Loading sample data from different file formats
-description: You will use Apache Zeppelin to create tables and load sample data from files in different file formats already created in HDFS in SAP HANA Vora, developer edition, on CAL.
+description: You will use Apache Zeppelin to create tables and load sample data from files in different file formats already created in HDFS in SAP Vora, developer edition, on CAL.
+primary_tag: products>sap-hana-vora
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA Vora Modeler: Aggregation in SQL View](http://www.sap.com/developer/tutorials/vora-modeler-view-aggregate.html)
+ - **Tutorials:** [SAP Vora Modeler: Aggregation in SQL View](http://www.sap.com/developer/tutorials/vora-modeler-view-aggregate.html)
 
 ## Next Steps
- - [Using hierarchies in SAP HANA Vora](http://www.sap.com/developer/tutorials/vora-zeppelin-hierarchies.html)
+ - [Using hierarchies in SAP Vora](http://www.sap.com/developer/tutorials/vora-zeppelin-hierarchies.html)
 
 ## Details
 ### You will learn  
@@ -19,9 +20,9 @@ You will learn how to load sample data from Parquet and ORC file formats.
 
 ---
 
-1. SAP HANA Vora support loading data not only from CSV format, but as well Hadoop-specific Parquet and ORC file formats.
+1. SAP Vora support loading data not only from CSV format, but as well Hadoop-specific Parquet and ORC file formats.
 
-    For this tutorial SAP HANA Vora, developer edition, has already sample files preloaded into HDFS. You can see them by executing following statements in the host's operating system as user `vora`.
+    For this tutorial SAP Vora, developer edition, has already sample files preloaded into HDFS. You can see them by executing following statements in the host's operating system as user `vora`.
 
     ```shell
     hdfs dfs -ls *.orc
@@ -30,7 +31,7 @@ You will learn how to load sample data from Parquet and ORC file formats.
 
     ![Check HDFS for files](voraformats00.jpg)
 
-2. Similarly to loading sample CSV files you will use Zeppelin with predefined notebook here as well. To open Zeppelin web UI click on **Connect** in your SAP HANA Vora instance in CAL, and then pick **Open** a link for `Application: Zeppelin`.
+2. Similarly to loading sample CSV files you will use Zeppelin with predefined notebook here as well. To open Zeppelin web UI click on **Connect** in your SAP Vora instance in CAL, and then pick **Open** a link for `Application: Zeppelin`.
 
     Once Zeppelin opens up in a new browser window, check it is **Connected** and if yes, then click on `2_DataTypes` notebook.
 
@@ -42,7 +43,7 @@ You will learn how to load sample data from Parquet and ORC file formats.
 
     ![Running Parquet file load](voraformats02.jpg)
 
-    You can run these statements from SAP HANA Vora Tools' SQL Editor as well.
+    You can run these statements from SAP Vora Tools' SQL Editor as well.
 
     ```sql
     CREATE TABLE SALES_P(CUSTOMER_ID string, YEAR string, REVENUE bigint)
@@ -59,7 +60,7 @@ You will learn how to load sample data from Parquet and ORC file formats.
 
     ![Running ORC file load](voraformats03.jpg)
 
-    You can run these statements from SAP HANA Vora Tools' SQL Editor as well.
+    You can run these statements from SAP Vora Tools' SQL Editor as well.
 
     ```sql
     CREATE TABLE SALES_O(CUSTOMER_ID string, YEAR string, REVENUE bigint)
@@ -71,4 +72,4 @@ You will learn how to load sample data from Parquet and ORC file formats.
     ```    
 
 ## Next Steps
- - [Using hierarchies in SAP HANA Vora](http://www.sap.com/developer/tutorials/vora-zeppelin-hierarchies.html)
+ - [Using hierarchies in SAP Vora](http://www.sap.com/developer/tutorials/vora-zeppelin-hierarchies.html)

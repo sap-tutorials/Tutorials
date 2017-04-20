@@ -2,6 +2,7 @@
 
 title: Continuous Integration (CI) Best Practices with SAP: Source Code Versioning System
 description: Part 3.1: Setting up a Git/Gerrit Instance.
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ---

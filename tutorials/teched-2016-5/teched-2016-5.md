@@ -1,7 +1,8 @@
 ---
 title: Commit your project to Git and deploy to the cloud
-description: Create a git repository for your project, add your project files and then deploy  your app on SAP HANA Cloud Platform
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, products>sap-web-ide ]
+description: Create a git repository for your project, add your project files and then deploy  your app on SAP Cloud Platform
+primary_tag: products>sap-cloud-platform
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 
 ## Prerequisites  
@@ -13,16 +14,16 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana-cloud-platform, produ
 
 ## Details
 ### You will learn  
-You will create a Git repository in SAP HANA Cloud Platform for your project, commit your project files, and then deploy and your app to the cloud. You will be able to access your app from a laptop and your mobile device.
+You will create a Git repository in SAP Cloud Platform for your project, commit your project files, and then deploy and your app to the cloud. You will be able to access your app from a laptop and your mobile device.
 
 ### Time to Complete
 **10 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log into your HCP account)]
+[ACCORDION-BEGIN [Step 1: ](Log into your SAP Cloud Platform account)]
 
-Log into [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
 
 Make sure you are using the **Europe (Trial)** landscape, and click on your account name to open the cockpit view.
 
@@ -104,7 +105,7 @@ If your project does not appear in the **Git pane**, keep the Git pane open and 
 
 [ACCORDION-BEGIN [Step 8: ](Perform a Git Fetch)]
 
-To allow **SAP Web IDE** to see remote branches in the HCP Git repository, click the **Fetch** button on the Git pane and log in with your email address and HCP account password if prompted.
+To allow **SAP Web IDE** to see remote branches in the SAP Cloud Platform Git repository, click the **Fetch** button on the Git pane and log in with your email address and SAP Cloud Platform account password if prompted.
 
 When the **Changes Fetched** dialog box opens, click **OK**.
 
@@ -161,7 +162,7 @@ This will add your files to the master branch (in other source control systems t
 
 [ACCORDION-BEGIN [Step 13: ](Push changes to the remote branch)]
 
-In the **Push Changes to a remote branch** dialog box, select **origin/master**, click **OK** and log in with your HCP credentials if prompted.
+In the **Push Changes to a remote branch** dialog box, select **origin/master**, click **OK** and log in with your SAP Cloud Platform credentials if prompted.
 
 ![select origin master](te-2016-5-14.png)
 
@@ -182,9 +183,9 @@ You will see a confirmation alert appear briefly in the top-right corner of the 
 
 Deploying your app, is very simple.
 
-Right-click on your **`te2016`** project folder, and select **Deploy > Deploy to SAP HANA Cloud Platform**.
+Right-click on your **`te2016`** project folder, and select **Deploy > Deploy to SAP Cloud Platform**.
 
-![deploy to HCP menu](te-2016-5-16.png)
+![deploy to SAP Cloud Platformmenu](te-2016-5-16.png)
 
 [DONE]
 [ACCORDION-END]
@@ -200,7 +201,7 @@ Log in with your account number, email and password.
 
 [ACCORDION-BEGIN [Step 17: ](Deployment dialog box)]
 
-In the **Deploy Application to SAP HANA Cloud Platform** dialog box, confirm that **Deploy a new application**, and the **Activate** checkbox are both selected. Click **Deploy**.
+In the **Deploy Application to SAP Cloud Platform** dialog box, confirm that **Deploy a new application**, and the **Activate** checkbox are both selected. Click **Deploy**.
 
 ![deploy app options](te-2016-5-18.png)
 
@@ -218,7 +219,7 @@ In the **Successfully Deployed** confirmation dialog, click the **Open the activ
 
 [ACCORDION-BEGIN [Step 19: ](App deployed and running)]
 
-Your app, running on SAP HANA Cloud Platform, will open in a new tab.
+Your app, running on SAP Cloud Platform, will open in a new tab.
 
 You can enter the URL in your phone and see it running there as well. Since the URL is fairly long, you can email it to yourself and click the link in your email.
 

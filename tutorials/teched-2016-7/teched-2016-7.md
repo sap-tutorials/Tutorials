@@ -1,7 +1,8 @@
 ---
 title: Add a map display to your app
 description: Add a map to your app and geolocate a street address
-tags: [  tutorial>beginner, topic>sapui5, products>sap-hana-cloud-platform, products>sap-web-ide ]
+primary_tag: products>sap-cloud-platform
+tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 
 ## Prerequisites  
@@ -30,9 +31,9 @@ The Static Maps API returns an image that you can display in a HTML image tag.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a Destination for the API)]
-In order to use the Google Maps API, you need to create a new destination in HCP for your application.
+In order to use the Google Maps API, you need to create a new destination in SAP Cloud Platform for your application.
 
-Log into [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
 
 Make sure you are using the **Europe (Trial)** landscape, and click on your account name to open the cockpit view.
 
@@ -69,7 +70,7 @@ After the destination is saved, you can click the **Check Connection** button to
 
 First, _re-open_ the **SAP Web IDE**.
 
-From your [SAP HANA Cloud Platform cockpit](https://account.hanatrial.ondemand.com/cockpit), in the left-hand navigation bar, select **Services** and then click on the **SAP Web IDE** tile.
+From your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/cockpit), in the left-hand navigation bar, select **Services** and then click on the **SAP Web IDE** tile.
 
 In the **SAP Web IDE** overview page, click **Open SAP Web IDE**.
 

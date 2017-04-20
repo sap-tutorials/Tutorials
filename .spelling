@@ -9,7 +9,9 @@ Arduino
 Auth
 AWS
 backend
+BAPIs
 Bieser
+Bitbucket
 BusinessObjects
 CAL
 CircleCI
@@ -19,19 +21,18 @@ Cmehil
 CodeJam
 data-center
 DataFrame
+DataFrames
 DataSource
 datasources
-dbspace
-dbspaces
-Dbspace
-Dbspaces
 DesignStudio
 DevOps
+EasyMock
 EclipseLink
 Envinject
 ESLint
 ESRI
 Fiori
+geocode
 GitHub
 Hadoop
 HCPms
@@ -57,10 +58,12 @@ JUnit
 Kapsel
 keychain
 Keychain
+keystore
 Lifecycle
 Lumira
 macOS
-MacDown
+multistore
+Multistore
 MySQL
 NetWeaver
 Node.js
@@ -69,6 +72,7 @@ Northwind
 npm
 OAuth
 OData
+OLAP
 openSSL
 openSUSE
 OpenUI5
@@ -76,6 +80,7 @@ openweathermap
 openweathermap.org
 plugin
 plugins
+POJOs
 Postgres
 pre-pend
 pre-pended
@@ -98,6 +103,7 @@ segues
 Segues
 servlet
 Servlet
+ServletUnit
 Shapefile
 Shapefiles
 SQLScript
@@ -106,6 +112,7 @@ ssh
 subselect
 supertype
 supertypes
+Sybase
 TechEd
 Tessel
 timestamp
@@ -116,6 +123,7 @@ truststore
 tvOS
 UDFs
 UI5
+unpartitioned
 UTC
 util
 VMware

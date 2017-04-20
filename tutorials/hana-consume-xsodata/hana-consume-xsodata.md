@@ -1,11 +1,13 @@
 ---
 title: SAP HANA XS Classic, Consume XSODATA in your SAP HANA XSC Application
 description: In this tutorial you will incorporate your XSODATA into your SAP HANA XSC application.
-tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
+primary_tag: products>sap-hana
+tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
 ---
 
 ## Prerequisites  
-- [Enable XSODATA in your SAP HANA XSC Application](http://www.sap.com/developer/tutorials/hana-xsodata.html)
+- **Proficiency:** Beginner
+- **Tutorials:** [Enable XSODATA in your SAP HANA XSC Application](http://www.sap.com/developer/tutorials/hana-xsodata.html)
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
@@ -33,7 +35,7 @@ What you will do now is add a basic table control using the SAPUI5 framework.
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta charset="UTF-8"/>
     <title>Library</title>  
-    <script id='sap-ui-bootstrap' 
+    <script id='sap-ui-bootstrap'
         src='/sap/ui5/1/resources/sap-ui-core.js'  
         data-sap-ui-theme='sap_goldreflection'  
         data-sap-ui-libs='sap.ui.core,sap.ui.commons,sap.ui.table'>
@@ -42,7 +44,7 @@ What you will do now is add a basic table control using the SAPUI5 framework.
 </head>
 <body>
 	<div id="ctable"/>
-	
+
 </body>
 </html>
 ```
@@ -56,7 +58,7 @@ Now to add in JavaScript code to to add the UI5 control. Add this code in right 
 ```
     <script language="JavaScript">
         var aData;
-        
+
         //Create an instance of the table control
         var oTable = new sap.ui.table.Table({
         	title: "My Library",
@@ -64,13 +66,13 @@ Now to add in JavaScript code to to add the UI5 control. Add this code in right 
         	firstVisibleRow: 3,
         	selectionMode: sap.ui.table.SelectionMode.Single
         });
-        
+
         //Define the columns and the control templates to be used
         var oColumn = new sap.ui.table.Column({
-        	label: new sap.ui.commons.Label({text: "Genre"}),
-        	template: new sap.ui.commons.TextView().bindProperty("text", "GENRE"),
-        	sortProperty: "GENRE",
-        	filterProperty: "GENRE",
+        	label: new sap.ui.commons.Label({text: "Category"}),
+        	template: new sap.ui.commons.TextView().bindProperty("text", "CATEGORY"),
+        	sortProperty: "CATEGORY",
+        	filterProperty: "CATEGORY",
         	width: "100px"
         });
         oTable.addColumn(oColumn);
@@ -78,23 +80,23 @@ Now to add in JavaScript code to to add the UI5 control. Add this code in right 
         //Define the columns and the control templates to be used
         var oColumn = new sap.ui.table.Column({
         	label: new sap.ui.commons.Label({text: "Name"}),
-        	template: new sap.ui.commons.TextView().bindProperty("text", "NAME"),
-        	sortProperty: "NAME",
-        	filterProperty: "NAME",
+        	template: new sap.ui.commons.TextView().bindProperty("text", "BOOKNAME"),
+        	sortProperty: "BOOKNAME",
+        	filterProperty: "BOOKNAME",
         	width: "100px"
         });
         oTable.addColumn(oColumn);
-             
+
         //Create a model and bind the table rows to this model
         var oModel = new sap.ui.model.json.JSONModel();
         oModel.setData({modelData: aData});
         oTable.setModel(oModel);
         oTable.bindRows("/modelData");
-        
+
         //Initially sort the table
         oTable.sort(oTable.getColumns()[2]);
-        
-        //Bring the table onto the UI 
+
+        //Bring the table onto the UI
         oTable.placeAt("ctable");
 
 	</script>
@@ -134,5 +136,4 @@ The application will open in your browser and greet you with My Library:
 [ACCORDION-END]
 
 ### Optional: Related Information
-[SAP HANA Development Information - Official Documentation](http://help.sap.com/hana_platform#section6)
-
+[SAP HANA Development Information - Official Documentation](https://help.sap.com/hana_platform#section6)

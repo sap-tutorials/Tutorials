@@ -1,14 +1,15 @@
 ---
 title: AngularJS - Boostrap Forms
 description: Step #7:  Use the Boostrap forms to clean up the dialog box, and introduce input fields.
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+primary_tag: topic>html5
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner 
- - **Tutorials** Step #6 [Add a Header and Detail Modal Dialog](http://www.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)
- 
+ - **Proficiency:** Beginner
+ - **Tutorials** [Add a Header and Detail Modal Dialog](http://www.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)
+
 ## Next Steps
- - **Tutorials** Step #8 [AngularJS Filters](http://www.sap.com/developer/tutorials/angular-filters.html)
+ - **Tutorials** [AngularJS Filters](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -19,7 +20,7 @@ In this tutorial series, we will explore another technology for Single Page Appl
 
 ---
 #### AngularJS series
-**Step 7**: Set up [Bootstrap forms](https://getbootstrap.com/css/#forms) for our application.  We will use the form in our new detail modal dialog box, to organize the information.
+Set up [Bootstrap forms](https://getbootstrap.com/css/#forms) for our application.  We will use the form in our new detail modal dialog box, to organize the information.
 
 ---
 
@@ -28,25 +29,25 @@ In this tutorial series, we will explore another technology for Single Page Appl
 Our existing modal dialog box is not well organized.  In order to get all of the information lined up, and to prepare for using input fields, we will add the form concept.  In our case, we will use labels and static text fields.  Later, we will add an input field and an "order" button.  (The order button won't actually do anything, other than just look nice.)
 
 > **Note** We are about to use a `.row` class inside a dialog box.  This is one of the great features of Bootstrap.  You can nest a `.row` inside of another `.row`.  Each row will have 12 columns, and the columns will be divided using the existing space.  
-> 
-> For example, start with a page with  two columns, each size 6 (or 1/2 of the screen). If you put a row inside one of the columns, there will be 12 new columns inside that 1/2 of the screen.  Each column in that nested row will take up 1/24 of the screen (or 1/2 * 1/12).  It's not exactly 1/24, because of margins and padding, but that's the general idea! 
+>
+> For example, start with a page with  two columns, each size 6 (or 1/2 of the screen). If you put a row inside one of the columns, there will be 12 new columns inside that 1/2 of the screen.  Each column in that nested row will take up 1/24 of the screen (or 1/2 * 1/12).  It's not exactly 1/24, because of margins and padding, but that's the general idea!
 
 First, let's divide the modal body in to two panels, one for the the labels, and one for the data.
 
 1.  Open your `index.html` file, and scroll down to the modal dialog box (`<div class="modal fade"...`)
 
     In the `<div class="modal-body">` section, **replace** the existing HTML with this new HTML:
-    
+
     > **Note** If you look closely, you will realize we are cheating a little bit with this HTML.
     >
     > We don't start a new row for each line here.  Why?  Because Bootstrap has another feature, called *column wrapping*.  When a column extends off the right side, it just starts a new line.  Since each row here uses up 3 columns for the label + 9 columns for the data (=12 columns per row), each line wraps to the next line.  
     >
     > Go ahead and change the `col-sm-9` to something like `col-sm-4`, and see what happens to the rows!
-    
+
     ```html
     <div class="row">
     	<p>
-    		<span class="col-sm-3">Product Name</span> 
+    		<span class="col-sm-3">Product Name</span>
     		<span class="col-sm-9">{{selectedProduct.ProductName}}</span>
     	</p>
     	<p>
@@ -62,7 +63,7 @@ First, let's divide the modal body in to two panels, one for the the labels, and
     	<p>
     		<span class="col-sm-3">Category</span>
     		<span class="col-sm-9">{{selectedProduct.CategoryID}}</span>
-    	</p> 
+    	</p>
     </div>    
     ```
 
@@ -77,9 +78,9 @@ First, let's divide the modal body in to two panels, one for the the labels, and
 3.  OK, now that we have the columns worked out, we will introduce a `.form`.  
 
     In our case, we are going to use a horizontal form (or `.form-horizontal`) so that our labels and our fields are all on the same line.
-    
+
     In your `index.html` file, in your modal dialog, **replace** the inside of your `<div class="modal-body">` with this HTML:
-    
+
     ```html
     <form class="form-horizontal">
         <div class="form-group">
@@ -104,9 +105,9 @@ First, let's divide the modal body in to two panels, one for the the labels, and
         </div>
     </form>
     ```
-    
+
     ![Replace static text with bootstrap form](1-3.png)
-    
+
 4.  Run your application.  When you click on a row, the display will now show the dialog box like this:
 
     ![Display new form in modal](1-4.png)
@@ -133,19 +134,19 @@ Let's start by adding in a line to show `UnitsInStock`.
     ```html
     <label class="col-sm-3 control-label">Order Amount</label>
     <div class="col-sm-6">
-    	<input type="number" class="form-control" id="orderAmount" 
+    	<input type="number" class="form-control" id="orderAmount"
     	   placeholder="Enter number of units to order"/>
     </div>
     ```
 
     ![Add an input item for items to order to the modal](2-2.png)
-        
+
 3.  Now we need a button to submit the order.  Scroll down a little to the `<div class="modal-footer">`, and then add the following HTML **above** the existing `<button>`
 
     ```html
     <button type="button" class="btn btn-primary">Order</button>
     ```
-    
+
     ![Add a button to order items](2-3.png)
 
 4.  Run your application.  You will see the new static field, the new input field, and the button.
@@ -161,19 +162,19 @@ The input field is in the form, but it's not connected to anything.  Next, add i
     $scope.orderAmount = "";
     $scope.orderAlert = "";
     ```
-    
+
     ![Add order variables to the scope](3-1.png)
-    
+
 2.  Add the following code to the **bottom** of your `helloController` method
 
     ```javascript
     $scope.orderItem = function() {
-        $scope.orderAlert = $scope.orderAmount + " units of " + 
+        $scope.orderAlert = $scope.orderAmount + " units of " +
         	$scope.selectedProduct.ProductName + " have been ordered";
-        	
+
         $('#product-detail').modal("hide");
         $('#order-alert-box').slideDown("slow");
-        
+
         setTimeout(function(){
             $("#order-alert-box").slideUp("slow");
         },4000)
@@ -181,7 +182,7 @@ The input field is in the form, but it's not connected to anything.  Next, add i
     ```
 
     ![Add orderItem function to the scope](3-2.png)
-    
+
 3.  Finally, modify the `selectedProduct` function, adding the following line:
 
     ```javascript
@@ -189,7 +190,7 @@ The input field is in the form, but it's not connected to anything.  Next, add i
     ```
 
     ![reset the orderAmount every time the dialog opens](3-3.png)
-    
+
 4.  Next, we need to bind the `orderAmount` in to our code, and then hook up the new button.  Open your `index.html` file, and **add** the following attribute to your `<input type="number"` element:
 
     ```html
@@ -197,7 +198,7 @@ The input field is in the form, but it's not connected to anything.  Next, add i
     ```
 
     ![attach orderAmount to the input field](3-4.png)
-    
+
 5.  Scroll down to the modal footer.  In the first `<button>` element, **add** the following attribute:
 
     ```html
@@ -205,11 +206,11 @@ The input field is in the form, but it's not connected to anything.  Next, add i
     ```
 
     ![attach orderItem function to the button](3-5.png)
-    
+
 6.  Now run your application.  When you click on a row, you will see the following dialog box.  
 
     ![Show the starting dialog box](3-6.png)
-    
+
 7.  In the dialog box, enter a number in the Order Amount field, then click **Order**.
 
     ![Add an order amount and click order button](3-7.png)
@@ -231,9 +232,9 @@ The input field is in the form, but it's not connected to anything.  Next, add i
 - [`slideDown`](https://api.jquery.com/slidedown/) - slide the alert box down
 - [`slideUp`](https://api.jquery.com/slideup/) - how we scrolled the box back up after we are finished with it
 
-#### JavaScript functions 
+#### JavaScript functions
 
-- We used the [`setTimeout()`](http://www.w3schools.com/jsref/met_win_settimeout.asp) JavaScript function to add a delay before the alert box disappeared.  `setTimeout()` puts an event on the event queue after a specified delay (in milliseconds).  This is the best way to delay something, as the user will not be blocked while waiting for the timer to expire. 
+- We used the [`setTimeout()`](http://www.w3schools.com/jsref/met_win_settimeout.asp) JavaScript function to add a delay before the alert box disappeared.  `setTimeout()` puts an event on the event queue after a specified delay (in milliseconds).  This is the best way to delay something, as the user will not be blocked while waiting for the timer to expire.
 
 ## Next Steps
- - **Tutorials** Step #8 [AngularJS Filters](http://www.sap.com/developer/tutorials/angular-filters.html)
+ - **Tutorials** [AngularJS Filters](http://www.sap.com/developer/tutorials.html)

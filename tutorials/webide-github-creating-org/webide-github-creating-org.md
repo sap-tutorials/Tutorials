@@ -1,7 +1,8 @@
 ---
 title: Creating a GitHub organization and adding collaborators
-description: Part 1 of 6, Collaborative Development Using GitHub and SAP Web IDE
-tags: [ tutorial>beginner, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-hana-cloud-platform ]
+description: Collaborative Development Using GitHub and SAP Web IDE
+primary_tag: products>sap-web-ide
+tags: [ tutorial>beginner, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
 
 ---
 
@@ -13,7 +14,7 @@ tags: [ tutorial>beginner, topic>github, topic>cloud, products>sap-hana, product
 
 ## Details
 ### You will learn  
-In this tutorial, you'll learn how to create an organization in GitHub and add collaborators. 
+In this tutorial, you'll learn how to create an organization in GitHub and add collaborators.
 
 ### Time to Complete
 **5 Min**.
@@ -28,13 +29,13 @@ In this tutorial, you'll learn how to create an organization in GitHub and add c
 
     ![Create New Repository](p1_3.png)
 
-4. Enter the organization name, billing email and click on **Create an Organization**. 
+4. Enter the organization name, billing email and click on **Create an Organization**.
 
     ![Create New Organization](p1_4.png)
-  
-5. 
+
+5.
     a. Invite collaborators to the organization by entering their email id/GitHub username. Do ensure the collaborator has a GitHub account else the person will not be added as a collaborator. Click on **Finish** once done.
-    
+
     ![Search for collaborators](p1_5a.png)
 
     b. If you already have an organization click on the Organization name under the profile.
@@ -42,14 +43,14 @@ In this tutorial, you'll learn how to create an organization in GitHub and add c
     ![Select an organization](p1_5b.png)
 
     c. Click on **Invite someone**.
- 
+
     ![Invite to organization](p1_5c.png)
 
     d. And enter their GitHub username or email.
 
     ![enter github username](p1_5d.png)
 
-   
+
 6. Click on the appropriate role for the collaborator being added and then click on **Send Invitation**.
 
     ![Select a role for collaborator](p1_6.png)

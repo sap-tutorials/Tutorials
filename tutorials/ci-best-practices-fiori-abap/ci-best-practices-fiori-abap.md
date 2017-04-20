@@ -2,6 +2,7 @@
 
 title: CI Best Practices Guide: SAPUI5/SAP Fiori on ABAP Front-End Server
 description: Part 4.4: Implementing the CI pipeline to build an SAPUI5/SAP Fiori application on ABAP Front-End Server.
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ---
@@ -47,7 +48,7 @@ Figure 1: The high-level process flow
 
 #### A. Overview: the CI Process
 
-1. Developers use SAP Web IDE to work on a SAPUI5 or Fiori project. For immediate testing, they run the application directly from SAP Web IDE on SAP HANA Cloud Platform.
+1. Developers use SAP Web IDE to work on a SAPUI5 or Fiori project. For immediate testing, they run the application directly from SAP Web IDE on SAP Cloud Platform.
 
 2. In SAP Web IDE, the developer creates a commit and pushes it for review to the Gerrit instance.
 
@@ -104,11 +105,11 @@ The scenario described here builds on the chapters that describe how to set up a
 
 ### 2. Prerequisites
 
-- An account on SAP HANA Cloud Platform.
-- An SAP HANA Cloud Connector as reverse proxy to pass requests from SAP Web IDE to your corporate Git installation.
+- An account on SAP Cloud Platform.
+- SAP Cloud Connector as reverse proxy to pass requests from SAP Web IDE to your corporate Git installation.
 
-> [SAP HANA Cloud Platform Documentation](https://help.hana.ondemand.com/help/frameset.htm?e9137493bb57101492c6858c8d6b0b62.html)  
-> [SAP HANA Cloud Platform Cockpit](https://account.hana.ondemand.com)  
+> [SAP Cloud Platform Documentation](https://help.hana.ondemand.com/help/frameset.htm?e9137493bb57101492c6858c8d6b0b62.html)  
+> [SAP Cloud Platform Cockpit](https://account.hana.ondemand.com)  
 > [Connecting to your Corporate Git System](https://help.hana.ondemand.com/webide/frameset.htm?b8427ec16ae64347b97d2d46fb28f7cd.html)
 
 
@@ -117,7 +118,7 @@ The scenario described here builds on the chapters that describe how to set up a
 
 The standard method for creating a new SAPUI5 or Fiori project is to use the wizard in SAP Web IDE to choose from the available templates and to create a skeleton in your workspace. The example here also mentions the wizard that creates one of the sample Fiori applications for the sake of having something more concrete than a simple Hello-World example.
 
-You can either use SAP Web IDE on SAP HANA Cloud Platform, or alternatively, you can use SAP Web IDE Personal Edition, which offers the same features but runs on your local machine.
+You can either use SAP Web IDE on SAP Cloud Platform, or alternatively, you can use SAP Web IDE Personal Edition, which offers the same features but runs on your local machine.
 
 > [SAP Web IDE](https://help.hana.ondemand.com/webide/frameset.htm?0221845d73ad403ab2852142f3179177.html)  
 > [SAP Web IDE Personal Edition](https://help.hana.ondemand.com/webide/frameset.htm?5b8bca3147ee4dfd99be8aaf6bd4f421.html)
@@ -126,7 +127,7 @@ You can either use SAP Web IDE on SAP HANA Cloud Platform, or alternatively, you
 
 1. In Gerrit, create a project with a `master` branch as described in [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html).
 
-2. If you are using SAP Web IDE on SAP HANA Cloud Platform, follow the instructions here:
+2. If you are using SAP Web IDE on SAP Cloud Platform, follow the instructions here:
 
     > [Opening SAP Web IDE](https://help.hana.ondemand.com/webide/frameset.htm?51321a804b1a4935b0ab7255447f5f84.html)
 
@@ -1059,6 +1060,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-cssmin");
+    grunt.loadNpmTasks("grunt-encoding");
     grunt.loadNpmTasks("grunt-zip");
     grunt.loadNpmTasks("grunt-openui5");
     grunt.loadNpmTasks("grunt-nexus-deployer");

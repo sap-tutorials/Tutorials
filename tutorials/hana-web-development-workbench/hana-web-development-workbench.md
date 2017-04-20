@@ -1,27 +1,30 @@
 ---
 title: SAP HANA XS Classic, Develop your first SAP HANA XSC Application
 description: In this tutorial you will make your very first SAP HANA XSC application using the SAP HANA Web-based Development Workbench.
-tags: [ products>sap-hana, products>sap-hana-cloud-platform, tutorial>beginner]
+primary_tag: products>sap-hana
+tags: [ products>sap-hana, products>sap-cloud-platform, tutorial>beginner]
 ---
 
 ## Prerequisites  
-You need a HANA account or server. Pick one of the following:
-- [Get a free account in HANA Cloud Platform](https://account.hanatrial.ondemand.com/register)
-- [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html)
+ - **Proficiency:** Beginner
+ - **Tutorials:** You need a HANA account or server. Pick one of the following:
+   - [Get a free account in SAP Cloud Platform](https://account.hanatrial.ondemand.com/register)
+   - [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html)
 
 ## Next Steps
 [Access your first Data from a native SAP HANA Application](http://www.sap.com/developer/tutorials/hana-data-access-authorizations.html)
 
 ## Details
+
 ### You will learn  
 1. How to use the SAP HANA Web-based Development Workbench.
 2. How to develop a simple server-side application.
 3. How to publish and run an application.
 
-### Time to Compete
+### Time to Complete
 Beginners might take **10-15 minutes** to execute this tutorial.
 
-[ACCORDION-BEGIN [Step 1: Using HANA Cloud Platform](Using HANA Cloud Platform)]
+[ACCORDION-BEGIN [Step 1: ](Using SAP Cloud Platform)]
 
 Each Trial HANA MDC instance comes with the HANA Web-based Development Workbench. The workbench allows you to develop on HANA without the need to set up a local development environment.
 
@@ -70,13 +73,13 @@ You are now in the Editor and can immediately start developing in HANA.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: Using SAP HANA, express edition](Using SAP HANA, express edition)]
+[ACCORDION-BEGIN [Step 2: ](Using SAP HANA, express edition)]
 
 For HXE enter the address `http://hxehost:8090/sap/hana/ide/` in to the address bar of your browser. This works provided you have the `Server + Applications` version or if you followed these [steps](https://blogs.sap.com/2016/10/28/enhancing-hxe-server-image/) to add the XSC tooling to your `Server Only` instance.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: Create Package for your Application](Create Package for your Application)]
+[ACCORDION-BEGIN [Step 3: ](Create Package for your Application)]
 
 The first step to start developing a SAP HANA application with SAP HANA Web-based Development Workbench is to create a new package for the application.
 
@@ -92,7 +95,7 @@ This step will generate 3 files, the `.xsapp`, `.xsaccess` and an `index.html`.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: Now Create the Application](Now Create the Application)]
+[ACCORDION-BEGIN [Step 4: ](Now Create the Application)]
 
 Now is the time to actually create some application code. In SAP HANA XSC application code essentially is JavaScript code provided in `.xsjs` files. Now such a file will be created.
 
@@ -117,7 +120,7 @@ Save the file using the Save button or by pressing `ctrl+s`. Again, the successf
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: Deploy, Run and Test the Application](Deploy, Run and Test the Application)]
+[ACCORDION-BEGIN [Step 5: ](Deploy, Run and Test the Application)]
 
 Now the application is ready to be tested. As you are developing with the SAP HANA Web-based Development Workbench the application is already deployed and activated to your SAP HANA Trial Instance. So you can immediately continue to test it:
 
@@ -127,9 +130,9 @@ The application will open in your browser and greet you with the beginning of yo
 
 ![Web Preview](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-web-development-workbench/17.png)
 
-Congratulations: You just have your first own native SAP HANA application running on SAP HANA Cloud Platform!
+Congratulations: You just have your first own native SAP HANA application running on SAP Cloud Platform!
 
 [ACCORDION-END]
 
 ### Related information
-[SAP HANA Development Information - official documentation](http://help.sap.com/hana_platform#section6)
+[SAP HANA Development Information - official documentation](https://help.sap.com/hana_platform#section6)

@@ -1,7 +1,8 @@
 ---
 title: SAPUI5 - Enable Routing
 description: Enable routing to move from one view to another
-tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform ]
+primary_tag: topic>sapui5
+tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
@@ -19,7 +20,7 @@ In order to enable navigating from one view to another, our app needs to be enab
 **15 Minutes**.
 
 ---
->  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the HANA Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
+>  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 
 You have to add a routing configuration to the descriptor file and initialize the router instance within the component
@@ -108,7 +109,7 @@ definition (`webapp/Component.js`).
     ```javascript
     "viewName": "HelloWorld.view.App",
     ```
-    
+
     ![Update manifest.json to use new view](13.png)
 
 

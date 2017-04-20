@@ -1,11 +1,12 @@
 ---
 title: Merging branches back into master branch in GitHub using Pull Requests
-description: Part 6 of 6, Collaborative Development Using GitHub and SAP Web IDE
-tags: [ tutorial>intermediate, topic>github, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-hana-cloud-platform ]
+description: Collaborative Development Using GitHub and SAP Web IDE
+primary_tag: products>sap-web-ide
+tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-ide, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** 
+ - **Tutorials:**
      - [Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE](http://www.sap.com/developer/tutorials/webide-github-branching.html)
 
 ## Next Steps
@@ -43,7 +44,7 @@ In this tutorial, you'll learn how to create and send pull requests so that the 
 
     ![Merge successful](p6_6.png)
 
-7. You will notice that the issues are automatically closed as well and the milestone is complete. 
+7. You will notice that the issues are automatically closed as well and the milestone is complete.
 
     > GitHub will automatically close an issue if your commit message includes [certain keywords](https://help.github.com/articles/closing-issues-via-commit-messages/) once this change is merged into the master branch.
 
@@ -55,7 +56,7 @@ In this tutorial, you'll learn how to create and send pull requests so that the 
 
     ![Switch to master](p6_8a.png)
 
-    b. Click on the **Pull** button to pull in the changes. Enter your GitHub account credentials and press **OK** button. 
+    b. Click on the **Pull** button to pull in the changes. Enter your GitHub account credentials and press **OK** button.
 
     ![Switch to master](p6_8b.png)
 
@@ -64,4 +65,4 @@ In this tutorial, you'll learn how to create and send pull requests so that the 
     ![Switch to master](p6_8c.png)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html) 
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

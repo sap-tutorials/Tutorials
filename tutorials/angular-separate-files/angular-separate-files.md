@@ -1,16 +1,16 @@
 ---
 title: AngularJS - Separate the JavaScript and CSS files
-description: Step #4: Move the CSS and JavaScript code from the HTML page to separate files on the web server.
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+description: Move the CSS and JavaScript code from the HTML page to separate files on the web server.
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner 
- - **Tutorials** Step #3 [Add the AngularJS JavaScript](http://www.sap.com/developer/tutorials/angular-add-javascript.html)
+ - **Proficiency:** Beginner
+ - **Tutorials** [Add the AngularJS JavaScript](http://www.sap.com/developer/tutorials/angular-add-javascript.html)
 
 ## Next Steps
- - **Tutorials** Step #5 [Add ODATA to the application](http://www.sap.com/developer/tutorials/angular-add-odata.html)
+ - **Tutorials** [Add ODATA to the application](http://www.sap.com/developer/tutorials/angular-add-odata.html)
 
- 
+
 ## Details
 ### You will learn  
 In this tutorial series, we will explore another technology for Single Page Application (SPA) development - AngularJS (or just Angular).  Angular is a popular web framework in North America, and is used by many companies for both internal and client-facing systems.  These tutorials will parallel our SAPUI5 tutorials, building a visual interface using Angular, and connecting it to an OData back end service.
@@ -20,7 +20,7 @@ In this tutorial series, we will explore another technology for Single Page Appl
 
 ---
 #### AngularJS series
-**Step 4**: Connect an external OData feed to our application.  While doing that, we will also learn how to use an Angular *factory* to insert functionality in multiple places.  Finally, we will examine the Angular `$resource` factory, which helps us connect to REST resources.
+Connect an external OData feed to our application.  While doing that, we will also learn how to use an Angular *factory* to insert functionality in multiple places.  Finally, we will examine the Angular `$resource` factory, which helps us connect to REST resources.
 
 ---
 
@@ -31,9 +31,9 @@ First, let's move the JavaScript and CSS files out of our application, and in to
 1.  Right click on the folder `HelloAngular` and select **New** --> **Folder**
 
     ![Add new JS folder](1-1.png)
-    
+
     Name the folder `js`, and click **OK**
-    
+
     ![Name the folder js](1-1b.png)
 
 2.  Next, right click on the new `js` folder, and select **New** --> **File**
@@ -68,10 +68,10 @@ First, let's move the JavaScript and CSS files out of our application, and in to
     	UnitPrice: "112.50",
     	Discontinued: true
     }];
-    
+
     angular.module("helloWorld", [])
     	.controller('helloController', helloController);
-    
+
     function helloController($scope) {
     	$scope.productList = testData;
     }
@@ -86,13 +86,13 @@ First, let's move the JavaScript and CSS files out of our application, and in to
 5.  Insert a link to the new file, so that the `index.html` file loads your new JavaScript file.  
 
     Under the `</style>` tag, add the following HTML
-    
+
     ```html
     <script src="/js/main.js"></script>
     ```
 
     ![Link the new JavaScript file to the HTML file](1-5.png)
-    
+
 6.  Run your application.  The page should look exactly the same, as the JavaScript now runs from an external file.
 
     ![Run - no changes should appear](run-app.png)
@@ -104,7 +104,7 @@ Follow the same procedures to move the CSS file
 1.  Right click on the folder `HelloAngular` and select **New** --> **Folder**
 
     ![Add a new CSS folder](2-1.png)
-    
+
     Name the folder `css`, and click **OK**
 
 2.  Next, right click on the new `css` folder, and select **New** --> **File**
@@ -120,20 +120,20 @@ Follow the same procedures to move the CSS file
         display: flex;
         align-items: baseline;
     }
-    
+
     .vertical-align .top {
         align-self: baseline;
     }
-    
+
     .vertical-align .center {
         align-self: center;
     }
-    
+
     .available {
         color: green;
         font-weight: bold;
     }
-    
+
     .discontinued {
         color: red;
         font-weight: bold;
@@ -149,13 +149,13 @@ Follow the same procedures to move the CSS file
 5.  Insert a link to the new file, so that the `index.html` file loads your new JavaScript file.  
 
     Under the last `<script>` tag (the one you just inserted, add the following HTML
-    
+
     ```html
     <link href="/css/main.css" rel="stylesheet">
     ```
 
     ![Link the CSS file to the HTML file](2-5.png)
-    
+
 6.  Run your application.  The page should look exactly the same, as the CSS file now loads from an external file.
 
     ![Run - no changes should appear](run-app.png)
@@ -163,4 +163,4 @@ Follow the same procedures to move the CSS file
 
 
 ## Next Steps
- - **Tutorials** Step #5 [Add ODATA to the application](http://www.sap.com/developer/tutorials/angular-add-odata.html)
+ - **Tutorials** [Add ODATA to the application](http://www.sap.com/developer/tutorials/angular-add-odata.html)

@@ -1,12 +1,13 @@
 ---
 title: Build an SAP Fiori UX app with SAP Gateway data
 description: Build an app using the SAP Web IDE Fiori template
-tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-hana-cloud-platform, products>sap-web-ide ]
+primary_tag: products>sap-cloud-platform
+tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create an SAP HANA Cloud Platform destination pointing to an SAP Gateway](http://www.sap.com/developer/tutorials/teched-2016-3.html)
+ - **Tutorials:** [Create an SAP Cloud Platform destination pointing to an SAP Gateway](http://www.sap.com/developer/tutorials/teched-2016-3.html)
 
 ## Next Steps
  - [Commit your project to Git and deploy to the cloud](http://www.sap.com/developer/tutorials/teched-2016-5.html)
@@ -20,8 +21,8 @@ Use the SAP Web IDE template wizard to build a Fiori UX app displaying informati
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log into your HCP account)]
-Log into [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+[ACCORDION-BEGIN [Step 1: ](Log into your SAP Cloud Platform account)]
+Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
 
 Make sure you are using the **Europe (Trial)** landscape, and click on your account name to open the cockpit view.
 

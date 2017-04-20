@@ -1,11 +1,13 @@
 ---
 title: Add API Business Hub API to a UI5 Application
 description: Incorporate a SAP API into your UI5 application using Web IDE.
-tags: [  tutorial>beginner, topic>sapui5, products>sap-hana-cloud-platform, products>sap-web-ide ]
+primary_tag: products>sap-cloud-platform
+tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Test APIs locally with Curl](http://www.sap.com/developer/tutorials/hcp-abh-test-locally.html)
+- **Proficiency:** Beginner
+- **Tutorials:** [Testing API Business Hub APIs with Curl](https://www.sap.com/developer/tutorials/hcp-abh-test-locally.html)
 
 
 ## Next Steps
@@ -13,7 +15,7 @@ tags: [  tutorial>beginner, topic>sapui5, products>sap-hana-cloud-platform, prod
 
 ## Details
 ### You will learn  
-In this tutorial, you will build a basic UI5 application that uses data from the SAP Success Factors API, that you test in the SAP Business Hub, to populate a set of tiles based on the pre-generated code provided in the API Business Hub. Each User will have a tile that displays relevant information about that person.
+In this tutorial, you will build a basic UI5 application that uses data from the SAP Success Factors API, that you test in the SAP Business Hub, to populate a set of tiles. Each User will have a tile that displays relevant information about that person.
 
 > It is important to note that in UI5, it is recommended to use an `ODataModel` with an `OData` service, which is what the Success Factors APIs provided in the API Business Hub are, as UI5 will optimize the data parsing for you. This tutorial uses the pre-generated AJAX REST call available in the code snippets section of the API Business Hub. Using an `ODataModel` is the best practice for UI5 applications but it is not covered in this tutorial. You can find more information about `ODataModels` in the [UI5 Demo Kit](https://sapui5.hana.ondemand.com/#docs/guide/6c47b2b39db9404582994070ec3d57a2.html).
 
@@ -66,7 +68,7 @@ onInit: function() {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get JavaScript pre-generated code)]
+[ACCORDION-BEGIN [Step 2: ](Get Javascript pre-generated code)]
 In the [API Business Hub](https://api.sap.com), select **Subscriptions** from the side menu. Once in Subscriptions, select your `TutorialApp` to find your API Package subscriptions. Click the **SAP Success Factors** package.
 
 ![location of subscriptions in API Business Hub](10.png)
@@ -81,7 +83,7 @@ Open the API to find the methods. Click the **Show/Hide** toggle to show the met
 
 Pick the **JavaScript** tab and then click the **Copy to Clipboard** button.
 
-![JavaScript pre-generated code for API call](13.png)
+![Javascript pre-generated code for API call](13.png)
 
 [DONE]
 [ACCORDION-END]
@@ -132,7 +134,7 @@ Back in your controller, **add in your query parameters to the URL** so that the
 
 **SAVE** your changes and **RUN** your application. Looking in the console, you should only see 5 results with a much smaller data set for each result.
 
-![updated results in the JavaScript console](20.png)
+![updated results in the Javascript console](20.png)
 
 [DONE]
 [ACCORDION-END]
