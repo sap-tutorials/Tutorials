@@ -1,8 +1,8 @@
 ---
 title: Compile and run a native Android app on SAP Cloud Platform
 description: Clone a GitHub repository, import it into your project, run it on SAP Cloud Platform mobile services for development and operations then review the main classes and methods.
-primary_tag: operating_system>android
-tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>sap-cloud-platform, operating_system>android ]
+primary_tag: operating-system>android
+tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>sap-cloud-platform, operating-system>android ]
 
 ---
 
