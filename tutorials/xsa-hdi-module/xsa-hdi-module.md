@@ -1,8 +1,9 @@
+
 ---
 title: SAP HANA XS Advanced, Creating an HDI Module
-description: Part 3 of 3, Create your first HDI module for database content within your XSA application
+description: Create your first HDI module for database content within your XSA application
 primary_tag: products>sap-hana
-tags: [products>sap-hana, products>sap-hana\,-express-edition , topic>big-data, tutorial>beginner ]
+tags: [products>sap-hana, products>sap-hana\,-express-edition  , topic>big-data, tutorial>beginner ]
 
 ---
 
@@ -31,29 +32,34 @@ HDI introduces the concept of the container as an abstraction of the Schema. The
 HANA Deployment Infrastructure was introduced with SPS11, and is thoroughly explained here: [SAP HANA SPS 11: New Developer Features; HDI](https://blogs.sap.com/2015/12/08/sap-hana-sps-11-new-developer-features-hdi/)
 
 [ACCORDION-BEGIN [Step 1: ](Create HDB Module)]
-1. Begin by selecting your project and then choosing `New -> HDB Module`
 
-    ![New Module](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/1.png)
+Begin by selecting your project and then choosing `New -> More`
 
-2. Name this new module `db`. Then press Next.
+![New Module](1.png)
 
-    ![Create module](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/2.png)
+And `SAP HANA Database Module` from the Template selection menu. Click on **next**:
 
-3. Leave the Namespace blank (they are not of any use anymore) and enter a name for the schema and check the `Build Module after creation` tick box. Press Next.
+![New Module](1_1.png)
 
-    ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/3.png)
+Name this new module `db`. Then press Next.
 
-4. Press Finish to complete the creation of the HDB Module.
+![Create module](2.png)
 
-    ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/4.png)
+**Clear the namespace field** (they are not of any use anymore), enter a name for the schema and check the `Build Module after creation` tick box. Press Next.
 
-5. The wizard has created the `db` folder as well as the `hdi-container` resource and the `db` module in the `mta.yaml` file for you.
+![Clear namespace](3.png)
 
-    ![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/5.png)
+Press Finish to complete the creation of the HDB Module.
 
-    You will be able to see some of the additional files that the module creation wizard created if you choose `View->Show Hidden Files`  
+![Complete wizard](4.png)
 
-    ![Show hidden files](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/6.png)
+The wizard has created the `db` folder as well as the `hdi-container` resource and the `db` module in the `mta.yaml` file for you.
+
+![MTA file](5.png)
+
+You will be able to see some of the additional files that the module creation wizard created if you choose `View->Show Hidden Files`  
+
+![Show hidden files](6.png)
 
 
 [DONE]
@@ -62,92 +68,92 @@ HANA Deployment Infrastructure was introduced with SPS11, and is thoroughly expl
 [ACCORDION-BEGIN [Step 2: ](Create CDS Table)]
 
 
-The `db/src` folder is where your actual database development objects belong. There are two configuration files in the root of this folder. The `.hdiconfig` file maps the file extensions to the specific server side activation plug-ins. This way you can choose any file extensions you wish to use as long as you map them to the correct plug-ins. However we will use the default mappings for now.
+The `db/src` folder is where your actual database development objects belong. There are two configuration files in the root of this folder. The `.hdiconfig` file maps the file extensions to the specific server side activation plug-ins. This way you can choose any file extensions you wish to use as long as you map them to the correct plug-ins. However you will use the default mappings for now.
 
-In the `src` folder we will create several development objects. First create a folder called `data` in the `src` folder.
+In the `src` folder we will create several development objects. First create a folder called `data`.
 
 Then `New->CDS Artifact` to create the core database tables and views in our application.
 
-![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/8.png)
+![CDS Artifact](8.png)
 
 Name the new CDS file `PurchaseOrder` and press Create
 
-![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/9.png)
+![New CDS called PurchaseOrder](9.png)
 
-As of SPS12, `hdbcds` is the new file extension replacing `hdbdd`. It contains the table and view definitions. We are creating a simple Purchase Order Header and Item data model.
+As of SPS12, `hdbcds` is the new file extension replacing `hdbdd`. It contains the table and view definitions. You are creating a simple Purchase Order Header and Item data model.
 
 The syntax is the same as `CDS-based` development objects previously. You will review this content in the next step.
 
 ```
 
-	context PurchaseOrder {
-	type BusinessKey : String(10);
-		type SDate : LocalDate;
-		type CurrencyT : String(5);
-		type AmountT : Decimal(15,2);
-		type QuantityT : Decimal(13,3);
-		type UnitT: String(3);
-		type StatusT: String(1);
 
-	 Type HistoryT {
-	          CREATEDBY : BusinessKey;
-	          CREATEDAT : SDate;
-	          CHANGEDBY : BusinessKey;
-	          CHANGEDAT : SDate;
-	        };
+context PurchaseOrder {
+type BusinessKey : String(10);
+type SDate : LocalDate;
+type CurrencyT : String(5);
+type AmountT : Decimal(15,2);
+type QuantityT : Decimal(13,3);
+type UnitT: String(3);
+type StatusT: String(1);
 
-	    Entity Header {
-	        key  PURCHASEORDERID: BusinessKey;
-	        ITEMS: Association[*] to Item on ITEMS.PURCHASEORDERID = PURCHASEORDERID;        
-	        HISTORY: HistoryT;
-	        NOTEID: BusinessKey null;
-	        PARTNER: BusinessKey;
-	        CURRENCY: CurrencyT;
-	        GROSSAMOUNT: AmountT;
-	        NETAMOUNT: AmountT;
-	        TAXAMOUNT: AmountT;
-	        LIFECYCLESTATUS: StatusT;
-	        APPROVALSTATUS: StatusT;
-	        CONFIRMSTATUS: StatusT;
-	        ORDERINGSTATUS: StatusT;
-	        INVOICINGSTATUS: StatusT;
-	      } technical configuration {
-	          column store;
-	      };
+Type HistoryT {
+        CREATEDBY : BusinessKey;
+        CREATEDAT : SDate;
+        CHANGEDBY : BusinessKey;
+        CHANGEDAT : SDate;
+      };
 
-	    Entity Item {
-	        key  PURCHASEORDERID: BusinessKey;
-	        key  PURCHASEORDERITEM: BusinessKey;
-	        HEADER: Association[1] to Header on HEADER.PURCHASEORDERID = PURCHASEORDERID;
-	        PRODUCT:  BusinessKey;
-	        NOTEID: BusinessKey null;
-	        CURRENCY: CurrencyT;
-	        GROSSAMOUNT: AmountT;
-	        NETAMOUNT: AmountT;
-	        TAXAMOUNT: AmountT;
-	        QUANTITY: QuantityT;
-	        QUANTITYUNIT: UnitT;
-	        DELIVERYDATE: SDate;
-	      } technical configuration {
-	          column store;
-	      };
+  Entity Header {
+      key  PURCHASEORDERID: BusinessKey;
+      ITEMS: Association[*] to Item on ITEMS.PURCHASEORDERID = PURCHASEORDERID;        
+      HISTORY: HistoryT;
+      NOTEID: BusinessKey null;
+      PARTNER: BusinessKey;
+      CURRENCY: CurrencyT;
+      GROSSAMOUNT: AmountT;
+      NETAMOUNT: AmountT;
+      TAXAMOUNT: AmountT;
+      LIFECYCLESTATUS: StatusT;
+      APPROVALSTATUS: StatusT;
+      CONFIRMSTATUS: StatusT;
+      ORDERINGSTATUS: StatusT;
+      INVOICINGSTATUS: StatusT;
+    } technical configuration {
+        column store;
+    };
 
+  Entity Item {
+      key  PURCHASEORDERID: BusinessKey;
+      key  PURCHASEORDERITEM: BusinessKey;
+      HEADER: Association[1] to Header on HEADER.PURCHASEORDERID = PURCHASEORDERID;
+      PRODUCT:  BusinessKey;
+      NOTEID: BusinessKey null;
+      CURRENCY: CurrencyT;
+      GROSSAMOUNT: AmountT;
+      NETAMOUNT: AmountT;
+      TAXAMOUNT: AmountT;
+      QUANTITY: QuantityT;
+      QUANTITYUNIT: UnitT;
+      DELIVERYDATE: SDate;
+    } technical configuration {
+        column store;
+    };
 
-	   define view ItemView as SELECT from Item {
-	      PURCHASEORDERID as "PurchaseOrderItemId",
-	      PURCHASEORDERITEM as "ItemPos",
-	      HEADER.PARTNER as "PartnerId",
-	      PRODUCT as "ProductID",
-	      CURRENCY as "CurrencyCode",
-	      GROSSAMOUNT as "Amount",
-	      NETAMOUNT as "NetAmount",
-	      TAXAMOUNT as "TaxAmount",
-	      QUANTITY as "Quantity",
-	      QUANTITYUNIT as "QuantityUnit",
-	      DELIVERYDATE as "DeliveryDate1"
-	   } with structured privilege check;
-	};
+ define view ItemView as SELECT from Item {
+    PURCHASEORDERID as "PurchaseOrderItemId",
+    PURCHASEORDERITEM as "ItemPos",
+    HEADER.PARTNER as "PartnerId",
+    PRODUCT as "ProductID",
+    CURRENCY as "CurrencyCode",
+    GROSSAMOUNT as "Amount",
+    NETAMOUNT as "NetAmount",
+    TAXAMOUNT as "TaxAmount",
+    QUANTITY as "Quantity",
+    QUANTITYUNIT as "QuantityUnit",
+    DELIVERYDATE as "DeliveryDate1"
+ } with structured privilege check;
 
+};
 ```
 
 Save the artifact after entering this code.
@@ -159,7 +165,7 @@ Save the artifact after entering this code.
 
 Look at the syntax you just entered into the `PurchaseOrder.hdbcds` file in more detail.
 
-1. First you need to define some reusable elemental types. These will later be used to define the data type of individual columns in our tables. Within the `PurchaseOrder` context, create element types for `BusinessKey`, `SDate`, `CurrencyT`, `AmountT`, `QuantityT`, `UnitT`, and `StatusT`.
+First, you need to define some reusable elemental types. These will later be used to define the data type of individual columns in our tables. Within the `PurchaseOrder` context, create element types for `BusinessKey`, `SDate`, `CurrencyT`, `AmountT`, `QuantityT`, `UnitT`, and `StatusT`.
 
 	```
 	context PurchaseOrder {
@@ -172,21 +178,21 @@ Look at the syntax you just entered into the `PurchaseOrder.hdbcds` file in more
 		type StatusT: String(1);
 	```
 
-2. You can also create reusable structures with multiple fields. This is useful when the same sets of fields are repeated in multiple tables. Create a reusable structure for History – with `CREATEDBY`, `CREATEDAT`, `CHANGEDBY`, and `CHANGEDAT` fields.
+You can also create reusable structures with multiple fields. This is useful when the same sets of fields are repeated in multiple tables. Create a reusable structure for History – with `CREATEDBY`, `CREATEDAT`, `CHANGEDBY`, and `CHANGEDAT` fields.
 
 
-	```
+```
 	Type HistoryT {
           CREATEDBY : BusinessKey;
           CREATEDAT : SDate;
           CHANGEDBY : BusinessKey;
           CHANGEDAT : SDate;
         };
-	```
+```
 
-3. The syntax for creating Entities is similar to types. Entities will become database tables when activating the `hdbcds` file.
+  The syntax for creating Entities is similar to types. Entities will become database tables when activating the `hdbcds` file.
 
-	```
+```
 	Entity Header {
         key  PURCHASEORDERID: BusinessKey;
         ITEMS: Association[*] to Item on ITEMS.PURCHASEORDERID = PURCHASEORDERID;        
@@ -205,7 +211,7 @@ Look at the syntax you just entered into the `PurchaseOrder.hdbcds` file in more
       } technical configuration {
           column store;
       };
-	```
+```
 
 We are now ready to **Build**. Right click on the project and on the Build button. This process technically executes a `node.js` application which will call over to HANA and deploy these database artifacts into their container.
 
@@ -215,16 +221,16 @@ The log should say that the Build of your project has completed successfully:
 
 ![Build Project - Console](9_2.png)
 
-> Hint: As of HANA 2.0, you can choose to build just this one file
+> Hint: As of HANA 2.0, you can choose to build just the `db` folder or a specific module
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create Sequence for Primary Key)]
 
- With the tables we created, you use a unique order id number as the primary key. Therefore you need a sequence to have an auto incrementing unique id generated when new data is inserted. Create a new sequence by right-clicking on the data folder and choosing "New", then "File".
+With the tables you created, you use a unique order id number as the primary key. Therefore you need a sequence to have an auto incrementing unique id generated when new data is inserted. Create a new sequence by right-clicking on the data folder and choosing `New`, then `File`.
 
-![Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/10.png)
+![New File](10.png)
 
 Enter the name of the file as `orderId.hdbsequence`. Click "OK".
 
@@ -233,52 +239,53 @@ Enter the name of the file as `orderId.hdbsequence`. Click "OK".
 Create a non-cycling sequence within your schema starting from 200000000 and ending with 299999999. Make it dependent upon your header table with the full package id on the front of the header table name. Save your sequence file.
 
 ```
-	SEQUENCE "orderId"
-	INCREMENT BY 1 START WITH 200000000
-	MINVALUE 1 MAXVALUE 2999999999
-	NO CYCLE
-	RESET BY
-	SELECT IFNULL(MAX(PURCHASEORDERID), 0)+1
-	FROM "PurchaseOrder.Header"
+SEQUENCE "orderId"
+INCREMENT BY 1 START WITH 200000000
+MINVALUE 1 MAXVALUE 2999999999
+NO CYCLE
+RESET BY
+SELECT IFNULL(MAX(PURCHASEORDERID), 0)+1
+FROM "PurchaseOrder.Header"
+
 ```
 
-**Build** the `orderId.hdbsequence` file by right-clicking on it and selecting `Build Selected Files`.
+**Build** the `orderId.hdbsequence` and the dictionary definitions (`PurchaseOrder.hdbcds`) file by right-clicking on it and selecting `Build Selected Files`.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Check the Database Explorer)]
 
-It is now time to check what you have created so far. Open the Database Explorer from the `Tools -> Database Explorer` menu.  
+It is now time to check what you have created so far. Open the Database Explorer from the `Tools -> Database Explorer` menu or using the middle icon in the left side bar.  
 
 >In SPS12, this was known as the `HANA Runtime Tool` and it was separate from the Web IDE. You can open a new browser tab and navigate to `http://<hostname>:51006` to access this tool. For `SAP HANA, express edition` you will need to navigate to `http://<hostname>:51018`
 
 Click on the **+** sign:
 
-![Login](11_2.png)
+![Add](11_2.png)
 
 Search for your container based on your user name or the repository name. Select it, insert `db` as a display name and click **OK**.
 
-![Login](11_3.png)
+![Search for db](11_3.png)
 
 You can now see the container, table definitions and contents you have created so far:
 
-![Login](11_4.png)
+![Container in SAP HANA HRTT](11_4.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create and Upload Data)]
 
-You may want to deliver an initial set of data within a table – particular a configuration table. In this exercises we will learn how to create automatic data load configuration and the accompanying `CSV` files for just such a situation.
+You may want to deliver an initial set of data within a table – in particular, a configuration table. In this exercises we will learn how to create automatic data load configuration and the accompanying `CSV` files for just such a situation.
 
-The data load for table requires two files:
+The data load for the table requires two files:
  1. A `csv` (comma separated) file which holds the data you want to load.
  2. An `hdbtabledata` file which specifies the target table for a source `csv` file.
 
-You also have the `hdbtabledata` development object. This is the replacement for the old `hdbti` development object. Although the syntax of this object is new, the purpose is the same – to allow the loading of initial data from `CSV` files it target tables during their creation.
+You also have the `hdbtabledata` development object. This is the replacement for the old `hdbti` development object. Although the syntax of this object is new, the purpose is the same – to allow the loading of initial data from `CSV` files to target tables during their creation.
 
-Create a file named `Purchase.hdbtabledata` and enter this text into it. Don't forget to save the file afterwards.
+In your `data` folder, create a file named `Purchase.hdbtabledata` and enter this text into it. Don't forget to save the file afterwards.
 
 ```
 	{
@@ -397,7 +404,13 @@ And data for the item table named `item.csv`.  Don't forget to **save**.
 0500000001,0000000100,HT-1100,,USD,320.94,269.7,51.24,3,EA,20121204
 ```
 
-**Build** the `hdb` module and go back to the Database Explorer. Right-click on any of the tables and you will see data.
+**Build** the `db` module and go back to the Database Explorer.
+
+![Build ](11_6.png)
+
+>See the records being inserted? Make sure you understand how that happened using the `Purchase.hdbtabledata` file
+
+Right-click on any of the tables and you will see data.
 
 ![Database Explorer and ](11_5.png)
 
@@ -420,13 +433,13 @@ Notice the column names where you used the complex type definition called `Histo
 
 Create a `procedures` folder in the `src` folder. In the procedures folder you can create an `hdbprocedure` file via `New->Procedure`
 
-	>The syntax for stored procedures hasn't changed from previous levels of HANA.
+>The syntax for stored procedures hasn't changed from previous Support Package Stacks of HANA.
 
-![New Procedure](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/12.png)
+![New Procedure](12.png)
 
 With name `getPOItems`
 
-![getPOItems](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/xsa-hdi-module/13.png)
+![getPOItems](13.png)
 
 Here is the source of `getPOItems.hdbprocedure`
 
@@ -454,7 +467,7 @@ Remember to **Save**.
 
 [ACCORDION-BEGIN [Step 9: ](Create Roles)]
 
-All access to our HDI database objects from XSA is done automatically by the HDI container technical user. However if you want to allow access via other database users (for use cases such as external reporting tools) you must create a database role. The same applies if you want to add additional privileges to the technical user. Create another folder called `roles`.
+All access to our HDI database objects from XSA is done automatically by the HDI container technical user. However if you want to allow access via other database users (for use cases such as external reporting tools) you must create a database role. The same applies if you want to add additional privileges to the technical user. Create another folder called `roles` under `src`.
 
 First, you need to create a structured privilege. This is the logical successor to the analytic privilege and allows us to perform instance filtering for our `CDS` view you created earlier. Enter this code into the file `PurchaseOrder.hdbstructuredprivilege` and save.
 
@@ -471,29 +484,29 @@ This will limit the access to your view to only allow users with this privilege 
 Now create a role named `admin.hdbrole` and enter this code. Don't forget to save.
 
 ```
-  {
-  	"role":{
-  		"name": "admin",
-  		"schema_privileges": [{
-  		   "privileges": ["SELECT METADATA",
-  		    			  "SELECT CDS METADATA",
-  		    			  "SELECT",
-  		    			  "INSERT",
-  		    			  "EXECUTE",
-  		    			  "DELETE",
-  		    			  "UPDATE",
-  		    			  "CREATE TEMPORARY TABLE",
-  		    			  "TRIGGER"
-  		   ]
-  		}],
-  		"schema_analytic_privileges": [
-              {
-                  "privileges":[ "PO_VIEW_PRIVILEGE" ]
-              }
-          ]
+{
+	"role":{
+		"name": "admin",
+		"schema_privileges": [{
+		   "privileges": ["SELECT METADATA",
+		    			  "SELECT CDS METADATA",
+		    			  "SELECT",
+		    			  "INSERT",
+		    			  "EXECUTE",
+		    			  "DELETE",
+		    			  "UPDATE",
+		    			  "CREATE TEMPORARY TABLE",
+		    			  "TRIGGER"
+		   ]
+		}],
+		"schema_analytic_privileges": [
+            {
+                "privileges":[ "PO_VIEW_PRIVILEGE" ]
+            }
+        ]
 
-        }
-  }
+      }
+}
 
 ```
 
@@ -521,8 +534,6 @@ We are now ready to perform the final **Build**. HDB modules are now complete an
 
 [DONE]
 [ACCORDION-END]
-
-
 
 
 
