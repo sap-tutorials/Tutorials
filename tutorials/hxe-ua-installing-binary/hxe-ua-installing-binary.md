@@ -61,7 +61,7 @@ Complete the registration form and click the **Register** button.
 
 > **Note:** If you have an SAP login, click the Login icon at the top of the page to populate the registration form automatically.
 
-![Registration Page](HXE_register.PNG)
+![Registration Page](HXE_register.png)
 
 The **Registration Success** page displays. (You will also receive an email indicating successful registration.)
 
@@ -74,7 +74,7 @@ On the **Registration Success** page, under **1A. ON-PREMISE INSTALLATION**, cli
 >Note:
 >If you have a Mac, or another type of machine, click "Platform-independent" for a platform-independent download manager.
 
-![Registration Success page](HXE_register_success_201.PNG)
+![Registration Success page](HXE_register_success_201.png)
 
 Save the **Download Manager** file to your laptop.
 

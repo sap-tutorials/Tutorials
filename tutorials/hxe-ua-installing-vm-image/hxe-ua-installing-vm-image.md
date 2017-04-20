@@ -143,7 +143,7 @@ Register and then use the Download Manager to download a server-only virtual mac
 
 5. In Download Manager, in the **Image** pull-down, select **Virtual Machine**.
 
-    ![Download Manager](hxe_download_mgr_20.png)    
+    ![Download Manager](hxe_download_mgr_21.png)    
 
 6. Click **Browse** and select a directory where your downloads will be saved.
 
