@@ -1,8 +1,8 @@
 ---
-title: Updating SAP HANA, express edition (Binary Installer)
-description: Update your SAP HANA 2.0, express edition binary installation when new patches are released.
-primary_tag: products>sap-hana\,-express-edition  
-tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
+title: Updating SAP HANA, express edition (Virtual Machine)
+description: Update your SAP HANA 2.0, express edition VM installation when new patches are released.
+primary_tag: products>sap-hana\,-express-edition
+tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  
@@ -27,7 +27,14 @@ Using the Download Manager, select Binary Installer and download the Server only
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Extract the Packages)]
+[ACCORDION-BEGIN [Step 2: ](Copy Packages to the Virtual Machine)]
+
+Using an FTP client, copy the packages from your local machine to the virtual machine.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Extract the Packages)]
 
 Login as `<sid>adm` and extract the contents of the packages.
 
@@ -42,7 +49,7 @@ tar -zxf <downloaded_path>/hxexsa.tgz
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Update the Server Installation)]
+[ACCORDION-BEGIN [Step 4: ](Update the Server Installation)]
 
 Navigate to the directory where you extracted the packages:
 
