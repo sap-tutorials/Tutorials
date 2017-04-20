@@ -1,8 +1,8 @@
 ---
 title: Configure Android Studio for mobile development
 description: Configure an Android Studio project for mobile development with SAP Cloud Platform Development and Operations
-primary_tag: operating_system>android
-tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>sap-cloud-platform, operating_system>android ]
+primary_tag: operating-system>android
+tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>sap-cloud-platform, operating-system>android ]
 
 ---
 
