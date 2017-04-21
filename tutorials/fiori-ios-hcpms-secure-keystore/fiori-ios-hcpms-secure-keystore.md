@@ -51,11 +51,12 @@ The new Swift file is now created. In this file, you will now add logic to initi
 
 [ACCORDION-BEGIN [Step 3: ](Add import statements)]
 
-First, you need a few extra imports. Below the already existing `Foundation` import, add the following two imports:
+First, you need a few extra imports. Below the already existing `Foundation` import, add the following three imports:
 
 ```swift
 import UIKit
 import SAPFoundation
+import SAPCommon
 ```
 
 [DONE]
@@ -66,8 +67,8 @@ import SAPFoundation
 Next, set up a the class definition along with a couple of private fields inside the class. These will be used in the methods you will implement later. Just below the import statements you added, add the following type definition:
 
 ```swift
-class KeystoreAuthenticator: NSObject, URLSessionTaskDelegate {
-    private static let logger = Logger.shared(withName: "KeystoreAuthenticator")
+class KeystoreAuthenticator: NSObject, SAPURLSessionDelegate {
+    private let logger = Logger.shared(named: "KeystoreAuthenticator")
     private var store: SecureKeyValueStore! = nil
     private let encryptionKey = "mySuperStrongEncryptionKey"	    
     private var username: String!
@@ -96,7 +97,7 @@ private func initializeSecureStore() {
             self.password = password
         }
     } catch let error {
-        KeystoreAuthenticator.logger.error(error.localizedDescription)
+        self.logger.error(error.localizedDescription)
     }
 }
 ```
@@ -127,13 +128,13 @@ Now, add a method which will challenge the authentication. Below the just added 
 ```swift
 public func authenticate() {
     let sapcpmsObserver = SAPcpmsObserver(applicationID: Constants.appId)
-    urlSession = SAPURLSession(urlSessionDelegate: self)
+    urlSession = SAPURLSession(delegate: self)
     urlSession.register(sapcpmsObserver)
-    var request = URLRequest(url: URL(string: Constants.appUrl)!)
+    var request = URLRequest(url: Constants.appUrl)
     request.httpMethod = "GET"
 
     let dataTask = urlSession.dataTask(with: request) { (data, response, error) in
-        KeystoreAuthenticator.logger.info("OK")
+        self.logger.info("OK")
     }
     dataTask.resume()
 }
@@ -196,7 +197,7 @@ public func storeCredential(username: String, password: String) {
         try self.store.put(username, forKey: "username")
         try self.store.put(password, forKey: "password")
     } catch let error {
-        KeystoreAuthenticator.logger.error(error.localizedDescription)
+        self.logger.error(error.localizedDescription)
     }
 }
 ```
@@ -234,33 +235,36 @@ If you look closely at the previously created `authenticate` method, you have se
 
 In addition, you haven't yet implemented the logic for cases where authentication fails -- or couldn't be performed because the secure store is empty -- and the Basic Authentication view should be presented first instead of the Master page.
 
-To remedy that, add the following two methods to the `KeystoreAuthenticator.swift` file:
+To remedy that, add the following `sapURLSession` task delegation method to the `KeystoreAuthenticator.swift` file:
 
 ```swift
-func urlSession(_ session: URLSession,
-                  task: URLSessionTask,
-                  didReceive challenge: URLAuthenticationChallenge,
-                  completionHandler: @escaping(URLSession.AuthChallengeDisposition,
-                                               URLCredential?) -> Void) {
+func sapURLSession(_ session: SAPURLSession,
+                     task: SAPURLSessionTask,
+                     didReceive challenge: URLAuthenticationChallenge,
+                     completionHandler: @escaping (SAPURLSession.AuthChallengeDisposition) -> Void) {
     if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
         let credential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
-        completionHandler(URLSession.AuthChallengeDisposition.useCredential, credential)
+        completionHandler(.use(credential))
     } else if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodHTTPBasic {
         if let username = self.username, let password = self.password {
             let cred = URLCredential(user: username,
                                      password: password,
                                      persistence: URLCredential.Persistence.forSession)
-            completionHandler(URLSession.AuthChallengeDisposition.useCredential, cred)
+            completionHandler(.use(cred))
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.urlSession = urlSession
         } else {
             presentBasicAuthViewController()
         }
     } else {
-        KeystoreAuthenticator.logger.error("Unknown authentication method")
+        self.logger.error("Unknown authentication method")
     }
 }
+```
 
+...as well as the `presentBasicAuthViewController()` method which will be called in case no credentials are stored yet in the secure key store:
+
+```swift
 private func presentBasicAuthViewController() {
     DispatchQueue.main.async {
         let storyboard: UIStoryboard? = UIStoryboard(name: "Main", bundle: nil)

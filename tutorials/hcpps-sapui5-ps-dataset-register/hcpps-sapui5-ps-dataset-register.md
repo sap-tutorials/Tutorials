@@ -270,9 +270,9 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`webapp\controller\dataset\register.controller.js`](solution-controller-dataset-register.controller.js.txt)
-  - [`webapp\view\dataset\register.view.xml`](solution-view-dataset-register.view.xml.txt)
-  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`webapp\controller\dataset\register.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/solution-controller-dataset-register.controller.js.txt)
+  - [`webapp\view\dataset\register.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/solution-view-dataset-register.view.xml.txt)
+  - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]

@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Push Notifications](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
+ - **Tutorials:** [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
 
 ## Next Steps
- - [Logging and tracing in SAP Cloud Platform mobile service for development and operations](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-logging.html)
+ - [Logging and tracing in SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-logging.html)
 
 ## Details
 ### You will learn  
@@ -101,4 +101,4 @@ settings.load(for: .application)
 [ACCORDION-END]
 
 ## Next Steps
- - [Logging and tracing in SAP Cloud Platform mobile service for development and operations](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-logging.html)
+ - [Logging and tracing in SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-logging.html)

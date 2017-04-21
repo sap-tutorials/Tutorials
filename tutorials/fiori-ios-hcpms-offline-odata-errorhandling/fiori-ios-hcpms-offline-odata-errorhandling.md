@@ -80,6 +80,35 @@ The first method instantiates the timer, and defines it as a repeating schedule 
 
 The second method is used to invalidate the timer, when the application will be terminated.
 
+To instantiate the timer, add the `startScheduledUpload()` method to the `urlSession didSet` handler:
+
+```swift
+var urlSession: SAPURLSession? {
+    didSet {
+        self.eSPMContainer = ESPMContainer(urlSession: urlSession!)
+        self.uploadLogs()
+        self.startScheduledUpload()
+    }
+}
+```
+
+To stop the timer when the app is inactive and resume it once active again, add the following two task delegates:
+
+```swift
+func applicationDidEnterBackground(_ application: UIApplication) {
+    self.stopScheduledUpload()
+}
+
+func applicationWillEnterForeground(_ application: UIApplication) {
+    if self.scheduledUploadTimer != nil {
+        self.scheduledUploadTimer!.resume()
+    }
+    else {
+        self.startScheduledUpload()
+    }
+}
+```
+
 [DONE]
 [ACCORDION-END]
 

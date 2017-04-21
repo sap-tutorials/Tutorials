@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, operating-system>ios, products>sap-cloud-platform, p
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Enable SAP Cloud Platform mobile service for development and operations](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
+ - **Tutorials:** [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
 
 ## Next Steps
  - [Implement Fiori for iOS controls](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-fioriuikit.html)

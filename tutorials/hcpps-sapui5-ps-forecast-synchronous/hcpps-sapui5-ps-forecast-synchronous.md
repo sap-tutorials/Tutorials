@@ -624,14 +624,14 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`webapp\fragment\dataset\DatasetHeader.fragment.xml`](solution-fragment-dataset-DatasetHeader.fragment.xml.txt)
-  - [`webapp\fragment\dataset\DatasetList.fragment.xml`](solution-fragment-dataset-DatasetList.fragment.xml.txt)
-  - [`webapp\fragment\dataset\DatasetList.js`](solution-fragment-dataset-DatasetList.js.txt)
-  - [`webapp\fragment\forecast\ServiceForm.fragment.xml`](solution-controller-forecast-ServiceForm.fragment.xml.txt)
-  - [`webapp\fragment\forecast\ServiceResult.fragment.xml`](solution-controller-forecast-ServiceResult.fragment.xml.txt)
-  - [`webapp\controller\forecast\synchronous.controller.js`](solution-controller-forecast-synchronous.controller.js.txt)
-  - [`webapp\view\forecast\synchronous.view.xml`](solution-view-forecast-synchronous.view.xml.txt)
-  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`webapp\fragment\dataset\DatasetHeader.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-fragment-dataset-DatasetHeader.fragment.xml.txt)
+  - [`webapp\fragment\dataset\DatasetList.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-fragment-dataset-DatasetList.fragment.xml.txt)
+  - [`webapp\fragment\dataset\DatasetList.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-fragment-dataset-DatasetList.js.txt)
+  - [`webapp\fragment\forecast\ServiceForm.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-controller-forecast-ServiceForm.fragment.xml.txt)
+  - [`webapp\fragment\forecast\ServiceResult.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-controller-forecast-ServiceResult.fragment.xml.txt)
+  - [`webapp\controller\forecast\synchronous.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-controller-forecast-synchronous.controller.js.txt)
+  - [`webapp\view\forecast\synchronous.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-view-forecast-synchronous.view.xml.txt)
+  - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]

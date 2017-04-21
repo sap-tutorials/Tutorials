@@ -130,7 +130,7 @@ With the definition of this functions, the `TableView` will retrieve data from t
 
 [ACCORDION-BEGIN [Step 5: ](Implement function loadData in TableViewController)]
 
-In the **Project Navigator**, click on the `TableViewController.swift` file. This will open the code behind the table view controller. This file already contains a function `loadData`, which was created in tutorial [Device Registration](http://go.sap.com/developer/tutorials.html?fiori-ios-hcpms-device-registration.html).
+In the **Project Navigator**, click on the `TableViewController.swift` file. This will open the code behind the table view controller. This file already contains a function `loadData`, which was created in tutorial [Device Registration](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-device-registration.html).
 
 The purpose of the `loadData` function is to call the back-end to retrieve traveling agencies. Once the result has been received, the JSON response should be transformed into `tableData`, which is an array of Strings. In the previous step you have already connected this `tableData` array to the `TableView`.
 

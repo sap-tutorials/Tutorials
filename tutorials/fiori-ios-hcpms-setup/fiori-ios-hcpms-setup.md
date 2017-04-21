@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
  - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
- - [Create an application definition](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-application-setup.html)
+ - [Create an application definition](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-application-setup.html)
 
 ## Details
 ### You will learn  
@@ -51,4 +51,4 @@ Return to the cockpit by clicking on your User ID "breadcrumb" link near the top
 [ACCORDION-END]
 
 ## Next Steps
- - [Create an application definition](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-application-setup.html)
+ - [Create an application definition](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-application-setup.html)
