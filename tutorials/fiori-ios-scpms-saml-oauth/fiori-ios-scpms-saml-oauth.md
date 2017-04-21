@@ -84,7 +84,7 @@ Click **Save** to store the configuration. The application is now configured to 
 
 [ACCORDION-BEGIN [Step 3: ](Generate application with SAML)]
 
-Open the SDK Assistant, and follow the steps outlined in tutorial [Creating an app using the SDK Assistant](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html). Use the same settings and names (you may choose a different destination).
+Open the SDK Assistant, and follow the steps outlined in tutorial [Creating an app using the SDK Assistant](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html). Use the same settings and names (you may choose a different destination).
 
 After you click **Finish**, you will get a dialog prompting **Unable to download metadata for connection: <your connection ID>. Please select the metadata from your file system.**
 

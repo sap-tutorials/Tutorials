@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
  - **Development machine:** Access to a Mac computer
 
 ## Next Steps
- - [Enable SAP Cloud Platform mobile service for development and operations](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
+ - [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
 
 ## Details
 ### You will learn  
@@ -100,4 +100,4 @@ Expand the **Link Binary With Libraries** panel, and make sure the three SDK fil
 [ACCORDION-END]
 
 ## Next Steps
- - [Enable SAP Cloud Platform mobile service for development and operations](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
+ - [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
