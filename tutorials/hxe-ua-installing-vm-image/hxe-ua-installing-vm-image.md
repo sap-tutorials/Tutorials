@@ -131,7 +131,7 @@ Register and then use the Download Manager to download a server-only virtual mac
 
     If you have a Mac, or another type of machine, click `Platform-independent` for a platform-independent download manager.
 
-    ![Registration Success page](hxe_register_success_20.PNG)
+    ![Registration Success page](hxe_register_success_21.PNG)
 
 4. Save the download manager file to your laptop and open it.
 
