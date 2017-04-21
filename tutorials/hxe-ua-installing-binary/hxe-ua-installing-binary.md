@@ -61,7 +61,7 @@ Complete the registration form and click the **Register** button.
 
 > **Note:** If you have an SAP login, click the Login icon at the top of the page to populate the registration form automatically.
 
-![Registration Page](HXE_register.png)
+![Registration Page](register.png)
 
 The **Registration Success** page displays. (You will also receive an email indicating successful registration.)
 
@@ -87,7 +87,7 @@ Run the **Download Manager**. If your system displays a security warning when yo
 **Note:**
 If you are inside a corporate firewall, you will be prompted for your proxy settings. Contact your IT administrator.
 
-![Download Manager](hxe_download_manager_201.png)
+![Download Manager](download_manager_201.png)
 
 In the **Image** pull-down, select **Binary Installer**. Click **Browse** and select where you want your downloads to be saved. Then select one or more of the following packages:
 
