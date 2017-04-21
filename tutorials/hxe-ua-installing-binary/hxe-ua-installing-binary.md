@@ -74,7 +74,7 @@ On the **Registration Success** page, under **1A. ON-PREMISE INSTALLATION**, cli
 >Note:
 >If you have a Mac, or another type of machine, click "Platform-independent" for a platform-independent download manager.
 
-![Registration Success page](HXE_register_success_201.png)
+![Registration Success page](register_success_201.png)
 
 Save the **Download Manager** file to your laptop.
 
