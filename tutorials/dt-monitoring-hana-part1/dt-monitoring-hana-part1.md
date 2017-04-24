@@ -22,7 +22,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
  - Checking Coordinator Types to see if extended storage is running and created
 
 ### Time to Complete
-**15 Min**
+**10 Min**
 
 ---
 SAP HANA cockpit provides a single point of access to a range of SAP HANA administration and monitoring tasks. It is used to monitor and ensure the overall health of the system. It enables a user to configure tasks such as:

@@ -20,7 +20,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
  - Removing Extended Storage using SAP HANA Studio, SAP HANA Cockpit
 
 ### Time to Complete
-**15 Min**
+**10 Min**
 
 ---
 

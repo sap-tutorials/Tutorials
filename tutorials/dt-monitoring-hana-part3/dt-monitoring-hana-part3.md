@@ -19,7 +19,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
  - Restarting the Extended Storage Service using a SSH session
 
 ### Time to Complete
-**15 Min**
+**10 Min**
 
 ---
 

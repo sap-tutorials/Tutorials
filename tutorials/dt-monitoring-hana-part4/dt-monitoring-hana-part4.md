@@ -16,7 +16,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering,
  - Check which extended storage/dynamic tiering tables have been created
 
 ### Time to Complete
-**15 Min**
+**10 Min**
 
 ---
 
