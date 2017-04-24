@@ -7,10 +7,10 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Configure a back-end connection (Sample OData service)](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-sample-odata-service.html)
+ - **Tutorials:** [Configure a back-end connection (Sample OData service)](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sample-odata-service.html)
 
 ## Next Steps
- - [Push Notifications](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
+ - [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
 
 ## Details
 ### You will learn  
@@ -264,4 +264,4 @@ If you now click on one of the **Supplier** entities, it will display the **Deta
 [ACCORDION-END]
 
 ## Next Steps
-- [Push Notifications](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
+- [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)

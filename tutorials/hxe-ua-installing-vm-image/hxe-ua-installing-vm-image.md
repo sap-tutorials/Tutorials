@@ -1,8 +1,8 @@
 ---
 title: Installing SAP HANA 2.0, express edition (Virtual Machine Method)
 description: Installing the VM image is the simplest SAP HANA 2.0, express edition setup for compatible Windows, OS X, and Linux machines. This method installs a prepackaged express edition appliance running on a SUSE Linux VM guest.
-primary_tag: products>sap-hana\,-express-edition 
-tags: [  tutorial>beginner, products>sap-hana\,-express-edition  ]
+primary_tag: products>sap-hana\,-express-edition  
+tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 ---
 
 ## Prerequisites  
@@ -16,7 +16,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition  ]
 
 
 ## Disclaimer
-SAP HANA, express edition is officially supported on SLES and RHEL. SAP Community members have been successful in running SAP HANA, express edition on other Linux operating systems that are not formally supported by SAP, such as Ubuntu, `openSUSE` and Fedora. SAP is not committing to resolving any issues that may arise from running SAP HANA, express edition on these platforms.
+SAP HANA, express edition is officially supported on SLES. SAP Community members have been successful in running SAP HANA, express edition on other Linux operating systems that are not formally supported by SAP, such as Ubuntu, `openSUSE` and Fedora. SAP is not committing to resolving any issues that may arise from running SAP HANA, express edition on these platforms.
 
 ## Details
 ### You will learn  
@@ -47,6 +47,7 @@ The Virtual Machine method installs:
 
 For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Pre-Installation Info: ](Requirements)]
@@ -88,6 +89,7 @@ SAP HANA 2.0, express edition has been tested on these `hypervisors`:
 
 This tutorial uses VMware Player.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Install a Hypervisor)]
@@ -102,6 +104,7 @@ VMware Player is a `hypervisor` compatible with SAP HANA 2.0, express edition. Y
 
 3. Register when prompted and follow the setup instructions.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download the VM Package)]
@@ -124,11 +127,11 @@ Register and then use the Download Manager to download a server-only virtual mac
 
     The **Registration Success** page displays. (You will also receive an email indicating successful registration.)
 
-3. Under **SAP HANA 2.0, express edition download manager**, click the download manager that matches your system: Linux or Windows.
+3. Under **1A. ON-PREMISE INSTALLATION**, click the download manager that matches your system: Linux or Windows.
 
     If you have a Mac, or another type of machine, click `Platform-independent` for a platform-independent download manager.
 
-    ![Registration Success page](hxe_register_success_20.PNG)
+    ![Registration Success page](hxe_register_success_21.PNG)
 
 4. Save the download manager file to your laptop and open it.
 
@@ -140,7 +143,7 @@ Register and then use the Download Manager to download a server-only virtual mac
 
 5. In Download Manager, in the **Image** pull-down, select **Virtual Machine**.
 
-    ![Download Manager](hxe_download_mgr_20.png)    
+    ![Download Manager](hxe_download_mgr_21.png)    
 
 6. Click **Browse** and select a directory where your downloads will be saved.
 
@@ -150,7 +153,7 @@ Register and then use the Download Manager to download a server-only virtual mac
 
     - **Server only virtual machine** - Downloads **`hxe.ova`**; the server plus Application Function Library (AFL).  
 
-    - **Server + applications virtual machine** - Downloads **`hxexsa.ova`**; the server plus XS Advanced, Web IDE, SAP HANA Cockpit, and SAP Enterprise Architecture Designer.  
+    - **Server + applications virtual machine** - Downloads **`hxexsa.ova`**; the server plus XS Advanced, Web IDE, and SAP HANA Cockpit.  
 
         >**Note**: Although this package will run on a 16 GB machine, SAP recommends 24 GB of RAM for optimum performance using the full suite of developer applications.
 
@@ -166,7 +169,15 @@ Register and then use the Download Manager to download a server-only virtual mac
 
     > **Tip:** After you develop an application using SAP HANA, express edition, install Download Manager to a client machine and download the *clients only* to that client machine. You can then use the clients to connect to -- and test -- your HANA application, emulating a customer.  
 
-    - **Text analysis files for additional languages** - For languages other than English and German, files required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the **Server only virtual machine** and **Server + applications virtual machine** packages.) For the text analysis files installation procedure, see [Start Using SAP HANA 2.0, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html).
+    - **Text analysis files for additional languages** - Downloads `additional_lang.tgz`. For languages other than English and German, this package is required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the **Server only virtual machine** and **Server + applications virtual machine** packages.) For the text analysis files installation procedure, see [Start Using SAP HANA 2.0, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html).
+
+    - **SAP Enterprise Architecture Designer** - This optional package is only valid on server + application virtual machine. File name is `eadesigner.tgz`. SAP EA Designer lets you capture, analyze, and present your organization's landscapes, strategies, requirements, processes, data, and other artifacts in a shared environment.
+
+    - **SAP Smart Data Streaming option** - Downloads `sds.tgz`, which contains SAP HANA smart data streaming.
+
+    - **SAP Smart Data Streaming studio plug-in** - Downloads `sds_plugin.zip`, which contains an Eclipse plugin for creating and deploying smart data streaming projects.
+
+    - **SAP HANA Interactive Education (SHINE)** - This optional package is only valid on server + application virtual machine. The download file name is `shine.tgz`. SHINE makes it easy to learn how to build applications on SAP HANA Extended Application Services Advanced Model (XSA).
 
 8. Click the **Download** button.
 
@@ -174,6 +185,7 @@ Register and then use the Download Manager to download a server-only virtual mac
 
     ![Download complete](hxe_download_complete.PNG)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import the OVA)]
@@ -192,6 +204,7 @@ Import the downloaded Open Virtual Appliance (OVA) file (either `hxe.ova` or `hx
 
 4. Power on your VM.
 
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps

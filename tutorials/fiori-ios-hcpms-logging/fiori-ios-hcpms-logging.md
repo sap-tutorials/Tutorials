@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Application logging and tracing](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-application-logging.html)
+ - **Tutorials:** [Application logging and tracing](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-application-logging.html)
 
 ## Next Steps
- - [Manage usage statistics on SAP Cloud Platform mobile service for development and operations](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-reporting.html)
+ - [Manage usage statistics on SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-reporting.html)
 
 ## Details
 ### You will learn  
@@ -72,4 +72,4 @@ Now you have lowered the logging levels, try run your iOS application again, and
 [ACCORDION-END]
 
 ## Next Steps
- - [Manage usage statistics on SAP Cloud Platform mobile service for development and operations](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-reporting.html)
+ - [Manage usage statistics on SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-reporting.html)

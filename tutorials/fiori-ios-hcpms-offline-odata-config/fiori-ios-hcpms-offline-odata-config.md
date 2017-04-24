@@ -7,7 +7,7 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Introduction to Offline OData](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-introduction.html)
+ - **Tutorials:** [Introduction to Offline OData](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-introduction.html)
 
 
 ## Next Steps

@@ -1,8 +1,8 @@
 ---
 title: Updating SAP HANA, express edition (Binary Installer)
-description: Update SAP HANA 2.0, express edition when new patches are released.
-primary_tag: products>sap-hana\,-express-edition 
-tags: [  tutorial>beginner, products>sap-hana\,-express-edition  ]
+description: Update your SAP HANA 2.0, express edition binary installation when new patches are released.
+primary_tag: products>sap-hana\,-express-edition  
+tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 ---
 
 ## Prerequisites  
@@ -20,62 +20,56 @@ Update SAP HANA 2.0, express edition when new patches are released.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download update files)]
+[ACCORDION-BEGIN [Step 1: ](Download Update Files)]
 
-1. Using the download manager, select Binary Installer and download the Server only package. If the installation you are updating has the Applications package, download the Applications package as well.
-
-2. Extract the contents of the packages.
+Using the Download Manager, select Binary Installer and download the Server only package (`hxe.tgz`). If the installation you are updating has the Applications package, download the Applications package (`hxexsa.tgz`) as well.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Update the server installation)]
+[ACCORDION-BEGIN [Step 2: ](Extract the Packages)]
 
-1. Navigate to the following directory:
+Login as `<sid>adm` and extract the contents of the packages.
 
-    ```
-    cd <download_path>/HANA_EXPRESS_20/DATA_UNITS/HDB_SERVER_LINUX_X86_64
-    ```
+Example:
 
-2. As the root user, run one of the following commands to begin the SAP HANA server update:
-
-    - If AFL is installed:
-
-    ```
-    sudo ./hdbupd --ignore=check_min_mem,check_plugin_dependencies
-    ```
-    - If AFL is not installed:
-
-    ```
-    sudo ./hdbupd --ignore=check_min_mem
-    ```
-
-3. Follow the prompts to complete the server update.
+```
+su -l <sid>adm
+tar -zxf <downloaded_path>/hxe.tgz
+tar -zxf <downloaded_path>/hxexsa.tgz
+```
 
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Update the Server Installation)]
 
-[ACCORDION-BEGIN [Step 3: ](Update the applications package)]
+Navigate to the directory where you extracted the packages:
 
-1. Navigate to the following directory:
+```
+cd <extract_path>/HANA_EXPRESS_20/
+```
 
-    ```
-    cd <download_path>/HANA_EXPRESS_20/DATA_UNITS/HDB_SERVER_LINUX_X86_64
-    ```
+As the root user, run the upgrade script to update the server:
 
-2. As the root user, run the following command to update XSA applications:
+```
+sudo ./hxe_upgrade.sh
+```
 
-    ```
-    sudo ./hdblcm --action=update --components=xs --xs_components=all --configfile=configurations/auto_install.cfg --component_medium=<download_path>/HANA_EXPRESS_20
-    ```
+Follow the prompts to complete the server update.
 
-3. Follow the prompts to complete the XSA update.
+>**Note**
+>`hxe_upgrade.sh` detects the Server-only and Applications packages. The script will upgrade the server and XSA (if available).
 
-4. Run `hxe_optimize.sh` as `<sid>adm` user.
+>**Note**
+> Only upgrading from SAP HANA, express edition 2.0 SP 00 to SAP HANA, express edition 2.0 SP 01 is supported.
 
-    >**Note:**
-    > `hxe_optimize.sh` is located in `<download_path>/HANA_EXPRESS_20`
+>**Note**
+> If you receive the error message
+> ```
+    Installation of archive file(s) '/usr/sap/HXE_2_SP1/HANA_EXPRESS_20/DATA_UNITS/HANA_COCKPIT_20/XSACCOCKPIT02_5.zip' failed
+  ```
+> see troubleshooting topic [Update Fails with Error Message](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
 
 [DONE]
 [ACCORDION-END]

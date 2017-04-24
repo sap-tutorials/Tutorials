@@ -185,7 +185,7 @@ private func executeRequest<T>(_ request: @escaping(DataQuery) throws -> [T],
                     guard error == nil else {
                         // in case of error, close store and reset flag
                         self.logger.info("Could not download store", error: error)
-                        self.closeStore()
+                        self.close()
                         self.isStoreOpened = false
                         return
                     }
@@ -202,7 +202,7 @@ private func executeRequest<T>(_ request: @escaping(DataQuery) throws -> [T],
                     }
 
                     // once finished, close store and reset flag
-                    self.closeStore()
+                    self.close()
                     self.isStoreOpened = false
                 }
             }

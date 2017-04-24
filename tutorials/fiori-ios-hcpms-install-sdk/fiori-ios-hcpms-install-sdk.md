@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
  - **Development machine:** Access to a Mac computer
 
 ## Next Steps
- - [Enable SAP Cloud Platform mobile service for development and operations](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
+ - [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
 
 ## Details
 ### You will learn  
@@ -24,13 +24,24 @@ In this small tutorial, you will learn to add the SAP Cloud Platform for iOS SDK
 
 [ACCORDION-BEGIN [Step 1: ](Store SDK files locally)]
 
-Download the `SAP-CP-SDK-for-iOS.dmg` disk image file. Double-clicking the file will mount it as a drive. Open the mounted image, and you will see it contains 3 folder and one application:
+Download the `SAP-CP-SDK-for-iOS.dmg` disk image file. Double-clicking the file will mount it as a drive. Open the mounted image, and you will see it the following:
+
+![Adding files dialog](fiori-ios-hcpms-install-sdk-07.png)
+
+Drag the folder `SAP CP SDK for iOS` to the local `Applications` folder.
+
+The folder you just copied contains 3 sub-folders and one application:
 
 ![Adding files dialog](fiori-ios-hcpms-install-sdk-01.png)
 
 1.  Application `SAP Cloud Platform SDK for iOS Assistant` will be covered in tutorial [Creating an app using the SDK Assistant](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html).
 2.  Folder `Documentation` contains the API docs for the SDK.
 3.  Folder `Tools` contain scripts to generate OData proxy classes manually
+
+    Open the folder `Tools > ProxyGenerator`. Drag the executable `sapcpsdk-proxygenerator` and folder `sapcpsdk-resources` to the `UsrLocalBin` folder (which is a symbolic link to your `/usr/local/bin` folder) so you can call the proxy generator from any location:
+
+    ![Proxy Generator](fiori-ios-hcpms-install-sdk-08.png)
+
 3.  Folder `Frameworks` contain the actual SDK framework files.
 
     Open the folder `Frameworks > Release-fat`. These contain the following 5 framework files:
@@ -42,8 +53,6 @@ Download the `SAP-CP-SDK-for-iOS.dmg` disk image file. Double-clicking the file 
     | `SAPOData.framework` | Use the `SAPOData` component to interact with an OData endpoint. `SAPOData` parses OData payloads, produces OData requests, and handles responses for OData versions 2 and 4. |
     | `SAPOfflineOData.framework` | Use the `SAPOfflineOData` component to add offline capability to your application. |
     | `SAPFiori.framework` | Includes a number of UI components which implement the Fiori Design Language. These inherit from the Apple `UIKit` components. |
-
-**Copy** the content of the mounted `SAP-CP-SDK-for-iOS.dmg` image to a local folder on your development machine.
 
 [DONE]
 [ACCORDION-END]
@@ -100,4 +109,4 @@ Expand the **Link Binary With Libraries** panel, and make sure the three SDK fil
 [ACCORDION-END]
 
 ## Next Steps
- - [Enable SAP Cloud Platform mobile service for development and operations](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
+ - [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)

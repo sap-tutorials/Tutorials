@@ -561,9 +561,9 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`webapp\controller\dataset\manage.controller.js`](solution-controller-dataset-manage.controller.js.txt)
-  - [`webapp\view\dataset\manage.view.xml`](solution-view-dataset-manage.view.xml.txt)
-  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`webapp\controller\dataset\manage.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-manage/solution-controller-dataset-manage.controller.js.txt)
+  - [`webapp\view\dataset\manage.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-manage/solution-view-dataset-manage.view.xml.txt)
+  - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-manage/solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]

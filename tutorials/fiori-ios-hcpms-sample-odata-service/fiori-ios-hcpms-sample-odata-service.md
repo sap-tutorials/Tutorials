@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Create an application definition](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-application-setup.html)
+ - **Tutorials:** [Create an application definition](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-application-setup.html)
 
 ## Next Steps
- - [Create an app using the SDK Assistant](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)
+ - [Create an app using the SDK Assistant](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)
 
 ## Details
 ### You will learn  
@@ -126,4 +126,4 @@ For now, this complements this tutorial step. In the following tutorials, you wi
 [ACCORDION-END]
 
 ## Next Steps
- - [Create an app using the SDK Assistant](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)
+ - [Create an app using the SDK Assistant](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)

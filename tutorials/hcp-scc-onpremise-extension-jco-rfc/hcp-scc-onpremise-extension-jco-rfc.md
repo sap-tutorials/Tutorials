@@ -2,7 +2,7 @@
 title: Deploy an JCo / RFC based on-premise extension using SAP HANA Cloud Connector
 description: Deploy an on-premise extension which uses RFC via JCo. The scenario used in this tutorial is based on the well-known `SFLIGHT` model available as default sample content in all ABAP systems.
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>cloud, products>cloud-connector-for-sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform-connectivity ]
 ---
 
 ## Prerequisites  

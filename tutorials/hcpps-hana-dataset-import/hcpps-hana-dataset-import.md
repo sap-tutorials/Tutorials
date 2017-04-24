@@ -32,15 +32,15 @@ This is why we choose to have the dataset as "insert" statement files.
 Depending on your area of interest you can pick those of interest and download the files locally.
 
   - **Cash Flow**: contains historical cash flow data and date related indicators
-    - [`link`](demo.cashflow.sql.txt)
+    - [`link`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/demo.cashflow.sql.txt)
   - **Census**: contains 14 characteristics of an individual extracted from a census dataset associated to an indicator equal to 1 when the individual earned more than fifty thousand dollars the previous year, else 0 (excerpt from the American Census Bureau database, completed in 1994 by Barry Becker, source: http://www.census.gov/)
-    - [`link 1`](demo.census.sql.1.txt)
-    - [`link 2`](demo.census.sql.2.txt)
-    - [`link 3`](demo.census.sql.3.txt)
-    - [`link 4`](demo.census.sql.4.txt)
-    - [`link 5`](demo.census.sql.5.txt)
+    - [`link 1`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/demo.census.sql.1.txt)
+    - [`link 2`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/demo.census.sql.2.txt)
+    - [`link 3`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/demo.census.sql.3.txt)
+    - [`link 4`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/demo.census.sql.4.txt)
+    - [`link 5`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/demo.census.sql.5.txt)
   - **E-Commerce**: contains a single day of Web traffic from an E-commerce site in December 1999.
-    - [`link`](demo.transaction.sql.txt).
+    - [`link`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/demo.transaction.sql.txt).
 
 [DONE]
 [ACCORDION-END]

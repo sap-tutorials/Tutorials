@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Manage usage statistics on SAP Cloud Platform mobile service for development and operations](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-reporting.html)
+ - **Tutorials:** [Manage usage statistics on SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-reporting.html)
 
 
 ## Next Steps

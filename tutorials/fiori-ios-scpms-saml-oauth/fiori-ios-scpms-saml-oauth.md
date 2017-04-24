@@ -84,7 +84,7 @@ Click **Save** to store the configuration. The application is now configured to 
 
 [ACCORDION-BEGIN [Step 3: ](Generate application with SAML)]
 
-Open the SDK Assistant, and follow the steps outlined in tutorial [Creating an app using the SDK Assistant](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html). Use the same settings and names (you may choose a different destination).
+Open the SDK Assistant, and follow the steps outlined in tutorial [Creating an app using the SDK Assistant](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html). Use the same settings and names (you may choose a different destination).
 
 After you click **Finish**, you will get a dialog prompting **Unable to download metadata for connection: <your connection ID>. Please select the metadata from your file system.**
 
@@ -182,11 +182,25 @@ Copy the value of the **Client ID**, and click **Save** to store the OAuth setti
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add Client ID to Constants.swift)]
+[ACCORDION-BEGIN [Step 8: ](Generate application with SAML)]
+
+Open the SDK Assistant, and create a **new application**. Use the same settings and names (you may choose a different destination).
+
+> The reason you need to create a new application is the SDK Assistant generates an Xcode project based on the settings and authentication scheme defined in SAP Cloud Platform mobile service for development and operations. The application generated in **Step 3** has code for SAML based authentication. In this step, the SDK Assistant will generate code for **OAuth authentication**.
+
+After you click **Finish**, you will get a dialog prompting **Unable to download metadata for connection: <your connection ID>. Please select the metadata from your file system.**
+
+Locate the `metadata.xml` file you stored in **Step 1** and click **Open**.
+
+![Load metadata file](fiori-ios-scpms-saml-oauth-04.png)
+
+After a few seconds, the project is generated and Xcode will open.
+
+[ACCORDION-BEGIN [Step 9: ](Add Client ID to Constants.swift)]
 
 In Xcode, open the file `Constants.swift`. Locate the constant `clientId` in structure `Constants`. By default, it is assigned the value `0`.
 
-Replace it with the copied Client ID in **Step 8**.
+Replace it with the copied Client ID in **Step 7**.
 
 In addition, change constant `redirectURL` to `endUserUi.absoluteString`.
 
@@ -212,7 +226,7 @@ struct Constants {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Build and run the OAuth-based application)]
+[ACCORDION-BEGIN [Step 10: ](Build and run the OAuth-based application)]
 
 Build and run the application. Upon first run, you will notice the login screen is similar to the SAML based login screen:
 
@@ -229,7 +243,7 @@ Click the **Authorize** button. After you have been authenticated, you will see 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Examine authorized application and issued token)]
+[ACCORDION-BEGIN [Step 11: ](Examine authorized application and issued token)]
 
 Open a browser window and navigate to the **End-User UI URL**:
 
