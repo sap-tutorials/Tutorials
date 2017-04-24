@@ -1,7 +1,8 @@
 ---
 title: Installing SAP HANA 2.0, express edition (Virtual Machine Method)
 description: Installing the VM image is the simplest SAP HANA 2.0, express edition setup for compatible Windows, OS X, and Linux machines. This method installs a prepackaged express edition appliance running on a SUSE Linux VM guest.
-tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana\,-express-edition 
+tags: [  tutorial>beginner, products>sap-hana\,-express-edition  ]
 ---
 
 ## Prerequisites  
@@ -26,7 +27,6 @@ How to download the VM image of SAP HANA 2.0, express edition, install the image
 
 ---
 
->**Note**: This tutorial assumes you are installing SAP HANA 2.0, express edition, not SAP HANA 1.0 SP 12, express edition. If you are installing SP 12, stop reading this tutorial and consult the documentation you downloaded with the SP 12 software package. If you already have a working SP 12 installation and want to upgrade to SAP HANA 2.0, express edition without losing any data, see [How to Upgrade to SAP HANA 2.0, express edition (Virtual Machine)](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-upgrade-vm.html).
 
 [ACCORDION-BEGIN [Pre-Installation Info: ](Before you Begin)]
 

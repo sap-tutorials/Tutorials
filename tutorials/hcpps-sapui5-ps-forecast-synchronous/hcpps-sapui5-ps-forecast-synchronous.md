@@ -1,271 +1,640 @@
 ---
-title: SAP HCP predictive services, Use the synchronous Forecast HCP predictive service from a SAPUI5 application
-description: You will extend your application with the use the synchronous mode from the "Forecast" HCP predictive service
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, topic>sapui5 ]
+title: Implement the "Forecast" service synchronous mode
+description: You will extend your application with the "Forecast" service using the synchronous mode
+primary_tag: products>sap-cloud-platform-predictive-service
+tags: [ tutorial>intermediate, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Manage your "Data Set" in the HCP predictive service from a SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
+  - **Tutorials:** [Manage registered predictive "datasets"](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
 
 ## Next Steps
-  - [Use the asynchronous Forecast HCP predictive service from a SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)
+  - [Implement the "Forecast" service asynchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)
 
 ## Details
 ### You will learn
-  - How to implement the synchronous mode of the "Forecast" HCP predictive service in a SAPUI5 application
+  - How to add a SAPUI5 controller to interact with the "Forecast" SAP Cloud Platform predictive service in your SAPUI5 application
+  - How to add a SAPUI5 view to display the output of the "Forecast" SAP Cloud Platform predictive service call
+  - How to extend the default view and the newly created view
+  - How to create reusable fragments and function libraries
+
+> **Note:** our goal here is to mimic what was done using the REST Client around the "Forecast" services
 
 ### Time to Complete
   **10 minutes**
 
----
+[ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
-1. Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
+Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
 
-    Click on your ***HCP Account*** identifier (which ends with *trial*) as highlighted on the below screenshot.
+Click on your ***SAP Cloud Platform Account Name*** as highlighted on the below screenshot.
 
-    ![SAP HANA Cloud Platform Cockpit](1.png)
+![SAP HANA Cloud Platform Cockpit](01.png)
 
-1. On the left side bar, you can navigate in **Applications** > **HTML5 Applications**.
+On the left side bar, you can navigate in **Services**, then using the search box enter `Web IDE`.
 
-    ![HTML5 Applications](2.png)
+![Web IDE](02.png)
 
-1. Click on the **Edit Application** ![HTML5 Applications](3-1.png) icon for the `hcppredictiveservicesdemo` application.
+Click on the tile, then click on **Open SAP Web IDE**.
 
-    ![HTML5 Applications](3.png)
+![Web IDE](03.png)
 
-1. This will open the ***SAP Web IDE*** where you have previously created the `hcppredictiveservicesdemo` application using the project template.
+You will get access to the **SAP Web IDE** main page:
 
-    ![HTML5 Applications](4.png)
+![Web IDE](04.png)
 
-1. Create a new file called `ForecastForm.fragment.xml` in the `hcppredictiveservicesdemo\webapp\fragment\forecast` and add the following content.
+This will open the ***SAP Web IDE*** where you have previously created the `hcppredictiveservicesdemo` application using the project template.
 
-    This fragment will be used to display a form where the user can enter the parameters to run the "Forecast" service. As we will be reusing the same form for the asynchronous mode, it is a better practice to create it as a fragment.
+![HTML5 Applications](04.png)
 
-    ```xml
-    <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
-      <form:SimpleForm editable="false" layout="ResponsiveGridLayout" class="editableForm">
-        <form:content>
-          <Label text="Identifier" labelFor="idInputForecastDatasetID" class="sapUiSmallMarginTop sapUiSmallMarginBottom"></Label>
-          <Input id="idInputForecastDatasetID" value="{/dataSetData/ID}" enabled="false"/>
-          <Label text="Date Column" labelFor="idInputForecastDateColumn" class="sapUiSmallMarginTop sapUiSmallMarginBottom"></Label>
-          <Select id="idInputForecastDateColumn" forceSelection="true"
-            items="{ path: '/dataSetData/variables', sorter: { path: 'name' }, filters: [{path: 'storage', operator: 'EQ', value1: 'date'}]}">
-            <core:Item key="{name}" text="{name}"/>
-          </Select>
-          <Label text="Forecast Column" labelFor="idInputForecastTargetColumn" class="sapUiSmallMarginTop sapUiSmallMarginBottom"></Label>
-          <Select id="idInputForecastTargetColumn" forceSelection="true"
-            items="{ path: '/dataSetData/variables', sorter: { path: 'name' }, filters: [{path: 'value', operator: 'EQ', value1: 'continuous'}, {path: 'storage', operator: 'EQ', value1: 'number'}]}">
-            <core:Item key="{name}" text="{name}"/>
-          </Select>
-          <Label text="Reference Date" labelFor="idInputForecastReferenceDate" class="sapUiSmallMarginTop sapUiSmallMarginBottom"></Label>
-          <DatePicker id="idInputForecastReferenceDate" value="{/dataSetData/referenceDate}" placeholder="Enter Date ..."/>
-          <Label text="Number of Forecast" labelFor="idInputForecastNumberOfForecasts" class="sapUiSmallMarginTop sapUiSmallMarginBottom"></Label>
-          <Input id="idInputForecastNumberOfForecasts" value="{/dataSetData/numberOfForecasts}"/>
-        </form:content>
-      </form:SimpleForm>
-    </core:FragmentDefinition>
-    ```
+[DONE]
+[ACCORDION-END]
 
-1. Create a new file called `ForecastResult.fragment.xml` in the `hcppredictiveservicesdemo\webapp\fragment\forecast` and add the following content.
+[ACCORDION-BEGIN [Step 2: ](Registered dataset list fragment)]
 
-    This fragment will be used to display the "Forecast" services results, including the prediction performance metrics.
+The fragment will reuse some of the code that was used in the [Manage your registered "Datasets"](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html) tutorial.
 
-    ```xml
-    <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table">
-      <!-- A table with the Data set details. It will be populated when the button is pressed-->
-      <form:SimpleForm editable="false" layout="ResponsiveGridLayout" class="editableForm">
-        <form:content>
-          <Label text="Data Set Identifier"/>
-          <Text text="{/dataSetData/ID}"/>
-          <Label text="Name"/>
-          <Text text="{/dataSetData/name}"/>
-          <Label text="Number Of Columns"/>
-          <Text text="{/dataSetData/numberOfColumns}"/>
-          <Label text="Number Of Rows"/>
-          <Text text="{/dataSetData/numberOfRows}"/>
-        </form:content>
-      </form:SimpleForm>
-      <!-- A table with the Model performances details. It will be populated when the button is pressed-->
-      <form:SimpleForm editable="false" layout="ResponsiveGridLayout" class="editableForm">
-        <form:content>
-          <Label text="Quality Rating"></Label>
-          <Text text="{/forecastResultData/modelPerformance/qualityRating}"/>
-          <Label text="MAPE"></Label>
-          <Text text="{/forecastResultData/modelPerformance/mape}"/>
-        </form:content>
-      </form:SimpleForm>
-      <!-- A table with the forecasted data. It will be populated when the button is pressed-->
-      <table:Table rows="{/forecastResultData/forecasts}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5" width="100%">
-        <table:columns>
-          <table:Column sortProperty="date" filterProperty="date">
-            <Label text="Date"/>
-            <table:template>
-              <Text text="{date}"/>
-            </table:template>
-          </table:Column>
-          <table:Column sortProperty="forecastValue" filterProperty="forecastValue">
-            <Label text="Forecasted value"/>
-            <table:template>
-              <Text text="{forecastValue}"/>
-            </table:template>
-          </table:Column>
-          <table:Column>
-            <Label text="Error Bar Lower Bound"/>
-            <table:template>
-              <Text text="{errorBarLowerBound}"/>
-            </table:template>
-          </table:Column>
-          <table:Column>
-            <Label text="Error Bar Higher Bound"/>
-            <table:template>
-              <Text text="{errorBarHigherBound}"/>
-            </table:template>
-          </table:Column>
-        </table:columns>
-      </table:Table>
-    </core:FragmentDefinition>
-    ```
+The fragment will contain:
 
-1. Create a new file called `ForecastSynchronous.view.xml` in the `hcppredictiveservicesdemo\webapp\view\forecast` and add the following content.
+  - a table with the list of registered datasets details
 
-    The view embeds the fragment created previously to display a form where the user can select the dataset to be used for the forecast call and additional service parameters.
+For more details on fragment, please refer to the [XML Templating documentation](https://sapui5.hana.ondemand.com/#docs/guide/5ee619fc1370463ea674ee04b65ed83b.html).
 
-    ```xml
-    <mvc:View controllerName="demo.controller.forecast.ForecastSynchronous" xmlns:html="http://www.w3.org/1999/xhtml"
-      xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form">
-      <Panel expandable="true" expanded="false" headerText="Forecast with the HCP predictive services (Synchronous)" class="sapUiResponsiveMargin"
-        width="auto" height="auto">
-        <form:SimpleForm editable="true" layout="ResponsiveGridLayout" class="editableForm">
-          <form:content>
-            <Button text="Retrieve List" type="Default" press="onDataSetGetList"/>
-          </form:content>
-        </form:SimpleForm>
-        <Panel expandable="false" expanded="true" visible="{= ${/function} === 'ForecastSynchronous'}">
-          <Panel expandable="false" expanded="true" visible="{= typeof ${/dataSetListData} !== 'undefined'}">
-            <core:Fragment fragmentName='demo.fragment.dataset.DatasetList' type='XML'/>
-          </Panel>
-          <Panel expandable="false" expanded="true" visible="{= typeof ${/dataSetData} !== 'undefined'}">
-            <core:Fragment fragmentName='demo.fragment.forecast.ForecastForm' type='XML'/>
-            <Button text="Forecast in Synchronous Mode" type="Default" press="onForecastSynchronous"/>
-          </Panel>
-          <Panel expandable="false" expanded="true" visible="{= typeof ${/forecastResultData} !== 'undefined'}">
-            <core:Fragment fragmentName='demo.fragment.forecast.ForecastResult' type='XML'/>
-          </Panel>
-        </Panel>
-      </Panel>
-    </mvc:View>
-    ```
+Create a new directory structure for **`webapp\fragment\dataset`** either using the "File" menu or using the right click menu.
 
-1. Open the `ForecastSynchronous.controller.js` file in the `hcppredictiveservicesdemo\webapp\controller\forecast` directory and add the following after the last function (make sure you include a comma between each functions) .
+Create a new file **`DatasetList.fragment.xml`** in `webapp\fragment\dataset` either using the "File" menu or using the right click menu.
 
-    The controller includes the functions used to process the 'Press' events on the controls added in the view and process the `AJAX` calls to the HCP predictive services.
-    It 'extends' the `DataSetList` JavaScript file created earlier as our view uses the `DatasetList` fragment.
+Open the `webapp\controller\fragment\dataset\DatasetList.fragment.xml` file and add the following code:
 
-    ```javascript
-    sap.ui.define([
-      "sap/ui/core/mvc/Controller",
-      "sap/m/MessageToast",
-      "demo/fragment/dataset/DatasetList"
-    ], function(Controller, MessageToast, DatasetList) {
-      "use strict";
+```xml
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:table="sap.ui.table">
+	<table:Table rows="{dataset_fragment>/datasets}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="3"
+		rowSelectionChange="getDatasetDescription" cellClick="getDatasetDescription">
+		<table:columns>
+			<table:Column>
+				<Label text="Dataset ID"/>
+				<table:template>
+					<Text text="{dataset_fragment>ID}"/>
+				</table:template>
+			</table:Column>
+			<table:Column>
+				<Label text="Name"/>
+				<table:template>
+					<Text text="{dataset_fragment>name}"/>
+				</table:template>
+			</table:Column>
+			<table:Column>
+				<Label text="Number Of Columns"/>
+				<table:template>
+					<Text text="{dataset_fragment>numberOfColumns}"/>
+				</table:template>
+			</table:Column>
+			<table:Column>
+				<Label text="Number Of Rows"/>
+				<table:template>
+					<Text text="{dataset_fragment>numberOfRows}"/>
+				</table:template>
+			</table:Column>
+		</table:columns>
+	</table:Table>
+</core:FragmentDefinition>
+```
 
-      jQuery.sap.require("demo.fragment.dataset.DatasetList");
+Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-      return Controller.extend("demo.controller.forecast.ForecastSynchronous", {
-        onDataSetGetList: function() {
-          DatasetList.prototype.onDataSetGetList.apply(this, arguments);
-          sap.ui.getCore().getModel().setProperty("/function", "ForecastSynchronous");
-        },
-        onDataSetListSelectionChanged: function(oControlEvent) {
-          DatasetList.prototype.onDataSetListSelectionChanged.apply(this, arguments);
-          sap.ui.getCore().getModel().setProperty("/function", "ForecastSynchronous");
-        },
-        onForecastSynchronous: function() {
-          // set the busy indicator to avoid multi clicks
-          var oBusyIndicator = new sap.m.BusyDialog();
-          oBusyIndicator.open();
+[DONE]
+[ACCORDION-END]
 
-          // get the service parameters value
-          var sDatasetID = this.getView("demo-forecast-form").byId("idInputForecastDatasetID").getValue();
-          var sTargetColumn = this.getView().byId("idInputForecastTargetColumn").getSelectedKey();
-          var sDateColumn = this.getView().byId("idInputForecastDateColumn").getSelectedKey();
-          var sNumberOfForecasts = this.getView().byId("idInputForecastNumberOfForecasts").getValue();
-          var sReferenceDate = this.getView().byId("idInputForecastReferenceDate").getValue();
-          // define the service parameters
-          var param = {
-            datasetID: sDatasetID,
-            targetColumn: sTargetColumn,
-            dateColumn: sDateColumn,
-            numberOfForecasts: sNumberOfForecasts,
-            referenceDate: sReferenceDate
-          };
+[ACCORDION-BEGIN [Step 3: ](Registered dataset header description)]
 
-          // call the service and define call back methods
-          $.ajax({
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-            url: "/HCPps/api/analytics/forecast/sync",
-            type: "POST",
-            data: JSON.stringify(param),
-            dataType: "json",
-            async: false,
-            success: function(data) {
-              try {
-                //Save data set description data in the model
-                sap.ui.getCore().getModel().setProperty("/forecastResultData", undefined);
-                sap.ui.getCore().getModel().setProperty("/forecastJobData", undefined);
-                sap.ui.getCore().getModel().setProperty("/forecastResultData", data);
-                sap.ui.getCore().getModel().setProperty("/function", "ForecastSynchronous");
-                oBusyIndicator.close();
-              } catch (err) {
-                MessageToast.show("Caught - onHCPpsForecastSynchyronous[ajax success] :" + err.message);
-              }
-              oBusyIndicator.close();
-            },
-            error: function(request, status, error) {
-              MessageToast.show("Caught - onHCPpsForecastSynchyronous[ajax error] :" + request.responseText);
-              oBusyIndicator.close();
-            }
-          });
-        }
-      });
-    });
-    ```
+The fragment will contain:
 
-1. Edit the `demo.view.xml` file located in the `hcppredictiveservicesdemo\webapp\view` and replace the existing code by the following one:
+  - a form displaying the dataset "header" description (ID, name number of rows & columns)
 
-    Here we simply extend the main view.
+Create a new file **`DatasetHeader.fragment.xml`** in `webapp\fragment\dataset` either using the "File" menu or using the right click menu.
 
-    ```xml
-    <mvc:View controllerName="demo.controller.demo"
-      xmlns:html="http://www.w3.org/1999/xhtml"
-      xmlns:mvc="sap.ui.core.mvc"
-      xmlns="sap.m">
-      <App>
-        <pages>
-          <Page title="Developing with HCPps and SAPUI5">
-            <content>
-              <mvc:XMLView viewName="demo.view.forecast.ForecastSynchronous"/>
-              <mvc:XMLView viewName="demo.view.dataset.DatasetManage"/>
-              <mvc:XMLView viewName="demo.view.dataset.DatasetRegister"/>
-              <mvc:XMLView viewName="demo.view.odata.ODataDisplay"/>
-            </content>
-          </Page>
-        </pages>
-      </App>
-    </mvc:View>
-    ```
+Open the `webapp\controller\fragment\dataset\DatasetHeader.fragment.xml` file and add the following code:
 
-1. You can save all modified files by pressing `CTRL+SHIFT+S`. Then, click on the **Run** icon ![Run Applications](0-run.png) or press `ALT+F5`.
+```xml
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table">
+	<form:Form editable="false" class="isReadonly">
+		<form:title>
+			<core:Title text="Dataset Registration Details"/>
+		</form:title>
+		<form:layout>
+			<form:ResponsiveGridLayout columnsL="1" columnsM="1"/>
+		</form:layout>
+		<form:formContainers>
+			<form:FormContainer>
+				<form:formElements>
+					<form:FormElement label="Dataset ID">
+						<form:fields>
+							<Text id="idDatasetID" text="{dataset_fragment>/dataset/ID}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Dataset Name">
+						<form:fields>
+							<Text text="{dataset_fragment>/dataset/name}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Number Of rows">
+						<form:fields>
+							<Text text="{dataset_fragment>/dataset/numberOfRows}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Number Of Columns">
+						<form:fields>
+							<Text text="{dataset_fragment>/dataset/numberOfColumns}"/>
+						</form:fields>
+					</form:FormElement>
+				</form:formElements>
+			</form:FormContainer>
+		</form:formContainers>
+	</form:Form>
+</core:FragmentDefinition>
+```
 
-    Click on **Retrieve List**, select an entry in the table, then click on **Forecast in Synchronous Mode**.
+Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-    Et voilà!
+[DONE]
+[ACCORDION-END]
 
-    ![TimeSeries Demo Applications](10.png)
+[ACCORDION-BEGIN [Step 4: ](Forecast service parameters fragment)]
+
+The fragment will contain:
+
+  - a form displaying the input fields for the Forecast service parameters
+
+Create a new directory structure for **`webapp\fragment\forecast`** either using the "File" menu or using the right click menu.
+
+Create a new file **`ServiceForm.fragment.xml`** in `webapp\fragment\forecast` either using the "File" menu or using the right click menu.
+
+Open the `webapp\controller\fragment\forecast\ServiceForm.fragment.xml` file and add the following code:
+
+```xml
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
+	<form:Form editable="true" >
+		<form:title>
+			<core:Title text="Forecast service parameters"/>
+		</form:title>
+		<form:layout>
+			<form:ResponsiveGridLayout/>
+		</form:layout>
+		<form:formContainers>
+			<form:FormContainer>
+				<form:formElements>
+					<form:FormElement label="Dataset ID">
+						<form:fields>
+							<Input id="idFormDatasetID" value="{dataset_fragment>/dataset/ID}" enabled="false"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Date Column">
+						<form:fields>
+							<Select id="idFormDateColumn" forceSelection="true"
+								items="{ path: 'dataset_fragment>/dataset/variables', sorter: { path: 'name' }, filters: [{path: 'storage', operator: 'EQ', value1: 'date'}]}">
+								<core:Item key="{dataset_fragment>name}" text="{dataset_fragment>name}"/>
+							</Select>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Forecast Column">
+						<form:fields>
+							<Select id="idFormTargetColumn" forceSelection="true"
+								items="{ path: 'dataset_fragment>/dataset/variables', sorter: { path: 'name' }, filters: [{path: 'value', operator: 'EQ', value1: 'continuous'}, {path: 'storage', operator: 'EQ', value1: 'number'}]}">
+								<core:Item key="{dataset_fragment>name}" text="{dataset_fragment>name}"/>
+							</Select>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Reference Date">
+						<form:fields>
+							<DatePicker id="idFormReferenceDate" value="2001-12-01" displayFormat="yyyy-MM-dd" valueFormat="yyyy-MM-dd"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Number of Forecast">
+						<form:fields>
+							<Input id="idFormNumberOfForecasts" value="10"/>
+						</form:fields>
+					</form:FormElement>
+				</form:formElements>
+			</form:FormContainer>
+		</form:formContainers>
+	</form:Form>
+</core:FragmentDefinition>
+```
+
+Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Forecast service results fragment)]
+
+The fragment will contain:
+
+  - a form displaying the Forecast service results
+
+Create a new directory structure for **`webapp\fragment\forecast`** either using the "File" menu or using the right click menu.
+
+Create a new file **`ServiceResult.fragment.xml`** in `webapp\fragment\forecast` either using the "File" menu or using the right click menu.
+
+Open the `webapp\controller\fragment\forecast\ServiceResult.fragment.xml` file and add the following code:
+
+```xml
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table">
+	<form:Form editable="false" class="isReadonly">
+		<form:title>
+			<core:Title text="Model Performance Indicators"/>
+		</form:title>
+		<form:layout>
+			<form:ResponsiveGridLayout columnsL="1" columnsM="1"/>
+		</form:layout>
+		<form:formContainers>
+			<form:FormContainer>
+				<form:formElements>
+					<form:FormElement label="Quality Rating">
+						<form:fields>
+							<Text text="{forecast_fragment>/model/modelPerformance/qualityRating}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="MAPE">
+						<form:fields>
+							<Text text="{forecast_fragment>/model/modelPerformance/mape}"/>
+						</form:fields>
+					</form:FormElement>
+				</form:formElements>
+			</form:FormContainer>
+		</form:formContainers>
+	</form:Form>
+	<form:Form editable="false" class="isReadonly">
+		<form:title>
+			<core:Title text="Model Information"/>
+		</form:title>
+		<form:layout>
+			<form:ResponsiveGridLayout columnsL="1" columnsM="1"/>
+		</form:layout>
+		<form:formContainers>
+			<form:FormContainer>
+				<form:formElements>
+					<form:FormElement label="Cycles">
+						<form:fields>
+							<Text text="{forecast_fragment>/model/modelInformation/cycles}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Fluctuations">
+						<form:fields>
+							<Text text="{forecast_fragment>/model/modelInformation/fluctuations}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Trend">
+						<form:fields>
+							<Text text="{forecast_fragment>/model/modelInformation/trend}"/>
+						</form:fields>
+					</form:FormElement>
+				</form:formElements>
+			</form:FormContainer>
+		</form:formContainers>
+	</form:Form>
+	<!-- A table with the forecasted data. It will be populated when the button is pressed-->
+	<table:Table rows="{forecast_fragment>/model/forecasts}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5" width="100%">
+		<table:columns>
+			<table:Column sortProperty="date" filterProperty="date">
+				<Label text="Date"/>
+				<table:template>
+					<Text text="{forecast_fragment>date}"/>
+				</table:template>
+			</table:Column>
+			<table:Column sortProperty="forecastValue" filterProperty="forecastValue">
+				<Label text="Forecasted value"/>
+				<table:template>
+					<Text text="{forecast_fragment>forecastValue}"/>
+				</table:template>
+			</table:Column>
+			<table:Column sortProperty="realValue" filterProperty="realValue">
+				<Label text="Real value (if any)"/>
+				<table:template>
+					<Text text="{forecast_fragment>realValue}"/>
+				</table:template>
+			</table:Column>
+			<table:Column>
+				<Label text="Error Bar Lower Bound"/>
+				<table:template>
+					<Text text="{forecast_fragment>errorBarLowerBound}"/>
+				</table:template>
+			</table:Column>
+			<table:Column>
+				<Label text="Error Bar Higher Bound"/>
+				<table:template>
+					<Text text="{forecast_fragment>errorBarHigherBound}"/>
+				</table:template>
+			</table:Column>
+		</table:columns>
+	</table:Table>
+</core:FragmentDefinition>
+```
+
+Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Create a new JavaScript library for the fragment)]
+
+The library will contain a function where:
+
+  - we process the call to the "Dataset List" SAP Cloud for predictive services and return the list of registered dataset.
+  - we process the call to the "Dataset Description" SAP Cloud for predictive services and return the dataset detailed description.
+
+These functions will be triggered either on a click or row change event on the table added previously from the main controller.
+
+Create a new file **`DatasetList.js`** in `webapp\fragment\dataset` either using the "File" menu or using the right click menu.
+
+Open the `webapp\fragment\dataset\DatasetList.js` file and add the following code:
+
+```js
+sap.ui.define([
+	"sap/ui/core/mvc/Controller",
+	"sap/m/MessageToast"
+], function(Controller, MessageToast) {
+	"use strict";
+
+	return Controller.extend("sapui5demo.fragment.dataset.DatasetList", {
+		getDatasetList: function() {
+			// set the busy indicator to avoid multi clicks
+			var oBusyIndicator = new sap.m.BusyDialog();
+			oBusyIndicator.open();
+
+			// get the current view
+			var oView = this.getView();
+
+			// get the model
+			var oModel = oView.getModel("dataset_fragment");
+
+			// call the service and define call back methods
+			$.ajax({
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+				url: "/HCPps/api/analytics/dataset",
+				type: "GET",
+				async: false,
+				success: function(data) {
+					try {
+						//Save data set description data in the model
+						oModel.setProperty("/datasets", data);
+					} catch (err) {
+						MessageToast.show("Caught - dataset fragment get list [ajax success] :" + err.message);
+					}
+					oBusyIndicator.close();
+				},
+				error: function(request, status, error) {
+					MessageToast.show("Caught - dataset fragment get list [ajax error] :" + request.responseText);
+					oBusyIndicator.close();
+				}
+			});
+		},
+		getDatasetDescription: function(oControlEvent) {
+			// set the busy indicator to avoid multi clicks
+			var oBusyIndicator = new sap.m.BusyDialog();
+			oBusyIndicator.open();
+
+			// get the current view
+			var oView = this.getView();
+
+			// get the model
+			var oModel = oView.getModel("dataset_fragment");
+
+			if (oModel.getProperty("/datasets") !== undefined && oModel.getProperty(
+					"/datasets")[oControlEvent.getParameter("rowIndex")] !== undefined) {
+				oBusyIndicator.open();
+				var dataSetId = oModel.getProperty("/datasets")[oControlEvent.getParameter("rowIndex")].ID;
+				// call the service and define call back methods
+				$.ajax({
+					headers: {
+						'Accept': 'application/json',
+						'Content-Type': 'application/json'
+					},
+					url: "/HCPps/api/analytics/dataset/" + dataSetId,
+					type: "GET",
+					async: false,
+					success: function(data) {
+						try {
+							//Save data set description data in the model
+							oModel.setProperty("/dataset", data);
+						} catch (err) {
+							MessageToast.show("Caught - dataset fragment get dataset description [ajax success] :" + err.message);
+						}
+						oBusyIndicator.close();
+					},
+					error: function(request, status, error) {
+						MessageToast.show("Caught - dataset fragment get dataset description [ajax error] :" + request.responseText);
+						oBusyIndicator.close();
+					}
+				});
+			}
+		}
+	});
+});
+```
+
+Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Create a new controller)]
+
+Create a new directory structure for **`webapp\controller\forecast`** either using the "File" menu or using the right click menu.
+
+Create a new file **`synchronous.controller.js`** in `webapp\controller\forecast` either using the "File" menu or using the right click menu.
+
+Open the `webapp\controller\forecast\synchronous.controller.js` file and add the following code:
+
+```js
+sap.ui.define([
+	"sap/ui/core/mvc/Controller",
+	"sap/m/MessageToast",
+	"sapui5demo/fragment/dataset/DatasetList"
+], function(Controller, MessageToast, DatasetList) {
+	"use strict";
+
+	jQuery.sap.require("sapui5demo.fragment.dataset.DatasetList");
+
+	return Controller.extend("sapui5demo.controller.forecast.synchronous", {
+		onInit: function() {
+			if (typeof sap.ui.getCore().getModel() === 'undefined') {
+				this.getView().setModel(new sap.ui.model.json.JSONModel(), "dataset_fragment");
+				this.getView().setModel(new sap.ui.model.json.JSONModel(), "forecast_fragment");
+			}
+		},
+		getDatasetList: function() {
+			DatasetList.prototype.getDatasetList.apply(this, arguments);
+		},
+		getDatasetDescription: function(event) {
+			DatasetList.prototype.getDatasetDescription.apply(this, arguments);
+		},
+		forecast: function(event) {
+			// set the busy indicator to avoid multi clicks
+			var oBusyIndicator = new sap.m.BusyDialog();
+			oBusyIndicator.open();
+
+			// get the current view
+			var oView = this.getView();
+
+			// get the model
+			var oModelForecast = oView.getModel("forecast_fragment");
+
+			// get the service parameters value
+			var datasetId = this.getView().byId(event.getSource().data("eDatasetID")).getValue();
+			var targetColumn = this.getView().byId(event.getSource().data("eTargetColumn")).getSelectedKey();
+			var dateColumn = this.getView().byId(event.getSource().data("eDateColumn")).getSelectedKey();
+			var numberOfForecasts = this.getView().byId(event.getSource().data("eNumberOfForecasts")).getValue();
+			var referenceDate = this.getView().byId(event.getSource().data("eReferenceDate")).getValue();
+
+			// define the service parameters
+			var param = {
+				datasetID: datasetId,
+				targetColumn: targetColumn,
+				dateColumn: dateColumn,
+				numberOfForecasts: numberOfForecasts,
+				referenceDate: referenceDate
+			};
+
+			// call the service and define call back methods
+			$.ajax({
+				headers: {
+					'Accept': 'application/json',
+					'Content-Type': 'application/json'
+				},
+				url: "/HCPps/api/analytics/forecast/sync",
+				type: "POST",
+				data: JSON.stringify(param),
+				dataType: "json",
+				async: false,
+				success: function(data) {
+					try {
+						//Save data set description data in the model
+						oModelForecast.setProperty("/model", data);
+						oBusyIndicator.close();
+					} catch (err) {
+						MessageToast.show("Caught - forecast [ajax success] :" + err.message);
+					}
+					oBusyIndicator.close();
+				},
+				error: function(request, status, error) {
+					MessageToast.show("Caught - forecast [ajax error] :" + request.responseText);
+					oBusyIndicator.close();
+				}
+			});
+		}
+	});
+});
+```
+
+Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Create a new view)]
+
+The view will contain:
+
+  - a button that will trigger the "Get Dataset List" service
+  - use the fragments previously created to display:
+    - the list of registered datasets
+    - the selected dataset header description
+    - the service parameters form
+  - a button that will trigger the "Forecast" service in synchronous mode
+
+Create a new directory structure for **`webapp\view\forecast`** either using the "File" menu or using the right click menu.
+
+Create a new file **`synchronous.view.xml`** in `webapp\view\forecast` either using the "File" menu or using the right click menu.
+
+Open the `webapp\view\forecast\synchronous.view.xml` file and add the following code:
+
+```xml
+<mvc:View controllerName="sapui5demo.controller.forecast.synchronous" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Toolbar>
+		<ToolbarSpacer/>
+		<Button icon="sap-icon://refresh" text="Get Dataset List" press="getDatasetList"/>
+		<ToolbarSpacer/>
+	</Toolbar>
+	<Panel expandable="false" visible="{= typeof ${dataset_fragment>/datasets} !== 'undefined'}">
+		<core:Fragment fragmentName='sapui5demo.fragment.dataset.DatasetList' type='XML'/>
+	</Panel>
+	<Panel expandable="false" visible="{= typeof ${dataset_fragment>/dataset} !== 'undefined'}">
+		<core:Fragment fragmentName='sapui5demo.fragment.dataset.DatasetHeader' type='XML'/>
+		<core:Fragment fragmentName='sapui5demo.fragment.forecast.ServiceForm' type='XML'/>
+	</Panel>
+	<Toolbar visible="{= typeof ${dataset_fragment>/dataset} !== 'undefined'}">
+		<ToolbarSpacer/>
+		<Button icon="sap-icon://begin" text="Run forecast" custom:eDatasetID="idFormDatasetID"
+			custom:eDateColumn="idFormDateColumn" custom:eTargetColumn="idFormTargetColumn" custom:eReferenceDate="idFormReferenceDate"
+			custom:eNumberOfForecasts="idFormNumberOfForecasts" press="forecast"/>
+		<ToolbarSpacer/>
+	</Toolbar>
+	<Panel expandable="false" visible="{= typeof ${forecast_fragment>/model} !== 'undefined'}">
+		<core:Fragment fragmentName='sapui5demo.fragment.forecast.ServiceResult' type='XML'/>
+	</Panel>
+</mvc:View>
+```
+
+Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Extend the default view)]
+
+Edit the `demo.view.xml` file located in the `webapp\view`.
+
+Inside the `<detailPages>` element add the following element:
+
+```xml
+<Page id="detail_forecast_synchronous" title="Forecast with the SAP Cloud for predictive services (Synchronous Mode)">
+  <content>
+    <mvc:XMLView viewName="sapui5demo.view.forecast.synchronous"/>
+  </content>
+</Page>
+```
+
+Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Run the application)]
+
+Then, click on the **Run** icon ![Run Applications](0-run.png) or press `ALT+F5`.
+
+On the left panel, you should see an item labeled `Forecast Services`, click on it. Then click on `Synchronous`
+
+Select the dataset you want to use from the list (Cash Flow is the one!), update the service parameters if needed, then press the `Run forecast` button.
+
+Et voilà!
+![Applications](05.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Solution: ](Created and modified files)]
+
+In case you are having problems when running the application, please find bellow the created and modified files:
+
+  - [`webapp\fragment\dataset\DatasetHeader.fragment.xml`](solution-fragment-dataset-DatasetHeader.fragment.xml.txt)
+  - [`webapp\fragment\dataset\DatasetList.fragment.xml`](solution-fragment-dataset-DatasetList.fragment.xml.txt)
+  - [`webapp\fragment\dataset\DatasetList.js`](solution-fragment-dataset-DatasetList.js.txt)
+  - [`webapp\fragment\forecast\ServiceForm.fragment.xml`](solution-controller-forecast-ServiceForm.fragment.xml.txt)
+  - [`webapp\fragment\forecast\ServiceResult.fragment.xml`](solution-controller-forecast-ServiceResult.fragment.xml.txt)
+  - [`webapp\controller\forecast\synchronous.controller.js`](solution-controller-forecast-synchronous.controller.js.txt)
+  - [`webapp\view\forecast\synchronous.view.xml`](solution-view-forecast-synchronous.view.xml.txt)
+  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+
+[DONE]
+[ACCORDION-END]
 
 ## Next Steps
-  - [Use the asynchronous Forecast HCP predictive service from a SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)
+  - [Implement the "Forecast" service asynchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)

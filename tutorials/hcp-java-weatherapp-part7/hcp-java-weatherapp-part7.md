@@ -1,14 +1,15 @@
 ---
-title: End-to-End Weather App Scenario Part 7
+title: Enhancing the persistence layer for multi-tenency
 description: Enhancing the persistence layer for multi-tenency
-tags: [ products>sap-hana-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
+primary_tag: topic>java
+tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermediate]
 ---
 
 ## Prerequisites  
- - [End-to-End Weather App Scenario Part 6](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part6.html)
+- [End-to-End Weather App Scenario Part 6](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part6.html)
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 8](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)
+- [End-to-End Weather App Scenario Part 8](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)
 
 ## Details
 ### You will learn  
@@ -19,47 +20,68 @@ In this tutorial you will enhance the persistence layer with a multi-tenancy fea
 
 ---
 
-1. First, we'll add the necessary annotations to the persistence `BaseObject` class. Open it and add the following two annotations to the class definition:
 
-    ```java
-    @MappedSuperclass
-    @Multitenant
-    @TenantDiscriminatorColumn(name = "TENANT_ID", contextProperty="tenant.id")
-    public abstract class BaseObject
-    ```
+[ACCORDION-BEGIN [Step 1: ](Add annotations to base object class)]
 
-    ![Adding Java annotations to a Java Class](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part7/e2e_07-1.png)
+First, we'll add the necessary annotations to the persistence `BaseObject` class. Open it and add the following two annotations to the class definition:
 
-2. Next, we need to slightly adjust the way we obtain a reference to the `EntityManager` within the `FavoriteCityService` class as we now need to pass the current tenant ID (in our case the user ID). The following code snippet illustrates the concept:
+```java
+@MappedSuperclass
+@Multitenant
+@TenantDiscriminatorColumn(name = "TENANT_ID", contextProperty="tenant.id")
+public abstract class BaseObject
+```
 
-    ```java
-    @SuppressWarnings("unchecked")
-    @GET
-    @Path("/")
-    public List<FavoriteCity> getFavoriteCities(@Context SecurityContext ctx)
-    {
-    List<FavoriteCity> retVal = null;
+![Adding Java annotations to a Java Class](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part7/e2e_07-1.png)
 
-    String userName = (ctx.getUserPrincipal() != null) ? ctx.getUserPrincipal().getName() : "anonymous";
-    Map<String,String> props = new HashMap<String,String>();
-    props.put("tenant.id", userName);
+[DONE]
+[ACCORDION-END]
 
-    EntityManager em = this.getEntityManagerFactory().createEntityManager(props);
+[ACCORDION-BEGIN [Step 2: ](Obtain reference)]
 
-    retVal = em.createNamedQuery("FavoriteCities").getResultList();
+Next, we need to slightly adjust the way we obtain a reference to the `EntityManager` within the `FavoriteCityService` class as we now need to pass the current tenant ID (in our case the user ID). The following code snippet illustrates the concept:
 
-    return retVal;
-    }
-    ```
-    ![Modifying Java methods to handle the tenant ID](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part7/e2e_07-2.png)
+```java
+@SuppressWarnings("unchecked")
+@GET
+@Path("/")
+public List<FavoriteCity> getFavoriteCities(@Context SecurityContext ctx)
+{
+List<FavoriteCity> retVal = null;
 
-3. Make your changes to the methods (`getFavoriteCity()`, `addFavoriteCity()` and `removeFavoriteCity()` ) in the `FavoriteCityService` respectively and save all edits.
+String userName = (ctx.getUserPrincipal() != null) ? ctx.getUserPrincipal().getName() : "anonymous";
+Map<String,String> props = new HashMap<String,String>();
+props.put("tenant.id", userName);
 
-    ![Modifying Java methods to handle the tenant ID](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part7/e2e_07-3.png)
+EntityManager em = this.getEntityManagerFactory().createEntityManager(props);
 
-4. Deploy/publish your changes. Please explicitly stop and start the server, as you have updated the persistence model!
+retVal = em.createNamedQuery("FavoriteCities").getResultList();
+
+return retVal;
+}
+```
+![Modifying Java methods to handle the tenant ID](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part7/e2e_07-2.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Edit methods)]
+
+Make your changes to the methods (`getFavoriteCity()`, `addFavoriteCity()` and `removeFavoriteCity()` ) in the `FavoriteCityService` respectively and save all edits.
+
+![Modifying Java methods to handle the tenant ID](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part7/e2e_07-3.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Deploy your changes)]
+
+Deploy/publish your changes. Please explicitly stop and start the server, as you have updated the persistence model!
+
+[DONE]
+[ACCORDION-END]
 
 
 
 ## Next Steps
- - [End-to-End Weather App Scenario Part 8](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)
+- [End-to-End Weather App Scenario Part 8](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part8.html)

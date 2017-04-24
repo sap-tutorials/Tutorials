@@ -1,7 +1,8 @@
 ---
 title: Add an XML fragment for a tab in your app
 description: Create an XML view fragment file to control the display of information on the tab in your app
-tags: [  tutorial>beginner, topic>sapui5, products>sap-hana-cloud-platform, products>sap-web-ide ]
+primary_tag: products>sap-cloud-platform
+tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 
 ## Prerequisites  

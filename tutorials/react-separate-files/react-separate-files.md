@@ -1,14 +1,15 @@
 ---
-title: React JS - Separate the CSS and JavaScript Files
-description: Step #4: Move the CSS and JavaScript in to separate files on the web server
-tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-hana-cloud-platform ]
+title: RSeparate the CSS and JavaScript Files
+description: Move the CSS and JavaScript in to separate files on the web server
+primary_tag: topic>html5
+tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorial:** [Step 3 - Create the Bootstrap Template](http://www.sap.com/developer/tutorials/react-add-javascript.html)
+- **Proficiency:** Beginner
+- **Tutorial:** [Create the Bootstrap Template](http://www.sap.com/developer/tutorials/react-add-javascript.html)
 
 ## Next Steps
- - **Tutorial:** [Step 5 - Convert components from static to dynamic](http://www.sap.com/developer/tutorials/react-dynamic-components.html)
+- **Tutorial:** [Convert components from static to dynamic](http://www.sap.com/developer/tutorials/react-dynamic-components.html)
 
 
 ## Details
@@ -31,172 +32,217 @@ There are two steps:
 
 ---
 
-### Move the JavaScript to a Separate File
+
+[ACCORDION-BEGIN [Step 1: ](Create empty JavaScript file)] ￼
+
 
 First, let's move the JavaScript out of our application, and in to a proper place in our project.
 
-1.  Right click on the folder `HelloReact` and select **New** --> **Folder**
+Right click on the folder `HelloReact` and select **New** --> **Folder**
 
-    ![Add new JS folder](1-1.png)
+![Add new JS folder](1-1.png)
 
-2.  Name the folder `js`, and click **OK**
+Name the folder `js`, and click **OK**
 
-    ![Name the folder js](1-2.png)
+![Name the folder js](1-2.png)
 
-3.  Next, right click on the new `js` folder, and select **New** --> **File**
+Next, right click on the new `js` folder, and select **New** --> **File**
 
-    ![Add new javascript file](1-3.png)
+![Add new javascript file](1-3.png)
 
-4.  Name this file `main.js` and click **OK**.
+Name this file `main.js` and click **OK**.
 
-    ![Name the file main.js](1-4.png)
+![Name the file main.js](1-4.png)
 
-5.  Next, copy this code in to the new `main.js` file.  (It is the same code that is in your `index.html` file.)  Then click **Save**.
+[DONE]
+[ACCORDION-END]
 
-    ```javascript
-    var ListBox = React.createClass({
-        render: function() {
-            return (
-    			<button type="button" className="list-group-item" id="product-list">
-    				<div className="row vertical-align">
-    					<div className="col-sm-8 top">
-    						<h4>Top Label</h4>
-    						<p>10 boxes at 20 bags</p>
-    					</div>
-    					<div className="col-sm-3 text-right top">
-    						<h4>
-    							99.99
-    							<small className="text-muted"> EUR</small>
-    						</h4>
-    						<p>Available</p>
-    					</div>
-    					<div className="col-sm-1 center">
-    						<span className="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>
-    					</div>
-    				</div>
-    			</button>
-    		);
-        }
-    });
+[ACCORDION-BEGIN [Step 2: ](Add code)]
 
-    var ProductList = React.createClass({
-    	render: function() {
-    		return (
-    			<div className="list-group">
-    				<ListBox />
-    				<ListBox />
-    				<ListBox />
-    			</div>
-    		)
-    	}
-    });
+Next, copy this code in to the new `main.js` file.  (It is the same code that is in your `index.html` file.)  Then click **Save**.
 
-    ReactDOM.render(
-        <ProductList />,
-        document.getElementById('product-list')
-    );
-    ```
+```javascript
+var ListBox = React.createClass({
+    render: function() {
+        return (
+			<button type="button" className="list-group-item" id="product-list">
+				<div className="row vertical-align">
+					<div className="col-sm-8 top">
+						<h4>Top Label</h4>
+						<p>10 boxes at 20 bags</p>
+					</div>
+					<div className="col-sm-3 text-right top">
+						<h4>
+							99.99
+							<small className="text-muted"> EUR</small>
+						</h4>
+						<p>Available</p>
+					</div>
+					<div className="col-sm-1 center">
+						<span className="glyphicon glyphicon-chevron-right pull-right" aria-hidden="true"></span>
+					</div>
+				</div>
+			</button>
+		);
+    }
+});
 
-    > **RED ERROR BOX**
-    >
-    > You will see a red error box next to your code.  You can ignore this error.
-    >
-    > This error comes from the JavaScript parser in Web IDE.  The current parser does not understand the JMX notation inside of our JavaScript.  The web application will still work correctly.
+var ProductList = React.createClass({
+	render: function() {
+		return (
+			<div className="list-group">
+				<ListBox />
+				<ListBox />
+				<ListBox />
+			</div>
+		)
+	}
+});
 
-    ![Copy the javascript to the new file](1-5.png)
+ReactDOM.render(
+    <ProductList />,
+    document.getElementById('product-list')
+);
+```
 
-6.  Next, we will delete the JavaScript out of the `index.html` file.  Select the entire text from `<script type="text/babel">` to `</script>`, and then press the delete key.  Save your file.
+> **RED ERROR BOX**
+>
+> You will see a red error box next to your code.  You can ignore this error.
+>
+> This error comes from the JavaScript parser in Web IDE.  The current parser does not understand the JMX notation inside of our JavaScript.  The web application will still work correctly.
 
-    ![Delete the javascript in the HTML file](1-6.png)
+![Copy the javascript to the new file](1-5.png)
 
-7.  Insert a link to the new file, so that the `index.html` file loads your new JavaScript file.  
+[DONE]
+[ACCORDION-END]
 
-    Under the `</style>` tag, add the following HTML
+[ACCORDION-BEGIN [Step 3: ](Delete the JavaScript from the index HTML file)]
 
-    ```html
-    <script src="/js/main.js" type="text/babel"></script>
-    ```
+Next, we will delete the JavaScript out of the `index.html` file.  Select the entire text from `<script type="text/babel">` to `</script>`, and then press the delete key.  Save your file.
 
-    ![Link the new JavaScript file to the HTML file](1-7.png)
+![Delete the javascript in the HTML file](1-6.png)
 
-8.  Run your application.  The page should look exactly the same, as the JavaScript now runs from an external file.
+[DONE]
+[ACCORDION-END]
 
-    ![Run - no changes should appear](no-changes.png)
+[ACCORDION-BEGIN [Step 4: ](Add link)]
+
+Insert a link to the new file, so that the `index.html` file loads your new JavaScript file.  
+
+Under the `</style>` tag, add the following HTML
+
+```html
+<script src="/js/main.js" type="text/babel"></script>
+```
+
+![Link the new JavaScript file to the HTML file](1-7.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Run the app)]
+
+Run your application.  The page should look exactly the same, as the JavaScript now runs from an external file.
+
+![Run - no changes should appear](no-changes.png)
 
 
----
+[DONE]
+[ACCORDION-END]
 
-### Move the CSS file to a separate file
+[ACCORDION-BEGIN [Step 6: ](Create empty CSS file)]
+
 
 Follow the same procedures to move the CSS file
 
-1.  Right click on the folder `HelloReact` and select **New** --> **Folder**
+Right click on the folder `HelloReact` and select **New** --> **Folder**
 
-    ![Add a new CSS folder](2-1.png)
+![Add a new CSS folder](2-1.png)
 
-2.  Name the folder `css`, and click **OK**
+Name the folder `css`, and click **OK**
 
-    ![Name the folder css](2-2.png)
+![Name the folder css](2-2.png)
 
-3.  Next, right click on the new `css` folder, and select **New** --> **File**
+Next, right click on the new `css` folder, and select **New** --> **File**
 
-    ![Add a new CSS file](2-3.png)
+![Add a new CSS file](2-3.png)
 
-4.  Name this file `main.css` and click **OK**.
+Name this file `main.css` and click **OK**.
 
-    ![Name the file main.css](2-4.png)
+![Name the file main.css](2-4.png)
 
-5.  Next, copy this code in to the new `main.css` file.  (It is the same CSS that is in your `index.html` file.)  Then click **Save**.
+[DONE]
+[ACCORDION-END]
 
-    ```css
-    .vertical-align {
-        display: flex;
-        align-items: baseline;
-    }
+[ACCORDION-BEGIN [Step 7: ](Add code to file)]
 
-    .vertical-align .top {
-        align-self: baseline;
-    }
+Next, copy this code in to the new `main.css` file.  (It is the same CSS that is in your `index.html` file.)  Then click **Save**.
 
-    .vertical-align .center {
-        align-self: center;
-    }
+```css
+.vertical-align {
+    display: flex;
+    align-items: baseline;
+}
 
-    .available {
-        color: green;
-        font-weight: bold;
-    }
+.vertical-align .top {
+    align-self: baseline;
+}
 
-    .discontinued {
-        color: red;
-        font-weight: bold;
-    }
-    ```
+.vertical-align .center {
+    align-self: center;
+}
 
-    ![Copy the CSS to the new file](2-5.png)
+.available {
+    color: green;
+    font-weight: bold;
+}
 
-6.  Next, we will delete the `<style>` tag out of the `index.html` file.  Select the entire text from `<style>` to `</style>`, and then press the **delete** key.  Save your file.
+.discontinued {
+    color: red;
+    font-weight: bold;
+}
+```
 
-    ![Delete the CSS in the HTML file](2-6.png)
+![Copy the CSS to the new file](2-5.png)
 
-7.  Insert a link to the new file, so that the `index.html` file loads your new JavaScript file.  
+[DONE]
+[ACCORDION-END]
 
-    Under the last `<script>` tag (the one you just inserted), add the following HTML:
+[ACCORDION-BEGIN [Step 8: ](Delete CSS from index HTMLS file)]
 
-    ```html
-    <link href="/css/main.css" rel="stylesheet">
-    ```
+Next, we will delete the `<style>` tag out of the `index.html` file.  Select the entire text from `<style>` to `</style>`, and then press the **delete** key.  Save your file.
 
-    ![Link the CSS file to the HTML file](2-7.png)
+![Delete the CSS in the HTML file](2-6.png)
 
-8.  Run your application.  The page should look exactly the same, as the CSS file now loads from an external file.
+[DONE]
+[ACCORDION-END]
 
-    ![Run - no changes should appear](no-changes.png)
+[ACCORDION-BEGIN [Step 9: ](Add link)]
+
+Insert a link to the new file, so that the `index.html` file loads your new JavaScript file.  
+
+Under the last `<script>` tag (the one you just inserted), add the following HTML:
+
+```html
+<link href="/css/main.css" rel="stylesheet">
+```
+
+![Link the CSS file to the HTML file](2-7.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Run the app)]
+
+Run your application.  The page should look exactly the same, as the CSS file now loads from an external file.
+
+![Run - no changes should appear](no-changes.png)
+
+[DONE]
+[ACCORDION-END]
 
 
----
-
-## Final Code
+[ACCORDION-BEGIN [Step 11: ](View final code)]
 
 Your project should now contain three files.  Here is the complete text of each file:
 
@@ -309,6 +355,9 @@ Your project should now contain three files.  Here is the complete text of each 
     );
     ```
 
+[DONE]
+[ACCORDION-END]
+
 
 ## Next Steps
- - **Tutorial:** [Step 5 - Convert components from static to dynamic](http://www.sap.com/developer/tutorials/react-dynamic-components.html)
+- **Tutorial:** [Convert components from static to dynamic](http://www.sap.com/developer/tutorials/react-dynamic-components.html)

@@ -1,28 +1,29 @@
 ---
 title: Create a Destination for an External API (Slack)
-description: Create a destination in HCP to connect with an external API
-tags: [  tutorial>beginner, topic>sapui5, products>sap-hana-cloud-platform ]
+description: Create a destination in SAP Cloud Platform to connect with an external API
+primary_tag: topic>sapui5
+tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:** This is the first tutorial in this series.  
 
 ## Next Steps
- - [Register your App with an External API](http://www.sap.com/developer/tutorials/sapui5-register-app-api.html)
+ - [Register your App with an External API](https://www.sap.com/developer/tutorials/sapui5-register-app-api.html)
 
 ## Details
 ### You will learn  
 Please note that while this is a beginner level tutorial, it is recommended that you start with another tutorial series for SAPUI5 for your first application. If you have built a UI5 application before, it will be beneficial in completing this tutorial series.
 
-You will create a destination in your HCP that will connect you to the external API for Slack. This will be used in a later tutorial to complete a REST call. If you do not have a Slack or do not wish to connect to the Slack API, you can modify this tutorial to adapt it for the external API you are attempting to connect to. See the Optional steps to learn how to modify your destination for other APIs and other API destination examples.
+You will create a destination in your SAP Cloud Platform that will connect you to the external API for Slack. This will be used in a later tutorial to complete a REST call. If you do not have a Slack or do not wish to connect to the Slack API, you can modify this tutorial to adapt it for the external API you are attempting to connect to. See the Optional steps to learn how to modify your destination for other APIs and other API destination examples.
 
 ### Time to Complete
 **10 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open SAP HANA Cloud Platform)]
-Go to your [SAP HANA Cloud Platform Cockpit trial](https://account.hanatrial.ondemand.com/cockpit) instance and login.
+[ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform)]
+Go to your [SAP Cloud Platform Cockpit trial](https://account.hanatrial.ondemand.com/cockpit) instance and login.
 
 [DONE]
 [ACCORDION-END]
@@ -73,7 +74,7 @@ Add _two_ Additional Properties fields by clicking on the **New Property** butto
 [ACCORDION-BEGIN [Step 5: ](Verify your destination works)]
 ![Destination check connection button location](destinations-check.png)
 
-Check the connection to verify you set up the destination properly and that HCP can reach the API. If your API is correctly configured, you should see a success message.
+Check the connection to verify you set up the destination properly and that SAP Cloud Platform can reach the API. If your API is correctly configured, you should see a success message.
 
 ![Destination check connection success message](destinations-success.png)
 
@@ -136,4 +137,4 @@ See some other examples below of destination details for other APIs.
 [ACCORDION-END]
 
 ## Next Steps
- - [Register your App with an External API](http://www.sap.com/developer/tutorials/sapui5-register-app-api.html)
+ - [Register your App with an External API](https://www.sap.com/developer/tutorials/sapui5-register-app-api.html)

@@ -1,14 +1,15 @@
 ---
 title: Using COMMIT Transactions
 description: Leveraging SQLScript in Stored Procedures & User Defined Functions through the use of COMMIT
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Tutorials:** [Using Exception Handling](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-exception.html)
+- **Proficiency:** Intermediate
+- **Tutorials:** [Using Exception Handling](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-exception.html)
 
 ## Next Steps
- - [Using Autonomous Transactions](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)
+- [Using Autonomous Transactions](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)
 
 ## Details
 ### You will learn  
@@ -21,62 +22,108 @@ In this exercise will show the impact of a runtime error on DML statements and h
 
 ---
 
-1. Return to the SQL tab and change the filter value for the first input parameter. Here you are adding a filter on a column which we know does not exists in hopes of causing an error and transaction rollback.
 
-	![sql tab](1.png)
+[ACCORDION-BEGIN [Step 1: ](Edit previous procedure)]
 
-2. Select the entire CALL statement, and click "Run"
+Return to the SQL tab and change the filter value for the first input parameter. Here you are adding a filter on a column which we know does not exists in hopes of causing an error and transaction rollback.
 
-	![call statement](2.png)
+![sql tab](1.png)
 
-3. Of course we get the error "invalid column name".
+[DONE]
+[ACCORDION-END]
 
-	![error](3.png)
+[ACCORDION-BEGIN [Step 2: ](Run the CALL ststement)]
 
-4. Select the SELECT statement for `log.errors` again and click "Run" to check the table contents.  
+Select the entire CALL statement, and click **Run**
 
-	![select statement](4.png)
+![call statement](2.png)
 
-5. You will notice that a new row was not inserted into the log table due to transaction rollback.
+Of course we get the error "invalid column name".
 
-	![sql tab](5.png)
+![error](3.png)
 
-6. Return to the procedure called `get_product_by_filter`. To avoid the deletion of the log entry in case of transaction rollback, we will use an explicit COMMIT.
+[DONE]
+[ACCORDION-END]
 
-	![procedure editor](6.png)
+[ACCORDION-BEGIN [Step 3: ](Run log errors SELECT)]
 
-7. Insert a DML statement  for the sake of showing the behavior of COMMIT. Insert this INSERT statement with BEGIN and END blocks after the DECLARE statements as shown.
+Select the SELECT statement for `log.errors` again and click **Run** to check the table contents.  
 
-	![insert DML statement](7.png)
+![select statement](4.png)
 
-8. After the INSERT statement with in the EXIT HANDLER, add a COMMIT statement.
+You will notice that a new row was not inserted into the log table due to transaction rollback.
 
-	![insert statement](8.png)
+![sql tab](5.png)
 
-9. Click "Save".
+[DONE]
+[ACCORDION-END]
 
-	![save](9.png)
+[ACCORDION-BEGIN [Step 4: ](Add COMMIT)]
 
-10. Use what you have learned already and perform a build on your `hdb` module. Then return to the HRTT page and make sure the input parameters are as shown and run the CALL statement again.
+Return to the procedure called `get_product_by_filter`. To avoid the deletion of the log entry in case of transaction rollback, we will use an explicit COMMIT.
 
-	![HRTT](10.png)
+![procedure editor](6.png)
 
-11. You will still get the error for invalid column. Select the SELECT statement for `log.errors` and click "Run" to execute it.
 
-	![select statement](11.png)
+Insert a DML statement  for the sake of showing the behavior of COMMIT. Insert this INSERT statement with BEGIN and END blocks after the DECLARE statements as shown.
 
-12. You will now notice that the new row has been inserted into the log table even though there was an error and a ROLLBACK was executed.
+![insert DML statement](7.png)
 
-	![rollback](12.png)
+After the INSERT statement within the EXIT HANDLER, add a COMMIT statement.
 
-13. Highlight the SELECT statement for `log.messages` and click "Run".   
+![insert statement](8.png)
 
-	![run select](13.png)
+[DONE]
+[ACCORDION-END]
 
-14. As you can see not only was the new record inserted into the `log.errors` table, but also "Chuck Norris" found its way into our `log.messages` table. The complete transaction will be committed, meaning any modification happened in this transaction will be persisted. A better solution for this are the autonomous transaction.
+[ACCORDION-BEGIN [Step 5: ](Save and build)]
 
-	![inserted records](14.png)
+Click **Save**.
+
+![save](9.png)
+
+Use what you have learned already and perform a build on your `hdb` module.
+
+![HRTT](10.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Run the CALL statement)]
+
+Then return to the HRTT page and make sure the input parameters are as shown and run the CALL statement again.
+
+You will still get the error for invalid column. Select the SELECT statement for `log.errors` and click **Run** to execute it.
+
+![select statement](11.png)
+
+You will now notice that the new row has been inserted into the log table even though there was an error and a ROLLBACK was executed.
+
+![rollback](12.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Run log messages SELECT)]
+
+Highlight the SELECT statement for `log.messages` and click **Run**.   
+
+![run select](13.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Examine results)]
+
+As you can see not only was the new record inserted into the `log.errors` table, but also "Chuck Norris" found its way into our `log.messages` table. The complete transaction will be committed, meaning any modification happened in this transaction will be persisted. A better solution for this are the autonomous transaction.
+
+![inserted records](14.png)
+
+[DONE]
+[ACCORDION-END]
+
+
 
 
 ## Next Steps
- - [Using Autonomous Transactions](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)
+- [Using Autonomous Transactions](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)

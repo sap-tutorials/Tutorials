@@ -1,6 +1,7 @@
 ---
 title: SAP HANA XS Advanced, Connecting to the WebIDE and cloning a Git Repository to begin development
 description: Part 1 of 3, Connect to Web IDE and Clone a Git Repository to begin development
+primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>html5, products>sap-hana, products>sap-web-ide ]
 ---
 
@@ -21,7 +22,7 @@ As of SPS12, all design-time artifacts are stored in Git instead of the HANA dat
 
 Launch the SAP Web IDE for SAP HANA at the following URL in your web browser. The `hostname` of course is the hostname of the SAP HANA Developer Edition that you created in the previous tutorial. Remember for XSA you will need to use the hostname and not the IP address of the server, instructions are found on the server landing page itself.
 
-`http://<hostname>:53075/` or `https://<hostname>:53075/`
+`http://<hostname>:53075/`
 
 User: `WORKSHOP_01`
 Password: `HanaRocks2016` or what you changed it to
@@ -31,6 +32,7 @@ or you can use
 User: `CODEJAMMER`
 Password: `CodeJam2016` or what you changed it to
 
+For HANA Express Edition, if you have not setup an additional user, use `XSA_DEV` with the master password you entered during setup.
 
 ![Log in to SAP Web IDE for SAP HANA](1.png)
 
@@ -43,6 +45,8 @@ Password: `CodeJam2016` or what you changed it to
 From a separate tab in the web browser, log into [GitHub](https://GitHub.com). If you do not have an account, proceed to create one by following the instructions to create and activate your account in the **sign up** button.
 
 ![Sign in or sign up to your GitHub account](1_git.png)
+
+> If you are setting up the repository for use beyond this tutorial, you may want to create an organization and invite other users to join your repository. Further information on GitHub can be found [on GitHub](https://help.github.com/articles/creating-a-new-repository/)
 
 [DONE]
 [ACCORDION-END]
@@ -64,7 +68,7 @@ Complete the form, adding a name and description and click on **Create Repositor
 
 [ACCORDION-BEGIN [Step 4: ](Clone the Repository into the Workspace)]
 
-From the GitHub page, copy the URL of the repository from the **Clone or Download** menu
+Form the GitHub page, copy the URL of the repository from the **Clone or Download** menu
 ![Use the Clone or Download button from the right corner](3_1.png)
 
 Return to the SAP Web IDE for SAP HANA. Right click on the Workspace and choose **Clone Repository** from the Git menu.
@@ -82,8 +86,8 @@ Connection:
 - Port: 443
 
 Authentication:
-- User: <Your GitHub user id>
-- Password:  <You've guessed: Your GitHub password!>
+- User:  `<Your GitHub User ID>`
+- Password:  `<You've guessed: Your GitHub password!>`
 
 Tick the **Remember me** box.
 
@@ -103,7 +107,7 @@ Right-click on the folder for the repository and select **Project Settings**
 
 ![Project Settings for Git repository](5.png)
 
-Select DEV from the list of available spaces, or use the space setup by the System Administrator:
+Select DEV - or development for HANA Express -  from the list of available spaces, or use the space setup by the System Administrator:
 
 ![Select DEV space](6.png)
 

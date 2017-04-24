@@ -1,7 +1,8 @@
 ---
-title: Create an SAP HANA Cloud Platform destination pointing to an SAP Gateway
+title: Create an SAP Cloud Platform destination pointing to an SAP Gateway
 description: Create a new destination pointing to the SAP Gateway Demo System
-tags: [  tutorial>beginner, topic>cloud, products>sap-gateway, products>sap-hana-cloud-platform ]
+primary_tag: products>sap-cloud-platform
+tags: [  tutorial>beginner, topic>cloud, products>sap-gateway, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites  
@@ -13,15 +14,15 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-gateway, products>sap-hana
 
 ## Details
 ### You will learn  
-You will create a destination (a server end-point where HCP can send or receive data) that points to an SAP Gateway OData service.
+You will create a destination (a server end-point where SAP Cloud Platform can send or receive data) that points to an SAP Gateway OData service.
 
 ### Time to Complete
 **< 5 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log into your HCP account)]
-Log into [SAP HANA Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+[ACCORDION-BEGIN [Step 1: ](Log into your SAP Cloud Platform account)]
+Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
 
 Make sure you are using the **Europe (Trial)** landscape, and click on your account name as highlighted on the screenshot to open the cockpit view.
 

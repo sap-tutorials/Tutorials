@@ -1,7 +1,8 @@
 ---
 title: Start Using SAP HANA 2.0, express edition (Virtual Machine Method)
 description: Once you've downloaded the SAP HANA 2.0, express edition Virtual Machine package, start the server, change the default passwords to secure your system, and connect using client tools.
-tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana\,-express-edition 
+tags: [  tutorial>beginner, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -33,6 +34,8 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 2. At the **`hxehost` login** prompt, enter **`hxeadm`**
 
+    >**Tip:** You can also log in remotely. To get the IP address of the VM, wait and press **Enter** on the `hypervisor` console/login screen. The IP address is displayed.
+
 3. For **Password** enter the temporary password **`HXEHana1`**  
 
     ![Entering temporary password](hxe_password_20.PNG)
@@ -41,7 +44,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 5. When prompted for **New password**, enter a strong password with at least 8 characters. If your password is not strong enough, the system logs you off and you must log in again.  
 
-    >**Tip:** SAP HANA, express edition uses standard UNIX password rules. Your strong password should contain numbers, upper and lower case letters, and special characters. It cannot contain systematic values, like strings in ascending or descending numerical or alphabetical order. Strong password example: **`5342_E#1_GcbaFd!`**  
+    >**Tip:** SAP HANA, express edition uses standard password rules. Your strong password should contain numbers, upper and lower case letters only. It cannot contain special characters or systematic values, like strings in ascending or descending numerical or alphabetical order. Strong password example: **`E15342GcbaFd`**  
 
     >**Note:** Do not use this password example, since it is public and not secure. This example is for illustrative purposes only and must not be used on your system. Define your own strong password.
 
@@ -49,7 +52,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 7. A configuration script will run if this is the first login. When prompted for **HANA database master password**, enter a strong password.
 
-    > **Tip:** Make a note of this password, since you'll need it later. You can enter the same password you used in step 5, or a new password.
+    > **Tip:** Make a note of this password, since you'll need it later. You can enter the same password you used in step 5, or a new password. If you are entering a new password, see the password rules in step 5.
 
     Entering the **HANA database master password** changes the `SYSTEM` user password. If you installed the server + applications virtual machine, it also changes the user passwords for these users to the password you entered:
 
@@ -73,11 +76,13 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
     - You will check your proxy settings using HANA Cockpit later in this tutorial.
 
+10. When prompted to install SHINE, enter Y or N.
+
+    SAP HANA Interactive Education, or SHINE, is a demo application that makes it easy to learn how to build applications on SAP HANA Extended Application Services Advanced Model.
+
 10. When prompted to **Proceed with configuration?** enter **Y**.    
 
 11. Wait for the success message **Congratulations! SAP HANA, express edition 2.0 is configured**.
-
-The configuration script does not change any user passwords in the tenant database. (The tenant database is stopped by default when you install SAP HANA 2.0, express edition.) If you start a tenant database at a later time, you must manually change user passwords in the tenant database.
 
 SAP HANA 2.0, express edition is now running.
 
@@ -285,7 +290,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 Get in the habit of making regular data backups to save your work.
 
-For information on data backup, recovery, and log file growth, see the [SAP HANA 2.0 Administration Guide](https://help.sap.com/saphelp_hanaplatform/helpdata/en/00/0ca1e3486640ef8b884cdf1a050fbb/frameset.htm).
+For information on data backup, recovery, and log file growth, see the [SAP HANA 2.0 Administration Guide](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.00/en-US).
 
 [ACCORDION-END]
 
@@ -313,29 +318,20 @@ SAP EA Designer lets you capture, analyze, and present your organization's lands
 
 Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `xs` command line tool.
 
->**Tip**: The SAP EA Designer installer file `XSACHANAEAD00_0.ZIP` is located at
+>**Tip**: The SAP EA Designer installer file `XSACHANAEAD00P_1.ZIP` and `.mtaext` file `XSAC_HANA_EADESIGNER-1.0.05-mtaext.mtaext` are located at
 >```bash    
-/usr/sap/HXE/home/HANA_EXPRESS_20/DATA_UNITS/XSA_CONTENT_10/XSACHANAEAD00_0.ZIP
+/usr/sap/HXE/home/HANA_EXPRESS_20/DATA_UNITS/XSA_CONTENT_10
 ```
 
 1. Log in as `hxeadm`.
 
-2. Create a text file, copy the following content to it, replacing the variable <`tempPwd`> with your choice of a temporary administrator password for the first login, and save it as `firstTime.mtaext`:
+2. Create a temporary password file and change the password. This password change is mandatory.
 
-    >**Important**: Incorrect indentation causes errors. If you are copying code, make sure that `- name`, `properties` and `ADMIN_PASSWORD` are indented with spaces, not tab. There are two spaces in front of `- name:`. There are two spaces in front of `properties`. There are four spaces in front of `ADMIN_PASSWORD`.
+    - Navigate to `/usr/sap/HXE/home/HANA_EXPRESS_20/DATA_UNITS/XSA_CONTENT_10`
 
-    ```bash
-    _schema-version: "2.0.0"
-    ID: com.sap.hana.eadesigner.ext
-    extends: com.sap.hana.eadesigner
+    - Locate the `.mtaext` file `XSAC_HANA_EADESIGNER-1.0.05-mtaext.mtaext`. Make a copy of the file and edit the `ADMIN_PASSWORD`.
 
-    modules:
-      - name: eadesigner-backend
-      properties:
-         ADMIN_PASSWORD: <tempPwd>
-    ```    
-
-    >**Note**: If you do not specify this temporary password file in your installation command, the installation will proceed normally, but you will not be able to log into SAP EA Designer. We recommend that your temporary password should contain 8 or more characters including a mix of numbers and uppercase and lowercase letters. Once installation is complete, you should delete this file.
+    >**Note**: We recommend that your temporary password should contain 8 or more characters including a mix of numbers and uppercase and lowercase letters.
 
 3. Login to the XSA environment with the following command and enter your credentials when prompted:
 
@@ -343,10 +339,10 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
     xs login -a https://<hostname>:39030
     ```
 
-4. Install the SAP EA Designer package using the following command, where `firstTime.mtaext` is the file containing the temporary administrator password:
+4. Install the SAP EA Designer package using the following command:
 
     ```bash
-    xs install XSACHANAEAD00_0.ZIP -e firstTime.mtaext
+    xs install XSACHANAEAD00P_1.ZIP -e <edited_mtaext_file>
     ```
 
 5. When the installation is complete enter the following command to confirm the status of SAP EA Designer:
@@ -373,13 +369,17 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
     >**Note**: Account names managed by SAP EA Designer are case-sensitive.
 
-    - Password - Enter the temporary administrator password (<`tempPwd`>) you specified in `firstTime.mtaext`.
+    - Password - Enter the temporary administrator password (<`tempPwd`>) you specified in `<edited_mtaext_file>`.
 
-    You will be prompted to change the password and then logged in as administrator of SAP EA Designer.      
+    You are prompted to change the password. You are logged in as administrator of SAP EA Designer.
+
+8. Delete `<edited_mtaext_file>`.        
 
 ### (Optional) Install SAP HANA Interactive Education (SHINE) (`hxexsa.ova` Server + Applications Virtual Machine Only)
 
-To install SHINE for XSC, see the [SAP HANA Interactive Education (SHINE) guide](https://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_en.pdf).
+SAP HANA Interactive Education (SHINE) makes it easy to learn how to build applications on SAP HANA Extended Application Services Advanced Model.
+
+#### Install SHINE for XSC
 
 Installation files for SHINE for **XSC** are located at:
 
@@ -387,14 +387,21 @@ Installation files for SHINE for **XSC** are located at:
 /usr/sap/HXE/home/HANA_EXPRESS_20/DATA_UNITS/HCO_HANA_SHINE
 ```
 
-To install SHINE for XSA, see the [SAP HANA Interactive Education (SHINE) for SAP HANA XS Advanced Model guide](https://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_for_SAP_HANA_XS_Advanced_Model_en.pdf).
+To install SHINE for XSC, see the [SAP HANA Interactive Education (SHINE) guide](https://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_en.pdf).
 
 >**Note:** The HANA `JDBC` port number for SAP HANA, express edition is different than the default port number `30015` mentioned in [SAP HANA Interactive Education (SHINE) for SAP HANA XS Advanced Model guide](https://help.sap.com/hana/SAP_HANA_Interactive_Education_SHINE_for_SAP_HANA_XS_Advanced_Model_en.pdf). You need to update the port parameter for the resources `CrossSchemaSys` and `CrossSchemaSysBi` in the `mtaext` file to `39013`.  
+
+#### Install SHINE for XSA
 
 If you downloaded the Server + Applications Virtual Machine (`hxexsa.ova`) package, installation files for SHINE for **XSA** are located at:
 
 ```bash
 /usr/sap/HXE/home/HANA_EXPRESS_20/DATA_UNITS/XSA_CONTENT_10
+```
+To install SHINE for XSA, run:
+
+```bash
+/usr/sap/HXE/HANA_EXPRESS_20/install_shine.sh
 ```
 
 ### (Optional) Install Text Analysis Files
@@ -405,7 +412,7 @@ If you are using SAP HANA 2.0, express edition in a language other than English 
 
 1. Log in as `hxeadm`.
 
-2. Navigate to `/hana/shared/HXE/exe/linuxx86_64/hdb/lexicon`.
+2. Navigate to `/hana/shared/HXE/global/hdb/custom/config/lexicon`.
 
 3. Extract the contents of `additional_lang.tgz` to this directory:
 

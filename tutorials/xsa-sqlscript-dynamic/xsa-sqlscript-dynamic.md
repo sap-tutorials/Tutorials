@@ -1,14 +1,15 @@
 ---
 title: Using Dynamic SQL vs Dynamic Filtering
 description: Leveraging SQLScript in Stored Procedures & User Defined Functions
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
+primary_tag: products>sap-hana
+tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Tutorials:** [Anonymous Blocks](http://www.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)
+- **Proficiency:** Intermediate
+- **Tutorials:** [Anonymous Blocks](http://www.sap.com/developer/tutorials/xsa-sqlscript-anonymous.html)
 
 ## Next Steps
- - [Using Execute Immediate](http://www.sap.com/developer/tutorials/xsa-sqlscript-execute.html)
+- [Using Execute Immediate](http://www.sap.com/developer/tutorials/xsa-sqlscript-execute.html)
 
 ## Details
 ### You will learn  
@@ -20,43 +21,72 @@ In this exercise, you will learn the differences between dynamic SQL (EXEC, EXEC
 
 ---
 
-1. Right click on the procedures folder and choose "New", then "Procedure".
 
-	![new procedure](1.png)
+[ACCORDION-BEGIN [Step 1: ](Create new procedure)]
 
-2. Enter the name of the procedure as `get_product_by_filter`.  Click the drop down box for "Schema".
+Right click on the procedures folder and choose **New**, then **Procedure**.
 
-	![procedure name](2.png)
+![new procedure](1.png)
 
-3. Change the namespace from `Undefined` to `dev602.procedures`. Add an input parameter named `im_product_filter_string`, type `varchar` with a length of 5000.
+Enter the name of the procedure as `get_product_by_filter`.  Click the drop down box for **Schema**.
 
-	![change namespace](3.png)
+![procedure name](2.png)
 
-4. Because dynamic SQL is not supported in "Read-only" procedures, you must remove the ""READS SQL DATA" keywords as shown here.
 
-	![modify](4.png)
+[DONE]
+[ACCORDION-END]
 
-5. Between the BEGIN and END statements, insert the EXEC statements as shown.  The completed code should look similar to this. If you do not wish to type this code, you can reference the solution web page at `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex2_17`
+[ACCORDION-BEGIN [Step 2: ](Change namespace)]
 
-    ```
-    PROCEDURE "dev602.procedures::get_product_by_filter" (              IN im_product_filter_string VARCHAR(5000) )   LANGUAGE SQLSCRIPT   SQL SECURITY INVOKER   --DEFAULT SCHEMA <default_schema_name>   AS	BEGIN	EXEC 'SELECT count(*) FROM "dev602.data::MD.Products" where CATEGORY NOT IN (''Laser printers'')'      || :im_product_filter_string  ;	END
-    ```
+Change the namespace from `Undefined` to `dev602.procedures`. Add an input parameter named `im_product_filter_string`, type `varchar` with a length of 5000.
 
-6. Save the procedure
+![change namespace](3.png)
 
-	![save procedure](6.png)
+[DONE]
+[ACCORDION-END]
 
-7. Use what you have learned already and perform a build on your `hdb` module. Then return to the HRTT page and invoke the procedure.
+[ACCORDION-BEGIN [Step 3: ](Edit procedure)]
 
-	![HRTT](7.png)
+Because dynamic SQL is not supported in "Read-only" procedures, you must remove the ""READS SQL DATA" keywords as shown here.
 
-8. A new SQL tab will be opened. Add the filter string as `AND CATEGORY = ''Notebooks'''`
+![modify](4.png)
 
-	![new sql tab](8.png)
+[DONE]
+[ACCORDION-END]
 
-9. Click the "Run" button.  You will notice that you get no results from the call at all.  Also by using the EXEC statement, there is a possibility of SQL injection
+[ACCORDION-BEGIN [Step 4: ](Insert the EXEC statements)]
 
-	![run procedure](9.png)
+Between the BEGIN and END statements, insert the EXEC statements as shown.  The completed code should look similar to this. If you do not wish to type this code, you can reference the solution web page at `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex2_17`
+
+  ```
+  PROCEDURE "dev602.procedures::get_product_by_filter" (            IN im_product_filter_string VARCHAR(5000) ) LANGUAGE SQLSCRIPT SQL SECURITY INVOKER --DEFAULT SCHEMA <default_schema_name> ASBEGINEXEC 'SELECT count(*) FROM "dev602.data::MD.Products" where CATEGORY NOT IN (''Laser printers'')'    || :im_product_filter_string  ;END
+  ```
+
+Save the procedure
+
+![save procedure](6.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Build your module)]
+
+Use what you have learned already and perform a build on your `hdb` module. Then return to the HRTT page and invoke the procedure.
+
+![HRTT](7.png)
+
+A new SQL tab will be opened. Add the filter string as `AND CATEGORY = ''Notebooks'''`
+
+![new sql tab](8.png)
+
+Click the **Run** button.  You will notice that you get no results from the call at all.  Also by using the EXEC statement, there is a possibility of SQL injection
+
+![run procedure](9.png)
+
+[DONE]
+[ACCORDION-END]
+
+
 
 ## Next Steps
- - [Using Execute Immediate](http://www.sap.com/developer/tutorials/xsa-sqlscript-execute.html)
+- [Using Execute Immediate](http://www.sap.com/developer/tutorials/xsa-sqlscript-execute.html)

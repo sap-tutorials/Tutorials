@@ -1,11 +1,13 @@
 ---
 title: SAP HANA XS Classic, Access your first data in a SAP HANA XSC Application
 description: In this tutorial you will make your very first steps to access data in SAP HANA. This tutorial will write a SAP HANA XSC application, using the Web-based Development Workbench.
-tags: [ products>sap-hana, products>sap-hana-studio, products>sap-hana-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
+primary_tag: products>sap-hana
+tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
 ---
 
 ## Prerequisites  
-- [Develop your first SAP HANA XSC application](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
+- **Proficiency:** Beginner
+ - **Tutorials:** [Develop your first SAP HANA XSC application](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
 
 ## Next Steps
 - [Enable XSODATA in your SAP HANA XSC application](http://www.sap.com/developer/tutorials/hana-xsodata.html)
@@ -103,12 +105,12 @@ Now you will create the automatic import file, you can name the file anything yo
 ![Ready to import](14.png)
 
 ```
-import	= 	[ 
-    			{ 
+import	= 	[
+    			{
 					cdstable  =	"codejam.data::mydata.Book";
-					file = "codejam.data:simple_book:list.csv"; 	     
+					file = "codejam.data:sample_book:list.csv"; 	     
 					header = false;		
-    			} 
+    			}
      		];
 ```
 
@@ -233,4 +235,3 @@ Congratulations: You have just accessed your first data on SAP HANA!
 
 ### Optional: Related Information
 [SAP HANA Development Information - Official Documentation](https://help.sap.com/hana_platform#section6)
-

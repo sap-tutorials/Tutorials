@@ -1,14 +1,15 @@
 ---
-title: Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud
-description: Install preconfigured SAP solution in Cloud using SAP Cloud Appliance Library
-tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-hana-cloud-platform, products>cloud-connector-for-sap-hana-cloud-platform ]
+title: Setup SAP Cloud Appliance Library account and install a preconfigured SAP solution in cloud
+description: Install a preconfigured SAP solution in the cloud using SAP Cloud Appliance Library
+primary_tag: products>sap-cloud-platform
+tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform, products>cloud-connector-for-sap-hana-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:** [Prepare an Amazon Web Services account for setting up ABAP on-premise system](https://www.sap.com/developer/tutorials/hcp-prepare-aws-account.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+[Deploy an JCo/RFC based on-premise extension using SAP HANA Cloud Connector](https://www.sap.com/developer/tutorials/hcp-scc-onpremise-extension-jco-rfc.html)
 
 ## Details
 ### You will learn  
@@ -34,7 +35,7 @@ How to setup SAP Cloud Appliance Library account and then install preconfigured 
 3. Navigate to the **Accounts** tab and create a CAL account by clicking on the **Create Account** link in the top-right corner.
     ![SAP CAL Create Account](sap-cal-account-create.png)
 
-4. On the first wizard page (Define General Properties) provide a Name for your account (e.g. SAP HCP Backend). Then, select **Amazon Web Services** as Cloud Provider. Also provide your AWS Access Key and Secret Key in the related input fields. Click on Next.
+4. On the first wizard page (Define General Properties) provide a Name for your account (e.g. SAP Cloud Platform Backend). Then, select **Amazon Web Services** as Cloud Provider. Also provide your AWS Access Key and Secret Key in the related input fields. Click on Next.
     ![Link SAP CAL Account to AWS account](sap-cal-account-aws.png)
 
 5. On the third wizard page (Select Account Users) you can maintain (additional) users for this account. Your user should be registered by default. Click on Review.
@@ -69,7 +70,7 @@ How to setup SAP Cloud Appliance Library account and then install preconfigured 
 
 [ACCORDION-BEGIN [Step 3: ](Using the AWS instance)]
 
-Once the AWS instance has been started, you can connect to it and use the installed SAP NetWeaver Application Server for ABAP. There is also a SAP HANA Cloud Connector installed and running on the AWS instance. You can use it for your on-premise extension scenarios in which you connect HCP applications to the ABAP system on AWS. <!-- How to do this is also described in tutorial [Deploy an JCo/RFC based on-premise extension using SAP HANA Cloud Connector] (https://www.sap.com/developer/tutorials/hcp-scc-onpremise-extension-jco-rfc.html) -->
+Once the AWS instance has been started, you can connect to it and use the installed SAP NetWeaver Application Server for ABAP. There is also a SAP HANA Cloud Connector installed and running on the AWS instance. You can use it for your on-premise extension scenarios in which you connect SAP Cloud Platform applications to the ABAP system on AWS. <!-- How to do this is also described in tutorial [Deploy an JCo/RFC based on-premise extension using SAP HANA Cloud Connector] (https://www.sap.com/developer/tutorials/hcp-scc-onpremise-extension-jco-rfc.html) -->
 
 Details how to connect and use the AWS image are described in [this PDF document](https://caldocs.hana.ondemand.com/caldocs/help/Getting%20started%20guide%20ABAP%20NetWeaver%207.5%20on%20SAP%20HANA.pdf). We briefly summarize the most important points:
 
@@ -88,13 +89,13 @@ Details how to connect and use the AWS image are described in [this PDF document
 
 - To use the SAP HANA Cloud Connector, enter the URL https://abapci.dummy.nodomain:8443/ and log on with user Administrator with the master password.
 
-- On the AWS front end instance, there is also an Eclipse Luna version installed and available on the desktop. The Eclipse instance is already prepared for HCP and you can use it to develop HCP applications.
+- On the AWS front end instance, there is also an Eclipse Luna version installed and available on the desktop. The Eclipse instance is already prepared for SAP Cloud Platform and you can use it to develop SAP Cloud Platform applications.
 
 [DONE]
 [ACCORDION-END]
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+[Deploy an JCo/RFC based on-premise extension using SAP HANA Cloud Connector](https://www.sap.com/developer/tutorials/hcp-scc-onpremise-extension-jco-rfc.html)
 
 ## Related Information
 
