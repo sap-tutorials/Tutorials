@@ -178,7 +178,7 @@ To verify that the posting worked, switch back **IoT Services Cockpit**, click *
 
 Now you will post from an external REST client. In this step you will use [Postman Application](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) for Google Chrome.
 
-![Postman extension in incognito mode](p7_14v.png)
+>There is no need to create Postman account, if you are asked during the first run of the Postman application.
 
 [DONE]
 [ACCORDION-END]
@@ -204,6 +204,8 @@ Select then the **RAW** type and copy and paste in the same content you just had
 ```json
 {"mode":"sync", "messageType":"m0t0y0p0e1", "messages":[{"Humidity":25.8, "Temperature": 21.6, "timestamp":"2016-11-15T08:46:37.930Z"}]}
 ```
+
+![Raw message](p7_16v.png)
 
 [DONE]
 [ACCORDION-END]
