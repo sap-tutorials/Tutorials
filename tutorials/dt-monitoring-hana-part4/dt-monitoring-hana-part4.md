@@ -2,12 +2,12 @@
 title: Additional checks in SAP HANA Cockpit and SAP HANA Studio
 description: Performing additional checks for SAP HANA
 primary_tag: products>sap-hana-dynamic-tiering
-tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, products>sap-hana-cockpit, topic>big-data, topic>sql ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Stopping and Restarting the Extended Storage Service](coming soon)
+ - **Tutorials:** [Stopping and Restarting the Extended Storage Service](https://www.sap.com/developer/tutorials/dt-monitoring-hana-part3.html)
 
 ## Details
 ### You will learn  
@@ -16,7 +16,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering,
  - Check which extended storage/dynamic tiering tables have been created
 
 ### Time to Complete
-**15 Min**
+**10 Min**
 
 ---
 
