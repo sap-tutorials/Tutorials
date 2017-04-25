@@ -176,9 +176,7 @@ To verify that the posting worked, switch back **IoT Services Cockpit**, click *
 
 [ACCORDION-BEGIN [Step 14: ](Post from an external REST client)] ￼
 
-Now you will post from an external REST client. In this step you will use [Postman Extension](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) for Google Chrome.
-
-Once installed in Chrome open the Postman extension in incognito mode to avoid authentication issues in the same browser session with SAP Cloud Platform. For that you might need to allow the Postman extension to run in Chrome's incognito mode.
+Now you will post from an external REST client. In this step you will use [Postman Application](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) for Google Chrome.
 
 ![Postman extension in incognito mode](p7_14v.png)
 
