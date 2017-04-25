@@ -36,7 +36,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 3. For **Password** enter the temporary password **`HXEHana1`**  
 
-    ![Entering temporary password](hxe_password_20.PNG)
+    ![Entering temporary password](hxe_password_21.PNG)
 
 4. When prompted for **current (UNIX) password**, enter the temporary password again: **`HXEHana1`**
 
