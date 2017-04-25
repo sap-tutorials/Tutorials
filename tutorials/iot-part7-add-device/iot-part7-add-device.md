@@ -185,7 +185,7 @@ Now you will post from an external REST client. In this step you will use [Postm
 
 [ACCORDION-BEGIN [Step 15: ](Set header)] ￼
 
-Copy the HTTP endpoint to it and select **POST** from the drop down menu.
+Copy the HTTP endpoint from Cloud Platform's HTTP client to it and select **POST** from the drop down menu.
 
 Open the **Headers** section and set:
 
@@ -199,7 +199,7 @@ Open the **Headers** section and set:
 
 [ACCORDION-BEGIN [Step 16: ](Paste message content)] ￼
 
-Select then the **RAW** type and copy and paste in the same content you just had (with a few value changes to make it easier to spot this insert. Make sure you change the `messageType` to your ID.
+Select **Body**, then the **RAW** type and copy and paste in the same content you just had (with a few value changes to make it easier to spot this insert. Make sure you change the `messageType` to your ID.
 
 ```json
 {"mode":"sync", "messageType":"m0t0y0p0e1", "messages":[{"Humidity":25.8, "Temperature": 21.6, "timestamp":"2016-11-15T08:46:37.930Z"}]}
