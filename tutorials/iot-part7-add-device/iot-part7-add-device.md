@@ -212,7 +212,7 @@ Select **Body**, then the **RAW** type and copy and paste in the same content yo
 
 [ACCORDION-BEGIN [Step 17: ](Send message)] ￼
 
-Click **Send** and you should receive a message similar to when you used the SAP Cloud Platform simple client. This indicates that your POST was successful and if you return to the "Display Stored Messages" you will see your new entry.
+Click **Send** and you should receive a message similar to when you used the SAP Cloud Platform simple client. This indicates that your POST was successful. Return to the "Display Stored Messages" in SAP Cloud Platform, and you find your new entry in the table `T_IOT_[MESSGETYPEID]`.
 
 If you receive `40x` authorization error in return, then check if you are running Postman client in Chrome's incognito mode.
 
