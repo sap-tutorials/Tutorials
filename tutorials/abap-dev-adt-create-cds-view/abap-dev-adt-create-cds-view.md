@@ -12,7 +12,6 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ## Next Steps
  - Use a CDS View in ALV with IDA (coming soon).
 
-
 ## Details
 ### You will learn  
 In the following exercise you will learn how to use the new Core Data Services (CDS) tools in ABAP in Eclipse. CDS is an extension of the ABAP Dictionary that allows you to define semantically rich data models in the database and to use these data models in your ABAP programs. CDS is a central part of enabling Code Push-down in ABAP applications.
