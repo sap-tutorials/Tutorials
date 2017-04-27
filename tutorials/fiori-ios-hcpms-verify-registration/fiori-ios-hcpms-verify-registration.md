@@ -6,14 +6,14 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>cloud, topic>mobile,
 ---
 
 ## Prerequisites  
- - [Securely store User Credentials and Application Connection ID in the iOS keychain](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-secure-credentials-keychain.html)
+ - [Securely store User Credentials and Application Connection ID in the iOS keychain](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-secure-credentials-keychain.html)
 
 ## Next Steps
- - [Read data from the ES4 back-end and present it in the iOS app](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-retrieve-odata-service.html)
+ - [Read data from the ES4 back-end and present it in the iOS app](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-retrieve-odata-service.html)
 
 ## Details
 ### You will learn  
-Your device only needs to be registered once. If the registration is still valid, a new registration does not need to be attempted. To verify whether the registration is in place, the the current status needs to be retrieved from the SAP Cloud Platform Mobile Services. In this tutorial you will learn how to call the SAP Cloud Platform Mobile service to validate the registration status of your device.
+Your device only needs to be registered once. If the registration is still valid, a new registration does not need to be attempted. To verify whether the registration is in place, the the current status needs to be retrieved from the SAP Cloud Platform mobile service for development and operations. In this tutorial you will learn how to call the SAP Cloud Platform mobile service for development and operations to validate the registration status of your device.
 
 ### Time to Complete
 **15 Min**
@@ -22,7 +22,7 @@ Your device only needs to be registered once. If the registration is still valid
 
 [ACCORDION-BEGIN [Step 1: ](Check the status of the isRegistered function)]
 
-In the **Project Navigator**, click on the `HCPms.swift` file. This file contains the `isRegistered` function which was inserted in a [previous tutorial](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-device-registration.html). At the time it was inserted, it was a placeholder and returned the class instance variable `registered`. This variable was set to true when the `register` function completed successfully. However, when the application is relaunched, the registration may have been removed by an administrator, so it is recommended to check the registration status at least on application startup.
+In the **Project Navigator**, click on the `SAPcpms.swift` file. This file contains the `isRegistered` function which was inserted in a [previous tutorial](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-device-registration.html). At the time it was inserted, it was a placeholder and returned the class instance variable `registered`. This variable was set to true when the `register` function completed successfully. However, when the application is relaunched, the registration may have been removed by an administrator, so it is recommended to check the registration status at least on application startup.
 
 To verify the registration status, a service needs to be called on the SAP Cloud Platform. This call contains the Application Connection ID (`appcid` in short). The service will return HTTP status 200 is the `appcid` is still valid.
 
@@ -139,7 +139,7 @@ When request results in a HTTP status `200 (OK)`, the `appcid` is still valid. I
 
 [ACCORDION-BEGIN [Step 6: ](Remove any existing registrations for the app)]
 
-In the previous tutorial, you have already registered the device. Go to the SAP Cloud Platform Mobile Services cockpit to remove the registration, but clicking on the **Registrations and Users Tile**, selecting the existing registration and clicking the **Delete** button:
+In the previous tutorial, you have already registered the device. Go to the SAP Cloud Platform mobile service for development and operations cockpit to remove the registration, but clicking on the **Registrations and Users Tile**, selecting the existing registration and clicking the **Delete** button:
 
 ![Delete existing registration](image-1.png)
 
@@ -156,7 +156,7 @@ At the same time, you will see the text below in your Xcode console:
 
 Once you have logged in, you should be seeing the table view again, similar to what happened at the end of the previous tutorials. Your debug console should show your connection ID.
 
-If you go back to the cockpit of SAP Cloud Platform Mobile Service for Development and Operations, you should see that the a new registration has been added again to **Registrations and User**.
+If you go back to the cockpit of SAP Cloud Platform mobile service for development and operations, you should see that the a new registration has been added again to **Registrations and User**.
 
 [DONE]
 [ACCORDION-END]
@@ -175,4 +175,4 @@ At the same time, you will see the text below in your Xcode console:
 [ACCORDION-END]
 
 ## Next Steps
-- [Read data from the ES4 back-end and present it in the iOS app](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-retrieve-odata-service.html)
+- [Read data from the ES4 back-end and present it in the iOS app](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-retrieve-odata-service.html)

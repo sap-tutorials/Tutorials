@@ -20,13 +20,13 @@ Setup your first project with SAP HANA Studio for the SAP HANA, express edition.
 
 ---
 
-1. From the previous tutorial you should now have your SAP HANA Studio connected to your SAP HANA, express edition. Therefore, the next step is to create a link to the SAP HANA repository. 
+1. From the previous tutorial you should now have your SAP HANA Studio connected to your SAP HANA, express edition. Therefore, the next step is to create a link to the SAP HANA repository.
 
 	![connect repo](0.png)
 
     Be sure to switch your perspective to the `SAP HANA DEVELOPMENT` one. To make the next steps work properly.
 
-	![connect repo](1a.png) 
+	![connect repo](1a.png)
 
 2. Now that you have the repository linked you can create your first project. This initial project will be the basis for a series of tutorials.
 
@@ -40,12 +40,12 @@ Setup your first project with SAP HANA Studio for the SAP HANA, express edition.
 
 	![project](3.png)
 
-5. Once the project is created you will need to create your initial `.xsapp`file to signify that it is an XS application followed by an `.xsaccess` file to define settings for the application. You can use either the wizard to select the `XS Application Descriptor File` and `XS Application Access File` 
+5. Once the project is created you will need to create your initial `.xsapp`file to signify that it is an XS application followed by an `.xsaccess` file to define settings for the application. You can use either the wizard to select the `XS Application Descriptor File` and `XS Application Access File`
 
 	![new files](7.png)
-	
+
 	or simply the "File" - "New" option and manually type the name `.xsapp` and `.xsacess` being sure to include the `.` first.
-	
+
 	![new files](4.png)
 
 6. The content of your `.xsaccess` file is quite simple.
@@ -55,7 +55,7 @@ Setup your first project with SAP HANA Studio for the SAP HANA, express edition.
 		"exposed": true
 	}
 	```
-	
+
 	The content of the `.xsapp` can actually be empty.
 
 ## Next Steps

@@ -6,26 +6,22 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-hybris-as-
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Background Knowledge:** You will get most from this tutorial if you already have basic knowledge of [Node.js](https://www.youtube.com/watch?v=pU9Q6oiQNd0), [Angular](https://docs.angularjs.org/guide/directive) and [Restangular](https://github.com/mgonto/restangular#starter-guide). If you are not already familiar with them and would like to dive into the code, you can follow the provided links to start learning.
-- **Software Requirements:** Java, Maven which you will download in this tutorial if not present.
-- **Tutorials**
-- Getting Started with YaaS
-- Download and Run the Default YaaS Storefront
+- **Tutorials** [Download and Run the Default YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)
 
 ## Next Steps
-- Use Your Own YaaS Project to Back Your Storefront
-- Deploy a Micro Service Built on YaaS on the SAP Cloud Platform
+- [Use Your Own YaaS Project to Back your YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
 
 ## Details
 ### You will learn  
 You will learn how to customize your Storefront using a micro service. The Storefront is structured around [Angular Modules](https://docs.angularjs.org/guide/module). The aim of this tutorial is to include a button in your Storefront's Product Details page that gives helpful Tips to the undecided purchaser, such as "This would add to your overall coolness", and "One word: No". To achieve this, you will run a new micro service locally to provide the tips, and add a button to your StoreFront that calls this. The tips are communicated via REST calls to your YaaS Storefront.
 
+You will get most from this tutorial if you already have basic knowledge of [Node.js](https://www.youtube.com/watch?v=pU9Q6oiQNd0), [Angular](https://docs.angularjs.org/guide/directive) and [Restangular](https://github.com/mgonto/restangular#starter-guide). If you are not already familiar with them and would like to dive into the code, you can follow the provided links to start learning.
+
+
 ### Time to Complete
 **20 Min**.
 
 ---
-
-
 
 [ACCORDION-BEGIN [Step 1: ](View the default Angular Modules)] ￼
 
@@ -58,7 +54,7 @@ Compile and deploy the new micro service that stores and delivers Tips:
 - Execute the micro service locally by running `java -jar target/yaasbite2-1.0-SNAPSHOT.war` from within `(2)/yaasbite200`.
 - Confirm that you can reach the front-end-client @`http://localhost:8080` and use this to populate the service with Tips such as "Oh My GOD YES!!!", "One word: No", "That would suit your hamster"
 
-    ![Micro Service](yaas-bites-tips-microservice.PNG)
+![Micro Service](yaas-bites-tips-microservice.PNG)
 
 > NOTE: Please keep the micro service running. You will use this in the next steps.
 
@@ -111,13 +107,11 @@ The "Mr Tip" button is getting its Tips from your Service. Open Chrome's Develop
 
 Search for `ADJUSTED_AS_NEEDED` in the files you added, to see how this extra logic has been added.
 
+In this tutorial you extended the YaaS Storefront functionality using the Tips micro service. The micro service provided tips to a button in the storefront in order to help undecided purchasers with their shopping. The next step will be to back the YaaS storefront with your own customized YaaS project.
+
 [DONE]
 [ACCORDION-END]
 
 
-### Summary
-In this tutorial you extended the YaaS Storefront functionality using the Tips micro service. The micro service provided tips to a button in the storefront in order to help undecided purchasers with their shopping. The next step will be to back the YaaS storefront with your own customized YaaS project.
-
 ## Next Steps
-- Use Your Own YaaS Project to Back Your Storefront
-- Deploy a Micro Service Built on YaaS on the SAP Cloud Platform
+- [Use Your Own YaaS Project to Back your YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)

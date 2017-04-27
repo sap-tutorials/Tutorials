@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>sapui5 ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** Create a Destination for an External API
+ - **Tutorials:** [Create a Destination for an External API](https://www.sap.com/developer/tutorials/sapui5-create-api-destination.html)
 
 ## Next Steps
- - Add an External API call to your app
+ - [Add an External API call to your app](https://www.sap.com/developer/tutorials/sapui5-insert-rest-api.html)
 
 ## Details
 ### You will learn  
@@ -148,4 +148,4 @@ Select **Create token** for you user on your development team. This will generat
 
 
 ## Next Steps
- - Add an External API call to your app
+ - [Add an External API call to your app](https://www.sap.com/developer/tutorials/sapui5-insert-rest-api.html)

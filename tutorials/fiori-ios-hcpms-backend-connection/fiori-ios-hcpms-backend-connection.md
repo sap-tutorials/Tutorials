@@ -5,27 +5,28 @@ primary_tag: operating-system>ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
- - **ES4 Account:** You need to have an account on the ES4 system. Read [this document](https://archive.sap.com/documents/docs/DOC-40986) on how to get one.
- - **Tutorials:** [Administer application configuration and security](http://go.sap.com/developer/tutorials.html?fiori-ios-hcpms-application-setup)
+- **Proficiency:** Beginner
+- **ES4 Account:** You need to have an account on the ES4 system. Read [this tutorial](https://www.sap.com/developer/tutorials/gateway-demo-signup.html) on how to get one.
+- **Tutorials:** [Administer application configuration and security](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-application-setup.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+- [Device registration](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-device-registration.html)
 
 ## Details
 ### You will learn  
-You will learn how to create configure a back-end connection in your SAP Cloud Platform Mobile Services account, which will allow you to securely connect to your back-end service from your mobile application.
+You will learn how to create configure a back-end connection in your SAP Cloud Platform mobile service for development and operations account, which will allow you to securely connect to your back-end service from your mobile application.
 
 ### Time to Complete
 **15 Min**.
 
 ---
 
+
 [ACCORDION-BEGIN [Step 1: ](Test your ES4 account)]
 
 Fiori iOS apps communicate with backend enterprise systems primarily by using OData. SAP provides a publicly available OData endpoint at SAP Gateway Demo System, also known as ES4. As a requirement for this tutorial you should have already created and account on ES4. To test whether your ES4 account works properly, use your browser to go to https://sapes4.sapdevcenter.com/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT/?sap-ds-debug=true.
 
-> Note: If you don't have an account yet, follow the instructions in [this document](https://archive.sap.com/documents/docs/DOC-40986) to get one.
+> Note: If you don't have an account yet, follow the instructions in [this tutorial](https://www.sap.com/developer/tutorials/gateway-demo-signup.html) to get one.
 
 Once you are at this URL, the browser will prompt you for a user-ID and password. Enter your ES4 user-ID and password here.
 
@@ -108,10 +109,11 @@ After saving the connection details, you should see a message toast saying that 
 
 You can now press the **Home** button to go back to the cockpit. In the cockpit, you will see that the number of connections is now 1:
 
-![HCPms Cockpit](image-9.png)
+![SAP Cloud Platform mobile service for development and operations Cockpit](image-9.png)
 
 [DONE]
 [ACCORDION-END]
 
+
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://go.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://go.sap.com/developer/tutorials.html)
+- [Device registration](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-device-registration.html)

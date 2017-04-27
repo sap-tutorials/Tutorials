@@ -6,7 +6,7 @@ tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-web-ide 
 ---
 ## Prerequisites  
  - **Proficiency:**  Intermediate
- - **Tutorials:** Add navigation with your API call
+ - **Tutorials:** [Add navigation with your API call](https://www.sap.com/developer/tutorials/sapui5-navigate-api.html)
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

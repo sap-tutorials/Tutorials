@@ -1,8 +1,8 @@
 ---
 title: Visualize your predictive demo datasets
 description: Using the configured destination for the HANA XS OData service, you will extend your application to visualize the predictive demo datasets
-primary_tag: products>sap-cloud-platform
-tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, products>sap-cloud-platform, topic>sapui5, topic>odata ]
+primary_tag: products>sap-cloud-platform-predictive-service
+tags: [ tutorial>intermediate, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5, topic>odata ]
 ---
 
 ## Prerequisites
@@ -574,13 +574,13 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`webapp\controller\odata\cashflow\display.controller.js`](solution-controller-odata-cashflow-display.controller.js.txt)
-  - [`webapp\controller\odata\census\display.controller.js`](solution-controller-odata-census-display.controller.js.txt)
-  - [`webapp\controller\odata\transaction\display.controller.js`](solution-controller-odata-transaction-display.controller.js.txt)
-  - [`webapp\view\odata\cashflow\display.view.xml`](solution-view-odata-cashflow-display.view.xml.txt)
-  - [`webapp\view\odata\census\display.view.xml`](solution-view-odata-census-display.view.xml.txt)
-  - [`webapp\view\odata\transaction\display.view.xml`](solution-view-odata-transaction-display.view.xml.txt)
-  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`webapp\controller\odata\cashflow\display.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-odata/solution-controller-odata-cashflow-display.controller.js.txt)
+  - [`webapp\controller\odata\census\display.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-odata/solution-controller-odata-census-display.controller.js.txt)
+  - [`webapp\controller\odata\transaction\display.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-odata/solution-controller-odata-transaction-display.controller.js.txt)
+  - [`webapp\view\odata\cashflow\display.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-odata/solution-view-odata-cashflow-display.view.xml.txt)
+  - [`webapp\view\odata\census\display.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-odata/solution-view-odata-census-display.view.xml.txt)
+  - [`webapp\view\odata\transaction\display.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-odata/solution-view-odata-transaction-display.view.xml.txt)
+  - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-odata/solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]

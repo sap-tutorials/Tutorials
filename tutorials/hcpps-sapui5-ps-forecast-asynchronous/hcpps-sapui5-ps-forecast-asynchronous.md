@@ -1,8 +1,8 @@
 ---
 title: Implement the "Forecast" service synchronous mode
 description: You will extend your application with the "Forecast" service using the asynchronous mode
-primary_tag: products>sap-cloud-platform
-tags: [ tutorial>intermediate, products>sap-cloud-for-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
+primary_tag: products>sap-cloud-platform-predictive-service
+tags: [ tutorial>intermediate, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
@@ -474,10 +474,10 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`webapp\fragment\job\JobStatus.fragment.xml`](solution-controller-job-JobStatus.fragment.xml.txt)
-  - [`webapp\controller\forecast\asynchronous.controller.js`](solution-controller-forecast-asynchronous.controller.js.txt)
-  - [`webapp\view\forecast\asynchronous.view.xml`](solution-view-forecast-asynchronous.view.xml.txt)
-  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`webapp\fragment\job\JobStatus.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-asynchronous/solution-controller-job-JobStatus.fragment.xml.txt)
+  - [`webapp\controller\forecast\asynchronous.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-asynchronous/solution-controller-forecast-asynchronous.controller.js.txt)
+  - [`webapp\view\forecast\asynchronous.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-asynchronous/solution-view-forecast-asynchronous.view.xml.txt)
+  - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-asynchronous/solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]

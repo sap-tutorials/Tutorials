@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-web-ide 
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** Add an API call to your app
+ - **Tutorials:** [Add an API call to your app](https://www.sap.com/developer/tutorials/sapui5-insert-rest-api.html)
 
 ## Next Steps
- - Add navigation with your API call
+ - [Add navigation with your API call](https://www.sap.com/developer/tutorials/sapui5-navigate-api.html)
 
 ## Details
 ### You will learn  
@@ -260,4 +260,4 @@ Make sure all your changes are saved and **RUN** your application. For testing p
 
 
 ## Next Steps
- - Add navigation with your API call
+ - [Add navigation with your API call](https://www.sap.com/developer/tutorials/sapui5-navigate-api.html)

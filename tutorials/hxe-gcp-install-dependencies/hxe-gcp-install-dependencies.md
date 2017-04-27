@@ -1,8 +1,9 @@
 ---
 title: HANA Express Edition - Install Dependencies for Ubuntu on Google Cloud Platform
 description: Install dependencies in your Ubuntu OS image on Google Cloud Platform before installing HANA Express Edition
-primary_tag: products>sap-hana\,-express-edition 
-tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition  ]
+primary_tag: products>sap-hana\,-express-edition  
+tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition   ]
+
 ---
 
 ## Prerequisites  
@@ -140,12 +141,41 @@ Example:
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 7: ](For HANA 2.0 SPS01: Create and alias for chkconfig and install curl)]
 
-[ACCORDION-BEGIN [Step 7: ](Update the hostname)]
+This is a command that is not available in Ubuntu. You will download its equivalent and create an alias so it can be called by the installation script.
+
+```
+apt-get install sysv-rc-conf
+```
+Example:
+
+![Install chkconfig](16.png)
+
+And set the alias for the installer:
+
+```
+alias chkconfig='sysv-rc-conf'
+```
+
+![Alias](17.png)
+
+Also for SAP HANA 2.0 SPS01, install curl:
+
+```
+apt-get install curl
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Update the hostname)]
 
 Google Cloud Platform will overwrite your hosts file every time you reboot the virtual machine. HANA Express Edition relies on the hostname to execute most of its services, so it is essential that you use something that can be accessed from outside the server.
 
 You can do this manually by changing the configuration in the file /etc/hosts every time you reboot the machine. Fortunately, there is a script to place at startup that can do this automatically.
+
+>Note that the hostname has to match the name of the VM instance.
 
 Go to your home directory and create a file:
 
@@ -175,7 +205,7 @@ chmod 777 ./set_hostname.sh
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Configure the script to set the hostname at startup in Google Cloud Platform)]
+[ACCORDION-BEGIN [Step 9: ](Configure the script to set the hostname at startup in Google Cloud Platform)]
 
 Go to the VM instances, click on your instance:
 ![Click on the Instance](13.png)

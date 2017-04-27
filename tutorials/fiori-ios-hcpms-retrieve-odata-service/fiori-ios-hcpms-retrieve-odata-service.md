@@ -1,19 +1,19 @@
 ---
 title: Read data from the ES4 back-end and present it in the iOS app
-description: Now the device has been properly registered in the SAP Cloud Platform Mobile Services back-end, it should be possible to reach the OData service provided by the SAP ES4 back-end. This tutorial will implement a service call to the OData back-end and show the results in a table in the iOS app.
+description: Now the device has been properly registered in the SAP Cloud Platform mobile service for development and operations back-end, it should be possible to reach the OData service provided by the SAP ES4 back-end. This tutorial will implement a service call to the OData back-end and show the results in a table in the iOS app.
 primary_tag: operating-system>ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>cloud, topic>mobile, topic>odata, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites  
- - [Verify whether your application has been registered](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-verify-registration.html)
+ - [Verify whether your application has been registered](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-verify-registration.html)
 
 ## Next Steps
- - [Translate your application using the SAP Translation Hub](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-translation-service.html)
+ - [Translate your application using the SAP Translation Hub](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-translation-service.html)
 
 ## Details
 ### You will learn  
-Now the device has been properly registered in the SAP Cloud Platform Mobile Services back-end, it should be possible to reach the OData service provided by the SAP ES4 back-end. You will learn how to format your request to the SAP Cloud Platform Mobile Services and have it passed through to OData back-end that was set-up in a previous tutorial.
+Now the device has been properly registered in the SAP Cloud Platform mobile service for development and operations back-end, it should be possible to reach the OData service provided by the SAP ES4 back-end. You will learn how to format your request to the SAP Cloud Platform mobile service for development and operations and have it passed through to OData back-end that was set-up in a previous tutorial.
 
 ### Time to Complete
 **15 Min**
@@ -21,18 +21,18 @@ Now the device has been properly registered in the SAP Cloud Platform Mobile Ser
 ---
 
 [ACCORDION-BEGIN [Introduction: ](Goal)]
-In the previous set of tutorials, you have setup a connection to the SAP Cloud Platform Mobile Service and and have registered your device. The device registration result in an Application Connection Identifier (`appcid`). The `appcid`, along with the user's credentials should be passed in all requests to the OData back-end services.
+In the previous set of tutorials, you have setup a connection to the SAP Cloud Platform mobile service for development and operations and and have registered your device. The device registration result in an Application Connection Identifier (`appcid`). The `appcid`, along with the user's credentials should be passed in all requests to the OData back-end services.
 
-Not the registration is done, it it time to connect to the actual OData service, which you exposed to the SAP Cloud Platform Mobile Services in tutorial [Configure back-end connection](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-backend-connection.html). There are multiple entities available in the ES4 OData service. In this tutorial the `TravelAgencies` entity will be read.
+Not the registration is done, it it time to connect to the actual OData service, which you exposed to the SAP Cloud Platform mobile service for development and operations in tutorial [Configure back-end connection](http://www.sap.com/developer/tutorials.html?fiori-ios-hcpms-backend-connection.html). There are multiple entities available in the ES4 OData service. In this tutorial the `TravelAgencies` entity will be read.
 
 When data from the OData back-end connection has been retrieved, the travel agencies details will be inserted into the table displayed in the app.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Add a read function in the HCPms class)]
+[ACCORDION-BEGIN [Step 1: ](Add a read function in the `SAPcpms` class)]
 
-In the **Project Navigator**, click on the `HCPms.swift` file. This file contains quite some code already that was built in the previous tutorials. Most of the code is revolving around registration and securely storing the credentials and Application Connection ID. However, the functions that interact with the service back-end is still missing. Add the `read` function below underneath your `register` function:
+In the **Project Navigator**, click on the `SAPcpms.swift` file. This file contains quite some code already that was built in the previous tutorials. Most of the code is revolving around registration and securely storing the credentials and Application Connection ID. However, the functions that interact with the service back-end is still missing. Add the `read` function below underneath your `register` function:
 
 ```swift
 func read(path: String, completion: @escaping (Bool, Any?) -> Void) {
@@ -130,7 +130,7 @@ With the definition of this functions, the `TableView` will retrieve data from t
 
 [ACCORDION-BEGIN [Step 5: ](Implement function loadData in TableViewController)]
 
-In the **Project Navigator**, click on the `TableViewController.swift` file. This will open the code behind the table view controller. This file already contains a function `loadData`, which was created in tutorial [Device Registration](http://go.sap.com/developer/tutorials.html?fiori-ios-hcpms-device-registration.html).
+In the **Project Navigator**, click on the `TableViewController.swift` file. This will open the code behind the table view controller. This file already contains a function `loadData`, which was created in tutorial [Device Registration](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-device-registration.html).
 
 The purpose of the `loadData` function is to call the back-end to retrieve traveling agencies. Once the result has been received, the JSON response should be transformed into `tableData`, which is an array of Strings. In the previous step you have already connected this `tableData` array to the `TableView`.
 
@@ -138,7 +138,7 @@ Replace the current `loadData` function with the function below:
 
 ```swift
 func loadData() {
-    HCPms.shared.read(path: "/TravelAgencies?$select=NAME&$orderby=NAME") {
+    SAPcpms.shared.read(path: "/TravelAgencies?$select=NAME&$orderby=NAME") {
         (success: Bool, result: Any?) in
         if (success) {
             guard let root = result as? [String: Any], let d = root["d"] as? [String: Any], let results = d["results"] as? [[String: Any]] else {
@@ -166,7 +166,7 @@ func loadData() {
 }
 ```
 
-The `loadData` function calls the `read` function in the  `HCPms`. It will pass parameter `/TravelAgencies?$select=NAME&$orderby=NAME` as OData path parameter. This means that we only need attribute `NAME` of each travel agency and that the result list should be ordered by `NAME`.
+The `loadData` function calls the `read` function in the  `SAPcpms`. It will pass parameter `/TravelAgencies?$select=NAME&$orderby=NAME` as OData path parameter. This means that we only need attribute `NAME` of each travel agency and that the result list should be ordered by `NAME`.
 
 The second parameter is a completion handler that is called when the response has been received.
 
@@ -253,4 +253,4 @@ Optionally add a button to your app, allowing you to refresh the table contents.
 [ACCORDION-END]
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Translate your application using the SAP Translation Hub](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-translation-service.html)

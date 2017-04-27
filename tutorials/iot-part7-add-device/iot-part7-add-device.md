@@ -176,18 +176,16 @@ To verify that the posting worked, switch back **IoT Services Cockpit**, click *
 
 [ACCORDION-BEGIN [Step 14: ](Post from an external REST client)] ￼
 
-Now you will post from an external REST client. In this step you will use [Postman Extension](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) for Google Chrome.
+Now you will post from an external REST client. In this step you will use [Postman Application](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) for Google Chrome.
 
-Once installed in Chrome open the Postman extension in incognito mode to avoid authentication issues in the same browser session with SAP Cloud Platform. For that you might need to allow the Postman extension to run in Chrome's incognito mode.
-
-![Postman extension in incognito mode](p7_14v.png)
+>There is no need to create Postman account, if you are asked during the first run of the Postman application.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Set header)] ￼
 
-Copy the HTTP endpoint to it and select **POST** from the drop down menu.
+Copy the HTTP endpoint from Cloud Platform's HTTP client to it and select **POST** from the drop down menu.
 
 Open the **Headers** section and set:
 
@@ -201,18 +199,20 @@ Open the **Headers** section and set:
 
 [ACCORDION-BEGIN [Step 16: ](Paste message content)] ￼
 
-Select then the **RAW** type and copy and paste in the same content you just had (with a few value changes to make it easier to spot this insert. Make sure you change the `messageType` to your ID.
+Select **Body**, then the **RAW** type and copy and paste in the same content you just had (with a few value changes to make it easier to spot this insert. Make sure you change the `messageType` to your ID.
 
 ```json
 {"mode":"sync", "messageType":"m0t0y0p0e1", "messages":[{"Humidity":25.8, "Temperature": 21.6, "timestamp":"2016-11-15T08:46:37.930Z"}]}
 ```
+
+![Raw message](p7_16v.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Send message)] ￼
 
-Click **Send** and you should receive a message similar to when you used the SAP Cloud Platform simple client. This indicates that your POST was successful and if you return to the "Display Stored Messages" you will see your new entry.
+Click **Send** and you should receive a message similar to when you used the SAP Cloud Platform simple client. This indicates that your POST was successful. Return to the "Display Stored Messages" in SAP Cloud Platform, and you find your new entry in the table `T_IOT_[MESSGETYPEID]`.
 
 If you receive `40x` authorization error in return, then check if you are running Postman client in Chrome's incognito mode.
 

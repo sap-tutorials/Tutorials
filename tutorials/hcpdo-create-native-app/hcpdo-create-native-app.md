@@ -1,8 +1,8 @@
 ---
 title: Create a native app in SAP Cloud Platform mobile service for development and operations
 description: Learn how to create a native app definition in SAP Cloud Platform mobile service for development and operations
-primary_tag: operating_system>android
-tags: [  tutorial>intermediate, topic>cloud, topic>mobile, products>sap-cloud-platform, operating_system>android ]
+primary_tag: operating-system>android
+tags: [  tutorial>intermediate, topic>cloud, topic>mobile, products>sap-cloud-platform, operating-system>android ]
 
 ---
 

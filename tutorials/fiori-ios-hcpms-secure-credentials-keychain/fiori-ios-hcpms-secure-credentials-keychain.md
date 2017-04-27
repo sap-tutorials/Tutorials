@@ -1,20 +1,20 @@
 ---
 title: Securely store User Credentials and Application Connection ID in the iOS keychain
-description: When an app registers with the SAP Cloud Platform Mobile Services, an Application Connection ID is returned. This ID, together with the user's credentials need to be stored securely as they are needed for successive calls. The iOS keychain provides a secure storage mechanism and secures data by encrypting it before storing it in the file system, relieving you of the need to implement complicated encryption algorithms.
+description: When an app registers with the SAP Cloud Platform mobile service for development and operations, an Application Connection ID is returned. This ID, together with the user's credentials need to be stored securely as they are needed for successive calls. The iOS keychain provides a secure storage mechanism and secures data by encrypting it before storing it in the file system, relieving you of the need to implement complicated encryption algorithms.
 primary_tag: operating-system>ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>security ]
 ---
 
 ## Prerequisites  
- - [Device registration](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-device-registration.html)
+ - [Device registration](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-device-registration.html)
 
 
 ## Next Steps
- - [Verify whether your application has been registered](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-verify-registration.html)
+ - [Verify whether your application has been registered](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-verify-registration.html)
 
 ## Details
 ### You will learn  
-You will learn how to securely store the user's credentials and Application Connection ID provided by the SAP Cloud Platform Mobile Services in the iOS keychain.
+You will learn how to securely store the user's credentials and Application Connection ID provided by the SAP Cloud Platform mobile service for development and operations in the iOS keychain.
 
 ### Time to Complete
 **15 Min**
@@ -25,7 +25,7 @@ You will learn how to securely store the user's credentials and Application Conn
 
 This tutorial is part of a set of tutorials that will build an application that accesses an OData service leveraging the SAP Cloud Platform Mobile Service. Please find more information on the intended application in the introduction of the previous tutorial on [Device registration](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-device-registration.html).
 
-When an application retrieves data from a back-end connection, the SAP Cloud Platform Mobile Services require a certain level of authentication and an Application Connection ID that was assigned to the device upon registration. However, this information should be classified as confidential and should be stored in an encrypted storage.
+When an application retrieves data from a back-end connection, the SAP Cloud Platform mobile service for development and operations require a certain level of authentication and an Application Connection ID that was assigned to the device upon registration. However, this information should be classified as confidential and should be stored in an encrypted storage.
 
 To store confidential information on an iOS device there are two very good options:
 
@@ -81,7 +81,7 @@ When you dropped the two files into your project, Xcode will show a message box 
 
 [ACCORDION-BEGIN [Step 4: ](Add helper functions for secure settings)]
 
-To save, retrieve and delete values from the keychain, add a few helper functions to the `HCPms` class. Open the `HCPms.swift` file from the **Project Navigator** by clicking on it.
+To save, retrieve and delete values from the keychain, add a few helper functions to the `SAPcpms` class. Open the `SAPcpms.swift` file from the **Project Navigator** by clicking on it.
 
 Add the code below to the bottom of the class, underneath the register function, just before the last closing bracket:
 
@@ -106,9 +106,9 @@ These functions allow setting of key-value pairs into the iOS keychain, leveragi
 
 [ACCORDION-BEGIN [Step 5: ](Remove variable declaration userId and password)]
 
-Instead of the keeping the user ID and password in a variable in the `HCPms` class, the keyring function should be used. As as result of this, the `userId` and `password` variable are not necessary anymore.
+Instead of the keeping the user ID and password in a variable in the `SAPcpms` class, the keyring function should be used. As as result of this, the `userId` and `password` variable are not necessary anymore.
 
-Remove the following two lines from the top parts of the `HCPms` class:
+Remove the following two lines from the top parts of the `SAPcpms` class:
 
 ```swift
 private var userId:String? = nil
@@ -212,7 +212,7 @@ func createBasicAuthString() -> String? {
 
 [ACCORDION-BEGIN [Step 8: ](Remove any existing registrations for the app)]
 
-In the previous tutorial, you have already registered the device. Go to the SAP Cloud Platform Mobile Services cockpit to remove the registration, but clicking on the **Registrations and Users Tile**, selecting the existing registration and clicking the **Delete** button:
+In the previous tutorial, you have already registered the device. Go to the SAP Cloud Platform mobile service for development and operations cockpit to remove the registration, but clicking on the **Registrations and Users Tile**, selecting the existing registration and clicking the **Delete** button:
 
 ![Delete existing registration](image-4.png)
 
@@ -225,7 +225,7 @@ Run the app by pressing the **Build and Run** button at the top left section of 
 
 Once you have logged in, you should be seeing the table view again, similar to what happened at the end of the previous tutorial.
 
-If you go back to the cockpit of SAP Cloud Platform Mobile Service for Development and Operations, you should see that the **Registrations and User** is back to 1.
+If you go back to the cockpit of SAP Cloud Platform mobile service for development and operations, you should see that the **Registrations and User** is back to 1.
 
 When you click on the tile, you should see the list of registrations. Verify that the registration contains the user name that you logged in with:
 
@@ -297,4 +297,4 @@ func register(userId: String, password: String, completion: @escaping (Bool, Str
 [ACCORDION-END]
 
 ## Next Steps
-- [Verify whether your application has been registered](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-verify-registration.html)
+- [Verify whether your application has been registered](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-verify-registration.html)

@@ -26,11 +26,13 @@ DataSource
 datasources
 DesignStudio
 DevOps
+EasyMock
 EclipseLink
 Envinject
 ESLint
 ESRI
 Fiori
+Floorplan
 geocode
 GitHub
 Hadoop
@@ -57,6 +59,7 @@ JUnit
 Kapsel
 keychain
 Keychain
+keystore
 Lifecycle
 Lumira
 macOS
@@ -101,6 +104,7 @@ segues
 Segues
 servlet
 Servlet
+ServletUnit
 Shapefile
 Shapefiles
 SQLScript
