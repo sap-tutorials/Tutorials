@@ -1,6 +1,6 @@
 ---
 title: Test the "Key Influencer" service
-description: Using a REST client, you will test the "Key Influencer" SAP Cloud Platform predictive service from a REST client
+description: Using a REST client, you will test the "Key Influencer" SAP Cloud Platform predictive service
 primary_tag: products>sap-cloud-platform-predictive-service
 tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform ]
 ---

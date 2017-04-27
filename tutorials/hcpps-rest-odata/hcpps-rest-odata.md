@@ -55,7 +55,7 @@ Field Name     | Value
 -------------- | --------------
 Type           | `Basic Auth`
 Username       | `HCPPSTRIAL` (your ***HANA User Account*** login)
-Password       | `Welcome16` (your ***HANA User Account*** password)
+Password       | `Welcome17Welcome17` (your ***HANA User Account*** password)
 
 ![Postman URL](02.png)
 
