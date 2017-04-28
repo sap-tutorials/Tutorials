@@ -1,15 +1,16 @@
 ---
-title: SAP Cloud Platform predictive services, Manage your registered "Datasets" using the SAP Cloud Platform predictive service in your SAPUI5 application
-description: You will extend your application with additional "Dataset" SAP Cloud Platform predictive services
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, topic>sapui5 ]
+title: Manage your registered "Datasets"
+description: You will extend your application with additional "Dataset" SAP Cloud for predictive services
+primary_tag: products>sap-cloud-platform-predictive-service
+tags: [ tutorial>intermediate, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Implement the "Register Dataset" SAP Cloud Platform predictive services in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
+  - **Tutorials:** [Implement the "Register Dataset" service](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
 
 ## Next Steps
-  - [Implement the "Forecast" SAP Cloud Platform predictive service from a SAPUI5 application using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
+  - [Implement the "Forecast" service using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
 
 ## Details
 ### You will learn
@@ -109,7 +110,7 @@ Edit the `demo.view.xml` file located in the `webapp\view`.
 Inside the `<detailPages>` element add the following element:
 
 ```xml
-<Page id="detail_dataset_manage" title="Manage your Data Set with the SAP Cloud Platform predictive services">
+<Page id="detail_dataset_manage" title="Manage your Data Set with the SAP Cloud for predictive services">
   <content>
     <mvc:XMLView viewName="sapui5demo.view.dataset.manage"/>
   </content>
@@ -125,7 +126,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 The controller will contain a function where:
 
-  - we process the call to the "Dataset List" SAP Cloud Platform predictive services and return the list of registered dataset.
+  - we process the call to the "Dataset List" SAP Cloud for predictive services and return the list of registered dataset.
 
 The view will contain:
 
@@ -231,7 +232,7 @@ Et voilà!
 
 You will add to the controller a function where:
 
-  - we process the call to the "Dataset Description" SAP Cloud Platform predictive services and return the dataset detailed description.
+  - we process the call to the "Dataset Description" SAP Cloud for predictive services and return the dataset detailed description.
   - this function will be triggered either on a click or row change event on the table added previously
 
 You will add to the view:
@@ -372,7 +373,7 @@ Et voilà!
 
 You will add to the controller a function where:
 
-  - we process the call to the "Delete Dataset" SAP Cloud Platform predictive services.
+  - we process the call to the "Delete Dataset" SAP Cloud for predictive services.
 
 You will add to the view:
 
@@ -455,7 +456,7 @@ Et voilà!
 
 You will add to the controller a function where:
 
-  - we process the call to the "Update Dataset Variables" SAP Cloud Platform predictive services.
+  - we process the call to the "Update Dataset Variables" SAP Cloud for predictive services.
 
 You will add to the view:
 
@@ -560,12 +561,12 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`webapp\controller\dataset\manage.controller.js`](solution-controller-dataset-manage.controller.js.txt)
-  - [`webapp\view\dataset\manage.view.xml`](solution-view-dataset-manage.view.xml.txt)
-  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`webapp\controller\dataset\manage.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-manage/solution-controller-dataset-manage.controller.js.txt)
+  - [`webapp\view\dataset\manage.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-manage/solution-view-dataset-manage.view.xml.txt)
+  - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-manage/solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]
 
 ## Next Steps
-  - [Implement the "Forecast" SAP Cloud Platform predictive service from a SAPUI5 application using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
+  - [Implement the "Forecast" service using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)

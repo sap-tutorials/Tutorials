@@ -1,15 +1,16 @@
 ---
-title: SAP Cloud Platform predictive services, Visualize your predictive demo datasets
+title: Visualize your predictive demo datasets
 description: Using the configured destination for the HANA XS OData service, you will extend your application to visualize the predictive demo datasets
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-cloud-platform, topic>sapui5, topic>odata ]
+primary_tag: products>sap-cloud-platform-predictive-service
+tags: [ tutorial>intermediate, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5, topic>odata ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Configure a SAPUI5 application to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+  - **Tutorials:** [Configure a SAPUI5 application from the project template](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
 
 ## Next Steps
-  - [Implement the "Register Dataset" SAP Cloud Platform predictive services in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
+  - [Implement the "Register Dataset" service](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
 
 ## Details
 ### You will learn
@@ -573,13 +574,13 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`webapp\controller\odata\cashflow\display.controller.js`](solution-controller-odata-cashflow-display.controller.js.txt)
-  - [`webapp\controller\odata\census\display.controller.js`](solution-controller-odata-census-display.controller.js.txt)
-  - [`webapp\controller\odata\transaction\display.controller.js`](solution-controller-odata-transaction-display.controller.js.txt)
-  - [`webapp\view\odata\cashflow\display.view.xml`](solution-view-odata-cashflow-display.view.xml.txt)
-  - [`webapp\view\odata\census\display.view.xml`](solution-view-odata-census-display.view.xml.txt)
-  - [`webapp\view\odata\transaction\display.view.xml`](solution-view-odata-transaction-display.view.xml.txt)
-  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`webapp\controller\odata\cashflow\display.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-odata/solution-controller-odata-cashflow-display.controller.js.txt)
+  - [`webapp\controller\odata\census\display.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-odata/solution-controller-odata-census-display.controller.js.txt)
+  - [`webapp\controller\odata\transaction\display.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-odata/solution-controller-odata-transaction-display.controller.js.txt)
+  - [`webapp\view\odata\cashflow\display.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-odata/solution-view-odata-cashflow-display.view.xml.txt)
+  - [`webapp\view\odata\census\display.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-odata/solution-view-odata-census-display.view.xml.txt)
+  - [`webapp\view\odata\transaction\display.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-odata/solution-view-odata-transaction-display.view.xml.txt)
+  - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-odata/solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]
@@ -588,4 +589,4 @@ In case you are having problems when running the application, please find bellow
  - Play with the `ajax` URL in the controllers to filter the retrieved data from the HANA XS OData service
 
 ## Next Steps
-  - [Implement the "Register Dataset" SAP Cloud Platform predictive services in your SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
+  - [Implement the "Register Dataset" service](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)

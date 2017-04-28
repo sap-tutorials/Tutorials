@@ -1,6 +1,7 @@
 ---
 title: SAPUI5 extending TextField, PasswordField and Button Control with events
 description: Part 2 of 4. This tutorial will help you learn and understand how to extend a UI5 Button Control with events. Also how to extend a TextField and PasswordField.
+primary_tag: topic>sapui5
 tags: [  tutorial>beginner, topic>html5 ]
 ---
 

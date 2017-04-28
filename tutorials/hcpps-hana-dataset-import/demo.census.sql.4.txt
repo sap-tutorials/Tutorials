@@ -1,3 +1,5 @@
+SET SCHEMA "DEMO";
+
 INSERT into "Census" values (30001,24,'Local-gov',69640,'Some-college',10,'Never-married','Protective-serv','Not-in-family','White','Male',0,0,40,'United-States',0);
 INSERT into "Census" values (30002,27,'Private',297457,'HS-grad',9,'Never-married','Adm-clerical','Own-child','Black','Male',0,0,40,'United-States',0);
 INSERT into "Census" values (30003,18,'Private',279593,'11th',7,'Never-married','Prof-specialty','Own-child','White','Female',0,0,2,'United-States',0);

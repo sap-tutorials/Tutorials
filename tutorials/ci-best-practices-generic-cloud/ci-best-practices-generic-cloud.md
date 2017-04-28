@@ -2,6 +2,7 @@
 
 title: Continuous Integration (CI) Best Practices with SAP: Generic Project with CI using Cloud Services
 description: Part 5.1: Configuring cloud-based CI system for Maven-based generic Java project.
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ---

@@ -1,7 +1,8 @@
 ---
-title: SAP Cloud Platform predictive services, Setup your SAP Cloud Platform trial SAP HANA MDC instance
-description: Learn how to setup a SAP HANA MDC instance to be used with the SAP Cloud Platform predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform  ]
+title: Setup your trial SAP HANA MDC instance
+description: Learn how to setup a SAP HANA MDC instance to be used with the SAP Cloud for predictive services
+primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, products>sap-hana, products>sap-cloud-platform  ]
 ---
 
 ## Prerequisites
@@ -9,7 +10,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform  ]
   - [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-  - [Setup a HANA user account for the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+  - [Setup a HANA user account](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
 
 ## Details
 ### You will learn
@@ -46,7 +47,11 @@ Field Name           | Value
 -------------------- | --------------
 Database ID          | `mdc`
 Database System      | HANA MDC (< trial >)
-System User Password | `Welcome16`
+System User Password | `Welcome17Welcome17`
+
+>Note: Password policy was changed recently and now requires a 15 characters password.
+
+.
 
 You can choose other values for theses properties. As reference them across several tutorials, you should remember the **System User Password** as your ***HANA System Account Password***.
 
@@ -67,8 +72,20 @@ Once you see the *Database started successfully* event appears in the list, you 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Finalize your HANA MDC instance setup)]
-Once the HANA MDC instance is created, you will need to connect to the ***SAP HANA Cockpit*** at least once using the *HANA System User* in order to finalize the system account setup and add all the necessary roles.
+[ACCORDION-BEGIN [Step 4: ](Restart the database)]
+Now that we have our HANA MDC instance, we will simply restart it to clear some cache and free up some resources.
+
+Click on **Stop**.
+
+Once the database is stopped, Click on **Start**.
+
+![Trial Database Overview](06.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Finalize your HANA MDC instance setup)]
+Now, you will need to connect to the ***SAP HANA Cockpit*** at least once using the *HANA System User* in order to finalize the system account setup and add all the necessary roles.
 
 Click on **SAP HANA Cockpit**.
 
@@ -76,7 +93,7 @@ Click on **SAP HANA Cockpit**.
 
 You will be prompted to login.
 
-Enter `SYSTEM` as user name and the ***HANA System Account*** password that was provided during the instance creation as password (`Welcome16`).
+Enter `SYSTEM` as user name and the ***HANA System Account*** password that was provided during the instance creation as password (`Welcome17Welcome17`).
 
 Click on **Log On**.
 
@@ -100,4 +117,4 @@ You are in the ***SAP HANA Cockpit***.
 [ACCORDION-END]
 
 ## Next Steps
-  - [Setup a HANA user account for the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+  - [Setup a HANA user account](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)

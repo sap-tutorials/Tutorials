@@ -1,22 +1,23 @@
 ---
-title: SAP Cloud Platform predictive services, Test the "Outliers" SAP Cloud Platform predictive service from a REST client
-description: Using a REST client, you will test the "Outliers" SAP Cloud Platform predictive service from a REST client
-tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
+title: Test the "Outliers" service
+description: Using a REST client, you will test the "Outliers" SAP Cloud Platform predictive service
+primary_tag: products>sap-cloud-platform-predictive-service
+tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the "Key Influencer" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
+  - **Tutorials:** [Test the "Key Influencer" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
 
 ## Next Steps
-  - [Configure a SAPUI5 application to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+  - [Configure a SAPUI5 application from a project template](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
 
 ## Details
 
 ### You will learn
- - How to use the "Outliers" SAP Cloud Platform predictive services from a REST Client.
+ - How to use the "Outliers" SAP Cloud for predictive services from a REST Client.
 
-Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
+Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
 
 ### Time to Complete
   **10 minutes**
@@ -78,20 +79,20 @@ This file presents the data on 48,842 individual Americans, of at least 17 years
 
 Variable | Description | Example of Values
 -------------- | -------------- | --------------
-age | Age of individuals | Any numerical value greater than 17
-workclass | Employer category of individuals | Private, Self-employed-not-inc, ...
-fnlwgt | Weight variable, allowing each individual to represent a certain percentage of the population | Any numerical value, such as 0, 2341 or 205019
-education | Level of study, represented by a schooling level, or by the title of the degree earned | 11th, Bachelors
-education-num | Number of years of study, represented by a numerical value | A numerical value between 1 and 16
-marital-status | Marital status | Divorced, Never-married, ...
-occupation | Job classification | Sales, Handlers-cleaners, ...
-relationship | Position in family | Husband, Wife, ...
-race | Ethnicity |
-sex | Gender | Male, Female, ...
-capital-gain | Annual capital gains | Any numerical value
-capital-loss | Annual capital losses | Any numerical value
-native country | Country of origin| United States, France, ...
-class | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
+`age` | Age of individuals | Any numerical value greater than 17
+`workclass` | Employer category of individuals | Private, Self-employed-not-inc, ...
+`fnlwgt` | Weight variable, allowing each individual to represent a certain percentage of the population | Any numerical value, such as 0, 2341 or 205019
+`education` | Level of study, represented by a schooling level, or by the title of the degree earned | 11th, Bachelors
+`education-num` | Number of years of study, represented by a numerical value | A numerical value between 1 and 16
+`marital-status` | Marital status | Divorced, Never-married, ...
+`occupation` | Job classification | Sales, Handlers-cleaners, ...
+`relationship` | Position in family | Husband, Wife, ...
+`race` | Ethnicity |
+`sex` | Gender | Male, Female, ...
+`capital-gain` | Annual capital gains | Any numerical value
+`capital-loss` | Annual capital losses | Any numerical value
+`native country` | Country of origin| United States, France, ...
+`class` | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
 
 [DONE]
 [ACCORDION-END]  
@@ -100,7 +101,7 @@ class | Variable indicating whether or not the salary of the individual is great
 
 First we need to register the dataset.
 
-As described in the **Step 1: Register a dataset** from the [Test the "Data Set" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial, register the Census dataset using the following elements:
+As described in the **Step 1: Register a dataset** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial, register the Census dataset using the following elements:
 
 Field Name     | Value
 -------------- | --------------
@@ -168,7 +169,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   ]  
 }
 ```
-> Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud Platform predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
+> Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
 
 -
 
@@ -261,8 +262,8 @@ You can also play with the following parameters and check the differences:
 [ACCORDION-END]    
 
 ### Optional
-For more details on the SAP Cloud Platform predictive services, you can check the following URL:
+For more details on the SAP Cloud for predictive services, you can check the following URL:
   - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
 
 ## Next Steps
-  - [Configure a SAPUI5 application to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+  - [Configure a SAPUI5 application from a project template](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)

@@ -1,12 +1,13 @@
 ---
-title: SAP Cloud Platform predictive services, Configure a SAPUI5 application from the project template
-description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the HANA XS OData service and the SAP Cloud Platform predictive services
-tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platform, topic>sapui5 ]
+title: Configure a SAPUI5 application from the project template
+description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the HANA XS OData service and the SAP Cloud for predictive services
+primary_tag: products>sap-cloud-platform-predictive-service
+tags: [ tutorial>intermediate, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Test the "Outliers" SAP Cloud Platform predictive service from a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)
+  - **Tutorials:** [Test the "Outliers" service using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)
 
 ## Next Steps
   - [Visualize your predictive demo datasets in a SAPUI5 application using an HANA XS OData service](http://www.sap.com/developer/tutorials/hcpps-sapui5-odata.html)
@@ -19,7 +20,7 @@ tags: [ tutorial>intermediate, products>sap-hana, products>sap-hana-cloud-platfo
   - Run your SAPUI5 application
 >
 > **Note:**
-The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Cloud Platform predictive services.
+The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Cloud for predictive services.
 For more content on SAPUI5, you can check the dedicated SAPUI5 tutorials or the online SAPUI5 documentation available here: https://sapui5.hana.ondemand.com
 
 ### Time to Complete
@@ -35,7 +36,7 @@ Therefore you can replace any occurrence of the token by the value listed above.
 <code><b>&lt;HANA instance id&gt;</b></code>  | as created previously, should be `mdc`
 <code><b>&lt;HANA URL&gt;</b></code> | `https://<`<code><b>HANA instance id</b></code>`><`<code><b>Account name</b></code>`>.hanatrial.ondemand.com`
 <code><b>&lt;HANA User&gt;</b></code> | `HCPPSTRIAL`
-<code><b>&lt;HANA Password&gt;</b></code> | `Welcome16`
+<code><b>&lt;HANA Password&gt;</b></code> | `Welcome17Welcome17`
 >
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP HANA Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
@@ -381,9 +382,9 @@ This will open a web page with the following content:
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`neo-app.json`](solution-neo-app.json.txt)
-  - [`webapp\controller\demo.controller.js`](solution-controller-demo.controller.js.txt)
-  - [`webapp\view\demo.view.xml`](solution-view-demo.view.xml.txt)
+  - [`neo-app.json`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-configure-application/solution-neo-app.json.txt)
+  - [`webapp\controller\demo.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-configure-application/solution-controller-demo.controller.js.txt)
+  - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-configure-application/solution-view-demo.view.xml.txt)
 
 [DONE]
 [ACCORDION-END]

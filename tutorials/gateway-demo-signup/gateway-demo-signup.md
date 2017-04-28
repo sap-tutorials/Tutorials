@@ -1,6 +1,7 @@
 ---
 title: Create an account on the Gateway Demo system
 description: Sign up for an account on our demo Gateway server (ES4).
+primary_tag: products>sap-gateway
 tags: [ products>sap-gateway, topic>cloud, topic>odata, tutorial>beginner ]
 ---
 ## Prerequisites  
@@ -63,9 +64,9 @@ This is an example of the registration confirmation email:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Go to the SAP Gateway Web UI)]
+[ACCORDION-BEGIN [Step 4: ](Go to the SAP Gateway Web GUI)]
 
-Once you received your registration email, go to the [SAP Gateway WebGUI](https://sapes4.sapdevcenter.com/).  Enter the username and initial password from your email.
+Once you received your registration email, go to the [SAP Gateway Web GUI](https://sapes4.sapdevcenter.com/).  Enter the username and initial password from your email.
 
 ![Initial login - Gateway Web GUI](4.png)
 
@@ -95,7 +96,7 @@ When your password is changed, you will see a confirmation dialog.
 
 [ACCORDION-BEGIN [Step 7: ](Logged in)]
 
-You should now see the **SAP Easy Access** scren.  Your account is now active and ready for use.
+You should now see the **SAP Easy Access** screen.  Your account is now active and ready for use.
 
 ![SAP NetWeaver Gateway Splash Screen](7.png)
 

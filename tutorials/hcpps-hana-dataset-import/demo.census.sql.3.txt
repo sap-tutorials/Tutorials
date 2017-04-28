@@ -1,3 +1,5 @@
+SET SCHEMA "DEMO";
+
 INSERT into "Census" values (20001,63,'Private',205246,'HS-grad',9,'Married-civ-spouse','Machine-op-inspct','Husband','Black','Male',0,0,40,'United-States',0);
 INSERT into "Census" values (20002,36,'Private',230329,'Bachelors',13,'Married-civ-spouse','Exec-managerial','Husband','White','Male',0,0,50,'United-States',1);
 INSERT into "Census" values (20003,25,'Private',197871,'Bachelors',13,'Never-married','Exec-managerial','Not-in-family','White','Male',0,0,50,'United-States',0);

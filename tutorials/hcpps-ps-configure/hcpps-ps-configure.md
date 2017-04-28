@@ -1,19 +1,23 @@
 ---
-title: SAP Cloud Platform predictive services, Enable, deploy and configure the SAP Cloud Platform predictive services
-description: Enable, deploy and configure the SAP Cloud Platform predictive services
-tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
+title: Enable, deploy and configure the SAP Cloud for predictive services
+description: Enable, deploy and configure the SAP Cloud for predictive services
+primary_tag: products>sap-cloud-platform-predictive-service
+tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-predictive-service]
 ---
 
 ## Prerequisites
-  - **Proficiency:** Beginner
-  - **Tutorials:** [Expose your predictive demo dataset as a HANA XS OData service](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
+- **Proficiency:** Beginner
+- **Tutorials:** [Expose your predictive demo dataset as HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-odata.html)
 
 ## Next Steps
-  - [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
+- If you are running on the SAP Cloud Platform trial edition, you should continue with:
+  [How to update the database pool configuration of the SAP Cloud for predictive services](https://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
+- else with:
+  [Install a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
 
 ## Details
 ### You will learn
-  - How to enable, deploy and configure the SAP Cloud Platform predictive services for your SAP Cloud Platform developer Account
+- How to enable, deploy and configure the SAP Cloud for predictive services for your SAP Cloud Platform developer Account
 
 ### Time to Complete
   **10 minutes**
@@ -100,7 +104,7 @@ Click on **New Binding**
 
 It should propose you by default your HANA MDC instance (named `mdc`) we just created.
 
-Enter your ***HANA User Account*** login (`HCPPSTRIAL`) and password (`Welcome16`).
+Enter your ***HANA User Account*** login (`HCPPSTRIAL`) and password (`Welcome17Welcome17`).
 
 Click on **Save**
 
@@ -138,7 +142,7 @@ This will simplify the way we will build a SAPUI5 application that consumes thes
 
 On the left side bar, navigate in **Security**, then click on **Authentication Configuration**
 
-Enable the **Custom** mode
+Click on **Activate Custom Configuration**.
 
 Check **User name and password** and **Client certificate** for the ***FORM*** authentication scheme
 
@@ -168,7 +172,7 @@ Click on the **Administration** tile
 
 ![Application](19.png)
 
-Status is green! Congrats, you have configured the SAP Cloud Platform predictive services on your SAP Cloud Platform account.
+Status is green! Congrats, you have configured the SAP Cloud for predictive services on your SAP Cloud Platform account.
 
 ![Application](20.png)   
 
@@ -176,4 +180,7 @@ Status is green! Congrats, you have configured the SAP Cloud Platform predictive
 [ACCORDION-END]
 
 ## Next Steps
-  - [Install a REST client to interact with the SAP Cloud Platform predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
+- If you are running on the SAP Cloud Platform trial edition, you should continue with:
+  [How to update the database pool configuration of the SAP Cloud for predictive services](https://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
+- else with:
+  [Install a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)

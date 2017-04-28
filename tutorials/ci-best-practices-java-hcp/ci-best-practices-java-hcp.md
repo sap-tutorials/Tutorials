@@ -2,6 +2,7 @@
 
 title: Continuous Integration (CI) Best Practices with SAP: Java Web on SAP Cloud Platform
 description: Part 4.2: Configuring the CI system for Maven-based Java Web project.
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ---

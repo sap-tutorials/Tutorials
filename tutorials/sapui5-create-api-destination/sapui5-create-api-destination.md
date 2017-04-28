@@ -1,6 +1,7 @@
 ---
 title: Create a Destination for an External API (Slack)
 description: Create a destination in SAP Cloud Platform to connect with an external API
+primary_tag: topic>sapui5
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
@@ -8,7 +9,7 @@ tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform ]
  - **Tutorials:** This is the first tutorial in this series.  
 
 ## Next Steps
- - [Register your App with an External API](http://www.sap.com/developer/tutorials/sapui5-register-app-api.html)
+ - [Register your App with an External API](https://www.sap.com/developer/tutorials/sapui5-register-app-api.html)
 
 ## Details
 ### You will learn  
@@ -30,7 +31,7 @@ Go to your [SAP Cloud Platform Cockpit trial](https://account.hanatrial.ondemand
 [ACCORDION-BEGIN [Step 2: ](Open the Destinations page)]
 Open the **Destinations** page found under the Connectivity section on the left-side navigation.
 
-![Destination location in SAP Cloud Platform](destinations.png)
+![Destination location in HCP](destinations.png)
 
 [DONE]
 [ACCORDION-END]
@@ -38,7 +39,7 @@ Open the **Destinations** page found under the Connectivity section on the left-
 [ACCORDION-BEGIN [Step 3: ](Create a new destination)]
 Select **New Destination**.
 
-![New Destination button in SAP Cloud Platform](destinations-new.png)
+![New Destination button in HCP](destinations-new.png)
 
 [DONE]
 [ACCORDION-END]
@@ -82,7 +83,7 @@ Check the connection to verify you set up the destination properly and that SAP 
 
 ### Optional
 [ACCORDION-BEGIN [Step 6: ](Modify your destination for another API)]
-You will always need to add at least 2 additional properties to your destination to enable the usage of the destination in Web IDE, which is the recommended development environment for SAPUI5 and available for free in SAP Cloud Platform. Always add these properties under the **Additional Properties** section:
+You will always need to add at least 2 additional properties to your destination to enable the usage of the destination in Web IDE, which is the recommended development environment for SAPUI5 and available for free in HCP. Always add these properties under the **Additional Properties** section:
 
 |Field Name|Value|
 |----|----|
@@ -106,7 +107,7 @@ See some other examples below of destination details for other APIs.
 |Proxy Type | `Internet` |
 |Authentication | `NoAuthentication` |
 
-> Note: When you check connection for the Facebook API, you should see a failure with a message of peer not authenticated. When used in Web IDE, an authorization header will be added which will allow you to successfully connect. In SAP Cloud Platform, **ignore the failure for _this_ API**.
+> Note: When you check connection for the Facebook API, you should see a failure with a message of peer not authenticated. When used in Web IDE, an authorization header will be added which will allow you to successfully connect. In HCP, **ignore the failure for _this_ API**.
 
 `Eventbrite`
 
@@ -136,4 +137,4 @@ See some other examples below of destination details for other APIs.
 [ACCORDION-END]
 
 ## Next Steps
- - [Register your App with an External API](http://www.sap.com/developer/tutorials/sapui5-register-app-api.html)
+ - [Register your App with an External API](https://www.sap.com/developer/tutorials/sapui5-register-app-api.html)

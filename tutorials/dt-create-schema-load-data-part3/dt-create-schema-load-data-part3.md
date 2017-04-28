@@ -1,6 +1,7 @@
 ---
 title: Create Tables and Import Data
-description: Part 3 of 8. Create in-memory column store and Dynamic Tiering tables. Import data into both types of tables.
+description: Create in-memory column store and Dynamic Tiering tables. Import data into both types of tables.
+primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
 ## Prerequisites

@@ -1,6 +1,7 @@
 ---
 title: SAPUI5 - Display List Element Details
 description: Add details to a list, making it a multi-line list element
+primary_tag: topic>sapui5
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
 ---
 ## Prerequisites  

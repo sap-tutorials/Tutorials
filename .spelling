@@ -9,7 +9,9 @@ Arduino
 Auth
 AWS
 backend
+BAPIs
 Bieser
+Bitbucket
 BusinessObjects
 CAL
 CircleCI
@@ -24,11 +26,14 @@ DataSource
 datasources
 DesignStudio
 DevOps
+EasyMock
 EclipseLink
 Envinject
 ESLint
 ESRI
 Fiori
+Floorplan
+geocode
 GitHub
 Hadoop
 HCPms
@@ -54,10 +59,12 @@ JUnit
 Kapsel
 keychain
 Keychain
+keystore
 Lifecycle
 Lumira
 macOS
-MacDown
+multistore
+Multistore
 MySQL
 NetWeaver
 Node.js
@@ -74,6 +81,7 @@ openweathermap
 openweathermap.org
 plugin
 plugins
+POJOs
 Postgres
 pre-pend
 pre-pended
@@ -96,6 +104,7 @@ segues
 Segues
 servlet
 Servlet
+ServletUnit
 Shapefile
 Shapefiles
 SQLScript
@@ -104,6 +113,7 @@ ssh
 subselect
 supertype
 supertypes
+Sybase
 TechEd
 Tessel
 timestamp

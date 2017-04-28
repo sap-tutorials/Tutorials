@@ -1,6 +1,7 @@
 ---
 title: Multi-Store Tables
-description: Part 8 of 8. Create Multi-Store Tables
+description: Create Multi-Store Tables
+primary_tag: products>sap-hana-dynamic-tiering
 tags: [tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
 ## Prerequisites

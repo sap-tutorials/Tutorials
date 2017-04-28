@@ -1,6 +1,7 @@
 ---
 title: Add a map display to your app
 description: Add a map to your app and geolocate a street address
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 

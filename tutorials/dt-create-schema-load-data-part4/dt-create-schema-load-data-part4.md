@@ -1,6 +1,7 @@
 ---
 title: Converting Between an In-Memory Table and an Extended Table
-description: Part 4 of 8. Convert an in-memory column store table to an extended table and vice versa.
+description: Convert an in-memory column store table to an extended table and vice versa.
+primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
 ## Prerequisites

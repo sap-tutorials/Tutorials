@@ -1,10 +1,13 @@
 ---
-title: Deploy an JCo/RFC based on-premise extension using SAP HANA Cloud Connector
-description: Deploy an on-premise extension which uses RFC via JCo. The scenario used in this tutorial is based on the well-known SFLIGHT model available as default sample content in all ABAP systems.
-tags: [  tutorial>beginner, topic>cloud, products>cloud-connector-for-sap-hana-cloud-platform ]
+title: Deploy an JCo / RFC based on-premise extension using SAP HANA Cloud Connector
+description: Deploy an on-premise extension which uses RFC via JCo. The scenario used in this tutorial is based on the well-known `SFLIGHT` model available as default sample content in all ABAP systems.
+primary_tag: products>sap-cloud-platform
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform-connectivity ]
 ---
 
 ## Prerequisites  
+- **Proficiency:** Beginner
+- **Tutorials:**
   - [Sign up for a free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
   - [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](http://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html)
 
@@ -94,54 +97,49 @@ Navigate to the **Access Control** view of the cloud connector and click the **I
 
 In the upcoming window, click the **Browse** button and select the file **`D:/sap_hcp_scc/access_control.zip`** and click **Save**.
 
-Now you have imported the configuration of the ABAP system and the RFC resources needed by the SFLIGHT application and your Cloud Connector should look like shown below.
+Now you have imported the configuration of the ABAP system and the RFC resources needed by the `SFLIGHT` application and your Cloud Connector should look like shown below.
 
-![How the SAP Cloud Connector should look like after importing access_control.zip ](how-scc-should-look-like-after-import.png)
+![How the SAP Cloud Connector should look like after importing `access_control.zip` ](how-scc-should-look-like-after-import.png)
 
 [DONE]
 [ACCORDION-END]
 
----
-
-### Optional
 [ACCORDION-BEGIN [Step 5: ](Testing the application)]
 Now the SFLIGHT application has been deployed to your SAP Cloud Platform account, the needed destination has been configured, and the cloud connector has been connected and configured as well. The application can now be used. Test it by starting it in the browser:
 
   - Open the [cloud cockpit](https://account.hanatrial.ondemand.com/cockpit) and log on again with your SAP Cloud Platform user.
   - Navigate into **Java Applications** and drill into your application.
-  - Start the SFLIGHT application by clicking the URL visible under **Application URLs**. This should bring up the application. You can now select a flight departure and arrival airport, e.g. `Frankfurt` and `New York`, then click the **Search** button. This should then list the available flights.
+  - Start the `SFLIGHT` application by clicking the URL visible under **Application URLs**. This should bring up the application. You can now select a flight departure and arrival airport, e.g. `Frankfurt` and `New York`, then click the **Search** button. This should then list the available flights.
 
 [DONE]
 [ACCORDION-END]
 
----
+[ACCORDION-BEGIN [Step 6: ](Explaining the UI layer)]
 
-### Explaining the application
-[ACCORDION-BEGIN [Explaining](the UI layer)]
+The `SFLIGHT` application uses SAPUI5 as the UI technology. In line with the Model-View-Controller paradigm, the main components comprising the UI layer are two JavaScript files **`sflight.view.js`** and **`sflight.controller.js`**, which are located in the **`/src/main/webapp/sflight-web`** folder of the project.
 
-The SFLIGHT application uses SAP UI5 as the UI technology. In line with the Model-View-Controller paradigm, the main components comprising the UI layer are two JavaScript files **sflight.view.js** and **sflight.controller.js**, which are located in the **/src/main/webapp/sflight-web** folder of the project.
-The screenshot below shows the UI with the function names of the sflight.view.js file, which implement the respective panel:
-ui_java_script
+The screenshot below shows the UI with the function names of the `sflight.view.js` file, which implement the respective panel: `ui_java_script`
+
 ![UI Explained](explaining-ui-java-script.png)
 
-The individual panels interact with the sflight.controller.js file in following ways:
+The individual panels interact with the `sflight.controller.js` file in following ways:
 
-  - createFlightSearchPanel(...): calls the searchFlights(...) function of the controller to retrieve a list of flights from specified departure and arrival airports.
-  - createFlightListPanel(...): calls the getFlightDetails(...) function of the controller to retrieve the details of the selected flight.
-  - createFlightDetailsPanel(...): calls the bookFlight(...) function of the controller to book the selected flight. It also calls the searchFlights(...) function of the controller again to retrieve an updated flight list.
+  - `createFlightSearchPanel(...)`: calls the `searchFlights(...)` function of the controller to retrieve a list of flights from specified departure and arrival airports.
+  - `createFlightListPanel(...)`: calls the `getFlightDetails(...)` function of the controller to retrieve the details of the selected flight.
+  - `createFlightDetailsPanel(...)`: calls the `bookFlight(...)` function of the controller to book the selected flight. It also calls the `searchFlights(...)` function of the controller again to retrieve an updated flight list.
 
-The UI controller interacts with the server using REST services. All REST services return a JSON response. Consequently, both the controller and view components are using the sap.ui.model.json.JSONModel to bind the UI to the JSON data. The REST services called in the sflight.controller.js file are the following:
+The UI controller interacts with the server using REST services. All REST services return a JSON response. Consequently, both the controller and view components are using the `sap.ui.model.json.JSONModel` to bind the UI to the JSON data. The REST services called in the `sflight.controller.js` file are the following:
 
-  - **GET /rest/v1/flight.svc/cities**: Returns a JSON array of cities, in which airports are located.
-  - **GET: /rest/v1/flight.svc/flights/{cityFrom}/{cityTo}**: Returns a JSON array of flights with departure airport {cityFrom} and arrival airport {cityTo}.
-  - **GET: /rest/v1/flight.svc/flight/{carrier}/{connNumber}/{dateOfFlight}**: Returns a JSON array with the details of the specified flight.
-  - **POST: /rest/v1/flight.svc/booking**:  Books a flight as specified in the response body and returns a JSON object with the booking ID. (The xmlhttprequest object is used directly to trigger the POST request to the server.)
+  - **GET `/rest/v1/flight.svc/cities`**: Returns a JSON array of cities, in which airports are located.
+  - **GET: `/rest/v1/flight.svc/flights/{cityFrom}/{cityTo}`**: Returns a JSON array of flights with departure airport `{cityFrom}` and arrival airport `{cityTo}`.
+  - **GET: `/rest/v1/flight.svc/flight/{carrier}/{connNumber}/{dateOfFlight}`**: Returns a JSON array with the details of the specified flight.
+  - **POST: `/rest/v1/flight.svc/booking`**:  Books a flight as specified in the response body and returns a JSON object with the booking ID. (The `xmlhttprequest` object is used directly to trigger the POST request to the server.)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Explaining](the REST services)]
+[ACCORDION-BEGIN [Step 7: ](Explaining the REST services)]
 
-The application is using [Apache CXF](https://cxf.apache.org/) and the [Spring Framework](http://projects.spring.io/spring-framework/) to provide the necessary REST services. In order to use these libraries, the needed dependencies must be defined in the [pom.xml](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/pom.xml):
+The application is using [Apache CXF](https://cxf.apache.org/) and the [Spring Framework](http://projects.spring.io/spring-framework/) to provide the necessary REST services. In order to use these libraries, the needed dependencies must be defined in the [`pom.xml`](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/pom.xml):
 
 ```xml
 <!-- Apache CXF -->
@@ -181,7 +179,7 @@ The application is using [Apache CXF](https://cxf.apache.org/) and the [Spring F
 
 How to use CXF in combination with Spring is described in more detail on [the Apache Website](https://cxf.apache.org/docs/jaxrs-services-configuration.html). In short, these two libraries combined provide a simple-to-use framework to define REST services in POJOs, taking care for all the boilerplate code of receiving and sending HTTP requests for you. It thus allows you to focus on the business logic and makes development of REST services easy as 1-2-3.
 
-To understand how the REST services of the sample application are implemented, you need to look into the [springrest-context.xml](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/src/main/webapp/WEB-INF/springrest-context.xml) file located under the [/src/main/webapp/WEB-INF](https://github.com/SAP/cloud-personslist-scenario/tree/Extensions-005/sflight-web/src/main/webapp/WEB-INF) folder of the project. There, a Spring bean is defined with the name **flightService**. This bean is implemented by the Java class [com.sap.cloudlabs.connectivity.sflight.FlightService](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/src/main/java/com/sap/cloudlabs/connectivity/sflight/FlightService.java). Using CXF and Spring annotations, the FlightService class is a simple POJO which provides the GET and POST service endpoints listed above. A small code fragment that shows how the definition of the REST service is done is shown here:
+To understand how the REST services of the sample application are implemented, you need to look into the [`springrest-context.xml`](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/src/main/webapp/WEB-INF/springrest-context.xml) file located under the [`/src/main/webapp/WEB-INF`](https://github.com/SAP/cloud-personslist-scenario/tree/Extensions-005/sflight-web/src/main/webapp/WEB-INF) folder of the project. There, a Spring bean is defined with the name **`flightService`**. This bean is implemented by the Java class [`com.sap.cloudlabs.connectivity.sflight.FlightService`](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/src/main/java/com/sap/cloudlabs/connectivity/sflight/FlightService.java). Using CXF and Spring annotations, the `FlightService` class is a simple POJO which provides the GET and POST service endpoints listed above. A small code fragment that shows how the definition of the REST service is done is shown here:
 
 ```java
 @Service("flightService")
@@ -201,18 +199,18 @@ public class FlightService {
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Explaining](the connectivity layer)]
+[ACCORDION-BEGIN [Step 8: ](Explaining the connectivity layer)]
 
-The FlightService class delegates all calls to a FlightProvider object which then, in turn, does the actual call to the on-premise system. For this, an interface [com.sap.cloudlabs.connectivity.sflight.FlightProvider](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/src/main/java/com/sap/cloudlabs/connectivity/sflight/FlightProvider.java) is used that defines the Java methods which shall be performed against the on-premise system.
+The `FlightService` class delegates all calls to a `FlightProvider` object which then, in turn, does the actual call to the on-premise system. For this, an interface [`com.sap.cloudlabs.connectivity.sflight.FlightProvider`](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/src/main/java/com/sap/cloudlabs/connectivity/sflight/FlightProvider.java) is used that defines the Java methods which shall be performed against the on-premise system.
 
-Right now, there is only one implementation of the FlightProvider interface: [com.sap.cloudlabs.connectivity.sflight.jco.JCoFlightProvider](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/src/main/java/com/sap/cloudlabs/connectivity/sflight/jco/JCoFlightProvider.java). The JCoFlightProvider class uses the Java Connector (JCo) API to make RFC calls directly against the ABAP system. Of course, all the communication is encrypted and secured via the cloud connector. You can use JCo in exactly the same way as you might know it from SAP NetWeaver Application Server Java. A tutorial how to work with JCo can be found [in the SAP Bussines Objects Documentation](https://help.sap.com/businessobject/product_guides/hci1/en/SAPJCo_Doku_3.0_EN.pdf). The JCoFlightProvider class requires an RFC destination called dest_sflight.
+Right now, there is only one implementation of the `FlightProvider` interface: [`com.sap.cloudlabs.connectivity.sflight.jco.JCoFlightProvider`](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/src/main/java/com/sap/cloudlabs/connectivity/sflight/jco/JCoFlightProvider.java). The `JCoFlightProvider` class uses the Java Connector (JCo) API to make RFC calls directly against the ABAP system. Of course, all the communication is encrypted and secured via the cloud connector. You can use JCo in exactly the same way as you might know it from SAP NetWeaver Application Server Java. A tutorial how to work with JCo can be found [in the SAP Business Objects Documentation](https://help.sap.com/businessobject/product_guides/hci1/en/SAPJCo_Doku_3.0_EN.pdf). The `JCoFlightProvider` class requires an RFC destination called `dest_sflight`.
 
-Note that the JCoFlightProvider class not only fetches data from the ABAP system, but also writes back a flight booking transaction to the ABAP system. The BAPIs called by the application on the ABAP system are:
+Note that the `JCoFlightProvider` class not only fetches data from the ABAP system, but also writes back a flight booking transaction to the ABAP system. The BAPIs called by the application on the ABAP system are:
 
-  - BAPI_SFLIGHT_GETLIST
-  - BAPI_SFLIGHT_GETDETAIL
-  - BAPI_SBOOK_CREATEFROMDATA
-  -	BAPI_TRANSACTION_COMMIT
+  - `BAPI_SFLIGHT_GETLIST`
+  - `BAPI_SFLIGHT_GETDETAIL`
+  - `BAPI_SBOOK_CREATEFROMDATA`
+  - `BAPI_TRANSACTION_COMMIT`
 
 
 [ACCORDION-END]
@@ -225,5 +223,5 @@ Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tut
 ---
 
 ## Related Information
-  - [SFLIGHT Official documentation](https://help.sap.com/saphelp_erp60_sp/helpdata/en/48/1a323c3980a57be10000000a11402f/content.htm?frameset=/en/db/7c623cf568896be10000000a11405a/frameset.htm)
+  - [`SFLIGHT` Official documentation](https://help.sap.com/saphelp_erp60_sp/helpdata/en/48/1a323c3980a57be10000000a11402f/content.htm?frameset=/en/db/7c623cf568896be10000000a11405a/frameset.htm)
   - [GitHub project repository](https://github.com/SAP/cloud-personslist-scenario)
