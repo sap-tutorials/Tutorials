@@ -104,7 +104,7 @@ Click on **New Binding**
 
 It should propose you by default your HANA MDC instance (named `mdc`) we just created.
 
-Enter your ***HANA User Account*** login (`HCPPSTRIAL`) and password (`Welcome16`).
+Enter your ***HANA User Account*** login (`HCPPSTRIAL`) and password (`Welcome17Welcome17`).
 
 Click on **Save**
 
@@ -142,7 +142,7 @@ This will simplify the way we will build a SAPUI5 application that consumes thes
 
 On the left side bar, navigate in **Security**, then click on **Authentication Configuration**
 
-Enable the **Custom** mode
+Click on **Activate Custom Configuration**.
 
 Check **User name and password** and **Client certificate** for the ***FORM*** authentication scheme
 

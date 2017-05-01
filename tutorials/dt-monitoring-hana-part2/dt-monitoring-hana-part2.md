@@ -2,17 +2,17 @@
 title: Creating and Removing Extended Storage
 description: Creating and removing Extended Storage using SAP HANA Studio and SAP HANA Cockpit
 primary_tag: products>sap-hana-dynamic-tiering
-tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, products>sap-hana-cockpit, topic>big-data, topic>sql ]
+tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Monitoring HANA Using SAP HANA Cockpit for SAP HANA Dynamic Tiering](coming soon)
+ - **Tutorials:** [Monitoring HANA Using SAP HANA Cockpit for SAP HANA Dynamic Tiering](https://www.sap.com/developer/tutorials/dt-monitoring-hana-part1.html)
 
 
 ## Next Steps
  - **Proficiency:** Beginner
- - **Tutorials:** [Stopping and Restarting the Extended Storage Service](coming soon)
+ - **Tutorials:** [Stopping and Restarting the Extended Storage Service](https://www.sap.com/developer/tutorials/dt-monitoring-hana-part3.html)
 
 ## Details
 ### You will learn  
@@ -20,7 +20,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
  - Removing Extended Storage using SAP HANA Studio, SAP HANA Cockpit
 
 ### Time to Complete
-**15 Min**
+**10 Min**
 
 ---
 
@@ -84,4 +84,4 @@ Once you click on "**Delete**", you should see the following show up. The "Restr
 
 
 ## Next Steps
-- **Tutorials:** [Stopping and Restarting the Extended Storage Service](coming soon)
+- **Tutorials:** [Stopping and Restarting the Extended Storage Service](https://www.sap.com/developer/tutorials/dt-monitoring-hana-part3.html)

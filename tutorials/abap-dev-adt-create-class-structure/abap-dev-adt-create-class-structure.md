@@ -6,10 +6,11 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ---
 
 ## Prerequisites  
- - Create and run an ABAP application.
+ - [Create and run an ABAP application](https://www.sap.com/developer/tutorials/abap-create-basic-app.html).
+
 
 ## Next Steps
- - Create a CDS view.
+ - [Create a CDS view](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html).
 
 ## Details
 ### You will learn  
@@ -21,7 +22,7 @@ You will learn how to create data retrieval logic, by replacing the WRITE statem
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open your ABAP program)]
-First, open your ABAP program, which you created in the previous tutorial, Create and run an ABAP application.
+First, open your ABAP program, `ZSO_INVOICE_ITEMS_EURO` which you created in the previous tutorial, [Create and run an ABAP application](https://www.sap.com/developer/tutorials/abap-create-basic-app.html).
 
 ![Image depicting step1-open-abap-program](step1-open-abap-program.png)
 
@@ -30,7 +31,7 @@ First, open your ABAP program, which you created in the previous tutorial, Creat
 
 [ACCORDION-BEGIN [Step 2: ](Delete the WRITE statement)]
 
-Remove the WRITE statement: Delete the whole line, by placing the cursor somewhere in the WRITE statement and choosing **Ctrl+D**:
+In the program `ZSO_INVOICE_ITEMS_EURO`, remove the WRITE statement: Delete the whole line, by placing the cursor somewhere in the WRITE statement and choosing **Ctrl+D**:
 
 ![Image depicting step2-delete-write](step2-delete-write.png)
 
@@ -41,7 +42,7 @@ Remove the WRITE statement: Delete the whole line, by placing the cursor somewhe
 
 Now create the global class for the data retrieval:
 
-a.	In the run method, create a local variable of the type `type ref to` `zcl_invoice_retrieval`:
+a.	In the run method, create a local variable of the type `type ref to zcl_invoice_retrieval`:
 
 b.	`data: invoices type ref to zcl_invoice_retrieval`.
 
@@ -49,33 +50,38 @@ c.	Since this class does not yet exist, you will get a syntax error. To create t
 
 ![Image depicting step3-create-class](step3-create-class.png)
 
-d.	A wizard will appear to create a new ABAP class. Add a meaningful description and choose **Finish**:
+d.	A wizard will appear to create a new ABAP class. Add:
+  - name **`ZCL_INVOICE_RETRIEVAL`**
+  - description **invoice Retrieval**
+
+e. Choose **Finish**:
 
 ![Image depicting step3a-create-class-wizard](step3a-create-class-wizard.png)
 
-> A new editor will be opened showing the class you have created.
+> A new editor will be opened showing the class you have created, `ZCL_INVOICE_RETRIEVAL`.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Check the syntax)]
 
- Go back to your report and trigger the syntax check using the keyboard shortcut `Ctrl+F2`.
+ Go back to your program and trigger the syntax check using the keyboard shortcut `Ctrl+F2`.
+
  > The syntax error should no longer occur..
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a global class)]
+[ACCORDION-BEGIN [Step 5: ](Instantiate the class)]
 
-Create an instance of class `zcl_invoice_retrieval` using the `new` operator:
+Still in your program, create an instance of class `zcl_invoice_retrieval` using the **`new`** operator:
 
 `invoices = new zcl_invoice_retrieval`
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Read records from the database)]
+[ACCORDION-BEGIN [Step 6: ](Retrieve the records from the database)]
 
 To read the records from the database, you need to call the method `get_items_from_db`.
 This method does not yet exist so we will create it with a Quick Assist as follows:
@@ -101,11 +107,14 @@ b.  In the wizard that appears, create a public method without parameters, simpl
 
 [ACCORDION-BEGIN [Step 7:  ](Add an ABAP Doc comment)]
 
-To improve readability, add an ABAP Doc comment to the method definition, for example:
+To improve readability, add an ABAP Doc comment immediately before the method definition, for example:
 
 **"! Method reads invoice items from database**
 
 > ABAP Doc comments can be used to document APIs and are displayed in the Element Info. ABAP Doc comments begin with `"!` .
+NOTE: You must insert the ABAP Doc comment *immediately* before the declaration; otherwise you will get a warning from ADT.
+
+![Image depicting step7-abap-doc-method](step7-abap-doc-method.png)
 
 [DONE]
 [ACCORDION-END]
@@ -120,7 +129,7 @@ b.	On the bottom left hand side of the SQL console is the query section. It cont
 
 ![Image depicting step8-sql-console](step8-sql-console.png)
 
-Your code should look like this. Note that the SQL Console query section automatically adds the INTO clause
+The code from the SQL console should look like this. Note that the SQL Console query section automatically adds the INTO clause
 
 `INTO TABLE @DATA(LT_RESULT)` :
 
@@ -171,6 +180,8 @@ a.	Declare the local variable using a Quick Assist, by positioning the cursor on
 b. Select Declare local variable `lt_result` explicitly by double clicking in the Quick Assist menu:
 
 ![Image depicting step10-define-ddic-structure](step10-define-ddic-structure.png)
+
+> This creates a local variable referring to a local type.
 
 [DONE]
 [ACCORDION-END]
@@ -234,16 +245,7 @@ define type zso_invoice_item {
   payment_status : snwd_soi_payment_status_code;
 
 }
-@EndUserText.label : 'Invoice Item Structure'
-@AbapCatalog.enhancementCategory : #NOT_EXTENSIBLE
-define type zso_invoice_item {
-  company_name   : snwd_company_name;
-  @Semantics.amount.currencyCode : 'zso_invoice_item.currency_code'
-  amount         : snwd_ttl_gross_amount;
-  currency_code  : snwd_curr_code;
-  payment_status : snwd_soi_payment_status_code;
 
-}
 ```
 [DONE]
 [ACCORDION-END]
@@ -276,9 +278,11 @@ d.	Choose **Convert `lt_result` to returning parameter**:
 
 [ACCORDION-BEGIN [Step 14: ](Document method paremeters)]
 
-You can also use ABAP Doc to document method parameters with a Quick Assist . Place the cursor inside the ABAP Doc comment. Then enter **Ctrl+1** to open the Quick Assist menu and double-click on **Add missing parameters to documentation**.
+You can also use ABAP Doc to document method parameters with a Quick Assist. Place the cursor inside the ABAP Doc comment. Then enter **Ctrl+1** to open the Quick Assist menu and double-click on **Add missing parameters to documentation**.
 > The ABAP Doc comment is extended by a `@parameter ... | `.
 You can now use this to document the method parameters: To do so, just enter the documentation after the pipe symbol (` | `).
+
+
 
 [DONE]
 [ACCORDION-END]
@@ -309,8 +313,11 @@ CLASS zcl_invoice_retrieval DEFINITION
 
   PUBLIC SECTION.
     TYPES: ty_table_of_zso_invoice_item TYPE STANDARD TABLE OF zso_invoice_item WITH DEFAULT KEY.
-    "! method reading invoice items from db
 
+"! <p class="shorttext synchronized">Read items from DB</p>
+"! Method reads invoice items from the database
+"! @parameter lt_result | <p class="shorttext synchronized">Table of invoice items</p>
+"!
     METHODS get_items_from_db
               RETURNING
                 VALUE(lt_result) type ty_table_of_zso_invoice_item.
@@ -428,11 +435,34 @@ d.	Then call the `display` method of `ALV_TABLE` :
 
 [ACCORDION-BEGIN [Step 22: ](Activate the factory method)]
 
-Activate your report by choosing **Activate (Ctrl+F3)** in the toolbar.
+Activate your program by choosing **Activate (Ctrl+F3)** in the toolbar.
 
-Your method code should look like this:
+The code for your program `z_invoice_items_euro` should look like this:
 
 ```ABAP
+
+REPORT z_invoice_items_euro.
+
+class lcl_main definition create private.
+
+  public section.
+    CLASS-METHODS create
+      RETURNING
+        value(r_result) TYPE REF TO lcl_main.
+
+    methods run.
+
+  protected section.
+  private section.
+
+endclass.
+
+class lcl_main implementation.
+
+  method create.
+    create object r_result.
+  endmethod.
+
   method run.
 
     data: invoices type ref to zcl_invoice_retrieval.
@@ -440,15 +470,25 @@ Your method code should look like this:
 
     data(invoice_items) = invoices->get_items_from_db( ).
 
+
        cl_salv_table=>factory(
+
          IMPORTING
            r_salv_table   =     data(alv_table)
+
           CHANGING
             t_table        = invoice_items ).
 
        alv_table->display(  ).
 
  endmethod.
+
+endclass.
+
+start-of-selection.
+
+lcl_main=>create( )->run( ).
+
 ```
 
 [DONE]
@@ -531,4 +571,4 @@ You are now able to:
 [DONE]
 [ACCORDION-END]
 ## Next Steps
-- Create a CDS view
+- [Create a CDS view](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html)
