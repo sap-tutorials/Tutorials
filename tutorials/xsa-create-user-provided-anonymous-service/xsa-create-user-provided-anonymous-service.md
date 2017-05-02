@@ -24,9 +24,11 @@ This tutorial will walk you through the integration of a non `HDI-managed` datab
 
 [ACCORDION-BEGIN [Step 1: ](Load data into a database schema in SystemDB)]
 
-This tutorial needs a replicated database or a schema that is not managed by an HDI container. An example of such schema is an ABAP or ERP database, which you may still need to integrate it to your development. You will simulate this by creating a schema and importing data into it.
+This tutorial needs a replicated database or a schema that is not managed by an HDI container. An example of such schema is an ABAP or ERP database, which you may need to integrate to your XS Advanced development. You will simulate this by creating a schema and importing data into it.
 
 >Note: This tutorial will use the default System database in an SAP HANA, express edition instance. Use a tenant database if you have a different system or one available.
+
+</br>
 
 Begin by connecting to your SAP HANA `SystemDB` using the **+** sign in the Database Explorer and choose **SAP HANA Database (Multitenant)**:
 
@@ -155,7 +157,7 @@ As in this example:
 
 [ACCORDION-BEGIN [Step 6: ](Test the xsjs service)]
 
-Add a file in the `js/lib/xsjs` folder called `whoAmI.xsjs` with the following code:
+Add a file in the `js/lib/xsjs` folder called `locations.xsjs` with the following code:
 
 ```
 var connection = $.hdb.getConnection({"sqlcc": "xsjs.sqlcc_config", "pool": true });
