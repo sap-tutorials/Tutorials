@@ -212,7 +212,7 @@ From the **Attributes Inspector** in the right pane, set the **Table View Cell**
 
 In this part you create a **Segue** to the second view. The word 'Segue' is derived from the film and music world, and means a transition from one scene or part to the next one.
 
-To create a Segue, **Ctrl-drag** the just created **Button** and drop it onto the **Navigation Controller**. In the pop-up that displays, select **Action Segue &gt; Show**:
+To create a Segue, **Ctrl-drag** the just created **Button** and drop it onto the **Table View Controller**. In the pop-up that displays, select **Action Segue &gt; Show**:
 
 ![Create a Segue](xcode-swift-07.gif)
 

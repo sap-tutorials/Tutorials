@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-clo
 
 
 ## Next Steps
- - [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
+ - [List Report Floorplan](https://www.sap.com/developer/tutorials/fiori-ios-scpms-floorplan.html)
 
 ## Details
 ### You will learn  
@@ -224,4 +224,4 @@ Build and run the application. After logging in, click the **Product Categories*
 
 
 ## Next Steps
-- [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
+- [List Report Floorplan](https://www.sap.com/developer/tutorials/fiori-ios-scpms-floorplan.html)
