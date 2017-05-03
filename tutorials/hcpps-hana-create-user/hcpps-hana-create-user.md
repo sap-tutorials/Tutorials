@@ -58,7 +58,7 @@ Click on the ![SQL Console](0-opensqlconsole.png) button in the top menu bar, an
 
 ```sql
 DROP USER HCPPSTRIAL CASCADE;
-CREATE USER HCPPSTRIAL PASSWORD Welcome16 NO FORCE_FIRST_PASSWORD_CHANGE;
+CREATE USER HCPPSTRIAL PASSWORD Welcome17Welcome17 NO FORCE_FIRST_PASSWORD_CHANGE;
 ALTER USER  HCPPSTRIAL DISABLE PASSWORD LIFETIME;
 
 call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::Developer','HCPPSTRIAL');
@@ -96,7 +96,7 @@ Click on the ![Logout](0-logout.png) **Logout** icon located in the top right co
 
 Now, you need to connect with your **`HCPPSTRIAL`** ***HANA User Account***.
 
-Enter **`HCPPSTRIAL`** as ***Username*** user name and **`Welcome16`** as ***Password***, click on **Logon**.
+Enter **`HCPPSTRIAL`** as ***Username*** user name and **`Welcome17Welcome17`** as ***Password***, click on **Logon**.
 
 If you can login, then your ***HANA User Account*** is properly configured.
 

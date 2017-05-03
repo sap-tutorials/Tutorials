@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Creating and Removing Extended Storage](coming soon)
+ - **Tutorials:** [Creating and Removing Extended Storage](https://www.sap.com/developer/tutorials/dt-monitoring-hana-part2.html)
  - **Credentials:** Connection details to initially connect as the "SYSTEM" user and access to "`<SID>adm`" for a SSH session
 
 ## Next Steps
- - **Tutorials:** [Additional checks in SAP HANA Cockpit and SAP HANA Studio](coming soon)
+ - **Tutorials:** [Additional checks in SAP HANA Cockpit and SAP HANA Studio](https://www.sap.com/developer/tutorials/dt-monitoring-hana-part4.html)
 
 ## Details
 ### You will learn  
@@ -19,7 +19,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
  - Restarting the Extended Storage Service using a SSH session
 
 ### Time to Complete
-**15 Min**
+**10 Min**
 
 ---
 
@@ -57,4 +57,4 @@ With SAP HANA Studio, there is no need to manually restart the extended storage 
 [ACCORDION-END]
 
 ## Next Steps
-- **Tutorials:** [Additional checks in SAP HANA Cockpit and SAP HANA Studio](coming soon)
+- **Tutorials:** [Additional checks in SAP HANA Cockpit and SAP HANA Studio](https://www.sap.com/developer/tutorials/dt-monitoring-hana-part4.html)

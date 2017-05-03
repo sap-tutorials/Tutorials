@@ -36,7 +36,7 @@ Therefore you can replace any occurrence of the token by the value listed above.
 <code><b>&lt;HANA instance id&gt;</b></code>  | as created previously, should be `mdc`
 <code><b>&lt;HANA URL&gt;</b></code> | `https://<`<code><b>HANA instance id</b></code>`><`<code><b>Account name</b></code>`>.hanatrial.ondemand.com`
 <code><b>&lt;HANA User&gt;</b></code> | `HCPPSTRIAL`
-<code><b>&lt;HANA Password&gt;</b></code> | `Welcome16`
+<code><b>&lt;HANA Password&gt;</b></code> | `Welcome17Welcome17`
 >
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP HANA Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
