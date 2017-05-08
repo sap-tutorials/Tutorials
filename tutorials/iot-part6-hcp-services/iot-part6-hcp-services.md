@@ -39,7 +39,7 @@ Go to the [SAP Cloud Platform trial edition](https://account.hanatrial.ondemand.
 
 Once you log in, click on **Services** in the left-hand navigation bar, scroll down to find **Internet of Things** tile and click on it.
 
-![Services](p6_2.png)
+![Services](p6-2.png)
 
 [DONE]
 [ACCORDION-END]
