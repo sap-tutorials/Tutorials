@@ -1,6 +1,6 @@
 ---
 title: Internet of Things (IoT) Connecting your Tessel to IoT Services
-description: Part 8 of 10, Now connect your Tessel device to the IoT Services for sending data
+description: Part 3 of 3, Now connect your Tessel device to the IoT Services for sending data
 primary_tag: topic>internet-of-things
 tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
@@ -114,11 +114,13 @@ req.end();
 
 [ACCORDION-BEGIN [Step 3: ](Insert function call)] ￼
 
-Insert the call to `updateIot` just after your `console.log` output of your sensor data and before your `setTimeout` or loop continues.
+Insert the call to `updateIot` just after your `console.log` output of your sensor data and before your `setTimeout` loop continues.
 
 ```javascript
 updateIoT(temp.toFixed(4), humid.toFixed(4));
 ```
+
+![Insert updateIoT](p8_5vr.png)
 
 [DONE]
 [ACCORDION-END]
@@ -144,7 +146,7 @@ Run your code, and you should see an output like the one below:
 tessel run climate.js
 ```
 
-![Posting to HCP](p8_7.png)
+![Posting to HCP](p8_7vr.png)
 
 
 [DONE]
@@ -154,7 +156,11 @@ tessel run climate.js
 
 Return to the **IoT Services Cockpit**, click the **View messages received, use sample clients, etc.** tile, click the **View stored messages** tile, then select your **table**. You will see the latest messages showing up there. You can also click the **REFRESH** button as your script runs.
 
-![Viewing new values in HCP](p8_8.png)
+![Viewing new values in HCP](p8_8vr.png)
+
+You can switch as well from table display to live chart to see climate data changing in real-time.
+
+![Charting the data](p8_9vr.png)
 
 [DONE]
 [ACCORDION-END]
