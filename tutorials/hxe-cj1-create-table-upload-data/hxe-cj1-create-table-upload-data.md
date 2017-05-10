@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 
 ## Prerequisites  
  - **Proficiency:** Beginner | Intermediate | Advanced
- - **Tutorials:** [Download and connect SQL client](http://www.sap.com/developer/tutorials/hxe-cj1-download-sql-client.html)
+ - **Tutorials:** [Download and connect SQL client ](http://www.sap.com/developer/tutorials/hxe-cj1-download-sql-client.html)
 
 
 ## Next Steps
