@@ -7,18 +7,18 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana\,-expre
 
 ## Prerequisites  
  - **Proficiency:** Beginner | Intermediate | Advanced
- - **Tutorials:** [SAP HANA, Express edition, CodeJam](https://www.sap.com/developer/how-tos/2017/02/codejam-gettingstarted-hxe.html)
+ - **Tutorials:** [SAP HANA, Express edition, CodeJam ](https://www.sap.com/developer/how-tos/2017/02/codejam-gettingstarted-hxe.html)
  - JDBC client: You need to have downloaded the clients from the HXE Download Manager
 
 
 ## Next Steps
- - [Create a Table and Upload data into SAP HANA, express edition](http://www.sap.com/developer/hxe-cj1-create-table-upload.html)
+ - [Create a Table and Upload data into SAP HANA, express edition ](https://www.sap.com/developer/tutorials/hxe-cj1-create-table-upload-data.html)
 
 ## Details
 ### You will learn  
 Describe what the user will learn from your tutorial and what the outcome will be.
 
-### Time to Complete
+### Time to Complete  
 **15 Min**
 
 ---
@@ -124,4 +124,4 @@ You can now begin with development.
 
 
 ## Next Steps
- - [Create a Table and Upload data into SAP HANA, express edition](http://www.sap.com/developer/hxe-cj1-create-table-upload.html)
+ - [Create a Table and Upload data into SAP HANA, express edition ](https://www.sap.com/developer/tutorials/hxe-cj1-create-table-upload-data.html)

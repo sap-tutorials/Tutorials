@@ -58,7 +58,6 @@ Click on the **Enable** button. After a few seconds the page will update and sho
 Once the service is enabled click the **Go to Service** link and a new browser tab will open.
 
 ![Access Service](p6_4.png)
-￼
 
 [DONE]
 [ACCORDION-END]
@@ -75,7 +74,7 @@ The first step will be to configure and deploy the Message Management Service (M
 [ACCORDION-BEGIN [Step 6: ](Enter user name and password)]
 
 Enter in your information in the fields, where your account ID is your p-number (or s-number if you are SAP's customer or partner, or i-/d-number if you are SAP employee) with the world "trial" (no space between the p-number and trial) and your user name is just your p-number.
-￼
+
 ![Deploy Service](p6_6a.png)
 
 [DONE]
@@ -88,7 +87,6 @@ Once successfully deployed then Java application `iotmms` is started in your acc
 Return to the SAP Cloud Platform cockpit view and click on **Java Applications** in the left navigation bar. You will see the new `iotmms` application you just deployed. Click on the `iotmms` link to display the **IoT MMS dashboard**.
 
 ![Deployed application](p6_7.png)
-￼
 
 [DONE]
 [ACCORDION-END]
