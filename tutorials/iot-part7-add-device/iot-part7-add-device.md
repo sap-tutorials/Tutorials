@@ -25,7 +25,7 @@ With the MMS service now deployed, and your user assigned the appropriate role i
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Open Message Management Service Cockpit)] ￼
+[ACCORDION-BEGIN [Step 1: ](Open Message Management Service Cockpit)]
 
 From the SAP Cloud Platform cockpit, select **Java Applications**, then select the `iotmms` application. Open the **Message Management Service Cockpit** by clicking on the **Application URL**.
 
@@ -34,7 +34,7 @@ From the SAP Cloud Platform cockpit, select **Java Applications**, then select t
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open IoT Services Cockpit)] ￼
+[ACCORDION-BEGIN [Step 2: ](Open IoT Services Cockpit)]
 
 Click on the **View registered devices and device types** tile to open the **IoT Services Cockpit**. You will use this page frequently, so it is worth bookmarking it.
 
@@ -43,7 +43,7 @@ Click on the **View registered devices and device types** tile to open the **IoT
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add a new message type)] ￼
+[ACCORDION-BEGIN [Step 3: ](Add a new message type)]
 
 Click the **Message Types** tile, then the **+** symbol at the bottom of the list to add a new message type and to define the structure of the data you will collect.
 
@@ -54,7 +54,7 @@ In the **Information** section, enter a name "`climateData`".
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Populate message type fields)] ￼
+[ACCORDION-BEGIN [Step 4: ](Populate message type fields)]
 
 In the **Fields** section, click the **+ Add Field** button to add in two more fields, then enter the following for name and data types. Click the **Create** button (bottom right corner) when complete. When the message type is created, copy the **ID** string. You will need it later.
 
@@ -73,7 +73,7 @@ Copy and save the message type ID, which you will need later:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a new device type)] ￼
+[ACCORDION-BEGIN [Step 5: ](Create a new device type)]
 
 Click the `<` ("back arrow") again to return the the IoT Services Cockpit. Click on **Device Types**, then the **+** symbol to create a new device. Give it a simple name that makes sense for what you are doing, like "`TesselClimate`".
 
@@ -84,7 +84,7 @@ Now click the  **+ Add Message Type** to attach your previously created message 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create a new device)] ￼
+[ACCORDION-BEGIN [Step 6: ](Create a new device)]
 
 Finally you can now click the `<` ("back arrow") icon and click **Devices** tile.
 
@@ -97,7 +97,7 @@ Click `+` to add a new device, name it `DevelopmentTessel` and make sure its dev
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Copy token ID)] ￼
+[ACCORDION-BEGIN [Step 7: ](Copy token ID)]
 
 When the OAuth Access Token is displayed, copy the token ID and save it. Click **Close**.
 
@@ -106,7 +106,7 @@ When the OAuth Access Token is displayed, copy the token ID and save it. Click *
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Save device ID)] ￼
+[ACCORDION-BEGIN [Step 8: ](Save device ID)]
 
 Now copy and save the **Device ID** string
 
@@ -115,7 +115,7 @@ Now copy and save the **Device ID** string
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Send and view messages)] ￼
+[ACCORDION-BEGIN [Step 9: ](Send and view messages)]
 
 With the device type, message type and device configured, it is time to send some data.
 
@@ -130,7 +130,7 @@ Then click the **Messaging through HTTP** tile in **Data Services** group.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Change device ID)] ￼
+[ACCORDION-BEGIN [Step 10: ](Change device ID)]
 
 On the **HTTP API** page, you will have a client to **Send Message** with an **Data Endpoint** like this:
 
@@ -143,7 +143,7 @@ Example: `https://iotmmsp1234567trial.hanatrial.ondemand.com/com.sap.iotservices
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Edit message to post)] ￼
+[ACCORDION-BEGIN [Step 11: ](Edit message to post)]
 
 You will next formulate your HTTP POST payload. Since you are sending OData, numbers (`float`, `int`, `double`, etc) are not placed in double quotes, while strings and the Key of the Key/Value pair are in quotes.
 
@@ -160,7 +160,7 @@ Under **Message to post** replace the existing content with the following which 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Execute the POST)] ￼
+[ACCORDION-BEGIN [Step 12: ](Execute the POST)]
 
 Click the POST button. If everything goes OK, you should see a response code of `200` similar to this screen shot or response code `202` when you post for the very first time.
 
@@ -173,7 +173,7 @@ Response codes `4xx` or `5xx` indicate that post request has failed.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Display stored messages)] ￼
+[ACCORDION-BEGIN [Step 13: ](Display stored messages)]
 
 To verify that the posting worked, switch back **IoT Service Cockpit**, click **Send and view messages, or perform other actions** tile, then click the **Display stored messages** tile.
 
@@ -186,7 +186,7 @@ Please note **OData API** link in the up right corner. Clicking it will give you
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Using an external REST client)] ￼
+[ACCORDION-BEGIN [Step 14: ](Using an external REST client)]
 
 Now you will post from an external REST client. In this step you will use [Postman Application](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) for Google Chrome.
 
@@ -195,7 +195,7 @@ Now you will post from an external REST client. In this step you will use [Postm
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Set method, URL and HTTP header)] ￼
+[ACCORDION-BEGIN [Step 15: ](Set method, URL and HTTP header)]
 
 In Postman select **POST** from the drop down menu. Copy the HTTP endpoint from your account's sample client to Postman's `Enter request URL` field.
 
@@ -209,7 +209,7 @@ Open the **Headers** section and set:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Set body)] ￼
+[ACCORDION-BEGIN [Step 16: ](Set body)]
 
 Select **Body**, then the **RAW** type. Copy and paste the same content you just had in a simple client. Make a few value changes to make easier spotting this insert. Make sure you change the `messageType` to your ID.
 
@@ -220,7 +220,7 @@ Select **Body**, then the **RAW** type. Copy and paste the same content you just
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Send message)] ￼
+[ACCORDION-BEGIN [Step 17: ](Send message)]
 
 Click **Send** and you should receive a message similar to that from the SAP Cloud Platform simple client.
 ![Send request in Postman](p7_16.png)
