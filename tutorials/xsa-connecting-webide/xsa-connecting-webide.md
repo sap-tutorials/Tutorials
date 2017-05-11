@@ -1,5 +1,5 @@
 ---
-title: SAP HANA XS Advanced, Connecting to the WebIDE and cloning a Git Repository to begin development
+title: SAP HANA XS Advanced, Connecting to SAP Web IDE and cloning a Git Repository to begin development
 description: Part 1 of 3, Connect to Web IDE and Clone a Git Repository to begin development
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>html5, products>sap-hana, products>sap-web-ide ]
