@@ -22,7 +22,7 @@ You have already discovered what the API Business Hub is and learned how to test
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create an application in API Hub)]
+[ACCORDION-BEGIN [Step 1: ](Get an API Key in API Hub)]
 If you ever need to get back to the API Business Hub and can't remember how to get there from SAP Cloud Platform, you can always just go to `api.sap.com`.
 
 To use one of the APIs outside of the API Hub, you will need to get an application key. The SAP API Business Hub provides you with a default key to test against their sandbox. To get to your API key, find the key icon in the top right corner of the page. **Click on the key icon.**
