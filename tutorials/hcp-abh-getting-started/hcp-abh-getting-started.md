@@ -54,26 +54,34 @@ On the SAP API Business Hub homepage, select **APIs** to see the available packa
 
 ![SAP API Business Hub homepage API tile](5.png)
 
-In the API Packages explorer, find the **SAP Success Factors** API Package. You will be using this package for testing and the following tutorials in this series. Select the Success Factors package.
+This will take you to the discover APIs page. Select the **All** tab.
 
-![API Packages with Success Factors selected](6.png)
+![API Discover Highlighted Packages page](6.png)
 
-The Success Factors contains 14 APIs that can be used. APIs are grouped into Business Packages so they are easier to find and
+In the search box, type `SuccessFactors` to find the Success Factors API package. Click on the SAP Success Factors package.
+
+![Searching the discover all APIs](7.png)
+
+This will bring you to the API documentation and overview. Select the **Artifacts** tab.
+
+![Success Factors Package overview](8.png)
+
+The Success Factors contains 14 APIs that can be used. APIs are grouped into Business Packages so they are easier to find.
 
 [DONE]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 4: ](Select an API to use)]
-In the Success Factors package, look for the **User Information** API.
+In the Success Factors artifacts, look for the **User Information** API. It may be the last item in the artifacts list.
 
-![User API in the Success Factors package](7.png)
+![User API in the Success Factors package](9.png)
 
 Select this API.
 
 Once you click the API, you will see all the available methods for the API. In the User Information API, you have 4 methods. Click on the first **Get** method, `GET /User`.
 
-![API Packages with Success Factors selected](8.png)
+![Success Factors User Information methods](9a.png)
 
 When you click the method, you are able to see all the query parameters and their corresponding documentation, such as what data type is expected and what the parameter is used for.
 
@@ -83,7 +91,7 @@ When you click the method, you are able to see all the query parameters and thei
 [ACCORDION-BEGIN [Step 5: ](Test the API in the Hub)]
 In order to test the API in the API Business Hub, you need to login. Click the **Login** icon at the top of the page to do so.
 
-![Login link in SAP API Business Hub](9.png)
+![Login link in SAP API Business Hub](9c.png)
 
 When you look at the API Documentation again for the `GET /User` method, you will see that the value field has become an editable field. You can test different query parameters by providing a value in the input of the specified data type for that parameter.
 
