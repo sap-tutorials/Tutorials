@@ -59,7 +59,8 @@ Click Select Project icon in the top right corner of the **Playback** window to 
 
 [ACCORDION-BEGIN [Step 4: ](Select the file containing the simulated data to play back)]
 
-Download the sample data file: [`machinedata.csv`](../machinedata.csv)
+Right click on the following link and select **Save link/target as...** to download the sample data file:
+ [`machinedata.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/sds-event-stream-playback/machinedata.csv)
 
 Click Select Playback File icon shown below to select the data file to use.
 
