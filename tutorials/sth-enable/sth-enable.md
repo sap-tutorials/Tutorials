@@ -40,7 +40,7 @@ Choose **Services** in the navigation area on the left.
 
 [ACCORDION-BEGIN [Step 3: ](Locate the SAP Translation Hub service)]
 
-Search for the SAP Translation Hub service by entering **Trans** and then choose the **SAP Translation Hub** tile.
+Search for the SAP Translation Hub service by entering **Transl**, and then choose the **SAP Translation Hub** tile.
 
 ![Find Translation Hub service](sth-search-tran.png)
 
