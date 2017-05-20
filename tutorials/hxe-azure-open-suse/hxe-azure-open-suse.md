@@ -11,7 +11,7 @@ tags: [  tutorial>beginner ]
 
 
 ## Next Steps
- - [Install dependencies for SAP HANA, express edition, in Open SUSE](http://www.sap.com/developer/tutorials/hxe-azure-open-suse.html)
+- [Install dependencies for SAP HANA, express edition, in Open SUSE](http://www.sap.com/developer/tutorials/hxe-azure-opensuse-dependencies.html)
 
 
 ## Details
@@ -106,4 +106,4 @@ In the example below, instance number `00` has been chosen:
 
 
 ## Next Steps
-- [Install dependencies for SAP HANA, express edition, in Open SUSE](http://www.sap.com/developer/tutorials/hxe-azure-open-suse.html)
+- [Install dependencies for SAP HANA, express edition, in Open SUSE](http://www.sap.com/developer/tutorials/hxe-azure-opensuse-dependencies.html)
