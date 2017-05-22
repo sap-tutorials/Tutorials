@@ -79,7 +79,7 @@ Follow the steps as described by this [step-by-step blog](https://blogs.msdn.mic
 
 ![Confirm size](20.png)
 
->Note: You may want to reduce the size or delete the /dev/sdb1 partition to reduce costs.
+>Note: You may want to reduce the size or delete the `/dev/sdb1` partition to reduce costs.
 
 [DONE]
 [ACCORDION-END]
@@ -117,12 +117,12 @@ Add each of the rules in the list below, where XX is the instance number you wil
 - 443 (HTTPS)
 - 80XX
 - 43XX
-- 5XX00-5XX99
+- `5XX00-5XX99`
 
 If you are also installing XS Advanced:
 - 51002-51027
-- 3XX00-3XX99
-- 4XX00-4XX99
+- `3XX00-3XX99`
+- `4XX00-4XX99`
 - 53001-53100
 
 In the example below, instance number `00` has been chosen:
