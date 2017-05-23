@@ -47,7 +47,11 @@ Field Name           | Value
 -------------------- | --------------
 Database ID          | `mdc`
 Database System      | HANA MDC (< trial >)
-System User Password | `Welcome16`
+System User Password | `Welcome17Welcome17`
+
+>Note: Password policy was changed recently and now requires a 15 characters password.
+
+.
 
 You can choose other values for theses properties. As reference them across several tutorials, you should remember the **System User Password** as your ***HANA System Account Password***.
 
@@ -89,7 +93,7 @@ Click on **SAP HANA Cockpit**.
 
 You will be prompted to login.
 
-Enter `SYSTEM` as user name and the ***HANA System Account*** password that was provided during the instance creation as password (`Welcome16`).
+Enter `SYSTEM` as user name and the ***HANA System Account*** password that was provided during the instance creation as password (`Welcome17Welcome17`).
 
 Click on **Log On**.
 

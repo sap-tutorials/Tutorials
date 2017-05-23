@@ -8,18 +8,19 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Implement Fiori for iOS controls](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-fioriuikit.html)
+ - **Tutorials:** [Using the SAP Fiori Mentor app](https://www.sap.com/developer/tutorials/fiori-ios-scpms-mentor.html)
 
 
 ## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will learn two things:
+In this tutorial, you will learn three things:
 
 - Add a view to show related entities of an OData navigation link (i.e., an OData `$expand`)
 - Display this view according to the **List Report Floorplan**
+- Add barcode scanner to the List Report's search bar
 
 In this example, you build upon the demo app created using the **Sample OData** service. If you examine the service's metadata (URL: `https://hcpms-<your account>trial.hanatrial.ondemand.com/SampleServices/ESPM.svc/$metadata`) you see entity **Supplier** has a one-to-many relationship with **Products**:
 
@@ -356,7 +357,9 @@ func updateSearchResults(for searchController: UISearchController) {
 
     self.isFiltered = true
     self.filteredProducts = self._entity.products.filter( {
-        return $0.name!.contains(searchString) ||
+        return
+            $0.productID!.contains(searchString) ||
+            $0.name!.contains(searchString) ||
             $0.shortDescription!.contains(searchString) ||
             $0.longDescription!.contains(searchString)
     })
@@ -417,6 +420,87 @@ Build and run the application, the view should now have the buttons visible:
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 9: ](Update info.plist file)]
+
+In the following steps, you will implement Barcode Scanner functionality to the search bar. If you have a long list of items, being able to scan an item to filter the list can save you a lot of time and minimizes input errors.
+
+Since the Barcode Scanner uses the camera, you first need to grant permissions to the app to use it.
+
+Open the `info.plist` file and add the following entry:
+
+| Key | Value |
+|----|----|
+| Privacy - Camera Usage Description | `$(PRODUCT_NAME) needs to use the camera as a barcode scanner` |
+
+![Navigation Controller](fiori-ios-scpms-floorplan-11.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Enable Barcode Scanner in Search bar)]
+
+Add the following import statement:
+
+```swift
+import SAPFiori
+```
+
+In method `viewDidLoad()`, just above the last line:
+
+```swift
+self.tableView.tableHeaderView = searchController.searchBar
+```
+
+add the following lines of code:
+
+```swift
+searchController!.searchBar.isBarcodeScannerEnabled = true
+searchController!.searchBar.barcodeScanner?.scanResultTransformer = { (scanString) -> String in
+    return scanString
+}
+```
+
+This code adds the Search Bar and attaches the Barcode Scanner to it. Upon successful scanning, the Search bar will now be filtered with the scanned value.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 11: ](Using the Barcode Scanner)]
+
+Build and run the application. Upon start, it asks to grant permission to use the Camera:
+
+![Navigation Controller](fiori-ios-scpms-floorplan-12.png)
+
+Click **OK** to continue.
+
+Notice the small barcode icon appearing in the Search bar:
+
+![Navigation Controller](fiori-ios-scpms-floorplan-13.png)
+
+If you now tap the small barcode icon in the search bar, the Barcode Scanner view opens. Try to scan one of these barcodes:
+
+Barcode 1:
+![Navigation Controller](fiori-ios-scpms-floorplan-14-1.gif)
+
+Barcode 2:
+![Navigation Controller](fiori-ios-scpms-floorplan-14-2.gif)
+
+Barcode 3:
+![Navigation Controller](fiori-ios-scpms-floorplan-14-3.gif)
+
+Barcode 4:
+![Navigation Controller](fiori-ios-scpms-floorplan-14-4.gif)
+
+Position the barcode inside the scanning area. If a barcode has been detected, this will be indicated by a green line or rectangle:
+
+![Navigation Controller](fiori-ios-scpms-floorplan-15.png)
+
+The list should now be filtered based on the scanned results:
+
+![Navigation Controller](fiori-ios-scpms-floorplan-16.jpg)
+
+[DONE]
+[ACCORDION-END]
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)

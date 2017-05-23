@@ -92,7 +92,7 @@ Field Name | Value
 :-------------  | :-------------
 Application Name | `espmcloud`
 File Type | **Java Properties File**
-Domain | **Basis**
+Domain | **Sales**
 Target Languages   | Enter the languages of your choice, such as **French** and **Italian**
 
 Choose **Save**.

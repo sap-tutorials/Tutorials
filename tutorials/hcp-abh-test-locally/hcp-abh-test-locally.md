@@ -22,31 +22,23 @@ You have already discovered what the API Business Hub is and learned how to test
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create an application in API Hub)]
+[ACCORDION-BEGIN [Step 1: ](Get an API Key in API Hub)]
 If you ever need to get back to the API Business Hub and can't remember how to get there from SAP Cloud Platform, you can always just go to `api.sap.com`.
 
-To use one of the APIs outside of the API Hub, you will need to get an application key. To obtain an application key, you need to subscribe to the API. On the Success Factors API Package page, locate the **Subscribe** button in the top right corner. Click **Subscribe**.
+To use one of the APIs outside of the API Hub, you will need to get an application key. The SAP API Business Hub provides you with a default key to test against their sandbox. To get to your API key, find the key icon in the top right corner of the page. **Click on the key icon.**
 
-![location of subscribe on API Package page](4.png)
+![location of API key on API Package page](4.png)
 
-In order to subscribe to an API package, you need to create an application to hold the subscription. In the pop-up window, select **New Application** and give it a name, like `TutorialApp`. Optionally add a description.
+In the pop-up window, you will find your API Key. Click the **Copy to Clipboard** button.
 
-![details for new application pop-up](5.png)
+![details for your API key in pop-up](5.png)
 
-Click **Submit**. If you application is successfully created, you will be taken to you application subscription page. Here you can find your application details like you application key.
-
-![application subscription page](6.png)
-
-**Copy you application key into a text editor.** You will need it later.
+**Copy you application key into a text editor.** You will need it later. Close the API key window once you have your API key.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Generate sample API call code)]
-Go back to the API documentation for the User Information API in the Success Factors package.
-
-![navigate back to the User Information API documentation](7.png)
-
 In the User Information API, view the details of the `GET /User` method. The SAP API Business Hub provides you with some starter code in a variety of languages for each API. Click the **Generate Code** button at the top of the method definition.
 
 ![generate code button in API Hub](1.png)
@@ -107,6 +99,8 @@ As mentioned earlier, the `$` character is not allowed in URLs. You need to use 
 ![text editor with parameter added](12.png)
 
 After your command line prints out 5 results, it should stop running.
+
+> If you get a *curl: no match* error, try wrapping your URL in single quotes.
 
 Now add in the 2nd parameter for `$select`. You only want the `firstName`, `lastName`, and `jobTitle` for the top 5 users. You can delaminate values in the select array using a comma(,). However, a comma is not a character allowed in a URL. The ASCII encoded value is `%2C`.
 

@@ -1,6 +1,6 @@
 ---
 title: Internet of Things (IoT) Connecting your Tessel to IoT Services
-description: Part 8 of 10, Now connect your Tessel device to the IoT Services for sending data
+description: Part 3 of 3, Now connect your Tessel device to the IoT Services for sending data
 primary_tag: topic>internet-of-things
 tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
@@ -24,7 +24,7 @@ Now its time to insert data from your Tessel to SAP IoT Services.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Edit your climate JavaScript file)] ￼
+[ACCORDION-BEGIN [Step 1: ](Edit your climate JavaScript file)]
 
 Open your existing `climate.js` file in your editor and make these changes to the section after you assign the climate module to port "A" and before you actually read the temperature from the module itself.
 
@@ -47,7 +47,7 @@ var messageTypeID = '6c7a02f24cc32ee07174';
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add new function)] ￼
+[ACCORDION-BEGIN [Step 2: ](Add new function)]
 
 Insert the new `updateIoT` function at the bottom of your `climate.js` file. After the very last line of your current code.
 
@@ -112,18 +112,20 @@ req.end();
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Insert function call)] ￼
+[ACCORDION-BEGIN [Step 3: ](Insert function call)]
 
-Insert the call to `updateIot` just after your `console.log` output of your sensor data and before your `setTimeout` or loop continues.
+Insert the call to `updateIot` just after your `console.log` output of your sensor data and before your `setTimeout` loop continues.
 
 ```javascript
 updateIoT(temp.toFixed(4), humid.toFixed(4));
 ```
 
+![Insert updateIoT](p8_5vr.png)
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Check connection)] ￼
+[ACCORDION-BEGIN [Step 4: ](Check connection)]
 
 Check that your Tessel is still connected to Wi-Fi by running the command `tessel wifi -l`. If you do not get a response like that below, you should reconnect to the network with the command below with the correct SSID and password. If your access point has spaces in the name then just put it inside of quotes like this: `"Wifi name"`.
 
@@ -136,7 +138,7 @@ tessel wifi -n SSID -p password
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run the code)] ￼
+[ACCORDION-BEGIN [Step 5: ](Run the code)]
 
 Run your code, and you should see an output like the one below:
 
@@ -144,21 +146,24 @@ Run your code, and you should see an output like the one below:
 tessel run climate.js
 ```
 
-![Posting to HCP](p8_7.png)
+![Posting to HCP](p8_7vr.png)
 
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](View stored messages)] ￼
+[ACCORDION-BEGIN [Step 6: ](View stored messages)]
 
 Return to the **IoT Services Cockpit**, click the **View messages received, use sample clients, etc.** tile, click the **View stored messages** tile, then select your **table**. You will see the latest messages showing up there. You can also click the **REFRESH** button as your script runs.
 
-![Viewing new values in HCP](p8_8.png)
+![Viewing new values in HCP](p8_8vr.png)
+
+You can switch as well from table display to live chart to see climate data changing in real-time.
+
+![Charting the data](p8_9vr.png)
 
 [DONE]
 [ACCORDION-END]
-
 
 
 ## Next Steps

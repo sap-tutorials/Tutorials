@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
  - **Proficiency:** Intermediate
  - **Development machine:** Access to a Mac computer
  - **Apple ID:** A paid Apple developer account is required
- - **Tutorials:** [Using the SAP Fiori for iOS Mentor app](https://www.sap.com/developer/tutorials/fiori-ios-scpms-mentor.html)
+ - **Tutorials:** [List Report Floorplan](https://www.sap.com/developer/tutorials/fiori-ios-scpms-floorplan.html)
 
 ## Next Steps
  - [Application logging and tracing](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-application-logging.html)

@@ -48,10 +48,11 @@ Field Name | Value
 :-------------  | :-------------
 Application Name | `nwepmrefappsextshop`
 Path to Properties File | `webapp/i18n/i18n.properties`
-Domain | **Basis**
-Target Languages   | Enter the files you defined in your project in SAP Web IDE: **Danish**, **Dutch**, **English**, **Finnish**, **French**, and **German**
+Domain | **Sales**
+Target Languages   | Enter the languages that you specified in your project in SAP Web IDE: **Danish**, **Dutch**, **English**, **Finnish**, **French**, and **German**
 
-Leave all other fields as they are and choose **Save**.
+To see a quality index for translations provided by machine translation (not all languages are supported - see on screen help for details), select **Show Quality Index for MT**.
+Leave all other fields and selection options as they are and choose **Save**.
 
 ![Enter git translation project details](sth-translate-fiori-app-project-details.png)
 
@@ -83,7 +84,7 @@ The translation is now complete, but you might want to review the translations. 
 
 ![Check translations](sth-translate-fiori-app-translations.png)
 
-This is where you can switch between the target languages and, in the right columns, see the translation provider and a quality status. The higher the number on a scale from 0-100, the better the quality. Note that there is currently no quality index for translations provided by SAP Machine Translation (SAP MT).
+This is where you can switch between the target languages and, in the columns to the right, see the translation provider and a quality status. The higher the number on a scale from 0-100, the better the quality. Note that quality index for translations provided by SAP Machine Translation (SAP MT) is not available for all languages.
 
 ![List of translations](sth-translate-fiori-app-list-of-translations.png)
 
@@ -138,7 +139,7 @@ Now open the **Shop** app:
 
 ![run demo app](sth-translate-fiori-app-Shop.png)
 
-**Note: Some texts in the app come directly from the back end, and are therefore not part of the properties file that you translated.**
+**Note: Some texts in the app are pulled directly from the back end, and are therefore not part of the properties file that you translated in this tutorial.**
 
 [DONE]
 [ACCORDION-END]
