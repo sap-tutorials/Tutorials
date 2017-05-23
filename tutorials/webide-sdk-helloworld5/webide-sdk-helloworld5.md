@@ -25,7 +25,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>s
 In the left sidebar, choose Settings.
 ![Choose settings](Step1a.png)
 
-Then, in the pane that opens, choose **Plugins**.
+Then, in the pane that opens, choose **Features**.
 ![Choose plugins](Step1b.png)
 
 
