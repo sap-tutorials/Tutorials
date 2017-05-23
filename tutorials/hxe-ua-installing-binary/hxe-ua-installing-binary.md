@@ -141,7 +141,7 @@ tar -xvzf <download_path>/eadesigner.tgz
 ```
 
 ```bash
-tar -xvzf <download_path>/tgz.tgz
+tar -xvzf <download_path>/sds.tgz
 ```
 
 ```bash
