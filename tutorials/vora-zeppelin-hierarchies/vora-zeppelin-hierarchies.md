@@ -1,8 +1,8 @@
 ---
 title: Using hierarchies in SAP Vora
 description: Hierarchical data structures define a parent-child relationship between different data items, providing an abstraction that makes it possible to perform complex computations on different levels of data.
-primary_tag: products>sap-hana-vora
-tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
+primary_tag: products>sap-vora
+tags: [  tutorial>beginner, topic>big-data, products>sap-vora ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
