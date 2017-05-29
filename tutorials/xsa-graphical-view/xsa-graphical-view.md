@@ -15,6 +15,8 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ### You will learn  
 You will learn about creating a graphical calculation views with dimension data.
 
+**Please Note this tutorial is based on SPS11**
+
 ### Time to Complete
 **15 Min**.
 
