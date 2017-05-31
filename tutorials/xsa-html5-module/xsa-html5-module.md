@@ -99,10 +99,10 @@ In future, adding the resource declaration to the MTA descriptor will allow the 
 >REMEMBER: You must also install the LATEST version of XSA command line tools!! These can be downloaded from the SAP HANA Developer Edition directly, using the Download Manager and choosing "Clients" from the [SAP HANA, Express Edition, getting started](https://www.sap.com/developer/topics/sap-hana-express.html) or via the [SAP Service Marketplace](https://websmp208.sap-ag.de/~SAPIDP/002006825000000234912001E)
 
 ```
-xs login -a http://<hostname>:30030 -o HANAExpress -s development -u XSA_DEV
+xs login -a http://<hostname>:3XX30 -o HANAExpress -s development -u XSA_DEV
 ```
 
-If you are not using HANA Express, change the organization (`HANAExpress`), space (`development`) and user (`XSA_DEV`) accordingly.
+If you are not using HANA Express, change the organization (`HANAExpress`), space (`development`) and user (`XSA_DEV`) accordingly. `XX` will be the instance number.
 
 The space has to match the space that was setup in the Project Settings. You can check it by right-clicking on the repository folder and opening "Project Settings"
 
