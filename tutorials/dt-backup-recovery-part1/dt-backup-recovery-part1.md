@@ -12,7 +12,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering,
 - **Credentials:** Have access to "`<SID>adm`" for a SSH session on the HANA hosts.
 
 ## Next Steps
- - **Tutorials** [Creating Database Backups](http://www.sap.com/)
+ - **Tutorials** [Creating Database Backups](https://www.sap.com/developer/tutorials/dt-backup-recovery-part2.html)
 
 ## Details
 ### You will learn
@@ -69,4 +69,4 @@ Click the deploy button near the top right or the F8 key on your keyboard to exe
 
 
 ## Next Steps
- - **Tutorials** [Creating Database Backups](http://www.sap.com/)
+ - **Tutorials** [Creating Database Backups](https://www.sap.com/developer/tutorials/dt-backup-recovery-part2.html)

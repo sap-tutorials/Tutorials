@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials** [Database Recovery With HANA Dynamic Tiering](http://www.sap.com/)
+ - **Tutorials** [Database Recovery With HANA Dynamic Tiering](https://www.sap.com/developer/tutorials/dt-backup-recovery-part3.html)
 
 
 ## Next Steps
- - **Tutorials** [Managing Backup Files](http://www.sap.com/)
+ - **Tutorials** [Managing Backup Files](https://www.sap.com/developer/tutorials/dt-backup-recovery-part5.html)
 
 ## Details
 ### You will learn
@@ -53,4 +53,4 @@ Once you click this, you can view the log and data backups in the files.
 [ACCORDION-END]
 
 ## Next Steps
- - **Tutorials** [Managing Backup Files](http://www.sap.com/)
+ - **Tutorials** [Managing Backup Files](https://www.sap.com/developer/tutorials/dt-backup-recovery-part5.html)

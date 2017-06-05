@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials** [Reviewing Available Backups](http://www.sap.com/)
+ - **Tutorials** [Reviewing Available Backups](https://www.sap.com/developer/tutorials/dt-backup-recovery-part4.html)
 
 ## Next Steps
- - **Tutorials** [Creating and Recovering Delta Backups](http://www.sap.com/)
+ - **Tutorials** [Creating and Recovering Delta Backups](https://www.sap.com/developer/tutorials/dt-backup-recovery-part6.html)
 
 ## Details
 ### You will learn
@@ -51,4 +51,4 @@ When doing so, you will have the option to either delete just the catalog or to 
 [DONE]
 [ACCORDION-END]
 ## Next Steps
- - **Tutorials** [Creating and Recovering Delta Backups](http://www.sap.com/)
+ - **Tutorials** [Creating and Recovering Delta Backups](https://www.sap.com/developer/tutorials/dt-backup-recovery-part6.html)
