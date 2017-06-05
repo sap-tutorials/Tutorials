@@ -32,7 +32,7 @@ The overall HANA system including Dynamic Tiering is a single database system wh
 - Cannot create a data backup while one host is down – if a host is entirely down, and there is no stand by, HANA does not allow any data backup. Eg: if your Dynamic Tiering host is down, HANA will not allow you to create any data backup.
 - The SAP HANA System is installed in Multiple-Container mode, meaning that it is a Multi-Tenant Database. A Multi-Tenant Database contains exactly one **System** database, and can have multiple **Tenant** databases.
 - Backup and recoveries performed on the **Tenant** database can only be done through its **System** database.
-- Your user should have the following system privileges:(Refer to the [Create a New User and Assign Permissions](https://www-qa.sap.com/developer/tutorials/dt-create-schema-load-data-part2.html)) lesson to view how the privileges are assigned.)
+- Your user should have the following system privileges:(Refer to the [Create a New User and Assign Permissions](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part2.html)) lesson to view how the privileges are assigned.)
     - BACKUP ADMIN and BACKUP OPERATOR
     - CATALOG READ
 
