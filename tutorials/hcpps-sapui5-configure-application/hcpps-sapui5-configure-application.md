@@ -10,7 +10,7 @@ tags: [ tutorial>intermediate, products>sap-cloud-platform-predictive-service, p
   - **Tutorials:** [Test the "Outliers" service using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)
 
 ## Next Steps
-  - [Visualize your predictive demo datasets in a SAPUI5 application using an HANA XS OData service](http://www.sap.com/developer/tutorials/hcpps-sapui5-odata.html)
+  - [Implement the "Register Dataset" service](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
 
 ## Details
 ### You will learn
@@ -54,32 +54,6 @@ On the left side bar, you can navigate in **Connectivity** > **Destinations**.
 On the ***Destinations*** overview page, click on **New Destination**
 
 ![Destinations](03.png)
-
-Enter the following information:
-
-Field Name           | Value
--------------------- | --------------
-Name                 | `HCPOData`
-Type                 | `HTTP`
-Description          | `OData Service Destination`
-URL                  | `<HANA URL>`
-Proxy Type           | `Internet`
-Authentication       | `Basic Authentication`
-User                 | `<HANA User>`
-Password             | `<HANA Password>`
-
-Then you will need to add the following properties to the destination:
-
-Property Name          | Value
----------------------- | --------------
-`WebIDEUsage`          | `odata_gen`
-`WebIDEEnabled`        | `true`
-
-Click on **Save**
-
-![New Destinations](04.png)
-
-Click on **New Destination**
 
 Enter the following information:
 
@@ -255,20 +229,8 @@ Open the `webapp\view\demo.view.xml` file and replace the existing code with the
 				<content>
 					<List itemPress="onMasterListItemPress">
 						<items>
-							<StandardListItem title="HANA XS OData" type="Navigation" custom:to="sub_master_odata"/>
 							<StandardListItem title="Dataset Services" type="Navigation" custom:to="sub_master_dataset"/>
 							<StandardListItem title="Forecast Services" type="Navigation" custom:to="sub_master_forecast"/>
-						</items>
-					</List>
-				</content>
-			</Page>
-			<Page id="sub_master_odata" title="HANA XS OData" showNavButton="true" navButtonPress="onPressMasterBack">
-				<content>
-					<List itemPress="onDetailListItemPress">
-						<items>
-							<StandardListItem title="Cash Flow" type="Active" custom:to="detail_odata_cashflow"/>
-							<StandardListItem title="Census" type="Active" custom:to="detail_odata_census"/>
-							<StandardListItem title="E-Commerce Transaction" type="Active" custom:to="detail_odata_transaction"/>
 						</items>
 					</List>
 				</content>
@@ -390,4 +352,4 @@ In case you are having problems when running the application, please find bellow
 [ACCORDION-END]
 
 ## Next Steps
-  - [Visualize your predictive demo datasets in a SAPUI5 application using an HANA XS OData service](http://www.sap.com/developer/tutorials/hcpps-sapui5-odata.html)
+  - [Implement the "Register Dataset" service](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
