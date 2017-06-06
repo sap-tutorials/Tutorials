@@ -558,7 +558,7 @@ The voter build job is executed immediately after you push a commit to Gerrit fo
     mkdir -p ${WORKSPACE}/tmp/mta
     cd ${WORKSPACE}/tmp/mta
     wget --output-document=mta.jar '<URL from where to download the MTA archive builder>'
-
+ 
     # create local npmrc file
     cd ${WORKSPACE}/src
     cat <<EOF > .npmrc
@@ -569,6 +569,7 @@ The voter build job is executed immediately after you push a commit to Gerrit fo
     # extract artifact name
     cd ${WORKSPACE}/src
     mtaName=`awk -F: '$1 ~ /^ID/ { gsub(/\s/,"", $2)
+        gsub(/\"/,"", $2)
     	print $2 }' mta.yaml`
 
     # replace timestamp placeholder
