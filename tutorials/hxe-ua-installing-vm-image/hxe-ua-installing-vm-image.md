@@ -64,9 +64,12 @@ Check if your machine has the recommended hardware to successfully install and r
 
 #### Hardware
 
-- **RAM** - 16 GB RAM minimum. 24 GB RAM recommended.
+- **RAM** -  
 
-- **HDD** 120 GB HDD recommended.
+    - Server plus applications virtual machine: 16 GB RAM minimum. 24 GB RAM recommended.
+    - Server-only virtual machine: 8 GB RAM minimum. (If you add additional components, or run heavy processing loads, you will need to increase your RAM.)
+
+- **HDD** - 120 GB HDD recommended.
 
 - **Cores** - 2 cores (4 recommended).  
 
