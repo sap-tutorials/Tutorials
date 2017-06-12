@@ -88,7 +88,10 @@ Add the following content in the text area as displayed above:
 
 ```json
 {
-  "hanaURL":"DEMO/CashFlow"
+  "location": {
+    "schema" : "DEMO",
+    "table" : "CashFlow"
+  }
 }
 ```
 
@@ -252,8 +255,10 @@ You have now listed all the data set registered in your environment.
 [ACCORDION-END]
 
 ### Optional
-For more details on the SAP Cloud for predictive services, you can check the following URL:
+For more details on the SAP Cloud for predictive services, you can check the following URL that can also allow you to run the service:
   - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
+Or the public documentation
+  - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
 
 ## Next Steps
   - [Test the "Forecast" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)

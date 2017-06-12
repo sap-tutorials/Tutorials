@@ -7,7 +7,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, produ
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the "Key Influencer" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
+  - **Tutorials:** [Test the "Dataset" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
 
 ## Next Steps
   - [Configure a SAPUI5 application from a project template](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
@@ -60,7 +60,8 @@ Optionally, you can define the following parameters to enhance your analysis:
   - number of reasons : number of reasons to return for each outlier
   - weight variable: column to be used to increase the importance of a row
   - skipped variables: a list of variables to skip from the analysis
-  - variable description: a more details description of the dataset
+  - variable description: a more details description of the dataset  
+  - weight variable: a column to be used to increase the importance of a row
 
 [DONE]
 [ACCORDION-END]
@@ -83,14 +84,14 @@ Variable | Description | Example of Values
 `workclass` | Employer category of individuals | Private, Self-employed-not-inc, ...
 `fnlwgt` | Weight variable, allowing each individual to represent a certain percentage of the population | Any numerical value, such as 0, 2341 or 205019
 `education` | Level of study, represented by a schooling level, or by the title of the degree earned | 11th, Bachelors
-`education-num` | Number of years of study, represented by a numerical value | A numerical value between 1 and 16
-`marital-status` | Marital status | Divorced, Never-married, ...
+`education_num` | Number of years of study, represented by a numerical value | A numerical value between 1 and 16
+`marital_status` | Marital status | Divorced, Never-married, ...
 `occupation` | Job classification | Sales, Handlers-cleaners, ...
 `relationship` | Position in family | Husband, Wife, ...
 `race` | Ethnicity |
 `sex` | Gender | Male, Female, ...
-`capital-gain` | Annual capital gains | Any numerical value
-`capital-loss` | Annual capital losses | Any numerical value
+`capital_gain` | Annual capital gains | Any numerical value
+`capital_loss` | Annual capital losses | Any numerical value
 `native country` | Country of origin| United States, France, ...
 `class` | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
 
@@ -110,7 +111,10 @@ URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/sync`
 
 ```json
 {
-"hanaURL":"DEMO/Census"
+  "location": {
+    "schema" : "DEMO",
+    "table" : "Census"
+  }
 }
 ```
 
@@ -262,8 +266,10 @@ You can also play with the following parameters and check the differences:
 [ACCORDION-END]    
 
 ### Optional
-For more details on the SAP Cloud for predictive services, you can check the following URL:
+For more details on the SAP Cloud for predictive services, you can check the following URL that can also allow you to run the service:
   - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
+Or the public documentation
+  - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
 
 ## Next Steps
   - [Configure a SAPUI5 application from a project template](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
