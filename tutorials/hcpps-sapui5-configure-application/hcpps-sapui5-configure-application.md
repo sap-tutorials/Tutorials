@@ -1,6 +1,6 @@
 ---
 title: Configure a SAPUI5 application from the project template
-description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the HANA XS OData service and the SAP Cloud for predictive services
+description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the SAP Cloud for predictive services
 primary_tag: products>sap-cloud-platform-predictive-service
 tags: [ tutorial>intermediate, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
@@ -158,13 +158,6 @@ Open the `neo-app.json` file and update the file like this:
 				"entryPath": "/test-resources"
 			},
 			"description": "SAPUI5 Test Resources"
-		}, {
-			"path": "/HCPOData",
-			"target": {
-				"type": "destination",
-				"name": "HCPOData"
-			},
-			"description": "HCPOData destination"
 		}, {
 			"path": "/HCPps",
 			"target": {
