@@ -69,7 +69,7 @@ Next, select the `trial` sub-account.
 
 Download the latest Command Line Interface (CLI) from the Cloud Foundry web site.  Use the following URL:  [https://github.com/cloudfoundry/cli#downloads](https://github.com/cloudfoundry/cli#downloads).
 
-On the Cloud Foundry website, choose either the command line installer (if you are set up to use one), or the binary from teh table below.  If you don't know which to use, choose the installer (not the binary) for your Operating System from the table.
+On the Cloud Foundry website, choose either the command line installer (if you are set up to use one), or the binary from the table below.  If you don't know which to use, choose the installer (not the binary) for your Operating System from the table.
 
 Open the installer on your computer, and follow the installation instructions.
 
