@@ -42,7 +42,7 @@ In the SAP Cloud Platform cockpit, choose _Home_ at the top of the screen.
 This will lead you to the __Home-Regions__ screen.  Choose one of the _Cloud Foundry_ environments (these should be
 at the top of the list).  
 
-> Note:  Do not choose a **Neo** environment, as this is different from Cloud Foundry.
+> Note:  Do not choose a `Neo` environment, as this is different from Cloud Foundry.
 
 This tutorial will use the US East (VA) region.  You can use this region, but it is best to choose the region closest to you.
 
