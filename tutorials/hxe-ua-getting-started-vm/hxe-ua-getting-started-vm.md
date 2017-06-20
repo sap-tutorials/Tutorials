@@ -122,7 +122,33 @@ SAP HANA 2.0, express edition is now running.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test the Installation)]
+[ACCORDION-BEGIN [Step 6: ]((Optional) Change Keyboard Layout)]
+
+The virtual console and X11 window system defaults to a `us` (`QWERTY`) keyboard layout. If you are not an English user, or not a `QWERTY` keyboard user, you can change the keyboard layout at this point.
+
+1. At the command prompt, enter:
+    ```
+    sudo localectl set-keymap <keymap>
+    ```
+    For example, to set the keyboard layout to German, enter:
+    ```bash
+    sudo localectl set-keymap de
+    ```
+    To set the keyboard to a `non-QWERTY` layout like `AZERTY`, enter:
+    ```bash
+    sudo localectl set-keymap azerty
+    ```
+
+2. To check your current keyboard layout settings, enter:
+    ```
+    sudo localectl status
+    ```
+
+[DONE]
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Test the Installation)]
 
 Verify that all required SAP HANA 2.0, express edition services are running properly.
 
@@ -160,7 +186,7 @@ Verify that all required SAP HANA 2.0, express edition services are running prop
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Record Your `hxehost` IP Address)]
+[ACCORDION-BEGIN [Step 8: ](Record Your `hxehost` IP Address)]
 
 Record the `hxehost` IP address so you can use it later when connecting to the server using SAP HANA client tools.
 
@@ -179,7 +205,7 @@ Record the `hxehost` IP address so you can use it later when connecting to the s
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Edit `/etc/hosts` File)]    
+[ACCORDION-BEGIN [Step 9: ](Edit `/etc/hosts` File)]    
 
 The `hxehost` IP address is private to the VM. In order for applications on your laptop (like your web browser) to access `hxehost`, add the `hxehost` IP address to your laptop's hostname map. The hostname map is your laptop's **`/etc/hosts`** file. You must edit **`/etc/hosts`** if you want to access any XS Advanced applications, or use HANA Cockpit, from your laptop.
 
@@ -213,7 +239,7 @@ If you installed the VM installation package to a Mac or Linux machine, follow t
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test XSC (Server + Applications Virtual Machine Only))]
+[ACCORDION-BEGIN [Step 10: ](Test XSC (Server + Applications Virtual Machine Only))]
 
 If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your XSC installation.
 
@@ -233,7 +259,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test XSA (Server + Applications Virtual Machine Only))]
+[ACCORDION-BEGIN [Step 11: ](Test XSA (Server + Applications Virtual Machine Only))]
 
 If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your XSA installation.
 
@@ -253,7 +279,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Test WEBIDE (Server + Applications Virtual Machine Only))]
+[ACCORDION-BEGIN [Step 12: ](Test WEBIDE (Server + Applications Virtual Machine Only))]
 
 If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your WEBIDE installation.
 
@@ -289,7 +315,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Test Cockpit (Server + Applications Virtual Machine Only))]
+[ACCORDION-BEGIN [Step 13: ](Test Cockpit (Server + Applications Virtual Machine Only))]
 
 If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your Cockpit installation.
 
@@ -327,7 +353,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Optional Configuration: Test your Installation using the HANA Eclipse Plugin)]
+[ACCORDION-BEGIN [Step 14: ](Optional Configuration: Test your Installation using the HANA Eclipse Plugin)]
 
 **Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
 
@@ -345,7 +371,7 @@ Download and install the HANA Eclipse Plugin to your host OS (not the VM guest) 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Optional Configuration: Install Text Analysis Files)]
+[ACCORDION-BEGIN [Step 15: ](Optional Configuration: Install Text Analysis Files)]
 
 If you are using SAP HANA 2.0, express edition in a language other than English or German, you can download the **Text analysis files for additional languages** package in the Download Manager.
 
@@ -380,7 +406,7 @@ This package contains the text analysis files for the HANA Text Analysis feature
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Optional Configuration: Install SAP Enterprise Architecture Designer (Server + Applications Virtual Machine Only))]   
+[ACCORDION-BEGIN [Step 16: ](Optional Configuration: Install SAP Enterprise Architecture Designer (Server + Applications Virtual Machine Only))]   
 
 If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), you have the option of installing the SAP Enterprise Architecture Designer (SAP EA Designer) tool.
 
@@ -434,7 +460,7 @@ SAP EA Designer is a separate download in the Download Manager.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Optional Configuration: Install SAP HANA Interactive Education (Server + Applications Virtual Machine Only))]       
+[ACCORDION-BEGIN [Step 17: ](Optional Configuration: Install SAP HANA Interactive Education (Server + Applications Virtual Machine Only))]       
 
 SAP HANA Interactive Education (SHINE) makes it easy to learn how to build applications on SAP HANA Extended Application Services Advanced Model (XSA).
 
@@ -460,7 +486,7 @@ SHINE is a separate download in the Download Manager. To use SHINE, you need the
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: Best Practice: ](Backups)]
+[ACCORDION-BEGIN [Step 18: Best Practice: ](Backups)]
 
 Get in the habit of making regular data backups to save your work.
 

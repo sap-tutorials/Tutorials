@@ -77,11 +77,13 @@ Once configuration is finished, you will see a success message:
 
 ![Success message](6.png)
 
-You should also change your default Operating System password for user `hxeadm`. Use the following command for this:
+You should also change your default Operating System password for user `hxeadm`. Use the following command as root for this:
 
 ```
-sudo password hxeadm
+passwd hxeadm
 ```
+
+![Change password](change pass.png)
 
 [DONE]
 [ACCORDION-END]

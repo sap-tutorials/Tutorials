@@ -31,17 +31,22 @@ From the ***SAP HANA Cockpit*** and connected with the ***HANA System Account***
 
 [ACCORDION-BEGIN [Step 2: ](Extend the SYSTEM user)]
 
-In order to allow the **SYSTEM** user to run any SQL statement, you will need to grant him the following role:
-
-  - `sap.hana.ide.roles::Developer`
-
-Under **Security**, expand **Users**, then double click on **SYSTEM**.
+In order to allow the **SYSTEM** user to run any SQL statement, you will need to grant him the Developer role.
 
 ![SAP HANA Web-based Development Workbench](02.png)
 
-Select the **Granted Roles** tab, then click on the ![plus](0-plus.png) icon, then add the roles listed above.
+Under **Security**, expand **Users**, then double click on **SYSTEM**.
+
+Select the **Granted Roles** tab, then click on the ![plus](0-plus.png) icon, then add the following role:
+
+  - `sap.hana.ide.roles::Developer`
 
 Click on the ![save](0-save.png) button in the top menu bar
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Open the SAP HANA Web-based Development Workbench Catalog)]
 
 Using the ![navigation](0-navigation.png) menu bar icon, select **Catalog**.
 
@@ -52,7 +57,7 @@ The following screen should appear:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create your user)]
+[ACCORDION-BEGIN [Step 4: ](Create your user)]
 
 Click on the ![SQL Console](0-opensqlconsole.png) button in the top menu bar, and paste the following SQL code:
 
@@ -88,7 +93,7 @@ Click on the ![Logout](0-run.png) **Run** button or press **F8**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Verify that your user is properly created)]
+[ACCORDION-BEGIN [Step 5: ](Verify that your user is properly created)]
 
 Click on the ![Logout](0-logout.png) **Logout** icon located in the top right corner of the screen.
 

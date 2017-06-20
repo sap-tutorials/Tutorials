@@ -24,6 +24,7 @@ This tutorial will guide you through the installation of the dependencies needed
 
 ---
 
+
 [ACCORDION-BEGIN [Step 1: ](Update repositories)]
 
 Begin by updating repositories. In a command line (using PuTTY or any other SSH client), enter the following commands:
@@ -49,6 +50,8 @@ Once installation is complete, press **F** to finish:
 
 ![YaSt update](16.png)
 
+>Note: Restart the system if necessary.
+
 [DONE]
 [ACCORDION-END]
 
@@ -68,6 +71,7 @@ Press enter on `libltdl7` and then F10 to accept
 
 [DONE]
 [ACCORDION-END]
+
 
 
 ## Next Steps

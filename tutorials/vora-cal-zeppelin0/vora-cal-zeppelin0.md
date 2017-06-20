@@ -1,8 +1,8 @@
 ---
 title: Working with Tables and Views using Apache Zeppelin
 description: Use Apache Zeppelin to create tables and views, plus load sample data from files
-primary_tag: products>sap-hana-vora
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
+primary_tag: products>sap-vora
+tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  

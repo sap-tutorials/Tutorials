@@ -29,18 +29,26 @@ As root, switch to the directory where you uploaded the files and will extract t
 ```ssh
 sudo su -
 cd /<<extraction_target_directory>>
+tar -xvzf hxe.tgz
 ```
 ![Extract](20.png)
+
+If you are also installing XS Advanced, extract those files and set permissions on them too
+
+```ssh
+tar -xvzf hxexsa.tgz
+```
 
 And now change permissions on the files:
 
 ```ssh
-tar -xvzf hxe.tgz
 chmod -R 777  ./HANA_EXPRESS_20/
 
 ```
 
 ![Set permissions](21.png)
+
+
 
 [DONE]
 [ACCORDION-END]
@@ -71,7 +79,12 @@ cd /<<extraction_target_directory>>
 
 The script will request the following parameters:
 
-1.	Where the installer is: the path where you extracted the files + `/HANA_EXPRESS_20`. In this example, `/home/fedora/HANA_EXPRESS_20`
+If installing XS Advanced, whether you want to install the server-only or **all**.
+
+![Execute installation script XS Advanced](23_1.png)
+
+
+1.	Where the installer is: the path where you extracted the files + `/HANA_EXPRESS_20`. In this example, `/home/<<myuser id>>/HANA_EXPRESS_20`
 2.	The local host name: use the short host name you checked on step 2. If you are in doubt, run command hostname -s in a separate console
 3.	SAP HANA system ID: `HXE` is the default and what tutorials use but you can use whatever 3-digit id you like, .
 4.	Instance number: **Make sure the instance matches what you entered in the firewall rules for the instance-dependent ports.** You can choose either `00` which is what many tutorials use or `90` which is the default for HXE. You can also choose any other number.

@@ -49,7 +49,7 @@ Database ID          | `mdc`
 Database System      | HANA MDC (< trial >)
 System User Password | `Welcome17Welcome17`
 
->Note: Password policy was changed recently and now requires a 15 characters password.
+>Note: Password policy was changed recently and now requires a 15 characters password that includes a digit.
 
 .
 

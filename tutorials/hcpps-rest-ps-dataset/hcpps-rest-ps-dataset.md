@@ -7,7 +7,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, produ
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
+  - **Tutorials:** [Install a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
 
 ## Next Steps
   - [Test the "Forecast" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
@@ -56,8 +56,8 @@ Fill in the following information
 
 Field Name     | Value
 -------------- | --------------
-Request Type   | `POST`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/sync`
+Request Type   | **`POST`**
+URL            | **`<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/sync`**
 
 ![Postman URL](01.png)
 
@@ -65,7 +65,7 @@ Select the **Authorization** tab and fill in the following information:
 
 Field Name     | Value
 -------------- | -------------
-Type           | `Basic Auth`
+Type           | **`Basic Auth`**
 Username       | your ***SAP Cloud Platform Account*** login*
 Password*      | your ***SAP Cloud Platform Account*** password
 
@@ -76,15 +76,24 @@ Your SAP Cloud Platform Account login is usually the email address used to regis
 
 ![Postman URL](02.png)
 
-Select the **Body** tab, enable the **raw** mode and select `JSON (application/json)` in the drop down, then add the following entries
+Select the **Body** tab.
+
+Enable the **raw** mode.
+
+Pick **`JSON (application/json)`** in the drop down (instead of Text).
+
+![Postman URL](03.png)
+
+Add the following content in the text area as displayed above:
 
 ```json
 {
-  "hanaURL":"DEMO/CashFlow"
+  "location": {
+    "schema" : "DEMO",
+    "table" : "CashFlow"
+  }
 }
 ```
-
-![Postman URL](03.png)
 
 Click on **Send**
 
@@ -246,8 +255,10 @@ You have now listed all the data set registered in your environment.
 [ACCORDION-END]
 
 ### Optional
-For more details on the SAP Cloud for predictive services, you can check the following URL:
+For more details on the SAP Cloud for predictive services, you can check the following URL that can also allow you to run the service:
   - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
+Or the public documentation
+  - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
 
 ## Next Steps
   - [Test the "Forecast" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
