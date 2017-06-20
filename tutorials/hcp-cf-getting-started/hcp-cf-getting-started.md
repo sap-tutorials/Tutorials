@@ -24,9 +24,9 @@ Describe what the user will learn from your tutorial and what the outcome will b
 
 [ACCORDION-BEGIN [Step 1: ](Log in to the SAP Cloud Platform)]
 
-Start by [logging in to the SAP Cloud Platform](https://account.hanatrial.ondemand.com/).  If you are already logged in, proceed to Step 2.
+Start by [logging in to the SAP Cloud Platform](https://account.hanatrial.ondemand.com/).
 
-If you don't have an account on SAP Cloud Platform yet, go to the [Sign up for a free trial account](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) tutorial, and then come back to this step.
+> **Note**: If you don't have an account on SAP Cloud Platform yet, go to the [Sign up for a free trial account](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) tutorial, and then come back to this step.
 
 ![Log on to the SAP Cloud Platform](1b.png)
 
@@ -80,7 +80,7 @@ Open the installer on your computer, and follow the installation instructions.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Log in with the CLI)]
+[ACCORDION-BEGIN [Step 5: ](Connect the CLI to the cloud region)]
 
 First, find the correct API URL for your Region.  Select the correct region from this table.
 
