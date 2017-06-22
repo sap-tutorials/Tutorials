@@ -69,7 +69,7 @@ Formerly known as HANA Runtime Tools or `HRTT` in previous versions, the Databas
 ![HRTT](6.png)
 
 
->In SPS12, the HANA Runtime Tool was accessed from `https://<hostname>:51006` or, for `SAP HANA, express edition`. from `http://<hostname>:51018`
+>In SPS12, the HANA Runtime Tool was accesed from `https://<hostname>:51006` or, for `SAP HANA, express edition`. from `http://<hostname>:51018`
 
 [DONE]
 [ACCORDION-END]
