@@ -1,8 +1,8 @@
 ---
-title: Creating a Calculation View with a Cube data type and Star Join
-description: Leveraging SQLScript in Stored Procedures & User Defined Functions
+title: SAP HANA XS Advanced, Create a graphical calculation view with a Star join
+description: Creating a Calculation View with a Cube data type, a Star Join and a currency conversion
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
+tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
@@ -13,133 +13,127 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 
 ## Details
 ### You will learn  
-Now to create a calculation view using cube data and a star join
-**Please note - This tutorial is based on SPS11**
+Now to create a calculation view using cube data and a star join.
 
 ### Time to Complete
 **15 Min**.
 
 ---
 
-
 [ACCORDION-BEGIN [Step 1: ](Create a new Calculation View)]
 
-Now you will create another Calculation view &#151; but one which uses the Cube data type and therefore aggregation of the results. It will combine purchase order table data with the product view we created in the previous step.  Because we have various currency based amounts in our source data, we will also create a calculated column which contains a currency conversion.Using the same steps as the previous part of the exercise; in your models folder, create a new Calculation View
-![New Calculation View](1.png)
-Name your new view `PURCHASE_ORDERS`. Set the Data Category to CUBE. This will create a view very similar in capabilities to the older Analytical View.
+You will now create a calculation view of type cube. This type of view allows for the aggregation of data and will use the dimension calculation view you created in the previous step. Create a new calculation view in your `models` folder.![new calc view](1.png)Add a name and set the `Star join` flag to true.![Calculation view star join](2,png)This calculation view would have been an Analytical view in previous versions of SAP HANA.[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 2: ](Insert join for Purchase Order items and header)]Insert a Join Node into the Scenario. Add the `PO.Header` and `PO.Item` tables to this Join Node.
+![Add PO header and items](3.png)
 
-![New Calculation View](2.png)
-[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 2: ](Insert join)]Insert a Join Node into the Scenario. Add the `PO.Header` and `PO.Item` tables to this Join Node.
-![New Calculation View](3.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Create inner join)]
 
 Create an inner join between `PURCHASEORDERID` from the header table to the `PURCHASEORDERID` column of the item table
 
-![New Calculation View](4.png)
+![Create Join](4.png)
 
-[DONE]
-[ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add columns)]
-
-Using the Mapping tab, add the columns `HISTORY.CREATEDAT` from the Header table and the `PURCHASEORDERID`, `PURCHASEORDERITEM`, `PRODUCT.PRODUCTID`, `CURRENCY`, and `GROSSAMOUNT` columns from the Item table
+Using the Mapping tab, add the columns `HISTORY.CHANGEDAT` from the Header table and the `PURCHASEORDERID`, `PURCHASEORDERITEM`, `PRODUCT.PRODUCTID`, `CURRENCY`, and `GROSSAMOUNT` columns from the Item table. You can select all the columns first and then press the **Add to Output** button instead of dragging individual fields.
 
 ![New Calculation View](5.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Connect join nodes)]
+[ACCORDION-BEGIN [Step 3: ](Create a new join node to integrate the Dimension Calculation view )]
 
-Create another Join node and connect your first node to this new one. Press the plus button next to this node. Search for and select the PRODUCTS view from the previous part of the exercise to insert it into the Join of your new view.  
+Before you can insert the dimension view, you need to add the `PRODUCTID` field to it. You will also remove the `CURRENCY` filter so you can create a conversion later. Open the Dimension calculation view and add the field `PRODUCTID` from the base node into the list of output columns in the mapping tab. Right-click on the new field and select **Propagate to Semantics**
 
-![New Calculation View](6.png)
+![Create join node](6_1.png)
+
+Go into the `Filter expression` tab and erase the SQL filter condition. **Build** the view by right-clicking on it and return to the cube view.
+
+Create another Join node and connect your first node to this new one. Press the **+** button next to this node. Search for and select the `CD_PRODUCT` view from the previous video tutorial.
+
+![Create join node](6.png)
 
 Create a join on the `PRODUCT_PRODUCTID` to the `PRODUCTID` column.
 
-![New Calculation View](7.png)
+![Join Product ID fields](7.png)
+
+Add all the columns to the output.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create input parameter)]
+[ACCORDION-BEGIN [Step 4: ](Create an input parameter)]
 
 From the Parameters tab, create an input parameter named `IP_O_TARGET_CURRENCY`.
 
-![New Calculation View](8.png)
+![Create Inpur Parameter](8.png)
 
 Configure as shown with type `NVARCHAR` length 3 with a Semantic type of Currency. It should be mandatory and have a default value of USD.
 
-![New Calculation View](9.png)
+![Config Input parameters](9.png)
+
+>Note: You can click on the names of the join nodes to change them to something more meaningful.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create new calculation view)]
+[ACCORDION-BEGIN [Step 5: ](Map the Star Join node)]
 
-From the Mapping tab, select all the columns of the `Join_1` node and all the columns from the PRODUCTS node and add them to the output
+**Drag** the latest join with the Dimension Calculation view and PO data into the `star join`.
+
+From the Mapping tab, select all the columns of the star join and add them to the output.
 
 ![New Calculation View](10.png)
 
-[DONE]
-[ACCORDION-END]
+**Add** the `GROSSAMOUNT` column again and rename it to `OriginalGrossAmount`
 
-[ACCORDION-BEGIN [Step 8: ](Create a new Calculated Column )]
-
-In the Calculated `Columns/Counters` tab, create a new Calculated Column for the common currency gross amount.
-
-![New Calculation View](11.png)
-
-Create a Calculated Column named `ConvGrossAmount` which is a summarized measure for the base column Gross Amount. This involves writing an Expression that sets the base value of `GROSSAMOUNT`. Configure as shown here.
-
-![New Calculation View](12.png)
+![Add grossamount field twice](10_1.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Connect the `Join_2` node to the Aggregation node)]
+[ACCORDION-BEGIN [Step 6: ](Configure currency conversion)]
 
-Connect the `Join_2` node to the Aggregation node and use the Auto Map by Name button
+In the Semantics node, in the **Columns** tab, select the `GROSSAMOUNT` measure and click on `Assign Semantics`.
 
-![New Calculation View](13.png)
+![Assign semantics](11.png)
+
+Choose `Amount with currency code` and click **OK**.
+
+![Assign semantics](12.png)
+
+Perform the following configurations as in the screenshot below:
+
+- Choose `Column` as the display currency and assign the proper column.
+- Mark the **Conversion** flag and the configuration tables will fill themselves with the standard configuration tables.
+- Fix the client to `001`. You can check the values of the SHINE data model in the `Database explorer`
+- Set the source currency to the currency from the products
+- Set the target currency to the input parameter
+- Set the exchange type to the desired exchange type (1001 in this example)
+- Set the conversion date to `HISTORY_CHANGEDAT`
+- Set the behavior upon failure
+
+![Configure conversion](13.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Build and run)]
+
+Check the **Semantics** tab and leave the field `Apply privileges` blank.
+
+![APPLY PRIVILEGES BLANK](16.png)
+
+**Build** the view. Right-click on the view on the left-side menu and click on **Data preview**.
+
+![Data preview](14.png)
+
+Fill in the **From** parameter for conversion with `USD` and click on **Open Content** (the green `play` button).
+
+See how the conversion has been performed for those currencies in table TCURR, where the conversion type is the one you selected (1001 in this example)
+
+![Data preview raw](15.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Set measures and attributes)]
-
-Return to the Semantics Scenario and then the Columns tab. Set the `GrossAmount` as measures and all of others as attributes. (They may already be defaulting into the correct values, but please double check).
-
-![New Calculation View](14.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 11: ](Edit privileges)]
-
-In the View Properties tab, change the Apply Privileges to the blank value.
-
-![New Calculation View](15.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 12: ](Save and build)]
-
-Save your View.
-
-![New Calculation View](16.png)
-
-Build the `hdb` module and then return to the HRTT tool. Your container will now have an entry in the Column Views folder for this new Calculation View.
-
-![New Calculation View](17.png)
-
-[DONE]
-[ACCORDION-END]
 
 
 
