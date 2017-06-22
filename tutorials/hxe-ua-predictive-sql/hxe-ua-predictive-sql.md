@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Getting Started with Predictive Analytics](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-predictive.html)
+ - **Tutorials:** [Getting Started with Predictive Analytics](https://www.sap.com/developer/tutorials/hxe-ua-predictive-getting-started.html)
 
 
 ## Next Steps
