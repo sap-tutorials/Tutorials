@@ -11,7 +11,6 @@ tags: [  tutorial>beginner, products>sap-hana ]
 
 
 ## Next Steps
- - [Enter the title of the next tutorial, or use the second bullet below if this is the last tutorial in a series](http://www.sap.com/developer/tutorials/teched-2016-8.html)
  - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
