@@ -22,7 +22,7 @@ Now to create a calculation view using cube data and a star join.
 
 [ACCORDION-BEGIN [Step 1: ](Create a new Calculation View)]
 
-You will now create a calculation view of type cube. This type of view allows for the aggregation of data and will use the dimension calculation view you created in the previous step. Create a new calculation view in your `models` folder.![new calc view](1.png)Add a name and set the `Star join` flag to true.![Calculation view star join](2,png)This calculation view would have been an Analytical view in previous versions of SAP HANA.[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 2: ](Insert join for Purchase Order items and header)]Insert a Join Node into the Scenario. Add the `PO.Header` and `PO.Item` tables to this Join Node.
+You will now create a calculation view of type cube. This type of view allows for the aggregation of data and will use the dimension calculation view you created in the previous step. Create a new calculation view in your `models` folder.![new calc view](1.png)Add a name and set the `Star join` flag to true.![Calculation view star join](2.png)This calculation view would have been an Analytical view in previous versions of SAP HANA.[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 2: ](Insert join for Purchase Order items and header)]Insert a Join Node into the Scenario. Add the `PO.Header` and `PO.Item` tables to this Join Node.
 ![Add PO header and items](3.png)
 
 
