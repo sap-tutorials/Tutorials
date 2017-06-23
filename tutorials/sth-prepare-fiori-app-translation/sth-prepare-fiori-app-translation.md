@@ -87,6 +87,18 @@ Default Language | **English**
 Once you've finished, choose **Save** and then **Close**.
 
 ![Define language settings](sth-prep-lang-settings.png)
+**Note:** If you are not able to select a domain or languages, you can make the settings directly in the `.project.json` file. Open the `.project.json` file and enter a comma after the last square bracket (`]`). Then enter the following code after the comma:
+
+```
+"translation": {
+    "translationDomain": "02",
+    "supportedLanguages": "da,nl,en,fi,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "",
+    "resourceModelName": ""
+  }
+```
+![Define language settings manually](sth-prep-manual-lang-settings.png)
 
 [DONE]
 [ACCORDION-END]
