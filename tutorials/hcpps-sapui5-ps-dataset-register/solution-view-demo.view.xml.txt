@@ -7,20 +7,8 @@
 				<content>
 					<List itemPress="onMasterListItemPress">
 						<items>
-							<StandardListItem title="HANA XS OData" type="Navigation" custom:to="sub_master_odata"/>
 							<StandardListItem title="Dataset Services" type="Navigation" custom:to="sub_master_dataset"/>
 							<StandardListItem title="Forecast Services" type="Navigation" custom:to="sub_master_forecast"/>
-						</items>
-					</List>
-				</content>
-			</Page>
-			<Page id="sub_master_odata" title="HANA XS OData" showNavButton="true" navButtonPress="onPressMasterBack">
-				<content>
-					<List itemPress="onDetailListItemPress" >
-						<items>
-							<StandardListItem title="Cash Flow" type="Active" custom:to="detail_odata_cashflow"/>
-							<StandardListItem title="Census" type="Active" custom:to="detail_odata_census"/>
-							<StandardListItem title="E-Commerce Transaction" type="Active" custom:to="detail_odata_transaction"/>
 						</items>
 					</List>
 				</content>
@@ -53,21 +41,6 @@
 			<Page id="detail_dataset_register" title="Register your Dataset with the SAP Cloud Platform predictive services">
 				<content>
 					<mvc:XMLView viewName="sapui5demo.view.dataset.register"/>
-				</content>
-			</Page>
-			<Page id="detail_odata_cashflow" title="Visualize the Cach Flow data using the HANA XS OData Service">
-				<content>
-					<mvc:XMLView viewName="sapui5demo.view.odata.cashflow.display"/>
-				</content>
-			</Page>
-			<Page id="detail_odata_census" title="Visualize the Census data using the HANA XS OData Service">
-				<content>
-					<mvc:XMLView viewName="sapui5demo.view.odata.census.display"/>
-				</content>
-			</Page>
-			<Page id="detail_odata_transaction" title="Visualize the E-Commerce Transaction data using the HANA XS OData Service">
-				<content>
-					<mvc:XMLView viewName="sapui5demo.view.odata.transaction.display"/>
 				</content>
 			</Page>
 		</detailPages>

@@ -1,6 +1,6 @@
 ---
 title: Add API Business Hub API to a UI5 Application
-description: Incorporate a SAP API into your UI5 application using Web IDE.
+description: Incorporate a SAP API into your UI5 application using Web IDE. 
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
@@ -69,15 +69,15 @@ onInit: function() {
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Get Javascript pre-generated code)]
-In the [API Business Hub](https://api.sap.com), select **Subscriptions** from the side menu. Once in Subscriptions, select your `TutorialApp` to find your API Package subscriptions. Click the **SAP Success Factors** package.
+In the [API Business Hub](https://api.sap.com), click **APIs** and on the Discover page, go to **All**. Search for the **Success Factors** from the Discover APIs page. Find the **SAP Success Factors** API package and select it.
 
-![location of subscriptions in API Business Hub](10.png)
+![location of API packages in API Business Hub](10.png)
 
-Find the **User Information** API in the listing.
+Once on the API package documentation, select **Artifacts** to see all the APIs available. Find the **User Information** API in the listing. Select the API to open the documentation.
 
 ![Location of User Information API](11.png)
 
-Open the API to find the methods. Click the **Show/Hide** toggle to show the methods. Find the `GET /User` method and click the **Generate Code** link.
+On the documentation, select **Resource** to find the methods. Find the `GET /User` method and click the **Generate Code** link.
 
 ![how to find the API methods and get the pre-generated code](12.png)
 
@@ -93,7 +93,7 @@ Back in your Web IDE, in the controller file, **add the copied code from the API
 
 ![updated controller with pre-generated API call code](14.png)
 
-> Make sure to update the `<API_KEY>` to your Application Key from the API Business Hub. It is found at the top of the Subscriptions page.
+> Make sure to update the `<API_KEY>` to your Application Key from the API Business Hub. It is found at the top of the API Documentation page by clicking the Key icon.
 
 **Comment out the `xhr.withCredentials` line**. You can a single line comment by adding a double slash `//` to the beginning of a line. To add a comment block (multiple lines), use `/*  */` around the code to remove.
 

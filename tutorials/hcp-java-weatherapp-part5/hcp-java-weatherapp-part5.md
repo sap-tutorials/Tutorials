@@ -13,7 +13,7 @@ tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermedi
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to expose RESTful services using a library called [Apache CXF](http://cxf.apache.org/), which is one of the most often used implementations of the [JAX-RS](https://jax-rs-spec.java.net/) standard.
+In this tutorial you will learn how to expose RESTful services using a library called [Apache CXF](http://cxf.apache.org/), which is one of the most often used implementations of the [JAX-RS](https://jcp.org/en/jsr/detail?id=339) standard.
 
 ### Time to Complete
 **10 min**

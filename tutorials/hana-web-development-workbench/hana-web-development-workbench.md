@@ -24,7 +24,7 @@ tags: [ products>sap-hana, products>sap-cloud-platform, tutorial>beginner]
 ### Time to Complete
 Beginners might take **10-15 minutes** to execute this tutorial.
 
-[ACCORDION-BEGIN [Step 1: ](Using SAP Cloud Platform)]
+[ACCORDION-BEGIN [OPTION A: ](Using SAP Cloud Platform)]
 
 Each Trial HANA MDC instance comes with the HANA Web-based Development Workbench. The workbench allows you to develop on HANA without the need to set up a local development environment.
 
@@ -73,13 +73,13 @@ You are now in the Editor and can immediately start developing in HANA.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Using SAP HANA, express edition)]
+[ACCORDION-BEGIN [OPTION B: ](Using SAP HANA, express edition)]
 
 For HXE enter the address `http://hxehost:8090/sap/hana/ide/` in to the address bar of your browser. This works provided you have the `Server + Applications` version or if you followed these [steps](https://blogs.sap.com/2016/10/28/enhancing-hxe-server-image/) to add the XSC tooling to your `Server Only` instance.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create Package for your Application)]
+[ACCORDION-BEGIN [Step 1: ](Create Package for your Application)]
 
 The first step to start developing a SAP HANA application with SAP HANA Web-based Development Workbench is to create a new package for the application.
 
@@ -95,7 +95,7 @@ This step will generate 3 files, the `.xsapp`, `.xsaccess` and an `index.html`.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Now Create the Application)]
+[ACCORDION-BEGIN [Step 2: ](Now Create the Application)]
 
 Now is the time to actually create some application code. In SAP HANA XSC application code essentially is JavaScript code provided in `.xsjs` files. Now such a file will be created.
 
@@ -120,7 +120,7 @@ Save the file using the Save button or by pressing `ctrl+s`. Again, the successf
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy, Run and Test the Application)]
+[ACCORDION-BEGIN [Step 3: ](Deploy, Run and Test the Application)]
 
 Now the application is ready to be tested. As you are developing with the SAP HANA Web-based Development Workbench the application is already deployed and activated to your SAP HANA Trial Instance. So you can immediately continue to test it:
 

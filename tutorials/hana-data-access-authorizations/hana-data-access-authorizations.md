@@ -108,7 +108,7 @@ Now you will create the automatic import file, you can name the file anything yo
 import	= 	[
     			{
 					cdstable  =	"codejam.data::mydata.Book";
-					file = "codejam.data:sample_book:list.csv"; 	     
+					file = "codejam.data:sample_book_list.csv"; 	     
 					header = false;		
     			}
      		];
@@ -212,9 +212,9 @@ Now you are ready to run the application.
 You can even loop through all records like this,
 
 ```
-    while (rs.next()) {
+     do {
         output = output + rs.getString(1) + ' ' +  rs.getString(2) + ' ' +  rs.getString(3) + ' ' +  rs.getString(4) + '<br>';
-    }
+    } while (rs.next()) //So that the first entry will be pulled out as well.
 ```
 
 [ACCORDION-END]

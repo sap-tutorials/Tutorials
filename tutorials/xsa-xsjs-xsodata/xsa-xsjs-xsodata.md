@@ -1,8 +1,8 @@
 ---
 title: SAP HANA XS Advanced, Creating a Node.js Module
-description: SAP HANA XS Advanced, Creating a Node.js Module and implementing XSJS and XSODATA
+description: Creating a Node.js Module and implementing XSJS and XSODATA
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>odata, products>sap-hana, products>sap-hana\,-express-edition  ]
+tags: [  tutorial>beginner, topic>odata, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
  - **Proficiency:** beginner
@@ -78,21 +78,7 @@ If you remember back, you maintained the `xs-app.json` of the App Router [web mo
 This is where you are configuring that any file request with the extension `.xsjs` or `.xsodata` should be rerouted internally to the Node.js destination that you defined in the `mta.yaml` file.
 
 ```
-{
-  "welcomeFile": "index.html",
-  "authenticationMethod": "route",
-  "routes": [{
-  		"source": "(.*)(.xsjs)",
-		"destination": "core-backend",
-		"csrfProtection": false,
-		"authenticationType": "xsuaa"
-		}, {
-		"source": "(.*)(.xsodata)",
-		"destination": "core-backend",
-		"authenticationType": "xsuaa"
-  }]
-}
-```
+{  "welcomeFile": "index.html",  "authenticationMethod": "route",  "routes": [{  		"source": "(.*)(.xsjs)",		"destination": "core-backend",		"csrfProtection": false,		"authenticationType": "xsuaa"		}, {		"source": "(.*)(.xsodata)",		"destination": "core-backend",		"authenticationType": "xsuaa"  }]}```
 
 [DONE]
 [ACCORDION-END]  
@@ -106,38 +92,7 @@ Return to the `js` folder that you created in this exercise. Like the other appl
 This `server.js` is the Node.js `bootstrap` for XSJS compatibility mode. It uses the SAP provided `xsjs` module and starts it with a few basic parameters. However, remember all the HANA database connectivity options come from the HDI container which you bound to this service via the `mta.yaml` file.  You want to make a few changes to what the wizard has generated. You want authentication on your service, so comment out the `anonymous: true` line. Also uncomment the configure HANA and UAA lines as you will need to load the resource configuration for both of these brokered services. The complete implementation of `server.js` should look like this now:
 
 ```
-/*eslint no-console: 0, no-unused-vars: 0*/
-"use strict";
-
-var xsjs  = require("@sap/xsjs");
-var xsenv = require("@sap/xsenv");
-var port  = process.env.PORT || 3000;
-
-var options = {
-//	anonymous : true, // remove to authenticate calls
-	redirectUrl : "/index.xsjs"
-};
-
-// configure HANA
-try {
-	options = Object.assign(options, xsenv.getServices({ hana: {tag: "hana"} }));
-} catch (err) {
-	console.log("[WARN]", err.message);
-}
-
-// configure UAA
-try {
-	options = Object.assign(options, xsenv.getServices({ uaa: {tag: "xsuaa"} }));
-} catch (err) {
-	console.log("[WARN]", err.message);
-}
-
-// start server
-xsjs(options).listen(port);
-
-console.log("Server listening on port %d", port);
-
-```
+/*eslint no-console: 0, no-unused-vars: 0*/"use strict";var xsjs  = require("@sap/xsjs");var xsenv = require("@sap/xsenv");var port  = process.env.PORT || 3000;var options = {//	anonymous : true, // remove to authenticate calls	redirectUrl : "/index.xsjs"};// configure HANAtry {	options = Object.assign(options, xsenv.getServices({ hana: {tag: "hana"} }));} catch (err) {	console.log("[WARN]", err.message);}// configure UAAtry {	options = Object.assign(options, xsenv.getServices({ uaa: {tag: "xsuaa"} }));} catch (err) {	console.log("[WARN]", err.message);}// start serverxsjs(options).listen(port);console.log("Server listening on port %d", port);```
 
 Remember to **Save.**
 
@@ -149,19 +104,7 @@ Remember to **Save.**
 In the lib folder, create a sub-folder called `xsodata`. Create a file named `purchaseOrder.xsodata`.  
 
 ```
-service {
-    "PurchaseOrder.Header"
-	  as "POHeader" navigates ("Items" as "POItem");
-
-	"PurchaseOrder.Item"
-	  as "POItem";
-
-	association "Items" principal  "POHeader"("PURCHASEORDERID")
-	multiplicity "1" dependent "POItem"("PURCHASEORDERID") multiplicity "*";
-}
-
-
-```
+service {    "PurchaseOrder.Header"	  as "POHeader" navigates ("Items" as "POItem");	"PurchaseOrder.Item"	  as "POItem";	association "Items" principal  "POHeader"("PURCHASEORDERID")	multiplicity "1" dependent "POItem"("PURCHASEORDERID") multiplicity "*";}```
 
 Here you expose both the Header and Item tables from your HDI container as separate entities and build a navigation association between the two.
 
@@ -171,65 +114,13 @@ Here you expose both the Header and Item tables from your HDI container as separ
 In the lib folder, create a sub-folder called `xsjs`.  Create a file named `hdb.xsjs`.  Here is the source code for this file.
 
 ```
-/*eslint no-console: 0, no-unused-vars: 0, dot-notation: 0*/
-"use strict";
-
-var conn = $.hdb.getConnection();
-var query = "SELECT FROM PurchaseOrder.Item { " +
-        " PURCHASEORDERID as \"PurchaseOrderItemId\", " +
-          " PURCHASEORDERITEM as \"ItemPos\", " +
-          " PRODUCT as \"ProductID\", " +
-          " GROSSAMOUNT as \"Amount\" " +
-          " } ";
-var rs = conn.executeQuery(query);
-
-var body = "";
-
-for(var i = 0; i < rs.length; i++){
- if(rs[i]["Amount"] >= 500){
-body += rs[i]["PurchaseOrderItemId"] + "\t" + rs[i]["ItemPos"] + "\t" +
-    rs[i]["ProductID"] + "\t" + rs[i]["Amount"] + "\n";
- }
-}
-
-
-$.response.setBody(body);
-$.response.contentType = "application/vnd.ms-excel; charset=utf-16le";
-$.response.headers.set("Content-Disposition",
-  "attachment; filename=Excel.xls");
-$.response.status = $.net.http.OK;
-
-```
+/*eslint no-console: 0, no-unused-vars: 0, dot-notation: 0*/"use strict";var conn = $.hdb.getConnection();var query = "SELECT FROM PurchaseOrder.Item { " +        " PURCHASEORDERID as \"PurchaseOrderItemId\", " +          " PURCHASEORDERITEM as \"ItemPos\", " +          " PRODUCT as \"ProductID\", " +          " GROSSAMOUNT as \"Amount\" " +          " } ";var rs = conn.executeQuery(query);var body = "";for(var i = 0; i < rs.length; i++){ if(rs[i]["Amount"] >= 500){body += rs[i]["PurchaseOrderItemId"] + "\t" + rs[i]["ItemPos"] + "\t" +    rs[i]["ProductID"] + "\t" + rs[i]["Amount"] + "\n"; }}$.response.setBody(body);$.response.contentType = "application/vnd.ms-excel; charset=utf-16le";$.response.headers.set("Content-Disposition",  "attachment; filename=Excel.xls");$.response.status = $.net.http.OK;```
 This logic reads data from your item table, formats it as text table delimited and then sends it out in a way that the browser will treat it as an Excel download.
 
 Create a second file named `exercisesMaster.xsjs`.  Here is the source code for this file.  It sends the current user and language back to the client for filling in the header of the UI.
 
 ```
-/*eslint no-console: 0, no-unused-vars: 0, dot-notation: 0*/
-"use strict";
-
-function fillSessionInfo(){
-	var body = "";
-	body = JSON.stringify({
-		"session" : [{"UserName": $.session.getUsername(), "Language": $.session.language}]
-	});
-	$.response.contentType = "application/json";
-	$.response.setBody(body);
-	$.response.status = $.net.http.OK;
-}
-
-
-var aCmd = $.request.parameters.get("cmd");
-switch (aCmd) {
-case "getSessionInfo":
-	fillSessionInfo();
-	break;
-default:
-	$.response.status = $.net.http.INTERNAL_SERVER_ERROR;
-	$.response.setBody("Invalid Request Method");
-}
-
-```
+/*eslint no-console: 0, no-unused-vars: 0, dot-notation: 0*/"use strict";function fillSessionInfo(){	var body = "";	body = JSON.stringify({		"session" : [{"UserName": $.session.getUsername(), "Language": $.session.language}]	});	$.response.contentType = "application/json";	$.response.setBody(body);	$.response.status = $.net.http.OK;}var aCmd = $.request.parameters.get("cmd");switch (aCmd) {case "getSessionInfo":	fillSessionInfo();	break;default:	$.response.status = $.net.http.INTERNAL_SERVER_ERROR;	$.response.setBody("Invalid Request Method");}```
 
 Create a third file named `csrf.xsjs`.  This is an empty file which you can use to request a `CSRF` token for update/insert/delete operations.
 
@@ -238,101 +129,13 @@ Create a third file named `csrf.xsjs`.  This is an empty file which you can use 
 Create a forth file named `procedures.xsjs`.  This example shows you how to call a stored procedure from XSJS.
 
 ```
-/*eslint no-console: 0, no-unused-vars: 0, dot-notation: 0, no-use-before-define: 0*/
-"use strict";
-
-/**
-@function JSON as returned by hdb
-*/
-function hdbDirectTest(){
-  var results = _selection();
-//Pass output to response		
-$.response.status = $.net.http.OK;
-$.response.contentType = "application/json";
-$.response.setBody(JSON.stringify(results));
-
-}
-
-/**
-@function Flattended JSON structure
-*/
-function hdbFlattenedTest(){
-	outputJSON(_selection().EX_TOP_3_EMP_PO_COMBINED_CNT);
-}
-
-/**
-@function load/call the procedure
-*/
-function _selection(){
-	var connection = $.hdb.getConnection();
-
-	var getPOHeaderData = connection.loadProcedure(
-		"get_po_header_data");
-
-	var results = getPOHeaderData();
-	return results;
-}
-
-/**
-@function Puts a JSON object into the Response Object
-@param {object} jsonOut - JSON Object
-*/
-function outputJSON(jsonOut){
-	var out = [];
-	for(var i=0; i<jsonOut.length;i++){
-		out.push(jsonOut[i]);
-	}
-	$.response.status = $.net.http.OK;
-	$.response.contentType = "application/json";
-	$.response.setBody(JSON.stringify(out));
-}
-
-
-var aCmd = $.request.parameters.get("cmd");
-switch (aCmd) {
-case "direct":
-	hdbDirectTest();
-	break;
-case "flattened":
-	hdbFlattenedTest();
-	break;
-default:
-	hdbDirectTest();
-	break;
-}
-
-```
+/*eslint no-console: 0, no-unused-vars: 0, dot-notation: 0, no-use-before-define: 0*/"use strict";/**@function JSON as returned by hdb*/function hdbDirectTest(){  var results = _selection();//Pass output to response		$.response.status = $.net.http.OK;$.response.contentType = "application/json";$.response.setBody(JSON.stringify(results));}/**@function Flattended JSON structure*/function hdbFlattenedTest(){	outputJSON(_selection().EX_TOP_3_EMP_PO_COMBINED_CNT);}/**@function load/call the procedure*/function _selection(){	var connection = $.hdb.getConnection();	var getPOHeaderData = connection.loadProcedure(		"get_po_header_data");	var results = getPOHeaderData();	return results;}/**@function Puts a JSON object into the Response Object@param {object} jsonOut - JSON Object*/function outputJSON(jsonOut){	var out = [];	for(var i=0; i<jsonOut.length;i++){		out.push(jsonOut[i]);	}	$.response.status = $.net.http.OK;	$.response.contentType = "application/json";	$.response.setBody(JSON.stringify(out));}var aCmd = $.request.parameters.get("cmd");switch (aCmd) {case "direct":	hdbDirectTest();	break;case "flattened":	hdbFlattenedTest();	break;default:	hdbDirectTest();	break;}```
 
 [ACCORDION-BEGIN [Step 5: ](Call node.js from XSJS)]
 Create a 5th file called `os.xsjs`. This example shows you how you can call Node.js from XSJS.
 
 ```
-/*eslint no-console: 0, no-unused-vars: 0*/
-"use strict";
-
-var os = $.require("os");
-var output = {};
-
-output.tmpdir = os.tmpdir();
-output.endianness = os.endianness();
-output.hostname = os.hostname();
-output.type = os.type();
-output.platform = os.platform();
-output.arch = os.arch();
-output.release = os.release();
-output.uptime = os.uptime();
-output.loadavg = os.loadavg();
-output.totalmem = os.totalmem();
-output.freemem = os.freemem();
-output.cpus = os.cpus();
-output.networkInfraces = os.networkInterfaces();
-
-
-$.response.status = $.net.http.OK;
-$.response.contentType = "application/json";
-$.response.setBody(JSON.stringify(output));
-
-```
+/*eslint no-console: 0, no-unused-vars: 0*/"use strict";var os = $.require("os");var output = {};output.tmpdir = os.tmpdir();output.endianness = os.endianness();output.hostname = os.hostname();output.type = os.type();output.platform = os.platform();output.arch = os.arch();output.release = os.release();output.uptime = os.uptime();output.loadavg = os.loadavg();output.totalmem = os.totalmem();output.freemem = os.freemem();output.cpus = os.cpus();output.networkInfraces = os.networkInterfaces();$.response.status = $.net.http.OK;$.response.contentType = "application/json";$.response.setBody(JSON.stringify(output));```
 [DONE]
 [ACCORDION-END]  
 

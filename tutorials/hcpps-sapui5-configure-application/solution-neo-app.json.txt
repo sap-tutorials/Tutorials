@@ -17,13 +17,6 @@
 		},
 		"description": "SAPUI5 Test Resources"
 	}, {
-		"path": "/HCPOData",
-		"target": {
-			"type": "destination",
-			"name": "HCPOData"
-		},
-		"description": "HCPOData destination"
-	}, {
 		"path": "/HCPps",
 		"target": {
 			"type": "destination",

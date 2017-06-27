@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform ]
   - **Tutorials:** [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Next Steps
-  - [Test the HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
+  - [Test the "Dataset" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
 
 ## Details
 ### You will learn
@@ -70,4 +70,4 @@ Now, you can to move to the next tutorial.
 [ACCORDION-END]
 
 ## Next Steps
-  - [Test the HANA XS OData services](http://www.sap.com/developer/tutorials/hcpps-rest-odata.html)
+  - [Test the "Dataset" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
