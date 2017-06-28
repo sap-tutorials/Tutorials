@@ -182,7 +182,7 @@ a.	First position the cursor on the inline declared variable `lt_result` and ope
 
 ![Image depicting step9a-select-local-variable](step9a-select-local-variable.png)
 
-b.	Select Declare local variable lt_result explicitly by double clicking in the Quick Fix menu:
+b.	Select Declare local variable `lt_result` explicitly by double clicking in the Quick Fix menu:
 
 ![Image depicting step9b-declare-explicitly](step9b-declare-explicitly.png)
 
