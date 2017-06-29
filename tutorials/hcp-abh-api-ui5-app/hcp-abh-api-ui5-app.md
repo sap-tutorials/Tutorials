@@ -1,6 +1,6 @@
 ---
 title: Add API Business Hub API to a UI5 Application
-description: Incorporate a SAP API into your UI5 application using Web IDE. 
+description: Incorporate a SAP API into your UI5 application using Web IDE.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>
 
 
 ## Next Steps
- - This is the end of this tutorial series. Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Enable the Multi Cloud Web IDE](https://www.sap.com/developer/tutorials/webide-multi-cloud.html)
 
 ## Details
 ### You will learn  
@@ -250,4 +250,4 @@ self.getView().getModel("results").setProperty("/data", jsonResults);
 
 
 ## Next Steps
-- This is the end of this tutorial series. Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Enable the Multi Cloud Web IDE](https://www.sap.com/developer/tutorials/webide-multi-cloud.html)
