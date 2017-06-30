@@ -27,13 +27,13 @@ In that bar, you will add a Button control to the right side of the footer bar i
 
 1.  Open the `webapp/i18n/i18n.properties` file, and add the following four lines to the bottom:
 
-	```
-OrderButtonText=Order
-OrderDialogTitle=Order Product
-OrderDialogMsg=Do you want to order this product now?OrderDialogSuccessMsg=The product has been ordered
-   ```
+    ```
+    OrderButtonText=Order
+    OrderDialogTitle=Order Product
+    OrderDialogMsg=Do you want to order this product now?    OrderDialogSuccessMsg=The product has been ordered
+    ```
 
-   ![update the i18n properties](1.png)
+    ![update the i18n properties](1.png)
 
 2.  Open the `webapp/view/Detail.view.xml` file, and add a footer to the detail page by adding the following code under `<ObjectHeader>`:
 
@@ -41,34 +41,35 @@ OrderDialogMsg=Do you want to order this product now?OrderDialogSuccessMsg=The 
     <footer>	   <Bar>			<contentRight>				<Button text="{i18n>OrderButtonText}"	  	               type="Accept"		               icon="sap-icon://accept"		               press="handleOrder" />			</contentRight>		</Bar>	</footer>
 	```
 
-   ![update the Detail.view.xml file with a footer](2.png)
+    ![update the Detail.view.xml file with a footer](2.png)
 
 3.  Finally, open the `webapp/controller/Detail.controller.js` file.  Register two new classes in the `define` area:
 
-	```
-	,	"sap/m/MessageBox",	"sap/m/MessageToast"
-	```
+    ```
+    ,    "sap/m/MessageBox",    "sap/m/MessageToast"
+    ```
 
-   ![Add two new classes to the define controller list](3a.png)
+    ![Add two new classes to the define controller list](3a.png)
+
 
     Next, you will change the signature of the `function` call, to accept two new parameters:
 
-    >**Note**: overwrite the existing function call with this code (or it will have a syntax error).
+    > **Note**: overwrite the existing function call with this code (or it will have a syntax error).
 
     ```javascript
     function(Controller, MessageBox, MessageToast)
     ```
 
-   ![Change the signature of the function](3b.png)
+    ![Change the signature of the function](3b.png)
 
     Finally, add the `handleOrder` function to the Controller:
 
     ```javascript
-    ,	handleOrder : function (evt) {		// show confirmation dialog		var bundle = this.getView().getModel("i18n").getResourceBundle();		MessageBox.confirm(			bundle.getText("OrderDialogMsg"),			function (oAction) {				if (MessageBox.Action.OK === oAction) {					// notify user					var successMsg = bundle.getText("OrderDialogSuccessMsg");					MessageToast.show(successMsg);					// TODO call proper service method and update model (not part of this tutorial)				}
-			},			bundle.getText("OrderDialogTitle")		);	}
-	```
+    ,    handleOrder : function (evt) {      // show confirmation dialog      var bundle = this.getView().getModel("i18n").getResourceBundle();      MessageBox.confirm(        bundle.getText("OrderDialogMsg"),        function (oAction) {          if (MessageBox.Action.OK === oAction) {            // notify user            var successMsg = bundle.getText("OrderDialogSuccessMsg");            MessageToast.show(successMsg);            // TODO call proper service method and update model (not part of this tutorial)          }
+        },        bundle.getText("OrderDialogTitle")      );    }
+    ```
 
-   ![add a handleOrder method to the controller](3c.png)
+    ![add a handleOrder method to the controller](3c.png)
 
 4.  You are all set!  Run the application.  Choose an item from the list, and you will see an **Order** button in the detail screen.  
 
