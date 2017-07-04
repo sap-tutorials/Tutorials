@@ -8,7 +8,7 @@ tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>int
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [SAP Cloud Platform IoT for Neo: Viewing data from environmental sensors](http://www.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
+- **Tutorials:** [SAP Cloud Platform IoT for Neo: Viewing data from environmental sensors](https://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
 
 ## Next Steps
 - [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data on a chart](http://www.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
