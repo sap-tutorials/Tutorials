@@ -1,6 +1,6 @@
 ---
-title: Internet of Things (IoT) Viewing your Tessel data from IoT Services through SAP HANA XS
-description: Part 10 of 10, Now connect your IoT Services to an SAP HANA MDC instance and show the data using SAP HANA XS
+title: SAP Cloud Platform IoT for Neo: binding to and developing on SAP HANA XSC
+description: Now connect your IoT Services to an SAP HANA MDC instance and show the data using SAP HANA XS Classic
 primary_tag: topic>internet-of-things
 tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
@@ -8,16 +8,16 @@ tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>int
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://www.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
+- **Tutorials:** [SAP Cloud Platform IoT for Neo: Viewing data from environmental sensors](http://www.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
 
 ## Next Steps
-- [Internet of Things (IoT) Viewing your Tessel data in a graph](http://www.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
+- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data on a chart](http://www.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
 
 
 
 ## Details
 ### You will learn  
-Now that your IoT Services are collecting data and you were able to view it your deployed Java application, now how about redirecting the data to a shared SAP HANA MDC instance and making a small SAP HANA XSC application to show the data.  
+Now that your IoT Services are collecting data and you were able to view it your deployed Java application, now how about redirecting the data to a shared SAP HANA MDC instance and developing a small SAP HANA XS Classic application to show the data.  
 
 
 ### Time to Complete
@@ -166,4 +166,4 @@ This is not the only way to do, but that is a matter for you to explore and disc
 ￼
 
 ## Next Steps
-- [Internet of Things (IoT) Viewing your Tessel data in a graph](http://www.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
+- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data on a chart](http://www.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
