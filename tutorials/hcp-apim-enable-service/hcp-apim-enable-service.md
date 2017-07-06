@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Sign up for an account on SAP Cloud Platform](http://www.google.de)  http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+- **Tutorials:** [Sign up for an account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
 - Create a user in the SAP Gateway Developer System: [Create an account on the Gateway Demo system](http://www.sap.com/developer/tutorials/gateway-demo-signup.html)
