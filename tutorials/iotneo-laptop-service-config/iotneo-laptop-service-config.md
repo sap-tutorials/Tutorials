@@ -1,36 +1,32 @@
 ---
-title: SAP Cloud Platform IoT for Neo: Enable and configure
-description: Setup and configure the use of the IoT for Neo environment in SAP Cloud Platform
+title: Setup IoT for Neo environment in SAP Cloud Platform
+description: Enable and configure the IoT for Neo environment in SAP Cloud Platform
 primary_tag: topic>internet-of-things
-tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
-
+tags: [  tutorial>beginner, topic>internet-of-things, products>sap-cloud-platform ]
 ---
 
-## Prerequisites
-- **Proficiency:** Beginner
-- **Tutorials:** [Setup the Tessel device](http://www.sap.com/developer/how-tos/2016/09/iot-tessel.html)
+## Prerequisites  
+ - **Proficiency:** Beginner
+ - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform Neo environment](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)
+- [Configuring the device for computer sensors data - coming soon]
 
 ## Details
-### You will learn
-
-This tutorial will detail the steps needed to simply the process of connecting your hardware device to SAP.
-
-SAP's IoT Services provide a robust and secure way of connecting your device as well as simplified way of specifying your data structures and changing those structures.
-
-This procedure assumes you are using the trial account of the SAP Cloud Platform, but you can use a production account if you have one.
+### You will learn  
+You will learn how to enable and configure IoT service in SAP Cloud Platform Neo environment. This procedure assumes you are using the trial account of the SAP Cloud Platform, but will work with the production account as well.
 
 ### Time to Complete
-**15 Min**.
+**15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Register for or log into SAP Cloud Platform trial)]
+[ACCORDION-BEGIN [Step 1: ](Log into SAP Cloud Platform Neo trial)]
 
-Go to the [SAP Cloud Platform trial edition](https://account.hanatrial.ondemand.com/cockpit) log in (or sign up if you don't have an account yet).
+Go to the [SAP Cloud Platform Neo trial edition](https://account.hanatrial.ondemand.com/cockpit) log in.
+
+>This tutorial assumes you have signed up for a trial account already.
 
 [DONE]
 [ACCORDION-END]
@@ -50,7 +46,7 @@ Click on the **Enable** button. After a few seconds the page will update and sho
 
 [ACCORDION-BEGIN [Step 3: ](Go to IoT Service Cockpit)]
 
-Once the service is enabled click the **Go to Service** link and a new browser tab will open.
+Once the service is enabled click the **Go to Service** link and a new browser window will open with IoT Service Cockpit.
 
 ![Access Service](p6_4.png)
 
@@ -99,5 +95,18 @@ Once user is assigned to the role, stop and start `iotmms` application.
 [ACCORDION-END]
 
 
+---
+
+### Optional
+
+
+[ACCORDION-BEGIN [Step 7: ](Review official documentation)]
+
+Check the official documentation at https://help.sap.com/viewer/product/SAP_CP_IOT_2.0/Cloud/en-US
+
+[DONE]
+[ACCORDION-END]
+
+
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)
+- [Configuring the device for laptop sensors data - coming soon]

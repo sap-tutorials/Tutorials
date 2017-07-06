@@ -72,6 +72,7 @@ Multistore
 multitenant
 Multitenant
 MySQL
+Neo
 NetWeaver
 Node.js
 northwind
@@ -122,6 +123,7 @@ supertypes
 Sybase
 TechEd
 Tessel
+Tessel1
 timestamp
 tiering
 Tiering
