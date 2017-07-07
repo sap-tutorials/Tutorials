@@ -43,7 +43,7 @@ Open the Standard app and familiarize yourself with how it appears.
 
 [ACCORDION-BEGIN [Step 3: ](See data provided by the My Opportunities OData service)]
 
-Open your browser's developer tools (Instructions for [Chrome](https://developer.chrome.com/devtools), [Firefox](https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor#Opening_the_Network_Monitor), Safari (https://developer.apple.com/safari/tools/) and [Internet Explorer](https://msdn.microsoft.com/en-us/library/gg589507.aspx). In the developer tool switch to the network tab.
+Open your browser's developer tools (Instructions for [Chrome](https://developers.google.com/web/tools/chrome-devtools/), [Firefox](https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor#Opening_the_Network_Monitor), Safari (https://developer.apple.com/safari/tools/) and [Internet Explorer](https://msdn.microsoft.com/en-us/library/gg589507.aspx). In the developer tool switch to the network tab.
 
 To determine which data is provided by the My Opportunities OData service, you can view the network traffic. In the My Opportunities app, touch on the next opportunity from the list on the left which will send a request. Then check the response in the developer tools network tab. The example below is from Firefox:
 
