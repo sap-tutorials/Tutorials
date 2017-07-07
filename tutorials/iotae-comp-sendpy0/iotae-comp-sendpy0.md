@@ -2,12 +2,12 @@
 title: Send the CPU usage data to SAP IoT Application Enablement
 description: Send the CPU usage data to SAP IoT Application Enablement
 primary_tag: topic>internet-of-things
-tags: [  tutorial>beginner, topic>internet-of-things, products->sap-iot-application-enablement, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Onboarding a computer as the IoT thing] (paste the link from Prod)
+ - **Tutorials:** [Onboarding a computer as the IoT thing](https://www.sap.com/developer/tutorials/iotae-comp-thingmodeler0.html)
 
 
 ## Next Steps

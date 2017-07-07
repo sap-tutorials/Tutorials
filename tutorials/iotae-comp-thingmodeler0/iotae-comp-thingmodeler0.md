@@ -2,7 +2,7 @@
 title: Onboarding a computer as the IoT thing
 description: Onboarding a computer as the IoT thing
 primary_tag: topic>internet-of-things
-tags: [  tutorial>beginner, topic>internet-of-things, products->sap-iot-application-enablement, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites  
@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, topic>internet-of-things, products->sap-iot-applicat
 
 
 ## Next Steps
- - Send the CPU usage data to SAP IoT Application Enablement (coming soon)
+ - [Send the CPU usage data to SAP IoT Application Enablement](https://www.sap.com/developer/tutorials/iotae-comp-sendpy0.html)
 
 ## Details
 ### You will learn  
@@ -143,4 +143,4 @@ You can find the official user guide at https://help.sap.com/viewer/p/SAP_IOT_AP
 
 
 ## Next Steps
- - Send the CPU usage data to SAP IoT Application Enablement (coming soon)
+ - [Send the CPU usage data to SAP IoT Application Enablement](https://www.sap.com/developer/tutorials/iotae-comp-sendpy0.html)
