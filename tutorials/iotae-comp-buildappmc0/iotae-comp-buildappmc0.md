@@ -1,0 +1,163 @@
+---
+title: Building freestyle IoT application
+description: Building freestyle IoT application in SAP Web IDE Multi-Cloud
+primary_tag: topic>internet-of-things
+tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-web-ide ]
+---
+
+## Prerequisites  
+ - **Proficiency:** Beginner
+ - **Tutorials:** [Send the CPU usage data to SAP IoT Application Enablement](https://www.sap.com/developer/tutorials/iotae-comp-sendpy0.html)
+
+
+## Next Steps
+ - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+
+## Details
+### You will learn  
+You will learn how to build the first freestyle IoT application using SAP Web IDE Multi-Cloud
+
+### Time to Complete
+**15 Min**
+
+---
+
+[ACCORDION-BEGIN [Step 1: ](Start SAP Web IDE Multi-Cloud Version)]
+SAP Web IDE, multi-cloud version is a powerful, extensible, web-based integrated development tool that simplifies end-to-end application development for SAP Cloud Platform.
+
+Start Web IDE in IoT Explore tenant using https://webidecp-a2667617c.dispatcher.hana.ondemand.com/
+
+![Web IDE MC](iotaecompappmc0010.jpg)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Enable IoT Application Enable feature)]
+In Web IDE go to **Preferences**, then **Features**. Find **IoT Application Enablement** feature and turn it on.
+
+Make sure following features are turned on as well: **Layout Editor** and **Storyboard**.
+
+![Web IDE MC - Features](iotaecompappmc0020.jpg)
+
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 3: ](Start the new project from the temaplte)]
+Now go to **Development**. Right click on **Workspace** and choose the creation of a new project from the temaplte.
+
+![New](iotaecompappmc0030.jpg)
+
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Create the app using wizard)]
+Choose **Frestyle IoT Application** from the **Internet of Things** category. Click **Next**
+![Choose template](iotaecompappmc0040.jpg)
+
+Type `computeriot` as a project name and your user id as the namespace. Click **Next**
+![Names](iotaecompappmc0050.jpg)
+
+Leave everything as it is on the ___Template Customization___ step. Click **Next**
+
+On ___Data Source___ step select:
+ - **Freestyle IoT: Things OData Service** as a service
+ - all property sets for `sap.iotaeexplore.computeriotdevice:generic_computer` thing type
+Click **Next**
+
+![Data Source](iotaecompappmc0060.jpg)
+
+Choose **2 Column Layout** and click **Finish**
+
+
+![Layout](iotaecompappmc0070.jpg)
+
+The Web IDE will generate the code and will open the new application in the Layout Editor.
+![Layout Editor](iotaecompappmc0080.jpg)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Place components on the layout)]
+Drag the `ThingList` control to the left pane of the application's view. Drag `SensorChart` control to the right pane.
+
+![Controls on the layout](iotaecompappmc0090.jpg)
+
+Now you can hide the controls to increase the real estate of the workspace.
+![Hide controls pane](iotaecompappmc0100.jpg)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Customize the list of things)]
+First bind the data. Click anywhere on the **`ThingList Element`** to select it. Then go to **Properties** and open a Query Designer by clicking on cogs.
+![Open query designer](iotaecompappmc0110.jpg)
+
+In the Query Designer select **/Things** entity set. Then expand associations to all displayed sets. Then click **Ok**.
+
+![Query Designer](iotaecompappmc0120.jpg)
+
+A dialog "A template will be created from selected control..." will be displayed. Click **Ok**
+
+Now bind columns to data values. Select the first thing list column element (with element id `__column0`) and change its ___Text___ value from `Row 0 Column 1` to `{ThingId}`. You can do it using a data binding dialog.
+
+![Data binding for column 1](iotaecompappmc0130.jpg)
+
+Repeat the same for the thing list column element from the second column (with element id `__column1`). Change its ___Text___ value to `{ThingName}`.
+
+Repeat the same for the third column changing its ___Text___ to `{DYN_ENT_sap_iotaeexplore_computeriotdevice__Default/Default.common_name}`. That's the common name property from the associated `Default` properties set. The easiest is to do this using the dialog for the text's data binding.
+![Text data binding](iotaecompappmc0140.jpg)
+
+Next change column names to `ID`, `Name` and `Common name`.
+![Column names](iotaecompappmc0150.jpg)
+
+Next define the action of the chart refresh when another thing is selected from the list. Click on the higher element `ThingList`, then **Actions** and open Action Configuration dialog for the **Row Select** action.
+![Open action configuration](iotaecompappmc0160.jpg)
+
+Select **`doReload`** action with the **`thing`** context. Click **Ok**
+![Action configuration](iotaecompappmc0170.jpg)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Customize sensors chart)]
+Now select `SensorChart` element and change its properties:
+ - **No of Hours** to `1`
+ - **Header Title** to `Resources usage`
+ - **Subheader Title** to `in %`
+![Customize chart](iotaecompappmc0180.jpg)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Run the application)]
+Run your developed application by clicking on the green **Run** button in the upper left corner of the Web IDE.
+![Run](iotaecompappmc0190.jpg)
+
+Once the application started find and click on your computer in the list of things on the left. The chart on the right will be refreshed with the collected measurements sent by the Python program from the physical computer.
+
+Alert thresholds of `45%` and `90%`, which you defined in the Thing Modeler earlier, are displayed on the chart.
+![Application!](iotaecompappmc0200.jpg)
+
+Congratulations! You built your IoT application using your computer as an IoT device and its CPU as a sensor.
+
+[DONE]
+[ACCORDION-END]
+
+---
+
+### Optional
+
+
+[ACCORDION-BEGIN [Step 9: ](Play with other parameters)]
+You can play now with different parameters in the Layout Editor and see how it changes your application.
+
+[DONE]
+[ACCORDION-END]
+
+
+## Next Steps
+- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
