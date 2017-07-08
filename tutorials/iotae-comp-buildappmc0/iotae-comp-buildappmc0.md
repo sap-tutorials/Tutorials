@@ -1,6 +1,6 @@
 ---
 title: Building freestyle IoT application
-description: Building freestyle IoT application in SAP Web IDE Multi-Cloud
+description: Building freestyle IoT application using SAP Web IDE Multi-Cloud in SAP Cloud Platform
 primary_tag: topic>internet-of-things
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-web-ide ]
 ---
@@ -15,10 +15,10 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-applicati
 
 ## Details
 ### You will learn  
-You will learn how to build the first freestyle IoT application using SAP Web IDE Multi-Cloud
+You will learn the workflow of building the freestyle IoT application using SAP Web IDE Multi-Cloud
 
 ### Time to Complete
-**15 Min**
+**20 Min**
 
 ---
 
@@ -44,8 +44,8 @@ Make sure following features are turned on as well: **Layout Editor** and **Stor
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Start the new project from the temaplte)]
-Now go to **Development**. Right click on **Workspace** and choose the creation of a new project from the temaplte.
+[ACCORDION-BEGIN [Step 3: ](Start the new project from the template)]
+Now go to **Development**. Right click on **Workspace** and choose the creation of a new project from the template.
 
 ![New](iotaecompappmc0030.jpg)
 
@@ -55,7 +55,7 @@ Now go to **Development**. Right click on **Workspace** and choose the creation 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create the app using wizard)]
-Choose **Frestyle IoT Application** from the **Internet of Things** category. Click **Next**
+Choose **Freestyle IoT Application** from the **Internet of Things** category. Click **Next**
 ![Choose template](iotaecompappmc0040.jpg)
 
 Type `computeriot` as a project name and your user id as the namespace. Click **Next**
