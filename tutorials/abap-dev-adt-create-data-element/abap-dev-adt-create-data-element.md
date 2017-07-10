@@ -8,15 +8,14 @@ tags: [ tutorial>beginner, topic>abap-development ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
-Create a structure (coming soon)
-Create an ABAP class (coming soon)
+[Create an ABAP class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)
 
-## Next Steps
- - Create ABAP Documentation (coming soon)
+## Next Steps: Optional
+ - [Create ABAPDoc comments in your class](https://www.sap.com/developer/tutorials/abap-dev-create-abapdoc.html)
 
 ## Details
 ### You will learn  
-You will learn how to create a data element. You will then use this data element to provide boolean logic to one of the columns in the table, which in turn contains the data you have retrieved from the database. (See the previous tutorial, Create an ABAP class (coming soon), for details.)
+You will learn how to create a data element. You will then use this data element to provide boolean logic to one of the columns in the table, which in turn contains the data you have retrieved from the database. (in the previous tutorial, [Create an ABAP class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html).)
 
 
 ### Time to Complete
@@ -96,7 +95,7 @@ Choose Activate **(Ctrl+F3)**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Use your data element in the ABAP class)]
-Go back to the class, `**ZCL_INVOICE_RETRIEVAL**`, which you created in the previous tutorial. (See Create an ABAP class (coming soon) for details.)
+Go back to the class, `**ZCL_INVOICE_RETRIEVAL**`, which you created in the previous tutorial, ([Create an ABAP class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)).)
 You will now transform the values of `payment_status` from **P** to a flag that is set to **X** (true) when the invoice has been paid.
 
 Enter the following code after the `ORDER BY` clause of the `SELECT` statement:
@@ -189,5 +188,5 @@ Go back to your report and execute it by choosing **F8**. Your SAP List Viewer s
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
--  Create ABAP Documentation (coming soon)
+## Next Steps: Optional
+ - [Create ABAPDoc comments in your class](https://www.sap.com/developer/tutorials/abap-dev-create-abapdoc.html)
