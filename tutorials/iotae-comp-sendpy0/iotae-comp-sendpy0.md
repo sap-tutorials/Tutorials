@@ -1,6 +1,6 @@
 ---
 title: Send the CPU usage data to SAP IoT Application Enablement
-description: Send the CPU usage data to SAP IoT Application Enablement
+description: Send the CPU usage data to SAP IoT Application Enablement via SAP Cloud Platform IoT service for Neo environment
 primary_tag: topic>internet-of-things
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform ]
 ---
@@ -11,14 +11,14 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-applicati
 
 
 ## Next Steps
-- Building freestyle IoT application (coming soon)
+- [Build freestyle IoT application](https://www.sap.com/developer/tutorials/iotae-comp-buildappmc0.html)
 
 ## Details
 ### You will learn  
-Describe what the user will learn from your tutorial and what the outcome will be.
+You will learn how to use Python script to send sensor data to SAP Cloud Platform.
 
 ### Time to Complete
-**15 Min**
+**10 Min**
 
 ---
 
@@ -152,4 +152,4 @@ To better understand IoT Application Enablement APIs you can go to SAP API Hub a
 
 
 ## Next Steps
-- Building freestyle IoT application (coming soon)
+- [Build freestyle IoT application](https://www.sap.com/developer/tutorials/iotae-comp-buildappmc0.html)

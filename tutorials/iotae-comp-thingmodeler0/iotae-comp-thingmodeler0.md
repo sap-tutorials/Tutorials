@@ -1,6 +1,6 @@
 ---
 title: Onboarding a computer as the IoT thing
-description: Onboarding a computer as the IoT thing
+description: Onboarding a computer in SAP IoT Application Enablement as the thing
 primary_tag: topic>internet-of-things
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform ]
 ---
