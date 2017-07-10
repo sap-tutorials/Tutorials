@@ -11,7 +11,7 @@ tags: [ tutorial>beginner, topic>abap-development ]
 [Create an ABAP class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)
 
 ## Next Steps: Optional
- - [Create ABAPDoc comments in your class](https://www.sap.com/developer/tutorials/abap-dev-create-abapdoc.html)
+ - [Create `ABAPDoc` comments in your class](https://www.sap.com/developer/tutorials/abap-dev-create-abapdoc.html)
 
 ## Details
 ### You will learn  
@@ -189,4 +189,4 @@ Go back to your report and execute it by choosing **F8**. Your SAP List Viewer s
 [ACCORDION-END]
 
 ## Next Steps: Optional
- - [Create ABAPDoc comments in your class](https://www.sap.com/developer/tutorials/abap-dev-create-abapdoc.html)
+ - [Create `ABAPDoc` comments in your class](https://www.sap.com/developer/tutorials/abap-dev-create-abapdoc.html)
