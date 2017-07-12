@@ -6,21 +6,18 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ---
 
 ## Prerequisites  
- - ABAP Development: [Create a global ABAP Class and Data Dictionary structure for data retrieval](https://www.sap.com/developer/tutorials/abap-dev-adt-create-class-structure.html).
+ - [Create a global ABAP Class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)
 
 
 ## Next Steps
- - Use a CDS View in ALV with IDA (coming soon).
+ - [Use a CDS View in ALV with IDA](https://www.sap.com/developer/tutorials/abap-dev-adt-use-cds-view.html)
+
 
 ## Details
 ### You will learn  
 In the following exercise you will learn how to use the new Core Data Services (CDS) tools in ABAP in Eclipse. CDS is an extension of the ABAP Dictionary that allows you to define semantically rich data models in the database and to use these data models in your ABAP programs. CDS is a central part of enabling Code Push-down in ABAP applications.
 You will learn to define a new CDS view in a DDL source.
-You can find more information about CDS in the SAP Help Portal (coming soon) and the SAP Community Network (coming soon).
-
-### Time to Complete
-**15-20 Min**.
-
+You can find more information about CDS in the [ABAP keyword documentation] (http://help-legacy.sap.com/abapdocu_751/en/index.htm) and the [SAP Community] (https://www.sap.com/community/topic/abap.html).
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Choose an ABAP Object)]
@@ -189,4 +186,4 @@ b. Save and activate the data definition by choosing **Save** (`Ctrl+S`) and **A
 [ACCORDION-END]
 
 ## Next Steps
-- Use a CDS View in ALV with IDA (coming soon).
+- [Use a CDS View in ALV with IDA](https://www.sap.com/developer/tutorials/abap-dev-adt-use-cds-view.html)
