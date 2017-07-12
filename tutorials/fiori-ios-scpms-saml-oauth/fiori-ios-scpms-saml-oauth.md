@@ -12,7 +12,7 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>securi
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Read SAP Mobile Secure configuration data](https://www.sap.com/developer/tutorials/fiori-ios-scpms-configprovider.html)
 
 ## Details
 ### You will learn  
@@ -258,4 +258,4 @@ You should now see the authorized client application for `hcpms`, as well as the
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Read SAP Mobile Secure configuration data](https://www.sap.com/developer/tutorials/fiori-ios-scpms-configprovider.html)
