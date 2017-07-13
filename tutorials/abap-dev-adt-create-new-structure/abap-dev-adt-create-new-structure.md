@@ -1,5 +1,5 @@
 ---
-title: Create a new Data Dictionary structure
+title: Create a new Data Dictionary structure 
 description: You will learn how to create a Data Dictionary structure
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development ]
@@ -8,10 +8,12 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
+ [Create and run an ABAP application](https://www.sap.com/developer/tutorials/abap-create-basic-app.html)
 
 
 ## Next Steps
-[Create an ABAP class](https://www.sap.com/developer/tutorials/abap-dev-adt-create-class-structure.html)
+
+[Create an ABAP class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)
 
 ## Details
 ### You will learn  
@@ -128,4 +130,4 @@ define type zso_invoice_item {
 ---
 
 ## Next Steps
-- [Create an ABAP class](https://www.sap.com/developer/tutorials/abap-dev-adt-create-class-structure.html)
+- [Create an ABAP class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)

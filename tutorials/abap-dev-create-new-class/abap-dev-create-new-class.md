@@ -8,20 +8,18 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
- - [Create and run an ABAP program](https://www.sap.com/developer/tutorials/abap-create-basic-app.html)
- - [Display database content and run SQL queries](https://www.sap.com/developer/tutorials/abap-display-data-queries.html)
- - Create an ABAP Data Dictionary structure (coming soon)
+  - [Create an ABAP Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)
 
 
 ## Next Steps
-- [Create a CDS view](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html)
+- [Create a data element](https://www.sap.com/developer/tutorials/abap-dev-adt-create-data-element.html)
 
 ## Details
 ### You will learn  
 In previous tutorials, you learned how to:
 1. [Create and run an ABAP program](https://www.sap.com/developer/tutorials/abap-create-basic-app.html)
 2. [Display database content and run SQL queries](https://www.sap.com/developer/tutorials/abap-display-data-queries.html)
-3. Create an ABAP Data Dictionary structure (coming soon)
+3. [Create an ABAP Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)
 
 Now, you will put all these together: In the ABAP program, you will:
 - create a global class
@@ -176,7 +174,7 @@ b.	To make the `SELECT` statement more readable, add some line breaks in the `JO
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Declare the local variable explicitly)]
-In a previous tutorial (Create a structure (coming soon)), you created an ABAP Data Dictionary structure. Now, you will use this structure:
+In a previous tutorial ([Create a structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)), you created an ABAP Data Dictionary structure. Now, you will use this structure:
 First, we will declare a local variable, `lt_result`, explicitly. Then, using this structure, we will define the type. of the returning parameter for your method `get_items_from_db`.
 a.	First position the cursor on the inline declared variable `lt_result` and open Quick Fix by choosing **Ctrl+1**:
 
@@ -207,7 +205,7 @@ It also replaces `INTO TABLE @DATA(lt_result)` with `INTO TABLE @lt_result`
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Replace helper_type with Dictionary structure)]
-In the next steps, you will replace the local type `helper_type` with the Data Dictionary structure that you created (in the previous tutorial Create an ABAP Data Dictionary structure (coming soon)).
+In the next steps, you will replace the local type `helper_type` with the Data Dictionary structure that you created (in the previous tutorial [Create an ABAP Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)).
 
 Still in the editor of your invoice retrieval class `ZCL_INVOICE_RETRIEVAL` :
 a.	In the method `get_items_from_db`, change the type of the variable `lt_result` to a standard table of `zso_invoice_item`:
@@ -406,5 +404,5 @@ ENDCLASS.
 
 ---
 
-## Next Steps
-- [Create a CDS view](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html)
+## Next Steps: Optional
+- [Create a data element](https://www.sap.com/developer/tutorials/abap-dev-adt-create-data-element.html)

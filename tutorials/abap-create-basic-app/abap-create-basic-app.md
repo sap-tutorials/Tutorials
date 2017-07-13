@@ -92,4 +92,11 @@ Press **F8** to run your program. An embedded SAP GUI will open inside of an Ecl
 [ACCORDION-END]
 
 ## Next Steps
-Create a global ABAP class and a DDIC structure for data retrieval (coming soon)
+You have 2 options:
+- Retrieve data from the database by creating a Data Dictionary structure, a global ABAP class, and a data element:
+[Create a new Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)
+
+OR
+
+- Retrieve data from the database by creating a CDS view:
+[Create a CDS View](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html)
