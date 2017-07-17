@@ -11,10 +11,10 @@ tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platf
 
 ## Next Steps
 
- - If you are running a developer account on the SAP Cloud Platform, you should continue with: [How to update the database pool configuration of the SAP Cloud for predictive services](http://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
- - Then, you can move to one of the following groups:
-   - [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
-   - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
+- If you are running a developer account on the SAP Cloud Platform, you should continue with: [How to update the database pool configuration of the SAP Cloud for predictive services](http://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
+- Then, you can move to one of the following groups:
+    - [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+    - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 ### You will learn
@@ -198,5 +198,5 @@ Status is green! Congrats, you have configured the SAP Cloud for predictive serv
 
 - If you are running a developer account on the SAP Cloud Platform, you should continue with: [How to update the database pool configuration of the SAP Cloud for predictive services](http://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
 - Then, you can move to one of the following groups:
-  - [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
-  - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
+    - [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+    - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
