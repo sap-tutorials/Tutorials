@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, produ
   - **Tutorials:** [Test the "Dataset" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
 
 ## Next Steps
-  - [Configure a SAPUI5 application from a project template](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+  - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 
@@ -274,4 +274,4 @@ Or the public documentation
   - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
 
 ## Next Steps
-  - [Configure a SAPUI5 application from a project template](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+  - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
