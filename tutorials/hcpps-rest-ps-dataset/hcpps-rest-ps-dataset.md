@@ -7,7 +7,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, produ
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Install a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
+  - **Tutorials:** [Configure the SAP Cloud Platform predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
   - [Test the "Forecast" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
@@ -52,7 +52,9 @@ Once registered, you will be able to use the dataset "ID" to call the other serv
 [ACCORDION-BEGIN [Step 1: ](Register a dataset)]
 Open a new tab in ***Postman***.
 
-Fill in the following information
+> If you don't have ***Postman*** installed yet, you can refer to the following how-to guide: [Install Postman extension for Google Chrome as a REST client](https://www.sap.com/developer/how-tos/2017/07/api-tools-postman-install.html)
+
+Fill in the following information:
 
 Field Name     | Value
 -------------- | --------------
