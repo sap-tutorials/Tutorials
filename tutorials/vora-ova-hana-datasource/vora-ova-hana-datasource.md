@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 
 
 ## Next Steps
- - [Using Spark Shell to run SAP Vora examples]](https://www.sap.com/developer/tutorials/vora-ova-spark-shell.html)
+ - [Using Spark Shell to run SAP Vora examples](https://www.sap.com/developer/tutorials/vora-ova-spark-shell.html)
 
 ## Details
 ### You will learn  
@@ -79,4 +79,4 @@ SELECT * FROM HANADATA;
 [ACCORDION-END]
 
 ## Next Steps
-- [Using Spark Shell to run SAP Vora examples]](https://www.sap.com/developer/tutorials/vora-ova-spark-shell.html)
+- [Using Spark Shell to run SAP Vora examples](https://www.sap.com/developer/tutorials/vora-ova-spark-shell.html)
