@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 
 
 ## Next Steps
- - [Working with hierarchies using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin2.html)
+ - [Working with hierarchies using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin2.html)
 
 ## Details
 ### You will learn  
@@ -99,4 +99,4 @@ Create a CUBE called `PROD_FININS_CUBE` that joins fact table and dimension view
 
 
 ## Next Steps
-- [Working with hierarchies using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin2.html)
+- [Working with hierarchies using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin2.html)

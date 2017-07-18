@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - [Working with Document Store Engine in SAP Vora](http://www.sap.com/developer/tutorials/vora-cal-zeppelin7.html)
+ - [Working with Document Store Engine in SAP Vora](http://www.sap.com/developer/tutorials/vora-ova-zeppelin7.html)
 
 
 ## Next Steps
- - [Working with SAP HANA data source](https://www.sap.com/developer/tutorials/vora-cal-hana-datasource.html)
+ - [Working with SAP HANA data source](https://www.sap.com/developer/tutorials/vora-ova-hana-datasource.html)
 
 ## Details
 ### You will learn  
@@ -122,4 +122,4 @@ The modelled view is now ready for reporting. Click on the **Data Browser** in V
 
 
 ## Next Steps
-- [Working with SAP HANA data source](https://www.sap.com/developer/tutorials/vora-cal-hana-datasource.html)
+- [Working with SAP HANA data source](https://www.sap.com/developer/tutorials/vora-ova-hana-datasource.html)

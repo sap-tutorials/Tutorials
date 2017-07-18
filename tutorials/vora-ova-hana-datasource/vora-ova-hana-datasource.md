@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Working with the SAP Vora Tools](https://www.sap.com/developer/tutorials/vora-cal-toolsintro.html)
+ - **Tutorials:** [Working with the SAP Vora Tools](https://www.sap.com/developer/tutorials/vora-ova-toolsintro.html)
 
 
 ## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - [Using Spark Shell to run SAP Vora examples]](https://www.sap.com/developer/tutorials/vora-ova-spark-shell.html)
 
 ## Details
 ### You will learn  
@@ -79,4 +79,4 @@ SELECT * FROM HANADATA;
 [ACCORDION-END]
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Using Spark Shell to run SAP Vora examples]](https://www.sap.com/developer/tutorials/vora-ova-spark-shell.html)

@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-vora ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Working with SAP HANA data source](https://www.sap.com/developer/tutorials/vora-cal-hana-datasource.html)
+ - **Tutorials:** [Working with SAP HANA data source](https://www.sap.com/developer/tutorials/vora-ova-hana-datasource.html)
 
 
 ## Next Steps
