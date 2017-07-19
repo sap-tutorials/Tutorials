@@ -46,7 +46,7 @@ Zeppelin makes use of the SAP Vora Spark Extension library by invoking it with t
 
 To use Apache Zeppelin pre-installed on SAP Vora 1.4, developer edition, run a modern web browser of your choice and open `http://IP_ADDRESS:9099`
 
-![Open Zeppelin](zep0_01.jpg)
+![Open Zeppelin](zep0_01_14.jpg)
 
 You will see a few notebooks which focus on different Vora topics such as SAP Vora Tutorial, Tables and Views, Document Store, Disk Engine, Graph Engine, Time Series, etc.
 
@@ -68,7 +68,7 @@ You need to provide a table name and the fully qualified name of the SAP Vora da
 The initial SQL script execution does take some time to complete, this is due to Yarn resource initialization. Subsequent statements are executed much faster.
 
 To run the SQL in a paragraph you can either click on **Run this Paragraph**. Or use the `SHIFT+ENTER` key combination.
-![Run paragraph](zep0_02.jpg)
+![Run paragraph](zep0_02_14.jpg)
 
 Continue by running all three "create table" paragraphs.
 
@@ -76,40 +76,40 @@ Get list of created tables by scrolling down the notebook and run the paragraph 
 
 You can create your own paragraphs just remember that `%jdbc` keyword is required in each paragraph.
 
-![Show tables](zep0_03.jpg)
+![Show tables](zep0_03_14.jpg)
 
 Feel free to query the in-memory tables you have just created with queries like `%jdbc select * from FINANCIAL_INS limit 10`.
 
-![Query data](zep0_04.jpg)
+![Query data](zep0_04_14.jpg)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Running notebook 1_Tables and Views)]
 Continue to the next notebook `1_Tables and Views`.
-![Notebook 1](zep0_05.jpg)
+![Notebook 1](zep0_05_14.jpg)
 
 Run each paragraph individually. First few paragraphs show how to create and then drop some test table `COMPLAINTS_TEST`.
 
 Then create a view `COMPLAINTS_PRODUCTS` joining `COMPLAINTS` and `PRODUCTS` relations.
-![Create the view](zep0_06.jpg)
+![Create the view](zep0_06_14.jpg)
 
 Select data from the newly created view `COMPLAINTS_PRODUCTS`.
-![Select from view](zep0_07.jpg)
+![Select from view](zep0_07_14.jpg)
 
 Report the number of complaints by state and by product by means of simple aggregation. Run `Some joins and aggregations` paragraph and query data from it.
 
 Zeppelin will plot the results once you choose one of chart representations. Settings of measures and dimensions are customizable.
-![Select from new view](zep0_08.jpg)
+![Select from new view](zep0_08_14.jpg)
 
 Create dimension views. You can define annotations on relation columns. An ___annotation___ is a key/value pair that allows external tools, such as modelers and visual SQL editors, to store additional information about relation columns, like default aggregations or UI formatting tips. This makes integration with SAP Vora and Spark easier.
 
 To view the annotations defined on a table, you can use the table-valued function `DESCRIBE_TABLE` as in the following Zeppelin paragraph.
 
-![Dimension and annotations](zep0_09.jpg)
+![Dimension and annotations](zep0_09_14.jpg)
 
 Create a CUBE called `PROD_FININS_CUBE` that joins fact table and dimension view. Feel free to play with the different chart types for this visualization.
-![Cube](zep0_10.jpg)
+![Cube](zep0_10_14.jpg)
 
 [DONE]
 [ACCORDION-END]

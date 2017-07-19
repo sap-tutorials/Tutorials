@@ -25,9 +25,10 @@ You will learn how to process data using SAP Vora graph engine.
 The graph engine is a distributed in-memory engine that supports graph processing and allows execution of typical graph operations on data stored in SAP Vora 1.4.
 
 The graph engine uses a native, node-centric graph store for high performance analytical query processing. It supports directed and undirected graphs and has an underlying property graph model. Properties can currently be specified on nodes only, not on edges.
+
 A graph consists of a set of nodes and accompanying metadata. A node has a type, a set of primitive-typed properties, and a set of outgoing edges. In undirected graphs, outgoing and incoming edges are equivalent. Like nodes, edges and properties are also typed. A distinction is made between the sets of node types, edge types, and property types. Therefore it is possible, but not recommended, to use the same names for node, property, and edge types. Edge properties are not supported.
 
-![Graph Funcitons](zep4_01.jpg)
+![Graph Funcitons](zep4_01_14.jpg)
 
 [DONE]
 [ACCORDION-END]
@@ -74,46 +75,45 @@ An optional flag can be specified with either the keyword `STRONG` or `WEAK`. If
 The connected component IDs are derived from the node IDs. The ID of a connected component is determined by the smallest node ID that occurs in it. The function for calculating connected components is available only in the `SELECT` clause of a query.
 
 A sample data set explains the relationship between the learning contents, the topics and learners in an organization.
-![Data set](zep4_02.jpg)
+![Data set](zep4_02_14.jpg)
 
-![Visualization of data set](zep4_03.jpg)
+![Visualization of data set](zep4_03_14.jpg)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Running notebook 4_Graph)]
 Proceed by selecting the `4_Graph` notebook.
-![Notebook 4](zep4_04.jpg)
 
-Run the first four paragraphs, creating partition function, partition scheme and graph.
-![First three paragraphs](zep4_05a.png)
+Run the first three paragraphs, creating partition function, partition scheme and graph.
+![First three paragraphs](zep4_05a_14.png)
 
-You can create both partitioned and unpartitioned graphs with Vora 1.3. above you see how to use the partition schema to create a partitioned function and below you can see how to create an unpartitioned graph out of your learning data.
-![Unpartitioned graph](zep4_06.jpg)
+You can create both partitioned and unpartitioned graphs with Vora 1.4. Above you could see how to use the partition schema to create a partitioned function and below you can see how to create an unpartitioned graph.
+![Unpartitioned graph](zep4_06_14.jpg)
 
-You can also drop a graph as below.
-![Drop graph](zep4_07.jpg)
+You can drop a graph as below.
+![Drop graph](zep4_07_14.jpg)
 
-You can see what varieties of any type you have in your graph. For instance, in this example you can see what varieties of learning topics you have in the graph. As you can see below the result shows the topics as Machine Learning and Machine Teaching.
-![Varieties](zep4_08.jpg)
+You can see what varieties of any type you have in your graph. For instance, in this example you can see what varieties of learning topics you have in the graph. As you can see below the result shows the topics as ___Machine Learning___ and ___Machine Teaching___.
+![Varieties](zep4_08_14.jpg)
 
 There are also wildcards available to you with graph. In below example you return the `name` value on any node that includes that information. For the nodes that don't have any property called `name` the returned value is `null`.
-![Wildcard](zep4_09.jpg)
+![Wildcard](zep4_09_14.jpg)
 
 This query is using the wildcards to return the `Title` value from any nodes that have that information.
-![Title](zep4_10.jpg)
+![Title](zep4_10_14.jpg)
 
 You can call the graph specific functions on the graph data. In the example below you will see the `Topics` that are related to the `Contents` and see how far apart are they from each other by calling the `DISTANCE(DIRECTED A,B)` function.
-![Distance function](zep4_11.jpg)
+![Distance function](zep4_11_14.jpg)
 
-Find out what is the smallest ID associated with the strong or weak component connecting to your Learning Contents by calling the `CONNECTED_COMPONENT(STRONG A)` and `CONNECTED_COMPONENT(WEAK a)` functions within your select statement.
-![CONNECTED_COMPONENT](zep4_12.jpg)
+Find out what is the smallest `ID` associated with the strong or weak component connecting to your Learning Contents by calling the `CONNECTED_COMPONENT(STRONG A)` and `CONNECTED_COMPONENT(WEAK a)` functions within your select statement.
+![CONNECTED_COMPONENT](zep4_12_14.jpg)
 
 Find out the Learning Topics that have connections to more that one incoming connected node.
-![Learning Topics](zep4_13.jpg)
+![Learning Topics](zep4_13_14.jpg)
 
 You can also use aggregations in your `SELECT` statement and in combination of any graph function. In the example below the statement returns the average value of the incoming degree for the `Topics`.
-![Combination of functions](zep4_14.jpg)
+![Combination of functions](zep4_14_14.jpg)
 
 
 [DONE]
