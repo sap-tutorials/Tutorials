@@ -35,7 +35,7 @@ Since the SAP Vora 1.4 execution engine supports hierarchies, support has been a
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Running notebook 2_Hierarchies)]
-Start by selecting the `2_Hierarchies` notebook.
+Start by selecting the `2_Hierarchies` notebook. If your developer edition is missing this notebook, then proceed to the next tutorial.
 ![Hierarchies notebook](zep2_01.jpg)
 
 Run the following paragraphs.

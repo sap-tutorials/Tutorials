@@ -34,7 +34,6 @@ The data source `com.sap.spark.engines.disk` is used by the disk engine. SQL sta
 
 [ACCORDION-BEGIN [Step 2: ](Running 3_Data_on_Disk)]
 The first engine to look at is the Disk Engine. Switch to Zeppelin notebook `3_Data_on_Disk`.
-![Disk notebook](zep3_01.jpg)
 
 First create a disk engine table. Disk engine tables need a partition function and a derived partition scheme. This is what you do in the first two paragraphs.
 ![Partitions](zep3_02.jpg)
@@ -42,9 +41,10 @@ First create a disk engine table. Disk engine tables need a partition function a
 Create a second disk engine table and verify tables created.
 ![Second table](zep3_03.jpg)
 
-Run a simple cross-engine query, you can continue by writing your own SQL paragraph using the simple query.
+Continue by adding a new paragraph to run a simple cross-engine query.
+
 ```sql
-%vora
+%jdbc
 SELECT COMPLAINTS_DISK.COMPLAINT_ID,PRODUCT  
 FROM  COMPLAINTS_DISK
 INNER JOIN PRODUCTS
