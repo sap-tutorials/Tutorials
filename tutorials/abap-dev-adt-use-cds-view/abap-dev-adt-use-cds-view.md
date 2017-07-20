@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>abap-development ]
  - **Proficiency:** Beginner
  - **Tutorials:**
 
-[Create a CDS view](coming soon)
+[Create a CDS view](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html)
 
 ## Next Steps
  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

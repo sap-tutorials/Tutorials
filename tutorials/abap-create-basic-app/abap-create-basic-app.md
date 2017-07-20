@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>abap-development ]
 
 
 ## Next Steps
- Create a global ABAP class and a DDIC structure for data retrieval (coming soon).
+[Display database content and run SQL queries](http://www.sap.com/developer/tutorials/abap-display-data-queries.html)
 
 ## Details
 ### You will learn  
@@ -23,11 +23,12 @@ In this tutorial you will learn how to create and run an ABAP application based 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create New ABAP Program)]
-If you can't see the **$TMP** package in the Project Explorer expand your project node and the node **Favorite Packages**. Right-click on the package **$TMP** to open the context menu. Select **New** and click on **ABAP Program**.
+a. Create a global Data Dictionary ("DDIC") structure: In the toolbar, select the **New** icon, then choose **ABAP Program...**:
 
-![create ABAP program](abap-03-1.png)
+![Image depicting create new](abap03-1a.png)
 
-A wizard appears to create a new ABAP Program. Enter  `z_invoice_items_euro` in the name field. Enter a meaningful text in the **description field**. Click **Finish** to create the report. Afterwards an editor will be opened which shows the empty report.
+A wizard appears to create a new ABAP Program. Enter **`z_invoice_items_euro`** in the name field. Enter a meaningful text in the **description field**. Click **Finish** to create the report.
+Afterwards an editor will be opened which shows the empty report.
 
 ![new ABAP program](abap-03-2.png)
 
@@ -56,7 +57,8 @@ Position the cursor in the class definition statement and press **Ctrl+1** to op
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Implement RUN method)]
-Add the definition of an additional instance method **run** in the public section. Position the cursor on the method name and press **Ctrl+1** to open the Quick-Fix menu. Double-click on **Add implementation for run**.
+a. Add the definition of an additional instance method **run** by entering **`methods run.`** in the public section.
+b. Then position the cursor on the method name and press **Ctrl+1** to open the Quick-Fix menu. Double-click on **Add implementation for run**.
 
 ![run method](abap-03-6.png)
 
@@ -68,7 +70,15 @@ Implement a simple **WRITE** statement in the method **run**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Make ABAP program runnable)]
-Add a **START-OF-SELECTION event** to your report and create an instance of the local class `lcl_main`. Call the method **run**.
+a. Add a **START-OF-SELECTION event** to your report
+b. Create an instance of the local class `lcl_main`.
+c. Call the **run** method.
+That is, enter the following code:
+
+```ABAP
+START-OF-SELECTION.
+    lcl_main=>create( )->run( ).
+```
 
 ![create run statement](abap-03-8.png)
 
@@ -92,4 +102,16 @@ Press **F8** to run your program. An embedded SAP GUI will open inside of an Ecl
 [ACCORDION-END]
 
 ## Next Steps
-Create a global ABAP class and a DDIC structure for data retrieval (coming soon)
+You have 2 options:
+a. Retrieve data from the database by:
+  - creating a Data Dictionary structure (from an SQL query)
+  - a global ABAP class
+  - and a data element:
+
+[Display database content and run SQL queries](http://www.sap.com/developer/tutorials/abap-display-data-queries.html)
+
+OR
+
+b. Retrieve data from the database by creating a CDS view:
+
+[Create a CDS View](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html)

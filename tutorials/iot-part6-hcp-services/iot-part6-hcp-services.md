@@ -1,18 +1,18 @@
 ---
-title: Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services
-description: Part 1 of 3, Setup and configure the use of the IoT Services with SAP Cloud Platform
+title: SAP Cloud Platform IoT for Neo: Enable and configure
+description: Setup and configure the use of the IoT for Neo environment in SAP Cloud Platform
 primary_tag: topic>internet-of-things
 tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
 ---
 
-## Prerequisites  
+## Prerequisites
 - **Proficiency:** Beginner
-- **Tutorials:** [Internet of Things (IoT) Setup the Tessel](http://www.sap.com/developer/how-tos/2016/09/iot-tessel.html)
+- **Tutorials:** [Setup the Tessel device](http://www.sap.com/developer/how-tos/2016/09/iot-tessel.html)
 
 
 ## Next Steps
-- [Internet of Things (IoT) Adding a new device to the IoT Services](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)
+- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)
 
 ## Details
 ### You will learn
@@ -28,23 +28,18 @@ This procedure assumes you are using the trial account of the SAP Cloud Platform
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Register or log into SAP Cloud Platform trial)]
+[ACCORDION-BEGIN [Step 1: ](Register for or log into SAP Cloud Platform trial)]
 
 Go to the [SAP Cloud Platform trial edition](https://account.hanatrial.ondemand.com/cockpit) log in (or sign up if you don't have an account yet).
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open Internet of Things Services)]
+[ACCORDION-BEGIN [Step 2: ](Enable IoT service)]
 
 Once you log in, click on **Services** in the left-hand navigation bar, scroll down to find **Internet of Things** tile and click on it.
 
 ![Services](p6-2.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Enable IoT the service)]
 
 Click on the **Enable** button. After a few seconds the page will update and show **Enabled**.
 
@@ -53,7 +48,7 @@ Click on the **Enable** button. After a few seconds the page will update and sho
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Open the service)]
+[ACCORDION-BEGIN [Step 3: ](Go to IoT Service Cockpit)]
 
 Once the service is enabled click the **Go to Service** link and a new browser tab will open.
 
@@ -62,16 +57,11 @@ Once the service is enabled click the **Go to Service** link and a new browser t
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Configure Message Management Service)]
+[ACCORDION-BEGIN [Step 4: ](Deploy Message Management Service)]
 
-With IoT Services enabled, you can begin the steps necessary to configure your device's digital twin and to enable message communication.
+With IoT service enabled, you can begin the steps necessary to configure your device's digital twin and to enable message communication.
 
-The first step will be to configure and deploy the Message Management Service (MMS). Click on the **Deploy Message Management Service** tile.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Enter user name and password)]
+The first step will be to deploy and to configure the Message Management Service (MMS). Click on the **Deploy Message Management Service** tile.
 
 Enter in your information in the fields, where your account ID is your p-number (or s-number if you are SAP's customer or partner, or i-/d-number if you are SAP employee) with the world "trial" (no space between the p-number and trial) and your user name is just your p-number.
 
@@ -80,7 +70,7 @@ Enter in your information in the fields, where your account ID is your p-number 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Go to IoT MMS application dashboard)]
+[ACCORDION-BEGIN [Step 5: ](Go to IoT MMS application dashboard)]
 
 Once successfully deployed then Java application `iotmms` is started in your account.
 
@@ -91,7 +81,7 @@ Return to the SAP Cloud Platform cockpit view and click on **Java Applications**
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Assign role)]
+[ACCORDION-BEGIN [Step 6: ](Assign IoT MMS user role)]
 
 With the **IoT MMS dashboard** displayed click on the Roles link in the left navigation bar. Select the **IoT-MMS-User** (click the empty cell next to the Name to select the row if it is not highlighted in blue).
 
@@ -110,4 +100,4 @@ Once user is assigned to the role, stop and start `iotmms` application.
 
 
 ## Next Steps
-- [Internet of Things (IoT) Adding a new device to the IoT Services](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)
+- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)

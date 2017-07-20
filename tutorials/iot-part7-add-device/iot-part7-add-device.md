@@ -1,6 +1,6 @@
 ---
-title: Internet of Things (IoT) Adding a new device to the IoT Services
-description: Part 2 of 3, Add a new device to your IoT Services
+title: SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data
+description: Add a new device for collecting environmental sensors data in your IoT for Neo
 primary_tag: topic>internet-of-things
 tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
@@ -8,12 +8,12 @@ tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>int
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
+- **Tutorials:** [SAP Cloud Platform IoT for Neo: Enable and configure](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
 
 
 ## Next Steps
-- [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
-- [Internet of Things (IoT) Connecting your TI SensorTag to IoT Services](http://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](http://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
 
 ## Details
 ### You will learn  
@@ -51,11 +51,6 @@ In the **Information** section, enter a name "`climateData`".
 
 ![Device definition](p7_4.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Populate message type fields)]
-
 In the **Fields** section, click the **+ Add Field** button to add in two more fields, then enter the following for name and data types. Click the **Create** button (bottom right corner) when complete. When the message type is created, copy the **ID** string. You will need it later.
 
 > Note: Be sure to follow the names and capitalization specified below.
@@ -73,7 +68,7 @@ Copy and save the message type ID, which you will need later:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a new device type)]
+[ACCORDION-BEGIN [Step 4: ](Create a new device type)]
 
 Click the `<` ("back arrow") again to return the the IoT Services Cockpit. Click on **Device Types**, then the **+** symbol to create a new device. Give it a simple name that makes sense for what you are doing, like "`TesselClimate`".
 
@@ -84,7 +79,7 @@ Now click the  **+ Add Message Type** to attach your previously created message 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create a new device)]
+[ACCORDION-BEGIN [Step 5: ](Create a new device)]
 
 Finally you can now click the `<` ("back arrow") icon and click **Devices** tile.
 
@@ -97,16 +92,11 @@ Click `+` to add a new device, name it `DevelopmentTessel` and make sure its dev
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Copy token ID)]
+[ACCORDION-BEGIN [Step 6: ](Copy device and token IDs)]
 
 When the OAuth Access Token is displayed, copy the token ID and save it. Click **Close**.
 
 ![Token](p7_7.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Save device ID)]
 
 Now copy and save the **Device ID** string
 
@@ -115,7 +105,7 @@ Now copy and save the **Device ID** string
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Send and view messages)]
+[ACCORDION-BEGIN [Step 7: ](Use HTTP API built-in client)]
 
 With the device type, message type and device configured, it is time to send some data.
 
@@ -130,7 +120,7 @@ Then click the **Messaging through HTTP** tile in **Data Services** group.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Change device ID)]
+[ACCORDION-BEGIN [Step 8: ](Adjust device ID)]
 
 On the **HTTP API** page, you will have a client to **Send Message** with an **Data Endpoint** like this:
 
@@ -143,7 +133,7 @@ Example: `https://iotmmsp1234567trial.hanatrial.ondemand.com/com.sap.iotservices
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Edit message to post)]
+[ACCORDION-BEGIN [Step 9: ](Adjust message to post)]
 
 You will next formulate your HTTP POST payload. Since you are sending OData, numbers (`float`, `int`, `double`, etc) are not placed in double quotes, while strings and the Key of the Key/Value pair are in quotes.
 
@@ -160,9 +150,9 @@ Under **Message to post** replace the existing content with the following which 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Execute the POST)]
+[ACCORDION-BEGIN [Step 10: ](Send the sample message)]
 
-Click the POST button. If everything goes OK, you should see a response code of `200` similar to this screen shot or response code `202` when you post for the very first time.
+Click the **Send** button. If everything goes OK, you should see a response code of `200` similar to this screen shot or response code `202` when you post for the very first time.
 
 ![Server Reply](p7_12.png)
 
@@ -173,7 +163,7 @@ Response codes `4xx` or `5xx` indicate that post request has failed.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Display stored messages)]
+[ACCORDION-BEGIN [Step 11: ](Display stored messages)]
 
 To verify that the posting worked, switch back **IoT Service Cockpit**, click **Send and view messages, or perform other actions** tile, then click the **Display stored messages** tile.
 
@@ -186,16 +176,18 @@ Please note **OData API** link in the up right corner. Clicking it will give you
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Using an external REST client)]
+[ACCORDION-BEGIN [Step 12: ](Starting Postman application)]
 
-Now you will post from an external REST client. In this step you will use [Postman Application](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) for Google Chrome.
+Now you will an external REST client to post from. This will require authentication mechanism not required when used built-in client.
+
+In this step you will use [Postman Application](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) for Google Chrome.
 
 >There is no need to create a Postman account, if you are asked during the first run of the Postman application.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Set method, URL and HTTP header)]
+[ACCORDION-BEGIN [Step 13: ](Set method, URL and HTTP header)]
 
 In Postman select **POST** from the drop down menu. Copy the HTTP endpoint from your account's sample client to Postman's `Enter request URL` field.
 
@@ -209,7 +201,7 @@ Open the **Headers** section and set:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Set body)]
+[ACCORDION-BEGIN [Step 14: ](Set body)]
 
 Select **Body**, then the **RAW** type. Copy and paste the same content you just had in a simple client. Make a few value changes to make easier spotting this insert. Make sure you change the `messageType` to your ID.
 
@@ -220,12 +212,12 @@ Select **Body**, then the **RAW** type. Copy and paste the same content you just
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Send message)]
+[ACCORDION-BEGIN [Step 15: ](Send message)]
 
 Click **Send** and you should receive a message similar to that from the SAP Cloud Platform simple client.
 ![Send request in Postman](p7_16.png)
 
-This indicates that your POST was successful and if you return to the "Display Stored Messages" you will see your new entry.
+This indicates that your POST was successful and if you return to the "Display Stored Messages" in SAP Cloud Platform you should see this new entry sent from the Postman application.
 
 [DONE]
 [ACCORDION-END]
@@ -233,5 +225,5 @@ This indicates that your POST was successful and if you return to the "Display S
 
 
 ## Next Steps
-- [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
-- [Internet of Things (IoT) Connecting your TI SensorTag to IoT Services](http://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](http://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)

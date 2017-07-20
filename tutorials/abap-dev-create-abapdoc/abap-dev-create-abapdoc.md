@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>abap-development ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create an ABAP Class] coming soon
+ - **Tutorials:** [Create an ABAP Class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)
 
 
 ## Next Steps
@@ -23,7 +23,7 @@ In the following exercise you will make your program more readable by learning h
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open your ABAP class)]
-First, open your ABAP class, which you created in [Create an ABAP Class] coming soon:
+First, open your ABAP class, which you created in [Create an ABAP Class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html):
 
 ![Image depicting step-1-open-class](step-1-open-class.png)
 
@@ -176,11 +176,4 @@ ENDCLASS.
 
 
 ## Next Steps
-SUMMARY: You have completed the exercise!
-
-You are now able to:
-·	Document your source code using ABAP Doc
-·	synchronize the documentation
-·	Display the documentation  
-
 - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

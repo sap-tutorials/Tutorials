@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, produ
   - **Tutorials:** [Test the "Dataset" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
 
 ## Next Steps
-  - [Configure a SAPUI5 application from a project template](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+  - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 
@@ -100,9 +100,11 @@ Variable | Description | Example of Values
 
 [ACCORDION-BEGIN [Step 1: ](Register the Census dataset)]
 
-First we need to register the dataset.
+As described in [**Step 1** of **Test the "Dataset" services** tutorial](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Census dataset using the following elements:
 
-As described in the **Step 1: Register a dataset** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial, register the Census dataset using the following elements:
+Open a new tab in ***Postman***.
+
+> If you don't have ***Postman*** installed yet, you can refer to the following how-to guide: [Install Postman extension for Google Chrome as a REST client](https://www.sap.com/developer/how-tos/2017/07/api-tools-postman-install.html)
 
 Field Name     | Value
 -------------- | --------------
@@ -272,4 +274,4 @@ Or the public documentation
   - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
 
 ## Next Steps
-  - [Configure a SAPUI5 application from a project template](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
+  - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
