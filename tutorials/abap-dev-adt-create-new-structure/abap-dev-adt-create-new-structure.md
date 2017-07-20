@@ -1,5 +1,5 @@
 ---
-title: Create a new Data Dictionary structure
+title: Create a new Data Dictionary structure 
 description: You will learn how to create a Data Dictionary structure
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development ]

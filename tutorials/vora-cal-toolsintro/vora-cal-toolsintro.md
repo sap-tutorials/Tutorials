@@ -1,8 +1,8 @@
 ---
 title: Working with the SAP Vora Tools
 description: Vora tools provide a data browser for viewing and exporting data in tables and views, an SQL editor for creating and running SQL scripts, and a modeller for creating data models
-primary_tag: products>sap-hana-vora
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
+primary_tag: products>sap-vora
+tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  
@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Working with SAP HANA data source](https://www.sap.com/developer/tutorials/vora-cal-hana-datasource.html)
 
 ## Details
 ### You will learn  
@@ -91,18 +91,27 @@ Successful Data Preview.
 ![Data preview](vtools_15.jpg)
 
 Add a 'where' condition to filter for issues logged via the `Web` by using the right hand pane. Look for **Where** and click the **+** button. The **Where Condition** window appears. Enter condition by selecting options or by typing the condition in the **Expression** box.
+```sql
+COMPLAINTS_DISK.SUBMITTED_VIA = 'Web'
+```
 ![Condition](vtools_16.jpg)
 
 Save your changes and do a **Data Preview**.
 ![Data Preview with condition](vtools_17.jpg)
 
-Count the issues logged by `PRODUCT` by modifying the existing view. Start by select only `PRODUCT` as output column. You can deselect unwanted columns by clicking on them.
+Modify the existing view to count issues logged by `PRODUCT`. Start by selecting only `PRODUCT` as the output column. You can deselect unwanted columns by clicking on them.
 ![Deselecting columns](vtools_18.jpg)
 
-Add a calculated column and count each `COMPLAINT_ID`. Add `PRODUCT` to the **Group By** clause.
-![Calculated column](vtools_19.jpg)
+Add a calculated column `P_COUNT` to count `COMPLAINT_ID`.
+```sql
+count( PRODUCTS.COMPLAINT_ID )
+```
+![Calculated column](vtools_19a.jpg)
 
-Save our changes and do a **Data Preview**.
+Add `PRODUCT` to the **Group By** clause.
+![Group by column](vtools_19.jpg)
+
+Save changes and do a **Data Preview** again.
 ![Data Preview with calculated column](vtools_20.jpg)
 
 The modelled view is now ready for reporting. Click on the **Data Browser** in Vora Tools. You will notice the newly created object under **Vora In-Memory Engine**.
@@ -113,4 +122,4 @@ The modelled view is now ready for reporting. Click on the **Data Browser** in V
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Working with SAP HANA data source](https://www.sap.com/developer/tutorials/vora-cal-hana-datasource.html)

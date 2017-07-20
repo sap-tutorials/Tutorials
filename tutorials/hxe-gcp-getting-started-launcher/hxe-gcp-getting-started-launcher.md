@@ -1,8 +1,8 @@
 ---
 title: SAP HANA, express edition, in Google Cloud Platform Launcher
 description: This getting started guide will walk you through the basics of launching SAP HANA, express edition, on Google Cloud Platform using the Launcher.
-primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, products>sap-hana\,-express-edition  ]
+primary_tag: products>sap-hana\,-express-edition  
+tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 
 ## Prerequisites  
@@ -76,6 +76,14 @@ Enter `Y` to continue with configuration when prompted:
 Once configuration is finished, you will see a success message:
 
 ![Success message](6.png)
+
+You should also change your default Operating System password for user `hxeadm`. Use the following command as root for this:
+
+```
+passwd hxeadm
+```
+
+![Change password](change pass.png)
 
 [DONE]
 [ACCORDION-END]

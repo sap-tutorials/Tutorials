@@ -1,13 +1,13 @@
 ---
 title: Test the "Key Influencer" service
-description: Using a REST client, you will test the "Key Influencer" SAP Cloud Platform predictive service from a REST client
-primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-cloud-platform ]
+description: Using a REST client, you will test the "Key Influencer" SAP Cloud Platform predictive service
+primary_tag: products>sap-cloud-platform-predictive-service
+tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the "Forecast" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
+  - **Tutorials:** [Test the "Dataset" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
 
 ## Next Steps
   - [Test the "Outliers" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)
@@ -56,6 +56,7 @@ Optionally, you can define the following parameters to enhance your analysis:
  - skipped variables: a list of variables to skip from the analysis
  - target value: in the case of binary target variable, it indicates the target variable value of interest. By default the value with the lowest frequency will be picked.
  - variable description: a more details description of the dataset
+ - weight variable: a column to be used to increase the importance of a row
 
 [DONE]
 [ACCORDION-END]
@@ -74,29 +75,33 @@ This file presents the data on 48,842 individual Americans, of at least 17 years
 
 Variable | Description | Example of Values
 -------------- | -------------- | --------------
-age | Age of individuals | Any numerical value greater than 17
+`age` | Age of individuals | Any numerical value greater than 17
 `workclass` | Employer category of individuals | Private, Self-employed-not-inc, ...
 `fnlwgt` | Weight variable, allowing each individual to represent a certain percentage of the population | Any numerical value, such as 0, 2341 or 205019
-education | Level of study, represented by a schooling level, or by the title of the degree earned | 11th, Bachelors
+`education` | Level of study, represented by a schooling level, or by the title of the degree earned | 11th, Bachelors
 `education_num` | Number of years of study, represented by a numerical value | A numerical value between 1 and 16
 `marital_status` | Marital status | Divorced, Never-married, ...
-occupation | Job classification | Sales, Handlers-cleaners, ...
-relationship | Position in family | Husband, Wife, ...
-race | Ethnicity |
-sex | Gender | Male, Female, ...
+`occupation` | Job classification | Sales, Handlers-cleaners, ...
+`relationship` | Position in family | Husband, Wife, ...
+`race` | Ethnicity |
+`sex` | Gender | Male, Female, ...
 `capital_gain` | Annual capital gains | Any numerical value
 `capital_loss` | Annual capital losses | Any numerical value
-native country | Country of origin| United States, France, ...
-class | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
+`native country` | Country of origin| United States, France, ...
+`class` | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
 
 [DONE]
 [ACCORDION-END]  
 
 [ACCORDION-BEGIN [Step 1: ](Register the Census dataset)]
 
-First we need to register the dataset.
+First we need to register the Census dataset.
 
-As described in the **Step 1: Register a dataset** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial, register the Census dataset using the following elements:
+As described in [**Step 1** of **Test the "Dataset" services** tutorial](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Census dataset using the following elements:
+
+Open a new tab in ***Postman***.
+
+> If you don't have ***Postman*** installed yet, you can refer to the following how-to guide: [Install Postman extension for Google Chrome as a REST client](https://www.sap.com/developer/how-tos/2017/07/api-tools-postman-install.html)
 
 Field Name     | Value
 -------------- | --------------
@@ -105,7 +110,10 @@ URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/sync`
 
 ```json
 {
-  "hanaURL":"DEMO/Census"
+  "location": {
+    "schema" : "DEMO",
+    "table" : "Census"
+  }
 }
 ```
 
@@ -449,8 +457,10 @@ The performances a roughly the same as we limited the analysis to only 2 attribu
 [ACCORDION-END]
 
 ### Optional
-For more details on the SAP Cloud for predictive services, you can check the following URL:
+For more details on the SAP Cloud for predictive services, you can check the following URL that can also allow you to run the service:
   - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
+Or the public documentation
+  - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
 
 ## Next Steps
   - [Test the "Outliers" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)

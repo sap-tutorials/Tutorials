@@ -1,20 +1,20 @@
 ---
-title: Manage usage statistics on SAP Cloud Platform Mobile Services
-description: Manage usage statistics on SAP Cloud Platform Mobile Services.
+title: Manage usage statistics on SAP Cloud Platform mobile service for development and operations
+description: Manage usage statistics on SAP Cloud Platform mobile service for development and operations.
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Logging and tracing in SAP Cloud Platform Mobile Services](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-logging.html)
+ - **Tutorials:** [Logging and tracing in SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-logging.html)
 
 ## Next Steps
- - [Introduction to Offline OData](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-introduction.html)
+ - [Introduction to Offline OData](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-introduction.html)
 
 ## Details
 ### You will learn  
-In this tutorial, learn to understand the basics of the reporting functionality in SAP Cloud Platform Mobile Services. You can view usage statistics for your iOS applications in a graphical form. You won't create or configure anything in this part, but rather get familiar of the extensive reporting possibilities.
+In this tutorial, learn to understand the basics of the reporting functionality in SAP Cloud Platform mobile service for development and operations. You can view usage statistics for your iOS applications in a graphical form. You won't create or configure anything in this part, but rather get familiar of the extensive reporting possibilities.
 
 ### Time to Complete
 **5 Min**.
@@ -23,7 +23,7 @@ In this tutorial, learn to understand the basics of the reporting functionality 
 
 [ACCORDION-BEGIN [Step 1: ](Navigate to the Reporting page)]
 
-Go to your SAP Cloud Platform, Mobile Service for Development and Operations cockpit and log on.
+Go to your SAP Cloud Platform mobile service for development and operations cockpit and log on.
 
 Navigate to the **Reporting** page.
 
@@ -68,4 +68,4 @@ Click the **Push Statistics** tile. Here you can review notification counts by a
 [ACCORDION-END]
 
 ## Next Steps
-- [Introduction to Offline OData](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-introduction.html)
+- [Introduction to Offline OData](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-introduction.html)

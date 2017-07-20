@@ -7,7 +7,7 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Introduction to Offline OData](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-introduction.html)
+ - **Tutorials:** [Introduction to Offline OData](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-introduction.html)
 
 
 ## Next Steps
@@ -15,14 +15,14 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
 
 ## Details
 ### You will learn  
-In this tutorial, you will learn to use configure your application and SAP Cloud Platform Mobile Services to utilize the offline OData functionality.
+In this tutorial, you will learn to use configure your application and SAP Cloud Platform mobile service for development and operations to utilize the offline OData functionality.
 
 ### Time to Complete
 **15 Min**.
 
 ---
 
-To use the Offline OData service, it is not necessary to to add any specific configuration to your application. In that case, SAP Cloud Platform mobile services will apply defaults that will make a good amount of applications run smoothly.
+To use the Offline OData service, it is not necessary to to add any specific configuration to your application. In that case, SAP Cloud Platform mobile service for development and operations will apply defaults that will make a good amount of applications run smoothly.
 
 However, the Offline OData service can be configured to best meet the needs of your use cases.
 
@@ -30,7 +30,7 @@ However, the Offline OData service can be configured to best meet the needs of y
 - Configure data to be cached on server
 - Change delta determination
 
->Note: Offline configuration is created in a file and uploaded to SAP Cloud Platform mobile services application configuration and is only required to change default behavior
+>Note: Offline configuration is created in a file and uploaded to SAP Cloud Platform mobile service for development and operations application configuration and is only required to change default behavior
 
 The Offline OData service configuration file is made up of one or more end point configurations, each of
 which has one or more defining request configuration.
@@ -83,7 +83,7 @@ End point configuration:
 
 | Properties (endpoint) | Description |
 |----|----|
-| `name` | The name of the OData connection, as specified in SAP Cloud Platform Mobile Services |
+| `name` | The name of the OData connection, as specified in SAP Cloud Platform mobile service for development and operations |
 | `prepopulate_offline_db` | Indicated what data to include in database delivered to device when it if first created |
 | `prepopulate_offline_db_interval` | Database refresh interval for the shared data. The default value is 1440 minutes (one day) |
 
@@ -93,7 +93,7 @@ Defining request configuration:
 |----|----|
 | `name` | The name of the entity set query `Product` |
 | `is_shared_data` | Specifies if data is shared between users or not and prevents sending the same query to the originating OData service for each user if it is set to Y |
-| `download_interval` | Database refresh interval for the shared data. It is set to 15 minutes, meaning that SAP Cloud Platform Mobile Services will try to update the products data every 15 minutes |
+| `download_interval` | Database refresh interval for the shared data. It is set to 15 minutes, meaning that SAP Cloud Platform mobile service for development and operations will try to update the products data every 15 minutes |
 
 >Note: Since the purchase orders and sales orders are more subject to change than for instance products and customers, you have set the refresh interval for these to 15 minutes; the other entities will be refreshed each day by default.
 
@@ -102,7 +102,7 @@ Defining request configuration:
 
 [ACCORDION-BEGIN [Step 2: ](Configure application definition)]
 
-In SAP Cloud Platform Mobile Services, navigate to **Application > `com.sap.tutorial.demoapp`** and select **Configure**.
+In SAP Cloud Platform mobile service for development and operations, navigate to **Application > `com.sap.tutorial.demoapp`** and select **Configure**.
 
 ![Configuration](fiori-ios-hcpms-offline-odata-config-01.png)
 

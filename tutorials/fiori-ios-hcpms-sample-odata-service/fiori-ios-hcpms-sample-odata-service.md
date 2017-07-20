@@ -1,20 +1,20 @@
 ---
 title: Sample OData services
-description: Using the sample OData service included with the SAP Cloud Platform Mobile Services account.
+description: Using the sample OData service included with the SAP Cloud Platform mobile service for development and operations account.
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Create an application definition](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-application-setup.html)
+ - **Tutorials:** [Create an application definition](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-application-setup.html)
 
 ## Next Steps
- - [Create an app using the SDK Assistant](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)
+ - [Create an app using the SDK Assistant](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)
 
 ## Details
 ### You will learn  
-As part of the SAP Cloud Platform Mobile Services, a sample OData service is available to both developers as well as administrators. You will learn how to access this sample OData service, and generate sample data for use in your application.
+As part of the SAP Cloud Platform mobile service for development and operations, a sample OData service is available to both developers as well as administrators. You will learn how to access this sample OData service, and generate sample data for use in your application.
 
 ### Time to Complete
 **10 Min**.
@@ -34,7 +34,7 @@ The following roles are required to use this service:
 
 [ACCORDION-BEGIN [Step 1: ](Open Developer tab)]
 
-In SAP Cloud Platform Mobile Services cockpit, navigate to **Developer**.
+In SAP Cloud Platform mobile service for development and operations cockpit, navigate to **Developer**.
 
 ![Developer tab](fiori-ios-hcpms-sample-odata-service-01.png)
 
@@ -107,7 +107,7 @@ At panel **SSO Mechanism**, set the authentication method to **Basic Authenticat
 
 [ACCORDION-BEGIN [Step 8: ](Enter SAP Cloud Platform credentials)]
 
-Mark the checkbox next to **Basic Authentication**, and click the **Edit** button to the right. A dialog is shown, and enter your **SAP Cloud Platform Mobile Services login credentials**
+Mark the checkbox next to **Basic Authentication**, and click the **Edit** button to the right. A dialog is shown, and enter your **SAP Cloud Platform mobile service for development and operations login credentials**
 
 ![Authentication](fiori-ios-hcpms-sample-odata-service-04.png)
 
@@ -126,4 +126,4 @@ For now, this complements this tutorial step. In the following tutorials, you wi
 [ACCORDION-END]
 
 ## Next Steps
- - [Create an app using the SDK Assistant](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)
+ - [Create an app using the SDK Assistant](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)

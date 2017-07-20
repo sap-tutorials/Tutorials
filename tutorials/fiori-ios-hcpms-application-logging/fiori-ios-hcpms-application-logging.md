@@ -7,21 +7,21 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Push Notifications](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
+ - **Tutorials:** [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
 
 ## Next Steps
- - [Logging and tracing in SAP Cloud Platform Mobile Services](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-logging.html)
+ - [Logging and tracing in SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-logging.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will learn to use the logging functionality which is part of the SAP Cloud Platform SDK for iOS. You will also learn how to set logging settings in SAP Cloud Platform Mobile Services which will reflect in your application.
+In this tutorial, you will learn to use the logging functionality that is part of the SAP Cloud Platform SDK for iOS. You will also learn how to set logging settings in SAP Cloud Platform mobile service for development and operations which will be reflected in your application.
 
 ### Time to Complete
 **15 Min**.
 
 ---
 
-The SAP Cloud Platform SDK for iOS provides you with sophisticated functionality which allows you to implement logging and tracing in your application. In addition, you can configure specific logging settings in SAP Cloud Platform Mobile Services, which can be mirrored in your application using the `SAPcpmsSettings` class.
+The SAP Cloud Platform SDK for iOS provides you with sophisticated functionality which allows you to implement logging and tracing in your application. In addition, you can configure specific logging settings in SAP Cloud Platform mobile service for development and operations, which can be mirrored in your application using the `SAPcpmsSettings` class.
 
 The actual logging is provided by the `Logger` class, which is part of the `SAPCommon` SDK module.
 
@@ -85,9 +85,9 @@ self.someOperation {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Retrieve log settings from SAP Cloud Platform Mobile Services)]
+[ACCORDION-BEGIN [Step 3: ](Retrieve log settings from SAP Cloud Platform mobile service for development and operations)]
 
-Instead of hard-coding logging levels and settings, you can also retrieve these from SAP Cloud Platform Mobile Services. Once you have defined logging settings for your application in SAP Cloud Platform Mobile Services, you can retrieve these settings (among other settings you may have specified) via:
+Instead of hard-coding logging levels and settings, you can also retrieve these from SAP Cloud Platform mobile service for development and operations. Once you have defined logging settings for your application in SAP Cloud Platform mobile service for development and operations, you can retrieve these settings (among other settings you may have specified) via:
 
 ```swift
 var urlSession = SAPURLSession()
@@ -101,4 +101,4 @@ settings.load(for: .application)
 [ACCORDION-END]
 
 ## Next Steps
- - [Logging and tracing in SAP Cloud Platform Mobile Services](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-logging.html)
+ - [Logging and tracing in SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-logging.html)

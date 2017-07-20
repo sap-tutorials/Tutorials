@@ -1,6 +1,6 @@
 ---
 title: Push notifications
-description: Implement push notifications into your application with SAP Cloud Platform, mobile services.
+description: Implement push notifications into your application with SAP Cloud Platform mobile service for development and operations.
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -8,14 +8,14 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
  - **Proficiency:** Intermediate
  - **Development machine:** Access to a Mac computer
  - **Apple ID:** A paid Apple developer account is required
- - **Tutorials:** [Using the SAP Fiori for iOS Mentor app](https://www.sap.com/developer/tutorials/fiori-ios-scpms-mentor.html)
+ - **Tutorials:** [List Report Floorplan](https://www.sap.com/developer/tutorials/fiori-ios-scpms-floorplan.html)
 
 ## Next Steps
- - [Application logging and tracing](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-application-logging.html)
+ - [Application logging and tracing](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-application-logging.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will implement push notifications into your application, and use the SAP Cloud Platform Mobile Services push notification configuration settings.
+In this tutorial, you will implement push notifications into your application, and use the SAP Cloud Platform mobile service for development and operations push notification configuration settings.
 
 ### Time to Complete
 **30 Min**.
@@ -85,9 +85,7 @@ Now, scroll down to the **App Services** area, and tick **Push Notifications**:
 
 ![App ID creation](fiori-ios-hcpms-push-notifications-07.png)
 
-Click **Continue**. In the following screen, review your settings, and if everything looks like the image below, click **Register**.
-
-![App ID creation](fiori-ios-hcpms-push-notifications-08.png)
+Click **Continue**. In the next screen, review your settings, and click **Register**.
 
 You should now see a **Registration Complete** message. Click **Done**. Your App ID should now be listed:
 
@@ -131,12 +129,12 @@ If it asks for specifying a password, provide one and click **OK**.
 
 ![App ID creation](fiori-ios-hcpms-push-notifications-17.png)
 
-> While you have the option to leave the password empty, you must provide a password when configuring the certificate for use with SAP Cloud Platform Mobile Services.
+> While you have the option to leave the password empty, you must provide a password when configuring the certificate for use with SAP Cloud Platform mobile service for development and operations.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Import certificate into SAP Cloud Platform Mobile Services)]
+[ACCORDION-BEGIN [Step 3: ](Import certificate into SAP Cloud Platform mobile service for development and operations)]
 
 Open your **SAP Cloud Platform Cockpit** and navigate to **Services > Development and Operations > Configure Development & Operations > Roles**
 
@@ -144,7 +142,7 @@ Assign your user the **Notification User** role
 
 ![App ID creation](fiori-ios-hcpms-push-notifications-31.png)
 
-After you have assigned the role, navigate back to to **Development & Operations** and click **Go to Service** to open **SAP Cloud Platform Mobile Services**
+After you have assigned the role, navigate back to to **Development & Operations** and click **Go to Service** to open **SAP Cloud Platform mobile service for development and operations**
 
 Navigate to **Applications**, select your application and from the context menu select **Configure** and switch to the **Push** tab.
 
@@ -222,7 +220,7 @@ func application(_ application: UIApplication, willFinishLaunchingWithOptions la
 
 First, the device registers for remote notifications by calling the method `registerForRemoteNotification`. Then, you have specified the types of notifications your app will support, as well as added a reference to the notification settings class, which enables your application for the push notifications to be received. This will result in your application to display the **"App Name" Would Like to Send You Notifications** confirmation dialog.
 
-Let's look at the `registerForRemoteNotification` method. In this method, a reference to the SDK Foundation class `SAPcpmsRemoteNotificationClient` is made. With this API, you will upload the received device token to SAP Cloud Platform Mobile Services:
+Let's look at the `registerForRemoteNotification` method. In this method, a reference to the SDK Foundation class `SAPcpmsRemoteNotificationClient` is made. With this API, you will upload the received device token to SAP Cloud Platform mobile service for development and operations:
 
 ```swift
 func registerForRemoteNotification() -> Void {
@@ -265,7 +263,7 @@ If you now run your application from your device, you will notice it will first 
 
 ![App ID creation](fiori-ios-hcpms-push-notifications-29.PNG)
 
-Go back to your **SAP Cloud Platform Mobile Services Cockpit** and navigate to **Applications**. Click the **Action** icon next to your application, and select **Push** from the context menu.
+Go back to your **SAP Cloud Platform mobile service for development and operations Cockpit** and navigate to **Applications**. Click the **Action** icon next to your application, and select **Push** from the context menu.
 
 In the **Push Desk**, find your device using the filter options, and enter the following content in the **Message** area:
 
@@ -277,7 +275,7 @@ If you click **Send**, your device should now receive a new push notification:
 
 ![App ID creation](fiori-ios-hcpms-push-notifications-30.PNG)
 
-> If you happen to have an Apple Watch, and have it configured to display push notifications received on your iPhone, the push notification you have sent via SAP Cloud Platform Mobile Services will also be displayed on your Apple Watch:
+> If you happen to have an Apple Watch, and have it configured to display push notifications received on your iPhone, the push notification you have sent via SAP Cloud Platform mobile service for development and operations will also be displayed on your Apple Watch:
 
 > ![App ID creation](fiori-ios-hcpms-push-notifications-34.png)
 
@@ -285,4 +283,4 @@ If you click **Send**, your device should now receive a new push notification:
 [ACCORDION-END]
 
 ## Next Steps
-- [Application logging and tracing](https://go.sap.com/developer/tutorials/fiori-ios-hcpms-application-logging.html)
+- [Application logging and tracing](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-application-logging.html)

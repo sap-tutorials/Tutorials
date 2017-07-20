@@ -1,6 +1,6 @@
 ---
-title: Internet of Things (IoT) Adding a new device to the IoT Services
-description: Part 7 of 10, Add a new device to your IoT Services
+title: SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data
+description: Add a new device for collecting environmental sensors data in your IoT for Neo
 primary_tag: topic>internet-of-things
 tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
@@ -8,12 +8,12 @@ tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>int
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
+- **Tutorials:** [SAP Cloud Platform IoT for Neo: Enable and configure](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
 
 
 ## Next Steps
-- [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
-- [Internet of Things (IoT) Connecting your TI SensorTag to IoT Services](http://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](http://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
 
 ## Details
 ### You will learn  
@@ -25,16 +25,16 @@ With the MMS service now deployed, and your user assigned the appropriate role i
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Open Message Management Service Cockpit)] ￼
+[ACCORDION-BEGIN [Step 1: ](Open Message Management Service Cockpit)]
 
-From the SAP Cloud Platform cockpit, select **Java Applications** then select the `iotmms` application. Open the **Message Management Service Cockpit** by clicking on the **Application URL**.
+From the SAP Cloud Platform cockpit, select **Java Applications**, then select the `iotmms` application. Open the **Message Management Service Cockpit** by clicking on the **Application URL**.
 
 ![Application URL](p7_1.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open IoT Services Cockpit)] ￼
+[ACCORDION-BEGIN [Step 2: ](Open IoT Services Cockpit)]
 
 Click on the **View registered devices and device types** tile to open the **IoT Services Cockpit**. You will use this page frequently, so it is worth bookmarking it.
 
@@ -43,16 +43,13 @@ Click on the **View registered devices and device types** tile to open the **IoT
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add a new message type)] ￼
+[ACCORDION-BEGIN [Step 3: ](Add a new message type)]
 
-Click the **Message Types** tile, then the **+** symbol to add a new message type and define the structure of the data you will to collect. In the **Information** section, enter a name "`climateData`".
+Click the **Message Types** tile, then the **+** symbol at the bottom of the list to add a new message type and to define the structure of the data you will collect.
+
+In the **Information** section, enter a name "`climateData`".
 
 ![Device definition](p7_4.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Create new field)] ￼
 
 In the **Fields** section, click the **+ Add Field** button to add in two more fields, then enter the following for name and data types. Click the **Create** button (bottom right corner) when complete. When the message type is created, copy the **ID** string. You will need it later.
 
@@ -71,36 +68,35 @@ Copy and save the message type ID, which you will need later:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a new device)] ￼
+[ACCORDION-BEGIN [Step 4: ](Create a new device type)]
 
-Click the `<` ("back arrow") again to return the the IoT Services Cockpit. Click on **Device Types**, then the **+** symbol to create a new device. Give it a simple name that makes sense for what you are doing, like "`TesselClimate`". Now click the  **+ Add Message Type** to attach your previously created message type "`climateData`". Make sure the **Direction** is "From Device" and click **Create**.
+Click the `<` ("back arrow") again to return the the IoT Services Cockpit. Click on **Device Types**, then the **+** symbol to create a new device. Give it a simple name that makes sense for what you are doing, like "`TesselClimate`".
+
+Now click the  **+ Add Message Type** to attach your previously created message type "`climateData`". Make sure the **Direction** is "From Device" and click **Create**.
 
 ![New Device Type](p7_3.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add the device)] ￼
+[ACCORDION-BEGIN [Step 5: ](Create a new device)]
 
-Finally you can now click the `<` ("back arrow") icon and click **Devices**. Click `+` to add a new device, name it `DevelopmentTessel` and make sure its device type is `TesselClimate`.
+Finally you can now click the `<` ("back arrow") icon and click **Devices** tile.
 
-> This is extremely important, once you click **Create** a pop-up will appear that will display the **OAuth access token** for this new device. Copy that and save it somewhere, as you will need it soon.  If you lose it, click into the **Authorization** tab and generate a new token.
+Click `+` to add a new device, name it `DevelopmentTessel` and make sure its device type is `TesselClimate`. No other fields need to be populated at this step.
+
+> This is extremely important, once you click **Create** a pop-up will appear that will display the **OAuth access token** for this new device. Copy that and save it somewhere, as you will need it soon.  Should you lose it, click into the **Authorization** tab and generate a new token.
 
 ![Device](p7_6.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Copy token ID)] ￼
+[ACCORDION-BEGIN [Step 6: ](Copy device and token IDs)]
 
 When the OAuth Access Token is displayed, copy the token ID and save it. Click **Close**.
 
 ![Token](p7_7.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Save device ID)] ￼
 
 Now copy and save the **Device ID** string
 
@@ -109,9 +105,11 @@ Now copy and save the **Device ID** string
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Send and view messages)] ￼
+[ACCORDION-BEGIN [Step 7: ](Use HTTP API built-in client)]
 
-With the device type, message type and device configured, it is time to send some data. Go to the **IoT Services Cockpit** and click the **Send and view messages...** tile.
+With the device type, message type and device configured, it is time to send some data.
+
+First you will do it using built-in client. Go to the **IoT Service Cockpit** and click the **Send and view messages...** tile.
 
 ![View Messages](p7_9a.png)
 
@@ -122,27 +120,27 @@ Then click the **Messaging through HTTP** tile in **Data Services** group.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Change device ID)] ￼
+[ACCORDION-BEGIN [Step 8: ](Adjust device ID)]
 
-On the **HTTP API** page, you will see a **Sample Client** to **Send Messages** with an **HTTP endpoint** like this:
+On the **HTTP API** page, you will have a client to **Send Message** with an **Data Endpoint** like this:
 
 `https://iotmmsYOURUSERtrial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/data/d000-e000-v000-i000-c000-e001`
 
 Change `d000-e000-v000-i000-c000-e001` to your device's ID (it is a GUID) you copied in step 8 above. Note: the GUID is the device ID, not its authorization token.
 
-Example: https://iotmmsp1234567trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/data/85e0ce4e-09bf-47ea-a5a9-a0469f642c20
+Example: `https://iotmmsp1234567trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/data/85e0ce4e-09bf-47ea-a5a9-a0469f642c20`
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Edit message to post)] ￼
+[ACCORDION-BEGIN [Step 9: ](Adjust message to post)]
 
 You will next formulate your HTTP POST payload. Since you are sending OData, numbers (`float`, `int`, `double`, etc) are not placed in double quotes, while strings and the Key of the Key/Value pair are in quotes.
 
 Under **Message to post** replace the existing content with the following which matches the message type your used earlier.
 
 ```json
-{"mode":"sync", "messageType":"m0t0y0p0e1", "messages":[{"Humidity":25.7, "Temperature": 21.5, "timestamp":"2016-11-15T08:45:37.930Z"}]}
+{"mode":"sync", "messageType":"m0t0y0p0e1", "messages":[{"Humidity":25.7, "Temperature": 21.5, "timestamp":"2017-05-05T23:45:37.930Z"}]}
 ```
 
 > NOTE - the `messageType` value `"m0t0y0p0e1"` must be changed to match your `message type ID`.
@@ -152,69 +150,74 @@ Under **Message to post** replace the existing content with the following which 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Execute the POST)] ￼
+[ACCORDION-BEGIN [Step 10: ](Send the sample message)]
 
-Click the POST button. If everything goes OK, you should see a response code of `200` similar to this screen shot or response code `202` when you post for the very first time.
+Click the **Send** button. If everything goes OK, you should see a response code of `200` similar to this screen shot or response code `202` when you post for the very first time.
 
 ![Server Reply](p7_12.png)
 
-You receive response code `202` when your request was not immediately processed, but instead was placed in a processing queue. You should copy returned HTTP endpoint into **Receive acknowledgments** field to receive the status of your queued message.
+You receive response code `202` when your request was not immediately processed, but instead was placed in a processing queue. You should copy returned HTTP endpoint into **Receive acknowledgments** field and click **Send** to receive the status of your queued request.
 
 Response codes `4xx` or `5xx` indicate that post request has failed.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Display stored messages)] ￼
+[ACCORDION-BEGIN [Step 11: ](Display stored messages)]
 
-To verify that the posting worked, switch back **IoT Services Cockpit**, click **View messages received, use sample clients, etc.** tile, then click the **Display stored messages** tile. When the page updates you should see something like this:
+To verify that the posting worked, switch back **IoT Service Cockpit**, click **Send and view messages, or perform other actions** tile, then click the **Display stored messages** tile.
+
+Find table `T_IOT_<YourMessageType>` and click on it. When the page updates you should see something like this:
 
 ![Viewing stored messages](p7_13.png)
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 14: ](Post from an external REST client)] ￼
-
-Now you will post from an external REST client. In this step you will use [Postman Extension](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) for Google Chrome.
-
-Once installed in Chrome open the Postman extension in incognito mode to avoid authentication issues in the same browser session with SAP Cloud Platform. For that you might need to allow the Postman extension to run in Chrome's incognito mode.
-
-![Postman extension in incognito mode](p7_14v.png)
+Please note **OData API** link in the up right corner. Clicking it will give you the URL which you can use to query this data from your applications using OData protocol.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Set header)] ￼
+[ACCORDION-BEGIN [Step 12: ](Starting Postman application)]
 
-Copy the HTTP endpoint to it and select **POST** from the drop down menu.
+Now you will an external REST client to post from. This will require authentication mechanism not required when used built-in client.
+
+In this step you will use [Postman Application](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop) for Google Chrome.
+
+>There is no need to create a Postman account, if you are asked during the first run of the Postman application.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 13: ](Set method, URL and HTTP header)]
+
+In Postman select **POST** from the drop down menu. Copy the HTTP endpoint from your account's sample client to Postman's `Enter request URL` field.
 
 Open the **Headers** section and set:
 
 - the "`Authorization`" value to "`Bearer [TOKEN ID]`" using the token id you copied when you added your device to the system,
 - the "`Content-Type`" to "`application/json`".
 
-![Authorization values](p7_15v.png)
+![Header values](p7_15v.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Paste message content)] ￼
+[ACCORDION-BEGIN [Step 14: ](Set body)]
 
-Select then the **RAW** type and copy and paste in the same content you just had (with a few value changes to make it easier to spot this insert. Make sure you change the `messageType` to your ID.
+Select **Body**, then the **RAW** type. Copy and paste the same content you just had in a simple client. Make a few value changes to make easier spotting this insert. Make sure you change the `messageType` to your ID.
 
 ```json
-{"mode":"sync", "messageType":"m0t0y0p0e1", "messages":[{"Humidity":25.8, "Temperature": 21.6, "timestamp":"2016-11-15T08:46:37.930Z"}]}
+{"mode":"sync", "messageType":"m0t0y0p0e1", "messages":[{"Humidity":28.9, "Temperature": 19.9, "timestamp":"2017-05-05T23:55:37.930Z"}]}
 ```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Send message)] ￼
+[ACCORDION-BEGIN [Step 15: ](Send message)]
 
-Click **Send** and you should receive a message similar to when you used the SAP Cloud Platform simple client. This indicates that your POST was successful and if you return to the "Display Stored Messages" you will see your new entry.
+Click **Send** and you should receive a message similar to that from the SAP Cloud Platform simple client.
+![Send request in Postman](p7_16.png)
 
-If you receive `40x` authorization error in return, then check if you are running Postman client in Chrome's incognito mode.
+This indicates that your POST was successful and if you return to the "Display Stored Messages" in SAP Cloud Platform you should see this new entry sent from the Postman application.
 
 [DONE]
 [ACCORDION-END]
@@ -222,5 +225,5 @@ If you receive `40x` authorization error in return, then check if you are runnin
 
 
 ## Next Steps
-- [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
-- [Internet of Things (IoT) Connecting your TI SensorTag to IoT Services](http://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](http://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)

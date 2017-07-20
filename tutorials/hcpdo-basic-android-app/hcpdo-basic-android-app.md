@@ -1,8 +1,8 @@
 ---
 title: Create a basic native Android master-detail app
 description: Create a native Android project which will then be modified with the SAP Mobile SDK
-primary_tag: operating_system>android
-tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, operating_system>android]
+primary_tag: operating-system>android
+tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, operating-system>android]
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate

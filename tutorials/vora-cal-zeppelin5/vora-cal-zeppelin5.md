@@ -1,8 +1,8 @@
 ---
 title: Working with Time Series using Apache Zeppelin
 description: SAP Vora in-memory engine enables efficient analyses of time series data in distributed environments
-primary_tag: products>sap-hana-vora
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
+primary_tag: products>sap-vora
+tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  

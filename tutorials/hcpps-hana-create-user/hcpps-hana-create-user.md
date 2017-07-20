@@ -1,8 +1,8 @@
 ---
 title: Setup a HANA user account
 description: Configure a user account with the relevant roles and privileges to use the SAP Cloud for predictive services
-primary_tag: products>sap-hana
-tags: [ tutorial>beginner, products>sap-cloud-for-predictive-service, products>sap-hana, products>sap-cloud-platform ]
+primary_tag: products>sap-cloud-platform
+tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
@@ -31,17 +31,22 @@ From the ***SAP HANA Cockpit*** and connected with the ***HANA System Account***
 
 [ACCORDION-BEGIN [Step 2: ](Extend the SYSTEM user)]
 
-In order to allow the **SYSTEM** user to run any SQL statement, you will need to grant him the following role:
-
-  - `sap.hana.ide.roles::Developer`
-
-Under **Security**, expand **Users**, then double click on **SYSTEM**.
+In order to allow the **SYSTEM** user to run any SQL statement, you will need to grant him the Developer role.
 
 ![SAP HANA Web-based Development Workbench](02.png)
 
-Select the **Granted Roles** tab, then click on the ![plus](0-plus.png) icon, then add the roles listed above.
+Under **Security**, expand **Users**, then double click on **SYSTEM**.
+
+Select the **Granted Roles** tab, then click on the ![plus](0-plus.png) icon, then add the following role:
+
+  - `sap.hana.ide.roles::Developer`
 
 Click on the ![save](0-save.png) button in the top menu bar
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Open the SAP HANA Web-based Development Workbench Catalog)]
 
 Using the ![navigation](0-navigation.png) menu bar icon, select **Catalog**.
 
@@ -52,13 +57,13 @@ The following screen should appear:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create your user)]
+[ACCORDION-BEGIN [Step 4: ](Create your user)]
 
 Click on the ![SQL Console](0-opensqlconsole.png) button in the top menu bar, and paste the following SQL code:
 
 ```sql
 DROP USER HCPPSTRIAL CASCADE;
-CREATE USER HCPPSTRIAL PASSWORD Welcome16 NO FORCE_FIRST_PASSWORD_CHANGE;
+CREATE USER HCPPSTRIAL PASSWORD Welcome17Welcome17 NO FORCE_FIRST_PASSWORD_CHANGE;
 ALTER USER  HCPPSTRIAL DISABLE PASSWORD LIFETIME;
 
 call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::Developer','HCPPSTRIAL');
@@ -88,7 +93,7 @@ Click on the ![Logout](0-run.png) **Run** button or press **F8**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Verify that your user is properly created)]
+[ACCORDION-BEGIN [Step 5: ](Verify that your user is properly created)]
 
 Click on the ![Logout](0-logout.png) **Logout** icon located in the top right corner of the screen.
 
@@ -96,7 +101,7 @@ Click on the ![Logout](0-logout.png) **Logout** icon located in the top right co
 
 Now, you need to connect with your **`HCPPSTRIAL`** ***HANA User Account***.
 
-Enter **`HCPPSTRIAL`** as ***Username*** user name and **`Welcome16`** as ***Password***, click on **Logon**.
+Enter **`HCPPSTRIAL`** as ***Username*** user name and **`Welcome17Welcome17`** as ***Password***, click on **Logon**.
 
 If you can login, then your ***HANA User Account*** is properly configured.
 

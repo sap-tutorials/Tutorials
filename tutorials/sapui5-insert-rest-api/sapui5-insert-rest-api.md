@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platfo
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** Register your App with an External API
+ - **Tutorials:** [Register your App with an External API](https://www.sap.com/developer/tutorials/sapui5-register-app-api.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Add paging to your API call](https://www.sap.com/developer/tutorials/sapui5-paging-api.html)
 
 ## Details
 ### You will learn  
@@ -270,4 +270,4 @@ $.ajax({
 [ACCORDION-END]
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - [Add paging to your API call](https://www.sap.com/developer/tutorials/sapui5-paging-api.html)
