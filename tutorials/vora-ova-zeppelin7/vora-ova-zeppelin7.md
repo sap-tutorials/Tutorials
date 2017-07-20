@@ -32,13 +32,12 @@ The Document Store uses a special binary JSON format and a highly optimized, par
 
 [ACCORDION-BEGIN [Step 2: ](Running notebook 7_Document Store)]
 Continue by select ting the `7_Document Store` notebook.
-![Notebook](zep7_01.jpg)
 
 You will be looking at employee data, the raw data is stored in a single JSON document. Start by creating the required partition function and partition scheme.
-![Partition function and scheme](zep7_02.jpg)
+![Partition function and scheme](zep7_02_14.jpg)
 
 Run some basic queries against Document Store Engine.
-![Basic queries](zep7_03.jpg)
+![Basic queries](zep7_03_14.jpg)
 
 Run and complete the remainder of the paragraphs in this notebook.
 

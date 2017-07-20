@@ -43,7 +43,14 @@ SAP Vora comes with some examples that you can run and examine.
 
 You can run the examples as `vora` user by executing `/etc/vora/run_examples.sh hdfs`.
 
-Ignore any "Address already in use" error messages.
+Ignore any ___Address already in use___ error messages. Or to reduce the amount of information output modify the logger configuration in file `/opt/hadoop-2.7.3/etc/hadoop/log4j.properties` by changing line
+```
+hadoop.root.logger=INFO,console
+```
+to
+```
+hadoop.root.logger=ERROR,console
+```
 
 It is convenient to write the output of execution into a file to examine the results later:
 ```sh
@@ -274,6 +281,25 @@ This is the expected output:
 
 [DONE]
 [ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 9: ](Run the examples from Zeppelin)]
+
+By now you should know, that to use Apache Zeppelin pre-installed on SAP Vora 1.4, developer edition, open `http://IP_ADDRESS:9099` in some modern web browser.
+
+The **SAP Vora Tutorial** notebook will give you a quick introduction into Vora processing in Zeppelin using different interpreters, including calling shell scripts.
+
+- Paragraph ___Execute the Vora Examples___ will run a shell script that executes different examples from the OS level. Ignore all "`java.net.BindException: Address already in use`" warning messages as the executor is looking for an available port.
+- Paragraph ___Show the tables___ will connect via JDBC to Vora and show all tables currently known to Vora.
+- Paragraph ___Query tables in Vora___ will also use JDBC to do simple SQL querying on Vora tables
+  - Bear in mind that you must first register all tables with the "`%jdbc` register all tables..." paragraph so that the table SCUSTOM is known to the Spark context.
+- Paragraph ___Usage of the `SapSQLContext` in Spark___ shows how you can write Scala code and access Vora programmatically
+
+
+[DONE]
+[ACCORDION-END]
+
+
 
 ## Next Steps
 - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

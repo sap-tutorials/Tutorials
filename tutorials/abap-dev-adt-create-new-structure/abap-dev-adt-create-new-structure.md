@@ -8,11 +8,10 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
- [Create and run an ABAP application](https://www.sap.com/developer/tutorials/abap-create-basic-app.html)
+[Display database content and run SQL queries](http://www.sap.com/developer/tutorials/abap-display-data-queries.html)
 
 
 ## Next Steps
-
 [Create an ABAP class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)
 
 ## Details
