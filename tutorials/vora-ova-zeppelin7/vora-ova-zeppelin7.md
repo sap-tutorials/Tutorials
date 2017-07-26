@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - [Working with ORC and Parquet Files using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin6.html)
+ - [Working with Time Series using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin5.html)
 
 
 ## Next Steps
-- [Working with the SAP Vora Tools ](http://www.sap.com/developer/tutorials/vora-ova-toolsintro.html)
+- [Working with Graph Engine using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin4.html)
 
 ## Details
 ### You will learn  
@@ -45,4 +45,4 @@ Run and complete the remainder of the paragraphs in this notebook.
 [ACCORDION-END]
 
 ## Next Steps
-- [Working with the SAP Vora Tools ](http://www.sap.com/developer/tutorials/vora-ova-toolsintro.html)
+- [Working with Graph Engine using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin4.html)
