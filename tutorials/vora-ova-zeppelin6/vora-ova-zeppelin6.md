@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - [Working with Time Series using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin5.html)
+ - [Working with Tables and Views using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin0.html)
 
 
 ## Next Steps
- - [Working with Document Store Engine in SAP Vora](http://www.sap.com/developer/tutorials/vora-ova-zeppelin7.html)
+ - [Working with Disk Engine using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin3.html)
 
 ## Details
 ### You will learn  
@@ -21,7 +21,7 @@ You will learn how to load data from ORC and Parquet files into SAP Vora engine.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](ORD and Parquet file types)]
+[ACCORDION-BEGIN [Step 1: ](ORC and Parquet file types)]
 Next up you will look into working with popular file types in data management namely ORC and Parquet files, the smallest, fastest columnar storage for Hadoop workloads. SAP Vora 1.4 supports both file types.
 
 **Apache ORC** is a self-describing type-aware columnar file format designed for Hadoop workloads. It is optimized for large streaming reads, but with integrated support for finding required rows quickly.
@@ -77,4 +77,4 @@ Final step of this tutorial is to create a table from your ORC based file and se
 
 
 ## Next Steps
- - [Working with Document Store Engine in SAP Vora](http://www.sap.com/developer/tutorials/vora-ova-zeppelin7.html)
+ - [Working with Disk Engine using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin3.html)
