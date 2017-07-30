@@ -30,7 +30,7 @@ The `grunt-sapui5-bestpractice-build` Grunt plugin is published on the SAP npm r
 
 `@sap:registry=https://npm.sap.com/`
 
-For more information, see https://docs.npmjs.com/files/npmrc. 
+For more information, see https://docs.npmjs.com/files/npmrc.
 
 
 
@@ -58,7 +58,7 @@ In the file enter the following code:
   "description": "Grunt build",
   "private": true,
   "devDependencies": {
-      "@sap/grunt-sapui5-bestpractice-build": "1.3.17"
+      "@sap/grunt-sapui5-bestpractice-build": "1.3.19"
    }
 }
 ```
