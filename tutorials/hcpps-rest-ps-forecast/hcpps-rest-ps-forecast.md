@@ -66,8 +66,11 @@ The parameters required to run the service are:
 Optionally, you can define the following parameters to enhance your analysis:
 
  - the reference date (date after which the entries are call predictions), if none is specified then the last date will be used
+ - forecast method: the method to use to generate the forecasts (default, smoothing or linear regression)
+ - max lag: the maximum lag to consider to compute forecasts
  - number of past values in the output: the number of past data to return with the forecasts (default value is 0)
  - skipped variables: a list of variables to skip from the analysis
+ - smoothing cycle length: the length to consider for a cycle. This parameter is enforced only when using smoothing techniques
  - variable description: a more details description of the dataset
 
 [DONE]
@@ -82,7 +85,7 @@ The file presents daily measures of cash flows from January 2, 1998 to September
 Variable | Description | Example of values
 --------------|--------------|--------------
 Date | Day, month and year of the readings | A date in the format `yyyy-mm-dd` such as 1998-01-02
-Cash | Cash flow | A numerical value with n decimals
+`Cash` | Cash flow | A numerical value with n decimals
 `BeforeLastMonday` <br/> `LastMonday` <br/> `BeforeLastTuesday` <br/> `LastTuesday` <br/> `BeforeLastWednesday` <br/> `LastWednesday` <br/> `BeforeLastThursday` <br/> `LastThursday` <br/> `BeforeLastFriday` <br/> `LastFriday` | Boolean variables that indicate if the information is true or false | 1 if the information is true.
 `Last5WDays` <br/> `Last4WDays` | Boolean variables that indicate if the date is in the 5 or 4 last working days of the month | 1 if the information is true.
 `LastWMonth` <br/> `BeforeLastWMonth` | Boolean variables that indicate if the information is true or false | 1 if the information is true.
@@ -99,7 +102,13 @@ First we need to register the dataset we will be using during this tutorial.
 
 Additionally, we will adjust the variables description which will help improve the quality of our model.
 
-As described in the **Step 1: Register a dataset** from the previous tutorial, register the Cash Flow dataset using the following elements:
+As described in [**Step 1** of **Test the "Dataset" services** tutorial](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Cash Flow dataset using the following elements:
+
+Open a new tab in ***Postman***.
+
+> If you don't have ***Postman*** installed yet, you can refer to the following how-to guide: [Install Postman extension for Google Chrome as a REST client](https://www.sap.com/developer/how-tos/2017/07/api-tools-postman-install.html)
+
+Fill in the following information:
 
 Field Name     | Value
 -------------- | --------------
@@ -108,7 +117,10 @@ URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/sync`
 
 ```json
 {
-  "hanaURL":"DEMO/CashFlow"
+  "location": {
+    "schema" : "DEMO",
+    "table" : "CashFlow"
+  }
 }
 ```
 
@@ -375,8 +387,10 @@ URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/forecast/1`
 [ACCORDION-END]
 
 ### Optional
-For more details on the SAP Cloud for predictive services, you can check the following URL:
+For more details on the SAP Cloud for predictive services, you can check the following URL that can also allow you to run the service:
   - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
+Or the public documentation
+  - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
 
 ## Next Steps
   - [Test the "Key Influencer" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)

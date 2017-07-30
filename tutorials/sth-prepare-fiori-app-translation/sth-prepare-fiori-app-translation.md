@@ -65,44 +65,35 @@ Accept the standard license conditions by choosing **I agree** and then **Finish
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Define project settings)]
+[ACCORDION-BEGIN [Step 6: ](Open project file)]
+To be able to view the app in multiple languages and enable SAP Translation Hub to locate the resources file, you need to enter some data in the `.project.json` file.
 
-To be able to view the app in multiple languages, you need to adjust the language settings. To do that, right-click the project name and choose **Project Settings**.
+![Open project.json file](sth-prep-project-json.png)
+[DONE]
+[ACCORDION-END]
 
-![Define project settings](sth-prep-project-settings.png)
+[ACCORDION-BEGIN [Step 7: ](Make project settings)]
+
+In this step, you're going to specify the domain for the texts (sales), the languages in which you want the app to be available (Danish, Dutch, English, Finnish, French, and German), and the name of the resources file (`i18n`).
+In the `.project.json` file, enter a comma after the last square bracket (`]`) and paste the following code after the comma you entered:
+
+```
+"translation": {
+    "translationDomain": "02",
+    "supportedLanguages": "da,nl,en,fi,fr,de",
+    "defaultLanguage": "en",
+    "defaultI18NPropertyFile": "",
+    "resourceModelName": "i18n"
+  }
+```
+The result should look like this:
+
+![Define project settings manually](sth-prep-manual-project-settings.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Define language settings)]
-
-On the **Languages** tab, make the following settings:
-
-Field Name | Value
-:-------------  | :-------------
-Application Domain | **Sales**
-Supported Languages | Add the languages of your choice; this tutorial uses the following: **Danish**, **Dutch**, **English**, **Finnish**, **French**, and **German**
-Default Language | **English**
-
-Once you've finished, choose **Save** and then **Close**.
-
-![Define language settings](sth-prep-lang-settings.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Finalize project settings)]
-
-To complete the configuration needed for SAP Translation Hub, add the location of the resources file to the project settings. Open the `.project.json` file and enter `i18n` as the `"resourceModelName"`:
-
-![Add i18n to project.json file](sth-prep-add-i18n-json.png)
-
-Save the `.project.json` file.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Create run configuration)]
+[ACCORDION-BEGIN [Step 8: ](Create run configuration)]
 
 To test the application with mock data from a local system, you're going to need a special run configuration. To do this, right-click the application and choose **Run > Run Configurations**.
 
@@ -111,7 +102,7 @@ To test the application with mock data from a local system, you're going to need
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Choose Web application)]
+[ACCORDION-BEGIN [Step 9: ](Choose Web application)]
 
 Choose **+ > Web Application**.
 
@@ -120,7 +111,7 @@ Choose **+ > Web Application**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Assign run application file)]
+[ACCORDION-BEGIN [Step 10: ](Assign run application file)]
 
 Now you need to do the following:
 
@@ -130,23 +121,21 @@ Now you need to do the following:
 
 Once you've done that, choose **OK**.
 
-
 ![Run application](sth-prep-run-application.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Open app in Fiori launchpad)]
+[ACCORDION-BEGIN [Step 11: ](Open app in Fiori launchpad)]
 
 Now you want to see what the application looks like by accessing it from a Fiori launchpad. To do this, choose the green button shown below.
-
 
 ![Open with Fiori Launchpad](sth-prep-run-Fiori-LP.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Open the app)]
+[ACCORDION-BEGIN [Step 12: ](Open the app)]
 
 Choose the **Shop** tile.
 

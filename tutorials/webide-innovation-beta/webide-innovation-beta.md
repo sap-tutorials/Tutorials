@@ -45,15 +45,15 @@ Enter your global account by clicking it. Here my global account is **SAP Web ID
 
 
 
-[ACCORDION-BEGIN [Step 3: ](Enter subaccount)]
-Enter your subaccount by clicking it.
+[ACCORDION-BEGIN [Step 3: ](Enter sub-account)]
+Enter your sub-account by clicking it.
 ![Enter beta account](beta5.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Go to services)]
-Once we've clicked into the subaccount, we can see across the top the breadcrumb that shows we are in the **Europe** landscape, the **SAP Web IDE Demo** global account, and the **My Subaccount** sub-account. Your landscape and accounts, of course, may differ.
+Once we've clicked into the sub-account, we can see across the top the breadcrumb that shows we are in the **Europe** landscape, the **SAP Web IDE Demo** global account, and the **My Sub-account** sub-account. Your landscape and accounts, of course, may differ.
 
 Now let's open the SAP Web IDE Multi-Cloud Version.
 

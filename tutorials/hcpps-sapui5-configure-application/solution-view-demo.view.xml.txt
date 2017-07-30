@@ -7,20 +7,8 @@
 				<content>
 					<List itemPress="onMasterListItemPress">
 						<items>
-							<StandardListItem title="HANA XS OData" type="Navigation" custom:to="sub_master_odata"/>
 							<StandardListItem title="Dataset Services" type="Navigation" custom:to="sub_master_dataset"/>
 							<StandardListItem title="Forecast Services" type="Navigation" custom:to="sub_master_forecast"/>
-						</items>
-					</List>
-				</content>
-			</Page>
-			<Page id="sub_master_odata" title="HANA XS OData" showNavButton="true" navButtonPress="onPressMasterBack">
-				<content>
-					<List itemPress="onDetailListItemPress">
-						<items>
-							<StandardListItem title="Cash Flow" type="Active" custom:to="detail_odata_cashflow"/>
-							<StandardListItem title="Census" type="Active" custom:to="detail_odata_census"/>
-							<StandardListItem title="E-Commerce Transaction" type="Active" custom:to="detail_odata_transaction"/>
 						</items>
 					</List>
 				</content>

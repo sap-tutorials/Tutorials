@@ -33,6 +33,8 @@ ESLint
 ESRI
 Fiori
 Floorplan
+Flowgraph
+flowgraph
 geocode
 GitHub
 Hadoop
@@ -63,11 +65,14 @@ keystore
 Lifecycle
 Lumira
 macOS
+MTA
+MTAs
 multistore
 Multistore
 multitenant
 Multitenant
 MySQL
+Neo
 NetWeaver
 Node.js
 northwind
@@ -75,7 +80,9 @@ Northwind
 npm
 OAuth
 OData
+Ok
 OLAP
+Onboarding
 openSSL
 openSUSE
 OpenUI5
@@ -85,6 +92,7 @@ plugin
 plugins
 POJOs
 Postgres
+preinstalled
 pre-pend
 pre-pended
 proxied
@@ -112,12 +120,14 @@ Shapefiles
 SQLScript
 SRS
 ssh
+Subheader
 subselect
 supertype
 supertypes
 Sybase
 TechEd
 Tessel
+Tessel1
 timestamp
 tiering
 Tiering
@@ -135,6 +145,7 @@ watchOS
 Wi-Fi
 WinSCP
 Witalij
+Worklist
 XML
 YaaS
 _1

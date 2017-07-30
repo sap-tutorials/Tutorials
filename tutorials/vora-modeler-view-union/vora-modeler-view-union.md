@@ -1,8 +1,8 @@
 ---
 title: SAP Vora Modeler: Unions in SQL View
 description: SAP Vora Modeler: Unions in SQL View
-primary_tag: products>sap-hana-vora
-tags: [  tutorial>beginner, topic>big-data, products>sap-hana-vora ]
+primary_tag: products>sap-vora
+tags: [  tutorial>beginner, topic>big-data, products>sap-vora ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

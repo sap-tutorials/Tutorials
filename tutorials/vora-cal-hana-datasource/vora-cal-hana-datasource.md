@@ -1,8 +1,8 @@
 ---
 title: Working with SAP HANA data source
 description: The SAP HANA data source provides a pluggable mechanism for accessing data stored in SAP HANA from a Spark-based environment through Spark SQL
-primary_tag: products>sap-hana-vora
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana-vora ]
+primary_tag: products>sap-vora
+tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  

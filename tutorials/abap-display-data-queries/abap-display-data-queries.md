@@ -6,11 +6,10 @@ primary_tag: topic>abap-development
 ---
 
 ## Prerequisites  
- [Create an ABAP project in Eclipse](http://www.sap.com/developer/tutorials/abap-create-project.html)
-
+[Create and run an ABAP application](http://www.sap.com/developer/tutorials/abap-create-basic-app.html)
 
 ## Next Steps
-[Create and run an ABAP application](http://www.sap.com/developer/tutorials/abap-create-basic-app.html)
+[Create a new Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)
 
 
 ## Details
@@ -76,7 +75,7 @@ Press **Add Filter** and choose `CURRENCY_CODE`.
 
 [ACCORDION-BEGIN [Step 6: ](Enter filter criteria)]
 
-Enter `EUR` in in the text field to filter the items that are in Euro and press the **Enter** key.
+Enter `USD` in the text field to filter the items that are in US dollars and press the **Enter** key.
 
 ![data filter](abap-02-6a.png)
 
@@ -109,6 +108,7 @@ The SQL Console shows the `SELECT` statement which was used to retrieve the data
 [ACCORDION-BEGIN [Step 9: ](Add a JOIN condition)]
 
 Adjust the SELECT statement in SQL Console in order to get the payment status from the order header by doing the following: Add a `JOIN` condition for the table `snwd_so_inv_head`
+NOTE: You may get an error. You will solve this in the next step.
 
 The `FROM` portion of the query should look like this:
 
@@ -127,7 +127,7 @@ on SNWD_SO_INV_ITEM~parent_key = SNWD_SO_INV_HEAD~node_key
 Modify the WHERE clause to match the following:
 
 ```sql
-SNWD_SO_INV_ITEM~CURRENCY_CODE = 'EUR'
+SNWD_SO_INV_ITEM~CURRENCY_CODE = 'USD'
 ```
 ![where clause](abap-02-10.png)
 
@@ -225,4 +225,4 @@ Check that the output on the right hand side contains the company name. You will
 [ACCORDION-END]
 
 ## Next Steps
-[Create and run an ABAP application](http://www.sap.com/developer/tutorials/abap-create-basic-app.html)
+[Create a new Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)
