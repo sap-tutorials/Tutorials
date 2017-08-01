@@ -92,7 +92,7 @@ For older SAP Web IDE releases, some additional steps have to be done to ensure 
 
 SAP HANA XS advanced runtime consists of an on-premise version of the open-source Cloud Foundry platform, which has been extended by SAP to support integration with the SAP HANA database and OData, and which is compatible with the XS classic model. For information about installing the SAP HANA XS advanced system, see the official documentation:
 
-> [SAP HANA Platform](http://help.sap.com/hana_platform)  
+> [SAP HANA Platform](https://help.sap.com/viewer/p/SAP_HANA_PLATFORM)  
 
 Some additional configuration, described below, is required when installing SAP Web IDE - see chapter 4.1.
 
@@ -104,7 +104,7 @@ For our landscape we will use one SAP HANA XS advanced instance with several spa
 
 Our example uses Gerrit as the repository server hosting the project sources. You may decide to use a Gerrit instance hosted by yourself as described in [Source Code Management](http://www.sap.com/developer/tutorials/ci-best-practices-scm.html), or you may use the Gerrit instance of the SAP HANA XS advanced server:
 
-> [Set up Gerrit for XS Advanced Application Development](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.00/en-US%20Less/2d0c64a1a50045ab867605cf4b89def8.html)  
+> [Set up Gerrit for XS Advanced Application Development](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.00/en-US/2d0c64a1a50045ab867605cf4b89def8.html)  
 
 The Gerrit installation for SAP HANA XS advanced is available for Linux `x86_64` and in combination with an SAP HANA XS advanced license only.
 
