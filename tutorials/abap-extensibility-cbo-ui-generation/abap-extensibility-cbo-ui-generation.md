@@ -7,13 +7,11 @@ tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
-<!-- - **Tutorials:** [Creating a Custom Business Object ](<!--https://www-qa.sap.com/developer/tutorials/abap-extensibility-cbo-create.html)-->
+ - **Tutorials:** [Creating a Custom Business Object ](https://www-qa.sap.com/developer/tutorials/abap-extensibility-cbo-create.html)
  - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
 
- <!--
- ## Next Steps
-  - [Adapting the UI of a Custom Business Object](<!--https://www-qa.sap.com/developer/tutorials/abap-extensibility-cbo-ui-adaptation.html)
-  -->
+## Next Steps
+ - [Adapting the UI of a Custom Business Object](<!--https://www-qa.sap.com/developer/tutorials/abap-extensibility-cbo-ui-adaptation.html)
 
 ## Details
 
@@ -47,18 +45,18 @@ In the first parts a Manager wants to define business objects "Bonus Plan" for e
 [ACCORDION-BEGIN [Step 2: ](Generate UI)]
 `1.` **Check** the two boxes for UI Generation and Service Generation.
 ![Check UI and Service Generation](CBO_checkUiAndServiceGeneration.png)
-2. **Publish** the business object to trigger the generation of UIs (Master and Detail) and OData Service.
+2. **Publish** the business object to trigger the generation of the user interfaces (Master and Detail) and OData Service.
 
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 3: ](Expose UI as Application)]
-Now you make the UIs available as SAP Fiori Launchpad application by assigning it to a Business Catalog which corresponds to a group in Launchpad.
+Now you make the user interfaces available as SAP Fiori Launchpad application by assigning it to a Business Catalog which corresponds to a group in Launchpad.
 `1.` From the Business Object's overview go to Custom Catalog Extension application by clicking the **Maintain Catalogs** action.
 ![Maintain Custom Catalog Extension](CBO_maintainCCE.png)
 A new window will open.
 2. Start adding a catalog with the **Add** action.
 ![Add new Custom Catalog Extension](CCE_add.png)
-3. In the opening value help narrow down the result list by searching for "Extensibility", select the Catalog with role ID "SAP_CORE_BC_EXT" and press **OK**.
+3. In the opening value help narrow down the result list by searching for "Extensibility", select the Catalog with role ID `SAP_CORE_BC_EXT` and press **OK**.
 ![Value Help for adding Custom Catalog Extension](CCE_addValueHelp.png)
 4. **Select** the just added Catalog and **Publish** it.
 ![Publishing Custom Catalog Extension](CCE_publish.png)
@@ -92,13 +90,12 @@ Now there is the Bonus Plan application's tile in the **Extensibility** group.
 | High Bonus Assignment Factor | 3 |
 | Employee ID | `<any>` |
 
-Employee ID <any> shall be the one of a sales person that created sales orders with a Net Amount of more than 3000.00 EUR in 2017 and that are completed.
+Employee ID `<any>` shall be the one of a sales person that created sales orders with a Net Amount of more than 3000.00 EUR in 2017 and that are completed.
+
 4. **Save** the Bonus Plan. The UI will automatically return from Bonus Plan Detail to Master, where you can see one entry in the list of bonus plans now.
 
 [DONE]
 [ACCORDION-END]
 ---
-<!--
 ## Next Steps
  - [Adapting the UI of a Custom Business Object](<!--https://www-qa.sap.com/developer/tutorials/abap-extensibility-cbo-ui-adaptation.html)
- -->

@@ -7,13 +7,11 @@ tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
-<!-- - **Tutorials:** [Creating a UI for a Custom Business Object](<!--https://www-qa.sap.com/developer/tutorials/abap-extensibility-cbo-ui-generation.html)-->
+ - **Tutorials:** [Creating a UI for a Custom Business Object](https://www.sap.com/developer/tutorials/abap-extensibility-cbo-ui-generation.html)
  - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
 
- <!--
- ## Next Steps
-  - [Adapting the UI of a Custom Business Object](<!--https://www-qa.sap.com/developer/tutorials/abap-extensibility-cbo-ui-adaptation.html)
-  -->
+## Next Steps
+ - [Adapting the UI of a Custom Business Object](https://www-qa.sap.com/developer/tutorials/abap-extensibility-cbo-ui-adaptation.html)
 
 ## Details
 
@@ -77,12 +75,13 @@ An editable copy of the published version appears left to it. With the **Draft V
 Implement After Modification event with following fix value functionality:
 
 - Set the key field `ID` if still initial.
->**Hint:** Changing Parameter **bonusplan** enables you to read current node data and change it.
-**Hint:** You can read existing Bonus Plan data via the CDS View that is named as the Business Object's Identifier (here: YY1_BONUSPLAN).
+>**Hint:** Changing Parameter `bonusplan` enables you to read current node data and change it.
+**Hint:** You can read existing Bonus Plan data via the CDS View that is named as the Business Object's Identifier (here: `YY1_BONUSPLAN`).
 **Hint:** With the key combination **CTRL + Space** you can access the very helpful code completion.
+
 ![Code Completion](CBO_logicCodeCompletion.png)
 
-```ABAP
+```abap
 * set ID
 IF bonusplan-id IS INITIAL.
    SELECT MAX( id ) FROM yy1_bonusplan INTO @DATA(current_max_id).
@@ -91,15 +90,15 @@ ENDIF.
 ```
 - Set the Unit of Measure for the Bonus Percentages to `P1` which is the code for % (percent)
 
-```ABAP
+```abap
 * set percentage unit
 bonusplan-lowbonuspercentage_u = bonusplan-highbonuspercentage_u = 'P1'.
 ```
 
 - Determine and set the Employee Name from the Employee ID
->**Hint:** Extensibility offers Helper class CL_ABAP_CONTEXT_INFO with method GET_USER_FORMATTED_NAME that needs a user ID to return its formatted name
+>**Hint:** Extensibility offers Helper class `CL_ABAP_CONTEXT_INFO` with method `GET_USER_FORMATTED_NAME` that needs a user ID to return its formatted name
 
-```ABAP
+```abap
 * set Employee Name
 IF bonusplan-employeeid IS NOT INITIAL.
    bonusplan-employeename = cl_abap_context_info=>get_user_formatted_name( bonusplan-employeeid ).
@@ -108,6 +107,7 @@ ENDIF.
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 5: ](Implement After Modification: consistency check)]
 In dependence on following checks, set the `isconsistent` property.
 
@@ -140,8 +140,10 @@ ENDIF.
 [ACCORDION-BEGIN [Step 6: ](Test the logic during development)]
 
 On top of the coding you can maintain runtime data for the current node structure which represents the data before running the test functionality. This data can also be saved as variant for later usages.
-`1.` Click the value help to add test data
+
+1. Click the value help to add test data
 ![Add Test Data](CBO_logicDevAddTestData.png)
+
 2. Enter following data
 
 | Field	Name | Field Value |
@@ -154,24 +156,28 @@ On top of the coding you can maintain runtime data for the current node structur
 | `highbonusassignmentfactor` | `3` |
 | `lowbonuspercentage` | `10` |
 | `highbonuspercentage` | `20` |
-| `employeeid` | \<any\> |
-employeeid \<any\> shall be the one of a sales person that created sales orders with a Net Amount of more than 3000.00 EUR in 2016 and that are completed.
+| `employeeid` | `<any>` |
+
+`employeeid` `<any>` shall be the one of a sales person that created sales orders with a Net Amount of more than 3000.00 EUR in 2016 and that are completed.
 
 This will look as follows.
 ![Maintain Test Data](CBO_logicDevMaintainTestData.png)
+
 3. Execute the **Test** action and you can see the node data after your logic was executed.
 ![Execute Test](CBO_logicTest.png)
 You can see that your logic works as `id`, `*percentage_u` fields and `employename` are filled and `isconsistent` is 'X'.
 
 [DONE]
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 7: ](Implement Before Save)]
-`1.` **Implement** Before Save event with following functionality
+
+1. **Implement** Before Save event with following functionality
 
 - If the bonus plan is consistent, it can be continued to save, if not save shall be rejected. In case of save no further processing is needed and logic can be left.
 >**Hint:** Exporting parameter valid must be set to true for save and to false for save rejection
 
-```ABAP
+```abap
 * decide about save rejection
 IF bonusplan-isconsistent EQ abap_true.
     valid = abap_true.
@@ -190,7 +196,7 @@ These are the possible errors in detail:
       - LowBonusAssignmentFactor must be < HighBonusAssignmentFactor
       - Empoyee ID must be set
 
-```ABAP
+```abap
 * consistency error message START
 IF bonusplan-validitystartdate IS INITIAL OR bonusplan-validityenddate IS INITIAL.
     message = 'Validity Period must not be empty.'.
@@ -248,18 +254,16 @@ ENDIF.
 [ACCORDION-BEGIN [Step 8: ](Test via the UI)]
 Once ensured that both logic implementations were successfully published you can start testing the Application like an end user via the UI.
 
-`1.` **Open** the Bonus Plan application
+1. **Open** the Bonus Plan application
 2. **Open** the Bonus Plan with ID `1`
 3. **Edit** this Bonus Plan
 4. **Enter** value `10` into field **Low Bonus Percentage**
 5. **Save** the Bonus plan. You can see that your business logic works as the Percentage Units and the Employee Name get filled, but save fails due to the validation error messages for missing percentages.
 6. **Enter** value `20` into field **High Bonus Percentage**
-`7.` **Save** the Bonus Plan. Now it will not be rejected.
+7. **Save** the Bonus Plan. Now it will not be rejected.
 
 [DONE]
 [ACCORDION-END]
 ---
-<!--
 ## Next Steps
- - [Adapting the UI of a Custom Business Object](<!--https://www-qa.sap.com/developer/tutorials/abap-extensibility-cbo-ui-adaptation.html)
- -->
+ - [Adapting the UI of a Custom Business Object](https://www-qa.sap.com/developer/tutorials/abap-extensibility-cbo-ui-adaptation.html)
