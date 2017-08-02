@@ -17,7 +17,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-gateway, products>sap-clou
 You will create a destination (a server end-point where SAP Cloud Platform can send or receive data) that points to an SAP Gateway OData service.
 
 ### Time to Complete
-**< 5 Min**.
+**5 Min**.
 
 ---
 
