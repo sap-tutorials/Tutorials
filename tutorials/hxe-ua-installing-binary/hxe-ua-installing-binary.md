@@ -25,7 +25,7 @@ How to download the binary image of SAP HANA 2.0, express edition, install the i
 
 For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
 ### Time to Complete
-**Approximately 60 Minutes. Download and installation speeds will vary.**
+**60 Min**
 
 ---
 

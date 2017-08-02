@@ -30,7 +30,7 @@ A several tutorials spanning example will show extensibility along custom Bonus 
 In the first parts a Manager wants to define business objects "Bonus Plan" for employees. A Bonus Plan is there to save employee specific rules for bonus entitlement.
 
 ### Time to Complete
-**20-45 Min** (includes programming, but also solutions to copy for paste)
+**20 Min** (includes programming, but also solutions to copy for paste)
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Make key field Read-Only)]
