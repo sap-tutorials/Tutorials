@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-
  - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
 
 ## Next Steps
- - [Adapting the UI of a Custom Business Object](https://www-qa.sap.com/developer/tutorials/abap-extensibility-cbo-ui-adaptation.html)
+ - [Adapting the UI of a Custom Business Object](https://www.sap.com/developer/tutorials/abap-extensibility-cbo-ui-adaptation.html)
 
 ## Details
 
