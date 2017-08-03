@@ -34,9 +34,9 @@ This tutorial will guide you through the process to deploy a sample Node.js appl
 
    ###### Note prior to executing the installation steps make sure that proxy configuration are set properly
 
-2. Install support package for NodeJS and Express
+2. Install support package for `Node.js` and Express
 
-   Follow the prompts and install Node.js. The installation downloads to the default location.
+   Follow the prompts and install `Node.js`. The installation downloads to the default location.
 
    In case you need to change the installation location from the defaults, make sure to update the PATH variable
 
@@ -48,12 +48,12 @@ This tutorial will guide you through the process to deploy a sample Node.js appl
 
    [ACCORDION-BEGIN [Step 2: ](Develop Simple Node.js Application)]
 
-1. Create a simple standalone node.js app:
+1. Create a simple standalone `node.js` app:
    ```
    % mkdir hxeapp
    % cd hxeapp
    ```
-   Edit a file named hxeapp.js with the following content:
+   Edit a file named `hxeapp.js` with the following content:
 
    ```
    console.log ("Hello Node World!")
@@ -74,7 +74,7 @@ This tutorial will guide you through the process to deploy a sample Node.js appl
 
 3. Create a Node application that allows you to access HANA express edition data.
 
-   Open the hxeapps.js file and add the following content:
+   Open the `hxeapps.js` file and add the following content:
 
    ###### Note: HXE host IP Address provided should be accessible from any host
 
@@ -126,15 +126,15 @@ This tutorial will guide you through the process to deploy a sample Node.js appl
 
 [ACCORDION-BEGIN [Step 3: Extend Application](Extend Simple Node.js Application to Run as a Web Application)]
 
-1. Modify this app to be a WebApp.
+1. Modify this app to be a `WebApp`.
 
-   Install support packages for NodeJS and Express.
+   Install support packages for `Node.js` and Express.
    ###### Ignore warnings, if any are displayed:
 
    ```
    % npm install express
    ```
-   Execute express to create a template for developing WebApp
+   Execute express to create a template for developing `WebApp`
 
    ```
    % cd hxeapp
@@ -145,15 +145,15 @@ This tutorial will guide you through the process to deploy a sample Node.js appl
 
    ###### Note: It was installed manually previously. We want to do it automatically along with other packages
 
-   Modify package.json to include hdb driver.
+   Modify `package.json` to include `hdb` driver.
 
-   Edit package.json and add below line in the dependencies section. 
+   Edit `package.json` and add below line in the dependencies section. 
 
    ```
    "hdb": "~0.12.4"
    ```
 
-   After the edits, your package.json file would looks something like:
+   After the edits, your `package.json` file would looks something like:
 ```
 {
   "name": "hxeapp",
@@ -182,7 +182,7 @@ This tutorial will guide you through the process to deploy a sample Node.js appl
    % npm install
    ```
 
-   Create an app that does what our hxeapp.js does, but now we should modify the template file to do it.
+   Create an app that does what our `hxeapp.js` does, but now we should modify the template file to do it.
 
    Your directory content would look something like:
 
@@ -201,7 +201,7 @@ routes/
 $ ls routes/
 index.js  users.js
 ```
-3. Modify the index.js file to include the following code snippet:
+3. Modify the `index.js` file to include the following code snippet:
 
 ```
 var express = require('express');
@@ -239,7 +239,7 @@ module.exports = router;
 ```
 4. Replace the `<HXE host id IP>` with the IP address or host name of your HANA Express database server. Replace the `<HXE SYSTEM user password>` with your database system user password. Then save changes.
 
-5. Edit the file (views/index.jade) that controls the WebApp output layout as follows:
+5. Edit the file `views/index.jade` that controls the `WebApp` output layout as follows:
 
 ```
 extends layout

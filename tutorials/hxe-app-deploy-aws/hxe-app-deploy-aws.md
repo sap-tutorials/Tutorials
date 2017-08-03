@@ -52,7 +52,7 @@ This tutorial will guide you through the process of deploying a sample `HANA, ex
    ```
 
    This command may prompt for AWS access id and AWS secret key. For first time user, you may need to set it up for logging into the AWS account.
-   Search for access keys & try to create an access key. Save the csv output once the keys get generated. Substitute the environment name of your choice (e.g. "hxeapp-env").
+   Search for access keys & try to create an access key. Save the `csv` output once the keys get generated. Substitute the environment name of your choice (e.g. `hxeapp-env`).
    ```
    % eb create <Your environment>
    ```
@@ -85,7 +85,7 @@ This tutorial will guide you through the process of deploying a sample `HANA, ex
    % eb open
    ```
    This opens the URL to where the application is deployed.
-   You can also login to the AWS console Elastic BeanStock service
+   You can also login to the AWS console Elastic Beanstalk service
 
    Navigate to the default region (e.g. "us-west-2") where you have initialized your application. Notice <Your Environment> already exists in the location. If it does not exist, you are at a wrong region. Click on the URL for the app (something like the following):
    ```
@@ -183,12 +183,12 @@ This tutorial will guide you through the process of deploying a sample `HANA, ex
 - When prompted for the application to use, create a new application called `hxe_go_http`.
 - When prompted for platform, select "Go".
 - When prompted for platform version, select "Go 1.7".
-- When prompted to use AWS CodeCommit, accept the default, "n".
+- When prompted to use AWS `CodeCommit`, accept the default, "n".
 - When prompted for whether you wish to setup SSH, select the answer appropriate for your organization's security needs.
 
-7. (Windows only) If you are running eb client on Windows, will encounter permissions problems on the build.sh file during deployment. An error will appear in the `eb-activity.log` if you don't correct the permissions on the `build.sh` file:
+7. (Windows only) If you are running `eb` client on Windows, will encounter permissions problems on the `build.sh` file during deployment. An error will appear in the `eb-activity.log` if you don't correct the permissions on the `build.sh` file:
 
-    This occurs because the Windows file, build.sh, does not have unix executable permissions set. Here is how to set the executable permissions using git.
+    This occurs because the Windows file, `build.sh`, does not have `unix` executable permissions set. Here is how to set the executable permissions using git.
 
     a. Add the following section to the `./elasticbeanstalk/config.yml` file then save:
     ```
@@ -231,7 +231,7 @@ This tutorial will guide you through the process of deploying a sample `HANA, ex
 
 9. (Linux and Mac) When the `eb create` command completes, you will be ready to deploy your application, deploy your application using the following command: `eb deploy`.
 
-10. When deployment completes, you can retrieve the url for your application using the `eb status` command. Your application url is the `CNAME` value. When you enter the url in a browser, you should see something like the following:
+10. When deployment completes, you can retrieve the URL for your application using the `eb status` command. Your application URL is the `CNAME` value. When you enter the URL in a browser, you should see something like the following:
 
     ![Results in Browser](2.png).
 

@@ -26,7 +26,7 @@ This tutorial will guide you through the process of deploying a sample applicati
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a Go or NodeJS Web App on Azure)]
-If your application is written in Go and uses the go `http` package for the web framework or your application is written in nodejs and uses the Express web framework, follow these instructions. 
+If your application is written in Go and uses the go `http` package for the web framework or your application is written in `nodejs` and uses the Express web framework, follow these instructions. 
 
 1. Read the [Azure client documentation](https://docs.microsoft.com/en-us/cli/azure/overview). Follow the [Azure client installation instructions](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) to install the Azure client on your system.
 
@@ -51,11 +51,11 @@ If your application is written in Go and uses the go `http` package for the web 
    ```
    $ az appservice plan create --name quickStartPlan --resource-group <your-resource-group-name> --sku FREE
    ```  
-6. Create a WebApp. Replace the name of the application, `hxeapp1` with the name of your choice. 
+6. Create a `WebApp`. Replace the name of the application, `hxeapp1` with the name of your choice. 
    ```
    $ az webapp create --name hxeapp1 --resource-group <your-resource-group-name> --plan quickStartPlan
    ```
-7. Configure local Git deployment. This will allow you to commit to a local git repository and push your results up to a git repository on Azure App Service's virtual machine and have the application be built automatically. This command will return a repository url.
+7. Configure local Git deployment. This will allow you to commit to a local git repository and push your results up to a git repository on Azure App Service's virtual machine and have the application be built automatically. This command will return a repository `url`.
    ```
    az webapp deployment source config-local-git --resource-group <your-resource-group-name> --name <app-name>
    ```
@@ -85,7 +85,7 @@ If your application is written in Go and uses the go `http` package for the web 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Deploy a Sinatra Application to Azure)]
-Sinatra applications require an extra step on top of the steps required for go and nodejs applications. Sinatra applications require an inbound security rule to allow access to port 4567.
+Sinatra applications require an extra step on top of the steps required for go and `nodejs` applications. Sinatra applications require an inbound security rule to allow access to port 4567.
 
 1. To open port 4567 for your application, run the following command using your Azure client.
 ```

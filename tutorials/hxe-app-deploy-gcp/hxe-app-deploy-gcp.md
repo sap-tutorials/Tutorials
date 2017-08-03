@@ -27,12 +27,12 @@ This tutorial will guide you through the process to deploy a sample application 
 
 [ACCORDION-BEGIN [Step 1: ](Configure Google Cloud SDK)]
 
-1. Install gcloud SDK on your development environment using the link.
+1. Install `gcloud` SDK on your development environment using the link.
     [Google SDK](https://cloud.google.com/sdk/). Follow the prompts and take the default if provided.
 
 2. Once the SDK is installed open a terminal and type the following command to make sure the installation is working.
     ```
-    $ gcloud info
+    $ `gcloud` info
     ```
 
 [DONE]
@@ -59,14 +59,14 @@ This tutorial will guide you through the process to deploy a sample application 
    ```
 3. Deploy to the Google cloud
     ```
-   hxeapp$ gcloud app deploy
+   hxeapp$ `gcloud` app deploy
    ```
    >**Note:**
    > The deployment will take ~5 minutes
 
 4. After successful deployment, open the application by the following command.
    ```
-   gcloud app browse
+   `gcloud` app browse
    ```
 
 [DONE]
@@ -117,14 +117,14 @@ This tutorial will guide you through the process to deploy a sample application 
 
 4. Deploy to the Google cloud
     ```
-   hxeapp$ gcloud app deploy
+   hxeapp$ `gcloud` app deploy
    ```
    >**Note:**
    > The deployment will take ~5 minutes
 
 5. After successful deployment, open the application by the following command.
    ```
-   gcloud app browse
+   `gcloud` app browse
    ```
 [DONE]
 [ACCORDION-END]
@@ -156,14 +156,14 @@ This tutorial will guide you through the process to deploy a sample application 
    ```
 3. Deploy to the Google cloud
     ```
-   hxeapp$ gcloud app deploy
+   hxeapp$ `gcloud` app deploy
    ```
    >**Note:**
    > The deployment will take ~5 minutes
 
 4. After successful deployment, open the application by the following command.
    ```
-   gcloud app browse
+   `gcloud` app browse
    ```
 
 [DONE]
@@ -216,7 +216,7 @@ This tutorial will guide you through the process to deploy a sample application 
 6. Execute the command below to deploy the application.
 
     ```
-    hxeapp$ gcloud app deploy
+    hxeapp$ `gcloud` app deploy
 
     ```
 >**Note:**
@@ -224,7 +224,7 @@ This tutorial will guide you through the process to deploy a sample application 
 
 7. After successful deployment, open the application by the following command.
    ```
-   gcloud app browse
+   `gcloud` app browse
    ```
 
 [DONE]
@@ -257,7 +257,7 @@ This tutorial will guide you through the process to deploy a sample application 
 3. Execute the command below to deploy the application.
 
     ```
-    hxeapp$ gcloud app deploy
+    hxeapp$ `gcloud` app deploy
 
     ```
 >**Note:**
@@ -265,7 +265,7 @@ This tutorial will guide you through the process to deploy a sample application 
 
 4. After successful deployment, open the application by the following command.
    ```
-   gcloud app browse
+   `gcloud` app browse
    ```
 
 [DONE]
