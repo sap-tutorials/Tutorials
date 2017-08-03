@@ -2,7 +2,7 @@
 title: Enable, deploy and configure the SAP Cloud, predictive services
 description: Enable, deploy and configure the SAP Cloud, predictive services
 primary_tag: products>sap-cloud-platform-predictive-service
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-predictive-service]
+tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-predictive-service]
 ---
 
 ## Prerequisites
