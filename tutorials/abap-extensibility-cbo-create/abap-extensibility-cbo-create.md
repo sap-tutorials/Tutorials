@@ -1,5 +1,5 @@
 ---
-title: Creating a Custom Business Object (Bonus Plan)
+title: S/4HANA ABAP Extensibility -  - Creating a Custom Business Object (Bonus Plan)
 description: Define the data structure and create the database persistence of a custom business object.
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
@@ -29,6 +29,7 @@ In the first parts a Manager wants to define business objects "Bonus Plan" for e
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Starting "Custom Business Objects" application)]
+
 **Start** the Custom Business Object's application by clicking its tile
 
 ![Custom Business Objects application tile](tile_CBO.png)
@@ -38,23 +39,26 @@ In the first parts a Manager wants to define business objects "Bonus Plan" for e
 
 [ACCORDION-BEGIN [Step 2: ](Creating a new Custom Business Object)]
 
-1. Press the **New** action to start creation of a Custom Business Object
+Press the **New** action to start creation of a Custom Business Object
+
 ![Press New](CBO_pressNew.png)
 
-2.  In the opening Pop Up **fill** in the Name. The other editable fields will get proposals automatically but can be changed.
+In the opening Pop Up **fill** in the Name. The other editable fields will get proposals automatically but can be changed.
+
 ![Creation Pop Up](CBO_createNew.png)
 
-3. Execute the **Create** action.
+Execute the **Create** action.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Defining the data structure)]
 
-1. In the following view for editing the custom business object **Go to Fields and Logic** of the root node "Bonus Plan"
+In the following view for editing the custom business object **Go to Fields and Logic** of the root node "Bonus Plan"
+
 ![Go to Fields and Logic](CBO_go2FieldsAndLogic_detail.png)
 
-2. **Create** following fields
+**Create** following fields
 
 | Field Name     | Field Properties             | Tooltip     |
 | :------------- | :--------------------------- | :-----------|
@@ -71,27 +75,31 @@ In the first parts a Manager wants to define business objects "Bonus Plan" for e
 | Employee Name | Text of length 40, Read Only   | |
 
 The UI for maintaining fields looks as follows.
+
 ![Custom Business Object's Field List View](CBO_Fieldlist_partly.png)
 
-3. Go back via the application's **Back** button.
+Go back via the application's **Back** button.
+
 ![Fiori Application's Back Button](AppBackButton.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Adding standard data to the structure)]
-Back in the business Object's definition overview, **check** the System Administrative Data box to add standardized fields for "Created On", "Created By", "Last Changed On" and "Last Changed By".
+Back in the business Object's definition overview, **check** the System Administrative Data box to add standardized fields for `Created On`, `Created By`, `Last Changed On` and `Last Changed By`.
 
 ![Check System Administrative Data](CBO_checkSysAdminData.png)
 
-By checking this box the four fields also appear as uneditable in the field list.
+By checking this box the four fields also appear as un-editable in the field list.
 These fields will be filled and updated automatically, so that you do not need to implement logic for this. Logic implementations for these fields even would be ignored.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Creating the database persistence)]
-**Publish** the Business Object "Bonus Plan".
+**Publish** the Business Object `Bonus Plan`.
+
+![Press Publish](CBO_pressPublish.png)
 
 ![Press Publish](CBO_pressPublish.png)
 
@@ -100,7 +108,11 @@ This creates the database persistence of the Business Object.
 [DONE]
 [ACCORDION-END]
 
+
+
 ---
+
+
 
 ## Next Steps
 - [Creating a UI for a Custom Business Object](https://www.sap.com/developer/tutorials/abap-extensibility-cbo-ui-generation.html)

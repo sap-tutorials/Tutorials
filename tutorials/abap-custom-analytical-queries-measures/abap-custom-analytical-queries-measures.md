@@ -7,16 +7,18 @@ tags: [  tutorial>beginner, topic>abap-development ]
 
 ## Prerequisites  
 The Business user requires the Role `SAP_BCR_CA_ANA_AQD_PC` to access the Query Designer.
-Furthermore `Abap Custom Analytical Queries` as a tutorial reveals another Prerequisite.
+Furthermore `ABAP Custom Analytical Queries` as a tutorial reveals another Prerequisite.
 
 ## Next Steps
- (coming soon).
+ - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+
 ## Details
 The Application Custom Analytical Queries characterizes the usage of reporting and analysis.
 Raw data from business documents are getting converted into a meaningful grid.
-By using Custom Analytical Queries you don't have to understand the technical details.
+By using Custom Analytical Queries you do not need to understand the technical details.
+
 ### You will learn  
-This tutorial teaches you the creation of a Custom Analytical Query and the addition of a  Calculated Measures. You will also be able to edit your calculated Measures and define an Exception Aggregation.
+This tutorial teaches you the creation of a Custom Analytical Query and the addition of a Calculated Measures. You will also be able to edit your calculated Measures and define an Exception Aggregation.
 ### Time to Complete
 **15 Min**.
 
@@ -76,6 +78,7 @@ Select **`"Gross Profit" / "Gross Revenue"`** as an Expression.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Result of Measures)]
+
 Result:
 The new expression for the calculated measure is shown in the text field.
 
@@ -118,7 +121,7 @@ If a field supports hierarchies, then the hierarchy checkbox is shown in the pro
 [ACCORDION-BEGIN [Step 11: ](Publish the Query)]
 **Click on publish** to Publish the query. Published queries are available to be consumed by Key Performance Indicators and Reports.  
 
-After publishing the status on the top right corner will be updated from Draft to Published.
+After publishing the status will be updated to Published on the top right corner.
 
 ![Select Data Source](publish.png)
 

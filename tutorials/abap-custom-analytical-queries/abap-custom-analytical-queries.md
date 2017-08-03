@@ -9,11 +9,13 @@ tags: [  tutorial>beginner, topic>abap-development ]
 The Business user requires the Role `SAP_BCR_CA_ANA_AQD_PC` to access the Query Designer.
 
 ## Next Steps
- (coming soon).
+ - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+
 ## Details
 **Custom Analytical Queries** is a tool used for reporting and analysis.
 Raw data from business documents are getting converted into a meaningful grid.
-By using Custom Analytical Queries you don't have to understand the technical details.
+By using Custom Analytical Queries you do not need to understand the technical details.
+
 ### You will learn  
 In this tutorial you will learn how to setup Custom Analytical Queries for use. This section deals with creating, deleting and modifying queries. The creation of Restricted Measures will take part in this example.
 ### Time to Complete
@@ -32,7 +34,7 @@ Start the **Custom Analytical Queries** Application by selecting the correspondi
 [ACCORDION-BEGIN [Step 2: ](Create Query)]
 Choose **New  (1)** to create a new query. Enter the **query name (2)**: `CostCenterCostQuery`.
 
-Choose the **data view (3)** `I_GLACCOUNTLINEITEMCUBE`. **Press OK (4)** to create the query.
+Choose the **data view (3) + (4)** `I_GLACCOUNTLINEITEMCUBE`. **Press OK (5)** to create the query.
 
 ![Select Data Source](create-query.png)
 
@@ -40,7 +42,7 @@ Choose the **data view (3)** `I_GLACCOUNTLINEITEMCUBE`. **Press OK (4)** to crea
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Specify Label)]
-On the Query Designer **General** tab, you can specify the label.
+On the **General** tab, you can specify the label.
 
 ![Select Data Source](general.png)
 
@@ -67,7 +69,7 @@ Switch now to the **Field Selection** tab.
 
 [ACCORDION-BEGIN [Step 5: ](Select Display Tab)]
 Switch now to the **Display** tab. The **Display** icon indicates, whether a column is shown in
-the report. The **Filter** icon indicates, whether fixed value filters are defined for this field.
+the report. The **Filter** icon indicates, whether a fixed value filter is defined for this field.
 
 ![Select Data Source](display.png)
 
@@ -75,9 +77,9 @@ the report. The **Filter** icon indicates, whether fixed value filters are defin
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Change Attributes)]
-By Selecting the field **`Controlling Area (1)`** you are able to change the attributes of this field:
+By Selecting the field **`Controlling Area` (1)** you are able to change the attributes of this field:
 
- - define the label as **`Key Controlling Area (2)`**
+ - define the label as **`Key Controlling Area` (2)**
  - change the **display status (3)**
  - you can choose to hide/show the aggregated **results (4)**
    when the query is executed in the design studio
@@ -96,7 +98,7 @@ Field types are symbolized by different icons as:
 **Click Move Up/Down (3)** to reorder the fields within an across Row/Column/Free
 section. **Choose Row/Column/Free (4)** to quickly move across the sections.
 
-Afterwards you can **Save (5)** you draft.
+Afterwards you can **Save (5)** your draft.
 
 ![Select Data Source](display3.png)
 
@@ -154,8 +156,11 @@ You can have multiple include and exclude conditions with value help support.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Define User Input Filters)]
-Define a new User Input Filters for restricted **measures (1)**. **Choose** on the **`popup`** the tab **User Input Filters** and **enter the attributes (2)** on the following **`popup`**. **Click** on the **new Button (3)** to create a new input filter. The dimension is derived from the version.
+[ACCORDION-BEGIN [Step 14: ](Define User Input Filter)]
+Define a new User Input Filter for restricted **measures (1)**. **Choose** on the **`popup`** the tab **User Input Filters** and **enter the attributes (2)** on the following **`popup`**. **Click** on the **new Button (3)** to create a new input filter **(4) + (5)**. The dimension is derived from the version.
+
+Result:
+A new field for **user input filter is created**.
 
 ![Select Data Source](input-filter.png)
 
@@ -163,10 +168,6 @@ Define a new User Input Filters for restricted **measures (1)**. **Choose** on t
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Save and Publish Draft)]
-
-Result:
-A new field for **user input filter is created (1)**.
-
 The **:** signifies the usage of a user input filter.
 While executing the query, the value for **`pt_version`** is read from user and entered into the
 query. The user input filter can be used at any other location in the query for **Version** fields.

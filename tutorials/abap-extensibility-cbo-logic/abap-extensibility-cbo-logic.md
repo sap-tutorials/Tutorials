@@ -1,5 +1,5 @@
 ---
-title: Implementing logic for a Custom Business Object (Bonus Plan)
+title: S/4HANA ABAP Extensibility - Implementing logic for a Custom Business Object (Bonus Plan)
 description: Implement custom business object logic to control your application
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
@@ -28,7 +28,7 @@ A several tutorials spanning example will show extensibility along custom Bonus 
 In the first parts a Manager wants to define business objects "Bonus Plan" for employees. A Bonus Plan is there to save employee specific rules for bonus entitlement.
 
 ### Time to Complete
-**20 Min** (includes programming, but also solutions to copy for paste)
+**20 Min**
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Make key field Read-Only)]
