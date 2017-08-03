@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, products>build>build ]
 
 
 ## Next Steps
- - Import your BUILD Project into Web IDE (coming soon)
+ - [Import your BUILD Project into Web IDE](http://www.sap.com/developer/tutorials/build-import-webide.html)
  - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
@@ -176,5 +176,5 @@ Review your user's feedback and make adjustments as necessary before creating yo
 
 
 ## Next Steps
-- Import your BUILD Project into Web IDE (coming soon)
+- [Import your BUILD Project into Web IDE](http://www.sap.com/developer/tutorials/build-import-webide.html)
 - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
