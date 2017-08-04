@@ -90,7 +90,7 @@ Back in the business Object's definition overview, **check** the System Administ
 
 ![Check System Administrative Data](CBO_checkSysAdminData.png)
 
-By checking this box the four fields also appear as un-editable in the field list.
+By checking this box the four fields also appear as uneditable in the field list.
 These fields will be filled and updated automatically, so that you do not need to implement logic for this. Logic implementations for these fields even would be ignored.
 
 [DONE]

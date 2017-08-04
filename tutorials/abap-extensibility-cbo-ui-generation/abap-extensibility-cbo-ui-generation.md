@@ -53,14 +53,14 @@ To be able to do changes to the lastly published version of the business object 
 **Check** the two boxes for UI Generation and Service Generation.
 ![Check UI and Service Generation](CBO_checkUiAndServiceGeneration.png)
 
-**Publish** the business object to trigger the generation of UIs (Master and Detail) and OData Service.
+**Publish** the business object to trigger the generation of UI (Master and Detail) and OData Service.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Expose UI as Application)]
 
-Now you make the UIs available as SAP Fiori Launchpad application by assigning it to a Business Catalog which corresponds to a group in Launchpad.
+Now you make the UI available as SAP Fiori Launchpad application by assigning it to a Business Catalog which corresponds to a group in Launchpad.
 From the Business Object's overview go to Custom Catalog Extension application by clicking the **Maintain Catalogs** action.
 ![Maintain Custom Catalog Extension](CBO_maintainCCE.png)
 
@@ -69,7 +69,7 @@ A new window will open.
 Start adding a catalog with the **Add** action.
 ![Add new Custom Catalog Extension](CCE_add.png)
 
-In the opening value help narrow down the result list by searching for "Extensibility", select the Catalog with role ID "SAP_CORE_BC_EXT" and press **OK**.
+In the opening value help narrow down the result list by searching for `Extensibility`, select the Catalog with role ID `SAP_CORE_BC_EXT` and press **OK**.
 ![Value Help for adding Custom Catalog Extension](CCE_addValueHelp.png)
 
 **Select** the just added Catalog and **Publish** it.
