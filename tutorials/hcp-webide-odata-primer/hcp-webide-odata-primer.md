@@ -227,7 +227,7 @@ You can see that the records are returned in alphanumerical order (`ProductID`s 
 
 By default, the `$orderby` option sorts in ascending order. To sort by descending order, append "` desc`" (with the space) after the `orderby` field. The browser will encode the space as `%20` and the results are returned in descending alphanumerical order.
 
-- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$orderby=ProductName\ desc>
+- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$orderby=ProductName%20desc>
 
 ![orderby ProductName descending](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_18.png)
 
