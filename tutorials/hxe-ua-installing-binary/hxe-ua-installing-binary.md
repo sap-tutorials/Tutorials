@@ -37,17 +37,28 @@ Your server will need the following:
 
 - **Java Runtime Environment (JRE) 8 or higher** - If you are planning to install the SAP HANA 2.0, express edition Download Manager for Windows or Linux, you need the 64-bit JRE. If you are planning to install the platform-independent Download Manager, you can use either the 32- or 64-bit JRE.
 
-- **SUSE Linux Enterprise Server for SAP 12 SP1**
+- One of the following operating systems:
+    - **SUSE Linux Enterprise Server for SAP Applications, 12.1, 12.2**
+    - **SUSE Linux Enterprise Server for SAP Applications, IBM Power Systems (`ppc64le` - "Little Endian"), 12.1, 12.2**
+
+>**Note**: To install on SLES for SAP 12.1, the `libgcc_s1` and `libstdc++6` packages must be version 6.2 or newer. To update these packages, register your system with SUSE and run `zypper install libgcc_s1 libstdc++6`. For registration instructions, see the SUSE Linux Enterprise Server 12 documentation.
+
+>**Note**: The following components are not available on IBM Power systems
+> - SAP Enterprise Architecture Designer
+> - SAP HANA streaming analytics
+> - SAP HANA Extended Machine Learning AFL
 
 #### Hardware
 
-- **RAM** 16 GB minimum (24 GB recommended)
+- **RAM**
+    - Server: 16 GB minimum (24 GB recommended)
+    - Server + Applications: 24 GB minimum (32 GB recommended)
 
 >**Note**: If you are installing on a system with 16 GB of RAM, increase the amount of swap space to at least 32 GB.
 
-- **HDD** 120 GB HDD recommended
+- **HDD**: 120 GB HDD recommended
 
-- **Cores** 2 cores (4 recommended)
+- **Cores**: 2 cores (4 recommended)
 
 [DONE] [ACCORDION-END]
 
