@@ -1,15 +1,15 @@
 ---
 title: Run and Test a Streaming project
-description: Run your streaming project on the SAP HANA smart data streaming server. Use the test tools in Eclipse to send some events to the input stream and view the output. Confirm that data is being captured in the HANA database
+description: Run your streaming project on the SAP HANA streaming analytics server. Use the test tools in Eclipse to send some events to the input stream and view the output. Confirm that data is being captured in the HANA database
 primary_tag: products>sap-hana-smart-data-streaming
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Capture Streaming Output in the HANA Database](http://www.sap.com/developer/tutorials/sds-event-stream-tables.html)
+ - **Tutorials:** [Capture Streaming Output in the HANA Database](http://www.sap.com)
 
 ## Next Steps
-**Tutorial:** [Join an Event Stream to a HANA Table](http://www.sap.com/developer/tutorials/sds-stream-table-join.html)
+**Tutorial:** [Join an Event Stream to a HANA Table](http://www.sap.com)
 
 
 ## Details
@@ -82,8 +82,3 @@ You can also view the `ACTIVITY_HIST` table in the HANA database to see that any
 
 [DONE]
 [ACCORDION-END]
-
----
-
-## Next Steps
-**Tutorial:** [Join an Event Stream to a HANA Table](http://www.sap.com/developer/tutorials/sds-stream-table-join.html)
