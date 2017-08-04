@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-smart-da
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Capture Streaming Output in the HANA Database](http://www.sap.com)
+ - **Tutorials:** [Capture Streaming Output in the HANA Database](https://www.sap.com/developer/tutorials/sds-event-stream-tables.html)
 
 ## Next Steps
-**Tutorial:** [Join an Event Stream to a HANA Table](http://www.sap.com)
+**Tutorial:** [Join an Event Stream to a HANA Table](https://www.sap.com/developer/tutorials/sds-stream-table-join.html)
 
 
 ## Details
