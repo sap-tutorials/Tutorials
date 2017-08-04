@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-smart-da
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Installing and Configuring the Streaming Studio Plugin](http://www.sap.com)
+ - **Tutorials:** [Installing and Configuring the Streaming Studio Plugin](https://www.sap.com/developer/tutorials/hxe-ua-streaming-plugin.html)
 
 ## Next Steps
- - **Tutorials:** [Capture Streaming Output in the SAP HANA Database](http://www.sap.com)
+ - **Tutorials:** [Capture Streaming Output in the SAP HANA Database](https://www.sap.com/developer/tutorials/sds-event-stream-tables.html)
 
 ## Details
 
