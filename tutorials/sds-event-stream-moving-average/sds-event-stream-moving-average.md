@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-smart-da
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Join an Event Stream to a HANA Table](http://www.sap.com)
+ - **Tutorials:** [Join an Event Stream to a HANA Table](https://www.sap.com/developer/tutorials/sds-stream-table-join.html)
 
 ## Next Steps
-- **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Streaming Analytics](http://www.sap.com)
+- **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Streaming Analytics](https://www.sap.com/developer/tutorials/sds-event-stream-alerts.html)
 
 
 ## Details
