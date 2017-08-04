@@ -7,10 +7,10 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-smar
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Generating Alerts using a Derived Window in SAP HANA smart data streaming](http://www.sap.com)
+ - **Tutorials:** [Generating Alerts using a Derived Window in SAP HANA smart data streaming](https://www.sap.com/developer/tutorials/sds-event-stream-alerts.html)
 
 ## Next Steps
-- **Tutorials:** [Watch for Patterns of Events and Generate Alerts](http://www.sap.com)
+- **Tutorials:** [Watch for Patterns of Events and Generate Alerts](https://www.sap.com/developer/tutorials/sds-event-stream-pattern-detection.html)
 
 ## Details
 ### You will learn  

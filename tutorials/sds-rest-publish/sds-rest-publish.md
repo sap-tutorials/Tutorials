@@ -8,8 +8,8 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-smar
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:**  One of the following:
- - [Run and Test a streaming project](http://www.sap.com)
- - [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](http://www.sap.com)
+ - [Run and Test a streaming project](https://www.sap.com/developer/tutorials/sds-run-test.html)
+ - [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-event-stream-alerts.html)
  - [Build custom Flex Operators to analyze event streams](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps

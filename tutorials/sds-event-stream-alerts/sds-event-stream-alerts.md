@@ -6,10 +6,10 @@ tags: [  tutorial>Intermediate, topic>internet-of-things, products>sap-hana-smar
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Create a Moving Average on an Event Stream using an Aggregation Window](http://www.sap.com)
+ - **Tutorials:** [Create a Moving Average on an Event Stream using an Aggregation Window](https://www.sap.com/developer/tutorials/sds-event-stream-moving-average.html)
 
 ## Next Steps
-- **Tutorials:** [Using the Streaming Playback tool to Test a Streaming Project](http://www.sap.com)
+- **Tutorials:** [Using the Streaming Playback tool to Test a Streaming Project](https://www.sap.com/developer/tutorials/sds-event-stream-playback.html)
 
 ## Details
 ### You will learn  

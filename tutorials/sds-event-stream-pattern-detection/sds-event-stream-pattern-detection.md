@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-smar
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Using the Streaming Playback tool to Test a Streaming Project](http://www.sap.com)
+ - **Tutorials:** [Using the Streaming Playback tool to Test a Streaming Project](https://www.sap.com/developer/tutorials/sds-event-stream-playback.html)
 
 ## Next Steps
- - **Tutorials:** [Build Custom Flex Operators to Analyze Event Streams](http://www.sap.com)
+ - **Tutorials:** [Build Custom Flex Operators to Analyze Event Streams](https://www.sap.com/developer/tutorials/sds-custom-flex-operators.html)
 
 ## Details
 ### You will learn  
