@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-smart-da
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create a Streaming project with SAP HANA smart data streaming](http://www.sap.com/developer/tutorials/sds-create-streaming-project.html)
+ - **Tutorials:** [Create a Streaming project with SAP HANA smart data streaming](http://www.sap.com)
 
 
 ## Next Steps
- - [Run and Test a Streaming Project](http://www.sap.com/developer/tutorials/sds-run-test.html)
+ - [Run and Test a Streaming Project](http://www.sap.com)
 
 ## Details
 ### You will learn  
@@ -206,8 +206,3 @@ PROPERTIES
 
 [DONE]
 [ACCORDION-END]
-
----
-
-## Next Steps
- - [Run and Test a Streaming Project](http://www.sap.com/developer/tutorials/sds-run-test.html)
