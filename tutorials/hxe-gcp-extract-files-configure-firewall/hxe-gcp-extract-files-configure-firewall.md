@@ -18,6 +18,7 @@ SAP HANA, express edition (HXE) is officially supported on SLES and RHEL. SAP Co
 ## Details
 ### You will learn  
 In this tutorial, you will extract the files for the installation of either the server-only option or the HXE + XS Advanced tools option. You will also update the firewall rules in `Gcloud` accordingly.
+**Note: Update for HANA 2.0 SPS02 pending**]
 
 ### Time to Complete
 **15 Min**
