@@ -124,7 +124,7 @@ After selecting the Northwind OData Service entry, enter the relative path (see 
 The relative path to enter is:
 
 ```
-/V3/Northwind/Northwind.svc
+/V2/Northwind/Northwind.svc
 ```
 
 The URL you entered for your destination plus the relative path you enter here points to the OData Service you will use for your app.
