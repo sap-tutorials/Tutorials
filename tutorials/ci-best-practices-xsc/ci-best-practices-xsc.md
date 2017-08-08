@@ -27,8 +27,8 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 For SAP HANA Extended Application Services (XS) classic model (XSC) development you can use either the SAP HANA Studio or the SAP HANA Development Workbench. For more details about installing and getting started, please refer to the product documentation.
 
-> [SAP HANA Developer Guide for SAP HANA Studio](https://help.sap.com/hana/SAP_HANA_Developer_Guide_for_SAP_HANA_Studio_en.pdf)  
-> [SAP HANA Developer Guide for SAP HANA Web Workbench](https://help.sap.com/hana/SAP_HANA_Developer_Guide_for_SAP_HANA_Web_Workbench_en.pdf)
+> [SAP HANA Developer Guide for SAP HANA Studio](https://help.sap.com/viewer/52715f71adba4aaeb480d946c742d1f6/2.0.01/en-US)  
+> [SAP HANA Web-Based Development Workbench](https://help.sap.com/viewer/b3d0daf2a98e49ada00bf31b7ca7a42e/2.0.01/en-US/7f99b0f952d04792912587c99e299ef5.html)
 
 A developer working on an SAP HANA XSC application works directly in the SAP HANA repository using the SAP HANA Studio. Design-time objects are modified first as an inactive version in the SAP HANA repository, then activated afterwards. As a best practice, we recommend that developers on large teams use their own SAP HANA systems for development to avoid conflicts with other developers. For a CI-based process, changes in the SAP HANA sources are stored in Git; this is where developers push their changes to.
 
@@ -36,7 +36,7 @@ The CI build in our example use case does not contain a compilation step, since 
   
 `regi` imports the sources from Git into the SAP HANA CI system, first activating and deploying them to the SAP HANA database and, lastly, packaging and exporting them as a delivery unit (DU). This idea was first described in an SCN article.
 
-> http://scn.sap.com/community/hana-in-memory/use-cases/blog/2013/04/17/continuous-delivery-and-sap-hana
+> [SCN article on Continuous delivery and SAP HANA](http://scn.sap.com/community/hana-in-memory/use-cases/blog/2013/04/17/continuous-delivery-and-sap-hana)
 
 Thus, you can think of the SAP HANA CI system and `regi` as the *build tool*, whereby the SAP HANA CI system is the *build back end* and `regi` is a client tool that interacts with the back end. Since new versions of sources are uploaded to the SAP HANA CI system automatically all the time in the context of the CI process, its status is unstable. Do not use it for any other purpose, for example, manual tests.
 
@@ -70,11 +70,12 @@ The scenario discussed throughout this chapter is only an example intended to de
 ### Prerequisites
 
 - Install SAP HANA Systems (instance for development, the CI process, test and productive system)
+
 - Install SAP HANA Studio on your local PC
 
-> SAP Help Portal: https://help.sap.com/saphelp_hanaplatform/helpdata/en/8c/d2fc57041f437e9dc95f07a5e48e4d/content.htm  
-> SAP HANA Server Installation Guide: https://help.sap.com/hana/SAP_HANA_Server_Installation_Guide_en.pdf  
-> SAP HANA Studio Installation Guide: https://help.sap.com/hana/SAP_HANA_Studio_Installation_Update_Guide_en.pdf
+> [SAP HANA Installation and Update Overview](https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/2.0.00/en-US/8cd2fc57041f437e9dc95f07a5e48e4d.html)  
+> [SAP HANA Server Installation Guide](https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/2.0.01/en-US)  
+> [SAP HANA Studio Installation Guide](https://help.sap.com/viewer/a2a49126a5c546a9864aae22c05c3d0e/2.0.01/en-US)
 
 
 ### Preparing the SAP HANA systems
@@ -127,14 +128,16 @@ For more information about installing the SAP HANA Client please refer to the pr
 The SAP HANA Client installation contains the following command line tools:
 
 - `regi` is a client that interacts with the SAP HANA repository.
+
 - `hdbalm` provides life-cycle management tasks.
+
 - `hdbuserstore` provides secure credential handling. 
 
 For additional information enter the tool name on the command line followed by the argument `help`.
 
-> SAP HANA Client Installation and Update Guide: https://help.sap.com/hana/sap_hana_client_installation_update_guide_en.pdf  
-> `hdbalm` documentation in the SAP Help Portal: https://help.sap.com/saphelp_hanaplatform/helpdata/en/b9/2b9bdc457c42ba920e3ed6b09e4463/content.htm  
-> `hdbuserstore` documentation in the SAP Help Portal: https://help.sap.com/saphelp_hanaplatform/helpdata/en/dd/95ac9dbb571014a7d7f0234d762fdb/content.htm
+> [SAP HANA Client Installation and Update Guide](https://help.sap.com/viewer/e7e79e15f5284474b965872bf0fa3d63/2.0.01/en-US)  
+> [Using `hdbalm`](https://help.sap.com/viewer/a4d43a319ecf464e9d838454a6bdb9ad/2.0.00/en-US/b92b9bdc457c42ba920e3ed6b09e4463.html)  
+> [Secure User Store (`hdbuserstore`)](https://help.sap.com/viewer/b3ee5778bc2e4a089d3299b82ec762a7/2.0.00/en-US/dd95ac9dbb571014a7d7f0234d762fdb.html)
 
 
 #### Procedure
@@ -181,8 +184,8 @@ For additional information enter the tool name on the command line followed by t
 
 In this guide, we'll use the SAP education application (`SHINE`) to demonstrate how to set up the CI process using "real" code, rather than simply a "Hello World" example. `SHINE` is available as a DU with the name `HCODEMOCONTENT_<SP>.tgz` from GitHub or in the SAP Software Download Center.
 
-> `SHINE` Reference Application: https://github.com/SAP/hana-shine   
-> `SHINE` documentation: https://github.com/SAP/hana-shine/blob/master/README.md
+> [`SHINE` Reference Application](https://github.com/SAP/hana-shine)   
+> [`SHINE` documentation](https://github.com/SAP/hana-shine/blob/master/README.md)
 
 The steps below are preparation steps that bring the `SHINE` sources into a Gerrit project. Given the `SHINE` DU as a tar ball (`.tgz`), you will import the DU to the SAP HANA Development system and set up a local HANA workspace containing the source files of the DU. From there you will push the source files to Gerrit.
 
@@ -237,7 +240,7 @@ The steps below are preparation steps that bring the `SHINE` sources into a Gerr
 
 For general information about working with the SAP HANA Studio, please use the product documentation:
 
-> [SAP HANA Developer Guide for SAP HANA Studio](https://help.sap.com/hana/SAP_HANA_Developer_Guide_for_SAP_HANA_Studio_en.pdf)  
+> [SAP HANA Developer Guide for SAP HANA Studio](https://help.sap.com/viewer/52715f71adba4aaeb480d946c742d1f6/2.0.01/en-US)  
 
 When developers check out sources from the SAP HANA repository to a local workspace to store them in Git, they must ensure that all sources have already been activated in the SAP HANA repository of the development system. The checkout mechanism always uses the newest version, which might be either an active or inactive one. Checking out partially activated sources leads to an inconsistent source state in Git.
 
@@ -248,7 +251,9 @@ When developers check out sources from the SAP HANA repository to a local worksp
 The Jenkins CI build job fetches the sources from Git, imports them into the SAP HANA CI system using `regi` to assign the package structure to a delivery unit that will be exported afterwards using `regi`. As an alternative you can assemble a software component per DU using `hdbalm assemble`, which is described at the end of this guide. For the sake of simplicity we'll make some assumptions about the example use case:
 
 - The sources contained in the Gerrit project have a unique common package root: in our case, it is `sap/hana/democontent/epm`. Using more than a single top-level package requires adaptations to the job definition by means of loops over the top-level packages.
+
 - There are no other sources in the SAP HANA system that belong to the common package but not to the Gerrit project.
+
 - The delivery unit to be packaged contains only the sources of the Gerrit project.
 
 These assumptions allow us to treat the entities *package* and *delivery unit* as equivalents and avoid overlaps in packages.
@@ -503,14 +508,14 @@ hdbalm -y install <software component zip file>
 
 You must also adapt the upload to Nexus in the `CI_Shine_master_release` job to operate on the software component zip file.
 
-> `hdbalm` documentation in the SAP Help Portal: https://help.sap.com/saphelp_hanaplatform/helpdata/en/b9/2b9bdc457c42ba920e3ed6b09e4463/content.htm  
+> [Using `hdbalm`](https://help.sap.com/viewer/a4d43a319ecf464e9d838454a6bdb9ad/2.0.00/en-US/b92b9bdc457c42ba920e3ed6b09e4463.html)  
 
 
 #### Transporting between systems
 
 Instead of exporting and importing an archive (delivery unit or software component), you can establish direct transports between the systems: `hdbalm` can use a direct connection from the target system to the source system to pull a delivery unit. You might find this approach preferable, especially if you are already familiar to life-cycle management. To implement it, you must provide an additional permission in the target system and define the transport route. For the discussion below, we assume that the production system is the transport target, and the test system is the transport source. 
 
-> SAP HANA Application Lifecycle Management - Transport - documentation in the SAP Help Portal: https://help.sap.com/saphelp_hanaplatform/helpdata/en/50/a00deb7663496d93ebb938bbb723ca/content.htm?frameset=/en/9a/012d6438764459a581e6af55a87c46/frameset.htm&current_toc=/en/34/29fc63a1de4cd6876ea211dc86ee54/plain.htm&node_id=429&show_children=false
+> [Setting Up the Transport](https://help.sap.com/viewer/52715f71adba4aaeb480d946c742d1f6/2.0.00/en-US/50a00deb7663496d93ebb938bbb723ca.html)
 
 
 ##### Preparing the target (productive) system
