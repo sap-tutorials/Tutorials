@@ -18,6 +18,7 @@ SAP HANA, express edition (HXE) is officially supported on SLES and RHEL. SAP Co
 ## Details
 ### You will learn  
 This tutorial will guide you through the final process to have your HANA Express Edition instance up and running on Google Cloud Platform.
+**Note: Update for HANA 2.0 SPS02 pending**
 
 ### Time to Complete
 **15 Min**

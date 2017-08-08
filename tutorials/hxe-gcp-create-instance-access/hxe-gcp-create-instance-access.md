@@ -20,7 +20,7 @@ SAP HANA, express edition (HXE) is officially supported on SLES and RHEL. SAP Co
 ## Details
 ### You will learn  
 This tutorial will show you how to setup a Virtual Machine on  Google Cloud Platform using Ubuntu to run HANA Express Edition.
-
+**Note: Update for HANA 2.0 SPS02 pending**]
 
 
 ### Time to Complete
