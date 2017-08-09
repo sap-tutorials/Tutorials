@@ -74,7 +74,8 @@ To be able to view the app in multiple languages and enable SAP Translation Hub 
 
 [ACCORDION-BEGIN [Step 7: ](Make project settings)]
 
-In the `.project.json` file, enter a comma after the last square bracket (`]`) and enter the following code after the comma:
+In this step, you're going to specify the domain for the texts (sales), the languages in which you want the app to be available (Danish, Dutch, English, Finnish, French, and German), and the name of the resources file (`i18n`).
+In the `.project.json` file, enter a comma after the last square bracket (`]`) and paste the following code after the comma you entered:
 
 ```
 "translation": {

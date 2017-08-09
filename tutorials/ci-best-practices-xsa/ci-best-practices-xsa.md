@@ -1,7 +1,7 @@
 ---
 
-title: Continuous Integration (CI) Best Practices with SAP: SAP HANA Extended Application Services (XS), advanced model (XSA) on SAP HANA
-description: Part 4.6: Configuring the CI system for a SAP HANA Extended Application Services (XS), advanced model Application (XSA) on SAP HANA.
+title: Continuous Integration (CI) Best Practices with SAP: SAP HANA Extended Application Services, advanced model (XS advanced) on SAP HANA
+description: Part 4.6: Configuring the CI system for a SAP HANA Extended Application Services, advanced model Application (XS advanced) on SAP HANA.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
@@ -27,7 +27,7 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ### 1. Introduction
 
-The SAP HANA Developer Guide for SAP HANA XS Advanced Model is a good starting point for getting familiar with application development for SAP HANA Extended Application Services advanced model (XSA). The `TinyWorld` tutorial is a good introduction to developing your first SAP HANA XSA application using different module types. For detailed information about installing an SAP HANA XSA instance, see the official documentation listed below. The example we describe in this chapter is based on SAP HANA XSA 2.0 SPS00.
+The SAP HANA Developer Guide for SAP HANA XS Advanced Model is a good starting point for getting familiar with application development for SAP HANA Extended Application Services, advanced model (XS advanced). The `TinyWorld` tutorial is a good introduction to developing your first SAP HANA XS advanced application using different module types. For detailed information about installing an SAP HANA XS Advanced instance, see the official documentation listed below. The example we describe in this chapter is based on SAP HANA XS advanced 2.0 SPS00.
 
 > [SAP HANA Platform](https://help.sap.com/viewer/p/SAP_HANA_PLATFORM)  
 > [SAP HANA Developer Guide for SAP HANA XS Advanced Model](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US)  
@@ -38,20 +38,20 @@ There are also comprehensive SAP HANA Academy videos on YouTube:
 
 > [SAP HANA Academy - XS Advanced (YouTube)](https://www.youtube.com/playlist?list=PLkzo92owKnVwL3AWaWVbFVrfErKkMY02a)
 
-SAP HANA XSA applications may consist of multiple modules and be implemented as a multi target application (MTA) project using SAP Web IDE for SAP HANA. For details developing MTAs, see the official guides listed above. You can find more information about concepts, design, and specification of MTAs in the MTA specification:
+SAP HANA XS advanced applications may consist of multiple modules and be implemented as a multi target application (MTA) project using SAP Web IDE for SAP HANA. For details developing MTAs, see the official guides listed above. You can find more information about concepts, design, and specification of MTAs in the MTA specification:
 
 > [The Multi-Target Application Model: A guide to understand multi-target applications](http://sapassets.edgesuite.net/sapcom/docs/2016/06/e2f618e4-757c-0010-82c7-eda71af511fa.pdf)
 
- SAP HANA XSA supports Git as a source control management system. SAP HANA SPS12 and later includes a Gerrit server that is integrated with the XSA runtime. Gerrit for XSA is an optional component of the XSA platform that can be installed via the software provisioning manager. SAP Web IDE for SAP HANA fully supports Git repositories. For the setup of Gerrit for XSA have a look at the following documentation: 
+ SAP HANA XS advanced supports Git as a source control management system. SAP HANA SPS12 and later includes a Gerrit server that is integrated with the XS advanced runtime. Gerrit for XS advanced is an optional component of the XS advanced platform that can be installed via the software provisioning manager. SAP Web IDE for SAP HANA fully supports Git repositories. For the setup of Gerrit for XS advanced have a look at the following documentation: 
 
 > [Set up Gerrit for XS Advanced Application Development](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.00/en-US%20Less/2d0c64a1a50045ab867605cf4b89def8.html)  
 
-The CI process discussed in this chapter implements an MTA running on SAP HANA XSA. Source changes are pushed by the developer to a central Git repository (either the one that is integrated in SAP HANA or a custom Git repository). Inside the CI build, the MTA archive builder - a command-line tool shipped by SAP - triggers the technology-specific compilers for the dedicated modules contained in the MTA. Then, the MTA archive builder packages the artifacts from each module into one archive file with the extension `.mtar`. To download and learn more about the MTA archive builder refer to the following links:  
+The CI process discussed in this chapter implements an MTA running on SAP HANA XS advanced. Source changes are pushed by the developer to a central Git repository (either the one that is integrated in SAP HANA or a custom Git repository). Inside the CI build, the MTA archive builder - a command-line tool shipped by SAP - triggers the technology-specific compilers for the dedicated modules contained in the MTA. Then, the MTA archive builder packages the artifacts from each module into one archive file with the extension `.mtar`. To download and learn more about the MTA archive builder refer to the following links:  
 
 > [MTA Archive Builder Download](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100800000903&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MULTITRG%20APP%20ARCHIVE%20BUILDER)  
 > [MTA Archive Builder Documentation](https://uacp2.hana.ondemand.com/viewer/58746c584026430a890170ac4d87d03b/HANA%202.0%20SPS%2002/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)
 
-After the MTA archive builder has run, the build result is automatically deployed into an environment for automatic testing during the CI build. For the deployment, the XSA command-line client triggers the XS deploy service. The CI build may contain tests such as static code checks for the JavaScript sources (`ESLint`) or automated tests for the user interface.
+After the MTA archive builder has run, the build result is automatically deployed into an environment for automatic testing during the CI build. For the deployment, the XS advanced command-line client triggers the XS deploy service. The CI build may contain tests such as static code checks for the JavaScript sources (`ESLint`) or automated tests for the user interface.
 
 After successful build and test, the `mtar` file is archived for further processing, for example deployment to a test system for manual acceptance tests. The deployment can be triggered either manually by someone such as a quality manager, or automatically via a defined schedule (for example, once a day in the morning). Testers then execute manual acceptance tests.
 
@@ -61,9 +61,9 @@ Figure 1 shows an overview of the entire process.
 
 ![Process flow](process-flow.png)
 
-Figure 1: CI process for XSA development.
+Figure 1: CI process for XS advanced development.
 
-The CI process requires different runtime environments for deployment of the `mtar` file. Our example uses three: one for automatic testing during the CI build, one for acceptance testing, and one for productive usage. We use different XSA spaces to separate these environments, which may be hosted by a common XSA instance and organization, or may be hosted by different organizations, or even by different XSA instances. The options used depend on the concrete project setup and do not have an impact on the implementation of the CI process. A dedicated space and organization on an XSA system is required for hosting SAP Web IDE. We assume here that these are the space (usually: DEV) and the organization that are automatically created during the installation of the XSA system. Builds in SAP Web IDE, which are triggered by the user, require a DI Builder component to be deployed in a development space (DEV) residing in the same organization as SAP Web IDE. For more information about organization and space concepts, see the administration guide. Figure 2 shows the full setup.
+The CI process requires different runtime environments for deployment of the `mtar` file. Our example uses three: one for automatic testing during the CI build, one for acceptance testing, and one for productive usage. We use different XS advanced spaces to separate these environments, which may be hosted by a common XS advanced instance and organization, or may be hosted by different organizations, or even by different XS advanced instances. The options used depend on the concrete project setup and do not have an impact on the implementation of the CI process. A dedicated space and organization on an XS advanced system is required for hosting SAP Web IDE. We assume here that these are the space (usually: DEV) and the organization that are automatically created during the installation of the XS advanced system. Builds in SAP Web IDE, which are triggered by the user, require a DI Builder component to be deployed in a development space (DEV) residing in the same organization as SAP Web IDE. For more information about organization and space concepts, see the administration guide. Figure 2 shows the full setup.
 
 > [Maintaining Organizations and Spaces in SAP HANA XS Advanced Model](https://help.sap.com/viewer/1c837b3899834ddcbae140cc3e7c7bdd/1.0.11/en-US/4b1ee6ac2a7c4e75bc84a70fc105530c.html)  
 
@@ -80,7 +80,7 @@ What is described in detail here is only an example that shows how to set up a c
 
 ### 2.1 SAP HANA System and SAP Web IDE for HANA release
 
-It is assumed that a SAP HANA XSA system with SAP HANA Runtime Tools is installed. We do not assume an already installed SAP Web IDE, since its installation is described below. But we assume throughout this guide that the version of SAP Web IDE is higher than:
+It is assumed that a SAP HANA XS advanced system with SAP HANA Runtime Tools is installed. We do not assume an already installed SAP Web IDE, since its installation is described below. But we assume throughout this guide that the version of SAP Web IDE is higher than:
 
 - SPS12 patch 6 for SAP Web IDE 1 
 
@@ -90,25 +90,25 @@ The recommendation is to use SAP Web IDE for HANA to SAP Web IDE 2 SPS 01 or hig
 
 For older SAP Web IDE releases, some additional steps have to be done to ensure that fetching npm packages that are needed from the build work on SAP Web IDE and in the CI build. They are referred from within the text and are described in detail in paragraph 8.1.
 
-SAP HANA XSA runtime consists of an on-premise version of the open-source Cloud Foundry platform, which has been extended by SAP to support integration with the SAP HANA database and OData, and which is compatible with the XS classic model. For information about installing the SAP HANA XSA system, see the official documentation:
+SAP HANA XS advanced runtime consists of an on-premise version of the open-source Cloud Foundry platform, which has been extended by SAP to support integration with the SAP HANA database and OData, and which is compatible with the XS classic model. For information about installing the SAP HANA XS advanced system, see the official documentation:
 
-> [SAP HANA Platform](http://help.sap.com/hana_platform)  
+> [SAP HANA Platform](https://help.sap.com/viewer/p/SAP_HANA_PLATFORM)  
 
 Some additional configuration, described below, is required when installing SAP Web IDE - see chapter 4.1.
 
-For our landscape we will use one SAP HANA XSA instance with several spaces for DEV, CI Build, Test and Prod as shown in figure 2.
+For our landscape we will use one SAP HANA XS advanced instance with several spaces for DEV, CI Build, Test and Prod as shown in figure 2.
 
 
 
-### 2.2 (Optional) Installing of Gerrit in the SAP HANA XSA Instance
+### 2.2 (Optional) Installing of Gerrit in the SAP HANA XS Advanced Instance
 
-Our example uses Gerrit as the repository server hosting the project sources. You may decide to use a Gerrit instance hosted by yourself as described in [Source Code Management](http://www.sap.com/developer/tutorials/ci-best-practices-scm.html), or you may use the Gerrit instance of the SAP HANA XSA server:
+Our example uses Gerrit as the repository server hosting the project sources. You may decide to use a Gerrit instance hosted by yourself as described in [Source Code Management](http://www.sap.com/developer/tutorials/ci-best-practices-scm.html), or you may use the Gerrit instance of the SAP HANA XS advanced server:
 
-> [Set up Gerrit for XS Advanced Application Development](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.00/en-US%20Less/2d0c64a1a50045ab867605cf4b89def8.html)  
+> [Set up Gerrit for XS Advanced Application Development](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.00/en-US/2d0c64a1a50045ab867605cf4b89def8.html)  
 
-The Gerrit installation for SAP HANA XSA is available for Linux `x86_64` and in combination with an SAP HANA XSA license only.
+The Gerrit installation for SAP HANA XS advanced is available for Linux `x86_64` and in combination with an SAP HANA XS advanced license only.
 
-Gerrit within SAP HANA XSA has the advantage of using the built-in user authorization mechanism of SAP HANA XSA, and connecting Gerrit to a separate user authorization system (like LDAP).
+Gerrit within SAP HANA XS advanced has the advantage of using the built-in user authorization mechanism of SAP HANA XS advanced, and connecting Gerrit to a separate user authorization system (like LDAP).
 
 
 ### 3. Configuring the CI Infrastructure
@@ -116,20 +116,20 @@ Gerrit within SAP HANA XSA has the advantage of using the built-in user authoriz
 
 ### 3.1 Installing the SAP HANA XS Advanced Command-Line Client
 
-Use the SAP HANA XS Advanced command-line client to connect to the SAP HANA XSA system and each space in order to automatically deploy the build result - an MTA archive (`.mtar`). For detailed information, see the following official documentation and SAP note.
+Use the SAP HANA XS Advanced command-line client to connect to the SAP HANA XS advanced system and each space in order to automatically deploy the build result - an MTA archive (`.mtar`). For detailed information, see the following official documentation and SAP note.
 
 > [SAP HANA Client Installation and Update Guide](https://help.sap.com/viewer/e7e79e15f5284474b965872bf0fa3d63/2.0.01/en-US/bc5b63411b584e9dbe13037c2322a234.html)  
 > [Note 2242468 - Setting up SAP HANA extended application services, advanced model command-line client from SAP HANA Installation DVD](https://launchpad.support.sap.com/#/notes/0002242468)
 
 #### Procedure
 
-1. Enter SAP ONE Support Launchpad, navigate to **Software Downloads**, and search for `XSA client`. Download the zip archive of the newest release for the operating system that runs on your Jenkins slave machine.
+1. Enter SAP ONE Support Launchpad, navigate to **Software Downloads**, and search for `XS advanced client`. Download the zip archive of the newest release for the operating system that runs on your Jenkins slave machine.
 
     > [SAP ONE Support Launchpad](https://launchpad.support.sap.com/)
 
 2. Log in to the Jenkins slave machine as `root`.
 
-3. Unpack the zip archive containing the XSA client into a dedicated directory. Our example uses `/opt/sap/xs`:
+3. Unpack the zip archive containing the XS advanced client into a dedicated directory. Our example uses `/opt/sap/xs`:
 
     ```
     mkdir -p /opt/sap/xs
@@ -198,11 +198,11 @@ In that case, please see paragraph 8.1 "Setting Up and Preparing the npm Registr
 
 
 
-### 4. Configuring the SAP HANA XSA System 
+### 4. Configuring the SAP HANA XS Advanced System 
 
 ### 4.1 Installing and Configuring SAP Web IDE for SAP HANA
 
-To develop SAP HANA XSA applications a SAP Web IDE for SAP HANA is used and installed. 
+To develop SAP HANA XS advanced applications a SAP Web IDE for SAP HANA is used and installed. 
 For information about installing SAP Web IDE for SAP HANA, see the official documentation.
 
 > [SAP Web IDE for SAP HANA - Installation and Upgrade Guide](https://help.sap.com/viewer/1a8e7ab05a2e4119b02b702f211422f5/2.0.00/en-US/c0563b9c5cbd4a78ab0e58c6bc97bedb.html)   
@@ -218,7 +218,7 @@ One step that we highlight here is configuring the npm cache. The MTA extension 
 
     > [SAP ONE Support Launchpad, Software Downloads](https://launchpad.support.sap.com/#/softwarecenter)  
 
-    Choose the appropriate Service Pack, download the zip file, and store it to a directory on a machine where the XSA command-line tool is installed.
+    Choose the appropriate Service Pack, download the zip file, and store it to a directory on a machine where the XS advanced command-line tool is installed.
 
 2. Open the release notes of the chosen service pack. In the SAP ONE Support Launchpad, enter `SAP WEB IDE 2` into the search field and select `Knowledge Base` from the drop-down box. Open the central release note for your chosen service pack and follow the instructions there. Download the MTA extension file (extension `mtaext`) which is attached to the note.
 
@@ -226,7 +226,7 @@ One step that we highlight here is configuring the npm cache. The MTA extension 
 
     Store the `mtaext` file to the same directory as the Web IDE zip file.
 
-3. Connect to the SAP HANA XSA development system by setting the API endpoint to the SAP HANA XSA system for all sub-sequent `xs` commands.
+3. Connect to the SAP HANA XS advanced development system by setting the API endpoint to the SAP HANA XS advanced system for all sub-sequent `xs` commands.
 
     ```
     xs api https://<host>:3<instance-number>30
@@ -234,13 +234,13 @@ One step that we highlight here is configuring the npm cache. The MTA extension 
 
     You can verify the endpoint by entering `xs api`.
 
-4. Log in to your SAP HANA XSA system:
+4. Log in to your SAP HANA XS advanced system:
 
     ```
     xs login -o <your organization> -s <your space>
     ```
 
-    You are asked for a username and password. Log in as your administrator user (our setup uses `XSA_ADMIN`) which was created during the installation of the XSA instance. Enter the organization and space names that you specified during installation and to which the administrative applications have been deployed. Our setup assumes `myorg` as the name of the organization and `SAP` as the name of the space.
+    You are asked for a username and password. Log in as your administrator user (our setup uses `XSA_ADMIN`) which was created during the installation of the XS advanced instance. Enter the organization and space names that you specified during installation and to which the administrative applications have been deployed. Our setup assumes `myorg` as the name of the organization and `SAP` as the name of the space.
 
 5. Change to the directory where the SAP Web IDE zip file and the `mtaext` file are located. Open the `mtaext` file and add the following lines:
 
@@ -265,33 +265,33 @@ One step that we highlight here is configuring the npm cache. The MTA extension 
     ```
 
 
-### 4.2 Configuring the user management in SAP HANA XSA
+### 4.2 Configuring the user management in SAP HANA XS Advanced
 
-Some configuration steps are required to enable developers and the CI process to work with SAP HANA XSA. This procedure creates all the needed spaces, grants permissions, and enables the DI builder component to be triggered from SAP Web IDE.
+Some configuration steps are required to enable developers and the CI process to work with SAP HANA XS advanced. This procedure creates all the needed spaces, grants permissions, and enables the DI builder component to be triggered from SAP Web IDE.
 
 #### Procedure
 
-##### Connecting to the XSA space via the command-line client
+##### Connecting to the XS advanced space via the command-line client
 
-1. Log in to a machine where the XSA command-line tool is installed. This could be the Jenkins slave machine or any other host.
+1. Log in to a machine where the XS advanced command-line tool is installed. This could be the Jenkins slave machine or any other host.
 
-2. Log in to the XSA system using the client as described in paragraph 4.1.
+2. Log in to the XS advanced system using the client as described in paragraph 4.1.
 
-3. Get the URL of the XSA administration front end by executing the following command:
+3. Get the URL of the XS advanced administration front end by executing the following command:
 
     ```
     xs app --urls xsa-admin
     ```
 
-    This URL administers access to the XSA system using the frontend. All actions can also be performed using the `xs` command from the command line.
+    This URL administers access to the XS advanced system using the frontend. All actions can also be performed using the `xs` command from the command line.
     
 
 ##### Creating users
 
 Use the administrator user only for administrative purposes. In our example, we set up two different users:
 
-- One user is a developer who is creating an XSA application. This user needs permissions to work with SAP Web IDE and to deploy applications into a space in the XSA system for manual tests during development. The name of the user is `SAMPLEUSER`.
-- One machine user for the CI process automatically deploys the application to the XSA system. The name of the user is `JENKINS`.
+- One user is a developer who is creating an XS advanced application. This user needs permissions to work with SAP Web IDE and to deploy applications into a space in the XS advanced system for manual tests during development. The name of the user is `SAMPLEUSER`.
+- One machine user for the CI process automatically deploys the application to the XS advanced system. The name of the user is `JENKINS`.
 
 1. Enter XS Advanced Administration and Monitoring Tools by using a browser to the URL obtained above. Log in as user `XSA_ADMIN`.
 
@@ -313,7 +313,7 @@ The passwords you set for the users are initial ones; when these users initially
 
 ##### Creating a Role Collection for SAP Web IDE access
 
-The user `SAMPLEUSER` does not yet have permission for accessing SAP Web IDE on the XSA system yet. We create a role collection, which then can be assigned to the user. We also need an administrative role for SAP Web IDE that is assigned to `XSA_ADMIN`.
+The user `SAMPLEUSER` does not yet have permission for accessing SAP Web IDE on the XS advanced system yet. We create a role collection, which then can be assigned to the user. We also need an administrative role for SAP Web IDE that is assigned to `XSA_ADMIN`.
 
 > [Enabling Access to the SAP Web IDE Administration and Development Tools](https://help.sap.com/viewer/1a8e7ab05a2e4119b02b702f211422f5/2.0.01/en-US/731c647f126d4850a176ff4aa2a35381.html)
 
@@ -353,7 +353,7 @@ The user `SAMPLEUSER` does not yet have permission for accessing SAP Web IDE on 
 
 ### 4.3 Creating Organizations and Spaces
 
-The design of organizations and spaces depends on the setup of your XSA system landscape and the processes that you are planning to implement. An organization is an entity in the XSA system that can be shared by a couple of users by means of resources. Any organization has at least one space. Applications are always deployed into a dedicated space. The setup of spaces that we use for this example is as follows:
+The design of organizations and spaces depends on the setup of your XS advanced system landscape and the processes that you are planning to implement. An organization is an entity in the XS advanced system that can be shared by a couple of users by means of resources. Any organization has at least one space. Applications are always deployed into a dedicated space. The setup of spaces that we use for this example is as follows:
 
 - A space named `DEV`, which is used by the developer to manually deploy the application for ad hoc tests. This space is located in the default organization `myorg`, in which an SAP Web IDE is also deployed. You can choose any organization for your space; however, SAP Web IDE must also be deployed into a space of the same organization.
 
@@ -365,7 +365,7 @@ The design of organizations and spaces depends on the setup of your XSA system l
 
     - `PROD`: Space hosting the application in productive usage.
 
-In our scenario, we assume that all organizations and spaces are located on the same XSA system. This may differ in your setup; eventually, you must log in to different XSA systems to create the organizations and spaces.
+In our scenario, we assume that all organizations and spaces are located on the same XS advanced system. This may differ in your setup; eventually, you must log in to different XS advanced systems to create the organizations and spaces.
 
 1. Enter XS Advanced Administration and Monitoring Tools in a browser. Log in as user `XSA_ADMIN`.
 
@@ -398,7 +398,7 @@ In our scenario, we assume that all organizations and spaces are located on the 
 
 ### 4.4 Uploading Git Certificate
 
-SAP Web IDE for HANA connects via HTTPS to a Git repository server, in our example, Gerrit. To enable a trusted connection to Gerrit, you must upload its server certificate to the XSA system.
+SAP Web IDE for HANA connects via HTTPS to a Git repository server, in our example, Gerrit. To enable a trusted connection to Gerrit, you must upload its server certificate to the XS advanced system.
 
 1. Open a browser and establish an HTTPS connection to your Gerrit server.
 
@@ -419,7 +419,7 @@ Now the new developer user is able to use the integration of SAP Web IDE with th
 
 ### 4.5 Space Enablement
 
-When a developer user wants to build the application which he is currently developing in SAP Web IDE, a builder application (its technical name is `di-builder`) must be deployed in that space to which the user is logged in. Use the Space Enablement application, which is part of the SAP Web IDE installation on the XSA system, to deploy the builder application.
+When a developer user wants to build the application which he is currently developing in SAP Web IDE, a builder application (its technical name is `di-builder`) must be deployed in that space to which the user is logged in. Use the Space Enablement application, which is part of the SAP Web IDE installation on the XS advanced system, to deploy the builder application.
 
 1. Enter XS Advanced Administration and Monitoring Tools in a browser. Log in as user `XSA_ADMIN`.
 
@@ -435,9 +435,9 @@ When a developer user wants to build the application which he is currently devel
 
 
 
-### 5. Creating the Tiny World XSA Application
+### 5. Creating the Tiny World XS Advanced Application
 
-In our example, we use the Tiny World tutorial to show something a bit more concrete than a simple Hello-World example. For further details, see the SAP HANA XSA Developer Guide: 
+In our example, we use the Tiny World tutorial to show something a bit more concrete than a simple Hello-World example. For further details, see the SAP HANA XS advanced Developer Guide: 
 
 > [SAP HANA Developer Guide for SAP HANA XS Advanced Model](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.00/en-US/1547c14105be409ebfc3a9e9634a7188.html)  
 > [Tiny World Tutorial](https://blogs.sap.com/2016/03/28/developing-with-xs-advanced-a-tinyworld-tutorial)
@@ -504,7 +504,7 @@ In our example, we use the Tiny World tutorial to show something a bit more conc
 
 ### 6.1 Creating a Jenkins CI Build Job
 
-We create the job for the CI build, which is triggered on each change that is merged into the `master` branch. The configuration and credentials that are used in this section are based on the examples in [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html). The Jenkins CI build job fetches the sources from Git and starts the build of the MTA project by calling the MTA archive builder; the build result is an `mtar` file. The deployment of the `mtar` file to an XSA space requires connection details like host, port, space, organization, and login credentials.
+We create the job for the CI build, which is triggered on each change that is merged into the `master` branch. The configuration and credentials that are used in this section are based on the examples in [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html). The Jenkins CI build job fetches the sources from Git and starts the build of the MTA project by calling the MTA archive builder; the build result is an `mtar` file. The deployment of the `mtar` file to an XS advanced space requires connection details like host, port, space, organization, and login credentials.
 
 
 #### Procedure
@@ -515,7 +515,7 @@ We create the job for the CI build, which is triggered on each change that is me
     
     Name                   | Default Value
     :----------------------| :------------------------------------------------------
-    `XSA_API_ENDPOINT`     | XSA API endpoint URL, example: `https://<hostname>:3<instance number>30`
+    `XSA_API_ENDPOINT`     | XS advanced API endpoint URL, example: `https://<hostname>:3<instance number>30`
     `ORGANIZATION`         | Organization of the application. In our example: `CI`
     `CI_SPACE`             | CI build stage space of the application. In our example: `CI_BUILD`
     `TEST_SPACE`           | Test space of the application. In our example: `TEST`
@@ -595,7 +595,7 @@ We create the job for the CI build, which is triggered on each change that is me
 
     After successful deployment, the application can be tested automatically. We leave this step to be performed according to your needs.
 
-    At the end, we do some clean up that creates a defined state in the XSA space for the CI builds that follow after the current one: we undeploy the application and remove any running service. The HDI service, which is instantiated automatically during application deployment might contain some test data that is created by automated tests; we do not want this data to be present during other CI build runs.
+    At the end, we do some clean up that creates a defined state in the XS advanced space for the CI builds that follow after the current one: we undeploy the application and remove any running service. The HDI service, which is instantiated automatically during application deployment might contain some test data that is created by automated tests; we do not want this data to be present during other CI build runs.
     
 5. Archive the artifact and the `mta.yaml` (which contains the project metadata) to be available for subsequent Jenkins jobs. Select **Add post-build action > Archive the artifacts** and enter `*.mtar, mta.yaml` into the **Files to archive** field.
     
@@ -605,9 +605,9 @@ We create the job for the CI build, which is triggered on each change that is me
 
 8. Save.
 
-9. Define the credentials for accessing the SAP HANA XSA system as global passwords. In Jenkins, go to **Manage Jenkins > Configure System > Global Passwords**. Select **Add**, set the **Name** to `HANA_XSA_USER` and the **Password** to the user name (in our example, `JENKINS`). Select **Add** again and set the **Name** to `HANA_XSA_PASSWORD` and the **Password** to the password for `HANA_XSA_USER`. Save your changes.
+9. Define the credentials for accessing the SAP HANA XS advanced system as global passwords. In Jenkins, go to **Manage Jenkins > Configure System > Global Passwords**. Select **Add**, set the **Name** to `HANA_XSA_USER` and the **Password** to the user name (in our example, `JENKINS`). Select **Add** again and set the **Name** to `HANA_XSA_PASSWORD` and the **Password** to the password for `HANA_XSA_USER`. Save your changes.
 
-10. In Jenkins, navigate to the job and trigger it manually by selecting **Build with Parameters > Build**. Leave the default values of the parameters. Monitor the build and deployment of the created `mtar` file to the XSA instance.
+10. In Jenkins, navigate to the job and trigger it manually by selecting **Build with Parameters > Build**. Leave the default values of the parameters. Monitor the build and deployment of the created `mtar` file to the XS advanced instance.
 
 
 ### 6.2 Creating a Jenkins Job for Deployment to the Test System
@@ -621,7 +621,7 @@ From a technical point of view, this job imports the `mtar` file that was archiv
 
 1. Open Jenkins and select **New Item > Freestyle Job**. Enter `CI_TinyWorld_master_testDeploy`.
 
-2. The XSA system parameters are taken from the CI build job. Select **This build is parametrized**, enter the following string parameters and leave their values empty:
+2. The XS advanced system parameters are taken from the CI build job. Select **This build is parametrized**, enter the following string parameters and leave their values empty:
     
     Name                   | Default Value
     :--------------------- | :------------------------------------------------------
@@ -1018,9 +1018,9 @@ This paragraph describes the differences relevant for old SAP Web IDE releases.
 
 Before installing SAP Web IDE, first prepare the mentioned npm registry, since its URL must already be configured while installing SAP Web IDE. The npm registry serves the following purposes:
 
-1. It supports the CI build running on Jenkins by hosting SAP-specific node modules that are needed to build XSA applications. These modules can be fetched from SAP ONE Support Launchpad, as described below.
+1. It supports the CI build running on Jenkins by hosting SAP-specific node modules that are needed to build XS advanced applications. These modules can be fetched from SAP ONE Support Launchpad, as described below.
 
-2. The CI build of the JavaScript modules is based on Grunt, and thus dependencies to Grunt must be added to the modules' `package.json` file. The development infrastructure (DI) builder triggered by SAP Web IDE must be able to resolve the dependencies declared in `package.json`. You can configure the npm cache on the XSA system (the application named `di-local-npm-registry`) to forward all requests for modules that are not provided by SAP and thus not contained in the cache to a configured npm registry. In our example, the npm registry containing Grunt is implemented as a proxy repository on Nexus pointing to the public npm registry `http://registry.npmjs.org/`. You can handle dependencies to any other published npm module in the same way.
+2. The CI build of the JavaScript modules is based on Grunt, and thus dependencies to Grunt must be added to the modules' `package.json` file. The development infrastructure (DI) builder triggered by SAP Web IDE must be able to resolve the dependencies declared in `package.json`. You can configure the npm cache on the XS advanced system (the application named `di-local-npm-registry`) to forward all requests for modules that are not provided by SAP and thus not contained in the cache to a configured npm registry. In our example, the npm registry containing Grunt is implemented as a proxy repository on Nexus pointing to the public npm registry `http://registry.npmjs.org/`. You can handle dependencies to any other published npm module in the same way.
 
 Our implementation uses Nexus as the repository server. The set up of Nexus is described in the [Artifact Repository](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html) that is part of this CI Best Practices Guide. We provide one npm registry for type `hosted` for purpose 1 and one npm registry of type `proxy` to the public npm registry for purpose 2. To create a unified view for these registries, we define a repository group containing them. Finally, we upload the SAP modules to the registry mentioned first. Figure 3 shows the npm registry setup.
 

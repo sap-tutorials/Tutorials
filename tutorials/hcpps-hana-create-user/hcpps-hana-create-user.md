@@ -2,7 +2,7 @@
 title: Setup a HANA user account
 description: Configure a user account with the relevant roles and privileges to use the SAP Cloud for predictive services
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, products>sap-hana, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
@@ -67,6 +67,7 @@ CREATE USER HCPPSTRIAL PASSWORD Welcome17Welcome17 NO FORCE_FIRST_PASSWORD_CHANG
 ALTER USER  HCPPSTRIAL DISABLE PASSWORD LIFETIME;
 
 call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::Developer','HCPPSTRIAL');
+call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','HCPPSTRIAL');
 
 GRANT AFL__SYS_AFL_APL_AREA_EXECUTE TO HCPPSTRIAL;
 GRANT AFLPM_CREATOR_ERASER_EXECUTE TO HCPPSTRIAL;

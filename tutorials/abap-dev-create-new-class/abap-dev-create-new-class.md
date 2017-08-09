@@ -29,7 +29,7 @@ Encapsulating the data retrieval logic in a global ABAP class enables you to sep
 Finally, you will learn how to display the data in a SAP List Viewer ("`ALV Grid`").
 
 ### Time to Complete
-**30 Minutes**
+**30 Min**
 
 ---
 

@@ -2,7 +2,7 @@
 title: Test the "Forecast" service
 description: Using a REST client, you will test the "Forecast" SAP Cloud Platform predictive service
 primary_tag: products>sap-cloud-platform-predictive-service
-tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
@@ -102,7 +102,13 @@ First we need to register the dataset we will be using during this tutorial.
 
 Additionally, we will adjust the variables description which will help improve the quality of our model.
 
-As described in the **Step 1: Register a dataset** from the previous tutorial, register the Cash Flow dataset using the following elements:
+As described in [**Step 1** of **Test the "Dataset" services** tutorial](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Cash Flow dataset using the following elements:
+
+Open a new tab in ***Postman***.
+
+> If you don't have ***Postman*** installed yet, you can refer to the following how-to guide: [Install Postman extension for Google Chrome as a REST client](https://www.sap.com/developer/how-tos/2017/07/api-tools-postman-install.html)
+
+Fill in the following information:
 
 Field Name     | Value
 -------------- | --------------

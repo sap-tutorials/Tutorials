@@ -19,11 +19,11 @@ You will add a map display to one of the tabs in your app and geolocate an addre
 ![Sample of the map from the Google Static Maps API Call](map-final-output.png)
 
 ### Time to Complete
-**15-20 Min**.
+**20 Min**.
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Read about Google Static Maps API)]
-You will be using the Google Static Maps API. For more information on this API, you can visit the [API Documentation Page](https://developers.google.com/maps/documentation/static-maps/intro) ([link](https://developers.google.com/maps/documentation/static-maps/intro)).
+You will be using the Google Static Maps API. For more information on this API, you can visit the [API Documentation Page](https://developers.google.com/maps/documentation/static-maps/intro).
 
 The Static Maps API returns an image that you can display in a HTML image tag.   
 
