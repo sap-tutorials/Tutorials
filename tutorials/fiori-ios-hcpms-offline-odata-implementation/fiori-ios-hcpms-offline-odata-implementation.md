@@ -93,22 +93,20 @@ var offlineODataProvider: OfflineODataProvider
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Change init() event hook)]
+[ACCORDION-BEGIN [Step 6: ](Change initializer)]
 
-Replace the `init` event hook with the following:
+Replace the `init()` initializer with the following:
 
 ```swift
 init(urlSession: SAPURLSession) {
     var offlineParameters = OfflineODataParameters()
 
-    // append the X-SMP-APPID header
-    offlineParameters.customHeaders = ["X-SMP-APPID": Constants.appId]
     offlineParameters.storeName = "OFFLINE_STORE"
     offlineParameters.enableRepeatableRequests = true
 
     // create offline data provider
     self.offlineODataProvider = try! OfflineODataProvider(
-        serviceRoot: URL(string: Constants.appUrl)!,
+        serviceRoot: Constants.appUrl,
         parameters: offlineParameters,
         sapURLSession: urlSession
     )
