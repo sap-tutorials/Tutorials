@@ -581,5 +581,8 @@ If you set `global_allocation_limit` to a non-zero value, SAP HANA, express edit
 
 >**Note**: Do not set `global_allocation_limit` to a value above the limit of your license. This can cause the database to lock down.
 
+[DONE]
+[ACCORDION-END]
+
 ## Next Steps
  - [SAP HANA 2.0, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html)
