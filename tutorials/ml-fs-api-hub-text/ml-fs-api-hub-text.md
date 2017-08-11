@@ -1,5 +1,5 @@
 ---
-title: SAP Leonardo Machine Learning  for text content on the SAP API Business Hub
+title: Machine Learning services for text content
 description: Discover the SAP Leonardo Machine Learning Functional Service consuming text content on the SAP API Business Hub
 primary_tag: products>sap-leonardo-machine-learning
 tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-leonardo-machine-learning,  products>sap-api-management, products>sap-cloud-platform]
@@ -10,6 +10,7 @@ tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-leon
  - [Sign up for an free trial account on the SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
+ - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
  - [Consuming the "Topic Detection" SAP Leonardo Machine Learning Functional Service in a SAPUI5 application](http://www.sap.com/developer/tutorials/ml-fs-text-sapui5.html)
  - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
@@ -292,4 +293,5 @@ For more information, you can also check the online [SAP Leonardo Machine Learni
 [ACCORDION-END]
 
 ## Next Steps
+ - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
   - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
