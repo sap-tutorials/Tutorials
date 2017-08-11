@@ -168,7 +168,7 @@ Column names that match properties of the entity will automatically map. You can
 
 ![parts entity expanded to show fields](24a.png)
 
-**Drag and drop the image field to the image control**.
+Drag and drop the **Image** field to the **Image Control**.
 
 ![images field mapped to image column](24b.png)
 
