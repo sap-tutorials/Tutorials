@@ -95,7 +95,7 @@ Scroll up a little for the **Query Parameters** section and click on the **Brows
 
 ![SAP API Business Hub](05.png)
 
-Select any image file on your local machine (and if you are missing some inspiration, use [ Google Search](https://www.google.fr/search?q=duck&tbm=isch) to search for duck images and make sure you pick a "JPEG", "PNG", "TIF" or "BMP" format with a resolution below 1024 px else you will receive a 400 error response).
+Select any image file on your local machine (and if you are missing some inspiration, use [ Google Search](https://www.google.fr/search?q=duck&tbm=isch) to search for duck images and make sure you pick a "JPEG", "PNG", "TIF" or "BMP" format with a resolution below 1024 pixels else you will receive a 400 error response).
 
 Now scroll down a bit further and click on ![try-out](00-try-out.png).
 
