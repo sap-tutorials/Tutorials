@@ -1,8 +1,8 @@
 ---
-title: SAP Leonardo Machine Learning "Image Classification" in a Java program
+title: SAP Leonardo Machine Learning "Image Classification" service in a Java program
 description: Discover how to implement SAP Leonardo Machine Learning Functional Service in a Java program
-primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, topic>java, topic>machine-learning, topic>java, products>sap-api-management]
+primary_tag: products>sap-leonardo-machine-learning
+tags: [ tutorial>beginner, topic>java, topic>machine-learning, products>sap-leonardo-machine-learning, topic>java, products>sap-api-management]
 ---
 
 ## Prerequisites  

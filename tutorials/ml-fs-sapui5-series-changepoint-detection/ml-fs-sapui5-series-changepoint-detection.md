@@ -1,8 +1,8 @@
 ---
 title: SAP Leonardo Machine Learning "Time Series Change Point Detection" in a SAPUI5 application
 description: Discover how to implement SAP Leonardo Machine Learning Functional Service in a SAPUI5 application
-primary_tag: topic>machine-learning
-tags: [ tutorial>beginner, topic>sapui5, topic>html5, topic>machine-learning, products>sap-api-management, products>sap-cloud-platform, products>sap-web-ide]
+primary_tag: products>sap-leonardo-machine-learning
+tags: [ tutorial>beginner, topic>sapui5, topic>html5, topic>machine-learning, products>sap-leonardo-machine-learning, products>sap-api-management, products>sap-cloud-platform, products>sap-web-ide]
 ---
 
 ## Prerequisites  
@@ -80,7 +80,7 @@ Go to your [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure a destination for the SAP API Business Hub)]
+[ACCORDION-BEGIN [Step 4: ](Configure your destination)]
 
 You will need to create a destination in your SAP Cloud Platform account that allow will your applications to connect to external APIs such as the SAP API Business Hub.
 

@@ -1,8 +1,8 @@
 ---
 title: SAP Leonardo Machine Learning for images on the SAP API Business Hub
 description: Discover the SAP Leonardo Machine Learning Functional Service consuming images content on the SAP API Business Hub
-primary_tag: topic>machine-learning
-tags: [tutorial>beginner, topic>cloud, topic>machine-learning,  products>sap-api-management, products>sap-cloud-platform]
+primary_tag: products>sap-leonardo-machine-learning
+tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-leonardo-machine-learning,  products>sap-api-management, products>sap-cloud-platform]
 ---
 
 ## Prerequisites  
