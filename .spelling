@@ -65,6 +65,7 @@ keystore
 Lifecycle
 Lumira
 macOS
+Mendix
 MTA
 MTAs
 multistore
@@ -120,6 +121,8 @@ Shapefiles
 SQLScript
 SRS
 ssh
+Subaccount
+subaccount
 Subheader
 subselect
 supertype
