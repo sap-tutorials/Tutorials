@@ -146,7 +146,7 @@ The tools that are required for deployment to SAP Cloud Platform are already ref
     ...
     ```
      
-    > [Installing the SAP Cloud Platform SDK](https://help.hana.ondemand.com/mavenSite/usage.html)
+    > [SAP Cloud Platform Maven Plugin](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4cbdab6e2eb14c92ab76540ffb32174c.html)
 
     The profile `cloud-integration-tests` must also contain the Maven steps to deploy the application and restart it in the QA environment. Include the following executions as part of the `${sap.cloud.sdk.plugin}` plugin configuration inside the profile:
     
