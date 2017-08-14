@@ -145,7 +145,7 @@ You might have compatibility problems between Selenium and Firefox, it might hap
     ...
     ```
 
-    > [SAP Cloud Platform Maven Plugin: Usage](https://help.hana.ondemand.com/mavenSite/usage.html)
+    > [SAP Cloud Platform Maven Plugin](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4cbdab6e2eb14c92ab76540ffb32174c.html)
 
 
 #### Requirements for Selenium tests
@@ -281,7 +281,7 @@ The deployment to SAP Cloud Platform is performed in the Maven build using the S
     ...
     ```
 
-    > [SAP Cloud Platform Maven Plugin: Usage](https://help.hana.ondemand.com/mavenSite/usage.html)  
+    > [SAP Cloud Platform Maven Plugin](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4cbdab6e2eb14c92ab76540ffb32174c.html)  
 
 
 ##### Configure the Jenkins job
