@@ -31,9 +31,9 @@ GitHub's public Source Code Management (SCM) service, and Travis CI as the build
 
 GitHub and Travis CI are both also available in enterprise on-premise versions. You can also set up mixed scenario, using one part in the cloud and the other on-premise.
 
-> GitHub: https://github.com  
-> GitHub Enterprise: https://enterprise.github.com/home  
-> Travis CI: https://travis-ci.org, https://en.wikipedia.org/wiki/Travis_CI
+> [GitHub](https://github.com)  
+> [GitHub Enterprise](https://enterprise.github.com/home)  
+> [Travis CI](https://travis-ci.org)
 
 
 ### Basic setup
@@ -48,7 +48,7 @@ Figure 1: The component landscape
 
 1. Enter the GitHub site and log in to your account.
   
-    > GitHub: https://github.com
+    > [GitHub](https://github.com)
 
 2. Create a new repository with a name of your choice. This example uses the name `generic_java_project`.
 
@@ -87,7 +87,7 @@ Figure 1: The component landscape
 
 6. Open the URL of Travis CI in your browser and select **Sign in with GitHub**. You log in to Travis CI with your GitHub account.
   
-    > Travis CI: https://travis-ci.org
+    > [Travis CI](https://travis-ci.org)
     
 7. In the Travis CI front end, select **My Repositories** and select **+**.
  
@@ -126,7 +126,7 @@ There is no additional configuration required to implement this; Travis CI react
 
 The development paradigm that uses pull requests is described below. For more information, please see the GitHub help page:
 
-> GitHub Help: https://help.github.com/
+> [GitHub Help](https://help.github.com/)
 
 Figure 2 illustrates the mechanics of pull requests.
 
