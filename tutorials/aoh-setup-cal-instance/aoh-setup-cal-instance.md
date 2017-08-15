@@ -76,11 +76,11 @@ You can use SAP GUI on your computer or from the RDP to test your connection. Us
 
 [ACCORDION-BEGIN [Step 4: ](Map your hosts file)]
 
-Take note of the **SAP Frontend External IP Address**
+Take note of the **SAP Front end External IP Address**
 
 ![External IP Address](7.png)
 
-Open the file `/etc/hosts` in Mac or `C:\Windows\System32\drivers\etc\hosts` in MS Windows. Add the external frontend IP Address and `vhcala4hci vhcala4hci.dummy.nodomain`
+Open the file `/etc/hosts` in Mac or `C:\Windows\System32\drivers\etc\hosts` in MS Windows. Add the external front end IP Address and `vhcala4hci vhcala4hci.dummy.nodomain`
 
 ```
 <<IP address>>  vhcala4hci vhcala4hci.dummy.nodomain
