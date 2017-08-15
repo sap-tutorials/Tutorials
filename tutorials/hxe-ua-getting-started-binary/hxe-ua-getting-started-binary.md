@@ -31,7 +31,9 @@ Installing SAP HANA 2.0, express edition installs a permanent 32 GB license auto
 
 1. In a terminal, log in as the `<sid>adm` user:
 
-    `sudo su -l <sid>adm`
+    ```
+    sudo su -l <sid>adm
+    ```
 
 2. Enter `HDB info`. The following services must be running:
     * `hdbnameserver`
