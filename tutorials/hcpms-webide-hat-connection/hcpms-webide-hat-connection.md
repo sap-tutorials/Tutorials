@@ -18,7 +18,7 @@ tags: [products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>htm
 In this tutorial, will start the Hybrid App Toolkit Connector and test the communication between it and SAP Web IDE. You must have completed the download and installation process for the Hybrid App Toolkit before starting this section.
 
 ### Time to Complete
-**< 5 Min**.
+**5 Min**.
 
 ---
 

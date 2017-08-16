@@ -2,7 +2,7 @@
 title: Test the "Dataset" service
 description: Using a REST client, you will test the "Dataset" SAP Cloud for predictive services
 primary_tag: products>sap-cloud-platform-predictive-service
-tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites

@@ -3,9 +3,9 @@
 var checkLink = require('markdown-link-check');
 
 module.exports = function(fname, links, callback) {
-    if(links.length == 0){
+  //  if(links.length == 0){
       callback({"isPassed":true, "deadlinks":[]});
-    }else{
+  /*  }else{
       //exclude readme files
       if (fname != "readme.md" && fname != "README.md") {
               var isPassed = true;
@@ -29,5 +29,5 @@ module.exports = function(fname, links, callback) {
       } else {
           callback(null);
       }
-    }
+    }*/
 }

@@ -1,7 +1,7 @@
 ---
 title: Setup PuTTY and WinSCP to access your HANA Express Edition on Google Cloud Platform
 description: This is an optional step in the tutorial series to setup a HANA Express Edition on Google Cloud Platform. This tutorial will guide you through the setup of two of the most popular clients to access your Ubuntu Virtual Machine on a Windows PC.
-primary_tag: products>sap-hana\,-express-edition 
+primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition  ]
 ---
 
@@ -50,6 +50,8 @@ In the Advanced settings, go into the `Authentication` menu in the `SSH` branch,
 Select the private key you downloaded from your home `.ssh` folder in the previous tutorial:
 
 ![WinSCP - Open private key](4.png)
+
+>Note: If you are using the Google launcher version or the keys are not there, check [this blog](https://blogs.sap.com/2017/07/21/get-your-ssh-keys-to-hana-express-instance-in-google-cloud-platform/)
 
 Choose yes for the tool to convert it to the needed format:
 

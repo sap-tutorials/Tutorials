@@ -1,7 +1,7 @@
 ---
 title: HANA Express Edition - Execute the Installation script and finish setup
 description: This tutorial will guide you through the execution of the installation scripts to set your HANA Express Edition platform up.
-primary_tag: products>sap-hana\,-express-edition 
+primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition  ]
 ---
 
@@ -18,6 +18,7 @@ SAP HANA, express edition (HXE) is officially supported on SLES and RHEL. SAP Co
 ## Details
 ### You will learn  
 This tutorial will guide you through the final process to have your HANA Express Edition instance up and running on Google Cloud Platform.
+**Note: Update for HANA 2.0 SPS02 pending**
 
 ### Time to Complete
 **15 Min**
@@ -44,7 +45,16 @@ Double your resources for the installation process by editing the Virtual Machin
 
 [ACCORDION-BEGIN [Step 2: ](Execute the installation script)]
 
-Log in again to the SSH client. Become `root` and go to your home directory, or into the directory where you extracted the installation packages. You will now execute the installation script:
+Log in again to the SSH client. Become `root` and go to your home directory, or into the directory where you extracted the installation packages.
+
+If you restarted your Virtual Machine, you need to set the alias again:
+
+```
+alias chkconfig='sysv-rc-conf'
+
+```
+
+You will now execute the installation script:
 
 ```
 sudo su –

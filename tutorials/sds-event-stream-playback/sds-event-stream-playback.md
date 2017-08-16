@@ -7,10 +7,10 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-smar
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Generating Alerts using a Derived Window in SAP HANA smart data streaming](http://www.sap.com/developer/tutorials/sds-event-stream-alerts.html)
+ - **Tutorials:** [Generating Alerts using a Derived Window in SAP HANA smart data streaming](https://www.sap.com/developer/tutorials/sds-event-stream-alerts.html)
 
 ## Next Steps
-- **Tutorials:** [Watch for Patterns of Events and Generate Alerts](http://www.sap.com/developer/tutorials/sds-event-stream-pattern-detection.html)
+- **Tutorials:** [Watch for Patterns of Events and Generate Alerts](https://www.sap.com/developer/tutorials/sds-event-stream-pattern-detection.html)
 
 ## Details
 ### You will learn  
@@ -59,8 +59,7 @@ Click Select Project icon in the top right corner of the **Playback** window to 
 
 [ACCORDION-BEGIN [Step 4: ](Select the file containing the simulated data to play back)]
 
-Right click on the following link and select **Save link/target as...** to download the sample data file:
- [`machinedata.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/sds-event-stream-playback/machinedata.csv)
+Download the sample data file as follows: Right click on the following link and select **Save link/target as...** [`machinedata.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/sds-event-stream-playback/machinedata.csv)
 
 Click Select Playback File icon shown below to select the data file to use.
 
@@ -96,8 +95,3 @@ Click each viewer tab to view the output from each stream/window.
 
 [DONE]
 [ACCORDION-END]
-
----
-
-## Next Steps
-- **Tutorials:** [Watch for Patterns of Events and Generate Alerts](http://www.sap.com/developer/tutorials/sds-event-stream-pattern-detection.html)
