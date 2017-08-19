@@ -76,10 +76,10 @@ Check if your machine has the recommended hardware to successfully install and r
 
 - **Hardware `Virtualization`** - (Intel processors only) For Intel processors, `virtualization` is a BIOS setting known as either *Intel `Virtualization` Technology* or *Intel `VT`*. Go to [Determine If Your Processor Supports Intel `Virtualization` Technology](http://www.intel.com/content/www/us/en/support/processors/000005486.html) to determine if your processor is capable of supporting `virtualization`. If `virtualization` is turned off on your `virtualization-capable` machine, consult documentation from your machine vendor on how to enable `virtualization` technology (or Intel `VT`) in the BIOS.
 
-#### Supported `Hypervisors`
+#### Supported Hypervisors
 
-Install a supported `hypervisor` on your machine if you don't have one already. `Hypervisors` are software products used for creating and running virtual machines.
-SAP HANA 2.0, express edition has been tested on these `hypervisors`:
+Install a supported hypervisor on your machine if you don't have one already. Hypervisors are software products used for creating and running virtual machines.
+SAP HANA 2.0, express edition has been tested on these hypervisors:
 
 - [`VMware Workstation Player 12.x`](http://www.vmware.com/products/player/playerpro-evaluation.html)
 
@@ -98,7 +98,7 @@ This tutorial uses VMware Player.
 
 [ACCORDION-BEGIN [Step 1: ](Install a Hypervisor)]
 
-You can install any supported `hypervisor`, but examples in this tutorial use VMware Player.
+You can install any supported hypervisor, but examples in this tutorial use VMware Player.
 
 1. Download VMware Player from [http://www.vmware.com](http://www.vmware.com/products/player/playerpro-evaluation.html) and run the installer.  
 
@@ -271,18 +271,18 @@ Run the Download Manager in console mode if you're used to a command line interf
 
     | <file> value (`linuxx86_64`)       |    Description     |
     | ------------- |-------------------|
-    | Getting_Started_HANAexpress_VM.pdf            | User manual in PDF format: `Getting Started with SAP HANA, express edition (Virtual Machine Method)`. |
+    | Getting_Started_HANAexpress_VM.pdf            | User manual in PDF format: _Getting Started with SAP HANA, express edition (Virtual Machine Method)_. |
     | `hxe.ova`           | Downloads `hxe.ova`; the server plus `XSC` and Application Function Library (AFL). |
     | `hxexsa.ova`           | Downloads `hxexsa.ova`; the server plus XS Advanced, Web IDE, and SAP HANA Cockpit. |       
     | additional_lang.tgz           | Downloads additional_lang.tgz. For languages other than English and German, this package is required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the `hxe.ova` and `hxexsa.ova` packages.)  |    
-    | eadesigner.tgz           | Valid only with `hxexsa.ova`. SAP EA Designer lets you capture, analyze, and present your organization's landscapes, strategies, requirements, processes, data, and other artifacts in a shared environment |   
+    | eadesigner.tgz           | Valid only with `hxexsa.ova`. SAP EA Designer lets you capture, analyze, and present your organization's landscapes, strategies, requirements, processes, data, and other artifacts in a shared environment. |   
     | sds.tgz           | Downloads SAP HANA Streaming Analytics. |   
     | sds_plugin.zip           | Downloads the Eclipse plugin for creating and deploying Streaming Analytics projects. |   
     | shine.tgz           | Valid only with `hxexsa.ova`. SAP HANA Interactive Education (SHINE) makes it easy to learn how to build applications on SAP HANA Extended Application Services Advanced Model (XSA).  |
     | eml.tgz           | Downloads HANA Extended Machine Learning AFL. |
     | clients_linux_x86_64.tgz           | Client download package for Linux machines (x86/64 architectures). Use the client packages to access developed SAP HANA, express edition applications from a client PC. |   
     | clients_linux_ppc64le.tgz           | Client download package for Linux machines (little endian on Power architectures). Use the client packages to access developed SAP HANA, express edition applications from a client PC. |   
-    | clients_windows.zip           | Client download package for Windows machines. Use the client packages to access developed SAP HANA, express edition applications from a client PC |   
+    | clients_windows.zip           | Client download package for Windows machines. Use the client packages to access developed SAP HANA, express edition applications from a client PC. |   
     | clients_mac.tgz           | Client download package for Mac. Use the client packages to access developed SAP HANA, express edition applications from a client PC.  |         
 
 5. Download one or more files.
@@ -293,7 +293,7 @@ Run the Download Manager in console mode if you're used to a command line interf
     HXEDownloadManager_linux.bin --ph proxy.yourcompany.corp --pp 8080 linuxx86_64 vm Getting_Started_HANAexpress_VM.pdf shine.tgz
     ```
 
-    This example uses the platform-independent Download Manager `HXEDownloadManager.jar`. It downloads `Getting Started with SAP HANA, express edition (Virtual Machine Method)` and `hxexsa.ova`.
+    This example uses the platform-independent Download Manager `HXEDownloadManager.jar`. It downloads _Getting Started with SAP HANA, express edition (Virtual Machine Method)_ and `hxexsa.ova`.
 
     ```bash
     java -jar HXEDownloadManager.jar linuxx86_64 vm Getting_Started_HANAexpress_VM.pdf hxexsa.ova
@@ -304,9 +304,9 @@ Run the Download Manager in console mode if you're used to a command line interf
 
 [ACCORDION-BEGIN [Step 5: ](Import the OVA)]
 
-Import the downloaded Open Virtual Appliance (OVA) file (either `hxe.ova` or `hxexsa.ova`) into your `hypervisor` to begin using SAP HANA 2.0, express edition.
+Import the downloaded Open Virtual Appliance (OVA) file (either `hxe.ova` or `hxexsa.ova`) into your hypervisor to begin using SAP HANA 2.0, express edition.
 
-This example uses `VMWare` player as the `hypervisor`. You can use any supported `hypervisor`.
+This example uses `VMWare` player as the hypervisor. You can use any supported hypervisor.
 
 1. Start `VMware` Player and select *Open a Virtual Machine*.  
 

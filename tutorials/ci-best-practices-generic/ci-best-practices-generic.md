@@ -56,7 +56,7 @@ Eclipse as development environment is commonly used but not required, and consid
  
     Alternatively, you may follow the steps for command line-based creation as described in the Gerrit documentation:  
     
-    > Documentation: https://gerrit-review.googlesource.com/Documentation/cmd-create-project.html
+    > [Gerrit: create-project](https://gerrit-review.googlesource.com/Documentation/cmd-create-project.html)
     
 5. Create an initial clone of the project on your PC and check out the `master` branch.
 
@@ -64,7 +64,7 @@ Eclipse as development environment is commonly used but not required, and consid
     `<Git repository root>/.git/hooks` directory. You can obtain this from `http://<hostname of Gerrit>:8080/tools/hooks/commit-msg`.
     Every developer who plans to do commits against Gerrit needs this hook.
      
-    > Documentation: https://git.eclipse.org/r/Documentation/cmd-hook-commit-msg.html
+    > [Git: Commit Message Hook](https://git.eclipse.org/r/Documentation/cmd-hook-commit-msg.html)
     
 7. Add the initial project files into the Git workspace.
     For example, add the following files:
@@ -134,7 +134,7 @@ Configure a Jenkins voter build for this branch. The global configurations are a
 
     The Jenkins project is now ready to listen for Gerrit events.
     
-    > Documentation: https://wiki.jenkins-ci.org/display/JENKINS/Gerrit+Trigger
+    > [Jenkins Gerrit Trigger Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Gerrit+Trigger)
     
 9. From the local sources on your PC, perform a small change, commit, and push it. Once the change reaches Gerrit, a Jenkins build is
     triggered. Depending on the build status, the code review is rated -1 or +1.

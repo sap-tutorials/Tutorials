@@ -15,7 +15,9 @@ tags: [  tutorial>beginner, topic>sapui5, products>build>build, products>sap-web
 
 ## Details
 ### You will learn  
-Describe what the user will learn from your tutorial and what the outcome will be.
+Learn how to import a completed and published prototype from BUILD into Web IDE. This will help you convert your prototype into a live application. This will be your guide or template for creating the real UI5/Fiori version.
+
+> Please note that an imported BUILD prototype should not be used for a production application.
 
 ### Time to Complete
 **15 Min**
@@ -64,12 +66,12 @@ In your SAP Cloud Platform cockpit, under Connectivity, select **Destinations**.
 
 ![Destinations highlighted in cockpit](7.png)
 
-**Download** the four destinations files.
+**Download** the four destinations files by **right clicking and selecting Save As** for each of the file.
 
-- [BUILD Production Destination](BUILD_Production)
-- [SAPUI5 Destination](sapui5-private)
-- [SAPUI5 Private Destination](sapui5-private-build)
-- [Web IDE Plugin](Web_IDE_PLUGIN)
+- [BUILD Production Destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/build-import-webide/BUILD_Production)
+- [SAPUI5 Destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/build-import-webide/sapui5-private)
+- [SAPUI5 Private Destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/build-import-webide/sapui5-private-build)
+- [Web IDE Plugin](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/build-import-webide/Web_IDE_PLUGIN)
 
 You can import each of the downloaded destination files. To import, select **Import Destination**.
 

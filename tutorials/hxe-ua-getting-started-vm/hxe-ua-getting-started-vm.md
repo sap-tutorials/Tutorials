@@ -28,7 +28,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 [ACCORDION-BEGIN [Step 1: ](Start SAP HANA 2.0, express edition)]
 
-1. Start the `hypervisor` and power on (or click **Play** on) your express edition VM.
+1. Start the hypervisor and power on (or click **Play** on) your express edition VM.
 
 2. At the **`hxehost` login** prompt, enter **`hxeadm`**
 
@@ -58,7 +58,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
     - At least 1 number
 
-    - Can contain special characters, but not _&#64;_ (at sign), _&#35;_ (number sign), _&#36;_ (dollar sign), _&#37;_ (percent), _&#94;_ (caret), _&amp;_ (ampersand), _&#42;_ (asterisk), _&#61;_ (equal sign), _&#43;_ (plus), _&#91;_ _&#93;_ (brackets),  _&#123;_ _&#125;_ (braces), _&lt;_ (less than), _&gt;_ (greater than), &#124; (vertical bar), _&#92;_ (backslash), _&#39;_ (single quote), _&quot;_ (double quotation marks), and _&grave;_ (backtick) characters.
+    - Can contain special characters, but not _&#64;_ (at sign), _&#35;_ (number sign), _&#36;_ (dollar sign), _&#37;_ (percent), _&#94;_ (caret), _&amp;_ (ampersand), _&#42;_ (asterisk), _&#61;_ (equal sign), _&#43;_ (plus), _&#91;_ _&#93;_ (brackets),  _&#123;_ _&#125;_ (braces), _&lt;_ (less than), _&gt;_ (greater than), &#124; (vertical bar), _&#92;_ (backslash), _&#39;_ (single quote), _&quot;_ (double quotation marks), and _&grave;_ (backtick) characters
 
     - Cannot contain dictionary words
 
@@ -147,7 +147,7 @@ The virtual console and X11 window system defaults to a `us` (`QWERTY`) keyboard
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Record Your `hxehost` IP Address)]
+[ACCORDION-BEGIN [Step 8: ](Record Your hxehost IP Address)]
 
 Record the `hxehost` IP address so you can use it later when connecting to the server using SAP HANA client tools.
 
@@ -166,7 +166,7 @@ Record the `hxehost` IP address so you can use it later when connecting to the s
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Edit `/etc/hosts` File)]    
+[ACCORDION-BEGIN [Step 9: ](Edit /etc/hosts File)]    
 
 The `hxehost` IP address is private to the VM. In order for applications on your laptop (like your web browser) to access `hxehost`, add the `hxehost` IP address to your laptop's hostname map. The hostname map is your laptop's **`/etc/hosts`** file. You must edit **`/etc/hosts`** if you want to access any XS Advanced applications, or use HANA Cockpit, from your laptop.
 
@@ -355,7 +355,7 @@ The Text analysis files for additional languages package contains the text analy
     | If you downloaded using...        | Then do this...  |
     | ---------------- | -------------|
     | The Download Manager (GUI Mode) on your laptop            | Transfer `additional_lang.tgz` from your laptop's Save Directory to `~/Downloads` on your VM.|
-    | The VM's built-in Download Manager (Console Mode)           | Locate `additional_lang.tgz` in the VM's Save Directory (`~/Downloads` by default.) |
+    | The VM's built-in Download Manager (Console Mode)           | Locate `additional_lang.tgz` in the VM's Save Directory (`~/Downloads` by default). |
 
 
 4. As `hxeadm`, navigate to `/hana/shared/HXE/global/hdb/custom/config/lexicon`.
@@ -408,7 +408,7 @@ SAP EA Designer is a separate download in the Download Manager.
     | If you downloaded using...        | Then do this...  |
     | ---------------- | -------------|
     | The Download Manager (GUI Mode) on your laptop            | Transfer `eadesigner.tgz` from your laptop's Save Directory to `~/Downloads` on your VM.|
-    | The VM's built-in Download Manager (Console Mode)           | Locate `eadesigner.tgz` in the VM's Save Directory (`~/Downloads` by default.) |
+    | The VM's built-in Download Manager (Console Mode)           | Locate `eadesigner.tgz` in the VM's Save Directory (`~/Downloads` by default). |
 
 4. As the `hxeadm` user, run:
 
@@ -471,7 +471,7 @@ SHINE is a separate download in the Download Manager. To use SHINE, you need the
     | If you downloaded using...        | Then do this...  |
     | ---------------- | -------------|
     | The Download Manager (GUI Mode) on your laptop            | Transfer `shine.tgz` from your laptop's Save Directory to `~/Downloads` on your VM.|
-    | The VM's built-in Download Manager (Console Mode)           | Locate `shine.tgz` in the VM's Save Directory (`~/Downloads` by default.) |
+    | The VM's built-in Download Manager (Console Mode)           | Locate `shine.tgz` in the VM's Save Directory (`~/Downloads` by default). |
 
 4. Extract `shine.tgz`.
 
@@ -506,7 +506,7 @@ The SAP HANA External Machine Learning Library is an application function librar
     | If you downloaded using...        | Then do this...  |
     | ---------------- | -------------|
     | The Download Manager (GUI Mode) on your laptop            | Transfer `eml.tgz` from your laptop's Save Directory to `~/Downloads` on your VM.|
-    | The VM's built-in Download Manager (Console Mode)           | Locate `eml.tgz` in the VM's Save Directory (`~/Downloads` by default.) |    
+    | The VM's built-in Download Manager (Console Mode)           | Locate `eml.tgz` in the VM's Save Directory (`~/Downloads` by default). |    
 
 4. Extract `eml.tgz`.
 
@@ -539,15 +539,15 @@ If you installed the server-only VM (`hxe.ova`), you can add XSA if desired.
     sudo shutdown
     ```
 
-3. In your `hypervisor`, increase the VM physical memory to at least 12GB.
+3. In your hypervisor, increase the VM physical memory to at least 12GB.
 
 4. Start your VM and login as `hxeadm`.
 
 5. Run this command to download the `hxexsa.tgz` package to the `~hxeadm/Downloads` directory using the VM's built-in Download Manager (console mode):    
 
-   ```bash
-   HXEDownloadManager_linux.bin linuxx86_64 installer hxexsa.tgz
-   ```
+    ```bash
+    HXEDownloadManager_linux.bin linuxx86_64 installer hxexsa.tgz
+    ```
 
 6. Extract `hxexsa.tgz`.
 
@@ -580,6 +580,9 @@ The unit for `global_allocation_limit` is MB. The default value is 0, which sets
 If you set `global_allocation_limit` to a non-zero value, SAP HANA, express edition will use that value as maximum memory.
 
 >**Note**: Do not set `global_allocation_limit` to a value above the limit of your license. This can cause the database to lock down.
+
+[DONE]
+[ACCORDION-END]
 
 ## Next Steps
  - [SAP HANA 2.0, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html)
