@@ -1,6 +1,6 @@
 ---
 title: Installing and Configuring the Streaming Studio Plugin
-description: Install the smart data streaming plugin for Eclipse, add a connection to the smart data streaming server, and create a HANA service.
+description: Install the streaming analytics plugin for Eclipse, add a connection to the streaming analytics server, and create a HANA service.
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
 ---
@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap
  - [Create a Streaming Project with SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-create-streaming-project.html)
 
 ## Details
-Install the smart data streaming plugin for Eclipse, add a connection to the smart data streaming server, and create a HANA service.
+Install the streaming analytics plugin for Eclipse, add a connection to the streaming analytics server, and create a HANA service.
 
 ### Time to Complete
 **10 Min**
@@ -24,7 +24,7 @@ Install the smart data streaming plugin for Eclipse, add a connection to the sma
 
 [ACCORDION-BEGIN [Step 1: ](Edit the `/etc/hosts` File)]    
 
-If you're running SAP HANA, express edition in a virtual machine or cloud server instance, then depending on the network configuration, you may need to edit the `/etc/hosts` file on your local machine so Eclipse can connect to the smart data streaming server.
+If you're running SAP HANA, express edition in a virtual machine or cloud server instance, then depending on the network configuration, you may need to edit the `/etc/hosts` file on your local machine so Eclipse can connect to the streaming analytics server.
 
 #### Edit `/etc/hosts` on Windows
 
@@ -56,9 +56,9 @@ If you are running Eclipse on a Mac or Linux machine, follow these steps to upda
 
 [ACCORDION-BEGIN [Step 2: ](Install the plugin)]
 
-1. Use the Download Manager to download the streaming studio plugin, `sds_plugin.zip`.
+1. Use the SAP HANA, express edition Download Manager to download the streaming studio plugin, `sa_plugin.zip`.
 
-2. Extract the contents of the `sds_plugin.zip` file.
+2. Extract the contents of the `sa_plugin.zip` file.
 
 3. Open Eclipse and select _Help > Install New Software_:
 
@@ -74,17 +74,17 @@ If you are running Eclipse on a Mac or Linux machine, follow these steps to upda
 
     ![Select the repository folder](select-repository-folder.png)
 
-6. In the Install dialog, check SAP HANA smart data streaming, then click **Next**:
+6. In the Install dialog, check SAP HANA streaming analytics, then click **Next**:
 
-    ![Check SAP HANA smart data streaming](select-streaming.png)
+    ![Check SAP HANA streaming analytics](select-streaming-02.png)
 
 7. Review the items to be installed, then click **Next**:
 
-    ![Review the items to be installed](review-items.png)
+    ![Review the items to be installed](review-items-02.png)
 
 8. Review the license, accept the terms and conditions to continue, then click **Finish**:
 
-    ![Review and accept the license](accept-license.png)
+    ![Review and accept the license](accept-license-02.png)
 
 9. For any security warnings, click **OK**.
 
@@ -111,9 +111,9 @@ If you are running Eclipse on a Mac or Linux machine, follow these steps to upda
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Add a smart data streaming connection)]
+[ACCORDION-BEGIN [Step 4: ](Add a streaming analytics connection)]
 
-Here we will connect our streaming design time tools to the SAP HANA smart data streaming server.
+Here we will connect our streaming design time tools to the SAP HANA streaming analytics server.
 
 1. In the **SAP HANA Streaming Run-Test** perspective, in the **Server** view, select **New Server URL**:
 
@@ -142,11 +142,11 @@ Here we will connect our streaming design time tools to the SAP HANA smart data 
 
     ![Connect Server](connect-server.png)
 
-6. Open _Window > Preferences_ and select **SAP HANA smart data streaming** from the list:
+6. Open _Window > Preferences_ and select **SAP HANA streaming analytics** from the list:
 
     ![Open Preferences](open-preferences.png)
 
-    ![SAP HANA smart data streaming preferences](streaming-preferences.png)
+    ![SAP HANA streaming analytics preferences](streaming-preferences-02.png)
 
 7. Set **Default Server URL** to the new server and click **OK**:
 
@@ -157,7 +157,7 @@ Here we will connect our streaming design time tools to the SAP HANA smart data 
 
 [ACCORDION-BEGIN [Step 5: ](Add a HANA service)]
 
-In this step we will create a named **Data Service** on the SAP HANA smart data streaming server.  In this case, the data service will connect to a particular HANA database. Streaming projects use named data services to connect to database tables.
+In this step we will create a named **Data Service** on the SAP HANA streaming analytics server.  In this case, the data service will connect to a particular HANA database. Streaming projects use named data services to connect to database tables.
 
 1. Switch to the **SAP HANA Streaming Development** perspective and select the **Data Services** tab:
 
@@ -185,7 +185,7 @@ In this step we will create a named **Data Service** on the SAP HANA smart data 
 
     ![Rename Service](rename-service.png)
 
-    ![Name the service](name-service.PNG)
+    ![Name the service](name-service-02.PNG)
 
 6. To confirm that the HANA service is configured properly, right-click on it and select **Discover**:
 

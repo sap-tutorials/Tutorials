@@ -2,7 +2,7 @@
 title: Manage your registered "Datasets"
 description: You will extend your application with additional "Dataset" SAP Cloud for predictive services
 primary_tag: products>sap-cloud-platform-predictive-service
-tags: [ tutorial>intermediate, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
+tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
@@ -27,7 +27,7 @@ tags: [ tutorial>intermediate, products>sap-cloud-platform-predictive-service, p
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
-Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
+Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 Click on your ***SAP Cloud Platform Account Name*** as highlighted on the below screenshot.
 
@@ -86,7 +86,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 Create a new directory structure for **`webapp\view\dataset`** either using the "File" menu or using the right click menu.
 
-Create a new file **`register.view.xml`** in `webapp\view\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`manage.view.xml`** in `webapp\view\dataset` either using the "File" menu or using the right click menu.
 
 Open the `webapp\view\dataset\manage.view.xml` file and add the following code:
 

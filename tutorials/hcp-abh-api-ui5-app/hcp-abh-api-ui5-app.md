@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>
 
 
 ## Next Steps
- - [Enable the Multi Cloud Web IDE](https://www.sap.com/developer/tutorials/webide-multi-cloud.html)
+ - [Using API Hub with Web IDE](https://www.sap.com/developer/tutorials/webide-api-hub.html)
 
 ## Details
 ### You will learn  
@@ -68,12 +68,12 @@ onInit: function() {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get Javascript pre-generated code)]
-In the [API Business Hub](https://api.sap.com), click **APIs** and on the Discover page, go to **All**. Search for the **Success Factors** from the Discover APIs page. Find the **SAP Success Factors** API package and select it.
+[ACCORDION-BEGIN [Step 2: ](Get JavaScript pre-generated code)]
+In the [API Business Hub](https://api.sap.com), click **APIs** and on the Discover page, go to **All**. Search for the **Success Factors** from the Discover APIs page. Find the **SAP Success Factors Foundation** API package and select it.
 
 ![location of API packages in API Business Hub](10.png)
 
-Once on the API package documentation, select **Artifacts** to see all the APIs available. Find the **User Information** API in the listing. Select the API to open the documentation.
+Once on the API package documentation, select **Artifacts** to see all the APIs available. Find the **User Management** API in the listing. Select the API to open the documentation.
 
 ![Location of User Information API](11.png)
 
@@ -83,7 +83,7 @@ On the documentation, select **Resource** to find the methods. Find the `GET /Us
 
 Pick the **JavaScript** tab and then click the **Copy to Clipboard** button.
 
-![Javascript pre-generated code for API call](13.png)
+![JavaScript pre-generated code for API call](13.png)
 
 [DONE]
 [ACCORDION-END]
@@ -134,7 +134,7 @@ Back in your controller, **add in your query parameters to the URL** so that the
 
 **SAVE** your changes and **RUN** your application. Looking in the console, you should only see 5 results with a much smaller data set for each result.
 
-![updated results in the Javascript console](20.png)
+![updated results in the JavaScript console](20.png)
 
 [DONE]
 [ACCORDION-END]
@@ -250,4 +250,4 @@ self.getView().getModel("results").setProperty("/data", jsonResults);
 
 
 ## Next Steps
-- [Enable the Multi Cloud Web IDE](https://www.sap.com/developer/tutorials/webide-multi-cloud.html)
+- [Using API Hub with Web IDE](https://www.sap.com/developer/tutorials/webide-api-hub.html)

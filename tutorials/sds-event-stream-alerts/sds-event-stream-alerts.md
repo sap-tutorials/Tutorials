@@ -1,15 +1,15 @@
 ---
-title: Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming
+title: Generating Alerts Using a Derived Window in SAP HANA Streaming Analytics
 description: Create and use Derived Window to analyze events, filter data, and generate alerts.
 primary_tag: products>sap-hana-smart-data-streaming
 tags: [  tutorial>Intermediate, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Create a Moving Average on an Event Stream using an Aggregation Window](http://www.sap.com/developer/tutorials/sds-event-stream-moving-average.html)
+ - **Tutorials:** [Create a Moving Average on an Event Stream using an Aggregation Window](https://www.sap.com/developer/tutorials/sds-event-stream-moving-average.html)
 
 ## Next Steps
-- **Tutorials:** [Using the Streaming Playback tool to Test a Streaming Project](http://www.sap.com/developer/tutorials/sds-event-stream-playback.html)
+- **Tutorials:** [Using the Streaming Playback tool to Test a Streaming Project](https://www.sap.com/developer/tutorials/sds-event-stream-playback.html)
 
 ## Details
 ### You will learn  
@@ -153,8 +153,3 @@ Click Compile Project icon to check for errors.
 
 [DONE]
 [ACCORDION-END]
-
----
-
-## Next Steps
-- **Tutorials:** [Using the Streaming Playback tool to Test a Streaming Project](http://www.sap.com/developer/tutorials/sds-event-stream-playback.html)

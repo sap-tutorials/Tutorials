@@ -2,7 +2,7 @@
 title: Enable, deploy and configure the SAP Cloud, predictive services
 description: Enable, deploy and configure the SAP Cloud, predictive services
 primary_tag: products>sap-cloud-platform-predictive-service
-tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-predictive-service]
+tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-predictive-service]
 ---
 
 ## Prerequisites
@@ -25,7 +25,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platf
   **10 minutes**
 
 [ACCORDION-BEGIN [Step 1: ](Enable the Predictive Services)]
-Let's go back to the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
+Let's go back to the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 Click on your ***SAP Cloud Platform Account name*** as highlighted on the below screenshot.
 

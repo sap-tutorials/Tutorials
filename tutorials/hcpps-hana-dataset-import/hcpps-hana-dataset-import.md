@@ -2,7 +2,7 @@
 title: Import a series of predictive demo dataset
 description: Import a demo data to be used with the SAP Cloud for predictive services
 primary_tag: products>sap-cloud-platform-predictive-service
-tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, products>sap-hana, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
@@ -35,7 +35,7 @@ Open the ***SAP HANA Web-based Development Workbench*** on your trial HANA insta
 
 Click on the **Open SQL Console** ![open](0-opensqlconsole.png) icon or press CTRL+ALT+C.
 
-![SAP HANA Web-based Development Workbench](02.png?)
+![SAP HANA Web-based Development Workbench](02.png)
 
 Download the file from the following [`link`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/demo.create.sql.txt).
 

@@ -2,7 +2,7 @@
 title: Configure a SAPUI5 application from the project template
 description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the SAP Cloud for predictive services
 primary_tag: products>sap-cloud-platform-predictive-service
-tags: [ tutorial>intermediate, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
+tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
@@ -41,7 +41,7 @@ Therefore you can replace any occurrence of the token by the value listed above.
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP HANA Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 [ACCORDION-BEGIN [Step 1: ](Create your destination)]
-Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
+Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial*) as highlighted on the below screenshot.
 
@@ -213,7 +213,7 @@ The default view created is located in `webapp\view\demo.view.xml`. We will upda
 Open the `webapp\view\demo.view.xml` file and replace the existing code with the following code:
 
 ```xml
-<mvc:View controllerName="xxxxx.controller.demo" xmlns:html="http://www.w3.org/2000/xhtml"
+<mvc:View controllerName="sapui5demo.controller.demo" xmlns:html="http://www.w3.org/2000/xhtml"
 	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<SplitApp id="SplitAppDemo" initialMaster="master" initialDetail="detail">

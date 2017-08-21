@@ -31,26 +31,19 @@ Installing SAP HANA 2.0, express edition installs a permanent 32 GB license auto
 
 1. In a terminal, log in as the `<sid>adm` user:
 
-    `sudo su -l <sid>adm`
+    ```
+    sudo su -l <sid>adm
+    ```
 
 2. Enter `HDB info`. The following services must be running:
     * `hdbnameserver`
     * `hdbcompileserver`
-    * `hdbpreprocessor`
     * `hdbwebdispatcher`
     * `hdbdiserver` (if XSA is installed)
 
-2. If any services are not running, enter `HDB start`. When the prompt returns, the system is started.
+3. If any services are not running, enter `HDB start`. When the prompt returns, the system is started.
 
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Test XSC and XSA (Applications Package Only))]
-
-If you installed the Applications package (`hxexsa.tgz`), test your XS installations.
-
-1. Check that the `XSEngine` is running. Open a browser and enter:
+4. Check that the `XSEngine` is running. Open a browser and enter:
 
     ```bash
     http://<hostname>:80<instance-number>  
@@ -60,13 +53,20 @@ If you installed the Applications package (`hxexsa.tgz`), test your XS installat
 
     ![XSEngine Success Page](hxe_xs_success.PNG)
 
-2. As the `<sid>adm` user, log in to XSA services:  
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Test XSA (Applications Package Only))]
+
+If you installed the Applications package (`hxexsa.tgz`), test your XSA installation.
+
+1. As the `<sid>adm` user, log in to XSA services:  
 
     ```bash
     xs login -u xsa_admin -p "<password>"
     ```  
 
-3. View the list of XSA applications. Enter:  
+2. View the list of XSA applications. Enter:  
 
     ```bash
     xs apps
@@ -74,7 +74,7 @@ If you installed the Applications package (`hxexsa.tgz`), test your XS installat
 
     >**Note**: When you run the `xs apps` command for the first time, it may take 1-2 minutes for the system to return the list of XSA applications.
 
-4. Check that the application **`cockpit-admin-web-app`** shows **STARTED** with 1/1 instances in the list of XSA applications.
+3. Check that the application **`cockpit-admin-web-app`** shows **STARTED** with 1/1 instances in the list of XSA applications.
 
     >**Note** Normally it only takes a few minutes for XSA services to start. However. depending on your machine, it can take over 30 minutes for XSA services to begin. If the service doesn't show STARTED and doesn't show 1/1 instances, keep waiting until the service is enabled.
 
@@ -82,13 +82,13 @@ If you installed the Applications package (`hxexsa.tgz`), test your XS installat
 
     ![XSA apps](hxe_xsa_apps_cockpit.png)
 
-5. Enter the URL for `cockpit-admin-web-app` in a browser. The address is the one that displays in your **`xs apps`**  command output.  
+4. Enter the URL for `cockpit-admin-web-app` in a browser. The address is the one that displays in your **`xs apps`**  command output.  
 
     Example:  `https://my.hostname:51043`
 
-6. Log in using the `XSA_ADMIN` user.
+5. Log in using the `XSA_ADMIN` user.
 
-7. If your site uses a proxy for connecting to HTTP and HTTPS servers, select _Cockpit Settings > Proxy_, then enable **Http(s) Proxy** and set the host, port, and non-proxy hosts.
+6. If your site uses a proxy for connecting to HTTP and HTTPS servers, select _Cockpit Settings > Proxy_, then enable **Http(s) Proxy** and set the host, port, and non-proxy hosts.
 
     >**Tip**: To find your proxy server information, in a terminal, enter `env | grep PROXY`
 
@@ -156,6 +156,18 @@ SYSTEM is the database superuser and is not intended for day-to-day activities i
 Make regular data backups to save your work.
 
 For information on data backup, recovery, and log file growth, see the [SAP HANA 2.0 Administration Guide](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.00/en-US).
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Best Practice: ](Set the Global Memory Allocation Limit)]
+
+Set how much memory SAP HANA, express edition utilizes by modifying the `global_allocation_limit` parameter in the `global.ini` file.
+
+The unit for `global_allocation_limit` is MB. The default value is 0, which sets the maximum memory to the minimum of your machine limit and license limit. If the machine size is less than 16 GB, the maximum memory is set to 16 GB.
+
+If you set `global_allocation_limit` to a non-zero value, SAP HANA, express edition will use that value as maximum memory.
+
+>**Note**: Do not set `global_allocation_limit` to a value above the limit of your license. This can cause the database to lock down.
 
 [ACCORDION-END]
 
@@ -259,6 +271,26 @@ To install SHINE for XSA, run the following as `<sid>adm`:
 ```
 
 [DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Optional: ](Installing SAP HANA External Machine Learning Library)]
+
+The SAP HANA External Machine Learning Library is an application function library (AFL) supporting the integration of Google `TensorFlow`, as an external machine learning framework, with SAP HANA, express edition.
+
+1. Use the Download Manager to download HANA External Machine Learning AFL, `eml.tgz`.
+
+2. Extract `eml.tgz`.
+
+3. As `<sid>adm`, run:
+
+    ```bash
+    <extracted_path>/HANA_EXPRESS_20/install_eml.sh
+    ```
+
+    For more information on the SAP HANA External Machine Learning Library, see the SAP HANA documentation collection.    
+
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Optional: ](Install Text Analysis Files)]

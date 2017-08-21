@@ -117,7 +117,7 @@ Click the **Download** button and save the resulting `aps_development.cer` file.
 
 ![App ID creation](fiori-ios-hcpms-push-notifications-14.png)
 
-With the certificate selected, from the top menu choose **File > Export items...**
+With **login** keychain and **My Certificates** category selected in the left pane, and the new certificate selected in the main pane, choose **File > Export items...** from the top menu:
 
 ![App ID creation](fiori-ios-hcpms-push-notifications-15.png)
 
