@@ -105,7 +105,7 @@ Select following:
 [ACCORDION-BEGIN [Step 9: ](Display Hierarchy)]
 If a field supports hierarchies, then the hierarchy checkbox is shown in the properties.
 **`Checkmark` the hierarchy checkbox** to enable displaying hierarchy for `CostCenter`.
-
+Furthermore select values for `Controlling Area` and `Cost Center Hierarchy`.
 ![Select Data Source](costcenter.png)
 
 [DONE]
@@ -120,9 +120,9 @@ If a field supports hierarchies, then the hierarchy checkbox is shown in the pro
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Publish the Query)]
-**Click on publish** to Publish the query. Published queries are available to be consumed by Key Performance Indicators and Reports.  
+**Click on publish** to publish the query. Published queries are available to be consumed by Key Performance Indicators and Reports.  
 
-After publishing the status will be updated to Published on the top right corner.
+After publishing the status will be updated to published on the top right corner.
 
 ![Select Data Source](publish.png)
 
