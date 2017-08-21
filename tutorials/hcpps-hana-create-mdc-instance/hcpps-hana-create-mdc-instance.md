@@ -20,7 +20,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
   **10 minutes**
 
 [ACCORDION-BEGIN [Step 1: ](Access your SAP Cloud Platform account)]
-Log into the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
+Log into the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 ![SAP Cloud Platform Cockpit](01.png)
 
@@ -33,13 +33,11 @@ Click on the ***SAP Cloud Platform developer Account*** link as highlighted on t
 
 [ACCORDION-BEGIN [Step 2: ](Create your HANA MDC instance)]
 
-On the left side bar, you can navigate in **Persistence** > **Databases & Schemas**.
+On the left side bar, you can navigate in **SAP HANA / SAP ASE** > **Databases & Schemas**.
 
 ![Databases & Schemas](03.png)
 
 Click on **New**.
-
-![New Database System](04.png)
 
 Complete the form following details information:
 
@@ -51,7 +49,7 @@ System User Password | `Welcome17Welcome17`
 
 >Note: Password policy was changed recently and now requires a 15 characters password that includes a digit.
 
-.
+![New Database System](04.png)
 
 You can choose other values for theses properties. As reference them across several tutorials, you should remember the **System User Password** as your ***HANA System Account Password***.
 
