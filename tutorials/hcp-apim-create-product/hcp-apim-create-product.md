@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-api-management, products>s
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** Create an API Proxy
+- **Tutorials:** [Create an API Proxy](https://www.sap.com/developer/tutorials/hcp-apim-create-api.html)
 
 ## Next Steps
-- Protect your API Proxy by adding an Application Key Verification
+- [Protect your API Proxy by adding an Application Key Verification](https://www.sap.com/developer/tutorials/hcp-apim-verify-api.html)
 
 
 ## Details
@@ -111,4 +111,4 @@ One Product is now available.
 
 
 ## Next Steps
-- Protect your API Proxy by adding an Application Key Verification
+- [Protect your API Proxy by adding an Application Key Verification](https://www.sap.com/developer/tutorials/hcp-apim-verify-api.html)

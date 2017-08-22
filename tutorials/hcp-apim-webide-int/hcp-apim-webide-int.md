@@ -6,7 +6,7 @@ tags: [  tutorial>beginner,  products>sap-cloud-platform, products>sap-web-ide, 
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Protect your API Proxy by adding an Application Key Verification](http://www.google.de)  http://www.sap.com/developer/tutorials/hcp-apim-verify-api.html)
+- **Tutorials:** [Protect your API Proxy by adding an Application Key Verification](http://www.sap.com/developer/tutorials/hcp-apim-verify-api.html)
 
 ## Next Steps
 - This is the end of this series
