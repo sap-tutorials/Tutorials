@@ -1,0 +1,14 @@
+
+ [VALIDATE_1]
+ ###Rule
+ single-choice
+
+ ###Question
+ Does an API Proxy contain any functionality?
+
+ ###Match
+[ ] Yes
+[x] No
+
+
+ [VALIDATE_1]

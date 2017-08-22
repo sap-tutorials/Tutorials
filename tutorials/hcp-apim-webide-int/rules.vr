@@ -1,0 +1,40 @@
+
+ [VALIDATE_1]
+ ###Rule
+ exact-match
+
+ ###Question
+ Which destination is used by Web IDE at runtime?
+
+ ###Match
+ APIM_Endpoint_Trial
+
+ [VALIDATE_1]
+
+
+ [VALIDATE_2]
+ ###Rule
+ single-choice
+
+ ###Question
+ If you receive an error that says request.queryparam.apikey, where do you need to supply the apikey?
+
+ ###Match
+ [ ] HTTP Header
+ [x] Query String
+ [ ] You don't need to provide one
+
+
+ [VALIDATE_2]
+
+ [VALIDATE_3]
+ ###Rule
+ regex-substring
+
+ ###Question
+ When accessing your Developer Portal in Web IDE's template wizard, you see a list of your API Proxies. What must you select next to complete the subscription process?
+
+ ###Match
+ product
+
+ [VALIDATE_3]

@@ -1,0 +1,53 @@
+
+ [VALIDATE_1]
+ ###Rule
+ regex-substring
+
+ ###Question
+ Where do you check the fundamentals requirements of an Incoming Request?
+
+ ###Match
+ preflow
+
+ [VALIDATE_1]
+
+
+ [VALIDATE_2]
+ ###Rule
+ single-choice
+
+ ###Question
+ When looking at the stages of the request flow in the Policy Editor, which policies are shown?
+
+ ###Match
+ [ ] All policies assigned to the entire flow
+ [ ] All policies assigned to the selected endpoint system
+ [x] All policies assigned to the selected stage in the endpoint
+
+
+ [VALIDATE_2]
+
+ [VALIDATE_3]
+ ###Rule
+ exact-match
+
+ ###Question
+ What is the value for ref in the the APIKey tag for the CheckAPIKey Policy?
+
+ ###Match
+ request.header.APIKey
+
+ [VALIDATE_3]
+
+ [VALIDATE_4]
+ ###Rule
+ regex-substring
+
+ ###Question
+ Which property do you set when creating a policy to determine if you should check the response or request?
+
+ ###Match
+ stream
+
+
+ [VALIDATE_4]
