@@ -52,7 +52,7 @@ On the **General** tab, you can specify the label.
 [ACCORDION-BEGIN [Step 4: ](Select Fields)]
 Switch now to the **Field Selection** tab.
 
-**Select** all following **fields** of the Data View, so that they can be copied to the Query:
+**Select** all following **fields** of the Data View, so that they can be copied to the query:
 -  `Amount in CC Crcy`
 -  `Controlling Area`
 -  `Cost Center`
