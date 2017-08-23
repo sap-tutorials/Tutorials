@@ -1,4 +1,4 @@
-<mvc:View controllerName="xxxxx.controller.demo" xmlns:html="http://www.w3.org/2000/xhtml"
+<mvc:View controllerName="sapui5demo.controller.demo" xmlns:html="http://www.w3.org/2000/xhtml"
 	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<SplitApp id="SplitAppDemo" initialMaster="master" initialDetail="detail">
@@ -35,7 +35,7 @@
 			</Page>
 		</masterPages>
 		<detailPages>
-			<Page id="detail" title="Test the SAP Cloud Platform Cloud Platform Predictive Service in a SAPUI5 application">
+			<Page id="detail" title="Test the SAP Cloud Platform Predictive Service in a SAPUI5 application">
 				<content></content>
 			</Page>
 		</detailPages>
