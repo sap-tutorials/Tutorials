@@ -1,4 +1,3 @@
-
 ---
 title: SAP HANA XS Advanced, Creating an HDI Module
 description: Create your first HDI module for database content within your XSA application
@@ -534,6 +533,8 @@ We are now ready to perform the final **Build**. HDB modules are now complete an
 
 [DONE]
 [ACCORDION-END]
+
+
 
 
 
