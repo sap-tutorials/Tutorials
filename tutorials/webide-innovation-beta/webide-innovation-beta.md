@@ -1,21 +1,22 @@
 ---
-title: How to access SAP Web IDE Multi-Cloud Version
-description: This tutorial shows you how to enable the SAP Web IDE Multi-Cloud Version, and then to open the IDE.
+title: Getting Started with the SAP Web IDE Multi-Cloud Version (Trial)
+description: This tutorial shows you how to set up your SAP Cloud Platform trial account so you can start developing applications with the SAP Web IDE multi-cloud version.
 primary_tag: products>sap-web-ide
 tags: [  tutorial>beginner, topic>cloud, topic>html5, topic>internet-of-things, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- You should have access to an SAP Cloud Platform global account.
-- You should have authorization for running SAP Web IDE. For more information, see [Get Started](https://help.sap.com/viewer/78bc6d19f2f44cb38fe9c50446592788/CF/en-US).
+You have access to an SAP Cloud Platform trial account. If you don't have an account, you can open one. See the [tutorial](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) or [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/65d74d39cb3a4bf8910cd36ec54d2b99.html).
 
 ## Next Steps
 - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
+The new SAP Web IDE multi-cloud version supports additional scenarios, and includes additional features for improving the build process and creating full-stack applications.
+
 ### You will learn  
-- How to access and run the SAP Web IDE Multi-Cloud Version
+- How to enable and start using the SAP Web IDE multi-cloud version
 
 ### Time to Complete
 **5 Min**
@@ -23,75 +24,53 @@ tags: [  tutorial>beginner, topic>cloud, topic>html5, topic>internet-of-things, 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Log onto SAP Cloud Platform)]
-Open the cockpit of the SAP Cloud Platform.
+Log onto your SAP Cloud Platform account.
 
-![Open cockpit](beta1.png)
+![Open cockpit](OpenCockpit.png)
 
-Your landscape might be different. Here, we are in the **Europe** landscape.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Enter global account)]
-Enter your global account by clicking it. Here my global account is **SAP Web IDE Demo**.
-
-![Enter global account](beta2.png)
+Make sure you are in the Neo environment, not the Cloud Foundry environment. Neo is the classic, proprietary SAP Cloud Platform, and you can return to it by going **Home** | **Go to Neo Trial**.
 
 [DONE]
 [ACCORDION-END]
 
 
-
-
-
-
-[ACCORDION-BEGIN [Step 3: ](Enter sub-account)]
-Enter your sub-account by clicking it.
-![Enter beta account](beta5.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Go to services)]
-Once we've clicked into the sub-account, we can see across the top the breadcrumb that shows we are in the **Europe** landscape, the **SAP Web IDE Demo** global account, and the **My Sub-account** sub-account. Your landscape and accounts, of course, may differ.
-
-Now let's open the SAP Web IDE Multi-Cloud Version.
-
+[ACCORDION-BEGIN [Step 2: ](Enable the SAP Web IDE multi-cloud version service)]
 Click **Services**.
 
-![Services](beta6.png)
+![Services](Services.png)
 
-[DONE]
-[ACCORDION-END]
+In the search box, search for `Web`, and then click the **SAP Web IDE Multi-Cloud Version** tile.
 
-[ACCORDION-BEGIN [Step 5: ](Find the multi-cloud version)]
-In the search box, search for `Web`.
+![Find multi-cloud version](FindService.png)
 
-![Find multi-cloud version](SearchTile.png)
-
-
-Click the **SAP Web IDE Multi-Cloud Version** tile.
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Enable the multi-cloud version)]
-Click **Enable**.
+Click **Enable**. This may take a few minutes.
 
 ![Enable multi-cloud version](Enable.png)
 
+Wait for the status to change to the green, **Enabled** status.
+
+![multi-cloud version enabled](Enabled.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Open the multi-cloud version)]
-Open the **SAP Web IDE Multi-Cloud Version**.
+[ACCORDION-BEGIN [Step 3: ](Open the SAP Web IDE multi-cloud version)]
+In the **SAP Web IDE Multi-Cloud Version** service screen, click **Go to Service** link to open SAP Web IDE. Save it in your favorites.
 
 ![Open SAP Web IDE](OpenIDE.png)
 
 [DONE]
 [ACCORDION-END]
 
+
+[ACCORDION-BEGIN [Step 4: ](Set up Cloud Foundry environment - OPTIONAL)]
+If your scenario includes deploying apps to the Cloud Foundry environment, then you need to also set up this environment. These will generally be for full-stack applications that include database and Java modules.
+
+Create a Cloud Foundry subaccount, organization, and space. See [Get a Trial Space on the Cloud Foundry Instance](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76e79d62fa0149d5aa7b0698c9a33687.html).
+
+
+[DONE]
+[ACCORDION-END]
 
 ---
 
