@@ -136,13 +136,6 @@ Add the IP address followed by the name of the host, which will be `hxehost`:
 
 > Note: If Notepad asks you to create a new file you do not have enough permissions to save the file. Creating a new file will not alter the configuration as intended.
 
-You can test you have successfully modified your configuration by entering the following URL in your browser: `https://hxehost:53075/`
-
-![test web ide](11.png)
-
-Log in with `XSA_DEV` and the master password. You will see the Web IDE.
-
-![test web ide](12.png)
 
 [DONE]
 [ACCORDION-END]
