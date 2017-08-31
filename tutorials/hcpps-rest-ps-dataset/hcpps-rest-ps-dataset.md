@@ -185,7 +185,7 @@ You should receive the description of the first variable from your data set.
 >This service is available since version 1.7, please make sure you have upgraded the C4PA application, else you will receive a 404 error.
 >
 >To check which version you are currently using, please go to the following URL and check the `X-Maven-Project-Version` property:
->  - `<`C4PAURL>/adminUI/index.html#/about`
+>  - `C4PAURL/adminUI/index.html#/about`
 
 &nbsp;
 
