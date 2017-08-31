@@ -85,8 +85,58 @@ Return to your `web` module and create a new folder named `resources/odataView` 
 Here is the complete coding for the new page.
 
 
-```HTML
-<!DOCTYPE html><html><head>	<meta http-equiv="X-UA-Compatible" content="IE=edge" />	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>	<meta name="viewport" content="width=device-width, initial-scale=1.0" />   	<link type="image/x-icon" href="/images/favicon.ico" rel="shortcut icon">    <link type="image/x-icon" href="/images/favicon.ico" rel="icon">	<!-- <script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" -->	<script id="sap-ui-bootstrap" src="{{{ui5liburl}}}/resources/sap-ui-core.js"		data-sap-ui-theme="sap_belize_plus"		data-sap-ui-xx-bindingSyntax="complex"		data-sap-ui-compatVersion="edge"		data-sap-ui-preload="async"		data-sap-ui-language="en"		data-sap-ui-resourceroots='{				"odataTest": "./" }'				data-sap-ui-libs="sap.m,sap.ui.comp,sap.ui.core,sap.ui.layout"		data-sap-ui-frameOptions="trusted">	</script>	<script type="text/javascript" src="/common/error.js" ></script>  	<script>		sap.ui.getCore().attachInit(function () {				var ComponentContainer = new sap.ui.core.ComponentContainer({            		height : "100%"            	});            	new sap.m.Shell({            		app: ComponentContainer,            		showLogout: true            	}).placeAt("content");            	var oComponent = sap.ui.component({            		id: "comp",            		name: "odataTest",            		manifestFirst: true,            		async: true            	}).then(function(oComponent){            		ComponentContainer.setComponent(oComponent);            	});		});	</script></head><!-- UI Content --><body class="sapUiBody" id="content"></body></html>```
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   	<link type="image/x-icon" href="/images/favicon.ico" rel="shortcut icon">
+    <link type="image/x-icon" href="/images/favicon.ico" rel="icon">
+	<!-- <script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" -->
+	<script id="sap-ui-bootstrap" src="{{{ui5liburl}}}/resources/sap-ui-core.js"
+		data-sap-ui-theme="sap_belize_plus"
+		data-sap-ui-xx-bindingSyntax="complex"
+		data-sap-ui-compatVersion="edge"
+		data-sap-ui-preload="async"
+		data-sap-ui-language="en"
+		data-sap-ui-resourceroots='{
+				"odataTest": "./" }'		
+		data-sap-ui-libs="sap.m,sap.ui.comp,sap.ui.core,sap.ui.layout"
+		data-sap-ui-frameOptions="trusted">
+	</script>
+	<script type="text/javascript" src="/common/error.js" ></script>  
+
+	<script>
+		sap.ui.getCore().attachInit(function () {
+				var ComponentContainer = new sap.ui.core.ComponentContainer({
+            		height : "100%"
+            	});
+
+            	new sap.m.Shell({
+            		app: ComponentContainer,
+            		showLogout: true
+            	}).placeAt("content");
+
+            	var oComponent = sap.ui.component({
+            		id: "comp",
+            		name: "odataTest",
+            		manifestFirst: true,
+            		async: true
+            	}).then(function(oComponent){
+            		ComponentContainer.setComponent(oComponent);
+            	});
+		});
+	</script>
+</head>
+
+<!-- UI Content -->
+<body class="sapUiBody" id="content">
+</body>
+</html>
+
+```
 
 
 [DONE]

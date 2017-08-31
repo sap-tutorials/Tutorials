@@ -46,18 +46,13 @@ Click on the ![save](0-save.png) button in the top menu bar
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Open the SAP HANA Web-based Development Workbench Catalog)]
+[ACCORDION-BEGIN [Step 3: ](Create your user)]
 
 Using the ![navigation](0-navigation.png) menu bar icon, select **Catalog**.
 
 The following screen should appear:
 
 ![SAP HANA Web-based Development Workbench](03.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Create your user)]
 
 Click on the ![SQL Console](0-opensqlconsole.png) button in the top menu bar, and paste the following SQL code:
 
@@ -94,7 +89,7 @@ Click on the ![Logout](0-run.png) **Run** button or press **F8**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Verify that your user is properly created)]
+[ACCORDION-BEGIN [Step 4: ](Verify that your user is properly created)]
 
 Click on the ![Logout](0-logout.png) **Logout** icon located in the top right corner of the screen.
 

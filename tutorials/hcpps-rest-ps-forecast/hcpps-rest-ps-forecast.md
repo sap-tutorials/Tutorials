@@ -21,12 +21,16 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
   **10 minutes**
 
 > In order to ease the readability of this tutorial, we have used tokens to replace long URLs.
-Therefore you can replace any occurrence of the token by the value listed above.
+> Therefore you can replace any occurrence of the token by the value listed above.
 >
-> Token               | Value
-------------------- | -------------
-<code><b>&lt;Account name&gt;</b></code>  | your SAP Cloud Platform account name. On a developer trial account, it should end by `trial`
-<code><b>&lt;C4PA URL&gt;</b></code> | `https://aac4paservices<`<code><b>Account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
+> - `C4PAURL` : represents the predictive services **Application URL** displayed on the overview page.
+>
+>     The `C4PAURL` should look like this (XYZ is your SAP Cloud Platform account name):
+>     
+```
+ https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
+```
+>      
 >
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
@@ -49,7 +53,7 @@ The granularity of the prediction is the same as the granularity used in the dat
 > If you use extra-predictive variables, which are variables other than date and target indicator, their values must be known for each date of the forecasts.
 > The service may return forecasts without error bars beyond the maximum confident horizon.
 
--
+&nbsp;
 
 To summarize, in order to execute the forecast service, you will need a dataset with:
 
@@ -108,12 +112,14 @@ Open a new tab in ***Postman***.
 
 > If you don't have ***Postman*** installed yet, you can refer to the following how-to guide: [Install Postman extension for Google Chrome as a REST client](https://www.sap.com/developer/how-tos/2017/07/api-tools-postman-install.html)
 
+&nbsp;
+
 Fill in the following information:
 
 Field Name     | Value
 -------------- | --------------
 Request Type   | `POST`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/sync`
+URL            | `C4PAURL/api/analytics/dataset/sync`
 
 ```json
 {
@@ -131,9 +137,11 @@ Now as described in the **Step 4: Modify registered variable details**,
 Field Name     | Value
 -------------- | --------------
 Request Type   | `POST`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/<`ID`>/variables/update`
+URL            | `C4PAURL/api/analytics/dataset/<`ID`>/variables/update`
 
 > Make sure you replace the `ID` token in the URL with the one returned by the previous service call.
+
+&nbsp;
 
 ```json
 [
@@ -179,7 +187,7 @@ Fill in the following information:
 Field Name     | Value
 -------------- | --------------
 Request Type   | `POST`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/forecast/sync`
+URL            | `C4PAURL/api/analytics/forecast/sync`
 
 ![Postman URL](01.png)
 
@@ -207,7 +215,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 
 > Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the previous tutorial.
 
--
+&nbsp;
 
 With these settings, we will forecast the next 5 values of the Cash variable after the 1st of December 2001.
 
@@ -300,7 +308,7 @@ Fill in the following information
 Field Name     | Value
 -------------- | --------------
 Request Type   | `POST`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/forecast`
+URL            | `C4PAURL/api/analytics/forecast`
 
 As you can notice the only difference here, is that we don't use the "sync" keyword in the URL.
 
@@ -319,7 +327,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 ```
 > Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the previous tutorial.
 
--
+&nbsp;
 
 Click on **Send**
 
@@ -343,7 +351,7 @@ Fill in the following information
 Field Name     | Value
 -------------- | --------------
 Request Type   | `GET`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/forecast/1/status`
+URL            | `C4PAURL/api/analytics/forecast/1/status`
 
 Select the **Authorization** tab and fill in the same details as in the previous call.
 
@@ -368,7 +376,7 @@ Fill in the following information:
 Field Name     | Value
 -------------- | --------------
 Request Type   | `GET`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/forecast/1`
+URL            | `C4PAURL/api/analytics/forecast/1`
 
 Select the **Authorization** tab and fill in the same details as in the previous call.
 
@@ -381,14 +389,14 @@ Ultimately, you can delete the job and its content using a the following details
 Field Name     | Value
 -------------- | --------------
 Request Type   | `DELETE`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/forecast/1`
+URL            | `C4PAURL/api/analytics/forecast/1`
 
 [DONE]
 [ACCORDION-END]
 
 ### Optional
 For more details on the SAP Cloud for predictive services, you can check the following URL that can also allow you to run the service:
-  - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
+  - `C4PAURL/raml/console/index.html?raml=../api/aa-cloud-services.raml`
 Or the public documentation
   - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
 
