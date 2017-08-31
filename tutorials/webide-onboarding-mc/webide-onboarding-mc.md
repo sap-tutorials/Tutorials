@@ -108,7 +108,7 @@ Do the following:
 
 
 * [Create Cloud Foundry subaccounts, organizations, and spaces](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76e79d62fa0149d5aa7b0698c9a33687.html).
-We recommend you create separate subaccounts for development, staging/test and production purposes. We also recommend at least one space per development per project (in the development and staging subaccounts).
+We recommend you create separate subaccounts for development, staging/test and production purposes. We also recommend at least one space per development team per project (in the development and staging subaccounts).
 * [Register your developers](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/5a91cf502b5146958977a5fb906df93a.html)
 * [Assign developers to organizations and spaces](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/bbaef4ec39af493192a7a518b94e071b.html).
 
