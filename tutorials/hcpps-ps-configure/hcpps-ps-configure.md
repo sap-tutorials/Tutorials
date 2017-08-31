@@ -31,7 +31,7 @@ Click on your ***SAP Cloud Platform Account name*** as highlighted on the below 
 
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
--
+&nbsp;
 
 ![SAP Cloud Platform Cockpit](01.png)
 
@@ -52,7 +52,7 @@ Once enable, you will need to deploy the ***Cloud for Predictive Analytics*** ap
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Deploy the Cloud for Predictive Analytics application)]
+[ACCORDION-BEGIN [Step 2: ](Deploy the Predictive Services application)]
 Click on **Go To Service**
 
 ![Predictive Services](04.png)
@@ -147,11 +147,13 @@ On the left side bar, navigate in **Security**, then click on **Authentication C
 
 Click on **Activate Custom Configuration**.
 
+![Authentication](15.png?)
+
 Check **User name and password** and **Client certificate** for the ***FORM*** authentication scheme
 
 Click on **Save**
 
-![Authentication](15.png)
+![Authentication](15-1.png)
 
 Next, you will receive next an alert regarding the fact that the changes will be applied on the next restart, which is what we will do next.
 
