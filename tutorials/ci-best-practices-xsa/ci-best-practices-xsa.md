@@ -19,7 +19,7 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Next Steps
 
   - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-  
+
 ---
 
 > This document is part of [Continuous Integration (CI) Best Practices with SAP](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html). To ensure that all the examples work properly, follow the setup instructions for all the prerequisites components.
@@ -42,14 +42,14 @@ SAP HANA XS advanced applications may consist of multiple modules and be impleme
 
 > [The Multi-Target Application Model: A guide to understand multi-target applications](http://sapassets.edgesuite.net/sapcom/docs/2016/06/e2f618e4-757c-0010-82c7-eda71af511fa.pdf)
 
- SAP HANA XS advanced supports Git as a source control management system. SAP HANA SPS12 and later includes a Gerrit server that is integrated with the XS advanced runtime. Gerrit for XS advanced is an optional component of the XS advanced platform that can be installed via the software provisioning manager. SAP Web IDE for SAP HANA fully supports Git repositories. For the setup of Gerrit for XS advanced have a look at the following documentation: 
+ SAP HANA XS advanced supports Git as a source control management system. SAP HANA SPS12 and later includes a Gerrit server that is integrated with the XS advanced runtime. Gerrit for XS advanced is an optional component of the XS advanced platform that can be installed via the software provisioning manager. SAP Web IDE for SAP HANA fully supports Git repositories. For the setup of Gerrit for XS advanced have a look at the following documentation:
 
 > [Set up Gerrit for XS Advanced Application Development](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.00/en-US%20Less/2d0c64a1a50045ab867605cf4b89def8.html)  
 
 The CI process discussed in this chapter implements an MTA running on SAP HANA XS advanced. Source changes are pushed by the developer to a central Git repository (either the one that is integrated in SAP HANA or a custom Git repository). Inside the CI build, the MTA archive builder - a command-line tool shipped by SAP - triggers the technology-specific compilers for the dedicated modules contained in the MTA. Then, the MTA archive builder packages the artifacts from each module into one archive file with the extension `.mtar`. To download and learn more about the MTA archive builder refer to the following links:  
 
 > [MTA Archive Builder Download](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100800000903&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MULTITRG%20APP%20ARCHIVE%20BUILDER)  
-> [MTA Archive Builder Documentation](https://uacp2.hana.ondemand.com/viewer/58746c584026430a890170ac4d87d03b/HANA%202.0%20SPS%2002/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)
+> [MTA Archive Builder Documentation](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US)
 
 After the MTA archive builder has run, the build result is automatically deployed into an environment for automatic testing during the CI build. For the deployment, the XS advanced command-line client triggers the XS deploy service. The CI build may contain tests such as static code checks for the JavaScript sources (`ESLint`) or automated tests for the user interface.
 
@@ -82,7 +82,7 @@ What is described in detail here is only an example that shows how to set up a c
 
 It is assumed that a SAP HANA XS advanced system with SAP HANA Runtime Tools is installed. We do not assume an already installed SAP Web IDE, since its installation is described below. But we assume throughout this guide that the version of SAP Web IDE is higher than:
 
-- SPS12 patch 6 for SAP Web IDE 1 
+- SPS12 patch 6 for SAP Web IDE 1
 
 - SPS00 patch 2 for SAP Web IDE 2
 
@@ -158,15 +158,15 @@ The CI process requires the MTA project sources that are cloned from the Git rep
 
     > [Node.js Home Page](https://Nodejs.org/en/)   
     > [Node.js Downloads](https://nodejs.org/en/download/)
-    
+
     You can install the `tar.gz` package on Linux in any directory. We recommend that you define a common installation directory on all your Jenkins slave machines.
 
-    We tested the procedure with node versions 4 and 6 and npm versions 2 and 3. If possible, use the latest version. 
+    We tested the procedure with node versions 4 and 6 and npm versions 2 and 3. If possible, use the latest version.
 
 2. Open the Jenkins front end, and go to **Manage Jenkins > Manage Plugins > Available**. Select **Node.js Plugin** and start the installation.
-    
+
     Although the primary feature offered by this plugin (using JavaScript directly in job implementations) is not used in our example, it does handle multiple Node.js versions in parallel, allowing you to choose the appropriate one at the job level.
-    
+
 3. In the Jenkins front end, go to **Manage Jenkins > Configure System**. Scroll down to the **Node.js** section and select **Node.js installations**. Enter the path to the Node.js binaries and an appropriate name for this installation. The name is referred to by build job definitions.
 
 
@@ -174,7 +174,7 @@ The CI process requires the MTA project sources that are cloned from the Git rep
 
 As Java application, the MTA archive builder, which is available from the SAP ONE Support Launchpad, can be installed directly on the Jenkins slave machine, or it can be stored on a location which is accessible via HTTP, for example Nexus. The latter alternative has the advantage that upgrades are much easier to handle.
 
-> [Multi target Application Archive Builder](https://uacp2.hana.ondemand.com/viewer/58746c584026430a890170ac4d87d03b/HANA%202.0%20SPS%2002/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)  
+> [Multi target Application Archive Builder](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US)  
 > [SAP ONE Support Launchpad](https://launchpad.support.sap.com/)
 
 #### Procedure
@@ -188,9 +188,9 @@ As Java application, the MTA archive builder, which is available from the SAP ON
 
 ### 3.4 Setting Up and Preparing the npm Registry (old SAP Web IDE for HANA releases only)
 
-> This step is only required for SAP Web IDE releases that are equal or lower than: 
+> This step is only required for SAP Web IDE releases that are equal or lower than:
 
-- SPS12 patch 6 for SAP Web IDE 1 
+- SPS12 patch 6 for SAP Web IDE 1
 
 - SPS00 patch 2 for SAP Web IDE 2
 
@@ -198,11 +198,11 @@ In that case, please see paragraph 8.1 "Setting Up and Preparing the npm Registr
 
 
 
-### 4. Configuring the SAP HANA XS Advanced System 
+### 4. Configuring the SAP HANA XS Advanced System
 
 ### 4.1 Installing and Configuring SAP Web IDE for SAP HANA
 
-To develop SAP HANA XS advanced applications a SAP Web IDE for SAP HANA is used and installed. 
+To develop SAP HANA XS advanced applications a SAP Web IDE for SAP HANA is used and installed.
 For information about installing SAP Web IDE for SAP HANA, see the official documentation.
 
 > [SAP Web IDE for SAP HANA - Installation and Upgrade Guide](https://help.sap.com/viewer/1a8e7ab05a2e4119b02b702f211422f5/2.0.00/en-US/c0563b9c5cbd4a78ab0e58c6bc97bedb.html)   
@@ -253,12 +253,12 @@ One step that we highlight here is configuring the npm cache. The MTA extension 
            SAPUPSTREAM_LINK: "https://npm.sap.com/"
     (...)
     ```
-    
+
     > [SAP Web IDE for SAP HANA - Installation and Upgrade Guide](https://help.sap.com/viewer/1a8e7ab05a2e4119b02b702f211422f5/2.0.00/en-US/c0563b9c5cbd4a78ab0e58c6bc97bedb.html)
 
     Save the file.
 
-6. Deploy SAP Web IDE, accompanied by the modified `mtaext` file. If SAP Web IDE is already installed, you must uninstall it first. 
+6. Deploy SAP Web IDE, accompanied by the modified `mtaext` file. If SAP Web IDE is already installed, you must uninstall it first.
 
     ```
     xs install XSACSAPWEBIDE<version number>.ZIP -e sap-xsac-devx-<version number>.mtaext -o ALLOW_SC_SAME_VERSION
@@ -284,7 +284,7 @@ Some configuration steps are required to enable developers and the CI process to
     ```
 
     This URL administers access to the XS advanced system using the frontend. All actions can also be performed using the `xs` command from the command line.
-    
+
 
 ##### Creating users
 
@@ -319,7 +319,7 @@ The user `SAMPLEUSER` does not yet have permission for accessing SAP Web IDE on 
 
 1. From your browser, go to XS Advanced Administration and Monitoring Tools. Log in as user `XSA_ADMIN`.
 
-2. Select the tile **Application Role Builder**. From the toolbar on the left, select **Role Collection**. 
+2. Select the tile **Application Role Builder**. From the toolbar on the left, select **Role Collection**.
 
     ![Configure role collection](configure-role-collection.png)
 
@@ -346,7 +346,7 @@ The user `SAMPLEUSER` does not yet have permission for accessing SAP Web IDE on 
     Template Name                   | `WebIDE_Administrator`
     Role Name                       | `WebIDE_Administrator`
 
-7. Return to the home screen of **Administration and Monitoring Tools** and select the tile **User Management**. Select the developer user (`SAMPLEUSER` in our example), open its details, select **Role Collections > Add**, and choose the `WebIDE_DEVELOPER` role collection. Press **OK** and **Save**. 
+7. Return to the home screen of **Administration and Monitoring Tools** and select the tile **User Management**. Select the developer user (`SAMPLEUSER` in our example), open its details, select **Role Collections > Add**, and choose the `WebIDE_DEVELOPER` role collection. Press **OK** and **Save**.
 
 8. Repeat step 7 for user `XSA_ADMIN` and role collection `WebIDE_Administrator`.
 
@@ -437,7 +437,7 @@ When a developer user wants to build the application which he is currently devel
 
 ### 5. Creating the Tiny World XS Advanced Application
 
-In our example, we use the Tiny World tutorial to show something a bit more concrete than a simple Hello-World example. For further details, see the SAP HANA XS advanced Developer Guide: 
+In our example, we use the Tiny World tutorial to show something a bit more concrete than a simple Hello-World example. For further details, see the SAP HANA XS advanced Developer Guide:
 
 > [SAP HANA Developer Guide for SAP HANA XS Advanced Model](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.00/en-US/1547c14105be409ebfc3a9e9634a7188.html)  
 > [Tiny World Tutorial](https://blogs.sap.com/2016/03/28/developing-with-xs-advanced-a-tinyworld-tutorial)
@@ -453,7 +453,7 @@ In our example, we use the Tiny World tutorial to show something a bit more conc
     xs login -a http://<server>:3<instance-number>30
     xs app --urls webide
     ```
-    
+
 2. In your browser (we recommend using either Chrome or Firefox to work with SAP Web IDE), open the retrieved URL and log in as `SAMPLEUSER`. If are you logging in for the first time, you are prompted to change your initial password.
 
 
@@ -475,7 +475,7 @@ In our example, we use the Tiny World tutorial to show something a bit more conc
 
 6. Save all your changes in SAP Web IDE.
 
-7. Check the `package.json` files of the Node.js and HTML5 module: the dependencies to SAP modules must be scoped, that means, their names must follow the scheme `@sap/*`, for example `@sap/xsjs`. If they follow the old naming convention like `sap-xsjs`, rename them accordingly. Check that the version of the scoped packages have at least the following versions: 
+7. Check the `package.json` files of the Node.js and HTML5 module: the dependencies to SAP modules must be scoped, that means, their names must follow the scheme `@sap/*`, for example `@sap/xsjs`. If they follow the old naming convention like `sap-xsjs`, rename them accordingly. Check that the version of the scoped packages have at least the following versions:
 
     ```
     "@sap/xsenv": "1.2.6"
@@ -496,7 +496,7 @@ In our example, we use the Tiny World tutorial to show something a bit more conc
 
     ![Git pane](git-pane.png)
 
-    This step pushes your changes to Gerrit for review. 
+    This step pushes your changes to Gerrit for review.
 
 
 
@@ -512,7 +512,7 @@ We create the job for the CI build, which is triggered on each change that is me
 1.  Open Jenkins, select **New Item** to create a new job for the CI build, and enter an appropriate item name; the example uses `CI_TinyWorld_master_build`. Select **Freestyle Project** and press **OK**.
 
 2.  Select **This build is parametrized** and enter the following string parameters:
-    
+
     Name                   | Default Value
     :----------------------| :------------------------------------------------------
     `XSA_API_ENDPOINT`     | XS advanced API endpoint URL, example: `https://<hostname>:3<instance number>30`
@@ -525,10 +525,10 @@ We create the job for the CI build, which is triggered on each change that is me
 3. Continue the configuration and enter the following:
 
     Field                                           | Value
-    :---------------------------------------------- | :------------------------------------------------------------------------- 
+    :---------------------------------------------- | :-------------------------------------------------------------------------
     Restrict where this project can be run          | `selected`
     Label Expression                                | The label that you have assigned to the slave. In our example: `builds`
-    Source Code Management > Git                    | `selected` 
+    Source Code Management > Git                    | `selected`
     Repository URL                                  | The SSH-based URL of your repository
     Credentials                                     | `jenkins`
     Branches to build; Branch Specifier             | `master`
@@ -578,7 +578,7 @@ We create the job for the CI build, which is triggered on each change that is me
     xs api ${XSA_API_ENDPOINT}
     xs login -u ${HANA_XSA_USER} -p ${HANA_XSA_PASSWORD} -o ${ORGANIZATION} -s ${CI_SPACE}
     xs deploy -f ${mtaName}.mtar
-    
+
     # add automatic tests here
     #
 
@@ -590,15 +590,15 @@ We create the job for the CI build, which is triggered on each change that is me
       /-----/ {found = 1}'
     xs logout
     ```
-    
+
     An MTA project can consist of several modules applying different technologies (Java, node.js, HDI, html5). The MTA archive builder triggers a build of each module using the builder that is configured in `mta.yaml`. Each module type is assigned a default builder that is used if one is not specified explicitly (for example `npm` is the default builder for `node.js` modules). All module build results are packed into one `mtar` file. In the shell script above, the name of the `mtar` file is generated from the project ID that is provided in the `mta.yaml` file. The packed archive also contains a deployment descriptor file named `mtad.yaml`, which is generated by the MTA archive builder from the data provided by `mta.yaml`.
 
     After successful deployment, the application can be tested automatically. We leave this step to be performed according to your needs.
 
     At the end, we do some clean up that creates a defined state in the XS advanced space for the CI builds that follow after the current one: we undeploy the application and remove any running service. The HDI service, which is instantiated automatically during application deployment might contain some test data that is created by automated tests; we do not want this data to be present during other CI build runs.
-    
+
 5. Archive the artifact and the `mta.yaml` (which contains the project metadata) to be available for subsequent Jenkins jobs. Select **Add post-build action > Archive the artifacts** and enter `*.mtar, mta.yaml` into the **Files to archive** field.
-    
+
 6. In the **Post-build Actions** section, select **Add post-build action > Build other projects (manual step)** and enter `CI_TinyWorld_master_testDeploy` as **Projects to build**. You can safely ignore the warning that the job entered does not yet exist, as we will be creating it.
 
 7. Select **Add Parameters > Current build Parameters**.
@@ -622,7 +622,7 @@ From a technical point of view, this job imports the `mtar` file that was archiv
 1. Open Jenkins and select **New Item > Freestyle Job**. Enter `CI_TinyWorld_master_testDeploy`.
 
 2. The XS advanced system parameters are taken from the CI build job. Select **This build is parametrized**, enter the following string parameters and leave their values empty:
-    
+
     Name                   | Default Value
     :--------------------- | :------------------------------------------------------
     `XSA_API_ENDPOINT`     | `<empty>`
@@ -635,10 +635,10 @@ From a technical point of view, this job imports the `mtar` file that was archiv
 3. For the other configuration options, enter the following:
 
     Field                                        | Value
-    :------------------------------------------- | :------------------------------------------------------------------------- 
+    :------------------------------------------- | :-------------------------------------------------------------------------
     Restrict where this project can be run       | `selected`
-    Label Expression                             | The label you have assigned to the slave. In our example: `builds` 
-    Source Code Management > None                | `selected` 
+    Label Expression                             | The label you have assigned to the slave. In our example: `builds`
+    Source Code Management > None                | `selected`
     Build Environment                            |
     Delete workspace before build starts         | `selected`
     Inject passwords to the build as environment | `selected`
@@ -648,11 +648,11 @@ From a technical point of view, this job imports the `mtar` file that was archiv
 4. In the **Build** section, select **Add build step > Copy artifacts from other projects** and enter:
 
     Field                                  | Value
-    :------------------------------------- | :------------------------------------------------------------------------- 
+    :------------------------------------- | :-------------------------------------------------------------------------
     Project name                           | `CI_TinyWorld_master_build`
     Which build                            | `Upstream build that triggered this job`
     Artifacts to copy                      | `*.mtar, mta.yaml`
-    
+
     This step restores the artifact that was created in the build job into the workspace directory of this job.
 
 5. Select **Add build step > Execute shell** and enter the following script implementation:
@@ -664,11 +664,11 @@ From a technical point of view, this job imports the `mtar` file that was archiv
     xs deploy -f *.mtar
     xs logout
     ```
-    
+
 6. In the **Post-build Actions** section, select **Add post-build action > Build other projects (manual step)** and enter `CI_TinyWorld_master_release` as **Downstream Project Names**. You can safely ignore the warning that the job entered does not yet exist, as we will be creating it in the next step.
 
 7. Select **Add Parameters > Current build Parameters**.
-    
+
 8. Save.
 
 
@@ -680,7 +680,7 @@ We will use a copy of the test deploy job, adapting the target pointing to the p
 
 
 #### Procedure
-    
+
 1. Open Jenkins and select **New Item**. Enter `CI_TinyWorld_master_release`. Select **Copy existing item** and enter `CI_TinyWorld_master_testDeploy` as the copy template.
 
 2. In the **Build** section, enter the following code into the **Command** field:
@@ -713,10 +713,10 @@ We will use a copy of the test deploy job, adapting the target pointing to the p
     xs logout
     ```
 
-    Before deploying the application into the `PROD` space, the script uploads the `mtar` file to Nexus as the released version. We have used Maven as the tool for the upload, since it provides an easy way to do this, as well as performing error handling. But a `pom.xml` is required that contains the co-ordinates of the artifact. The script extracts all data required to be available in the `pom.xml` automatically from the `mta.yaml` file. 
+    Before deploying the application into the `PROD` space, the script uploads the `mtar` file to Nexus as the released version. We have used Maven as the tool for the upload, since it provides an easy way to do this, as well as performing error handling. But a `pom.xml` is required that contains the co-ordinates of the artifact. The script extracts all data required to be available in the `pom.xml` automatically from the `mta.yaml` file.
 
 3. Remove any post-build action.
-     
+
 4. Save.
 
 
@@ -733,7 +733,7 @@ Now that we have created the CI Jenkins jobs, next we will add a convenient over
 
 3. Select `CI_TinyWorld_master_build` for **Select Initial Job** and specify the **No of Displayed Builds**, for example `5`.
 
-4. Press **OK**. 
+4. Press **OK**.
 
 
 ### 6.5 Creating a Jenkins Voter Build Job
@@ -798,7 +798,7 @@ The voter build job is executed immediately after you push a commit to Gerrit fo
 
 All Jenkins jobs are now ready to do a full round-trip through the CI process, including a voter build that is done before a commit reaches the master branch.
 
-1. Enter the `tinyworld` project in SAP Web IDE. Perform a small change (for example, increase the version number of your component in `mta.yaml`). Add the change to Git, commit it, and push it to Gerrit. 
+1. Enter the `tinyworld` project in SAP Web IDE. Perform a small change (for example, increase the version number of your component in `mta.yaml`). Add the change to Git, commit it, and push it to Gerrit.
 
 2. After few seconds, the voter build in Jenkins starts. Monitor the build result in Jenkins and Gerrit.
 
@@ -819,7 +819,7 @@ All Jenkins jobs are now ready to do a full round-trip through the CI process, i
     Check in Nexus that the `mtar` file was correctly uploaded.
 
     ![Artifact in Nexus](artifact-in-nexus.png)
-    
+
 
 ### 7. Enhancements
 
@@ -833,7 +833,7 @@ We recommend that whenever you do changes on `Gruntfile.js`, you do it on a loca
 
 #### Prerequisites
 
-Install Node.js and Java 1.8 or higher on your local computer. 
+Install Node.js and Java 1.8 or higher on your local computer.
 
 #### Procedure
 
@@ -855,7 +855,7 @@ Install Node.js and Java 1.8 or higher on your local computer.
         "grunt-contrib-uglify": "1.0.1"
       },
       (...)
-    ``` 
+    ```
 
 4. Create another new file `Gruntfile.js`, this time in the `tinyjs` folder. Open the file and copy into it the content of `tinyjs/Gruntfile.js` from the appendix. This file let you run an `ESLint` check on the sources and execute unit tests.
 
@@ -899,7 +899,7 @@ Install Node.js and Java 1.8 or higher on your local computer.
 
 ### 7.2 Enhancing the Module Builds: ESLint
 
-ESLint is a commonly used static code analysis tool for JavaScript. This section discusses, at a very high level, how to integrate ESLint into the Grunt build. 
+ESLint is a commonly used static code analysis tool for JavaScript. This section discusses, at a very high level, how to integrate ESLint into the Grunt build.
 
 > [ESLint Home](http://eslint.org/)
 
@@ -911,11 +911,11 @@ ESLint is a commonly used static code analysis tool for JavaScript. This section
     npm install -g eslint
     eslint --init
     ```
-    
+
     You can find additional information at the following location:
 
     > [ESLint on the npm repository](https://www.npmjs.com/package/eslint)
-    
+
     Depending on the configuration format you have chosen, there is now a new file, named, for example, `.eslintrc.json`. You may later reconfigure this file by switching rules on and off according to your requirements. You might have to change some rules from `error` to `warn`, or to switch them off at the beginning to reach an ESLint run on `tinyui` and `tinyjs`.   
 
 2. Commit the change.
@@ -942,7 +942,7 @@ We integrate a small XS Unit test into the build. The example follows chapter 6 
 5. In the **Post-build Actions** section, add the step **Publish JUnit test result report** and enter the following data:
 
     Field                                  | Value
-    :------------------------------------- | :------------------------------------------------------------------------- 
+    :------------------------------------- | :-------------------------------------------------------------------------
     Test report XML                        | `**/.testresults/*.xml`
     Health report amplification factor     | `1` or any other value, which is convenient for you
 
@@ -959,14 +959,14 @@ The current setup assumes that ESLint and tests are executed in both voter and C
     _schema-version: '2.0'
     ID: com.mycompany.mta.tinyworld.ext.vo_build
     extends: com.mycompany.mta.tinyworld
- 
+
     modules:
 
      - name: tinyui
        build-parameters:
           grunt-opts:
             - vo_build
-            
+
      - name: tinyjs
        build-parameters:
           grunt-opts:
@@ -979,7 +979,7 @@ The current setup assumes that ESLint and tests are executed in both voter and C
     _schema-version: '2.0'
     ID: com.mycompany.mta.tinyworld.ext.ci_build
     extends: com.mycompany.mta.tinyworld
- 
+
     modules:
 
      - name: tinyui
@@ -1037,7 +1037,7 @@ Figure 3: npm registry design.
     ![Create hosted repository](create-hosted-repository.png)
 
     Enter the following data for your new repository. You can enter any ID and name you like; in our example, we use those listed below:
-    
+
     Field                           | Value
     :------------------------------ | :--------------------------
     Repository ID                   | `SAP_NPM_Modules`
@@ -1087,7 +1087,7 @@ Figure 3: npm registry design.
 
     process_module() {
         if [ $1 ]; then
-           module=$1 
+           module=$1
            cd $module
            echo "Processing $module ..."
            moduleVersion=`awk '$1 ~ /version/ {match($2,"\"([0-9]+.[0-9]+.[0-9]+.*)\"",a)
@@ -1097,7 +1097,7 @@ Figure 3: npm registry design.
            else
         	   echo "uploading $module/$moduleVersion"
 	           npm publish --registry $npm_registry --ignore-scripts
-	   
+
 	           if [ -d node_modules ]; then
 	               cd node_modules
 	               process_dir
@@ -1117,7 +1117,7 @@ Figure 3: npm registry design.
     }
 
     process_dir
-    ``` 
+    ```
 
 The upload requires that you authorize yourself against the registry. Follow the steps how to define an authorization token as described in the following document:
 
@@ -1158,7 +1158,7 @@ Replace the script implementation in the Jenkins job by the following lines. Rep
     xs api ${XSA_API_ENDPOINT} --skip-ssl-validation
     xs login -u ${HANA_XSA_USER} -p ${HANA_XSA_PASSWORD} -o ${ORGANIZATION} -s ${CI_SPACE}
     xs deploy -f ${mtaName}.mtar
-    
+
     # add automatic tests here
     #
 
@@ -1242,5 +1242,5 @@ module.exports = function (grunt) {
 > The content of this document is for guidance purposes only. No warranty or guarantees are provided.
 
 ## Next Steps
- 
+
   - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
