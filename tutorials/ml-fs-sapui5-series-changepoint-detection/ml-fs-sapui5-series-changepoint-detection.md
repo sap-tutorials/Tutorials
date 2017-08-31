@@ -24,7 +24,7 @@ You will then be able to substitute the **Time Series Change Point Detection** s
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get Your Sanbox URL)]
+[ACCORDION-BEGIN [Step 1: ](Get Your Sandbox URL)]
 
 In order to consume the **Time Series Change Point Detection** Machine Learning Functional Services, you will first need to get the service URI, your API Key and the request and response parameters.
 
@@ -248,8 +248,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 	"options": {
 		"separator": "|",
 		"series_separator": "#"
-	},
-	"optionsJs": "{\"separator\":\"|\",\"series_separator\":\"#\"}"
+	}
 }
 ```
 
@@ -453,7 +452,7 @@ sap.ui.define([
 			// generate the data
 			for (var iColValue = 0; iColValue < iColCount; iColValue++) {
 				for (var iRowValue = 0; iRowValue < iRowCount; iRowValue++) {
-					var value = Math.cos((1 + iRowValue) * rnd * (1 + iColValue) * 20) * 100;
+					var value = (Math.cos((1 + iRowValue) * rnd * (1 + iColValue) * 20) * 100).toFixed(2);
 					oSeriesCol[iColValue].rows[iRowValue] = (value);
 					oSeriesRow[iRowValue].cols[iColValue] = (value);
 				}
@@ -507,7 +506,8 @@ sap.ui.define([
 				url: url,
 				type: "POST",
 				data: $.param({
-					"options": options,
+					"options": "{\"separator\":\"" + oView.getModel("demo").getProperty("/options/separator") + "\", \"series_separator\":\"" +
+						oView.getModel("demo").getProperty("/options/series_separator") + "\"}",
 					"texts": text
 				}),
 				async: false,

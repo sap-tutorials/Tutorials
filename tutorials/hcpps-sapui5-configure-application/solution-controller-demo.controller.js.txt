@@ -4,7 +4,7 @@ sap.ui.define([
 ], function(Controller, MessageToast) {
 	"use strict";
 
-	return Controller.extend("xxxxxx.controller.demo", {
+	return Controller.extend("sapui5demo.controller.demo", {
 		onInit: function() {
 			if (typeof sap.ui.getCore().getModel() === 'undefined') {
 				sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel());
