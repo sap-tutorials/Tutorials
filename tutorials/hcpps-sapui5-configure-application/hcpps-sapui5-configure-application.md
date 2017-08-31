@@ -64,7 +64,7 @@ Field Name           | Value
 Name                 | `HCPps`
 Type                 | `HTTP`
 Description          | `HCP predictive service Destination`
-URL                  | the C4PA URL as described at the begining
+URL                  | the C4PA URL as described at the beginning
 Proxy Type           | `Internet`
 Authentication       | `AppToAppSSO`
 
