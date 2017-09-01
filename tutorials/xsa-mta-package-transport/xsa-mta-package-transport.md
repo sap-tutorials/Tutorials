@@ -1,13 +1,13 @@
 ---
-title: SAP HANA `xs` Advanced - Package your MTA application for transport
-description: Transport your `xs` Advanced application for transport
+title: SAP HANA XS Advanced - Package your MTA application for transport
+description: Transport your XS Advanced application for transport
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner | Intermediate | Advanced
- - **Tutorials:** [SAP HANA `xs` Advanced tutorial - Getting started](https://www.sap.com/developer/groups/hana-`xs`a-get-started.html) or [SAP HANA `xs` Advanced tutorial - Node.js](https://www.sap.com/developer/groups/hana-`xs`a-nodejs.html) or [SAP HANA `xs` Advanced tutorial - SAPUI5](https://www.sap.com/developer/groups/hana-`xs`a-sapui5.html)
+ - **Tutorials:** [SAP HANA XS Advanced tutorial - Getting started](https://www.sap.com/developer/groups/hana-xsa-get-started.html) or [SAP HANA XS Advanced tutorial - Node.js](https://www.sap.com/developer/groups/hana-xsa-nodejs.html) or [SAP HANA XS Advanced tutorial - SAPUI5](https://www.sap.com/developer/groups/hana-xsa-sapui5.html)
 
 
 ## Next Steps
@@ -49,9 +49,9 @@ Upload the `*mtar` file to a suitable directory.
 
 [ACCORDION-BEGIN [Step 3: ](Deploy the MTAR file)]
 
-As a user with the proper permissions, for example, `hxeadm` if you are using SAP HANA, express edition, execute the `xs` CLI.
+As a user with the proper permissions, for example, `hxeadm` if you are using SAP HANA, express edition, execute the XS CLI.
 
->Notes: If required, login to `xs` first using command `xs` login. Additionally, If you have created a user-provided service, you will need to create it with the proper `xs` cups command first.
+>Notes: If required, login to `xs` first using command `xs login`. Additionally, If you have created a user-provided service, you will need to create it with the proper `xs cups` command first.
 
 </br>
 
@@ -67,11 +67,11 @@ Make sure it finished successfully:
 
 [ACCORDION-BEGIN [Step 4: ](Check your application)]
 
-You can now check the services have been deployed using `xs` services:
+You can now check the services have been deployed using XS services:
 
 ![Deploy finished check](check.png)
 
-And the application using `xs` apps in the corresponding space (for example, development in HANA express edition):
+And the application using `xs apps` in the corresponding space (for example, development in HANA express edition):
 
 ![Deploy finished check](apps.png)
 
