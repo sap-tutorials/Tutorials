@@ -98,7 +98,7 @@ Run the **Download Manager**. If your system displays a security warning when yo
 **Note:**
 If you are inside a corporate firewall, you will be prompted for your proxy settings. Contact your IT administrator.
 
-![Download Manager](download_manager_201.png)
+![Download Manager](download_manager_sp02_pl01.png)
 
 In the **Image** pull-down, select **Binary Installer**. Click **Browse** and select where you want your downloads to be saved. Then select one or more of the following packages:
 
@@ -106,27 +106,49 @@ In the **Image** pull-down, select **Binary Installer**. Click **Browse** and se
 
 - **Applications** - Downloads the optional package **`hxexsa.tgz`**; XSA, Web IDE, SAP HANA cockpit, and EA Designer. Download this and **`hxe.tgz`** to install those applications.  
 
-- **Clients** - Downloads a zip file containing four compressed client-tools bundles. Use the client packages to access developed SAP HANA 2.0, express edition applications from a client PC. See [How to Install the SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html).
-
-    - **`hdb_client_linux.tgz`** - Reduced HANA client for Linux 64-bit. Contains the HANA client package, drivers, and required licenses.
-
-    - **`hdb_client_windows.zip`** - Reduced HANA client for Windows 64-bit. Contains the HANA client package, drivers, and required licenses.
-
-    - **`xs.onpremise.runtime.client_linuxx86_64.zip`** - Command-line tools for Linux that enable access to (and control of) the SAP HANA XS advanced run-time environment.
-
-    - **`xs.onpremise.runtime.client_ntamd64.zip`** - Command-line tools for Windows that enable access to (and control of) the SAP HANA XS advanced run-time environment.
-
-    > **Tip:** After you develop an application using SAP HANA, express edition, install Download Manager to a client machine and download the *Clients* package to that client machine. You can then use the clients to connect to -- and test -- your HANA application, emulating a customer.  
-
 - **Text analysis files for additional languages** - For languages other than English and German, these files are required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the **Server only** and **Applications** packages.) Download this and **`hxe.tgz`** to install these files. For the text analysis files installation procedure, see *Install Text Analysis Files* at [Start Using SAP HANA 2.0, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).
 
 - **SAP Enterprise Architect Designer (XSA only)** - Downloads **`eadesigner.tgz`**. Extract this in the same directory as **`hxe.tgz`** and **`hxexsa.tgz`** to include EA Designer in your installation process.
 
-- **SAP Smart Data Streaming option** - Downloads **`sds.tgz`**, which contains SAP HANA smart data streaming. Extract this in the same directory as **`hxe.tgz`** and **`hxexsa.tgz`** to include smart data streaming in your installation process.
+- **SAP HANA streaming analytics** - Downloads **`hsa.tgz`**, which contains SAP HANA streaming analytics. Extract this in the same directory as **`hxe.tgz`** and **`hxexsa.tgz`** to include streaming analytics in your installation process.
 
-- **SAP Smart Data Streaming studio plug-in** - Downloads **`sds_plugin.tgz`**, which contains an Eclipse plugin for creating and deploying smart data streaming projects. For installation steps see [Installing and Configuring the Streaming Studio Plugin](https://www.sap.com/developer/tutorials/hxe-ua-streaming-plugin.html).
+- **SAP HANA streaming analytics studio plug-in** - Downloads **`hsa_plugin.tgz`**, which contains an Eclipse plugin for creating and deploying streaming analytics projects. For installation steps see [Installing and Configuring the Streaming Studio Plugin](https://www.sap.com/developer/tutorials/hxe-ua-streaming-plugin.html).
 
 - **SAP HANA Interactive Education (XSA only)** - Downloads **`shine.tgz`**. Extract this in the same directory as **`hxe.tgz`** and **`hxexsa.tgz`** to include SHINE in your installation process.
+
+- **SAP HANA External Machine Learning Library** - The SAP HANA External Machine Learning Library is an application function library (AFL) supporting the integration of Google `TensorFlow`, as an external machine learning framework, with SAP HANA, express edition. Download file name is `eml.tgz`.
+
+- **Clients (Linux x86/64)** - Client download package for Linux machines (x86/64 architectures). Use the client packages to access developed SAP HANA, express edition applications from a client PC. See [How to Install SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html). The package includes:
+
+    - **`hdb_client_linux.tgz`** - Reduced HANA client for Linux 64 bit. Contains the HANA client package, drivers, and required licenses.
+
+    - **`xs.onpremise.runtime.client_linuxx86_64.zip`** - Command-line tools for Linux that enable access to (and control of) the SAP HANA XS advanced run-time environment.
+
+- **Clients (Linux PPC/Little Endian)** -  Client download package for Linux machines (little endian on Power architectures). Use the client packages to access developed SAP HANA, express edition applications from a client PC. See [How to Install SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html). The package includes:
+
+    - **`hdb_client_linux_ppc64le.tgz`** - Reduced HANA client for Linux on Power. Contains the HANA client package, drivers, and required licenses.
+
+    - **`xs.onpremise.runtime.client_linuxppc64le.zip`** - Command-line tools for Linux on Power that enable access to (and control of) the SAP HANA XS advanced run-time environment.
+
+- **`Clients (Windows)`** - Client download package for Windows machines. Use the client packages to access developed SAP HANA, express edition applications from a client PC. See [How to Install SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html). The package includes:
+
+    - **`hdb_client_windows_x86_32.zip`** - Reduced HANA client for Windows 32-bit. Contains the HANA client package, drivers, and required licenses.
+
+    - **`hdb_client_windows_x86_64zip`** - Reduced HANA client for Windows 64-bit. Contains the HANA client package, drivers, and required licenses.
+
+    - **`xs.onpremise.runtime.client_ntamd64.zip`** - Command-line tools for Windows that enable access to (and control of) the SAP HANA XS advanced run-time environment.
+
+- **`Clients (Mac)`** - Client download package for Mac. Use the client packages to access developed SAP HANA, express edition applications from a client PC. See [How to Install SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html). The package includes:
+
+    - **`hdb_client_mac.tgz`** - Reduced HANA client for Mac. Contains the HANA client package, drivers, and required licenses.
+
+    - **`xs.onpremise.runtime.client_darwinintel64.zip`** - Command-line tools for Mac that enable access to (and control of) the SAP HANA XS advanced run-time environment.
+
+    > **Tip:** After you develop an application using SAP HANA, express edition, install Download Manager to a client machine and download the *Clients* package to that client machine. You can then use the clients to connect to -- and test -- your HANA application, emulating a customer.  
+
+- **SAP HANA smart data integration** - SAP HANA smart data integration provides functionality to access source data, and to provision, replicate, and transform that data in SAP HANA on premise, or in the cloud. Download file name is `sdi.tgz`. <!--Needs link to Mike Madsen's tutorial when available-->
+
+- **SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64)** - The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources. Download file name is `dpagent_linux_x86_64.tgz`. <!--Needs link to Mike Madsen's tutorial when available-->
 
 Click the **Download** button to being your download.
 
@@ -137,7 +159,7 @@ Click the **Download** button to being your download.
 **Note:**
 You may have to disable your firewall for SAP HANA 2.0, express edition to install successfully.
 
-Navigate to the directory where you wish to extract the installation files. Extract the contents of `hxe.tgz`, `hxexsa.tgz` (if you are installing the Applications package), `eadesigner.tgz` (if you are install SAP EA Designer), `sds.tgz` (if you are installing smart data streaming), and `shine.tgz` (if you are installing SHINE):
+Navigate to the directory where you wish to extract the installation files. Extract the contents of `hxe.tgz`, `hxexsa.tgz` (if you are installing the Applications package), `eadesigner.tgz` (if you are install SAP EA Designer), `eml.tgz` (if you are installing the External Machine Learning Library), `hsa.tgz` (if you are installing streaming analytics), and `shine.tgz` (if you are installing SHINE):
 
 ```bash
 tar -xvzf <download_path>/hxe.tgz
@@ -152,7 +174,11 @@ tar -xvzf <download_path>/eadesigner.tgz
 ```
 
 ```bash
-tar -xvzf <download_path>/sds.tgz
+tar -xvzf <download_path>/eml.tgz
+```
+
+```bash
+tar -xvzf <download_path>/hsa.tgz
 ```
 
 ```bash
@@ -187,9 +213,19 @@ sudo ./setup_hxe.sh
 Follow the prompts to configure your installation.
 
 >**Note:**
-> The master password you specify during installation is used for the `<sid>adm`,  `sapadm` OS users, the telemetry technical user, and the SYSTEM user. If you are installing the Applications package, this password is also used for the `XSA_ADMIN`, `XSA_DEV`, and `XSA_SHINE` users.
+> The master password you specify during installation is used for the `<sid>adm`,  `sapadm` OS users, the telemetry technical user, and the SYSTEM user. The password is also used for the following users in additional components:
+> - `XSA_ADMIN` and `XSA_DEV` (Applications package)
+> - `XSA_SHINE` (SHINE)
+> - `SYS_STREAMING` and `SYS_STREAMING_ADMIN` (streaming analytics)
 
->`A1a` (Upper case letters, numbers, lowercase letters) is the default policy to set master password. You will need at least 8 or more characters. Special characters are allowed except for the _&bsol;_ (backslash), _&quot;_ (double quotation marks), and _&grave;_ (backtick) characters. Your password cannot contain a dictionary word, nor can it be too simplistic or systematic (for example: alphabetic sequences or keyboard patterns).
+> SAP HANA, express edition requires a very strong password that complies with these rules:
+> - At least 8 characters
+> - At least 1 uppercase letter
+> - At least 1 lowercase letter
+> - At least 1 number
+> - Can contain special characters, but not _&grave;_ (backtick), _&#36;_ (dollar sign),  _&#92;_ (backslash), _&#39;_ (single quote), or _&quot;_ (double quotes)
+> - Cannot contain dictionary words
+> - Cannot contain simplistic or systematic values, like strings in ascending or descending numerical or alphabetical order
 
 [DONE] [ACCORDION-END]
 
