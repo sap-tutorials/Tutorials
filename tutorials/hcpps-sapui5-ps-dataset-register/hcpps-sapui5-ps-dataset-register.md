@@ -10,7 +10,7 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
   - **Tutorials:** [Configure a SAPUI5 application from the project template](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
 
 ## Next Steps
-  - [Manage the registered "Dataset"](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
+  - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 ### You will learn
@@ -45,7 +45,6 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 
 ![HTML5 Applications](04.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
@@ -123,7 +122,6 @@ sap.ui.define([
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
@@ -230,7 +228,6 @@ Open the `webapp\view\dataset\register.view.xml` file and add the following code
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Extend the default view)]
@@ -249,7 +246,6 @@ Inside the `<detailPages>` element add the following element:
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run the application)]
@@ -263,7 +259,6 @@ Select the dataset you want to register from the list, then press the `Register 
 Et voilà!
 ![Applications](05.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Solution: ](Created and modified files)]
@@ -274,8 +269,7 @@ In case you are having problems when running the application, please find bellow
   - [`webapp\view\dataset\register.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/solution-view-dataset-register.view.xml.txt)
   - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/solution-view-demo.view.xml.txt)
 
-[DONE]
 [ACCORDION-END]
 
 ## Next Steps
-  - [Manage your "Data Set" in the SAP Cloud Platform predictive service from a SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
+- [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)

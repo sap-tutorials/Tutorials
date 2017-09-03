@@ -10,7 +10,7 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
   - **Tutorials:** [Manage registered predictive "datasets"](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
 
 ## Next Steps
-  - [Implement the "Forecast" service asynchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)
+  - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 ### You will learn
@@ -48,7 +48,6 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 
 ![HTML5 Applications](04.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Registered dataset list fragment)]
@@ -65,7 +64,7 @@ Create a new directory structure for **`webapp\fragment\dataset`** either using 
 
 Create a new file **`DatasetList.fragment.xml`** in `webapp\fragment\dataset` either using the "File" menu or using the right click menu.
 
-Open the `webapp\controller\fragment\dataset\DatasetList.fragment.xml` file and add the following code:
+Open the `webapp\fragment\dataset\DatasetList.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:table="sap.ui.table">
@@ -103,7 +102,6 @@ Open the `webapp\controller\fragment\dataset\DatasetList.fragment.xml` file and 
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Registered dataset header description)]
@@ -114,7 +112,7 @@ The fragment will contain:
 
 Create a new file **`DatasetHeader.fragment.xml`** in `webapp\fragment\dataset` either using the "File" menu or using the right click menu.
 
-Open the `webapp\controller\fragment\dataset\DatasetHeader.fragment.xml` file and add the following code:
+Open the `webapp\fragment\dataset\DatasetHeader.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table">
@@ -157,7 +155,6 @@ Open the `webapp\controller\fragment\dataset\DatasetHeader.fragment.xml` file an
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Forecast service parameters fragment)]
@@ -170,7 +167,7 @@ Create a new directory structure for **`webapp\fragment\forecast`** either using
 
 Create a new file **`ServiceForm.fragment.xml`** in `webapp\fragment\forecast` either using the "File" menu or using the right click menu.
 
-Open the `webapp\controller\fragment\forecast\ServiceForm.fragment.xml` file and add the following code:
+Open the `webapp\fragment\forecast\ServiceForm.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
@@ -224,7 +221,6 @@ Open the `webapp\controller\fragment\forecast\ServiceForm.fragment.xml` file and
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Forecast service results fragment)]
@@ -237,7 +233,7 @@ Create a new directory structure for **`webapp\fragment\forecast`** either using
 
 Create a new file **`ServiceResult.fragment.xml`** in `webapp\fragment\forecast` either using the "File" menu or using the right click menu.
 
-Open the `webapp\controller\fragment\forecast\ServiceResult.fragment.xml` file and add the following code:
+Open the `webapp\fragment\forecast\ServiceResult.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table">
@@ -334,7 +330,6 @@ Open the `webapp\controller\fragment\forecast\ServiceResult.fragment.xml` file a
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create a new JavaScript library for the fragment)]
@@ -439,7 +434,6 @@ sap.ui.define([
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create a new controller)]
@@ -533,7 +527,6 @@ sap.ui.define([
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Create a new view)]
@@ -584,7 +577,6 @@ Open the `webapp\view\forecast\synchronous.view.xml` file and add the following 
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Extend the default view)]
@@ -603,7 +595,6 @@ Inside the `<detailPages>` element add the following element:
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Run the application)]
@@ -617,7 +608,6 @@ Select the dataset you want to use from the list (Cash Flow is the one!), update
 Et voilà!
 ![Applications](05.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Solution: ](Created and modified files)]
@@ -633,8 +623,7 @@ In case you are having problems when running the application, please find bellow
   - [`webapp\view\forecast\synchronous.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-view-forecast-synchronous.view.xml.txt)
   - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-view-demo.view.xml.txt)
 
-[DONE]
 [ACCORDION-END]
 
 ## Next Steps
-  - [Implement the "Forecast" service asynchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-asynchronous.html)
+  - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)

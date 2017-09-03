@@ -45,7 +45,6 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 
 ![HTML5 Applications](04.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
@@ -142,7 +141,6 @@ You can notice that the service call is almost the same (minor change in the URL
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
@@ -188,7 +186,6 @@ Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Job status fragment)]
@@ -199,7 +196,7 @@ The fragment will contain:
 
 Create a new file **`JobStatus.fragment.xml`** in `webapp\fragment\job` either using the "File" menu or using the right click menu.
 
-Open the `webapp\controller\fragment\job\JobStatus.fragment.xml` file and add the following code:
+Open the `webapp\fragment\job\JobStatus.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
@@ -237,7 +234,6 @@ Open the `webapp\controller\fragment\job\JobStatus.fragment.xml` file and add th
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add the "check job status" function)]
@@ -303,7 +299,6 @@ Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add the "get job result" function)]
@@ -369,7 +364,6 @@ Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following
 </Panel>
 ```
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add the "delete job result")]
@@ -432,7 +426,6 @@ Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following
 </Toolbar>
 ```
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Extend the default view)]
@@ -451,7 +444,6 @@ Inside the `<detailPages>` element add the following element:
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Run the application)]
@@ -467,7 +459,6 @@ The job status fragment will appear, click on "Get forecast job status" until th
 Et voilà!
 ![Applications](05.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Solution: ](Created and modified files)]
@@ -479,7 +470,6 @@ In case you are having problems when running the application, please find bellow
   - [`webapp\view\forecast\asynchronous.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-asynchronous/solution-view-forecast-asynchronous.view.xml.txt)
   - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-asynchronous/solution-view-demo.view.xml.txt)
 
-[DONE]
 [ACCORDION-END]
 
 ## Next Steps

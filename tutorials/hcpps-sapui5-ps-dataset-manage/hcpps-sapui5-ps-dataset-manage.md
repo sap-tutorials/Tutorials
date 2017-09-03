@@ -10,7 +10,7 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
   - **Tutorials:** [Implement the "Register Dataset" service](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
 
 ## Next Steps
-  - [Implement the "Forecast" service using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
+  - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 ### You will learn
@@ -49,7 +49,6 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 
 ![HTML5 Applications](04.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
@@ -79,7 +78,6 @@ sap.ui.define([
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
@@ -100,7 +98,6 @@ Open the `webapp\view\dataset\manage.view.xml` file and add the following code:
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Extend the default view)]
@@ -119,7 +116,6 @@ Inside the `<detailPages>` element add the following element:
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](List registered datasets)]
@@ -225,7 +221,6 @@ On the left panel, you should see an item labeled `Dataset Services`, click on i
 Et voilà!
 ![Applications](05.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Get dataset fields description)]
@@ -366,7 +361,6 @@ Click on `Manage`, then on `Get Dataset List`, and finally select any of the reg
 Et voilà!
 ![Applications](06.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Delete a dataset registration)]
@@ -449,7 +443,6 @@ You can now click on `Delete Description`, the registered dataset list should be
 Et voilà!
 ![Applications](07.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Update the dataset variable description)]
@@ -554,7 +547,6 @@ You can now click on `Update Description`. You can switch to another dataset and
 Et voilà!
 ![Applications](08.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Solution: ](Created and modified files)]
@@ -565,8 +557,7 @@ In case you are having problems when running the application, please find bellow
   - [`webapp\view\dataset\manage.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-manage/solution-view-dataset-manage.view.xml.txt)
   - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-manage/solution-view-demo.view.xml.txt)
 
-[DONE]
 [ACCORDION-END]
 
 ## Next Steps
-  - [Implement the "Forecast" service using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
+- [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)

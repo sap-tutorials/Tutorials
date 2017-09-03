@@ -7,10 +7,12 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the "Dataset" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - **Tutorials:** [Configure the SAP Cloud Platform predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-  - [Test the "Key Influencer" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
+- You can move to one of the following groups:
+    - [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+    - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 ### You will learn
@@ -77,7 +79,6 @@ Optionally, you can define the following parameters to enhance your analysis:
  - smoothing cycle length: the length to consider for a cycle. This parameter is enforced only when using smoothing techniques
  - variable description: a more details description of the dataset
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Info:](A short description of the Cash Flow dataset)]
@@ -97,7 +98,6 @@ Date | Day, month and year of the readings | A date in the format `yyyy-mm-dd` s
 `MondayMonthInd` <br/> `TuesdayMonthInd` <br/> `WednesdayMonthInd` <br/> `ThursdayMonthInd` <br/> `FridayMonthInd` | Indices of the week days in the month | An integer value
 `Last5WDaysInd` <br/> `Last4WDaysInd` | Indices of the 5 or 4 last working days of the month | An integer value
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Register the Cash Flow dataset)]
@@ -173,7 +173,6 @@ URL            | `C4PAURL/api/analytics/dataset/<`ID`>/variables/update`
 ]
 ```
 
-[DONE]
 [ACCORDION-END]    
 
 [ACCORDION-BEGIN [Step 2: ](Run the Forecast service in synchronous mode)]
@@ -294,7 +293,6 @@ Here is the result:
 
 You can try to run the model with the following date "2002-01-01", where there is no more real value for the `Cash` column.
 
-[DONE]
 [ACCORDION-END]    
 
 [ACCORDION-BEGIN [Step 3: ](Run the Forecast service in asynchronous mode)]
@@ -391,7 +389,6 @@ Field Name     | Value
 Request Type   | `DELETE`
 URL            | `C4PAURL/api/analytics/forecast/1`
 
-[DONE]
 [ACCORDION-END]
 
 ### Optional
@@ -401,4 +398,6 @@ Or the public documentation
   - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
 
 ## Next Steps
-  - [Test the "Key Influencer" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
+- You can move to one of the following groups:
+    - [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+    - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)

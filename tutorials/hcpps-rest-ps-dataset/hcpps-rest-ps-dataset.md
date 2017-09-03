@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
   - **Tutorials:** [Configure the SAP Cloud Platform predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-  - [Test the "Forecast" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
+- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
 
 ## Details
 ### You will learn
@@ -50,7 +50,6 @@ This service:
 
 Once registered, you will be able to use the dataset "ID" to call the other services.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Register a dataset)]
@@ -136,7 +135,6 @@ The below extract was shortened to ease the reading.
 
 Click on **Send** an additional 4 or 5 times, so you will have multiple dataset registered.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Retrieve the registration details for one dataset)]
@@ -157,7 +155,6 @@ You should receive the same description as from the previous call.
 
 If you try with an unknown `ID`, you should receive an error message.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Retrieve the registration details for one variable)]
@@ -176,7 +173,6 @@ Click on **Send**
 
 You should receive the description of the first variable from your data set.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Modify registered variable details)]
@@ -217,7 +213,6 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 ]
 ```
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Delete a dataset registration details)]
@@ -239,7 +234,6 @@ You have now deleted the second data set we have registered.
 
 You can try to retrieve the registration details as in step 2 for dataset 2, and you should receive an error message.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](List all registered datasets)]
@@ -259,7 +253,6 @@ Click on **Send**
 
 You have now listed all the data set registered in your environment.
 
-[DONE]
 [ACCORDION-END]
 
 ### Optional
@@ -269,4 +262,4 @@ Or the public documentation
   - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
 
 ## Next Steps
-  - [Test the "Forecast" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
+- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)

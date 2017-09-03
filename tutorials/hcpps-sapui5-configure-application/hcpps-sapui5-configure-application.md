@@ -7,10 +7,10 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Test the "Outliers" service using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)
+  - **Tutorials:** [Configure the SAP Cloud Platform predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-  - [Implement the "Register Dataset" service](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
+- [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 ### You will learn
@@ -22,6 +22,8 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
 > **Note:**
 The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Cloud for predictive services.
 For more content on SAPUI5, you can check the dedicated SAPUI5 tutorials or the online SAPUI5 documentation available here: https://sapui5.hana.ondemand.com
+
+&nbsp;
 
 ### Time to Complete
   **10 minutes**
@@ -41,6 +43,8 @@ For more content on SAPUI5, you can check the dedicated SAPUI5 tutorials or the 
 >      
 >
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+
+&nbsp;
 
 [ACCORDION-BEGIN [Step 1: ](Create your destination)]
 Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
@@ -84,7 +88,6 @@ Click on **Save**
 
 You can use the **Test Connectivity** button ![HTML5 Applications](0-check.png) next to each **Destination** to validate our configuration.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open the Web IDE)]
@@ -101,7 +104,6 @@ You will get access to the **SAP Web IDE** main page:
 
 ![Web IDE](08.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create your application using the SAPUI5 template)]
@@ -132,7 +134,6 @@ View Name            | `demo`
 
 ![Git](12.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add the destinations to your application)]
@@ -176,7 +177,6 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 > **Note:**  there are multiple ways to add your destinations in a SAPUI5 application depending on the type of destinations. Here, we will simply add them manually in the `neo-app.json` file.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Update the namespace definition)]
@@ -204,7 +204,6 @@ It should have been equal to `ps` as configured in the wizard, but some version 
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Update the default view : `demo.view.xml`)]
@@ -261,7 +260,6 @@ Open the `webapp\view\demo.view.xml` file and replace the existing code with the
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S).
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Update the default controller : `demo.controller.js`)]
@@ -310,7 +308,6 @@ sap.ui.define([
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Run the application)]
@@ -323,7 +320,6 @@ This will open a web page with the following content:
 
 ![Run Button](14.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Solution: ](Created and modified files)]
@@ -334,8 +330,7 @@ In case you are having problems when running the application, please find bellow
   - [`webapp\controller\demo.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-configure-application/solution-controller-demo.controller.js.txt)
   - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-configure-application/solution-view-demo.view.xml.txt)
 
-[DONE]
 [ACCORDION-END]
 
 ## Next Steps
-  - [Implement the "Register Dataset" service](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
+- [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)

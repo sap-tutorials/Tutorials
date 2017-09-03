@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
   - **Tutorials:** [Create a HANA MDC instance](http://www.sap.com/developer/tutorials/hcpps-hana-create-mdc-instance.html)
 
 ## Next Steps
-  - [Import a series of predictive demo dataset](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
+  - [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Details
 ### You will learn
@@ -26,7 +26,6 @@ From the ***SAP HANA Cockpit*** and connected with the ***HANA System Account***
 
 ![SAP HANA Cockpit](01.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Extend the SYSTEM user)]
@@ -43,7 +42,6 @@ Select the **Granted Roles** tab, then click on the ![plus](0-plus.png) icon, th
 
 Click on the ![save](0-save.png) button in the top menu bar
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create your user)]
@@ -86,7 +84,6 @@ Click on the ![Logout](0-run.png) **Run** button or press **F8**.
 
 ![SAP HANA Web-based Development Workbench Login](04.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Verify that your user is properly created)]
@@ -101,8 +98,7 @@ Enter **`HCPPSTRIAL`** as ***Username*** user name and **`Welcome17Welcome17`** 
 
 If you can login, then your ***HANA User Account*** is properly configured.
 
-[DONE]
 [ACCORDION-END]
 
 ## Next Steps
-  - [Import a series of predictive demo dataset](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
+- [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)

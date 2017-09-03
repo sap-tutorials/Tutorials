@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
   - **Tutorials:** [Setup a HANA user account](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+- [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Details
 ### You will learn
@@ -49,7 +49,6 @@ A **`DEMO`** schema should appear in the list.
 
 ![Catalog](03.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Import the dataset)]
@@ -90,8 +89,7 @@ Each files may take a few seconds to process (up to a minute each sometime I not
 
 ![Console](04.png)
 
-[DONE]
 [ACCORDION-END]
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+- [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)

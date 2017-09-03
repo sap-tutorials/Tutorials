@@ -7,10 +7,10 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the "Dataset" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - **Tutorials:** [Configure the SAP Cloud Platform predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-  - [Test the "Outliers" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)
+- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
 
 ## Details
 ### You will learn
@@ -62,7 +62,6 @@ Optionally, you can define the following parameters to enhance your analysis:
  - variable description: a more details description of the dataset
  - weight variable: a column to be used to increase the importance of a row
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Info:](A short description of the Census dataset)]
@@ -94,7 +93,6 @@ Variable | Description | Example of Values
 `native country` | Country of origin| United States, France, ...
 `class` | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
 
-[DONE]
 [ACCORDION-END]  
 
 [ACCORDION-BEGIN [Step 1: ](Register the Census dataset)]
@@ -125,7 +123,6 @@ URL            | `C4PAURL/api/analytics/dataset/sync`
 
 **Take note of the returned dataset identifier.**
 
-[DONE]
 [ACCORDION-END]    
 
 [ACCORDION-BEGIN [Step 2: ](Run the Key Influencer service)]
@@ -373,7 +370,6 @@ But if you look closer you will notice that the `capital_gain` has been consider
 
 Let's fix that with a more accurate variable description.
 
-[DONE]
 [ACCORDION-END]    
 
 [ACCORDION-BEGIN [Step 3: ](Adjust the variable description)]
@@ -459,7 +455,6 @@ Let's try with the following **Body**, which define the missing value for the re
 
 The performances a roughly the same as we limited the analysis to only 2 attributes on a small dataset. Off course you can increase the number of influencers and see the difference.
 
-[DONE]
 [ACCORDION-END]
 
 ### Optional
@@ -469,4 +464,4 @@ Or the public documentation
   - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
 
 ## Next Steps
-  - [Test the "Outliers" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)
+- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
