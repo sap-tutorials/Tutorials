@@ -29,16 +29,12 @@ For more content on SAPUI5, you can check the dedicated SAPUI5 tutorials or the 
   **10 minutes**
 
 > In order to ease the readability of this tutorial, we have used tokens to replace long URLs.
-> Therefore you can replace any occurrence of the token by the value listed above.
+> Therefore you can replace any occurrence of the token by the value listed above:
 >
-> - `C4PAURL`
->
->      represents the predictive services **Application URL** displayed on the overview page.
->      
->      It should look like this (XYZ is your SAP Cloud Platform account name):
+> - **`C4PAURL`** : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
 >     
 ```
- https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
+     https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
 ```
 >      
 >
