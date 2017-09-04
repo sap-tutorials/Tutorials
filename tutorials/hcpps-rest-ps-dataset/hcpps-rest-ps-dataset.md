@@ -96,7 +96,7 @@ Add the following content in the text area as displayed above:
 ```json
 {
   "location": {
-    "schema" : "DEMO",
+    "schema" : "PSDEMO",
     "table" : "CashFlow"
   }
 }

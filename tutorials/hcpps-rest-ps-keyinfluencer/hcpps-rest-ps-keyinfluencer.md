@@ -115,7 +115,7 @@ URL            | `C4PAURL/api/analytics/dataset/sync`
 ```json
 {
   "location": {
-    "schema" : "DEMO",
+    "schema" : "PSDEMO",
     "table" : "Census"
   }
 }

@@ -41,7 +41,7 @@ You will get access to the **SAP Web IDE** main page:
 
 ![Web IDE](04.png)
 
-This will open the ***SAP Web IDE*** where you have previously created the `hcppredictiveservicesdemo` application using the project template.
+This will open the ***SAP Web IDE*** where you have previously created the `predictive` application using the project template.
 
 ![HTML5 Applications](04.png)
 
@@ -53,11 +53,11 @@ The controller will contain a function where:
 
   - we process the call to the "Register Dataset" SAP Cloud for predictive services and return the dataset identifier along with the dataset description.
 
-Create a new directory structure for **`webapp\controller\dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/controller/dataset`** either using the "File" menu or using the right click menu.
 
-Create a new file **`register.controller.js`** in `webapp\controller\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`register.controller.js`** in `webapp/controller/dataset` either using the "File" menu or using the right click menu.
 
-Open the `webapp\controller\dataset\register.controller.js` file and add the following code:
+Open the `webapp/controller/dataset/register.controller.js` file and add the following code:
 
 ```js
 sap.ui.define([
@@ -66,7 +66,7 @@ sap.ui.define([
 ], function(Controller, MessageToast) {
 	"use strict";
 
-	return Controller.extend("sapui5demo.controller.dataset.register", {
+	return Controller.extend("pspredictive.controller.dataset.register", {
 		onInit: function() {
 			if (typeof sap.ui.getCore().getModel() === 'undefined') {
 				this.getView().setModel(new sap.ui.model.json.JSONModel(), "dataset_register");
@@ -95,7 +95,7 @@ sap.ui.define([
 					'Accept': 'application/json',
 					'Content-Type': 'application/json'
 				},
-				url: "/HCPps/api/analytics/dataset/sync",
+				url: "/ps/api/analytics/dataset/sync",
 				type: "POST",
 				data: JSON.stringify(param),
 				dataType: "json",
@@ -137,23 +137,23 @@ This list can be dynamically generated using an additional HANA XS OData service
 
 &nbsp;
 
-Create a new directory structure for **`webapp\view\dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/view/dataset`** either using the "File" menu or using the right click menu.
 
-Create a new file **`register.view.xml`** in `webapp\view\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`register.view.xml`** in `webapp/view/dataset` either using the "File" menu or using the right click menu.
 
-Open the `webapp\view\dataset\register.view.xml` file and add the following code:
+Open the `webapp/view/dataset/register.view.xml` file and add the following code:
 
 ```xml
-<mvc:View controllerName="sapui5demo.controller.dataset.register" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View controllerName="pspredictive.controller.dataset.register" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<form:SimpleForm title="Please select a dataset from the list then press Register">
 		<FlexBox>
 			<InputListItem label="Datasets">
 				<Select id="idSelectDataset">
-					<core:Item key="DEMO/CashFlow" text="Cash Flow (DEMO/CashFlow)"/>
-					<core:Item key="DEMO/Census" text="Census (DEMO/Census)"/>
-					<core:Item key="DEMO/Transactions" text="E-Commerce transactions (DEMO/Transactions)"/>
+					<core:Item key="PSDEMO/CashFlow" text="Cash Flow (PSDEMO/CashFlow)"/>
+					<core:Item key="PSDEMO/Census" text="Census (PSDEMO/Census)"/>
+					<core:Item key="PSDEMO/Transactions" text="E-Commerce transactions (PSDEMO/Transactions)"/>
 				</Select>
 			</InputListItem>
 		</FlexBox>
@@ -232,14 +232,14 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 4: ](Extend the default view)]
 
-Edit the `demo.view.xml` file located in the `webapp\view`.
+Edit the `demo.view.xml` file located in the `webapp/view`.
 
 Inside the `<detailPages>` element add the following element:
 
 ```xml
 <Page id="detail_dataset_register" title="Register your Dataset with the SAP Cloud for predictive services">
   <content>
-    <mvc:XMLView viewName="sapui5demo.view.dataset.register"/>
+    <mvc:XMLView viewName="pspredictive.view.dataset.register"/>
   </content>
 </Page>
 ```
@@ -265,9 +265,13 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`webapp\controller\dataset\register.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/solution-controller-dataset-register.controller.js.txt)
-  - [`webapp\view\dataset\register.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/solution-view-dataset-register.view.xml.txt)
-  - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/solution-view-demo.view.xml.txt)
+  - [`webapp/controller/dataset/register.controller.js`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-dataset-register/predictive/webapp/controller/dataset/register.controller.js)
+  - [`webapp/view/dataset/register.view.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-dataset-register/predictive/webapp/view/dataset/register.view.xml)
+  - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-dataset-register/predictive/webapp/view/demo.view.xml)
+
+The complete project can be found on my personal [`Git Hub repository`](https://github.com/adadouche/tutorials/tree/master/hcpps-sapui5-ps-dataset-register).
+
+However, you won't be able to clone the repository and directly run the code from the current directory structure. You have to copy the `predictive` directory content into your existing project directory.
 
 [ACCORDION-END]
 

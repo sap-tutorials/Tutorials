@@ -1,5 +1,5 @@
 ---
-title: Implement the "Forecast" service synchronous mode
+title: Implement the "Forecast" service asynchronous mode
 description: You will extend your application with the "Forecast" service using the asynchronous mode
 primary_tag: products>sap-cloud-platform-predictive-service
 tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
@@ -41,7 +41,7 @@ You will get access to the **SAP Web IDE** main page:
 
 ![Web IDE](04.png)
 
-This will open the ***SAP Web IDE*** where you have previously created the `hcppredictiveservicesdemo` application using the project template.
+This will open the ***SAP Web IDE*** where you have previously created the `predictive` application using the project template.
 
 ![HTML5 Applications](04.png)
 
@@ -51,21 +51,21 @@ This will open the ***SAP Web IDE*** where you have previously created the `hcpp
 
 For the moment we will just add the "Get Dataset List" functions and the "Forecast" similar to what we did in the previous tutorial.
 
-Create a new file **`asynchronous.controller.js`** in `webapp\controller\forecast` either using the "File" menu or using the right click menu.
+Create a new file **`asynchronous.controller.js`** in `webapp/controller/forecast` either using the "File" menu or using the right click menu.
 
-Open the `webapp\controller\forecast\asynchronous.controller.js` file and add the following code:
+Open the `webapp/controller/forecast/asynchronous.controller.js` file and add the following code:
 
 ```js
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/m/MessageToast",
-	"sapui5demo/fragment/dataset/DatasetList"
+	"pspredictive/fragment/dataset/DatasetList"
 ], function(Controller, MessageToast, DatasetList) {
 	"use strict";
 
-	jQuery.sap.require("sapui5demo.fragment.dataset.DatasetList");
+	jQuery.sap.require("pspredictive.fragment.dataset.DatasetList");
 
-	return Controller.extend("sapui5demo.controller.forecast.asynchronous", {
+	return Controller.extend("pspredictive.controller.forecast.asynchronous", {
 		onInit: function() {
 			if (typeof sap.ui.getCore().getModel() === 'undefined') {
 				this.getView().setModel(new sap.ui.model.json.JSONModel(), "dataset_fragment");
@@ -112,7 +112,7 @@ sap.ui.define([
     			'Accept': 'application/json',
     			'Content-Type': 'application/json'
     		},
-    		url: "/HCPps/api/analytics/forecast",
+    		url: "/ps/api/analytics/forecast",
     		type: "POST",
     		data: JSON.stringify(param),
     		dataType: "json",
@@ -153,12 +153,12 @@ The view will contain:
     - the selected dataset header description
     - the service parameters form
 
-Create a new file **`asynchronous.view.xml`** in `webapp\view\forecast` either using the "File" menu or using the right click menu.
+Create a new file **`asynchronous.view.xml`** in `webapp/view/forecast` either using the "File" menu or using the right click menu.
 
-Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following code:
+Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following code:
 
 ```xml
-<mvc:View controllerName="sapui5demo.controller.forecast.asynchronous" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View controllerName="pspredictive.controller.forecast.asynchronous" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Toolbar>
@@ -167,12 +167,12 @@ Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following
 		<ToolbarSpacer/>
 	</Toolbar>
 	<Panel expandable="false" visible="{= typeof ${dataset_fragment>/datasets} !== 'undefined'}">
-		<core:Fragment fragmentName='sapui5demo.fragment.dataset.DatasetList' type='XML'/>
+		<core:Fragment fragmentName='pspredictive.fragment.dataset.DatasetList' type='XML'/>
 	</Panel>
 	<Panel expandable="false" visible="{= typeof ${dataset_fragment>/dataset} !== 'undefined'}">
-		<core:Fragment fragmentName='sapui5demo.fragment.dataset.DatasetHeader' type='XML'/>
-		<core:Fragment fragmentName='sapui5demo.fragment.forecast.ServiceForm' type='XML'/>
-		<!--<core:Fragment fragmentName='sapui5demo.fragment.forecast.DatasetDescription' type='XML'/>-->
+		<core:Fragment fragmentName='pspredictive.fragment.dataset.DatasetHeader' type='XML'/>
+		<core:Fragment fragmentName='pspredictive.fragment.forecast.ServiceForm' type='XML'/>
+		<!--<core:Fragment fragmentName='pspredictive.fragment.forecast.DatasetDescription' type='XML'/>-->
 	</Panel>
 	<Toolbar visible="{= typeof ${dataset_fragment>/dataset} !== 'undefined'}">
 		<ToolbarSpacer/>
@@ -194,9 +194,9 @@ The fragment will contain:
 
   - the current status of a job
 
-Create a new file **`JobStatus.fragment.xml`** in `webapp\fragment\job` either using the "File" menu or using the right click menu.
+Create a new file **`JobStatus.fragment.xml`** in `webapp/fragment/job` either using the "File" menu or using the right click menu.
 
-Open the `webapp\fragment\job\JobStatus.fragment.xml` file and add the following code:
+Open the `webapp/fragment/job/JobStatus.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
@@ -238,7 +238,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 6: ](Add the "check job status" function)]
 
-Open the `webapp\controller\forecast\asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
+Open the `webapp/controller/forecast/asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
 ```js
 checkStatus: function() {
@@ -261,7 +261,7 @@ checkStatus: function() {
 			'Accept': 'application/json',
 			'Content-Type': 'application/json'
 		},
-		url: "/HCPps/api/analytics/forecast/" + jobId + "/status",
+		url: "/ps/api/analytics/forecast/" + jobId + "/status",
 		type: "GET",
 		async: false,
 		success: function(data) {
@@ -284,11 +284,11 @@ checkStatus: function() {
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following code at the end of the view after the last `Toolbar` element:
+Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following code at the end of the view after the last `Toolbar` element:
 
 ```xml
 <Panel expandable="false" visible="{= typeof ${job_fragment>/job} !== 'undefined'}">
-  <core:Fragment fragmentName='sapui5demo.fragment.job.JobStatus' type='XML'/>
+  <core:Fragment fragmentName='pspredictive.fragment.job.JobStatus' type='XML'/>
 </Panel>
 <Toolbar visible="{= typeof ${job_fragment>/job} !== 'undefined'}">
   <ToolbarSpacer/>
@@ -303,7 +303,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 7: ](Add the "get job result" function)]
 
-Open the `webapp\controller\forecast\asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
+Open the `webapp/controller/forecast/asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
 ```js
 getResults: function() {
@@ -327,7 +327,7 @@ getResults: function() {
 			'Accept': 'application/json',
 			'Content-Type': 'application/json'
 		},
-		url: "/HCPps/api/analytics/forecast/" + jobId,
+		url: "/ps/api/analytics/forecast/" + jobId,
 		type: "GET",
 		async: false,
 		success: function(data) {
@@ -350,7 +350,7 @@ getResults: function() {
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following code at the end of the view after the last `Toolbar` element:
+Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following code at the end of the view after the last `Toolbar` element:
 
 ```xml
 <Toolbar visible="{= typeof ${job_fragment>/job} !== 'undefined'}">
@@ -360,7 +360,7 @@ Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following
   <ToolbarSpacer/>
 </Toolbar>
 <Panel expandable="false" visible="{= typeof ${forecast_fragment>/model} !== 'undefined'}">
-  <core:Fragment fragmentName='sapui5demo.fragment.forecast.ServiceResult' type='XML'/>
+  <core:Fragment fragmentName='pspredictive.fragment.forecast.ServiceResult' type='XML'/>
 </Panel>
 ```
 
@@ -368,7 +368,7 @@ Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following
 
 [ACCORDION-BEGIN [Step 8: ](Add the "delete job result")]
 
-Open the `webapp\controller\forecast\asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
+Open the `webapp/controller/forecast/asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
 ```js
 deleteResults: function() {
@@ -392,7 +392,7 @@ deleteResults: function() {
 			'Accept': 'application/json',
 			'Content-Type': 'application/json'
 		},
-		url: "/HCPps/api/analytics/forecast/" + jobId,
+		url: "/ps/api/analytics/forecast/" + jobId,
 		type: "DELETE",
 		async: false,
 		success: function(data) {
@@ -416,7 +416,7 @@ deleteResults: function() {
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following code at the end of the view after the last `Toolbar` element:
+Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following code at the end of the view after the last `Toolbar` element:
 
 ```xml
 <Toolbar visible="{= typeof ${forecast_fragment>/model} !== 'undefined'}">
@@ -430,14 +430,14 @@ Open the `webapp\view\forecast\asynchronous.view.xml` file and add the following
 
 [ACCORDION-BEGIN [Step 9: ](Extend the default view)]
 
-Edit the `demo.view.xml` file located in the `webapp\view`.
+Edit the `demo.view.xml` file located in the `webapp/view`.
 
 Inside the `<detailPages>` element add the following element:
 
 ```xml
 <Page id="detail_forecast_asynchronous" title="Forecast with the SAP Cloud for predictive services (Asynchronous Mode)">
   <content>
-    <mvc:XMLView viewName="sapui5demo.view.forecast.asynchronous"/>
+    <mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/>
   </content>
 </Page>
 ```
@@ -465,10 +465,14 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`webapp\fragment\job\JobStatus.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-asynchronous/solution-controller-job-JobStatus.fragment.xml.txt)
-  - [`webapp\controller\forecast\asynchronous.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-asynchronous/solution-controller-forecast-asynchronous.controller.js.txt)
-  - [`webapp\view\forecast\asynchronous.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-asynchronous/solution-view-forecast-asynchronous.view.xml.txt)
-  - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-asynchronous/solution-view-demo.view.xml.txt)
+  - [`webapp/fragment/job/JobStatus.fragment.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-asynchronous/predictive/webapp/fragment/job/JobStatus.fragment.xml)
+  - [`webapp/controller/forecast/asynchronous.controller.js`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-asynchronous/predictive/webapp/controller/forecast/asynchronous.controller.js)
+  - [`webapp/view/forecast/asynchronous.view.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-asynchronous/predictive/webapp/view/forecast/asynchronous.view.xml)
+  - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-asynchronous/predictive/webapp/view/demo.view.xml)
+
+The complete project can be found on my personal [`Git Hub repository`](https://github.com/adadouche/tutorials/tree/master/hcpps-sapui5-ps-forecast-asynchronous).
+
+However, you won't be able to clone the repository and directly run the code from the current directory structure. You have to copy the `predictive` directory content into your existing project directory.
 
 [ACCORDION-END]
 

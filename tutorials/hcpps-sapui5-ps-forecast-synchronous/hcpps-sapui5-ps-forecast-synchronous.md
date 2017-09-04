@@ -44,7 +44,7 @@ You will get access to the **SAP Web IDE** main page:
 
 ![Web IDE](04.png)
 
-This will open the ***SAP Web IDE*** where you have previously created the `hcppredictiveservicesdemo` application using the project template.
+This will open the ***SAP Web IDE*** where you have previously created the `predictive` application using the project template.
 
 ![HTML5 Applications](04.png)
 
@@ -60,11 +60,11 @@ The fragment will contain:
 
 For more details on fragment, please refer to the [XML Templating documentation](https://sapui5.hana.ondemand.com/#docs/guide/5ee619fc1370463ea674ee04b65ed83b.html).
 
-Create a new directory structure for **`webapp\fragment\dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/fragment/dataset`** either using the "File" menu or using the right click menu.
 
-Create a new file **`DatasetList.fragment.xml`** in `webapp\fragment\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`DatasetList.fragment.xml`** in `webapp/fragment/dataset` either using the "File" menu or using the right click menu.
 
-Open the `webapp\fragment\dataset\DatasetList.fragment.xml` file and add the following code:
+Open the `webapp/fragment/dataset/DatasetList.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:table="sap.ui.table">
@@ -110,9 +110,9 @@ The fragment will contain:
 
   - a form displaying the dataset "header" description (ID, name number of rows & columns)
 
-Create a new file **`DatasetHeader.fragment.xml`** in `webapp\fragment\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`DatasetHeader.fragment.xml`** in `webapp/fragment/dataset` either using the "File" menu or using the right click menu.
 
-Open the `webapp\fragment\dataset\DatasetHeader.fragment.xml` file and add the following code:
+Open the `webapp/fragment/dataset/DatasetHeader.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table">
@@ -163,11 +163,11 @@ The fragment will contain:
 
   - a form displaying the input fields for the Forecast service parameters
 
-Create a new directory structure for **`webapp\fragment\forecast`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/fragment/forecast`** either using the "File" menu or using the right click menu.
 
-Create a new file **`ServiceForm.fragment.xml`** in `webapp\fragment\forecast` either using the "File" menu or using the right click menu.
+Create a new file **`ServiceForm.fragment.xml`** in `webapp/fragment/forecast` either using the "File" menu or using the right click menu.
 
-Open the `webapp\fragment\forecast\ServiceForm.fragment.xml` file and add the following code:
+Open the `webapp/fragment/forecast/ServiceForm.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
@@ -229,11 +229,11 @@ The fragment will contain:
 
   - a form displaying the Forecast service results
 
-Create a new directory structure for **`webapp\fragment\forecast`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/fragment/forecast`** either using the "File" menu or using the right click menu.
 
-Create a new file **`ServiceResult.fragment.xml`** in `webapp\fragment\forecast` either using the "File" menu or using the right click menu.
+Create a new file **`ServiceResult.fragment.xml`** in `webapp/fragment/forecast` either using the "File" menu or using the right click menu.
 
-Open the `webapp\fragment\forecast\ServiceResult.fragment.xml` file and add the following code:
+Open the `webapp/fragment/forecast/ServiceResult.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table">
@@ -341,9 +341,9 @@ The library will contain a function where:
 
 These functions will be triggered either on a click or row change event on the table added previously from the main controller.
 
-Create a new file **`DatasetList.js`** in `webapp\fragment\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`DatasetList.js`** in `webapp/fragment/dataset` either using the "File" menu or using the right click menu.
 
-Open the `webapp\fragment\dataset\DatasetList.js` file and add the following code:
+Open the `webapp/fragment/dataset/DatasetList.js` file and add the following code:
 
 ```js
 sap.ui.define([
@@ -352,7 +352,7 @@ sap.ui.define([
 ], function(Controller, MessageToast) {
 	"use strict";
 
-	return Controller.extend("sapui5demo.fragment.dataset.DatasetList", {
+	return Controller.extend("pspredictive.fragment.dataset.DatasetList", {
 		getDatasetList: function() {
 			// set the busy indicator to avoid multi clicks
 			var oBusyIndicator = new sap.m.BusyDialog();
@@ -370,7 +370,7 @@ sap.ui.define([
 					'Accept': 'application/json',
 					'Content-Type': 'application/json'
 				},
-				url: "/HCPps/api/analytics/dataset",
+				url: "/ps/api/analytics/dataset",
 				type: "GET",
 				async: false,
 				success: function(data) {
@@ -409,7 +409,7 @@ sap.ui.define([
 						'Accept': 'application/json',
 						'Content-Type': 'application/json'
 					},
-					url: "/HCPps/api/analytics/dataset/" + dataSetId,
+					url: "/ps/api/analytics/dataset/" + dataSetId,
 					type: "GET",
 					async: false,
 					success: function(data) {
@@ -438,23 +438,23 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 7: ](Create a new controller)]
 
-Create a new directory structure for **`webapp\controller\forecast`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/controller/forecast`** either using the "File" menu or using the right click menu.
 
-Create a new file **`synchronous.controller.js`** in `webapp\controller\forecast` either using the "File" menu or using the right click menu.
+Create a new file **`synchronous.controller.js`** in `webapp/controller/forecast` either using the "File" menu or using the right click menu.
 
-Open the `webapp\controller\forecast\synchronous.controller.js` file and add the following code:
+Open the `webapp/controller/forecast/synchronous.controller.js` file and add the following code:
 
 ```js
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/m/MessageToast",
-	"sapui5demo/fragment/dataset/DatasetList"
+	"pspredictive/fragment/dataset/DatasetList"
 ], function(Controller, MessageToast, DatasetList) {
 	"use strict";
 
-	jQuery.sap.require("sapui5demo.fragment.dataset.DatasetList");
+	jQuery.sap.require("pspredictive.fragment.dataset.DatasetList");
 
-	return Controller.extend("sapui5demo.controller.forecast.synchronous", {
+	return Controller.extend("pspredictive.controller.forecast.synchronous", {
 		onInit: function() {
 			if (typeof sap.ui.getCore().getModel() === 'undefined') {
 				this.getView().setModel(new sap.ui.model.json.JSONModel(), "dataset_fragment");
@@ -500,7 +500,7 @@ sap.ui.define([
 					'Accept': 'application/json',
 					'Content-Type': 'application/json'
 				},
-				url: "/HCPps/api/analytics/forecast/sync",
+				url: "/ps/api/analytics/forecast/sync",
 				type: "POST",
 				data: JSON.stringify(param),
 				dataType: "json",
@@ -540,14 +540,14 @@ The view will contain:
     - the service parameters form
   - a button that will trigger the "Forecast" service in synchronous mode
 
-Create a new directory structure for **`webapp\view\forecast`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/view/forecast`** either using the "File" menu or using the right click menu.
 
-Create a new file **`synchronous.view.xml`** in `webapp\view\forecast` either using the "File" menu or using the right click menu.
+Create a new file **`synchronous.view.xml`** in `webapp/view/forecast` either using the "File" menu or using the right click menu.
 
-Open the `webapp\view\forecast\synchronous.view.xml` file and add the following code:
+Open the `webapp/view/forecast/synchronous.view.xml` file and add the following code:
 
 ```xml
-<mvc:View controllerName="sapui5demo.controller.forecast.synchronous" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View controllerName="pspredictive.controller.forecast.synchronous" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Toolbar>
@@ -556,11 +556,11 @@ Open the `webapp\view\forecast\synchronous.view.xml` file and add the following 
 		<ToolbarSpacer/>
 	</Toolbar>
 	<Panel expandable="false" visible="{= typeof ${dataset_fragment>/datasets} !== 'undefined'}">
-		<core:Fragment fragmentName='sapui5demo.fragment.dataset.DatasetList' type='XML'/>
+		<core:Fragment fragmentName='pspredictive.fragment.dataset.DatasetList' type='XML'/>
 	</Panel>
 	<Panel expandable="false" visible="{= typeof ${dataset_fragment>/dataset} !== 'undefined'}">
-		<core:Fragment fragmentName='sapui5demo.fragment.dataset.DatasetHeader' type='XML'/>
-		<core:Fragment fragmentName='sapui5demo.fragment.forecast.ServiceForm' type='XML'/>
+		<core:Fragment fragmentName='pspredictive.fragment.dataset.DatasetHeader' type='XML'/>
+		<core:Fragment fragmentName='pspredictive.fragment.forecast.ServiceForm' type='XML'/>
 	</Panel>
 	<Toolbar visible="{= typeof ${dataset_fragment>/dataset} !== 'undefined'}">
 		<ToolbarSpacer/>
@@ -570,7 +570,7 @@ Open the `webapp\view\forecast\synchronous.view.xml` file and add the following 
 		<ToolbarSpacer/>
 	</Toolbar>
 	<Panel expandable="false" visible="{= typeof ${forecast_fragment>/model} !== 'undefined'}">
-		<core:Fragment fragmentName='sapui5demo.fragment.forecast.ServiceResult' type='XML'/>
+		<core:Fragment fragmentName='pspredictive.fragment.forecast.ServiceResult' type='XML'/>
 	</Panel>
 </mvc:View>
 ```
@@ -581,14 +581,14 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 [ACCORDION-BEGIN [Step 9: ](Extend the default view)]
 
-Edit the `demo.view.xml` file located in the `webapp\view`.
+Edit the `demo.view.xml` file located in the `webapp/view`.
 
 Inside the `<detailPages>` element add the following element:
 
 ```xml
 <Page id="detail_forecast_synchronous" title="Forecast with the SAP Cloud for predictive services (Synchronous Mode)">
   <content>
-    <mvc:XMLView viewName="sapui5demo.view.forecast.synchronous"/>
+    <mvc:XMLView viewName="pspredictive.view.forecast.synchronous"/>
   </content>
 </Page>
 ```
@@ -614,14 +614,18 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`webapp\fragment\dataset\DatasetHeader.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-fragment-dataset-DatasetHeader.fragment.xml.txt)
-  - [`webapp\fragment\dataset\DatasetList.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-fragment-dataset-DatasetList.fragment.xml.txt)
-  - [`webapp\fragment\dataset\DatasetList.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-fragment-dataset-DatasetList.js.txt)
-  - [`webapp\fragment\forecast\ServiceForm.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-controller-forecast-ServiceForm.fragment.xml.txt)
-  - [`webapp\fragment\forecast\ServiceResult.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-controller-forecast-ServiceResult.fragment.xml.txt)
-  - [`webapp\controller\forecast\synchronous.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-controller-forecast-synchronous.controller.js.txt)
-  - [`webapp\view\forecast\synchronous.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-view-forecast-synchronous.view.xml.txt)
-  - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/solution-view-demo.view.xml.txt)
+  - [`webapp/fragment/dataset/DatasetHeader.fragment.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/dataset/DatasetHeader.fragment.xml)
+  - [`webapp/fragment/dataset/DatasetList.fragment.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/dataset/DatasetList.fragment.xml)
+  - [`webapp/fragment/dataset/DatasetList.js`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/dataset/DatasetList.js)
+  - [`webapp/fragment/forecast/ServiceForm.fragment.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/forecast/ServiceForm.fragment.xml)
+  - [`webapp/fragment/forecast/ServiceResult.fragment.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/forecast/ServiceResult.fragment.xml)
+  - [`webapp/controller/forecast/synchronous.controller.js`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/controller/forecast/synchronous.controller.js)
+  - [`webapp/view/forecast/synchronous.view.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/view/forecast/synchronous.view.xml)
+  - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/view/demo.view.xml)
+
+The complete project can be found on my personal [`Git Hub repository`](https://github.com/adadouche/tutorials/tree/master/hcpps-sapui5-ps-forecast-synchronous).
+
+However, you won't be able to clone the repository and directly run the code from the current directory structure. You have to copy the `predictive` directory content into your existing project directory.
 
 [ACCORDION-END]
 
