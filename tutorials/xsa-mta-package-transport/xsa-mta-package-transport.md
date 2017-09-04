@@ -28,7 +28,7 @@ Right-click on your project and select **Build**
 
 ![Build](export.png)
 
-You will see a file
+You will see a file downloading from the browser. Take note of its location
 
 [DONE]
 [ACCORDION-END]
