@@ -7,10 +7,10 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+  - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-  - [Setup a HANA user account](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+  - [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Details
 ### You will learn
@@ -20,7 +20,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
   **10 minutes**
 
 [ACCORDION-BEGIN [Step 1: ](Access your SAP Cloud Platform account)]
-Log into the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
+Log into the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 ![SAP Cloud Platform Cockpit](01.png)
 
@@ -28,18 +28,15 @@ Click on the ***SAP Cloud Platform developer Account*** link as highlighted on t
 
 ![Your Personal Developer Account](02.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create your HANA MDC instance)]
 
-On the left side bar, you can navigate in **Persistence** > **Databases & Schemas**.
+On the left side bar, you can navigate in **SAP HANA / SAP ASE** > **Databases & Schemas**.
 
 ![Databases & Schemas](03.png)
 
 Click on **New**.
-
-![New Database System](04.png)
 
 Complete the form following details information:
 
@@ -51,13 +48,12 @@ System User Password | `Welcome17Welcome17`
 
 >Note: Password policy was changed recently and now requires a 15 characters password that includes a digit.
 
-.
+![New Database System](04.png)
 
 You can choose other values for theses properties. As reference them across several tutorials, you should remember the **System User Password** as your ***HANA System Account Password***.
 
 Click on **Save**
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Wait for the creation to finish)]
@@ -69,7 +65,6 @@ You can refresh the page by hitting F5.
 
 Once you see the *Database started successfully* event appears in the list, you can proceed with the next step.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Restart the database)]
@@ -81,7 +76,6 @@ Once the database is stopped, Click on **Start**.
 
 ![Trial Database Overview](06.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Finalize your HANA MDC instance setup)]
@@ -113,7 +107,6 @@ You are in the ***SAP HANA Cockpit***.
 
 ![SAP HANA Cockpit](10.png)
 
-[DONE]
 [ACCORDION-END]
 
 ## Next Steps

@@ -24,7 +24,7 @@ You will then be able to substitute the **Image Classification** services with a
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get Your Sanbox URL)]
+[ACCORDION-BEGIN [Step 1: ](Get Your Sandbox URL)]
 
 In order to consume the **Image Classification** Machine Learning Functional Services, you will first need to get the service URI, your API Key and the request and response parameters.
 

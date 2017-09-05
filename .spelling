@@ -126,6 +126,8 @@ SRS
 ssh
 Subaccount
 subaccount
+Subaccounts
+subaccounts
 Subheader
 subselect
 supertype
@@ -148,6 +150,7 @@ util
 VMware
 Vora
 watchOS
+Whealy
 Wi-Fi
 WinSCP
 Witalij

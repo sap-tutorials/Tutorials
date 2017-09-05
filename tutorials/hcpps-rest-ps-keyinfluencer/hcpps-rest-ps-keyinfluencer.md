@@ -7,10 +7,10 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the "Dataset" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - **Tutorials:** [Configure the SAP Cloud Platform predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-  - [Test the "Outliers" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)
+- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
 
 ## Details
 ### You will learn
@@ -22,14 +22,20 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
   **10 minutes**
 
 > In order to ease the readability of this tutorial, we have used tokens to replace long URLs.
-Therefore you can replace any occurrence of the token by the value listed above.
+> Therefore you can replace any occurrence of the token by the value listed above:
 >
-> Token               | Value
-------------------- | -------------
-<code><b>&lt;Account name&gt;</b></code>  | your SAP Cloud Platform account name. On a developer trial account, it should end by `trial`
-<code><b>&lt;C4PA URL&gt;</b></code> | `https://aac4paservices<`<code><b>Account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
+> - **`C4PAURL`** : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
+>     
+```
+     https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
+```
+>      
 >
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+
+&nbsp;
+
+> **Note**: if you are running into some issue, you can check the [SAP Cloud Platform Predictive Services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 [ACCORDION-BEGIN [Info:](A short description of the Key Influencer service)]
 The Key Influencers service analyzes a dataset to identify the variables with an influence on a specified target variable.
@@ -42,7 +48,7 @@ This service:
 
 > **Note**: The target variable must be either binary nominal or continuous. Multinomial targets are not supported.
 
--
+&nbsp;
 
 To summarize, in order to execute the key influencer service, you will need a dataset with:
 
@@ -58,7 +64,6 @@ Optionally, you can define the following parameters to enhance your analysis:
  - variable description: a more details description of the dataset
  - weight variable: a column to be used to increase the importance of a row
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Info:](A short description of the Census dataset)]
@@ -69,7 +74,7 @@ The Census sample data file that you will use to follow the scenarios for Regres
 
 > **Note:** For more information about the American Census Bureau, see http://www.census.govInformation published on non-SAP site.
 
--
+&nbsp;
 
 This file presents the data on 48,842 individual Americans, of at least 17 years of age. Each individual is characterized by 15 data items. These data, or variables, are described in the following table.
 
@@ -90,7 +95,6 @@ Variable | Description | Example of Values
 `native country` | Country of origin| United States, France, ...
 `class` | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
 
-[DONE]
 [ACCORDION-END]  
 
 [ACCORDION-BEGIN [Step 1: ](Register the Census dataset)]
@@ -103,15 +107,17 @@ Open a new tab in ***Postman***.
 
 > If you don't have ***Postman*** installed yet, you can refer to the following how-to guide: [Install Postman extension for Google Chrome as a REST client](https://www.sap.com/developer/how-tos/2017/07/api-tools-postman-install.html)
 
+&nbsp;
+
 Field Name     | Value
 -------------- | --------------
 Request Type   | `POST`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/sync`
+URL            | `C4PAURL/api/analytics/dataset/sync`
 
 ```json
 {
   "location": {
-    "schema" : "DEMO",
+    "schema" : "PSDEMO",
     "table" : "Census"
   }
 }
@@ -119,7 +125,6 @@ URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/sync`
 
 **Take note of the returned dataset identifier.**
 
-[DONE]
 [ACCORDION-END]    
 
 [ACCORDION-BEGIN [Step 2: ](Run the Key Influencer service)]
@@ -131,7 +136,7 @@ Fill in the following information:
 Field Name     | Value
 -------------- | --------------
 Request Type   | `POST`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/keyinfluencer/sync`
+URL            | `C4PAURL/api/analytics/keyinfluencer/sync`
 
 ![Postman URL](01.png)
 
@@ -158,7 +163,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 ```
 > Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
 
--
+&nbsp;
 
 With these settings, we will get the top 2 influencers of the class variable, excluding the "id", "sex", "race" variables from the analysis.
 
@@ -367,7 +372,6 @@ But if you look closer you will notice that the `capital_gain` has been consider
 
 Let's fix that with a more accurate variable description.
 
-[DONE]
 [ACCORDION-END]    
 
 [ACCORDION-BEGIN [Step 3: ](Adjust the variable description)]
@@ -381,7 +385,7 @@ Fill in the following information
 Field Name     | Value
 -------------- | --------------
 Request Type   | `POST`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/keyinfluencer/sync`
+URL            | `C4PAURL/api/analytics/keyinfluencer/sync`
 
 Select the **Authorization** tab and fill in the same details as in the previous call.
 
@@ -416,7 +420,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 ```
 > Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the previous tutorial.
 
--
+&nbsp;
 
 Click on **Send**
 
@@ -453,14 +457,13 @@ Let's try with the following **Body**, which define the missing value for the re
 
 The performances a roughly the same as we limited the analysis to only 2 attributes on a small dataset. Off course you can increase the number of influencers and see the difference.
 
-[DONE]
 [ACCORDION-END]
 
 ### Optional
 For more details on the SAP Cloud for predictive services, you can check the following URL that can also allow you to run the service:
-  - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
+  - `C4PAURL/raml/console/index.html?raml=../api/aa-cloud-services.raml`
 Or the public documentation
   - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
 
 ## Next Steps
-  - [Test the "Outliers" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-outliers.html)
+- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)

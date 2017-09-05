@@ -10,7 +10,7 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
   - **Tutorials:** [Implement the "Register Dataset" service](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
 
 ## Next Steps
-  - [Implement the "Forecast" service using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
+  - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 ### You will learn
@@ -25,9 +25,11 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
 ### Time to Complete
   **10 minutes**
 
+> **Note**: if you are running into some issue, you can check the [SAP Cloud Platform Predictive Services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
+
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
-Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account and access "Your Personal Developer Account".
+Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 Click on your ***SAP Cloud Platform Account Name*** as highlighted on the below screenshot.
 
@@ -45,20 +47,19 @@ You will get access to the **SAP Web IDE** main page:
 
 ![Web IDE](04.png)
 
-This will open the ***SAP Web IDE*** where you have previously created the `hcppredictiveservicesdemo` application using the project template.
+This will open the ***SAP Web IDE*** where you have previously created the `predictive` application using the project template.
 
 ![HTML5 Applications](04.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
 
-Create a new directory structure for **`webapp\controller\dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/controller/dataset`** either using the "File" menu or using the right click menu.
 
-Create a new file **`manage.controller.js`** in `webapp\controller\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`manage.controller.js`** in `webapp/controller/dataset` either using the "File" menu or using the right click menu.
 
-Open the `webapp\controller\dataset\manage.controller.js` file and add the following code:
+Open the `webapp/controller/dataset/manage.controller.js` file and add the following code:
 
 ```js
 sap.ui.define([
@@ -67,7 +68,7 @@ sap.ui.define([
 ], function(Controller, MessageToast) {
 	"use strict";
 
-	return Controller.extend("sapui5demo.controller.dataset.manage", {
+	return Controller.extend("pspredictive.controller.dataset.manage", {
     onInit: function() {
 			if (typeof sap.ui.getCore().getModel() === 'undefined') {
 				this.getView().setModel(new sap.ui.model.json.JSONModel(), "dataset_manage");
@@ -79,19 +80,18 @@ sap.ui.define([
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
 
-Create a new directory structure for **`webapp\view\dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/view/dataset`** either using the "File" menu or using the right click menu.
 
-Create a new file **`register.view.xml`** in `webapp\view\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`manage.view.xml`** in `webapp/view/dataset` either using the "File" menu or using the right click menu.
 
-Open the `webapp\view\dataset\manage.view.xml` file and add the following code:
+Open the `webapp/view/dataset/manage.view.xml` file and add the following code:
 
 ```xml
-<mvc:View controllerName="sapui5demo.controller.dataset.manage" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View controllerName="pspredictive.controller.dataset.manage" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:core="sap.ui.core"
 	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 
@@ -100,26 +100,24 @@ Open the `webapp\view\dataset\manage.view.xml` file and add the following code:
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Extend the default view)]
 
-Edit the `demo.view.xml` file located in the `webapp\view`.
+Edit the `demo.view.xml` file located in the `webapp/view`.
 
 Inside the `<detailPages>` element add the following element:
 
 ```xml
 <Page id="detail_dataset_manage" title="Manage your Data Set with the SAP Cloud for predictive services">
   <content>
-    <mvc:XMLView viewName="sapui5demo.view.dataset.manage"/>
+    <mvc:XMLView viewName="pspredictive.view.dataset.manage"/>
   </content>
 </Page>
 ```
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](List registered datasets)]
@@ -133,7 +131,7 @@ The view will contain:
   - a button that will trigger the "Get Dataset List" service
   - a table with the list of registered datasets
 
-Open the `webapp\controller\dataset\manage.controller.js` file and add the following code right after the `onInit` function (don't forget to use a comma to separate them):
+Open the `webapp/controller/dataset/manage.controller.js` file and add the following code right after the `onInit` function (don't forget to use a comma to separate them):
 
 ```js
 getDatasetList: function() {
@@ -153,7 +151,7 @@ getDatasetList: function() {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    url: "/HCPps/api/analytics/dataset",
+    url: "/ps/api/analytics/dataset",
     type: "GET",
     async: false,
     success: function(data) {
@@ -175,7 +173,7 @@ getDatasetList: function() {
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Open the `webapp\view\dataset\manage.view.xml` file and add the following code inside the `mvc:View` element:
+Open the `webapp/view/dataset/manage.view.xml` file and add the following code inside the `mvc:View` element:
 
 ```xml
 <Toolbar>
@@ -225,7 +223,6 @@ On the left panel, you should see an item labeled `Dataset Services`, click on i
 Et voilà!
 ![Applications](05.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Get dataset fields description)]
@@ -239,7 +236,7 @@ You will add to the view:
 
   - a table with the dataset variables detailed description
 
-Open the `webapp\controller\dataset\manage.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
+Open the `webapp/controller/dataset/manage.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
 ```js
 getDatasetDescription: function(oControlEvent) {
@@ -263,7 +260,7 @@ getDatasetDescription: function(oControlEvent) {
 				'Accept': 'application/json',
 				'Content-Type': 'application/json'
 			},
-			url: "/HCPps/api/analytics/dataset/" + dataSetId,
+			url: "/ps/api/analytics/dataset/" + dataSetId,
 			type: "GET",
 			async: false,
 			success: function(data) {
@@ -286,7 +283,7 @@ getDatasetDescription: function(oControlEvent) {
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Open the `webapp\view\dataset\manage.view.xml` file and add the following code inside the `mvc:View` element after the previous code:
+Open the `webapp/view/dataset/manage.view.xml` file and add the following code inside the `mvc:View` element after the previous code:
 
 ```xml
 <Panel expandable="false" expanded="true" visible="{= typeof ${dataset_manage>/dataset} !== 'undefined'}">
@@ -366,7 +363,6 @@ Click on `Manage`, then on `Get Dataset List`, and finally select any of the reg
 Et voilà!
 ![Applications](06.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Delete a dataset registration)]
@@ -379,7 +375,7 @@ You will add to the view:
 
   - a button that will trigger the "Delete Dataset" service
 
-Open the `webapp\controller\dataset\manage.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
+Open the `webapp/controller/dataset/manage.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
 ```js
 deleteDataset: function(event) {
@@ -402,7 +398,7 @@ deleteDataset: function(event) {
 			'Accept': 'application/json',
 			'Content-Type': 'application/json'
 		},
-		url: "/HCPps/api/analytics/dataset/" + event.getSource().data("datasetId"),
+		url: "/ps/api/analytics/dataset/" + event.getSource().data("datasetId"),
 		type: "DELETE",
 		async: false,
 		success: function() {
@@ -426,12 +422,12 @@ deleteDataset: function(event) {
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Open the `webapp\view\dataset\manage.view.xml` file and add the following code inside the `mvc:View` element after the previous code:
+Open the `webapp/view/dataset/manage.view.xml` file and add the following code inside the `mvc:View` element after the previous code:
 
 ```xml
 <Toolbar visible="{= typeof ${dataset_manage>/dataset} !== 'undefined'}">
   <ToolbarSpacer/>
-  <Button icon="sap-icon://delete" text="Delete Description" app:datasetId="{dataset_manage>/dataset/ID}" app:bindingProperty="/dataset" press="deleteDataset"/>
+  <Button icon="sap-icon://delete" text="Delete Registration" app:datasetId="{dataset_manage>/dataset/ID}" app:bindingProperty="/dataset" press="deleteDataset"/>
   <ToolbarSpacer/>
 </Toolbar>
 ```
@@ -444,12 +440,11 @@ On the left panel, you should see an item labeled `Dataset Services`, click on i
 
 Click on `Manage`, then on `Get Dataset List`, and finally select any of the registered dataset.
 
-You can now click on `Delete Description`, the registered dataset list should be refreshed and the selected item will be removed.
+You can now click on `Delete Registration`, the registered dataset list should be refreshed and the selected item will be removed.
 
 Et voilà!
 ![Applications](07.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Update the dataset variable description)]
@@ -462,7 +457,7 @@ You will add to the view:
 
   - a button that will trigger the "Update Dataset Variables" service
 
-Open the `webapp\controller\dataset\manage.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
+Open the `webapp/controller/dataset/manage.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
 ```js
 updateDataset: function(event) {
@@ -494,7 +489,7 @@ updateDataset: function(event) {
 			'Accept': 'application/json',
 			'Content-Type': 'application/json'
 		},
-		url: "/HCPps/api/analytics/dataset/" + event.getSource().data("datasetId") + "/variables/update",
+		url: "/ps/api/analytics/dataset/" + event.getSource().data("datasetId") + "/variables/update",
 		type: "POST",
 		data: JSON.stringify(param),
 		dataType: "json",
@@ -512,7 +507,7 @@ updateDataset: function(event) {
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-Open the `webapp\view\dataset\manage.view.xml` file and replace the following element which replace the text control for `value` attribute by an action select control:
+Open the `webapp/view/dataset/manage.view.xml` file and replace the following element which replace the text control for `value` attribute by an action select control:
 
 ```xml
 <Text text="{dataset_manage>value}"/>
@@ -530,12 +525,12 @@ by:
 </ActionSelect>
 ```
 
-Then, add the `Update Description` in the toolbar along with the `Delete Description` button like this:
+Then, add the `Update Description` in the toolbar along with the `Delete Registration` button like this:
 
 ```xml
 <Toolbar visible="{= typeof ${dataset_manage>/dataset} !== 'undefined'}">
   <ToolbarSpacer/>
-  <Button icon="sap-icon://delete" text="Delete Description" app:datasetId="{dataset_manage>/dataset/ID}" app:bindingProperty="/dataset" press="deleteDataset"/>
+  <Button icon="sap-icon://delete" text="Delete Registration" app:datasetId="{dataset_manage>/dataset/ID}" app:bindingProperty="/dataset" press="deleteDataset"/>
   <Button icon="sap-icon://upload-to-cloud" text="Update Description" app:datasetId="{dataset_manage>/dataset/ID}" app:bindingProperty="/dataset" press="updateDataset"/>
   <ToolbarSpacer/>
 </Toolbar>
@@ -554,19 +549,21 @@ You can now click on `Update Description`. You can switch to another dataset and
 Et voilà!
 ![Applications](08.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Solution: ](Created and modified files)]
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`webapp\controller\dataset\manage.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-manage/solution-controller-dataset-manage.controller.js.txt)
-  - [`webapp\view\dataset\manage.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-manage/solution-view-dataset-manage.view.xml.txt)
-  - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-manage/solution-view-demo.view.xml.txt)
+  - [`webapp/controller/dataset/manage.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-manage/solution-controller-dataset-manage.controller.js.txt)
+  - [`webapp/view/dataset/manage.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-manage/solution-view-dataset-manage.view.xml.txt)
+  - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-manage/solution-view-demo.view.xml.txt)
 
-[DONE]
+The complete project can be found on my personal [`Git Hub repository`](https://github.com/adadouche/tutorials/tree/master/hcpps-sapui5-ps-dataset-manage).
+
+However, you won't be able to clone the repository and directly run the code from the current directory structure. You have to copy the `predictive` directory content into your existing project directory.
+
 [ACCORDION-END]
 
 ## Next Steps
-  - [Implement the "Forecast" service using the synchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
+- [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)

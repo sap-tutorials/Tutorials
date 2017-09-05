@@ -7,11 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have a Google Account and/or have registered for the free trial on `cloud.google.com`
+ - You have a Google Account and/or have registered for the free trial on `cloud.google.com`.
 
 
 ## Next Steps
- - [Prepare SAP HANA, express edition for the SAP HANA Tutorial Catalog](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-tutorialprep.html)
  - [Review SAP HANA, express edition content, tutorials and quick start guides](http://www.sap.com/developer/topics/sap-hana-express.html)
  - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](http://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
 
@@ -21,6 +20,7 @@ The image currently only includes the HANA database engine. XS Advanced is not i
 ## Details
 ### You will learn  
 This tutorial will guide you through the process to create a new Google Cloud Platform virtual instance based on SAP HANA, express edition. You will also learn how to set up your new instance and enable it for tutorials and developing your first application.
+
 
 ### Time to Complete
 **15 Min**
@@ -66,24 +66,27 @@ sudo su - hxeadm
 
 Hit **Enter**. Follow the prompts to change password. **IMPORTANT: SAP HANA will not be usable if this step is ignored**.
 
->The password needs to be at least eight character-long and contain at least one digit, one uppercase and one lowercase letter. Special characters are optional. Please review password requirements in [the SAP Help](http://help-legacy.sap.com/saphelp_hanaplatform/helpdata/en/61/662e3032ad4f8dbdb5063a21a7d706/frameset.htm)
+>The password needs to be at least eight characters-long and contain at least one digit, one uppercase and one lowercase letter. Special characters are optional but restricted. Please review password requirements in [the SAP Help](http://help-legacy.sap.com/saphelp_hanaplatform/helpdata/en/61/662e3032ad4f8dbdb5063a21a7d706/frameset.htm)
 
 ![Change password](4.png)
 
 Enter `Y` to continue with configuration when prompted:
-![Continue config](5.png)
+![Continue config](server_only.png)
 
 Once configuration is finished, you will see a success message:
 
 ![Success message](6.png)
 
-You should also change your default Operating System password for user `hxeadm`. Use the following command as root for this:
+You should also change your default Operating System password for user `hxeadm`. **Open a new SSH console** and use the following command as your GCP user for this:
 
 ```
 passwd hxeadm
+
 ```
 
 ![Change password](change pass.png)
+
+>Note: The default `hxeadm` password is `HXEHana1`
 
 [DONE]
 [ACCORDION-END]
@@ -97,13 +100,102 @@ To connect to SAP HANA, we need to know what the external IP address is. Once de
 
 To connect to your newly deployed instance via a local SSH client, review the documentation about [how to connect to an instance](https://cloud.google.com/compute/docs/instances/connecting-to-instance). Google Cloud Platform provides built in SSH support.
 
-Your SAP HANA, express edition, instance is now up and running. You can now proceed to the **Next Steps** section, and continue setup.
+Your SAP HANA, express edition, instance is now up and running.
+
+All the steps that follow are optional.
 
 [DONE]
 [ACCORDION-END]
 
 
+[ACCORDION-BEGIN [Step 4 (Optional): ](Map your hostname in the hosts file)]
+
+Use your IP address to map it to the hosts file in your computer. You need administration permissions to do this.
+
+- For Windows Computers:
+  If your user is not an administrator but has administrator rights, right-click on Notepad and choose `Run as Administrator`. If you are an administrator user, proceed to the next point.
+
+  ![run notepad as admin](8.png)
+
+  Open the file or navigate with Windows explorer. You need to edit the file called `hosts` in the directory `C:\Windows\System32\drivers\etc`
+
+  ![Hosts file](8.png)
+
+
+- For Mac:
+  Open a terminal (`Finder -> Applications -> Terminal`) and type `sudo nano /etc/hosts`
+
+  ![Hosts file](mac.png)
+
+
+Add the IP address followed by the name of the host, which will be `hxehost`:
+
+![Hosts file](10.png)
+
+**Save** and close the editor.
+
+> Note: If Notepad asks you to create a new file you do not have enough permissions to save the file. Creating a new file will not alter the configuration as intended.
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5 (Optional): ](Check clients in the Downloads folder)]
+
+Go into the `Downloads` folder and list the contents.
+
+```
+cd /Downloads
+ls
+```
+
+You will find the installation packages for different clients.
+
+![Downloads](downloads_so.png)
+
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6 (Optional): ](Server-only installation: Create a development user)]
+
+It is always safe to create a development user and even make a copy of the system user to use as an administrator in case you somehow lock yourself out. The XS Advanced installation creates a development user called XSA_DEV, so this step is unnecessary if you are using that option.
+
+If you are using the server-only option, in a new SSH console, switch to the user `hxeadm` and connect to the database as follows:
+
+```SQL
+
+sudo su - hxeadm
+
+hdbsql -i 90 -d SYSTEMDB -u SYSTEM
+
+```
+
+Enter the master password you chose at setup. When the `hdbsql` command prompt is ready, enter the following (replacing a the password and username for one of your choice):
+
+```SQL
+CREATE USER WORKSHOP_01 PASSWORD <password> NO FORCE_FIRST_PASSWORD_CHANGE ;
+
+```
+
+![Launcher](14.png)
+
+While you are here, you could also see that the Extended Machine Learning libraries are included:
+
+```SQL
+select * from SYS.AFL_FUNCTIONS where AREA_NAME = 'EML';
+```
+
+Which will show the available function libraries:
+
+![EML](EML.png)
+
+![EML](EML2.png)
+
+
+[DONE]
+[ACCORDION-END]
+
 ## Next Steps
- - [Prepare SAP HANA, express edition for the SAP HANA Tutorial Catalog](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-tutorialprep.html)
  - [Review SAP HANA, express edition content, tutorials and quick start guides](http://www.sap.com/developer/topics/sap-hana-express.html)
  - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](http://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)

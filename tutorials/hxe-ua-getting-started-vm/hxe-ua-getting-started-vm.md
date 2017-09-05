@@ -58,7 +58,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
     - At least 1 number
 
-    - Can contain special characters, but not _&#64;_ (at sign), _&#35;_ (number sign), _&#36;_ (dollar sign), _&#37;_ (percent), _&#94;_ (caret), _&amp;_ (ampersand), _&#42;_ (asterisk), _&#61;_ (equal sign), _&#43;_ (plus), _&#91;_ _&#93;_ (brackets),  _&#123;_ _&#125;_ (braces), _&lt;_ (less than), _&gt;_ (greater than), &#124; (vertical bar), _&#92;_ (backslash), _&#39;_ (single quote), _&quot;_ (double quotation marks), and _&grave;_ (backtick) characters
+    - Can contain special characters, but not _&grave;_ (`backtick`), _&#36;_ (dollar sign),  _&#92;_ (backslash), _&#39;_ (single quote), or _&quot;_ (double quotation marks).
 
     - Cannot contain dictionary words
 
@@ -519,55 +519,6 @@ The SAP HANA External Machine Learning Library is an application function librar
     For more information on the SAP HANA External Machine Learning Library, see the SAP HANA documentation collection.    
 
 [DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 19: ](Optional Configuration: Add XSA to Server-Only VM)]
-
-If you installed the server-only VM (`hxe.ova`), you can add XSA if desired.
-
-1. Shut down the SAP HANA, express edition server.
-
-    - Log in as `hxeadm`.
-    - Run:
-        ```bash
-        HDB stop
-        ```
-2. Shut down the VM. Run:
-
-    ```bash
-    sudo shutdown
-    ```
-
-3. In your hypervisor, increase the VM physical memory to at least 12GB.
-
-4. Start your VM and login as `hxeadm`.
-
-5. Run this command to download the `hxexsa.tgz` package to the `~hxeadm/Downloads` directory using the VM's built-in Download Manager (console mode):    
-
-    ```bash
-    HXEDownloadManager_linux.bin linuxx86_64 installer hxexsa.tgz
-    ```
-
-6. Extract `hxexsa.tgz`.
-
-7. Run this command to start the installation:
-
-    ```bash
-    sudo setup_hxe.sh
-    ```
-
-8. When prompted `Do you want to install XSA? (Y/N)`, enter Y.    
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 20: Best Practice: ](Backups)]
-
-Get in the habit of making regular data backups to save your work.
-
-For information on data backup, recovery, and log file growth, see the [SAP HANA 2.0 Administration Guide](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.00/en-US).
 
 [ACCORDION-END]
 
