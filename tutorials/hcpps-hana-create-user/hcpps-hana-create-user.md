@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
   - **Tutorials:** [Create a HANA MDC instance](http://www.sap.com/developer/tutorials/hcpps-hana-create-mdc-instance.html)
 
 ## Next Steps
-  - [Import a series of predictive demo dataset](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
+  - [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Details
 ### You will learn
@@ -26,7 +26,6 @@ From the ***SAP HANA Cockpit*** and connected with the ***HANA System Account***
 
 ![SAP HANA Cockpit](01.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Extend the SYSTEM user)]
@@ -43,7 +42,6 @@ Select the **Granted Roles** tab, then click on the ![plus](0-plus.png) icon, th
 
 Click on the ![save](0-save.png) button in the top menu bar
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create your user)]
@@ -57,36 +55,35 @@ The following screen should appear:
 Click on the ![SQL Console](0-opensqlconsole.png) button in the top menu bar, and paste the following SQL code:
 
 ```sql
-DROP USER HCPPSTRIAL CASCADE;
-CREATE USER HCPPSTRIAL PASSWORD Welcome17Welcome17 NO FORCE_FIRST_PASSWORD_CHANGE;
-ALTER USER  HCPPSTRIAL DISABLE PASSWORD LIFETIME;
+DROP USER PSTRIAL CASCADE;
+CREATE USER PSTRIAL PASSWORD Welcome17Welcome17 NO FORCE_FIRST_PASSWORD_CHANGE;
+ALTER USER  PSTRIAL DISABLE PASSWORD LIFETIME;
 
-call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::Developer','HCPPSTRIAL');
-call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','HCPPSTRIAL');
+call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::Developer','PSTRIAL');
+call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','PSTRIAL');
 
-GRANT AFL__SYS_AFL_APL_AREA_EXECUTE TO HCPPSTRIAL;
-GRANT AFLPM_CREATOR_ERASER_EXECUTE TO HCPPSTRIAL;
+GRANT AFL__SYS_AFL_APL_AREA_EXECUTE TO PSTRIAL;
+GRANT AFLPM_CREATOR_ERASER_EXECUTE TO PSTRIAL;
 
-GRANT "CREATE SCHEMA" TO HCPPSTRIAL;
+GRANT "CREATE SCHEMA" TO PSTRIAL;
 
-GRANT REPO.READ on "public" TO HCPPSTRIAL;
-GRANT REPO.MAINTAIN_IMPORTED_PACKAGES on "public" TO HCPPSTRIAL;
-GRANT REPO.MAINTAIN_NATIVE_PACKAGES   on "public" TO HCPPSTRIAL;
+GRANT REPO.READ on "public" TO PSTRIAL;
+GRANT REPO.MAINTAIN_IMPORTED_PACKAGES on "public" TO PSTRIAL;
+GRANT REPO.MAINTAIN_NATIVE_PACKAGES   on "public" TO PSTRIAL;
 
-GRANT REPO.EDIT_NATIVE_OBJECTS   on "public" TO HCPPSTRIAL;
-GRANT REPO.EDIT_IMPORTED_OBJECTS on "public" TO HCPPSTRIAL;
+GRANT REPO.EDIT_NATIVE_OBJECTS   on "public" TO PSTRIAL;
+GRANT REPO.EDIT_IMPORTED_OBJECTS on "public" TO PSTRIAL;
 
-GRANT REPO.ACTIVATE_NATIVE_OBJECTS   on "public" TO HCPPSTRIAL;
-GRANT REPO.ACTIVATE_IMPORTED_OBJECTS on "public" TO HCPPSTRIAL;
+GRANT REPO.ACTIVATE_NATIVE_OBJECTS   on "public" TO PSTRIAL;
+GRANT REPO.ACTIVATE_IMPORTED_OBJECTS on "public" TO PSTRIAL;
 ```
 
-**This script will delete any existing `HCPPSTRIAL` user including its related object and tables.**
+**This script will delete any existing `PSTRIAL` user including its related object and tables.**
 
 Click on the ![Logout](0-run.png) **Run** button or press **F8**.
 
 ![SAP HANA Web-based Development Workbench Login](04.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Verify that your user is properly created)]
@@ -95,14 +92,13 @@ Click on the ![Logout](0-logout.png) **Logout** icon located in the top right co
 
 ![SAP HANA Web-based Development Workbench Login](05.png)
 
-Now, you need to connect with your **`HCPPSTRIAL`** ***HANA User Account***.
+Now, you need to connect with your **`PSTRIAL`** ***HANA User Account***.
 
-Enter **`HCPPSTRIAL`** as ***Username*** user name and **`Welcome17Welcome17`** as ***Password***, click on **Logon**.
+Enter **`PSTRIAL`** as ***Username*** user name and **`Welcome17Welcome17`** as ***Password***, click on **Logon**.
 
 If you can login, then your ***HANA User Account*** is properly configured.
 
-[DONE]
 [ACCORDION-END]
 
 ## Next Steps
-  - [Import a series of predictive demo dataset](http://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
+- [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)

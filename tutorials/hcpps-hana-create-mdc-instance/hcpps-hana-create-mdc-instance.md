@@ -7,10 +7,10 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+  - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-  - [Setup a HANA user account](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+  - [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Details
 ### You will learn
@@ -28,7 +28,6 @@ Click on the ***SAP Cloud Platform developer Account*** link as highlighted on t
 
 ![Your Personal Developer Account](02.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create your HANA MDC instance)]
@@ -55,7 +54,6 @@ You can choose other values for theses properties. As reference them across seve
 
 Click on **Save**
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Wait for the creation to finish)]
@@ -67,7 +65,6 @@ You can refresh the page by hitting F5.
 
 Once you see the *Database started successfully* event appears in the list, you can proceed with the next step.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Restart the database)]
@@ -79,7 +76,6 @@ Once the database is stopped, Click on **Start**.
 
 ![Trial Database Overview](06.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Finalize your HANA MDC instance setup)]
@@ -111,7 +107,6 @@ You are in the ***SAP HANA Cockpit***.
 
 ![SAP HANA Cockpit](10.png)
 
-[DONE]
 [ACCORDION-END]
 
 ## Next Steps

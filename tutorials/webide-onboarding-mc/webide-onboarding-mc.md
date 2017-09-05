@@ -71,7 +71,8 @@ Wait for the status to change to the green, **Enabled** status.
 
 
 [ACCORDION-BEGIN [Step 4: ](Give developers permission to SAP Web IDE)]
->>This step is only needed if you have configured a corporate SAML identity provider (IdP) for your account. For more information, see [Maintaining an IdP Mapping Rule for a User Group](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/315b851aea2d49e688cd3350f5fb763c.html)
+
+>This step is only needed if you have configured a corporate SAML identity provider (`IdP`) for your account. For more information, see [Maintaining an `IdP` Mapping Rule for a User Group](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/315b851aea2d49e688cd3350f5fb763c.html)
 
 On the same **Service: SAP Web IDE Multi-Cloud Version** page, choose **Configure Service**.
 
@@ -81,7 +82,7 @@ In the **Roles** table, select the `DiDeveloper` role.
 
 ![Configure service](Configure2.png)
 
-In the **Individual Users** or **Groups** area underneath, choose **Assign**, then in the popup window, enter the user or group you want to assign the `DiDeveloper` role, and choose **Assign**.
+In the **Individual Users** or **Groups** area underneath, choose **Assign**, then in the pop-up window, enter the user or group you want to assign the `DiDeveloper` role, and choose **Assign**.
 
 ![Configure service](Configure3.png)
 

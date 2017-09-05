@@ -18,7 +18,7 @@ SAP HANA, express edition (HXE) is officially supported on SLES and RHEL. SAP Co
 ## Details
 ### You will learn  
 In this tutorial, you will install the dependencies needed for the setup and execution of HANA Express Edition in your Ubuntu OS image on the Google Cloud Platform.
-**Note: Update for HANA 2.0 SPS02 pending**
+**NOTE: SPS02 will not work with this installation. An update is pending**
 
 ### Time to Complete
 **15 Min**

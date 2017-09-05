@@ -7,10 +7,10 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the "Dataset" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - **Tutorials:** [Configure the SAP Cloud Platform predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-  - [Test the "Key Influencer" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
+- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
 
 ## Details
 ### You will learn
@@ -21,18 +21,20 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
   **10 minutes**
 
 > In order to ease the readability of this tutorial, we have used tokens to replace long URLs.
-> Therefore you can replace any occurrence of the token by the value listed above.
+> Therefore you can replace any occurrence of the token by the value listed above:
 >
-> - `C4PAURL` : represents the predictive services **Application URL** displayed on the overview page.
->
->     The `C4PAURL` should look like this (XYZ is your SAP Cloud Platform account name):
+> - **`C4PAURL`** : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
 >     
 ```
- https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
+     https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
 ```
 >      
 >
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+
+&nbsp;
+
+> **Note**: if you are running into some issue, you can check the [SAP Cloud Platform Predictive Services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 [ACCORDION-BEGIN [Info:](A short description of the Forecast service)]
 The Forecasts service analyzes a dataset containing the successive values of a target indicator over time to predict the next values.
@@ -77,7 +79,6 @@ Optionally, you can define the following parameters to enhance your analysis:
  - smoothing cycle length: the length to consider for a cycle. This parameter is enforced only when using smoothing techniques
  - variable description: a more details description of the dataset
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Info:](A short description of the Cash Flow dataset)]
@@ -97,7 +98,6 @@ Date | Day, month and year of the readings | A date in the format `yyyy-mm-dd` s
 `MondayMonthInd` <br/> `TuesdayMonthInd` <br/> `WednesdayMonthInd` <br/> `ThursdayMonthInd` <br/> `FridayMonthInd` | Indices of the week days in the month | An integer value
 `Last5WDaysInd` <br/> `Last4WDaysInd` | Indices of the 5 or 4 last working days of the month | An integer value
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Register the Cash Flow dataset)]
@@ -124,7 +124,7 @@ URL            | `C4PAURL/api/analytics/dataset/sync`
 ```json
 {
   "location": {
-    "schema" : "DEMO",
+    "schema" : "PSDEMO",
     "table" : "CashFlow"
   }
 }
@@ -173,7 +173,6 @@ URL            | `C4PAURL/api/analytics/dataset/<`ID`>/variables/update`
 ]
 ```
 
-[DONE]
 [ACCORDION-END]    
 
 [ACCORDION-BEGIN [Step 2: ](Run the Forecast service in synchronous mode)]
@@ -294,7 +293,6 @@ Here is the result:
 
 You can try to run the model with the following date "2002-01-01", where there is no more real value for the `Cash` column.
 
-[DONE]
 [ACCORDION-END]    
 
 [ACCORDION-BEGIN [Step 3: ](Run the Forecast service in asynchronous mode)]
@@ -391,7 +389,6 @@ Field Name     | Value
 Request Type   | `DELETE`
 URL            | `C4PAURL/api/analytics/forecast/1`
 
-[DONE]
 [ACCORDION-END]
 
 ### Optional
@@ -401,4 +398,4 @@ Or the public documentation
   - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
 
 ## Next Steps
-  - [Test the "Key Influencer" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-keyinfluencer.html)
+- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)

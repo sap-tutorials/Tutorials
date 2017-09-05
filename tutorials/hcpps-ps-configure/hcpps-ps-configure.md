@@ -49,7 +49,6 @@ Click on **Enable**
 
 Once enable, you will need to deploy the ***Cloud for Predictive Analytics*** application.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Deploy the Predictive Services application)]
@@ -79,7 +78,6 @@ Click on **OK** to confirm the deployment
 
 ![Cloud for Predictive Analytics](08.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Configure the data source binding)]
@@ -112,7 +110,6 @@ Click on **Save**
 
 ![Binding](13.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Assign the roles to your user)]
@@ -135,7 +132,6 @@ The **`C4PA-User`** will enable your user to consume the services and the **`C4P
 >
 > And in case you are using a trial account, make sure you don't include the "trial" at the end.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Modify the Authentication scheme)]
@@ -159,7 +155,6 @@ Next, you will receive next an alert regarding the fact that the changes will be
 
 ![Authentication](16.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Start the application)]
@@ -176,7 +171,6 @@ Once started, you will be provided with the **Application URLs** which will give
 
 Later, you will be using the ***Application URLs***, so you should save the highlighted URL in a notepad as your ***C4PA Application URL***.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Verify the setup)]
@@ -193,7 +187,6 @@ Status is green! Congrats, you have configured the SAP Cloud for predictive serv
 
 ![Application](20.png)   
 
-[DONE]
 [ACCORDION-END]
 
 ## Next Steps

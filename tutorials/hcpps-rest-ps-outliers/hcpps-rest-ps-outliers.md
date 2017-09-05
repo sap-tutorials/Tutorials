@@ -7,10 +7,10 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Test the "Dataset" services](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - **Tutorials:** [Configure the SAP Cloud Platform predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-  - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
+- [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 
@@ -23,18 +23,20 @@ Only the synchronous mode will be tested here but you can mimic what was done in
   **10 minutes**
 
 > In order to ease the readability of this tutorial, we have used tokens to replace long URLs.
-> Therefore you can replace any occurrence of the token by the value listed above.
+> Therefore you can replace any occurrence of the token by the value listed above:
 >
-> - `C4PAURL` : represents the predictive services **Application URL** displayed on the overview page.
->
->     The `C4PAURL` should look like this (XYZ is your SAP Cloud Platform account name):
+> - **`C4PAURL`** : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
 >     
 ```
- https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
+     https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
 ```
 >      
 >
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+
+&nbsp;
+
+> **Note**: if you are running into some issue, you can check the [SAP Cloud Platform Predictive Services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 [ACCORDION-BEGIN [Info:](A short description of the Outliers service)]
 The Outliers service identifies the odd profiles of a dataset whose target indicator is significantly different from what is expected.
@@ -67,7 +69,6 @@ Optionally, you can define the following parameters to enhance your analysis:
   - variable description: a more details description of the dataset  
   - weight variable: a column to be used to increase the importance of a row
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Info:](A short description of the Census dataset)]
@@ -99,7 +100,6 @@ Variable | Description | Example of Values
 `native country` | Country of origin| United States, France, ...
 `class` | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
 
-[DONE]
 [ACCORDION-END]  
 
 [ACCORDION-BEGIN [Step 1: ](Register the Census dataset)]
@@ -120,7 +120,7 @@ URL            | `C4PAURL/api/analytics/dataset/sync`
 ```json
 {
   "location": {
-    "schema" : "DEMO",
+    "schema" : "PSDEMO",
     "table" : "Census"
   }
 }
@@ -128,7 +128,6 @@ URL            | `C4PAURL/api/analytics/dataset/sync`
 
 **Take note of the returned dataset identifier.**
 
-[DONE]
 [ACCORDION-END]    
 
 [ACCORDION-BEGIN [Step 2: ](Run the Outliers service)]
@@ -270,7 +269,6 @@ You can also play with the following parameters and check the differences:
 - skipped variables: exclude "`marital_status`"
 - variable description: for example as an ordinal variable
 
-[DONE]
 [ACCORDION-END]    
 
 ### Optional
@@ -280,4 +278,4 @@ Or the public documentation
   - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
 
 ## Next Steps
-  - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
+- [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
