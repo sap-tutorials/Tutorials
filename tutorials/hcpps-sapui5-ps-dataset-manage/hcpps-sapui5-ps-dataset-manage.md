@@ -427,7 +427,7 @@ Open the `webapp/view/dataset/manage.view.xml` file and add the following code i
 ```xml
 <Toolbar visible="{= typeof ${dataset_manage>/dataset} !== 'undefined'}">
   <ToolbarSpacer/>
-  <Button icon="sap-icon://delete" text="Delete Description" app:datasetId="{dataset_manage>/dataset/ID}" app:bindingProperty="/dataset" press="deleteDataset"/>
+  <Button icon="sap-icon://delete" text="Delete Registration" app:datasetId="{dataset_manage>/dataset/ID}" app:bindingProperty="/dataset" press="deleteDataset"/>
   <ToolbarSpacer/>
 </Toolbar>
 ```
@@ -440,7 +440,7 @@ On the left panel, you should see an item labeled `Dataset Services`, click on i
 
 Click on `Manage`, then on `Get Dataset List`, and finally select any of the registered dataset.
 
-You can now click on `Delete Description`, the registered dataset list should be refreshed and the selected item will be removed.
+You can now click on `Delete Registration`, the registered dataset list should be refreshed and the selected item will be removed.
 
 Et voilà!
 ![Applications](07.png)
@@ -525,12 +525,12 @@ by:
 </ActionSelect>
 ```
 
-Then, add the `Update Description` in the toolbar along with the `Delete Description` button like this:
+Then, add the `Update Description` in the toolbar along with the `Delete Registration` button like this:
 
 ```xml
 <Toolbar visible="{= typeof ${dataset_manage>/dataset} !== 'undefined'}">
   <ToolbarSpacer/>
-  <Button icon="sap-icon://delete" text="Delete Description" app:datasetId="{dataset_manage>/dataset/ID}" app:bindingProperty="/dataset" press="deleteDataset"/>
+  <Button icon="sap-icon://delete" text="Delete Registration" app:datasetId="{dataset_manage>/dataset/ID}" app:bindingProperty="/dataset" press="deleteDataset"/>
   <Button icon="sap-icon://upload-to-cloud" text="Update Description" app:datasetId="{dataset_manage>/dataset/ID}" app:bindingProperty="/dataset" press="updateDataset"/>
   <ToolbarSpacer/>
 </Toolbar>
