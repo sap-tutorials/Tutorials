@@ -18,9 +18,9 @@ These datasets are part of the samples provided with the SAP Predictive Analytic
 
 In order to ease the import, the raw data were transformed into SQL files with the relevant create and insert statement for SAP HANA.
 
-These SQL files are available on my public [GitHub repository](https://github.com/adadouche/tutorials/tree/master/hcpps-hana-dataset-import).
+These SQL files are available on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/hcpps-hana-dataset-import/sql).
 
-Make sure you check the [README](https://github.com/adadouche/tutorials/blob/master/hcpps-hana-dataset-import/README.md) before starting using its content.
+Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
 ### You will learn
   - How to import the scenarios datasets in your SAP Cloud Platform HANA MDC instance.
@@ -46,7 +46,7 @@ Click on the **Open SQL Console** ![open](0-opensqlconsole.png) icon or press CT
 
 ![SAP HANA Web-based Development Workbench](02.png)
 
-Download the file from the following [`link`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-hana-dataset-import/demo.create.structure.sql).
+Download the file from the following [`link`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/sql/demo.create.structure.sql).
 
 Copy and paste the content of the files in the SQL console. You can alternatively open the file using the ![open](0-opensqlfile.png) icon in the menu bar.
 
@@ -66,17 +66,17 @@ Depending on your area of interest you can pick those of interest and download t
 
   - **Cash Flow**: contains historical cash flow data and date related indicators.
   This dataset is meant to be used by the **Forecast** service only.
-    - [`link`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-hana-dataset-import/demo.insert.cashflow.sql)
+    - [`link`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/sql/demo.insert.cashflow.sql)
   - **Census**: contains 14 characteristics of an individual extracted from a census dataset associated to an indicator equal to 1 when the individual earned more than fifty thousand dollars the previous year, else 0 (excerpt from the American Census Bureau database, completed in 1994 by Barry Becker, source: http://www.census.gov/)
   This dataset is meant to be used by the **Key Influencers**, **Outliers**, **Clustering**, **What-if** & **Scoring Equation** services.
-    - [`link 1`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-hana-dataset-import/demo.insert.census.1.sql)
-    - [`link 2`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-hana-dataset-import/demo.insert.census.2.sql)
-    - [`link 3`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-hana-dataset-import/demo.insert.census.3.sql)
-    - [`link 4`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-hana-dataset-import/demo.insert.census.4.sql)
-    - [`link 5`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-hana-dataset-import/demo.insert.census.5.sql)
+    - [`link 1`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/sql/demo.insert.census.1.sql)
+    - [`link 2`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/sql/demo.insert.census.2.sql)
+    - [`link 3`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/sql/demo.insert.census.3.sql)
+    - [`link 4`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/sql/demo.insert.census.4.sql)
+    - [`link 5`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/sql/demo.insert.census.5.sql)
   - **E-Commerce**: contains a single day of Web traffic from an E-commerce site in December 1999.
   This dataset is meant to be used by the **Recommendation** service only.
-    - [`link`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-hana-dataset-import/demo.insert.transaction.sql).
+    - [`link`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-hana-dataset-import/sql/demo.insert.transaction.sql).
 
 Open the ***SAP HANA Web-based Development Workbench*** on your trial HANA instance connected as **`PSTRIAL`**, click on **Catalog**.
 
