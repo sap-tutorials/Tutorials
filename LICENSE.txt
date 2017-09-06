@@ -1,12 +1,32 @@
-The tutorials made available at https://github.com/SAPDocuments/Tutorials/ ("Tutorials") are provided SAP under the following terms and conditions:
+The tutorials made available at https://github.com/SAPDocuments/Tutorials/ ("Tutorials") are provided 
+by SAP under the following terms and conditions:
 
-- Sample Code - All sample code contained in the Tutorials is licensed under the Apache Software License, Version 2.0, a copy of which is provided below.
+- Sample Code - All sample code contained in the Tutorials is licensed under the Apache Software 
+License, Version 2.0, a copy of which is provided below.
 
-- All Other Content - All other content contained in the Tutorials (including, without limitation, text, images, videos and other content) is provided for informational purposes only and solely for your personal non-commercial use. You may not copy, distribute, store, modify or publically display or publically perform the Tutorials or any portion thereof without the prior written consent from SAP. 
+- All Other Content - All other content contained in the Tutorials (including, without limitation, 
+text, images, videos and other content) is provided for informational purposes only and solely for 
+your personal non-commercial use. You may not copy, distribute, store, modify or publically display 
+or publically perform the Tutorials or any portion thereof without the prior written consent from SAP. 
 
-The Tutorials are provided AS-IS and AS AVAILABLE. SAP does not guarantee or warrant any features or qualities of the Tutorials or give any undertaking with regard to any other quality. TO THE EXTENT ALLOWABLE BY APPLICABLE LAW, SAP AND ITS AFFILIATES, SUBSIDIARIES, OFFICERS, EMPLOYEES, AGENTS, PARTNERS, AND LICENSORS ARE NOT LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS, REVENUE, GOODWILL, USE, DATA, OR OTHER INTANGIBLE LOSSES (EVEN IF SAP HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES), HOWEVER CAUSED, WHETHER IN CONTRACT, TORT, OR OTHERWISE, RELATING TO THE TUTORIALS. 
+The Tutorials are provided AS-IS and AS AVAILABLE. SAP does not guarantee or warrant any features or 
+qualities of the Tutorials or give any undertaking with regard to any other quality. TO THE EXTENT 
+ALLOWABLE BY APPLICABLE LAW, SAP AND ITS AFFILIATES, SUBSIDIARIES, OFFICERS, EMPLOYEES, AGENTS,
+PARTNERS, AND LICENSORS ARE NOT LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, 
+CONSEQUENTIAL, OR EXEMPLARY DAMAGES, INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS, 
+REVENUE, GOODWILL, USE, DATA, OR OTHER INTANGIBLE LOSSES (EVEN IF SAP HAS BEEN ADVISED OF THE 
+POSSIBILITY OF SUCH DAMAGES), HOWEVER CAUSED, WHETHER IN CONTRACT, TORT, OR OTHERWISE, RELATING TO 
+THE TUTORIALS. 
 
-The Tutorials may include APIs to SAP or third party products or services. The use of these APIs, products and services may be subject to additional agreements. In no event shall the application of the Apache Software License, v.2 to the Sample Code grant any rights in or to these APIs, products or services that would alter, expand, be inconsistent with, or supersede any terms of these additional agreements. ìAPIî means application programming interfaces, as well as their respective specifications and implementing code that allows other software products to communicate with or call on SAP or third party products or services (for example, SAP Enterprise Services, BAPIs, Idocs, RFCs and ABAP calls or other user exits) and may be made available through SAP or third party products, SDKs, documentation or other media. 
+The Tutorials may include APIs to SAP or third party products or services. The use of these APIs, 
+products and services may be subject to additional agreements. In no event shall the application of 
+the Apache Software License, v.2 to the Sample Code grant any rights in or to these APIs, products or 
+services that would alter, expand, be inconsistent with, or supersede any terms of these additional 
+agreements. ìAPIî means application programming interfaces, as well as their respective specifications 
+and implementing code that allows other software products to communicate with or call on SAP or third 
+party products or services (for example, SAP Enterprise Services, BAPIs, Idocs, RFCs and ABAP calls or 
+other user exits) and may be made available through SAP or third party products, SDKs, documentation 
+or other media. 
 
 ------------------------------------------------------------------------------------------------------
 
