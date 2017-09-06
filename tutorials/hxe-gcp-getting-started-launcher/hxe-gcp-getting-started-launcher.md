@@ -159,7 +159,7 @@ You will find the installation packages for different clients.
 
 [ACCORDION-BEGIN [Step 6 (Optional): ](Server-only installation: Create a development user)]
 
-It is always safe to create a development user and even make a copy of the system user to use as an administrator in case you somehow lock yourself out. The XS Advanced installation creates a development user called XSA_DEV, so this step is unnecessary if you are using that option.
+It is always safe to create a development user and even make a copy of the system user to use as an administrator in case you somehow lock yourself out. The XS Advanced installation creates a development user called `XSA_DEV`, so this step is unnecessary if you are using that option.
 
 If you are using the server-only option, in a new SSH console, switch to the user `hxeadm` and connect to the database as follows:
 
