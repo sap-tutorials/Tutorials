@@ -616,18 +616,20 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`webapp/fragment/dataset/DatasetHeader.fragment.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/dataset/DatasetHeader.fragment.xml)
-  - [`webapp/fragment/dataset/DatasetList.fragment.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/dataset/DatasetList.fragment.xml)
-  - [`webapp/fragment/dataset/DatasetList.js`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/dataset/DatasetList.js)
-  - [`webapp/fragment/forecast/ServiceForm.fragment.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/forecast/ServiceForm.fragment.xml)
-  - [`webapp/fragment/forecast/ServiceResult.fragment.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/forecast/ServiceResult.fragment.xml)
-  - [`webapp/controller/forecast/synchronous.controller.js`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/controller/forecast/synchronous.controller.js)
-  - [`webapp/view/forecast/synchronous.view.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/view/forecast/synchronous.view.xml)
-  - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/view/demo.view.xml)
+  - [`webapp/fragment/dataset/DatasetHeader.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/dataset/DatasetHeader.fragment.xml)
+  - [`webapp/fragment/dataset/DatasetList.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/dataset/DatasetList.fragment.xml)
+  - [`webapp/fragment/dataset/DatasetList.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/dataset/DatasetList.js)
+  - [`webapp/fragment/forecast/ServiceForm.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/forecast/ServiceForm.fragment.xml)
+  - [`webapp/fragment/forecast/ServiceResult.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/forecast/ServiceResult.fragment.xml)
+  - [`webapp/controller/forecast/synchronous.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/controller/forecast/synchronous.controller.js)
+  - [`webapp/view/forecast/synchronous.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/view/forecast/synchronous.view.xml)
+  - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/view/demo.view.xml)
 
-The complete project can be found on my personal [`Git Hub repository`](https://github.com/adadouche/tutorials/tree/master/hcpps-sapui5-ps-forecast-synchronous).
+The complete project can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive).
 
 However, you won't be able to clone the repository and directly run the code from the current directory structure. You have to copy the `predictive` directory content into your existing project directory.
+
+Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
 [ACCORDION-END]
 

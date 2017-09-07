@@ -493,7 +493,7 @@ Barcode 4:
 
 Position the barcode inside the scanning area. If a barcode has been detected, this will be indicated by a green line or rectangle:
 
-![Navigation Controller](fiori-ios-scpms-floorplan-15.png)
+![Navigation Controller](fiori-ios-scpms-floorplan-15.jpg)
 
 The list should now be filtered based on the scanned results:
 

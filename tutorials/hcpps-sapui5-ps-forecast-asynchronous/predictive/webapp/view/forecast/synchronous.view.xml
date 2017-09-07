@@ -1,0 +1,26 @@
+<mvc:View controllerName="pspredictive.controller.forecast.synchronous" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Toolbar>
+		<ToolbarSpacer/>
+		<Button icon="sap-icon://refresh" text="Get Dataset List" press="getDatasetList"/>
+		<ToolbarSpacer/>
+	</Toolbar>
+	<Panel expandable="false" visible="{= typeof ${dataset_fragment>/datasets} !== 'undefined'}">
+		<core:Fragment fragmentName='pspredictive.fragment.dataset.DatasetList' type='XML'/>
+	</Panel>
+	<Panel expandable="false" visible="{= typeof ${dataset_fragment>/dataset} !== 'undefined'}">
+		<core:Fragment fragmentName='pspredictive.fragment.dataset.DatasetHeader' type='XML'/>
+		<core:Fragment fragmentName='pspredictive.fragment.forecast.ServiceForm' type='XML'/>
+	</Panel>
+	<Toolbar visible="{= typeof ${dataset_fragment>/dataset} !== 'undefined'}">
+		<ToolbarSpacer/>
+		<Button icon="sap-icon://begin" text="Run forecast" custom:eDatasetID="idFormDatasetID"
+			custom:eDateColumn="idFormDateColumn" custom:eTargetColumn="idFormTargetColumn" custom:eReferenceDate="idFormReferenceDate"
+			custom:eNumberOfForecasts="idFormNumberOfForecasts" press="forecast"/>
+		<ToolbarSpacer/>
+	</Toolbar>
+	<Panel expandable="false" visible="{= typeof ${forecast_fragment>/model} !== 'undefined'}">
+		<core:Fragment fragmentName='pspredictive.fragment.forecast.ServiceResult' type='XML'/>
+	</Panel>
+</mvc:View>

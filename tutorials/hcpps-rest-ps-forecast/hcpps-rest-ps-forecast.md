@@ -23,7 +23,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 > In order to ease the readability of this tutorial, we have used tokens to replace long URLs.
 > Therefore you can replace any occurrence of the token by the value listed above:
 >
-> - **`C4PAURL`** : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
+> - <code><b>C4PAURL</b></code> : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
 >     
 ```
      https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
@@ -90,13 +90,13 @@ The file presents daily measures of cash flows from January 2, 1998 to September
 Variable | Description | Example of values
 --------------|--------------|--------------
 Date | Day, month and year of the readings | A date in the format `yyyy-mm-dd` such as 1998-01-02
-`Cash` | Cash flow | A numerical value with n decimals
-`BeforeLastMonday` <br/> `LastMonday` <br/> `BeforeLastTuesday` <br/> `LastTuesday` <br/> `BeforeLastWednesday` <br/> `LastWednesday` <br/> `BeforeLastThursday` <br/> `LastThursday` <br/> `BeforeLastFriday` <br/> `LastFriday` | Boolean variables that indicate if the information is true or false | 1 if the information is true.
-`Last5WDays` <br/> `Last4WDays` | Boolean variables that indicate if the date is in the 5 or 4 last working days of the month | 1 if the information is true.
-`LastWMonth` <br/> `BeforeLastWMonth` | Boolean variables that indicate if the information is true or false | 1 if the information is true.
-`WorkingDaysIndices` <br/> `ReverseWorkingDaysIndices` | Indices or reverse indices of the working days | An integer value
-`MondayMonthInd` <br/> `TuesdayMonthInd` <br/> `WednesdayMonthInd` <br/> `ThursdayMonthInd` <br/> `FridayMonthInd` | Indices of the week days in the month | An integer value
-`Last5WDaysInd` <br/> `Last4WDaysInd` | Indices of the 5 or 4 last working days of the month | An integer value
+<nobr>`Cash`</nobr> | Cash flow | A numerical value with n decimals
+<nobr>`BeforeLastMonday`</nobr><br><nobr>`LastMonday`</nobr><br><nobr>`BeforeLastTuesday`</nobr><br><nobr>`LastTuesday`</nobr><br><nobr>`BeforeLastWednesday`</nobr><br><nobr>`LastWednesday`</nobr><br><nobr>`BeforeLastThursday`</nobr><br><nobr>`LastThursday`</nobr><br><nobr>`BeforeLastFriday`</nobr><br><nobr>`LastFriday`</nobr> | Boolean variables that indicate if the information is true or false | 1 if the information is true.
+`Last5WDays`</nobr><br><nobr>`Last4WDays`</nobr> | Boolean variables that indicate if the date is in the 5 or 4 last working days of the month | 1 if the information is true.
+<nobr>`LastWMonth`</nobr><br><nobr>`BeforeLastWMonth`</nobr> | Boolean variables that indicate if the information is true or false | 1 if the information is true.
+<nobr>`WorkingDaysIndices`</nobr><br><nobr>`ReverseWorkingDaysIndices`</nobr> | Indices or reverse indices of the working days | An integer value
+<nobr>`MondayMonthInd`</nobr><br><nobr>`TuesdayMonthInd`</nobr><br><nobr>`WednesdayMonthInd`</nobr><br><nobr>`ThursdayMonthInd`</nobr><br><nobr>`FridayMonthInd`</nobr> | Indices of the week days in the month | An integer value
+<nobr>`Last5WDaysInd`</nobr><br><nobr>`Last4WDaysInd`</nobr> | Indices of the 5 or 4 last working days of the month | An integer value
 
 [ACCORDION-END]
 
@@ -118,8 +118,8 @@ Fill in the following information:
 
 Field Name     | Value
 -------------- | --------------
-Request Type   | `POST`
-URL            | `C4PAURL/api/analytics/dataset/sync`
+Request Type   | <code><b>POST</b></code>
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/sync`
 
 ```json
 {
@@ -136,10 +136,10 @@ Now as described in the **Step 4: Modify registered variable details**,
 
 Field Name     | Value
 -------------- | --------------
-Request Type   | `POST`
-URL            | `C4PAURL/api/analytics/dataset/<`ID`>/variables/update`
+Request Type   | <code><b>POST</b></code>
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/`<code><b>ID</b></code>`/variables/update`
 
-> Make sure you replace the `ID` token in the URL with the one returned by the previous service call.
+> Make sure you replace the <code><b>ID</b></code> token in the URL with the one returned by the previous service call.
 
 &nbsp;
 
@@ -185,9 +185,8 @@ Fill in the following information:
 
 Field Name     | Value
 -------------- | --------------
-Request Type   | `POST`
-URL            | `C4PAURL/api/analytics/forecast/sync`
-
+Request Type   | <code><b>POST</b></code>
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast/sync`
 ![Postman URL](01.png)
 
 Select the **Authorization** tab and fill in the following information:
@@ -204,7 +203,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 
 ```json
 {
-  "datasetID": 3,
+  "datasetID": 9999999,
   "targetColumn": "Cash",
   "dateColumn": "Date",
   "numberOfForecasts": 5,  
@@ -212,7 +211,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 }
 ```
 
-> Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the previous tutorial.
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 
 &nbsp;
 
@@ -305,8 +304,8 @@ Fill in the following information
 
 Field Name     | Value
 -------------- | --------------
-Request Type   | `POST`
-URL            | `C4PAURL/api/analytics/forecast`
+Request Type   | <code><b>POST</b></code>
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast`
 
 As you can notice the only difference here, is that we don't use the "sync" keyword in the URL.
 
@@ -316,14 +315,14 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 
 ```json
 {
-  "datasetID": 3,
+  "datasetID": 9999999,
   "targetColumn": "Cash",
   "dateColumn": "Date",
   "numberOfForecasts": 5,  
   "referenceDate" : "2001-12-01"
 }
 ```
-> Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the previous tutorial.
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 
 &nbsp;
 
@@ -336,11 +335,11 @@ Here is the result:
   "ID": 1,
   "status": "NEW",
   "type": "forecasts",
-  "input": "{\"datasetID\":3,\"dateColumn\":\"Date\",\"numberOfForecasts\":5,\"referenceDate\":\"2001-12-01\",\"targetColumn\":\"Cash\"}"
+  "input": "{\"datasetID\":9999999,\"dateColumn\":\"Date\",\"numberOfForecasts\":5,\"referenceDate\":\"2001-12-01\",\"targetColumn\":\"Cash\"}"
 }
 ```
 
-Now, you can use the `ID` value representing the forecast job identifier to get its status.
+Now, you can use the <code><b>ID</b></code> value representing the forecast job identifier to get its status.
 
 Open a new tab in ***Postman***.
 
@@ -348,8 +347,8 @@ Fill in the following information
 
 Field Name     | Value
 -------------- | --------------
-Request Type   | `GET`
-URL            | `C4PAURL/api/analytics/forecast/1/status`
+Request Type   | <code><b>GET</b></code>
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast/1/status`
 
 Select the **Authorization** tab and fill in the same details as in the previous call.
 
@@ -373,8 +372,12 @@ Fill in the following information:
 
 Field Name     | Value
 -------------- | --------------
-Request Type   | `GET`
-URL            | `C4PAURL/api/analytics/forecast/1`
+Request Type   | <code><b>GET</b></code>
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast/`<code><b>ID</b></code>
+
+> Make sure to replace the `ID` by your Job ID as returned in the previous step
+
+&nbsp;
 
 Select the **Authorization** tab and fill in the same details as in the previous call.
 
@@ -386,16 +389,18 @@ Ultimately, you can delete the job and its content using a the following details
 
 Field Name     | Value
 -------------- | --------------
-Request Type   | `DELETE`
-URL            | `C4PAURL/api/analytics/forecast/1`
+Request Type   | <code><b>DELETE</b></code>
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast/`<code><b>ID</b></code>
+
+> Make sure to replace the `ID` by your Job ID as returned in the previous step
+
+&nbsp;
 
 [ACCORDION-END]
 
 ### Optional
-For more details on the SAP Cloud for predictive services, you can check the following URL that can also allow you to run the service:
-  - `C4PAURL/raml/console/index.html?raml=../api/aa-cloud-services.raml`
-Or the public documentation
-  - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
+
+For more details on the SAP Cloud for predictive services, you can check the following the [`Forecasts APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/8c4150c7711a4d1b865ea9628597d3e0.html) documentation.
 
 ## Next Steps
 - [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)

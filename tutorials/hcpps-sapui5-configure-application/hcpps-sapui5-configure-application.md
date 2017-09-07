@@ -18,12 +18,9 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
   - How to create a SAPUI5 application from a template using the SAP Web IDE
   - How to add a destination to your SAPUI5 application
   - Run your SAPUI5 application
->
-> **Note:**
-The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Cloud for predictive services.
-For more content on SAPUI5, you can check the dedicated SAPUI5 tutorials or the online SAPUI5 documentation available here: https://sapui5.hana.ondemand.com
-
-&nbsp;
+  &nbsp;
+  **Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Cloud for predictive services.
+  For more content on SAPUI5, you can check the dedicated SAPUI5 tutorials or the online SAPUI5 documentation available here: https://sapui5.hana.ondemand.com
 
 ### Time to Complete
   **10 minutes**
@@ -31,7 +28,7 @@ For more content on SAPUI5, you can check the dedicated SAPUI5 tutorials or the 
 > In order to ease the readability of this tutorial, we have used tokens to replace long URLs.
 > Therefore you can replace any occurrence of the token by the value listed above:
 >
-> - **`C4PAURL`** : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
+> - <code><b>C4PAURL</b></code> : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
 >     
 ```
      https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
@@ -294,13 +291,15 @@ This will open a web page with the following content:
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`neo-app.json`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-configure-application/predictive/neo-app.json)
-  - [`webapp/controller/demo.controller.js`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-configure-application/predictive/webapp/controller/demo.controller.js)
-  - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-configure-application/predictive/webapp/view/demo.view.xml)
+  - [`neo-app.json`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-configure-application/predictive/neo-app.json)
+  - [`webapp/controller/demo.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-configure-application/predictive/webapp/controller/demo.controller.js)
+  - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-configure-application/predictive/webapp/view/demo.view.xml)
 
-The complete project can be found on my personal [`Git Hub repository`](https://github.com/adadouche/tutorials/tree/master/hcpps-sapui5-configure-application).
+The complete project can be found on SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/hcpps-sapui5-configure-application/predictive).
 
 However, you won't be able to clone the repository and directly run the code from the current directory structure. You have to copy the `predictive` directory content into your existing project directory.
+
+Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
 [ACCORDION-END]
 

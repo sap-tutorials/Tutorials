@@ -24,37 +24,37 @@ Install the SAP HANA client package and SAP HANA streaming analytics on an SAP H
 
 [ACCORDION-BEGIN [Step 1: ](Download the streaming analytics installation package)]
 
-Use the SAP HANA, express edition Download Manager to download the streaming analytics installation package, `sa.tgz`.
+Use the SAP HANA, express edition Download Manager to download the streaming analytics installation package, `hsa.tgz`.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Copy sa.tgz to the virtual machine)]
+[ACCORDION-BEGIN [Step 2: ](Copy hsa.tgz to the virtual machine)]
 
 If you are installing streaming analytics on an SAP HANA, express edition virtual machine, locate the download package.
 
 | If you downloaded using...        | Then do this...  |
 | ---------------- | -------------|
-| The VM's built-in Download Manager (Console Mode)           | Locate ` sa.tgz ` in the VM's Save Directory (`~/Downloads` by default.) |
-| The Download Manager (GUI Mode) on your laptop            | Transfer ` sa.tgz ` from your laptop's Save Directory to `~/Downloads` on your VM.|
+| The VM's built-in Download Manager (Console Mode)           | Locate ` hsa.tgz ` in the VM's Save Directory (`~/Downloads` by default.) |
+| The Download Manager (GUI Mode) on your laptop            | Transfer ` hsa.tgz ` from your laptop's Save Directory to `~/Downloads` on your VM.|
 
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Extract sa.tgz)]
+[ACCORDION-BEGIN [Step 3: ](Extract hsa.tgz)]
 
-Extract the contents of `sa.tgz`:
+Extract the contents of `hsa.tgz`:
 
 ```
-tar -xvzf <download_path>/sa.tgz
+tar -xvzf <download_path>/hsa.tgz
 ```
 
 >**Tip:**
 > You may have to give these files run permissions. Example:
 
 > ```bash
-> chmod -R 777 <download_path>/sa.tgz
+> chmod -R 777 <download_path>/hsa.tgz
 > ```
 
 [DONE]
@@ -73,11 +73,11 @@ If you are installing streaming analytics on an SAP HANA, express edition virtua
 
 [ACCORDION-BEGIN [Step 5: ](Run the installer)]
 
-Navigate to the `HANA_EXPRESS_20` directory where you extracted the files and run `install_sa.sh` as the root user:
+Navigate to the `HANA_EXPRESS_20` directory where you extracted the files and run `install_hsa.sh` as the root user:
 
 ```
 cd <extracted_path>/HANA_EXPRESS_20
-sudo ./install_sa.sh
+sudo ./install_hsa.sh
 ```
 
 Follow the prompts to configure your installation.
