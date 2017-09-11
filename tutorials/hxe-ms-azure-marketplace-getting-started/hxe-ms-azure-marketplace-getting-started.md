@@ -27,6 +27,7 @@ Coming Soon!
 
 This is a temporary URL placeholder. If you are looking for steps to getting HANA Express, here they are: https://www.sap.com/developer/topics/sap-hana-express.html
 
+
 [DONE]
 [ACCORDION-END]
 
