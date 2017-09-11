@@ -251,7 +251,7 @@ Open a browser window and navigate to the **End-User UI URL**:
 
 You should now see the authorized client application for `hcpms`, as well as the date the token was issued (and when it will be invalidated , if applicable)
 
-![Load metadata file](fiori-ios-scpms-saml-oauth-12.png)
+![Load metadata file](fiori-ios-scpms-saml-oauth-12.jpg)
 
 [DONE]
 [ACCORDION-END]
