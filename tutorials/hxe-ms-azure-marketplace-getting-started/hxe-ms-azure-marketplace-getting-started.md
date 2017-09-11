@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner | Intermediate | Advanced
+ - **Proficiency:** Beginner
 
 
 
