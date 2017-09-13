@@ -26,7 +26,7 @@ For this tutorial, make sure:
 - You have created an SAPUI5 project. You can simply create a blank or sample project from a template.
 - Your project uses the Basic JavaScript validator. To change it, right-click your project and go to **Project Settings** | **Code Checking** | **JavaScript**, change the validator to **Basic JavaScript**, and click **Save**.
 
-The `grunt-sapui5-bestpractice-build` Grunt plugin is published on the SAP npm registry. To run the Grunt build using this plugin outside of SAP Cloud Platform, Web IDE Multi-Cloud version, such as from a CLI as part of the CI process, add the following configuration option to the npm configuration file:
+The `grunt-sapui5-bestpractice-build` Grunt plugin is published on the SAP npm registry. To run the Grunt build using this plugin outside of SAP Web IDE for Full-Stack Development, such as from a CLI as part of the CI process, add the following configuration option to the npm configuration file:
 
 `@sap:registry=https://npm.sap.com/`
 
