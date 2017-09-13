@@ -1,6 +1,6 @@
 ---
-title: Getting Started with the SAP Web IDE Multi-Cloud Version (Trial)
-description: This tutorial shows you how to set up your SAP Cloud Platform trial account so you can start developing applications with the SAP Web IDE multi-cloud version.
+title: Getting Started with SAP Web IDE for Full-Stack Development (Trial)
+description: This tutorial shows you how to set up your SAP Cloud Platform trial account so you can start developing applications with SAP Web IDE for Full-Stack Development.
 primary_tag: products>sap-web-ide
 tags: [  tutorial>beginner, topic>cloud, topic>html5, topic>internet-of-things, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
@@ -13,10 +13,10 @@ You have access to an SAP Cloud Platform trial account. If you don't have an acc
 - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
-The new SAP Web IDE multi-cloud version supports additional scenarios, and includes additional features for improving the build process and creating full-stack applications.
+The new SAP Web IDE for Full-Stack Development supports additional scenarios, and includes additional features for improving the build process and creating full-stack applications.
 
 ### You will learn  
-- How to enable and start using the SAP Web IDE multi-cloud version
+- How to enable and start using SAP Web IDE for Full-Stack Development
 
 ### Time to Complete
 **5 Min**
@@ -34,28 +34,28 @@ Make sure you are in the Neo environment, not the Cloud Foundry environment. Neo
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Enable the SAP Web IDE multi-cloud version service)]
+[ACCORDION-BEGIN [Step 2: ](Enable the SAP Web IDE for Full-Stack Development service)]
 Click **Services**.
 
 ![Services](Services.png)
 
-In the search box, search for `Web`, and then click the **SAP Web IDE Multi-Cloud Version** tile.
+In the search box, search for `Web`, and then click the **SAP Web IDE for Full-Stack Development** tile.
 
-![Find multi-cloud version](FindService.png)
+![Find full-stack version](FindService.png)
 
 Click **Enable**. This may take a few minutes.
 
-![Enable multi-cloud version](Enable.png)
+![Enable full-stack version](Enable.png)
 
 Wait for the status to change to the green, **Enabled** status.
 
-![multi-cloud version enabled](Enabled.png)
+![full-stack version enabled](Enabled.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Open the SAP Web IDE multi-cloud version)]
-In the **SAP Web IDE Multi-Cloud Version** service screen, click **Go to Service** link to open SAP Web IDE. Save it in your favorites.
+[ACCORDION-BEGIN [Step 3: ](Open SAP Web IDE for Full-Stack Development)]
+In the **SAP Web IDE for Full-Stack Development** service screen, click **Go to Service** link to open SAP Web IDE. Save it in your favorites.
 
 ![Open SAP Web IDE](OpenIDE.png)
 

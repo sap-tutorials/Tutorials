@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
 
 ## Details
 ### You will learn  
-Find all the latest features available from Wed IDE in the latest, multi-cloud enabled version.
+Find all the latest features available from Web IDE in the latest, full-stack enabled version.
 
 ### Time to Complete
 **5 Min**
@@ -34,14 +34,14 @@ Go to **Services**
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Find the Multi-Cloud Web IDE)]
+[ACCORDION-BEGIN [Step 2: ](Find the full-stack Web IDE)]
 On the Service catalog, search for **Web IDE**.
 
 ![search on SCP services page](3.png)
 
-Select the **SAP Web IDE Multi-Cloud Version** service.
+Select the **SAP Web IDE for Full-Stack Development** service.
 
-![sap web ide multi-cloud version](4.png)
+![sap web ide full-stack version](4.png)
 
 [DONE]
 [ACCORDION-END]
@@ -60,11 +60,11 @@ Wait for the status to change to the green, _Enabled_ status.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Open the Web IDE)]
-Once the service is enabled, click the **Go to Service** link. This will open the new, multi-cloud Web IDE.
+Once the service is enabled, click the **Go to Service** link. This will open the new, full-stack Web IDE.
 
 ![go to service link location for web ide](6.png)
 
-The Multi-Cloud version of Web IDE includes some new features. You will explore them in the following tutorials.
+SAP Web IDE for Full-Stack Development includes some new features. You will explore them in the following tutorials.
 
 [DONE]
 [ACCORDION-END]
@@ -73,7 +73,7 @@ The Multi-Cloud version of Web IDE includes some new features. You will explore 
 ### Optional
 
 [ACCORDION-BEGIN [Step 5: ](Troubleshooting the Web IDE)]
-Are you having trouble opening the Multi-Cloud Web IDE? If you are seeing a 501/503 error, it may be that your principal propagation flag is not set properly.
+Are you having trouble opening SAP Web IDE for Full-Stack Development? If you are seeing a 501/503 error, it may be that your principal propagation flag is not set properly.
 
 To enable your principal propagation flag, in your SAP Cloud Platform Cockpit, click **Security** then **Trust**.
 
@@ -87,7 +87,7 @@ Change the value of **Principal Propagation** to _Enabled_ and **Save**.
 
 ![enabled trust flags](9.png)
 
-Now, go back to step 4 and try to open the Multi-Cloud Web IDE again.
+Now, go back to step 4 and try to open SAP Web IDE for Full-Stack Development again.
 
 [DONE]
 [ACCORDION-END]
