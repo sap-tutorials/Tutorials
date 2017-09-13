@@ -35,7 +35,7 @@ In the copy folder dialog, give the new Name as `odataCRUD`.
 
 ![copy folder](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Copy the OData create service)]
@@ -54,7 +54,7 @@ You should have something like:
 
 ![xsodata](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -64,7 +64,7 @@ Go into the `manifest.json` file and switch the service to the existing `user.xs
 
 ![Adjust manifest](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Adjust the XML view)]
@@ -145,7 +145,7 @@ Use the following code to replace the existing code for your XML view:
 </core:View>
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add controller logics)]
@@ -243,7 +243,7 @@ onErrorCall: function(oError) {
 Keep the reusable methods from the original script.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Save and test)]
@@ -261,7 +261,7 @@ Try both creating a new record and editing existing records. Also try creating a
 ![exception](15a.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

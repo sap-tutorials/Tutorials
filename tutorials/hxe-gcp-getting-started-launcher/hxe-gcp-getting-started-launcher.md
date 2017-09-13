@@ -49,7 +49,7 @@ After reviewing all configuration options, click **Deploy**. This will take a fe
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Log in to the instance and change the administration passwords)]
@@ -88,7 +88,7 @@ passwd hxeadm
 
 >Note: The default `hxeadm` password is `HXEHana1`
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -104,7 +104,7 @@ Your SAP HANA, express edition, instance is now up and running.
 
 All the steps that follow are optional.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -137,7 +137,7 @@ Add the IP address followed by the name of the host, which will be `hxehost`:
 > Note: If Notepad asks you to create a new file you do not have enough permissions to save the file. Creating a new file will not alter the configuration as intended.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5 (Optional): ](Check clients in the Downloads folder)]
@@ -154,7 +154,7 @@ You will find the installation packages for different clients.
 ![Downloads](downloads_so.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6 (Optional): ](Server-only installation: Create a development user)]
@@ -193,7 +193,7 @@ Which will show the available function libraries:
 ![EML](EML2.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

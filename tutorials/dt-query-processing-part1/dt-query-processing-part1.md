@@ -59,7 +59,7 @@ IMPORT FROM CSV FILE '/hana/shared/<SID>/HDB00/work/TPCH_DATA/LineItem.csv' INTO
 
 ![Refresh Data](refresh-data.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Overview of Query Optimization)]
@@ -69,7 +69,7 @@ When Dynamic Tiering tables are identified, the portions of the query that invol
 
 The federation layer generates SQL queries and ships them to the Dynamic Tiering engine to process the Dynamic Tiering portions of the query. The Dynamic Tiering engine parses the received SQL statements, optimizes the query, executes the generated plan and finally returns the results back to the core HANA node. It is important for the Dynamic Tiering engine to perform its own optimization as it understands the on disk structures that are used by the Dynamic Tiering engine within the HANA system.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Visualize Query for In-Memory Table)]
@@ -113,7 +113,7 @@ You should now see the Prepared Query Plan for the column store statements. You 
 
 ![Prepared CS Plan](estimated-cs.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Visualize Query for Extended Table)]
@@ -135,7 +135,7 @@ You will now be able to view the Prepared Query Plan for the extended table.
 
 >NOTE: The "Prepare" plan option only generates an Prepared Plan. HANA does not send the Dynamic Tiering specific portions of the query to the Dynamic Tiering engine to generate an Prepared Plan. Rather, the Prepared Plan simply recognizes the Dynamic Tiering tables as existing in extended storage and shows that a "Remote Row Scan" is required in the Prepared Query Plan.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

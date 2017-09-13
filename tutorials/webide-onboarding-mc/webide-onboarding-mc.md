@@ -32,7 +32,7 @@ Log onto your SAP Cloud Platform account.
 
 Make sure you are in the Neo environment, not the Cloud Foundry environment. Neo is the classic, proprietary SAP Cloud Platform, and you can return to it by going **Home** | **Go to Neo Trial**.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -45,7 +45,7 @@ Choose **Edit**.
 
 Change the **Principal Propagation** field to **Enabled**, and choose **Save**.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -66,7 +66,7 @@ Wait for the status to change to the green, **Enabled** status.
 
 ![multi-cloud version enabled](Enabled.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -86,7 +86,7 @@ In the **Individual Users** or **Groups** area underneath, choose **Assign**, th
 
 ![Configure service](Configure3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -97,7 +97,7 @@ In the breadcrumb at the top, choose **SAP Web IDE Multi-Cloud Version**. The UR
 
 Provide this URL to your developers so they can start working with the SAP Web IDE multi-cloud version.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -115,7 +115,7 @@ We recommend you create separate subaccounts for development, staging/test and p
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 ---

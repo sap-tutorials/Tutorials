@@ -52,7 +52,7 @@ Double-click the `UnitsInStock` line in **`Detail.view.xml`** to open that file 
 
 ![Clicking on SAP Web IDE search pane results](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-labels-field/mob2-1_label_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Modify attributes)]
@@ -61,7 +61,7 @@ You will need to modify two **`ObjectAttribute`** lines in the header: **`UnitsI
 
 ![XML view elements to modify](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-labels-field/mob2-1_label_4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Insert attributes)]
@@ -75,7 +75,7 @@ Insert the titles as attributes into the `ObjectAttribute` areas highlighted on 
 
 ![Modified XML view elements](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-labels-field/mob2-1_label_5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Save and run)]
@@ -85,7 +85,7 @@ Save your edits, select `index.html` and click the **Run** button to preview the
 ![Labels added to fields](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-labels-field/mob2-1_label_6.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add data field)]
@@ -102,7 +102,7 @@ Go back to the **`northwind > view > Detail.view.xml`** in the edit pane (or reo
 
 ![Inserted XML view element](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-labels-field/mob2-1_field_1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Save and run again)]
@@ -114,7 +114,7 @@ Save your edits, and either:
 
 ![New XML view element displayed in the app](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-labels-field/mob2-1_field_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Dealing with cache issues)]
@@ -126,7 +126,7 @@ The browser cache will frequently prevent changes from showing up. There are a f
 3. If you are doing a lot of web development, when you open Developer Tools, click on the **Network** tab and then select **Disable Cache**.
 4. If you have Developer Tools enabled, and you are continuing to work through tutorials, it is convenient to leave the preview tab open. After you save a change in Web IDE, instead of selecting `index.html` and clicking **Run**, simply switch back to the preview tab and select **Hard Reload** or **Empty Cache and Hard Reload** to reload the app.
 
-[DONE]
+
 [ACCORDION-END]
 
 

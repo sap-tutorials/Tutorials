@@ -45,7 +45,7 @@ headers: {
 
 ![HTTP request](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Insert the IP addres)] ￼
@@ -54,7 +54,7 @@ The function creates an http object with the proper hostname or IP address of yo
 
 ![hostname](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add authorization data)] ￼
@@ -67,7 +67,7 @@ Paste the string you copied into the header section of the new function. Dependi
 
 ![basic authorization](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Update path)] ￼
@@ -77,7 +77,7 @@ Update the `path` in your `httpOptions` variable file to match your name (e.g. r
 ![package specification](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_5.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add funtion to send JSON)] ￼
@@ -106,7 +106,7 @@ function updateHANA(temp,humid) {
 ![function to update HANA](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_6.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Invoke the new functions)] ￼
@@ -120,7 +120,7 @@ updateIoT(temp.toFixed(4), humid.toFixed(4));
 ![call to function](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_7.jpg)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Change the timeout)] ￼
@@ -134,7 +134,7 @@ setTimeout(loop, 3000);
 ![loop timeout](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_8.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Connect the Tessel to the Internet)] ￼
@@ -150,7 +150,7 @@ If you are successful, you should see something like this in the console/termina
 ![acquiring IP](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_9.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Run your code)] ￼
@@ -164,7 +164,7 @@ tessel run climate.js
 ![accessing sensor data](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_10.png)
 ￼
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](View the OData service)] ￼
@@ -174,7 +174,7 @@ In addition to viewing the data directly, you can view the OData service in a br
 ![xsodata](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_11.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](View your data)] ￼
@@ -189,7 +189,7 @@ The JSON formatted output:
 ![JSON results from xsodata](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_12.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Add table for display)] ￼
@@ -241,7 +241,7 @@ The web view is shown here. Note that since this pages uses the SAPUI5 JavaScrip
 ￼![data output](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_13.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

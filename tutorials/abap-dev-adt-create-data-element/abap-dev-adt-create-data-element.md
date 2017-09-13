@@ -30,7 +30,7 @@ Go back to your ABAP Dictionary structure `zso_invoice_item` and change the type
 
 Since the data element `zso_invoice_payment_status` does not exist, you get a syntax error, which you will fix using a quick fix:
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Choose a Quick Fix)]
@@ -41,7 +41,7 @@ b. Then choose **Create data element `zso_invoice_payment_status`** and choose *
 
 ![Image depicting backup-create-DTEL](backup-create-DTEL.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new data element)]
@@ -50,7 +50,7 @@ Enter a description for the new data element in the field **Description**, then 
 
 ![Image depicting step24b-finish-data-element](step24b-finish-data-element.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Enter type and field labels)]
@@ -66,14 +66,14 @@ b. Under **Field Labels** on the right, enter the following:
 
 ![Image depicting step24c-enter-field-labels](step24c-enter-field-labels.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Save and activate the data element)]
 
 Then choose **Save (Ctrl+S)**, then **Activate (Ctrl+F3)** your data element.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Check the structure for syntax errors)]
@@ -82,7 +82,7 @@ Go back to the structure `ZSO_INVOICE_ITEM` and choose **Check ABAP Development 
 
 ![Image depicting step6-check-object](step6-check-object.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Activate the structure)]
@@ -91,7 +91,7 @@ Choose Activate **(Ctrl+F3)**.
 
 > The ABAP Dictionary structure `zso_invoice_item` is now activated.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Use your data element in the ABAP class)]
@@ -115,7 +115,7 @@ ENDLOOP.
 
 ![Image depicting step8-loop-at-statement](step8-loop-at-statement.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Save and Activate the class)]
@@ -173,7 +173,7 @@ CLASS zcl_invoice_retrieval IMPLEMENTATION.
   ENDMETHOD.
 ENDCLASS.
 ```
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Test your changes)]
@@ -185,7 +185,7 @@ Go back to your report and execute it by choosing **F8**. Your SAP List Viewer s
 
 ![Image depicting step5-alv-with-dtel](step5-alv-with-dtel.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps: Optional

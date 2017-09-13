@@ -25,7 +25,7 @@ In the previous tutorial you saw how to add your message type, device type and d
 
 You can use the same settings you have for the Tessel or you can repeat the previous tutorial with the TI `SensorTag` in mind.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new JavaScript file)]
@@ -202,7 +202,7 @@ if(strData.length > 46){
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add Message Type and Device parameters)]
@@ -216,7 +216,7 @@ var deviceId = 'XXXXXX-XXXX-XXXX-XXXX-XXXXXXXXX';
 var messageTypeID = 'XXXXXXXXXXXX';
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Save and run)]
@@ -227,14 +227,14 @@ Save and execute.
 node readTags.js
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Check the results)]
 
 ![results](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

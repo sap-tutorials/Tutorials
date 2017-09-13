@@ -63,7 +63,7 @@ From the top menu, navigate to **File > Save as...**. In the dialog, enter the f
 
 Click **Save** to store the metadata.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Switch to SAML-based authentication)]
@@ -78,7 +78,7 @@ In the **Informations** tab, scroll to the bottom and set **Security Configurati
 
 Click **Save** to store the configuration. The application is now configured to use SAML based web form authentication.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -94,7 +94,7 @@ Locate the `metadata.xml` file you stored in **Step 1** and click **Open**.
 
 After a few seconds, the project is generated and Xcode will open.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Examine the SAML-based application)]
@@ -130,7 +130,7 @@ Via method `setUpAuthenticator()`, it first sets up an `SAPURLSession` HTTP clie
 
 Via method `sendRequest()` it then challenges the request to a resource URL. If a response is received containing data, authentication has been successful and normal storyboard navigation continues.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Build and run the SAML-based application)]
@@ -149,7 +149,7 @@ If you now press the **Home button**, the application is sent to the background.
 
 From the **Home screen**, tap the **Demo** application icon. Notice how you will briefly see a successful authentication message, and instantly the Collections view is shown. You don't need to authenticate again since you ticked the **Remember me** checkbox.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Switch to OAuth-based authentication)]
@@ -164,7 +164,7 @@ In the **Informations** tab, scroll to the bottom and set **Security Configurati
 
 Click **Save** to store the configuration. The application is now configured to use OAuth 2 based authentication.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Edit OAuth settings)]
@@ -179,7 +179,7 @@ Add the **Redirect URL**:
 
 Copy the value of the **Client ID**, and click **Save** to store the OAuth settings.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Generate application with SAML)]
@@ -223,7 +223,7 @@ struct Constants {
 
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Build and run the OAuth-based application)]
@@ -240,7 +240,7 @@ You will now see a screen where SAP Cloud Platform mobile service for developmen
 
 Click the **Authorize** button. After you have been authenticated, you will see the available collections of your OData service.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Examine authorized application and issued token)]
@@ -253,7 +253,7 @@ You should now see the authorized client application for `hcpms`, as well as the
 
 ![Load metadata file](fiori-ios-scpms-saml-oauth-12.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 

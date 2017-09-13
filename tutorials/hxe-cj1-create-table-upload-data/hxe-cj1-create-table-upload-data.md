@@ -30,7 +30,7 @@ You will use open data from the New York City `citibikes` [open data](https://ww
 
 Download any of the files starting with a date and ending on `.zip`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a Master Data Table)]
@@ -56,7 +56,7 @@ Make sure the result is successful and refresh the **CODEJAM** schema to make su
 
 ![Success SQL Create row table](success.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -733,7 +733,7 @@ INSERT INTO CODEJAM.BIKE_STATIONS VALUES(3464,'W 37 St & Broadway',56,57,'Not In
 ```
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create the transactional table)]
@@ -765,7 +765,7 @@ CREATE COLUMN TABLE TRIPS (
 
 ![Column table created into SAP HANA](1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Load the CSV file into the table)]
@@ -790,7 +790,7 @@ You can check the data has been imported into the table if no errors have occurr
 ![Successful data upload to SAP HANA using SQL](3.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

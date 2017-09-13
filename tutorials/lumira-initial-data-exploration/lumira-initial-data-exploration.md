@@ -33,7 +33,7 @@ All of columns became **Dimensions** to analyse data. Dimensions with numeric da
 
 > You can check UI components terminology of SAP BusinessObjects Lumira by downloading the ***Terminology Quick Reference*** from User Guides available at [SAP BusinessObjects Lumira help portal](https://help.sap.com/lumira#section2).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](View facets)] ￼
@@ -46,7 +46,7 @@ Now each facet displays a list of unique values of corresponding dimension. And 
 
 If a dimension has more than 100 values, like in case of the **Date** dimension, then `100+` is displayed by default. Click on it to force the facet view to calculate the exact number of distinct values of corresponding dimension.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](View facet values)] ￼
@@ -55,7 +55,7 @@ Right click on the Facet's value highlights all related values from other dimens
 
 ![Values relationships highlighted in the Facets view](Lum02-03.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Change facet measure)] ￼
@@ -66,7 +66,7 @@ Click on **Options** button next to the `Lines` Facet's name, and change the mea
 
 ![Aggregation changed from Occurences to Sales Revenue](Lum02-04.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Change sort order)] ￼
@@ -77,7 +77,7 @@ You can see that top selling line of products is `Sweat-T-Shirts`.
 
 ![Sorting values by Sales Revenue](Lum02-05.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add a filter)] ￼
@@ -90,7 +90,7 @@ You should notice that Austria has been added as a filter in **Filters bar**. Re
 
 ![Remove filter from the Filters bar](Lum02-07.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

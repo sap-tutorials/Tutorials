@@ -24,7 +24,7 @@ You will learn how to process time series data using SAP Vora 1.4 engine.
 [ACCORDION-BEGIN [Step 1: ](Time Series processing)]
 The time series engine in SAP Vora 1.4 enhances the in-memory engine by enabling time series data to be efficiently analyzed in distributed environments. It supports highly compressed time series storage and time series analysis algorithms that work directly on top of the compressed data.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Running notebook 5_Time_Series)]
@@ -39,7 +39,7 @@ Continue with the paragraphs as below, doing simple time-series analysis, calcul
 Next determine the trend of sales over a time period, multi column analysis of Sales-Advertising and overall trend in sales and advertising.
 ![More time series analysis](zep5_04_14.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

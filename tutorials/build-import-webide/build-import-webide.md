@@ -43,7 +43,7 @@ Click on the **BUILD** service tile under the User Experience section.
 
 ![build service overview](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable Web IDE)]
@@ -57,7 +57,7 @@ Click on the **SAP Web IDE** tile and **enable the service**.
 
 ![Web IDE Service overview](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -93,7 +93,7 @@ Select **Import Destination** again. Choose the `Web_IDE_PLUGIN` destination. Cl
 
 ![destination import 4](9d.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Open Web IDE)]
@@ -105,7 +105,7 @@ Locate the **SAP Web IDE** service and **Go to Service**.
 
 This will launch your Web IDE.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Enable the BUILD plugin)]
@@ -129,7 +129,7 @@ Your Web IDE will refresh. Click **Refresh**.
 
 ![refresh message for web IDE](15.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create a new project)]
@@ -146,7 +146,7 @@ Under the _Category_ drop down, select **BUILD Project**. Select the **BUILD Pro
 ![template selection for build projects](18.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Name the project)]
@@ -154,7 +154,7 @@ Give your project a **Name**. Click **Next**.
 
 ![name for project](19.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Select a project to import)]
@@ -172,7 +172,7 @@ Click **Finish**.
 
 A new project will be created in your workspace.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Run your application)]
@@ -190,7 +190,7 @@ Your application is now live in UI5!
 
 ![live application in UI5 and Web IDE](24.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

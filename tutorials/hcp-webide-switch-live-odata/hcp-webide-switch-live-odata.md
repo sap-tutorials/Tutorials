@@ -36,7 +36,7 @@ The live service you will use is the [ES4 Gateway service](https://sapes4.sapdev
 > For reference, the service document URL you will use is: <https://sapes4.sapdevcenter.com/sap/opu/odata/IWBEP/GWDEMO>
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create destination in SAP Cloud Platform Cockpit)]
@@ -54,7 +54,7 @@ Authentication | `BasicAuthentication`
 User           | `<Your ES4 Gateway user> (e.g. p12345678)`
 Password       | `<Your ES4 Gateway password>`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add additional properties)]
@@ -69,7 +69,7 @@ Field Name       | Value
 `WebIDEUsage`    | `odata_gen`
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Deploy to SAP Cloud Platform Cockpit)]
@@ -79,7 +79,7 @@ To establish a baseline for the source code you have written so far, you will de
 - [SAP Cloud Platform Deployment tutorial](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) (but select your current project not `northwind`)
 - Commit the code to Git following the [Git Tutorial](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Make required changes)]
@@ -95,7 +95,7 @@ Open `Component.js` in Web IDE, and search for `serviceConfig` in the metadata d
 
 ![Component.js](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Point to the ES4 Gateway service document)]
@@ -109,7 +109,7 @@ Field Name       | Value
 
 ![serviceConfig edit](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add route definition)]
@@ -129,7 +129,7 @@ Open the `neo-app.json` file, paste in the additional route definition below to 
 ![neo-app.json edit](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_7.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Review metadata document)]
@@ -142,7 +142,7 @@ At the top of the page, note that the `Namespace` is `GWDEMO`.
 
 ![namespace field in Gateway data model](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Check entity type)]
@@ -151,7 +151,7 @@ At the top of the page, note that the `Namespace` is `GWDEMO`.
 
 ![EntityType in Gateway data model](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Get collection name)]
@@ -161,7 +161,7 @@ In the same page, search for `EntitySet Name=` to find the name assigned to the 
 ![Collection name in Gateway data model](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_10.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Replace page contents)]
@@ -176,7 +176,7 @@ Your `metadata.xml` file should now look like this:
 
 ![updated metadata.xml](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Open master view and find list element)]
@@ -185,7 +185,7 @@ Your `metadata.xml` file should now look like this:
 
 ![Master.view.xml List element](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Change the items attribute)]
@@ -194,7 +194,7 @@ In the `List` element, the items attribute points to the primary collection (dis
 
 ![Updating Collection name](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Save and run)]
@@ -203,14 +203,14 @@ Save all your changes, select the `index.html` file and run the app. The data di
 
 ![App running against Gateway OData service](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Commit your files and push to Git)]
 
 You should now commit and push your edits to Git and redeploy the app to SAP Cloud Platform.
 
-[DONE]
+
 [ACCORDION-END]
 
 

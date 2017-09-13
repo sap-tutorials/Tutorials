@@ -34,7 +34,7 @@ Open Eclipse and first switch over to the Git Repository Perspective.
 
 ![git perspective](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Clone Git repository)] ￼
@@ -44,7 +44,7 @@ Choose "Clone a Git repository" using the following URL
 
 ![Clone repo](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Select master branch)] ￼
@@ -53,7 +53,7 @@ Choose "Clone a Git repository" using the following URL
 
 ![Clone repo](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Choose directory)] ￼
@@ -62,14 +62,14 @@ Choose your directory location then `finish`
 
 ![Clone repo](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Import projects)] ￼
 
 Select the repository at the highest level, right click, and select Import Projects.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Edit index file)] ￼
@@ -133,28 +133,28 @@ data : {
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Build the project using Maven)] ￼
 
 Now in Eclipse, build the project using Maven. If you don't have Maven, click on Help install new software. In the Work with line, start typing eclipse.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Open Collaboration)] ￼
 
 Open Collaboration, and look for `m2e-Maven Integration for Eclipse`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Accept terms)] ￼
 
 Then click next, next, agree to the terms, then finish.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Build the project using Maven)] ￼
@@ -169,7 +169,7 @@ In Eclipse, build the project using Maven. Click on the project name in the proj
 
 For the goals, enter `clean install`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Deploy applications from SAP Cloud Platform trial accoun)] ￼
@@ -178,14 +178,14 @@ Now jump back over to your SAP Cloud Platform trial account Cockpit and choose `
 
 ![Deploy Applications](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Deploy was file)] ￼
 
 Find your `.war` file, give it a name and click deploy. When it has been loaded, click Done (not Start)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Import file)] ￼
@@ -194,7 +194,7 @@ Back inside of Eclipse, find the `iotmms` file in the destinations file. You are
 
 ![destination file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Choose destinations)] ￼
@@ -203,7 +203,7 @@ Now in the SAP Cloud Platform cockpit select your new application under your `Ja
 
 ![destinations](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Import the file)] ￼
@@ -212,21 +212,21 @@ Click on Import From File, and browse to your file that you've created.
 
 ![Import](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Add your password)] ￼
 
 Add in your password. Save the entry. Stop the application and restart.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Select data bindings)] ￼
 
 Now select the `Data Bindings`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Change the Schema ID)] ￼
@@ -235,7 +235,7 @@ Leave the Data Source as default and change the Schema ID to your `iotmms` (`XXX
 
 ![Bindings](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/16.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 19: ](Click start)] ￼
@@ -244,7 +244,7 @@ Click on Overview, and click the Start button under State. This will take a minu
 
 ![Bindings](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/17.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 20: ](Click the URL)] ￼
@@ -255,7 +255,7 @@ When it has started up, click on the URL that is under Application URLs.
 
 ![Bindings](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part9-hcp-services-viewdata/19.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

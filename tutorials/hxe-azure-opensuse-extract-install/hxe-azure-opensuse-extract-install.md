@@ -50,7 +50,7 @@ chmod -R 777  ./HANA_EXPRESS_20/
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Take note of the name of your host)]
@@ -61,7 +61,7 @@ Run `hostname -s` to see what the hostname is. Take note of it before you begin 
 
 ![Hostname](22.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -94,7 +94,7 @@ Password must be at least 8 characters in length.  It must contain at least 1 up
 
 Once the script finished successfully, your SAP HANA, express edition, will be ready to use. Check the **Getting started guide** PDF document downloaded with the binaries to learn how to continue from here.
 
-[DONE]
+
 [ACCORDION-END]
 
 

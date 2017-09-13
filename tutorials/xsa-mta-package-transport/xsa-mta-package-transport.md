@@ -30,7 +30,7 @@ Right-click on your project and select **Build**
 
 You will see a file downloading from the browser. Take note of its location
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download and upload your MTA application)]
@@ -43,7 +43,7 @@ Upload the `*mtar` file to a suitable directory.
 
 ![Upload file GCP](upload.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -62,7 +62,7 @@ Use command `xs deploy` followed by the proper file:
 Make sure it finished successfully:
 ![Deploy finished](deploy2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Check your application)]
@@ -75,7 +75,7 @@ And the application using `xs apps` in the corresponding space (for example, dev
 
 ![Deploy finished check](apps.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

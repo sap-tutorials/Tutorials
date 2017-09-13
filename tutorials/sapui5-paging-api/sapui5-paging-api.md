@@ -30,7 +30,7 @@ Take some time to review the [channel history method documentation](https://api.
 
 The count parameter will be your page size and the latest parameter will tell the API which message to start the page with.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add new parameter variables to your controller)]
@@ -60,7 +60,7 @@ You need to update your API call to include the new parameters. Add the followin
 
 When you **RUN** your application, it should not look any different from the end of the previously tutorial.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add paging buttons to the view)]
@@ -89,7 +89,7 @@ When you **RUN** your app, you should see 2 buttons above the table that are dis
 
 ![application with new paging buttons](buttons-added.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create paging model in controller)]
@@ -111,7 +111,7 @@ Next, you will need to set the model to the view. Add the following line to your
 
 **SAVE** your changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create paging functions)]
@@ -148,7 +148,7 @@ For testing purposes, go ahead and update your `pageLimit` parameter in the mode
 
 **SAVE** your changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Update the load function calls)]
@@ -166,7 +166,7 @@ On initialization of the application, you will pass in blank parameters so the A
 
 **SAVE** your changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add functionality to press functions)]
@@ -188,7 +188,7 @@ In the `onPrevPress` function, you need to access the **oldest** attribute from 
 
 **SAVE** your changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Set the paging properties)]
@@ -245,7 +245,7 @@ if(results.messages[0].ts < self.getView().getModel("pageData").getProperty("/ol
 
 **SAVE** your changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Run your application)]
@@ -255,7 +255,7 @@ Make sure all your changes are saved and **RUN** your application. For testing p
 
 ![application with Previous button enabled](prev-button.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

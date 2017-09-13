@@ -29,7 +29,7 @@ Start Web IDE in IoT Explore tenant using https://webidecp-a2667617c.dispatcher.
 
 ![Web IDE MC](iotaecompappmc0010.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable IoT Application Enable feature)]
@@ -40,7 +40,7 @@ Make sure following features are turned on as well: **Layout Editor** and **Stor
 ![Web IDE MC - Features](iotaecompappmc0020.jpg)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -51,7 +51,7 @@ Now go to **Development**. Right click on **Workspace** and choose the creation 
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create the app using wizard)]
@@ -78,7 +78,7 @@ Choose **2 Column Layout** and click **Finish**
 The Web IDE will generate the code and will open the new application in the Layout Editor.
 ![Layout Editor](iotaecompappmc0080.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Place components on the layout)]
@@ -89,7 +89,7 @@ Drag the `ThingList` control to the left pane of the application's view. Drag `S
 Now you can hide the controls to increase the real estate of the workspace.
 ![Hide controls pane](iotaecompappmc0100.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Customize the list of things)]
@@ -120,7 +120,7 @@ Next define the action of the chart refresh when another thing is selected from 
 Select **`doReload`** action with the **`thing`** context. Click **Ok**
 ![Action configuration](iotaecompappmc0170.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Customize sensors chart)]
@@ -130,7 +130,7 @@ Now select `SensorChart` element and change its properties:
  - **Subheader Title** to `in %`
 ![Customize chart](iotaecompappmc0180.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Run the application)]
@@ -144,7 +144,7 @@ Alert thresholds of `45%` and `90%`, which you defined in the Thing Modeler earl
 
 Congratulations! You built your IoT application using your computer as an IoT device and its CPU as a sensor.
 
-[DONE]
+
 [ACCORDION-END]
 
 ---
@@ -155,7 +155,7 @@ Congratulations! You built your IoT application using your computer as an IoT de
 [ACCORDION-BEGIN [Step 9: ](Play with other parameters)]
 You can play now with different parameters in the Layout Editor and see how it changes your application.
 
-[DONE]
+
 [ACCORDION-END]
 
 

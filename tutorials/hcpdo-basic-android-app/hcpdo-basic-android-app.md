@@ -30,7 +30,7 @@ Open Android Studio and click on **Start a new Android Studio project**.
 
 ![start a new Android Studio project](mg6-2-01.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Configure your project)]
@@ -44,7 +44,7 @@ Company Domain    | `northwind.com`
 
 ![Configure your new project](mg6-2-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Select format)]
@@ -59,7 +59,7 @@ In the **Select the form factors your app will run on** screen:
 
 ![Target Android Devices](mg6-2-03.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add activity)]
@@ -68,7 +68,7 @@ In the **Add an Activity to Mobile** screen, select the `Master/Detail Flow` act
 
 ![Add an activity to Mobile](mg6-2-04.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Customize activity)]
@@ -83,7 +83,7 @@ Title              | `Products` (filled out for you)
 
 ![Customize the Activity](mg6-2-05.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](View your project)]
@@ -92,7 +92,7 @@ Your project window should look like this:
 
 ![Project view](mg6-2-06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Run the project)]
@@ -101,7 +101,7 @@ To make sure the Android Studio environment is working properly, you can run the
 
 ![Run the project](mg6-2-07.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Choose device)]
@@ -114,7 +114,7 @@ If you select the emulator, your app will look like this:
 
 ![Emulator view](mg6-2-09.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](View detail screen)]
@@ -123,7 +123,7 @@ Selecting one of the items in the list will show the detail screen:
 
 ![Choose device](mg6-2-10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -43,7 +43,7 @@ Enter the master password to log in with `XSA_ADMIN`. You are now logged in to t
 >Note: If you get an `SSL error` because you are using the default self-signed certificate from SAP HANA, express edition, add `--skip-ssl-validation` to your login command.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Check running applications)]
@@ -59,7 +59,7 @@ Take note of the URL for `xsa-admin`.
 
 Note that the running instances need to show `1/1`. If you see `0/1` and `STARTED` is the requested status, the application is probably still starting.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -89,7 +89,7 @@ Go into the application monitor to see the running applications. **Copy** the UR
 
 You can explore other tasks available from the cockpit, such as changing passwords, assigning role collections and users to spaces.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Log in to the Web IDE)]
@@ -99,7 +99,7 @@ Open a new browser window and copy the URL for the SAP Web IDE for SAP HANA. You
 ![XS admin](webide2.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

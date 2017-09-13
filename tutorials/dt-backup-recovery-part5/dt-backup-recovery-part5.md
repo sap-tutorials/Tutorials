@@ -28,7 +28,7 @@ Managing backups is also important. It will be your duty to make sure that the d
 
 When the data backups and log backups are not properly managed, this will lead to the log volume becoming full, preventing any further backups from being created.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Deleting Old HANA Backup Files)]
@@ -48,7 +48,7 @@ When doing so, you will have the option to either delete just the catalog or to 
 
 > Note: The data and log backups for core HANA or Dynamic Tiering should not be deleted based on the timestamp. The older timestamp backups might still contain significant log backups. Hence deleting backups based on date would ruin the consistency of the system. Therefore, it is better to investigate which are the necessary data and log backups to be kept for Dynamic Tiering or core HANA.
 
-[DONE]
+
 [ACCORDION-END]
 ## Next Steps
  - **Tutorials** [Creating and Recovering Delta Backups](https://www.sap.com/developer/tutorials/dt-backup-recovery-part6.html)

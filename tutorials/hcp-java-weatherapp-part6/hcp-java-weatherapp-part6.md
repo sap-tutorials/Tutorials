@@ -30,14 +30,14 @@ Let's create a base class for our domain model first. That's usually considered 
 
 ![Adding a Java Class](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Replace code)]
 
 Replace the contents of the `BaseObject.java` file with [this code from GitHub](https://raw.githubusercontent.com/SAP/cloud-weatherapp/6b77dcac5a8de14ea2326fa770f941e08c5d8419/src/main/java/com/sap/hana/cloud/samples/weatherapp/model/BaseObject.java) and save your changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create another Java class)]
@@ -49,14 +49,14 @@ Next, create another Java class (`FavoriteCity.java`) using the same procedure:
 
 ![Specifying the package and class name](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Replace the code)]
 
 Replace the contents of the `FavoriteCity.java` file with [this code from GitHub](https://raw.githubusercontent.com/SAP/cloud-weatherapp/6b77dcac5a8de14ea2326fa770f941e08c5d8419/src/main/java/com/sap/hana/cloud/samples/weatherapp/model/FavoriteCity.java) and save your changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create a configuration file)]
@@ -68,14 +68,14 @@ Next, we need to create a configuration file for our persistence layer. By Maven
 
 ![Creating a Java resources directory](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create new folder)]
 
 Open the context menu of this newly created source folder and choose the **New > Other** option and then select the **Folder** option. Name the new folder `META-INF` (all capitals!) and click on **Finish**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create persistence XML file)]
@@ -84,7 +84,7 @@ Open the context menu of the newly created `META-INF` folder and select **New > 
 
 ![Creating a configuration file for persistence](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Edit the file)]
@@ -118,7 +118,7 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/persistence     http://java.sun.c
 
 ![Updating the persistence.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add dependencies)]
@@ -164,7 +164,7 @@ Next, we need to add some more dependencies to our `pom.xml` file. In this case,
 
 ![Adding dependencies to pom.xml for persistence](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Add Jackson version)]
@@ -177,7 +177,7 @@ We also need to add the Jackson version as a property in the properties section 
 
 ![adding persistence property to pom.xml](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Create CRUD service)]
@@ -189,14 +189,14 @@ Next step is to create the respective CRUD service. For that purpose, create a n
 
 ![Adding a new CRUD service](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Replace the code)]
 
 Replace the contents of the `FavoriteCityService.java` file with [this code from GitHub](https://raw.githubusercontent.com/SAP/cloud-weatherapp/0988620f000075011dd3eb29c7155fae523647d8/src/main/java/com/sap/hana/cloud/samples/weatherapp/api/FavoriteCityService.java) and save your changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Register REST service)]
@@ -215,7 +215,7 @@ com.sap.hana.cloud.samples.weatherapp.api.FavoriteCityService
 
 ![Updating web.xml for persistence](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Add initialization parameter for JSON de-serialization)]
@@ -230,7 +230,7 @@ Just below the aforementioned `<init-param>` tag we need to add another `<init-p
 ```
 ![Adding init-param for JSON de-serialization](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Define a Data Source)]
@@ -247,14 +247,14 @@ The last change to make is to define a DataSource within the `web.xml` in order 
 
 ![defining the DataSource in the web.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-15.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Replace code)]
 
 In order to properly test our RESTful service we need a REST tool (e.g. Postman) that allows you to execute HTTP calls in a convenient manner.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Provide credentials)]
@@ -266,7 +266,7 @@ Afterwards, make sure to update the request by pressing the respective **Update 
 ![Using a REST client to connect to the Java app](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-17.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Execute the call)]
@@ -276,7 +276,7 @@ Once you execute the call, you'll see two empty brackets "[]" (indicating an emp
 ![Server response to REST client](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part6/e2e_06-18.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

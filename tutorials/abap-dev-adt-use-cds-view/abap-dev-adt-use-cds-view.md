@@ -28,7 +28,7 @@ Open the ABAP program you created in the previous tutorial, [Create and run an A
 
 ![Image depicting step1-open-program](step1-open-program.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Replace with IDA)]
@@ -50,7 +50,7 @@ d.	Execute your program by choosing **Execute (F8)**.
 
 > The invoice items are displayed in ALV with IDA.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -60,7 +60,7 @@ Display the mouse-over information for the Paid column by positioning the cursor
 **NOTE**: Notice that, in our case, the information is incorrect.
 We will change this information in the CDS view using an annotation.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Set the mouse-over information with an annotation)]
@@ -73,7 +73,7 @@ a. Set the mouse-over information for the `payment_status` to:
 
  b. Choose **Save (Ctrl+S)**  and **Activate (Ctrl+F3)**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Execute the program)]
@@ -123,7 +123,7 @@ start-of-selection.
 lcl_main=>create( )->run( ).
 
 ```
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

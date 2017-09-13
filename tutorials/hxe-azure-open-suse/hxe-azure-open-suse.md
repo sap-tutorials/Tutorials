@@ -39,7 +39,7 @@ Fill in the Basic information about your machine:
 
 You can generate the SSH public key file with `PuTTYgen` or with command `ssh-keygen`. Alternatively, you can use a password. Be sure to keep the key file or the password safe and available to you.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Choose an Instance)]
@@ -58,7 +58,7 @@ Click **OK**. Once deployed, you will see the administration console. Take note 
 
 ![Admin console](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [OPTIONAL - XS Advanced installation: ](CREATE A BACKUP and Expand the OS disk)]
@@ -81,7 +81,7 @@ Follow the steps as described by this [step-by-step blog](https://blogs.msdn.mic
 
 >Note: You may want to reduce the size or delete the `/dev/sdb1` partition to reduce costs.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -93,7 +93,7 @@ You can now upload the installation files into your virtual machine using an SCP
 
 Continue with the next steps as the upload completes.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Configure Network Rules for SAP HANA express edition on MS Azure)]
@@ -129,7 +129,7 @@ In the example below, instance number `00` has been chosen:
 
 ![Network](12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

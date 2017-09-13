@@ -37,7 +37,7 @@ Replace the EXEC keyword with EXECUTE IMMEDIATE
 
 Use what you have learned already and perform a build on your `hdb` module.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Run the call statement)]
@@ -50,7 +50,7 @@ You will notice the implicit result set is now returned to the console.  But you
 
 ![result](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Change the CALL statement)]
@@ -63,7 +63,7 @@ You will notice the count is 10, which refers to all products except for `Laser 
 
 ![count](7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Change CALL statement again)]
@@ -76,7 +76,7 @@ You will notice the count is now much higher, 106.  This illustrates the possibi
 
 ![new count](9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

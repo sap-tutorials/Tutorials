@@ -34,7 +34,7 @@ In the workspace, right-click the plugin folder and choose **Deploy** | **Deploy
 In the **Deploy Application to SAP Cloud Platform** dialog, choose **Deploy**.
 ![Choose Deploy](Step1-DeployButton.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Check the deployment)]
@@ -45,7 +45,7 @@ Check the status of the application to make sure it is started.
 The application URL is shown under **Active Version**. Save this link for later use.
 ![Open application in cockpit](Step2-URL.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

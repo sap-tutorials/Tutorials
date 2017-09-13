@@ -31,7 +31,7 @@ Go to **Services**
 
 ![services page on SAP CP](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Find the Multi-Cloud Web IDE)]
@@ -43,7 +43,7 @@ Select the **SAP Web IDE Multi-Cloud Version** service.
 
 ![sap web ide multi-cloud version](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -56,7 +56,7 @@ Wait for the status to change to the green, _Enabled_ status.
 
 ![green enabled status icon](5b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Open the Web IDE)]
@@ -66,7 +66,7 @@ Once the service is enabled, click the **Go to Service** link. This will open th
 
 The Multi-Cloud version of Web IDE includes some new features. You will explore them in the following tutorials.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -89,7 +89,7 @@ Change the value of **Principal Propagation** to _Enabled_ and **Save**.
 
 Now, go back to step 4 and try to open the Multi-Cloud Web IDE again.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

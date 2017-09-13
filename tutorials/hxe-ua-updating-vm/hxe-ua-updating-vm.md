@@ -31,7 +31,7 @@ Using the VM's built-in Download Manager (console mode), download the **binary**
 HXEDownloadManager_linux.bin linuxx86_64 installer hxe.tgz hxexsa.tgz
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Extract the Packages)]
@@ -46,7 +46,7 @@ tar -zxf <downloaded_path>/hxe.tgz
 tar -zxf <downloaded_path>/hxexsa.tgz
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Update the Server Installation)]
@@ -74,7 +74,7 @@ Follow the prompts to complete the server update.
 >`hxe_upgrade.sh` detects the Server-only and Applications packages. The script will upgrade the server and XSA (if available).
 
 
-[DONE]
+
 [ACCORDION-END]
 
 ---

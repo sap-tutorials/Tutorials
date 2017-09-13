@@ -28,7 +28,7 @@ In the service catalog of the SAP Cloud Platform cockpit, locate the **SAP Trans
 
 ![Open SAP Translation Hub](sth-translate-fiori-app-go-to-sth.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create new Git translation project)]
@@ -37,7 +37,7 @@ First, you'll need to create a translation project; choose **+** and then **Git 
 
 ![Create git project](sth-translate-fiori-app-creategitproject.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Enter translation project details)]
@@ -56,7 +56,7 @@ Leave all other fields and selection options as they are and choose **Save**.
 
 ![Enter git translation project details](sth-translate-fiori-app-project-details.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Translate project texts in translation project)]
@@ -74,7 +74,7 @@ If everything works as expected, you see a success message:
 ![Success message](sth-translate-fiori-app-success-message.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -88,7 +88,7 @@ This is where you can switch between the target languages and, in the columns to
 
 ![List of translations](sth-translate-fiori-app-list-of-translations.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Update translations (optional))]
@@ -97,7 +97,7 @@ If you want to change any of the translations, simply make your changes directly
 
 ![Push translations to repository](sth-translate-fiori-push-changes-repo.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Pull translations from Git repository to SAP Web IDE)]
@@ -112,7 +112,7 @@ In the **Git Pane**, choose **Pull**:
 
 A success message appears in the top right of the SAP Web IDE window.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Check i18n properties files in SAP Web IDE)]
@@ -122,7 +122,7 @@ The **i18n** folder in your project now contains properties files for the target
 ![i18n property files in target languages](sth-translate-fiori-app-i18n-lang-property-files.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Run sample app in additional languages)]
@@ -141,7 +141,7 @@ Now open the **Shop** app:
 
 **Note: Some texts in the app are pulled directly from the back end, and are therefore not part of the properties file that you translated in this tutorial.**
 
-[DONE]
+
 [ACCORDION-END]
 
 

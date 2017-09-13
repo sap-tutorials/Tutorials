@@ -32,7 +32,7 @@ Single-click the file  `Main.storyboard`. The Storyboard opens in a visual edito
 
 ![Storyboard](xcode-swift-01.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add more controls)]
@@ -48,7 +48,7 @@ Your view should now look like this:
 
 ![View layout](xcode-swift-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Modify top-most Label control)]
@@ -59,7 +59,7 @@ In the **Attributes Inspector** in the right pane, change the value of the **Tex
 
 As you see, the label is a bit too small to display the new text, and needs to be resized. Select the **Label** control in your view, and resize the control using the resize handlers until the complete text is shown. Use the dashed blue grid lines to align the control to the view's horizontal center.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Modify remaining controls)]
@@ -76,7 +76,7 @@ Your view should now resemble the following:
 
 ![New view layout](xcode-swift-03.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create Outlet for Text Field)]
@@ -92,7 +92,7 @@ To create an Outlet from the **Text Field** to the view controller, hold down th
 
  ![Creating an outlet](xcode-swift-04.gif)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create Outlet for Label)]
@@ -126,7 +126,7 @@ You should now have the following Outlet references added to your code:
 >
 > More information about the Swift language can be found at [https://developer.apple.com/swift/](https://developer.apple.com/swift/)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create Action for Button)]
@@ -144,7 +144,7 @@ To create an Action from the **Button** to the view controller, hold down the **
 
   ![Creating an Action](xcode-swift-05.gif)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Review code changes)]
@@ -156,7 +156,7 @@ You should now have the following action function added to your code:
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Implement Button's Action function)]
@@ -169,7 +169,7 @@ The Action is now registered, but doesn't do anything. To access any entered tex
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Add second view)]
@@ -185,14 +185,14 @@ Before you can navigate to a second view, you need to add a **Navigation Control
 
   ![Storyboard with Navigation Controller](xcode-swift-06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Add navigation Button)]
 
 Add a new **Button** to the first view, and change its **Text** value to `To next page`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Add identifier to table cell)]
@@ -205,7 +205,7 @@ From the **Attributes Inspector** in the right pane, set the **Table View Cell**
 
 ![Set Table View Cell identifier](xcode-swift-06c.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Add Segue to second view)]
@@ -216,7 +216,7 @@ To create a Segue, **Ctrl-drag** the just created **Button** and drop it onto th
 
 ![Create a Segue](xcode-swift-07.gif)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Create View Controller for second view)]
@@ -236,7 +236,7 @@ In the dialog that appears, enter the following:
 
   ![Updated project structure](xcode-swift-10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Add static table data)]
@@ -251,7 +251,7 @@ var testData = ["Rose", "Tulip", "Orchid"]
 
 You have assigned an array of Strings to variable `testData`, which you will use later in this tutorial.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Modify function 'numberOfSections')]
@@ -264,7 +264,7 @@ override func numberOfSections(in tableView: UITableView) -> Int {
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Modify function 'tableView')]
@@ -277,7 +277,7 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Modify commented-out function 'tableView')]
@@ -301,7 +301,7 @@ This will bind the reference to the current row's cell to variable `cell`, and s
 >
 > More information about the Swift language can be found at [https://developer.apple.com/swift/](https://developer.apple.com/swift/)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 19: ](Review TableView controller source)]
@@ -341,7 +341,7 @@ class TestDataTableViewController: UITableViewController {
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 20: ](Attach TableView controller source to view)]
@@ -354,7 +354,7 @@ In the right pane, switch to the **Identity Inspector** and from the **Custom Cl
 
 The table view is now assigned to the view controller.
 
-[DONE]
+
 [ACCORDION-END]
 
 ### Next Steps

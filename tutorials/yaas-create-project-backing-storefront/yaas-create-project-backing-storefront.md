@@ -26,7 +26,7 @@ If you are not already familiar with [Node.js](https://www.youtube.com/watch?v=p
 
 If you have not completed the Getting Started with YaaS tutorial, please do it now. This is necessary in order to follow the next steps.   
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Set project ID and client ID)] ￼
@@ -45,21 +45,21 @@ Take note of the YaaS **Project's identifier** and the YaaS **Client's identifie
 
 ![Show Credentials](show-credentials.PNG)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Rebuild the Storefront)] ￼
 
 Rebuild the Storefront by running the `grunt build` command from `folder(1)` directory.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Rerun your Storefront)] ￼
 
 Rerun your Storefront by running the `npm start` command from `folder(1)` directory. The client will now be talking with your YaaS Project.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add products)] ￼
@@ -84,7 +84,7 @@ Add some products to start populating your Storefront with material.
 
 In this tutorial, you replaced the default storefront project credentials with your own YaaS project credentials. You added customized products to your storefront.    
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

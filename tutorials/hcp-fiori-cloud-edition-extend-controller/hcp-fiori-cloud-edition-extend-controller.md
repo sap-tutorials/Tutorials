@@ -31,7 +31,7 @@ If you've already worked through the tutorial **Hide view element from a standar
 
 ![SAP Fiori launchpad group Human Capital Management](Launchpag-My-Leave-Requests.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open the Standard app)]
@@ -40,7 +40,7 @@ Open the Standard app and familiarize yourself with how it appears. To start ext
 
 ![Options menu](8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Launch SAP Web IDE)]
@@ -49,7 +49,7 @@ You will be forwarded to a screen called "Create App Extension" where you find i
 
 ![Create App Extension](Create-App-Extension.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Log into the SAP Cloud Platform)]
@@ -67,7 +67,7 @@ The SAP Web IDE is launched with your extension project created.
 
 ![Project in SAP Web IDE](Project-in-SAP-Web-IDE.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Open the graphical extensibility pane)]
@@ -76,7 +76,7 @@ With your extension project folder selected, the graphical extensibility pane is
 
 ![Extensibility Pane](Extensibility-Pane.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Switch view to extensibility mode)]
@@ -85,7 +85,7 @@ With your extension project folder selected, the graphical extensibility pane is
 
 ![Switch to Extensibility Mode](Switch-to-Extensibility-Mode.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Show extensible elements)]
@@ -94,7 +94,7 @@ The first step is to find the extension point for the user selecting a date. In 
 
 ![Show extensible elements](Outline-show-extensible-elements.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Extend UI controller hook)]
@@ -103,7 +103,7 @@ Drill down to **Controllers > S1** and select **`extHookTapOnDate`**. Right-clic
 
 ![Extend UI Controller Hook](Extend-UI-Controller-Hook.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Open extension code)]
@@ -115,7 +115,7 @@ A notification that the extension code stub was generated appears. This time ope
 The extension code is displayed in the Editor panel.
 
 ![extension code is displayed](extension-code.png)
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Replace comment with code)]
@@ -137,7 +137,7 @@ sap.m.MessageToast.show(new Date(orderedArr[0]).toDateString() + " - " + new Dat
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Beautify the code)]
@@ -146,7 +146,7 @@ Then, right-click somewhere in the white space of the editor pane and select **B
 
 ![beautified code](beautified-code.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Save your edits)]
@@ -155,7 +155,7 @@ Then, right-click somewhere in the white space of the editor pane and select **B
 
 ![code saved](code-saved.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Run code to test)]
@@ -168,7 +168,7 @@ A new browser tab is opened with the application running.
 
 ![running app](running-app.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Test with single date)]
@@ -177,7 +177,7 @@ Test it with one date, by clicking on a single day and notice the **toast** disp
 
 ![toast for a single day](toast-single-date.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Test with date range)]
@@ -188,7 +188,7 @@ Test it with a date range by clicking on another day (the second date can be bef
 
 Congratulations, you've successfully extended a controller of a SAP Standard Fiori app.
 
-[DONE]
+
 [ACCORDION-END]
 
 

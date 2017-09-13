@@ -37,7 +37,7 @@ const app = express();
 // [START hdb_client]
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: Modify Output](Modify Output)]
@@ -57,7 +57,7 @@ app.get('/', function (req, res) {
 })
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: Add listening port](Add listening port)]
@@ -77,7 +77,7 @@ if (module === require.main) {
 module.exports = app;
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: Sync and Deploy](Sync and Deploy)]
@@ -111,7 +111,7 @@ To view your application in the web browser run:
 admin_@sapdevs-sample-1:~/src/sapdevs_sample_1$
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: Viewing in the Browser](Viewing in the Browser)]
@@ -126,7 +126,7 @@ Clicking the URL in the right corner will load the app itself.
 
 `System Version: 2.00.000.00.1479874437 (fa/hana2sp00)`
 
-[DONE]
+
 [ACCORDION-END]
 
 

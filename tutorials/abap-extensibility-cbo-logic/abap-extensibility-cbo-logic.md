@@ -43,7 +43,7 @@ Now, as we will implement the logic to set the ID in backend and nowhere else, w
 5. Go back via the application's **Back** button.
 ![Fiori Application's Back Button](AppBackButton.png)
 
-[DONE]
+
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 2: ](Enable logic implementation)]
 
@@ -53,7 +53,7 @@ Now, as we will implement the logic to set the ID in backend and nowhere else, w
 
 Now you are enabled to implement **determination logic** which is called **after each modification** to a Bonus Plan instance from the UI, as well as **validation logic** which is called **before each save** of an instance.
 
-[DONE]
+
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 3: ](Start logic implementation)]
 For **published** Custom Business Objects **without a Draft version** you can implement logic.
@@ -69,7 +69,7 @@ An editable copy of the published version appears left to it. With the **Draft V
 ![View Draft and/or Published Version of logic](CBO_AfterModifyDraftOrPublishedVersion.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 4: ](Implement After Modification: fix values)]
 Implement After Modification event with following fix value functionality:
@@ -105,7 +105,7 @@ IF bonusplan-employeeid IS NOT INITIAL.
 ENDIF.
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Implement After Modification: consistency check)]
@@ -135,7 +135,7 @@ ENDIF.
 * consistency check END
 ```
 
-[DONE]
+
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 6: ](Test the logic during development)]
 
@@ -167,7 +167,7 @@ This will look as follows.
 ![Execute Test](CBO_logicTest.png)
 You can see that your logic works as `id`, `*percentage_u` fields and `employename` are filled and `isconsistent` is 'X'.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Implement Before Save)]
@@ -249,7 +249,7 @@ ENDIF.
 `2.` **Publish** the Before Save Logic
 
 
-[DONE]
+
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 8: ](Test via the UI)]
 Once ensured that both logic implementations were successfully published you can start testing the Application like an end user via the UI.
@@ -262,7 +262,7 @@ Once ensured that both logic implementations were successfully published you can
 6. **Enter** value `20` into field **High Bonus Percentage**
 7. **Save** the Bonus Plan. Now it will not be rejected.
 
-[DONE]
+
 [ACCORDION-END]
 ---
 ## Next Steps

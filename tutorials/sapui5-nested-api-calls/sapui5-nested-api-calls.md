@@ -31,7 +31,7 @@ When you call the user method for a given user, you will have more information a
 ![Slack user profile method documentation page](slack-1.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add a new call to your main controller)]
@@ -79,7 +79,7 @@ self.getView().getModel("messages").setProperty("/data", message);
 
 ![updated code in the main controller](controller-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Update the main view)]
@@ -96,7 +96,7 @@ Your `ObjectHeader` should resemble the screenshot below.
 
 **SAVE** your changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Run your application)]
@@ -104,7 +104,7 @@ Make sure all your changes are saved and **RUN** your application. You should no
 
 ![application with user details displayed](final.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

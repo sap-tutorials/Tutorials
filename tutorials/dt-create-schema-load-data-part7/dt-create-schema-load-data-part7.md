@@ -35,7 +35,7 @@ SELECT * FROM "TPCH"."ORDERS_DT"
 
 ![Union](union.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create and Query against a SQL View)]
@@ -65,7 +65,7 @@ SELECT "TPCH"."ORDERS_ALL_VIEW".* FROM "TPCH"."ORDERS_ALL_VIEW"
 
 ![Query View](query-view.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

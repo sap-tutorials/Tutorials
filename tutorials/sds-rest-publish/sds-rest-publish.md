@@ -51,7 +51,7 @@ And finally:
 1. re-start your project with the new configuration
 2. open a viewer on the `MACHINEDATA` input stream - later, after you post an event, you'll be able to see it there.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download or install a REST client)]
@@ -60,7 +60,7 @@ For this tutorial you will need a way of creating the calls that you will send t
 
 You can get Postman from http://www.getpostman.com/
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Confirm that you can connect to SWS)]
@@ -85,7 +85,7 @@ If you get an error indicating no response, then you aren't able to connect to t
 - Double check the IP address (or host name) you are using in the http GET request
 - Confirm that the smart data streaming SWS web server is running
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Get an authorization token)]
@@ -122,7 +122,7 @@ Copy the token - you'll need it in the next step.  Don't copy the full response,
 
 >Note: The token is only valid for a set number of seconds, which is defined in SDS cluster configuration and can be changed from the HANA cockpit or using the command line tools. The default value is only 5 minutes. After this time period, a new token will need to be requested.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Post an Event)]
@@ -198,5 +198,5 @@ The structure  of the array format is more compact (and a bit more efficient) bu
 
 With this method, every field must be sent a value, and the order they are typed must correspond to the schema.
 
-[DONE]
+
 [ACCORDION-END]

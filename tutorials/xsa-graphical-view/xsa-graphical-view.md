@@ -31,7 +31,7 @@ You will learn about creating a graphical calculation views with dimension data.
 The following video covers the creation of a calculation view in SAP Web IDE for SAP HANA.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/c520hUfd88E" frameborder="0" allowfullscreen></iframe>
-[DONE][ACCORDION-END]
+[ACCORDION-END]
 ---
 
 ## Next Steps

@@ -46,7 +46,7 @@ The "Delta" store option is also available here. If you want a delta enabled sto
 
 >Note: If you have created the extended storage without delta enabled, you will not be able to create delta enabled extended tables. You will need to drop and re-add the extended storage with the delta option switched "ON".
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Removing Extended Storage)]
@@ -79,7 +79,7 @@ Once you click on "**Delete**", you should see the following show up. The "Restr
 
 ![Restrict and Cascade Option](restrict-cascade-es-cockpit.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

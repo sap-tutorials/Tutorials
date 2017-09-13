@@ -30,7 +30,7 @@ Go to [SAP IoT Starter Kit](https://github.com/SAP/iot-starterkit). Choose eithe
 
 ![Repo](1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Unpack and create new archive)]
@@ -39,7 +39,7 @@ Unpack the archive and navigate to the folder `iot-starterkit-master > src > app
 
 ![Folders](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import file)]
@@ -48,17 +48,17 @@ Now in the SAP Cloud Platform cockpit select "Connectivity" in the left sidebar 
 
 ![Destinations](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Replace account and user ID)]
 
 Be sure to replace `%account_id%` with your Account ID e.g `d045495trial`. As well as `%User_id%` with your user User ID e.g `d045495`, enter your password and then save. Then repeat with the file `iotrdms`![Destinations](4.png)
-[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 5: ](Open SAP Web IDE)]Now under the "Services" section in the sidebar menu and choose the "SAP Web IDE"
+[ACCORDION-END][ACCORDION-BEGIN [Step 5: ](Open SAP Web IDE)]Now under the "Services" section in the sidebar menu and choose the "SAP Web IDE"
 
 ![Destinations](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Import a new project)]
@@ -67,7 +67,7 @@ Next import a new project from your local file system, this will be the new arch
 
 ![import](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Change OData field name)]
@@ -78,7 +78,7 @@ Open the `	main.view.js` file and you will need to modify the name of the OData 
 
 ![code change](9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Launch the index file)]
@@ -86,7 +86,7 @@ Open the `	main.view.js` file and you will need to modify the name of the OData 
 Open the `index.html` file and you can launch it as is.
 ![running app](7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add code to project)]
@@ -103,7 +103,7 @@ You can now use your expertise with SAPUI5 and start making modifications. Such 
 	}),
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 

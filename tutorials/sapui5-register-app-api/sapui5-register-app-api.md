@@ -25,7 +25,7 @@ Go to [Slack API Page](https://api.slack.com/). Feel free to browser the API inf
 
 ![Slack API main page](slack-api.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Login or Sign up for Slack)]
@@ -35,7 +35,7 @@ If you do not have a Slack account or a team that can be used as a sandbox envir
 
 ![slack sign in page](slack-signin.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new team in Slack)]
@@ -43,7 +43,7 @@ Enter your **email address** and click the **Next**. Make sure to indicate wheth
 
 ![slack email address](slack-signup.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Confirm your email)]
@@ -53,7 +53,7 @@ The email address you provided in the previous step should receive an email from
 
 If the code is correct, you will be able to continue on to the next page.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Enter your user details)]
@@ -65,7 +65,7 @@ Slack will pre-populate a suggested username. Feel free to change it if you want
 
 Once your user details are finalized, click **Continue to Password**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Enter a password)]
@@ -75,7 +75,7 @@ Select a password for your user on this Slack team. You can use different passwo
 
 Click **Continue to Team Info** once you set your password.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -95,7 +95,7 @@ _How big is the group you'll use Slack with?_ : **1-9 people**
 
 Click **Continue to Group Name**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Select the group name)]
@@ -105,7 +105,7 @@ Enter the name of your group. For example, you could call it _My Sandbox_ or _Co
 
 Click **Continue to Team Domain** once you set your group name.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Select a team domain name)]
@@ -115,7 +115,7 @@ Based on the Group Name you entered in the previous step, Slack will provided a 
 
 Click **Create Team** once you set your team domain name.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Create your team)]
@@ -123,7 +123,7 @@ On the Send Invitations team, click **Skip For Now**.
 
 ![Skip sending invitations](slack-skip.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Explore your team)]
@@ -131,7 +131,7 @@ Once you successfully create or login to your team, the Slack homepage for that 
 
 ![Slack team homepage](slack-group.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Generate a test token)]
@@ -143,7 +143,7 @@ Select **Create token** for you user on your development team. This will generat
 
 ![Slack team homepage](slack-token.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

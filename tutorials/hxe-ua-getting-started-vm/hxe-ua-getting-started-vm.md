@@ -42,7 +42,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
     ![Entering temporary password again](hxe2_02_login2.PNG)
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -70,7 +70,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
     ![Entering strong password](hxe2_02_login3.PNG)
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -85,7 +85,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
     ![Entering HANA database master password](hxe2_02_login6.PNG)  
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -97,7 +97,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
     - If **Y**, enter your proxy host name, proxy port number, and (if desired) a comma-separated list of hosts that do not need a proxy. Proxy host name needs a fully qualified domain name.
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -105,7 +105,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 Decide whether you want to wait for XSA configuration to complete before starting the server. When prompted to Wait for XSA configuration to finish, enter Y if you want to wait. Enter N if you want XSA to configure in the background after server configuration completes.
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -117,7 +117,7 @@ Decide whether you want to wait for XSA configuration to complete before startin
 
 SAP HANA 2.0, express edition is now running.
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -143,7 +143,7 @@ The virtual console and X11 window system defaults to a `us` (`QWERTY`) keyboard
     sudo localectl status
     ```
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -162,7 +162,7 @@ Record the `hxehost` IP address so you can use it later when connecting to the s
 
     ![VM IP address](hxe_ua_ip_address.PNG)
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -196,7 +196,7 @@ If you installed the VM installation package to a Mac or Linux machine, follow t
     sudo sh - c 'echo <hxehost IP address>    hxehost >> /etc/hosts'
     ```
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -216,7 +216,7 @@ Test your XSC installation.
 
     ![XSEngine Success Page](hxe_xs_success.PNG)
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -236,7 +236,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 2. Check for an API endpoint showing `https://hxehost:39030`. If you see this entry, XSA installed correctly.
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -272,7 +272,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
     If you are prompted to change your password, follow the instructions.
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -310,7 +310,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
     >**Note:** If using HANA Cockpit to register a resource, both HANA Cockpit and the SAP HANA, express edition server should be from the same release. SAP does not recommend using a newer HANA Cockpit to register an older SAP HANA, express edition.    
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -328,7 +328,7 @@ Download and install the HANA Eclipse Plugin to your host OS (not the VM guest) 
 
 4. Follow the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html).
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -379,7 +379,7 @@ The Text analysis files for additional languages package contains the text analy
     alter system alter configuration ('preprocessor.ini','SYSTEM') set ('general','embedded') = 'true' with reconfigure;
     ```
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -444,7 +444,7 @@ SAP EA Designer is a separate download in the Download Manager.
 
     You are prompted to change the password. You are logged in as administrator of SAP EA Designer.
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -481,7 +481,7 @@ SHINE is a separate download in the Download Manager. To use SHINE, you need the
     <extracted_path>/HANA_EXPRESS_20/install_shine.sh
     ```
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -518,7 +518,7 @@ The SAP HANA External Machine Learning Library is an application function librar
 
     For more information on the SAP HANA External Machine Learning Library, see the SAP HANA documentation collection.    
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -532,7 +532,7 @@ If you set `global_allocation_limit` to a non-zero value, SAP HANA, express edit
 
 >**Note**: Do not set `global_allocation_limit` to a value above the limit of your license. This can cause the database to lock down.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

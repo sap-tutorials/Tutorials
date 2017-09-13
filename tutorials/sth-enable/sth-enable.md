@@ -26,7 +26,7 @@ In the SAP Cloud Platform cockpit, choose the tile for your personal developer a
 
 ![access menu to open service catalog](sth-choose-dev-tile.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open the service catalog)]
@@ -35,7 +35,7 @@ Choose **Services** in the navigation area on the left.
 
 ![open service catalog](sth-open-services.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Locate the SAP Translation Hub service)]
@@ -44,7 +44,7 @@ Search for the SAP Translation Hub service by entering **Transl**, and then choo
 
 ![Find Translation Hub service](sth-search-tran.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Enable the service)]
@@ -53,7 +53,7 @@ Choose **Enable**.
 
 ![choose enable](sth-enable-service.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Verify that service is enabled)]
@@ -64,7 +64,7 @@ After you enable the service, your screen should look like this:
 
 You can now use the SAP Translation Hub service.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

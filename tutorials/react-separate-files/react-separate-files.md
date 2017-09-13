@@ -54,7 +54,7 @@ Name this file `main.js` and click **OK**.
 
 ![Name the file main.js](1-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add code)]
@@ -113,7 +113,7 @@ ReactDOM.render(
 
 ![Copy the javascript to the new file](1-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Delete the JavaScript from the index HTML file)]
@@ -122,7 +122,7 @@ Next, we will delete the JavaScript out of the `index.html` file.  Select the en
 
 ![Delete the javascript in the HTML file](1-6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add link)]
@@ -137,7 +137,7 @@ Under the `</style>` tag, add the following HTML
 
 ![Link the new JavaScript file to the HTML file](1-7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run the app)]
@@ -147,7 +147,7 @@ Run your application.  The page should look exactly the same, as the JavaScript 
 ![Run - no changes should appear](no-changes.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create empty CSS file)]
@@ -171,7 +171,7 @@ Name this file `main.css` and click **OK**.
 
 ![Name the file main.css](2-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add code to file)]
@@ -205,7 +205,7 @@ Next, copy this code in to the new `main.css` file.  (It is the same CSS that is
 
 ![Copy the CSS to the new file](2-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Delete CSS from index HTMLS file)]
@@ -214,7 +214,7 @@ Next, we will delete the `<style>` tag out of the `index.html` file.  Select the
 
 ![Delete the CSS in the HTML file](2-6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add link)]
@@ -229,7 +229,7 @@ Under the last `<script>` tag (the one you just inserted), add the following HTM
 
 ![Link the CSS file to the HTML file](2-7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Run the app)]
@@ -238,7 +238,7 @@ Run your application.  The page should look exactly the same, as the CSS file no
 
 ![Run - no changes should appear](no-changes.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -355,7 +355,7 @@ Your project should now contain three files.  Here is the complete text of each 
     );
     ```
 
-[DONE]
+
 [ACCORDION-END]
 
 

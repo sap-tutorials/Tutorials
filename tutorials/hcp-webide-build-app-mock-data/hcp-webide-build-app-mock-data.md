@@ -34,7 +34,7 @@ The first step is to download the `m104metadata_nav.edmx` file you created in th
 
 Right-click on the `m104metadata_nav.edmx` file and select **Export**. This will download the file to your browser's default Downloads directory.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create new project)]
@@ -51,7 +51,7 @@ When the mobile templates are displayed, select the **SAPUI5 Master Detail Kapse
 
 ![Template selection 2](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_4b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Name file and choose connection)]
@@ -62,7 +62,7 @@ On the **Data Connection** screen, under **Sources** select **File System**. The
 
 ![Data Connection screen](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Customize fields)]
@@ -110,7 +110,7 @@ Navigation Attribute 2  | `EmailAddress`
 Navigation Attribute 3  | `TelephoneNumber`
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run with mock data)]
@@ -124,7 +124,7 @@ The app will open (and you will see a Toast notification that it is running with
 
 ![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Change the mock data)]
@@ -139,7 +139,7 @@ The **Edit Mock Data** window opens where you have the ability to select the col
 
 The check box for the **Use the data above as my mock data source** sets the data in this view as the source for the data when the app is run again.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Generate random data)]
@@ -148,7 +148,7 @@ To get some initial data populated in the table, select the `SalesOrders` entity
 
 ![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Edit individual fields)]
@@ -159,7 +159,7 @@ Repeat this step for the `CUSTOMERNAME (STRING)` and `CURRENCY (STRING)` fields.
 
 ![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Generate more data)]
@@ -168,7 +168,7 @@ Select the `BusinessPartners` Entity set and click the **Generate Random Data** 
 
 ![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Run again with mock data)]
@@ -177,7 +177,7 @@ Select the `BusinessPartners` Entity set and click the **Generate Random Data** 
 
 ![Run with mock data context menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-build-app-mock-data/mob4-2_15.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Convert between formats for easier editing)]
@@ -186,7 +186,7 @@ If you need to edit a lot of data or if you want to import existing data for pro
 
 To add the data back to your project, you can simply open and replace the content of the JSON files in your project.
 
-[DONE]
+
 [ACCORDION-END]
 
 

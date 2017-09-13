@@ -31,7 +31,7 @@ Click on **IoT Thing Modeler** to scroll to a group of Thing Modeler application
 
 ![Thing Modeler](iotaecomptm0010.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](The `computeriotdevice` package)]
@@ -43,7 +43,7 @@ The shared package `computeriotdevice` has been already created for you. You can
 
 ![The package](iotaecomptm0020.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -61,7 +61,7 @@ The property `cpu_usage` has
  - ___percentage___ unit of measure,
  - and two thresholds: ___upper___ and ___uppermost___.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Thing type `generic_computer`)]
@@ -71,7 +71,7 @@ In the **Thing Types** pane you will see `generic_computer` thing type defined w
  - Basic Data properties from the `Default` set,
  - Measured Values properties from the `resource_sensors` set.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add your computer as a new thing)]
@@ -101,7 +101,7 @@ This authorization token is displayed only once!
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Configure your new thing)]
@@ -127,7 +127,7 @@ Optionally, you can scroll to **Image** and add a picture of your thing.
 
 ![Image of the thing](iotaecomptm0120.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 ---
@@ -138,7 +138,7 @@ Optionally, you can scroll to **Image** and add a picture of your thing.
 [ACCORDION-BEGIN [Step 7: ](Review Thing Modeler user guide)]
 You can find the official user guide at https://help.sap.com/viewer/p/SAP_IOT_APPLICATION_SERVICES > End-User Information > Thing Modeler Apps
 
-[DONE]
+
 [ACCORDION-END]
 
 

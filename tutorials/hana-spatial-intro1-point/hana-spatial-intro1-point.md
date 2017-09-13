@@ -45,7 +45,7 @@ Execute the query. Congratulations! You've just run your very first query using 
 
 ![Select a point](spatial0101.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Change result format)]
@@ -62,7 +62,7 @@ Now the result of the query `POINT (0 0)` can be read and understood by a human.
 
 ![Select a point as WKT](spatial0102.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Define a point in the constructor)]
@@ -77,7 +77,7 @@ will return the same result as `NEW ST_POINT(0,0)`
 
 ![Select a point as WKT defined as WKT](spatial0103.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Try other spatial methods)]
@@ -92,7 +92,7 @@ There are more spatial methods that can be applied to`ST_POINT` objects. The com
 
 ![Return dimension](spatial0105.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 

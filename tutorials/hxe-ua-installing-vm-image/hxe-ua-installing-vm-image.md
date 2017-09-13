@@ -48,7 +48,7 @@ The Virtual Machine method installs:
 
 For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Pre-Installation Info: ](Requirements)]
@@ -93,7 +93,7 @@ SAP HANA 2.0, express edition has been tested on these `hypervisors`:
 
 This tutorial uses VMware Player.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Install a Hypervisor)]
@@ -106,7 +106,7 @@ You can install any supported `hypervisor`, but examples in this tutorial use VM
 
 3. Register when prompted and follow the setup instructions.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Register)]
@@ -141,7 +141,7 @@ Register your copy of SAP HANA, express edition to access the download manager.
 
     > **Note:** If you are inside a corporate firewall, you will be prompted for your proxy settings. Contact your IT administrator for your proxy host and proxy port information.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Download Using the Download Manager (GUI Mode))]
@@ -220,7 +220,7 @@ Use the Download Manager (GUI mode) to download a server-only virtual machine pa
 
     ![Download complete](hxe_download_complete.PNG)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -305,7 +305,7 @@ Run the Download Manager in console mode if you're used to a command line interf
     java -jar HXEDownloadManager.jar linuxx86_64 vm Getting_Started_HANAexpress_VM.pdf hxexsa.ova
     ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Import the OVA)]
@@ -324,7 +324,7 @@ This example uses `VMWare` player as the `hypervisor`. You can use any supported
 
 4. Power on your VM.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

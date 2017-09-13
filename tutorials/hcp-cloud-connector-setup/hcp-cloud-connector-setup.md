@@ -45,7 +45,7 @@ Chose the operating system of your choice and download the SCC to the machine yo
 > This tutorial uses Windows as operating system and thus focus on the usage of the Windows MSI installer of the cloud connector. If you want to install the cloud connector on one of the other supported operating systems, please refer to the documentation how to install it on other operating systems.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Begin installation)]
@@ -58,7 +58,7 @@ Choose an installation folder for the cloud connector. The default is `C:\SAP\sc
 
 ![select installation folder](con100-3-installation_folder.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Choose a port)]
@@ -67,7 +67,7 @@ Thereafter you're requested to define the administration port of the cloud conne
 
 ![select port](con100-4-installation_port.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Starting and stopping the cloud connector)]
@@ -76,14 +76,14 @@ Decide whether the cloud connector shall be started after the installation has f
 
 ![select port](con100-5-installation_start_after_setup.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Confirm installation)]
 
 Confirm that you really want to install the cloud connector.  As soon as the installation has finished successfully, you can press the Finish button to complete the installation.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Check cloud connector status)]
@@ -92,7 +92,7 @@ Once the installation has completed, the cloud connector should be running. You 
 
 ![select port](con100-7-installer_succeeded.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Verify connection)]
@@ -108,7 +108,7 @@ Password       | `manage`
 
 ![cloud connector log on screen](con100-8-scc_logon.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Initial Configuration)]
@@ -120,7 +120,7 @@ When logging in the first time, the cloud connector asks for two things:
 
 ![cloud connector installation type](initial_configuration.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Define Account)]
@@ -131,7 +131,7 @@ For the User Name and Password, use your SAP Cloud Platform account user (e.g. `
 
 ![initial configuration](define_account.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Check connection state)]
@@ -141,7 +141,7 @@ Click on the little arrow highlighted in the screenshot below to navigate into t
 
 ![connected state](account_dashboard.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Configure on-premise resources)]
@@ -156,7 +156,7 @@ To configure available resources, navigate to the **Cloud To On-Premise** > **Ac
 
 To add the on-premise systems click the **+** button in the Mapping Virtual to Internal System area.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Add system mapping)]
@@ -171,7 +171,7 @@ In the **Add System Mapping** dialog box, you can configure a physical on-premis
 ![add system mapping - step 6](add_system_mapping_f.png)
 ![add system mapping - step 7](add_system_mapping_g.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Expose resources to SAP Cloud Platform)]
@@ -184,7 +184,7 @@ For HTTP resources, the dialog box displayed will look like the screenshot below
 
 For more information on how to configure HTTP or RFC resources, see [Configure HTTP resource in Cloud Connector](https://help.hana.ondemand.com/help/frameset.htm?e7d4927dbb571014af7ef6ebd6cc3511.html) and [Configure RFC resource in Cloud Connector](https://help.hana.ondemand.com/help/frameset.htm?ca5868997e48468395cf0ca4882f5783.html).
 
-[DONE]
+
 [ACCORDION-END]
 
 ### Notes

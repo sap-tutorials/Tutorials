@@ -28,7 +28,7 @@ Make sure you are using the **Europe (Trial)** landscape, and click on your acco
 
 ![Click on user name](te-2016-3-01.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Go to Destinations)]
@@ -37,7 +37,7 @@ In the left-hand navigation bar, select **Connectivity > Destinations** then cli
 
 ![open destinations](te-2016-3-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Enter Destination details)]
@@ -69,7 +69,7 @@ Then click **Save**.
 
 ![creating destination](te-2016-3-03.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Test the new Destinations)]
@@ -80,7 +80,7 @@ Note that the **Check Connection** operation is not validating your user credent
 
 ![Check connection](te-2016-3-04.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

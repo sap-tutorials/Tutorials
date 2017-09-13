@@ -42,7 +42,7 @@ How to setup SAP Cloud Appliance Library account and then install preconfigured 
 
 6. Review all the information and then click on **Create**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Creating an instance of a CAL-based solution)]
@@ -65,7 +65,7 @@ How to setup SAP Cloud Appliance Library account and then install preconfigured 
 
 7. Once the instance is up and running it will be listed under the Instances tab of the CAL cockpit. If you click on the link in the Instance Name column you can open up a pop-up window to take a look at (and edit) the individual settings. You can select **Public Static IP Address** if you want one. One of the most important information being displayed is the IP address of your instance.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Using the AWS instance)]
@@ -91,7 +91,7 @@ Details how to connect and use the AWS image are described in [this PDF document
 
 - On the AWS front end instance, there is also an Eclipse Luna version installed and available on the desktop. The Eclipse instance is already prepared for SAP Cloud Platform and you can use it to develop SAP Cloud Platform applications.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

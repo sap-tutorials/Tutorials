@@ -55,7 +55,7 @@ select new st_point('POINT (0 0)').st_distance(new st_point('POINT (1 0)'), 'yar
 
 >More units of measures can be manually created or loaded into the SAP HANA using separate Geospatial Metadata Installer. Geospatial Metadata Installer is available for registered customers and partners.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Calculating the distance on the round Earth)]
@@ -85,7 +85,7 @@ SRS with id 4326 is the one of many standardized reference systems. Other may ha
 
 More spatial reference systems can be manually created or loaded into the SAP HANA using separate Geospatial Metadata Installer. Geospatial Metadata Installer is available for registered customers and partners.
 
-[DONE]
+
 [ACCORDION-END]
 
 ### Optional

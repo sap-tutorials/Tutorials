@@ -51,7 +51,7 @@ First, we will need the jQuery toolkit.  Add the following line to your `index.h
 
 ![Add jQuery template](1-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add Bootstrap reference)] ￼
@@ -73,7 +73,7 @@ crossorigin="anonymous"></script>
 
 ![Add bootstrap framework](1-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Replace HTML tag)] ￼
@@ -86,7 +86,7 @@ Now, we will start to use the HTML in our project.  First, we will need to chang
 
 ![Add language to the html tag](1-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Replace body)] ￼
@@ -112,7 +112,7 @@ Next, select the line `Hello React!` in between our two `<body>` tags, and repla
 
 ![Add lorem ipsum to the html](1-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run the application)] ￼
@@ -121,7 +121,7 @@ Run the application, and you will see the following screen:
 
 ![display 2 column bootstrap output](1-6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Review Bootstrap functionality)] ￼
@@ -146,7 +146,7 @@ Second, Bootstrap offers a clean form design.  Each form element is clearly defi
 
 There are a lot of additional capabilities, like dialog boxes, alerts, and other elements that can also be used to make your page.  Check out the [Bootstrap CSS](https://getbootstrap.com/css/), [Bootstrap Components](https://getbootstrap.com/components/), and [Bootstrap JavaScript](https://getbootstrap.com/javascript/) pages for more details.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add a list-group to the page)] ￼
@@ -171,7 +171,7 @@ When you run your application, it should look like this:
 
 ![Display list group](3-1b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add fields)] ￼
@@ -199,7 +199,7 @@ Run your application, and you will see the following screen:
 
 ![Display the list fields](3-2b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Embed a row in existing element)] ￼
@@ -229,7 +229,7 @@ Run your application:
 
 ![Display 2 column layout](3-3b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Edit row styles)] ￼
@@ -256,7 +256,7 @@ Now run your application:
 
 ![Display new pretty listbox](3-4b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Add chevron)] ￼
@@ -277,7 +277,7 @@ Run your application, and it should look like this:
 
 ![Display list with chevron](3-5b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Add custom CSS)] ￼
@@ -309,7 +309,7 @@ align-self: center;
 
 ![Add custom CSS for vertical alignment](4-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Add styles)] ￼
@@ -334,7 +334,7 @@ Your code should now look like this:
 
 ![Code with all new class attributes](4-2e.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Test the application)] ￼
@@ -343,7 +343,7 @@ Run your application.  The chevron should now be in the center of the box:
 
 ![Display list with chevron centered vertically](4-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Edit colros)] ￼
@@ -366,7 +366,7 @@ font-weight: bold;
 
 ![Add available and discontinued css](4-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Run the application)] ￼
@@ -375,7 +375,7 @@ Now, run your application.  You will see the word *Available* is now in green
 
 ![Display output with new css](4-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Review additional information)] ￼
@@ -383,7 +383,7 @@ Now, run your application.  You will see the word *Available* is now in green
 - [Bootstrap](https://getbootstrap.com/) - get more information about Bootstrap.
 - [jQuery](https://jquery.com/) - a toolkit to easily manipulate web pages.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Review final code)] ￼
@@ -462,7 +462,7 @@ font-weight: bold;
 </html>
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 

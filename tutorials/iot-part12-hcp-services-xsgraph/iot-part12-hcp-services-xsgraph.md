@@ -31,7 +31,7 @@ Return to the "SAP HANA Web-based Development Workbench" and go to the "sub pack
 
 ![new file](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create new file)]
@@ -115,7 +115,7 @@ Right click and create a new file called `graph.html`. You will use the followin
 
 ![graph](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

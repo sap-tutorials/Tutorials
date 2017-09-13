@@ -42,7 +42,7 @@ If you have the GitHub Desktop Client installed, you can click the **Open in Des
 
 ![Open in Desktop](mg6-4-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Replace generated files)]
@@ -53,14 +53,14 @@ What you will do next is replace the generated source files with those you just 
 
 Navigate to the project folder created in the [Create a basic native Android master-detail app](http://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html) tutorial, and move and rename the `~/devel/Northwind_Android/NWAndroid/app/src/main` directory back up the directory tree to `~/devel/Northwind_Android/NWAndroid/main_old`. This will preserve the generated files in case you want to refer to them later or do a `diff` to examine the changes made in the cloned source.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Copy main directory)]
 
 Copy the main directory from the cloned directory (e.g. `~/devel/Git_Source/NWAndroid/main` to your project folder (`~/devel/Northwind_Android/NWAndroid/app/src/main`) so it takes the place of the directory you just moved.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Build and run)]
@@ -73,7 +73,7 @@ After the build completes, click the **Run** button to launch the app.
 
 ![Run the app](mg6-4-07.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Choose device)]
@@ -84,7 +84,7 @@ The emulator will start, you need to unlock the device, and then the app will ap
 
 ![Launch emulator](mg6-4-08.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Edit details)]
@@ -102,7 +102,7 @@ Click **Next**
 
 ![MAF Logon screen](mg6-4-09.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Finish deployment)]
@@ -119,7 +119,7 @@ Selecting one of the products in the list will display the product details.
 
 ![detail view](mg6-4-12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Examine code modifications)]
@@ -132,7 +132,7 @@ The default MAF Logon screen sequence looks like this:
 
 As you can tell from running the app, a number of customizations have already been made.  These can be found in the `MAFLogonActivity.onCreate()` method, along with a few strings extracted to the `strings.xml` file in `app/res/values`. The key methods that are implemented in the `MAFLogonActivity` are detailed in the [SAP online docs](https://help.sap.com/saphelp_smp3012sdk/helpdata/en/7c/09250170061014bb05d2c9cd16418c/content.htm).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Log-in screen changes)]
@@ -151,7 +151,7 @@ For more information on the `LogonUIFacade` class and the `setDefaultValue()`, `
 
 In the tutorial code, the `onLogonFinished()` method is also used to create an instance of the `NorthwindApp` class and initialize the `ProductDataSingleton` before setting the `Intent` to display the list view. There is a discussion of those two classes below.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](View package details)]
@@ -164,7 +164,7 @@ In the `com.northwind.nwandroid` package, there are two `Activity` classes (`Pro
 
 The `com.northwind.nwandroid.dummy` package is not used in the tutorial – it is created by Android Studio to generate the placeholder data.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Compare project to generated code)]
@@ -182,7 +182,7 @@ Navigate to the `main_old` directory and select the `java/com/northwind/nwandroi
 
 As you will see in the side-by-side comparison, the `ProductListActivity` class is unchanged (other than some comment changes).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Compare product detail activity)]
@@ -193,7 +193,7 @@ Repeat the comparison process above for `ProductDetailActivity.java`. Here, the 
 ```javascript
 public class ProductDetailActivity extends AppCompatActivity
 ```
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Compare product list fragment)]
@@ -225,7 +225,7 @@ setListAdapter(new ArrayAdapter<String>(
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Further product detail class changes)]
@@ -239,7 +239,7 @@ private TextView productID, productName, supplierID, categoryID, qtyPerUnit;
 private TextView unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinued;
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Product selection)]
@@ -250,7 +250,7 @@ private TextView unitPrice, unitsInStock, unitsOnOrder, reorderLevel, discontinu
 mItem = ProductDataSingleton.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Text view variables assignment)]
@@ -275,7 +275,7 @@ discontinued = (TextView) rootView.findViewById(R.id.discontinued);
 initializeViews();
 }
 ```
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Initialize views method added)]
@@ -305,7 +305,7 @@ if (mItem != null)
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Android layout directives)]
@@ -351,21 +351,21 @@ android:layout_below="@id/product_name"/>
 
 With the `view` classes covered, we will inspect the remaining packages.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 19: ](The Nortwind App class)]
 
 There is one class in the `com.northwind.nwandroid` package: `NorthwindApp`. The `NorthwindApp` class is a sub-class of the Android `Application` class, and its only purpose is to store the `ProductDataSingleton` as a "global" variable.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 20: ](OData communication classes)]
 
 In the `com.northwind.services` package there are five classes used to handle the OData communication with Development & Operations and are application independent (they have no knowledge of the data being passed through). The only class in the app that uses them is the `ProductDataSingleton`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 21: ](Northwind model classes)]
@@ -388,7 +388,7 @@ The Android Studio generated code used two variables to hold data for the two vi
 
 The `ProductDataSingleton` keeps the same two variable names and simply replaces the `Dummy` class with the `Product` class. Most of the methods in the `ProductDataSingleton` class are self-explanatory (and have comments inserted). Most of the heavy lifting occurs in the `getProducts()` method.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 22: ](The get products method)]
@@ -399,7 +399,7 @@ In the `getProducts()` method the OData resource path is built from three parts:
 - The query option: this is not required, but used in our case to set the order for the returned data set. In the code, we leave the string to make it easier to read
 - The last part of the sort key for the `$orderby` directive (`Collections.PRODUCT_ID`. Note that you can change the sort key to any other field in the collection. For instance, using `Collections.PRODUCT_NAME` will return the records so they are displayed in alphabetical order.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 23: ](Build list array)]
@@ -412,7 +412,7 @@ ODataEntitySet feed = (ODataEntitySet) resp.getPayload();
 List entities = feed.getEntities();
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 24: ](Populating the Product object)]
@@ -421,7 +421,7 @@ In the `getProducts()` method, a `for` loop steps through each entity received f
 
 The last method called in the `try` block is `storeData()`, which adds each `Product` object in the `ArrayList` to the `ITEM_MAP HashMap`. Note that storing the data in the `ArrayList` *and* the `HashMap` is not ideal for large datasets – the approach used in the Android Studio template was preserved for consistency.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 25: ](Paging)]
@@ -430,7 +430,7 @@ Also in the `getProducts()` method, a `do-while` loop wraps the `for` loop to it
 
 The SDK will handle any paging size for you (`$skiptoken` value), so you don't need to know what it is when developing the app. After sending the first request, the `ODataEntitySet.getNextResourcePath()` method will generate any subsequent resource paths based on the received `skiptoken` value. The string returned by `getNextResourcePath()` will be null if all entities have been received.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 26: ](Get products pseudocode)]
@@ -450,7 +450,7 @@ Save the data in the String array for the master view
 Store the data in the HashMap for the detail view
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 27: ](Customizing the code)]
@@ -476,7 +476,7 @@ Since your account info will be populated correctly, there is no need to show th
 
 `mLogonUIFacade.isFieldHidden(LogonCore.SharedPreferenceKeys.PREFERENCE_ID_USERNAME, true);`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 28: ](Logging Product data)]
@@ -506,7 +506,7 @@ Log.i(TAG, String.format("Stored %d items in HashMap", i) );
 
 Next time you run the app, watch the `logcat` tab for the logged output.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 29: ](Changing the sort key)]
@@ -519,7 +519,7 @@ In the `ProductDataSingleton.getProducts()` method, change the `resourcePath` li
 resourcePath = Collections.PRODUCT_COLLECTION + "?$orderby=" + Collections.PRODUCT_NAME;
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 

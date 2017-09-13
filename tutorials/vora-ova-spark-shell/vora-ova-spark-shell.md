@@ -33,7 +33,7 @@ For that run from OS level as user `vora`:
 /opt/vora/lib/vora-spark/bin/start-spark-shell.sh
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -77,7 +77,7 @@ Now you can run the single examples and check the output. Ignore all the Spark d
 
 If the expected snippet occurs in the output means, that the example ran successful.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -103,7 +103,7 @@ This is expected to be outputted twice:
 +-----------------+--------+------+-------+-------+
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -129,7 +129,7 @@ This is the expected output:
 +-----------------+--------+------+--------+-------+-------+
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -167,7 +167,7 @@ This is the expected output:
 +--------------+
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -203,7 +203,7 @@ This is the expected output:
 +--------------------+
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -241,7 +241,7 @@ This is the expected output:
 +--------------------+------+
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -279,7 +279,7 @@ This is the expected output:
 +------+
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -296,7 +296,7 @@ The **SAP Vora Tutorial** notebook will give you a quick introduction into Vora 
 - Paragraph ___Usage of the `SapSQLContext` in Spark___ shows how you can write Scala code and access Vora programmatically
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

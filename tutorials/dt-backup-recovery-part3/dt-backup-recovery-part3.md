@@ -81,7 +81,7 @@ You can now view the recovery being performed for both Dynamic Tiering and the c
 Once the recovery process completes, the Recovery Execution Summary screen will be displayed.
 ![Data Recovery Summary](recovery-summary.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

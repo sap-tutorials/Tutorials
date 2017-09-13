@@ -27,7 +27,7 @@ Now that your system is setup to work with both Node.js and the HDB library it i
 To begin with you will need to create a new directory where you will keep your files for this project. For the purposes of this tutorial it really does not matter what you call but for consistency it will be referred to here as `hxe_bikeshare`
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Set your connection parameters)]
@@ -44,7 +44,7 @@ This will launch a wizard to help you create your new application.
 
 The result will be a `package.json` file being created which defines various aspects of the application.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -81,7 +81,7 @@ This makes the overall `package.json` the following
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create the database connection)]
@@ -109,7 +109,7 @@ console.log(client.readyState);
 Here the main parts are to change the `hostname`, as well as the `user`, `password` and finally the port based on your system configuration.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](First execution)]
@@ -128,7 +128,7 @@ Be sure to include the `,` after the line before. Now to run the following comma
 npm start
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Execute your Query)]
@@ -162,7 +162,7 @@ npm start
 
 ![query executed](3.png)  
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

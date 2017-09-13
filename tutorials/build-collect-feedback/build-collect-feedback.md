@@ -32,7 +32,7 @@ Give the study a **name**, such as _User Feedback_. Click **Save and Go to Feedb
 
  ![new study form](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add a new question)]
@@ -74,7 +74,7 @@ Choices:
 Click **Done**.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -89,7 +89,7 @@ This will start the survey in preview mode. No responses will recorded from this
 
 ![Study start page](9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Publish your study)]
@@ -109,7 +109,7 @@ Once you publish, you will have a shareable link. **Copy the link** and click **
 
 Send out the link to your intended audience to collect feedback. You can fill out your own survey to have some sample feedback in your application.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Provide feedback)]
@@ -147,7 +147,7 @@ You have finished your survey! You can always go back and edit the feedback your
 
 ![study complete screen](16.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Review feedback responses)]
@@ -168,7 +168,7 @@ Review your user's feedback and make adjustments as necessary before creating yo
 ![specific question feedback for question 2](23.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

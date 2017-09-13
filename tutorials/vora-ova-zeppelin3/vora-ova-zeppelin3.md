@@ -29,7 +29,7 @@ These engines are integrated into Spark as either a Spark SQL data source (full 
 The data source `com.sap.spark.engines.disk` is used by the disk engine. SQL statements issued on the disk engine are fully integrated into Spark SQL. Disk engine tables therefore behave in exactly the same way as Spark SQL tables.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Running 3_Data_on_Disk)]
@@ -53,7 +53,7 @@ ON COMPLAINTS_DISK.COMPLAINT_ID = PRODUCTS.COMPLAINT_ID
 
 ![cross-engine query](zep3_04_14.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 

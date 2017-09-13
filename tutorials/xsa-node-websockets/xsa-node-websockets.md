@@ -42,7 +42,7 @@ As follows:
 
 ![add app use](1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add route handler)]
@@ -102,7 +102,7 @@ Check the code you have just added. You will see the `ws` module is required. Ad
 >Note: You can find more information on the `WebSockets` module and how it works the their [GitHub repository](https://github.com/websockets/ws)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a UI5 interface)]
@@ -316,7 +316,7 @@ sap.ui.core.UIComponent.extend("sap.xs.chat.Component", {
 	}
 });
 ```
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Build and Run)]
@@ -330,7 +330,7 @@ Run the `js` module first and then run the `web` module. Remember to change the 
 ![web module](4.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Test the Chat)]
@@ -343,7 +343,7 @@ All messages are being pushed out into all listeners. You can open a third chat 
 
 ![test Chat](7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

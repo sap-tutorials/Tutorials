@@ -29,7 +29,7 @@ Return to the procedure editor. Add an output parameter called `ex_user_filtered
 
 ![procedure editor](1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Edit the procedure)]
@@ -42,7 +42,7 @@ Remove the EXECUTE IMMEDIATE statement and instead insert the following SELECT s
 
 ![modify statement](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Check complete code)]
@@ -53,7 +53,7 @@ The completed code should be very similar to this. If you do not wish to type th
 PROCEDURE "dev602.procedures::get_product_by_filter" (      IN im_product_filter_string varchar(5000),      OUT ex_user_filtered_products "dev602.data::MD.Products" )LANGUAGE SQLSCRIPTSQL SECURITY INVOKER--DEFAULT SCHEMA <default_schema_name>READS SQL DATA  ASBEGINpre_filtered_products =     SELECT * FROM "dev602.data::MD.Products" WHERE CATEGORY NOT IN ('Laser printers');ex_user_filtered_products = APPLY_FILTER(:pre_filtered_products, :im_product_filter_string ) ;END
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Save and build)]
@@ -66,7 +66,7 @@ Use what you have learned already and perform a build on your `hdb` module. Then
 
 ![HRTT](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run and check results)]
@@ -90,7 +90,7 @@ Once again, the results are displayed, but this time they are passed through a p
 
 ![results](9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Test different input)]
@@ -103,7 +103,7 @@ You will notice you now get an error message when passing 'OR 1 = 1' to the proc
 
 ![syntax](11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

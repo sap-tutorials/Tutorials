@@ -30,7 +30,7 @@ Then, in the pane that opens, choose **Features**.
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](General Instructions)]
@@ -40,7 +40,7 @@ In the Repository drop-down menu, choose **Features**.
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](General Instructions)]
@@ -50,7 +50,7 @@ In the `coolfeature` box, click the button to enable it, then choose **Save**.
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](General Instructions)]
@@ -58,7 +58,7 @@ Refresh the SAP Web IDE. Now you should see the new **Greetings** menu in the **
 ![Plugin activated](Step4.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -30,7 +30,7 @@ Confirm that you have **Node.js** and **Git** installed:
 - run the command `node -v` to see if you have **Node.js** installed.  If not, download it from <https://nodejs.org/en/download/>, and confirm that the command `node -v` runs okay.
 - run the command `git`to see if you have **Git** installed.  If not, download it from <https://git-scm.com/book/en/v2/Getting-Started-Installing-Git>, and confirm that the command `git` runs okay.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Clone the YaaS StoreFront)] ￼
@@ -41,7 +41,7 @@ Clone the YaaS StoreFront:
 - Run `git clone https://github.com/SAP/yaas-storefront.git` to clone the StoreFront into `(1)`
 - Confirm you now see the folder `yaas-storefront`	inside `(1)`, and `cd` into it.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Download dependencies)] ￼
@@ -51,7 +51,7 @@ Use Node's package manager to download the dependencies:
 - The YaaS StoreFront includes `npm`, **Node.js**'s package manager, for downloading dependent packages.
 - Run `npm install` to download all the packages the Storefront depends on.  The console should show `npm` downloading many dependencies; confirm this is the case.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Start a local web server)] ￼
@@ -62,7 +62,7 @@ Start a local web server
 
 ![Server Running](local-web-server-running.PNG)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Open your Storefront)] ￼
@@ -76,7 +76,7 @@ Open your own default Storefront
 
 You now have seen a default YaaS Storefront running locally on your machine. The next step is to customize and personalize it.  In the next tutorial you will add a feature to the StoreFront called "Mr Tip".  When browsing products, the undecided purchaser can click on "Mr Tip" to get advice, with helpful responses such as "Absolutely yes!!" and "One word: No".
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

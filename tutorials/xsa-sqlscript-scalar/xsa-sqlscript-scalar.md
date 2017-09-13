@@ -33,7 +33,7 @@ Enter the name of the file as `get_full_name` and click **Create**.
 
 ![create](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Edit the function and save)]
@@ -55,7 +55,7 @@ Click **Save**
 
 ![save](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Edit procedure)]
@@ -75,7 +75,7 @@ The completed code should look very similar to this. If you do not wish to type 
 PROCEDURE "dev602.procedures::get_po_header_data" (           OUT EX_TOP_3_EMP_PO_COMBINED_CNT TABLE(                      FULLNAME NVARCHAR(256),		  CREATE_CNT INTEGER,		  CHANGE_CNT INTEGER,		  COMBINED_CNT INTEGER )  ) 	LANGUAGE SQLSCRIPT 	SQL SECURITY INVOKER 		--DEFAULT SCHEMA <default_schema_name> 	READS SQL DATA ASBEGINpo_create_cnt =  SELECT COUNT(*) AS CREATE_CNT, "HISTORY.CREATEDBY.EMPLOYEEID"  AS EID       FROM "dev602.data::PO.Header" WHERE PURCHASEORDERID IN (             SELECT PURCHASEORDERID                  FROM "dev602.data::PO.Item"          WHERE "PRODUCT.PRODUCTID" IS NOT NULL) GROUP BY  "HISTORY.CREATEDBY.EMPLOYEEID";po_change_cnt =  SELECT COUNT(*) AS CHANGE_CNT, "HISTORY.CHANGEDBY.EMPLOYEEID" AS EID       FROM "dev602.data::PO.Header"  WHERE PURCHASEORDERID IN (          SELECT PURCHASEORDERID               FROM "dev602.data::PO.Item"     WHERE "PRODUCT.PRODUCTID" IS NOT NULL)	GROUP BY  "HISTORY.CHANGEDBY.EMPLOYEEID";EX_TOP_3_EMP_PO_COMBINED_CNT =        SELECT "dev602.procedures::get_full_name"( "NAME.FIRST", "NAME.MIDDLE", "NAME.LAST") 	as FULLNAME, crcnt.CREATE_CNT, chcnt.CHANGE_CNT, crcnt.CREATE_CNT + chcnt.CHANGE_CNT AS 	COMBINED_CNT 	FROM "dev602.data::MD.Employees" as emp     LEFT OUTER JOIN :PO_CREATE_CNT AS crcnt           ON emp.EMPLOYEEID = crcnt.EID     LEFT OUTER JOIN :PO_CHANGE_CNT AS chcnt           ON emp.EMPLOYEEID = chcnt.EID              ORDER BY COMBINED_CNT DESC LIMIT 3;END
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Save and build)]
@@ -96,7 +96,7 @@ Notice the `FULLNAME` column, it shows the results of the scalar `UDF` logic.
 
 ![Results](13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

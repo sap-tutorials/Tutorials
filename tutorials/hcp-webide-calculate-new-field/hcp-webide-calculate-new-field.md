@@ -46,7 +46,7 @@ The purpose of the `bindView` function is to associate data fields with the view
 
 ![original bindview function](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Pass data into detail view)]
@@ -67,7 +67,7 @@ debugger;
 ```
 ![bindview with debugger](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Run with debugging)]
@@ -79,7 +79,7 @@ You will see that execution has stopped at the debugger statement (1), and if yo
 With the debugger paused, you will not be able to edit the code in Web IDE. To get it running, click one of the Resume script execution button (4), and switch back to Web IDE.
 ![execution halted at debugger statement](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Compute Current Inventory Value)]
@@ -99,7 +99,7 @@ Add some blank lines so that your line numbers are the same as the image below. 
 
 The next few steps walk you through what the code does.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add constants)]
@@ -111,7 +111,7 @@ The first two lines add some constants used in the calculation:
 
 ![constants](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Perform calculations)]
@@ -125,7 +125,7 @@ Line 90 does the real work:
 
 ![calculating inventory value](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Round result and update bindings)]
@@ -134,7 +134,7 @@ The result is rounded to two decimal places (1) using the same approach used whe
 
 ![rounding](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add label for new field)]
@@ -146,7 +146,7 @@ label_CurrentInventoryValue=Current Inventory Value
 ```
 ![messageBundle.properties file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add attribute and save)]
@@ -160,14 +160,14 @@ This line adds the label and currency symbol from the `messageBundle.properties`
 
 ![Detail.view.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Reload page)]
 
 With all changes saved, switch back to your preview tab (with Developer Tools open), and reload the page by right-clicking on the browser refresh button and selecting Empty Cache and Hard Reload.  
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Step through debugger)]
@@ -176,7 +176,7 @@ When the app loads, it will pause on the debugger statement again. Click on the 
 
 ![Detail.view.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Check record variable)]
@@ -187,14 +187,14 @@ With execution stopped at line 92, you can see that `inventoryValue` now appears
 
 Click the **Step Over** button again and the value is now rounded.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Resume execution)]
 
 Click the **Resume script execution** button to allow the execution to continue. If you look in the detail view header, you will see the Current Inventory Value field displayed.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Clean up the code)]
@@ -203,7 +203,7 @@ For clean-up, you can remove the `debugger;` statement in `Detail.controller.js`
 
 ![cleaned up function](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-calculate-new-field/mob3-2_14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

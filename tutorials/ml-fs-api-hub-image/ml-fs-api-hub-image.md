@@ -39,7 +39,7 @@ Then you will be able to search for the **SAP Leonardo Machine Learning - Functi
 
 ![SAP API Business Hub](02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Analyze the service)]
@@ -84,7 +84,7 @@ And the response model schema is the following:
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Test the service)]
@@ -151,7 +151,7 @@ In the **Response Body**, you will get the top 5 classes/label with an associate
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 ---
@@ -169,7 +169,7 @@ Alternatively, you can try to compress into a zip a series of images and call th
 
 For more information, you can also check the online [SAP Leonardo Machine Learning Foundation documentation](https://help.sap.com/viewer/product/SAP_LEONARDO_MACHINE_LEARNING_FOUNDATION/1.0/en-US)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

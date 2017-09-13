@@ -49,7 +49,7 @@ Please find a schematic representation of the synchronization flow below:
 
 ![Delete existing registration](image-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Creation of a database)]
@@ -71,7 +71,7 @@ Please find a schematic representation of the creation and population of the dat
 
 When a database is being opened for the first time, the app sends the defining queries over to the SAP Cloud Platform mobile service for development and operations. At the SAP Cloud Platform mobile service for development and operations back-end is determined whether a client store already exists for the device being used. If it doesn't. SAP Cloud Platform mobile service for development and operations will pull the metadata from the originating OData service and will create a table for each of the defined queries. Once the tables have been created, the tables are synchronized by retrieving the data from the originating OData service. Once the table is fully synchronized on the SAP Cloud Platform mobile service for development and operations back-end, the table is synchronized to the Offline UltraLite store on the client using the MobiLink protocol.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Refreshing the database)]
@@ -84,7 +84,7 @@ Please find a schematic representation of the request for refresh sequence below
 
 When the database is being refreshed the the app sends the defining queries over to the SAP Cloud Platform mobile service for development and operations. If the originating OData service supports delta-token, the client store on the SAP Cloud Platform mobile service for development and operations is refreshed using delta-tokens, otherwise a full refresh of the client store is performed. Once the client store is in sync all changes are sent to the client using the MobiLink protocol.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Data Flush sequence)]
@@ -97,7 +97,7 @@ Please find a schematic representation of the data flush sequence below:
 
 In the diagram, you can see that the requests are being sent to the offline store on the device, in which the changes are captured. Once the user goes online and flushes his data, the request queue is being synchronized to the SAP Cloud Platform mobile service for development and operations back-end. From there, SAP Cloud Platform mobile service for development and operations will playback each request to the originating OData service. All errors along with their original requests are stored in the Error Archive, which manifest itself as an OData entity set named `ErrorArchive`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Error and events)]
@@ -108,7 +108,7 @@ When a request fails against the backend OData Service during an upload operatio
 
 Events that happened during synchronization can be retrieved in a similar fashion as the errors. Events are stored in the `EventLog` entity set.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Configuration of the SAP Cloud Platform)]
@@ -122,7 +122,7 @@ However, it is possible to tune the configuration of offline applications to opt
 
 You can learn more on this topic in tutorial [Configure the behavior of the Offline OData Service](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-config.html)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

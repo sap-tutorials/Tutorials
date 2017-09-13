@@ -31,7 +31,7 @@ Since it is very difficult to use standard SQL to work with and perform analysis
 Since the SAP Vora execution engine supports hierarchies, support has been added for pushing down hierarchical queries to SAP Vora using the data source implementation.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Running notebook 2_Hierarchies)]
@@ -47,7 +47,7 @@ Take a look at the hierarchy structure. Then create a new fact table.
 Use the fact table to join with a hierarchy.
 ![Join with hierarchy](zep2_04.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -62,7 +62,7 @@ You can work with the resulting hierarchy as with adjacency-list hierarchies.
 Select data by hierarchy level (`4` in this example).
 ![Select by level](zep2_06.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 

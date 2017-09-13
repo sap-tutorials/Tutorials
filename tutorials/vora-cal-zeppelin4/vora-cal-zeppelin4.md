@@ -29,7 +29,7 @@ A graph consists of a set of nodes and accompanying metadata. A node has a type,
 
 ![Graph Funcitons](zep4_01.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Degree Function)]
@@ -43,7 +43,7 @@ The degree function can be used in both the `SELECT` and `WHERE` clauses of quer
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -61,7 +61,7 @@ If there is no (undirected) path between the two nodes, the `DISTANCE` function 
 The `DISTANCE` function can be used in the `SELECT` and `WHERE` clauses of a query. In the `WHERE` clause of a query, the `DISTANCE` function can be used only in comparisons with integer literals (constants).
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Connected Components)]
@@ -78,7 +78,7 @@ A sample data set explains the relationship between the learning contents, the t
 
 ![Visualization of data set](zep4_03.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Running notebook 4_Graph)]
@@ -116,7 +116,7 @@ You can also use aggregations in your `SELECT` statement and in combination of a
 ![Combination of functions](zep4_14.jpg)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

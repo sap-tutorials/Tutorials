@@ -30,7 +30,7 @@ Make sure that the basic view from the previous tutorials of this series is avai
 
 ![The basic view to be inserted](BasicViewToBeEnhanced_01.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enhancing the basic view)]
@@ -61,7 +61,7 @@ Here is the new line, completed.
 
 ![Second Annotation added](AddAnnotationForAssociationEnabling_05.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Remove the filter from the code)]
@@ -75,7 +75,7 @@ Here is the code after the deletion.
 ![Coding](CodeAfterFilterRemoving_07.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add association annotations)]
@@ -93,7 +93,7 @@ Here is the new line, completed.
 
 ![Annotation syntax added](AddingAssociationSyntax_09.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Insert the alias text)]
@@ -102,7 +102,7 @@ To display the Carrier name, insert the alias `_Text`
 
 ![Alias text added](AddingAliasText_10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Define the Join projection)]
@@ -119,7 +119,7 @@ The alias `_Text` must be declared (see number 2 in the screen shot below) and t
 
 ![ Text and comma inserted](Insert_Text_and_Coma_13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Preview the content of the view)]
@@ -150,7 +150,7 @@ Save the change, activate it and preview the view's content again.
 
 ![Preview the basic airline view ](PreviewBasicViewAirlineName_19.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Final changes)]
@@ -183,7 +183,7 @@ _Text
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 ### Notes

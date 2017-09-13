@@ -35,7 +35,7 @@ Execute the query. The `ST_Dimension()` method will return `1`. In the previous 
 
 ![String Dimension](spatial0201.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Caclulate the length)]
@@ -50,7 +50,7 @@ Obviously accordingly to the Pythagorean Theorem the result will be `5`. This pr
 
 ![3-4-5 Rule](spatial0202.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add more points)]
@@ -82,7 +82,7 @@ Opening the SVG code above in a web browser allows you to see a drawn spatial ob
 
 ![SVG output](spatial0204.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create circular string)]
@@ -107,7 +107,7 @@ SELECT NEW ST_CircularString('CircularString (0 0, 3 4, 0 4, -3 4, 0 0)').ST_asS
 
 A string that starts and ends at the same point is **closed**. Above is an example. Strings can also be characterized by whether they are simple or not. A **simple** means a string that does not cross itself. A **ring** is a simple, closed string. The geometry above is a ring, according to this definition in spatial processing.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Using spatial predicates)]
@@ -138,7 +138,7 @@ SELECT 'isRing' as Feature, NEW ST_LineString('LINESTRING(0 0, 1 1, 0 1, 1 0)').
 
 ![Closed Simple Ring](spatial0209.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create a circle)]
@@ -155,7 +155,7 @@ Note this time you did not use a geometry constructor using the `NEW` keyword. I
 
 ![GeometryType](spatial0211.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 

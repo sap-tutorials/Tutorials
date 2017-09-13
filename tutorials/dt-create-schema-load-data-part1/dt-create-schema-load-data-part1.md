@@ -37,7 +37,7 @@ Enter "`SYSTEM`" as the **User Name** and enter your **Password**. Click the **S
 
 ![Credentials](credentials.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Verify Extended Storage Status)]
@@ -54,7 +54,7 @@ In the **Overview** tab and under **General Information**, check the status of *
 
 ![Check Dynamic Tiering](check-dynamic-tiering.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create Extended Storage)]
@@ -74,13 +74,13 @@ Click the Execute button to run the SQL script and create the extended storage `
 
 ![Run](run.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Additional Information)]
 The "CREATE EXTENDED STORAGE" statement creates the warm store and the required `dbspaces`. A `dbspace` is a logical name for a container of files used to store the Dynamic Tiering table data and related objects. `Dbspaces` are specialized to manage specific types of data. Types of `dbspaces` used by Dynamic Tiering include `ES_SYSTEM`, `ES_USER`, `ES_DELTA` etc. Creating the extended storage `dbspace` is a prerequisite to creating extended tables.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

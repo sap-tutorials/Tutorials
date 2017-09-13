@@ -34,7 +34,7 @@ Click **Yes** if there is a prompt to save the file.
 
 > If your project wasn't open in any editor at this point, you can simply double-click on the `.ccl` file in the project (in the SDS Project Explorer) to open it in the `CCL` editor
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add the pattern matching stream to your project)]
@@ -75,7 +75,7 @@ Now let's take a look at the CCL above to understand it:
 
 Again, see the [SAP HANA streaming analytics,  CCL Reference guide](https://help.sap.com/viewer/608c361a786e4ec485224c890cbf1617/2.0.02/en-US/e7965d0d6f0f10149842b86fff8f915b.html) for more information on using the MATCHING clause.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Compile and check for errors)]
@@ -86,5 +86,5 @@ Click Compile Project button to check for errors.
 
 If you want to see this new operator in action, you run the playback tool to stream the simulated data file in again (see previous tutorial).
 
-[DONE]
+
 [ACCORDION-END]

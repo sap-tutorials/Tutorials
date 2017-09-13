@@ -40,7 +40,7 @@ The project is an empty SAPUI5 project, with only a view that displays a title. 
 
 >The project will not run until we build the project (including converting the TypeScript file into JavaScript) and run the project from the generated `dist` folder.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -57,7 +57,7 @@ You should now have a new project called `grunt-skeleton`.
 
 ![Import](ImportSkeleton3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a package.json file)]
@@ -80,7 +80,7 @@ In the file enter the following code:
 ```
 Here we not only used the SAPUI5 Grunt plugin, but also a publicly available plugin, `grunt-ts`, for compiling TypeScript into JavaScript.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create basic Gruntfile.js file)]
@@ -100,7 +100,7 @@ module.exports = function(grunt) {
 ```
 ![Add code to Gruntfile.js](grunt-Step2-StartGruntCode.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -158,7 +158,7 @@ You put the configuration into a variable (`config`) so that we can later merge 
 
 >You may get a JavaScript error for using the keyword `default`. Ignore the error.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -172,7 +172,7 @@ grunt.loadNpmTasks("grunt-ts");
 ```
 The code loads the plugins, and merges the configuration you created for the `grunt-ts` plugin with the configuration created behind the scenes for the SAPUI5 plugin.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -203,7 +203,7 @@ grunt.registerTask('cleanTs', 'Clean type script build result', function() {
 The code creates the `cleanTs` task, which checks if a JavaScript file already exists for each TypeScript file that will be converted. if so, it is deleted.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -310,7 +310,7 @@ module.exports = function(grunt) {
 };
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -318,7 +318,7 @@ module.exports = function(grunt) {
 [ACCORDION-BEGIN [Step 9: ](Save files file)]
 Save both files by selecting **File** | **Save All** (or by pressing `Ctrl-Shift-S`).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Build your project)]
@@ -335,7 +335,7 @@ When the build finishes, a new `dist` folder is created in your project and is a
 You can see any build errors in the console, which you can display by going to **View** | **Console**.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Run your project)]
@@ -367,7 +367,7 @@ sap.ui.define(function() {
 
 The method `getTitle()` is called from within the `View1` controller.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

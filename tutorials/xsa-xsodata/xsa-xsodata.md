@@ -33,7 +33,7 @@ Enter the name as `businessPartners.xsodata` and click **OK**.
 ![file name](2.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Expose business partner table)]
@@ -53,7 +53,7 @@ service{
 
 ![odata service](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Save and run)]
@@ -62,7 +62,7 @@ Save the file and build the Node.js module. Then run the `html5` module (defined
 
 ![test oData](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Append URL)]
@@ -75,16 +75,16 @@ You can see the field descriptions for all the attributes of the OData service.
 
 ![access metadata](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](View data)]
 
 In order to view the data of the entity, you would append `BP` to the end of the URL:For Example:`/xodata/businessPartners.xsodata/BP?$format=json`You are now able to see the data from the `businessPartner` table.  ![Business Partner data](6.png)
-[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 6: ](Try other parameters)]You can also experiment with standard OData URL parameters like $top, $skip, or $filter.  These options are interpreted and handled by the OData service of the `XSEngine` for you.  You get complex service handling without any coding. For example the following URL would return only three business partner records and would skip the first five records.  Such parameters are helpful when implementing server side scrolling, filtering, or sorting in table UI elements.For Example:`/xsodata/businessPartners.xsodata/BusinessPartners?$top=3&$skip=5&$format=json`
+[ACCORDION-END][ACCORDION-BEGIN [Step 6: ](Try other parameters)]You can also experiment with standard OData URL parameters like $top, $skip, or $filter.  These options are interpreted and handled by the OData service of the `XSEngine` for you.  You get complex service handling without any coding. For example the following URL would return only three business partner records and would skip the first five records.  Such parameters are helpful when implementing server side scrolling, filtering, or sorting in table UI elements.For Example:`/xsodata/businessPartners.xsodata/BusinessPartners?$top=3&$skip=5&$format=json`
 ![output](7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

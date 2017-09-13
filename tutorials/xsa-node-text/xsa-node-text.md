@@ -40,7 +40,7 @@ As follows:
 ![Routes](1.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create text bundle script)]
@@ -94,7 +94,7 @@ Take a look at the code you have just added. First, you can see there are two ne
 ![dependencies](3.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create text bundle)]
@@ -125,7 +125,7 @@ This is what the files should look like:
 
 ![Internationalization](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Test the translations)]
@@ -147,7 +147,7 @@ Repeat the process raising Japanese `[ja]` to the top of the list and refresh th
 ![new language](17.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

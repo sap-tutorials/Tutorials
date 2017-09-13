@@ -35,7 +35,7 @@ Select the package **`TMP-SHA`** and expand it. Then expand the  **Code Data Ser
 
 ![Create DDL](BuildDDL_02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a DDL source)]
@@ -52,7 +52,7 @@ Code for the newly created view named `ZXSH_I_AIRLINETEXT` is generated:
 
 ![Generate the code](GeneratedCode_05.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Edit the generated code)]
@@ -73,7 +73,7 @@ Edited code:
 
 ![Code enhancement](ReplaceWith_6_1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add annotations)]
@@ -125,7 +125,7 @@ key spras as Language,
 
 ![Assign the key column](KeysColumnsAssignment_16.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add annotations to the select statement)]
@@ -148,7 +148,7 @@ In the line after the expression   `key spras ...` insert:
 
 ![Enhancement with the annotation for text and end user](SemanticsTextAndEndUserAnnotation_20.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Prefix the column names with the table name)]
@@ -162,7 +162,7 @@ Next, prefix the column names with the ERP table name `scarr`:
 
 ![Insert table name](InsertTableName_22.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add Annotation for Object representative key)]
@@ -177,7 +177,7 @@ Inserting an annotation for the language was done to demonstrate the possibiliti
 
 ![Coding](FinalTextViewCode_25.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Display the content of the text view)]
@@ -207,7 +207,7 @@ define view ZXSH_I_AirlineText as select from scarr {
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 

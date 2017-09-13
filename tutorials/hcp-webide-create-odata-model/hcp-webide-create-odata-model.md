@@ -54,7 +54,7 @@ Open Web IDE, select the Local folder and create a new folder called `Metadata`.
 
 Right-click on the `Metadata` folder, and create a new file named `m104metadata_no_nav.edmx`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create entity model wrapper)]
@@ -79,7 +79,7 @@ Text to enter:
 
 ![wrapper](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part1_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add Schema element)]
@@ -101,7 +101,7 @@ Text to enter:
 
 ![schema](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part1_4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Review exposed data items)]
@@ -154,7 +154,7 @@ There are sixteen different primitive data types supported in OData ([more infor
 - `Decimal`
 - `DateTime`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add entity type)]
@@ -172,7 +172,7 @@ Copy and paste the text below within the `Schema` element in your document.
 
 ![Entity Type](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part1_7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Populate entity type element)]
@@ -221,7 +221,7 @@ Copy and paste the following within the `SalesOrder` `EntityType` elements.
 
 ![Entity Type Content](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part1_8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Finally, add entity container)]
@@ -239,7 +239,7 @@ The last element to add is the `EntityContainer` which will expose the `SalesOrd
 
 Your basic OData model is now complete and you could use it to build a basic app with the SAP Web IDE template wizard. If you would like to do this before continuing, you can jump to the next tutorial now.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Review requirements for linking second collection)]
@@ -256,7 +256,7 @@ XML declaration, `Edmx` and `DataServices` elements | Same as part 1
 
 ![Part 2 OData Model Structure](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_intro.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Copy existing file)]
@@ -267,7 +267,7 @@ Right-click on the `Metadata` folder and select **Paste** (to duplicate the file
 
 ![Rename file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Add navigation property element)]
@@ -290,7 +290,7 @@ ToRole="BusinessPartner"/>
 
 ![NavigationProperty](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Add entity type)]
@@ -345,7 +345,7 @@ Text to enter:
 
 ![BusinessPartner EntityType](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Add assiciation element)]
@@ -377,7 +377,7 @@ Copy and paste the following text immediately after the `BusinessPartner` `</Ent
 ```
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Modify entity container element)]
@@ -396,7 +396,7 @@ Copy and paste the following text after the `SalesOrders` `<EntitySet>` element 
 
 ![EntitySet](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Model is complete)]
@@ -405,7 +405,7 @@ Your model is now complete. When working on your own OData model, you can take a
 
 ![Enable OData modeler](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Load graphical view)]
@@ -420,7 +420,7 @@ The graphical view will open. If the model appears very small (as shown below), 
 
 ![Fit to screen](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](View the full entity model)]
@@ -429,7 +429,7 @@ In this view you can see the full entity model, associations, multiplicity and c
 
 ![View member attributes](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](View the console)]
@@ -438,7 +438,7 @@ Click on the **Source** tab, and then select **View > Console** (if the console 
 
 ![Valid model](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](View changes in real time)]
@@ -451,7 +451,7 @@ Remove the extra character to remove the error.
 
 ![fixed typo](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-create-odata-model/mob4-1_part2_14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 19: ](Future modifications)]
@@ -543,7 +543,7 @@ ToRole="BusinessPartner"/>
 </edmx:Edmx>
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -27,7 +27,7 @@ Document Store is a distributed in-memory JSON document store that supports rich
 The Document Store uses a special binary JSON format and a highly optimized, parallel, and `NUMA` (Non-Unified Memory Access architecture) aware execution engine to provide high performance on analytical workloads. It also combines JSON with most of the regular SQL features. You do not have to learn a new query language, but can use SQL for JSON as well.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Running notebook 7_Document Store)]
@@ -42,7 +42,7 @@ Run some basic queries against Document Store Engine.
 
 Run and complete the remainder of the paragraphs in this notebook.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

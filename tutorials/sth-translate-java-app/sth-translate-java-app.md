@@ -27,7 +27,7 @@ In your Eclipse window, locate the `i18n.properties` file that contains your app
 
 ![Locate i18n.properties file](sth-locate-i18n-prop-file.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](View texts in properties file)]
@@ -36,7 +36,7 @@ Before you get started with the translation process, open the `i18n.properties` 
 
 ![Open i18n.properties file](sth-view-texts-i18n-prop-file.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Choose tile for developer account)]
@@ -45,7 +45,7 @@ In the [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com), cho
 
 ![access menu to open service catalog](sth-choose-dev-tile.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Open the service catalog)]
@@ -54,7 +54,7 @@ Choose **Services** in the navigation area on the left.
 
 ![open service catalog](sth-open-services.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Locate the SAP Translation Hub service)]
@@ -63,7 +63,7 @@ Search for the SAP Translation Hub service by entering **Trans** and then choose
 
 ![Find Translation Hub service](sth-search-tran.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Open SAP Translation Hub UI)]
@@ -72,7 +72,7 @@ To access the SAP Translation Hub, UI, choose **Go to Service**.
 
 ![Go to SAP Translation Hub service](sth-tile-go-to-service.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create a translation project)]
@@ -81,7 +81,7 @@ Create a translation project for single files that you want to upload.
 
 ![Create translation project](sth-create-file-proj.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Enter translation project details)]
@@ -97,7 +97,7 @@ Target Languages   | Enter the languages of your choice, such as **French** and 
 
 Choose **Save**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Upload properties file)]
@@ -120,7 +120,7 @@ Regardless of the option you choose, when SAP Translation Hub has translated the
 
 ![Properties file translation success](sth-file-translated-message.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Review translations)]
@@ -133,7 +133,7 @@ On this screen, you can switch between target languages and view information abo
 
 ![Review translations, translation provider, and quality index](sth-review-translations.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Filter by quality index (optional))]
@@ -155,7 +155,7 @@ The following success message confirms your filter setting:
 
 ![Confirm quality index filter](sth-filter-confirm.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Update translations (optional))]
@@ -164,7 +164,7 @@ If you want to update any translations, make the changes in the **Translated Tex
 
 ![Save translation project](sth-save-trans-proj.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Download translations)]
@@ -177,7 +177,7 @@ SAP Translation Hub prepares a `zip` file that contains properties files for eac
 
 ![Confirm zip download](sth-zip-downloaded.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Import translations in Eclipse)]
@@ -205,7 +205,7 @@ The properties files per target language appear in the `i18n` folder:
 
 ![Show target language properties files](sth-target-prop-files-imported.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Restart Java server (optional))]
@@ -230,7 +230,7 @@ Depending on system performance, it can take several minutes for the Java server
 
 ![Server started](sth-eclipse-server-started-synchro.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Display app in browser)]
@@ -243,7 +243,7 @@ The French version of the app appears:
 
 ![Display French version of app](sth-espm-app-browser-fr-version.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

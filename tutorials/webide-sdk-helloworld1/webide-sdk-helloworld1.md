@@ -32,7 +32,7 @@ After opening SAP Web IDE, choose **File > New > Project from Template**.
 Alternatively, you can click the **New Project from Template** icon on the SAP Web IDE Welcome screen.
 
 ![Create new project from template (Welcome Screen)](Step1-Menu-Welcome.png)
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Select the feature template)]
@@ -44,7 +44,7 @@ A wizard opens and on the **Template Selection** screen, choose **SAP Web IDE Fe
 
 On the **Basic Information** screen, enter `coolproject` for the project name, and then choose **Next**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Customize the plugin)]
@@ -60,7 +60,7 @@ Plugin Description     | `This is a cool plugin`
 
 ![Customize template](Step2-Fields.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -71,7 +71,7 @@ In the new browser tab, use the plugin by going to the **Tools** menu and select
 
 ![Test plugin](Step4-Test.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

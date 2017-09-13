@@ -39,7 +39,7 @@ Open the SAP API Management API Portal (you can get the URL from Enable the SAP 
 
 ![Access API Portal](01-access_api_portal.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Quick start an API creation)]
@@ -48,7 +48,7 @@ From the Home screen under the Quick Actions tile, click on **API**. This will b
 
 ![Click on API](02-API.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](View and create APIs)]
@@ -62,7 +62,7 @@ To create a new API from this page, click **Create**.
 
 ![Click on Create](04-CreateAPI.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Select API provider)]
@@ -71,7 +71,7 @@ From the drop-down select the `SAPDeveloperSystemES4` API Provider created in th
 
 ![Select Provider System](05-API_Provider.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Discover the services)]
@@ -80,7 +80,7 @@ Click on **Discover**.
 
 ![Click on Discover](06-Discover.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Select the services)]
@@ -99,7 +99,7 @@ The remaining fields from the API Proxy creation screen are populated. Click **C
 
 ![Click on Create](08-Create.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Save and deploy your API)]
@@ -108,7 +108,7 @@ Click on **Save and Deploy**.
 
 ![Click on Save and Deploy](09-SaveAndDeploy.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](View APIs created)]
@@ -121,7 +121,7 @@ A new API Proxy has been created
 
 ![API Proxy has been created](11-Overview.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

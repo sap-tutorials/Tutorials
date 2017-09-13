@@ -26,7 +26,7 @@ Install the SAP HANA client package and SAP HANA streaming analytics on an SAP H
 
 Use the SAP HANA, express edition Download Manager to download the streaming analytics installation package, `hsa.tgz`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Copy hsa.tgz to the virtual machine)]
@@ -39,7 +39,7 @@ If you are installing streaming analytics on an SAP HANA, express edition virtua
 | The Download Manager (GUI Mode) on your laptop            | Transfer ` hsa.tgz ` from your laptop's Save Directory to `~/Downloads` on your VM.|
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Extract hsa.tgz)]
@@ -57,7 +57,7 @@ tar -xvzf <download_path>/hsa.tgz
 > chmod -R 777 <download_path>/hsa.tgz
 > ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Edit the /etc/hosts file)]
@@ -68,7 +68,7 @@ If you are installing streaming analytics on an SAP HANA, express edition virtua
 <VM_IP_address>  hxehost.localdomain.com   hxehost
 ```    
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run the installer)]
@@ -85,7 +85,7 @@ Follow the prompts to configure your installation.
 >**Note:**
 > The system database user (SYSTEM) password you enter during installation is used for the `SYS_STREAMING` and `SYS_STREAMING_ADMIN` users.
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -35,7 +35,7 @@ The following dimension types are supported by SAP HANA:
 
 >Important to note that these Z and M coordinate values can be used to store additional information, but are not considered when computing spatial relations or set operations.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Optional coordinates in geometries' constructors)]
@@ -61,7 +61,7 @@ The Z and M values can be used with other geometries too.
 SELECT NEW ST_GeometryCollection('GeometryCollection Z(LineString Z(5 10 20, 10 12 25, 15 10 13), Polygon Z((10 -5 4, 15 5 6, 5 5 7, 10 -5 4)), Point Z(10 15 12))').ST_asWKT() from dummy;
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -100,7 +100,7 @@ SELECT NEW ST_Point('Point ZM(5 10 20 0)').ST_M() as M from dummy;
 -- Result is 0
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Processing spatial data with Z and M)]
@@ -127,7 +127,7 @@ SELECT NEW ST_Point('POINT Z(0 0 0.5)').ST_Buffer(2).ST_CoordDim() from DUMMY;
 -- Result is 2 (coordinates dimensions of an output polygon)
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 ### Optional

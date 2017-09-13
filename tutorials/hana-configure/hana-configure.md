@@ -33,7 +33,7 @@ Replace the current IP address in front of the hostname `hanapm` with the specif
 
 Save the content and exit Notepad.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](HANA Studio Configuration)]
@@ -44,7 +44,7 @@ If your HANA Studio opens to the following Overview screen, simply press **Workb
 
 ![Studio Overview](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](SAP HANA Development perspective)]
@@ -59,7 +59,7 @@ Add the SAP HANA Development perspective. This is the perspective you should be 
 
 ![HANA Development](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add the Debug perspective)]
@@ -72,7 +72,7 @@ After adding these two new perspectives, you may also still see the initial SAP 
 
 ![Close](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create a connection to the HANA server)]
@@ -93,7 +93,7 @@ Click on the **Systems** view.  Right click in the white space below this tab an
 
 ![Description](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Enter credentials for service)]
@@ -115,7 +115,7 @@ You should now have a new connection with your specific user id for the HANA sys
 
 ![System View](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-configure/13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create a Repository Workspace)]
@@ -136,7 +136,7 @@ You should now see the local workspace mapped to the remote workspace in the SAP
 > ### Note
 >Your System ID, User ID, Hostname, and System Numbers will be different than those displayed in subsequent screen shots. For this reason we have often blurred this information in screen shots to avoid confusion.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](View your work)]
@@ -154,7 +154,7 @@ You have completed the exercise! You are now able to:
 - Grant access to the schema
 - Create an `index.html` file to test your setup
 
-[DONE]
+
 [ACCORDION-END]
 
 

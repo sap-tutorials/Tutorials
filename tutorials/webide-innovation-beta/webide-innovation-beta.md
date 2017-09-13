@@ -30,7 +30,7 @@ Log onto your SAP Cloud Platform account.
 
 Make sure you are in the Neo environment, not the Cloud Foundry environment. Neo is the classic, proprietary SAP Cloud Platform, and you can return to it by going **Home** | **Go to Neo Trial**.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -51,7 +51,7 @@ Wait for the status to change to the green, **Enabled** status.
 
 ![multi-cloud version enabled](Enabled.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Open the SAP Web IDE multi-cloud version)]
@@ -59,7 +59,7 @@ In the **SAP Web IDE Multi-Cloud Version** service screen, click **Go to Service
 
 ![Open SAP Web IDE](OpenIDE.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -69,7 +69,7 @@ If your scenario includes deploying apps to the Cloud Foundry environment, then 
 Create a Cloud Foundry subaccount, organization, and space. See [Get a Trial Space on the Cloud Foundry Instance](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76e79d62fa0149d5aa7b0698c9a33687.html).
 
 
-[DONE]
+
 [ACCORDION-END]
 
 ---

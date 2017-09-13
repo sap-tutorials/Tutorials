@@ -35,7 +35,7 @@ Below is an SVG modified to fill a geometry with the color using `fill="yellow"`
 
 ![Polygon with 2 rings](spatial0301.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Get dimension)]
@@ -48,7 +48,7 @@ SELECT NEW ST_Polygon('Polygon ((0 0, 4 0, 0 3, 0 0), (0.5 0.5, 0.5 1.5, 1.5 1.5
 
 The `ST_Dimension()` method will return `2`. In the earlier point exercise the same method returned `0`, and in the strings exercise it returned `1`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Get area)]
@@ -65,7 +65,7 @@ This statement calculates the area of right triangle (also known as 'right-angle
 
 ![Area of the polygon](spatial0302.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Get boundary)]
@@ -96,7 +96,7 @@ The result is an empty geometry.
 
 ![Empty boundary](spatial0304.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Get boundaries of a multi-segment line)]
@@ -115,7 +115,7 @@ Points do not have boundaries.
 
 ![Empty boundary for points](spatial0306.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Check if one geometry is within another)]
@@ -132,7 +132,7 @@ Indeed the point (1, 1) is not within ___interior___ of your polygon from the ea
 
 ![Within linestring polygon](spatial0307.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Check if a point is within a given disk)]
@@ -147,7 +147,7 @@ The point (1, 1) is in the circle with the center point of (0, 0) and the radius
 
 ![Circle distance](spatial0308.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -51,7 +51,7 @@ If you are running Eclipse on a Mac or Linux machine, follow these steps to upda
     ```bash
     sudo sh - c 'echo <hxehost IP address>    hxehost >> /etc/hosts'
     ```
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Install the plugin)]
@@ -92,7 +92,7 @@ If you are running Eclipse on a Mac or Linux machine, follow these steps to upda
 
 11. If you are installing the plugin into Eclipse for Linux, log off of the machine and log back in.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Open the streaming perspectives)]
@@ -107,7 +107,7 @@ If you are running Eclipse on a Mac or Linux machine, follow these steps to upda
 
     ![SAP HANA Streaming Run-Test perspective](open-run-test.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -152,7 +152,7 @@ Here we will connect our streaming design time tools to the SAP HANA streaming a
 
     ![Default Server URL](set-default-server-url.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add a HANA service)]
@@ -191,7 +191,7 @@ In this step we will create a named **Data Service** on the SAP HANA streaming a
 
     ![Discover](discover.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

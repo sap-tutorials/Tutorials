@@ -73,7 +73,7 @@ Once you are logged in as `<sid>adm` you may run the command "**`HDB info`**" to
 
 ![Check esserver](esserver-putty.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -91,7 +91,7 @@ select * from M_SERVICES
 ```
 ![Coordinator Type](coordinator-type-studio.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

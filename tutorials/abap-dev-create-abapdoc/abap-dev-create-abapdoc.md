@@ -27,7 +27,7 @@ First, open your ABAP class, which you created in [Create an ABAP Class](https:/
 
 ![Image depicting step-1-open-class](step-1-open-class.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add an ABAP Doc comment)]
@@ -40,7 +40,7 @@ To improve readability, add an ABAP Doc comment to the class immediately before 
 
 > ABAP Doc comments can be used to document APIs and are displayed in the Element Info. ABAP Doc comments begin with `"!` .
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -53,7 +53,7 @@ The ABAP Doc comment is extended by a `@parameter ... | `. You can now use this 
 
 ![Image depicting step3a-parameters-added](step3a-parameters-added.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Synchronize short texts)]
@@ -64,13 +64,13 @@ b.	Do the same for the short text of your parameter `lt_result`:
 
 ![Image depicting step4-sync-texts](step4-sync-texts.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Save and activate)]
 Save ( **Ctrl+S** ) and activate ( **Ctrl+F3** ) the class.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Link with Editor)]
@@ -79,7 +79,7 @@ To easily find the class in SAP GUI, first choose Link with Editor:
 
 ![Image depicting step6-link-w-editor](step6-link-w-editor.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](View the ABAP Doc comments in SAP GUI)]
@@ -99,7 +99,7 @@ d. Finally, close the class in SAP GUI and return to your ABAP program by choosi
 
 ![Image depicting step8-close](step8-close.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Display element info)]
@@ -168,7 +168,7 @@ ENDCLASS.
 
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 

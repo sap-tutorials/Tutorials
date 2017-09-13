@@ -28,7 +28,7 @@ Next up you will look into working with popular file types in data management na
 
 **Apache Parquet** is a columnar storage format available to any project in the Hadoop ecosystem, regardless of the choice of data processing framework, data model or programming language.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Running notebook 6_ORC and Parquet files)]
@@ -72,7 +72,7 @@ Final step of this tutorial is to create a table from your ORC based file and se
 
 ![Select from table - ORC](zep6_10_14.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 

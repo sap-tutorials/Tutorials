@@ -56,7 +56,7 @@ render: function() {
 
 ![Add a TitleBar component to the JavaScript file](1-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Display component)] ￼
@@ -84,7 +84,7 @@ To display the new `TitleBar` component, add it to the `ProductList` component b
 
 ![Add a TitleBar component to the ProductList rendering](1-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Run the application)] ￼
@@ -95,7 +95,7 @@ Unfortunately, that navigation bar covers the first row of the list.
 
 ![Navbar covers data](1-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Modify the CSS)] ￼
@@ -112,7 +112,7 @@ body {
 
 ![Add CSS to move body down from navbar](1-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run the application)] ￼
@@ -121,7 +121,7 @@ Run the application.  The header should now appear at the top, and the first row
 
 ![Navbar and data look good together](1-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add dynamic content)] ￼
@@ -139,7 +139,7 @@ Open your `main.js` file again, and scroll to the `TitleBar` component.  Add the
 
 ![Add a length item to the navbar](1-6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add length property)] ￼
@@ -154,7 +154,7 @@ count={this.state.products.length}
 
 ![Add the count property to the TitleBar tag](1-7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](View the item count)] ￼
@@ -163,7 +163,7 @@ Run the application, and you will see the item count in the navigation bar.
 
 ![Navbar now has a length item on the right](1-8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -171,7 +171,7 @@ Run the application, and you will see the item count in the navigation bar.
 
 When you click on a product, the application should respond with the details of that product.  In this example, and to showcase the Bootstrap options, a [modal dialog box]((https://getbootstrap.com/javascript/#modals)) will be used to display product details.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Add Bootstrap Modal dialog)] ￼
@@ -210,7 +210,7 @@ var ModalProductDetail = React.createClass({
 
 ![Add a modal dialog box](2-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Modify getInitialState)] ￼
@@ -238,7 +238,7 @@ return {
 
 ![Add a new variable to the component state](2-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Handle click event)] ￼
@@ -264,7 +264,7 @@ onListBoxClick: function( row ) {
 ![Add the click event](2-3.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Pass the event to the component)] ￼
@@ -279,7 +279,7 @@ Third, pass the click handler event on to the `ListBox` component.  Scroll to th
 
 ![Send the click event to the ListBox component](2-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Add ModalProductDetail component to page)] ￼
@@ -298,7 +298,7 @@ Scroll down to the `return(` section of the `render:` method, and add the follow
 
 ![Display the ModalProductDetail component with ternary logic](2-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Display data in dialog)] ￼
@@ -316,7 +316,7 @@ Scroll up to the `ModalProductDetail` component, and replace the text inside the
 
 ![Add some details to the body of the modal](2-6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Run the application)] ￼
@@ -329,7 +329,7 @@ Run the application.  Click on a row, and the dialog box will display with the p
 It doesn't look great, yet.  The next tutorial will update the modal with a Bootstrap Form, and make it much more presentable.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -468,7 +468,7 @@ document.getElementById('product-list')
 );
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Review additional resources)] ￼
@@ -483,7 +483,7 @@ JavaScript:
 - [Using the `setTimeout()` method](http://www.w3schools.com/jsref/met_win_settimeout.asp)
 - [Adding additional parameters with the `bind()` method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -37,7 +37,7 @@ First, you need to check whether the `SAPOfflineOData.framework` file to your Xc
 
 Click **Finish** to close the dialog. The Offline OData framework file now appears under the `Frameworks` folder.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Examine Build Phases tab)]
@@ -50,7 +50,7 @@ Select the root project `Demo`, and switch to the **Build Phases** tab. Make sur
 
 ![Offline OData implementation](fiori-ios-hcpms-offline-odata-implementation-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add import statement)]
@@ -68,7 +68,7 @@ class ESPMContainerDataAccess {
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Change Service Declaration to Offline)]
@@ -79,7 +79,7 @@ Since the data service is used offline, you need to change the service declarati
 var service: ESPMContainer<OfflineODataProvider>
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add Offline OData Provider)]
@@ -90,7 +90,7 @@ To instantiate the above service, an offline OData provider is needed. Below the
 var offlineODataProvider: OfflineODataProvider
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Change initializer)]
@@ -132,7 +132,7 @@ init(urlSession: SAPURLSession) {
 
 > Finally, the `service` field is set to reference the `ESPMContainer` based on the offline data provider.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Build and run the application)]
@@ -143,7 +143,7 @@ Try to build and run the app. If all goes well, the build will succeed and you w
 
 This error is shown because in order to perform any operations in the offline OData store, you first need to open it. And after you have performed the operation, you need to close the store again.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Maintain State of the Offline Store)]
@@ -154,7 +154,7 @@ First, we add a new field which holds the state of the store, whether it's open 
 var isStoreOpened = false
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Change request methods for offline usage)]
@@ -213,14 +213,14 @@ private func executeRequest<T>(_ request: @escaping(DataQuery) throws -> [T],
 
 > In addition, a method or function generally should perform only one single task (the "single responsibility" principle, the first and most important principle of the SOLID object-oriented design guidelines), in this case, execute the request. But to get a better understanding of the flow of the code, it is chosen to combine the above multiple responsibilities into one method.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Build and run the application again)]
 
 Deploy your application to your iOS device, and once loaded, log on to it.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Run the application in offline mode)]
@@ -229,7 +229,7 @@ Switch on Airplane mode, and try open a collection and an entity. It should work
 
 ![Offline OData implementation](fiori-ios-hcpms-offline-odata-implementation-07.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

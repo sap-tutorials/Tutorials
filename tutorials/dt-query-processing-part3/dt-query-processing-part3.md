@@ -80,7 +80,7 @@ To open a saved plan, click on **File** > **Open File...** and then browse to wh
 
 ![Open Plan](open-prepared-plan.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create Statistics and Opening Prepared and Executed Query Plans After Running Statistics)]
@@ -100,7 +100,7 @@ Open another set of Prepared and Executed Query Plans after running statistics f
 
 Left click on one of the tabs and drag them down slightly in order to display two tabs side by side.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Analyze the Impact of Statistics on Prepared Plans)]
@@ -114,7 +114,7 @@ One of the major benefits to creating statistics is that the optimizer receives 
 
 >These results are based on SAP HANA Dynamic Tiering 2.0 SPS00 Rev 00. You may see a different query plan with a different version of HANA and/or Dynamic Tiering. Regardless of the version, the benefit of the statistics is providing the query optimizer with additional information to use in generating the query plan.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Analyze the Impact of Statistics on Executed Plans)]
@@ -128,7 +128,7 @@ Looking at the output in this example, you will notice that both the estimated #
 
 >These results are based on SAP HANA Dynamic Tiering 2.0 SPS00 Rev 00. You may see a different query plan with a different version of HANA and/or Dynamic Tiering. Regardless of the version, the benefit of the statistics is providing the query optimizer with additional information to use in generating the query plan.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps
