@@ -2,7 +2,7 @@
 title: Intro to SAP HANA Spatial: Polygons
 description: A polygon defines a region of space
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
+tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
@@ -137,7 +137,7 @@ Indeed the point (1, 1) is not within ___interior___ of your polygon from the ea
 
 [ACCORDION-BEGIN [Step 7: ](Check if a point is within a given disk)]
 
-To check if a point is within a given [disk](https://en.wikipedia.org/wiki/Disk_%28mathematics%29) you use the `ST_Boundary()` method to define the circle around an area of a particular distance from a central point.
+To check if a point is within a given [disk](https://en.wikipedia.org/wiki/Disk_%28mathematics%29) you use the `ST_Within()` method to define the circle around an area of a particular distance from a central point.
 
 ```sql
 SELECT NEW ST_Point (1,1).ST_Within(NEW ST_Point(0, 0).ST_Buffer(2)) FROM dummy;

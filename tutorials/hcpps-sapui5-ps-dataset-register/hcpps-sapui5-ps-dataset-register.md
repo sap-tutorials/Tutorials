@@ -10,7 +10,7 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
   - **Tutorials:** [Configure a SAPUI5 application from the project template](http://www.sap.com/developer/tutorials/hcpps-sapui5-configure-application.html)
 
 ## Next Steps
-  - [Manage the registered "Dataset"](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
+  - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 ### You will learn
@@ -20,6 +20,8 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
 
 ### Time to Complete
   **10 minutes**
+
+> **Note**: if you are running into some issue, you can check the [SAP Cloud Platform Predictive Services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
@@ -41,11 +43,10 @@ You will get access to the **SAP Web IDE** main page:
 
 ![Web IDE](04.png)
 
-This will open the ***SAP Web IDE*** where you have previously created the `hcppredictiveservicesdemo` application using the project template.
+This will open the ***SAP Web IDE*** where you have previously created the `predictive` application using the project template.
 
 ![HTML5 Applications](04.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
@@ -54,11 +55,11 @@ The controller will contain a function where:
 
   - we process the call to the "Register Dataset" SAP Cloud for predictive services and return the dataset identifier along with the dataset description.
 
-Create a new directory structure for **`webapp\controller\dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/controller/dataset`** either using the "File" menu or using the right click menu.
 
-Create a new file **`register.controller.js`** in `webapp\controller\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`register.controller.js`** in `webapp/controller/dataset` either using the "File" menu or using the right click menu.
 
-Open the `webapp\controller\dataset\register.controller.js` file and add the following code:
+Open the `webapp/controller/dataset/register.controller.js` file and add the following code:
 
 ```js
 sap.ui.define([
@@ -67,7 +68,7 @@ sap.ui.define([
 ], function(Controller, MessageToast) {
 	"use strict";
 
-	return Controller.extend("sapui5demo.controller.dataset.register", {
+	return Controller.extend("pspredictive.controller.dataset.register", {
 		onInit: function() {
 			if (typeof sap.ui.getCore().getModel() === 'undefined') {
 				this.getView().setModel(new sap.ui.model.json.JSONModel(), "dataset_register");
@@ -96,7 +97,7 @@ sap.ui.define([
 					'Accept': 'application/json',
 					'Content-Type': 'application/json'
 				},
-				url: "/HCPps/api/analytics/dataset/sync",
+				url: "/ps/api/analytics/dataset/sync",
 				type: "POST",
 				data: JSON.stringify(param),
 				dataType: "json",
@@ -119,11 +120,11 @@ sap.ui.define([
 		}
 	});
 });
+
 ```
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
@@ -137,25 +138,25 @@ The view will contain:
 > **Note:** the reason we use here a static select list is to avoid user errors.
 This list can be dynamically generated using an additional HANA XS OData service, that will select the proper tables from the HANA database.
 
--
+&nbsp;
 
-Create a new directory structure for **`webapp\view\dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/view/dataset`** either using the "File" menu or using the right click menu.
 
-Create a new file **`register.view.xml`** in `webapp\view\dataset` either using the "File" menu or using the right click menu.
+Create a new file **`register.view.xml`** in `webapp/view/dataset` either using the "File" menu or using the right click menu.
 
-Open the `webapp\view\dataset\register.view.xml` file and add the following code:
+Open the `webapp/view/dataset/register.view.xml` file and add the following code:
 
 ```xml
-<mvc:View controllerName="sapui5demo.controller.dataset.register" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
+<mvc:View controllerName="pspredictive.controller.dataset.register" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<form:SimpleForm title="Please select a dataset from the list then press Register">
 		<FlexBox>
 			<InputListItem label="Datasets">
 				<Select id="idSelectDataset">
-					<core:Item key="DEMO/CashFlow" text="Cash Flow (DEMO/CashFlow)"/>
-					<core:Item key="DEMO/Census" text="Census (DEMO/Census)"/>
-					<core:Item key="DEMO/Transactions" text="E-Commerce transactions (DEMO/Transactions)"/>
+					<core:Item key="PSDEMO/CashFlow" text="Cash Flow (PSDEMO/CashFlow)"/>
+					<core:Item key="PSDEMO/Census" text="Census (PSDEMO/Census)"/>
+					<core:Item key="PSDEMO/Transactions" text="E-Commerce transactions (PSDEMO/Transactions)"/>
 				</Select>
 			</InputListItem>
 		</FlexBox>
@@ -226,30 +227,25 @@ Open the `webapp\view\dataset\register.view.xml` file and add the following code
 		</table:Table>
 	</Panel>
 </mvc:View>
+
 ```
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Extend the default view)]
 
-Edit the `demo.view.xml` file located in the `webapp\view`.
+Edit the `demo.view.xml` file located in the `webapp/view`.
 
-Inside the `<detailPages>` element add the following element:
+Inside the `<detailPages>` element, uncomment the following element:
 
 ```xml
-<Page id="detail_dataset_register" title="Register your Dataset with the SAP Cloud for predictive services">
-  <content>
-    <mvc:XMLView viewName="sapui5demo.view.dataset.register"/>
-  </content>
-</Page>
+<mvc:XMLView viewName="pspredictive.view.dataset.register"/>
 ```
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run the application)]
@@ -263,19 +259,23 @@ Select the dataset you want to register from the list, then press the `Register 
 Et voilà!
 ![Applications](05.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Solution: ](Created and modified files)]
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`webapp\controller\dataset\register.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/solution-controller-dataset-register.controller.js.txt)
-  - [`webapp\view\dataset\register.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/solution-view-dataset-register.view.xml.txt)
-  - [`webapp\view\demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/solution-view-demo.view.xml.txt)
+  - [`webapp/controller/dataset/register.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/predictive/webapp/controller/dataset/register.controller.js)
+  - [`webapp/view/dataset/register.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/predictive/webapp/view/dataset/register.view.xml)
+  - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/predictive/webapp/view/demo.view.xml)
 
-[DONE]
+The complete project can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/hcpps-sapui5-ps-dataset-register/predictive).
+
+However, you won't be able to clone the repository and directly run the code from the current directory structure. You have to copy the `predictive` directory content into your existing project directory.
+
+Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
+
 [ACCORDION-END]
 
 ## Next Steps
-  - [Manage your "Data Set" in the SAP Cloud Platform predictive service from a SAPUI5 application](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
+- [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)

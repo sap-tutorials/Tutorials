@@ -1,0 +1,90 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table">
+	<form:Form editable="false" class="isReadonly">
+		<form:title>
+			<core:Title text="Model Performance Indicators"/>
+		</form:title>
+		<form:layout>
+			<form:ResponsiveGridLayout columnsL="1" columnsM="1"/>
+		</form:layout>
+		<form:formContainers>
+			<form:FormContainer>
+				<form:formElements>
+					<form:FormElement label="Quality Rating">
+						<form:fields>
+							<Text text="{forecast_fragment>/model/modelPerformance/qualityRating}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="MAPE">
+						<form:fields>
+							<Text text="{forecast_fragment>/model/modelPerformance/mape}"/>
+						</form:fields>
+					</form:FormElement>
+				</form:formElements>
+			</form:FormContainer>
+		</form:formContainers>
+	</form:Form>
+	<form:Form editable="false" class="isReadonly">
+		<form:title>
+			<core:Title text="Model Information"/>
+		</form:title>
+		<form:layout>
+			<form:ResponsiveGridLayout columnsL="1" columnsM="1"/>
+		</form:layout>
+		<form:formContainers>
+			<form:FormContainer>
+				<form:formElements>
+					<form:FormElement label="Cycles">
+						<form:fields>
+							<Text text="{forecast_fragment>/model/modelInformation/cycles}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Fluctuations">
+						<form:fields>
+							<Text text="{forecast_fragment>/model/modelInformation/fluctuations}"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Trend">
+						<form:fields>
+							<Text text="{forecast_fragment>/model/modelInformation/trend}"/>
+						</form:fields>
+					</form:FormElement>
+				</form:formElements>
+			</form:FormContainer>
+		</form:formContainers>
+	</form:Form>
+	<!-- A table with the forecasted data. It will be populated when the button is pressed-->
+	<table:Table rows="{forecast_fragment>/model/forecasts}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5" width="100%">
+		<table:columns>
+			<table:Column sortProperty="date" filterProperty="date">
+				<Label text="Date"/>
+				<table:template>
+					<Text text="{forecast_fragment>date}"/>
+				</table:template>
+			</table:Column>
+			<table:Column sortProperty="forecastValue" filterProperty="forecastValue">
+				<Label text="Forecasted value"/>
+				<table:template>
+					<Text text="{forecast_fragment>forecastValue}"/>
+				</table:template>
+			</table:Column>
+			<table:Column sortProperty="realValue" filterProperty="realValue">
+				<Label text="Real value (if any)"/>
+				<table:template>
+					<Text text="{forecast_fragment>realValue}"/>
+				</table:template>
+			</table:Column>
+			<table:Column>
+				<Label text="Error Bar Lower Bound"/>
+				<table:template>
+					<Text text="{forecast_fragment>errorBarLowerBound}"/>
+				</table:template>
+			</table:Column>
+			<table:Column>
+				<Label text="Error Bar Higher Bound"/>
+				<table:template>
+					<Text text="{forecast_fragment>errorBarHigherBound}"/>
+				</table:template>
+			</table:Column>
+		</table:columns>
+	</table:Table>
+</core:FragmentDefinition>

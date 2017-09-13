@@ -31,7 +31,7 @@ Click on your ***SAP Cloud Platform Account name*** as highlighted on the below 
 
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
--
+&nbsp;
 
 ![SAP Cloud Platform Cockpit](01.png)
 
@@ -49,10 +49,9 @@ Click on **Enable**
 
 Once enable, you will need to deploy the ***Cloud for Predictive Analytics*** application.
 
-[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Deploy the Cloud for Predictive Analytics application)]
+[ACCORDION-BEGIN [Step 2: ](Deploy the Predictive Services application)]
 Click on **Go To Service**
 
 ![Predictive Services](04.png)
@@ -79,7 +78,6 @@ Click on **OK** to confirm the deployment
 
 ![Cloud for Predictive Analytics](08.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Configure the data source binding)]
@@ -112,7 +110,6 @@ Click on **Save**
 
 ![Binding](13.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Assign the roles to your user)]
@@ -135,7 +132,6 @@ The **`C4PA-User`** will enable your user to consume the services and the **`C4P
 >
 > And in case you are using a trial account, make sure you don't include the "trial" at the end.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Modify the Authentication scheme)]
@@ -147,17 +143,18 @@ On the left side bar, navigate in **Security**, then click on **Authentication C
 
 Click on **Activate Custom Configuration**.
 
+![Authentication](15.png?)
+
 Check **User name and password** and **Client certificate** for the ***FORM*** authentication scheme
 
 Click on **Save**
 
-![Authentication](15.png)
+![Authentication](15-1.png)
 
 Next, you will receive next an alert regarding the fact that the changes will be applied on the next restart, which is what we will do next.
 
 ![Authentication](16.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Start the application)]
@@ -174,7 +171,6 @@ Once started, you will be provided with the **Application URLs** which will give
 
 Later, you will be using the ***Application URLs***, so you should save the highlighted URL in a notepad as your ***C4PA Application URL***.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Verify the setup)]
@@ -191,7 +187,6 @@ Status is green! Congrats, you have configured the SAP Cloud for predictive serv
 
 ![Application](20.png)   
 
-[DONE]
 [ACCORDION-END]
 
 ## Next Steps

@@ -288,7 +288,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 	controllerName="sapui5ml.controller.demo" displayBlock="true">
 	<App>
 		<pages>
-			<Page title="Topic Detection">
+			<Page title="Change Point Detection">
 				<content>
 					<HBox width="100%">
 						<items>
