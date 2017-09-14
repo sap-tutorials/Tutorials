@@ -64,16 +64,16 @@ Open a new tab in ***Postman***.
 Fill in the following information:
 
 Field Name     | Value
--------------- | --------------
+:------------- | :--------------
 Request Type   | <code><b>POST</b></code>
-URL            | <code><b>C4PAURL</b>/api/analytics/dataset/sync</code>
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/sync`
 
 ![Postman URL](01.png)
 
 Select the **Authorization** tab and fill in the following information:
 
 Field Name     | Value
--------------- | -------------
+:------------- | :-------------
 Type           | **`Basic Auth`**
 Username       | your ***SAP Cloud Platform Account*** login*
 Password*      | your ***SAP Cloud Platform Account*** password
@@ -191,7 +191,7 @@ You should receive the description of the first variable from your data set.
 >This service is available since version 1.7, please make sure you have upgraded the C4PA application, else you will receive a 404 error.
 >
 >To check which version you are currently using, please go to the following URL and check the `X-Maven-Project-Version` property:
->  - <code><b>C4PAURL</b>/adminUI/index.html#/about</code>
+>  - <code><b>C4PAURL</b></code>`/adminUI/index.html#/about`
 
 &nbsp;
 
@@ -206,7 +206,7 @@ Open a new tab in ***Postman***.
 Fill in the following information:
 
 Field Name     | Value
--------------- | --------------
+:------------- | :--------------
 Request Type   | <code><b>POST</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/`<code><b>ID</b></code>`/variables/update`
 

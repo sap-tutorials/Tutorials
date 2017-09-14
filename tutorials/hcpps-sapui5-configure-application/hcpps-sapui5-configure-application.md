@@ -58,7 +58,7 @@ On the ***Destinations*** overview page, click on **New Destination**
 Enter the following information:
 
 Field Name           | Value
--------------------- | --------------
+:------------------- | :--------------
 Name                 | `psapi`
 Type                 | `HTTP`
 Description          | `SAP Cloud Platform Predictive Services Destination`
@@ -73,7 +73,7 @@ Authentication       | `AppToAppSSO`
 Then you will need to add the following properties to the destination:
 
 Property Name          | Value
----------------------- | --------------
+:--------------------- | :--------------
 `WebIDEEnabled`        | `true`
 
 Click on **Save**
@@ -113,7 +113,7 @@ Select the **SAPUI5 Application** tile, then click on **Next**
 Enter the following information, then click on **Next**
 
 Field Name           | Value
--------------------- | --------------
+:------------------- | :--------------
 Project Name         | `predictive`
 Namespace            | `ps`
 
@@ -122,7 +122,7 @@ Namespace            | `ps`
 Enter the following information, then click on **Finish**
 
 Field Name           | Value
--------------------- | --------------
+:------------------- | :--------------
 View Type            | `XML`
 View Name            | `demo`
 

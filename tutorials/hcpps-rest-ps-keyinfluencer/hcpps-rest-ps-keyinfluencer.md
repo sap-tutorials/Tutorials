@@ -79,7 +79,7 @@ The Census sample data file that you will use to follow the scenarios for Regres
 This file presents the data on 48,842 individual Americans, of at least 17 years of age. Each individual is characterized by 15 data items. These data, or variables, are described in the following table.
 
 Variable | Description | Example of Values
--------------- | -------------- | --------------
+:------------- | :-------------- | :--------------
 <nobr>`age`</nobr> | Age of individuals | Any numerical value greater than 17
 <nobr>`workclass`</nobr> | Employer category of individuals | Private, Self-employed-not-inc, ...
 <nobr>`fnlwgt`</nobr> | Weight variable, allowing each individual to represent a certain percentage of the population | Any numerical value, such as 0, 2341 or 205019
@@ -110,7 +110,7 @@ Open a new tab in ***Postman***.
 &nbsp;
 
 Field Name     | Value
--------------- | --------------
+:------------- | :--------------
 Request Type   | <code><b>POST</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/sync`
 
@@ -134,7 +134,7 @@ Open a new tab in ***Postman***.
 Fill in the following information:
 
 Field Name     | Value
--------------- | --------------
+:------------- | :--------------
 Request Type   | <code><b>POST</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/keyinfluencer/sync`
 
@@ -384,7 +384,7 @@ Open a new tab in ***Postman***.
 Fill in the following information
 
 Field Name     | Value
--------------- | --------------
+:------------- | :--------------
 Request Type   | <code><b>POST</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/keyinfluencer/sync`
 
