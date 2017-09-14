@@ -23,7 +23,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 > In order to ease the readability of this tutorial, we have used tokens to replace long URLs.
 > Therefore you can replace any occurrence of the token by the value listed above:
 >
-> - **`C4PAURL`** : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
+> - <code><b>C4PAURL</b></code> : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
 >     
 ```
      https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
@@ -65,8 +65,8 @@ Fill in the following information:
 
 Field Name     | Value
 -------------- | --------------
-Request Type   | `POST`
-URL            | `C4PAURL/api/analytics/dataset/sync`
+Request Type   | <code><b>POST</b></code>
+URL            | <code><b>C4PAURL</b>/api/analytics/dataset/sync</code>
 
 ![Postman URL](01.png)
 
@@ -146,10 +146,10 @@ Fill in the following information:
 
 Field Name     | Value
 :------------- | :-------------
-Request Type   | `GET`
-URL            | **`C4PAURL`**`/api/analytics/dataset/ID`
+Request Type   | <code><b>GET</b></code>
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/`<code><b>ID</b></code>
 
-> Make sure you replace the **`ID`** token in the URL with the one returned by the dataset **`ID`** return in the previous service call.
+> Make sure you replace the <code><b>ID</b></code> token in the URL with the one returned by the dataset <code><b>ID</b></code> return in the previous service call.
 
 &nbsp;
 
@@ -170,10 +170,10 @@ Fill in the following information
 
 Field Name     | Value
 :------------- | :-------------
-Request Type   | `GET`
-URL            | `C4PAURL/api/analytics/dataset/**ID**/variables/1`
+Request Type   | <code><b>GET</b></code>
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/`<code><b>ID</b></code>`/variables/1`
 
-> Make sure you replace the **`ID`** token in the URL with the one returned by the dataset **`ID`** return in the first service call.
+> Make sure you replace the <code><b>ID</b></code> token in the URL with the one returned by the dataset <code><b>ID</b></code> return in the first service call.
 
 &nbsp;
 
@@ -191,7 +191,7 @@ You should receive the description of the first variable from your data set.
 >This service is available since version 1.7, please make sure you have upgraded the C4PA application, else you will receive a 404 error.
 >
 >To check which version you are currently using, please go to the following URL and check the `X-Maven-Project-Version` property:
->  - **`C4PAURL`**`/adminUI/index.html#/about`
+>  - <code><b>C4PAURL</b>/adminUI/index.html#/about</code>
 
 &nbsp;
 
@@ -207,10 +207,10 @@ Fill in the following information:
 
 Field Name     | Value
 -------------- | --------------
-Request Type   | `POST`
-URL            | **`C4PAURL`**`/api/analytics/dataset/ID/variables/update`
+Request Type   | <code><b>POST</b></code>
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/`<code><b>ID</b></code>`/variables/update`
 
-> Make sure you replace the **`ID`** token in the URL with the one returned by the dataset **`ID`** return in the first service call.
+> Make sure you replace the <code><b>ID</b></code> token in the URL with the one returned by the dataset <code><b>ID</b></code> return in the first service call.
 
 &nbsp;
 
@@ -237,10 +237,10 @@ Fill in the following information
 
 Field Name     | Value
 :------------- | :-------------
-Request Type   | `DELETE`
-URL            | **`C4PAURL`**`/api/analytics/dataset/ID`
+Request Type   | <code><b>DELETE</b></code>
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/`<code><b>ID</b></code>
 
-> Make sure you replace the **`ID`** token in the URL with the one returned by the dataset **`ID`** return in the first service call.
+> Make sure you replace the <code><b>ID</b></code> token in the URL with the one returned by the dataset <code><b>ID</b></code> return in the first service call.
 
 &nbsp;
 
@@ -262,8 +262,8 @@ Fill in the following information
 
 Field Name     | Value
 :------------- | :-------------
-Request Type   | `GET`
-URL            | **`C4PAURL`**`/api/analytics/dataset/`
+Request Type   | <code><b>GET</b></code>
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/`
 
 Select the **Authorization** tab and fill in the same details as in the previous call.
 
