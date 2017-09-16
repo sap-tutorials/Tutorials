@@ -21,7 +21,7 @@ The image currently only includes the HANA database engine. XS Advanced is not i
 
 ## Details
 ### You will learn  
-This tutorial will guide you through the process to create a new Google Cloud Platform virtual instance based on SAP HANA, express edition. You will also learn how to set up your new instance and enable it for tutorials and developing your first application.
+You will also learn how to set up your new instance and enable it for tutorials and developing your first application.
 
 
 ### Time to Complete
@@ -42,7 +42,13 @@ You will be presented with two options:
 
 ![Options in GCP](options.png)
 
-Click on the **Launch on Compute Engine** button of the preferred option. The next page will allow you to modify the default configuration for the Cloud Virtual Machine.
+Click on the option of your choice.
+
+Click on the **Launch on Compute Engine** button of the preferred option.
+
+![Launch Compute Engine](1.png)
+
+The next page will allow you to modify the default configuration for the Cloud Virtual Machine.
 
 ![Launch Compute Engine](2.png)
 
