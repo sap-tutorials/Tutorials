@@ -1,6 +1,6 @@
 ---
 title: Building freestyle IoT application
-description: Building freestyle IoT application using SAP Web IDE Multi-Cloud in SAP Cloud Platform
+description: Building freestyle IoT application using SAP Web IDE for Full-Stack Development in SAP Cloud Platform
 primary_tag: topic>internet-of-things
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-web-ide ]
 ---
@@ -22,8 +22,8 @@ You will learn the workflow of building the freestyle IoT application using SAP 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Start SAP Web IDE Multi-Cloud Version)]
-SAP Web IDE, multi-cloud version is a powerful, extensible, web-based integrated development tool that simplifies end-to-end application development for SAP Cloud Platform.
+[ACCORDION-BEGIN [Step 1: ](Start SAP Web IDE for Full-Stack Development)]
+SAP Web IDE for Full-Stack Development is a powerful, extensible, web-based integrated development tool that simplifies end-to-end application development for SAP Cloud Platform.
 
 Start Web IDE in IoT Explore tenant using https://webidecp-a2667617c.dispatcher.hana.ondemand.com/
 
