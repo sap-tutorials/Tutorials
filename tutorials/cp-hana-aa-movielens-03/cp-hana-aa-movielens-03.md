@@ -1,4 +1,4 @@
-DESC---
+---
 title: SAP HANA APL & the MovieLens dataset
 description: Understand the capabilities and options made available with SAP HANA APL and apply them to the data set to build your recommendation engine
 auto_validation: true

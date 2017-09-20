@@ -75,13 +75,11 @@ Assuming you don't already have a SAP Cloud Platform trial account, you will see
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 5: ](Access the SAP Cloud Platform cockpit)]
 
 Once you have accepted the Terms and Conditions and registered, the SAP Cloud Platform cockpit will load.
 
 ![SAP Cloud Platform cockpit](hcp-07.png)
-
 
 [DONE]
 [ACCORDION-END]
