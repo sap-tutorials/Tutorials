@@ -230,5 +230,6 @@ Click on **Catalog**.
 Expand the **Catalog** and browse the schemas available with the **TRIAL** user.
 
 Provide an answer to the question below then click on **Validate**.
+
 [VALIDATE_2]
 [ACCORDION-END]

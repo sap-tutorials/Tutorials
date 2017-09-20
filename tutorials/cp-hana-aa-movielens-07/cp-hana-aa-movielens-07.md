@@ -423,5 +423,6 @@ The complete project can be found on the SAP Tutorial public <a href="https://gi
 However, you won't be able to clone the repository and directly run the code from the current directory structure. You have to copy the `movielens` directory content into your existing project directory.
 
 Make sure you check the <a href="https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt" target="new">LICENSE</a> before starting using its content.
+
 [DONE]
 [ACCORDION-END]
