@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Login, administration, set up new users](https://www-qa.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)
+ - **Tutorials:** [Login, administration, set up new users](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)
 
 ## Next Steps
 - This is the end of this series

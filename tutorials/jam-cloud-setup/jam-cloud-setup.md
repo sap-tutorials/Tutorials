@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic
  - **Proficiency:** Beginner
 
 ## Next Steps
-- [Login, administration, set up new users](https://www-qa.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)
+- [Login, administration, set up new users](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)
 
 ## Details
 ### You will learn  
@@ -91,7 +91,7 @@ The SAP Cloud Platform cockpit welcome page is displayed.
 
 ![The SAP Cloud Platform cockpit welcome page](loio9176df65298148d0aeefe6e56c4c5bd5_HiRes.png)
 
-igure 7: The SAP Cloud Platform cockpit welcome page
+Figure 7: The SAP Cloud Platform cockpit welcome page
 
 Click **Continue**.
 
@@ -141,4 +141,4 @@ To access the developer support communities, where you can post your questions, 
 
 
 ## Next Steps
-- [Login, administration, set up new users](https://www-qa.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)
+- [Login, administration, set up new users](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)

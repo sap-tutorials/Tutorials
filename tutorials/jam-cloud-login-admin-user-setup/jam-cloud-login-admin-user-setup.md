@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP Cloud Platform and SAP Jam Collaboration developer access](https://www-qa.sap.com/developer/tutorials/jam-cloud-setup.html)
+ - **Tutorials:** [SAP Cloud Platform and SAP Jam Collaboration developer access](https://www.sap.com/developer/tutorials/jam-cloud-setup.html)
 
 ## Next Steps
-- [Create a Group, invite users, add content, create a poll, add ideas](https://www-qa.sap.com/developer/tutorials/jam-cloud-group-users-poll-ideas.html)
+- [Create a Group, invite users, add content, create a poll, add ideas](https://www.sap.com/developer/tutorials/jam-cloud-group-users-poll-ideas.html)
 
 ## Details
 ### You will learn  
@@ -113,6 +113,8 @@ Figure 2: Assign roles to SAP Jam users
 
 Unlike the Administrator, the additional users do not log into SAP Jam from don't pick up any existing sessions and paste the URL. You will be presented with an SAP Jam Developer Edition, right-click on the **Go To Service** link within the SAP Jam Services section of the SAP Cloud Platform Account Cockpit and select **Copy Link Address from within the SAP Cloud Platform Cockpit. To get the URL for the login page for your** .
 
+Unlike the Administrator, the additional users do not log into SAP Jam from within the SAP Cloud Platform Cockpit. To get the URL for the login page for your SAP Jam developer edition, right-click on the **Go To Service** link within the SAP Jam Services section of the SAP Cloud Platform Account Cockpit and select **Copy Link Address**.
+
 
 
 ![Get the new user login URL](loio51a039a98d0e418e8bf1ea2da69de001_HiRes.png)
@@ -121,7 +123,7 @@ Unlike the Administrator, the additional users do not log into SAP Jam from don'
 
 Figure 3: Get the new user login URL
 
-SAP Jam Developer Edition login page.
+Start a new browser window/Incognito window/private browsing session such that you don't pick up any existing sessions and paste the URL. You will be presented with an SAP Jam developer edition login page.
 
 
 
@@ -131,7 +133,7 @@ SAP Jam Developer Edition login page.
 
 Figure 4: Login as the new user
 
-As you will see from the Login page, the SAP JamStart a new browser window/Incognito window/private browsing session such that you Developer Edition relies on SAP Cloud Platform Identity Authentication as its Identity Provider (IDP) so any additional users you use must have an SAP Cloud Platform Identity Authentication account. For this article, I used my SAP details as well as a personal email address to create two users.
+As you will see from the Login page, the SAP Jam developer edition relies on the SAP ID Service as its Identity Provider (IDP) so any additional users must have an SAP Cloud Platform Identity account.
 
 Once you have entered your credentials, a new user is created in your SAP Jam Developer Edition and you will consume another of the 3 available licenses. You can view the users in your environment by navigating to the Users area of the Admin Console.
 
@@ -159,4 +161,4 @@ Figure 6: Remove a user by setting their 'status' to 'Alumni'
 ---
 
 ## Next Steps
-- [Create a Group, invite users, add content, create a poll, add ideas](https://www-qa.sap.com/developer/tutorials/jam-cloud-group-users-poll-ideas.html)
+- [Create a Group, invite users, add content, create a poll, add ideas](https://www.sap.com/developer/tutorials/jam-cloud-group-users-poll-ideas.html)
