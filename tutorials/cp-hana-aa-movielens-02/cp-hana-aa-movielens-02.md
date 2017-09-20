@@ -333,7 +333,7 @@ Also the tag data can only be used to address a content-based filtering approach
 
 &nbsp;
 
-Using the result provided by the previous SQL statement, provide an answer to the question below then click on **Validate**.
+Using the results provided by the previous SQL statements, provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_4]
 [ACCORDION-END]
