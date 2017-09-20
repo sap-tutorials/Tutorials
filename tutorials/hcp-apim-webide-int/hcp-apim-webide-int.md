@@ -162,7 +162,7 @@ You can find the SAP Web IDE by clicking on **Services**.
 
 ![Click on Services](13-Service.png)
 
-From the section **Dev & Ops**, select **SAP Web IDE**. (Not the Multi-Cloud Version!)
+From the section **Dev & Ops**, select **SAP Web IDE**. (Not the full-stack version!)
 
 ![Click on SAP Web IDE](14-WebIDE.png)
 
