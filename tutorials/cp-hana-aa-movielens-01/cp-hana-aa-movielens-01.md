@@ -101,14 +101,14 @@ Check the message console, and make sure there is no errors. The following messa
 
 [ACCORDION-BEGIN [Step 3: ](Download the dataset locally)]
 
-As the files get updated periodically, and in order to ensure consistency of content and validation, the data is available under the <a href="https://github.com/SAPDocuments/Tutorial-Contribution/tree/master/tutorials/hcp-hana-aa-cds-import-movielens/csv" target="new">`csv`</a> directory within the SAP Tutorial GitHub repository.
+As the files get updated periodically, and in order to ensure consistency of content and validation, the data is available under the <a href="https://github.com/SAPDocuments/Tutorial-Contribution/tree/master/tutorials/cp-hana-aa-movielens-01/csv" target="new">`csv`</a> directory within the SAP Tutorial GitHub repository.
 
 Download the following files locally (right click on the link, then use the ***Save link as*** option):
 
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-hana-aa-cds-import-movielens/csv/links.csv" target="new">links</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-hana-aa-cds-import-movielens/csv/movies.csv" target="new">movies</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-hana-aa-cds-import-movielens/csv/ratings.csv" target="new">ratings</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-hana-aa-cds-import-movielens/csv/tags.csv" target="new">tags</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/links.csv" target="new">links</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/movies.csv" target="new">movies</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/ratings.csv" target="new">ratings</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/tags.csv" target="new">tags</a>
 
 Again, before using these files, make sure you have reviewed the dataset <a href="http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html" target="new">README</a> file for the usage licenses and other details.
 
@@ -127,10 +127,10 @@ Click on **Import**.
 
 Repeat the operation for all the previously downloaded files:
 
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-hana-aa-cds-import-movielens/csv/links.csv" target="new">links</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-hana-aa-cds-import-movielens/csv/movies.csv" target="new">movies</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-hana-aa-cds-import-movielens/csv/ratings.csv" target="new">ratings</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-hana-aa-cds-import-movielens/csv/tags.csv" target="new">tags</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/links.csv" target="new">links</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/movies.csv" target="new">movies</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/ratings.csv" target="new">ratings</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/tags.csv" target="new">tags</a>
 
 Your package structure should now look like this:
 

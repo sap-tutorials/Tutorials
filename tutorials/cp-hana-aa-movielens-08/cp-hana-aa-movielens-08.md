@@ -370,7 +370,7 @@ The view will contain:
 
 Edit the `demo.view.xml` file located in the `webapp/view`.
 
-Inside the `<detailPages>` element, and uncomment the following element:
+Inside the `<detailPages>` element, uncomment the following element like this:
 
 ```xml
 <mvc:XMLView viewName="mlmovielens.view.contentbased"/>

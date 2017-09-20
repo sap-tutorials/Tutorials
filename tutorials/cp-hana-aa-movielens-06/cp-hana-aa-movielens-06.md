@@ -270,7 +270,7 @@ This will open a web page with the following content:
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-06/movielens/manifest.json" target="new">`manifest.json`</a>
+  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-06/movielens/webapp/manifest.json" target="new">`manifest.json`</a>
   - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-06/movielens/webapp/controller/demo.controller.js" target="new">`webapp/controller/demo.controller.js`</a>
   - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-06/movielens/webapp/view/demo.view.xml" target="new">`webapp/view/demo.view.xml`</a>
 
