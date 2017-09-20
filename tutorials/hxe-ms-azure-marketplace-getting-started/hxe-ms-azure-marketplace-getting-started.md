@@ -1,7 +1,7 @@
 ---
 title: SAP HANA, express edition - Getting started with the Marketplace on Microsoft Azure
 description: Get your SAP HANA, express edition, instance from the launcher in MS Azure
-primary_tag: products>sap-hana\,-express-edition
+primary_tag: products>sap-hana\,-express-edition 
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 
