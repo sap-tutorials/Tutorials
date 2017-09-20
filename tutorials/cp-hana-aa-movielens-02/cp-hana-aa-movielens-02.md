@@ -588,7 +588,5 @@ However, while using this data will, you will need to pay attention to the follo
 >For example if we try to analyze grocery receipts, you can agree that many customer will "buy" a plastic bags (at least in France because we have a tendency to leave them in the car). But as an item it doesn't make sense to use it as it will be linked to many users and therefore many other items.
 
 &nbsp;
-
 [DONE]
 [ACCORDION-END]
-

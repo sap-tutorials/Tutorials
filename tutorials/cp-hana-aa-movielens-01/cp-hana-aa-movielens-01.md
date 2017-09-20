@@ -397,7 +397,5 @@ select 'tags'    as "table name", count(1) as "row count" from "MOVIELENS"."publ
 ```
 
 Based on the result returned by the above SQL statement, provide an answer to the question below then click on **Validate**.
-
 [VALIDATE_1]
 [ACCORDION-END]
-

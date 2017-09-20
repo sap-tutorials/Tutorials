@@ -183,7 +183,5 @@ Append the following text to your XS OData URL:
 You should get the first (top) recommendation from the APL algorithm results for user id 1.
 
 Provide an answer to the question below then click on **Validate**.
-
 [VALIDATE_1]
 [ACCORDION-END]
-
