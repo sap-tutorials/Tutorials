@@ -377,15 +377,15 @@ GROUP BY "RATING_COUNT";
 
 And the result is:
 
-  Aggregation  | Value
----------------|------
-           MIN | 1
-           MAX | 341
-           AVG | 104.135135
-           SUM | 19265
-        MEDIAN | 93
-        STDDEV | 73.027825
-CATEGORY_COUNT | 185
+  Aggregation    | Value
+-----------------|------
+           `MIN` | 1
+           `MAX` | 341
+           `AVG` | 104.135135
+           `SUM` | 19265
+        `MEDIAN` | 93
+        `STDDEV` | 73.027825
+`CATEGORY_COUNT` | 185
 
 Using the results provided by the previous SQL statements, provide an answer to the question below then click on **Validate**.
 
@@ -429,15 +429,15 @@ GROUP BY "RATING_COUNT" ORDER BY 1 DESC;
 
 And the result is:
 
-  Aggregation  | Value
----------------|------
-           MIN | 20
-           MAX | 2391
-           AVG | 274.420454
-           SUM | 72447
-        MEDIAN | 174
-        STDDEV | 322.354847
-CATEGORY_COUNT | 264
+  Aggregation    | Value
+-----------------|------
+           `MIN` | 20
+           `MAX` | 2391
+           `AVG` | 274.420454
+           `SUM` | 72447
+        `MEDIAN` | 174
+        `STDDEV` | 322.354847
+`CATEGORY_COUNT` | 264
 
 Using the results provided by the previous SQL statements, provide an answer to the question below then click on **Validate**.
 
@@ -555,7 +555,7 @@ But the average is 200/5 = 40 which is really far from the maximum. Actually wit
 >
 >In short, when a node (here a user) has 4 times more links (rating) than the standard deviation value, this node can be considered as a *mega hub* and can be associated to an outlier node, and usually should be flagged or excluded from the model.
 >
->Definition by the author, Abdel Dadouche (not meant to be fully scientific & open to discussions)
+>Definition by the author, `Abdel Dadouche` (not meant to be fully scientific & open to discussions)
 
 &nbsp;
 
