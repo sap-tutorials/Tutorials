@@ -400,3 +400,4 @@ Based on the result returned by the above SQL statement, provide an answer to th
 
 [VALIDATE_1]
 [ACCORDION-END]
+
