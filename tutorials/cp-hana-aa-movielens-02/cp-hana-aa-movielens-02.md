@@ -456,18 +456,18 @@ GROUP BY "RATING" ORDER BY 1 DESC;
 
 And the result is:
 
-RATING | RATING_COUNT
--------|--------------
-   5   |       15095
-   4.5 |        7723
-   4   |       28750
-   3.5 |       10538
-   3   |       20064
-   2.5 |        4449
-   2   |        7271
-   1.5 |        1687
-   1   |        3326
-   0.5 |        1101
+`RATING` | `RATING_COUNT`
+---------|--------------
+   5     |       15095
+   4.5   |        7723
+   4     |       28750
+   3.5   |       10538
+   3     |       20064
+   2.5   |        4449
+   2     |        7271
+   1.5   |        1687
+   1     |        3326
+   0.5   |        1101
 
 Now let's determine the users distribution per rating notation using the following SQL:
 
@@ -482,18 +482,18 @@ GROUP BY "RATING" ORDER BY 1 DESC;
 
 And the result is:
 
-RATING | USERS_COUNT
--------|-------------
-   5   |        644
-   4.5 |        339
-   4   |        669
-   3.5 |        346
-   3   |        655
-   2.5 |        286
-   2   |        554
-   1.5 |        199
-   1   |        409
-   0.5 |        177
+`RATING` | `USERS_COUNT`
+---------|-------------
+   5     |        644
+   4.5   |        339
+   4     |        669
+   3.5   |        346
+   3     |        655
+   2.5   |        286
+   2     |        554
+   1.5   |        199
+   1     |        409
+   0.5   |        177
 
 Now let's determine the movies distribution per rating notation using the following SQL:
 
@@ -508,18 +508,18 @@ GROUP BY "RATING" ORDER BY 1 DESC;
 
 And the result is:
 
-RATING | MOVIES_COUNT
--------|--------------
-   5   |         3127
-   4.5 |         2454
-   4   |         5141
-   3.5 |         3612
-   3   |         4771
-   2.5 |         2409
-   2   |         3130
-   1.5 |         1204
-   1   |         1959
-   0.5 |          868
+`RATING` | `MOVIES_COUNT`
+---------|--------------
+   5     |         3127
+   4.5   |         2454
+   4     |         5141
+   3.5   |         3612
+   3     |         4771
+   2.5   |         2409
+   2     |         3130
+   1.5   |         1204
+   1     |         1959
+   0.5   |          868
 
 Using the results provided by the previous SQL statements, provide an answer to the question below then click on **Validate**.
 
