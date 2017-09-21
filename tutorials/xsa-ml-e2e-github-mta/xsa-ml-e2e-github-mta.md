@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>html5, topic>machine-learning,
 
 ## Details
 ### You will learn  
-Describe what the user will learn from your tutorial and what the outcome will be.
+Create a Multi Target Project by cloning a repostory from GitHub
 
 ### Time to Complete
 **15 Min**
