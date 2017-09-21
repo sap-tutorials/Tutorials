@@ -1,6 +1,7 @@
 ---
 title: Create a destination for your live OData service
 description: Create a Destination to allow SAP Cloud Platform to read data
+auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, topic>cloud, topic>mobile, topic>odata, tutorial>beginner ]
 ---

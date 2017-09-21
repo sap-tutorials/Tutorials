@@ -1,6 +1,7 @@
 ---
 title: Import your TechEd BUILD project into SAP Web IDE
-description: Once your prototype is complete, you can import it as a template into SAP Web IDE to convert it to UI5 code.
+description: Once your prototype is complete, you can import it as a template into SAP Web IDE to convert it to UI5 code
+auto_validation: true
 primary_tag: products>build>build
 tags: [  tutorial>beginner, topic>sapui5, products>build>build, products>sap-web-ide, products>sap-web-ide-plug-ins ]
 ---
