@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>html5, topic>machine-learning,
 
 ## Details
 ### You will learn  
-Create a Multi Target Project by cloning a repostory from GitHub
+Create a Multi Target Project by cloning a repository from GitHub.
 
 ### Time to Complete
 **15 Min**
