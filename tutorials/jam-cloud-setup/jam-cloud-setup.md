@@ -1,6 +1,6 @@
 ---
-title: SAP Cloud Platform and SAP Jam Collaboration developer access
-description: Sign-up for a free SAP Cloud Platform developer account with an instance of SAP Jam
+title: Register for SAP Cloud Platform and SAP Jam Collaboration developer access
+description: Sign-up for a free SAP Cloud Platform developer account and a free trial instance of SAP Jam.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
 ---
@@ -9,11 +9,13 @@ tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic
  - **Proficiency:** Beginner
 
 ## Next Steps
-- [Login, administration, set up new users](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)
+- [Initial setup of SAP Jam Collaboration Developer Edition](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to sign-up for a free SAP Cloud Platform developer account with an instance of SAP Jam.
+In this tutorial you will learn how to sign-up for a free:
+- SAP Cloud Platform developer account.
+- trial instance of SAP Jam Collaboration.
 
 ### Time to Complete
 **15 Min**
@@ -36,7 +38,7 @@ Figure 1: The SAP Cloud Platform cockpit log-in page
 
 [ACCORDION-BEGIN [Step 2: ](Create your developer account)]
 
-To create your new developer account, click Register Now.
+To create your new developer account, click **Register Now**.
 
 The SAP Cloud Platform registration page is displayed.
 
@@ -141,4 +143,4 @@ To access the developer support communities, where you can post your questions, 
 
 
 ## Next Steps
-- [Login, administration, set up new users](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)
+- [Initial setup of SAP Jam Collaboration Developer Edition](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)

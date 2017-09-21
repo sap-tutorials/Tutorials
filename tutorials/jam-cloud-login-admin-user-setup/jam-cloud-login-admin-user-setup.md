@@ -1,20 +1,23 @@
 ---
-title: Login, administration, set up new users
-description: Login, access the Administration console, and set up new users
+title: Initial setup of SAP Jam Collaboration Developer Edition
+description: Demonstrates how to login, perform administration, and setup new users in SAP Jam Collaboration Developer Edition.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP Cloud Platform and SAP Jam Collaboration developer access](https://www.sap.com/developer/tutorials/jam-cloud-setup.html)
+ - **Tutorials:** [Register for SAP Cloud Platform and SAP Jam Collaboration developer access](https://www.sap.com/developer/tutorials/jam-cloud-setup.html)
 
 ## Next Steps
-- [Create a Group, invite users, add content, create a poll, add ideas](https://www.sap.com/developer/tutorials/jam-cloud-group-users-poll-ideas.html)
+- [Using Groups in SAP Jam Collaboration Developer Edition](https://www.sap.com/developer/tutorials/jam-cloud-group-users-poll-ideas.html)
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to login, access the Administration console, and set up new users.
+In this tutorial you will learn how to:
+- log in to your SAP Jam instance from your SAP Cloud Platform account cockpit.
+- access the Administration console of your SAP Jam Developer Edition instance.
+- add users to your SAP Jam Developer Edition instance.
 
 ### Time to Complete
 **15 Min**
@@ -23,7 +26,7 @@ In this tutorial you will learn how to login, access the Administration console,
 
 [ACCORDION-BEGIN [Step 1: ](Login)]
 
-Clicking on the Go To Service link within the SAP Jam Collaboration Services section of the SAP Cloud Platform Account Cockpit will log you in to your SAP Jam Developer Edition environment. You will be logged in as the SAP Jam administrator.
+Clicking on the **Go To Service** link within the SAP Jam Collaboration Services section of the SAP Cloud Platform Account Cockpit will log you in to your SAP Jam Developer Edition environment. You will be logged in as the SAP Jam administrator.
 
 
 
@@ -61,7 +64,7 @@ From this page you can post feed update updates, documents, videos and access ot
 
 [ACCORDION-BEGIN [Step 2: ](Access the Administration console)]
 
-To access the SAP Jam Collaboration Admin Console, click in the Cog icon at the top of the page and select the Admin menu option.
+To access the SAP Jam Collaboration Admin Console, click in the **Cog** icon at the top of the page and select the **Admin** menu option.
 
 
 
@@ -111,8 +114,6 @@ For the additional users that you require to login to the SAP Jam developer edit
 
 Figure 2: Assign roles to SAP Jam users
 
-Unlike the Administrator, the additional users do not log into SAP Jam from don't pick up any existing sessions and paste the URL. You will be presented with an SAP Jam Developer Edition, right-click on the **Go To Service** link within the SAP Jam Services section of the SAP Cloud Platform Account Cockpit and select **Copy Link Address from within the SAP Cloud Platform Cockpit. To get the URL for the login page for your** .
-
 Unlike the Administrator, the additional users do not log into SAP Jam from within the SAP Cloud Platform Cockpit. To get the URL for the login page for your SAP Jam developer edition, right-click on the **Go To Service** link within the SAP Jam Services section of the SAP Cloud Platform Account Cockpit and select **Copy Link Address**.
 
 
@@ -135,7 +136,7 @@ Figure 4: Login as the new user
 
 As you will see from the Login page, the SAP Jam developer edition relies on the SAP ID Service as its Identity Provider (IDP) so any additional users must have an SAP Cloud Platform Identity account.
 
-Once you have entered your credentials, a new user is created in your SAP Jam Developer Edition and you will consume another of the 3 available licenses. You can view the users in your environment by navigating to the Users area of the Admin Console.
+Once you have entered your credentials, a new user is created in your SAP Jam Developer Edition and you will consume another of the 3 available licenses. You can view the users in your environment by navigating to the **Users** area of the Admin Console.
 
 
 
@@ -145,7 +146,7 @@ Once you have entered your credentials, a new user is created in your SAP Jam De
 
 Figure 5: View your users in the SAP Jam Admin Console's Users page
 
-You can also remove a user by editing the user and setting their Member Status to Alumni. This will then free up another license for use.
+You can also remove a user by editing the user and setting their Member Status to 'Alumni'. This will then free up another license for use.
 
 
 
@@ -161,4 +162,4 @@ Figure 6: Remove a user by setting their 'status' to 'Alumni'
 ---
 
 ## Next Steps
-- [Create a Group, invite users, add content, create a poll, add ideas](https://www.sap.com/developer/tutorials/jam-cloud-group-users-poll-ideas.html)
+- [Using Groups in SAP Jam Collaboration Developer Edition](https://www.sap.com/developer/tutorials/jam-cloud-group-users-poll-ideas.html)

@@ -1,21 +1,25 @@
 ---
-title: Create a Group, invite users, add content, create a poll, add ideas
-description: Create a Group, invite users, add content, create a poll, add ideas
+title: Using Groups in SAP Jam Collaboration Developer Edition
+description: Create a Group to collaborate with other users.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Login, administration, set up new users](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)
+ - **Tutorials:** [Initial setup of SAP Jam Collaboration Developer Edition](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)
 
 ## Next Steps
-- This is the end of this series
 - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
-### You will learn  
-In this tutorial you will learn how to create a Group, invite users, add content, create a poll, and add ideas.
+### You will learn
+In this tutorial you will learn how to perform the following tasks in your SAP Jam Collaboration instance:
+- Create a Group.
+- Invite users to your group.
+- Add content to your group.
+- Create a poll in your group.
+- Add ideas to your group.
 
 ### Time to Complete
 **15 Min**
@@ -30,7 +34,7 @@ Groups are a membership of users who can upload, create, or reference material s
 
 Lets start by creating a new group. We are creating this group as the Administrator but end users can also create groups.
 
-Go to the Groups drop-down menu and choose Create a Group. As we are starting with a new environment there are no pre-built templates to use so we will create our own. We can create a re-usable group template from our new group once we are happy with the design.
+Go to the **Groups** drop-down menu and choose **Create a Group**. As we are starting with a new environment there are no pre-built templates to use so we will create our own. We can create a re-usable group template from our new group once we are happy with the design.
 
 
 
@@ -40,7 +44,7 @@ Go to the Groups drop-down menu and choose Create a Group. As we are starting wi
 
 Figure 1: Select the 'Create a Group' option in the SAP Jam 'Groups' menu
 
-Provide a group name and a group description that describes the purpose of the group. Click on Public to set the permissions of the group. Click Create. For this example, the group I created is focused on Innovation such that a product team can share product updates, facilitate discussion and drive suggestions and ideas for product improvement.
+Provide a group name and a group description that describes the purpose of the group. Click on **Public** to set the permissions of the group. Click **Create**. For this example, the group I created is focused on Innovation such that a product team can share product updates, facilitate discussion and drive suggestions and ideas for product improvement.
 
 
 
@@ -50,7 +54,7 @@ Provide a group name and a group description that describes the purpose of the g
 
 Figure 2: The 'Create a Group' form
 
-We can now customize our group to meet our requirements. Let's customize the Overview page to meet our requirements. Click the Customize the Overview page link at the top of the page. This will take you to the Overview Page Designer.
+We can now customize our group to meet our requirements. Let's customize the Overview page to meet our requirements. Click the **Customize the Overview page** link at the top of the page. This will take you to the Overview Page Designer.
 
 
 
@@ -103,9 +107,9 @@ For the Innovation group, I used the Text, Photo, Forum, Feed and People widgets
 
 [ACCORDION-BEGIN [Step 2: ](Invite users)]
 
-Now that we have created our group we can invite additional users to drive collaboration. Using the Invite button you can invite other users to the group. Let's invite one of the users that you setup earlier. Click the "Invite" button.
+Now that we have created our group we can invite additional users to drive collaboration. Using the **Invite** button you can invite other users to the group. Let's invite one of the users that you setup earlier. Click the **Invite** button.
 
-As you start entering the users name their details will appear. Once selected, their name will appear in the Invitation List. Click the Send button to invite them to the group.
+As you start entering the users name their details will appear. Once selected, their name will appear in the Invitation List. Click the **Send** button to invite them to the group.
 
 
 
@@ -145,7 +149,7 @@ Now that we have our group, and users, we now need content to drive collaboratio
 
 Content items are blog posts, decision tools, links, planning tools, videos, wiki pages, images, documents (PowerPoint, Word, Excel), polls, and any other file that you upload to SAP Jam. Group members can provide feedback on the information that content items contain, and use this information to collaborate and make decisions.
 
-Let's add a document. Click on the Feed Updates menu option within the group and in the Feed Widget at the top of the page, click the Add a Document icon. For this example, I uploaded a PowerPoint document.
+Let's add a document. Click on the **Feed Updates** menu option within the group and in the Feed Widget at the top of the page, click the **Add a Document** icon. For this example, I uploaded a PowerPoint document.
 
 
 
@@ -180,9 +184,9 @@ Figure 3: The added document is also displayed in the group's 'Feed' section
 
 [ACCORDION-BEGIN [Step 4: ](Create a poll)]
 
-Let's now create a poll asking for product input and feedback. Click on the Content menu option.
+Let's now create a poll asking for product input and feedback. Click on the **Content** menu option.
 
-To create a poll, navigate to your group's Content section, and select ![Start of the navigation path](images/navstart.gif "Start of the navigation path") Create ![Next navigation step](images/navstep.gif "Next navigation step") Decision-Making Tools ![Next navigation step](images/navstep.gif "Next navigation step") Poll ![End of the navigation path](images/navend.gif "End of the navigation path") from the top Actions bar.
+To create a poll, navigate to your group's Content section, and select ![Start of the navigation path](images/navstart.gif "Start of the navigation path") **Create** ![Next navigation step](images/navstep.gif "Next navigation step") **Decision-Making Tools** ![Next navigation step](images/navstep.gif "Next navigation step") **Poll** ![End of the navigation path](images/navend.gif "End of the navigation path") from the top **Actions** bar.
 
 
 
@@ -192,7 +196,7 @@ To create a poll, navigate to your group's Content section, and select ![Start o
 
 Figure 1: In a SAP Jam group's 'Content' section, select Create > Decision-making Tools > Poll
 
-The Create a Poll page is displayed. The Poll decision-making tool allows you to ask a multiple-choice question. Enter the question, the multiple choice options that you want to present, and any other options that you want set, and then click Create Poll.
+The Create a Poll page is displayed. The Poll decision-making tool allows you to ask a multiple-choice question. Enter the question, the multiple choice options that you want to present, and any other options that you want set, and then click **Create Poll**.
 
 
 
@@ -209,7 +213,7 @@ The Poll appears on the group feed and as people vote, the results are displayed
 
 [ACCORDION-BEGIN [Step 5: ](Add ideas)]
 
-Finally, let's add some product suggestions as Ideas. If you have added Forum widgets to your Overview page then you can click the Go To Forums link at the bottom of the widget and then click on Ideas. Alternatively, you can click on the Feed Updates menu option within the group and in the Feed Widget at the top of the page click the Add an Idea icon.
+Finally, let's add some product suggestions as Ideas. If you have added Forum widgets to your Overview page then you can click the **Go To Forums** link at the bottom of the widget and then click on **Ideas**. Alternatively, you can click on the **Feed Updates** menu option within the group and in the Feed Widget at the top of the page click the **Add an Idea** icon.
 
 
 
@@ -238,7 +242,7 @@ Users can now vote on the idea and the product team can review the ideas and dec
 
 Now that we have added users, created a group and added content we can now test out our changes. Log in as each of the users to test out the collaboration capabilities, comment on documents, vote ideas etc.
 
-As you go through and submit, and comment, on content, vote in polls and post ideas you will see notifications appear in the top of the screen. Click on the Notification icon to view them.
+As you go through and submit, and comment, on content, vote in polls and post ideas you will see notifications appear in the top of the screen. Click on the **Notification** icon to view them.
 
 
 
@@ -272,5 +276,4 @@ Figure 3: A group with content, decision-making tools, and comments
 ---
 
 ## Next Steps
-- This is the end of this series
 - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
