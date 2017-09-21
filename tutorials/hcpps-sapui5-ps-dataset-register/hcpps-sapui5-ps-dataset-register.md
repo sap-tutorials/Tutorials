@@ -120,6 +120,7 @@ sap.ui.define([
 		}
 	});
 });
+
 ```
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
@@ -226,6 +227,7 @@ Open the `webapp/view/dataset/register.view.xml` file and add the following code
 		</table:Table>
 	</Panel>
 </mvc:View>
+
 ```
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
@@ -236,14 +238,10 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 Edit the `demo.view.xml` file located in the `webapp/view`.
 
-Inside the `<detailPages>` element add the following element:
+Inside the `<detailPages>` element, uncomment the following element:
 
 ```xml
-<Page id="detail_dataset_register" title="Register your Dataset with the SAP Cloud for predictive services">
-  <content>
-    <mvc:XMLView viewName="pspredictive.view.dataset.register"/>
-  </content>
-</Page>
+<mvc:XMLView viewName="pspredictive.view.dataset.register"/>
 ```
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)

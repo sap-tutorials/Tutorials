@@ -29,7 +29,7 @@ Locate your `yaas-storefront` folder which we will refer to below. View the defa
 
 > NOTE: Each Angular Module provides the support for a specific piece of business functionality such as Products, Customers, Cart etc. Each Angular Module contains all the different parts required for that in your application, such as controllers, services, filters, etc.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a folder)] ￼
@@ -41,7 +41,7 @@ Create a folder `(2)` somewhere outside of your `yaas-storefront` folder, and `c
 
 In the next step we compile and deploy the "Mr Tip" service locally and populate it with Tips.  We then extend the StoreFront functionality to utilise that.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Compile and deploy the new micro service)] ￼
@@ -58,7 +58,7 @@ Compile and deploy the new micro service that stores and delivers Tips:
 
 > NOTE: Please keep the micro service running. You will use this in the next steps.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Extend your StoreFront)] ￼
@@ -67,7 +67,7 @@ With the Tips micro service running locally, you can now extend your StoreFront 
 
 - For example: file `file product-detail-ctrl.js` located in `(2)/yaasbitestorefrontdeltas/two/public/js/app/products/controllers/product-detail-ctrl.js` should replace the one in `(1)/yaas-storefront/two/public/js/app/products/controllers/product-detail-ctrl.js`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Compile the modified code)] ￼
@@ -77,14 +77,14 @@ Next we want to compile the modified code.
 - We will compile the code using the build tool grunt, which we first need to download with the help of the node package manager: run the command: `npm install -g grunt-cli` from within folder `(1)`.
 - In folder `(1)`compile the changes with the command: `grunt build`, and confirm that you see the response `Done, but with warnings.`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Restart your Storefront web server)] ￼
 
 Confirm that your Tip micro service is still running, then run `npm start` in folder `(1)`, to restart your Storefront web server.  Open the Storefront in Chrome @`http://localhost:9000` and browse to a product page.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Click the tip button)] ￼
@@ -93,14 +93,14 @@ Find and click the new button "What do you think Mr Tip" and click it.  Confirm 
 
 ![Button](What-do-you-think-mr-tip.PNG)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Observe the REST Traffic in Chrome)] ￼
 
 The "Mr Tip" button is getting its Tips from your Service. Open Chrome's Developer Tools (Chrome > View > Developer > Developer Tools) and observe the REST Traffic that is happening behind the scenes between the Storefront and your Service.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](View additional logic)] ￼
@@ -109,7 +109,7 @@ Search for `ADJUSTED_AS_NEEDED` in the files you added, to see how this extra lo
 
 In this tutorial you extended the YaaS Storefront functionality using the Tips micro service. The micro service provided tips to a button in the storefront in order to help undecided purchasers with their shopping. The next step will be to back the YaaS storefront with your own customized YaaS project.
 
-[DONE]
+
 [ACCORDION-END]
 
 

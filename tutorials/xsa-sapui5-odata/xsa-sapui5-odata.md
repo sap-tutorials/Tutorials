@@ -32,7 +32,7 @@ Within this folder, create two files – one named `Component.js` and one named 
 
 ![new files](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create required files)]
@@ -240,7 +240,7 @@ At the same level as `index.html` create a file called `manifest.json`. Enter th
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create controller and view)]
@@ -366,7 +366,7 @@ sap.ui.define([
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Understanding the code - fill in the `To-Dos` to create a model from a data source)]
@@ -406,7 +406,7 @@ Scroll down until the next `//To-Do` comment and add the following model:
 ```
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Fill in the `To-Do` in the controller)]
@@ -421,7 +421,7 @@ oTable.setInitiallyVisibleFields("PARTNERID,COMPANYNAME,PARTNERROLE");
 
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Save and Run)]
@@ -442,7 +442,7 @@ Which you can solve in the next tutorial. You will then see the model based on t
 
 ![BP Model](7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

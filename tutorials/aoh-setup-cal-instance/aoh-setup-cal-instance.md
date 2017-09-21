@@ -34,7 +34,7 @@ Choose **SAP NetWeaver AS ABAP and SAP BW 7.5 SP01 on SAP HANA SP10** and click 
 
 ![Choose instance](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Choose your cloud provider)]
@@ -45,7 +45,7 @@ Select your cloud provider. Enter the combination of Access and Secret keys for 
 
 **Continue** to the next step.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -57,7 +57,7 @@ Review the name, description and zones. Make sure the IP address can be accessed
 
 Continue with the steps and wait until deployment is finished. If asked, download the SSH key files in a secure, known location and enter a master password you will remember.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Access your Virtual Machine)]
@@ -70,7 +70,7 @@ You can use SAP GUI on your computer or from the RDP to test your connection. Us
 
 ![Connect](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -98,7 +98,7 @@ You can use the hostname as your SAP GUI entry and Eclipse ADT plugin
 
 Proceed to add the 90-day trial license as described in the Getting Started Guide.
 
-[DONE]
+
 [ACCORDION-END]
 
 ---

@@ -26,7 +26,7 @@ The SAP Vora 1.4 Tools provide a data browser for viewing and exporting data in 
 
 SAP Vora makes available OLAP-style capabilities for data on Hadoop, in particular, a hierarchy implementation that allows you to define hierarchical data structures and perform complex computations on different levels of data.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Accessing the Tools)]
@@ -34,7 +34,7 @@ You can access the SAP Vora tools via web browser on the port 9225 of the Vora h
 
 You will be presented with the initial landing page once logged in successfully.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -47,7 +47,7 @@ Expand the tree views of Vora In-Memory Engine and Vora Disk Engine.
 
 Continue by opening a table `PRODUCTS` to browse its content.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Modeler)]
@@ -75,7 +75,7 @@ The **Join Definition** window appears. Change the type to `Left Outer` and sele
 Save the view. Now preview what you have done so far by clicking on the **Preview** button as demonstrated below. Note the join linking the two tables.
 ![Data preview](vtools_15_14.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 

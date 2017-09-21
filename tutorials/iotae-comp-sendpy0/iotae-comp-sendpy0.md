@@ -29,7 +29,7 @@ Your computer, which is going to play a role of the IoT device, should have:
  - `psutil` - the (process and system utilities) is a cross-platform Python's library: https://github.com/giampaolo/psutil#quick-links
  - connection to Internet
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Run python script to collect and send data)]
@@ -90,7 +90,7 @@ except KeyboardInterrupt:
 
 Save the file.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -112,7 +112,7 @@ The return code `202` means that the message was received and queued for process
 
 Codes `4xx` and `5xx` mean errors.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Check posted values in the Thing Modeler)]
@@ -125,7 +125,7 @@ Go to **Measured Values** and expand `resource_sensors` to the `cpu_usage`. You 
 You can find corresponding value in the output of the Python's script as well.
 ![value in Python](iotaecomppy0030.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Check posted values in the API)]
@@ -136,7 +136,7 @@ E.g. to check last 5 values posted open following URL in the browser, like Chrom
 You need to modify the thing id from `591188FC5CEF413E9D5AE3F641429BB5` to your own. Properly formatted URL will return results like this to authorized user.
 ![Values in API](iotaecomppy0040.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 ---
@@ -147,7 +147,7 @@ You need to modify the thing id from `591188FC5CEF413E9D5AE3F641429BB5` to your 
 [ACCORDION-BEGIN [Step 6: ](Explore IoT APIs in SAP API Hub)]
 To better understand IoT Application Enablement APIs you can go to SAP API Hub at https://api.sap.com/#/shell/discover/contentpackage/IOTAE and review and execute different APIs in its sandbox.
 
-[DONE]
+
 [ACCORDION-END]
 
 

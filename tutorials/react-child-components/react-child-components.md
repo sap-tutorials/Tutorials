@@ -60,7 +60,7 @@ var CurrencyDisplay = React.createClass({
 })
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add CurrencyDisplay item )] ￼
@@ -71,7 +71,7 @@ Add the new `CurrencyDisplay` item to the list.  Scroll down to the `ListBox` el
 <CurrencyDisplay value={this.props.row.UnitPrice} />
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add form group)] ￼
@@ -84,14 +84,14 @@ The currency is also displayed in the modal box.  Scroll up to the `ModalProduct
 </Static>
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Run the app)] ￼
 
 Run your application.  The currency will now be displayed with two decimal points in both the  list and the dialog box:
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add render function)] ￼
@@ -112,7 +112,7 @@ var AvailableDisplay = React.createClass({
 });
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Change list box display)] ￼
@@ -123,7 +123,7 @@ Change the display in the list box.  Replace the code for the *Discontinued* val
 <AvailableDisplay value={this.props.row.Discontinued} />
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Change form group)] ￼
@@ -136,14 +136,14 @@ Change the display in the modal box, as well.  Replace the code inside the *Disc
 </Static>
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Run the application)] ￼
 
 Run the application.  The list will show the Available/Discontinued tag with the CSS formatting.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add CategoryDisplay component)] ￼
@@ -198,7 +198,7 @@ var CategoryDisplay = React.createClass({
 })
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Create dynamic label)] ￼
@@ -209,14 +209,14 @@ In the `ModalProductDetail` component, replace the `<Static>` label for the *Cat
 <CategoryDisplay id={this.props.row.CategoryID} />    
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Test the application)] ￼
 
 Run your application.  When you click on a row, and the detail modal opens, you will see the Category display refresh.   (It starts by showing "...loading...", and then changes when the data is loaded.)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Review final code)] ￼
@@ -488,7 +488,7 @@ document.getElementById('product-list')
 );
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 ---

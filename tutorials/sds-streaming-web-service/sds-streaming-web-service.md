@@ -72,7 +72,7 @@ When the SDS Cluster starts up again, SWS will be running.
 
 In the next step, we will test the Streaming Web Service via the REST Interface.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

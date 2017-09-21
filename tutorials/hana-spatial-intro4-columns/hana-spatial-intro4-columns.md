@@ -2,7 +2,7 @@
 title: Intro to SAP HANA Spatial: Spatial columns
 description: Using table columns that support spatial data
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
+tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
@@ -29,7 +29,7 @@ CREATE SCHEMA TESTSGEO;
 SET SCHEMA TESTSGEO;
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Review spatial types)]
@@ -54,7 +54,7 @@ Object-oriented properties of spatial data types:
 - A value of a subtype can be automatically converted to any of its supertypes. For example, an `ST_Point` value can be used where an `ST_Geometry` parameter is required.
 - A column or variable of type `ST_Geometry` can store spatial values of any type.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Load data into table)]
@@ -99,7 +99,7 @@ FROM SPATIALSHAPES;
 
 ![Dataset select](spatial0402.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Review aggregation methods)]
@@ -124,7 +124,7 @@ Presented graphically, it looks like the diagram below:
 
 Also note that spatial predicates were used in the query above to select only geometries of type `LineString` type and only those that are not empty.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Additional aggregation methods)]
@@ -157,7 +157,7 @@ And the result of `ST_EnvelopeAggr()`:
 
 ![result of ST_EnvelopeAggr()](spatial0407.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 ### Optional

@@ -14,6 +14,7 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
 
 ## Details
 ### You will learn
+
   - How to add a destination to your SAP Cloud Platform account
   - How to create a SAPUI5 application from a template using the SAP Web IDE
   - How to add a destination to your SAPUI5 application
@@ -57,7 +58,7 @@ On the ***Destinations*** overview page, click on **New Destination**
 Enter the following information:
 
 Field Name           | Value
--------------------- | --------------
+:------------------- | :--------------
 Name                 | `psapi`
 Type                 | `HTTP`
 Description          | `SAP Cloud Platform Predictive Services Destination`
@@ -72,7 +73,7 @@ Authentication       | `AppToAppSSO`
 Then you will need to add the following properties to the destination:
 
 Property Name          | Value
----------------------- | --------------
+:--------------------- | :--------------
 `WebIDEEnabled`        | `true`
 
 Click on **Save**
@@ -103,7 +104,7 @@ You will get access to the **SAP Web IDE** main page:
 
 Click on **New Project from Template** in the ***Create Project*** section
 
-![Project](09.png)
+![Project](08.png)
 
 Select the **SAPUI5 Application** tile, then click on **Next**
 
@@ -112,7 +113,7 @@ Select the **SAPUI5 Application** tile, then click on **Next**
 Enter the following information, then click on **Next**
 
 Field Name           | Value
--------------------- | --------------
+:------------------- | :--------------
 Project Name         | `predictive`
 Namespace            | `ps`
 
@@ -121,7 +122,7 @@ Namespace            | `ps`
 Enter the following information, then click on **Finish**
 
 Field Name           | Value
--------------------- | --------------
+:------------------- | :--------------
 View Type            | `XML`
 View Name            | `demo`
 
@@ -160,7 +161,7 @@ Open the `neo-app.json` file and update the file like this:
 				"type": "destination",
 				"name": "psapi"
 			},
-			"description": "SAP Cloud Platform Predictive  destination"
+			"description": "SAP Cloud Platform Predictive destination"
 		}
 	]
 }
@@ -179,9 +180,8 @@ The default view created is located in `webapp/view/demo.view.xml`. We will upda
 Open the `webapp/view/demo.view.xml` file and replace the existing code with the following code:
 
 ```xml
-<mvc:View controllerName="pspredictive.controller.demo" xmlns:html="http://www.w3.org/2000/xhtml"
-	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
-	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+<mvc:View controllerName="pspredictive.controller.demo" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<SplitApp id="SplitAppDemo" initialMaster="master" initialDetail="detail">
 		<masterPages>
 			<Page id="master" title="Domains">
@@ -218,6 +218,26 @@ Open the `webapp/view/demo.view.xml` file and replace the existing code with the
 		<detailPages>
 			<Page id="detail" title="Test the SAP Cloud Platform Predictive Service in a SAPUI5 application">
 				<content></content>
+			</Page>
+			<Page id="detail_dataset_register" title="Register your Dataset with the SAP Cloud for predictive services">
+				<content>
+					<!--mvc:XMLView viewName="pspredictive.view.dataset.register"/-->
+				</content>
+			</Page>
+			<Page id="detail_dataset_manage" title="Manage your Data Set with the SAP Cloud for predictive services">
+				<content>
+					<!--mvc:XMLView viewName="pspredictive.view.dataset.manage"/-->
+				</content>
+			</Page>
+			<Page id="detail_forecast_synchronous" title="Forecast with the SAP Cloud for predictive services (Synchronous Mode)">
+				<content>
+					<!--mvc:XMLView viewName="pspredictive.view.forecast.synchronous"/-->
+				</content>
+			</Page>
+			<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Cloud for predictive services (Asynchronous Mode)">
+				<content>
+					<!--mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/-->
+				</content>
 			</Page>
 		</detailPages>
 	</SplitApp>

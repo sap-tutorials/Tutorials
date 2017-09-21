@@ -65,7 +65,7 @@ onInit: function() {
 
 ![updated main controller file with init code](9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Get JavaScript pre-generated code)]
@@ -85,7 +85,7 @@ Pick the **JavaScript** tab and then click the **Copy to Clipboard** button.
 
 ![JavaScript pre-generated code for API call](13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Use the API in your application)]
@@ -101,7 +101,7 @@ Back in your Web IDE, in the controller file, **add the copied code from the API
 
 **SAVE** your changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Run your application)]
@@ -119,7 +119,7 @@ If you API call was successful, you should see the JSON in your JavaScript conso
 
 ![image of successful API result](18.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add query parameters in the controller)]
@@ -136,7 +136,7 @@ Back in your controller, **add in your query parameters to the URL** so that the
 
 ![updated results in the JavaScript console](20.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Display your results in the view)]
@@ -185,7 +185,7 @@ The updated code should look like this.
 
 **SAVE** your changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Set your data model)]
@@ -236,7 +236,7 @@ self.getView().getModel("results").setProperty("/data", jsonResults);
 
 ![updated controller code](27.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Run your application)]
@@ -245,7 +245,7 @@ self.getView().getModel("results").setProperty("/data", jsonResults);
 ![final running UI5 application](final.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -31,7 +31,7 @@ Download the installation package for WinSCP from its [official site](https://wi
 
 Once downloaded, follow the steps in the installation packages.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add instance to WinSCP)]
@@ -67,7 +67,7 @@ Click **OK** and **Save** the entry and **Log in**.
 
 Confirm with **Yes** that you want to `connect to an unknown server and add its host to a cache` in the pop-up message and enter your passphrase again when prompted.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -81,7 +81,7 @@ Browse for the `.ppk` file WinSCP generated in the previous step. Alternatively,
 
 **Save** your session and click on **Open** to log in.
 
-[DONE]
+
 [ACCORDION-END]
 
 

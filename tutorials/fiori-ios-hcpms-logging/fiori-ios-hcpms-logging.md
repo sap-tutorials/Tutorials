@@ -37,7 +37,7 @@ In the bottom part, you can specify the logging purge periods:
 
 ![SDK Assistant](fiori-ios-hcpms-logging-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Change application log settings)]
@@ -57,7 +57,7 @@ By default, the log viewer displays logs and traces occurred in the last 60 minu
 
 ![SDK Assistant](fiori-ios-hcpms-logging-03.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Examine changed log details)]
@@ -68,7 +68,7 @@ Now you have lowered the logging levels, try run your iOS application again, and
 
 ![SDK Assistant](fiori-ios-hcpms-logging-04.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

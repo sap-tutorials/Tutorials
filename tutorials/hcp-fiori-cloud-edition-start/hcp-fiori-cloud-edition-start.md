@@ -28,14 +28,14 @@ Continue by clicking the **See it in action** Button.
 
 ![See it in action](0.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Accept the terms of use)]
 
 At your first access you also will have to accept the "SAP Fiori, Demo Cloud Edition Terms of Use". Do that by clicking **I agree**. After that you will be able to try out all the apps. You can i.e. try the Inbox and approve some workflows.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Open Customize and Extend mode)]
@@ -48,7 +48,7 @@ You can also reach the "Customize and Extend" mode by clicking the Cloud icon in
 
 ![Get started!](7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Log in or register)]
@@ -61,7 +61,7 @@ You will be asked to log on or register. If you already have a user for the SAP 
 
 ![Log On screen](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Accept terms and conditions)]
@@ -70,7 +70,7 @@ After the login it can happen that you have to complete another registration for
 
 ![registration form](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Start the launchpad)]
@@ -79,7 +79,7 @@ The first start of the launchpad takes a moment
 
 ![launchpad start](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Ready to extend the app)]
@@ -90,7 +90,7 @@ The app you want to extend in the next tutorials is "My Opportunities" in the Gr
 
 Congratulations, you're ready to go and start extending the SAP standard Fiori apps.
 
-[DONE]
+
 [ACCORDION-END]
 
 

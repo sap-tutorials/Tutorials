@@ -38,7 +38,7 @@ If it is already enabled, click the tile and click the **Go to Admin Console** l
 
 ![Enable Mobile Secure](fiori-ios-scpms-configprovider-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a configuration)]
@@ -80,7 +80,7 @@ The configuration for the specified email domain is now saved:
 
 ![Create a configuration](fiori-ios-scpms-configprovider-05.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -96,7 +96,7 @@ You should get the following response:
 
 ![Create a configuration](fiori-ios-scpms-configprovider-06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add ConfigurationLoaderDelegate)]
@@ -136,7 +136,7 @@ func configurationProvider(_ provider: ConfigurationProviding, requestedInput: [
 
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Load configuration)]
@@ -157,7 +157,7 @@ This forces the configuration loader to only check the Discovery Service provide
 > For simplicity of this tutorial, the email address is hard-coded here. In a productive scenario, you should provide an input screen where the user enters his email address, use the Onboarding storyboard to provide the email address, or use a different mechanism.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Retrieve loaded configuration)]
@@ -180,7 +180,7 @@ Then you simply print the retrieved configuration `Dictionary` object to the deb
 
 ![Create a configuration](fiori-ios-scpms-configprovider-07.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

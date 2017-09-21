@@ -36,7 +36,7 @@ Click "Save".
 
 ![save](3.png)  
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Build and run `log.errors` SELECT)]
@@ -49,7 +49,7 @@ You will still get the error for invalid column.  Select the SELECT statement fo
 
 ![select statement](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Run `log.messages` SELECT)]
@@ -62,7 +62,7 @@ Select the SELECT statement for the `log.messages` table and click "Run" to exec
 
 ![select statement](7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Examine results)]
@@ -71,7 +71,7 @@ Another "Chuck" record was not inserted.  "Chuck Norris's" record was removed by
 
 ![results](8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

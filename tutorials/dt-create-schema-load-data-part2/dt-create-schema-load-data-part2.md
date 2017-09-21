@@ -40,7 +40,7 @@ Click the green Deploy button near the top right to add the user. You will recei
 
 ![User Created](user-created.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Assign Roles and Privileges to the TCPH User)]
@@ -90,7 +90,7 @@ In order to save the changes you made, press the green Deploy button on the top 
 
 ![Change Applied](change-applied.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Sign on as TCPH User)]
@@ -106,7 +106,7 @@ You should see another connection to your system show up under the **Systems** v
 
 ![System Added](Added.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

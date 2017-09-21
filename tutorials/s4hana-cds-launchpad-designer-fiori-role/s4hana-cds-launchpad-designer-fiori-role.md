@@ -59,7 +59,7 @@ The Configuration scope can be accessed by appending `?scope=CONF` to the URL. I
 
 ![Launchpad6](LauchpadDesignerCONFscope.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Assign roles)]
@@ -87,7 +87,7 @@ Press the F4 help
 
 ![Launchpad11](LauchpadDesignerRoleAssignt6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Role Name window)]
@@ -112,7 +112,7 @@ You should have something like this
 
 ![Launchpad15](LauchpadDesignerRoleAssignt11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add more roles)]
@@ -165,7 +165,7 @@ The following screen shows the role added.
 Save the changes you made and close the SAP Logon.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Make final checks)]
@@ -180,7 +180,7 @@ You will also see the group `Z_RDS_BCG`.
 
 ![Launchpad28](LauchpadDesignerRoleAssigntFinal.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

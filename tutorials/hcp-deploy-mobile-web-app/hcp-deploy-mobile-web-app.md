@@ -28,7 +28,7 @@ Open the SAP Web IDE. In SAP Web IDE, select the **northwind** project folder an
 
 ![SAP Cloud Platform Deployment contextual menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enter credentials and log in)]
@@ -42,7 +42,7 @@ You will be prompted for your SAP Cloud Platform Password and click on **Login**
 
 ![SAP Cloud Platform user validation](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Deploy the app)]
@@ -51,7 +51,7 @@ Because all HTML application names on SAP Cloud Platform are lower case, the app
 
 ![SAP Cloud Platform HTML5 Deployment dialog box](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Wait for success message)]
@@ -60,7 +60,7 @@ The deployment process will take a few seconds, and after it has finished, you w
 
 ![SAP Cloud Platform deployment confirmation dialog box](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](View your running app)]
@@ -69,7 +69,7 @@ Click on **Open the active version of the application** link to see your app run
 
 ![Basic master-detail app using Northwind OData Service](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](View app in browser)]
@@ -78,7 +78,7 @@ You can now enter the application URL in your mobile device browser to see it ru
 
 ![iPhone view of master-detail app showing responsive design adaptation](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-deploy-mobile-web-app/mob1-3_8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

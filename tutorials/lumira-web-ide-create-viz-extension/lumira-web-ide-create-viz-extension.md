@@ -41,7 +41,7 @@ This tutorial will cover:
 
 First, you need to set up your development environment in SAP Web IDE. For this, you need to set up your SAP Cloud Platform (HCP) account so that you can use SAP Web IDE. Please refer to the tutorial [Sign up for an account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html) for a step-by-step guide on how to do so.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open SAP Cloud Platform cockpit)] ￼
@@ -50,7 +50,7 @@ After setting up your SAP Cloud Platform account, you should be on this page, wh
 
 ![SAP Cloud Platform cockpit](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_2.png)   
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Click Web IDE link)] ￼
@@ -59,7 +59,7 @@ In the left menu panel, go to **Subscriptions**. Under **Subscribed HTML5 Applic
 
 ![SAP Cloud PlatformSubscriptions](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Get application URL)] ￼
@@ -76,7 +76,7 @@ You will be directed to this screen. Click on the **Application URL** to access 
 
 > Both of the steps above will lead you to the SAP Web IDE Overview (Enable SAP Web IDE if it has not already been enabled). Once you're on this screen and have enabled SAP Web IDE, go to **Open SAP Web IDE**. This will open the link to your SAP Web IDE account. Again, remember to save or bookmark this link for future use.   
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Go to welcome screen)] ￼
@@ -85,7 +85,7 @@ Before proceeding with this step, make sure that you have the link to your SAP W
 
 ![SAP Web IDE application URL](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Enable VizPacker)] ￼
@@ -98,7 +98,7 @@ You will be asked to refresh your browser for the changes to be effective. Selec
 
 ![SAP Web IDE Refresh browser](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_6b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Check for VizPacker)] ￼
@@ -108,7 +108,7 @@ Go to the right sidebar and click on the top most icon that looks like a column 
 
 ![SAP Web IDE Development](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Create a new visualization extension project)] ￼
@@ -117,7 +117,7 @@ Now you will create a new visualization extension project. Go to **File -- New -
 
 ![SAP Web IDE Lumira extension create new project](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Select a template)] ￼
@@ -130,7 +130,7 @@ You will now be able to see the **Visualization Extension** template. Select it 
 
 ![SAP Web IDE Lumira extension visualization template](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_9b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Name the project)] ￼
@@ -139,7 +139,7 @@ Choose a project name. Remember that white space and special characters are not 
 
 ![SAP Web IDE Lumira extension](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Add project details)] ￼
@@ -161,7 +161,7 @@ In this step, you will complete the profile of your visualization extension. Ple
 > All of these fields are relevant when you use the extension in Lumira.
 > ![SAP Web IDE Lumira extension profile fields](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_11b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Configure the layout of your extension)] ￼
@@ -170,7 +170,7 @@ Next you will configure the layout of your extension. Most charts are drawn usin
 
 ![SAP Web IDE Lumira extension layout configuration](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Load the dataset)] ￼
@@ -183,7 +183,7 @@ Choose the sample dataset provided, `data.csv` and load it on to your project as
 > In case you want to change certain columns to a different type, for example, **Year** from being a measure to a dimension, simply click on it. You will see an option to select what type of data column it should be.
 > ![SAP Web IDE Lumira extension data](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_13b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Configure measures and dimensions)] ￼
@@ -205,7 +205,7 @@ On the next screen, click on **Finish**
 > ### Optional
 > In the previous screen where you configured your measure and dimension sets, you can alternatively click Finish there as well.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Review project components)] ￼
@@ -219,7 +219,7 @@ The main components of the project that are of concern are `render.js` and `defa
 
     ![SAP Web IDE Lumira extension main project components](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_15.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Review render.js)] ￼
@@ -228,7 +228,7 @@ The `render.js` file is the main JavaScript file, which comprises of a top-level
 
 ![SAP Web IDE Lumira extension render](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_16.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Review default.css)] ￼
@@ -241,7 +241,7 @@ The `default.css` file contains all the styling code for the SVG elements that y
 
 ![SAP Web IDE Lumira extension style](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_17.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Display the Data Table)] ￼
@@ -250,7 +250,7 @@ In the visualization pane(`VizPacker` quick preview) on the right, click on the 
 
 ![SAP Web IDE Lumira extension data table](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_18.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 19: ](Review data binding)] ￼
@@ -259,7 +259,7 @@ Click on the adjacent icon (highlighted below), to display how the Data Binding 
 
 ![SAP Web IDE Lumira extension data binding](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_19.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 20: ](Test and preview extension)] ￼
@@ -276,7 +276,7 @@ This will "run" your chart in a new browser tab in full screen so that you can t
 
 ![SAP Web IDE Lumira extension debug](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_20c.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 21: ](Package extension for use in Lumira)] ￼
@@ -289,7 +289,7 @@ Your extension will be packaged as an installable .zip file which you can instal
 
 ![SAP Web IDE Lumira extension download](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_21b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 22: ](Save the extension)] ￼
@@ -298,7 +298,7 @@ Save the extension in your computer. You can then use the extension in Lumira as
 
 ![SAP Web IDE Lumira extension install](https://raw.githubusercontent.com/AnnieSuantak/Tutorials/master/tutorials/lumira-web-ide-create-viz-extension/lumira4_22.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

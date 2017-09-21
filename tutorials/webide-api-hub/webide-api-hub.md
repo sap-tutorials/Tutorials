@@ -15,23 +15,23 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
 
 ## Details
 ### You will learn  
-In this tutorial, you will explore some of the new features that are part of the SAP Web IDE Multi-Cloud Version. Learn how to use the SAP API Business Hub services catalog that is available out of the box in this version of Web IDE. Create and run an SAPUI5/Fiori Application.
+In this tutorial, you will explore some of the new features that are part of SAP Web IDE for Full-Stack Development. Learn how to use the SAP API Business Hub services catalog that is available out of the box in this version of Web IDE. Create and run an SAPUI5/Fiori Application.
 
 ### Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open Multi-Cloud Web IDE)]
-Make sure you have the SAP Web IDE Multi-Cloud Version open.
+[ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE for Full-Stack Development)]
+Make sure you have SAP Web IDE for Full-Stack Development open.
 
-![sap web ide multi-cloud service](1.png)
+![sap web ide full-stack service](1.png)
 
-Steps on how to find and enable the SAP Web IDE Multi-Cloud Version are available in the previous tutorial.
+Steps on how to find and enable SAP Web IDE for Full-Stack Development are available in the previous tutorial.
 
 ![start up page for web ide](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new project)]
@@ -45,7 +45,7 @@ On the Template Selection page, choose the **SAP Fiori Worklist Application** Te
 
 Click **Next**.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -56,7 +56,7 @@ On the **Basic Information** page of the template wizard, provide a name for the
 
 Click **Next**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Select the data connection)]
@@ -78,7 +78,7 @@ Select the **Employee Entity Type** service from the list. You should see a blue
 
 You can open up the Employee Entity Type service to see what collections are provided with this API Service. Drilling down further reveals the attributes available for each collection. Once the proper data service is selected, click **Next**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Customize the template)]
@@ -113,7 +113,7 @@ Once the data binding and application settings are complete, click **Next**.
 
 ![Template Customization page with next selected](11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Finish the app)]
@@ -121,7 +121,7 @@ On the **Confirmation** page of the template wizard, click **Finish**  to create
 
 ![Confirmation page with finish indicated](12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Run the application)]
@@ -143,7 +143,7 @@ When your application loads, you will see a list of employee names and emails pu
 
 ![expected output of the project as a web app](16.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -38,7 +38,7 @@ Then you will be able to search for the **SAP Leonardo Machine Learning - Functi
 
 ![SAP API Business Hub](02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Analyze the service)]
@@ -81,7 +81,7 @@ And the response model schema is the following:
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Test the service)]
@@ -143,7 +143,7 @@ For example, the probability that a change point has been detected between the f
 
 > **Note**: The result you will obtain might be slightly different form the one displayed above.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Test the service for multivariate series)]
@@ -194,7 +194,7 @@ For example, the probability that a change point has been detected between the f
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 ---
@@ -209,7 +209,7 @@ You can also try the following Machine Learning Functional Services consuming te
 
 For more information, you can also check the online [SAP Leonardo Machine Learning Foundation documentation](https://help.sap.com/viewer/product/SAP_LEONARDO_MACHINE_LEARNING_FOUNDATION/1.0/en-US)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

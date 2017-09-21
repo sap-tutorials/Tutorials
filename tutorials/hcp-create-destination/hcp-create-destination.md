@@ -37,7 +37,7 @@ Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Plat
 
 ![SAP Cloud Platform log in page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create new destination)]
@@ -46,7 +46,7 @@ Select the **Destinations** tab on the left side, and then click on **New Destin
 
 ![Web IDE Destination tab](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Confirm data)]
@@ -65,7 +65,7 @@ Authentication | `NoAuthentication`
 > Do **not** use the entire path for the URL.  The URL should only be `http://services.odata.org`
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add properties)]
@@ -81,14 +81,14 @@ Field Name       | Value
 
 ![Completed SAP Cloud Platform destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-create-destination/mob1-1_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Save your files)]
 
 Click **Save**, and that's it.  You are ready for the next step in your tutorial.
 
-[DONE]
+
 [ACCORDION-END]
 
 

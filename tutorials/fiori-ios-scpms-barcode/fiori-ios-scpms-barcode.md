@@ -35,7 +35,7 @@ When finished, you should have a very simple project like this:
 
 ![New project](fiori-ios-scpms-barcode-01.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add SDK Framework files)]
@@ -62,7 +62,7 @@ Your project should now contain the necessary SDK framework files:
 
 ![Embedded binaries](fiori-ios-scpms-barcode-09.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add Table View Controller)]
@@ -81,7 +81,7 @@ Select the **Table View Controller Header** and set the title to **Scanner Test*
 
 ![Navigation Controller](fiori-ios-scpms-barcode-04.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -99,7 +99,7 @@ Provide a name for the class, and make sure it implements `UITableViewController
 
 Click **Next** and then **Create**
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Implement Table View Controller class)]
@@ -190,7 +190,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
     return objectCell
 }
 ```
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Attach custom class to Table View Controller)]
@@ -199,7 +199,7 @@ Go to the **Storyboard**, select the **Scanner Test** controller, and assign it 
 
 ![Navigation Controller](fiori-ios-scpms-barcode-11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Update info.plist file)]
@@ -214,7 +214,7 @@ Open the `info.plist` file and add the following entry:
 
 ![Navigation Controller](fiori-ios-scpms-barcode-12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Scan barcodes)]
@@ -235,7 +235,7 @@ And it also works with QR codes:
 
 ![Navigation Controller](fiori-ios-scpms-barcode-16.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 

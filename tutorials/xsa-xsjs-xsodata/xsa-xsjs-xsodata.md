@@ -80,7 +80,7 @@ This is where you are configuring that any file request with the extension `.xsj
 ```
 {  "welcomeFile": "index.html",  "authenticationMethod": "route",  "routes": [{  		"source": "(.*)(.xsjs)",		"destination": "core-backend",		"csrfProtection": false,		"authenticationType": "xsuaa"		}, {		"source": "(.*)(.xsodata)",		"destination": "core-backend",		"authenticationType": "xsuaa"  }]}```
 
-[DONE]
+
 [ACCORDION-END]  
 
 [ACCORDION-BEGIN [Step 2: ](Enable authentication in your service)]
@@ -96,7 +96,7 @@ This `server.js` is the Node.js `bootstrap` for XSJS compatibility mode. It uses
 
 Remember to **Save.**
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create oData service)]
@@ -136,7 +136,7 @@ Create a 5th file called `os.xsjs`. This example shows you how you can call Node
 
 ```
 /*eslint no-console: 0, no-unused-vars: 0*/"use strict";var os = $.require("os");var output = {};output.tmpdir = os.tmpdir();output.endianness = os.endianness();output.hostname = os.hostname();output.type = os.type();output.platform = os.platform();output.arch = os.arch();output.release = os.release();output.uptime = os.uptime();output.loadavg = os.loadavg();output.totalmem = os.totalmem();output.freemem = os.freemem();output.cpus = os.cpus();output.networkInfraces = os.networkInterfaces();$.response.status = $.net.http.OK;$.response.contentType = "application/json";$.response.setBody(JSON.stringify(output));```
-[DONE]
+
 [ACCORDION-END]  
 
 [ACCORDION-BEGIN [Step 5: ](Execute the js module)]
@@ -169,7 +169,7 @@ In the running tab, you should see the `index.html` from earlier. You can add th
 
 ![full odata service](21.png)
 
-[DONE]
+
 [ACCORDION-END]  
 
 ## Next Steps

@@ -40,7 +40,7 @@ On the Confirmation page, click **Finish**.
 ![finish creating the view](3-view.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add an Object Header to Detail)]
@@ -66,7 +66,7 @@ Finally, remove the the `<App>` and the lowercase `<pages>` tags from the Detail
 
 **SAVE** your changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Set up navigation properties)]
@@ -109,7 +109,7 @@ This will define what the relationship between the `View1` view and the `Detail`
 
 **SAVE** your changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add an App ID)]
@@ -124,7 +124,7 @@ Open the `View1.view.xml` file in the `webapp > view` folder. The `controlId` se
 
 ![XML for the main view with ID](5-view.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Initialize the router)]
@@ -140,7 +140,7 @@ You need to initialize the router for the application. Add this line of code to 
 
 ![component updated code](2-nav.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add navigation to the main view)]
@@ -158,7 +158,7 @@ You need to enable navigation in the table. Replace the `<ColumnListItem>` in th
 
 ![updated table code](3-nav.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add navigation to the main controller)]
@@ -180,7 +180,7 @@ onPress: function (oEvent) {
 
 ![updated code for main controller](4-nav.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add navigation to the detail controller)]
@@ -247,7 +247,7 @@ onNavBack: function () {
 
 ![updated code for detail controller](6-nav.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add navigation to detail view)]
@@ -264,7 +264,7 @@ You need to update the `<Page>` attributes to allow for backwards navigation. Re
 ![updated code for detail view with nav button](7-nav.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Run your application)]
@@ -275,7 +275,7 @@ Make sure all your changes are saved and **RUN** your application.
 ![final output of detail view with nav back](detail.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

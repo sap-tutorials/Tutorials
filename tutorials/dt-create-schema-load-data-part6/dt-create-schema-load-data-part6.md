@@ -47,7 +47,7 @@ Verify everything executed correctly.
 
 ![Restore Success](restore-success.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create Migration Stored Procedure)]
@@ -89,7 +89,7 @@ END;
 
 ![Create Success](create-success.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Call Migration Store Procedure)]
@@ -121,7 +121,7 @@ SELECT * FROM "TPCH"."LINEITEM_CS" WHERE "TPCH"."LINEITEM_CS"."L_SHIPDATE" < '20
 
 ![Verify Column Store](verify-cs.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

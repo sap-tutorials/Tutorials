@@ -52,7 +52,7 @@ Once installation is complete, press **F** to finish:
 
 >Note: Restart the system if necessary.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Install libtool)]
@@ -69,7 +69,7 @@ Press enter on `libltdl7` and then F10 to accept
 
 ![YaSt libtool 2](19.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

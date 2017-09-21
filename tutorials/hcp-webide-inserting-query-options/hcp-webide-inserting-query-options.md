@@ -27,7 +27,7 @@ Log into your [SAP Cloud Platform account](https://account.hanatrial.ondemand.co
 
 ![Project folder](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Examine master view XML file)]
@@ -40,7 +40,7 @@ You may want to add some line breaks in your code to match the image below. It w
 
 ![Items attribute](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Change the sort parameters)]
@@ -67,7 +67,7 @@ items="{
 
 ![modified items attribute](mob3-5_4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Save and run)]
@@ -76,7 +76,7 @@ Save your change and run the app (remember to empty the cache and reload if nece
 
 ![alphanumberically ordered](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-inserting-query-options/mob3-5_5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Get the view to add additional filters)]
@@ -95,7 +95,7 @@ this._oView = this.getView();
 
 ![oView variable](mob3-5_7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add the filter)]
@@ -122,7 +122,7 @@ this._oView.attachAfterRendering(function() {
 
 ![attachAfterRendering function with filter](mob3-5_8a.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Save and reload)]
@@ -131,7 +131,7 @@ Save your change, switch to the app preview tab and select Hard Reload or Empty 
 
 ![ordered and filtered](mob3-5_8b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add another filter)]
@@ -166,7 +166,7 @@ this._oView.attachAfterRendering(function() {
 
 ![items update](mob3-5_9a.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Save and reload)]
@@ -176,7 +176,7 @@ Save your change, switch to the app preview tab and select Hard Reload or Empty 
 ![ordered and filtered, excluding two suppliers](mob3-5_9b.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Keep or discard changes)]
@@ -186,7 +186,7 @@ You can keep these edits if you would like, or to roll back to the previous stat
 
 ![Discard changes using git](mob3-5_10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

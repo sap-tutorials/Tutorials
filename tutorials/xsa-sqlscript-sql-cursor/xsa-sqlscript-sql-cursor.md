@@ -28,7 +28,7 @@ Return the `get_product_by_filter` procedure in the editor. Delete the output pa
 
 ![prcoedure editor](1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Define new output parameter)]
@@ -37,7 +37,7 @@ Define a new output parameter called `EX_PRODUCTS`. Instead of referring to pred
 
 ![output parameter](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Rename filter)]
@@ -46,7 +46,7 @@ Rename `EX_USER_FILTERED_PRODUCTS` to `USER_FILTERED_PRODUCTS`.
 
 ![rename](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create SELECT for inner join)]
@@ -55,7 +55,7 @@ Enter another SELECT statement which does an INNER JOIN between the results of t
 
 ![select statement](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create SELECT for aggregate)]
@@ -64,7 +64,7 @@ Next enter another SELECT which aggregates the results of the previous SELECT st
 
 ![select statement](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create self inner join)]
@@ -73,7 +73,7 @@ Finally, add another SELECT statement which does a self inner join to calculate 
 
 ![select statement](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Check final code)]
@@ -84,7 +84,7 @@ The completed code should look very similar to the following. If you do not wish
 PROCEDURE "dev602.procedures::get_product_by_filter" (        IN im_product_filter_string varchar(5000),        OUT EX_PRODUCTS TABLE (                      PRODUCTID NVARCHAR(10),                      DELIVERYDATE DAYDATE,                      NUM_DELIVERED_PRODUCTS BIGINT,                      CUMULATIVE_SUM BIGINT ) ) LANGUAGE SQLSCRIPT SQL SECURITY INVOKER --DEFAULT SCHEMA <default_schema_name> READS SQL DATA  ASBEGIN	pre_filtered_products =       SELECT * FROM "dev602.data::MD.Products" WHERE CATEGORY NOT IN ('Laser Printer');	user_filtered_products = APPLY_FILTER(:pre_filtered_products, :im_product_filter_string ) ;	filtered_items  =      SELECT pi."PRODUCT.PRODUCTID" as PRODUCTID, pi.DELIVERYDATE  		FROM :user_filtered_products as p              INNER JOIN "dev602.data::PO.Item" as pi on p.productid = 		pi."PRODUCT.PRODUCTID" ; aggregated_filtered_items =        SELECT  PRODUCTID, DELIVERYDATE,                COUNT(PRODUCTID) AS NUM_DELIVERED_PRODUCTS FROM :filtered_items      GROUP BY PRODUCTID ,DELIVERYDATE    ORDER BY PRODUCTID, DELIVERYDATE; 	ex_products =         SELECT  p1.PRODUCTID,                 p1.DELIVERYDATE,                 p1.NUM_DELIVERED_PRODUCTS,        SUM(p2.NUM_DELIVERED_PRODUCTS) AS CUMULATIVE_SUM             FROM :aggregated_filtered_items as p1          INNER JOIN  :aggregated_filtered_items as p2                 ON  p1.PRODUCTID = p2.PRODUCTID                        and p1.DELIVERYDATE >= p2.DELIVERYDATE            GROUP BY p1.PRODUCTID,p1.DELIVERYDATE,         p1.NUM_DELIVERED_PRODUCTS       ORDER BY PRODUCTID, DELIVERYDATE ;END
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Save and build)]
@@ -97,7 +97,7 @@ Use what you have learned already and perform a build on your `hdb` module.
 
 ![HRTT](9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Run call statement)]
@@ -114,7 +114,7 @@ Enter the value for the input parameter as shown. Then run the call statement.
 
 ![input parameters](11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Check results)]
@@ -127,7 +127,7 @@ Take note of the run time.
 
 ![run time](13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

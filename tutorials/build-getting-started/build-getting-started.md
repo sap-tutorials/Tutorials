@@ -1,16 +1,14 @@
 ---
 title: Getting Started with BUILD
 description: Learn where to sign up and start with BUILD, SAP's prototyping tool
+auto_validation: true
 primary_tag: products>build>build
 tags: [  tutorial>beginner, products>build>build ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** This is the first tutorial in this series.
 
-## Next Steps
- - [Create a BUILD Prototype](http://www.sap.com/developer/tutorials/build-create-prototype.html)
 
 ## Details
 ### You will learn  
@@ -63,29 +61,40 @@ Once all the required information has been provided, click **Register**.
 [ACCORDION-BEGIN [Step 5: ](Activate your account)]
 Once you submit your registration, an email with be sent to the provided email address.
 
+![email sent message](5.png)
+
 Open your email and click on the **Verify Email** link.
 
-![verify email from BUILD in inbox](5.png)
+![verify email from BUILD in inbox](6.png)
 
 This will activate your account. Once you have verified and activated your account, click **Continue**. You will be brought back to the BUILD homepage.
 
-![BUILD activation page](6.png)
+![BUILD activation page](7.png)
 
 [DONE]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Open the BUILD tools)]
+[ACCORDION-BEGIN [Step 6: ](Open the BUILD tools)]
 Back on the BUILD homepage, click **Log In**. Provide your credentials you created in the previous steps.
 
-![BUILD splash page with log in highlighted](7.png)
+![BUILD splash page with log in highlighted](8.png)
 
 Once you have successfully logged in, you will now be able to see more BUILD tools, including your workspace and projects.
 
-![BUILD workspace and projects page](8.png)
+![BUILD workspace and projects page](9.png)
 
 [DONE]
 [ACCORDION-END]
 
-## Next Steps
-- [Create a BUILD Prototype](http://www.sap.com/developer/tutorials/build-create-prototype.html)
+[ACCORDION-BEGIN [Step 7: ](Validate your BUILD account)]
+Once you are logged in, **click on your initials icon** in the top right corner and select **User Profile** from the menu.
+
+![BUILD workspace menu](10.png)
+
+On the **Organization** tab, copy your **Current Organization** and **paste it in the below box**.
+
+![BUILD user profile](11.png)
+
+[VALIDATE_7]
+[ACCORDION-END]

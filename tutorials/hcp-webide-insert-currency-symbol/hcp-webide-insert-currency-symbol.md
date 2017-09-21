@@ -32,7 +32,7 @@ currencySymbol=€
 
 ![messageBundle.properties file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-insert-currency-symbol/mob2-3_1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Reference the variable)]
@@ -43,7 +43,7 @@ Any string from the `messageBundle.properties` file can be used in your app usin
 {i18n>currencySymbol}
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Edit master view)]
@@ -53,7 +53,7 @@ Edit the `Master.view.xml` file by inserting the reference to `currencySymbol` j
 
 ![Edited Master.view.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-insert-currency-symbol/mob2-3_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Edit detail view)]
@@ -62,7 +62,7 @@ Edit the `Detail.view.xml` file by inserting the reference to `currencySymbol` j
 
 ![Edited Detail.view.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-insert-currency-symbol/mob2-3_4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Save and run)]
@@ -72,7 +72,7 @@ Save your edits and either refresh your preview tab or select the `index.html` f
 
 ![App showing currency symbol](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-insert-currency-symbol/mob2-3_5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Troubleshoot issues)]
@@ -83,7 +83,7 @@ If your symbol does not show up:
 - Verify that you inserted `{i18n>currencySymbol}` between the `{UnitPrice}` double quotes
 - Do a hard-reload or clear cache. See the note below.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Clear the cache)]
@@ -91,7 +91,7 @@ If your symbol does not show up:
 
 If the currency symbol does not show up, remember to clear the cache as described at the bottom of the [Add labels and a new field to your app](http://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html) tutorial.
 
-[DONE]
+
 [ACCORDION-END]
 
 

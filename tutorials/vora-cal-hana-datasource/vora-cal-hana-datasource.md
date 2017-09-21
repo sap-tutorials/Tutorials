@@ -40,7 +40,7 @@ OPTIONS (
 
 ![List HANA tables](vhana01.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create Vora table from HANA data source)]
@@ -75,7 +75,7 @@ SELECT * FROM HANADATA;
 
 ![Query table from HANA data source](vhana03.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

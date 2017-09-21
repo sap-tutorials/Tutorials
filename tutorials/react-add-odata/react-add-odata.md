@@ -48,7 +48,7 @@ The steps for this tutorial are:
 > If you do not see a Destination called `Northwind`, go to the **[Create a Destination](http://www.sap.com/developer/tutorials/hcp-create-destination.html)** tutorial.  When you are finished, return here.
 >
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create new file)] ￼￼
@@ -69,7 +69,7 @@ Enter the name `neo-app.json`, and then click OK.
 > ![Correct file location](1-3.png)
 >
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add JSON to file)] ￼
@@ -91,7 +91,7 @@ Add the following code to the `neo-app.json` file, and then click **Save**
 
 ![Add the destination information](1-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Remove the test data)] ￼
@@ -104,7 +104,7 @@ In the `main.js` file, select all of the test data (starting with `var testData 
 
 ![delete the test data](2-1.png)   
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add JavaScript to ProductList component)] ￼
@@ -139,7 +139,7 @@ componentDidMount: function() {
 
 ![Set the initial state, call AJAX to retrieve data](2-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Update the render function)] ￼
@@ -154,7 +154,7 @@ var productListBoxes = this.state.products.map( function(row) {
 
 ![Update the render function to use the state variable](2-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Run the app)] ￼
@@ -164,7 +164,7 @@ Run your application.  20 rows of data should be displayed, coming from the ODat
 ![OData data now displayed on the screen](2-4.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Review further information)] ￼
@@ -195,7 +195,7 @@ Second, when the browser attempts to get data from <https://services.odata.org/>
 
 We work around this by having SAP Cloud Platform talk to <http://services.odata.org/> directly.  This avoids the HTTPS connection, and works around the bug.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Review final code)] ￼
@@ -272,7 +272,7 @@ document.getElementById('product-list')
 );
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 

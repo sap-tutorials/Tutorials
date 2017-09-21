@@ -35,7 +35,7 @@ apt-get install openssl
 You will probably get a message indicating it is already installed:
 ![SSL installation](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -50,7 +50,7 @@ At any time during the installation of dependencies, you may be prompted about u
 ![Confirm disk usage](7.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Install libtool)]
@@ -65,7 +65,7 @@ apt-get install libltdl7
 ![Install libtool](8.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Install the AIO library)]
@@ -80,7 +80,7 @@ Example:
 ![Install libaio](9.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](For XSA installation, install unzip)]
@@ -94,7 +94,7 @@ Example:
 ![Install libtool](10.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](For HANA 2.0 SPS01: Create and alias for chkconfig and install curl)]
@@ -122,7 +122,7 @@ Also for SAP HANA 2.0 SPS01, install curl:
 apt-get install curl
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Update the hostname)]
@@ -158,7 +158,7 @@ Grant permissions for all users on the script with command `chmod`:
 chmod 777 ./set_hostname.sh
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Configure the script to set the hostname at startup in Google Cloud Platform)]
@@ -180,7 +180,7 @@ For example:
 
 **Reboot** your Virtual Machine and check that your hostname has been set automatically with command `hostname`.
 
-[DONE]
+
 [ACCORDION-END]
 
 

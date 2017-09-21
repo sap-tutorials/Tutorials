@@ -41,7 +41,7 @@ Double your resources for the installation process by editing the Virtual Machin
 
 **Save** the settings and **Start** your instance again.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Execute the installation script)]
@@ -98,7 +98,7 @@ The system ID you want to use. As you will probably use the tutorials on the man
 
  Hit **Enter**. The best is about to come.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -112,7 +112,7 @@ After you hit  **Enter** the script will verbosely inform what it is doing. **Av
 
 Wait until the command prompt in the console is available for input again.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Check the installation)]
@@ -128,7 +128,7 @@ You can also check the log by running command `ls -ltr` in the directory
 
 Finally, the command-line Lifecycle Management program can check the installation for you: `/hana/shared/HXE/hdblcm/hdblcm`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Reset the resources for your Virtual Machine)]
@@ -158,7 +158,7 @@ Edit the Virtual Machine to suit your installation. These are the minimal requir
 
 **Save** your settings.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -172,7 +172,7 @@ Where the  `104.109.XXX.XXX` stands for the external IP and the `ubuntu-1604-lts
 
 Enjoy your HANA Express Edition Instance!
 
-[DONE]
+
 [ACCORDION-END]
 
 

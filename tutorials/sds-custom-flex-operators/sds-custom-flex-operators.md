@@ -33,7 +33,7 @@ In the **SAP HANA Streaming Development** perspective, with your project open in
 
 ![add flex item](1-addflexitem.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Connect it to the event stream)]
@@ -42,7 +42,7 @@ Connect the **`DEVICE_EVENTS`** stream to the new Flex operator.
 
 ![connect](2-connect.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Rename it)]
@@ -51,7 +51,7 @@ Rename the new Flex operator to `POWER_OUTAGES`.
 
 ![rename](3-rename.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add columns to define the schema)]
@@ -64,7 +64,7 @@ Change the column names and data types to match the screenshot provided. Double 
 
 ![rename columns](5-renamecolumns.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add a local declaration block)]
@@ -86,7 +86,7 @@ END
 ```
 ![enter declaration](7-enterdeclaration.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add the event handler script)]
@@ -119,7 +119,7 @@ ON DEVICE_EVENTS {
 ```
 > Note: The `msdate` variable type is a timestamp with millisecond precision. The default format is `YYYY-MMDDTHH:MM:SS:SSS`. When an `msdate` is subtracted from another `msdate`, the resulting value is of type interval. The interval data type is in microseconds, hence the division by 60000000.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Change the Flex to produce an output stream instead of a window)]
@@ -144,7 +144,7 @@ Here are some notes on the CCL Script used here:
     - Next check to see if the incoming event is a Power On event. If it is, and if there is a Power Off time for this machine in the dictionary, then construct and publish an output event.
     - Anytime you publish an event from a Flex you have to explicitly set the "`OpCode`" of the event being produced – thus, the use of the "`setOpcode`" function.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Optional
@@ -205,7 +205,7 @@ END;
 
 ![ccl script](2-ccl-script.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Option:](View complete project in CCL)]
@@ -367,5 +367,5 @@ PROPERTIES
 
 ```
 
-[DONE]
+
 [ACCORDION-END]

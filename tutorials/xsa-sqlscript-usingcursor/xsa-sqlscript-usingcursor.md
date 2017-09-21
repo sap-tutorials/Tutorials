@@ -32,7 +32,7 @@ Be sure to change the namespace from `Undefined` to `dev602.procedures`. Enter t
 
 ![output parameters](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add DECLARE statements)]
@@ -41,7 +41,7 @@ Enter the following DECLARE statements
 
 ![declare statements](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add a loop)]
@@ -50,7 +50,7 @@ Enter a FOR loop which will iterate over the input parameter table and perform t
 
 ![for loop](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Check code and save)]
@@ -66,7 +66,7 @@ Click **Save**.
 
 ![save](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Remove last SELECT)]
@@ -75,7 +75,7 @@ Return to the procedure called `get_product_by_filter` and remove the last SELEC
 
 ![remove select](7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Call the procedure)]
@@ -84,7 +84,7 @@ Insert a call to the procedure called `calculate_cumulative_sum_of_delivered_pro
 
 ![insert call prcoedure](8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add SELECT statement)]
@@ -93,7 +93,7 @@ Finally, add a SELECT statement at the end to assign the sorted results to the o
 
 ![select statement](9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Check complete code)]
@@ -104,7 +104,7 @@ The completed code should look very similar to this following. If you do not wis
 PROCEDURE "dev602.procedures::get_product_by_filter" (        IN im_product_filter_string varchar(5000),        OUT EX_PRODUCTS TABLE (  PRODUCTID NVARCHAR(10),                                 DELIVERYDATE DAYDATE,                       NUM_DELIVERED_PRODUCTS BIGINT,             CUMULATIVE_SUM BIGINT ) ) LANGUAGE SQLSCRIPT SQL SECURITY INVOKER --DEFAULT SCHEMA <default_schema_name> READS SQL DATA  ASBEGIN	pre_filtered_products =       SELECT * FROM "dev602.data::MD.Products" WHERE CATEGORY NOT IN ('Laser Printer');	user_filtered_products = APPLY_FILTER(:pre_filtered_products, :im_product_filter_string ) ;	filtered_items  =      select pi."PRODUCT.PRODUCTID" as PRODUCTID, pi.DELIVERYDATE 	from :user_filtered_products as p    inner join "dev602.data::PO.Item" as pi on p.productid = pi."PRODUCT.PRODUCTID" ; 	aggregated_filtered_items =        SELECT  PRODUCTID, DELIVERYDATE,     COUNT(PRODUCTID) AS NUM_DELIVERED_PRODUCTS             FROM :filtered_items                 GROUP BY PRODUCTID ,DELIVERYDATE                    ORDER BY PRODUCTID, DELIVERYDATE;CALL "dev602.procedures::calculate_cumulative_sum_of_delivered_products"(     IM_PRODUCTS => :aggregated_filtered_items,     EX_PRODUCTS => :products ) ;  ex_products = select * from :PRODUCTS order by PRODUCTID, DELIVERYDATE;END
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Save and build)]
@@ -115,7 +115,7 @@ Click **Save**.
 
 Use what you have learned already and perform a build on your `hdb` module.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Invoke the procedure)]
@@ -132,7 +132,7 @@ Make sure to pass the filter string. Note: This procedure call will take a few s
 
 ![filter string](13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](View the results)]
@@ -145,7 +145,7 @@ You will notice that using cursors takes quite a bit of time.
 
 ![run time](15.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

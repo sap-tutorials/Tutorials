@@ -31,7 +31,7 @@ Choose your SAP HANA Repository for deployment.
 
 ![Choose the SAP HANA repo](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create repository if necessary)] ￼
@@ -40,7 +40,7 @@ Define the steps and repository if for some reason you have not already created 
 
 ![Specific Repo](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Define package name)] ￼
@@ -49,7 +49,7 @@ Define your "package" name which corresponds to the path when you work with your
 
 ![Define package](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Activate project)] ￼
@@ -58,7 +58,7 @@ Finally right click again and under **Team** choose **Activate All** to activate
 
 ![Activate](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ￼

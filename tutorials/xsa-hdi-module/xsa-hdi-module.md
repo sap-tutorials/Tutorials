@@ -61,7 +61,7 @@ You will be able to see some of the additional files that the module creation wi
 ![Show hidden files](6.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create CDS Table)]
@@ -157,7 +157,7 @@ Type HistoryT {
 
 Save the artifact after entering this code.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Review CDS Entities and Types)]
@@ -222,7 +222,7 @@ The log should say that the Build of your project has completed successfully:
 
 > Hint: As of HANA 2.0, you can choose to build just the `db` folder or a specific module
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create Sequence for Primary Key)]
@@ -250,7 +250,7 @@ FROM "PurchaseOrder.Header"
 
 **Build** the `orderId.hdbsequence` and the dictionary definitions (`PurchaseOrder.hdbcds`) file by right-clicking on it and selecting `Build Selected Files`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Check the Database Explorer)]
@@ -271,7 +271,7 @@ You can now see the container, table definitions and contents you have created s
 
 ![Container in SAP HANA HRTT](11_4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create and Upload Data)]
@@ -415,7 +415,7 @@ Right-click on any of the tables and you will see data.
 
 Notice the column names where you used the complex type definition called `History`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create Synonyms)]
@@ -425,7 +425,7 @@ Notice the column names where you used the complex type definition called `Histo
 
 ![Any synonym name, table name dummy and schema name SYS](11_1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Create Procedures)]
@@ -461,7 +461,7 @@ PROCEDURE "getPOItems" ( OUT ex_addresses "PurchaseOrder.Item" )
 
 Remember to **Save**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Create Roles)]
@@ -531,7 +531,7 @@ This is what the folder structure finally looks like:
 
 We are now ready to perform the final **Build**. HDB modules are now complete and can be checked in the Database Explorer.
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -33,7 +33,7 @@ Click **Go to Service**.
 
 >You can bookmark this page for ease of access in the future.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Select HelpDesk application)]
@@ -42,7 +42,7 @@ Select the **`HelpDesk`** application from the drop-down menu in the upper-right
 
 ![Select HelpDesk Application](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](View existing rules)]
@@ -51,7 +51,7 @@ To get an overview of existing rules, navigate to the **Game Mechanics** tab and
 
 ![Check Rules](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Edit rule logic)]
@@ -73,7 +73,7 @@ Click **Save**.
 
 ![Save Experience Points](7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Edit more logic)]
@@ -98,7 +98,7 @@ Click **Save**.
 
 >**`Experience Points`** for responding to critical tickets are given in addition to **`Experience Points`** given for processing any ticket. In other words, users will now receive 10 points when solving a critical ticket (7 critical points plus 3 points for solving any ticket).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Verify updates)]
@@ -107,7 +107,7 @@ You can ensure that these rules were successfully updated by checking the notifi
 
 ![Notification Center](11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Delete levels)]
@@ -120,7 +120,7 @@ Select all the levels in the table and choose **Delete**.
 
 ![Delete Levels](13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Create levels)]
@@ -129,7 +129,7 @@ Click **Add**. Enter a **Name**, make sure that **Experience Points** are select
 
 ![Create Levels](14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add more levels)]
@@ -138,7 +138,7 @@ Repeat the previous step three to five times until you have a variety of levels.
 
 >Start with a level with a small threshold, so that newly registered users will have a level already assigned.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Launch the gamified app)]
@@ -155,7 +155,7 @@ Select **continue** when the home screen of the sample gamified HelpDesk applica
 
 ![Enter HelpDesk Application](18.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Test game features)]
@@ -172,7 +172,7 @@ In your profile, you should see the new levels (green box) as well as the increa
 
 ![See Results](21.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

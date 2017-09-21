@@ -434,14 +434,10 @@ Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following
 
 Edit the `demo.view.xml` file located in the `webapp/view`.
 
-Inside the `<detailPages>` element add the following element:
+Inside the `<detailPages>` element, and uncomment the following element:
 
 ```xml
-<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Cloud for predictive services (Asynchronous Mode)">
-  <content>
-    <mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/>
-  </content>
-</Page>
+<mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/>
 ```
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)

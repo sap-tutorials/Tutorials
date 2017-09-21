@@ -44,7 +44,7 @@ Open the **SAP API Management API Portal** (you can get the URL from Enable the 
 
 ![Open SAP API Management API Portal](01-access_api_portal.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Quick start an API Provider creation)]
@@ -55,7 +55,7 @@ From the **Quick Action** tile on the Home screen you can immediately create an 
 
 This will bring up the create wizard for an API Provider.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](View and create API Providers)]
@@ -73,7 +73,7 @@ To create a new provider from this page, click on **Create**
 ![Click on Create](04-Create.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -116,7 +116,7 @@ Service Collection URL | `/IWFND/CATALOGSERVICE/ServiceCollection`
 
 ![Enter values for catalog services](05b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Save your API provider)]
@@ -125,7 +125,7 @@ Click on **Save** at the top-right side.
 
 ![Save button](09-Save.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Test your settings)]
@@ -134,7 +134,7 @@ To Test your settings, click the **Catalog Service Settings** tab on the API Pro
 
 ![Copy Catalog URL](06-opt-catalogURL.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](View list of services)]
@@ -143,7 +143,7 @@ When the URL was correct you should see a list of services available on the SAP 
 
 ![Successful result](08-resultsInBrowser.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -153,7 +153,7 @@ When the API Provider was saved successful a toast will quickly show up and you 
 
 ![Go back to the overview screen](10-SavedAndBack.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](View providers)]
@@ -162,7 +162,7 @@ Now you can see one API Provider in the list of available API Providers.
 
 ![Overview of API Providers](11-OneProvider.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

@@ -46,7 +46,7 @@ Press **Go** to get the list of all Bonus Plans. **Open** a bonus plan's detail 
 This is the screen that will be adapted.
 ![Bonus Plan's detail view before adaptation](UI_BoDetailsBeforeAdaptation.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2:](Switch to Adaptation mode)]
@@ -57,7 +57,7 @@ This is the screen that will be adapted.
 Open the adaptation mode via **Adapt UI**.
 ![Go to UI Adaptation mode](UI_go2Adaptation.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3:](Create an UI group)]
@@ -72,7 +72,7 @@ By right clicking onto them you get options to adapt the UI. As these options ar
 
 **Create Group** and name it "Bonus Data".
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4:](Move UI elements)]
@@ -94,7 +94,7 @@ Repeat **Drag & Drop** into Bonus Data group for the fields:
 - Employee ID
 - Employee Name
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5:](Apply UI changes)]
@@ -104,7 +104,7 @@ Repeat **Drag & Drop** into Bonus Data group for the fields:
 Finally you only need to **Exit** adaptation mode to work with the new layout.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

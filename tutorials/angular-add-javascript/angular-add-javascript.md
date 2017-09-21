@@ -40,7 +40,7 @@ We need to add Angular to our application.  Add the following to the `<head>` se
 
 ![Add Angular toolkit to application](1-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Update head element)]
@@ -54,7 +54,7 @@ Next, update the `<head>` element to tell the browser the text we will be using.
 
 ![Update head element](1-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add initial JavaScript element)]
@@ -73,7 +73,7 @@ Add a `<script>` element to the `<head>` of your document.
 
 ![Add script tags](2-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add test data)]
@@ -111,7 +111,7 @@ var testData = [
 
 ![Add test data](2-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add Angular module and controller)]
@@ -138,7 +138,7 @@ function helloController($scope){
 
 ![Add module and controller](2-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Run the application)]
@@ -147,7 +147,7 @@ Run the application.  Nothing looks different, yet, because we haven't attached 
 
 ![Nothing looks different yet](2-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Connect the test data)]
@@ -164,7 +164,7 @@ Change the `<html>` tag, at the top of your file, to add the attribute `ng-app="
 
 ![add ng-app to html tag](3-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add attribute for controller)]
@@ -179,7 +179,7 @@ Add the attribute `ng-controller="helloController"` to the `<body>` tag:
 
 ![add ng-controller to body tag](3-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add an Angular view)]
@@ -194,7 +194,7 @@ Find the `<h4>` tag where the product name goes (it's currently called `Top Labe
 
 ![add dynamic data to product name](3-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Run the application)]
@@ -203,7 +203,7 @@ Now run your application.  The text of the label should now read `Test Product 1
 
 ![display product name is now test data](3-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Loop through the data)]
@@ -220,7 +220,7 @@ In our case, we want to add `ng-repeat="product in productList"` to our `<button
 
 ![add loop to list](4-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Bind H4 element)]
@@ -233,7 +233,7 @@ Next, change the first `<h4>` tag to use the new array variable.
 
 ![change product name to use the loop variable](4-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Run the application)]
@@ -242,7 +242,7 @@ Run your application.  You will see four items appear, with four different produ
 
 ![display the loop in action](4-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Bind fields to view)]
@@ -268,7 +268,7 @@ And inside your second `<div>` to:
 
 ![update other dynamic fields](4-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Run the application)]
@@ -277,7 +277,7 @@ Now run your application.  All the fields should be directly from the test data.
 
 ![show all data is now dynamic](4-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Add logic to views)]
@@ -295,7 +295,7 @@ Find the line with the ``{{product.Discontinued}}`` and add boolean logic to it.
 
 ![add in boolean logic to dynamic data](5-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Run the application)]
@@ -304,7 +304,7 @@ Run your application.  It will change the text from true or false to Available o
 
 ![display boolean logic in action](5-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Review additional information)]
@@ -315,7 +315,7 @@ AngularJS:
 
 - [`ng-repeat`](https://docs.angularjs.org/api/ng/directive/ngRepeat) - the AngularJS loop function
 
-[DONE]
+
 [ACCORDION-END]
 
 ---

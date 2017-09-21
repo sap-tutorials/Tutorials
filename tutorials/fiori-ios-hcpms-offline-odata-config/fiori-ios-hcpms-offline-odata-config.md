@@ -97,7 +97,7 @@ Defining request configuration:
 
 >Note: Since the purchase orders and sales orders are more subject to change than for instance products and customers, you have set the refresh interval for these to 15 minutes; the other entities will be refreshed each day by default.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Configure application definition)]
@@ -110,7 +110,7 @@ Navigate to **Offline Configuration**. The links next to the connection name sho
 
 ![Upload application-config.ini file](fiori-ios-hcpms-offline-odata-config-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Upload Application  Configuration File)]
@@ -123,7 +123,7 @@ Click **Upload**. If everything goes well, the formerly disabled links are now e
 
 ![Upload application-config.ini file](fiori-ios-hcpms-offline-odata-config-04.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Examine uploaded configuration)]
@@ -134,14 +134,14 @@ Click through the now-enabled links, and you should be able to review the settin
 
 ![Upload application-config.ini file](fiori-ios-hcpms-offline-odata-config-06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Finalize upload)]
 
 Click **OK** to close the dialog, and click **Save** to store the changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

@@ -29,7 +29,7 @@ In this tutorial, you will learn how to create (or define) an app in SAP Cloud P
 
 Go to your [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com) and log on.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Launch Development & Operations Cockpit app)]
@@ -42,7 +42,7 @@ Click on the **Go to Service** link to launch the Development & Operations Cockp
 
 ![Go to Service](mg5-2-03.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add new application)]
@@ -55,7 +55,7 @@ Click on the **Create Application** icon to add a new application definition.
 
 ![Create Application](mg5-2-05.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Edit details and save)]
@@ -76,7 +76,7 @@ Security Configuration    | `None` (from drop-down)
 
 ![Create application form](mg5-2-06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add connection details)]
@@ -100,7 +100,7 @@ Relative Paths      | (leave blank)
 
 ![Applications tile](mg5-2-08.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Application creation is complete)]
@@ -109,7 +109,7 @@ You have successfully created the application in Development & Operations. Click
 
 ![Applications tile](mg5-2-09.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

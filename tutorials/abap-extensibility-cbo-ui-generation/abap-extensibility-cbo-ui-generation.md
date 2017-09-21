@@ -45,7 +45,7 @@ In the first parts a Manager wants to define business objects "Bonus Plan" for e
 To be able to do changes to the lastly published version of the business object you need to start edit mode by executing the **Edit Draft** action.
 ![Press Edit Draft](CBO_editDraft.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Generate UI)]
@@ -55,7 +55,7 @@ To be able to do changes to the lastly published version of the business object 
 
 **Publish** the business object to trigger the generation of UI (Master and Detail) and OData Service.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Expose UI as Application)]
@@ -76,7 +76,7 @@ In the opening value help narrow down the result list by searching for `Extensib
 ![Publishing Custom Catalog Extension](CCE_publish.png)
 This step takes some minutes, the screen refreshes automatically and once the status switches from unpublished to published, you can close this application's window and proceed.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Open Bonus Plan application)]
@@ -90,7 +90,7 @@ Now there is the Bonus Plan application's tile in the **Extensibility** group.
 **Start** the application by clicking its tile.
 ![Bonus Plans application tile](tile_BonusPlans.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Test Bonus Plan application)]
@@ -116,7 +116,7 @@ Employee ID <any> shall be the one of a sales person that created sales orders w
 
 **Save** the Bonus Plan. The UI will automatically return from Bonus Plan Detail to Master, where you can see one entry in the list of bonus plans now.
 
-[DONE]
+
 [ACCORDION-END]
 ---
 

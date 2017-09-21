@@ -585,14 +585,10 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 Edit the `demo.view.xml` file located in the `webapp/view`.
 
-Inside the `<detailPages>` element add the following element:
+Inside the `<detailPages>` element, uncomment the following element:
 
 ```xml
-<Page id="detail_forecast_synchronous" title="Forecast with the SAP Cloud for predictive services (Synchronous Mode)">
-  <content>
-    <mvc:XMLView viewName="pspredictive.view.forecast.synchronous"/>
-  </content>
-</Page>
+<mvc:XMLView viewName="pspredictive.view.forecast.synchronous"/>
 ```
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)

@@ -24,7 +24,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 Installing SAP HANA 2.0, express edition installs a permanent 32 GB license automatically. No license configuration is required.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Test Your Server Installation)]
@@ -53,7 +53,7 @@ Installing SAP HANA 2.0, express edition installs a permanent 32 GB license auto
 
     ![XSEngine Success Page](hxe_xs_success.PNG)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Test XSA (Applications Package Only))]
@@ -94,7 +94,7 @@ If you installed the Applications package (`hxexsa.tgz`), test your XSA installa
 
     >**Note**: If you are using HANA Cockpit to register a resource, both HANA Cockpit and the SAP HANA, express edition need to be from the same release. SAP does not recommend using a newer HANA Cockpit to register an older version of SAP HANA, express edition.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Test Web IDE (Applications Package Only))]
@@ -148,7 +148,7 @@ SYSTEM is the database superuser and is not intended for day-to-day activities i
     /usr/sap/<SID>/HDB<instance-number>/exe/hdbsql -i <instance-number> -d SystemDB -u <admin-username> -p "<admin-password>" "ALTER USER SYSTEM DEACTIVATE USER NOW;"
     ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Best Practice: ](Backups)]
@@ -183,7 +183,7 @@ Launch when prompted, or go to the eclipse folder (example: `C:\Users\<path>\ecl
 
 Follow the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html) to connect to your SAP HANA, express edition client machine.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Optional: ](Install SAP Enterprise Architecture Designer (Applications Package Only))]
@@ -236,7 +236,7 @@ Install SAP EA Designer in your SAP HANA 2.0, express edition system using the `
 
     You are prompted to change the password. You are logged in as administrator of SAP EA Designer.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Optional: ](Install SAP HANA Interactive Education (SHINE))]
@@ -270,7 +270,7 @@ To install SHINE for XSA, run the following as `<sid>adm`:
 <extracted_path>/HANA_EXPRESS_20/install_shine.sh
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Optional: ](Installing SAP HANA External Machine Learning Library)]
@@ -289,7 +289,7 @@ The SAP HANA External Machine Learning Library is an application function librar
 
     For more information on the SAP HANA External Machine Learning Library, see the SAP HANA documentation collection.    
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -309,7 +309,7 @@ If you are using SAP HANA 2.0, express edition in a language other than English 
     tar -xvzf <download_path>/additional_lang.tgz
     ```
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

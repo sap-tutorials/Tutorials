@@ -40,7 +40,7 @@ Click **OK** to continue. The SDK Assistant opens with a screen which lists any 
 
 ![SDK Assistant](fiori-ios-hcpms-sdk-assistant-01.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open the Settings dialog)]
@@ -51,7 +51,7 @@ Click the **Settings** button. It will display an empty, initial configuration:
 
 Before you can create an application using the SDK Assistant, you need to setup your SAP Cloud Platform mobile service for development and operations configuration, and specify the path to the SAP Cloud Platform SDK for iOS framework files.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Specify SAP Cloud Mobile Services details)]
@@ -102,7 +102,7 @@ Enter the following details:
 
 Click **Save** to store your SAP Cloud Platform mobile service for development and operations configuration.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Specify SDK framework path)]
@@ -111,7 +111,7 @@ Now, you need to specify the path to the SAP Cloud Platform SDK for iOS. Point t
 
 Click **Save** to store your SDK Assistant configuration.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create application)]
@@ -134,7 +134,7 @@ Enter the following details:
 
 Click **Next** to continue.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Select the application definition)]
@@ -151,7 +151,7 @@ Click **OK** when done. The application identifier and application name are now 
 
 Click **Next** to continue.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Select the back end connection)]
@@ -162,7 +162,7 @@ In the next screen, the available OData connection is displayed. Since you alrea
 
 Click **Next** to continue.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Select additional options)]
@@ -183,7 +183,7 @@ For this tutorial, make sure you have all checkboxes checked:
 
 Click **Finish** to continue.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Examine the generated application project)]
@@ -198,7 +198,7 @@ As you see, it has generated **Proxy Classes** for each entity of the specified 
 
 > Would you have set **Security Configuration** to **None**, the authentication views and logic would not be generated, and users will access your application anonymously.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Build and run the application)]
@@ -209,7 +209,7 @@ Click the **Build and Run** button in Xcode.
 
 The **Simulator** now starts up, and launches your application.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Push Notifications confirmation message)]
@@ -224,7 +224,7 @@ Click the **Allow** button to allow receiving of push notifications.
 
 > If you run the app on a physical iOS device, it then stores your preference in the settings. You can change these preferences later in the iOS device by navigating to **Settings > Notifications > Demo App** and enable/disable notifications from here.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Log on to the application via SAP Cloud Platform mobile service for development and operations)]
@@ -233,7 +233,7 @@ At the **Logon** screen in your app, enter your **SAP Cloud Platform mobile serv
 
 ![SDK Assistant](fiori-ios-hcpms-sdk-assistant-15.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Examine the list of available entities)]
@@ -242,7 +242,7 @@ You will now see your app with all your OData service entities in the Master vie
 
 ![SDK Assistant](fiori-ios-hcpms-sdk-assistant-11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Examine the Suppliers Master view)]
@@ -251,7 +251,7 @@ Click on, for instance, **Suppliers**, it will now load the **Supplier** entitie
 
 ![SDK Assistant](fiori-ios-hcpms-sdk-assistant-12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Examine a Supplier Detail view)]
@@ -260,7 +260,7 @@ If you now click on one of the **Supplier** entities, it will display the **Deta
 
 ![SDK Assistant](fiori-ios-hcpms-sdk-assistant-14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

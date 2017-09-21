@@ -27,7 +27,7 @@ Examples of language settings are `en` for English, `de` for German. Language an
 
 Log into your [SAP Cloud Platform account](https://account.hanatrial.ondemand.com), click on the **Services** in the left-hand navigation bar.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open the SAP Translation Hub overview page)]
@@ -38,7 +38,7 @@ Click on the tile to open the overview page.
 
 ![Accounts settings](te-2016-8-04.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Go To Service)]
@@ -47,7 +47,7 @@ Click on the **Go to Service** link.
 
 ![Accounts settings](te-2016-8-05.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a new translation project)]
@@ -56,7 +56,7 @@ When the Translation Hub page loads, click the **+** icon at the bottom of the w
 
 ![Accounts settings](te-2016-8-06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Fill in project details)]
@@ -75,7 +75,7 @@ Click on **Save**
 
 ![Accounts settings](te-2016-8-07.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Initiate translations)]
@@ -86,7 +86,7 @@ Once the project is created click the green **Get Translations** button, and log
 
 ![Accounts settings](te-2016-8-09.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Translation completion)]
@@ -95,7 +95,7 @@ You will see the "All done." toast message at the bottom of the screen when the 
 
 ![Accounts settings](te-2016-8-12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Pull translated files to Web IDE)]
@@ -108,7 +108,7 @@ In the **Git pane**, click the **Pull** button to pull the translated files from
 
 ![Accounts settings](te-2016-8-13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Confirm translated files in project)]
@@ -120,7 +120,7 @@ If you check the `i18n` folder in your project, you will see the two new files:
 
 ![Accounts settings](te-2016-8-14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Commit files, and deploy to the cloud)]
@@ -129,7 +129,7 @@ Commit your new files to **Git** and deploy the application to SAP Cloud Platfor
 
 Right-click on your **`te2016`** project folder, and select **Deploy > Deploy to SAP Cloud Platform** and click **Deploy**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Testing your language files)]
@@ -145,14 +145,14 @@ To do so, just append `?sap-ui-language=xx_YY` to your application URL
 - And the Spanish strings by specifying:
   - `https://te2016-p12345678trial.dispatcher.hanatrial.ondemand.com/?sap-ui-language=es`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Run the app on your phone)]
 
 If your device is set to either the German or Spanish locale, then the app will check the language and locale settings on the device, and load the appropriate strings file.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

@@ -32,7 +32,7 @@ This procedure assumes you are using the trial account of the SAP Cloud Platform
 
 Go to the [SAP Cloud Platform trial edition](https://account.hanatrial.ondemand.com/cockpit) log in (or sign up if you don't have an account yet).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable IoT service)]
@@ -45,7 +45,7 @@ Click on the **Enable** button. After a few seconds the page will update and sho
 
 ![Enable Service](p6_3a.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Go to IoT Service Cockpit)]
@@ -54,7 +54,7 @@ Once the service is enabled click the **Go to Service** link and a new browser t
 
 ![Access Service](p6_4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Deploy Message Management Service)]
@@ -67,7 +67,7 @@ Enter in your information in the fields, where your account ID is your p-number 
 
 ![Deploy Service](p6_6a.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Go to IoT MMS application dashboard)]
@@ -78,7 +78,7 @@ Return to the SAP Cloud Platform cockpit view and click on **Java Applications**
 
 ![Deployed application](p6_7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Assign IoT MMS user role)]
@@ -95,7 +95,7 @@ Once user is assigned to the role, stop and start `iotmms` application.
 
 ![Start/stop](p6_10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -25,11 +25,11 @@ You are now going to build a simple and quick SAP HANA XS application, if you al
 ---[ACCORDION-BEGIN [Step 1: ](Log into server)]Login to the server provided during this event or to your own SAP HANA server and go to the SAP HANA Web Based Development Workbench
 `http://xx.xx.xx.xx/sap/hana/xs/ide/editor`
 Your login is: user name `CODEJAMMER` and `CodeJam2015` (or whichever username and password you have been given to login with)
-[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 2: ](Create new package)]Once you have your editor loaded you will need to create a package name under the **CODEJAMMER** package with your name. This is done by right clicking on the **CODEJAMMER** package and choosing **New > Package** and then entering your name. If the **CODEJAMMER** package does not exist then simply create a new package under the **root** package which is simply the "Content" folder.
+[ACCORDION-END][ACCORDION-BEGIN [Step 2: ](Create new package)]Once you have your editor loaded you will need to create a package name under the **CODEJAMMER** package with your name. This is done by right clicking on the **CODEJAMMER** package and choosing **New > Package** and then entering your name. If the **CODEJAMMER** package does not exist then simply create a new package under the **root** package which is simply the "Content" folder.
 
-![Repository View](p2_2.png)[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 3: ](Create another new package)]Then under your new package you will want to create another new package called `myiot`. This will be the package that you place all of our XS code under for our application.
+![Repository View](p2_2.png)[ACCORDION-END][ACCORDION-BEGIN [Step 3: ](Create another new package)]Then under your new package you will want to create another new package called `myiot`. This will be the package that you place all of our XS code under for our application.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create application)]
@@ -38,26 +38,26 @@ Now you will need to right-click on your `myiot` package and choose **Create App
 
 ![Package Creation](p2_4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Accept defaults)]
 
 Accept the default values, and an empty application with the basic `.xsapp` and `.xsaccess` files you need will be created.![Create Application](p2_5.png)
-[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 6: ](Add data objects)]Now that you have the basic application you will add in some data objects so you can store data from your devices. The first object you need will be a schema file. Select your `myiot` package, right-click and choose **New > File**. Use something simple like your name (in all caps) for the first part of the file name. In this example, `JOHNDOE` was used.
+[ACCORDION-END][ACCORDION-BEGIN [Step 6: ](Add data objects)]Now that you have the basic application you will add in some data objects so you can store data from your devices. The first object you need will be a schema file. Select your `myiot` package, right-click and choose **New > File**. Use something simple like your name (in all caps) for the first part of the file name. In this example, `JOHNDOE` was used.
 Name the file: `YOURNAME.hdbschema`
 
->Be sure to use all capital letters for the schema filename![New schema](p2_6.png)[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 7: ](Add content)]Enter the following content into your `.hdbschema` file, replacing `JOHNDOE` with your name.
+>Be sure to use all capital letters for the schema filename![New schema](p2_6.png)[ACCORDION-END][ACCORDION-BEGIN [Step 7: ](Add content)]Enter the following content into your `.hdbschema` file, replacing `JOHNDOE` with your name.
 
 >Ensure you use all capital letters for the schema name
 ```
 schema_name="JOHNDOE";
 ```
-![Schema definition](p2_7.png)[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 8: ](Create table definition file)]The the next file you need to create is a table definition file. Right-click on your `myiot` package, select **New > File** and name the file `mydata.hdbdd`. This file will define the table and data types that you will use to store the data as well as access it later.
+![Schema definition](p2_7.png)[ACCORDION-END][ACCORDION-BEGIN [Step 8: ](Create table definition file)]The the next file you need to create is a table definition file. Right-click on your `myiot` package, select **New > File** and name the file `mydata.hdbdd`. This file will define the table and data types that you will use to store the data as well as access it later.
 
 ![Data definition](p2_8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add content)]
@@ -92,12 +92,12 @@ BRIGHTNESS: Double;
 };
 
 };  
-```[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 10: ](Create stored procedure)]Once table definition file is saved it will activate and create your table. You will now need to create a stored procedure and an OData service file. The OData service file will allow you to access any data and set the connection to the stored procedure for enabling the insertion of new data into the table.
-[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 11: ](Create a sequence)]To create a sequence (an incrementing number for the ID field in your table), right-click on your `myiot` package, select **New > File** and name the file `johndoe_id_seq.hdbsequence`.You will notice the use of the "name" in these examples it is "JOHNDOE" so be sure to make the appropriate changes.![Sequence definition](p2_11.png)
-[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 12: ](Add content)]Enter the following content in your `.hdbsequence` file, and replace instances of `johndoe` and `JOHNDOE` with the name you used.```schema="JOHNDOE";start_with=100;minvalue=1;cycles=false;depends_on_table="CODEJAMMER.johndoe.myiot::mydata.Data";
-```[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 13: ](Create stored procedure to insert new data)]Now that you have your table and incrementing ID field you need to create the stored procedure that will insert new data into the table. Follow the same procedure as above to add new file to your `myiot` package and name it: `newdata.hdbprocedure`
+```[ACCORDION-END][ACCORDION-BEGIN [Step 10: ](Create stored procedure)]Once table definition file is saved it will activate and create your table. You will now need to create a stored procedure and an OData service file. The OData service file will allow you to access any data and set the connection to the stored procedure for enabling the insertion of new data into the table.
+[ACCORDION-END][ACCORDION-BEGIN [Step 11: ](Create a sequence)]To create a sequence (an incrementing number for the ID field in your table), right-click on your `myiot` package, select **New > File** and name the file `johndoe_id_seq.hdbsequence`.You will notice the use of the "name" in these examples it is "JOHNDOE" so be sure to make the appropriate changes.![Sequence definition](p2_11.png)
+[ACCORDION-END][ACCORDION-BEGIN [Step 12: ](Add content)]Enter the following content in your `.hdbsequence` file, and replace instances of `johndoe` and `JOHNDOE` with the name you used.```schema="JOHNDOE";start_with=100;minvalue=1;cycles=false;depends_on_table="CODEJAMMER.johndoe.myiot::mydata.Data";
+```[ACCORDION-END][ACCORDION-BEGIN [Step 13: ](Create stored procedure to insert new data)]Now that you have your table and incrementing ID field you need to create the stored procedure that will insert new data into the table. Follow the same procedure as above to add new file to your `myiot` package and name it: `newdata.hdbprocedure`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Enter content)]
@@ -130,9 +130,9 @@ insert into "CODEJAMMER.johndoe.myiot::mydata.Data" values ("CODEJAMMER.johndoe.
 
 end if;
 
-END;```This code will use the "types" you defined in the table definition and then do an insert to the table with the "value" passed to it.[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 15: ](Create an OData service)]In order to activate or utilize this new procedure you will need to create an OData service. To do so, create another new file in your `myiot` package called `mydata.xsodata`.
+END;```This code will use the "types" you defined in the table definition and then do an insert to the table with the "value" passed to it.[ACCORDION-END][ACCORDION-BEGIN [Step 15: ](Create an OData service)]In order to activate or utilize this new procedure you will need to create an OData service. To do so, create another new file in your `myiot` package called `mydata.xsodata`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Add content)]
@@ -144,32 +144,32 @@ Enter the following content in your `.xsodata` file, and make the appropriate na
 "JOHNDOE"."CODEJAMMER.johndoe.myiot::mydata.Data" as "DATA"
 create using "CODEJAMMER.johndoe.myiot::newdata";
 }
-```[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 17: ](Create a role)]Your service enabled table is almost ready for use. You also need to give some authorizations and to do this you will create a "ROLE". Right-click on your `myiot` package and select **New > Role**. Enter `johndoe_myiot` for the role name (modify the name accordingly) and click **Create**.
+```[ACCORDION-END][ACCORDION-BEGIN [Step 17: ](Create a role)]Your service enabled table is almost ready for use. You also need to give some authorizations and to do this you will create a "ROLE". Right-click on your `myiot` package and select **New > Role**. Enter `johndoe_myiot` for the role name (modify the name accordingly) and click **Create**.
 
 ![New role](p2_11a.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Add your name)]
 
 Once created, click on **Object Privileges**, then the **+** sign. Enter your name (**JOHNDOE** used here) and a schema and sequence Object Type should appear in the Matching Items list.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 19: ](Add the role)]
 
 Select the schema item then click OK to add it to the role.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 20: ](Select all privileges)]
 
 Once the schema is added, select all the checkboxes under **Privileges** (on the right hand side).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 21: ](Enter your name)]
@@ -183,11 +183,11 @@ You will need to add your schema, table, sequence and procedure to this and then
 ![Table](p2_11d.png)
 
 ![Procedure](p2_11e.png)
-[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 22: ](Apply role to user)]Now that you have a role defined you need to apply that role to your user. Be sure to SAVE the role before continuing! To apply the role to your user, click the small **link** icon in the editor and choose **Security**. When the page updates, unroll the **Users** hierarchy, and select **CODEJAMMER** (or which ever user you were given for this server).
+[ACCORDION-END][ACCORDION-BEGIN [Step 22: ](Apply role to user)]Now that you have a role defined you need to apply that role to your user. Be sure to SAVE the role before continuing! To apply the role to your user, click the small **link** icon in the editor and choose **Security**. When the page updates, unroll the **Users** hierarchy, and select **CODEJAMMER** (or which ever user you were given for this server).
 
 ![User selection](p2_12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 23: ](Select your role)]
@@ -196,7 +196,7 @@ Click the **+** symbol under the **Granted Roles** tab and search for the role y
 ![Assign Role](p2_13.png)
 Now it's time to test...
 
-[DONE]
+
 [ACCORDION-END]
 
 

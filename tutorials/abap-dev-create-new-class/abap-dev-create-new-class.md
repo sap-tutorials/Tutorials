@@ -38,7 +38,7 @@ First, open your ABAP program, `ZSO_INVOICE_ITEMS_EURO` which you created in the
 
 ![Image depicting step1-open-abap-program](step1-open-abap-program.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Delete the WRITE statement)]
@@ -47,7 +47,7 @@ In the program `ZSO_INVOICE_ITEMS_EURO`, remove the WRITE statement: Delete the 
 
 ![Image depicting step2-delete-write](step2-delete-write.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create the global class)]
@@ -72,7 +72,7 @@ d. Choose **Finish**:
 
 > A new editor will be opened showing the class you have created, `ZCL_INVOICE_RETRIEVAL`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Check the syntax)]
@@ -81,7 +81,7 @@ If necessary, go back to your program and trigger the syntax check using the key
 
 > The syntax error should no longer occur.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Instantiate the class)]
@@ -90,7 +90,7 @@ Still in your program, create an instance of class `zcl_invoice_retrieval` using
 
 ![Image depicting step5-instantiate-class](step5-instantiate-class.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create a method to get the database records)]
@@ -116,7 +116,7 @@ c.  In the *Create class* wizard that appears, create a public method without pa
 
 ![Image depicting step6c-empty-method](step6c-empty-method.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add the method implementation)]
@@ -153,7 +153,7 @@ SELECT
 
 > The statement `UP TO 100 ROWS` will cause an error. You will fix this in the next step.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Format the code)]
@@ -170,7 +170,7 @@ b.	To make the `SELECT` statement more readable, add some line breaks in the `JO
 
 ![Image depicting step9a-pretty-print-2](step9a-pretty-print-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Declare the local variable explicitly)]
@@ -201,7 +201,7 @@ This creates a local variable referring to a local type and automatically genera
 
 It also replaces `INTO TABLE @DATA(lt_result)` with `INTO TABLE @lt_result`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Replace helper_type with Dictionary structure)]
@@ -216,7 +216,7 @@ b.	Remove the local type `helper_type`:
 
 ![Image depicting step13a-remove-helper-type](step13a-remove-helper-type.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Declare the local variable as a returning parameter)]
@@ -234,13 +234,13 @@ Note that the returning parameter was added to the method and an additional tabl
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Save and Activate your class)]
 Save ( **Ctrl+S** ) and Activate ( **Ctrl+F3** ) your class.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Use the returning parameter in the program)]
@@ -248,7 +248,7 @@ Now, in your program, declare an inline declared variable, `data(invoice_items)`
 
 ![Image depicting step12-declare-inline-variable](step12-declare-inline-variable.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Generating the ALV Grid)]
@@ -263,7 +263,7 @@ c.	Insert the full signature of the method call by pressing **Shift+Enter** :
 
 > If you prefer to insert the full signature by default, you can change the behavior of the code completion in the Preferences. Select Window in the menu and click on Preferences. In the Preferences Dialog enter code completion in the filter field or open the following path ABAP Development > Editors > Source Code Editors > Code Completion. In the Code Completion settings, you can activate a checkbox to Always insert full signature on completion.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Adapt the ALV Grid factory method)]
@@ -291,7 +291,7 @@ cl_salv_table=>factory(
        alv_table->display(  ).
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Save and activate the program)]
@@ -399,7 +399,7 @@ CLASS zcl_invoice_retrieval IMPLEMENTATION.
 ENDCLASS.
 
 ```
-[DONE]
+
 [ACCORDION-END]
 
 ---

@@ -33,7 +33,7 @@ In your SAP HANA Studio window, hover over __Window__ -> __Perspective__ -> __Op
 
 The *SAP HANA Development* perspective opens.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a New Repository Workspace)]
@@ -50,7 +50,7 @@ Make sure your user login for your tenant database is selected. You may use your
 
 Click __Finish__ to create your new workspace.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -66,7 +66,7 @@ Give your package a name and click __Finish__ to create the package.
 
 ![Create Repository Package](create_repository_finish_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a Flowgraph Model)]
@@ -92,7 +92,7 @@ Ensure that your new package is highlighted. Give your flowgraph a name. Ensure 
 
 Your new flowgraph opens.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Arrange the Flowgraph)]
@@ -121,7 +121,7 @@ Hover over the _AUTOARIMA_ block. Click and hold the _Connect_ icon ![Connect](c
 
 ![Arranged Flowgraph](flowgraph_arranged_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Adjust Model Properties)]
@@ -142,7 +142,7 @@ Under the _Properties_ window, add your user schema to _Authoring Schema_. Add a
 
 ![TEMPLATESINK Properties](templatesink_properties_additions_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create the Model)]
@@ -162,7 +162,7 @@ Click the __Execute__ icon ![Execute](execute.png).
 > __Note:__
 > If you receive an error during this step, see the troubleshooting section below.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Optional: ](Preview the Model)]
@@ -176,7 +176,7 @@ Return to the _SAP HANA Administration Console_ perspective. Under your user log
 
 You may notice that this data is identical to _Step 2: Run the Model SQL Script_ in the previous tutorial.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Prepare the Model for Analysis)]
@@ -193,7 +193,7 @@ Change the *PARAMS_2* by hovering over it and clicking the __Properties__ icon !
 
 ![Change PARAMS_2](params_2_intargs_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Prepare the New Flowgraph Blocks)]
@@ -208,7 +208,7 @@ As before, change the _TEMPLATESINK_ properties. Hover over *TEMPLATESINK_2* and
 
 Click the __Activate__ icon ![Activate](activate.png). A new job will appear in your Job Log.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Preview the Data)]
@@ -221,7 +221,7 @@ Go to the _Systems_ tab. Refresh your tenant database. Find the results table un
 
 You will notice that this data is identical to _Step 4: Run the Predict SQL Script_ in the previous tutorial.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Troubleshooting: ](Unsupported encoding Cp 1252)]
@@ -246,7 +246,7 @@ Click __OK__.
 
 Click the __Activate__ icon ![Activate](activate.png) and continue with the tutorial.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

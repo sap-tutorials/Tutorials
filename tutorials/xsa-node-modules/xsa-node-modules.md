@@ -103,7 +103,7 @@ First, the `@sap/logging` module is used to write log and trace files. By callin
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add XSJS initialization)]
@@ -173,7 +173,7 @@ app.use(xsjsApp);
 You can now **Save**, as you have defined both reusable modules.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create route handler)]
@@ -197,7 +197,7 @@ module.exports = function(app, server){
 Add the code to the new `index.js` file and **save**.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create destination module for route)]
@@ -226,7 +226,7 @@ module.exports = function() {
 ```
 You are now responding to a `GET` request to the relative root location of the file (in this case, `router`).  However, in the `index.js` file inside the `router` folder, you set the path to `/node` in the URL. You need to map this route in the `xs-app.json` file in the HTML5 module.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add the route in the web module)]
@@ -248,7 +248,7 @@ As follows:
 
 ![Add route ion xs-app.json](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Extend dependencies in package.json)]
@@ -258,7 +258,7 @@ Back in step 1 you added the modules `express` and `passport` using the **requir
 ![Add dependencies in js module](6.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Build and Run )]
@@ -276,7 +276,7 @@ You can also test the newly added router by adding `/node` to the URL:
 ![Replace with node](10.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

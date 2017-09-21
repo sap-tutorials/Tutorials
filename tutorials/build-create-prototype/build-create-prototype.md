@@ -1,17 +1,14 @@
 ---
 title: Create a BUILD Prototype
 description: Create a high fidelity prototype with BUILD
+auto_validation: true
 primary_tag: products>build>build
 tags: [  tutorial>beginner, products>build>build ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Getting Started with BUILD](http://www.sap.com/developer/tutorials/build-getting-started.html)
 
-
-## Next Steps
- - [Collect user feedback in BUILD](http://www.sap.com/developer/tutorials/build-collect-feedback.html)
 
 ## Details
 ### You will learn  
@@ -48,12 +45,12 @@ The prototype overview will provide you details about what screens are included 
 
 ![inventory dashboard app overview page](5.png)
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 3: ](Clone a prototype)]
-Cloning an prototype will add the prototype to your project collection. Once in your collection, you can make edits and modifications to your local version.
+Cloning a prototype will add the prototype to your project collection. Once in your collection, you can make edits and modifications to your local version.
 
 On the prototype overview, click the **Clone** button under the basic details.
 
@@ -100,7 +97,7 @@ Find the *Table* control under the **List** control types.
 ![drag table control to chart area](14.png)
 
 
-[DONE]
+[VALIDATE_5]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add columns to the table)]
@@ -180,13 +177,13 @@ To preview the final view, click on the **Eye** icon in the top tool bar.
 
 ![preview icon highlighted](25.png)
 
-This will show you a "live" version of your prototype. You can preview how you application prototype will look on desktop, tablet, and mobile devices.
+This will show you a "live" version of your prototype. You can preview how your application prototype will look on desktop, tablet, and mobile devices.
 
 ![preview of app prototype](26.png)
 
 To get back to the UI Editor, click the **UI Editor button**.
 
-[DONE]
+[VALIDATE_10]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Change the theme)]
@@ -206,7 +203,17 @@ Select **SAP Belize** from the menu items. This will update the overall theme fo
 [ACCORDION-END]
 
 
+[ACCORDION-BEGIN [Step 12: ](Share your app)]
+Once your prototype is complete, BUILD lets your share your app in a couple different ways. To share your app, in the **UI Editor**, click on the **Share button**.
+
+![share button in UI editor](30.png)
+
+A dialog box will pop up with a shareable link, a Slack integration, and a download option. **Copy the link**.
+
+To close the dialog box and go back to the UI Editor, click **Close**.
+
+![share options box](31.png)
 
 
-## Next Steps
-- [Collect user feedback in BUILD](http://www.sap.com/developer/tutorials/build-collect-feedback.html)
+[VALIDATE_12]
+[ACCORDION-END]

@@ -106,14 +106,10 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 Edit the `demo.view.xml` file located in the `webapp/view`.
 
-Inside the `<detailPages>` element add the following element:
+Inside the `<detailPages>` element, and uncomment the following element:
 
 ```xml
-<Page id="detail_dataset_manage" title="Manage your Data Set with the SAP Cloud for predictive services">
-  <content>
-    <mvc:XMLView viewName="pspredictive.view.dataset.manage"/>
-  </content>
-</Page>
+<mvc:XMLView viewName="pspredictive.view.dataset.manage"/>
 ```
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)

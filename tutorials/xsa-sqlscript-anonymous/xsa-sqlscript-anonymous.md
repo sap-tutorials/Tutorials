@@ -32,7 +32,7 @@ To have an anonymous block you need a do begin … end.  Enter the this code in 
 
 ![SQL tab](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add body of statement)]
@@ -41,7 +41,7 @@ Copy the logic from the procedure `get_po_header_data` into the body.  Make sure
 
 ![logic](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Declare required variable)]
@@ -50,7 +50,7 @@ Let's assume the application executing this block only allows string types. Sinc
 
 ![sql code](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Insert additional SELECT)]
@@ -59,7 +59,7 @@ After the last SELECT statement and before the END statement, insert another SEL
 
 ![select statement](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Check complete code)]
@@ -70,7 +70,7 @@ The completed code should look very similar to this. If you do not wish to type 
 DOBEGINDECLARE EX_TOP_3_EMP_PO_COMBINED_CNT TABLE (           "FULLNAME" NVARCHAR(256),           "CREATE_CNT" BIGINT,           "CHANGE_CNT" BIGINT,           "COMBINED_CNT" BIGINT);po_create_cnt =  SELECT COUNT(*) AS CREATE_CNT, "HISTORY.CREATEDBY.EMPLOYEEID"  AS EID     FROM "dev602.data::PO.Header" WHERE PURCHASEORDERID IN (     SELECT PURCHASEORDERID         FROM "dev602.data::PO.Item"WHERE "PRODUCT.PRODUCTID" IS NOT NULL)GROUP BY  "HISTORY.CREATEDBY.EMPLOYEEID";po_change_cnt =  SELECT COUNT(*) AS CHANGE_CNT, "HISTORY.CHANGEDBY.EMPLOYEEID" AS EID     FROM "dev602.data::PO.Header"  WHERE PURCHASEORDERID IN (   SELECT PURCHASEORDERID           FROM "dev602.data::PO.Item"WHERE "PRODUCT.PRODUCTID" IS NOT NULL)GROUP BY  "HISTORY.CHANGEDBY.EMPLOYEEID";EX_TOP_3_EMP_PO_COMBINED_CNT =      SELECT "dev602.procedures::get_full_name"( "NAME.FIRST", "NAME.MIDDLE", "NAME.LAST") as FULLNAME, crcnt.CREATE_CNT, chcnt.CHANGE_CNT, crcnt.CREATE_CNT + chcnt.CHANGE_CNT AS COMBINED_CNT  FROM "dev602.data::MD.Employees" as emp  LEFT OUTER JOIN :PO_CREATE_CNT AS crcnt           ON emp.EMPLOYEEID = crcnt.EID LEFT OUTER JOIN :PO_CHANGE_CNT AS chcnt         ON emp.EMPLOYEEID = chcnt.EID    ORDER BY COMBINED_CNT DESC LIMIT 3;Select * from :EX_TOP_3_EMP_PO_COMBINED_CNT;END;
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Run and check results)]
@@ -83,7 +83,7 @@ You will notice that the SQLScript code is executed and results are shown.  Agai
 
 ![SQL executed](8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

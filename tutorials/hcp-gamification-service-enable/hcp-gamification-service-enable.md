@@ -26,7 +26,7 @@ In your Web browser, open the cockpit of the [SAP Cloud Platform](https://accoun
 
 ![Selecting Services](1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable gamification service)]
@@ -39,7 +39,7 @@ A gamification service subscription is now assigned to your account.
 
 ![Enabled Gamification Service](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Configure gamification service)]
@@ -48,7 +48,7 @@ Click **Configure Gamification Service**.
 
 ![Configure Gamification Service](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Verify roles)]
@@ -67,7 +67,7 @@ Verify that the following roles have been assigned to your user:
 
 ![Verify Roles](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Check destinations)]
@@ -78,7 +78,7 @@ Back in the Cockpit, select **Destinations** from the left-hand navigation. Veri
 
 > Do NOT click the **Destinations** button in the gamification service itself.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Edit destination)]
@@ -91,7 +91,7 @@ Verify that **User** is your SAP ID user and replace the default **Password** ma
 
 ![Configure Destination](9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

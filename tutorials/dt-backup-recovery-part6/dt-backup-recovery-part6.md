@@ -29,7 +29,7 @@ There are **two types** of delta backups:
 
 ![Delta Backups](delta-backup.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Creating Delta Backups)]
@@ -62,7 +62,7 @@ After the backup is complete, the execution summary will show.
 
 ![Execution Summary](completed-delta-backups.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Performing Recoveries)]
@@ -101,7 +101,7 @@ Review the recovery settings, and select **Finish**. Recovery will done be perfo
 The recovery is now complete.
 
 ![Recovery summary](recovery-summary.png)
-[DONE]
+
 [ACCORDION-END]
 ## Next Steps
 - Other tutorials can be found at [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

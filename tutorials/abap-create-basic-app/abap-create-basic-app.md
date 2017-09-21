@@ -32,7 +32,7 @@ Afterwards an editor will be opened which shows the empty report.
 
 ![new ABAP program](abap-03-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create ABAP local class)]
@@ -44,7 +44,7 @@ Adjust the name of the local class to `lcl_main` using inline editing.
 
 ![local class](abap-03-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -53,7 +53,7 @@ Position the cursor in the class definition statement and press **Ctrl+1** to op
 
 ![create method](abap-03-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Implement RUN method)]
@@ -66,7 +66,7 @@ Implement a simple **WRITE** statement in the method **run**.
 
 ![write statement](abap-03-7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Make ABAP program runnable)]
@@ -82,7 +82,7 @@ START-OF-SELECTION.
 
 ![create run statement](abap-03-8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Save and Activate ABAP Program)]
@@ -90,7 +90,7 @@ Save and activate your program by clicking on the **Save** and **Activate** butt
 
 ![save and activate program](abap-03-9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Run ABAP Program)]
@@ -98,7 +98,7 @@ Press **F8** to run your program. An embedded SAP GUI will open inside of an Ecl
 
 ![run program](abap-03-10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

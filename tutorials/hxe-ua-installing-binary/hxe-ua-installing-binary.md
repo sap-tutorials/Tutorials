@@ -60,7 +60,7 @@ Your server will need the following:
 
 - **Cores**: 2 cores (4 recommended)
 
-[DONE] [ACCORDION-END]
+ [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Register for SAP HANA, express edition)]
 
@@ -76,7 +76,7 @@ Complete the registration form and click the **Register** button.
 
 The **Registration Success** page displays. (You will also receive an email indicating successful registration.)
 
-[DONE] [ACCORDION-END]
+ [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2:](Download the Download Manager)]
 
@@ -89,7 +89,7 @@ On the **Registration Success** page, under **1A. ON-PREMISE INSTALLATION**, cli
 
 Save the **Download Manager** file to your laptop.
 
-[DONE] [ACCORDION-END]
+ [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3:](Choose Your Installation Downloads)]
 
@@ -152,7 +152,7 @@ In the **Image** pull-down, select **Binary Installer**. Click **Browse** and se
 
 Click the **Download** button to being your download.
 
-[DONE] [ACCORDION-END]
+ [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4:](Extract Your Downloaded Packages)]
 
@@ -195,7 +195,7 @@ tar -xvzf <download_path>/shine.tgz
 > chmod -R 777 <download_path>/hxe.tgz
 > ```
 
-[DONE] [ACCORDION-END]
+ [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 5:](Install SAP HANA, express edition)]
@@ -227,7 +227,7 @@ Follow the prompts to configure your installation.
 > - Cannot contain dictionary words
 > - Cannot contain simplistic or systematic values, like strings in ascending or descending numerical or alphabetical order
 
-[DONE] [ACCORDION-END]
+ [ACCORDION-END]
 
 ## Next Steps
 - Start using SAP HANA 2.0, express edition. See tutorial [Start Using SAP HANA, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).

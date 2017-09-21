@@ -28,7 +28,7 @@ The following video demonstrates how to debug XSJS and Node.js in SAP Web IDE fo
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/pJ01pZswWRY" frameborder="0" allowfullscreen></iframe>
 
-[DONE]
+
 [ACCORDION-END]
 
 

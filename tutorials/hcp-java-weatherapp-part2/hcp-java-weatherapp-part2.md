@@ -30,7 +30,7 @@ Choose the name `index.html` and click on **Finish**.
 
 ![Creating a new HTML file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part2/e2e_02-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add body)]
@@ -43,14 +43,14 @@ Add the following line of code in between the opening and the closing <body> tag
 
 ![Editing the body of the HTML file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part2/e2e_02-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Save and publish locally)]
 
 Save your changes and publish the update project to the local server by selecting the respective context menu on the server in the Server view.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](View app)]
@@ -59,7 +59,7 @@ Once the publishing is done you can go back to the internal browser window and r
 
 ![Run the java app, but use the base URL, not the servlet](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part2/e2e_02-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Clean up entries)]
@@ -68,7 +68,7 @@ For security reasons and for the sake of housekeeping you should remove all <wel
 
 ![Editing web.xml to remove welcom-file entries](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part2/e2e_02-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

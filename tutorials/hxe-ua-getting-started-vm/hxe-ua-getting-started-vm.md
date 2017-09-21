@@ -9,8 +9,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition  ]
  - **Tutorials:** [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
  - Obtain your proxy information if behind a firewall.
 
-<!--
- **Tip:** This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html). -->
+ **Tip:** This tutorial is available as a [video](https://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
 
 ## Next Steps
  - [SAP HANA 2.0, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html)
@@ -42,7 +41,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
     ![Entering temporary password again](hxe2_02_login2.PNG)
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -70,7 +69,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
     ![Entering strong password](hxe2_02_login3.PNG)
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -83,9 +82,9 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 2. When prompted to **Confirm "HANA database master password"**, enter the strong password again.
 
-    ![Entering HANA database master password](hxe2_02_login6.PNG)  
+    ![Entering HANA database master password](hxe2_02_login7.PNG)  
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -97,7 +96,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
     - If **Y**, enter your proxy host name, proxy port number, and (if desired) a comma-separated list of hosts that do not need a proxy. Proxy host name needs a fully qualified domain name.
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -105,7 +104,7 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
 Decide whether you want to wait for XSA configuration to complete before starting the server. When prompted to Wait for XSA configuration to finish, enter Y if you want to wait. Enter N if you want XSA to configure in the background after server configuration completes.
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -117,7 +116,7 @@ Decide whether you want to wait for XSA configuration to complete before startin
 
 SAP HANA 2.0, express edition is now running.
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -143,7 +142,7 @@ The virtual console and X11 window system defaults to a `us` (`QWERTY`) keyboard
     sudo localectl status
     ```
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -162,7 +161,7 @@ Record the `hxehost` IP address so you can use it later when connecting to the s
 
     ![VM IP address](hxe_ua_ip_address.PNG)
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -196,7 +195,7 @@ If you installed the VM installation package to a Mac or Linux machine, follow t
     sudo sh - c 'echo <hxehost IP address>    hxehost >> /etc/hosts'
     ```
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -216,7 +215,7 @@ Test your XSC installation.
 
     ![XSEngine Success Page](hxe_xs_success.PNG)
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -236,7 +235,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 2. Check for an API endpoint showing `https://hxehost:39030`. If you see this entry, XSA installed correctly.
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -272,7 +271,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
     If you are prompted to change your password, follow the instructions.
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -310,7 +309,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
     >**Note:** If using HANA Cockpit to register a resource, both HANA Cockpit and the SAP HANA, express edition server should be from the same release. SAP does not recommend using a newer HANA Cockpit to register an older SAP HANA, express edition.    
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -328,7 +327,7 @@ Download and install the HANA Eclipse Plugin to your host OS (not the VM guest) 
 
 4. Follow the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html).
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -379,7 +378,7 @@ The Text analysis files for additional languages package contains the text analy
     alter system alter configuration ('preprocessor.ini','SYSTEM') set ('general','embedded') = 'true' with reconfigure;
     ```
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -387,36 +386,93 @@ The Text analysis files for additional languages package contains the text analy
 
 If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), you have the option of installing the SAP Enterprise Architecture Designer (SAP EA Designer) tool.
 
+**Prerequisites:** You edited your laptop's **hosts** file.
+
 SAP EA Designer lets you capture, analyze, and present your organization's landscapes, strategies, requirements, processes, data, and other artifacts in a shared environment. Using industry-standard notations and techniques, organizations can leverage rich metadata and use models and diagrams to drive understanding and promote shared outcomes in creating innovative systems, information sets, and processes to support goals and capabilities.
 
 SAP EA Designer is a separate download in the Download Manager.
 
+In this procedure you'll download the SAP EA Designer package (`eadesigner.tgz`) using the VM's built-in Download Manager (Console Mode), extract the package, and run the installation script. Downloading from inside the VM is the simplest and quickest method.
+
+>**Note:**
+Note that you have to option of using the Download Manager (GUI Mode) on your laptop to download `eadesigner.tgz`, but doing so has disadvantages:
+
+> - If you download to your laptop, you will need to transfer `eadesigner.tgz` from your laptop's Save Directory to the `/usr/sap/HXE/home/Downloads` directory in your VM.
+
+> - The laptop-to-VM transfer procedure varies depending on your hypervisor and host operating system. You will need to consult your hypervisor documentation.
+
 1. Run the `hxe_gc` memory management script to free up available VM memory.
 
-    - Log in as `hxeadm` and execute:
+    - In your VM, log in as `hxeadm` and enter:
         ```bash
-        cd ~bin
-        ./hxe_gc.sh
+        cd /usr/sap/HXE/home/bin
         ```
 
-    - Follow the prompts.
+    - Execute:
+        ```bash
+        hxe_gc.sh
+        ```
+    - When prompted for **System database user (SYSTEM) password**, enter the **New HANA database master password** you specified during SAP HANA, express edition installation.  
 
-2. Use the Download Manager to download the SAP Enterprise Architecture Designer package, `eadesigner.tgz`.
+    The cleanup process runs. The command prompt returns when the cleanup process is finished.
 
-3. Locate the download package:
-
-    | If you downloaded using...        | Then do this...  |
-    | ---------------- | -------------|
-    | The Download Manager (GUI Mode) on your laptop            | Transfer `eadesigner.tgz` from your laptop's Save Directory to `~/Downloads` on your VM.|
-    | The VM's built-in Download Manager (Console Mode)           | Locate `eadesigner.tgz` in the VM's Save Directory (`~/Downloads` by default). |
-
-4. As the `hxeadm` user, run:
+2. In your VM, download `eadesigner.tgz` using the built-in Download Manager. From the same directory where you ran `hxe_gc` (`/usr/sap/HXE/home/bin`) enter:
 
     ```bash
-    <extracted_path>/HANA_EXPRESS_20/install_eadesigner.sh
+    HXEDownloadManager_linux.bin linuxx86_64 installer eadesigner.tgz
     ```
 
-5. When the installation is complete enter the following command to confirm the status of SAP EA Designer:
+    ![Built-in Download Manager](eadesigner_download.PNG)
+
+3. In your VM, navigate to the Downloads directory. Enter:
+
+    ```bash
+    cd /usr/sap/HXE/home/Downloads
+    ```
+
+4. In your VM, view the contents of the Downloads directory to confirm `eadesigner.tgz` exists. Enter:
+
+    ```bash
+    ls
+    ```
+
+5. In your VM, extract the file. Enter:
+
+    ```bash
+    tar -xvzf eadesigner.tgz
+    ```
+
+    ![Built-in Download Manager](eadesigner_tgz.PNG)    
+
+6.  In your VM, navigate to the `HANA_EXPRESS_20` directory. Enter:
+
+    ```bash
+    cd HANA_EXPRESS_20
+    ```
+
+7. In your VM, run the installation script. Enter:
+
+    ```bash
+    sh ./install_eadesigner.sh
+    ```
+
+    Installation begins.
+
+8. When prompted for `HANA instance number [90]` press **Enter** to accept the default.  
+
+9. When prompted for `System database user (SYSTEM) password`, enter the `hxeadm` login password.    
+
+10. When prompted for `XSA administrator (XSA_ADMIN) password`, enter the `HANA database master password` you specified when you installed SAP HANA, express edition.    
+
+11. When prompted for EA Designer administrator password, enter a strong password. Follow the password requirements displayed on-screen.
+
+12. Confirm the EA Designer administrator password.
+
+13. When prompted to `Proceed with installation`, enter **Y**. Wait for installation to finish. A success message displays when installation completes.
+
+    ![EA Designer installation success message](eadesigner_success.PNG)   
+
+14. Enter the following command to confirm the status of SAP EA Designer:
 
     ```bash
     xs apps
@@ -424,27 +480,33 @@ SAP EA Designer is a separate download in the Download Manager.
 
     The output will include all the applications of your organization and space. You should see:   
 
-    - `eadesigner` - The SAP EA Designer application
+    - `eadesigner` - The SAP EA Designer application.
 
-    - `eadesigner-service` - The SAP EA Designer Node application
+    - `eadesigner-service` - The SAP EA Designer Node application.
 
-    - `eadesigner-backend` - The SAP EA Designer Java application
+    - `eadesigner-backend` - The SAP EA Designer Java application.
 
     - `eadesigner-db` - The SAP EA Designer database creation application. This application will have a state of stopped when the installation is complete.
 
-6. Note the URL for `eadesigner` and enter it in your web browser address bar to go to the SAP EA Designer login screen.
+    ![eadesigner apps](eadesigner_xsapps.PNG)  
 
-7. Enter the following credentials:
+15. Note the URL for `eadesigner`. Launch a web browser on your laptop and enter the URL in your web browser address bar.
+
+    The SAP EA Designer login page displays.
+
+    ![EA Designer login](eadesigner_login.PNG)  
+
+16. Enter the following credentials:
 
     - User Name - ADMIN
 
     >**Note**: Account names managed by SAP EA Designer are case-sensitive.
 
-    - Password - Enter the temporary administrator password (<`tempPwd`>) you specified in `<edited_mtaext_file>`.
+    - Password - Enter the password you created when you first installed SAP EA Designer.
 
-    You are prompted to change the password. You are logged in as administrator of SAP EA Designer.
+17. Change the password when prompted. You are logged in as administrator of SAP EA Designer.
 
-[DONE]
+    ![EA Designer login](eadesigner_firstpage.PNG)
 
 [ACCORDION-END]
 
@@ -481,7 +543,7 @@ SHINE is a separate download in the Download Manager. To use SHINE, you need the
     <extracted_path>/HANA_EXPRESS_20/install_shine.sh
     ```
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -518,7 +580,7 @@ The SAP HANA External Machine Learning Library is an application function librar
 
     For more information on the SAP HANA External Machine Learning Library, see the SAP HANA documentation collection.    
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -532,7 +594,7 @@ If you set `global_allocation_limit` to a non-zero value, SAP HANA, express edit
 
 >**Note**: Do not set `global_allocation_limit` to a value above the limit of your license. This can cause the database to lock down.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

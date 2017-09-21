@@ -22,7 +22,7 @@ Now to create a calculation view using cube data and a star join.
 
 [ACCORDION-BEGIN [Step 1: ](Create a new Calculation View)]
 
-You will now create a calculation view of type cube. This type of view allows for the aggregation of data and will use the dimension calculation view you created in the previous step. Create a new calculation view in your `models` folder.![new calc view](1.png)Add a name and set the `Star join` flag to true.![Calculation view star join](2.png)This calculation view would have been an Analytical view in previous versions of SAP HANA.[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 2: ](Insert join for Purchase Order items and header)]Insert a Join Node into the Scenario. Add the `PO.Header` and `PO.Item` tables to this Join Node.
+You will now create a calculation view of type cube. This type of view allows for the aggregation of data and will use the dimension calculation view you created in the previous step. Create a new calculation view in your `models` folder.![new calc view](1.png)Add a name and set the `Star join` flag to true.![Calculation view star join](2.png)This calculation view would have been an Analytical view in previous versions of SAP HANA.[ACCORDION-END][ACCORDION-BEGIN [Step 2: ](Insert join for Purchase Order items and header)]Insert a Join Node into the Scenario. Add the `PO.Header` and `PO.Item` tables to this Join Node.
 ![Add PO header and items](3.png)
 
 
@@ -35,7 +35,7 @@ Using the Mapping tab, add the columns `HISTORY.CHANGEDAT` from the Header table
 
 ![New Calculation View](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new join node to integrate the Dimension Calculation view )]
@@ -56,7 +56,7 @@ Create a join on the `PRODUCT_PRODUCTID` to the `PRODUCTID` column.
 
 Add all the columns to the output.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create an input parameter)]
@@ -71,7 +71,7 @@ Configure as shown with type `NVARCHAR` length 3 with a Semantic type of Currenc
 
 >Note: You can click on the names of the join nodes to change them to something more meaningful.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Map the Star Join node)]
@@ -86,7 +86,7 @@ From the Mapping tab, select all the columns of the star join and add them to th
 
 ![Add grossamount field twice](10_1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Configure currency conversion)]
@@ -112,7 +112,7 @@ Perform the following configurations as in the screenshot below:
 
 ![Configure conversion](13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Build and run)]
@@ -131,7 +131,7 @@ See how the conversion has been performed for those currencies in table TCURR, w
 
 ![Data preview raw](15.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

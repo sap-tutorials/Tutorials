@@ -28,7 +28,7 @@ Start the **Custom Analytical Queries** Application by selecting the correspondi
 
 ![start Custom CDS View App](FLP.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Select your Analytical Query)]
@@ -37,7 +37,7 @@ Furthermore you have to click on the **Edit** button to continue.
 
 ![start Custom CDS View App](select.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add Calculated Measures)]
@@ -45,7 +45,7 @@ Now you have to switch to the **Display** Tab to add a calculated measure.
 
 ![start Custom CDS View App](calculated-measures.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add Further Calculated Measures)]
@@ -57,7 +57,7 @@ Press the **Add** button to add further calculated measures like:
 
 ![Select Data Source](further-measures.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Edit Calculated Measures)]
@@ -65,7 +65,7 @@ Select the measure **`margin`** and click on **Edit** to open the expression edi
 
 ![Select Data Source](calculated-measures2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Choose Measures)]
@@ -75,7 +75,7 @@ Select **`"Gross Profit" / "Gross Revenue"`** as an Expression.
 
 ![Select Data Source](calculated-measures3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Result of Measures)]
@@ -85,7 +85,7 @@ The new expression for the calculated measure is shown in the text field.
 
 ![Select Data Source](calculated-measures4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Define Exception Aggregation)]
@@ -99,7 +99,7 @@ Select following:
 
 ![Select Data Source](calculated-measures5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Display Hierarchy)]
@@ -108,7 +108,7 @@ If a field supports hierarchies, then the hierarchy checkbox is shown in the pro
 Furthermore select values for `Controlling Area` and `Cost Center Hierarchy`.
 ![Select Data Source](costcenter.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Save the Draft and Show the Preview)]
@@ -116,7 +116,7 @@ Furthermore select values for `Controlling Area` and `Cost Center Hierarchy`.
 
 ![Select Data Source](save.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Publish the Query)]
@@ -126,5 +126,5 @@ After publishing the status will be updated to published on the top right corner
 
 ![Select Data Source](publish.png)
 
-[DONE]
+
 [ACCORDION-END]

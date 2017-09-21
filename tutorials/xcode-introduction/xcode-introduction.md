@@ -34,7 +34,7 @@ To develop applications using the SAP Cloud Platform SDK for iOS, you will need 
 
 - View resources on building and designing great iOS apps: https://developer.apple.com/videos/
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](About Xcode)]
@@ -45,7 +45,7 @@ When you download Xcode from Apple's developer website or from the Mac App Store
 
 Select Xcode from the Dock at the bottom of the screen. Once you have started Xcode you should see the word "Xcode" in menu bar at the top left of the screen.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create your first project)]
@@ -78,7 +78,7 @@ When you save the project, Xcode will create all the files you need according to
 
 ![Project Overview](Tutorial-1-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Explore the Xcode IDE)]
@@ -94,7 +94,7 @@ At the top of the application, you will see a toolbar, which is divided into two
 - The left section of the toolbar contains buttons for running and stopping the application, as well as choosing which simulator or physical device you want to run your application on.
 - The right section of the toolbar allows you to modify the layout of the IDE and switch panels on and off. This allows you to e.g. make more space for your code if you need to. A special button in this section is the "Assistant editor" (two circles), allowing you to show two related editors side-by-side. As you will see in a later tutorial, this is especially useful when you associate code with the UI controls of your application.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Building your application)]
@@ -117,7 +117,7 @@ To get the label on the view, drag it from the object library, and drop into the
 
 To get the label to show "Demo Application", double-click it and  type in the new text. Once you have changed the text, you will see that the label is not big enough to fit. To make the label bigger, just pull on the little anchors (squares) around the label and realign it to the center of the view.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](See what your app looks like on another device or orientation)]
@@ -126,7 +126,7 @@ To see what your app would look like on another device or in another orientation
 
 ![Change device or orientation](Tutorial-1-7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Run your application)]
@@ -145,7 +145,7 @@ To stop the application, press the stop button in the toolbar controls:
 
 Congratulations! You have just created, built and run your first application for iOS using Xcode!
 
-[DONE]
+
 [ACCORDION-END]
 
 ### Next Steps

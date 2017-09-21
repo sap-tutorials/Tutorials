@@ -41,7 +41,7 @@ As follows:
 ![Add export](1.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add an express route handler)]
@@ -127,7 +127,7 @@ module.exports = function(server) {
 
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -146,7 +146,7 @@ Look at the `package.json` file in the editor. You will see the dependencies sec
 },
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a test UI)]
@@ -591,7 +591,7 @@ sap.ui.define([
 
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Enable websockets)]
@@ -607,7 +607,7 @@ Add the following under the `authenticationMethod` in `xs-app.json`:
 
 ![websockets](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create an async folder)]
@@ -910,7 +910,7 @@ async.parallel([
 ```
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create the Text Files)]
@@ -919,7 +919,7 @@ Take a look at the code you have just created. You will notice the file modules 
 
 ![js folder](8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Build and Run)]
@@ -940,7 +940,7 @@ Now change the path in the browser to `/exerciseAsync/index.html`. You should se
 
 ![path](12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -961,7 +961,7 @@ Test your `fileSync.js` from the UI test tool. As you might expect, everything i
 
 ![test file](21.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Test asynchronous operations)]
@@ -978,7 +978,7 @@ Now run `fileAsync.js` from the test UI. The output of this exercise gives us ve
 Similar to file operations, HTTP requests are another area where your programs must often wait on an external response. In this section you can see how Node.js also makes calling external HTTP services non-blocking. The HTTP library you used in earlier sections can also be used to make HTTP requests. Use the get function of the HTTP library to call to `http://www.loc.gov/pictures/search/?fo=json&q=SAP`. This will call the US Library of Congress Image Search (a REST API which requires no authentication or API Key to keep the exercise simple). Issue a message before and after the HTTP request.
 
 ![HTTP requests](24.png)
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](More async tests)]
@@ -995,7 +995,7 @@ Test your `databaseAsync.js` from test UI. As you are hopefully learning to expe
 
 ![test](27.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Add more parallelism)]
@@ -1008,7 +1008,7 @@ Test your `databaseAsync2.js` from the test UI. The execution is similar to befo
 
 ![test](29.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

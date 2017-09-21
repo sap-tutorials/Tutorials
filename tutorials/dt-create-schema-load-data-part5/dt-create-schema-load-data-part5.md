@@ -40,7 +40,7 @@ The result should be empty to indicate the data has been deleted.
 
 ![Empty Result](empty-result.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Turning off Auto Commit)]
@@ -60,7 +60,7 @@ Click on the value cell for **Auto Commit** and change it to **Off**.
 
 ![Auto Commit](auto-commit.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Setting the Isolation Level)]
@@ -78,7 +78,7 @@ Left click on the SQL console, and you should be prompted by a "Rollback Connect
 
 ![Rollback Connection](rollback-connection.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Migrating Data)]
@@ -117,7 +117,7 @@ SELECT * FROM "TPCH"."LINEITEM_CS" WHERE "TPCH"."LINEITEM_CS"."L_SHIPDATE" < '20
 
 ![Verify Column Store](verify-cs.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

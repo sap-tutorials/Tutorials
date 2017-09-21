@@ -31,7 +31,7 @@ First, you will need to download and install the SAP HANA Client to enable the M
 Follow the instructions from the installer to complete the installation.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create the XS Project and Core Data Services artifacts)]
@@ -127,7 +127,7 @@ Right-click on the project, go down to `Team` and click on the `Activate All` bu
 
 ![Activate the entire project](5_activateall.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Grant permissions to the newly created schema)]
@@ -155,7 +155,7 @@ You can now go into the `Systems` tab and look for the Schema and tables:
 
 ![Flag permissions](6_checkpermissions.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Import data into your tables)]
@@ -198,7 +198,7 @@ Right-click on the tables to **Open Data Preview** and see the files loaded. You
 > Hint: If you click on the `Show Log` button on the top right corner of the data preview in SAP HANA Studio, you can see the SQL Query and the server processing time.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create a Calculation View)]
@@ -255,7 +255,7 @@ And click on `Raw Data` to see your results:
 
 ![Raw Data](23_rawdata.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Connect to your instance using the MDX connector)]
@@ -287,7 +287,7 @@ Review the `Import Data` options. Keep the `Pivot Table` and click on OK.
 You can now use Excel to execute OLAP queries against SAP HANA and create Pivot Tables and Pivot Charts.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

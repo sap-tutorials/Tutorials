@@ -88,7 +88,7 @@ The dataset will be using during this tutorial is extracted from the sample data
 The file presents daily measures of cash flows from January 2, 1998 to September, 30 1998. Each observation is characterized by 25 data items. The data or variables are described in the following table.
 
 Variable | Description | Example of values
---------------|--------------|--------------
+:--------------|--------------|--------------
 Date | Day, month and year of the readings | A date in the format `yyyy-mm-dd` such as 1998-01-02
 <nobr>`Cash`</nobr> | Cash flow | A numerical value with n decimals
 <nobr>`BeforeLastMonday`</nobr><br><nobr>`LastMonday`</nobr><br><nobr>`BeforeLastTuesday`</nobr><br><nobr>`LastTuesday`</nobr><br><nobr>`BeforeLastWednesday`</nobr><br><nobr>`LastWednesday`</nobr><br><nobr>`BeforeLastThursday`</nobr><br><nobr>`LastThursday`</nobr><br><nobr>`BeforeLastFriday`</nobr><br><nobr>`LastFriday`</nobr> | Boolean variables that indicate if the information is true or false | 1 if the information is true.
@@ -117,7 +117,7 @@ Open a new tab in ***Postman***.
 Fill in the following information:
 
 Field Name     | Value
--------------- | --------------
+:------------- | :--------------
 Request Type   | <code><b>POST</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/sync`
 
@@ -135,7 +135,7 @@ URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/sync`
 Now as described in the **Step 4: Modify registered variable details**,
 
 Field Name     | Value
--------------- | --------------
+:------------- | :--------------
 Request Type   | <code><b>POST</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/`<code><b>ID</b></code>`/variables/update`
 
@@ -184,7 +184,7 @@ Open a new tab in ***Postman***.
 Fill in the following information:
 
 Field Name     | Value
--------------- | --------------
+:------------- | :--------------
 Request Type   | <code><b>POST</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast/sync`
 ![Postman URL](01.png)
@@ -303,7 +303,7 @@ Open a new tab in ***Postman***.
 Fill in the following information
 
 Field Name     | Value
--------------- | --------------
+:------------- | :--------------
 Request Type   | <code><b>POST</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast`
 
@@ -346,7 +346,7 @@ Open a new tab in ***Postman***.
 Fill in the following information
 
 Field Name     | Value
--------------- | --------------
+:------------- | :--------------
 Request Type   | <code><b>GET</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast/1/status`
 
@@ -371,7 +371,7 @@ Open a new tab in ***Postman***.
 Fill in the following information:
 
 Field Name     | Value
--------------- | --------------
+:------------- | :--------------
 Request Type   | <code><b>GET</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast/`<code><b>ID</b></code>
 
@@ -388,7 +388,7 @@ You should obtain the same output as with the Synchronous mode.
 Ultimately, you can delete the job and its content using a the following details:
 
 Field Name     | Value
--------------- | --------------
+:------------- | :--------------
 Request Type   | <code><b>DELETE</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast/`<code><b>ID</b></code>
 
