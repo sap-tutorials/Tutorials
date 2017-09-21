@@ -53,14 +53,14 @@ In this first procedure, download and extract the Lumira Open Social Gadget for 
 [ACCORDION-BEGIN [Step 3: ](Add the Open Social Gadget files to the HTML5 application)]
 
 1.  Select the `hanacloudplatformgadget` folder.
-2.  Select ![Start of the navigation path](images/navstart.gif) **File** ![Next navigationstep](images/navstep.gif) **Import** ![Nextnavigation step](images/navstep.gif) **From File System** ![End of the navigation path](images/navend.gif).
+2.  Select **File** > **Import** > **From File System**.
 3.  Click **Browse**.
-4.  Go to the `\\OpenSocial\\Gadget\\HCP\_Lumira` folder in your local repository.
+4.  Go to the `\OpenSocial\Gadget\HCP\_Lumira` folder in your local repository.
 5.  Double click `HCP\_Lumira.html`.
 6.  Click **OK**.
-7.  Select ![Start of the navigation path](images/navstart.gif) **File** ![Next navigationstep](images/navstep.gif) **Import** ![Nextnavigation step](images/navstep.gif) **From File System** ![End of the navigation path](images/navend.gif).
+7.  Select **File** > **Import** > **From File System**.
 8.  Click **Browse**.
-9.  Double click `HCP\_Lumira.xml`.
+9.  Double click `HCP_Lumira.xml`.
 10. Click **OK**.
 
 
@@ -68,7 +68,7 @@ In this first procedure, download and extract the Lumira Open Social Gadget for 
 
 [ACCORDION-BEGIN [Step 4: ](Create the Application Descriptor File)]
 
-1.  Select ![Start of the navigation path](images/navstart.gif) **File** ![Next navigation step](images/navstep.gif) **New** ![Next navigation step](images/navstep.gif) **File** ![End of the navigation path](images/navend.gif).
+1.  Select **File** > **New** > **File**.
 2.  Enter `neo-app.json` in the **File Name** field.
 3.  Copy and paste the following lines into your `neo-app.json` file and set authentication method to `none`:
     ```
@@ -83,7 +83,7 @@ In this first procedure, download and extract the Lumira Open Social Gadget for 
 
 [ACCORDION-BEGIN [Step 5: ](Publish the HTML5 Application)]
 
-1.  Right-click `HCP\_Lumira.xml` and select ![Start of the navigationpath](images/navstart.gif) **Deploy** ![Next navigationstep](images/navstep.gif) **Deploy to SAP Cloud Platform** ![End of the navigation path](images/navend.gif).
+1.  Right-click `HCP_Lumira.xml` and select **Deploy** **Deploy to SAP Cloud Platform**.
 
 2.  Enter your _password_ in the **Password** field.
 
@@ -91,7 +91,7 @@ In this first procedure, download and extract the Lumira Open Social Gadget for 
 
 4.  Click **Open the active version of the application**. The error message, "HTTP Status 404 - Resource not found" is displayed.
 
-5.  Add `/HCP\_Lumira.xml` to the end of the URL.
+5.  Add `/HCP_Lumira.xml` to the end of the URL.
 
 6.  Load the page with this new URL. The contents of the XML gadget is displayed.
 
@@ -102,7 +102,7 @@ In this first procedure, download and extract the Lumira Open Social Gadget for 
 
 [ACCORDION-BEGIN [Step 6: ](Use your gadget in SAP Jam Collaboration)]
 
-1.  [Register](https://help.sap.com/viewer/u_collaboration_dev_help/0526a42d4e0d418186055384e46721f6.html) the URL of the `HCP\_Lumira.xml` file with SAP Jam.
+1.  [Register](https://help.sap.com/viewer/u_collaboration_dev_help/0526a42d4e0d418186055384e46721f6.html) the URL of the `HCP_Lumira.xml` file with SAP Jam.
 2.  Create a SAP Jam group.
 3.  Add this gadget to your SAP Jam group.
 

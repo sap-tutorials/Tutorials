@@ -186,7 +186,7 @@ Figure 3: The added document is also displayed in the group's 'Feed' section
 
 Let's now create a poll asking for product input and feedback. Click on the **Content** menu option.
 
-To create a poll, navigate to your group's Content section, and select ![Start of the navigation path](images/navstart.gif "Start of the navigation path") **Create** ![Next navigation step](images/navstep.gif "Next navigation step") **Decision-Making Tools** ![Next navigation step](images/navstep.gif "Next navigation step") **Poll** ![End of the navigation path](images/navend.gif "End of the navigation path") from the top **Actions** bar.
+To create a poll, navigate to your group's Content section, and select **Create** > **Decision-Making Tools** > **Poll**  from the top **Actions** bar.
 
 
 
