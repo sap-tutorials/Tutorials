@@ -62,7 +62,7 @@ As follows:
 ![Extend for select](1.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Run the node and web modules)]
@@ -74,7 +74,7 @@ Run the node and web modules. You should see that the build and deploy are succe
 
 You can see the **`SESSION_USER`** returned by the SELECT statement.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Use the async module to access the database)]
@@ -125,7 +125,7 @@ var async = require("async");
 Take a look at both newly-added examples. You can easily notice that the second one is easier to read, although the runtime does not change. You can check for more information on the `async` module  in the [`async` documentation](https://caolan.github.io/async/).
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add dependencies)]
@@ -136,7 +136,7 @@ Look at the `package.json` file in the editor. You will see the dependencies sec
   	"async": "latest"
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Run the module)]
@@ -153,7 +153,7 @@ However if you go to the tab where the service run was started, you will see an 
 
 ![unauthorized](8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Change paths)]
@@ -166,7 +166,7 @@ In the running tab, you should see the `index.html` from earlier. We can add the
 
 ![tab](10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](View output)]
@@ -182,7 +182,7 @@ You might have noticed that the default Node.js programming approach is to use c
 app.route("/dummy2")  .get(function(req, res){  var client = req.db; async.waterfall([ function prepare(callback){    client.prepare("select SESSION_USER from \"dev602.data::DUMMY\" ",  function(err,statement){callback(null, err, statement);});  },function execute(err, statement, callback){   statement.exec([], function(execErr, results){callback(null,execErr,results);});},function response(err, results, callback){ if(err){ res.type("text/plain").status(500).send("ERROR: " + err);}else{ var result = JSON.stringify( { Objects: results }); res.type("application/json").status(200).send(result);}callback();} ]);});
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 

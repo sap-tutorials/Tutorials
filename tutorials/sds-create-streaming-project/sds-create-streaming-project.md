@@ -40,7 +40,7 @@ Enter `freezer_monitor` in the **Name** box (be sure to only use lower case) and
 
 Click **Finish**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create an Input Stream)]
@@ -55,7 +55,7 @@ Click the icon to the left of the name **NEWSTREAM** and change the name of this
 
 > Note that stream names are case sensitive
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Define columns for each field in the incoming events)]
@@ -104,7 +104,7 @@ Note: You can just drag the shape to a new position to organize our diagram.
 
 ![drag stream](10-drag-stream.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add a filter)]
@@ -117,7 +117,7 @@ Rename the stream, `Filter1`, to **`ACTIVITY_HIST`** by clicking on the filter i
 
 ![rename](2-rename-filter.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Connect it to an event stream)]
@@ -130,7 +130,7 @@ Click on the **`MACHINEDATA`** shape and then on the **`ACTIVITY_HIST`** shape i
 
 ![connect](4-connect-parts.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Define the filter criteria)]
@@ -149,5 +149,5 @@ Click on the All Iconic button (icon shown below) to collapse all the items.
 
 ![collapse all](7-collapse.png)
 
-[DONE]
+
 [ACCORDION-END]

@@ -27,7 +27,7 @@ The SAP Vora data source allows you to improve Spark performance by using SAP Vo
 Using the SAP Vora data source, a Spark SQL query can be executed on multiple SAP Vora engines concurrently and the execution result returned back to the Spark runtime as an RDD (resilient distributed data set).
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Using Apache Zeppelin)]
@@ -43,7 +43,7 @@ To use Apache Zeppelin pre-installed on SAP Vora, developer edition, run a moder
 ![Open Zeppelin](zep0_01.jpg)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -69,7 +69,7 @@ Get list of created tables by scrolling down the notebook and run the paragraph 
 Feel free to query the in-memory tables you have just created. You can create your own paragraphs just remember that `%vora` keyword is required in each paragraph.
 ![Query data](zep0_04.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Running notebook 1_Tables and Views)]
@@ -94,7 +94,7 @@ To view the annotations defined on a table, you can use the table-valued functio
 Create a CUBE called `PROD_FININS_CUBE` that joins fact table and dimension view. Feel free to play with the different chart types for this visualization.
 ![Cube](zep0_10.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 

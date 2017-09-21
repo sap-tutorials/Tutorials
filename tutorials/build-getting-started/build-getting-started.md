@@ -28,7 +28,7 @@ To find out more about BUILD, visit [BUILD's website](https://www.build.me/splas
 
 ![BUILD splash page](1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Sign up for an account)]
@@ -36,7 +36,7 @@ In the upper right hand corner, select the **Sign Up** button.
 
 ![location os Sign Up on BUILD splash page](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -47,7 +47,7 @@ Click **Proceed**.
 
 ![BUIDL registration page 1 - email address](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Fill out the registration details)]
@@ -57,7 +57,7 @@ Once all the required information has been provided, click **Register**.
 
 ![BUILD registration page 2 - personal info](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Activate your account)]
@@ -71,7 +71,7 @@ This will activate your account. Once you have verified and activated your accou
 
 ![BUILD activation page](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -84,7 +84,7 @@ Once you have successfully logged in, you will now be able to see more BUILD too
 
 ![BUILD workspace and projects page](8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

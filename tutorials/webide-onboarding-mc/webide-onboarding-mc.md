@@ -1,6 +1,6 @@
 ---
-title: Getting Started with the SAP Web IDE Multi-Cloud Version (Production)
-description: This tutorial shows you how to set up your SAP Cloud Platform account so developers in your organization can start developing applications with the SAP Web IDE multi-cloud version.
+title: Getting Started with SAP Web IDE for Full-Stack Development (Production)
+description: This tutorial shows you how to set up your SAP Cloud Platform account so developers in your organization can start developing applications with SAP Web IDE for Full-Stack Development.
 primary_tag: products>sap-web-ide
 tags: [  tutorial>beginner, topic>cloud, topic>html5, topic>internet-of-things, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
@@ -13,12 +13,12 @@ You have access to an SAP Cloud Platform account, and set up a subaccount. If yo
 - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
-The new SAP Web IDE multi-cloud version supports additional scenarios, and includes additional features for improving the build process and creating full-stack applications.
+The new SAP Web IDE for Full-Stack Development supports additional scenarios, and includes additional features for improving the build process and creating full-stack applications.
 
-This tutorial assumes you are an administrator on the SAP Cloud Platform account who is setting up a group of developers to start working with SAP Web IDE multi-cloud version.
+This tutorial assumes you are an administrator on the SAP Cloud Platform account who is setting up a group of developers to start working with SAP Web IDE for Full-Stack Development.
 
 ### You will learn  
-- How to enable your developers to start using the SAP Web IDE multi-cloud version in a production environment
+- How to enable your developers to start using SAP Web IDE for Full-Stack Development in a production environment
 
 ### Time to Complete
 **15 Min**
@@ -32,7 +32,7 @@ Log onto your SAP Cloud Platform account.
 
 Make sure you are in the Neo environment, not the Cloud Foundry environment. Neo is the classic, proprietary SAP Cloud Platform, and you can return to it by going **Home** | **Go to Neo Trial**.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -45,35 +45,36 @@ Choose **Edit**.
 
 Change the **Principal Propagation** field to **Enabled**, and choose **Save**.
 
-[DONE]
+
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Enable the SAP Web IDE multi-cloud version service)]
+[ACCORDION-BEGIN [Step 3: ](Enable the SAP Web IDE for Full-Stack Development service)]
 Click **Services**.
 
 ![Services](Services.png)
 
-In the search box, search for `Web`, and then click the **SAP Web IDE Multi-Cloud Version** tile.
+In the search box, search for `Web`, and then click the **SAP Web IDE for Full-Stack Development** tile.
 
-![Find multi-cloud version](FindService.png)
+![Find full-stack version](FindService.png)
 
 Click **Enable**. This may take a few minutes.
 
-![Enable multi-cloud version](Enable.png)
+![Enable full-stack version](Enable.png)
 
 Wait for the status to change to the green, **Enabled** status.
 
-![multi-cloud version enabled](Enabled.png)
+![full-stack version enabled](Enabled.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 4: ](Give developers permission to SAP Web IDE)]
->>This step is only needed if you have configured a corporate SAML identity provider (IdP) for your account. For more information, see [Maintaining an IdP Mapping Rule for a User Group](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/315b851aea2d49e688cd3350f5fb763c.html)
 
-On the same **Service: SAP Web IDE Multi-Cloud Version** page, choose **Configure Service**.
+>This step is only needed if you have configured a corporate SAML identity provider (`IdP`) for your account. For more information, see [Maintaining an `IdP` Mapping Rule for a User Group](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/315b851aea2d49e688cd3350f5fb763c.html)
+
+On the same **Service: SAP Web IDE for Full-Stack Development** page, choose **Configure Service**.
 
 ![Configure service](Configure.png)
 
@@ -81,22 +82,22 @@ In the **Roles** table, select the `DiDeveloper` role.
 
 ![Configure service](Configure2.png)
 
-In the **Individual Users** or **Groups** area underneath, choose **Assign**, then in the popup window, enter the user or group you want to assign the `DiDeveloper` role, and choose **Assign**.
+In the **Individual Users** or **Groups** area underneath, choose **Assign**, then in the pop-up window, enter the user or group you want to assign the `DiDeveloper` role, and choose **Assign**.
 
 ![Configure service](Configure3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 5: ](Publish the URL for SAP Web IDE)]
-In the breadcrumb at the top, choose **SAP Web IDE Multi-Cloud Version**. The URL for SAP Web IDE is shown as **Go to Service**.
+In the breadcrumb at the top, choose **SAP Web IDE for Full-Stack Development**. The URL for SAP Web IDE is shown as **Go to Service**.
 
 ![URL for SAP Web IDE](URL.png)
 
-Provide this URL to your developers so they can start working with the SAP Web IDE multi-cloud version.
+Provide this URL to your developers so they can start working with SAP Web IDE for Full-Stack Development.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -114,7 +115,7 @@ We recommend you create separate subaccounts for development, staging/test and p
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 ---

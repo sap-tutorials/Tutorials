@@ -32,7 +32,7 @@ From the top menu bar, select **Gallery**. This will take you to the listing of 
 
 ![gallery overview page](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Select a Gallery app)]
@@ -48,7 +48,7 @@ The prototype overview will provide you details about what screens are included 
 
 ![inventory dashboard app overview page](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -67,7 +67,7 @@ When the clone is complete, BUILD will let you know. When prompted, click **OK**
 
 ![cloning complete](8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Modify the prototype)]
@@ -79,7 +79,7 @@ Here you can search for controls, drag and drop them onto the screen, and modify
 
 ![UI editor screen](10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add a table)]
@@ -100,7 +100,7 @@ Find the *Table* control under the **List** control types.
 ![drag table control to chart area](14.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add columns to the table)]
@@ -115,7 +115,7 @@ This will bring up a local menu bar. Select **Add Column Left** from the options
 ![table control with 2 new columns](16.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Rename the Column Headers)]
@@ -130,7 +130,7 @@ This will highlight the header name and make it editable. Rename the headers to 
 
 ![renamed column headers final](18.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add controls to the table cells)]
@@ -152,7 +152,7 @@ You can modify control properties in the right hand side bar. In the _properties
 
 ![properties pane, size highlighted](22.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Populate the data)]
@@ -172,7 +172,7 @@ Drag and drop the **Image** field to the **Image Control**.
 
 ![images field mapped to image column](24b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Preview the prototype)]
@@ -186,7 +186,7 @@ This will show you a "live" version of your prototype. You can preview how you a
 
 To get back to the UI Editor, click the **UI Editor button**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Change the theme)]
@@ -202,7 +202,7 @@ Select **SAP Belize** from the menu items. This will update the overall theme fo
 
 ![prototype with Belize theming](29.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

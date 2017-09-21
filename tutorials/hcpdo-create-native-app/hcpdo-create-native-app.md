@@ -29,7 +29,7 @@ Creating an app in SAP Cloud Platform mobile service for development and operati
 
 Log on to your [SAP Cloud Platform account](https://account.hanatrial.ondemand.com/cockpit), click on the **Services** tab, click on  the **Development & Operations** tile. On the **Development & Operations** status page, click the **Go to Service** link to open the Development & Operations cockpit.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open the create app dialog )]
@@ -42,7 +42,7 @@ The Click the **Create Application** icon to open the create app dialog box.
 
 ![Applicaitons tile](mg6-1-03.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Enter settings and save)]
@@ -63,7 +63,7 @@ Security Configuration    | `None` (from drop-down)
 
 ![Create Application](mg6-1-04.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Enter back-end settings and save)]
@@ -84,7 +84,7 @@ Relative Paths          | (leave blank)
 
 ![BACK END Information](mg6-1-06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](View applications)]
@@ -93,7 +93,7 @@ Once the application is created, click the **Home** navigation bar and you will 
 
 ![Cockpit homepage](mg6-1-07.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

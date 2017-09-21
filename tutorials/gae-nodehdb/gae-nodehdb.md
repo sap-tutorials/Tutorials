@@ -38,7 +38,7 @@ This will initialize the Node.js application.
 
 ![saved package file](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: Modify Package File](Modify Package File)]
@@ -69,7 +69,7 @@ Be sure to also include the Node.js version for your application as well.
 This can be added to the end before the last `}` and be sure to include a `,` before the entry.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -85,7 +85,7 @@ skip_files:
  - ^node_modules$
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: Install HDB Library](Install HDB Library)]
@@ -98,7 +98,7 @@ This will automatically install the library locally and add the dependency to th
 
 ![installed library](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: Create Application File](Create Application File)]
@@ -164,7 +164,7 @@ Now to execute the code, simply run the command `npm start` which will execute t
 
 ![output](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: Sync and Deploy](Sync and Deploy)]
@@ -199,7 +199,7 @@ System Version: 2.00.000.00.1479874437 (fa/hana2sp00)
 Client closed
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 

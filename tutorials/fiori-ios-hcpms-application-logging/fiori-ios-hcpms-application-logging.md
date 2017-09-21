@@ -48,7 +48,7 @@ class MyViewController: UIViewController {
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Set logging levels)]
@@ -82,7 +82,7 @@ self.someOperation {
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Retrieve log settings from SAP Cloud Platform mobile service for development and operations)]
@@ -97,7 +97,7 @@ let settings = SAPcpmsSettings(sapURLSession: urlSession, settingsParameters: se
 settings.load(for: .application)
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

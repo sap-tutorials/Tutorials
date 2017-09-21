@@ -36,7 +36,7 @@ Once you have your APPID, create a new service class with the following properti
 
 ![Creating a new Java class](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Replace weather service code)]
@@ -44,7 +44,7 @@ Once you have your APPID, create a new service class with the following properti
 Replace the contents of the `WeatherService.java` file with [this code from GitHub](https://raw.githubusercontent.com/SAP/cloud-weatherapp/0f16e22720cbc5032e9a63af4ee95e2ead6e0761/src/main/java/com/sap/hana/cloud/samples/weatherapp/api/WeatherService.java) and save your changes.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add class name to configuration)]
@@ -64,7 +64,7 @@ Include the full-qualified classname of the `WeatherService` class in the list o
 
 ![Modifying the web.xml file to include the new service](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create destination)]
@@ -79,7 +79,7 @@ Switch to the **Connectivity** tab and click on the green **+** symbol to add a 
 
 ![Adding a new destination to the local web server](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Specify HTTP destination)]
@@ -96,7 +96,7 @@ Similar to what we have done to register the DataSource in the `web.xml` file, w
 ![Adding the HTTP destination to the web.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-5.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Save and deploy)]
@@ -105,7 +105,7 @@ Save your changes and deploy/publish the application again. After successful aut
 
 ![Testing the new weather destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add method for URL)]
@@ -142,7 +142,7 @@ public Response getWeatherInformation(@PathParam(value = "id") String id,    @Co
 
 ![Modifying launch configuration when running behind a firewall](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-Note.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

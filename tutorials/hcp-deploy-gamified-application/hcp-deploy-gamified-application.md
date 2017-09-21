@@ -31,7 +31,7 @@ Download the [ZIP file of the sources](https://github.com/SAP/gamification-demo-
 
 Extract the archive to your local drive.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Import project)]
@@ -46,7 +46,7 @@ Navigate to the folder in which you extracted the GitHub archive, and choose **F
 
 ![Build Maven Project](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Set up the Java Web runtime)]
@@ -64,7 +64,7 @@ Set up the Java Web runtime environment in Eclipse:
 
     ![Set Up Java Web Runtime Environment](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Run on server)]
@@ -77,7 +77,7 @@ Select **SAP** > **SAP Cloud Platform** as the server, verify `hanatrial.ondeman
 
 ![Define Server](9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Name your application)]
@@ -86,7 +86,7 @@ Name your application `helpdesk`, select the **Java Web** from the **Runtime** m
 
 ![Name Application on Server](10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Select the HelpDesk application)]
@@ -95,7 +95,7 @@ In your Web browser, open the cockpit of the [SAP Cloud Platform](https://accoun
 
 ![Select HelpDesk Application](11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Assign role)]
@@ -104,7 +104,7 @@ Select **Roles** from the left-hand navigation, select the **`helpdesk`** role, 
 
 ![Assign User to Role](12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Launch the app)]
@@ -117,7 +117,7 @@ Select **Overview** from the left-hand navigation and click on the URL provided 
 
 ![Successfully Launched HelpDesk Application](14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

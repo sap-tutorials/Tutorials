@@ -60,7 +60,7 @@ render: function() {
 ![Add the filter component](1-1.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add filter input box)] ￼
@@ -84,7 +84,7 @@ To do this, scroll down to the `TitleBar` component.  **Replace** the existing `
 
 ![Update the title bar component](1-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Update the ProductList component)] ￼
@@ -107,7 +107,7 @@ getInitialState: function() {
 
 ![Add the new initial state variable](1-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add callback method for filter text)] ￼
@@ -132,7 +132,7 @@ else {
 
 ![Add the callback function](1-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Send the callback)] ￼
@@ -147,7 +147,7 @@ Scroll down to the `render:` method, and **replace** the `<TitleBar>` component 
 
 ![Update the title list jmx call](1-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Run the application)] ￼
@@ -158,14 +158,14 @@ Run the application.  Enter some text in the new filter input in the title bar, 
 
 ![List is filtered](1-6b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Review parent-child communication)] ￼
 
 React has a tutorial page that [discusses parent-child communication](https://facebook.github.io/react/docs/components-and-props.html).  
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Review final code)] ￼
@@ -474,7 +474,7 @@ document.getElementById('product-list')
 );
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 

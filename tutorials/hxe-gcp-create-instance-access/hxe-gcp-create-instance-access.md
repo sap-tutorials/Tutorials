@@ -74,7 +74,7 @@ You can see the estimated costs for the Virtual Machine on the top right corner.
 
 Proceed to create the VM.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Generate Key pairs to connect to your VM instance)]
@@ -118,7 +118,7 @@ gcloud components update
 
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -130,7 +130,7 @@ Upload the HXE installation packages to your home folder (/home/<<your userid>>)
 
 Since this step may take a while depending on your connection, you can move on with the other setup needed before installing HANA Express Edition.
 
-[DONE]
+
 [ACCORDION-END]
 
 

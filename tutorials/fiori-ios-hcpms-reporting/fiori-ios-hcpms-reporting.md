@@ -31,7 +31,7 @@ Navigate to the **Reporting** page.
 
 From here, you can access a multitude of usage statistics. In this tutorial, we will go through the most important ones.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Examine Server Data reports)]
@@ -46,14 +46,14 @@ From the **Usage** drop-down box, select the **Response Time** option:
 
 This report will give you insights in **Mobile related processing times**, **Authentication times** and **Back-End response times**. These insights can be useful to indicate certain bottlenecks in your application. In this example, you can see the mobile related processing time has decreased by refactoring certain parts of the application, resulting in an improved performance.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Examine Client Data reports)]
 
 Click the **Client Data Reports** tile. At this stage of the tutorial, you won't see any statistics yet. The client data reports will only be gathered when applications have enabled collecting usage statistics -- something you haven't done yet.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Examine Push Statistics)]
@@ -64,7 +64,7 @@ Click the **Push Statistics** tile. Here you can review notification counts by a
 
 > The last tile is **Hybrid Application Versions Report**. Since you're creating a native iOS application, we won't cover the significance of this tile in this tutorial.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

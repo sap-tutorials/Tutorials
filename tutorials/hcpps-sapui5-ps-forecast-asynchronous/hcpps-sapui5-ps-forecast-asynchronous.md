@@ -434,14 +434,10 @@ Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following
 
 Edit the `demo.view.xml` file located in the `webapp/view`.
 
-Inside the `<detailPages>` element add the following element:
+Inside the `<detailPages>` element, and uncomment the following element:
 
 ```xml
-<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Cloud for predictive services (Asynchronous Mode)">
-  <content>
-    <mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/>
-  </content>
-</Page>
+<mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/>
 ```
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
@@ -467,14 +463,16 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`webapp/fragment/job/JobStatus.fragment.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-asynchronous/predictive/webapp/fragment/job/JobStatus.fragment.xml)
-  - [`webapp/controller/forecast/asynchronous.controller.js`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-asynchronous/predictive/webapp/controller/forecast/asynchronous.controller.js)
-  - [`webapp/view/forecast/asynchronous.view.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-asynchronous/predictive/webapp/view/forecast/asynchronous.view.xml)
-  - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-forecast-asynchronous/predictive/webapp/view/demo.view.xml)
+  - [`webapp/fragment/job/JobStatus.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-asynchronous/predictive/webapp/fragment/job/JobStatus.fragment.xml)
+  - [`webapp/controller/forecast/asynchronous.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-asynchronous/predictive/webapp/controller/forecast/asynchronous.controller.js)
+  - [`webapp/view/forecast/asynchronous.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-asynchronous/predictive/webapp/view/forecast/asynchronous.view.xml)
+  - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-asynchronous/predictive/webapp/view/demo.view.xml)
 
-The complete project can be found on my personal [`Git Hub repository`](https://github.com/adadouche/tutorials/tree/master/hcpps-sapui5-ps-forecast-asynchronous).
+The complete project can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/hcpps-sapui5-ps-forecast-asynchronous/predictive).
 
 However, you won't be able to clone the repository and directly run the code from the current directory structure. You have to copy the `predictive` directory content into your existing project directory.
+
+Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
 [ACCORDION-END]
 

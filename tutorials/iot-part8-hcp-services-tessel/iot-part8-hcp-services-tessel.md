@@ -44,7 +44,7 @@ var messageTypeID = '6c7a02f24cc32ee07174';
 
 ![parameter definition](1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add a new function to send messages)]
@@ -109,7 +109,7 @@ req.end();
 >NOTE: `messageType` needs to be changed to match your `messageTypeID`.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Insert a function call)]
@@ -122,7 +122,7 @@ updateIoT(temp.toFixed(4), humid.toFixed(4));
 
 ![Insert updateIoT](p8_5vr.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Check connection to the Internet)]
@@ -135,7 +135,7 @@ tessel wifi -n SSID -p password
 
 ![Acquiring IP](p8_6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run the modified code)]
@@ -149,7 +149,7 @@ tessel run climate.js
 ![Posting to HCP](p8_7vr.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](View received messages)]
@@ -162,7 +162,7 @@ You can switch as well from table display to live chart to see climate data chan
 
 ![Charting the data](p8_9vr.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

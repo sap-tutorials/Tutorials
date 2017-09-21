@@ -43,7 +43,7 @@ You can now see the schemas in your database and open the SQL console:
 ![Open SQL](3.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a Schema and table and Import data)]
@@ -92,7 +92,7 @@ INSERT INTO "LOCATION_TEST"."LOCATIONS" VALUES('7550000','Santiago','San Crescen
 INSERT INTO "LOCATION_TEST"."LOCATIONS" VALUES('22,115-30','Bogota','Avenida Carrera 9 No. 115-06',new ST_POINT('POINT(4.693179 -74.034550)',4326));
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -114,7 +114,7 @@ And execute it in a console:
 ![XS CUPS execution](5.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add the service as a resource for the nodejs module)]
@@ -131,7 +131,7 @@ Add the newly-declared resource as a dependency for the `node.js` module:
 
 **Save** the `mta.yaml` file.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Extend the server.js file)]
@@ -152,7 +152,7 @@ As in this example:
 
 ![Cross schema resource dependency](8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Test the xsjs service)]
@@ -189,7 +189,7 @@ Replace `index.html` with `/xsjs/locations.xsjs`. You should now see that the da
 
 ![Run](run2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add the service as a resource to the HDI container)]
@@ -272,7 +272,7 @@ resources:
       locations-service-name: '${service-name}'
 
 ```
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Grant privileges to the schema)]
@@ -311,7 +311,7 @@ In `src/data`, add a file called `locations.hdbsynonym` and add the entry `LOCAT
 
 Proceed to **Build** the `db` module.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Create a CDS file)]
@@ -338,7 +338,7 @@ You could merge this file with the existing data on, for example, Business Partn
 
 See how the view in the HDI container can get data from the System database.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

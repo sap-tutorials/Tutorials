@@ -31,7 +31,7 @@ You can also press `Ctrl+N`.
 
 > In this example screenshots from SAP BusinessObjects Lumira version 1.30 in English are being used. They may be slightly different between versions and application languages.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create new dataset)] ￼
@@ -42,7 +42,7 @@ Create a new Dataset by selecting **Microsoft Excel** as a source, pressing **Ne
 
 ![Adding the first dataset from MS Excel to the new document in SAP BusinessObjects Lumira](Lum01-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Choose columns in dataset preview)] ￼
@@ -51,7 +51,7 @@ Dataset preview is displayed. At this stage you can decide what columns from the
 
 ![Columns "GMR" and "Year-Quarter" have been deselected](Lum01-04a.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Check the record count)] ￼
@@ -62,7 +62,7 @@ Click on **Show records count** to check numbers of rows and columns to be acqui
 
 Click **Create**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](New document available)] ￼
@@ -73,7 +73,7 @@ SAP BusinessObjects Lumira opens the dataset in the new document ready for data 
 
 ![The new document is created in SAP BusinessObjects Lumira and Prepare room is selected for further work with a dataset](Lum01-06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Save current document)] ￼
@@ -86,7 +86,7 @@ Save the current document locally at your computer as `Tutorial1`.
 
 > Lumira documents have extension `.lums`. These files are zipped archives containing multiple files, like configuration and data files, visualization thumbnails etc.
 
-[DONE]
+
 [ACCORDION-END]
 
 

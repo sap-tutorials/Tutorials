@@ -31,7 +31,7 @@ From the SAP Cloud Platform cockpit, select **Java Applications**, then select t
 
 ![Application URL](p7_1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open IoT Services Cockpit)]
@@ -40,7 +40,7 @@ Click on the **View registered devices and device types** tile to open the **IoT
 
 ![View registered devices](p7_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add a new message type)]
@@ -65,7 +65,7 @@ Copy and save the message type ID, which you will need later:
 
 ![ID value](p7_5b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a new device type)]
@@ -76,7 +76,7 @@ Now click the  **+ Add Message Type** to attach your previously created message 
 
 ![New Device Type](p7_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create a new device)]
@@ -89,7 +89,7 @@ Click `+` to add a new device, name it `DevelopmentTessel` and make sure its dev
 
 ![Device](p7_6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Copy device and token IDs)]
@@ -102,7 +102,7 @@ Now copy and save the **Device ID** string
 
 ![Device ID](p7_8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Use HTTP API built-in client)]
@@ -117,7 +117,7 @@ Then click the **Messaging through HTTP** tile in **Data Services** group.
 
 ![View stored messages](p7_9b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Adjust device ID)]
@@ -130,7 +130,7 @@ Change `d000-e000-v000-i000-c000-e001` to your device's ID (it is a GUID) you co
 
 Example: `https://iotmmsp1234567trial.hanatrial.ondemand.com/com.sap.iotservices.mms/v1/api/http/data/85e0ce4e-09bf-47ea-a5a9-a0469f642c20`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Adjust message to post)]
@@ -147,7 +147,7 @@ Under **Message to post** replace the existing content with the following which 
 
 > The date format is a combined date and time representation in ISO 8601 format. It is in UTC (Coordinated Universal Time) as indicated by a `Z` directly after the time without a space.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Send the sample message)]
@@ -160,7 +160,7 @@ You receive response code `202` when your request was not immediately processed,
 
 Response codes `4xx` or `5xx` indicate that post request has failed.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Display stored messages)]
@@ -173,7 +173,7 @@ Find table `T_IOT_<YourMessageType>` and click on it. When the page updates you 
 
 Please note **OData API** link in the up right corner. Clicking it will give you the URL which you can use to query this data from your applications using OData protocol.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Starting Postman application)]
@@ -184,7 +184,7 @@ In this step you will use [Postman Application](https://chrome.google.com/websto
 
 >There is no need to create a Postman account, if you are asked during the first run of the Postman application.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Set method, URL and HTTP header)]
@@ -198,7 +198,7 @@ Open the **Headers** section and set:
 
 ![Header values](p7_15v.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Set body)]
@@ -209,7 +209,7 @@ Select **Body**, then the **RAW** type. Copy and paste the same content you just
 {"mode":"sync", "messageType":"m0t0y0p0e1", "messages":[{"Humidity":28.9, "Temperature": 19.9, "timestamp":"2017-05-05T23:55:37.930Z"}]}
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Send message)]
@@ -219,7 +219,7 @@ Click **Send** and you should receive a message similar to that from the SAP Clo
 
 This indicates that your POST was successful and if you return to the "Display Stored Messages" in SAP Cloud Platform you should see this new entry sent from the Postman application.
 
-[DONE]
+
 [ACCORDION-END]
 
 

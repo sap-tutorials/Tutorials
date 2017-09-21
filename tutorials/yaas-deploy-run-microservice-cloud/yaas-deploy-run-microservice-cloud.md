@@ -28,7 +28,7 @@ Download the **Cloud Foundry CLI**: Go to https://docs.cloudfoundry.org/cf-cli/i
 
 ![CF Command](cf-command.PNG)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Set endpoint)] ￼
@@ -37,7 +37,7 @@ Set the Cloud Foundry CLI's endpoint to SAP's SAP Cloud Platform address, by run
 
 ![CF Endpoint](cf-cli-endpoint.PNG)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Subscribe to HCP, starter edition for cloud foundry services)] ￼
@@ -46,14 +46,14 @@ Go to **Builder**. Choose the YaaS Project which you created in the **Getting St
 - Open your YaaS Projects **Administration** page.
 - Click **Subscription**, select **+ Subscription**, select the *Beta Worldwide* tab, and subscribe to the package called **HCP, STARTER EDITION FOR CLOUD FOUNDRY SERVICES (BETA)** in there.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Check status in Builder)] ￼
 
 Wait 10 seconds and your package will appear in **Builder**. If your package did not appear, log out and back in to the YaaS Builder, find your project, and you should see **SAP Cloud Platform** in your YaaS Project's Menu on the left side of the page.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Activate your SAP Cloud Platform account)] ￼
@@ -62,14 +62,14 @@ You should now get an email from **HCP**, guiding you through steps to **activat
 
 > NOTE: You can skip this step if you already have an **HCP** Account.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Log in)] ￼
 
 You can then log in using the command `cf login`. After entering your credentials, your SAP Cloud Platform cloud foundry account will be ready to deploy to.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](View manifest file)] ￼
@@ -78,7 +78,7 @@ Familiarize yourself with the `manifest.yml` file which is located on the root f
 
 > NOTE: If you have skipped the tutorial **Extend the YaaS Storefront's Functionality with a Micro Service**, you can clone the Tips Micro Service with this command. `git clone https://github.com/SAP/yaas-getting-started-yaasbites.git`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Set deployment name)] ￼
@@ -87,21 +87,21 @@ Ensure your deployment name is unique to you, by adjusting the name value in the
 
 ![Name Value](tipsService.PNG)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Check for Maven)] ￼
 
 9. Run `mvn -v` to confirm that you have maven installed. If not, follow instructions on [Apache Maven Website](https://maven.apache.org/install.html), and confirm that  `mvn -v` then runs.   Now build and package your micro service into a war file, by running the command `mvn clean package` from the folder `(2)/yaasbite200`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Push the war file to the cloud)] ￼
 
 Push the war file to the cloud, by running `cf push` from the same location. This will use the information in `manifest.yml` to guide the deployment.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Check that the war file was deployed)] ￼
@@ -112,7 +112,7 @@ Run `cf apps` to check whether the war file was successfully deployed and starte
 
 ![CF Apps](cf-apps.PNG)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Register service in the YaaS Builder)] ￼
@@ -128,7 +128,7 @@ Now that your service has been deployed to the cloud, you could access it direct
 
 > NOTE: In order to access your service at the  **Generated Proxy URL** you will need to acquire an **Access Token**. This is because all calls to a service on YaaS are secured. If you are interested to learn more about this please refer to [YaaS Dev Portal](https://devportal.yaas.io/).  
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

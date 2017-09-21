@@ -36,7 +36,7 @@ Make sure the `SAPFiori` framework file is listed:
 
 If it's not, copy the file from the SDK's `Release-fat` directory to the **Embedded Binaries** section of your project configuration.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add Table View Cell to Table View)]
@@ -45,7 +45,7 @@ Open the project's **Storyboard**. Locate the **Master** Table View and drag a n
 
 ![Xcode](fiori-ios-hcpms-fioriuikit-04.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Change Table View Cell properties)]
@@ -68,7 +68,7 @@ Set the following properties:
 
 > Since you specified an **Identifier** name `FUIObjectTableViewCell`, you will notice this name is now reflected in the Storyboard designer's **Document Outline**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Change Table View Cell class to SAPFiori's Object Cell)]
@@ -82,7 +82,7 @@ Switch to the Object Cell's **Identity Inspector**, and change the class and mod
 
 ![Xcode](fiori-ios-hcpms-fioriuikit-06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Bind model data to Object Cell)]
@@ -144,7 +144,7 @@ Then a reference is created to the added Object Cell with identifier `FUIObjectT
 
 Finally, now you have the reference to the Fiori Object Cell control, you then bind the model properties to the control properties and return the instance of that control.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Build and run the application)]
@@ -157,7 +157,7 @@ Click the **Products** item. You should now see the master list with **Object Ce
 
 ![Xcode](fiori-ios-hcpms-fioriuikit-08.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add segue to Object Cell)]
@@ -172,7 +172,7 @@ Make sure you set the identifier to `showDetail`, similar to the segue from the 
 
 If you now build and run the application, you can navigate from the Products master page to the detail page.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

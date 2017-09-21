@@ -36,7 +36,7 @@ On Windows, press the **Windows-Key** and **R**. This should open the **Run**-Di
 
 You should then have access to the Windows instance related to the AWS instance. On the desktop, you find shortcuts for SAP Development Tools for Eclipse and Mozilla Firefox.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -56,7 +56,7 @@ Navigate to **Applications > Java Applications** and select **Deploy Application
 
 The application is now deployed to your SAP Cloud Platform account. This will take some time.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Configuring the connectivity destination in the cloud)]
@@ -72,7 +72,7 @@ Click on the **Import Destination** button and select the file `D:/sap_hcp_scc/d
 
 ![Import Destination](select-destinations.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Configuring the SAP HANA Cloud connector)]
@@ -101,7 +101,7 @@ Now you have imported the configuration of the ABAP system and the RFC resources
 
 ![How the SAP Cloud Connector should look like after importing `access_control.zip` ](how-scc-should-look-like-after-import.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Testing the application)]
@@ -111,7 +111,7 @@ Now the SFLIGHT application has been deployed to your SAP Cloud Platform account
   - Navigate into **Java Applications** and drill into your application.
   - Start the `SFLIGHT` application by clicking the URL visible under **Application URLs**. This should bring up the application. You can now select a flight departure and arrival airport, e.g. `Frankfurt` and `New York`, then click the **Search** button. This should then list the available flights.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Explaining the UI layer)]

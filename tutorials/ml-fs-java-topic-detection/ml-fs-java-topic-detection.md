@@ -120,7 +120,7 @@ try {
 
 As you can notice, the Java import statements are missing along with request expected form data.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Get Your API key )]
@@ -133,7 +133,7 @@ The following pop-up should appear. Click on the **Copy API Key** button and sav
 
 ![SAP API Business Hub](06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Start the Eclipse IDE)]
@@ -151,7 +151,7 @@ You can also close the **Welcome Page**.
 
 ![SAP API Business Hub](07.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a New Project in the Eclipse IDE)]
@@ -166,7 +166,7 @@ Click on **Finish**.
 
 ![Eclipse](08.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create a New Java Class)]
@@ -213,7 +213,7 @@ import java.net.URL;
 
 Save your code.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Process the input parameters as Form Data)]
@@ -394,7 +394,7 @@ If you are missing some inspiration for the input text, use the following articl
 
 Create a zip out of these text files.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Solution)]
@@ -616,7 +616,7 @@ public class DemoTopicDetection {
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

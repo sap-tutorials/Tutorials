@@ -29,7 +29,7 @@ Return to the SQL tab and change the filter value for the first input parameter.
 
 ![sql tab](1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Run the CALL ststement)]
@@ -42,7 +42,7 @@ Of course we get the error "invalid column name".
 
 ![error](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Run log errors SELECT)]
@@ -55,7 +55,7 @@ You will notice that a new row was not inserted into the log table due to transa
 
 ![sql tab](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add COMMIT)]
@@ -73,7 +73,7 @@ After the INSERT statement within the EXIT HANDLER, add a COMMIT statement.
 
 ![insert statement](8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Save and build)]
@@ -86,7 +86,7 @@ Use what you have learned already and perform a build on your `hdb` module.
 
 ![HRTT](10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Run the CALL statement)]
@@ -101,7 +101,7 @@ You will now notice that the new row has been inserted into the log table even t
 
 ![rollback](12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Run log messages SELECT)]
@@ -110,7 +110,7 @@ Highlight the SELECT statement for `log.messages` and click **Run**.
 
 ![run select](13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Examine results)]
@@ -119,7 +119,7 @@ As you can see not only was the new record inserted into the `log.errors` table,
 
 ![inserted records](14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

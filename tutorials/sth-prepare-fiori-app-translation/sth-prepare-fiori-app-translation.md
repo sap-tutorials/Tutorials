@@ -26,7 +26,7 @@ In the service catalog, locate the **SAP Web IDE** tile by searching for `Web`, 
 
 ![Locate SAP Web IDE](sth-prep-locate-IDE.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open SAP Web IDE)]
@@ -35,7 +35,7 @@ Choose **Go to Service**.
 
 ![Open SAP Web IDE](sth-prep-open-IDE.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new project from a sample application)]
@@ -44,7 +44,7 @@ To get started with the app, choose **New Project from Sample Application**.
 
 ![Choose new project](sth-prep-new-proj.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Choose shop app)]
@@ -53,7 +53,7 @@ To add a project with the required files to your account, choose **Shop** and th
 
 ![Choose shop app](sth-prep-choose-shop.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Accept standard license conditions)]
@@ -62,14 +62,14 @@ Accept the standard license conditions by choosing **I agree** and then **Finish
 
 ![Accept conditions](sth-prep-accept-condits.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Open project file)]
 To be able to view the app in multiple languages and enable SAP Translation Hub to locate the resources file, you need to enter some data in the `.project.json` file.
 
 ![Open project.json file](sth-prep-project-json.png)
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Make project settings)]
@@ -90,7 +90,7 @@ The result should look like this:
 
 ![Define project settings manually](sth-prep-manual-project-settings.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Create run configuration)]
@@ -99,7 +99,7 @@ To test the application with mock data from a local system, you're going to need
 
 ![Run configurations](sth-prep-run-configs.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Choose Web application)]
@@ -108,7 +108,7 @@ Choose **+ > Web Application**.
 
 ![Web application](sth-prep-web-application.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Assign run application file)]
@@ -123,7 +123,7 @@ Once you've done that, choose **OK**.
 
 ![Run application](sth-prep-run-application.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Open app in Fiori launchpad)]
@@ -132,7 +132,7 @@ Now you want to see what the application looks like by accessing it from a Fiori
 
 ![Open with Fiori Launchpad](sth-prep-run-Fiori-LP.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Open the app)]
@@ -145,7 +145,7 @@ To make things look more realistic, the app uses mock data:
 
 ![Fiori app with mock data](sth-prep-mock-data.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

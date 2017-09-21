@@ -28,7 +28,7 @@ Start the **Custom Analytical Queries** Application by selecting the correspondi
 
 ![start Custom CDS View App](FLP.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create Query)]
@@ -38,7 +38,7 @@ Choose the **data view (3) + (4)** `I_GLACCOUNTLINEITEMCUBE`. **Press OK (5)** t
 
 ![Select Data Source](create-query.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Specify Label)]
@@ -46,7 +46,7 @@ On the **General** tab, you can specify the label.
 
 ![Select Data Source](general.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Select Fields)]
@@ -64,7 +64,7 @@ Switch now to the **Field Selection** tab.
 
 ![Select Data Source](field-selection.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Select Display Tab)]
@@ -73,7 +73,7 @@ the report. The **Filter** icon indicates, whether a fixed value filter is defin
 
 ![Select Data Source](display.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Change Attributes)]
@@ -87,7 +87,7 @@ By Selecting the field **`Controlling Area` (1)** you are able to change the att
 
 ![Select Data Source](display2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Move Fields)]
@@ -102,7 +102,7 @@ Afterwards you can **Save (5)** your draft.
 
 ![Select Data Source](display3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Select Filters Tab)]
@@ -111,7 +111,7 @@ A dialog will be shown in the design studio to read value from user.
 
 ![start Custom CDS View App](filter.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Define Fixed Value Filter)]
@@ -119,7 +119,7 @@ Or **define a fixed value filter**. The result set upon executing the report wil
 
 ![Select Data Source](filter2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Add Restricted Measures)]
@@ -129,7 +129,7 @@ A `popup` appears to **enter the label and the name (2)** of the restricted meas
 
 ![Select Data Source](restricted.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Choose Measure)]
@@ -137,7 +137,7 @@ Now choose the measure `Restricted Amount` to **add the restrictions**.
 
 ![Select Data Source](measure.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Choose Dimension)]
@@ -145,7 +145,7 @@ On the following `popup`, you can **choose a dimension** for the restrictions. C
 
 ![Select Data Source](dimension.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Display Conditions)]
@@ -153,7 +153,7 @@ You can have multiple include and exclude conditions with value help support.
 
 ![Select Data Source](conditions.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Define User Input Filter)]
@@ -164,7 +164,7 @@ A new field for **user input filter is created**.
 
 ![Select Data Source](input-filter.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Save and Publish Draft)]
@@ -176,7 +176,7 @@ Now **Save** and **Publish** your draft.
 
 ![Select Data Source](pt-version.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

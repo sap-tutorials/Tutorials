@@ -30,7 +30,7 @@ This tutorial series will use the client `DBeaver`. You can choose to install an
 [Download `DBeaver`](http://dbeaver.jkiss.org/download/) and follow the instructions to install it.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Connect to your SAP HANA, express edition, instance)]
@@ -66,7 +66,7 @@ And you should see a success message:
 
 ![Success Message](success.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -102,7 +102,7 @@ Press the `Execute script` button or `CTRL+X`, you can check the results in the 
 ![Grants](6.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Reconnect as the development user)]
@@ -119,7 +119,7 @@ Replace the login details with those of the new user:
 
 You can now begin with development.
 
-[DONE]
+
 [ACCORDION-END]
 
 

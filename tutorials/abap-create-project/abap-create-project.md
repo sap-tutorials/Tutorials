@@ -23,7 +23,7 @@ In this tutorial you will learn how to configure your ABAP development environme
 [ACCORDION-BEGIN [Step 1: ](Download, Install and launch the Eclipse IDE)]
 ABAP development is done in the Eclipse IDE with custom ABAP tooling. If you haven't installed Eclipse yet, [download Eclipse IDE for Java Developers](http://www.eclipse.org/), install and launch the application now.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Install the ABAP Development Tools for SAP NetWeaver (ADT))]
@@ -35,7 +35,7 @@ ABAP development is done in the Eclipse IDE with custom ABAP tooling. If you hav
  - On the next wizard page, you get an overview of the features to be installed. Click **Next**
  - Confirm the license agreements and click **Finish** to start the installation
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -45,7 +45,7 @@ Switch to the ABAP perspective by clicking the **Open Perspective** button or us
 
 ![open perspective](abap-01-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Close the Welcome page)]
@@ -54,7 +54,7 @@ The Welcome Page might appear. It gives some general information about Eclipse. 
 
 ![workbench button](abap-01-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Select the ABAP perspective)]
@@ -67,7 +67,7 @@ Then switch to ABAP Perspective by choosing **ABAP** in the list and clicking th
 
 ![abap perspective](abap-01-5b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Familiarize yourself with the tooling layout)]
@@ -76,7 +76,7 @@ In the ABAP Perspective, the ABAP tools are ideally positioned in the IDE to fac
 
 ![abap perspective](abap-01-6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](New ABAP Project)]
@@ -85,7 +85,7 @@ Open the **File** menu, select **New** and then click on **ABAP Project**. Choo
 
 ![abap perspective](abap-01-7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Select Connection Settings)]
@@ -94,7 +94,7 @@ Click Next on the Connection Settings dialog.
 
 ![connection settings](abap-01-8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Enter your log on data)]
@@ -103,7 +103,7 @@ On the next screen enter your logon data and click the **Finish** button.
 
 ![logon data](abap-01-9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Project created)]
@@ -112,7 +112,7 @@ The ABAP Project has been created. It represents a system connection to your cho
 
 ![project created](abap-01-10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

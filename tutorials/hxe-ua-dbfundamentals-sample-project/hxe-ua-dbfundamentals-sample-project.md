@@ -55,7 +55,7 @@ In SAP HANA Studio, do the following:
     ![Create User](create_user2.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -105,7 +105,7 @@ In SAP HANA Studio, do the following:
 
     Click Execute ![execute](execute.png) for each line.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Load Table Data)]
@@ -143,7 +143,7 @@ In SAP HANA Studio, do the following:
 
 You should see your new tables under the _Tables_ folder under your schema.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a New Package)]
@@ -169,7 +169,7 @@ The new package will appear under your _Content_ folder under your new user logi
 
 ![Create Package](create_package3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Load and Connect Data)]
@@ -203,7 +203,7 @@ The new package will appear under your _Content_ folder under your new user logi
 
 Here is an example: ![Connect Data](connecting_data2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -247,7 +247,7 @@ Here is an example: ![Connect Data](connecting_data2.png)
 
     An entry will be added to the **Job Log** window panel.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Preview Data)]
@@ -262,7 +262,7 @@ You can now preview your data by dragging _Attributes_ to the **Label axis** pan
 
 Here is an example: ![Data Preview](preview_data1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

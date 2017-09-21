@@ -32,7 +32,7 @@ Delete all of the logic in the body of the procedure except for the declare stat
 
 ![delete logic](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Insert FOR loop)]
@@ -41,7 +41,7 @@ Next, instead of using arrays to access the input parameter table values and cal
 
 ![for loop](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Check complete code)]
@@ -52,7 +52,7 @@ The completed code should look like the following. If you do not wish to type th
 PROCEDURE "dev602.procedures::calculate_cumulative_sum_of_delivered_products" (  IN IM_PRODUCTS TABLE ( PRODUCTID NVARCHAR(10),                           DELIVERYDATE DAYDATE,                        NUM_DELIVERED_PRODUCTS BIGINT ),  OUT EX_PRODUCTS TABLE ( PRODUCTID NVARCHAR(10),                          DELIVERYDATE DAYDATE,                          NUM_DELIVERED_PRODUCTS BIGINT,                        CUMULATIVE_SUM BIGINT )  ) LANGUAGE SQLSCRIPT SQL SECURITY INVOKER READS SQL DATA ASBEGIN  DECLARE i  INTEGER  = 1;  FOR i IN 1..CARDINALITY(ARRAY_AGG(:IM_PRODUCTS.PRODUCTID)) DO     EX_PRODUCTS.PRODUCTID[:i]   = :IM_PRODUCTS.PRODUCTID[:i];     EX_PRODUCTS.DELIVERYDATE[:i]  =  :IM_PRODUCTS.DELIVERYDATE[:i] ;     EX_PRODUCTS.NUM_DELIVERED_PRODUCTS[:i] = :IM_PRODUCTS.NUM_DELIVERED_PRODUCTS[:i];          if :i = 1 then       EX_PRODUCTS.CUMULATIVE_SUM[:i] = :IM_PRODUCTS.NUM_DELIVERED_PRODUCTS[:i];       continue;     end if;     IF :IM_PRODUCTS.PRODUCTID[:i-1] <> :IM_PRODUCTS.PRODUCTID[:i]  THEN       EX_PRODUCTS.CUMULATIVE_SUM[:i] = :IM_PRODUCTS.NUM_DELIVERED_PRODUCTS[:i];     ELSE       EX_PRODUCTS.CUMULATIVE_SUM[:i] = :EX_PRODUCTS.CUMULATIVE_SUM[:i-1]                  + :IM_PRODUCTS.NUM_DELIVERED_PRODUCTS[:i];     END IF;  END FOR;END
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Save and build)]
@@ -63,7 +63,7 @@ Click **Save**.
 
 Use what you have learned already and perform a build on your `hdb` module.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run call statement again)]
@@ -72,7 +72,7 @@ Return to the HRTT page and run the call statement again.
 
 ![HRTT](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Check the results)]
@@ -85,7 +85,7 @@ Notice the execution time is a little bit less than when doing the calculation u
 
 ![execution time](8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

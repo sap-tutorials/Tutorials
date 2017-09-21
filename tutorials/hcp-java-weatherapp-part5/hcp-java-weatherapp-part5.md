@@ -45,7 +45,7 @@ First, we need to add the dependency references to Apache CXF in the `pom.xml` f
 
 ![Adding Apache CXF to the pom.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Specify CXF version property)]
@@ -58,7 +58,7 @@ We also need to specify the corresponding CXF version property at the end of the
 
 ![Adding Apache CXF to pom.xml properties element](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new class)]
@@ -72,7 +72,7 @@ Click on **Finish**.
 
 ![Adding a new Java class](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Replace code)]
@@ -115,7 +115,7 @@ public class AuthenticationService
 ![Building out the new Java class](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-4.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Edit configuration file)]
@@ -142,7 +142,7 @@ Open the `web.xml` configuration file and copy and paste the following lines of 
 
 ![Modifying the web.xml file for REST services](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Save and publish changes)]
@@ -151,7 +151,7 @@ With this, we have registered (Apache) CXF as a Servlet that listens to incoming
 
 Save your changes and publish/deploy your application.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](View the app)]
@@ -160,7 +160,7 @@ Navigate to the following URL: <http://localhost:8080/weatherapp/api/v1/auth>. A
 
 ![Running the Java app with RESTful API enabled](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -54,7 +54,7 @@ As displayed on the screen, the sandbox URL for the **Time Series Change Point D
 https://sandbox.api.sap.com/ml/changepointdetection/inference_sync
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Get Your API key )]
@@ -69,7 +69,7 @@ The following pop-up should appear. Click on the **Copy API Key** button and sav
 
 Now, let's build a SAPUI5 application! But before doing so let's first add the destination to connect to the SAP API Business Hub.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Access the SAP Cloud Platform Cockpit)]
@@ -78,7 +78,7 @@ Go to your [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.
 
 ![SAP HANA Cloud Platform Cockpit](06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Configure your destination)]
@@ -116,7 +116,7 @@ Click on **Save**
 
 You can use the **Check Connectivity** button ![HTML5 Applications](0-check.png) next to the new **Destination** to validate that the URL can be accessed.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Open the Web IDE)]
@@ -133,7 +133,7 @@ You will get access to the **SAP Web IDE** main page:
 
 ![Web IDE](12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create your application using the SAPUI5 template)]
@@ -164,7 +164,7 @@ View Name            | `demo`
 
 ![Project](15.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Extend the application resource roots)]
@@ -185,7 +185,7 @@ data-sap-ui-resourceroots='{"demosapui5ml-changepointdetection": "", "sapui5ml":
 
 Click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Configure your SAPUI5 application)]
@@ -230,7 +230,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Store your API setting in a JSON model)]
@@ -272,7 +272,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Extend the main SAPUI5 view)]
@@ -397,7 +397,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 </mvc:View>
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Extend the main SAPUI5 controller)]
@@ -566,7 +566,7 @@ sap.ui.define([
 });
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Test the application)]
@@ -581,7 +581,7 @@ You will notice that the longer the series is, the lower the probability will be
 
 ![Result](16.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

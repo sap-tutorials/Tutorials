@@ -60,7 +60,7 @@ Click **Save** in the bottom right corner. We will need to restart all running n
 
 ![Save](save.png)
 
-[DONE]
+
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 2: ](Configuring the Web Service Provider to Use WebSockets)]
 
@@ -97,7 +97,7 @@ Click **Save** in the bottom right corner. We will need to restart all running n
 
 ![Save](save.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Starting and Stopping the WSP)]
@@ -117,7 +117,7 @@ In the bottom right corner of the page, select Start or Stop.
 
 ![Start WSP](start_wsp.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Optional: ](Appendix)]
@@ -191,7 +191,7 @@ If you are using HTTPS, fill out the properties in the Security section. If you 
 |Keystore Password|The password for the keystore file, which can be encrypted. If encrypted, provide a symmetric cipher to decrypt the password in the Cipher File field.|
 |Keystore Type|The type of keystore being used.|
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

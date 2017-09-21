@@ -46,7 +46,7 @@ Click on **Next**
 
 ![Creating a new dynamic web project](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add new folder)]
@@ -59,7 +59,7 @@ Click on **Next**.
 
 ![Configuring java project](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Change the Content Directory)]
@@ -70,7 +70,7 @@ Click on **Finish**.
 
 ![specifying output directory to comply with Maven conventions](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add details to weather app project)]
@@ -84,7 +84,7 @@ Click on **Next**.
 
 ![Creating a new servlet](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Change the URL Mapping)]
@@ -95,7 +95,7 @@ Click on **Finish** and the `HelloWorldServlet.java` file will open in the edito
 
 ![Changing the Servlet URL mapping](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Replace comment with code)]
@@ -108,14 +108,14 @@ response.getWriter().println("Hello World!");
 
 ![Modifying the doGet() method](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Run on server)]
 
 Deploy the application to your local server by using the **Run as > Run on Server** context menu of the `HelloWorldServlet` node in the Project Explorer view.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Manually define a new Server)]
@@ -127,7 +127,7 @@ Click on **Finish**. The internal browser is now started and displays the tradit
 ![Creating a new local Java Server to run your app](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part1/e2e_01-8.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

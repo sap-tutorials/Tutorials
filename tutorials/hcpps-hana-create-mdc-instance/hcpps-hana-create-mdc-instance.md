@@ -41,7 +41,7 @@ Click on **New**.
 Complete the form following details information:
 
 Field Name           | Value
--------------------- | --------------
+:------------------- | :--------------
 Database ID          | `mdc`
 Database System      | HANA MDC (< trial >)
 System User Password | `Welcome17Welcome17`

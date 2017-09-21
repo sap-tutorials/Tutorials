@@ -30,7 +30,7 @@ And looks like this:
 
 ![Association OData](1.png)
 
-[DONE]
+
 [ACCORDION-END]  
 
 [ACCORDION-BEGIN [Step 2: ](Save, run, and test)]
@@ -43,7 +43,7 @@ The PO Header data now has a hyperlink relationship to the item entity.
 
 ![metadata](4.png)
 
-[DONE]
+
 [ACCORDION-END]  
 
 [ACCORDION-BEGIN [Step 4: ](Expand the child elements)]
@@ -51,7 +51,7 @@ The PO Header data now has a hyperlink relationship to the item entity.
 Associations can be an excellent way to load child elements on demand; however there is also an option to expand the children details in place so that all levels can be retrieved with one request.  Test the service again using the same steps as in the previous section of this exercise. This time add `$expand=POItem` to the end of the URL. You will then see that all the items are embedded within each header record (i.e., it is no longer `deferred` as in the previous test).
 
 ![associations](5.png)
-[DONE]
+
 [ACCORDION-END]  
 
 

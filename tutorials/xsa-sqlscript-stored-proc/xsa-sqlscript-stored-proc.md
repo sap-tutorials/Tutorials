@@ -36,7 +36,7 @@ The editor will then be shown.
 
 ![Sample](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Change namespace name)]
@@ -45,7 +45,7 @@ Change the namespace from "Undefined" to `dev602.procedures`
 
 ![Namespace](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add SELECTs)]
@@ -54,7 +54,7 @@ Between the BEGIN and END statements, insert the SELECT statements as shown.  Th
 
 ![Enter Code](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Review complete code)]
@@ -62,7 +62,7 @@ Between the BEGIN and END statements, insert the SELECT statements as shown.  Th
 The completed code should look similar to this. If you do not wish to type this code, you can reference the solution web page at `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex2_10`
 ```PROCEDURE "dev602.procedures::get_po_header_data" ( )LANGUAGE SQLSCRIPTSQL SECURITY INVOKER--DEFAULT SCHEMA <default_schema_name>READS SQL DATA ASBEGINSELECT COUNT(*) AS CREATE_CNT, "HISTORY.CREATEDBY.EMPLOYEEID"     FROM "dev602.data::PO.Header" WHERE PURCHASEORDERID IN (                     SELECT PURCHASEORDERID                          FROM "dev602.data::PO.Item"          WHERE "PRODUCT.PRODUCTID" IS NOT NULL)GROUP BY  "HISTORY.CREATEDBY.EMPLOYEEID";SELECT COUNT(*) AS CHANGE_CNT, "HISTORY.CHANGEDBY.EMPLOYEEID"     FROM "dev602.data::PO.Header"  WHERE PURCHASEORDERID IN (                     SELECT PURCHASEORDERID                          FROM "dev602.data::PO.Item"          WHERE "PRODUCT.PRODUCTID" IS NOT NULL)GROUP BY  "HISTORY.CHANGEDBY.EMPLOYEEID";END```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Save and build)]
@@ -75,7 +75,7 @@ Perform a build on your `hdb` module.
 
 ![Build](8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Invoke procedure)]
@@ -96,7 +96,7 @@ Click the **Run** button.
 
 ![Run](12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Check results)]
@@ -109,7 +109,7 @@ Note the execution time.
 
 ![Execution time](14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

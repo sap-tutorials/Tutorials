@@ -38,7 +38,7 @@ The overall HANA system including Dynamic Tiering is a single database system wh
 
 In this set of tutorials, we will be backing up and recovering one of our Tenant databases, `PM1`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Initializing Backup Parameters)]
@@ -50,7 +50,7 @@ To view the currently configured directory paths for the HANA and Dynamic Tierin
 
 > Note: The configuration parameters can be set at the Tenant level and System level, however the configurations in Tenant and System will be the same regardless of where the configuration parameters are set. In this tutorial, we set the configuration parameters at the Tenant level.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -64,7 +64,7 @@ You will need to assign the TPCH user the required roles and permissions to crea
 
 Click the deploy button near the top right or the F8 key on your keyboard to execute the changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 

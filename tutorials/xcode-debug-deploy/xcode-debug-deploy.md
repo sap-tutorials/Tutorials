@@ -29,7 +29,7 @@ When the application is not doing exactly what you expect it to do, the need ari
 
 The illustration above shows the source editor, with the app paused by an enabled breakpoint. The green pointer and highlight in the source code indicates the location of the instruction pointer and the current line of code to be executed.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Set, remove, disable and enable a breakpoint)]
@@ -38,7 +38,7 @@ The easiest way to set a breakpoint is using the source code editor. To go to th
 
 Try to set the breakpoint on the same line as the illustration above by clicking in the gutter. Observe what happens to the breakpoint when you click it again. You disable a breakpoint in the source editor by clicking the breakpoint indicator, even while your app is running; this allows you to adjust set locations where the app will be paused as you work through a problem. Disabled breakpoints display a dimmed blue indicator. Enable the breakpoint by clicking the indicator again and make sure it is not dimmed anymore.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Start a debugging session)]
@@ -61,7 +61,7 @@ To resume execution of the application, press the **Continue/Pause** button in t
 
 ![Debug bar](Tutorial-3-1-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](End the debugging session)]
@@ -72,7 +72,7 @@ To stop the application, press the **Stop** button in the toolbar controls:
 
 > Note: do not remove the breakpoint. You will be using it in the next steps.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Deploy the application to your iPad)]
@@ -91,7 +91,7 @@ In this case, just follow the instructions of the message. Open the Settings app
 
 Once the application has just been trusted, it will not automatically be launched again. To launch it, just press the **Build and Run** button in Xcode again. You should now see your app appear on your iPad.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Inspect the debug gauges)]
@@ -102,7 +102,7 @@ When the app is running, you can see that Xcode has changed its appearance into 
 
 Can you see how much memory your app is currently using?
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Navigate the app to the breakpoint)]
@@ -115,7 +115,7 @@ From the Variables View you will be able to have a closer look at your app's var
 
 Congratulations, you have now deployed and debugged your self-built app to an iPad!
 
-[DONE]
+
 [ACCORDION-END]
 
 ### Next Steps

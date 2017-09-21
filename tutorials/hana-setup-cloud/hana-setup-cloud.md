@@ -35,7 +35,7 @@ Create a cloud account in either Amazon AWS or Microsoft Azure.
 
 - **Microsoft Azure**:  To create an account, [sign up for a free one month trial](http://azure.microsoft.com/en-us/pricing/free-trial/).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Configure your HANA instance)]
@@ -50,14 +50,14 @@ To configure your HANA instance, go to the [Cloud Appliance Library](https://cal
 
 On the left, click on **SOLUTIONS** to see the systems available for use. Search for our **developer** in the search box to find the HANA developer edition.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Activate the instance)]
 
 Once you've found the instance through the search, you need to "activate" it. Activating an instance connects it to your account on Microsoft Azure or Amazon AWS. After the solution is activated, the link next to it should change to **Create Instance**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create the instance)]
@@ -66,14 +66,14 @@ Finally, click the **Create Instance** link on this solution to start the setup 
 
 ![Simple Mode](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Set up your instance)]
 
 Choose your account, select your region, enter a name for your instance and password for your instance. This is the "simple" setup and only requires those couple of items to generate your instance.  
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Using advanced settings)]
@@ -84,7 +84,7 @@ From the advanced mode the first step is to select your account.
 
 ![Account Selection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Configure instance)]
@@ -95,7 +95,7 @@ The network and subnet sections can use the default settings.  When you are read
 
 ![Instance Details](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Choose VM)]
@@ -104,7 +104,7 @@ Choose the virtual machine (VM) size you want to use. Larger virtual machines ca
 
 ![Instance Size](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](View open ports)]
@@ -113,7 +113,7 @@ The next part of this section refers to the port addresses that are opened for t
 
 ![Instance Ports](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Create password)]
@@ -125,7 +125,7 @@ Enter a password for your system.
 
 ![Password Rules](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Configure VM)]
@@ -138,7 +138,7 @@ Click **Next** when you have set a run schedule, or a suspend date.
 
 ![Scheduling](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Review your settings)]
@@ -147,7 +147,7 @@ This screen shows all of your choices for review. To fix any problems, just clic
 
 ![Review](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Download key pair)]
@@ -160,7 +160,7 @@ After the process of creating the VM starts, you will be prompted to download yo
 
 It will take about 10-25 minutes for your VM to start.  You can see your instance status by clicking on the **INSTANCE** tab of the Cloud Appliance Library main screen.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Connect to your HANA instance)]
@@ -174,14 +174,14 @@ There are two ways to connect to your new HANA instance:
 ![Instanced](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hana-setup-cloud/11.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Using SSH to log into the Linux OS)]
 
 You have the option of using SSH to log into the Linux OS. Connecting to the underlying Linux OS in the cloud instances is different for each provider.  Follow the instructions for the cloud provider you have chosen to host HANA.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Connecting to AWS from Windows)]
@@ -196,7 +196,7 @@ To connect to Amazon AWS, you **must** use the key-pair that was provided by Ama
 
 For more detailed instructions, check out the [Amazon AWS guide to Connect Your Amazon EC2 Instance](http://docs.aws.amazon.com/gettingstarted/latest/computebasics-linux/getting-started-deploy-app-connect.html).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Connecting to AWS from Mac or Unix)]
@@ -207,7 +207,7 @@ From Linux or Mac OS-X, in terminal window, run this command: `ssh -i [hanakey].
 
 For more detailed instructions, check out the [Amazon AWS guide to Connect Your Amazon EC2 Instance](http://docs.aws.amazon.com/gettingstarted/latest/computebasics-linux/getting-started-deploy-app-connect.html).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Connecting to Microsoft Azure)]
@@ -218,7 +218,7 @@ To connect from Mac or Unix, use this command: `ssh azureuser@<ip address>` (Rep
 
 For more detailed instructions, check out [Connecting to Microsoft Azure with SSH](https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-use-ssh-key/).
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -66,7 +66,7 @@ In order to activate authentication and establish authorization we have to apply
 
 ![Adding security settings to the web.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Edit servlet)]
@@ -113,21 +113,21 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 
 ![Modifying the doGet() and doPost() methods in the Java Servlet](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Organize imports)]
 
 To remove the syntax errors, you need to organize import statements via the respective context menu **Source > Organize imports** of the main code editor window. Save your changes.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Deploy the app)]
 
 Deploy/publish the updated application (you should know the drill by now).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add test user)]
@@ -140,7 +140,7 @@ Within the Users tab you can manage local users. Let's create a simple test user
 
 ![Adding a user to the local Java Server](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Enter credentials)]
@@ -149,7 +149,7 @@ Now, when you navigate to the `HelloWorldServlet` with the URL <http://localhost
 
 ![Running the Java app with authentication enabled](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

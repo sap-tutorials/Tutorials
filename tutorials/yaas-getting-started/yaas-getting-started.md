@@ -26,7 +26,7 @@ Register and sign in to the [Builder](https://builder.yaas.io/).
 
 ![Account Creation](builder-create-account.PNG)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create organization)] ￼
@@ -35,7 +35,7 @@ Create an **Organization**. Make sure to select **Non-Commercial** for your orga
 
 ![Organization Creation](organization-creation.PNG)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new YaaS Project)] ￼
@@ -51,7 +51,7 @@ Complete the fields with the required information and save the form.
 > TIP: You can switch the Turn **Help On** toggle button in the left navigation panel to see prompts.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Package subscriptions)] ￼
@@ -65,7 +65,7 @@ SAP Hybris offers various YaaS functionalities grouped in to packages. Packages 
 
 ![Yaas Market](yaas-market.PNG)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Subscribe to cart package)] ￼
@@ -79,14 +79,14 @@ Click on **Subscribe Now** and select the project your package should be assigne
 
 ![Package Project](add-package-toproject.PNG)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Finalize subscription)] ￼
 
 Click **Continue** and then **Subscribe Now** to finalize your subscription.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](View subscriptions)] ￼
@@ -94,14 +94,14 @@ Click **Continue** and then **Subscribe Now** to finalize your subscription.
 Allow 10 seconds for processing and check in your project's **Administration** section in the Builder if the package is displayed under **Subscriptions**. If the package is not displayed, reload your browser's page.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add other subscriptions)] ￼
 
 You need to subscribe to all **Checkout**, **Coupon Management**, **Customer Accounts**, **Order Management**, **Product Content** and **Site Management** packages. Follow the step 2 in order to subscribe to these packages.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Create a new YaaS Client)] ￼
@@ -115,7 +115,7 @@ Now that you have subscribed to these packages, your YaaS Project is now aware o
 
     ![Scope Assignment](client-scope-assignment.PNG)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Add details and save)] ￼
@@ -126,7 +126,7 @@ Complete the fields, such as in the example, and **Save** the form.
 
 In this step, you created your own YaaS project and a YaaS client. You also learned how to subscribe to different packages on YaaS Market. The next step is downloading and running a default YaaS Storefront project which runs locally on your machine. You will browse through a storefront which is populated with products and services.
 
-[DONE]
+
 [ACCORDION-END]
 
 

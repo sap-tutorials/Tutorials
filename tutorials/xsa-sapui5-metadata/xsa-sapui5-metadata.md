@@ -31,7 +31,7 @@ In the previous tutorial, you hard-coded the columns to be displayed from your O
 You can see the service exposes the names of the fields and other properties such as the length.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Adapt the controller)]
@@ -63,7 +63,7 @@ bpModel.attachMetadataLoaded(bpModel, function() {
 
 You can see the new function that retrieves the metadata from the service, loops at the results and concatenates the names of the fields separated by a comma. The fields are  then attached to the `bpModel` component.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Save and run)]
@@ -73,7 +73,7 @@ Save the files you have modified and run the web module:
 ![view file](3.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

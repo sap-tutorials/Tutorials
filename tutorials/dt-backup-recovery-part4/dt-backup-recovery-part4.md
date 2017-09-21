@@ -31,7 +31,7 @@ HANA has a backup catalog that tracks all backups that have been performed. You 
 > Additionally, we are using the `TPCH` user for this,
 ![Backup Catalog - Esserver](backup-catalog.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Logs of the Backup)]
@@ -49,7 +49,7 @@ Once you click this, you can view the log and data backups in the files.
 
 ![View Log and Data Backups](view-backups.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

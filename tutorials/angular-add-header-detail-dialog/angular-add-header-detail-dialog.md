@@ -46,7 +46,7 @@ Add the following HTML to your `index.html` file, under the `<body>` tag:
 
 ![Add the navbar item to the HTML](1-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Run the application)]
@@ -55,7 +55,7 @@ Now, if you run your application, you will find a navigation bar at the top.  Un
 
 ![Navbar covers data](1-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add CSS)]
@@ -72,7 +72,7 @@ body {
 
 ![Add CSS to move body down from navbar](1-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Run the application)]
@@ -81,7 +81,7 @@ Run your application again.  The header will now appear at the top, and will not
 
 ![Navbar and data look good together](1-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add dynamic data to header)]
@@ -102,7 +102,7 @@ Add the following HTML to your `index.html` file
 
 ![Add a length item to the navbar](1-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Run the application)]
@@ -111,7 +111,7 @@ Run the application, and you will see the item count in the navigation bar.
 
 ![Navbar now has a length item on the right](1-6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add Bootstrap modal dialog)]
@@ -144,7 +144,7 @@ Start by adding this HTML to your `index.html` file, at the bottom after the las
 
 ![Add a modal to the HTML](2-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Activate the dialog)]
@@ -168,7 +168,7 @@ $('#product-detail').modal("show");
 
 ![Add the Angular javascript for the click event](2-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Bind click event)]
@@ -183,7 +183,7 @@ ng-click="selectProduct(product)"
 
 ![Connect the click event to the new function](2-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Run the application)]
@@ -193,7 +193,7 @@ Now run your application.  When you click on a row, a dialog box will appear.
 ![Show the new empty modal](2-4.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Update dialog header)]
@@ -210,7 +210,7 @@ Update the header of the dialog box.  Replace the existing `<h4>` tag with the f
 
 ![Add a header to the modal](3-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Add close button)]
@@ -225,7 +225,7 @@ Let's add a close button to the top of the dialog box, too.  Add the following l
 
 ![Add a close button to the top of the modal](3-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Add body content)]
@@ -241,7 +241,7 @@ Now, let's add the content to the body of the box.  Add the following HTML to th
 
 ![Add some details to the body of the modal](3-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Run the application)]
@@ -252,7 +252,7 @@ Now run your application.  When you click on a row, you will see this dialog app
 
 ![Display the modal with dynamic details inside](3-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Review additional information)]
@@ -265,7 +265,7 @@ Bootstrap:
 Angular:
 - [`ng-click`](https://docs.angularjs.org/api/ng/directive/ngClick) - Route a click event to an Angular function.
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -30,7 +30,7 @@ Start by [logging in to the SAP Cloud Platform](https://account.hanatrial.ondema
 
 ![Log on to the SAP Cloud Platform](1b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Select a Region)]
@@ -48,7 +48,7 @@ This tutorial will use the US East (VA) region.  You can use this region, but it
 
 ![Choose a nearby region](2b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -62,7 +62,7 @@ Next, select the `trial` sub-account.
 
 ![select the sub-account](3b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Download and install the Command Line interface)]
@@ -77,7 +77,7 @@ Open the installer on your computer, and follow the installation instructions.
 
 ![Download the CLI installer](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Connect the CLI to the cloud region)]
@@ -100,7 +100,7 @@ Replace the [Region URL] section with the URL you selected from the table.
 
 ![Set the Command Line region URL](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Log in using the CLI)]
@@ -113,7 +113,7 @@ When prompted, enter your username and password.  Once you are logged in, you sh
 
 ![Login to the region using the CLI](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -42,7 +42,7 @@ Open the [SAP Cloud Platform console](https://account.hanatrial.ondemand.com/)
 
 ![SAP Cloud Platform Developer Account Login Screen](1-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -58,7 +58,7 @@ Next, click on the **SAP Web IDE** box.  You may need to scroll down to find thi
 
 ![SAP Cloud Platform Console - Web IDE services button and box](1-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -74,7 +74,7 @@ A new tab (or window) will open, and the Web IDE will load.
 
 ![Web IDE start screen](1-4b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -86,7 +86,7 @@ Bookmark this page in your browser.  **You will need this link later, to reopen 
 >
 > Bookmark the Web IDE in your browser.  If you close this window, you will need to follow all these steps to open it again, or you can just click the bookmark.  Make your life easier!!
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -96,7 +96,7 @@ Go to the **File** menu, and then choose **New** --> **Project From Template**.
 
 ![New Project from Template](2-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -106,7 +106,7 @@ Choose *SAPUI5 Application*, and then click **Next**.
 
 ![Choose SAPUI5 Application](2-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -116,7 +116,7 @@ Enter `HelloReact` as a project name, and then click **Finish**.
 
 ![Enter project name](2-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -130,7 +130,7 @@ Finally, we will be removing *all* of the files from your application.  Select t
 
 ![Delete all existing files](2-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -140,7 +140,7 @@ In the dialog box, choose **OK**.
 
 ![Confirm delete](2-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -150,7 +150,7 @@ Now, select the folder `HelloReact`, right click, and select **New** --> **File*
 
 ![New File](2-6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -160,7 +160,7 @@ Name the file `index.html`, and then click **OK**
 
 ![Enter file name](2-7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -182,7 +182,7 @@ The editor will open.  Copy and paste the following HTML in to the editor, then 
 
 ![Enter blank HTML template](2-8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -192,7 +192,7 @@ Now try out your new web application!  Click on the *Run* ![Run icon](run-button
 
 ![Run application](2-9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

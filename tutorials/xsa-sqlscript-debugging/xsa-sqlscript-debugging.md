@@ -47,7 +47,7 @@ Click "Apply", then "Close".
 
 ![apply](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Set breakpoints)]
@@ -64,7 +64,7 @@ A new SQL tab will be opened.  Click on the **Run** button.
 
 ![SQL tab](9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](View the debugger pane)]
@@ -73,7 +73,7 @@ Execution of the procedure has started, and a debugger pane is now visible which
 
 ![execute procedure](10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Use step over)]
@@ -94,7 +94,7 @@ A new window is then opened showing the data in the table. Review the data and c
 
 ![review data](14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](View expression editor)]
@@ -111,7 +111,7 @@ You will notice the expression is then added to the "Expressions" section above.
 
 ![expressions](17.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](View expressions)]
@@ -124,7 +124,7 @@ Review the results and close the window by clicking the "X".
 
 ![review results](19.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Check output)]
@@ -137,7 +137,7 @@ Continue to step through the code and when execution stops at the END statement 
 
 ![continue steps](21.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Resume execution)]
@@ -150,7 +150,7 @@ Execution of the procedure is now completed. Return to the SQL tab and check the
 
 ![results](23.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

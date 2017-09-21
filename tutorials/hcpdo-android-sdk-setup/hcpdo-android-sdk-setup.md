@@ -34,7 +34,7 @@ The procedure shown in this tutorial can be used for any of the Android activity
 
 Open the `NWAndroid` project you created in the [previous tutorial](http://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Start new module)]
@@ -43,7 +43,7 @@ Right click on `app` and select **New > Module** from the context menu.
 
 ![new module](mg6-3-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import package)]
@@ -52,7 +52,7 @@ Select Import **.JAR/.AAR Package** and click **Next**.
 
 ![new module](mg6-3-03.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Find resource folder)]
@@ -63,7 +63,7 @@ The path should be: `<install_path>/MobileSDK3/NativeSDK/MAFReuse/Android/librar
 
 ![new module](mg6-3-04.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Import first library)]
@@ -72,7 +72,7 @@ Repeat steps 2-4 to import `mafuicomponents-xxx.aar`
 
 The path should be: `<install_path>/MobileSDK3/NativeSDK/MAFReuse/Android/libraries/mafuicomponents-xxx.aar`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Import second library)]
@@ -83,7 +83,7 @@ The path should be: `<install_path>/MobileSDK3/NativeSDK/ODataFramework/Android/
 
 > Note `maflogonui-xxx.aar` is under the `ODataFramework` directory, not `MAFReuse`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Import third library)]
@@ -94,7 +94,7 @@ The path should be: `<install_path>/MobileSDK3/NativeSDK/ODataFramework/Android/
 
 > Note `MobilePlace-xxx.aar` is under the `ODataFramework` directory, not `MAFReuse`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](View your project)]
@@ -103,7 +103,7 @@ Your project should look like this now:
 
 ![project view](mg6-3-08.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add dependencies)]
@@ -120,7 +120,7 @@ Select them all and click **OK** and Android Studio will initiate a `gradle` bui
 
 ![selecting module dependencies](mg6-3-11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Import remaining libraries)]
@@ -129,7 +129,7 @@ To import the remaining libraries, select the `AfariaSLL.jar` file in your SDK i
 
 The directory should be: `<install_path>/MobileSDK3/NativeSDK/ODataFramework/Android/libraries/AfariaSLL-x.xxx.jar`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Set libraries location)]
@@ -138,7 +138,7 @@ In Android Studio in the **Project** and **Project Files** view, right-click on 
 
 ![pasting one library into your project](mg6-3-13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Copy remaining libraries)]
@@ -167,7 +167,7 @@ Using the Android Studio project view, copy the following jar libraries from the
 - `SupportabilityFacade.jar`
 - `XscriptParser.jar`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Add all libraries)]
@@ -181,7 +181,7 @@ In the **Create Library** dialog box, select the `app` module and click **OK**.
 
 ![Create library](mg6-3-16.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Check that libraries were added)]
@@ -190,7 +190,7 @@ You can check the libraries were added in the `build.gradle` file located in the
 
 ![Confirm dependencies added](mg6-3-17.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -34,7 +34,7 @@ You can name the project whatever you like, in this tutorial the name `sapdevs-s
 ![name project](2.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: Begin Development](Begin Development)]
@@ -47,7 +47,7 @@ With the project now created and associated with a billing account you are now a
 
 In the top left corner select development in the menu.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -63,7 +63,7 @@ In this tutorial the repository was named to match the project name, `sapdevs-sa
 
 ![link repository](7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: Link Repository](Link Repository)]
@@ -86,7 +86,7 @@ Once successfully linked and mirrored then the initially created content will be
 
 ![linked repository](11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: Open Cloud Shell](Open Cloud Shell)]
@@ -100,7 +100,7 @@ From the shell you will need to switch to the `src` directory.
 ![list and change directory](13.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: Clone your repository](Clone your repository)]
@@ -117,7 +117,7 @@ Once it is cloned you will see the code in your directory.
 
 ![code](16.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

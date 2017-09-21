@@ -120,6 +120,7 @@ sap.ui.define([
 		}
 	});
 });
+
 ```
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
@@ -226,6 +227,7 @@ Open the `webapp/view/dataset/register.view.xml` file and add the following code
 		</table:Table>
 	</Panel>
 </mvc:View>
+
 ```
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
@@ -236,14 +238,10 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 Edit the `demo.view.xml` file located in the `webapp/view`.
 
-Inside the `<detailPages>` element add the following element:
+Inside the `<detailPages>` element, uncomment the following element:
 
 ```xml
-<Page id="detail_dataset_register" title="Register your Dataset with the SAP Cloud for predictive services">
-  <content>
-    <mvc:XMLView viewName="pspredictive.view.dataset.register"/>
-  </content>
-</Page>
+<mvc:XMLView viewName="pspredictive.view.dataset.register"/>
 ```
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
@@ -267,13 +265,15 @@ Et voilà!
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`webapp/controller/dataset/register.controller.js`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-dataset-register/predictive/webapp/controller/dataset/register.controller.js)
-  - [`webapp/view/dataset/register.view.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-dataset-register/predictive/webapp/view/dataset/register.view.xml)
-  - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-ps-dataset-register/predictive/webapp/view/demo.view.xml)
+  - [`webapp/controller/dataset/register.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/predictive/webapp/controller/dataset/register.controller.js)
+  - [`webapp/view/dataset/register.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/predictive/webapp/view/dataset/register.view.xml)
+  - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-dataset-register/predictive/webapp/view/demo.view.xml)
 
-The complete project can be found on my personal [`Git Hub repository`](https://github.com/adadouche/tutorials/tree/master/hcpps-sapui5-ps-dataset-register).
+The complete project can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/hcpps-sapui5-ps-dataset-register/predictive).
 
 However, you won't be able to clone the repository and directly run the code from the current directory structure. You have to copy the `predictive` directory content into your existing project directory.
+
+Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
 [ACCORDION-END]
 

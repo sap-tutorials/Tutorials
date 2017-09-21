@@ -39,7 +39,7 @@ The Console is displayed in the lower part of the window and can be resized by 
 ![console](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/2.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Deploy)]
@@ -53,7 +53,7 @@ Deployment will start. You can view the progress in the console, and when it is
 ![start deployment](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/4.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Run the app in the emulator)]
@@ -63,7 +63,7 @@ To run the hybrid app, right click on the `northwind` project folder, then sele
 ![run on Android Emulator](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/5.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Use test key)]
@@ -74,7 +74,7 @@ HAT will launch the emulator/simulator and load the app.
 ![Local signing key](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/6.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Register your app)]
@@ -89,7 +89,7 @@ Password           | `<your SAP Cloud Platform account password>`
 ![Registration screen](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/7.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Choose password)]
@@ -99,7 +99,7 @@ You can enter an App Passcode if you would like. To run the app without a passco
 ![Passcode screen](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/8.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](View data)]
@@ -109,7 +109,7 @@ The app will retrieve the data through SAP Cloud Platform mobile services and di
 ![master view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/9.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](View details)]
@@ -119,7 +119,7 @@ Click on one of the items in the list to view the details page, and scroll down 
 ![detail view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/10.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](View data on other tab)]
@@ -129,7 +129,7 @@ If you have implemented a [second tab](http://www.sap.com/developer/tutorials/hc
 ![detail view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-build/11.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

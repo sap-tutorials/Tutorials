@@ -14,16 +14,14 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
 
 ## Details
 ### You will learn
+
   - How to add a destination to your SAP Cloud Platform account
   - How to create a SAPUI5 application from a template using the SAP Web IDE
   - How to add a destination to your SAPUI5 application
   - Run your SAPUI5 application
->
-> **Note:**
-The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Cloud for predictive services.
-For more content on SAPUI5, you can check the dedicated SAPUI5 tutorials or the online SAPUI5 documentation available here: https://sapui5.hana.ondemand.com
-
-&nbsp;
+  &nbsp;
+  **Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Cloud for predictive services.
+  For more content on SAPUI5, you can check the dedicated SAPUI5 tutorials or the online SAPUI5 documentation available here: https://sapui5.hana.ondemand.com
 
 ### Time to Complete
   **10 minutes**
@@ -31,7 +29,7 @@ For more content on SAPUI5, you can check the dedicated SAPUI5 tutorials or the 
 > In order to ease the readability of this tutorial, we have used tokens to replace long URLs.
 > Therefore you can replace any occurrence of the token by the value listed above:
 >
-> - **`C4PAURL`** : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
+> - <code><b>C4PAURL</b></code> : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
 >     
 ```
      https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
@@ -60,7 +58,7 @@ On the ***Destinations*** overview page, click on **New Destination**
 Enter the following information:
 
 Field Name           | Value
--------------------- | --------------
+:------------------- | :--------------
 Name                 | `psapi`
 Type                 | `HTTP`
 Description          | `SAP Cloud Platform Predictive Services Destination`
@@ -75,7 +73,7 @@ Authentication       | `AppToAppSSO`
 Then you will need to add the following properties to the destination:
 
 Property Name          | Value
----------------------- | --------------
+:--------------------- | :--------------
 `WebIDEEnabled`        | `true`
 
 Click on **Save**
@@ -106,7 +104,7 @@ You will get access to the **SAP Web IDE** main page:
 
 Click on **New Project from Template** in the ***Create Project*** section
 
-![Project](09.png)
+![Project](08.png)
 
 Select the **SAPUI5 Application** tile, then click on **Next**
 
@@ -115,7 +113,7 @@ Select the **SAPUI5 Application** tile, then click on **Next**
 Enter the following information, then click on **Next**
 
 Field Name           | Value
--------------------- | --------------
+:------------------- | :--------------
 Project Name         | `predictive`
 Namespace            | `ps`
 
@@ -124,7 +122,7 @@ Namespace            | `ps`
 Enter the following information, then click on **Finish**
 
 Field Name           | Value
--------------------- | --------------
+:------------------- | :--------------
 View Type            | `XML`
 View Name            | `demo`
 
@@ -163,7 +161,7 @@ Open the `neo-app.json` file and update the file like this:
 				"type": "destination",
 				"name": "psapi"
 			},
-			"description": "SAP Cloud Platform Predictive  destination"
+			"description": "SAP Cloud Platform Predictive destination"
 		}
 	]
 }
@@ -182,9 +180,8 @@ The default view created is located in `webapp/view/demo.view.xml`. We will upda
 Open the `webapp/view/demo.view.xml` file and replace the existing code with the following code:
 
 ```xml
-<mvc:View controllerName="pspredictive.controller.demo" xmlns:html="http://www.w3.org/2000/xhtml"
-	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m"
-	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+<mvc:View controllerName="pspredictive.controller.demo" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true" xmlns="sap.m" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<SplitApp id="SplitAppDemo" initialMaster="master" initialDetail="detail">
 		<masterPages>
 			<Page id="master" title="Domains">
@@ -221,6 +218,26 @@ Open the `webapp/view/demo.view.xml` file and replace the existing code with the
 		<detailPages>
 			<Page id="detail" title="Test the SAP Cloud Platform Predictive Service in a SAPUI5 application">
 				<content></content>
+			</Page>
+			<Page id="detail_dataset_register" title="Register your Dataset with the SAP Cloud for predictive services">
+				<content>
+					<!--mvc:XMLView viewName="pspredictive.view.dataset.register"/-->
+				</content>
+			</Page>
+			<Page id="detail_dataset_manage" title="Manage your Data Set with the SAP Cloud for predictive services">
+				<content>
+					<!--mvc:XMLView viewName="pspredictive.view.dataset.manage"/-->
+				</content>
+			</Page>
+			<Page id="detail_forecast_synchronous" title="Forecast with the SAP Cloud for predictive services (Synchronous Mode)">
+				<content>
+					<!--mvc:XMLView viewName="pspredictive.view.forecast.synchronous"/-->
+				</content>
+			</Page>
+			<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Cloud for predictive services (Asynchronous Mode)">
+				<content>
+					<!--mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/-->
+				</content>
 			</Page>
 		</detailPages>
 	</SplitApp>
@@ -294,13 +311,15 @@ This will open a web page with the following content:
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - [`neo-app.json`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-configure-application/predictive/neo-app.json)
-  - [`webapp/controller/demo.controller.js`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-configure-application/predictive/webapp/controller/demo.controller.js)
-  - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/adadouche/tutorials/master/hcpps-sapui5-configure-application/predictive/webapp/view/demo.view.xml)
+  - [`neo-app.json`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-configure-application/predictive/neo-app.json)
+  - [`webapp/controller/demo.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-configure-application/predictive/webapp/controller/demo.controller.js)
+  - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-configure-application/predictive/webapp/view/demo.view.xml)
 
-The complete project can be found on my personal [`Git Hub repository`](https://github.com/adadouche/tutorials/tree/master/hcpps-sapui5-configure-application).
+The complete project can be found on SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/hcpps-sapui5-configure-application/predictive).
 
 However, you won't be able to clone the repository and directly run the code from the current directory structure. You have to copy the `predictive` directory content into your existing project directory.
+
+Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
 [ACCORDION-END]
 

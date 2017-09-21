@@ -25,7 +25,7 @@ Only the synchronous mode will be tested here but you can mimic what was done in
 > In order to ease the readability of this tutorial, we have used tokens to replace long URLs.
 > Therefore you can replace any occurrence of the token by the value listed above:
 >
-> - **`C4PAURL`** : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
+> - <code><b>C4PAURL</b></code> : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
 >     
 ```
      https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
@@ -84,21 +84,21 @@ The Census sample data file that you will use to follow the scenarios for Regres
 This file presents the data on 48,842 individual Americans, of at least 17 years of age. Each individual is characterized by 15 data items. These data, or variables, are described in the following table.
 
 Variable | Description | Example of Values
--------------- | -------------- | --------------
-`age` | Age of individuals | Any numerical value greater than 17
-`workclass` | Employer category of individuals | Private, Self-employed-not-inc, ...
-`fnlwgt` | Weight variable, allowing each individual to represent a certain percentage of the population | Any numerical value, such as 0, 2341 or 205019
-`education` | Level of study, represented by a schooling level, or by the title of the degree earned | 11th, Bachelors
-`education_num` | Number of years of study, represented by a numerical value | A numerical value between 1 and 16
-`marital_status` | Marital status | Divorced, Never-married, ...
-`occupation` | Job classification | Sales, Handlers-cleaners, ...
-`relationship` | Position in family | Husband, Wife, ...
-`race` | Ethnicity |
-`sex` | Gender | Male, Female, ...
-`capital_gain` | Annual capital gains | Any numerical value
-`capital_loss` | Annual capital losses | Any numerical value
-`native country` | Country of origin| United States, France, ...
-`class` | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
+:------------- | :-------------- | :--------------
+<nobr>`age`</nobr> | Age of individuals | Any numerical value greater than 17
+<nobr>`workclass`</nobr> | Employer category of individuals | Private, Self-employed-not-inc, ...
+<nobr>`fnlwgt`</nobr> | Weight variable, allowing each individual to represent a certain percentage of the population | Any numerical value, such as 0, 2341 or 205019
+<nobr>`education`</nobr> | Level of study, represented by a schooling level, or by the title of the degree earned | 11th, Bachelors
+<nobr>`education_num`</nobr> | Number of years of study, represented by a numerical value | A numerical value between 1 and 16
+<nobr>`marital_status`</nobr> | Marital status | Divorced, Never-married, ...
+<nobr>`occupation`</nobr> | Job classification | Sales, Handlers-cleaners, ...
+<nobr>`relationship`</nobr> | Position in family | Husband, Wife, ...
+<nobr>`race`</nobr> | Ethnicity |
+<nobr>`sex`</nobr> | Gender | Male, Female, ...
+<nobr>`capital_gain`</nobr> | Annual capital gains | Any numerical value
+<nobr>`capital_loss`</nobr> | Annual capital losses | Any numerical value
+<nobr>`native country`</nobr> | Country of origin| United States, France, ...
+<nobr>`class`</nobr> | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
 
 [ACCORDION-END]  
 
@@ -113,9 +113,9 @@ Open a new tab in ***Postman***.
 &nbsp;
 
 Field Name     | Value
--------------- | --------------
-Request Type   | `POST`
-URL            | `C4PAURL/api/analytics/dataset/sync`
+:------------- | :--------------
+Request Type   | <code><b>POST</b></code>
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/sync`
 
 ```json
 {
@@ -137,9 +137,9 @@ Open a new tab in ***Postman***.
 Fill in the following information:
 
 Field Name     | Value
--------------- | --------------
-Request Type   | `POST`
-URL            | `C4PAURL/api/analytics/outliers/sync`
+:------------- | :--------------
+Request Type   | <code><b>POST</b></code>
+URL            | <code><b>C4PAURL</b></code>`api/analytics/outliers/sync`
 
 ![Postman URL](01.png)
 
@@ -157,7 +157,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 
 ```json
 {
-  "datasetID": 3,
+  "datasetID": 9999999,
   "targetColumn": "age",
   "skippedVariables" : ["id", "class", "sex", "race"],
   "variableDescription" : [
@@ -180,7 +180,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   ]  
 }
 ```
-> Make sure the `datasetID` (here the value 3) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 
 &nbsp;
 
@@ -272,10 +272,8 @@ You can also play with the following parameters and check the differences:
 [ACCORDION-END]    
 
 ### Optional
-For more details on the SAP Cloud for predictive services, you can check the following URL that can also allow you to run the service:
-  - `C4PAURL/raml/console/index.html?raml=../api/aa-cloud-services.raml`
-Or the public documentation
-  - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
+
+For more details on the SAP Cloud for predictive services, you can check the following the [`Outliers APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/0c5454d0e1c840588fc072de5cad2474.html) documentation.
 
 ## Next Steps
 - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)

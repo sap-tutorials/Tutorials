@@ -34,7 +34,7 @@ In the first parts a Manager wants to define business objects "Bonus Plan" for e
 
 ![Custom Business Objects application tile](tile_CBO.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Creating a new Custom Business Object)]
@@ -49,7 +49,7 @@ In the opening Pop Up **fill** in the Name. The other editable fields will get p
 
 Execute the **Create** action.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Defining the data structure)]
@@ -82,7 +82,7 @@ Go back via the application's **Back** button.
 
 ![Fiori Application's Back Button](AppBackButton.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Adding standard data to the structure)]
@@ -93,7 +93,7 @@ Back in the business Object's definition overview, **check** the System Administ
 By checking this box the four fields also appear as uneditable in the field list.
 These fields will be filled and updated automatically, so that you do not need to implement logic for this. Logic implementations for these fields even would be ignored.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Creating the database persistence)]
@@ -105,7 +105,7 @@ These fields will be filled and updated automatically, so that you do not need t
 
 This creates the database persistence of the Business Object.
 
-[DONE]
+
 [ACCORDION-END]
 
 

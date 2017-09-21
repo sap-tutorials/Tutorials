@@ -44,7 +44,7 @@ tar -xvzf hxexsa.tgz
 
 You will see the list of files that have been extracted. These are the files you will later use for installation.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Update the Firewall rules)]
@@ -89,7 +89,7 @@ You can confirm all the rules have been processed using command
 gcloud compute firewall-rules list
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -115,7 +115,7 @@ Look for a line containing variable `local_hostname=hostname -f` and replace it 
 
 **Save** this file.
 
-[DONE]
+
 [ACCORDION-END]
 
 

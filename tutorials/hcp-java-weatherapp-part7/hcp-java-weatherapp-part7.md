@@ -34,7 +34,7 @@ public abstract class BaseObject
 
 ![Adding Java annotations to a Java Class](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part7/e2e_07-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Obtain reference)]
@@ -62,7 +62,7 @@ return retVal;
 ```
 ![Modifying Java methods to handle the tenant ID](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part7/e2e_07-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Edit methods)]
@@ -71,14 +71,14 @@ Make your changes to the methods (`getFavoriteCity()`, `addFavoriteCity()` and `
 
 ![Modifying Java methods to handle the tenant ID](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part7/e2e_07-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Deploy your changes)]
 
 Deploy/publish your changes. Please explicitly stop and start the server, as you have updated the persistence model!
 
-[DONE]
+
 [ACCORDION-END]
 
 

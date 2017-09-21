@@ -52,7 +52,7 @@ Open the file `AppDelegate.swift` and add the following field:
 var scheduledUploadTimer: DispatchSourceTimer?
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add methods for starting & stopping Scheduled Uploads)]
@@ -109,7 +109,7 @@ func applicationWillEnterForeground(_ application: UIApplication) {
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Suspend timer when application becomes inactive)]
@@ -122,7 +122,7 @@ scheduledUploadTimer?.suspend()
 
 This will pause the timer when the application becomes inactive.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Resume timer when application becomes active)]
@@ -135,7 +135,7 @@ scheduledUploadTimer?.resume()
 
 This will resume the timer once the application becomes active again.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Implement upload logic)]
@@ -178,7 +178,7 @@ If the upload was successful, it is simply logged. If it failed, an error is log
 
 When an upload request fails, the request itself and relevant details about that request are stored in the `ErrorArchive`, a special entity set that can be queried using the `OfflineODataProvider`. It is up to the app developers to determine how these errors should be solved. You could choose to
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Log failed uploads)]
@@ -225,14 +225,14 @@ private func logFailedRequestsAndClearErrorArchive() {
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Trigger a failing update)]
 
 Repeat the steps to create a failed upload as outlined in step 5. Any change you make now will result in a failed upload request. The failure is logged, and the Error Archive entry is deleted. The affected entity itself is not updated; it is reverted to its previous state.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps
