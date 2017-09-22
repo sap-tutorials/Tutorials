@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-applicati
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **System access:** You have a user in SAP IoT Explore tenant (in limited availability as of now)
+ - **System access:** You have a user in the `sap-iotaehandson2` tenant (in limited availability as of now)
 
 
 ## Next Steps
@@ -23,11 +23,9 @@ You will learn how to onboard your computer as the IoT thing for collecting sens
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP IoT Application Enablement Thing Modeler)]
-You should have access to SAP IoT Explore tenant on SAP Cloud Platform. It is in limited availability as of now - primarily available to participants of SAP's face to face events.
+You should have access to the `sap-iotaehandson2` tenant on SAP Cloud Platform. It is in limited availability as of now - primarily available to participants of SAP's face to face events.
 
-Open https://sap-iotaeexplore.iot-sap.cfapps.eu10.hana.ondemand.com/launchpage/#Shell-home in the web browser.
-
-Click on **IoT Thing Modeler** to scroll to a group of Thing Modeler applications.
+Open https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/launchpage/ in the web browser. Use the user id provided to you and not your email address to login.
 
 ![Thing Modeler](iotaecomptm0010.jpg)
 
@@ -81,15 +79,12 @@ From **Thing Type** overview for `generic_computer` click on the **New Thing**.
 
 Populate the name `computer_[userid]` and the description `[Name]'s computer` of the newly created thing.
 
->You can find the user name from https://sap-iotaeexplore.accounts400.ondemand.com/ui/protected/profilemanagement
->![Username](iotaecomptm0070.jpg)
-
 Choose:
- - Authorization Group: `sap_iotaeexplore`
- - Select Provider: `iots`
+ - Authorization Group: `laptoptutorial`
+ - Select Provider: `IoT Service 2.0`
  - Account: `a2667617c`
 
-These values will create APIs for the device in SAP Cloud Platform account `a2667617c` using IoT Service for Neo Environment (`iots` provider).
+These values will create the device in SAP Cloud Platform account `a2667617c` using IoT Service for Neo Environment.
 
 ![Definition](iotaecomptm0080.jpg)
 
