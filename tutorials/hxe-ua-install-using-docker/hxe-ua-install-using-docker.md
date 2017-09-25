@@ -43,46 +43,18 @@ Download and install Docker Enterprise Edition for SUSE Enterprise Linux Server.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2A: ](Download the SAP HANA, express edition Image from the Docker Library)]
+[ACCORDION-BEGIN [Step 2: ](Download the SAP HANA, express edition Image from the Docker Library)]
 
 Go to the [Docker Store](https://store.docker.com/).
 
 Click on the search bar and search for "SAP HANA, express edition".
 
-Copy the Docker pull address.
-
-Open your Docker command line and use the Docker pull address to download the image.
-
-Example:
-
-```
-docker pull saplabs/hanaexpress
-```
-
-This loads the SAP HANA, express edition image. To ensure that the image was loaded successfully, run:
-
-```bash
-docker images
-```
-
-The SAP HANA, express edition image will be listed as `hanaexpress`.
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2B: ](Download the SAP HANA, express edition Image from the Docker Library)]
-
-Go to the [Docker Store](https://store.docker.com/).
-
-Click on the search bar and search for "SAP HANA, express edition".
-
-Click on the **Get Content** button. Enter your **Contact Information**, check the **Publisher Terms of Service** agreement, and click **Get Content**. You will be redirected to your **My Content** page.
-
-Scroll down and find _SAP HANA, express edition_. Click the **Setup** button.
+Click on the **Setup Instructions** button.
 
 Copy the Docker pull address. Here is an example:
 
 ```
-docker pull saplabs/hanaexpress
+docker pull store/saplabs/hanaexpress:2.0
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
