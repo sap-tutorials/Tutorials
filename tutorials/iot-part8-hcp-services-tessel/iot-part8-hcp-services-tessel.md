@@ -93,8 +93,8 @@ var jsonData = {
   "mode": "sync",
   "messageType": messageTypeID,
   "messages": [{
-      "Humidity": humid,
-      "Temperature": temp,
+      "temperature": temp,
+      "humidity": humid,
       "timestamp": date
     }
   ]
