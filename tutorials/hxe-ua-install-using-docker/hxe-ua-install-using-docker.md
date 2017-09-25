@@ -54,7 +54,7 @@ Click on the **Setup Instructions** button.
 Copy the Docker pull address. Here is an example:
 
 ```
-docker pull store/saplabs/hanaexpress:2.0
+docker pull store/saplabs/hanaexpress:2.00.020.01.20170829.3
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
@@ -147,7 +147,7 @@ docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <system_name> \
-saplabs/hanaexpress \
+store/saplabs/hanaexpress:2.00.020.01.20170829.3 \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>> \
 --agree-to-sap-license
 ```
@@ -163,7 +163,7 @@ docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name express_edition \
-saplabs/hanaexpress \
+store/saplabs/hanaexpress:2.00.020.01.20170829.3 \
 --passwords-url file:///hana/password.json \
 --agree-to-sap-license
 ```
@@ -207,7 +207,7 @@ docker run -p 10013:39013 -p 10017:39017 -p 10041-10045:39041-39045 -p 10028-100
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <additional_system_name> \
-saplabs/hanaexpress \
+store/saplabs/hanaexpress:2.00.020.01.20170829.3 \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>>
 --agree-to-sap-license
 ```
