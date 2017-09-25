@@ -183,7 +183,7 @@ This example creates the SAP HANA, express edition container with the name `expr
 To start your SAP HANA, express edition container, run the following command:
 
 ```bash
- docker exec -it -u <container_name> bash
+docker exec -it -u <container_name> bash
 ```
 
 Example:
@@ -222,7 +222,7 @@ This process will take several minutes. The prompt will read `Startup finished` 
 The following is a list of options available for the `docker run saplabs/hanaexpress` command.
 
 ```
-docker run saplabs/hanaexpress -h
+docker run store/saplabs/hanaexpress:2.00.020.01.20170829.3 -h
 usage: [options]
 --dont-check-consistency Skip consistency check between mount points
 --dont-check-mount-points Skip check for allowed mount points
