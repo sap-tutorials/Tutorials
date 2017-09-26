@@ -1,6 +1,7 @@
 ---
 title: Setup your SAP HANA, express edition, instance
 description: Setup your SAP HANA, express edition, instance with XS Advanced applications
+auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>machine-learning, products>sap-hana, products>sap-hana\,-express-edition ]
 ---

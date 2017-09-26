@@ -1,6 +1,7 @@
 ---
 title: SAP HANA XS Advanced - Access SAP HANA Interactive Education
 description: This tutorial will walk you through the prerequisites and initial setup to enable the SHINE objects in XS Advanced
+auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana ]
 ---

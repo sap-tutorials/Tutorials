@@ -1,6 +1,7 @@
 ---
 title: Create Database objects and CDS views
 description: Create database objects and CDS views
+auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana ]
 ---
