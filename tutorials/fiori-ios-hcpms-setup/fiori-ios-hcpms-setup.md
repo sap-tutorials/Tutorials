@@ -1,12 +1,13 @@
 ---
 title: Enable SAP Cloud Platform mobile service for development and operations
 description: Enable SAP Cloud Platform mobile service for development and operations.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ 
 
 ## Details
 ### You will learn  
