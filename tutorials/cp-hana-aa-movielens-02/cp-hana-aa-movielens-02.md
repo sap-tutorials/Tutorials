@@ -260,7 +260,7 @@ ORDER BY "GENRE_COUNT" ASC;
 
 You can see that many movies have only one genre.
 
-Using the above statement, and changing the **order by** direction from **`ASC`** to **`DESC`**, provide an answer to the question below then click on **Validate**.
+Using the above SQL statement, and changing the **order by** direction from **`ASC`** to **`DESC`**, provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_3]
 [ACCORDION-END]
