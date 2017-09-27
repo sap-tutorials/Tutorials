@@ -267,7 +267,6 @@ Go into the **Code Editor** and make sure the file has the following new additio
 
 ![grant files](25.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Create a Synonym)]
@@ -296,7 +295,6 @@ In the `src` folder, create a file called `shine.hdbsynonym`. Add the following 
 
 ![Build synonym](27.png)
 
-[DONE]
 [ACCORDION-END]
 
 
@@ -338,7 +336,8 @@ context PO {
 };
 ```
 
-**Save and build** the `db` module.  Once finished, paste the last lines of the Build log and click on **Validate**:
+**Save and build** the `db` module.  Wait until the build finished to answer the following question.
+
 
 [VALIDATE_2]
 [ACCORDION-END]

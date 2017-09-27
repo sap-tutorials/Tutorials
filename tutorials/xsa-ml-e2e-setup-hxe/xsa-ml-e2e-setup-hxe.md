@@ -143,7 +143,7 @@ Open a Command prompt:
 
 ![Command prompt](cmd.png)
 
-Enter `ping hxehost`. Copy the first **three lines** into the frame below and click on **Validate**:
+Enter `ping hxehost`. Copy the first **three lines from the response** into the frame below and click on **Validate**:
 
 ![Command prompt](ping.png)
 

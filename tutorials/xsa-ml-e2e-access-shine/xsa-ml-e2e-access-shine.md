@@ -21,7 +21,7 @@ Import a pre-configured SHINE (SAP HANA interactive Education) module and genera
 
 [ACCORDION-BEGIN [Step 1: ](Import SHINE modules)]
 
-Right-click on the workspace and click on **Import**:
+Right-click on the **Workspace** and click on **Import**:
 
 ![Import](import.png)
 
@@ -135,7 +135,7 @@ You can increase the number of transactions in your database or reload master da
 
 ![Generate data](shine3.png)
 
-Copy the URL assigned to the `Data Generator` and click on **Validate**
+
 
 [VALIDATE_3]
 [ACCORDION-END]
