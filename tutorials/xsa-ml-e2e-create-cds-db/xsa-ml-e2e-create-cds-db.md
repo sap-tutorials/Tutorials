@@ -295,6 +295,8 @@ In the `src` folder, create a file called `shine.hdbsynonym`. Add the following 
 
 ![Build synonym](27.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 
