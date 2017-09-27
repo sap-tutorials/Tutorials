@@ -33,7 +33,7 @@ Your computer, which is going to play a role of the IoT device, should have:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Run python script to collect and send data)]
-On your computer create a file ` ` and insert the following code into it.
+On your computer create a file `computer_iotdevice_cpu.py` and paste the following code into it.
 
 ```python
 import requests # http://docs.python-requests.org/en/master/

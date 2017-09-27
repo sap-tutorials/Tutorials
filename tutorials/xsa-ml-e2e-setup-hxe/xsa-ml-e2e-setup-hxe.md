@@ -1,6 +1,7 @@
 ---
 title: Setup your SAP HANA, express edition, instance
 description: Setup your SAP HANA, express edition, instance with XS Advanced applications
+auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>machine-learning, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
@@ -76,7 +77,15 @@ SAP HANA, express edition, can be downloaded for free and can also be executed i
 
 [ACCORDION-BEGIN [Step 3: ](Start Setup)]
 
-Once the Virtual Machine is imported, click on **Play virtual machine**:
+Once the Virtual Machine is imported, change the network settings to `NAT`. Click on **Edit Virtual Machine Settings**:
+
+![Change NAT](nat.png)
+
+Change the Network Adapter Settings to **NAT** and click on **OK**
+
+![Change NAT](nat2.png)
+
+You are now ready to start the virtual machine. Click on **Play virtual machine**:
 
 ![Power On](play.png)
 

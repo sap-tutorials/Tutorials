@@ -1,6 +1,7 @@
 ---
 title: Create Database objects and CDS views
 description: Create database objects and CDS views
+auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana ]
 ---
@@ -266,6 +267,7 @@ Go into the **Code Editor** and make sure the file has the following new additio
 
 ![grant files](25.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Create a Synonym)]
@@ -294,6 +296,7 @@ In the `src` folder, create a file called `shine.hdbsynonym`. Add the following 
 
 ![Build synonym](27.png)
 
+[DONE]
 [ACCORDION-END]
 
 

@@ -23,6 +23,8 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
   
 ---
 
+### Introduction
+
 > This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html). For all the examples to work properly make sure that you have followed the setup instructions for all components listed in the prerequisites box.
 
 
@@ -37,7 +39,9 @@ The samples can be built without any further prerequisites. The dependencies lis
 
 We will setup a Continuous Delivery pipeline for one of the sample applications applying what was shown in the [Pipeline Skeleton](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) part. We will use the following infrastructure: 
 
-![Java Web on SAP Cloud Platform, CI Process Landscape](java-web-on-hcp-1.png)
+![Java Web on SAP Cloud Platform, CI Process Landscape](java-hcp-1.png)
+
+Figure 1: Landscape using Gerrit and Jenkins
 
 In our scenario we assume that a Java Web developer works with a local Eclipse development environment and Git as the versioning tool. The developer also owns a developer account in SAP Cloud Platform to deploy and test the application manually. Commits in Git are not pushed directly into the `master` branch, but to Gerrit for voting. A voter build is automatically triggered to guarantee build and component test quality even before the commit is merged into `master`. We will show in our example how to include automated scenario tests by automatically deploying the application to a runtime. For the latter, two alternatives are possible: a JEE instance which is created on-the-fly on the build server or an account on SAP Cloud Platform.
 
@@ -47,9 +51,30 @@ We will then implement a deploy job for acceptance tests. The quality manager tr
 
 When the acceptance test was successful, the delivery manager can decide to trigger the release of the application. The artifact is uploaded to Nexus and the application is deployed to the productive SAP Cloud Platform account.
 
-![Java Web on SAP Cloud Platform, CI Process Landscape](java-web-on-hcp-sequence.png)
+![Java Web on SAP Cloud Platform, CI Process Landscape](java-hcp-2.png)
 
-Thus, several accounts on SAP Cloud Platform are needed to separate the different concerns within the whole pipeline and to ensure that different deployed versions of the application in different quality stages do not get in conflict with each other. Note that the name of the deployed application does not change.
+Figure 2: Sequence of CI scenario
+
+In most likelihood there will already be an instance running on the productive SAP Cloud Platform account, which is why we need a "rolling update", also known as blue-green deployment. In simple terms, blue-green deployment ensures minimum downtime by running two processes called "blue" and "green" in the same instance. At any time, only one of the processes (blue) is available for access while the other (green) is ready for the blue process to get closed. This is illustrated below:
+
+![Blue-green deployment](java-hcp-3.png)
+
+Figure 3: Blue-green deployment
+
+SAP Cloud Platform offers two ways to achieve zero downtime blue-green deployment of applications.
+
+- Manual – involves manually enabling or disabling application processes. This method provides better control over the processes and lets you specify the time at which the new version is enabled.
+
+- Automatic – the so called rolling update. The entire process switch is automated. The system automatically chooses and disables the processes of the old version while simultaneously enabling the new version.
+
+We apply the steps which are described in the [Pipeline Skeleton](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) part to
+our scenario. The following illustration depicts the flow implementing the CI/CD process:
+
+![CI/CD process flow](java-hcp-4.png)
+
+Figure 4: The CI/CD process flow
+
+In conclusion, several accounts on SAP Cloud Platform are needed to separate the different concerns within the whole pipeline and to ensure that different deployed versions of the application in different quality stages do not get in conflict with each other. Note that the name of the deployed application does not change.
 
 In principle, it would be possible to work with less accounts by sharing one for different concerns. But then, additional care must be taken to avoid conflicts. There are different possibilities:
 
@@ -320,7 +345,7 @@ Start the job by pushing a small change. You see the job deploying onto SAP Clou
 
 ### CI build
 
-You can use the voter build as a template for the CI build job. In this example its name is `CI_neo-java-web-sdk-samples_master_build`. Concerning the run time for automatic scenario test execution, what was said for the voter builds also applies to the CI build. Thus most of the job configuration can be taken from the voter build with few differences:
+You can use the voter build as a template for the CI build job by making a copy of it. In this example its name is `CI_neo-java-web-sdk-samples_master_build`. Concerning the run time for automatic scenario test execution, what was said for the voter builds also applies to the CI build. Thus most of the job configuration can be taken from the voter build with few differences:
 
 - The merge into the `master` branch is the event that triggers the build.
 
@@ -334,10 +359,10 @@ You can use the voter build as a template for the CI build job. In this example 
 
 2. Change the **Gerrit Trigger** section according to the needs of the CI build as described in [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html).
 
-3. Select **Add post-build action > Archive the artifacts**. Enter
+3. In the Post-build Actions section, select **Add post-build action > Archive the artifacts**. Enter
 
     ```
-    explore-ui5/target/*.war, pom.xml, explore-ui5/pom.xml
+    explore-ui5/target/*.war, pom.xml, explore-ui5/pom.xml, explore-ui5/WebContent/META-INF/MANIFEST.MF, explore-ui5/WebContent/WEB-INF/web.xml
     ```
 
 4. Select **Add post-build action > Build other projects (manual step)**. Enter `CI_neo-java-web-sdk-samples_master_testDeploy` as downstream project name. Ignore the warning. Select **Add Parameters > Predefined parameters**. Enter:
@@ -369,6 +394,7 @@ In contrast to the build job, we choose now a freestyle project instead of a Mav
     Field                                  | Value
     :------------------------------------- | :------------------------------------------------------------------------- 
     This job is parametrized               | `checked`
+    Type                                   | `String Parameter`
     Name                                   | `BUILD_JOB_NUMBER`
     Restrict where this project can be run | `checked`; Label Expression: the label that you have assigned to the slave, in this case `builds`.
     Source Code Management                 | `none`
@@ -389,17 +415,13 @@ In contrast to the build job, we choose now a freestyle project instead of a Mav
     Project name                           | `CI_neo-java-web-sdk-samples_master_build`
     Which build                            | `Specific build`
     Build number                           | `${BUILD_JOB_NUMBER}`
-    Artifacts to copy                      | `explore-ui5/target/*.war, pom.xml, explore-ui5/pom.xml`
+    Artifacts to copy                      | `explore-ui5/target/*.war, pom.xml, explore-ui5/pom.xml, explore-ui5/WebContent/META-INF/MANIFEST.MF, explore-ui5/WebContent/WEB-INF/web.xml`
     
 5. Select **Add build step > Execute shell**  and enter as shell command
 
     ```
-    # got to module
+    # go to module
     cd explore-ui5
-
-    # technically needed step for not skipping the deployment
-    mkdir -p WebContent/WEB-INF
-    touch WebContent/WEB-INF/web.xml
 
     #install Neo SDK
     mvn neo-java-web:install-sdk -DsdkInstallPath=target/sdk
@@ -419,8 +441,6 @@ In contrast to the build job, we choose now a freestyle project instead of a Mav
     -Dsap.cloud.account=${SAPCP_TEST_ACCOUNT} -Dsap.cloud.username=${SAPCP_USER} -Dsap.cloud.password=${SAPCP_PASSWORD} \
     -Dsap.cloud.host=hanatrial.ondemand.com
     ```
-    
-    Creating an empty `web.xml` file is needed for technical reasons for the deployment to work with the current implementation of `pom.xml` file.
 
 6. Select **Add post-build action > Build other projects (manual step)**.
     Enter `CI_neo-java-web-sdk-samples_master_release` as downstream project name.
@@ -434,7 +454,6 @@ In contrast to the build job, we choose now a freestyle project instead of a Mav
 
 8. In **Manage Jenkins > Configure System > Global Passwords**, add `SAPCP_TEST_ACCOUNT` and save.
 
-
 ### Release job
 
 The release job named `CI_neo-java-web-sdk-samples_master_release` is mostly a copy of the test deploy job.
@@ -443,8 +462,7 @@ It differs from the latter in the productive SAP Cloud Platform account as deplo
 
 #### Procedure
 
-1. Open the Jenkins front end and go to **New Item**, select **Freestyle project**.  
-    Enter `CI_neo-java-web-sdk-samples_master_release` as name, select **Copy existing item** and enter `CI_neo-java-web-sdk-samples_master_testDeploy`.
+1. Open the Jenkins front end and go to **New Item**. As name enter `CI_neo-java-web-sdk-samples_master_release` and select **Copy existing item** and enter `CI_neo-java-web-sdk-samples_master_testDeploy`.
 
 2. In the command input of the **Execute shell** build step, add the following lines just before the SAP Cloud Platform SDK installation command:
 
@@ -468,8 +486,7 @@ It differs from the latter in the productive SAP Cloud Platform account as deplo
 ### Setup of the pipeline
 
 We apply the steps which are described in the [Pipeline Skeleton](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) part to
-our scenario. 
-
+our scenario.
 
 #### Procedure
 
@@ -482,6 +499,90 @@ our scenario.
 4. In the field **No Of Displayed Builds** enter `5` for the beginning, but you may enter whatever is convenient for you. 
 
 5. Press **OK**.
+
+Clicking 'Run' in the top menu will start the CI build job. Once this is successful the next Test Deploy job can be started with a button in the bottom right corner. Once this is successful, the Release job can be started. The pipeline looks as follows:
+
+![Pipeline setup](java-hcp-5.png)
+
+### Blue-green release job
+
+We now change the configuration of the release job for blue-green deployment. With this rolling update procedure, the new version is deployed with zero downtime.
+
+#### Procedure
+
+##### Modify the `pom.xml` to update the SDK
+
+The rolling update on the production account is handled by the maven profile `update`. It ensures that the current running process is shut down gracefully before the updated application's processes start.
+
+> [Console Client Commands: rolling-update](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/3f5d41207b6a4d0b9ad2e46dc6f27e69.html).
+
+1. In the sources of the sample project, open the parent `pom.xml`.
+
+2. Add the following new profile to the `pom.xml` file:
+
+    ```
+    ...
+      <profile>
+        <id>update</id>
+        <build>
+          <plugins>
+            <plugin>
+              <groupId>com.sap.cloud</groupId>
+              <artifactId>${sap.cloud.sdk.plugin}</artifactId>
+              <executions>
+                <!-- This execution is required to install the SDK -->
+                <execution>
+                 <phase>initialize</phase>
+                 <goals>
+                  <goal>install-sdk</goal>
+                 </goals>
+                </execution>
+                <!-- This execution is used to run the rolling-update command for blue-green deployment -->
+                <execution>
+                  <id>deploying-application</id>
+                  <phase>package</phase>
+                  <goals>
+                    <goal>run-console-command</goal>
+                  </goals>
+                  <configuration>
+                    <consoleCommand>rolling-update -a ${sap.cloud.account} -b ${sap.cloud.application} -h ${sap.cloud.host} -u ${sap.cloud.username} -p ${sap.cloud.password} -source ${project.build.directory}/${project.artifactId}.war</consoleCommand>                 
+                  </configuration>
+                </execution>
+              </executions>
+         	    <configuration>
+                <skip>${skipIntegrationTests}</skip>
+                <sdkInstallPath>${sap.cloud.sdk.path}</sdkInstallPath>
+              </configuration>
+            </plugin>
+          </plugins>
+        </build>
+      </profile>
+    ...
+    ```
+
+For the rolling update to execute successfully, the minimum number of processes that needs to be configured at the time of deployment is three. The currently running process (blue) takes up one process and the new process waiting to run (green) needs another process, along with the units required to process the rolling update. 
+
+##### Configure the Jenkins job
+
+Make the following changes to the job `CI_neo-java-web-sdk-samples_master_release`.
+
+1. In Jenkins, open the job and go to **Configure**.
+
+2. In the command input of the **Execute shell** build step, remove the maven command to stop and start the application. Starting and stopping is automatically done by the maven profile `update`.
+
+3. Change the maven command to deploy the application to:
+
+    ```
+    # update the application
+    mvn package -P update -Dhttps.proxyHost=<your proxy host> -Dhttps.proxyPort=<your proxy port> \
+    -Dsap.cloud.account=${SAPCP_PROD_ACCOUNT} -Dsap.cloud.username=${SAPCP_USER} -Dsap.cloud.password=${SAPCP_PASSWORD} \
+    -Dsap.cloud.host=hanatrial.ondemand.com
+    ```
+    Notice the change of the maven lifecycle to `package` and the maven profile changed to `update`.
+
+4. Save.
+
+5. Start the job by pushing a small change.
 
 
 ## Next Steps

@@ -1,6 +1,7 @@
 ---
 title: Connect to GitHub and create an MTA application
 description: Access SAP web IDE for SAP HANA and create an MTA application from a GitHub repository
+auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>html5, topic>machine-learning, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition ]
 ---

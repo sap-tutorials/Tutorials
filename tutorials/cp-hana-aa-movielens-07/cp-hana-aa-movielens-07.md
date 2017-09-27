@@ -2,7 +2,7 @@
 title: Display your Collaborative Filtering results in SAPUI5
 description: Understand and implement the basics of an SAPUI5 application to your `Movielens` "Collaborative Filtering" results
 auto_validation: true
-primary_tag: topic>sapui5
+primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning, topic>sapui5 ]
 ---
 
@@ -426,4 +426,4 @@ Make sure you check the <a href="https://github.com/SAPDocuments/Tutorials/blob/
 
 [DONE]
 [ACCORDION-END]
-
+

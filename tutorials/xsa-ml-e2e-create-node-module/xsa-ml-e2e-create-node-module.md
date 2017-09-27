@@ -1,6 +1,7 @@
 ---
 title: Create a Node.js module to expose OData services
 description: Create a Node.js module to implement backend logics and expose OData services
+auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>machine-learning, topic>odata, products>sap-hana ]
 ---
