@@ -180,7 +180,7 @@ Append the following text to your XS OData URL:
 /APL_MODEL_USERS_RESULTS(USERID=1,RANK=1)/TITLE?$format=json
 ```
 
-You should get the first (top) recommendation from the APL algorithm results for user id 1.
+You should get the first recommendation from the APL algorithm results for user id 1.
 
 Provide an answer to the question below then click on **Validate**.
 
