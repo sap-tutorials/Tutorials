@@ -2,7 +2,7 @@
 title: Expose your recommendation results using SAP HANA XS OData
 description: Understand and implement some of the options available with SAP HANA to expose your results
 auto_validation: true
-primary_tag: products>sap-hana
+primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
 ---
 
