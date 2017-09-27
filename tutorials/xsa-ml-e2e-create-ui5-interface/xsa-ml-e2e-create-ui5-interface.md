@@ -3,7 +3,7 @@ title: Create a SAPUI5 interface
 description: Create a SAPUI5 interface enhancing a Fiori Master-detail template
 auto_validation: true
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>html5, topic>machine-learning, topic>odata, topic>sapui5, products>sap-hana ]
+tags: [  tutorial>beginner, topic>html5, topic>odata, topic>sapui5, products>sap-hana ]
 ---
 
 ## Details
@@ -20,7 +20,7 @@ You will create a user interface with a Fiori Master-Detail template.
 Create a new module using the `Fiori Master-Detail Module`
 
 ![Create Fiori Module](1.png)
- 
+
 Name it `web`
 
 ![Name Fiori Module](2.png)

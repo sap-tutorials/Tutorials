@@ -3,7 +3,7 @@ title: Connect to GitHub and create an MTA application
 description: Access SAP web IDE for SAP HANA and create an MTA application from a GitHub repository
 auto_validation: true
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>big-data, topic>html5, topic>machine-learning, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition ]
+tags: [  tutorial>beginner, topic>big-data, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites
@@ -29,7 +29,7 @@ You can choose any name you want and click on **Create Repository**:
 ![Create a New repo](2.png)
 
 Once created, click on the **Copy to Clipboard** icon so you have the URL handy. Keep this tab **open**.
- 
+
 ![Create a New repo](3.png)
 
 [DONE]
