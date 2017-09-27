@@ -267,6 +267,8 @@ Go into the **Code Editor** and make sure the file has the following new additio
 
 ![grant files](25.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Create a Synonym)]
