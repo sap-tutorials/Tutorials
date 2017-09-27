@@ -30,7 +30,7 @@ Before you begin, ensure your proxy settings have been properly set up. See [**H
 
 ---
 
-SAP HANA, express edition is a streamlined version of the SAP HANA platform which enables developers to jumpstart application development in the cloud or personal computer to build and deploy modern applications that use up to 32GB memory. SAP HANA, express edition includes the in-memory data engine with advanced analytical data processing engines for business, text, spatial, and graph data - supporting multiple data models on a single copy of the data. The software license allows for both non-production and production use cases, enabling you to quickly prototype, demo, and deploy next-generation applications using SAP HANA, express edition without incurring any license fees.
+SAP HANA, express edition is a streamlined version of the SAP HANA platform which enables developers to dive into application development in the cloud or personal computer to build and deploy modern applications that use up to 32GB memory. SAP HANA, express edition includes the in-memory data engine with advanced analytical data processing engines for business, text, spatial, and graph data - supporting multiple data models on a single copy of the data. The software license allows for both non-production and production use cases, enabling you to quickly prototype, demo, and deploy next-generation applications using SAP HANA, express edition without incurring any license fees.
 
 **This installation does not support Docker for Windows or Docker for Mac.**
 
@@ -183,7 +183,7 @@ This example creates the SAP HANA, express edition container with the name `expr
 To start your SAP HANA, express edition container, run the following command:
 
 ```bash
- docker exec -it -u <container_name> bash
+docker exec -it -u <container_name> bash
 ```
 
 Example:
@@ -222,7 +222,7 @@ This process will take several minutes. The prompt will read `Startup finished` 
 The following is a list of options available for the `docker run saplabs/hanaexpress` command.
 
 ```
-docker run saplabs/hanaexpress -h
+docker run store/saplabs/hanaexpress:2.00.020.01.20170829.3 -h
 usage: [options]
 --dont-check-consistency Skip consistency check between mount points
 --dont-check-mount-points Skip check for allowed mount points
