@@ -30,7 +30,7 @@ Name your module `db` and click on **next**
 
 Remove the namespace, add a name to the schema, click on **Build module after creation** and the click on **Finish**
 
-![create db](3.png)
+![create db](3.png) 
 
 [DONE]
 [ACCORDION-END]

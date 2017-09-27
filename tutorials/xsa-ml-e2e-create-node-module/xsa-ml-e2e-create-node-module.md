@@ -24,7 +24,7 @@ Create a Node.js module. Right-click on your project and select `New->Node.js Mo
 
 ![Create a Node.js module](1.png)
 
-Call it `js`:
+Call it `js`: 
 
 ![Create a Node.js module](2.png)
 

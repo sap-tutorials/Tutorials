@@ -20,7 +20,7 @@ You will create a user interface with a Fiori Master-Detail template.
 Create a new module using the `Fiori Master-Detail Module`
 
 ![Create Fiori Module](1.png)
-
+ 
 Name it `web`
 
 ![Name Fiori Module](2.png)
@@ -101,7 +101,7 @@ A new browser tab will open.
 
 ![super web app](super.png)
 
-Click on any Purchase Order and check the URL to respond to the question below. 
+Click on any Purchase Order and check the URL to respond to the question below.
 
 [VALIDATE_2]
 

@@ -17,7 +17,7 @@ Import a pre-configured SHINE (SAP HANA interactive Education) module and genera
 **15 Min**
 
 ---
-
+ 
 
 [ACCORDION-BEGIN [Step 1: ](Import SHINE modules)]
 
@@ -134,7 +134,7 @@ You are finally presented with different options in the `launchpad`. Click on `G
 You can increase the number of transactions in your database or reload master data:
 
 ![Generate data](shine3.png)
- 
+
 
 [VALIDATE_3]
 [ACCORDION-END]

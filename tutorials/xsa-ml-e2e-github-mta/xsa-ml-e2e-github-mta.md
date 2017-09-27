@@ -29,7 +29,7 @@ You can choose any name you want and click on **Create Repository**:
 ![Create a New repo](2.png)
 
 Once created, click on the **Copy to Clipboard** icon so you have the URL handy. Keep this tab **open**.
-
+ 
 ![Create a New repo](3.png)
 
 [DONE]
