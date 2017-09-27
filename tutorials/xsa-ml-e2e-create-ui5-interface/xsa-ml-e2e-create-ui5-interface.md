@@ -101,7 +101,7 @@ A new browser tab will open.
 
 ![super web app](super.png)
 
-Click on any Purchase Order and copy the URL for your app below. Click on **Validate**.
+Click on any Purchase Order and check the URL to respond to the question below.
 
 [VALIDATE_2]
 
