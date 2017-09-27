@@ -186,4 +186,3 @@ Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
 [ACCORDION-END]
-
