@@ -79,7 +79,7 @@ You have a database module and now you also have a Node.js module. These modules
 
 Add both the HDI container and database modules to the `Requires` section of the `js` modules.
 
-**Save** the file.
+**Save** the file. 
 
 [DONE]
 [ACCORDION-END]
