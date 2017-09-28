@@ -30,7 +30,7 @@ Name your module `db` and click on **next**
 
 Remove the namespace, add a name to the schema, click on **Build module after creation** and the click on **Finish**
 
-![create db](3.png)
+![create db](3.png) 
 
 [DONE]
 [ACCORDION-END]
@@ -267,6 +267,8 @@ Go into the **Code Editor** and make sure the file has the following new additio
 
 ![grant files](25.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Create a Synonym)]
@@ -294,6 +296,8 @@ In the `src` folder, create a file called `shine.hdbsynonym`. Add the following 
 **Build** the synonym file:
 
 ![Build synonym](27.png)
+
+[DONE]
 
 [ACCORDION-END]
 

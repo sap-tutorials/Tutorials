@@ -21,7 +21,7 @@ You will import and setup a virtual machine with SAP HANA, express edition. **Pl
 [ACCORDION-BEGIN [Step 1: ](Open VMWare Workstation Player)]
 
 Open `VMWare Workstation Player`:
-
+ 
 ![Open VMWare](vmware.png)
 
 If there is a Virtual Machine already there, use **Delete from Disk** on it so you get plenty of room for your own:

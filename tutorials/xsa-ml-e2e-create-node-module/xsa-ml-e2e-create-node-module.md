@@ -3,7 +3,7 @@ title: Create a Node.js module to expose OData services
 description: Create a Node.js module to implement backend logics and expose OData services
 auto_validation: true
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>machine-learning, topic>odata, products>sap-hana ]
+tags: [  tutorial>beginner, topic>odata, products>sap-hana ]
 ---
 
 ## Prerequisites
@@ -79,7 +79,7 @@ You have a database module and now you also have a Node.js module. These modules
 
 Add both the HDI container and database modules to the `Requires` section of the `js` modules.
 
-**Save** the file.
+**Save** the file. 
 
 [DONE]
 [ACCORDION-END]
@@ -95,7 +95,7 @@ Edit the URL to access the OData service, replace `index.xsjs` with `/xsodata/PO
 
 ![Run the js module](9.png)
 
-Add `?$format=json` to the end of the URL. Copy the results and click on **Validate**
+Add `?$format=json` to the end of the URL. Use the results to answer the question below.
 
 [VALIDATE_1]
 [ACCORDION-END]
