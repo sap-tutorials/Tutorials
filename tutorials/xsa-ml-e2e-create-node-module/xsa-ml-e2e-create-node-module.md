@@ -95,7 +95,7 @@ Edit the URL to access the OData service, replace `index.xsjs` with `/xsodata/PO
 
 ![Run the js module](9.png)
 
-Add `?$format=json` to the end of the URL. Copy the results and click on **Validate**
+Add `?$format=json` to the end of the URL. Use the results to answer the question below.
 
 [VALIDATE_1]
 [ACCORDION-END]
