@@ -54,6 +54,7 @@ Password             | `Welcome17Welcome17`
 
 > ### **Note**:
 >**Make sure you paste your SAP HANA XS OData URL from the last tutorial in the URL field.**
+>**The URL should end like `data.xsodata` with no slash "/" at the end**
 
 &nbsp;
 
