@@ -64,9 +64,9 @@ service {
 
 >Note: You can disregard the warning in the OData definition
 
-![Build js module](5.png) 
+![Build js module](5.png)
 
-**Save and Build** the `js` module.
+**Save and Build** the `js` module. 
 
 [DONE]
 [ACCORDION-END]
