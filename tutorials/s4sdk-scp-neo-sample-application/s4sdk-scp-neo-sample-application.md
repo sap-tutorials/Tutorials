@@ -52,11 +52,11 @@ Once the Maven project is generated, you can open your favorite IDE and load the
 The first thing you will notice, are the different directories:
 
   - application
-  - cx-server
+  - `cx-server`
   - integration-tests
   - unit-tests
 
-These are Maven submodules, and they serve different aspects of your code application, test and deployment environment. The following separation of modules makes it possible to run dedicated unit tests and integration tests without deploying the application.
+These are Maven `submodules`, and they serve different aspects of your code application, test and deployment environment. The following separation of modules makes it possible to run dedicated unit tests and integration tests without deploying the application.
 
 #### Multiple-modules project
 
@@ -107,7 +107,7 @@ Once a `Jenkins` server is configured for your personal needs, the files in the 
 
 This separation of test modules makes it possible to just run unit tests and integrations test without deploying, as well as deploying the application without running time consuming tests. Unit tests can either be kept publicly inside the application module, or in the separate `unit-tests` folder that is a part of the archetype. For that topic, the articles and educational videos by Martin Fowler are highly recommended. For a start, consider reading his post about [Unit Tests](https://martinfowler.com/bliki/UnitTest.html).
 
-During development it becomes important to test newly implemented code on the external services, i.e. logic running in a distributed environment. This is where an integration test is an important tool to ensure correctness and stability over the whole internal and external deployment. Since the integration tests may contain confidential information, like business logic and test access tokens, it can be helpful to maintain its operation inside a dedicated Maven submodule. That way the runnable application itself can be later shipped without tests and their dependency.
+During development it becomes important to test newly implemented code on the external services, i.e. logic running in a distributed environment. This is where an integration test is an important tool to ensure correctness and stability over the whole internal and external deployment. Since the integration tests may contain confidential information, like business logic and test access tokens, it can be helpful to maintain its operation inside a dedicated Maven `submodule`. That way the runnable application itself can be later shipped without tests and their dependency.
 
 [ACCORDION-END]
 
@@ -222,7 +222,7 @@ mvn clean install
 mvn scp:clean scp:push -pl application
 ```
 
-The first command will cascade the goal execution of clean and install to both Maven submodules. It will break in case of any compilation errors or test failures.
+The first command will cascade the goal execution of clean and install to both Maven `submodules`. It will break in case of any compilation errors or test failures.
 
 The second command will run a cleanup and startup for the `SCP Neo` application. The `-pl` argument defines the project location in which the Maven goals are being executed. If there is already a previously started instance of the application running, the goal `scp:clean` will try to stop it on `localhost:8080` and will remove the cached server files of the application. `scp:push` will start the application on `localhost:8080`. The web server is started as background process and will take additional seconds to initialize. When the second command asks for a `username` for the  `destination ErpQueryEndpoint`, enter any dummy username, for example, `DUMMY`, followed by any value for the password. You can enter arbitrary values for now, because the destination is not used at this point of the tutorial.
 
@@ -271,14 +271,14 @@ Once you open your Neo platform website, you will see your <span style="color:pu
 The hostname usually depends on your general location:
 
 :------------- | :-------------
-Europe (Rot) – Trial	| hanatrial.ondemand.com
-Europe (Rot)	| eu1.hana.ondemand.com
-US West (Chandler)	| us2.hana.ondemand.com
-US East (Ashburn)	| us1.hana.ondemand.com
-US East (Sterling)	| us3.hana.ondemand.com
-Japan (Tokyo)	| jp1.hana.ondemand.com
-China (Shanghai)	| cn1.hana.ondemand.com
-Australia (Sydney)	| ap1.hana.ondemand.com
+`Europe (Rot) - Trial`	| `hanatrial.ondemand.com`
+`Europe (Rot)`	| `eu1.hana.ondemand.com`
+`US West (Chandler)`	| `us2.hana.ondemand.com`
+`US East (Ashburn)`	| `us1.hana.ondemand.com`
+`US East (Sterling)`	| `us3.hana.ondemand.com`
+`Japan (Tokyo)`	| `jp1.hana.ondemand.com`
+`China (Shanghai)`	| `cn1.hana.ondemand.com`
+`Australia (Sydney)`	| `ap1.hana.ondemand.com`
 
 
 Now run the required Maven goals in the project root path and use `neo` to deploy the packaged application to the remote `Neo` instance.
@@ -314,7 +314,7 @@ On the `Neo` website you will find the corresponding URL where your application 
 _Hello World!_
 
 That's it.
-To find additional Neo commands, e.g. for stopping and undeploying applications, please take a look into the official lists of `Neo` [Console Client Commands](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/56e309f496cc446ba441d862db94cb18.html).
+To find additional Neo commands, e.g. for stopping and `undeploying` applications, please take a look into the official lists of `Neo` [Console Client Commands](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/56e309f496cc446ba441d862db94cb18.html).
 
 [ACCORDION-END]
 

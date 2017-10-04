@@ -16,7 +16,7 @@ Please note that depending on the platform you are using (`Neo` or `Cloud Foundr
 |  | `SAP Cloud Platform, Neo`
 :-------------- | :-------------
 S/4HANA on-premise |	[SAP Cloud Connector required with HTTP Destination](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html)
-S/4HANA Cloud | [Direct Connection with BASIC Auth (technical user)](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e5c9867dbb571014957ef9d7a8846b1c.html); [Direct Connection with SAMLOAuthBearer (PrincipalPropagation with BusinessUser)](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e5c9867dbb571014957ef9d7a8846b1c.html)
+S/4HANA Cloud | [Direct Connection with BASIC Auth (technical user)](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e5c9867dbb571014957ef9d7a8846b1c.html); [Direct Connection with `SAMLOAuthBearer` (`PrincipalPropagation` with `BusinessUser`)](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e5c9867dbb571014957ef9d7a8846b1c.html)
 
 Note that your application code is not dependent on the platform you are using. Using the `S/4HANA Cloud SDK`, you can write your code once, and it will be capable of dealing with all different authentication and connectivity options.
 

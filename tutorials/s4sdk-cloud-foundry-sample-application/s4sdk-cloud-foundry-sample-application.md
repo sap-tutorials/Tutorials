@@ -71,7 +71,7 @@ After providing these values, Maven will generate your project from the archetyp
 
 ![Maven generates project from archetype](maven-generates-project.png)
 
-**Note**: Here you have created an application which is based on the `TomEE` runtime which is `Java EE 6` compliant open source runtime that is available in the `Cloud Foundry` platform if your goal is to create a `Java EE` application. You may also initialize the project with `SpringBoot` (`artifactId`: `scp-cf-spring`) or on a pure `Tomcat` container (`artifactId`: `scp-cf-tomcat`). Our tutorial series will be primarily based on the `TomEE` runtime. Nonetheless, the SAP S/4HANA Cloud SDK is compatible with these popular runtimes too.
+**Note**: Here you have created an application which is based on the `TomEE` runtime which is `Java EE 6` compliant open source runtime that is available in the `Cloud Foundry` platform if your goal is to create a `Java EE` application. You may also initialize the project with `SpringBoot` (`artifactId`: `scp-cf-spring`) or on a pure `Tomcat` container (`artifactId`: `scp-cf-tomcat`). Our tutorial series will be primarily based on the `TomEE` runtime. Nonetheless, the SAP S/4HANA Cloud SDK is compatible with these popular `runtimes` too.
 
 [ACCORDION-END]
 
@@ -88,7 +88,7 @@ The first thing you will notice is the different directories:
   - `integration-tests`
   - `unit-tests`
 
-These are Maven submodules, and they serve different aspects of your code application, test and deployment environment. The following separation of modules makes it possible to run dedicated unit tests and sensitive integration tests without deploying the application.
+These are Maven `submodules`, and they serve different aspects of your code application, test and deployment environment. The following separation of modules makes it possible to run dedicated unit tests and sensitive integration tests without deploying the application.
 
 #### Multiple modules project
 
@@ -137,7 +137,7 @@ Once a Jenkins server is configured for your personal needs, the files in the pr
 
 This separation of test modules makes it possible to just run unit tests and integrations test without deploying, as well as deploying the application without running time consuming tests. Unit tests can either be kept publicly inside the application module, or in the separate `unit-tests` folder that is part of the archetype. For that topic we highly recommend the articles and educational videos by Martin Fowler. For a start we advise reading his post about [Unit Tests](https://martinfowler.com/bliki/UnitTest.html).
 
-During development it becomes important to test the code newly implemented to external services, i.e. logic running in a distributed environment. This is where the integration tests are an important tool to ensure correctness and stability over the whole internal and external deployment. Since the integration tests may contain confidential information, like business logic and test access tokens, it can be helpful to maintain their operation inside a dedicated Maven submodule. That way the runnable application itself can be later shipped without tests and their dependency.
+During development it becomes important to test the code newly implemented to external services, i.e. logic running in a distributed environment. This is where the integration tests are an important tool to ensure correctness and stability over the whole internal and external deployment. Since the integration tests may contain confidential information, like business logic and test access tokens, it can be helpful to maintain their operation inside a dedicated Maven `submodule`. That way the runnable application itself can be later shipped without tests and their dependency.
 
 [ACCORDION-END]
 
@@ -217,7 +217,7 @@ The manifest contains a list of applications that will be deployed to `Cloud Fou
   - **`memory`** -	The amount of memory allocated for your application.
   - **`host`** -	Determines the URL of your application after deploying it (this is where the `uniqueHostname` from the generation process is being used).
   - **`path`** -	The relative path to the artifact to be deployed.
-  - **`buildpack`** -	A buildpack is what `Cloud Foundry` uses to build and deploy your application. Since this is a Java application, we use `sap_java_buildpack`.
+  - **`buildpack`** -	A `buildpack` is what `Cloud Foundry` uses to build and deploy your application. Since this is a Java application, we use `sap_java_buildpack`.
   - **`env`**	- Here we can provide additional application specific environment variables. For example we specify that we want to use a `TomEE` container as our target runtime.
 
 Now you can deploy the application by entering the following command:
