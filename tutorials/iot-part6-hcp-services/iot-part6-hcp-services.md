@@ -1,8 +1,8 @@
 ---
 title: SAP Cloud Platform IoT for Neo: Enable and configure
 description: Setup and configure the use of the IoT for Neo environment in SAP Cloud Platform
-primary_tag: topic>internet-of-things
-tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
+primary_tag: products>sap-cloud-platform-internet-of-things
+tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, tutorial>beginner ]
 
 ---
 
@@ -74,7 +74,7 @@ Enter in your information in the fields, where your account ID is your p-number 
 
 Once successfully deployed then Java application `iotmms` is started in your account.
 
-Return to the SAP Cloud Platform cockpit view and click on **Java Applications** in the left navigation bar. You will see the new `iotmms` application you just deployed. Click on the `iotmms` link to display the **IoT MMS dashboard**.
+Return to the SAP Cloud Platform cockpit view and click on **Java Applications** in the left navigation bar. You will see the new `iotmms` application you just deployed. Click on the `iotmms` link to display the **IoT MMS application cockpit**.
 
 ![Deployed application](p6_7.png)
 
@@ -83,7 +83,9 @@ Return to the SAP Cloud Platform cockpit view and click on **Java Applications**
 
 [ACCORDION-BEGIN [Step 6: ](Assign IoT MMS user role)]
 
-With the **IoT MMS dashboard** displayed click on the Roles link in the left navigation bar. Select the **IoT-MMS-User** (click the empty cell next to the Name to select the row if it is not highlighted in blue).
+With the **IoT MMS application cockpit** displayed click on the **Security** > **Roles** in the left navigation bar.
+
+Select the **IoT-MMS-User** (click the empty cell next to the Name to select the row if it is not highlighted in blue).
 
 ![Authorizations](p6_8.png)
 
@@ -91,10 +93,19 @@ Then under **Individual Users**, click **Assign** and enter your SAP Cloud Platf
 
 ![Assign Role](p6_9.png)
 
-Once user is assigned to the role, stop and start `iotmms` application.
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Check the IoT MMS destinations and restart the app)]
+
+While still within the **IoT MMS application cockpit** click on the **Configuration** > **Destinations** in the left navigation bar. Select `rdms` destination. It is the trusted link for IoT Message Management Service `iotmms` to communicate with Remote Device Management Service, which stores devices registry.
+
+The `rdms` should have **Proxy Type:** attribute set to `Internet`. If it is not, then **Edit** the `rdms` destination configuration to set and save:
+ - **Proxy Type:** to `Internet`,
+ - **Use default JDK truststore** to Checked.
+
+Once user is assigned to the role and destinations are using the correct proxy type, stop and start `iotmms` application.
 
 ![Start/stop](p6_10.png)
-
 
 [ACCORDION-END]
 
