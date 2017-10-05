@@ -58,7 +58,7 @@ In a [previous tutorial](https://www.sap.com/developer/tutorials/hcp-create-dest
     |               |                                    |
     | -------------:| ---------------------------------- |
     | Drop-down Box | `Northwind ODATA Service`          |
-    | URI           | `/V3/Northwind/Northwind.svc`      |
+    | URI           | `/V2/Northwind/Northwind.svc`      |
 
     ![Select the Service URL](4.png)
 

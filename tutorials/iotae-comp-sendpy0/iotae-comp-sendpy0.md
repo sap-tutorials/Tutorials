@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-applicati
 
 ## Details
 ### You will learn  
-You will learn how to use Python script to send sensor data to SAP Cloud Platform.
+You will learn how to use Python script to send sensor data to SAP Cloud Platform. If you get stuck with this you can skip to the next chapter and use someone else's device to show its sensor data in your app.
 
 ### Time to Complete
 **10 Min**
@@ -32,8 +32,8 @@ Your computer, which is going to play a role of the IoT device, should have:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Run python script to collect and send data)]
-On your computer create a file `computer_iotdevice_cpu.py` and paste the following code into it.
+[ACCORDION-BEGIN [Step 2: ](Prepare a file with a script to collect and send data)]
+On your computer create a file `computer_iotdevice_cpu.py` and paste the following Python code into it.
 
 ```python
 import requests # http://docs.python-requests.org/en/master/
@@ -64,7 +64,7 @@ def postiotneo ():
 
 	print("\nValues to post: ", d_pctCPU, d_tstamp)
 
-	payload = "{\"mode\":\"sync\",\"messageType\":\""+msgtypeid+"\",\"messages\":[{\"cpu_usage\":"+s_pctCPU+",\"tstamp\":"+s_tstamp+"}]}"
+	payload = "{\"mode\":\"sync\",\"messageType\":\""+msgtypeid+"\",\"messages\":[{\"cpu_usage\":"+s_pctCPU+"}]}"
 	headers = {
 			'content-type': "application/json",
 			'authorization': "Bearer "+authtoken,
@@ -90,13 +90,12 @@ except KeyboardInterrupt:
 
 Save the file.
 
-
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Update and run the code)]
+[ACCORDION-BEGIN [Step 3: ](Update the code and run the program)]
 
-Update `deviceid` and `authtoken` in the code with IDs you copied in the previous tutorial when created the thing for your computer.
+Update `deviceid` and `authtoken` variables in the code with IDs you copied in the previous tutorial when creating the thing for your computer.
 
 Run the script with the command.
 ```sh
