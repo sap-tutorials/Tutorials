@@ -40,6 +40,8 @@ In the case of a failover, the former primary has to be registered as the second
 
 Register the original primary system as the secondary system as follows:
 
+> Note: System replication will not be accessible through SAP HANA Express Edition (HXE). 
+
 In the Systems Panel, right-click the primary system and choose **Configuration and Monitoring** > **Configure System Replication**.
 
 ![Configure Original Primary System](configure-system-replication.png)
