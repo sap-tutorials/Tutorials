@@ -15,9 +15,7 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-applicati
 
 ## Details
 ### You will learn  
-You will learn how to use Python script to send sensor data to SAP Cloud Platform.
-
-If you get stuck with this you can skip to the next chapter and use someone else's device data in your app.
+You will learn how to use Python script to send sensor data to SAP Cloud Platform. If you get stuck with steps from this tutorial, then you can skip to the next chapter and use someone else's device data in your app.
 
 ### Time to Complete
 **10 Min**
