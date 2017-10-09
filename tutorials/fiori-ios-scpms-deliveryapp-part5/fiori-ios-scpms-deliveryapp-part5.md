@@ -7,8 +7,9 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 ---
 
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 8.3 or higher
+- **Proficiency:** Intermediate
+- **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 2.0
  <!-- - **Tutorials:** [Using the SAP Fiori for iOS Mentor app](https://www.sap.com/developer/tutorials/fiori-ios-scpms-deliveryapp-part4.html) -->
 
 
@@ -28,7 +29,7 @@ In this tutorial, you implement Fiori Timeline cells to show the `DeliveryStatus
 
 In this step, you implement Fiori Timeline cells to show the `DeliveryStatus` entities in a logical way.
 
-Open the file `./MyDeliveries/ViewControllers/TrackingInfoViewController.swift` and locate the method `viewDidLoad()`.
+Open the file `./MyDeliveries/ViewControllers/Packages/TrackingInfoViewController.swift` and locate the method `viewDidLoad()`.
 
 Replace the commented-out part with the following code:
 
