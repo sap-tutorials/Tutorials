@@ -1,14 +1,14 @@
 ---
-title: OData Service on Cloud Foundry
+title: Connect to OData service on Cloud Foundry using SAP S/4HANA Cloud SDK
 description: The following steps will explain how to create a basic Java project to call OData services using the SAP S/4HANA Cloud SDK.
-primary_tag: products>sap-cloud-platform-connectivity
-tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-connectivity ]
+primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform, products>sap-s-4hana-cloud-sdk, topic>cloud, topic>java, topic>odata ]
 ---
 
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - In order to follow this tutorial successfully, you need a working and reachable system of `SAP S/4HANA on-premise` or `S/4HANA Cloud`. You may substitute the cost center service introduced here with any other API published on the SAP API `BusinessHub`.
-If you do not have an `S/4HANA` system available, you may use a public service such as the `Northwind OData Service` as a fallback solution.
+ - **Proficiency:** intermediate
+ - In order to follow this tutorial successfully, you need a working and reachable system of `SAP S/4HANA on-premise` or `S/4HANA Cloud`. You may substitute the cost center service introduced here with any other API published on the SAP API `BusinessHub`. If you do not have an `S/4HANA` system available, you may use a public service such as the [Northwind OData Service](http://services.odata.org/V2/Northwind/Northwind.svc) as a fallback solution.
+ - **Tutorials:** [Create a sample application on Cloud Foundry using SAP S/4HANA Cloud SDK](https://www.sap.com/developer/tutorials/s4sdk-cloud-foundry-sample-application.html)
 
 ## Details
 Please note that depending on the platform you are using (`Neo` or `Cloud Foundry`), the configuration to the respective `S/4HANA` system might be different. In this tutorial, you will find the methods using which you can access your system on `Cloud Foundry`. For `SAP Cloud Platform Cloud Foundry`, the following `S/4HANA` connection capabilities exist.
@@ -44,7 +44,6 @@ package com.sap.cloud.sdk.tutorial;
 
 import com.google.gson.Gson;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -54,26 +53,23 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
 import com.sap.cloud.sdk.odatav2.connectivity.ODataException;
 import com.sap.cloud.sdk.odatav2.connectivity.ODataQueryBuilder;
-import com.sap.cloud.sdk.s4hana.connectivity.ErpConfigContext;
-import com.sap.cloud.sdk.s4hana.connectivity.ErpDestination;
 import com.sap.cloud.sdk.s4hana.connectivity.ErpEndpoint;
-import com.sap.cloud.sdk.s4hana.serialization.SapClient;
 
 @WebServlet("/costcenters")
 public class CostCenterServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
-    private static final Logger logger = LoggerFactory.getLogger(HelloWorldServlet.class);
+    private static final Logger logger = CloudLoggerFactory.getLogger(CostCenterServlet.class);
 
     @Override
     protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
             throws ServletException, IOException
     {
-        final SapClient sapClient = new SapClient("SAPCLIENT-NUMBER"); // adjust SAP client to your respective S/4HANA system
         try {
-            final ErpEndpoint endpoint = new ErpEndpoint(new ErpConfigContext(ErpDestination.getDefaultName(), sapClient));
+            final ErpEndpoint endpoint = new ErpEndpoint();
             final List<CostCenterDetails> costCenters = ODataQueryBuilder
                     .withEntity("/sap/opu/odata/sap/FCO_PI_COST_CENTER", "CostCenterCollection")
                     .select("CostCenterID", "Status", "CompanyCode", "Category", "CostCenterDescription")
@@ -93,7 +89,7 @@ public class CostCenterServlet extends HttpServlet {
 }
 ```
 
-The code is fairly simple. In the servlet GET method a numeric identifier `SAPCLIENT` is defined, which you must change according to your respective `S/4HANA` system.  An `ErpEndpoint` is initialized by using a dynamically created `ErpConfigContext`, which is provided with an `ErpDestination`. With the help of the `SDK's` `ODataQueryBuilder` a query is prepared, built and executed to the endpoint. The query result gets wrapped into a navigable List of `CostCenterDetails` . Finally the servlet response is declared as JSON content and transformed as such.
+The code is fairly simple. In the servlet GET method, an `ErpEndpoint` is initialized for the default destination, which you will define later during deployment. With the help of the `SDK's` `ODataQueryBuilder` a query is being prepared, build and executed to the endpoint. The query result gets wrapped to a navigable `List` of `CostCenterDetails` . Finally the servlet response is declared as JSON content and transformed as such.
 
 In addition, you need a new class called `CostCenterDetails.java` which is required to read the `OData` query response in a type-safe manner. **Create** this new class in the following location:
 
@@ -110,7 +106,7 @@ import com.sap.cloud.sdk.result.ElementName;
 public class CostCenterDetails
 {
     @ElementName( "CostCenterID" )
-    private String id;
+    private String costCenterID;
 
     @ElementName( "CompanyCode" )
     private String companyCode;
@@ -122,7 +118,7 @@ public class CostCenterDetails
     private String category;
 
     @ElementName( "CostCenterDescription" )
-    private String description;
+    private String costCenterDescription;
 }
 ```
 
@@ -132,7 +128,7 @@ public class CostCenterDetails
     - constructor (for `@NonNull` fields)
 `hashCode()`, `equals(...)` and `toString()`
 
-You can add `Lombok` to your provided dependencies:
+You need to add `Lombok` to your provided dependencies. Add the following inside the dependencies section of the `application/pom.xml` file as an additional dependency:
 
 ```
 <dependency>
@@ -147,19 +143,19 @@ You can add `Lombok` to your provided dependencies:
 
 [ACCORDION-BEGIN [Step 2: ](Set up connection to SAP S/4HANA)]
 
-Depending on your chosen archetype and `SCP` setup you can deploy the project on either `SCP Neo` or `SCP CloudFoundry`. Don't forget to change the `SAPCLIENT` numerical identifier in the servlet source code accordingly! In this tutorial, you will deploy to `SAP Cloud Platform Cloud Foundry`.
+Depending on your chosen archetype and `SCP` setup you can deploy the project on either `SCP Neo` or `SCP CloudFoundry`. In this tutorial, you will deploy to `SAP Cloud Platform Cloud Foundry`.
 Before you can deploy the new version to `Cloud Foundry`, you need to supply the destination of your `SAP S/4HANA` system.
 In order to perform queries against your ERP system, you have to inform `Cloud Foundry` about the location of your ERP endpoint. To do this, you need to provide an environment variable with the destination configuration. Currently, you have two ways of accomplishing this.
 
 #### Setting destination as environment variable using CF CLI
 
 ```
-cf set-env firstapp destinations '[{name: "ErpQueryEndpoint", url: "https://HOST:PORT", username: "USER", password: "PASSWORD"}]'
+cf set-env firstapp destinations '[{name: "ErpQueryEndpoint", url: "https://URL", username: "USER", password: "PASSWORD"}]'
 ```
 
-Please change the values `HOST`,  `PORT`, `USER` and `PASSWORD` accordingly.
+Please change the values `URL`, `USER` and `PASSWORD` accordingly.
 
-Note: You can also add more ERP endpoints to this JSON representation, following the same schema. However, please note that `ErpQueryEndpoint` corresponds to `ErpDestination.getDefaultName()` you used to create your `ErpConfigContext`.
+Note: You can also add more ERP endpoints to this JSON representation, following the same schema. However, please note that `ErpQueryEndpoint` corresponds to the default destination used to create our `ErpEndpoint`.
 
 #### Setting destination as user-provided variables using the Cockpit
 
@@ -232,18 +228,14 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.net.URI;
 import java.net.URL;
 import java.net.URISyntaxException;
 
-import com.sap.cloud.sdk.s4hana.connectivity.ErpEdition;
-import com.sap.cloud.sdk.s4hana.connectivity.ErpRelease;
-import com.sap.cloud.sdk.s4hana.serialization.SapClient;
+import com.sap.cloud.sdk.cloudplatform.logging.CloudLoggerFactory;
 import com.sap.cloud.sdk.testutil.ErpSystem;
 import com.sap.cloud.sdk.testutil.MockUtil;
-import com.sap.cloud.sdk.testutil.TestSystem;
 
 import static com.jayway.restassured.RestAssured.given;
 
@@ -251,7 +243,7 @@ import static com.jayway.restassured.RestAssured.given;
 public class CostCenterServiceTest
 {
     private static final MockUtil mockUtil = new MockUtil();
-    private static final Logger logger = LoggerFactory.getLogger(HelloWorldServiceTest.class);
+    private static final Logger logger = CloudLoggerFactory.getLogger(CostCenterServiceTest.class);
 
     @ArquillianResource
     private URL baseUrl;
@@ -263,43 +255,40 @@ public class CostCenterServiceTest
     }
 
     @BeforeClass
-   public static void beforeClass() throws URISyntaxException
-   {
-       final SapClient sapClient = new SapClient("SAPCLIENT-NUMBER"); // adjust SAP client to your respective S/4HANA system
+    public static void beforeClass() throws URISyntaxException
+    {
+        mockUtil.mockDefaults();
 
-       mockUtil.mockDefaults();
-       mockUtil.mockErpDestination(new ErpSystem(
-           "ERP_TEST_SYSTEM",
-           new URI("https://HOST:PORT/"),
-           "ERP",
-           sapClient));
-   }
+        mockUtil.mockErpDestination(ErpSystem.builder(
+            "ERP_TEST_SYSTEM",
+            new URI("https://URL")).build());
+    }
 
-   @Before
-   public void before()
-   {
-       RestAssured.baseURI = baseUrl.toExternalForm();
-   }
+    @Before
+    public void before()
+    {
+        RestAssured.baseURI = baseUrl.toExternalForm();
+    }
 
-   @Test
-   public void testService()
-   {
-       // JSON schema validation from resource definition
-       final JsonSchemaValidator jsonValidator = JsonSchemaValidator.matchesJsonSchemaInClasspath("costcenters-schema.json");
+    @Test
+    public void testService()
+    {
+        // JSON schema validation from resource definition
+        final JsonSchemaValidator jsonValidator = JsonSchemaValidator.matchesJsonSchemaInClasspath("costcenters-schema.json");
 
-       // HTTP GET response OK, JSON header and valid schema
-       given().
-               get("/costcenters").
-           then().
-           assertThat().
-               statusCode(200).
-               contentType(ContentType.JSON).
-               body(jsonValidator);
-   }
+        // HTTP GET response OK, JSON header and valid schema
+        given().
+                get("/costcenters").
+            then().
+            assertThat().
+                statusCode(200).
+                contentType(ContentType.JSON).
+                body(jsonValidator);
+    }
 }
 ```
 
-Please change the values `HOST`, `PORT` and `SAPCLIENT-NUMBER` accordingly.
+Please change the value `URL` accordingly.
 
 What you see here, is the usage of `RestAssured` on a JSON service backend. The HTTP GET request is run on the local route `/costcenters`, the result is validated with multiple assertions:
 

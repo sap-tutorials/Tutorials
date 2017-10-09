@@ -1,12 +1,16 @@
 ---
-title: Create a sample application on Cloud Foundry using S/4HANA Cloud SDK
-description: The following steps will explain how to create the very first Hello World example on Cloud Foundry using the SAP S/4HANA Cloud SDK. If you want to follow this tutorial, it is highly recommended to check out the first part of this tutorial series.
-primary_tag: topic>cloud
-tags: [  tutorial>intermediate, topic>cloud, products>sap-s-4hana, topic>java, products>sap-cloud-platform, products>sap-cloud-platform-connectivity ]
+title: Create a sample application on Cloud Foundry using SAP S/4HANA Cloud SDK
+description: The following steps will explain how to create the very first Hello World example on Cloud Foundry using the SAP S/4HANA Cloud SDK.
+primary_tag: products>sap-s-4hana-cloud-sdk
+tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform, products>sap-s-4hana-cloud-sdk, topic>cloud, topic>java ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** intermediate
+ - **Tutorials:** [Set up your local infrastructure to develop with SAP S/4HANA Cloud SDK](https://www.sap.com/developer/tutorials/s4sdk-setup.html)
+
+## Next Steps
+ - **Tutorial:** [Connect to OData service on Cloud Foundry using SAP S/4HANA Cloud SDK](https://www.sap.com/developer/tutorials/s4sdk-odata-service-cloud-foundry.html)
 
 ### You will learn  
 This tutorial will cover your first steps when developing applications for SCP Cloud Foundry using SAP S/4HANA Cloud SDK. You will create an account for SCP Cloud Foundry and setup the Cloud Foundry command line interface for deploying and managing Cloud Foundry applications. Then you will generate your first project using the SAP S/4HANA Cloud SDK Maven archetype and deploy your first application to SCP Cloud Foundry.
@@ -201,6 +205,7 @@ Now the previously mentioned `manifest.yml` comes into play – it's the deploym
   applications:
 
   - name: firstapp
+    memory: 512M
     host: firstapp-D123456
     path: application/target/firstapp-application.war
     buildpack: sap_java_buildpack
@@ -270,3 +275,6 @@ mvn archetype:generate "-DarchetypeGroupId=com.sap.cloud.s4hana.archetypes" "-Da
 [ACCORDION-END]
 
 ---
+
+## Next Steps
+ - **Tutorial:** [Connect to OData service on Cloud Foundry using SAP S/4HANA Cloud SDK](https://www.sap.com/developer/tutorials/s4sdk-odata-service-cloud-foundry.html)
