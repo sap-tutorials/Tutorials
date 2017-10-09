@@ -66,7 +66,7 @@ After activating your account, you will see the following screen. Click continue
 
 After activation, or if you already had an SAP account, go to the <a href="https://account.hanatrial.ondemand.com/" target="new"><b>SAP Cloud Platform Trial</b></a> (<https://account.hanatrial.ondemand.com/>) page and click on the **Log On** button.
 
-![SAP Cloud Platform trial home page ](hcp-04.png)
+![SAP Cloud Platform trial home page ](sapcp-04.png)
 
 Assuming you don't already have a SAP Cloud Platform trial account, you will see an **Upgrade your account for SAP.com** dialog. If so, fill out all fields and click **Register**. This simply adds the SAP.com registration to your login account on SAP Cloud Identity. There is no cost associated with this registration.
 

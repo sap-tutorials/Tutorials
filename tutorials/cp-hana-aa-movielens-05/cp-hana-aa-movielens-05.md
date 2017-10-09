@@ -2,7 +2,7 @@
 title: Expose your recommendation results using SAP HANA XS OData
 description: Understand and implement some of the options available with SAP HANA to expose your results
 auto_validation: true
-primary_tag: products>sap-hana
+primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
 ---
 
@@ -180,10 +180,9 @@ Append the following text to your XS OData URL:
 /APL_MODEL_USERS_RESULTS(USERID=1,RANK=1)/TITLE?$format=json
 ```
 
-You should get the first (top) recommendation from the APL algorithm results for user id 1.
+You should get the first recommendation from the APL algorithm results for user id 1.
 
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
 [ACCORDION-END]
-

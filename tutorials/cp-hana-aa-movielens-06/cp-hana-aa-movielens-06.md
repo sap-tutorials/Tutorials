@@ -2,7 +2,7 @@
 title: Configure your SAPUI5 application
 description: Configure your SAPUI5 application and your connect it to your SAP HANA XS OData service to consume your `Movielens` recommendations
 auto_validation: true
-primary_tag: topic>sapui5
+primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning, topic>sapui5 ]
 ---
 
@@ -54,6 +54,7 @@ Password             | `Welcome17Welcome17`
 
 > ### **Note**:
 >**Make sure you paste your SAP HANA XS OData URL from the last tutorial in the URL field.**
+>**The URL should end like `data.xsodata` with no slash "/" at the end**
 
 &nbsp;
 
@@ -282,4 +283,4 @@ Make sure you check the <a href="https://github.com/SAPDocuments/Tutorials/blob/
 
 [DONE]
 [ACCORDION-END]
-
+
