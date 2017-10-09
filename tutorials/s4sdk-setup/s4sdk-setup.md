@@ -1,7 +1,7 @@
 ---
 title: Set up your local infrastructure to develop with SAP S/4HANA Cloud SDK
 description: Set up your system to create an SAP Cloud Platform application with the S/4HANA Cloud SDK.
-primary_tag: products>sap-s-4hana-cloud-sdk
+primary_tag: products>sap-s-4hana
 tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform, products>sap-s-4hana-cloud-sdk, topic>cloud, topic>java ]
 ---
 
