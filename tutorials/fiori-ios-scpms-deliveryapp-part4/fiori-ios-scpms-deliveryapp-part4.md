@@ -7,8 +7,9 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 ---
 
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 8.3 or higher
+- **Proficiency:** Intermediate
+- **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 2.0
  <!-- - **Tutorials:** [Implement a new Table View Controller](https://www.sap.com/developer/tutorials/fiori-ios-scpms-deliveryapp-part3.html) -->
 
 
