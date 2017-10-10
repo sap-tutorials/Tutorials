@@ -279,7 +279,7 @@ Check the message console, and make sure there is no errors. The following messa
 
 ```
 [xx:xx:xx] File /public/aa/movielens/cds/data.hdbdd created successfully.
-[xx:xx:xx]File /public/aa/movielens/cds/data.hdbdd saved & activated successfully.
+[xx:xx:xx] File /public/aa/movielens/cds/data.hdbdd saved & activated successfully.
 ```
 
 [DONE]
@@ -345,8 +345,8 @@ Save the file using the ![plus](0-save.png) icon from the menu or press `CTRL+S`
 Check the message console, and make sure there is no errors. The following messages should be displayed:
 
 ```
-[xx:xx:xx] File /public/aa/movielens/cds/data.hdbdd created successfully.
-[xx:xx:xx] File /public/aa/movielens/cds/data.hdbdd saved & activated successfully.
+[xx:xx:xx] File /public/aa/movielens/cds/data.hdbti created successfully.
+[xx:xx:xx] File /public/aa/movielens/cds/data.hdbti saved & activated successfully.
 ```
 
 [DONE]
@@ -400,4 +400,4 @@ Based on the result returned by the above SQL statement, provide an answer to th
 
 [VALIDATE_1]
 [ACCORDION-END]
-
+
