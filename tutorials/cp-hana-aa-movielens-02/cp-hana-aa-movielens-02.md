@@ -129,10 +129,10 @@ movies     | 9125
 ratings    | 100004  
 tags       | 1296    
 
-Here are a few conclusion we can make upfrone:
+Here are a few conclusion we can make upfront:
 
-- links: contains URL and therfore cannot be used in our models
-- movies: the genres can be inestigated but because the data structure it will require some transformations
+- links: contains only URL parts and therefore cannot be used in our models
+- movies: the genres could be investigated but because of the data structure it will require some transformations
 - tags: not every movie has tags (1296 tags across 9125 movies) so we cannot use it in our models
 
 Therefore only the ratings will be analyzed here.
