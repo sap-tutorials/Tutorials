@@ -105,10 +105,10 @@ As the files get updated periodically, and in order to ensure consistency of con
 
 Download the following files locally (right click on the link, then use the ***Save link as*** option):
 
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/links.csv" target="new">links</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/movies.csv" target="new">movies</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/ratings.csv" target="new">ratings</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/tags.csv" target="new">tags</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/links.csv" target="new" download>links</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/movies.csv" target="new" download>movies</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/ratings.csv" target="new" download>ratings</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/tags.csv" target="new" download>tags</a>
 
 Again, before using these files, make sure you have reviewed the dataset <a href="http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html" target="new">README</a> file for the usage licenses and other details.
 
@@ -127,10 +127,10 @@ Click on **Import**.
 
 Repeat the operation for all the previously downloaded files:
 
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/links.csv" target="new">links</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/movies.csv" target="new">movies</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/ratings.csv" target="new">ratings</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/tags.csv" target="new">tags</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/links.csv" target="new" download>links</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/movies.csv" target="new" download>movies</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/ratings.csv" target="new" download>ratings</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/tags.csv" target="new" download>tags</a>
 
 Your package structure should now look like this:
 
@@ -279,7 +279,7 @@ Check the message console, and make sure there is no errors. The following messa
 
 ```
 [xx:xx:xx] File /public/aa/movielens/cds/data.hdbdd created successfully.
-[xx:xx:xx]File /public/aa/movielens/cds/data.hdbdd saved & activated successfully.
+[xx:xx:xx] File /public/aa/movielens/cds/data.hdbdd saved & activated successfully.
 ```
 
 [DONE]
@@ -345,8 +345,8 @@ Save the file using the ![plus](0-save.png) icon from the menu or press `CTRL+S`
 Check the message console, and make sure there is no errors. The following messages should be displayed:
 
 ```
-[xx:xx:xx] File /public/aa/movielens/cds/data.hdbdd created successfully.
-[xx:xx:xx] File /public/aa/movielens/cds/data.hdbdd saved & activated successfully.
+[xx:xx:xx] File /public/aa/movielens/cds/data.hdbti created successfully.
+[xx:xx:xx] File /public/aa/movielens/cds/data.hdbti saved & activated successfully.
 ```
 
 [DONE]
@@ -400,4 +400,4 @@ Based on the result returned by the above SQL statement, provide an answer to th
 
 [VALIDATE_1]
 [ACCORDION-END]
-
+

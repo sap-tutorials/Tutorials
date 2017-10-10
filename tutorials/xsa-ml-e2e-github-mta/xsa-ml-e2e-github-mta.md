@@ -28,7 +28,7 @@ You can choose any name you want and click on **Create Repository**:
 
 ![Create a New repo](2.png)
 
-Once created, click on the **Copy to Clipboard** icon so you have the URL handy. Keep this tab **open**.
+Once created, click on the **Clone or download** and **copy the URL** so you have it handy. Keep this tab **open**.
 
 ![Create a New repo](3.png)
 
@@ -54,7 +54,7 @@ Then copy the URL from your Git Hub repository:
 
 ![Clone git](5.png)
 
-Enter your GitHub username and password when prompted:
+Enter your GitHub username and password if prompted:
 
 ![Clone git](6.png)
 

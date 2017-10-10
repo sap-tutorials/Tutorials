@@ -21,7 +21,7 @@ You will import and setup a virtual machine with SAP HANA, express edition. **Pl
 [ACCORDION-BEGIN [Step 1: ](Open VMWare Workstation Player)]
 
 Open `VMWare Workstation Player`:
- 
+
 ![Open VMWare](vmware.png)
 
 If there is a Virtual Machine already there, use **Delete from Disk** on it so you get plenty of room for your own:
@@ -52,7 +52,10 @@ You will need your session open in a browser for later steps. To complete the fo
 
 ![Open GitHub](GitHub2.png)
 
-Which tabs do you see next to **Overview**? Choose the right tabs and click on **Validate**
+Which tabs do you see next to **Overview**?
+![Open GitHub](git.png)
+
+Choose the right tabs and click on **Validate**
 
 [VALIDATE_1]
 
@@ -77,15 +80,7 @@ SAP HANA, express edition, can be downloaded for free and can also be executed i
 
 [ACCORDION-BEGIN [Step 3: ](Start Setup)]
 
-Once the Virtual Machine is imported, change the network settings to `NAT`. Click on **Edit Virtual Machine Settings**:
-
-![Change NAT](nat.png)
-
-Change the Network Adapter Settings to **NAT** and click on **OK**
-
-![Change NAT](nat2.png)
-
-You are now ready to start the virtual machine. Click on **Play virtual machine**:
+Once the Virtual Machine is imported, you can start using it. Click on **Play virtual machine**:
 
 ![Power On](play.png)
 
@@ -127,7 +122,7 @@ Open Notepad as Administrator:
 
 ![Notepad](open.png)
 
-Navigate to `C:\Windows\System32\drivers\etc` and open the file called `hosts`:
+Navigate to `C:\Windows\System32\drivers\etc`, switch the filter extension to **all files** and open the file called `hosts`:
 
 ![Notepad](open2.png)
 

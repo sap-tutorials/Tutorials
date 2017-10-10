@@ -149,7 +149,7 @@ Here's how the header will look in Postman:
 
 ![set authorization header in event post](publish-header.png)
 
-Since Postman does not offer a "Token" authorization type, we must change the type back to `No Auth` so our new token doesn't get over-written back to a Basic Auth. Go to the Authorization tab and select **`No Auth`** from the dropdown.
+Since Postman does not offer a "Token" authorization type, we must change the type back to `No Auth` so our new token doesn't get over-written back to a `BasicAuth`. Go to the Authorization tab and select **`No Auth`** from the drop-down.
 
 ![set authorization type in event post](no-auth.png)
 
