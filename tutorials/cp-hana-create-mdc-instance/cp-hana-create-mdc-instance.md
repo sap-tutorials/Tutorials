@@ -91,7 +91,7 @@ Now that we have our HANA MDC instance, we will simply restart it to clear out a
 
 Click on **Stop**.
 
-This page won't refresh automatically, so we will need to swithc to the **Events** page.
+This page won't refresh automatically, so we will need to switch to the **Events** page.
 
 On the left side menu, switch to **Events**.
 
@@ -227,7 +227,7 @@ If you can login successfully, then your ***HANA User Account*** is properly con
 
 Click on **Catalog**.
 
-Expand the **Catalog** and browse the schemas available with the **TRIAL** user.
+On the left side tree, expand the **Catalog** item and browse the list of entries available.
 
 Provide an answer to the question below then click on **Validate**.
 
