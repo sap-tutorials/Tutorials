@@ -58,13 +58,16 @@ Password             | `Welcome17Welcome17`
 
 &nbsp;
 
-Then you will need to add the following properties to the destination using the ***New Property*** button:
+Before clicking on **Save**, you will need to add the following properties to the destination using the ***New Property*** button:
 
 Property Name          | Value
 ---------------------- | --------------
 `WebIDEEnabled`        | `true`
 `WebIDEUsage`          | `odata_gen,odata_xs`
 `WebIDEAdditionalData` | `full_url`
+
+> ### **Note**:
+> The ***New Property*** button is not available is you are not in edit mode.
 
 Click on **Save**
 
@@ -94,7 +97,7 @@ You will get access to the **SAP Web IDE** main page:
 
 [ACCORDION-BEGIN [Step 3: ](Create your application using the SAPUI5 template)]
 
-Click on **New Project from Template** in the ***Create Project*** section
+Using the **File** menu, navigate **New** > **Project from Template**.
 
 ![Project](08.png)
 
@@ -127,9 +130,11 @@ View Name            | `demo`
 
 Your project is created! Let's continue, and add the "destinations" previously created in the SAP Cloud Platform cockpit as our project "data source".
 
-Open the `manifest.json` file and switch to the ***Descriptor Editor*** (using the tabs at the bottom of the screen).
+On left side tree, expand the **`movielens`\`webapp`** item, and right click on the `manifest.json` file, and select **Open with**\**Descriptor Editor**.
 
-Then select the ***Data sources*** tab and click on the ![plus](0-plus.png) icon as highlighted on the screen:
+You can also switch to the ***Descriptor Editor*** (using the tabs at the bottom of the screen).
+
+Then select the ***Data sources*** tab at the top, and click on the ![plus](0-plus.png) icon as highlighted on the screen:
 
 ![Project](13.png)
 
