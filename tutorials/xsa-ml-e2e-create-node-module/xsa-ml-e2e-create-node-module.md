@@ -41,32 +41,28 @@ You will now create an OData file to expose the contents of the artifacts you de
 
 Create a folder called `xsodata` under `js->lib`
 
-![Create a Node.js module](4.png)
+![Create a Node.js module](4_1.png)
 
 Create a file called `PO.xsodata` with the following content:
 
 ```sql
 service {
-
 	"PO.PO_VIEW" as "POHeader"
 	keys ("PURCHASEORDERID")
 	navigates ("Items" as "POItem");
 
-
-	"PO.PO_ITEM_VIEW" as "POItem"
-	keys ("PurchaseOrderItemId", "ItemPos");
+	"PO.ITEM" as "POItem";
 	association "Items" principal "POHeader"("PURCHASEORDERID")
-	multiplicity "1" dependent  "POItem"("PurchaseOrderItemId") multiplicity "*";
-
+	multiplicity "1" dependent  "POItem"("PURCHASEORDERID") multiplicity "*";
 
 }
 ```
 
 >Note: You can disregard the warning in the OData definition
 
-![Build js module](5.png)
+![Build js module](error.png)
 
-**Save and Build** the `js` module. 
+**Save and Build** the `js` module.
 
 [DONE]
 [ACCORDION-END]
