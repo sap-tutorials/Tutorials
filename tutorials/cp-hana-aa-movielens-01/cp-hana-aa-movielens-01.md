@@ -105,7 +105,7 @@ As the files get updated periodically, and in order to ensure consistency of con
 
 Download the following files locally (right click on the link, then use the ***Save link as*** option):
 
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/links.csv" download>links</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/links.csv" target="new" download>links</a>
 - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/movies.csv" target="new" download>movies</a>
 - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/ratings.csv" target="new" download>ratings</a>
 - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-01/csv/tags.csv" target="new" download>tags</a>
