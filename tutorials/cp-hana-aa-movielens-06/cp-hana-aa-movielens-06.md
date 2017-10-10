@@ -156,12 +156,7 @@ Select "***Select data source***" radio, then pick ***`data.xsodata`***, check t
 
 Then click on ***OK***.
 
-Now, let's update the model setting:
-
-Field Name           | Value
--------------------- | --------------
-Preload              | false
-Binding Mode         | `TwoWay`
+Now, let's update the model setting by setting **Preload** to **false** and **Binding Mode** to **`TwoWay`** as displayed on the screenshot.
 
 ![Project](16-1.png)
 
