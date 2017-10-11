@@ -35,7 +35,7 @@ sap.ui.define([
 				var oTopicDetection = JSON.parse(oControlEvent.getParameters().responseRaw).topicDetection;
 
 				// create a JSON model
-				var documents = new Array(oTopicDetection.length);
+				var documents = new Array(0);
 				for (var iTopicDetection = 0; iTopicDetection < oTopicDetection.length; iTopicDetection++) {
 					var oTopicDetectionDocument = {
 						"name": oTopicDetection[iTopicDetection].docName
