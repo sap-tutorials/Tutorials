@@ -410,6 +410,17 @@ You can also try with a zip that contains multiple images.
 
 ![Result](16.png)
 
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Solution: ](Project files)]
+
+In case you are having problems when running the application, the complete project code can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/ml-fs-sapui5-img-classification/sapui5ml-imageclassifier).
+
+However, this is not a repository you can clone and run the code.
+
+You have to import the `sapui5ml-imageclassifier` directory content into your existing project directory.
+
+Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
 [ACCORDION-END]
 
