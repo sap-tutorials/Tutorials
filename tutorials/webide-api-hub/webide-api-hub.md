@@ -22,7 +22,7 @@ In this tutorial, you will explore some of the new features that are part of the
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open Multi-Cloud Web IDE)]
+[ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE Full-Stack)]
 Make sure you have the SAP Web IDE Multi-Cloud Version open.
 
 ![sap web ide multi-cloud service](1.png)
@@ -64,7 +64,7 @@ On the **Data Connection** page of the template wizard, select **SAP API Busines
 
 ![SAP API Business Hub in the service Catalog](6.png)
 
-A list of APIs will populate in the table. You can filter down the APIs by either selecting an API Package from the dropdown or by entering a search term in the search box. **In the search box, type _employee_** to find the services available for employee information. Select the **Employee Entity Type** service from the list.
+A list of APIs will populate in the table. You can filter down the APIs by either selecting an API Package from the drop-down or by entering a search term in the search box. **In the search box, type _employee_** to find the services available for employee information. Select the **Employee Entity Type** service from the list.
 
 ![Services search on Data Connection page of wizard](6b.png)
 
