@@ -7,27 +7,27 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Enable the Multi Cloud Web IDE](https://www.sap.com/developer/tutorials/webide-multi-cloud.html)
-
+ - **How-Tos:** Enable the Multi Cloud Web IDE
+ - **Tutorials:** [Add API Business Hub API to a UI5 Application](https://www.sap.com/developer/tutorials/hcp-abh-api-ui5-app.html)
 
 ## Next Steps
  - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will explore some of the new features that are part of SAP Web IDE for Full-Stack Development. Learn how to use the SAP API Business Hub services catalog that is available out of the box in this version of Web IDE. Create and run an SAPUI5/Fiori Application.
+In this tutorial, you will explore some of the new features that are part of the SAP Web IDE Multi-Cloud Version. Learn how to use the SAP API Business Hub services catalog that is available out of the box in this version of Web IDE. Create and run an SAPUI5/Fiori Application.
 
 ### Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE for Full-Stack Development)]
-Make sure you have SAP Web IDE for Full-Stack Development open.
+[ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE Full-Stack)]
+Make sure you have the SAP Web IDE Multi-Cloud Version open.
 
-![sap web ide full-stack service](1.png)
+![sap web ide multi-cloud service](1.png)
 
-Steps on how to find and enable SAP Web IDE for Full-Stack Development are available in the previous tutorial.
+Steps on how to find and enable the SAP Web IDE Multi-Cloud Version are available under the how-to guides.
 
 ![start up page for web ide](2.png)
 
@@ -60,23 +60,21 @@ Click **Next**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Select the data connection)]
-On the **Data Connection** page of the template wizard, select **Service Catalog** from under the _Sources_ options. In the drop down menu to select a system, find the **SAP API Business Hub** option.
+On the **Data Connection** page of the template wizard, select **SAP API Business Hub** from under the _Sources_ options.
 
 ![SAP API Business Hub in the service Catalog](6.png)
 
-You may be prompted for a username and password. Enter your credentials for the SAP Cloud Platform, which should be the same credentials you use to log in to the SAP API Business Hub.
+A list of APIs will populate in the table. You can filter down the APIs by either selecting an API Package from the drop-down or by entering a search term in the search box. **In the search box, type _employee_** to find the services available for employee information. Select the **Employee Entity Type** service from the list.
 
-![login for SAP API Business Hub](6b.png)
+![Services search on Data Connection page of wizard](6b.png)
 
-If you successfully login, a list of services will populate in the Services pane. **In the search box, type _employee_** to find the services available for employee information.
+You may be prompted for a username and password. Enter your credentials for the SAP Cloud Platform, which should be the same credentials you use to log in to the SAP API Business Hub. **Enter your credentials and click Login**.
 
-![Services search on Data Connection page of wizard](7.png)
+![login for SAP API Business Hub](7.png)
 
-Select the **Employee Entity Type** service from the list. You should see a blue message on the top of the screen saying that _Service: Employee Entity Type selected_.
+Once you are successfully logged in, you should see a blue message on the top of the screen saying that _Service: Employee Entity Type selected_. Once the proper data service is selected, click **Next**.
 
 ![selection of Employee Entity Type](8.png)
-
-You can open up the Employee Entity Type service to see what collections are provided with this API Service. Drilling down further reveals the attributes available for each collection. Once the proper data service is selected, click **Next**.
 
 
 [ACCORDION-END]

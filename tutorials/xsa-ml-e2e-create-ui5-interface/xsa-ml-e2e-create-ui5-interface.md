@@ -45,7 +45,7 @@ Scroll down and complete the binding for the header:
 
 Keep scrolling down and complete the binding for the items:
 
-![Name Fiori Module](6.png)
+![Name Fiori Module](6_1.png)
 
 [DONE]
 
@@ -99,7 +99,7 @@ Run the web module:
 
 A new browser tab will open.
 
-![super web app](super.png)
+![super web app](super_1.png)
 
 Click on any Purchase Order and check the URL to respond to the question below.
 

@@ -51,7 +51,7 @@ Complete the form following details information:
 Field Name           | Value
 -------------------- | --------------
 Database ID          | `mdc`
-Database System      | HANA MDC (< trial >)
+Database System      | Pick HANA MDC (< trial >) from the drop down
 System User Password | `Welcome17Welcome17`
 
 > ### **Note**:
@@ -91,6 +91,8 @@ Now that we have our HANA MDC instance, we will simply restart it to clear out a
 
 Click on **Stop**.
 
+This page won't refresh automatically, so we will need to switch to the **Events** page.
+
 On the left side menu, switch to **Events**.
 
 Once you see the ***Database stopped successfully*** event appears in the list, switch back to **Overview** and click on **Start**.
@@ -110,8 +112,8 @@ Theses system roles and privileges are added on the first connection.
 
 Therefore, we will need to connect to the ***SAP HANA Cockpit*** at least once using the *HANA System User* in order to finalize the system account setup and add all the necessary roles.
 
-> ### **Warning**
->**Your SAP HANA MDC instance will be shutdown every 12 hours. And in case you don't restart your instance in the next 14 days, it will be deleted.**
+> ### **Note:**
+>**FO your information: any SAP HANA MDC trial instances are shut down every 12 hours and in case a trial instance is not restarted in the next 14 days, it will be deleted.**
 
 ![Trial Database Overview](06.png)
 
@@ -129,13 +131,9 @@ You will receive an information message stating that your ***HANA System Account
 
 ![Information](08.png)
 
-Click on **OK**.
+Click on **OK** then click on **Continue**.
 
-Next, you will receive another information message regarding the granted roles.
-
-Before closing the pop-up by clicking on **Continue**, look at the role list added to your System user, provide an answer to the question below then click on **Validate**.
-
-[VALIDATE_1]
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Extend the SYSTEM user)]
@@ -158,7 +156,9 @@ Click on the ![save](0-save.png) button in the top menu bar
 
 ![SAP HANA Web-based Development Workbench](12.png)
 
-[DONE]
+Now, look at the granted roles for the ***HANA System Account***, provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create your database user account)]
@@ -227,10 +227,10 @@ If you can login successfully, then your ***HANA User Account*** is properly con
 
 Click on **Catalog**.
 
-Expand the **Catalog** and browse the schemas available with the **TRIAL** user.
+On the left side tree, expand the **Catalog** item and browse the list of entries available.
 
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_2]
 [ACCORDION-END]
-
+
