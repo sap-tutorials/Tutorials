@@ -500,4 +500,3 @@ As you can see, the movies with no recommendations have up to 92 ratings, and th
 [ACCORDION-END]
 
 For the purpose of this tutorial series we will not play further with the algorithm, its parameters or the data. However you are more than welcome to do so considering the resources currently made available to you on the SAP Cloud Platform.
-

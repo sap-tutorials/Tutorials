@@ -433,7 +433,7 @@ sap.ui.define([
 				var oTopicDetection = JSON.parse(oControlEvent.getParameters().responseRaw).topicDetection;
 
 				// create a JSON model
-				var documents = new Array(oTopicDetection.length);
+				var documents = new Array(0);
 				for (var iTopicDetection = 0; iTopicDetection < oTopicDetection.length; iTopicDetection++) {
 					var oTopicDetectionDocument = {
 						"name": oTopicDetection[iTopicDetection].docName
@@ -476,6 +476,17 @@ The service will be called, and the result displayed in a table.
 
 ![Result](16.png)
 
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Solution: ](Project files)]
+
+In case you are having problems when running the application, the complete project code can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/ml-fs-sapui5-topic-detection/sapui5ml-topicdetection).
+
+However, this is not a repository you can clone and run the code.
+
+You have to import the `sapui5ml-imageclassifier` directory content into your existing project directory.
+
+Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
 [ACCORDION-END]
 

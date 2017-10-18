@@ -33,7 +33,7 @@ You will also add a Detail view and controller as well as alter the `View1` view
 
     ![Change the type to Navigation](1.png)
 
-2.  Open the `webapp/view/View1.controller.js` file, and modify the `handleListItemPress` event to the `Controller.extend` method:
+2.  Open the `webapp/controller/View1.controller.js` file, and modify the `handleListItemPress` event to the `Controller.extend` method:
 
     ```javascript
     handleListItemPress: function (evt) {

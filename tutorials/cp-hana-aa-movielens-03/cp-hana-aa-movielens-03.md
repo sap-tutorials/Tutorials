@@ -1,4 +1,4 @@
-DESC---
+---
 title: SAP HANA APL & the MovieLens dataset
 description: Understand the capabilities and options made available with SAP HANA APL and apply them to the data set to build your recommendation engine
 auto_validation: true
@@ -425,7 +425,7 @@ FROM (
               LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item'        ) "RULES"    ON ("PRODUCTS"."KXNODESECOND" = "RULES"."KXNODESECOND")
               LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Transactions') "NOTIN"    ON ("RULES"."KXNODESECOND_2"  = "NOTIN"."KXNODESECOND") AND ("NOTIN"."KXNODEFIRST" = "SPACEIN"."USERID")
                 WHERE "RULES"."KXNODESECOND" IS NOT NULL  AND "NOTIN"."KXNODESECOND" IS NULL
-            ) "T1" where userid in(12,  120)
+            ) "T1" 
             UNION ALL
             SELECT
                 "T1"."USERID"
@@ -649,4 +649,3 @@ Provide an answer to the question below then click on **Validate**.
 [ACCORDION-END]
 
 For the purpose of this tutorial series we will not play further with the algorithm, its parameters or the data. However you are more than welcome to do so considering the resources currently made available to you on the SAP Cloud Platform.
-

@@ -1,0 +1,51 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table"
+	xmlns:u="sap.ui.unified" xmlns="sap.m" controllerName="sapui5ml.controller.demo" displayBlock="true">
+	<App>
+		<pages>
+			<Page title="Image Classification">
+				<content>
+					<VBox width="100%" direction="Column" alignItems="Center">
+						<Carousel pages="{demo>/predictions}" width="100%" visible="{= typeof ${demo>/resultVisible} !== 'undefined'}">
+							<pages>
+								<VBox width="100%" direction="Column" alignItems="Center">
+									<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
+									<table:Table rows="{demo>results}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5">
+										<table:columns>
+											<table:Column sortProperty="label" filterProperty="label">
+												<Label text="Label"/>
+												<table:template>
+													<Link text="{demo>label}" href="https://www.google.fr/search?q={label}&amp;newwindow=1&amp;tbm=isch" target="search"/>
+												</table:template>
+											</table:Column>
+											<table:Column sortProperty="score" filterProperty="score">
+												<Label text="Score"/>
+												<table:template>
+													<Text text="{demo>score}"/>
+												</table:template>
+											</table:Column>
+										</table:columns>
+									</table:Table>
+								</VBox>
+							</pages>
+						</Carousel>
+						<Image id="idImage" tooltip="canvas" visible="false" class="sapUiLargeMargin"/>
+					</VBox>
+				</content>
+				<footer>
+					<Toolbar width="100%">
+						<content>
+							<u:FileUploader id="idFileUpload" buttonOnly="true" buttonText="Upload Picture" name="files" uploadUrl="{demo>/url}"
+								sameFilenameAllowed="true" useMultipart="true" sendXHR="true" uploadOnChange="true" change="fileUploadChange"
+								uploadComplete="fileUploadComplete">
+								<u:headerParameters>
+									<u:FileUploaderParameter name="APIKey" value="{demo>/APIKey}"/>
+									<u:FileUploaderParameter name="Accept" value="application/json"/>
+								</u:headerParameters>
+							</u:FileUploader>
+						</content>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

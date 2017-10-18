@@ -15,7 +15,9 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 
 ## Details
 ### You will learn  
-Describe what the user will learn from your tutorial and what the outcome will be.
+ - Create a Cloud Foundry space in the SAP Cloud Platform cockpit
+ - Install the Cloud Foundry Command Line Interface (CLI) tools
+ - Configure the CLI to log in to your SAP Cloud account
 
 ### Time to Complete
 **15 Min**
@@ -84,13 +86,14 @@ Open the installer on your computer, and follow the installation instructions.
 
 First, find the correct API URL for your Region.  Select the correct region from this table.
 
+> **Note**:  If your term is not listed, check the [additional region and host URL's](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html).
+
 | Region                            | URL                                     |
 | --------------------------------- | --------------------------------------- |
 | US East (VA) running on AWS       | `https://api.cf.us10.hana.ondemand.com` |
 | US West (CA) running on Azure     | `https://api.cf.us20.hana.ondemand.com` |
 | Europe (Frankfurt) running on AWS | `https://api.cf.eu10.hana.ondemand.com` |
 
-> **Note**:  If your term is not listed, check the [additional region and host URL's](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/350356d1dc314d3199dca15bd2ab9b0e.html).
 
 Next, open a command line prompt on your computer.  In the command line screen, type in the following:
 

@@ -2,7 +2,7 @@
 title: Configure your SAPUI5 application
 description: Configure your SAPUI5 application and your connect it to your SAP HANA XS OData service to consume your `Movielens` recommendations
 auto_validation: true
-primary_tag: topic>sapui5
+primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning, topic>sapui5 ]
 ---
 
@@ -54,16 +54,20 @@ Password             | `Welcome17Welcome17`
 
 > ### **Note**:
 >**Make sure you paste your SAP HANA XS OData URL from the last tutorial in the URL field.**
+>**The URL should end like `data.xsodata` with no slash "/" at the end**
 
 &nbsp;
 
-Then you will need to add the following properties to the destination using the ***New Property*** button:
+Before clicking on **Save**, you will need to add the following properties to the destination using the ***New Property*** button:
 
 Property Name          | Value
 ---------------------- | --------------
 `WebIDEEnabled`        | `true`
 `WebIDEUsage`          | `odata_gen,odata_xs`
 `WebIDEAdditionalData` | `full_url`
+
+> ### **Note**:
+> The ***New Property*** button is not available is you are not in edit mode.
 
 Click on **Save**
 
@@ -93,7 +97,7 @@ You will get access to the **SAP Web IDE** main page:
 
 [ACCORDION-BEGIN [Step 3: ](Create your application using the SAPUI5 template)]
 
-Click on **New Project from Template** in the ***Create Project*** section
+Using the **File** menu, navigate **New** > **Project from Template**.
 
 ![Project](08.png)
 
@@ -126,9 +130,11 @@ View Name            | `demo`
 
 Your project is created! Let's continue, and add the "destinations" previously created in the SAP Cloud Platform cockpit as our project "data source".
 
-Open the `manifest.json` file and switch to the ***Descriptor Editor*** (using the tabs at the bottom of the screen).
+On left side tree, expand the **`movielens`\`webapp`** item, and right click on the `manifest.json` file, and select **Open with**\**Descriptor Editor**.
 
-Then select the ***Data sources*** tab and click on the ![plus](0-plus.png) icon as highlighted on the screen:
+You can also switch to the ***Descriptor Editor*** (using the tabs at the bottom of the screen).
+
+Then select the ***Data sources*** tab at the top, and click on the ![plus](0-plus.png) icon as highlighted on the screen:
 
 ![Project](13.png)
 
@@ -150,12 +156,7 @@ Select "***Select data source***" radio, then pick ***`data.xsodata`***, check t
 
 Then click on ***OK***.
 
-Now, let's update the model setting:
-
-Field Name           | Value
--------------------- | --------------
-Preload              | false
-Binding Mode         | `TwoWay`
+Now, let's update the model setting by setting **Preload** to **false** and **Binding Mode** to **`TwoWay`** as displayed on the screenshot.
 
 ![Project](16-1.png)
 

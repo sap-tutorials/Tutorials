@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-applicati
 
 ## Details
 ### You will learn  
-You will learn how to use Python script to send sensor data to SAP Cloud Platform.
+You will learn how to use Python script to send sensor data to SAP Cloud Platform. If you get stuck with steps from this tutorial, then you can skip to the next chapter and use someone else's device data in your app.
 
 ### Time to Complete
 **10 Min**
@@ -32,8 +32,8 @@ Your computer, which is going to play a role of the IoT device, should have:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Run python script to collect and send data)]
-On your computer create a file ` ` and insert the following code into it.
+[ACCORDION-BEGIN [Step 2: ](Prepare a file with a script to collect and send data)]
+On your computer create a file `computer_iotdevice_cpu.py` and paste the following Python code into it.
 
 ```python
 import requests # http://docs.python-requests.org/en/master/
@@ -42,7 +42,7 @@ import time, sys, platform
 
 hostiotmms = 'iotmmsa2667617c.hana.ondemand.com'
 apiiotmmsdata = '/com.sap.iotservices.mms/v1/api/http/data/'
-msgtypeid = '3a852d7951dd7ecbe217'
+msgtypeid = 'a0c0c766ab65e08432a2'
 
 deviceid = '591188FC5CEF413E9D5AE3F641429BB5'
 authtoken = '7461f8d7385_fake_179d36fcfd8'
@@ -64,7 +64,7 @@ def postiotneo ():
 
 	print("\nValues to post: ", d_pctCPU, d_tstamp)
 
-	payload = "{\"mode\":\"sync\",\"messageType\":\""+msgtypeid+"\",\"messages\":[{\"cpu_usage\":"+s_pctCPU+",\"tstamp\":"+s_tstamp+"}]}"
+	payload = "{\"mode\":\"sync\",\"messageType\":\""+msgtypeid+"\",\"messages\":[{\"cpu_usage\":"+s_pctCPU+"}]}"
 	headers = {
 			'content-type': "application/json",
 			'authorization': "Bearer "+authtoken,
@@ -90,13 +90,12 @@ except KeyboardInterrupt:
 
 Save the file.
 
-
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Update and run the code)]
+[ACCORDION-BEGIN [Step 3: ](Update the code and run the program)]
 
-Update `deviceid` and `authtoken` in the code with IDs you copied in the previous tutorial when created the thing for your computer.
+Update `deviceid` and `authtoken` variables in the code with IDs you copied in the previous tutorial when creating the thing for your computer.
 
 Run the script with the command.
 ```sh
@@ -131,7 +130,7 @@ You can find corresponding value in the output of the Python's script as well.
 [ACCORDION-BEGIN [Step 5: ](Check posted values in the API)]
 The power of SAP IoT Application Enablement is in its rich set of APIs available to build powerful customer applications on top of data from devices.
 
-E.g. to check last 5 values posted open following URL in the browser, like Chrome: https://sap-iotaeexplore.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Things('591188FC5CEF413E9D5AE3F641429BB5')/sap.iotaeexplore.computeriotdevice:generic_computer/resource_sensors?timerange=1H&$top=5
+E.g. to check last 5 values posted open following URL in the browser, like Chrome: https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Things('591188FC5CEF413E9D5AE3F641429BB5')/sap.iotaeexplore.computeriotdevice:generic_computer/resource_sensors?timerange=1H&$top=5
 
 You need to modify the thing id from `591188FC5CEF413E9D5AE3F641429BB5` to your own. Properly formatted URL will return results like this to authorized user.
 ![Values in API](iotaecomppy0040.jpg)
@@ -145,7 +144,7 @@ You need to modify the thing id from `591188FC5CEF413E9D5AE3F641429BB5` to your 
 
 
 [ACCORDION-BEGIN [Step 6: ](Explore IoT APIs in SAP API Hub)]
-To better understand IoT Application Enablement APIs you can go to SAP API Hub at https://api.sap.com/#/shell/discover/contentpackage/IOTAE and review and execute different APIs in its sandbox.
+To better understand IoT Application Enablement APIs you can go to SAP API Hub at https://api.sap.com/#/shell/discover/contentpackage/IOTAE and review and execute different APIs in its sandbox. As this sandbox has the same backend you will find your things again here.
 
 
 [ACCORDION-END]
