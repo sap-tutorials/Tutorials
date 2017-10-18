@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
+ - **Proficiency:** Advanced
  - **Tutorials** [Getting Started with SAP HANA Dynamic Tiering](https://www.sap.com/developer/groups/dt-get-started.html) to set up your extended storage and [Creating Database Backups](https://www.sap.com/developer/groups/dt-backup-recovery.html)
  - **Credentials:** Have access to the SYSTEM user of  `SystemDB` and "`<SID>adm`" for a SSH session on the HANA hosts.
 
