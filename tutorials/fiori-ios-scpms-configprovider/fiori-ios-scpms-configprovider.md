@@ -62,7 +62,7 @@ Click the **New Application Configuration** button. In the dialog that opens, en
 
 Inside the **Configuration** text area, enter the following JSON structure:
 
-```JSON
+```json
 {
     "appPurpose" : "Demo",
     "supportedOptions" : [
@@ -88,7 +88,8 @@ The configuration for the specified email domain is now saved:
 
 You can now test whether you can retrieve the configuration for the specified application ID and email domain.
 
-Open a browser to `https://portal.sapmobilesecure.com/config-api.svc/ApplicationConfigurations/getApplicationConfiguration(AppConfigID='<application_id>',EmailAddress='<email_address>')` where `<application_id>` is the ID you specified in **Step 2**, and `<email_address>` is an email address which is within the email domain you specified in **Step 2**.
+Open a browser to:
+`https://portal.sapmobilesecure.com/config-api.svc/ApplicationConfigurations/getApplicationConfiguration(AppConfigID='<application_id>',EmailAddress='<email_address>')` where `<application_id>` is the ID you specified in **Step 2**, and `<email_address>` is an email address which is within the email domain you specified in **Step 2**.
 
 For instance, `https://portal.sapmobilesecure.com/config-api.svc/ApplicationConfigurations/getApplicationConfiguration(AppConfigID='com.sap.tutorials.demoapp.Demo',EmailAddress='user@trial-s0001234567trial.sapmobileplace.com')`.
 

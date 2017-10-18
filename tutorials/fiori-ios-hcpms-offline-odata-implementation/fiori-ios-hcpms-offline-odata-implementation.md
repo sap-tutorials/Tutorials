@@ -6,7 +6,8 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Development machine:** Access to a Mac computer
+ - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+ - **SAP Cloud Platform SDK for iOS:** Version 2.0
  - **Tutorials:** [Offline OData - Configuration](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-config.html)
 
 ## Next Steps
@@ -29,31 +30,7 @@ If you now switch on Airplane mode, and try opening a collection from the app, y
 
 After you have followed the implementation below, your application should now work offline as well.
 
-[ACCORDION-BEGIN [Step 1: ](Add SAPOfflineOData.framework to your project)]
-
-First, you need to check whether the `SAPOfflineOData.framework` file to your Xcode project. If it isn't yet included, drag and drop the file under the `Frameworks` folder in your project. In the dialog that appears, make sure to check **Copy items if needed** and select **Create groups**:
-
-![Offline OData implementation](fiori-ios-hcpms-offline-odata-implementation-01.png)
-
-Click **Finish** to close the dialog. The Offline OData framework file now appears under the `Frameworks` folder.
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Examine Build Phases tab)]
-
-Select the root project `Demo`, and switch to the **Build Phases** tab. Make sure (at least) the following framework files are listed:
-
-* `SAPFoundation.framework`
-* `SAPOData.framework`
-* `SAPOfflineOData.framework`
-
-![Offline OData implementation](fiori-ios-hcpms-offline-odata-implementation-02.png)
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Add import statement)]
+[ACCORDION-BEGIN [Step 1: ](Add import statement)]
 
 Now, you need to change the **Online** behavior to **Offline** usage. Open the `ESPMContainerDataAccess.swift` file under `Demo > Model`.
 
@@ -71,7 +48,7 @@ class ESPMContainerDataAccess {
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Change Service Declaration to Offline)]
+[ACCORDION-BEGIN [Step 2: ](Change Service Declaration to Offline)]
 
 Since the data service is used offline, you need to change the service declaration for offline usage. In order to do so, change the type of the `ESPMContainer` variable `service` to `OfflineODataProvider`:
 
@@ -82,7 +59,7 @@ var service: ESPMContainer<OfflineODataProvider>
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add Offline OData Provider)]
+[ACCORDION-BEGIN [Step 3: ](Add Offline OData Provider)]
 
 To instantiate the above service, an offline OData provider is needed. Below the field `service`, add a field `offlineODataProvider` of type `OfflineODataProvider`:
 
@@ -93,7 +70,7 @@ var offlineODataProvider: OfflineODataProvider
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Change initializer)]
+[ACCORDION-BEGIN [Step 4: ](Change initializer)]
 
 Replace the `init()` initializer with the following:
 
@@ -135,7 +112,7 @@ init(urlSession: SAPURLSession) {
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Build and run the application)]
+[ACCORDION-BEGIN [Step 5: ](Build and run the application)]
 
 Try to build and run the app. If all goes well, the build will succeed and you will be asked to enter your SAP Cloud Platform mobile service for development and operations login credentials at the authentication screen. Once logged in, click on any of the entities to show the master data. Most likely you will receive the following response:
 
@@ -146,7 +123,7 @@ This error is shown because in order to perform any operations in the offline OD
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Maintain State of the Offline Store)]
+[ACCORDION-BEGIN [Step 6: ](Maintain State of the Offline Store)]
 
 First, we add a new field which holds the state of the store, whether it's open or not. Open class `ESPMContainerDataAccess`, and locate the line `var service: ESPMContainer<OfflineODataProvider>` you wrote at step 5. Just below it, add the following boolean field:
 
@@ -157,7 +134,7 @@ var isStoreOpened = false
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Change request methods for offline usage)]
+[ACCORDION-BEGIN [Step 7: ](Change request methods for offline usage)]
 
 Locate the `executeRequest<T>` method which returns an array `[T]`, and replace its implementation with the following:
 
@@ -216,14 +193,14 @@ private func executeRequest<T>(_ request: @escaping(DataQuery) throws -> [T],
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Build and run the application again)]
+[ACCORDION-BEGIN [Step 8: ](Build and run the application again)]
 
 Deploy your application to your iOS device, and once loaded, log on to it.
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Run the application in offline mode)]
+[ACCORDION-BEGIN [Step 9: ](Run the application in offline mode)]
 
 Switch on Airplane mode, and try open a collection and an entity. It should work without errors:
 

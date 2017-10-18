@@ -1,11 +1,14 @@
 ---
 title: Create an application definition
 description: Create an application definition that enables you to manage the application. The application definition includes a unique application identifier, connections to the back-end data source, and optionally, other application-specific settings.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
+ - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+ - **SAP Cloud Platform SDK for iOS:** Version 2.0
  - **Tutorials:** [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
 
 ## Next Steps
@@ -38,7 +41,7 @@ Got to the SAP Cloud Platform cockpit and click on **Services** in the main menu
 
 ![Enable Mobile Services](image-1.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Go to the Mobile Services cockpit and bookmark it)]
@@ -49,41 +52,70 @@ As it is likely that you need to return to this cockpit after you have created t
 
 ![Mobile Services Cockpit](image-2.png)
 
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create the application)]
+[ACCORDION-BEGIN [Step 3: ](Create the application definition)]
 
-To create the application, click on the **Applications** tile to go to the list of applications that you have already defined. When you do this for the first time, this list will be empty. A new application can be created by clicking on the **Create Application** button:
+Log on to your **SAP Cloud Platform mobile service for development and operations** cockpit, and navigate to **Mobile Applications > Native/Hybrid**. Click the **New** button, and in the dialog, add the following information:
 
-![Applications list](image-3.png)
-
-A dialog will open, allowing you to enter the application details:
+| Field Name | Value |
+|----|----|
+| Configuration Templates | `Native` |
+| ID | `com.sap.tutorial.demoapp.Demo` |
+| Name | `Demo` |
 
 ![Applications details](image-4.png)
 
-Enter the details below:
-
-Field Name                | Value
-:-------------            | :-------------
-Application ID            | `com.sap.tutorial.demoapp`
-Name                      | `Demo Application`
-type                      | `Native`
-Ignore case for User Name | `checked`
-Security Configuration    | `Basic`
-
+[DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Go back to the cockpit)]
+[ACCORDION-BEGIN [Step 4: ](Initial application definition created)]
 
-After entering the application details press the **Save** button to save the new application. When the application is saved, you will be able to define more application configuration details. You will do this in the next tutorial, in which you will define the back-end connection. For now, just go back to the Mobile Services Cockpit by clicking on the `Home` button in the main menu.
+After entering the application details press the **Save** button to save the new application. You now see the application definition details:
 
-When you have the cockpit on your screen, you can now see that you have defined one Application:
+![One application in Mobile Services Cockpit](image-6.png)
 
-![One application in Mobile Services Cockpit](image-5.png)
+Take a note of the **Incomplete Configuration** message next to the **Connectivity** feature. This will be solved in the next step.
 
+[DONE]
 
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Add Sample Back End Feature)]
+
+When the application is saved, you will be able to define more application configuration details. For this tutorial series, you will use a sample OData service included in SAP Cloud Platform mobile service for development and operations.
+
+Click on the **Plus** button next to **Assigned Features** to the right. A dialog now opens:
+
+![One application in Mobile Services Cockpit](image-7.png)
+
+Select **Sample Back End** from the list, and click **OK**.
+
+The Sample Back End is now added:
+
+![One application in Mobile Services Cockpit](image-8.png)
+
+As you can see from the **Entity Sets** drop-down, the sample service contains quite a few entities. You may click the **Generate sample sales orders** and **Generate sample purchase orders** a couple of times to generate dummy data for these entities.
+
+[DONE]
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Examine application definition)]
+
+Click on the application name **Demo** in the breadcrumb at the top of the page:
+
+![One application in Mobile Services Cockpit](image-9.png)
+
+You are navigated back to the **Demo** application overview page. You'll notice the **Incomplete Configuration** message next to the **Connectivity** feature is gone now.
+
+Click on the **Connectivity** row, and you will notice the OData endpoint for the Sample Back End is configured:
+
+![One application in Mobile Services Cockpit](image-10.png)
+
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps

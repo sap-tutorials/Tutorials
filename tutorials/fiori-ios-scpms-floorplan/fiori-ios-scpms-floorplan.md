@@ -22,7 +22,7 @@ In this tutorial, you will learn three things:
 - Display this view according to the **List Report Floorplan**
 - Add barcode scanner to the List Report's search bar
 
-In this example, you build upon the demo app created using the **Sample OData** service. If you examine the service's metadata (URL: `https://hcpms-<your account>trial.hanatrial.ondemand.com/SampleServices/ESPM.svc/$metadata`) you see entity **Supplier** has a one-to-many relationship with **Products**:
+In this example, you build upon the demo app created using the **Sample OData** service. If you examine the service's metadata (URL: `https://hcpms-YourIDtrial.hanatrial.ondemand.com/SampleServices/ESPM.svc/$metadata`) you see entity **Supplier** has a one-to-many relationship with **Products**:
 
 ```xml
 <EntityType Name="Supplier">
@@ -493,7 +493,7 @@ Barcode 4:
 
 Position the barcode inside the scanning area. If a barcode has been detected, this will be indicated by a green line or rectangle:
 
-![Navigation Controller](fiori-ios-scpms-floorplan-15.jpg)
+![Navigation Controller](fiori-ios-scpms-floorplan-15.png)
 
 The list should now be filtered based on the scanned results:
 
