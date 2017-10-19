@@ -95,15 +95,9 @@ Then under **Individual Users**, click **Assign** and enter your SAP Cloud Platf
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Check the IoT MMS destinations and restart the app)]
+[ACCORDION-BEGIN [Step 7: ](Restart the app)]
 
-While still within the **IoT MMS application cockpit** click on the **Configuration** > **Destinations** in the left navigation bar. Select `rdms` destination. It is the trusted link for IoT Message Management Service `iotmms` to communicate with Remote Device Management Service, which stores devices registry.
-
-The `rdms` should have **Proxy Type:** attribute set to `Internet`. If it is not, then **Edit** the `rdms` destination configuration to set and save:
- - **Proxy Type:** to `Internet`,
- - **Use default JDK truststore** to Checked.
-
-Once user is assigned to the role and destinations are using the correct proxy type, stop and start `iotmms` application.
+Once user is assigned to the role, stop and start `iotmms` application.
 
 ![Start/stop](p6_10.png)
 

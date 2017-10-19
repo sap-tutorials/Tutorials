@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
+ - **Proficiency:** Advanced
  - **Tutorials** Performing a Takeover
  - **Credentials:** Have access to the SYSTEM user of  `SystemDB` and "`<SID>adm`" for a SSH session on the HANA hosts.
 
@@ -39,8 +39,6 @@ After a takeover has been carried out the roles between primary and secondary ca
 In the case of a failover, the former primary has to be registered as the secondary with the now active primary system. The roles are switched compared to the original setup.
 
 Register the original primary system as the secondary system as follows:
-
-> Note: System replication will not be accessible through SAP HANA Express Edition (HXE). 
 
 In the Systems Panel, right-click the primary system and choose **Configuration and Monitoring** > **Configure System Replication**.
 
