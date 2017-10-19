@@ -97,33 +97,6 @@ If you installed the Applications package (`hxexsa.tgz`), test your XSA installa
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test Web IDE (Applications Package Only))]
-
-1. As the `<sid>adm` user, log in to XSA services:  
-
-
-    ```bash
-    xs login -u xsa_admin -p "<password>"
-    ```  
-
-2. View the status of the `webide` application. Enter:  
-
-    ```bash
-    xs apps | grep webide
-    ```
-
-3. Check that the application **`webide`** shows **STARTED** with 1/1 instances in the list of XSA applications.
-
-    Make a note of the URL for `webide`.
-
-4. Test your Web IDE connection. Enter the URL for `webide` in a browser. The address is the one that displays in your  **`xs apps`**  command output.  
-
-    Example:  `https://my.hostname:53075`
-
-5. Log on to Web IDE using the `XSA_DEV` user.
-
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Best Practice: ](Deactivate the SYSTEM user)]
 
 SYSTEM is the database superuser and is not intended for day-to-day activities in production systems. For better security, you can create other database users with only the privileges that they require for their tasks (for example, user administration), then deactivate the SYSTEM user.
@@ -309,6 +282,56 @@ If you are using SAP HANA 2.0, express edition in a language other than English 
     tar -xvzf <download_path>/additional_lang.tgz
     ```
 
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Optional: ](Installing SAP Web IDE for SAP HANA)]
+
+SAP Web IDE for SAP HANA is a browser-based integrated development environment for the development of applications comprised of extensive SAP HANA data models, business logic, and web-based `UIs`.
+
+Before installing the Web IDE, you must have installed the Applications package.
+
+1. Use the Download Manager to download the Web IDE installation package, `webide.tgz`.
+
+2. Extract the contents of `webide.tgz`:
+
+    ```bash
+    tar -xvzf <download_path>/webide.tgz
+    ```
+
+3. Navigate to the `HANA_EXPRESS_20` directory where you extracted the files and run `install_webide.sh` as the `<sid>adm` user:
+
+    ```bash
+    <extracted_path>/HANA_EXPRESS_20/install_webide.sh
+    ```
+
+>**Note:** The console may display some jargon during `npm` package manager installation. This is a known issue and will be fixed in an upcoming release.   
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Test Web IDE (Applications Package Only))]
+
+1. As the `<sid>adm` user, log in to XSA services:  
+
+    ```bash
+    xs login -u xsa_admin -p "<password>"
+    ```  
+
+2. View the status of the `webide` application. Enter:  
+
+    ```bash
+    xs apps | grep webide
+    ```
+
+3. Check that the application **`webide`** shows **STARTED** with 1/1 instances in the list of XSA applications.
+
+    Make a note of the URL for `webide`.
+
+4. Test your Web IDE connection. Enter the URL for `webide` in a browser. The address is the one that displays in your  **`xs apps`**  command output.  
+
+    Example:  `https://my.hostname:53075`
+
+5. Log on to Web IDE using the `XSA_DEV` user.
 
 [ACCORDION-END]
 
