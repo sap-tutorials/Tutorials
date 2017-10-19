@@ -96,6 +96,8 @@ For troubleshooting information, see [SAP HANA, express edition Troubleshooting]
 
     - If **Y**, enter your proxy host name, proxy port number, and (if desired) a comma-separated list of hosts that do not need a proxy. Proxy host name needs a fully qualified domain name.
 
+    - Make sure the Non Proxy Host list includes `localhost`, `hxehost`, and `hxehost.localdomain`.
+
 
 
 [ACCORDION-END]
@@ -239,43 +241,8 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Test WEBIDE (Server + Applications Virtual Machine Only))]
 
-If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your WEBIDE installation.
-
->**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
-
-1. View the list of XSA applications. Enter:  
-
-    ```bash
-    xs apps
-    ```
-
-    >**Note**: When you run the `xs apps` command for the first time, it may take 1-2 minutes for the system to return the list of XSA applications.
-
-2. Check that the application **`webide`** shows **STARTED** in the list of XSA applications , and has 1/1 instances. (If the list shows 0/1 in the instance column, the application is not started.)
-
-    **Note** Normally it only takes a few minutes for XSA services to start. However. depending on your machine, it can take over 30 minutes for XSA services to begin. If the service doesn't show STARTED and doesn't show 1/1 instances, keep waiting until the service is enabled.
-
-    Make a note of the URL for `webide`.
-
-    ![webide URL](hxe_xsa_webide.PNG)
-
-    >**Tip**: The command **`xs apps | grep webide`** returns the `webide` row only.
-
-3. Test your Web IDE connection. Enter the URL for Web IDE in a browser on your laptop.
-
-    Example:  `https://hxehost:53075`
-
-4. Log on to Web IDE using the `XSA_DEV` user. You specified this password when you were prompted for **HANA database master password** at the beginning of this tutorial.
-
-    If you are prompted to change your password, follow the instructions.
-
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 13: ](Test Cockpit (Server + Applications Virtual Machine Only))]
+[ACCORDION-BEGIN [Step 12: ](Test Cockpit (Server + Applications Virtual Machine Only))]
 
 If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your Cockpit installation.
 
@@ -313,7 +280,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Optional Configuration: Test your Installation using the HANA Eclipse Plugin)]
+[ACCORDION-BEGIN [Step 13: ](Optional Configuration: Test your Installation using the HANA Eclipse Plugin)]
 
 **Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
 
@@ -331,7 +298,7 @@ Download and install the HANA Eclipse Plugin to your host OS (not the VM guest) 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Optional Configuration: Install Text Analysis Files)]
+[ACCORDION-BEGIN [Step 14: ](Optional Configuration: Install Text Analysis Files)]
 
 If you are using SAP HANA 2.0, express edition in a language other than English or German, you can download the **Text analysis files for additional languages** package in the Download Manager.
 
@@ -339,31 +306,38 @@ The Text analysis files for additional languages package contains the text analy
 
 1. Run the `hxe_gc` memory management script to free up available VM memory.
 
-    - Log in as `hxeadm` and execute:
-        ```bash
-        cd ~bin
-        ./hxe_gc.sh
+    - In your VM, log in as `hxeadm` and enter:
+
+        ```
+        cd /usr/sap/HXE/home/bin
         ```
 
-    - Follow the prompts.        
+    - Execute:
 
-2. Use the Download Manager to download the **Text analysis files for additional languages** package,`additional_lang.tgz`.
+        ```
+        hxe_gc.sh
+        ```
 
-3. Locate the download package:
+    - When prompted for System database user (SYSTEM) password, enter the New HANA database master password you specified during SAP HANA, express edition installation. The cleanup process runs. The command prompt returns when the cleanup process is finished.          
 
-    | If you downloaded using...        | Then do this...  |
-    | ---------------- | -------------|
-    | The Download Manager (GUI Mode) on your laptop            | Transfer `additional_lang.tgz` from your laptop's Save Directory to `~/Downloads` on your VM.|
-    | The VM's built-in Download Manager (Console Mode)           | Locate `additional_lang.tgz` in the VM's Save Directory (`~/Downloads` by default). |
-
-
-4. As `hxeadm`, navigate to `/hana/shared/HXE/global/hdb/custom/config/lexicon`.
-
-5. Extract the contents of `additional_lang.tgz` to this directory:
+2. In your VM, download `additional_lang.tgz` using the built-in Download Manager. From the same directory where you ran `hxe_gc` (`/usr/sap/HXE/home/bin`) enter:
 
     ```bash
-    tar -xvzf <download_path>/additional_lang.tgz
+    HXEDownloadManager_linux.bin linuxx86_64 vm additional_lang.tgz
     ```
+
+3. In your VM, navigate to the Downloads directory. Enter:
+
+    ```bash
+    cd /usr/sap/HXE/home/Downloads
+    ```
+
+4. In your VM, extract the contents of `additional_lang.tgz` to `/hana/shared/HXE/global/hdb/custom/config/lexicon`. Enter:  
+
+    ```bash
+    tar -xvzf additional_lang.tgz -C /hana/shared/HXE/global/hdb/custom/config/lexicon
+    ```      
+
 **Tip:** If your tables do not use a full text index, or if your tables use a full text index but contain very little data, you can save about 120 MB of memory if you turn off the standalone text analysis preprocessor, and activate the embedded text analysis preprocessor.
 
     Stop the standalone preprocessor:
@@ -378,11 +352,9 @@ The Text analysis files for additional languages package contains the text analy
     alter system alter configuration ('preprocessor.ini','SYSTEM') set ('general','embedded') = 'true' with reconfigure;
     ```
 
-
-
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Optional Configuration: Install SAP Enterprise Architecture Designer (Server + Applications Virtual Machine Only))]   
+[ACCORDION-BEGIN [Step 15: ](Optional Configuration: Install SAP Enterprise Architecture Designer (Server + Applications Virtual Machine Only))]   
 
 If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), you have the option of installing the SAP Enterprise Architecture Designer (SAP EA Designer) tool.
 
@@ -419,7 +391,7 @@ Note that you have to option of using the Download Manager (GUI Mode) on your la
 2. In your VM, download `eadesigner.tgz` using the built-in Download Manager. From the same directory where you ran `hxe_gc` (`/usr/sap/HXE/home/bin`) enter:
 
     ```bash
-    HXEDownloadManager_linux.bin linuxx86_64 installer eadesigner.tgz
+    HXEDownloadManager_linux.bin linuxx86_64 vm eadesigner.tgz
     ```
 
     ![Built-in Download Manager](eadesigner_download.PNG)
@@ -464,15 +436,11 @@ Note that you have to option of using the Download Manager (GUI Mode) on your la
 
 10. When prompted for `XSA administrator (XSA_ADMIN) password`, enter the `HANA database master password` you specified when you installed SAP HANA, express edition.    
 
-11. When prompted for EA Designer administrator password, enter a strong password. Follow the password requirements displayed on-screen.
-
-12. Confirm the EA Designer administrator password.
-
-13. When prompted to `Proceed with installation`, enter **Y**. Wait for installation to finish. A success message displays when installation completes.
+11. When prompted to `Proceed with installation`, enter **Y**. Wait for installation to finish. A success message displays when installation completes.
 
     ![EA Designer installation success message](eadesigner_success.PNG)   
 
-14. Enter the following command to confirm the status of SAP EA Designer:
+12. Enter the following command to confirm the status of SAP EA Designer:
 
     ```bash
     xs apps
@@ -490,27 +458,23 @@ Note that you have to option of using the Download Manager (GUI Mode) on your la
 
     ![eadesigner apps](eadesigner_xsapps.PNG)  
 
-15. Note the URL for `eadesigner`. Launch a web browser on your laptop and enter the URL in your web browser address bar.
+13. Note the URL for `eadesigner`. Launch a web browser on your laptop and enter the URL in your web browser address bar.
 
     The SAP EA Designer login page displays.
 
-    ![EA Designer login](eadesigner_login.PNG)  
+    ![EA Designer login](eadesigner_login_021.PNG)  
 
-16. Enter the following credentials:
+14. Click **Logon with your XSA User** on this logon page.
 
-    - User Name - ADMIN
+15. Enter `XSA_ADMIN` user and password.
 
-    >**Note**: Account names managed by SAP EA Designer are case-sensitive.
+You are logged in as administrator of SAP EA Designer.
 
-    - Password - Enter the password you created when you first installed SAP EA Designer.
-
-17. Change the password when prompted. You are logged in as administrator of SAP EA Designer.
-
-    ![EA Designer login](eadesigner_firstpage.PNG)
+![EA Designer login](eadesigner_firstpage.PNG)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Optional Configuration: Install SAP HANA Interactive Education (Server + Applications Virtual Machine Only))]       
+[ACCORDION-BEGIN [Step 16: ](Optional Configuration: Install SAP HANA Interactive Education (Server + Applications Virtual Machine Only))]       
 
 SAP HANA Interactive Education (SHINE) makes it easy to learn how to build applications on SAP HANA Extended Application Services Advanced Model (XSA).
 
@@ -547,7 +511,7 @@ SHINE is a separate download in the Download Manager. To use SHINE, you need the
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](Optional Configuration: Installing SAP HANA External Machine Learning Library)]
+[ACCORDION-BEGIN [Step 17: ](Optional Configuration: Installing SAP HANA External Machine Learning Library)]
 
 The SAP HANA External Machine Learning Library is an application function library (AFL) supporting the integration of Google `TensorFlow`, as an external machine learning framework, with SAP HANA, express edition.
 
@@ -580,7 +544,149 @@ The SAP HANA External Machine Learning Library is an application function librar
 
     For more information on the SAP HANA External Machine Learning Library, see the SAP HANA documentation collection.    
 
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 18: ](Optional Configuration: Installing SAP HANA Smart Data Integration)]
+
+<!--temporary section while we wait for Mike Madsen's tutorial. Replace with link. -- >
+
+Install the SAP HANA client package and SAP HANA smart data integration on an SAP HANA, express edition system.
+
+You need to run a script and an installer executable to complete the necessary steps to install SAP HANA smart data integration. The script enables the Data Provisioning Server on SAP HANA, express edition, as well as deploys the data provisioning delivery unit that enables monitoring and other capabilities. The installer executable that you run installs the Data Provisioning Agent that provides connectivity between SAP HANA, express edition and your remote data sources.
+
+> **Note:** The current version of SAP HANA, express edition supports only one Data Provisioning Agent per machine.
+
+1. Use the Download Manager to download the SAP HANA smart data integration installation package, `sdi.tgz`.
+
+2. Extract the contents of `sdi.tgz` to a temporary directory.
+
+3. Run `HANA_EXPRESS_20/install_sdi.sh` as `hxeadm`.
+
+    This enables the DP Server on HANA and deploys the monitoring delivery unit.
+
+4. To install the Data Provisioning Agent, run `<extract directory>/HANA_EXPRESS_20/DATA_UNITS/HANA_DP_AGENT_20_LIN_X86_64/hdbinst.exe`.
+
+    You are prompted to supply the following information (default values are given):
+
+    - Installation path [`/usr/sap/dataprovagent`]
+
+    - Enter User name for Agent service (user must exist)
+
+    - Enter Agent Listener Port [5050]
+
+    - Enter Agent Administration Port [5051]
+
+    - Enter Shared directory for Agent Group (optional)
+
+    - Enter Custom JRE directory (to use bundled JRE, leave it blank)
+
+5. The SAP JVM is bundled with the Data Provisioning Agent and used as the default Java Runtime Environment. You can choose to update the version of the SAP JVM used by an installed agent, or replace it with a custom Java Runtime Environment.    
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 19: ](Optional Configuration: Installing SAP Web IDE for SAP HANA)]
+
+If you downloaded the Server + Applications Virtual Machine package (`hxexsa.ova`), you have the option of installing SAP Web IDE for SAP HANA. SAP Web IDE for SAP HANA is a separate download in the Download Manager.
+
+In this procedure you'll download the SAP Web IDE for SAP HANA package (`webide.tgz`) using the VM's built-in Download Manager (Console Mode), extract the package, and run the installation script. Downloading from inside the VM is the simplest and quickest method.
+
+>**Note:** Note that you have to option of using the Download Manager (GUI Mode) on your laptop to download `webide.tgz`, but doing so has disadvantages:
+
+    - If you download to your laptop, you will need to transfer `webide.tgz` from your laptop's Save Directory to the `/usr/sap/HXE/home/Downloads` directory in your VM.
+
+    - The laptop-to-VM transfer procedure varies depending on your hypervisor and host operating system. You will need to consult your hypervisor documentation.
+
+    - The procedure below is much easier and faster.
+
+1. Run the `hxe_gc` memory management script to free up available VM memory.
+
+    - In your VM, log in as `hxeadm` and enter:
+
+        ```bash
+        cd /usr/sap/HXE/home/bin
+        ```
+    - Execute:
+
+        ```bash
+        hxe_gc.sh
+        ```
+
+    - When prompted for System database user (SYSTEM) password, enter the New HANA database master password you specified during SAP HANA, express edition installation. The cleanup process runs. The command prompt returns when the cleanup process is finished.
+
+2. In your VM, download `webide.tgz` using the built-in Download Manager. From the same directory where you ran `hxe_gc` (`/usr/sap/HXE/home/bin`) enter:
+
+    ```bash
+    HXEDownloadManager_linux.bin linuxx86_64 vm webide.tgz
+    ```
+
+3. In your VM, navigate to the Downloads directory. Enter:
+
+    ```bash
+    cd /usr/sap/HXE/home/Downloads
+    ```
+
+4. In your VM, view the contents of the Downloads directory to confirm `webide.tgz` exists. Enter:
+
+    ```bash
+    ls
+    ```     
+
+5. In your VM, extract the file. Enter:
+
+    ```bash
+    tar -xvzf webide.tgz
+    ```
+
+6. In your VM, navigate to the `HANA_EXPRESS_20` directory. Enter:
+
+    ```bash
+    cd HANA_EXPRESS_20
+    ```
+
+7. In your VM, run the installation script. Enter:
+
+    ```bash
+    sh ./install_webide.sh
+    ```
+
+    Installation begins.
+
+>**Note:** The console may display some jargon during `npm` package manager installation. This is a known issue and will be fixed in an upcoming release.            
+
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 20: ](Test WEBIDE (Server + Applications Virtual Machine Only))]
+
+If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your WEBIDE installation.
+
+>**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
+
+1. View the list of XSA applications. Enter:  
+
+    ```bash
+    xs apps
+    ```
+
+    >**Note**: When you run the `xs apps` command for the first time, it may take 1-2 minutes for the system to return the list of XSA applications.
+
+2. Check that the application **`webide`** shows **STARTED** in the list of XSA applications , and has 1/1 instances. (If the list shows 0/1 in the instance column, the application is not started.)
+
+    **Note** Normally it only takes a few minutes for XSA services to start. However. depending on your machine, it can take over 30 minutes for XSA services to begin. If the service doesn't show STARTED and doesn't show 1/1 instances, keep waiting until the service is enabled.
+
+    Make a note of the URL for `webide`.
+
+    ![webide URL](hxe_xsa_webide.PNG)
+
+    >**Tip**: The command **`xs apps | grep webide`** returns the `webide` row only.
+
+3. Test your Web IDE connection. Enter the URL for Web IDE in a browser on your laptop.
+
+    Example:  `https://hxehost:53075`
+
+4. Log on to Web IDE using the `XSA_DEV` user. You specified this password when you were prompted for **HANA database master password** at the beginning of this tutorial.
+
+    If you are prompted to change your password, follow the instructions.
 
 [ACCORDION-END]
 
