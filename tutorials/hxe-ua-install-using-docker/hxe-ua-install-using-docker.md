@@ -13,6 +13,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 
 ## Next Steps
+- [How to Install SAP HANA 2.0, express edition Clients](https://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html)
  - [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html).
 
 ## Details
@@ -175,13 +176,13 @@ store/saplabs/hanaexpress:2.00.020.01.20170829.3 \
 
 This example creates the SAP HANA, express edition container with the name `express_edition`. This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.  
 
-> Note:
+> **Note:**
 > If the `JSON` file you are using is an *http* or *https* URL, you can leave out the `-v` option.
 
-> Note:
+> **Note:**
 > For Linux kernel versions earlier than 4, omit the `net.ipv4.ip_local_port_range` option.
 
-> Note:
+> **Note:**
 > If the Docker container fails to create an SAP HANA instance, you will need to remove the Docker container to try again. Run `docker rm <container_name>` to remove the container.
 
 [ACCORDION-END]
@@ -255,4 +256,5 @@ hdb_version
 [ACCORDION-END]
 
 ## Next Steps
+- [How to Install SAP HANA 2.0, express edition Clients](https://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html)
 - [Download and Install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html).
