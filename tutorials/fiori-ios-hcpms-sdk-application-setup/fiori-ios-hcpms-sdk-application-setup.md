@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, operating-system>ios, products>sap-cloud-platform, p
  - **Tutorials:** [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
 
 ## Next Steps
- - [Sample OData service](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sample-odata-service.html)
+ - [Creating an app using the SAP Cloud Platform SDK for iOS Assistant](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)
 
 ## Details
 ### You will learn  
@@ -119,4 +119,4 @@ Click on the **Connectivity** row, and you will notice the OData endpoint for th
 [ACCORDION-END]
 
 ## Next Steps
- - [Sample OData service](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sample-odata-service.html)
+- [Creating an app using the SAP Cloud Platform SDK for iOS Assistant](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-assistant.html)
