@@ -6,7 +6,8 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Development machine:** Access to a Mac computer
+ - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+ - **SAP Cloud Platform SDK for iOS:** Version 2.0
  - **Tutorials:** [Configure a back-end connection (Sample OData service)](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sample-odata-service.html)
 
 ## Next Steps
@@ -24,137 +25,91 @@ In this tutorial, you will install and setup the SAP Cloud Platform SDK for iOS 
 
 The SAP Cloud Platform SDK for iOS Assistant ("SDK Assistant") is a macOS application that helps developing iOS applications which use the SAP Cloud Platform SDK for iOS frameworks. It speeds up development by generate code for accessing OData services, define authentication mechanism, enable remote push notifications and add logging statements.
 
-> **It is important to realize the generated application is not suitable in a productive application.** The generated application demonstrates the OData proxy classes are working, browse their properties, and demonstrates push notifications and the various authentication mechanisms. For productive use, it is recommended to start with a new, empty project, and use parts of the generated app into your own project.
+[ACCORDION-BEGIN [Step 1: ](Configure SAP Cloud Platform SDK for iOS Assistant)]
 
-[ACCORDION-BEGIN [Step 1: ](Start SDK Assistant)]
+> **Note**: If you have already configured the SAP Cloud Platform SDK for iOS Assistant, you can **skip this step** and proceed with "Step 2 - Run the SAP Cloud Platform SDK for iOS Assistant".
 
-Open a **Finder** window and navigate to the location you stored the SAP Cloud Platform SDK for iOS files, and double-click the **SAP Cloud Platform SDK for iOS Assistant** application.
+.
 
-The SDK Assistant runs on any Mac computer running OS X El Capitan 10.11.5 or higher.
+This step provides simplified steps to configure the SAP Cloud Platform SDK for iOS Assistant application using the SAP Cloud Platform mobile service for development and operations cockpit.
 
-Upon first loading, you are greeted with a welcome message, indicating the SDK Assistant needs to gather some data from SAP Cloud Platform mobile service for development and operations first:
+Log on to SAP Cloud Platform mobile service for development and operations at `https://hcpms-<your_user_id>trial.hanatrial.ondemand.com/` and click the **Important Links** tab in the lower left bottom. The **Important Links** section opens:
 
-![SDK Assistant](fiori-ios-hcpms-sdk-assistant-16.png)
+![Important Links](fiori-ios-hcpms-sdk-assistant-17.png)
 
-Click **OK** to continue. The SDK Assistant opens with a screen which lists any previously created projects using the SDK Assistant (if any), a **Settings** button and a **Create New Project** button.
+Locate the tile **SAP Cloud Platform SDK for iOS Assistant** and click the **Importing URLs directly into Assistant** link. You should now see the following pop-up:
 
-![SDK Assistant](fiori-ios-hcpms-sdk-assistant-01.png)
+![Import URLs](fiori-ios-hcpms-sdk-assistant-18.png)
 
+Click the **Open SAP Cloud Platform SDK for iOS Assistant** button. The SAP Cloud Platform SDK for iOS Assistant application will start. The **New Account** settings dialog will open, and both **Admin API URL** and **Admin UI URL** parameters are pre-populated automatically:
 
-[ACCORDION-END]
+![Import URLs](fiori-ios-hcpms-sdk-assistant-19.png)
 
-[ACCORDION-BEGIN [Step 2: ](Open the Settings dialog)]
-
-Click the **Settings** button. It will display an empty, initial configuration:
-
-![SDK Assistant](fiori-ios-hcpms-sdk-assistant-02.png)
-
-Before you can create an application using the SDK Assistant, you need to setup your SAP Cloud Platform mobile service for development and operations configuration, and specify the path to the SAP Cloud Platform SDK for iOS framework files.
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Specify SAP Cloud Mobile Services details)]
-
-Select the **Add new SAP Cloud Platform mobile service for development and operations Configuration** option from the drop-down box. It will open a new dialog where you specify your SAP Cloud Platform mobile service for development and operations configuration:
-
-![SDK Assistant](fiori-ios-hcpms-sdk-assistant-03.png)
-
-Enter the following details:
+Provide the following additional details:
 
 | Field | Value |
 |----|----|
-| `Name` | A descriptive name for your configuration, for instance 'SAP Cloud Platform mobile service for development and operations trial' |
-| `SAPcpms Admin API URL` | `https://hcpms-<your ID>trial.hanatrial.ondemand.com` |
-| `SAPcpms Admin UI URL` | `https://hcpmsadmin-<your ID>trial.dispatcher.hanatrial.ondemand.com/` |
-| `User` | Your SAP Cloud Platform mobile service for development and operations user ID (should have Administrator role) |
-| `Password` | Password for your user ID |
+| Name | A descriptive name for the configuration, for instance `SAP Cloud Platform Mobile Services` |
+| Authentication Type | `Basic Authentication` |
+| User | Your trial account user |
+| Password | Password for your trial account user |
 
-> If you are using a productive SAP Cloud Platform account, use the following URL's matching your subscription:
+![Import URLs](fiori-ios-hcpms-sdk-assistant-20.png)
 
-> For accounts on **`hana.ondemand.com`**, use:
+Click **Add** when finished. The account is now added to the SDK Assistant:
 
-> | Field | Value |
-> |----|----|
-> | `SAPcpms Admin API URL` | `https://mobile-<your ID>.hana.ondemand.com` |
-> | `SAPcpms Admin UI URL` | `https://mobile-<your ID>.dispatcher.hanatrial.ondemand.com/` |
+![Import URLs](fiori-ios-hcpms-sdk-assistant-21.png)
 
-> For accounts on **`us1.hana.ondemand.com`**, use:
+Close the **Accounts** dialog.
 
-> | Field | Value |
-> |----|----|
-> | `SAPcpms Admin API URL` | `https://mobile-<your ID>.us1.hana.ondemand.com` |
-> | `SAPcpms Admin UI URL` | `https://mobile-<your ID>.dispatcher.us1.hanatrial.ondemand.com/` |
-
-> For accounts on **`us2.hana.ondemand.com`**, use:
-
-> | Field | Value |
-> |----|----|
-> | `SAPcpms Admin API URL` | `https://mobile-<your ID>.us2.hana.ondemand.com` |
-> | `SAPcpms Admin UI URL` | `https://mobile-<your ID>.dispatcher.us2.hanatrial.ondemand.com/` |
-
-> For accounts on **`ap1.hana.ondemand.com`**, use:
-
-> | Field | Value |
-> |----|----|
-> | `SAPcpms Admin API URL` | `https://mobile-<your ID>.ap1.hana.ondemand.com` |
-> | `SAPcpms Admin UI URL` | `https://mobile-<your ID>.dispatcher.ap1.hanatrial.ondemand.com/` |
-
-Click **Save** to store your SAP Cloud Platform mobile service for development and operations configuration.
-
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Specify SDK framework path)]
+[ACCORDION-BEGIN [Step 2: ](Run the SAP Cloud Platform SDK for iOS Assistant)]
 
-Now, you need to specify the path to the SAP Cloud Platform SDK for iOS. Point to the `Frameworks` folder which contains the `Release-fat` folder, along with the other `Release-xxx` folders.
+Double-click the **SAP Cloud Platform SDK for iOS Assistant** icon to start the application. If no applications have been generated previously, you will see the initial screen:
 
-Click **Save** to store your SDK Assistant configuration.
+![SDK Assistant](fiori-ios-hcpms-sdk-assistant-01.png)
 
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create application)]
 
-You are now ready to create your first application using the SDK Assistant. Click the **Create New Project** button in the top right.
+[ACCORDION-BEGIN [Step 3: ](Create an Xcode Project)]
+
+Click the **Plus** button on the top-right of the SDK Assistant. The first page of the Xcode Project generation wizard lets you define the Project Properties.
 
 Enter the following details:
 
 | Field | Value |
 |----|----|
 | Product Name | `Demo` |
-| Author | Your name |
-| Organization Name | `SAP` |
+| Author | `<your name>` |
+| Organization Name | `<your company name>` |
 | Organization Identifier | `com.sap.tutorial.demoapp` |
-| Destination | Path to store the generated Xcode project |
+| Destination | `<choose a local destination>` |
 
-![SDK Assistant](fiori-ios-hcpms-sdk-assistant-04.png)
+![Project Properties](fiori-ios-hcpms-sdk-assistant-04.png)
 
-> You can use any **Product Name** and **Organization Identifier**, but this tutorial as well as the follow-up tutorials use the names as provided here.
+Click **Next** to advance to the **SAP Cloud Platform mobile service for development and operations Configuration** step.
 
-Click **Next** to continue.
-
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Select the application definition)]
+[ACCORDION-BEGIN [Step 4: ](SAP Cloud Platform mobile service for development and operations Configuration details)]
 
-Select the **Use Existing** tab:
+In the **SAP Cloud Platform mobile service for development and operations Configuration** page, select the **Use Existing** tab button. Then, click the **Select...** button next to **Application Identifier**. This will open a dialog displaying any predefined application definitions stored on SAP Cloud Platform mobile service for development and operations:
 
-![SDK Assistant](fiori-ios-hcpms-sdk-assistant-05.png)
+![Project Properties](fiori-ios-hcpms-sdk-assistant-22.png)
 
-Click the **Select from SAP Cloud Platform mobile service for development and operations** button, and from the dialog, select the `com.sap.tutorial.demoapp.Demo` application from the list:
+Select the `com.sap.tutorial.demoapp.Demo` entry, and click **OK** to dismiss the dialog.
 
-Click **OK** when done. The application identifier and application name are now pre-filled.
+Click **Next** to proceed to the **OData Services** step.
 
-![SDK Assistant](fiori-ios-hcpms-sdk-assistant-06.png)
-
-Click **Next** to continue.
-
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Select the back end connection)]
+[ACCORDION-BEGIN [Step 5: ](Select the back end connection)]
 
 In the next screen, the available OData connection is displayed. Since you already defined an OData connection when creating the application on SAP Cloud Platform mobile service for development and operations, it is listed here and set as the primary.
 
@@ -163,9 +118,10 @@ In the next screen, the available OData connection is displayed. Since you alrea
 Click **Next** to continue.
 
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Select additional options)]
+[ACCORDION-BEGIN [Step 6: ](Select additional options)]
 
 In the final screen, you have a few options.
 
@@ -173,35 +129,30 @@ You can choose whether or not you want to **Generate a Master-Detail application
 
 If you leave the checkbox checked, it will generate not only the proxy classes, but also create a data browser user interface for testing the configuration.
 
-> **It is important to realize the generated application is not suitable in a productive application.** The generated application demonstrates the OData proxy classes are working, browse their properties, and demonstrates push notifications and the various authentication mechanisms. For productive use, it is recommended to start with a new, empty project, and use parts of the generated app into your own project.
-
 In addition, when you leave the **Generate Master-Detail Application** checked, you can also choose whether or not you want to enable the logging service, as well as allow your application to receive remote push notification.
 
-For this tutorial, make sure you have all checkboxes checked:
+For this tutorial, make sure you have all available checkboxes checked:
 
 ![SDK Assistant](fiori-ios-hcpms-sdk-assistant-08.png)
 
 Click **Finish** to continue.
 
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Examine the generated application project)]
+[ACCORDION-BEGIN [Step 7: ](Examine the generated application project)]
 
 The SDK Assistant now takes a few seconds to generate the application project, and once finished, it will open **Xcode** with the generated application project:
 
 ![SDK Assistant](fiori-ios-hcpms-sdk-assistant-09.png)
 
-As you see, it has generated **Proxy Classes** for each entity of the specified OData service, generated **Views** and **View Controllers**, and tied them together in the **Storyboard**.
+As you see, it has generated **Proxy Classes** for each entity of the specified OData service, generated **Views** and **View Controllers**, and tied them together in the `Main.storyboard` file as well as dedicated `<Entity>.storyboard` files in each `Demo/ViewControllers/<Entity>` folder.
 
-> In the previous tutorial where you set up the Sample OData service, you also set the application's **Security Configuration** to **Basic**. This forces the SDK Assistant to generate an extra **Authentication View** and **Controller**. For our application, authentication is needed to access the Sample OData service.
-
-> Would you have set **Security Configuration** to **None**, the authentication views and logic would not be generated, and users will access your application anonymously.
-
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Build and run the application)]
+[ACCORDION-BEGIN [Step 8: ](Build and run the application)]
 
 Click the **Build and Run** button in Xcode.
 
@@ -209,10 +160,10 @@ Click the **Build and Run** button in Xcode.
 
 The **Simulator** now starts up, and launches your application.
 
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Push Notifications confirmation message)]
+[ACCORDION-BEGIN [Step 9: ](Prepare the app for first launch)]
 
 Once finished loading, you will get a confirmation message asking permission to allow push notifications:
 
@@ -224,43 +175,53 @@ Click the **Allow** button to allow receiving of push notifications.
 
 > If you run the app on a physical iOS device, it then stores your preference in the settings. You can change these preferences later in the iOS device by navigating to **Settings > Notifications > Demo App** and enable/disable notifications from here.
 
+.
 
+You are now presented the generated app's on-boarding screen:
+
+![SDK Assistant](fiori-ios-hcpms-sdk-assistant-23.png)
+
+Click the blue **Start** button.
+
+The **SAML** login screen of **SAP Cloud Platform mobile service for development and operations** is shown. Enter your login credentials for the SAP Cloud Platform and press the **Log On** button:
+
+![Build and run](fiori-ios-hcpms-sdk-assistant-24.png)
+
+The app now gives you the option to enable Touch ID for quick access to your app. Since you are running from the simulator, you can click **Not Now**
+
+![Build and run](fiori-ios-hcpms-sdk-assistant-25.png)
+
+Now, you should provide a passcode with a minimum of 8 characters. Enter a numeric passcode:
+
+![Build and run](fiori-ios-hcpms-sdk-assistant-26.png)
+
+Click **Next**, confirm the passcode, and click **Done**.
+
+The app starts with an overview of the available **Collections** of the OData service:
+
+![Build and run](fiori-ios-hcpms-sdk-assistant-11.png)
+
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Log on to the application via SAP Cloud Platform mobile service for development and operations)]
 
-At the **Logon** screen in your app, enter your **SAP Cloud Platform mobile service for development and operations login credentials** and click the **Log in** button:
-
-![SDK Assistant](fiori-ios-hcpms-sdk-assistant-15.png)
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 13: ](Examine the list of available entities)]
-
-You will now see your app with all your OData service entities in the Master view:
-
-![SDK Assistant](fiori-ios-hcpms-sdk-assistant-11.png)
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 14: ](Examine the Suppliers Master view)]
+[ACCORDION-BEGIN [Step 10: ](Examine the Suppliers Master view)]
 
 Click on, for instance, **Suppliers**, it will now load the **Supplier** entities and display their name and ID:
 
 ![SDK Assistant](fiori-ios-hcpms-sdk-assistant-12.png)
 
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Examine a Supplier Detail view)]
+[ACCORDION-BEGIN [Step 11: ](Examine a Supplier Detail view)]
 
 If you now click on one of the **Supplier** entities, it will display the **Detail** view for that entity:
 
 ![SDK Assistant](fiori-ios-hcpms-sdk-assistant-14.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps

@@ -109,7 +109,7 @@ Click the **Copy** action button.
 
 [ACCORDION-BEGIN [Step 7: ](Examine the copied code)]
 
-On your Mac, open a text editor of your choice, and using the [Universal Clipboard](https://support.apple.com/kb/PH25168) paste the copied code from the SAP Fiori Mentor app to the editor:
+On your Mac, open a text editor of your choice, and using the [Universal Clipboard](https://support.apple.com/en-us/HT204681) paste the copied code from the SAP Fiori Mentor app to the editor:
 
 ![SAP Fiori Mentor app](fiori-ios-scpms-mentor-08.png)
 
