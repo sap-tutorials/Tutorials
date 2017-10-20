@@ -6,7 +6,8 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Development machine:** Access to a Mac computer
+ - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+ - **SAP Cloud Platform SDK for iOS:** Version 2.0
 
 ## Next Steps
  - [Logging and Tracing](#)

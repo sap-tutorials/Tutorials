@@ -6,7 +6,8 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Development machine:** Access to a Mac computer
+ - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+ - **SAP Cloud Platform SDK for iOS:** Version 2.0
  - **Tutorials:** [Offline OData - Implementation](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-implementation.html)
 
 ## Next Steps
