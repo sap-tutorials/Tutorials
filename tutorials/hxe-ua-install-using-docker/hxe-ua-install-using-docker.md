@@ -70,6 +70,9 @@ docker images
 
 The SAP HANA, express edition image will be listed as `hanaexpress`.
 
+> Note:
+> You may have to log into your Docker account to pull the image. From your Docker-enabled command line, run `docker login` and follow the prompts to enter your Docker ID and password.
+
 [ACCORDION-END]
 
 
