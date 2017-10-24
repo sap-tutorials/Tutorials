@@ -14,7 +14,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Next Steps
 - [How to Install SAP HANA 2.0, express edition Clients](https://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html)
- - [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html).
+ - [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html)
 
 ## Details
 ### You will learn  
@@ -41,8 +41,42 @@ The software license allows for both non-production and production use cases, en
 
 Download and install Docker Enterprise Edition for SUSE Enterprise Linux Server. Visit the [Docker Enterprise Edition SUSE Enterprise Linux Server](https://store.docker.com/editions/enterprise/docker-ee-server-sles?tab=description) page for information on how to install Docker on your SLES system.
 
-> Note:
+> **Note:**
 > The remaining steps in the tutorial assume you are running as `sudo`.
+
+> **Note:**
+> Ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Optional: ](Test Your Docker Installation)]
+
+Test your Docker installation by running the "Hello World" container application. Run the following command from your Docker-enabled command prompt:
+
+```
+docker run --name helloWorld alpine echo hello
+```
+
+If successful, the following should display:
+
+```
+Unable to find image 'alpine:latest' locally
+latest: Pulling from library/alpine
+88286f41530e: Pull complete
+Digest: sha256:<log_number>
+Status: Downloaded newer image for alpine:latest
+hello
+```
+
+If `hello` is printed, you have successfully pulled the container image **alpine** (a demo Linux distribution), and run the instance of the container `helloWorld`, and ran the command `echo` with an input parameter of `hello`.
+
+If you **did not** get this output, the Docker installation has not been completed or the Docker daemon can not connect to the internet. Review the process and check the [Docker Documentation](https://docs.docker.com/get-started/) for more information in troubleshooting your Docker installation.
+
+Remove the alpine image with the following command:
+
+```
+docker image rm alpine -f
+```
 
 [ACCORDION-END]
 
@@ -71,7 +105,7 @@ docker images
 The SAP HANA, express edition image will be listed as `hanaexpress`.
 
 > Note:
-> You may have to log into your Docker account to pull the image. From your Docker-enabled command line, run `docker login` and follow the prompts to enter your Docker ID and password.
+> You may have to log into your Docker account to pull the image. From your Docker-enabled command line, run `docker login` and follow the prompts to enter your Docker ID and password. Once you have logged in, try the pull command again.
 
 [ACCORDION-END]
 
@@ -105,7 +139,13 @@ chown 12000:79 /data/<system_name>
 
 [ACCORDION-BEGIN [Step 4: ](Set Up Password for SAP HANA, express edition)]
 
-To make your system more secure, you specify your own password before you create your container. This is done by creating a `json` file as opposed to having a default password. The file can be stored locally or on another system accessible by URL. Create the `json` file with one of the following formats:  
+To make your system more secure, you specify your own password before you create your container. This is done by creating a `json` file as opposed to having a default password. The file can be stored locally or on another system accessible by URL. Create the `json` file:
+
+```
+vi <file_name>.json
+```
+
+Press `i` to start editing and use one of the following formats to create the file:  
 
 ```
 {
@@ -129,6 +169,8 @@ Here is an example:
   "master_password" : "HXEHana1"
 }
 ```
+
+Press `esc` and then enter `wq!` to write and save the file.
 
 This file serves as the master password for your SAP HANA, express edition users. The password must comply with these rules:
 
@@ -207,6 +249,31 @@ docker exec -it -u express_edition bash
 
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Optional: ](Test the Container)]
+
+When you are logged into the SAP HANA, express edition container, you can test your installation by entering the following:
+
+```
+whoami
+```
+
+You should be logged in as `hxeadm`, the default SAP HANA, express edition user.
+
+You can also enter the following:
+
+```
+HDB info
+```
+
+And you should see the following services running:
+
+* `hdbnameserver`
+* `hdbcompileserver`
+* `hdbdiserver`
+* `hdbwebdispatcher`
+
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Optional: ](Create additional SAP HANA, express edition Containers)]
 
 You will need to repeat the previous steps of creating a directory and `JSON` password for each additional SAP HANA, express edition container you wish to create.  
@@ -260,4 +327,4 @@ hdb_version
 
 ## Next Steps
 - [How to Install SAP HANA 2.0, express edition Clients](https://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html)
-- [Download and Install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html).
+- [Download and Install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html)
