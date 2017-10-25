@@ -11,7 +11,7 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
  - **Tutorials:** [Offline OData - Implementation](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-implementation.html)
 
 ## Next Steps
- - [Basic Authentication and Secure Key Store](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-secure-keystore.html)
+ - [SAML and OAuth 2 authentication](https://www.sap.com/developer/tutorials/fiori-ios-scpms-saml-oauth.html)
 
 ## Details
 ### You will learn  
@@ -237,4 +237,4 @@ Repeat the steps to create a failed upload as outlined in step 5. Any change you
 [ACCORDION-END]
 
 ## Next Steps
-- [Basic Authentication and Secure Key Store](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-secure-keystore.html)
+- [SAML and OAuth 2 authentication](https://www.sap.com/developer/tutorials/fiori-ios-scpms-saml-oauth.html)

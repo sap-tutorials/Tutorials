@@ -548,8 +548,6 @@ The SAP HANA External Machine Learning Library is an application function librar
 
 [ACCORDION-BEGIN [Step 18: ](Optional Configuration: Installing SAP HANA Smart Data Integration)]
 
-<!--temporary section while we wait for Mike Madsen's tutorial. Replace with link. -- >
-
 Install the SAP HANA client package and SAP HANA smart data integration on an SAP HANA, express edition system.
 
 You need to run a script and an installer executable to complete the necessary steps to install SAP HANA smart data integration. The script enables the Data Provisioning Server on SAP HANA, express edition, as well as deploys the data provisioning delivery unit that enables monitoring and other capabilities. The installer executable that you run installs the Data Provisioning Agent that provides connectivity between SAP HANA, express edition and your remote data sources.

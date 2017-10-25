@@ -51,7 +51,13 @@ In this tutorial, you will create an Xcode project with the **SAP Cloud Platform
 
 This step provides simplified steps to configure the SAP Cloud Platform SDK for iOS Assistant application using the SAP Cloud Platform mobile service for development and operations cockpit.
 
-Log on to SAP Cloud Platform mobile service for development and operations at `https://hcpms-<your_user_id>trial.hanatrial.ondemand.com/` and click the **Important Links** tab in the lower left bottom. The **Important Links** section opens:
+Log on to your SAP Cloud Platform trial account at [https://account.hanatrial.ondemand.com/](https://account.hanatrial.ondemand.com/) and once logged in, navigate to **Services**. Scroll down to **Mobile Services** and click on the **Development & Operations** tile. In the **Development & Operations - Overview** page, click the **Go to Service** link to open a new window to **SAP Cloud Platform mobile service for development and operations**.
+
+> Alternatively, you can go directly to `https://hcpms-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/`.
+
+.
+
+Once you're logged in to **SAP Cloud Platform mobile service for development and operations**, click the **Important Links** tab in the lower left bottom. The **Important Links** section opens:
 
 ![Important Links](fiori-ios-scpms-deliveryapp-part2-01.png)
 
@@ -205,7 +211,7 @@ In addition, the configuration settings you have provided in the SDK Assistant a
 
 > ![Optional Features](fiori-ios-scpms-deliveryapp-part2-32.png)
 
-> In that case, log on to your **SAP Cloud Platform mobile service for development and operations** account at `https://hcpms-<your_user_id>trial.hanatrial.ondemand.com/` and navigate to **Mobile Applications > Native/Hybrid**. Select one of the available application configurations and delete in order for the SDK Assistant to add the new application configuration.
+> In that case, log on to your **SAP Cloud Platform mobile service for development and operations** account at `https://hcpms-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/` and navigate to **Mobile Applications > Native/Hybrid**. Select one of the available application configurations and delete in order for the SDK Assistant to add the new application configuration.
 
 <!--
 NB: In some cases the loading of the metadata fails, and a dialog will open asking you to import the metadata manually:
