@@ -41,7 +41,7 @@ Once your database container appears, click on the **Tables**. You will see your
 
 ![Explore DB](table.png)
 
-Right-click on it and choose Open Data:
+Right-click on the table and choose Open Data:
 
 ![Explore DB](open.png)
 

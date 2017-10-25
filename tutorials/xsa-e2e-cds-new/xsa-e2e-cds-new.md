@@ -20,7 +20,7 @@ You will create two additional entities and a view to expose the data through a 
 
 [ACCORDION-BEGIN [Step 1: ](Create a new CDS artifact)]
 
-Open the existing Core Data Services file in Code Editor mode:
+Back in the development perspective, open the existing Core Data Services file in Code Editor mode:
 
 ![New CDS artifact](code.png)
 
@@ -78,7 +78,9 @@ As follows:
 
 ![New CDS artifact](code2.png)
 
-**Save** and **Build**
+**Save** and **Build** the database module.
+
+![New CDS artifact](build.png)
 
 [DONE]
 [ACCORDION-END]
