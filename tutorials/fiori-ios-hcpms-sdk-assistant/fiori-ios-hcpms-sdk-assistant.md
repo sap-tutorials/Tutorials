@@ -33,7 +33,7 @@ The SAP Cloud Platform SDK for iOS Assistant ("SDK Assistant") is a macOS applic
 
 This step provides simplified steps to configure the SAP Cloud Platform SDK for iOS Assistant application using the SAP Cloud Platform mobile service for development and operations cockpit.
 
-Log on to SAP Cloud Platform mobile service for development and operations at `https://hcpms-<your_user_id>trial.hanatrial.ondemand.com/` and click the **Important Links** tab in the lower left bottom. The **Important Links** section opens:
+Log on to SAP Cloud Platform mobile service for development and operations at `https://hcpms-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/` and click the **Important Links** tab in the lower left bottom. The **Important Links** section opens:
 
 ![Important Links](fiori-ios-hcpms-sdk-assistant-17.png)
 
