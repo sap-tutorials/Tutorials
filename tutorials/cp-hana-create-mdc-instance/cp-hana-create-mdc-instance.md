@@ -3,7 +3,7 @@ title: Setup your SAP HANA MDC instance
 description: Learn how to setup your SAP HANA MDC instance on the SAP Cloud Platform as a "Database As A Service" (DBaaS) persistence layer.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform  ]
 ---
 
 This instance will be used as your persistence service that you can use with your application or services.
