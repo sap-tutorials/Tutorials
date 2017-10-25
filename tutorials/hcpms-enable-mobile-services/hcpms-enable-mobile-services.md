@@ -38,7 +38,3 @@ If Development & Operations is not enabled, click on the blue **Enable** button 
 
 
 [ACCORDION-END]
-
-
-## Next Steps
-- [Create an app in SAP Cloud Platform mobile services](http://www.sap.com/developer/tutorials/hcpms-create-hybrid-app.html)
