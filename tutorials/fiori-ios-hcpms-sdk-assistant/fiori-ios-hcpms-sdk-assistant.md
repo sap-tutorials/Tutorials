@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
  - **Proficiency:** Intermediate
  - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
  - **SAP Cloud Platform SDK for iOS:** Version 2.0
- - **Tutorials:** [Configure a back-end connection (Sample OData service)](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sample-odata-service.html)
+ - **Tutorials:** [Create an application definition)](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-application-setup.html)
 
 ## Next Steps
  - [Push Notifications](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-push-notifications.html)
@@ -33,7 +33,7 @@ The SAP Cloud Platform SDK for iOS Assistant ("SDK Assistant") is a macOS applic
 
 This step provides simplified steps to configure the SAP Cloud Platform SDK for iOS Assistant application using the SAP Cloud Platform mobile service for development and operations cockpit.
 
-Log on to SAP Cloud Platform mobile service for development and operations at `https://hcpms-<your_user_id>trial.hanatrial.ondemand.com/` and click the **Important Links** tab in the lower left bottom. The **Important Links** section opens:
+Log on to SAP Cloud Platform mobile service for development and operations at `https://hcpms-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/` and click the **Important Links** tab in the lower left bottom. The **Important Links** section opens:
 
 ![Important Links](fiori-ios-hcpms-sdk-assistant-17.png)
 
