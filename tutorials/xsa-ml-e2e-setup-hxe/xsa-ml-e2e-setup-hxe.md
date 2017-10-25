@@ -1,9 +1,9 @@
 ---
 title: Setup your SAP HANA, express edition, instance
-description: Setup your SAP HANA, express edition, instance with XS Advanced applications 
+description: Setup your SAP HANA, express edition, instance with XS Advanced applications
 auto_validation: true
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>machine-learning, products>sap-hana, products>sap-hana\,-express-edition  ]
+tags: [  tutorial>beginner, topic>machine-learning, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites
@@ -52,7 +52,7 @@ You will need your session open in a browser for later steps. To complete the fo
 
 ![Open GitHub](GitHub2.png)
 
-Which tabs do you see next to **Overview**?
+Which tabs do you see next to **Overview** (more than one option applies)?
 ![Open GitHub](git.png)
 
 Choose the right tabs and click on **Validate**
@@ -150,22 +150,24 @@ Enter `ping hxehost`. Copy the first **three lines from the response** into the 
 
 Once the database and XS Advanced Applications have started, you will see the following success message:
 
-![Success msg](end.png)
+![Success msg](finished.png)
 
 Use the following command in the console to get the URL for Web IDE. You will be prompted for your password. This is the password you chose for the user `XSA_DEV`.
 
-```bash
+```
 xs login -u XSA_DEV -s SAP
 ```
 ![XS Login](8.png)
 
 Enter the following commands:
 
-```bash
+```
 xs apps | grep webide
 ```
 
 You will see the status of the Web IDE application. Once it is shown as **`1/1`** it means that you can start using it.
+
+>Repeat the command until you see **`1/1`**
 
 ![Web IDE](started.png)
 

@@ -64,18 +64,28 @@ service {
 
 **Save and Build** the `js` module.
 
+![Build js module](10.png)
+
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add the dependency between the modules)]
 
-You have a database module and now you also have a Node.js module. These modules could technically be executed separately, even deployed separately. However, the Node.js module needs data from the database module. You need to add this dependency in the file that keeps them all together, the `mta.yaml`:
+You have a database module and now you also have a Node.js module. These modules could technically be executed separately, even deployed separately. However, the Node.js module needs data from the database module. You need to add this dependency in the file that keeps them all together, the `mta.yaml`.
 
-![Edit yaml](7.png)
+Double-click on the file to open it:
+
+![edit yaml file](11.png)
+
+Make sure you are on the **MTA Editor** and on the `js` module:
+
+![edit yaml file](12.png)
 
 Add both the HDI container and database modules to the `Requires` section of the `js` modules.
 
-**Save** the file.
+![Edit yaml](7.png)
+
+**Save** the MTA file.
 
 [DONE]
 [ACCORDION-END]
@@ -83,7 +93,13 @@ Add both the HDI container and database modules to the `Requires` section of the
 
 [ACCORDION-BEGIN [Step 4: ](Test the service)]
 
-**Run** the `js` module. Click on the URL to open a new tab:
+**Run** the `js` module by right-clicking on the folder and selecting **Run as Node.js application**
+
+![Run the js module](13.png)
+
+>Note: This may take a couple of minutes as the module will be built first.
+
+Click on the URL to open a new tab:
 
 ![Run the js module](8.png)
 

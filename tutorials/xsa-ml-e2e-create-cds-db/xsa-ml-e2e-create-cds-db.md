@@ -1,5 +1,5 @@
 ---
-title: Create Database objects and CDS views
+title: Create a Database Module
 description: Create database objects and CDS views
 auto_validation: true
 primary_tag: products>sap-hana
@@ -37,7 +37,7 @@ Remove the namespace, add a name to the schema, click on **Build module after cr
 
 [ACCORDION-BEGIN [Step 2: ](Create a CDS artifact)]
 
-You will now use Core Data Services to create a table. The design-time artifact will be an Entity that will then be combined with the SHINE model.
+You will now use Core Data Services to create a table. You will then use other entities to combine the data.
 
 Begin by creating a folder under `db->src`:
 
@@ -53,39 +53,34 @@ Create a CDS artifact in your new folder
 
 Call it `PO`
 
-![create folder](7.png)
+![create folder](7_1.png)
 
-The graphical editor will open automatically. **Close it** so you can create a context first.
+The Web IDE will try to open a graphical editor, **close it**:
 
-![Close editor](close.png)
+![create folder](close.png)
 
-[DONE]
-[ACCORDION-END]
+Open the Code Editor by right-clicking on `PO.hdbcds`:
 
+![create folder](8.png)
 
-[ACCORDION-BEGIN [Step 3: ](Create a Context)]
+Add the following code to the editor:
 
-Open the file using the **Code Editor** by right-clicking on it:
+```sql
 
-![create CDS](8.png)
-
-Enter the following code into it:
-
-```json
-context PO   {
+context PO{
 
 };
 
 ```
 
-**Save** and call the graphical editor:
-
-![create CDS](9.png)
+**Save** and close this editor.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create your Entities using the CDS graphical editor)]
+
+
+[ACCORDION-BEGIN [Step 3: ](Create your Entities using the CDS graphical editor)]
 
 You can now explore the graphical Core Data Services editor briefly.
 
@@ -105,16 +100,20 @@ Create two fields as follows:
 
 ![create CDS fields](13.png)
 
-**Save** and close the Graphical editor. Open the **Text Editor** again.
+**Save** and close the Graphical editor.
+
+Open the **Text Editor** again by right-clicking on `PO.hdbcds`
+
+![see text editor](open.png)
+
+Copy the definition of the entity (blurred out below) and click on **Validate**:
 
 ![see text editor](14.png)
-
-Copy the definition of the entity and click on **Validate**:
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Load data into your entity)]
+[ACCORDION-BEGIN [Step 4: ](Load data into your entity)]
 
 You will now add data into your new entity. **Build** the db module first:
 
@@ -137,7 +136,12 @@ R, Rejected
 
 ![create csv](17.png)
 
-Now you need to add a new file to indicate how that file loads your new table. Create a file called `load.hdbtabledata` with the following contents on it:
+Now you need to add a new file to indicate how that file loads your new table. Create a file called `load.hdbtabledata`
+
+![create csv](new_file.png)
+
+
+Add the following contents to it:
 
 ```json
 {

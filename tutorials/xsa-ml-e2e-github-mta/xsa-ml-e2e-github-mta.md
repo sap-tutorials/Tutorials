@@ -61,7 +61,7 @@ Enter your GitHub username and password if prompted:
 
 You should see a single project in your workspace:
 
-![Project in workspace](11.png)
+![Project in workspace](cloned.png)
 
 [DONE]
 [ACCORDION-END]
