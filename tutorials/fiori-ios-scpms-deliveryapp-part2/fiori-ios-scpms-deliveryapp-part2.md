@@ -2,8 +2,8 @@
 title: Create an Xcode project with SDK Assistant
 description: Create an Xcode project with SDK Assistant
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
+primary_tag: operating-system>ios
+tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 
 ## Prerequisites  

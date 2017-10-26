@@ -2,7 +2,7 @@
 title: Implement the Fiori Timeline cell control
 description: Replace the default table cell with an SAP Fiori Timeline cell
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
+primary_tag: operating-system>ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 
