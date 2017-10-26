@@ -53,7 +53,7 @@ Create a CDS artifact in your new folder
 
 Call it `PO`
 
-![create folder](7_1.png)
+![create folder](7.png)
 
 The Web IDE will try to open a graphical editor, **close it**:
 
