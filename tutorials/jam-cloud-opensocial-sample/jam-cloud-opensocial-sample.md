@@ -1,6 +1,6 @@
 ---
-title: Use Open Social in a SAP Cloud Platform HTML5 application to integrate Lumira
-description: Build and run a Lumira Open Social Gadget in a SAP Cloud Platform HTML5 application
+title: Use Open Social in a SAP Cloud Platform HTML5 application to integrate YouTube
+description: Build and run the YouTube OpenSocial URL Gadget in a SAP Cloud Platform HTML5 application
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
 ---
