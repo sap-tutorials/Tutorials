@@ -397,4 +397,4 @@ You can also change the number at the end of the URL, and a new counter will be 
 ---
 
 ## Next Steps
-- [Tutorial #5 in the hands-on workshop](https://www-qa.sap.com/developer/tutorials/xom-cf-5.html)
+- [Tutorial #5 in the hands-on workshop](https://www.sap.com/developer/tutorials/xom-cf-5.html)

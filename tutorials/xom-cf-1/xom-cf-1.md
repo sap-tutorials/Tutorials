@@ -214,4 +214,4 @@ When prompted, enter your username and password.  Once you are logged in, you sh
 
 
 ## Next Steps
-- [Tutorial #2 in the hands-on workshop](https://www-qa.sap.com/developer/tutorials/xom-cf-2.html)
+- [Tutorial #2 in the hands-on workshop](https://www.sap.com/developer/tutorials/xom-cf-2.html)

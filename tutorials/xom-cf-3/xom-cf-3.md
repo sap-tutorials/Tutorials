@@ -193,4 +193,4 @@ The browser should respond with `Square of 11 is: 121.0`.  Try different amounts
 ---
 
 ## Next Steps
-- [Tutorial #4 in the hands-on workshop](https://www-qa.sap.com/developer/tutorials/xom-cf-4.html)
+- [Tutorial #4 in the hands-on workshop](https://www.sap.com/developer/tutorials/xom-cf-4.html)

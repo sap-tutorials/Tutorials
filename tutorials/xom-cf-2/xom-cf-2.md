@@ -121,4 +121,4 @@ In this listing, you will see a URL for the application.  Open the Chrome browse
 ---
 
 ## Next Steps
-- [Tutorial #3 in the hands-on workshop](https://www-qa.sap.com/developer/tutorials/xom-cf-3.html)
+- [Tutorial #3 in the hands-on workshop](https://www.sap.com/developer/tutorials/xom-cf-3.html)

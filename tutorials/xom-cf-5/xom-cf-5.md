@@ -151,4 +151,4 @@ You should see the following screen appear:
 ---
 
 ## Next Steps
-- [Tutorial #6 in the hands-on workshop](https://www-qa.sap.com/developer/tutorials/xom-cf-6.html)
+- [Tutorial #6 in the hands-on workshop](https://www.sap.com/developer/tutorials/xom-cf-6.html)
