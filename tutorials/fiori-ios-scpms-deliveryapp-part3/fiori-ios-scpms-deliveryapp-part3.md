@@ -2,7 +2,7 @@
 title: Implement a new Table View Controller
 description: Implement a new Table View Controller to show the related delivery statuses for each ordered package
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
+primary_tag: operating-system>ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 

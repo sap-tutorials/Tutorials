@@ -2,7 +2,7 @@
 title: Using the SAP Fiori for iOS Mentor app
 description: Familiarize yourself with the SDK's companion app 'SAP Fiori for iOS Mentor'
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
+primary_tag: operating-system>ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 

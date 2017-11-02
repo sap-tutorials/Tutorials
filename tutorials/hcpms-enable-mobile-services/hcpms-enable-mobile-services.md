@@ -1,6 +1,7 @@
 ---
 title: Enable SAP Cloud Platform mobile services for development and operations
 description: Enable and configure the mobile services for development and operations in SAP Cloud Platform
+auto_validation: true
 primary_tag: topic>mobile
 tags: [products>sap-cloud-platform, topic>cloud, topic>mobile, tutorial>intermediate ]
 ---
