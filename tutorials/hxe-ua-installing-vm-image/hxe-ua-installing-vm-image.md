@@ -152,7 +152,7 @@ Use the Download Manager (GUI mode) to download a server-only virtual machine pa
 
 2. In Download Manager, in the **Image** pull-down, select **Virtual Machine**.
 
-    ![Download Manager](VM_Download_Manager_SPS02_PL02.png)    
+    ![Download Manager](VM_Download_Manager_SPS02_PL0201.png)    
 
 3. Specify a save directory. Click **Browse** and select a directory where your downloads will be saved.
 
