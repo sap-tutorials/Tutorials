@@ -1,6 +1,6 @@
 ---
-title: Configure the WebIDE SAP Jam Collaboration Destination on SAP Cloud Platform
-description: Demonstrates how to configure the WebIDE SAP Jam Collaboration Destination on SAP Cloud Platform
+title: Configure the SAP Web IDE Destination for SAP Jam Collaboration on SAP Cloud Platform
+description: Demonstrates how to configure the SAP Web IDE Destination for SAP Jam Collaboration on SAP Cloud Platform
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
 ---
