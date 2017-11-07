@@ -6,18 +6,18 @@ tags: [  tutorial>intermediate, topic>cloud, topic>security, products>sap-cloud-
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Sign up for an account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
-- You should also review the [system requirements for the cloud connector](https://help.hana.ondemand.com/help/frameset.htm?e23f776e4d594fdbaeeb1196d47bbcc0)
+- **Tutorials:** [Sign up for an account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+- You should also review the [system requirements for the cloud connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e23f776e4d594fdbaeeb1196d47bbcc0.html)
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
 You will learn how to setup and configure the SAP Cloud Platform cloud connector (briefly, cloud connector) which is the recommended way to connect applications running on SAP Cloud Platform with on-premise systems.
 
-The cloud connector is a software component, which runs as an on-premise agent in the on-premise network and acts as a reverse invoke proxy between the customer network and SAP Cloud Platform. For more details on the cloud connector, please refer to the [online documentation](https://help.hana.ondemand.com/help/frameset.htm?e6c7616abb5710148cfcf3e75d96d596.html).
+The cloud connector is a software component, which runs as an on-premise agent in the on-premise network and acts as a reverse invoke proxy between the customer network and SAP Cloud Platform. For more details on the cloud connector, please refer to the [online documentation](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html).
 
 
 ### Time to Complete
@@ -27,20 +27,11 @@ The cloud connector is a software component, which runs as an on-premise agent i
 
 [ACCORDION-BEGIN [Step 1: ](Download the cloud connector)]
 
-First, you need to download the cloud connector from the SAP Cloud Platform tools page:
+Before you begin, please check the [Prerequisites](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e23f776e4d594fdbaeeb1196d47bbcc0.html) section in the cloud connector documentation, to see if your hardware and software is capable of running the cloud connector.
 
-<https://tools.hana.ondemand.com/#cloud>
+After verifying the compatibility, you need to download the cloud connector binaries for your operating system from the SAP Cloud Platform tools page: https://tools.hana.ondemand.com/#cloud
 
-The cloud connector is supported for following operation systems, all with `x86_64` architecture:
-
-- SUSE Linux Enterprise Server 11
-- Redhat Enterprise Linux 6
-- Windows 7
-- Windows Server 2008 R2
-- Mac OS X 10.7 (Lion)
-- Mac OS X 10.8 (Mountain Lion)
-
-Chose the operating system of your choice and download the SCC to the machine you like to install it.
+For Windows and Linux there is a normal (installer) and a portable version available. Please check the documentation, if you're not familiar with the differences of the two version or need help making your decision: https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/57ae3d62f63440f7952e57bfcef948d3.html
 
 > This tutorial uses Windows as operating system and thus focus on the usage of the Windows MSI installer of the cloud connector. If you want to install the cloud connector on one of the other supported operating systems, please refer to the documentation how to install it on other operating systems.
 
@@ -70,36 +61,32 @@ Thereafter you're requested to define the administration port of the cloud conne
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Starting and stopping the cloud connector)]
+[ACCORDION-BEGIN [Step 4: ](Finishing the installation)]
 
-Decide whether the cloud connector shall be started after the installation has finished. In case this is desired by you, leave the check box marked, as we do it in this tutorial. As the cloud connector is registered and started as a Windows Service, you can start it later within the **`Administrative Tools/Services`** administration tool in Windows (the service is named SAP Cloud Connector). If you decide to not start it immediately, you can also start or stop it in the same tool whenever that is needed.
+Decide whether the cloud connector shall be started after the installation has finished. In case this is desired by you, leave the check box marked, as we do it in this tutorial and press **Next**. You can also start and stop the cloud connector at an arbitrary time, how to achieve this is described in the next step of this tutorial.
 
 ![select port](con100-5-installation_start_after_setup.png)
 
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Confirm installation)]
-
-Confirm that you really want to install the cloud connector.  As soon as the installation has finished successfully, you can press the Finish button to complete the installation.
+Confirm that you really want to install the cloud connector.  As soon as the installation has finished successfully, you can press the **Finish** button to complete the installation.
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check cloud connector status)]
+[ACCORDION-BEGIN [Step 5: ](Check cloud connector status)]
+As the cloud connector is registered and started as a Windows Service, you can check its status within the **Administrative Tools/Services** administration tool in Windows as shown in the screenshot. Look for the service named **SAP Cloud Connector** and make sure it's running. You can also start, restart or stop the cloud connector service in the same tool whenever that is needed.
 
-Once the installation has completed, the cloud connector should be running. You can validate this in the Windows Services viewer (start `services.msc` to bring up the Microsoft Services UI) as shown in this screenshot.
+> Pro-Tip: A quick way to lunch the Services administration tool is pressing the Windows-Key and R, which will open the run dialog, and entering `services.msc`.
 
 ![select port](con100-7-installer_succeeded.png)
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Verify connection)]
+[ACCORDION-BEGIN [Step 6: ](Verify connection)]
 
-To establish the connection to your SAP Cloud Platform developer account, log on to the cloud connector administration UI by invoking the URL <https://localhost:8443> in a Web browser.
+To establish the connection to your SAP Cloud Platform developer account, log on to the cloud connector administration UI by invoking the URL <https://localhost:8443> (you might have to substitute the port by the one you selected during the installation) in a Web browser.
 
-Your browser will warn you that an untrusted certificate is used for the HTTPS connection. This is the case as the cloud connector is delivered with a self-signed `X.509` certificate. The documentation on how to configure a certificate that is trusted by your browser can be found in the Connectivity Service [online documentation](https://help.hana.ondemand.com/help/frameset.htm?bcd5e113c9164ae8a443325692cd5b12.html). In this tutorial, we accept the untrusted certificate. The cloud connector logon screen then is shown in the browser. As user and password, use the pre-defined credentials:
+Your browser will warn you that an untrusted certificate is used for the HTTPS connection. This is the case as the cloud connector is delivered with a self-signed `X.509` certificate. The documentation on how to configure a certificate that is trusted by your browser can be found in the Connectivity Service [online documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/bcd5e113c9164ae8a443325692cd5b12.html). In this tutorial, we accept the untrusted certificate. The cloud connector logon screen then is shown in the browser. As user and password, use the pre-defined credentials:
 
 Field          | Value
 :------------- | :-------------
@@ -111,7 +98,7 @@ Password       | `manage`
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Initial Configuration)]
+[ACCORDION-BEGIN [Step 7: ](Initial Configuration)]
 
 When logging in the first time, the cloud connector asks for two things:
 
@@ -123,7 +110,7 @@ When logging in the first time, the cloud connector asks for two things:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Define Account)]
+[ACCORDION-BEGIN [Step 8: ](Define Account)]
 
 To connect to cloud connector to your SAP CP account, select `hanatrial.ondemand.com` as Landscape Host, and specify your free developer account as Account Name (e.g. `p12345678trial`).
 
@@ -134,7 +121,7 @@ For the User Name and Password, use your SAP Cloud Platform account user (e.g. `
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Check connection state)]
+[ACCORDION-BEGIN [Step 9: ](Check connection state)]
 
 The main page of the cloud connector administration UI will appear. If the connection succeeded, you will see the **Status** with a yellow indicator as shown in the screenshot below. This indicates that you have a persistent SSL connection to your cloud account and are ready to use this connection in your cloud applications.
 Click on the little arrow highlighted in the screenshot below to navigate into the account details.
@@ -144,7 +131,7 @@ Click on the little arrow highlighted in the screenshot below to navigate into t
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Configure on-premise resources)]
+[ACCORDION-BEGIN [Step 10: ](Configure on-premise resources)]
 
 Now that you have connected the cloud connector to your cloud account, you still need to configure the on-premise resources that will be made accessible to the applications running in your cloud account. By default, **none** of the on-premise systems and resources are available after the installation of the cloud connector.
 
@@ -159,7 +146,7 @@ To add the on-premise systems click the **+** button in the Mapping Virtual to I
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Add system mapping)]
+[ACCORDION-BEGIN [Step 11: ](Add system mapping)]
 
 In the **Add System Mapping** dialog box, you can configure a physical on-premise system and map it to a virtual host and port. The virtual host and port are the names which must be used in the cloud applications in order to address the respective system. Besides this, you need to configure the protocol that shall be used to access the related system. Currently, HTTP(S) and RFC are supported.
 
@@ -174,7 +161,7 @@ In the **Add System Mapping** dialog box, you can configure a physical on-premis
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Expose resources to SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step 12: ](Expose resources to SAP Cloud Platform)]
 
 After a system has been added, you can configure the resources on that system to be exposed to SAP Cloud Platform. To add a resource, select the system in the upper table, and then click the **+** button in the resources table on the lower part of the view.
 
@@ -182,24 +169,24 @@ For HTTP resources, the dialog box displayed will look like the screenshot below
 
 ![add resource](con100-17-scc_add_resource.png)
 
-For more information on how to configure HTTP or RFC resources, see [Configure HTTP resource in Cloud Connector](https://help.hana.ondemand.com/help/frameset.htm?e7d4927dbb571014af7ef6ebd6cc3511.html) and [Configure RFC resource in Cloud Connector](https://help.hana.ondemand.com/help/frameset.htm?ca5868997e48468395cf0ca4882f5783.html).
+For more information on how to configure HTTP or RFC resources, see [Configure HTTP resource in Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e7d4927dbb571014af7ef6ebd6cc3511.html) and [Configure RFC resource in Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/ca5868997e48468395cf0ca4882f5783.html).
 
 
 [ACCORDION-END]
 
 ### Notes
-This tutorial has described the minimum steps required to install the cloud connector. For productive use of the cloud connector, you should also follow the [recommendations regarding secure setup](https://help.hana.ondemand.com/help/frameset.htm?e7ea82a4bb571014a4ceb61cb7e3d31f.html) in the online documentation, and read the [cloud connector operator's guide](https://help.sap.com/viewer/1a7487b1d08846ccba7403ead4195027/Cloud/en-US/2dded649c62c4fd8a65933f497042f14.html).
+This tutorial has described the minimum steps required to install the cloud connector. For productive use of the cloud connector, you should also follow the [recommendations regarding secure setup](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e7ea82a4bb571014a4ceb61cb7e3d31f.html) in the online documentation, and read the [cloud connector operator's guide](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/2dded649c62c4fd8a65933f497042f14.html).
 
 
 ### Optional
 
 Review some related materials online:
 
-- [SAP Cloud Platform Cloud Connector](https://help.hana.ondemand.com/help/frameset.htm?e6c7616abb5710148cfcf3e75d96d596.html)
-- [SAP Cloud Platform Cloud Connector installation](https://help.hana.ondemand.com/help/frameset.htm?57ae3d62f63440f7952e57bfcef948d3.html)
-- [SAP Cloud Platform Cloud Connector operator's guide](https://help.sap.com/viewer/1a7487b1d08846ccba7403ead4195027/Cloud/en-US/2dded649c62c4fd8a65933f497042f14.html)
-- [Configure HTTP resource in Cloud Connector](https://help.hana.ondemand.com/help/frameset.htm?e7d4927dbb571014af7ef6ebd6cc3511.html)
-- [Configure RFC resource in Cloud Connector](https://help.hana.ondemand.com/help/frameset.htm?ca5868997e48468395cf0ca4882f5783.html)
+- [SAP Cloud Platform Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html)
+- [SAP Cloud Platform Cloud Connector installation](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/57ae3d62f63440f7952e57bfcef948d3.html)
+- [SAP Cloud Platform Cloud Connector operator's guide](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/2dded649c62c4fd8a65933f497042f14.html)
+- [Configure HTTP resource in Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e7d4927dbb571014af7ef6ebd6cc3511.html)
+- [Configure RFC resource in Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/ca5868997e48468395cf0ca4882f5783.html)
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
