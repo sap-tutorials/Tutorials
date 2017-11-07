@@ -98,7 +98,7 @@ This tutorial will also help you identify your system details (server host, port
 
 [ACCORDION-BEGIN [Step 4: ](Create a persistence configuration)]
 
-Create a File named **`persistence.xml`** in **`tutorial/src/main/resources/META_INF`** using the ***File -> New -> File*** menu bar.
+Create a file named **`persistence.xml`** in **`tutorial/src/main/resources/META_INF`** using the ***File -> New -> File*** menu bar.
 
 ![Create Eclipse source folder](create-persistence.png)
 
@@ -125,6 +125,7 @@ Paste the following content into the **`persistence.xml`** file:
             <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
             <property name="hibernate.bytecode.provider" value="javassist" />
             <property name="hibernate.bytecode.use_reflection_optimizer" value="true" />
+          	<property name="hibernate.jdbc.batch_size" value="10000" />          
         </properties>
     </persistence-unit>
 </persistence>
@@ -142,68 +143,75 @@ Save the `persistence.xml` file.
 
 [ACCORDION-BEGIN [Step 5: ](Test your setup)]
 
-Edit the **`App.java`** located in **`tutorial/src/main/java/com.sap.hana.hibernate.tutorial`**.
-
-Paste the following content into the **`App.java`** file:
+Create a new **`TestSetup`** Java class in a package named **`com.sap.hana.hibernate.tutorial.setup`** (either using a right-click on the project and choose ***New -> Class*** or use the ***File -> New -> Class*** menu bar), then paste the following content:
 
 ```java
-package com.sap.hana.hibernate.tutorial;
+package com.sap.hana.hibernate.tutorial.setup;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-public class App {
+public class TestSetup {
 
 	public static void main(String[] args) {
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory( "Tutorial" );
-		EntityManager entityManager = entityManagerFactory.createEntityManager();
-		Query nativeQuery = entityManager.createNativeQuery( "SELECT * FROM DUMMY" );
-		String result = String.valueOf( nativeQuery.getSingleResult() );
-		if ( "X".equals( result ) ) {
-			System.out.println( "SUCCESS!" );
+		try {
+      EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Tutorial");
+  		EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+      Query nativeQuery = entityManager.createNativeQuery("SELECT * FROM DUMMY");
+			String result = String.valueOf(nativeQuery.getSingleResult());
+			if ("X".equals(result)) {
+				System.out.println("SUCCESS!");
+			} else {
+				throw new RuntimeException("Wrong result!");
+			}
+			entityManager.clear();
+			entityManager.close();
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		else {
-			throw new RuntimeException( "Wrong result!" );
-		}
+		System.exit(0);
 	}
 }
 ```
 
-Save the **`App.java`** file.
+Save the class file.
 
-Run the application by right-clicking the `App.java` file and choosing ***Run As -> Java Application*** or click on the ![Run](run.png) icon.
+Run the application by right-clicking the class file and choosing ***Run As -> Java Application*** or click on the ![Run](run.png) icon.
 
 You should see the following output log in your console:
 
 ```
-Okt 30, 2017 11:54:13 AM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
+nov. 07, 2017 8:30:29 AM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
 INFO: HHH000204: Processing PersistenceUnitInfo [
 	name: Tutorial
 	...]
-Okt 30, 2017 11:54:13 AM org.hibernate.Version logVersion
+nov. 07, 2017 8:30:29 AM org.hibernate.Version logVersion
 INFO: HHH000412: Hibernate Core {5.2.12.Final}
-Okt 30, 2017 11:54:13 AM org.hibernate.cfg.Environment <clinit>
+nov. 07, 2017 8:30:29 AM org.hibernate.cfg.Environment <clinit>
 INFO: HHH000206: hibernate.properties not found
-Okt 30, 2017 11:54:13 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
+nov. 07, 2017 8:30:29 AM org.hibernate.spatial.integration.SpatialService <init>
+INFO: HHH80000001: hibernate-spatial integration enabled : true
+nov. 07, 2017 8:30:29 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
 INFO: HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-Okt 30, 2017 11:54:13 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+nov. 07, 2017 8:30:29 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
 WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
-Okt 30, 2017 11:54:13 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001005: using driver [com.sap.db.jdbc.Driver] at URL [jdbc:sap://localhost:30015]
-Okt 30, 2017 11:54:13 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001001: Connection properties: {user=HIBERNATE_TEST, password=****}
-Okt 30, 2017 11:54:13 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+nov. 07, 2017 8:30:29 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001005: using driver [com.sap.db.jdbc.Driver] at URL [jdbc:sap://rhhxehost:39015]
+nov. 07, 2017 8:30:29 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
+INFO: HHH10001001: Connection properties: {user=SYSTEM, password=****}
+nov. 07, 2017 8:30:29 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
 INFO: HHH10001003: Autocommit mode: false
-Okt 30, 2017 11:54:13 AM org.hibernate.engine.jdbc.connections.internal.PooledConnections <init>
+nov. 07, 2017 8:30:29 AM org.hibernate.engine.jdbc.connections.internal.PooledConnections <init>
 INFO: HHH000115: Hibernate connection pool size: 5 (min=1)
-Okt 30, 2017 11:54:13 AM org.hibernate.dialect.Dialect <init>
+nov. 07, 2017 8:30:29 AM org.hibernate.dialect.Dialect <init>
 INFO: HHH000400: Using dialect: org.hibernate.dialect.HANAColumnStoreDialect
-Okt 30, 2017 11:54:14 AM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
+nov. 07, 2017 8:30:29 AM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
 INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
-Okt 30, 2017 11:54:14 AM org.hibernate.tool.schema.internal.SchemaCreatorImpl applyImportSources
-INFO: HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@5038d0b5'
+nov. 07, 2017 8:30:30 AM org.hibernate.tool.schema.internal.SchemaCreatorImpl applyImportSources
+INFO: HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@14bdbc74'
 Hibernate:
     SELECT
         *

@@ -83,7 +83,7 @@ Open the **`persistence.xml`** file located at **`src/main/resources/META-INF`**
     <persistence-unit name="Tutorial">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
-          <!-- switchin to spatial dialect-->
+          <!-- switch to spatial dialect-->
           <property name="hibernate.dialect" value="org.hibernate.spatial.dialect.hana.HANASpatialDialect"/>
           <property name="hibernate.connection.driver_class" value="com.sap.db.jdbc.Driver"/>
           <!-- update the <server host> and <port>-->
@@ -99,8 +99,7 @@ Open the **`persistence.xml`** file located at **`src/main/resources/META-INF`**
           <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
           <property name="hibernate.bytecode.provider" value="javassist" />
           <property name="hibernate.bytecode.use_reflection_optimizer" value="true" />
-          <property name="hibernate.implicit_naming_strategy" value="component-path" />
-          <property name="hibernate.jdbc.batch_size" value="1000" />
+          <property name="hibernate.jdbc.batch_size" value="10000" />
         </properties>
     </persistence-unit>
 </persistence>
@@ -120,7 +119,7 @@ Save the `persistence.xml` file.
 
 Download one of the GDELT zipped CSV file, for example `20171008.export.CSV.zip`, from http://data.gdeltproject.org/events/index.html.
 
-Save the file locally, then extract the contents of the zip file into the `src/main/resources`.
+Save the file locally, then extract the contents of the zip file into the `src/main/resources` project folder.
 
 > ***Hint:*** Copy-Paste works from Windows Explorer.
 
@@ -128,27 +127,18 @@ Save the file locally, then extract the contents of the zip file into the `src/m
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create the Hibernate Entities)]
+[ACCORDION-BEGIN [Step 4: ](Define the model)]
 
 The GDELT data can be modelled using four entities:
 
- - event
- - actor
- - action
- - geography
+ - Event
+ - Actor
+ - Action
+ - Geography
 
 The entities need to define the attributes listed in the [GDELT file format documentation](http://data.gdeltproject.org/documentation/GDELT-Data_Format_Codebook.pdf).
 
-As defined by the model four Java classes representing the entities must be created:
-
-  - Event
-  - Actor
-  - Action
-  - Geography
-
-For each of the three entities listed above, create the corresponding Java class and in the next steps you will add the relevant piece of code.
-
-The create a new Java class, right-click on the project and choose ***New -> Class*** or use the ***File -> New -> Class*** menu bar, enter the class name, then click on **Finish**.
+Therefore, we will need to create the Java classes representing the entities during the following steps.
 
 [ACCORDION-END]
 
@@ -156,10 +146,10 @@ The create a new Java class, right-click on the project and choose ***New -> Cla
 
 This entity defines the attributes listed in the documentation and uses the code as the identifier.
 
-Open **Actor** Java class located in `src/main/java/Actor.java`, and replace its current content by the following then save the file:
+Create a Java class named **`Actor`** in a package named **`com.sap.hana.hibernate.tutorial.spatial`** (either using a right-click on the project and choose ***New -> Class*** or use the ***File -> New -> Class*** menu bar), then paste the following content:
 
 ```java
-package com.sap.hana.hibernate.tutorial;
+package com.sap.hana.hibernate.tutorial.spatial;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -178,69 +168,12 @@ public class Actor {
 	private String type1Code;
 	private String type2Code;
 	private String type3Code;
-
-	public String getCode() {
-		return this.code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
-	public String getName() {
-		return this.name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public String getCountryCode() {
-		return this.countryCode;
-	}
-	public void setCountryCode(String countryCode) {
-		this.countryCode = countryCode;
-	}
-	public String getKnownGroupCode() {
-		return this.knownGroupCode;
-	}
-	public void setKnownGroupCode(String knownGroupCode) {
-		this.knownGroupCode = knownGroupCode;
-	}
-	public String getEthnicCode() {
-		return this.ethnicCode;
-	}
-	public void setEthnicCode(String ethnicCode) {
-		this.ethnicCode = ethnicCode;
-	}
-	public String getReligion1Code() {
-		return this.religion1Code;
-	}
-	public void setReligion1Code(String religion1Code) {
-		this.religion1Code = religion1Code;
-	}
-	public String getReligion2Code() {
-		return this.religion2Code;
-	}
-	public void setReligion2Code(String religion2Code) {
-		this.religion2Code = religion2Code;
-	}
-	public String getType1Code() {
-		return this.type1Code;
-	}
-	public void setType1Code(String type1Code) {
-		this.type1Code = type1Code;
-	}
-	public String getType2Code() {
-		return this.type2Code;
-	}
-	public void setType2Code(String type2Code) {
-		this.type2Code = type2Code;
-	}
-	public String getType3Code() {
-		return this.type3Code;
-	}
-	public void setType3Code(String type3Code) {
-		this.type3Code = type3Code;
-	}
 }
 ```
+
+Now, generate the ***Getters*** and ***Setters*** for all the attributes using the ***Source -> Generate Getters and Setters...*** menu bar or using a right click in the code, click on ***Select All***, and then click on ***Finish***.
+
+Save the class file.
 
 [ACCORDION-END]
 
@@ -248,10 +181,10 @@ public class Actor {
 
 Like the actor class this class defines the attributes listed in the documentation and uses the code as the identifier.
 
-Open **Action** Java class located in `src/main/java/Action.java`, and replace its current content by the following then save the file:
+Create a Java class named **`Action`** in a package named **`com.sap.hana.hibernate.tutorial.spatial`** (either using a right-click on the project and choose ***New -> Class*** or use the ***File -> New -> Class*** menu bar), then paste the following content:
 
 ```java
-package com.sap.hana.hibernate.tutorial;
+package com.sap.hana.hibernate.tutorial.spatial;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -270,79 +203,23 @@ public class Action {
 	private int numSources;
 	private int numArticles;
 	private double avgTone;
-
-	public boolean isRootEvent() {
-		return this.rootEvent;
-	}
-	public void setRootEvent(boolean rootEvent) {
-		this.rootEvent = rootEvent;
-	}
-	public String getCode() {
-		return this.code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
-	public String getBaseCode() {
-		return this.baseCode;
-	}
-	public void setBaseCode(String baseCode) {
-		this.baseCode = baseCode;
-	}
-	public String getRootCode() {
-		return this.rootCode;
-	}
-	public void setRootCode(String rootCode) {
-		this.rootCode = rootCode;
-	}
-	public int getQuadClass() {
-		return this.quadClass;
-	}
-	public void setQuadClass(int quadClass) {
-		this.quadClass = quadClass;
-	}
-	public double getGoldsteinScale() {
-		return this.goldsteinScale;
-	}
-	public void setGoldsteinScale(double goldsteinScale) {
-		this.goldsteinScale = goldsteinScale;
-	}
-	public int getNumMentions() {
-		return this.numMentions;
-	}
-	public void setNumMentions(int numMentions) {
-		this.numMentions = numMentions;
-	}
-	public int getNumSources() {
-		return this.numSources;
-	}
-	public void setNumSources(int numSources) {
-		this.numSources = numSources;
-	}
-	public int getNumArticles() {
-		return this.numArticles;
-	}
-	public void setNumArticles(int numArticles) {
-		this.numArticles = numArticles;
-	}
-	public double getAvgTone() {
-		return this.avgTone;
-	}
-	public void setAvgTone(double avgTone) {
-		this.avgTone = avgTone;
-	}
 }
 ```
+
+Now, generate the ***Getters*** and ***Setters*** for all the attributes using the ***Source -> Generate Getters and Setters...*** menu bar or using a right click in the code, click on ***Select All***, and then click on ***Finish***.
+
+Save the class file.
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create the Geography Entity)]
 
 The geography entity is marked as an embeddable entity via the `@Embeddable` annotation. Because of this the geography entities will not be stored in a separate table. Instead they will be stored in the table of a parent entity, in this case the event entity.
 
-Open **Geography** Java class located in `src/main/java/Geography.java`, and replace its current content by the following then save the file:
+Create a Java class named **`Geography`** in a package named **`com.sap.hana.hibernate.tutorial.spatial`** (either using a right-click on the project and choose ***New -> Class*** or use the ***File -> New -> Class*** menu bar), then paste the following content:
 
 ```java
-package com.sap.hana.hibernate.tutorial;
+package com.sap.hana.hibernate.tutorial.spatial;
 
 import javax.persistence.Embeddable;
 
@@ -358,55 +235,21 @@ public class Geography {
 	private String adm1Code;
 	private Point<C2D> position;
 	private int featureId;
-
-	public int getType() {
-		return this.type;
-	}
-	public void setType(int type) {
-		this.type = type;
-	}
-	public String getFullName() {
-		return this.fullName;
-	}
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
-	}
-	public String getCountryCode() {
-		return this.countryCode;
-	}
-	public void setCountryCode(String countryCode) {
-		this.countryCode = countryCode;
-  }
-	public String getAdm1Code() {
-		return this.adm1Code;
-	}
-	public void setAdm1Code(String adm1Code) {
-		this.adm1Code = adm1Code;
-	}
-	public Point<C2D> getPosition() {
-		return this.position;
-	}
-	public void setPosition(Point<C2D> position) {
-		this.position = position;
-	}
-	public int getFeatureId() {
-		return this.featureId;
-	}
-	public void setFeatureId(int featureId) {
-		this.featureId = featureId;
-	}
 }
 ```
+Now, generate the ***Getters*** and ***Setters*** for all the attributes using the ***Source -> Generate Getters and Setters...*** menu bar or using a right click in the code, click on ***Select All***, and then click on ***Finish***.
+
+Save the class file.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create the Geography Entity)]
+[ACCORDION-BEGIN [Step 8: ](Create the Event Entity)]
 
 This class defines the event-level attributes listed in the documentation and contains associations to the other entities. It uses the global event ID as the identifier.
 
 The event-level attributes combined with the referenced entities describe one complete record of the GDELT data set.
 
-Open **Event** Java class located in `src/main/java/Event.java`, and replace its current content by the following then save the file:
+Create a Java class named **`Event`** in a package named **`com.sap.hana.hibernate.tutorial.spatial`** (either using a right-click on the project and choose ***New -> Class*** or use the ***File -> New -> Class*** menu bar), then paste the following content:
 
 ```java
 package com.sap.hana.hibernate.tutorial.spatial;
@@ -423,8 +266,8 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Event {
 
-	private static final SimpleDateFormat DAY_DATE_FORMAT = new SimpleDateFormat( "yyyyMMdd" );
-	private static final SimpleDateFormat MONTH_DATE_FORMAT = new SimpleDateFormat( "yyyyMM" );
+	private static final SimpleDateFormat DAY_DATE_FORMAT = new SimpleDateFormat("yyyyMMdd");
+	private static final SimpleDateFormat MONTH_DATE_FORMAT = new SimpleDateFormat("yyyyMM");
 
 	@Id
 	private int id;
@@ -438,166 +281,91 @@ public class Event {
 	private Actor actor2;
 	@ManyToOne
 	private Action action;
-	@Embedded
+  @Embedded
+	@AttributeOverrides(value = { @AttributeOverride(name = "type", column = @Column(name = "actor1Geo_type")),
+			@AttributeOverride(name = "fullName", column = @Column(name = "actor1Geo_fullName")),
+			@AttributeOverride(name = "countryCode", column = @Column(name = "actor1Geo_countryCode")),
+			@AttributeOverride(name = "adm1Code", column = @Column(name = "actor1Geo_adm1Code")),
+			@AttributeOverride(name = "position", column = @Column(name = "actor1Geo_position")),
+			@AttributeOverride(name = "featureId", column = @Column(name = "actor1Geo_featureId")) })
 	private Geography actor1Geo;
 	@Embedded
+	@AttributeOverrides(value = { @AttributeOverride(name = "type", column = @Column(name = "actor2Geo_type")),
+			@AttributeOverride(name = "fullName", column = @Column(name = "actor2Geo_fullName")),
+			@AttributeOverride(name = "countryCode", column = @Column(name = "actor2Geo_countryCode")),
+			@AttributeOverride(name = "adm1Code", column = @Column(name = "actor2Geo_adm1Code")),
+			@AttributeOverride(name = "position", column = @Column(name = "actor2Geo_position")),
+			@AttributeOverride(name = "featureId", column = @Column(name = "actor2Geo_featureId")) })
 	private Geography actor2Geo;
 	@Embedded
+	@AttributeOverrides(value = { @AttributeOverride(name = "type", column = @Column(name = "actionGeo_type")),
+			@AttributeOverride(name = "fullName", column = @Column(name = "actionGeo_fullName")),
+			@AttributeOverride(name = "countryCode", column = @Column(name = "actionGeo_countryCode")),
+			@AttributeOverride(name = "adm1Code", column = @Column(name = "actionGeo_adm1Code")),
+			@AttributeOverride(name = "position", column = @Column(name = "actionGeo_position")),
+			@AttributeOverride(name = "featureId", column = @Column(name = "actionGeo_featureId")) })
 	private Geography actionGeo;
 	private Date dateAdded;
 	private String sourceURL;
 
-	public int getId() {
-		return this.id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public Date getDay() {
-		return this.day;
-	}
-	public void setDay(Date day) {
-		this.day = day;
-	}
 	public void setDay(String day) {
 		try {
-			this.day = DAY_DATE_FORMAT.parse( day );
+			this.day = DAY_DATE_FORMAT.parse(day);
+		} catch (ParseException e) {
+			throw new IllegalArgumentException("Invalid day date: " + day, e);
 		}
-		catch (ParseException e) {
-			throw new IllegalArgumentException( "Invalid day date: " + day, e );
-		}
 	}
-	public Date getMonth() {
-		return this.month;
-	}
-	public void setMonth(Date month) {
-		this.month = month;
-	}
+
 	public void setMonth(String month) {
 		try {
-			this.month = MONTH_DATE_FORMAT.parse( month );
+			this.month = MONTH_DATE_FORMAT.parse(month);
+		} catch (ParseException e) {
+			throw new IllegalArgumentException("Invalid month date: " + month, e);
 		}
-		catch (ParseException e) {
-			throw new IllegalArgumentException( "Invalid month date: " + month, e );
-		}
-	}
-	public int getYear() {
-		return this.year;
-	}
-	public void setYear(int year) {
-		this.year = year;
-	}
-	public double getFractionDate() {
-		return this.fractionDate;
-	}
-	public void setFractionDate(double fractionDate) {
-		this.fractionDate = fractionDate;
-	}
-	public Actor getActor1() {
-		return this.actor1;
-	}
-	public void setActor1(Actor actor1) {
-		this.actor1 = actor1;
-	}
-	public Actor getActor2() {
-		return this.actor2;
-	}
-	public void setActor2(Actor actor2) {
-		this.actor2 = actor2;
-	}
-	public Action getAction() {
-		return this.action;
-	}
-	public void setAction(Action action) {
-		this.action = action;
-	}
-	public Geography getActor1Geo() {
-		return this.actor1Geo;
-	}
-	public void setActor1Geo(Geography actor1Geo) {
-		this.actor1Geo = actor1Geo;
-	}
-	public Geography getActor2Geo() {
-		return this.actor2Geo;
-	}
-	public void setActor2Geo(Geography actor2Geo) {
-		this.actor2Geo = actor2Geo;
-	}
-	public Geography getActionGeo() {
-		return this.actionGeo;
-	}
-	public void setActionGeo(Geography actionGeo) {
-		this.actionGeo = actionGeo;
-	}
-	public Date getDateAdded() {
-		return this.dateAdded;
-	}
-	public void setDateAdded(Date dateAdded) {
-		this.dateAdded = dateAdded;
-	}
-	public String getSourceURL() {
-		return this.sourceURL;
-	}
-	public void setSourceURL(String sourceURL) {
-		this.sourceURL = sourceURL;
 	}
 }
 ```
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Test your entities)]
+[ACCORDION-BEGIN [Step 9: ](Test The Spatial Data Import)]
 
-To test our entities, we will be:
+In this application we will be parsing the event data from the downloaded CSV file and then storing it in the database
 
-- Parsing the event data from a CSV file and storing it in the database
+Parsing the data consists of opening the CSV file, reading the data line by line, splitting each line into fields, setting the value of the appropriate entity, and finally persisting the entities in the database.
 
-    Parsing the data consists of opening the CSV file, reading the data line by line, splitting each line into fields, setting the value of the appropriate entity, and finally persisting the entities in the database.
-
-- Query the data
-
-    As an example for a query, the application retrieves all events whose action is located in Europe (at least approximately).
-
-Edit the **`App.java`** located in **`tutorial/src/main/java/com.sap.hana.hibernate.tutorial`**.
-
-Paste the following content into the **`App.java`** file:
+Create a Java class named **`TestSpatialDataImport`** in a package named **`com.sap.hana.hibernate.tutorial.spatial`** (either using a right-click on the project and choose ***New -> Class*** or use the ***File -> New -> Class*** menu bar), then paste the following content:
 
 > **Note:** Before running the application make sure to adjust the path of the CSV file to the actual file location (***`FILE_NAME`***).
 
-```java
-package com.sap.hana.hibernate.tutorial;
+```Java
+package com.sap.hana.hibernate.tutorial.spatial;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.TypedQuery;
 
 import org.geolatte.geom.C2D;
 import org.geolatte.geom.Point;
-import org.geolatte.geom.Polygon;
-import org.geolatte.geom.codec.Wkt;
-import org.geolatte.geom.codec.WktDecoder;
 import org.geolatte.geom.crs.CoordinateReferenceSystem;
 import org.geolatte.geom.crs.CoordinateReferenceSystems;
 import org.geolatte.geom.crs.Unit;
 
-public class App {
+public class TestSpatialDataImport {
 
 	// The GDELT file name
 	private static final String FILE_NAME = "20171105.export.CSV";
 
-	//The flush size
+	// The flush size
 	private static final int FLUSH_SIZE = 10000;
 
 	// The default HANA coordinate reference system with ID 0
@@ -608,39 +376,22 @@ public class App {
 	private static final SimpleDateFormat DAY_DATE_FORMAT = new SimpleDateFormat("yyyyMMdd");
 
 	public static void main(String[] args) {
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Tutorial");
-		EntityManager entityManager = entityManagerFactory.createEntityManager();
-
 		try {
+			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Tutorial");
+			EntityManager entityManager = entityManagerFactory.createEntityManager();
+
 			Path csvFilePath = Paths.get(Thread.currentThread().getContextClassLoader().getResource(FILE_NAME).toURI());
 			parseAndStoreCSV(csvFilePath, entityManager);
-		} catch (IOException | ParseException | URISyntaxException e) {
+
+			entityManager.clear();
+			entityManager.close();
+		} catch (Exception e) {
 			e.printStackTrace();
-			System.exit(1);
 		}
-
-		List<Event> eventsInEurope = queryEventsInEurope(entityManager);
-
-		System.out.println("Found " + eventsInEurope.size() + " events in Europe");
-
 		System.exit(0);
 	}
 
-	private static List<Event> queryEventsInEurope(EntityManager entityManager) {
-		// Select all events within a region
-		TypedQuery<Event> eventQuery = entityManager
-				.createQuery("select e from Event e where within(actionGeo.position, :area) = true", Event.class);
-
-		// Create a polygon describing a box around Europe
-		WktDecoder decoder = Wkt.newDecoder(Wkt.Dialect.HANA_EWKT);
-		Polygon<?> europeBox = (Polygon<?>) decoder.decode("POLYGON((35 -10, 35 30, 71 30, 71 -10, 35 -10))");
-		eventQuery.setParameter("area", europeBox);
-
-		// Return all events within the Europe box
-		return eventQuery.getResultList();
-	}
-
-	private static void parseAndStoreCSV(Path filePath, EntityManager entityManager)
+	public static void parseAndStoreCSV(Path filePath, EntityManager entityManager)
 			throws IOException, ParseException {
 		// Open the CSV file containing the data
 		try (BufferedReader reader = Files.newBufferedReader(filePath)) {
@@ -666,7 +417,6 @@ public class App {
 					entityManager.clear();
 				}
 			}
-
 			System.out.println("Imported " + numberOfRecords + " records");
 
 			// Commit the database transaction
@@ -836,13 +586,31 @@ public class App {
 
 > **Note:** Before running the application make sure to adjust the path of the CSV file to the actual file location (***`FILE_NAME`***).
 
+Save the class file.
 
-Run the application by right-clicking the `App.java` file and choosing ***Run As -> Java Application*** or click on the ![Run](run.png) icon.
+Run the application by right-clicking the class file and choosing ***Run As -> Java Application*** or click on the ![Run](run.png) icon.
 
 You should see the following output log in your console:
 
 ```
 ...
+INFO: HHH000204: Processing PersistenceUnitInfo [
+	name: Tutorial
+	...]
+INFO: HHH000412: Hibernate Core {5.2.12.Final}
+INFO: HHH000206: hibernate.properties not found
+INFO: HHH80000001: hibernate-spatial integration enabled : true
+INFO: HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO: HHH10001005: using driver [com.sap.db.jdbc.Driver] at URL [jdbc:sap://rhhxehost:39015]
+INFO: HHH10001001: Connection properties: {user=SYSTEM, password=****}
+INFO: HHH10001003: Autocommit mode: false
+INFO: HHH000115: Hibernate connection pool size: 5 (min=1)
+INFO: HHH000400: Using dialect: org.hibernate.spatial.dialect.hana.HANASpatialDialect
+INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6d24ffa1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@773cbf4f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+INFO: HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@2756c0a7'
 Flushing after 10000 records
 Flushing after 20000 records
 Flushing after 30000 records
@@ -855,11 +623,112 @@ Flushing after 90000 records
 Flushing after 100000 records
 Flushing after 110000 records
 Imported 112207 records
-nov. 06, 2017 8:52:48 PM org.hibernate.hql.internal.QueryTranslatorFactoryInitiator initiateService
-INFO: HHH000397: Using ASTQueryTranslatorFactory
-Found 14412 events in Europe
 ```
 
 > **Note:** Depending on which data set file you will be using, the number of records and the number of events in Europe might be different.
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Test The Spatial Data Querying)]
+
+Now that the data is loaded in our database, we run spatial queries.
+
+As an example for a query, the code bellow retrieves and counts all events whose action is located in Europe (at least approximately).
+
+Create a Java class named **`TestSpatialDataQuery`** in a package named **`com.sap.hana.hibernate.tutorial.spatial`** (either using a right-click on the project and choose ***New -> Class*** or use the ***File -> New -> Class*** menu bar), then paste the following content:
+
+```java
+package com.sap.hana.hibernate.tutorial.spatial;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.TypedQuery;
+
+import org.geolatte.geom.Polygon;
+import org.geolatte.geom.codec.Wkt;
+import org.geolatte.geom.codec.WktDecoder;
+
+public class TestSpatialDataQuery {
+
+	// The GDELT file name
+	private static final String FILE_NAME = "20171105.export.CSV";
+
+	public static void main(String[] args) {
+		try {
+			// TestSpatialDataImport.main(args);
+			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Tutorial");
+			EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+			Path csvFilePath = Paths.get(Thread.currentThread().getContextClassLoader().getResource(FILE_NAME).toURI());
+			TestSpatialDataImport.parseAndStoreCSV(csvFilePath, entityManager);
+
+			// Select all events within a region
+			TypedQuery<Event> eventQuery = entityManager
+					.createQuery("select e from Event e where within(actionGeo.position, :area) = true", Event.class);
+
+			// Create a polygon describing a box around Europe
+			WktDecoder decoder = Wkt.newDecoder(Wkt.Dialect.HANA_EWKT);
+			Polygon<?> europeBox = (Polygon<?>) decoder.decode("POLYGON((35 -10, 35 30, 71 30, 71 -10, 35 -10))");
+			eventQuery.setParameter("area", europeBox);
+
+			// Return all events within the Europe box
+			List<Event> eventsInEurope = eventQuery.getResultList();
+
+			System.out.println("Found " + eventsInEurope.size() + " events in Europe");
+
+			entityManager.clear();
+			entityManager.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.exit(0);
+	}
+}
+```
+
+Save the class file.
+
+Run the application by right-clicking the class file and choosing ***Run As -> Java Application*** or click on the ![Run](run.png) icon.
+
+You should see the following output log in your console:
+
+```
+...
+INFO: HHH000204: Processing PersistenceUnitInfo [
+	name: Tutorial
+	...]
+INFO: HHH000412: Hibernate Core {5.2.12.Final}
+INFO: HHH000206: hibernate.properties not found
+INFO: HHH80000001: hibernate-spatial integration enabled : true
+INFO: HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+INFO: HHH10001005: using driver [com.sap.db.jdbc.Driver] at URL [jdbc:sap://rhhxehost:39015]
+INFO: HHH10001001: Connection properties: {user=SYSTEM, password=****}
+INFO: HHH10001003: Autocommit mode: false
+INFO: HHH000115: Hibernate connection pool size: 5 (min=1)
+INFO: HHH000400: Using dialect: org.hibernate.spatial.dialect.hana.HANASpatialDialect
+INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6d24ffa1] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@773cbf4f] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+INFO: HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@2756c0a7'
+Flushing after 10000 records
+Flushing after 20000 records
+Flushing after 30000 records
+Flushing after 40000 records
+Flushing after 50000 records
+Flushing after 60000 records
+Flushing after 70000 records
+Flushing after 80000 records
+Flushing after 90000 records
+Flushing after 100000 records
+Flushing after 110000 records
+Imported 112207 records
+INFO: HHH000397: Using ASTQueryTranslatorFactory
+Found 14412 events in Europe
+```
 
 [ACCORDION-END]
