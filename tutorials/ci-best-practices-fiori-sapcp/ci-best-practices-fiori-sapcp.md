@@ -45,7 +45,7 @@ After successful testing, it is the decision of the delivery manager to release 
 
 Figure 1: Process for SAP Fiori/SAPUI5 development.
 
-The landscape setup for this process is described in [Landscape Configuration](http://go.sap.com/developer/tutorials/ci-best-practices-landscape.html). The pipeline implementation by means of Jenkins jobs places real code into the skeleton described in [Sample Pipeline Configuration](http://go.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html).
+The landscape setup for this process is described in [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html). The pipeline implementation by means of Jenkins jobs places real code into the skeleton described in [Sample Pipeline Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html).
 
 ![Landscape for Fiori Development](landscape.png)
 
@@ -558,7 +558,7 @@ The voter build job is executed immediately after you push a commit to Gerrit fo
     mkdir -p ${WORKSPACE}/tmp/mta
     cd ${WORKSPACE}/tmp/mta
     wget --output-document=mta.jar '<URL from where to download the MTA archive builder>'
- 
+
     # create local npmrc file
     cd ${WORKSPACE}/src
     cat <<EOF > .npmrc
