@@ -1,8 +1,8 @@
 ---
-title: Setup Hibernate with HANA in Eclipse
-description: This tutorial shows the basic setup steps required for getting started with Hibernate on HANA
+title: Setup Hibernate for SAP HANA in your Eclipse project
+description: This tutorial shows the basic setup steps required for getting started with Hibernate on SAP HANA
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>java, products>sap-hana ]
+tags: [  tutorial>beginner, topic>java, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  

@@ -2,7 +2,7 @@
 title: Introduction to Hibernate
 description: This tutorial gives a short introduction to the concepts of the Hibernate ORM (Object/Relational Mapping) framework.
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>java, products>sap-hana ]
+tags: [  tutorial>beginner, topic>java, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  

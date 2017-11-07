@@ -1,8 +1,8 @@
 ---
-title: Create a simple application using Hibernate on HANA
-description: This tutorial shows how to create a simple application using Hibernate on HANA to interact with the database.
+title: Create a simple application using Hibernate on SAP HANA
+description: This tutorial shows how to create a simple application using Hibernate on SAP HANA to interact with the database.
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner, topic>java, products>sap-hana ]
+tags: [  tutorial>beginner, topic>java, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  

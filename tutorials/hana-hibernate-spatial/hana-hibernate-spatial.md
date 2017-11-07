@@ -1,8 +1,8 @@
 ---
-title: Create an application processing geospatial data using Hibernate on HANA
-description: This tutorial shows how to create an application for processing geospatial data using Hibernate on HANA to interact with the database.
+title: Create an application processing geospatial data using Hibernate on SAP HANA
+description: This tutorial shows how to create an application for processing geospatial data using Hibernate on SAP HANA leveraging the SAP HANA Spatial engine.
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>java, products>sap-hana ]
+tags: [  tutorial>intermediate, topic>java, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  
