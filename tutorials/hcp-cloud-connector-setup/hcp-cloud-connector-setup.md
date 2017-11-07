@@ -2,7 +2,7 @@
 title: SAP Cloud Platform Cloud Connector setup for secure on-premise connectivity
 description: Learn how to set up and configure the cloud connector for SAP Cloud Platform
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>intermediate, topic>cloud, topic>security, products>sap-cloud-platform, products>cloud-connector-for-sap-hana-cloud-platform ]
+tags: [  tutorial>intermediate, topic>cloud, topic>security, products>sap-cloud-platform, products>sap-cloud-platform-connectivity ]
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
