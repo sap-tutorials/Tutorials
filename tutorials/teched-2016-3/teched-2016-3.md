@@ -1,16 +1,13 @@
 ---
 title: Create an SAP Cloud Platform destination pointing to an SAP Gateway
 description: Create a new destination pointing to the SAP Gateway Demo System
+auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>cloud, products>sap-gateway, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-gateway, products>sap-cloud-platform  ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create an account on the Gateway Demo system](http://www.sap.com/developer/tutorials/gateway-demo-signup.html)
-
-## Next Steps
- - [Build an SAP Fiori UX app with SAP Gateway data](http://www.sap.com/developer/tutorials/teched-2016-4.html)
 
 ## Details
 ### You will learn  
@@ -28,7 +25,7 @@ Make sure you are using the **Europe (Trial)** landscape, and click on your acco
 
 ![Click on user name](te-2016-3-01.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Go to Destinations)]
@@ -37,7 +34,7 @@ In the left-hand navigation bar, select **Connectivity > Destinations** then cli
 
 ![open destinations](te-2016-3-02.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Enter Destination details)]
@@ -57,7 +54,7 @@ Password       | `<Your ES4 Gateway password>`
 
 Leave the **Use default JDK truststore** checked.
 
-And add the following **Additional Properties** fields by clicking on the **New Property** button once for each property.
+And add the following **Additional Properties** fields by clicking on the **New Property** button once for each property.
 
 Field Name       | Value
 :--------------- | :-------------
@@ -69,20 +66,19 @@ Then click **Save**.
 
 ![creating destination](te-2016-3-03.png)
 
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Test the new Destinations)]
+[ACCORDION-BEGIN [Step 4: ](Save your destination)]
 
-After the destination is saved, you can click the **Check Connection** button to test that SAP Gateway is reachable.
+Click **Save**.
 
-Note that the **Check Connection** operation is not validating your user credentials but only the end-point availability.
-
-![Check connection](te-2016-3-04.png)
-
-
+[DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 5: ](Check the Additional Property settings)]
 
-## Next Steps
- - [Build an SAP Fiori UX app with SAP Gateway data](http://www.sap.com/developer/tutorials/teched-2016-4.html)
+Select the value of the **`WebIDEUsage`** parameter in your destination from the list below and click **Validate**:
+
+[VALIDATE_5]
+[ACCORDION-END]

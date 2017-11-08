@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
 
 
 ## Next Steps
- - [Review SAP HANA, express edition content, tutorials and quick start guides](http://www.sap.com/developer/topics/sap-hana-express.html)
+ - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
  - **XS Advanced:** [ Get started with XS Advanced development](http://www.sap.com/developer/topics/sap-hana-express.html)
  - **XS Advanced:** [Explore the administration cockpit in XS Advanced](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
  - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](http://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
@@ -191,9 +191,11 @@ This will create a rule to enable traffic to ports 51000 up to 51060.
 
 ![GCloud console](fw2.png)
 
-You may need additional ports in the fur, which you can enable using the same command.
+You may need additional ports in the future, which you can enable using the same command.
 
 >Note: This rule will apply to your entire project. If you want to restrict the ports for a specific virtual machine, check [Google Help](https://cloud.google.com/compute/docs/vpc/firewalls)
+
+You are now ready to use your SAP HANA virtual machine. Check the next steps to access SAP Web IDE for SAP HANA if you have chosen the XS Advanced option or install a SQL client, such as HANA Studio, to access your server-only image.
 
 [ACCORDION-END]
 
@@ -201,7 +203,7 @@ You may need additional ports in the fur, which you can enable using the same co
 
 **This is only available in the XS Advanced option. Installations are optional**.
 
-From the console, go into the `Downloads` folder and list the contents.
+From the console, go into the `Downloads` folder in your virtual machine and list the contents.
 
 ```
 cd /Downloads
@@ -266,7 +268,7 @@ Make sure installation is successful when finished.
 
 [ACCORDION-BEGIN [Step 6 (Optional): ](XS Advanced - Install Smart Data Streaming)]
 
-Open a new SSH console. Find out your internal IP address with the following command:
+This step is **optional**. Open a new SSH console. Find out your internal IP address with the following command:
 
 ```
 sudo ifconfig
@@ -354,7 +356,7 @@ CALL GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::CatalogDeveloper','WORKSHOP_01')
 [ACCORDION-END]
 
 ## Next Steps
- - [Review SAP HANA, express edition content, tutorials and quick start guides](http://www.sap.com/developer/topics/sap-hana-express.html)
+ - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
  - **XS Advanced:** [ Get started with XS Advanced development](http://www.sap.com/developer/topics/sap-hana-express.html)
  - **XS Advanced:** [Explore the administration cockpit in XS Advanced](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
  - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](http://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)

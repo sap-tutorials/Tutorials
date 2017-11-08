@@ -23,8 +23,7 @@ In order to enable navigating from one view to another, our app needs to be enab
 >  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](http://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 
 
-You have to add a routing configuration to the descriptor file and initialize the router instance within the component
-definition (`webapp/Component.js`).
+You have to add a routing configuration to the descriptor file and initialize the router instance within the component definition (`webapp/Component.js`).
 
 1.  Create a new SAPUI5 View called `App`.  
 
@@ -40,7 +39,7 @@ definition (`webapp/Component.js`).
 
     ![enter file name](1b.png)
 
-3.  Open the`App.view.xml` file, and replace the `<App>` tag with the following code:
+3.  Open the `App.view.xml` file, and replace the `<App>` tag with the following code:
 
     > Don't forget to save your files!
 

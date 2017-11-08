@@ -101,7 +101,6 @@ If you installed the Applications package (`hxexsa.tgz`), test your XSA installa
 
 1. As the `<sid>adm` user, log in to XSA services:  
 
-
     ```bash
     xs login -u xsa_admin -p "<password>"
     ```  

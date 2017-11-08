@@ -6,7 +6,8 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Development machine:** Access to a Mac computer
+ - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+ - **SAP Cloud Platform SDK for iOS:** Version 2.0
  - **Tutorials:** [Create an application definition](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-application-setup.html)
 
 ## Next Steps
@@ -85,7 +86,7 @@ Switch to the **Back End** tab and define a connection to the sample OData servi
 
 | Field | Value |
 |----|----|
-| Back-End URL | `https://hcpms-<your-ID>trial.hanatrial.ondemand.com/SampleServices/ESPM.svc/` |
+| Back-End URL | `https://hcpms-YOURIDtrial.hanatrial.ondemand.com/SampleServices/ESPM.svc/` |
 | Proxy Type | Internet |
 | Rewrite Mode | Rewrite URL |
 

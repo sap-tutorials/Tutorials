@@ -1,0 +1,11 @@
+{
+	"url": "/ml/topicdetection/inference_sync",
+	"APIKey":"<<<<< COPY YOUR API KEY >>>>>",
+	"options": {
+		"numTopics": 3,
+		"numTopicsPerDoc": 3,
+		"numKeywordsPerTopic": 15,
+		"numFeatures" : 20
+	},
+	"optionsJs": "{\"numTopics\":3,\"numTopicsPerDoc\":1, \"numKeywordsPerTopic\":15}"
+}

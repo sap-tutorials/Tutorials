@@ -171,7 +171,7 @@ Fill in the following information
 Field Name     | Value
 :------------- | :-------------
 Request Type   | <code><b>GET</b></code>
-URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/`<code><b>ID</b></code>`/variables/1`
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/`<code><b>ID</b></code>`/variable/1`
 
 > Make sure you replace the <code><b>ID</b></code> token in the URL with the one returned by the dataset <code><b>ID</b></code> return in the first service call.
 

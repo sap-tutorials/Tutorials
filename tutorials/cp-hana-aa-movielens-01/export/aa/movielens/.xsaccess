@@ -1,0 +1,20 @@
+{
+    "exposed": true,
+    "authentication": [{
+        "method": "Form"
+    }],
+
+    "mime_mapping": [{
+        "extension": "jpg",
+        "mimetype": "image/jpeg"
+    }],
+    "force_ssl": false,
+    "enable_etags": true,
+    "prevent_xsrf": true,
+    "anonymous_connection": null,
+    "cors": [{
+        "enabled": false
+    }],
+    "cache_control": "no-cache, no-store",
+    "default_file": "index.html"
+}

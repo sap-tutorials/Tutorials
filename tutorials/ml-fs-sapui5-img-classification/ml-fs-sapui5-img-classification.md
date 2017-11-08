@@ -54,7 +54,6 @@ As displayed on the screen, the sandbox URL for the **Image Classification API**
 https://sandbox.api.sap.com/ml/imageclassifier/inference_sync
 ```
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Get Your API key )]
@@ -69,7 +68,6 @@ The following pop-up should appear. Click on the **Copy API Key** button and sav
 
 Now, let's build a SAPUI5 application! But before doing so let's first add the destination to connect to the SAP API Business Hub.
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Access the SAP Cloud Platform Cockpit)]
@@ -77,7 +75,6 @@ Now, let's build a SAPUI5 application! But before doing so let's first add the d
 Go to your [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) account and access "Your Personal Developer Account".
 
 ![SAP HANA Cloud Platform Cockpit](06.png)
-
 
 [ACCORDION-END]
 
@@ -116,7 +113,6 @@ Click on **Save**
 
 You can use the **Check Connectivity** button ![HTML5 Applications](0-check.png) next to the new **Destination** to validate that the URL can be accessed.
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Open the Web IDE)]
@@ -132,7 +128,6 @@ Click on the tile, then click on **Open SAP Web IDE**.
 You will get access to the **SAP Web IDE** main page:
 
 ![Web IDE](12.png)
-
 
 [ACCORDION-END]
 
@@ -164,7 +159,6 @@ View Name            | `demo`
 
 ![Project](15.png)
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Extend the application resource roots)]
@@ -184,7 +178,6 @@ data-sap-ui-resourceroots='{"demosapui5ml-imageclassifier": "", "sapui5ml": ""}'
 ```
 
 Click on the ![Save Button](00-save.png) button (or press CTRL+S).
-
 
 [ACCORDION-END]
 
@@ -230,7 +223,6 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 }
 ```
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Store your API setting in a JSON model)]
@@ -267,7 +259,6 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
   }
 }
 ```
-
 
 [ACCORDION-END]
 
@@ -333,7 +324,6 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 </mvc:View>
 ```
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Extend the main SAPUI5 controller)]
@@ -395,7 +385,6 @@ sap.ui.define([
 });
 ```
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Test the application)]
@@ -410,6 +399,17 @@ You can also try with a zip that contains multiple images.
 
 ![Result](16.png)
 
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Solution: ](Project files)]
+
+In case you are having problems when running the application, the complete project code can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/ml-fs-sapui5-img-classification/sapui5ml-imageclassifier).
+
+However, this is not a repository you can clone and run the code.
+
+You have to import the `sapui5ml-imageclassifier` directory content into your existing project directory.
+
+Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
 [ACCORDION-END]
 

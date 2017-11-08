@@ -1,16 +1,13 @@
 ---
 title: Commit your project to Git and deploy to the cloud
 description: Create a git repository for your project, add your project files and then deploy  your app on SAP Cloud Platform
+auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Build an SAP Fiori UX app with SAP Gateway data](http://www.sap.com/developer/tutorials/teched-2016-4.html)
-
-## Next Steps
- - [Add an XML fragment for a tab in your app](http://www.sap.com/developer/tutorials/teched-2016-6.html)
 
 ## Details
 ### You will learn  
@@ -31,7 +28,7 @@ In the left-hand navigation bar, select **Repositories > Git Repositories**.
 
 ![Git Repositories](te-2016-5-01.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create new repository)]
@@ -47,7 +44,7 @@ Make sure the **Create empty commit** box is checked, click **OK** and your repo
 
 ![Create repo image](te-2016-5-02.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Open the repository overview page)]
@@ -56,19 +53,23 @@ Click on the **`te2016`** repository link to open the repository overview page.
 
 ![Created repo](te-2016-5-03.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Copy the Git Repository URL)]
 
-On the repository overview page, copy the **Git Repository URL**:
+On the repository overview page, copy the **Repository Browser** URL and paste it into the field below and click **Validate**.
 
-![Git repo URL](te-2016-5-04.png)
 
+[VALIDATE_4]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Initialize Local Repository)]
+
+On the repository overview page, copy the **Git Repository URL**:
+
+![Git repo URL](te-2016-5-04.png)
 
 Open **SAP Web IDE** in a browser window (or in an existing one), right-click on your **`te2016`** project folder and select **Git > Initialize Local Repository**.
 
@@ -78,7 +79,7 @@ An alert box will appear in the upper right corner of your SAP Web IDE window.
 
 ![Initialized local git alert](te-2016-5-05b.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Link to remote repository)]
@@ -89,7 +90,7 @@ This will initialize your local repository and link it to the Git repository in 
 
 ![Initialize with remote git URL](te-2016-5-06.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Open the Git pane)]
@@ -100,7 +101,7 @@ If your project does not appear in the **Git pane**, keep the Git pane open and 
 
 ![Git pane](te-2016-5-07.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Perform a Git Fetch)]
@@ -111,7 +112,7 @@ When the **Changes Fetched** dialog box opens, click **OK**.
 
 ![Git Fetch](te-2016-5-08.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Perform a Git Merge)]
@@ -128,7 +129,7 @@ At this point your Git repository is set up.
 
 The next steps will commit and push your project files to the repository.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Stage files)]
@@ -137,7 +138,7 @@ You may select individual files to commit, but to commit all project files, clic
 
 ![staging all files](te-2016-5-11.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Enter a description for the commit)]
@@ -146,7 +147,7 @@ Scroll down in the **Git pane** and enter a description (required for any commit
 
 ![commit description](te-2016-5-12.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Perform a Git Commit and Push)]
@@ -157,7 +158,7 @@ This will add your files to the master branch (in other source control systems t
 
 ![commit and push](te-2016-5-13.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Push changes to the remote branch)]
@@ -166,7 +167,7 @@ In the **Push Changes to a remote branch** dialog box, select **origin/master**,
 
 ![select origin master](te-2016-5-14.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](New file decorations)]
@@ -176,7 +177,7 @@ You will see a confirmation alert appear briefly in the top-right corner of the 
 ![green dots](te-2016-5-15.png)
 
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Deploy app on HCP)]
@@ -187,7 +188,7 @@ Right-click on your **`te2016`** project folder, and select **Deploy > Deploy to
 
 ![deploy to SAP Cloud Platformmenu](te-2016-5-16.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Log in)]
@@ -196,7 +197,7 @@ Log in with your account number, email and password.
 
 ![log in](te-2016-5-17.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Deployment dialog box)]
@@ -205,7 +206,7 @@ In the **Deploy Application to SAP Cloud Platform** dialog box, confirm that **D
 
 ![deploy app options](te-2016-5-18.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Open the active version of your app)]
@@ -214,6 +215,9 @@ In the **Successfully Deployed** confirmation dialog, click the **Open the activ
 
 ![successful deployment](te-2016-5-19.png)
 
+Click on **`Baleda`** in the master list, copy the URL that updates in the browser, paste it into the text field below and click **Validate**.
+
+[VALIDATE_18]
 
 [ACCORDION-END]
 
@@ -225,8 +229,5 @@ You can enter the URL in your phone and see it running there as well. Since the 
 
 ![deployed app](te-2016-5-20.png)
 
-
+[DONE]
 [ACCORDION-END]
-
-## Next Steps
- - [Add an XML fragment for a tab in your app](http://www.sap.com/developer/tutorials/teched-2016-6.html)

@@ -233,7 +233,7 @@ Any scanned barcode will be added to the list:
 
 And it also works with QR codes:
 
-![Navigation Controller](fiori-ios-scpms-barcode-16.jpg)
+![Navigation Controller](fiori-ios-scpms-barcode-16.png)
 
 
 [ACCORDION-END]

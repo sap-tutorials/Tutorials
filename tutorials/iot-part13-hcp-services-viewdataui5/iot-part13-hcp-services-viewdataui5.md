@@ -1,8 +1,8 @@
 ---
 title: SAP Cloud Platform IoT for Neo: Viewing data from environmental sensors
 description: Now it is time to display your stored data from your Tessel device using SAPUI5 and SAP Web IDE
-primary_tag: topic>internet-of-things
-tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
+primary_tag: products>sap-cloud-platform-internet-of-things
+tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, products>sap-hana, tutorial>beginner ]
 
 ---
 
