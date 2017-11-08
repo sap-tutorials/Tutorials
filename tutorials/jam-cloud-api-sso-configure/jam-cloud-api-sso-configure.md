@@ -7,9 +7,10 @@ tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, t
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
+ - **Tutorials:** [Setup Trust between SAP Cloud Platform and SAP Jam Collaboration](https://www.sap.com/developer/tutorials/jam-cloud-setup-trust.html)
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Configure the SAP Web IDE Destination for SAP Jam Collaboration on SAP Cloud Platform](https://www.sap.com/developer/tutorials/jam-cloud-webide-destination-configure.html)
 
 ## Details
 ### You will learn  
@@ -101,4 +102,4 @@ Connectivity destinations are a part of the SAP Cloud Platform connectivity serv
 ---
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Configure the SAP Web IDE Destination for SAP Jam Collaboration on SAP Cloud Platform](https://www.sap.com/developer/tutorials/jam-cloud-webide-destination-configure.html)
