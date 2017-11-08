@@ -1,5 +1,5 @@
 ---
-title: S/4HANA ABAP Extensibility -  - Creating the UI for a Custom Business Object (Bonus Plan)
+title: Creating the UI for a Custom Business Object (Bonus Plan)
 description: Create an own application based on a Custom Business Object and a Custom Catalog Extension
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
@@ -119,6 +119,3 @@ Employee ID <any> shall be the one of a sales person that created sales orders w
 
 [ACCORDION-END]
 ---
-
-## Next Steps
-  - [Implementing logic for a Custom Business Object](https://www.sap.com/developer/tutorials/abap-extensibility-cbo-logic.html)

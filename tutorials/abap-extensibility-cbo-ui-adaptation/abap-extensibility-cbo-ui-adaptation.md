@@ -1,13 +1,13 @@
 ---
-title: ABAP Extensibility - Adapting the UI of a Business Object (Bonus Plan)
-description: Adapt the generated UI of a custom business object
+title: Adapting the UI of a Business Object (Bonus Plan)
+description: Adapt the UI of a Business Object, shown at the generated UI of a Custom Business Object
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Creating a UI for a Custom Business Object](https://www.sap.com/developer/tutorials/abap-extensibility-cbo-logic.html)
+ - **Tutorials:** [Creating a UI for a Custom Business Object](https://www.sap.com/developer/tutorials/abap-extensibility-cbo-ui-generation.html)
  - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
 
 
@@ -109,6 +109,3 @@ Finally you only need to **Exit** adaptation mode to work with the new layout.
 
 
 ---
-
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
