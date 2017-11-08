@@ -1,5 +1,5 @@
 ---
-title: Using the SAP Web IDE with SAP Jam Collaboration
+title: Using SAP Web IDE with SAP Jam Collaboration
 description: Demonstrates how to build and run a new project with SAP Jam Collaboration UI5 Sample Applications
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
