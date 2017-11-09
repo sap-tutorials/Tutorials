@@ -3,7 +3,7 @@ title: Integrate External Applications into SAP Jam Collaboration
 description: Demonstrates how to integrate ESPM Web Shop records into SAP Jam Collaboration.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
----
+--- 
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
