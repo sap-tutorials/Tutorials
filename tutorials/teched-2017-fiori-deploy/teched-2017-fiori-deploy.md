@@ -1,7 +1,6 @@
 ---
 title: Deploy your app to Fiori Launchpad
 description: Learn how to deploy your application
-auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide, products>sap-fiori  ]
 ---
@@ -71,7 +70,7 @@ Provide a title and description for the tile. If you want, change the Icon assoc
 Field Name     | Value
 :------------- | :-------------
 Title           | TechEd 2017
-Description    | Front end app from TechEd 2017
+Subtitle    | Front end app from TechEd 2017
 Icon            | `e-learning`
 
 

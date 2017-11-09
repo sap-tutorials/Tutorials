@@ -21,9 +21,9 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 
 In order to build your movie recommendation engine, we will be using one of the `MovieLens` dataset, as there are multiple one with different sizes.
 
-These datasets are made available by the <a href="https://grouplens.org" target="new">`GroupLens Research`&copy;</a> group. They have collected and made available rating data sets from the <a href="http://movielens.org" target="new">`MovieLens`</a> web site which were collected over various periods of time.
+These datasets are made available by the <a href="https://grouplens.org" target="new">```GroupLens``` Research &copy;</a> group. They have collected and made available rating data sets from the <a href="http://movielens.org" target="new">```MovieLens```</a> web site which were collected over various periods of time.
 
-The data set that we will be using for this series is the ***small*** version of the **`MovieLens` Latest Datasets** downloadable  <a href="http://grouplens.org/datasets/movielens/latest/" target="new">here</a>.
+The data set that we will be using for this series is the ***small*** version of the **`MovieLens` Latest Datasets** downloadable <a href="http://grouplens.org/datasets/movielens/latest/" target="new">here</a>.
 
 This dataset, thanks to its size, can easily be used with your SAP HANA MDC instance on the SAP Cloud Platform developer/trial account.
 
@@ -101,7 +101,7 @@ Check the message console, and make sure there is no errors. The following messa
 
 [ACCORDION-BEGIN [Step 3: ](Download the dataset locally)]
 
-As the files get updated periodically, and in order to ensure consistency of content and validation, the data is available under the <a href="https://github.com/SAPDocuments/Tutorial-Contribution/tree/master/tutorials/cp-hana-aa-movielens-01/csv" target="new">`csv`</a> directory within the SAP Tutorial GitHub repository.
+As the files get updated periodically, and in order to ensure consistency of content and validation, the data is available under the <a href="https://github.com/SAPDocuments/Tutorial-Contribution/tree/master/tutorials/cp-hana-aa-movielens-01/csv" target="new">```csv```</a> directory within the SAP Tutorial GitHub repository.
 
 Download the following files locally (right click on the link, then use the ***Save link as*** option):
 
@@ -400,4 +400,3 @@ Based on the result returned by the above SQL statement, provide an answer to th
 
 [VALIDATE_1]
 [ACCORDION-END]
-

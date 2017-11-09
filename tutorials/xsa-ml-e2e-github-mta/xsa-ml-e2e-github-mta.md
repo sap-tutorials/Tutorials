@@ -100,7 +100,7 @@ You will be prompted for your GitHub account details:
 
 ![GitHub sync](popup.png)
 
-**You can do this at any time you want to save your progress into your GitHub repository.**
+**You can do this at any time you want to save your progress into your GitHub repository.** 
 
 Finally, open the `mta.yaml` file that has been created automatically. Copy the contents in the **Code Editor** tab and paste them in the box below. Click on **validate**:
 

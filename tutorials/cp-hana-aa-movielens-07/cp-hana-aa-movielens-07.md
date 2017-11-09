@@ -45,8 +45,6 @@ This will open the ***SAP Web IDE*** where you have previously created your appl
 
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
 
-For the moment we will just add the "Get Dataset List" functions and the "Forecast" similar to what we did in the previous tutorial.
-
 Create a new file **`collaborative.controller.js`** in `webapp/controller` either using the "File" menu or using the right click menu.
 
 Open the `webapp/controller/collaborative.controller.js` file and add the following code:
@@ -376,9 +374,16 @@ The view will contain:
 
 [ACCORDION-BEGIN [Step 4: ](Extend the default view)]
 
+Now let's enable the new view.
+
 Edit the `demo.view.xml` file located in the `webapp/view`.
 
-Inside the `<detailPages>` element, uncomment the following element like this:
+Inside the `<detailPages>` element, remove the XML comment tag for the view by replacing this:
+
+```xml
+<!--vc:XMLView viewName="mlmovielens.view.collaborative"/-->
+```
+by this:
 
 ```xml
 <mvc:XMLView viewName="mlmovielens.view.collaborative"/>
@@ -414,9 +419,9 @@ Provide an answer to the question below then click on **Validate**.
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-07/movielens/webapp/controller/collaborative.controller.js" target="new">`webapp/controller/collaborative.controller.js`</a>
-  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-07/movielens/webapp/view/collaborative.view.xml" target="new">`webapp/view/collaborative.view.xml`</a>
-  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-07/movielens/webapp/view/demo.view.xml" target="new">`webapp/view/demo.view.xml`</a>
+  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-07/movielens/webapp/controller/collaborative.controller.js" target="new">```webapp/controller/collaborative.controller.js```</a>
+  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-07/movielens/webapp/view/collaborative.view.xml" target="new">```webapp/view/collaborative.view.xml```</a>
+  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-07/movielens/webapp/view/demo.view.xml" target="new">```webapp/view/demo.view.xml```</a>
 
 The complete project can be found on the SAP Tutorial public <a href="https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/cp-hana-aa-movielens-07/movielens" target="new">GitHub repository</a>.
 
@@ -426,4 +431,3 @@ Make sure you check the <a href="https://github.com/SAPDocuments/Tutorials/blob/
 
 [DONE]
 [ACCORDION-END]
-
