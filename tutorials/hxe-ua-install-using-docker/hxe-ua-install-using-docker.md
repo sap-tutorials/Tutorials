@@ -35,6 +35,16 @@ SAP HANA, express edition is a streamlined version of the SAP HANA platform whic
 
 The software license allows for both non-production and production use cases, enabling you to quickly prototype, demo, and deploy next-generation applications using SAP HANA, express edition without incurring any license fees. Memory capacity increases beyond 32GB are available for purchase at the [SAP Store](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition).
 
+In addition to SUSE Enterprise, SAP HANA, express edition for Docker has been tested on the following Linux operating system versions:
+
+| Linux OS | OS Version |
+| --- | --- |
+| `Ubuntu`  | `17.04 (Zesty Zapus)` |
+| `openSUSE` | `openSUSE Leap` |
+| `CentOS` | `7 (Core)` |
+| `Debian` | `9 (Stretch)` |
+| `Fedora` | `25 (Server Edition)` |
+
 **This installation does not support Docker for Windows or Docker for Mac.**
 
 [ACCORDION-BEGIN [Step 1: ](Install Docker)]
@@ -91,7 +101,7 @@ Click on the **Setup Instructions** button.
 Copy the Docker pull address. Here is an example:
 
 ```
-docker pull store/saplabs/hanaexpress:2.00.020.01.20170829.3
+docker pull store/saplabs/hanaexpress:2.00.021.00.20171030.1
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
@@ -131,9 +141,11 @@ To edit the `sysctl.conf` file, use the `vi` command to open the file and press 
 Create a directory for the SAP HANA, express edition container and grant it the proper permissions.  
 
 ```
-mkdir -p /data/<system_name>
-chown 12000:79 /data/<system_name>
+mkdir -p /data/<directory_name>
+chown 12000:79 /data/<directory_name>
 ```
+
+The name of this directory does not need to match the name you give to your SAP HANA, express edition container.
 
 [ACCORDION-END]
 
@@ -190,15 +202,15 @@ Make a note of the path to the `json` file. You will need this to load the SAP H
 Use the SAP HANA, express edition image to create a container.
 
 ```
-docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129:1128-1129 -p 59013-59014:59013-59014 -v /data/<system_name>:/hana/mounts \
+docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129:1128-1129 -p 59013-59014:59013-59014 -v /data/<directory_name>:/hana/mounts \
 -v <path_to_json_file_folder>:<path_to_json_file_folder> \
 --ulimit nofile=1048576:1048576 \
 --sysctl kernel.shmmax=1073741824 \
 --sysctl net.ipv4.ip_local_port_range='40000 60999' \
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
---name <system_name> \
-store/saplabs/hanaexpress:2.00.020.01.20170829.3 \
+--name <container_name> \
+store/saplabs/hanaexpress:2.00.021.00.20171030.1 \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>> \
 --agree-to-sap-license
 ```
@@ -214,7 +226,7 @@ docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name express_edition \
-store/saplabs/hanaexpress:2.00.020.01.20170829.3 \
+store/saplabs/hanaexpress:2.00.021.00.20171030.1 \
 --passwords-url file:///hana/password.json \
 --agree-to-sap-license
 ```
@@ -279,15 +291,15 @@ And you should see the following services running:
 You will need to repeat the previous steps of creating a directory and `JSON` password for each additional SAP HANA, express edition container you wish to create.  
 
 ```
-docker run -p 10013:39013 -p 10017:39017 -p 10041-10045:39041-39045 -p 10028-10029:1128-1129 -p 19013-19014:59013-59014 -v /data/<additional_system_name>:/hana/mounts \
+docker run -p 10013:39013 -p 10017:39017 -p 10041-10045:39041-39045 -p 10028-10029:1128-1129 -p 19013-19014:59013-59014 -v /data/<additional_directory_name>:/hana/mounts \
 -v <path_to_additional_json_file_folder>:<path_to_additional_json_file_folder> \
 --ulimit nofile=1048576:1048576 \
 --sysctl kernel.shmmax=1073741824 \
 --sysctl net.ipv4.ip_local_port_range='40000 60999' \
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
---name <additional_system_name> \
-store/saplabs/hanaexpress:2.00.020.01.20170829.3 \
+--name <additional_container_name> \
+store/saplabs/hanaexpress:2.00.021.00.20171030.1 \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>>
 --agree-to-sap-license
 ```
@@ -296,13 +308,50 @@ This process will take several minutes. The prompt will read `Startup finished` 
 
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Optional: ](Update Your Docker Image)]
+
+Update your SAP HANA, express edition Docker image when new versions are released.
+
+Stop your old SAP HANA, express edition Docker image:
+
+```
+docker stop <old_container_name>
+```
+
+Remove the old Docker image:
+
+```
+docker rm <old_container_name>
+```
+
+Pull the new Docker image:
+
+```
+docker pull store/saplabs/hanaexpress:2.00.021.00.20171030.1
+```
+
+Run the new Docker image using the old mounts:
+
+```
+docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129:1128-1129 -p 59013-59014:59013-59014 -v /data/<old_directory_name>:/hana/mounts \
+--ulimit nofile=1048576:1048576 \
+--sysctl kernel.shmmax=1073741824 \
+--sysctl net.ipv4.ip_local_port_range='40000 60999' \
+--sysctl kernel.shmmni=524288 \
+--sysctl kernel.shmall=8388608 \
+--name <new_container_name> \
+store/saplabs/hanaexpress:2.00.021.00.20171030.1 \
+--agree-to-sap-license
+```
+
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Docker Run Usage: ](-Help Command)]
 
 The following is a list of options available for the `docker run saplabs/hanaexpress` command.
 
 ```
-docker run store/saplabs/hanaexpress:2.00.020.01.20170829.3 -h
+docker run store/saplabs/hanaexpress:2.00.021.00.20171030.1 -h
 usage: [options]
 --dont-check-consistency Skip consistency check between mount points
 --dont-check-mount-points Skip check for allowed mount points
