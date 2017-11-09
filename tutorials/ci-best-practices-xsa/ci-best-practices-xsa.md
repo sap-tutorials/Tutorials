@@ -40,7 +40,7 @@ There are also comprehensive SAP HANA Academy videos on YouTube:
 
 SAP HANA XS advanced applications may consist of multiple modules and be implemented as a multi target application (MTA) project using SAP Web IDE for SAP HANA. For details developing MTAs, see the official guides listed above. You can find more information about concepts, design, and specification of MTAs in the MTA specification:
 
-> [The Multi-Target Application Model: A guide to understand multi-target applications](http://sapassets.edgesuite.net/sapcom/docs/2016/06/e2f618e4-757c-0010-82c7-eda71af511fa.pdf)
+> [The Multi-Target Application Model: A guide to understand multi-target applications](https://www.sap.com/documents/2016/06/e2f618e4-757c-0010-82c7-eda71af511fa.html)
 
  SAP HANA XS advanced supports Git as a source control management system. SAP HANA SPS12 and later includes a Gerrit server that is integrated with the XS advanced runtime. Gerrit for XS advanced is an optional component of the XS advanced platform that can be installed via the software provisioning manager. SAP Web IDE for SAP HANA fully supports Git repositories. For the setup of Gerrit for XS advanced have a look at the following documentation:
 

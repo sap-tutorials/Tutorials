@@ -52,7 +52,7 @@ You will need your session open in a browser for later steps. To complete the fo
 
 ![Open GitHub](GitHub2.png)
 
-Which tabs do you see next to **Overview** (more than one option applies)?
+Which are some of the tabs you see next to **Overview** (more than one option applies)?
 ![Open GitHub](git.png)
 
 Choose the right tabs and click on **Validate**
