@@ -53,7 +53,7 @@ This will open the ***SAP Web IDE*** where you have previously created the `pred
 
 The controller will contain a function where:
 
-  - we process the call to the "Register Dataset" SAP Cloud for predictive services and return the dataset identifier along with the dataset description.
+  - we process the call to the "Register Dataset" SAP Predictive services and return the dataset identifier along with the dataset description.
 
 Create a new directory structure for **`webapp/controller/dataset`** either using the "File" menu or using the right click menu.
 
