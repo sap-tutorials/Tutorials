@@ -2,7 +2,7 @@
 title: Install SAP HANA 2.0, express edition on Red Hat Enterprise Linux (Server + Applications)
 description: Learn how to prepare your Red Hat Enterprise Linux system to install and test SAP HANA, express edition
 primary_tag: products>sap-hana\,-express-edition  
-tags: [  tutorial>beginner, products>sap-hana\,-express-edition]
+tags: [  tutorial>intermediate, products>sap-hana\,-express-edition]
 ---
 
 ### You will learn
@@ -695,13 +695,13 @@ exit
 
 ---
 
-### <b>Install the Client for Linux</b>
+### <b>Install the SAP HANA HDB Client for Linux</b>
 
 ---
 
 The downloaded archive for the client package contains both the ***SAP HANA HDB Client*** and the ***SAP HANA XS CLI***.
 
-Here you will only install the ***SAP HANA HDB Client***, as the ***SAP HANA XS CLI*** is already available with the ***Server + Applications*** installation.
+Here you will only install the ***SAP HANA HDB Client***.
 
 The ***SAP HANA HDB Client*** software package includes the following connectivity/drivers:
 
@@ -972,7 +972,7 @@ or
 
 A success page displays:
 
-![XSEngine Success Page](07-xsengine.PNG)
+![Success Page](07-xsengine.png)
 
 If you can't connect to the page you can verify that the port is in LISTEN mode using the following command:
 
@@ -997,6 +997,34 @@ If the result is empty, then one of the required services is not up and running 
 
 As you have installed the *Server + Applications* binary (`hxe.tgz` + `hxexsa.tgz`), you can test your XSA installation with the following instructions.
 
+You can check that the `XSAEngine` is up and running using a browser using the following URL pattern with the default installation values, you can use:
+
+  <a href="https://<hostname>:39030" target="new">https://&lt;hostname&gt;:39030</a>
+
+A success page displays with a list of important application URLs :
+
+![Success Page](07-xsaengine.png)
+
+If you can't connect to the page you can verify that the port is in LISTEN mode using the following command:
+
+```bash
+netstat -ano | grep -e 39030 | grep LISTEN
+```
+
+And the expected result should be:
+
+```
+tcp   0   0 0.0.0.0:39090    0.0.0.0:*     LISTEN   off (0.00/0/0)
+```
+
+If the result is empty, then one of the required services is not up and running else your firewall is blocking the communication.
+
+---
+
+### <b>XSA Admin Cockpit </b>
+
+---
+
 You need now to execute the following commands:
 
 ```bash
@@ -1015,13 +1043,24 @@ xs apps
 
 &nbsp;
 
+> **Note:** This command may fail due to a missing SSL certificate.
+>
+> To fix this problem, you will need to set up the certificate for your client.
+> The above example show the local path, therefore if you want to run the following from a different machine you will have to transfer the available on the SAP HANA, express edition server machine to the client machine first and adjust the command path.
+>
+> ```bash
+> xs api https://<hostname>:39030 -cacert /hana/shared/HXE/xs/controller_data/controller/ssl-pub/router/default.root.crt.pem
+> ```
+&nbsp;
+
 Check that the application **`cockpit-admin-web-app`** is shown as **STARTED** with 1/1 instances in the list of XSA applications using the following command:
+
 
 ```bash
 xs apps | grep cockpit-admin-web-app
 ```
 
-> **Note:** Normally it only takes a few minutes for XSA services to start. However. depending on your machine, it can take over 30 minutes for XSA services to begin. If the service doesn't show STARTED and doesn't show 1/1 instances, keep waiting until the service is enabled.
+> **Note:** Normally it takes a few minutes for XSA services to start. However. depending on your machine, it can take over 30 minutes for XSA services to begin. If the service doesn't show STARTED and doesn't show 1/1 instances, keep waiting until the service is enabled.
 
 &nbsp;
 

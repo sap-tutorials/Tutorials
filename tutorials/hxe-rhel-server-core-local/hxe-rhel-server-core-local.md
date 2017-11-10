@@ -2,7 +2,7 @@
 title: Install SAP HANA 2.0, express edition on Red Hat Enterprise Linux (Server only)
 description: Learn how to prepare your Red Hat Enterprise Linux system to install and test SAP HANA, express edition
 primary_tag: products>sap-hana\,-express-edition  
-tags: [  tutorial>beginner, products>sap-hana\,-express-edition]
+tags: [  tutorial>intermediate, products>sap-hana\,-express-edition]
 ---
 
 ### You will learn
@@ -685,13 +685,13 @@ exit
 
 ---
 
-### <b>Install the Client for Linux</b>
+### <b>Install the SAP HANA HDB Client for Linux</b>
 
 ---
 
 The downloaded archive for the client package contains both the ***SAP HANA HDB Client*** and the ***SAP HANA XS CLI***.
 
-Here you will only install the ***SAP HANA HDB Client***, as the ***SAP HANA XS CLI*** is already available with the ***Server + Applications*** installation.
+Here you will only install the ***SAP HANA HDB Client***.
 
 The ***SAP HANA HDB Client*** software package includes the following connectivity/drivers:
 
@@ -910,7 +910,7 @@ or
 
 A success page displays:
 
-![XSEngine Success Page](07-xsengine.PNG)
+![Success Page](07-xsengine.png)
 
 If you can't connect to the page you can verify that the port is in LISTEN mode using the following command:
 
