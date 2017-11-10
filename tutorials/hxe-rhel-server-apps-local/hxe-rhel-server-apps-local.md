@@ -1051,6 +1051,7 @@ xs apps
 > ```bash
 > xs api https://<hostname>:39030 -cacert /hana/shared/HXE/xs/controller_data/controller/ssl-pub/router/default.root.crt.pem
 > ```
+
 &nbsp;
 
 Check that the application **`cockpit-admin-web-app`** is shown as **STARTED** with 1/1 instances in the list of XSA applications using the following command:
