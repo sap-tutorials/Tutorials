@@ -55,6 +55,26 @@ Call it `PO`
 
 ![create folder](7.png)
 
+The Web IDE will try to open a graphical editor, **close it**:
+
+![create folder](close.png)
+
+Open the Code Editor by right-clicking on `PO.hdbcds`:
+
+![create folder](8.png)
+
+Add the following code to the editor:
+
+```sql
+
+context PO{
+
+};
+
+```
+
+**Save** and close this editor.
+
 [DONE]
 [ACCORDION-END]
 
@@ -63,6 +83,8 @@ Call it `PO`
 [ACCORDION-BEGIN [Step 3: ](Create your Entities using the CDS graphical editor)]
 
 You can now explore the graphical Core Data Services editor briefly.
+
+Right-click on the entity and choose **Graphical Editor**.
 
 **Click** on an entity and drop it in the editor:
 
