@@ -34,11 +34,15 @@ In the following tutorials, you will add multilingual capabilities using the SAP
 
 > **Note**: If you have already configured the SAP Cloud Platform SDK for iOS Assistant, you can **skip this step** and proceed with "Step 2 - Run the SAP Cloud Platform SDK for iOS Assistant".
 
+.
+
 This step provides simplified steps to configure the SAP Cloud Platform SDK for iOS Assistant application using the SAP Cloud Platform mobile service for development and operations cockpit.
 
 Log on to your SAP Cloud Platform trial account at [https://account.hanatrial.ondemand.com/](https://account.hanatrial.ondemand.com/) and once logged in, navigate to **Services**. Scroll down to **Mobile Services** and click on the **Development & Operations** tile. In the **Development & Operations - Overview** page, click the **Go to Service** link to open a new window to **SAP Cloud Platform mobile service for development and operations**.
 
 > Alternatively, you can go directly to `https://hcpms-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/`.
+
+.
 
 Once you're logged in to **SAP Cloud Platform mobile service for development and operations**, click the **Important Links** tab in the lower left bottom. The **Important Links** section opens:
 
@@ -76,6 +80,8 @@ Close the **Accounts** dialog.
 [ACCORDION-BEGIN [Step 2: ](Run the SAP Cloud Platform SDK for iOS Assistant)]
 
 > **Note**: If you went through "Step 1 - Configure SAP Cloud Platform SDK for iOS Assistant", the SAP Cloud Platform SDK for iOS Assistant is already running and you may continue to "Step 3 - Create an Xcode Project".
+
+.
 
 Double-click the **SAP Cloud Platform SDK for iOS Assistant** icon to start the application. If no applications have been generated previously, you will see the initial screen:
 
@@ -235,6 +241,8 @@ In your Xcode project, open the `Main.storyboard` and remove every scene in it.
 Then, open group `ESPMReminders/ViewControllers` and remove everything, **except** the file `SnapshotViewController.swift`.
 
 > The snapshot view controller is used as a placeholder view when the app is running in the background, and thus hiding potential sensitive data.
+
+.
 
 Your project should now resemble the following:
 
@@ -556,7 +564,7 @@ However, there are still some things missing. In the final steps, you will add a
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](XXXXX)]
+[ACCORDION-BEGIN [Step 18: ](Add Contact Cell Activities)]
 
 In the file `CustomerViewController.swift`, add the following private field:
 
