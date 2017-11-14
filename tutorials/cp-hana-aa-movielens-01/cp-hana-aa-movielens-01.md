@@ -21,9 +21,9 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 
 In order to build your movie recommendation engine, we will be using one of the `MovieLens` dataset, as there are multiple one with different sizes.
 
-These datasets are made available by the <a href="https://grouplens.org" target="new">`GroupLens Research`&copy;</a> group. They have collected and made available rating data sets from the <a href="http://movielens.org" target="new">`MovieLens`</a> web site which were collected over various periods of time.
+These datasets are made available by the <a href="https://grouplens.org" target="new">```GroupLens``` Research &copy;</a> group. They have collected and made available rating data sets from the <a href="http://movielens.org" target="new">```MovieLens```</a> web site which were collected over various periods of time.
 
-The data set that we will be using for this series is the ***small*** version of the **`MovieLens` Latest Datasets** downloadable  <a href="http://grouplens.org/datasets/movielens/latest/" target="new">here</a>.
+The data set that we will be using for this series is the ***small*** version of the **`MovieLens` Latest Datasets** downloadable <a href="http://grouplens.org/datasets/movielens/latest/" target="new">here</a>.
 
 This dataset, thanks to its size, can easily be used with your SAP HANA MDC instance on the SAP Cloud Platform developer/trial account.
 
@@ -53,6 +53,16 @@ This is why we will be using the ***SAP HANA Core Data Service*** (CDS) instead,
 
 In order to create the CDS artifacts, we will be using the **Editor** perspective available in the **SAP HANA Web-based Development Workbench**.
 
+But first we need to login as the `TRIAL` user.
+
+Click on the logout ![logout](0-logout.png) button in the top right corner of the screen.
+
+This will bring you back to the login screen where you will need to enter `TRIAL` as user name and `Welcome17Welcome17` as your password.
+
+![logout](0-login.png)
+
+Click on login
+
 From the ***SAP HANA Web-based Development Workbench*** main panel, click on **Editor**:
 
 ![SAP HANA Web-based Development Workbench](01.png)
@@ -62,7 +72,11 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 ![SAP HANA Web-based Development Workbench](02.png)
 
 > ### **Note**:
->**Make sure the currently connected user is TRIAL and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
+> **Make sure the currently connected user is TRIAL and not SYSTEM**. 
+>
+> Check the upper right corner of the SAP HANA Web-based Development Workbench.
+
+&nbsp;
 
 [DONE]
 [ACCORDION-END]
@@ -101,7 +115,7 @@ Check the message console, and make sure there is no errors. The following messa
 
 [ACCORDION-BEGIN [Step 3: ](Download the dataset locally)]
 
-As the files get updated periodically, and in order to ensure consistency of content and validation, the data is available under the <a href="https://github.com/SAPDocuments/Tutorial-Contribution/tree/master/tutorials/cp-hana-aa-movielens-01/csv" target="new">`csv`</a> directory within the SAP Tutorial GitHub repository.
+As the files get updated periodically, and in order to ensure consistency of content and validation, the data is available under the <a href="https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/cp-hana-aa-movielens-01/csv" target="new">```csv```</a> directory within the SAP Tutorial GitHub repository.
 
 Download the following files locally (right click on the link, then use the ***Save link as*** option):
 
@@ -400,4 +414,3 @@ Based on the result returned by the above SQL statement, provide an answer to th
 
 [VALIDATE_1]
 [ACCORDION-END]
-

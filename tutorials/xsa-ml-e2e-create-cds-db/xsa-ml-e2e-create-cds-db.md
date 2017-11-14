@@ -53,7 +53,7 @@ Create a CDS artifact in your new folder
 
 Call it `PO`
 
-![create folder](7_1.png)
+![create folder](7.png)
 
 The Web IDE will try to open a graphical editor, **close it**:
 
@@ -84,6 +84,8 @@ context PO{
 
 You can now explore the graphical Core Data Services editor briefly.
 
+Right-click on the entity and choose **Graphical Editor**.
+
 **Click** on an entity and drop it in the editor:
 
 ![create CDS graphical](10.png)
@@ -98,6 +100,8 @@ Double click on the node you have just added (inside the white rectangle) and cl
 
 Create two fields as follows:
 
+>Hint: If you haven't already, close the `Git` pane.
+
 ![create CDS fields](13.png)
 
 **Save** and close the Graphical editor.
@@ -108,7 +112,7 @@ Open the **Text Editor** again by right-clicking on `PO.hdbcds`
 
 Copy the definition of the entity (blurred out below) and click on **Validate**:
 
-![see text editor](14.png)
+![validate CDS definition](14.png)
 
 [VALIDATE_1]
 [ACCORDION-END]

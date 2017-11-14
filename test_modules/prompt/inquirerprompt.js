@@ -106,10 +106,12 @@ var ask = function (array){
     }
 
 ///in case the user did a specific selection of tutorials (not the whole folder - user picked specific ones)
-    if (results.specifictutorials.length > 0) {
+    if (results.specifictutorials && results.specifictutorials.length > 0) {
       singletutorialsselected(results.specifictutorials);
     }
-});
+  }).catch(function (err) {
+    console.log(err);
+  });
 }
 
 

@@ -1,6 +1,6 @@
 ---
 title: Import a series of predictive demo dataset
-description: Import a demo data to be used with the SAP Cloud for predictive services
+description: Import a demo data to be used with the SAP Predictive services
 primary_tag: products>sap-cloud-platform-predictive-service
 tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-hana, products>sap-cloud-platform ]
 ---
@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
   - **Tutorials:** [Setup a HANA user account](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
 
 ## Next Steps
-- [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+- [Enable, deploy and configure the SAP Predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Details
 
@@ -101,4 +101,4 @@ Click on the **Run** ![open](0-run.png) button or press F8.
 [ACCORDION-END]
 
 ## Next Steps
-- [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+- [Enable, deploy and configure the SAP Predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)

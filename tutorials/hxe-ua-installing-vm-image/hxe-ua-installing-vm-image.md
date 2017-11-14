@@ -152,7 +152,7 @@ Use the Download Manager (GUI mode) to download a server-only virtual machine pa
 
 2. In Download Manager, in the **Image** pull-down, select **Virtual Machine**.
 
-    ![Download Manager](VM_Download_Manager_SPS02_PL02.png)    
+    ![Download Manager](VM_Download_Manager_SPS02_PL0201.png)    
 
 3. Specify a save directory. Click **Browse** and select a directory where your downloads will be saved.
 
@@ -213,8 +213,6 @@ Use the Download Manager (GUI mode) to download a server-only virtual machine pa
     - **SAP HANA smart data integration** - SAP HANA smart data integration provides functionality to access source data, and to provision, replicate, and transform that data in SAP HANA on premise, or in the cloud. Download file name is `sdi.tgz`. <!--Needs link to Mike Madsen's tutorial when available-->
 
     - **SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64)** - The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources. Download file name is `dpagent_linux_x86_64.tgz`. <!--Needs link to Mike Madsen's tutorial when available-->   
-
-    - **SAP Web IDE for SAP HANA** - SAP Web IDE for SAP HANA is a browser-based integrated development environment for the development of SAP HANA based applications comprised of extensive SAP HANA data models, business logic, and web-based GUIs. Download file name is `webide.tgz`.    
 
 6. Click the **Download** button.
 
@@ -294,7 +292,6 @@ Run the Download Manager in console mode if you're used to a command line interf
     | clients_mac.tgz           | Client download package for Mac. Use the client packages to access developed SAP HANA, express edition applications from a client PC.  |
     | `sdi.tgz`           | SAP HANA smart data integration download package. SAP HANA smart data integration provides functionality to access source data, and to provision, replicate, and transform that data in SAP HANA on premise, or in the cloud.  |
     | `dpagent_linux_x86_64.tgz`           | SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64) download package. The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources.  |
-    | `webide.tgz`           | SAP Web IDE for SAP HANA is a browser-based integrated development environment for the development of SAP HANA-based applications comprised of extensive SAP HANA data models, business logic, and web-based UIs.  |          
 
 5. Download one or more files.
 

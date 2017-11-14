@@ -186,4 +186,4 @@ You will also see the group `Z_RDS_BCG`.
 
 ## Next Steps
 
-[Building simple tile](http://go.sap.com/developer/tutorials/s4hana-cds-building-simple-tile.html)
+[Building simple tile](http://www.sap.com/developer/tutorials/s4hana-cds-building-simple-tile.html)

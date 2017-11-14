@@ -54,7 +54,6 @@ As displayed on the screen, the sandbox URL for the **Topic Detection API** wher
 https://sandbox.api.sap.com/ml/topicdetection/inference_sync
 ```
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Get Your API key )]
@@ -69,7 +68,6 @@ The following pop-up should appear. Click on the **Copy API Key** button and sav
 
 Now, let's build a SAPUI5 application! But before doing so let's first add the destination to connect to the SAP API Business Hub.
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Access the SAP Cloud Platform Cockpit)]
@@ -77,7 +75,6 @@ Now, let's build a SAPUI5 application! But before doing so let's first add the d
 Go to your [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) account and access "Your Personal Developer Account".
 
 ![SAP HANA Cloud Platform Cockpit](06.png)
-
 
 [ACCORDION-END]
 
@@ -116,7 +113,6 @@ Click on **Save**
 
 You can use the **Check Connectivity** button ![HTML5 Applications](0-check.png) next to the new **Destination** to validate that the URL can be accessed.
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Open the Web IDE)]
@@ -132,7 +128,6 @@ Click on the tile, then click on **Open SAP Web IDE**.
 You will get access to the **SAP Web IDE** main page:
 
 ![Web IDE](12.png)
-
 
 [ACCORDION-END]
 
@@ -164,7 +159,6 @@ View Name            | `demo`
 
 ![Project](15.png)
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Extend the application resource roots)]
@@ -184,7 +178,6 @@ data-sap-ui-resourceroots='{"demosapui5ml-topicdetection": "", "sapui5ml": ""}'
 ```
 
 Click on the ![Save Button](00-save.png) button (or press CTRL+S).
-
 
 [ACCORDION-END]
 
@@ -230,7 +223,6 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 }
 ```
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Store your API setting in a JSON model)]
@@ -274,7 +266,6 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
   }
 }
 ```
-
 
 [ACCORDION-END]
 
@@ -386,7 +377,6 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 </mvc:View>
 ```
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Extend the main SAPUI5 controller)]
@@ -433,7 +423,7 @@ sap.ui.define([
 				var oTopicDetection = JSON.parse(oControlEvent.getParameters().responseRaw).topicDetection;
 
 				// create a JSON model
-				var documents = new Array(0);
+				var documents = new Array(oTopicDetection.length);
 				for (var iTopicDetection = 0; iTopicDetection < oTopicDetection.length; iTopicDetection++) {
 					var oTopicDetectionDocument = {
 						"name": oTopicDetection[iTopicDetection].docName
@@ -462,7 +452,6 @@ sap.ui.define([
 	});
 });
 ```
-
 
 [ACCORDION-END]
 
