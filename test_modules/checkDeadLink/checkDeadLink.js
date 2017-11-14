@@ -1,18 +1,24 @@
 'use strict';
 
 var checkLink = require('markdown-link-check');
+var request = require('request');
+
+var options = {
+  timeout: '60s',
+};
 
 module.exports = function(fname, links, callback) {
-  //  if(links.length == 0){
+
+    if(links.length == 0){
       callback({"isPassed":true, "deadlinks":[]});
-  /*  }else{
+    }else{
       //exclude readme files
       if (fname != "readme.md" && fname != "README.md") {
               var isPassed = true;
               var deadlinks = [];
               var index = 0;
           links.forEach(function(link){
-            checkLink(link, function(err, results){
+            checkLink(link, options, function(err, results){
                var result = results[0];
                if(result.status == 'dead'){
                  isPassed = false;
@@ -29,5 +35,5 @@ module.exports = function(fname, links, callback) {
       } else {
           callback(null);
       }
-    }*/
+    } 
 }
