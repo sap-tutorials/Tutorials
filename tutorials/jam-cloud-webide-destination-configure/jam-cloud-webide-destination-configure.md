@@ -1,6 +1,6 @@
 ---
-title: Configure the SAP Web IDE Destination for SAP Jam Collaboration on SAP Cloud Platform
-description: Demonstrates how to configure the SAP Web IDE Destination for SAP Jam Collaboration on SAP Cloud Platform
+title: Configure the SAP Web IDE destination for SAP Jam Collaboration on SAP Cloud Platform
+description: This tutorial shows how to configure the SAP Web IDE destination for SAP Jam Collaboration on SAP Cloud Platform.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
 ---
@@ -14,9 +14,9 @@ tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, t
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to configure the Web IDE SAP Jam Collaboration Destination on SAP Cloud Platform.
+In this tutorial, you will learn how to configure the SAP Web IDE SAP Jam Collaboration Destination on SAP Cloud Platform.
 
-To enable your Web IDE to recognize the SAP Jam Collaboration UI5 mobile components you will need to register a second destination on SAP Cloud Platform.
+To enable your SAP Web IDE to recognize the SAP Jam Collaboration UI5 mobile components you will need to register a second destination on SAP Cloud Platform.
 
 ### Time to Complete
 **15 Min**
