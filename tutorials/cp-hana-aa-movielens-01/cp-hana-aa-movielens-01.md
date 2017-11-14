@@ -101,7 +101,7 @@ Check the message console, and make sure there is no errors. The following messa
 
 [ACCORDION-BEGIN [Step 3: ](Download the dataset locally)]
 
-As the files get updated periodically, and in order to ensure consistency of content and validation, the data is available under the <a href="https://github.com/SAPDocuments/Tutorial-Contribution/tree/master/tutorials/cp-hana-aa-movielens-01/csv" target="new">```csv```</a> directory within the SAP Tutorial GitHub repository.
+As the files get updated periodically, and in order to ensure consistency of content and validation, the data is available under the <a href="https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/cp-hana-aa-movielens-01/csv" target="new">```csv```</a> directory within the SAP Tutorial GitHub repository.
 
 Download the following files locally (right click on the link, then use the ***Save link as*** option):
 
