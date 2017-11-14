@@ -53,6 +53,16 @@ This is why we will be using the ***SAP HANA Core Data Service*** (CDS) instead,
 
 In order to create the CDS artifacts, we will be using the **Editor** perspective available in the **SAP HANA Web-based Development Workbench**.
 
+But first we need to login as the `TRIAL` user.
+
+Click on the logout ![logout](0-logout.png) button in the top right corner of the screen.
+
+This will bring you back to the login screen where you will need to enter `TRIAL` as user name and `Welcome17Welcome17` as your password.
+
+![logout](0-login.png)
+
+Click on login
+
 From the ***SAP HANA Web-based Development Workbench*** main panel, click on **Editor**:
 
 ![SAP HANA Web-based Development Workbench](01.png)
@@ -62,7 +72,11 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 ![SAP HANA Web-based Development Workbench](02.png)
 
 > ### **Note**:
->**Make sure the currently connected user is TRIAL and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
+> **Make sure the currently connected user is TRIAL and not SYSTEM**. 
+>
+> Check the upper right corner of the SAP HANA Web-based Development Workbench.
+
+&nbsp;
 
 [DONE]
 [ACCORDION-END]
