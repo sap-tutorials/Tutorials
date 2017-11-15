@@ -1,6 +1,6 @@
 ---
-title: Setup Trust between SAP Cloud Platform and SAP Jam Collaboration
-description: Demonstrates how to setup Trust between SAP Cloud Platform and SAP Jam Collaboration.
+title: Set up trust between SAP Cloud Platform and SAP Jam Collaboration
+description: This tutorial shows how to set up trust between SAP Cloud Platform and SAP Jam Collaboration.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
 ---
@@ -9,11 +9,11 @@ tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, t
  - **Proficiency:** Intermediate
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Configure the SAP Cloud Platform Destination for SAP Jam Collaboration API SSO](https://www.sap.com/developer/tutorials/jam-cloud-api-sso-configure.html)
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to setup Trust between SAP Cloud Platform and SAP Jam Collaboration.
+In this tutorial, you will learn how to set up trust between SAP Cloud Platform and SAP Jam Collaboration.
 
 The purpose of the trust configuration is the support of principal propagation, forwarding the logged on identity in the cloud (SAP Cloud Platform) to the internal system (SAP Jam Collaboration), which means logging on with a user that matches this identity without the need of providing the password (SSO). By default, SAP Cloud Platform is configured to use the SAP ID Service as the default trusted IDP (identity provider).
 
@@ -81,4 +81,4 @@ The purpose of the trust configuration is the support of principal propagation, 
 ---
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Configure the SAP Cloud Platform Destination for SAP Jam Collaboration API SSO](https://www.sap.com/developer/tutorials/jam-cloud-api-sso-configure.html)

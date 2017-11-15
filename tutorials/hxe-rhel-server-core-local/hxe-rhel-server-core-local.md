@@ -2,7 +2,7 @@
 title: Install SAP HANA 2.0, express edition on Red Hat Enterprise Linux (Server only)
 description: Learn how to prepare your Red Hat Enterprise Linux system to install and test SAP HANA, express edition
 primary_tag: products>sap-hana\,-express-edition  
-tags: [  tutorial>beginner, products>sap-hana\,-express-edition]
+tags: [  tutorial>intermediate, products>sap-hana\,-express-edition]
 ---
 
 ### You will learn
@@ -49,13 +49,17 @@ Your server will need the following:
 
 Hardware | Details
 ---------|-----------------
-RAM      | 16 GB minimum (24 GB recommended) <br><br> <blockquote> <b>Note:</b> If you are installing on a system with 16 GB of RAM, increase the amount of swap space to at least 32 GB.</blockquote>
+RAM      | 24 GB minimum (32 GB recommended)<br><br> <blockquote> <b>Note:</b> If you are installing on a system with 16 GB of RAM, increase the amount of swap space to at least 32 GB.</blockquote>
 HDD      | 120 GB HDD recommended
 Cores    | 2 cores (4 recommended)
 
-#### <u><b>RAM</b></u>&nbsp;
+---
 
-To check the amount of RAM memory available on your system you can execute the following as the root user or using `sudo` from your server terminal console:
+### <b>Check the RAM</b>
+
+---
+
+To check the amount of RAM memory available on your system you can execute the following from your server terminal console:
 
 ```bash
 free -m
@@ -69,9 +73,13 @@ Mem:     7808   7265    133       23         409         235
 Swap:    8064   3627   4437
 ```
 
-#### <u><b>HDD (Hard Drive Disk)</b></u>&nbsp;
+---
 
-To check the amount of disk space available on your system, you can execute the following as the root user or using `sudo` from your server terminal console:
+### <b>Check the HDD (Hard Drive Disk)</b>
+
+---
+
+To check the amount of disk space available on your system, you can execute the following from your server terminal console:
 
 ```bash
 df --block-size=1G
@@ -79,9 +87,13 @@ df --block-size=1G
 
 Here it is important to consider that the software will be installed in the `/usr/sap` directory.
 
-#### <u><b>CPU</b></u>&nbsp;
+---
 
-To check the number of CPU available on your system, you can execute the following as the root user or using `sudo` from your server terminal console:
+### <b>Check the CPU</b>
+
+---
+
+To check the number of CPU available on your system, you can execute the following from your server terminal console:
 
 ```bash
 grep -c ^processor /proc/cpuinfo
@@ -91,7 +103,11 @@ grep -c ^processor /proc/cpuinfo
 
 [ACCORDION-BEGIN [Step 2: ](Prepare Your System)]
 
-#### <u><b>Red Hat Enterprise Linux for SAP HANA Subscription</b></u>&nbsp;
+---
+
+### <b>Red Hat Enterprise Linux for SAP HANA Subscription</b>
+
+---
 
 In order to install and run SAP HANA, express edition on a Red Hat Enterprise Linux (RHEL) operating system, the following additional Red Hat software components must be installed via ***Red Hat Enterprise Linux for SAP HANA channel***:
 
@@ -107,53 +123,61 @@ And the detailed options and instructions to subscribe your RHEL system to the *
 
  - <a href="https://access.redhat.com/solutions/2334521" target="new">https://access.redhat.com/solutions/2334521</a>
 
-Once your system is properly configured with the subscription, you should be able to run the following command from a terminal console on your server either as the root user or using `sudo`:
+Once your system is properly configured with the subscription, you should be able to run the following command from a terminal console on your server:
 
 ```bash
-yum repolist
+sudo yum repolist
 ```
 
 In the output you should have an entry like **`RHEL EUS Server SAP HANA`**.
 
-Now, let's clean cached data.
+Now, you have to clean the `yum` cached data.
 
-From your server terminal console, execute the following as the root user or using `sudo`:
+From your server terminal console, execute the following command:
 
 ```bash
-yum clean all
+sudo yum clean all
 ```
 
-#### <u><b>Environment package</b></u>&nbsp;
+---
 
-In order to install and run SAP HANA, express edition on your RHEL system, you will need the ***Base*** environment group package, as the ***Core*** or the ***Minimal*** group package is not enough.
+### <b>Environment package</b>
 
-From your server terminal console, execute the following as the root user or using `sudo` to get the available group packages:
+---
+
+In order to install and run SAP HANA, express edition on your RHEL system, you will need the ***Base*** environment group package, as the ***Core*** or the ***Minimal*** group package are not enough.
+
+From your terminal console, execute the following command to get the available group packages:
 
 ```bash
-yum grouplist
+sudo yum grouplist
 ```
 
 The ***Base*** environment group package may not be marked as installed in the previous list which may require to run the following command:
 
 ```bash
-yum group mark convert
+sudo yum group mark convert
 ```
 
 If not installed, then run the following command:
 
 ```bash
-yum -y groupinstall base
+sudo yum -y groupinstall base
 ```
 
-#### <u><b>Required packages</b></u>&nbsp;
+---
 
-You also need the following packages to be installed before getting started:
+### <b>Required packages</b>
+
+---
+
+You will also need to check that the following package version are installed before getting started:
 
 - `kernel-3.10.0-514.28.1.el7` or newer
 - `kexec-tools-2.0.7-50.el7_3.2` or newer
 - `glibc-2.17-157.el7_3.5` or newer
 
-To verify that the packages are available, you can execute the following as the root user or using `sudo`:
+To verify that the packages are available, you can execute the following command:
 
 ```bash
 rpm -qa --queryformat '(%{installtime:date}) %{name} %{version}\n' kernel
@@ -161,9 +185,13 @@ rpm -qa --queryformat '(%{installtime:date}) %{name} %{version}\n' kexec-tools
 rpm -qa --queryformat '(%{installtime:date}) %{name} %{version}\n' glibc
 ```
 
-#### <u><b>Additional packages dependencies</b></u>&nbsp;
+---
 
-We also need to install the following additional packages dependencies:
+### <b>Additional packages dependencies</b>
+
+---
+
+You will need to install the following additional packages:
 
 |-------------------|-----------------|-------------------|-------------------------|
 |xulrunner 					| sudo 						| libssh2 					| expect 									|
@@ -171,10 +199,10 @@ We also need to install the following additional packages dependencies:
 |nfs-utils 					| lm_sensors 			| openssl 					| PackageKit-gtk3-module 	|
 |libcanberra-gtk2 	| xorg-x11-xauth 	| numactl 					| bind-utils 							|
 
-From your terminal console, execute the following as the root user or using `sudo`:
+From your terminal console, execute the following command:
 
 ```bash
-yum -y install xulrunner \
+sudo yum -y install xulrunner \
 	sudo \
 	libssh2 \
 	expect \
@@ -196,7 +224,11 @@ The command uses the `-y` which will assume that all question like using more sp
 
 As the output may be long and not easy visualize, you can run the command again, you should be able to spot easily packages that can't install as properly installed ones won't get reinstalled.
 
-#### <u><b>RHEL SAP HANA Compatibility Library</b></u>&nbsp;
+---
+
+### <b>RHEL SAP HANA Compatibility Library</b>
+
+---
 
 The `gcc-4.7 libstdc++` library is required to install and run SAP HANA in general whatever the Linux distribution.
 
@@ -204,7 +236,7 @@ A compatibility library was built for RHEL by Red Hat to enable the SAP HANA ins
 
 The compatibility library is available via the **Red Hat Enterprise Linux for SAP HANA Subscription**, which was configured during the first step.
 
-To verify is the package was previously installed, you can execute the following as the root user or using `sudo`:
+To verify if the package was previously installed, you can execute the following:
 
 ```bash
 rpm -qa --queryformat '(%{installtime:date}) %{name}\n' compat-sap-c++-6
@@ -212,38 +244,42 @@ rpm -qa --queryformat '(%{installtime:date}) %{name}\n' compat-sap-c++-6
 
 The output should include an entry with version 6.3.1 or higher.
 
-To install the package if it is missing or with an older version, execute the following as the root user or using `sudo`:
+To install the package if it is missing or with an older version, execute the following command:
 
 ```bash
-yum -y install compat-sap-c++-6
+sudo yum -y install compat-sap-c++-6
 ```
 
-#### <u><b>Activate the RHEL SAP HANA Specific Tuned Profiles</b></u>&nbsp;
+---
+
+### <b>Activate the RHEL SAP HANA Specific Tuned Profiles</b>
+
+---
 
 The tuned tuning service for Linux can adapt the operating system to perform better under certain workloads by setting a tuning profile.
 
 Red Hat has developed specific tuned profiles to optimize the performance of SAP HANA on RHEL.
 
-From your terminal console, execute the following as the root user or using `sudo`:
+From your terminal console, execute the following command:
 
 ```bash
-yum -y install tuned-profiles-sap-hana
+sudo yum -y install tuned-profiles-sap-hana
 ```
 
-Now you need to start and enable the tuning service by executing the following as the root user or using `sudo`:
+Now you need to start and enable the tuning service by executing the following using `sudo`:
 
 ```bash
-systemctl start tuned
-systemctl enable tuned
+sudo systemctl start tuned
+sudo systemctl enable tuned
 ```
 
 You can check the service status using the following command:
 
 ```bash
-systemctl status tuned
+sudo systemctl status tuned
 ```
 
-Once started, you can run execute the profile by executing the following as the root user or using `sudo`:
+Once started, you can run execute the profile by executing the following commands:
 
 ```bash
 tuned-adm profile sap-hana
@@ -253,18 +289,22 @@ tuned-adm profile sap-hana
 
 &nbsp;
 
-#### <u><b>Disable SELinux</b></u>&nbsp;
+---
+
+### <b>Disable `SELinux`</b>
+
+---
 
 RHEL 7.2 is delivered with `SELinux` enabled by default. Since there is no supported `SELinux` policy for SAP HANA, `SELinux` must be disabled to be able to run SAP HANA on RHEL7.
 
-From your terminal console, execute the following as the root user or using `sudo`:
+From your terminal console, execute the following commands:
 
 ```bash
-setenforce 0
-sed -i 's/\(SELINUX=enforcing\|SELINUX=permissive\)/SELINUX=disabled/g' /etc/selinux/config
+sudo setenforce 0
+sudo sed -i 's/\(SELINUX=enforcing\|SELINUX=permissive\)/SELINUX=disabled/g' /etc/selinux/config
 ```
 
-For the change to permanently take effect you will need to restart your system, but we will do that at the end of the configuration.
+For the change to permanently take effect you will need to restart your system, but you will do that at the end of the configuration.
 
 You can check the service status using the following command:
 
@@ -290,32 +330,40 @@ It should return the following:
 Disabled
 ```
 
-#### <u><b>Disable Automatic NUMA Balancing</b></u>&nbsp;
+---
+
+### <b>Disable Automatic NUMA Balancing</b>
+
+---
 
 SAP HANA is aware of NUMA (non-uniform memory access), and it does not rely on the Linux kernel features to optimize NUMA usage automatically.
 
 Therefore, the automatic NUMA balancing features of the Linux Kernel should be disabled.
 
-To disable this feature, from your terminal console, execute the following as the root user or using `sudo`:
+To disable this feature, from your terminal console, execute the following commands:
 
 ```bash
-cp /etc/sysctl.d/sap_hana.conf /etc/sysctl.d/sap_hana.conf.bkp
-echo "kernel.numa_balancing = 0" > /etc/sysctl.d/sap_hana.conf
-sysctl -p /etc/sysctl.d/sap_hana.conf
+sudo cp /etc/sysctl.d/sap_hana.conf /etc/sysctl.d/sap_hana.conf.bkp
+sudo echo "kernel.numa_balancing = 0" > /etc/sysctl.d/sap_hana.conf
+sudo sysctl -p /etc/sysctl.d/sap_hana.conf
 ```
 
-RHEL7 also provides the ***`numad`*** user space daemon that can be used to control NUMA balancing of applications. This needs to be disabled as well using the executing the following as the root user or using `sudo`:
+RHEL7 also provides the ***`numad`*** user space daemon that can be used to control NUMA balancing of applications. This needs to be disabled as well using the executing the following commands:
 
 ```bash
-systemctl stop numad
-systemctl disable numad
+sudo systemctl stop numad
+sudo systemctl disable numad
 ```
 
-#### <u><b>Symbolic Links</b></u>&nbsp;
+---
+
+### <b>Symbolic Links</b>
+
+---
 
 Since SAP HANA is built on a different Linux Distribution some of the library names used during the built process do not match with the library names used on RHEL7.
 
-Check if the following symbolic exists by execute the following commands:
+Check if the following symbolic exists by execute the following command:
 
 ```bash
 ls -la /usr/lib64/libssl.so.1.0.1 /usr/lib64/libcrypto.so.1.0.1
@@ -328,14 +376,18 @@ lrwxrwxrwx. 1 root root XX yyy zz aa:bb /usr/lib64/libcrypto.so.1.0.1 -> /usr/li
 lrwxrwxrwx. 1 root root XX yyy zz aa:bb /usr/lib64/libssl.so.1.0.1 -> /usr/lib64/libssl.so.1.0.1e
 ```
 
-If they are not present you can add them by executing the following as the root user or using `sudo`:
+If they are not present you can add them by executing the following commands:
 
 ```bash
-ln -s /usr/lib64/libssl.so.1.0.1e /usr/lib64/libssl.so.1.0.1
-ln -s /usr/lib64/libcrypto.so.1.0.1e /usr/lib64/libcrypto.so.1.0.1
+sudo ln -s /usr/lib64/libssl.so.1.0.1e /usr/lib64/libssl.so.1.0.1
+sudo ln -s /usr/lib64/libcrypto.so.1.0.1e /usr/lib64/libcrypto.so.1.0.1
 ```
 
-#### <u><b>Configure your Firewall</b></u>&nbsp;
+---
+
+### <b>Configure your Firewall</b>
+
+---
 
 To protect your servers from unauthorized access, it is usual to configure the built-in firewall of the OS to only allow its access via a specified series of ports and communication protocol.
 
@@ -344,11 +396,17 @@ To configure the firewall, you can use the `firewall-config` tool. In this case,
 To avoid problems with the firewall during installation, it can be beneficial to disable it completely during the installation process with the following commands:
 
 ```bash
-systemctl stop firewalld
-systemctl disable firewall
+sudo systemctl stop firewalld
+sudo systemctl disable firewall
 ```
 
-#### <u><b>Java Version</b></u>&nbsp;
+You can check the best practice section about firewall configuration once you complete the installation to properly configure your system.
+
+---
+
+### <b>Java Version</b>
+
+---
 
 One the requirement to install SAP HANA, express edition is a 64-bit Java Runtime Environment (JRE) 8 or Higher, especially if you are planning to use the SAP HANA 2.0, express edition ***Download Manager***.
 
@@ -367,17 +425,17 @@ Java(TM) SE Runtime Environment (build 1.8.0_xx-yyy)
 
 If you don't have it yet installed, you can check the following link for download link and installation instructions : <a href="https://tools.hana.ondemand.com/#cloud" target="new">https://tools.hana.ondemand.com/#cloud</a>
 
-Using the RPM option is most likely the easiest, as you will have to simply run the following command from your terminal command (where **<version>** needs to be adjusted based on the downloaded version) as the root user or using `sudo`:
+Using the RPM option is most likely the easiest, as you will have to simply run the following command from your terminal console (where **<version>** needs to be adjusted based on the downloaded version):
 
-```bash
-rpm -ivh ./sapjvm-<version>-linux-x64.rpm
+```
+sudo rpm -ivh <rpm directory>/sapjvm-<version>-linux-x64.rpm
 ```
 
-Then you will need to update the "alternatives" and enable your flavor of java using the following command as the root user or using `sudo`:
+Then you will need to update the "alternatives" and enable your flavor of java using the following commands:
 
 ```bash
-update-alternatives --install "/usr/bin/java" "java" "/usr/java/sapjvm_8_latest/bin/java" 1
-update-alternatives --set java /usr/java/sapjvm_8_latest/bin/java
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/java/sapjvm_8_latest/bin/java" 1
+sudo update-alternatives --set java /usr/java/sapjvm_8_latest/bin/java
 ```
 
 [ACCORDION-END]
@@ -423,15 +481,15 @@ On the **Registration Success** page, under **1A. ON-PREMISE INSTALLATION**, you
 
  To run the Platform-independent download manager, you will need to execute the following:
 
-```bash
-java -jar HXEDownloadManager.jar
+```
+java -jar <download manager path>/HXEDownloadManager.jar
 ```
 
 > **Note:** If you have a Mac, or another type of machine, click "Platform-independent" for a platform-independent download manager.
 
 &nbsp;
 
-You will find next the instructions for both the ***GUI Mode*** and the ***Console Mode***. We however, recommend you to use the ***Console Mode*** directly from the RHEL server.
+You will find next the instructions for both the ***GUI Mode*** and the ***Console Mode***. It is however, recommended that you use the ***Console Mode*** directly from the RHEL server.
 
 Save the ***Platform-independent*** **Download Manager** file directly on your RHEL system.
 
@@ -445,13 +503,17 @@ Save the ***Platform-independent*** **Download Manager** file directly on your R
 
 As stated in the previous section you can download the installation packages either using a *GUI Mode* or a *Console Mode*.
 
-You will find below the instructions for both. We however, recommend you to use the *Console Mode* directly from the RHEL server.
+You will find below the instructions for both. It is however, recommended that you use the ***Console Mode*** directly from the RHEL server.
 
 > **Note:** Again, if your RHEL system is not connected to the internet, then you have no choice but to save the Download Manager locally, download the packages locally (using either the *GUI Mode* or a *Console Mode*) then transfer them to your RHEL system.
 
 &nbsp;
 
-#### <u><b>Using the Console Mode</b></u>&nbsp;
+---
+
+### <b>Using the Console Mode</b>
+
+---
 
 > **Note:** Before, run running the Download Manager in console, make sure to close any open GUI Mode running instances.
 
@@ -461,8 +523,8 @@ Open a command prompt or a terminal console at the location where you saved the 
 
 You can display the command help using the `-h` argument like this:
 
-```bash
-java -jar HXEDownloadManager.jar -h
+```
+java -jar <download manager path>/HXEDownloadManager.jar -h
 ```
 
 The command syntax is:
@@ -482,11 +544,14 @@ You will need to download the following packages:
 - *SAP HANA External Machine Learning AFL*
 - *Text analysis files for additional languages*
 
-Execute the following command as the root user or using `sudo`:
+Execute the following commands to create the directory where you download the installer packages, set the permissions to allow all required access, and finally run the download manager (***make sure to update the download manger path***):
 
 ```bash
-mkdir /opt/hxe
-chmod a+rwx /opt/hxe
+sudo mkdir /opt/hxe
+sudo chmod a+rwx /opt/hxe
+
+cd <download manager path>
+
 java -jar HXEDownloadManager.jar linuxx86_64 installer \
   -d /opt/hxe \
   --ph proxy \
@@ -496,13 +561,18 @@ java -jar HXEDownloadManager.jar linuxx86_64 installer \
   eml.tgz \
   additional_lang.tgz
 ```
+
 The archive packages will be downloaded in the ***`/opt/hxe`***.
 
-For more information about the other downloadable package, please refer to the ***Appendix*** step.
+For more information about the other downloadable package, please refer to the ***Appendix*** section.
 
-#### <u><b>Using the GUI Mode</b></u>&nbsp;
+---
 
-> **Note:** To run the download manager suing the GUI Mode, we assume that your RHEL is configured with a *Desktop* environment like GNOME or KDE.
+### <b>Using the GUI Mode</b>
+
+---
+
+> **Note:** To run the download manager suing the GUI Mode, it assumes that your RHEL system is configured with a *Desktop* environment like GNOME or KDE.
 
 &nbsp;
 
@@ -532,7 +602,7 @@ Now that the file are downloaded, you can transfer them to the ***`/opt/hxe`*** 
 Make sure you update the read/write/execute permission on the `/opt/hxe` directory using the following command:
 
 ```bash
-chmod a+rwx /opt/hxe
+sudo chmod a+rwx /opt/hxe
 ```
 
 For more information about the other downloadable package, please refer to the ***Appendix*** step.
@@ -541,11 +611,13 @@ For more information about the other downloadable package, please refer to the *
 
 [ACCORDION-BEGIN [Step 6:](Install SAP HANA, express edition)]
 
-#### <u><b>Install the Server package</b></u>&nbsp;
+---
 
-We need to extract the contents of the downloaded archive packages using the following command:
+### <b>Install the Server package</b>
 
-From your server terminal console, execute the following as the root user or using sudo:
+---
+
+You need to extract the contents of the downloaded archive packages using the following command:
 
 ```bash
 mkdir /opt/hxe/installer
@@ -556,13 +628,13 @@ tar -xvzf /opt/hxe/hxe.tgz -C /opt/hxe/installer
 
 &nbsp;
 
-Then, you will need to navigate to the directory where the archives were extracted and run `./setup_hxe.sh` as the root user or using sudo:
+Then, you will need to navigate to the directory where the archives were extracted and run the setup.:
 
-From your server terminal console, execute the following as the root user or using sudo:
+From your server terminal console, execute the following commands:
 
 ```bash
 cd /opt/hxe/installer
-./setup_hxe.sh
+sudo ./setup_hxe.sh
 ```
 
 Accept the prompts default values (unless no value is provided) to configure your installation:
@@ -585,11 +657,15 @@ Once the installation is completed, you should get the following elements in you
   HXE Optimization...(OK)
 ```
 
-After the installation is completed, we encourage you to run the ***Memory Management Script*** as described in the ***Best Practice*** to release all unused resources and free up some memory.
+After the installation is completed, it is recommended to run the ***Memory Management Script*** as described in the ***Best Practice*** to release all unused resources and free up some memory.
 
 ```bash
+sudo su -l hxeadm
+
 cd /usr/sap/HXE/home/bin
 ./hxe_gc.sh
+
+exit
 ```
 
 > **Note: Master password policy**
@@ -607,11 +683,15 @@ cd /usr/sap/HXE/home/bin
 
 &nbsp;
 
-#### <u><b>Install the Client for Linux</b></u>&nbsp;
+---
+
+### <b>Install the SAP HANA HDB Client for Linux</b>
+
+---
 
 The downloaded archive for the client package contains both the ***SAP HANA HDB Client*** and the ***SAP HANA XS CLI***.
 
-Here we will only install the ***SAP HANA HDB Client***, as the ***SAP HANA XS CLI*** is only applicable for a ***Server + Applications*** installation.
+Here you will only install the ***SAP HANA HDB Client***.
 
 The ***SAP HANA HDB Client*** software package includes the following connectivity/drivers:
 
@@ -622,7 +702,7 @@ The ***SAP HANA HDB Client*** software package includes the following connectivi
  - Node.js
  - Ruby
 
-Then, we need to extract the contents of `clients_linux_x86_64.tgz` into the ***`/opt/hxe`*** directory using the following command:
+Then, you need to extract the contents of `clients_linux_x86_64.tgz` into the ***`/opt/hxe`*** directory using the following command:
 
 ```bash
 tar -xvzf /opt/hxe/clients_linux_x86_64.tgz -C /opt/hxe
@@ -632,17 +712,21 @@ The following files will be extracted:
  - ***`hdb_client_linux_x86_64.tgz`*** : the *SAP HANA HDB Client* software package
  - ***`xs.onpremise.runtime.client_linuxx86_64.zip`*** : the *SAP HANA XS CLI* software package
 
-We need now to decompress the *SAP HANA HDB Client* package executing the following command as the root user or using sudo:
+You need now to decompress the *SAP HANA HDB Client* package executing the following command:
 
 ```bash
 tar -xvzf /opt/hxe/hdb_client_linux_x86_64.tgz -C /opt/hxe/installer
 ```
 
-And now run the installer program executing the following commands as the root user or using sudo
+And now you can run the installer program executing the following commands:
 
 ```bash
+sudo su -l hxeadm
+
 cd /opt/hxe/installer/HDB_CLIENT_LINUX_X86_64
 ./hdbinst
+
+exit
 ```
 
 Accept the prompts default values to configure your installation:
@@ -656,34 +740,29 @@ Once the installation is completed, you should get the following elements in you
 Installation done
 ```
 
-#### <u><b>Install the SAP HANA External Machine Learning AFL package</b></u>&nbsp;
+---
 
-We need to extract the contents of the downloaded archive packages using the following command:
+### <b>Install SAP HANA External Machine Learning AFL</b>
 
-From your server terminal console, execute the following as the root user or using sudo:
+---
+
+You need to extract the contents of the downloaded archive packages using the following command:
+
+From your server terminal console, execute the following command:
 
 ```bash
-mkdir /opt/hxe/installer
 tar -xvzf /opt/hxe/eml.tgz -C /opt/hxe/installer
 ```
 
-We need now to login as the `<sid>adm` user (where `<sid>` is your system identifier in lower case which by default is `HXE` so `hxeadm`).
-
-From a terminal console, execute the following command:
+You need now to execute the following commands:
 
 ```bash
 sudo su -l hxeadm
-```
 
-You should be prompted for the master password.
-
-Then, you will need to navigate to the `HANA_EXPRESS_20` directory run the installer script:
-
-From your server terminal console, execute the following:
-
-```bash
 cd /opt/hxe/installer/HANA_EXPRESS_20
 ./install_eml.sh
+
+exit
 ```
 
 Once the installation is completed, you should get the following elements in your console:
@@ -692,39 +771,52 @@ Once the installation is completed, you should get the following elements in you
 Installation done
 ```
 
-#### <u><b>Install the additional Text Analysis files</b></u>&nbsp;
+After the installation is completed, it is recommended to run the ***Memory Management Script*** as described in the ***Best Practice*** to release all unused resources and free up some memory.
+
+```bash
+sudo su -l hxeadm
+
+cd /usr/sap/HXE/home/bin
+./hxe_gc.sh
+
+exit
+```
+
+---
+
+### <b>Install the additional Text Analysis files</b>
+
+---
 
 If you want to use the SAP HANA, express edition **Text Analysis** feature in a language other than English or German, you will need to install the **Text analysis files for additional languages** package.
 
 You should be prompted for the master password provided during the installation process.
 
-Then, extract the contents of `additional_lang.tgz` to the ***`lexicon`*** directory using the following command as the root user or using sudo:
+Then, extract the contents of `additional_lang.tgz` to the ***`lexicon`*** directory using the following command:
 
 ```bash
-tar -xvzf /opt/hxe/additional_lang.tgz -C /hana/shared/HXE/global/hdb/custom/config/lexicon
+sudo tar -xvzf /opt/hxe/additional_lang.tgz -C /hana/shared/HXE/global/hdb/custom/config/lexicon
 ```
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Test Your Installation)]
 
-#### <u><b>Running processes</b></u>&nbsp;
+---
+
+### <b>Running processes</b>
+
+---
 
 By default, when the server installation is completed, all required process should be started.
 
 Here are the steps to verify that all the required processes are up and running.
 
-We need first to login as the `<sid>adm` user (where `<sid>` is your system identifier in lower case which by default is `HXE` so `hxeadm`).
-
-From a terminal console, execute the following command:
+You need now to execute the following commands:
 
 ```bash
 sudo su -l hxeadm
-```
 
-Then execute the following command to get the list of running services:
-
-```bash
 HDB info | grep -e hdbnameserver -e hdbcompileserver -e hdbindexserver -e hdbdiserver -e hdbwebdispatcher
 ```
 
@@ -754,7 +846,11 @@ HDB start
 
 When the prompt returns, the system is started.
 
-#### <u><b>SAP HANA Client</b></u>&nbsp;
+---
+
+### <b>SAP HANA Client</b>
+
+---
 
 You can check the following links to verify some of the connectivity options available for the ***SAP HANA HDB Client***:
 
@@ -765,29 +861,31 @@ You can check the following links to verify some of the connectivity options ava
  - Node.js (content coming soon!)
  - Ruby (content coming soon!)
 
-#### <u><b>SAP HANA External Machine Learning Library (EML)</b></u>&nbsp;
+ ---
+
+### <b>SAP HANA External Machine Learning Library (EML)</b>
+
+---
 
 The SAP HANA External Machine Learning Library is an application function library (AFL) supporting the integration of Google `TensorFlow`, as an external machine learning framework, with SAP HANA, express edition.
 
-Let's now test that the installation was successful using the following `hdbsql` command from a terminal console :
+Now, you can test that the installation was successful using a `hdbsql` command.
+
+You need now to execute the following commands with the default installation values::
 
 ```bash
-cd /usr/sap/<SID>/HDB<instance-number>/exe
+sudo su -l hxeadm
+
+cd /usr/sap/HXE/HDB90/exe
 
 ./hdbsql \
-	-i <instance-number> \
+	-i 90 \
 	-d SystemDB \
 	-u SYSTEM \
-	-p "<SYSTEM-password>" \
+	-p "<master-password>" \
 	"SELECT * FROM SYS.AFL_AREAS WHERE AREA_NAME = 'EML';"
 ```
-
-Make sure to replace:
-
- - `<SID>` by your instance identifier (the default value is ***HXE***)
- - `<instance-number>` by your instance number (the default value is ***90***)
- - `<SYSTEM-password>` by the master password as provided during the installation
- - `<admin-username>` and `<admin-password>` by the new admin user name you want to create and the associated password
+You will need to replace `<master-password>` by the master password as provided during the installation.
 
 You should receive a result similar to this:
 
@@ -795,25 +893,24 @@ You should receive a result similar to this:
 AREA_OID,SCHEMA_NAME,AREA_NAME,CREATE_TIMESTAMP
 159136,"_SYS_AFL","EML","<installation date>"
 ```
-#### <u><b>XS Engine</b></u>&nbsp;
 
-you can check that the `XSEngine` is running from your browser using the following URL:
+---
 
-```URL
-http://<hostname>:80<instance-number>
-```
+### <b>XS Engine</b>
+
+---
+
+You can check that the `XSEngine` is up and running using a browser using the following URL pattern with the default installation values, you can use:
+
+  <a href="http://<hostname>:8090" target="new">http://&lt;hostname&gt;:8090</a>
 
 or
 
-```URL
-https://<hostname>:43<instance-number>
-```
-
-The `<hostname>` and the `<instance-number>` shall be replaced by the SAP HANA, express edition instance IP address or host name used during the installation.
+  <a href="https://<hostname>:4390" target="new">https://&lt;hostname&gt;:4390</a>
 
 A success page displays:
 
-![XSEngine Success Page](07-xsengine.PNG)
+![Success Page](07-xsengine.png)
 
 If you can't connect to the page you can verify that the port is in LISTEN mode using the following command:
 
@@ -838,55 +935,41 @@ The SYSTEM user is the database "super-user" and is not intended for day-to-day 
 
 For better security, you can create other database users with only the privileges that they require for their tasks (for example, user administration), then deactivate the SYSTEM user.
 
-We need first to login as the `<sid>adm` user (where `<sid>` is your system identifier in lower case which by default is `HXE` so `hxeadm`).
-
-From a terminal console, execute the following command:
+You need now to execute the following commands to create a new admin user with the USER ADMIN system privilege:
 
 ```bash
 sudo su -l hxeadm
-```
 
-Create a new admin user with the USER ADMIN system privilege using the following commands:
-
-```bash
-cd /usr/sap/<SID>/HDB<instance-number>/exe
+cd /usr/sap/HXE/HDB90/exe
 
 ./hdbsql \
-	-i <instance-number> \
+	-i 90 \
 	-d SystemDB \
 	-u SYSTEM \
-	-p "<SYSTEM-password>" \
+	-p "<master-password>" \
 	"CREATE USER <admin-username> PASSWORD <admin-password> NO FORCE_FIRST_PASSWORD_CHANGE;"
 
 ./hdbsql \
 	-i <instance-number> \
 	-d SystemDB \
 	-u SYSTEM \
-	-p "<SYSTEM-password>" \
+	-p "<master-password>" \
 	"GRANT USER ADMIN TO <admin-username> WITH ADMIN OPTION;"
 ```
-
-Make sure to replace:
-
- - `<SID>` by your instance identifier (the default value is ***HXE***)
- - `<instance-number>` by your instance number (the default value is ***90***)
- - `<SYSTEM-password>` by the master password as provided during the installation
- - `<admin-username>` and `<admin-password>` by the new admin user name you want to create and the associated password
-
-Now that the new admin user is created, you can deactivate the SYSTEM user:
+You will need to replace `<master-password>` by the master password as provided during the installation.
 
 > ### **Warning**: do not run the next command until you have successfully created an alternate admin user.
 
 &nbsp;
 
-```bash
-cd /usr/sap/<SID>/HDB<instance-number>/exe
+Now that the new admin user is created, you can deactivate the existing SYSTEM user using:
 
+```bash
 ./hdbsql \
-	-i <instance-number> \
-	-d SystemDB \
-	-u <admin-username> \
-	-p "<admin-password>" \
+  -i <instance-number> \
+  -d SystemDB \
+  -u SYSTEM \
+  -p "<master-password>" \
 	"ALTER USER SYSTEM DEACTIVATE USER NOW;"
 ```
 
@@ -932,24 +1015,18 @@ cd /usr/sap/HXE/HDB90/exe
 
 [ACCORDION-BEGIN [Best Practice: ](Run the Memory Management Script)]
 
-On a regular basis, we recommend you to use the memory management / Garbage collector script to free up available memory.
-
-From a terminal console, we need first to login as the `<sid>adm` user (where `<sid>` is your system identifier in lower case, by default `HXE` so `hxeadm`), execute the following command:
+On a regular basis, it is recommended to use the memory management / Garbage collector script to free up available memory using the following commands:
 
 ```bash
 sudo su -l hxeadm
-```
 
-Then you can execute the following:
-
-```bash
 cd /usr/sap/HXE/home/bin
 ./hxe_gc.sh
 ```
 
 When prompted for System database user (SYSTEM) password, enter the master password you specified during SAP HANA, express edition installation.
 
-The command prompt returns when the cleanup process is finished, and the expected logs shoudl be displayed in the console:
+The command prompt returns when the cleanup process is finished, and the expected logs should be displayed in the console:
 
 ```
 tcp   0   0 0.0.0.0:8090    0.0.0.0:*     LISTEN   off (0.00/0/0)
@@ -1010,46 +1087,50 @@ SOAP/HTTP                | 50013   | <nobr>50013 – 59913</nobr> | 5&lt;NN&gt;1
 SOAP/HTTPS               | 50014   | <nobr>50014 – 59914</nobr> | 5&lt;NN&gt;14     | ‌Instance Agent
 HTTP(S)                  | None    | <nobr>51000 – 51500</nobr> | 51000 – 51500     | In an XSA runtime environment and port routing used, port range used for the connection from the `xscontroller-managed` Web Dispatcher to the `xscontroller` for application instances access
 
-> **Note**: &lt;NN&gt; represent the instance id of your SAP HANA, expression edition. The default value is 90.
+> **Note**: &lt;NN&gt; represent the instance id of your SAP HANA, expression edition. The default value is <b>90</b>.
 
 &nbsp;
 
 Therefore, if your instance number is ***90***, here is an example for the firewall configuration.
 
-You can execute the following as the root user or using `sudo`:
+You can execute the following commands:
 
 ```bash
-echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>" > /etc/firewalld/services/hana.xml
-echo "<service>" >> /etc/firewalld/services/hana.xml
-echo "	<short>SAP HANA</short>" >> /etc/firewalld/services/hana.xml
-echo "	<description>Firewall rules for SAP HANA</description>" >> /etc/firewalld/services/hana.xml
-echo "	<port port=\"1128\" protocol=\"tcp\"/>" >> /etc/firewalld/services/hana.xml
-echo "	<port port=\"1129\" protocol=\"tcp\"/>" >> /etc/firewalld/services/hana.xml
-echo "	<port port=\"4390\" protocol=\"tcp\"/>" >> /etc/firewalld/services/hana.xml
-echo "	<port port=\"8090\" protocol=\"tcp\"/>" >> /etc/firewalld/services/hana.xml
-echo "	<port port=\"30000-39999\" protocol=\"tcp\"/>" >> /etc/firewalld/services/hana.xml
-echo "	<port port=\"50000-59999\" protocol=\"tcp\"/>" >> /etc/firewalld/services/hana.xml
-echo "</service>" >> /etc/firewalld/services/hana.xml
+sudo echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>" > /etc/firewalld/services/hana.xml
+sudo echo "<service>" >> /etc/firewalld/services/hana.xml
+sudo echo "	<short>SAP HANA</short>" >> /etc/firewalld/services/hana.xml
+sudo echo "	<description>Firewall rules for SAP HANA</description>" >> /etc/firewalld/services/hana.xml
+sudo echo "	<port port=\"1128\" protocol=\"tcp\"/>" >> /etc/firewalld/services/hana.xml
+sudo echo "	<port port=\"1129\" protocol=\"tcp\"/>" >> /etc/firewalld/services/hana.xml
+sudo echo "	<port port=\"4390\" protocol=\"tcp\"/>" >> /etc/firewalld/services/hana.xml
+sudo echo "	<port port=\"8090\" protocol=\"tcp\"/>" >> /etc/firewalld/services/hana.xml
+sudo echo "	<port port=\"30000-39999\" protocol=\"tcp\"/>" >> /etc/firewalld/services/hana.xml
+sudo echo "	<port port=\"50000-59999\" protocol=\"tcp\"/>" >> /etc/firewalld/services/hana.xml
+sudo echo "</service>" >> /etc/firewalld/services/hana.xml
 
-chmod 0640 /etc/firewalld/services/hana.xml
+sudo chmod 0640 /etc/firewalld/services/hana.xml
 
-systemctl start firewalld
-systemctl enable firewalld
+sudo systemctl start firewalld
+sudo systemctl enable firewalld
 
-firewall-cmd --zone=public --add-service=hana --permanent
-firewall-cmd --reload
+sudo firewall-cmd --zone=public --add-service=hana --permanent
+sudo firewall-cmd --reload
 ```
 
 You can check the service status using the following command where `hana` should be listed:
 
 ```bash
-firewall-cmd --list-services
+sudo firewall-cmd --list-services
 ```
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Appendix: ](Download Manager)]
 
-#### <u><b>Using the GUI Mode</b></u>&nbsp;
+---
+
+### <b>Using the GUI Mode</b>
+
+---
 
 When using the GUI Mode, you will be able to download the following packages.
 
@@ -1206,8 +1287,11 @@ The table below provide more details around each package.
   </tr>
 </table>
 
+---
 
-#### <u><b>Using the Console Mode</b></u>&nbsp;
+### <b>Using the Console Mode</b>
+
+---
 
 Here is the complete list of command arguments with the Console Mode:
 

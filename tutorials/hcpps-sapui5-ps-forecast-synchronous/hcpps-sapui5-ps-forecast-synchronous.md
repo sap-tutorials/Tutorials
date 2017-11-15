@@ -338,8 +338,8 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 The library will contain a function where:
 
-  - we process the call to the "Dataset List" SAP Cloud for predictive services and return the list of registered dataset.
-  - we process the call to the "Dataset Description" SAP Cloud for predictive services and return the dataset detailed description.
+  - we process the call to the "Dataset List" SAP Predictive services and return the list of registered dataset.
+  - we process the call to the "Dataset Description" SAP Predictive services and return the dataset detailed description.
 
 These functions will be triggered either on a click or row change event on the table added previously from the main controller.
 

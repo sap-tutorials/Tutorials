@@ -3,7 +3,7 @@ title: Initial setup of SAP Jam Collaboration Developer Edition
 description: Demonstrates how to login, perform administration, and setup new users in SAP Jam Collaboration Developer Edition.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
----
+--- 
 
 ## Prerequisites  
  - **Proficiency:** Beginner

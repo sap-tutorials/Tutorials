@@ -53,6 +53,16 @@ This is why we will be using the ***SAP HANA Core Data Service*** (CDS) instead,
 
 In order to create the CDS artifacts, we will be using the **Editor** perspective available in the **SAP HANA Web-based Development Workbench**.
 
+But first we need to login as the `TRIAL` user.
+
+Click on the logout ![logout](0-logout.png) button in the top right corner of the screen.
+
+This will bring you back to the login screen where you will need to enter `TRIAL` as user name and `Welcome17Welcome17` as your password.
+
+![logout](0-login.png)
+
+Click on login
+
 From the ***SAP HANA Web-based Development Workbench*** main panel, click on **Editor**:
 
 ![SAP HANA Web-based Development Workbench](01.png)
@@ -62,7 +72,11 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 ![SAP HANA Web-based Development Workbench](02.png)
 
 > ### **Note**:
->**Make sure the currently connected user is TRIAL and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
+> **Make sure the currently connected user is TRIAL and not SYSTEM**. 
+>
+> Check the upper right corner of the SAP HANA Web-based Development Workbench.
+
+&nbsp;
 
 [DONE]
 [ACCORDION-END]
@@ -101,7 +115,7 @@ Check the message console, and make sure there is no errors. The following messa
 
 [ACCORDION-BEGIN [Step 3: ](Download the dataset locally)]
 
-As the files get updated periodically, and in order to ensure consistency of content and validation, the data is available under the <a href="https://github.com/SAPDocuments/Tutorial-Contribution/tree/master/tutorials/cp-hana-aa-movielens-01/csv" target="new">```csv```</a> directory within the SAP Tutorial GitHub repository.
+As the files get updated periodically, and in order to ensure consistency of content and validation, the data is available under the <a href="https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/cp-hana-aa-movielens-01/csv" target="new">```csv```</a> directory within the SAP Tutorial GitHub repository.
 
 Download the following files locally (right click on the link, then use the ***Save link as*** option):
 
