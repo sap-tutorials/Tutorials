@@ -40,6 +40,7 @@ Wait for the Import process to finish.
 
 ![Import VM](import.png)
 
+
 This will take about 10 minutes. The setup process has the same steps that you would execute if you downloaded a Virtual Machine with SAP HANA, express edition, in your personal computer.
 
 ![Import VM](importing.png)
@@ -80,14 +81,19 @@ SAP HANA, express edition, can be downloaded for free and can also be executed i
 
 [ACCORDION-BEGIN [Step 3: ](Start Setup)]
 
-Once the Virtual Machine is imported, you can start using it. Click on **Play virtual machine**:
+Once the Virtual Machine is imported, go to VM's Settings (`Ctrl+D` will work as well) and change the Network Adapter to `NAT`:
+
+![Power On](nat2.png)
+
+
+You can start using it. Click on **Play virtual machine**:
 
 ![Power On](play.png)
 
 You will be prompted for a username and password. Enter:
 
 Username: `hxeadm`
-Password: `HanaRocks01`
+**Password: `HanaRocks2017`**
 
 ![Log in as `hxeadm`](5.png)
 
