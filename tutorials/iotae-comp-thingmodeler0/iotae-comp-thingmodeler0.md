@@ -52,9 +52,9 @@ While in the Package Manager click on the **Open in Thing Properties Catalog** i
 
 The property sets have been already preconfigured for you. The package contains two property sets:
  1. `Default` of the type Basic Data - with one property `common_name`
- 2. `resource_sensors` of the type Measured Data - with one property `cpu_usage`.
+ 2. `resource_sensors_2` of the type Measured Data - with one property `cpu_usage` and another one called `cpu_type`
 
-The property `cpu_usage` has
+The property `cpu_usage` is what we want to measure and has
  - ___float___ data type,
  - ___percentage___ unit of measure,
  - and two thresholds: ___upper___ and ___uppermost___.
@@ -67,7 +67,7 @@ In the Thing Properties Catalog click on the **Thing Modeler**.
 
 In the **Thing Types** pane you will see `generic_computer` thing type defined with:
  - Basic Data properties from the `Default` set,
- - Measured Values properties from the `resource_sensors` set.
+ - Measured Values properties from the `resource_sensors_2` set.
 
 
 [ACCORDION-END]
