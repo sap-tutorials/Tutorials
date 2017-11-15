@@ -16,6 +16,8 @@ In the previous tutorial you have created an iOS app generated with the SDK Assi
 
 In this tutorial, you will use the SAP Cloud Platform's integration with SAP Translation Hub to add multilingual features to your app. This way, you can run your app in many languages, depending on your device's preferred language.
 
+>To view the entire series of tutorials, see the [Customize UIs, themes and onboarding for iOS apps](https://www.sap.com/developer/groups/ios-sdk-custom.html) tutorial group.
+
 ### Time to Complete
 **15 Min**
 

@@ -16,6 +16,8 @@ In the previous tutorials, you have created an iOS app with a custom, multilingu
 
 In this tutorial, you will apply a custom theme to your app using [`NUI`](https://github.com/tombenner/nui). `NUI` enables you to style iOS components with style sheets similar to CSS. `NUI` is already integrated in the SAP Cloud Platform SDK for iOS so you don't need to install anything. In addition, you will change the app's on-boarding behavior by changing certain client policies in SAP Cloud Platform mobile service for development and operations.
 
+>To view the entire series of tutorials, see the [Customize UIs, themes and onboarding for iOS apps](https://www.sap.com/developer/groups/ios-sdk-custom.html) tutorial group.
+
 ### Time to Complete
 **15 Min**
 

@@ -14,7 +14,7 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 ### You will learn  
 While the SDK Assistant provides a quick way of generating an Xcode project based on an OData service with a secure on-boarding flow, the generated storyboards and master-detail views is generally not what you want to end up with.
 
-In this tutorial series, you will first create a Fiori for iOS application. You start with an Xcode project generated with the SDK Assistant, but instead of using the generated master-detail view, you will delete all generated views, view controllers and storyboards. Instead, you will create a custom UI.
+In this [tutorial series](https://www.sap.com/developer/groups/ios-sdk-custom.html), you will first create a Fiori for iOS application. You start with an Xcode project generated with the SDK Assistant, but instead of using the generated master-detail view, you will delete all generated views, view controllers and storyboards. Instead, you will create a custom UI.
 
 The app will use the Sample ESPM OData service from SAP Cloud Platform mobile service for development and operations, and is capable of adding customer call-back reminders to the standard Reminders app.
 
