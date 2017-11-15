@@ -1,6 +1,6 @@
 ---
-title: Apply a custom theme and modify on-boarding behavior
-description: Create a stylesheet to apply a custom theme and change the default on-boarding behavior for your app
+title: Customize theme and on-boarding of iOS app
+description: Create a stylesheet to apply a custom theme and change the default on-boarding behavior for your iOS app.
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---

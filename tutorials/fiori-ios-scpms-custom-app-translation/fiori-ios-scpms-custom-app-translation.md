@@ -1,6 +1,6 @@
 ---
 title: Localize an iOS app with SAP Translation Hub
-description: Make an iOS app generated with the SDK Assistant multilingual with SAP Translation Hub
+description: Take an iOS app generated with the SDK Assistant and make it multilingual with SAP Translation Hub.
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
