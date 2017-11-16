@@ -6,24 +6,27 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 ---
 
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
- - **SAP Cloud Platform SDK for iOS:** Version 2.0
+- **Proficiency:** Intermediate
+- This tutorial is part of the [Customize UIs, themes and onboarding for iOS apps ](https://www.sap.com/developer/groups/ios-sdk-custom.html) group
+&nbsp;
+- **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 2.0
 
 ## Details
-### You will learn  
-While the SDK Assistant provides a quick way of generating an Xcode project based on an OData service with a secure on-boarding flow, the generated storyboards and master-detail views is generally not what you want to end up with.
+While the SDK Assistant provides a quick way of generating an Xcode project based on an OData service with a secure on-boarding flow, the generated storyboards and master-detail views are generally not what you want to end up with.
 
-In this [tutorial series](https://www.sap.com/developer/groups/ios-sdk-custom.html), you will first create a Fiori for iOS application. You start with an Xcode project generated with the SDK Assistant, but instead of using the generated master-detail view, you will delete all generated views, view controllers and storyboards. Instead, you will create a custom UI.
+In this tutorial, you will create an SAP Fiori for iOS application. You start with an Xcode project generated with the SDK Assistant, but instead of using the generated master-detail view, you will delete all generated views, view controllers and storyboards. Instead, you will create a custom UI.
 
 The app will use the Sample ESPM OData service from SAP Cloud Platform mobile service for development and operations, and is capable of adding customer call-back reminders to the standard Reminders app.
-
-In the following tutorials, you will add multilingual capabilities using the SAP Translation Hub, modify the default on-boarding behavior, and you will apply a custom theme to your app.
 
 > Before you start, make sure you:
 
 > - have a trial account on SAP Cloud Platform. See [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) for more information.
 > - enabled SAP Cloud Platform mobile service for development and operations. See [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html) for more information.
+
+
+### You will learn
+
 
 ### Time to Complete
 **30 Min**
@@ -334,7 +337,7 @@ The app correctly displays the newly added **Customers** view. Unsurprisingly, n
 
 [ACCORDION-BEGIN [Step 14: ](Change Table Cell)]
 
-First, you will change the appearance of the standard table cell. By default, it is of type `UITableViewCell`. For the custom UI, you will change it to the SDK's Fiori control `FUIContactCell`.
+First, you will change the appearance of the standard table cell. By default, it is of type `UITableViewCell`. For the custom UI, you will change it to the SDK's SAP Fiori control `FUIContactCell`.
 
 Select the **Table View Cell** and from the **Identity inspector**, set its **Custom Class** to the following:
 
@@ -420,7 +423,7 @@ Change the class declaration to the following:
 class CustomerViewController: FUIFormTableViewController, SAPFioriLoadingIndicator {
 ```
 
-This ensures the view will implement the Fiori style table view controller, as well as the Fiori loading indicator.
+This ensures the view will implement the SAP Fiori style table view controller, as well as the SAP Fiori loading indicator.
 
 Add the following fields:
 
@@ -555,7 +558,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
 This references the `FUIContactCell` of the table view, and binds its properties to the current entity referenced by variable `customer`.
 
-If you now build and run your app, it will now present the Sample OData service's **Customer** entities using the Fiori Contact Cell:
+If you now build and run your app, it will now present the Sample OData service's **Customer** entities using the SAP Fiori Contact Cell:
 
 ![Add Table View Controller](fiori-ios-scpms-custom-app-creation-30.png)
 
