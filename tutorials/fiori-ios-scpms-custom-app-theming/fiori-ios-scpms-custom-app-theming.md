@@ -1,20 +1,22 @@
 ---
-title: Apply a custom theme and modify on-boarding behavior
-description: Create a stylesheet to apply a custom theme and change the default on-boarding behavior for your app
+title: Customize theme and on-boarding of iOS app
+description: Create a stylesheet to apply a custom theme and change the default on-boarding behavior for your iOS app.
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
- - **SAP Cloud Platform SDK for iOS:** Version 2.0
+- **Proficiency:** Intermediate
+- This tutorial is part of the [Customize UIs, themes and onboarding for iOS apps ](https://www.sap.com/developer/groups/ios-sdk-custom.html) group
+&nbsp;
+- **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 2.0
 
 ## Details
 ### You will learn  
-In the previous tutorials, you have created an iOS app with a custom, multilingual user interface.
+In this tutorial, you will apply a custom theme to your iOS app (generated with the SDK Assistant) using [`NUI`](https://github.com/tombenner/nui). `NUI` enables you to style iOS components with style sheets similar to CSS. `NUI` is already integrated in the SAP Cloud Platform SDK for iOS so you don't need to install anything. In addition, you will change the app's on-boarding behavior by changing certain client policies in SAP Cloud Platform mobile service for development and operations.
 
-In this tutorial, you will apply a custom theme to your app using [`NUI`](https://github.com/tombenner/nui). `NUI` enables you to style iOS components with style sheets similar to CSS. `NUI` is already integrated in the SAP Cloud Platform SDK for iOS so you don't need to install anything. In addition, you will change the app's on-boarding behavior by changing certain client policies in SAP Cloud Platform mobile service for development and operations.
+>To view the entire series of tutorials, see the [Customize UIs, themes and onboarding for iOS apps](https://www.sap.com/developer/groups/ios-sdk-custom.html) tutorial group.
 
 ### Time to Complete
 **15 Min**
