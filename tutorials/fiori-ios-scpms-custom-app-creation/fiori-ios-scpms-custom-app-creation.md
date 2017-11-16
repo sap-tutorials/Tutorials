@@ -7,7 +7,7 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- This tutorial is part of the [Customize UIs, themes and onboarding for iOS apps ](https://www.sap.com/developer/groups/ios-sdk-custom.html) group
+- This tutorial is part of the [Customize UI's, themes and onboarding for iOS apps ](https://www.sap.com/developer/groups/ios-sdk-custom.html) group
 &nbsp;
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
 - **SAP Cloud Platform SDK for iOS:** Version 2.0
@@ -27,6 +27,10 @@ The app will use the Sample ESPM OData service from SAP Cloud Platform mobile se
 
 ### You will learn
 
+ - How to create an Xcode project with the SDK Assistant
+ - How to alter the Xcode project by safely removing the generated UI components and storyboards in order to implement your own custom UI
+ - To create a custom SAP Fiori for iOS user interface
+ - To utilize the iOS `EventKit` framework to create iOS Reminders from within your app
 
 ### Time to Complete
 **30 Min**
@@ -461,7 +465,7 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 }
 ```
 
-Then, add the following methods whichs loads the Customer entities and updates the table view once loaded:
+Then, add the following methods which loads the Customer entities and updates the table view once loaded:
 
 ```swift
 // MARK: - Data accessing
@@ -695,7 +699,7 @@ Next, add the following two methods:
 
 These will check if the custom reminders list `ESPM` exist. If it doesn't, it will create one.
 
-Then, add the logic to actally create a reminder for a selected customer:
+Then, add the logic to actually create a reminder for a selected customer:
 
 ```swift
     func createReminder(customer: MyPrefixCustomer) {
