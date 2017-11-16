@@ -39,11 +39,11 @@ Add a description, check the `XSJS support` box and click on **Finish**
 
 You will now create an OData file to expose the contents of the artifacts you defined in your CDS module. This is not really Node.js development but the utilization of the runtime environment to expose OData. You can see real examples of Node.js development in the SHINE model later.
 
-Create a folder called `xsodata` under `js->lib`
+Create a file called `xsodata/PO.xsodata` under `js->lib`
 
-![Create a Node.js module](4_1.png)
+![Create a Node.js module](odata.png)
 
-Create a file called `PO.xsodata` with the following content:
+Open the file called `PO.xsodata` and add the following content:
 
 ```sql
 service {
