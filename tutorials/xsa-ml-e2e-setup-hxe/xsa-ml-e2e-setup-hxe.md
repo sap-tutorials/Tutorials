@@ -40,6 +40,7 @@ Wait for the Import process to finish.
 
 ![Import VM](import.png)
 
+
 This will take about 10 minutes. The setup process has the same steps that you would execute if you downloaded a Virtual Machine with SAP HANA, express edition, in your personal computer.
 
 ![Import VM](importing.png)
@@ -87,7 +88,7 @@ Once the Virtual Machine is imported, you can start using it. Click on **Play vi
 You will be prompted for a username and password. Enter:
 
 Username: `hxeadm`
-Password: `HanaRocks01`
+**Password: `HanaRocks01`**
 
 ![Log in as `hxeadm`](5.png)
 

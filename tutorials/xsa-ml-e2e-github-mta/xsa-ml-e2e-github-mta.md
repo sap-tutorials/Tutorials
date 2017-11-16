@@ -37,7 +37,7 @@ Once created, click on the **Clone or download** and **copy the URL** so you hav
 
 [ACCORDION-BEGIN [Step 2: ](Connect to SAP Web IDE for SAP HANA)]
 
-Open a new tab on the web browser and enter the following address `https://hxehost:53075`. If you get a security warning because the certificate is self-signed, click on **Proceed to `hxehost`**:
+Open a new **incognito browser** on the web browser and enter the following address `https://hxehost:53075`. If you get a security warning because the certificate is self-signed, click on **Proceed to `hxehost`**:
 
 ![Proceed to webIDE](proceed.png)
 
@@ -100,7 +100,7 @@ You will be prompted for your GitHub account details:
 
 ![GitHub sync](popup.png)
 
-**You can do this at any time you want to save your progress into your GitHub repository.** 
+**You can do this at any time you want to save your progress into your GitHub repository.**
 
 Finally, open the `mta.yaml` file that has been created automatically. Copy the contents in the **Code Editor** tab and paste them in the box below. Click on **validate**:
 
