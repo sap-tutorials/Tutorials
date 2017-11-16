@@ -167,7 +167,7 @@ Click the **Download** button to being your download.
 **Note:**
 You may have to disable your firewall for SAP HANA 2.0, express edition to install successfully.
 
-Navigate to the directory where you wish to extract the installation files. Extract the contents of `hxe.tgz`, `hxexsa.tgz` (if you are installing the Applications package), `eadesigner.tgz` (if you are install SAP EA Designer), `eml.tgz` (if you are installing the External Machine Learning Library), `hsa.tgz` (if you are installing streaming analytics), and `shine.tgz` (if you are installing SHINE):
+Navigate to the directory where you wish to extract the installation files. Extract the contents of `hxe.tgz`, `hxexsa.tgz` (if you are installing the Applications package), `eadesigner.tgz` (if you are install SAP EA Designer), `eml.tgz` (if you are installing the External Machine Learning Library), `hsa.tgz` (if you are installing streaming analytics), `shine.tgz` (if you are installing SHINE), `sdi.tgz` (if you are installing smart data integration), and `dpagent_linux_x86_64.tgz` (if you are installing the Data Provisioning Agent):
 
 ```bash
 tar -xvzf <download_path>/hxe.tgz
@@ -192,6 +192,15 @@ tar -xvzf <download_path>/hsa.tgz
 ```bash
 tar -xvzf <download_path>/shine.tgz
 ```
+
+```bash
+tar -xvzf <download_path>/sdi.tgz
+```
+
+```bash
+tar -xvzf <download_path>/dpagent_linux_x86_64.tgz
+```
+
 
 >**Tip:**
 > Run the tar command from the command shell as shown, rather than using a GUI-based extraction tool.
