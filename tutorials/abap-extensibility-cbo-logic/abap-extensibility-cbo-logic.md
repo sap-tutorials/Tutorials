@@ -1,5 +1,5 @@
 ---
-title: Implementing logic for a Custom Business Object (Bonus Plan)
+title: S4/HANA Cloud - ABAP Extensibility - Implementing logic for a Custom Business Object (Bonus Plan)
 description: Implement custom business object logic to control your application
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
@@ -265,6 +265,3 @@ Once ensured that both logic implementations were successfully published you can
 
 [ACCORDION-END]
 ---
-=======
-## Next Steps
- - [Adapting the UI of a Custom Business Object](https://www.sap.com/developer/tutorials/abap-extensibility-cbo-ui-adaptation.html)
