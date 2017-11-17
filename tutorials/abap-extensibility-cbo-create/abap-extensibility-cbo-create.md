@@ -1,5 +1,5 @@
 ---
-title: Creating a Custom Business Object (Bonus Plan)
+title: S4/HANA Cloud - ABAP Extensibility - Creating a Custom Business Object (Bonus Plan)
 description: Define the data structure and create the database persistence of a custom business object.
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
