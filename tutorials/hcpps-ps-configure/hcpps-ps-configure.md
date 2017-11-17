@@ -11,7 +11,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, 
 
 ## Next Steps
 
-- If you are running a developer account on the SAP Cloud Platform, you should continue with: [How to update the database pool configuration of the SAP Cloud for predictive services](http://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
+- If you are running a developer account on the SAP Cloud Platform, you should continue with: [How to update the database pool configuration of the SAP Predictive services](http://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
 - Then, you can move to one of the following groups:
     - [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
     - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
@@ -19,7 +19,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, 
 ## Details
 ### You will learn
 
-- How to enable, deploy and configure the SAP Cloud for predictive services for your SAP Cloud Platform developer Account
+- How to enable, deploy and configure the SAP Predictive services for your SAP Cloud Platform developer Account
 
 ### Time to Complete
   **10 minutes**
@@ -183,7 +183,7 @@ Click on the **Administration** tile
 
 ![Application](19.png)
 
-Status is green! Congrats, you have configured the SAP Cloud for predictive services on your SAP Cloud Platform account.
+Status is green! Congrats, you have configured the SAP Predictive services on your SAP Cloud Platform account.
 
 ![Application](20.png)   
 
@@ -191,7 +191,7 @@ Status is green! Congrats, you have configured the SAP Cloud for predictive serv
 
 ## Next Steps
 
-- If you are running a developer account on the SAP Cloud Platform, you should continue with: [How to update the database pool configuration of the SAP Cloud for predictive services](http://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
+- If you are running a developer account on the SAP Cloud Platform, you should continue with: [How to update the database pool configuration of the SAP Predictive services](http://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
 - Then, you can move to one of the following groups:
     - [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
     - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)

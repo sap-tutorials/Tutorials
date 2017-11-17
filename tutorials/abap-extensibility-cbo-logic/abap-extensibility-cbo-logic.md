@@ -265,3 +265,6 @@ Once ensured that both logic implementations were successfully published you can
 
 [ACCORDION-END]
 ---
+=======
+## Next Steps
+ - [Adapting the UI of a Custom Business Object](https://www.sap.com/developer/tutorials/abap-extensibility-cbo-ui-adaptation.html)

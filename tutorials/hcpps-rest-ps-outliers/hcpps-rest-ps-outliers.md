@@ -15,9 +15,9 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 ## Details
 
 ### You will learn
- - How to use the "Outliers" SAP Cloud for predictive services from a REST Client.
+ - How to use the "Outliers" SAP Predictive services from a REST Client.
 
-Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
+Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
 
 ### Time to Complete
   **10 minutes**
@@ -180,7 +180,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   ]  
 }
 ```
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 
 &nbsp;
 
@@ -273,7 +273,7 @@ You can also play with the following parameters and check the differences:
 
 ### Optional
 
-For more details on the SAP Cloud for predictive services, you can check the following the [`Outliers APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/0c5454d0e1c840588fc072de5cad2474.html) documentation.
+For more details on the SAP Predictive services, you can check the following the [`Outliers APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/0c5454d0e1c840588fc072de5cad2474.html) documentation.
 
 ## Next Steps
 - [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)

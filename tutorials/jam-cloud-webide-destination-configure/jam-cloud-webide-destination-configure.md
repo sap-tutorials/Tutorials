@@ -1,21 +1,22 @@
 ---
-title: Configure the SAP Web IDE Destination for SAP Jam Collaboration on SAP Cloud Platform
-description: Demonstrates how to configure the SAP Web IDE Destination for SAP Jam Collaboration on SAP Cloud Platform
+title: Configure the SAP Web IDE destination for SAP Jam Collaboration on SAP Cloud Platform
+description: This tutorial shows how to configure the SAP Web IDE destination for SAP Jam Collaboration on SAP Cloud Platform.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
+ - **Tutorials:** [Configure the SAP Cloud Platform Destination for SAP Jam Collaboration API SSO](https://www.sap.com/developer/tutorials/jam-cloud-api-sso-configure.html)
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Activate SAP Web IDE plugins on SAP Cloud Platform](https://www.sap.com/developer/tutorials/jam-cloud-webide-plugins-activate.html)
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to configure the Web IDE SAP Jam Collaboration Destination on SAP Cloud Platform.
+In this tutorial, you will learn how to configure the SAP Web IDE SAP Jam Collaboration Destination on SAP Cloud Platform.
 
-To enable your Web IDE to recognize the SAP Jam Collaboration UI5 mobile components you will need to register a second destination on SAP Cloud Platform.
+To enable your SAP Web IDE to recognize the SAP Jam Collaboration UI5 mobile components you will need to register a second destination on SAP Cloud Platform.
 
 ### Time to Complete
 **15 Min**
@@ -64,4 +65,4 @@ Figure 1: Import your destination configuration file into SAP Cloud Platform
 ---
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Activate SAP Web IDE plugins on SAP Cloud Platform](https://www.sap.com/developer/tutorials/jam-cloud-webide-plugins-activate.html)

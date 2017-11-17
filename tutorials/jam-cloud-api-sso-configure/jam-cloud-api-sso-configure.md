@@ -1,19 +1,20 @@
 ---
-title: Configure the SAP Cloud Platform Destination for SAP Jam Collaboration API SSO
-description: Demonstrates how to configure the SAP Cloud Platform Destination for SAP Jam Collaboration API SSO
+title: Configure the SAP Cloud Platform destination for SAP Jam Collaboration API SSO
+description: This tutorial shows how to configure the SAP Cloud Platform destination for SAP Jam Collaboration API SSO.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
+ - **Tutorials:** [Setup Trust between SAP Cloud Platform and SAP Jam Collaboration](https://www.sap.com/developer/tutorials/jam-cloud-setup-trust.html)
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Configure the SAP Web IDE Destination for SAP Jam Collaboration on SAP Cloud Platform](https://www.sap.com/developer/tutorials/jam-cloud-webide-destination-configure.html)
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to configure the SAP Cloud Platform Destination for SAP Jam Collaboration API SSO.
+In this tutorial, you will learn how to configure the SAP Cloud Platform Destination for SAP Jam Collaboration API SSO.
 
 Connectivity destinations are a part of the SAP Cloud Platform connectivity service and are used for the outbound communication of a cloud application to a remote system like SAP Jam Collaboration. They contain the connection details for the remote communication of an application. Connectivity destinations are represented by symbolic names that are used by on-demand applications to refer to remote connections. The connectivity service resolves the destination at runtime based on the symbolic name provided. The result is an object that contains customer-specific configuration details, such as the URL of the remote system or service, the authentication type, and the relative credentials.
 
@@ -101,4 +102,4 @@ Connectivity destinations are a part of the SAP Cloud Platform connectivity serv
 ---
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Configure the SAP Web IDE Destination for SAP Jam Collaboration on SAP Cloud Platform](https://www.sap.com/developer/tutorials/jam-cloud-webide-destination-configure.html)
