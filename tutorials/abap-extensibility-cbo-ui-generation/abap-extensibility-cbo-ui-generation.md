@@ -1,5 +1,5 @@
 ---
-title: Creating the UI for a Custom Business Object (Bonus Plan)
+title: S4/HANA Cloud - ABAP Extensibility - Creating the UI for a Custom Business Object (Bonus Plan)
 description: Create an own application based on a Custom Business Object and a Custom Catalog Extension
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
