@@ -7,7 +7,7 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 ## Prerequisites  
 - **Proficiency:** Beginner
 - **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part6-alerts.html)
-- **Files:** Download the [**`machinedata.csv`**](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/sds-part7-testing/machinedata.csv) file, which will be use later for playback during testing.
+- **Files:** Download the [**`machinedata.csv`**](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/sds-event-stream-playback/machinedata.csv) file, which will be use later for playback during testing.
 
 ## Next Steps
 Either of the following tutorials may be done next:
