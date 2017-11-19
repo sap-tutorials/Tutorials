@@ -104,7 +104,7 @@ Click on **New Binding**
 
 It should propose you by default your HANA MDC instance (named `mdc`) we just created.
 
-Enter your ***HANA User Account*** login (`HCPPSTRIAL`) and password (`Welcome17Welcome17`).
+Enter your ***HANA User Account*** login (`PSTRIAL`) and password (`Welcome17Welcome17`).
 
 Click on **Save**
 
