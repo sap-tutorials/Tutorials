@@ -1,13 +1,13 @@
 ---
 title: Run and Test a Project in SAP HANA Smart Data Streaming
 description: Part 7 of 9. Run and test the streaming project using Stream View, Manual Input, and Event Tracer tools.
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-hana-studio ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
 - **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part6-alerts.html)
-- **Files:** Download the [**`machinedata.csv`**](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/sds-part7-testing/machinedata.csv) file, which will be use later for playback during testing.
+- **Files:** Download the [**`machinedata.csv`**](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/sds-event-stream-playback/machinedata.csv) file, which will be use later for playback during testing.
 
 ## Next Steps
 Either of the following tutorials may be done next:

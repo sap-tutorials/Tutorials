@@ -1,4 +1,4 @@
-var accountOwner = 'p1940048985'; // can be as well like 'p1940048985', 's000338523'
+var accountOwner = 'p1940048985'; // can be as well like 'i076835', 's000338523'
 var messageTypeID = 'c6a49b942355d081949e';
 var deviceId = 'bbf4a02f-45ad-4cc2-af90-18b68f7ce4ec';
 var authToken = 'b3f90838e0c515e6ac71e9844af6e';
