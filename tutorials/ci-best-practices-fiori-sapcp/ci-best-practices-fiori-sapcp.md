@@ -25,8 +25,9 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 > This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html). To ensure that all the examples work properly, make sure that you have followed the setup instructions for all components listed in the prerequisites box.
 
 
-
 ### 1. Introduction
+
+> A ready-to-use Jenkins 2 pipeline for SAPUI5 and SAP Fiori development is now available with [Project "Piper"](https://sap.github.io/jenkins-library/). It offers a fast adoption approach as an alternative to what is described here.
 
 There is a lot of infrastructure available to support single developers who are creating and maintaining SAPUI5 or Fiori projects. SAP Web IDE provides a rich tool set that supports single developers or small teams; for example, wizards that generate a skeleton, and the metadata files that are required for new projects. For larger teams, however, there is an urgent need for an automated CI process based on a central build that includes automated testing and code quality checks.
 
