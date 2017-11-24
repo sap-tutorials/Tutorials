@@ -214,7 +214,7 @@ For processing the Fiori project's sources on the build node, Grunt as a task pr
 
 As Java application, the MTA archive builder, which is available from the SAP ONE Support Launchpad, can be installed directly on the Jenkins slave machine, or it can be stored on a location which is accessible via HTTP, for example Nexus. The latter alternative has the advantage that upgrades are much easier to handle.
 
-> [Multi target Application Archive Builder](https://uacp2.hana.ondemand.com/viewer/58746c584026430a890170ac4d87d03b/HANA%202.0%20SPS%2002/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)  
+> [Multi-target Application Archive Builder](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/HANA%202.0%20SPS%2002/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)  
 > [SAP ONE Support Launchpad](https://launchpad.support.sap.com/)
 
 #### Procedure
