@@ -1,12 +1,12 @@
 ---
 title: Create and expose a custom CDS view  
-description: Create a custom CDS view from an existing data source and expose it as a Web Service.
+description: Create a custom CDS view from an existing data source and expose it as a Web service.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-Assign the Business Catalog **`SAP_CORE_BC_EXT`** and **`SAP_CORE_BC_COM`** to your user. 
+Assign the Business Catalog **`SAP_CORE_BC_EXT`** and **`SAP_CORE_BC_COM`** to your user.
 
 
 ## Details
