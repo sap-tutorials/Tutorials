@@ -286,7 +286,39 @@ And you should see the following services running:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Optional: ](Create additional SAP HANA, express edition Containers)]
+[ACCORDION-BEGIN [Optional: ](Log Into System or Tenant Database)]
+
+You can log into the system database with the following command:
+
+```
+hdbsql -i 90 -d <system_database> -u SYSTEM -p <password>
+```
+
+You can log into your tenant database with the following command:
+
+```
+hdbsql -i 90 -d <tenant_database> -u SYSTEM -p <password>
+```
+
+__JDBC__
+
+---
+
+To log into your system database via JDBC, use the following command:
+
+```
+jdbc:sap://<ip_address>:39041/databaseName=<database_name>
+```
+
+To log into your tenant database via JDBC, use the following command:
+
+```
+jdbc:sap://<ip_address>:39017/databaseName=<tenant_name>
+```
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Optional: ](Create Additional SAP HANA, express edition Containers)]
 
 You will need to repeat the previous steps of creating a directory and `JSON` password for each additional SAP HANA, express edition container you wish to create.  
 
