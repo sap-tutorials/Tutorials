@@ -202,7 +202,7 @@ In the following example, the IP address is 172.25.86.13:
 
 [ACCORDION-BEGIN [Step 14: ]((Optional) Change Keyboard Layout)]
 
-The virtual console and X11 window system defaults to a `us` (`QWERTY`) keyboard layout. If you are not an English user, or not a `QWERTY` keyboard user, you can change the keyboard layout at this point.
+If you have a non-English or non-QWERTY keyboard, and if you used an SSH client to log in to SAP HANA 2.0, express edition, at this point you have the option of changing the keyboard layout of the VM to match your physical keyboard. This will enable you to enter content directly into the VM, rather than through an SSH Client. Note, however, that the SSH Client still has some advantages (including a scroll bar) that the VM window lacks.
 
 1. At the command prompt, enter:
 
@@ -291,9 +291,9 @@ Test your XSC installation.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Test WEBIDE (Server + Applications Virtual Machine Only))]
+[ACCORDION-BEGIN [Step 17: ](Test Web IDE (Server + Applications Virtual Machine Only))]
 
-If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your WEBIDE installation.
+If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your Web IDE installation.
 
 >**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
 
@@ -341,6 +341,15 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 2. Check for an API endpoint showing `https://hxehost:39030`. If you see this entry, XSA installed correctly.
 
+>**Note**: In certain situations you may not see the API endpoint `https://hxehost:39030`. Instead, the system prompts you to enter the API URL manually. If you're prompted for the API URL, do this:
+
+> - At the `API_URL` prompt, enter `https://hxehost:39030`.
+
+>    The `Authenticating...` message appears. Wait until authentication completes.
+
+>    ![Entering API endpoint manually](XSA_endpoint.PNG)
+
+> - When the system prints `API Endpoint`, `User`, `Org`, and `Space`, this means XSA installed correctly.
 
 
 [ACCORDION-END]
@@ -444,13 +453,13 @@ The Text analysis files for additional languages package contains the text analy
 
     >**Tip:** If your tables do not use a full text index, or if your tables use a full text index but contain very little data, you can save about 120 MB of memory if you turn off the standalone text analysis preprocessor, and activate the embedded text analysis preprocessor.
 
-    Stop the standalone preprocessor:
+    - Stop the standalone preprocessor:
 
     ```bash
     alter system alter configuration ('daemon.ini','SYSTEM') set ('preprocessor','instances') = '0' with reconfigure;
     ```
 
-    Start the embedded preprocessor:
+    - Start the embedded preprocessor:
 
     ```bash
     alter system alter configuration ('preprocessor.ini','SYSTEM') set ('general','embedded') = 'true' with reconfigure;

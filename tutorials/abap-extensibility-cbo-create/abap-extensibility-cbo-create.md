@@ -1,5 +1,5 @@
 ---
-title: S/4HANA ABAP Extensibility -  - Creating a Custom Business Object (Bonus Plan)
+title: S4/HANA Cloud - ABAP Extensibility - Creating a Custom Business Object (Bonus Plan)
 description: Define the data structure and create the database persistence of a custom business object.
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
@@ -9,6 +9,9 @@ tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
+
+## Next Steps
+ - [Creating a UI for a Custom Business Object](https://www.sap.com/developer/tutorials/abap-extensibility-cbo-ui-generation.html)
 
 ## Details
 ### You will learn  
@@ -43,7 +46,7 @@ Press the **New** action to start creation of a Custom Business Object
 
 ![Press New](CBO_pressNew.png)
 
-In the opening Pop Up **fill** in the Name. The other editable fields will get proposals automatically but can be changed.
+In the opening Pop Up **fill** in the Name "Bonus Plan". The other editable fields will get proposals automatically but can be changed.
 
 ![Creation Pop Up](CBO_createNew.png)
 
@@ -65,7 +68,7 @@ In the following view for editing the custom business object **Go to Fields and 
 | ID             | Text of length 20, key field |             |   
 | Validity Start Date | Date    | |
 | Validity End Date | Date | |   
-| Target Amount | Amount | |   
+| Target Amount | Amount with Currency| |   
 | Low Bonus Assignment Factor | Number of length 4, decimals 2 | Actual revenue must meet target more than that many times |
 | High Bonus Assignment Factor | Number of length 4, decimals 2 | Actual revenue must meet target more than that many times |
 | Low Bonus Percentage | Quantity with Unit | |   
@@ -90,7 +93,7 @@ Back in the business Object's definition overview, **check** the System Administ
 
 ![Check System Administrative Data](CBO_checkSysAdminData.png)
 
-By checking this box the four fields also appear as uneditable in the field list.
+By checking this box the four fields also appear as not editable in the field list.
 These fields will be filled and updated automatically, so that you do not need to implement logic for this. Logic implementations for these fields even would be ignored.
 
 
@@ -98,8 +101,6 @@ These fields will be filled and updated automatically, so that you do not need t
 
 [ACCORDION-BEGIN [Step 5: ](Creating the database persistence)]
 **Publish** the Business Object `Bonus Plan`.
-
-![Press Publish](CBO_pressPublish.png)
 
 ![Press Publish](CBO_pressPublish.png)
 
@@ -111,8 +112,3 @@ This creates the database persistence of the Business Object.
 
 
 ---
-
-
-
-## Next Steps
-- [Creating a UI for a Custom Business Object](https://www.sap.com/developer/tutorials/abap-extensibility-cbo-ui-generation.html)
