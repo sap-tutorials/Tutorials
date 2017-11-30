@@ -111,7 +111,7 @@ Click on **Save**
 
 ![New Destinations](09.png)
 
-You can use the **Check Connectivity** button ![HTML5 Applications](0-check.png) next to the new **Destination** to validate that the URL can be accessed.
+You can use the **Check Connectivity** button ![HTML5 Applications](00-check.png) next to the new **Destination** to validate that the URL can be accessed.
 
 [ACCORDION-END]
 

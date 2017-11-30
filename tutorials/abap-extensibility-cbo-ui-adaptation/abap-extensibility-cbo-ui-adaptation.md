@@ -55,7 +55,7 @@ This is the screen that will be adapted.
 ![Open User Settings](UI_userSettings.png)
 
 Open the adaptation mode via **Adapt UI**.
-![Go to UI Adaptation mode](UI_go2Adaptation.png)
+![Go to UI Adaptation mode](UI_go2adaptation.png)
 
 
 [ACCORDION-END]

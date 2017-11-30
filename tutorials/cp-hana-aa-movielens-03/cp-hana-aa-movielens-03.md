@@ -186,7 +186,7 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 ![SAP HANA Web-based Development Workbench](02.png)
 
 > ### **Note**
->**Make sure the currently connected user is TRIAL and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
+>**Make sure the currently connected user is `MOVIELENS_USER` and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
 
 For each of the next steps, you can decide to open a new **SQL Console** using the ![sql](0-opensqlconsole.png) icon from the menu or reuse the same one by replacing its current over and over.
 
@@ -199,7 +199,7 @@ While assessing the available data, you found out that the ratings was the best 
 
 The SAP HANA APL function that you will be using is
 
-- <a href="https://help.sap.com/viewer/cb31bd99d09747089754a0ba75067ed2/3.1/en-US/0bc196486e4047c2a7671ccf529167b6.html" target="new"><b>`CREATE_RECO_MODEL_AND_TRAIN`</b></a>
+- <a href="https://help.sap.com/viewer/cb31bd99d09747089754a0ba75067ed2/3.1/en-US/0bc196486e4047c2a7671ccf529167b6.html" target="new"><b>Create Recommendation Model and Train</b></a>
 
 For more information please refer to the online <a href="https://help.sap.com/viewer/cb31bd99d09747089754a0ba75067ed2/3.1/en-US/2ee67eddf0fb47b3a593887fdfa555df.html" target="new">documentation</a>.
 
@@ -224,7 +224,7 @@ If you want to try out this scenario, you can build a view where the user id and
 
 When executed, the following code will generate a ***Recommendation*** model linking `USERID` & `MOVIEID` from the `RATINGS` CDS Entity.
 
-The results will be stored in the `APL_MODEL_USERS_LINKS` table under the `movielens` schema.
+The results will be stored in the `APL_RECO_MODEL_USERS_LINKS` table under the `movielens` schema.
 
 Open a new **SQL Console** using the ![sql](0-opensqlconsole.png) icon from the menu or reuse an existing one.
 
@@ -233,7 +233,7 @@ Paste the following content in the console, and use the execute icon ![run](0-ru
 ```SQL
 SET SCHEMA "MOVIELENS";
 
-SET SESSION 'APL_CACHE_SCHEMA' = 'TRIAL';
+SET SESSION 'APL_CACHE_SCHEMA' = '`MOVIELENS_USER`';
 -- --------------------------------------------------------------------------
 -- Cleanup SAPL objects
 -- --------------------------------------------------------------------------
@@ -251,10 +251,10 @@ DROP TABLE "MOVIELENS"."APL_OPERATION_RESULT";
 -- --------------------------------------------------------------------------
 -- Drop model specific tables
 -- --------------------------------------------------------------------------
-DROP TABLE "MOVIELENS"."APL_MODEL_USERS";
-DROP TABLE "MOVIELENS"."APL_MODEL_USERS_NODE_USERS";
-DROP TABLE "MOVIELENS"."APL_MODEL_USERS_NODE_ITEMS";
-DROP TABLE "MOVIELENS"."APL_MODEL_USERS_LINKS";
+DROP TABLE "MOVIELENS"."APL_RECO_MODEL_USERS";
+DROP TABLE "MOVIELENS"."APL_RECO_MODEL_USERS_NODE_USERS";
+DROP TABLE "MOVIELENS"."APL_RECO_MODEL_USERS_NODE_ITEMS";
+DROP TABLE "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS";
 -- --------------------------------------------------------------------------
 -- Create generic tables
 -- --------------------------------------------------------------------------
@@ -268,18 +268,18 @@ CREATE COLUMN TABLE "MOVIELENS"."APL_OPERATION_RESULT"  LIKE "SAP_PA_APL"."sap.p
 -- --------------------------------------------------------------------------
 -- Create model tables
 -- --------------------------------------------------------------------------
-CREATE COLUMN TABLE "MOVIELENS"."APL_MODEL_USERS"       LIKE "SAP_PA_APL"."sap.pa.apl.base::BASE.T.MODEL_NATIVE";
-CREATE COLUMN TABLE "MOVIELENS"."APL_MODEL_USERS_LINKS" (
+CREATE COLUMN TABLE "MOVIELENS"."APL_RECO_MODEL_USERS"       LIKE "SAP_PA_APL"."sap.pa.apl.base::BASE.T.MODEL_NATIVE";
+CREATE COLUMN TABLE "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" (
     "GRAPH_NAME"        NVARCHAR(255),
     "WEIGHT"            DOUBLE,
     "KXNODEFIRST"       INTEGER,    -- must be of the same SQL type as the User column (USERID here)
     "KXNODESECOND"      INTEGER,    -- must be of the same SQL type as the Item column (MOVIEID here)
     "KXNODESECOND_2"    INTEGER     -- must be of the same SQL type as the Item column (MOVIEID here)
 );
-CREATE COLUMN TABLE "MOVIELENS"."APL_MODEL_USERS_NODE_USERS" (
+CREATE COLUMN TABLE "MOVIELENS"."APL_RECO_MODEL_USERS_NODE_USERS" (
     "node" INTEGER    -- must be of the same SQL type as the User column (USERID here)
 );
-CREATE COLUMN TABLE "MOVIELENS"."APL_MODEL_USERS_NODE_ITEMS" (
+CREATE COLUMN TABLE "MOVIELENS"."APL_RECO_MODEL_USERS_NODE_ITEMS" (
     "node" INTEGER    -- must be of the same SQL type as the Item column (MOVIEID here)
 );
 -- --------------------------------------------------------------------------
@@ -299,11 +299,11 @@ CALL "SAP_PA_APL"."sap.pa.apl.base::CREATE_RECO_MODEL_AND_TRAIN" (
     "MOVIELENS"."APL_FUNCTION_HEADER"
   , "MOVIELENS"."APL_OPERATION_CONFIG"
   , "MOVIELENS"."APL_VARIABLE_DESC"
-  , 'MOVIELENS', 'public.aa.movielens.cds::data.RATINGS'
-  , "MOVIELENS"."APL_MODEL_USERS"
-  , 'MOVIELENS', 'APL_MODEL_USERS_NODE_USERS'
-  , 'MOVIELENS', 'APL_MODEL_USERS_NODE_ITEMS'
-  , 'MOVIELENS', 'APL_MODEL_USERS_LINKS'
+  , 'MOVIELENS', 'public.aa.movielens.hdb::data.RATINGS'
+  , "MOVIELENS"."APL_RECO_MODEL_USERS"
+  , 'MOVIELENS', 'APL_RECO_MODEL_USERS_NODE_USERS'
+  , 'MOVIELENS', 'APL_RECO_MODEL_USERS_NODE_ITEMS'
+  , 'MOVIELENS', 'APL_RECO_MODEL_USERS_LINKS'
   , "MOVIELENS"."APL_OPERATION_LOG"
   , "MOVIELENS"."APL_SUMMARY"
   , "MOVIELENS"."APL_INDICATORS"
@@ -325,7 +325,9 @@ CALL "SAP_PA_APL"."sap.pa.apl.base::CLEANUP"(1,?);
 
 [ACCORDION-BEGIN [Step 3: ](Check the logs and summary)]
 
-For every function calls, a series of logs and summary data will be provided along with the results.
+For every function calls, a series of logs and summary data will be provided along with the results as displayed in the result pane:
+
+![result](03.png)
 
 - The operation log:
 
@@ -382,8 +384,8 @@ The following code, that you will use to create your result view, was actually g
 -- --------------------------------------------------------------------------
 -- Create the result view
 -- --------------------------------------------------------------------------
-DROP   VIEW "MOVIELENS"."APL_MODEL_USERS_RESULTS";
-CREATE VIEW "MOVIELENS"."APL_MODEL_USERS_RESULTS" AS
+DROP   VIEW "MOVIELENS"."APL_RECO_MODEL_USERS_RESULTS";
+CREATE VIEW "MOVIELENS"."APL_RECO_MODEL_USERS_RESULTS" AS
 SELECT *
 FROM (
   SELECT
@@ -420,12 +422,12 @@ FROM (
                 , "RULES"."KXNODESECOND_2" AS "CONSEQUENT"
                 , "RULES"."WEIGHT"
               FROM
-                "MOVIELENS"."public.aa.movielens.cds::data.RATINGS" "SPACEIN"
-              LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Transactions') "PRODUCTS" ON ("PRODUCTS"."KXNODEFIRST"  = "SPACEIN"."USERID")
-              LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item'        ) "RULES"    ON ("PRODUCTS"."KXNODESECOND" = "RULES"."KXNODESECOND")
-              LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Transactions') "NOTIN"    ON ("RULES"."KXNODESECOND_2"  = "NOTIN"."KXNODESECOND") AND ("NOTIN"."KXNODEFIRST" = "SPACEIN"."USERID")
+                "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS" "SPACEIN"
+              LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Transactions') "PRODUCTS" ON ("PRODUCTS"."KXNODEFIRST"  = "SPACEIN"."USERID")
+              LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item'        ) "RULES"    ON ("PRODUCTS"."KXNODESECOND" = "RULES"."KXNODESECOND")
+              LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Transactions') "NOTIN"    ON ("RULES"."KXNODESECOND_2"  = "NOTIN"."KXNODESECOND") AND ("NOTIN"."KXNODEFIRST" = "SPACEIN"."USERID")
                 WHERE "RULES"."KXNODESECOND" IS NOT NULL  AND "NOTIN"."KXNODESECOND" IS NULL
-            ) "T1" 
+            ) "T1"
             UNION ALL
             SELECT
                 "T1"."USERID"
@@ -439,24 +441,24 @@ FROM (
                 , "RULES"."KXNODESECOND"   AS "CONSEQUENT"
                 , "RULES"."WEIGHT"
               FROM
-                "MOVIELENS"."public.aa.movielens.cds::data.RATINGS" "SPACEIN"
-              LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Transactions') "PRODUCTS" ON ("PRODUCTS"."KXNODEFIRST"  = "SPACEIN"."USERID")
-              LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item'        ) "RULES"    ON ("PRODUCTS"."KXNODESECOND" = "RULES"."KXNODESECOND_2")
-              LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Transactions') "NOTIN"    ON ("RULES"."KXNODESECOND"    = "NOTIN"."KXNODESECOND") AND ("NOTIN"."KXNODEFIRST" = "SPACEIN"."USERID")
+                "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS" "SPACEIN"
+              LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Transactions') "PRODUCTS" ON ("PRODUCTS"."KXNODEFIRST"  = "SPACEIN"."USERID")
+              LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item'        ) "RULES"    ON ("PRODUCTS"."KXNODESECOND" = "RULES"."KXNODESECOND_2")
+              LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Transactions') "NOTIN"    ON ("RULES"."KXNODESECOND"    = "NOTIN"."KXNODESECOND") AND ("NOTIN"."KXNODEFIRST" = "SPACEIN"."USERID")
               WHERE "RULES"."KXNODESECOND_2" IS NOT NULL AND "NOTIN"."KXNODESECOND" IS NULL
             ) "T1"
         ) "T1"
-        LEFT OUTER JOIN (SELECT "KXNODESECOND"   AS "ANTECEDENT", CAST(COUNT(*) AS FLOAT) AS "COUNTANTECEDENT" FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" ='Transactions' GROUP BY "KXNODESECOND"  ) "T2_1" ON ("T1"."ANTECEDENT" = "T2_1"."ANTECEDENT")
-        LEFT OUTER JOIN (SELECT "KXNODESECOND_2" AS "ANTECEDENT", CAST(COUNT(*) AS FLOAT) AS "COUNTANTECEDENT" FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" ='Transactions' GROUP BY "KXNODESECOND_2") "T2_2" ON ("T1"."ANTECEDENT" = "T2_2"."ANTECEDENT")
+        LEFT OUTER JOIN (SELECT "KXNODESECOND"   AS "ANTECEDENT", CAST(COUNT(*) AS FLOAT) AS "COUNTANTECEDENT" FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" ='Transactions' GROUP BY "KXNODESECOND"  ) "T2_1" ON ("T1"."ANTECEDENT" = "T2_1"."ANTECEDENT")
+        LEFT OUTER JOIN (SELECT "KXNODESECOND_2" AS "ANTECEDENT", CAST(COUNT(*) AS FLOAT) AS "COUNTANTECEDENT" FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" ='Transactions' GROUP BY "KXNODESECOND_2") "T2_2" ON ("T1"."ANTECEDENT" = "T2_2"."ANTECEDENT")
       ) "T1" GROUP BY "T1"."USERID",  "T1"."CONSEQUENT"
   ) "T1"
-  LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.cds::data.MOVIES" "MOVIES" ON "MOVIES"."MOVIEID" = "T1"."CONSEQUENT"
-  LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.cds::data.LINKS"  "LINKS"  ON "LINKS"."MOVIEID"  = "T1"."CONSEQUENT"
+  LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" "MOVIES" ON "MOVIES"."MOVIEID" = "T1"."CONSEQUENT"
+  LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.LINKS"  "LINKS"  ON "LINKS"."MOVIEID"  = "T1"."CONSEQUENT"
 ) "T1"
 WHERE "T1"."RANK" <= 5;
 ```
 
-As you can notice the view use both the model generated links (`APL_MODEL_USERS_LINKS`) and the initial dataset (`public.aa.movielens.cds::data.RATINGS`).
+As you can notice the view use both the model generated links (`APL_RECO_MODEL_USERS_LINKS`) and the initial dataset (`public.aa.movielens.hdb::data.RATINGS`).
 
 Off course, this model is for demonstration purpose and very specific to my initial purpose which is to give you a quick tour of the algorithm and may not be applicable as-is to other use cases or dataset.
 
@@ -471,7 +473,7 @@ Let's verify how many users will actually get recommendations using the followin
 SELECT "RECO_COUNT", COUNT(1) AS "USER_COUNT"
 FROM (
   SELECT "USERID", MAX(RANK) AS "RECO_COUNT"
-  FROM "MOVIELENS"."APL_MODEL_USERS_RESULTS"
+  FROM "MOVIELENS"."APL_RECO_MODEL_USERS_RESULTS"
   GROUP BY "USERID"
 ) GROUP BY "RECO_COUNT" order by 1 DESC;
 ```
@@ -481,10 +483,10 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 ```SQL
 SELECT
     COUNT(1) AS "MOVIE_COUNT"
-  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.cds::data.MOVIES" ) AS "MOVIE_RATIO"
+  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"
 FROM (
   SELECT "MOVIEID"
-  FROM "MOVIELENS"."APL_MODEL_USERS_RESULTS"
+  FROM "MOVIELENS"."APL_RECO_MODEL_USERS_RESULTS"
   GROUP BY "MOVIEID"
 );
 ```
@@ -494,13 +496,13 @@ Let's verify how many distinct movies will potentially get recommended to a user
 ```SQL
 SELECT
     COUNT(1) AS "MOVIE_COUNT"
-  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.cds::data.MOVIES" ) AS "MOVIE_RATIO"
+  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"
 FROM (
     SELECT "MOVIEID"
     FROM (
-      SELECT "KXNODESECOND"   AS "MOVIEID" FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item' GROUP BY  "KXNODESECOND"
+      SELECT "KXNODESECOND"   AS "MOVIEID" FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item' GROUP BY  "KXNODESECOND"
       UNION ALL
-      SELECT "KXNODESECOND_2" AS "MOVIEID" FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item' GROUP BY  "KXNODESECOND_2"
+      SELECT "KXNODESECOND_2" AS "MOVIEID" FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item' GROUP BY  "KXNODESECOND_2"
     ) GROUP BY "MOVIEID"
 );
 ```
@@ -530,8 +532,8 @@ The code of this view was also generated by the APL function itself as text (so 
 -- --------------------------------------------------------------------------
 -- Create the result view
 -- --------------------------------------------------------------------------
-DROP   VIEW "MOVIELENS"."APL_MODEL_ITEMS_RESULTS";
-CREATE VIEW "MOVIELENS"."APL_MODEL_ITEMS_RESULTS" AS
+DROP   VIEW "MOVIELENS"."APL_RECO_MODEL_ITEMS_RESULTS";
+CREATE VIEW "MOVIELENS"."APL_RECO_MODEL_ITEMS_RESULTS" AS
 SELECT *
 FROM (
   SELECT
@@ -561,8 +563,8 @@ FROM (
               , "RULES"."KXNODESECOND_2" AS "CONSEQUENT"
               , "RULES"."WEIGHT" AS "SUPPORT"
             FROM
-              "MOVIELENS"."APL_MODEL_USERS_NODE_ITEMS" "NODES"
-            LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item' ) "RULES"    ON ("NODES"."node" = "RULES"."KXNODESECOND")
+              "MOVIELENS"."APL_RECO_MODEL_USERS_NODE_ITEMS" "NODES"
+            LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item' ) "RULES"    ON ("NODES"."node" = "RULES"."KXNODESECOND")
               WHERE "RULES"."KXNODESECOND_2" IS NOT NULL
             UNION ALL
             SELECT
@@ -571,16 +573,16 @@ FROM (
               , "RULES"."KXNODESECOND"   AS "CONSEQUENT"
               , "RULES"."WEIGHT" AS "SUPPORT"
             FROM
-              "MOVIELENS"."APL_MODEL_USERS_NODE_ITEMS" "NODES"
-            LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item' ) "RULES"    ON ("NODES"."node" = "RULES"."KXNODESECOND_2")
+              "MOVIELENS"."APL_RECO_MODEL_USERS_NODE_ITEMS" "NODES"
+            LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item' ) "RULES"    ON ("NODES"."node" = "RULES"."KXNODESECOND_2")
             WHERE "RULES"."KXNODESECOND" IS NOT NULL
         ) "T1"
-        LEFT OUTER JOIN (SELECT "KXNODESECOND"   AS "ANTECEDENT", CAST(COUNT(*) AS FLOAT) AS "COUNTANTECEDENT" FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" ='Transactions' GROUP BY "KXNODESECOND"  ) "T2_1" ON ("T1"."ANTECEDENT" = "T2_1"."ANTECEDENT")
-        LEFT OUTER JOIN (SELECT "KXNODESECOND_2" AS "ANTECEDENT", CAST(COUNT(*) AS FLOAT) AS "COUNTANTECEDENT" FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" ='Transactions' GROUP BY "KXNODESECOND_2") "T2_2" ON ("T1"."ANTECEDENT" = "T2_2"."ANTECEDENT")
+        LEFT OUTER JOIN (SELECT "KXNODESECOND"   AS "ANTECEDENT", CAST(COUNT(*) AS FLOAT) AS "COUNTANTECEDENT" FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" ='Transactions' GROUP BY "KXNODESECOND"  ) "T2_1" ON ("T1"."ANTECEDENT" = "T2_1"."ANTECEDENT")
+        LEFT OUTER JOIN (SELECT "KXNODESECOND_2" AS "ANTECEDENT", CAST(COUNT(*) AS FLOAT) AS "COUNTANTECEDENT" FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" ='Transactions' GROUP BY "KXNODESECOND_2") "T2_2" ON ("T1"."ANTECEDENT" = "T2_2"."ANTECEDENT")
       ) "T1" GROUP BY "T1"."MOVIEID", "T1"."CONSEQUENT"
   ) "T1"
-  LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.cds::data.MOVIES" "MOVIES" ON "MOVIES"."MOVIEID" = "T1"."CONSEQUENT"
-  LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.cds::data.LINKS"  "LINKS"  ON "LINKS"."MOVIEID"  = "T1"."CONSEQUENT"
+  LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" "MOVIES" ON "MOVIES"."MOVIEID" = "T1"."CONSEQUENT"
+  LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.LINKS"  "LINKS"  ON "LINKS"."MOVIEID"  = "T1"."CONSEQUENT"
 ) "T1"
 WHERE "T1"."RANK" <= 5;
 ```
@@ -598,7 +600,7 @@ Let's verify how many movies will actually get recommendations using the followi
 SELECT "RECO_COUNT", COUNT(1) AS "MOVIE_COUNT"
 FROM (
   SELECT "MOVIEID", MAX(RANK) AS "RECO_COUNT"
-  FROM "MOVIELENS"."APL_MODEL_ITEMS_RESULTS"
+  FROM "MOVIELENS"."APL_RECO_MODEL_ITEMS_RESULTS"
   GROUP BY "MOVIEID"
 ) GROUP BY "RECO_COUNT";
 ```
@@ -608,10 +610,10 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 ```SQL
 SELECT
     COUNT(1) AS "MOVIE_COUNT"
-  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.cds::data.MOVIES" ) AS "MOVIE_RATIO"  
+  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"  
 FROM (
   SELECT "MOVIEID"
-  FROM "MOVIELENS"."APL_MODEL_ITEMS_RESULTS"
+  FROM "MOVIELENS"."APL_RECO_MODEL_ITEMS_RESULTS"
   GROUP BY "MOVIEID"
 );
 ```
@@ -624,15 +626,15 @@ Let's verify how many rating does the movies with no recommendation have using t
 SELECT "RATING_COUNT", COUNT(1) AS "MOVIE_COUNT"
 FROM (
   SELECT "RATINGS"."MOVIEID", COUNT(1) as "RATING_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS" "RATINGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS" "RATINGS"
   LEFT OUTER JOIN (
     SELECT "MOVIEID"
     FROM (
         SELECT "MOVIEID"
         FROM (
-          SELECT "KXNODESECOND"   AS "MOVIEID" FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item' GROUP BY  "KXNODESECOND"
+          SELECT "KXNODESECOND"   AS "MOVIEID" FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item' GROUP BY  "KXNODESECOND"
           UNION ALL
-          SELECT "KXNODESECOND_2" AS "MOVIEID" FROM "MOVIELENS"."APL_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item' GROUP BY  "KXNODESECOND_2"
+          SELECT "KXNODESECOND_2" AS "MOVIEID" FROM "MOVIELENS"."APL_RECO_MODEL_USERS_LINKS" WHERE "GRAPH_NAME" = 'Item' GROUP BY  "KXNODESECOND_2"
         ) GROUP BY "MOVIEID"
     )
   ) "T1" ON ("RATINGS"."MOVIEID" = "T1"."MOVIEID")

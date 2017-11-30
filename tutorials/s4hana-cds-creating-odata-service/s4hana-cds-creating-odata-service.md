@@ -57,7 +57,7 @@ On the **Activate and Maintain Services** window , click the **Add Service** ico
 
 A new window, **Add Selected Services** will open. In that window, maintain the System Alias by pressing the **`F4-Help`** and selecting **`LOCAL_PGW`** in the system alias pop-up window.
 
-![File system is filled with the alias Local](FillSystemAliasLOCAL_PGW.pnG)
+![File system is filled with the alias Local](FillSystemAliasLOCAL_PGW.png)
 
 Enter `ZXSHC_AIRLINEQUERY_CDS` as the Technical Service Name (the name of the service).
 

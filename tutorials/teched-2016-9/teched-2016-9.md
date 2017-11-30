@@ -220,7 +220,7 @@ With these steps completed you are now ready to modify the JavaScript code we ha
 
 If you are with us at TechEd in the `AppSpace`, the file is already available in the following directory: `C:\teched2016\te16-original.js`. Please make a copy of the file for your own use `C:\teched2016\te16.js` and the convenience of the next attendee.
 
-If you are doing this on your own machine, you can download the file [`te16_js.txt`](te16_js.txt), and rename it to `te16.js` on your machine.
+If you are doing this on your own machine, you can download the file [`te16_js.txt`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/teched-2016-9/te16_js.txt), and rename it to `te16.js` on your machine.
 
 
 [ACCORDION-END]
