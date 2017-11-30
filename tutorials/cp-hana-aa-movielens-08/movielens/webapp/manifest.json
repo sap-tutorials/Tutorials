@@ -15,7 +15,7 @@
 		},
 		"dataSources": {
 			"data.xsodata": {
-				"uri": "/public/aa/movielens/cds/data.xsodata/",
+				"uri": "/public/aa/movielens/service/data.xsodata/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0",
@@ -74,7 +74,7 @@
 				"settings": {
 					"defaultOperationMode": "Server",
 					"defaultBindingMode": "TwoWay",
-					"defaultCountMode": "Request"
+					"defaultCountMode": "Both"
 				},
 				"dataSource": "data.xsodata",
 				"preload": false

@@ -76,6 +76,15 @@ Once the database is stopped, Click on **Start**.
 
 ![Trial Database Overview](06.png)
 
+> ### **Note**:
+>**If you don't see your HANA MDC stopping right away in the Events log, it is probably because the initial backup is still pending.**
+>
+>The initial backup may take up to an hour to execute, and your HANA MDC will not restart until it is completed.
+>
+>Therefore you can proceed with the next steps. However, at some point, the backup will complete, and your instance will be shutdown, therefore you will need to start it.
+
+&nbsp;
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Finalize your HANA MDC instance setup)]

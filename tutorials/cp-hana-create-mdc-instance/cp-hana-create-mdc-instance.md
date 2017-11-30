@@ -95,6 +95,15 @@ On the left side menu, switch to **Events**.
 
 Once you see the ***Database stopped successfully*** event appears in the list, switch back to **Overview** and click on **Start**.
 
+> ### **Note**:
+>**If you don't see your HANA MDC stopping right away in the Events log, it is probably because the initial backup is still pending.**
+>
+>The initial backup may take up to an hour to execute, and your HANA MDC will not restart until it is completed.
+>
+>Therefore you can proceed with the next steps. However, at some point, the backup will complete, and your instance will be shutdown, therefore you will need to start it.
+
+&nbsp;
+
 Switch again to **Events**.
 
 Once you see the ***Database started successfully*** event appears in the list, you can proceed with the next steps.
