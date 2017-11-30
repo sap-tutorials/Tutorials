@@ -77,7 +77,13 @@ Assuming you don't already have a SAP Cloud Platform trial account, you will see
 
 [ACCORDION-BEGIN [Step 5: ](Access the SAP Cloud Platform cockpit)]
 
-Once you have accepted the Terms and Conditions and registered, the SAP Cloud Platform cockpit will load.
+Once you have accepted the Terms and Conditions and registered, the SAP Cloud Platform Regions page will load.
+
+Click on the ***Neo Trial*** button at the top or on the ***Europe (Rot) - Trial*** tile to access your free ***Personal Trial Account***.
+
+![SAP Cloud Platform cockpit](hcp-regions.png)
+
+
 
 ![SAP Cloud Platform cockpit](hcp-07.png)
 
