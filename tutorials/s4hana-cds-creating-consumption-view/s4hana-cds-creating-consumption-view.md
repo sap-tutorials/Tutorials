@@ -71,7 +71,7 @@ First, insert a new line after line 4 with the following text:
 Insert a  new line after line 5 with the following text:
    `@OData.publish: true`
 
-![Enhancement consumption view with OData annotation ](BuildConsumptionView7_Enhance_ODataAnnotation.png)
+![Enhancement consumption view with OData annotation ](BuildConsumptionView7_Enhance_OdataAnnotation.png)
 
 Finally,  save the changes.
 
