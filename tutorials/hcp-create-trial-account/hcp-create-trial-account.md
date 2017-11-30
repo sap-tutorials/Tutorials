@@ -83,7 +83,7 @@ Click on the ***Neo Trial*** button at the top or on the ***Europe (Rot) - Trial
 
 ![SAP Cloud Platform cockpit](hcp-regions.png)
 
-
+You can the review the latest ***News and Announcements***.
 
 ![SAP Cloud Platform cockpit](hcp-07.png)
 
@@ -92,7 +92,10 @@ Click on the ***Neo Trial*** button at the top or on the ***Europe (Rot) - Trial
 
 [ACCORDION-BEGIN [Step 6: ](Validate the SAP Cloud Platform cockpit URL)]
 
-Close the Enter the **News and Announcements** dialog box, copy the URL for your SAP Cloud Platform **trial account** cockpit, paste it in the text field below and click **Validate**.
+Close the **News and Announcements** dialog box.
+
+
+Copy the URL for your SAP Cloud Platform **Personal Trial Account** cockpit, and paste it in the text field below then click on **Validate**.
 
 ![cockpit display](cockpit.png)
 

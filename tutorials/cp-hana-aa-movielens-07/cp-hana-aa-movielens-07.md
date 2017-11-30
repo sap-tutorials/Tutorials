@@ -1,5 +1,5 @@
 ---
-title: Display your Collaborative Filtering results in SAPUI5
+title: Display your Collaborative Filtering results
 description: Understand and implement the basics of an SAPUI5 application to your `Movielens` "Collaborative Filtering" results
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -277,7 +277,7 @@ Open the `webapp/view/collaborative.view.xml` file and add the following code:
   </Panel>
   <Panel headerText="Recommendations With APL" expandable="true" expanded="true">
     <table:Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="recommendation_apl"
-      rows="{ path: '/APL_MODEL_USERS_RESULTS'}">
+      rows="{ path: '/APL_RECO_MODEL_USERS_RESULTS'}">
       <table:columns>
         <table:Column sortProperty="MOVIEID" width="10%">
           <Label text="Movie ID"/>
@@ -317,7 +317,7 @@ Open the `webapp/view/collaborative.view.xml` file and add the following code:
   </Panel>
   <Panel headerText="Recommendations With PAL" expandable="true" expanded="true">
     <table:Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="recommendation_pal"
-      rows="{ path: '/PAL_MODEL_USERS_RESULTS'}">
+      rows="{ path: '/PAL_APRIORI_MODEL_USERS_RESULTS'}">
       <table:columns>
         <table:Column sortProperty="MOVIEID" width="10%">
           <Label text="Movie ID"/>
@@ -381,7 +381,7 @@ Edit the `demo.view.xml` file located in the `webapp/view`.
 Inside the `<detailPages>` element, remove the XML comment tag for the view by replacing this:
 
 ```xml
-<!--vc:XMLView viewName="mlmovielens.view.collaborative"/-->
+<!--<mvc:XMLView viewName="mlmovielens.view.collaborative"/>-->
 ```
 by this:
 
@@ -419,9 +419,9 @@ Provide an answer to the question below then click on **Validate**.
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-07/movielens/webapp/controller/collaborative.controller.js" target="new">```webapp/controller/collaborative.controller.js```</a>
-  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-07/movielens/webapp/view/collaborative.view.xml" target="new">```webapp/view/collaborative.view.xml```</a>
-  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-07/movielens/webapp/view/demo.view.xml" target="new">```webapp/view/demo.view.xml```</a>
+  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-07/movielens/webapp/controller/collaborative.controller.js" target="new">`webapp/controller/collaborative.controller.js`</a>
+  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-07/movielens/webapp/view/collaborative.view.xml" target="new">`webapp/view/collaborative.view.xml`</a>
+  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-07/movielens/webapp/view/demo.view.xml" target="new">`webapp/view/demo.view.xml`</a>
 
 The complete project can be found on the SAP Tutorial public <a href="https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/cp-hana-aa-movielens-07/movielens" target="new">GitHub repository</a>.
 
