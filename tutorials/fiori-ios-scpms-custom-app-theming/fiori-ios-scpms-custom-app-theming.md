@@ -163,7 +163,7 @@ Set the following properties:
 | Minimum Length | `12` |
 | Minimum Number of Unique Characters | `4` |
 | Upper Case Character Required | `YES` |
-| Upper Case Character Required | `YES` |
+| Lower Case Character Required | `YES` |
 | Digits Required | `YES` |
 
 ![Modify on-boarding behavior](fiori-ios-scpms-custom-app-theming-06.png)

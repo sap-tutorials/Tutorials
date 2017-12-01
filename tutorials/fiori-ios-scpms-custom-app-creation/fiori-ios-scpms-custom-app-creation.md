@@ -600,6 +600,7 @@ cell.onActivitySelectedHandler = { activityItem in
         }
     case FUIActivityItem.detail:
         // self.createReminder(customer: customer)
+        break
     default:
         break
     }
@@ -608,11 +609,16 @@ cell.onActivitySelectedHandler = { activityItem in
 
 This will add the activity buttons for calling, emailing and creating a reminder (which will be implemented in the final steps)
 
-You could also add a placeholder image to your `Assets.xcassets` group and display it using an image literal in the `tableView(_:cellForRowAt:)` method:
+> To make the UI a bit more pleasing, you may consider adding a placeholder image for the contact cell:
+> - On the web, search for `person placeholder image` and download a nice looking image.
+> - Drag the file into your Xcode project's `Assets.xcassets` folder and rename it to a unique name, for instance `PersonPlaceholder`.
+> - Display the image as an image literal in the `tableView(_:cellForRowAt:)` method:
 
-```swift
-cell.detailImage = #imageLiteral(resourceName: "PersonPlaceholder")
-```
+> ```swift
+> cell.detailImage = #imageLiteral(resourceName: "PersonPlaceholder")
+> ```
+
+.
 
 If you now build and run the app, it looks and works a lot better:
 
@@ -647,7 +653,7 @@ At the bottom of the `viewDidLoad()` method, add the following:
 eventStore = EKEventStore()
 eventStore.requestAccess(to: EKEntityType.reminder, completion: {(granted, error) in
     if !granted {
-        logger.error("Access to reminders not granted")
+        self.logger.error("Access to reminders not granted")
     }
 })
 
@@ -676,6 +682,7 @@ Next, add the following two methods:
         for calendar in calendars as [EKCalendar] {
             if calendar.title == "ESPM" {
                 calenderExists = true
+                self.espmCalendar = calendar
             }
         }
 
