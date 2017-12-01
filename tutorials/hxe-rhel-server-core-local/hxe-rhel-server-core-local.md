@@ -111,9 +111,8 @@ grep -c ^processor /proc/cpuinfo
 
 In order to install and run SAP HANA, express edition on a Red Hat Enterprise Linux (RHEL) operating system, the following additional Red Hat software components must be installed via ***Red Hat Enterprise Linux for SAP HANA channel***:
 
-- Scalable File System Add-On (XFS).
 - `compat-sap-c++.so` package which is the `gcc-4.7 libstdc++` rebuilt for RHEL.
-- tuned profiles `sap-hana` and `sap-hana-vmware`
+- tuned profiles `sap-hana` (or `sap-hana-vmware`when used in a VMware environment)
 
 An overview of the ***Red Hat Enterprise Linux for SAP HANA Subscription*** is available here:
 
