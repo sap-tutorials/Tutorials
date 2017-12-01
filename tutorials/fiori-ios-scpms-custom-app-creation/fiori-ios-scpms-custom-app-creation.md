@@ -654,12 +654,12 @@ eventStore = EKEventStore()
 eventStore.requestAccess(to: EKEntityType.reminder, completion: {(granted, error) in
     if !granted {
         self.logger.error("Access to reminders not granted")
+    } else {
+        self.calendars = self.eventStore.calendars(for: EKEntityType.reminder)
+
+        self.checkIfESPMReminderListExists()
     }
 })
-
-calendars = eventStore.calendars(for: EKEntityType.reminder)
-
-checkIfESPMReminderListExists()
 ```
 
 This will initialize the event store, and check for permissions to access your reminders. It then holds an array of available reminder lists, and finally it will call a not yet implemented method `checkIfESPMReminderListExists()` to check whether a custom reminder list `ESPM` already exists.
