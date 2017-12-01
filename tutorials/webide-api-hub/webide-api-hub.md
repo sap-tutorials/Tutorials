@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
 
 ## Details
 ### You will learn  
-In this tutorial, you will explore some of the new features that are part of the SAP Web IDE Multi-Cloud Version. Learn how to use the SAP API Business Hub services catalog that is available out of the box in this version of Web IDE. Create and run an SAPUI5/Fiori Application.
+In this tutorial, you will explore some of the new features that are part of the SAP Web IDE Multi-Cloud Version. Learn how to use the SAP API Business Hub services catalog that is available out of the box in this version of Web IDE. Create and run an SAPUI5/Fiori Application. 
 
 ### Time to Complete
 **15 Min**

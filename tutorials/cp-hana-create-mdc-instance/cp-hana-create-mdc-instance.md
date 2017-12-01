@@ -8,9 +8,7 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-cloud-platform ]
 
 This instance will be used as your persistence service that you can use with your application or services.
 
-As each HANA MDC instance comes only with a ***System Account*** called SYSTEM, which shall be used only to execute "System" related activities, we will need to add a new user account.
-
-In the "real world", it is uncommon to use the ***System Account*** to develop an "end-user" application.
+As each HANA MDC instance comes only with a ***System Account*** called SYSTEM, which shall be used only to execute "System" related activities, you will need to add a new user account depending on your tutorial track.
 
 ## Prerequisites
   - **Proficiency:** Beginner
@@ -97,6 +95,15 @@ On the left side menu, switch to **Events**.
 
 Once you see the ***Database stopped successfully*** event appears in the list, switch back to **Overview** and click on **Start**.
 
+> ### **Note**:
+>**If you don't see your HANA MDC stopping right away in the Events log, it is probably because the initial backup is still pending.**
+>
+>The initial backup may take up to an hour to execute, and your HANA MDC will not restart until it is completed.
+>
+>Therefore you can proceed with the next steps. However, at some point, the backup will complete, and your instance will be shutdown, therefore you will need to start it.
+
+&nbsp;
+
 Switch again to **Events**.
 
 Once you see the ***Database started successfully*** event appears in the list, you can proceed with the next steps.
@@ -113,7 +120,7 @@ Theses system roles and privileges are added on the first connection.
 Therefore, we will need to connect to the ***SAP HANA Cockpit*** at least once using the *HANA System User* in order to finalize the system account setup and add all the necessary roles.
 
 > ### **Note:**
->**FO your information: any SAP HANA MDC trial instances are shut down every 12 hours and in case a trial instance is not restarted in the next 14 days, it will be deleted.**
+>**For your information: any SAP HANA MDC trial instances are shut down every 12 hours and in case a trial instance is not restarted in the next 14 days, it will be deleted.**
 
 ![Trial Database Overview](06.png)
 
@@ -160,77 +167,3 @@ Now, look at the granted roles for the ***HANA System Account***, provide an ans
 
 [VALIDATE_1]
 [ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7: ](Create your database user account)]
-
-Using the ![navigation](0-navigation.png) menu bar icon, select the **Catalog** perspective.
-
-The following screen should appear:
-
-![SAP HANA Web-based Development Workbench](13.png)
-
-Click on the ![SQL Console](0-opensqlconsole.png) button in the top menu bar, and paste the following SQL code:
-
-```sql
-DROP USER TRIAL CASCADE;
-CREATE USER TRIAL PASSWORD Welcome17Welcome17 NO FORCE_FIRST_PASSWORD_CHANGE;
-ALTER USER  TRIAL DISABLE PASSWORD LIFETIME;
-
-call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::CatalogDeveloper'     ,'TRIAL');
-call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::Developer'            ,'TRIAL');
-call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::EditorDeveloper'      ,'TRIAL');
-call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.hana.xs.ide.roles::CatalogDeveloper'  ,'TRIAL');
-call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.hana.xs.ide.roles::Developer'         ,'TRIAL');
-call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.hana.xs.ide.roles::EditorDeveloper'   ,'TRIAL');
-
-GRANT EXECUTE on _SYS_REPO.GRANT_ACTIVATED_ROLE                         TO TRIAL WITH GRANT OPTION;
-GRANT EXECUTE on _SYS_REPO.GRANT_SCHEMA_PRIVILEGE_ON_ACTIVATED_CONTENT  TO TRIAL WITH GRANT OPTION;
-GRANT EXECUTE on _SYS_REPO.GRANT_PRIVILEGE_ON_ACTIVATED_CONTENT         TO TRIAL WITH GRANT OPTION;
-GRANT EXECUTE on _SYS_REPO.REVOKE_ACTIVATED_ROLE                        TO TRIAL WITH GRANT OPTION;
-GRANT EXECUTE on _SYS_REPO.REVOKE_SCHEMA_PRIVILEGE_ON_ACTIVATED_CONTENT TO TRIAL WITH GRANT OPTION;
-GRANT EXECUTE on _SYS_REPO.REVOKE_PRIVILEGE_ON_ACTIVATED_CONTENT        TO TRIAL WITH GRANT OPTION;
-
-GRANT "CREATE SCHEMA" TO TRIAL;
-
-GRANT REPO.READ on "public" TO TRIAL;
-GRANT REPO.MAINTAIN_IMPORTED_PACKAGES on "public" TO TRIAL;
-GRANT REPO.MAINTAIN_NATIVE_PACKAGES   on "public" TO TRIAL;
-
-GRANT REPO.EDIT_NATIVE_OBJECTS   on "public" TO TRIAL;
-GRANT REPO.EDIT_IMPORTED_OBJECTS on "public" TO TRIAL;
-
-GRANT REPO.ACTIVATE_NATIVE_OBJECTS   on "public" TO TRIAL;
-GRANT REPO.ACTIVATE_IMPORTED_OBJECTS on "public" TO TRIAL;
-```
-
-Click on the ![Logout](0-run.png) **Run** button or press **F8**.
-
-> ### **Note**
->When executing this script, some statements will be marked with errors. This is because the script drop things before creating them. You can re-run the script again, and you won't get anymore errors.
-
-![SAP HANA Web-based Development Workbench Login](14.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Verify that your user is properly created)]
-
-Click on the ![Logout](0-logout.png) **Logout** icon located in the top right corner of the screen.
-
-![SAP HANA Web-based Development Workbench Login](15.png)
-
-Now, you need to connect with your **`TRIAL`** ***HANA User Account***.
-
-Enter **`TRIAL`** as ***Username*** user name and **`Welcome17Welcome17`** as ***Password***, click on **Logon**.
-
-If you can login successfully, then your ***HANA User Account*** is properly configured.
-
-Click on **Catalog**.
-
-On the left side tree, expand the **Catalog** item and browse the list of entries available.
-
-Provide an answer to the question below then click on **Validate**.
-
-[VALIDATE_2]
-[ACCORDION-END]
-

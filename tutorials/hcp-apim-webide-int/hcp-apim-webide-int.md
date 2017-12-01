@@ -16,7 +16,7 @@ tags: [  tutorial>beginner,  products>sap-cloud-platform, products>sap-web-ide, 
 ## Details
 ### You will learn  
 Since SAP Cloud Platform, API Management is one of many services on the SAP Cloud Platform it also offers a deep integration in SAP Web IDE. With this integration you can easily browse and consume services from SAP Cloud Platform, API Management and directly create SAP Fiori like SAPUI5 applications leveraging one of the templates offered in SAP Web IDE.
-
+ 
 ### Time to Complete
 **20 Min**.
 

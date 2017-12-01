@@ -20,7 +20,7 @@
       "description": "SAPUI5 Test Resources"
     },
     {
-      "path": "/public/aa/movielens/cds/data.xsodata",
+      "path": "/public/aa/movielens/service/data.xsodata",
       "target": {
         "type": "destination",
         "name": "movielens"
