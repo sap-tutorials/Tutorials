@@ -465,13 +465,18 @@ sap.ui.define([
 
 Click on the **Run** icon ![Run Applications](00-run.png) or press `ALT+F5`.
 
-In the bar at the bottom, click on **Upload Picture** to pick your local picture.
+In the bar at the bottom, click on **SAPUI5 `FileUploader` with Built-in XHR** to pick your local picture.
 
 The service will be called, and the result displayed in a table.
 
 You can also try with a zip that contains multiple images.
 
 ![Result](16.png)
+
+> ### **Note:** if you are experiencing issue like a 405 error or the following message : `This service requires at least 1 file. Please put your file(s) into the files field of the POST request`, please use the **SAPUI5 `FileUploader` with Custom XHR**
+> We are currently investigating this issue related to XHR use in the SAPUI5 `FileUploader` control. (see GitHub issue: https://github.com/SAPDocuments/Tutorials/issues/1864)
+>
+&nbsp;
 
 [ACCORDION-END]
 
