@@ -164,7 +164,7 @@ In order to change the XS Advanced users or if you want to check on the progress
 
       Run the following command in the terminal, replacing the `.pem` file, username and IP by the one in your virtual machine:
 
-      ```ssh
+      ```
       ssh -i /path/my-key-pair.pem root@vhcalhxedb
       ```
       ![SSH in Mac](ssh2.png)
