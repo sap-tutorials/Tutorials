@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, products>sap-businessobjects-lumira]
 
 ## Details
 ### You will learn  
-How to find and download SAP Lumira visualization extensions, install them in SAP Lumira and then use them.
+How to find and download SAP Lumira visualization extensions, install them in SAP Lumira and then use them. 
 
 ### Introduction to SAP Lumira Visualization Extensions
 SAP BusinessObjects Lumira, a self-service BI tool, uses in-built data visualization charts (as seen in the prerequisite tutorial). Sometimes, the data you want to represent may not be appropriately visualized with existing chart types. Or maybe you may have a creative way of visualizing data differently. SAP Lumira Visualization Extensions enable you to do just that. They are essentially plugins that enable customized and different types of charts which allow you to explore and visualize your data better.
