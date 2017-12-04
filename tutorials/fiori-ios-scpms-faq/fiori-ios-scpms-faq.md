@@ -92,7 +92,7 @@ These are not affected by the release of the SAP Cloud Platform SDK for iOS.
 
 [ACCORDION-BEGIN [12: ](When will the SAP Academy for iOS be available?)]
 
-More information on the SAP Academy for iOS can be found at [https://help.sap.com/doc/221f8f84afef43d29ad37ef2af0c4adf/HP_2.0/en-US/5002e3507a261014a0edb97cc7f84cc3.html](https://help.sap.com/doc/221f8f84afef43d29ad37ef2af0c4adf/HP_2.0/en-US/5002e3507a261014a0edb97cc7f84cc3.html)
+More information on the SAP Academy for iOS can be found at [`https://help.sap.com/doc/221f8f84afef43d29ad37ef2af0c4adf/HP_2.0/en-US/5002e3507a261014a0edb97cc7f84cc3.html`](https://help.sap.com/doc/221f8f84afef43d29ad37ef2af0c4adf/HP_2.0/en-US/5002e3507a261014a0edb97cc7f84cc3.html)
 
 
 [ACCORDION-END]
