@@ -1,7 +1,7 @@
 ---
 title: Installing the Streaming Studio Plugin
 description: Install the streaming analytics plugin for SAP HANA studio, add a connection to the streaming analytics server, and create a HANA service.
-primary_tag: products>sap-hana-smart-data-streaming
+primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>beginner, products>sap-hana-smart-data-streaming ]
 ---
 
