@@ -43,15 +43,9 @@ Install the streaming analytics plugin for SAP HANA studio, add a connection to 
 
 6. In the Install dialog, check SAP HANA streaming analytics, then click **Next**:
 
-<!--        ![Check SAP HANA streaming analytics](select-streaming-02.png)   -->
-
 7. Review the items to be installed, then click **Next**:
 
-<!--    ![Review the items to be installed](review-items-02.png)  -->
-
 8. Review the license, accept the terms and conditions to continue, then click **Finish**:
-
-<!--    ![Review and accept the license](accept-license-02.png) -->
 
 9. For any security warnings, click **OK**.
 
@@ -65,8 +59,6 @@ Install the streaming analytics plugin for SAP HANA studio, add a connection to 
 [ACCORDION-BEGIN [Step 2: ](Open the streaming perspectives)]
 
 1. In studio, select _Window > Perspective > Open Perspective > Other_, then select the **SAP HANA Streaming Development** perspective and click **OK**:
-
-<!--        ![Open Perspective](open-perspective.png) -->
 
     ![SAP HANA Streaming Development perspective](open-development-hdbstudio.png)
 
@@ -141,11 +133,7 @@ In this step we will create a named **Data Service** on the SAP HANA streaming a
     - Enter the credentials for `SYSTEM`.
     - Check **Use Default HANA Server**.
 
-<!--    ![Edit HANA service properties](hana-service-hdbstudio.png)  -->
-
 5. Right-click on **`newservice1`** and select **Rename Service**. Name the new service `hanadb`:
-
-<!--    ![Rename Service](rename-service-hdbstudio.png) -->
 
     ![Name the service](name-service-hdbstudio.png)
 
