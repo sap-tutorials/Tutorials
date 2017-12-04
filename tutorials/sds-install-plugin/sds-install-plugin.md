@@ -127,7 +127,7 @@ In this step we will create a named **Data Service** on the SAP HANA streaming a
 
 3. Right-click on the **Server-wide** folder and select **Add HANA Service**:
 
-        ![Add HANA Service](add-hana-service-hdbstudio.png)
+    ![Add HANA Service](add-hana-service-hdbstudio.png)
 
 4. Select **`newservice1`** and, in the **Properties** view:
     - Enter the credentials for `SYSTEM`.
