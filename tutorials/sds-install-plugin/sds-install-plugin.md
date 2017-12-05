@@ -1,5 +1,5 @@
 ---
-title: Installing the Streaming Studio Plugin
+title: Installing the streaming studio plugin
 description: Install the streaming analytics plugin for SAP HANA studio, add a connection to the streaming analytics server, and create a HANA service.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>beginner, products>sap-hana-streaming-analytics ]
@@ -18,7 +18,6 @@ Install the streaming analytics plugin for SAP HANA studio, add a connection to 
 
 ### Time to Complete
 **10 Min**
-
 
 ---
 
@@ -43,9 +42,15 @@ Install the streaming analytics plugin for SAP HANA studio, add a connection to 
 
 6. In the Install dialog, check SAP HANA streaming analytics, then click **Next**:
 
+    ![Check SAP HANA streaming analytics](select-streaming-hdbstudio.png)
+
 7. Review the items to be installed, then click **Next**:
 
+    ![Review the items to be installed](review-items-hdbstudio.png)
+
 8. Review the license, accept the terms and conditions to continue, then click **Finish**:
+
+    ![Review and accept the license](accept-license-hdbstudio.png)
 
 9. For any security warnings, click **OK**.
 
@@ -133,8 +138,9 @@ In this step we will create a named **Data Service** on the SAP HANA streaming a
     - Enter the credentials for `SYSTEM`.
     - Check **Use Default HANA Server**.
 
-5. Right-click on **`newservice1`** and select **Rename Service**. Name the new service `hanadb`:
+    ![Edit HANA service properties](hana-service-hdbstudio.png)
 
+5. Right-click on **`newservice1`** and select **Rename Service**. Name the new service `hanadb`:
     ![Name the service](name-service-hdbstudio.png)
 
 6. To confirm that the HANA service is configured properly, right-click on it and select **Discover**:
