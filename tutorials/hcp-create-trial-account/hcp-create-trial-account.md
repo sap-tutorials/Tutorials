@@ -83,7 +83,7 @@ Click on the ***Neo Trial*** button at the top or on the ***Europe (Rot) - Trial
 
 ![SAP Cloud Platform cockpit](hcp-regions.png)
 
-You can the review the latest ***News and Announcements***.
+You can then review the latest ***News and Announcements***.
 
 ![SAP Cloud Platform cockpit](hcp-07.png)
 

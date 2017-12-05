@@ -12,17 +12,17 @@
     {
       "templateId": "ui5template.basicSAPUI5ApplicationProjectCommon",
       "templateVersion": "1.32.0",
-      "dateTimeStamp": "Mon, 11 Sep 2017 15:58:12 GMT"
+      "dateTimeStamp": "Thu, 30 Nov 2017 13:28:14 GMT"
     },
     {
       "templateId": "ui5template.basicSAPUI5ApplicationProject",
       "templateVersion": "1.40.12",
-      "dateTimeStamp": "Mon, 11 Sep 2017 15:58:15 GMT"
+      "dateTimeStamp": "Thu, 30 Nov 2017 13:28:15 GMT"
     },
     {
       "templateId": "servicecatalog.connectivityComponent",
       "templateVersion": "0.0.0",
-      "dateTimeStamp": "Mon, 11 Sep 2017 16:16:14 GMT"
+      "dateTimeStamp": "Thu, 30 Nov 2017 13:33:26 GMT"
     }
   ],
   "translation": {
@@ -45,7 +45,7 @@
     "blockPushLevel": "Error"
   },
   "mockpreview": {
-    "mockUri": "/public/aa/movielens/cds/data.xsodata",
+    "mockUri": "/public/aa/movielens/service/data.xsodata",
     "metadataFilePath": "",
     "loadJSONFiles": false,
     "loadCustomRequests": false,

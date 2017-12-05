@@ -8,6 +8,7 @@
 						<Carousel pages="{demo>/predictions}" width="100%" visible="{= typeof ${demo>/resultVisible} !== 'undefined'}">
 							<pages>
 								<VBox width="100%" direction="Column" alignItems="Center">
+									<Image id="idImage" tooltip="canvas" visible="false" class="sapUiLargeMargin"/>
 									<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
 									<table:Table rows="{demo>results}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5">
 										<table:columns>
@@ -28,20 +29,20 @@
 								</VBox>
 							</pages>
 						</Carousel>
-						<Image id="idImage" tooltip="canvas" visible="false" class="sapUiLargeMargin"/>
 					</VBox>
 				</content>
 				<footer>
 					<Toolbar width="100%">
 						<content>
-							<u:FileUploader id="idFileUpload" buttonOnly="true" buttonText="Upload Picture" name="files" uploadUrl="{demo>/url}"
-								sameFilenameAllowed="true" useMultipart="true" sendXHR="true" uploadOnChange="true" change="fileUploadChange"
-								uploadComplete="fileUploadComplete">
+							<u:FileUploader id="idFileUpload_0" buttonOnly="true" buttonText="SAPUI5 FileUploader with Built-in XHR" name="files" uploadUrl="{demo>/url}"
+								useMultipart="true" sendXHR="true" sameFilenameAllowed="true" uploadOnChange="true" uploadStart="fileUploadStart"
+								uploadComplete="fileUploadComplete" change="fileUploadChange">
 								<u:headerParameters>
 									<u:FileUploaderParameter name="APIKey" value="{demo>/APIKey}"/>
 									<u:FileUploaderParameter name="Accept" value="application/json"/>
 								</u:headerParameters>
 							</u:FileUploader>
+							<u:FileUploader id="idFileUpload_2" buttonOnly="true" buttonText="SAPUI5 FileUploader with Custom XHR" change="fileUploadChange_xhr"></u:FileUploader>
 						</content>
 					</Toolbar>
 				</footer>
