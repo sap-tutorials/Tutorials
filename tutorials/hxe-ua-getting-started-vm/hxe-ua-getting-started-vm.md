@@ -441,17 +441,17 @@ The Text analysis files for additional languages package contains the text analy
 
 3. In your VM, update folder permissions on the `lang` folder.
 
-  Navigate to `/hana/shared/<SID>/global/hdb/custom/config/lexicon/`
+    Navigate to `/hana/shared/<SID>/global/hdb/custom/config/lexicon/`
 
-  Enter this command:
+    Enter this command:
 
-  ```bash
-  chmod –R 755 lang
-  ```
+    ```bash
+    chmod –R 755 lang
+    ```
 
 4. In your VM, extract `additional_lang.tgz`.
 
-  This step extracts `<download_path>/additional_lang.tgz` to `/hana/shared/HXE/global/hdb/custom/config/lexicon`. Enter this command:  
+    This step extracts `<download_path>/additional_lang.tgz` to `/hana/shared/HXE/global/hdb/custom/config/lexicon`. Enter this command:  
 
     ```bash
     tar -xvzf /usr/sap/HXE/home/Downloads/additional_lang.tgz -C /hana/shared/HXE/global/hdb/custom/config/lexicon
