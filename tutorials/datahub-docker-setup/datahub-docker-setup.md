@@ -9,6 +9,8 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
  - **Proficiency:** Beginner
 
 ## Next Steps
+ - [Run example pipelines in SAP Data Hub, developer edition](http://www.sap.com/developer/tutorials/datahub-docker-examples.html)
+
 
 ## Details
 ### You will learn  
@@ -138,3 +140,6 @@ docker logs datahub
 [ACCORDION-END]
 
 ---
+
+## Next Steps
+[Run example pipelines in SAP Data Hub, developer edition](http://www.sap.com/developer/tutorials/datahub-docker-examples.html)

@@ -10,6 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
  - You have successfully installed SAP Data Hub, developer edition.
 
 ## Next Steps
+ - [Use a message broker](http://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
 
 ## Details
 ### You will learn  
@@ -79,3 +80,6 @@ Stop the pipeline by pressing the **Stop** button (you find it next to the **Run
 [ACCORDION-END]
 
 ---
+
+## Next Steps
+[Use a message broker](http://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)

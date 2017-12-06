@@ -7,8 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
+ - You have completed [Set up SAP Data Hub, developer edition](http://www.sap.com/developer/tutorials/datahub-docker-setup.html)
 
 ## Next Steps
+ - [Run example pipelines in SAP Data Hub, developer edition](http://www.sap.com/developer/tutorials/datahub-docker-examples.html)
 
 ## Details
 ### You will learn  
@@ -93,3 +95,6 @@ To troubleshoot problems, take a look at the logs inside the Docker container. Y
 [ACCORDION-END]
 
 ---
+
+## Next Steps
+[Run example pipelines in SAP Data Hub, developer edition](http://www.sap.com/developer/tutorials/datahub-docker-examples.html)
