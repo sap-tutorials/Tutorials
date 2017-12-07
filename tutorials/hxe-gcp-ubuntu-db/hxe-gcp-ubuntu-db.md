@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition   ]
 
 
 ## Disclaimer
-SAP HANA, express edition (HXE) is officially supported on SLES and RHEL. SAP Community members have been successful in running HXE on other Linux operating systems that are not formally supported by SAP, such as Ubuntu, `openSUSE` and Fedora. SAP is not committing to resolving any issues that may arise from running HXE on these platforms.
+SAP HANA, express edition (HXE) is officially supported on SLES. SAP Community members have been successful in running HXE on other Linux operating systems that are not formally supported by SAP, such as Red Hat, Ubuntu, `openSUSE` and Fedora. SAP is not committing to resolving any issues that may arise from running HXE on these platforms.
 
 This installation uses a test `toolchain` for Ubuntu as an interim workaround for a known compatibility problem with an SSL library. This is not an official Personal Package Archive (PPA). The library is currently required for the installation of SAP HANA, express edition, version 2.0 SPS02. It will be removed after the installation is finished.
 
