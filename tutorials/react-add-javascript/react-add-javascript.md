@@ -48,7 +48,7 @@ First, we need to add Angular to our application.  Add the following to the `<he
 
 ![Add React toolkit to application](1-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add character encoding)] ￼
@@ -71,7 +71,7 @@ Next, add the following tag to the `<head>` of your document:
 ![Add the charset command to the head element](1-3.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add JavaScript to page)] ￼
@@ -91,7 +91,7 @@ Add a `<script>` element to the end of your `<head>` section.  Add the following
 
 ![Add script tags](2-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add skeleton for component)] ￼
@@ -127,7 +127,7 @@ ReactDOM.render(
 
 ![Add module and controller](2-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run the app)] ￼
@@ -136,7 +136,7 @@ Run the application.  Nothing looks different, yet, because we haven't attached 
 
 ![Nothing looks different yet](2-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add your first React component)] ￼
@@ -176,7 +176,7 @@ The HTML portion should now look like this:
 
 ![This is what the HTML should now look like](3-1b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create new component)] ￼
@@ -212,7 +212,7 @@ var ListBox = React.createClass({
 
 ![Add the react component to the javascript section](3-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add div for component)] ￼
@@ -227,7 +227,7 @@ Scroll down to the `<body>` tag, and add the following HTML inside the `<div cla
 
 ![Add a placeholder tag to the html](3-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Run your application)] ￼
@@ -236,7 +236,7 @@ Run your application.  The output should look exactly the same, even though the 
 
 ![Application running react looks exactly the same](3-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Add a list-group)] ￼
@@ -264,7 +264,7 @@ render: function() {
 });
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Replace ListBox tag)] ￼
@@ -275,14 +275,14 @@ Move down slightly.  In the `ReactDOM.render` call, **replace** the line `<ListB
 <ProductList />,
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Run the application)] ￼
 
 Run the application.  You will see three copies of the same row displayed.  (This is because the row data is still static.  We will change this later.)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Review final code)] ￼
@@ -394,7 +394,7 @@ ReactDOM.render(
 </html>
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Review additional resources)] ￼
@@ -408,7 +408,7 @@ Bootstrap:
 
 - We make extensive use of lists in our tutorial.  [Bootstrap CSS - list groups](https://getbootstrap.com/components/#list-group)
 
-[DONE]
+
 [ACCORDION-END]
 
 

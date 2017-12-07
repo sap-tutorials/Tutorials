@@ -18,7 +18,7 @@ tags: [products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>htm
 In this tutorial, will start the Hybrid App Toolkit Connector and test the communication between it and SAP Web IDE. You must have completed the download and installation process for the Hybrid App Toolkit before starting this section.
 
 ### Time to Complete
-**< 5 Min**.
+**5 Min**.
 
 ---
 
@@ -34,7 +34,7 @@ Start the HAT server using one of the methods below:
 
 > Note: On a Mac, you may need to change file permissions `sudo chmod +x ./run.sh`. You may also need to change the owner by running `sudo chown –R <your user> .` from inside the HAT directory
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enter password and check status)]
@@ -43,7 +43,7 @@ Enter your key store password (same password you used when you installed HAT) wh
 
 ![HAT server running](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hat-connection/3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Open Web IDE for testing)]
@@ -55,7 +55,7 @@ Select **Hybrid Application Toolkit** in the left-hand navigation bar and confir
 
 ![HAT preferences tab](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hat-connection/5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Test connection)]
@@ -64,14 +64,14 @@ Click on Test Connection button.  The test results are displayed below the�
 
 ![HAT test successful](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hat-connection/6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Return to main project view)]
 
 Go back to the main project view in Web IDE by selecting the menu option: **Tools > Development**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Troubleshooting)]
@@ -88,7 +88,7 @@ Open the `SAP_HAT_local-1.xx.x/config.json` file and confirm that the `webIdeHos
 "apiKey" : "X2gr91J4ihu60pN8kwbV7",
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 

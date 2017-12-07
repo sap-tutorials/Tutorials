@@ -1,15 +1,15 @@
 ---
 title: Run and Test a Streaming project
-description: Run your streaming project on the SAP HANA smart data streaming server. Use the test tools in Eclipse to send some events to the input stream and view the output. Confirm that data is being captured in the HANA database
+description: Run your streaming project on the SAP HANA streaming analytics server. Use the test tools in Eclipse to send some events to the input stream and view the output. Confirm that data is being captured in the HANA database
 primary_tag: products>sap-hana-smart-data-streaming
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Capture Streaming Output in the HANA Database](http://www.sap.com/developer/tutorials/sds-event-stream-tables.html)
+ - **Tutorials:** [Capture Streaming Output in the HANA Database](https://www.sap.com/developer/tutorials/sds-event-stream-tables.html)
 
 ## Next Steps
-**Tutorial:** [Join an Event Stream to a HANA Table](http://www.sap.com/developer/tutorials/sds-stream-table-join.html)
+**Tutorial:** [Join an Event Stream to a HANA Table](https://www.sap.com/developer/tutorials/sds-stream-table-join.html)
 
 
 ## Details
@@ -34,7 +34,7 @@ You will be switched into the **SAP HANA Streaming Run-Test** perspective if the
 
 > If you get an error message saying that the project didn't start, first check for compile errors.  If it's compiling without errors but still won't start, see the Streaming Developer's Troubleshooting Guide.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open viewers on the streams)]
@@ -49,7 +49,7 @@ Do the same for the `ACTIVITY_HIST` stream to also open it in the **Stream View*
 
 ![open all tables](3-openalltables.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Use the manual input tool to generate some input events)]
@@ -80,10 +80,5 @@ View your event in the **Stream View** tabs. Keep in mind that ALL input events 
 
 You can also view the `ACTIVITY_HIST` table in the HANA database to see that any events that appear in the `ACTIVITY_HIST` stream get recorded in the connected database table.
 
-[DONE]
+
 [ACCORDION-END]
-
----
-
-## Next Steps
-**Tutorial:** [Join an Event Stream to a HANA Table](http://www.sap.com/developer/tutorials/sds-stream-table-join.html)

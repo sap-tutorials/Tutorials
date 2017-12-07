@@ -34,7 +34,7 @@ If you don't have an account yet, you can select one of the other login methods 
 
 ![log on dialog](sci-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Register at sap.com)]
@@ -46,7 +46,7 @@ You will get a message that an activation link has been sent to you.
 
 ![Activate](hcp_signup3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Activate your account)]
@@ -65,7 +65,7 @@ After activating your account, you will see the following screen. Click continue
 
 ![successful activation](successful-activation.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add the SAP.com registration to your SAP Cloud Identity account)]
@@ -78,7 +78,7 @@ Assuming you don't already have a SAP Cloud Platform trial account, you will see
 
 ![upgrade account dialog](sci-03.png)
 
-[DONE]
+
 [ACCORDION-END]
 <!--
 [ACCORDION-BEGIN [Step 4: ](Verify you are logged in)]
@@ -88,7 +88,7 @@ The icon in the upper-right corner of this tutorial page (or any page on `www.sa
 ![logged in](sci-04.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Log into SAP Cloud Platform Trial system)]
@@ -102,7 +102,7 @@ Enter the same credentials you used to log into the `SAP.com` website.
 ![SAP Cloud Platformlog in](hcp-05.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Accept trial terms and conditions)]
@@ -111,7 +111,7 @@ You will be prompted with the legal disclaimer dialog box;  check the box and cl
 
 ![SAP Cloud Platformterms and conditions](hcp-06.png)
 
-[DONE]
+
 [ACCORDION-END] -->
 
 [ACCORDION-BEGIN [Step 5: ](SAP Cloud Platform cockpit)]
@@ -120,7 +120,7 @@ Once you have accepted the Terms and Conditions and registered, the SAP Cloud Pl
 
 ![SAP Cloud Platform cockpit](hcp-07.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

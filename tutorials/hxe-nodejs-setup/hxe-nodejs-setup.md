@@ -29,7 +29,7 @@ Now that you have tables and data in your system the next step will be to access
 To setup your system you will need to install the appropriate Node.js on your system. To do this please go to the [website](https://nodejs.org/en/) for Node.js and follow the instructions there for the type of system you have.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Install HDB)]
@@ -54,7 +54,7 @@ Your system may require administrator access to run the install so keep that in 
 
 ![permission denied](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -69,7 +69,7 @@ npm list
 This command lists all of the modules that are installed on your system and in the list you should see `hdb@0.12.2` (or the latest version)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

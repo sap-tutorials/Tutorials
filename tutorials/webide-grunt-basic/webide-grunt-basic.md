@@ -30,7 +30,7 @@ The `grunt-sapui5-bestpractice-build` Grunt plugin is published on the SAP npm r
 
 `@sap:registry=https://npm.sap.com/`
 
-For more information, see https://docs.npmjs.com/files/npmrc. 
+For more information, see https://docs.npmjs.com/files/npmrc.
 
 
 
@@ -58,7 +58,7 @@ In the file enter the following code:
   "description": "Grunt build",
   "private": true,
   "devDependencies": {
-      "@sap/grunt-sapui5-bestpractice-build": "1.3.17"
+      "@sap/grunt-sapui5-bestpractice-build": "1.3.19"
    }
 }
 ```
@@ -67,7 +67,7 @@ In the file enter the following code:
 
 Later, when you select **Build** in the context menu, these settings instruct npm to install Grunt and the `gruntsapui5-bestpractice-build` Grunt plugin that contains tasks for building your SAPUI5 project.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a Gruntfile.js file)]
@@ -103,7 +103,7 @@ The code does the following:
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -117,7 +117,7 @@ When the build finishes, a new `dist` folder is created in your project and is a
 You can see any build errors in the console, which you can display by going to **View** | **Console**.
 ![Create package.json](grunt-Step3-console.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

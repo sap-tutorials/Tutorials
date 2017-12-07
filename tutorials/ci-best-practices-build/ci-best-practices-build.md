@@ -179,7 +179,7 @@ Our examples are restricted to Linux as the operating system for the slaves, as 
 - (MO) If you plan to compile Java applications (for example running on SAP Cloud Platform) on the slave, also install SAP JVM 7.1.
 
     > [SAP JVM download](https://tools.hana.ondemand.com/#cloud)  
-    > [SAP JVM installation guide](https://help.hana.ondemand.com/help/frameset.htm?76137f42711e1014839a8273b0e91070.html)
+    > [SAP JVM installation guide](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76137f42711e1014839a8273b0e91070.html)
     
 - (MO) Git installation.
 

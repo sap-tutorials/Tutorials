@@ -44,7 +44,7 @@ product.UnitPrice = Number(product.UnitPrice).toFixed(NUM)
 
 Now that you know how to round the number, the trick is to figure out where to use this approach.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Find where to make changes)]
@@ -53,7 +53,7 @@ To make the change so it affects the master and detail views, you want to make t
 
 ![Beginning of `_setModel` function](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create type conversion function)]
@@ -84,7 +84,7 @@ oModel.attachRequestCompleted(function()
 
 ![Inserted code](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Save and run)]
@@ -93,14 +93,14 @@ Save your edits, click on `index.html` and click the **Run** button to test this
 
 ![Modified app](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-round-currency/mob2-2_5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Clear the cache)]
 
 If the numbers are not rounded, remember to clear the cache as described at the bottom of the [Add labels and a new field to your app](http://www.sap.com/developer/tutorials/hcp-webide-add-labels-field.html) tutorial.
 
-[DONE]
+
 [ACCORDION-END]
 
 

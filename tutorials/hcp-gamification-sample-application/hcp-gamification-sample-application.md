@@ -30,7 +30,7 @@ In this tutorial, you will see what gamification on the SAP Cloud Platform looks
 
 ![Selecting Gamification Service](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open Gamification Workbench)]
@@ -41,7 +41,7 @@ Click **Go to Service** to open the **Gamification Workbench**.
 
 ![Gamification Workbench](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create HelpDesk app)]
@@ -54,7 +54,7 @@ Go to the **Administration** tab and scroll to the **Demo Content Generation** s
 
 ![Successful App Creation](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Switch to gamified app)]
@@ -63,7 +63,7 @@ Switch to the gamified HelpDesk application by choosing **`HelpDesk`** from the 
 
 ![Switch Applications](7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Verify gamification in HelpDesk app)]
@@ -72,7 +72,7 @@ Go to the **Summary** tab and verify that the game mechanics of the HelpDesk app
 
 ![Verify Game Mechanics](8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Open HelpDesk)]
@@ -86,7 +86,7 @@ Select **Open HelpDesk** in the Help screen.
 
 ![Open HelpDesk](10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Continue in home screen)]
@@ -97,7 +97,7 @@ Select **continue** when the home screen of the gamified HelpDesk application ap
 
 > The gamified HelpDesk application will appear pre-populated with questions in your queue.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Customize response)]
@@ -106,7 +106,7 @@ Customize a response in the **Your Response** field and click **Send Answer**.
 
 ![Customize Response](12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test and verify)]
@@ -116,7 +116,7 @@ Respond to each message in your queue and verify that points and badges are awar
 ![Experience Points](13.png)
 ![Badges](14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

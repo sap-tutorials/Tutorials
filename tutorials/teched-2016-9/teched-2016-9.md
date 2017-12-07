@@ -38,7 +38,7 @@ Make sure you are using the **Europe (Trial)** landscape, and click on your acco
 
 ![SAP Cloud Platform trial Account](1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable IoT Services)]
@@ -53,7 +53,7 @@ Once the service is enabled click the **Go to Service** link and a new browser w
 
 ![Access Service](p6_4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Deploy the IoT Services)]
@@ -70,7 +70,7 @@ Enter your **SAP Cloud Platform** password, then click on **Deploy**.
 
 ![Deploy Service](p6_6a.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Configure the IoT MMS)]
@@ -101,7 +101,7 @@ or
 
 Otherwise proceed to the next step of assigning a role with required authorizations to your user.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Assign authorizations to run IoT MMS)]
@@ -128,7 +128,7 @@ From here you will need to go back to the **IoT Service Cockpit** from where you
 
 ![Go to Service](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create a new Message Type)]
@@ -159,7 +159,7 @@ Please note down the created Message Type's **ID** displayed here, as you will b
 
 ![Message Type ID](9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create new Device Type)]
@@ -176,7 +176,7 @@ Direction        | `From Device`
 
 ![Message Types](10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add a device)]
@@ -202,7 +202,7 @@ Please note down the created **Device** id displayed here as you will be using i
 
 ![Message Types](12-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Select your IoT Device)]
@@ -211,7 +211,7 @@ If you are with us at TechEd in the `AppSpace`, your device is the physical **Te
 
 ![Tessel 2](device.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Copy and Modify the JavaScript file)]
@@ -222,7 +222,7 @@ If you are with us at TechEd in the `AppSpace`, the file is already available in
 
 If you are doing this on your own machine, you can download the file [`te16_js.txt`](te16_js.txt), and rename it to `te16.js` on your machine.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Modify the code)]
@@ -244,7 +244,7 @@ You will modify:
  - The `deviceId` is the ID of the device you created, not to be confused with the `token`
  - The `authToken` line contains the token of the device (not the device type!). You received it in the pop-up window after creating your device. But if missed it, then regenerate this token from Device screen once again.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Run your JavaScript program)]
@@ -258,7 +258,7 @@ cd c:\teched2016
 t2 run te16.js
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Verify data acquisition)]
@@ -267,7 +267,7 @@ Provided your JavaScript file was modified properly with the correct items your 
 
 ![Execution](screenshot.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](See your data in SAP Cloud Platform)]
@@ -288,7 +288,7 @@ The table with your data will match the **Message Type** id generated earlier.
 
 ![Display Stored Messages](18.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

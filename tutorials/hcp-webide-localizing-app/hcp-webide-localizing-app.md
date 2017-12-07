@@ -50,7 +50,7 @@ Click the **Go To Service** link to open the **Translation Hub** service page.
 
 ![Open Translation Hub page](mob3-3_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create new translation project)]
@@ -69,7 +69,7 @@ Click the **+** icon to create a new translation project and enter the following
 
 ![Translation project fields](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Get translations)]
@@ -82,7 +82,7 @@ The Translation Hub service will create the appropriate `messageBundle_xx.proper
 
 ![git password](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_5b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Review translation)]
@@ -91,7 +91,7 @@ To review and optionally edit the translated text, click the **Edit** icon, and 
 
 ![Edit translations](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Change suggested text)]
@@ -100,14 +100,14 @@ To change the suggested text for any of the fields (for instance use the German 
 
 ![changing strings](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Get translations again)]
 
 If you have made changes you will need to click the **Get Translations** button again, and enter your git password for them to be saved to your repository.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Review Git Pane)]
@@ -118,7 +118,7 @@ Switch to your Web IDE tab, select the **Git Pane** on the right hand side of th
 
 ![Git pane showing only one messageBundle.properties file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Download new language files)]
@@ -141,14 +141,14 @@ The files added to your Web IDE **northwind > i18n** folder are:
 
 ![Files added to project](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_10c.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Review new files)]
 
 Double-click on the new files and you will see each has the same 31 entries as `messageBundle.properties`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Add a language/locale)]
@@ -161,7 +161,7 @@ Right-click on the **i18n** folder and select **New > File**. Name the file `mes
 
 ![Create de_CH file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Add language-specific strings)]
@@ -206,21 +206,21 @@ Your new file should look like this. Note that the `messageBundle_de_CH.properti
 
 ![de_CH strings](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-localizing-app/mob3-3_13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Commit your files)]
 
 Commit your new file to Git (following the same procedure as in the previous [tutorial](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Deploy your app)]
 
 Deploy your app to SAP Cloud Platform (following the same procedure as in an earlier [tutorial](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) and open the new, active version of the app.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Test your app)]
@@ -238,7 +238,7 @@ To test the language support in the deployed app, we can utilize the SAPUI5 `sap
 
 As described in the introduction for this tutorial, when a user opens your app URL, the app will check the language and locale settings on the device, then load the appropriate strings file.
 
-[DONE]
+
 [ACCORDION-END]
 
 

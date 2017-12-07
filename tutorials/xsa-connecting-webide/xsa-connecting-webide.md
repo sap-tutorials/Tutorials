@@ -36,7 +36,7 @@ Password: `HanaRocks2017` or what you changed it to
 
 ![Log in to SAP Web IDE for SAP HANA](1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -48,7 +48,7 @@ From a separate tab in the web browser, log into [GitHub](https://GitHub.com). I
 
 > If you are setting up the repository for use beyond this tutorial, you may want to create an organization and invite other users to join your repository. Further information on GitHub can be found [on GitHub](https://help.github.com/articles/creating-a-new-repository/)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a GitHub repository)]
@@ -62,7 +62,7 @@ Follow the instructions in the **New Repository** option from the **+** menu in 
 Complete the form, adding a name and description and click on **Create Repository**.
 ![New Repository](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -88,7 +88,7 @@ Tick the **Remember me** box so it will not ask again for the remainder of the s
 If successful, you will see the repository folder in your workspace, which is now connected to the git repository.
 ![Git is cloned into SAP HANA Web IDE](4_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Configure the Space for the repository)]
@@ -112,7 +112,7 @@ Select the proper space (probably, development) from the list of available space
 
 Click **Save**.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

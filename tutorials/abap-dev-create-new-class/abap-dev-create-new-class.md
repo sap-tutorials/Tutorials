@@ -8,20 +8,18 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
- - [Create and run an ABAP program](https://www.sap.com/developer/tutorials/abap-create-basic-app.html)
- - [Display database content and run SQL queries](https://www.sap.com/developer/tutorials/abap-display-data-queries.html)
- - Create an ABAP Data Dictionary structure (coming soon)
+  - [Create an ABAP Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)
 
 
 ## Next Steps
-- [Create a CDS view](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html)
+- [Create a data element](https://www.sap.com/developer/tutorials/abap-dev-adt-create-data-element.html)
 
 ## Details
 ### You will learn  
 In previous tutorials, you learned how to:
 1. [Create and run an ABAP program](https://www.sap.com/developer/tutorials/abap-create-basic-app.html)
 2. [Display database content and run SQL queries](https://www.sap.com/developer/tutorials/abap-display-data-queries.html)
-3. Create an ABAP Data Dictionary structure (coming soon)
+3. [Create an ABAP Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)
 
 Now, you will put all these together: In the ABAP program, you will:
 - create a global class
@@ -31,7 +29,7 @@ Encapsulating the data retrieval logic in a global ABAP class enables you to sep
 Finally, you will learn how to display the data in a SAP List Viewer ("`ALV Grid`").
 
 ### Time to Complete
-**30 Minutes**
+**30 Min**
 
 ---
 
@@ -40,7 +38,7 @@ First, open your ABAP program, `ZSO_INVOICE_ITEMS_EURO` which you created in the
 
 ![Image depicting step1-open-abap-program](step1-open-abap-program.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Delete the WRITE statement)]
@@ -49,7 +47,7 @@ In the program `ZSO_INVOICE_ITEMS_EURO`, remove the WRITE statement: Delete the 
 
 ![Image depicting step2-delete-write](step2-delete-write.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create the global class)]
@@ -74,7 +72,7 @@ d. Choose **Finish**:
 
 > A new editor will be opened showing the class you have created, `ZCL_INVOICE_RETRIEVAL`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Check the syntax)]
@@ -83,7 +81,7 @@ If necessary, go back to your program and trigger the syntax check using the key
 
 > The syntax error should no longer occur.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Instantiate the class)]
@@ -92,7 +90,7 @@ Still in your program, create an instance of class `zcl_invoice_retrieval` using
 
 ![Image depicting step5-instantiate-class](step5-instantiate-class.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create a method to get the database records)]
@@ -118,7 +116,7 @@ c.  In the *Create class* wizard that appears, create a public method without pa
 
 ![Image depicting step6c-empty-method](step6c-empty-method.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add the method implementation)]
@@ -155,7 +153,7 @@ SELECT
 
 > The statement `UP TO 100 ROWS` will cause an error. You will fix this in the next step.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Format the code)]
@@ -172,11 +170,11 @@ b.	To make the `SELECT` statement more readable, add some line breaks in the `JO
 
 ![Image depicting step9a-pretty-print-2](step9a-pretty-print-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Declare the local variable explicitly)]
-In a previous tutorial (Create a structure (coming soon)), you created an ABAP Data Dictionary structure. Now, you will use this structure:
+In a previous tutorial ([Create a structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)), you created an ABAP Data Dictionary structure. Now, you will use this structure:
 First, we will declare a local variable, `lt_result`, explicitly. Then, using this structure, we will define the type. of the returning parameter for your method `get_items_from_db`.
 a.	First position the cursor on the inline declared variable `lt_result` and open Quick Fix by choosing **Ctrl+1**:
 
@@ -203,11 +201,11 @@ This creates a local variable referring to a local type and automatically genera
 
 It also replaces `INTO TABLE @DATA(lt_result)` with `INTO TABLE @lt_result`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Replace helper_type with Dictionary structure)]
-In the next steps, you will replace the local type `helper_type` with the Data Dictionary structure that you created (in the previous tutorial Create an ABAP Data Dictionary structure (coming soon)).
+In the next steps, you will replace the local type `helper_type` with the Data Dictionary structure that you created (in the previous tutorial [Create an ABAP Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)).
 
 Still in the editor of your invoice retrieval class `ZCL_INVOICE_RETRIEVAL` :
 a.	In the method `get_items_from_db`, change the type of the variable `lt_result` to a standard table of `zso_invoice_item`:
@@ -218,7 +216,7 @@ b.	Remove the local type `helper_type`:
 
 ![Image depicting step13a-remove-helper-type](step13a-remove-helper-type.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Declare the local variable as a returning parameter)]
@@ -236,13 +234,13 @@ Note that the returning parameter was added to the method and an additional tabl
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Save and Activate your class)]
 Save ( **Ctrl+S** ) and Activate ( **Ctrl+F3** ) your class.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Use the returning parameter in the program)]
@@ -250,7 +248,7 @@ Now, in your program, declare an inline declared variable, `data(invoice_items)`
 
 ![Image depicting step12-declare-inline-variable](step12-declare-inline-variable.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Generating the ALV Grid)]
@@ -265,7 +263,7 @@ c.	Insert the full signature of the method call by pressing **Shift+Enter** :
 
 > If you prefer to insert the full signature by default, you can change the behavior of the code completion in the Preferences. Select Window in the menu and click on Preferences. In the Preferences Dialog enter code completion in the filter field or open the following path ABAP Development > Editors > Source Code Editors > Code Completion. In the Code Completion settings, you can activate a checkbox to Always insert full signature on completion.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Adapt the ALV Grid factory method)]
@@ -293,7 +291,7 @@ cl_salv_table=>factory(
        alv_table->display(  ).
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Save and activate the program)]
@@ -401,10 +399,10 @@ CLASS zcl_invoice_retrieval IMPLEMENTATION.
 ENDCLASS.
 
 ```
-[DONE]
+
 [ACCORDION-END]
 
 ---
 
-## Next Steps
-- [Create a CDS view](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html)
+## Next Steps: Optional
+- [Create a data element](https://www.sap.com/developer/tutorials/abap-dev-adt-create-data-element.html)

@@ -31,7 +31,7 @@ Please make sure that you have worked through the tutorial [Getting started with
 
 ![SAP Fiori launchpad group Human Capital Management](Launchpag-My-Leave-Requests.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open the Standard app)]
@@ -40,7 +40,7 @@ Open the Standard app and familiarize yourself with how it appears. To start ext
 
 ![Options menu](8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Launch SAP Web IDE)]
@@ -49,7 +49,7 @@ You will be forwarded to a screen called "Create App Extension" where you find i
 
 ![Create App Extension](Create-App-Extension.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Log into SAP Cloud Platform)]
@@ -58,7 +58,7 @@ You have to log into the SAP Cloud Platform. Please provide your credentials and
 
 ![Login to the SAP Cloud Platform](Login-to-SAP-HANA-Cloud-Platform.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Accept the project name)]
@@ -71,7 +71,7 @@ The SAP Web IDE is launched with your extension project created.
 
 ![Project in SAP Web IDE](Project-in-SAP-Web-IDE.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Open the graphical extensibility pane)]
@@ -80,7 +80,7 @@ With your extension project folder selected, the graphical extensibility pane is
 
 ![Extensibility Pane](Extensibility-Pane.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Switch to extensibility mode)]
@@ -93,7 +93,7 @@ You'll see that hovering over the views/controls on the left highlights them in 
 
 ![Outline](Outline.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Explore the graphical pane)]
@@ -102,7 +102,7 @@ Clicking a control in the graphical pane or in the Outline pane will change its 
 
 ![Control selected](Control-selected.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Hide control)]
@@ -111,7 +111,7 @@ There are several ways to extend a control. You will use the Outline pane to mak
 
 ![Hide Control](Hide-Control.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Refresh the view)]
@@ -124,7 +124,7 @@ Note that the legend is now gone from the graphical pane, but still present (lis
 
 ![legend is gone from the graphical pane but present in the outline pane](Outline-shows-hidden-status.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Show extended elements)]
@@ -139,7 +139,7 @@ You will see that the legend you just hid is the only control shown.
 
 Congratulations, you've successfully hid a view element from a SAP Standard Fiori app.
 
-[DONE]
+
 [ACCORDION-END]
 
 

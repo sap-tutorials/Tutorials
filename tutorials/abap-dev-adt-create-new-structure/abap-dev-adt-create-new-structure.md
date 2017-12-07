@@ -1,5 +1,5 @@
 ---
-title: Create a new Data Dictionary structure
+title: Create a new Data Dictionary structure 
 description: You will learn how to create a Data Dictionary structure
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development ]
@@ -8,10 +8,11 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
+[Display database content and run SQL queries](http://www.sap.com/developer/tutorials/abap-display-data-queries.html)
 
 
 ## Next Steps
-[Create an ABAP class](https://www.sap.com/developer/tutorials/abap-dev-adt-create-class-structure.html)
+[Create an ABAP class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)
 
 ## Details
 ### You will learn  
@@ -28,7 +29,7 @@ Now you will create a global Data Dictionary ("DDIC") structure: In the toolbar,
 
 ![Image depicting step1a-create-new](step1a-create-new.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Filter the list of object types)]
@@ -37,7 +38,7 @@ In the wizard that appears, filter the list of ABAP repository object types by e
 
 ![Image depicting step2-filter-type](step2-filter-type.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Enter name and description)]
@@ -50,7 +51,7 @@ Then enter the following and choose **Finish**.
 
 > A new text editor is opened showing the content of the newly created Data Dictionary structure.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Remove the generated component)]
@@ -59,7 +60,7 @@ Remove the generated example component `component_to_be_changed` from the struct
 
 ![Image depicting step12-remove-component](step12-remove-component.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Define fields for the structure)]
@@ -77,7 +78,7 @@ In the item structure, define the fields `company_name`, `amount`, `currency_cod
 
 > The editor shows a syntax error because the amount has not yet been bound to the currency code.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Bind amount to currency code annotation)]
@@ -97,7 +98,7 @@ d. Finally choose **Save (Ctrl+S)**
 
 > You should no longer get a syntax error.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Check and activate the structure)]
@@ -122,10 +123,10 @@ define type zso_invoice_item {
 
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 ---
 
 ## Next Steps
-- [Create an ABAP class](https://www.sap.com/developer/tutorials/abap-dev-adt-create-class-structure.html)
+- [Create an ABAP class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)

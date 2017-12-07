@@ -1,8 +1,8 @@
 ---
-title: Modules within Node.js SAP HANA applications
+title: SAP HANA XS Advanced - Modules within Node.js SAP HANA applications
 description: Working with Node.js modules
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition  ]
+tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
@@ -12,10 +12,9 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 - [HANA Database Access from Node.js](http://www.sap.com/developer/tutorials/xsa-node-dbaccess.html)
 
 ## Details
-### You will learn  
-In a previous tutorial you created a [SAP HANA XS Advanced, Creating a Node.js Module](http://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html), but didn't really do much Node.js specific programming.  You were only using Node.js to run XSJS and XSODATA services. The support for XSJS and XSODATA is an important feature for XS Advanced. It not only allows backward compatible support for much of your existing development; but it provides a simplified programming model as an alternative to the non-block I/O event driven programming model normally used by Node.jsBut you certainly aren't limited to only the functionality provided by XSJS and XSODATA. You have access to the full programming model of Node.js as well. In this section you will learn how to extend your existing Node.js module in the SAP Web IDE for SAP HANA.You will learn about how to create and use reusable code in the form of Node.js modules. You will use `packages.json` to define dependencies to these modules which make the installation of them quite easy. You will use one of the most popular modules – express; which helps with the setup the handling of the request and response object. You will use express to handle multiple HTTP handlers in the same service by using routes.You will learn about the fundamentals of the asynchronous nature of Node.js You will also see how this asynchronous capability allows for non-blocking input and output. This technique is one of the basic things that makes Node.js development different from other JavaScript development and also creates one of the reasons for its growing popularity. You will see how these techniques are applied to common operations like HTTP web service calls or even SAP HANA database access. You will also see how to create language translatable text strings and HANA database queries from Node.jsYour final part of this section will demonstrate the ease at which you can tap into the powerful web sockets capabilities of Node.js You will use web sockets to build a simple chat application. Any message sent from the SAPUI5 client side application will be propagated by the server to all listening clients.
 
-**Please note - This tutorial is based on SPS11**
+In a previous tutorial you created [a Node.js Module](http://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html), but didn't really do much Node.js specific programming.  You were only using Node.js to run XSJS and XSODATA services. The support for XSJS and XSODATA is an important feature for XS Advanced. It not only allows backward compatible support for much of your existing development, but it also provides a simplified programming model as an alternative to the non-block I/O event-driven programming model normally used by Node.js, but you certainly aren't limited to only the functionality provided by XSJS and XSODATA. You have access to the full programming model of Node.js as well. In this section you will learn how to extend your existing Node.js module in the SAP Web IDE for SAP HANA.You will learn about how to create and use reusable code in the form of Node.js modules. You will use `package.json` to define dependencies to these modules which make the installation of them quite easy. You will use one of the most popular modules – **express** - which helps with the setup the handling of the request and response object. You will use `express` to handle multiple HTTP handlers in the same service by using routes.You will learn about the fundamentals of the asynchronous nature of Node.js You will also see how this asynchronous capability allows for non-blocking input and output. This technique is one of the basic things that makes Node.js development different from other JavaScript development and also creates one of the reasons for its growing popularity. You will see how these techniques are applied to common operations like HTTP web service calls or even SAP HANA database access. You will also see how to create language translatable text strings and HANA database queries from Node.jsYour final part of this section will demonstrate the ease at which you can tap into the powerful web sockets capabilities of Node.js You will use web sockets to build a simple chat application. Any message sent from the SAPUI5 client side application will be propagated by the server to all listening clients.
+
 
 ### Time to Complete
 **15 Min**.
@@ -29,94 +28,256 @@ Return to the Node.js module and the `server.js` source file. You currently have
 
 ![server file](1.png)
 
-Begin by adding two new Node.js module requirements toward the beginning of the file.  One is for the http built-in module and the other is the popular open source module &#151; express. One of the most common tasks in Node.js is acting as a web server and handling `http requests/responses`. express is a module that wraps and extends the low level http library and provides many additional services.
+Begin by adding two new Node.js module requirements toward the beginning of the file.  One is for the http built-in module and the other is the popular open source module `express`. One of the most common tasks in Node.js is acting as a web server and handling `http requests/responses`. `Express` is a module that wraps and extends the low level http library and provides many additional services.
+
+```JavaScript
+/*eslint no-console: 0, no-unused-vars: 0, no-undef:0*/
+"use strict";var https = require("https");
+var xsenv = require("@sap/xsenv");var port = process.env.PORT || 3000;
+var server = require("http").createServer();
+https.globalAgent.options.ca= xsenv.loadCertificates(); 	
+global.__base = __dirname + "/";var init = require(global.__base + "utils/initialize");
+//Initialize Express App for XSA UAA and HDBEXT Middleware
+var app = init.initExpress();
+
+//Setup Routes
+
+var router = require("./router")(app, server);
+
+//Initialize the XSJS Compatibility Layer
+init.initXSJS(app);
+
+//Start the Serverserver.on("request", app);
+server.listen(port, function() {	console.info("HTTP Server: " + server.address().port);});
+```
+
+If you look into the code, you will see a script called `initialize` is called, and is supposed to be found in the current application directory. Under `js`, create a directory called  `utils` and a file named `initialize.js`.
+
+![Initialize utils](4.png)
+
+The `server.js` script is calling two function modules, `initExpress` and `initXSJS`. You will define them here as reusable functions using `module.exports` as in the code below. Copy it into the `initialize.js` script.
+
+
+```JavaScript
+/*eslint no-console: 0, no-unused-vars: 0*/
+"use strict";
+module.exports = {
+initExpress: function() {
+		var xsenv = require("@sap/xsenv");
+		var passport = require("passport");
+		var xssec = require("@sap/xssec");
+		var xsHDBConn = require("@sap/hdbext");
+		var express = require("express");
+
+		//logging
+		var logging = require("@sap/logging");
+		var appContext = logging.createAppContext();
+
+		//Initialize Express App for XS UAA and HDBEXT Middleware
+		var app = express();
+		passport.use("JWT", new xssec.JWTStrategy(xsenv.getServices({
+			uaa: {
+				tag: "xsuaa"
+			}
+		}).uaa));
+		app.use(logging.expressMiddleware(appContext));
+		app.use(passport.initialize());
+		var hanaOptions = xsenv.getServices({
+			hana: {
+				tag: "hana"
+			}
+		});
+		app.use(
+			passport.authenticate("JWT", {
+				session: false
+			}),
+			xsHDBConn.middleware(hanaOptions.hana)
+		);
+		return app;
+	},
+};
 
 ```
-/*eslint no-console: 0, no-unused-vars: 0*/"use strict";var xsjs  = require("sap-xsjs");var xsenv = require("sap-xsenv");var port  = process.env.PORT || 3000;var server = require('http').createServer();var express = require("express");var options = xsjs.extend({	//anonymous : true, // remove to authenticate calls	redirectUrl : "/index.xsjs"});
-```
+Before you add the initialization for XSJS so that the previous modules can also be executed, take a look at the code you have just pasted.
+First, the `@sap/logging` module is used to write log and trace files. By calling the external node module, `passport`, you are enforcing the UAA authentication you defined earlier. How? By using a JWT (JSON web token) strategy, a middleware function passes the request to the actual route which, in this case, is the `xsuaa` service you defined at the very beginning using the XS client. You are then injecting  an instance of `sap-hdb-ext`, called `xsHDBConn`. This module is designed to expose pooled database connections as a Node.js middleware.
 
-[DONE]
+
+
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add new route handler)]
+[ACCORDION-BEGIN [Step 2: ](Add XSJS initialization)]
 
-You still want to configure the XSJS module but no longer want it to listen directly on your service port. Instead you will start your own instance of express add a route handler for `/node` which you can code your own Node.js logic. Then you will add the XSJS as a root route handler. Here is the complete new coding of your `server.js`.
+You still want to configure the XSJS module but no longer want it to listen directly on your service port. Instead you will start your own instance of express add a route handler for `/node` which you can code your own Node.js logic. Then you will add the XSJS as a root route handler. Here is the ending piece of code for `initialize.js`.
 
-```
-*eslint no-console: 0, no-unused-vars: 0*/"use strict";var xsjs  = require("sap-xsjs");var xsenv = require("sap-xsenv");var port  = process.env.PORT || 3000;var server = require('http').createServer();var express = require("express");var node = require("./myNode");//Create base Express Server Appvar app = express();app.use("/node", node());var options = xsjs.extend({	//anonymous : true, // remove to authenticate calls	redirectUrl : "/index.xsjs"});// configure HANAoptions = xsjs.extend(options, xsenv.getServices({ hana: {tag: "hana"} }));// configure UAAoptions = xsjs.extend(options, xsenv.getServices({ uaa: {tag: "xsuaa"} }));//Add XSJS to the base appvar xsjsApp = xsjs(options);app.use(xsjsApp);server.on('request', app);server.listen(port, function () {    console.log('HTTP Server: ' + server.address().port );});
-```
+```JavaScript
 
-[DONE]
+initXSJS: function(app) {
+//	process.env.XS_APP_LOG_LEVEL='debug';
+var xsjs = require("@sap/xsjs");
+var xsenv = require("@sap/xsenv");
+var options = {
+	//	anonymous : true, // remove to authenticate calls
+	redirectUrl: "/index.xsjs",
+	context: {
+		base: global.__base,
+		env: process.env,
+		answer: 42
+	}
+};
+
+//configure HANA
+try {
+	options = Object.assign(options, xsenv.getServices({
+		hana: {
+			tag: "hana"
+		}
+	}));
+	options = Object.assign(options, xsenv.getServices({
+		secureStore: {
+			tag: "hana"
+		}
+	}));
+} catch (err) {
+	console.log("[WARN]", err.message);
+}
+
+//Add SQLCC
+try {
+	options.hana.sqlcc = xsenv.getServices({
+		"xsjs.sqlcc_config": "CROSS_SCHEMA_LOCATIONS"
+	});
+} catch (err) {
+	console.log("[WARN]", err.message);
+}
+
+// configure UAA
+try {
+	options = Object.assign(options, xsenv.getServices({
+		uaa: {
+			tag: "xsuaa"
+		}
+	}));
+} catch (err) {
+	console.log("[WARN]", err.message);
+}
+
+// start server
+var xsjsApp = xsjs(options);
+app.use(xsjsApp);
+}
+};
+
+```
+
+You can now **Save**, as you have defined both reusable modules.
+
+
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create new module)]
+[ACCORDION-BEGIN [Step 3: ](Create route handler)]
 
-Notice that in the previous additions to `server.js` you added a reference to a module called `./myNode`. This is a Node.js module which will be local to your project. Modules don't all have to come from central repositories. They can also be a way of modularizing your own code (similar to XSJSLIB files). That is exactly what you will do here. Rather than filling up your `server.js` with application specific logic, you will break that out into its own Node.js module named `myNode.js`.
+Back in `server.js`, after calling the initialization scripts, you are calling a router. You will now create a router that will accommodate the different Express route requests. You will mimic part of the folder structure suggested in the [Express module documentation](http://expressjs.com/en/starter/generator.html) and create a folder called `router` with a file called `index.js` in it.
 
-![reference](4.png)
+![Create routes and index file](2.png)
 
-Create a new file in your `js` folder called `myNode.js`
 
-![new file](5.png)
+Routes determine how your application will respond to different requests based on the URI and HTTP method. In the following code, a call aiming at the path `node` like `https://app_URL:port/node` will be handled by a script called `myNode`:.
 
-Add the following code to your `myNode.js` file. This will add a simple GET handler that returns a "Hello World" message when requested. Notice express in this module has a root route handler. But this will relatively to where it is attached in `server.js`.  Therefore this logic will still respond relative to the `/node` route handler base we specified earlier.
+```JavaScript
+"use strict";
+
+module.exports = function(app, server){
+	app.use("/node", require("./routes/myNode")());
+};
 
 ```
-"use strict";var express = require("express");module.exports = function(){	var app = express();//Hello Router	app.route("/")	  .get(function(req, res) {	    res.send("Hello World Node.js");	});   return app;};
-```
 
-[DONE]
+Add the code to the new `index.js` file and **save**.
+
+
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Extend dependencies)]
+[ACCORDION-BEGIN [Step 4: ](Create destination module for route)]
 
-Look at the `package.json` file in the editor. You will see the dependencies section which lists all required libraries and their versions. You manually added the express Node.js module to your project, so you also need to extend the dependencies section here.
+As you can imagine from the code in the previous step, you now need a script called `myNode.js` in a folder called `routes`
 
-![package](7.png)
+![myNode.js new file](3.png)
 
-Your Node.js module is essentially finished, however before you can run it you also need to add a new route to the `xs-app.json` of your `HTML5` module.  
+Add the following code to it:
+
+```JavaScript
+/*eslint no-console: 0, no-unused-vars: 0, no-shadow: 0, new-cap: 0*/
+"use strict";
+var express = require("express");
+
+module.exports = function() {
+	var app = express.Router();
+
+	//Hello Router
+	app.get("/", function(req, res) {
+		res.send("Hello World Node.js");
+	});
+	return app;
+};
 
 ```
-{	"welcomeFile": "index.html",	"authenticationMethod": "route",	"routes": [ 	{		"source": "/node/(.*)",		"destination": "nodejs",		"csrfProtection": false,		"authenticationType": "xsuaa"	}, 		{		"source": "(.*)(.xsjs)",		"destination": "nodejs",		"csrfProtection": false,		"authenticationType": "xsuaa"	}, {		"source": "(.*)(.xsodata)",		"destination": "nodejs",		"authenticationType": "xsuaa"	}]}
-```
+You are now responding to a `GET` request to the relative root location of the file (in this case, `router`).  However, in the `index.js` file inside the `router` folder, you set the path to `/node` in the URL. You need to map this route in the `xs-app.json` file in the HTML5 module.
 
-[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run module)]
+[ACCORDION-BEGIN [Step 5: ](Add the route in the web module)]
+
+Because it is the web module that is exposed for calls, you need to add the new `/node` route to the file `xs-app.json`:
+
+
+```JavaScript
+ {
+ 		"source": "/node(.*)",
+ 		"destination": "core-backend",
+ 		"csrfProtection": true,
+ 		"authenticationType": "xsuaa"
+ 	}
+
+```
+
+As follows:
+
+![Add route ion xs-app.json](5.png)
+
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Extend dependencies in package.json)]
+
+Back in step 1 you added the modules `express` and `passport` using the **require** function. You now need to add them manually in the `package.json` file with the rest of the dependencies for the `js` module.
+
+![Add dependencies in js module](6.png)
+
+
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Build and Run )]
 
 You can now run the `js` module.
 
-![run the module](9.png)
+![Run and build](8.png)
 
-You should see that the build and deploy was successful.
+After it has built and started running, you can run the **web** module. This will open a new tab with the `index.html`. Test the original `.xsjs` service is running properly after the paths were changed with the route handler. Replace `html` with `xsjs`:
 
-![successful build](10.png)
+![Replace](9.png)
 
-However if you go to the tab where the service run was started, you will see an Unauthorized message just as you did in [SAP HANA XS Advanced, Creating a Node.js Module](http://www.sap.com/developer/tutorials/xsa-xsjs-xsodata.html).  This is as intended.
+You can also test the newly added router by adding `/node` to the URL:
 
-![unauthorized](11.png)
+![Replace with node](10.png)
 
-[DONE]
+
+
 [ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Run web module)]
-
-So now run the `web` module. It will need to rebuild and redeploy due to the added route.
-
-![run the module](9.png)
-
-In the running tab, you should see the `index.html` from earlier. You can add the URL to your XSJS service `/index.xsjs` in the browser. This will test to make sure that your XSJS and XSODATA paths are still accessible even though you swapped out the root handler.
-
-![running tab](9.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Require modules)]
-
-Now change the path in the browser to `/node/`.  You should see "Hello World" Node.js this is being returned from the new route handler and Node.js module you just implemented in this exercise.
-![change path](14.png)
-[DONE][ACCORDION-END]
+
 ## Next Steps
 - [HANA Database Access from Node.js](http://www.sap.com/developer/tutorials/xsa-node-dbaccess.html)

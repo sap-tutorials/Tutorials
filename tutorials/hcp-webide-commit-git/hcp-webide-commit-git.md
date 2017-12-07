@@ -61,7 +61,7 @@ Make sure the **Create empty commit** box is checked, click **OK** and your repo
 ![Create repo image](mg3-3-02.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Get repository URL)]
@@ -74,7 +74,7 @@ On the repository overview page, copy the **Git Repository URL**:
 
 ![Git repo URL](mg3-3-04.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Open project in Web IDE)]
@@ -83,7 +83,7 @@ Open SAP Web IDE in a browser window, and open your project folder (`northwind`)
 
 ![project files with no Git status](mg3-3-05.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Initialize repository)]
@@ -96,7 +96,7 @@ Paste in the **Git Repository URL** you copied earlier and click **OK**. This wi
 
 ![Initialize with remote git URL](mg3-3-07.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Open repository)]
@@ -107,7 +107,7 @@ If your project does not appear in the **Git pane**, keep the Git pane open and 
 
 ![Git pane](mg3-3-08.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Fetch changes from remote)]
@@ -116,7 +116,7 @@ So you can see remote branches in the SAP Cloud Platform Git repository, click t
 
 ![Git Fetch](mg3-3-09.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Merge branches)]
@@ -127,7 +127,7 @@ Click the **Merge** button on the Git pane to merge your local branch to the rem
 
 ![Git Merge master](mg3-3-11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](View repository)]
@@ -138,7 +138,7 @@ You will now notice that the new file decorations are visible on your project fi
 
 At this point your Git repository is set up. The next steps will commit and push your project files to the repository.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Stage your files)]
@@ -151,7 +151,7 @@ Notice the change in the decorations for your files and folders.
 
 ![staged decorations](mg3-3-14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Enter commit message)]
@@ -160,7 +160,7 @@ Scroll down in the **Git pane** and enter a description (required for any commit
 
 ![commit description](mg3-3-15.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Commit and push your files)]
@@ -169,7 +169,7 @@ Click on the **Commit and Push** button, and select **Remote Branch**, from the 
 
 ![commit description](mg3-3-16.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Select remote to push to)]
@@ -178,7 +178,7 @@ In the **Push Changes to a remote branch** dialog box, select **origin/master**,
 
 ![commit description](mg3-3-17.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Check your commit)]
@@ -187,7 +187,7 @@ You will see a confirmation alert appear briefly in the top-right corner of the 
 
 ![commit description](mg3-3-18.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

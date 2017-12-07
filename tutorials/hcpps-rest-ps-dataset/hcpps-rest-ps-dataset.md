@@ -2,15 +2,15 @@
 title: Test the "Dataset" service
 description: Using a REST client, you will test the "Dataset" SAP Cloud for predictive services
 primary_tag: products>sap-cloud-platform-predictive-service
-tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Install a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
+  - **Tutorials:** [Configure the SAP Cloud Platform predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-  - [Test the "Forecast" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
+- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
 
 ## Details
 ### You will learn
@@ -21,14 +21,20 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-predictive-service, produ
   **10 minutes**
 
 > In order to ease the readability of this tutorial, we have used tokens to replace long URLs.
-Therefore you can replace any occurrence of the token by the value listed above.
+> Therefore you can replace any occurrence of the token by the value listed above:
 >
-> Token               | Value
-------------------- | -------------
-<code><b>&lt;Account name&gt;</b></code>  | your SAP Cloud Platform account name. On a developer trial account, it should end by `trial`
-<code><b>&lt;C4PA URL&gt;</b></code> | `https://aac4paservices<`<code><b>Account name</b></code>`>.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
+> - **`C4PAURL`** : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
+>     
+```
+     https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
+```
+>      
 >
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+
+&nbsp;
+
+> **Note**: if you are running into some issue, you can check the [SAP Cloud Platform Predictive Services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 [ACCORDION-BEGIN [Info:](A short description of the Dataset service)]
 
@@ -46,18 +52,21 @@ This service:
 
 Once registered, you will be able to use the dataset "ID" to call the other services.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Register a dataset)]
 Open a new tab in ***Postman***.
 
-Fill in the following information
+> If you don't have ***Postman*** installed yet, you can refer to the following how-to guide: [Install Postman extension for Google Chrome as a REST client](https://www.sap.com/developer/how-tos/2017/07/api-tools-postman-install.html)
+
+&nbsp;
+
+Fill in the following information:
 
 Field Name     | Value
 -------------- | --------------
-Request Type   | **`POST`**
-URL            | **`<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/sync`**
+Request Type   | `POST`
+URL            | `C4PAURL/api/analytics/dataset/sync`
 
 ![Postman URL](01.png)
 
@@ -72,7 +81,7 @@ Password*      | your ***SAP Cloud Platform Account*** password
 >**Note:**
 Your SAP Cloud Platform Account login is usually the email address used to register your ***SAP Cloud Platform*** account.
 
--
+&nbsp;
 
 ![Postman URL](02.png)
 
@@ -89,7 +98,7 @@ Add the following content in the text area as displayed above:
 ```json
 {
   "location": {
-    "schema" : "DEMO",
+    "schema" : "PSDEMO",
     "table" : "CashFlow"
   }
 }
@@ -99,7 +108,7 @@ Click on **Send**
 
 It will now display the data set registration identifier, the number of rows and the variable descriptions.
 
-Now, we can use the `ID` value to reference the registered dataset with other SAP Cloud for predictive services calls.
+Now, we can use the <code><b>ID</b></code> value to reference the registered dataset with other SAP Cloud for predictive services calls.
 
 The below extract was shortened to ease the reading.
 ```
@@ -126,9 +135,8 @@ The below extract was shortened to ease the reading.
 }
 ```
 
-Click on **Send** an additional 4 or 5 times, so you will have multiple dataset registered.
+Click on **Send** an additional 2 or 3 times, so you will have multiple dataset registered to play with.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Retrieve the registration details for one dataset)]
@@ -139,7 +147,11 @@ Fill in the following information:
 Field Name     | Value
 :------------- | :-------------
 Request Type   | `GET`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/1`
+URL            | **`C4PAURL`**`/api/analytics/dataset/ID`
+
+> Make sure you replace the **`ID`** token in the URL with the one returned by the dataset **`ID`** return in the previous service call.
+
+&nbsp;
 
 Select the **Authorization** tab and fill in the same details as in the previous call.
 
@@ -147,9 +159,8 @@ Click on **Send**
 
 You should receive the same description as from the previous call.
 
-If you try with an unknown `ID`, you should receive an error message.
+If you try with an unknown <code><b>ID</b></code>, you should receive an error message.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Retrieve the registration details for one variable)]
@@ -160,7 +171,11 @@ Fill in the following information
 Field Name     | Value
 :------------- | :-------------
 Request Type   | `GET`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/1/variable/1`
+URL            | `C4PAURL/api/analytics/dataset/**ID**/variables/1`
+
+> Make sure you replace the **`ID`** token in the URL with the one returned by the dataset **`ID`** return in the first service call.
+
+&nbsp;
 
 Select the **Authorization** tab and fill in the same details as in the previous call.
 
@@ -168,18 +183,17 @@ Click on **Send**
 
 You should receive the description of the first variable from your data set.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Modify registered variable details)]
 
->**Note:**
+> **Note:**
 >This service is available since version 1.7, please make sure you have upgraded the C4PA application, else you will receive a 404 error.
 >
 >To check which version you are currently using, please go to the following URL and check the `X-Maven-Project-Version` property:
->  - `<<code><b>C4PA URL</b></code>>/adminUI/index.html#/about`
+>  - **`C4PAURL`**`/adminUI/index.html#/about`
 
--
+&nbsp;
 
 By default, the variable storage and value type (nominal, continuous,  ordinal) properties returned by the registration service are "guessed" from the data, which may sometime be inaccurate.
 
@@ -194,7 +208,11 @@ Fill in the following information:
 Field Name     | Value
 -------------- | --------------
 Request Type   | `POST`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/1/variables/update`
+URL            | **`C4PAURL`**`/api/analytics/dataset/ID/variables/update`
+
+> Make sure you replace the **`ID`** token in the URL with the one returned by the dataset **`ID`** return in the first service call.
+
+&nbsp;
 
 Select the **Authorization** tab and fill in the same details as in the previous call.
 
@@ -209,7 +227,6 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 ]
 ```
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Delete a dataset registration details)]
@@ -221,7 +238,11 @@ Fill in the following information
 Field Name     | Value
 :------------- | :-------------
 Request Type   | `DELETE`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/2`
+URL            | **`C4PAURL`**`/api/analytics/dataset/ID`
+
+> Make sure you replace the **`ID`** token in the URL with the one returned by the dataset **`ID`** return in the first service call.
+
+&nbsp;
 
 Select the **Authorization** tab and fill in the same details as in the previous call.
 
@@ -231,7 +252,6 @@ You have now deleted the second data set we have registered.
 
 You can try to retrieve the registration details as in step 2 for dataset 2, and you should receive an error message.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](List all registered datasets)]
@@ -243,7 +263,7 @@ Fill in the following information
 Field Name     | Value
 :------------- | :-------------
 Request Type   | `GET`
-URL            | `<`<code><b>C4PA URL</b></code>`>/api/analytics/dataset/`
+URL            | **`C4PAURL`**`/api/analytics/dataset/`
 
 Select the **Authorization** tab and fill in the same details as in the previous call.
 
@@ -251,14 +271,11 @@ Click on **Send**
 
 You have now listed all the data set registered in your environment.
 
-[DONE]
 [ACCORDION-END]
 
 ### Optional
-For more details on the SAP Cloud for predictive services, you can check the following URL that can also allow you to run the service:
-  - `<`<code><b>C4PA URL</b></code>`>/raml/console/index.html?raml=../api/aa-cloud-services.raml`
-Or the public documentation
-  - [`https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post`](https://help.hana.ondemand.com/c4pa/api/aa-cloud-services.html#api_analytics_forecast_post)
+
+For more details on the SAP Cloud for predictive services, you can check the following the [`Dataset APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/ac9dc4ed145646a0b76b4729210fd067.html) documentation.
 
 ## Next Steps
-  - [Test the "Forecast" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html)
+- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)

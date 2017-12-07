@@ -45,7 +45,7 @@ You should now be able to see the field **`fedtrace`** under **INDEXSERVER**. Al
 
 ![Change fedtrace](fedtrace.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Generate and Open a Detailed Plan by Running a Query)]
@@ -98,7 +98,7 @@ The highlighted index in the query plan below is the Fast Projection (FP) index.
 
 ![Fast Projection index](fp-index.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Creating an Index)]
@@ -116,7 +116,7 @@ As you can see, after creating the index, if we run the query again and view the
 
 ![High Group Index](high-group-index.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

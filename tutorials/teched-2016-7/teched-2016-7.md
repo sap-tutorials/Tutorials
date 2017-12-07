@@ -19,15 +19,15 @@ You will add a map display to one of the tabs in your app and geolocate an addre
 ![Sample of the map from the Google Static Maps API Call](map-final-output.png)
 
 ### Time to Complete
-**15-20 Min**.
+**20 Min**.
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Read about Google Static Maps API)]
-You will be using the Google Static Maps API. For more information on this API, you can visit the [API Documentation Page](https://developers.google.com/maps/documentation/static-maps/intro) ([link](https://developers.google.com/maps/documentation/static-maps/intro)).
+You will be using the Google Static Maps API. For more information on this API, you can visit the [API Documentation Page](https://developers.google.com/maps/documentation/static-maps/intro).
 
 The Static Maps API returns an image that you can display in a HTML image tag.   
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a Destination for the API)]
@@ -63,7 +63,7 @@ Click on **Save**.
 
 After the destination is saved, you can click the **Check Connection** button to test that Google Maps end-point is reachable.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Update the neo-app.json)]
@@ -104,7 +104,7 @@ These routes allow you to make a call to an URL without have to directly referen
 
 ![image of where to add the code in the neo-app.json file](dest-updated-code.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Update the Map Fragment view)]
@@ -136,7 +136,7 @@ Make sure you **Save** your changes.
 
 ![image of code for i18n add of the Map Fragment section](map-update-form.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Update the i18n properties)]
@@ -159,7 +159,7 @@ Your i18n file should look like the image below.
 
 ![image of code for i18n add of the Map Fragment section](i18n-add-map-section.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add the Map to the Map Fragment)]
@@ -203,7 +203,7 @@ Your final code should look like the screenshot below.
 
 ![image of final code for XML fragment](xml-view-final-code.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Update the Formatter JavaScript)]
@@ -246,7 +246,7 @@ Your final code should look like the screenshot below.
 
 ![image of final code for Formatter js model ](js-model-final-code.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Update the i18n properties)]
@@ -261,7 +261,7 @@ mapAltText=Map of location
 
 ![image of final code for i18n updates in the Map Fragment section](i18n-file-updated.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Run your application)]
@@ -272,7 +272,7 @@ When you click on an item for more details, your page should look like the image
 
 ![Sample of the map from the Google Static Maps API Call](map-output.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Commit your edits to Git)]
@@ -283,7 +283,7 @@ In addition to being a best practice (creating snapshots of your project in Git 
 
 If you complete the optional steps below, you should commit your edits after those steps as well.
 
-[DONE]
+
 [ACCORDION-END]
 
 ### Optional
@@ -297,7 +297,7 @@ You can modify the URL to include a new `style` for example by indicating the `f
 
 For more information on styling the map with Google, visit their [Styled Maps API Documentation](https://developers.google.com/maps/documentation/static-maps/styling).
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Add color to your map)]
@@ -323,7 +323,7 @@ The `element` indicates that you want to change the styling of the geometry on t
 
 And the `color` indicates the highway geometry color.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

@@ -28,7 +28,7 @@ In the SAP Cloud Platform cockpit, choose **Destination** | **New Destination**.
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add destination parameters)]
@@ -46,7 +46,7 @@ The parameters for the destination look like this:
 ![New destination](Step2-DestinationParameters.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -63,7 +63,7 @@ The SAP Web IDE properties for the destination look like this:
 ![New destination](Step3-SAPWebIDEProperties.png)
 Choose **Save**.
 
-[DONE]
+
 [ACCORDION-END]
 
 

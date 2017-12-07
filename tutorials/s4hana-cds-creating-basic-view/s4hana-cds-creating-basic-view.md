@@ -55,7 +55,7 @@ Description       | `Northwind OData Service`
 ![Basic view](BasicView5.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Change data source)]
@@ -72,7 +72,7 @@ At line 5 of the generated code, replace `data source name` with the ABAP table 
 
 ![Basic view](BasicView8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Edit table)]
@@ -99,7 +99,7 @@ The content of the table `scarr` will be displayed. Confirm that the table has 1
 
 ![Basic view](BasicView12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Insert columns)]
@@ -120,7 +120,7 @@ Expand the folder **`$TMP-SHA`** in the left panel, then  expand its subfolder *
 
 ![Basic view](BasicView14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Check view)]
@@ -135,7 +135,7 @@ In the newly opened window, the content of the basic view **`ZXSHI_AIRLINE`** is
 
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Edit fields)]
@@ -177,7 +177,7 @@ After line 5, insert line 6 with a new annotation:
 
 ![Basic view](BasicView25.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Insert annotations)]
@@ -193,7 +193,7 @@ In line 3 of the code, replace `CHECK` with `NOT_REQUIRED`, as shown here.
 
 ![Basic view](BasicView27.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Check complete code)]
@@ -222,7 +222,7 @@ scarr.url as AirlineURL
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 ### Notes

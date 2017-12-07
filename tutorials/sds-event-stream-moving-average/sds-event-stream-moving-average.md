@@ -6,12 +6,11 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-smart-da
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Join an Event Stream to a HANA Table](http://www.sap.com/developer/tutorials/sds-stream-table-join.html)
+ - **Tutorials:** [Join an Event Stream to a HANA Table](https://www.sap.com/developer/tutorials/sds-stream-table-join.html)
 
 ## Next Steps
-- **Tutorials:**
-- Continue to the second series on streaming: [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-event-stream-alerts.html)
-- Or Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Streaming Analytics](https://www.sap.com/developer/tutorials/sds-event-stream-alerts.html)
+
 
 ## Details
 ### You will learn  
@@ -38,7 +37,7 @@ Rename the stream to `AVG_TEMP` by clicking on Aggregate symbol. Then press the 
 
 ![rename](2-rename.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Connect the Aggregate Window to the Event Stream)]
@@ -47,7 +46,7 @@ Select the **Connector** in the **Palette** and the click first on **`DEVICE_EVE
 
 ![connector](3-connector.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add columns to the window)]
@@ -64,7 +63,7 @@ Click **Select All**. Uncheck **`DEVICE_EVENTS.EVENT_NAME`**, **`DEVICE_EVENTS.E
 
 ![select columns to copy](6-selectcolumnstocopy.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Set a retention policy on the input)]
@@ -79,7 +78,7 @@ Click **Time** and enter `30 seconds` in the entry box. Click **OK**.
 
 ![policy edit](9-policyedit.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Edit the GROUP BY clause)]
@@ -94,7 +93,7 @@ Select the entry **`DEVICE_EVENTS.MACHINEID`** by clicking on it. Click **Add >>
 
 ![group criteria](12-groupcriteria.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add a GROUP FILTER)]
@@ -117,7 +116,7 @@ Enter `DEVICE_EVENTS.EVENT_NAME='TEMP'` as the filter expression in the text box
 
 ![name group filter](16-namegroupfilter.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Edit the Column Expressions)]
@@ -144,7 +143,7 @@ We are now going to edit this expression to compute an average. Also, since the 
 
 ![average event value](22-avgeventvalue.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Check your work)]
@@ -171,12 +170,5 @@ GROUP BY DEVICE_EVENTS.MACHINEID ;
 
 ```
 
-[DONE]
+
 [ACCORDION-END]
-
----
-
-## Next Steps
-- **Tutorials:**
-- Continue to the second series on streaming: [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-event-stream-alerts.html)
-- Or Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)

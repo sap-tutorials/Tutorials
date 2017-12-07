@@ -1,4 +1,5 @@
 30-day
+90-day
 Alexa
 Ambari
 AngularJS
@@ -14,6 +15,8 @@ Bieser
 Bitbucket
 BusinessObjects
 CAL
+centered
+Centered
 CircleCI
 classname
 Classname
@@ -65,6 +68,7 @@ keystore
 Lifecycle
 Lumira
 macOS
+Mendix
 MTA
 MTAs
 multistore
@@ -72,6 +76,7 @@ Multistore
 multitenant
 Multitenant
 MySQL
+Neo
 NetWeaver
 Node.js
 northwind
@@ -79,7 +84,9 @@ Northwind
 npm
 OAuth
 OData
+Ok
 OLAP
+Onboarding
 openSSL
 openSUSE
 OpenUI5
@@ -89,6 +96,7 @@ plugin
 plugins
 POJOs
 Postgres
+preinstalled
 pre-pend
 pre-pended
 proxied
@@ -116,12 +124,18 @@ Shapefiles
 SQLScript
 SRS
 ssh
+Subaccount
+subaccount
+Subaccounts
+subaccounts
+Subheader
 subselect
 supertype
 supertypes
 Sybase
 TechEd
 Tessel
+Tessel1
 timestamp
 tiering
 Tiering
@@ -136,9 +150,11 @@ util
 VMware
 Vora
 watchOS
+Whealy
 Wi-Fi
 WinSCP
 Witalij
+Worklist
 XML
 YaaS
 _1
@@ -168,3 +184,7 @@ x1F534
 enablement
 UltraLite
 MobiLink
+hypervisor
+hypervisors
+Hypervisor
+Hypervisors

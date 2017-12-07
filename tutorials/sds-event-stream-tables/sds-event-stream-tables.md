@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-smart-da
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create a Streaming project with SAP HANA smart data streaming](http://www.sap.com/developer/tutorials/sds-create-streaming-project.html)
+ - **Tutorials:** [Create a Streaming project with SAP HANA Streaming Analytics](https://www.sap.com/developer/tutorials/sds-create-streaming-project.html)
 
 
 ## Next Steps
- - [Run and Test a Streaming Project](http://www.sap.com/developer/tutorials/sds-run-test.html)
+ - [Run and Test a Streaming Project](https://www.sap.com/developer/tutorials/sds-run-test.html)
 
 ## Details
 ### You will learn  
@@ -101,7 +101,7 @@ Check the HANA database catalog in the **SAP HANA Administration Console** to co
 
 The table **`MACHINE_REF`** should have 7 rows of data.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Connect the output stream to the database table)]
@@ -144,7 +144,7 @@ And connect the adapter to the **`ACTIVITY_HIST`** stream. Click on the **`ACTII
 
 ![connect adapter](connect-adapter.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Compile and check for errors)]
@@ -159,7 +159,7 @@ Check the **Problems** view to see if the project compiled without errors.
 
 > If you do have compile errors, if it's easy to spot the error here, go ahead and fix it.  Sometimes it's easier to find and fix an error in the CCL editor.  You can view the underlying CCL for the project by switching to the CCL editor (see the optional step below).  In the CCL editor, compile again and any line with an error will be flagged and you can point your cursor at the error flag to see a description of the error.  See the next step for how to do that.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Optional
@@ -204,10 +204,5 @@ PROPERTIES
 	table = 'ACTIVITY_HIST' ;
 ```
 
-[DONE]
+
 [ACCORDION-END]
-
----
-
-## Next Steps
- - [Run and Test a Streaming Project](http://www.sap.com/developer/tutorials/sds-run-test.html)

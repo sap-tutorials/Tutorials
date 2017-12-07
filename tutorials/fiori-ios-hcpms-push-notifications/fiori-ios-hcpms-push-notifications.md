@@ -54,7 +54,7 @@ Once you see a dialog saying the certificate is saved successfully, click **Done
 
 The certificate you just saved will be used to sign other certificates in the Apple Developer website.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create an App ID)]
@@ -117,7 +117,7 @@ Click the **Download** button and save the resulting `aps_development.cer` file.
 
 ![App ID creation](fiori-ios-hcpms-push-notifications-14.png)
 
-With the certificate selected, from the top menu choose **File > Export items...**
+With **login** keychain and **My Certificates** category selected in the left pane, and the new certificate selected in the main pane, choose **File > Export items...** from the top menu:
 
 ![App ID creation](fiori-ios-hcpms-push-notifications-15.png)
 
@@ -131,7 +131,7 @@ If it asks for specifying a password, provide one and click **OK**.
 
 > While you have the option to leave the password empty, you must provide a password when configuring the certificate for use with SAP Cloud Platform mobile service for development and operations.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import certificate into SAP Cloud Platform mobile service for development and operations)]
@@ -156,7 +156,7 @@ Scroll down a bit to the **Apple** panel and provide the following details:
 
 ![App ID creation](fiori-ios-hcpms-push-notifications-32.png)     
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create Provisioning Profile)]
@@ -189,7 +189,7 @@ Your **Provisioning Profile** is now ready. Click the **Download** button and sa
 
 ![App ID creation](fiori-ios-hcpms-push-notifications-23.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Examine your application's Push Notifications code)]
@@ -279,7 +279,7 @@ If you click **Send**, your device should now receive a new push notification:
 
 > ![App ID creation](fiori-ios-hcpms-push-notifications-34.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

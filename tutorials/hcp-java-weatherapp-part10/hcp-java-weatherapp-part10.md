@@ -32,7 +32,7 @@ Create a new server by opening up the corresponding context menu on the Servers 
 ![Creating the SAP Cloud Platform server in your project](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-1.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Configure the server)]
@@ -47,14 +47,14 @@ Configure the new server with the following and click **Next**.
 
 ![Configuring the SAP Cloud Platformserver](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add weather app)]
 
 Select the `weatherapp` on the list on the left and add it to the (remote) server by clicking on the **Add** button. Then, click on **Finish**.  
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create an SAP Cloud Platform Destination)]
@@ -70,7 +70,7 @@ Now create an SAP Cloud Platform Destination for the remote server via the SAP C
 
 ![Creating a new destination in SAP Cloud Platform for the external weather service](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Publish the app)]
@@ -79,7 +79,7 @@ Finally publish the application to the (remote) server and run it. You app shoul
 
 ![Screenshot of the Java app running on HCP](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part10/e2e_10-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

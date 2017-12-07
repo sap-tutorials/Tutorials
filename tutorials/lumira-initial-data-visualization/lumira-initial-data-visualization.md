@@ -29,7 +29,7 @@ By default it displays **Chart Builder** in **visualization tools**, and **Verti
 
 ![Layout of Visualize room in SAP BusinessObjects Lumira](Lum03-01a.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](View column chart)] ￼
@@ -46,7 +46,7 @@ You should get a column chart like this.
 
 A human eye can immediately spot that the best selling line of products was `Sweat-T-Shirts`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Sort products)] ￼
@@ -57,7 +57,7 @@ For that just move the mouse over `Sales Revenue` in the Shelves, then click on 
 
 ![Sorting on the chart in SAP BusinessObjects lumira](Lum03-03.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Choose colors)] ￼
@@ -70,7 +70,7 @@ SAP BusinessObjects Lumira offers a long list of predefined palettes, which can 
 
 ![List of palettes in SAP BusinessObjects Lumira](Lum03-05.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create new visualization)] ￼
@@ -79,7 +79,7 @@ Click on the **+** in the visualization gallery to create a new visualization. T
 
 ![A new visualization is created in SAP BusinessObjects Lumira](Lum03-06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add a Customer Satisfaction measure)] ￼
@@ -90,7 +90,7 @@ For this newly created visualization choose **Numeric Point** chart and add `Cus
 
 > Numeric Point chart is often used at the later stage in data stories, as you will see in corresponding tutorials.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Display average score)] ￼
@@ -103,7 +103,7 @@ You can see now that the average Customer Satisfaction score across all countrie
 
 ![Average Customer Satisfaction displayed in SAP BusinessObjects Lumira](Lum03-08.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Change to percentage format)] ￼
@@ -116,14 +116,14 @@ Now change value format to **Percentage** and **Number of decimals** to `1`. Acc
 
 ![Display options for measures in SAP BusinessObjects Lumira](Lum03-09.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Save)] ￼
 
 Save the document.
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -30,7 +30,7 @@ In the left-hand navigation bar, select **Services**, then on the right panel, s
 
 ![SAP Web IDE tile](te-2016-4-01.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open SAP Web IDE)]
@@ -39,7 +39,7 @@ From the **SAP Web IDE - Overview** page, click on the **Open SAP Web IDE** link
 
 ![SAP Web IDE overview page](te-2016-4-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new project)]
@@ -48,7 +48,7 @@ In **SAP Web IDE**, select from the menu bar **File > New > Project from Templat
 
 ![start a new project from template](te-2016-4-03.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Select the app template)]
@@ -62,7 +62,7 @@ The list of templates will update. Select the **SAP Fiori Master-Detail Applicat
 
 ![start a new project from template](te-2016-4-04b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Name your project)]
@@ -75,7 +75,7 @@ Click **Next**.
 
 ![project name](te-2016-4-05.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Select the data connection)]
@@ -86,7 +86,7 @@ Next, select the `SAP Gateway ES4` destination from the pull down list.
 
 ![selecting your destination](te-2016-4-06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Select the OData service)]
@@ -95,7 +95,7 @@ Scroll down the list of services that appears and select the **`GWDEMO`** servic
 
 ![Connected to the service](te-2016-4-07.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Enter Application Settings information)]
@@ -115,7 +115,7 @@ Description    | `App Space application`
 
 ![Application Settings](te-2016-4-08.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Specify data for the "master" view)]
@@ -132,7 +132,7 @@ Object Unit of Measure    | `leave blank`
 
 ![Application Settings](te-2016-4-09.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Specify data for the "detail" view )]
@@ -151,7 +151,7 @@ Then click **Finish**.
 
 ![Application Settings](te-2016-4-10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Open the internationalization file)]
@@ -164,7 +164,7 @@ Then navigate and expand **`webapp` > `i18n`**, and double-click the `i18n.prope
 
 > Note: `i18n` is a standard abbreviation for "internationalization"
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Insert the "Contacts" label)]
@@ -173,28 +173,28 @@ Find and replace all instances (three of them) of `<LineItemNamePlural>` (includ
 
 > Note: you can use CTRL+H to open the "Find and Replace" box which includes a "Replace All" function if you click on "All".
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Insert the "Business Partner" label)]
 
 Find and replace all instances (five of them) of `<ObjectName>` (including the angle brackets) in the `i18n.properties` file with `Business Partner`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Insert the "Business Partners" label)]
 
 Find and replace all instances (three of them) of `<ObjectNamePlural>` (including the angle brackets) in the `i18n.properties` file with `Business Partners`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Insert the "Related Contacts" label)]
 
 Find and replace all instances `<FirstColumnName>` (including the angle brackets) in the `i18n.properties` file with `Related Contacts`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Insert the "Country" label)]
@@ -203,7 +203,7 @@ Find and replace all instances `<LastColumnName>` (including the angle brackets)
 
 Save your edits.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Launch your app)]
@@ -214,7 +214,7 @@ A new tab will open in your browser showing your app running in a preview pane.
 
 ![Launch the app](te-2016-4-11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Confirm your app looks like the example)]
@@ -227,7 +227,7 @@ You have just built an SAP Fiori UX app.
 
 ![app running](te-2016-4-12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

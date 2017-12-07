@@ -1,7 +1,7 @@
 ---
 title: HANA Express Edition - Create and Access your Virtual Machine Instance on Google Cloud Platform
 description: This tutorial will show you how to setup a Virtual Machine on  Google Cloud Platform using Ubuntu to run HANA Express Edition. This is the first of six of tutorials and will guide you through installing the server and the XS Advanced applications.
-primary_tag: products>sap-hana\,-express-edition 
+primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana\,-express-edition  ]
 ---
 
@@ -20,7 +20,7 @@ SAP HANA, express edition (HXE) is officially supported on SLES and RHEL. SAP Co
 ## Details
 ### You will learn  
 This tutorial will show you how to setup a Virtual Machine on  Google Cloud Platform using Ubuntu to run HANA Express Edition.
-
+**NOTE: SPS02 will not work with this installation.**
 
 
 ### Time to Complete
@@ -56,6 +56,8 @@ Choose `Ubuntu 16.04 LTS` as the OS image under `Boot disk`, using the **Change*
 
 ![OS Images](3.png)
 
+**Remember** to increase the size of the disk.
+
 You will also need an external IP to access the machine. Create a new static IP.
 
 ![External IP](4.png)
@@ -72,7 +74,7 @@ You can see the estimated costs for the Virtual Machine on the top right corner.
 
 Proceed to create the VM.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Generate Key pairs to connect to your VM instance)]
@@ -116,7 +118,7 @@ gcloud components update
 
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -128,7 +130,7 @@ Upload the HXE installation packages to your home folder (/home/<<your userid>>)
 
 Since this step may take a while depending on your connection, you can move on with the other setup needed before installing HANA Express Edition.
 
-[DONE]
+
 [ACCORDION-END]
 
 

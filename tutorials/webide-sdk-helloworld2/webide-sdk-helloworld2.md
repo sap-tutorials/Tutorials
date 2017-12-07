@@ -34,7 +34,7 @@ Old Value              | New Value
 
   ![Modify i18n strings](Step1-i18n.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Change menu by configuring an API service)]
@@ -43,7 +43,7 @@ In the workspace, go to **`coolproject` > client > `coolplugin`** and double-cli
 
 ![Modify i18n strings](Step2-pluginjson.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -54,7 +54,7 @@ In the Workspace, right-click the **`plugin.json`** file and choose **Run* > Run
 You can open the same dialog as in the previous tutorial, but now the menu item is located in the **Edit** menu and is called **Greetings > Welcome**.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

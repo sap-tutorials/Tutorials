@@ -31,25 +31,25 @@ Please make sure that you have worked through the tutorial Getting started with 
 
 ![Fiori launchpad group CRM](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](View the Standard app)]
 
 Open the Standard app and familiarize yourself with how it appears.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](See data provided by the My Opportunities OData service)]
 
-Open your browser's developer tools (Instructions for [Chrome](https://developer.chrome.com/devtools), [Firefox](https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor#Opening_the_Network_Monitor), Safari (https://developer.apple.com/safari/tools/) and [Internet Explorer](https://msdn.microsoft.com/en-us/library/gg589507.aspx). In the developer tool switch to the network tab.
+Open your browser's developer tools (Instructions for [Chrome](https://developers.google.com/web/tools/chrome-devtools/), [Firefox](https://developer.mozilla.org/en-US/docs/Tools/Network_Monitor#Opening_the_Network_Monitor), Safari (https://developer.apple.com/safari/tools/) and [Internet Explorer](https://msdn.microsoft.com/en-us/library/gg589507.aspx). In the developer tool switch to the network tab.
 
 To determine which data is provided by the My Opportunities OData service, you can view the network traffic. In the My Opportunities app, touch on the next opportunity from the list on the left which will send a request. Then check the response in the developer tools network tab. The example below is from Firefox:
 
 ![My Opportunities app](7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](View JSON as XML)]
@@ -62,7 +62,7 @@ You will see a nice display of the XML returned by the OData service and you can
 
 ![Chrome-XML-display](Chrome-XML-display.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Compare the XML with the app view)]
@@ -74,7 +74,7 @@ Comparing the XML with the app view, you will see that there are two fields not 
 
 You will add these two fields to your application.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Start the extension)]
@@ -83,7 +83,7 @@ To start this extension click on the gear wheel icon on the top right beside you
 
 ![Options menu](8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Launch SAP Web IDE)]
@@ -96,7 +96,7 @@ Log in when prompted.
 
 ![Login to the SAP Cloud Platform](10.png)
 
-[DONE]
+
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 8: ](Specify project name)]
 
@@ -104,7 +104,7 @@ On the next screen specify a Project Name, you can use the default name provided
 
 ![Extension Project Name](11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Open the Extensibility Pane)]
@@ -117,7 +117,7 @@ Open the node `opportunityInfoTabContentTopExtension` in the **Outline** pane on
 
 ![Outline](13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Extend view)]
@@ -130,7 +130,7 @@ A confirmation dialog box will appear. Please confirm that by clicking on **Open
 
 ![Open Extension Code](15.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Replace generated code)]
@@ -171,7 +171,7 @@ xmlns="sap.m"
 
 Save your edits.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Run the app)]
@@ -180,7 +180,7 @@ To test the application, right-click on the project name and choose **Run > Run 
 
 ![Run > Run as > Web Application](16.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](View Sales Organization and Distribution Channel details)]
@@ -191,7 +191,7 @@ In the Info tab of the Opportunity detail screen you should now directly see the
 
 Congratulations, you've successfully extended an SAP standard Fiori app.
 
-[DONE]
+
 [ACCORDION-END]
 
 

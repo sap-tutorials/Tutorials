@@ -1,16 +1,15 @@
 ---
-title: Internet of Things (IoT) Connecting your TI SensorTag to IoT Services
+title: SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device
 description: Internet of Things (IoT) Connecting your TI SensorTag to IoT Services
 primary_tag: topic>internet-of-things
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-cloud-platform, products>sap-hana ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **How-To:** [Do this tutorial first](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
-- **Tutorials:** Internet of Things (IoT) Setup your Environment for the TI SensorTag (coming soon)
+- **Tutorials:** [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)
 
 ## Next Steps
-- [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://www.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
+- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data from device](http://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
 
 ## Details
 ### You will learn  
@@ -22,25 +21,20 @@ In the previous tutorial you saw how to add your message type, device type and d
 ---
 
 
-[ACCORDION-BEGIN [Step 1: ](Review your previous settings)] ￼
+[ACCORDION-BEGIN [Step 1: ](Review your previous settings)]
 
 You can use the same settings you have for the Tessel or you can repeat the previous tutorial with the TI `SensorTag` in mind.
 
-[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a new JavaScript file)] ￼
+[ACCORDION-BEGIN [Step 2: ](Create a new JavaScript file)]
 
 Next create a new Node.js file called `readTags.js`
 
-[DONE]
-[ACCORDION-END]
+Insert this code:
 
-[ACCORDION-BEGIN [Step 3: ](Insert this code)] ￼
-
-The Code:
-
-```
+```javascript
 /* 	sensorTag IR Temperature sensor example
 *  Craig Cmehil, SAP SE (c) 2015
 */
@@ -208,43 +202,40 @@ if(strData.length > 46){
 }
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add Message Type and Device parameters)] ￼
+[ACCORDION-BEGIN [Step 3: ](Add Message Type and Device parameters)]
 
 Add in your parameters from your newly added **Message Type** and **Device**
 
-```
+```javascript
 var hostIoT = 'iotmmsXXXXXXXXXXtrial.hanatrial.ondemand.com';
 var authStrIoT = 'Bearer XXXXXXXXXXXX';
 var deviceId = 'XXXXXX-XXXX-XXXX-XXXX-XXXXXXXXX';
 var messageTypeID = 'XXXXXXXXXXXX';
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Save and run)] ￼
+[ACCORDION-BEGIN [Step 4: ](Save and run)]
 
 Save and execute.
 
-```
+```sh
 node readTags.js
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](View the results)] ￼
+[ACCORDION-BEGIN [Step 5: ](Check the results)]
 
 ![results](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
-
-
-
 ## Next Steps
-- [Internet of Things (IoT) Viewing your Tessel data from IoT Services](http://www.sap.com/developer/tutorials/iot-part9-hcp-services-viewdata.html)
+- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data from device](http://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)

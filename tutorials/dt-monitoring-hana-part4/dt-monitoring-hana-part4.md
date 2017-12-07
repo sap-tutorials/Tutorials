@@ -45,7 +45,7 @@ In the search bar on the left side, search for the Dynamic Tiering "`Dbspace usa
 
 As a test case, you can click on "**Run Check Now**" beside the "**Edit**" button to ensure the alert is working.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Additional Queries to use in SAP HANA Studio)]
@@ -67,5 +67,5 @@ To identify what extended tables/Dynamic Tiering tables have been created in you
 SELECT * FROM "SYS"."M_ES_TABLES"
 ```
 
-[DONE]
+
 [ACCORDION-END]

@@ -55,7 +55,7 @@ var testData =
 
 ![Add test data directly to the JavaScript](1-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Edit attributes)]
@@ -88,7 +88,7 @@ Next, select the next `<div>` tag, and replace it with the following JavaScript
 
 ![Modify the last two attributes](1-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Run the application)]
@@ -98,7 +98,7 @@ Run your application.  There will be three list boxes, and the data will now mat
 ![Three rows with test data in each row](1-4.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add dynamic data elements)]
@@ -121,7 +121,7 @@ Open the `main.js` file, and scroll down to the `ProductList` component.  Select
 
 ![Add dynamic data to the ListBox component call](2-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Replace test data)]
@@ -140,7 +140,7 @@ this.props.row
 
 ![Change Property for Discontinued](2-2d.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Run the application)]
@@ -149,7 +149,7 @@ Now run the application.  There will be only one row, and the row will still hav
 
 ![Single row with the test data displayed](2-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add test data object)]
@@ -193,7 +193,7 @@ var testData = [
 
 ![Modify testData to an array](3-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Iterate over data)]
@@ -222,7 +222,7 @@ render: function() {
 
 ![Modify productListBoxes to use array](3-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Run the application)]
@@ -231,7 +231,7 @@ Run the application.  Four rows of data will be displayed, each corresponding to
 
 ![All rows of testdata displayed](3-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Review additional information)]
@@ -240,7 +240,7 @@ JavaScript:
 
 - Instead of a `for()` loop, this tutorial used the [JavaScript array map() function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Review final code)]
@@ -328,7 +328,7 @@ document.getElementById('product-list')
 );
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 

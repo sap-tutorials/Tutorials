@@ -33,7 +33,7 @@ Enter the name of the procedure as `get_product_by_filter`.  Click the drop down
 ![procedure name](2.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Change namespace)]
@@ -42,7 +42,7 @@ Change the namespace from `Undefined` to `dev602.procedures`. Add an input param
 
 ![change namespace](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Edit procedure)]
@@ -51,7 +51,7 @@ Because dynamic SQL is not supported in "Read-only" procedures, you must remove 
 
 ![modify](4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Insert the EXEC statements)]
@@ -66,7 +66,7 @@ Save the procedure
 
 ![save procedure](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Build your module)]
@@ -83,7 +83,7 @@ Click the **Run** button.  You will notice that you get no results from the call
 
 ![run procedure](9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

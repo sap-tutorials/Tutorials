@@ -2,7 +2,7 @@
 title: Consume an OData Service with Create Option
 description: Consume an OData Service with Create Option
 primary_tag: products>sap-hana
-tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition  ]
+tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
@@ -15,7 +15,6 @@ tags: [  tutorial>intermediate, topic>html5, topic>odata, topic>sapui5, products
 ### You will learn  
 Consume an OData Service with Create Option
 
-**Please note - This tutorial is based on SPS11**
 
 ### Time to Complete
 **15 Min**.
@@ -28,7 +27,7 @@ You will begin by making a copy of the previous exercise.
 
 ![copy](1.png)
 
-Highlight the `resources` folder and right mouse click. Choose Paste.
+ Right-click on the `resources` folder . Choose Paste.
 
 ![paste](2.png)
 
@@ -36,100 +35,234 @@ In the copy folder dialog, give the new Name as `odataCRUD`.
 
 ![copy folder](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Edit `Component.js`)]
+[ACCORDION-BEGIN [Step 2: ](Copy the OData create service)]
 
-Much of the startup logic will be the same. In the `Component.js` file change the service URL to: `/xsodata/user2.xsodata/`. We must also setup the model binding mode. Change the first part of the `Component.js` file to match the code you see here.
-
-```
-jQuery.sap.declare("sap.shineNext.odataBasic.Component");sap.ui.core.UIComponent.extend("sap.shineNext.odataBasic.Component", {	init: function(){		jQuery.sap.require("sap.m.MessageBox");		jQuery.sap.require("sap.m.MessageToast");			    var oModel = new sap.ui.model.odata.ODataModel(		          "/xsodata/user2.xsodata/", true);	  	    oModel.setDefaultBindingMode(sap.ui.model.BindingMode.TwoWay);	  		oModel.attachRejectChange(this,function(oEvent){	  		    sap.m.MessageBox.alert("You are already editing another Entry! Please submit or reject your pending changes!");			});	    sap.ui.getCore().setModel(oModel, "userModel");  		sap.ui.core.UIComponent.prototype.init.apply(this, arguments);	},	createContent: function() {		var settings = {				ID: "odataBasic",				title: "OData Basic Exercise",				description: "SHINE service for OData Basic Exercise"			};		var oView = sap.ui.view({			id: "app",			viewName: "sap.shineNext.odataBasic.view.App",			type: "XML",			viewData: settings		});		 oView.setModel(sap.ui.getCore().getModel("userModel"), "userModel");   		return oView;	}});
-```
-
-Also in the `Component.js` change the page creation to new `sap.ui.xmlview("app", "view.App")`
+In the `js->lib->xsodata` folder, copy the file `user.xsodata` into `user2.xsodata`. Replace the code with the following:
 
 ```
-	var oView = sap.ui.view({		id: "app",		viewName: "sap.shineNext.odataBasic.view.App",		type: "XML",		viewData: settings	});
+service {
+	"UserData.User" as "Users"
+	create using
+	"user.xsjs:usersCreateMethod.xsjslib::usersCreate";
+}
 ```
 
-[DONE]
+You should have something like:
+
+![xsodata](6.png)
+
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create `App.view.xml`)]
 
-Instead of a JavaScript view you are going to use an XML view. Therefore you can delete the `App.view.js` file and then create an `App.view.xml` file instead.
+[ACCORDION-BEGIN [Step 3: ](Edit `manifest,json`)]
 
-![xml view](6.png)
+Go into the `manifest.json` file and switch the service to the existing `user.xsodata` service. Also adjust the name of the `datasource` in the model configuration:
 
-The complete View Implementation for `App.view.xml` is provided for you as a template.  It has a table control built from the OData service  `/xsodata/user2.xsodata/` - all of which is very similar to the earlier exercise. In addition, this view has input fields for creating a new record. It also has the ability to update records in the table control; not just display them. The template can be accessed at: `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex4_14`
+![Adjust manifest](4.png)
 
-![complete view](7.png)
 
-[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add onInit handler)]
+[ACCORDION-BEGIN [Step 4: ](Adjust the XML view)]
 
-In this exercise we will focus on the implementation of the event handlers&#151; which is all done in the `controller.js` file.
+Use the following code to replace the existing code for your XML view:
 
-You need to add to event handlers, `onInit`, `callUserService` (which performs the creation of new records) and `callUserUpdate` (which updates records from the table) and `onErrorCall` (and error handler). Insert the empty functions in the controller as shown.
+```XML
 
-![add event handlers](9.png)
-
-For the `onInit` you need to create an empty JSON model for our input fields and set it into the view.
-
+<core:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:u="sap.ui.unified" xmlns:core="sap.ui.core" xmlns:smartTable="sap.ui.comp.smarttable"
+	controllerName="dev.odataBasic.controller.App">
+	<u:Shell id="myShell" icon="/images/sap_18.png">
+		<u:user>
+			<u:ShellHeadUserItem image="sap-icon://person-placeholder" username="{config>/UserName}"/>
+		</u:user>
+		<u:content>
+			<ScrollContainer height="100%" width="100%" horizontal="true" vertical="true">
+				<Panel headerText="New User Record Details" expandable="true" expanded="true">
+					<List width="400px">
+						<InputListItem label="First Name">
+							<Input id="fName" value="{/FirstName}"/>
+						</InputListItem>
+						<InputListItem label="Last Name">
+							<Input id="lName" value="{/LastName}"/>
+						</InputListItem>
+						<InputListItem label="Email">
+							<Input id="email" value="{/Email}"/>
+						</InputListItem>
+					</List>
+					<Button text="Create Record" press="callUserService"/>
+					<Button text="Update Changes" press="callUserUpdate"/>
+				</Panel>				
+				<VBox fitContainer="true">
+					<smartTable:SmartTable id="userTable" header="User List" editable="false" entitySet="Users" showRowCount="true" enableAutoBinding="true"
+						showFullScreenButton="true" tableType="Table">
+						<Table>
+							<columns>
+								<Column id="UserId">
+									<customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "UserId", "leadingProperty": "UserId", "sortProperty": "UserId", "columnIndex":"1"}'/>
+									</customData>
+									<Text text="User ID"/>
+								</Column>
+								<Column id="FirstName">
+									<customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "FirstName", "leadingProperty": "FirstName", "maxLength": "40","columnIndex":"2"}'/>
+									</customData>
+									<Text text="First Name"/>
+								</Column>
+								<Column id="LastName">
+									<customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "LastName", "leadingProperty": "LastName", "maxLength": "40","columnIndex":"3"}'/>
+									</customData>
+									<Text text="Last Name"/>
+								</Column>
+								<Column id="Email">
+									<customData>
+										<core:CustomData key="p13nData" value='\{"columnKey": "Email", "leadingProperty": "Email", "maxLength": "40","columnIndex":"4"}'/>
+									</customData>
+									<Text text="Email"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Input value="{UserId}" name="PERS_NO" />
+										<Input value="{FirstName}" name="FIRSTNAME"/>
+										<Input value="{LastName}" name="LASTNAME"/>
+										<Input value="{Email}" name="E_MAIL"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</smartTable:SmartTable>
+				</VBox>
+			</ScrollContainer>
+		</u:content>
+	</u:Shell>
+</core:View>
 ```
-onInit : function(){	var model = new sap.ui.model.json.JSONModel({});              this.getView().setModel(model);	},
-```
-[DONE]
+
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add `callUserService' handler)]
+[ACCORDION-BEGIN [Step 5: ](Add controller logics)]
 
-For `callUserService`, you first need to get access to the model object. Next you need to create a JSON object with the service fields (`PERS_NO`, `FIRSTNAME`, `LASTNAME`, and `E_MAIL`). `PERS_NO` can get a hard coded value of "0000000000".  The other fields should be read from the screen with the bound JSON model Finally you need to set a custom header of `content-type` with the value of `application/json;charset=utf-8` in the model. Then you can call the `model.create` function for the entity `/Users`. If you need help writing this code please refer to the solution at: `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex4_15`
+Event handlers are within the controller file for your view. You can delete the implementation of the functions `onInit` and `onErrorCall`, as you will implement new logics:
+
+![delete handler implementation](5.png)
+
+Add the following code to the `onInit` function:
+
+```javascript
+this.getView().addStyleClass("sapUiSizeCompact"); // make everything inside this View appear in Compact mode
+			var oConfig = this.getOwnerComponent().getModel("config");
+			var userName = oConfig.getProperty("/UserName");
+			var userModel = this.getOwnerComponent().getModel("userModel");
+			var oTable = this.getView().byId("userTable");
+			oTable.setModel(userModel);
 
 ```
-callUserService : function() {	var oModel = sap.ui.getCore().getModel("userModel");	var result = this.getView().getModel().getData();	var oEntry = {};	oEntry.PERS_NO = "0000000000";	oEntry.FIRSTNAME = result.FirstName;	oEntry.LASTNAME = result.LastName;	oEntry.E_MAIL = result.Email;	oModel.setHeaders({"content-type" : "application/json;charset=utf-8"});	oModel.create("/Users", oEntry, null, function() {	    sap.m.MessageToast.show("Create successful");	}, this.onErrorCall);},
+
+Add a function called `callUserService`:
+
+```javascript
+callUserService: function() {
+			var oModel = this.getOwnerComponent().getModel("userModel");
+			var result = this.getView().getModel().getData();
+			var oEntry = {};
+			oEntry.UserId = "0000000000";
+			oEntry.FirstName = result.FirstName;
+			oEntry.LastName = result.LastName;
+			oEntry.Email = result.Email;
+
+			oModel.setHeaders({
+				"content-type": "application/json;charset=utf-8"
+			});
+			var mParams = {};
+			mParams.success = function() {
+				sap.m.MessageToast.show("Create successful");
+			};
+			mParams.error = this.onErrorCall;
+			oModel.create("/Users", oEntry, mParams);
+		},
+
+
 ```
 
-[DONE]
+Take a look at the code you have just added. You can see it is creating a JSON object with the service fields. Add a new function called `callUserUpdate`
+
+```javascript
+
+callUserUpdate: function() {
+  var oModel = this.getOwnerComponent().getModel("userModel");
+  oModel.setHeaders({
+    "content-type": "application/json;charset=utf-8"
+  });
+
+  var mParams = {};
+  mParams.error = function() {
+    sap.m.MessageToast.show("Update failed");
+  };
+  mParams.success = function() {
+    sap.m.MessageToast.show("Update successful");
+  };
+
+  oModel.submitChanges(mParams);
+},
+
+```
+
+Finally, here is the code for the error handling function:
+
+```javascript
+
+onErrorCall: function(oError) {
+			if (oError.statusCode === 500 || oError.statusCode === 400 || oError.statusCode === "500" || oError.statusCode === "400") {
+				var errorRes = JSON.parse(oError.responseText);
+				if (!errorRes.error.innererror) {
+					sap.m.MessageBox.alert(errorRes.error.message.value);
+				} else {
+					if (!errorRes.error.innererror.message) {
+						sap.m.MessageBox.alert(errorRes.error.innererror.toString());
+					} else {
+						sap.m.MessageBox.alert(errorRes.error.innererror.message);
+					}
+				}
+				return;
+			} else {
+				sap.m.MessageBox.alert(oError.response.statusText);
+				return;
+			}
+		},
+
+```
+
+Keep the reusable methods from the original script.
+
+
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add `callUserUpdate' handler)]
+[ACCORDION-BEGIN [Step 6: ](Save and test)]
 
-The implementation of `callUserUpdate` is actually much simpler. You are using two-way model binding therefore you need only ask the model to submit any pending changes and capture the response status events. If you need help writing this code please refer to the solution at: `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex4_16`
+Run the `js` module and then the `web` module. When the new tab opens, adjust the URL to include the `odataCRUD` path:
 
-```
-callUserUpdate: function() { var oModel = sap.ui.getCore().getModel("userModel");	oModel.submitChanges(  function(){sap.m.MessageToast.show("Update successful");},function(){sap.m.MessageToast.show("Update failed");});},
-```
-[DONE]
-[ACCORDION-END]
+![results](7.png)
 
-[ACCORDION-BEGIN [Step 7: ](Add `onErrorCall` handler)]
+Try creating a new record:
 
-In the `onErrorCall` you want to be able to parse the error body to pull out the detailed error message. If you need help writing this code please refer to the solution at: `http://<hostname>:51013/workshop/admin/ui/exerciseMaster/?workshop=dev602&sub=ex4_17`
-
-```
-onErrorCall: function(oError){    if(oError.response.statusCode === 500 || oError.response.statusCode === 400){     var errorRes = JSON.parse(oError.response.body);                      sap.m.MessageBox.alert(errorRes.error.message.value);return;	 }	 else{         sap.m.MessageBox.alert(oError.response.statusText);return;	 }}
-```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Save and test)]
-
-Save the files.
-
-Test your application in a web browser using the Run option. The URL would be `/odataCRUD/`. Try both creating a new record and editing existing records. Also try creating a record with an invalid email address.
+Try both creating a new record and editing existing records. Also try creating a record with an invalid email address.
 
 ![results](15.png)
 
 ![exception](15a.png)
 
-[DONE]
-[ACCORDION-END]
 
+
+[ACCORDION-END]
 
 
 ## Next Steps

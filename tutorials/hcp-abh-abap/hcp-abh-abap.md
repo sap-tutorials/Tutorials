@@ -41,7 +41,7 @@ Open Proxy settings page by pressing **Ctrl + F2** and set the proxy.
 
 ![proxy configuration screen](4-26.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Get your SSL Certificate)]
@@ -53,7 +53,7 @@ To get to the SSL certificate, enter **F12**, go to **Security** tab, click on *
 
 ![SSL Certificate details](6-18.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add your certificate to ABAP)]
@@ -75,7 +75,7 @@ The ICM restart message will appear. Select **Yes**.
 
 Restart the ICM processes. Make sure no client is communicating during restart.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create the ABAP program report)]
@@ -100,7 +100,7 @@ Provide the following details on the **Program Attributes** screen.
 
 ![report program attributes](13-10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -118,7 +118,7 @@ Click on the tab for **ABAP** from available languages and click **Copy to Clipb
 
 ![ABAP code snippet](16-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add API call and run from ABAP)]
@@ -132,7 +132,7 @@ Replace the `<API_KEY>` with your API key value. This is also available in the S
 
 If you see a message returned with data, and not an error, you have successfully tested a call to an API from the SAP API Business Hub.
 
-[DONE]
+
 [ACCORDION-END]
 
 

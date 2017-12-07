@@ -26,7 +26,7 @@ The SAP Vora tools provide a data browser for viewing and exporting data in tabl
 
 SAP Vora makes available OLAP-style capabilities for data on Hadoop, in particular, a hierarchy implementation that allows you to define hierarchical data structures and perform complex computations on different levels of data.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Accessing the Tools)]
@@ -37,7 +37,7 @@ The initial screen appears as follows.
 
 You will be presented with the initial landing page once logged in successfully.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -53,7 +53,7 @@ Continue by registering the tables: `PRODUCTS` in the In-Memory Engine and `COMP
 
 Table registration will take a few moments.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Modeler)]
@@ -117,7 +117,7 @@ Save changes and do a **Data Preview** again.
 The modelled view is now ready for reporting. Click on the **Data Browser** in Vora Tools. You will notice the newly created object under **Vora In-Memory Engine**.
 ![View in Data Browser](vtools_21.jpg)
 
-[DONE]
+
 [ACCORDION-END]
 
 

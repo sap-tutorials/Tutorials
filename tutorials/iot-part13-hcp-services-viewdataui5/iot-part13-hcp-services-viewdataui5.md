@@ -1,5 +1,5 @@
 ---
-title: Internet of Things (IoT) Viewing your Tessel data from IoT Services
+title: SAP Cloud Platform IoT for Neo: Viewing data from environmental sensors
 description: Now it is time to display your stored data from your Tessel device using SAPUI5 and SAP Web IDE
 primary_tag: topic>internet-of-things
 tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
@@ -8,10 +8,11 @@ tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>int
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:**  [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
+- **Tutorials:**  [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html), or
+- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](http://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
 
 ## Next Steps
-- [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+- [SAP Cloud Platform IoT for Neo: binding to and developing on SAP HANA XSC](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
 
 
 ## Details
@@ -23,57 +24,53 @@ Now that you have data stored in the system its time to display that data within
 **10 Min**.
 
 ---
+[ACCORDION-BEGIN [Step 1: ](Download IoT Starter Kit)]
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 1: ](Download IoT Starter Kit)] ￼
-
-Go to [IoT Starter Kit](https://github.com/SAP/iot-starterkit). Choose either to download the ZIP file.
+Go to [SAP IoT Starter Kit](https://github.com/SAP/iot-starterkit). Choose either to download the ZIP file.
 
 ![Repo](1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Unpack and create new archive)] ￼
+[ACCORDION-BEGIN [Step 2: ](Unpack and create new archive)]
 
 Unpack the archive and navigate to the folder `iot-starterkit-master > src > apps > ui5 > consumption > src` here you will find a file `neo-app.json` and a folder `webapp` you will need to compress or pack these two items into a new archive file (`ZIP`).
 
 ![Folders](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Import file)] ￼
+[ACCORDION-BEGIN [Step 3: ](Import file)]
 
 Now in the SAP Cloud Platform cockpit select "Connectivity" in the left sidebar menu and now choose the Destinations. Then click on "Import From File", and through your directory structure to the folder `iot-starterkit-master > src > apps > ui5 > consumption > destinations` and select the file `iotmms`.
 
 ![Destinations](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Replace account and user ID)] ￼
+[ACCORDION-BEGIN [Step 4: ](Replace account and user ID)]
 
 Be sure to replace `%account_id%` with your Account ID e.g `d045495trial`. As well as `%User_id%` with your user User ID e.g `d045495`, enter your password and then save. Then repeat with the file `iotrdms`![Destinations](4.png)
-[DONE][ACCORDION-END][ACCORDION-BEGIN [Step 5: ](Open SAP Web IDE)] ￼Now under the "Services" section in the sidebar menu and choose the "SAP Web IDE"
+[ACCORDION-END][ACCORDION-BEGIN [Step 5: ](Open SAP Web IDE)]Now under the "Services" section in the sidebar menu and choose the "SAP Web IDE"
 
 ![Destinations](5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Import a new project)] ￼
+[ACCORDION-BEGIN [Step 6: ](Import a new project)]
 
 Next import a new project from your local file system, this will be the new archive you created. Then select the path.
 
 ![import](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Change OData field name)] ￼
+[ACCORDION-BEGIN [Step 7: ](Change OData field name)]
 
 Open the `	main.view.js` file and you will need to modify the name of the OData field to match that of your Message Type. In the case of the climate example that would be changing line 120 to `value: "{odata>C_TEMPERATURE}"` instead of the `value: "{odata>C_VALUE}"`
 
@@ -81,18 +78,18 @@ Open the `	main.view.js` file and you will need to modify the name of the OData 
 
 ![code change](9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Launch the index file)] ￼
+[ACCORDION-BEGIN [Step 8: ](Launch the index file)]
 
 Open the `index.html` file and you can launch it as is.
 ![running app](7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Add code to project)] ￼
+[ACCORDION-BEGIN [Step 9: ](Add code to project)]
 
 You can now use your expertise with SAPUI5 and start making modifications. Such as the following lines (158 to 164) controlling the `y axis`.
 
@@ -106,10 +103,10 @@ You can now use your expertise with SAPUI5 and start making modifications. Such 
 	}),
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
 
 ## Next Steps
-- [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+- [SAP Cloud Platform IoT for Neo: binding to and developing on SAP HANA XSC](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)

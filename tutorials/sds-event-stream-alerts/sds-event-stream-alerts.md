@@ -1,15 +1,15 @@
 ---
-title: Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming
+title: Generating Alerts Using a Derived Window in SAP HANA Streaming Analytics
 description: Create and use Derived Window to analyze events, filter data, and generate alerts.
 primary_tag: products>sap-hana-smart-data-streaming
 tags: [  tutorial>Intermediate, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Create a Moving Average on an Event Stream using an Aggregation Window](http://www.sap.com/developer/tutorials/sds-event-stream-moving-average.html)
+ - **Tutorials:** [Create a Moving Average on an Event Stream using an Aggregation Window](https://www.sap.com/developer/tutorials/sds-event-stream-moving-average.html)
 
 ## Next Steps
-- **Tutorials:** [Using the Streaming Playback tool to Test a Streaming Project](http://www.sap.com/developer/tutorials/sds-event-stream-playback.html)
+- **Tutorials:** [Using the Streaming Playback tool to Test a Streaming Project](https://www.sap.com/developer/tutorials/sds-event-stream-playback.html)
 
 ## Details
 ### You will learn  
@@ -49,7 +49,7 @@ Click **Derived Window** in the **Palette** and drop it onto the canvas.
 
 ![1-dropderivedwindow](1-dropderivedwindow.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Connect the new window to the event stream)]
@@ -58,7 +58,7 @@ Add a connector from **`AVG_TEMP`** to the new window.
 
 ![add connector](2-addconnector.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Change the window name)]
@@ -67,7 +67,7 @@ Change the new window name to `ALARM_TEMP` and press **Enter** when done.
 
 ![rename to alarm temp](3-renametoalarmtemp.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add columns to the window)]
@@ -90,7 +90,7 @@ Repeat this to add a 2nd column (i.e. add 2 new columns total).
 
 ![column expression](7-columnexpression.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Edit the column names and expressions)]
@@ -117,7 +117,7 @@ Enter `'Machine not maintaining temperature'` in the expression box for the **`A
 
 ![rename second expression](12-renamesecondexp.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add a filter expression)]
@@ -140,7 +140,7 @@ Change the filter expression to: `AVG_TEMP.AVG_TEMP > AVG_TEMP.MAX_TEMP`. Use **
 
 ![filter expression](16-filterexp.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Compile and check for errors)]
@@ -151,10 +151,5 @@ Click Compile Project icon to check for errors.
 
 ![compile for error](17-compileforerror.png)
 
-[DONE]
+
 [ACCORDION-END]
-
----
-
-## Next Steps
-- **Tutorials:** [Using the Streaming Playback tool to Test a Streaming Project](http://www.sap.com/developer/tutorials/sds-event-stream-playback.html)

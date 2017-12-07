@@ -25,7 +25,7 @@ In this tutorial you will learn how to convert your basic Java app into a Maven-
 
 Select the `weatherapp` node in the project explorer and open the context menu. Select the **Configure > Convert to Maven Project** option.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Change group ID)]
@@ -34,7 +34,7 @@ Change the group ID from `weatherapp` to `com.sap.hana.cloud.samples` and click 
 
 ![Customizing Maven POM - pom.xml](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part4/e2e_04-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Replace existing content)]
@@ -43,14 +43,14 @@ Copy the entire content from the [`pom.xml`](https://raw.githubusercontent.com/S
 
 ![modifying the Maven pom.xml](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part4/e2e_04-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Update project)]
 
 Open the context menu on the `weatherapp` project in the Project Explorer and select the menu entry **Maven > Update Project…** (The first time you do this can take a bit longer, as Maven will download all the required build plugins and dependencies specified in the `pom.xml` file). Make sure your project is selected then click on **OK**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Build)]
@@ -59,14 +59,14 @@ Select the **Run as > Maven build…** context menu of the `weatherapp` project 
 
 ![Adding goals to the Maven Build settings](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part4/e2e_04-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Run the project)]
 
 Click on **Run** and the project should build successfully.
 
-[DONE]
+
 [ACCORDION-END]
 
 

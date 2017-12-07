@@ -1,7 +1,7 @@
 ---
 title: HANA Express Edition - Execute the Installation script and finish setup
 description: This tutorial will guide you through the execution of the installation scripts to set your HANA Express Edition platform up.
-primary_tag: products>sap-hana\,-express-edition 
+primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition  ]
 ---
 
@@ -13,11 +13,13 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition  ]
  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Disclaimer
-SAP HANA, express edition (HXE) is officially supported on SLES and RHEL. SAP Community members have been successful in running HXE on other Linux operating systems that are not formally supported by SAP, such as Ubuntu, openSUSE and Fedora. SAP is not committing to resolving any issues that may arise from running HXE on these platforms.
+SAP HANA, express edition (HXE) is officially supported on SLES and RHEL. SAP Community members have been successful in running HXE on other Linux operating systems that are not formally supported by SAP, such as Ubuntu, `openSUSE` and Fedora. SAP is not committing to resolving any issues that may arise from running HXE on these platforms.
+**NOTE: SPS02 will not work with this installation.**
 
 ## Details
 ### You will learn  
 This tutorial will guide you through the final process to have your HANA Express Edition instance up and running on Google Cloud Platform.
+**Note: Update for HANA 2.0 SPS02 pending**
 
 ### Time to Complete
 **15 Min**
@@ -39,12 +41,21 @@ Double your resources for the installation process by editing the Virtual Machin
 
 **Save** the settings and **Start** your instance again.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Execute the installation script)]
 
-Log in again to the SSH client. Become `root` and go to your home directory, or into the directory where you extracted the installation packages. You will now execute the installation script:
+Log in again to the SSH client. Become `root` and go to your home directory, or into the directory where you extracted the installation packages.
+
+If you restarted your Virtual Machine, you need to set the alias again:
+
+```
+alias chkconfig='sysv-rc-conf'
+
+```
+
+You will now execute the installation script:
 
 ```
 sudo su –
@@ -87,7 +98,7 @@ The system ID you want to use. As you will probably use the tutorials on the man
 
  Hit **Enter**. The best is about to come.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -101,7 +112,7 @@ After you hit  **Enter** the script will verbosely inform what it is doing. **Av
 
 Wait until the command prompt in the console is available for input again.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Check the installation)]
@@ -117,7 +128,7 @@ You can also check the log by running command `ls -ltr` in the directory
 
 Finally, the command-line Lifecycle Management program can check the installation for you: `/hana/shared/HXE/hdblcm/hdblcm`.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Reset the resources for your Virtual Machine)]
@@ -147,7 +158,7 @@ Edit the Virtual Machine to suit your installation. These are the minimal requir
 
 **Save** your settings.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -161,7 +172,7 @@ Where the  `104.109.XXX.XXX` stands for the external IP and the `ubuntu-1604-lts
 
 Enjoy your HANA Express Edition Instance!
 
-[DONE]
+
 [ACCORDION-END]
 
 

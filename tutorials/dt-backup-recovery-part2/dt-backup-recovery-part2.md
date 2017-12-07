@@ -66,7 +66,7 @@ Once the backup completes, a "**Backup Execution Summary**" screen will be displ
 
 ![Backup Execution Summary](backup-execution-summary.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Creating Backups Using the BACKUP SQL Statement)]
@@ -77,7 +77,7 @@ BACKUP DATA USING FILE <'<file_prefix>')
 ```
 > Note: the `<file_prefix>` refers to the Backup Prefix that will be used. This command will use the default file path specified in the Configuration, as seen in the previous tutorial.
 
-[DONE]
+
 [ACCORDION-END]
 
 <!--
@@ -89,7 +89,7 @@ Navigate to the the Systems panel in your SAP HANA Administration Console, and r
 
 The remainder of the process is similar to the backup we performed in **Step 1** of this tutorial..
 
-[DONE]
+
 [ACCORDION-END]
 -->
 

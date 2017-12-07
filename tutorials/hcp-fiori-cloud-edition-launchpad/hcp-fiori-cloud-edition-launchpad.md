@@ -36,7 +36,7 @@ You should get the following pop-up. Keep the default settings. Confirm the scre
 
 ![Deploy to SAP Cloud Platform](19.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Register to SAP Fiori launchpad)]
@@ -45,7 +45,7 @@ When the deploy was successful you can directly continue to register your extend
 
 ![Successfully Deployed](20.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Change description)]
@@ -54,7 +54,7 @@ When the wizard starts, change the **Description** to `My Opportunities Extended
 
 ![Register to SAP Fiori launchpad - General Information](21.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Leave title)]
@@ -63,7 +63,7 @@ On the next screen keep the **Title** as `My Opportunities` and the **Subtitle**
 
 ![Register to SAP Fiori launchpad - Tile Configuration](22.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Select the icon)]
@@ -72,7 +72,7 @@ Click the **Browse** button and enter `opp` to search for `opportunity` related 
 
 ![Select Icon](23.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Select options and complete registration)]
@@ -85,7 +85,7 @@ Click **Next** and **Finish**. You should get this confirmation:
 
 ![Successfully Registered](25.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Open SAP Fiori launchpad)]
@@ -96,7 +96,7 @@ Click the link **Open SAP Fiori launchpad**. On the button you find the new tile
 
 Congratulations, you've successfully added your extended app to the standard SAP Fiori launchpad.
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

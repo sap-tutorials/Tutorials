@@ -1,7 +1,7 @@
 ---
 title: HANA Express Edition - Extract installation Files and Configure Firewall Rules
 description: This tutorial will guide you through the extraction process of the installation files for HANA Express Edition. You will also enter the necessary firewall rules to enable traffic into the correct ports.
-primary_tag: products>sap-hana\,-express-edition 
+primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>cloud, products>sap-hana\,-express-edition  ]
 ---
 
@@ -18,6 +18,7 @@ SAP HANA, express edition (HXE) is officially supported on SLES and RHEL. SAP Co
 ## Details
 ### You will learn  
 In this tutorial, you will extract the files for the installation of either the server-only option or the HXE + XS Advanced tools option. You will also update the firewall rules in `Gcloud` accordingly.
+**Note: Update for HANA 2.0 SPS02 pending**]
 
 ### Time to Complete
 **15 Min**
@@ -26,6 +27,8 @@ In this tutorial, you will extract the files for the installation of either the 
 
 [ACCORDION-BEGIN [Step 1: ](Extract the files)]
 Once the upload of the installation package is finished, execute the following commands from a console. Replace the `home` directory accordingly if you have uploaded the files into a different location.
+
+**Note**: If that location is the `/root` location you will get permission errors when executing the installation binaries for HANA Express. Move the files into your home location to avoid this.
 
 ```
 cd /home/<<your_username>>
@@ -41,7 +44,7 @@ tar -xvzf hxexsa.tgz
 
 You will see the list of files that have been extracted. These are the files you will later use for installation.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Update the Firewall rules)]
@@ -78,13 +81,15 @@ gcloud compute firewall-rules create rule14 --allow tcp:51000-51100
 gcloud compute firewall-rules create rule15 --allow tcp:55742
 ```
 
+>Note: If you keep the default instance number, 90, the ports will be 8090, 4390, 39000-39100 and 59000-59050.
+
 You can confirm all the rules have been processed using command
 
 ```
 gcloud compute firewall-rules list
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -110,7 +115,7 @@ Look for a line containing variable `local_hostname=hostname -f` and replace it 
 
 **Save** this file.
 
-[DONE]
+
 [ACCORDION-END]
 
 

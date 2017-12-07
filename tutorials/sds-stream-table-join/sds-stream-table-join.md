@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-smart-da
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Run and Test a Streaming Project](http://www.sap.com/developer/tutorials/sds-run-test.html)
+ - **Tutorials:** [Run and Test a Streaming Project](https://www.sap.com/developer/tutorials/sds-run-test.html)
 
 ## Next Steps
-   **Tutorials:** [Create a Moving Average on an Event Stream using an Aggregation Window](http://www.sap.com/developer/tutorials/sds-event-stream-moving-average.html)
+   **Tutorials:** [Create a Moving Average on an Event Stream using an Aggregation Window](https://www.sap.com/developer/tutorials/sds-event-stream-moving-average.html)
 
 ## Details
 ### You will learn  
@@ -54,7 +54,7 @@ Change the name of the reference element to `MACHINE_REF` by clicking on the ico
 
 ![change name to machineref](5-change-name-to-machineref.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Join the Event Stream to the Reference table)]
@@ -78,7 +78,7 @@ Select the **Connector** tool again and now add a connection from `MACHINE_REF` 
 ![connect machineref to join](4-connect-machineref-to-join.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Configure the Join operator)]
@@ -113,7 +113,7 @@ We want to join on MACHINEID. Select **MACHINEID : string** in each source colum
 
 ![join clause](12-join-clause.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Optional
@@ -163,10 +163,5 @@ CREATE REFERENCE MACHINE_REF
 
 ```
 
-[DONE]
+
 [ACCORDION-END]
-
----
-
-## Next Steps
-   **Tutorials:** [Create a Moving Average on an Event Stream using an Aggregation Window](http://www.sap.com/developer/tutorials/sds-event-stream-moving-average.html)

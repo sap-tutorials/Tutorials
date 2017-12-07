@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, operating-system>ios, products>sap-cloud-platform, p
  - **Tutorials:** [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
 
 ## Next Steps
- - [Implement Fiori for iOS controls](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-fioriuikit.html)
+ - [Sample OData service](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sample-odata-service.html)
 
 ## Details
 ### You will learn  
@@ -38,7 +38,7 @@ Got to the SAP Cloud Platform cockpit and click on **Services** in the main menu
 
 ![Enable Mobile Services](image-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Go to the Mobile Services cockpit and bookmark it)]
@@ -49,7 +49,7 @@ As it is likely that you need to return to this cockpit after you have created t
 
 ![Mobile Services Cockpit](image-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create the application)]
@@ -72,7 +72,7 @@ type                      | `Native`
 Ignore case for User Name | `checked`
 Security Configuration    | `Basic`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Go back to the cockpit)]
@@ -83,8 +83,8 @@ When you have the cockpit on your screen, you can now see that you have defined 
 
 ![One application in Mobile Services Cockpit](image-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps
- - [Implement Fiori for iOS controls](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-fioriuikit.html)
+ - [Sample OData service](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sample-odata-service.html)

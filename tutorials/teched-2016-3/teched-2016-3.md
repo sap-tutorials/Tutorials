@@ -17,7 +17,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-gateway, products>sap-clou
 You will create a destination (a server end-point where SAP Cloud Platform can send or receive data) that points to an SAP Gateway OData service.
 
 ### Time to Complete
-**< 5 Min**.
+**5 Min**.
 
 ---
 
@@ -28,7 +28,7 @@ Make sure you are using the **Europe (Trial)** landscape, and click on your acco
 
 ![Click on user name](te-2016-3-01.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Go to Destinations)]
@@ -37,7 +37,7 @@ In the left-hand navigation bar, select **Connectivity > Destinations** then cli
 
 ![open destinations](te-2016-3-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Enter Destination details)]
@@ -57,7 +57,7 @@ Password       | `<Your ES4 Gateway password>`
 
 Leave the **Use default JDK truststore** checked.
 
-And add the following **Additional Properties** fields by clicking on the **New Property** button once for each property.
+And add the following **Additional Properties** fields by clicking on the **New Property** button once for each property.
 
 Field Name       | Value
 :--------------- | :-------------
@@ -69,7 +69,7 @@ Then click **Save**.
 
 ![creating destination](te-2016-3-03.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Test the new Destinations)]
@@ -80,7 +80,7 @@ Note that the **Check Connection** operation is not validating your user credent
 
 ![Check connection](te-2016-3-04.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

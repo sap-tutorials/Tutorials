@@ -31,7 +31,7 @@ Multistore data management allows for administration tasks to be carried out mor
 
 One function of multistore tables is data aging which allows you to "age out" older data using Dynamic Tiering. Every multistore table contains at least two partitions: one of which is in the in-memory DEFAULT STORAGE and the other is in disk based EXTENDED STORAGE. This allows you to still access and update older data without managing two separate systems for current or older data and is cost effective as well. There may be some older data that isn't frequently used and so the "cold" data is moved into extended storage and the "hot" new and frequently used data remains in-memory.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Partitioning Types and Creating a Multistore Table)]
@@ -104,7 +104,7 @@ PARTITION BY RANGE ("L_ORDERKEY")
 ![LINEITEM_MS](LINEITEM_MS.png)
 >Note: Notice how the multistore table does not show an "`EXTENDED`" or other attributes in Studio
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Importing Data in to a Multistore Table)]
@@ -117,7 +117,7 @@ IMPORT FROM CSV FILE '/hana/shared/PM1/HDB00/work/TPCH_Data/LineItem.csv' INTO "
 Confirm the table has been filled with data after executing by right clicking on the table and selecting "Open Data Preview".
 >Note: The "`IMPORT`" statement cannot use the "`THREADS`" clause since it will be loading into Dynamic Tiering.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Viewing Multistore Partitions)]
@@ -153,7 +153,7 @@ SELECT * FROM M_ES_TABLES where TABLE_NAME = 'LINEITEM_MS' AND SCHEMA_NAME = 'TP
 ![Data Check ES](DataCheckES.png)
 Notice that only 1 partition is shown in EXTENDED STORAGE and that it has a `PART_ID` of -1. The `PART_ID` is -1 because although logically, the Dynamic Tiering portion has multiple partitions within it, physically the Dynamic Tiering portion is stored as a single table. Since the data for the "`LINEITEM_MS`" partitions in EXTENDED STORAGE are in a single physical partition, we can't tell how much data is in each logical partition. However, we can see from the "`TABLE_SIZE`" column that data has been stored in EXTENDED STORAGE for the "`LINEITEM_MS`" table.
 
-[DONE]
+
 [ACCORDION-END]
 
 ---

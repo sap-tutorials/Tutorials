@@ -6,11 +6,10 @@ primary_tag: topic>abap-development
 ---
 
 ## Prerequisites  
- [Create an ABAP project in Eclipse](http://www.sap.com/developer/tutorials/abap-create-project.html)
-
+[Create and run an ABAP application](http://www.sap.com/developer/tutorials/abap-create-basic-app.html)
 
 ## Next Steps
-[Create and run an ABAP application](http://www.sap.com/developer/tutorials/abap-create-basic-app.html)
+[Create a new Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)
 
 
 ## Details
@@ -30,7 +29,7 @@ In Eclipse, click or use the keyboard shortcut `Alt+F8` to execute an ABAP Dev
 
 ![abap development object](abap-02-1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Select a database table)]
@@ -39,7 +38,7 @@ Enter `snwd_so_inv_item` in the search field. Once the search has delivered a re
 
 ![run abap development object](abap-02-2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -49,7 +48,7 @@ In the Data Preview Click **Select Columns** to change which fields are retriev
 
 ![select Columns](abap-02-3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Select columns)]
@@ -62,7 +61,7 @@ The Data Preview is refreshed accordingly.
 
 ![data preview](abap-02-4b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add a filter)]
@@ -71,12 +70,12 @@ Press **Add Filter** and choose `CURRENCY_CODE`.
 
 ![data filter](abap-02-5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Enter filter criteria)]
 
-Enter `EUR` in in the text field to filter the items that are in Euro and press the **Enter** key.
+Enter `USD` in the text field to filter the items that are in US dollars and press the **Enter** key.
 
 ![data filter](abap-02-6a.png)
 
@@ -84,7 +83,7 @@ The Data Preview is refreshed accordingly.
 
 ![filtered result](abap-02-6b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Open the SQL Console)]
@@ -94,7 +93,7 @@ Click the **SQL Console** button to open the SQL Console.
 ![open sql console](abap-02-7.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Initial SQL SELECT statement)]
@@ -103,12 +102,13 @@ The SQL Console shows the `SELECT` statement which was used to retrieve the data
 
 ![initial sql select statement](abap-02-8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add a JOIN condition)]
 
 Adjust the SELECT statement in SQL Console in order to get the payment status from the order header by doing the following: Add a `JOIN` condition for the table `snwd_so_inv_head`
+NOTE: You may get an error. You will solve this in the next step.
 
 The `FROM` portion of the query should look like this:
 
@@ -119,7 +119,7 @@ on SNWD_SO_INV_ITEM~parent_key = SNWD_SO_INV_HEAD~node_key
 
 ![join condition](abap-02-9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Update the WHERE clause)]
@@ -127,11 +127,11 @@ on SNWD_SO_INV_ITEM~parent_key = SNWD_SO_INV_HEAD~node_key
 Modify the WHERE clause to match the following:
 
 ```sql
-SNWD_SO_INV_ITEM~CURRENCY_CODE = 'EUR'
+SNWD_SO_INV_ITEM~CURRENCY_CODE = 'USD'
 ```
 ![where clause](abap-02-10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Add a field to the SELECT list)]
@@ -140,7 +140,7 @@ Add the field `payment_status` from the table `snwd_so_inv_head` to the `SELECT`
 
 ![select list](abap-02-11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -150,7 +150,7 @@ Click **Run** to execute the current query or press **F8**.
 
 ![run button](abap-02-12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Check the query results)]
@@ -159,7 +159,7 @@ Check that the output on the right hand side contains the payment status.
 
 ![results](abap-02-13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Adjust the SELECT statement)]
@@ -173,7 +173,7 @@ on SNWD_SO_INV_HEAD~buyer_guid = SNWD_BPA~node_key
 
 ![updated select](abap-02-14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Adding the company name field)]
@@ -190,7 +190,7 @@ SNWD_SO_INV_HEAD~PAYMENT_STATUS
 ![add company name to select](abap-02-15.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Add an order by clause)]
@@ -203,7 +203,7 @@ ORDER BY SNWD_BPA~company_name
 
 ![order by](abap-02-16.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Run the modified query)]
@@ -212,7 +212,7 @@ Click **Run** to execute the current query or press `F8`.
 
 ![run button](abap-02-17.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Review updated results)]
@@ -221,8 +221,8 @@ Check that the output on the right hand side contains the company name. You will
 
 ![run button](abap-02-18.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps
-[Create and run an ABAP application](http://www.sap.com/developer/tutorials/abap-create-basic-app.html)
+[Create a new Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)

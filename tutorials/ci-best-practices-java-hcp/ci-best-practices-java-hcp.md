@@ -28,15 +28,14 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 The example shown here uses samples that are delivered as part of the SDK installation for Java Web development. These samples contain some web applications that are built using Maven and share a common parent `pom.xml`. Documentation and resources for Java web application development:
 
-> Documentation: https://help.hana.ondemand.com/help/frameset.htm?e66f3eecbb5710148397a19b46c4979b.html  
-> Tutorial: http://www.sap.com/developer/tutorials/hcp-java-basic-app.html
-> SDK installation guide: https://help.hana.ondemand.com/help/frameset.htm?7613843c711e1014839a8273b0e91070.html  
-> SDK Download: https://tools.hana.ondemand.com/#cloud
+> [Java: Getting Started](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/e66f3eecbb5710148397a19b46c4979b.html)  
+> [Tutorial: Developing and deploying a basic Java application on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-java-basic-app.html)  
+> [Install the SDK for Java Development](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7613843c711e1014839a8273b0e91070.html)  
+> [SDK Download](https://tools.hana.ondemand.com/#cloud)  
 
 The samples can be built without any further prerequisites. The dependencies listed in the `pom.xml` are all available on the Maven central repository. This includes the SAP Java Web SDK itself that does not need to be installed on the build server.
 
-We will setup a Continuous Delivery pipeline for one of the sample applications applying what was shown in the 
-[Pipeline Skeleton](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) part. We will use the following infrastructure: 
+We will setup a Continuous Delivery pipeline for one of the sample applications applying what was shown in the [Pipeline Skeleton](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) part. We will use the following infrastructure: 
 
 ![Java Web on SAP Cloud Platform, CI Process Landscape](java-web-on-hcp-1.png)
 
@@ -55,6 +54,7 @@ Thus, several accounts on SAP Cloud Platform are needed to separate the differen
 In principle, it would be possible to work with less accounts by sharing one for different concerns. But then, additional care must be taken to avoid conflicts. There are different possibilities:
 
 - Locking the account when an automated test is currently running, enforcing exclusive usage. But this bears the risk of queuing the tests.
+
 - Assignment of dynamically generated application names.
 
 We just mention the possibility and will not go into the details.
@@ -62,8 +62,7 @@ We just mention the possibility and will not go into the details.
 
 ### Preparation of the Project
 
-We will call our project `neo-java-web-sdk-samples`. To set up the Gerrit project, execute the corresponding steps as described in
-[Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html). The `samples` folder in the SAP Cloud Platform SDK contains a Maven parent project with a couple of modules. We do not want to build all the modules in this example but restrict ourselves on the `explore-ui5` module only. The others do not need to be included into the Gerrit project, and in the parent `pom.xml`, place them into comments:
+We will call our project `neo-java-web-sdk-samples`. To set up the Gerrit project, execute the corresponding steps as described in [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html). The `samples` folder in the SAP Cloud Platform SDK contains a Maven parent project with a couple of modules. We do not want to build all the modules in this example but restrict ourselves on the `explore-ui5` module only. The others do not need to be included into the Gerrit project, and in the parent `pom.xml`, place them into comments:
 
 ```
     <modules>
@@ -89,10 +88,9 @@ To configure the voter build, execute the corresponding steps as described in pa
 
 ### Voter Build: Scenario Tests on the Build Server
 
-The SAP `neo-java-web-maven-plugin` provides a client API to SAP Cloud Platform, enabling the build to issue commands there, for example, starting, stopping or deploying an application. The plugin also includes a local mode that enables you to launch a local runtime and to deploy the application there, which is much faster than deploying over the network directly to SAP Cloud Platform.
-We describe both alternatives, and it is up to you to decide which one is appropriate for your scenario. 
+The SAP `neo-java-web-maven-plugin` provides a client API to SAP Cloud Platform, enabling the build to issue commands there, for example, starting, stopping or deploying an application. The plugin also includes a local mode that enables you to launch a local runtime and to deploy the application there, which is much faster than deploying over the network directly to SAP Cloud Platform. We describe both alternatives, and it is up to you to decide which one is appropriate for your scenario. 
 
-> Documentation: https://help.hana.ondemand.com/help/frameset.htm?4cbdab6e2eb14c92ab76540ffb32174c.html
+> [Maven Plugin](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4cbdab6e2eb14c92ab76540ffb32174c.html)
 
 Part of the automatic scenario tests are Selenium tests. Selenium tries to start a browser which requires Firefox to be installed on the Jenkins build slave machine. Firefox requires a display to send the front end to; however, on a Linux build machine there usually is no display (for example an X server) installed. Hence starting Firefox during the build would fail. We solve this issue by temporarily opening the virtual frame buffer `Xvfb` during the build and setting the `DISPLAY` environment variable using the Envinject plugin of Jenkins so that Firefox knows where to display the front end.
 
@@ -147,19 +145,19 @@ You might have compatibility problems between Selenium and Firefox, it might hap
     ...
     ```
 
-    > Documentation: https://help.hana.ondemand.com/mavenSite/usage.html
+    > [SAP Cloud Platform Maven Plugin](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4cbdab6e2eb14c92ab76540ffb32174c.html)
 
 
 #### Requirements for Selenium tests
 
 1. Log in as `root` onto the Jenkins slave and install `Xvfb`. However, it is very likely that it was already installed with your Linux distribution.  
    
-    > Documentation: http://www.x.org/releases/X11R7.6/doc/man/man1/Xvfb.1.xhtml
+    > [XVFB Documentation](http://www.x.org/releases/X11R7.6/doc/man/man1/Xvfb.1.xhtml)
    
 2. Log in as `root` onto the Jenkins slave and install Firefox, version 42.0.  
 
-    > Home page: https://www.mozilla.org  
-    > Downloads: https://ftp.mozilla.org/pub/firefox/releases/42.0/
+    > [Firefox](https://www.mozilla.org/en-US/firefox/)  
+    > [Firefox Downloads](https://www.mozilla.org/en-US/firefox/new/)
    
 3. In the sources of the sample project, open the parent `pom.xml` and verify the Selenium version number:
 
@@ -188,9 +186,7 @@ Apply the following changes to the job `VO_neo-java-web-sdk-samples_master_build
     Xvfb :99 -ac & echo $! > Xvfb.pid; ps -aef | grep Xvfb
     ```
     
-    `Xvfb` starts and opens the display. Since `Xvfb` should only run during the
-    lifetime of the build, the process id is kept in a file from which it is retrieved in the post-step
-    to kill the `Xvfb` process.
+    `Xvfb` starts and opens the display. Since `Xvfb` should only run during the lifetime of the build, the process id is kept in a file from which it is retrieved in the post-step to kill the `Xvfb` process.
     
 3. In the **Build** section, enter the following line as **Goals and options**:
 
@@ -206,8 +202,7 @@ Apply the following changes to the job `VO_neo-java-web-sdk-samples_master_build
 
 5. Press **Save**.
 
-Rerun the build by pushing a small change. When you open the log, you see the local runtime installed, the application deployed and
-started, and the tests, including Selenium tests, executed.
+Rerun the build by pushing a small change. When you open the log, you see the local runtime installed, the application deployed and started, and the tests, including Selenium tests, executed.
 
 
 ### Voter Build: Scenario Tests on SAP Cloud Platform
@@ -222,8 +217,8 @@ The deployment to SAP Cloud Platform is performed in the Maven build using the S
 
 - A developer account on the SAP Cloud Platform trial landscape.
  
-> Documentation: https://help.hana.ondemand.com/help/frameset.htm?975c8fc61a384668a82e91c8448deb0b.html  
-> SAP Cloud Platform Cockpit: https://account.hanatrial.ondemand.com
+> [Getting a Global Account](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/975c8fc61a384668a82e91c8448deb0b.html)  
+> [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com)
 
 #### Procedure
 
@@ -286,7 +281,7 @@ The deployment to SAP Cloud Platform is performed in the Maven build using the S
     ...
     ```
 
-    > Documentation: https://help.hana.ondemand.com/mavenSite/usage.html 
+    > [SAP Cloud Platform Maven Plugin](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4cbdab6e2eb14c92ab76540ffb32174c.html)  
 
 
 ##### Configure the Jenkins job
@@ -316,8 +311,7 @@ Make the following changes to the job `VO_neo-java-web-sdk-samples_master_build`
 
 1. In Jenkins, go to **Manage Jenkins > Configure System > Global Passwords**.
 
-2. Define your credential data by creating new entries for the names `SAPCP_USER`, `SAPCP_VOTER_ACCOUNT` and `SAPCP_PASSWORD`.  
-    The values of these variables will be masked in the build log.
+2. Define your credential data by creating new entries for the names `SAPCP_USER`, `SAPCP_VOTER_ACCOUNT` and `SAPCP_PASSWORD`. The values of these variables will be masked in the build log.
     
 3. Save.
 
@@ -326,19 +320,19 @@ Start the job by pushing a small change. You see the job deploying onto SAP Clou
 
 ### CI build
 
-You can use the voter build as a template for the CI build job. In this example its name is `CI_neo-java-web-sdk-samples_master_build`.
-Concerning the run time for automatic scenario test execution, what was said for the voter builds also applies to the CI build. Thus most of the job configuration can be taken from the voter build with few differences:
+You can use the voter build as a template for the CI build job. In this example its name is `CI_neo-java-web-sdk-samples_master_build`. Concerning the run time for automatic scenario test execution, what was said for the voter builds also applies to the CI build. Thus most of the job configuration can be taken from the voter build with few differences:
 
 - The merge into the `master` branch is the event that triggers the build.
+
 - The CI build is part of the continuous delivery pipeline, and thus configuration for archiving the artifact and definition of the subsequent job as described in [Pipeline Skeleton](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html) is needed.
+
 - The CI build deploys to a different SAP Cloud Platform account. We assume in this example that the user credentials remain unchanged, but you may decide to use different deploy users.
 
 #### Procedure
 
 1. Open the job definition.
 
-2. Change the **Gerrit Trigger** section according to the needs of the CI build as described in 
-    [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html).
+2. Change the **Gerrit Trigger** section according to the needs of the CI build as described in [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html).
 
 3. Select **Add post-build action > Archive the artifacts**. Enter
 
@@ -346,8 +340,7 @@ Concerning the run time for automatic scenario test execution, what was said for
     explore-ui5/target/*.war, pom.xml, explore-ui5/pom.xml
     ```
 
-4. Select **Add post-build action > Build other projects (manual step)**. Enter `CI_neo-java-web-sdk-samples_master_testDeploy` as downstream project name.
-    Ignore the warning. Select **Add Parameters > Predefined parameters**. Enter:
+4. Select **Add post-build action > Build other projects (manual step)**. Enter `CI_neo-java-web-sdk-samples_master_testDeploy` as downstream project name. Ignore the warning. Select **Add Parameters > Predefined parameters**. Enter:
     
     ```
     BUILD_JOB_NUMBER=${BUILD_NUMBER}

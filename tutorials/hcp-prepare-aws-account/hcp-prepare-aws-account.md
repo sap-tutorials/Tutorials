@@ -29,7 +29,7 @@ How to prepare an Amazon Web Services account on which you will setup an ABAP on
 3. In the AWS console, enter the **Identity and Access Management section (IAM section)**
     ![Identity and Access Management section](iam_section.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create new AWS user)]
@@ -44,7 +44,7 @@ How to prepare an Amazon Web Services account on which you will setup an ABAP on
     ![Download AWS Credentials](download_credentials.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create new AWS group)]
@@ -61,7 +61,7 @@ How to prepare an Amazon Web Services account on which you will setup an ABAP on
     ![Assign AWS user to group step 2](assign_user_to_group2.png)
     ![Assign AWS user to group step 3](assign_user_to_group3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

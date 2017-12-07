@@ -28,7 +28,7 @@ You will be setting a few configurations, then filling out a few forms in this s
 
 ![SAP Cloud Platform login page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open SAP Web IDE)]
@@ -42,7 +42,7 @@ On the service page, click on the **Open SAP Web IDE** link to open Web IDE in a
 
 ![SAP Web IDE status page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Enable Hybrid App Toolkit plugin)]
@@ -56,7 +56,7 @@ In the Preferences page, click on **Plugins** on the left, scroll down to find t
 
 ![SAP Web IDE plugins options](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Save the change)]
@@ -65,7 +65,7 @@ In the Preferences page, click on **Plugins** on the left, scroll down to find t
 
 ![mSAP Web IDE plugins reload page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Open new project wizard)]
@@ -74,7 +74,7 @@ Once SAP Web IDE reloads, close the **Tips and Tricks** dialog box, then click o
 
 ![SAP Web IDE creating a new project from template](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Choose the template)]
@@ -85,7 +85,7 @@ On the **Template Selection** page, click on the **Category** pulldown menu (whe
 
 ![Selecting a template in Web IDE](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_8b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Name the project)]
@@ -94,7 +94,7 @@ On the **Basic Information** page of the New Project wizard enter the project na
 
 ![Entering the SAP Web IDE project name](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Select data source)]
@@ -103,7 +103,7 @@ The next step is to select the data source for your app. On the **Data Connectio
 
 ![Selecting the SAP Web IDE data source](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Select Northwind OData Service)]
@@ -114,7 +114,7 @@ If you only have one **`WebIDEEnabled`** destination in SAP Cloud Platform, it w
 
 ![Data connection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Add OData path)]
@@ -124,14 +124,14 @@ After selecting the Northwind OData Service entry, enter the relative path (see 
 The relative path to enter is:
 
 ```
-/V3/Northwind/Northwind.svc
+/V2/Northwind/Northwind.svc
 ```
 
 The URL you entered for your destination plus the relative path you enter here points to the OData Service you will use for your app.
 
 ![Using the SAP Web IDE service pulldown menu](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Test your connection)]
@@ -140,7 +140,7 @@ Click the **Test** button to test the connection. If the connection is successfu
 
 ![Entering the remaining portion of an OData URL](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Specify settings)]
@@ -163,7 +163,7 @@ Search Field                | `ProductName`
 
 ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_15.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Add main data values)]
@@ -178,7 +178,7 @@ Units Attribute     | `QuantityPerUnit`
 
 ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_16.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Edit detail section)]
@@ -193,7 +193,7 @@ Additional Attribute 2  | `UnitsOnOrder`
 
 ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_17.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Edit information section)]
@@ -209,7 +209,7 @@ Navigation Attribute 3  | `Address`
 
 ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_18.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Click Finish)]
@@ -218,7 +218,7 @@ Click **Finish** to create the new Northwind application. When the generation fi
 
 ![SAP Web IDE project file view](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_19.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Run your app)]
@@ -227,7 +227,7 @@ To run your application, select the `index.html` file, and click the **Run** but
 
 ![How to run an SAP Web IDE project in preview mode](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_20.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](View completed app)]
@@ -237,7 +237,7 @@ Congratulations! You've developed your application that shows the products and s
 
 ![Finished mobile web app running in preview mode](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_21.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

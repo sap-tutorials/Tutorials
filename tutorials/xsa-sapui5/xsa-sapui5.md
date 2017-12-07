@@ -38,7 +38,7 @@ And add the `ui5-lib` resource as a dependency to the web module
 
 ![Add SAPUI5 dependency](1_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Configure the App Router for the UI5 service in the bootstrap)]
@@ -72,7 +72,7 @@ src="{{{ui5liburl}}}/resources/sap-ui-core.js"
 
 ![HTML update](2_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new html file)]
@@ -85,11 +85,61 @@ Return to your `web` module and create a new folder named `resources/odataView` 
 Here is the complete coding for the new page.
 
 
-```HTML
-<!DOCTYPE html><html><head>	<meta http-equiv="X-UA-Compatible" content="IE=edge" />	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>	<meta name="viewport" content="width=device-width, initial-scale=1.0" />   	<link type="image/x-icon" href="/images/favicon.ico" rel="shortcut icon">    <link type="image/x-icon" href="/images/favicon.ico" rel="icon">	<!-- <script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" -->	<script id="sap-ui-bootstrap" src="{{{ui5liburl}}}/resources/sap-ui-core.js"		data-sap-ui-theme="sap_belize_plus"		data-sap-ui-xx-bindingSyntax="complex"		data-sap-ui-compatVersion="edge"		data-sap-ui-preload="async"		data-sap-ui-language="en"		data-sap-ui-resourceroots='{				"odataTest": "./" }'				data-sap-ui-libs="sap.m,sap.ui.comp,sap.ui.core,sap.ui.layout"		data-sap-ui-frameOptions="trusted">	</script>	<script type="text/javascript" src="/common/error.js" ></script>  	<script>		sap.ui.getCore().attachInit(function () {				var ComponentContainer = new sap.ui.core.ComponentContainer({            		height : "100%"            	});            	new sap.m.Shell({            		app: ComponentContainer,            		showLogout: true            	}).placeAt("content");            	var oComponent = sap.ui.component({            		id: "comp",            		name: "odataTest",            		manifestFirst: true,            		async: true            	}).then(function(oComponent){            		ComponentContainer.setComponent(oComponent);            	});		});	</script></head><!-- UI Content --><body class="sapUiBody" id="content"></body></html>```
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   	<link type="image/x-icon" href="/images/favicon.ico" rel="shortcut icon">
+    <link type="image/x-icon" href="/images/favicon.ico" rel="icon">
+	<!-- <script id="sap-ui-bootstrap" src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js" -->
+	<script id="sap-ui-bootstrap" src="{{{ui5liburl}}}/resources/sap-ui-core.js"
+		data-sap-ui-theme="sap_belize_plus"
+		data-sap-ui-xx-bindingSyntax="complex"
+		data-sap-ui-compatVersion="edge"
+		data-sap-ui-preload="async"
+		data-sap-ui-language="en"
+		data-sap-ui-resourceroots='{
+				"odataTest": "./" }'		
+		data-sap-ui-libs="sap.m,sap.ui.comp,sap.ui.core,sap.ui.layout"
+		data-sap-ui-frameOptions="trusted">
+	</script>
+	<script type="text/javascript" src="/common/error.js" ></script>  
+
+	<script>
+		sap.ui.getCore().attachInit(function () {
+				var ComponentContainer = new sap.ui.core.ComponentContainer({
+            		height : "100%"
+            	});
+
+            	new sap.m.Shell({
+            		app: ComponentContainer,
+            		showLogout: true
+            	}).placeAt("content");
+
+            	var oComponent = sap.ui.component({
+            		id: "comp",
+            		name: "odataTest",
+            		manifestFirst: true,
+            		async: true
+            	}).then(function(oComponent){
+            		ComponentContainer.setComponent(oComponent);
+            	});
+		});
+	</script>
+</head>
+
+<!-- UI Content -->
+<body class="sapUiBody" id="content">
+</body>
+</html>
+
+```
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create `csrf.js` and `error.js` )]
@@ -112,7 +162,7 @@ And here is the code for `error.js`:
 ```JavaScript
 /*eslint no-console: 0, no-unused-vars: 0, no-use-before-define: 0, no-redeclare: 0*/function onErrorCall(jqXHR, textStatus, errorThrown) {	var page = sap.ui.getCore().byId("pageID");	page.setBusy(false);	if (typeof jqXHR.status === "undefined") {		var errorRes = JSON.parse(jqXHR.response.body);		sap.m.MessageBox.show(			errorRes.error.innererror.errordetail.DETAIL, {				icon: sap.m.MessageBox.Icon.ERROR,				title: "Service Call Error",				actions: [sap.m.MessageBox.Action.OK],				styleClass: "sapUiSizeCompact"			});	} else {		if (jqXHR.status === 500 || jqXHR.status === 400) {			sap.m.MessageBox.show(jqXHR.responseText, {				icon: sap.m.MessageBox.Icon.ERROR,				title: "Service Call Error",				actions: [sap.m.MessageBox.Action.OK],				styleClass: "sapUiSizeCompact"			});			return;		} else {			sap.m.MessageBox.show(jqXHR.statusText, {				icon: sap.m.MessageBox.Icon.ERROR,				title: "Service Call Error",				actions: [sap.m.MessageBox.Action.OK],				styleClass: "sapUiSizeCompact"			});			return;		}	}}function oDataFailed(oControlEvent) {	sap.m.MessageBox.show("Bad Entity Definition", {		icon: sap.m.MessageBox.Icon.ERROR,		title: "OData Service Call Error",		actions: [sap.m.MessageBox.Action.OK],		styleClass: "sapUiSizeCompact"	});	return;}```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create optional images folder)]
@@ -124,7 +174,7 @@ You also reference some images in this HTML page. They aren't critical, but if y
 
 ![new images](6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create `Component.js`)]
@@ -136,7 +186,7 @@ Next you need to create your `Component.js` file in the folder `web/resources/od
 
 Here you initialize the SAPUI5 component and in doing so you create an instance of the JSON configuration model. You also load your first view which you will create in the next step. Finally you see that you make a call to `xsjs/exercisesMaster.xsjs` to fill the page header with the current user id.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -226,7 +276,7 @@ This file works as an application descriptor. This file provides metadata about 
 
 You can see the reference to this file in the `Component.js` file. This allows us to separate out a lot of the configuration of our application into a separate `manifest.json` file (as most modern Fiori based UI5 applications are designed).
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -241,7 +291,7 @@ Here is the complete coding of the `App.view.xml` file. It creates the shell con
 ```xml
 <core:View xmlns="sap.m" xmlns:u="sap.ui.unified"  xmlns:mvc="sap.ui.core.mvc"	xmlns:core="sap.ui.core" controllerName="odataTest.controller.App" class="sapUiSizeCompact">	<u:Shell id="myShell" icon="/images/sap_18.png">		<u:user>			<u:ShellHeadUserItem image="sap-icon://person-placeholder" username="{config>/UserName}"/>		</u:user>		<u:content>			<IconTabBar class="iconTabBarPaddingTop" upperCase="true" expanded="true">				<items>					<IconTabFilter text="Multi-Entity Read">						<core:Fragment fragmentName="odataTest.view.MRead" type="XML"/>					</IconTabFilter>				</items>			</IconTabBar>		</u:content>	</u:Shell></core:View>```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Create fragments)]
@@ -274,7 +324,7 @@ And one last fragment called `MTableItem.fragment.xml` with the following conten
 
 ```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Create a controller for the main view)]
@@ -286,7 +336,7 @@ Take a look at the comments inside the code to learn what each of the events doe
 ```JavaScript
 /*eslint no-console: 0, no-unused-vars: 0, no-use-before-define: 0, no-redeclare: 0, no-undef: 0*///To use a javascript controller its name must end with .controller.jssap.ui.define([	"odataTest/controller/BaseController",	"sap/ui/model/json/JSONModel"], function(BaseController, JSONModel) {	"use strict";	return BaseController.extend("odataTest.controller.App", {/*Triggered when the page first loads. Sets the config model and sets some more properties in the model*/		onInit: function() {			var oConfig = this.getOwnerComponent().getModel("config");			var userName = oConfig.getProperty("/UserName");			var urlMulti = "/xsodata/purchaseOrder.xsodata";			this.getOwnerComponent().getModel().setProperty("/mPath", urlMulti);			this.getOwnerComponent().getModel().setProperty("/mEntity1", "POHeader");			this.getOwnerComponent().getModel().setProperty("/mEntity2", "POItem");		},/*handles the logic to call the oData service.  This will read the metadata from the oData service to dynamically createthe columns in the table controls*/				callMultiService: function() {			var oTable = this.getView().byId("tblPOHeader");			var oTableItem = this.getView().byId("tblPOItem");			var mPath = this.getOwnerComponent().getModel().getProperty("/mPath");			var mEntity1 = this.getOwnerComponent().getModel().getProperty("/mEntity1");			var mEntity2 = this.getOwnerComponent().getModel().getProperty("/mEntity2");			var oParams = {};			oParams.json = true;			oParams.useBatch = true;			var oModel = new sap.ui.model.odata.v2.ODataModel(mPath, oParams);			oModel.attachEvent("requestFailed", oDataFailed);			function fnLoadMetadata() {				oTable.setModel(oModel);				oTable.setEntitySet(mEntity1);				oTableItem.setModel(oModel);				oTableItem.setEntitySet(mEntity2);								var oMeta = oModel.getServiceMetadata();				var headerFields = "";				var itemFields = "";				for (var i = 0; i < oMeta.dataServices.schema[0].entityType[0].property.length; i++) {					var property = oMeta.dataServices.schema[0].entityType[0].property[i];					headerFields +=  property.name + ",";				}				for (var i = 0; i < oMeta.dataServices.schema[0].entityType[1].property.length; i++) {						var property = oMeta.dataServices.schema[0].entityType[1].property[i];						itemFields +=  property.name + ",";				}				oTable.setInitiallyVisibleFields(headerFields);				oTableItem.setInitiallyVisibleFields(itemFields);			}			oModel.attachMetadataLoaded(oModel, function() {				fnLoadMetadata();			});			oModel.attachMetadataFailed(oModel, function() {				sap.m.MessageBox.show("Bad Service Definition", {					icon: sap.m.MessageBox.Icon.ERROR,					title: "Service Call Error",					actions: [sap.m.MessageBox.Action.OK],					styleClass: "sapUiSizeCompact"				});			});		},		callExcel: function(oEvent) {			//Excel Download			window.open("/xsjs/hdb.xsjs");			return;		}	});});```
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Create a reusable Controller)]
@@ -296,7 +346,7 @@ Create a reusable controller for further tutorials. Create a file called `BaseCo
 ```JavaScript
 /*global history */sap.ui.define([		"sap/ui/core/mvc/Controller",		"sap/ui/core/routing/History"	], function (Controller, History) {		"use strict";		return Controller.extend("opensap.odataTest.controller.BaseController", {			/**			 * Convenience method for accessing the router in every controller of the application.			 * @public			 * @returns {sap.ui.core.routing.Router} the router for this component			 */			getRouter : function () {				return this.getOwnerComponent().getRouter();			},			/**			 * Convenience method for getting the view model by name in every controller of the application.			 * @public			 * @param {string} sName the model name			 * @returns {sap.ui.model.Model} the model instance			 */			getModel : function (sName) {				return this.getView().getModel(sName);			},			/**			 * Convenience method for setting the view model in every controller of the application.			 * @public			 * @param {sap.ui.model.Model} oModel the model instance			 * @param {string} sName the model name			 * @returns {sap.ui.mvc.View} the view instance			 */			setModel : function (oModel, sName) {				return this.getView().setModel(oModel, sName);			},			/**			 * Convenience method for getting the resource bundle.			 * @public			 * @returns {sap.ui.model.resource.ResourceModel} the resourceModel of the component			getResourceBundle : function () {				return this.getOwnerComponent().getModel("i18n").getResourceBundle();			},			*/			/**			 * Event handler for navigating back.			 * It there is a history entry we go one step back in the browser history			 * If not, it will replace the current entry of the browser history with the master route.			 * @public			 */			onNavBack : function() {				var sPreviousHash = History.getInstance().getPreviousHash();					if (sPreviousHash !== undefined) {					history.go(-1);				} else {					this.getRouter().navTo("master", {}, true);				}			}		});	});```
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -308,7 +358,7 @@ In the running tab, you should see the `index.html` from earlier. Adjust the URL
 
 ![results](15.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

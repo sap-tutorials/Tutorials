@@ -53,7 +53,7 @@ Click on Extensions and then at the bottom of the page, click on Get more extens
 
 ![Get more extensions](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Install extension)]
@@ -72,7 +72,7 @@ JSONView is now installed and enabled.
 
 ![JSONView installed](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Review OData URLs)]
@@ -94,7 +94,7 @@ To view the entity sets, open the link above in a new browser tab.
 
 > Note: if you would like to access an SAP Gateway server, see the Optional section at the end of this tutorial for the free Gateway trial sign up link and OData service URL.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Review collections)]
@@ -103,7 +103,7 @@ As you scroll through the page, you will see all of the entity sets (or collecti
 
 ![Northwind Service Document](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_7.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Review metadata)]
@@ -115,7 +115,7 @@ With the metadata displayed, scroll down to `<EntityType Name="Product">` which 
 
 ![Products Collection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_8.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Review and add fields)]
@@ -128,7 +128,7 @@ If you want to add other supplier fields to the Supplier tab – you would just 
 
 ![Supplier Collection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_9.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Review data)]
@@ -142,7 +142,7 @@ By adding `Products` to the URL here, you are specifying the `ResourcePath` port
 ![Data from the Products collection](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_10.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Run app to see paging)]
@@ -151,7 +151,7 @@ Scroll to the bottom of the page and look for the `<link rel="next"` entry. The 
 
 ![Next URL](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Enhance format for readability)]
@@ -166,7 +166,7 @@ You can see how there is less text shown, along with the color-coding and format
 
 ![JSON format](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Set number of records to return)]
@@ -179,7 +179,7 @@ Enter `$top=1` to view the first record only (be sure to pre-pend it with a `&` 
 
 ![top query option](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Skipping over records)]
@@ -191,7 +191,7 @@ To see the 6th and 7th records, add the `$skiptoken=5` query option and change `
 ![6th and 7th records](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_14.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Create URL for individual records)]
@@ -202,7 +202,7 @@ A shorthand way of referring to individual records is to put the record number i
 
 ![Shorthand-22](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_15.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Set sort-by field)]
@@ -220,18 +220,18 @@ You can see that the records are returned in alphanumerical order (`ProductID`s 
 
 ![orderby ProductName](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_17.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Set sort order)]
 
 By default, the `$orderby` option sorts in ascending order. To sort by descending order, append "` desc`" (with the space) after the `orderby` field. The browser will encode the space as `%20` and the results are returned in descending alphanumerical order.
 
-- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$orderby=ProductName\ desc>
+- <http://services.odata.org/V2/Northwind/Northwind.svc/Products?$format=json&$top=2&$orderby=ProductName%20desc>
 
 ![orderby ProductName descending](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_18.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Add filters)]
@@ -246,7 +246,7 @@ To exclude those from an app, you would simply change the `eq` (equal) to `ne` (
 
 ![filter Discontinued = true](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_19.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Add other query parameters)]
@@ -259,7 +259,7 @@ To get a list of products with a `UnitPrice` greater than 100 and not discontinu
 
 >For a full list of filter options with examples, please see the URI conventions link shown in the last step of this tutorial.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Get subset of collection)]
@@ -270,7 +270,7 @@ The `$select` query option specifies a subset of the full collection properties 
 
 ![selecting a subset of fields](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_21.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Expand the query)]
@@ -281,7 +281,7 @@ Since `Supplier` is a `NavigationProperty`, it is returned as a URI. You can use
 
 ![Expand a NavigationProperty field](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_22.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Combine query options)]
@@ -297,7 +297,7 @@ Building on the last example, in this final query you will combine a few of the 
 
 ![Complex query results](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-odata-primer/mob3-4_23.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 19: ](Wrap-up)]
@@ -313,7 +313,7 @@ There are many OData resources available on the web. A few are listed below:
 
 >To use the OData viewer, select **Metadata URL** under **Choose Access Option** and enter `http://services.odata.org/V2/Northwind/Northwind.svc/$metadata`
 
-[DONE]
+
 [ACCORDION-END]
 
 

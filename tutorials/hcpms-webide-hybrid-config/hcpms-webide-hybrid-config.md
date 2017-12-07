@@ -27,7 +27,7 @@ In this tutorial, set the target device configurations in SAP Web IDE which will
 
 Open SAP Web IDE in a browser window.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open project settings)]
@@ -36,7 +36,7 @@ Right-click on the `northwind` project folder and select **Project Settings**
 
 ![Project settings](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpms-webide-hybrid-config/2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Edit device configuration)]
@@ -57,7 +57,7 @@ Version             | `1.0.0`
 > Note: The App ID field here must match the string you entered for **Application ID** when creating the HCPms application.
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Configure build options)]
@@ -68,7 +68,7 @@ In the **Platforms** section, select the options applicable for your development
 - 	Windows: Android
 - 	Mac OS: iOS or Android
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Configure plug-ins)]
@@ -79,14 +79,14 @@ After selecting Logon Manager, the plugins section will update to allow you to s
 
 > Note: Do not use the `hcpmsadmin-pxxxxxxxxx` form of the URL here.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Save and close)]
 
 Leave the Preferences section unchanged, click **Save** and then **Close**.
 
-[DONE]
+
 [ACCORDION-END]
 
 

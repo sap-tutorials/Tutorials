@@ -54,14 +54,14 @@ The folder you just copied contains 3 sub-folders and one application:
     | `SAPOfflineOData.framework` | Use the `SAPOfflineOData` component to add offline capability to your application. |
     | `SAPFiori.framework` | Includes a number of UI components which implement the Fiori Design Language. These inherit from the Apple `UIKit` components. |
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open or create Xcode project)]
 
 Open your Xcode `com.sap.tutorial.demoapp.DemoApplication` project (or create a new one)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Open the project configuration)]
@@ -70,7 +70,7 @@ Select your **project file** from the **Project Navigator** and under the **Gene
 
 ![Adding files dialog](fiori-ios-hcpms-install-sdk-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add SDK files to group)]
@@ -85,7 +85,7 @@ In the dialog that appears, make sure you have selected **Copy items if needed**
 
 ![Adding files dialog](fiori-ios-hcpms-install-sdk-04.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Close dialog)]
@@ -94,7 +94,7 @@ Click **Finish** to close the dialog. Your project structure should now resemble
 
 ![Adding files dialog](fiori-ios-hcpms-install-sdk-05.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Check if SDK files are linked)]
@@ -105,7 +105,7 @@ Expand the **Link Binary With Libraries** panel, and make sure the three SDK fil
 
 ![Build Phases panel](fiori-ios-hcpms-install-sdk-06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

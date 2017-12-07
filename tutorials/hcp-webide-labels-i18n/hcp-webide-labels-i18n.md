@@ -38,7 +38,7 @@ label_UnitsOnOrder=Units On Order
 
 ![messageBundle.properties](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-labels-i18n/mob2-4_1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add references)]
@@ -53,7 +53,7 @@ Edit the `Detail.view.xml` file to replace the hard-coded title strings with the
 
 ![Modified Detail.view.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-labels-i18n/mob2-4_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Save and run)]
@@ -62,7 +62,7 @@ Save your changes and reload the preview tab or run the app. The app should look
 
 ![Modified Detail.view.xml file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-labels-i18n/mob2-4_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

@@ -27,7 +27,7 @@ Now that your foundation in place it's time to do a test of posting our data and
 
 If you haven't done so, please install Postman now.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Test using Postman)]
@@ -39,7 +39,7 @@ Field                    | Content
 Request Type             | `POST`
 URL to `xsodata` service | `http://52.90.177.151/CODEJAMMER/johndoe/myiot/mydata.xsodata/DATA`
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Enter content type)]
@@ -48,7 +48,7 @@ Click on the **Headers** tab and enter `Content-Type` for the header, and `appli
 
 ![Header definition](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part3-posting-data-hana/p3_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Select authorization)]
@@ -57,7 +57,7 @@ Click on the **Authorization** tab, select **Basic Auth**, enter the values belo
 
 ![User Login](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part3-posting-data-hana/p3_4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Enter body content)]
@@ -68,7 +68,7 @@ Click on the **Body** tab, select the **raw** radio button and `JSON (applicatio
 
 ![JSON value](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part3-posting-data-hana/p3_5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Send request)]
@@ -77,7 +77,7 @@ Click **Send**. If it is successful, you will get a **201 Created** response bac
 
 ![JSON Result](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part3-posting-data-hana/p3_6.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Correct errors)] ￼
@@ -90,14 +90,14 @@ If you get an error: **Request execution failed due to missing or invalid XSRF t
 Send the POST request again, and you should get a 201 response.
 ￼
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Optionally send more requests)]
 
 You can modify the values in the POST body and send a few more requests to add a bit more data if you'd like (but it is not required).
 
-[DONE]
+
 [ACCORDION-END]
 
 

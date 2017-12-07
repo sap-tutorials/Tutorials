@@ -37,7 +37,7 @@ Open the `northwind` project folder and then the `view` folder. Right-click on `
 
 ![Layout Editor](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_icon_1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open Properties and Data pane)]
@@ -46,7 +46,7 @@ When the Layout Editor opens, click on the `Supplier` icon. The **Properties and
 
 ![Properties and Data pane](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_icon_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Open SAPUI5 Icon Explorer)]
@@ -55,7 +55,7 @@ In another browser tab, open the [SAPUI5 Icon Explorer](https://openui5.hana.ond
 
 ![UI5 icon explorer](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_icon_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Change supplier icon)]
@@ -68,7 +68,7 @@ To change the current icon in your app, switch back to the Web IDE tab, and ente
 
 ![changing the icon](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_icon_5.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add a new Details tab)]
@@ -80,7 +80,7 @@ Depending on the path you drag, the new tab may snap to the first (left) spot. Y
 
 ![adding a new Icon Tab Filter](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_tab_1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Change properties)]
@@ -94,7 +94,7 @@ With the new Icon Tab Filter selected, make the following changes in the **Prope
 
 ![Editing a Icon Tab Filter](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_tab_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create a view fragment file)]
@@ -110,7 +110,7 @@ Enter `ProductDetailInfoForm.fragment.xml` for the new file name and click **OK*
 
 ![new file dialog](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_fragment_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add code to fragment file)]
@@ -145,7 +145,7 @@ In addition to the standard XML wrapper, there are a few key items to call out i
 
 ![ProductDetailInfoForm.fragment.xml](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_fragment_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Edit message bundle properties)]
@@ -189,7 +189,7 @@ Your `messageBundle.properties` file should look like this now.:
 
 ![messageBundle.properties file](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_fragment_4.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Add supplier data fields)]
@@ -198,7 +198,7 @@ Open `DetailInfoForm.fragment.xml` (which is the fragment for the **Supplier** t
 
 ![DetailInfoForm title](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_supplier_fields_1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Edit Suppliers Collection)]
@@ -236,7 +236,7 @@ Your `DetailInfoForm.fragment.xml` file should look like this now:
 
 ![DetailInfoForm fields](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_supplier_fields_2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Add content element)]
@@ -263,7 +263,7 @@ The XML you pasted in did a few things:
 
 ![content element](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_supplier_fields_3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Save and run)]
@@ -274,14 +274,14 @@ Save your changes and reload the preview tab or run the app. Remember, you may n
 
 ![products tab](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_supplier_fields_4b.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Re-deploy the app to SAP Cloud Platform)]
 
 You can now re-deploy the app to SAP Cloud Platform so you will be able to see your changes on your mobile device.
 
-[DONE]
+
 [ACCORDION-END]
 
 

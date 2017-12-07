@@ -106,11 +106,12 @@ The scenario described here builds on the chapters that describe how to set up a
 ### 2. Prerequisites
 
 - An account on SAP Cloud Platform.
+
 - SAP Cloud Connector as reverse proxy to pass requests from SAP Web IDE to your corporate Git installation.
 
-> [SAP Cloud Platform Documentation](https://help.hana.ondemand.com/help/frameset.htm?e9137493bb57101492c6858c8d6b0b62.html)  
+> [SAP Cloud Platform Documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/a8d6db47b1714a8d87f043a3546962c9.html)  
 > [SAP Cloud Platform Cockpit](https://account.hana.ondemand.com)  
-> [Connecting to your Corporate Git System](https://help.hana.ondemand.com/webide/frameset.htm?b8427ec16ae64347b97d2d46fb28f7cd.html)
+> [Connecting to your Corporate Git System](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/Cloud/en-US/b8427ec16ae64347b97d2d46fb28f7cd.html)
 
 
 ### 3. Creating Sources for a New Project
@@ -120,8 +121,8 @@ The standard method for creating a new SAPUI5 or Fiori project is to use the wiz
 
 You can either use SAP Web IDE on SAP Cloud Platform, or alternatively, you can use SAP Web IDE Personal Edition, which offers the same features but runs on your local machine.
 
-> [SAP Web IDE](https://help.hana.ondemand.com/webide/frameset.htm?0221845d73ad403ab2852142f3179177.html)  
-> [SAP Web IDE Personal Edition](https://help.hana.ondemand.com/webide/frameset.htm?5b8bca3147ee4dfd99be8aaf6bd4f421.html)
+> [SAP Web IDE](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/0221845d73ad403ab2852142f3179177.html)  
+> [SAP Web IDE Personal Edition](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/5b8bca3147ee4dfd99be8aaf6bd4f421.html)
 
 #### Procedure
 
@@ -129,11 +130,11 @@ You can either use SAP Web IDE on SAP Cloud Platform, or alternatively, you can 
 
 2. If you are using SAP Web IDE on SAP Cloud Platform, follow the instructions here:
 
-    > [Opening SAP Web IDE](https://help.hana.ondemand.com/webide/frameset.htm?51321a804b1a4935b0ab7255447f5f84.html)
+    > [Opening SAP Web IDE](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/51321a804b1a4935b0ab7255447f5f84.html)
 
     If you are working with SAP Web IDE Personal Edition, install it and start it as described here:
 
-    > [SAP Web IDE Personal Edition](https://help.hana.ondemand.com/webide/frameset.htm?5b8bca3147ee4dfd99be8aaf6bd4f421.html)
+    > [SAP Web IDE Personal Edition](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/5b8bca3147ee4dfd99be8aaf6bd4f421.html)
 
     In either case, we assume that you are now logged in to SAP Web IDE.
 
@@ -341,7 +342,9 @@ The next step of the CI process is uploading the application into the ABAP devel
 We have tested the `node-rfc` module with Node.js 4.4.3 on the following platforms:
 
 - SUSE Linux Enterprise Server 12
+
 - Ubuntu 16.04
+
 - Red Hat Enterprise Linux Server release 7.2
 
 To install the library, ensure the `g++` compiler collection package has first been installed on the machine.

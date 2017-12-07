@@ -2,7 +2,7 @@
 title: Install a REST client
 description: Install a REST client to interact with the SAP Cloud for predictive services
 primary_tag: products>sap-cloud-platform-predictive-service
-tags: [ tutorial>beginner, products>sap-cloud-platform ]
+tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-predictive-service ]
 ---
 
 ## Prerequisites
@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform ]
   - **Tutorials:** [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Next Steps
-  - [Test the "Dataset" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+  - [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
 
 ## Details
 ### You will learn
@@ -22,19 +22,16 @@ tags: [ tutorial>beginner, products>sap-cloud-platform ]
 [ACCORDION-BEGIN [Step 1: ](Install Google Chrome)]
 If you haven't done so yet, please install [Google Chrome](http://www.google.com/chrome/browser/desktop/).
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Install the Postman extension for Chrome)]
 Open ***Google Chrome*** and install the [Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/).
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Install the Postman Interceptor extension for Chrome)]
 Install the [Postman Interceptor extension](https://chrome.google.com/webstore/detail/postman-interceptor/aicmkgpgakddgnaphhhpliifpcfhicfo).
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Configure Postman)]
@@ -66,8 +63,7 @@ Enable the "Automatically follow redirects" option as highlighted.
 
 Now, you can to move to the next tutorial.
 
-[DONE]
 [ACCORDION-END]
 
 ## Next Steps
-  - [Test the "Dataset" service](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html)
+- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)

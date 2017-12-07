@@ -36,7 +36,7 @@ Double-click on `Detail.view.xml` to open it in the editor.
 
 ![open Detail.view.xml](te-2016-6-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Inserting fields into the `ObjectHeader`)]
@@ -60,7 +60,7 @@ Your XML file should look like this:
 
 ![inserted snippet](te-2016-6-03.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Open the i18n file)]
@@ -71,7 +71,7 @@ To add those labels, open the **`te2016` > `webapp` > `i18n`** folder and double
 
 ![open i18n.properties](te-2016-6-04.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Inserting strings)]
@@ -94,7 +94,7 @@ mapFragmentTitle=Map
 
 ![open i18n.properties](te-2016-6-05.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run the app with new fields in the header)]
@@ -105,7 +105,7 @@ You should now see the four additional fields at the top of the detail view.
 
 ![new fields](te-2016-6-06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add a new file)]
@@ -120,7 +120,7 @@ Add a new file to your project by right-clicking on your **`view`** folder and s
 
 ![new file](te-2016-6-07.png)     
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Name the new file)]
@@ -129,7 +129,7 @@ Name the file `Map.fragment.xml` (the case is important) and click **OK**.
 
 ![new file name](te-2016-6-08.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add the content to the `Fragment` file)]
@@ -160,7 +160,7 @@ Your file should look like this:
 
 ![new fragment file](te-2016-6-09.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add a new namespace)]
@@ -179,7 +179,7 @@ The top of your file should look like this:
 
 ![new xml name space](te-2016-6-10.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Update titles in the `IconTabFilter`s)]
@@ -206,7 +206,7 @@ text="{i18n>itf2Title}"
 
 ![icon tab filter](te-2016-6-11.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Insert a `content` element for the first tab)]
@@ -221,7 +221,7 @@ Add some line feeds between the `<content>` tags so your file looks like this:
 
 ![content element](te-2016-6-12.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Deleting the `Table` element)]
@@ -232,7 +232,7 @@ Locate the entire **`<Table>`** element as shown below, cut the text (using CTRL
 
 ![table element](te-2016-6-13.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Re-inserting the `Table` element)]
@@ -241,7 +241,7 @@ Paste the text you just cut within the **`<content>`** element you added above a
 
 ![insert here](te-2016-6-14.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Changing a displayed field)]
@@ -254,7 +254,7 @@ The detail view will now look like this:
 
 ![new fields](te-2016-6-15.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Insert a `content` element for the second tab)]
@@ -271,7 +271,7 @@ Insert the XML snippet shown below before the closing tag of the second `<IconTa
 
 ![insert second content block](te-2016-6-16.png)  
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Second `IconTabFilter` appearance)]
@@ -280,7 +280,7 @@ The section of the `Detail.view.xml` file for your second `<IconTabFilter>` shou
 
 ![second content block](te-2016-6-17.png)    
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -288,7 +288,7 @@ The section of the `Detail.view.xml` file for your second `<IconTabFilter>` shou
 
 The last change before running your app is to modify the `manifest.json` file located in **`te2016` > `webapp`**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Editing the App Descriptor)]
@@ -302,7 +302,7 @@ Insert the two lines below as shown in the image. If the file is opened in the *
 
 ![app descriptor](te-2016-6-23.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 19: ](Run your app)]
@@ -317,7 +317,7 @@ Map tab:
 
 ![map tab](te-2016-6-21.png)    
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps

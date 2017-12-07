@@ -7,10 +7,10 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-smar
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Generating Alerts using a Derived Window in SAP HANA smart data streaming](http://www.sap.com/developer/tutorials/sds-event-stream-alerts.html)
+ - **Tutorials:** [Generating Alerts using a Derived Window in SAP HANA smart data streaming](https://www.sap.com/developer/tutorials/sds-event-stream-alerts.html)
 
 ## Next Steps
-- **Tutorials:** [Watch for Patterns of Events and Generate Alerts](http://www.sap.com/developer/tutorials/sds-event-stream-pattern-detection.html)
+- **Tutorials:** [Watch for Patterns of Events and Generate Alerts](https://www.sap.com/developer/tutorials/sds-event-stream-pattern-detection.html)
 
 ## Details
 ### You will learn  
@@ -32,7 +32,7 @@ Click the drop down arrow next to the **Run** button and select the streaming se
 
 You will be switched into the **SAP HANA Streaming Run-Test** perspective if the project deploys successfully.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open viewers on the streams)]
@@ -41,7 +41,7 @@ Double-click on each of the streams in the Server view to open them in the **Str
 
 ![open all tables](3-openalltables.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Connect the playback tool to the project)]
@@ -54,13 +54,12 @@ Click Select Project icon in the top right corner of the **Playback** window to 
 
 ![select project](5-selectproject.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Select the file containing the simulated data to play back)]
 
-Right click on the following link and select **Save link/target as...** to download the sample data file:
- [`machinedata.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/sds-event-stream-playback/machinedata.csv)
+Download the sample data file as follows: Right click on the following link and select **Save link/target as...** [`machinedata.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/sds-event-stream-playback/machinedata.csv)
 
 Click Select Playback File icon shown below to select the data file to use.
 
@@ -72,7 +71,7 @@ Click Select Playback File icon shown below to select the data file to use.
 
 ![open file](7-openfile.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Set the playback speed)]
@@ -81,7 +80,7 @@ Click **rec/ms**. You want to control the playback speed so that you can watch t
 
 ![rec per sec](8-recpersec.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Start the playback and view the results)]
@@ -94,10 +93,5 @@ Click each viewer tab to view the output from each stream/window.
 
 ![switch tabs](10-switchtabs.png)
 
-[DONE]
+
 [ACCORDION-END]
-
----
-
-## Next Steps
-- **Tutorials:** [Watch for Patterns of Events and Generate Alerts](http://www.sap.com/developer/tutorials/sds-event-stream-pattern-detection.html)

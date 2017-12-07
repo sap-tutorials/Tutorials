@@ -1,6 +1,6 @@
 ---
-title: Internet of Things (IoT) Viewing your Tessel data in a dynamic graph
-description: Now connect your IoT Services to an SAP HANA MDC instance and show the data using SAP HANA XS
+title: SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data on a chart
+description: Now connect your IoT Services to an SAP HANA MDC instance and show the data using SAP HANA XS Classic
 primary_tag: topic>internet-of-things
 tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
 
@@ -8,7 +8,7 @@ tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>int
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Internet of Things (IoT) Viewing your Tessel data in a SAP HANA XS application](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+- **Tutorials:** [SAP Cloud Platform IoT for Neo: binding to and developing on SAP HANA XSC](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
 
 ## Next Steps
 - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
@@ -23,11 +23,7 @@ Now that you have a basic application and service created you can now do a bit m
 **10 Min**.
 
 ---
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 1: ](Open sub package)] ￼
+[ACCORDION-BEGIN [Step 1: ](Open sub package)]
 
 Return to the "SAP HANA Web-based Development Workbench" and go to the "sub package" - `codejam.iotmmsxs`
 
@@ -35,10 +31,10 @@ Return to the "SAP HANA Web-based Development Workbench" and go to the "sub pack
 
 ![new file](2.png)
 
-[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create new file)] ￼
+[ACCORDION-BEGIN [Step 2: ](Create new file)]
 
 Right click and create a new file called `graph.html`. You will use the following code to display your data now in a graph as opposed to the table from the previous tutorial. There are a ton of open source and other libraries out there for creating graphs, below is a simple use of the canvas tag.
 
@@ -119,7 +115,7 @@ Right click and create a new file called `graph.html`. You will use the followin
 
 ![graph](3.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 

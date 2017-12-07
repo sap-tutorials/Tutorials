@@ -6,21 +6,18 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ---
 
 ## Prerequisites  
- - ABAP Development: [Create a global ABAP Class and Data Dictionary structure for data retrieval](https://www.sap.com/developer/tutorials/abap-dev-adt-create-class-structure.html).
+ - [Create a global ABAP Class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)
 
 
 ## Next Steps
- - Use a CDS View in ALV with IDA (coming soon).
+ - [Use a CDS View in ALV with IDA](https://www.sap.com/developer/tutorials/abap-dev-adt-use-cds-view.html)
+
 
 ## Details
 ### You will learn  
 In the following exercise you will learn how to use the new Core Data Services (CDS) tools in ABAP in Eclipse. CDS is an extension of the ABAP Dictionary that allows you to define semantically rich data models in the database and to use these data models in your ABAP programs. CDS is a central part of enabling Code Push-down in ABAP applications.
 You will learn to define a new CDS view in a DDL source.
-You can find more information about CDS in the SAP Help Portal (coming soon) and the SAP Community Network (coming soon).
-
-### Time to Complete
-**15-20 Min**.
-
+You can find more information about CDS in the [ABAP keyword documentation] (http://help-legacy.sap.com/abapdocu_751/en/index.htm) and the [SAP Community] (https://www.sap.com/community/topic/abap.html).
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Choose an ABAP Object)]
@@ -28,7 +25,7 @@ In the context menu of your package choose **New** and then choose **Other ABAP 
 
 ![Image depicting step1-newObject](step1-newObject.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Select a Data Definition)]
@@ -37,7 +34,7 @@ Select **Data Definition**, then choose **Next**.
 
 ![Image depicting step2-DataDef](step2-DataDef.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -52,7 +49,7 @@ b.	Description = **Invoice Items**
 ![Image depicting step3-enterValues](step3-enterValues.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Accept the transport request)]
@@ -61,7 +58,7 @@ Accept the default transport request (local) by simply choosing **Next** again.
 
  ![Image depicting step4-AcceptTransportRequest](step4-AcceptTR.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Define a View)]
@@ -70,7 +67,7 @@ Select the entry **Define View**, then choose **Finish**
 
 ![Image depicting step5-defineView](step5-defineView.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Enter the data source)]
@@ -87,7 +84,7 @@ c. Use code completion (keyboard shortcut **CTRL+SPACE**) to get proposals for t
 
 > Note: The SQL view name is the internal/technical name of the view which will be created in the database. `Z_Invoice_Items` is the name of the CDS view which provides enhanced view-building capabilities in ABAP. You should always use the CDS view name in your ABAP applications.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Edit the SELECT statement)]
@@ -102,7 +99,7 @@ b.	Remove all the elements in the SELECT list which were inserted by the code co
 
 ![Image depicting step7-Select1](step7-Select1.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Use CDS associations)]
@@ -115,7 +112,7 @@ b.	To see details about the target data source of the association header, choose
 
 ![Image depicting step8-CdsAssociations](step8-CdsAssociations.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add Fields)]
@@ -128,7 +125,7 @@ b.	Add the `payment_status` from the invoice header to the SELECT list using the
 
 ![Image depicting step9-AddFields](step9-AddRelatedFields.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Add a CASE statement)]
@@ -144,7 +141,7 @@ end as payment_status
 
 ![Image depicting step10-CaseStatement](step10-CaseStatement.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Add a CAST statement)]
@@ -166,7 +163,7 @@ as payment_status
 
 > Note: You can open the online help for the CAST statement by positioning the cursor on the cast keyword and choosing F1
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Add a WHERE clause)]
@@ -185,8 +182,8 @@ b. Save and activate the data definition by choosing **Save** (`Ctrl+S`) and **A
 
 ![Image depicting step14-saveAndActivate](step14-saveAndActivate.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 ## Next Steps
-- Use a CDS View in ALV with IDA (coming soon).
+- [Use a CDS View in ALV with IDA](https://www.sap.com/developer/tutorials/abap-dev-adt-use-cds-view.html)

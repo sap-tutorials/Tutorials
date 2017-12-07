@@ -1,15 +1,15 @@
 ---
-title: Create a Streaming Project with SAP HANA Smart Data Streaming
-description: Create a SAP HANA Smart Data Streaming (SDS) project using the streaming plug-in for Eclipse.
+title: Create a Streaming Project with SAP HANA Streaming Analytics
+description: Create a SAP HANA Streaming Analytics project using the streaming plug-in for Eclipse.
 primary_tag: products>sap-hana-smart-data-streaming
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Installing and Configuring the Streaming Studio Plugin](http://www.sap.com/developer/tutorials/hxe-ua-streaming-plugin.html)
+ - **Tutorials:** [Installing and Configuring the Streaming Studio Plugin](https://www.sap.com/developer/tutorials/hxe-ua-streaming-plugin.html)
 
 ## Next Steps
- - **Tutorials:** [Capture Streaming Output in the SAP HANA Database](http://www.sap.com/developer/tutorials/sds-event-stream-tables.html)
+ - **Tutorials:** [Capture Streaming Output in the SAP HANA Database](https://www.sap.com/developer/tutorials/sds-event-stream-tables.html)
 
 ## Details
 
@@ -30,9 +30,9 @@ Click the **File** menu. Then click the **New** > **Project...**.
 
 ![Create a new Project](1-create-a-new-project.png)
 
-Expand **SAP HANA smart data streaming** and select **New Streaming Project**, then click **Next**.
+Expand **SAP HANA streaming analytics** and select **New Streaming Project**, then click **Next**.
 
-![Select Streaming Project](2-select-streaming-project.png)
+![Select Streaming Project](2-select-streaming-project-02.png)
 
 Enter `freezer_monitor` in the **Name** box (be sure to only use lower case) and accept the default **Directory** location.
 
@@ -40,7 +40,7 @@ Enter `freezer_monitor` in the **Name** box (be sure to only use lower case) and
 
 Click **Finish**.
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create an Input Stream)]
@@ -55,7 +55,7 @@ Click the icon to the left of the name **NEWSTREAM** and change the name of this
 
 > Note that stream names are case sensitive
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Define columns for each field in the incoming events)]
@@ -104,20 +104,20 @@ Note: You can just drag the shape to a new position to organize our diagram.
 
 ![drag stream](10-drag-stream.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add a filter)]
 
 Drag and drop the **Filter** item in the **Streams and Windows** drawer of the **Palette** into the canvas.
 
-![add filter](1-add-filter.png)
+![add filter](1-add-filter-02.png)
 
 Rename the stream, `Filter1`, to **`ACTIVITY_HIST`** by clicking on the filter icon.
 
 ![rename](2-rename-filter.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Connect it to an event stream)]
@@ -130,7 +130,7 @@ Click on the **`MACHINEDATA`** shape and then on the **`ACTIVITY_HIST`** shape i
 
 ![connect](4-connect-parts.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Define the filter criteria)]
@@ -149,10 +149,5 @@ Click on the All Iconic button (icon shown below) to collapse all the items.
 
 ![collapse all](7-collapse.png)
 
-[DONE]
+
 [ACCORDION-END]
-
----
-
-## Next Steps
- - **Tutorials:** [Capture Streaming Output in the SAP HANA Database](http://www.sap.com/developer/tutorials/sds-event-stream-tables.html)
