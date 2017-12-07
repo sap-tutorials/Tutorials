@@ -2,7 +2,7 @@
 title: Installing and Configuring the Streaming Studio Plugin
 description: Install the streaming analytics plugin for Eclipse, add a connection to the streaming analytics server, and create a HANA service.
 primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
+tags: [  tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 
 ## Prerequisites  
