@@ -1,7 +1,7 @@
 ---
 title: Getting Started with BUILD
 description: Learn where to sign up and start with BUILD, SAP's prototyping tool
-auto_validation: true
+auto_validation: false
 primary_tag: products>build>build
 tags: [  tutorial>beginner, products>build>build ]
 ---
