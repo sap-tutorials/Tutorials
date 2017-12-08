@@ -33,6 +33,7 @@ Running SAP Data Hub, developer edition on your local computer requires:
 * Internet connectivity (temporarily while building the Docker image)
 
 * Docker installed and running (http://www.docker.com)
+  **Attention:** If you use Docker Toolbox, pay special attention to the sizing of the Linux VM. For details take a look at our [FAQ](http://blogs.sap.com/2017/12/06/faqs-for-sap-data-hub-developer-edition).
 
 Verify that Docker is properly installed and running by opening a terminal window and entering the following.
 
