@@ -468,7 +468,7 @@ sap.ui.define([
 
 Click on the **Run** icon ![Run Applications](00-run.png) or press `ALT+F5`.
 
-In the bar at the bottom, click on **SAPUI5 `FileUploader` with Built-in XHR** to pick your local picture.
+In the bar at the bottom, click on **Upload Picture** to pick your local picture.
 
 The service will be called, and the result displayed in a table.
 
@@ -490,6 +490,8 @@ You can also try with a zip that contains multiple images.
 > ```XML
 <u:FileUploader id="idFileUpload_2" buttonOnly="true" buttonText="Upload Picture with Custom XHR" change="fileUploadChange_xhr"></u:FileUploader>
 ```
+>
+>This will add an extra button **Upload Picture with Custom XHR** that you can use instead.
 >
 >We are currently investigating this issue related to XHR use in the SAPUI5 `FileUploader` control. (see GitHub issue: https://github.com/SAPDocuments/Tutorials/issues/1864)
 >
