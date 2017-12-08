@@ -7,8 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
+ - You have completed [Store sensor data in HDFS](http://www.sap.com/developer/tutorials/datahub-pipelines-storeinhdfs.html)
 
 ## Next Steps
+- [Store sensor data in SAP Vora](http://www.sap.com/developer/tutorials/datahub-pipelines-storeinvora.html)
 
 ## Details
 ### You will learn  
@@ -104,3 +106,6 @@ hdfs dfs -cat /tmp/hdfsManager/test_1.txt
 [ACCORDION-END]
 
 ---
+
+## Next Steps
+[Store sensor data in SAP Vora](http://www.sap.com/developer/tutorials/datahub-pipelines-storeinvora.html)
