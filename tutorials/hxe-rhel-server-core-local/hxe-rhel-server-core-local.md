@@ -192,11 +192,11 @@ rpm -qa --queryformat '(%{installtime:date}) %{name} %{version}\n' glibc
 
 You will need to install the following additional packages:
 
-|-------------------|-----------------|-------------------|-------------------------|
-|xulrunner 					| sudo 						| libssh2 					| expect 									|
-|graphviz 					| iptraf-ng 			| krb5-workstation 	| libpng12 								|
-|nfs-utils 					| lm_sensors 			| openssl 					| PackageKit-gtk3-module 	|
-|libcanberra-gtk2 	| xorg-x11-xauth 	| numactl 					| bind-utils 							|
+|-----------------------|-------------------|-------------------|---------------------------|
+|`xulrunner` 			|`sudo` 			|`libssh2` 			|`expect` 					|
+|`graphviz` 			|`iptraf-ng` 		|`krb5-workstation` |`libpng12` 				|
+|`nfs-utils` 			|`lm_sensors` 		|`openssl` 			|`PackageKit-gtk3-module` 	|
+|`libcanberra-gtk2` 	|`xorg-x11-xauth` 	|`numactl` 			|`bind-utils`				|
 
 From your terminal console, execute the following command:
 
@@ -697,7 +697,7 @@ The ***SAP HANA HDB Client*** software package includes the following connectivi
  - SQLDBC
  - ODBC
  - JDBC
- - Python (PyDBAPI)
+ - Python (`PyDBAPI`)
  - Node.js
  - Ruby
 
