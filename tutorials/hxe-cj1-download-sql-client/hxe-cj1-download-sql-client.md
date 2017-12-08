@@ -56,7 +56,7 @@ You will need to extract them from the files `hdb_client_windows.zip` or `hdb_cl
 
 Click on **Find Class** and select `com.sap.db.jdbc.Driver` from the drop down menu:
 
-![JDBC](4_!.png)
+![JDBC](4_1.png)
 
 Click **OK** and proceed to test the connection:
 

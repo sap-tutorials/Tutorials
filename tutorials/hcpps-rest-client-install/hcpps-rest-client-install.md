@@ -1,13 +1,13 @@
 ---
 title: Install a REST client
-description: Install a REST client to interact with the SAP Cloud for predictive services
+description: Install a REST client to interact with the SAP Predictive services
 primary_tag: products>sap-cloud-platform-predictive-service
 tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-predictive-service ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - **Tutorials:** [Enable, deploy and configure the SAP Predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Next Steps
   - [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)

@@ -16,7 +16,7 @@ tags: [  tutorial>beginner, products>sap-businessobjects-lumira, products>sap-cl
 
 ## Details
 ### You will learn  
-How to start creating your own visualization extension for SAP Lumira, using SAP Web IDE and the `VizPacker` plugin.
+How to start creating your own visualization extension for SAP Lumira, using SAP Web IDE and the `VizPacker` plugin. 
 
 #### What is SAP Web IDE?
 SAP Web IDE is the development environment for building various applications, including visualization extensions for SAP Lumira.

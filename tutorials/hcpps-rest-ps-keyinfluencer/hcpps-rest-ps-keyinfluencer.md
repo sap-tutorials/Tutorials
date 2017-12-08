@@ -14,9 +14,9 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 ## Details
 ### You will learn
- - How to use the "Key Influencer" SAP Cloud for predictive services from a REST Client.
+ - How to use the "Key Influencer" SAP Predictive services from a REST Client.
 
- Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
+ Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
 
 ### Time to Complete
   **10 minutes**
@@ -72,7 +72,7 @@ The dataset will be using during this tutorial is extracted from the sample data
 
 The Census sample data file that you will use to follow the scenarios for Regression/Classification and Segmentation/Clustering is an excerpt from the American Census Bureau database, completed in 1994 by Barry Becker.
 
-> **Note:** For more information about the American Census Bureau, see http://www.census.govInformation published on non-SAP site.
+> **Note:** For more information about the American Census Bureau, see http://www.census.gov published on non-SAP site.
 
 &nbsp;
 
@@ -161,7 +161,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   "skippedVariables" : ["id", "sex", "race"]
 }
 ```
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
 
 
 &nbsp;
@@ -419,7 +419,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   ]
 }
 ```
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 &nbsp;
 
 Click on **Send**
@@ -455,7 +455,7 @@ Let's try with the following **Body**, which define the missing value for the re
 }
 ```
 
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 &nbsp;
 
 The performances a roughly the same as we limited the analysis to only 2 attributes on a small dataset. Off course you can increase the number of influencers and see the difference.
@@ -464,7 +464,7 @@ The performances a roughly the same as we limited the analysis to only 2 attribu
 
 ### Optional
 
-For more details on the SAP Cloud for predictive services, you can check the following the [`Key Influencers APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/e8bda9b653ff4b48a702124e27747f85.html) documentation.
+For more details on the SAP Predictive services, you can check the following the [`Key Influencers APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/e8bda9b653ff4b48a702124e27747f85.html) documentation.
 
 ## Next Steps
 - [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)

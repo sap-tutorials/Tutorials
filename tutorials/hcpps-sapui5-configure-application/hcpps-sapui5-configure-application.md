@@ -1,6 +1,6 @@
 ---
 title: Configure a SAPUI5 application from the project template
-description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the SAP Cloud for predictive services
+description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the SAP Predictive services
 primary_tag: products>sap-cloud-platform-predictive-service
 tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
@@ -20,7 +20,7 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
   - How to add a destination to your SAPUI5 application
   - Run your SAPUI5 application
   &nbsp;
-  **Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Cloud for predictive services.
+  **Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Predictive services.
   For more content on SAPUI5, you can check the dedicated SAPUI5 tutorials or the online SAPUI5 documentation available here: https://sapui5.hana.ondemand.com
 
 ### Time to Complete
@@ -219,22 +219,22 @@ Open the `webapp/view/demo.view.xml` file and replace the existing code with the
 			<Page id="detail" title="Test the SAP Cloud Platform Predictive Service in a SAPUI5 application">
 				<content></content>
 			</Page>
-			<Page id="detail_dataset_register" title="Register your Dataset with the SAP Cloud for predictive services">
+			<Page id="detail_dataset_register" title="Register your Dataset with the SAP Predictive services">
 				<content>
 					<!--mvc:XMLView viewName="pspredictive.view.dataset.register"/-->
 				</content>
 			</Page>
-			<Page id="detail_dataset_manage" title="Manage your Data Set with the SAP Cloud for predictive services">
+			<Page id="detail_dataset_manage" title="Manage your Data Set with the SAP Predictive services">
 				<content>
 					<!--mvc:XMLView viewName="pspredictive.view.dataset.manage"/-->
 				</content>
 			</Page>
-			<Page id="detail_forecast_synchronous" title="Forecast with the SAP Cloud for predictive services (Synchronous Mode)">
+			<Page id="detail_forecast_synchronous" title="Forecast with the SAP Predictive services (Synchronous Mode)">
 				<content>
 					<!--mvc:XMLView viewName="pspredictive.view.forecast.synchronous"/-->
 				</content>
 			</Page>
-			<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Cloud for predictive services (Asynchronous Mode)">
+			<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Predictive services (Asynchronous Mode)">
 				<content>
 					<!--mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/-->
 				</content>

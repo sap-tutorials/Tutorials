@@ -40,7 +40,7 @@ There are also comprehensive SAP HANA Academy videos on YouTube:
 
 SAP HANA XS advanced applications may consist of multiple modules and be implemented as a multi target application (MTA) project using SAP Web IDE for SAP HANA. For details developing MTAs, see the official guides listed above. You can find more information about concepts, design, and specification of MTAs in the MTA specification:
 
-> [The Multi-Target Application Model: A guide to understand multi-target applications](http://sapassets.edgesuite.net/sapcom/docs/2016/06/e2f618e4-757c-0010-82c7-eda71af511fa.pdf)
+> [The Multi-Target Application Model: A guide to understand multi-target applications](https://www.sap.com/documents/2016/06/e2f618e4-757c-0010-82c7-eda71af511fa.html)
 
  SAP HANA XS advanced supports Git as a source control management system. SAP HANA SPS12 and later includes a Gerrit server that is integrated with the XS advanced runtime. Gerrit for XS advanced is an optional component of the XS advanced platform that can be installed via the software provisioning manager. SAP Web IDE for SAP HANA fully supports Git repositories. For the setup of Gerrit for XS advanced have a look at the following documentation:
 
@@ -49,7 +49,7 @@ SAP HANA XS advanced applications may consist of multiple modules and be impleme
 The CI process discussed in this chapter implements an MTA running on SAP HANA XS advanced. Source changes are pushed by the developer to a central Git repository (either the one that is integrated in SAP HANA or a custom Git repository). Inside the CI build, the MTA archive builder - a command-line tool shipped by SAP - triggers the technology-specific compilers for the dedicated modules contained in the MTA. Then, the MTA archive builder packages the artifacts from each module into one archive file with the extension `.mtar`. To download and learn more about the MTA archive builder refer to the following links:  
 
 > [MTA Archive Builder Download](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100800000903&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MULTITRG%20APP%20ARCHIVE%20BUILDER)  
-> [MTA Archive Builder Documentation](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US)
+> [MTA Archive Builder Documentation](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)
 
 After the MTA archive builder has run, the build result is automatically deployed into an environment for automatic testing during the CI build. For the deployment, the XS advanced command-line client triggers the XS deploy service. The CI build may contain tests such as static code checks for the JavaScript sources (`ESLint`) or automated tests for the user interface.
 
@@ -174,7 +174,7 @@ The CI process requires the MTA project sources that are cloned from the Git rep
 
 As Java application, the MTA archive builder, which is available from the SAP ONE Support Launchpad, can be installed directly on the Jenkins slave machine, or it can be stored on a location which is accessible via HTTP, for example Nexus. The latter alternative has the advantage that upgrades are much easier to handle.
 
-> [Multi target Application Archive Builder](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US)  
+> [Multi-target Application Archive Builder](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)  
 > [SAP ONE Support Launchpad](https://launchpad.support.sap.com/)
 
 #### Procedure

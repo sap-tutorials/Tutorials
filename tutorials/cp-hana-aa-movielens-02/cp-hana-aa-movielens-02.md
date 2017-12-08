@@ -17,7 +17,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 - Based on the statistical assessment, identity what algorithm options are available
 
 ### Time to Complete
-**20 Min**
+**30 Min**
 
 [ACCORDION-BEGIN [Info: ](Recommendation Systems)]
 
@@ -98,9 +98,8 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 ![SAP HANA Web-based Development Workbench](02.png)
 
 > ### **Note**
->**Make sure the currently connected user is TRIAL and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
+>**Make sure the currently connected user is `MOVIELENS_USER` and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
 >
->For each of the next steps, you can decide to open a new **SQL Console** using the ![sql](0-opensqlconsole.png) icon from the menu or reuse the same one by replacing its current over and over.
 
 &nbsp;
 
@@ -108,16 +107,21 @@ First, let's count the rows in each table.
 
 Open a new **SQL Console** using the ![sql](0-opensqlconsole.png) icon from the menu or reuse an existing one.
 
+> ### **Note**
+>For each of the next steps, you can decide to open a new **SQL Console** using the ![sql](0-opensqlconsole.png) icon from the menu or reuse the same one by replacing its current over and over.
+
+&nbsp;
+
 Paste the following content in the console, and use the execute icon ![run](0-run.png) from the menu.
 
 ```SQL
-select 'links'   as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.cds::data.LINKS"
+select 'links'   as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.hdb::data.LINKS"
 union all
-select 'movies'  as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.cds::data.MOVIES"
+select 'movies'  as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES"
 union all
-select 'ratings' as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+select 'ratings' as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
 union all
-select 'tags'    as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.cds::data.TAGS";
+select 'tags'    as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.hdb::data.TAGS";
 ```
 
 The result should be:
@@ -129,11 +133,16 @@ movies     | 9125
 ratings    | 100004  
 tags       | 1296    
 
-Now let's look at each of the table individually.
+Here are a few conclusion we can make upfront:
+
+- links: contains only URL parts and therefore cannot be used in our models
+- movies: the genres could be investigated but because of the data structure it will require some transformations
+- tags: not every movie has tags (1296 tags across 9125 movies) so we cannot use it in our models
+
+Therefore only the ratings will be analyzed here.
 
 [DONE]
 [ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 2: ](Links - Check missing values)]
 
 As stated earlier, the link dataset only includes details to build URL to external web site.
@@ -142,12 +151,12 @@ Let's verify that every movie has a corresponding link and vice-versa using the 
 
 ```SQL
 select count(1)
-from "MOVIELENS"."public.aa.movielens.cds::data.LINKS" l
-where not exists (select 1 from "MOVIELENS"."public.aa.movielens.cds::data.MOVIES" m where l."MOVIEID" = m."MOVIEID")
+from "MOVIELENS"."public.aa.movielens.service::data.LINKS" l
+where not exists (select 1 from "MOVIELENS"."public.aa.movielens.service::data.MOVIES" m where l."MOVIEID" = m."MOVIEID")
 UNION ALL
 select count(1)
-from "MOVIELENS"."public.aa.movielens.cds::data.MOVIES" m
-where not exists (select 1 from "MOVIELENS"."public.aa.movielens.cds::data.LINKS" l where l."MOVIEID" = m."MOVIEID");
+from "MOVIELENS"."public.aa.movielens.service::data.MOVIES" m
+where not exists (select 1 from "MOVIELENS"."public.aa.movielens.service::data.LINKS" l where l."MOVIEID" = m."MOVIEID");
 ```
 
 Based on the result, it seems that there is no movies without a link and vice-versa.
@@ -167,7 +176,7 @@ Anyway, let's check if all movies have genres with the following SQL:
 
 ```SQL
 SELECT COUNT(1)
-FROM "MOVIELENS"."public.aa.movielens.cds::data.MOVIES"
+FROM "MOVIELENS"."public.aa.movielens.service::data.MOVIES"
 WHERE "GENRES" IS NULL OR LENGTH("GENRES")=0;
 ```
 
@@ -182,7 +191,7 @@ BEGIN
   DECLARE tmp NVARCHAR(255);
   DECLARE idx INTEGER;
   DECLARE sep NVARCHAR(1) := '|';
-  DECLARE CURSOR cur FOR SELECT DISTINCT "GENRES" FROM "MOVIELENS"."public.aa.movielens.cds::data.MOVIES";
+  DECLARE CURSOR cur FOR SELECT DISTINCT "GENRES" FROM "MOVIELENS"."public.aa.movielens.service::data.MOVIES";
   DECLARE genres NVARCHAR (255) := '';
   idx := 1;
   FOR cur_row AS cur() DO
@@ -218,7 +227,7 @@ BEGIN
   DECLARE tmp NVARCHAR(255);
   DECLARE idx INTEGER;
   DECLARE sep NVARCHAR(1) := '|';
-  DECLARE CURSOR cur FOR SELECT DISTINCT "GENRES" FROM "MOVIELENS"."public.aa.movielens.cds::data.MOVIES";
+  DECLARE CURSOR cur FOR SELECT DISTINCT "GENRES" FROM "MOVIELENS"."public.aa.movielens.service::data.MOVIES";
   DECLARE genres NVARCHAR (255) := '';
   idx := 1;
   FOR cur_row AS cur() DO
@@ -254,7 +263,7 @@ SELECT
   , "TITLE"
   , OCCURRENCES_REGEXPR('[|]' IN GENRES) + 1 "GENRE_COUNT"
   , "GENRES"
-FROM "MOVIELENS"."public.aa.movielens.cds::data.MOVIES"
+FROM "MOVIELENS"."public.aa.movielens.service::data.MOVIES"
 ORDER BY "GENRE_COUNT" ASC;
 ```
 
@@ -278,7 +287,7 @@ SELECT
 FROM (
   SELECT
     OCCURRENCES_REGEXPR('[|]' IN "GENRES") + 1 "GENRE_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.MOVIES"
+  FROM "MOVIELENS"."public.aa.movielens.service::data.MOVIES"
 )
 GROUP BY "GENRE_COUNT" ORDER BY "GENRE_COUNT";
 ```
@@ -304,7 +313,7 @@ Now let's have a look at the tags distribution using the following SQL:
 SELECT COUNT(1)
 FROM (
   SELECT "MOVIEID", COUNT(1) as "TAG_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.TAGS"
+  FROM "MOVIELENS"."public.aa.movielens.service::data.TAGS"
   GROUP BY "MOVIEID"
 );
 ```
@@ -317,7 +326,7 @@ Now let's determine the tag count distribution per movies using the following SQ
 SELECT "TAG_COUNT", COUNT(1)
 FROM (
   SELECT "MOVIEID", COUNT(1) as "TAG_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.TAGS"
+  FROM "MOVIELENS"."public.aa.movielens.service::data.TAGS"
   GROUP BY "MOVIEID"
 )
 GROUP BY "TAG_COUNT" ORDER BY "TAG_COUNT";
@@ -338,6 +347,7 @@ Using the results provided by the previous SQL statements, provide an answer to 
 [VALIDATE_4]
 [ACCORDION-END]
 
+
 [ACCORDION-BEGIN [Step 8: ](Ratings - Check the movie distribution)]
 
 Now let's determine the rating count distribution per movies using the following SQL:
@@ -346,7 +356,7 @@ Now let's determine the rating count distribution per movies using the following
 SELECT "RATING_COUNT", COUNT(1) as "MOVIE_COUNT"
 FROM (
   SELECT "MOVIEID", COUNT(1) as "RATING_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
   GROUP BY "MOVIEID"
 )
 GROUP BY "RATING_COUNT" ORDER BY "RATING_COUNT" asc;
@@ -369,7 +379,7 @@ SELECT DISTINCT
   COUNT(*) OVER( ) AS "CATEGORY_COUNT"
 FROM (
   SELECT "MOVIEID", COUNT(1) as "RATING_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
   GROUP BY "MOVIEID"
 )
 GROUP BY "RATING_COUNT";
@@ -400,7 +410,7 @@ Now let's determine the rating count distribution per user using the following S
 SELECT "RATING_COUNT", COUNT(1) as "USER_COUNT"
 FROM (
   SELECT "USERID", COUNT(1) as "RATING_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
   GROUP BY "USERID"
 )
 GROUP BY "RATING_COUNT" ORDER BY 1 DESC;
@@ -421,7 +431,7 @@ SELECT DISTINCT
   COUNT(*) OVER( ) AS "CATEGORY_COUNT"
 FROM (
   SELECT "USERID", COUNT(1) as "RATING_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
   GROUP BY "USERID"
 )
 GROUP BY "RATING_COUNT" ORDER BY 1 DESC;
@@ -450,7 +460,7 @@ Now let's determine the rating notation distribution using the following SQL:
 
 ```SQL
 SELECT "RATING", COUNT(1) as "RATING_COUNT"
-FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
 GROUP BY "RATING" ORDER BY 1 DESC;
 ```
 
@@ -474,7 +484,7 @@ Now let's determine the users distribution per rating notation using the followi
 ```SQL
 SELECT "RATING",  COUNT(1) as "USERS_COUNT" FROM (
   SELECT "USERID", "RATING", COUNT(1) as RATING_COUNT
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
   GROUP BY "USERID", "RATING"
 )
 GROUP BY "RATING" ORDER BY 1 DESC;
@@ -500,7 +510,7 @@ Now let's determine the movies distribution per rating notation using the follow
 ```SQL
 SELECT "RATING",  COUNT(1) as MOVIES_COUNT FROM (
   SELECT "MOVIEID", "RATING", COUNT(1) as RATING_COUNT
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
   GROUP BY "MOVIEID", "RATING"
 )
 GROUP BY "RATING" ORDER BY 1 DESC;
@@ -591,4 +601,3 @@ However, while using this data will, you will need to pay attention to the follo
 
 [DONE]
 [ACCORDION-END]
-

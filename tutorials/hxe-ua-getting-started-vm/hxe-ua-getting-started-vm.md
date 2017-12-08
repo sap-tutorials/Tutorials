@@ -25,147 +25,210 @@ How to start the server, change the default passwords to secure your system, and
 
 For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
 
-[ACCORDION-BEGIN [Step 1: ](Start SAP HANA 2.0, express edition)]
+[ACCORDION-BEGIN [Step 1: ](Start your VM.)]
 
-1. Start the hypervisor and power on (or click **Play** on) your express edition VM.
+Open your hypervisor application.
 
-2. At the **`hxehost` login** prompt, enter **`hxeadm`**
+Power on (or click **Play** on) your SAP HANA 2.0, express edition virtual appliance (`hxe.ova` or `hxexsa.ova`).
 
-    >**Tip:** You can also log in remotely. The IP address of the VM is displayed on the welcome screen.
-
-3. For **Password** enter the temporary password **`HXEHana1`**  
-
-    ![Entering temporary password](hxe2_02_login1.PNG)
-
-4. When prompted for **current (UNIX) password**, enter the temporary password again: **`HXEHana1`**
-
-    ![Entering temporary password again](hxe2_02_login2.PNG)
-
-
+![Start the VM](hxe2_vm_start.PNG)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Change Default Password)]
+[ACCORDION-BEGIN [Step 2: ](Make a note of the IP address of the VM.)]
 
-1. When prompted for **New password**, enter a strong password with at least 8 characters. If your password is not strong enough, the system logs you off and you must log in again. SAP HANA, express edition requires a very strong password that complies with these rules:
+The IP address of the VM is displayed on the login screen.
 
-    - At least 8 characters
+![IP address](hxe2_02_login0.PNG)
 
-    - At least 1 uppercase letter
-
-    - At least 1 lowercase letter
-
-    - At least 1 number
-
-    - Can contain special characters, but not _&grave;_ (`backtick`), _&#36;_ (dollar sign),  _&#92;_ (backslash), _&#39;_ (single quote), or _&quot;_ (double quotation marks).
-
-    - Cannot contain dictionary words
-
-    - Cannot contain simplistic or systematic values, like strings in ascending or descending numerical or alphabetical order
-
-    Strong password example: **`E15342GcbaFd`** Do not use this password example, since it is public and not secure. This example is for illustrative purposes only and must not be used on your system. Define your own strong password.
-
-2. When prompted to **Retype new password**, enter your strong password again.
-
-    ![Entering strong password](hxe2_02_login3.PNG)
-
-
+>**Note**: If the IP address and other information in this image does not show, power-off and restart your VM.
 
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 3: ](Determine how you're going to log in.)]
 
-[ACCORDION-BEGIN [Step 3: ](Specify HANA Database Master Password)]
+Your login method depends on the language and keyboard layout of your laptop's physical keyboard:
 
-1. When prompted for New HANA database master password, enter a strong password. Make a note of this password, since you'll need it later. You can enter the same password you used earlier, or a new password. If you are entering a new password, see the password rules above.
+| Keyboard Layout        | Login Method  |
+| ---------------- | -------------------------------------------|
+| English QWERTY            | Log in directly, or log in with SSH client.|
+| Other keyboards           | Log in with SSH client.|
 
-    Entering the HANA database master password changes the SYSTEM user password. If you are installing the server + applications virtual machine, it also changes the `XSA_ADMIN` and `XSA_DEV` user passwords.
+If your laptop's physical keyboard is not an English QWERTY keyboard (for example if your laptop has a French AZERTY keyboard or German QWERTZ keyboard) you need to log in using an SSH client such as `PuTTY`. If you don't use an SSH Client, you will have difficulty entering the username and password.
 
-2. When prompted to **Confirm "HANA database master password"**, enter the strong password again.
-
-    ![Entering HANA database master password](hxe2_02_login7.PNG)  
-
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ]((Server + Applications VM Only) Enter Proxy Settings)]
-
-1. When prompted **Do you need to use the proxy server to access the internet?** enter Y or N.
-
-    - Contact your IT administrator for your company's proxy settings. If you are inside a corporate firewall, you might use a proxy for connecting to http and https servers.
-
-    - If **Y**, enter your proxy host name, proxy port number, and (if desired) a comma-separated list of hosts that do not need a proxy. Proxy host name needs a fully qualified domain name.
-
-
+If you log in directly, you may not able to cut and paste text, and your session may be missing a scrollbar. If you need the convenience of cut and paste functionality, and a scrollbar, SAP recommends you log in with an SSH client.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ]((Server + Applications VM Only) Wait for XSA Configuration)]
+[ACCORDION-BEGIN [Step 4: ]((Users with English QWERTY physical keyboards) Log in directly.)]
 
-Decide whether you want to wait for XSA configuration to complete before starting the server. When prompted to Wait for XSA configuration to finish, enter Y if you want to wait. Enter N if you want XSA to configure in the background after server configuration completes.
+If your laptop has an English QWERTY physical keyboard, enter information directly into the VM. If you have a different type of keyboard, skip to the next step.
 
+>**Note**: English QWERTY users have the option of logging in via an SSH client too, but SSH client login is mandatory for users with other keyboards.
 
+At the `hxehost` login prompt, enter `hxeadm`.
+
+For **Password**, enter the temporary password `HXEHana1`.
+
+![Entering temporary password](hxe2_02_login1.PNG)
+
+When prompted for **(current) UNIX password**, enter the temporary password again: `HXEHana1`:
+
+![Entering temporary password again](hxe2_02_login2.PNG)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Complete Installation)]
+[ACCORDION-BEGIN [Step 5: ]((Users with other physical keyboards) Log in with an SSH client.)]
 
-1. When prompted to **Proceed with configuration?** enter **Y**.    
+This task assumes you're using `PuTTY`.
 
-2. Wait for the success message **Congratulations! SAP HANA, express edition 2.0 is configured**.
+>**Note**: English QWERTY users have the option of logging in via an SSH client too, but SSH client login is mandatory for users with other keyboards.
+
+  - Open `PuTTY`. Enter the IP of your SAP HANA express edition host in the **Host Name** field, `22` in the **Port** field, and a name for the session under **Saved Sessions**.
+
+    ![SSH client login](hxe2_02_putty.PNG)
+
+  - Under **Connections > Data**, in **Auto-login username** enter `hxeadm`. Under **When username is not specified**, select `Prompt`.
+
+    ![SSH client login 2](hxe2_02_putty2.PNG)
+
+  - **Save** your session and click **Open** to connect to your SAP HANA, express edition server on your VM.
+
+    - At the `hxehost` login prompt, enter `hxeadm`
+
+  - For **Password** enter the temporary password `HXEHana1`
+
+  - When prompted for **(current) UNIX password**, enter the temporary password again: `HXEHana1`
+
+>**Note**: Steps after this point apply to both login methods. If you logged in directly, or use an SSH client, the following steps apply to you.
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Enter new password.)]
+
+When prompted for **New password**, enter a strong password with at least 8 characters. If your password is not strong enough, the system logs you off and you must log in again.
+
+>**Tip**: SAP HANA, express edition requires a very strong password that complies with these rules:
+
+  - At least 8 characters
+
+  - At least 1 uppercase letter
+
+  - At least 1 lowercase letter
+
+  - At least 1 number
+
+  - Can contain special characters, but not _&grave;_ (`backtick`), _&#36;_ (dollar sign),  _&#92;_ (backslash), _&#39;_ (single quote), or _&quot;_ (double quotation marks).
+
+  - Cannot contain dictionary words
+
+  - Cannot contain simplistic or systematic values, like strings in ascending or descending numerical or alphabetical order
+
+Strong password example: `E15342GcbaFd`. Do not use this password example, since it is public and not secure. This example is for illustrative purposes only and must not be used on your system. Define your own strong password.
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Retype new password.)]
+
+When prompted to Retype new password, enter your strong password again.
+
+![Entering strong password](hxe2_02_login3.PNG)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Enter new HANA database master password.)]
+
+When prompted for New HANA database master password, enter a strong password. Make a note of this password, since you'll need it later. You can enter the same password you used in step 4 or 5, or a new password. If you are entering a new password, see the password rules in step 6.
+
+Entering the HANA database master password changes the SYSTEM user password. If you are installing the server + applications virtual machine, it also changes the `XSA_ADMIN` and `XSA_DEV` user passwords.
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Confirm HANA database master password.)]
+
+When prompted to **Confirm HANA database master password**, enter the strong password again.
+
+![Entering HANA database master password](hxe2_02_login7.PNG)  
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ]((Server + Applications VM Only) Enter Proxy Settings))]
+
+When prompted **Do you need to use the proxy server to access the internet?** enter Y or N.
+
+Contact your IT administrator for your company's proxy settings. If you are inside a corporate firewall, you might use a proxy for connecting to http and https servers.
+
+If **Y**, enter your proxy host name, proxy port number, and (if desired) a comma-separated list of hosts that do not need a proxy. Proxy host name needs a fully qualified domain name.
+
+Make sure the Non Proxy Host list includes `localhost`, `hxehost`, and `hxehost.localdomain`.
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 11: ]((Server + Applications VM Only) Wait for XSA configuration.)]
+
+Decide whether you want to wait for XSA configuration to complete before starting the server. When prompted to Wait for XSA configuration to finish, enter **Y** if you want to wait.
+
+Enter **N** if you want XSA to configure in the background after server configuration completes.
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 12: ](Complete the installation.)]
+
+When prompted to **Proceed with configuration?** enter **Y**.
+
+Wait for the success message **Congratulations! SAP HANA, express edition 2.0 is configured**.
 
 SAP HANA 2.0, express edition is now running.
 
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 13: ](Record `hxehost` IP address.)]
+
+Record the `hxehost` IP address so you can use it later when connecting to the server using SAP HANA client tools.
+
+>**Note**: This is the same IP address you entered if you logged in using an SSH client.
+
+In your VM, at the command prompt, enter:
+
+```bash
+/sbin/ifconfig
+```
+
+In the following example, the IP address is 172.25.86.13:
+
+![VM IP address](hxe_ua_ip_address.PNG)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ]((Optional) Change Keyboard Layout)]
+[ACCORDION-BEGIN [Step 14: ]((Optional) Change Keyboard Layout)]
 
-The virtual console and X11 window system defaults to a `us` (`QWERTY`) keyboard layout. If you are not an English user, or not a `QWERTY` keyboard user, you can change the keyboard layout at this point.
+If you have a non-English or non-QWERTY keyboard, and if you used an SSH client to log in to SAP HANA 2.0, express edition, at this point you have the option of changing the keyboard layout of the VM to match your physical keyboard. This will enable you to enter content directly into the VM, rather than through an SSH Client. Note, however, that the SSH Client still has some advantages (including a scroll bar) that the VM window lacks.
 
 1. At the command prompt, enter:
+
     ```
     sudo localectl set-keymap <keymap>
     ```
     For example, to set the keyboard layout to German, enter:
+
     ```bash
     sudo localectl set-keymap de
     ```
     To set the keyboard to a `non-QWERTY` layout like `AZERTY`, enter:
+
     ```bash
     sudo localectl set-keymap azerty
     ```
 
 2. To check your current keyboard layout settings, enter:
-    ```
+
+    ```bash
     sudo localectl status
     ```
 
-
-
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Record Your hxehost IP Address)]
-
-Record the `hxehost` IP address so you can use it later when connecting to the server using SAP HANA client tools.
-
-1. At the command prompt, enter:  
-    ```bash
-    /sbin/ifconfig
-    ```
-
-2. Locate the IP address, listed under the **`eth0`** interface as **`inet addr`**.  
-
-    In the following example, the IP address is 172.25.86.13:  
-
-    ![VM IP address](hxe_ua_ip_address.PNG)
-
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Edit /etc/hosts File)]    
+[ACCORDION-BEGIN [Step 15: ](Edit /etc/hosts File)]    
 
 The `hxehost` IP address is private to the VM. In order for applications on your laptop (like your web browser) to access `hxehost`, add the `hxehost` IP address to your laptop's hostname map. The hostname map is your laptop's **`/etc/hosts`** file. You must edit **`/etc/hosts`** if you want to access any XS Advanced applications, or use HANA Cockpit, from your laptop.
 
@@ -199,7 +262,7 @@ If you installed the VM installation package to a Mac or Linux machine, follow t
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test XSC)]
+[ACCORDION-BEGIN [Step 16: ](Test XSC)]
 
 Test your XSC installation.
 
@@ -215,33 +278,22 @@ Test your XSC installation.
 
     ![XSEngine Success Page](hxe_xs_success.PNG)
 
+>**Note**: SAP plans to remove SAP HANA extended application services, classic model (XSC) and the corresponding SAP HANA Repository with the next major product version of SAP HANA (all editions).
 
+>These components will be removed:
 
-[ACCORDION-END]
+> - SAP HANA extended application services, classic model
+> - SAP HANA Repository (XS classic)
+> - SAP HANA Studio (Development, Modeling, and Administration perspectives)
+> - SAP HANA Web-based Development Workbench (XS classic)
 
-[ACCORDION-BEGIN [Step 11: ](Test XSA (Server + Applications Virtual Machine Only))]
-
-If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your XSA installation.
-
->**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
-
-1. Go back to your VM. Log in to XSA services:
-
-    ```bash
-    xs login -u XSA_ADMIN -p "<password>" -s SAP
-    ```  
-
-    You specified this password when you were prompted for **HANA database master password** at the beginning of this tutorial.
-
-2. Check for an API endpoint showing `https://hxehost:39030`. If you see this entry, XSA installed correctly.
-
-
+>SAP strongly advises you to plan the transition of existing content and applications from XSC to SAP HANA extended application services, advanced model (XS Advanced).
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Test WEBIDE (Server + Applications Virtual Machine Only))]
+[ACCORDION-BEGIN [Step 17: ](Test Web IDE (Server + Applications Virtual Machine Only))]
 
-If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your WEBIDE installation.
+If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your Web IDE installation.
 
 >**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
 
@@ -271,11 +323,39 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
     If you are prompted to change your password, follow the instructions.
 
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 18: ](Test XSA (Server + Applications Virtual Machine Only))]
+
+If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your XSA installation.
+
+>**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
+
+1. Go back to your VM. Log in to XSA services:
+
+    ```bash
+    xs login -u XSA_ADMIN -p "<password>" -s SAP
+    ```  
+
+    You specified this password when you were prompted for **HANA database master password** at the beginning of this tutorial.
+
+2. Check for an API endpoint showing `https://hxehost:39030`. If you see this entry, XSA installed correctly.
+
+>**Note**: In certain situations you may not see the API endpoint `https://hxehost:39030`. Instead, the system prompts you to enter the API URL manually. If you're prompted for the API URL, do this:
+
+> - At the `API_URL` prompt, enter `https://hxehost:39030`.
+
+>    The `Authenticating...` message appears. Wait until authentication completes.
+
+>    ![Entering API endpoint manually](XSA_endpoint.PNG)
+
+> - When the system prints `API Endpoint`, `User`, `Org`, and `Space`, this means XSA installed correctly.
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Test Cockpit (Server + Applications Virtual Machine Only))]
+
+[ACCORDION-BEGIN [Step 19: ](Test Cockpit (Server + Applications Virtual Machine Only))]
 
 If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your Cockpit installation.
 
@@ -313,7 +393,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Optional Configuration: Test your Installation using the HANA Eclipse Plugin)]
+[ACCORDION-BEGIN [Step 20: ](Optional Configuration: Test your Installation using the HANA Eclipse Plugin)]
 
 **Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
 
@@ -331,7 +411,7 @@ Download and install the HANA Eclipse Plugin to your host OS (not the VM guest) 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Optional Configuration: Install Text Analysis Files)]
+[ACCORDION-BEGIN [Step 21: ](Optional Configuration: Install Text Analysis Files)]
 
 If you are using SAP HANA 2.0, express edition in a language other than English or German, you can download the **Text analysis files for additional languages** package in the Download Manager.
 
@@ -339,50 +419,61 @@ The Text analysis files for additional languages package contains the text analy
 
 1. Run the `hxe_gc` memory management script to free up available VM memory.
 
-    - Log in as `hxeadm` and execute:
-        ```bash
-        cd ~bin
-        ./hxe_gc.sh
+    - In your VM, log in as `hxeadm` and enter:
+
+        ```
+        cd /usr/sap/HXE/home/bin
         ```
 
-    - Follow the prompts.        
+    - Execute:
 
-2. Use the Download Manager to download the **Text analysis files for additional languages** package,`additional_lang.tgz`.
+        ```
+        hxe_gc.sh
+        ```
 
-3. Locate the download package:
+    - When prompted for System database user (SYSTEM) password, enter the New HANA database master password you specified during SAP HANA, express edition installation. The cleanup process runs. The command prompt returns when the cleanup process is finished.          
 
-    | If you downloaded using...        | Then do this...  |
-    | ---------------- | -------------|
-    | The Download Manager (GUI Mode) on your laptop            | Transfer `additional_lang.tgz` from your laptop's Save Directory to `~/Downloads` on your VM.|
-    | The VM's built-in Download Manager (Console Mode)           | Locate `additional_lang.tgz` in the VM's Save Directory (`~/Downloads` by default). |
-
-
-4. As `hxeadm`, navigate to `/hana/shared/HXE/global/hdb/custom/config/lexicon`.
-
-5. Extract the contents of `additional_lang.tgz` to this directory:
+2. In your VM, download `additional_lang.tgz` using the built-in Download Manager. From the same directory where you ran `hxe_gc` (`/usr/sap/HXE/home/bin`) enter:
 
     ```bash
-    tar -xvzf <download_path>/additional_lang.tgz
+    HXEDownloadManager_linux.bin linuxx86_64 vm additional_lang.tgz
     ```
-**Tip:** If your tables do not use a full text index, or if your tables use a full text index but contain very little data, you can save about 120 MB of memory if you turn off the standalone text analysis preprocessor, and activate the embedded text analysis preprocessor.
 
-    Stop the standalone preprocessor:
+3. In your VM, update folder permissions on the `lang` folder.
+
+    Navigate to `/hana/shared/<SID>/global/hdb/custom/config/lexicon/`
+
+    Enter this command:
+
+    ```bash
+    chmod –R 755 lang
+    ```
+
+4. In your VM, extract `additional_lang.tgz`.
+
+    This step extracts `<download_path>/additional_lang.tgz` to `/hana/shared/HXE/global/hdb/custom/config/lexicon`. Enter this command:  
+
+    ```bash
+    tar -xvzf /usr/sap/HXE/home/Downloads/additional_lang.tgz -C /hana/shared/HXE/global/hdb/custom/config/lexicon
+    ```      
+
+    >**Tip:** If your tables do not use a full text index, or if your tables use a full text index but contain very little data, you can save about 120 MB of memory if you turn off the standalone text analysis preprocessor, and activate the embedded text analysis preprocessor.
+
+    - Stop the standalone preprocessor:
 
     ```bash
     alter system alter configuration ('daemon.ini','SYSTEM') set ('preprocessor','instances') = '0' with reconfigure;
     ```
 
-    Start the embedded preprocessor:
+    - Start the embedded preprocessor:
 
     ```bash
     alter system alter configuration ('preprocessor.ini','SYSTEM') set ('general','embedded') = 'true' with reconfigure;
     ```
 
-
-
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Optional Configuration: Install SAP Enterprise Architecture Designer (Server + Applications Virtual Machine Only))]   
+[ACCORDION-BEGIN [Step 22: ](Optional Configuration: Install SAP Enterprise Architecture Designer (Server + Applications Virtual Machine Only))]   
 
 If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), you have the option of installing the SAP Enterprise Architecture Designer (SAP EA Designer) tool.
 
@@ -419,7 +510,7 @@ Note that you have to option of using the Download Manager (GUI Mode) on your la
 2. In your VM, download `eadesigner.tgz` using the built-in Download Manager. From the same directory where you ran `hxe_gc` (`/usr/sap/HXE/home/bin`) enter:
 
     ```bash
-    HXEDownloadManager_linux.bin linuxx86_64 installer eadesigner.tgz
+    HXEDownloadManager_linux.bin linuxx86_64 vm eadesigner.tgz
     ```
 
     ![Built-in Download Manager](eadesigner_download.PNG)
@@ -464,15 +555,11 @@ Note that you have to option of using the Download Manager (GUI Mode) on your la
 
 10. When prompted for `XSA administrator (XSA_ADMIN) password`, enter the `HANA database master password` you specified when you installed SAP HANA, express edition.    
 
-11. When prompted for EA Designer administrator password, enter a strong password. Follow the password requirements displayed on-screen.
-
-12. Confirm the EA Designer administrator password.
-
-13. When prompted to `Proceed with installation`, enter **Y**. Wait for installation to finish. A success message displays when installation completes.
+11. When prompted to `Proceed with installation`, enter **Y**. Wait for installation to finish. A success message displays when installation completes.
 
     ![EA Designer installation success message](eadesigner_success.PNG)   
 
-14. Enter the following command to confirm the status of SAP EA Designer:
+12. Enter the following command to confirm the status of SAP EA Designer:
 
     ```bash
     xs apps
@@ -490,27 +577,23 @@ Note that you have to option of using the Download Manager (GUI Mode) on your la
 
     ![eadesigner apps](eadesigner_xsapps.PNG)  
 
-15. Note the URL for `eadesigner`. Launch a web browser on your laptop and enter the URL in your web browser address bar.
+13. Note the URL for `eadesigner`. Launch a web browser on your laptop and enter the URL in your web browser address bar.
 
     The SAP EA Designer login page displays.
 
-    ![EA Designer login](eadesigner_login.PNG)  
+    ![EA Designer login](eadesigner_login_021.PNG)  
 
-16. Enter the following credentials:
+14. Click **Logon with your XSA User** on this logon page.
 
-    - User Name - ADMIN
+15. Enter `XSA_ADMIN` user and password.
 
-    >**Note**: Account names managed by SAP EA Designer are case-sensitive.
+You are logged in as administrator of SAP EA Designer.
 
-    - Password - Enter the password you created when you first installed SAP EA Designer.
-
-17. Change the password when prompted. You are logged in as administrator of SAP EA Designer.
-
-    ![EA Designer login](eadesigner_firstpage.PNG)
+![EA Designer login](eadesigner_firstpage.PNG)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Optional Configuration: Install SAP HANA Interactive Education (Server + Applications Virtual Machine Only))]       
+[ACCORDION-BEGIN [Step 23: ](Optional Configuration: Install SAP HANA Interactive Education (Server + Applications Virtual Machine Only))]       
 
 SAP HANA Interactive Education (SHINE) makes it easy to learn how to build applications on SAP HANA Extended Application Services Advanced Model (XSA).
 
@@ -547,7 +630,7 @@ SHINE is a separate download in the Download Manager. To use SHINE, you need the
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](Optional Configuration: Installing SAP HANA External Machine Learning Library)]
+[ACCORDION-BEGIN [Step 24: ](Optional Configuration: Installing SAP HANA External Machine Learning Library)]
 
 The SAP HANA External Machine Learning Library is an application function library (AFL) supporting the integration of Google `TensorFlow`, as an external machine learning framework, with SAP HANA, express edition.
 
@@ -580,9 +663,44 @@ The SAP HANA External Machine Learning Library is an application function librar
 
     For more information on the SAP HANA External Machine Learning Library, see the SAP HANA documentation collection.    
 
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 25: ](Optional Configuration: Installing SAP HANA Smart Data Integration)]
+
+Install the SAP HANA client package and SAP HANA smart data integration on an SAP HANA, express edition system.
+
+You need to run a script and an installer executable to complete the necessary steps to install SAP HANA smart data integration. The script enables the Data Provisioning Server on SAP HANA, express edition, as well as deploys the data provisioning delivery unit that enables monitoring and other capabilities. The installer executable that you run installs the Data Provisioning Agent that provides connectivity between SAP HANA, express edition and your remote data sources.
+
+> **Note:** The current version of SAP HANA, express edition supports only one Data Provisioning Agent per machine.
+
+1. Use the Download Manager to download the SAP HANA smart data integration installation package, `sdi.tgz`.
+
+2. Extract the contents of `sdi.tgz` to a temporary directory.
+
+3. Run `HANA_EXPRESS_20/install_sdi.sh` as `hxeadm`.
+
+    This enables the DP Server on HANA and deploys the monitoring delivery unit.
+
+4. To install the Data Provisioning Agent, run `<extract directory>/HANA_EXPRESS_20/DATA_UNITS/HANA_DP_AGENT_20_LIN_X86_64/hdbinst.exe`.
+
+    You are prompted to supply the following information (default values are given):
+
+    - Installation path [`/usr/sap/dataprovagent`]
+
+    - Enter User name for Agent service (user must exist)
+
+    - Enter Agent Listener Port [5050]
+
+    - Enter Agent Administration Port [5051]
+
+    - Enter Shared directory for Agent Group (optional)
+
+    - Enter Custom JRE directory (to use bundled JRE, leave it blank)
+
+5. The SAP JVM is bundled with the Data Provisioning Agent and used as the default Java Runtime Environment. You can choose to update the version of the SAP JVM used by an installed agent, or replace it with a custom Java Runtime Environment.    
 
 [ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Best Practice: ](Set the Global Memory Allocation Limit)]
 

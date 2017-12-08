@@ -19,26 +19,26 @@ tags: [tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Multistore Tables)]
+[ACCORDION-BEGIN [Step 1: ](Multi-store Tables)]
 
-Multistore tables are a type of SAP HANA column tables which can have partitions in the in-memory DEFAULT COLUMN STORAGE as well as other partitions in Dynamic Tiering EXTENDED STORAGE.
+Multi-store tables are a type of SAP HANA column tables which can have partitions in the in-memory DEFAULT COLUMN STORAGE as well as other partitions in Dynamic Tiering EXTENDED STORAGE.
 
-Multistore data management allows for administration tasks to be carried out more freely including:
+Multi-store data management allows for administration tasks to be carried out more freely including:
 
   - Moving data between EXTENDED or DEFAULT STORAGE
   - Creating or dropping partitions directly in either EXTENDED or DEFAULT STORAGE
   - Repartitioning a table, if new partitioning does not move data between DEFAULT and EXTENDED STORAGE
 
-One function of multistore tables is data aging which allows you to "age out" older data using Dynamic Tiering. Every multistore table contains at least two partitions: one of which is in the in-memory DEFAULT STORAGE and the other is in disk based EXTENDED STORAGE. This allows you to still access and update older data without managing two separate systems for current or older data and is cost effective as well. There may be some older data that isn't frequently used and so the "cold" data is moved into extended storage and the "hot" new and frequently used data remains in-memory.
+One function of multi-store tables is data aging which allows you to "age out" older data using Dynamic Tiering. Every multi-store table contains at least two partitions: one of which is in the in-memory DEFAULT STORAGE and the other is in disk based EXTENDED STORAGE. This allows you to still access and update older data without managing two separate systems for current or older data and is cost effective as well. There may be some older data that isn't frequently used and so the "cold" data is moved into extended storage and the "hot" new and frequently used data remains in-memory.
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Partitioning Types and Creating a Multistore Table)]
+[ACCORDION-BEGIN [Step 2: ](Partitioning Types and Creating a Multi-store Table)]
 
 The types of partitioning include: range partitioning, hash-range and range-range partitioning, and time-selection partitioning.
 
-In this module we will create a multistore table that uses single level Range partitioning. With single level range partitioning, at least one range partition must be in the DEFAULT STORAGE and one range partition in extended storage. Only range partitions are supported when it comes to single-level partitioning. The diagram below shows the ranges that will be defined.
+In this module we will create a multi-store table that uses single level Range partitioning. With single level range partitioning, at least one range partition must be in the DEFAULT STORAGE and one range partition in extended storage. Only range partitions are supported when it comes to single-level partitioning. The diagram below shows the ranges that will be defined.
 
 ![Range Partition](MultistoreRange1.png)
 
@@ -48,7 +48,7 @@ In this module we will create a multistore table that uses single level Range pa
 
 /Ignore this text. Used for formatting purposes./
 
-Since multistore tables have been implemented on top of existing HANA and Dynamic Tiering capabilities, existing limitations of HANA and Dynamic Tiering are also inherited by multistore tables. The following are unsupported data types:
+Since multi-store tables have been implemented on top of existing HANA and Dynamic Tiering capabilities, existing limitations of HANA and Dynamic Tiering are also inherited by multi-store tables. The following are unsupported data types:
 
   - TIMESTAMP
   - SHORTTEXT
@@ -61,7 +61,7 @@ The following are limitations set on table and index definitions:
   - Several clauses specific to in-memory tables are not supported, other clauses will only apply to either the in-memory partition or the EXTENDED STORAGE partitions
   - No triggers on partitions in EXTENDED STORAGE
 
-To create the single level range partitioned multistore table, copy the following into the SQL console and execute it.
+To create the single level range partitioned multi-store table, copy the following into the SQL console and execute it.
 
 ``` sql
 CREATE COLUMN TABLE "TPCH"."LINEITEM_MS" (
@@ -102,12 +102,12 @@ PARTITION BY RANGE ("L_ORDERKEY")
   After executing the "`CREATE TABLE`" statement, refresh `TPCH` schema and make sure you see "`LINEITEM_MS`" as seen below.
 
 ![LINEITEM_MS](LINEITEM_MS.png)
->Note: Notice how the multistore table does not show an "`EXTENDED`" or other attributes in Studio
+>Note: Notice how the multi-store table does not show an "`EXTENDED`" or other attributes in Studio
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Importing Data in to a Multistore Table)]
+[ACCORDION-BEGIN [Step 3: ](Importing Data in to a Multi-store Table)]
 To import data into the newly created table, execute the following in a SQL Console.
 
 ``` sql
@@ -120,8 +120,8 @@ Confirm the table has been filled with data after executing by right clicking on
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Viewing Multistore Partitions)]
-There are several database administration views available to provide information for partitioned tables, including multistore tables. Some of the information available includes:
+[ACCORDION-BEGIN [Step 4: ](Viewing Multi-store Partitions)]
+There are several database administration views available to provide information for partitioned tables, including multi-store tables. Some of the information available includes:
 
 - What partitions exist for a given table
 - Memory utilization for in-memory partitions in DEFAULT STORAGE

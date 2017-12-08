@@ -98,13 +98,13 @@ Run the **Download Manager**. If your system displays a security warning when yo
 **Note:**
 If you are inside a corporate firewall, you will be prompted for your proxy settings. Contact your IT administrator.
 
-![Download Manager](download_manager_sp02_pl01.png)
+![Download Manager](download_manager_02.png)
 
 In the **Image** pull-down, select **Binary Installer**. Click **Browse** and select where you want your downloads to be saved. Then select one or more of the following packages:
 
 - **Server only installer** - Downloads **`hxe.tgz`**; the SAP HANA 2.0, express edition server with Application Function Library. **This file is necessary for installing SAP HANA 2.0, express edition**.  
 
-- **Applications** - Downloads the optional package **`hxexsa.tgz`**; XSA, Web IDE, SAP HANA cockpit, and EA Designer. Download this and **`hxe.tgz`** to install those applications.  
+- **Applications** - Downloads the optional package **`hxexsa.tgz`**; XSA, Web IDE, and SAP HANA cockpit. Download this and **`hxe.tgz`** to install those applications.  
 
 - **Text analysis files for additional languages** - For languages other than English and German, these files are required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the **Server only** and **Applications** packages.) Download this and **`hxe.tgz`** to install these files. For the text analysis files installation procedure, see *Install Text Analysis Files* at [Start Using SAP HANA 2.0, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html).
 
@@ -152,6 +152,14 @@ In the **Image** pull-down, select **Binary Installer**. Click **Browse** and se
 
 Click the **Download** button to being your download.
 
+> **Note:** SAP plans to remove SAP HANA extended application services, classic model (XSC) and the corresponding SAP HANA Repository with the next major product version of SAP HANA.
+> These components will be removed:
+> - SAP HANA extended application services, classic model
+> - SAP HANA Repository (XS classic)
+> - SAP HANA Studio (Development, Modeling, and Administration perspectives
+> - SAP HANA Web-based Development Workbench (XS classic)
+> SAP strongly advises you to plan the transition of existing content and applications from XSC to SAP HANA extended application services, advanced model (XS Advanced).
+
  [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4:](Extract Your Downloaded Packages)]
@@ -159,7 +167,7 @@ Click the **Download** button to being your download.
 **Note:**
 You may have to disable your firewall for SAP HANA 2.0, express edition to install successfully.
 
-Navigate to the directory where you wish to extract the installation files. Extract the contents of `hxe.tgz`, `hxexsa.tgz` (if you are installing the Applications package), `eadesigner.tgz` (if you are install SAP EA Designer), `eml.tgz` (if you are installing the External Machine Learning Library), `hsa.tgz` (if you are installing streaming analytics), and `shine.tgz` (if you are installing SHINE):
+Navigate to the directory where you wish to extract the installation files. Extract the contents of `hxe.tgz`, `hxexsa.tgz` (if you are installing the Applications package), `eadesigner.tgz` (if you are install SAP EA Designer), `eml.tgz` (if you are installing the External Machine Learning Library), `hsa.tgz` (if you are installing streaming analytics), `shine.tgz` (if you are installing SHINE), `sdi.tgz` (if you are installing smart data integration), and `dpagent_linux_x86_64.tgz` (if you are installing the Data Provisioning Agent):
 
 ```bash
 tar -xvzf <download_path>/hxe.tgz
@@ -184,6 +192,15 @@ tar -xvzf <download_path>/hsa.tgz
 ```bash
 tar -xvzf <download_path>/shine.tgz
 ```
+
+```bash
+tar -xvzf <download_path>/sdi.tgz
+```
+
+```bash
+tar -xvzf <download_path>/dpagent_linux_x86_64.tgz
+```
+
 
 >**Tip:**
 > Run the tar command from the command shell as shown, rather than using a GUI-based extraction tool.

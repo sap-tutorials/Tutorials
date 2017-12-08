@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 
 
 ## Next Steps
-  - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+  - [Create a Dimension Graphical View](http://www.sap.com/developer/tutorials/xsa-graphical-view.html)
 
 ## Details
 ### You will learn  
@@ -78,4 +78,4 @@ Formerly known as HANA Runtime Tools or `HRTT` in previous versions, the Databas
 ---
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Create a Dimension type Graphical View](http://www.sap.com/developer/tutorials/xsa-graphical-view.html)

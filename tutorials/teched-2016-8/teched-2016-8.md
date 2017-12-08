@@ -2,7 +2,7 @@
 title: Translate your app into multiple languages
 description: Use the SAP Cloud Platform Translation Hub to automatically generate i18n (internationalization) files for multiple languages
 primary_tag: products>sap-translation-hub>sap-translation-hub
-tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide, products>sap-translation-hub>sap-translation-hub ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide, products>sap-translation-hub ]
 ---
 
 ## Prerequisites  

@@ -2,13 +2,14 @@
 title: Using the SAP Fiori for iOS Mentor app
 description: Familiarize yourself with the SDK's companion app 'SAP Fiori for iOS Mentor'
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-ios
+primary_tag: operating-system>ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
 
 ## Prerequisites  
- - **Proficiency:** Intermediate
- - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 8.3 or higher
+- **Proficiency:** Intermediate
+- **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+- **SAP Cloud Platform SDK for iOS:** Version 2.0
  <!-- - **Tutorials:** [Implement a new Table View Controller](https://www.sap.com/developer/tutorials/fiori-ios-scpms-deliveryapp-part3.html) -->
 
 

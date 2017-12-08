@@ -1,5 +1,5 @@
 ---
-title: Display your Collaborative Filtering results in SAPUI5
+title: Display your Collaborative Filtering results
 description: Understand and implement the basics of an SAPUI5 application to your `Movielens` "Collaborative Filtering" results
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -44,8 +44,6 @@ This will open the ***SAP Web IDE*** where you have previously created your appl
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
-
-For the moment we will just add the "Get Dataset List" functions and the "Forecast" similar to what we did in the previous tutorial.
 
 Create a new file **`collaborative.controller.js`** in `webapp/controller` either using the "File" menu or using the right click menu.
 
@@ -279,7 +277,7 @@ Open the `webapp/view/collaborative.view.xml` file and add the following code:
   </Panel>
   <Panel headerText="Recommendations With APL" expandable="true" expanded="true">
     <table:Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="recommendation_apl"
-      rows="{ path: '/APL_MODEL_USERS_RESULTS'}">
+      rows="{ path: '/APL_RECO_MODEL_USERS_RESULTS'}">
       <table:columns>
         <table:Column sortProperty="MOVIEID" width="10%">
           <Label text="Movie ID"/>
@@ -319,7 +317,7 @@ Open the `webapp/view/collaborative.view.xml` file and add the following code:
   </Panel>
   <Panel headerText="Recommendations With PAL" expandable="true" expanded="true">
     <table:Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="recommendation_pal"
-      rows="{ path: '/PAL_MODEL_USERS_RESULTS'}">
+      rows="{ path: '/PAL_APRIORI_MODEL_USERS_RESULTS'}">
       <table:columns>
         <table:Column sortProperty="MOVIEID" width="10%">
           <Label text="Movie ID"/>
@@ -376,9 +374,16 @@ The view will contain:
 
 [ACCORDION-BEGIN [Step 4: ](Extend the default view)]
 
+Now let's enable the new view.
+
 Edit the `demo.view.xml` file located in the `webapp/view`.
 
-Inside the `<detailPages>` element, uncomment the following element like this:
+Inside the `<detailPages>` element, remove the XML comment tag for the view by replacing this:
+
+```xml
+<!--<mvc:XMLView viewName="mlmovielens.view.collaborative"/>-->
+```
+by this:
 
 ```xml
 <mvc:XMLView viewName="mlmovielens.view.collaborative"/>
@@ -426,4 +431,3 @@ Make sure you check the <a href="https://github.com/SAPDocuments/Tutorials/blob/
 
 [DONE]
 [ACCORDION-END]
-

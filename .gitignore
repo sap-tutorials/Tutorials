@@ -24,6 +24,10 @@ node_modules
 *.log
 *.sqlite
 
+# Backup files       #
+######################
+*.bak
+
 # OS generated files #
 ######################
 .DS_Store

@@ -28,7 +28,7 @@ You can choose any name you want and click on **Create Repository**:
 
 ![Create a New repo](2.png)
 
-Once created, click on the **Copy to Clipboard** icon so you have the URL handy. Keep this tab **open**.
+Once created, click on the **Clone or download** and **copy the URL** so you have it handy. Keep this tab **open**.
 
 ![Create a New repo](3.png)
 
@@ -37,7 +37,7 @@ Once created, click on the **Copy to Clipboard** icon so you have the URL handy.
 
 [ACCORDION-BEGIN [Step 2: ](Connect to SAP Web IDE for SAP HANA)]
 
-Open a new tab on the web browser and enter the following address `https://hxehost:53075`. If you get a security warning because the certificate is self-signed, click on **Proceed to `hxehost`**:
+Open a new **incognito browser** on the web browser and enter the following address `https://hxehost:53075`. If you get a security warning because the certificate is self-signed, click on **Proceed to `hxehost`**:
 
 ![Proceed to webIDE](proceed.png)
 
@@ -54,14 +54,14 @@ Then copy the URL from your Git Hub repository:
 
 ![Clone git](5.png)
 
-Enter your GitHub username and password when prompted:
+Enter your GitHub username and password if prompted:
 
 ![Clone git](6.png)
 
 
 You should see a single project in your workspace:
 
-![Project in workspace](11.png)
+![Project in workspace](cloned.png)
 
 [DONE]
 [ACCORDION-END]

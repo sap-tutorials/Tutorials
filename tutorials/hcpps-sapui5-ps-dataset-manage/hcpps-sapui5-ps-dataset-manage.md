@@ -1,6 +1,6 @@
 ---
 title: Manage your registered "Datasets"
-description: You will extend your application with additional "Dataset" SAP Cloud for predictive services
+description: You will extend your application with additional "Dataset" SAP Predictive services
 primary_tag: products>sap-cloud-platform-predictive-service
 tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
@@ -120,7 +120,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 The controller will contain a function where:
 
-  - we process the call to the "Dataset List" SAP Cloud for predictive services and return the list of registered dataset.
+  - we process the call to the "Dataset List" SAP Predictive services and return the list of registered dataset.
 
 The view will contain:
 
@@ -225,7 +225,7 @@ Et voilà!
 
 You will add to the controller a function where:
 
-  - we process the call to the "Dataset Description" SAP Cloud for predictive services and return the dataset detailed description.
+  - we process the call to the "Dataset Description" SAP Predictive services and return the dataset detailed description.
   - this function will be triggered either on a click or row change event on the table added previously
 
 You will add to the view:
@@ -365,7 +365,7 @@ Et voilà!
 
 You will add to the controller a function where:
 
-  - we process the call to the "Delete Dataset" SAP Cloud for predictive services.
+  - we process the call to the "Delete Dataset" SAP Predictive services.
 
 You will add to the view:
 
@@ -447,7 +447,7 @@ Et voilà!
 
 You will add to the controller a function where:
 
-  - we process the call to the "Update Dataset Variables" SAP Cloud for predictive services.
+  - we process the call to the "Update Dataset Variables" SAP Predictive services.
 
 You will add to the view:
 

@@ -17,7 +17,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 - How to add a destination to your SAPUI5 application
 - Run your SAPUI5 application
 &nbsp;
-**Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Cloud for predictive services.
+**Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Predictive services.
 For more content on SAPUI5, you can check the dedicated <a href="https://sapui5.hana.ondemand.com/#/topic/3da5f4be63264db99f2e5b04c5e853db" target="new">tutorials</a> section available on the <a href="https://sapui5.hana.ondemand.com" target="new">SAPUI5 documentation</a>.
 
 ### Time to Complete
@@ -49,7 +49,7 @@ Description          | `SAP HANA XS OData Movielens services`
 URL                  | your SAP HANA XS OData URL
 Proxy Type           | `Internet`
 Authentication       | `BasicAuthentication`
-User                 | `TRIAL`
+User                 | `MOVIELENS_USER`
 Password             | `Welcome17Welcome17`
 
 > ### **Note**:
@@ -58,13 +58,16 @@ Password             | `Welcome17Welcome17`
 
 &nbsp;
 
-Then you will need to add the following properties to the destination using the ***New Property*** button:
+Before clicking on **Save**, you will need to add the following properties to the destination using the ***New Property*** button:
 
 Property Name          | Value
 ---------------------- | --------------
 `WebIDEEnabled`        | `true`
 `WebIDEUsage`          | `odata_gen,odata_xs`
 `WebIDEAdditionalData` | `full_url`
+
+> ### **Note**:
+> The ***New Property*** button is not available is you are not in edit mode.
 
 Click on **Save**
 
@@ -94,7 +97,7 @@ You will get access to the **SAP Web IDE** main page:
 
 [ACCORDION-BEGIN [Step 3: ](Create your application using the SAPUI5 template)]
 
-Click on **New Project from Template** in the ***Create Project*** section
+Using the **File** menu, navigate **New** > **Project from Template**.
 
 ![Project](08.png)
 
@@ -127,9 +130,11 @@ View Name            | `demo`
 
 Your project is created! Let's continue, and add the "destinations" previously created in the SAP Cloud Platform cockpit as our project "data source".
 
-Open the `manifest.json` file and switch to the ***Descriptor Editor*** (using the tabs at the bottom of the screen).
+On left side tree, expand the **`movielens\webapp`** item, and right click on the `manifest.json` file, and select **Open with** \ **Descriptor Editor**.
 
-Then select the ***Data sources*** tab and click on the ![plus](0-plus.png) icon as highlighted on the screen:
+You can also switch to the ***Descriptor Editor*** (using the tabs at the bottom of the screen).
+
+Then select the ***Data sources*** tab at the top, and click on the ![plus](0-plus.png) icon as highlighted on the screen:
 
 ![Project](13.png)
 
@@ -143,20 +148,22 @@ You should now have one entry in your ***OData Service*** list.
 
 ![Project](15.png)
 
-Now, select ***Models*** and click on the ![plus](0-plus.png) icon.
+[DONE]
+[ACCORDION-END]
 
-Select "***Select data source***" radio, then pick ***`data.xsodata`***, check the ***Set as default model for the application***.
+[ACCORDION-BEGIN [Step 5: ](Add your data source as default model)]
+
+Now, select ***Models*** and click on the ![plus](0-plus.png) icon.
 
 ![Project](16.png)
 
+Select ***Select data source*** radio, then pick ***`data.xsodata`***, check the ***Set as default model for the application***.
+
+![Project](16-0.png)
+
 Then click on ***OK***.
 
-Now, let's update the model setting:
-
-Field Name           | Value
--------------------- | --------------
-Preload              | false
-Binding Mode         | `TwoWay`
+Now, let's update the model setting by setting **Preload** to **false** and **Binding Mode** to **`TwoWay`** as displayed on the screenshot.
 
 ![Project](16-1.png)
 
@@ -167,7 +174,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Update the default view: demo.view.xml)]
+[ACCORDION-BEGIN [Step 6: ](Update the default view: demo.view.xml)]
 
 The default view created is located in `webapp/view/demo.view.xml`. We will update the view to prepare for the next steps.
 
@@ -182,7 +189,7 @@ Open the `webapp/view/demo.view.xml` file and replace the existing code with the
         <content>
           <List itemPress="onDetailListItemPress">
             <items>
-              <StandardListItem title="Collaborative Filtering" type="Navigation" custom:to="detail_collaborativer"/>
+              <StandardListItem title="Collaborative Filtering" type="Navigation" custom:to="detail_collaborative"/>
               <StandardListItem title="Content-based Filtering" type="Navigation" custom:to="detail_contentbased"/>
             </items>
           </List>
@@ -190,10 +197,10 @@ Open the `webapp/view/demo.view.xml` file and replace the existing code with the
       </Page>
     </masterPages>
     <detailPages>
-      <Page id="detail" title="Moveilen Recommendation">
+      <Page id="detail" title="Moveilens Recommendation">
         <content></content>
       </Page>
-      <Page id="detail_collaborativer" title="Collaborative Filtering">
+      <Page id="detail_collaborative" title="Collaborative Filtering">
         <content>
           <!--<mvc:XMLView viewName="mlmovielens.view.collaborative"/>-->
         </content>
@@ -213,7 +220,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Update the default controller: demo.controller.js)]
+[ACCORDION-BEGIN [Step 7: ](Update the default controller: demo.controller.js)]
 
 The default controller is located in `webapp/controller/demo.controller.js`. We will update the view to prepare for the next steps.
 
@@ -283,4 +290,3 @@ Make sure you check the <a href="https://github.com/SAPDocuments/Tutorials/blob/
 
 [DONE]
 [ACCORDION-END]
-

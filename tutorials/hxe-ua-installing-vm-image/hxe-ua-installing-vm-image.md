@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
  - **Proficiency:** Beginner
  - **Tutorials:** [Select the correct SAP HANA 2.0, express edition version](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-version.html)
 
- **Tip:**  This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html). 
+**Tip:** This tutorial is available as a [video](https://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
 
 ## Next Steps
  - [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
@@ -123,15 +123,15 @@ Register your copy of SAP HANA, express edition to access the download manager.
 
     > **Note:** If you have an SAP login, click the Login icon at the top of the page to populate the registration form automatically.
 
-    ![Registration Page](HXE_register.PNG)
+    ![Registration Page](HXE_register.PNG "Test Title")
 
     The **Registration Success** page displays. (You will also receive an email indicating successful registration.)
 
-3. On the Registration Success page, under **1A. ON-PREMISE INSTALLATION**, click the download manager that matches your system: Linux or Windows.
+3. On the Registration Success page, under **1A. ON-PREMISE INSTALLATION**, click the download manager link that matches your system: Linux or Windows.
 
     If you have a Mac, or another type of machine, click `Platform-independent` for a platform-independent download manager.
 
-    ![Registration Success page](hxe_register_success_21.PNG)
+    ![Registration Success page](hxe_register_success_211.PNG)
 
 4. Save the download manager file to your laptop and open it.
 
@@ -152,7 +152,7 @@ Use the Download Manager (GUI mode) to download a server-only virtual machine pa
 
 2. In Download Manager, in the **Image** pull-down, select **Virtual Machine**.
 
-    ![Download Manager](VM_Download_Manager_SPS02_PL01.png)    
+    ![Download Manager](VM_Download_Manager_SPS02_PL0201.png)    
 
 3. Specify a save directory. Click **Browse** and select a directory where your downloads will be saved.
 
@@ -172,7 +172,7 @@ Use the Download Manager (GUI mode) to download a server-only virtual machine pa
 
     If downloading additional packages now, select one or more of the following:
 
-    - **Text analysis files for additional languages** - Downloads `additional_lang.tgz`. For languages other than English and German, this package is required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the **Server only virtual machine** and **Server + applications virtual machine** packages.) For the text analysis files installation procedure, see [Start Using SAP HANA 2.0, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html).
+    - **Text analysis files for additional languages** - Downloads `additional_lang.tgz`. For languages other than English and German, this package is required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the **Server only virtual machine** and **Server + applications virtual machine** packages.)
 
     - **SAP Enterprise Architecture Designer** - This optional package is only valid on server + application virtual machine. File name is `eadesigner.tgz`. SAP EA Designer lets you capture, analyze, and present your organization's landscapes, strategies, requirements, processes, data, and other artifacts in a shared environment.
 
@@ -212,7 +212,7 @@ Use the Download Manager (GUI mode) to download a server-only virtual machine pa
 
     - **SAP HANA smart data integration** - SAP HANA smart data integration provides functionality to access source data, and to provision, replicate, and transform that data in SAP HANA on premise, or in the cloud. Download file name is `sdi.tgz`. <!--Needs link to Mike Madsen's tutorial when available-->
 
-    - **SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64)** - The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources. Download file name is `dpagent_linux_x86_64.tgz`. <!--Needs link to Mike Madsen's tutorial when available-->       
+    - **SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64)** - The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources. Download file name is `dpagent_linux_x86_64.tgz`. <!--Needs link to Mike Madsen's tutorial when available-->   
 
 6. Click the **Download** button.
 
@@ -257,7 +257,7 @@ Run the Download Manager in console mode if you're used to a command line interf
     Command syntax is:
 
     ```bash
-    HXEDownloadManager [( [-h] | [-d <save_directory>] [-- ph <proxy_host>] [--pp <proxy_port>] <platform> <image> <file>...)]
+    HXEDownloadManager [( [-h|-X] | [-d <save_directory>] [--ph <proxy_host>] [--pp <proxy_port>] <platform> <image> <file>... )]
     ```
 
     Command arguments are:
@@ -265,10 +265,12 @@ Run the Download Manager in console mode if you're used to a command line interf
     | Argument         | Description  |
     | ---------------- | -------------|
     | -h            | Print this help. |
+    | -x            | Print extended help. |
     | -d <save_directory>      | Directory where to save the download file. Default is `%USERPROFILE%\Downloads` on Windows; `~/Downloads` on Linux.      |
     | --ph <proxy_host> | Proxy host name or IP address.      |
     | --pp <proxy_port> | Proxy host name or IP address.      |
     | `<platform>`      | HANA platform. Valid values are `linuxx86_64`, `linuxppc64le`.     |
+    | `<image>`         | Type of image to download. Valid values for `linuxx86_64` platform are: `vm`, `installer`. Valid values for `linuxppc64le` platform are: `installer`.      |
     | `<file>`          | File(s) to download.      |
 
     Valid <file> values for `linuxx86_64` platform and VM image:
@@ -289,7 +291,7 @@ Run the Download Manager in console mode if you're used to a command line interf
     | clients_windows.zip           | Client download package for Windows machines. Use the client packages to access developed SAP HANA, express edition applications from a client PC |   
     | clients_mac.tgz           | Client download package for Mac. Use the client packages to access developed SAP HANA, express edition applications from a client PC.  |
     | `sdi.tgz`           | SAP HANA smart data integration download package. SAP HANA smart data integration provides functionality to access source data, and to provision, replicate, and transform that data in SAP HANA on premise, or in the cloud.  |
-    | `dpagent_linux_x86_64.tgz`           | SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64) download package. The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources.  |        
+    | `dpagent_linux_x86_64.tgz`           | SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64) download package. The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources.  |
 
 5. Download one or more files.
 

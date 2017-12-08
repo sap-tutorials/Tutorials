@@ -14,7 +14,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 ## Details
 ### You will learn
- - How to use the "Forecast" SAP Cloud for predictive services from a REST Client in both synchronous and asynchronous mode.
+ - How to use the "Forecast" SAP Predictive services from a REST Client in both synchronous and asynchronous mode.
  The asynchronous mode will create a job with a status that you can check the status for completion.
 
 ### Time to Complete
@@ -211,7 +211,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 }
 ```
 
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 
 &nbsp;
 
@@ -322,7 +322,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   "referenceDate" : "2001-12-01"
 }
 ```
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 
 &nbsp;
 
@@ -400,7 +400,7 @@ URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast/`<code><b>I
 
 ### Optional
 
-For more details on the SAP Cloud for predictive services, you can check the following the [`Forecasts APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/8c4150c7711a4d1b865ea9628597d3e0.html) documentation.
+For more details on the SAP Predictive services, you can check the following the [`Forecasts APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/8c4150c7711a4d1b865ea9628597d3e0.html) documentation.
 
 ## Next Steps
 - [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)

@@ -21,14 +21,15 @@
     "url": "https://github.com/SAPDocuments/Tutorials/issues"
   },
   "homepage": "https://github.com/SAPDocuments/Tutorials#readme",
-  "devDependencies": {
-    "color-log": "0.0.2",
-    "command-line-args": "^3.0.0",
-    "inquirer": "^1.0.3",
-    "markdown-link-check": "^1.0.1",
-    "markdown-spellcheck": "^0.10.0",
+  "dependencies": {
+    "html-entities": "^1.2.1",
+    "color-log": "^0.0.2",
+    "command-line-args": "^4.0.7",
+    "inquirer": "^3.3.0",
+    "markdown-link-check": "^3.1.4",
+    "markdown-spellcheck": "^1.0.0",
     "mkdirp": "^0.5.1",
-    "progress": "^1.1.8",
-    "recursive-readdir": "^2.0.0"
+    "progress": "^2.0.0",
+    "recursive-readdir": "^2.2.1"
   }
 }

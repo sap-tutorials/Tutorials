@@ -1,6 +1,6 @@
 ---
 title: Setup your trial SAP HANA MDC instance
-description: Learn how to setup a SAP HANA MDC instance to be used with the SAP Cloud for predictive services
+description: Learn how to setup a SAP HANA MDC instance to be used with the SAP Predictive services
 primary_tag: products>sap-cloud-platform
 tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-hana, products>sap-cloud-platform  ]
 ---
@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
   - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - [Enable, deploy and configure the SAP Predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Details
 ### You will learn
@@ -75,6 +75,15 @@ Click on **Stop**.
 Once the database is stopped, Click on **Start**.
 
 ![Trial Database Overview](06.png)
+
+> ### **Note**:
+>**If you don't see your HANA MDC stopping right away in the Events log, it is probably because the initial backup is still pending.**
+>
+>The initial backup may take up to an hour to execute, and your HANA MDC will not restart until it is completed.
+>
+>Therefore you can proceed with the next steps. However, at some point, the backup will complete, and your instance will be shutdown, therefore you will need to start it.
+
+&nbsp;
 
 [ACCORDION-END]
 

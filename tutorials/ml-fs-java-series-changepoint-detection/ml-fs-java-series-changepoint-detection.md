@@ -120,7 +120,6 @@ try {
 
 As you can notice, the Java import statements are missing along with request expected form data.
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Get Your API key )]
@@ -132,7 +131,6 @@ To get to your API key, click on the ![key](00-key.png) icon in the top right co
 The following pop-up should appear. Click on the **Copy API Key** button and save it in a text editor.
 
 ![SAP API Business Hub](06.png)
-
 
 [ACCORDION-END]
 
@@ -151,7 +149,6 @@ You can also close the **Welcome Page**.
 
 ![SAP API Business Hub](07.png)
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a New Project in the Eclipse IDE)]
@@ -165,7 +162,6 @@ Click on **Finish**.
 > **Note**: make sure you pick `JavaSE-1.8` as your project **Execution Runtime JRE**. This should help avoid coding compliance and  runtime issues with the provided code.
 
 ![Eclipse](08.png)
-
 
 [ACCORDION-END]
 
@@ -212,7 +208,6 @@ import java.net.URL;
 ```
 
 Save your code.
-
 
 [ACCORDION-END]
 
@@ -333,7 +328,6 @@ You can now run the code by either pressing **ALT**+**SHIFT**+**X**,**J** or by 
 Enter the relevant parameters as detailed in the console.
 
 You can use your favorite spreadsheet tool to generate your series of data or use the default input provided.
-
 
 [ACCORDION-END]
 
@@ -494,7 +488,6 @@ public class DemoChangePointDetection {
 	}
 }
 ```
-
 
 [ACCORDION-END]
 

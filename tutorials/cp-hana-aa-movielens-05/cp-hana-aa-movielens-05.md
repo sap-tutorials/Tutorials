@@ -30,7 +30,7 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 ![SAP HANA Web-based Development Workbench](02.png)
 
 > ### **Note**
->**Make sure the currently connected user is TRIAL and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
+>**Make sure the currently connected user is `MOVIELENS_USER` and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
 
 &nbsp;
 
@@ -54,7 +54,7 @@ SELECT DISTINCT
   , NTH_VALUE("TIMESTAMP",1) over( PARTITION BY "USERID"  ORDER BY "TIMESTAMP" DESC, "MOVIEID") AS "LAST_RATING_DATE"
   , NTH_VALUE("RATING"   ,1) over( PARTITION BY "USERID"  ORDER BY "TIMESTAMP" DESC, "MOVIEID") AS "LAST_RATING"
   , NTH_VALUE("MOVIEID"  ,1) over( PARTITION BY "USERID"  ORDER BY "TIMESTAMP" DESC, "MOVIEID") AS "LAST_MOVIEID"
-FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS";
+FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS";
 ```
 
 Now a ***movie rating summary***:
@@ -74,9 +74,9 @@ SELECT DISTINCT
   , NTH_VALUE("TIMESTAMP",1) over( PARTITION BY "T1"."MOVIEID"  ORDER BY "T1"."TIMESTAMP" DESC, "T1"."MOVIEID") AS "LAST_RATING_DATE"
   , NTH_VALUE("RATING"   ,1) over( PARTITION BY "T1"."MOVIEID"  ORDER BY "T1"."TIMESTAMP" DESC, "T1"."MOVIEID") AS "LAST_RATING"
   , NTH_VALUE("USERID"   ,1) over( PARTITION BY "T1"."MOVIEID"  ORDER BY "T1"."TIMESTAMP" DESC, "T1"."MOVIEID") AS "LAST_USERID"
-FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS" "T1"
-LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.cds::data.MOVIES" "T2" on ("T1".MOVIEID = "T2".MOVIEID)
-LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.cds::data.LINKS"  "T3" on ("T1".MOVIEID = "T3".MOVIEID);
+FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS" "T1"
+LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" "T2" on ("T1".MOVIEID = "T2".MOVIEID)
+LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.LINKS"  "T3" on ("T1".MOVIEID = "T3".MOVIEID);
 ```
 
 And finally, the ***rating details***:
@@ -94,9 +94,9 @@ SELECT
   , "T3"."TMDBID"       
   , "T1"."RATING"  
   , "T1"."TIMESTAMP"
-FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS" "T1"
-LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.cds::data.MOVIES" "T2" on ("T1".MOVIEID = "T2".MOVIEID)
-LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.cds::data.LINKS"  "T3" on ("T1".MOVIEID = "T3".MOVIEID);
+FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS" "T1"
+LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" "T2" on ("T1".MOVIEID = "T2".MOVIEID)
+LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.LINKS"  "T3" on ("T1".MOVIEID = "T3".MOVIEID);
 ```
 
 > ### **Note**
@@ -120,7 +120,7 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 ![SAP HANA Web-based Development Workbench](02.png)
 
 > ### **Note**
->**Make sure the currently connected user is TRIAL and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
+>**Make sure the currently connected user is `MOVIELENS_USER` and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
 
 &nbsp;
 
@@ -141,18 +141,18 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 
 &nbsp;
 
-Create a new file named **`data.xsodata`** in the **`public/aa/movielens/cds`** package.
+Create a new file named **`data.xsodata`** in the **`public/aa/movielens/service`** package.
 
 Paste the following content in the console.
 
 ```JavaScript
 service {
-
   // expose the model result views
-  "MOVIELENS"."APL_MODEL_USERS_RESULTS" as "APL_MODEL_USERS_RESULTS" key ("USERID" , "RANK");
-  "MOVIELENS"."PAL_MODEL_USERS_RESULTS" as "PAL_MODEL_USERS_RESULTS" key ("USERID" , "RANK");
-  "MOVIELENS"."APL_MODEL_ITEMS_RESULTS" as "APL_MODEL_ITEMS_RESULTS" key ("MOVIEID", "RANK");
-  "MOVIELENS"."PAL_MODEL_ITEMS_RESULTS" as "PAL_MODEL_ITEMS_RESULTS" key ("MOVIEID", "RANK");
+  "MOVIELENS"."APL_RECO_MODEL_USERS_RESULTS"    as "APL_RECO_MODEL_USERS_RESULTS" key ("USERID" , "RANK");
+  "MOVIELENS"."APL_RECO_MODEL_ITEMS_RESULTS"    as "APL_RECO_MODEL_ITEMS_RESULTS" key ("MOVIEID", "RANK");
+
+  "MOVIELENS"."PAL_APRIORI_MODEL_ITEMS_RESULTS" as "PAL_APRIORI_MODEL_ITEMS_RESULTS" key ("MOVIEID", "RANK");
+  "MOVIELENS"."PAL_APRIORI_MODEL_USERS_RESULTS" as "PAL_APRIORI_MODEL_USERS_RESULTS" key ("USERID" , "RANK");
 
   // expose the summary user and movie views
   "MOVIELENS"."SUMMARY_RATING_USER"       as "SUMMARY_RATING_USER"     key ("USERID");
@@ -168,8 +168,8 @@ Save the file using the ![save](0-save.png) icon from the menu or press `CTRL+S`
 Check the message console, and make sure there is no errors. The following messages should be displayed:
 
 ```
-[xx:xx:xx] File /public/aa/movielens/cds/data.xsodata created successfully.
-[xx:xx:xx] File /public/aa/movielens/cds/data.xsodata saved & activated successfully.
+[xx:xx:xx] File /public/aa/movielens/service/data.xsodata created successfully.
+[xx:xx:xx] File /public/aa/movielens/service/data.xsodata saved & activated successfully.
 ```
 
 Now, let's run the `XS OData` service using the execute icon ![run](0-run.png) from the menu.
@@ -177,7 +177,7 @@ Now, let's run the `XS OData` service using the execute icon ![run](0-run.png) f
 Append the following text to your XS OData URL:
 
 ```HTML
-/APL_MODEL_USERS_RESULTS(USERID=1,RANK=1)/TITLE?$format=json
+/APL_RECO_MODEL_USERS_RESULTS(USERID=1,RANK=1)/TITLE?$format=json
 ```
 
 You should get the first recommendation from the APL algorithm results for user id 1.
