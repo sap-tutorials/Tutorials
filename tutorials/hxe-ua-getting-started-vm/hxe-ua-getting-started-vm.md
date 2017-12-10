@@ -439,16 +439,22 @@ The Text analysis files for additional languages package contains the text analy
     HXEDownloadManager_linux.bin linuxx86_64 vm additional_lang.tgz
     ```
 
-3. In your VM, navigate to the Downloads directory. Enter:
+3. In your VM, update folder permissions on the `lang` folder.
+
+    Navigate to `/hana/shared/<SID>/global/hdb/custom/config/lexicon/`
+
+    Enter this command:
 
     ```bash
-    cd /usr/sap/HXE/home/Downloads
+    chmod –R 755 lang
     ```
 
-4. In your VM, extract the contents of `additional_lang.tgz` to `/hana/shared/HXE/global/hdb/custom/config/lexicon`. Enter:  
+4. In your VM, extract `additional_lang.tgz`.
+
+    This step extracts `<download_path>/additional_lang.tgz` to `/hana/shared/HXE/global/hdb/custom/config/lexicon`. Enter this command:  
 
     ```bash
-    tar -xvzf additional_lang.tgz -C /hana/shared/HXE/global/hdb/custom/config/lexicon
+    tar -xvzf /usr/sap/HXE/home/Downloads/additional_lang.tgz -C /hana/shared/HXE/global/hdb/custom/config/lexicon
     ```      
 
     >**Tip:** If your tables do not use a full text index, or if your tables use a full text index but contain very little data, you can save about 120 MB of memory if you turn off the standalone text analysis preprocessor, and activate the embedded text analysis preprocessor.

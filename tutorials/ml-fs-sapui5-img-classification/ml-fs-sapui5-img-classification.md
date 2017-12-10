@@ -307,7 +307,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 				<footer>
 					<Toolbar width="100%">
 						<content>
-							<u:FileUploader id="idFileUpload_0" buttonOnly="true" buttonText="SAPUI5 FileUploader with Built-in XHR" name="files" uploadUrl="{demo>/url}"
+							<u:FileUploader id="idFileUpload_0" buttonOnly="true" buttonText="Upload Picture" name="files" uploadUrl="{demo>/url}"
 								useMultipart="true" sendXHR="true" sameFilenameAllowed="true" uploadOnChange="true" uploadStart="fileUploadStart"
 								uploadComplete="fileUploadComplete" change="fileUploadChange">
 								<u:headerParameters>
@@ -315,7 +315,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 									<u:FileUploaderParameter name="Accept" value="application/json"/>
 								</u:headerParameters>
 							</u:FileUploader>
-							<u:FileUploader id="idFileUpload_2" buttonOnly="true" buttonText="SAPUI5 FileUploader with Custom XHR" change="fileUploadChange_xhr"></u:FileUploader>
+							<!--<u:FileUploader id="idFileUpload_2" buttonOnly="true" buttonText="Upload Picture with Custom XHR" change="fileUploadChange_xhr"></u:FileUploader>-->
 						</content>
 					</Toolbar>
 				</footer>
@@ -347,6 +347,9 @@ sap.ui.define([
 			// var oBusyIndicator = new sap.m.BusyDialog();
 			// oBusyIndicator.open();
 			var oView = this.getView();
+
+			var oBusyIndicator = new sap.m.BusyDialog();
+			oBusyIndicator.open();
 
 			var file = oControlEvent.getParameters().files[0];
 			var data = new window.FormData();
@@ -390,8 +393,8 @@ sap.ui.define([
 					} else {
 						MessageToast.show("Error " + xhr.status + " : " + xhr.readyState + " : " + xhr.response);
 					}
-					// // keep a reference in the view to close it later
-					// this.oBusyIndicator = oBusyIndicator;
+					// keep a reference in the view to close it later
+					oBusyIndicator.close();
 				}
 			});
 			//setting request method //API endpoint for API sandbox
@@ -465,7 +468,7 @@ sap.ui.define([
 
 Click on the **Run** icon ![Run Applications](00-run.png) or press `ALT+F5`.
 
-In the bar at the bottom, click on **SAPUI5 `FileUploader` with Built-in XHR** to pick your local picture.
+In the bar at the bottom, click on **Upload Picture** to pick your local picture.
 
 The service will be called, and the result displayed in a table.
 
@@ -473,8 +476,24 @@ You can also try with a zip that contains multiple images.
 
 ![Result](16.png)
 
-> ### **Note:** if you are experiencing issue like a 405 error or the following message : `This service requires at least 1 file. Please put your file(s) into the files field of the POST request`, please use the **SAPUI5 `FileUploader` with Custom XHR**
-> We are currently investigating this issue related to XHR use in the SAPUI5 `FileUploader` control. (see GitHub issue: https://github.com/SAPDocuments/Tutorials/issues/1864)
+> ### **Note:**
+> If you are experiencing issue like a 405 error or the following message :
+>
+>**This service requires at least 1 file. Please put your file(s) into the files field of the POST request**
+>
+>In the `demo.view.xml`, replace:
+>
+> ```XML
+<!--<u:FileUploader id="idFileUpload_2" buttonOnly="true" buttonText="Upload Picture with Custom XHR" change="fileUploadChange_xhr"></u:FileUploader>-->
+```
+> by
+> ```XML
+<u:FileUploader id="idFileUpload_2" buttonOnly="true" buttonText="Upload Picture with Custom XHR" change="fileUploadChange_xhr"></u:FileUploader>
+```
+>
+>This will add an extra button **Upload Picture with Custom XHR** that you can use instead.
+>
+>We are currently investigating this issue related to XHR use in the SAPUI5 `FileUploader` control. (see GitHub issue: https://github.com/SAPDocuments/Tutorials/issues/1864)
 >
 &nbsp;
 

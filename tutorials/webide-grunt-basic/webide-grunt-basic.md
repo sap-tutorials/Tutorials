@@ -59,7 +59,7 @@ In the file enter the following code:
   "description": "Grunt build",
   "private": true,
   "devDependencies": {
-      "@sap/grunt-sapui5-bestpractice-build": "1.3.19"
+      "@sap/grunt-sapui5-bestpractice-build": "^1.3.19"
    }
 }
 ```

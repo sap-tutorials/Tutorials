@@ -13,7 +13,7 @@ tags: [ products>sap-businessobjects-lumira, tutorial>beginner ]
 
 ## Details
 ### You will learn  
-How to download the SAP BusinessObjects Lumira Desktop, and install it on your personal computer with Microsoft Windows operating system.
+How to download the SAP BusinessObjects Lumira Desktop, and install it on your personal computer with Microsoft Windows operating system. 
 
 ### Time to Complete
 **10 Min**.
