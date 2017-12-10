@@ -164,17 +164,12 @@ Click **Close** to dismiss the dialog.
 
 [ACCORDION-BEGIN [Step 6: ](Switch from SAPOData to SAPOfflineOData)]
 
-First you need to change the **Online** behavior to **Offline** usage. Open the `DeliveryServiceDataAccess.swift` file under `MyDeliveries > Model`.
+First you need to change the **Online** behavior to **Offline** usage. Open the `AppDelegate.swift` file.
 
 Add the import declaration for `SAPOfflineOData` just below the already existing `SAPOData` import declaration:
 
 ```swift
-// other imports
 import SAPOfflineOData
-
-class DeliveryServiceDataAccess {
-    // code
-}
 ```
 
 [DONE]
@@ -183,163 +178,202 @@ class DeliveryServiceDataAccess {
 
 [ACCORDION-BEGIN [Step 7: ](Add Service Declaration to Offline)]
 
-Since the data service is used offline, you need to add a service declaration for offline usage. In order to do so, add the following line below `let service: DeliveryService<OnlineODataProvider>`
+Since the data service is used offline, you need to add a service declaration for offline usage. In order to do so, add a new service declaration `deliveryServiceOffline` just below the existing service declaration:
 
 ```swift
-let offlineService: DeliveryService<OfflineODataProvider>
+var deliveryService: DeliveryService<OnlineODataProvider>!
+var deliveryServiceOffline: DeliveryService<OfflineODataProvider>!
 ```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add Offline OData Provider)]
+[ACCORDION-BEGIN [Step 8: ](Change OData initializer)]
 
-To instantiate the above service, an offline OData provider is needed. Below the field `service`, add a constant `offlineODataProvider` of type `OfflineODataProvider`:
-
-```swift
-let offlineODataProvider: OfflineODataProvider
-```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Change initializer)]
-
-Replace the `init()` initializer with the following:
+Scroll down to method `configureOData(urlSession:serviceRoot:)` and add the following at the bottom of the method:
 
 ```swift
-init(urlSession: SAPURLSession) {
-    let odataProvider = OnlineODataProvider(serviceName: "DeliveryService", serviceRoot: Constants.appUrl, sapURLSession: urlSession)
+// Here come's the offline part
+var offlineParameters = OfflineODataParameters()
+offlineParameters.enableRepeatableRequests = true
 
-    // Disables version validation of the backend OData service
-    // TODO: Should only be used in demo and test applications
-    odataProvider.serviceOptions.checkVersion = false
+// create offline OData provider
+let offlineODataProvider = try! OfflineODataProvider(
+    serviceRoot: URL(string: serviceRoot.absoluteString)!,
+    parameters: offlineParameters,
+    sapURLSession: urlSession
+)
 
-    self.service = DeliveryService(provider: odataProvider)
-
-    // To update entity force to use X-HTTP-Method header
-    self.service.provider.networkOptions.tunneledMethods.append("MERGE")
-
-    // --------------
-
-    // Here come's the offline part
-    var offlineParameters = OfflineODataParameters()
-    offlineParameters.enableRepeatableRequests = true
-
-    // create offline OData provider
-    self.offlineODataProvider = try! OfflineODataProvider(
-        serviceRoot: Constants.appUrl,
-        parameters: offlineParameters,
-        sapURLSession: urlSession
+try! offlineODataProvider.add(
+    definingQuery: OfflineODataDefiningQuery(
+        name: CollectionType.deliveryStatus.rawValue,
+        query: "/\(CollectionType.deliveryStatus.rawValue)",
+      automaticallyRetrievesStreams: false
     )
+)
+try! offlineODataProvider.add(
+    definingQuery: OfflineODataDefiningQuery(
+        name: CollectionType.packages.rawValue,
+        query: "/\(CollectionType.packages.rawValue)",
+        automaticallyRetrievesStreams: false
+    )
+)
 
-    try! offlineODataProvider.add(definingQuery: OfflineODataDefiningQuery(name: CollectionType.deliveryStatus.rawValue, query: "/\(CollectionType.deliveryStatus.rawValue)", automaticallyRetrievesStreams: false))
-    try! offlineODataProvider.add(definingQuery: OfflineODataDefiningQuery(name: CollectionType.packages.rawValue, query: "/\(CollectionType.packages.rawValue)", automaticallyRetrievesStreams: false))
-
-    self.offlineService = DeliveryService(provider: self.offlineODataProvider)
-}
+deliveryServiceOffline = DeliveryService(provider: offlineODataProvider)
 ```
 > The first part is untouched, and handles the online requests. The second part handles is added, and addresses the offline requests.
 
 > To initialize the offline OData provider, you first set up an instance of `OfflineODataParameters`. With this instance, you set the custom header, and ensure an OData request is applied only once in case of multiple executions.
 
-> Then, a reference to the offline data provider is set to the field `offlineODataProvider`.
+> Then, a reference to the offline data provider is set to the variable `offlineODataProvider`.
 
 > The two defining queries are added to the offline OData provider to define the initial set of data.
 
-> Finally, the `offlineService` field is set to reference the `DeliveryService` based on the offline data provider.
+> Finally, the `deliveryServiceOffline` field is set to reference the `DeliveryService` based on the offline data provider.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Maintain State of the Offline Store)]
+[ACCORDION-BEGIN [Step 9: ](Maintain State of the Offline Store)]
 
-Now, we add a new field which holds the state of the store, whether it's open or not. Open class `DeliveryServiceDataAccess`, and locate the line `let offlineODataProvider: OfflineODataProvider` you added at step 8.
-
-Just below it, add the following boolean field:
+Next, we need to modify the online behavior of the view controller for both the `Packages` and `DeliveryStatus` entities. First, open file `PackagesMasterViewController.swift` in `Demo > ViewControllers > Packages` and add import the offline framework here as well:
 
 ```swift
-var isStoreOpened = false
+import SAPOfflineOData
 ```
+
+Then add a reference to the `deliveryServiceOffline` field in the `AppDelegate.swift` file. Below the `deliveryService` declaration, add a similar declaration but now for offline usage:
+
+```swift
+private var deliveryServiceOffline: DeliveryService<OfflineODataProvider> {
+    return self.appDelegate.deliveryServiceOffline
+}
+```
+
+And finally, add a new field which holds the state of the store, whether it's open or not. Add the following boolean field:
+
+```swift
+private var isStoreOpened = false
+```
+
+Repeat the same for the `DeliveryStatusMasterViewController.swift` file.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Change request methods for offline usage)]
+[ACCORDION-BEGIN [Step 10: ](Change request methods for offline usage)]
 
-Locate methods `loadPackages` and `loadDeliveryStatus` and replace them with the following:
+Go back to file `PackagesMasterViewController.swift`, locate method `requestEntities(completionHandler:)`, and replace its implementation with the following:
 
 ```swift
-func loadPackages(completionHandler: @escaping([PackagesType]?, Error?) -> ()) {
-    // try opening the store
-    self.offlineService.open { error in
+func requestEntities(completionHandler: @escaping (Error?) -> Void) {
+    // Only request the first 20 values. If you want to modify the requested entities, you can do it here.
+    deliveryServiceOffline.open { error in
         guard error == nil else {
             return;
         }
 
-        self.offlineService.download { error in
+        self.isStoreOpened = true
+
+        self.deliveryServiceOffline.download { error in
             guard error == nil else {
                 let query = DataQuery().selectAll().top(20)
-                self.offlineService.packages(query: query) { result, error in
-                    if let error = error {
-                        completionHandler(nil, "Loading Packages failed \(error.localizedDescription)" as? Error)
+                self.deliveryServiceOffline.fetchPackages(matching: query) { packages, error in
+                    guard let packages = packages else {
+                        completionHandler(error!)
+                        self.closeOfflineStore()
                         return
                     }
-                    completionHandler(result!, nil)
+                    self.entities = packages
+                    completionHandler(nil)
+                    self.closeOfflineStore()
                 }
-                self.closeOfflineStore()
                 return
             }
 
-            self.executeRequest(self.service.packages, completionHandler)
-            self.closeOfflineStore()
-        }
-    }
-}
-
-func loadDeliveryStatus(completionHandler: @escaping([DeliveryStatusType]?, Error?) -> ()) {
-    // try opening the store
-    self.offlineService.open { error in
-        guard error == nil else {
-            return;
-        }
-
-        self.offlineService.download { error in
-            guard error == nil else {
-                let query = DataQuery().selectAll().top(20)
-                self.offlineService.deliveryStatus(query: query) { result, error in
-                    if let error = error {
-                        completionHandler(nil, "Loading Delivery Status failed \(error.localizedDescription)" as? Error)
-                        return
-                    }
-                    completionHandler(result!, nil)
+            let query = DataQuery().selectAll().top(20)
+            self.deliveryService.fetchPackages(matching: query) { packages, error in
+                guard let packages = packages else {
+                    completionHandler(error!)
+                    self.closeOfflineStore()
+                    return
                 }
+                self.entities = packages
+                completionHandler(nil)
                 self.closeOfflineStore()
-                return
             }
-
-            self.executeRequest(self.service.deliveryStatus, completionHandler)
-            self.closeOfflineStore()
         }
     }
 }
 ```
 
-Both methods try to open the offline store first, and then try to perform a download of the data. If no download is possible, chances are the app is offline, and the `offlineService` is queried to retrieve the data. If the download is successful, the app is online, and the online `service` is queried instead.
-
-> In a real-world scenario, you would not code it this way because there could be other reasons why the download fails. You would rather download data in the background, and not triggered by a navigation.
-
-.
-
-A few errors will pop up now. This is because there are two calls to an unknown `closeOfflineStore` method.
-
-To solve the latter, add the following method:
+Below this modified method, add the following method:
 
 ```swift
 func closeOfflineStore() {
     if isStoreOpened {
         do {
-            try offlineService.close()
+            try deliveryServiceOffline.close()
+            isStoreOpened = false
+        } catch {
+            logger.error("Offline Store closing failed")
+        }
+    }
+    logger.info("Offline Store closed")
+}
+```
+
+The first methods tries to open the offline store first, and then try to perform a download of the data. If no download is possible, chances are the app is offline, and the `deliveryServiceOffline` is queried to retrieve the data. If the download is successful, the app is online, and the online `deliveryService` is queried instead.
+
+> In a real-world scenario, you would not code it this way because there could be other reasons why the download fails. You would rather download data in the background, and not triggered by a navigation.
+
+Repeat the same for file `DeliveryStatusMasterViewController.swift`:
+
+```swift
+func requestEntities(completionHandler: @escaping (Error?) -> Void) {
+    // Only request the first 20 values. If you want to modify the requested entities, you can do it here.
+    deliveryServiceOffline.open { error in
+        guard error == nil else {
+            return;
+        }
+
+        self.isStoreOpened = true
+
+        self.deliveryServiceOffline.download { error in
+            guard error == nil else {
+                let query = DataQuery().selectAll().top(20)
+                self.deliveryServiceOffline.fetchDeliveryStatus(matching: query) { deliveryStatus, error in
+                    guard let deliveryStatus = deliveryStatus else {
+                        completionHandler(error!)
+                        self.closeOfflineStore()
+                        return
+                    }
+                    self.entities = deliveryStatus
+                    completionHandler(nil)
+                    self.closeOfflineStore()
+                }
+                return
+            }
+
+            let query = DataQuery().selectAll().top(20)
+            self.deliveryService.fetchDeliveryStatus(matching: query) { deliveryStatus, error in
+                guard let deliveryStatus = deliveryStatus else {
+                    completionHandler(error!)
+                    self.closeOfflineStore()
+                    return
+                }
+                self.entities = deliveryStatus
+                completionHandler(nil)
+                self.closeOfflineStore()
+            }
+        }
+    }
+}
+
+func closeOfflineStore() {
+    if isStoreOpened {
+        do {
+            try deliveryServiceOffline.close()
             isStoreOpened = false
         } catch {
             logger.error("Offline Store closing failed")
@@ -352,7 +386,7 @@ func closeOfflineStore() {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Build and run the application)]
+[ACCORDION-BEGIN [Step 11: ](Build and run the application)]
 
 Build and run the application, and log in to your application. Click on each entity type to load both entity sets, and navigate back to the main screen.
 
@@ -374,12 +408,17 @@ In the next step, you will correct this.
 In Xcode, open the file `DetailViewController.swift` and locate method `prepare`. At the end of this method, locate the following lines of code:
 
 ```swift
-do {
-    // Perform query and store the results
-    trackingInfoView.entities = try self.deliveryService.service.deliveryStatus(query: query)
-}
-catch let error {
-    self.logger.error(error.localizedDescription)
+let query = DataQuery()
+    .from(esDeliveryStatus)
+    .where(propPackageId.equal((currentEntity.packageID)!))
+    .orderBy(propTimestamp, SortOrder.descending)
+
+self.deliveryService.fetchDeliveryStatus(matching: query) { deliveryStatus, error in
+    guard let deliveryStatus = deliveryStatus else {
+        return
+    }
+    trackingInfoView.entities = deliveryStatus
+    trackingInfoView.tableView.reloadData()
 }
 ```
 
@@ -392,30 +431,39 @@ Since you're entering the `catch` block if online, you could add the logic to re
 Replace the above mentioned lines of code with the following:
 
 ```swift
-do {
-    // Perform query and store the results
-    trackingInfoView.entities = try self.deliveryService.service.deliveryStatus(query: query)
-}
-catch let error {
-    self.logger.error(error.localizedDescription)
+let query = DataQuery()
+    .from(esDeliveryStatus)
+    .where(propPackageId.equal((currentEntity.packageID)!))
+    .orderBy(propTimestamp, SortOrder.descending)
 
+if ConnectivityUtils.isConnected() {
+    self.deliveryService.fetchDeliveryStatus(matching: query) { deliveryStatus, error in
+        guard let deliveryStatus = deliveryStatus else {
+            return
+        }
+        trackingInfoView.entities = deliveryStatus
+        trackingInfoView.tableView.reloadData()
+    }
+} else {
     self.logger.info("Now trying to open offline store")
 
     // try opening the store
-    self.deliveryService.offlineService.open { error in
+    self.deliveryServiceOffline.open { error in
         guard error == nil else {
             return;
         }
 
-        self.deliveryService.offlineService.deliveryStatus(query: query) { result, error in
-            if let error = error {
-                self.logger.error(error.localizedDescription)
+        self.deliveryServiceOffline.fetchDeliveryStatus(matching: query) { deliveryStatus, error in
+            guard let deliveryStatus = deliveryStatus else {
+                completionHandler(error!)
+                self.closeOfflineStore()
                 return
             }
             trackingInfoView.entities = result!
             trackingInfoView.tableView.reloadData()
+            completionHandler(nil)
+            self.closeOfflineStore()
         }
-        self.deliveryService.closeOfflineStore()
         return
     }
 }
