@@ -10,6 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
  - You have successfully installed SAP Data Hub, developer edition.
 
 ## Next Steps
+ - [Use a message broker](http://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
 
 ## Details
 ### You will learn  
@@ -21,7 +22,7 @@ During this tutorial, you will learn how to use a **Data Generator** to generate
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a data pipeline)]
-Open the modelling environment for building pipelines via http://localhost:8090 (SAP Data Hub - Data Pipelines).
+Open the modelling environment for building pipelines via `http://localhost:8090` (SAP Data Hub - Data Pipelines).
 
 Press the **Create Graph (1)** button to create a new pipeline. The pipeline opens in the **editor (2)**.
 
@@ -79,3 +80,6 @@ Stop the pipeline by pressing the **Stop** button (you find it next to the **Run
 [ACCORDION-END]
 
 ---
+
+## Next Steps
+[Use a message broker](http://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)

@@ -1,5 +1,5 @@
 ---
-title: Setup a Hybris Marketing Cloud System
+title: Set up a Hybris Marketing Cloud system
 description: How to setup the communication user on the Hybris Marketing Cloud system.
 primary_tag: products>sap-s-4hana
 tags: [  tutorial>beginner ]
@@ -10,19 +10,19 @@ tags: [  tutorial>beginner ]
 
 ## Details
 ### You will learn  
-Setup the communication user in your Hybris Marketing Cloud system with the necessary roles.
+How to set up the communication user in your SAP Hybris Marketing Cloud system with the necessary roles.
 
 ### Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create communication user on the Hybris Marketing system)]
+[ACCORDION-BEGIN [Step 1: ](Create communication user in Hybris Marketing Cloud)]
 
-Logon on to your SAP Hybris Marketing Cloud system
+Log on on to your SAP Hybris Marketing Cloud system
 ![SAP S/4HANA logon](1.png)
 
-In the SAP Fiori launchpad select the **Maintain communication** users title.
+In the SAP Fiori launchpad, select the **Maintain Communication Users** tile.
 ![Communication Management](2.png)
 
 Choose **New** to create a new user: `yMkt_Credential`
@@ -32,13 +32,13 @@ Assign a password for the user in the password field for basic authentication. E
 ![user password](4.png)  
 
 Choose **Create**
->Note:  It is also possible to use an existing user.  In cased an existing user is used, the password of this user is required as well.
+>Note:  It is also possible to use an existing user.  If an existing user is used, the password of this user is required as well.
 
 &nbsp;
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create communication system in Hybris Marketing)]
+[ACCORDION-BEGIN [Step 2: ](Create communication system in Hybris Marketing Cloud)]
 
 This step enables the Hybris system to communicate to the Integration system.
 
@@ -64,7 +64,7 @@ In the User for Inbound Communication section add the technical user which was c
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Creating Marketing Master Data integration)]  
+[ACCORDION-BEGIN [Step 3: ](Create marketing master data integration)]  
 
 For communication with the OData Web service a technical user must be created in the SAP Hybris Marketing Cloud System.
 This user needs to have two communication scenarios assigned:  
@@ -72,23 +72,23 @@ This user needs to have two communication scenarios assigned:
  - SAP_COM_0003 Marketing – Master Data Integration   
  - SAP_COM_0004 Marketing – Business Data Integration  
 
-Logon to your SAP Hybris Marketing Cloud System.  
+Log on to your SAP Hybris Marketing Cloud system.  
 ![s/4 logon](1.png)
 
-In the SAP Fiori launchpad select the **Communication Arrangements** tile.  
+In the SAP Fiori launchpad, select the **Communication Arrangements** tile.  
 ![communication Arrangements](9.png)  
 
 Choose **New** to create a new communication arrangement.
 ![communication Arrangements popup](10.png)  
 
-Select **(SAP_COM_0003 (Marketing - Master Data Integration)** and choose **Create**.
+Select **SAP_COM_0003 (Marketing - Master Data Integration)** and choose **Create**.
 ![mdi](11.png)  
 
-Under Common Data, select the Communication System via value help which was created in step 2.
+Under **Common Data**, select the Communication System via value help which was created in step 2.
 
 ![system](12.png)  
 
-Under Inbound Communication the technical user which was created in step 1. This field should be automatically filled in.  
+Under **Inbound Communication**, the technical user that was created in step 1 needs to be entered. This field should be automatically filled in.  
 ![system USER](13.png)
 
 Choose **Save**.
@@ -109,10 +109,10 @@ Choose **New** to create a new communication arrangement.
 Select **SAP_COM_0004 (Marketing - Business Data Integration)** and choose **Create**.  
 ![marketing business data integration](14.png)
 
-Under common data select the **Communication System** via value help which was created in step 2.
+Under **Common Data**, select the **Communication System** via value help which was created in step 2.
 ![marketing BID](16.png)
 
-Under Inbound Communication section,  use the technical user that was created in step 1 (SAP Hybris Marketing Cloud Technical Communication User Creation).  The user field should be automatically added.
+Under **Inbound Communication**,  use the technical user that was created in step 1.  The user field should be automatically added.
 ![marketing BID 2](17.png)  
 
 Choose **Save**.

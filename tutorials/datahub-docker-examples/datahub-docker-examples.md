@@ -7,6 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
+ - You have completed [Navigate around SAP Data Hub, developer edition](http://www.sap.com/developer/tutorials/datahub-docker-navigation.html)
 
 ## Details
 ### You will learn  
@@ -18,7 +19,7 @@ During this tutorial, you will learn how to run the examples pipelines delivered
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Familiarize yourself with the modelling UI)]
-Open the modelling environment for building pipelines via http://localhost:8090 (SAP Data Hub - Data Pipelines).
+Open the modelling environment for building pipelines via `http://localhost:8090` (SAP Data Hub - Data Pipelines).
 
 ![picture_01](./datahub-docker-examples_01.png)  
 

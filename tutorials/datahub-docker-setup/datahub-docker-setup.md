@@ -9,6 +9,8 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
  - **Proficiency:** Beginner
 
 ## Next Steps
+ - [Run example pipelines in SAP Data Hub, developer edition](http://www.sap.com/developer/tutorials/datahub-docker-examples.html)
+
 
 ## Details
 ### You will learn  
@@ -31,6 +33,7 @@ Running SAP Data Hub, developer edition on your local computer requires:
 * Internet connectivity (temporarily while building the Docker image)
 
 * Docker installed and running (http://www.docker.com)
+  **Attention:** If you use Docker Toolbox, pay special attention to the sizing of the Linux VM. For details take a look at our [FAQ](http://blogs.sap.com/2017/12/06/faqs-for-sap-data-hub-developer-edition).
 
 Verify that Docker is properly installed and running by opening a terminal window and entering the following.
 
@@ -104,10 +107,10 @@ After a few minutes (during which you can follow what happens inside the contain
 [ACCORDION-BEGIN [Step 5: ](Perform a smoke test)]
 Open a web browser and test the following URLs (where necessary enter **Username** and **Password** which you have set while building the Docker image):
 
-* http://localhost:8090 (SAP Data Hub - Data Pipelines)
-* http://localhost:9099 (Apache Zeppelin)
-* http://localhost:9225 (SAP Vora Tools)
-* http://localhost:50070 (Apache Hadoop User Interface)
+* `http://localhost:8090` (SAP Data Hub - Data Pipelines)
+* `http://localhost:9099` (Apache Zeppelin)
+* `http://localhost:9225` (SAP Vora Tools)
+* `http://localhost:50070` (Apache Hadoop User Interface)
 
 If all URLs are working, you can assume that you have successfully set up SAP Data Hub, developer edition on your local computer.
 
@@ -138,3 +141,6 @@ docker logs datahub
 [ACCORDION-END]
 
 ---
+
+## Next Steps
+[Run example pipelines in SAP Data Hub, developer edition](http://www.sap.com/developer/tutorials/datahub-docker-examples.html)

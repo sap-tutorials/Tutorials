@@ -7,8 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
+ - You have completed [Store sensor data in HDFS](http://www.sap.com/developer/tutorials/datahub-pipelines-storeinhdfs.html)
 
 ## Next Steps
+- [Store sensor data in SAP Vora](http://www.sap.com/developer/tutorials/datahub-pipelines-storeinvora.html)
 
 ## Details
 ### You will learn  
@@ -78,13 +80,13 @@ Then enter the following command.
 hdfs dfs -rm /tmp/hdfsManager/*
 ```
 
-You can check the deletion via http://localhost:50070.
+You can check the deletion via `http://localhost:50070`.
 
 Press the **Run** button to execute the pipeline.
 
 When the **Status** tab indicates that the pipeline is running, use the context menu **Open UI** of the **Terminal** operator to see the generated sensor data.
 
-Open http://localhost:50070 and display the `/tmp/hdfsManager` directory. You see that the system does not create a file for each single sensor record, but only for each 30 sensor records.
+Open `http://localhost:50070` and display the `/tmp/hdfsManager` directory. You see that the system does not create a file for each single sensor record, but only for each 30 sensor records.
 
 Stop the pipeline by pressing the **Stop** button.
 
@@ -104,3 +106,6 @@ hdfs dfs -cat /tmp/hdfsManager/test_1.txt
 [ACCORDION-END]
 
 ---
+
+## Next Steps
+[Store sensor data in SAP Vora](http://www.sap.com/developer/tutorials/datahub-pipelines-storeinvora.html)
