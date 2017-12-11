@@ -22,7 +22,7 @@ During this tutorial, you will learn how to use a **Data Generator** to generate
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a data pipeline)]
-Open the modelling environment for building pipelines via http://localhost:8090 (SAP Data Hub - Data Pipelines).
+Open the modelling environment for building pipelines via `http://localhost:8090` (SAP Data Hub - Data Pipelines).
 
 Press the **Create Graph (1)** button to create a new pipeline. The pipeline opens in the **editor (2)**.
 

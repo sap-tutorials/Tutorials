@@ -24,10 +24,10 @@ During this tutorial, you will learn how to find your way around SAP Data Hub, d
 [ACCORDION-BEGIN [Step 1: ](Access UIs via a web browser)]
 To access the different user interfaces running inside the Docker container use the following URLs (as already explained during the previous tutorial):
 
-* http://localhost:8090 (SAP Data Hub - Data Pipelines)
-* http://localhost:9099 (Apache Zeppelin)
-* http://localhost:9225 (SAP Vora Tools)
-* http://localhost:50070 (Apache Hadoop User Interface)
+* `http://localhost:8090` (SAP Data Hub - Data Pipelines)
+* `http://localhost:9225` (SAP Vora Tools)
+* `http://localhost:9099` (Apache Zeppelin)
+* `http://localhost:50070` (Apache Hadoop User Interface)
 
 Where necessary enter **Username** and **Password** which you have set while building the Docker image.
 
@@ -72,7 +72,7 @@ Log into the container (as described in step 2) and navigate to the `/tmp` direc
 hdfs dfs -copyFromLocal test.txt /tmp/test.txt
 ```
 
-Open http://localhost:50070 and navigate to **Utilities -> Browse the file system** to check that the file `test.txt` exists in HDFS.
+Open `http://localhost:50070` and navigate to **Utilities -> Browse the file system** to check that the file `test.txt` exists in HDFS.
 
 Now delete `test.txt` from the `/tmp` directly inside the container (and **not**  inside HDFS). Then copy `test.txt` from HDFS back to the container directory.
 
@@ -80,7 +80,7 @@ Now delete `test.txt` from the `/tmp` directly inside the container (and **not**
 hdfs dfs -copyToLocal /tmp/test.txt test.txt
 ```
 
-Finally delete `test.txt` from HDFS again (you can verify the deletion via http://localhost:50070).
+Finally delete `test.txt` from HDFS again (you can verify the deletion via `http://localhost:50070`).
 
 ```sh
 hdfs dfs -rm /tmp/test.txt
