@@ -7,10 +7,10 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Configure the SAP Predictive Services](https://www.sap.com/developer/groups/ps-configure.html)
+  - **Tutorials:** [Configure the SAP Predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-- [Test the SAP Predictive Services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+- [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
 
 ## Details
 ### You will learn
@@ -35,7 +35,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 &nbsp;
 
-> **Note**: if you are running into some issue, you can check the [SAP Predictive Services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
+> **Note**: if you are running into some issue, you can check the [SAP Predictive services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 [ACCORDION-BEGIN [Info:](A short description of the Key Influencer service)]
 The Key Influencers service analyzes a dataset to identify the variables with an influence on a specified target variable.
@@ -467,4 +467,4 @@ The performances a roughly the same as we limited the analysis to only 2 attribu
 For more details on the SAP Predictive services, you can check the following the [`Key Influencers APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/e8bda9b653ff4b48a702124e27747f85.html) documentation.
 
 ## Next Steps
-- [Test the SAP Predictive Services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+- [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)

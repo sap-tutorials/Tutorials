@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, 
   - **Tutorials:** [Enable, deploy and configure the SAP Predictive services](https://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Next Steps
-  - [Test the SAP Predictive Services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+  - [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
 
 ## Details
 ### You will learn
@@ -66,4 +66,4 @@ Now, you can to move to the next tutorial.
 [ACCORDION-END]
 
 ## Next Steps
-- [Test the SAP Predictive Services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+- [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
