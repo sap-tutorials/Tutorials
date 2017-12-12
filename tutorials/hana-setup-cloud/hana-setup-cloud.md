@@ -10,7 +10,7 @@ tags: [ products>sap-hana, products>sap-cloud-platform, tutorial>beginner ]
 - You will need to have an account on either Microsoft Azure or Amazon AWS
 
 ## Next Steps
-- [HANA and the Web Development Workbench](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
+- [HANA and the Web Development Workbench](https://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
 
 ## Details
 
@@ -23,7 +23,7 @@ This section takes about **10 minutes** to complete, and about **10 to 25 minute
 
 > ### Warning
 >Both the Amazon AWS and Microsoft Azure accounts will charge you for time on those cloud systems.
->If you want to create a free developer account - with no cloud VM charges - on the SAP Cloud Platform, do not follow this tutorial. [Sign up for an account](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html) here, and then proceed to the next tutorial.
+>If you want to create a free developer account - with no cloud VM charges - on the SAP Cloud Platform, do not follow this tutorial. [Sign up for an account](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) here, and then proceed to the next tutorial.
 
 ---
 
@@ -234,4 +234,4 @@ For more detailed instructions, check out [Connecting to Microsoft Azure with SS
 ## Next Steps
 Make your very first steps on SAP HANA and develop a very simple "Hello World" application using the SAP HANA Web-based Development Workbench on the SAP Cloud Platform.
 
-- [HANA and the Web Development Workbench](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
+- [HANA and the Web Development Workbench](https://www.sap.com/developer/tutorials/hana-web-development-workbench.html)

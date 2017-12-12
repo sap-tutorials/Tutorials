@@ -5,10 +5,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials** [Add the AngularJS JavaScript](http://www.sap.com/developer/tutorials/angular-add-javascript.html)
+ - **Tutorials** [Add the AngularJS JavaScript](https://www.sap.com/developer/tutorials/angular-add-javascript.html)
 
 ## Next Steps
- - **Tutorials** [Add ODATA to the application](http://www.sap.com/developer/tutorials/angular-add-odata.html)
+ - **Tutorials** [Add ODATA to the application](https://www.sap.com/developer/tutorials/angular-add-odata.html)
 
 
 ## Details
@@ -163,4 +163,4 @@ Follow the same procedures to move the CSS file
 
 
 ## Next Steps
- - **Tutorials** [Add ODATA to the application](http://www.sap.com/developer/tutorials/angular-add-odata.html)
+ - **Tutorials** [Add ODATA to the application](https://www.sap.com/developer/tutorials/angular-add-odata.html)

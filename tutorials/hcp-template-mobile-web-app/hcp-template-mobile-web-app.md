@@ -6,10 +6,10 @@ tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>ht
 ---
 ## Prerequisites
 - **Proficiency:** Beginner
-- **Tutorials:** [Create a Destination on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+- **Tutorials:** [Create a Destination on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-destination.html)
 
 ## Next Steps
-- [Deploy an app to SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+- [Deploy an app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
 
 ## Details
 
@@ -243,4 +243,4 @@ Congratulations! You've developed your application that shows the products and s
 
 
 ## Next Steps
-- [Deploy an app to SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+- [Deploy an app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)

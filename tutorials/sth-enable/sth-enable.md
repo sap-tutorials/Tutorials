@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, products>sap-translation-hub>sap-translation-hub, pr
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
- - [Prepare a sample Fiori app for translation](http://www.sap.com/developer/tutorials/sth-prepare-fiori-app-translation.html)
+ - [Prepare a sample Fiori app for translation](https://www.sap.com/developer/tutorials/sth-prepare-fiori-app-translation.html)
 
 ## Details
 ### You will learn  
@@ -68,4 +68,4 @@ You can now use the SAP Translation Hub service.
 [ACCORDION-END]
 
 ## Next Steps
- - [Prepare a sample Fiori app for translation](http://www.sap.com/developer/tutorials/sth-prepare-fiori-app-translation.html)
+ - [Prepare a sample Fiori app for translation](https://www.sap.com/developer/tutorials/sth-prepare-fiori-app-translation.html)

@@ -7,10 +7,10 @@ tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:**
-  - [Creating project in SAP Web IDE and importing it into GitHub](http://www.sap.com/developer/tutorials/webide-github-import-project.html)
+  - [Creating project in SAP Web IDE and importing it into GitHub](https://www.sap.com/developer/tutorials/webide-github-import-project.html)
 
 ## Next Steps
- - [Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE](http://www.sap.com/developer/tutorials/webide-github-branching.html)
+ - [Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE](https://www.sap.com/developer/tutorials/webide-github-branching.html)
 
 ## Details
 ### You will learn  
@@ -70,4 +70,4 @@ In this tutorial, you'll learn how to create issues, set milestones for delivery
     ![Milestones status](p4_6.png)
 
 ## Next Steps
- - [Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE](http://www.sap.com/developer/tutorials/webide-github-branching.html)
+ - [Creating branches in GitHub, switching branches and updating application in different branch in SAP Web IDE](https://www.sap.com/developer/tutorials/webide-github-branching.html)

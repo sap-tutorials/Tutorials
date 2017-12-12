@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials** [Add a Header and Detail Modal Dialog](http://www.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)
+ - **Tutorials** [Add a Header and Detail Modal Dialog](https://www.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)
 
 ## Next Steps
- - **Tutorials** [AngularJS Filters](http://www.sap.com/developer/tutorials.html)
+ - **Tutorials** [AngularJS Filters](https://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -237,4 +237,4 @@ The input field is in the form, but it's not connected to anything.  Next, add i
 - We used the [`setTimeout()`](http://www.w3schools.com/jsref/met_win_settimeout.asp) JavaScript function to add a delay before the alert box disappeared.  `setTimeout()` puts an event on the event queue after a specified delay (in milliseconds).  This is the best way to delay something, as the user will not be blocked while waiting for the timer to expire.
 
 ## Next Steps
- - **Tutorials** [AngularJS Filters](http://www.sap.com/developer/tutorials.html)
+ - **Tutorials** [AngularJS Filters](https://www.sap.com/developer/tutorials.html)

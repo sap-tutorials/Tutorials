@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-hybris-as-
 
 ## Next Steps
 
-- [Download and Run the Default YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)
+- [Download and Run the Default YaaS Storefront](https://www.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)
 
 ## Details
 ### You will learn  
@@ -131,4 +131,4 @@ In this step, you created your own YaaS project and a YaaS client. You also lear
 
 
 ## Next Steps
-- [Download and Run the Default YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)
+- [Download and Run the Default YaaS Storefront](https://www.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)

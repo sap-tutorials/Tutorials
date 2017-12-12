@@ -16,7 +16,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 ### You will learn
  - How to use the "Key Influencer" SAP Predictive services from a REST Client.
 
- Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
+ Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
 
 ### Time to Complete
   **10 minutes**
@@ -101,7 +101,7 @@ Variable | Description | Example of Values
 
 First we need to register the Census dataset.
 
-As described in [**Step 1** of **Test the "Dataset" services** tutorial](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Census dataset using the following elements:
+As described in [**Step 1** of **Test the "Dataset" services** tutorial](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Census dataset using the following elements:
 
 Open a new tab in ***Postman***.
 
@@ -161,7 +161,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   "skippedVariables" : ["id", "sex", "race"]
 }
 ```
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial.
 
 
 &nbsp;
@@ -419,7 +419,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   ]
 }
 ```
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 &nbsp;
 
 Click on **Send**
@@ -455,7 +455,7 @@ Let's try with the following **Body**, which define the missing value for the re
 }
 ```
 
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 &nbsp;
 
 The performances a roughly the same as we limited the analysis to only 2 attributes on a small dataset. Off course you can increase the number of influencers and see the difference.

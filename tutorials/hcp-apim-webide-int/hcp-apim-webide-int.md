@@ -6,11 +6,11 @@ tags: [  tutorial>beginner,  products>sap-cloud-platform, products>sap-web-ide, 
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Protect your API Proxy by adding an Application Key Verification](http://www.sap.com/developer/tutorials/hcp-apim-verify-api.html)
+- **Tutorials:** [Protect your API Proxy by adding an Application Key Verification](https://www.sap.com/developer/tutorials/hcp-apim-verify-api.html)
 
 ## Next Steps
 - This is the end of this series
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 
 ## Details
@@ -71,7 +71,7 @@ Field Name     | Value
 Name           | `APIM_DevPortal_Trial`
 Type           | `HTTP`
 Description    | `Destination to API Developer Portal`
-URL            | take the URL of the developer Portal seen in [Activate SAP Cloud Platform, API Management on SAP Cloud Platform Trial](http://www.sap.com/developer/tutorials/hcp-apim-enable-service.html), e.g. `https://devportalu34f5b50f-YourIDtrial.hanatrial.ondemand.com`
+URL            | take the URL of the developer Portal seen in [Activate SAP Cloud Platform, API Management on SAP Cloud Platform Trial](https://www.sap.com/developer/tutorials/hcp-apim-enable-service.html), e.g. `https://devportalu34f5b50f-YourIDtrial.hanatrial.ondemand.com`
 Proxy Type     | `Internet`
 Authentication | `AppToAppSSO`
 
@@ -88,7 +88,7 @@ Provide the following information to create a destination for the API Management
 Name | `APIM_DevPortal_Trial`
 Type | HTTP
 Description | Destination to API Developer Portal
-URL | take the URL of the Developer Portal seen in [Activate SAP Cloud Platform, API Management on SAP Cloud Platform Trial]( http://www.sap.com/developer/tutorials/hcp-apim-enable-service.html), e.g. `https://devportalu34f5b50f-<your-P-User>trial.hanatrial.ondemand.com`
+URL | take the URL of the Developer Portal seen in [Activate SAP Cloud Platform, API Management on SAP Cloud Platform Trial]( https://www.sap.com/developer/tutorials/hcp-apim-enable-service.html), e.g. `https://devportalu34f5b50f-<your-P-User>trial.hanatrial.ondemand.com`
 Proxy Type | Internet
 Authentication | `AppToAppSSO`
 
@@ -211,7 +211,7 @@ From the **Service Catalog** drop-down, select the **Destination to API Develope
 
 [ACCORDION-BEGIN [Step 13: ](Select service and subscribe)]
 
-Select the **`GWSAMPLE_BASIC`** API Proxy created in [Create an API Proxy](http://www.google.de)   http://www.sap.com/developer/tutorials/hcp-apim-create-api.html) and click on **Subscribe**. From there select the related Product from [Add the API Proxy](http://www.google.de)  http://www.sap.com/developer/tutorials/hcp-apim-create-product.html)
+Select the **`GWSAMPLE_BASIC`** API Proxy created in [Create an API Proxy](http://www.google.de)   https://www.sap.com/developer/tutorials/hcp-apim-create-api.html) and click on **Subscribe**. From there select the related Product from [Add the API Proxy](http://www.google.de)  https://www.sap.com/developer/tutorials/hcp-apim-create-product.html)
 
 ![Select service and click on Subscribe](20-Subscribe.png)
 
@@ -355,4 +355,4 @@ You should see a Fiori app connecting via SAP API Management to the SAP Gateway 
 
 ## Next Steps
 - This is the end of this series
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)

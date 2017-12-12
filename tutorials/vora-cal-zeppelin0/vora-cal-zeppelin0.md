@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - You have access to SAP Vora 1.3, developer edition as a cloud appliance [in SAP CAL](http://www.sap.com/developer/how-tos/2017/02/vora-cal-setup.html)
+ - You have access to SAP Vora 1.3, developer edition as a cloud appliance [in SAP CAL](https://www.sap.com/developer/how-tos/2017/02/vora-cal-setup.html)
 
 
 ## Next Steps
- - [Working with hierarchies using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin2.html)
+ - [Working with hierarchies using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-cal-zeppelin2.html)
 
 ## Details
 ### You will learn  
@@ -99,4 +99,4 @@ Create a CUBE called `PROD_FININS_CUBE` that joins fact table and dimension view
 
 
 ## Next Steps
-- [Working with hierarchies using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin2.html)
+- [Working with hierarchies using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-cal-zeppelin2.html)

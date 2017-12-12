@@ -7,10 +7,10 @@ tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>ht
 
 ## Prerequisites
 - **Proficiency:** Intermediate
-- **Tutorials:** [Commit your project files to your SAP Cloud Platform Git repository](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
+- **Tutorials:** [Commit your project files to your SAP Cloud Platform Git repository](https://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
 
 ## Next Steps
-- [An Open Data Protocol (OData) primer for developers](http://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
+- [An Open Data Protocol (OData) primer for developers](https://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
 
 ## Details
 
@@ -211,14 +211,14 @@ Your new file should look like this. Note that the `messageBundle_de_CH.properti
 
 [ACCORDION-BEGIN [Step 12: ](Commit your files)]
 
-Commit your new file to Git (following the same procedure as in the previous [tutorial](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html).
+Commit your new file to Git (following the same procedure as in the previous [tutorial](https://www.sap.com/developer/tutorials/hcp-webide-commit-git.html).
 
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Deploy your app)]
 
-Deploy your app to SAP Cloud Platform (following the same procedure as in an earlier [tutorial](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) and open the new, active version of the app.
+Deploy your app to SAP Cloud Platform (following the same procedure as in an earlier [tutorial](https://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) and open the new, active version of the app.
 
 
 [ACCORDION-END]
@@ -245,4 +245,4 @@ As described in the introduction for this tutorial, when a user opens your app U
 
 
 ## Next Steps
-- [An Open Data Protocol (OData) primer for developers](http://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)
+- [An Open Data Protocol (OData) primer for developers](https://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html)

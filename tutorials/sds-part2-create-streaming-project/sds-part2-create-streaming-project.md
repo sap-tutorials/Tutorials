@@ -6,10 +6,10 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Configure SAP HANA Smart Data Streaming Server Connection](http://www.sap.com/developer/tutorials/sds-part1-configure-streaming-server.html)
+ - **Tutorials:** [Configure SAP HANA Smart Data Streaming Server Connection](https://www.sap.com/developer/tutorials/sds-part1-configure-streaming-server.html)
 
 ## Next Steps
- - **Tutorials:** [Filter and Output to SAP HANA Table in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part3-simplefilter-hanatable.html)
+ - **Tutorials:** [Filter and Output to SAP HANA Table in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part3-simplefilter-hanatable.html)
 
 ## Details
 ### You will learn  
@@ -164,4 +164,4 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 
 
 ## Next Steps
- - **Tutorials:** [Filter and Output to SAP HANA Table in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part3-simplefilter-hanatable.html)
+ - **Tutorials:** [Filter and Output to SAP HANA Table in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part3-simplefilter-hanatable.html)

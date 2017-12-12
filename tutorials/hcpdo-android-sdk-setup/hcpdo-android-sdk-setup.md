@@ -8,11 +8,11 @@ tags: [  tutorial>intermediate, topic>cloud, topic>java, topic>mobile, products>
 
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Create a basic native Android master-detail app](http://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html)
+- **Tutorials:** [Create a basic native Android master-detail app](https://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html)
 - Download and install the [SAP Mobile SDK](https://store.sap.com/sap/cpa/ui/resources/store/html/SolutionDetails.html?pid=0000013098)
 
 ## Next Steps
-- [Compile and run a native Android app on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcpdo-run-native-android-app.html)
+- [Compile and run a native Android app on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcpdo-run-native-android-app.html)
 
 ## Details
 ### You will learn  
@@ -32,7 +32,7 @@ The procedure shown in this tutorial can be used for any of the Android activity
 
 [ACCORDION-BEGIN [Step 1: ](Open your Android project)]
 
-Open the `NWAndroid` project you created in the [previous tutorial](http://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html).
+Open the `NWAndroid` project you created in the [previous tutorial](https://www.sap.com/developer/tutorials/hcpdo-basic-android-app.html).
 
 
 [ACCORDION-END]
@@ -195,4 +195,4 @@ You can check the libraries were added in the `build.gradle` file located in the
 
 
 ## Next Steps
-- [Compile and run a native Android app on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcpdo-run-native-android-app.html)
+- [Compile and run a native Android app on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcpdo-run-native-android-app.html)

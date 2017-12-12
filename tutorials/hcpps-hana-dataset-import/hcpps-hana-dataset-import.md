@@ -7,10 +7,10 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Setup a HANA user account](http://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
+  - **Tutorials:** [Setup a HANA user account](https://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
 
 ## Next Steps
-- [Enable, deploy and configure the SAP Predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+- [Enable, deploy and configure the SAP Predictive services](https://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Details
 
@@ -101,4 +101,4 @@ Click on the **Run** ![open](0-run.png) button or press F8.
 [ACCORDION-END]
 
 ## Next Steps
-- [Enable, deploy and configure the SAP Predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+- [Enable, deploy and configure the SAP Predictive services](https://www.sap.com/developer/tutorials/hcpps-ps-configure.html)

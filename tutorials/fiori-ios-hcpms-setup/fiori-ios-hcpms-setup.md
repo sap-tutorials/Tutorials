@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
  - [Create an application definition](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-application-setup.html)

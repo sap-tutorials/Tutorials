@@ -6,10 +6,10 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Run and Test a Project in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part7-testing.html)
+ - **Tutorials:** [Run and Test a Project in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part7-testing.html)
 
 ## Next Steps
- - **Tutorials:** [Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part8-patterns.html)
+ - **Tutorials:** [Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part8-patterns.html)
 
 ## Details
 ### You will learn  
@@ -168,4 +168,4 @@ Now you are doing something a bit different. You are going to build another Flex
 
 
 ## Next Steps
- - **Tutorials:** [Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part8-patterns.html)
+ - **Tutorials:** [Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part8-patterns.html)

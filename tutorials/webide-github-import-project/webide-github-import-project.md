@@ -7,11 +7,11 @@ tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:**
-  - [Create a repo within the Organization](http://www.sap.com/developer/tutorials/webide-github-create-git-repo.html)
-  - [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+  - [Create a repo within the Organization](https://www.sap.com/developer/tutorials/webide-github-create-git-repo.html)
+  - [Build an app from an SAP Web IDE template](https://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
 
 ## Next Steps
- - [Using issues, setting milestones and assigning issues to collaborators](http://www.sap.com/developer/tutorials/webide-github-issues-milestones.html)
+ - [Using issues, setting milestones and assigning issues to collaborators](https://www.sap.com/developer/tutorials/webide-github-issues-milestones.html)
 
 ## Details
 ### You will learn  
@@ -84,4 +84,4 @@ In this tutorial, you'll learn how to import an existing SAP Web IDE project int
 
 
 ## Next Steps
- - [Using issues, setting milestones and assigning issues to collaborators](http://www.sap.com/developer/tutorials/webide-github-issues-milestones.html)
+ - [Using issues, setting milestones and assigning issues to collaborators](https://www.sap.com/developer/tutorials/webide-github-issues-milestones.html)
