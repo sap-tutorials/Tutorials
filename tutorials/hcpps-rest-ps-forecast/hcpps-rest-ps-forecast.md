@@ -7,10 +7,10 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Configure the SAP Cloud Platform predictive services](https://www.sap.com/developer/groups/ps-configure.html)
+  - **Tutorials:** [Configure the SAP Predictive Services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+- [Test the SAP Predictive Services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
 
 ## Details
 ### You will learn
@@ -34,7 +34,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 &nbsp;
 
-> **Note**: if you are running into some issue, you can check the [SAP Cloud Platform Predictive Services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
+> **Note**: if you are running into some issue, you can check the [SAP Predictive Services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 [ACCORDION-BEGIN [Info:](A short description of the Forecast service)]
 The Forecasts service analyzes a dataset containing the successive values of a target indicator over time to predict the next values.
@@ -403,4 +403,4 @@ URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast/`<code><b>I
 For more details on the SAP Predictive services, you can check the following the [`Forecasts APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/8c4150c7711a4d1b865ea9628597d3e0.html) documentation.
 
 ## Next Steps
-- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+- [Test the SAP Predictive Services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
