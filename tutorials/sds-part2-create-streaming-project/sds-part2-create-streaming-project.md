@@ -1,8 +1,8 @@
 ---
 title: Create a Streaming Project in SAP HANA Smart Data Streaming
 description: Part 2 of 9. Create a SAP HANA Smart Data Streaming (SDS) project in SAP HANA Studio with streaming plug-in and visual editor.
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-hana-studio ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
