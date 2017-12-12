@@ -2,7 +2,7 @@
 title: Installing SAP HANA Streaming Analytics for SAP HANA, Express Edition
 description: Install the SAP HANA client package and SAP HANA streaming analytics on an SAP HANA, express edition system.
 primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
+tags: [  tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 
 ## Prerequisites  
