@@ -7,10 +7,10 @@ tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Access your first data in a SAP HANA XSC Application](http://www.sap.com/developer/tutorials/hana-data-access-authorizations.html)
+- **Tutorials:** [Access your first data in a SAP HANA XSC Application](https://www.sap.com/developer/tutorials/hana-data-access-authorizations.html)
 
 ## Next Steps
-- [Consume XSODATA in your SAP HANA XSC Application](http://www.sap.com/developer/tutorials/hana-consume-xsodata.html)
+- [Consume XSODATA in your SAP HANA XSC Application](https://www.sap.com/developer/tutorials/hana-consume-xsodata.html)
 
 ## Details
 

@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - [Working with Hierarchies using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin2.html)
+ - [Working with Hierarchies using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin2.html)
 
 
 ## Next Steps
- - [Working with Document Store Engine in SAP HANA Vora](http://www.sap.com/developer/tutorials/vora-ova-zeppelin7.html)
+ - [Working with Document Store Engine in SAP HANA Vora](https://www.sap.com/developer/tutorials/vora-ova-zeppelin7.html)
 
 ## Details
 ### You will learn  
@@ -43,4 +43,4 @@ Next determine the trend of sales over a time period, multi column analysis of S
 [ACCORDION-END]
 
 ## Next Steps
-- [Working with Document Store Engine in SAP HANA Vora](http://www.sap.com/developer/tutorials/vora-ova-zeppelin7.html)
+- [Working with Document Store Engine in SAP HANA Vora](https://www.sap.com/developer/tutorials/vora-ova-zeppelin7.html)

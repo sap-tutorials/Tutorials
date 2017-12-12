@@ -7,7 +7,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, 
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Enable, deploy and configure the SAP Predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - **Tutorials:** [Enable, deploy and configure the SAP Predictive services](https://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Next Steps
   - [Test the SAP Predictive Services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)

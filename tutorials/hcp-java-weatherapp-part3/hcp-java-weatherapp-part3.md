@@ -6,10 +6,10 @@ tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermedi
 ---
 
 ## Prerequisites  
-- [End-to-End Weather App Scenario Part 2](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)
+- [End-to-End Weather App Scenario Part 2](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part2.html)
 
 ## Next Steps
-- [End-to-End Weather App Scenario Part 4](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)
+- [End-to-End Weather App Scenario Part 4](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)
 
 ## Details
 ### You will learn  
@@ -154,4 +154,4 @@ Now, when you navigate to the `HelloWorldServlet` with the URL <http://localhost
 
 
 ## Next Steps
-- [End-to-End Weather App Scenario Part 4](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)
+- [End-to-End Weather App Scenario Part 4](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part4.html)

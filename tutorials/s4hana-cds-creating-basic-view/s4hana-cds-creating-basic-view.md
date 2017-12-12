@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-s-4hana ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Setting and starting an S4/HANA CAL instance and connecting to a Window instance on Amazon Web Services. ](http://www.sap.com/developer/tutorials/hana-setup-cloud.html)
+ - **Tutorials:** [Setting and starting an S4/HANA CAL instance and connecting to a Window instance on Amazon Web Services. ](https://www.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 ## Next Steps
-[Creating consumption view based on basic/interface view. ](http://www.sap.com/developer/tutorials/s4hana-cds-creating-consumption-view.html)
+[Creating consumption view based on basic/interface view. ](https://www.sap.com/developer/tutorials/s4hana-cds-creating-consumption-view.html)
 
 
 ## Details

@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorial:** [Create child components](http://www.sap.com/developer/tutorials/react-child-components.html)
+- **Tutorial:** [Create child components](https://www.sap.com/developer/tutorials/react-child-components.html)
 
 ## Next Steps
-- This is the end of the tutorial series.  [Return to the tutorial navigator.](http://www.sap.com/developer/tutorial-navigator.html)
+- This is the end of the tutorial series.  [Return to the tutorial navigator.](https://www.sap.com/developer/tutorial-navigator.html)
 
 
 ## Details
@@ -481,4 +481,4 @@ document.getElementById('product-list')
 ---
 
 ## Next Steps
-- [Return to the tutorial navigator.](http://www.sap.com/developer/tutorial-navigator.html)
+- [Return to the tutorial navigator.](https://www.sap.com/developer/tutorial-navigator.html)

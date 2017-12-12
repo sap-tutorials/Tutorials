@@ -10,19 +10,19 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Prerequisites  
 
   - **Proficiency:** Intermediate
-  - [Source Code Versioning System](http://www.sap.com/developer/tutorials/ci-best-practices-scm.html)
-  - [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html)
-  - [Artifact Repository](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
-  - [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-  - [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html)
+  - [Source Code Versioning System](https://www.sap.com/developer/tutorials/ci-best-practices-scm.html)
+  - [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)
+  - [Artifact Repository](https://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
+  - [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+  - [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html)
 
 ## Next Steps
 
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
 
 ---
 
-> This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html). To ensure that all the examples work properly, make sure that you have followed the setup instructions for all components listed in the prerequisites box.
+> This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html). To ensure that all the examples work properly, make sure that you have followed the setup instructions for all components listed in the prerequisites box.
 
 
 ### 1. Introduction
@@ -46,7 +46,7 @@ After successful testing, it is the decision of the delivery manager to release 
 
 Figure 1: Process for SAP Fiori/SAPUI5 development.
 
-The landscape setup for this process is described in [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html). The pipeline implementation by means of Jenkins jobs places real code into the skeleton described in [Sample Pipeline Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html).
+The landscape setup for this process is described in [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html). The pipeline implementation by means of Jenkins jobs places real code into the skeleton described in [Sample Pipeline Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html).
 
 ![Landscape for Fiori Development](landscape.png)
 
@@ -86,7 +86,7 @@ You can either use SAP Web IDE on SAP Cloud Platform, or SAP Web IDE personal ed
 
 #### Procedure
 
-1. In Gerrit, create a project with a `master` branch as described in [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html). The example uses `Fiori_Northwind` as the project name.
+1. In Gerrit, create a project with a `master` branch as described in [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html). The example uses `Fiori_Northwind` as the project name.
 
 2. Before creating the application in SAP Web IDE, define an OData destination has in HANA Platform such that your application can consume it. The example uses the publicly available Northwind sample OData service:
 
@@ -293,7 +293,7 @@ The packaging of the module to a deployable archive is done with help of the MTA
 
 ### 8. Creating a Jenkins CI Build Job
 
-In the example, the job for the CI build is created on the current `master` snapshot, which is triggered on each change. The configuration and credentials used in this section are based on the examples in [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html).
+In the example, the job for the CI build is created on the current `master` snapshot, which is triggered on each change. The configuration and credentials used in this section are based on the examples in [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html).
 
 
 #### Procedure
@@ -695,4 +695,4 @@ The `build-result` parameter informs the MTA archive builder about the location 
 
 ## Next Steps
 
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 
 ## Prerequisites  
  - **Proficiency:** Beginner | Intermediate | Advanced
- - **Tutorials:** [Create an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)
+ - **Tutorials:** [Create an HDI Module](https://www.sap.com/developer/tutorials/xsa-hdi-module.html)
 
 
 ## Next Steps
-  - [Create a Dimension Graphical View](http://www.sap.com/developer/tutorials/xsa-graphical-view.html)
+  - [Create a Dimension Graphical View](https://www.sap.com/developer/tutorials/xsa-graphical-view.html)
 
 ## Details
 ### You will learn  
@@ -78,4 +78,4 @@ Formerly known as HANA Runtime Tools or `HRTT` in previous versions, the Databas
 ---
 
 ## Next Steps
-- [Create a Dimension type Graphical View](http://www.sap.com/developer/tutorials/xsa-graphical-view.html)
+- [Create a Dimension type Graphical View](https://www.sap.com/developer/tutorials/xsa-graphical-view.html)

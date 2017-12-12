@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
+ - **Tutorials:** [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](https://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
  - Obtain your proxy information if behind a firewall.
 
  **Tip:** This tutorial is available as a [video](https://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
@@ -23,7 +23,7 @@ How to start the server, change the default passwords to secure your system, and
 
 ---
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
 
 [ACCORDION-BEGIN [Step 1: ](Start your VM.)]
 
@@ -405,7 +405,7 @@ Download and install the HANA Eclipse Plugin to your host OS (not the VM guest) 
 
 3. Launch when prompted, or go to the eclipse folder (example: `C:\Users\<path>\eclipse\jee-neon`) and run the **eclipse** executable file.
 
-4. Follow the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html).
+4. Follow the tutorial [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html).
 
 
 

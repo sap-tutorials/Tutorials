@@ -16,7 +16,7 @@ In this tutorial, you will set up your SAP Cloud Platform account so you can use
 
 >This tutorial is applicable whether you have a productive or trial Neo environment, but assumes that you are using a trial Cloud Foundry environment.
 
-> The Mendix business modeler, for building your application, is available for Windows platforms only.
+> The Mendix Desktop Modeler, for building your application, is available for Windows platforms only.
 
 ### You will learn  
 - How to set up environment to use SAP Cloud Platform Rapid Application Development.
@@ -138,9 +138,9 @@ To start working on your app, choose **Edit App**.
 
 ![Build app](mendix-onboarding14.png)
 
-You build apps using the business modeler, which is an application installed on your desktop. If you don't have the modeler, install it by going to the [app store](https://appstore.home.mendix.com/link/modeler/).
+You build apps using the Mendix Desktop Modeler, which is an application installed on your desktop. If you don't have the modeler, install it by going to the [app store](https://appstore.home.mendix.com/link/modeler/).
 
-![Business modeler](modeler.png)
+![Mendix Desktop Modeler](modeler.png)
 
 
 

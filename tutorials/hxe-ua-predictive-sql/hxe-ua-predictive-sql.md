@@ -11,8 +11,8 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 
 ## Next Steps
- - [Predictive Analytics Using Application Function Modeler](http://www.sap.com/developer/tutorials/hxe-ua-predictive-afm.html)
- - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - [Predictive Analytics Using Application Function Modeler](https://www.sap.com/developer/tutorials/hxe-ua-predictive-afm.html)
+ - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -131,5 +131,5 @@ For more information about the scripts, watch the SAP HANA Academy videos [PAL: 
 
 
 ## Next Steps
-- [Predictive Analytics Using Application Function Modeler](http://www.sap.com/developer/tutorials/hxe-ua-predictive-afm.html)
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- [Predictive Analytics Using Application Function Modeler](https://www.sap.com/developer/tutorials/hxe-ua-predictive-afm.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)

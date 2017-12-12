@@ -106,7 +106,7 @@ First we need to register the dataset we will be using during this tutorial.
 
 Additionally, we will adjust the variables description which will help improve the quality of our model.
 
-As described in [**Step 1** of **Test the "Dataset" services** tutorial](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Cash Flow dataset using the following elements:
+As described in [**Step 1** of **Test the "Dataset" services** tutorial](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Cash Flow dataset using the following elements:
 
 Open a new tab in ***Postman***.
 
@@ -211,7 +211,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 }
 ```
 
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 
 &nbsp;
 
@@ -322,7 +322,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   "referenceDate" : "2001-12-01"
 }
 ```
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 
 &nbsp;
 

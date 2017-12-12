@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - [Working with Tables and Views using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin0.html)
+ - [Working with Tables and Views using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin0.html)
 
 
 ## Next Steps
- - [Working with Disk Engine using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin3.html)
+ - [Working with Disk Engine using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin3.html)
 
 ## Details
 ### You will learn  
@@ -77,4 +77,4 @@ Final step of this tutorial is to create a table from your ORC based file and se
 
 
 ## Next Steps
- - [Working with Disk Engine using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin3.html)
+ - [Working with Disk Engine using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin3.html)

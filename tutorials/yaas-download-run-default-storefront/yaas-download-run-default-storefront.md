@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-hybris-as-
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials** [Getting Started with YaaS](http://www.sap.com/developer/tutorials/yaas-getting-started.html))
+- **Tutorials** [Getting Started with YaaS](https://www.sap.com/developer/tutorials/yaas-getting-started.html))
 
 ## Next Steps
-- [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
+- [Extend the YaaS Storefront's Functionality](https://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
 
 ## Details
 ### You will learn  
@@ -80,4 +80,4 @@ You now have seen a default YaaS Storefront running locally on your machine. The
 [ACCORDION-END]
 
 ## Next Steps
-- [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
+- [Extend the YaaS Storefront's Functionality](https://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)

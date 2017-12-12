@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios ]
 ## Prerequisites  
 - **Proficiency:** Beginner
 - **Development machine:** Access to a Mac computer
-- **Tutorials:** [Build your first Xcode & Swift App](http://www.sap.com/developer/tutorials/xcode-build-swift-app.html)
+- **Tutorials:** [Build your first Xcode & Swift App](https://www.sap.com/developer/tutorials/xcode-build-swift-app.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -119,4 +119,4 @@ Congratulations, you have now deployed and debugged your self-built app to an iP
 [ACCORDION-END]
 
 ### Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)

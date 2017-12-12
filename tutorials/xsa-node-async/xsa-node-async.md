@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [HANA Database Access from Node.js](http://www.sap.com/developer/tutorials/xsa-node-dbaccess.html)
+ - **Tutorials:** [HANA Database Access from Node.js](https://www.sap.com/developer/tutorials/xsa-node-dbaccess.html)
 
 ## Next Steps
- - [Text Bundles](http://www.sap.com/developer/tutorials/xsa-node-text.html)
+ - [Text Bundles](https://www.sap.com/developer/tutorials/xsa-node-text.html)
 
 ## Details
 ### You will learn  
@@ -1014,4 +1014,4 @@ Test your `databaseAsync2.js` from the test UI. The execution is similar to befo
 
 
 ## Next Steps
- - [Text Bundles](http://www.sap.com/developer/tutorials/xsa-node-text.html)
+ - [Text Bundles](https://www.sap.com/developer/tutorials/xsa-node-text.html)
