@@ -2,15 +2,11 @@
 title: Create a sample application on SCP Neo using SAP S/4HANA Cloud SDK
 description: The following steps will explain how to create your very first Hello World sample application on SCP Neo using the SAP S/4HANA Cloud SDK. If you want to follow this tutorial, it is highly recommended checking out the first tutorial in the series. You will not need any additional software as the server will run on your local machine.
 primary_tag: products>sap-s-4hana-cloud-sdk
-tags: [ tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform, products>sap-s-4hana-cloud-sdk, topic>cloud, topic>java ]
+tags: [ tutorial>intermediate, products>sap-s-4hana-cloud-sdk, products>sap-s-4hana, products>sap-cloud-platform, products>sap-s-4hana-cloud-sdk, topic>cloud, topic>java ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** intermediate
- - **Tutorials:** [Set up your local infrastructure to develop with SAP S/4HANA Cloud SDK](https://www.sap.com/developer/tutorials/s4sdk-setup.html)
-
-## Next Steps
-- **Tutorial:** [Connect to OData service on Neo using SAP S/4HANA Cloud SDK](https://www.sap.com/developer/tutorials/s4sdk-odata-service-neo.html)
 
 ### You will learn  
 The tutorial will show you the first steps when developing applications for the SCP Neo using the SAP S/4HANA Cloud SDK. You will generate a project stub using a `Maven Archetype` and afterwards spend some time understanding the project structure and its artifacts. Then you will implement and understand the Hello World Servlet and an integration test. At the end, you will deploy your application on Neo.
