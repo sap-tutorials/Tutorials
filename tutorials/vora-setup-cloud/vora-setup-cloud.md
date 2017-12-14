@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, products>sap-vora, topic>big-data ]
  - You have understanding of cloud infrastructure
 
 ## Next Steps
- - [Connect to SAP Vora instance to manage it] (http://www.sap.com/developer/tutorials/vora-connect.html)
+ - [Connect to SAP Vora instance to manage it] (https://www.sap.com/developer/tutorials/vora-connect.html)
 
 ## Details
 ### You will learn  
@@ -28,7 +28,7 @@ SAP Vora leverages and extends the Apache Spark execution framework to provide e
 
 1. Currently the instance of SAP Vora developer edition can be created only in [Amazon Web Services](http://aws.amazon.com/account/). Make sure you have an account there.
 
-    >While SAP does not charge you for [developer editions of products](http://www.sap.com/developer/trials-downloads.html), Amazon will charge you for the usage of their infrastructure resources in the cloud, like computing, storage, network etc.
+    >While SAP does not charge you for [developer editions of products](https://www.sap.com/developer/trials-downloads.html), Amazon will charge you for the usage of their infrastructure resources in the cloud, like computing, storage, network etc.
 
 2. The instance creation and management is done via [SAP Cloud Appliance Library](https://cal.sap.com/) - the free service to manage your SAP solutions in the public cloud. Make sure you have an account there before proceeding with this tutorial.
 
@@ -98,4 +98,4 @@ SAP Vora leverages and extends the Apache Spark execution framework to provide e
  - Review the [SAP Cloud Appliance Library (CAL) documentation](https://calstatic.hana.ondemand.com/res/~1472020269624~/docEN/index.html)
 
 ## Next Steps
- - [Connect to SAP Vora instance to manage it] (http://www.sap.com/developer/tutorials/vora-connect.html)
+ - [Connect to SAP Vora instance to manage it] (https://www.sap.com/developer/tutorials/vora-connect.html)

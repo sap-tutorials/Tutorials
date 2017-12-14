@@ -6,10 +6,10 @@ tags: [  tutorial>Intermediate, topic>cloud, topic>html5, topic>sapui5, products
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Grunt Build in SAP Web IDE](http://www.sap.com/developer/tutorials/webide-grunt-basic.html)
+- **Tutorials:** [Grunt Build in SAP Web IDE](https://www.sap.com/developer/tutorials/webide-grunt-basic.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 ## Details  
 SAP Web IDE provides a Grunt plugin for checking your JavaScript code (`lint`), removing previous builds (`clean`), and building your application (`build`). Of course, you may want to use your own Grunt plugin or one of hundreds publicly available. In SAP Web IDE, you can reference them, configure them, and run their tasks.
@@ -371,4 +371,4 @@ The method `getTitle()` is called from within the `View1` controller.
 [ACCORDION-END]
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)

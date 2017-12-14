@@ -12,7 +12,7 @@ tags: [ products>sap-hana, products>sap-cloud-platform, tutorial>beginner]
    - [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html)
 
 ## Next Steps
-[Access your first Data from a native SAP HANA Application](http://www.sap.com/developer/tutorials/hana-data-access-authorizations.html)
+[Access your first Data from a native SAP HANA Application](https://www.sap.com/developer/tutorials/hana-data-access-authorizations.html)
 
 ## Details
 

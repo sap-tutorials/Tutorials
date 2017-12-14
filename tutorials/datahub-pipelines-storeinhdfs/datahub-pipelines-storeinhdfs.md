@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have completed [Use a message broker](http://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
+ - You have completed [Use a message broker](https://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
 
 ## Next Steps
- - [Bundle data (via JavaScript)](http://www.sap.com/developer/tutorials/datahub-pipelines-bundledata.html)
+ - [Bundle data (via JavaScript)](https://www.sap.com/developer/tutorials/datahub-pipelines-bundledata.html)
 
 ## Details
 ### You will learn  
@@ -88,4 +88,4 @@ Stop the pipeline by pressing the **Stop** button.
 ---
 
 ## Next Steps
-[Bundle data (via JavaScript)](http://www.sap.com/developer/tutorials/datahub-pipelines-bundledata.html)
+[Bundle data (via JavaScript)](https://www.sap.com/developer/tutorials/datahub-pipelines-bundledata.html)

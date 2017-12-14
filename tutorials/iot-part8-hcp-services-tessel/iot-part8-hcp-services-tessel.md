@@ -8,10 +8,10 @@ tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things,
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)
+- **Tutorials:** [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](https://www.sap.com/developer/tutorials/iot-part7-add-device.html)
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Viewing data from environmental sensors](http://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
+- [SAP Cloud Platform IoT for Neo: Viewing data from environmental sensors](https://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
 
 
 ## Details
@@ -167,4 +167,4 @@ You can switch as well from table display to live chart to see climate data chan
 
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Viewing data from environmental sensors](http://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
+- [SAP Cloud Platform IoT for Neo: Viewing data from environmental sensors](https://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)

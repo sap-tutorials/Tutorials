@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have completed [Navigate around SAP Data Hub, developer edition](http://www.sap.com/developer/tutorials/datahub-docker-navigation.html)
+ - You have completed [Navigate around SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-navigation.html)
 
 ## Details
 ### You will learn  

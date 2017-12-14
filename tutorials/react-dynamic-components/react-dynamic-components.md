@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorial:** [Separate the files](http://www.sap.com/developer/tutorials/react-separate-files.html)
+- **Tutorial:** [Separate the files](https://www.sap.com/developer/tutorials/react-separate-files.html)
 
 ## Next Steps
-- **Tutorial:** [Add REST OData retrieval](http://www.sap.com/developer/tutorials/react-add-odata.html)
+- **Tutorial:** [Add REST OData retrieval](https://www.sap.com/developer/tutorials/react-add-odata.html)
 
 
 ## Details
@@ -335,4 +335,4 @@ document.getElementById('product-list')
 ---
 
 ## Next Steps
-- **Tutorial:** [Add REST OData retrieval](http://www.sap.com/developer/tutorials/react-add-odata.html)
+- **Tutorial:** [Add REST OData retrieval](https://www.sap.com/developer/tutorials/react-add-odata.html)

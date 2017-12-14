@@ -9,7 +9,7 @@ tags: [ tutorial>intermediate, products>sap-s-4hana ]
  - **Tutorials:** [Creating simple tiles within Fiori Launchpad](https://www.sap.com/developer/tutorials/s4hana-cds-launchpad-designer-fiori-role.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  

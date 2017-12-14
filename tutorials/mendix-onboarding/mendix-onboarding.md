@@ -1,8 +1,8 @@
 ---
-title: Getting Started with SAP Cloud Platform Rapid Application Development by Mendix
-description: This tutorial shows you how to set up your SAP Cloud Platform account so you can use SAP Cloud Platform Rapid Application Development by Mendix to build applications to be deployed on SAP Cloud Platform.
+title: Getting started with SAP Cloud Platform Rapid Application Development by Mendix
+description: Set up your SAP Cloud Platform account so you can use SAP Cloud Platform Rapid Application Development by Mendix to build applications to be deployed on SAP Cloud Platform.
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>cloud, topic>sapui5, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
@@ -11,6 +11,7 @@ tags: [  tutorial>beginner, topic>cloud, topic>sapui5, products>sap-cloud-platfo
 
 ## Details  
 You can build business applications for the SAP Cloud Platform Cloud Foundry environment using SAP Cloud Platform Rapid Application Development by Mendix, without needing to write code.
+
 
 In this tutorial, you will set up your SAP Cloud Platform account so you can use SAP Cloud Platform Rapid Application Development to build applications to be deployed on SAP Cloud Platform.
 
@@ -32,6 +33,7 @@ In this tutorial, you will set up your SAP Cloud Platform account so you can use
 Go to [https://account.hana.ondemand.com/cockpit](https://account.hana.ondemand.com/cockpit) and log into your SAP Cloud Platform account.
 
 ![SAP Cloud Platform](mendix-onboarding1.png)
+
 
 
 [ACCORDION-END]

@@ -6,11 +6,11 @@ tags: [ products>sap-cloud-platform, topic>cloud, topic>java, tutorial>intermedi
 ---
 
 ## Prerequisites  
-- [End-to-End Weather App Scenario Part 7](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part7.html)
+- [End-to-End Weather App Scenario Part 7](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part7.html)
 - Register for an API Key from [openweathermap.org](http://openweathermap.org/appid)
 
 ## Next Steps
-- [End-to-End Weather App Scenario Part 9](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)
+- [End-to-End Weather App Scenario Part 9](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)
 
 ## Details
 ### You will learn  
@@ -149,4 +149,4 @@ public Response getWeatherInformation(@PathParam(value = "id") String id,    @Co
 
 
 ## Next Steps
-- [End-to-End Weather App Scenario Part 9](http://www.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)
+- [End-to-End Weather App Scenario Part 9](https://www.sap.com/developer/tutorials/hcp-java-weatherapp-part9.html)

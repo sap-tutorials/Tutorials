@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Creating Scalar User Defined Functions](http://www.sap.com/developer/tutorials/xsa-sqlscript-scalar.html)
+- **Tutorials:** [Creating Scalar User Defined Functions](https://www.sap.com/developer/tutorials/xsa-sqlscript-scalar.html)
 
 ## Next Steps
-- [Debugging Stored Procedures](http://www.sap.com/developer/tutorials/xsa-sqlscript-debugging.html)
+- [Debugging Stored Procedures](https://www.sap.com/developer/tutorials/xsa-sqlscript-debugging.html)
 
 ## Details
 ### You will learn  
@@ -158,4 +158,4 @@ The results of your table function are then shown.
 
 
 ## Next Steps
-- [Debugging Stored Procedures](http://www.sap.com/developer/tutorials/xsa-sqlscript-debugging.html)
+- [Debugging Stored Procedures](https://www.sap.com/developer/tutorials/xsa-sqlscript-debugging.html)

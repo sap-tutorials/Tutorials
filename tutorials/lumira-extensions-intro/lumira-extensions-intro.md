@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-businessobjects-lumira]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Download and install SAP Lumira](http://www.sap.com/developer/tutorials/lumira-install.html)
+ - **Tutorials:** [Download and install SAP Lumira](https://www.sap.com/developer/tutorials/lumira-install.html)
 
 ## Next Steps
- - [Creating a new viz extension project](http://www.sap.com/developer/tutorials/lumira-web-ide-create-viz-extension.html)
+ - [Creating a new viz extension project](https://www.sap.com/developer/tutorials/lumira-web-ide-create-viz-extension.html)
 
 ## Details
 ### You will learn  
@@ -87,4 +87,4 @@ In this tutorial, you will learn how to use an example viz extension (Bullet Cha
  - Think about contributing your own viz extensions as open source as well
 
 ## Next Steps
- - [Creating a new viz extension project](http://www.sap.com/developer/tutorials/lumira-web-ide-create-viz-extension.html)
+ - [Creating a new viz extension project](https://www.sap.com/developer/tutorials/lumira-web-ide-create-viz-extension.html)

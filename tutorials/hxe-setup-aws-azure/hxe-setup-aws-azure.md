@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Next Steps
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
-- **XS Advanced:** [ Get started with XS Advanced development](http://www.sap.com/developer/topics/sap-hana-express.html)
+- **XS Advanced:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
 - **XS Advanced:** [Explore the basics tools in XS Advanced - like the administration cockpit and SAP Web IDE for SAP HANA](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
 
 ## Details
@@ -253,5 +253,5 @@ The instances in the Cloud Appliance Library have additional applications pre-in
 
 ## Next Steps
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
-- **XS Advanced:** [ Get started with XS Advanced development](http://www.sap.com/developer/topics/sap-hana-express.html)
+- **XS Advanced:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
 - **XS Advanced:** [Explore the basics tools in XS Advanced - like the administration cockpit and SAP Web IDE for SAP HANA](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)

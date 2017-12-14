@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Intro to SAP HANA Spatial: Strings](http://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
+- **Tutorials:** [Intro to SAP HANA Spatial: Strings](https://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
 
 ## Next Steps
-- [Intro to SAP HANA Spatial: Tables with spatial columns](http://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
+- [Intro to SAP HANA Spatial: Tables with spatial columns](https://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
 
 ## Details
 ### You will learn  
@@ -156,4 +156,4 @@ The point (1, 1) is in the circle with the center point of (0, 0) and the radius
 - See the SAP HANA Spatial Reference at https://help.sap.com/hana_platform for the complete list of objects and methods
 
 ## Next Steps
-- [Intro to SAP HANA Spatial: Tables with spatial columns](http://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
+- [Intro to SAP HANA Spatial: Tables with spatial columns](https://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)

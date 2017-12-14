@@ -7,12 +7,12 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Predictive Analytics Using SQL Script](http://www.sap.com/developer/tutorials/hxe-ua-predictive-sql.html)
+ - **Tutorials:** [Predictive Analytics Using SQL Script](https://www.sap.com/developer/tutorials/hxe-ua-predictive-sql.html)
 
 
 ## Next Steps
  - Find more Predictive Analysis Library tutorials on the [SAP HANA Academy YouTube Channel](https://www.youtube.com/playlist?list=PLkzo92owKnVw05sPUtcKJM66fYfk9sG-g)
- - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -251,4 +251,4 @@ Click the __Activate__ icon ![Activate](activate.png) and continue with the tuto
 
 ## Next Steps
 - Find more Predictive Analysis Library tutorials on the [SAP HANA Academy YouTube Channel](https://www.youtube.com/playlist?list=PLkzo92owKnVw05sPUtcKJM66fYfk9sG-g)
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)

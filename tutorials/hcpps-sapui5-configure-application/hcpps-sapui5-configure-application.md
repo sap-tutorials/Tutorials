@@ -7,10 +7,10 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Configure the SAP Cloud Platform predictive services](https://www.sap.com/developer/groups/ps-configure.html)
+  - **Tutorials:** [Configure the SAP Predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-- [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
+- [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 ### You will learn
@@ -61,7 +61,7 @@ Field Name           | Value
 :------------------- | :--------------
 Name                 | `psapi`
 Type                 | `HTTP`
-Description          | `SAP Cloud Platform Predictive Services Destination`
+Description          | `SAP Predictive services Destination`
 URL                  | the C4PA URL as described at the beginning
 Proxy Type           | `Internet`
 Authentication       | `AppToAppSSO`
@@ -324,4 +324,4 @@ Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob
 [ACCORDION-END]
 
 ## Next Steps
-- [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
+- [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
