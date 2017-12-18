@@ -253,6 +253,22 @@ var isStoreOpened: Bool {
 }
 ```
 
+To close the store from the view controllers, add the following method at the bottom of the `AppDelegate` class:
+
+```swift
+func closeOfflineStore() {
+    if _isStoreOpened {
+        do {
+            try deliveryServiceOffline.close()
+            _isStoreOpened = false
+        } catch {
+            logger.error("Offline Store closing failed")
+        }
+    }
+    logger.info("Offline Store closed")
+}
+```
+
 [DONE]
 [ACCORDION-END]
 
@@ -264,7 +280,7 @@ Then, open file `PackagesMasterViewController.swift` in `Demo > ViewControllers 
 import SAPOfflineOData
 ```
 
-Then add a reference to the `deliveryServiceOffline` field in the `AppDelegate.swift` file. Below the `deliveryService` declaration, add a similar declaration but now for offline usage:
+Then add a reference in the `PackagesMasterViewController.swift` file to the `deliveryServiceOffline` field which was created in the `AppDelegate.swift` file at step 7. Below the `deliveryService` declaration, add a similar declaration but now for offline usage:
 
 ```swift
 private var deliveryServiceOffline: DeliveryService<OfflineODataProvider> {
