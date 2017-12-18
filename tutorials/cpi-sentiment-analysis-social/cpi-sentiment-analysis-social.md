@@ -41,7 +41,7 @@ Read and accept the developer Agreement by selecting the **Yes I** agree checkbo
 
 Navigate to the **keys and Access tokens** tab.  Click on the two locations to generate your own keys.  This will generate the key and access tokens.
 
->Write down the keys and access token. These keys will be use on the next tutorial.  
+>Write down the keys and access token. These keys will be used in the next tutorial.  
 
 &nbsp;
 

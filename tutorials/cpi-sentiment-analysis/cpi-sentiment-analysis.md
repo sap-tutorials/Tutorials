@@ -1,6 +1,6 @@
 ---
-title: How to setup SAP Cloud Platform Integration for Twitter using the SAP Hybris Marketing Cloud System
-description: The SAP Cloud Integration package implements an integration of Social Media Data into SAP Hybris Marketing Cloud. It allows you to load and analyze Social Media data from Twitter into your SAP Hybris Marketing Cloud system.
+title: Setup SCP Integration for Twitter using the SAP Hybris Marketing Cloud System
+description: The SCP Integration package implements an integration of social media Data into SAP Hybris Marketing Cloud. It allows you to load and analyze social media data from Twitter into your SAP Hybris Marketing Cloud system.
 primary_tag: products>sap-s-4hana
 tags: [  tutorial>beginner,products>sap-s-4hana ]
 ---
@@ -60,8 +60,8 @@ Ensure that the Time event is scheduled with the Run Once option, so that the in
 
 Switch to the **Receiver** tab. Within this Integration Flow, two receivers are maintained. Select **MKT_Receiver**. Ensure that following attributes are set:
 - Address:  Replace the URL with your S/4 HANA Host URL
-- credential Name:  This is the technical user created in the [**Setup a SAP Hybris Marketing Cloud System**](https://www.sap.com/developer/tutorials/cpi-sentiment-analysis-s4.html).
-![yMKT_Receiver](10.png)  
+- credential Name:  This is the technical user created in the [**Setup a SAP Hybris Marketing Cloud System**](https://www.sap.com/developer/tutorials/cpi-sentiment-analysis-s4.html) tutorial.
+![yMKT_Receiver](10.png)
 
 Switch to the **MKT_Receiver_metadata** from the drop down menu.
 Ensure that following attributes are set:

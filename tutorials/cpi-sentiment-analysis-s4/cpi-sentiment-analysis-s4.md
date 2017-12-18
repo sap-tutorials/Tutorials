@@ -32,7 +32,7 @@ Assign a password for the user in the password field for basic authentication. E
 ![user password](4.png)  
 
 Choose **Create**
->Note:  It is also possible to use an existing user.  In cased an existing user is used, the password of this user is required as well.
+>Note:  It is also possible to use an existing user.  In case an existing user is used, the password of this user is required as well.
 
 &nbsp;
 
@@ -88,7 +88,7 @@ Under Common Data, select the Communication System via value help which was crea
 
 ![system](12.png)  
 
-Under Inbound Communication the technical user which was created in step 1. This field should be automatically filled in.  
+The technical user, which was created in step 1, should be automatically filled in under **Inbound Communication**. 
 ![system USER](13.png)
 
 Choose **Save**.
