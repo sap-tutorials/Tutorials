@@ -120,7 +120,7 @@ Here we will connect our streaming design time tools to the SAP HANA streaming a
     ![New Server URL](new-server-url.png)
 
 2. Enter the following connection details:
-    - Host Name: `hxehost` (The hostname or IP address for your SAP HANA, express edition installation)
+    - Host Name: hxehost (The hostname or IP address for your SAP HANA, express edition installation)
     - Port: 39016 (virtual machine) or 3`<instance-number>`16 (binary installation)
 
     Enable SSL, then click **OK**:
@@ -185,7 +185,7 @@ In this step we will create a named **Data Service** on the SAP HANA streaming a
 
     ![Rename Service](rename-service.png)
 
-    ![Name the service](name-service-02.png)
+    ![Name the service](name-service-02.PNG)
 
 6. To confirm that the HANA service is configured properly, right-click on it and select **Discover**:
 
