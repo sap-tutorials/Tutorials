@@ -8,10 +8,10 @@ tags: [products>sap-hana, products>sap-hana\,-express-edition  , topic>big-data,
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA XS Advanced Create an HTML5 Module](http://www.sap.com/developer/tutorials/xsa-html5-module.html)
+ - **Tutorials:** [SAP HANA XS Advanced Create an HTML5 Module](https://www.sap.com/developer/tutorials/xsa-html5-module.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 
 ## Details
@@ -539,4 +539,4 @@ We are now ready to perform the final **Build**. HDB modules are now complete an
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)

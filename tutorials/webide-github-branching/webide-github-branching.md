@@ -7,10 +7,10 @@ tags: [ tutorial>intermediate, topic>cloud, products>sap-hana, products>sap-web-
 ## Prerequisites  
  - **Proficiency:** Intermediate
  - **Tutorials:**
-    - [Creating issues, setting milestones and assigning issues to collaborators](http://www.sap.com/developer/tutorials/webide-github-issues-milestones.html)
+    - [Creating issues, setting milestones and assigning issues to collaborators](https://www.sap.com/developer/tutorials/webide-github-issues-milestones.html)
 
 ## Next Steps
-- [Merging branches back into master branch in GitHub using Pull Requests](http://www.sap.com/developer/tutorials/webide-github-merge-pull-request.html)
+- [Merging branches back into master branch in GitHub using Pull Requests](https://www.sap.com/developer/tutorials/webide-github-merge-pull-request.html)
 
 ## Details
 ### You will learn  
@@ -80,4 +80,4 @@ In this tutorial, you'll learn how your collaborators can create branches in Git
 
 
 ## Next Steps
- - [Merging branches back into master branch in GitHub using Pull Requests](http://www.sap.com/developer/tutorials/webide-github-merge-pull-request.html)
+ - [Merging branches back into master branch in GitHub using Pull Requests](https://www.sap.com/developer/tutorials/webide-github-merge-pull-request.html)

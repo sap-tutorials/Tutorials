@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Creating a Graphical Calculation View](http://www.sap.com/developer/tutorials/xsa-graphical-view.html)
+- **Tutorials:** [Creating a Graphical Calculation View](https://www.sap.com/developer/tutorials/xsa-graphical-view.html)
 
 ## Next Steps
-- [Creating Stored Procedures](http://www.sap.com/developer/tutorials/xsa-sqlscript-stored-proc.html)
+- [Creating Stored Procedures](https://www.sap.com/developer/tutorials/xsa-sqlscript-stored-proc.html)
 
 ## Details
 ### You will learn  
@@ -138,4 +138,4 @@ See how the conversion has been performed for those currencies in table TCURR, w
 
 
 ## Next Steps
--  - [Creating Stored Procedures](http://www.sap.com/developer/tutorials/xsa-sqlscript-stored-proc.html)
+-  - [Creating Stored Procedures](https://www.sap.com/developer/tutorials/xsa-sqlscript-stored-proc.html)

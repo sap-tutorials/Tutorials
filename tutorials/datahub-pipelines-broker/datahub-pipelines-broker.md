@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have completed [Generate sensor data](http://www.sap.com/developer/tutorials/datahub-pipelines-sensordata.html)
+ - You have completed [Generate sensor data](https://www.sap.com/developer/tutorials/datahub-pipelines-sensordata.html)
 
 ## Next Steps
- - [Store sensor data in HDFS](http://www.sap.com/developer/tutorials/datahub-pipelines-storeinhdfs.html)
+ - [Store sensor data in HDFS](https://www.sap.com/developer/tutorials/datahub-pipelines-storeinhdfs.html)
 
 ## Details
 ### You will learn  
@@ -111,4 +111,4 @@ Stop the pipeline by pressing the **Stop** button.
 ---
 
 ## Next Steps
-[Store sensor data in HDFS](http://www.sap.com/developer/tutorials/datahub-pipelines-storeinhdfs.html)
+[Store sensor data in HDFS](https://www.sap.com/developer/tutorials/datahub-pipelines-storeinhdfs.html)

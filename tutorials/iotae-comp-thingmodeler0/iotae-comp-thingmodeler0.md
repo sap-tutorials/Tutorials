@@ -23,7 +23,7 @@ You will learn how to onboard your computer as the IoT thing for collecting sens
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP IoT Application Enablement Thing Modeler)]
-You should have access to the `sap-iotaehandson2` tenant on SAP Cloud Platform. It is in limited availability as of now - primarily available to participants of SAP's face to face events.
+Go to https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html and follow the instructions on the page to get a user and a password on the tenant landscape used for this tutorial.
 
 Open https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/launchpage/ in the web browser. Use the user id provided to you and not your email address to login.
 

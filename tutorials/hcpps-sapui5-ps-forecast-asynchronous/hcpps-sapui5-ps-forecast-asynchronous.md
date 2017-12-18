@@ -7,10 +7,10 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Implement the "Forecast" service asynchronous mode](http://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
+  - **Tutorials:** [Implement the "Forecast" service asynchronous mode](https://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
 
 ## Next Steps
-  - This was the end of the tutorial series. Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+  - This was the end of the tutorial series. Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn
@@ -21,7 +21,7 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
 ### Time to Complete
   **10 minutes**
 
-> **Note**: if you are running into some issue, you can check the [SAP Cloud Platform Predictive Services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
+> **Note**: if you are running into some issue, you can check the [SAP Predictive services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
@@ -477,4 +477,4 @@ Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob
 [ACCORDION-END]
 
 ## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)

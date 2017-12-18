@@ -13,8 +13,8 @@ tags: [  tutorial>intermediate, tutorial:type/project  ]
 
 ## Next Steps
  
-  - [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
   
 ---
 
@@ -95,5 +95,5 @@ This document refers to a Nexus 2 release.
 
 ## Next Steps
  
-  - [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

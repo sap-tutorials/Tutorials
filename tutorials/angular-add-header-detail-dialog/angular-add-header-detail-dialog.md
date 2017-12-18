@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials** [Add OData to the application](http://www.sap.com/developer/tutorials/angular-add-odata.html)
+- **Tutorials** [Add OData to the application](https://www.sap.com/developer/tutorials/angular-add-odata.html)
 
 ## Next Steps
-- **Tutorials** [Add a Form to your application](http://www.sap.com/developer/tutorials/angular-forms-intro.html)  
+- **Tutorials** [Add a Form to your application](https://www.sap.com/developer/tutorials/angular-forms-intro.html)  
 
 ## Details
 ### You will learn  
@@ -271,4 +271,4 @@ Angular:
 
 ---
 ## Next Steps
-- **Tutorials** [Add a Form to your application](http://www.sap.com/developer/tutorials/angular-forms-intro.html)
+- **Tutorials** [Add a Form to your application](https://www.sap.com/developer/tutorials/angular-forms-intro.html)

@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [Create Tables and Import Data](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part3.html)
+ - **Tutorials:** [Create Tables and Import Data](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part3.html)
 
 ## Next Steps
- - **Tutorials:** [Selectively Move Data Between In-Memory and Extended Tables](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part5.html)
+ - **Tutorials:** [Selectively Move Data Between In-Memory and Extended Tables](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part5.html)
 
 ## Details
 ### You will learn
@@ -122,4 +122,4 @@ You can look at the columns: `TABLE_NAME`, `REFERENCED_TABLE_NAME` and `CONSTRAI
 [ACCORDION-END]
 
 ## Next Steps
-- **Tutorials:** [Selectively Move Data Between In-Memory and Extended Tables](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part5.html)
+- **Tutorials:** [Selectively Move Data Between In-Memory and Extended Tables](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part5.html)

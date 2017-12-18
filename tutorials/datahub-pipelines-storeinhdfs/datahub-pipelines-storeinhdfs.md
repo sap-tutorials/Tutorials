@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have completed [Use a message broker](http://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
+ - You have completed [Use a message broker](https://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
 
 ## Next Steps
- - [Bundle data (via JavaScript)](http://www.sap.com/developer/tutorials/datahub-pipelines-bundledata.html)
+ - [Bundle data (via JavaScript)](https://www.sap.com/developer/tutorials/datahub-pipelines-bundledata.html)
 
 ## Details
 ### You will learn  
@@ -22,7 +22,7 @@ During this tutorial, you will learn how to store sensor data in the Hadoop Dist
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Check Hadoop)]
-The SAP Data Hub, developer edition per default comes with an Apache Hadoop installation. Open http://localhost:50070 and check that HDFS is up and running.
+The SAP Data Hub, developer edition per default comes with an Apache Hadoop installation. Open `http://localhost:50070` and check that HDFS is up and running.
 
 ![picture_01](./datahub-pipelines-storeinhdfs_01.png)  
 
@@ -77,7 +77,7 @@ When the **Status** tab indicates that the pipeline is running, use the context 
 
 In contrast to the previous tutorial, this time the generated sensor data is not sent from the **Kafka Receiver** operator to the **Terminal** operator directly, but via HDFS. Hence the **Terminal** also shows you information about the created files.
 
-Open http://localhost:50070 and display the `/tmp/hdfsManager` directory. The longer the pipeline runs, the more files you will find there.
+Open `http://localhost:50070` and display the `/tmp/hdfsManager` directory. The longer the pipeline runs, the more files you will find there.
 
 ![picture_04](./datahub-pipelines-storeinhdfs_04.png)  
 
@@ -88,4 +88,4 @@ Stop the pipeline by pressing the **Stop** button.
 ---
 
 ## Next Steps
-[Bundle data (via JavaScript)](http://www.sap.com/developer/tutorials/datahub-pipelines-bundledata.html)
+[Bundle data (via JavaScript)](https://www.sap.com/developer/tutorials/datahub-pipelines-bundledata.html)

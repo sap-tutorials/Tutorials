@@ -6,12 +6,12 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-vora ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create SAP Vora, developer edition, in the cloud](http://www.sap.com/developer/tutorials/vora-setup-cloud.html)
+ - **Tutorials:** [Create SAP Vora, developer edition, in the cloud](https://www.sap.com/developer/tutorials/vora-setup-cloud.html)
  - Basic understanding of Apache Hadoop ecosystem and terminology
  - Basic understanding of Linux OS, commands and the use of terminal
 
 ## Next Steps
- - [Loading sample data using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-zeppelin-load-sample-data.html)
+ - [Loading sample data using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-zeppelin-load-sample-data.html)
 
 ## Details
 ### You will learn  
@@ -79,4 +79,4 @@ You will learn how to connect to your SAP Vora instance to manage it. There are 
     ![ssh into SAP Vora instance](voraconnect05.jpg)
 
 ## Next Steps
- - [Loading sample data using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-zeppelin-load-sample-data.html)
+ - [Loading sample data using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-zeppelin-load-sample-data.html)

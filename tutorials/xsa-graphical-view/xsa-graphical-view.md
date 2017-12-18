@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Import SHINE tables and data](http://www.sap.com/developer/tutorials/xsa-import-shine-data.html)
+- **Tutorials:** [Import SHINE tables and data](https://www.sap.com/developer/tutorials/xsa-import-shine-data.html)
 
 ## Next Steps
-- [Creating a Calculation View with a Cube data type and Star Join](http://www.sap.com/developer/tutorials/xsa-sqlscript-cube.html)
+- [Creating a Calculation View with a Cube data type and Star Join](https://www.sap.com/developer/tutorials/xsa-sqlscript-cube.html)
 
 ## Details
 ### You will learn  
@@ -35,4 +35,4 @@ The following video covers the creation of a calculation view in SAP Web IDE for
 ---
 
 ## Next Steps
-- [Creating a Calculation View with a Cube data type and Star Join](http://www.sap.com/developer/tutorials/xsa-sqlscript-cube.html)
+- [Creating a Calculation View with a Cube data type and Star Join](https://www.sap.com/developer/tutorials/xsa-sqlscript-cube.html)

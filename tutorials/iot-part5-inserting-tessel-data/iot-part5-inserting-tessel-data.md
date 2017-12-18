@@ -8,11 +8,11 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Internet of Things (IoT) Check your data](http://www.sap.com/developer/tutorials/iot-part4-checking-data.html)
+- **Tutorials:** [Internet of Things (IoT) Check your data](https://www.sap.com/developer/tutorials/iot-part4-checking-data.html)
 
 
 ## Next Steps
-- [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
+- [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](https://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
 
 ## Details
 ### You will learn  
@@ -246,4 +246,4 @@ The web view is shown here. Note that since this pages uses the SAPUI5 JavaScrip
 
 
 ## Next Steps
-- [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
+- [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](https://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)

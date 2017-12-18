@@ -13,8 +13,8 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 ## Next Steps
  
-  - [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html)
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)
+  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
 
 ---
 
@@ -30,7 +30,7 @@ Note: This document is restricted to the description of component installation o
 
 ### 1. Introduction
 
-The interface between local (single developer) and collaborative (team) development is the source code management (SCM) tool together with a code review system. As already described in [CI/CD Practices](http://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html), the SCM tools plays a key role in the CI process. It only makes the development process reproducible. The SCM tool is also the interface to any sequel step, most importantly, the build step in the overall CI process.
+The interface between local (single developer) and collaborative (team) development is the source code management (SCM) tool together with a code review system. As already described in [CI/CD Practices](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html), the SCM tools plays a key role in the CI process. It only makes the development process reproducible. The SCM tool is also the interface to any sequel step, most importantly, the build step in the overall CI process.
 
 There are many different possible choices for a SCM and review system. In this document, we show how to use Git as SCM tool and Gerrit as Git repository server and code review tool. These tools are very frequently used.
 
@@ -207,5 +207,5 @@ Git is installed on your local computer. If the computer is running on Linux, in
 
 ## Next Steps
  
-  - [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html)
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)
+  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

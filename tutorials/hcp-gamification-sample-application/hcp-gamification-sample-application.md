@@ -6,9 +6,9 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Enable and configure the SAP Cloud Platform, gamification service](http://www.sap.com/developer/tutorials/hcp-gamification-service-enable.html)
+- **Tutorials:** [Enable and configure the SAP Cloud Platform, gamification service](https://www.sap.com/developer/tutorials/hcp-gamification-service-enable.html)
 ## Next Steps
-- [Deploy gamified HelpDesk application to the SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)
+- [Deploy gamified HelpDesk application to the SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)
 
 ## Details
 ### You will learn  
@@ -120,4 +120,4 @@ Respond to each message in your queue and verify that points and badges are awar
 [ACCORDION-END]
 
 ## Next Steps
-- [Deploy gamified HelpDesk application to the SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)
+- [Deploy gamified HelpDesk application to the SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-deploy-gamified-application.html)

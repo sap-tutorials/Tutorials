@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>odata, products>sap-hana, products>sap-hana\,-
 ---
 ## Prerequisites  
  - **Proficiency:** beginner
- - **Tutorials:** [SAP HANA XS Advanced, Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)
+ - **Tutorials:** [SAP HANA XS Advanced, Creating an HDI Module](https://www.sap.com/developer/tutorials/xsa-hdi-module.html)
 
 ## Next Steps
- - [Create a simple OData service](http://www.sap.com/developer/tutorials/xsa-xsodata.html)
+ - [Create a simple OData service](https://www.sap.com/developer/tutorials/xsa-xsodata.html)
 
 ## Details
 ### You will learn  
@@ -73,7 +73,7 @@ Later at deploy, the destination routing builds a dependency and navigation abil
 
 
 
-If you remember back, you maintained the `xs-app.json` of the App Router [web module](http://www.sap.com/developer/tutorials/xsa-html5-module.html). Now you can add rules for redirecting certain requests to the web module into other modules in this project.
+If you remember back, you maintained the `xs-app.json` of the App Router [web module](https://www.sap.com/developer/tutorials/xsa-html5-module.html). Now you can add rules for redirecting certain requests to the web module into other modules in this project.
 
 This is where you are configuring that any file request with the extension `.xsjs` or `.xsodata` should be rerouted internally to the Node.js destination that you defined in the `mta.yaml` file.
 
@@ -173,4 +173,4 @@ In the running tab, you should see the `index.html` from earlier. You can add th
 [ACCORDION-END]  
 
 ## Next Steps
- - [Create a simple OData service](http://www.sap.com/developer/tutorials/xsa-xsodata.html)
+ - [Create a simple OData service](https://www.sap.com/developer/tutorials/xsa-xsodata.html)

@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 
 ## Prerequisites  
 - **Proficiency:** Beginner
- - **Tutorials:** [Intro to SAP HANA Spatial: Z and M coordinates](http://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
+ - **Tutorials:** [Intro to SAP HANA Spatial: Z and M coordinates](https://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or search in the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or search in the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -94,4 +94,4 @@ More spatial reference systems can be manually created or loaded into the SAP HA
 - Read [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US)
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or search in the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or search in the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)

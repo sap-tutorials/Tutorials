@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 
 ## Prerequisites  
 - **Proficiency:** Beginner
- - **Tutorials:** [Intro to SAP HANA Spatial: Spatial columns](http://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
+ - **Tutorials:** [Intro to SAP HANA Spatial: Spatial columns](https://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
 
 
 ## Next Steps
- - [Intro to SAP HANA Geospatial: Spatial Reference Systems](http://www.sap.com/developer/tutorials/hana-spatial-intro6-srs.html)
+ - [Intro to SAP HANA Geospatial: Spatial Reference Systems](https://www.sap.com/developer/tutorials/hana-spatial-intro6-srs.html)
 
 ## Details
 ### You will learn  
@@ -135,4 +135,4 @@ SELECT NEW ST_Point('POINT Z(0 0 0.5)').ST_Buffer(2).ST_CoordDim() from DUMMY;
 
 
 ## Next Steps
- - [Intro to SAP HANA Geospatial: Spatial Reference Systems](http://www.sap.com/developer/tutorials/hana-spatial-intro6-srs.html)
+ - [Intro to SAP HANA Geospatial: Spatial Reference Systems](https://www.sap.com/developer/tutorials/hana-spatial-intro6-srs.html)
