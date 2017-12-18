@@ -236,7 +236,22 @@ deliveryServiceOffline = DeliveryService(provider: offlineODataProvider)
 
 [ACCORDION-BEGIN [Step 9: ](Maintain State of the Offline Store)]
 
-Next, we need to modify the online behavior of the view controller for both the `Packages` and `DeliveryStatus` entities. First, open file `PackagesMasterViewController.swift` in `Demo > ViewControllers > Packages` and add import the offline framework here as well:
+Next, we need to modify the online behavior of the view controller for both the `Packages` and `DeliveryStatus` entities. First, in the `AppDelegate.swift` file, add a new field which holds the state of the store, whether it's open or not. Add the following boolean field:
+
+```swift
+private var _isStoreOpened = false
+var isStoreOpened: Bool {
+    get { return _isStoreOpened }
+    set { self._isStoreOpened = newValue }
+}
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Add offline service to the Master view controllers)]
+
+Then, open file `PackagesMasterViewController.swift` in `Demo > ViewControllers > Packages` and add import the offline framework here as well:
 
 ```swift
 import SAPOfflineOData
@@ -250,18 +265,12 @@ private var deliveryServiceOffline: DeliveryService<OfflineODataProvider> {
 }
 ```
 
-And finally, add a new field which holds the state of the store, whether it's open or not. Add the following boolean field:
-
-```swift
-private var isStoreOpened = false
-```
-
 Repeat the same for the `DeliveryStatusMasterViewController.swift` file.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Change request methods for offline usage)]
+[ACCORDION-BEGIN [Step 11: ](Change request methods for offline usage)]
 
 Go back to file `PackagesMasterViewController.swift`, locate method `requestEntities(completionHandler:)`, and replace its implementation with the following:
 
@@ -273,7 +282,7 @@ func requestEntities(completionHandler: @escaping (Error?) -> Void) {
             return;
         }
 
-        self.isStoreOpened = true
+        self.appDelegate.isStoreOpened = true
 
         self.deliveryServiceOffline.download { error in
             guard error == nil else {
@@ -281,12 +290,12 @@ func requestEntities(completionHandler: @escaping (Error?) -> Void) {
                 self.deliveryServiceOffline.fetchPackages(matching: query) { packages, error in
                     guard let packages = packages else {
                         completionHandler(error!)
-                        self.closeOfflineStore()
+                        self.appDelegate.closeOfflineStore()
                         return
                     }
                     self.entities = packages
                     completionHandler(nil)
-                    self.closeOfflineStore()
+                    self.appDelegate.closeOfflineStore()
                 }
                 return
             }
@@ -295,31 +304,15 @@ func requestEntities(completionHandler: @escaping (Error?) -> Void) {
             self.deliveryService.fetchPackages(matching: query) { packages, error in
                 guard let packages = packages else {
                     completionHandler(error!)
-                    self.closeOfflineStore()
+                    self.appDelegate.closeOfflineStore()
                     return
                 }
                 self.entities = packages
                 completionHandler(nil)
-                self.closeOfflineStore()
+                self.appDelegate.closeOfflineStore()
             }
         }
     }
-}
-```
-
-Below this modified method, add the following method:
-
-```swift
-func closeOfflineStore() {
-    if isStoreOpened {
-        do {
-            try deliveryServiceOffline.close()
-            isStoreOpened = false
-        } catch {
-            logger.error("Offline Store closing failed")
-        }
-    }
-    logger.info("Offline Store closed")
 }
 ```
 
@@ -337,7 +330,7 @@ func requestEntities(completionHandler: @escaping (Error?) -> Void) {
             return;
         }
 
-        self.isStoreOpened = true
+        self.appDelegate.isStoreOpened = true
 
         self.deliveryServiceOffline.download { error in
             guard error == nil else {
@@ -345,12 +338,12 @@ func requestEntities(completionHandler: @escaping (Error?) -> Void) {
                 self.deliveryServiceOffline.fetchDeliveryStatus(matching: query) { deliveryStatus, error in
                     guard let deliveryStatus = deliveryStatus else {
                         completionHandler(error!)
-                        self.closeOfflineStore()
+                        self.appDelegate.closeOfflineStore()
                         return
                     }
                     self.entities = deliveryStatus
                     completionHandler(nil)
-                    self.closeOfflineStore()
+                    self.appDelegate.closeOfflineStore()
                 }
                 return
             }
@@ -359,34 +352,22 @@ func requestEntities(completionHandler: @escaping (Error?) -> Void) {
             self.deliveryService.fetchDeliveryStatus(matching: query) { deliveryStatus, error in
                 guard let deliveryStatus = deliveryStatus else {
                     completionHandler(error!)
-                    self.closeOfflineStore()
+                    self.appDelegate.closeOfflineStore()
                     return
                 }
                 self.entities = deliveryStatus
                 completionHandler(nil)
-                self.closeOfflineStore()
+                self.appDelegate.closeOfflineStore()
             }
         }
     }
-}
-
-func closeOfflineStore() {
-    if isStoreOpened {
-        do {
-            try deliveryServiceOffline.close()
-            isStoreOpened = false
-        } catch {
-            logger.error("Offline Store closing failed")
-        }
-    }
-    logger.info("Offline Store closed")
 }
 ```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Build and run the application)]
+[ACCORDION-BEGIN [Step 12: ](Build and run the application)]
 
 Build and run the application, and log in to your application. Click on each entity type to load both entity sets, and navigate back to the main screen.
 
@@ -405,7 +386,7 @@ In the next step, you will correct this.
 
 [ACCORDION-BEGIN [Step 13: ](Offline usage for Fiori Timeline tableview)]
 
-In Xcode, open the file `DetailViewController.swift` and locate method `prepare`. At the end of this method, locate the following lines of code:
+In Xcode, open the file `PackagesDetailViewController.swift` and locate method `prepare`. At the end of this method, locate the following lines of code:
 
 ```swift
 let query = DataQuery()
@@ -455,14 +436,12 @@ if ConnectivityUtils.isConnected() {
 
         self.deliveryServiceOffline.fetchDeliveryStatus(matching: query) { deliveryStatus, error in
             guard let deliveryStatus = deliveryStatus else {
-                completionHandler(error!)
-                self.closeOfflineStore()
+                self.appDelegate.closeOfflineStore()
                 return
             }
-            trackingInfoView.entities = result!
+            trackingInfoView.entities = deliveryStatus
             trackingInfoView.tableView.reloadData()
-            completionHandler(nil)
-            self.closeOfflineStore()
+            self.appDelegate.closeOfflineStore()
         }
         return
     }
