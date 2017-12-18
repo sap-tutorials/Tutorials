@@ -25,14 +25,18 @@ Update SAP HANA 2.0, express edition when new patches are released.
 
 [ACCORDION-BEGIN [Step 1: ](Download Update Files)]
 
-Using the Download Manager, select Binary Installer and download the Server only package (`hxe.tgz`). If the installation you are updating has the Applications package, download the Applications package (`hxexsa.tgz`) as well.
+Login as `<sid>adm`. Depending on your current version of SAP HANA, express edition, you will either use the built-in update utility, or download the through the Download Manager. Your primary choice should be the built-in update utility.
+
+* Check the update utility. It can be found in the `<sid>adm/bin` directory. For `Linux x86_64`, use `HXECheckUpdate_liux.bin`, and for `Linux PPC64`, use `HXECheckUpdate.jar`. Run one of these to check for, and download, the latest files. Follow the prompts to download the new files. By default, they will be downloaded to `/usr/sap/<sid>/home/Downloads`. The downloaded files will be `hxe.tgz`, and `hxexsa.tgz` for Applications if applicable.
+
+* If you do not have the update utility, use the Download Manager, select Binary Installer and download the latest files for `hxe.tgz`, and `hxexsa.tgz` for Applications if applicable.
 
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Extract the Packages)]
 
-Login as `<sid>adm` and extract the contents of the packages.
+Extract the contents of the packages.
 
 Example:
 

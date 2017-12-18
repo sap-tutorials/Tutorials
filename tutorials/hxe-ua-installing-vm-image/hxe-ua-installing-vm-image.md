@@ -70,6 +70,8 @@ Check if your machine has the recommended hardware to successfully install and r
     - Server plus applications virtual machine: 16 GB RAM minimum. 24 GB RAM recommended.
     - Server-only virtual machine: 8 GB RAM minimum. (If you add additional components, or run heavy processing loads, you will need to increase your RAM.)
 
+    >**Tip**: Concerned about memory? The memory consumption of each optional component is listed in the [SAP HANA 2.0, express edition Sizing Guide (Virtual Machine Method)](https://help.sap.com/viewer/DRAFT/9e4243e92f244537b2164a57a405a9fd/latest/en-US).
+
 - **HDD** - 120 GB HDD recommended.
 
 - **Cores** - 2 cores (4 recommended).  
@@ -113,7 +115,7 @@ You can install any supported `hypervisor`, but examples in this tutorial use VM
 
 Register your copy of SAP HANA, express edition to access the download manager.
 
-1. Go to the registration page at <http://sap.com/sap-hana-express>.
+1. Go to the registration page at <https://www.sap.com/sap-hana-express>.
 
     (Alternately, you can go to the SAP HANA, express edition launch page at <https://www.sap.com/developer/topics/sap-hana-express.html> and click the **Register and download SAP HANA, express edition download manager** link.)  
 
@@ -169,6 +171,8 @@ Use the Download Manager (GUI mode) to download a server-only virtual machine pa
 5. (Optional) Download additional packages now (before your server is running), but note that you will need to transfer the downloaded installer files to your VM later.
 
     Alternately, you can wait until your server is running, and then download additional packages using the VM's built-in Download Manager (console mode). This latter method is faster and more efficient.
+
+    >**Tip**: Concerned about memory? The memory consumption of each optional component is listed in the [SAP HANA 2.0, express edition Sizing Guide (Virtual Machine Method)](https://help.sap.com/viewer/DRAFT/9e4243e92f244537b2164a57a405a9fd/latest/en-US).
 
     If downloading additional packages now, select one or more of the following:
 
@@ -294,6 +298,8 @@ Run the Download Manager in console mode if you're used to a command line interf
     | `dpagent_linux_x86_64.tgz`           | SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64) download package. The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources.  |
 
 5. Download one or more files.
+
+    >**Tip**: Concerned about memory? The memory consumption of each optional component is listed in the [SAP HANA 2.0, express edition Sizing Guide (Virtual Machine Method)](https://help.sap.com/viewer/DRAFT/9e4243e92f244537b2164a57a405a9fd/latest/en-US).
 
     This example uses the Linux Download Manager `HXEDownloadManager_linux.bin`. It specifies a proxy host, proxy port, and downloads Getting Started with SAP HANA, express edition (Virtual Machine Method and the SHINE package ( `shine.tgz`).
 
