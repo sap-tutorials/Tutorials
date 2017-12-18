@@ -145,20 +145,27 @@ Click **OK** to import the configuration. If everything goes well, the state has
 
 ![Upload application-config.ini file](fiori-ios-scpms-deliveryapp-part6-08.png)
 
-[VALIDATE_4]
-
+[DONE]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 5: ](Examine uploaded configuration)]
 
-If you now click the **Display** action, you can examine the uploaded configuration:
+If you now click the **Edit** button next to the **Search field**, you can examine the uploaded configuration:
 
 ![Upload application-config.ini file](fiori-ios-scpms-deliveryapp-part6-09.png)
 
-Click **Close** to dismiss the dialog.
+Click **Cancel** to dismiss, and click **OK** in the confirmation dialog to dismiss.
 
-[DONE]
+Next, click the **Edit** action next to the destination. Here you can examine the offline settings for the destination endpoint:
+
+Using the **Next** buttons, you can advance through the various pages of the offline configuration.
+
+![Upload application-config.ini file](fiori-ios-scpms-deliveryapp-part6-10.png)
+
+Click **Finish** to dismiss the dialog.
+
+[VALIDATE_4]
 [ACCORDION-END]
 
 
