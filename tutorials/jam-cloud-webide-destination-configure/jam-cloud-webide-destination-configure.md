@@ -47,7 +47,7 @@ To enable your SAP Web IDE to recognize the SAP Jam Collaboration UI5 mobile com
 
 [ACCORDION-BEGIN [Step 2: ](Import the destination configuration file into SAP Cloud Platform)]
 
-1.  Login to the _Hana Cloud Server Cockpit_
+1.  Login to SAP Cloud Platform
 2.  Select your account
 3.  Click **Connectivity**
 4.  Click **Destinations**
