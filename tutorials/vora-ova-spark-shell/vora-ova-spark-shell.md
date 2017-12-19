@@ -1,6 +1,6 @@
 ---
 title: Using Spark Shell
-description: SAP Vora 1.4: examples in Scala that you can run and examine in Spark Shell
+description: Examples in Scala that you can run and examine in Spark Shell (SAP Vora 1.4).
 primary_tag: products>sap-vora
 tags: [  tutorial>beginner, topic>big-data, products>sap-vora ]
 ---

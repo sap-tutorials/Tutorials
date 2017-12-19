@@ -1,6 +1,6 @@
 ---
 title: Working with Disk Engine using Apache Zeppelin
-description: SAP Vora 1.4: Disk-based storage allows you to use relational capabilities without loading data into memory
+description: Disk-based storage allows you to use relational capabilities without loading data into memory (SAP Vora 1.4).
 primary_tag: products>sap-vora
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---

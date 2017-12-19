@@ -1,6 +1,6 @@
 ---
 
-title: Continuous Integration (CI) Best Practices with SAP: SAP HANA Extended Application Services (XS), classic model
+title: Continuous Integration (CI) Best Practices with SAP – SAP HANA Extended Application Services (XS), classic model
 description: Part 4.3: Configuring the CI system for a SAP HANA Extended Application Services (XS), classic model Application.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
@@ -20,7 +20,7 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Next Steps
 
   - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-  
+
 ---
 
 > This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html). For all the examples to work properly make sure that you have followed the setup instructions for all components listed in the prerequisites box.
@@ -33,14 +33,14 @@ For SAP HANA Extended Application Services (XS) classic model (XSC) development 
 A developer working on an SAP HANA XSC application works directly in the SAP HANA repository using the SAP HANA Studio. Design-time objects are modified first as an inactive version in the SAP HANA repository, then activated afterwards. As a best practice, we recommend that developers on large teams use their own SAP HANA systems for development to avoid conflicts with other developers. For a CI-based process, changes in the SAP HANA sources are stored in Git; this is where developers push their changes to.
 
 The CI build in our example use case does not contain a compilation step, since nothing needs to be compiled. Instead, the artifact for XS classic model is an archive that contains the XS design-time objects wrapped as a delivery unit (DU), which can be deployed to any SAP HANA system. To define and package a delivery unit from the sources in Git, a dedicated SAP HANA system - referred to in this discussion as the SAP HANA CI system - is used together with the command line client `regi`.
-  
+
 `regi` imports the sources from Git into the SAP HANA CI system, first activating and deploying them to the SAP HANA database and, lastly, packaging and exporting them as a delivery unit (DU). This idea was first described in an SCN article.
 
 > [SCN article on Continuous delivery and SAP HANA](http://scn.sap.com/community/hana-in-memory/use-cases/blog/2013/04/17/continuous-delivery-and-sap-hana)
 
 Thus, you can think of the SAP HANA CI system and `regi` as the *build tool*, whereby the SAP HANA CI system is the *build back end* and `regi` is a client tool that interacts with the back end. Since new versions of sources are uploaded to the SAP HANA CI system automatically all the time in the context of the CI process, its status is unstable. Do not use it for any other purpose, for example, manual tests.
 
-A CI build step may contain tests, for example static code checks for the JavaScript sources (like `ESLint`) or even automated tests for the user interface. To ensure that subsequent Git changes do not conflict with each other on the SAP HANA CI system, builds must run strictly sequentially. Otherwise, multiple SAP HANA CI systems need to run in parallel. After successful build and test processes, the artifact is archived for further processing. 
+A CI build step may contain tests, for example static code checks for the JavaScript sources (like `ESLint`) or even automated tests for the user interface. To ensure that subsequent Git changes do not conflict with each other on the SAP HANA CI system, builds must run strictly sequentially. Otherwise, multiple SAP HANA CI systems need to run in parallel. After successful build and test processes, the artifact is archived for further processing.
 
 A dedicated test system is required for acceptance testing. This system is provisioned via `hdbalm import` with a stable version of the DU. The deployment of the DU version, which is successfully created during a CI build, can be triggered either manually by the responsible person (like a quality manager) or automatically via a defined schedule (for example, once a day in the morning). Testers then have the opportunity to execute manual acceptance tests.
 
@@ -48,7 +48,7 @@ After successful testing, the delivery manager determines whether to release the
 
 ![The process flow](process-flow.png)
 
-Figure: The CD process flow for SAP HANA XSC 
+Figure: The CD process flow for SAP HANA XSC
 
 The landscape setup required for this process is described in [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html). The pipeline implementation by means of Jenkins jobs places real code into the skeleton, as described in [Sample Pipeline Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html).
 
@@ -97,11 +97,11 @@ Some basic permissions and settings are required on the SAP HANA systems.
 4. For your test and productive systems, you need a SAP HANA database user with the permission for the features of `SAP HANA Application Lifecycle Management` to perform configuration through the user interface and to use the `hdbalm` command line tool within your Jenkins job definitions. The respective user role is `sap.hana.xs.lm.roles::Administrator`. `hdbalm` will not ask you to change your password, so you should change the initial user password before using `hdbalm`.
 
 5. Select **Manage Roles and Users** or enter `http://<host>:<port>/sap/hana/ide/security` in your browser.
- 
+
     ![Access HANA Cockpit 3](hana-cockpit-access-3.png)
 
 6. Navigate to **Security > Users**, select your user, open the **Granted Roles** tab, and add the role `sap.hana.xs.lm.roles::Administrator`.
- 
+
     ![Add permission for HALM](hana-cockpit-access-xslmrole.png)
 
 7. Save.
@@ -112,11 +112,11 @@ Some basic permissions and settings are required on the SAP HANA systems.
 
     Check your new permissions by selecting the **HANA Application Lifecycle Management** tile or by entering `http://<host>:<port>/sap/hana/xs/lm` in your browser.
 
-9. From within the **SAP HANA Application Lifecycle Management**, open **Settings**. 
+9. From within the **SAP HANA Application Lifecycle Management**, open **Settings**.
 
     ![HALM Settings 1](halm-set-vendor.png)
 
-    Change the vendor to the value that reflects your organizational structure. 
+    Change the vendor to the value that reflects your organizational structure.
 
     ![HALM Settings 2](halm-set-vendor-1.png)
 
@@ -131,7 +131,7 @@ The SAP HANA Client installation contains the following command line tools:
 
 - `hdbalm` provides life-cycle management tasks.
 
-- `hdbuserstore` provides secure credential handling. 
+- `hdbuserstore` provides secure credential handling.
 
 For additional information enter the tool name on the command line followed by the argument `help`.
 
@@ -155,9 +155,9 @@ For additional information enter the tool name on the command line followed by t
     ```
     ./hdbinst
     ```
-    
+
     Follow the instructions within the installation wizard.
-    
+
 4. Add the installation path (which was defined in the installation procedure) to the `PATH` and `LD_LIBRARY_PATH` environment variables that apply to the user under which the Jenkins builds are running.
 
 
@@ -197,7 +197,7 @@ The steps below are preparation steps that bring the `SHINE` sources into a Gerr
 
 2. Open the SAP HANA Studio, open the **SAP HANA Development** perspective and log in to your SAP HANA development system.
 
-3. Select **File > Import > SAP HANA Content > Delivery Unit**. Select your SAP HANA development system, then select **Client** and browse for your downloaded delivery unit package file. These steps are described in detail in the `SHINE` documentation. 
+3. Select **File > Import > SAP HANA Content > Delivery Unit**. Select your SAP HANA development system, then select **Client** and browse for your downloaded delivery unit package file. These steps are described in detail in the `SHINE` documentation.
 
 4. Click **Finish** and wait for the upload to finish.
 
@@ -230,7 +230,7 @@ The steps below are preparation steps that bring the `SHINE` sources into a Gerr
       <version>{version number}</version>
     </project>
     ```
-    
+
     Enter appropriate values for `groupID` and `version`. The details are described in the part [CD Pipeline Skeleton](https://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html).
 
 7. In the local Git workspace, perform `git add`. Ensure that the directory `._SYS_REGI_settings`, which was created automatically by the SAP HANA Studio, is not committed into Git, since the existence of this directory will prevent other developers to create an own HANA repository workspace. Best practice is to add the pattern `._SYS_REGI_settings/*` into the `.gitignore` file. Perform a commit, and push the change into the central repository. The Gerrit project is now filled with the `SHINE` sources.
@@ -264,7 +264,7 @@ These assumptions allow us to treat the entities *package* and *delivery unit* a
 1. Open Jenkins, select **New Item**, then select **Freestyle Job**, and assign `CI_Shine_master_build` as job name.
 
 2. Define the values for the SAP HANA CI system (used for the packaging), the delivery unit, and the package as parameters of the job so that you can change these values quickly, if necessary without having to search for them in the job implementation. Select **This build is parametrized**, and enter the following string parameters:
-    
+
     Name                   | Default Value
     :--------------------- | :------------------------------------------------------
     `HANA_HOST`            | `{fully qualified host name of the SAP HANA CI system}`
@@ -276,11 +276,11 @@ These assumptions allow us to treat the entities *package* and *delivery unit* a
 3. For the other configuration options, enter the following:
 
     Field                                  | Value
-    :------------------------------------- | :------------------------------------------------------------------------- 
-    Restrict where this project can be run | `checked`; Label Expression: the label that you have assigned to the slave, in this case `builds` 
-    Source Code Management > Git           | `checked` 
-    Repository URL                         | `{the SSH-based URL of your repository}` 
-    Credentials                            | `jenkins` 
+    :------------------------------------- | :-------------------------------------------------------------------------
+    Restrict where this project can be run | `checked`; Label Expression: the label that you have assigned to the slave, in this case `builds`
+    Source Code Management > Git           | `checked`
+    Repository URL                         | `{the SSH-based URL of your repository}`
+    Credentials                            | `jenkins`
     Branches to build; Branch Specifier    | `master`
     Build Triggers                         |
     Poll SCM                               | `checked`
@@ -330,33 +330,33 @@ These assumptions allow us to treat the entities *package* and *delivery unit* a
     # assign the package to the DU
     regi assign ${PACKAGE} ${DELIVERY_UNIT} --key=HDBKEY
 
-    # Full DU export 
+    # Full DU export
     mkdir ${WORKSPACE}/target
     regi export ${DELIVERY_UNIT} "${WORKSPACE}/target/${DELIVERY_UNIT}.tgz" --key=HDBKEY
 
     # Make pom.xml available for sequel jobs
     cp "${WORKSPACE}/pom.xml" "${WORKSPACE}/target"
     ```
-    
+
     This script copies the sources that have been cloned from Gerrit via `rsync` into a `regi` workspace into which the current version of the sources from the SAP HANA repository were previously checked out. Checking out the sources from the SAP HANA repository along parametrizing `rsync` ensures that files that are deleted in Git are also deleted from the SAP HANA repository. After sources have been committed and activated, the delivery unit assignment is refreshed and the delivery unit exported. The credentials for logging in to the SAP HANA system, described below (step 8), is the final piece.
-    
+
     Please note that support by SAP for the usage of the `regi` tool is restricted to the commands that are used in the code above.
 
 5. Archive the artifacts so they are available for subsequent Jenkins jobs. Select **Add post-build action > Archive the artifacts**. Enter `target/*` into the **Files to archive** field.
-    
+
 6. To define the next job in the pipeline, select **Add post-build action > Build other project (manual step)** and add the following entries:
 
     Field                                  | Value
-    :------------------------------------- | :------------------------------------------------------------------------- 
-    Downstream Project Names               | `CI_Shine_master_testDeploy` 
-    Parameters                             | `BUILD_JOB_NUMBER=${BUILD_NUMBER}` 
+    :------------------------------------- | :-------------------------------------------------------------------------
+    Downstream Project Names               | `CI_Shine_master_testDeploy`
+    Parameters                             | `BUILD_JOB_NUMBER=${BUILD_NUMBER}`
 
     Ignore the warning that the job entered does not yet exist. We will create it in the next step.
 
 7. Save the job definition.
 
 8. Define user name and password to be used to access your SAP HANA CI system via `regi` as global passwords: Select **Manage Jenkins > Configure Jenkins > Global Passwords**. Click **Add**, then set **Name** to `HANA_USER` and **Password** to the user name. Click **Add** again, set **Name** to `HANA_PASSWORD` and **Password** to the password of `HANA_USER`. Save your changes.
-    
+
 
 ### Creating a Jenkins job for deployment to the test system
 
@@ -369,7 +369,7 @@ From a technical point of view, this job takes the build result (that is, the ex
 1. Open Jenkins and click **New Item**, then select **Freestyle Job**. Enter `CI_Shine_master_testDeploy`.
 
 2. Select **This build is parametrized**, and enter the following string parameters:
-    
+
     Name                   | Default Value
     :--------------------- | :------------------------------------------------------
     `BUILD_JOB_NUMBER`     | Leave empty
@@ -379,9 +379,9 @@ From a technical point of view, this job takes the build result (that is, the ex
 3. As the other configuration options, enter the following:
 
     Field                                  | Value
-    :------------------------------------- | :------------------------------------------------------------------------- 
-    Restrict where this project can be run | `checked`; Label Expression: the label that you have assigned to the slave, in this case, `builds` 
-    Source Code Management > None          | `checked` 
+    :------------------------------------- | :-------------------------------------------------------------------------
+    Restrict where this project can be run | `checked`; Label Expression: the label that you have assigned to the slave, in this case, `builds`
+    Source Code Management > None          | `checked`
     Build Environment                      |
     Delete workspace before build starts   | `checked`
     Inject passwords to the build as environment | `checked`
@@ -391,12 +391,12 @@ From a technical point of view, this job takes the build result (that is, the ex
 4. In the **Build** section, select **Add build step > Copy artifacts from other projects** and enter:
 
     Field                                  | Value
-    :------------------------------------- | :------------------------------------------------------------------------- 
+    :------------------------------------- | :-------------------------------------------------------------------------
     Project name                           | `CI_Shine_master_build`
     Which build                            | `Specific build`
     Build number                           | `$BUILD_JOB_NUMBER`
     Artifacts to copy                      | `target/*`
-    
+
     This step restores the artifact that was created in the build job into the workspace directory of this job.
 
 5. Select **Add build step > Execute shell** and enter the following script implementation:
@@ -411,16 +411,16 @@ From a technical point of view, this job takes the build result (that is, the ex
     # import the delivery unit archive
     hdbalm -y import "target/${DELIVERY_UNIT}.tgz"
     ```
-    
+
 6. Select **Add post-build action > Build other project (manual step)** and add the following entries:
 
     Field                                  | Value
-    :------------------------------------- | :------------------------------------------------------------------------- 
-    Downstream Project Names               | `CI_Shine_master_release` 
-    Parameters                             | `BUILD_JOB_NUMBER=${BUILD_JOB_NUMBER}` 
+    :------------------------------------- | :-------------------------------------------------------------------------
+    Downstream Project Names               | `CI_Shine_master_release`
+    Parameters                             | `BUILD_JOB_NUMBER=${BUILD_JOB_NUMBER}`
 
     Ignore the warning that the job entered does not yet exist; we will create it in the next step.
-    
+
 7. Save the job definition.
 
 
@@ -438,7 +438,7 @@ We create a copy of the deploy job in the test system, adapt the target URL that
 1. Open Jenkins, click **New Item**, and enter `CI_Shine_master_release`. Select **Copy existing item** and enter `CI_Shine_master_testDeploy` as the copy template.
 
 2. Change the `HANA_HOST` parameter to the host name of the production system.
-   
+
 3. In the **Build** section, add the following lines at the beginning of the shell script:
 
     ```
@@ -448,7 +448,7 @@ We create a copy of the deploy job in the test system, adapt the target URL that
     ```
 
 4. Remove any post-build action.
-     
+
 5. Save the job definition.
 
 
@@ -465,12 +465,12 @@ After we have created all the required Jenkins jobs, we will add a convenient ov
 
 3. Select `CI_Shine_master_build` in the **Select Initial Job** field and specify `5` in the **No of Displayed Builds** field.
 
-4. Press **OK**. 
+4. Press **OK**.
 
 5. Perform a local change in your sources, commit, and then push it directly to `master`. After refreshing the pipeline view, you see the build job processing.
-    
+
     ![Pipeline running 1](pipeline-run-1.png)
-    
+
 6. Now act as quality manager. Trigger the import of the delivery unit to the test system.
 
     ![Pipeline running 2](pipeline-run-2.png)
@@ -492,7 +492,7 @@ This guide provides an example that demonstrates how a CD process might look for
 Instead of using an exported delivery unit, you can use the `hdbalm assemble` command to assemble the delivery unit from the CI system as a software component in form of a zip file. In the CI build job, replace the `regi export` command with the following lines:
 
 ```
-#assembles a software component for the DU 
+#assembles a software component for the DU
 export HDBALM_HOST=${HANA_HOST}
 export HDBALM_PORT=${HANA_HTTP_PORT}
 export HDBALM_USER=${HANA_USER}
@@ -513,7 +513,7 @@ You must also adapt the upload to Nexus in the `CI_Shine_master_release` job to 
 
 #### Transporting between systems
 
-Instead of exporting and importing an archive (delivery unit or software component), you can establish direct transports between the systems: `hdbalm` can use a direct connection from the target system to the source system to pull a delivery unit. You might find this approach preferable, especially if you are already familiar to life-cycle management. To implement it, you must provide an additional permission in the target system and define the transport route. For the discussion below, we assume that the production system is the transport target, and the test system is the transport source. 
+Instead of exporting and importing an archive (delivery unit or software component), you can establish direct transports between the systems: `hdbalm` can use a direct connection from the target system to the source system to pull a delivery unit. You might find this approach preferable, especially if you are already familiar to life-cycle management. To implement it, you must provide an additional permission in the target system and define the transport route. For the discussion below, we assume that the production system is the transport target, and the test system is the transport source.
 
 > [Setting Up the Transport](https://help.sap.com/viewer/52715f71adba4aaeb480d946c742d1f6/2.0.00/en-US/50a00deb7663496d93ebb938bbb723ca.html)
 
@@ -527,19 +527,19 @@ Before using the `hdbalm transport` command, configure the landscape in the targ
 2. Open **Manage Roles and Users**, select your user, and add the permission `sap.hana.xs.admin.roles::HTTPDestAdministrator`.
 
     ![Add Transport Role](hdbalm-transport-role.png)
-    
+
     This role provides the required permission to create a new transport route.
 
 3. In the SAP HANA Cockpit, open **HANA Application Lifecycle Management** and navigate to **TRANSPORT**.
 
 4. In the sub menu of the **TRANSPORT** view, open **System** and press **+Register**. Enter the host name and the HTTP port of the source system of the transport (test system).
-    
+
 5. Press **Next**. Select **Maintain Destination**. Configure the connection details of the source (test) system so that the target system can access it. Click **Authentication Details** and enter the user name and the password of the source system. We recommend that you enable a secured connection. When you have finished the configuration, press **Save** and close the pop-up window.
-    
+
 6. Select **Finish** in the **Register System** pop-up. You see the test system listed.
 
     ![Add System](hdbalm-add-system.png)
-    
+
 7. In the transport view of the HANA Application Lifecycle Management, click **Transports** and select **Create**. Enter a name for your transport route, choose your source system, and select **Delivery Units**. Mark your delivery unit in the list. Select **Create** to save your transport route configuration.
 
     ![Add Transport](hdbalm-add-transport-1.png)
@@ -555,7 +555,7 @@ Before using the `hdbalm transport` command, configure the landscape in the targ
 
     Enter the password of the SAP HANA user. You see a list of the transports defined on the productive system. Look for the transport that you just defined and make a note of its route ID. The route ID does not change, even if you modify the route, and can be used during jobs for automation.
 
-    
+
 ##### Adapting the release job
 
 Replace the `hdbalm import` command in the release job with the `hdbalm transport` command, which triggers the transport.
@@ -571,5 +571,5 @@ Replace the `hdbalm import` command in the release job with the `hdbalm transpor
     Replace `<route id>` by the number obtained from the step above.
 
 ## Next Steps
- 
+
   - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

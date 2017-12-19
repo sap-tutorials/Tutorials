@@ -1,7 +1,7 @@
 ---
 
-title: CI Best Practices Guide: SAPUI5/SAP Fiori on ABAP Front-End Server
-description: Part 4.4: Implementing the CI pipeline to build an SAPUI5/SAP Fiori application on ABAP Front-End Server.
+title: CI Best Practices Guide – SAPUI5/SAP Fiori on ABAP Front-End Server
+description: Part 4.4 – Implementing the CI pipeline to build an SAPUI5/SAP Fiori application on ABAP Front-End Server.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 

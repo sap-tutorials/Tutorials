@@ -1,5 +1,5 @@
 ---
-title: SAP Cloud Platform IoT for Neo: Enable and configure
+title: Enable and configure (IoT for Neo)
 description: Setup and configure the use of the IoT for Neo environment in SAP Cloud Platform
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, tutorial>beginner ]

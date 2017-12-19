@@ -1,5 +1,5 @@
 ---
-title: SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device
+title: Sending messages from TI SensorTag device (IoT for Neo)
 description: Internet of Things (IoT) Connecting your TI SensorTag to IoT Services
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, tutorial>beginner ]
