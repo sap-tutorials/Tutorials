@@ -81,7 +81,7 @@ In the SAP Fiori launchpad, select the **Communication Arrangements** tile.
 Choose **New** to create a new communication arrangement.
 ![communication Arrangements popup](10.png)  
 
-Select **`SAP_COM_0003 (Marketing - Master Data Integration)``** and choose **Create**.
+Select **`SAP_COM_0003 (Marketing - Master Data Integration)`** and choose **Create**.
 ![mdi](11.png)  
 
 Under **Common Data**, select the Communication System via value help which was created in step 2.

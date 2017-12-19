@@ -26,7 +26,7 @@ The SAP Data Hub, developer edition per default comes with an Apache Hadoop inst
 
 ![picture_01](./datahub-pipelines-storeinhdfs_01.png)  
 
-Navigate to **Utilities** | **Browse the file system (1)** and display the **``/tmp/hdfsManager`** directory (when you install SAP Data Hub, developer edition initially, this directory is empty).
+Navigate to **Utilities** | **Browse the file system (1)** and display the **`/tmp/hdfsManager`** directory (when you install SAP Data Hub, developer edition initially, this directory is empty).
 
 [ACCORDION-END]
 
@@ -39,7 +39,7 @@ Add a **`HDFS Producer`** operator to the pipeline by drag & drop. Then connect 
 
 ![picture_02](./datahub-pipelines-storeinhdfs_02.png)  
 
-Configure the **HDFS Producer** operator. You need to maintain the following properties:
+Configure the **`HDFS Producer`** operator. You need to maintain the following properties:
 
 | Property                       | Value                                 |
 | ------------------------------ | ------------------------------------- |
@@ -48,7 +48,7 @@ Configure the **HDFS Producer** operator. You need to maintain the following pro
 | `hadoopUser`                   | `hdfs`                                |
 | `path`                         | `/tmp/hdfsManager/test_<counter>.txt` |
 
-The **HDFS Producer** will write the received data to files in the `/tmp/hdfsManager` directory. The files follow the scheme `test_<counter>.txt` (whereas `<counter>` is an incremental integer).
+The **`HDFS Producer`** will write the received data to files in the `/tmp/hdfsManager` directory. The files follow the scheme `test_<counter>.txt` (whereas `<counter>` is an incremental integer).
 
 [ACCORDION-END]
 
