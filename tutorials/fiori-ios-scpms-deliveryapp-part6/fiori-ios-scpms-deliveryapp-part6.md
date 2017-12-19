@@ -272,15 +272,17 @@ func closeOfflineStore() {
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Add offline service to the Master view controllers)]
+[ACCORDION-BEGIN [Step 10: ](Add offline service to view controllers)]
 
-Then, open file `PackagesMasterViewController.swift` in `Demo > ViewControllers > Packages` and add import the offline framework here as well:
+In this step, you will modify 3 files, and add the same snippets of code in each file.
+
+First, open file `PackagesMasterViewController.swift` in `Demo > ViewControllers > Packages` and add the offline framework import statement:
 
 ```swift
 import SAPOfflineOData
 ```
 
-Then add a reference in the `PackagesMasterViewController.swift` file to the `deliveryServiceOffline` field which was created in the `AppDelegate.swift` file at step 7. Below the `deliveryService` declaration, add a similar declaration but now for offline usage:
+Add a reference in the `PackagesMasterViewController.swift` file to the `deliveryServiceOffline` field which was created in the `AppDelegate.swift` file at step 7. Below the `deliveryService` declaration, add a similar declaration but now for offline usage:
 
 ```swift
 private var deliveryServiceOffline: DeliveryService<OfflineODataProvider> {
@@ -288,7 +290,33 @@ private var deliveryServiceOffline: DeliveryService<OfflineODataProvider> {
 }
 ```
 
-Repeat the same for the `DeliveryStatusMasterViewController.swift` file.
+Next, open file `PackagesDetailViewController.swift` in `Demo > ViewControllers > Packages` and add the offline framework import statement here as well:
+
+```swift
+import SAPOfflineOData
+```
+
+Add a reference in the `PackagesDetailViewController.swift` file to the `deliveryServiceOffline` field:
+
+```swift
+private var deliveryServiceOffline: DeliveryService<OfflineODataProvider> {
+    return self.appDelegate.deliveryServiceOffline
+}
+```
+
+And finally, open file `DeliveryStatusMasterViewController.swift` in `Demo > ViewControllers > DeliveryStatus` and add the offline framework import statement here as well:
+
+```swift
+import SAPOfflineOData
+```
+
+Add a reference in the `DeliveryStatusMasterViewController.swift` file to the `deliveryServiceOffline` field:
+
+```swift
+private var deliveryServiceOffline: DeliveryService<OfflineODataProvider> {
+    return self.appDelegate.deliveryServiceOffline
+}
+```
 
 [DONE]
 [ACCORDION-END]
