@@ -69,8 +69,8 @@ In the User for Inbound Communication section add the technical user which was c
 For communication with the OData Web service a technical user must be created in the SAP Hybris Marketing Cloud System.
 This user needs to have two communication scenarios assigned:  
 
- - SAP_COM_0003 Marketing – Master Data Integration   
- - SAP_COM_0004 Marketing – Business Data Integration  
+ - `SAP_COM_0003 Marketing` – Master Data Integration   
+ - `SAP_COM_0004 Marketing` – Business Data Integration  
 
 Log on to your SAP Hybris Marketing Cloud system.  
 ![s/4 logon](1.png)
@@ -81,7 +81,7 @@ In the SAP Fiori launchpad, select the **Communication Arrangements** tile.
 Choose **New** to create a new communication arrangement.
 ![communication Arrangements popup](10.png)  
 
-Select **SAP_COM_0003 (Marketing - Master Data Integration)** and choose **Create**.
+Select **`SAP_COM_0003 (Marketing - Master Data Integration)``** and choose **Create**.
 ![mdi](11.png)  
 
 Under **Common Data**, select the Communication System via value help which was created in step 2.
@@ -106,7 +106,7 @@ In the SAP Fiori launchpad select the **Communication Arrangements** tile.
 
 Choose **New** to create a new communication arrangement.
 
-Select **SAP_COM_0004 (Marketing - Business Data Integration)** and choose **Create**.  
+Select **`SAP_COM_0004 (Marketing - Business Data Integration)``** and choose **Create**.  
 ![marketing business data integration](14.png)
 
 Under **Common Data**, select the **Communication System** via value help which was created in step 2.
