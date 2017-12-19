@@ -46,7 +46,6 @@ The screen will change and the word *Success* will appear.
 
 ![Gateway Web sign up success](2b.png)
 
-[DONE]
 [ACCORDION-END]
 
 
@@ -60,7 +59,6 @@ This is an example of the registration confirmation email:
 
 ![Gateway Registration email confirmation](3.png)
 
-[DONE]
 [ACCORDION-END]
 
 
@@ -70,7 +68,6 @@ Once you received your registration email, go to the [SAP Gateway Web GUI](https
 
 ![Initial login - Gateway Web GUI](4.png)
 
-[DONE]
 [ACCORDION-END]
 
 
@@ -80,7 +77,6 @@ The system will request that you change your initial password to a new password 
 
 ![Initial login - change your password](5.png)
 
-[DONE]
 [ACCORDION-END]
 
 
@@ -90,7 +86,6 @@ When your password is changed, you will see a confirmation dialog.
 
 ![Initial login - password change confirmation](6.png)
 
-[DONE]
 [ACCORDION-END]
 
 
@@ -103,8 +98,6 @@ You should now see the **SAP Easy Access** screen.  Your account is now active a
 ![SAP NetWeaver Gateway Main Screen](8.png)
 
 Enter the URL of the SAP Easy Access page below and click **Validate**.
-
-[VALIDATE_7]
 
 [ACCORDION-END]
 
