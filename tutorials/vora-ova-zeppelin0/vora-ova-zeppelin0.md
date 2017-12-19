@@ -1,6 +1,6 @@
 ---
 title: Working with Tables and Views using Apache Zeppelin
-description: SAP Vora 1.4: Use Apache Zeppelin to create tables and views, plus load sample data from files
+description: Use Apache Zeppelin to create tables and views, plus load sample data from files (SAP Vora 1.4).
 primary_tag: products>sap-vora
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---

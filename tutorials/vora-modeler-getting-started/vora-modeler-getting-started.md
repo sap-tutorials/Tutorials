@@ -1,6 +1,6 @@
 ---
-title: Getting started with SAP Vora Modeler: Creating SQL views
-description: Getting started with SAP Vora Modeler: Creating SQL views with a join of two tables
+title: Creating SQL views with SAP Vora Modeler
+description: Getting started with SAP Vora Modeler by creating SQL views with a join of two tables.
 primary_tag: products>sap-vora
 tags: [  tutorial>beginner, topic>big-data, products>sap-vora ]
 ---

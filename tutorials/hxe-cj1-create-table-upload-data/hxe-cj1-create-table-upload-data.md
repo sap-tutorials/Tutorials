@@ -1,5 +1,5 @@
 ---
-title: SAP HANA, express edition, server-only: Create tables and upload data
+title: Create tables and upload data (SAP HANA, express edition, server-only)
 description: This tutorial will walk you through the steps to create tables and upload data using SQL
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition ]

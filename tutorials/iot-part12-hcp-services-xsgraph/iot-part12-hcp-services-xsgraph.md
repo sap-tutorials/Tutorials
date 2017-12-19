@@ -1,5 +1,5 @@
 ---
-title: SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data on a chart
+title: Viewing your environmental sensors data on a chart (IoT for Neo)
 description: Now connect your IoT Services to an SAP HANA MDC instance and show the data using SAP HANA XS Classic
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, tutorial>beginner ]

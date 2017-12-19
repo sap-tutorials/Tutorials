@@ -3,7 +3,7 @@ title: Using Groups in SAP Jam Collaboration Developer Edition
 description: Create a Group to collaborate with other users.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
---- 
+---
 
 ## Prerequisites  
  - **Proficiency:** Beginner

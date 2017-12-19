@@ -1,6 +1,6 @@
 ---
 title: Working with Document Store Engine using Apache Zeppelin
-description: SAP Vora 1.4: Document Store is a distributed in-memory JSON document store that supports rich query processing over JSON data
+description: Document Store is a distributed in-memory JSON document store that supports rich query processing over JSON data (SAP Vora 1.4). 
 primary_tag: products>sap-vora
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---

@@ -26,11 +26,11 @@ Open the pipeline which you have created during the previous tutorials (`test.my
 
 Remove the connection between the **Kafka Consumer** operator and the **HDFS Producer** operator.
 
-Add a **ToString Converter** operator to the pipeline by drag & drop. Also add a **JavaScript Operator** to the pipeline by drag & drop.
+Add a **`ToString Converter`** operator to the pipeline by drag & drop. Also add a **JavaScript Operator** to the pipeline by drag & drop.
 
-Connect the **message** port of the **Kafka Consumer** operator to the **ininterface** port of the **ToString Converter** operator.
-Connect the **outstring** port of the **ToString Converter** operator to the **input** port of the **JavaScript Operator**.
-Connect the **output** port of the **JavaScript Operator** to the **inFile** port of the **HDFS Producer** operator.
+Connect the **`message`** port of the **`Kafka Consumer`** operator to the **`ininterface`** port of the **`ToString Converter`** operator.
+Connect the **`outstring`** port of the **`ToString Converter`** operator to the **`input`** port of the **`JavaScript Operator`**.
+Connect the **`output`** port of the **`JavaScript Operator`** to the **`inFile`** port of the **`HDFS Producer`** operator.
 
 ![picture_01](./datahub-pipelines-bundledata_01.png)  
 
