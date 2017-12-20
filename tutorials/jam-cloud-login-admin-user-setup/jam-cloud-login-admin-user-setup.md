@@ -36,15 +36,15 @@ Clicking on the **Go To Service** link within the SAP Jam Collaboration Services
 
 Figure 1: The SAP Jam Collaboration Services section of the SAP Cloud Platform Account Cockpit
 
-When you log into SAP Jam, you will be presented with the Company Wiki page. This page provides you with useful information about your environment as well as links to resources and documentation.
+When you log into SAP Jam, you will be presented with a custom home page. This page provides you with useful information about your environment as well as links to resources and documentation.
 
 
 
-![The SAP Jam Company Wiki page](loio09ef9a0c8a084b06872ade590855d334_HiRes.png)
+![SAP Jam custom home page](loio09ef9a0c8a084b06872ade590855d334_HiRes.png)
 
 
 
-Figure 2: The SAP Jam Company Wiki page
+Figure 2: SAP Jam custom home page
 
 Once you have reviewed this information, click on the Home menu option and you will be taken to your Home feed. This is your own personal feed, showing you activities that you should be interested in from people you follow, groups you're a member of and notifications sent directly to you. This is not to be mistaken with a group feed, which is visible when you're viewing a specific group. When you log in for the first time your feed will be empty.
 

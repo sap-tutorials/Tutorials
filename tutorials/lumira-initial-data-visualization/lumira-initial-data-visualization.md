@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, products>sap-businessobjects-lumira ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Initial data exploration in SAP BusinessObjects Lumira](http://www.sap.com/developer/tutorials/lumira-initial-data-exploration.html)
+- **Tutorials:** [Initial data exploration in SAP BusinessObjects Lumira](https://www.sap.com/developer/tutorials/lumira-initial-data-exploration.html)
 
 ## Next Steps
 - Time dimension and data drilling (coming soon)

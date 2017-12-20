@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
 
 ## Next Steps
  - [Using SAP API Business Hub with Web IDE](https://www.sap.com/developer/tutorials/webide-api-hub.html)
-
+ 
 ## Details
 ### You will learn  
 Find all the latest features available from Web IDE in the latest, full-stack enabled version.

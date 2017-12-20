@@ -7,10 +7,10 @@ tags: [ tutorial>beginner, topic>cloud, products>sap-hana, products>sap-web-ide,
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
-  - [Creating a GitHub organization and adding collaborators](http://www.sap.com/developer/tutorials/webide-github-creating-org.html)
+  - [Creating a GitHub organization and adding collaborators](https://www.sap.com/developer/tutorials/webide-github-creating-org.html)
 
 ## Next Steps
- - [Creating project in SAP Web IDE and importing it into GitHub](http://www.sap.com/developer/tutorials/webide-github-import-project.html)
+ - [Creating project in SAP Web IDE and importing it into GitHub](https://www.sap.com/developer/tutorials/webide-github-import-project.html)
 
 ## Details
 ### You will learn  
@@ -46,4 +46,4 @@ In this tutorial, you'll learn how to create a Git repository within a GitHub or
 6. Your Git repository is ready!
 
 ## Next Steps
- - [Creating project in SAP Web IDE and importing it into GitHub](http://www.sap.com/developer/tutorials/webide-github-import-project.html)
+ - [Creating project in SAP Web IDE and importing it into GitHub](https://www.sap.com/developer/tutorials/webide-github-import-project.html)

@@ -1,18 +1,18 @@
 ---
-title: SAP Cloud Platform IoT for Neo: Enable and configure
+title: Enable and configure (IoT for Neo)
 description: Setup and configure the use of the IoT for Neo environment in SAP Cloud Platform
-primary_tag: topic>internet-of-things
-tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
+primary_tag: products>sap-cloud-platform-internet-of-things
+tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, tutorial>beginner ]
 
 ---
 
 ## Prerequisites
 - **Proficiency:** Beginner
-- **Tutorials:** [Setup the Tessel device](http://www.sap.com/developer/how-tos/2016/09/iot-tessel.html)
+- **Tutorials:** [Setup the Tessel device](https://www.sap.com/developer/how-tos/2016/09/iot-tessel.html)
 
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)
+- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](https://www.sap.com/developer/tutorials/iot-part7-add-device.html)
 
 ## Details
 ### You will learn
@@ -74,7 +74,7 @@ Enter in your information in the fields, where your account ID is your p-number 
 
 Once successfully deployed then Java application `iotmms` is started in your account.
 
-Return to the SAP Cloud Platform cockpit view and click on **Java Applications** in the left navigation bar. You will see the new `iotmms` application you just deployed. Click on the `iotmms` link to display the **IoT MMS dashboard**.
+Return to the SAP Cloud Platform cockpit view and click on **Java Applications** in the left navigation bar. You will see the new `iotmms` application you just deployed. Click on the `iotmms` link to display the **IoT MMS application cockpit**.
 
 ![Deployed application](p6_7.png)
 
@@ -83,7 +83,9 @@ Return to the SAP Cloud Platform cockpit view and click on **Java Applications**
 
 [ACCORDION-BEGIN [Step 6: ](Assign IoT MMS user role)]
 
-With the **IoT MMS dashboard** displayed click on the Roles link in the left navigation bar. Select the **IoT-MMS-User** (click the empty cell next to the Name to select the row if it is not highlighted in blue).
+With the **IoT MMS application cockpit** displayed click on the **Security** > **Roles** in the left navigation bar.
+
+Select the **IoT-MMS-User** (click the empty cell next to the Name to select the row if it is not highlighted in blue).
 
 ![Authorizations](p6_8.png)
 
@@ -91,13 +93,16 @@ Then under **Individual Users**, click **Assign** and enter your SAP Cloud Platf
 
 ![Assign Role](p6_9.png)
 
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Restart the app)]
+
 Once user is assigned to the role, stop and start `iotmms` application.
 
 ![Start/stop](p6_10.png)
-
 
 [ACCORDION-END]
 
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)
+- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](https://www.sap.com/developer/tutorials/iot-part7-add-device.html)

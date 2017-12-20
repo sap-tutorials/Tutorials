@@ -1,15 +1,15 @@
 ---
-title: Intro to SAP HANA Spatial: Points
+title: Intro to SAP HANA Spatial – Points
 description: A point is a 0-dimensional geometry representing a single location
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **System access:** You have developer access to SAP HANA database instance, for example [SAP HANA, express edition](http://www.sap.com/developer/topics/sap-hana-express.html), or [SAP HANA MDC instance in SAP Cloud Platform Trial account](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html).
+- **System access:** You have developer access to SAP HANA database instance, for example [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html), or [SAP HANA MDC instance in SAP Cloud Platform Trial account](https://www.sap.com/developer/tutorials/hana-web-development-workbench.html).
 
 ## Next Steps
-- [SAP HANA Spatial: Strings](http://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
+- [SAP HANA Spatial: Strings](https://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
 
 ## Details
 ### You will learn  
@@ -100,4 +100,4 @@ There are more spatial methods that can be applied to`ST_POINT` objects. The com
 - Visit the SAP HANA Spatial Reference at https://help.sap.com/hana_platform
 
 ## Next Steps
-- [SAP HANA Spatial: Strings](http://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
+- [SAP HANA Spatial: Strings](https://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)

@@ -71,7 +71,7 @@ Provide a title and description for the tile. If you want, change the Icon assoc
 Field Name     | Value
 :------------- | :-------------
 Title           | TechEd 2017
-Description    | Front end app from TechEd 2017
+Subtitle    | Front end app from TechEd 2017
 Icon            | `e-learning`
 
 

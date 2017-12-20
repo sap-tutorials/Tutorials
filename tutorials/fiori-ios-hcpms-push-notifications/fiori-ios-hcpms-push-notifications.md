@@ -6,7 +6,8 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Development machine:** Access to a Mac computer
+ - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+ - **SAP Cloud Platform SDK for iOS:** Version 2.0
  - **Apple ID:** A paid Apple developer account is required
  - **Tutorials:** [List Report Floorplan](https://www.sap.com/developer/tutorials/fiori-ios-scpms-floorplan.html)
 
@@ -202,15 +203,15 @@ Switch to the **Capabilities** tab, and enable **Push Notifications** by flippin
 
 ![App ID creation](fiori-ios-hcpms-push-notifications-26.png)
 
-Open the `AppDelegate.swift` file and locate the `func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool` function.
+Open the `AppDelegate.swift` file and locate the `func application(_: UIApplication, willFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool` function.
 
 Examine the contents of this function:
 
 ```swift
-func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
+func application(_: UIApplication, willFinishLaunchingWithOptions _: [UIApplicationLaunchOptionsKey: Any]? = nil) -> Bool {
     UIApplication.shared.registerForRemoteNotifications()
     let center = UNUserNotificationCenter.current()
-    center.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+    center.requestAuthorization(options: [.alert, .badge, .sound]) { _, _ in
         // Enable or disable features based on authorization.
     }
     center.delegate = self
@@ -223,35 +224,36 @@ First, the device registers for remote notifications by calling the method `regi
 Let's look at the `registerForRemoteNotification` method. In this method, a reference to the SDK Foundation class `SAPcpmsRemoteNotificationClient` is made. With this API, you will upload the received device token to SAP Cloud Platform mobile service for development and operations:
 
 ```swift
-func registerForRemoteNotification() -> Void {
+func registerForRemoteNotification(_ urlSession: SAPURLSession, _ settingsParameters: SAPcpmsSettingsParameters) {
     guard let deviceToken = self.deviceToken else {
         // Device token has not been acquired
         return
     }
 
-    self.remoteNotificationClient = SAPcpmsRemoteNotificationClient(sapURLSession: self.urlSession!, settingsParameters: Constants.configurationParameters)
-    self.remoteNotificationClient.registerDeviceToken(deviceToken, completionHandler: { (error: Error?) -> Void in
-        if error != nil {
-            self.logger.error("Register DeviceToken failed")
-        } else {
-            self.logger.info("Register DeviceToken succeeded")
+    let remoteNotificationClient = SAPcpmsRemoteNotificationClient(sapURLSession: urlSession, settingsParameters: settingsParameters)
+    remoteNotificationClient.registerDeviceToken(deviceToken) { error in
+        if let error = error {
+            self.logger.error("Register DeviceToken failed", error: error)
+            return
         }
-    })
+        self.logger.info("Register DeviceToken succeeded")
+    }
 }
+
 ```
 
 With these two methods, you can receive notifications, but your application also needs to respond to them in a useful manner. Therefor, two delegate methods are implemented:
 
 ```swift
 // Called to let your app know which action was selected by the user for a given notification.
-func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping() -> Void) {
+func userNotificationCenter(_: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
     self.logger.info("App opened via user selecting notification: \(response.notification.request.content.body)")
     // Here is where you want to take action to handle the notification, maybe navigate the user to a given screen.
     completionHandler()
 }
 
 // Called when a notification is delivered to a foreground app.
-func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping(UNNotificationPresentationOptions) -> Void) {
+func userNotificationCenter(_: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
     self.logger.info("Remote Notification arrived while app was in forground: \(notification.request.content.body)")
     // Currently we are presenting the notification alert as the application were in the backround.
     // If you have handled the notification and do not want to display an alert, call the completionHandle with empty options: completionHandler([])

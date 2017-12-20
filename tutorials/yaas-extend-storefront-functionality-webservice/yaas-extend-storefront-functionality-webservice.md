@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-hybris-as-
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials** [Download and Run the Default YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)
+- **Tutorials** [Download and Run the Default YaaS Storefront](https://www.sap.com/developer/tutorials/yaas-download-run-default-storefront.html)
 
 ## Next Steps
-- [Use Your Own YaaS Project to Back your YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
+- [Use Your Own YaaS Project to Back your YaaS Storefront](https://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
 
 ## Details
 ### You will learn  
@@ -114,4 +114,4 @@ In this tutorial you extended the YaaS Storefront functionality using the Tips m
 
 
 ## Next Steps
-- [Use Your Own YaaS Project to Back your YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
+- [Use Your Own YaaS Project to Back your YaaS Storefront](https://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)

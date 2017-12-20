@@ -29,7 +29,9 @@ DataSource
 datasources
 DesignStudio
 DevOps
+dropdown
 EasyMock
+enum
 EclipseLink
 Envinject
 ESLint
@@ -89,6 +91,8 @@ OData
 Ok
 OLAP
 Onboarding
+onboarding
+OpenSocial
 openSSL
 openSUSE
 OpenUI5
@@ -126,6 +130,8 @@ Shapefiles
 SQLScript
 SRS
 ssh
+stylesheet
+stylesheets
 Subaccount
 subaccount
 Subaccounts

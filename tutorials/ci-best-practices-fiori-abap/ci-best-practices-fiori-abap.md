@@ -1,7 +1,7 @@
 ---
 
-title: CI Best Practices Guide: SAPUI5/SAP Fiori on ABAP Front-End Server
-description: Part 4.4: Implementing the CI pipeline to build an SAPUI5/SAP Fiori application on ABAP Front-End Server.
+title: CI Best Practices Guide – SAPUI5/SAP Fiori on ABAP Front-End Server
+description: Part 4.4 – Implementing the CI pipeline to build an SAPUI5/SAP Fiori application on ABAP Front-End Server.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
@@ -10,19 +10,19 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Prerequisites  
 
   - **Proficiency:** Intermediate
-  - [Source Code Versioning System](http://www.sap.com/developer/tutorials/ci-best-practices-scm.html)
-  - [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html)
-  - [Artifact Repository](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
-  - [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-  - [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html)
+  - [Source Code Versioning System](https://www.sap.com/developer/tutorials/ci-best-practices-scm.html)
+  - [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)
+  - [Artifact Repository](https://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
+  - [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+  - [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html)
 
 ## Next Steps
 
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
 
 ---
 
-> This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html). For all the examples working properly make sure that you have followed the setup instructions for all components listed in the prerequisites box.
+> This document is part of the guide [Continuous Integration (CI) Best Practices with SAP](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html). For all the examples working properly make sure that you have followed the setup instructions for all components listed in the prerequisites box.
 
 
 ### 1. Introduction
@@ -68,7 +68,7 @@ Figure 1: The high-level process flow
 
     - Packaging the application into a zip file.
 
-Note: If you are using GitHub instead of Gerrit, you can use pull requests to pre-validate and prepare changes. You need to install build hooks that trigger CI-like builds on the underlying feature branches. For information about implementing this method, see [Generic Project with CI using Cloud Services](http://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html).
+Note: If you are using GitHub instead of Gerrit, you can use pull requests to pre-validate and prepare changes. You need to install build hooks that trigger CI-like builds on the underlying feature branches. For information about implementing this method, see [Generic Project with CI using Cloud Services](https://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html).
 
 The task runner tool used is Grunt, which is a common open source tool for processing JavaScript applications. The Grunt ecosystem offers many open source plugins that perform tasks such as minification or static code analysis. The preload generation is performed by a plugin that is published by the SAP OpenUI5 project.
 
@@ -100,7 +100,7 @@ Figure 4 summarizes the infrastructure that is required to run the process.
 
 Figure 4: Landscape for Fiori on ABAP front-end server
 
-The scenario described here builds on the chapters that describe how to set up an example infrastructure using Git/Gerrit as SCM and Jenkins as CI task engine. For details, see the corresponding chapters that are linked from our [navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html) page. However, you may decide to use another SCM system or CI task engine.
+The scenario described here builds on the chapters that describe how to set up an example infrastructure using Git/Gerrit as SCM and Jenkins as CI task engine. For details, see the corresponding chapters that are linked from our [navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html) page. However, you may decide to use another SCM system or CI task engine.
 
 
 ### 2. Prerequisites
@@ -126,7 +126,7 @@ You can either use SAP Web IDE on SAP Cloud Platform, or alternatively, you can 
 
 #### Procedure
 
-1. In Gerrit, create a project with a `master` branch as described in [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html).
+1. In Gerrit, create a project with a `master` branch as described in [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html).
 
 2. If you are using SAP Web IDE on SAP Cloud Platform, follow the instructions here:
 
@@ -260,7 +260,7 @@ You may clone the Git repository to your local machine either using SAP Web IDE 
 
 ### 7. Creating the CI Build
 
-We create the job for the CI build on the current `master` snapshot, which is triggered on each change. The configuration and credentials used in this section are based on the examples in [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html).
+We create the job for the CI build on the current `master` snapshot, which is triggered on each change. The configuration and credentials used in this section are based on the examples in [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html).
 
 #### Procedure
 
@@ -1326,4 +1326,4 @@ module.exports = function(grunt) {
 
 ## Next Steps
 
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

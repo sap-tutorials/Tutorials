@@ -6,7 +6,8 @@ tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Development machine:** Access to a Mac computer
+ - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+ - **SAP Cloud Platform SDK for iOS:** Version 2.0
  - **Tutorials:** [Offline OData - Configuration](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-config.html)
 
 ## Next Steps
@@ -29,104 +30,61 @@ If you now switch on Airplane mode, and try opening a collection from the app, y
 
 After you have followed the implementation below, your application should now work offline as well.
 
-[ACCORDION-BEGIN [Step 1: ](Add SAPOfflineOData.framework to your project)]
+[ACCORDION-BEGIN [Step 1: ](Add import statement)]
 
-First, you need to check whether the `SAPOfflineOData.framework` file to your Xcode project. If it isn't yet included, drag and drop the file under the `Frameworks` folder in your project. In the dialog that appears, make sure to check **Copy items if needed** and select **Create groups**:
-
-![Offline OData implementation](fiori-ios-hcpms-offline-odata-implementation-01.png)
-
-Click **Finish** to close the dialog. The Offline OData framework file now appears under the `Frameworks` folder.
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Examine Build Phases tab)]
-
-Select the root project `Demo`, and switch to the **Build Phases** tab. Make sure (at least) the following framework files are listed:
-
-* `SAPFoundation.framework`
-* `SAPOData.framework`
-* `SAPOfflineOData.framework`
-
-![Offline OData implementation](fiori-ios-hcpms-offline-odata-implementation-02.png)
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Add import statement)]
-
-Now, you need to change the **Online** behavior to **Offline** usage. Open the `ESPMContainerDataAccess.swift` file under `Demo > Model`.
+Now, you need to change the **Online** behavior to **Offline** usage. Open the `AppDelegate.swift` file.
 
 Add the import declaration for `SAPOfflineOData` just below the already existing `SAPOData` import declaration:
 
 ```swift
-// other imports
 import SAPOfflineOData
-
-class ESPMContainerDataAccess {
-    // code
-}
 ```
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Change Service Declaration to Offline)]
+[ACCORDION-BEGIN [Step 2: ](Change Service Declaration to Offline)]
 
-Since the data service is used offline, you need to change the service declaration for offline usage. In order to do so, change the type of the `ESPMContainer` variable `service` to `OfflineODataProvider`:
+Since the data service is used offline, you need to change the service declaration for offline usage. In order to do so, add a new service declaration `espmContainerOffline` just below the existing service declaration:
 
 ```swift
-var service: ESPMContainer<OfflineODataProvider>
+var espmContainer: ESPMContainer<OnlineODataProvider>!
+var espmContainerOffline: ESPMContainer<OfflineODataProvider>!
 ```
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add Offline OData Provider)]
+[ACCORDION-BEGIN [Step 3: ](Change OData initializer)]
 
-To instantiate the above service, an offline OData provider is needed. Below the field `service`, add a field `offlineODataProvider` of type `OfflineODataProvider`:
-
-```swift
-var offlineODataProvider: OfflineODataProvider
-```
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Change initializer)]
-
-Replace the `init()` initializer with the following:
+Scroll down to method `configureOData(urlSession:serviceRoot:)` and add the following at the bottom of the method:
 
 ```swift
-init(urlSession: SAPURLSession) {
-    var offlineParameters = OfflineODataParameters()
+var offlineParameters = OfflineODataParameters()
+offlineParameters.enableRepeatableRequests = true
 
-    offlineParameters.storeName = "OFFLINE_STORE"
-    offlineParameters.enableRepeatableRequests = true
+// create offline OData provider
+let offlineODataProvider = try! OfflineODataProvider(
+    serviceRoot: URL(string: serviceRoot.absoluteString)!,
+    parameters: offlineParameters,
+    sapURLSession: urlSession
+)
 
-    // create offline data provider
-    self.offlineODataProvider = try! OfflineODataProvider(
-        serviceRoot: Constants.appUrl,
-        parameters: offlineParameters,
-        sapURLSession: urlSession
+// define offline defining query
+try! offlineODataProvider.add(
+    definingQuery: OfflineODataDefiningQuery(
+        name: CollectionType.products.rawValue,
+        query: "/\(CollectionType.products.rawValue)?$top=5",
+        automaticallyRetrievesStreams: false
     )
+)
 
-    // define offline defining query
-    try! self.offlineODataProvider.add(
-        definingQuery: OfflineODataDefiningQuery(
-            name: CollectionType.products.rawValue,
-            query: "/\(CollectionType.products.rawValue)?$top=5",
-            automaticallyRetrievesStreams: false
-        )
-    )
-
-    self.service = ESPMContainer(provider: self.offlineODataProvider)
-}
+espmContainerOffline = ESPMContainer(provider: offlineODataProvider)
 ```
 
 > To initialize the offline OData provider, you first set up an instance of `OfflineODataParameters`. With this instance, you set the custom header, provide a name and path for the offline store, and ensure an OData request is applied only once in case of multiple executions.
 
-> Then, a reference to the offline data provider is set to the field `offlineODataProvider`.
+> Then, a reference to the offline data provider is set to the variable `offlineODataProvider`.
 
 > The line which defines the offline defining query is used for the `Products` defining query you created in the previous tutorial.
 
@@ -135,95 +93,115 @@ init(urlSession: SAPURLSession) {
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Build and run the application)]
+[ACCORDION-BEGIN [Step 4: ](Maintain State of the Offline Store)]
 
-Try to build and run the app. If all goes well, the build will succeed and you will be asked to enter your SAP Cloud Platform mobile service for development and operations login credentials at the authentication screen. Once logged in, click on any of the entities to show the master data. Most likely you will receive the following response:
-
-![Offline OData implementation](fiori-ios-hcpms-offline-odata-implementation-05.png)
-
-This error is shown because in order to perform any operations in the offline OData store, you first need to open it. And after you have performed the operation, you need to close the store again.
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Maintain State of the Offline Store)]
-
-First, we add a new field which holds the state of the store, whether it's open or not. Open class `ESPMContainerDataAccess`, and locate the line `var service: ESPMContainer<OfflineODataProvider>` you wrote at step 5. Just below it, add the following boolean field:
+Next, we need to modify the online behavior of the view controller for the `Products` entity. Open file `ProductsMasterViewController.swift` in `Demo > ViewControllers > Products` and add import the offline framework here as well:
 
 ```swift
-var isStoreOpened = false
+import SAPOfflineOData
+```
+
+Then add a reference to the `espmContainerOffline` field in the `AppDelegate.swift` file. Below the `espmContainer` declaration, add a similar declaration but now for offline usage:
+
+```swift
+private var espmContainerOffline: ESPMContainer<OfflineODataProvider> {
+    return self.appDelegate.espmContainerOffline
+}
+```
+
+And finally, add a new field which holds the state of the store, whether it's open or not. Add the following boolean field:
+
+```swift
+private var isStoreOpened = false
 ```
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Change request methods for offline usage)]
+[ACCORDION-BEGIN [Step 5: ](Change request methods for offline usage)]
 
-Locate the `executeRequest<T>` method which returns an array `[T]`, and replace its implementation with the following:
+Locate method `requestEntities(completionHandler:)`, and replace its implementation with the following:
 
 ```swift
-private func executeRequest<T>(_ request: @escaping(DataQuery) throws -> [T],
-                                 completionHandler: @escaping([T]?, Error?) -> Void) {
-    DispatchQueue.global().async {
+func requestEntities(completionHandler: @escaping (Error?) -> Void) {
+    // Only request the first 20 values. If you want to modify the requested entities, you can do it here.
+    espmContainerOffline.open { error in
+        guard error == nil else {
+            return;
+        }
 
-        if (!self.isStoreOpened) {
+        self.isStoreOpened = true
 
-            // try opening the store
-            self.service.open { error in
-                guard error == nil else {
-                    self.logger.error("Offline store could not be opened", error: error)
-                    return;
-                }
-
-                // set flag indicating store is open
-                self.isStoreOpened = true
-
-                // download data
-                self.service.download { error in
-                    guard error == nil else {
-                        // in case of error, close store and reset flag
-                        self.logger.info("Could not download store", error: error)
-                        self.close()
-                        self.isStoreOpened = false
+        self.espmContainerOffline.download { error in
+            guard error == nil else {
+                let query = DataQuery().selectAll().top(20)
+                self.espmContainerOffline.fetchProducts(matching: query) { products, error in
+                    guard let products = products else {
+                        completionHandler(error!)
+                        self.closeOfflineStore()
                         return
                     }
-
-                    let query = DataQuery().selectAll().top(20)
-
-                    do {
-                        // perform query
-                        let result = try request(query)
-                        completionHandler(result, nil)
-                    } catch let error {
-                        self.logger.info("Error happened in the downloading process. Error: \(error)")
-                        completionHandler(nil, error)
-                    }
-
-                    // once finished, close store and reset flag
-                    self.close()
-                    self.isStoreOpened = false
+                    self.entities = products
+                    completionHandler(nil)
+                    self.closeOfflineStore()
                 }
+                return
+            }
+
+            let query = DataQuery().selectAll().top(20)
+            self.espmContainer.fetchProducts(matching: query) { products, error in
+                guard let products = products else {
+                    completionHandler(error!)
+                    self.closeOfflineStore()
+                    return
+                }
+                self.entities = products
+                completionHandler(nil)
+                self.closeOfflineStore()
             }
         }
     }
 }
 ```
 
-> The code above looks a bit more complex compared to the original implementation of the method. This is because the `executeRequest` method now also takes care of the opening of the store, downloading of the store and closing the store, each with their error handlers and fallbacks.
+> The code above looks a bit more complex compared to the original implementation of the method. This is because the `requestEntities` method now also takes care of the opening of the store, downloading of the store and closing the store, each with their error handlers and fallbacks.
 
 > In addition, a method or function generally should perform only one single task (the "single responsibility" principle, the first and most important principle of the SOLID object-oriented design guidelines), in this case, execute the request. But to get a better understanding of the flow of the code, it is chosen to combine the above multiple responsibilities into one method.
 
+.
+
+Below this modified method, add the following method:
+
+```swift
+func closeOfflineStore() {
+    if isStoreOpened {
+        do {
+            try espmContainerOffline.close()
+            isStoreOpened = false
+        } catch {
+            logger.error("Offline Store closing failed")
+        }
+    }
+    logger.info("Offline Store closed")
+}
+```
+
+This is used to close the store after each store operation.
+
+In short, the `requestEntities(completionHandler:)` method tries to open the offline store first, and then try to perform a download of the data. If no download is possible, chances are the app is offline, and the `espmContainerOffline` is queried to retrieve the data. If the download is successful, the app is online, and the online `espmContainer` is queried instead.
+
+> In a real-world scenario, you would not code it this way because there could be other reasons why the download fails. You would rather download data in the background, and not triggered by a navigation.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Build and run the application again)]
+[ACCORDION-BEGIN [Step 6: ](Build and run the application again)]
 
 Deploy your application to your iOS device, and once loaded, log on to it.
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Run the application in offline mode)]
+[ACCORDION-BEGIN [Step 7: ](Run the application in offline mode)]
 
 Switch on Airplane mode, and try open a collection and an entity. It should work without errors:
 

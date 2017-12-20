@@ -12,8 +12,8 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Next Steps
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
-- **XS Advanced:** [ Get started with XS Advanced development](http://www.sap.com/developer/topics/sap-hana-express.html)
-- **XS Advanced:** [Explore the administration cockpit in XS Advanced](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
+- **XS Advanced:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
+- **XS Advanced:** [Explore the basics tools in XS Advanced - like the administration cockpit and SAP Web IDE for SAP HANA](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
 
 ## Details
 ### You will learn  
@@ -164,7 +164,7 @@ In order to change the XS Advanced users or if you want to check on the progress
 
       Run the following command in the terminal, replacing the `.pem` file, username and IP by the one in your virtual machine:
 
-      ```ssh
+      ```
       ssh -i /path/my-key-pair.pem root@vhcalhxedb
       ```
       ![SSH in Mac](ssh2.png)
@@ -182,7 +182,7 @@ hdbsql -i 90 -d systemdb -u SYSTEM
 
 ```
 
-You will be prompted for a password. Enter the password you set up in the first step. Now, replace the password below by a password of your choice. **Do not think too hard and avoid special characters**, you will be prompted to change it upon your first log in using a graphical interface:
+You will be prompted for a password. Enter the password you set up in the second step. Now, replace the password below by a password of your choice. **Do not think too hard and avoid special characters**, you will be prompted to change it upon your first log in using a graphical interface:
 
 
 ```sql
@@ -193,6 +193,8 @@ alter user XSA_DEV password HanaRocks17;
 Like this:
 
 ![Change passwords using hdbsql](hdbsql.png)
+
+Use command `quit` to exit the SQL console.
 
 [ACCORDION-END]
 
@@ -205,7 +207,7 @@ sudo su - hxeadm
 xs login -a https://localhost:39030 --skip-ssl-validation -u XSA_ADMIN
 ```
 
->Note: If you downloaded the CLI and are connected from your computer, replace `localhost` with `vhcalhxedb`
+>Note: You can **optionally**  download the CLI using the download manager. You can get the download manager from the [HANA Express download site](https://www.sap.com/developer/topics/sap-hana-express.html) after you register. Choose `clients.zip` to download it. If you downloaded the CLI and are connecting from your local computer, replace `localhost` with `vhcalhxedb`
 
 As follows:
 
@@ -251,5 +253,5 @@ The instances in the Cloud Appliance Library have additional applications pre-in
 
 ## Next Steps
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
-- **XS Advanced:** [ Get started with XS Advanced development](http://www.sap.com/developer/topics/sap-hana-express.html)
-- **XS Advanced:** [Explore the administration cockpit in XS Advanced](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
+- **XS Advanced:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
+- **XS Advanced:** [Explore the basics tools in XS Advanced - like the administration cockpit and SAP Web IDE for SAP HANA](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)

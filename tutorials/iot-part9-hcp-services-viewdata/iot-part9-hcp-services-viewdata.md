@@ -1,25 +1,25 @@
 ---
 title: Internet of Things (IoT) Viewing your Tessel data from IoT Services
 description: Now it is time to display your stored data from your Tessel device
-primary_tag: topic>internet-of-things
-tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
+primary_tag: products>sap-cloud-platform-internet-of-things
+tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, tutorial>beginner ]
 
 ---
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:**  [Internet of Things (IoT) Connecting your Tessel to IoT Services](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
-- [Getting Started with the SAP Cloud Platform Tools for Java](http://www.sap.com/developer/tutorials/hcp-java-eclipse-setup.html)
+- **Tutorials:**  [Internet of Things (IoT) Connecting your Tessel to IoT Services](https://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
+- [Getting Started with the SAP Cloud Platform Tools for Java](https://www.sap.com/developer/tutorials/hcp-java-eclipse-setup.html)
 - Note: JDK 1.6 or 1.7 are required. If you have a later version of Java installed, please install JDK 1.7 and temporarily change your `JAVA_HOME` environment variable to point to it.
 
 ## Next Steps
-- [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+- [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](https://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
 
 
 ## Details
 ### You will learn  
 Now that you have data stored in the system its time to display that data within an application. To do that you need to create a new application that can interface with data service and display the data our device has been generating. What you will find next are the steps necessary to do just that. You will need your Eclipse environment setup, basic knowledge in using Eclipse as well as GitHub set up and some basic Java programming skills. It will also assume that you have already connected your Eclipse environment to your SAP Cloud Platform trial account.
-For more information on that please [see tutorial](http://www.sap.com/developer/tutorials/hcp-java-eclipse-setup.html)
+For more information on that please [see tutorial](https://www.sap.com/developer/tutorials/hcp-java-eclipse-setup.html)
 
 
 ### Time to Complete
@@ -262,4 +262,4 @@ When it has started up, click on the URL that is under Application URLs.
 
 
 ## Next Steps
-- [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+- [Internet of Things (IoT) Connecting IoT Services to SAP HANA XS](https://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)

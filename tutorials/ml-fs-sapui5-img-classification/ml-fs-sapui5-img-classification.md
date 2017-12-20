@@ -7,11 +7,11 @@ tags: [ tutorial>beginner, topic>sapui5, topic>html5, topic>machine-learning, pr
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - [Sign up for an free trial account on the SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - [Sign up for an free trial account on the SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
  - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
- - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -54,7 +54,6 @@ As displayed on the screen, the sandbox URL for the **Image Classification API**
 https://sandbox.api.sap.com/ml/imageclassifier/inference_sync
 ```
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Get Your API key )]
@@ -69,7 +68,6 @@ The following pop-up should appear. Click on the **Copy API Key** button and sav
 
 Now, let's build a SAPUI5 application! But before doing so let's first add the destination to connect to the SAP API Business Hub.
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Access the SAP Cloud Platform Cockpit)]
@@ -77,7 +75,6 @@ Now, let's build a SAPUI5 application! But before doing so let's first add the d
 Go to your [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) account and access "Your Personal Developer Account".
 
 ![SAP HANA Cloud Platform Cockpit](06.png)
-
 
 [ACCORDION-END]
 
@@ -114,8 +111,7 @@ Click on **Save**
 
 ![New Destinations](09.png)
 
-You can use the **Check Connectivity** button ![HTML5 Applications](0-check.png) next to the new **Destination** to validate that the URL can be accessed.
-
+You can use the **Check Connectivity** button ![HTML5 Applications](00-check.png) next to the new **Destination** to validate that the URL can be accessed.
 
 [ACCORDION-END]
 
@@ -132,7 +128,6 @@ Click on the tile, then click on **Open SAP Web IDE**.
 You will get access to the **SAP Web IDE** main page:
 
 ![Web IDE](12.png)
-
 
 [ACCORDION-END]
 
@@ -164,7 +159,6 @@ View Name            | `demo`
 
 ![Project](15.png)
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Extend the application resource roots)]
@@ -184,7 +178,6 @@ data-sap-ui-resourceroots='{"demosapui5ml-imageclassifier": "", "sapui5ml": ""}'
 ```
 
 Click on the ![Save Button](00-save.png) button (or press CTRL+S).
-
 
 [ACCORDION-END]
 
@@ -230,7 +223,6 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 }
 ```
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Store your API setting in a JSON model)]
@@ -268,7 +260,6 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 }
 ```
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Extend the main SAPUI5 view)]
@@ -290,6 +281,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 						<Carousel pages="{demo>/predictions}" width="100%" visible="{= typeof ${demo>/resultVisible} !== 'undefined'}">
 							<pages>
 								<VBox width="100%" direction="Column" alignItems="Center">
+									<Image id="idImage" tooltip="canvas" visible="false" class="sapUiLargeMargin"/>
 									<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
 									<table:Table rows="{demo>results}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5">
 										<table:columns>
@@ -310,20 +302,20 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 								</VBox>
 							</pages>
 						</Carousel>
-						<Image id="idImage" tooltip="canvas" visible="false" class="sapUiLargeMargin"/>
 					</VBox>
 				</content>
 				<footer>
 					<Toolbar width="100%">
 						<content>
-							<u:FileUploader id="idFileUpload" buttonOnly="true" buttonText="Upload Picture" name="files" uploadUrl="{demo>/url}"
-								sameFilenameAllowed="true" useMultipart="true" sendXHR="true" uploadOnChange="true" change="fileUploadChange"
-								uploadComplete="fileUploadComplete">
+							<u:FileUploader id="idFileUpload_0" buttonOnly="true" buttonText="Upload Picture" name="files" uploadUrl="{demo>/url}"
+								useMultipart="true" sendXHR="true" sameFilenameAllowed="true" uploadOnChange="true" uploadStart="fileUploadStart"
+								uploadComplete="fileUploadComplete" change="fileUploadChange">
 								<u:headerParameters>
 									<u:FileUploaderParameter name="APIKey" value="{demo>/APIKey}"/>
 									<u:FileUploaderParameter name="Accept" value="application/json"/>
 								</u:headerParameters>
 							</u:FileUploader>
+							<!--<u:FileUploader id="idFileUpload_2" buttonOnly="true" buttonText="Upload Picture with Custom XHR" change="fileUploadChange_xhr"></u:FileUploader>-->
 						</content>
 					</Toolbar>
 				</footer>
@@ -332,7 +324,6 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 	</App>
 </mvc:View>
 ```
-
 
 [ACCORDION-END]
 
@@ -351,15 +342,92 @@ sap.ui.define([
 	"use strict";
 	return Controller.extend("sapui5ml.controller.demo", {
 
+		fileUploadChange_xhr: function(oControlEvent) {
+			// start the busy indicator
+			// var oBusyIndicator = new sap.m.BusyDialog();
+			// oBusyIndicator.open();
+			var oView = this.getView();
+
+			var oBusyIndicator = new sap.m.BusyDialog();
+			oBusyIndicator.open();
+
+			var file = oControlEvent.getParameters().files[0];
+			var data = new window.FormData();
+
+			data.append("files", file, "myimage.png");
+
+			var xhr = new window.XMLHttpRequest();
+			xhr.withCredentials = false;
+			xhr.addEventListener("readystatechange", function() {
+				if (this.readyState === this.DONE) {
+					if (xhr.status === 200) {
+
+						if (file.type.match('image.*')) {
+							this.oFileSrc = URL.createObjectURL(file);
+							// display the uploaded image
+							var image = oView.byId("idImage");
+							if (this.oFileSrc !== null) {
+								image.setSrc(this.oFileSrc);
+								image.setVisible(true);
+							} else {
+								image.setVisible(false);
+							}
+						} else {
+							this.oFileSrc = null;
+						}
+
+						// set the response as JSON in the demo model
+						oView.getModel("demo").setProperty("/predictions", JSON.parse(xhr.response).predictions);
+
+						// display the result table
+						oView.getModel("demo").setProperty("/resultVisible", true);
+
+						// display the uploaded image
+						var image = oView.byId("idImage");
+						if (this.oFileSrc !== null) {
+							image.setSrc(this.oFileSrc);
+							image.setVisible(true);
+						} else {
+							image.setVisible(false);
+						}
+					} else {
+						MessageToast.show("Error " + xhr.status + " : " + xhr.readyState + " : " + xhr.response);
+					}
+					// keep a reference in the view to close it later
+					oBusyIndicator.close();
+				}
+			});
+			//setting request method //API endpoint for API sandbox
+			xhr.open("POST", oView.getModel("demo").getProperty("/url"), true);
+			//adding request headers
+			// xhr.setRequestHeader("Content-Type", "multipart/form-data");
+			xhr.setRequestHeader("Accept", "application/json");
+			//API Key for API Sandbox
+			xhr.setRequestHeader("APIKey", oView.getModel("demo").getProperty("/APIKey"));
+			//sending request
+			xhr.send(data);
+		},
+
 		fileUploadChange: function(oControlEvent) {
 			// start the busy indicator
 			var oBusyIndicator = new sap.m.BusyDialog();
 			oBusyIndicator.open();
 
+			// get the current view
+			var oView = this.getView();
+
 			// keep a reference of the uploaded file if this is an image only
 			var file = oControlEvent.getParameters().files[0];
 			if (file.type.match('image.*')) {
 				this.oFileSrc = URL.createObjectURL(file);
+				// display the uploaded image
+				var image = oView.byId("idImage");
+				if (this.oFileSrc !== null) {
+					image.setSrc(this.oFileSrc);
+					image.setVisible(true);
+				} else {
+					image.setVisible(false);
+				}
 			} else {
 				this.oFileSrc = null;
 			}
@@ -370,7 +438,6 @@ sap.ui.define([
 		fileUploadComplete: function(oControlEvent) {
 			// get the current view
 			var oView = this.getView();
-
 			if (oControlEvent.getParameters().status === 200) {
 				// set the response as JSON in the demo model
 				oView.getModel("demo").setProperty("/predictions", JSON.parse(oControlEvent.getParameters().responseRaw).predictions);
@@ -395,7 +462,6 @@ sap.ui.define([
 });
 ```
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Test the application)]
@@ -410,9 +476,41 @@ You can also try with a zip that contains multiple images.
 
 ![Result](16.png)
 
+> ### **Note:**
+> If you are experiencing issue like a 405 error or the following message :
+>
+>**This service requires at least 1 file. Please put your file(s) into the files field of the POST request**
+>
+>In the `demo.view.xml`, replace:
+>
+> ```XML
+<!--<u:FileUploader id="idFileUpload_2" buttonOnly="true" buttonText="Upload Picture with Custom XHR" change="fileUploadChange_xhr"></u:FileUploader>-->
+```
+> by
+> ```XML
+<u:FileUploader id="idFileUpload_2" buttonOnly="true" buttonText="Upload Picture with Custom XHR" change="fileUploadChange_xhr"></u:FileUploader>
+```
+>
+>This will add an extra button **Upload Picture with Custom XHR** that you can use instead.
+>
+>We are currently investigating this issue related to XHR use in the SAPUI5 `FileUploader` control. (see GitHub issue: https://github.com/SAPDocuments/Tutorials/issues/1864)
+>
+&nbsp;
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Solution: ](Project files)]
+
+In case you are having problems when running the application, the complete project code can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/ml-fs-sapui5-img-classification/sapui5ml-imageclassifier).
+
+However, this is not a repository you can clone and run the code.
+
+You have to import the `sapui5ml-imageclassifier` directory content into your existing project directory.
+
+Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
 [ACCORDION-END]
 
 ## Next Steps
  - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)

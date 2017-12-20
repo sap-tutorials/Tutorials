@@ -7,7 +7,10 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- 
+ - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+
+## Next Steps
+ - [Create an application definition](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-application-setup.html)
 
 ## Details
 ### You will learn  
@@ -38,7 +41,8 @@ If Development & Operations is not enabled, click on the blue **Enable** button 
 
 ![Enable Mobile Services](fiori-ios-hcpms-setup-01.png)
 
-[DONE]
+[VALIDATE_3]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Finish)]
@@ -47,3 +51,6 @@ Return to the cockpit by clicking on your User ID "breadcrumb" link near the top
 
 [DONE]
 [ACCORDION-END]
+
+## Next Steps
+ - [Create an application definition](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-application-setup.html)

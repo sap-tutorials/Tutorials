@@ -1,22 +1,22 @@
 ---
 title: Setup a HANA user account
-description: Configure a user account with the relevant roles and privileges to use the SAP Cloud for predictive services
+description: Configure a user account with the relevant roles and privileges to use the SAP Predictive services
 primary_tag: products>sap-cloud-platform
 tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-hana, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Create a HANA MDC instance](http://www.sap.com/developer/tutorials/hcpps-hana-create-mdc-instance.html)
+  - **Tutorials:** [Create a HANA MDC instance](https://www.sap.com/developer/tutorials/hcpps-hana-create-mdc-instance.html)
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - [Enable, deploy and configure the SAP Predictive services](https://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Details
 ### You will learn
   - How to create a new user account on your HANA MDC instance using the ***SAP HANA Cockpit***. Each Trial HANA MDC instance comes with a ***HANA System Account***. This user account shall be used only to execute "System" related activities.
   In the "real world", it is uncommon to use this user account to develop an "end-user" application.
-  - What are the user roles and privileges required on HANA to use the SAP Cloud for predictive services. As the SAP Cloud for predictive services use the HANA Automated Predictive Library, it is required to configure the user roles and privileges accordingly.
+  - What are the user roles and privileges required on HANA to use the SAP Predictive services. As the SAP Predictive services use the HANA Automated Predictive Library, it is required to configure the user roles and privileges accordingly.
 
 ### Time to Complete
   **5 minutes**
@@ -101,4 +101,4 @@ If you can login, then your ***HANA User Account*** is properly configured.
 [ACCORDION-END]
 
 ## Next Steps
-- [Enable, deploy and configure the SAP Cloud for predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+- [Enable, deploy and configure the SAP Predictive services](https://www.sap.com/developer/tutorials/hcpps-ps-configure.html)

@@ -7,7 +7,8 @@ tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata,
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Development machine:** Access to a Mac computer
+ - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 9 or higher
+ - **SAP Cloud Platform SDK for iOS:** Version 2.0
  - **Tutorials:** [Manage usage statistics on SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-reporting.html)
 
 
@@ -120,7 +121,7 @@ However, it is possible to tune the configuration of offline applications to opt
 - Column indexes for the client database
 - Common user data to cache on the server to reduce the amount of data that needs to be synchronized with the back end.
 
-You can learn more on this topic in tutorial [Configure the behavior of the Offline OData Service](http://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-config.html)
+You can learn more on this topic in tutorial [Configure the behavior of the Offline OData Service](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-offline-odata-config.html)
 
 
 [ACCORDION-END]

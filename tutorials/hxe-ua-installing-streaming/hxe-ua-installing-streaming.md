@@ -2,17 +2,17 @@
 title: Installing SAP HANA Streaming Analytics for SAP HANA, Express Edition
 description: Install the SAP HANA client package and SAP HANA streaming analytics on an SAP HANA, express edition system.
 primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
+tags: [  tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html) and [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html) or [Installing SAP HANA 2.0, express edition (Binary Installer Method)](http://www.sap.com/developer/tutorials/hxe-ua-installing-binary.html) and [Start Using SAP HANA 2.0, express edition (Binary Installer Method)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html)
+- **Tutorials:** [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](https://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html) and [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](https://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html) or [Installing SAP HANA 2.0, express edition (Binary Installer Method)](https://www.sap.com/developer/tutorials/hxe-ua-installing-binary.html) and [Start Using SAP HANA 2.0, express edition (Binary Installer Method)](https://www.sap.com/developer/tutorials/hxe-ua-getting-started-binary.html)
 - **Additional Information:** For more information about sizing requirements for streaming analytics projects, see the [Sizing and Configuration Guidelines document](https://www.sap.com/documents/2017/01/783a6b39-a47c-0010-82c7-eda71af511fa.html).
 
 
 ## Next Steps
-- [Installing and Configuring the Streaming Studio Plugin](http://www.sap.com/developer/tutorials/hxe-ua-streaming-plugin.html)
+- [Installing and Configuring the Streaming Studio Plugin](https://www.sap.com/developer/tutorials/hxe-ua-streaming-plugin.html)
 
 ## Details
 Install the SAP HANA client package and SAP HANA streaming analytics on an SAP HANA, express edition system.
@@ -92,4 +92,4 @@ Follow the prompts to configure your installation.
 ---
 
 ## Next Steps
-- [Install and Configure the Streaming Studio Plugin](http://www.sap.com/developer/tutorials/hxe-ua-streaming-plugin.html)
+- [Install and Configure the Streaming Studio Plugin](https://www.sap.com/developer/tutorials/hxe-ua-streaming-plugin.html)

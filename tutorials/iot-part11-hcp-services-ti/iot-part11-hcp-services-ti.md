@@ -1,15 +1,15 @@
 ---
-title: SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device
+title: Sending messages from TI SensorTag device (IoT for Neo)
 description: Internet of Things (IoT) Connecting your TI SensorTag to IoT Services
-primary_tag: topic>internet-of-things
-tags: [  tutorial>beginner, topic>internet-of-things, products>sap-cloud-platform, products>sap-hana ]
+primary_tag: products>sap-cloud-platform-internet-of-things
+tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, tutorial>beginner ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)
+- **Tutorials:** [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](https://www.sap.com/developer/tutorials/iot-part7-add-device.html)
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data from device](http://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
+- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data from device](https://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
 
 ## Details
 ### You will learn  
@@ -238,4 +238,4 @@ node readTags.js
 [ACCORDION-END]
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data from device](http://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
+- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data from device](https://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)

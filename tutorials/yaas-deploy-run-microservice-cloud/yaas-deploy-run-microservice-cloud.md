@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-hybris-as-
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Use Your Own YaaS Project to Back your YaaS Storefront](http://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
+- **Tutorials:** [Use Your Own YaaS Project to Back your YaaS Storefront](https://www.sap.com/developer/tutorials/yaas-create-project-backing-storefront.html)
 
 ## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -132,4 +132,4 @@ Now that your service has been deployed to the cloud, you could access it direct
 [ACCORDION-END]
 
 ## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

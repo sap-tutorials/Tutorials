@@ -7,12 +7,12 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Select the correct SAP HANA 2.0, express edition version](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-version.html)
+ - **Tutorials:** [Select the correct SAP HANA 2.0, express edition version](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-version.html)
 
- **Tip:**  This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html). 
+**Tip:** This tutorial is available as a [video](https://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
 
 ## Next Steps
- - [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
+ - [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](https://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
 
 
 ## Disclaimer
@@ -46,7 +46,7 @@ The Virtual Machine method installs:
 
 - An SAP HANA 2.0, express edition instance on the VM, preconfigured and ready to start.  
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
 
 
 [ACCORDION-END]
@@ -69,6 +69,8 @@ Check if your machine has the recommended hardware to successfully install and r
 
     - Server plus applications virtual machine: 16 GB RAM minimum. 24 GB RAM recommended.
     - Server-only virtual machine: 8 GB RAM minimum. (If you add additional components, or run heavy processing loads, you will need to increase your RAM.)
+
+    >**Tip**: Concerned about memory? The memory consumption of each optional component is listed in the [SAP HANA 2.0, express edition Sizing Guide (Virtual Machine Method)](https://help.sap.com/viewer/DRAFT/9e4243e92f244537b2164a57a405a9fd/latest/en-US).
 
 - **HDD** - 120 GB HDD recommended.
 
@@ -113,9 +115,9 @@ You can install any supported `hypervisor`, but examples in this tutorial use VM
 
 Register your copy of SAP HANA, express edition to access the download manager.
 
-1. Go to the registration page at <http://sap.com/sap-hana-express>.
+1. Go to the registration page at <https://www.sap.com/sap-hana-express>.
 
-    (Alternately, you can go to the SAP HANA, express edition launch page at <http://www.sap.com/developer/topics/sap-hana-express.html> and click the **Register and download SAP HANA, express edition download manager** link.)  
+    (Alternately, you can go to the SAP HANA, express edition launch page at <https://www.sap.com/developer/topics/sap-hana-express.html> and click the **Register and download SAP HANA, express edition download manager** link.)  
 
     The registration page opens.
 
@@ -123,15 +125,15 @@ Register your copy of SAP HANA, express edition to access the download manager.
 
     > **Note:** If you have an SAP login, click the Login icon at the top of the page to populate the registration form automatically.
 
-    ![Registration Page](HXE_register.PNG)
+    ![Registration Page](HXE_register.PNG "Test Title")
 
     The **Registration Success** page displays. (You will also receive an email indicating successful registration.)
 
-3. On the Registration Success page, under **1A. ON-PREMISE INSTALLATION**, click the download manager that matches your system: Linux or Windows.
+3. On the Registration Success page, under **1A. ON-PREMISE INSTALLATION**, click the download manager link that matches your system: Linux or Windows.
 
     If you have a Mac, or another type of machine, click `Platform-independent` for a platform-independent download manager.
 
-    ![Registration Success page](hxe_register_success_21.PNG)
+    ![Registration Success page](hxe_register_success_211.PNG)
 
 4. Save the download manager file to your laptop and open it.
 
@@ -152,7 +154,7 @@ Use the Download Manager (GUI mode) to download a server-only virtual machine pa
 
 2. In Download Manager, in the **Image** pull-down, select **Virtual Machine**.
 
-    ![Download Manager](VM_Download_Manager_SPS02_PL01.png)    
+    ![Download Manager](VM_Download_Manager_SPS02_PL0201.png)    
 
 3. Specify a save directory. Click **Browse** and select a directory where your downloads will be saved.
 
@@ -170,9 +172,11 @@ Use the Download Manager (GUI mode) to download a server-only virtual machine pa
 
     Alternately, you can wait until your server is running, and then download additional packages using the VM's built-in Download Manager (console mode). This latter method is faster and more efficient.
 
+    >**Tip**: Concerned about memory? The memory consumption of each optional component is listed in the [SAP HANA 2.0, express edition Sizing Guide (Virtual Machine Method)](https://help.sap.com/viewer/DRAFT/9e4243e92f244537b2164a57a405a9fd/latest/en-US).
+
     If downloading additional packages now, select one or more of the following:
 
-    - **Text analysis files for additional languages** - Downloads `additional_lang.tgz`. For languages other than English and German, this package is required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the **Server only virtual machine** and **Server + applications virtual machine** packages.) For the text analysis files installation procedure, see [Start Using SAP HANA 2.0, express edition](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html).
+    - **Text analysis files for additional languages** - Downloads `additional_lang.tgz`. For languages other than English and German, this package is required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the **Server only virtual machine** and **Server + applications virtual machine** packages.)
 
     - **SAP Enterprise Architecture Designer** - This optional package is only valid on server + application virtual machine. File name is `eadesigner.tgz`. SAP EA Designer lets you capture, analyze, and present your organization's landscapes, strategies, requirements, processes, data, and other artifacts in a shared environment.
 
@@ -184,19 +188,19 @@ Use the Download Manager (GUI mode) to download a server-only virtual machine pa
 
     - **SAP HANA External Machine Learning Library** - The SAP HANA External Machine Learning Library is an application function library (AFL) supporting the integration of Google `TensorFlow`, as an external machine learning framework, with SAP HANA, express edition. Download file name is `eml.tgz`.
 
-    - **Clients (Linux x86/64)** - Client download package for Linux machines (x86/64 architectures). Use the client packages to access developed SAP HANA, express edition applications from a client PC. See [How to Install SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html). The package includes:
+    - **Clients (Linux x86/64)** - Client download package for Linux machines (x86/64 architectures). Use the client packages to access developed SAP HANA, express edition applications from a client PC. See [How to Install SAP HANA 2.0, express edition Clients](https://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html). The package includes:
 
         - **`hdb_client_linux.tgz`** - Reduced HANA client for Linux 64 bit. Contains the HANA client package, drivers, and required licenses.
 
         - **`xs.onpremise.runtime.client_linuxx86_64.zip`** - Command-line tools for Linux that enable access to (and control of) the SAP HANA XS advanced run-time environment.
 
-    - **Clients (Linux PPC/Little Endian)** -  Client download package for Linux machines (little endian on Power architectures). Use the client packages to access developed SAP HANA, express edition applications from a client PC. See [How to Install SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html). The package includes:
+    - **Clients (Linux PPC/Little Endian)** -  Client download package for Linux machines (little endian on Power architectures). Use the client packages to access developed SAP HANA, express edition applications from a client PC. See [How to Install SAP HANA 2.0, express edition Clients](https://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html). The package includes:
 
         - **`hdb_client_linux_ppc64le.tgz`** - Reduced HANA client for Linux on Power. Contains the HANA client package, drivers, and required licenses.
 
         - **`xs.onpremise.runtime.client_linuxppc64le.zip`** - Command-line tools for Linux on Power that enable access to (and control of) the SAP HANA XS advanced run-time environment.
 
-    - **`Clients (Windows)`** - Client download package for Windows machines. Use the client packages to access developed SAP HANA, express edition applications from a client PC. See [How to Install SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html). The package includes:
+    - **`Clients (Windows)`** - Client download package for Windows machines. Use the client packages to access developed SAP HANA, express edition applications from a client PC. See [How to Install SAP HANA 2.0, express edition Clients](https://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html). The package includes:
 
         - **`hdb_client_windows_x86_32.zip`** - Reduced HANA client for Windows 32-bit. Contains the HANA client package, drivers, and required licenses.
 
@@ -204,7 +208,7 @@ Use the Download Manager (GUI mode) to download a server-only virtual machine pa
 
         - **`xs.onpremise.runtime.client_ntamd64.zip`** - Command-line tools for Windows that enable access to (and control of) the SAP HANA XS advanced run-time environment.
 
-    - **`Clients (Mac)`** - Client download package for Mac. Use the client packages to access developed SAP HANA, express edition applications from a client PC. See [How to Install SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html). The package includes:
+    - **`Clients (Mac)`** - Client download package for Mac. Use the client packages to access developed SAP HANA, express edition applications from a client PC. See [How to Install SAP HANA 2.0, express edition Clients](https://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html). The package includes:
 
         - **`hdb_client_mac.tgz`** - Reduced HANA client for Mac. Contains the HANA client package, drivers, and required licenses.
 
@@ -212,7 +216,7 @@ Use the Download Manager (GUI mode) to download a server-only virtual machine pa
 
     - **SAP HANA smart data integration** - SAP HANA smart data integration provides functionality to access source data, and to provision, replicate, and transform that data in SAP HANA on premise, or in the cloud. Download file name is `sdi.tgz`. <!--Needs link to Mike Madsen's tutorial when available-->
 
-    - **SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64)** - The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources. Download file name is `dpagent_linux_x86_64.tgz`. <!--Needs link to Mike Madsen's tutorial when available-->       
+    - **SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64)** - The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources. Download file name is `dpagent_linux_x86_64.tgz`. <!--Needs link to Mike Madsen's tutorial when available-->   
 
 6. Click the **Download** button.
 
@@ -257,7 +261,7 @@ Run the Download Manager in console mode if you're used to a command line interf
     Command syntax is:
 
     ```bash
-    HXEDownloadManager [( [-h] | [-d <save_directory>] [-- ph <proxy_host>] [--pp <proxy_port>] <platform> <image> <file>...)]
+    HXEDownloadManager [( [-h|-X] | [-d <save_directory>] [--ph <proxy_host>] [--pp <proxy_port>] <platform> <image> <file>... )]
     ```
 
     Command arguments are:
@@ -265,10 +269,12 @@ Run the Download Manager in console mode if you're used to a command line interf
     | Argument         | Description  |
     | ---------------- | -------------|
     | -h            | Print this help. |
+    | -x            | Print extended help. |
     | -d <save_directory>      | Directory where to save the download file. Default is `%USERPROFILE%\Downloads` on Windows; `~/Downloads` on Linux.      |
     | --ph <proxy_host> | Proxy host name or IP address.      |
     | --pp <proxy_port> | Proxy host name or IP address.      |
     | `<platform>`      | HANA platform. Valid values are `linuxx86_64`, `linuxppc64le`.     |
+    | `<image>`         | Type of image to download. Valid values for `linuxx86_64` platform are: `vm`, `installer`. Valid values for `linuxppc64le` platform are: `installer`.      |
     | `<file>`          | File(s) to download.      |
 
     Valid <file> values for `linuxx86_64` platform and VM image:
@@ -289,9 +295,11 @@ Run the Download Manager in console mode if you're used to a command line interf
     | clients_windows.zip           | Client download package for Windows machines. Use the client packages to access developed SAP HANA, express edition applications from a client PC |   
     | clients_mac.tgz           | Client download package for Mac. Use the client packages to access developed SAP HANA, express edition applications from a client PC.  |
     | `sdi.tgz`           | SAP HANA smart data integration download package. SAP HANA smart data integration provides functionality to access source data, and to provision, replicate, and transform that data in SAP HANA on premise, or in the cloud.  |
-    | `dpagent_linux_x86_64.tgz`           | SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64) download package. The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources.  |        
+    | `dpagent_linux_x86_64.tgz`           | SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64) download package. The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources.  |
 
 5. Download one or more files.
+
+    >**Tip**: Concerned about memory? The memory consumption of each optional component is listed in the [SAP HANA 2.0, express edition Sizing Guide (Virtual Machine Method)](https://help.sap.com/viewer/DRAFT/9e4243e92f244537b2164a57a405a9fd/latest/en-US).
 
     This example uses the Linux Download Manager `HXEDownloadManager_linux.bin`. It specifies a proxy host, proxy port, and downloads Getting Started with SAP HANA, express edition (Virtual Machine Method and the SHINE package ( `shine.tgz`).
 
@@ -328,4 +336,4 @@ This example uses `VMWare` player as the `hypervisor`. You can use any supported
 [ACCORDION-END]
 
 ## Next Steps
- - Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)
+ - Start using SAP HANA, express edition. See tutorial [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](https://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html)

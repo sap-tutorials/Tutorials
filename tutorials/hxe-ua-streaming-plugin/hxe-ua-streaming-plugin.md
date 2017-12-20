@@ -2,17 +2,17 @@
 title: Installing and Configuring the Streaming Studio Plugin
 description: Install the streaming analytics plugin for Eclipse, add a connection to the streaming analytics server, and create a HANA service.
 primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
+tags: [  tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
-    - [Installing SAP HANA Streaming Analytics for SAP HANA, Express Edition](http://www.sap.com/developer/tutorials/hxe-ua-installing-streaming.html)
-    - [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html)
+    - [Installing SAP HANA Streaming Analytics for SAP HANA, Express Edition](https://www.sap.com/developer/tutorials/hxe-ua-installing-streaming.html)
+    - [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html)
 
 ## Next Steps
- - [Create a Streaming Project with SAP HANA Streaming Analytics](http://www.sap.com/developer/tutorials/sds-create-streaming-project.html)
+ - [Create a Streaming Project with SAP HANA Streaming Analytics](https://www.sap.com/developer/tutorials/sds-create-streaming-project.html)
 
 ## Details
 Install the streaming analytics plugin for Eclipse, add a connection to the streaming analytics server, and create a HANA service.
@@ -120,7 +120,7 @@ Here we will connect our streaming design time tools to the SAP HANA streaming a
     ![New Server URL](new-server-url.png)
 
 2. Enter the following connection details:
-    - Host Name: The hostname or IP address for your SAP HANA, express edition installation
+    - Host Name: `hxehost` (The hostname or IP address for your SAP HANA, express edition installation)
     - Port: 39016 (virtual machine) or 3`<instance-number>`16 (binary installation)
 
     Enable SSL, then click **OK**:
@@ -198,4 +198,4 @@ In this step we will create a named **Data Service** on the SAP HANA streaming a
 ---
 
 ## Next Steps
- - [Create a Streaming Project with SAP HANA Streaming Analytics](http://www.sap.com/developer/tutorials/sds-create-streaming-project.html)
+ - [Create a Streaming Project with SAP HANA Streaming Analytics](https://www.sap.com/developer/tutorials/sds-create-streaming-project.html)

@@ -7,17 +7,17 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Configure the SAP Cloud Platform predictive services](https://www.sap.com/developer/groups/ps-configure.html)
+  - **Tutorials:** [Configure the SAP Predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-- [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
+- [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 
 ### You will learn
- - How to use the "Outliers" SAP Cloud for predictive services from a REST Client.
+ - How to use the "Outliers" SAP Predictive services from a REST Client.
 
-Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
+Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
 
 ### Time to Complete
   **10 minutes**
@@ -36,7 +36,7 @@ Only the synchronous mode will be tested here but you can mimic what was done in
 
 &nbsp;
 
-> **Note**: if you are running into some issue, you can check the [SAP Cloud Platform Predictive Services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
+> **Note**: if you are running into some issue, you can check the [SAP Predictive services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 [ACCORDION-BEGIN [Info:](A short description of the Outliers service)]
 The Outliers service identifies the odd profiles of a dataset whose target indicator is significantly different from what is expected.
@@ -77,7 +77,7 @@ The dataset will be using during this tutorial is extracted from the sample data
 
 The Census sample data file that you will use to follow the scenarios for Regression/Classification and Segmentation/Clustering is an excerpt from the American Census Bureau database, completed in 1994 by Barry Becker.
 
-> **Note:** For more information about the American Census Bureau, see http://www.census.govInformation published on non-SAP site.
+> **Note:** For more information about the American Census Bureau, see http://www.census.gov published on non-SAP site.
 
 &nbsp;
 
@@ -104,7 +104,7 @@ Variable | Description | Example of Values
 
 [ACCORDION-BEGIN [Step 1: ](Register the Census dataset)]
 
-As described in [**Step 1** of **Test the "Dataset" services** tutorial](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Census dataset using the following elements:
+As described in [**Step 1** of **Test the "Dataset" services** tutorial](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Census dataset using the following elements:
 
 Open a new tab in ***Postman***.
 
@@ -180,7 +180,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   ]  
 }
 ```
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 
 &nbsp;
 
@@ -273,7 +273,7 @@ You can also play with the following parameters and check the differences:
 
 ### Optional
 
-For more details on the SAP Cloud for predictive services, you can check the following the [`Outliers APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/0c5454d0e1c840588fc072de5cad2474.html) documentation.
+For more details on the SAP Predictive services, you can check the following the [`Outliers APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/0c5454d0e1c840588fc072de5cad2474.html) documentation.
 
 ## Next Steps
-- [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
+- [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)

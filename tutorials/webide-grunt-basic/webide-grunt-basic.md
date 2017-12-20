@@ -9,11 +9,11 @@ tags: [  tutorial>beginner, topic>cloud, topic>html5, topic>sapui5, products>sap
 - **Proficiency:** Beginner
 
 ## Next Steps
-- **Tutorials** [Using Other Grunt Plugins in SAP Web IDE](http://www.sap.com/developer/tutorials/webide-grunt-plugins.html)
+- **Tutorials** [Using Other Grunt Plugins in SAP Web IDE](https://www.sap.com/developer/tutorials/webide-grunt-plugins.html)
 
 
 ## Details
-SAP Web IDE now comes with the Grunt task runner already part of the IDE, so you can run tasks by:
+SAP Web IDE Full-stack now comes with the Grunt task runner already part of the IDE, so you can run tasks by:
 
 - Specifying dependencies in the `package.json` file.
 - Specifying/defining tasks in the `Gruntfile.js` file.  
@@ -23,6 +23,7 @@ Once you've created these files, you get a new menu option called **Build** to s
 ### Before you begin
 For this tutorial, make sure:
 
+- You are using **SAP Web IDE Full-stack**
 - You have created an SAPUI5 project. You can simply create a blank or sample project from a template.
 - Your project uses the Basic JavaScript validator. To change it, right-click your project and go to **Project Settings** | **Code Checking** | **JavaScript**, change the validator to **Basic JavaScript**, and click **Save**.
 
@@ -58,7 +59,7 @@ In the file enter the following code:
   "description": "Grunt build",
   "private": true,
   "devDependencies": {
-      "@sap/grunt-sapui5-bestpractice-build": "1.3.19"
+      "@sap/grunt-sapui5-bestpractice-build": "^1.3.19"
    }
 }
 ```
@@ -122,4 +123,4 @@ You can see any build errors in the console, which you can display by going to *
 
 
 ## Next Steps
-- **Tutorials** [Using Other Grunt Plugins in SAP Web IDE](http://www.sap.com/developer/tutorials/webide-grunt-plugins.html)
+- **Tutorials** [Using Other Grunt Plugins in SAP Web IDE](https://www.sap.com/developer/tutorials/webide-grunt-plugins.html)

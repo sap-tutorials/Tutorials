@@ -1,8 +1,8 @@
 ---
 title: Publish events to SDS via the REST interface
 description: See how to publish input events to a streaming project via the http REST interface
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 
 ## Prerequisites  
@@ -10,10 +10,10 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-smar
  - **Tutorials:**  One of the following:
  - [Run and Test a streaming project](https://www.sap.com/developer/tutorials/sds-run-test.html)
  - [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-event-stream-alerts.html)
- - [Build custom Flex Operators to analyze event streams](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - [Build custom Flex Operators to analyze event streams](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 
 ## Details
@@ -148,6 +148,12 @@ authorization:SWS-Token "sws-token"="biVBFyKyPYgObPtmZc7y3ygn7e2hr4OoIQHjKtgQU1H
 Here's how the header will look in Postman:
 
 ![set authorization header in event post](publish-header.png)
+
+
+Since Postman does not offer a "Token" authorization type, we must change the type back to `No Auth` so our new token doesn't get over-written back to a `BasicAuth`. Go to the Authorization tab and select **`No Auth`** from the drop-down.
+
+
+![set authorization type in event post](no-auth.png)
 
 And now go to the Body tab, select raw, and enter the payload below and then press send.
 

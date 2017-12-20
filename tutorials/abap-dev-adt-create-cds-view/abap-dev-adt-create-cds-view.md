@@ -1,5 +1,5 @@
 ---
-title: ABAP Development: Create a CDS View
+title: Create a CDS View (ABAP)
 description: You will learn how to use the Core Data Services (CDS) tools in ABAP in Eclipse.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development ]

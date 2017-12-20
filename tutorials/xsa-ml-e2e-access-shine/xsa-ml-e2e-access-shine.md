@@ -17,11 +17,11 @@ Import a pre-configured SHINE (SAP HANA interactive Education) module and genera
 **15 Min**
 
 ---
- 
+
 
 [ACCORDION-BEGIN [Step 1: ](Import SHINE modules)]
 
-Right-click on the **Workspace** and click on **Import**:
+Right-click on the **Workspace** and click on **Import**: 
 
 ![Import](import.png)
 

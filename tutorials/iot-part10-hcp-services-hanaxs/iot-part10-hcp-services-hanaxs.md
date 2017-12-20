@@ -1,8 +1,8 @@
 ---
-title: SAP Cloud Platform IoT for Neo: binding to and developing on SAP HANA XSC
+title: Binding to and developing on SAP HANA XSC (IoT for Neo)
 description: Now connect your IoT Services to an SAP HANA MDC instance and show the data using SAP HANA XS Classic
-primary_tag: topic>internet-of-things
-tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>internet-of-things, tutorial>beginner ]
+primary_tag: products>sap-cloud-platform-internet-of-things
+tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, products>sap-hana, tutorial>beginner ]
 
 ---
 
@@ -11,7 +11,7 @@ tags: [products>sap-hana, products>sap-cloud-platform, topic>big-data, topic>int
 - **Tutorials:** [SAP Cloud Platform IoT for Neo: Viewing data from environmental sensors](https://www.sap.com/developer/tutorials/iot-part13-hcp-services-viewdataui5.html)
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data on a chart](http://www.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
+- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data on a chart](https://www.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
 
 
 
@@ -96,7 +96,7 @@ Now start (or restart) the `iotmms` Java application.
 
 [ACCORDION-BEGIN [Step 8: ](View your tables)] ￼
 
-With previous step finished you should be able to go back to your MDC instance and select the "Catalog" under the menu options along the top of the page and see your tables now listed under "SYSTEM" schema - if not return to the IoT Services and send another test message. ([see tutorial](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)). So provided you received the "200" status in your messages then you should now have data in your tables and can begin working on your XS application.
+With previous step finished you should be able to go back to your MDC instance and select the "Catalog" under the menu options along the top of the page and see your tables now listed under "SYSTEM" schema - if not return to the IoT Services and send another test message. ([see tutorial](https://www.sap.com/developer/tutorials/iot-part7-add-device.html)). So provided you received the "200" status in your messages then you should now have data in your tables and can begin working on your XS application.
 
 ![Tables](9.png)
 
@@ -166,4 +166,4 @@ This is not the only way to do, but that is a matter for you to explore and disc
 ￼
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data on a chart](http://www.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)
+- [SAP Cloud Platform IoT for Neo: Viewing your environmental sensors data on a chart](https://www.sap.com/developer/tutorials/iot-part12-hcp-services-xsgraph.html)

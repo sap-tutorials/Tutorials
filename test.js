@@ -39,7 +39,7 @@ console.log("reading input...")
 
 var version = process.version;
 console.log("used node version " + version);
-if(version.substring(0,2) === "v4" || version.substring(0,2) === "v5" || version.substring(0,2) === "v6"){
+if(version.substring(0,2) === "v4" || version.substring(0,2) === "v5" || version.substring(0,2) === "v6" || version.substring(0,2) === "v8"){
 
   if (options.file){
     inquirerprompt.setShowfilename(true);

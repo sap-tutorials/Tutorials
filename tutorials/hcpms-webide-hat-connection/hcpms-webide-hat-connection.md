@@ -7,11 +7,11 @@ tags: [products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>htm
 ## Prerequisites  
 - **Proficiency:** Intermediate
 - **Tutorials:**
-- [Configure an SAP Web IDE project for hybrid builds](http://www.sap.com/developer/tutorials/hcpms-webide-hybrid-config.html)
+- [Configure an SAP Web IDE project for hybrid builds](https://www.sap.com/developer/tutorials/hcpms-webide-hybrid-config.html)
 - You must have completed the download and [installation procedure](https://help.hana.ondemand.com/webide_hat/frameset.htm?d2865598e67f4ddabc79e5943352b0a1.html) for the Hybrid App Toolkit
 
 ## Next Steps
-- [Build and run a hybrid app with SAP Web IDE and Hybrid App Toolkit](http://www.sap.com/developer/tutorials/hcpms-webide-hybrid-build.html)
+- [Build and run a hybrid app with SAP Web IDE and Hybrid App Toolkit](https://www.sap.com/developer/tutorials/hcpms-webide-hybrid-build.html)
 
 ## Details
 ### You will learn  
@@ -94,4 +94,4 @@ Open the `SAP_HAT_local-1.xx.x/config.json` file and confirm that the `webIdeHos
 
 
 ## Next Steps
-- [Build and run a hybrid app with SAP Web IDE and Hybrid App Toolkit](http://www.sap.com/developer/tutorials/hcpms-webide-hybrid-build.html)
+- [Build and run a hybrid app with SAP Web IDE and Hybrid App Toolkit](https://www.sap.com/developer/tutorials/hcpms-webide-hybrid-build.html)

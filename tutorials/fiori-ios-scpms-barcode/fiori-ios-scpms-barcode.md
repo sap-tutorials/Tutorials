@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-clo
 
 
 ## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -233,11 +233,11 @@ Any scanned barcode will be added to the list:
 
 And it also works with QR codes:
 
-![Navigation Controller](fiori-ios-scpms-barcode-16.jpg)
+![Navigation Controller](fiori-ios-scpms-barcode-16.png)
 
 
 [ACCORDION-END]
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)

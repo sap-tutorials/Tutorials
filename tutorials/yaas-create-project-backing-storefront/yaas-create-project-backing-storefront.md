@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-hybris-as-
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
+- **Tutorials:** [Extend the YaaS Storefront's Functionality](https://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
 
 ## Next Steps
-- [Deploy a Micro Service Built on YaaS on the SAP Cloud Platform](http://www.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
+- [Deploy a Micro Service Built on YaaS on the SAP Cloud Platform](https://www.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
 
 ## Details
 ### You will learn  
@@ -88,4 +88,4 @@ In this tutorial, you replaced the default storefront project credentials with y
 [ACCORDION-END]
 
 ## Next Steps
-- [Deploy a Micro Service Built on YaaS on the SAP Cloud Platform](http://www.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
+- [Deploy a Micro Service Built on YaaS on the SAP Cloud Platform](https://www.sap.com/developer/tutorials/yaas-deploy-run-microservice-cloud.html)
