@@ -22,6 +22,8 @@ The **Topic Detection API** Machine Learning Functional Services will be used as
  - the **Document Feature Extraction API**
  - the **Product Text Classification API**
 
+The **Topic Detection** service allows you to extracts topics from documents and scores them according to the most relevant topics.
+
 ### Time to Complete
 **10 Min**
 

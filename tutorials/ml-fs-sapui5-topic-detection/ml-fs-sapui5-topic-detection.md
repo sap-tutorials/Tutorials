@@ -17,6 +17,8 @@ tags: [ tutorial>beginner, topic>sapui5, topic>html5, topic>machine-learning, pr
 ### You will learn  
 In this tutorial, you will learn how to quickly integrate the **Topic Detection** SAP Leonardo Machine Learning Functional Services published from the SAP API Business Hub sandbox in a SAPUI5 application.
 
+The **Topic Detection** service allows you to extracts topics from documents and scores them according to the most relevant topics.
+
 You will then be able to substitute the **Topic Detection** services with any other SAP Leonardo Machine Learning Functional Services that consumes text content.
 
 ### Time to Complete
@@ -222,6 +224,14 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 	]
 }
 ```
+
+> ### **Note:** `headerWhiteList`
+>
+>By default, headers element like the `APIKey` will be blocked when used in a SAPUI5 control like the `FileUploader`.
+>This is the reason why we add it to the white list.
+>
+
+&nbsp;
 
 [ACCORDION-END]
 

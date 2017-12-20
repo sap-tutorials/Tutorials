@@ -17,6 +17,8 @@ tags: [ tutorial>beginner, topic>java, topic>machine-learning, products>sap-leon
 ### You will learn  
 In this tutorial, you will learn how to quickly integrate the **Image Classification** SAP Leonardo Machine Learning Functional Services published from the SAP API Business Hub sandbox in a Java program.
 
+This service allows you to calculates and returns a list of classifications/labels along with their probabilities for a given image.
+
 You will then be able to substitute the **Image Classification** services with any other SAP Leonardo Machine Learning Functional Services that consumes images content.
 
 For each API exposed in the SAP API Business Hub, you will be able to generate a code snippet which we will use in this tutorial.

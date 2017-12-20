@@ -17,6 +17,8 @@ tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-leon
 ### You will learn  
 In this tutorial, you will learn where to find and test the **SAP Leonardo Machine Learning Functional Services** published on the SAP API Business Hub that consumes images content.
 
+This service allows you to calculates and returns a list of classifications/labels along with their probabilities for a given image.
+
 The **Image Classification** Machine Learning Functional Services will be used as an example to demonstrate how to consume image content, but you will be able to transpose this tutorial to other services which also consume images content like :
 
  - the **Image Feature Extraction API**
