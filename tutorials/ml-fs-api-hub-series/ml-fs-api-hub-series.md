@@ -21,6 +21,8 @@ The **Time Series Change Point Detection API** Machine Learning Functional Servi
 
  - the **Time Series Forecast API**
 
+The **Time Series Change Point Detection** service allows you to calculates and returns the probability of the change point for each data point in the provided univariate or multivariate time series.
+
 ### Time to Complete
 **10 Min**
 
