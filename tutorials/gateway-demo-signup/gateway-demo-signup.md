@@ -31,7 +31,6 @@ You should see this page:
 
 ![Gateway Demo web based sign up form](1.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Fill out registration form)]
