@@ -1,6 +1,6 @@
 ---
-title: Setup SCP Integration for Twitter using the SAP Hybris Marketing Cloud System
-description: The SCP Integration package implements an integration of social media Data into SAP Hybris Marketing Cloud. It allows you to load and analyze social media data from Twitter into your SAP Hybris Marketing Cloud system.
+title: Setup SAP Hybris Marketing Cloud integration with Twitter  
+description: The SCP Integration package implements an integration of social media data into SAP Hybris Marketing Cloud. It allows you to load and analyze social media data from Twitter into your SAP Hybris Marketing Cloud system.
 primary_tag: products>sap-s-4hana
 tags: [  tutorial>beginner,products>sap-s-4hana ]
 ---
@@ -10,7 +10,7 @@ tags: [  tutorial>beginner,products>sap-s-4hana ]
 
 ## Details
 ### You will learn  
-How to setup the SAP Cloud Platform Integration package to load Twitter posts to your SAP Hybris Marketing Cloud system.
+How to set up the SAP Cloud Platform Integration package to load Twitter posts to your SAP Hybris Marketing Cloud system.
 
 ### Time to Complete
 **20 Min**
@@ -18,14 +18,14 @@ How to setup the SAP Cloud Platform Integration package to load Twitter posts t
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Start a new tweet)]
-Logon on to your Twitter account and post a tweet.  The SAP Cloud Integration service will fetch for this tweet.   
+Log on to your Twitter account and post a tweet.  The SAP Cloud Integration service will fetch for this tweet.   
 
 Post a tweet using hash tag `#happyworker this is cool!`.  Click on the tweet in order to post your tweet.  
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](SAP CP Integration logon )]  
-Logon to your SAP Cloud Platform Integration tenant.
+[ACCORDION-BEGIN [Step 2: ](Log on to SAP CP Integration)]  
+Log on to your SAP Cloud Platform Integration tenant.
 ![CPI tenant](3.png)  
 
 Click on the **all**.  
@@ -51,22 +51,22 @@ Click on the **Design** icon from the menu. Select the **SAP Hybris Marketing Cl
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](configuring the Twitter Intgration Flow)]  
+[ACCORDION-BEGIN [Step 3: ](Configure the Twitter integration flow)]  
 Click on the **Action** icon (icon the arrow pointing to the right). Select the option **Configure**.
 ![action menu](8.png)  
 
 Ensure that the Time event is scheduled with the Run Once option, so that the integration flow will run immediately after it is deployed to the runtime of SAP Cloud Platform Integration.  
 ![runtime](9.png)  
 
-Switch to the **Receiver** tab. Within this Integration Flow, two receivers are maintained. Select **MKT_Receiver**. Ensure that following attributes are set:
+Switch to the **Receiver** tab. Within this Integration Flow, two receivers are maintained. Select **`MKT_Receiver`**. Ensure that following attributes are set:
 - Address:  Replace the URL with your S/4 HANA Host URL
-- credential Name:  This is the technical user created in the [**Setup a SAP Hybris Marketing Cloud System**](https://www.sap.com/developer/tutorials/cpi-sentiment-analysis-s4.html) tutorial.
-![yMKT_Receiver](10.png)
+- credential Name:  This is the technical user created in the [**setup a Hybris Marketing cloud tutorial**] tutorial.
+![yMKT_Receiver](10.png)  
 
-Switch to the **MKT_Receiver_metadata** from the drop down menu.
+Switch to the **`MKT_Receiver_metadata`** from the drop down menu.
 Ensure that following attributes are set:
 - Address:  Replace the URL with the S/4 HANA Host URL
-- credential Name:  This is the technical user created in the [**Setup a SAP Hybris Marketing Cloud System**](https://www.sap.com/developer/tutorials/cpi-sentiment-analysis-s4.html).  
+- credential Name:  This is the technical user created in the [**setup a Hybris Marketing cloud tutorial**].  
 ![yMKT_Receiver_metadata](11.png)  
 
 Select the  **Twitter receiver** from the drop down menu.  Keep the default value.
@@ -82,7 +82,7 @@ Click on **Save**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Understanding the monitor area of CP Integration)]
+[ACCORDION-BEGIN [Step 4: ](Understand monitor area of CP Integration)]
 Navigate to the **Monitor** area of SAP Cloud Platform Integration, via the menu on the top left hand corner.  
 ![Monitor](18.png)  
 
@@ -97,7 +97,7 @@ Three main sections in the Monitor area of SAP Cloud Platform Integration:
 Navigate back to the **overview** section and select **Manage Security Material**.
 ![security](28.png)
 
-In this section, the Authorization for Twitter API is needed. The Twitter API was created in the [**Twitter API tutorial**](https://www.sap.com/developer/tutorials/cpi-sentiment-analysis-social.html).  
+In this section, the Authorization for Twitter API is needed. The Twitter API was created in the Twitter API tutorial.  
 ●	Consumer Key   
 ●	Consumer Secret  
 ●	Access Token  
@@ -118,36 +118,35 @@ Repeat Secure Parameter| Enter your keys from Twitter
 Choose OK.
 
 Repeat above steps for:
-- TWITTER_CONSUMER_SECRET
-- TWITTER_ACCESS_TOKEN
-- TWITTER_ACCESS_TOKEN_SECRET
+- `TWITTER_CONSUMER_SECRET`
+- `TWITTER_ACCESS_TOKEN`
+- `TWITTER_ACCESS_TOKEN_SECRET`
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy Technical Communication User Data with a Credential Artifact)]
->Note:  In the [**SAP Hybris Marketing Cloud System tutorial**](https://www.sap.com/developer/tutorials/cpi-sentiment-analysis-s4.html) you created a technical user in your SAP Hybris Marketing Cloud system. This user credentials needs to be stored now in your SAP Cloud Platform Integration tenant as User Credential
+[ACCORDION-BEGIN [Step 5: ](Deploy technical communication user data)]
+>Note:  In the SAP Hybris Marketing Cloud Communication Management tutorial, you created a technical user in your SAP Hybris Marketing Cloud system. This user's credentials need to be stored now in your SAP Cloud Platform Integration tenant as User Credential
 
-Navigate to the Monitor area of SAP Cloud Platform Integration, via the menu on the top left hand corner.  
+Navigate to the Monitor area of SAP Cloud Platform Integration, via the menu on the top left.  
 ![Monitor](18.png)  
 
-Navigate back to the **overview** section and select **Manage Security Material**.
+Navigate back to the **Overview** section and select **Manage Security Material**.
 ![security](28.png)
 
 Choose **Add**.  
-Select **User Credentials**.  
-Enter the below value:
+Select **User Credentials**, and enter values below:
 
 Field Name  |Entry Value
 ----------- | -------------
 Name        | `yMKT_Credential`
 Description | `Hybris Marketing User`
-User        |  The user created in the [**setup a Hybris Marketing cloud tutorial**].  
-Password    | `Password of your technical user`
+User        |  The user created in the [Set up a Hybris Marketing Cloud system](https://www.sap.com/developer/tutorials/cpi-sentiment-analysis-s4.html) tutorial]  
+Password    | Password of your technical user
 
 Choose **OK**.
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Deployment of the Integration flow)]  
+[ACCORDION-BEGIN [Step 6: ](Deploy integration flow)]  
 Click on the **Design** link.  
 ![menu](7.png)  
 
@@ -167,7 +166,7 @@ Navigate to the **Monitor** area of SAP Cloud Platform Integration, via the menu
 Check that the Integration Flow has been successfully deployed. Below the Manage Integration Content section, select the **All** tile.  
 ![Monitor_all](21.png)  
 
-In the search field, enter `Twitter`.  Ensure the status is started.  If not, then please wait for few second unit it is started before moving to the next step.
+In the search field, enter `Twitter`. Ensure the status is started. If not, then please wait for few second unit it is started before moving to the next step.
 ![Started](20.png)  
 
 Check the **Message Processing Log**  to see everything is working on the integration level.
@@ -175,7 +174,7 @@ Check the **Message Processing Log**  to see everything is working on the integr
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Log on to the SAP Hybris Marketing Cloud system)]
+[ACCORDION-BEGIN [Step 7: ](Log on to SAP Hybris Marketing Cloud)]
 Logon to your SAP Hybris Marketing Cloud system.
 
 ![hybris cloud](25.png)
@@ -183,7 +182,7 @@ Logon to your SAP Hybris Marketing Cloud system.
 To view the tweets that have been pushed to SAP Hybris Marketing via SAP Cloud Platform Integration.  In SAP Hybris Marketing, select the menu **Insight** and then click on the tile **Sentiment Engagement**.
 ![analysis](26.png)  
 
-Enter `#happyworker` in the search field.  The tweet is the 1st on on the list.
+Enter `#happyworker` in the search field. The tweet is the 1st on on the list.
 ![final](27.png)  
 
 [ACCORDION-END]

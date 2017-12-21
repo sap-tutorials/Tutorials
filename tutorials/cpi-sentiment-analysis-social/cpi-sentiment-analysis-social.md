@@ -1,5 +1,5 @@
 ---
-title: How to get the social media channels API
+title: Get access to social media channel APIs
 description: Learn to how to request the keys and tokens from Twitter.
 primary_tag: topic>cloud
 tags: [  tutorial>beginner, topic>cloud]
@@ -19,13 +19,13 @@ How to request the tokens and keys from a Twitter account. The keys will give ac
 
 [ACCORDION-BEGIN [Step 1: ](Apply authorization for Twitter API)]  
 
-Logon to your Twitter [Application Management](https://apps.twitter.com/) account
+Go to [Dev Twitter](https://dev.twitter.com), click on the [**My Apps**](https://apps.twitter.com/) navigation link and login with your Twitter credentials.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create an application for Twitter)]
 
-Fill out the form.  For Sentiment Intelligence all fields are only needed internally for administrative purposes.
+Fill out the form. For Sentiment Intelligence all fields are only needed internally for administrative purposes.
 
 Field Name     | Value
 :------------- | :-------------
@@ -37,12 +37,9 @@ Callback URL   | Leave this field blank.  This field is not needed for this scen
 Read and accept the developer Agreement by selecting the **Yes I** agree checkbox then, click on **New App**.
 
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step 3: ](Getting the keys and tokens)]
+[ACCORDION-BEGIN [Step 3: ](Get the keys and tokens)]
 
 Navigate to the **keys and Access tokens** tab.  Click on the two locations to generate your own keys.  This will generate the key and access tokens.
 
->Write down the keys and access token. These keys will be used in the next tutorial.  
-
-&nbsp;
-
+>Write down the keys and access token.  These keys will be used in the next tutorial.
 [ACCORDION-END]
