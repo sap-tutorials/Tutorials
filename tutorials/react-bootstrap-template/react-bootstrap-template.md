@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorial:** [Getting started with REACT](http://www.sap.com/developer/tutorials/react-getting-started.html)
+- **Tutorial:** [Getting started with REACT](https://www.sap.com/developer/tutorials/react-getting-started.html)
 
 ## Next Steps
-- **Tutorial:** [Add the React JavaScript](http://www.sap.com/developer/tutorials/react-add-javascript.html)
+- **Tutorial:** [Add the React JavaScript](https://www.sap.com/developer/tutorials/react-add-javascript.html)
 
 
 ## Details
@@ -469,4 +469,4 @@ font-weight: bold;
 ---
 
 ## Next Steps
-- **Tutorial:** [Add the React JavaScript](http://www.sap.com/developer/tutorials/react-add-javascript.html)
+- **Tutorial:** [Add the React JavaScript](https://www.sap.com/developer/tutorials/react-add-javascript.html)

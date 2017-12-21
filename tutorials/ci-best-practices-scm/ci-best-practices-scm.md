@@ -1,7 +1,7 @@
 ---
 
-title: Continuous Integration (CI) Best Practices with SAP: Source Code Versioning System
-description: Part 3.1: Setting up a Git/Gerrit Instance.
+title: Continuous Integration (CI) Best Practices with SAP – Source Code Versioning System
+description: Part 3.1 – Setting up a Git/Gerrit Instance.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
@@ -12,9 +12,9 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
   - **Proficiency:** Intermediate
 
 ## Next Steps
- 
-  - [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html)
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+
+  - [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)
+  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
 
 ---
 
@@ -30,7 +30,7 @@ Note: This document is restricted to the description of component installation o
 
 ### 1. Introduction
 
-The interface between local (single developer) and collaborative (team) development is the source code management (SCM) tool together with a code review system. As already described in [CI/CD Practices](http://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html), the SCM tools plays a key role in the CI process. It only makes the development process reproducible. The SCM tool is also the interface to any sequel step, most importantly, the build step in the overall CI process.
+The interface between local (single developer) and collaborative (team) development is the source code management (SCM) tool together with a code review system. As already described in [CI/CD Practices](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html), the SCM tools plays a key role in the CI process. It only makes the development process reproducible. The SCM tool is also the interface to any sequel step, most importantly, the build step in the overall CI process.
 
 There are many different possible choices for a SCM and review system. In this document, we show how to use Git as SCM tool and Gerrit as Git repository server and code review tool. These tools are very frequently used.
 
@@ -51,7 +51,7 @@ Our example is based on Gerrit release 2.13.3. In other releases, the front ends
 - Java JDK 1.7.0 or higher is installed on the machine.
 - Git is installed on the machine
 
-For installation of Git, see 
+For installation of Git, see
 
 > [Git](https://git-scm.com/)  
 > [Git Download](https://git-scm.com/download/linux)
@@ -70,12 +70,12 @@ For installation of Git, see
     ```
 
 3. Create a Gerrit installation directory. In this document, we call it `/data/gerrit`, but any other directory that follows the respective conventions will work as well. The file partition of the directory must be large enough to store all the Gerrit data, especially the database. The user `gerrit` must be the owner of the directory.
-    
+
     ```
     mkdir -p /data/gerrit
     chown gerrit /data/gerrit/
     ```
-   
+
 4. Log on as `gerrit`.
 
 5. Download the Gerrit installation (`gerrit.war` file) from the download site and save it to `/data/gerrit`.
@@ -89,7 +89,7 @@ For installation of Git, see
     ```
 
     During the installation procedure of the Gerrit instance, you may decide for the default settings in the questionnaire in a first run, but it is recommended to approve the installation of the `download-commands` plugin. It enables the display of the clone URL in the Gerrit frontend.
-    
+
 7. To get the server up quickly with the ability to administer it, open the Gerrit configuration file `/data/gerrit/etc/gerrit.config` and set the authentication method to:
 
     ```
@@ -98,7 +98,7 @@ For installation of Git, see
     ```
 
     For security reasons, you should change this to an appropriate authentication method as soon as possible.
-    
+
 8. Start the Gerrit daemon.
 
     ```
@@ -127,7 +127,7 @@ It is recommended to use the SSH protocol for working with Gerrit. We describe h
 
 #### Prerequisites
 
-Git is installed on your local computer. If the computer is running on Linux, install Git using the package installer of your distribution and refer to the Git documentation that was mentioned before. If your computer is running on Windows, the Git installation includes `Git Bash`, which shows a Linux-like user experience. 
+Git is installed on your local computer. If the computer is running on Linux, install Git using the package installer of your distribution and refer to the Git documentation that was mentioned before. If your computer is running on Windows, the Git installation includes `Git Bash`, which shows a Linux-like user experience.
 
 > [Git Download Linux](https://git-scm.com/download/linux)  
 > [Git Download Windows](https://git-scm.com/download/win)
@@ -161,7 +161,7 @@ Git is installed on your local computer. If the computer is running on Linux, in
     ```
 
     A frequent pitfall may be that the `HOME` environment variable is not correctly set.
-   
+
 5. You are now able to locally clone the Git repository of the project `FirstProject` by executing
 
     ```
@@ -206,6 +206,6 @@ Git is installed on your local computer. If the computer is running on Linux, in
 > The content of this document is for guidance purposes only. No warranty or guarantees are provided.
 
 ## Next Steps
- 
-  - [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html)
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+
+  - [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)
+  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

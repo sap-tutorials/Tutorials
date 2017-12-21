@@ -3,7 +3,7 @@ title: Register for SAP Cloud Platform and SAP Jam Collaboration developer acces
 description: Sign-up for a free SAP Cloud Platform developer account and a free trial instance of SAP Jam.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
---- 
+---
 
 ## Prerequisites  
  - **Proficiency:** Beginner

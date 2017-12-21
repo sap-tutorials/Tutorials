@@ -8,19 +8,19 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform-connectivit
 ## Prerequisites  
 - **Proficiency:** Beginner
 - **Tutorials:**
-  - [Sign up for a free trial account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
-  - [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](http://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html)
+  - [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+  - [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](https://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html)
 
 
 ## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 ## Details
 
 ### You will learn  
 In this tutorial, you will deploy an on-premise extension which uses RFC via JCo. This includes the setup of an SAP HANA Cloud Connector instance. The scenario used in this tutorial is based on the well-known `SFLIGHT` model available as default sample content in all ABAP systems.
 
-It is assumed that you are using the SAP Cloud Appliance Library to get an ABAP test system plus pre-installed SAP HANA Cloud Connector, as described in the tutorial [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](http://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html). The overall landscape of this on-premise extension scenario is then looking like in the figure below:
+It is assumed that you are using the SAP Cloud Appliance Library to get an ABAP test system plus pre-installed SAP HANA Cloud Connector, as described in the tutorial [Setup SAP Cloud Appliance Library account and install preconfigured SAP solution in cloud](https://www.sap.com/developer/tutorials/hcp-prepare-cal-account.html). The overall landscape of this on-premise extension scenario is then looking like in the figure below:
 
 ![overall landscape](architecture.png)
 
@@ -80,7 +80,7 @@ Now you will connect the SAP HANA Cloud connector to your free developer account
 
 Start the cloud connector administration UI using the Firefox browser provided on the desktop of the AWS instance with URL `https://abapci.dummy.nodomain:8443`, and logon with user `Administrator` and password as `manage`. Later it asks you to change the password
 
-To connect the cloud connector to your account, follow the steps described in the tutorial [How-to setup the SAP HANA Cloud Connector for secure on-premise connectivity](http://www.sap.com/developer/tutorials/hcp-cloud-connector-setup.html). Shortly summarized, you need to:
+To connect the cloud connector to your account, follow the steps described in the tutorial [How-to setup the SAP HANA Cloud Connector for secure on-premise connectivity](https://www.sap.com/developer/tutorials/hcp-cloud-connector-setup.html). Shortly summarized, you need to:
 
 - choose **`Master (Primary Installation)`**
 - select **`hanatrial.hana.ondemand.com`** as landscape host
@@ -218,7 +218,7 @@ Note that the `JCoFlightProvider` class not only fetches data from the ABAP syst
 ---
 
 ## Next Steps
-Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 ---
 

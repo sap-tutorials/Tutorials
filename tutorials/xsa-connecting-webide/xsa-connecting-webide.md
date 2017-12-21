@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>html5, products>sap-hana, products>sap-web-ide
 ---
 
 ## Prerequisites  
- - [How to create an SAP HANA Developer Edition in the Cloud](http://www.sap.com/developer/tutorials/hana-setup-cloud.html)
+ - [How to create an SAP HANA Developer Edition in the Cloud](https://www.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 ## Details
 SAP HANA XS Advanced is the new development paradigm from SAP based around the Cloud Foundry concepts and architectures. To begin with you will need see how to connect to the SAP Web IDE for SAP HANA and clone a Git Repository.
@@ -116,4 +116,4 @@ Click **Save**.
 [ACCORDION-END]
 
 ## Next Steps
- - [SAP HANA XS Advanced Creating an HTML5 Module](http://www.sap.com/developer/tutorials/xsa-html5-module.html)
+ - [SAP HANA XS Advanced Creating an HTML5 Module](https://www.sap.com/developer/tutorials/xsa-html5-module.html)

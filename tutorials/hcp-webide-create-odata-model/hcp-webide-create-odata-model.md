@@ -7,10 +7,10 @@ tags: [products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>mob
 
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** While not required, it would be useful to complete the [An Open Data Protocol (OData) primer for developers](http://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html) and be familiar with SAP Web IDE before beginning this tutorial.
+- **Tutorials:** While not required, it would be useful to complete the [An Open Data Protocol (OData) primer for developers](https://www.sap.com/developer/tutorials/hcp-webide-odata-primer.html) and be familiar with SAP Web IDE before beginning this tutorial.
 
 ## Next Steps
-- [Build an SAPUI5 app based on your data model and run it with mock data](http://www.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
+- [Build an SAPUI5 app based on your data model and run it with mock data](https://www.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
 
 ## Details
 ### You will learn  
@@ -551,4 +551,4 @@ ToRole="BusinessPartner"/>
 - Read up on the [OData Model Editor](https://help.hana.ondemand.com/webide_odatamodeler/frameset.htm)
 
 ## Next Steps
-- [Build an SAPUI5 app based on your data model and run it with mock data](http://www.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
+- [Build an SAPUI5 app based on your data model and run it with mock data](https://www.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)

@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Using Cursors](http://www.sap.com/developer/tutorials/xsa-sqlscript-usingarrays.html)
+- **Tutorials:** [Using Cursors](https://www.sap.com/developer/tutorials/xsa-sqlscript-usingarrays.html)
 
 ## Next Steps
-- [Using Index-based Cell Access](http://www.sap.com/developer/tutorials/xsa-sqlscript-usingindexbased.html)
+- [Using Index-based Cell Access](https://www.sap.com/developer/tutorials/xsa-sqlscript-usingindexbased.html)
 
 ## Details
 ### You will learn  
@@ -119,4 +119,4 @@ Notice the execution time is a little bit less than when doing the calculation u
 
 
 ## Next Steps
-- [Using Index-based Cell Access](http://www.sap.com/developer/tutorials/xsa-sqlscript-usingindexbased.html)
+- [Using Index-based Cell Access](https://www.sap.com/developer/tutorials/xsa-sqlscript-usingindexbased.html)

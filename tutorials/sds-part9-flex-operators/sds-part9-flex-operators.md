@@ -1,15 +1,15 @@
 ---
 title: Custom Flex Operators with Advanced CCL in SAP HANA Smart Data Streaming
 description: Part 9 of 9. Use flex operator for status reports. Advanced CCL techniques.
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-hana-studio ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Run and Test a Project in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part7-testing.html)
+ - **Tutorials:** [Run and Test a Project in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part7-testing.html)
 
 ## Next Steps
- - **Tutorials:** [Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part8-patterns.html)
+ - **Tutorials:** [Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part8-patterns.html)
 
 ## Details
 ### You will learn  
@@ -168,4 +168,4 @@ Now you are doing something a bit different. You are going to build another Flex
 
 
 ## Next Steps
- - **Tutorials:** [Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part8-patterns.html)
+ - **Tutorials:** [Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part8-patterns.html)

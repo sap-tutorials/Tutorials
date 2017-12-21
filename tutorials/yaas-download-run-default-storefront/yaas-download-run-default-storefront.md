@@ -1,15 +1,15 @@
 ---
-title: Download and Run the Default YaaS Storefront
-description: The YaaS Storefront is a fully customizable, feature-rich, default shopping web site, from which you can create your very own online shop.  YaaS looks after all the tricky details: security, authorization, payment and cart workflows, etc., so that you can focus on more interesting topics, like personalization and overall coolness of your online shop.  In this tutorial, you will download, run and explore the default YaaS Storefront.
+title: Download and run the default YaaS storefront
+description: The YaaS Storefront is a fully customizable, feature-rich, default shopping web site, from which you can create your very own online shop.  YaaS looks after all the tricky details, like security, authorization, payment and cart workflows, so that you can focus on more interesting topics, like personalization and overall coolness of your online shop.  In this tutorial, you will download, run and explore the default YaaS Storefront.
 primary_tag: products>sap-hybris-as-a-service-on-sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-hybris-as-a-service-on-sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials** [Getting Started with YaaS](http://www.sap.com/developer/tutorials/yaas-getting-started.html))
+- **Tutorials** [Getting Started with YaaS](https://www.sap.com/developer/tutorials/yaas-getting-started.html))
 
 ## Next Steps
-- [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
+- [Extend the YaaS Storefront's Functionality](https://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
 
 ## Details
 ### You will learn  
@@ -80,4 +80,4 @@ You now have seen a default YaaS Storefront running locally on your machine. The
 [ACCORDION-END]
 
 ## Next Steps
-- [Extend the YaaS Storefront's Functionality](http://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)
+- [Extend the YaaS Storefront's Functionality](https://www.sap.com/developer/tutorials/yaas-extend-storefront-functionality-webservice.html)

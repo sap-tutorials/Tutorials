@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
  - You have successfully installed SAP Data Hub, developer edition.
 
 ## Next Steps
- - [Use a message broker](http://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
+ - [Use a message broker](https://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
 
 ## Details
 ### You will learn  
@@ -47,7 +47,7 @@ Add the **Data Generator (3)** operator to the pipeline by drag & drop.
 
 Press the **Script (4)** button to display the JavaScript snippet which is executed by the **Data Generator**. The JavaScript snippet opens in a new tab of the editor.
 
-You see that the **Data Generator** creates a new random sample record every 500ms and sends it via the **output** port of the operator.
+You see that the **Data Generator** creates a new random sample record every 500 milliseconds and sends it via the **output** port of the operator.
 
 The sample data represents sensors for humidity, temperature etc.
 
@@ -82,4 +82,4 @@ Stop the pipeline by pressing the **Stop** button (you find it next to the **Run
 ---
 
 ## Next Steps
-[Use a message broker](http://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
+[Use a message broker](https://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)

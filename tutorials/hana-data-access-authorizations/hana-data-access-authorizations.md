@@ -7,10 +7,10 @@ tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform
 
 ## Prerequisites  
 - **Proficiency:** Beginner
- - **Tutorials:** [Develop your first SAP HANA XSC application](http://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
+ - **Tutorials:** [Develop your first SAP HANA XSC application](https://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
 
 ## Next Steps
-- [Enable XSODATA in your SAP HANA XSC application](http://www.sap.com/developer/tutorials/hana-xsodata.html)
+- [Enable XSODATA in your SAP HANA XSC application](https://www.sap.com/developer/tutorials/hana-xsodata.html)
 
 ## Details
 

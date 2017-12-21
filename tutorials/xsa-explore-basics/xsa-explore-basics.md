@@ -7,7 +7,7 @@ tags: [  tutorial>beginner ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner | Intermediate | Advanced
- - **Tutorials:** [Get an SAP HANA, express edition, instance with XS Advanced applications](http://www.sap.com/developer/topics/sap-hana-express.html)
+ - **Tutorials:** [Get an SAP HANA, express edition, instance with XS Advanced applications](https://www.sap.com/developer/topics/sap-hana-express.html)
 
 
 ## Next Steps

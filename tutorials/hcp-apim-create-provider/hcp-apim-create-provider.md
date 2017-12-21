@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, products>sap-gateway, products>sap-cloud-platform, p
 ## Prerequisites  
 - **Proficiency:** Beginner
 - **Tutorials:** [Enable the SAP Cloud Platform, API Management Service](https://www.sap.com/developer/tutorials/hcp-apim-enable-service.html)
-Create a user in the SAP Gateway Developer System: [Create an account on the Gateway Demo system](http://www.sap.com/developer/tutorials/gateway-demo-signup.html)
+Create a user in the SAP Gateway Developer System: [Create an account on the Gateway Demo system](https://www.sap.com/developer/tutorials/gateway-demo-signup.html)
 
 ## Next Steps
 - [Create an API Proxy](https://www.sap.com/developer/tutorials/hcp-apim-create-api.html)

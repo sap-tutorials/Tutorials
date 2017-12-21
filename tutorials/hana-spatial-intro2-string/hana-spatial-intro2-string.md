@@ -1,15 +1,15 @@
 ---
-title: Intro to SAP HANA Spatial: Strings
+title: Intro to SAP HANA Spatial – Strings
 description: A string ('a curve' in more general) connects points
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Intro to SAP HANA Spatial: Points](http://www.sap.com/developer/tutorials/hana-spatial-intro1-point.html)
+- **Tutorials:** [Intro to SAP HANA Spatial: Points](https://www.sap.com/developer/tutorials/hana-spatial-intro1-point.html)
 
 ## Next Steps
-- [Intro to SAP HANA Spatial: Polygons](http://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
+- [Intro to SAP HANA Spatial: Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
 
 ## Details
 ### You will learn  
@@ -164,4 +164,4 @@ Note this time you did not use a geometry constructor using the `NEW` keyword. I
 - Check SAP HANA Spatial Reference at https://help.sap.com/hana_platform
 
 ## Next Steps
-- [Intro to SAP HANA Spatial: Polygons](http://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
+- [Intro to SAP HANA Spatial: Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)

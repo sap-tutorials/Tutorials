@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Using Execute Immediate](http://www.sap.com/developer/tutorials/xsa-sqlscript-execute.html)
+- **Tutorials:** [Using Execute Immediate](https://www.sap.com/developer/tutorials/xsa-sqlscript-execute.html)
 
 ## Next Steps
-- [SQL vs Cursors vs Arrays vs Index-based Cell Access](http://www.sap.com/developer/tutorials/xsa-sqlscript-sql-cursor.html)
+- [SQL vs Cursors vs Arrays vs Index-based Cell Access](https://www.sap.com/developer/tutorials/xsa-sqlscript-sql-cursor.html)
 
 ## Details
 ### You will learn  
@@ -108,4 +108,4 @@ You will notice you now get an error message when passing 'OR 1 = 1' to the proc
 
 
 ## Next Steps
-- [SQL vs Cursors vs Arrays vs Index-based Cell Access](http://www.sap.com/developer/tutorials/xsa-sqlscript-sql-cursor.html)
+- [SQL vs Cursors vs Arrays vs Index-based Cell Access](https://www.sap.com/developer/tutorials/xsa-sqlscript-sql-cursor.html)

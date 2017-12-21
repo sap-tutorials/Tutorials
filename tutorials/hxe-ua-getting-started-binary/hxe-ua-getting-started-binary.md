@@ -6,16 +6,16 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites
 - **Proficiency:** Beginner
-- **Tutorials:** [Installing Binary](http://www.sap.com/developer/tutorials/hxe-ua-installing-binary.html).
+- **Tutorials:** [Installing Binary](https://www.sap.com/developer/tutorials/hxe-ua-installing-binary.html).
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn
 How to configure the binary install of SAP HANA, express edition.
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
 ### Time to Complete
 **20 Min.**
 ---
@@ -180,7 +180,7 @@ Follow the eclipse installer prompts.
 
 Launch when prompted, or go to the eclipse folder (example: `C:\Users\<path>\eclipse\jee-neon`) and run the **eclipse** executable file.
 
-Follow the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html) to connect to your SAP HANA, express edition client machine.
+Follow the tutorial [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html) to connect to your SAP HANA, express edition client machine.
 
 
 [ACCORDION-END]
@@ -350,4 +350,4 @@ If you are using SAP HANA 2.0, express edition in a language other than English 
 [ACCORDION-END]
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)

@@ -10,7 +10,7 @@ The Business user requires the Role `SAP_BCR_CA_ANA_AQD_PC` to access the Query 
 Furthermore `ABAP Custom Analytical Queries` as a tutorial reveals another Prerequisite.
 
 ## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 The Application Custom Analytical Queries characterizes the usage of reporting and analysis.

@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
  - **Proficiency:** Beginner
 
 ## Next Steps
- - [Run example pipelines in SAP Data Hub, developer edition](http://www.sap.com/developer/tutorials/datahub-docker-examples.html)
+ - [Run example pipelines in SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-examples.html)
 
 
 ## Details
@@ -24,7 +24,7 @@ During this tutorial, you will learn how to download SAP Data Hub, developer edi
 [ACCORDION-BEGIN [Step 1: ](Check the prerequisites)]
 Running SAP Data Hub, developer edition on your local computer requires:
 
-* at least **2 CPU cores** (recommended 4 CPU cores) with X86_64 instruction set
+* at least **2 CPU cores** (recommended 4 CPU cores) with `X86_64` instruction set
 
 * at least **8 GB of RAM**
 
@@ -143,4 +143,4 @@ docker logs datahub
 ---
 
 ## Next Steps
-[Run example pipelines in SAP Data Hub, developer edition](http://www.sap.com/developer/tutorials/datahub-docker-examples.html)
+[Run example pipelines in SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-examples.html)

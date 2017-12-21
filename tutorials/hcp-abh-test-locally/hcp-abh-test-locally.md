@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Getting Started with the SAP API Business Hub](http://www.sap.com/developer/tutorials/hcp-abh-getting-started.html)
+ - **Tutorials:** [Getting Started with the SAP API Business Hub](https://www.sap.com/developer/tutorials/hcp-abh-getting-started.html)
 
 ## Next Steps
  - [Add API Business Hub API to a UI5 Application](https://www.sap.com/developer/tutorials/hcp-abh-api-ui5-app.html)

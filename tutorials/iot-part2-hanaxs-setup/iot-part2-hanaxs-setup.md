@@ -8,11 +8,11 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Internet of Things (IoT) Setup the Tessel](http://www.sap.com/developer/how-tos/2016/09/iot-tessel.html)
+- **Tutorials:** [Internet of Things (IoT) Setup the Tessel](https://www.sap.com/developer/how-tos/2016/09/iot-tessel.html)
 
 
 ## Next Steps
-- [Internet of Things (IoT) Posting data with a REST Client](http://www.sap.com/developer/tutorials/iot-part3-posting-data-hana.html)
+- [Internet of Things (IoT) Posting data with a REST Client](https://www.sap.com/developer/tutorials/iot-part3-posting-data-hana.html)
 
 ## Details
 ### You will learn  
@@ -202,4 +202,4 @@ Click the **+** symbol under the **Granted Roles** tab and search for the role y
 
 
 ## Next Steps
-- [Internet of Things (IoT) Posting data with a REST Client](http://www.sap.com/developer/tutorials/iot-part3-posting-data-hana.html)
+- [Internet of Things (IoT) Posting data with a REST Client](https://www.sap.com/developer/tutorials/iot-part3-posting-data-hana.html)

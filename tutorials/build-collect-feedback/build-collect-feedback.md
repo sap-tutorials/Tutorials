@@ -1,17 +1,10 @@
 ---
 title: Collect user feedback in BUILD
-description: Send your application your team to collect and review feedback from BUILD
+description: Send your application your team to collect and review feedback from BUILD.
+auto_validation: false
 primary_tag: products>build>build
 tags: [  tutorial>beginner, products>build>build ]
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Create a BUILD Prototype](http://www.sap.com/developer/tutorials/build-create-prototype.html)
-
-
-## Next Steps
- - [Import your BUILD Project into Web IDE](http://www.sap.com/developer/tutorials/build-import-webide.html)
 
 ## Details
 ### You will learn  
@@ -32,7 +25,7 @@ Give the study a **name**, such as _User Feedback_. Click **Save and Go to Feedb
 
  ![new study form](2.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add a new question)]
@@ -74,7 +67,7 @@ Choices:
 Click **Done**.
 
 
-
+[DONE]
 [ACCORDION-END]
 
 
@@ -89,7 +82,7 @@ This will start the survey in preview mode. No responses will recorded from this
 
 ![Study start page](9.png)
 
-
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Publish your study)]
@@ -109,7 +102,7 @@ Once you publish, you will have a shareable link. **Copy the link** and click **
 
 Send out the link to your intended audience to collect feedback. You can fill out your own survey to have some sample feedback in your application.
 
-
+[VALIDATE_4]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Provide feedback)]
@@ -147,7 +140,7 @@ You have finished your survey! You can always go back and edit the feedback your
 
 ![study complete screen](16.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Review feedback responses)]
@@ -168,11 +161,5 @@ Review your user's feedback and make adjustments as necessary before creating yo
 ![specific question feedback for question 2](23.png)
 
 
-
+[VALIDATE_6]
 [ACCORDION-END]
-
-
-
-
-## Next Steps
-- [Import your BUILD Project into Web IDE](http://www.sap.com/developer/tutorials/build-import-webide.html)
