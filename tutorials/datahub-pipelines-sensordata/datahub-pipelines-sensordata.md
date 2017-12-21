@@ -58,7 +58,7 @@ Close the tab for the JavaScript snippet.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure Terminal)]
-Add a **Terminal** operator to the pipeline by drag & drop (you find this also in the **Operators** tab). Then connect the **output** port of the **Data Generator** operator to the **in1** port of the **Terminal** operator. **You need to place the connection exactly on the "green circle".**
+Add a **Terminal** operator to the pipeline by drag & drop (you find this also in the **Operators** tab). Then connect the **output** port of the **Data Generator** operator to the **`in1`** port of the **Terminal** operator. **You need to place the connection exactly on the "green circle".**
 
 ![picture_06](./datahub-pipelines-sensordata_06.png)  
 
