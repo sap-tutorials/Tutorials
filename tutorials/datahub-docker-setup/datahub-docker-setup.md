@@ -123,10 +123,10 @@ You can stop SAP Data Hub, developer edition by using the `stop` command. After 
 docker stop datahub
 ```
 
-You can also restart SAP Data Hub, developer edition (without creating a completely new container) by using the `start` command (this will not open a "status loop").
+You can also restart SAP Data Hub, developer edition (without creating a completely new container) by using the `start` command (this will not open a "status loop"). The `-i` option ensures that you see the "status loop".
 
 ```sh
-docker start datahub
+docker start -i datahub
 ```
 
 **Attention**: When stopping and restarting the Docker container, currently the tables which you have created in SAP Vora get lost. You need to recreate them.

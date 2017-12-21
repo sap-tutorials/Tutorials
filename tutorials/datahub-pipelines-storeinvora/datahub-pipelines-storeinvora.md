@@ -47,6 +47,8 @@ When the **Status** tab indicates that the pipeline is running, wait a moment an
 
 Stop the pipeline by pressing the **Stop** button.
 
+**Attention**: If no data is stored in SAP Vora, you can add a **Terminal** operator to the pipeline and connect it with the **outresult** port of the **SAP Vora HdfsLoader** operator. If you see an error message like `could not handle api call, failure reason : execution of scheduler plan failed`, you might have incorrectly connected the **Kafka Consumer** operator and the **ToString Converter** operator. Please review the previous tutorial. 
+
 [ACCORDION-END]
 
 ---
