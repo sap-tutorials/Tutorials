@@ -74,7 +74,7 @@ In the file enter the following code:
 	"private": true,
 	"dependencies": {
 		"grunt-ts": "X.X.X",
-		"@sap/grunt-sapui5-bestpractice-build": "^1.3.19"
+		"@sap/grunt-sapui5-bestpractice-build": "1.3.33"
 	}
 }
 ```
