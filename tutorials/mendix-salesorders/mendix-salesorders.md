@@ -54,7 +54,7 @@ For more information, see [How to Use App Store Content in the Modeler](https://
 
 The SAP OData Model Creator is a web site where your OData metadata XML file is transformed into a Mendix module that can be imported into your project.
 
-Generating a service module starts by getting the OData metadata XML file. This file can be downloaded from the OData service URL directly using the $metadata suffix or retrieved from the SAP Gateway.
+Generating a service module starts by getting the OData metadata XML file. This file can be downloaded from the OData service URL directly using the `$metadata` suffix or retrieved from the SAP Gateway.
 Since we're using the SAP Demo Gateway System (ES5) for this tutorial, the metadata file can be found at:
 `https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/$metadata`
 
@@ -152,16 +152,14 @@ Follow these steps to create the logic to get the Sales Orders:
 
     | Field | Value |
     |:-------|:-------|
-    | Query  | The URL to which you want to execute your request. In our case it's this one: `https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/$metadata`.
-    And it's constructed by entering the below:
-
-    `@GWSAMPLE_BASIC.GWSAMPLE_BASIC + '/' + toString(GWSAMPLE_BASIC.EntitySetNames.SalesOrderSet)` |
+    | Query  | The URL to which you want to execute your request. In our case:<br><br> `https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/$metadata`<br><br>And it's constructed by entering the below:<br><br> `@GWSAMPLE_BASIC.GWSAMPLE_BASIC + '/' + toString(GWSAMPLE_BASIC.EntitySetNames.SalesOrderSet)` |
     | Response type | The type you want to query from the OData service; in this example, `SalesOrder` is used |
-    | Request parameters | `RequestParams` variable |
+    | Request&nbsp;parameters | `RequestParams` variable |
     | Parent |empty|
     | Result info |empty|
-    | Use Cloud Connector | `False` |
+    | Use&nbsp;Cloud&nbsp;Connector | `False` |
     | Output Variable | `SalesOrders` |
+
 
 3. Verify the **Get List** dialog matches the below:
 
@@ -175,21 +173,20 @@ Follow these steps to create the logic to get the Sales Orders:
 
 In the microflow, make the return value of the microflow a **List** of **`SalesOrders`**. This is so that you can call the microflow as a data source in a page.
 
-1. Double-click the `End-Event` (red dot)
-2. Select `List` for the **Type**
-3. Select `SalesOrder` for the **Entity**
-4. Click on **Generate…** and select the **`SalesOrders`** variable.
+  1. Double-click the `End-Event` (red dot).
+  2. Select `List` for the **Type**.
+  3. Select `SalesOrder` for the **Entity**.
+  4. Click on **Generate…** and select the **`SalesOrders`** variable.
 
-  ![Expression value](mendix-salesorders15.png)
+      ![Expression value](mendix-salesorders15.png)
 
-5. Verify the **End Event** dialog matches the below:
+  5. Verify the **End Event** dialog matches the below:
 
-  ![End Event](mendix-salesorders16.png)
+      ![End Event](mendix-salesorders16.png)
 
-6. Click **OK** to close the dialog.
+  6. Click **OK** to close the dialog.
 
 Verify your microflow looks like the following:
-
     ![Microflow](mendix-salesorders17.png)
 
 [ACCORDION-END]
