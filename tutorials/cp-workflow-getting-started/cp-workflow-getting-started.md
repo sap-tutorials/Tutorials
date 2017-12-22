@@ -39,7 +39,8 @@ Search for the **Portal** service. Then select it, and choose **Enable**.
 
 [ACCORDION-BEGIN [Step 3: ](Enable SAP Web IDE Full-Stack)]
 
-Search for **SAP Web IDE Full-Stack**. Then select it, and choose **Enable**.
+1. Go back to the services overview by choosing the **Back** button.
+2. Search for **SAP Web IDE Full-Stack**. Then select it, and choose **Enable**.
 > Note: The workflow features are only available with SAP Web IDE Full-Stack.
 
 ![Enable SAP Web IDE](webide-enabled.png)
@@ -48,7 +49,10 @@ Search for **SAP Web IDE Full-Stack**. Then select it, and choose **Enable**.
 
 [ACCORDION-BEGIN [Step 4: ](Enable the workflow service)]
 
-Search for the **Workflow** service. Then select it, and choose **Enable**.
+1. Go back to the services overview by choosing the **Back** button.
+2. Search for the **Workflow** service. Then select it, and choose **Enable**.
+> Note: If the enablement fails, try again – this could be a temporary problem.
+
 ![Enable the workflow service](workflow-enabled.png)
 
 [ACCORDION-END]
