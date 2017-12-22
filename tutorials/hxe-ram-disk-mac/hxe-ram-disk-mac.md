@@ -17,7 +17,7 @@ You will verify how much Random Access Memory you have in your system to run SAP
 
 ---
 
-[ACCORDION-BEGIN [System Requirements Check ](Mac OS)]
+[ACCORDION-BEGIN [System Requirements Check: ](Mac OS)]
 
 Go to the **`launchpad`** on the dock. Type `System` in the search bar and select **System Information**
 

@@ -16,7 +16,7 @@ You will verify how much Random Access Memory you have in your system to run SAP
 **1 Min**
 
 ---
-[ACCORDION-BEGIN [System Requirements Check ](MS Windows)]
+[ACCORDION-BEGIN [System Requirements Check: ](MS Windows)]
 
 Go into the `Start` menu and type `System Information`
 
