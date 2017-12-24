@@ -1,8 +1,8 @@
 ---
 title: Run and Test a Streaming project
 description: Run your streaming project on the SAP HANA streaming analytics server. Use the test tools in Eclipse to send some events to the input stream and view the output. Confirm that data is being captured in the HANA database
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

@@ -1,8 +1,8 @@
 ---
 title: Using the Streaming Web Service
 description: How to configure, run and test the Streaming Web Service (SWS) for SAP HANA Smart Data Streaming
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [  tutorial>Intermediate, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [  tutorial>Intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites
  - **Proficiency:** Intermediate
