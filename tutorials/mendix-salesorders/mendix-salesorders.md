@@ -23,12 +23,11 @@ This tutorial also showcases the [SAP OData Model Creator](https://appstore.home
 **Before starting this tutorial, make sure you have followed the prerequisites**.
 
 >This tutorial is applicable whether you have a productive or trial Neo environment, but assumes that you are using a trial Cloud Foundry environment.
-
-
+&nbsp;
 > The Mendix Desktop Modeler, for building your application, is available for Windows platforms only.
 
 ### You will learn  
-- How to create an SAP Blank application in SAP Cloud Platform Rapid Application Development by Mendix.
+- How to create an SAP Blank application in SAP Cloud Platform Rapid Application Development.
 - How to create the application data model using the SAP OData Model Creator.
 - How to consume an OData service using the SAP OData Connector.
 - How to deploy the application to SAP Cloud Platform.
@@ -41,9 +40,9 @@ This tutorial also showcases the [SAP OData Model Creator](https://appstore.home
 
 [ACCORDION-BEGIN [Step 1: ](Get SAP OData Connector)]
 
-* To be able to use the SAP OData Connector, after creating your project, navigate to the Mendix App Store and download the [SAP OData Connector](https://appstore.home.mendix.com/link/app/74525/Mendix/SAP-OData-Connector).
+To be able to use the SAP OData Connector, after creating your project, navigate to the Mendix App Store and download the [SAP OData Connector](https://appstore.home.mendix.com/link/app/74525/Mendix/SAP-OData-Connector).
 
-* You will then find this module in your project's App Store modules.
+You will then find this module in your project's App Store modules.
 For more information, see [How to Use App Store Content in the Modeler](https://docs.mendix.com/community/app-store/use-app-store-content-in-the-modeler).
 
 ![Mendix App Store](mendix-salesorders1.png)
@@ -54,9 +53,11 @@ For more information, see [How to Use App Store Content in the Modeler](https://
 
 The SAP OData Model Creator is a web site where your OData metadata XML file is transformed into a Mendix module that can be imported into your project.
 
-Generating a service module starts by getting the OData metadata XML file. This file can be downloaded from the OData service URL directly using the `$metadata` suffix or retrieved from the SAP Gateway.
-Since we're using the SAP Demo Gateway System (ES5) for this tutorial, the metadata file can be found at:
-`https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/$metadata`
+Generating a service module starts by getting the OData metadata XML file. This file can be downloaded from the OData service URL directly using the `$metadata` suffix or retrieved from SAP Gateway. Since we're using the SAP Demo Gateway System (ES5) for this tutorial, the metadata file can be found at:
+
+```
+https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/$metadata
+```
 
 To generate the service module, follow these steps:
 
@@ -66,9 +67,10 @@ To generate the service module, follow these steps:
 
     ![Domain Model Creator](mendix-salesorders2.png)
 
-4. Press **`Generate .mpk`**. A progress bar will be shown during the parsing and generation of the module.
+4. Press **`Generate`** **`.mpk`**. A progress bar will be shown during the parsing and generation of the module.
 5. Once the generation is done, the **Download File** button appears. Notice that the file name of your module is extracted from the metadata file itself.
-6. Save the `.mpk` file locally.
+
+    Press **Download File** and save the `.mpk` file locally.
 
     ![Domain Model Creator](mendix-salesorders3.png)
 
@@ -79,15 +81,15 @@ To generate the service module, follow these steps:
 
 Now you have a Mendix module ready to be imported into your project.
 
-1. Open the project that you created, right-click the project root folder, select **Import module package…** and select the MPK file.
+1. Open the project that you created, right-click the project root folder, select **Import module package…** and select the `.mpk` file.
 
     ![Import module package](mendix-salesorders4.png)
 
-2. You now have your service `GWSAMPLE_BASIC` module available in your project ready to use in combination with the SAP OData Connector.
+    You now have your service `GWSAMPLE_BASIC` module available in your project ready to use in combination with the SAP OData Connector.
 
     ![Import module package](mendix-salesorders5.png)
 
-3. Open the generated domain model and explore the entities and associations. Imagine that you had to create that manually, a lot of work!
+2. Open the generated domain model and explore the entities and associations. Imagine that you had to create that manually -- a lot of work!
 
     ![Generated Domain Model](mendix-salesorders6.png)
 
@@ -97,10 +99,10 @@ Now you have a Mendix module ready to be imported into your project.
 
 Now that we have our domain model in place, it's time to implement the connectivity to the SAP Gateway Demo System (ES5).
 
-Our tutorial uses basic authentication to connect to the ES5 system, let's store the username and password in constants:
+Our tutorial uses basic authentication to connect to the ES5 system, so let's store the username and password in constants.
 
-1. Right-click **`MyFirstModule`** and add a new folder, name it **`Constants`**.
-2. Right-click the Constants folder and add a new Constant, name it **`ES5Username`**.
+1. Right-click **`MyFirstModule`** and add a new folder called **`Constants`**.
+2. Right-click the **`Constants`** folder and add a new constant called **`ES5Username`**.
 
 
 
@@ -113,18 +115,18 @@ Our tutorial uses basic authentication to connect to the ES5 system, let's store
 4. Following the same steps, add a new constant and name it **`ES5Password`**.
 5. Enter your ES5 password as **`Default value`**.
 
-![Add Constant](mendix-salesorders9.png)
+    ![Add Constant](mendix-salesorders9.png)
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add logic to get sales orders – authentication)]
 
-Follow these steps to create the logic to get the Sales Orders:
+Follow these steps to create the logic to get the sales orders.
 
-1. Right-click **`MyFirstModule`** and add a new Microflow, name it **`ACT_GetSalesOrders`**.
+1. Right-click **`MyFirstModule`** and add a new microflow, name it **`ACT_GetSalesOrders`**.
 2. Right-click the line between the green and red dots in the microflow editor and select **Insert** | **Activity** (or drag and drop an activity from the upper toolbar).
 3. Double-click the new activity and scroll down to locate the SAP OData Connector actions.
-4. Select **`Create Request Params`** and click **Select**.
+4. Select **`Create`** **`Request`** **`Params`**, and then click **Select**.
 5. Name the variable **`RequestParams`**.
 
     ![Create Request Params](mendix-salesorders10.png)
@@ -139,7 +141,8 @@ Follow these steps to create the logic to get the Sales Orders:
     ![Add Basic Authentication](mendix-salesorders12.png)
 
 9. Follow the same steps for the **Password**.
-10. Change the output **Variable** name to **Authentication** and click **OK** to close the dialog.
+10. Change the output **Variable** name to **Authentication**.
+11. Click **OK** to close the dialog.
 
     ![Add Basic Authentication](mendix-salesorders13.png)
 
@@ -147,13 +150,13 @@ Follow these steps to create the logic to get the Sales Orders:
 
 [ACCORDION-BEGIN [Step 6: ](Add logic to get sales orders – request)]
 
-1. Add another activity from the SAP OData Connector to the microflow, **Get List**.
-2. Fill in the required fields of the **Get List** action. For this tutorial, you should use these settings:
+1. Add another activity from the SAP OData Connector to the microflow **Get List**.
+2. Fill in the required fields of the **Get List** action. For this tutorial, use the following settings:
 
     | Field | Value |
     |:-------|:-------|
-    | Query  | The URL to which you want to execute your request. In our case:<br><br> `https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/$metadata`<br><br>And it's constructed by entering the below:<br><br> `@GWSAMPLE_BASIC.GWSAMPLE_BASIC + '/' + toString(GWSAMPLE_BASIC.EntitySetNames.SalesOrderSet)` |
-    | Response type | The type you want to query from the OData service; in this example, `SalesOrder` is used |
+    | Query  | The URL to which you want to execute your request. In our case:<br><br> `https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/$metadata`<br><br>And it's constructed by entering the following code:<br><br> `@GWSAMPLE_BASIC.GWSAMPLE_BASIC + '/' + toString(GWSAMPLE_BASIC.EntitySetNames.SalesOrderSet)` |
+    | Response type | The type you want to query from the OData service. Use `SalesOrder`. |
     | Request&nbsp;parameters | `RequestParams` variable |
     | Parent |empty|
     | Result info |empty|
@@ -161,7 +164,7 @@ Follow these steps to create the logic to get the Sales Orders:
     | Output Variable | `SalesOrders` |
 
 
-3. Verify the **Get List** dialog matches the below:
+3. Verify the **Get List** dialog matches the following:
 
     ![Get List](mendix-salesorders14.png)
 
@@ -171,22 +174,22 @@ Follow these steps to create the logic to get the Sales Orders:
 
 [ACCORDION-BEGIN [Step 7: ](Add logic to get sales orders – return value)]
 
-In the microflow, make the return value of the microflow a **List** of **`SalesOrders`**. This is so that you can call the microflow as a data source in a page.
+In the microflow, make the return value of the microflow a **`List`** of **`SalesOrders`** so you can call the microflow as a data source in a page.
 
-  1. Double-click the `End-Event` (red dot).
-  2. Select `List` for the **Type**.
-  3. Select `SalesOrder` for the **Entity**.
+  1. Double-click the **`End-Event`** (red dot).
+  2. Select **`List`** for the **Type**.
+  3. Select **`SalesOrder`** for the **Entity**.
   4. Click on **Generate…** and select the **`SalesOrders`** variable.
 
       ![Expression value](mendix-salesorders15.png)
 
-  5. Verify the **End Event** dialog matches the below:
+  5. Verify the **End Event** dialog matches the following:
 
       ![End Event](mendix-salesorders16.png)
 
   6. Click **OK** to close the dialog.
 
-Verify your microflow looks like the following:
+Your microflow should look like the following:
     ![Microflow](mendix-salesorders17.png)
 
 [ACCORDION-END]
@@ -194,48 +197,43 @@ Verify your microflow looks like the following:
 [ACCORDION-BEGIN [Step 8: ](Show sales orders in page – master)]
 
 1. Under **`MyFirstModule`**, open **`MyFirstPage`**.
-2. Double-click the **List View** of the **Master** section, and change its **Data Source** to your **`ACT_GetSalesOrders`** microflow:
-
+2. Double-click the **List View** of the **Master** section, and change its **Data Source** to your **`ACT_GetSalesOrders`** microflow.
     ![Edit List View](mendix-salesorders18.png)
 
 3. When prompted to automatically fill the contents of the list view, choose **No**.
 4. Open the **Connector** tab.
-5. Select the content of the **List View**:
+5. Select the content of the **List View**.
 
     ![List View Content](mendix-salesorders19.png)
 
 6. Double-click (or drag and drop) the **`CustomerID`** property from the **Connector** tab.
 7. In the page, select the content below the **`Customer ID`** you just added and add the **`CustomerName`** property.
 8. Select the content below it and add the **`CreatedAt`** property.
-9. Verify it looks like the below:
-
+9. Verify it looks like the following:
     ![List View Content](mendix-salesorders20.png)
 
-10. Double-click the Master section header **All Items** and change it to *Sales Orders*.
+10. Double-click the **Master** section header **All Items** and change it to **Sales Orders**.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Show sales orders in page – details)]
 
-1. Scroll down, select the **Tab Container** and delete it:
+1. Scroll down, select the **Tab Container**, and delete it.
 
     ![Tab Container](mendix-salesorders21.png)
 
-2. Scroll down, select the footer container and delete it:
+2. Scroll down, select the footer container, and delete it.
 
     ![Footer](mendix-salesorders22.png)
 
 3. Double-click the **Title** text and change it to **`Sales Order`**.
-4. Select the container below the **Detail Title** and double-click the **`SalesOrderID`** property from the Connector tab:
-
+4. Select the container below the **Detail Title** and double-click the **`SalesOrderID`** property from the Connector tab.
     ![Container for SalesOrderID](mendix-salesorders23.png)
-
 5. Select the container around the **Action** link and delete it.
 6. Select this container again and add the **`GrossAmount`** property.
-7. Select the container below it and add the **`CurrencyCode`** property:
+7. Select the container below it and add the **`CurrencyCode`** property.
 
     ![Container for CurrencyCode](mendix-salesorders24.png)
-
 8. Select the container around the **Reserved** label and delete it.
 9. Select it again and add the **`Note`** property.
 10. Select the container around the **Medium** label and delete it.
@@ -256,39 +254,37 @@ Verify your microflow looks like the following:
 
 [ACCORDION-BEGIN [Step 10: ](Run app)]
 
-Now that you've created the UI and business logic, you can run the app and have it connect with the SAP Gateway Demo system (ES5).
+Now that you've created the UI and business logic, you can run the app and have it connect with the SAP Gateway Demo System (ES5).
 
-To run the app for the first time, follow these steps:
+To run the app for the first time, follow these steps.
 
-1. Click **Run** | **Run Locally**:
+1. Click **Run** | **Run Locally**.
 
     ![Container for CurrencyCode](mendix-salesorders28.png)
 
-    If you see the pop-up window asking if you want to create a database, select Yes.
+    If you see the pop-up window asking if you want to create a database, select **Yes**.
 
 2. Wait until the startup of the app has finished and the app is running.
-3. Click **View** to view the app in your browser:
+3. Click **View** to view the app in your browser.
 
     ![Container for CurrencyCode](mendix-salesorders29.png)
 
-4. You will now see your Sales Orders application in the browser, with live data coming from ES5:
+You will now see your Sales Orders Application in the browser, with live data coming from ES5.
 
-    ![Container for CurrencyCode](mendix-salesorders30.png)
+  ![Container for CurrencyCode](mendix-salesorders30.png)
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Run app in SAP Cloud Platform)]
 
 The final step is to deploy the application to SAP Cloud Platform, Cloud Foundry environment, and run it from your space!
-The application will bind to the `Connectivity`, `XSUAA` and `PostgreSQL` service-instances.
+The application will bind to the Connectivity, XSUAA and PostgreSQL service instances.
 
-To deploy the app, follow these steps:
-
-1. Click **Run**:
+1. Click **Run**.
 
     ![Container for CurrencyCode](mendix-salesorders31.png)
 
-2. The deployment process will start and you will be notified when completed:
+    The deployment process will start and you will be notified when completed.
 
     ![Container for CurrencyCode](mendix-salesorders32.png)
 
