@@ -27,8 +27,30 @@ Your computer, which is going to play a role of the IoT device, should have:
  - Python - a programming language: https://www.python.org/downloads/
  - `requests` - HTTP library for Python: https://github.com/requests/requests/#installation
  - `psutil` - the (process and system utilities) is a cross-platform Python's library: https://github.com/giampaolo/psutil#quick-links
- - connection to Internet
+ - connection to Internet, ideally without proxy
 
+If you need to install above fresh these steps describe what you need to do:
+
+On a Mac python 2 is already installed by default. Only the library manager pip and the additional libraries have to be installed with these steps:
+ - Request privileges with the Privileges app
+ - Connect to the internet without a proxy (e.g. mobile phone hot spot)
+ - In the terminal app do the following:
+ - Enter `unset https_proxy`
+ - Enter `sudo easy_install pip`
+ - Enter `pip install requests`
+ - Enter `pip install psutil`
+
+On the PC follow these steps:
+
+ - Download Python `2.x` installer
+ - Start the installation
+ - Open the command prompt `cmd` from the Start Menu
+ - Change (cd) to the directory where you installed python
+ - Change (cd) to the "Scripts" subdirectory
+ - Enter `pip install requests`
+ - Enter `pip install psutil`
+ - Change (cd ..) to the directory where you installed python
+ - Enter `python -v` to check that python is running and which version you have installed
 
 [ACCORDION-END]
 
@@ -88,7 +110,7 @@ except KeyboardInterrupt:
 	print("Stopped by the user!")
 ```
 
-Save the file.
+Save the file. On a PC save the file to the folder where you installed python.
 
 [ACCORDION-END]
 

@@ -1,8 +1,8 @@
 ---
 title: Watch for patterns of event streams and generate alerts
 description: Add a pattern matching operator to watch for patterns of events in live event streams. When the pattern is detected, generate an alert.
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate

@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>abap-development ]
 The Business user requires the Role `SAP_BCR_CA_ANA_AQD_PC` to access the Query Designer.
 
 ## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 **Custom Analytical Queries** is a tool used for reporting and analysis.

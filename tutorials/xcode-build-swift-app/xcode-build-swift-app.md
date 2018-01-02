@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Development machine:** Access to a Mac computer
- - **Tutorials:** [Introduction to iOS development resources and Xcode](http://www.sap.com/developer/tutorials/xcode-introduction.html)
+ - **Tutorials:** [Introduction to iOS development resources and Xcode](https://www.sap.com/developer/tutorials/xcode-introduction.html)
 
 ## Next Steps
- - [Debug and deploy the iOS app to an iPad](http://www.sap.com/developer/tutorials/xcode-debug-deploy.html)
+ - [Debug and deploy the iOS app to an iPad](https://www.sap.com/developer/tutorials/xcode-debug-deploy.html)
 
 ## Details
 ### You will learn  
@@ -358,4 +358,4 @@ The table view is now assigned to the view controller.
 [ACCORDION-END]
 
 ### Next Steps
- - [Debug and deploy the iOS app to an iPad](http://www.sap.com/developer/tutorials/xcode-debug-deploy.html)
+ - [Debug and deploy the iOS app to an iPad](https://www.sap.com/developer/tutorials/xcode-debug-deploy.html)

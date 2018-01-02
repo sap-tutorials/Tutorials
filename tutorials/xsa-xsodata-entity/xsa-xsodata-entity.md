@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>odata, products>sap-hana, products>sap-han
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Create a Simple OData Service](http://www.sap.com/developer/tutorials/xsa-xsodata.html)
+- **Tutorials:** [Create a Simple OData Service](https://www.sap.com/developer/tutorials/xsa-xsodata.html)
 
 ## Next Steps
-- [Creating an OData Service with Create Operation and XSJS Exit](http://www.sap.com/developer/tutorials/xsa-xsodata-create.html)
+- [Creating an OData Service with Create Operation and XSJS Exit](https://www.sap.com/developer/tutorials/xsa-xsodata-create.html)
 
 ## Details
 ### You will learn  
@@ -57,4 +57,4 @@ Associations can be an excellent way to load child elements on demand; however t
 
 
 ## Next Steps
-- [Creating an OData Service with Create Operation and XSJS Exit](http://www.sap.com/developer/tutorials/xsa-xsodata-create.html)
+- [Creating an OData Service with Create Operation and XSJS Exit](https://www.sap.com/developer/tutorials/xsa-xsodata-create.html)

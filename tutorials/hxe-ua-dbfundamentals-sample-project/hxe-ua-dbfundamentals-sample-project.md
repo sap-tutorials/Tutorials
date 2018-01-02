@@ -6,13 +6,13 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 ---
 
 ## Prerequisites  
- - **How To's:** [Install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html)
+ - **How To's:** [Install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html)
  - **Files:** Download the `.csv` files from the SAP HANA Academy GitHub page: https://github.com/saphanaacademy/HXE/tree/master/STS.
 
 
 ## Next Steps
  - [Create a Tenant Database](https://www.sap.com/developer/how-tos/2017/03/hxe-ua-dbfundamentals-tenantdb.html)
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -268,4 +268,4 @@ Here is an example: ![Data Preview](preview_data1.png)
 
 ## Next Steps
 - [Create a Tenant Database](https://www.sap.com/developer/how-tos/2017/03/hxe-ua-dbfundamentals-tenantdb.html)
-- Select another SAP HANA 2.0, express edition tutorial from the [Tutorial Navigator](http://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
+- Select another SAP HANA 2.0, express edition tutorial from the [Tutorial Navigator](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)

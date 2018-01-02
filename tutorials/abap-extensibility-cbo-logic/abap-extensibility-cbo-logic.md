@@ -1,5 +1,5 @@
 ---
-title: S4/HANA Cloud, ABAP Extensibility: Implement logic for custom business object (bonus plan)
+title: Implement logic for custom business object (S4/HANA Cloud, ABAP Extensibility)
 description: Implement custom business object logic to control your application
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]

@@ -2,7 +2,7 @@
 title: Setup SAP Cloud Appliance Library account and install a preconfigured SAP solution in cloud
 description: Install a preconfigured SAP solution in the cloud using SAP Cloud Appliance Library
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform, products>cloud-connector-for-sap-hana-cloud-platform ]
+tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform, products>sap-cloud-platform-connectivity ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

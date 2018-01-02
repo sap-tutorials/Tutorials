@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials** [AngularJS Getting Started](http://www.sap.com/developer/tutorials/angular-getting-started.html)
+ - **Tutorials** [AngularJS Getting Started](https://www.sap.com/developer/tutorials/angular-getting-started.html)
 
 ## Next Steps
- - **Tutorials** [Add the AngularJS JavaScript](http://www.sap.com/developer/tutorials/angular-add-javascript.html)
+ - **Tutorials** [Add the AngularJS JavaScript](https://www.sap.com/developer/tutorials/angular-add-javascript.html)
 
 
 ## Details
@@ -307,4 +307,4 @@ So, now that we have Bootstrap, let's set up the template for our application.
  - [Bootstrap](https://getbootstrap.com/) - get more information about Bootstrap.
 
 ## Next Steps
- - **Tutorials** [Add the AngularJS JavaScript](http://www.sap.com/developer/tutorials/angular-add-javascript.html)
+ - **Tutorials** [Add the AngularJS JavaScript](https://www.sap.com/developer/tutorials/angular-add-javascript.html)

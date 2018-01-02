@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platfo
 ## Prerequisites  
 - **Proficiency:** Beginner
 - **How-To** [Start this tutorial series](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
-- **Tutorials:** This tutorial is part of a series.  The previous tutorial is step 9: [SAPUI5 - Add a search field](http://www.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
+- **Tutorials:** This tutorial is part of a series.  The previous tutorial is step 9: [SAPUI5 - Add a search field](https://www.sap.com/developer/tutorials/sapui5-webide-add-search-field.html)
 
 ## Next Steps
- - This is the end of this tutorial series.  Return to the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - This is the end of this tutorial series.  Return to the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  

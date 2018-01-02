@@ -8,11 +8,11 @@ tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>ht
 ## Prerequisites  
 - **Proficiency:** Intermediate
 - **Tutorials:**
-- [Build an SAPUI5 app based on your data model and run it with mock data](http://www.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
-- [Create an account on the Gateway Demo system](http://www.sap.com/developer/tutorials/gateway-demo-signup.html)
+- [Build an SAPUI5 app based on your data model and run it with mock data](https://www.sap.com/developer/tutorials/hcp-webide-build-app-mock-data.html)
+- [Create an account on the Gateway Demo system](https://www.sap.com/developer/tutorials/gateway-demo-signup.html)
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
 
 ## Details
 
@@ -76,8 +76,8 @@ Field Name       | Value
 
 To establish a baseline for the source code you have written so far, you will deploy it to SAP Cloud Platform and commit the project to Git. If you aren't sure how to do this, refer to the two tutorials below:
 
-- [SAP Cloud Platform Deployment tutorial](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) (but select your current project not `northwind`)
-- Commit the code to Git following the [Git Tutorial](http://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
+- [SAP Cloud Platform Deployment tutorial](https://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html) (but select your current project not `northwind`)
+- Commit the code to Git following the [Git Tutorial](https://www.sap.com/developer/tutorials/hcp-webide-commit-git.html)
 
 
 [ACCORDION-END]
@@ -216,4 +216,4 @@ You should now commit and push your edits to Git and redeploy the app to SAP Clo
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)

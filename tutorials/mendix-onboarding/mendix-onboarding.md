@@ -1,8 +1,8 @@
 ---
-title: Getting Started with SAP Cloud Platform Rapid Application Development by Mendix
-description: This tutorial shows you how to set up your SAP Cloud Platform account so you can use SAP Cloud Platform Rapid Application Development by Mendix to build applications to be deployed on SAP Cloud Platform.
+title: Getting started with SAP Cloud Platform Rapid Application Development by Mendix
+description: Set up your SAP Cloud Platform account so you can use SAP Cloud Platform Rapid Application Development by Mendix to build applications to be deployed on SAP Cloud Platform.
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>cloud, topic>sapui5, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
@@ -12,11 +12,12 @@ tags: [  tutorial>beginner, topic>cloud, topic>sapui5, products>sap-cloud-platfo
 ## Details  
 You can build business applications for the SAP Cloud Platform Cloud Foundry environment using SAP Cloud Platform Rapid Application Development by Mendix, without needing to write code.
 
+
 In this tutorial, you will set up your SAP Cloud Platform account so you can use SAP Cloud Platform Rapid Application Development to build applications to be deployed on SAP Cloud Platform.
 
 >This tutorial is applicable whether you have a productive or trial Neo environment, but assumes that you are using a trial Cloud Foundry environment.
 
-> The Mendix business modeler, for building your application, is available for Windows platforms only.
+> The Mendix Desktop Modeler, for building your application, is available for Windows platforms only.
 
 ### You will learn  
 - How to set up environment to use SAP Cloud Platform Rapid Application Development.
@@ -32,6 +33,7 @@ In this tutorial, you will set up your SAP Cloud Platform account so you can use
 Go to [https://account.hana.ondemand.com/cockpit](https://account.hana.ondemand.com/cockpit) and log into your SAP Cloud Platform account.
 
 ![SAP Cloud Platform](mendix-onboarding1.png)
+
 
 
 [ACCORDION-END]
@@ -138,9 +140,9 @@ To start working on your app, choose **Edit App**.
 
 ![Build app](mendix-onboarding14.png)
 
-You build apps using the business modeler, which is an application installed on your desktop. If you don't have the modeler, install it by going to the [app store](https://appstore.home.mendix.com/link/modeler/).
+You build apps using the Mendix Desktop Modeler, which is an application installed on your desktop. If you don't have the modeler, install it by going to the [app store](https://appstore.home.mendix.com/link/modeler/).
 
-![Business modeler](modeler.png)
+![Mendix Desktop Modeler](modeler.png)
 
 
 

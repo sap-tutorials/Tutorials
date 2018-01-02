@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-api-manage
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Sign up for an account on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+- **Tutorials:** [Sign up for an account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-- Create a user in the SAP Gateway Developer System: [Create an account on the Gateway Demo system](http://www.sap.com/developer/tutorials/gateway-demo-signup.html)
+- Create a user in the SAP Gateway Developer System: [Create an account on the Gateway Demo system](https://www.sap.com/developer/tutorials/gateway-demo-signup.html)
 - [Continue in SAP Cloud Platform, API Management by creating an API Provider](https://www.sap.com/developer/tutorials/hcp-apim-create-provider.html)
 
 
@@ -70,5 +70,5 @@ and the SAP API Management Dev Portal
 
 
 ## Next Steps
-- Create a user in the SAP Gateway Developer System: [Create an account on the Gateway Demo system](http://www.sap.com/developer/tutorials/gateway-demo-signup.html)
+- Create a user in the SAP Gateway Developer System: [Create an account on the Gateway Demo system](https://www.sap.com/developer/tutorials/gateway-demo-signup.html)
 - [Continue in SAP Cloud Platform, API Management by creating an API Provider](https://www.sap.com/developer/tutorials/hcp-apim-create-provider.html)

@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, products>sap-s-4hana ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
- - [Creating basic view](http://www.sap.com/developer/tutorials/s4hana-cds-creating-basic-view.html)  
- - [Creating consumption view](http://www.sap.com/developer/tutorials/s4hana-cds-creating-consumption-view.html)
+ - [Creating basic view](https://www.sap.com/developer/tutorials/s4hana-cds-creating-basic-view.html)  
+ - [Creating consumption view](https://www.sap.com/developer/tutorials/s4hana-cds-creating-consumption-view.html)
 
 ## Next Steps
-[Creating views association](http://www.sap.com/developer/tutorials/s4hana-cds-associations.html)
+[Creating views association](https://www.sap.com/developer/tutorials/s4hana-cds-associations.html)
 
 
 ## Details

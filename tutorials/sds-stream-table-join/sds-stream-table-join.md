@@ -1,8 +1,8 @@
 ---
 title: Join an event stream to a HANA table
 description: Add a HANA Reference element to a streaming project. The Reference element is a proxy for a HANA table, allowing the HANA table to be accessed within the streaming project. Then, using a Join operator, join the input stream to the HANA table to enrich the incoming events with reference data from the HANA database.
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

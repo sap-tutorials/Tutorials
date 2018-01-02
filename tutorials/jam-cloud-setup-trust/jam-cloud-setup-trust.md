@@ -45,14 +45,14 @@ The purpose of the trust configuration is the support of principal propagation, 
 1.  Login to SAP Jam Collaboration
 2.  At the top right of the page select the **cog icon** \> **Admin**
 3.  Click **Integrations** in the left menu
-4.  Click **SAML Trusted IDPs**
+4.  Click **SAML Trusted `IDPs`**
 5.  Click **Register your SAML Trusted IDP**
 
     ![SAML Trusted IDPs page](loioefa9011fa7d14f31a805baf8c107fe66_HiRes.png)
 
     Figure 2: Create a SAML IDP in SAP Jam Collaboration
 6.  Copy the **Local Provider Name** from the SAP Cloud Platform Server _Trust_ screen and paste it in the **IDP ID** field.
-7.  Copy the **Signing Certificate** from the SAP Cloud Platform Server _Trust_ screen and paste it in the **X509 Certificate (Base64)** field.
+7.  Copy the **Signing Certificate** from the SAP Cloud Platform Server _Trust_ screen and paste it in the **X509 Certificate (`Base64`)** field.
 8.  Ensure the **Enabled** check box is checked.
 9.  Click **Register**
 
