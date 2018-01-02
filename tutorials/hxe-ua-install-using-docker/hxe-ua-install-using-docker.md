@@ -52,9 +52,6 @@ In addition to SUSE Enterprise, SAP HANA, express edition for Docker has been te
 Download and install Docker Enterprise Edition for SUSE Enterprise Linux Server. Visit the [Docker Enterprise Edition SUSE Enterprise Linux Server](https://store.docker.com/editions/enterprise/docker-ee-server-sles?tab=description) page for information on how to install Docker on your SLES system.
 
 > **Note:**
-> The remaining steps in the tutorial assume you are running as `sudo`.
-
-> **Note:**
 > Ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
 
 [ACCORDION-END]
@@ -64,7 +61,7 @@ Download and install Docker Enterprise Edition for SUSE Enterprise Linux Server.
 Test your Docker installation by running the "Hello World" container application. Run the following command from your Docker-enabled command prompt:
 
 ```
-docker run --name helloWorld alpine echo hello
+sudo docker run --name helloWorld alpine echo hello
 ```
 
 If successful, the following should display:
@@ -85,7 +82,7 @@ If you **did not** get this output, the Docker installation has not been complet
 Remove the alpine image with the following command:
 
 ```
-docker image rm alpine -f
+sudo docker image rm alpine -f
 ```
 
 [ACCORDION-END]
@@ -101,7 +98,7 @@ Click on the **Setup Instructions** button.
 Copy the Docker pull address. Here is an example:
 
 ```
-docker pull store/saplabs/hanaexpress:2.00.021.00.20171030.1
+sudo docker pull store/saplabs/hanaexpress:2.00.022.00.20171211.1
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
@@ -151,7 +148,9 @@ The name of this directory does not need to match the name you give to your SAP 
 
 [ACCORDION-BEGIN [Step 4: ](Set Up Password for SAP HANA, express edition)]
 
-To make your system more secure, you specify your own password before you create your container. This is done by creating a `json` file as opposed to having a default password. The file can be stored locally or on another system accessible by URL. Create the `json` file:
+To make your system more secure, you specify your own password before you create your container. This is done by creating a `json` file as opposed to having a default password. The file can be stored locally or on another system accessible by URL. If the file is to be stored locally, store it in the */data/<directory_name>* directory you created earlier.
+
+Create the `json` file:
 
 ```
 vi <file_name>.json
@@ -190,8 +189,18 @@ This file serves as the master password for your SAP HANA, express edition users
 * At least 1 uppercase letter
 * At least 1 lowercase letter
 * At least 1 number
+* Can contain special characters, but not _&grave;_ (backtick), _&#36;_ (dollar sign),  _&#92;_ (backslash), _&#39;_ (single quote), or _&quot;_ (double quotation marks).
 * Cannot contain dictionary words
 * Cannot contain simplistic or systemic values, like strings in ascending or descending numerical or alphabetical order
+
+You must then add permissions for this file to be readable by the `hxeadm` user in the container. Change permissions with:
+
+```
+sudo chmod 600 /data/<directory_name>/<file_name>.json
+sudo chown 12000:79 /data/<directory_name>/<file_name>.json
+```
+
+Be sure to do this with each `json` file you use for your Docker containers.
 
 Make a note of the path to the `json` file. You will need this to load the SAP HANA, express edition container.
 
@@ -202,15 +211,14 @@ Make a note of the path to the `json` file. You will need this to load the SAP H
 Use the SAP HANA, express edition image to create a container.
 
 ```
-docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129:1128-1129 -p 59013-59014:59013-59014 -v /data/<directory_name>:/hana/mounts \
--v <path_to_json_file_folder>:<path_to_json_file_folder> \
+sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129:1128-1129 -p 59013-59014:59013-59014 -v /data/<directory_name>:/hana/mounts \
 --ulimit nofile=1048576:1048576 \
 --sysctl kernel.shmmax=1073741824 \
 --sysctl net.ipv4.ip_local_port_range='40000 60999' \
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <container_name> \
-store/saplabs/hanaexpress:2.00.021.00.20171030.1 \
+store/saplabs/hanaexpress:2.00.022.00.20171211.1 \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>> \
 --agree-to-sap-license
 ```
@@ -218,15 +226,14 @@ store/saplabs/hanaexpress:2.00.021.00.20171030.1 \
 Example:
 
 ```
-docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129:1128-1129 -p 59013-59014:59013-59014 -v /data/express_edition:/hana/mounts \
--v /hana:/hana \
+sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129:1128-1129 -p 59013-59014:59013-59014 -v /data/express_edition:/hana/mounts \
 --ulimit nofile=1048576:1048576 \
 --sysctl kernel.shmmax=1073741824 \
 --sysctl net.ipv4.ip_local_port_range='40000 60999' \
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name express_edition \
-store/saplabs/hanaexpress:2.00.021.00.20171030.1 \
+store/saplabs/hanaexpress:2.00.022.00.20171211.1 \
 --passwords-url file:///hana/password.json \
 --agree-to-sap-license
 ```
@@ -234,13 +241,16 @@ store/saplabs/hanaexpress:2.00.021.00.20171030.1 \
 This example creates the SAP HANA, express edition container with the name `express_edition`. This process will take several minutes. The prompt will read `Startup finished` once the container has been successfully running. This container starts in detached mode so you will need to open another command prompt to continue.  
 
 > **Note:**
-> If the `JSON` file you are using is an *http* or *https* URL, you can leave out the `-v` option.
+> If you placed the password file in `/data/<directory_name>/<file_name>.json`, substitute  `file://<path_to_json_file>` with `file:///hana/mounts/<file_name>.json`.
+
+> **Note:**
+> Check if the password file `/hana/mounts/<file_name>.json` was deleted after the SAP HANA, express edition container starts.  If not, you can manually delete it. If the `JSON` file you are using is an *http* or *https* URL, you can leave out the `-v` option.
 
 > **Note:**
 > For Linux kernel versions earlier than 4, omit the `net.ipv4.ip_local_port_range` option.
 
 > **Note:**
-> If the Docker container fails to create an SAP HANA instance, you will need to remove the Docker container to try again. Run `docker rm <container_name>` to remove the container.
+> If the Docker container fails to create an SAP HANA instance, you will need to remove the Docker container to try again. Run `docker rm <container_name>` to remove the container. Additionally, you will need to delete the files created in the `/data/directory_name/` directory.
 
 [ACCORDION-END]
 
@@ -249,13 +259,13 @@ This example creates the SAP HANA, express edition container with the name `expr
 To start your SAP HANA, express edition container, run the following command:
 
 ```bash
-docker exec -it -u <container_name> bash
+sudo docker exec -it -u <container_name> bash
 ```
 
 Example:
 
 ```
-docker exec -it -u express_edition bash
+sudo docker exec -it -u express_edition bash
 ```
 
 
@@ -323,15 +333,14 @@ jdbc:sap://<ip_address>:39017/databaseName=<tenant_name>
 You will need to repeat the previous steps of creating a directory and `JSON` password for each additional SAP HANA, express edition container you wish to create.  
 
 ```
-docker run -p 10013:39013 -p 10017:39017 -p 10041-10045:39041-39045 -p 10028-10029:1128-1129 -p 19013-19014:59013-59014 -v /data/<additional_directory_name>:/hana/mounts \
--v <path_to_additional_json_file_folder>:<path_to_additional_json_file_folder> \
+sudo docker run -p 10013:39013 -p 10017:39017 -p 10041-10045:39041-39045 -p 10028-10029:1128-1129 -p 19013-19014:59013-59014 -v /data/<additional_directory_name>:/hana/mounts \
 --ulimit nofile=1048576:1048576 \
 --sysctl kernel.shmmax=1073741824 \
 --sysctl net.ipv4.ip_local_port_range='40000 60999' \
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <additional_container_name> \
-store/saplabs/hanaexpress:2.00.021.00.20171030.1 \
+store/saplabs/hanaexpress:2.00.022.00.20171211.1 \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>>
 --agree-to-sap-license
 ```
@@ -347,32 +356,32 @@ Update your SAP HANA, express edition Docker image when new versions are release
 Stop your old SAP HANA, express edition Docker image:
 
 ```
-docker stop <old_container_name>
+sudo docker stop <old_container_name>
 ```
 
 Remove the old Docker image:
 
 ```
-docker rm <old_container_name>
+sudo docker rm <old_container_name>
 ```
 
 Pull the new Docker image:
 
 ```
-docker pull store/saplabs/hanaexpress:2.00.021.00.20171030.1
+sudo docker pull store/saplabs/hanaexpress:2.00.022.00.20171211.1
 ```
 
 Run the new Docker image using the old mounts:
 
 ```
-docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129:1128-1129 -p 59013-59014:59013-59014 -v /data/<old_directory_name>:/hana/mounts \
+sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128-1129:1128-1129 -p 59013-59014:59013-59014 -v /data/<old_directory_name>:/hana/mounts \
 --ulimit nofile=1048576:1048576 \
 --sysctl kernel.shmmax=1073741824 \
 --sysctl net.ipv4.ip_local_port_range='40000 60999' \
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <new_container_name> \
-store/saplabs/hanaexpress:2.00.021.00.20171030.1 \
+store/saplabs/hanaexpress:2.00.022.00.20171211.1 \
 --agree-to-sap-license
 ```
 
@@ -380,10 +389,10 @@ store/saplabs/hanaexpress:2.00.021.00.20171030.1 \
 
 [ACCORDION-BEGIN [Docker Run Usage: ](-Help Command)]
 
-The following is a list of options available for the `docker run saplabs/hanaexpress` command.
+The following is a list of options available for the `sudo docker run saplabs/hanaexpress` command.
 
 ```
-docker run store/saplabs/hanaexpress:2.00.021.00.20171030.1 -h
+sudo docker run store/saplabs/hanaexpress:2.00.022.00.20171211.1 -h
 usage: [options]
 --dont-check-consistency Skip consistency check between mount points
 --dont-check-mount-points Skip check for allowed mount points
