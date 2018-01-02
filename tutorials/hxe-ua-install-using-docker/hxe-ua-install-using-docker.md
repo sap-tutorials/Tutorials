@@ -244,6 +244,7 @@ This example creates the SAP HANA, express edition container with the name `expr
 > If you placed the password file in `/data/<directory_name>/<file_name>.json`, substitute  `file://<path_to_json_file>` with `file:///hana/mounts/<file_name>.json`.
 
 > **Note:**
+> Check if the password file `/hana/mounts/<file_name>.json` was deleted after the SAP HANA, express edition container starts.  If not, you can manually delete it. If the `JSON` file you are using is an *http* or *https* URL, you can leave out the `-v` option.
 
 > **Note:**
 > For Linux kernel versions earlier than 4, omit the `net.ipv4.ip_local_port_range` option.
