@@ -1,6 +1,6 @@
 ---
-title: Import your BUILD project into Web IDE
-description: Once your prototype is complete, you can import it as a template into Web IDE to convert it to UI5 code.
+title: Import your BUILD project into SAP Web IDE
+description: Once your prototype is complete, you can import it as a template into SAP Web IDE to convert it to SAPUI5 code.
 auto_validation: false
 primary_tag: products>build>build
 tags: [  tutorial>beginner, topic>sapui5, products>build>build, products>sap-web-ide, products>sap-web-ide-plug-ins ]

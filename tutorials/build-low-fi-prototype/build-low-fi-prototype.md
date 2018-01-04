@@ -1,6 +1,6 @@
 ---
-title: Create a low fidelity prototype
-description: Use BUILD to turn your app idea sketches into a low fidelity prototype.
+title: Create a low-fidelity prototype
+description: Use BUILD to turn your app idea sketches into a low-fidelity prototype.
 auto_validation: false
 primary_tag: products>build>build
 tags: [  tutorial>beginner, products>build>build ]

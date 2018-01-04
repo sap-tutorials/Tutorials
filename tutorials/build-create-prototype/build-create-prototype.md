@@ -1,6 +1,6 @@
 ---
-title: Create a BUILD Prototype
-description: Create a high fidelity prototype with BUILD
+title: Create a BUILD prototype
+description: Create a high-fidelity prototype with BUILD.
 auto_validation: false
 primary_tag: products>build>build
 tags: [  tutorial>beginner, products>build>build ]
