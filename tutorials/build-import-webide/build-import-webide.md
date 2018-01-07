@@ -1,5 +1,5 @@
 ---
-title: Import your BUILD project into SAP Web IDE
+title: Import your SAP Build project into SAP Web IDE
 description: Once your prototype is complete, you can import it as a template into SAP Web IDE to convert it to SAPUI5 code.
 auto_validation: false
 primary_tag: products>build>build
@@ -12,33 +12,33 @@ tags: [  tutorial>beginner, topic>sapui5, products>build>build, products>sap-web
 
 ## Details
 ### You will learn  
-Learn how to import a completed and published prototype from BUILD into Web IDE. This will help you convert your prototype into a live application. This will be your guide or template for creating the real UI5/Fiori version.
+Learn how to import a completed and published prototype from SAP Build into SAP Web IDE. This will help you convert your prototype into a live application. This will be your guide or template for creating the real UI5/Fiori version.
 
-> Please note that an imported BUILD prototype should not be used for a production application. The version of BUILD used in these tutorials is for prototyping and designing purposes only. The code generated is not optimized for performance and security. Stay tuned to BUILD for updates about BUILD Apps, a drag and drop tool to create production ready applications!  
+> Please note that an imported SAP Build prototype should not be used for a production application. The version of SAP Build used in these tutorials is for prototyping and designing purposes only. The code generated is not optimized for performance and security. Stay tuned to SAP Build for updates about SAP Build Apps, a drag-and-drop tool to create production ready applications!  
 
 ### Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Enable BUILD Services)]
+[ACCORDION-BEGIN [Step 1: ](Enable SAP Build services)]
 Open your [SAP Cloud Platform account](https://account.hanatrial.ondemand.com/cockpit).
 
 In your SAP Cloud Platform cockpit, go to the **Services**.
 
-![service tab in SAP Cloud Platform cockpit](1.png)
+![Service tab in SAP Cloud Platform cockpit](1.png)
 
 In the **Search Bar**, search for _BUILD_.
 
-![build search in services](2.png)
+![Search in services](2.png)
 
-Click on the **BUILD** service tile under the User Experience section.
+Click on the **Build** service tile under the User Experience section.
 
-![build tile in services](3.png)
+![SAP Build tile in services](3.png)
 
 **Enable the service**.
 
-![build service overview](4.png)
+![SAP Build service overview](4.png)
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -91,7 +91,7 @@ This will launch your SAP Web IDE.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Enable the BUILD plugin)]
+[ACCORDION-BEGIN [Step 4: ](Enable the SAP Build plugin)]
 In your SAP Web IDE, click on the **Gear Icon** to open the preferences view.
 
 ![gear icon highlighted in Web IDE](11.png)
@@ -102,7 +102,7 @@ Select **Plugins**.
 
 In the drop down menu, select **BUILD Destinations**. **Enable the Import from BUILD** plugin by clicking the switch on the right hand side.
 
-![BUILD filter in plugins](13.png)
+![SAP Build filter in plugins](13.png)
 
 Click **Save**.
 
@@ -126,7 +126,7 @@ In the code view, create a new project by selecting **File > New > Project from 
 
 Under the _Category_ drop down, select **BUILD Project**. Select the **BUILD Project** tile. Click **Next**.
 
-![template selection for build projects](18.png)
+![Template selection for SAP Build projects](18.png)
 
 
 [DONE]
@@ -137,9 +137,9 @@ Give your project a **Name**. Click **Next**.
 
 ![name for project](19.png)
 
-When prompted, enter your **BUILD Username and Password**. This will be your email address and password you used when signing up for BUILD in the previous tutorial.
+When prompted, enter your **BUILD Username and Password**. This will be your email address and password you used when signing up for SAP Build in the previous tutorial.
 
-> **SAP EMPLOYEES**: If you are an SAP Employee, your SSO password will not work. To continue, you must follow the directions to [reset your BUILD password](https://jam4.sapjam.com/groups/EwzMfO4LtSxrAjXwDipkgC/documents/ru6GmtH0bYRGEKqctpp8ye/slide_viewer). You are NOT resetting your SSO password, just the password to access BUILD. If you have followed the above steps and you are still unable to login, you can alternatively download the project from Build and import into SAP Web IDE.
+> **SAP EMPLOYEES**: If you are an SAP Employee, your SSO password will not work. To continue, you must follow the directions to [reset your SAP Build password](https://jam4.sapjam.com/groups/EwzMfO4LtSxrAjXwDipkgC/documents/ru6GmtH0bYRGEKqctpp8ye/slide_viewer). You are NOT resetting your SSO password, just the password to access SAP Build. If you have followed the above steps and you are still unable to login, you can alternatively download the project from SAP Build and import into SAP Web IDE.
 
 [DONE]
 [ACCORDION-END]
@@ -151,11 +151,11 @@ If you successfully logged in, you will see a list of your prototypes that you c
 
 Select **Inventory Dashboard** from the list of prototypes available. You always want to only import _High Fidelity_ prototypes.
 
-![Build system information selection on select build prototype step](20.png)
+![SAP Build system information selection on select build prototype step](20.png)
 
 Click **Finish**.
 
-![finish button on select build prototype](21.png)
+![Finish button on select build prototype](21.png)
 
 A new project will be created in your workspace.
 

@@ -1,6 +1,6 @@
 ---
-title: Create a BUILD prototype
-description: Create a high-fidelity prototype with BUILD.
+title: Create an SAP Build prototype
+description: Create a high-fidelity prototype with SAP Build.
 auto_validation: false
 primary_tag: products>build>build
 tags: [  tutorial>beginner, products>build>build ]
@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, products>build>build ]
 
 ## Details
 ### You will learn  
-Create a prototype application with BUILD's gallery and the easy to use drag and drop interface.
+  - Create a prototype application with SAP Build's gallery and the easy to use drag-and-drop interface.
 
 
 ### Time to Complete
@@ -21,11 +21,11 @@ Create a prototype application with BUILD's gallery and the easy to use drag and
 ---
 
 [ACCORDION-BEGIN [Step 1: ](View Gallery applications)]
-Log in to your [BUILD account](https://www.build.me/splashapp/).
+Log in to your [SAP Build account](https://www.build.me/splashapp/).
 
 ![gallery location in menu bar](1.png)
 
-From the top menu bar, select **Gallery**. This will take you to the listing of all available template application prototypes you can use with BUILD. The Gallery allows you to quick start an application prototype without having to build it from scratch.
+From the top menu bar, select **Gallery**. This will take you to the listing of all available template application prototypes you can use with SAP Build. The Gallery allows you to quick start an application prototype without having to build it from scratch.
 
 ![gallery overview page](2.png)
 
@@ -60,7 +60,7 @@ Verify that you want clone the application prototype when prompted by click **Cl
 
 ![clone project prompt](7.png)
 
-When the clone is complete, BUILD will let you know. When prompted, click **OK** to view the cloned prototype in your workspace.
+When the clone is complete, SAP Build will let you know. When prompted, click **OK** to view the cloned prototype in your workspace.
 
 ![cloning complete](8.png)
 
@@ -204,7 +204,7 @@ Select **SAP Belize** from the menu items. This will update the overall theme fo
 
 
 [ACCORDION-BEGIN [Step 12: ](Share your app)]
-Once your prototype is complete, BUILD lets your share your app in a couple different ways. To share your app, in the **UI Editor**, click on the **Share button**.
+Once your prototype is complete, SAP Build lets your share your app in a couple different ways. To share your app, in the **UI Editor**, click on the **Share button**.
 
 ![share button in UI editor](30.png)
 
