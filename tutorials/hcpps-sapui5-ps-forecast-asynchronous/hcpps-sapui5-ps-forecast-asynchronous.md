@@ -1,7 +1,7 @@
 ---
 title: Implement the "Forecast" service asynchronous mode
 description: You will extend your application with the "Forecast" service using the asynchronous mode
-primary_tag: products>sap-cloud-platform-predictive-service
+primary_tag: products>sap-predictive-service
 tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
