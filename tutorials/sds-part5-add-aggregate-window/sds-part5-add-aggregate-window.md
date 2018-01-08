@@ -1,15 +1,15 @@
 ---
 title: Using an Aggregate Window in SAP HANA Smart Data Streaming
 description: Part 5 of 9. Add an aggregate window to hold data for pattern observation and trend monitoring.
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-hana-studio ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Using a HANA Reference Element in a Smart Data Streaming project](http://www.sap.com/developer/tutorials/sds-part4-hana-table-event-streaming.html)
+ - **Tutorials:** [Using a HANA Reference Element in a Smart Data Streaming project](https://www.sap.com/developer/tutorials/sds-part4-hana-table-event-streaming.html)
 
 ## Next Steps
- - **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part6-alerts.html)
+ - **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part6-alerts.html)
 
 ## Details
 ### You will learn  
@@ -115,4 +115,4 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 
 
 ## Next Steps
- - **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part6-alerts.html)
+ - **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part6-alerts.html)

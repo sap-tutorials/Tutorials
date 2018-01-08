@@ -29,6 +29,7 @@ DataSource
 datasources
 DesignStudio
 DevOps
+dropdown
 EasyMock
 enum
 EclipseLink
@@ -72,6 +73,8 @@ Lumira
 MacBook
 macOS
 Mendix
+microflow
+Microflow
 MTA
 MTAs
 multistore
@@ -91,6 +94,7 @@ Ok
 OLAP
 Onboarding
 onboarding
+OpenSocial
 openSSL
 openSUSE
 OpenUI5
@@ -100,6 +104,7 @@ plugin
 plugins
 POJOs
 Postgres
+PostgreSQL
 preinstalled
 pre-pend
 pre-pended

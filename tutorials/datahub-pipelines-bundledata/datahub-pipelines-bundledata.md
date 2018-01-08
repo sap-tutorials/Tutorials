@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have completed [Store sensor data in HDFS](http://www.sap.com/developer/tutorials/datahub-pipelines-storeinhdfs.html)
+ - You have completed [Store sensor data in HDFS](https://www.sap.com/developer/tutorials/datahub-pipelines-storeinhdfs.html)
 
 ## Next Steps
-- [Store sensor data in SAP Vora](http://www.sap.com/developer/tutorials/datahub-pipelines-storeinvora.html)
+- [Store sensor data in SAP Vora](https://www.sap.com/developer/tutorials/datahub-pipelines-storeinvora.html)
 
 ## Details
 ### You will learn  
@@ -26,11 +26,11 @@ Open the pipeline which you have created during the previous tutorials (`test.my
 
 Remove the connection between the **Kafka Consumer** operator and the **HDFS Producer** operator.
 
-Add a **ToString Converter** operator to the pipeline by drag & drop. Also add a **JavaScript Operator** to the pipeline by drag & drop.
+Add a **`ToString Converter`** operator to the pipeline by drag & drop. Also add a **JavaScript Operator** to the pipeline by drag & drop.
 
-Connect the **message** port of the **Kafka Consumer** operator to the **ininterface** port of the **ToString Converter** operator.
-Connect the **outstring** port of the **ToString Converter** operator to the **input** port of the **JavaScript Operator**.
-Connect the **output** port of the **JavaScript Operator** to the **inFile** port of the **HDFS Producer** operator.
+Connect the **`message`** port of the **`Kafka Consumer`** operator to the **`ininterface`** port of the **`ToString Converter`** operator.
+Connect the **`outstring`** port of the **`ToString Converter`** operator to the **`input`** port of the **`JavaScript Operator`**.
+Connect the **`output`** port of the **`JavaScript Operator`** to the **`inFile`** port of the **`HDFS Producer`** operator.
 
 ![picture_01](./datahub-pipelines-bundledata_01.png)  
 
@@ -80,13 +80,13 @@ Then enter the following command.
 hdfs dfs -rm /tmp/hdfsManager/*
 ```
 
-You can check the deletion via http://localhost:50070.
+You can check the deletion via `http://localhost:50070`.
 
 Press the **Run** button to execute the pipeline.
 
 When the **Status** tab indicates that the pipeline is running, use the context menu **Open UI** of the **Terminal** operator to see the generated sensor data.
 
-Open http://localhost:50070 and display the `/tmp/hdfsManager` directory. You see that the system does not create a file for each single sensor record, but only for each 30 sensor records.
+Open `http://localhost:50070` and display the `/tmp/hdfsManager` directory. You see that the system does not create a file for each single sensor record, but only for each 30 sensor records.
 
 Stop the pipeline by pressing the **Stop** button.
 
@@ -108,4 +108,4 @@ hdfs dfs -cat /tmp/hdfsManager/test_1.txt
 ---
 
 ## Next Steps
-[Store sensor data in SAP Vora](http://www.sap.com/developer/tutorials/datahub-pipelines-storeinvora.html)
+[Store sensor data in SAP Vora](https://www.sap.com/developer/tutorials/datahub-pipelines-storeinvora.html)

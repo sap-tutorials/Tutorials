@@ -1,5 +1,5 @@
 ---
-title: S4/HANA Cloud, ABAP Extensibility: Adapt UI of business object (bonus plan)
+title: Adapt UI of business object (S4/HANA Cloud, ABAP Extensibility)
 description: Adapt the UI of a Business Object, shown at the generated UI of a Custom Business Object
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-
 
 
 ## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 
 ## Details

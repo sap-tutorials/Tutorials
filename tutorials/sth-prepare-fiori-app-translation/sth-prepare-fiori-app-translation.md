@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, products>sap-translation-hub>sap-translation-hub, pr
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Enable the SAP Translation Hub service](http://www.sap.com/developer/tutorials/sth-enable.html)
+ - **Tutorials:** [Enable the SAP Translation Hub service](https://www.sap.com/developer/tutorials/sth-enable.html)
 
 ## Next Steps
-- [Commit your project to Git and deploy to the cloud](http://www.sap.com/developer/tutorials/teched-2016-5.html) - This tutorial contains a Git repository called `te2016`. To make it easier to follow the steps in the translation tutorial, use the name of the project that you created for the sample Fiori app in SAP Web IDE instead (`nwepmrefappsextshop`). Do not open the active version of the app, as described at the end of the tutorial.
-- [Translate your app with SAP Translation Hub](http://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)
+- [Commit your project to Git and deploy to the cloud](https://www.sap.com/developer/tutorials/teched-2016-5.html) - This tutorial contains a Git repository called `te2016`. To make it easier to follow the steps in the translation tutorial, use the name of the project that you created for the sample Fiori app in SAP Web IDE instead (`nwepmrefappsextshop`). Do not open the active version of the app, as described at the end of the tutorial.
+- [Translate your app with SAP Translation Hub](https://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)
 
 ## Details
 ### You will learn  
@@ -150,5 +150,5 @@ To make things look more realistic, the app uses mock data:
 
 
 ## Next Steps
-- [Commit your project to Git and deploy to the cloud](http://www.sap.com/developer/tutorials/teched-2016-5.html) - This tutorial contains a Git repository called `te2016`. To make it easier to follow the steps in the translation tutorial, use the name of the project that you created for the sample Fiori app in SAP Web IDE instead (`nwepmrefappsextshop`). Do not open the active version of the app, as described at the end of the tutorial.
-- [Translate your app with SAP Translation Hub](http://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)
+- [Commit your project to Git and deploy to the cloud](https://www.sap.com/developer/tutorials/teched-2016-5.html) - This tutorial contains a Git repository called `te2016`. To make it easier to follow the steps in the translation tutorial, use the name of the project that you created for the sample Fiori app in SAP Web IDE instead (`nwepmrefappsextshop`). Do not open the active version of the app, as described at the end of the tutorial.
+- [Translate your app with SAP Translation Hub](https://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)

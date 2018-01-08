@@ -7,7 +7,6 @@ tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-hana, product
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create and Access your Virtual Machine Instance on Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-gcp-create-instance-access.html)
 
 
 ## Next Steps

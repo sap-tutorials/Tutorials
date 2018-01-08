@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ---
 
 ## Prerequisites  
-[Create an ABAP project in Eclipse](http://www.sap.com/developer/tutorials/abap-create-project.html)
+[Create an ABAP project in Eclipse](https://www.sap.com/developer/tutorials/abap-create-project.html)
 
 
 ## Next Steps
-[Display database content and run SQL queries](http://www.sap.com/developer/tutorials/abap-display-data-queries.html)
+[Display database content and run SQL queries](https://www.sap.com/developer/tutorials/abap-display-data-queries.html)
 
 ## Details
 ### You will learn  
@@ -108,7 +108,7 @@ a. Retrieve data from the database by:
   - a global ABAP class
   - and a data element:
 
-[Display database content and run SQL queries](http://www.sap.com/developer/tutorials/abap-display-data-queries.html)
+[Display database content and run SQL queries](https://www.sap.com/developer/tutorials/abap-display-data-queries.html)
 
 OR
 

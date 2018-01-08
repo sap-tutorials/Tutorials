@@ -1,5 +1,5 @@
 ---
-title: SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data
+title: Configuring the device for environmental sensors data (IoT for Neo)
 description: Add a new virtual device for collecting environmental sensors data in your IoT for Neo
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, tutorial>beginner ]
@@ -8,12 +8,12 @@ tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things,
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [SAP Cloud Platform IoT for Neo: Enable and configure](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
+- **Tutorials:** [SAP Cloud Platform IoT for Neo: Enable and configure](https://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
 
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
-- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](http://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](https://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](https://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
 
 ## Details
 ### You will learn  
@@ -241,5 +241,5 @@ You can switch as well to a chart view of received values.
 
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
-- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](http://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](https://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html)
+- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](https://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)

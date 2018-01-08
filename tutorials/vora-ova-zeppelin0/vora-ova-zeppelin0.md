@@ -1,16 +1,16 @@
 ---
 title: Working with Tables and Views using Apache Zeppelin
-description: SAP Vora 1.4: Use Apache Zeppelin to create tables and views, plus load sample data from files
+description: Use Apache Zeppelin to create tables and views, plus load sample data from files (SAP Vora 1.4).
 primary_tag: products>sap-vora
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - You setup a virtual machine with [SAP Vora 1.4, developer edition](http://www.sap.com/developer/how-tos/2017/02/vora-ova-install.html)
+ - You setup a virtual machine with [SAP Vora 1.4, developer edition](https://www.sap.com/developer/how-tos/2017/02/vora-ova-install.html)
 
 
 ## Next Steps
- - [Working with ORC and Parquet Files using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin6.html)
+ - [Working with ORC and Parquet Files using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin6.html)
 
 ## Details
 ### You will learn  
@@ -116,4 +116,4 @@ Create a CUBE called `PROD_FININS_CUBE` that joins fact table and dimension view
 
 
 ## Next Steps
-- [Working with ORC and Parquet Files using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin6.html)
+- [Working with ORC and Parquet Files using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin6.html)

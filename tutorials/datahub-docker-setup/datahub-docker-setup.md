@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
  - **Proficiency:** Beginner
 
 ## Next Steps
- - [Run example pipelines in SAP Data Hub, developer edition](http://www.sap.com/developer/tutorials/datahub-docker-examples.html)
+ - [Run example pipelines in SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-examples.html)
 
 
 ## Details
@@ -24,7 +24,7 @@ During this tutorial, you will learn how to download SAP Data Hub, developer edi
 [ACCORDION-BEGIN [Step 1: ](Check the prerequisites)]
 Running SAP Data Hub, developer edition on your local computer requires:
 
-* at least **2 CPU cores** (recommended 4 CPU cores) with X86_64 instruction set
+* at least **2 CPU cores** (recommended 4 CPU cores) with `X86_64` instruction set
 
 * at least **8 GB of RAM**
 
@@ -107,10 +107,10 @@ After a few minutes (during which you can follow what happens inside the contain
 [ACCORDION-BEGIN [Step 5: ](Perform a smoke test)]
 Open a web browser and test the following URLs (where necessary enter **Username** and **Password** which you have set while building the Docker image):
 
-* http://localhost:8090 (SAP Data Hub - Data Pipelines)
-* http://localhost:9099 (Apache Zeppelin)
-* http://localhost:9225 (SAP Vora Tools)
-* http://localhost:50070 (Apache Hadoop User Interface)
+* `http://localhost:8090` (SAP Data Hub - Data Pipelines)
+* `http://localhost:9099` (Apache Zeppelin)
+* `http://localhost:9225` (SAP Vora Tools)
+* `http://localhost:50070` (Apache Hadoop User Interface)
 
 If all URLs are working, you can assume that you have successfully set up SAP Data Hub, developer edition on your local computer.
 
@@ -123,10 +123,10 @@ You can stop SAP Data Hub, developer edition by using the `stop` command. After 
 docker stop datahub
 ```
 
-You can also restart SAP Data Hub, developer edition (without creating a completely new container) by using the `start` command (this will not open a "status loop").
+You can also restart SAP Data Hub, developer edition (without creating a completely new container) by using the `start` command (this will not open a "status loop"). The `-i` option ensures that you see the "status loop".
 
 ```sh
-docker start datahub
+docker start -i datahub
 ```
 
 **Attention**: When stopping and restarting the Docker container, currently the tables which you have created in SAP Vora get lost. You need to recreate them.
@@ -143,4 +143,4 @@ docker logs datahub
 ---
 
 ## Next Steps
-[Run example pipelines in SAP Data Hub, developer edition](http://www.sap.com/developer/tutorials/datahub-docker-examples.html)
+[Run example pipelines in SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-examples.html)

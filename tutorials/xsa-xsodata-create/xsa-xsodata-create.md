@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>odata, products>sap-hana, products>sap-han
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Creating an OData Service with an Entity Relationship](http://www.sap.com/developer/tutorials/xsa-xsodata-entity.html)
+- **Tutorials:** [Creating an OData Service with an Entity Relationship](https://www.sap.com/developer/tutorials/xsa-xsodata-entity.html)
 
 ## Next Steps
-- [Tutorial Catalog](http://www.sap.com/developer/tutorial-navigator.html)
+- [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.html)
 
 ## Details
 ### You will learn  
@@ -173,4 +173,4 @@ Save and run the Node.js and then run the web module. Change the URL to `/xsodat
 
 
 ## Next Steps
-- [Tutorial Catalog](http://www.sap.com/developer/tutorial-navigator.html)
+- [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.html)

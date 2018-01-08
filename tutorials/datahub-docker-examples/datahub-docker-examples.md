@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have completed [Navigate around SAP Data Hub, developer edition](http://www.sap.com/developer/tutorials/datahub-docker-navigation.html)
+ - You have completed [Navigate around SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-navigation.html)
 
 ## Details
 ### You will learn  
@@ -19,7 +19,7 @@ During this tutorial, you will learn how to run the examples pipelines delivered
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Familiarize yourself with the modelling UI)]
-Open the modelling environment for building pipelines via http://localhost:8090 (SAP Data Hub - Data Pipelines).
+Open the modelling environment for building pipelines via `http://localhost:8090` (SAP Data Hub - Data Pipelines).
 
 ![picture_01](./datahub-docker-examples_01.png)  
 
@@ -27,7 +27,7 @@ The modelling environment consists of four main parts:
  - **Navigation (1)**: You use this part of the modelling environment to access pipelines (also known as graphs), operators and the repository.
  - **Pipeline editor (2)**: You create and edit pipelines here.
  - **Configuration / documentation (3)**: You use this part of the modelling environment to configure pipelines as well as operators inside pipelines and to access the documentation.
- - **Status messages, logs, traces (4)**: You use this part of the modelling environment to monitor the excecution of pipelines.
+ - **Status messages, logs, traces (4)**: You use this part of the modelling environment to monitor the execution of pipelines.
 
 [ACCORDION-END]
 

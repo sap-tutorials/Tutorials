@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>s
 ---
 
 ## Prerequisites  
- - [Deploying a Feature to SAP Cloud Platform](http://www.sap.com/developer/tutorials/webide-sdk-helloworld3.html)
+ - [Deploying a Feature to SAP Cloud Platform](https://www.sap.com/developer/tutorials/webide-sdk-helloworld3.html)
 
 
 ## Next Steps
- - [Activate a Plugin](http://www.sap.com/developer/tutorials/webide-sdk-helloworld5.html)
+ - [Activate a Plugin](https://www.sap.com/developer/tutorials/webide-sdk-helloworld5.html)
 
 ## Details
 ### You will learn  
@@ -70,4 +70,4 @@ Choose **Save**.
 
 
 ## Next Steps
-- [Activate a Plugin](http://www.sap.com/developer/tutorials/webide-sdk-helloworld5.html)
+- [Activate a Plugin](https://www.sap.com/developer/tutorials/webide-sdk-helloworld5.html)

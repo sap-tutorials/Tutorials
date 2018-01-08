@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:**  [Intermediate Table Variables](http://www.sap.com/developer/tutorials/xsa-sqlscript-table-var.html)
+- **Tutorials:**  [Intermediate Table Variables](https://www.sap.com/developer/tutorials/xsa-sqlscript-table-var.html)
 
 ## Next Steps
-- [Creating Table User Defined Functions](http://www.sap.com/developer/tutorials/xsa-sqlscript-table-user.html)
+- [Creating Table User Defined Functions](https://www.sap.com/developer/tutorials/xsa-sqlscript-table-user.html)
 
 ## Details
 ### You will learn  
@@ -102,4 +102,4 @@ Notice the `FULLNAME` column, it shows the results of the scalar `UDF` logic.
 
 
 ## Next Steps
-- [Creating Table User Defined Functions](http://www.sap.com/developer/tutorials/xsa-sqlscript-table-user.html)
+- [Creating Table User Defined Functions](https://www.sap.com/developer/tutorials/xsa-sqlscript-table-user.html)

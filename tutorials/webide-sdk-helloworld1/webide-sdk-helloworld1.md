@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>s
 
 
 ## Next Steps
- - [Change Code in a Plugin](http://www.sap.com/developer/tutorials/webide-sdk-helloworld2.html)
+ - [Change Code in a Plugin](https://www.sap.com/developer/tutorials/webide-sdk-helloworld2.html)
 
 
 ## Details
@@ -78,4 +78,4 @@ In the new browser tab, use the plugin by going to the **Tools** menu and select
 
 
 ## Next Steps
-- [Change Code in a Plugin](http://www.sap.com/developer/tutorials/webide-sdk-helloworld2.html)
+- [Change Code in a Plugin](https://www.sap.com/developer/tutorials/webide-sdk-helloworld2.html)

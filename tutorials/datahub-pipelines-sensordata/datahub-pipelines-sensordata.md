@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
  - You have successfully installed SAP Data Hub, developer edition.
 
 ## Next Steps
- - [Use a message broker](http://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
+ - [Use a message broker](https://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
 
 ## Details
 ### You will learn  
@@ -22,7 +22,7 @@ During this tutorial, you will learn how to use a **Data Generator** to generate
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a data pipeline)]
-Open the modelling environment for building pipelines via http://localhost:8090 (SAP Data Hub - Data Pipelines).
+Open the modelling environment for building pipelines via `http://localhost:8090` (SAP Data Hub - Data Pipelines).
 
 Press the **Create Graph (1)** button to create a new pipeline. The pipeline opens in the **editor (2)**.
 
@@ -47,7 +47,7 @@ Add the **Data Generator (3)** operator to the pipeline by drag & drop.
 
 Press the **Script (4)** button to display the JavaScript snippet which is executed by the **Data Generator**. The JavaScript snippet opens in a new tab of the editor.
 
-You see that the **Data Generator** creates a new random sample record every 500ms and sends it via the **output** port of the operator.
+You see that the **Data Generator** creates a new random sample record every 500 milliseconds and sends it via the **output** port of the operator.
 
 The sample data represents sensors for humidity, temperature etc.
 
@@ -58,7 +58,7 @@ Close the tab for the JavaScript snippet.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure Terminal)]
-Add a **Terminal** operator to the pipeline by drag & drop (you find this also in the **Operators** tab). Then connect the **output** port of the **Data Generator** operator to the **in1** port of the **Terminal** operator.
+Add a **Terminal** operator to the pipeline by drag & drop (you find this also in the **Operators** tab). Then connect the **output** port of the **Data Generator** operator to the **`in1`** port of the **Terminal** operator. **You need to place the connection exactly on the "green circle".**
 
 ![picture_06](./datahub-pipelines-sensordata_06.png)  
 
@@ -82,4 +82,4 @@ Stop the pipeline by pressing the **Stop** button (you find it next to the **Run
 ---
 
 ## Next Steps
-[Use a message broker](http://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)
+[Use a message broker](https://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)

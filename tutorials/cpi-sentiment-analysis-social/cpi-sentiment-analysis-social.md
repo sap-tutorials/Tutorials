@@ -1,5 +1,5 @@
 ---
-title: How to get the social media channels API
+title: Get access to social media channel APIs
 description: Learn to how to request the keys and tokens from Twitter.
 primary_tag: topic>cloud
 tags: [  tutorial>beginner, topic>cloud]
@@ -37,7 +37,7 @@ Callback URL   | Leave this field blank.  This field is not needed for this scen
 Read and accept the developer Agreement by selecting the **Yes I** agree checkbox then, click on **New App**.
 
 [ACCORDION-END]
-[ACCORDION-BEGIN [Step 3: ](Getting the keys and tokens)]
+[ACCORDION-BEGIN [Step 3: ](Get the keys and tokens)]
 
 Navigate to the **keys and Access tokens** tab.  Click on the two locations to generate your own keys.  This will generate the key and access tokens.
 
