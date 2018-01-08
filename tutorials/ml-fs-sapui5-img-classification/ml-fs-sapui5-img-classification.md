@@ -298,14 +298,14 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 					<Carousel pages="{demo>/result-imageclassifier}" width="100%" visible="{= typeof ${demo>/resultVisible-imageclassifier} !== 'undefined'}">
 						<pages>
 							<VBox width="100%" direction="Column" alignItems="Center">
-								<Image class="sapUiLargeMargin" src="{demo>fileURL}"/>
+								<Image tooltip="canvas" class="sapUiLargeMargin" src="{demo>fileURL}"/>
 								<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
 								<table:Table rows="{demo>results}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5">
 									<table:columns>
 										<table:Column sortProperty="label" filterProperty="label">
 											<Label text="Label"/>
 											<table:template>
-												<Link text="{demo>label}" href="https://www.google.fr/search?q={label}&amp;newwindow=1&amp;tbm=isch" target="search"/>
+												<Link text="{demo>label}" href="https://www.google.com/search?q={demo>label}&amp;newwindow=1&amp;tbm=isch" target="search"/>
 											</table:template>
 										</table:Column>
 										<table:Column sortProperty="score" filterProperty="score">
@@ -612,4 +612,4 @@ Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob
 
 ## Next Steps
  - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
