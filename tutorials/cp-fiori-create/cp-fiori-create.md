@@ -1,6 +1,6 @@
 ---
-title: Create your own Fiori Launchpad
-description: Using Portal, create your own Fiori Launchpad to host your applications
+title: Create your own SAP Fiori launchpad
+description: Using the portal, create your own SAP Fiori launchpad to host your applications.
 auto_validation: false
 primary_tag: products>sap-fiori
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-fiori ]
