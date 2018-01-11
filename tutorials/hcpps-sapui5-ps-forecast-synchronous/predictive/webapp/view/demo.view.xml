@@ -54,7 +54,7 @@
 			</Page>
 			<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Cloud for predictive services (Asynchronous Mode)">
 				<content>
-					<!--mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/-->
+					<!--<mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/>-->
 				</content>
 			</Page>
 		</detailPages>
