@@ -1,5 +1,5 @@
 ---
-title: Intro to SAP HANA Spatial: Strings
+title: Intro to SAP HANA Spatial - Strings
 description: A string ('a curve' in more general) connects points
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
