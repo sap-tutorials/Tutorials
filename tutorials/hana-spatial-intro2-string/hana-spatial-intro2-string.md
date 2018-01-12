@@ -1,5 +1,5 @@
 ---
-title: Intro to SAP HANA Spatial – Strings
+title: Intro to SAP HANA Spatial: Strings
 description: A string ('a curve' in more general) connects points
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
@@ -20,7 +20,7 @@ You will continue learning the basics of spatial processing now with the ___stri
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create new line)]
+[ACCORDION-BEGIN [Step 1: ](Create a new line)]
 
 Open the SQL editor of your choice (web or desktop based) connected to your SAP HANA database instance.
 
@@ -85,7 +85,7 @@ Opening the SVG code above in a web browser allows you to see a drawn spatial ob
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create circular string)]
+[ACCORDION-BEGIN [Step 4: ](Create a circular string)]
 
 The `ST_CircularString` type of strings uses circular line segments (arcs) between control points.
 
@@ -110,9 +110,9 @@ A string that starts and ends at the same point is **closed**. Above is an examp
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Using spatial predicates)]
+[ACCORDION-BEGIN [Step 5: ](Check string characteristics)]
 
-All these characteristics can be tested and if needed used as **Spatial Predicates**. Spatial predicates are implemented as member functions that return 0 or 1.
+All these characteristics can be tested and if needed used as **Spatial Predicates**. Spatial predicates are implemented as member functions that return `0` (false) or `1` (true).
 
 ```sql
 SELECT 'isClosed' as Feature, NEW ST_CircularString('CircularString (0 0, 3 4, 0 4, -3 4, 0 0)').ST_isClosed() as FeatureTest FROM dummy
@@ -124,7 +124,7 @@ SELECT 'isRing' as Feature, NEW ST_CircularString('CircularString (0 0, 3 4, 0 4
 
 ![Clodes Simple Ring](spatial0207.jpg)
 
-Do the same test for another geometry, defined by `ST_LineString('LINESTRING(0 0, 1 1, 0 1, 1 0)')`
+Now do the same test for another geometry, defined by `ST_LineString('LINESTRING(0 0, 1 1, 0 1, 1 0)')`
 
 ![4 points open LineString](spatial0208.jpg)
 
@@ -136,7 +136,7 @@ union all
 SELECT 'isRing' as Feature, NEW ST_LineString('LINESTRING(0 0, 1 1, 0 1, 1 0)').ST_isRing() as FeatureTest FROM dummy;
 ```
 
-![Closed Simple Ring](spatial0209.jpg)
+![not-Closed not-Simple not-Ring](spatial0209.jpg)
 
 
 [ACCORDION-END]
@@ -151,7 +151,13 @@ SELECT ST_GeomFromText( 'CircularString (0 0, 3 4, 0 0)' ).ST_asSVG() as SVG FRO
 
 ![Circle](spatial0210.jpg)
 
-Note this time you did not use a geometry constructor using the `NEW` keyword. Instead you used the method `ST_GeomFromText` that parses a string containing a representation of a geometry and creates a geometry value of the appropriate type. You use method `ST_GeometryType()` then to verify.
+Note this time you did not use a geometry constructor using the `NEW` keyword. Instead you used the method `ST_GeomFromText` that parses a string containing a representation of a geometry and creates a geometry value of the appropriate type.
+
+Use method `ST_GeometryType()` to verify.
+
+```sql
+SELECT ST_GeomFromText( 'CircularString (0 0, 3 4, 0 0)' ).ST_GeometryType() as "Geometry type" FROM dummy;
+```
 
 ![GeometryType](spatial0211.jpg)
 
@@ -161,7 +167,7 @@ Note this time you did not use a geometry constructor using the `NEW` keyword. I
 
 
 ### Optional
-- Check SAP HANA Spatial Reference at https://help.sap.com/hana_platform
+- Review [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/)
 
 ## Next Steps
 - [Intro to SAP HANA Spatial: Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
