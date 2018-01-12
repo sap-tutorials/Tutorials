@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-servi
   - **Tutorials:** [Create a HANA MDC instance](https://www.sap.com/developer/tutorials/hcpps-hana-create-mdc-instance.html)
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP Predictive services](https://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - [Import a series of predictive demo dataset](https://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
 
 ## Details
 ### You will learn
@@ -101,4 +101,4 @@ If you can login, then your ***HANA User Account*** is properly configured.
 [ACCORDION-END]
 
 ## Next Steps
-- [Enable, deploy and configure the SAP Predictive services](https://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+- [Import a series of predictive demo dataset](https://www.sap.com/developer/tutorials/hcpps-hana-dataset-import.html)
