@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 
 ## Next Steps
  - [Create a Tenant Database](https://www.sap.com/developer/how-tos/2017/03/hxe-ua-dbfundamentals-tenantdb.html)
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
