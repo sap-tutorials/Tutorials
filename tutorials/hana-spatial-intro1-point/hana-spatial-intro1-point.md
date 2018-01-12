@@ -1,5 +1,5 @@
 ---
-title: Intro to SAP HANA Spatial: Points
+title: Intro to SAP HANA Spatial - Points
 description: A point is a 0-dimensional geometry representing a single location
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
