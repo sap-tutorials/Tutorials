@@ -13,7 +13,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
  - [Build custom Flex Operators to analyze event streams](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 
 ## Details

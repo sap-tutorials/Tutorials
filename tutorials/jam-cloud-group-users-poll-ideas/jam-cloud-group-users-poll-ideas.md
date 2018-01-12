@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic
  - **Tutorials:** [Initial setup of SAP Jam Collaboration Developer Edition](https://www.sap.com/developer/tutorials/jam-cloud-login-admin-user-setup.html)
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn
@@ -276,4 +276,4 @@ Figure 3: A group with content, decision-making tools, and comments
 ---
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
