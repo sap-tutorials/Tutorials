@@ -10,7 +10,7 @@ tags: [  tutorial>beginner,  products>sap-cloud-platform, products>sap-web-ide, 
 
 ## Next Steps
 - This is the end of this series
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 
 ## Details
@@ -355,4 +355,4 @@ You should see a Fiori app connecting via SAP API Management to the SAP Gateway 
 
 ## Next Steps
 - This is the end of this series
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

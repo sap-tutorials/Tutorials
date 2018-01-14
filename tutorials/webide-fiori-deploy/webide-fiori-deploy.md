@@ -1,6 +1,6 @@
 ---
-title: Deploy your app to Fiori Launchpad
-description: Learn how to deploy your application
+title: Deploy your app to SAP Fiori launchpad
+description: Learn how to deploy your application to your SAP Fiori launchpad.
 auto_validation: false
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide, products>sap-fiori  ]

@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
  - **Tutorials:** [Bootstrap Forms](https://www.sap.com/developer/tutorials/angular-forms-intro.html)
 
 ## Next Steps
- - This is the end of this tutorial series. [Return to the Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html).
+ - This is the end of this tutorial series. [Return to the Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html).
 
 ## Details
 ### You will learn  
@@ -252,4 +252,4 @@ Remember in our early application, the *Available* and *Discontinued* label were
 
 
 ## Next Steps
- - This is the end of this tutorial series. [Return to the Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html).
+ - This is the end of this tutorial series. [Return to the Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html).

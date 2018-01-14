@@ -1,6 +1,6 @@
 ---
 title: Working with ORC and Parquet Files using Apache Zeppelin
-description: SAP Vora 1.4 supports popular file types in data management namely ORC and Parquet
+description: SAP Vora 1.4 supports popular file types in data management namely ORC and Parquet.
 primary_tag: products>sap-vora
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---

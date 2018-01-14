@@ -1,8 +1,8 @@
 ---
 title: Build custom Flex Operators to analyze event streams
 description: See how flex operators can be used to apply custom operations to event streams. Use CCL Script to correlate and match events to produce higher level events.  Also implement a flex operator to update a "table" showing the current status of a set of devices.
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate

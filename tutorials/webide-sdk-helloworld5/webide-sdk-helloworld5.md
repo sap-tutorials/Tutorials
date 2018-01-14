@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>s
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -63,4 +63,4 @@ Refresh the SAP Web IDE. Now you should see the new **Greetings** menu in the **
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

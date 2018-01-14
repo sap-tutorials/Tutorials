@@ -1,5 +1,5 @@
 ---
-title: SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data
+title: Configuring the device for environmental sensors data (IoT for Neo)
 description: Add a new virtual device for collecting environmental sensors data in your IoT for Neo
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, tutorial>beginner ]

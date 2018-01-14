@@ -24,7 +24,7 @@ During this tutorial, you will learn how to download SAP Data Hub, developer edi
 [ACCORDION-BEGIN [Step 1: ](Check the prerequisites)]
 Running SAP Data Hub, developer edition on your local computer requires:
 
-* at least **2 CPU cores** (recommended 4 CPU cores) with X86_64 instruction set
+* at least **2 CPU cores** (recommended 4 CPU cores) with `X86_64` instruction set
 
 * at least **8 GB of RAM**
 
@@ -123,10 +123,10 @@ You can stop SAP Data Hub, developer edition by using the `stop` command. After 
 docker stop datahub
 ```
 
-You can also restart SAP Data Hub, developer edition (without creating a completely new container) by using the `start` command (this will not open a "status loop").
+You can also restart SAP Data Hub, developer edition (without creating a completely new container) by using the `start` command (this will not open a "status loop"). The `-i` option ensures that you see the "status loop".
 
 ```sh
-docker start datahub
+docker start -i datahub
 ```
 
 **Attention**: When stopping and restarting the Docker container, currently the tables which you have created in SAP Vora get lost. You need to recreate them.

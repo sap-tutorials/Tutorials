@@ -3,13 +3,13 @@ title: Integrate External Applications into SAP Jam Collaboration
 description: Demonstrates how to integrate ESPM Web Shop records into SAP Jam Collaboration.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
---- 
+---
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn
@@ -42,7 +42,7 @@ Record types in SAP Jam Collaboration define how the data from the external appl
 
 1.  Click on the **Action** drop-down menu for the _ESPM_ External Application created in the previous steps and select **Manage Record Types**.
 2.  Download the External Application configuration file from the following URL:
-[https://sapjamsamplecode.github.io/Import\_ExtApps/webshop.json](https://sapjamsamplecode.github.io/Import_ExtApps/webshop.json)
+[`https://sapjamsamplecode.github.io/Import_ExtApps/webshop.json`](https://sapjamsamplecode.github.io/Import_ExtApps/webshop.json)
 3.  Click the **Import From File** button.
 4.  Click the **Browse...** button.
 5.  Navigate to the External Application configuration file.
@@ -137,4 +137,4 @@ Start collaborating with other users on this ESPM Review group\! Try creating ot
 ---
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

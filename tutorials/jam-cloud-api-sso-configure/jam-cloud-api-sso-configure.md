@@ -48,7 +48,7 @@ Connectivity destinations are a part of the SAP Cloud Platform connectivity serv
 
 [ACCORDION-BEGIN [Step 2: ](Import your destination configuration file into SAP Cloud Platform)]
 
-1.  Login to the _Hana Cloud Server Cockpit_
+1.  Login to SAP Cloud Platform
 2.  Select your account
 3.  Click **Connectivity**
 4.  Click **Destinations**
@@ -87,9 +87,9 @@ Connectivity destinations are a part of the SAP Cloud Platform connectivity serv
 3.  Copy the **Key** value
 4.  Go back to the SAP Cloud Platform destination configuration screen and paste the **Key** value into the **Client Key** field.
 5.  If you see a red warning _Client Key cannot be empty_:
-    1.  Select **Authentication** \> **Oauth2SAMLBearerAssertion**
+    1.  Select **Authentication** | **`Oauth2SAMLBearerAssertion`**
     2.  Change it to **No Authentication**
-    3.  Change it back to **Oauth2SAMLBearerAssertion**
+    3.  Change it back to **`Oauth2SAMLBearerAssertion`**
 6.  Click **Save**
 
     ![Update the destination with the OAuth Client key from SAP Jam Collaboration page](loio87a9631e8f5644b9a1c274b773fd1af7_HiRes.png)

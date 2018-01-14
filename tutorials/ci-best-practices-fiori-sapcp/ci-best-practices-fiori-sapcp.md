@@ -1,7 +1,7 @@
 ---
 
-title: CI Best Practices Guide: SAPUI5/SAP Fiori on SAP Cloud Platform
-description: Part 4.5: Implementing the CI pipeline to build an SAPUI5/SAP Fiori application on SAP Cloud Platform.
+title: CI Best Practices Guide – SAPUI5/SAP Fiori on SAP Cloud Platform
+description: Part 4.5 – Implementing the CI pipeline to build an SAPUI5/SAP Fiori application on SAP Cloud Platform.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 

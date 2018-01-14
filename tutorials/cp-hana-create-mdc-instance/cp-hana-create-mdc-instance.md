@@ -23,7 +23,7 @@ As each HANA MDC instance comes only with a ***System Account*** called SYSTEM, 
 
 [ACCORDION-BEGIN [Step 1: ](Access your SAP Cloud Platform account)]
 
-Log into the <a href="http://account.hanatrial.ondemand.com/cockpit" target="new"><b>SAP Cloud Platform Cockpit</b></a> with your free trial account on the **Europe (Rot) - Trial** landscape and access *Your Personal Developer Account*.
+Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit</b></a> with your free trial account on the **Europe (Rot) - Trial** landscape and access *Your Personal Developer Account*.
 
 Click on the link as highlighted on the below screenshot. By default, it ends with *trial* in fact is your account display name and can be changed using the pen icon).
 
@@ -50,7 +50,7 @@ Field Name           | Value
 -------------------- | --------------
 Database ID          | `mdc`
 Database System      | Pick HANA MDC (< trial >) from the drop down
-System User Password | `Welcome17Welcome17`
+System User Password | `Welcome18Welcome18`
 
 > ### **Note**:
 >**You can choose other values for theses properties. However, the validation steps implemented in the tutorials will be based on the Database ID being `mdc`. So you will have to adjust your entries to validate your progress.**
@@ -128,7 +128,7 @@ Click on **SAP HANA Cockpit**.
 
 You will be prompted to login.
 
-Enter `SYSTEM` as user name and the ***HANA System Account*** password that was provided during the instance creation as password (`Welcome17Welcome17`).
+Enter `SYSTEM` as user name and the ***HANA System Account*** password that was provided during the instance creation as password (`Welcome18Welcome18`).
 
 Click on **Log On**.
 

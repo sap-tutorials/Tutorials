@@ -1,6 +1,6 @@
 ---
 title: Working with the SAP Vora Tools
-description: SAP Vora 1.4: Vora Tools provide a data browser for viewing and exporting data in tables and views, an SQL editor for creating and running SQL scripts, and a modeler for creating data models
+description: SAP Vora Tools provide a data browser for viewing and exporting data in tables and views, an SQL editor for creating and running SQL scripts, and a modeler for creating data models (SAP Vora 1.4).
 primary_tag: products>sap-vora
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---

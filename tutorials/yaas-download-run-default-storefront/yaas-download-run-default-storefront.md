@@ -1,6 +1,6 @@
 ---
-title: Download and Run the Default YaaS Storefront
-description: The YaaS Storefront is a fully customizable, feature-rich, default shopping web site, from which you can create your very own online shop.  YaaS looks after all the tricky details: security, authorization, payment and cart workflows, etc., so that you can focus on more interesting topics, like personalization and overall coolness of your online shop.  In this tutorial, you will download, run and explore the default YaaS Storefront.
+title: Download and run the default YaaS storefront
+description: The YaaS Storefront is a fully customizable, feature-rich, default shopping web site, from which you can create your very own online shop.  YaaS looks after all the tricky details, like security, authorization, payment and cart workflows, so that you can focus on more interesting topics, like personalization and overall coolness of your online shop.  In this tutorial, you will download, run and explore the default YaaS Storefront.
 primary_tag: products>sap-hybris-as-a-service-on-sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-hybris-as-a-service-on-sap-cloud-platform ]
 ---
