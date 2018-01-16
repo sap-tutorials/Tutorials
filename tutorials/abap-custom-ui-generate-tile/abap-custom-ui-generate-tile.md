@@ -1,12 +1,12 @@
 ---
-title:  ABAP Custom New UI - Generate Tile
-description:  Generate a Tile for a UI.
+title:  Add Custom UI's Application Tile to Fiori Launchpad
+description:  Extend a Business Catalog with a custom UI application.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-Access to a SAP S/4HANA Cloud System is expected as a prerequisite. **`ABAP Custom New UI - UI Creation for a Tile`** as tutorial represents a further Prerequisite for the tile generating.
+Access to a SAP S/4HANA Cloud System is expected as a prerequisite. **`Create a Custom UI for S/4HANA on SAP Cloud Platform`** as tutorial represents a further Prerequisite for the tile generating.
 
 ## Next Steps
  (coming soon).
@@ -14,7 +14,7 @@ Access to a SAP S/4HANA Cloud System is expected as a prerequisite. **`ABAP Cust
 The creation of a new Tile will be explained with this tutorial. The adding of Business Catalogs to the Catalog Extension will be shown.
 
 ### You will learn  
-You will learn how to generate a new Tile for a UI.
+You will learn how to make the Custom UI visible as Application in Fiori Launchpad.
 ### Time to Complete
 **15 Min**.
 
@@ -24,31 +24,32 @@ You will learn how to generate a new Tile for a UI.
 [ACCORDION-BEGIN [Step 1: ](Open Custom Catalog Extensions)]
 Open **Custom Catalog Extensions** application on your Fiori Launchpad (SAP S/4HANA Cloud System).
 
-![Select Data Source](catalog.png)
+![Open Custom Catalog Extensions](catalog.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Select Catalog Extension)]
-Now search for your **Catalog extension** and select it.
+[ACCORDION-BEGIN [Step 2: ](Select Application)]
+Now search for your Application and select it.
 
-![Select Data Source](select.png)
+![Select Application](select.png)
 
 [ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 3: ](Add Business Catalog)]
 Add following **Business Catalogs** to your Catalog Extension:
 `SAP_CORE_BC_SL_EXP`
 `SAP_CORE_BC_SL_IMP`
 
-![Select Data Source](add2.png)
+![Add Business Catalog](add2.png)
 
 Check both business catalogs and publish them.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Check Tile)]
-And now your tile is created.
+Now press `F5` to fresh your page and your tile is created.
 
-![Select Data Source](tile.png)
+![Check Tile](tile.png)
 
 [ACCORDION-END]
 
