@@ -1,6 +1,6 @@
 ---
-title: Add a user task to your workflow using a free trial account
-description: Enhance your workflow with a user task.
+title: Add a user task to your workflow
+description: Enhance your workflow with a user task, in this case, to add an approval.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner ]
 ---
@@ -81,7 +81,9 @@ You now see the apps on your SAP Fiori launchpad homepage.
     > Note: The field is case sensitive.
 7. Under **User Interface**, enter dummy entries ('test') for the application and component names of the SAPUI component, which displays the task in the inbox.
 ![Add User Interface](add-user-interface.png)
-8. Save and deploy the workflow again.
+8. Make sure that no element of the workflow is selected.
+![Deselect All](deselect-elements.png)
+9. Save and deploy the workflow again.
     > Note: To deploy your workflow:
     1. Select the workflow file in the workspace.
     2. Open the context menu and select **Deploy** | **Deploy to SAP Cloud Platform Workflow**.

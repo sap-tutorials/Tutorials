@@ -1,6 +1,6 @@
 ---
-title: Create a new project using a template
-description: Learn how to create a new workflow project.
+title: Create a new workflow project from a template
+description: Create a new workflow project in SAP Cloud Platform using SAP Web IDE.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform ]
 ---
