@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-cloud-platfor
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [ABC Analysis with SAP HANA PAL](http://www.sap.com/developer/tutorials/teched-2016-10.html)
+ - **Tutorials:** [ABC Analysis with SAP HANA PAL](https://www.sap.com/developer/tutorials/teched-2016-10.html)
 
 ## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -220,7 +220,7 @@ With these steps completed you are now ready to modify the JavaScript code we ha
 
 If you are with us at TechEd in the `AppSpace`, the file is already available in the following directory: `C:\teched2016\te16-original.js`. Please make a copy of the file for your own use `C:\teched2016\te16.js` and the convenience of the next attendee.
 
-If you are doing this on your own machine, you can download the file [`te16_js.txt`](te16_js.txt), and rename it to `te16.js` on your machine.
+If you are doing this on your own machine, you can download the file [`te16_js.txt`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/teched-2016-9/te16_js.txt), and rename it to `te16.js` on your machine.
 
 
 [ACCORDION-END]
@@ -292,4 +292,4 @@ The table with your data will match the **Message Type** id generated earlier.
 [ACCORDION-END]
 
 ## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

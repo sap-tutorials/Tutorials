@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>cloud, topic>sapui5, products>sap-web-ide, pro
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Add custom fields to a standard SAP Fiori app](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-add-fields.html)
+- **Tutorials:** [Add custom fields to a standard SAP Fiori app](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-add-fields.html)
 
 ## Next Steps
-- [Extend controller of a standard SAP Fiori app](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-extend-controller.html)
+- [Extend controller of a standard SAP Fiori app](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-extend-controller.html)
 
 ## Details
 ### You will learn  
@@ -27,7 +27,7 @@ In this tutorial you will learn how to hide a view element from a standard SAP F
 
 [ACCORDION-BEGIN [Step 1: ](Log into the SAP Fiori Demo Cloud Edition)]
 
-Please make sure that you have worked through the tutorial [Getting started with the SAP Fiori, Demo Cloud Edition](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html). Log into the SAP Fiori Demo Cloud Edition and locate the group **Human Capital Management**. Click on the **My Leave Requests** tile.
+Please make sure that you have worked through the tutorial [Getting started with the SAP Fiori, Demo Cloud Edition](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-start.html). Log into the SAP Fiori Demo Cloud Edition and locate the group **Human Capital Management**. Click on the **My Leave Requests** tile.
 
 ![SAP Fiori launchpad group Human Capital Management](Launchpag-My-Leave-Requests.png)
 
@@ -145,4 +145,4 @@ Congratulations, you've successfully hid a view element from a SAP Standard Fior
 
 
 ## Next Steps
-- [Extend controller of a standard SAP Fiori app](http://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-extend-controller.html)
+- [Extend controller of a standard SAP Fiori app](https://www.sap.com/developer/tutorials/hcp-fiori-cloud-edition-extend-controller.html)

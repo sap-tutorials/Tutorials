@@ -12,9 +12,9 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
 
 ## Next Steps
  - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
- - **XS Advanced:** [ Get started with XS Advanced development](http://www.sap.com/developer/topics/sap-hana-express.html)
+ - **XS Advanced:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
  - **XS Advanced:** [Explore the administration cockpit in XS Advanced](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
- - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](http://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
+ - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
 
 ## Disclaimer
 The image currently only includes the HANA database engine. XS Advanced is not installed by default.
@@ -152,7 +152,7 @@ Use your IP address to map it to the hosts file in your computer. You need admin
 - For Mac:
   Open a terminal (`Finder -> Applications -> Terminal`) and type `sudo nano /etc/hosts`
 
-![Hosts file](mac.png)
+![Hosts file](mac.jpg)
 
 
 Add the IP address followed by the name of the host, which will be `hxehost`:
@@ -357,6 +357,6 @@ CALL GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::CatalogDeveloper','WORKSHOP_01')
 
 ## Next Steps
  - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
- - **XS Advanced:** [ Get started with XS Advanced development](http://www.sap.com/developer/topics/sap-hana-express.html)
+ - **XS Advanced:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
  - **XS Advanced:** [Explore the administration cockpit in XS Advanced](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
- - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](http://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
+ - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)

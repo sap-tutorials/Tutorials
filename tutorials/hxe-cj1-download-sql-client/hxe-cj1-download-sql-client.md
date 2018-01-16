@@ -1,5 +1,5 @@
 ---
-title: SAP HANA, express edition, server-only: Download a SQL client and connect to your instance
+title: Download a SQL client and connect to your instance (SAP HANA, express edition, server-only)
 description: This tutorial will walk you through downloading a client to connect to SAP HANA, express edition.
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana\,-express-edition ]
@@ -56,7 +56,7 @@ You will need to extract them from the files `hdb_client_windows.zip` or `hdb_cl
 
 Click on **Find Class** and select `com.sap.db.jdbc.Driver` from the drop down menu:
 
-![JDBC](4_!.png)
+![JDBC](4_1.png)
 
 Click **OK** and proceed to test the connection:
 

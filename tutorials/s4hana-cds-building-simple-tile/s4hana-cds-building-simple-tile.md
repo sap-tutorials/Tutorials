@@ -6,10 +6,10 @@ tags: [ tutorial>intermediate, products>sap-s-4hana ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Creating simple tiles within Fiori Launchpad](http://sap.com/developer/tutorials/s4hana-cds-launchpad-designer-fiori-role.html)
+ - **Tutorials:** [Creating simple tiles within Fiori Launchpad](https://www.sap.com/developer/tutorials/s4hana-cds-launchpad-designer-fiori-role.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -26,7 +26,7 @@ The tile to build will be added to the group `Z_RDBC_BCG`
 
 ![Basic view](CDSTiles1.png)
 
-To achieve that you need to log in to Fiori Launchpad Designer as shown in the [previous tutorial](http://sap.com/developer/tutorials/s4hana-cds-launchpad-designer-fiori-role.html) and extend the URL with: `sap/bc/ui5_ui5/sap/arsrvc_upb_admn/main.html/`
+To achieve that you need to log in to Fiori Launchpad Designer as shown in the [previous tutorial](https://www.sap.com/developer/tutorials/s4hana-cds-launchpad-designer-fiori-role.html) and extend the URL with: `sap/bc/ui5_ui5/sap/arsrvc_upb_admn/main.html/`
 
 ![Basic view](CDSTilesGroupTitlestoAddAppendExtensionDesigner3.png)
 
@@ -58,7 +58,7 @@ After selecting the appropriated template, you will have the following screen th
 
 ![Basic view](CDSTilesGroupTitlescreatedynamictite2.png)
 
-From here you will use the Airline Query you created in the previous tutorial (http://sap.com/developer/tutorials/s4hana-cds-creating-odata-service.html)
+From here you will use the Airline Query you created in the previous tutorial (https://www.sap.com/developer/tutorials/s4hana-cds-creating-odata-service.html)
 
 
 
@@ -162,4 +162,4 @@ On the right side of the screen you will see the newly created tile with a Fligh
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

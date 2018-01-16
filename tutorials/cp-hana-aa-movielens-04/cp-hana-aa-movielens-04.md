@@ -168,7 +168,7 @@ Else if you are already accessing one of the perspective, then use the ![plus](0
 ![SAP HANA Web-based Development Workbench](02.png)
 
 > ### **Note**
->**Make sure the currently connected user is TRIAL and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
+>**Make sure the currently connected user is `MOVIELENS_USER` and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
 
 For each of the next step, you can decide to open a new **SQL Console** using the ![sql](0-opensqlconsole.png) icon from the menu or reuse the same one by replacing its current over and over.
 
@@ -200,7 +200,7 @@ If you want to try out this scenario, you can build a view where the user id and
 
 &nbsp;
 
-The PAL functions are really strict on the input format, so you will need to create a view to provide the input dataset in the proper format (`PAL_MODEL_INPUT`) .
+The PAL functions are really strict on the input format, so you will need to create a view to provide the input dataset in the proper format (`PAL_APRIORI_MODEL_INPUT`) .
 
 The results will be stored in the `PAL_APRIORI_RESULT` table under the `movielens` schema.
 
@@ -226,10 +226,10 @@ DROP TABLE "MOVIELENS"."PAL_APRIORI_RESULT";
 -- --------------------------------------------------------------------------
 -- PAL
 -- --------------------------------------------------------------------------
-DROP   VIEW "MOVIELENS"."PAL_MODEL_INPUT";
-CREATE VIEW "MOVIELENS"."PAL_MODEL_INPUT" AS
+DROP   VIEW "MOVIELENS"."PAL_APRIORI_MODEL_INPUT";
+CREATE VIEW "MOVIELENS"."PAL_APRIORI_MODEL_INPUT" AS
 SELECT "USERID", "MOVIEID"
-FROM   "MOVIELENS"."public.aa.movielens.cds::data.RATINGS";
+FROM   "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS";
 -- --------------------------------------------------------------------------
 -- Create PAL table types
 -- --------------------------------------------------------------------------
@@ -286,7 +286,7 @@ INSERT INTO "MOVIELENS"."PAL_OPERATION_CONFIG" VALUES ('MAX_ITEM_LENGTH' , 1   ,
 -- Call PAL function
 -- --------------------------------------------------------------------------
 CALL "MOVIELENS"."PROC_PAL_APRIORI" (
-    "MOVIELENS"."PAL_MODEL_INPUT"
+    "MOVIELENS"."PAL_APRIORI_MODEL_INPUT"
   , "MOVIELENS"."PAL_OPERATION_CONFIG"
   , "MOVIELENS"."PAL_APRIORI_RESULT"
   , ?
@@ -317,8 +317,8 @@ The code of this view was built from scratch:
 -- --------------------------------------------------------------------------
 -- Create the result view
 -- --------------------------------------------------------------------------
-DROP   VIEW "MOVIELENS"."PAL_MODEL_USERS_RESULTS";
-CREATE VIEW "MOVIELENS"."PAL_MODEL_USERS_RESULTS" AS
+DROP   VIEW "MOVIELENS"."PAL_APRIORI_MODEL_USERS_RESULTS";
+CREATE VIEW "MOVIELENS"."PAL_APRIORI_MODEL_USERS_RESULTS" AS
 SELECT *
 FROM (
   SELECT
@@ -332,13 +332,13 @@ FROM (
     , "LINKS"."TMDBID"
   FROM (
     SELECT "INPUT_DATA"."USERID", "RULES"."POSTRULE" AS "CONSEQUENT", MAX("RULES"."CONFIDENCE") AS "SCORE"
-    FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS" AS INPUT_DATA
+    FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS" AS INPUT_DATA
     LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."PAL_APRIORI_RESULT") "RULES" ON (CAST ("INPUT_DATA"."MOVIEID" as VARCHAR(500)) = "RULES"."PRERULE")
     WHERE "RULES"."POSTRULE" IS NOT NULL
     GROUP BY "INPUT_DATA"."USERID", "RULES"."POSTRULE"
   ) "T1"
-    LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.cds::data.MOVIES" "MOVIES" ON "MOVIES"."MOVIEID" = "T1"."CONSEQUENT"
-    LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.cds::data.LINKS"  "LINKS"  ON "LINKS"."MOVIEID"  = "T1"."CONSEQUENT"
+    LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" "MOVIES" ON "MOVIES"."MOVIEID" = "T1"."CONSEQUENT"
+    LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.LINKS"  "LINKS"  ON "LINKS"."MOVIEID"  = "T1"."CONSEQUENT"
 ) "T1"
 WHERE "T1"."RANK" <= 5;
 ```
@@ -358,7 +358,7 @@ Let's verify how many users will actually get recommendations using the followin
 SELECT "RECO_COUNT", COUNT(1) AS "USER_COUNT"
 FROM (
   SELECT "USERID", MAX(RANK) AS "RECO_COUNT"
-  FROM "MOVIELENS"."PAL_MODEL_USERS_RESULTS"
+  FROM "MOVIELENS"."PAL_APRIORI_MODEL_USERS_RESULTS"
   GROUP BY "USERID"
 ) GROUP BY "RECO_COUNT" ORDER BY "RECO_COUNT" DESC;
 ```
@@ -368,10 +368,10 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 ```SQL
 SELECT
     COUNT(1) AS "MOVIE_COUNT"
-  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.cds::data.MOVIES" ) AS "MOVIE_RATIO"  
+  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"  
 FROM (
   SELECT "MOVIEID"
-  FROM "MOVIELENS"."PAL_MODEL_USERS_RESULTS"
+  FROM "MOVIELENS"."PAL_APRIORI_MODEL_USERS_RESULTS"
   GROUP BY "MOVIEID"
 );
 ```
@@ -381,7 +381,7 @@ Let's verify how many distinct movies will potentially get recommended to a user
 ```SQL
 SELECT
     COUNT(1) AS "MOVIE_COUNT"
-  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.cds::data.MOVIES" ) AS "MOVIE_RATIO"  
+  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"  
 FROM (
   SELECT "PRERULE" AS "MOVIEID"
   FROM "MOVIELENS"."PAL_APRIORI_RESULT"
@@ -413,8 +413,8 @@ The code of this view was built from scratch:
 -- --------------------------------------------------------------------------
 -- Create the result view
 -- --------------------------------------------------------------------------
-DROP   VIEW "MOVIELENS"."PAL_MODEL_ITEMS_RESULTS";
-CREATE VIEW "MOVIELENS"."PAL_MODEL_ITEMS_RESULTS" AS
+DROP   VIEW "MOVIELENS"."PAL_APRIORI_MODEL_ITEMS_RESULTS";
+CREATE VIEW "MOVIELENS"."PAL_APRIORI_MODEL_ITEMS_RESULTS" AS
 SELECT *
 FROM (
   SELECT
@@ -428,12 +428,12 @@ FROM (
     , "LINKS"."TMDBID"  
   FROM (
     SELECT "MOVIEID", "RULES"."POSTRULE" AS "CONSEQUENT", "RULES"."CONFIDENCE" AS "SCORE"
-    FROM "MOVIELENS"."public.aa.movielens.cds::data.MOVIES" AS INPUT_DATA
+    FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" AS INPUT_DATA
     LEFT OUTER JOIN (SELECT * FROM "MOVIELENS"."PAL_APRIORI_RESULT") "RULES" ON (CAST ("INPUT_DATA"."MOVIEID" as VARCHAR(500)) = "RULES"."PRERULE")
     WHERE "RULES"."POSTRULE" IS NOT NULL
   ) "T1"
-    LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.cds::data.MOVIES" "MOVIES" ON "MOVIES"."MOVIEID" = "T1"."CONSEQUENT"
-    LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.cds::data.LINKS"  "LINKS"  ON "LINKS"."MOVIEID"  = "T1"."CONSEQUENT"
+    LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" "MOVIES" ON "MOVIES"."MOVIEID" = "T1"."CONSEQUENT"
+    LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.LINKS"  "LINKS"  ON "LINKS"."MOVIEID"  = "T1"."CONSEQUENT"
 ) "T1"
 WHERE "T1"."RANK" <= 5;
 ```
@@ -453,7 +453,7 @@ Let's verify how many movies will actually get recommendations using the followi
 SELECT "RECO_COUNT", COUNT(1) AS "MOVIE_COUNT"
 FROM (
   SELECT "MOVIEID", MAX(RANK) AS "RECO_COUNT"
-  FROM "MOVIELENS"."PAL_MODEL_ITEMS_RESULTS"
+  FROM "MOVIELENS"."PAL_APRIORI_MODEL_ITEMS_RESULTS"
   GROUP BY "MOVIEID"
 ) GROUP BY "RECO_COUNT" order by 1 DESC;
 ```
@@ -463,10 +463,10 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 ```SQL
 SELECT
     COUNT(1) AS "MOVIE_COUNT"
-  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.cds::data.MOVIES" ) AS "MOVIE_RATIO"  
+  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"  
 FROM (
   SELECT "MOVIEID"
-  FROM "MOVIELENS"."PAL_MODEL_ITEMS_RESULTS"
+  FROM "MOVIELENS"."PAL_APRIORI_MODEL_ITEMS_RESULTS"
   GROUP BY "MOVIEID"
 );
 ```
@@ -479,7 +479,7 @@ Let's verify how many rating does the movies with no recommendation have using t
 SELECT "RATING_COUNT", COUNT(1) AS "MOVIE_COUNT"
 FROM (
   SELECT "RATINGS"."MOVIEID", COUNT(1) as "RATING_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS" "RATINGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS" "RATINGS"
   LEFT OUTER JOIN (
     SELECT "MOVIEID"
     FROM (

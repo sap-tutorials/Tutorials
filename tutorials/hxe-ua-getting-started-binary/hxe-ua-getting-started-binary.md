@@ -6,16 +6,16 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites
 - **Proficiency:** Beginner
-- **Tutorials:** [Installing Binary](http://www.sap.com/developer/tutorials/hxe-ua-installing-binary.html).
+- **Tutorials:** [Installing Binary](https://www.sap.com/developer/tutorials/hxe-ua-installing-binary.html).
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn
 How to configure the binary install of SAP HANA, express edition.
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
 ### Time to Complete
 **20 Min.**
 ---
@@ -180,7 +180,7 @@ Follow the eclipse installer prompts.
 
 Launch when prompted, or go to the eclipse folder (example: `C:\Users\<path>\eclipse\jee-neon`) and run the **eclipse** executable file.
 
-Follow the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html) to connect to your SAP HANA, express edition client machine.
+Follow the tutorial [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html) to connect to your SAP HANA, express edition client machine.
 
 
 [ACCORDION-END]
@@ -288,7 +288,45 @@ The SAP HANA External Machine Learning Library is an application function librar
 
     For more information on the SAP HANA External Machine Learning Library, see the SAP HANA documentation collection.    
 
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Optional: ](Installing SAP HANA Smart Data Integration)]
+
+Install the SAP HANA client package and SAP HANA smart data integration on an SAP HANA, express edition system.
+
+You need to run a script and an installer executable to complete the necessary steps to install SAP HANA smart data integration. The script enables the Data Provisioning Server on SAP HANA, express edition, as well as deploys the data provisioning delivery unit that enables monitoring and other capabilities. The installer executable that you run installs the Data Provisioning Agent that provides connectivity between SAP HANA, express edition and your remote data sources.
+
+> **Note:** The current version of SAP HANA, express edition supports only one Data Provisioning Agent per machine.
+
+1. Use the Download Manager to download the SAP HANA smart data integration installation package, `sdi.tgz`.
+
+2. Extract the contents of `sdi.tgz` and `dpagent_linux_x86_64.tgz` to a temporary directory.
+
+3. Run `HANA_EXPRESS_20/install_sdi.sh` as `hxeadm`.
+
+    This enables the DP Server on HANA and deploys the monitoring delivery unit.
+
+4. To install the Data Provisioning Agent, run:
+
+    ```bash
+    <extract_directory>/HANA_EXPRESS_20/DATA_UNITS/HANA_DP_AGENT_20_LIN_X86_64/hdbinst
+    ```
+
+    You are prompted to supply the following information (default values are given):
+
+    - Installation path [`/usr/sap/dataprovagent`]
+
+    - Enter User name for Agent service (user must exist)
+
+    - Enter Agent Listener Port [5050]
+
+    - Enter Agent Administration Port [5051]
+
+    - Enter Shared directory for Agent Group (optional)
+
+    - Enter Custom JRE directory (to use bundled JRE, leave it blank)
+
+5. The SAP JVM is bundled with the Data Provisioning Agent and used as the default Java Runtime Environment. You can choose to update the version of the SAP JVM used by an installed agent, or replace it with a custom Java Runtime Environment.    
 
 [ACCORDION-END]
 
@@ -312,4 +350,4 @@ If you are using SAP HANA 2.0, express edition in a language other than English 
 [ACCORDION-END]
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

@@ -1,21 +1,17 @@
 ---
-title: Collect user feedback in BUILD
-description: Send your application your team to collect and review feedback from BUILD
+title: Collect user feedback in SAP Build
+description: Send your application to your team to collect and review feedback from SAP Build.
+auto_validation: false
 primary_tag: products>build>build
 tags: [  tutorial>beginner, products>build>build ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Create a BUILD Prototype](http://www.sap.com/developer/tutorials/build-create-prototype.html)
-
-
-## Next Steps
- - [Import your BUILD Project into Web IDE](http://www.sap.com/developer/tutorials/build-import-webide.html)
-
 ## Details
 ### You will learn  
-Gain user feedback on your prototype. Create questions to see if the application flow is intuitive, collect feedback and feelings from screens, and analyze your results from your users to see what features you should keep and what features might need to be rethought.
+  - Gain user feedback on your prototype.
+  - Create questions to see if the application flow is intuitive.
+  - Collect feedback and feelings about screens.
+  - Analyze results from your users to see what features you should keep and what features might need to be rethought.
 
 
 ### Time to Complete
@@ -32,7 +28,7 @@ Give the study a **name**, such as _User Feedback_. Click **Save and Go to Feedb
 
  ![new study form](2.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add a new question)]
@@ -74,7 +70,7 @@ Choices:
 Click **Done**.
 
 
-
+[DONE]
 [ACCORDION-END]
 
 
@@ -89,7 +85,7 @@ This will start the survey in preview mode. No responses will recorded from this
 
 ![Study start page](9.png)
 
-
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Publish your study)]
@@ -109,7 +105,7 @@ Once you publish, you will have a shareable link. **Copy the link** and click **
 
 Send out the link to your intended audience to collect feedback. You can fill out your own survey to have some sample feedback in your application.
 
-
+[VALIDATE_4]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Provide feedback)]
@@ -147,13 +143,13 @@ You have finished your survey! You can always go back and edit the feedback your
 
 ![study complete screen](16.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Review feedback responses)]
-Once your users provide feedback, you can explore their responses. To review feedback, select **Feedback** from the BUILD main menu top bar. Click on your survey named **User Feedback**.
+Once your users provide feedback, you can explore their responses. To review feedback, select **Feedback** from the SAP Build main menu top bar. Click on your survey named **User Feedback**.
 
-![Feedback link on build page](20.png)
+![Feedback link on SAP Build page](20.png)
 
 This will load the feedback analytics. You can see how many people participated, how long it took for them to complete the survey, and how many questions they answered. You can drill into individual question stats as well.
 
@@ -168,11 +164,5 @@ Review your user's feedback and make adjustments as necessary before creating yo
 ![specific question feedback for question 2](23.png)
 
 
-
+[VALIDATE_6]
 [ACCORDION-END]
-
-
-
-
-## Next Steps
-- [Import your BUILD Project into Web IDE](http://www.sap.com/developer/tutorials/build-import-webide.html)

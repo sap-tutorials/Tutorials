@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - [Working with Document Store Engine in SAP Vora](http://www.sap.com/developer/tutorials/vora-cal-zeppelin7.html)
+ - [Working with Document Store Engine in SAP Vora](https://www.sap.com/developer/tutorials/vora-cal-zeppelin7.html)
 
 
 ## Next Steps

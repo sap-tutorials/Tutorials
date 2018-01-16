@@ -10,7 +10,7 @@ In this tutorial, you will install the dependencies needed and configure your Re
 
 Then you will learn how to download the binary installer archives of SAP HANA 2.0, express edition, decompress and install it on your server, including some additional packages for your SAP HANA 2.0, express edition installation.
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
 
 > ### **Note:**
 >**This tutorial was build and tested using SAP HANA, express edition 2.0 SPS02 revision 21 and Red Hat Enterprise Linux 7.2 for `x86-64` as VMware Virtual Machine**.
@@ -111,9 +111,8 @@ grep -c ^processor /proc/cpuinfo
 
 In order to install and run SAP HANA, express edition on a Red Hat Enterprise Linux (RHEL) operating system, the following additional Red Hat software components must be installed via ***Red Hat Enterprise Linux for SAP HANA channel***:
 
-- Scalable File System Add-On (XFS).
 - `compat-sap-c++.so` package which is the `gcc-4.7 libstdc++` rebuilt for RHEL.
-- tuned profiles `sap-hana` and `sap-hana-vmware`
+- tuned profiles `sap-hana` (or `sap-hana-vmware`when used in a VMware environment)
 
 An overview of the ***Red Hat Enterprise Linux for SAP HANA Subscription*** is available here:
 
@@ -193,11 +192,11 @@ rpm -qa --queryformat '(%{installtime:date}) %{name} %{version}\n' glibc
 
 You will need to install the following additional packages:
 
-|-------------------|-----------------|-------------------|-------------------------|
-|xulrunner 					| sudo 						| libssh2 					| expect 									|
-|graphviz 					| iptraf-ng 			| krb5-workstation 	| libpng12 								|
-|nfs-utils 					| lm_sensors 			| openssl 					| PackageKit-gtk3-module 	|
-|libcanberra-gtk2 	| xorg-x11-xauth 	| numactl 					| bind-utils 							|
+|-----------------------|-------------------|-------------------|---------------------------|
+|`xulrunner` 			|`sudo` 			|`libssh2` 			|`expect` 					|
+|`graphviz` 			|`iptraf-ng` 		|`krb5-workstation` |`libpng12` 				|
+|`nfs-utils` 			|`lm_sensors` 		|`openssl` 			|`PackageKit-gtk3-module` 	|
+|`libcanberra-gtk2` 	|`xorg-x11-xauth` 	|`numactl` 			|`bind-utils`				|
 
 From your terminal console, execute the following command:
 
@@ -448,9 +447,9 @@ Some of the changes applied requires a restart of the system to fully take effec
 
 [ACCORDION-BEGIN [Step 4: ](Register for SAP HANA, express edition)]
 
-Go to the registration page at http://sap.com/sap-hana-express published on the SAP site.
+Go to the registration page at https://www.sap.com/sap-hana-express published on the SAP site.
 
-Alternately, you can go to the SAP HANA, express edition launch page at http://www.sap.com/developer/topics/sap-hana-express.html published on SAP site and click the Register and download SAP HANA, express edition download manager link.
+Alternately, you can go to the SAP HANA, express edition launch page at https://www.sap.com/developer/topics/sap-hana-express.html published on SAP site and click the Register and download SAP HANA, express edition download manager link.
 
 Complete the registration form and click the Register button. The Registration Success page displays. You will also receive an email indicating successful registration.
 
@@ -698,7 +697,7 @@ The ***SAP HANA HDB Client*** software package includes the following connectivi
  - SQLDBC
  - ODBC
  - JDBC
- - Python (PyDBAPI)
+ - Python (`PyDBAPI`)
  - Node.js
  - Ruby
 

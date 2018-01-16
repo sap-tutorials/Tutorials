@@ -1,7 +1,7 @@
 ---
 
-title: Continuous Integration (CI) Best Practices with SAP: Pipeline Suggestions
-description: Part 2.2: Patterns for a CI/CD pipeline.
+title: Continuous Integration (CI) Best Practices with SAP – Pipeline Suggestions
+description: Part 2.2 – Patterns for a CI/CD pipeline.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
@@ -10,21 +10,21 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Prerequisites
 
   - **Proficiency:** Intermediate
-  - [CI/CD Practices](http://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)
-  
+  - [CI/CD Practices](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)
+
 ## Next Steps
- 
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-  
+
+  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+
 ---
 
 
-The practices described in the part [CI/CD Practices](http://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html) are a good starting point for planning your delivery pipeline. But how can they be translated into a concrete Continuous Delivery (CD) landscape? Which components are needed and how does the overall CD process look like?
+The practices described in the part [CI/CD Practices](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html) are a good starting point for planning your delivery pipeline. But how can they be translated into a concrete Continuous Delivery (CD) landscape? Which components are needed and how does the overall CD process look like?
 
 
 ### CI/CD pipeline
 
-The recommended process flow starts with the change by a developer. This change is targeted to the main line in the source code management system. As outlined already in the [CI/CD Practices](http://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html) part, it is highly recommended to implement a voter build including automatic tests as a gate keeper. This helps you to discover issues before they reach the main line.
+The recommended process flow starts with the change by a developer. This change is targeted to the main line in the source code management system. As outlined already in the [CI/CD Practices](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html) part, it is highly recommended to implement a voter build including automatic tests as a gate keeper. This helps you to discover issues before they reach the main line.
 
 When the change has passed the voter build and tests, it is merged into the main line. As a precondition for a merge, applying a 4-eyes principle by doing code reviews is a common practice. Gerrit for, example collects, feedback of human code reviewers together with voter build and test results in one common place as a prerequisite for the merge.
 
@@ -100,7 +100,7 @@ Now we have reached the point from where on the sequel processes differ in the t
 
 We assume that the successfully built artifact still requires additional acceptance tests, which may include both automatic and manual parts but which are in general too exhaustive to be executed within the CI build.
 
-The upload to the artifact repository has similar as in the case of the voter build the sole purpose to temporarily store the artifact for being fetched by sequel process steps. 
+The upload to the artifact repository has similar as in the case of the voter build the sole purpose to temporarily store the artifact for being fetched by sequel process steps.
 
 
 #### Acceptance Test
@@ -124,8 +124,8 @@ The following list gives you an idea of what could be part of a full-fledged qua
   - Security scans and IP scans (these usually operate on sources and hence could be part of the CI build)
   - Translation
   - Artifact signing
-  
-A software version that has successfully passed the acceptance test is ready to be instantly deployed to the productive system. 
+
+A software version that has successfully passed the acceptance test is ready to be instantly deployed to the productive system.
 
 
 #### The Release
@@ -149,12 +149,11 @@ What concerns the developer and the application operator, so-called DevOps appro
 
 When discussing the concrete setup of CI process landscapes for specific SAP technologies, we will also see aspects to be covered that were not yet part of the rather prototype-like process landscape just described.
 
-Finally, any CD process must fit to the individual needs of the development team and the technological boundary conditions. We will explain later in [part 4: CI/CD Process Setup](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html) how these aspects influence the design of the CI process and how this leads to adaptations of the prototype landscape.
+Finally, any CD process must fit to the individual needs of the development team and the technological boundary conditions. We will explain later in [part 4: CI/CD Process Setup](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html) how these aspects influence the design of the CI process and how this leads to adaptations of the prototype landscape.
 
 What was discussed here so far is the process for integration into the main line. But as we have learned in section "Everything is under version control", it is possible to apply the process for feature branches as well. All what was said before applies to this case except that the "release" is not implemented as deployment into the production system but as push of the bundled changes made to the feature branch into the main line.
 
 
 ## Next Steps
- 
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-  
+
+  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

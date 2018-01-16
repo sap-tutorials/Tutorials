@@ -11,11 +11,11 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
  - **Tutorials:** [Add API Business Hub API to a UI5 Application](https://www.sap.com/developer/tutorials/hcp-abh-api-ui5-app.html)
 
 ## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
-In this tutorial, you will explore some of the new features that are part of the SAP Web IDE Multi-Cloud Version. Learn how to use the SAP API Business Hub services catalog that is available out of the box in this version of Web IDE. Create and run an SAPUI5/Fiori Application.
+In this tutorial, you will explore some of the new features that are part of the SAP Web IDE Multi-Cloud Version. Learn how to use the SAP API Business Hub services catalog that is available out of the box in this version of Web IDE. Create and run an SAPUI5/Fiori Application. 
 
 ### Time to Complete
 **15 Min**
@@ -146,4 +146,4 @@ When your application loads, you will see a list of employee names and emails pu
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

@@ -25,11 +25,11 @@ For more content on SAPUI5, you can check the dedicated <a href="https://sapui5.
 
 [ACCORDION-BEGIN [Step 1: ](Create your destination)]
 
-Log into the <a href="http://account.hanatrial.ondemand.com/cockpit" target="new"><b>SAP Cloud Platform Cockpit</b></a> with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit</b></a> with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial*) as highlighted on the below screenshot.
 
-![SAP HANA Cloud Platform Cockpit](01.png)
+![SAP Cloud Platform Cockpit](01.png)
 
 On the left side bar, you can navigate in **Connectivity** > **Destinations**.
 
@@ -49,8 +49,8 @@ Description          | `SAP HANA XS OData Movielens services`
 URL                  | your SAP HANA XS OData URL
 Proxy Type           | `Internet`
 Authentication       | `BasicAuthentication`
-User                 | `TRIAL`
-Password             | `Welcome17Welcome17`
+User                 | `MOVIELENS_USER`
+Password             | `Welcome18Welcome18`
 
 > ### **Note**:
 >**Make sure you paste your SAP HANA XS OData URL from the last tutorial in the URL field.**
@@ -148,11 +148,18 @@ You should now have one entry in your ***OData Service*** list.
 
 ![Project](15.png)
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Add your data source as default model)]
+
 Now, select ***Models*** and click on the ![plus](0-plus.png) icon.
 
-Select "***Select data source***" radio, then pick ***`data.xsodata`***, check the ***Set as default model for the application***.
-
 ![Project](16.png)
+
+Select ***Select data source*** radio, then pick ***`data.xsodata`***, check the ***Set as default model for the application***.
+
+![Project](16-0.png)
 
 Then click on ***OK***.
 
@@ -167,7 +174,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Update the default view: demo.view.xml)]
+[ACCORDION-BEGIN [Step 6: ](Update the default view: demo.view.xml)]
 
 The default view created is located in `webapp/view/demo.view.xml`. We will update the view to prepare for the next steps.
 
@@ -182,7 +189,7 @@ Open the `webapp/view/demo.view.xml` file and replace the existing code with the
         <content>
           <List itemPress="onDetailListItemPress">
             <items>
-              <StandardListItem title="Collaborative Filtering" type="Navigation" custom:to="detail_collaborativer"/>
+              <StandardListItem title="Collaborative Filtering" type="Navigation" custom:to="detail_collaborative"/>
               <StandardListItem title="Content-based Filtering" type="Navigation" custom:to="detail_contentbased"/>
             </items>
           </List>
@@ -190,10 +197,10 @@ Open the `webapp/view/demo.view.xml` file and replace the existing code with the
       </Page>
     </masterPages>
     <detailPages>
-      <Page id="detail" title="Moveilen Recommendation">
+      <Page id="detail" title="Moveilens Recommendation">
         <content></content>
       </Page>
-      <Page id="detail_collaborativer" title="Collaborative Filtering">
+      <Page id="detail_collaborative" title="Collaborative Filtering">
         <content>
           <!--<mvc:XMLView viewName="mlmovielens.view.collaborative"/>-->
         </content>
@@ -213,7 +220,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Update the default controller: demo.controller.js)]
+[ACCORDION-BEGIN [Step 7: ](Update the default controller: demo.controller.js)]
 
 The default controller is located in `webapp/controller/demo.controller.js`. We will update the view to prepare for the next steps.
 
@@ -271,9 +278,9 @@ This will open a web page with the following content:
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-06/movielens/webapp/manifest.json" target="new">```manifest.json```</a>
-  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-06/movielens/webapp/controller/demo.controller.js" target="new">```webapp/controller/demo.controller.js```</a>
-  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-06/movielens/webapp/view/demo.view.xml" target="new">```webapp/view/demo.view.xml```</a>
+  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-06/movielens/webapp/manifest.json" target="new">`manifest.json`</a>
+  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-06/movielens/webapp/controller/demo.controller.js" target="new">`webapp/controller/demo.controller.js`</a>
+  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-06/movielens/webapp/view/demo.view.xml" target="new">`webapp/view/demo.view.xml`</a>
 
 The complete project can be found on SAP Tutorial public <a href="https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/cp-hana-aa-movielens-06/movielens" target="new">GitHub repository</a>.
 

@@ -7,14 +7,14 @@ tags: [ products>sap-cloud-platform, topic>cloud, topic>mobile, tutorial>interme
 ## Prerequisites  
 - **Proficiency:** Intermediate
 - **Tutorials:**
-- [Enable SAP Cloud Platform mobile services for development and operations](http://www.sap.com/developer/tutorials/hcpms-enable-mobile-services.html)
+- [Enable SAP Cloud Platform mobile services for development and operations](https://www.sap.com/developer/tutorials/hcpms-enable-mobile-services.html)
 - You must have completed at least the three tutorials below in the Web IDE series:  
-- [Create a Destination on SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
-- [Build an app from an SAP Web IDE template](http://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
-- [Deploy your mobile web app to SAP Cloud Platform](http://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
+- [Create a Destination on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-destination.html)
+- [Build an app from an SAP Web IDE template](https://www.sap.com/developer/tutorials/hcp-template-mobile-web-app.html)
+- [Deploy your mobile web app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-deploy-mobile-web-app.html)
 
 ## Next Steps
-- [Configure an SAP Web IDE project for hybrid builds](http://www.sap.com/developer/tutorials/hcpms-webide-hybrid-config.html)
+- [Configure an SAP Web IDE project for hybrid builds](https://www.sap.com/developer/tutorials/hcpms-webide-hybrid-config.html)
 
 ## Details
 ### You will learn  
@@ -115,4 +115,4 @@ You have successfully created the application in Development & Operations. Click
 
 
 ## Next Steps
-- [Configure an SAP Web IDE project for hybrid builds](http://www.sap.com/developer/tutorials/hcpms-webide-hybrid-config.html)
+- [Configure an SAP Web IDE project for hybrid builds](https://www.sap.com/developer/tutorials/hcpms-webide-hybrid-config.html)

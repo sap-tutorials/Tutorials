@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-clo
 
 
 ## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -110,11 +110,22 @@ Add the following import statement:
 import SAPFiori
 ```
 
+Then, add the following fields:
+
+```swift
+var searchController: FUISearchController?
+var scannedBarcodes: [String] = []
+var filteredBarcodes: [String] = []
+var isFiltered: Bool = false
+```
+
 Next, have the class implement `UISearchResultsUpdating` which be used to update search results.
 
 If you now build the project, it will throw an error stating:
 
 > `type 'ScannerTestController' does not conform to protocol 'UISearchResultsUpdating'`
+
+.
 
 This is because we haven't implemented this protocol's method `updateSearchResults(for searchController:)` yet. Add the following method:
 
@@ -240,4 +251,4 @@ And it also works with QR codes:
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

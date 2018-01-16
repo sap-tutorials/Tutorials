@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Using Exception Handling](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-exception.html)
+- **Tutorials:** [Using Exception Handling](https://www.sap.com/developer/tutorials/xsa-sqlscript-trans-exception.html)
 
 ## Next Steps
-- [Using Autonomous Transactions](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)
+- [Using Autonomous Transactions](https://www.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)
 
 ## Details
 ### You will learn  
@@ -126,4 +126,4 @@ As you can see not only was the new record inserted into the `log.errors` table,
 
 
 ## Next Steps
-- [Using Autonomous Transactions](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)
+- [Using Autonomous Transactions](https://www.sap.com/developer/tutorials/xsa-sqlscript-trans-autonomous.html)

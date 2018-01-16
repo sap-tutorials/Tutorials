@@ -1,6 +1,6 @@
 ---
 title: Working with SAP HANA data source
-description: SAP Vora 1.4: The SAP HANA data source provides a pluggable mechanism for accessing data stored in SAP HANA from a Spark-based environment through Spark SQL
+description: The SAP HANA data source provides a pluggable mechanism for accessing data stored in SAP HANA from a Spark-based environment through Spark SQL (SAP Vora 1.4).
 primary_tag: products>sap-vora
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---

@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>abap-development, products>sap-hana ]
 ## Prerequisites  
  - **Proficiency:** Beginner | Intermediate | Advanced
  - Create an account in a Cloud Provider and generate an access key in Amazon Web Services or a Subscription ID in Microsoft Azure, depending on your choice. Check [this FAQ wiki for more information on AWS](https://wiki.scn.sap.com/wiki/display/SAPCAL/FAQ+-+Specific+questions+for+Amazon+Web+Services)
- - Create an account in the [Cloud Appliance Library ](cal.sap.com)
+ - Create an account in the [Cloud Appliance Library ](https://cal.sap.com/)
  - OPTIONAL: Download and install SAP GUI 7.40 from the [SAP Software Download Center](https://launchpad.support.sap.com/#/softwarecenter).
 
 

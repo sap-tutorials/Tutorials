@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 Update SAP HANA 2.0, express edition when new support packages and patches are released. Upgrading is supported only for SAP HANA, express edition 2.0 (SP 00 onward). Upgrading from SAP HANA, express edition 1.0 SP 12 is not supported.
@@ -25,11 +25,17 @@ Update SAP HANA 2.0, express edition when new support packages and patches are r
 
 [ACCORDION-BEGIN [Step 1: ](Download Updated Packages)]
 
-Using the VM's built-in Download Manager (console mode), download the **binary** server-only package (`hxe.tgz`). If the installation you are updating has the Applications package, download the applications package (`hxexsa.tgz`) as well.
+Log in as `hxeadm`. Depending on your version of SAP HANA, express edition, you will either use the built-in update utility, or download the new versions of SAP HANA, express edition through the Download Manager. Your primary choice should be the built-in update utility.
 
-```
-HXEDownloadManager_linux.bin linuxx86_64 installer hxe.tgz hxexsa.tgz
-```
+* Check the VM's built-in update utility. It can be found in the `home/bin` directory. Follow the prompts to download the new files. By default, they will be downloaded to `/usr/sap/HXE/home/Downloads`. The downloaded files will be `hxe.tgz`, and `hxexsa.tgz` for Applications if applicable.
+
+* Check the VM's built-in update utility found in the `~/home/bin` directory. Depending on your VM, use either `HXECheckUpdate_linux.bin` for `Linux x86-64`, and `HXECheckUpdate.jar` for `Linux PPC64`. Follow the prompts to download the new files. By default, they will be downloaded to `~/usr/sap/HXE/home/Downloads`. The downloaded files will be `hxe.tgz`, and `hxexsa.tgz` for Applications if applicable.
+
+    ```
+    HXECheckUpdate_linux.bin -a
+    ```
+
+* If you do not have the update utility, use the Download Manager. Select **Binary Installer** and download the latest files for `hxe.tgz` (server-only), and `hxexsa.tgz` (Applications) if applicable.
 
 
 [ACCORDION-END]
@@ -80,4 +86,4 @@ Follow the prompts to complete the server update.
 ---
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

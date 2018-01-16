@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-businessobjects-lumira ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Download and install SAP BusinessObjects Lumira](http://www.sap.com/developer/tutorials/lumira-install.html)
+- **Tutorials:** [Download and install SAP BusinessObjects Lumira](https://www.sap.com/developer/tutorials/lumira-install.html)
 
 ## Next Steps
-- [Initial data exploration in SAP BusinessObjects Lumira](http://www.sap.com/developer/tutorials/lumira-initial-data-exploration.html)
+- [Initial data exploration in SAP BusinessObjects Lumira](https://www.sap.com/developer/tutorials/lumira-initial-data-exploration.html)
 
 ## Details
 ### You will learn  
@@ -38,7 +38,7 @@ You can also press `Ctrl+N`.
 
 Create a new Dataset by selecting **Microsoft Excel** as a source, pressing **Next**, and then selecting `BestRunCorp_Retail.xlsx` file from the your user's directory `…\Documents\SAP Lumira Documents\Samples\`. SAP BusinessObjects Lumira installation comes with a few sample files, and this MS Excel file with data is just one of them.
 
-> If for any reason you do not have that file or that directory in your local installation, then download [`BestRunCorp_Retail.xlsx`](./BestRunCorp_Retail.xlsx) file.
+> If for any reason you do not have that file or that directory in your local installation, then download [`BestRunCorp_Retail.xlsx`](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/lumira-initial-data-acquisition/BestRunCorp_Retail.xlsx) file.
 
 ![Adding the first dataset from MS Excel to the new document in SAP BusinessObjects Lumira](Lum01-02.png)
 
@@ -91,4 +91,4 @@ Save the current document locally at your computer as `Tutorial1`.
 
 
 ## Next Steps
-- [Initial data exploration in SAP BusinessObjects Lumira](http://www.sap.com/developer/tutorials/lumira-initial-data-exploration.html)
+- [Initial data exploration in SAP BusinessObjects Lumira](https://www.sap.com/developer/tutorials/lumira-initial-data-exploration.html)

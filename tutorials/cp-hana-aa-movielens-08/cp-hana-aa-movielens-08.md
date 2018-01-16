@@ -1,5 +1,5 @@
 ---
-title: Display your Content-based Filtering results in SAPUI5
+title: Display your Content-based Filtering results
 description: Understand and implement some of the options available with SAP HANA to refresh your models and expose your results
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -22,11 +22,11 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
-Log into the <a href="http://account.hanatrial.ondemand.com/cockpit" target="new"><b>SAP Cloud Platform Cockpit</b></a> with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit</b></a> with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 Click on your ***SAP Cloud Platform Account Name*** as highlighted on the below screenshot.
 
-![SAP HANA Cloud Platform Cockpit](01.png)
+![SAP Cloud Platform Cockpit](01.png)
 
 On the left side bar, you can navigate in **Services**, then using the search box enter `Web IDE`.
 
@@ -269,7 +269,7 @@ Open the `webapp/view/contentbased.view.xml` file and add the following code:
   </Panel>
   <Panel headerText="Recommendations With APL" expandable="true" expanded="true">
     <table:Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="recommendation_apl"
-      rows="{ path: '/APL_MODEL_ITEMS_RESULTS'}">
+      rows="{ path: '/APL_RECO_MODEL_ITEMS_RESULTS'}">
       <table:columns>
         <table:Column sortProperty="SIMILAR_MOVIEID" width="10%">
           <Label text="Similar Movie ID"/>
@@ -309,7 +309,7 @@ Open the `webapp/view/contentbased.view.xml` file and add the following code:
   </Panel>
   <Panel headerText="Recommendations With PAL" expandable="true" expanded="true">
     <table:Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="recommendation_pal"
-      rows="{ path: '/PAL_MODEL_ITEMS_RESULTS'}">
+      rows="{ path: '/PAL_APRIORI_MODEL_ITEMS_RESULTS'}">
       <table:columns>
         <table:Column sortProperty="SIMILAR_MOVIEID" width="10%">
           <Label text="Similar Movie ID"/>
@@ -373,7 +373,7 @@ Edit the `demo.view.xml` file located in the `webapp/view`.
 Inside the `<detailPages>` element, remove the XML comment tag for the view by replacing this:
 
 ```xml
-<!--vc:XMLView viewName="mlmovielens.view.contentbased"/-->
+<!--<mvc:XMLView viewName="mlmovielens.view.contentbased"/>-->
 ```
 by this:
 
@@ -411,9 +411,9 @@ Provide an answer to the question below then click on **Validate**.
 
 In case you are having problems when running the application, please find bellow the created and modified files:
 
-  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-08/movielens/webapp/controller/contentbased.controller.js" target="new">```webapp/controller/contentbased.controller.js```</a>
-  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-08/movielens/webapp/view/contentbased.view.xml" target="new">```webapp/view/contentbased.view.xml```</a>
-  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-08/movielens/webapp/view/demo.view.xml" target="new">```webapp/view/demo.view.xml```</a>
+  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-08/movielens/webapp/controller/contentbased.controller.js" target="new">`webapp/controller/contentbased.controller.js`</a>
+  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-08/movielens/webapp/view/contentbased.view.xml" target="new">`webapp/view/contentbased.view.xml`</a>
+  - <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-hana-aa-movielens-08/movielens/webapp/view/demo.view.xml" target="new">`webapp/view/demo.view.xml`</a>
 
 The complete project can be found on the SAP Tutorial public <a href="https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/cp-hana-aa-movielens-08/movielens" target="new">GitHub repository</a>.
 

@@ -8,10 +8,10 @@ tags: [  tutorial>beginner, products>sap-s-4hana ]
  - **Proficiency:** Beginner
  - **Tutorials:**
  - [Core Data  Services](https://www.sap.com/developer/tutorials/s4hana-cds-associations.html)
- - [Preparing views for Associations/Joins](http://www.sap.com/developer/tutorials/s4hana-cds-preparing-views-associations.html)
+ - [Preparing views for Associations/Joins](https://www.sap.com/developer/tutorials/s4hana-cds-preparing-views-associations.html)
 
 ## Next Steps
-[Creating OData-Service based on `CDS-view`](http://www.sap.com/developer/tutorials/s4hana-cds-creating-odata-service.html)
+[Creating OData-Service based on `CDS-view`](https://www.sap.com/developer/tutorials/s4hana-cds-creating-odata-service.html)
 
 
 ## Details

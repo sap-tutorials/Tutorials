@@ -1,5 +1,5 @@
 ---
-title: S/4HANA ABAP Extensibility - Implementing logic for a Custom Business Object (Bonus Plan)
+title: Implement logic for custom business object (S4/HANA Cloud, ABAP Extensibility)
 description: Implement custom business object logic to control your application
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-
  - **Authorizations:** Your user needs a business role with business catalog **Extensibility** (ID: `SAP_CORE_BC_EXT`)
 
 ## Next Steps
- - [Adapting the UI of a Custom Business Object](https://www.sap.com/developer/tutorials/abap-extensibility-cbo-ui-adaptation.html)
+  - [Adapting the UI of a Custom Business Object](https://www.sap.com/developer/tutorials/abap-extensibility-cbo-ui-adaptation.html)
 
 ## Details
 
@@ -154,8 +154,8 @@ On top of the coding you can maintain runtime data for the current node structur
 | `targetamount_c` | `EUR` |
 | `lowbonusassignmentfactor` | `1` |
 | `highbonusassignmentfactor` | `3` |
-| `lowbonuspercentage` | `10` |
-| `highbonuspercentage` | `20` |
+| `lowbonuspercentage_v` | `10` |
+| `highbonuspercentage_v` | `20` |
 | `employeeid` | `<any>` |
 
 `employeeid` `<any>` shall be the one of a sales person that created sales orders with a Net Amount of more than 3000.00 EUR in 2016 and that are completed.
@@ -265,5 +265,3 @@ Once ensured that both logic implementations were successfully published you can
 
 [ACCORDION-END]
 ---
-## Next Steps
- - [Adapting the UI of a Custom Business Object](https://www.sap.com/developer/tutorials/abap-extensibility-cbo-ui-adaptation.html)

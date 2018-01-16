@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-s-4hana ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Creating basic/interface views in Open Core Data Services ](http://www.sap.com/developer/tutorial-navigator.html)
+ - **Tutorials:** [Creating basic/interface views in Open Core Data Services ](https://www.sap.com/developer/tutorial-navigator.html)
 
 ## Next Steps
-[Preparing view association based on consumption view. ](http://www.sap.com/developer/tutorials/s4hana-cds-preparing-views-associations.html)
+[Preparing view association based on consumption view. ](https://www.sap.com/developer/tutorials/s4hana-cds-preparing-views-associations.html)
 
 
 ## Details
@@ -71,7 +71,7 @@ First, insert a new line after line 4 with the following text:
 Insert a  new line after line 5 with the following text:
    `@OData.publish: true`
 
-![Enhancement consumption view with OData annotation ](BuildConsumptionView7_Enhance_ODataAnnotation.png)
+![Enhancement consumption view with OData annotation ](BuildConsumptionView7_Enhance_OdataAnnotation.png)
 
 Finally,  save the changes.
 

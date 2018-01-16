@@ -1,15 +1,15 @@
 ---
 title: Using a HANA Reference Element in a Smart Data Streaming project
 description: Part 4 of 9. Add a HANA Reference element and using a Join operator to combine reference and streaming data.
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-hana-studio ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Filter and Output to SAP HANA Table in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part3-simplefilter-hanatable.html)
+ - **Tutorials:** [Filter and Output to SAP HANA Table in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part3-simplefilter-hanatable.html)
 
 ## Next Steps
- - **Tutorials:** [Using an Aggregate Window in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part5-add-aggregate-window.html)
+ - **Tutorials:** [Using an Aggregate Window in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part5-add-aggregate-window.html)
 
 ## Details
 ### You will learn  
@@ -100,4 +100,4 @@ tags: [ tutorial>beginner, products>sap-hana-smart-data-streaming, products>sap-
 
 
 ## Next Steps
- - **Tutorials:** [Using an Aggregate Window in SAP HANA Smart Data Streaming](http://www.sap.com/developer/tutorials/sds-part5-add-aggregate-window.html)
+ - **Tutorials:** [Using an Aggregate Window in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part5-add-aggregate-window.html)

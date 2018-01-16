@@ -17,7 +17,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 - Based on the statistical assessment, identity what algorithm options are available
 
 ### Time to Complete
-**20 Min**
+**30 Min**
 
 [ACCORDION-BEGIN [Info: ](Recommendation Systems)]
 
@@ -98,9 +98,8 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 ![SAP HANA Web-based Development Workbench](02.png)
 
 > ### **Note**
->**Make sure the currently connected user is TRIAL and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
+>**Make sure the currently connected user is `MOVIELENS_USER` and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
 >
->For each of the next steps, you can decide to open a new **SQL Console** using the ![sql](0-opensqlconsole.png) icon from the menu or reuse the same one by replacing its current over and over.
 
 &nbsp;
 
@@ -108,16 +107,21 @@ First, let's count the rows in each table.
 
 Open a new **SQL Console** using the ![sql](0-opensqlconsole.png) icon from the menu or reuse an existing one.
 
+> ### **Note**
+>For each of the next steps, you can decide to open a new **SQL Console** using the ![sql](0-opensqlconsole.png) icon from the menu or reuse the same one by replacing its current over and over.
+
+&nbsp;
+
 Paste the following content in the console, and use the execute icon ![run](0-run.png) from the menu.
 
 ```SQL
-select 'links'   as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.cds::data.LINKS"
+select 'links'   as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.hdb::data.LINKS"
 union all
-select 'movies'  as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.cds::data.MOVIES"
+select 'movies'  as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES"
 union all
-select 'ratings' as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+select 'ratings' as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
 union all
-select 'tags'    as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.cds::data.TAGS";
+select 'tags'    as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.hdb::data.TAGS";
 ```
 
 The result should be:
@@ -139,8 +143,212 @@ Therefore only the ratings will be analyzed here.
 
 [DONE]
 [ACCORDION-END]
+[ACCORDION-BEGIN [Step 2: ](Links - Check missing values)]
 
-[ACCORDION-BEGIN [Step 2: ](Ratings - Check the movie distribution)]
+As stated earlier, the link dataset only includes details to build URL to external web site.
+
+Let's verify that every movie has a corresponding link and vice-versa using the following SQL:
+
+```SQL
+select count(1)
+from "MOVIELENS"."public.aa.movielens.hdb::data.LINKSLINKS" l
+where not exists (select 1 from "MOVIELENS"."public.aa.movielens.hdb::data.LINKSMOVIES" m where l."MOVIEID" = m."MOVIEID")
+UNION ALL
+select count(1)
+from "MOVIELENS"."public.aa.movielens.hdb::data.LINKSMOVIES" m
+where not exists (select 1 from "MOVIELENS"."public.aa.movielens.hdb::data.LINKSLINKS" l where l."MOVIEID" = m."MOVIEID");
+```
+
+Based on the result, it seems that there is no movies without a link and vice-versa.
+
+So when building our application, we will be able to leverage these URL and enhance our user experience with external links.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Movies - Check the genres)]
+
+Just like with the links dataset, the movies dataset doesn't include any transaction kind of details that could be used directly to link users together.
+
+Only the ***genre*** column could be used to link movies together. By default the column comes as a pipe-separated list, which will require some transformation if we want to use it.
+
+Anyway, let's check if all movies have genres with the following SQL:
+
+```SQL
+SELECT COUNT(1)
+FROM "MOVIELENS"."public.aa.movielens.hdb::data.LINKSMOVIES"
+WHERE "GENRES" IS NULL OR LENGTH("GENRES")=0;
+```
+
+Based on the result, it seems that all movies have at least a genre.
+
+Now, let's get the list of genres used across our 9125 movies with the following SQL:
+
+```SQL
+DO
+BEGIN
+  DECLARE genreArray NVARCHAR(255) ARRAY;
+  DECLARE tmp NVARCHAR(255);
+  DECLARE idx INTEGER;
+  DECLARE sep NVARCHAR(1) := '|';
+  DECLARE CURSOR cur FOR SELECT DISTINCT "GENRES" FROM "MOVIELENS"."public.aa.movielens.hdb::data.LINKSMOVIES";
+  DECLARE genres NVARCHAR (255) := '';
+  idx := 1;
+  FOR cur_row AS cur() DO
+    SELECT cur_row."GENRES" INTO genres FROM DUMMY;
+    tmp := :genres;
+    WHILE LOCATE(:tmp,:sep) > 0 DO
+      genreArray[:idx] := SUBSTR_BEFORE(:tmp,:sep);
+      tmp := SUBSTR_AFTER(:tmp,:sep);
+      idx := :idx + 1;
+    END WHILE;
+    genreArray[:idx] := :tmp;
+  END FOR;
+
+  genreList = UNNEST(:genreArray) AS ("GENRE");
+  SELECT "GENRE" FROM :genreList GROUP BY "GENRE";
+END;
+```
+Here, I used the some of the SAP HANA *SQL Script* functions like `SUBSTR_BEFORE` & `SUBSTR_AFTER` to split the genre string into pieces.
+
+Based on the result returned by the above SQL statement, provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Movies - Get the movie count per genre)]
+
+Now let's get the number of movies associated with each genres by adjusting the previous SQL:
+
+```SQL
+DO
+BEGIN
+  DECLARE genreArray NVARCHAR(255) ARRAY;
+  DECLARE tmp NVARCHAR(255);
+  DECLARE idx INTEGER;
+  DECLARE sep NVARCHAR(1) := '|';
+  DECLARE CURSOR cur FOR SELECT DISTINCT "GENRES" FROM "MOVIELENS"."public.aa.movielens.hdb::data.LINKSMOVIES";
+  DECLARE genres NVARCHAR (255) := '';
+  idx := 1;
+  FOR cur_row AS cur() DO
+    SELECT cur_row."GENRES" INTO genres FROM DUMMY;
+    tmp := :genres;
+    WHILE LOCATE(:tmp,:sep) > 0 DO
+      genreArray[:idx] := SUBSTR_BEFORE(:tmp,:sep);
+      tmp := SUBSTR_AFTER(:tmp,:sep);
+      idx := :idx + 1;
+    END WHILE;
+    genreArray[:idx] := :tmp;
+  END FOR;
+
+  genreList = UNNEST(:genreArray) AS ("GENRE");
+  SELECT "GENRE", count(1) FROM :genreList GROUP BY "GENRE";
+END;
+```
+
+You can see that 18 distinct genres are used across the 9125 movies.
+
+Based on the result returned by the above SQL statement, provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_2]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Movies - Get the genre count per movie)]
+
+Now, let's get the number of genres associated with each movies using the following SQL:
+
+```SQL
+SELECT
+    "MOVIEID"
+  , "TITLE"
+  , OCCURRENCES_REGEXPR('[|]' IN GENRES) + 1 "GENRE_COUNT"
+  , "GENRES"
+FROM "MOVIELENS"."public.aa.movielens.hdb::data.LINKSMOVIES"
+ORDER BY "GENRE_COUNT" ASC;
+```
+
+You can see that many movies have only one genre.
+
+Using the above SQL statement, and changing the **order by** direction from **`ASC`** to **`DESC`**, provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_3]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Movies - Conclusion)]
+
+As seen in the previous step, there are many movies with only one genre.
+
+Let's count the movies per genre count using the following SQL:
+
+```SQL
+SELECT
+    "GENRE_COUNT"
+  , COUNT(1)
+FROM (
+  SELECT
+    OCCURRENCES_REGEXPR('[|]' IN "GENRES") + 1 "GENRE_COUNT"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.LINKSMOVIES"
+)
+GROUP BY "GENRE_COUNT" ORDER BY "GENRE_COUNT";
+```
+
+The result should be 2793 movies with one genre, which means almost a third of the movie set have one genre only.
+
+This means that these movies will be linked to another movie by at most one link, which will cause all relations between movies to be more or less equal in term of strength (the more links between nodes, the stronger the relationship is).
+
+You could also decide to simply exclude the movies with one genre and only keep the other but this would mean that you won't provide results for them which would require to address using an alternative approach.
+
+So, based on the elements gathered over the last steps, you can consider that the genre extracted from the movies on its own is not a good candidate to build a solid recommendation engine.
+
+Moreover, the genre data can only be used to address a content-based filtering approach.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Tags - Check the distribution)]
+
+Now let's have a look at the tags distribution using the following SQL:
+
+```SQL
+SELECT COUNT(1)
+FROM (
+  SELECT "MOVIEID", COUNT(1) as "TAG_COUNT"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.LINKSTAGS"
+  GROUP BY "MOVIEID"
+);
+```
+
+Only 689 movies have one or more tag.
+
+Now let's determine the tag count distribution per movies using the following SQL:
+
+```SQL
+SELECT "TAG_COUNT", COUNT(1)
+FROM (
+  SELECT "MOVIEID", COUNT(1) as "TAG_COUNT"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.LINKSTAGS"
+  GROUP BY "MOVIEID"
+)
+GROUP BY "TAG_COUNT" ORDER BY "TAG_COUNT";
+```
+
+You can notice that out of the 689 movies with at least a tag, you have 483 movies with only one tag.
+
+Based on the elements gathered over the last steps, you can consider that the tag dataset on its own is not a good candidate to build a solid recommendation engine.
+
+Also the tag data can only be used to address a content-based filtering approach.
+
+> **Idea**: you could eventually join the tags and the genres data together to expand the movie set coverage
+
+&nbsp;
+
+Using the results provided by the previous SQL statements, provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_4]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 8: ](Ratings - Check the movie distribution)]
 
 Now let's determine the rating count distribution per movies using the following SQL:
 
@@ -148,7 +356,7 @@ Now let's determine the rating count distribution per movies using the following
 SELECT "RATING_COUNT", COUNT(1) as "MOVIE_COUNT"
 FROM (
   SELECT "MOVIEID", COUNT(1) as "RATING_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
   GROUP BY "MOVIEID"
 )
 GROUP BY "RATING_COUNT" ORDER BY "RATING_COUNT" asc;
@@ -171,7 +379,7 @@ SELECT DISTINCT
   COUNT(*) OVER( ) AS "CATEGORY_COUNT"
 FROM (
   SELECT "MOVIEID", COUNT(1) as "RATING_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
   GROUP BY "MOVIEID"
 )
 GROUP BY "RATING_COUNT";
@@ -194,7 +402,7 @@ Using the results provided by the previous SQL statements, provide an answer to 
 [VALIDATE_5]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Ratings - Check the user distribution)]
+[ACCORDION-BEGIN [Step 9: ](Ratings - Check the user distribution)]
 
 Now let's determine the rating count distribution per user using the following SQL:
 
@@ -202,7 +410,7 @@ Now let's determine the rating count distribution per user using the following S
 SELECT "RATING_COUNT", COUNT(1) as "USER_COUNT"
 FROM (
   SELECT "USERID", COUNT(1) as "RATING_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
   GROUP BY "USERID"
 )
 GROUP BY "RATING_COUNT" ORDER BY 1 DESC;
@@ -223,7 +431,7 @@ SELECT DISTINCT
   COUNT(*) OVER( ) AS "CATEGORY_COUNT"
 FROM (
   SELECT "USERID", COUNT(1) as "RATING_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
   GROUP BY "USERID"
 )
 GROUP BY "RATING_COUNT" ORDER BY 1 DESC;
@@ -246,13 +454,13 @@ Using the results provided by the previous SQL statements, provide an answer to 
 [VALIDATE_6]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Ratings - Check the rating notation distribution)]
+[ACCORDION-BEGIN [Step 10: ](Ratings - Check the rating notation distribution)]
 
 Now let's determine the rating notation distribution using the following SQL:
 
 ```SQL
 SELECT "RATING", COUNT(1) as "RATING_COUNT"
-FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
 GROUP BY "RATING" ORDER BY 1 DESC;
 ```
 
@@ -276,7 +484,7 @@ Now let's determine the users distribution per rating notation using the followi
 ```SQL
 SELECT "RATING",  COUNT(1) as "USERS_COUNT" FROM (
   SELECT "USERID", "RATING", COUNT(1) as RATING_COUNT
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
   GROUP BY "USERID", "RATING"
 )
 GROUP BY "RATING" ORDER BY 1 DESC;
@@ -302,7 +510,7 @@ Now let's determine the movies distribution per rating notation using the follow
 ```SQL
 SELECT "RATING",  COUNT(1) as MOVIES_COUNT FROM (
   SELECT "MOVIEID", "RATING", COUNT(1) as RATING_COUNT
-  FROM "MOVIELENS"."public.aa.movielens.cds::data.RATINGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS"
   GROUP BY "MOVIEID", "RATING"
 )
 GROUP BY "RATING" ORDER BY 1 DESC;
@@ -328,7 +536,7 @@ Using the results provided by the previous SQL statements, provide an answer to 
 [VALIDATE_7]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Ratings - Conclusion)]
+[ACCORDION-BEGIN [Step 11: ](Ratings - Conclusion)]
 
 Here are a few insights that you can gather based on the previous results:
 
@@ -368,7 +576,7 @@ Again, we could eventually combine it to the tags and the genres and improve the
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Final conclusion)]
+[ACCORDION-BEGIN [Step 12: ](Final conclusion)]
 
 As a final conclusion, you can consider that the rating dataset on its own is the most promising candidate to build a  recommendation engine and despite some of the phenomenon assessed for the rating dataset.
 
@@ -393,4 +601,3 @@ However, while using this data will, you will need to pay attention to the follo
 
 [DONE]
 [ACCORDION-END]
-

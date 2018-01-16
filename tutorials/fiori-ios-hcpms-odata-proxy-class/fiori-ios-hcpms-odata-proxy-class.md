@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-clo
  - **SAP Cloud Platform SDK for iOS:** Version 2.0
 
 ## Next Steps
- - [Logging and Tracing](#)
+ - [Logging and Tracing](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-logging.html)
 
 ## Details
 ### You will learn  
@@ -191,7 +191,7 @@ public class DemoServiceMetadata {
 }
 ```
 
-Building upon the code you have added in the [Sample OData services](#) tutorial, in the `init` event hook, add the following code below the `let onlineODataProvider = ..etc..` line:
+Building upon the code you have added in the [Sample OData services](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sample-odata-service.html) tutorial, in the `init` event hook, add the following code below the `let onlineODataProvider = ..etc..` line:
 
 ```swift
 onlineODataProvider.prettyTracing = true
@@ -216,4 +216,4 @@ let users = try self.oDataService.users(query: query)
 ```
 
 ## Next Steps
- - [Logging and Tracing](#)
+ - [Logging and Tracing](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-logging.html)

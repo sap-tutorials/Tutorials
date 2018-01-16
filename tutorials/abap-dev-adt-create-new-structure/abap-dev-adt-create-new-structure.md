@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
-[Display database content and run SQL queries](http://www.sap.com/developer/tutorials/abap-display-data-queries.html)
+[Display database content and run SQL queries](https://www.sap.com/developer/tutorials/abap-display-data-queries.html)
 
 
 ## Next Steps

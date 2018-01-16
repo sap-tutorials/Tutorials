@@ -1,5 +1,5 @@
 ---
-title: Change from a mock server to live OData service
+title: Change from a mock server to live OData service for TechEd
 description: Connect to a live backend system for your application
 auto_validation: true
 primary_tag: topic>sapui5

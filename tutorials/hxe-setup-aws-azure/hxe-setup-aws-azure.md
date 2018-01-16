@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Next Steps
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
-- **XS Advanced:** [ Get started with XS Advanced development](http://www.sap.com/developer/topics/sap-hana-express.html)
+- **XS Advanced:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
 - **XS Advanced:** [Explore the basics tools in XS Advanced - like the administration cockpit and SAP Web IDE for SAP HANA](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
 
 ## Details
@@ -164,7 +164,7 @@ In order to change the XS Advanced users or if you want to check on the progress
 
       Run the following command in the terminal, replacing the `.pem` file, username and IP by the one in your virtual machine:
 
-      ```ssh
+      ```
       ssh -i /path/my-key-pair.pem root@vhcalhxedb
       ```
       ![SSH in Mac](ssh2.png)
@@ -253,5 +253,5 @@ The instances in the Cloud Appliance Library have additional applications pre-in
 
 ## Next Steps
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
-- **XS Advanced:** [ Get started with XS Advanced development](http://www.sap.com/developer/topics/sap-hana-express.html)
+- **XS Advanced:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
 - **XS Advanced:** [Explore the basics tools in XS Advanced - like the administration cockpit and SAP Web IDE for SAP HANA](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)

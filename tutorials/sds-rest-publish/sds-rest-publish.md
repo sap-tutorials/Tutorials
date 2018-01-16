@@ -1,8 +1,8 @@
 ---
 title: Publish events to SDS via the REST interface
 description: See how to publish input events to a streaming project via the http REST interface
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 
 ## Prerequisites  
@@ -10,10 +10,10 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-smar
  - **Tutorials:**  One of the following:
  - [Run and Test a streaming project](https://www.sap.com/developer/tutorials/sds-run-test.html)
  - [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-event-stream-alerts.html)
- - [Build custom Flex Operators to analyze event streams](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - [Build custom Flex Operators to analyze event streams](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 
 ## Details

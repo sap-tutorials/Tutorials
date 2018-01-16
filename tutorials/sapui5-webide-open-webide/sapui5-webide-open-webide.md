@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platfo
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** If you don't have an SAP Cloud Platform account, follow the tutorial to [set up a free developer account](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html).
+ - **Tutorials:** If you don't have an SAP Cloud Platform account, follow the tutorial to [set up a free developer account](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html).
 
 ## Next Steps
  - Start the SAPUI5 with Web IDE series: [Set up the Northwind Destination](https://www.sap.com/developer/tutorials/hcp-create-destination.html)

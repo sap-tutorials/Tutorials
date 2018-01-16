@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [SAP HANA Studio, Deploy your project](http://www.sap.com/developer/tutorials/studio-deploy-project.html)
+- **Tutorials:** [SAP HANA Studio, Deploy your project](https://www.sap.com/developer/tutorials/studio-deploy-project.html)
 -
 ## Next Steps
-- [SAP HANA Studio, Import your data](http://www.sap.com/developer/tutorials/studio-import-data.html)
+- [SAP HANA Studio, Import your data](https://www.sap.com/developer/tutorials/studio-import-data.html)
 
 ## Details
 ### You will learn  
@@ -64,4 +64,4 @@ Finally right click again and under **Team** choose **Activate All** to activate
 ￼
 
 ## Next Steps
-- [SAP HANA Studio, Import your data](http://www.sap.com/developer/tutorials/studio-import-data.html)
+- [SAP HANA Studio, Import your data](https://www.sap.com/developer/tutorials/studio-import-data.html)

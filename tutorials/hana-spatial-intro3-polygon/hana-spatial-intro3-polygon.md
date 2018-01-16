@@ -1,15 +1,15 @@
 ---
-title: Intro to SAP HANA Spatial: Polygons
+title: Intro to SAP HANA Spatial - Polygons
 description: A polygon defines a region of space
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Intro to SAP HANA Spatial: Strings](http://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
+- **Tutorials:** [Intro to SAP HANA Spatial: Strings](https://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
 
 ## Next Steps
-- [Intro to SAP HANA Spatial: Tables with spatial columns](http://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
+- [Intro to SAP HANA Spatial: Tables with spatial columns](https://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
 
 ## Details
 ### You will learn  
@@ -38,7 +38,7 @@ Below is an SVG modified to fill a geometry with the color using `fill="yellow"`
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get dimension)]
+[ACCORDION-BEGIN [Step 2: ](Get a dimension)]
 
 Now, execute the following query.
 
@@ -51,7 +51,7 @@ The `ST_Dimension()` method will return `2`. In the earlier point exercise the s
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Get area)]
+[ACCORDION-BEGIN [Step 3: ](Get an area)]
 
 Unlike a string, a polygon has a surface, and therefore has an area. Use the `ST_Area()` method to calculate it.
 
@@ -68,9 +68,9 @@ This statement calculates the area of right triangle (also known as 'right-angle
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Get boundary)]
+[ACCORDION-BEGIN [Step 4: ](Get a boundary)]
 
-You can calculate the ___boundary___ of a polygon using the `ST_Boundary()` method.
+You can calculate the ___boundary___ of a polygon using the `ST_Boundary()` method. This method is one of **Transformation Functions**, which take one geometry as an input, and produce another geometry as an output.
 
 Check the boundary of the first polygon from this tutorial; i.e., a triangle with a square inside.
 
@@ -82,7 +82,7 @@ SELECT NEW ST_Polygon('Polygon ((0 0, 4 0, 0 3, 0 0), (0.5 0.5, 0.5 1.5, 1.5 1.5
 
 The result is a `MultiLineString` containing two `LineStrings`, one representing a triangle and the another representing a square.
 
-`MultiLineString` is another spatial type. It is a collection of line strings. There are two more spatial collection types supported by SAP HANA: `MultiPoint` and `MultiPolygon`. Their names describe what they represent.
+`MultiLineString` is another spatial type. It is a collection of line strings. There are two more **spatial collection types** supported by SAP HANA: `MultiPoint` and `MultiPolygon`. Their names describe what they represent.
 
 Strings too have their boundaries, represented by their endpoints, except when they are rings. Rings - curves where the start point is the same as the end point and there are no self-intersections - have no boundaries.
 
@@ -112,6 +112,9 @@ The result is a `MultiPoint` collection containing two end points.
 ![Multipoint boundary](spatial0305.jpg)
 
 Points do not have boundaries.
+```sql
+SELECT NEW ST_Point('Point (0 0)').ST_Boundary().ST_asWKT() FROM dummy;
+```
 
 ![Empty boundary for points](spatial0306.jpg)
 
@@ -122,7 +125,7 @@ Points do not have boundaries.
 
 A typical requirement in spatial calculations is to find relationships between different geometries. For example, you may need to determine if one geometry is covered by another geometry; if some particular point of interest is within a city's boundaries, for instance.
 
-`ST_Within()` is a method that will allow you to determine if one geometry is within another. As with other spatial methods in SAP HANA the result `1` means 'true', and `0` means 'false'.
+`ST_Within()` is a method that will allow you to determine if one geometry is within another. It is one of the **Spatial Predicates** and as other methods from this group returns a result of `1` meaning 'true' or `0` meaning 'false'.
 
 ```sql
 SELECT NEW ST_Point (1,1).ST_Within(NEW ST_Polygon('Polygon ((0 0, 4 0, 0 3, 0 0), (0.5 0.5, 0.5 1.5, 1.5 1.5, 1 0.5, 0.5 0.5))')) FROM dummy;
@@ -137,7 +140,7 @@ Indeed the point (1, 1) is not within ___interior___ of your polygon from the ea
 
 [ACCORDION-BEGIN [Step 7: ](Check if a point is within a given disk)]
 
-To check if a point is within a given [disk](https://en.wikipedia.org/wiki/Disk_%28mathematics%29) you use the `ST_Within()` method to define the circle around an area of a particular distance from a central point.
+To check if a point is within a given [disk](https://en.wikipedia.org/wiki/Disk_%28mathematics%29) you use another transformation functions: `ST_Buffer()`. This method applied to a point defines the circle area of a particular distance from that point.
 
 ```sql
 SELECT NEW ST_Point (1,1).ST_Within(NEW ST_Point(0, 0).ST_Buffer(2)) FROM dummy;
@@ -153,7 +156,7 @@ The point (1, 1) is in the circle with the center point of (0, 0) and the radius
 
 
 ### Optional
-- See the SAP HANA Spatial Reference at https://help.sap.com/hana_platform for the complete list of objects and methods
+- Review [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/)
 
 ## Next Steps
-- [Intro to SAP HANA Spatial: Tables with spatial columns](http://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
+- [Intro to SAP HANA Spatial: Tables with spatial columns](https://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
