@@ -1,5 +1,5 @@
 ---
-title: Using the SAP Jam Collaboration OData API Reference
+title: Use the SAP Jam Collaboration OData API Reference
 description: Try out each SAP Jam Collaboration endpoint and view the results using the OData API Reference.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
@@ -20,7 +20,7 @@ In this tutorial, you will learn how to use the [SAP Jam Collaboration OData API
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](SAP Jam OData API Reference sections)]
+[ACCORDION-BEGIN [Step 1: ](Understand the main sections of the reference)]
 
 The [SAP Jam Collaboration OData API Reference](https://developer.sapjam.com/ODataDocs/ui) is organized into the three sections shown in the following diagram.
 
@@ -35,7 +35,7 @@ The [SAP Jam Collaboration OData API Reference](https://developer.sapjam.com/ODa
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Content column)]
+[ACCORDION-BEGIN [Step 2: ](Dig deeper into the content section)]
 
 The content section provides the following information:
 
