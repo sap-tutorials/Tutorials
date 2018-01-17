@@ -151,12 +151,12 @@ Let's verify that every movie has a corresponding link and vice-versa using the 
 
 ```SQL
 select count(1)
-from "MOVIELENS"."public.aa.movielens.service::data.LINKS" l
-where not exists (select 1 from "MOVIELENS"."public.aa.movielens.service::data.MOVIES" m where l."MOVIEID" = m."MOVIEID")
+from "MOVIELENS"."public.aa.movielens.hdb::data.LINKSLINKS" l
+where not exists (select 1 from "MOVIELENS"."public.aa.movielens.hdb::data.LINKSMOVIES" m where l."MOVIEID" = m."MOVIEID")
 UNION ALL
 select count(1)
-from "MOVIELENS"."public.aa.movielens.service::data.MOVIES" m
-where not exists (select 1 from "MOVIELENS"."public.aa.movielens.service::data.LINKS" l where l."MOVIEID" = m."MOVIEID");
+from "MOVIELENS"."public.aa.movielens.hdb::data.LINKSMOVIES" m
+where not exists (select 1 from "MOVIELENS"."public.aa.movielens.hdb::data.LINKSLINKS" l where l."MOVIEID" = m."MOVIEID");
 ```
 
 Based on the result, it seems that there is no movies without a link and vice-versa.
@@ -176,7 +176,7 @@ Anyway, let's check if all movies have genres with the following SQL:
 
 ```SQL
 SELECT COUNT(1)
-FROM "MOVIELENS"."public.aa.movielens.service::data.MOVIES"
+FROM "MOVIELENS"."public.aa.movielens.hdb::data.LINKSMOVIES"
 WHERE "GENRES" IS NULL OR LENGTH("GENRES")=0;
 ```
 
@@ -191,7 +191,7 @@ BEGIN
   DECLARE tmp NVARCHAR(255);
   DECLARE idx INTEGER;
   DECLARE sep NVARCHAR(1) := '|';
-  DECLARE CURSOR cur FOR SELECT DISTINCT "GENRES" FROM "MOVIELENS"."public.aa.movielens.service::data.MOVIES";
+  DECLARE CURSOR cur FOR SELECT DISTINCT "GENRES" FROM "MOVIELENS"."public.aa.movielens.hdb::data.LINKSMOVIES";
   DECLARE genres NVARCHAR (255) := '';
   idx := 1;
   FOR cur_row AS cur() DO
@@ -227,7 +227,7 @@ BEGIN
   DECLARE tmp NVARCHAR(255);
   DECLARE idx INTEGER;
   DECLARE sep NVARCHAR(1) := '|';
-  DECLARE CURSOR cur FOR SELECT DISTINCT "GENRES" FROM "MOVIELENS"."public.aa.movielens.service::data.MOVIES";
+  DECLARE CURSOR cur FOR SELECT DISTINCT "GENRES" FROM "MOVIELENS"."public.aa.movielens.hdb::data.LINKSMOVIES";
   DECLARE genres NVARCHAR (255) := '';
   idx := 1;
   FOR cur_row AS cur() DO
@@ -263,7 +263,7 @@ SELECT
   , "TITLE"
   , OCCURRENCES_REGEXPR('[|]' IN GENRES) + 1 "GENRE_COUNT"
   , "GENRES"
-FROM "MOVIELENS"."public.aa.movielens.service::data.MOVIES"
+FROM "MOVIELENS"."public.aa.movielens.hdb::data.LINKSMOVIES"
 ORDER BY "GENRE_COUNT" ASC;
 ```
 
@@ -287,7 +287,7 @@ SELECT
 FROM (
   SELECT
     OCCURRENCES_REGEXPR('[|]' IN "GENRES") + 1 "GENRE_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.service::data.MOVIES"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.LINKSMOVIES"
 )
 GROUP BY "GENRE_COUNT" ORDER BY "GENRE_COUNT";
 ```
@@ -313,7 +313,7 @@ Now let's have a look at the tags distribution using the following SQL:
 SELECT COUNT(1)
 FROM (
   SELECT "MOVIEID", COUNT(1) as "TAG_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.service::data.TAGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.LINKSTAGS"
   GROUP BY "MOVIEID"
 );
 ```
@@ -326,7 +326,7 @@ Now let's determine the tag count distribution per movies using the following SQ
 SELECT "TAG_COUNT", COUNT(1)
 FROM (
   SELECT "MOVIEID", COUNT(1) as "TAG_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.service::data.TAGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.LINKSTAGS"
   GROUP BY "MOVIEID"
 )
 GROUP BY "TAG_COUNT" ORDER BY "TAG_COUNT";

@@ -79,7 +79,7 @@ Click on the ![SQL Console](0-opensqlconsole.png) button in the top menu bar, an
 
 ```sql
 DROP USER MOVIELENS_USER CASCADE;
-CREATE USER MOVIELENS_USER PASSWORD Welcome17Welcome17 NO FORCE_FIRST_PASSWORD_CHANGE;
+CREATE USER MOVIELENS_USER PASSWORD Welcome18Welcome18 NO FORCE_FIRST_PASSWORD_CHANGE;
 ALTER USER  MOVIELENS_USER DISABLE PASSWORD LIFETIME;
 
 call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::CatalogDeveloper'     ,'MOVIELENS_USER');
@@ -127,7 +127,7 @@ Click on the ![Logout](0-logout.png) **Logout** icon located in the top right co
 
 Now, you need to connect with your **`MOVIELENS_USER`** ***HANA User Account***.
 
-Enter **`MOVIELENS_USER`** as ***Username*** user name and **`Welcome17Welcome17`** as ***Password***, click on **Logon**.
+Enter **`MOVIELENS_USER`** as ***Username*** user name and **`Welcome18Welcome18`** as ***Password***, click on **Logon**.
 
 If you can login successfully, then your ***HANA User Account*** is properly configured.
 

@@ -1,8 +1,8 @@
 ---
 title: Enable, deploy and configure the SAP Predictive services
 description: Enable, deploy and configure the SAP Predictive services
-primary_tag: products>sap-cloud-platform-predictive-service
-tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-predictive-service]
+primary_tag: products>sap-predictive-service
+tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, products>sap-predictive-service]
 ---
 
 ## Prerequisites
@@ -25,7 +25,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, 
   **10 minutes**
 
 [ACCORDION-BEGIN [Step 1: ](Enable the Predictive services)]
-Let's go back to the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Let's go back to the [***SAP Cloud Platform Cockpit***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 Click on your ***SAP Cloud Platform Account name*** as highlighted on the below screenshot.
 
@@ -104,7 +104,7 @@ Click on **New Binding**
 
 It should propose you by default your HANA MDC instance (named `mdc`) we just created.
 
-Enter your ***HANA User Account*** login (`PSTRIAL`) and password (`Welcome17Welcome17`).
+Enter your ***HANA User Account*** login (`PSTRIAL`) and password (`Welcome18Welcome18`).
 
 Click on **Save**
 
