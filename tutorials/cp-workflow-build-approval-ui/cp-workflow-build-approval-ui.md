@@ -1,5 +1,5 @@
 ---
-title: Building a simple approval UI for your workflow
+title: Build simple approval UI for your workflow
 description: Build the UI to be displayed to execute a user task (task performed by a person) within a workflow.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner ]
