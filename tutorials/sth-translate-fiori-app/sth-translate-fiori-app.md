@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-pla
 ## Prerequisites  
  - **Proficiency:** Beginner
   - **Tutorials:** [Prepare a sample Fiori app for translation](https://www.sap.com/developer/tutorials/sth-prepare-fiori-app-translation.html)
- - **Tutorials:** [Deploy a sample Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)
+ - **Tutorials:** [Deploy a sample Fiori app to SAP Cloud Platform]
 
 ## Next Steps
 - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
@@ -16,13 +16,13 @@ tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-pla
 
 ## Details
 ### You will learn  
-You will translate a sample Fiori app using SAP Translation Hub.
+You'll learn how to translate a Fiori app using SAP Translation Hub.
 
 ### Time to Complete
 **10 Min**.
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Open SAP Translation Hub in the service catalog of the SAP Cloud Platform cockpit)]
+[ACCORDION-BEGIN [Step 1: ](Open SAP Translation Hub)]
 
 In the service catalog of the SAP Cloud Platform cockpit, locate the **SAP Translation Hub** service by searching for `Translation`. Click the tile and choose **Go to UI for Translation Workflow**.
 
@@ -139,7 +139,7 @@ Now open the **Approve Purchase Orders** app:
 
 ![run demo app](sth-translate-fiori-app-man-prods.png)
 
-**Note: Some texts in the app are pulled directly from the back end or are hard coded, and are therefore not part of the `i18n.properties` file that you translated in this tutorial.**
+> Note: Some texts in the app are pulled directly from the back end or are hard coded, and are therefore not part of the `i18n.properties` file that you translated in this tutorial.
 
 
 [ACCORDION-END]
