@@ -1,5 +1,5 @@
 ---
-title: Add a user task to your workflow
+title: Add user task to your workflow
 description: Enhance your workflow with a user task, in this case, to add an approval.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner ]
