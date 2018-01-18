@@ -18,7 +18,7 @@ tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-pla
 You'll learn how to translate the properties file of a Java app using the file upload scenario in SAP Translation Hub.
 
 ### Time to Complete
-**10-15 Min**.
+**15 Min**.
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Locate properties file)]
