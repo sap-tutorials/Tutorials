@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Next Steps
  - [Predictive Analytics Using SQL Script](https://www.sap.com/developer/tutorials/hxe-ua-predictive-sql.html)
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -197,4 +197,4 @@ GRANT SELECT, INSERT, DELETE ON SCHEMA <NEW_USER> TO _SYS_REPO;
 
 ## Next Steps
 - [Predictive Analytics Using SQL Script](https://www.sap.com/developer/tutorials/hxe-ua-predictive-sql.html)
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

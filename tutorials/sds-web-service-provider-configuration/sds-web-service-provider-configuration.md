@@ -11,7 +11,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
  - **Web Application:** Access to SAP HANA Cockpit
 
 ## Next Steps
-- **Tutorials** More [Smart Data Streaming Tutorials](https://www.sap.com/developer/tutorials.html?tag=products:technology-platform/sap-hana/sap-hana-smart-data-streaming)
+- **Tutorials** : [Publish Events to SDS via the REST Interface](https://www.sap.com/portugal/developer/tutorials/sds-rest-publish.html)
 
 ## Details
 
