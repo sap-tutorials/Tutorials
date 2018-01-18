@@ -32,6 +32,7 @@ The [SAP Jam Collaboration OData API Reference](https://developer.sapjam.com/ODa
 
   - The **content section** displays the documentation on each entity grouping (request / response schema, entities, endpoints, navigations and service operations).
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -65,6 +66,7 @@ The content section provides the following information:
         - Query Parameters (when applicable) - Descriptions and text boxes for inputting the various Query Parameters (paging, expanding, selecting) that are either required or are available for optional use with the API call.
     - A **Try** button that will show the results of the API call when clicked, as long as the OAuth2 Token and the required Query Parameters are all set.
 
+[DONE]
 
 [ACCORDION-END]
 
