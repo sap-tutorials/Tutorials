@@ -1,6 +1,6 @@
 ---
 title: Prepare sample Fiori app for translation
-description: Create an app based on a sample Fiori reference application and prepare it for translation with SAP Translation Hub.
+description: Prepare an app based on a sample Fiori reference app and prepare it for translation with SAP Translation Hub.
 primary_tag: products>sap-translation-hub
 tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, topic>sapui5 ]
 ---
@@ -10,12 +10,12 @@ tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-pla
  - **Tutorials:** [Enable the SAP Translation Hub service](https://www.sap.com/developer/tutorials/sth-enable.html)
 
 ## Next Steps
-- [Deploy a sample Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)
+- [Deploy a sample Fiori app to SAP Cloud Platform]
 - [Translate a sample Fiori app](https://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)
 
 ## Details
 ### You will learn  
-You will use a sample Fiori Reference app to create a new HTML5 app and prepare it for translation using SAP Translation Hub.
+You'll learn how to prepare a Fiori reference app so that you can translate it using SAP Translation Hub.
 
 ### Time to Complete
 **10 Min**.
@@ -98,7 +98,7 @@ Save your settings.
 
 [ACCORDION-BEGIN [Step 8: ](Create run configuration)]
 
-To test the application with mock data from a local system, you're going to need a special run configuration. To do this, right-click the application and choose **Run > Run Configurations**.
+To test the application with mock data from a local system, you're going to need a special run configuration. To do this, right-click the application and choose **Run | Run Configurations**.
 
 ![Run configurations](sth-prep-run-configs.png)
 
@@ -107,7 +107,7 @@ To test the application with mock data from a local system, you're going to need
 
 [ACCORDION-BEGIN [Step 9: ](Choose Web application)]
 
-Choose **+ > Web Application**.
+Choose the **+** sign then **Web Application**.
 
 ![Web application](sth-prep-web-application.png)
 
@@ -153,5 +153,5 @@ To make things look more realistic, the app uses mock data.
 
 
 ## Next Steps
-- [Deploy a sample Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)
+- [Deploy a sample Fiori app to SAP Cloud Platform]
 - [Translate a sample Fiori app](https://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)
