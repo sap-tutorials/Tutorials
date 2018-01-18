@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-pla
 
 ## Details
 ### You will learn  
-To use SAP Translation Hub, you first need to enable the service in the cockpit.
+You'll learn how to enable the SAP Translation Hub service on SAP Cloud Platform.
 
 ### Time to Complete
 **5 Min**.
@@ -21,7 +21,7 @@ To use SAP Translation Hub, you first need to enable the service in the cockpit.
 
 In the SAP Cloud Platform cockpit, choose the tile for a trial account in the Neo environment.
 
-![Access trial account in Neo environment](sth-choose-Neo.png)
+![Access trial account in Neo environment](sth-open-scp-cockpit.png)
 
 
 [ACCORDION-END]
