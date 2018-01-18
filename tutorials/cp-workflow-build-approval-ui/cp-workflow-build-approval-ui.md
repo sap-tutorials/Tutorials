@@ -31,10 +31,10 @@ In the SAP Web IDE Full-Stack, create a new project using a template.
 3. Choose **SAPUI5 Application**.
 ![Choose SAPUI5 App](choose-sapui5-app.png)
 4. Choose **Next**.
-5. Enter a name for the new workflow project, for example, 'BookUIApplication' and a namespace, for example, 'BookUIApplication'.
+5. Enter a name for the new workflow project, for example, `BookUIApplication` and a namespace, for example, `BookUIApplication`.
 ![Enter Project Name](enter-project-name.png)
 6. Choose **Next**.
-7. Enter a name for the view, for example, 'ApproveBookView'.
+7. Enter a name for the view, for example, `ApproveBookView`.
 ![Add View Name](add-view-name.png)
 8. Choose **Finish**.
 9. Choose **Run**.
@@ -44,14 +44,14 @@ The HTML page is still empty. You need to add the necessary UI controls for disp
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create the form layout)]
-1. To use the form layout, enable the **sap.ui.layout** package in the project settings of SAP Web IDE:
-    1. Choose **Workspace** | **BookUIApplication**.
-    2. Right-click the **BookUIApplication** project, and choose **Project Settings**.
+1. To use the form layout, enable the **`sap.ui.layout`** package in the project settings of SAP Web IDE:
+    1. Choose **Workspace** | **`BookUIApplication`**.
+    2. Right-click the **`BookUIApplication`** project, and choose **Project Settings**.
      ![Choose Project Settings](open-project-settings.png)
-     Under **SAPUI5**, select the **sap.ui.layout** package, and then **Save**.
+     Under **SAPUI5**, select the **`sap.ui.layout`** package, and then **Save**.
      ![Select Layout](select-layout.png)
 2. Open the newly created view using the layout editor:
-    1. Choose **Workspace** | **BookUIApplication** | **webapp** | **view** | **ApproveBookView.view.xml**.
+    1. Choose **Workspace** | **`BookUIApplication`** | **`webapp`** | **view** | **`ApproveBookView.view.xml`**.
     2. Right-click and choose **Open With** | **Layout Editor**.
      ![Open Layout Editor](open-layout-editor.png)    
 3. To add a form to the page, choose **Layout** | **Simple Form** and drag it onto the editor canvas.
@@ -78,7 +78,7 @@ Your page layout should now look like this:
 [ACCORDION-BEGIN [Step 5: ](Initialize the data model)]
 To make the workflow context available to the UI controls, you need to retrieve the task context data. To do this, call the Workflow REST API with the task ID of the currently shown task instance in My Inbox. My Inbox passes this data to our component using the startup parameters.
 
-1. Open the **Component.js** file under **Workspace** | **BookUIApplication** | **webapp**.
+1. Open the **`Component.js`** file under **`Workspace`** | **`BookUIApplication`** | **`webapp`**.
 2. Find the **init** function, and add the following code snippet to the file:
 
 
@@ -106,11 +106,11 @@ To make the workflow context available to the UI controls, you need to retrieve 
 
 You can now refer to the deployed UI5 application from your approval task in the workflow:
 
-1. In the SAP Web IDE, open the workflow file and select the **ApproveBook** task.
+1. In the SAP Web IDE, open the workflow file and select the **`ApproveBook`** task.
 2. Under **Details** in the **User Task Properties**, find the properties for specifying the user interface.
 3. Choose **Select**.
 ![Choose Select](select-ui.png)
-4. Select the **BookUIApplication** project and the **webapp** component path.
+4. Select the **`BookUIApplication`** project and the **`webapp`** component path.
 5. Choose **OK**.
    ![Choose User Interface](choose-ui.png)
 6. Choose **Save**.  
@@ -122,13 +122,13 @@ You can now refer to the deployed UI5 application from your approval task in the
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add Approve and Reject buttons)]
-To add **Approve** and **Reject** buttons to actually complete the task, go back and edit the **Component.js** file again.
+To add **Approve** and **Reject** buttons to actually complete the task, go back and edit the **`Component.js`** file again.
 
-1. Open the **Component.js** file under **Workspace** | **BookUIApplication** | **webapp**.
+1. Open the **`Component.js`** file under **`Workspace`** | **`BookUIApplication`** | **`webapp`**.
 2. Add the following functions to your component:  
-    - "_fetchToken": Retrieves an XSRF token from the workflow service API. The token is used to authenticate when calling the POST method to complete the task.  
-    - "_completeTask": Calls the workflow service API to complete the current task, and pass on the approval status ("true" or "false") using the JSON payload to the workflow context.  
-    - "_refreshTask": Tells My Inbox to remove the task on completion from the list.
+    - `_fetchToken`: Retrieves an XSRF token from the workflow service API. The token is used to authenticate when calling the POST method to complete the task.  
+    - `_completeTask`: Calls the workflow service API to complete the current task, and pass on the approval status ("true" or "false") using the JSON payload to the workflow context.  
+    - '`_refreshTask`: Tells My Inbox to remove the task on completion from the list.
 
     Right after the closing bracket of the init function, add the following code snippet to the file:
 
@@ -171,7 +171,7 @@ To add **Approve** and **Reject** buttons to actually complete the task, go back
 		}
     ```
 ![Add Codesnippet](add-codesnippet.png)
-3. Add the **Approve** and **Reject** buttons to the My Inbox action footer by adding the following code to the body of the init function within the **Component.js file**:
+3. Add the **Approve** and **Reject** buttons to the My Inbox action footer by adding the following code to the body of the init function within the **`Component.js`** file:
 
     ```javascript
 		    //add actions
@@ -189,13 +189,13 @@ To add **Approve** and **Reject** buttons to actually complete the task, go back
                     }, this);
     ```
 ![Add Actions](add-actions.png)
-    When the user presses the buttons, the '_completeTask' function will be called.
+    When the user presses the buttons, the `_completeTask` function will be called.
 4. Choose **Save**.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Completing the workflow)]
-1. Deploy the **BookUIApplication** project again. Select the project and choose **Deploy** | **Deploy to SAP Cloud Platform**. On the following screen, choose **Deploy**.
+1. Deploy the **`BookUIApplication`** project again. Select the project and choose **Deploy** | **Deploy to SAP Cloud Platform**. On the following screen, choose **Deploy**.
 2. Refresh My Inbox to check the updated UI for the task.
     > Note: To see the new buttons, you may have to clean the browser cache or force a "hard reload".
 

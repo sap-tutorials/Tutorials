@@ -37,9 +37,9 @@ tags: [  tutorial>beginner, products>sap-cloud-platform ]
 3. Change the **Category** to **Business Process Management**, and then select the **Workflow Project** template.
 ![Change Category](select-category.png)
 4. Choose **Next**.
-5. Enter a name for the new workflow project, for example, 'MyWorkflowProject', and choose **Next**.
+5. Enter a name for the new workflow project, for example, `MyWorkflowProject`, and choose **Next**.
 ![Enter Name](enter-name.png)
-6. Enter a name for the new workflow, for example, 'MyFirstWorkflow' and a description.
+6. Enter a name for the new workflow, for example, `MyFirstWorkflow` and a description.
 ![Enter Workflow Name](enter-wf-name.png)
 7. Choose **Finish**.   
    You should now see a project with a workflow file in your workspace:

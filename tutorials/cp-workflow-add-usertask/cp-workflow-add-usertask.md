@@ -70,12 +70,12 @@ You now see the apps on your SAP Fiori launchpad homepage.
 ![Add User Task](add-user-task-prep.png)
 2. Move the task icon between the start and end events until the arrow appears in green.
 ![See Green Arrow](green-arrow.png)
-3. Select the task box and in the **Name** field on the **General** tab, change the name to **ApproveBook**.
+3. Select the task box and in the **Name** field on the **General** tab, change the name to **`ApproveBook`**.
 ![Change Name](change-name.png)
 4. Switch to the **Details** tab.
 5. Under **Display Texts**, define the task subject, that is, the text that the user sees in his or her inbox.
    To show the book name, use an expression that references a field from the sample JSON structure. For more information about using expressions, see [Expressions](https://help.sap.com/viewer/f63bbdc234ce4211ab2cdb44564a0acd/Cloud/en-US/9f91b1c0fac3414d9cba1015dea381f1.html).
-   In the **Subject** field, enter 'Approve ${context.product}'.
+   In the **Subject** field, enter `Approve ${context.product}`.
 ![Add Subject](add-subject.png)
 6. Under **Recipients**, define who will receive the task. Enter your user ID exactly as displayed in the user info.
     > Note: The field is case sensitive.
