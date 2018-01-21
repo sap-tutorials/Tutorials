@@ -323,7 +323,7 @@ Travis CI lets you customize a build, that is, define environment variables, whi
 
 ### 6. Automating Unit Tests in Maven
 
-Unit tests scrutinize classes individually and independently for proper operations. JUnit is one of the unit testing frameworks you can  integrate with Maven for test automation. The sample project that is imported already contains the integration test and unit test using EasyMock and ServletUnit.
+Unit tests scrutinize classes individually and independently for proper operations. JUnit is one of the unit testing frameworks you can  integrate with Maven for test automation. The sample project that is imported already contains the integration test and unit test using `EasyMock` and `ServletUnit`.
 
 #### Procedure
 
