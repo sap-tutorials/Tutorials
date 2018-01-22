@@ -19,7 +19,7 @@ The SAP API Business Hub integration in SAP Build enables you to prototype your 
 
 [ACCORDION-BEGIN [Step 1: ](Sign into SAP Build)]
 
-Go to the [SAP Build](build.me) homepage. Select **Log In** in the top right corner.
+Go to the [SAP Build](https://www.build.me/splashapp/) homepage. Select **Log In** in the top right corner.
 
 ![Build initial page](1.png)
 
