@@ -29,7 +29,9 @@ DataSource
 datasources
 DesignStudio
 DevOps
+dropdown
 EasyMock
+enum
 EclipseLink
 Envinject
 ESLint
@@ -71,6 +73,8 @@ Lumira
 MacBook
 macOS
 Mendix
+microflow
+Microflow
 MTA
 MTAs
 multistore
@@ -85,10 +89,13 @@ northwind
 Northwind
 npm
 OAuth
+OAuth2
 OData
 Ok
 OLAP
 Onboarding
+onboarding
+OpenSocial
 openSSL
 openSUSE
 OpenUI5
@@ -97,7 +104,9 @@ openweathermap.org
 plugin
 plugins
 POJOs
+popup
 Postgres
+PostgreSQL
 preinstalled
 pre-pend
 pre-pended
@@ -126,6 +135,8 @@ Shapefiles
 SQLScript
 SRS
 ssh
+stylesheet
+stylesheets
 Subaccount
 subaccount
 Subaccounts

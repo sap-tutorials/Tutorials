@@ -1,6 +1,6 @@
 ---
-title: Configure the SAP Cloud Platform Destination for SAP Jam Collaboration API SSO
-description: Demonstrates how to configure the SAP Cloud Platform Destination for SAP Jam Collaboration API SSO
+title: Configure the SAP Cloud Platform destination for SAP Jam Collaboration API SSO
+description: This tutorial shows how to configure the SAP Cloud Platform destination for SAP Jam Collaboration API SSO.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
 ---
@@ -14,7 +14,7 @@ tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, t
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to configure the SAP Cloud Platform Destination for SAP Jam Collaboration API SSO.
+In this tutorial, you will learn how to configure the SAP Cloud Platform Destination for SAP Jam Collaboration API SSO.
 
 Connectivity destinations are a part of the SAP Cloud Platform connectivity service and are used for the outbound communication of a cloud application to a remote system like SAP Jam Collaboration. They contain the connection details for the remote communication of an application. Connectivity destinations are represented by symbolic names that are used by on-demand applications to refer to remote connections. The connectivity service resolves the destination at runtime based on the symbolic name provided. The result is an object that contains customer-specific configuration details, such as the URL of the remote system or service, the authentication type, and the relative credentials.
 
@@ -48,7 +48,7 @@ Connectivity destinations are a part of the SAP Cloud Platform connectivity serv
 
 [ACCORDION-BEGIN [Step 2: ](Import your destination configuration file into SAP Cloud Platform)]
 
-1.  Login to the _Hana Cloud Server Cockpit_
+1.  Login to SAP Cloud Platform
 2.  Select your account
 3.  Click **Connectivity**
 4.  Click **Destinations**
@@ -87,9 +87,9 @@ Connectivity destinations are a part of the SAP Cloud Platform connectivity serv
 3.  Copy the **Key** value
 4.  Go back to the SAP Cloud Platform destination configuration screen and paste the **Key** value into the **Client Key** field.
 5.  If you see a red warning _Client Key cannot be empty_:
-    1.  Select **Authentication** \> **Oauth2SAMLBearerAssertion**
+    1.  Select **Authentication** | **`Oauth2SAMLBearerAssertion`**
     2.  Change it to **No Authentication**
-    3.  Change it back to **Oauth2SAMLBearerAssertion**
+    3.  Change it back to **`Oauth2SAMLBearerAssertion`**
 6.  Click **Save**
 
     ![Update the destination with the OAuth Client key from SAP Jam Collaboration page](loio87a9631e8f5644b9a1c274b773fd1af7_HiRes.png)

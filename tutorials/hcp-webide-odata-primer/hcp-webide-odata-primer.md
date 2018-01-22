@@ -7,10 +7,10 @@ tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>mo
 
 ## Prerequisites
 - **Proficiency:** Intermediate
-- **Tutorials:** [Localizing your SAPUI5 app](http://www.sap.com/developer/tutorials/hcp-webide-localizing-app.html)
+- **Tutorials:** [Localizing your SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-localizing-app.html)
 
 ## Next Steps
-- [Inserting OData query options into your SAPUI5 app](http://www.sap.com/developer/tutorials/hcp-webide-inserting-query-options.html)
+- [Inserting OData query options into your SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-inserting-query-options.html)
 
 ## Details
 
@@ -353,11 +353,11 @@ The two OData Service document URLs are:
 
 To build an app like what you have now, but with data from SAP Gateway you simply need to:
 
-- Create an SAP Cloud Platform destination pointing to `https://sapes4.sapdevcenter.com` following an [earlier tutorial procedure](http://www.sap.com/developer/tutorials/hcp-create-destination.html)
+- Create an SAP Cloud Platform destination pointing to `https://sapes4.sapdevcenter.com` following an [earlier tutorial procedure](https://www.sap.com/developer/tutorials/hcp-create-destination.html)
 - Enter the remaining part of the URL in the Data Connection portion of the Web IDE template customization. For the two URLs above, they would be:
 - `/sap/opu/odata/IWBEP/GWDEMO`
 - `/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT`
 
 
 ## Next Steps
-- [Inserting OData query options into your SAPUI5 app](http://www.sap.com/developer/tutorials/hcp-webide-inserting-query-options.html)
+- [Inserting OData query options into your SAPUI5 app](https://www.sap.com/developer/tutorials/hcp-webide-inserting-query-options.html)

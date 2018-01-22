@@ -8,11 +8,11 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Internet of Things (IoT) Posting data with a REST Client](http://www.sap.com/developer/tutorials/iot-part3-posting-data-hana.html)
+- **Tutorials:** [Internet of Things (IoT) Posting data with a REST Client](https://www.sap.com/developer/tutorials/iot-part3-posting-data-hana.html)
 
 
 ## Next Steps
-- [Internet of Things (IoT) Using the Tessel to post data](http://www.sap.com/developer/tutorials/iot-part5-inserting-tessel-data.html)
+- [Internet of Things (IoT) Using the Tessel to post data](https://www.sap.com/developer/tutorials/iot-part5-inserting-tessel-data.html)
 
 ## Details
 ### You will learn  Checking the data you have inserted is simple. in this section you will view the data in the catalog and work with a few SQL queries.
@@ -72,4 +72,4 @@ Which will show these results:
 ![results](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part4-checking-data/p4_6.png)
 ￼You'll only have as many records in there as you added with Postman, but after you insert data directly from the Tessel, you can return to this and section and check again.
 [ACCORDION-END]## Next Steps
-- [Internet of Things (IoT) Using the Tessel to post data](http://www.sap.com/developer/tutorials/iot-part5-inserting-tessel-data.html)
+- [Internet of Things (IoT) Using the Tessel to post data](https://www.sap.com/developer/tutorials/iot-part5-inserting-tessel-data.html)

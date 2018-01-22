@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>html5 ]
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** [SAPUI5 Creating Control](http://www.sap.com/developer/tutorials/sapui5-creating-control.html)
+ - **Tutorials:** [SAPUI5 Creating Control](https://www.sap.com/developer/tutorials/sapui5-creating-control.html)
  - Should have basic understanding of HTML, CSS and JavaScript.
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn
@@ -146,4 +146,4 @@ tags: [  tutorial>beginner, topic>html5 ]
 ---
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

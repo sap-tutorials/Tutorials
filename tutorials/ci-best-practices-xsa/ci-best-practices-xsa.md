@@ -1,7 +1,7 @@
 ---
 
-title: Continuous Integration (CI) Best Practices with SAP: SAP HANA Extended Application Services, advanced model (XS advanced) on SAP HANA
-description: Part 4.6: Configuring the CI system for a SAP HANA Extended Application Services, advanced model Application (XS advanced) on SAP HANA.
+title: Continuous Integration (CI) Best Practices with SAP – SAP HANA Extended Application Services, advanced model (XS advanced) on SAP HANA
+description: Part 4.6 – Configuring the CI system for a SAP HANA Extended Application Services, advanced model Application (XS advanced) on SAP HANA.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
@@ -10,19 +10,19 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 ## Prerequisites  
 
   - **Proficiency:** Intermediate
-  - [Source Code Versioning System](http://www.sap.com/developer/tutorials/ci-best-practices-scm.html)
-  - [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html)
-  - [Artifact Repository](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
-  - [Landscape Configuration](http://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
-  - [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html)
+  - [Source Code Versioning System](https://www.sap.com/developer/tutorials/ci-best-practices-scm.html)
+  - [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)
+  - [Artifact Repository](https://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)
+  - [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)
+  - [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html)
 
 ## Next Steps
 
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
 
 ---
 
-> This document is part of [Continuous Integration (CI) Best Practices with SAP](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html). To ensure that all the examples work properly, follow the setup instructions for all the prerequisites components.
+> This document is part of [Continuous Integration (CI) Best Practices with SAP](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html). To ensure that all the examples work properly, follow the setup instructions for all the prerequisites components.
 
 
 ### 1. Introduction
@@ -49,7 +49,7 @@ SAP HANA XS advanced applications may consist of multiple modules and be impleme
 The CI process discussed in this chapter implements an MTA running on SAP HANA XS advanced. Source changes are pushed by the developer to a central Git repository (either the one that is integrated in SAP HANA or a custom Git repository). Inside the CI build, the MTA archive builder - a command-line tool shipped by SAP - triggers the technology-specific compilers for the dedicated modules contained in the MTA. Then, the MTA archive builder packages the artifacts from each module into one archive file with the extension `.mtar`. To download and learn more about the MTA archive builder refer to the following links:  
 
 > [MTA Archive Builder Download](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100800000903&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MULTITRG%20APP%20ARCHIVE%20BUILDER)  
-> [MTA Archive Builder Documentation](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US)
+> [MTA Archive Builder Documentation](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)
 
 After the MTA archive builder has run, the build result is automatically deployed into an environment for automatic testing during the CI build. For the deployment, the XS advanced command-line client triggers the XS deploy service. The CI build may contain tests such as static code checks for the JavaScript sources (`ESLint`) or automated tests for the user interface.
 
@@ -102,7 +102,7 @@ For our landscape we will use one SAP HANA XS advanced instance with several spa
 
 ### 2.2 (Optional) Installing of Gerrit in the SAP HANA XS Advanced Instance
 
-Our example uses Gerrit as the repository server hosting the project sources. You may decide to use a Gerrit instance hosted by yourself as described in [Source Code Management](http://www.sap.com/developer/tutorials/ci-best-practices-scm.html), or you may use the Gerrit instance of the SAP HANA XS advanced server:
+Our example uses Gerrit as the repository server hosting the project sources. You may decide to use a Gerrit instance hosted by yourself as described in [Source Code Management](https://www.sap.com/developer/tutorials/ci-best-practices-scm.html), or you may use the Gerrit instance of the SAP HANA XS advanced server:
 
 > [Set up Gerrit for XS Advanced Application Development](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.00/en-US/2d0c64a1a50045ab867605cf4b89def8.html)  
 
@@ -174,7 +174,7 @@ The CI process requires the MTA project sources that are cloned from the Git rep
 
 As Java application, the MTA archive builder, which is available from the SAP ONE Support Launchpad, can be installed directly on the Jenkins slave machine, or it can be stored on a location which is accessible via HTTP, for example Nexus. The latter alternative has the advantage that upgrades are much easier to handle.
 
-> [Multi target Application Archive Builder](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US)  
+> [Multi-target Application Archive Builder](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)  
 > [SAP ONE Support Launchpad](https://launchpad.support.sap.com/)
 
 #### Procedure
@@ -459,7 +459,7 @@ In our example, we use the Tiny World tutorial to show something a bit more conc
 
 ##### Cloning the Git repository and initial setup of the `tinyworld` project
 
-1. In Gerrit, create a project named `tinyworld` with a `master` branch as described in [Generic Project](http://www.sap.com/developer/tutorials/ci-best-practices-generic.html).
+1. In Gerrit, create a project named `tinyworld` with a `master` branch as described in [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html).
 
 2. In SAP Web IDE, mark the workspace folder and select **Git > Clone Repository**.
 
@@ -504,7 +504,7 @@ In our example, we use the Tiny World tutorial to show something a bit more conc
 
 ### 6.1 Creating a Jenkins CI Build Job
 
-We create the job for the CI build, which is triggered on each change that is merged into the `master` branch. The configuration and credentials that are used in this section are based on the examples in [Build Scheduler](http://www.sap.com/developer/tutorials/ci-best-practices-build.html). The Jenkins CI build job fetches the sources from Git and starts the build of the MTA project by calling the MTA archive builder; the build result is an `mtar` file. The deployment of the `mtar` file to an XS advanced space requires connection details like host, port, space, organization, and login credentials.
+We create the job for the CI build, which is triggered on each change that is merged into the `master` branch. The configuration and credentials that are used in this section are based on the examples in [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html). The Jenkins CI build job fetches the sources from Git and starts the build of the MTA project by calling the MTA archive builder; the build result is an `mtar` file. The deployment of the `mtar` file to an XS advanced space requires connection details like host, port, space, organization, and login credentials.
 
 
 #### Procedure
@@ -1022,7 +1022,7 @@ Before installing SAP Web IDE, first prepare the mentioned npm registry, since i
 
 2. The CI build of the JavaScript modules is based on Grunt, and thus dependencies to Grunt must be added to the modules' `package.json` file. The development infrastructure (DI) builder triggered by SAP Web IDE must be able to resolve the dependencies declared in `package.json`. You can configure the npm cache on the XS advanced system (the application named `di-local-npm-registry`) to forward all requests for modules that are not provided by SAP and thus not contained in the cache to a configured npm registry. In our example, the npm registry containing Grunt is implemented as a proxy repository on Nexus pointing to the public npm registry `http://registry.npmjs.org/`. You can handle dependencies to any other published npm module in the same way.
 
-Our implementation uses Nexus as the repository server. The set up of Nexus is described in the [Artifact Repository](http://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html) that is part of this CI Best Practices Guide. We provide one npm registry for type `hosted` for purpose 1 and one npm registry of type `proxy` to the public npm registry for purpose 2. To create a unified view for these registries, we define a repository group containing them. Finally, we upload the SAP modules to the registry mentioned first. Figure 3 shows the npm registry setup.
+Our implementation uses Nexus as the repository server. The set up of Nexus is described in the [Artifact Repository](https://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html) that is part of this CI Best Practices Guide. We provide one npm registry for type `hosted` for purpose 1 and one npm registry of type `proxy` to the public npm registry for purpose 2. To create a unified view for these registries, we define a repository group containing them. Finally, we upload the SAP modules to the registry mentioned first. Figure 3 shows the npm registry setup.
 
 ![mpm registry design](npm-registries.png)
 
@@ -1243,4 +1243,4 @@ module.exports = function (grunt) {
 
 ## Next Steps
 
-  - [Back to the Navigator](http://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)

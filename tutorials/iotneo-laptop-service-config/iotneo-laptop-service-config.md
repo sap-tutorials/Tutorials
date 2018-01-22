@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-cloud-platfor
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform Neo environment](http://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform Neo environment](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 
 ## Next Steps

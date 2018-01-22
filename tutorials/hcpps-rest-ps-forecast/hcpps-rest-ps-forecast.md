@@ -1,20 +1,20 @@
 ---
 title: Test the "Forecast" service
 description: Using a REST client, you will test the "Forecast" SAP Cloud Platform predictive service
-primary_tag: products>sap-cloud-platform-predictive-service
-tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform ]
+primary_tag: products>sap-predictive-service
+tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-service, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Configure the SAP Cloud Platform predictive services](https://www.sap.com/developer/groups/ps-configure.html)
+  - **Tutorials:** [Configure the SAP Predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+- [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
 
 ## Details
 ### You will learn
- - How to use the "Forecast" SAP Cloud for predictive services from a REST Client in both synchronous and asynchronous mode.
+ - How to use the "Forecast" SAP Predictive services from a REST Client in both synchronous and asynchronous mode.
  The asynchronous mode will create a job with a status that you can check the status for completion.
 
 ### Time to Complete
@@ -34,7 +34,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 &nbsp;
 
-> **Note**: if you are running into some issue, you can check the [SAP Cloud Platform Predictive Services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
+> **Note**: if you are running into some issue, you can check the [SAP Predictive services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 [ACCORDION-BEGIN [Info:](A short description of the Forecast service)]
 The Forecasts service analyzes a dataset containing the successive values of a target indicator over time to predict the next values.
@@ -106,7 +106,7 @@ First we need to register the dataset we will be using during this tutorial.
 
 Additionally, we will adjust the variables description which will help improve the quality of our model.
 
-As described in [**Step 1** of **Test the "Dataset" services** tutorial](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Cash Flow dataset using the following elements:
+As described in [**Step 1** of **Test the "Dataset" services** tutorial](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Cash Flow dataset using the following elements:
 
 Open a new tab in ***Postman***.
 
@@ -211,7 +211,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 }
 ```
 
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 
 &nbsp;
 
@@ -322,7 +322,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   "referenceDate" : "2001-12-01"
 }
 ```
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Cloud for predictive services using a REST client](http://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 
 &nbsp;
 
@@ -400,7 +400,7 @@ URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast/`<code><b>I
 
 ### Optional
 
-For more details on the SAP Cloud for predictive services, you can check the following the [`Forecasts APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/8c4150c7711a4d1b865ea9628597d3e0.html) documentation.
+For more details on the SAP Predictive services, you can check the following the [`Forecasts APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/8c4150c7711a4d1b865ea9628597d3e0.html) documentation.
 
 ## Next Steps
-- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+- [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)

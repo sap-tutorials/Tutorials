@@ -8,10 +8,10 @@ tags: [products>sap-hana, products>sap-hana\,-express-edition  , topic>big-data,
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA XS Advanced Connect to Web IDE and clone Git Repository](http://www.sap.com/developer/tutorials/xsa-connecting-webide.html)
+ - **Tutorials:** [SAP HANA XS Advanced Connect to Web IDE and clone Git Repository](https://www.sap.com/developer/tutorials/xsa-connecting-webide.html)
 
 ## Next Steps
- - [SAP HANA XS Advanced Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)
+ - [SAP HANA XS Advanced Creating an HDI Module](https://www.sap.com/developer/tutorials/xsa-hdi-module.html)
 
 
 ## Details
@@ -167,4 +167,4 @@ After successful authentication, you should see your `index.html` with the Hello
 [ACCORDION-END]
 
 ## Next Steps
- - [SAP HANA XS Advanced Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)
+ - [SAP HANA XS Advanced Creating an HDI Module](https://www.sap.com/developer/tutorials/xsa-hdi-module.html)

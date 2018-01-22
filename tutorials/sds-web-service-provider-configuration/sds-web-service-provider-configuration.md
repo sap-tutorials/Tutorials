@@ -1,8 +1,8 @@
 ---
 title: Configuring the Web Service Provider (WSP)
 description: Using SAP HANA Cockpit to Configure Web Services Provider
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 
 ## Prerequisites
@@ -11,7 +11,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-smar
  - **Web Application:** Access to SAP HANA Cockpit
 
 ## Next Steps
-- **Tutorials** More [Smart Data Streaming Tutorials](https://www.sap.com/developer/tutorials.html?tag=products:technology-platform/sap-hana/sap-hana-smart-data-streaming)
+- **Tutorials** : [Publish Events to SDS via the REST Interface](https://www.sap.com/portugal/developer/tutorials/sds-rest-publish.html)
 
 ## Details
 

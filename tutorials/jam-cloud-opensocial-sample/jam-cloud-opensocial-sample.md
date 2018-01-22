@@ -9,7 +9,7 @@ tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, t
  - **Proficiency:** Intermediate
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn
@@ -56,19 +56,19 @@ Your HTML5 application is now ready to use.
 
 Upload the gadget (`url.\*`) and Cloud Platform application descriptor (`neo-app.json`) so they can be hosted by your HTML5 application.
 
-1.  Select the **youtubeurlgadget** folder.
-2.  Select **File** > **Import** > **From File System**. The _Import_ dialog box appears.
+1.  Select the **`youtubeurlgadget`** folder.
+2.  Select **File** > **Import** > **From File System**. The **Import** dialog box appears.
 3.  Click **Browse**.
 4.  Go to the `\OpenSocial\Gadget\youtubeurlgadget` folder in your local repository.
-5.  Double click **neo-app.json**.
+5.  Double click **`neo-app.json`**.
 6.  Click **OK**.
 7.  Select **File** > **Import** > **From File System**.
 8.  Click **Browse**.
-9.  Double click **url.html**.
+9.  Double click **`url.html`**.
 10. Click **OK**.
 11. Select **File** > **Import** > **From File System**.
 12. Click **Browse**.
-13. Double click **url.xml**.
+13. Double click **`url.xml`**.
 14. Click **OK**.
 
 
@@ -78,7 +78,7 @@ Upload the gadget (`url.\*`) and Cloud Platform application descriptor (`neo-app
 
 Publish your HTML5 application to provide a publicly accessible URL that integrates with SAP Jam Collaboration.
 
-1.  Right-click your **youtubeurlgadget** and select **Deploy** > **Deploy to SAP Cloud Platform**. The **Deploy Application to SAP Cloud Platform** dialog box appears.
+1.  Right-click your **`youtubeurlgadget`** and select **Deploy** > **Deploy to SAP Cloud Platform**. The **Deploy Application to SAP Cloud Platform** dialog box appears.
 2.  Click **Deploy**. The _Successfully Deployed_ dialog box appears.
 3.  Click **Open the application's page in the SAP Cloud Platform cockpit**. A _SAP Cloud Platform_ tab appears.
 4.  Click the **Application URL** link. The error message, `HTTP Status 404 - Resource not found` appears in a new tab.
@@ -112,4 +112,4 @@ Feel free to modify, upload, and run this source code as much as you like. For m
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

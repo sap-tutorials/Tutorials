@@ -1,5 +1,5 @@
 ---
-title: SAP Cloud Platform IoT for Neo: Viewing data from environmental sensors
+title: Viewing data from environmental sensors (IoT for Neo)
 description: Now it is time to display your stored data from your Tessel device using SAPUI5 and SAP Web IDE
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, products>sap-hana, tutorial>beginner ]
@@ -8,11 +8,11 @@ tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things,
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:**  [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](http://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html), or
-- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](http://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
+- **Tutorials:**  [SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device](https://www.sap.com/developer/tutorials/iot-part8-hcp-services-tessel.html), or
+- [SAP Cloud Platform IoT for Neo: Sending messages from TI SensorTag device](https://www.sap.com/developer/tutorials/iot-part11-hcp-services-ti.html)
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: binding to and developing on SAP HANA XSC](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+- [SAP Cloud Platform IoT for Neo: binding to and developing on SAP HANA XSC](https://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
 
 
 ## Details
@@ -109,4 +109,4 @@ You can now use your expertise with SAPUI5 and start making modifications. Such 
 
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: binding to and developing on SAP HANA XSC](http://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)
+- [SAP Cloud Platform IoT for Neo: binding to and developing on SAP HANA XSC](https://www.sap.com/developer/tutorials/iot-part10-hcp-services-hanaxs.html)

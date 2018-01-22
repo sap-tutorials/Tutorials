@@ -27,7 +27,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 [ACCORDION-BEGIN [Step 1: ](Creating Extended Storage)]
 The first step after you have installed Dynamic Tiering system on your SAP HANA is to create an extended storage `dbspace`. After installation you have the `esserver` running but the extended storage is not created yet.
 
-As discussed in [Create Extended Storage](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part1.html), you can create the extended storage in SAP HANA Studio using a SQL console by executing the following:
+As discussed in [Create Extended Storage](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part1.html), you can create the extended storage in SAP HANA Studio using a SQL console by executing the following:
 
 ```sql
 CREATE EXTENDED STORAGE AT '<your.machine.name>' size 1000 MB;

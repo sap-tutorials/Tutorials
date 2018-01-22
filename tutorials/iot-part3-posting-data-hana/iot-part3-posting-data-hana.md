@@ -8,11 +8,11 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Internet of Things (IoT) Setup SAP HANA XS (On-premise or stand-alone server)](http://www.sap.com/developer/tutorials/iot-part2-hanaxs-setup.html)
+- **Tutorials:** [Internet of Things (IoT) Setup SAP HANA XS (On-premise or stand-alone server)](https://www.sap.com/developer/tutorials/iot-part2-hanaxs-setup.html)
 
 
 ## Next Steps
-- [Internet of Things (IoT) Check your data](http://www.sap.com/developer/tutorials/iot-part4-checking-data.html)
+- [Internet of Things (IoT) Check your data](https://www.sap.com/developer/tutorials/iot-part4-checking-data.html)
 
 ## Details
 ### You will learn  
@@ -103,4 +103,4 @@ You can modify the values in the POST body and send a few more requests to add a
 
 
 ## Next Steps
-- [Internet of Things (IoT) Check your data](http://www.sap.com/developer/tutorials/iot-part4-checking-data.html)
+- [Internet of Things (IoT) Check your data](https://www.sap.com/developer/tutorials/iot-part4-checking-data.html)

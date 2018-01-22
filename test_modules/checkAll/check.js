@@ -11,6 +11,7 @@ var readWhiteList = require('../readWhiteList/readWhiteList.js')
 var log = require('color-log');
 var path = require('path');
 var ProgressBar = require('progress');
+var Entities = require('html-entities').AllHtmlEntities;
 
 module.exports = function(files, showprogressbar, callback) {
     console.log("\n");
@@ -22,13 +23,15 @@ module.exports = function(files, showprogressbar, callback) {
         total: (4 * files.length) + 2
     });
 
-
+    const entities = new Entities();
 
     //initialize log for every test
     var logFilename = "";
     var logMdSpell = "";
     var logContent = "";
-    var logDeadLink = "";
+    var logErrorDeadLinkCritical = "";
+    var logErrorDeadLink = "";
+    var logWarnDeadLink = "";
 
     //initialize error counter for every test
     var cntFilename = 0;
@@ -111,18 +114,35 @@ module.exports = function(files, showprogressbar, callback) {
                     if (results != null) {
                         //build error log
                         if (!results.isPassed) {
-                            cntDeadLink += results.deadlinks.length;
-                            var errmsg = [];
+                            const isTutorialDoc = fname.includes('docs-tutorial');
+                            const errmsgCritical = [];
+                            const errmsg = [];
+                            const warnmsg = [];
+                            if(!isTutorialDoc) {
+                                const critical = results.deadlinks.filter(deadlink => !deadlink.isTrusted);
+                                cntDeadLink += critical.length;
+                            }   
                             results.deadlinks.forEach(function(deadlink) {
-                              var line;
+                                var line;
+                                const decodedUrl = entities.decode(deadlink.url);
                                 fileContent.forEach(function(line,i){
-                                  if(line.includes(deadlink.url)){
+                                  if(line.includes(decodedUrl)){
                                     line = i+1;
-                                    errmsg.push('\n\n        url: ' + deadlink.url + '\n        line: ' + line + '\n        code: ' + deadlink.code);
+                                    const msg = '\n\n        url: ' + decodedUrl + '\n        line: ' + line + '\n        code: ' + deadlink.code;
+                                    if(deadlink.isTrusted || isTutorialDoc) {
+                                        warnmsg.push(msg);
+                                    } else if(deadlink.code !== 404) {
+                                        errmsg.push(msg);
+                                    } else {
+                                        errmsgCritical.push(msg);
+                                    }
                                   }
                                 })
                             });
-                            logDeadLink += '\n    > Deadlink(s) found in ' + fname + ':' + errmsg + '\n';
+                            const buildMsg = (fileName, msg) => '\n    > Deadlink(s) found in ' + fileName + ':' + msg + '\n';
+                            logErrorDeadLinkCritical += errmsgCritical.length ? buildMsg(fname, errmsgCritical) : '';
+                            logErrorDeadLink += errmsg.length ? buildMsg(fname, errmsg) : '';
+                            logWarnDeadLink += warnmsg.length ? buildMsg(fname, warnmsg) : '';
                         }
                         checkIfCompleted();
                     } else {
@@ -142,10 +162,10 @@ module.exports = function(files, showprogressbar, callback) {
                           }
                           //error for circle ci
                           else if(passed){
-                            log.info("successful testing");
+                            log.info("Successful testing");
                             process.exit(0); //success
                           } else{
-                            log.error("failed testing");
+                            log.error("Failed testing");
                             process.exit(1);  //fail
                           }
 
@@ -191,11 +211,14 @@ module.exports = function(files, showprogressbar, callback) {
             console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n");
 
             //log for deadlink check
-            if (logDeadLink == "") {
-                log.info("CHECK LINKS: \n\n  >>> " + checkedLinks + " Link(s) checked in " + cntCheckeadDeadlink + " File(s) without Error(s)\n");
+            if(logErrorDeadLinkCritical) log.error("CHECK LINKS (404): \n" + logErrorDeadLinkCritical);
+            if(logErrorDeadLink)  log.error("CHECK LINKS (Other): \n" + logErrorDeadLink);
+            if (logErrorDeadLinkCritical || logErrorDeadLink) {
+                log.error( "\n\n  >>> " + checkedLinks + " Link(s) checked in " + cntCheckeadDeadlink + " File(s) with " + cntDeadLink + " Error(s)\n");  
             } else {
-                log.error("CHECK LINKS: \n" + logDeadLink + "\n\n  >>> " + checkedLinks + " Link(s) checked in " + cntCheckeadDeadlink + " File(s) with " + cntDeadLink + " Error(s)\n");
+                log.info("CHECK LINKS: \n\n  >>> " + checkedLinks + " Link(s) checked in " + cntCheckeadDeadlink + " File(s) without Error(s)\n");  
             }
+            if(logWarnDeadLink) log.warn("CHECK LINKS (TRUSTED or Tutorials Docs): \n" + logWarnDeadLink);
         }
     });
 

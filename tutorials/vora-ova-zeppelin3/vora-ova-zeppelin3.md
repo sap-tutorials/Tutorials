@@ -1,16 +1,16 @@
 ---
 title: Working with Disk Engine using Apache Zeppelin
-description: SAP Vora 1.4: Disk-based storage allows you to use relational capabilities without loading data into memory
+description: Disk-based storage allows you to use relational capabilities without loading data into memory (SAP Vora 1.4).
 primary_tag: products>sap-vora
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - [Working with ORC and Parquet Files using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin6.html)
+ - [Working with ORC and Parquet Files using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin6.html)
 
 
 ## Next Steps
- - [Working with Hierarchies using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin2.html)
+ - [Working with Hierarchies using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin2.html)
 
 ## Details
 ### You will learn  
@@ -58,4 +58,4 @@ ON COMPLAINTS_DISK.COMPLAINT_ID = PRODUCTS.COMPLAINT_ID
 
 
 ## Next Steps
-- [Working with Hierarchies using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-ova-zeppelin2.html)
+- [Working with Hierarchies using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-ova-zeppelin2.html)

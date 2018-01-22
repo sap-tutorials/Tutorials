@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Creating a Calculation View with a Cube data type and Star Join](http://www.sap.com/developer/tutorials/xsa-sqlscript-cube.html)
+- **Tutorials:** [Creating a Calculation View with a Cube data type and Star Join](https://www.sap.com/developer/tutorials/xsa-sqlscript-cube.html)
 
 ## Next Steps
-- [Parallel Processing and Parameters](http://www.sap.com/developer/tutorials/xsa-sqlscript-parallel.html)
+- [Parallel Processing and Parameters](https://www.sap.com/developer/tutorials/xsa-sqlscript-parallel.html)
 
 ## Details
 ### You will learn  
@@ -114,4 +114,4 @@ Note the execution time.
 
 
 ## Next Steps
-- [Parallel Processing and Parameters](http://www.sap.com/developer/tutorials/xsa-sqlscript-parallel.html)
+- [Parallel Processing and Parameters](https://www.sap.com/developer/tutorials/xsa-sqlscript-parallel.html)

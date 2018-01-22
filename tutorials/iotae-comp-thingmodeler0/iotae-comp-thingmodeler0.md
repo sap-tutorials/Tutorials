@@ -23,7 +23,7 @@ You will learn how to onboard your computer as the IoT thing for collecting sens
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP IoT Application Enablement Thing Modeler)]
-You should have access to the `sap-iotaehandson2` tenant on SAP Cloud Platform. It is in limited availability as of now - primarily available to participants of SAP's face to face events.
+Go to https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html and follow the instructions on the page to get a user and a password on the tenant landscape used for this tutorial.
 
 Open https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/launchpage/ in the web browser. Use the user id provided to you and not your email address to login.
 
@@ -52,9 +52,9 @@ While in the Package Manager click on the **Open in Thing Properties Catalog** i
 
 The property sets have been already preconfigured for you. The package contains two property sets:
  1. `Default` of the type Basic Data - with one property `common_name`
- 2. `resource_sensors` of the type Measured Data - with one property `cpu_usage`.
+ 2. `resource_sensors_2` of the type Measured Data - with one property `cpu_usage` and another one called `cpu_type`
 
-The property `cpu_usage` has
+The property `cpu_usage` is what we want to measure and has
  - ___float___ data type,
  - ___percentage___ unit of measure,
  - and two thresholds: ___upper___ and ___uppermost___.
@@ -67,7 +67,7 @@ In the Thing Properties Catalog click on the **Thing Modeler**.
 
 In the **Thing Types** pane you will see `generic_computer` thing type defined with:
  - Basic Data properties from the `Default` set,
- - Measured Values properties from the `resource_sensors` set.
+ - Measured Values properties from the `resource_sensors_2` set.
 
 
 [ACCORDION-END]

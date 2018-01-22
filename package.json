@@ -1,7 +1,7 @@
 {
   "name": "tutorials",
   "version": "1.0.0",
-  "description": "Tutorials for catalog on sap.com http://www.sap.com/developer/tutorials.html",
+  "description": "Tutorials for catalog on sap.com http://www.sap.com/developer/tutorial-navigator.tutorials.html",
   "main": "README.MD",
   "license": "Apache-2.0",
   "scripts": {
@@ -22,11 +22,13 @@
   },
   "homepage": "https://github.com/SAPDocuments/Tutorials#readme",
   "dependencies": {
+    "marked": "^0.3.12",
     "color-log": "^0.0.2",
     "command-line-args": "^4.0.7",
+    "html-entities": "^1.2.1",
     "inquirer": "^3.3.0",
-    "markdown-link-check": "^3.1.4",
-    "markdown-spellcheck": "^1.0.0",
+    "markdown-link-check": "^3.1.5",
+    "markdown-spellcheck": "^1.3.1",
     "mkdirp": "^0.5.1",
     "progress": "^2.0.0",
     "recursive-readdir": "^2.2.1"

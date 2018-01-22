@@ -6,11 +6,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---
 
 ## Prerequisites  
- - [Working with Disk Engine using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin3.html)
+ - [Working with Disk Engine using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-cal-zeppelin3.html)
 
 
 ## Next Steps
- - [Working with Time Series using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin5.html)
+ - [Working with Time Series using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-cal-zeppelin5.html)
 
 ## Details
 ### You will learn  
@@ -121,4 +121,4 @@ You can also use aggregations in your `SELECT` statement and in combination of a
 
 
 ## Next Steps
-- [Working with Time Series using Apache Zeppelin](http://www.sap.com/developer/tutorials/vora-cal-zeppelin5.html)
+- [Working with Time Series using Apache Zeppelin](https://www.sap.com/developer/tutorials/vora-cal-zeppelin5.html)

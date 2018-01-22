@@ -1,20 +1,20 @@
 ---
 title: Test the "Dataset" service
-description: Using a REST client, you will test the "Dataset" SAP Cloud for predictive services
-primary_tag: products>sap-cloud-platform-predictive-service
-tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform ]
+description: Using a REST client, you will test the "Dataset" SAP Predictive services
+primary_tag: products>sap-predictive-service
+tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-service, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Beginner
-  - **Tutorials:** [Configure the SAP Cloud Platform predictive services](https://www.sap.com/developer/groups/ps-configure.html)
+  - **Tutorials:** [Configure the SAP Predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+- [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
 
 ## Details
 ### You will learn
-  - How to "Register" your data set with the SAP Cloud for predictive services using a REST Client.
+  - How to "Register" your data set with the SAP Predictive services using a REST Client.
 
 
 ### Time to Complete
@@ -34,11 +34,11 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
 
 &nbsp;
 
-> **Note**: if you are running into some issue, you can check the [SAP Cloud Platform Predictive Services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
+> **Note**: if you are running into some issue, you can check the [SAP Predictive services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 [ACCORDION-BEGIN [Info:](A short description of the Dataset service)]
 
-In order to use any of the SAP Cloud for predictive services, you will need a registered dataset.
+In order to use any of the SAP Predictive services, you will need a registered dataset.
 
 When registering a dataset, you will define and store the structure of the dataset which will be used by the other services.
 
@@ -108,7 +108,7 @@ Click on **Send**
 
 It will now display the data set registration identifier, the number of rows and the variable descriptions.
 
-Now, we can use the <code><b>ID</b></code> value to reference the registered dataset with other SAP Cloud for predictive services calls.
+Now, we can use the <code><b>ID</b></code> value to reference the registered dataset with other SAP Predictive services calls.
 
 The below extract was shortened to ease the reading.
 ```
@@ -275,7 +275,7 @@ You have now listed all the data set registered in your environment.
 
 ### Optional
 
-For more details on the SAP Cloud for predictive services, you can check the following the [`Dataset APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/ac9dc4ed145646a0b76b4729210fd067.html) documentation.
+For more details on the SAP Predictive services, you can check the following the [`Dataset APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/ac9dc4ed145646a0b76b4729210fd067.html) documentation.
 
 ## Next Steps
-- [Test the SAP Cloud Platform predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+- [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)

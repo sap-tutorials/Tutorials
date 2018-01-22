@@ -1,5 +1,5 @@
 ---
-title: Create a destination for your live OData service
+title: Create a destination for your live OData service for TechEd
 description: Create a Destination to allow SAP Cloud Platform to read data
 auto_validation: true
 primary_tag: products>sap-cloud-platform

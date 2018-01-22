@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition  ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
+ - **Tutorials:** [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](https://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
  - Obtain your proxy information if behind a firewall.
 
  **Tip:** This tutorial is available as a [video](https://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
@@ -23,7 +23,7 @@ How to start the server, change the default passwords to secure your system, and
 
 ---
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
 
 [ACCORDION-BEGIN [Step 1: ](Start your VM.)]
 
@@ -202,7 +202,7 @@ In the following example, the IP address is 172.25.86.13:
 
 [ACCORDION-BEGIN [Step 14: ]((Optional) Change Keyboard Layout)]
 
-The virtual console and X11 window system defaults to a `us` (`QWERTY`) keyboard layout. If you are not an English user, or not a `QWERTY` keyboard user, you can change the keyboard layout at this point.
+If you have a non-English or non-QWERTY keyboard, and if you used an SSH client to log in to SAP HANA 2.0, express edition, at this point you have the option of changing the keyboard layout of the VM to match your physical keyboard. This will enable you to enter content directly into the VM, rather than through an SSH Client. Note, however, that the SSH Client still has some advantages (including a scroll bar) that the VM window lacks.
 
 1. At the command prompt, enter:
 
@@ -291,9 +291,9 @@ Test your XSC installation.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Test WEBIDE (Server + Applications Virtual Machine Only))]
+[ACCORDION-BEGIN [Step 17: ](Test Web IDE (Server + Applications Virtual Machine Only))]
 
-If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your WEBIDE installation.
+If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your Web IDE installation.
 
 >**Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
 
@@ -341,6 +341,15 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 2. Check for an API endpoint showing `https://hxehost:39030`. If you see this entry, XSA installed correctly.
 
+>**Note**: In certain situations you may not see the API endpoint `https://hxehost:39030`. Instead, the system prompts you to enter the API URL manually. If you're prompted for the API URL, do this:
+
+> - At the `API_URL` prompt, enter `https://hxehost:39030`.
+
+>    The `Authenticating...` message appears. Wait until authentication completes.
+
+>    ![Entering API endpoint manually](XSA_endpoint.PNG)
+
+> - When the system prints `API Endpoint`, `User`, `Org`, and `Space`, this means XSA installed correctly.
 
 
 [ACCORDION-END]
@@ -396,7 +405,7 @@ Download and install the HANA Eclipse Plugin to your host OS (not the VM guest) 
 
 3. Launch when prompted, or go to the eclipse folder (example: `C:\Users\<path>\eclipse\jee-neon`) and run the **eclipse** executable file.
 
-4. Follow the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html).
+4. Follow the tutorial [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html).
 
 
 
@@ -407,6 +416,8 @@ Download and install the HANA Eclipse Plugin to your host OS (not the VM guest) 
 If you are using SAP HANA 2.0, express edition in a language other than English or German, you can download the **Text analysis files for additional languages** package in the Download Manager.
 
 The Text analysis files for additional languages package contains the text analysis files for the HANA Text Analysis feature for languages other than English or German.
+
+>**Note**: Use the server's built-in Download Manager (Console Mode) for Linux to download `additional_lang.tgz`. When logged-in as `hxeadm`, you can access the download manager (`HXEDownloadManager_linux.bin`) in directory `/usr/sap/HXE/home/bin`.
 
 1. Run the `hxe_gc` memory management script to free up available VM memory.
 
@@ -430,27 +441,33 @@ The Text analysis files for additional languages package contains the text analy
     HXEDownloadManager_linux.bin linuxx86_64 vm additional_lang.tgz
     ```
 
-3. In your VM, navigate to the Downloads directory. Enter:
+3. In your VM, update folder permissions on the `lang` folder.
+
+    Navigate to `/hana/shared/<SID>/global/hdb/custom/config/lexicon/`
+
+    Enter this command:
 
     ```bash
-    cd /usr/sap/HXE/home/Downloads
+    chmod –R 755 lang
     ```
 
-4. In your VM, extract the contents of `additional_lang.tgz` to `/hana/shared/HXE/global/hdb/custom/config/lexicon`. Enter:  
+4. In your VM, extract `additional_lang.tgz`.
+
+    This step extracts `<download_path>/additional_lang.tgz` to `/hana/shared/HXE/global/hdb/custom/config/lexicon`. Enter this command:  
 
     ```bash
-    tar -xvzf additional_lang.tgz -C /hana/shared/HXE/global/hdb/custom/config/lexicon
+    tar -xvzf /usr/sap/HXE/home/Downloads/additional_lang.tgz -C /hana/shared/HXE/global/hdb/custom/config/lexicon
     ```      
 
     >**Tip:** If your tables do not use a full text index, or if your tables use a full text index but contain very little data, you can save about 120 MB of memory if you turn off the standalone text analysis preprocessor, and activate the embedded text analysis preprocessor.
 
-    Stop the standalone preprocessor:
+    - Stop the standalone preprocessor:
 
     ```bash
     alter system alter configuration ('daemon.ini','SYSTEM') set ('preprocessor','instances') = '0' with reconfigure;
     ```
 
-    Start the embedded preprocessor:
+    - Start the embedded preprocessor:
 
     ```bash
     alter system alter configuration ('preprocessor.ini','SYSTEM') set ('general','embedded') = 'true' with reconfigure;
@@ -470,12 +487,7 @@ SAP EA Designer is a separate download in the Download Manager.
 
 In this procedure you'll download the SAP EA Designer package (`eadesigner.tgz`) using the VM's built-in Download Manager (Console Mode), extract the package, and run the installation script. Downloading from inside the VM is the simplest and quickest method.
 
->**Note:**
-Note that you have to option of using the Download Manager (GUI Mode) on your laptop to download `eadesigner.tgz`, but doing so has disadvantages:
-
-> - If you download to your laptop, you will need to transfer `eadesigner.tgz` from your laptop's Save Directory to the `/usr/sap/HXE/home/Downloads` directory in your VM.
-
-> - The laptop-to-VM transfer procedure varies depending on your hypervisor and host operating system. You will need to consult your hypervisor documentation.
+>**Note**: Use the server's built-in Download Manager (Console Mode) for Linux to download `eadesigner.tgz`. When logged-in as `hxeadm`, you can access the download manager (`HXEDownloadManager_linux.bin`) in directory `/usr/sap/HXE/home/bin`.
 
 1. Run the `hxe_gc` memory management script to free up available VM memory.
 
@@ -584,26 +596,34 @@ SAP HANA Interactive Education (SHINE) makes it easy to learn how to build appli
 
 SHINE is a separate download in the Download Manager. To use SHINE, you need the Server + Applications Virtual Machine (`hxexsa.ova`) package.
 
+>**Note**: Use the server's built-in Download Manager (Console Mode) for Linux to download `shine.tgz`. When logged-in as `hxeadm`, you can access the download manager (`HXEDownloadManager_linux.bin`) in directory `/usr/sap/HXE/home/bin`.
+
 1. Run the `hxe_gc` memory management script to free up available VM memory.
 
-    - Log in as `hxeadm` and execute:
+    - In your VM, log in as `hxeadm` and enter:
         ```bash
-        cd ~bin
-        ./hxe_gc.sh
+        cd /usr/sap/HXE/home/bin
         ```
 
-    - Follow the prompts.
+    - Execute:
+        ```bash
+        hxe_gc.sh
+        ```
+    - When prompted for **System database user (SYSTEM) password**, enter the **New HANA database master password** you specified during SAP HANA, express edition installation.  
 
-2. Use the Download Manager to download the SAP HANA Interactive Education package, `shine.tgz`.
+    The cleanup process runs. The command prompt returns when the cleanup process is finished.
 
-3. Locate the download package:
+2. In your VM, download `shine.tgz` using the built-in Download Manager. From the same directory where you ran `hxe_gc` (`/usr/sap/HXE/home/bin`) enter:
 
-    | If you downloaded using...        | Then do this...  |
-    | ---------------- | -------------|
-    | The Download Manager (GUI Mode) on your laptop            | Transfer `shine.tgz` from your laptop's Save Directory to `~/Downloads` on your VM.|
-    | The VM's built-in Download Manager (Console Mode)           | Locate `shine.tgz` in the VM's Save Directory (`~/Downloads` by default). |
+    ```bash
+    HXEDownloadManager_linux.bin linuxx86_64 vm shine.tgz
+    ```
 
-4. Extract `shine.tgz`.
+4. In your VM, Extract `shine.tgz`.
+
+    ```bash
+    tar -xvzf shine.tgz
+    ```
 
 5. As the `hxeadm` user, run:
 
@@ -619,26 +639,36 @@ SHINE is a separate download in the Download Manager. To use SHINE, you need the
 
 The SAP HANA External Machine Learning Library is an application function library (AFL) supporting the integration of Google `TensorFlow`, as an external machine learning framework, with SAP HANA, express edition.
 
+>**Note**: Use the server's built-in Download Manager (Console Mode) for Linux to download `eml.tgz`. When logged-in as `hxeadm`, you can access the download manager (`HXEDownloadManager_linux.bin`) in directory `/usr/sap/HXE/home/bin`.
+
 1. Run the `hxe_gc` memory management script to free up available VM memory.
 
-    - Log in as `hxeadm` and execute:
+    - In your VM, log in as `hxeadm` and enter:
         ```bash
-        cd ~bin
-        ./hxe_gc.sh
+        cd /usr/sap/HXE/home/bin
         ```
 
-    - Follow the prompts.
+    - Execute:
+        ```bash
+        hxe_gc.sh
+        ```
+    - When prompted for **System database user (SYSTEM) password**, enter the **New HANA database master password** you specified during SAP HANA, express edition installation.  
+
+    The cleanup process runs. The command prompt returns when the cleanup process is finished.
 
 2. Use the Download Manager to download HANA External Machine Learning AFL, `eml.tgz`.
 
-3. Locate the download package.
+3. In your VM, download `eml.tgz` using the built-in Download Manager. From the same directory where you ran `hxe_gc` (`/usr/sap/HXE/home/bin`) enter:   
 
-    | If you downloaded using...        | Then do this...  |
-    | ---------------- | -------------|
-    | The Download Manager (GUI Mode) on your laptop            | Transfer `eml.tgz` from your laptop's Save Directory to `~/Downloads` on your VM.|
-    | The VM's built-in Download Manager (Console Mode)           | Locate `eml.tgz` in the VM's Save Directory (`~/Downloads` by default). |    
+    ```bash
+    HXEDownloadManager_linux.bin linuxx86_64 vm eml.tgz
+    ```
 
-4. Extract `eml.tgz`.
+4. In your VM, extract `eml.tgz`:
+
+    ```bash
+    tar -xvzf eml.tgz
+    ```
 
 5. As `hxeadm`, run:
 
@@ -658,11 +688,40 @@ You need to run a script and an installer executable to complete the necessary s
 
 > **Note:** The current version of SAP HANA, express edition supports only one Data Provisioning Agent per machine.
 
-1. Use the Download Manager to download the SAP HANA smart data integration installation package, `sdi.tgz`.
+>**Note**: Use the server's built-in Download Manager (Console Mode) for Linux to download `sdi.tgz`. When logged-in as `hxeadm`, you can access the download manager (`HXEDownloadManager_linux.bin`) in directory `/usr/sap/HXE/home/bin`.
 
-2. Extract the contents of `sdi.tgz` to a temporary directory.
+1. Run the `hxe_gc` memory management script to free up available VM memory.
 
-3. Run `HANA_EXPRESS_20/install_sdi.sh` as `hxeadm`.
+    - In your VM, log in as `hxeadm` and enter:
+        ```bash
+        cd /usr/sap/HXE/home/bin
+        ```
+
+    - Execute:
+        ```bash
+        hxe_gc.sh
+        ```
+    - When prompted for **System database user (SYSTEM) password**, enter the **New HANA database master password** you specified during SAP HANA, express edition installation.  
+
+    The cleanup process runs. The command prompt returns when the cleanup process is finished.
+
+2. In your VM, download `sdi.tgz` using the built-in Download Manager. From the same directory where you ran `hxe_gc` (`/usr/sap/HXE/home/bin`) enter:
+
+    ```bash
+    HXEDownloadManager_linux.bin linuxx86_64 vm sdi.tgz
+    ```
+
+3. In your VM, extract `sdi.tgz`:
+
+    ```bash
+    tar -xvzf sdi.tgz
+    ```
+
+3. As the `hxeadm` user, run:
+
+    ```bash
+    HANA_EXPRESS_20/install_sdi.sh
+    ```
 
     This enables the DP Server on HANA and deploys the monitoring delivery unit.
 

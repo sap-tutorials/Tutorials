@@ -6,10 +6,10 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 ---
 ## Prerequisites  
 - **Proficiency:** Intermediate
-- **Tutorials:** [Using COMMIT Statement](http://www.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)
+- **Tutorials:** [Using COMMIT Statement](https://www.sap.com/developer/tutorials/xsa-sqlscript-trans-commit.html)
 
 ## Next Steps
-- [SAP HANA XS Advanced Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)
+- [SAP HANA XS Advanced Creating an HDI Module](https://www.sap.com/developer/tutorials/xsa-hdi-module.html)
 
 ## Details
 ### You will learn  
@@ -76,4 +76,4 @@ Another "Chuck" record was not inserted.  "Chuck Norris's" record was removed by
 
 
 ## Next Steps
-- [SAP HANA XS Advanced Creating an HDI Module](http://www.sap.com/developer/tutorials/xsa-hdi-module.html)
+- [SAP HANA XS Advanced Creating an HDI Module](https://www.sap.com/developer/tutorials/xsa-hdi-module.html)

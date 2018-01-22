@@ -1,16 +1,16 @@
 ---
 title: Configure a SAPUI5 application from the project template
-description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the SAP Cloud for predictive services
-primary_tag: products>sap-cloud-platform-predictive-service
-tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
+description: Configure the destination connectivity to be used in the SAPUI5 application to interact with the SAP Predictive services
+primary_tag: products>sap-predictive-service
+tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Configure the SAP Cloud Platform predictive services](https://www.sap.com/developer/groups/ps-configure.html)
+  - **Tutorials:** [Configure the SAP Predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-- [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
+- [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 ### You will learn
@@ -20,7 +20,7 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
   - How to add a destination to your SAPUI5 application
   - Run your SAPUI5 application
   &nbsp;
-  **Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Cloud for predictive services.
+  **Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Predictive services.
   For more content on SAPUI5, you can check the dedicated SAPUI5 tutorials or the online SAPUI5 documentation available here: https://sapui5.hana.ondemand.com
 
 ### Time to Complete
@@ -41,11 +41,11 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-cloud-platfo
 &nbsp;
 
 [ACCORDION-BEGIN [Step 1: ](Create your destination)]
-Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the [***SAP Cloud Platform Cockpit***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial*) as highlighted on the below screenshot.
 
-![SAP HANA Cloud Platform Cockpit](01.png)
+![SAP Cloud Platform Cockpit](01.png)
 
 On the left side bar, you can navigate in **Connectivity** > **Destinations**.
 
@@ -61,7 +61,7 @@ Field Name           | Value
 :------------------- | :--------------
 Name                 | `psapi`
 Type                 | `HTTP`
-Description          | `SAP Cloud Platform Predictive Services Destination`
+Description          | `SAP Predictive services Destination`
 URL                  | the C4PA URL as described at the beginning
 Proxy Type           | `Internet`
 Authentication       | `AppToAppSSO`
@@ -219,24 +219,24 @@ Open the `webapp/view/demo.view.xml` file and replace the existing code with the
 			<Page id="detail" title="Test the SAP Cloud Platform Predictive Service in a SAPUI5 application">
 				<content></content>
 			</Page>
-			<Page id="detail_dataset_register" title="Register your Dataset with the SAP Cloud for predictive services">
+			<Page id="detail_dataset_register" title="Register your Dataset with the SAP Predictive services">
 				<content>
-					<!--mvc:XMLView viewName="pspredictive.view.dataset.register"/-->
+					<!--<mvc:XMLView viewName="pspredictive.view.dataset.register"/>-->
 				</content>
 			</Page>
-			<Page id="detail_dataset_manage" title="Manage your Data Set with the SAP Cloud for predictive services">
+			<Page id="detail_dataset_manage" title="Manage your Data Set with the SAP Predictive services">
 				<content>
-					<!--mvc:XMLView viewName="pspredictive.view.dataset.manage"/-->
+					<!--<mvc:XMLView viewName="pspredictive.view.dataset.manage"/>-->
 				</content>
 			</Page>
-			<Page id="detail_forecast_synchronous" title="Forecast with the SAP Cloud for predictive services (Synchronous Mode)">
+			<Page id="detail_forecast_synchronous" title="Forecast with the SAP Predictive services (Synchronous Mode)">
 				<content>
-					<!--mvc:XMLView viewName="pspredictive.view.forecast.synchronous"/-->
+					<!--<mvc:XMLView viewName="pspredictive.view.forecast.synchronous"/>-->
 				</content>
 			</Page>
-			<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Cloud for predictive services (Asynchronous Mode)">
+			<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Predictive services (Asynchronous Mode)">
 				<content>
-					<!--mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/-->
+					<!--<mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/>-->
 				</content>
 			</Page>
 		</detailPages>
@@ -324,4 +324,4 @@ Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob
 [ACCORDION-END]
 
 ## Next Steps
-- [Build an SAPUI5 application to interact with the SAP Cloud Platform, predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
+- [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)

@@ -6,10 +6,10 @@ tags: [  tutorial>beginner, topic>html5, topic>mobile, topic>odata, products>sap
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials** [Separate the JavaScript and CSS Files](http://www.sap.com/developer/tutorials/angular-separate-files.html)
+ - **Tutorials** [Separate the JavaScript and CSS Files](https://www.sap.com/developer/tutorials/angular-separate-files.html)
 
 ## Next Steps
- - **Tutorials** [Add a Header and Detail Modal Dialog](http://www.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)
+ - **Tutorials** [Add a Header and Detail Modal Dialog](https://www.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)
 
 ## Details
 ### You will learn  
@@ -39,7 +39,7 @@ We need to do two things to make this work:
 > - In the right hand navigation, select *Connectivity*, then select *Destinations*
 > - Look for the Destination called `Northwind`.
 >
-> If you do not see a Destination called `Northwind`, go to the **[Create a Destination](http://www.sap.com/developer/tutorials/hcp-create-destination.html)** tutorial.  When you are finished, return here.
+> If you do not see a Destination called `Northwind`, go to the **[Create a Destination](https://www.sap.com/developer/tutorials/hcp-create-destination.html)** tutorial.  When you are finished, return here.
 >
 
 1.  Create a new file in your project.  Select the `HelloAngular` project, and then right click.  Choose **New** --> **File**.
@@ -158,4 +158,4 @@ Second, when the browser attempts to get data from <https://services.odata.org/>
 We work around this by having SAP Cloud Platform talk to <http://services.odata.org/> directly.  This avoids the HTTPS connection, and works around the bug.
 
 ## Next Steps
- - **Tutorials** [Add a Header and Detail Modal Dialog](http://www.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)
+ - **Tutorials** [Add a Header and Detail Modal Dialog](https://www.sap.com/developer/tutorials/angular-add-header-detail-dialog.html)

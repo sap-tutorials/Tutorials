@@ -6,7 +6,7 @@ tags: [tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, 
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
-  - **Tutorials:** [View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View](http://www.sap.com/developer/tutorials/dt-create-schema-load-data-part7.html)
+  - **Tutorials:** [View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part7.html)
 
 ## Details
 ### You will learn
@@ -40,9 +40,9 @@ The types of partitioning include: range partitioning, hash-range and range-rang
 
 In this module we will create a multi-store table that uses single level Range partitioning. With single level range partitioning, at least one range partition must be in the DEFAULT STORAGE and one range partition in extended storage. Only range partitions are supported when it comes to single-level partitioning. The diagram below shows the ranges that will be defined.
 
-![Range Partition](Multi-storeRange1.png)
+![Range Partition](MultistoreRange1.png)
 
-![Range Partition](Multi-storeRange2.png)
+![Range Partition](MultistoreRange2.png)
 
 > Note: We will store ranges 1 to 4 in EXTENDED STORAGE and range 5 and "`OTHERS`" in the in-memory DEFAULT STORAGE. The "`OTHERS`" range is optional but if it is created, it is always in DEFAULT STORAGE.
 

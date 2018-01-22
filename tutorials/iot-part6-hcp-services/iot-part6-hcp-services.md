@@ -1,5 +1,5 @@
 ---
-title: SAP Cloud Platform IoT for Neo: Enable and configure
+title: Enable and configure (IoT for Neo)
 description: Setup and configure the use of the IoT for Neo environment in SAP Cloud Platform
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, tutorial>beginner ]
@@ -8,11 +8,11 @@ tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things,
 
 ## Prerequisites
 - **Proficiency:** Beginner
-- **Tutorials:** [Setup the Tessel device](http://www.sap.com/developer/how-tos/2016/09/iot-tessel.html)
+- **Tutorials:** [Setup the Tessel device](https://www.sap.com/developer/how-tos/2016/09/iot-tessel.html)
 
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)
+- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](https://www.sap.com/developer/tutorials/iot-part7-add-device.html)
 
 ## Details
 ### You will learn
@@ -105,4 +105,4 @@ Once user is assigned to the role, stop and start `iotmms` application.
 
 
 ## Next Steps
-- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](http://www.sap.com/developer/tutorials/iot-part7-add-device.html)
+- [SAP Cloud Platform IoT for Neo: Configuring the device for environmental sensors data](https://www.sap.com/developer/tutorials/iot-part7-add-device.html)

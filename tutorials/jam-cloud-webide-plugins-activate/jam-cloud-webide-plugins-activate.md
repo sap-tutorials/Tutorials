@@ -1,6 +1,6 @@
 ---
 title: Activate SAP Web IDE plugins on SAP Cloud Platform
-description: Demonstrates how to activate SAP Web IDE plugins on SAP Cloud Platform
+description: This tutorial shows how to activate SAP Web IDE plugins on SAP Cloud Platform.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
 ---
@@ -14,7 +14,7 @@ tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to activate SAP Web IDE plugins on SAP Cloud Platform
+In this tutorial, you will learn how to activate SAP Web IDE plugins on SAP Cloud Platform.
 
 ### Time to Complete
 **5 Min**
@@ -23,15 +23,14 @@ In this tutorial you will learn how to activate SAP Web IDE plugins on SAP Cloud
 
 [ACCORDION-BEGIN [Step 1: ](Activate SAP Web IDE plugins on SAP Cloud Platform)]
 
-
 1.  In SAP Web IDE, the _SAP Jam Collaboration Extension Sample Projects_ need to be enabled. In SAP Web IDE, select the **Tools** menu and then select **Preferences**.
 2.  In the _Preferences_ section, click on **Plugins**.
 3.  In the **Repository** drop down select **SAP Jam Collaboration Plugins**. If they do not show up you may want to refresh your SAP Web IDE.
-4.  Activate the **sapjam.samples plugin**.
+4.  Activate the **`sapjam.samples` plugin**.
 
     ![Activate the sapjam.samples plugin page](loio3061dc55d42c4efb8c522eaaec92492f_HiRes.png)
 
-    Figure 2: Activate the sapjam.samples plugin
+    Figure 2: Activate the `sapjam.samples` plugin
 5.  Also activate the **Hybrid App Toolkit**.
 6.  Click on the **enable** slider and click the **Save** button at the bottom of the page. SAP Web IDE refreshes.
 
