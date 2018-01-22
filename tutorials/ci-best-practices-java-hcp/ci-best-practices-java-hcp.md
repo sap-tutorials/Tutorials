@@ -117,7 +117,7 @@ The SAP `neo-java-web-maven-plugin` provides a client API to SAP Cloud Platform,
 
 > [Maven Plugin](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4cbdab6e2eb14c92ab76540ffb32174c.html)
 
-Part of the automatic scenario tests are Selenium tests. Selenium tries to start a browser which requires Firefox to be installed on the Jenkins build slave machine. Firefox requires a display to send the front end to; however, on a Linux build machine there usually is no display (for example an X server) installed. Hence starting Firefox during the build would fail. We solve this issue by temporarily opening the virtual frame buffer `Xvfb` during the build and setting the `DISPLAY` environment variable using the Envinject plugin of Jenkins so that Firefox knows where to display the front end.
+Part of the automatic scenario tests are Selenium tests. Selenium tries to start a browser which requires Firefox to be installed on the Jenkins build slave machine. Firefox requires a display to send the front end to; however, on a Linux build machine there usually is no display (for example an X server) installed. Hence starting Firefox during the build would fail. We solve this issue by temporarily opening the virtual frame buffer `Xvfb` during the build and setting the `DISPLAY` environment variable using the `Envinject` plugin of Jenkins so that Firefox knows where to display the front end.
 
 You might have compatibility problems between Selenium and Firefox, it might happen that your first trial will fail; we suggest trying out other version combinations. We have tested Firefox 42.0 with Selenium 2.52.0. Firefox must be installed on the machine, whereas Selenium is automatically fetched by Maven.
 
