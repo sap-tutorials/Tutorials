@@ -1,6 +1,6 @@
 ---
 title: Integrate external application into SAP Jam Collaboration
-description: Integrate records from the ESPM Web Shop into SAP Jam Collaboration
+description: Integrate records from the ESPM Web Shop into SAP Jam Collaboration.
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
 ---
@@ -13,16 +13,16 @@ tags: [  tutorial>intermediate, products>sap-jam, products>sap-cloud-platform, t
 
 ## Details
 ### You will learn
-In this tutorial you will learn how to integrate ESPM Web Shop records into SAP Jam Collaboration to create a work pattern that enables sales people to collaborate on each item from the [ESPM web shop](https://espmrefapps.hana.ondemand.com/espm-cloud-web/webshop/).
+In this tutorial, you will learn how to integrate ESPM Web Shop records into SAP Jam Collaboration to create a work pattern that enables sales people to collaborate on each item from the [ESPM web shop](https://espmrefapps.hana.ondemand.com/espm-cloud-web/webshop/).
 
-To learn how to integrate SAP Jam Collaboration and your own ESPM instance with Machine Learning go to the [Enterprise Sales Procurement Model (ESPM) Application](https://github.com/SAP/cloud-espm-v2/blob/ML/README.md).
+To learn how to integrate SAP Jam Collaboration and your own ESPM instance with Machine Learning, go to the [Enterprise Sales Procurement Model (ESPM) Application](https://github.com/SAP/cloud-espm-v2/blob/ML/README.md).
 
 ### Time to Complete
 **15 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create an external application in SAP Jam Collaboration)]
+[ACCORDION-BEGIN [Step 1: ](Create external application)]
 
 An external application in SAP Jam Collaboration defines the connection between SAP Jam Collaboration and an external application to securely access the data in that application exposed via its API. Use the following steps to create this:
 
@@ -38,23 +38,25 @@ An external application in SAP Jam Collaboration defines the connection between 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Import the ESPM Web Shop Records into SAP Jam Collaboration)]
+[ACCORDION-BEGIN [Step 2: ](Import ESPM Web Shop records)]
 
 Record types in SAP Jam Collaboration define how the data from the external application will be displayed within SAP Jam Collaboration. Use the following steps to import the _ESPM Web Shop_ records into SAP Jam Collaboration:
 
-1. Import the _Product_ Records
-    a. From the _External Applications_ page, select **Action > Manage Record Types** next to the ESPM application.
-    b. Click the **Add Record Type** button.
-    c. In the **Name** text box, enter `Products`.
-    d. In the **External Type** text box enter
-`https://espmrefapps.hana.ondemand.com/espm-cloud-web/espm.svc/$metadata#Products`. This data includes the information on the products included in the ESPM application. It is exposed as OData.
-    e. In the **Annotation URL** text box enter
-`https://espmrefapps.hana.ondemand.com/espm-cloud-web/webshop/reviews_annotations.xml`. This file is used by SAP JAM Collaboration to render the data. The `annotations.xml` file, together with the available data, exposed via OData, enables you to create an external application in SAP Jam Collaboration that brings in products and product reviews data from the ESPM application into SAP Jam Collaboration. The OData annotations file specifies how each type of data is displayed in a specified UI element.
-    f. Click the **Import External Resources** button.
-    g. Click the **Done** button.
-    h. Click the **Create** button.
+1. Import the _Product_ records
+  <ol type="a">
+    <li>From the _External Applications_ page, select **Action > Manage Record Types** next to the ESPM application.</li>
+    <li>Click the **Add Record Type** button.</li>
+    <li>In the **Name** text box, enter `Products`.</li>
+    <li>In the **External Type** text box enter
+  `https://espmrefapps.hana.ondemand.com/espm-cloud-web/espm.svc/$metadata#Products`. This data includes the information on the products included in the ESPM application. It is exposed as OData.</li>
+    <li>In the **Annotation URL** text box enter
+`https://espmrefapps.hana.ondemand.com/espm-cloud-web/webshop/reviews_annotations.xml`. This file is used by SAP JAM Collaboration to render the data. The `annotations.xml` file, together with the available data, exposed via OData, enables you to create an external application in SAP Jam Collaboration that brings in products and product reviews data from the ESPM application into SAP Jam Collaboration. The OData annotations file specifies how each type of data is displayed in a specified UI element.</li>
+    <li>Click the **Import External Resources** button.</li>
+    <li>Click the **Done** button.</li>
+    <li>Click the **Create** button.</li>
+    </ol>
 2. Import the _Customer Reviews_ Records
-    a. To import the _Customer Reviews_ records repeat _steps b to g_ again, but change the **Name** value in _step c_ to `CustomerReviews` and the **External Type** value in _step d_ to
+    To import the _Customer Reviews_ records repeat _steps b to g_ again, but change the **Name** value in _step c_ to `CustomerReviews` and the **External Type** value in _step d_ to
 `https://espmrefapps.hana.ondemand.com/espm-cloud-web/espm.svc/$metadata#CustomerReviews`
 
 [DONE]
@@ -62,7 +64,7 @@ Record types in SAP Jam Collaboration define how the data from the external appl
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a new ESPM Reviews group in SAP Jam Collaboration from an ESPM Web Shop Record)]
+[ACCORDION-BEGIN [Step 3: ](Create new ESPM Reviews group)]
 
 Groups are a membership of users who can upload, create, or reference material specific to a department, project, or team. Group members can participate in discussions, forums and much more. Use the following steps to create a new _ESPM Reviews Group_ in SAP Jam Collaboration for an _ESPM Web Shop Record_:
 
@@ -82,7 +84,7 @@ Groups are a membership of users who can upload, create, or reference material s
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Create the ESPM Reviews Group Template)]
+[ACCORDION-BEGIN [Step 4: ](Create ESPM Reviews group template)]
 
 SAP Jam Collaboration groups act as the collaborative workspaces for work patterns. Group templates organize the content in a way that provides guidance to users on the best way to approach the work required to support a particular repeatable business process. Use the following steps to create the **ESPM Reviews** group template in your SAP Jam Collaboration group:
 
@@ -91,28 +93,34 @@ SAP Jam Collaboration groups act as the collaborative workspaces for work patter
 3.  Click the **OK** button.
 4.  Enter `Current ESPM Product` in the **Title** field.
 5.  Setup the `Current Item` widget:
-    1.  Click the **Add Widget** button for the widget in the top middle of the page.
-    2.  Select the _suitcase_ icon in the bottom row.
-    3.  Select **Item Detail** from the **Show** drop-down list.
-    4.  Select the **Widget Title** field and enter `Current Item`.
-    5.  Click the **OK** button.
+    <ol type="a">
+    <li>Click the **Add Widget** button for the widget in the top middle of the page.</li>
+    <li>Select the _suitcase_ icon in the bottom row.</li>
+    <li>Select **Item Detail** from the **Show** drop-down list.</li>
+    <li>Select the **Widget Title** field and enter `Current Item`.</li>
+    <li>Click the **OK** button.</li>
+    </ol>
 6.  Setup the `Highest Reviews` widget:
-    1.  Click the **Add Widget** button for the widget in the lower left side of the page.
-    2.  Select the _suitcase_ icon in the bottom row.
-    3.  Select **Related** from the **Show** drop-down list.
-    4.  Select **`CustomerReviews`** from the **Type** drop-down list.
-    5.  Select **Rating** from the **Sort by** drop-down list.
-    6.  Select the **Widget Title** field and enter `Highest Reviews`.
-    7.  Click the **OK** button.
+  <ol type="a">
+    <li>Click the **Add Widget** button for the widget in the lower left side of the page.</li>
+    <li>Select the _suitcase_ icon in the bottom row.</li>
+    <li>Select **Related** from the **Show** drop-down list.</li>
+    <li>Select **`CustomerReviews`** from the **Type** drop-down list.</li>
+    <li>Select **Rating** from the **Sort by** drop-down list.</li>
+    <li>Select the **Widget Title** field and enter `Highest Reviews`.</li>
+    <li>Click the **OK** button.</li>
+    </ol>
 7.  Setup the `Lowest Reviews` widget:
-    1.  Click the **Add Widget** button for the widget in the lower left side of the page.
-    2.  Select the _suitcase_ icon in the bottom row.
-    3.  Select **Related** from the **Show** drop-down list.
-    4.  Select **`CustomerReviews`** from the **Type** drop-down list.
-    5.  Select **Rating** from the **Sort by** drop-down list.
-    6.  Select the **Ascending** radio button.
-    7.  Select the **Widget Title** field and enter `Lowest Reviews`.
-    8.  Click the **OK** button.
+  <ol type="a">
+    <li>Click the **Add Widget** button for the widget in the lower left side of the page.</li>
+    <li>Select the _suitcase_ icon in the bottom row.</li>
+    <li>Select **Related** from the **Show** drop-down list.</li>
+    <li>Select **`CustomerReviews`** from the **Type** drop-down list.</li>
+    <li>Select **Rating** from the **Sort by** drop-down list.</li>
+    <li>Select the **Ascending** radio button.</li>
+    <li>Select the **Widget Title** field and enter `Lowest Reviews`.</li>
+    <li>Click the **OK** button.</li>
+    </ol>
 8.  Click the **Publish** button.
 9.  Click the **Publish** button. Your _group template_ is published into your group.
 
