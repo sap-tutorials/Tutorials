@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 - **Tutorials:** [Installing Binary](https://www.sap.com/developer/tutorials/hxe-ua-installing-binary.html).
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn
@@ -350,4 +350,4 @@ If you are using SAP HANA 2.0, express edition in a language other than English 
 [ACCORDION-END]
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

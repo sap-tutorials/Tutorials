@@ -132,4 +132,4 @@ For more information about the scripts, watch the SAP HANA Academy videos [PAL: 
 
 ## Next Steps
 - [Predictive Analytics Using Application Function Modeler](https://www.sap.com/developer/tutorials/hxe-ua-predictive-afm.html)
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

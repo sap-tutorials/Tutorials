@@ -8,14 +8,14 @@
 					<Carousel pages="{demo>/result-imageclassifier}" width="100%" visible="{= typeof ${demo>/resultVisible-imageclassifier} !== 'undefined'}">
 						<pages>
 							<VBox width="100%" direction="Column" alignItems="Center">
-								<Image class="sapUiLargeMargin" src="{demo>fileURL}"/>
+								<Image tooltip="canvas" class="sapUiLargeMargin" src="{demo>fileURL}"/>
 								<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
 								<table:Table rows="{demo>results}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5">
 									<table:columns>
 										<table:Column sortProperty="label" filterProperty="label">
 											<Label text="Label"/>
 											<table:template>
-												<Link text="{demo>label}" href="https://www.google.fr/search?q={label}&amp;newwindow=1&amp;tbm=isch" target="search"/>
+												<Link text="{demo>label}" href="https://www.google.com/search?q={demo>label}&amp;newwindow=1&amp;tbm=isch" target="search"/>
 											</table:template>
 										</table:Column>
 										<table:Column sortProperty="score" filterProperty="score">

@@ -41,11 +41,11 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-s
 &nbsp;
 
 [ACCORDION-BEGIN [Step 1: ](Create your destination)]
-Log into the [***SAP HANA Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the [***SAP Cloud Platform Cockpit***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial*) as highlighted on the below screenshot.
 
-![SAP HANA Cloud Platform Cockpit](01.png)
+![SAP Cloud Platform Cockpit](01.png)
 
 On the left side bar, you can navigate in **Connectivity** > **Destinations**.
 
@@ -221,22 +221,22 @@ Open the `webapp/view/demo.view.xml` file and replace the existing code with the
 			</Page>
 			<Page id="detail_dataset_register" title="Register your Dataset with the SAP Predictive services">
 				<content>
-					<!--mvc:XMLView viewName="pspredictive.view.dataset.register"/-->
+					<!--<mvc:XMLView viewName="pspredictive.view.dataset.register"/>-->
 				</content>
 			</Page>
 			<Page id="detail_dataset_manage" title="Manage your Data Set with the SAP Predictive services">
 				<content>
-					<!--mvc:XMLView viewName="pspredictive.view.dataset.manage"/-->
+					<!--<mvc:XMLView viewName="pspredictive.view.dataset.manage"/>-->
 				</content>
 			</Page>
 			<Page id="detail_forecast_synchronous" title="Forecast with the SAP Predictive services (Synchronous Mode)">
 				<content>
-					<!--mvc:XMLView viewName="pspredictive.view.forecast.synchronous"/-->
+					<!--<mvc:XMLView viewName="pspredictive.view.forecast.synchronous"/>-->
 				</content>
 			</Page>
 			<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Predictive services (Asynchronous Mode)">
 				<content>
-					<!--mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/-->
+					<!--<mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/>-->
 				</content>
 			</Page>
 		</detailPages>

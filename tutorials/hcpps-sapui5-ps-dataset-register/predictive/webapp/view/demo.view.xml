@@ -44,17 +44,17 @@
 			</Page>
 			<Page id="detail_dataset_manage" title="Manage your Data Set with the SAP Cloud for predictive services">
 				<content>
-					<!--mvc:XMLView viewName="pspredictive.view.dataset.manage"/-->
+					<!--<mvc:XMLView viewName="pspredictive.view.dataset.manage"/>-->
 				</content>
 			</Page>
 			<Page id="detail_forecast_synchronous" title="Forecast with the SAP Cloud for predictive services (Synchronous Mode)">
 				<content>
-					<!--mvc:XMLView viewName="pspredictive.view.forecast.synchronous"/-->
+					<!--<mvc:XMLView viewName="pspredictive.view.forecast.synchronous"/>-->
 				</content>
 			</Page>
 			<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Cloud for predictive services (Asynchronous Mode)">
 				<content>
-					<!--mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/-->
+					<!--<mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/>-->
 				</content>
 			</Page>
 		</detailPages>
