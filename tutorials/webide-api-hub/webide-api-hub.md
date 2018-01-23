@@ -7,8 +7,8 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **How-Tos:** Enable the SAP Web IDE Full-Stack Service
- - **Tutorials:** [Add API Business Hub API to a UI5 Application](https://www.sap.com/developer/tutorials/hcp-abh-api-ui5-app.html)
+ - **Tutorials:** <br>[Enable the SAP Web IDE Full-Stack Service](https://www.sap.com/developer/tutorials/webide-onboarding-mc.html) <br>
+ [Add API Business Hub API to a UI5 Application](https://www.sap.com/developer/tutorials/hcp-abh-api-ui5-app.html)
 
 ## Next Steps
  - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
