@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
 
 ## Details
 ### You will learn  
-In this tutorial, you will explore some of the new features that are part of the SAP Web IDE Full-Stack Version. Learn how to use the SAP API Business Hub services catalog that is available out of the box in this version of SAP Web IDE. Create and run an SAPUI5/Fiori Application. 
+In this tutorial, you will explore some of the new features that are part of SAP Web IDE Full-Stack. Learn how to use the SAP API Business Hub services catalog that is available out of the box in this version of SAP Web IDE. Create and run an SAPUI5/Fiori Application. 
 
 ### Time to Complete
 **15 Min**
@@ -23,11 +23,11 @@ In this tutorial, you will explore some of the new features that are part of the
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE Full-Stack)]
-Make sure you have the SAP Web IDE Full-Stack Version open.
+Make sure you have SAP Web IDE Full-Stack open.
 
 ![sap web ide multi-cloud service](1.png)
 
-Steps on how to find and enable the SAP Web IDE Full-Stack Version are available under the how-to guides.
+Steps on how to find and enable SAP Web IDE Full-Stack are available under the how-to guides.
 
 ![start up page for web ide](2.png)
 
@@ -68,7 +68,7 @@ A list of APIs will populate in the table. You can filter down the APIs by eithe
 
 ![Services search on Data Connection page of wizard](6b.png)
 
-You may be prompted for a username and password. This is in order for SAP API Business Hub to generate an API Key for you. Enter your credentials for the SAP Cloud Platform, which should be the same credentials you use to log in to the SAP API Business Hub. **Enter your credentials and click Login**.
+You may be prompted for a username and password. This is in order for SAP API Business Hub to generate an API key for you. Enter your credentials for the SAP Cloud Platform, which should be the same credentials you use to log in to the SAP API Business Hub. **Enter your credentials and click Login**.
 
 ![login for SAP API Business Hub](7.png)
 
