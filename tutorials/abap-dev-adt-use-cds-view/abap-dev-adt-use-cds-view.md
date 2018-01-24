@@ -1,6 +1,6 @@
 ---
-title: Use a CDS View in IDA
-description: Use a CDS view in Integrated Data Access (IDA)
+title: Display a CDS view using ALV with IDA
+description: Display a CDS view in the SAP List Viewer with Integrated Data Access (IDA)
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development ]
 ---
@@ -9,14 +9,15 @@ tags: [  tutorial>beginner, topic>abap-development ]
  - **Proficiency:** Beginner
  - **Tutorials:**
 
-[Create a CDS view](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html)
+- [Create a CDS view](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html)
+- [Create a data element](https://www.sap.com/developer/tutorials/abap-dev-adt-create-data-element.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
-In this tutorial you will learn how to to consume the CDS view in the SAP List Viewer ("ALV") with Integrated Data Access (ALV with IDA). ALV with IDA lets you display views and tables that contain very large quantities of data.
+In this tutorial you will learn how to to consume the CDS view in the SAP List Viewer with Integrated Data Access (ALV with IDA). ALV with IDA lets you display views and tables that contain very large quantities of data.
 
 ### Time to Complete
 **15 Min**  
@@ -24,29 +25,34 @@ In this tutorial you will learn how to to consume the CDS view in the SAP List V
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open the ABAP program)]
-Open the ABAP program you created in the previous tutorial, [Create and run an ABAP program](https://www.sap.com/developer/tutorials/abap-create-basic-app.html):
+Open the ABAP program you created in the previous tutorial, [Create and run an ABAP program](https://www.sap.com/developer/tutorials/abap-create-basic-app.html).
+
+- Either choose **Programs > `Z_INVOICE_ITEMS_EURO`**:
 
 ![Image depicting step1-open-program](step1-open-program.png)
 
+- Or choose **Open ABAP Development Object (Ctrl+Shift+A)** and enter the program name, **`Z_INVOICE_ITEMS_EURO`**:
+
+![Image depicting step-1-ctrl-shift-a](step-1-ctrl-shift-a.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Replace with IDA)]
+[ACCORDION-BEGIN [Step 2: ](Add ALV grid to method implementation)]
 
 You will now replace the implementation of the RUN method with a new implementation:
 
-a.	Delete the WRITE statement: Delete the whole line, by placing the cursor somewhere in the WRITE statement and choosing Ctrl+D:
+1.	Delete the WRITE statement: Delete the whole line, by placing the cursor somewhere in the WRITE statement and choosing Ctrl+D:
 
 ![Image depicting step2-delete-write](step2-delete-write.png)
 
-b.  Now create an ALV with IDA for your CDS view `Z_Invoice_Items` and display the ALV in full screen:
+2.  Now create an ALV with IDA for your CDS view `Z_Invoice_Items` and display the ALV in full screen:
 
 `cl_salv_gui_table_ida=>create_for_cds_view( 'Z_Invoice_Items' )->fullscreen( )->display( ).`
 
 ![Image depicting step2a-add-ida](step2a-add-ida.png)
 
-c.	Choose **Save (Ctrl+S)**  and **Activate (Ctrl+F3)**.
-d.	Execute your program by choosing **Execute (F8)**.
+3.	Choose **Save (Ctrl+S)**  and **Activate (Ctrl+F3)**.
+4.	Execute your program by choosing **Execute (F8)**.
 
 > The invoice items are displayed in ALV with IDA.
 
@@ -57,9 +63,8 @@ d.	Execute your program by choosing **Execute (F8)**.
 [ACCORDION-BEGIN [Step 3: ](Display the mouse-over information)]
 
 Display the mouse-over information for the Paid column by positioning the cursor on the column heading.
-**NOTE**: Notice that, in our case, the information is incorrect.
-We will change this information in the CDS view using an annotation.
-
+**NOTE**: Notice that, in our case, the information is either missing or incorrect (depending on your version).
+We will change this information in the CDS view using an annotation. (For more information, see [Create a CDS view](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html) )
 
 [ACCORDION-END]
 
@@ -67,22 +72,37 @@ We will change this information in the CDS view using an annotation.
 
 **NOTE: Write the annotation before the CASE statement.**
 
-a. Set the mouse-over information for the `payment_status` to:
+1. In the CDS view, **`Z_Invoice_Items`** set the mouse-over information for the `payment_status` to:
 
  `@EndUserText.quickInfo: 'Paid' `
 
- b. Choose **Save (Ctrl+S)**  and **Activate (Ctrl+F3)**.
-
+2. Choose **Save (Ctrl+S)**  and **Activate (Ctrl+F3)**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Execute the program)]
+[ACCORDION-BEGIN [Step 5: ](Add a CAST statement)]
+You have created a tooltip for the column "Paid" but there is no column header for it. You will now resolve this by casting the type of the transformed `payment_status` to the data element you created - `zso_invoice_payment_status` - by using a CAST statement. (Ignore the warning):
 
-Execute `ZCDS_INVOICE_ITEMS_EURO` again by choosing **Execute (F8)**.
+```ABAP
+cast(
+    case header.payment_status
+        when 'P' then 'X'
+        else ' '
+    end
+as zso_invoice_payment_status )
 
-> The mouse-over information for the Paid column has been changed.
+as payment_status
+```
 
-Your code should look like this:
+![Image depicting step11-CAST](step11-CAST.png)
+
+> Note: You can open the online help for the CAST statement by positioning the cursor on the cast keyword and choosing F1
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Check the code and execute the program)]
+
+1. Your program code should look like this:
 
 ```ABAP
 *&---------------------------------------------------------------------*
@@ -114,7 +134,7 @@ class lcl_main implementation.
 
   method run.
 
-cl_salv_gui_table_ida=>create_for_cds_view( 'Z_Invoice_Items' )->fullscreen( )->display( ).
+cl_salv_gui_table_ida=>create_for_cds_view(`Z_Invoice_Items` )->fullscreen( )->display( ).
   endmethod.
 endclass.
 
@@ -124,8 +144,43 @@ lcl_main=>create( )->run( ).
 
 ```
 
+Your CDS view should look like this:
+
+```ABAP
+@AbapCatalog.sqlViewName: 'ZINVOICEITEMS'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'CDS View for "Use-cds-view" tutorial'
+
+define view Z_Invoice_Items
+  as select from sepm_sddl_so_invoice_item
+{
+  //sepm_sddl_so_invoice_item
+
+  header.buyer.company_name,
+  sepm_sddl_so_invoice_item.sales_order_invoice_key,
+  sepm_sddl_so_invoice_item.currency_code,
+  sepm_sddl_so_invoice_item.gross_amount,
+
+@EndUserText.quickInfo: 'Paid'
+  case header.payment_status
+  when 'P' then 'X'
+  else ' '
+  end as payment_status,
+
+  //* Associations *//
+  header
+}
+```
+
+2. Execute `ZCDS_INVOICE_ITEMS_EURO` again by choosing **Execute (F8)**.
+
+> The mouse-over information for the Paid column has been changed:
+
+![Image depicting step-5-mouse-over-paid](step-5-mouse-over-paid.png)
+
 [ACCORDION-END]
 
 ## Next Steps
 
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

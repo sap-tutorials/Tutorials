@@ -1,5 +1,5 @@
 ---
-title: ABAP Development: Create a CDS View
+title: Create a CDS view (ABAP)
 description: You will learn how to use the Core Data Services (CDS) tools in ABAP in Eclipse.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development ]
@@ -8,77 +8,56 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ## Prerequisites  
  - [Create a global ABAP Class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)
 
-
 ## Next Steps
- - [Use a CDS View in ALV with IDA](https://www.sap.com/developer/tutorials/abap-dev-adt-use-cds-view.html)
+ - [Display a CDS view using ALV with IDA](https://www.sap.com/developer/tutorials/abap-dev-adt-use-cds-view.html)
 
 
 ## Details
 ### You will learn  
-In the following exercise you will learn how to use the new Core Data Services (CDS) tools in ABAP in Eclipse. CDS is an extension of the ABAP Dictionary that allows you to define semantically rich data models in the database and to use these data models in your ABAP programs. CDS is a central part of enabling Code Push-down in ABAP applications.
-You will learn to define a new CDS view in a DDL source.
-You can find more information about CDS in the [ABAP keyword documentation] (http://help-legacy.sap.com/abapdocu_751/en/index.htm) and the [SAP Community] (https://www.sap.com/community/topic/abap.html).
----
+In the following exercise you will learn how to use the new Core Data Services (CDS) tools in ABAP in Eclipse. CDS is an extension of the ABAP Dictionary that allows you to define semantically rich data models in the database and to use these data models in your ABAP programs. CDS is a central part of enabling code push-down in ABAP applications.
+You will add the following:
+- SELECT statement
+- CASE statement
+- WHERE clause
+You can find more information about CDS in the [ABAP keyword documentation](https://help.sap.com/doc/abapdocu_751_index_htm/7.51/en-US/abencds.htm) and the [SAP Community](https://www.sap.com/community/topic/abap.html).
 
-[ACCORDION-BEGIN [Step 1: ](Choose an ABAP Object)]
-In the context menu of your package choose **New** and then choose **Other ABAP Repository Object**.
+---
+[ACCORDION-BEGIN [Step 1: ](Create a CDS view)]
+1. In the context menu of your package choose **New** and then choose **Other ABAP Repository Object**.
 
 ![Image depicting step1-newObject](step1-newObject.png)
 
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Select a Data Definition)]
-
-Select **Data Definition**, then choose **Next**.
+2. Select **Data Definition**, then choose **Next**.
 
 ![Image depicting step2-DataDef](step2-DataDef.png)
 
+3. Enter the following values, then choose **Next**:
 
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 3: ](Enter values)]
-
-Enter the following, then choose **Next**:
-
-a.	Name = **`Z_INVOICE_ITEMS`**
-
-b.	Description = **Invoice Items**
+-	Name = **`Z_INVOICE_ITEMS`**
+- Description = **Invoice Items**
 
 ![Image depicting step3-enterValues](step3-enterValues.png)
 
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ](Accept the transport request)]
-
-Accept the default transport request (local) by simply choosing **Next** again.
+4. Accept the default transport request (local) by simply choosing **Next** again.
 
  ![Image depicting step4-AcceptTransportRequest](step4-AcceptTR.png)
 
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Define a View)]
-
-Select the entry **Define View**, then choose **Finish**
+5. Select the entry **Define View**, then choose **Finish**
 
 ![Image depicting step5-defineView](step5-defineView.png)
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Enter the data source)]
+[ACCORDION-BEGIN [Step 2: ](Enter the data source)]
 
 The new view appears in an editor. In this editor, enter the following values:
 
-a. Enter `ZINVOICEITEMS` as the SQL view name.
+1. Enter `ZINVOICEITEMS` as the SQL view name.
 
-b. Enter the CDS view `sepm_sddl_so_invoice_item` as the data source for your view.
+2. Enter the CDS view `sepm_sddl_so_invoice_item` as the data source for your view.
 
-c. Use code completion (keyboard shortcut **CTRL+SPACE**) to get proposals for the data source.
+3. Use code completion (keyboard shortcut **CTRL+SPACE**) to get proposals for the data source.
 
 ![Image depicting step6-enterDataSourceEtc](step6-enterDataSourceEtc.png)
 
@@ -87,13 +66,13 @@ c. Use code completion (keyboard shortcut **CTRL+SPACE**) to get proposals for t
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Edit the SELECT statement)]
+[ACCORDION-BEGIN [Step 3: ](Edit the SELECT statement)]
 
 You will now insert the fields `currency_code` and `gross_amount` into the SELECT list as follows:
 
-a. Trigger code completion in the SELECT list (by clicking on the SELECT list and using keyboard shortcut **CTRL+SPACE**), then double click on the entry **Insert all elements - template**. All the elements (fields and associations) of the underlying data source are inserted into the SELECT list.
+1. Trigger code completion in the SELECT list (by clicking on the SELECT list and using keyboard shortcut **CTRL+SPACE**), then double click on the entry **Insert all elements - template**. All the elements (fields and associations) of the underlying data source are inserted into the SELECT list.
 
-b.	Remove all the elements in the SELECT list which were inserted by the code completion apart from `currency_code` and `gross_amount`. Remember to separate the elements in the SELECT statement with a comma.
+2.	Remove all the elements in the SELECT list which were inserted by the code completion apart from `currency_code` and `gross_amount`. Remember to separate the elements in the SELECT statement with a comma.
 
 ![Image depicting step7A-InsertAll-crop](step7A-insertAll-crop.png)
 
@@ -102,33 +81,32 @@ b.	Remove all the elements in the SELECT list which were inserted by the code co
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Use CDS associations)]
+[ACCORDION-BEGIN [Step 4: ](Use an existing CDS association)]
 
 You will now model the relationships between data sources by using some CDS associations. You can use associations in path expressions to access elements (fields and associations) in related data sources without specifying JOIN conditions. You can now display the element info by positioning the cursor on the data source name **`sepm_sddl_so_invoice_item`** and choosing **F2**.
 
-a.	To see the related data sources that can be accessed using associations, scroll down.
+1.	To see the related data sources that can be accessed using associations, scroll down.
 
-b.	To see details about the target data source of the association header, choose the hyperlink **`sepm_sddl_so_invoice_header`**
+2.	To see details about the target data source of the association header, choose the hyperlink **`sepm_sddl_so_invoice_header`**
 
 ![Image depicting step8-CdsAssociations](step8-CdsAssociations.png)
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Add Fields)]
+[ACCORDION-BEGIN [Step 5: ](Add Fields from existing associations)]
 
 You will now add fields of related data sources to the SELECT list of `Z_Invoice_Items`, using the associations in path expressions. Each element in the path expression must be separated by a period.
 
-a.	Add the `company_name` of the business partner to the SELECT list using the associations header and buyer in a path expression
-
-b.	Add the `payment_status` from the invoice header to the SELECT list using the association header
+1.	Add the `company_name` of the business partner to the SELECT list using the associations **header** and **buyer** in a path expression
+2.  You will get an error, "Field header must be included in the selection list together with field `SEPM_SDDL_SO_INVOICE_ITEM.SALES_ORDER_INVOICE_KEY`". Resolve this by adding the field **`sepm_sddl_so_invoice_item.sales_order_invoice_key`** to the Select statement.
+3.	Add the `payment_status` from the invoice header to the SELECT list using the association **header**
 
 ![Image depicting step9-AddFields](step9-AddRelatedFields.png)
 
-
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Add a CASE statement)]
+[ACCORDION-BEGIN [Step 6: ](Add a CASE statement)]
 
 If the invoice has been paid, you want to set the `payment_status` to X (true). Do this by implementing a CASE statement
 
@@ -141,36 +119,12 @@ end as payment_status
 
 ![Image depicting step10-CaseStatement](step10-CaseStatement.png)
 
-
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Add a CAST statement)]
-
-Cast the type of the transformed `payment_status` to the data element you created - `zso_invoice_payment_status` - by using a CAST statement:
-
-```ABAP
-cast(
-    case header.payment_status
-        when 'P' then 'X'
-        else ' '
-    end
-as zso_invoice_payment_status )
-
-as payment_status
-```
-
-![Image depicting step11-CAST](step11-CAST.png)
-
-> Note: You can open the online help for the CAST statement by positioning the cursor on the cast keyword and choosing F1
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 12: ](Add a WHERE clause)]
-
+[ACCORDION-BEGIN [Step 7: ](Add a WHERE clause)]
 You will now filter the results so that only invoice items with `currency_code = 'EUR'` are retrieved.
 
-a. Add a WHERE clause:
+1. Add a WHERE clause:
 
 ```ABAP
 WHERE currency_code = 'EUR'
@@ -178,12 +132,46 @@ WHERE currency_code = 'EUR'
 
 ![Image depicting step12-WHERE](step12-WHERE.png)
 
-b. Save and activate the data definition by choosing **Save** (`Ctrl+S`) and **Activate** (`Ctrl+F3`).
+2. Save and activate the data definition by choosing **Save** (`Ctrl+S`) and **Activate** (`Ctrl+F3`).
 
 ![Image depicting step14-saveAndActivate](step14-saveAndActivate.png)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Check your code and view your changes)]
+Your CDS view should look like this:
+
+```ABAP
+@AbapCatalog.sqlViewName: 'ZINVOICEITEMS2'
+@AbapCatalog.compiler.compareFilter: true
+@AccessControl.authorizationCheck: #NOT_REQUIRED
+@EndUserText.label: 'CDS View for "Use-cds-view" tutorial'
+define view Z_Invoice_Items_2
+  as select from sepm_sddl_so_invoice_item
+{
+  //sepm_sddl_so_invoice_item
+
+  header.buyer.company_name,
+  sepm_sddl_so_invoice_item.sales_order_invoice_key,
+  sepm_sddl_so_invoice_item.currency_code,
+  sepm_sddl_so_invoice_item.gross_amount,
+
+  case header.payment_status
+  when 'P' then 'X'
+  else ' '
+  end
+
+  as payment_status,
+
+//* Associations *//
+  header
+}
+
+where currency_code = 'EUR'
+```
 
 
 [ACCORDION-END]
 
 ## Next Steps
-- [Use a CDS View in ALV with IDA](https://www.sap.com/developer/tutorials/abap-dev-adt-use-cds-view.html)
+- [Display a CDS view using ALV with IDA](https://www.sap.com/developer/tutorials/abap-dev-adt-use-cds-view.html)
