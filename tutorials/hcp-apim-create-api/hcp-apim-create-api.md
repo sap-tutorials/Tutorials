@@ -67,7 +67,7 @@ To create a new API from this page, click **Create**.
 
 [ACCORDION-BEGIN [Step 5: ](Select API provider)]
 
-From the drop-down select the `SAPDeveloperSystemES4` API Provider created in the previous tutorial.
+From the drop-down select the `SAPDeveloperSystemES5` API Provider created in the previous tutorial.
 
 ![Select Provider System](05-API_Provider.png)
 
