@@ -14,7 +14,7 @@ tags: [  tutorial>beginner, topic>sapui5, products>build>build, products>sap-web
 ### You will learn  
 Learn how to import a completed and published prototype from SAP Build into SAP Web IDE. This will help you convert your prototype into a live application. This will be your guide or template for creating the real UI5/Fiori version.
 
-> Please note that an imported SAP Build prototype should not be used for a production application. The version of SAP Build used in these tutorials is for prototyping and designing purposes only. The code generated is not optimized for performance and security. Stay tuned to SAP Build for updates about SAP Build Apps, a drag-and-drop tool to create production ready applications!  
+> Please note that an imported SAP Build prototype **can not** be used for a production application for **free accounts** on SAP Build. The version of SAP Build used in these tutorials is for prototyping, designing, and trial purposes only. If your company has **purchased SAP Build**, you **can** use the following procedure to import your applications into your productive SAP Cloud Platform account.
 
 ### Time to Complete
 **15 Min**

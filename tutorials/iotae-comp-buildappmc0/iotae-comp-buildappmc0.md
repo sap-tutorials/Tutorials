@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-applicati
 
 
 ## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html) 
+ - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -96,11 +96,11 @@ Now you can hide the controls to increase the real estate of the workspace.
 First bind the data. Click anywhere on the **`ThingList Element`** to select it. Then go to **Properties** and open a Query Designer by clicking on cogs.
 ![Open query designer](iotaecompappmc0110.jpg)
 
-In the Query Designer select **/Things** entity set. Then expand associations to all displayed sets. Then click **Ok**.
+In the Query Designer select **/Things** entity set. Then expand associations to all displayed sets. Then click **OK**.
 
 ![Query Designer](iotaecompappmc0120.jpg)
 
-A dialog "A template will be created from selected control..." will be displayed. Click **Ok**
+A dialog "A template will be created from selected control..." will be displayed. Click **OK**
 
 Now bind columns to data values. Select the first thing list column element (with element id `__column0`) and change its ___Text___ value from `Row 0 Column 1` to `{ThingId}`. You can do it using a data binding dialog.
 
@@ -117,7 +117,7 @@ Next change column names to `ID`, `Name` and `Common name`.
 Next define the action of the chart refresh when another thing is selected from the list. Click on the higher element `ThingList`, then **Actions** and open Action Configuration dialog for the **Row Select** action.
 ![Open action configuration](iotaecompappmc0160.jpg)
 
-Select **`doReload`** action with the **`thing`** context. Click **Ok**
+Select **`doReload`** action with the **`thing`** context. Click **OK**
 ![Action configuration](iotaecompappmc0170.jpg)
 
 
@@ -125,9 +125,9 @@ Select **`doReload`** action with the **`thing`** context. Click **Ok**
 
 [ACCORDION-BEGIN [Step 7: ](Customize sensors chart)]
 Now select `SensorChart` element and change its properties:
- - **No of Hours** to `1`
- - **Header Title** to `Resources usage`
- - **Subheader Title** to `in %`
+ - **`No of Hours`** to `1`
+ - **`Header Title`** to `Resources usage`
+ - **`Subheader Title`** to `in %`
 ![Customize chart](iotaecompappmc0180.jpg)
 
 

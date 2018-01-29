@@ -10,8 +10,7 @@ tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-pla
  - **Tutorials:** [Enable the SAP Translation Hub service](https://www.sap.com/developer/tutorials/sth-enable.html)
 
 ## Next Steps
-- [Deploy a sample Fiori app to SAP Cloud Platform]
-- [Translate a sample Fiori app](https://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)
+- [Deploy a sample Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)
 
 ## Details
 ### You will learn  
@@ -153,5 +152,4 @@ To make things look more realistic, the app uses mock data.
 
 
 ## Next Steps
-- [Deploy a sample Fiori app to SAP Cloud Platform]
-- [Translate a sample Fiori app](https://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)
+- [Deploy a sample Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)

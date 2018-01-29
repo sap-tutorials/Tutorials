@@ -7,8 +7,7 @@ tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-pla
 
 ## Prerequisites  
  - **Proficiency:** Beginner
-  - **Tutorials:** [Prepare a sample Fiori app for translation](https://www.sap.com/developer/tutorials/sth-prepare-fiori-app-translation.html)
- - **Tutorials:** [Deploy a sample Fiori app to SAP Cloud Platform]
+  - **Tutorials:** [Deploy a sample Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)
 
 ## Next Steps
 - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

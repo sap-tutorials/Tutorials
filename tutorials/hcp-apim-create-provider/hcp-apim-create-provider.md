@@ -83,14 +83,14 @@ In the blue overview area, enter the **Name** for the API Provider.
 
 **Field** | **Value**
 ----|----
-Name | `SAPDeveloperSystemES4`
+Name | `SAPDeveloperSystemES5`
 
 Under the **Connection** tab, provide the following information.
 
 **Field** | **Value**
 ----|----
 Description | Public SAP Gateway system exposing OData
-Host | `sapes4.sapdevcenter.com`
+Host | `sapes5.sapdevcenter.com`
 Port | 443
 Use SSL | _(checked)_
 On Premise | _(unchecked)_
