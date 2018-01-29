@@ -1,87 +1,83 @@
 ---
-title: Custom Business Object exposure as External Web Service
+title: Expose custom business object as external web service
 description: Expose a custom business object as web service for integration of your solution with other systems.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-The assignment of the Business Catalog **`SAP_CORE_BC_COM`**, **`SAP_CORE_BC_EXT`** to your user and **`Communication Arrangement and Destination`** as tutorial represents the Prerequisites for the usage of the Service Generation as well as Custom Communication Scenario and Communication Arrangement creation.
+The assignment of the business catalog **`SAP_CORE_BC_COM`**, **`SAP_CORE_BC_EXT`** to your user and **`Enable SAP Web IDE for S/4HANA system via OAuth`** as tutorial represents the prerequisites for the usage of the service generation as well as custom communication scenario and communication arrangement creation.
 
-
-## Next Steps
- (coming soon).
 ## Details
-This tutorial describes how the Service Generation can be activated for an existing Custom Business Object. Furthermore the addition of a CDS View to the Custom Communication Scenario is explained. The creation of a Communication Arrangement for the `Bonusplan` Scenario takes also place in this tutorial.
 ### You will learn  
-You will learn how to create a service for a custom business object and expose it by the creation of a custom communication scenario and a communication arrangement in the web.
+- How to create service for a custom business object
+- How to expose UI by the creation of a custom communication scenario
+- How to expose UI by the creation of a communication arrangement
+
+This tutorial describes how the service generation can be activated for an existing custom business object. Furthermore the addition of CDS views to custom communication scenario is explained. The creation of communication arrangements for `Bonusplan` scenarios also takes place in this tutorial.
 
 ### Time to Complete
 **15 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open Custom Business Objects Application)]
+[ACCORDION-BEGIN [Step 1: ](Open custom business objects application)]
 Navigate to **Custom Business Objects** tile to start the application.
 
-![Open Custom Business Objects Application](cbo.png)
+![Open custom business objects application](cbo.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Generate OData Service)]
-Open details of your custom business object **`Bonusplan`**, Create Draft and select Service Generation checkbox. Afterwards save your draft and publish your changes. With this step an OData service is created.
+[ACCORDION-BEGIN [Step 2: ](Generate OData service)]
+Open details of your custom business object **`Bonusplan`**, create draft and select the **Service Generation** checkbox. Click **Save** and **Publish**. With this step an OData service is created.
 
-![Generate OData Service](publish.png)
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Open Custom Communication Scenarios Application)]
-Open the **Custom Communication Scenarios** application.
-
-![Open Custom Communication Scenarios Application](scenario.png)
+![Generate OData service](publish.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create Communication Scenario)]
-A communication scenario is the basis definition for a communication between systems. It defines a solution to be made available for external systems.
+[ACCORDION-BEGIN [Step 3: ](Open custom communication scenarios application)]
+Open **Custom Communication Scenarios** application.
 
-![Create Communication Scenario](new.png)
+![Open custom communication scenarios application](scenario.png)
 
-Give your scenario a name, a description and click on **New**.
+[ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 4: ](Create communication scenario)]
+A communication scenario is the basis definition for a communication between systems. It defines a solution to be made available for external systems. Click **New**, give your scenario a name, description and click **New** again.
+
+![Create communication scenario](new.png)
+
+Enter **`Bonusplan Scenario`** as description and click **New**.
 ![Click on new](new2.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add Inbound Service to Scenario)]
-Add your CDS View `YY1_BONUSPLAN_CDS` by clicking on the **Plus** symbol. Furthermore **check** and **publish** it.
+[ACCORDION-BEGIN [Step 5: ](Add inbound service to scenario)]
+Add your CDS view **`YY1_BONUSPLAN_CDS`** by clicking **+**. Check and publish it.
 
-![Add Inbound Service to Scenario](publish2.png)
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Open Communication Arrangements Application)]
-Open the **Communication Arrangements** application.
-
-![Open Communication Arrangements Application](arrangement.png)
+![Add inbound service to scenario](publish2.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create Communication Arrangement)]
-Now create a Communication Arrangement again. This time you create it for your `Bonusplan` Scenario.
+[ACCORDION-BEGIN [Step 6: ](Open communication arrangements application)]
+Open **Communication Arrangements** application.
 
-![Create Communication Arrangement](create.png)
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Set Communication System in Arrangement)]
-First select **`SCP_DEV_SYSTEM`** as your communication system. Afterwards select `SCP_DEV` as communication system with `OAuth 2.0` as authentication method.
-
-Now save your changes.
-
-![Set Communication System in Arrangement](save.png)
+![Open communication arrangements application](arrangement.png)
 
 [ACCORDION-END]
 
-## Next Steps
-(coming soon)
+[ACCORDION-BEGIN [Step 7: ](Create communication arrangement)]
+Create a communication arrangement. This time you create it for your `Bonusplan` scenario.
+
+![Create communication arrangement](create.png)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Set communication system in arrangement)]
+Select **`SCP_DEV_SYSTEM`** as your communication system. Select **`SCP_DEV`** as communication system with **`OAuth 2.0`** as authentication method.
+
+Click **Save**.
+
+![Set communication system in arrangement](save2.png)
+
+[ACCORDION-END]

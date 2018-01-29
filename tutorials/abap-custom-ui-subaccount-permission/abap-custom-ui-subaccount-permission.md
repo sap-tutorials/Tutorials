@@ -1,40 +1,40 @@
 ---
-title: Maintain platform subaccounts and Web IDE permissions
+title: Maintain platform subaccounts and SAP Web IDE permissions
 description: Add new subaccount to the SAP Cloud Platform global account and give permission to access SAP Web IDE to everyone.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-Access to a subaccount on SAP Cloud Platform in Neo Environment is expected as a prerequisite.
+Access to a subaccount on SAP Cloud Platform in Neo Environment is expected.
 
-## Next Steps
- (coming soon).
 ## Details
-This tutorial describes how you can add a new subaccount to SAP Cloud Platform. Furthermore you learn how to give members the permission to enter SAP Web IDE.
-### You will learn  
-You will be able to learn how to add a new subaccount and give members the permission to enter SAP Web IDE.
+### You will learn
+- How to add a new subaccount
+- How to give members the permission to enter SAP Web IDE
+
+This tutorial describes how to add new subaccounts to SAP Cloud Platform. Furthermore you learn how to give members the permission to enter SAP Web IDE.
 
 ### Time to Complete
 **15 Min**.
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Enter SAP Cloud Platform subaccount)]
-Enter the **SAP Cloud Platform** and select your global account.
+[ACCORDION-BEGIN [Step 1: ](Enter SAP Cloud Platform global account)]
+Enter SAP Cloud Platform and select your global account.
 
 ![Enter SAP Cloud Platform subaccount](sapcp.png)
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create new subaccount)]
-Click on the corresponding button to create a new subaccount.
+Click **New Subaccount**.
 
 ![Create new subaccount](members.png)
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add display name to subaccount)]
-Now add a display name to your new subaccount.
+Add a display name to your new subaccount. Click **Save**.
 
 ![Add display name to subaccount](newsubaccount.png)
 
@@ -48,26 +48,24 @@ Now add a display name to your new subaccount.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Search for SAP Web IDE)]
-Go to **Services**, search for SAP Web IDE and select it.
+Go to **Services**, search for **SAP Web IDE** and select it.
 
 ![Search for SAP Web IDE](webide.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Configure your Service)]
-Now click on **Go to Services** on SAP Cloud Platform to configure your service.
+[ACCORDION-BEGIN [Step 6: ](Configure your service)]
+Click **Configure Service** on SAP Cloud Platform to configure your service.
 
-![Configure your Service](service.png)
+![Configure your service](configure.png)
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Give SAP Web IDE access to everyone)]
-You are able to change the **Application Permission**. Change the Assigned Role from your `WebIDEPermission` to **Everyone**. Now save your changes.
+You are able to change the **Application Permissions**. Change the assigned role from your **`WebIDEPermission`** to **Everyone**. Save your changes.
 
 ![Give SAP Web IDE access to everyone](permission.png)
 
+Now you have the permission to enter SAP Web IDE.
+
 [ACCORDION-END]
-
-
-## Next Steps
-(coming soon)

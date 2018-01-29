@@ -1,96 +1,94 @@
 ---
-title:  Enable SAP Web IDE for a S/4HANA System via OAuth
-description:  SAP Cloud Platform development with Web IDE (`SAP_COM_0013`) for a S/4HANA System
+title:  Enable SAP Web IDE for S/4HANA system via OAuth
+description:  Enable SAP Cloud Platform development with SAP Web IDE (`SAP_COM_0013`) for an S/4HANA system, using OAuth authentication.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-The assignment of the Business Catalog **`SAP_CORE_BC_COM`** to your user and **`Create OAuth Communication System & User`** as tutorial represents the Prerequisites for the usage of Communication Arrangement.
+The assignment of the business catalog **`SAP_CORE_BC_COM`** to your user and **`Create OAuth communication system and user`** as tutorial represents the prerequisites for the usage of communication arrangement.
 
-## Next Steps
- (coming soon).
+## Details
+### You will learn
+- How to create communication arrangements for SAP Web IDE scenario `SAP_COM_0013`
+- How to create HTTP destinations
+- How to create UI projects
 
-### You will learn  
-You will learn how to enable SAP Cloud Platform Development with the Web IDE against a specific S/4HANA System via OAuth authentication. First a Communication Arrangement for Web IDE Scenario `SAP_COM_0013` in S/4HANA will expose essential services, that Web IDE needs. Then SAP Cloud Platform Subaccount will get a destination which holds data for the connection and OAuth communication with the S/4HANA system. At the end you will see in Web IDE a list of Services that you can theoretically build extensions on.
+You will learn how to enable SAP Cloud Platform development with SAP Web IDE against a specific S/4HANA system via OAuth authentication. You will see that communication arrangement for SAP Web IDE scenario `SAP_COM_0013` in S/4HANA will expose essential services, that SAP Web IDE needs. SAP Cloud Platform subaccount will get a destination which holds data for the connection and OAuth communication with the S/4HANA system. At the end you will see in SAP Web IDE a list of services that you can theoretically build extensions on.
 
 ### Time to Complete
 **15 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open Communication Arrangements Application)]
-Navigate to **Communication Arrangements** tile to start the application.
+[ACCORDION-BEGIN [Step 1: ](Open communication arrangements application)]
+**Navigate** to **Communication Arrangements** tile to start the application.
 
-![Open Communication Arrangements Application](arrangement.png)
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Create New Communication Arrangement)]
-Click on the **New** button to create a new communication arrangement.
-
-![Create New Communication Arrangement](new.png)
+![Open communication arrangements application](arrangement.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Select Scenario)]
-Select `SAP_COM_0013` as Scenario and rename your Arrangement Name.
+[ACCORDION-BEGIN [Step 2: ](Create new communication arrangement)]
+**Click New** to create a new communication arrangement.
 
-![Select `SAP_COM_0013`as Scenario](create.png)
+![Create new communication arrangement](new.png)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Select scenario)]
+**Select `SAP_COM_0013`** as scenario, **rename** your **arrangement name** and **click Create**.
+
+![Select `SAP_COM_0013`as scenario](create.png)
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add Communication System)]
-Add your Communication System to your Communication Arrangement and save it.
-Also select `SCP_DEV` with `OAuth2.0` as communication system.
-Be sure that your service status of you Launch SAP Web IDE is activated and save your changes.
+[ACCORDION-BEGIN [Step 4: ](Add communication system)]
+**Add** your **communication system** to your communication arrangement. **Select `SCP_DEV`** with **`OAuth2.0`** as communication system. Be sure that your **service status** of your launch SAP Web IDE is **activated** and **click Save**.
 
-![Add Communication System](save.png)
+![Add communication system](save2.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Check Data)]
+[ACCORDION-BEGIN [Step 5: ](Check data)]
 Now following should be listed:
 
-![Check Data](check.png)
+![Check data](check.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create HTTP Destination)]
-Enter the SAP Cloud Platform account as an administrator.
-Switch to **Destinations** and click on **New Destination**.
+[ACCORDION-BEGIN [Step 6: ](Create HTTP destination)]
+**Enter** your **SAP Cloud Platform account** as an administrator. **Switch** to **Destinations** and **click New Destination**.
 
-![Create HTTP Destination](destination.png)
+![Create HTTP destination](destination.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Set Destination Data)]
-Now enter following data to your destination:
+[ACCORDION-BEGIN [Step 7: ](Set destination data)]
+Now **enter** following **data** to your destination:
 
 
 | ---------------------------- | ------------------------------------------------- |
-|          **Name:**           |            Name of your destination               |
-|          **Type:**           |                      HTTP                         |
-|      **Description:**        |            Description of your destination        |
-|           **URL:**           |  URL of your S/4HANA Cloud System (with `-api`)   |
-|       **Proxy Type:**        |                    Internet                       |
-|     **Authentication:**      |            `OAuth2SAMLBearerAssertion`            |
-|        **Audience:**         | URL of your S/4HANA Cloud System (without `-api`) |
-|       **Client Key:**        |          Equals your communication user           |
-|    **Token Service User:**   |          Equals your communication user           |
-| **Token Service Password:**  |        Password of your communication user        |
+|          **Name**            |            Name of your destination               |
+|          **Type**            |                      HTTP                         |
+|      **Description**         |            Description of your destination        |
+|           **URL**            |  URL of your S/4HANA Cloud System (with `-api`)   |
+|       **Proxy Type**         |                    Internet                       |
+|     **Authentication**       |            `OAuth2SAMLBearerAssertion`            |
+|        **Audience**          | URL of your S/4HANA Cloud System (without `-api`) |
+|       **Client Key**         |          Equals your communication user           |
+|    **Token Service User**    |          Equals your communication user           |
+| **Token Service Password**   |        Password of your communication user        |
 
 
 
-![Set Destination Data](data.png)
-
-Token Service URL will be explained in the next step.
+![Set destination data](data.png)
+Token service URL will be explained in the next step.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Define Token Service URL)]
-**Token Service URL** - This consists of 2 parts:
+[ACCORDION-BEGIN [Step 8: ](Define token service URL)]
+**Token service URL** - This consists of 2 parts:
 
    `<URL_of_your_S4HANA_Cloud_System> with –api`
      `+`
@@ -104,79 +102,71 @@ https://myXXXXXX-api.account.us3.hana.ondemand.com/sap/bc/sec/oauth2/token
 ```
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Enter Additional Properties)]
-Add Additional Properties:
+[ACCORDION-BEGIN [Step 9: ](Enter additional properties)]
+**Add** additional **properties**:
 
 | ----------------------------- | -------------------------------------------------------- |
-|        **`scope:`**           | `ADT_001 /UI5/APP_INDEX_0001 /IWFND/SG_MED_CATALOG_0002` |
-| **`authnContextClassRef:`**   |      `urn:oasis:names:tc:SAML:2.0:ac:classes:X509`       |
-|       **`TrustAll:`**         |                      `true`                              |
-|     **`WEBIDEEnabled:`**      |                      `true`                              |  
-|      **`WebIDEUsage:`**       |         `odata_abap,ui5_execute_abap,dev_abap`           |
+|        **`scope`**            | `ADT_001 /UI5/APP_INDEX_0001 /IWFND/SG_MED_CATALOG_0002` |
+| **`authnContextClassRef`**    |      `urn:oasis:names:tc:SAML:2.0:ac:classes:X509`       |
+|       **`TrustAll`**          |                      `true`                              |
+|     **`WEBIDEEnabled`**       |                      `true`                              |  
+|      **`WebIDEUsage`**        |         `odata_abap,ui5_execute_abap,dev_abap`           |
 
 
 
 Your **scope** consists of 3 parts:
  - `ADT_001`: scope of the Gateway service for ADT  
- - /`UI5`/`APP_INDEX_0001`: scope of the UI2 App Index
- - /`IWFND`/`SG_MED_CATALOG_0002`: scope of the Catalog service version 2.0
+ - /`UI5`/`APP_INDEX_0001`: scope of the UI2 app index
+ - /`IWFND`/`SG_MED_CATALOG_0002`: scope of the catalog service version 2.0
 
-Now save your changes.
+Be sure that all parts within the **scope** are **separated with a space**.
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 10: ](Open Web IDE)]
-Go to Services, search for **SAP Web IDE** and select it on your SAP Cloud Platform Account.
-
-![Open Web IDE](webide2.png)
-
-Now save your changes.
+**Save** your changes.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](View Service Catalog)]
-Now click on **Go to Service** to open SAP Web IDE.
-Create a new project from template, select a List Report Application and
-your Service Catalog. Choose your destination and see the list of services afterwards.  
+[ACCORDION-BEGIN [Step 10: ](Search SAP Web IDE)]
+**Go** to **Services**, **search** for **SAP Web IDE** and **select it** on your SAP Cloud Platform account.
 
-![View Service Catalog](gotoservice.png)
+![Open SAP Web IDE](webide2.png)
 
-Now save your changes.
+**Click Go to Service** to open **SAP Web IDE**.
 
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 12: ](Open SAP Web IDE)]
-Select **New project from Template** to generate one on SAP Web IDE.
-
-![Select New project from Template](webide.png)
+![View service catalog](gotoservice.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Create UI Project)]
-Choose the **List Report Application** template to create a new UI.
+[ACCORDION-BEGIN [Step 11: ](Select new project)]
+**Select New Project from Template** to generate one.
 
-![Choose the List Report Application](next.png)
+![Select new project](webide.png)
 
-The alternative way would be following:
+If you don't see this welcome page then follow the alternative way:
 File -> New -> Project from Template
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Enter Basic Information)]
-Now enter **`Bonusplan`** as project name and UI for **`Bonusplan`** as title.
+[ACCORDION-BEGIN [Step 12: ](Create UI project)]
+**Choose List Report Application** and **click Next** to create a new UI.
+
+![Choose the list report application](next.png)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 13: ](Enter basic information)]
+**Enter `Bonusplan`** as project name and title.
 
 ![Enter `Bonusplan`](bonusplan.png)
 
-Afterwards click on the **Next** button.
+**Click Next**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Enter Basic Information)]
-Now click on **Service Catalog** and select **`SAP_DEV_SYSTEM`** as service.
-Now you can see a list of all services. Inserting the scope to your destination allows you to see this list.
+[ACCORDION-BEGIN [Step 14: ](Select service)]
+**Click Service Catalog** and **select `SAP_DEV_SYSTEM`** as service.
 
 ![Select `SAP_DEV_SYSTEM` as service](list.png)
-[ACCORDION-END]
 
-## Next Steps
-(coming soon)
+Now you can see a list of all services. You learn the importance of a scope. By adding the scope to your destination you are allowed to see the list of all services. But if you try to select any other service, you'll get an error message. To create your UI project, you have to add a further definition to your scope. This will be explained in:
+
+[ACCORDION-END]

@@ -1,104 +1,104 @@
 ---
-title: Create OAuth Communication System & User
-description: Create a Communication System and System User.
+title: Create OAuth communication system and user
+description: Create a communication system and generate a system user within the communication system.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-The assignment of the Business Catalog **`SAP_CORE_BC_COM`** to your user and **`Set Up Trust Between Identity Authentication and SAP Cloud Platform Subaccount`** as tutorial represents the Prerequisites for the usage of Communication System.
+You must assign business catalog **`SAP_CORE_BC_COM`** to your user. **`Set up trust between identity authentication and SAP Cloud Platform subaccount`** as tutorial represents a prerequisite.
 
-## Next Steps
- (coming soon).
 ## Details
-With this an application you are able to create Communication Systems. To create the communication system, you have to specify the SAP Web IDE link from SAP Cloud Platform as host name. Within the Communication System application you can generate also a System User, which can be found under Inbound Communication User. The Upload of your certificate can be realized furthermore.
+### You will learn
+- How to create a OAuth communication system and user
+- How to specify the SAP Web IDE link from SAP Cloud Platform
+- How to upload the certificate
 
-### You will learn  
-You will learn in this tutorial how to create a Communication System and User. It also shows how to specify the SAP Web IDE link from SAP Cloud Platform and upload the certificate.
+This tutorial focuses on creating an OAuth communication systems. To create such an OAuth communication system, you must insert the link address from SAP Cloud Platform, add your host name, edit and upload a certificate so that the S/4HANA system trusts your SAP Cloud Platform subaccount.
 
 ### Time to Complete
 **15 Min**.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open Communication System Application)]
+[ACCORDION-BEGIN [Step 1: ](Open communication system application)]
 Navigate to **Communication Systems** tile to start the application.
 
-![Open Communication System Application](system.png)
+![Open communication system application](system.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create Communication System)]
-Create a new communication system. Therefore just click on the **New** button.
+[ACCORDION-BEGIN [Step 2: ](Create communication system)]
+Create a new communication system by clicking **New**.
 
-![Create Communication System](new.png)
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Add System ID and System Name)]
-By adding a system ID, system name and clicking on the **Create** button, you are able to register a new communication system.
-
-![Add System ID and System Name](create.png)
+![Create communication system](new.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Copy Link Address)]
-Now switch back to your SAP Cloud Platform Cockpit, go to Services and select SAP Web IDE. Copy the link address of **`Go to Service`**. This will be needed in the creation process of the communication system.
+[ACCORDION-BEGIN [Step 3: ](Add system ID and system name)]
+By adding a system ID, system name and clicking **Create**, you are able to register a new communication system.
 
-![Copy Link Address](link.png)
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Add Host Name)]
-Now you can add your host name. You can find this information on SAP Cloud Platform. It corresponds to the link address copied from step 4 of this tutorial.
-
-![Add Host Name](hostname.png)
+![Add system ID and system name](create.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add Inbound Communication User to System)]
-Click on the plus sign to add a user for inbound communication. Inbound communication means the here defined system is used from a communication partner to call from external into the S/4HANA system. Doing this the user that will be added next has to be used to get authorized.
+[ACCORDION-BEGIN [Step 4: ](Copy link address)]
+Switch back to your SAP Cloud Platform cockpit, go to **Services** and select **SAP Web IDE**. Copy the link address of **Go to Service**. This will be needed in the creation process of the communication system.
 
-![Add Inbound Communication User to System](plus.png)
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7: ](Create Communication User)]
-Now click on **New User** to create one.
-
-![Create Communication User](newuser.png)
+![Copy link address](link.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add User Data and Password)]
-Write a user name and description for your user.
-Also give your user a password and click on the create button.
+[ACCORDION-BEGIN [Step 5: ](Add host name)]
+Add your host name. This information can be found on SAP Cloud Platform. It corresponds to the link address copied from Step 4 of this tutorial.
 
-![Add User Data and Password](userdata.png)
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Confirm User to Add)]
-The new user will be generated by clicking on the **OK** button.
-
-![Confirm User to Add](ok.png)
+![Add host name](hostname.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Get SAP Cloud Platform Subaccount's Metadata)]
-Now switch again to your Subaccount in SAP Cloud Platform Cockpit and download its Metadata. Open trust settings and download the metadata by clicking on the **Get Metadata** link. Also copy the Local Provider Name for later use.
+[ACCORDION-BEGIN [Step 6: ](Add inbound communication user to system)]
+Click **`+`** to add a user for inbound communication. Inbound communication means that the here defined system is used from a communication partner to call from external into the S/4HANA system. Doing this, the user that will be added next has to be used to get authorized.
 
-![Get SAP Cloud Platform Subaccount's Metadata](trust.png)
+![Add inbound communication user to system](plus.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Create Certificate from Metadata)]
-Take your downloaded Metadata-File from SAP Cloud Platform and open it with an editor of your choice.
-(1) Copy the code between the two tags in another file.
+[ACCORDION-BEGIN [Step 7: ](Create communication user)]
+Click **New User** to create one.
 
-![Create Certificate from Metadata](certificate2.png)
+![Create communication user](newuser.png)
 
-(2) Add also the begin and end tag to your copied code:
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Add user data and password)]
+Enter a **user name** and **description** for your user. Give your user a password and click **Create**.
+
+![Add user data and password](userdata.png)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 9: ](Confirm user to add)]
+The new user will be generated by clicking **OK**.
+
+![Confirm user to add](ok.png)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Get SAP Cloud Platform subaccount's metadata)]
+Switch to your SAP Cloud Platform subaccount. Open **trust settings** and download the metadata by clicking **Get Metadata**. Also copy the local provider name for later use.
+
+![Get SAP Cloud Platform subaccount's metadata](trust.png)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 11: ](Create certificate from metadata)]
+Take your downloaded metadata file from SAP Cloud Platform and open it with an editor of your choice.
+
+1. Copy the code between both tags in another file.
+
+![Create certificate from metadata](certificate2.png)
+
+2. Add also the begin and end tag to your copied code:
 
 ```swift
       -----BEGIN CERTIFICATE-----
@@ -106,17 +106,15 @@ Take your downloaded Metadata-File from SAP Cloud Platform and open it with an e
       -----END CERTIFICATE-----
 
 ```
-Now save your changes as `.cer` file
+Save your changes as `.cer` file.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Upload Signing Certificate to Communication System)]
-Now go back to your SAP S/4HANA Cloud System and open your created Communication System Draft. Edit your draft and enable it for OAuth 2.0 by checking the Enabled box. Then upload the certificate by clicking the button Upload Signing Certificate. Enter the provider name which is the Subaccount's Local Service Provider's Name. You copied it a few steps before.
+[ACCORDION-BEGIN [Step 12: ](Upload signing certificate to communication system)]
+Go back to your SAP S/4HANA Cloud system and open your created communication system draft. Edit your draft and enable it for OAuth 2.0 by checking the enabled box. Then upload the certificate by clicking upload signing certificate. Enter the provider name, which is the subaccount's local service provider's name. You copied it a few steps before. Click **Save**.
 
-![Upload Signing Certificate to Communication System](certificate.png)
+![Upload signing certificate to communication system](certificate.png)
+
+With this step, you've uploaded your certificate to your communication system. Now your S/4HANA system trusts your SAP Cloud Platform subaccount.
 
 [ACCORDION-END]
-subaccounts metadata
-
-## Next Steps
-(coming soon)
