@@ -185,7 +185,7 @@ In this step we will create a named **Data Service** on the SAP HANA streaming a
 
     ![Rename Service](rename-service.png)
 
-    ![Name the service](name-service-02.png)
+    ![Name the service](name-service-02.PNG)
 
 6. To confirm that the HANA service is configured properly, right-click on it and select **Discover**:
 

@@ -1,6 +1,6 @@
 ---
-title: Create a low fidelity prototype
-description: Use BUILD to turn your app idea sketches into a low fidelity prototype.
+title: Create a low-fidelity SAP Build prototype
+description: Use SAP Build to turn your app idea sketches into a low-fidelity prototype.
 auto_validation: false
 primary_tag: products>build>build
 tags: [  tutorial>beginner, products>build>build ]
@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, products>build>build ]
 
 ## Details
 ### You will learn  
-BUILD enables you to take your sketches from a piece of paper to a functioning prototype. Learn how to upload your sketches, add navigation and hot zones, and share your low fidelity prototype.
+SAP Build enables you to take your sketches from a piece of paper to a functioning prototype. Learn how to upload your sketches, add navigation and hot zones, and share your low fidelity prototype.
 
 ### Time to Complete
 **15 Min**
@@ -19,13 +19,13 @@ BUILD enables you to take your sketches from a piece of paper to a functioning p
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a project)]
-Log in to [BUILD](https://standard.build.me/projects/).
+Log in to [SAP Build](https://standard.build.me/projects/).
 
 Under Projects, click the **New Project** button to start creating a new project.
 
-![new project in build](1.png)
+![New project in SAP Build](1.png)
 
-You can start projects from different templates or samples in BUILD, but for this tutorial, you will want to choose **Start from Scratch**. Select **Create New Project** button.
+You can start projects from different templates or samples in SAP Build, but for this tutorial, you will want to choose **Start from Scratch**. Select **Create New Project** button.
 
 ![create new project button](2.png)
 
@@ -64,7 +64,7 @@ Don't have time to make your own sketches? You can use the above samples. **Righ
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Upload the files to BUILD)]
+[ACCORDION-BEGIN [Step 3: ](Upload the files to SAP Build)]
 In your BUID project, select the **Upload Files** tile under the What do you want to do section.
 
 ![upload files button](8.png)

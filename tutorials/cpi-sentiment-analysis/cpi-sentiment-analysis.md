@@ -58,12 +58,12 @@ Click on the **Action** icon (icon the arrow pointing to the right). Select the 
 Ensure that the Time event is scheduled with the Run Once option, so that the integration flow will run immediately after it is deployed to the runtime of SAP Cloud Platform Integration.  
 ![runtime](9.png)  
 
-Switch to the **Receiver** tab. Within this Integration Flow, two receivers are maintained. Select **MKT_Receiver**. Ensure that following attributes are set:
+Switch to the **Receiver** tab. Within this Integration Flow, two receivers are maintained. Select **`MKT_Receiver`**. Ensure that following attributes are set:
 - Address:  Replace the URL with your S/4 HANA Host URL
 - credential Name:  This is the technical user created in the [**setup a Hybris Marketing cloud tutorial**].
 ![yMKT_Receiver](10.png)  
 
-Switch to the **MKT_Receiver_metadata** from the drop down menu.
+Switch to the **`MKT_Receiver_metadata`** from the drop down menu.
 Ensure that following attributes are set:
 - Address:  Replace the URL with the S/4 HANA Host URL
 - credential Name:  This is the technical user created in the [**setup a Hybris Marketing cloud tutorial**].  
@@ -118,9 +118,9 @@ Repeat Secure Parameter| Enter your keys from Twitter
 Choose OK.
 
 Repeat above steps for:
-- TWITTER_CONSUMER_SECRET
-- TWITTER_ACCESS_TOKEN
-- TWITTER_ACCESS_TOKEN_SECRET
+- `TWITTER_CONSUMER_SECRET`
+- `TWITTER_ACCESS_TOKEN`
+- `TWITTER_ACCESS_TOKEN_SECRET`
 
 [ACCORDION-END]
 

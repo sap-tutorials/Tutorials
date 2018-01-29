@@ -35,22 +35,22 @@ On a Mac python 2 is already installed by default. Only the library manager pip 
  - Request privileges with the Privileges app
  - Connect to the internet without a proxy (e.g. mobile phone hot spot)
  - In the terminal app do the following:
- - Enter "unset https_proxy"
- - Enter "sudo easy_install pip"
- - Enter "pip install requests"
- - Enter "pip install psutil"
+ - Enter `unset https_proxy`
+ - Enter `sudo easy_install pip`
+ - Enter `pip install requests`
+ - Enter `pip install psutil`
 
 On the PC follow these steps:
 
- - Download Python 2.x installer
+ - Download Python `2.x` installer
  - Start the installation
- - Open the command prompt "cmd" from the Start Menu
+ - Open the command prompt `cmd` from the Start Menu
  - Change (cd) to the directory where you installed python
  - Change (cd) to the "Scripts" subdirectory
- - Enter "pip install requests"
- - Enter "pip install psutil"
+ - Enter `pip install requests`
+ - Enter `pip install psutil`
  - Change (cd ..) to the directory where you installed python
- - Enter "python -v" to check that python is running and which version you have installed
+ - Enter `python -v` to check that python is running and which version you have installed
 
 [ACCORDION-END]
 

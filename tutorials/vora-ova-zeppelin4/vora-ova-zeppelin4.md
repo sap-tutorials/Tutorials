@@ -1,6 +1,6 @@
 ---
 title: Working with Graph Engine using Apache Zeppelin
-description: SAP Vora 1.4: Graph engine is a distributed in-memory engine that supports graph processing and allows execution of typical graph operations on data stored in SAP Vora
+description: Graph engine is a distributed in-memory engine that supports graph processing and allows execution of typical graph operations on data stored in SAP Vora (SAP Vora 1.4).
 primary_tag: products>sap-vora
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-vora ]
 ---

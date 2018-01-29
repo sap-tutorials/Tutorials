@@ -21,11 +21,11 @@ During this tutorial, you will store sensor data in SAP Vora. Thereto you will l
 [ACCORDION-BEGIN [Step 1: ](Add and configure SAP Vora HdfsLoader)]
 Open the pipeline which you have created during the previous tutorials (`test.myFirstPipeline`) in the modelling environment `http://localhost:8090`.
 
-Add a **SAP Vora HdfsLoader** operator to the pipeline by drag & drop. Then connect the **outFilename** port of the **HDFS Consumer** operator to the **inhdfsfilename** port of the **SAP Vora HdfsLoader**.
+Add a **`SAP Vora HdfsLoader`** operator to the pipeline by drag & drop. Then connect the **`outFilename`** port of the **`HDFS Consumer`** operator to the **`inhdfsfilename`** port of the **`SAP Vora HdfsLoader`**.
 
 ![picture_01](./datahub-pipelines-storeinvora_01.png)  
 
-Configure the **SAP Vora HdfsLoader** operator. You need to maintain the following properties:
+Configure the **`SAP Vora HdfsLoader`** operator. You need to maintain the following properties:
 
 | Property                       | Value                                |
 | ------------------------------ | ------------------------------------ |
@@ -46,6 +46,8 @@ When the **Status** tab indicates that the pipeline is running, wait a moment an
 ![picture_02](./datahub-pipelines-storeinvora_02.png)  
 
 Stop the pipeline by pressing the **Stop** button.
+
+**Attention**: If no data is stored in SAP Vora, you can add a **Terminal** operator to the pipeline and connect it with the **`outresult`** port of the **`SAP Vora HdfsLoader`** operator. If you see an error message like `could not handle api call, failure reason : execution of scheduler plan failed`, you might have incorrectly connected the **Kafka Consumer** operator and the **`ToString Converter`** operator. Please review the previous tutorial. 
 
 [ACCORDION-END]
 

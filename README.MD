@@ -2,7 +2,7 @@
 [![devDependency Status](https://david-dm.org/SAPDocuments/Tutorials/dev-status.svg)](https://david-dm.org/SAPDocuments/Tutorials?type=dev)
 
 # Tutorials for www.sap.com
-Welcome to the Markdown tutorial catalog for tutorials you can find on the [SAP developer pages](http://www.sap.com/developer.html) here: <http://www.sap.com/developer/tutorials.html>.
+Welcome to the Markdown tutorial catalog for tutorials you can find on the [SAP developer pages](http://www.sap.com/developer.html) here: <http://www.sap.com/developer/tutorial-navigator.tutorials.html>.
 
 
 # How to contribute

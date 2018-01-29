@@ -75,14 +75,14 @@ Configure the **Kafka Producer** operator. You need to maintain the following pr
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure Kafka Consumer)]
-Add a **Kafka Consumer** operator to the pipeline by drag & drop.
-Add a **ToString Converter** operator to the pipeline by drag & drop.
-Connect the **message** port of the **Kafka Consumer** operator to the **inmessage** port of the **ToString Converter** operator.
-Connect the **outstring** port of the **ToString Converter** operator to the **in1** port of the **Terminal** operator.
+Add a **`Kafka Consumer`** operator to the pipeline by drag & drop.
+Add a **`ToString Converter`** operator to the pipeline by drag & drop.
+Connect the **`message`** port of the **`Kafka Consumer`** operator to the **`inmessage`** port of the **`ToString Converter`** operator.
+Connect the **`outstring`** port of the **`ToString Converter`** operator to the **`in1`** port of the **Terminal** operator.
 
 ![picture_03](./datahub-pipelines-broker_03.png)  
 
-Configure the **Kafka Consumer** operator. You need to maintain the following properties:
+Configure the **`Kafka Consumer`** operator. You need to maintain the following properties:
 
 | Property                       | Value                          |
 | ------------------------------ | ------------------------------ |

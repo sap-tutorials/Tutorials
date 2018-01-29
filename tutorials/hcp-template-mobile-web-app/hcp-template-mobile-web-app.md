@@ -79,7 +79,7 @@ Once SAP Web IDE reloads, close the **Tips and Tricks** dialog box, then click o
 
 [ACCORDION-BEGIN [Step 6: ](Choose the template)]
 
-On the **Template Selection** page, click on the **Category** pulldown menu (where you see **Featured**) and select **SAPUI5 Mobile Application**. When the mobile templates are displayed, select the **SAPUI5 Master Detail Kapsel Application** template, then click **Next**.
+On the **Template Selection** page, click on the **Category** pulldown menu (where you see **Featured**) and select **SAP Fiori Application**. When the mobile templates are displayed, select the **SAP Fiori Master-Detail Application** template, then click **Next**.
 
 ![SAP Web IDE template selection filtering](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_8a.png)
 

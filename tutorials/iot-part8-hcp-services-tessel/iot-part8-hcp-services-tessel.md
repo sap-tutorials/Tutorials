@@ -1,5 +1,5 @@
 ---
-title: SAP Cloud Platform IoT for Neo: Sending messages from Tessel1 device
+title: Sending messages from Tessel1 device (IoT for Neo)
 description: Connect your Tessel device to the IoT Services for sending data
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things, tutorial>beginner ]

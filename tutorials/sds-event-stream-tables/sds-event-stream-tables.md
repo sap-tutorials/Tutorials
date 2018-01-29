@@ -1,8 +1,8 @@
 ---
 title: Capture streaming output in the HANA Database
 description: Create a table in the HANA database to receive data from a streaming project.  Then connect an output stream to the HANA table.
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 
 ## Prerequisites  

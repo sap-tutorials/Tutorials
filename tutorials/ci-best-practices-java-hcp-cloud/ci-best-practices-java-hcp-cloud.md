@@ -1,7 +1,7 @@
 ---
 
-title: Continuous Integration (CI) Best Practices with SAP: Java Web on SAP Cloud Platform using a Cloud-based Build Service
-description: Part 5.2: Configuring Cloud-based Build System for Maven-based Java Web on SAP Cloud Platform project.
+title: Continuous Integration (CI) Best Practices with SAP – Java Web on SAP Cloud Platform using a Cloud-based Build Service
+description: Part 5.2 – Configuring Cloud-based Build System for Maven-based Java Web on SAP Cloud Platform project.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
@@ -11,7 +11,7 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
   - **Proficiency:** Intermediate
   - [Generic Project with CI on Cloud](https://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html)
-  
+
 ---
 
 
@@ -23,7 +23,7 @@ This chapter is a continuation of the discussion in [Generic Project (Pure Java)
 > [Tutorial: Developing and deploying a basic Java application on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-java-basic-app.html)  
 > [Installing the SDK](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7613843c711e1014839a8273b0e91070.html)  
 > [SDK Download](https://tools.hana.ondemand.com/#cloud)
- 
+
 Here, we go beyond the pure build, and discuss how to add a post-build step to deploy the application to SAP Cloud Platform.
 
 ![Landscape using GitHub and Travis CI](java-hcp-cloud-1.png)
@@ -36,7 +36,7 @@ We also explain the best practices with respect to the Travis CI integration and
 
 Figure 2: Blue-green deployment
 
-SAP Cloud Platform offers two ways to achieve zero downtime blue-green deployment of applications. 
+SAP Cloud Platform offers two ways to achieve zero downtime blue-green deployment of applications.
 
 - Manual – involves manually enabling or disabling application processes. This method provides better control over the processes and lets you specify the time at which the new version is enabled.
 
@@ -47,7 +47,7 @@ This chapter discusses the automatic, rolling update.
 
 ### 2. Prerequisites
 
-- Ensure that there are two different accounts on SAP Cloud Platform: QA and production. The production account must have at least three compute units available at the time of deployment. 
+- Ensure that there are two different accounts on SAP Cloud Platform: QA and production. The production account must have at least three compute units available at the time of deployment.
 
 - Deploy the sample application in the SAP Cloud Platform production account. The application must be deployed with the number of application processes set to 3 using the `-m` parameter in the `neo` command.
 
@@ -113,8 +113,8 @@ The tools that are required for deployment to SAP Cloud Platform are already ref
       </properties>
     ...
     ```
-    
-    The above step ensures that the 'Neo SDK' is installed in the project directory to be accessed by the Maven goals. 
+
+    The above step ensures that the 'Neo SDK' is installed in the project directory to be accessed by the Maven goals.
 
 3. The profile `cloud-integration-tests` is used for automated testing and deployment to the QA account. In the section of `pom.xml` that defines the profile `cloud-integration-tests`, add the following lines to define the SDK installation directory:
 
@@ -145,11 +145,11 @@ The tools that are required for deployment to SAP Cloud Platform are already ref
       </profile>
     ...
     ```
-     
+
     > [SAP Cloud Platform Maven Plugin](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4cbdab6e2eb14c92ab76540ffb32174c.html)
 
     The profile `cloud-integration-tests` must also contain the Maven steps to deploy the application and restart it in the QA environment. Include the following executions as part of the `${sap.cloud.sdk.plugin}` plugin configuration inside the profile:
-    
+
     ```
     <execution>
       <id>deploying-application</id>
@@ -177,7 +177,7 @@ The tools that are required for deployment to SAP Cloud Platform are already ref
 
     Once the tests on the QA account pass, the profile `update`, which is described in the next step, deploys the application into the production environment. Maven executes the deployment to production only if the test has been passed, thus ensuring continuous deployment.
 
-      
+
 4. The rolling update on the production account is handled by the profile `update`. It ensures that the current running process is shut down gracefully before the updated application's processes start.
 
     > [Console Client Commands: rolling-update](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/3f5d41207b6a4d0b9ad2e46dc6f27e69.html).
@@ -224,7 +224,7 @@ The tools that are required for deployment to SAP Cloud Platform are already ref
     ...
     ```
 
-For the rolling update to execute successfully, the minimum number of processes that needs to be configured at the time of deployment is three. The currently running process (blue) takes up one process and the new process waiting to run (green) needs another process, along with the units required to process the rolling update. 
+For the rolling update to execute successfully, the minimum number of processes that needs to be configured at the time of deployment is three. The currently running process (blue) takes up one process and the new process waiting to run (green) needs another process, along with the units required to process the rolling update.
 
 
 ### 5. Configure the Travis Build
@@ -235,7 +235,7 @@ Travis CI lets you customize a build, that is, define environment variables, whi
 #### Procedure
 
 1. Open the `pom.xml` file and make the following changes in the `properties` section:
-     
+
     ```
     ...
       <properties>
@@ -249,27 +249,27 @@ Travis CI lets you customize a build, that is, define environment variables, whi
       </properties>
     ...
     ```
-    
+
     This ensures that the SAP Cloud Platform access information is taken from the build environment, and we don't need to include that information in the `pom.xml` file.
 
     The account password is encrypted and defined as part of the global environment variables in `.travis.yml` in one of the steps below.
-  
+
 2. Add the following line, which forces Travis to call Maven using the correct profile, to `.travis.yml`:
 
     ```
     script:
     - mvn clean install -P cloud-integration-tests -Denv.SAP_CLOUD_HOST=$SAP_CLOUD_HOST -Denv.SAP_CLOUD_ACCOUNT=$SAP_CLOUD_ACCOUNT -Denv.SAP_CLOUD_USERNAME=$SAP_CLOUD_USERNAME -Denv.SAP_CLOUD_PASSWORD=$SAP_CLOUD_PASSWORD
     ```
-    
+
     The above script executes the unit tests and upon successful test execution, deploys the application to the QA account.
-    
+
     To trigger the deployment of the application to the production account, include the following line in `.travis.yml`:
 
     ```
-    after_success: 
+    after_success:
     - mvn clean install -P update -Denv.SAP_CLOUD_HOST=$SAP_CLOUD_PROD_HOST -Denv.SAP_CLOUD_ACCOUNT=$SAP_CLOUD_PROD_ACCOUNT -Denv.SAP_CLOUD_USERNAME=$SAP_CLOUD_PROD_USERNAME -Denv.SAP_CLOUD_PASSWORD=$SAP_CLOUD_PROD_PASSWORD
     ```
-    
+
     The `PROD_*` variables are part of the settings in Travis CI mentioned in the next step.
 
 3. Open Travis CI and go to your project. Select **More options > Settings** and add the values below. You must switch off **Display value in build log** to avoid making your settings public.
@@ -290,13 +290,13 @@ Travis CI lets you customize a build, that is, define environment variables, whi
     > [Travis Documentation: Encryption keys](https://docs.travis-ci.com/user/encryption-keys/)
 
 5. In your local clone of the GitHub repository, execute the following command in the directory where `.travis.yml` is located:
-  
+
     ```
     travis encrypt SAP_CLOUD_PASSWORD={your SAP Cloud Platform QA password} --add env.global
     ```
 
     This command automatically adds an encrypted environment entry into `.travis.yml`, which should look similar to the following:
-     
+
     ```
     sudo: false
     jdk: oraclejdk7
@@ -311,19 +311,19 @@ Travis CI lets you customize a build, that is, define environment variables, whi
     ```
     travis encrypt SAP_CLOUD_PROD_PASSWORD={your SAP Cloud Platform Production password} --add env.global
     ```
-     
+
 6. Open Travis CI and go to your project. Select **More options > Settings**, switch **Limit concurrent jobs** on and enter `1` as the value to prevent concurrent builds from colliding with the deployments on SAP Cloud Platform.
-  
+
     ![Build configuration in Travis](java-hcp-cloud-3.png)
 
     > [Travis Documentation: Customizing the Build](https://docs.travis-ci.com/user/customizing-the-build)
-    
+
 7. Use Git to commit the changes, then push them to GitHub. Monitor the statuses of the build in Travis CI and of the application in the SAP Cloud Platform Cockpit.
 
 
 ### 6. Automating Unit Tests in Maven
 
-Unit tests scrutinize classes individually and independently for proper operations. JUnit is one of the unit testing frameworks you can  integrate with Maven for test automation. The sample project that is imported already contains the integration test and unit test using EasyMock and ServletUnit.
+Unit tests scrutinize classes individually and independently for proper operations. JUnit is one of the unit testing frameworks you can  integrate with Maven for test automation. The sample project that is imported already contains the integration test and unit test using `EasyMock` and `ServletUnit`.
 
 #### Procedure
 
@@ -351,7 +351,7 @@ Unit tests scrutinize classes individually and independently for proper operatio
 
     ![JUnit Test case execution in Maven build](java-hcp-cloud-6.png)
 
-    If the JUnit test case fails, the deployment phase in the Maven build is interrupted. 
+    If the JUnit test case fails, the deployment phase in the Maven build is interrupted.
 
 
 ### 7. Further Refinements
@@ -364,9 +364,9 @@ Unit tests scrutinize classes individually and independently for proper operatio
     ```
 
     The application name is generated from the branch and the build number. Any build produces a unique application name that is also well-categorized by branch. Ensure that the resulting name adheres to the application naming rules for SAP Cloud Platform.  
-     
+
     > [Console Client Commands: deploy](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/937db4fa204c456f9b7820f83bc87118.html)
-     
+
 2. Restricting builds for branches:  
     If only a few branches should be built automatically, add a build restriction into `.travis.yml`:
 
@@ -375,15 +375,14 @@ Unit tests scrutinize classes individually and independently for proper operatio
       only:
         - master
     ```
-     
+
     > [Travis Documentation: Building Specific Branches](https://docs.travis-ci.com/user/customizing-the-build/#Building-Specific-Branches)
 
 More sophisticated control mechanisms are provided by the Travis build matrix:
 
 > [Travis Documentation: Build Matrix](https://docs.travis-ci.com/user/customizing-the-build/#Build-Matrix)
-  
+
 
 ## Next Steps
 
   - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-  

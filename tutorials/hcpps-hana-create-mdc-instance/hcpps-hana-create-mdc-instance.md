@@ -2,7 +2,7 @@
 title: Setup your trial SAP HANA MDC instance
 description: Learn how to setup a SAP HANA MDC instance to be used with the SAP Predictive services
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-predictive-service, products>sap-hana, products>sap-cloud-platform  ]
+tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-service, products>sap-hana, products>sap-cloud-platform  ]
 ---
 
 ## Prerequisites
@@ -20,7 +20,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform-p
   **10 minutes**
 
 [ACCORDION-BEGIN [Step 1: ](Access your SAP Cloud Platform account)]
-Log into the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the [***SAP Cloud Platform Cockpit***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 ![SAP Cloud Platform Cockpit](01.png)
 
@@ -44,7 +44,7 @@ Field Name           | Value
 :------------------- | :--------------
 Database ID          | `mdc`
 Database System      | HANA MDC (< trial >)
-System User Password | `Welcome17Welcome17`
+System User Password | `Welcome18Welcome18`
 
 >Note: Password policy was changed recently and now requires a 15 characters password that includes a digit.
 
@@ -96,7 +96,7 @@ Click on **SAP HANA Cockpit**.
 
 You will be prompted to login.
 
-Enter `SYSTEM` as user name and the ***HANA System Account*** password that was provided during the instance creation as password (`Welcome17Welcome17`).
+Enter `SYSTEM` as user name and the ***HANA System Account*** password that was provided during the instance creation as password (`Welcome18Welcome18`).
 
 Click on **Log On**.
 

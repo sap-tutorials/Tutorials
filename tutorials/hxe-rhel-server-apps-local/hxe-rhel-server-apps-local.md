@@ -447,7 +447,7 @@ Some of the changes applied requires a restart of the system to fully take effec
 
 [ACCORDION-BEGIN [Step 4: ](Register for SAP HANA, express edition)]
 
-Go to the registration page at http://sap.com/sap-hana-express published on the SAP site.
+Go to the registration page at https://www.sap.com/sap-hana-express published on the SAP site.
 
 Alternately, you can go to the SAP HANA, express edition launch page at https://www.sap.com/developer/topics/sap-hana-express.html published on SAP site and click the Register and download SAP HANA, express edition download manager link.
 

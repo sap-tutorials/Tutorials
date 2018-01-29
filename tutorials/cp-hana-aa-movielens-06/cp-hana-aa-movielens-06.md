@@ -25,11 +25,11 @@ For more content on SAPUI5, you can check the dedicated <a href="https://sapui5.
 
 [ACCORDION-BEGIN [Step 1: ](Create your destination)]
 
-Log into the <a href="http://account.hanatrial.ondemand.com/cockpit" target="new"><b>SAP Cloud Platform Cockpit</b></a> with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit</b></a> with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial*) as highlighted on the below screenshot.
 
-![SAP HANA Cloud Platform Cockpit](01.png)
+![SAP Cloud Platform Cockpit](01.png)
 
 On the left side bar, you can navigate in **Connectivity** > **Destinations**.
 
@@ -50,7 +50,7 @@ URL                  | your SAP HANA XS OData URL
 Proxy Type           | `Internet`
 Authentication       | `BasicAuthentication`
 User                 | `MOVIELENS_USER`
-Password             | `Welcome17Welcome17`
+Password             | `Welcome18Welcome18`
 
 > ### **Note**:
 >**Make sure you paste your SAP HANA XS OData URL from the last tutorial in the URL field.**

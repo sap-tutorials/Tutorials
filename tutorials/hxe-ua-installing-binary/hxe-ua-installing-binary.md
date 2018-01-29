@@ -4,7 +4,7 @@ description: You may install SAP HANA 2.0, express edition on a Linux server for
 primary_tag: products>sap-hana\,-express-edition  
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 ---
-SAP HANA 2.0, express edition is for Linux machines running specific installations, provided your host machine meets the storage and memory prerequisites. Choose this installation method if you want a custom setup. This tutorial is available as a [video](http://www.sap.com/assetdetail/2016/09/eccafc12-8a7c-0010-82c7-eda71af511fa.html).
+SAP HANA 2.0, express edition is for Linux machines running specific installations, provided your host machine meets the storage and memory prerequisites. Choose this installation method if you want a custom setup. This tutorial is available as a [video](https://www.sap.com/assetdetail/2016/09/eccafc12-8a7c-0010-82c7-eda71af511fa.html).
 
 ## Prerequisites
 - **Proficiency** Beginner
@@ -40,8 +40,12 @@ Your server will need the following:
 - One of the following operating systems:
     - **SUSE Linux Enterprise Server for SAP Applications, 12.1, 12.2**
     - **SUSE Linux Enterprise Server for SAP Applications, IBM Power Systems (`ppc64le` - "Little Endian"), 12.1, 12.2**
+    - **Red Hat Enterprise Linux for SAP Applications 7.2, 7.3**
+    - **Red Hat Enterprise Linux for SAP Applications for Power 7.3 (SAP HANA, express edition 2.0 SPS 02 Rev 21 or higher required)**
 
 >**Note**: To install on SLES for SAP 12.1, the `libgcc_s1` and `libstdc++6` packages must be version 6.2 or newer. To update these packages, register your system with SUSE and run `zypper install libgcc_s1 libstdc++6`. For registration instructions, see the SUSE Linux Enterprise Server 12 documentation.
+
+>**Note**: To install on RHEL for SAP, first install the `compat-sap-c++-6` package using the following command: `yum install compat-sap-c++-6`.
 
 >**Note**: The following components are not available on IBM Power systems
 > - SAP Enterprise Architecture Designer
@@ -64,7 +68,7 @@ Your server will need the following:
 
 [ACCORDION-BEGIN [Step 1: ](Register for SAP HANA, express edition)]
 
-Go to the registration page at <http://sap.com/sap-hana-express>. Alternately, you can go to the SAP HANA, express edition launch page at <https://www.sap.com/developer/topics/sap-hana-express.html> and click the **Register and download SAP HANA, express edition download manager** link.
+Go to the registration page at <https://www.sap.com/sap-hana-express>. Alternately, you can go to the SAP HANA, express edition launch page at <https://www.sap.com/developer/topics/sap-hana-express.html> and click the **Register and download SAP HANA, express edition download manager** link.
 
 The registration page opens.
 
