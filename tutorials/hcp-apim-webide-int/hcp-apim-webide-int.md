@@ -16,7 +16,7 @@ tags: [  tutorial>beginner,  products>sap-cloud-platform, products>sap-web-ide, 
 ## Details
 ### You will learn  
 Since SAP Cloud Platform, API Management is one of many services on the SAP Cloud Platform it also offers a deep integration in SAP Web IDE. With this integration you can easily browse and consume services from SAP Cloud Platform, API Management and directly create SAP Fiori like SAPUI5 applications leveraging one of the templates offered in SAP Web IDE.
- 
+
 ### Time to Complete
 **20 Min**.
 
@@ -63,23 +63,9 @@ Under Connectivity, click on **Destinations**.
 
 [ACCORDION-BEGIN [Step 6: ](Create API Management Catalog destination)]
 
-<<<<<<< Updated upstream
-Enter/confirm all fields in the Destination configuration section with the information below.
-
-Field Name     | Value
-:------------- | :-------------
-Name           | `APIM_DevPortal_Trial`
-Type           | `HTTP`
-Description    | `Destination to API Developer Portal`
-URL            | take the URL of the developer Portal seen in [Activate SAP Cloud Platform, API Management on SAP Cloud Platform Trial](https://www.sap.com/developer/tutorials/hcp-apim-enable-service.html), e.g. `https://devportalu34f5b50f-YourIDtrial.hanatrial.ondemand.com`
-Proxy Type     | `Internet`
-Authentication | `AppToAppSSO`
-
-=======
 Click on **New Destination**.
 
 ![Click on New Destination](03-new_destination.png)
->>>>>>> Stashed changes
 
 Provide the following information to create a destination for the API Management Catalog. This will provide Web IDE access to all the API Proxies you have exposed through published products.
 
@@ -127,11 +113,13 @@ Provide the following information to the new destination.
 Name | `APIM_Endpoint_Trial`
 Type | HTTP
 Description | Destination to API Portal
-URL | `https://trial.apim1.hanatrial.ondemand.com:443`
+URL | `https://<your-P-user>trial-trial.apim1.hanatrial.ondemand.com:443`
 Proxy Type | Internet
 Authentication | Basic
 Username | `<Your SAP Cloud Platform Username>`
 Password | `<Your SAP Cloud Platform Password>`
+
+Your URL for this destination can be found in the Test page of the API Portal. It should be your Proxy alias, host name, and port number. Verify that this is correct before using the destination. 
 
 ![Enter values](09-Destination2.png)
 
@@ -211,7 +199,7 @@ From the **Service Catalog** drop-down, select the **Destination to API Develope
 
 [ACCORDION-BEGIN [Step 13: ](Select service and subscribe)]
 
-Select the **`GWSAMPLE_BASIC`** API Proxy created in [Create an API Proxy](http://www.google.de)   https://www.sap.com/developer/tutorials/hcp-apim-create-api.html) and click on **Subscribe**. From there select the related Product from [Add the API Proxy](http://www.google.de)  https://www.sap.com/developer/tutorials/hcp-apim-create-product.html)
+Select the **`GWSAMPLE_BASIC`** API Proxy created in [Create an API Proxy](https://www.sap.com/developer/tutorials/hcp-apim-create-api.html) and click on **Subscribe**. From there select the related Product from [Add the API Proxy](https://www.sap.com/developer/tutorials/hcp-apim-create-product.html)
 
 ![Select service and click on Subscribe](20-Subscribe.png)
 

@@ -1,6 +1,6 @@
 ---
 title: Start Using SAP HANA 2.0, express edition (Virtual Machine Method)
-description: Once you've downloaded the SAP HANA 2.0, express edition Virtual Machine package, start the server, change the default passwords to secure your system, and connect using client tools.
+description: Once you've downloaded the SAP HANA 2.0, express edition Virtual Machine package, start the server, set keyboard and time zone, log in, change the default passwords to secure your system, and connect using client tools.
 primary_tag: products>sap-hana\,-express-edition  
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition  ]
 ---
@@ -16,26 +16,58 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition  ]
 
 ## Details
 ### You will learn  
-How to start the server, change the default passwords to secure your system, and connect using client tools.
+How to start the server, set keyboard and time zone, change the default passwords to secure your system, and connect using client tools.
 
 ### Time to Complete
 **15 Min**.
 
 ---
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
-
 [ACCORDION-BEGIN [Step 1: ](Start your VM.)]
 
 Open your hypervisor application.
 
-Power on (or click **Play** on) your SAP HANA 2.0, express edition virtual appliance (`hxe.ova` or `hxexsa.ova`).
+Power on (or click *Play* on) your SAP HANA 2.0, express edition VM.
 
-![Start the VM](hxe2_vm_start.PNG)
+![Start VM](hxe2_vm_start.PNG)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Make a note of the IP address of the VM.)]
+[ACCORDION-BEGIN [Step 2: ](Change keyboard layout.)]
+
+Change the keyboard layout if your laptop doesn't use an English (US) QWERTY keyboard.
+
+The system prompts you to either change the VM keyboard, or accept the default English (US) QWERTY keyboard. Enter **Y** to change the keyboard or **N** to use the default.
+
+![Change keyboard prompt](HXE_change_keyboard_prompt.PNG)
+
+If you opt to change the keyboard, the System Keyboard Configuration page displays.
+
+![System Keyboard Configuration page](HXE_change_keyboard_GUI.PNG)
+
+Scroll to the desired keyboard layout. Tab to the **OK** button, or press **F10**, to save your changes. A message displays while the system processes the keyboard layout change.
+
+![Keyboard change progress](HXE_change_keyboard_process.PNG)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Change time zone.)]
+
+Change the time zone if your laptop is not in the default UTC (GMT) time zone.
+
+Enter **Y** to change the time zone, or **N** to accept the default.
+
+![Change timezone prompt](HXE_change_timezone.PNG)
+
+If you opt to change the time zone, the Clock and Time Zone page displays.
+
+![Clock and Time Zone page](HXE_change_timezone_GUI.PNG)
+
+In the Region pane, scroll down to the correct region. **Tab** to the Time Zone pane and select the correct time zone. **Tab** to the **OK** button, or press **F10**, to save your changes.
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Make a note of the IP address of the VM.)]
 
 The IP address of the VM is displayed on the login screen.
 
@@ -45,26 +77,7 @@ The IP address of the VM is displayed on the login screen.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Determine how you're going to log in.)]
-
-Your login method depends on the language and keyboard layout of your laptop's physical keyboard:
-
-| Keyboard Layout        | Login Method  |
-| ---------------- | -------------------------------------------|
-| English QWERTY            | Log in directly, or log in with SSH client.|
-| Other keyboards           | Log in with SSH client.|
-
-If your laptop's physical keyboard is not an English QWERTY keyboard (for example if your laptop has a French AZERTY keyboard or German QWERTZ keyboard) you need to log in using an SSH client such as `PuTTY`. If you don't use an SSH Client, you will have difficulty entering the username and password.
-
-If you log in directly, you may not able to cut and paste text, and your session may be missing a scrollbar. If you need the convenience of cut and paste functionality, and a scrollbar, SAP recommends you log in with an SSH client.
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 4: ]((Users with English QWERTY physical keyboards) Log in directly.)]
-
-If your laptop has an English QWERTY physical keyboard, enter information directly into the VM. If you have a different type of keyboard, skip to the next step.
-
->**Note**: English QWERTY users have the option of logging in via an SSH client too, but SSH client login is mandatory for users with other keyboards.
+[ACCORDION-BEGIN [Step 4: ](Log in.)]
 
 At the `hxehost` login prompt, enter `hxeadm`.
 
@@ -78,33 +91,7 @@ When prompted for **(current) UNIX password**, enter the temporary password agai
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ]((Users with other physical keyboards) Log in with an SSH client.)]
-
-This task assumes you're using `PuTTY`.
-
->**Note**: English QWERTY users have the option of logging in via an SSH client too, but SSH client login is mandatory for users with other keyboards.
-
-  - Open `PuTTY`. Enter the IP of your SAP HANA express edition host in the **Host Name** field, `22` in the **Port** field, and a name for the session under **Saved Sessions**.
-
-    ![SSH client login](hxe2_02_putty.PNG)
-
-  - Under **Connections > Data**, in **Auto-login username** enter `hxeadm`. Under **When username is not specified**, select `Prompt`.
-
-    ![SSH client login 2](hxe2_02_putty2.PNG)
-
-  - **Save** your session and click **Open** to connect to your SAP HANA, express edition server on your VM.
-
-    - At the `hxehost` login prompt, enter `hxeadm`
-
-  - For **Password** enter the temporary password `HXEHana1`
-
-  - When prompted for **(current) UNIX password**, enter the temporary password again: `HXEHana1`
-
->**Note**: Steps after this point apply to both login methods. If you logged in directly, or use an SSH client, the following steps apply to you.
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 6: ](Enter new password.)]
+[ACCORDION-BEGIN [Step 5: ](Enter new password.)]
 
 When prompted for **New password**, enter a strong password with at least 8 characters. If your password is not strong enough, the system logs you off and you must log in again.
 
@@ -128,7 +115,7 @@ Strong password example: `E15342GcbaFd`. Do not use this password example, since
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Retype new password.)]
+[ACCORDION-BEGIN [Step 6: ](Retype new password.)]
 
 When prompted to Retype new password, enter your strong password again.
 
@@ -136,15 +123,15 @@ When prompted to Retype new password, enter your strong password again.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Enter new HANA database master password.)]
+[ACCORDION-BEGIN [Step 7: ](Enter new HANA database master password.)]
 
-When prompted for New HANA database master password, enter a strong password. Make a note of this password, since you'll need it later. You can enter the same password you used in step 4 or 5, or a new password. If you are entering a new password, see the password rules in step 6.
+When prompted for New HANA database master password, enter a strong password. Make a note of this password, since you'll need it later. You can enter the same password you used in step 5, or a new password. If you are entering a new password, see the password rules in step 5.
 
 Entering the HANA database master password changes the SYSTEM user password. If you are installing the server + applications virtual machine, it also changes the `XSA_ADMIN` and `XSA_DEV` user passwords.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Confirm HANA database master password.)]
+[ACCORDION-BEGIN [Step 8: ](Confirm HANA database master password.)]
 
 When prompted to **Confirm HANA database master password**, enter the strong password again.
 
@@ -152,7 +139,7 @@ When prompted to **Confirm HANA database master password**, enter the strong pas
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ]((Server + Applications VM Only) Enter Proxy Settings))]
+[ACCORDION-BEGIN [Step 9: ]((Server + Applications VM Only) Enter Proxy Settings))]
 
 When prompted **Do you need to use the proxy server to access the internet?** enter Y or N.
 
@@ -164,7 +151,7 @@ Make sure the Non Proxy Host list includes `localhost`, `hxehost`, and `hxehost.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ]((Server + Applications VM Only) Wait for XSA configuration.)]
+[ACCORDION-BEGIN [Step 10: ]((Server + Applications VM Only) Wait for XSA configuration.)]
 
 Decide whether you want to wait for XSA configuration to complete before starting the server. When prompted to Wait for XSA configuration to finish, enter **Y** if you want to wait.
 
@@ -172,7 +159,7 @@ Enter **N** if you want XSA to configure in the background after server configur
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Complete the installation.)]
+[ACCORDION-BEGIN [Step 11: ](Complete the installation.)]
 
 When prompted to **Proceed with configuration?** enter **Y**.
 
@@ -182,11 +169,9 @@ SAP HANA 2.0, express edition is now running.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Record `hxehost` IP address.)]
+[ACCORDION-BEGIN [Step 12: ](Record `hxehost` IP address.)]
 
 Record the `hxehost` IP address so you can use it later when connecting to the server using SAP HANA client tools.
-
->**Note**: This is the same IP address you entered if you logged in using an SSH client.
 
 In your VM, at the command prompt, enter:
 
@@ -200,35 +185,7 @@ In the following example, the IP address is 172.25.86.13:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ]((Optional) Change Keyboard Layout)]
-
-If you have a non-English or non-QWERTY keyboard, and if you used an SSH client to log in to SAP HANA 2.0, express edition, at this point you have the option of changing the keyboard layout of the VM to match your physical keyboard. This will enable you to enter content directly into the VM, rather than through an SSH Client. Note, however, that the SSH Client still has some advantages (including a scroll bar) that the VM window lacks.
-
-1. At the command prompt, enter:
-
-    ```
-    sudo localectl set-keymap <keymap>
-    ```
-    For example, to set the keyboard layout to German, enter:
-
-    ```bash
-    sudo localectl set-keymap de
-    ```
-    To set the keyboard to a `non-QWERTY` layout like `AZERTY`, enter:
-
-    ```bash
-    sudo localectl set-keymap azerty
-    ```
-
-2. To check your current keyboard layout settings, enter:
-
-    ```bash
-    sudo localectl status
-    ```
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 15: ](Edit /etc/hosts File)]    
+[ACCORDION-BEGIN [Step 13: ](Edit /etc/hosts File)]    
 
 The `hxehost` IP address is private to the VM. In order for applications on your laptop (like your web browser) to access `hxehost`, add the `hxehost` IP address to your laptop's hostname map. The hostname map is your laptop's **`/etc/hosts`** file. You must edit **`/etc/hosts`** if you want to access any XS Advanced applications, or use HANA Cockpit, from your laptop.
 
@@ -258,11 +215,9 @@ If you installed the VM installation package to a Mac or Linux machine, follow t
     sudo sh - c 'echo <hxehost IP address>    hxehost >> /etc/hosts'
     ```
 
-
-
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Test XSC)]
+[ACCORDION-BEGIN [Step 14: ](Test XSC)]
 
 Test your XSC installation.
 
@@ -291,7 +246,7 @@ Test your XSC installation.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Test Web IDE (Server + Applications Virtual Machine Only))]
+[ACCORDION-BEGIN [Step 15: ](Test Web IDE (Server + Applications Virtual Machine Only))]
 
 If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your Web IDE installation.
 
@@ -325,7 +280,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](Test XSA (Server + Applications Virtual Machine Only))]
+[ACCORDION-BEGIN [Step 16: ](Test XSA (Server + Applications Virtual Machine Only))]
 
 If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your XSA installation.
 
@@ -355,7 +310,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 19: ](Test Cockpit (Server + Applications Virtual Machine Only))]
+[ACCORDION-BEGIN [Step 17: ](Test Cockpit (Server + Applications Virtual Machine Only))]
 
 If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), test your Cockpit installation.
 
@@ -393,7 +348,7 @@ If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 20: ](Optional Configuration: Test your Installation using the HANA Eclipse Plugin)]
+[ACCORDION-BEGIN [Step 18: ](Optional Configuration: Test your Installation using the HANA Eclipse Plugin)]
 
 **Note**: Make sure you edited your **`/etc/hosts`** file before starting this procedure.
 
@@ -411,7 +366,7 @@ Download and install the HANA Eclipse Plugin to your host OS (not the VM guest) 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 21: ](Optional Configuration: Install Text Analysis Files)]
+[ACCORDION-BEGIN [Step 19: ](Optional Configuration: Install Text Analysis Files)]
 
 If you are using SAP HANA 2.0, express edition in a language other than English or German, you can download the **Text analysis files for additional languages** package in the Download Manager.
 
@@ -475,7 +430,7 @@ The Text analysis files for additional languages package contains the text analy
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 22: ](Optional Configuration: Install SAP Enterprise Architecture Designer (Server + Applications Virtual Machine Only))]   
+[ACCORDION-BEGIN [Step 20: ](Optional Configuration: Install SAP Enterprise Architecture Designer (Server + Applications Virtual Machine Only))]   
 
 If you installed the Server + Applications Virtual Machine package (`hxexsa.ova`), you have the option of installing the SAP Enterprise Architecture Designer (SAP EA Designer) tool.
 
@@ -590,7 +545,7 @@ You are logged in as administrator of SAP EA Designer.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 23: ](Optional Configuration: Install SAP HANA Interactive Education (Server + Applications Virtual Machine Only))]       
+[ACCORDION-BEGIN [Step 21: ](Optional Configuration: Install SAP HANA Interactive Education (Server + Applications Virtual Machine Only))]       
 
 SAP HANA Interactive Education (SHINE) makes it easy to learn how to build applications on SAP HANA Extended Application Services Advanced Model (XSA).
 
@@ -635,7 +590,7 @@ SHINE is a separate download in the Download Manager. To use SHINE, you need the
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 24: ](Optional Configuration: Installing SAP HANA External Machine Learning Library)]
+[ACCORDION-BEGIN [Step 22: ](Optional Configuration: Installing SAP HANA External Machine Learning Library)]
 
 The SAP HANA External Machine Learning Library is an application function library (AFL) supporting the integration of Google `TensorFlow`, as an external machine learning framework, with SAP HANA, express edition.
 
@@ -680,7 +635,7 @@ The SAP HANA External Machine Learning Library is an application function librar
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 25: ](Optional Configuration: Installing SAP HANA Smart Data Integration)]
+[ACCORDION-BEGIN [Step 23: ](Optional Configuration: Installing SAP HANA Smart Data Integration)]
 
 Install the SAP HANA client package and SAP HANA smart data integration on an SAP HANA, express edition system.
 
