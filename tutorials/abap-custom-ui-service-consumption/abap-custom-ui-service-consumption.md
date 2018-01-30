@@ -21,74 +21,75 @@ This tutorial describes how to make a custom business object's service consumabl
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform destination)]
-**Open Destinations** on SAP Cloud Platform.
+Open **Destinations** on SAP Cloud Platform.
 
 ![Open SAP Cloud Platform destination](cp.png)
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add service scope to destination)]
-**Edit** your **destination** and **add** your **custom CDS view service** to your scope.
+Edit your destination and add your custom CDS view service to your scope.
 
 | ------------ | --------------------------------------------------------------------------------- |
-| **`scope:`** |  `ADT_001 /UI5/APP_INDEX_0001 /IWFND/SG_MED_CATALOG_0002 YY1_BONUSPLAN_CDS_0001`  |
+| **`scope`** |  `ADT_001 /UI5/APP_INDEX_0001 /IWFND/SG_MED_CATALOG_0002 YY1_BONUSPLAN_CDS_0001`  |
 
 
 Your **scope** consists now of 4 parts:
- - `ADT_001`: scope of the gateway service for ADT  
- - `/UI5/APP_INDEX_0001`: scope of the UI2 app index
- - `/IWFND/SG_MED_CATALOG_0002`: scope of the catalog service version 2.0
- - `<CustomBusinessObjectServiceName> + _0001`: custom CDS view
+
+  - `ADT_001`: scope of the gateway service for ADT  
+  - `/UI5/APP_INDEX_0001`: scope of the UI2 app index
+  - `/IWFND/SG_MED_CATALOG_0002`: scope of the catalog service version 2.0
+  - `<CustomBusinessObjectServiceName> + _0001`: custom CDS view
 
     example: `YY1_BONUSPLAN_CDS_0001`
 
-Be sure that all parts within the **scope are separated with a space**.
+Be sure that all parts within the scope are separated with a space.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Search SAP Web IDE)]
-**Go** to **Services**, **search** for **SAP Web IDE** and **select** it on your SAP Cloud Platform account.
+Go to **Services**, search for **SAP Web IDE** and select it on your SAP Cloud Platform account.
 
 ![Open SAP Web IDE](webide1.png)
 
-**Click Go to Service** to open SAP Web IDE.
+Click **Go to Service** to open SAP Web IDE.
 
 ![View service catalog](sapcp.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Select new project)]
-**Select New Project from Template** to generate one.
+[ACCORDION-BEGIN [Step 4: ](Open SAP Web IDE)]
+Select **New Project from Template** to generate one.
 
-![Select new project](webide.png)
+![Open SAP Web IDE](webide.png)
 
 If you don't see this welcome page then follow the alternative way:
-File -> New -> Project from Template
+**File** | **New** | **Project from Template**
 
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create UI project)]
-**Choose** the **List Report Application** to create a new UI.
+Choose the **List Report Application** to create a new UI.
 
 ![Create UI project](next.png)
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Enter basic information)]
-**Enter `Bonusplan`** as project name and title.
+Enter **`Bonusplan`** as project name and title.
 
 ![Enter basic information](bonusplan.png)
 
-**Click Next**.
+Click **Next**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Explore business object's service in SAP Web IDE)]
-**Search** for **`YY1_BONUSPLAN_CDS`** and **open** the **list**. Now you can see following:
+[ACCORDION-BEGIN [Step 7: ](Explore business object's service)]
+Search for **`YY1_BONUSPLAN_CDS`** and open the list. Now you can see the following:
 
 ![Explore business object's service in SAP Web IDE](list2.png)
 
-Without `YY1_BONUSPLAN_CDS_0001` as parameter in your scope you wouldn't be able to select `YY1_BONUSPLAN_CDS_0001` as service to create your UI project. All other services still cannot be selected.  
+Without `YY1_BONUSPLAN_CDS_0001` as a parameter in your scope, you wouldn't be able to select `YY1_BONUSPLAN_CDS_0001` as a service to create your UI project. All other services still cannot be selected.  
 
 [ACCORDION-END]
