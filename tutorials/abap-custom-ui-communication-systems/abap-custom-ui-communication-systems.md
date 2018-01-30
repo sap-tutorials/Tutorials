@@ -94,11 +94,11 @@ Switch to your SAP Cloud Platform subaccount. Open **trust settings** and downlo
 [ACCORDION-BEGIN [Step 11: ](Create certificate from metadata)]
 Take your downloaded metadata file from SAP Cloud Platform and open it with an editor of your choice.
 
-1. Copy the code between both tags in another file.
+1 Copy the code between both tags in another file.
 
 ![Create certificate from metadata](certificate2.png)
 
-2. Add also the begin and end tag to your copied code:
+2 Add also the begin and end tag to your copied code:
 
 ```swift
       -----BEGIN CERTIFICATE-----
