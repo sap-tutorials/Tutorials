@@ -84,7 +84,7 @@ We will change this information in the CDS view using an annotation. (For more i
 You have created a tooltip for the column "Paid" but there is no column header for it. You will now resolve this by casting the type of the transformed `payment_status` to a data element - `zso_invoice_payment_status` - by using a CAST statement. (Ignore the warning).
 
 1. First create the data element **`zso_invoice_payment_status`**: Choose **File > New... > Other... > Data... > Dictionary > Data element:** and enter the following:
-- Package, eg `Zxx_Tutorial` (where `xx` = your initials)
+- Package, e.g., `Zxx_Tutorial` (where `xx` = your initials)
 - Name = `zso_invoice_payment_status`
 - Description
 
@@ -113,7 +113,7 @@ as zso_invoice_payment_status )
 as payment_status,
 ```
 
-2. Save and activate the CDS view **(Ctrl+S, Ctrl+f3).** If you run the program now, your SAP List Viewer should look like this:
+2. Save and activate the CDS view **(Ctrl+S, Ctrl+F3).** If you run the program now, your SAP List Viewer should look like this:
 
 ![Image depicting step-6-column-header-paid](step-6-column-header-paid.png)
 
