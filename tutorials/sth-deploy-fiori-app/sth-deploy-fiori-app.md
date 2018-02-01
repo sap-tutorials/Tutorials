@@ -23,19 +23,18 @@ These steps are required for the next tutorial: [Translate a sample Fiori app](h
 ### Time to Complete
 **10 Min**
 
-[ACCORDION-BEGIN [Step 1: ](Open the overview screen of the SAP Cloud Platform cockpit)]
+[ACCORDION-BEGIN [Step 1: ](Open overview screen of cockpit)]
 
-To go to the overview screen of the cockpit, choose your user ID at the top of the screen.
+To go to the overview screen of the SAP Cloud Platform cockpit, choose your user ID at the top of the screen.
 ![User ID in SAP Cloud Platform cockpit](sth-deploy-fiori-app-account-overview.png)
-[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open the Git repository section in the SAP Cloud Platform cockpit)]
+[ACCORDION-BEGIN [Step 2: ](Open Git Repositories section)]
 
 In the navigation area on the left, choose **Repositories | Git Repositories**.
 ![Git Repositories](sth-open-git-repository.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new repository)]
@@ -52,7 +51,6 @@ To create your Git repository, choose **OK**.
 
 ![Create repo image](sth-create-new-repository.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Open the repository overview page)]
@@ -65,12 +63,11 @@ On the repository overview page, copy the repository URL:
 
 ![Git repo URL](sth-copy-URL.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Initialize the local repository)]
 
-Open your project in **SAP Web IDE**, right-click the root folder (**`sample.ApprovePurchaseOrders`**) and choose **Git** | **Initialize Local Repository**.
+Open your project in **SAP Web IDE**, right-click the root folder (`sample.ApprovePurchaseOrders`) and choose **Git** | **Initialize Local Repository**.
 
 ![Initialize local git](sth-initialize-git.png)
 
@@ -79,7 +76,6 @@ Choose **Set Remote** in the alert.
 
 ![Initialized local git alert](sth-set-remote.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Enter a link to the remote repository)]
@@ -92,8 +88,6 @@ This will initialize your local repository and link it to the Git repository on 
 When the **Changes Fetched** dialog box opens, choose **OK**.
 ![Changes fetched](sth-change-fetches.png)
 
-
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Open the Git pane)]
@@ -104,7 +98,6 @@ Open the Git pane in the right of **SAP Web IDE** and confirm that the correct r
 
 ![Git pane](sth-git.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Perform a Git merge)]
@@ -119,7 +112,6 @@ At this point, your Git repository is set up.
 
 In the following steps, you'll commit and push your project files to the Git repository.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Stage files)]
@@ -128,16 +120,14 @@ Commit all project files by choosing the **Stage All** checkbox.
 
 ![staging all files](sth-stage.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Enter a description for the commit)]
 
-Scroll down in the **Git pane** and enter a description, which is required for all commits) like `Initial commit`.
+Scroll down in the **Git pane** and enter a description like **`initial commit`**.
 
 ![commit description](sth-commit.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Commit and push your changes)]
@@ -146,7 +136,6 @@ To add your files to the master branch, choose **Commit and Push** and select **
 
 ![commit and push](sth-master.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Enter user information)]
@@ -155,7 +144,6 @@ To add your files to the master branch, choose **Commit and Push** and select **
 
 ![select origin master](sth-user.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](View the updated file decorations)]
@@ -165,8 +153,6 @@ You'll also see the decorations change to green dots, which indicate that the fi
 
 ![green dots](sth-green.png)
 
-
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Start the deployment to SAP Cloud Platform)]
@@ -176,7 +162,6 @@ Right-click the root folder, `sample.ApprovePurchaseOrders`, and choose **Deploy
 
 ![deploy to SAP Cloud Platformmenu](sth-deploy.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Finalize the deployment to SAP Cloud Platform)]
@@ -185,7 +170,6 @@ In the **Deploy Application to SAP Cloud Platform** dialog box, confirm that the
 
 ![deploy app options](sth-deploy-popup.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Confirm the deployment of your app)]

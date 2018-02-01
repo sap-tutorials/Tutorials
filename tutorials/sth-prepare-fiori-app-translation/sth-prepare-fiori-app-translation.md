@@ -20,8 +20,8 @@ You'll learn how to prepare a Fiori reference app so that you can translate it u
 **10 Min**.
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Open the overview screen of the SAP Cloud Platform cockpit)]
-To go to the overview screen of the cockpit, choose your user ID at the top of the screen.
+[ACCORDION-BEGIN [Step 1: ](Open overview screen of cockpit)]
+To go to the overview screen of the SAP Cloud Platform cockpit, choose your user ID at the top of the screen.
 
 ![Locate SAP Web IDE](sth-prep-open-service-catalog.png)
 
@@ -73,6 +73,7 @@ Accept the standard license conditions by choosing **I agree** and then **Finish
 
 [ACCORDION-BEGIN [Step 7: ](Open the project.json file)]
 To be able to view the app in multiple languages and enable SAP Translation Hub to locate the text resources file, you need to enter some data in the `.project.json` file.
+
 Expand the root folder of the application (`sample.ApprovePurchaseOrders`) and double-click the `.project.json` file.
 > Depending on your browser settings, you might have to disable the pop-up blocker to be able to open the file.
 
