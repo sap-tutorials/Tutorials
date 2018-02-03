@@ -1,5 +1,5 @@
 ---
-title: SAP HANA, express edition - Create a Kubernetes cluster
+title: SAP HANA, express edition - Deploy the database server on containers in a Kubernetes cluster
 description: Create a Kubernetes cluster on Google Kubernetes Engine and deploy SAP HANA, express edition containers (database server only)
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, products>sap-hana\,-express-edition ]
