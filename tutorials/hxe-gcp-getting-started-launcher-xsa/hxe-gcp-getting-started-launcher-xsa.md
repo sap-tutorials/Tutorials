@@ -159,7 +159,7 @@ Use your IP address to map it to the hosts file in your computer. You need admin
 - For Mac:
   Open a terminal (`Finder -> Applications -> Terminal`) and type `sudo nano /etc/hosts`
 
-  ![Hosts file](mac.png)
+  ![Hosts file](mac.jpg)
 
 
 Add the IP address followed by the name of the host, which will be `hxehost`:

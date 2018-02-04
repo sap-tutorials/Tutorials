@@ -22,7 +22,7 @@ How to clone the SAP HANA `INteractive` Education source code from Git Hub, gene
 [ACCORDION-BEGIN [Step 1: ](Clone SHINE from GitHub)]
 
 Open SAP Web IDE for SAP HANA and log in with a developer user.
->Note: By default, the URL for Web IDE in SAP HANA, express edition is https://hxehost:53075. You can use command  `xs apps` in space SAP in the Command Line Interface to find out the right
+>Note: By default, the URL for Web IDE in SAP HANA, express edition is `https://hxehost:53075`. You can use command  `xs apps` in space SAP in the Command Line Interface to find out the right
 
 Right-click on the **Workspace** and click on **Git-> Clone Repository**:
 
