@@ -125,7 +125,7 @@ Register your copy of SAP HANA, express edition to access the download manager.
 
     > **Note:** If you have an SAP login, click the Login icon at the top of the page to populate the registration form automatically.
 
-    ![Registration Page](HXE_register.PNG "Test Title")
+    ![Registration Page](HXE_register_rev023.PNG)
 
     The **Registration Success** page displays. (You will also receive an email indicating successful registration.)
 
