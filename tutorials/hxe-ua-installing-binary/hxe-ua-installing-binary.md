@@ -164,7 +164,91 @@ Click the **Download** button to being your download.
 > - SAP HANA Web-based Development Workbench (XS classic)
 > SAP strongly advises you to plan the transition of existing content and applications from XSC to SAP HANA extended application services, advanced model (XS Advanced).
 
- [ACCORDION-END]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ]((Optional) Download Using the Download Manager (Console Mode))]
+
+Run the Download Manager in console mode if you're using a command line interface.
+
+Before you begin, close the Download Manager if it is running in GUI mode.
+
+Open a command prompt at the location where you saved the Download Manager file (`HXEDownloadManager.jar`, or `HXEDownloadManager_linux.bin`). You can display the command help using the `-h` argument.
+
+Linux Download Manager example:
+
+```bash
+HXEDownloadManager_linux.bin -h
+```
+
+Platform-independent Download Manager example:
+
+```bash    
+java -jar HXEDownloadManager.jar -h
+```
+
+> **Note:**
+> You must include an argument with each command. If you call the Download Manager without an argument, it opens in GUI mode.
+
+Familiarize yourself with the command syntax and command arguments.
+
+Command syntax:
+
+```
+HXEDownloadManager [( [-h|-X] | [-d <save_directory>] [--ph <proxy_host>] [--pp <proxy_port>] <platform> <image> <file>... )]
+```
+
+Command arguments:
+
+|  Argument         |  Description  |
+| ---------------- | -------------|
+| -h            | Print this help. |
+| -x            | Print extended help. |
+| -d <save_directory>      | Directory where to save the download file. Default is `%USERPROFILE%\Downloads` on Windows; `~/Downloads` on Linux.      |
+| --`ph` <proxy_host> | Proxy host name or IP address.      |
+| --`pp` <proxy_port> | Proxy host name or IP address.      |
+| `<platform>`      | HANA platform. Valid values are `linuxx86_64`, `linuxppc64le`.     |
+| `<image>`         | Type of image to download. Valid values for `linuxx86_64` platform are: `vm`, `installer`. Valid values for `linuxppc64le` platform are: `installer`.      |
+| `<file>`          | File(s) to download.      |
+
+Valid values for `linuxx86_64` platform and Binary image:
+
+|  Value (`linuxx86_64`)       |  Component  |
+| ------------- |-------------------|
+| `Getting_Started_Binary_Installer.pdf`            | User manual in PDF format: *Getting Started with SAP HANA, express edition (Binary Installer Method)*. |
+| `hxe.tgz`           | Server only binary installer |
+| `hxexsa.tgz`           | Server + applications binary installer |       
+| `additional_lang.tgz`           | Text analysis files for additional languages  |    
+| `eadesigner.tgz`           | SAP Enterprise Architecture Designer* |   
+| `hsa.tgz`           | SAP HANA streaming analytics |   
+| `hsa_plugin.zip`           | SAP HANA streaming analytics studio plug-in  |   
+| `shine.tgz`           |SAP HANA Interactive Education (SHINE)*  |
+| `eml.tgz`           | SAP HANA External Machine Learning Library |
+| `clients_linux_x86_64.tgz`           | Client download package for Linux machines (x86/64 architectures) |   
+| `clients_linux_ppc64le.tgz`           | Client download package for Linux machines (little endian on Power architectures). |   
+| `clients_windows.zip`           | Client download package for Windows machines  |   
+| `clients_mac.tgz`           | Client download package for Mac |
+| `sdi.tgz`           | SAP HANA smart data integration   |
+| `dpagent_linux_x86_64.tgz`           | SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64)  |
+
+> **Note**
+> Components with an `*` are only compatible with `hxexsa.tgz`.
+
+To download a component, follow these examples:
+
+This example uses the Linux Download Manager `HXEDownloadManager_linux.bin`. It specifies a proxy host, proxy port, and downloads the Getting Started with SAP HANA, express edition (Binary Installer Method) PDF and the SHINE package ( `shine.tgz`).
+
+```bash
+XXEDownloadManager_linux.bin --ph proxy.yourcompany.corp --pp 8080 linuxx86_64 installer Getting_Started_Binary_Installer.pdf shine.tgz
+```
+
+This example uses the platform-independent Download Manager `HXEDownloadManager.jar`. It downloads the Getting Started with SAP HANA, express edition (Binary Installer Method) PDF and `hxexsa.tgz`.
+
+```bash
+java -jar HXEDownloadManager.jar linuxx86_64 installer Getting_Started_Binary_Installer.pdf hxexsa.tgz
+```
+
+
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4:](Extract Your Downloaded Packages)]
 
@@ -210,10 +294,10 @@ tar -xvzf <download_path>/dpagent_linux_x86_64.tgz
 > Run the tar command from the command shell as shown, rather than using a GUI-based extraction tool.
 
 >**Tip:**
-> You may have to give these files run permissions. Example:
+> You may have to give these files read and write permissions. Example:
 
 > ```bash
-> chmod -R 777 <download_path>/hxe.tgz
+> chmod +x <download_path>/hxe.tgz
 > ```
 
  [ACCORDION-END]
