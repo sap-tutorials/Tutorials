@@ -140,30 +140,30 @@ Open the `neo-app.json` file and update the file like this:
 {
 	"welcomeFile": "index.html",
 	"routes": [{
-			"path": "/resources",
-			"target": {
-				"type": "service",
-				"name": "sapui5",
-				"entryPath": "/resources"
-			},
-			"description": "SAPUI5 Resources"
-		}, {
-			"path": "/test-resources",
-			"target": {
-				"type": "service",
-				"name": "sapui5",
-				"entryPath": "/test-resources"
-			},
-			"description": "SAPUI5 Test Resources"
-		}, {
-			"path": "/ps",
-			"target": {
-				"type": "destination",
-				"name": "psapi"
-			},
-			"description": "SAP Cloud Platform Predictive destination"
-		}
-	]
+		"path": "/resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/resources"
+		},
+		"description": "SAPUI5 Resources"
+	}, {
+		"path": "/test-resources",
+		"target": {
+			"type": "service",
+			"name": "sapui5",
+			"entryPath": "/test-resources"
+		},
+		"description": "SAPUI5 Test Resources"
+	}, {
+		"path": "/ps",
+		"target": {
+			"type": "destination",
+			"name": "psapi"
+		},
+		"description": "SAP Cloud Platform Predictive destination"
+	}],
+	"sendWelcomeFileRedirect": true
 }
 ```
 
