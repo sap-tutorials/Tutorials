@@ -106,7 +106,7 @@ To create a second destination click on **New Destination** again
 
 Provide the following information to the new destination.
 
-> Please make sure to enter the SAP Cloud Platform username and password, not the username and password for the ES4 SAP Developer System
+> Please make sure to enter the SAP Cloud Platform username and password, not the username and password for the ES5 SAP Developer System
 
 **Field** | **Value**
 ---- | ----
@@ -119,7 +119,7 @@ Authentication | Basic
 Username | `<Your SAP Cloud Platform Username>`
 Password | `<Your SAP Cloud Platform Password>`
 
-Your URL for this destination can be found in the Test page of the API Portal. It should be your Proxy alias, host name, and port number. Verify that this is correct before using the destination. 
+Your URL for this destination can be found in the Test page of the API Portal. It should be your Proxy alias, host name, and port number. Verify that this is correct before using the destination.
 
 ![Enter values](09-Destination2.png)
 
@@ -332,7 +332,7 @@ Right click on the **Project** and select **Run > App in FLP Sandbox**
 
 ![Run the project](33-RunTheProject.png)
 
-You should see a Fiori app connecting via SAP API Management to the SAP Gateway Developer System ES4.
+You should see a Fiori app connecting via SAP API Management to the SAP Gateway Developer System ES5.
 
 ![See results](34-ResultsInFioriApp.png)
 
