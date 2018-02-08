@@ -45,12 +45,12 @@ Field Name     | Value
 :------------- | :-------------
 Name           | `SAP_Gateway`
 Type           | `HTTP`
-Description    | `SAP Gateway ES4`
-URL            | `https://sapes4.sapdevcenter.com`
+Description    | `SAP Gateway ES5`
+URL            | `https://sapes5.sapdevcenter.com`
 Proxy Type     | `Internet`
 Authentication | `BasicAuthentication`
-User           | `<Your ES4 Gateway user> (e.g. p123456789)`
-Password       | `<Your ES4 Gateway password>`
+User           | `<Your ES5 Gateway user> (e.g. p123456789)`
+Password       | `<Your ES5 Gateway password>`
 
 Leave the **Use default JDK truststore** checked.
 
