@@ -82,7 +82,7 @@ Click **Next**.
 
 In the **Data Connection** step, on the left side, verify **Service Catalog** under **Sources** is selected.
 
-Next, select the `SAP Gateway ES4` destination from the pull down list.
+Next, select the `SAP Gateway ES5` destination from the pull down list.
 
 ![selecting your destination](te-2016-4-06.png)
 
