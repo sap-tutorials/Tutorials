@@ -317,13 +317,13 @@ __JDBC__
 To log into your system database via JDBC, use the following command:
 
 ```
-jdbc:sap://<ip_address>:39041/databaseName=<database_name>
+jdbc:sap://<ip_address>:39017/databaseName=<database_name>
 ```
 
 To log into your tenant database via JDBC, use the following command:
 
 ```
-jdbc:sap://<ip_address>:39017/databaseName=<tenant_name>
+jdbc:sap://<ip_address>:39041/databaseName=<tenant_name>
 ```
 
 [ACCORDION-END]
