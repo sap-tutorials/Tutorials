@@ -6,9 +6,9 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana\,-expre
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner | Intermediate | Advanced
+ - **Proficiency:** Beginner
  - **Tutorials:** [SAP HANA, Express edition, CodeJam ](https://www.sap.com/developer/how-tos/2017/02/codejam-gettingstarted-hxe.html)
- - JDBC client: You need to have downloaded the clients from the HXE Download Manager
+ - JDBC client: You need to have downloaded the clients from the HXE Download Manager. Go to the [registration site](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html) and get the download manager for free.
 
 
 ## Next Steps
@@ -16,7 +16,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana\,-expre
 
 ## Details
 ### You will learn  
-Describe what the user will learn from your tutorial and what the outcome will be.
+You will learn how to download and configure am open source database client and use the JDBC driver for SAP HANA to connect to your SAP HANA, express edition instance.
 
 ### Time to Complete  
 **15 Min**
@@ -29,8 +29,6 @@ This tutorial series will use the client `DBeaver`. You can choose to install an
 
 [Download `DBeaver`](http://dbeaver.jkiss.org/download/) and follow the instructions to install it.
 
-
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Connect to your SAP HANA, express edition, instance)]
@@ -39,7 +37,7 @@ Look for the SAP HANA connector and click on **Next**
 
 ![Connect to SAP HANA](1.png)
 
-Enter your hostname, username (**SYSTEM**, unless you have already set up another administrator user) and the port: 3XX13, where XX is the instance number (probably, 90).
+Enter your hostname if you have mapped it in your hosts file or external IP, username (for example, **SYSTEM**, unless you have already set up another administrator user) and the port: 3XX13, where XX is the instance number (probably, 90).
 **Important note**  if you are using HANA 2.0 SPS00 or an earlier version, the port will end in 15, i.e., 3XX15, where 90 is the instance number.
 
 Then click on **Edit Driver Settings**.
@@ -95,12 +93,10 @@ GRANT CREATE ANY ON SCHEMA "CODEJAM" TO "CODEJAMMER" WITH GRANT OPTION;
 GRANT DROP ON SCHEMA "CODEJAM" TO "CODEJAMMER" WITH GRANT OPTION;
 GRANT "IMPORT" TO "CODEJAMMER";
 
-
 ```
 
 Press the `Execute script` button or `CTRL+X`, you can check the results in the `Execution Log` tab once it is done.
 ![Grants](6.png)
-
 
 
 [ACCORDION-END]

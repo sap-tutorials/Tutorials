@@ -17,7 +17,7 @@ You'll learn how to enable the SAP Translation Hub service on SAP Cloud Platform
 **5 Min**.
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Choose tile for trial account in Neo environment)]
+[ACCORDION-BEGIN [Step 1: ](Choose the tile for the Neo environment)]
 
 In the SAP Cloud Platform cockpit, choose the tile for a trial account in the Neo environment.
 
@@ -37,7 +37,7 @@ Choose **Services** in the navigation area on the left.
 
 [ACCORDION-BEGIN [Step 3: ](Locate the SAP Translation Hub service)]
 
-Search for the SAP Translation Hub service by entering **transl**, and then choose the **SAP Translation Hub** tile.
+Search for the SAP Translation Hub service by entering **`transl`**, and then choose the **SAP Translation Hub** tile.
 
 ![Find Translation Hub service](sth-search-tran.png)
 
@@ -53,13 +53,11 @@ Choose **Enable**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Verify that service is enabled)]
+[ACCORDION-BEGIN [Step 5: ](Verify that the service is enabled)]
 
-After you enable the service, your screen should look like this:
+After you enable the service, the **Enabled** status is green and the link to the SAP Translation Hub UI in the **Take Action** section is active:
 
 ![Verify enabled state](sth-enable-service-confirm.png)
-
-You can now use the SAP Translation Hub service.
 
 
 [ACCORDION-END]
