@@ -138,7 +138,7 @@ Open the `neo-app.json` file and update the file like this:
 
 ```json
 {
-	"welcomeFile": "index.html",
+	"welcomeFile": "/webapp/index.html",
 	"routes": [{
 		"path": "/resources",
 		"target": {
