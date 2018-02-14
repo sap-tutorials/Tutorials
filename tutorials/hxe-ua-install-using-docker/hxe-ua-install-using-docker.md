@@ -206,7 +206,7 @@ Make a note of the path to the `json` file. You will need this to load the SAP H
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Load the SAP HANA, express edition Container)]
+[ACCORDION-BEGIN [Step 5: ](Start SAP HANA, express edition Container)]
 
 Use the SAP HANA, express edition image to create a container.
 
@@ -254,7 +254,7 @@ This example creates the SAP HANA, express edition container with the name `expr
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Start SAP HANA, express edition)]
+[ACCORDION-BEGIN [Step 6: ](Log into SAP HANA, express edition Container)]
 
 To start your SAP HANA, express edition container, run the following command:
 
@@ -317,13 +317,13 @@ __JDBC__
 To log into your system database via JDBC, use the following command:
 
 ```
-jdbc:sap://<ip_address>:39041/databaseName=<database_name>
+jdbc:sap://<ip_address>:39017/databaseName=<database_name>
 ```
 
 To log into your tenant database via JDBC, use the following command:
 
 ```
-jdbc:sap://<ip_address>:39017/databaseName=<tenant_name>
+jdbc:sap://<ip_address>:39041/databaseName=<tenant_name>
 ```
 
 [ACCORDION-END]
