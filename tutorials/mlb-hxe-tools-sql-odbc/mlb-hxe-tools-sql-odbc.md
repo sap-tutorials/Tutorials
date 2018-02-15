@@ -126,7 +126,7 @@ The driver (`lbodbcHDB.dll/so`), which is installed as part of the SAP HANA clie
 
 #### **Connecting from Linux environments**
 
-For the Linux environment, you will first need the **unixODBC** package to be installed.
+For the Linux environment, you will first need the **`unixODBC`** package to be installed.
 
 Please refer to your system documentation for installation instructions.
 
