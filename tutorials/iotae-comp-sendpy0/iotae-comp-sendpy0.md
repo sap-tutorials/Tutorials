@@ -42,10 +42,10 @@ On a Mac python 2 is already installed by default. Only the library manager pip 
 
 On the PC follow these steps:
 
- - Download Python 2.x installer (you need version 2.x, not 3.y)
+ - Download `Python 2.x` installer (you need version `2.x`, not `3.y`)
  - Start the installation
  - Open the command prompt `cmd` from the Start Menu
- - Change (cd) to the directory where you installed python and then into the python27 directory (might be called different in your version)
+ - Change (cd) to the directory where you installed python and then into the `python27` directory (might be called different in your version)
  - Change (cd) to the `Scripts` subdirectory
  - Enter **`pip install requests`**
  - Enter **`pip install psutil`**
