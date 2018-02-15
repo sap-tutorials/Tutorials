@@ -137,7 +137,7 @@ ln -s /etc/unixODBC/odbc.ini /etc/odbc.ini
 ln -s /etc/unixODBC/odbcinst.ini /etc/odbcinst.ini
 ```
 
-To validate that **unixODBC** is properly installed, you can run the following command to print the current version:
+To validate that **`unixODBC`** is properly installed, you can run the following command to print the current version:
 
 ```shell
 odbcinst --version
