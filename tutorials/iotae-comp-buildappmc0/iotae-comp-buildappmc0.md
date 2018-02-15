@@ -137,7 +137,7 @@ Now select `SensorChart` element and change its properties:
 Run your developed application by clicking on the green **Run** button in the upper left corner of the SAP Web IDE.
 ![Run](iotaecompappmc0190.jpg)
 
-Once the application started find and click on your computer in the list of things on the left (you can also look at other people's computers) The chart on the right will be refreshed with the collected measurements sent by the Python program from the physical computer.
+Once the application starts, find and click on your computer in the list of things on the left (you can also look at other people's computers). The chart on the right will be refreshed with the collected measurements sent by the Python program from the physical computer.
 
 Alert thresholds of `45%` and `90%`, which you defined in the Thing Modeler earlier, are displayed on the chart.
 ![Application!](iotaecompappmc0200.jpg)
