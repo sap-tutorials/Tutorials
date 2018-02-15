@@ -1282,11 +1282,7 @@ cd /usr/sap/HXE/home/bin
 
 When prompted for System database user (SYSTEM) password, enter the master password you specified during SAP HANA, express edition installation.
 
-The command prompt returns when the cleanup process is finished, and the expected logs should be displayed in the console:
-
-```
-tcp   0   0 0.0.0.0:8090    0.0.0.0:*     LISTEN   off (0.00/0/0)
-```
+The command prompt returns when the cleanup process is finished, and the memory usage before and after the process are displayed.
 
 [ACCORDION-END]
 
