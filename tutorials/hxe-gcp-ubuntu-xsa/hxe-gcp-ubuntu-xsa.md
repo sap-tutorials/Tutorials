@@ -34,10 +34,10 @@ Here you can configure the resources you will allocate to your virtual machine. 
 
 The minimum requirements for HANA Express Edition with XS Advanced installation are:
 - 4 CPU cores
-- 24 GB RAM (32 GB recommended)
+- 16 GB RAM
 - 120 GB Disk (SSD)
 
-> GCP will only allow you to set the RAM to 32GB if you set the CPU cores to 6. You can set it to the minimum requirements for now and update it later.
+> GCP will only allow you to set the RAM to the maximum of 32GB - as allowed by the license - if you set the CPU cores to 6. You can set it to the minimum requirements for now and update it later.
 
 Click on **Customize** and set the values depending on your choice
 
@@ -210,41 +210,8 @@ sudo ln -s /bin/bash /bin/sh
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Replace the installation script)]
 
-Because a workaround is needed to fulfill a dependency with an SSL library during installation and in order to make the process easier for you, there is an alternative setup script for this Ubuntu installation. Create a file called `setup_hxe.sh` and copy the code  <a href="https://gist.github.com/Lsubatin/91607199efdd9b38b6a063818b325112" target="new"> in this repository </a>
-
-To avoid copying garbled characters, use the `Raw` button in the Gist repository:
-
-![Switch to Raw](raw.png)
-
-And right-click to use the `Save as` feature:
-
-![Save as](save.png)
-
-
-Rename the default installation script so you can upload the replacement:
-
-```
-mv setup_hxe.sh setup_hxe.old
-```
-
-Upload the replacement script into the installation folder.
-
-![Upload script](upload0.png)
-
-Modify the permissions to the script:
-
-```
-chmod 777 setup_hxe.sh
-```
-
-![Upload script](chmod.png)
-
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 6: ](Add more resources to your Virtual Machine)]
+[ACCORDION-BEGIN [Step 5: ](Add more resources to your Virtual Machine)]
 
 You will need to **Stop**  your instance before you can proceed with edition.
 
@@ -256,7 +223,7 @@ Double your resources for the installation process by editing the Virtual Machin
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Execute the installation script)]
+[ACCORDION-BEGIN [Step 6: ](Execute the installation script)]
 
 >IMPORTANT: As this process should not be interrupted, use a separate SSH client that handles connection intermittence if necessary, instead of the web client.
 
@@ -275,7 +242,7 @@ You can continue with the next steps while the installation script finishes.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Update the Firewall rules)]
+[ACCORDION-BEGIN [Step 7: ](Update the Firewall rules)]
 
 Go to the `VM Instance` panel in your Google Cloud Platform console and open `view gcloud command` for your Ubuntu virtual machine:
 
@@ -313,7 +280,7 @@ gcloud compute firewall-rules list
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Map your hosts file)]
+[ACCORDION-BEGIN [Step 8: ](Map your hosts file)]
 
 You will need the external IP address assigned to your Virtual Machine.
 
@@ -349,7 +316,7 @@ Add the IP address followed by the name of the host, in this example, `ubuntu-16
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Check your installation)]
+[ACCORDION-BEGIN [Step 9: ](Check your installation)]
 
 Once the installation is finished, you will see a success message:
 
@@ -383,7 +350,7 @@ Congratulations! Your instance is now ready for use.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Reset the resources for your Virtual Machine)]
+[ACCORDION-BEGIN [Step 10: ](Reset the resources for your Virtual Machine)]
 
 Switch to the `<sid>adm` user. If your System ID is `HXE`, the user will be `hxeadm`. Stop the database using program `HDB` from the administrator´s home directory:
 
@@ -399,7 +366,7 @@ Once the Database is stopped, stop the Virtual Machine too from Google Cloud pla
 Edit the Virtual Machine to suit your installation. These are the minimal requirements and it is recommended that you monitor resources to adjust them as needed. The Google Cloud Platform will also hint you on resource utilization.
 
 CPU: 4 cores
-RAM: 24 GB RAM (32 Recommended)
+RAM: 16 GB RAM
 
 **Save** your settings and start your database again.
 
