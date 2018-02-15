@@ -1,9 +1,10 @@
 ---
 title: Execute SQL on SAP HANA, express edition using the SAP HANA Tools for Eclipse
 description: Provide details on the installation and configuration of the SAP HANA Tools for Eclipse and connect to SAP HANA, express edition.
-primary_tag: products> sap-hana\, express-edition
-tags: [ tutorial> beginner, products> sap-hana\, express-edition ]
+primary_tag: products>sap-hana\, express-edition
+tags: [ tutorial>beginner, products>sap-hana\, express-edition ]
 ---
+
 ## Prerequisites  
 - Proficiency: beginner
 - Have the [Eclipse IDE](https://www.eclipse.org/downloads/) installed, running and properly connected to the internet.
