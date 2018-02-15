@@ -37,6 +37,10 @@ Before you get started, you should check if your machine meet the recommended so
 >
 > - SUSE Linux Enterprise Server for SAP Applications, 12.1, 12.2
 > - SUSE Linux Enterprise Server for SAP Applications, IBM Power Systems (`ppc64le` - "Little Endian"), 12.1, 12.2
+> - Red Hat Enterprise Linux for SAP Applications 7.2, 7.3
+> - Red Hat Enterprise Linux for SAP Applications for Power 7.3 (SAP HANA 2.0, express edition SPS 02 Rev 21 or higher required)
+>
+>Please refer to the version of the [binary installation guide](https://help.sap.com/viewer/32c9e0c8afba4c87814e61d6a1141280/2.0.02/en-US) for the latest updates.
 >
 >SAP Community members have been successful in running HXE on newer or other Linux operating systems that are not formally supported by SAP, such as Ubuntu, openSUSE and Fedora.
 >
@@ -49,7 +53,7 @@ Your server will need the following:
 
 Hardware | Details
 ---------|-----------------
-RAM      | 24 GB minimum (32 GB recommended)<br><br> <blockquote> <b>Note:</b> If you are installing on a system with 16 GB of RAM, increase the amount of swap space to at least 32 GB.</blockquote>
+RAM      | 16 GB minimum (24 GB recommended)<br><br> <blockquote> <b>Note:</b> If you are installing on a system with 16 GB of RAM, increase the amount of swap space to at least 32 GB.</blockquote>
 HDD      | 120 GB HDD recommended
 Cores    | 2 cores (4 recommended)
 
@@ -816,7 +820,7 @@ You need now to execute the following commands:
 ```bash
 sudo su -l hxeadm
 
-HDB info | grep -e hdbnameserver -e hdbcompileserver -e hdbindexserver -e hdbdiserver -e hdbwebdispatcher
+HDB info | grep -e hdbnameserver -e hdbcompileserver -e hdbindexserver -e hdbwebdispatcher
 ```
 
 The output should look like this:
@@ -825,7 +829,6 @@ The output should look like this:
 hxeadm    71252  71235 55.2 7982280 5377200      \_ hdbnameserver
 hxeadm    71347  71235  2.1 1580412 257312      \_ hdbcompileserver
 hxeadm    71374  71235 12.8 5321396 2845732      \_ hdbindexserver -port 39003
-hxeadm    71516  71235  1.6 1588012 260768      \_ hdbdiserver
 hxeadm    71518  71235  1.9 1880592 279788      \_ hdbwebdispatcher
 ```
 
@@ -834,7 +837,6 @@ The following services must be running:
   * `hdbnameserver`
   * `hdbcompileserver`
   * `hdbindexserver`
-  * `hdbdiserver`
   * `hdbwebdispatcher`
 
 If any of the above services is not listed, you must start your instance executing the following command:
