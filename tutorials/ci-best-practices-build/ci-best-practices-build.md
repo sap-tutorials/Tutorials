@@ -73,7 +73,7 @@ This section describes how to set up the Jenkins master.
     chown jenkins /data/jenkins
     ```
 
-4. To make the installation easy, download the fitting installation package to your Linux distribution from the Jenkins web site, and install the package on the hosting machine. For example, if you use SUSE or Redhat Linux, download the corresponding `rpm` package and install it with the package manager (`zypper` or `rpm` in this case) on the machine. Consult the official Jenkins documentation for details concerning your Linux platform.
+4. To make the installation easy, download the fitting installation package to your Linux distribution from the Jenkins web site, and install the package on the hosting machine. For example, if you use SUSE or Red Hat Linux, download the corresponding `rpm` package and install it with the package manager (`zypper` or `rpm` in this case) on the machine. Consult the official Jenkins documentation for details concerning your Linux platform.
 
 5. Configure the Jenkins home, the Java home directory, the Jenkins daemon user and the Jenkins port. The location may differ between various Linux distributions, for example on `SUSE Linux`, it is located in `/etc/sysconfig/jenkins`.
 
