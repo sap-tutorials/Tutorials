@@ -127,7 +127,7 @@ Select your project **`Bonusplan`** and deploy this to S/4HANA system via contex
 [ACCORDION-BEGIN [Step 13: ](Set options for deployment as new application)]
 A wizard opens. Set the destination to your S/4HANA system. Ensure that the UI is deployed as a new application. Click **Next**.
 
-![Set options for deployment as new application](update.png)
+![Set options for deployment as new application](update2.png)
 
 [ACCORDION-END]
 
