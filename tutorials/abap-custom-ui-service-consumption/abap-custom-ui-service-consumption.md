@@ -28,7 +28,7 @@ Open **Destinations** on SAP Cloud Platform.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add service scope to destination)]
-Edit your **destination** and **add** your **custom CDS view service** to your scope.
+Edit your **destination** and add your **custom CDS view service** to your scope.
 
 | ------------ | --------------------------------------------------------------------------------- |
 | **`scope:`** |  `ADT_0001 /UI5/APP_INDEX_0001 /IWFND/SG_MED_CATALOG_0002 YY1_BONUSPLAN_CDS_0001`  |

@@ -103,7 +103,7 @@ https://myXXXXXX-api.account.us3.hana.ondemand.com/sap/bc/sec/oauth2/token
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Enter additional properties)]
-**Add** additional **properties**:
+Add additional properties:
 
 | ----------------------------- | -------------------------------------------------------- |
 |        **`scope`**            | `ADT_0001 /UI5/APP_INDEX_0001 /IWFND/SG_MED_CATALOG_0002` |
@@ -114,12 +114,12 @@ https://myXXXXXX-api.account.us3.hana.ondemand.com/sap/bc/sec/oauth2/token
 
 
 
-Your **scope** consists of 3 parts:
+Your scope consists of 3 parts:
  - `ADT_0001`: scope of the Gateway service for ADT  
  - /`UI5`/`APP_INDEX_0001`: scope of the UI2 app index
  - /`IWFND`/`SG_MED_CATALOG_0002`: scope of the catalog service version 2.0
 
-Be sure that all parts within the **scope** are **separated with a space**.
+Be sure that all parts within the scope are separated with a space.
 
 **Save** your changes.
 
@@ -167,6 +167,5 @@ Click **Service Catalog** and select **`SAP_DEV_SYSTEM`** as service.
 
 ![Select `SAP_DEV_SYSTEM` as service](list.png)
 
-Now you can see a list of all services. You learn the importance of a scope. By adding the scope to your destination you are allowed to see the list of all services. But if you try to select any other service, you'll get an error message. To create your UI project, you have to add a further definition to your scope. This will be explained in:
-
+Now you can see a list of all services. You learn the importance of a scope. By adding the scope to your destination you are allowed to see the list of all services. But if you try to select any service, you'll get an error message. To create your UI project, you have to add a further definition to your scope.
 [ACCORDION-END]
