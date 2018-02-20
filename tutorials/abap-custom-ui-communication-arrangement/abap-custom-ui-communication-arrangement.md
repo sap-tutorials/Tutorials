@@ -22,21 +22,21 @@ You will learn how to enable SAP Cloud Platform development with SAP Web IDE aga
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open communication arrangements application)]
-**Navigate** to **Communication Arrangements** tile to start the application.
+Navigate to **Communication Arrangements** tile to start the application.
 
 ![Open communication arrangements application](arrangement.png)
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create new communication arrangement)]
-**Click New** to create a new communication arrangement.
+Click **New** to create a new communication arrangement.
 
 ![Create new communication arrangement](new.png)
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Select scenario)]
-**Select `SAP_COM_0013`** as scenario, **rename** your **arrangement name** and **click Create**.
+Select **`SAP_COM_0013`** as scenario, rename your arrangement name and click **Create**.
 
 ![Select `SAP_COM_0013`as scenario](create.png)
 
@@ -44,7 +44,7 @@ You will learn how to enable SAP Cloud Platform development with SAP Web IDE aga
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add communication system)]
-**Add** your **communication system** to your communication arrangement. **Select `SCP_DEV`** with **`OAuth2.0`** as communication system. Be sure that your **service status** of your launch SAP Web IDE is **activated** and **click Save**.
+Add your communication system to your communication arrangement. Select **`SCP_DEV`** with **`OAuth2.0`** as communication system. Be sure that your service status of your launch SAP Web IDE is activated and click **Save**.
 
 ![Add communication system](save2.png)
 
@@ -58,14 +58,14 @@ Now following should be listed:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create HTTP destination)]
-**Enter** your **SAP Cloud Platform account** as an administrator. **Switch** to **Destinations** and **click New Destination**.
+Enter your SAP Cloud Platform account as an administrator. Switch to **Destinations** and click **New Destination**.
 
 ![Create HTTP destination](destination.png)
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Set destination data)]
-Now **enter** following **data** to your destination:
+Enter following **data** to your destination:
 
 
 | ---------------------------- | ------------------------------------------------- |
@@ -126,18 +126,18 @@ Be sure that all parts within the **scope** are **separated with a space**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Search SAP Web IDE)]
-**Go** to **Services**, **search** for **SAP Web IDE** and **select it** on your SAP Cloud Platform account.
+Go to **Services**, search for **SAP Web IDE** and select it on your SAP Cloud Platform account.
 
 ![Open SAP Web IDE](webide2.png)
 
-**Click Go to Service** to open **SAP Web IDE**.
+Click **Go to Service** to open **SAP Web IDE**.
 
 ![View service catalog](gotoservice.png)
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Select new project)]
-**Select New Project from Template** to generate one.
+Select **New Project from Template** to generate one.
 
 ![Select new project](webide.png)
 
@@ -147,23 +147,23 @@ File -> New -> Project from Template
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Create UI project)]
-**Choose List Report Application** and **click Next** to create a new UI.
+Choose **List Report Application** and click **Next** to create a new UI.
 
 ![Choose the list report application](next.png)
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Enter basic information)]
-**Enter `Bonusplan`** as project name and title.
+Enter **`Bonusplan`** as project name and title.
 
 ![Enter `Bonusplan`](bonusplan.png)
 
-**Click Next**.
+Click **Next**.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Select service)]
-**Click Service Catalog** and **select `SAP_DEV_SYSTEM`** as service.
+Click **Service Catalog** and select **`SAP_DEV_SYSTEM`** as service.
 
 ![Select `SAP_DEV_SYSTEM` as service](list.png)
 
