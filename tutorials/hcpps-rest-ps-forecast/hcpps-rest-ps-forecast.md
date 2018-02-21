@@ -83,7 +83,7 @@ Optionally, you can define the following parameters to enhance your analysis:
 
 [ACCORDION-BEGIN [Info:](A short description of the Cash Flow dataset)]
 
-The dataset will be using during this tutorial is extracted from the sample dataset available with SAP BusinessObjects Predictive Analytics.
+The dataset will be using during this tutorial is extracted from the sample dataset available with SAP Predictive Analytics.
 
 The file presents daily measures of cash flows from January 2, 1998 to September, 30 1998. Each observation is characterized by 25 data items. The data or variables are described in the following table.
 

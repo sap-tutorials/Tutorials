@@ -73,7 +73,7 @@ Optionally, you can define the following parameters to enhance your analysis:
 
 [ACCORDION-BEGIN [Info:](A short description of the Census dataset)]
 
-The dataset will be using during this tutorial is extracted from the sample dataset available with SAP BusinessObjects Predictive Analytics.
+The dataset will be using during this tutorial is extracted from the sample dataset available with SAP Predictive Analytics.
 
 The Census sample data file that you will use to follow the scenarios for Regression/Classification and Segmentation/Clustering is an excerpt from the American Census Bureau database, completed in 1994 by Barry Becker.
 

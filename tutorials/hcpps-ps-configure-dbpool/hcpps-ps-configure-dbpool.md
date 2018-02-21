@@ -1,8 +1,8 @@
 ---
-title: SAP Predictive services, How to update the database pool configuration of the SAP Predictive services
+title: Configure SAP Predictive services database pool
 description: Adjust the database pool setting of the SAP Predictive services to control the load on your HANA instance
 primary_tag: products>sap-predictive-service
-tags: [  tutorial>how-to, tutorial>beginner, products>sap-predictive-service ]
+tags: [ tutorial>how-to, tutorial>beginner, products>sap-predictive-service ]
 ---
 
 
