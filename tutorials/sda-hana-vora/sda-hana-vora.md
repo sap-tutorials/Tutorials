@@ -1,8 +1,8 @@
 ---
-title: How to setup SAP HANA, express edition and SAP Vora, developer edition to enable them to connect to each other
+title: Setup  and connect SAP HANA, express edition and SAP Vora, developer edition
 description: How to configure SAP HANA, express edition and SAP Vora, developer edition to work together with the SAP HANA Spark Controller
 primary_tag: products>sap-vora
-tags: [  tutorial>how-to, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition, products>sap-vora ]
+tags: [ tutorial>how-to, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition, products>sap-vora ]
 ---
 
 ## Next Steps
