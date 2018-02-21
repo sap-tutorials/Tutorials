@@ -1,8 +1,8 @@
 ---
-title: Execute SQL on SAP HANA, express edition using a JDBC based querying tools
+title: Use a JDBC based querying tools for SAP HANA, express edition
 description: Provide details on the installation the SAP HANA client and instruction to connect a SAP HANA, express edition instance from almost any JDBC based querying tool.
 primary_tag: products>sap-hana\, express-edition
-tags: [  tutorial>intermediate, products>sap-hana\, express-edition ]
+tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
 ---
 ## Prerequisites  
 - Proficiency: intermediate
@@ -31,6 +31,8 @@ In addition, here some that are Eclipse plugins:
 This does not represent an exhaustive list of tools able to connect to SAP HANA, express edition using JDBC.
 
 In most scenario, if the SAP HANA JDBC driver is not already pre-configured, you will need to add it before establishing your connection.
+
+For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
 
 ## Details
 
