@@ -23,7 +23,7 @@ In this tutorial, you will enable and configure SAP Cloud Platform mobile servic
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform cockpit)]
 
-Go to your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com) and log on.
+Go to your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com) and log on. Once you are in the cockpit click on the **Neo Trial** tile.
 
 [DONE]
 [ACCORDION-END]

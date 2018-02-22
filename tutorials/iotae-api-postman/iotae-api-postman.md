@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, products>sap-api-management, topic>internet-of-thing
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Install Postman Rest Client](https://www.sap.com/developer/how-tos/2017/07/api-tools-postman-install.html)
+ - **Tutorials:** [Install Postman Rest Client](https://www.sap.com/developer/tutorials/api-tools-postman-install.html)
  - Access to a tenant specific to SAP IoT Application Enablement. In this tutorial, tenant `sap-iotaehandson2` is used.
 
 ## Details

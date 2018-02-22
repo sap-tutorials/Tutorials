@@ -1,15 +1,15 @@
 ---
-title: Intro to SAP HANA Spatial - Polygons
-description: A polygon defines a region of space
+title: Polygons
+description: A polygon is a spatial data type that defines a region of space
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Intro to SAP HANA Spatial: Strings](https://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
+- **Tutorials:** [Strings](https://www.sap.com/developer/tutorials/hana-spatial-intro2-string.html)
 
 ## Next Steps
-- [Intro to SAP HANA Spatial: Tables with spatial columns](https://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
+- [Spatial columns](https://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
 
 ## Details
 ### You will learn  
@@ -159,4 +159,4 @@ The point (1, 1) is in the circle with the center point of (0, 0) and the radius
 - Review [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/)
 
 ## Next Steps
-- [Intro to SAP HANA Spatial: Tables with spatial columns](https://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)
+- [Spatial columns](https://www.sap.com/developer/tutorials/hana-spatial-intro4-columns.html)

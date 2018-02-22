@@ -1,5 +1,5 @@
 ---
-title: Intro to SAP HANA Geospatial - Spatial Reference Systems
+title: Spatial Reference Systems
 description: In the context of spatial databases, the defined space in which geometries are described is called a spatial reference system (SRS).
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
@@ -7,11 +7,11 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 
 ## Prerequisites  
 - **Proficiency:** Beginner
- - **Tutorials:** [Intro to SAP HANA Spatial: Z and M coordinates](https://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
+ - **Tutorials:** [Z and M coordinates](https://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or search in the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+- Introduction to [SAP HANA Spatial methods](https://www.sap.com/developer/groups/hana-aa-spatial-methods.html)
 
 ## Details
 ### You will learn  
@@ -105,11 +105,11 @@ For now create another popular reference system with `SRID` equal `3857`. It is 
 CREATE SPATIAL REFERENCE SYSTEM "WGS 84 / Pseudo-Mercator"
  IDENTIFIED BY 3857
  DEFINITION 'PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["X",EAST],AXIS["Y",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs"],AUTHORITY["EPSG","3857"]]'
- ORGANIZATION "EPSG"
- IDENTIFIED BY 3857
+ ORGANIZATION "EPSG" IDENTIFIED BY 3857
  TRANSFORM DEFINITION '+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext  +no_defs'   
  TYPE PLANAR
- COORDINATE X BETWEEN -20037508.342789248 AND 20037508.342789248 COORDINATE Y BETWEEN -20048966.104014635 AND 20048966.104014624  
+ COORDINATE X BETWEEN -20037508.342789248 AND 20037508.342789248
+ COORDINATE Y BETWEEN -20048966.104014635 AND 20048966.104014624  
  TOLERANCE DEFAULT
  SNAP TO GRID DEFAULT
  POLYGON FORMAT 'EvenOdd'
@@ -118,7 +118,24 @@ CREATE SPATIAL REFERENCE SYSTEM "WGS 84 / Pseudo-Mercator"
 
 Confused about the whole cryptic notation in the definition? No need to worry for now. All you need to know is that its definition comes from industry registry [EPSG Geodetic Parameter Registry](http://www.epsg-registry.org/) that you can search and download if needed.
 
-Once SQL above successfully executed you should see this new `SRS` in `ST_SPATIAL_REFERENCE_SYSTEMS` view.
+And add one more - the one used in the original World Mercator projection.
+
+```sql
+CREATE SPATIAL REFERENCE SYSTEM "WGS 84 / World Mercator"
+ IDENTIFIED BY 3395
+ DEFINITION 'PROJCS["WGS 84 / World Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","3395"]]'
+ ORGANIZATION "EPSG" IDENTIFIED BY 3395
+ TRANSFORM DEFINITION '+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs '   
+ TYPE PLANAR
+ COORDINATE X BETWEEN -20037508.342789248 AND 20037508.342789248
+ COORDINATE Y BETWEEN -15496570.739723722 AND 18764656.231380586  
+ TOLERANCE DEFAULT
+ SNAP TO GRID DEFAULT
+ POLYGON FORMAT 'EvenOdd'
+ STORAGE FORMAT 'Internal';
+```
+
+Once SQL statements above are executed successfully you should see these new `SRS` ids in `ST_SPATIAL_REFERENCE_SYSTEMS` view.
 
 [ACCORDION-END]
 
@@ -129,4 +146,4 @@ Once SQL above successfully executed you should see this new `SRS` in `ST_SPATIA
 - Read blog [Spatial Reference Systems – Background Knowledge and the use in SAP HANA](https://archive.sap.com/documents/docs/DOC-75363)
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or search in the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+- Introduction to [SAP HANA Spatial methods](https://www.sap.com/developer/groups/hana-aa-spatial-methods.html)
