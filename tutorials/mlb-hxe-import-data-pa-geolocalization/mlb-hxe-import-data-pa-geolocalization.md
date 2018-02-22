@@ -31,6 +31,8 @@ The sample structure for the [**Sample Geo localization**](https://help.sap.com/
    |-- metadata.xml
 ```
 
+**Note:** `desc` and `KxDesc` files are SAP Predictive Analytics dataset description files and will not be loaded.
+
 #### **`Gowalla`**
 
 `Gowalla` was a location-based social network launched in 2007 and closed in 2012. Users were able to check in at "Spots" in their local vicinity, either through a dedicated mobile application or through the mobile website.
@@ -53,15 +55,15 @@ Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execu
 
 ```SQL
 CREATE TABLE PA_DATA.GOWALLA (
-    USER        INT,
-    CHECKINTIME DAYDATE,
+    USERID      INT,
+    CHECKINTIME TIMESTAMP,
     LATITUDE    DECIMAL(9,6),
     LONGITUDE   DECIMAL(9,6),
     LOCATIONID  INT,
     ISTOURIST   BOOLEAN,
-    ISMUSTSEE   BOOLEAN,
-    PRIMARY KEY (USER)
+    ISMUSTSEE   BOOLEAN
 );
+
 ```
 
 [ACCORDION-END]
@@ -89,34 +91,32 @@ You can now move to **Step 3: Import Using the SAP HANA Tools for Eclipse**.
 
 #### **Import Using the IMPORT FROM SQL command**
 
-You can extract the sample file anywhere you want on the Eclipse host.
-
-Here is an example script that you reuses to download and extract the sample dataset from the SAP HANA, express edition host:
+Here is an example script that you can reuse to download and extract the dataset directly from the SAP HANA, express edition host:
 
 ```shell
-  URL=https://help.sap.com/http.svc/download?deliverable_id=20555041
-  OUTPUT_FILE=sample_geolocalization
-  OUTPUT_DIR=/usr/sap/HXE/HDB90/$OUTPUT_FILE
+URL=https://help.sap.com/http.svc/download?deliverable_id=20555041
+OUTPUT_FILE=sample_geolocalization
+OUTPUT_DIR=/usr/sap/HXE/HDB90/work/$OUTPUT_FILE
 
-  # create a new subdirectory for the sample data
-  mkdir $OUTPUT_DIR
+ # create a new subdirectory for the sample data
+mkdir $OUTPUT_DIR
 
-  # download the archive in the sample data directory
-  wget -O $OUTPUT_DIR/$OUTPUT_FILE.zip $URL
+ # download the archive in the sample data directory
+wget -O $OUTPUT_DIR/$OUTPUT_FILE.zip $URL
 
-  # switch to the new directory
-  cd $OUTPUT_DIR
+ # switch to the new directory
+cd $OUTPUT_DIR
 
-  # extract all archives and embedded archives
-  while [ "`find . -type f -name '*.zip' | wc -l`" -gt 0 ]; \
-    do find -type f -name "*.zip" \
-        -exec unzip -o --  '{}' \; \
-        -exec rm -- '{}' \;; done
-  # remove space from file and directory names
-  for f in *\ *; do mv "$f" "${f// /}"; done      
+ # extract all archives and embedded archives
+while [ "`find . -type f -name '*.zip' | wc -l`" -gt 0 ]; \
+  do find -type f -name "*.zip" \
+      -exec unzip -o --  '{}' \; \
+      -exec rm -- '{}' \;; done    
 ```
 
-The dataset files should now be located in: **`/usr/sap/HXE/HDB90/sample_geolocalization/Geolocalization`**
+It requires WGET to be installed.
+
+The dataset files should now be located in: **`/usr/sap/HXE/HDB90/work/sample_geolocalization/Geolocalization`**
 
 You can now move to **Step 3: Import Using the IMPORT FROM SQL command**.
 
@@ -146,21 +146,22 @@ The source files should be mapped with the following target tables:
 
 [ACCORDION-BEGIN [Step 3: ](Import Using the IMPORT FROM SQL command)]
 
-The dataset files should be located in: **`/usr/sap/HXE/HDB90/sample_geolocalization/Geolocalization`**
+The dataset files should be located in: **`/usr/sap/HXE/HDB90/work/sample_geolocalization/Geolocalization`**
 
 Connect to the **HXE** tenant using the **`ML_USER`** user credentials using your SQL query tool.
 
 Execute the following SQL statement:
 
 ```SQL
-IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/sample_geolocalization/Geolocalization/gowalla_demo_2.txt' INTO PA_DATA.GOWALLA
+IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/sample_geolocalization/Geolocalization/gowalla_demo_2.txt' INTO PA_DATA.GOWALLA
 WITH
    RECORD DELIMITED BY '\n'
    FIELD DELIMITED BY '\t'
    OPTIONALLY ENCLOSED BY '"'
    SKIP FIRST 1 ROW
+   TIMESTAMP FORMAT 'YYYY-MM-DD HH24:MI:SS'
    FAIL ON INVALID DATA
-   ERROR LOG '/usr/sap/HXE/HDB90/sample_geolocalization/Geolocalization/gowalla_demo_2.txt.err'
+   ERROR LOG '/usr/sap/HXE/HDB90/work/sample_geolocalization/Geolocalization/gowalla_demo_2.txt.err'
 ;
 ```
 

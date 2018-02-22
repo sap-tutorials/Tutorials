@@ -122,8 +122,8 @@ Connect to the **HXE** tenant using the **SYSTEM** user credentials and execute 
 
 CREATE USER ML_USER PASSWORD Welcome18Welcome18;
 
--- Uncomment this if you don't want to be forced to update your password on the first connection.
--- ALTER USER ML_USER DISABLE PASSWORD LIFETIME;
+-- Use this if you don't want to be forced to update your password on the first connection.
+-- CREATE USER ML_USER PASSWORD Welcome18Welcome18 NO FORCE_FIRST_PASSWORD_CHANGE;
 
 GRANT AFLPM_CREATOR_ERASER_EXECUTE TO ML_USER;
 GRANT AFL__SYS_AFL_AFLPAL_EXECUTE TO ML_USER;

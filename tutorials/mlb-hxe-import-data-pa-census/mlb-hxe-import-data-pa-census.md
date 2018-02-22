@@ -24,12 +24,14 @@ The sample structure for the [**Sample Data Census**](https://help.sap.com/http.
 
 ```
 |--sample_census_3.3.1_en-us_production.zip
-   |-- Census.zp
-   |   |-- Census
-   |       |-- Census01.csv
-   |       |-- Desc_Census01.csv
-   |-- metadata.xml
+    |-- Census.zp
+    |    |-- Census
+    |        |-- Census01.csv
+    |        |-- Desc_Census01.csv
+    |-- metadata.xml
 ```
+
+**Note:** `desc` and `KxDesc` files are SAP Predictive Analytics dataset description files and will not be loaded.
 
 This Census data set (`Census01.csv`) presents the data on 48842 individual Americans, of at least 17 years of age. Each individual is characterized by 15 data items. These data, or variables, are described in the following table:
 
@@ -100,34 +102,33 @@ You can now move to **Step 3: Import Using the SAP HANA Tools for Eclipse**.
 
 #### **Import Using the IMPORT FROM SQL command**
 
-You can extract the sample file anywhere you want on the Eclipse host.
-
-Here is an example script that you reuses to download and extract the sample dataset from the SAP HANA, express edition host:
+Here is an example script that you can reuse to download and extract the dataset directly from the SAP HANA, express edition host:
 
 ```shell
-  URL=https://help.sap.com/http.svc/download?deliverable_id=20555035
-  OUTPUT_FILE=sample_census
-  OUTPUT_DIR=/usr/sap/HXE/HDB90/$OUTPUT_FILE
+URL=https://help.sap.com/http.svc/download?deliverable_id=20555035
+OUTPUT_FILE=sample_census
+OUTPUT_DIR=/usr/sap/HXE/HDB90/work/$OUTPUT_FILE
 
-  # create a new subdirectory for the sample data
-  mkdir $OUTPUT_DIR
+ # create a new subdirectory for the sample data'
+mkdir $OUTPUT_DIR
 
-  # download the archive in the sample data directory
-  wget -O $OUTPUT_DIR/$OUTPUT_FILE.zip $URL
+ # download the archive in the sample data directory'
+wget -O $OUTPUT_DIR/$OUTPUT_FILE.zip $URL
 
-  # switch to the new directory
-  cd $OUTPUT_DIR
+ # switch to the new directory'
+cd $OUTPUT_DIR
 
-  # extract all archives and embedded archives
-  while [ "`find . -type f -name '*.zip' | wc -l`" -gt 0 ]; \
-    do find -type f -name "*.zip" \
-        -exec unzip -o --  '{}' \; \
-        -exec rm -- '{}' \;; done
-  # remove space from file and directory names
-  for f in *\ *; do mv "$f" "${f// /}"; done      
+ # extract all archives and embedded archives'
+while [ "`find . -type f -name '*.zip' | wc -l`" -gt 0 ]; \
+  do find -type f -name "*.zip" \
+     -exec unzip -o --  '{}' \; \
+     -exec rm -- '{}' \;; done
+
 ```
 
-The dataset files should now be located in: **`/usr/sap/HXE/HDB90/sample_census/Census`**
+It requires WGET to be installed.
+
+The dataset files should now be located in: **`/usr/sap/HXE/HDB90/work/sample_census/Census`**
 
 You can now move to **Step 3: Import Using the IMPORT FROM SQL command**.
 
@@ -153,29 +154,29 @@ You can import the data using the [SAP HANA Tools for Eclipse Import feature](ht
 
 The source files should be mapped with the following target tables:
 
-| Source File                   | Target Table                        
-| ----------------------------- | ----------------------------------  
-| `Census01.csv`                | `PA_DATA.CENSUS`                    
+| Source File                | Target Table                    
+| -------------------------- | ----------------------------------  
+| `Census01.csv`             | `PA_DATA.CENSUS`                
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import Using the IMPORT FROM SQL command)]
 
-The dataset files should be located in: **`/usr/sap/HXE/HDB90/sample_census/Census`**
+The dataset files should be located in: **`/usr/sap/HXE/HDB90/work/sample_census/Census`**
 
 Connect to the **HXE** tenant using the **`ML_USER`** user credentials using your SQL query tool.
 
 Execute the following SQL statement:
 
 ```SQL
-IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/sample_census/Census/Census01.csv' INTO PA_DATA.CENSUS
+IMPORT FROM CSV FILE '/usr/sap/HXE/HDB90/work/sample_census/Census/Census01.csv' INTO PA_DATA.CENSUS
 WITH
    RECORD DELIMITED BY '\n'
    FIELD DELIMITED BY ','
    OPTIONALLY ENCLOSED BY '"'
    SKIP FIRST 1 ROW
    FAIL ON INVALID DATA
-   ERROR LOG '/usr/sap/HXE/HDB90/sample_census/Census/Census01.csv.err'
+   ERROR LOG '/usr/sap/HXE/HDB90/work/sample_census/Census/Census01.csv.err'
 ;
 ```
 
