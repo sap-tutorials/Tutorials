@@ -1,6 +1,6 @@
 ---
-title: Build an app from an SAP Web IDE template
-description: Build an app using the SAP Web IDE template wizard
+title: Build a mobile app from an SAP Web IDE template
+description: Build a mobile app using the SAPUI5 Master Detail Kapsel Application template
 primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>beginner ]
 ---
@@ -14,7 +14,7 @@ tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>ht
 ## Details
 
 ### You will learn
-The SAP Web IDE (Integrated Development Environment) has a project template wizard, which makes it easy to create new applications quickly. In this tutorial you will build an app that reads product and supplier information from an OData source and displays it in a responsive mobile web app.
+The SAP Web IDE (Integrated Development Environment) has a project template wizard, which makes it easy to create new applications quickly. In this tutorial you will build a mobile app that reads product and supplier information from an OData source and displays it in a responsive mobile web app.
 
 You will be setting a few configurations, then filling out a few forms in this step, but the end result is an application which can be run on a mobile device.  Ready?  Let's get started...
 
