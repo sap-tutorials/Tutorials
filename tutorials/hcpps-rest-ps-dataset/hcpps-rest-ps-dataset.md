@@ -34,7 +34,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-servi
 
 &nbsp;
 
-> **Note**: if you are running into some issue, you can check the [SAP Predictive services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
+> **Note**: if you are running into some issue, you can check the [SAP Predictive services Troubleshooting guide](https://www.sap.com/developer/tutorials/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 [ACCORDION-BEGIN [Info:](A short description of the Dataset service)]
 
@@ -57,7 +57,7 @@ Once registered, you will be able to use the dataset "ID" to call the other serv
 [ACCORDION-BEGIN [Step 1: ](Register a dataset)]
 Open a new tab in ***Postman***.
 
-> If you don't have ***Postman*** installed yet, you can refer to the following how-to guide: [Install Postman extension for Google Chrome as a REST client](https://www.sap.com/developer/how-tos/2017/07/api-tools-postman-install.html)
+> If you don't have ***Postman*** installed yet, you can refer to the following how-to guide: [Install Postman extension for Google Chrome as a REST client](https://www.sap.com/developer/tutorials/api-tools-postman-install.html)
 
 &nbsp;
 
