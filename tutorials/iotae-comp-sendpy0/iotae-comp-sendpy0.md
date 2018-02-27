@@ -42,20 +42,20 @@ On a Mac python 2 is already installed by default. Only the library manager pip 
 
 On the PC follow these steps:
 
- - Download Python `2.x` installer
+ - Download `Python 2.x` installer (you need version `2.x`, not `3.y`)
  - Start the installation
  - Open the command prompt `cmd` from the Start Menu
- - Change (cd) to the directory where you installed python
- - Change (cd) to the "Scripts" subdirectory
- - Enter `pip install requests`
- - Enter `pip install psutil`
- - Change (cd ..) to the directory where you installed python
- - Enter `python -v` to check that python is running and which version you have installed
+ - Change (cd) to the directory where you installed python and then into the `python27` directory (might be called different in your version)
+ - Change (cd) to the `Scripts` subdirectory
+ - Enter **`pip install requests`**
+ - Enter **`pip install psutil`**
+ - Change (`cd ..`) to the directory where you installed python
+ - Enter **`python -v`** to check that python is running and which version you have installed
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Prepare a file with a script to collect and send data)]
-On your computer create a file `computer_iotdevice_cpu.py` and paste the following Python code into it.
+On your computer, create a file `computer_iotdevice_cpu.py` and paste the following Python code into it.
 
 ```python
 import requests # http://docs.python-requests.org/en/master/
@@ -132,6 +132,10 @@ The return code `200` means that the message was received and processed by the I
 The return code `202` means that the message was received and queued for processing by the IoT service in SAP Cloud Platform or that the message does not fit the message type requirements.
 
 Codes `4xx` and `5xx` mean errors.
+
+If you are in a corporate network you might have to put your laptop into another network (e.g. your mobile phone hot spot) to not be hindered by a corporate proxy.
+
+You can press control-c to stop sending data.
 
 
 [ACCORDION-END]

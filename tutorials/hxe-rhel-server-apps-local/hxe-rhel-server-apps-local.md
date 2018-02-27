@@ -37,6 +37,10 @@ Before you get started, you should check if your machine meet the recommended so
 >
 > - SUSE Linux Enterprise Server for SAP Applications, 12.1, 12.2
 > - SUSE Linux Enterprise Server for SAP Applications, IBM Power Systems (`ppc64le` - "Little Endian"), 12.1, 12.2
+> - Red Hat Enterprise Linux for SAP Applications 7.2, 7.3
+> - Red Hat Enterprise Linux for SAP Applications for Power 7.3 (SAP HANA 2.0, express edition SPS 02 Rev 21 or higher required)
+>
+>Please refer to the version of the [binary installation guide](https://help.sap.com/viewer/32c9e0c8afba4c87814e61d6a1141280/2.0.02/en-US) for the latest updates.
 >
 >SAP Community members have been successful in running HXE on newer or other Linux operating systems that are not formally supported by SAP, such as Ubuntu, openSUSE and Fedora.
 >
@@ -1278,11 +1282,7 @@ cd /usr/sap/HXE/home/bin
 
 When prompted for System database user (SYSTEM) password, enter the master password you specified during SAP HANA, express edition installation.
 
-The command prompt returns when the cleanup process is finished, and the expected logs should be displayed in the console:
-
-```
-tcp   0   0 0.0.0.0:8090    0.0.0.0:*     LISTEN   off (0.00/0/0)
-```
+The command prompt returns when the cleanup process is finished, and the memory usage before and after the process are displayed.
 
 [ACCORDION-END]
 

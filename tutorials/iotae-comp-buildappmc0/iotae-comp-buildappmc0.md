@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-applicati
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Send the CPU usage data to SAP IoT Application Enablement](https://www.sap.com/developer/tutorials/iotae-comp-sendpy0.html)
+ - **Tutorials:** [Send the CPU usage data to SAP IoT Application Enablement](https://www.sap.com/developer/tutorials/iotae-comp-sendpy0.html) (you can also use other people's data coming from this tutorial)
 
 
 ## Next Steps
@@ -64,8 +64,8 @@ Type `computeriot` as a project name and your user id as the namespace. Click **
 Leave everything as it is on the ___Template Customization___ step. Click **Next**
 
 On ___Data Source___ step select:
- - **Freestyle IoT: Things OData Service** as a service
- - all property sets for `sap.iotaeexplore.computeriotdevice:generic_computer` thing type
+ - **`Freestyle-IOTAS-ADVANCEDLIST-THING-ODATA`** as a service
+ - all property sets for `sap.iotaehandson2.computeriotdevice:generic_computer` thing type
 Click **Next**
 
 ![Data Source](iotaecompappmc0060.jpg)
@@ -108,7 +108,7 @@ Now bind columns to data values. Select the first thing list column element (wit
 
 Repeat the same for the thing list column element from the second column (with element id `__column1`). Change its ___Text___ value to `{ThingName}`.
 
-Repeat the same for the third column changing its ___Text___ to `{DYN_ENT_sap_iotaeexplore_computeriotdevice__Default/Default.common_name}`. That's the common name property from the associated `Default` properties set. The easiest is to do this using the dialog for the text's data binding.
+Repeat the same for the third column changing its ___Text___ to `{DYN_ENT_sap_iotaehandson2_computeriotdevice__Default/Default.common_name}`. That's the common name property from the associated `Default` properties set. The easiest is to do this using the dialog for the text's data binding.
 ![Text data binding](iotaecompappmc0140.jpg)
 
 Next change column names to `ID`, `Name` and `Common name`.
@@ -137,7 +137,7 @@ Now select `SensorChart` element and change its properties:
 Run your developed application by clicking on the green **Run** button in the upper left corner of the SAP Web IDE.
 ![Run](iotaecompappmc0190.jpg)
 
-Once the application started find and click on your computer in the list of things on the left. The chart on the right will be refreshed with the collected measurements sent by the Python program from the physical computer.
+Once the application starts, find and click on your computer in the list of things on the left (you can also look at other people's computers). The chart on the right will be refreshed with the collected measurements sent by the Python program from the physical computer.
 
 Alert thresholds of `45%` and `90%`, which you defined in the Thing Modeler earlier, are displayed on the chart.
 ![Application!](iotaecompappmc0200.jpg)

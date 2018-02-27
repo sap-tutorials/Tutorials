@@ -1,15 +1,15 @@
 ---
-title: Intro to SAP HANA Spatial - Strings
-description: A string ('a curve' in more general) connects points
+title: Strings
+description: A string ('a curve' in more general) is a spatial data type that connects points
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Intro to SAP HANA Spatial: Points](https://www.sap.com/developer/tutorials/hana-spatial-intro1-point.html)
+- **Tutorials:** [Points](https://www.sap.com/developer/tutorials/hana-spatial-intro1-point.html)
 
 ## Next Steps
-- [Intro to SAP HANA Spatial: Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
+- [Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
 
 ## Details
 ### You will learn  
@@ -61,7 +61,7 @@ Strings are not just straight lines. The `ST_LineString` type is used to represe
 SELECT NEW ST_LineString('LineString (0 0, 3 4, 0 4, 0 0)').ST_asSVG() as SVG FROM dummy;
 ```
 
-The method `ST_asSVG()` returns the spatial object from the query in an XML-based vector image format called a ___Scalable Vector Graphics (`SVG`)___. SVG is supported by most of the modern web browsers.
+The method `ST_asSVG()` returns the spatial object from the query in an XML-based vector image format called a ___Scalable Vector Graphics (`SVG`)___. SVG is supported by most of the modern web browsers. Alternatively you can use free online SVG viewers, like [Free Code Format](https://www.freecodeformat.com/svg-editor.php).
 
 Copy the content of the cell with SVG. In the SAP HANA web-based workbench right click on a the cell and choose **Details...**
 
@@ -170,4 +170,4 @@ SELECT ST_GeomFromText( 'CircularString (0 0, 3 4, 0 0)' ).ST_GeometryType() as 
 - Review [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US/)
 
 ## Next Steps
-- [Intro to SAP HANA Spatial: Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
+- [Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)

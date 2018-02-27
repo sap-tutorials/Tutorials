@@ -1,15 +1,15 @@
 ---
-title: Intro to SAP HANA Spatial - Spatial columns
-description: Using table columns that support spatial data
+title: Spatial columns
+description: Using columns to store and process spatial data in tables
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Intro to SAP HANA Spatial: Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
+- **Tutorials:** [Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
 
 ## Next Steps
-- [Intro to SAP HANA Spatial: Z and M coordinates](https://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
+- [Spatial Z and M coordinates](https://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
 
 ## Details
 ### You will learn  
@@ -20,19 +20,7 @@ In previous tutorials you learned how to create spatial objects and run selected
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a schema)]
-
-For the purpose of this tutorial, create a schema `TESTSGEO` or use any other schema in your instance, where you have privileges for creating tables.
-
-```sql
-CREATE SCHEMA TESTSGEO;
-SET SCHEMA TESTSGEO;
-```
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Review spatial types)]
+[ACCORDION-BEGIN [Step 1: ](Review spatial types)]
 
 The following spatial types can be used in column tables in SAP HANA:
 - `ST_POINT`,
@@ -57,7 +45,14 @@ Object-oriented properties of spatial data types:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Load data into table)]
+[ACCORDION-BEGIN [Step 2: ](Create a table and load sample data)]
+
+For the purpose of this tutorial, create a schema `TESTSGEO` or use any other schema in your instance, where you have privileges for creating tables.
+
+```sql
+CREATE SCHEMA TESTSGEO;
+SET SCHEMA TESTSGEO;
+```
 
 Create and load data into the `SpatialShapes` table. This example is taken from the SAP HANA Spatial Reference, so that you can run exercises from the official help as well.
 
@@ -98,7 +93,7 @@ Now, check the shapes you loaded, including types of geometries and which geomet
 
 ```sql
 SELECT SHAPEID, SHAPE.ST_asWKT(), SHAPE.ST_GeometryType(), SHAPE.ST_isEmpty()
-FROM SPATIALSHAPES;
+FROM "TESTSGEO"."SPATIALSHAPES";
 ```
 
 ![Dataset select](spatial0402.jpg)
@@ -106,7 +101,7 @@ FROM SPATIALSHAPES;
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Geospatial data validation)]
+[ACCORDION-BEGIN [Step 3: ](Geospatial data validation)]
 
 >Geospatial data validation is a new feature of SAP HANA 2.0 SPS 2, and therefore this step is valid only if you run this or later version of the software.
 
@@ -147,19 +142,25 @@ This time you should receive an error message, like following: `spatial error: T
 
 >Altering column for turn validation does not do revalidation of already inserted data and applies only to new and modified data.
 
+Remove these test records from the table as they won't be needed in further exercises.
+
+```sql
+DELETE FROM "TESTSGEO"."SPATIALSHAPES" WHERE "SHAPEID" > 15;
+```
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Aggregate shapes from a spatial column)]
+[ACCORDION-BEGIN [Step 4: ](Aggregate shapes from a spatial column using union)]
 
 When you need to combine multiple shapes into one you can use different set operations and aggregation methods.
 
 **Aggregation methods** are executed on spatial columns of tables in SAP HANA.
 
-`ST_UnionAggr()` returns the spatial union of all of the geometries in a group.
+`ST_UnionAggr()` returns the spatial union of all of the geometries in a column.
 
 ```sql
 SELECT ST_UnionAggr(SHAPE).ST_asWKT() as UnionAggr
-FROM SPATIALSHAPES
+FROM "TESTSGEO"."SPATIALSHAPES"
 WHERE SHAPE.ST_isEmpty()=0 and SHAPE.ST_GeometryType() = 'ST_LineString';
 ```
 
@@ -177,7 +178,7 @@ Also note that spatial predicates were used in the query above to select only ge
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Additional aggregation methods)]
+[ACCORDION-BEGIN [Step 5: ](Additional aggregation methods)]
 
 Two other important **aggregate methods** are
 - `ST_EnvelopeAggr()` which returns the bounding rectangle for all of the geometries in a group,
@@ -189,7 +190,7 @@ Execute this query to best illustrate both types of aggregations. It uses the **
 SELECT
 ST_ConvexHullAggr(SHAPE).ST_Boundary().ST_Union(ST_UnionAggr(SHAPE)).ST_asWKT() as ConvexHullAggr,
 ST_EnvelopeAggr(SHAPE).ST_Boundary().ST_Union(ST_UnionAggr(SHAPE)).ST_asWKT() as EnvelopeAggr
-FROM SPATIALSHAPES
+FROM "TESTSGEO"."SPATIALSHAPES"
 WHERE SHAPE.ST_isEmpty()=0 and SHAPE.ST_GeometryType() = 'ST_LineString';
 ```
 
@@ -215,4 +216,4 @@ And the result of `ST_EnvelopeAggr()`:
 - Read [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US)
 
 ## Next Steps
-- [Intro to SAP HANA Spatial: Z and M coordinates](https://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
+- [Z and M coordinates](https://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)

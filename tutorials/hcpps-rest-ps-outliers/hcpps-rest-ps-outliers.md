@@ -36,7 +36,7 @@ Only the synchronous mode will be tested here but you can mimic what was done in
 
 &nbsp;
 
-> **Note**: if you are running into some issue, you can check the [SAP Predictive services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
+> **Note**: if you are running into some issue, you can check the [SAP Predictive services Troubleshooting guide](https://www.sap.com/developer/tutorials/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 [ACCORDION-BEGIN [Info:](A short description of the Outliers service)]
 The Outliers service identifies the odd profiles of a dataset whose target indicator is significantly different from what is expected.
@@ -73,7 +73,7 @@ Optionally, you can define the following parameters to enhance your analysis:
 
 [ACCORDION-BEGIN [Info:](A short description of the Census dataset)]
 
-The dataset will be using during this tutorial is extracted from the sample dataset available with SAP BusinessObjects Predictive Analytics.
+The dataset will be using during this tutorial is extracted from the sample dataset available with SAP Predictive Analytics.
 
 The Census sample data file that you will use to follow the scenarios for Regression/Classification and Segmentation/Clustering is an excerpt from the American Census Bureau database, completed in 1994 by Barry Becker.
 
@@ -108,7 +108,7 @@ As described in [**Step 1** of **Test the "Dataset" services** tutorial](https:/
 
 Open a new tab in ***Postman***.
 
-> If you don't have ***Postman*** installed yet, you can refer to the following how-to guide: [Install Postman extension for Google Chrome as a REST client](https://www.sap.com/developer/how-tos/2017/07/api-tools-postman-install.html)
+> If you don't have ***Postman*** installed yet, you can refer to the following how-to guide: [Install Postman extension for Google Chrome as a REST client](https://www.sap.com/developer/tutorials/api-tools-postman-install.html)
 
 &nbsp;
 
