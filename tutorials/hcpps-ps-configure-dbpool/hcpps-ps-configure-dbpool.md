@@ -12,7 +12,7 @@ tags: [ tutorial>how-to, tutorial>beginner, products>sap-predictive-service ]
 
 ## Next Steps
  - [Install a REST client to interact with the SAP Predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
+ - [View all How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=tutorial:type/how-to)
 
 ## How-To Details
 
@@ -74,4 +74,4 @@ An new entry will appear in the **Operation results**.
 
 ## Next Steps
 - [Install a REST client to interact with the SAP Predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
-- [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
+- [View all How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=tutorial:type/how-to)

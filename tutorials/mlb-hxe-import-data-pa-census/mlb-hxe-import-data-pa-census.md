@@ -113,7 +113,8 @@ OUTPUT_DIR=/usr/sap/HXE/HDB90/work/$OUTPUT_FILE
 mkdir $OUTPUT_DIR
 
  # download the archive in the sample data directory'
-wget -O $OUTPUT_DIR/$OUTPUT_FILE.zip $URL
+ # wget -O $OUTPUT_DIR/$OUTPUT_FILE.zip $URL
+curl $URL -o $OUTPUT_DIR/$OUTPUT_FILE.zip
 
  # switch to the new directory'
 cd $OUTPUT_DIR
@@ -126,7 +127,7 @@ while [ "`find . -type f -name '*.zip' | wc -l`" -gt 0 ]; \
 
 ```
 
-It requires WGET to be installed.
+It requires CURL (or WGET) to be installed.
 
 The dataset files should now be located in: **`/usr/sap/HXE/HDB90/work/sample_census/Census`**
 

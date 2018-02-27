@@ -144,7 +144,8 @@ OUTPUT_DIR=/usr/sap/HXE/HDB90/work/$OUTPUT_FILE
 mkdir $OUTPUT_DIR
 
  # download the archive in the sample data directory
-wget -O $OUTPUT_DIR/$OUTPUT_FILE.zip $URL
+ # wget -O $OUTPUT_DIR/$OUTPUT_FILE.zip $URL
+curl $URL -o $OUTPUT_DIR/$OUTPUT_FILE.zip
 
  # switch to the new directory
 cd $OUTPUT_DIR
@@ -159,7 +160,7 @@ while [ "`find . -type f -name '*.zip' | wc -l`" -gt 0 ]; \
 sed --in-place 's/[[:space:]]\+$//' $OUTPUT_DIR/Social/Contact/demo_contact_id_conversion.txt
 ```
 
-It requires WGET & SED to be installed.
+It requires CURL (or WGET) & SED to be installed.
 
 It will also trim the trailing spaces from `demo_contact_id_conversion.txt` which will cause import errors if you don't.
 

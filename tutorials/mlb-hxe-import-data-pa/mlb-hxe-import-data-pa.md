@@ -95,3 +95,13 @@ You can refer to the following tutorial to import the dataset: [Import SAP Predi
 You can refer to the following tutorial to import the dataset: [Import SAP Predictive Analytics Time Series Datasets](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-pa-timeseries.html)
 
 [ACCORDION-END]
+[ACCORDION-BEGIN [Import: ](Social Dataset)]
+
+You can refer to the following tutorial to import the dataset: [Import SAP Predictive Analytics Social Datasets](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-pa-social.html)
+
+[ACCORDION-END]
+[ACCORDION-BEGIN [Import: ](Text Coding Dataset)]
+
+You can refer to the following tutorial to import the dataset: [Import SAP Predictive Analytics Text Coding Datasets](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-pa-textcoding.html)
+
+[ACCORDION-END]
