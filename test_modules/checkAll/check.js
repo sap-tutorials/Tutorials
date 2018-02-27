@@ -72,7 +72,7 @@ module.exports = function(files, showprogressbar, callback) {
                 if (splitReport.length >= 3) {
                     //build error log
                     for (var i = 1; i <= splitReport.length - 2; i++) {
-                        var splitReason = splitReport[i].split('|');
+                        var splitReason = splitReport[i].split(/\|(.+)/);
                         cntMdspell++;
                         logMdSpell += '\n\n    > Error: \n        file:    ' + fname +
                             "\n        line:    " + splitReason[0] +
