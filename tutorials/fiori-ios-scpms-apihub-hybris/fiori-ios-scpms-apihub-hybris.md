@@ -227,7 +227,7 @@ If you click on the `CorporateAccounts` collection, you navigate to a **Master**
 
 ![Build and run](fiori-ios-scpms-apihub-hybris-22.png)
 
-As you see, the list looks pretty awfull with meaningless ID's. This will be corrected in the next steps.
+As you see, the list looks pretty awful with meaningless ID's. This will be corrected in the next steps.
 
 If you click on one of the `CorporateAccount` entities, you navigate to a **Detail** page which lists all the properties for the selected entity:
 
@@ -409,7 +409,7 @@ Build and run the application. Navigate to the `CorporateAccounts` master page. 
 
 If you click on the activity buttons, the respective app should open.
 
-> If you're running in the simulator, **Mail** and **Phone** apps are not available so nothing will happen. **Messages** app is available, but since it lacks a **New Message** button, it won't open a new message with the number prefilled.
+> If you're running in the simulator, **Mail** and **Phone** apps are not available so nothing will happen. **Messages** app is available, but since it lacks a **New Message** button, it won't open a new message with the number pre-filled.
 
 > If you're running on a physical device, everything should work as expected.
 
