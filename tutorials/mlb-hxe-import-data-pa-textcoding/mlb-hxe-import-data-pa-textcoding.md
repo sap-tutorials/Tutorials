@@ -172,7 +172,8 @@ OUTPUT_DIR=/usr/sap/HXE/HDB90/work/$OUTPUT_FILE
 mkdir $OUTPUT_DIR
 
  # download the archive in the sample data directory
-wget -O $OUTPUT_DIR/$OUTPUT_FILE.zip $URL
+ # wget -O $OUTPUT_DIR/$OUTPUT_FILE.zip $URL
+curl $URL -o $OUTPUT_DIR/$OUTPUT_FILE.zip
 
  # switch to the new directory
 cd $OUTPUT_DIR
@@ -188,7 +189,7 @@ dos2unix ./Text_Coding/dmc2006.txt
 dos2unix ./Text_Coding/dmc2006_enriched.txt
 ```
 
-It requires WGET & SED to be installed.
+It requires CURL (or WGET) & DOS2UNIX to be installed.
 
 It will also to explicitly convert the file from DOS to UNIX else the import will fail.
 

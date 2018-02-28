@@ -56,6 +56,8 @@ Floorplan
 Flowgraph
 flowgraph
 geocode
+geofence
+geofences
 GitHub
 Hadoop
 HCPms
@@ -64,6 +66,7 @@ HelpDesk
 hoc
 hostname
 How-Tos
+Hybris
 hypervisor
 hypervisors
 Hypervisor
@@ -93,6 +96,7 @@ Kubernetes
 keychain
 Keychain
 keystore
+Leonardo
 Lifecycle
 Lumira
 MacBook
@@ -105,8 +109,8 @@ MTA
 MTAs
 multistore
 Multistore
-multitenant
 Multitenant
+multitenant
 MySQL
 Neo
 NetWeaver
@@ -117,8 +121,8 @@ npm
 OAuth
 OAuth2
 OData
-Onboarding
 onboarding
+Onboarding
 OLAP
 OpenSocial
 openSSL
@@ -172,6 +176,7 @@ Subatin
 subselect
 supertype
 supertypes
+SuccessFactors
 Sybase
 TechEd
 Tessel
@@ -229,3 +234,4 @@ _22
 _23
 _24
 _25
+_FILE

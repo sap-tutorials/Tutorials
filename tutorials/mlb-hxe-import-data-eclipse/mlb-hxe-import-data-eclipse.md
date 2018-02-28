@@ -168,7 +168,7 @@ Now, repeat the steps for the **`data_2.csv`** file with the following import pr
 
     - Select the **Existing** radio, and pick **`ML_DATA.MYTABLE_ECLIPSE`**.
 
-Using the **Mapping menu** icon ![mapping menu](07-mapping-menu.png), select the **One by One** option.
+Using the **Mapping menu** icon ![mapping menu](03-mapping-menu.png), select the **One by One** option.
 
 Click on **Finish**.
 
