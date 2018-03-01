@@ -2,17 +2,16 @@
 title: Using the Streaming Web Service
 description: How to configure, run and test the Streaming Web Service (SWS) for SAP HANA Smart Data Streaming
 primary_tag: products>sap-hana-streaming-analytics
-tags: [  tutorial>Intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
+tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites
- - **Proficiency:** Intermediate
+ - **Proficiency:** Beginner
  - **System:** Ensure you have access to a HANA System with the Smart Data Streaming option installed and configured.
  - `-` Have a HANA user ID with permissions to create, compile, deploy and run a SDS project. (This can be the HANA `SYSTEM` User, which is granted full permissions during the installation process)
  - `-` Have the ability to connect to the Linux host running the Smart Data Streaming as the `<sid>adm` user.
 
-
 ## Next Steps
-- **Tutorials** : [Publish Events to SDS via the REST Interface](https://www.sap.com/portugal/developer/tutorials/sds-rest-publish.html)
+- **Tutorials** : [Configuring the Web Service Provider (WSP)](https://www.sap.com/developer/tutorials/sds-web-service-provider-configuration.html)
 
 ## Details
 ### You will learn
@@ -76,4 +75,4 @@ In the next step, we will test the Streaming Web Service via the REST Interface.
 [ACCORDION-END]
 
 ## Next Steps
-- **Tutorials** : [Publish Events to SDS via the REST Interface](https://www.sap.com/portugal/developer/tutorials/sds-rest-publish.html)
+- **Tutorials** : [Configuring the Web Service Provider (WSP)](https://www.sap.com/developer/tutorials/sds-web-service-provider-configuration.html)
