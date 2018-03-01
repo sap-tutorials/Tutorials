@@ -225,7 +225,8 @@ sudo yum -y install xulrunner \
 
 The command uses the `-y` which will assume that all question like using more space will be answered as yes.
 
-As the output may be long and not easy visualize, you can run the command again, you should be able to spot easily packages that can't install as properly installed ones won't get reinstalled.
+As the output may be long and not easy to visualize, you can run the command again.
+You should be able to easily spot packages that can't install properly.
 
 ---
 
@@ -399,8 +400,8 @@ To configure the firewall, you can use the `firewall-config` tool. In this case,
 To avoid problems with the firewall during installation, it can be beneficial to disable it completely during the installation process with the following commands:
 
 ```bash
-sudo systemctl stop firewalld
-sudo systemctl disable firewall
+sudo systemctl stop firewalld.service
+sudo systemctl disable firewalld.service
 ```
 
 You can check the best practice section about firewall configuration once you complete the installation to properly configure your system.
