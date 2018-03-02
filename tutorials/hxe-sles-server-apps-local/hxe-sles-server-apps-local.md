@@ -1,12 +1,12 @@
 ---
-title: Install SAP HANA 2.0, express edition on Red Hat Enterprise Linux (Server + Applications)
-description: Learn how to prepare your Red Hat Enterprise Linux system to install and test SAP HANA, express edition
+title: Install SAP HANA 2.0, express edition on SUSE Linux Enterprise (Server + Applications)
+description: Learn how to prepare your SUSE Linux Enterprise system to install and test SAP HANA, express edition
 primary_tag: products>sap-hana\,-express-edition  
 tags: [  tutorial>intermediate, products>sap-hana\,-express-edition]
 ---
 
 ### You will learn
-In this tutorial, you will install the dependencies needed and configure your Red Hat Enterprise Linux system for the setup and execution of SAP HANA, express edition.
+In this tutorial, you will install the dependencies needed and configure your SUSE Linux Enterprise system for the setup and execution of SAP HANA, express edition.
 
 Then you will learn how to download the binary installer archives of SAP HANA 2.0, express edition, decompress and install it on your server, including some additional packages for your SAP HANA 2.0, express edition installation.
 
@@ -194,11 +194,11 @@ java -jar <download manager path>/HXEDownloadManager.jar
 
 &nbsp;
 
-You will find next the instructions for both the ***GUI Mode*** and the ***Console Mode***. It is however, recommended that you use the ***Console Mode*** directly from the RHEL server.
+You will find next the instructions for both the ***GUI Mode*** and the ***Console Mode***. It is however, recommended that you use the ***Console Mode*** directly from the SLES server.
 
-Save the ***Platform-independent*** **Download Manager** file directly on your RHEL system.
+Save the ***Platform-independent*** **Download Manager** file directly on your SLES system.
 
-> **Note:** If your RHEL system is not connected to the internet, then you have no choice but to save the Download Manager locally, download the packages locally then transfer them to your RHEL system.
+> **Note:** If your SLES system is not connected to the internet, then you have no choice but to save the Download Manager locally, download the packages locally then transfer them to your SLES system.
 
 &nbsp;
 
@@ -208,9 +208,9 @@ Save the ***Platform-independent*** **Download Manager** file directly on your R
 
 As stated in the previous section you can download the installation packages either using a *GUI Mode* or a *Console Mode*.
 
-You will find below the instructions for both. It is however, recommended that you use the ***Console Mode*** directly from the RHEL server.
+You will find below the instructions for both. It is however, recommended that you use the ***Console Mode*** directly from the SLES server.
 
-> **Note:** Again, if your RHEL system is not connected to the internet, then you have no choice but to save the Download Manager locally, download the packages locally (using either the *GUI Mode* or a *Console Mode*) then transfer them to your RHEL system.
+> **Note:** Again, if your SLES system is not connected to the internet, then you have no choice but to save the Download Manager locally, download the packages locally (using either the *GUI Mode* or a *Console Mode*) then transfer them to your SLES system.
 
 &nbsp;
 
@@ -281,7 +281,7 @@ For more information about the other downloadable package, please refer to the *
 
 ---
 
-> **Note:** To run the download manager suing the GUI Mode, it assumes that your RHEL system is configured with a *Desktop* environment like GNOME or KDE.
+> **Note:** To run the download manager suing the GUI Mode, it assumes that your SLES system is configured with a *Desktop* environment like GNOME or KDE.
 
 &nbsp;
 
@@ -308,7 +308,7 @@ Click the **Download** button to being your download.
 
 Your download is complete when a pop-up message appears confirming successful download. Make sure you wait for this message before accessing the downloaded files.
 
-Now that the file are downloaded, you can transfer them to the ***`/opt/hxe`*** directory on your target RHEL system.
+Now that the file are downloaded, you can transfer them to the ***`/opt/hxe`*** directory on your target SLES system.
 
 Make sure you update the read/write/execute permission on the `/opt/hxe` directory using the following command:
 
