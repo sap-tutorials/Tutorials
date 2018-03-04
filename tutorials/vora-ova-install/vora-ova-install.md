@@ -241,7 +241,7 @@ Vora Tools is the front end to SAP Vora, where you can execute SQL statements. Y
 
 Make sure you are logged as a `vora` user, or switch to it with `su vora`.
 
-- Create a csv file with dummy data
+- Create a `csv` file with dummy data
 ```sh
 cd ~
 echo "11, peter" >> t1.csv
@@ -283,7 +283,7 @@ You can get a registration code from SUSE that is valid for 60 days and use it t
     - You don't actually need to download the distribution.
 - You can also see the registration code in "Subscriptions" when you log into your account at https://partner.suse.com/
 - Run the updates
-    - Start Yast: ```sudo /sbin/yast```
+    - Start YaST: ```sudo /sbin/yast```
     - Choose Software -> Online Update
     - "Run configuration workflow now" => Choose Yes
     - Mark "Registration Code"

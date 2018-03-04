@@ -81,7 +81,7 @@ The total cost is comprised of software cost and infrastructure cost.
 
 **Software cost:**
 
-There five types of nodes a Vora cluster can have based on their functionality and distribution of services.  Only the nodes that have `datanode` service are charged on an hourly basis aggregated from usage over an hour. The hourly rate per node is 1.99 USD. The details of the usage are included in monthly billing from Amazon marketplace.
+There are five types of nodes a Vora cluster can have based on their functionality and distribution of services.  Only the nodes that have `datanode` service are charged on an hourly basis aggregated from usage over an hour. The hourly rate per node is 1.99 USD. The details of the usage are included in monthly billing from Amazon marketplace.
 
 The node types billed are of type `WorkerVora`, `Worker2Vora` and any number of `DataVora`.
 
@@ -226,7 +226,7 @@ Check the **EC2 Dashboard > Service Health > Service Status** section for any er
 
 [ACCORDION-BEGIN [Question 23: ](What is the default HDFS replication factor and how can we manage it to scale the cluster?)]
 
-In optimal cluster `Worker` and `Worker2` have data node component hence the Replication factor by default is 2.  It is recommended to increase the Block replication factor to 3 as the cluster scales (When more nodes are added to the cluster which have "datanode" components. Login to Ambari, Go to **`HDFS > Configs Tab > Advanced Tab > Block replication`**
+In optimal cluster `Worker` and `Worker2` have data node component hence the Replication factor by default is 2.  It is recommended to increase the Block replication factor to 3 as the cluster scales (When more nodes are added to the cluster which have `datanode` components. Login to Ambari, Go to **`HDFS > Configs Tab > Advanced Tab > Block replication`**
 
 
 [ACCORDION-END]
@@ -272,4 +272,3 @@ The `WorkerVora`, `Worker2Vora` and `DataVora` node types are charged for softwa
 `ManagerVora` and `MasterVora` type nodes are only charged for infrastructure.
 
 [ACCORDION-END]
-

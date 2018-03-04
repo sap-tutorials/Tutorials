@@ -130,7 +130,7 @@ This document will teach you how-to develop a simple web application using [Spri
     ```
      > Note: You can trigger the `build` to create a `WAR` file that includes the `spring-boot-starter-logging` dependencies as needed for Cloud Foundry by running the following command: `mvn -P cf build package`.
 
-     > Note: The complete `pom.xml` used in this how-to document can be obtained   as a reference from the [respective Github repository](https://github.com/SAP/cloud-spring-boot-sample/commit/e03faffb2e2b6fbea039ce5341dc90efa45b9755).
+     > Note: The complete `pom.xml` used in this how-to document can be obtained   as a reference from the [respective GitHub repository](https://github.com/SAP/cloud-spring-boot-sample/commit/e03faffb2e2b6fbea039ce5341dc90efa45b9755).
 
 4. Create a main `Application` class as needed to bootstrap a Spring Boot web application:
 
@@ -204,7 +204,5 @@ This document will teach you how-to develop a simple web application using [Spri
 
 
 ### Related Information
- - (Github) [https://github.com/SAP/cloud-spring-boot-sample](https://github.com/SAP/cloud-spring-boot-sample)
+ - (GitHub) [https://github.com/SAP/cloud-spring-boot-sample](https://github.com/SAP/cloud-spring-boot-sample)
  - (Blog) [Getting started with Spring Boot – Part 1](https://blogs.sap.com/2016/10/14/getting-started-spring-boot-part-1/)
-
-
