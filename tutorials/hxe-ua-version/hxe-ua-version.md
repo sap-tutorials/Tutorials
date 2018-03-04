@@ -11,7 +11,6 @@ tags: [  tutorial>beginner, products>sap-hana ]
 
 ## Next Steps
  - Return to the SAP HANA, express edition developer page (coming soon)
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
 
 
 
@@ -36,4 +35,3 @@ Follow the chart below to decide which version of SAP HANA, express edition to d
 
 ## Next Steps
  - Return to the SAP HANA, express edition developer page (coming soon)
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)  

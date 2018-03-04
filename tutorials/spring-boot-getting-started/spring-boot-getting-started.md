@@ -11,8 +11,6 @@ tags: [  tutorial>beginner, topic>cloud, topic>java, products>sap-cloud-platform
 
 
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
 
 
 ## How-To Details
@@ -210,6 +208,3 @@ This document will teach you how-to develop a simple web application using [Spri
  - (Blog) [Getting started with Spring Boot – Part 1](https://blogs.sap.com/2016/10/14/getting-started-spring-boot-part-1/)
 
 
-
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)

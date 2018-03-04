@@ -7,9 +7,6 @@ tags: [  tutorial>how-to, tutorial>beginner, tutorial>intermediate, products>sap
 ## Prerequisites  
  - **Systems used:** SAP HANA 1.00 SPS12, SAP HANA 2.00 SPS00, SAP HANA 2.00 SPS01, SAP HANA 2 SPS02 - SAP HANA, express edition
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
-
 
 ## How-To Details
 The following will document links, tips and tricks and more related to the SAP CodeJam Getting Started with SAP HANA, express edition event.
@@ -247,5 +244,3 @@ https://www.sap.com/developer/tutorials/xsa-create-user-provided-anonymous-servi
 
 [ACCORDION-END]
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)

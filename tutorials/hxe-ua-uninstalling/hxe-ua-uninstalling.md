@@ -7,9 +7,6 @@ tags: [  tutorial>how-to, tutorial>beginner, products>sap-hana\,-express-edition
 ## Prerequisites  
 - **Setup:** You have installed the binary version of SAP HANA, express edition.
 
-## Next Steps
-- [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
-
 ### Time to Complete
 **20 Min**.
 
@@ -55,5 +52,3 @@ To delete the component but retain the HDI container and repository database, us
 [ACCORDION-END]
 
 
-## Next Steps
-- [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)

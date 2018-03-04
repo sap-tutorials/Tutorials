@@ -7,9 +7,6 @@ tags: [  tutorial>how-to, tutorial>beginner, tutorial>intermediate, topic>cloud,
 ## Prerequisites  
  - **Systems used:** SAP HANA SPS12, SAP HANA, express edition
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
-
 
 ## How-To Details
 When attempting to log in to the XS Advanced engine from the XS Advanced Client, the following error occurs: `Authentication failed. UAA at http://your-host:30030 uaa-security is not up.`
@@ -113,5 +110,3 @@ If you recently performed an upgrade, **make sure the hostname and Fully Qualifi
 
 [ACCORDION-END]
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)

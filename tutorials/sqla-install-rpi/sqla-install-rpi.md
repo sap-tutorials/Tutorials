@@ -9,9 +9,6 @@ tags: [  tutorial>how-to, tutorial>beginner, topic>internet-of-things, topic>sql
 - Internet connection from Raspberry Pi
 - Terminal access to Raspberry Pi (either through SSH or connected display)
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
-
 ## How-To Details
 This How-To tutorial focuses on version 17 of the SAP SQL Anywhere Developer Edition and Raspberry Pi 3 Model B. Other Linux distributions and other ARMv6 and ARMv7 devices should work as well, but some commands may be different.
 
@@ -130,6 +127,3 @@ Check complete documentation: http://dcx.sap.com/index.html#sqla170/en/html/822e
 
 [ACCORDION-END]
 
-
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)

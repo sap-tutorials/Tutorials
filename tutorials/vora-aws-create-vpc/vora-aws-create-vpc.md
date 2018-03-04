@@ -8,7 +8,7 @@ tags: [  tutorial>how-to, tutorial>beginner, products>sap-vora ]
  - Amazon Web Services account. Create AWS account or use existing account.
 
 ## Next Steps
- - View other [SAP Vora How-Tos](https://www.sap.com/developer/tutorial-navigator.how-to.html?tag=products:data-management/sap-hana-vora) or visit the [SAP Vora Developer Page](https://www.sap.com/developer/topics/vora.html).
+ - View other [SAP Vora How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=products:data-management/sap-vora) or visit the [SAP Vora Developer Page](https://www.sap.com/developer/topics/vora.html).
 
 
 ## How-To Details
@@ -120,4 +120,4 @@ Select this VPC while launching a SAP Vora Manager instance.
 [ACCORDION-END]
 
 ## Next Steps
- - View other [SAP Vora How-Tos](https://www.sap.com/developer/tutorial-navigator.how-to.html?tag=products:data-management/sap-hana-vora) or visit the [SAP Vora Developer Page](https://www.sap.com/developer/topics/vora.html).
+ - View other [SAP Vora How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=products:data-management/sap-vora) or visit the [SAP Vora Developer Page](https://www.sap.com/developer/topics/vora.html).

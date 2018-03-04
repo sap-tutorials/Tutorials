@@ -7,9 +7,6 @@ tags: [  tutorial>how-to, tutorial>beginner, products>sap-vora ]
 ## Prerequisites  
  - None
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
-
 
 ## How-To Details
 Covers all commonly asked questions about SAP Vora 1.3 running on AWS.
@@ -276,5 +273,3 @@ The `WorkerVora`, `Worker2Vora` and `DataVora` node types are charged for softwa
 
 [ACCORDION-END]
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
