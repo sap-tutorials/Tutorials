@@ -8,7 +8,7 @@ tags: [topic>internet-of-things, products>sap-cloud-platform-internet-of-things,
 
 ## Prerequisites
 - **Proficiency:** Beginner
-- **Tutorials:** [Setup the Tessel device](https://www.sap.com/developer/how-tos/2016/09/iot-tessel.html)
+- **Tutorials:** [Setup the Tessel device](https://www.sap.com/developer/tutorials/iot-tessel.html)
 
 
 ## Next Steps

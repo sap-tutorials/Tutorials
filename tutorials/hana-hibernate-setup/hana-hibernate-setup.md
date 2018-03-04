@@ -88,7 +88,7 @@ The project should rebuild automatically.
 
 [ACCORDION-BEGIN [Step 3: ](Add the HANA JDBC driver to the Eclipse project)]
 
-Follow the steps from the tutorial **[Connect to SAP HANA, express edition using JDBC](https://www.sap.com/developer/how-tos/2016/08/hxe-connect-hxe-using-jdbc.html)** to add the JDBC driver to your Eclipse project.
+Follow the steps from the tutorial **[Connect to SAP HANA, express edition using JDBC](https://www.sap.com/developer/tutorials/hxe-connect-hxe-using-jdbc.html)** to add the JDBC driver to your Eclipse project.
 
 This tutorial will also help you identify your system details (server host, port, username and password).
 

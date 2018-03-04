@@ -10,7 +10,7 @@ In this tutorial, you will install the dependencies needed and configure your SU
 
 Then you will learn how to download the binary installer archives of SAP HANA 2.0, express edition, decompress and install it on your server, including some additional packages for your SAP HANA 2.0, express edition installation.
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/tutorials/hxe-ua-troubleshooting.html).
 
 > ### **Note:**
 >**This tutorial was build and tested using SAP HANA, express edition 2.0 SPS02 revision 22 and SUSE Linux Enterprise Server for SAP Applications, 12.2 for `x86-64` on an Intel NUC**.
@@ -621,8 +621,8 @@ When the prompt returns, the system is started.
 
 You can check the following links to verify some of the connectivity options available for the ***SAP HANA HDB Client***:
 
- - <a href="https://www.sap.com/developer/how-tos/2016/08/hxe-connect-hxe-using-jdbc.html" target="new">JDBC</a>
- - <a href="https://www.sap.com/developer/how-tos/2016/08/hxe-python-connection.html" target="new">Python</a>
+ - <a href="https://www.sap.com/developer/tutorials/hxe-connect-hxe-using-jdbc.html" target="new">JDBC</a>
+ - <a href="https://www.sap.com/developer/tutorials/hxe-python-connection.html" target="new">Python</a>
  - ODBC (content coming soon!)
  - SQLDBC (content coming soon!)
  - Node.js (content coming soon!)
