@@ -5,10 +5,10 @@ primary_tag: products>sap-vora
 tags: [  tutorial>how-to, tutorial>beginner, products>sap-vora ]
 ---
 ## Prerequisites  
-1. [How to run SAP Vora on Amazon Web Services](http://www.sap.com/developer/how-tos/2017/02/vora-launch-aws.html) is completed, and
+1. [How to run SAP Vora on Amazon Web Services](http://www.sap.com/developer/tutorials/vora-launch-aws.html) is completed, and
 2. SAP Vora instance running with 2/2 status checks passed in the AWS console,
-3. The Manager instance is running under a VPC created following the steps in [Create a VPC in AWS for SAP Vora Developer Edition in AWS](http://www.sap.com/developer/how-tos/2017/02/vora-aws-create-vpc.html),
-4. The required ports are open. Refer to [AWS Step by Step guide to create Security Group SAP Vora 1.3](http://www.sap.com/developer/how-tos/2017/02/vora-aws-security-groups.html),
+3. The Manager instance is running under a VPC created following the steps in [Create a VPC in AWS for SAP Vora Developer Edition in AWS](http://www.sap.com/developer/tutorials/vora-aws-create-vpc.html),
+4. The required ports are open. Refer to [AWS Step by Step guide to create Security Group SAP Vora 1.3](http://www.sap.com/developer/tutorials/vora-aws-security-groups.html),
 5. AWS Access key and secret key,
 6. Google Chrome (version 24 or higher)
 

@@ -137,7 +137,7 @@ You will need to download a copy of the Eclipse software which will allow you to
 
 We recommend [Eclipse Neon](http://www.eclipse.org/downloads/packages/), the Java EE version in case you later want to explore the SAP Cloud Platform.
 
-Now that Eclipse has been installed you will need to add the appropriate plugins. The following guide will take your though [those steps](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html).
+Now that Eclipse has been installed you will need to add the appropriate plugins. The following guide will take your though [those steps](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html).
 
 Finally you are connected to your SAP HANA, express edition, system.
 

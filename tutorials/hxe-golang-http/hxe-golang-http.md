@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 ---
 ## Prerequisites  
  - Proficiency: beginner
- - Setup: `HANA, express edition` must be running and accessible from your client platform. For instructions on how to setup a `HANA, express edition` see the [HANA Express database deploy tutorial](https://www.sap.com/developer/how-tos/2017/07/hxe-db-deploy.html).
+ - Setup: `HANA, express edition` must be running and accessible from your client platform. For instructions on how to setup a `HANA, express edition` see the [HANA Express database deploy tutorial](https://www.sap.com/developer/tutorials/hxe-db-deploy.html).
  - This tutorial assumes that you have a database login that can access the `M_DATABASE` view in the `HANA, express edition` `SystemDB`.
 
 ## Next Steps
@@ -38,26 +38,26 @@ Your application will include the following four source files in the source code
     `application.go` - The main go source file. The file starts an http server, queries the HANA Express database, places the results in a data structure, then merges that data with `template.html` and served up the results via `http`.
 
     `template.html` - An HTML formatted template that uses the annoations from the `html/template` go package to merge data generated in `application.go` to create the html page returned by `application.go`.
-    
+
     `config.go` - This go source file parses the config.json file into go objects.
-    
+
     `config.json` - This configuration file contains configuration parameters that you will need to be customize.
-    
+
 1. Navigate to your $GOPATH directory. If you have not yet created a GOPATH, you can find out more about setting your GOPATH [in the `Go` documentation](https://golang.org/doc/code.html#GOPATH).
-    
-2. Make your project source directory, then navigate to it: 
+
+2. Make your project source directory, then navigate to it:
 ```
 mkdir -p $GOPATH/src/hxe_golang_http`
 cd $GOPATH/src/hxe_golang_http
 ```
 
-3. Create a file called `application.go` and paste or type the following code into it. 
+3. Create a file called `application.go` and paste or type the following code into it.
 
 ```
 package main
 /*
   This is the main source file for the application. It does the following:
-    - starts an http server 
+    - starts an http server
     - connects to a HANA database
     - queries the M_Database_View view
     - merges the data returned into an html template
@@ -86,16 +86,16 @@ type M_Database_View struct {
 
 // Return a Database URL with the following format using the Config.Db from config:
 //     <driverName>://<Database user>:<Password>@<Database Host IP>:<Database Port>
-// 
+//
 // Example: hdb://System:MyPassword@10.173.171.35:39013
 //
 func getDbUrl()(string) {
-  return Config.Db.Driver + "://" + 
-         Config.Db.User + ":" + Config.Db.Password + "@" + 
+  return Config.Db.Driver + "://" +
+         Config.Db.User + ":" + Config.Db.Password + "@" +
          Config.Db.Ip_addr + ":" + Config.Db.Db_port
 }
 
-// Returns the port either using an operating system environment variable 
+// Returns the port either using an operating system environment variable
 // or, if that isn't found, using the default port value from the config.
 func getHttpPort() (string){
     var port string
@@ -105,7 +105,7 @@ func getHttpPort() (string){
     if len(port) == 0 {
        return Config.HttpPort.Default
     } else {
-       return port 
+       return port
     }
 }
 
@@ -126,7 +126,7 @@ func main() {
 func myHandler(w http.ResponseWriter, r *http.Request) {
 
         log.Printf("Serving on %s...\n", r.RemoteAddr)
-        
+
         // Query the HANA Database
         db, err := sql.Open(Config.Db.Driver,getDbUrl())
         if err != nil {
@@ -164,7 +164,7 @@ func myHandler(w http.ResponseWriter, r *http.Request) {
           mdbs = append(mdbs, mdb)
         }
 
-        // Merge the M_DATABASE_VIEW values with the template html file 
+        // Merge the M_DATABASE_VIEW values with the template html file
         // and write the results to the ResponseWriter
         t, err := template.ParseFiles("template.html")
         if err != nil {
@@ -172,7 +172,7 @@ func myHandler(w http.ResponseWriter, r *http.Request) {
             log.Printf("Failed to parse template.html.  %s...\n", err.Error())
             return
         }
-        
+
         err = t.Execute(w, mdbs)
         if err != nil {
             fmt.Fprintf(w, "Failed to merge template.html. %s\n", err.Error() )
@@ -220,7 +220,7 @@ type Database struct {
 
 // Port contains the collection for a port in config.json
 type Port struct {
-  //OsVar is the name of the OS environment variable for the port 
+  //OsVar is the name of the OS environment variable for the port
   OsVar          string `json:"os_var"`
   //DefaultPort is the port to use if there is no os environment variable set
   Default       string `json:"default"`
@@ -238,7 +238,7 @@ func InitializeConfig()(error) {
 	if err != nil {
 		return errors.New("Unable to parse the configuration file, config.json " + err.Error())
 	}
-    
+
     return nil
 }
 ```
@@ -265,14 +265,14 @@ func InitializeConfig()(error) {
 5. Create a file called `config.json` and paste or type the following text into it.  
 
 ```
-{ 
+{
   "database": {
     "driver": "hdb",
     "user": "system",
     "password": "MyPassword",
     "ip_addr": "10.173.171.241",
     "db_port": "39013"   
-  }, 
+  },
   "http_port": {
     "os_var": "",    
     "default": "8080"
@@ -299,8 +299,8 @@ func InitializeConfig()(error) {
 1. Build your application.
 
 - Navigate to the the `$GOPATH/src/hxe_golang_http` (`%GOPATH%\src\hxe_golang_http` on Windows) directory. Execute the following command: `go build`.
-  This will create an executable file called `hxe_golang_http` in the `hxe_golang_http` directory. 
-  
+  This will create an executable file called `hxe_golang_http` in the `hxe_golang_http` directory.
+
   *Note: Running `go install` will create the executable in the `$GOPATH/src` directory instead.*
 
 4. Execute `hxe_golang_http` to start the application. (`hxe_golang_http` will be built in the `$GOPATH/bin` directory.)
@@ -313,8 +313,7 @@ func InitializeConfig()(error) {
 [ACCORDION-END]
 
 ## Next Steps
- - If you intend to deploy your application to Google App Engine, go to the [Google App Engine deployment tutorial](https://www.sap.com/developer/how-tos/2017/07/hxe-app-deploy-gcp.html)
- - If you intend to deploy your application to Azure App Service, go to the [Azure App Service deployment tutorial](https://www.sap.com/developer/how-tos/2017/07/hxe-app-deploy-azure.html)
- - If you intend to deploy your application to AWS Elastic Beanstalk, go to the [AWS Elastic Beanstalk deployment tutorial](https://www.sap.com/developer/how-tos/2017/07/hxe-app-deploy-aws.html)
+ - If you intend to deploy your application to Google App Engine, go to the [Google App Engine deployment tutorial](https://www.sap.com/developer/tutorials/hxe-app-deploy-gcp.html)
+ - If you intend to deploy your application to Azure App Service, go to the [Azure App Service deployment tutorial](https://www.sap.com/developer/tutorials/hxe-app-deploy-azure.html)
+ - If you intend to deploy your application to AWS Elastic Beanstalk, go to the [AWS Elastic Beanstalk deployment tutorial](https://www.sap.com/developer/tutorials/hxe-app-deploy-aws.html)
  - [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)
-

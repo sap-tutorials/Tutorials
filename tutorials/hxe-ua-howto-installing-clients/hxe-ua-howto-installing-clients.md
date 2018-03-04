@@ -255,9 +255,9 @@ Now that you've installed the SAP HANA HDB Client, connect to a SAP HANA 2.0, ex
 
 See these `How-Tos`:
 
-- [Connect to SAP HANA, express edition using JDBC](http://www.sap.com/developer/how-tos/2016/08/hxe-connect-hxe-using-jdbc.html)
+- [Connect to SAP HANA, express edition using JDBC](http://www.sap.com/developer/tutorials/hxe-connect-hxe-using-jdbc.html)
 
-- [How to connect to SAP HANA database server in Python](http://www.sap.com/developer/how-tos/2016/08/hxe-python-connection.html)
+- [How to connect to SAP HANA database server in Python](http://www.sap.com/developer/tutorials/hxe-python-connection.html)
 
 #### Uninstall the SAP HANA HDB Client
 
@@ -402,9 +402,9 @@ Now that you've installed the SAP HANA HDB Client, connect to an SAP HANA 2.0, e
 
 See these `How-Tos`:
 
-- [Connect to SAP HANA, express edition using JDBC](http://www.sap.com/developer/how-tos/2016/08/hxe-connect-hxe-using-jdbc.html)
+- [Connect to SAP HANA, express edition using JDBC](http://www.sap.com/developer/tutorials/hxe-connect-hxe-using-jdbc.html)
 
-- [How to connect to SAP HANA database server in Python](http://www.sap.com/developer/how-tos/2016/08/hxe-python-connection.html)
+- [How to connect to SAP HANA database server in Python](http://www.sap.com/developer/tutorials/hxe-python-connection.html)
 
 [ACCORDION-END]
 

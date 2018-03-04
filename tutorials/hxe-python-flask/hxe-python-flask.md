@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - Setup: `HANA, express edition` must be running and accessible from your client platform. For instructions on how to setup a `HANA, express edition` see the [HANA Express database deploy tutorial](https://www.sap.com/developer/how-tos/2017/07/hxe-db-deploy.html).
+ - Setup: `HANA, express edition` must be running and accessible from your client platform. For instructions on how to setup a `HANA, express edition` see the [HANA Express database deploy tutorial](https://www.sap.com/developer/tutorials/hxe-db-deploy.html).
  - This tutorial assumes that you have a database login that can access the `M_DATABASE` view in the `HANA, express edition` `SystemDB`.
 
 ## Next Steps
@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
 
 ## Details
 ### You will learn  
-This tutorial will guide you through the process of creating a sample Python/Flask application to connect to SAP HANA, Express Edition. 
+This tutorial will guide you through the process of creating a sample Python/Flask application to connect to SAP HANA, Express Edition.
 
 ### Time to Complete
 **15 Min**
@@ -178,7 +178,7 @@ You now have a working Python/Flask application connecting to SAP HANA.
 ---
 
 ## Next Steps
- - If you intend to deploy your application to Google App Engine, go to the [Google App Engine deployment tutorial](https://www.sap.com/developer/how-tos/2017/07/hxe-app-deploy-gcp.html)
- - If you intend to deploy your application to Azure App Service, go to the [Azure App Service deployment tutorial](https://www.sap.com/developer/how-tos/2017/07/hxe-app-deploy-azure.html)
- - If you intend to deploy your application to AWS Elastic Beanstalk, go to the [AWS Elastic Beanstalk deployment tutorial](https://www.sap.com/developer/how-tos/2017/07/hxe-app-deploy-aws.html)
+ - If you intend to deploy your application to Google App Engine, go to the [Google App Engine deployment tutorial](https://www.sap.com/developer/tutorials/hxe-app-deploy-gcp.html)
+ - If you intend to deploy your application to Azure App Service, go to the [Azure App Service deployment tutorial](https://www.sap.com/developer/tutorials/hxe-app-deploy-azure.html)
+ - If you intend to deploy your application to AWS Elastic Beanstalk, go to the [AWS Elastic Beanstalk deployment tutorial](https://www.sap.com/developer/tutorials/hxe-app-deploy-aws.html)
  - [View similar How-Tos](http://www.sap.com/developer/tutorials.html) or [View all How-Tos](http://www.sap.com/developer/tutorials.html)

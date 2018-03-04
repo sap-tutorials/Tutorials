@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>odata, topic>cloud, products>sap-hana, product
  - **Proficiency:** Beginner
  - Your have a working setup of HANA Studio installed
  - You have a Google Account and/or have registered for the free trial on `cloud.google.com`
- - **Tutorials:**  [Setup HANA Studio](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html), [Create a new project using the Cloud Platform Console](https://cloud.google.com/resource-manager/docs/creating-managing-projects) and [SAP HANA, express edition, in Google Cloud Platform Launcher](https://www.sap.com/developer/tutorials/hxe-gcp-getting-started-launcher.html)
+ - **Tutorials:**  [Setup HANA Studio](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html), [Create a new project using the Cloud Platform Console](https://cloud.google.com/resource-manager/docs/creating-managing-projects) and [SAP HANA, express edition, in Google Cloud Platform Launcher](https://www.sap.com/developer/tutorials/hxe-gcp-getting-started-launcher.html)
 
 
 ## Next Steps

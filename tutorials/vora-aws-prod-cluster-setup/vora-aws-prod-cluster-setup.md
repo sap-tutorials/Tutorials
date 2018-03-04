@@ -11,19 +11,19 @@ tags: [  tutorial>how-to, tutorial>beginner, products>sap-vora ]
 
 ## Next Steps
 
- - View other [SAP Vora How-Tos](https://www.sap.com/developer/tutorial-navigator.how-to.html?tag=products:data-management/sap-hana-vora) or visit the [SAP Vora Developer](https://www.sap.com/developer/topics/vora.html) Page.
+ - View other [SAP Vora How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=products:data-management/sap-vora) or visit the [SAP Vora Developer](https://www.sap.com/developer/topics/vora.html) Page.
 
 
 ## How-To Details
 This How-to is a step-by-step guide to setting up and administering an SAP Vora 1.3 Cluster. Prior to staring this procedure please ensure the following are complete or available:
 
-- An SAP Vora instance running with 2/2 status checks passed in AWS console. 
-- The Manager instance is running under a VPC created following steps from [Create a VPC in AWS for SAP Vora AWS Marketplace Production Edition](https://www.sap.com/developer/how-tos/2017/03/vora-aws-prod-create-vpc.html)
-- The required ports are open. Refer to [Create a Security Group in AWS for SAP Vora AWS Marketplace Production Edition](https://www.sap.com/developer/how-tos/2017/03/vora-aws-prod-security-groups.html)
+- An SAP Vora instance running with 2/2 status checks passed in AWS console.
+- The Manager instance is running under a VPC created following steps from [Create a VPC in AWS for SAP Vora AWS Marketplace Production Edition](https://www.sap.com/developer/tutorials/vora-aws-prod-create-vpc.html)
+- The required ports are open. Refer to [Create a Security Group in AWS for SAP Vora AWS Marketplace Production Edition](https://www.sap.com/developer/tutorials/vora-aws-prod-security-groups.html)
 - AWS Access key and secret key
 - Google Chrome (version 24 or higher)
 
-For additional information please refer the [FAQ's](https://www.sap.com/developer/how-tos/2017/03/vora-aws-prod-faq.html)
+For additional information please refer the [FAQ's](https://www.sap.com/developer/tutorials/vora-aws-prod-faq.html)
 
 ### Time to Complete
 **20 Min**.
@@ -299,5 +299,4 @@ For SAP Vora console software updates, click **RESTART TO UPDATE NOW**. The upda
 
 ## Next Steps
 
- - View other [SAP Vora How-Tos](https://www.sap.com/developer/tutorial-navigator.how-to.html?tag=products:data-management/sap-hana-vora) or visit the [SAP Vora Developer](https://www.sap.com/developer/topics/vora.html) Page.
- 
+ - View other [SAP Vora tutorials](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=products:data-management/sap-vora) or visit the [SAP Vora Developer](https://www.sap.com/developer/topics/vora.html) Page.

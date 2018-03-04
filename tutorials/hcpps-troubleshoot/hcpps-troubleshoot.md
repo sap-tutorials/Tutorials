@@ -13,9 +13,6 @@ This troubleshooting is applicable for the following tutorial groups:
   - [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
   - [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
-## Next Steps
- - [View all How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=tutorial:type/how-to)
-
 
 ## How-To Details
 The intent of this trouble shooting guide is to highlight few of the most common issues encountered while starting using the SAP Predictive services.
@@ -479,6 +476,3 @@ Alternatively, to avoid this issue you can limit the number of pooled connection
 Make sure you check all these common issues.
 
 Executing this diagnostic will be helpful if you create a support case or submit a question on the [SAP Cloud Platform Predictive Service](https://answers.sap.com/tags/73555000100800000130) community page.
-
-## Next Steps
- - [View all How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=tutorial:type/how-to)

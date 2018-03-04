@@ -10,11 +10,11 @@ tags: [  tutorial>how-to, tutorial>beginner, products>sap-vora ]
    1. Amazon Web Services account. Create AWS account or use existing account.
    2. SSH key pair. Refer to the [Amazon documentation](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html). Store the `pem` file in safe location. For windows generate a `.ppk` file using `putty-gen`.
    3. AWS credentials. Create active Access and Secret Key and store CSV  in a safe location to be used later. Refer to the [Amazon documentation](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
-   4. VPC setup. Refer to [Create a VPC in AWS for SAP Vora Developer Edition in AWS](http://www.sap.com/developer/how-tos/2017/02/vora-aws-create-vpc.html)
-   5. AWS Security Group for Vora Cluster. Refer to [Set up Security Groups in AWS VPC for SAP Vora](http://www.sap.com/developer/how-tos/2017/02/vora-aws-security-groups.html) for the steps.
+   4. VPC setup. Refer to [Create a VPC in AWS for SAP Vora Developer Edition in AWS](http://www.sap.com/developer/tutorials/vora-aws-create-vpc.html)
+   5. AWS Security Group for Vora Cluster. Refer to [Set up Security Groups in AWS VPC for SAP Vora](http://www.sap.com/developer/tutorials/vora-aws-security-groups.html) for the steps.
 
 ## Next Steps
- - [ SAP Vora Cluster Setup and Administration on AWS] (http://www.sap.com/developer/how-tos/2017/02/vora-aws-cluster-setup.html)
+ - [ SAP Vora Cluster Setup and Administration on AWS] (http://www.sap.com/developer/tutorials/vora-aws-cluster-setup.html)
 
 ## How-To Details
 This How-to is a step-by-step guide for launching SAP Vora Developer Edition in AWS on Vora 1.3.
@@ -129,4 +129,4 @@ Now the SAP Vora instance is ready for cluster configuration and management.
 
 
 ## Next Steps
- - [ SAP Vora Cluster Setup and Administration on AWS] (http://www.sap.com/developer/how-tos/2017/02/vora-aws-cluster-setup.html)
+ - [ SAP Vora Cluster Setup and Administration on AWS] (http://www.sap.com/developer/tutorials/vora-aws-cluster-setup.html)

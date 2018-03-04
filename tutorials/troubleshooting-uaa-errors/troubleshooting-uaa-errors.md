@@ -90,7 +90,7 @@ This means we need to make sure communications into those ports are free of bloc
 <ol type="a">
 <li>  Make sure the instance has the proper ports enabled. In CAL, the configuration would look like this for this scenario from `Access points` section in the Virtual Machines tab:<br />
 
-<img src="https://raw.githubusercontent.com/SAPDocuments/How-Tos/master/tutorials/2017/01/troubleshooting-uaa-errors/3.png" alt="image 1"/>  <br /> </li>
+<img src="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/troubleshooting-uaa-errors/3.png" alt="image 1"/>  <br /> </li>
 
   <li> If you are running behind a local or corporate firewall, VPN and/or proxy, make sure traffic is coming in and out.
 

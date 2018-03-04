@@ -5,9 +5,6 @@ primary_tag: products>sap-vora
 tags: [ tutorial>how-to, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition, products>sap-vora ]
 ---
 
-## Next Steps
- - [View all How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=tutorial:type/how-to)
-
 
 ## How-To Details
 Provides instruction on how to install and configure SAP HANA, express edition, SAP Vora and the SAP HANA Spark Controller so they could connect to each other.
@@ -90,7 +87,7 @@ Again, we will need to adjust a few steps to setup the environment for our scena
 
 The following tutorial will guide you with the download & installation instructions:
 
-  - [How to setup the SAP Vora developer edition virtual machine](https://www.sap.com/developer/how-tos/2017/02/vora-ova-install.html)
+  - [How to setup the SAP Vora developer edition virtual machine](https://www.sap.com/developer/tutorials/vora-ova-install.html)
 
 In step 4, instead of selecting the "Host-only" option, you should choose "NAT".
 
@@ -345,7 +342,7 @@ You should now be able to ping the SAP HANA machine using this new  host name fr
 
 [ACCORDION-BEGIN [Step 8: ](Verify your SAP HANA installation)]
 
-In the [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html) tutorial, you will find instructions regarding how to install and configure the HANA Eclipse plugin, so you will be able to connect to you HANA system.
+In the [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) tutorial, you will find instructions regarding how to install and configure the HANA Eclipse plugin, so you will be able to connect to you HANA system.
 
 
 [ACCORDION-END]
@@ -492,6 +489,3 @@ OPTIONS (
 
 
 [ACCORDION-END]
-
-## Next Steps
- - [View all How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=tutorial:type/how-to)

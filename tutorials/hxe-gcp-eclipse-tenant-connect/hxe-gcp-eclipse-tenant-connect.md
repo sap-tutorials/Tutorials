@@ -6,10 +6,7 @@ tags: [  tutorial>how-to, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - [Create a HANA Express instance using the Google Cloud Launcher](https://www.sap.com/developer/tutorials/hxe-gcp-getting-started-launcher.html)
- - [Download and install Eclipse](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html)
-
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
+ - [Download and install Eclipse](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
 
 
 ## How-To Details
@@ -56,7 +53,3 @@ You can now proceed to connect to your tenant DB as a **New System**:
 
 
 [ACCORDION-END]
-
-
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)

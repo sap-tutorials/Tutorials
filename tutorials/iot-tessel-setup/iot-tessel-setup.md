@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana, product
  - None
 
 ## Next Steps
- - [Setup Your Tessel](http://www.sap.com/developer/how-tos/2016/09/iot-tessel.html)
+ - [Setup Your Tessel](http://www.sap.com/developer/tutorials/iot-tessel.html)
 
 
 ## How-To Details
@@ -32,4 +32,4 @@ Here you will prepare your development environment on a laptop to work with a Te
 1. Sign up for your free developer edition of [SAP HANA in the cloud via AWS or Azure](http://developers.sap.com/hana)
 
 ## Next Steps
- - [Setup Your Tessel](http://www.sap.com/developer/how-tos/2016/09/iot-tessel.html)
+ - [Setup Your Tessel](http://www.sap.com/developer/tutorials/iot-tessel.html)

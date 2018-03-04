@@ -5,10 +5,10 @@ primary_tag: products>sap-vora
 tags: [  tutorial>how-to, tutorial>beginner, products>sap-vora ]
 ---
 ## Prerequisites  
- - [Create a VPC in AWS for SAP Vora Developer Edition in AWS](http://www.sap.com/developer/how-tos/2017/02/vora-aws-create-vpc.html)
+ - [Create a VPC in AWS for SAP Vora Developer Edition in AWS](http://www.sap.com/developer/tutorials/vora-aws-create-vpc.html)
 
 ## Next Steps
- - [Launch SAP Vora on Amazon Web Services](http://www.sap.com/developer/how-tos/2017/02/vora-launch-aws.html)
+ - [Launch SAP Vora on Amazon Web Services](http://www.sap.com/developer/tutorials/vora-launch-aws.html)
 
 
 ## How-To Details
@@ -60,4 +60,4 @@ As long as clusters are created in the same VPC, the same security group can be 
 
 
 ## Next Steps
-- [Launch SAP Vora on Amazon Web Services](http://www.sap.com/developer/how-tos/2017/02/vora-launch-aws.html)
+- [Launch SAP Vora on Amazon Web Services](http://www.sap.com/developer/tutorials/vora-launch-aws.html)

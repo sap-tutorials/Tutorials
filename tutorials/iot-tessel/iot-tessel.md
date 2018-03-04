@@ -5,7 +5,7 @@ primary_tag: topic>internet-of-things
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana, products>sap-cloud-platform, tutorial>how-to ]
 ---
 ## Prerequisites  
-- **How-To:** [Internet of Things (IoT) Setup up your Environment](http://www.sap.com/developer/how-tos/2016/09/iot-tessel-setup.html)
+- **How-To:** [Internet of Things (IoT) Setup up your Environment](http://www.sap.com/developer/tutorials/iot-tessel-setup.html)
 
 ## Next Steps
 - [Internet of Things (IoT) Explore the SAP Cloud Platform IoT Services](http://www.sap.com/developer/tutorials/iot-part6-hcp-services.html)
