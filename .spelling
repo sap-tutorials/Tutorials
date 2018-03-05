@@ -10,6 +10,8 @@ Ansible
 AppSpace
 Apriori
 Arduino
+ARMv6
+ARMv7
 Auth
 AWS
 backend
@@ -41,6 +43,7 @@ destructure
 destructuring
 destructured
 DevOps
+Django
 dropdown
 DTP
 DTPs
@@ -64,6 +67,7 @@ HCPms
 Heilman
 HelpDesk
 hoc
+Hortonworks
 hostname
 How-Tos
 Hybris
@@ -144,6 +148,7 @@ proxied
 pulldown
 PuTTY
 rac-support
+Raspbian
 Restangular
 ReviewNinja
 Rudnicki
@@ -163,6 +168,7 @@ Shapefile
 Shapefiles
 SQLScript
 SKUs
+SQLAlchemy
 SRS
 ssh
 stylesheet
@@ -177,6 +183,7 @@ subselect
 supertype
 supertypes
 SuccessFactors
+SuSE
 Sybase
 TechEd
 Tessel
@@ -197,6 +204,7 @@ uncurried
 unpartitioned
 UTC
 util
+VirtualBox
 virtualization
 VMware
 Vora
@@ -208,7 +216,9 @@ Witalij
 Worklist
 Wroblewski
 XML
+XSEngine
 YaaS
+YaST
 YouTube
 Zypper
 _1

@@ -1,7 +1,7 @@
 ---
 title: Intel&reg; NUC and SAP HANA, express edition
 description: Select the best Intel Nuc for use with SAP HANA, express edition
-primary_tag: products>sap-hana\,-express-edition 
+primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition  ]
 ---
 
@@ -14,7 +14,7 @@ The Intel&reg; NUC is a small form factor PC that packs an amazing amount of pow
 
 ![Intel Nuc](nuc.png)
 
-This guide will help you decide on the [best possible system](http://www.intel.com/content/www/us/en/nuc/nuc-comparison.html) for your desired SAP HANA, express edition [flavor](http://www.sap.com/developer/how-tos/2016/09/hxe-ua-version.html).
+This guide will help you decide on the [best possible system](http://www.intel.com/content/www/us/en/nuc/nuc-comparison.html) for your desired SAP HANA, express edition [flavor](http://www.sap.com/developer/tutorials/hxe-ua-version.html).
 
 > Graphic from Intel&reg;
 

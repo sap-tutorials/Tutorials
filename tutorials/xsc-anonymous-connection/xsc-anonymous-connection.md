@@ -7,9 +7,6 @@ tags: [  tutorial>beginner, topic>security, products>sap-hana, products>sap-hana
 ## Prerequisites  
  - **Systems used:** SAP HAHA, SAP HANA express edition, SAP Cloud Platform MDC instance
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
-
 
 ## How-To Details
 The following how to guide will show you how to enable an anonymous connection to your XSC application. In many cases you will of course not want anonymous access however there may be a case where it would be prudent or even required.

@@ -21,7 +21,7 @@ For more details about the Python driver SAP HANA, please refer to the [online d
 
 [ACCORDION-BEGIN [Step 1: ](Install the SAP HANA client)]
 
-Follow the instructions from the following [How to](https://www.sap.com/developer/how-tos/2016/12/hxe-ua-howto-installing-clients.html) to complete your SAP HANA client installation.
+Follow the instructions from the following [How to](https://www.sap.com/developer/tutorials/hxe-ua-howto-installing-clients.html) to complete your SAP HANA client installation.
 
 [ACCORDION-END]
 

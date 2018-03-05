@@ -8,7 +8,7 @@ tags: [products>sap-hana, topic>big-data, topic>internet-of-things, tutorial>beg
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Internet of Things (IoT) Setup the Tessel](https://www.sap.com/developer/how-tos/2016/09/iot-tessel.html)
+- **Tutorials:** [Internet of Things (IoT) Setup the Tessel](https://www.sap.com/developer/tutorials/iot-tessel.html)
 
 
 ## Next Steps

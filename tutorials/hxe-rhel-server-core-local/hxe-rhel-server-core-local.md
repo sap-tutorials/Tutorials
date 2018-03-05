@@ -10,7 +10,7 @@ In this tutorial, you will install the dependencies needed and configure your Re
 
 Then you will learn how to download the binary installer archives of SAP HANA 2.0, express edition, decompress and install it on your server, including some additional packages for your SAP HANA 2.0, express edition installation.
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/tutorials/hxe-ua-troubleshooting.html).
 
 > ### **Note:**
 >**This tutorial was build and tested using SAP HANA, express edition 2.0 SPS02 revision 21 and Red Hat Enterprise Linux 7.2 for `x86-64` as VMware Virtual Machine**.
@@ -225,7 +225,8 @@ sudo yum -y install xulrunner \
 
 The command uses the `-y` which will assume that all question like using more space will be answered as yes.
 
-As the output may be long and not easy visualize, you can run the command again, you should be able to spot easily packages that can't install as properly installed ones won't get reinstalled.
+As the output may be long and not easy to visualize, you can run the command again.
+You should be able to easily spot packages that can't install properly.
 
 ---
 
@@ -399,8 +400,8 @@ To configure the firewall, you can use the `firewall-config` tool. In this case,
 To avoid problems with the firewall during installation, it can be beneficial to disable it completely during the installation process with the following commands:
 
 ```bash
-sudo systemctl stop firewalld
-sudo systemctl disable firewall
+sudo systemctl stop firewalld.service
+sudo systemctl disable firewalld.service
 ```
 
 You can check the best practice section about firewall configuration once you complete the installation to properly configure your system.
@@ -855,8 +856,8 @@ When the prompt returns, the system is started.
 
 You can check the following links to verify some of the connectivity options available for the ***SAP HANA HDB Client***:
 
- - <a href="https://www.sap.com/developer/how-tos/2016/08/hxe-connect-hxe-using-jdbc.html" target="new">JDBC</a>
- - <a href="https://www.sap.com/developer/how-tos/2016/08/hxe-python-connection.html" target="new">Python</a>
+ - <a href="https://www.sap.com/developer/tutorials/hxe-connect-hxe-using-jdbc.html" target="new">JDBC</a>
+ - <a href="https://www.sap.com/developer/tutorials/hxe-python-connection.html" target="new">Python</a>
  - ODBC (content coming soon!)
  - SQLDBC (content coming soon!)
  - Node.js (content coming soon!)

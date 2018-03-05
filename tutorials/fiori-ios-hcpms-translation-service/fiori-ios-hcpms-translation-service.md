@@ -7,9 +7,6 @@ tags: [  tutorial>how-to, tutorial>intermediate, operating-system>ios, topic>mob
 ## Prerequisites  
 - [Introduction to iOS development resources and Xcode](https://www.sap.com/developer/tutorials/xcode-introduction.html)
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
-
 
 ## How-To Details
 In this tutorial you will learn how to separate your code from your texts, collect these text in string files and have them machine translated using the SAP Translation Hub
@@ -209,5 +206,3 @@ If you run the app by pressing the **Build and Run** button at the top left sect
 [ACCORDION-END]
 
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)

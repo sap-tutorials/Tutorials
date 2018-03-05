@@ -8,8 +8,6 @@ tags: [  tutorial>how-to, tutorial>advanced, operating-system>ios, topic>mobile,
  - **Proficiency:** Advanced
  - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
 
 
 ## How-To Details
