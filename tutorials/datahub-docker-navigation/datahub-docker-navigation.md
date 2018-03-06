@@ -24,10 +24,10 @@ During this tutorial, you will learn how to find your way around SAP Data Hub, d
 [ACCORDION-BEGIN [Step 1: ](Access UIs via a web browser)]
 To access the different user interfaces running inside the Docker container use the following URLs (as already explained during the previous tutorial):
 
-* `http://localhost:8090` (SAP Data Hub - Data Pipelines)
+* `http://localhost:8090` (SAP Data Hub Pipeline Modeler)
 * `http://localhost:9225` (SAP Vora Tools)
-* `http://localhost:9099` (Apache Zeppelin)
 * `http://localhost:50070` (Apache Hadoop User Interface)
+* `http://localhost:8998` (Livy)
 
 Where necessary enter **Username** and **Password** which you have set while building the Docker image.
 
