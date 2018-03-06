@@ -140,7 +140,7 @@ sudo yum -y install readline-devel \
 
 However, the `texinfo` package available in most repository does not provide all the tools required to compile R from the ground.
 
-For mode details about `texinfo`, you can visit: [https://www.gnu.org/software/texinfo/](`texinfo`).
+For mode details about `texinfo`, you can visit: [`https://www.gnu.org/software/texinfo/`](https://www.gnu.org/software/texinfo/).
 
 The `texinfo` required to compile is 5.1, but in this example we will be using a newer version.
 
