@@ -1,6 +1,6 @@
 ---
 title: Bundle data (via JavaScript)
-description: Bundle sensor data before storing it in HDFS
+description: Bundle sensor data before storing it in HDFS.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -26,11 +26,11 @@ Open the pipeline which you have created during the previous tutorials (`test.my
 
 Remove the connection between the **Kafka Consumer** operator and the **HDFS Producer** operator.
 
-Add a **`ToString Converter`** operator to the pipeline by drag & drop. Also add a **JavaScript Operator** to the pipeline by drag & drop.
+Add a **`ToString` Converter** operator to the pipeline by drag & drop. Also add a **JavaScript Operator** to the pipeline by drag & drop.
 
-Connect the **`message`** port of the **`Kafka Consumer`** operator to the **`ininterface`** port of the **`ToString Converter`** operator.
-Connect the **`outstring`** port of the **`ToString Converter`** operator to the **`input`** port of the **`JavaScript Operator`**.
-Connect the **`output`** port of the **`JavaScript Operator`** to the **`inFile`** port of the **`HDFS Producer`** operator.
+Connect the `message` port of the **Kafka Consumer** operator to the `ininterface` port of the **`ToString` Converter** operator.
+Connect the `outstring` port of the **`ToString` Converter** operator to the `input` port of the **JavaScript Operator**.
+Connect the `output` port of the **JavaScript Operator** to the `inFile` port of the **HDFS Producer** operator.
 
 ![picture_01](./datahub-pipelines-bundledata_01.png)  
 
@@ -41,9 +41,9 @@ Press the **Script** button to display the JavaScript snippet which is executed 
 
 ![picture_02](./datahub-pipelines-bundledata_02.png)  
 
-Currently the JavaScript snippet creates an incremental **counter** every time it receives data via the **input** port and sends the **counter** to the **output** port.
+Currently the JavaScript snippet creates an incremental **counter** every time it receives data via the `input` port and sends the **counter** to the `output` port.
 
-Replace the code with the following snippet to ensure that "bundles" of 30 sensor records are sent to the **output** port.
+Replace the code with the following snippet to ensure that "bundles" of 30 sensor records are sent to the `output` port.
 
 ```javascript
 var counter = 0;
