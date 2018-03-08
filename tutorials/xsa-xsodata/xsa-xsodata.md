@@ -80,8 +80,18 @@ You can see the field descriptions for all the attributes of the OData service.
 
 [ACCORDION-BEGIN [Step 5: ](View data)]
 
-In order to view the data of the entity, you would append `BP` to the end of the URL:For Example:`/xodata/businessPartners.xsodata/BP?$format=json`You are now able to see the data from the `businessPartner` table.  ![Business Partner data](6.png)
-[ACCORDION-END][ACCORDION-BEGIN [Step 6: ](Try other parameters)]You can also experiment with standard OData URL parameters like $top, $skip, or $filter.  These options are interpreted and handled by the OData service of the `XSEngine` for you.  You get complex service handling without any coding. For example the following URL would return only three business partner records and would skip the first five records.  Such parameters are helpful when implementing server side scrolling, filtering, or sorting in table UI elements.For Example:`/xsodata/businessPartners.xsodata/BusinessPartners?$top=3&$skip=5&$format=json`
+In order to view the data of the entity, you would append `BP` to the end of the URL:
+
+For Example:`/xsodata/businessPartners.xsodata/BP?$format=json`You are now able to see the data from the `businessPartner` table.  ![Business Partner data](6.png)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Try other parameters)]
+
+You can also experiment with standard OData URL parameters like $top, $skip, or $filter.  These options are interpreted and handled by the OData service of the `XSEngine` for you.  You get complex service handling without any coding. For example the following URL would return only three business partner records and would skip the first five records.  Such parameters are helpful when implementing server side scrolling, filtering, or sorting in table UI elements.
+
+For Example:`/xsodata/businessPartners.xsodata/BP?$top=3&$skip=5&$format=json`
+
 ![output](7.png)
 
 
