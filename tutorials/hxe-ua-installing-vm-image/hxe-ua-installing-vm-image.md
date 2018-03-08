@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Select the correct SAP HANA 2.0, express edition version](https://www.sap.com/developer/tutorials/hxe-ua-version.html)
+ - **Tutorials:**
 
 **Tip:** This tutorial is available as a [video](https://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
 
