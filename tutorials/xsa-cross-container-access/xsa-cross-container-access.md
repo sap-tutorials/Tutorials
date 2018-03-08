@@ -1,6 +1,6 @@
 ---
 title: SAP HANA XS Advanced - Cross-container access
-description: Access objects in another HDI container
+description: Access objects in another HDI container.
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate,, products>sap-web-ide  ]
@@ -8,12 +8,12 @@ tags: [  tutorial>intermediate,, products>sap-web-ide  ]
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - [Create a Multi-target application](https://www.sap.com/developer/tutorials/xsa-connecting-webide.html)
+ - [Create a multi-target application](https://www.sap.com/developer/tutorials/xsa-connecting-webide.html)
  - [Create a database module](https://www.sap.com/developer/tutorials/xsa-hdi-module.html)
 
 ## Details
 ### You will learn  
-You will learn how to setup the roles, synonyms and deployment configuration to access objects in a HANA Deployment Infrastructure (HDI) container from another HDI container.
+You will learn how to set up the roles, synonyms and deployment configuration to access objects in a HANA Deployment Infrastructure (HDI) container from another HDI container.
 
 
 ### Time to Complete
@@ -31,7 +31,7 @@ Find out the name of the target container using command `xs s` from the command 
 
 ![Check service name](service.png)
 
->Note: The CLI client can be executed from a HANA express command line as user `hxeadm` or downloaded to your computer using the download manager available after you [register to download SAP HANA, express edition](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html)
+>The CLI client can be executed from a HANA express command line as user `hxeadm` or downloaded to your computer using the download manager available after you [register to download SAP HANA, express edition](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html)
 
 Open the `mta.yaml` file in your consuming application and go to the **Resources** tab. Create a new resource of type `org.cloudfoundry.existing-service`.
 
@@ -43,11 +43,11 @@ Add a property with key `consumed-service-name` and value `${service-name}`
 
 ![Check service name](resource2.png)
 
-**Save** the `mta.yaml` file.  Open the consuming `hdi-container` resource definition and take note of the name of the variable that has the service name assigned to its value:
+Save the `mta.yaml` file.  Open the consuming `hdi-container` resource definition and take note of the name of the variable that has the service name assigned to its value:
 
 ![Check resource name](module0.png)
 
-Select the **consuming database module**  and add a property with key `TARGET_CONTAINER` and refer to the variable set with the name of the consuming `hdi-container`:
+Select the consuming database module  and add a property with key `TARGET_CONTAINER` and refer to the variable set with the name of the consuming `hdi-container`:
 
 ![Add resource](module.png)
 
@@ -101,7 +101,7 @@ In the SHINE application, the available roles are `admin.hdbrole` and `core-db`.
 ![Target container role](target.png)
 
 
->Note: The `#` (pound) sign at the end of the name of a role means it contains privileges with grant option and will be assigned to the schema owner technical user.
+>The `#` (pound) sign at the end of the name of a role means it contains privileges with grant option and will be assigned to the schema owner technical user.
 
 [ACCORDION-END]
 
@@ -130,8 +130,8 @@ Here is a sample file to grant permissions to both an administration and applica
 
 ```
 
->## Note: Further restrictions and different roles between the owner and application user should be applied in productive applications.
-> See the current documentation about [creating design-time roles](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.02/en-US/625d7733c30b4666b4a522d7fa68a550.html) or about the [`.hdbgrants` file](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.02/en-US/f49c1f5c72ee453788bf79f113d83bf9.html)
+>## Further restrictions and different roles between the owner and application user should be applied in productive applications.
+> See the current documentation about [creating design-time roles](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.02/en-US/625d7733c30b4666b4a522d7fa68a550.html) or about [`.hdbgrants`](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.02/en-US/f49c1f5c72ee453788bf79f113d83bf9.html)
 
 [ACCORDION-END]
 
@@ -145,7 +145,7 @@ For example:
 
 ![Check synonyms](synon.png)
 
-**Build** the consuming database module.
+Build the consuming database module.
 
 > ### **Check the optional synonym configuration files**
 > You can move the configuration to a `.hdbsynonymconfig` file. This will allow you to reference the target schema dynamically, without indicating the name explicitly, among other options. Check the [documentation for your version on the Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.02/en-US/4adba34bd86544a880db8f9f1e32efb7.html).
@@ -173,7 +173,7 @@ define view PO_QA
 
 ```
 
-**Save and build** the artifacts.
+Save and build the artifacts.
 
 You can see the results in the database explorer
 
