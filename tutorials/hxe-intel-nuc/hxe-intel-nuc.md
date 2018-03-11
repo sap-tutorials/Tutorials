@@ -14,7 +14,7 @@ The Intel&reg; NUC is a small form factor PC that packs an amazing amount of pow
 
 ![Intel Nuc](nuc.png)
 
-This guide will help you decide on the [best possible system](http://www.intel.com/content/www/us/en/nuc/nuc-comparison.html) for your desired SAP HANA, express edition [flavor](http://www.sap.com/developer/tutorials/hxe-ua-version.html).
+This guide will help you decide on the [best possible system](http://www.intel.com/content/www/us/en/nuc/nuc-comparison.html) for your desired SAP HANA, express edition.
 
 > Graphic from Intel&reg;
 
