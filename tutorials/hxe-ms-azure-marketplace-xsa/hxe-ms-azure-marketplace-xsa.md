@@ -186,8 +186,6 @@ You can test you have successfully modified your configuration by entering the f
 
 >If you get a privacy error, continue browsing. The error is related to using a self-signed certificate.
 
-![See XSA](xsa_up.png)
-
 You an use the link to the Web IDE (`https://hxehost:53075/`) to open it
 
 >Note: If you get a **503 error - service unavailable**, the service is probably still starting. Try again in a couple of minutes.
