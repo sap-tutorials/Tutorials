@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, topic>abap-development ]
  - **Tutorials:**
 [Create an ABAP class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)
 
-## Next Steps: Optional
+## Next Steps: Recommended
  - [Create `ABAPDoc` comments in your class](https://www.sap.com/developer/tutorials/abap-dev-create-abapdoc.html)
 
 ## Details
@@ -28,8 +28,12 @@ Go back to your ABAP Dictionary structure `zso_invoice_item` and change the type
 
 ![Image depicting step24-change-field-type](step24-change-field-type.png)
 
-Since the data element `zso_invoice_payment_status` does not exist, you get a syntax error, which you will fix using a quick fix:
+Since the data element `zso_invoice_payment_status` does not exist, you get a syntax error, which you will fix using a quick fix below.
 
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Create a data element from scratch)]
+Note: If you are not following this whole tutorial series, but simply want to create a data element
 
 [ACCORDION-END]
 
