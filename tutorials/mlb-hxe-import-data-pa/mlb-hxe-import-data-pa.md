@@ -70,7 +70,7 @@ The SAP Predictive Analytics Datasets are available as part of the [online docum
 Open the [online documentation](https://help.sap.com/viewer/p/SAP_PREDICTIVE_ANALYTICS) page in a browser and click on the **View All** for the **Sample** section.
 
 This will display the list of sample dataset available.
-![info doc](01-0)
+![info doc](01-0.png)
 
 [ACCORDION-END]
 
