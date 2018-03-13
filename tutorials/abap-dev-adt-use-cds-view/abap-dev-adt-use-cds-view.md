@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, topic>abap-development ]
  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
-### You will learn 
+### You will learn  
 In this tutorial, you will learn how to consume the CDS view in the SAP List Viewer with Integrated Data Access (ALV with IDA). ALV with IDA lets you display views and tables that contain very large quantities of data.
 Optional: You can also improve the appearance of your SAP List Viewer by adding a CAST statement to the CDS view.
 
