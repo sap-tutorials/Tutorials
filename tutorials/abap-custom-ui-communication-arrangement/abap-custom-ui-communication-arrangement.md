@@ -10,9 +10,9 @@ The assignment of the business catalog **`SAP_CORE_BC_COM`** to your user and **
 
 ## Details
 ### You will learn
-- How to create communication arrangements for SAP Web IDE scenario `SAP_COM_0013`
-- How to create HTTP destinations
-- How to create UI projects
+- How to create a communication arrangement for SAP Web IDE scenario `SAP_COM_0013`
+- How to create a HTTP destination
+- How to create a UI project
 
 You will learn how to enable SAP Cloud Platform development with SAP Web IDE against a specific S/4HANA system via OAuth authentication. You will see that communication arrangement for SAP Web IDE scenario `SAP_COM_0013` in S/4HANA will expose essential services, that SAP Web IDE needs. SAP Cloud Platform subaccount will get a destination which holds data for the connection and OAuth communication with the S/4HANA system. At the end you will see in SAP Web IDE a list of services that you can theoretically build extensions on.
 
@@ -58,7 +58,7 @@ Now following should be listed:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create HTTP destination)]
-Enter your SAP Cloud Platform account as an administrator. Switch to **Destinations** and click **New Destination**.
+Enter the SAP Cloud Platform account as an administrator. Switch to **Destinations** and click **New Destination**.
 
 ![Create HTTP destination](destination.png)
 
@@ -70,10 +70,10 @@ Enter following **data** to your destination:
 
 | ---------------------------- | ------------------------------------------------- |
 |          **Name**            |            Name of your destination               |
-|          **Type**            |                      HTTP                         |
+|          **Type**            |                    `HTTP`                         |
 |      **Description**         |            Description of your destination        |
 |           **URL**            |  URL of your S/4HANA Cloud System (with `-api`)   |
-|       **Proxy Type**         |                    Internet                       |
+|       **Proxy Type**         |                  `Internet`                       |
 |     **Authentication**       |            `OAuth2SAMLBearerAssertion`            |
 |        **Audience**          | URL of your S/4HANA Cloud System (without `-api`) |
 |       **Client Key**         |          Equals your communication user           |

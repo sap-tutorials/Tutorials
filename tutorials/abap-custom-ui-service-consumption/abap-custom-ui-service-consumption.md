@@ -79,7 +79,7 @@ Choose the **List Report Application** to create a new UI.
 Enter **`Bonusplan`** as project name and title.
 
 ![Enter basic information](bonusplan.png)
-
+ 
 Click **Next**.
 
 [ACCORDION-END]
