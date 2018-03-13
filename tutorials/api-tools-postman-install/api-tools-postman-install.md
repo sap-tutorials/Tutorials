@@ -8,7 +8,7 @@ tags: [  tutorial>how-to, tutorial>beginner, topic>cloud, products>sap-api-manag
   - **Proficiency:** Beginner
 
 ## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
+ - [View all How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=tutorial:type/how-to)
 
 
 ## How-To Details
@@ -70,5 +70,3 @@ you are now all set to move to your next tutorial.
 [ACCORDION-END]
 
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)

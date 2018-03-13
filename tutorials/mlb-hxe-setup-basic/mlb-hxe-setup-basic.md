@@ -2,12 +2,15 @@
 title: Prepare your SAP HANA, express edition instance for Machine Learning
 description: Check that your instance is properly configured and meets the minimum requirements to execute built-in Machine Learning algorithms .
 primary_tag: products>sap-hana\, express-edition
-tags: [  tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
 ---
+
 ## Prerequisites  
 - Proficiency: beginner
+- [Select and Install a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
 
 ### You will learn
+
 In this tutorial, you will enable your SAP HANA, express edition instance to use the Machine Learning libraries available and verify that your system meets the minimum requirements.
 
 ## Details
@@ -19,12 +22,7 @@ In this tutorial, you will enable your SAP HANA, express edition instance to use
 
 In order to interact with your SAP HANA, express edition instance, you will be running a series of SQL statement.
 
-As a number of options are available to dos, you can refer to the following tutorials for detailed instructions regarding the installation and configuration of SQL query tool like the SAP HANA Tools for Eclipse and alternate options:
-
- - [SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-eclipse.html)
- - [SAP HANA HDBSQL tool](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-hdbsql.html)
- - [JDBC based querying tools](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-jdbc.html)
- - [ODBC based querying tools](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-odbc.html)
+As a number of options are available, you can check the following link: [Install a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
 
 [ACCORDION-END]
 
@@ -124,12 +122,13 @@ Connect to the **HXE** tenant using the **SYSTEM** user credentials and execute 
 
 CREATE USER ML_USER PASSWORD Welcome18Welcome18;
 
--- Uncomment this if you don't want to be forced to update your password on the first connection.
--- ALTER USER ML_USER DISABLE PASSWORD LIFETIME;
+-- Use this if you don't want to be forced to update your password on the first connection.
+-- CREATE USER ML_USER PASSWORD Welcome18Welcome18 NO FORCE_FIRST_PASSWORD_CHANGE;
 
 GRANT AFLPM_CREATOR_ERASER_EXECUTE TO ML_USER;
 GRANT AFL__SYS_AFL_AFLPAL_EXECUTE TO ML_USER;
 GRANT DATA ADMIN TO ML_USER;
+GRANT IMPORT TO ML_USER;
 ```
 
 Connect to the **HXE** tenant using the **`ML_USER`** user credentials (default password is ***`Welcome18Welcome18`*** )
@@ -140,6 +139,21 @@ Connect to the **HXE** tenant using the **`ML_USER`** user credentials (default 
 
 ```sql
 SELECT * FROM SYS.PROCEDURES WHERE SCHEMA_NAME = '_SYS_AFL';
+```
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Create a dedicated schema)]
+
+In order to perform your Machine Learning activities, it is recommended to create a dedicated schema that will host your data sets on your SAP HANA, express edition instance.
+
+Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement:
+
+```sql
+-- Uncomment this if you want to start from scratch
+-- DROP SCHEMA ML_DATA CASCADE;
+
+CREATE SCHEMA ML_DATA;
 ```
 
 [ACCORDION-END]

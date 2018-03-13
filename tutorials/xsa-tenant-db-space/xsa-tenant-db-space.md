@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have created a tenant database as explained on [this guide](https://www.sap.com/developer/how-tos/2017/03/hxe-ua-dbfundamentals-tenantdb.html)
+ - You have created a tenant database as explained on [this guide](https://www.sap.com/developer/tutorials/hxe-ua-dbfundamentals-tenantdb.html)
  - You have a space to assign the tenant database to or created one as explained on [this tutorial](https://www.sap.com/developer/tutorials/xsa-setup-new-space.html)
  - You have the proper administration rights
 

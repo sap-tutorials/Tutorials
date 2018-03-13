@@ -1,12 +1,9 @@
 ---
-title: How to setup SAP HANA, express edition and SAP Vora, developer edition to enable them to connect to each other
+title: Setup  and connect SAP HANA, express edition and SAP Vora, developer edition
 description: How to configure SAP HANA, express edition and SAP Vora, developer edition to work together with the SAP HANA Spark Controller
 primary_tag: products>sap-vora
-tags: [  tutorial>how-to, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition, products>sap-vora ]
+tags: [ tutorial>how-to, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition, products>sap-vora ]
 ---
-
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
 
 
 ## How-To Details
@@ -90,7 +87,7 @@ Again, we will need to adjust a few steps to setup the environment for our scena
 
 The following tutorial will guide you with the download & installation instructions:
 
-  - [How to setup the SAP Vora developer edition virtual machine](https://www.sap.com/developer/how-tos/2017/02/vora-ova-install.html)
+  - [How to setup the SAP Vora developer edition virtual machine](https://www.sap.com/developer/tutorials/vora-ova-install.html)
 
 In step 4, instead of selecting the "Host-only" option, you should choose "NAT".
 
@@ -345,7 +342,7 @@ You should now be able to ping the SAP HANA machine using this new  host name fr
 
 [ACCORDION-BEGIN [Step 8: ](Verify your SAP HANA installation)]
 
-In the [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html) tutorial, you will find instructions regarding how to install and configure the HANA Eclipse plugin, so you will be able to connect to you HANA system.
+In the [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) tutorial, you will find instructions regarding how to install and configure the HANA Eclipse plugin, so you will be able to connect to you HANA system.
 
 
 [ACCORDION-END]
@@ -356,20 +353,20 @@ You can check the following link to verify that all your process are running:
 
 - Hadoop DFS Health page :
 
-    http://linux-6rxg.suse:50070/dfshealth.html#tab-overview
+    `http://linux-6rxg.suse:50070/dfshealth.html#tab-overview`
 
 - Hadoop Node and Resource manager endpoint
 
-    http://linux-6rxg.suse:8032/
-    http://linux-6rxg.suse:8040/
+    `http://linux-6rxg.suse:8032/`
+    `http://linux-6rxg.suse:8040/`
 
 - SAP Vora manager
 
-    http://linux-6rxg.suse:19000/vora-manager/web/
+    `http://linux-6rxg.suse:19000/vora-manager/web/`
 
 - SAP Vora tools
 
-    http://linux-6rxg.suse:9225/web/
+    `http://linux-6rxg.suse:9225/web/`
 
 You can also run the following command to validate that port up and running:
 
@@ -492,6 +489,3 @@ OPTIONS (
 
 
 [ACCORDION-END]
-
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)

@@ -13,9 +13,6 @@ This troubleshooting is applicable for the following tutorial groups:
   - [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
   - [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
-
 
 ## How-To Details
 The intent of this trouble shooting guide is to highlight few of the most common issues encountered while starting using the SAP Predictive services.
@@ -140,7 +137,7 @@ If the application cannot start and hangs on with a "Starting" status for a whil
 
 This one might be related to multiple causes and the best way to diagnose is to check the logs available under **Monitoring** > **Logging**.
 
-Check the latest "Default Traces" item using the ![icon](00-glasses.png) 
+Check the latest "Default Traces" item using the ![icon](00-glasses.png)
 
 You can also download the file locally using the ![icon](0-download.png) icon.
 
@@ -174,7 +171,7 @@ Check the application status.
 
 If the application is started, then the best way to diagnose the issue is to check the logs available under **Monitoring** > **Logging**.
 
-Check the latest "Default Traces" item using the ![icon](00-glasses.png) 
+Check the latest "Default Traces" item using the ![icon](00-glasses.png)
 
 You can also download the file locally using the ![icon](0-download.png) icon.
 
@@ -280,7 +277,7 @@ For example, in the "Dataset" call you will have to use the following URL:
 
 Which would give you something like this (where XXXXXXXXXXX is your account identifier:
 
-  - https://aac4paservicesXXXXXXXXXXXtrial.hanatrial.ondemand.com/com.sap.aa.c4pa.services/dataset/sync
+  - `https://aac4paservicesXXXXXXXXXXXtrial.hanatrial.ondemand.com/com.sap.aa.c4pa.services/dataset/sync`
 
 ----
 
@@ -479,6 +476,3 @@ Alternatively, to avoid this issue you can limit the number of pooled connection
 Make sure you check all these common issues.
 
 Executing this diagnostic will be helpful if you create a support case or submit a question on the [SAP Cloud Platform Predictive Service](https://answers.sap.com/tags/73555000100800000130) community page.
-
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)

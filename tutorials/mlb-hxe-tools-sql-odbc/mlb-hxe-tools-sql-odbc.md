@@ -1,8 +1,8 @@
 ---
-title: Execute SQL on SAP HANA, express edition using an ODBC based querying tools
+title: Use an ODBC based querying tools for SAP HANA, express edition
 description: Provide details on the installation the SAP HANA client and instruction to connect a SAP HANA, express edition instance from almost any ODBC based querying tool.
 primary_tag: products>sap-hana\, express-edition
-tags: [  tutorial>intermediate, products>sap-hana\, express-edition ]
+tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
 ---
 ## Prerequisites  
 - Proficiency: intermediate
@@ -12,9 +12,11 @@ In this tutorial, you will install the SAP HANA client for SAP HANA, express edi
 
 Then, you will learn how to connect your SAP HANA, express edition instance using the Linux `isql` tool as a ODBC based querying tool.
 
-The Linux `isql` tool is included in the `unixODBC` package. Please refer to your system documentation for installation instructions.
+The Linux `isql` tool is included in the unixODBC package. Please refer to your system documentation for installation instructions.
 
-On Windows environments, there is no pre-installed tool available.
+On Windows environments, there is no pre-installed tool available out-of-the-box.
+
+For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
 
 ## Details
 
@@ -126,7 +128,7 @@ The driver (`lbodbcHDB.dll/so`), which is installed as part of the SAP HANA clie
 
 #### **Connecting from Linux environments**
 
-For the Linux environment, you will first need the **`unixODBC`** package to be installed.
+For the Linux environment, you will first need the **unixODBC** package to be installed.
 
 Please refer to your system documentation for installation instructions.
 
@@ -137,13 +139,13 @@ ln -s /etc/unixODBC/odbc.ini /etc/odbc.ini
 ln -s /etc/unixODBC/odbcinst.ini /etc/odbcinst.ini
 ```
 
-To validate that **`unixODBC`** is properly installed, you can run the following command to print the current version:
+To validate that **unixODBC** is properly installed, you can run the following command to print the current version:
 
 ```shell
 odbcinst --version
 ```
 
-Now, you can append HDBODBC driver definition to the `unixODBC` drivers file (in **`/etc/odbcinst.ini`**):
+Now, you can append HDBODBC driver definition to the unixODBC drivers file (in **`/etc/odbcinst.ini`**):
 
 ```shel
 [ODBC]
@@ -290,7 +292,7 @@ At the end, you should have both the HXE and SYSTEMDB ODBC DSN listed.
 
 #### **Connecting from Linux environments**
 
-The `unixODBC` package comes with a command-line interactive SQL tool called `isql`.
+The unixODBC package comes with a command-line interactive SQL tool called `isql`.
 
 You can run the `isql` command to get more details about the program options and switches:
 

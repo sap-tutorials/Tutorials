@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition  ]
  **Tip:** This tutorial is available as a [video](https://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
 
 ## Next Steps
- - [SAP HANA 2.0, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html)
+ - [SAP HANA 2.0, express edition Troubleshooting](https://www.sap.com/developer/tutorials/hxe-ua-troubleshooting.html)
 
 ## Details
 ### You will learn  
@@ -360,7 +360,7 @@ Download and install the HANA Eclipse Plugin to your host OS (not the VM guest) 
 
 3. Launch when prompted, or go to the eclipse folder (example: `C:\Users\<path>\eclipse\jee-neon`) and run the **eclipse** executable file.
 
-4. Follow the tutorial [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html).
+4. Follow the tutorial [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html).
 
 
 
@@ -715,4 +715,4 @@ If you set `global_allocation_limit` to a non-zero value, SAP HANA, express edit
 [ACCORDION-END]
 
 ## Next Steps
- - [SAP HANA 2.0, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html)
+ - [SAP HANA 2.0, express edition Troubleshooting](https://www.sap.com/developer/tutorials/hxe-ua-troubleshooting.html)
