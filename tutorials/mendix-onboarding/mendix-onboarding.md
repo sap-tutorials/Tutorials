@@ -19,7 +19,7 @@ In this tutorial, you will set up your SAP Cloud Platform account so you can use
 > The Mendix Desktop Modeler, for building your application, is available for Windows platforms only.
 
 ### You will learn  
-- How to set up environment to use SAP Cloud Platform Rapid Application Development.
+- How to set up your environment to use SAP Cloud Platform Rapid Application Development.
 - How to open SAP Cloud Platform Rapid Application Development.
 
 ### Time to Complete
