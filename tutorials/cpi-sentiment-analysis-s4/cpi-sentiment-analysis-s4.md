@@ -1,6 +1,6 @@
 ---
-title: Set up an SAP Hybris Marketing Cloud system
-description: How to setup the communication user on the Hybris Marketing Cloud system.
+title: Setup an SAP Hybris Marketing Cloud system
+description: Set up the communication user on the SAP Hybris Marketing Cloud system.
 primary_tag: products>sap-s-4hana
 tags: [  tutorial>beginner ]
 ---
@@ -88,7 +88,7 @@ Under **Common Data**, select the Communication System via value help which was 
 
 ![system](12.png)  
 
-Under **Inbound Communication**, the technical user that was created in step 1 needs to be entered. This field should be automatically filled in.  
+The technical user, which was created in step 1, should be automatically filled in under **Inbound Communication**.
 ![system USER](13.png)
 
 Choose **Save**.

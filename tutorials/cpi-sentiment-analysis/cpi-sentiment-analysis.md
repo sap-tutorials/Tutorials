@@ -1,6 +1,6 @@
 ---
-title: Set up SAP Hybris Marketing Cloud integration with Twitter  
-description: The SAP Cloud Platform Integration package implements an integration of social media data into SAP Hybris Marketing Cloud. It allows you to load and analyze social media data from Twitter into your SAP Hybris Marketing Cloud system.
+title: Setup SAP Hybris Marketing Cloud integration with Twitter  
+description: The SCP Integration package implements an integration of social media data into SAP Hybris Marketing Cloud. It allows you to load and analyze social media data from Twitter into your SAP Hybris Marketing Cloud system.
 primary_tag: products>sap-s-4hana
 tags: [  tutorial>beginner,products>sap-s-4hana ]
 ---
@@ -18,7 +18,7 @@ How to set up the SAP Cloud Platform Integration package to load Twitter posts 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Start a new tweet)]
-Logon on to your Twitter account and post a tweet.  The SAP Cloud Integration service will fetch for this tweet.   
+Log on to your Twitter account and post a tweet.  The SAP Cloud Integration service will fetch for this tweet.   
 
 Post a tweet using hash tag `#happyworker this is cool!`.  Click on the tweet in order to post your tweet.  
 
@@ -60,7 +60,7 @@ Ensure that the Time event is scheduled with the Run Once option, so that the in
 
 Switch to the **Receiver** tab. Within this Integration Flow, two receivers are maintained. Select **`MKT_Receiver`**. Ensure that following attributes are set:
 - Address:  Replace the URL with your S/4 HANA Host URL
-- credential Name:  This is the technical user created in the [**setup a Hybris Marketing cloud tutorial**].
+- credential Name:  This is the technical user created in the [**setup a Hybris Marketing cloud tutorial**] tutorial.
 ![yMKT_Receiver](10.png)  
 
 Switch to the **`MKT_Receiver_metadata`** from the drop down menu.
@@ -124,7 +124,7 @@ Repeat above steps for:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy technical communication User data)]
+[ACCORDION-BEGIN [Step 5: ](Deploy technical communication user data)]
 >Note:  In the SAP Hybris Marketing Cloud Communication Management tutorial, you created a technical user in your SAP Hybris Marketing Cloud system. This user's credentials need to be stored now in your SAP Cloud Platform Integration tenant as User Credential
 
 Navigate to the Monitor area of SAP Cloud Platform Integration, via the menu on the top left.  
