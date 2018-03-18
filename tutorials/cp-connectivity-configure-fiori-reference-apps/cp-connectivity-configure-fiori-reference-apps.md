@@ -1,6 +1,6 @@
 ---
-title: Configure your ABAP System to Activate OData Services of Fiori Reference Apps
-description: This tutorial shows how you configure fiori reference apps in your ABAP system which is the prerequisite to be able to consume their OData services in apps of SAP Cloud Platform.
+title: Configure ABAP system to expose Fiori reference apps as OData services
+description: Configure your ABAP system to expose SAP Fiori reference apps as OData services, which can then be consumed by SAP Cloud Platform apps.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-gateway, products>sap-fiori ]
 ---
@@ -16,11 +16,11 @@ tags: [  tutorial>intermediate, products>sap-cloud-platform, products>sap-cloud-
 
 ### Prerequisites
 
-1. Your ABAP system needs to meet the following requirements:
+- Your ABAP system needs to meet the following requirements:
     - Its version should be based on SAP NetWeaver 7.5 or higher
     - The initial system configuration should have been done already (task **`SAP_BASIS_SETUP_INITIAL_CONFIG`** was run successfully). For more information, see [Automated Initial Setup of Systems Based on SAP NetWeaver ABAP](https://help.sap.com/doc/ec180e1ef0e8414896c13522d39f613f/1.0/en-US/Installation__Automated_Initial_SetupE.PDF)
 
-2. You need to be a system administrator with permissions for the following:
+- You need to be a system administrator with permissions for the following:
     - Execute task list runs of the **Task Manager for Technical Configuration** (transaction **`STC01`**).
     - Create users and assign roles to them
     - Create customizing requests
