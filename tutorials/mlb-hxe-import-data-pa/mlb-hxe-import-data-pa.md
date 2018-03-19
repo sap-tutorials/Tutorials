@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 
 ### You will learn
 
-As Part of the [SAP Predictive Analytics documentation](https://help.sap.com/viewer/p/SAP_PREDICTIVE_ANALYTICS), you can download sample datasets to address many Machine learning scenarios.
+As part of the [SAP Predictive Analytics documentation](https://help.sap.com/viewer/p/SAP_PREDICTIVE_ANALYTICS), you can download sample datasets to address many Machine learning scenarios.
 
 In this tutorial, you will learn how to import all the SAP Predictive Analytics sample dataset into your SAP HANA, express edition instance.
 
@@ -70,7 +70,7 @@ The SAP Predictive Analytics Datasets are available as part of the [online docum
 Open the [online documentation](https://help.sap.com/viewer/p/SAP_PREDICTIVE_ANALYTICS) page in a browser and click on the **View All** for the **Sample** section.
 
 This will display the list of sample dataset available.
-![info doc](01-0)
+![info doc](01-0.png)
 
 [ACCORDION-END]
 

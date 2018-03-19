@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 ### You will learn
 How to configure the binary install of SAP HANA, express edition.
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/tutorials/hxe-ua-troubleshooting.html).
 ### Time to Complete
 **20 Min.**
 ---
@@ -180,7 +180,7 @@ Follow the eclipse installer prompts.
 
 Launch when prompted, or go to the eclipse folder (example: `C:\Users\<path>\eclipse\jee-neon`) and run the **eclipse** executable file.
 
-Follow the tutorial [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html) to connect to your SAP HANA, express edition client machine.
+Follow the tutorial [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) to connect to your SAP HANA, express edition client machine.
 
 
 [ACCORDION-END]

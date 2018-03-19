@@ -7,9 +7,6 @@ tags: [  tutorial>how-to, tutorial>beginner, products>sap-gateway, topic>cloud, 
 ## Prerequisites  
  - None
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
-
 
 ## How-To Details
 How to create an account on the Gateway Demo System (ES4).  At the end of this tutorial, you will have a username and password, and will be able to sign in to the Gateway Web front end.
@@ -79,5 +76,3 @@ For problem with registration or system availability only, please email the syst
 [ACCORDION-END]
 
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)

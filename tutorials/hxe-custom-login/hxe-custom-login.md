@@ -7,9 +7,6 @@ tags: [  tutorial>how-to, tutorial>beginner, products>sap-hana, products>sap-han
 ## Prerequisites  
  - **Systems used:** SAP HANA, express edition
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
-
 
 ## How-To Details
 The following steps will show you how to customize the login screen of your individual instance. Why might you want to do that? Well for starters if you have multiple systems this would help you distinguish between them or perhaps you simply want to make your system unique and your own.
@@ -92,5 +89,3 @@ The following steps will show you how to customize the login screen of your indi
 
 	![halloween](16.png)
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)

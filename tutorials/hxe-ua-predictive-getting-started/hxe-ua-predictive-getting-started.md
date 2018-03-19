@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
- [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html)
+ [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
 
 ## Next Steps
  - [Predictive Analytics Using SQL Script](https://www.sap.com/developer/tutorials/hxe-ua-predictive-sql.html)

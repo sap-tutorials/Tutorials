@@ -90,10 +90,12 @@ Create a Docker network by opening a terminal window (or using the already open 
 docker network create dev-net
 ```
 
-Run a Docker container based on image `datahub`. By publishing the ports `8090`, `9099`, `9225` and `50070` you ensure that you later can access the different user interfaces running inside the Docker container via `localhost`.
+Run a Docker container based on image `datahub`. By publishing the ports `8090`, `8998`, `9225` and `50070` you ensure that you later can access the different user interfaces running inside the Docker container via `localhost`.
+
+The `livy` parameter starts Apache Livy (inside the Docker container) and thereby makes it possible to access Spark via REST services (from outside the Docker container), e.g. to connect from Apache Zeppelin to the SAP Vora tables.
 
 ```sh
-docker run -ti --publish 127.0.0.1:8090:8090 --publish 127.0.0.1:9099:9099 --publish 127.0.0.1:9225:9225 --publish 127.0.0.1:50070:50070 --name datahub --hostname datahub --network dev-net datahub run --agree-to-sap-license --hdfs --zeppelin
+docker run -ti --publish 127.0.0.1:8090:8090 --publish 127.0.0.1:8998:8998 --publish 127.0.0.1:9225:9225 --publish 127.0.0.1:50070:50070 --name datahub --hostname datahub --network dev-net datahub run --agree-to-sap-license --hdfs --livy
 ```
 
 After a few minutes (during which you can follow what happens inside the container), you see an output ("status loop") similar to the following. The output refreshes every minute and indicates that all services related to SAP Data Hub, developer edition are running.
@@ -107,10 +109,10 @@ After a few minutes (during which you can follow what happens inside the contain
 [ACCORDION-BEGIN [Step 5: ](Perform a smoke test)]
 Open a web browser and test the following URLs (where necessary enter **Username** and **Password** which you have set while building the Docker image):
 
-* `http://localhost:8090` (SAP Data Hub - Data Pipelines)
-* `http://localhost:9099` (Apache Zeppelin)
+* `http://localhost:8090` (SAP Data Hub Pipeline Modeler)
 * `http://localhost:9225` (SAP Vora Tools)
 * `http://localhost:50070` (Apache Hadoop User Interface)
+* `http://localhost:8998` (Livy)
 
 If all URLs are working, you can assume that you have successfully set up SAP Data Hub, developer edition on your local computer.
 

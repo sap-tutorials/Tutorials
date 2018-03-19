@@ -7,9 +7,6 @@ tags: [  tutorial>how-to, tutorial>beginner, products>sap-hana, products>sap-han
 ## Prerequisites  
  - **Systems used:** SAP HANA, express edition server only
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
-
 
 ## How-To Details
 Out of the box the SAP HANA, express edition (HXE) server only option is ready to go with a lot of basic functionality. However, to use it you need to install the SAP HANA plugin for Eclipse. This of course is not a bad thing, however you may also like the idea of using the browser based tools.
@@ -119,5 +116,3 @@ This guide will help walk you through the steps necessary to install the SAP HAN
 
 	![catalog](25.png)
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)

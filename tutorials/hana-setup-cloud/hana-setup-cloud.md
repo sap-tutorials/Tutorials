@@ -15,8 +15,10 @@ tags: [ products>sap-hana, products>sap-cloud-platform, tutorial>beginner ]
 ## Details
 
 ### You will learn  
-How to create a HANA instance in your cloud provider, using the Cloud Appliance Library (CAL) system.
+How to create a SAP HANA, developer edition instance in your cloud provider, using the Cloud Appliance Library (CAL) system.
 This tutorial provides step by step instructions to walk you through the CAL setup process.
+### IMPORTANT
+Please refer to the following tutorial for instructions to set up SAP HANA, express edition on SAP Cloud Appliance Library: [https://www.sap.com/developer/tutorials/hxe-setup-aws-azure.html](https://www.sap.com/developer/tutorials/hxe-setup-aws-azure.html)
 
 ### Time to Compete
 This section takes about **10 minutes** to complete, and about **10 to 25 minutes** after completion to get the Virtual Machine started.

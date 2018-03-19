@@ -9,9 +9,6 @@ tags: [  tutorial>how-to, tutorial>intermediate, operating-system>ios, topic>clo
 - **Device:** A physical iOS device (required to use the Camera)
 - **Tutorials:** [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
-
 
 ## How-To Details
 In this How-To tutorial, you will test **SAP Leonardo's Machine Learning** capabilities exposed through **SAP API Hub** and implement these in a native iOS application build with the **SAP Cloud Platform SDK for iOS**. After you have finished the tutorial, you will have an app which allows you to take a picture with the camera, or choose an image from the Photos Library. This image will be sent to SAP Leonardo's "Image Classification" Machine Learning API which is available for testing on SAP API Hub. The response will be a list of classifications for the submitted image, which you could use for further processing.
@@ -672,5 +669,3 @@ If you now click the **Use Photo** button, the image is sent to the SAP API Hub 
 
 
 
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)
