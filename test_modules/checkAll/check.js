@@ -89,7 +89,7 @@ module.exports = function(files, showprogressbar, callback) {
                     //check file content
                     var lineIndex = 0;
                     fileContent.forEach(function(line, i) {
-                        checkContent(file, line, function(matchResult) {
+                        checkContent.check(file, line, function(matchResult) {
                             //build error log
                             if (matchResult !== null) {
                                 cntContent++;
@@ -98,10 +98,16 @@ module.exports = function(files, showprogressbar, callback) {
                                     "\n        reason:  " + matchResult;
                             }
                         });
-                        if (index === files.length && lineIndex === fileContent.length) {
-
-                        }
                     });
+                    const err = checkContent.checkLinksAndImages(file, fileContent);
+                    if(err && err.length) {
+                        cntContent += err.length;
+                        err.forEach(linkErr => {
+                            logContent += '\n\n    > Error: \n        line:    ' + (linkErr.line) +
+                            "\n        file:    " + fname +
+                            "\n        reason:  " + linkErr.msg;
+                        });
+                    }
                 } else {
                     cntNotCheckedContent++;
                 }
