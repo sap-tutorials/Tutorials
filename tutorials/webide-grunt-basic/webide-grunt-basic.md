@@ -31,7 +31,7 @@ The `grunt-sapui5-bestpractice-build` Grunt plugin is published on the SAP npm r
 
 `@sap:registry=https://npm.sap.com/`
 
-For more information, see https://docs.npmjs.com/files/npmrc.
+For more information, see <https://docs.npmjs.com/files/npmrc>.
 
 
 
@@ -47,7 +47,7 @@ For more information, see https://docs.npmjs.com/files/npmrc.
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create a package.json file)]
-Right-click your project and choose **New** | **File**, enter `Package.json`.
+Right-click your project and choose **New** | **File**, enter `package.json`.
 
 ![Create package.json](grunt-Step1-newfile.png)
 
@@ -117,6 +117,10 @@ When the build finishes, a new `dist` folder is created in your project and is a
 
 You can see any build errors in the console, which you can display by going to **View** | **Console**.
 ![Create package.json](grunt-Step3-console.png)
+
+>A new `package-lock.json` file is added to your project (unless it already existed). It is a special file that `npm` uses for locking the version of each package in the dependency tree, including the final resolved versions of ranges such as ~1.7.0 or ^1.0.9. If your project is connected to Git, commit and push the file to your Git repository.
+>
+>You may want to check out the blog [How `npm` `v5` Affects Your Projects in SAP Web IDE Full-Stack](https://blogs.sap.com/2018/03/11/how-npm-v5-affects-your-projects-in-sap-web-ide-full-stack/).
 
 
 [ACCORDION-END]
