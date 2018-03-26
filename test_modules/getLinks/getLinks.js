@@ -11,13 +11,15 @@ module.exports = function(fileContent) {
     var links = [];
 
     //get all links
-    expressions.forEach(function(expression) {
-        var match = expression.exec(fileContent);
-        while (match !== null) {
-            links.push(match[1]);
-            match = expression.exec(fileContent);
-        }
-    }, this);
+    fileContent.forEach(line => {
+        expressions.forEach(exp => {
+            let match = exp.exec(line);
+            while (match !== null) {
+                links.push(match[1]);
+                match = exp.exec(line);
+            } 
+        });
+    });
 
     return links;
 
