@@ -1,6 +1,7 @@
 ---
-title: Configure ABAP system to expose Fiori reference apps as OData services
-description: Configure your ABAP system to expose SAP Fiori reference apps as OData services, which can then be consumed by SAP Cloud Platform apps.
+title: Configure your ABAP System to Activate OData Services of Fiori Reference Apps
+description: This tutorial shows how you configure fiori reference apps in your ABAP system which is the prerequisite to be able to consume their OData services in apps of SAP Cloud Platform.
+auto-validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, products>sap-cloud-platform, products>sap-cloud-platform-connectivity, products>sap-gateway, products>sap-fiori ]
 ---
@@ -16,18 +17,18 @@ tags: [  tutorial>intermediate, products>sap-cloud-platform, products>sap-cloud-
 
 ### Prerequisites
 
-- Your ABAP system needs to meet the following requirements:
+1. Your ABAP system needs to meet the following requirements:
     - Its version should be based on SAP NetWeaver 7.5 or higher
     - The initial system configuration should have been done already (task **`SAP_BASIS_SETUP_INITIAL_CONFIG`** was run successfully). For more information, see [Automated Initial Setup of Systems Based on SAP NetWeaver ABAP](https://help.sap.com/doc/ec180e1ef0e8414896c13522d39f613f/1.0/en-US/Installation__Automated_Initial_SetupE.PDF)
 
-- You need to be a system administrator with permissions for the following:
+2. You need to be a system administrator with permissions for the following:
     - Execute task list runs of the **Task Manager for Technical Configuration** (transaction **`STC01`**).
     - Create users and assign roles to them
     - Create customizing requests
     - Create system aliases using the **SAP Reference IMG**
 
 ### Time to Complete
-**40 Min**
+**45 Min**
 
 ---
 
@@ -50,6 +51,8 @@ The easiest way to do this is to execute the corresponding task lists in the **T
 
 If you get stuck in any step of these task lists you can also do the configuration manually as described in [this blog](https://blogs.sap.com/2013/05/14/quick-starter-configuration-guide-sap-gateway/).
 
+[DONE]
+
 [ACCORDION-END]
 
 
@@ -71,6 +74,8 @@ SAP Gateway can be run on a hub system to connect to several ABAP backend system
 ![Customizing Request](CUSTREQ-002.png)
 8. Confirm to use the customization request that you just created.
 ![Customizing Request](CUSTREQ-003.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -101,6 +106,8 @@ In this step we create a technical user DEMO. The purpose of this user is to res
 12. After this you can close the window and the status on tab **User** should be green.
 ![User Comparison](SU01-006.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Configure reference apps and generate sample data)]
@@ -115,6 +122,9 @@ In this step we create a technical user DEMO. The purpose of this user is to res
 ![Transaction STC01](STC01-010-REFAPPS.png)
 
 Congratulations! You are done with the configuration.
+
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Check your HTTP Port)]
@@ -123,6 +133,9 @@ To access the OData service you need to know the HTTP port of your system.
 1. Call transaction **`SMICM`**, and choose **`Goto`** | **`Services`** (Shift + F1).
 2. You should see the HTTP port of your system.
 ![Check HTTP Port](Check-HTTP-Port.png)
+
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Test the OData service)]
@@ -130,7 +143,7 @@ After the configuration is done, SAP Gateway provides a whole set of tools to tr
 
 1. For a simple check if the service was activated and can be accessed, enter **`/n/IWFND/MAINT_SERVICE`** as OK code, hit `RETURN`, select **Filter**, enter **`*ZEPM*`** in entry field **Technical Service Name** and confirm with **Enter**.
 ![Filter Service List](TEST-001.png)
-2. Select one line from the remaining services in the **Service Catalog** list, and choose **SAP Gateway Client**.
+2. Select service **`ZEPM_REF_APPS_PROD_MAN_SRV`** from the remaining services in column **Technical Service Name** of the **Service Catalog** list, and choose **SAP Gateway Client**.
 ![Filter Service List](TEST-002.png)
 3. Choose **Execute** to check if you get any response from the service (using HTTP Method **GET**).
 ![Filter Service List](TEST-003.png)
@@ -139,20 +152,25 @@ After the configuration is done, SAP Gateway provides a whole set of tools to tr
 5. To check if any sample data was successfully generated, choose **`EntitySets`**, and in the pop-up an entity set from the list, for example, **Products**.
 ![Filter Service List](TEST-005.png)
 6. After choosing your entity set, choose **Execute**. You should now get a bigger payload with product data displayed in your HTTP response.
-7. Next, we would like to check if we can see an HTTP response in the browser and if it can be accessed using the service user we created in step 3. Choose **Back**, choose a service from the **Service Catalog** and choose **Call Browser**.
+7. Next, we would like to check if we can see an HTTP response in the browser and if it can be accessed using the service user we created in step 3. Choose **Back**, choose service with **`Technical Service Name`** **`ZEPM_REF_APPS_PROD_MAN_SRV`** from the **Service Catalog** and choose **Call Browser**.
 ![Filter Service List](TEST-006.png)
 8. Enter **`DEMO`** and **`Welcome`**.
 ![Filter Service List](TEST-007.png)
 9. You should see the same HTTP response as you saw when using the **SAP Gateway Client** for testing.
 ![Filter Service List](TEST-008.png)
 > If the connection using the browser does not work, it sometimes help to copy the IP address of your ABAP system into the link address.
-10. To read an entity set, you can modify the link in the browser
 
-```xml
+10. To read an entity set, modify the link in the browser
+    ```xml
+    http://<your server>:<your port>/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV/Products
+    ```
 
-http://<your server>:<your port>/sap/opu/odata/sap/EPM_REF_APPS_PROD_MAN_SRV/Products
+    >Sometimes Web browsers show the HTTP response of an OData service as RSS feed. When developing OData services you should switch this off to see the actual XML data of the response. In Internet Explorer, choose **Tools** | **Internet Options** | **Content** | **Feeds and Web Slices** | **Settings**. Then make sure that **Turn on feed reading view** is not checked in frame **Advanced**.
+    ![Feed Settings](IE-001.png)
 
-```
+12. Last, but not least, search for product with ID **`HT-1066`** in your payload. Copy the text content of XML element **`<d:Name>`** into the frame below and click on **Validate**.
+
+[VALIDATE_6]
 
 [ACCORDION-END]
 
