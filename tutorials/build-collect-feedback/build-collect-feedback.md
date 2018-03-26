@@ -1,7 +1,7 @@
 ---
 title: Collect user feedback in SAP Build
 description: Send your application to your team to collect and review feedback from SAP Build.
-auto_validation: false
+auto_validation: true
 primary_tag: products>build>build
 tags: [  tutorial>beginner, products>build>build ]
 ---
