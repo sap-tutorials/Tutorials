@@ -27,8 +27,6 @@ The **Time Series Change Point Detection** service allows you to calculates and 
 ### Time to Complete
 **10 Min**
 
----
-
 [ACCORDION-BEGIN [Step 1: ](Search the SAP API Business Hub)]
 
 In order to consume the **Time Series Change Point Detection API** SAP Leonardo Machine Learning Functional Services, you will first need to get the service URI, request and response parameters.
@@ -200,7 +198,6 @@ For example, the probability that a change point has been detected between the f
 [DONE]
 [ACCORDION-END] 
 
----
 [ACCORDION-BEGIN [Step 5: ](Validation)]
 
 Provide an answer to the question below then click on **Validate**.

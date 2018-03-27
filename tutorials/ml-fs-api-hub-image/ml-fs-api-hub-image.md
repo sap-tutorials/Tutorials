@@ -28,8 +28,6 @@ The **Image Classification** Machine Learning Functional Services will be used a
 ### Time to Complete
 **10 Min**
 
----
-
 [ACCORDION-BEGIN [Step 1: ](Search the SAP API Business Hub)]
 
 In order to consume the **Image Classification** Machine Learning Functional Services, you will first need to get the service URI, request and response parameters.
@@ -163,8 +161,6 @@ Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
 [ACCORDION-END]
-
----
 
 ### Optional
 

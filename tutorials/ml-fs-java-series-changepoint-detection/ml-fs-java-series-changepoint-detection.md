@@ -33,8 +33,6 @@ In this tutorial, you will learn the basics of making API calls against the Mach
 ### Time to Complete
 **15 Min**
 
----
-
 [ACCORDION-BEGIN [Step 1: ](Get Your Sandbox URL)]
 
 In order to consume the **Time Series Change Point Detection** Machine Learning Functional Services, you will first need to get the service URI, your API Key and the request and response parameters.
