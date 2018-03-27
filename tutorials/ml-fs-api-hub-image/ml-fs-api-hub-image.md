@@ -1,5 +1,4 @@
 ---
-title: Machine Learning services for images
 title: Processing Image Data with SAP Leonardo Machine Learning Foundation services on the API Business Hub
 description: Discover the SAP Leonardo Machine Learning Functional Service consuming images content on the SAP API Business Hub
 primary_tag: products>sap-leonardo-machine-learning-foundation
