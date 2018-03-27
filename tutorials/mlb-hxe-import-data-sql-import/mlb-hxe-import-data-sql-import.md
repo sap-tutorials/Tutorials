@@ -201,9 +201,7 @@ WITH
 ```
 
 > ### **Note: insufficient privilege: Not authorized**
->&nbsp;
 >If you receive this error, it probably mean that the user is not granted the IMPORT role.
->&nbsp;
 >Connect to the **HXE** tenant using the **SYSTEM** user credentials and execute the following SQL statement:
 >```SQL
 GRANT IMPORT TO ML_USER;
