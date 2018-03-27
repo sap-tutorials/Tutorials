@@ -1,8 +1,8 @@
 ---
-title: Topic Detection ML service with SAPUI5
+title: Topic Detection with SAP Leonardo Machine Learning Foundation in SAPUI5
 description: Discover how to implement SAP Leonardo Machine Learning Functional Service in a SAPUI5 application
-primary_tag: products>sap-leonardo-machine-learning
-tags: [ tutorial>beginner, topic>sapui5, topic>html5, topic>machine-learning, products>sap-leonardo-machine-learning, products>sap-api-management, products>sap-cloud-platform, products>sap-web-ide]
+primary_tag: products>sap-leonardo-machine-learning-foundation
+tags: [ tutorial>beginner, topic>sapui5, topic>html5, topic>machine-learning, products>sap-leonardo-machine-learning-foundation, products>sap-api-management, products>sap-cloud-platform, products>sap-web-ide]
 ---
 
 ## Prerequisites  
@@ -56,6 +56,7 @@ As displayed on the screen, the sandbox URL for the **Topic Detection API** wher
 https://sandbox.api.sap.com/ml/topicdetection/inference_sync
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Get Your API key )]
@@ -70,6 +71,7 @@ The following pop-up should appear. Click on the **Copy API Key** button and sav
 
 Now, let's build a SAPUI5 application! But before doing so let's first add the destination to connect to the SAP API Business Hub.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Access the SAP Cloud Platform Cockpit)]
@@ -78,6 +80,7 @@ Go to your [***SAP Cloud Platform Cockpit***](https://account.hanatrial.ondemand
 
 ![SAP Cloud Platform Cockpit](06.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Configure your destination)]
@@ -115,6 +118,7 @@ Click on **Save**
 
 You can use the **Check Connectivity** button ![HTML5 Applications](00-check.png) next to the new **Destination** to validate that the URL can be accessed.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Open the Web IDE)]
@@ -131,6 +135,7 @@ You will get access to the **SAP Web IDE** main page:
 
 ![Web IDE](12.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create your application using the SAPUI5 template)]
@@ -161,6 +166,7 @@ View Name            | `demo`
 
 ![Project](15.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Extend the application resource roots)]
@@ -181,6 +187,7 @@ data-sap-ui-resourceroots='{"demosapui5ml-topicdetection": "", "sapui5ml": ""}'
 
 Click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Configure your SAPUI5 application)]
@@ -193,46 +200,46 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-	"welcomeFile": "/webapp/index.html",
-	"routes": [{
-		"path": "/resources",
-		"target": {
-			"type": "service",
-			"name": "sapui5",
-			"entryPath": "/resources"
-		},
-		"description": "SAPUI5 Resources"
-	}, {
-		"path": "/test-resources",
-		"target": {
-			"type": "service",
-			"name": "sapui5",
-			"entryPath": "/test-resources"
-		},
-		"description": "SAPUI5 Test Resources"
-	}, {
-		"path": "/ml",
-		"target": {
-			"type": "destination",
-			"name": "sapui5ml-api"
-		},
-		"description": "ML API destination"
-	}],
-	"sendWelcomeFileRedirect": true,
-	"headerWhiteList": [
-		"APIKey"
-	]
+  "welcomeFile": "/webapp/index.html",
+  "routes": [{
+    "path": "/resources",
+    "target": {
+      "type": "service",
+      "name": "sapui5",
+      "entryPath": "/resources"
+    },
+    "description": "SAPUI5 Resources"
+  }, {
+    "path": "/test-resources",
+    "target": {
+      "type": "service",
+      "name": "sapui5",
+      "entryPath": "/test-resources"
+    },
+    "description": "SAPUI5 Test Resources"
+  }, {
+    "path": "/ml",
+    "target": {
+      "type": "destination",
+      "name": "sapui5ml-api"
+    },
+    "description": "ML API destination"
+  }],
+  "sendWelcomeFileRedirect": true,
+  "headerWhiteList": [
+    "APIKey"
+  ]
 }
 ```
 
 > ### **Note:** `headerWhiteList`
 >
->By default, headers element like the `APIKey` will be blocked when used in a SAPUI5 control like the `FileUploader`.
->This is the reason why we add it to the white list.
+>By default, headers element like the `APIKey` will be blocked when used in a SAPUI5 control like the `FileUploader`. This is the reason why we add it to the white list.
 >
 
 &nbsp;
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Store your API setting in a JSON model)]
@@ -245,15 +252,15 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-	"url": "/ml/topicdetection/inference_sync",
-	"APIKey": "<<<<< COPY YOUR API KEY >>>>>",
-	"options": {
-		"numTopics": 3,
-		"numTopicsPerDoc": 3,
-		"numKeywordsPerTopic": 15,
-		"numFeatures" : 20
-	},
-	"optionsJs": "{\"numTopics\":3,\"numTopicsPerDoc\":1, \"numKeywordsPerTopic\":15}"
+  "url": "/ml/topicdetection/inference_sync",
+  "APIKey": "<<<<< COPY YOUR API KEY >>>>>",
+  "options": {
+    "numTopics": 3,
+    "numTopicsPerDoc": 3,
+    "numKeywordsPerTopic": 15,
+    "numFeatures" : 20
+  },
+  "optionsJs": "{\"numTopics\":3,\"numTopicsPerDoc\":1, \"numKeywordsPerTopic\":15}"
 }
 ```
 
@@ -277,6 +284,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 }
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Extend the main SAPUI5 view)]
@@ -289,104 +297,105 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```XML
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table"
-	xmlns:u="sap.ui.unified" xmlns="sap.m" controllerName="sapui5ml.controller.demo" displayBlock="true">
-	<App>
-		<pages>
-			<Page title="Topic Detection">
-				<content>
-					<Table>
-						<columns>
-							<Column vAlign="Middle"/>
-							<Column vAlign="Middle"/>
-						</columns>
-						<items>
-							<ColumnListItem >
-								<cells>
-									<Label text="Total number of topics to be detected"/>
-									<StepInput value="{demo>/options/numTopics}" required="true"/>
-								</cells>
-							</ColumnListItem>
-							<ColumnListItem>
-								<cells>
-									<Label text="Number of most relevant topics to be listed per document"/>
-									<StepInput value="{demo>/options/numTopicsPerDoc}" required="true"/>
-								</cells>
-							</ColumnListItem>
-							<ColumnListItem>
-								<cells>
-									<Label text="Number of keywords to be listed per topic"/>
-									<StepInput value="{demo>/options/numKeywordsPerTopic}" required="true"/>
-								</cells>
-							</ColumnListItem>
-							<ColumnListItem>
-								<cells>
-									<Label text="Maximum number of keywords to be extracted from documents in total"/>
-									<StepInput value="{demo>/options/numFeatures}"/>
-								</cells>
-							</ColumnListItem>
-						</items>
-					</Table>
-					<VBox width="100%" direction="Column" alignItems="Center">
-						<Carousel pages="{demo>/result}" width="100%" visible="{= typeof ${demo>/resultVisible} !== 'undefined'}">
-							<pages>
-								<VBox width="100%" direction="Column" alignItems="Center">
-									<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
-									<table:Table rows="{demo>topics}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5">
-										<table:columns>
-											<table:Column sortProperty="rank" filterProperty="rank">
-												<Label text="Topic id"/>
-												<table:template>
-													<Text text="{demo>id}"/>
-												</table:template>
-											</table:Column>
-											<table:Column sortProperty="rank" filterProperty="rank">
-												<Label text="Rank"/>
-												<table:template>
-													<Text text="{demo>rank}"/>
-												</table:template>
-											</table:Column>
-											<table:Column sortProperty="score" filterProperty="score">
-												<Label text="Score"/>
-												<table:template>
-													<Text text="{demo>score}"/>
-												</table:template>
-											</table:Column>
-											<table:Column>
-												<Label text="Keywords"/>
-												<table:template>
-													<Text text="{demo>keywords}"/>
-												</table:template>
-											</table:Column>
-										</table:columns>
-									</table:Table>
-								</VBox>
-							</pages>
-						</Carousel>
-					</VBox>
-				</content>
-				<footer>
-					<Toolbar width="100%">
-						<content>
-							<u:FileUploader id="idFileUpload" buttonOnly="true" buttonText="Upload Text File Archive" name="files" uploadUrl="{demo>/url}"
-								sameFilenameAllowed="true" useMultipart="true" sendXHR="true" uploadOnChange="true" accept="zip,tar" change="fileUploadChange"
-								uploadComplete="fileUploadComplete">
-								<u:headerParameters>
-									<u:FileUploaderParameter name="APIKey" value="{demo>/APIKey}"/>
-									<u:FileUploaderParameter name="Accept" value="application/json"/>
-								</u:headerParameters>
-								<u:parameters>
-									<u:FileUploaderParameter name="options" value="{demo>/optionsJs}"/>
-								</u:parameters>
-							</u:FileUploader>
-						</content>
-					</Toolbar>
-				</footer>
-			</Page>
-		</pages>
-	</App>
+  xmlns:u="sap.ui.unified" xmlns="sap.m" controllerName="sapui5ml.controller.demo" displayBlock="true">
+  <App>
+    <pages>
+      <Page title="Topic Detection">
+        <content>
+          <Table>
+            <columns>
+              <Column vAlign="Middle"/>
+              <Column vAlign="Middle"/>
+            </columns>
+            <items>
+              <ColumnListItem >
+                <cells>
+                  <Label text="Total number of topics to be detected"/>
+                  <StepInput value="{demo>/options/numTopics}" required="true"/>
+                </cells>
+              </ColumnListItem>
+              <ColumnListItem>
+                <cells>
+                  <Label text="Number of most relevant topics to be listed per document"/>
+                  <StepInput value="{demo>/options/numTopicsPerDoc}" required="true"/>
+                </cells>
+              </ColumnListItem>
+              <ColumnListItem>
+                <cells>
+                  <Label text="Number of keywords to be listed per topic"/>
+                  <StepInput value="{demo>/options/numKeywordsPerTopic}" required="true"/>
+                </cells>
+              </ColumnListItem>
+              <ColumnListItem>
+                <cells>
+                  <Label text="Maximum number of keywords to be extracted from documents in total"/>
+                  <StepInput value="{demo>/options/numFeatures}"/>
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+          <VBox width="100%" direction="Column" alignItems="Center">
+            <Carousel pages="{demo>/result}" width="100%" visible="{= ${demo>/resultVisible} === true}">
+              <pages>
+                <VBox width="100%" direction="Column" alignItems="Center">
+                  <Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
+                  <table:Table rows="{demo>topics}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5">
+                    <table:columns>
+                      <table:Column sortProperty="rank" filterProperty="rank">
+                        <Label text="Topic id"/>
+                        <table:template>
+                          <Text text="{demo>id}"/>
+                        </table:template>
+                      </table:Column>
+                      <table:Column sortProperty="rank" filterProperty="rank">
+                        <Label text="Rank"/>
+                        <table:template>
+                          <Text text="{demo>rank}"/>
+                        </table:template>
+                      </table:Column>
+                      <table:Column sortProperty="score" filterProperty="score">
+                        <Label text="Score"/>
+                        <table:template>
+                          <Text text="{demo>score}"/>
+                        </table:template>
+                      </table:Column>
+                      <table:Column>
+                        <Label text="Keywords"/>
+                        <table:template>
+                          <Text text="{demo>keywords}"/>
+                        </table:template>
+                      </table:Column>
+                    </table:columns>
+                  </table:Table>
+                </VBox>
+              </pages>
+            </Carousel>
+          </VBox>
+        </content>
+        <footer>
+          <Toolbar width="100%">
+            <content>
+              <u:FileUploader id="idFileUpload" buttonOnly="true" buttonText="Upload Text File Archive" name="files" uploadUrl="{demo>/url}"
+                sameFilenameAllowed="true" useMultipart="true" sendXHR="true" uploadOnChange="true" accept="zip,tar" change="fileUploadChange"
+                uploadComplete="fileUploadComplete">
+                <u:headerParameters>
+                  <u:FileUploaderParameter name="APIKey" value="{demo>/APIKey}"/>
+                  <u:FileUploaderParameter name="Accept" value="application/json"/>
+                </u:headerParameters>
+                <u:parameters>
+                  <u:FileUploaderParameter name="options" value="{demo>/optionsJs}"/>
+                </u:parameters>
+              </u:FileUploader>
+            </content>
+          </Toolbar>
+        </footer>
+      </Page>
+    </pages>
+  </App>
 </mvc:View>
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Extend the main SAPUI5 controller)]
@@ -397,72 +406,74 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JavaScript
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
-	"sap/m/MessageToast",
-	"sap/m/Image"
-], function(Controller, MessageToast, Image) {
-	"use strict";
-	return Controller.extend("sapui5ml.controller.demo", {
+  "sap/ui/core/mvc/Controller",
+  "sap/m/MessageBox",
+  "sap/m/Image"
+], function(Controller, MessageBox, Image) {
+  "use strict";
+  return Controller.extend("sapui5ml.controller.demo", {
 
-		fileUploadChange: function(oControlEvent) {
-			// get the current view
-			var oView = this.getView();
+    fileUploadChange: function(oControlEvent) {
+      // get the current view
+      var oView = this.getView();
 
-			// start the busy indicator
-			var oBusyIndicator = new sap.m.BusyDialog();
-			oBusyIndicator.open();
+      // start the busy indicator
+      var oBusyIndicator = new sap.m.BusyDialog();
+      oBusyIndicator.open();
 
-			// generqte the options qnd stringify
-			var options = {
-				"numTopics": oView.getModel("demo").getProperty("/options/numTopics"),
-				"numTopicsPerDoc": oView.getModel("demo").getProperty("/options/numTopicsPerDoc"),
-				"numKeywordsPerTopic": oView.getModel("demo").getProperty("/options/numKeywordsPerTopic"),
-				"numFeatures": oView.getModel("demo").getProperty("/options/numFeatures")
-			};
-			oView.getModel("demo").setProperty("/optionsJs", JSON.stringify(options));
+      // generate the options and stringify
+      var options = {
+        "numTopics": oView.getModel("demo").getProperty("/options/numTopics"),
+        "numTopicsPerDoc": oView.getModel("demo").getProperty("/options/numTopicsPerDoc"),
+        "numKeywordsPerTopic": oView.getModel("demo").getProperty("/options/numKeywordsPerTopic"),
+        "numFeatures": oView.getModel("demo").getProperty("/options/numFeatures")
+      };
+      oView.getModel("demo").setProperty("/optionsJs", JSON.stringify(options));
 
-			// keep a reference in the view to close it later
-			this.oBusyIndicator = oBusyIndicator;
-		},
-		fileUploadComplete: function(oControlEvent) {
-			// get the current view
-			var oView = this.getView();
+      // keep a reference in the view to close it later
+      this.oBusyIndicator = oBusyIndicator;
+    },
+    fileUploadComplete: function(oControlEvent) {
+      // get the current view
+      var oView = this.getView();
 
-			if (oControlEvent.getParameters().status === 200) {
-				// get the resvice respnse as JSON
-				var oTopicDetection = JSON.parse(oControlEvent.getParameters().responseRaw).topicDetection;
+      if (oControlEvent.getParameters().status === 200) {
+        // get the resvice respnse as JSON
+        var oTopicDetection = JSON.parse(oControlEvent.getParameters().responseRaw).topicDetection;
 
-				// create a JSON model
-				var documents = new Array(oTopicDetection.length);
-				for (var iTopicDetection = 0; iTopicDetection < oTopicDetection.length; iTopicDetection++) {
-					var oTopicDetectionDocument = {
-						"name": oTopicDetection[iTopicDetection].docName
-					};
-					oTopicDetectionDocument.topics = [];
+        // create a JSON model
+        var documents = new Array(oTopicDetection.length);
+        for (var iTopicDetection = 0; iTopicDetection < oTopicDetection.length; iTopicDetection++) {
+          var oTopicDetectionDocument = {
+            "name": oTopicDetection[iTopicDetection].docName
+          };
+          oTopicDetectionDocument.topics = [];
 
-					for (var iTopics = 0; iTopics < oTopicDetection[iTopicDetection].topics.length; iTopics++) {
-						var oTopicDetectionTopic = {
-							"rank": iTopics,
-							"id": oTopicDetection[iTopicDetection].topics[iTopics],
-							"score": oTopicDetection[iTopicDetection].scores[iTopics],
-							"keywords": oTopicDetection[iTopicDetection].keywords[iTopics]
-						};
-						oTopicDetectionDocument.topics.push(oTopicDetectionTopic);
-					}
-					documents.push(oTopicDetectionDocument);
-				}
-				oView.getModel("demo").setProperty("/result", documents);
-				// display the result table
-				oView.getModel("demo").setProperty("/resultVisible", true);
-			} else {
-				MessageToast.show("Error " + oControlEvent.getParameters().status + " : " + oControlEvent.getParameters().responseRaw);
-			}
-			this.oBusyIndicator.close();
-		}
-	});
+          for (var iTopics = 0; iTopics < oTopicDetection[iTopicDetection].topics.length; iTopics++) {
+            var oTopicDetectionTopic = {
+              "rank": iTopics,
+              "id": oTopicDetection[iTopicDetection].topics[iTopics],
+              "score": oTopicDetection[iTopicDetection].scores[iTopics],
+              "keywords": oTopicDetection[iTopicDetection].keywords[iTopics]
+            };
+            oTopicDetectionDocument.topics.push(oTopicDetectionTopic);
+          }
+          documents.push(oTopicDetectionDocument);
+        }
+        oView.getModel("demo").setProperty("/result", documents);
+        // display the result table
+        oView.getModel("demo").setProperty("/resultVisible", true);
+      } else {
+        oView.getModel("demo").setProperty("/resultVisible", false);
+        MessageBox.show("Error " + oControlEvent.getParameters().status + " : " + JSON.parse(oControlEvent.getParameters().responseRaw).error_description);
+      }
+      this.oBusyIndicator.close();
+    }
+  });
 });
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Test the application)]
@@ -475,7 +486,16 @@ The service will be called, and the result displayed in a table.
 
 ![Result](16.png)
 
+[DONE]
 [ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 13: ](Validation)]
+
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
+[ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Solution: ](Project files)]
 
@@ -487,8 +507,9 @@ You have to import the `sapui5ml-imageclassifier` directory content into your ex
 
 Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps
  - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

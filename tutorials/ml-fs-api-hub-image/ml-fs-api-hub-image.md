@@ -1,8 +1,9 @@
 ---
 title: Machine Learning services for images
+title: SAP Leonardo Machine Learning Foundation services for images on the API Business Hub
 description: Discover the SAP Leonardo Machine Learning Functional Service consuming images content on the SAP API Business Hub
-primary_tag: products>sap-leonardo-machine-learning
-tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-leonardo-machine-learning,  products>sap-api-management, products>sap-cloud-platform]
+primary_tag: products>sap-leonardo-machine-learning-foundation
+tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-leonardo-machine-learning-foundation,  products>sap-api-management, products>sap-cloud-platform]
 ---
 
 ## Prerequisites  
@@ -41,6 +42,7 @@ Then you will be able to search for the **SAP Leonardo Machine Learning - Functi
 
 ![SAP API Business Hub](02.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Analyze the service)]
@@ -49,7 +51,7 @@ Click on **Artifacts**, then click on the **Image Classification API**.
 
 ![SAP API Business Hub](03.png)
 
-As you can notice the **Image Classification API** has only one resource (or service): `/inference_sync`.
+As you can notice the **Image Classifier Service** has only one resource (or service): `/inference_sync`.
 
 Now click on the `/inference_sync` link to expand the section.
 
@@ -85,6 +87,7 @@ And the response model schema is the following:
 }
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Test the service)]
@@ -95,7 +98,7 @@ Scroll up a little for the **Query Parameters** section and click on the **Brows
 
 ![SAP API Business Hub](05.png)
 
-Select any image file on your local machine (and if you are missing some inspiration, use [ Google Search](https://www.google.fr/search?q=duck&tbm=isch) to search for duck images and make sure you pick a "JPEG", "PNG", "TIF" or "BMP" format with a resolution below 1024 pixels else you will receive a 400 error response).
+Select any image file on your local machine (and if you are missing some inspiration, use [Google Search](https://www.google.fr/search?q=duck&tbm=isch) to search for duck images and make sure you pick a "JPEG", "PNG", "TIF" or "BMP" format with a resolution below 1024 pixels else you will receive a 400 error response).
 
 Now scroll down a bit further and click on ![try-out](00-try-out.png).
 
@@ -151,13 +154,21 @@ In the **Response Body**, you will get the top 5 classes/label with an associate
 }
 ```
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Validation)]
+
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 ---
 
 ### Optional
 
-[ACCORDION-BEGIN [Step 4: ](Investigate similar services)]
+[ACCORDION-BEGIN [Step 5: ](Investigate similar services)]
 
 You can also try the following Machine Learning Functional Services consuming images:
 
@@ -168,8 +179,9 @@ Alternatively, you can try to compress into a zip a series of images and call th
 
 For more information, you can also check the online [SAP Leonardo Machine Learning Foundation documentation](https://help.sap.com/viewer/product/SAP_LEONARDO_MACHINE_LEARNING_FOUNDATION/1.0/en-US)
 
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps
  - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

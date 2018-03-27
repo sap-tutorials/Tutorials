@@ -1,8 +1,8 @@
 ---
-title: Change Point Detection ML service with Java
+title: Change Point Detection with SAP Leonardo Machine Learning Foundation in Java
 description: Discover how to implement SAP Leonardo Machine Learning Functional Service in a Java program
-primary_tag: products>sap-leonardo-machine-learning
-tags: [ tutorial>beginner, topic>java, topic>machine-learning, products>sap-leonardo-machine-learning, topic>java, products>sap-api-management]
+primary_tag: products>sap-leonardo-machine-learning-foundation
+tags: [ tutorial>beginner, topic>java, topic>machine-learning, products>sap-leonardo-machine-learning-foundation, topic>java, products>sap-api-management]
 ---
 
 ## Prerequisites  
@@ -122,7 +122,8 @@ try {
 
 As you can notice, the Java import statements are missing along with request expected form data.
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 2: ](Get Your API key )]
 
@@ -134,7 +135,8 @@ The following pop-up should appear. Click on the **Copy API Key** button and sav
 
 ![SAP API Business Hub](06.png)
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 3: ](Start the Eclipse IDE)]
 
@@ -151,7 +153,8 @@ You can also close the **Welcome Page**.
 
 ![SAP API Business Hub](07.png)
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 4: ](Create a New Project in the Eclipse IDE)]
 
@@ -165,7 +168,8 @@ Click on **Finish**.
 
 ![Eclipse](08.png)
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 5: ](Create a New Java Class)]
 
@@ -186,9 +190,9 @@ The default code in your newly created class should be something this:
 ```Java
 package demo;
 public class DemoChangePointDetection {
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-	}
+  public static void main(String[] args) {
+    // TODO Auto-generated method stub
+  }
 }
 ```
 
@@ -211,7 +215,8 @@ import java.net.URL;
 
 Save your code.
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 6: ](Process the input parameters as Form Data)]
 
@@ -331,7 +336,8 @@ Enter the relevant parameters as detailed in the console.
 
 You can use your favorite spreadsheet tool to generate your series of data or use the default input provided.
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 7: ](Solution)]
 
@@ -354,145 +360,153 @@ import java.util.Scanner;
 
 public class DemoChangePointDetection {
 
-	public static void main(String[] args) {
-		DataOutputStream dataOut = null;
-		BufferedReader in = null;
+  public static void main(String[] args) {
+    DataOutputStream dataOut = null;
+    BufferedReader in = null;
 
-		try {
+    try {
 
-			String url = "https://sandbox.api.sap.com/ml/changepointdetection/inference_sync";
+      String url = "https://sandbox.api.sap.com/ml/changepointdetection/inference_sync";
 
-			URL urlObj = new URL(url);
-			HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
-			// setting request method
-			connection.setRequestMethod("POST");
+      URL urlObj = new URL(url);
+      HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
+      // setting request method
+      connection.setRequestMethod("POST");
 
-			// adding headers
-			connection.setRequestProperty("content-type", "multipart/form-data; boundary=---011000010111000001101001");
-			connection.setRequestProperty("Accept", "application/json");
-			connection.setRequestProperty("APIKey", "<API_KEY>");
+      // adding headers
+      connection.setRequestProperty("content-type", "multipart/form-data; boundary=---011000010111000001101001");
+      connection.setRequestProperty("Accept", "application/json");
+      connection.setRequestProperty("APIKey", "<API_KEY>");
 
-			connection.setDoInput(true);
+      connection.setDoInput(true);
 
-			// sending POST request
-			connection.setDoOutput(true);
+      // sending POST request
+      connection.setDoOutput(true);
 
-			// read the input file name from user input
-			Scanner scanner = new Scanner(System.in);
-			// Reading from System.in
+      // read the input file name from user input
+      Scanner scanner = new Scanner(System.in);
+      // Reading from System.in
 
-			String default_data = "93969.262,76604.444,50000.000,17364.818,-17364.818,-50000.000,-76604.444,-93969.262,-100000.000,-93969.262,-76604.444,-50000.000,-17364.818,17364.818,50000.000,76604.444,93969.262,100000.000";
-			System.out.println("What is your series data : (example :" + default_data + ")");
-			String data = scanner.nextLine();
-			if (data == null || data.length() == 0) {
-				data = default_data;
-			}
+      String default_data = "93969.262,76604.444,50000.000,17364.818,-17364.818,-50000.000,-76604.444,-93969.262,-100000.000,-93969.262,-76604.444,-50000.000,-17364.818,17364.818,50000.000,76604.444,93969.262,100000.000";
+      System.out.println("What is your series data : (example :    " + default_data + ")");
+      String data = scanner.nextLine();
+      if (data == null || data.length() == 0) {
+        data = default_data;
+      }
 
-			String default_separator = ",";
-			System.out.println("What is your value separator (default: \"" + default_separator + "\") : ");
-			String separator = scanner.nextLine();
-			if (separator == null || separator.length() > 1 || separator.length() == 0) {
-				separator = default_separator;
-			}
+      String default_separator = ",";
+      System.out.println("What is your value separator (default: \"" + default_separator + "\") : ");
+      String separator = scanner.nextLine();
+      if (separator == null || separator.length() > 1 || separator.length() == 0) {
+        separator = default_separator;
+      }
 
-			String default_series_separator = ":";
-			System.out.println("What is your series separator (default: \"" + default_series_separator + "\") : ");
-			String series_separator = scanner.nextLine();
-			if (series_separator == null || series_separator.length() > 1 || series_separator.length() == 0) {
-				series_separator = default_series_separator;
-			}
-			scanner.close();
+      String default_series_separator = ":";
+      System.out.println("What is your series separator (default: \"" + default_series_separator + "\") : ");
+      String series_separator = scanner.nextLine();
+      if (series_separator == null || series_separator.length() > 1 || series_separator.length() == 0) {
+        series_separator = default_series_separator;
+      }
+      scanner.close();
 
-			// prepare the constant for the form data
-			String LINE_FEED = "\r\n";
-			String SEPARATOR = "--";
-			String BOUNDARY = "------Boundary" + new BigInteger(128, new SecureRandom()).toString(32);
+      // prepare the constant for the form data
+      String LINE_FEED = "\r\n";
+      String SEPARATOR = "--";
+      String BOUNDARY = "------Boundary" + new BigInteger(128, new SecureRandom()).toString(32);
 
-			// set the form content as multipart
-			connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
+      // set the form content as multipart
+      connection.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
 
-			// write the form data content
-			dataOut = new DataOutputStream(connection.getOutputStream());
-			dataOut.writeBytes(SEPARATOR + BOUNDARY + LINE_FEED);
-			dataOut.writeBytes("Content-Disposition: form-data; name=\"options\"" + LINE_FEED);
-			dataOut.writeBytes(LINE_FEED);
-			dataOut.writeBytes(
-					"{ \"separator\" : \"" + separator + "\", \"series_separator\" : \"" + series_separator + "\" }");
-			dataOut.writeBytes(LINE_FEED);
-			dataOut.writeBytes(SEPARATOR + BOUNDARY + LINE_FEED);
-			dataOut.writeBytes("Content-Disposition: form-data; name=\"texts\"" + LINE_FEED);
-			dataOut.writeBytes(LINE_FEED);
-			dataOut.writeBytes(data);
+      // write the form data content
+      dataOut = new DataOutputStream(connection.getOutputStream());
+      dataOut.writeBytes(SEPARATOR + BOUNDARY + LINE_FEED);
+      dataOut.writeBytes("Content-Disposition: form-data; name=\"options\"" + LINE_FEED);
+      dataOut.writeBytes(LINE_FEED);
+      dataOut.writeBytes(
+          "{ \"separator\" : \"" + separator + "\", \"series_separator\" : \"" + series_separator + "\" }");
+      dataOut.writeBytes(LINE_FEED);
+      dataOut.writeBytes(SEPARATOR + BOUNDARY + LINE_FEED);
+      dataOut.writeBytes("Content-Disposition: form-data; name=\"texts\"" + LINE_FEED);
+      dataOut.writeBytes(LINE_FEED);
+      dataOut.writeBytes(data);
 
-			// finish the form content
-			dataOut.writeBytes(LINE_FEED);
-			dataOut.writeBytes(SEPARATOR + BOUNDARY + SEPARATOR + LINE_FEED);
-			dataOut.flush();
-			dataOut.close();
+      // finish the form content
+      dataOut.writeBytes(LINE_FEED);
+      dataOut.writeBytes(SEPARATOR + BOUNDARY + SEPARATOR + LINE_FEED);
+      dataOut.flush();
+      dataOut.close();
 
-			int responseCode = connection.getResponseCode();
-			if (responseCode != 200) {
-				in = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
-			} else {
-				in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-			}
-			String inputLine;
-			StringBuffer response = new StringBuffer();
-			while ((inputLine = in.readLine()) != null) {
-				response.append(inputLine);
-			}
+      int responseCode = connection.getResponseCode();
+      if (responseCode != 200) {
+        in = new BufferedReader(new InputStreamReader(connection.getErrorStream()));
+      } else {
+        in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+      }
+      String inputLine;
+      StringBuffer response = new StringBuffer();
+      while ((inputLine = in.readLine()) != null) {
+        response.append(inputLine);
+      }
 
-			// printing response
+      // printing response
       String TAB = "\t";
       String QUOTE = "\"";
       String CR = "\r\n";
-			System.out.println(response.toString()//
+      System.out.println(response.toString()//
           .replace("  " + QUOTE + "", "" + TAB + "" + QUOTE + "")//
-					.replace("  ", "" + TAB + "")//
-					.replace("" + TAB + " ", "" + TAB + "")//
-					.replace(", ", ",")//
-					.replace(": {", ":{" + CR + "")//
-					.replace(": [", ":[" + CR + "")//
-					.replace(":" + CR + "" + TAB + "{", ": {")//
-					.replace(":" + CR + "" + TAB + "[", ": [")///
-					.replace("{" + TAB + "", "{" + CR + "" + TAB + "")//
-					.replace("[" + TAB + "", "[" + CR + "" + TAB + "")//
-					.replace("" + QUOTE + ",", "" + QUOTE + "," + CR + "")//
-					.replace("," + TAB + "", "," + CR + "" + TAB + "")//
-					.replace("" + QUOTE + "" + TAB + "", "" + QUOTE + "" + CR + "" + TAB + "")//
-					.replace("" + TAB + " " + TAB + "", "" + TAB + "" + TAB + "")//
-					.replace("" + TAB + " {", "" + TAB + "{")//
-					.replace("" + TAB + " [", "" + TAB + "[")//
-					.replace("]", "]" + CR + "")//
-					.replace("}", "}" + CR + "")//
-					.replace("]" + CR + "," + CR + "", "]," + CR + "")//
-					.replace("}" + CR + "," + CR + "", "}," + CR + "")//
-					.replace("[" + CR + "]", "[]")//
-					.replace("{" + CR + "}", "{}")//
-					.replaceAll("([0-9])(\t)", "$1" + CR + "$2"));
-		} catch (Exception e) {
-			// do something with exception
-			e.printStackTrace();
-		} finally {
-			try {
-				if (dataOut != null) {
-					dataOut.close();
-				}
-				if (in != null) {
-					in.close();
-				}
+          .replace("  ", "" + TAB + "")//
+          .replace("" + TAB + " ", "" + TAB + "")//
+          .replace(", ", ",")//
+          .replace(": {", ":{" + CR + "")//
+          .replace(": [", ":[" + CR + "")//
+          .replace(":" + CR + "" + TAB + "{", ": {")//
+          .replace(":" + CR + "" + TAB + "[", ": [")///
+          .replace("{" + TAB + "", "{" + CR + "" + TAB + "")//
+          .replace("[" + TAB + "", "[" + CR + "" + TAB + "")//
+          .replace("" + QUOTE + ",", "" + QUOTE + "," + CR + "")//
+          .replace("," + TAB + "", "," + CR + "" + TAB + "")//
+          .replace("" + QUOTE + "" + TAB + "", "" + QUOTE + "" + CR + "" + TAB + "")//
+          .replace("" + TAB + " " + TAB + "", "" + TAB + "" + TAB + "")//
+          .replace("" + TAB + " {", "" + TAB + "{")//
+          .replace("" + TAB + " [", "" + TAB + "[")//
+          .replace("]", "]" + CR + "")//
+          .replace("}", "}" + CR + "")//
+          .replace("]" + CR + "," + CR + "", "]," + CR + "")//
+          .replace("}" + CR + "," + CR + "", "}," + CR + "")//
+          .replace("[" + CR + "]", "[]")//
+          .replace("{" + CR + "}", "{}")//
+          .replaceAll("([0-9])(\t)", "$1" + CR + "$2"));
+    } catch (Exception e) {
+      // do something with exception
+      e.printStackTrace();
+    } finally {
+      try {
+        if (dataOut != null) {
+          dataOut.close();
+        }
+        if (in != null) {
+          in.close();
+        }
 
-			} catch (IOException e) {
-				// do something with exception
-				e.printStackTrace();
-			}
-		}
-	}
+      } catch (IOException e) {
+        // do something with exception
+        e.printStackTrace();
+      }
+    }
+  }
 }
 ```
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
+
+[ACCORDION-BEGIN [Step 8: ](Validation)]
+
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
+[ACCORDION-END] 
 
 ## Next Steps
  - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

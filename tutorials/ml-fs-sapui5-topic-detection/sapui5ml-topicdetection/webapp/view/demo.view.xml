@@ -37,7 +37,7 @@
 						</items>
 					</Table>
 					<VBox width="100%" direction="Column" alignItems="Center">
-						<Carousel pages="{demo>/result}" width="100%" visible="{= typeof ${demo>/resultVisible} !== 'undefined'}">
+						<Carousel pages="{demo>/result}" width="100%" visible="{= ${demo>/resultVisible} === true}">
 							<pages>
 								<VBox width="100%" direction="Column" alignItems="Center">
 									<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
