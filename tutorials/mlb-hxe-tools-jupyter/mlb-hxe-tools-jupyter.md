@@ -240,14 +240,10 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /home/jupyteradm/.ju
 Once the certificate is created, you can edit the generated configuration file and append the following configuration elements:
 
 ```text
-# Set options for certfile
 c.NotebookApp.certfile = u'/home/jupyteradm/.jupyter/mycert.pem'
 c.NotebookApp.keyfile = u'/home/jupyteradm/.jupyter/mykey.key'
-# Set ip to '*' to bind on all interfaces (ips) for the public server
 c.NotebookApp.ip = '*'
 c.NotebookApp.open_browser = False
-
-# It is a good idea to set a known, fixed port for server access
 c.NotebookApp.port = 8888
 ```
 
