@@ -1,6 +1,7 @@
 ---
 title: Use an ODBC based querying tool with SAP HANA, express edition
 description: Provide details on the installation the SAP HANA client and instruction to connect a SAP HANA, express edition instance from almost any ODBC based querying tool.
+auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
 ---

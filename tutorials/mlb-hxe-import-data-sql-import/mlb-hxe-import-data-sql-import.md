@@ -1,6 +1,7 @@
 ---
 title: Import CSV into SAP HANA, express edition using IMPORT FROM SQL command
 description: Provide details on the import data feature available via the IMPORT FROM SQL command
+auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition ]
 ---

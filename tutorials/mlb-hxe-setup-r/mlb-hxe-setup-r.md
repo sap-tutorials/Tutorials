@@ -1,6 +1,7 @@
 ---
 title: Configure the SAP HANA R integration with SAP HANA, express edition
 description: Provide details on the installation and configuration of the SAP HANA R integration with SAP HANA, express edition.
+auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
 ---
@@ -59,20 +60,20 @@ A key benefit of having the overall control flow situated on the database side i
 
 [ACCORDION-BEGIN [Step 1: ](Create a Dedicated User)]
 
-As a best practice, it is recommended to create a dedicated user to run your TensorFlow activities.
+As a best practice, it is recommended to create a dedicated user to run your R activities.
 
 This will help avoiding side any effect on the `hxeadm` user that is running the SAP HANA, express edition instances.
 
-For the rest of this tutorial, `tmsadm` will be referred as the TensorFlow `ModelServer` administrator user.
+For the rest of this tutorial, `radm` will be referred as the R administrator user.
 
-To create `tmsadm` user you can execute the following commands:
+To create `radm` user you can execute the following commands:
 
 ```shell
 sudo useradd -m -d /home/r -c "R Administrator" radm     
 sudo passwd radm
 ```
 
-Then, you can execute the following command to add the `tmsadm` user to the `sudoer` list which will be required to proceed will the installation:
+Then, you can execute the following command to add the `radm` user to the `sudoer` list which will be required to proceed will the installation:
 
 ```shell
 sudo bash -c 'echo "radm ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers'

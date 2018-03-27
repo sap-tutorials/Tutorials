@@ -1,6 +1,7 @@
 ---
 title: Processing Text Content with SAP Leonardo Machine Learning Foundation services on the API Business Hub
 description: Discover the SAP Leonardo Machine Learning Functional Service consuming text content on the SAP API Business Hub
+auto_validation: true
 primary_tag: products>sap-leonardo-machine-learning-foundation
 tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-leonardo-machine-learning-foundation,  products>sap-api-management, products>sap-cloud-platform]
 ---

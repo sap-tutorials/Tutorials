@@ -1,6 +1,7 @@
 ---
 title: Prepare to import SAP Predictive Analytics Datasets
 description: Prepare to import SAP Predictive Analytics Sample Dataset in your SAP HANA, express edition instance
+auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
 ---

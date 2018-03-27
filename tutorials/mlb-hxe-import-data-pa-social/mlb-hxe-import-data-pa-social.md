@@ -1,6 +1,7 @@
 ---
 title: Import a Social / Link Analysis Sample Dataset
 description: Import SAP Predictive Analytics Social / Link Analysis  Sample Datasets in your SAP HANA, express edition instance
+auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
 ---

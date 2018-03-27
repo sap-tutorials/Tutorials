@@ -1,6 +1,7 @@
 ---
 title: Topic Detection with SAP Leonardo Machine Learning Foundation in SAPUI5
 description: Discover how to implement SAP Leonardo Machine Learning Functional Service in a SAPUI5 application
+auto_validation: true
 primary_tag: products>sap-leonardo-machine-learning-foundation
 tags: [ tutorial>beginner, topic>sapui5, topic>html5, topic>machine-learning, products>sap-leonardo-machine-learning-foundation, products>sap-api-management, products>sap-cloud-platform, products>sap-web-ide]
 ---

@@ -1,6 +1,7 @@
 ---
 title: Select a SQL query tool for SAP HANA, express edition
 description: Provide details on the installation and configuration of SQL query tools and connect to SAP HANA, express edition.
+auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>how-to, tutorial>beginner, products>sap-hana\, express-edition ]
 ---

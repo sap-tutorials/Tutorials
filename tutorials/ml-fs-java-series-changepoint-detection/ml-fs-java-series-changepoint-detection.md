@@ -1,6 +1,7 @@
 ---
 title: Change Point Detection with SAP Leonardo Machine Learning Foundation in Java
 description: Discover how to implement SAP Leonardo Machine Learning Functional Service in a Java program
+auto_validation: true
 primary_tag: products>sap-leonardo-machine-learning-foundation
 tags: [ tutorial>beginner, topic>java, topic>machine-learning, products>sap-leonardo-machine-learning-foundation, topic>java, products>sap-api-management]
 ---

@@ -1,6 +1,7 @@
 ---
 title: Import a Geo localization Sample Dataset
 description: Import SAP Predictive Analytics Geo localization Sample Dataset in your SAP HANA, express edition instance
+auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
 ---

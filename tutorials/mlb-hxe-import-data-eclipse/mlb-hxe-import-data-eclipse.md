@@ -1,6 +1,7 @@
 ---
 title: Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse
 description: Provide details on the import data feature available in the SAP HANA Tools for Eclipse
+auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition ]
 ---

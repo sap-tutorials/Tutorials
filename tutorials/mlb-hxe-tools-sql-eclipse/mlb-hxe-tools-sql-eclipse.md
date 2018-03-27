@@ -1,6 +1,7 @@
 ---
 title: Use the SAP HANA Tools for Eclipse as a SQL query tool with SAP HANA, express edition
 description: Provide details on the installation and configuration of the SAP HANA Tools for Eclipse and connect to SAP HANA, express edition.
+auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>how-to, tutorial>beginner, products>sap-hana\, express-edition ]
 ---
