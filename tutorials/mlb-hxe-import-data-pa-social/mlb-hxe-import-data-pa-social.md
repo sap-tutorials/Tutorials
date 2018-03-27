@@ -45,6 +45,7 @@ The sample structure for the [**Sample Social**](https://help.sap.com/http.svc/d
 
 **Note:** `desc` and `KxDesc` files are SAP Predictive Analytics dataset description files and will not be loaded.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Create the table structure)]
@@ -108,6 +109,7 @@ CREATE TABLE PA_DATA.LINKS_SN_NODES (
 );
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download the Sample Data)]
@@ -168,6 +170,7 @@ The dataset files should now be located in: **`/usr/sap/HXE/HDB90/work/sample_so
 
 You can now move to **Step 3: Import Using the IMPORT FROM SQL command**.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import Using the SAP HANA Tools for Eclipse)]
@@ -196,6 +199,7 @@ The source files should be mapped with the following target tables:
 | `sn_links.txt`                        | `PA_DATA.LINKS_SN_LINKS`                          | Semi Colon (;)
 | `sn_nodes.txt`                        | `PA_DATA.LINKS_SN_NODES`                          | Semi Colon (;)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import Using the IMPORT FROM SQL command)]
@@ -272,6 +276,7 @@ WITH
 ;
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Verify the imported data)]
@@ -295,17 +300,12 @@ SELECT 'LINKS_SN_NODES'                         as TABLE_NAME, count(1) as ROW_C
 ;
 ```
 
-It should return the following result:
+[DONE]
+[ACCORDION-END]
 
-| `TABLE_NAME`                              | `ROW_COUNT`
-|-------------------------------------------|-------------
-| `CONTACT_DEMO_APPLYIN`                    | 7751
-| `CONTACT_DEMO_APPLYIN_WITH_COM`           | 7751
-| `CONTACT_DEMO_CONTACT_EVENTS`             | 204984
-| `CONTACT_DEMO_CONTACT_ID_CONVERSION`      | 7762
-| `CONTACT_DEMO_CONTACT_NODES_DESCRIPTION`  | 7762
-| `LINKS_SN_LINKS`                          | 298
-| `LINKS_SN_NODES`                          | 76
+[ACCORDION-BEGIN [Step 5: ](Validation)]
 
+Provide an answer to the question below then click on **Validate**.
 
+[VALIDATE_1]
 [ACCORDION-END]

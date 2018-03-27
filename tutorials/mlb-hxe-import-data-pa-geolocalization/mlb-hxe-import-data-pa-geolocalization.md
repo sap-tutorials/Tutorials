@@ -47,7 +47,8 @@ The sample structure for the [**Sample Geo localization**](https://help.sap.com/
 | <nobr>`isTourist`</nobr>   | a flag indicating a tourist location  | <nobr>0 or 1</nobr>
 | <nobr>`isMustSee`</nobr>   | a flag indicating a must see location | <nobr>0 or 1</nobr>
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 1: ](Create the table structure)]
 
@@ -63,10 +64,10 @@ CREATE TABLE PA_DATA.GOWALLA (
     ISTOURIST   BOOLEAN,
     ISMUSTSEE   BOOLEAN
 );
-
 ```
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 2: ](Download the Sample Data)]
 
@@ -121,7 +122,8 @@ The dataset files should now be located in: **`/usr/sap/HXE/HDB90/work/sample_ge
 
 You can now move to **Step 3: Import Using the IMPORT FROM SQL command**.
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 3: ](Import Using the SAP HANA Tools for Eclipse)]
 
@@ -143,7 +145,8 @@ The source files should be mapped with the following target tables:
 | ----------------------------- | ----------------------------------  
 | `gowalla_demo_2.txt`          | `PA_DATA.GOWALLA`
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 3: ](Import Using the IMPORT FROM SQL command)]
 
@@ -166,7 +169,8 @@ WITH
 ;
 ```
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 4: ](Verify the imported data)]
 
@@ -176,10 +180,12 @@ You can verify that the data was imported properly using the following SQL state
 SELECT 'GOWALLA'     as TABLE_NAME, count(1) as ROW_COUNT from PA_DATA.GOWALLA;
 ```
 
-It should return the following result:
+[DONE]
+[ACCORDION-END] 
 
-| `TABLE_NAME`             | `ROW_COUNT`
-|--------------------------|-------------
-| `GOWALLA`                | 49914
+[ACCORDION-BEGIN [Step 5: ](Validation)]
 
-[ACCORDION-END]
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
+[ACCORDION-END] 

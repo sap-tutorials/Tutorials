@@ -1,5 +1,5 @@
 ---
-title: Use the SAP HANA Tools for Eclipse as a SQL query tool for SAP HANA, express edition
+title: Use the SAP HANA Tools for Eclipse as a SQL query tool with SAP HANA, express edition
 description: Provide details on the installation and configuration of the SAP HANA Tools for Eclipse and connect to SAP HANA, express edition.
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>how-to, tutorial>beginner, products>sap-hana\, express-edition ]
@@ -26,6 +26,7 @@ For alternate options, you can also check the following link: [Select a SQL quer
 
 In order to proceed with the next steps, you must have the [Eclipse IDE](https://www.eclipse.org/downloads/) installed, running and properly connected to the internet.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Info: ](Gather your system details)]
@@ -89,6 +90,7 @@ Most installation will force you to setup a new password either upon the first s
 
 Make you have the proper credentials, as after 5 failed login attempts, the user account will be locked for 1440 minutes which is the database default password policy).
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Info: ](SAP HANA Tools for the Eclipse IDE)]
@@ -102,6 +104,8 @@ The SAP HANA Tools for the Eclipse IDE is available for the following versions o
 | Mars (4.5)        | `https://tools.hana.ondemand.com/mars/`
 | Luna (4.4)        | `https://tools.hana.ondemand.com/luna/`
 | Kepler (4.3)      | `https://tools.hana.ondemand.com/kepler/`
+| Juno (4.2)        | `https://tools.hana.ondemand.com/juno/`
+| Indigo (4.1)      | `https://tools.hana.ondemand.com/indigo/`
 
 > ### **Warning**: [Docker store image for SAP HANA, express edition](https://store.docker.com/images/sap-hana-express-edition)
 > &nbsp;
@@ -118,6 +122,7 @@ We do encourage you to use the latest version (Oxygen) in conjunction with your 
 > &nbsp;
 > You will need to [open a database tunnel using the SAP Cloud Platform Console Client](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/9e3f90f2ead74229ac5c8848ed5bf292.html).
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Install the SAP HANA tools for Eclipse)]
@@ -146,6 +151,7 @@ Click on **Yes**.
 
 ![image Step 1](01-3.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Switch perspective)]
@@ -158,6 +164,7 @@ Select to **SAP HANA Administrative Console** and click **OK**.
 
 ![image Step 2](02-1.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add a connection to the System Database)]
@@ -202,6 +209,7 @@ Click on **Finish**
 >
 > You may be asked to change the user password if this is the first login attempt.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add a connection to the HXE tenant)]
@@ -242,6 +250,7 @@ Click on **Finish**
 
 ![image Step 4](04-2.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Analyze the connections)]
@@ -260,6 +269,7 @@ The displayed information is following this pattern: **[Tenant name]@[Instance n
 
 The instance name, which is by default HXE, is directly linked to the instance number, and not to be confused with the HXE database tenant.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Test the connections with SQL)]
@@ -273,7 +283,7 @@ This will open a SQL console linked to the **HXE @ HXE (SYSTEM)** connection.
 Execute the following SQL statement, by pasting the following content then press **F8** or click on the ![sql execute](00-sql-execute.png) icon:
 
 ```SQL
-select * from M_DATABASES;
+select DATABASE_NAME from M_DATABASES;
 ```
 
 It should return the following result:
@@ -282,10 +292,22 @@ It should return the following result:
 
 Now switch to the **SYSTEMDB @ HXE (SYSTEM)** connection, either by opening a new SQL console, or using the ***Switch connection*** ![sql](00-sql-switch.png) icon.
 
-Run the same SQL statement, and the result should be:
+Run the same SQL statement again, and the result should be:
 
 ![image Step 6](06-3.png)
 
 This implies that the tenant database cannot see the system database but the system database can.
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Validation)]
+
+By default the SAP HANA, express edition instance id is 90, but in fact Eclipse will request the full port number to the server when connection.
+
+Right click on your **HXE @ HXE (SYSTEM)** connection, then select **Properties** (or press ALT+ENTER), then under **Database User Logon**, switch to the **Additional Properties**.
+
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
 [ACCORDION-END]

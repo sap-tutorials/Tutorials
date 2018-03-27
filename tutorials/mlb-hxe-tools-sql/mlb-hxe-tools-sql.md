@@ -29,6 +29,9 @@ It embeds the connectivity which means that you don't need to install the SAP HA
 
 Use the following link for detailed instruction regarding the installation and configuration of the [SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-eclipse.html).
 
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Option: ](SAP HANA HDBSQL tool)]
@@ -41,6 +44,9 @@ SAP HANA HDBSQL is installed with the SAP HANA client package software.
 
 Use the following link for detailed instruction regarding the installation and configuration of the [SAP HANA HDBSQL tool](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-hdbsql.html)
 
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Option: ](JDBC based querying tools)]
@@ -51,6 +57,9 @@ JDBC (Java Database Connectivity) is an application programming interface (API) 
 
 Use the following link for detailed instruction regarding the installation and configuration of [JDBC based querying tools](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-jdbc.html)
 
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Option: ](ODBC based querying tools)]
@@ -63,4 +72,5 @@ Initially build for Windows platforms, it is also available for Linux environmen
 
 Use the following link for detailed instruction regarding the installation and configuration of [ODBC based querying tools](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-odbc.html)
 
+[VALIDATE_4]
 [ACCORDION-END]

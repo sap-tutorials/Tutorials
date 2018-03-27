@@ -26,6 +26,7 @@ The steps detailed in this tutorial and the related links will assume that you h
 - [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
 - [Configure the SAP HANA R integration with SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-setup-r.html)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Prerequisite : ](Create a dedicated schema)]
@@ -42,6 +43,7 @@ Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execu
 CREATE SCHEMA R_DATA;
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Info : ](Supported Data Types)]
@@ -61,6 +63,7 @@ The supported data types are listed below:
 
 For example, the `ts` R type is not supported.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Get The Dataset Structure)]
@@ -140,6 +143,7 @@ CREATE COLUMN TABLE IRIS (
 );
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2 : ](Import the Iris Dataset)]
@@ -177,8 +181,15 @@ AS BEGIN
 END;
 
 CALL DISPLAY_IRIS();
-SELECT * FROM IRIS;
+SELECT COUNT(1) FROM IRIS;
 ```
+
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3 : ](Import the Ability Dataset)]
 
 The Dataset package provide data in many format, with the most common one being a data frame.
 
@@ -220,7 +231,10 @@ AS BEGIN
 END;
 
 CALL DISPLAY_ABILITY();
-SELECT * FROM ABILITY;
+SELECT COUNT(1) FROM ABILITY;
 ```
 
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_2]
 [ACCORDION-END]

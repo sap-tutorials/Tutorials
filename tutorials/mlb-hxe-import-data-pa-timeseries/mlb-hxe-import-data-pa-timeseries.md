@@ -76,7 +76,8 @@ Each observation is characterized by 2 variables described in the following tabl
 | `TIME`      | The date of the readings  | A date
 | `Signal`    | the signal value          | A numerical value
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 1: ](Create the table structure)]
 
@@ -142,7 +143,9 @@ CREATE TABLE PA_DATA.TREND_AND_CYCLIC_AND_4WN (
     PRIMARY KEY (READINGDATE)
 );
 ```
-[ACCORDION-END]
+
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 2: ](Download the Sample Data)]
 
@@ -201,7 +204,8 @@ The dataset files should now be located in: **`/usr/sap/HXE/HDB90/work/sample_ti
 
 You can now move to **Step 3: Import Using the IMPORT FROM SQL command**.
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 3: ](Import Using the SAP HANA Tools for Eclipse)]
 
@@ -229,7 +233,8 @@ The source files should be mapped with the following target tables:
 | `TrendAndCyclicAnd_4Wn.txt`   | `PA_DATA.TREND_AND_CYCLIC_AND_4WN`
 | `TrendAndCyclicAndWn.txt`     | `PA_DATA.TREND_AND_CYCLIC_AND_WN`
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 3: ](Import Using the IMPORT FROM SQL command)]
 
@@ -305,7 +310,8 @@ WITH
 ;
 ```
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 4: ](Verify the imported data)]
 
@@ -330,14 +336,12 @@ SELECT 'TREND_AND_CYCLIC_AND_WN'  as TABLE_NAME, count(1) as ROW_COUNT from PA_D
 
 It should return the following result:
 
-| `TABLE_NAME`               | `ROW_COUNT`
-|----------------------------|-------------
-| `CASHFLOW`                 | 272
-| `OZONE`                    | 204
-| `LAG_1_AND_CYCLES`         | 499
-| `LAG_1_AND_CYCLES_AND_WN`  | 499
-| `TREND_AND_CYCLIC`         | 500
-| `TREND_AND_CYCLIC_AND_4WN` | 500
-| `TREND_AND_CYCLIC_AND_WN`  | 500
+[DONE]
+[ACCORDION-END] 
 
-[ACCORDION-END]
+[ACCORDION-BEGIN [Step 5: ](Validation)]
+
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
+[ACCORDION-END] 

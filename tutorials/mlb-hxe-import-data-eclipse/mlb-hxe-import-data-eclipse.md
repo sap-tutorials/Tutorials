@@ -39,6 +39,7 @@ In order to proceed with the next steps, you must have:
  - [SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-eclipse.html) installed and connected to your SAP HANA, express edition.
  - [Prepared your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Save the sample data)]
@@ -67,6 +68,7 @@ As you can notice the date and number format are different.
  - The date format only allows the separator to be changed
  - The number format allows the decimal and thousands separator to follow either the US or European format.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a sample table)]
@@ -83,6 +85,7 @@ CREATE TABLE ML_DATA.MYTABLE_ECLIPSE (
 );
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import the Data)]
@@ -172,6 +175,7 @@ Using the **Mapping menu** icon ![mapping menu](03-mapping-menu.png), select the
 
 Click on **Finish**.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Verify the imported data)]
@@ -182,6 +186,7 @@ To verify that the data were properly imported, you can run the following query:
 SELECT * FROM ML_DATA.MYTABLE_ECLIPSE;
 ```
 
-This should return the 8 rows imported from the files.
+Provide an answer to the question below then click on **Validate**.
 
+[VALIDATE_2]
 [ACCORDION-END]
