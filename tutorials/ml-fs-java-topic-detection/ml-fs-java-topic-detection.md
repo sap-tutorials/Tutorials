@@ -385,7 +385,7 @@ import java.util.Scanner;
 
 Save your code.
 
-You can now run the code by either pressing **ALT**+**SHIFT**+**X**,**J** or by clicking on the **Run** ![Run](00-run.png) button.
+You can now run the code by either pressing **ALT** + **SHIFT** + **X** , **J** or by clicking on the **Run** ![Run](00-run.png) button.
 
 Enter the relevant parameters as detailed in the console.
 
