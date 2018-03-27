@@ -1,6 +1,7 @@
 ---
-title: Use HDBSQL as a SQL query tool for SAP HANA, express edition
+title: Use HDBSQL as a SQL query tool with SAP HANA, express edition
 description: Provide details on the installation the SAP HANA client and instruction to connect a SAP HANA, express edition instance using the HDBSQL tool.
+auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
 ---
@@ -44,6 +45,7 @@ The ***SAP HANA HDB Client*** software package includes the following connectivi
 
 Here you will install the ***SAP HANA HDB Client*** only.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Install the SAP HANA client)]
@@ -112,6 +114,7 @@ Once the installation is completed, you should get the following elements in you
 Installation finished successfully
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Locate the HDBSQL tool)]
@@ -121,6 +124,7 @@ The HDBSQL tool, which is installed as part of the SAP HANA client, is located a
  - on Linux and UNIX platforms `/usr/sap/hdbclient/`
  - on Microsoft Windows platforms: `C:\Program Files\SAP\hdbclient\`
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Details about the HDBSQL tool)]
@@ -165,8 +169,9 @@ or using an input SQL file:
 hdbsql -n <host>:<port> -u <user> -p <password> -I "SQL file full path""
 ```
 
-All the available options are listed in the [SAP HANA HDBSQL Options](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.02/en-US/c24d054bbb571014b253ac5d6943b5bd.html) documentation.
+All the available HDBSQL options are listed in the [SAP HANA HDBSQL Options](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.02/en-US/c24d054bbb571014b253ac5d6943b5bd.html) documentation.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Test your connections)]
@@ -214,4 +219,12 @@ DATABASE_NAME,ACTIVE_STATUS,RESTART_MODE
 1 row selected (overall time 51.027 msec; server time 312 usec)
 ```
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Validation)]
+
+Based on the available HDBSQL options listed in the [SAP HANA HDBSQL Options](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.02/en-US/c24d054bbb571014b253ac5d6943b5bd.html) documentation, provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
 [ACCORDION-END]

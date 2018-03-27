@@ -37,7 +37,7 @@
 								change="onPressExtractFeatures" custom:mode="ajax" fileType="zip,png,jpeg,jpg,bmp,tiff,tif"
 								mimeType="application/x-zip-compressed,application/zip,application/octet-stream,image/png,image/jpg,image/jpeg,image/bmp,image/tiff"
 								typeMissmatch="fileTypeMissmatch"></unified:FileUploader>
-							<Button text="Score Similarity" press="onPressScoreSimilarity" custom:mode="ajax" visible="{= typeof ${demo>/resultVisible-featureextraction} !== 'undefined'}"/>
+							<Button text="Score Similarity" press="onPressScoreSimilarity" custom:mode="ajax" visible="{= ${demo>/resultVisible-featureextraction} === true}"/>
 						</content>
 					</Toolbar>
 				</footer>
