@@ -1,6 +1,7 @@
 ---
 title: Editing Adapter Configuration Files
-description: A set of adapter configuration files need to be edited in order to make the custom adapter available to both the HANA Streaming Analytics server at run time and in HANA Studio at design time
+description: Edit a set of adapter configuration files in order to make the custom adapter available to both the HANA Streaming Analytics server at run time and in HANA Studio at design time.
+auto-validation: false
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
@@ -29,72 +30,88 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
  The `parametersdefine.xsd` file simply defines what elements are valid in an `adapter_config.xml` file (adapter configuration file). Since we have used a custom element – `MqttInputTransporterParameters` – in our `adapter_config.xml` file, we must define it in `parametersdefine.xsd`.
 
+
 [ACCORDION-BEGIN [Step 1: ](Edit modulesdefine.xml and custommodulesdefine.xml)]
 
 > The full source code for the `modulesdefine.xml` and `custommodulesdefine.xml` files are provided in the `Appendix` Section
 
-**a.** Open `modulesdefine.xml` in a text editor.
+  1. Open `modulesdefine.xml` in a text editor.
 
-**b.** We will add our Transporter module to the `TransporterDefnList`
+  2. We will add our Transporter module to the `TransporterDefnList`
 
-  - **i.** Create a `<TransporterDefn>` element.
-```XML
-  <TransporterDefn>
-```
+      - Create a `<TransporterDefn>` element.
 
-  - **ii.** Create a `<Name>` element. Specify the name of our custom Transporter class.
-```XML
-  <Name>MqttTransporter</Name>
-```
+        ```XML
+          <TransporterDefn>
+        ```
 
-  - **iii.** Create a `<Class>` element.
-```XML
-  <Class>com.sap.MqttTransporter</Class>
-```
+      - Create a `<Name>` element. Specify the name of our custom Transporter class.
 
-  - **iv.** Create an `<OutputData>` element.
-```XML
-  <OutputData>String</OutputData>
-```
+        ```XML
+          <Name>MqttTransporter</Name>
+        ```
 
-  - **v.** Close off the `<TransporterDefn>` element.
-```XML
-</TransporterDefn>
-```
+      - Create a `<Class>` element.
 
-**c.** We will add our formatter module to the `formatterDefnList`
+        ```XML
+          <Class>com.sap.MqttTransporter</Class>
+        ```
 
-  - **i.** Create a `<FormatterDefn>` element.
-```XML
-  <FormatterDefn>
-```
+      - Create an `<OutputData>` element.
 
-  - **ii.** Create a `<Name>` element. Specify the name of our custom `Transporter` class.
-```XML
-  <Name>MqttFormatter</Name>
-```
+        ```XML
+          <OutputData>String</OutputData>
+        ```
 
-  - **iii.** Create a `<Class>` element.
-```XML
-  <Class>com.sap.MqttFormatter</Class>
-```
+      - Close off the `<TransporterDefn>` element.
 
-  - **iv.** Create an `<InputData>` element.
-```XML
-  <InputData>String</InputData>
-```
+        ```XML
+        </TransporterDefn>
+        ```
 
-  - **v.** Create an `<OutputData>` element.
-```XML
-  <OutputData>Esp</OutputData>
-```
+  3. We will add our formatter module to the `formatterDefnList`
 
-  - **vi.** Close off the `<FormatterDefn>` element.
-```XML
-  </FormatterDefn>
-```
+      - Create a `<FormatterDefn>` element.
 
-**d.** Repeat steps **a** to **c** for `custommodulesdefine.xml`.
+        ```XML
+          <FormatterDefn>
+        ```
+
+      - Create a `<Name>` element. Specify the name of our custom `Transporter` class.
+
+        ```XML
+          <Name>MqttFormatter</Name>
+        ```
+
+      - Create a `<Class>` element.
+
+        ```XML
+          <Class>com.sap.MqttFormatter</Class>
+        ```
+
+      - Create an `<InputData>` element.
+
+        ```XML
+          <InputData>String</InputData>
+        ```
+
+      - Create an `<OutputData>` element.
+
+        ```XML
+          <OutputData>Esp</OutputData>
+        ```
+
+      - Close off the `<FormatterDefn>` element.
+
+        ```XML
+          </FormatterDefn>
+        ```
+
+  4. Repeat steps 1 to 3 for `custommodulesdefine.xml`.
+
+For the question below, select the correct answer, and click **Validate**.
+
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -102,32 +119,36 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
 > The full source code for the `parametersdefine.xsd` file is provided in the `Appendix` Section
 
-**a.** Open `parametersdefine.xsd` in a text editor.
+  1. Open `parametersdefine.xsd` in a text editor.
 
-**b.** Add the following line to the `<xs:choice>` element
-```XML
-  <xs:element name="MQTTInputTransporterParameters" type="MQTTInputTransporterParametersDefn"/>
-```
+  2. Add the following line to the `<xs:choice>` element
 
-**c.** Since we have defined the `MQTTInputTransporterParameters` type to be `MQTTInputTransporterParametersDefn`, we must now set up a rule for it.
+    ```XML
+      <xs:element name="MQTTInputTransporterParameters" type="MQTTInputTransporterParametersDefn"/>
+    ```
 
-  - **i.** Create a <xs:complex> element and specify the name attribute.
-```XML
-  <xs:complexType name="MQTTInputTransporterParametersDefn">
-```
+  3. Since we have defined the `MQTTInputTransporterParameters` type to be `MQTTInputTransporterParametersDefn`, we must now set up a rule for it.
 
-  - **ii.** Create an `<xs:all>` element.
+    - Create a <xs:complex> element and specify the name attribute.
 
-  - **iii.** Create an `<xs:element>` element for each `MQTTInputTransporterParametersDefn` parameter (`Topic` and `MosquittoServerAddress`) and specify name and type attributes for each.
-```XML
-  <xs:element name="MosquittoServerAddress" type="xs:string"></xs:element> <xs:element name="Topic" type="xs:string"></xs:element>
-```
+      ```XML
+        <xs:complexType name="MQTTInputTransporterParametersDefn">
+      ```
 
-  - **iv.** Close off the <xs:all> and <xs:complexType> elements.
-```XML
-    </xs:all>
-  </xs:complexType>
-```
+    - Create an `<xs:all>` element.
+
+    - Create an `<xs:element>` element for each `MQTTInputTransporterParametersDefn` parameter (`Topic` and `MosquittoServerAddress`) and specify name and type attributes for each.
+
+      ```XML
+        <xs:element name="MosquittoServerAddress" type="xs:string"></xs:element> <xs:element name="Topic" type="xs:string"></xs:element>
+      ```
+
+    - Close off the `<xs:all>` and `<xs:complexType>` elements.
+
+      ```XML
+          </xs:all>
+        </xs:complexType>
+      ```
 
 [ACCORDION-END]
 

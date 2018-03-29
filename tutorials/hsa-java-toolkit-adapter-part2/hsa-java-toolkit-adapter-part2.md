@@ -1,6 +1,7 @@
 ---
 title: Creating Custom Adapter Modules
-description: Create a Transporter Module and a Formatter module for your Custom Adapter
+description: Create a Transporter Module and a Formatter module for your Custom Adapter using Java PAHO Library.
+auto-validation: false
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
@@ -38,100 +39,101 @@ Before we begin, you can check out the `$STREAMING_HOME/adapters/framework/examp
 
 First, we will set up the Custom Adapter Project.
 
-**a.** Start by opening your IDE and creating a new java project called `mqtt-input`
+  1. Start by opening your IDE and creating a new java project called `mqtt-input`
+  2. Create a package `com.sap`
+  3. Create a Java class called `MqttTransporter.java`
+  4. Create a Java class called `MqttCB.java`. The code for this file is provided in the appendix section of this tutorial.
+  5. We will now add a number of `.jar` dependencies to our class path:
 
-**b.** Create a package `com.sap`
+      - Java [PAHO](https://eclipse.org/paho/clients/java/) library
+      - The other dependencies will be from the Adapter Toolkit and can be found in `%STREAMING_HOME%\adapters\framework\libj`
 
-**c.** Create a Java class called `MqttTransporter.java`
-
-**d.** Create a Java class called `MqttCB.java`. The code for this file is provided in the appendix section of this tutorial.
-
-**e.** We will now add a number of `.jar` dependencies to our class path:
-
-* Java [PAHO](https://eclipse.org/paho/clients/java/) library
-* The other dependencies will be from the Adapter Toolkit and can be found in `%STREAMING_HOME%\adapters\framework\libj`
-    - `Commons-configuration-<version>.jar`
-    - `Streaming-client.jar`
-    - `Streaming-system.jar`
-    - `Streaming-adapter-framework.jar`
+        - `Commons-configuration-<version>.jar`
+        - `Streaming-client.jar`
+        - `Streaming-system.jar`
+        - `Streaming-adapter-framework.jar`
 
 Then, have `MqttTransporter` extend the `Transporter` class.
 
 We will start by defining a number of instance variables, which will be assigned values in the `init()` method (more on that later).
 
-* `MqttClient client`;
-* `String topic`;
-* `MqttCB cb`;
+  - `MqttClient client`;
+  - `String topic`;
+  - `MqttCB cb`;
 
 Having done this, we will need to implement a number of abstract methods in Transporter. We will cover the methods in the same order they will be called by the adapter framework.
 
 The first abstract method we will implement is `void init()`. The purpose of this method is to prepare the module for the actions it is responsible for performing. We will use this method to initialize various global variables as well as grab the user defined parameters for the adapter.
 
-**a.** First, we want to get the Topic parameter value. This value is set by the streaming developer when configuring the adapter in Studio.
+  1. First, we want to get the Topic parameter value. This value is set by the streaming developer when configuring the adapter in Studio.
 
-* We can get the value of Topic by calling
+    We can get the value of Topic by calling:
 
-```java
-utility.getParameters().getString("MQTTInputTransporterParamet
-ers.Topic");
-```
-> The `MQTTInputTransporterParameters` prefix is defined in our adapter configuration file.
+    ```java
+    utility.getParameters().getString("MQTTInputTransporterParamet
+    ers.Topic");
+    ```
+    > The `MQTTInputTransporterParameters` prefix is defined in our adapter configuration file.
 
 
-**b.** Next, create an `MqttClient`. The constructor takes `serverURI` - the address of the server to connect to, specified as a `URI` and `clientId` - a client identifier that is unique on the server being connected to.
+  2. Next, create an `MqttClient`. The constructor takes `serverURI` - the address of the server to connect to, specified as a `URI` and `clientId` - a client identifier that is unique on the server being connected to.
 
-* We will use the `MosquittoServerAddress` defined by the streaming developer and a unique string
+    We will use the `MosquittoServerAddress` defined by the streaming developer and a unique string
 
-```java
-client = new
-MqttClient(utility.getParameters().getString("MQTTInputTranspo
-rterParameters.MosquittoServerAddress"), "MQTT_ESP");
-```
+    ```java
+    client = new
+    MqttClient(utility.getParameters().getString("MQTTInputTranspo
+    rterParameters.MosquittoServerAddress"), "MQTT_ESP");
+    ```
 
-**c.** Connect the `MqttClient` with `client.connect();`
+  3. Connect the `MqttClient` with `client.connect();`
 
-**d.** Subscribe the `MqttClient` to the topic with `client.subscribe(topic);`
+  4. Subscribe the `MqttClient` to the topic with `client.subscribe(topic);`
 
-**e.** Instantiate an `MqttCB` object and assign it to our `MqttClient`. `MqttCB` is a custom `MqttCallback` class written for this adapter. The code for it is provided in the appendix section of this tutorial.
+  5. Instantiate an `MqttCB` object and assign it to our `MqttClient`. `MqttCB` is a custom `MqttCallback` class written for this adapter. The code for it is provided in the appendix section of this tutorial.
 
-```java
-cb = new MqttCB();
-client.setCallback(cb);
-```
+    ```java
+    cb = new MqttCB();
+    client.setCallback(cb);
+    ```
 
 The second abstract method we have to implement is `void start()`. The purpose of this method is to perform any necessary tasks when the adapter is started. For our purposes, it is not necessary to
 include any instructions in this method so we will leave it empty.
 
 The third and most important method to implement is `void execute()`. When the adapter framework calls this method, it is expected to run continuously until the adapter is requested to stop or until the adapter completes its work.
 
-**a.** As such, we will wrap our functionality in a loop that iterates until the adapter has been issued a stop request. Following this loop – and ending the method – is an instruction to change the adapter `RunState` to done.
-```java
-while(!utility.isStopRequested())
-{
-//steps b-d
-}
-utility.setAdapterState(RunState.RS_DONE);
-```
+  1. As such, we will wrap our functionality in a loop that iterates until the adapter has been issued a stop request. Following this loop – and ending the method – is an instruction to change the adapter `RunState` to done.
 
-**b.** While the adapter has not been requested to stop, we will continuously check for new `MQTT` messages. The `takeNewMsg()` method will return `null` if there are no new messages, or take the message out of the message queue and return it. When a new message is received, we will process it within the `if` statement.
+    ```java
+    while(!utility.isStopRequested())
+    {
+    //steps b-d
+    }
+    utility.setAdapterState(RunState.RS_DONE);
+    ```
 
-```java
-String msg;
-if ((msg = cb.takeNewMsg()) != null){
-//steps c-d
-}
-```
+  2. While the adapter has not been requested to stop, we will continuously check for new `MQTT` messages. The `takeNewMsg()` method will return `null` if there are no new messages, or take the message out of the message queue and return it. When a new message is received, we will process it within the `if` statement.
 
-**c.** Once we have received a message, we need to create an `AdapterRow` and send it to our `Formatter` module.
-```java
-AdapterRow row = utility.createRow(cb.getRcvdMsg());
-utility.sendRow(row);
-```
+    ```java
+    String msg;
+    if ((msg = cb.takeNewMsg()) != null){
+    //steps c-d
+    }
+    ```
+
+  3. Once we have received a message, we need to create an `AdapterRow` and send it to our `Formatter` module.
+
+    ```java
+    AdapterRow row = utility.createRow(cb.getRcvdMsg());
+    utility.sendRow(row);
+    ```
 
 The fourth overridden method is `void stop()`. Its purpose is to perform any necessary tasks when the adapter is stopped. We will use this method to disconnect our `MqttClient` by issuing
+
 ```java
 client.disconnect();
 ```
+
 The fifth and last method is `void destroy()`. Its purpose is to perform any cleanup tasks for your input or output transporter. For our purposes, it is not necessary to include any instructions in this method so we will leave it empty.
 
 [ACCORDION-END]
@@ -150,38 +152,43 @@ Before we begin, you can check out the `$STREAMING_HOME/adapters/framework/examp
 
 > The full source code for the Formatter Module is provided in the `Appendix` Section
 
-**a.** Start by opening your IDE and navigating to the java project called `mqtt-input` that we created for our Transporter Module (complete the pre-requisite tutorial if you have not yet completed this). Note that it is also valid to create a new project and create your Formatter module separately but for simplicity, we will be creating them in the same project.
+  1. Start by opening your IDE and navigating to the java project called `mqtt-input` that we created for our Transporter Module (complete the pre-requisite tutorial if you have not yet completed this). Note that it is also valid to create a new project and create your Formatter module separately but for simplicity, we will be creating them in the same project.
 
-**b.** Create a Java class called `Mqttformatter.java`
+  2. Create a Java class called `Mqttformatter.java`
 
-**c.** Have `MqttFormatter` extend the `RowFormatter` class. Note that it is also possible to create a custom Formatter module that extends the `StreamingFormatter` class. For the purposes of this tutorial, we will be extended the `RowFormatter` class. Similar to our Transporter module, we will have to implement a number of abstract methods (only 3 this time though).
+  3. Have `MqttFormatter` extend the `RowFormatter` class. Note that it is also possible to create a custom Formatter module that extends the `StreamingFormatter` class. For the purposes of this tutorial, we will be extended the `RowFormatter` class. Similar to our Transporter module, we will have to implement a number of abstract methods (only 3 this time though).
 
 The purpose of the `void init()` method is to prepare the formatter module to convert between data formats. For example, obtain properties from the adapter configuration file and perform any required initialization tasks. Our Formatter module is very simple and does not require any initialization instructions.
 
 The second method is `AdapterRow convert(AdapterRow in)`.
 
-**a.** First, we will test whether the received `AdapterRow` is non-empty. If this is the case, we will simply send the `AdapterRow` back.
+  1. First, we will test whether the received `AdapterRow` is non-empty. If this is the case, we will simply send the `AdapterRow` back.
 
-```java
-if (in.getDataList().isEmpty()){
- return in;
-}
-```
+    ```java
+    if (in.getDataList().isEmpty()){
+     return in;
+    }
+    ```
 
-**b.** If we have reached this point in the method, the received `AdapterRow` is non-empty. Our particular Formatter will convert a `MQTT` message (String) to something usable by Streaming Analytics - an `AepRecord`. First, we will create the desired `AepRecord.`
+  2. If we have reached this point in the method, the received `AdapterRow` is non-empty. Our particular Formatter will convert a `MQTT` message (String) to something usable by Streaming Analytics - an `AepRecord`. First, we will create the desired `AepRecord.`
 
- - **i.** Create a new `AepRecord`.
-```java
-    AepRecord tempRecord = new AepRecord();
-```
- - **ii.** Set the operation of the record.
-```java
-  tempRecord.setOpCode(Operation.INSERT);
-```
-  - **iii.** Get the data list inside the `AepRecord`, and add the first object of the data list in the `AdapterRow`.
-```java
-  tempRecord.getValues().add(in.getData());
-```
+      - Create a new `AepRecord`.
+
+        ```java
+            AepRecord tempRecord = new AepRecord();
+        ```
+
+      - Set the operation of the record.
+
+        ```java
+          tempRecord.setOpCode(Operation.INSERT);
+        ```
+
+      - Get the data list inside the `AepRecord`, and add the first object of the data list in the `AdapterRow`.
+
+        ```java
+          tempRecord.getValues().add(in.getData());
+        ```
 
 Now that we have the `AepRecord` and would like to send it to Streaming Analytics, we will convert the received `AdapterRow` by replacing its data list value at index 0 with the new `AepRecord` - `tempRecord`.
 
@@ -202,6 +209,10 @@ The last method to implement is `void destroy()` which is intended for performin
 [ACCORDION-BEGIN [Step 4: ](Package Modules into a .jar file)]
 
 Now that we have written our `Transporter` and `Formatter` modules, we need to package them in a `.jar` file. If you have been following this tutorial, you should have a single java project containing `MqttTransporter.java`, `MqttFormatter.java` and `MqttCB.java`. Build a `.jar` containing all of these files. The process for doing so varies with `IDE` so, if you have questions, it is best to consult your `IDE's` help pages. Before building the `.jar` file, verify that you will be building it with the same `JRE` version as included in your Streaming Analytics install. Name the newly created `.jar` file `"mqtt-input.jar"`.
+
+For the question below, select all of the correct answers, and click **Validate**.
+
+[VALIDATE_1]
 
 [ACCORDION-END]
 

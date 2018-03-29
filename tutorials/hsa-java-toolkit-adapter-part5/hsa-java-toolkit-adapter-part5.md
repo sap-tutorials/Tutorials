@@ -1,6 +1,7 @@
 ---
 title: Where to Place the Custom Adapter Files
-description: Learn where to place the files we have created and edited for our Custom Adapter.
+description: Place the files we have created and edited for our Custom Adapter in the correct directory.
+auto-validation: false
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
@@ -24,15 +25,15 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
 The files for the custom adapter include the:
 
-  **a.** `mqtt-input.jar` and `org.eclipse.paho.client.mqttv3-<version>.jar` files
-  **b.** `adapter_config.xml` file
-  **c.** `mqtt_input.cnxml` file
-  **d.** edited versions of the `modulesdefine.xml`, `custommodulesdefine.xml`, and `parametersdefine.xsd` files
+  - `mqtt-input.jar` and `org.eclipse.paho.client.mqttv3-<version>.jar` files
+  - `adapter_config.xml` file
+  - `mqtt_input.cnxml` file
+  - edited versions of the `modulesdefine.xml`, `custommodulesdefine.xml`, and `parametersdefine.xsd` files
 
 The directory paths for these files will be relative to the `STREAMING_HOME` and `STREAMING_CUSTOM_ADAPTERS_HOME` environment variables. The streaming home environment variables are `%STREAMING_HOME%` and `%STREAMING_CUSTOM_ADAPTERS_HOME% `for Windows, and `$STREAMING_HOME` and `$STREAMING_CUSTOM_ADAPTERS_HOME` for Unix operating systems (please edit the below paths according to your intention). The rest of the directory path relative to the `STREAMING_HOME` environment variable is the same on both Linux and Windows.
 
 
-[ACCORDION-BEGIN [Step 1: ](Client Side (Hana Studio))]
+[ACCORDION-BEGIN [Step 1: ](Client Side (HANA Studio))]
 
 Assuming you used the default install location, then the local Windows Streaming Analytics `$STREAMING_HOME` will be <pre>`<Hana Studio installation location>\plugins\com.sybase.cep.studio.native.bins_`<b>`<version>`</b>.<b>`<timestamp>`</b></pre> and the `$STREAMING_CUSTOM_ADAPTERS_HOME` will be
 
@@ -81,8 +82,11 @@ ATTACH INPUT ADAPTER MQTT_Input_Adapter1
 TYPE mqtt_input TO InputWindow1
 PROPERTIES  mosquittoServerAddress = 'tcp://<your-ip-address>:1883' ,
 topic = 'test' ;
-
 ```
+
+Click the **Done** button below once you have completed this tutorial.
+
+[DONE]
 
 [ACCORDION-END]
 
