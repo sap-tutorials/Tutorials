@@ -1,6 +1,7 @@
 ---
 title: Import CSV into SAP HANA, express edition using IMPORT FROM SQL command
 description: Provide details on the import data feature available via the IMPORT FROM SQL command
+auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition ]
 ---
@@ -42,6 +43,7 @@ The steps detailed in this tutorial will assume that you have completed the foll
 
 This will let you reuse existing database user and schema.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Configuration: ](IMPORT FROM & CSV File Path)]
@@ -104,6 +106,7 @@ ALTER SYSTEM
   WITH RECONFIGURE;
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Save the sample data)]
@@ -134,6 +137,8 @@ As you can notice the date format are different and one uses a European format w
 For the time format, only the HH24 hour formation is supported.
 
 For the number format, the supported decimal separator is a dot and there is no thousand separator supported nor scientific notation.
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a sample table)]
@@ -149,7 +154,7 @@ CREATE TABLE ML_DATA.MYTABLE_IMPORTSQL (
     E DECIMAL
 );
 ```
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import the Data)]
@@ -196,14 +201,13 @@ WITH
 ```
 
 > ### **Note: insufficient privilege: Not authorized**
->&nbsp;
 >If you receive this error, it probably mean that the user is not granted the IMPORT role.
->&nbsp;
 >Connect to the **HXE** tenant using the **SYSTEM** user credentials and execute the following SQL statement:
 >```SQL
 GRANT IMPORT TO ML_USER;
 ```
 
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Verify the imported data)]
@@ -214,6 +218,7 @@ To verify that the data were properly imported, you can run the following query:
 SELECT * FROM ML_DATA.MYTABLE_IMPORTSQL;
 ```
 
-This should return the 8 rows imported from the files.
+Provide an answer to the question below then click on **Validate**.
 
+[DONE]
 [ACCORDION-END]

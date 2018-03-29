@@ -33,7 +33,7 @@ In the pop-up window, you will find your API Key. Click the **Copy to Clipboard*
 
 ![details for your API key in pop-up](5.png)
 
-**Copy you application key into a text editor.** You will need it later. Close the API key window once you have your API key.
+**Copy your application key into a text editor.** You will need it later. Close the API key window once you have your API key.
 
 
 [ACCORDION-END]

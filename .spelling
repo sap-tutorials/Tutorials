@@ -45,6 +45,7 @@ destructured
 DevOps
 Django
 dropdown
+dropdowns
 DTP
 DTPs
 EasyMock
@@ -100,8 +101,10 @@ Kubernetes
 keychain
 Keychain
 keystore
+Konsole
 Leonardo
 Lifecycle
+localhost
 Lumira
 MacBook
 macOS
@@ -115,6 +118,7 @@ multistore
 Multistore
 Multitenant
 multitenant
+multipart
 MySQL
 Neo
 NetWeaver
@@ -214,6 +218,7 @@ Wi-Fi
 WinSCP
 Witalij
 Worklist
+Workset
 Wroblewski
 XML
 XSEngine
@@ -245,3 +250,6 @@ _23
 _24
 _25
 _FILE
+TensorFlow
+Bazel
+Jupyter

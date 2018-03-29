@@ -94,7 +94,7 @@ At the start of the new line, paste the following code:
 ```
 "translation": {
     "translationDomain": "02",
-    "supportedLanguages": "da,nl,fi,fr,de",
+    "supportedLanguages": "da,nl,en,fi,fr,de",
     "defaultLanguage": "en",
     "defaultI18NPropertyFile": "i18n.properties",
     "resourceModelName": "i18n"

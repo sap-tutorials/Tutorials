@@ -1,6 +1,7 @@
 ---
-title: Use an ODBC based querying tools for SAP HANA, express edition
+title: Use an ODBC based querying tool with SAP HANA, express edition
 description: Provide details on the installation the SAP HANA client and instruction to connect a SAP HANA, express edition instance from almost any ODBC based querying tool.
+auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
 ---
@@ -45,6 +46,7 @@ The ***SAP HANA HDB Client*** software package includes the following connectivi
 
 Here you will install the ***SAP HANA HDB Client*** only.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Install the SAP HANA client)]
@@ -113,6 +115,7 @@ Once the installation is completed, you should get the following elements in you
 Installation finished successfully
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Locate the ODBC Driver)]
@@ -122,6 +125,7 @@ The driver (`lbodbcHDB.dll/so`), which is installed as part of the SAP HANA clie
  - on Linux and UNIX platforms `/usr/sap/hdbclient/`
  - on Microsoft Windows platforms: `C:\Program Files\SAP\hdbclient\`
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Configure the driver)]
@@ -181,6 +185,7 @@ odbcad32
 
 ![image Step 4](04-1.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Configure your connections)]
@@ -286,6 +291,7 @@ At the end, you should have both the HXE and SYSTEMDB ODBC DSN listed.
 > ### **Note** : for Docker users you will need to update the HXE port to ***39041*** and the SYSTEMDB one to ***39017***.
 &nbsp;
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Test the connections with SQL)]
@@ -349,4 +355,12 @@ There are several options available like:
 
 Make sure you always use a 64 bit version else your DSN won't be listed.
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Validation)]
+
+Based on the available **ODBC Connection Properties** listed in the <a href="https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/7cab593774474f2f8db335710b2f5c50.html" target="new">online documentation</a>, provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
 [ACCORDION-END]
