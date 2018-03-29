@@ -16,7 +16,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
  - Java [PAHO](https://eclipse.org/paho/clients/java/) Library
 
 ## Next Steps
- - [Creating Custom Adapter Modules]
+ - [Creating Custom Adapter Modules](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part2.html)
 
 ## Details
 ### You will learn
@@ -68,4 +68,4 @@ For the question below, select the correct answer, and click **Validate**.
 [ACCORDION-END]
 
 ## Next Steps
- - [Creating Custom Adapter Modules]
+ - [Creating Custom Adapter Modules](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part2.html)

@@ -7,7 +7,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 ---
 
 ## Prerequisites
- - **Tutorial:** [Testing the Custom Adapter]
+ - **Tutorial:** [Test the Custom Java Toolkit Adapter](https://www.sap.com/developer/tutorials/hsa-java-toolkit-adapter-part6.html)
 
 ## Next Steps
  - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
