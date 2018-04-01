@@ -344,16 +344,16 @@ A combination example with `$format`, `$select`, `$expand` and `$filter` |  <htt
 
 
 ## Optional
-If you would like to build an app similar to what you have done in this tutorial series but with "SAP-like" data, you can register for a free [SAP Gateway trial](https://supsignformsb03be6e80.us1.hana.ondemand.com/SUPSignForms/).
+If you would like to build an app similar to what you have done in this tutorial series but with "SAP-like" data, you can register for a free SAP Gateway trial. See the [Create an account on the gateway Demo System](https://www.sap.com/developer/tutorials/gateway-demo-signup.html) tutorial.
 
 The two OData Service document URLs are:
 
-- <https://sapes4.sapdevcenter.com/sap/opu/odata/IWBEP/GWDEMO/>
-- <https://sapes4.sapdevcenter.com/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT/>
+- <https://sapes5.sapdevcenter.com/sap/opu/odata/IWBEP/GWDEMO/>
+- <https://sapes5.sapdevcenter.com/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT/>
 
 To build an app like what you have now, but with data from SAP Gateway you simply need to:
 
-- Create an SAP Cloud Platform destination pointing to `https://sapes4.sapdevcenter.com` following an [earlier tutorial procedure](https://www.sap.com/developer/tutorials/hcp-create-destination.html)
+- Create an SAP Cloud Platform destination pointing to `https://sapes5.sapdevcenter.com` following an [earlier tutorial procedure](https://www.sap.com/developer/tutorials/hcp-create-destination.html)
 - Enter the remaining part of the URL in the Data Connection portion of the Web IDE template customization. For the two URLs above, they would be:
 - `/sap/opu/odata/IWBEP/GWDEMO`
 - `/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT`
