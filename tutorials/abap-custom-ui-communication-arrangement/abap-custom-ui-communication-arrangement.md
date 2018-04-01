@@ -22,7 +22,7 @@ You will learn how to enable SAP Cloud Platform development with SAP Web IDE aga
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open communication arrangements application)]
-Navigate* to **Communication Arrangements** tile to start the application.
+Navigate to **Communication Arrangements** tile to start the application.
 
 ![Open communication arrangements application](arrangement.png)
 
@@ -65,19 +65,19 @@ Enter the SAP Cloud Platform account as an administrator. Switch to **Destinatio
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Set destination data)]
-Enter the following data to your destination:
+Enter following **data** to your destination:
 
 
 | ---------------------------- | ------------------------------------------------- |
 |          **Name**            |            Name of your destination               |
-|          **Type**            |                      `HTTP`                         |
+|          **Type**            |                    `HTTP`                         |
 |      **Description**         |            Description of your destination        |
 |           **URL**            |  URL of your S/4HANA Cloud System (with `-api`)   |
-|       **Proxy Type**         |                    `Internet`                       |
+|       **Proxy Type**         |                  `Internet`                       |
 |     **Authentication**       |            `OAuth2SAMLBearerAssertion`            |
 |        **Audience**          | URL of your S/4HANA Cloud System (without `-api`) |
-|       **Client Key**         |          Your communication user           |
-|    **Token Service User**    |          Your communication user           |
+|       **Client Key**         |          Equals your communication user           |
+|    **Token Service User**    |          Equals your communication user           |
 | **Token Service Password**   |        Password of your communication user        |
 
 
@@ -88,11 +88,11 @@ Token service URL will be explained in the next step.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Define token service URL)]
-Token service URL consists of 2 parts:
+**Token service URL** - This consists of 2 parts:
 
    `<URL_of_your_S4HANA_Cloud_System> with –api`
      `+`
-   `/sap/bc/sec/oauth2/token?`
+   `/sap/bc/sec/oauth2/token`
 
 Example:
 
@@ -106,7 +106,7 @@ https://myXXXXXX-api.account.us3.hana.ondemand.com/sap/bc/sec/oauth2/token
 Add additional properties:
 
 | ----------------------------- | -------------------------------------------------------- |
-|        **`scope`**            | `ADT_001 /UI5/APP_INDEX_0001 /IWFND/SG_MED_CATALOG_0002` |
+|        **`scope`**            | `ADT_0001 /UI5/APP_INDEX_0001 /IWFND/SG_MED_CATALOG_0002` |
 | **`authnContextClassRef`**    |      `urn:oasis:names:tc:SAML:2.0:ac:classes:X509`       |
 |       **`TrustAll`**          |                      `true`                              |
 |     **`WEBIDEEnabled`**       |                      `true`                              |  
@@ -115,13 +115,13 @@ Add additional properties:
 
 
 Your scope consists of 3 parts:
- - `ADT_001`: scope of the Gateway service for ADT  
+ - `ADT_0001`: scope of the Gateway service for ADT  
  - /`UI5`/`APP_INDEX_0001`: scope of the UI2 app index
  - /`IWFND`/`SG_MED_CATALOG_0002`: scope of the catalog service version 2.0
 
 Be sure that all parts within the scope are separated with a space.
 
-Save your changes.
+**Save** your changes.
 
 [ACCORDION-END]
 
@@ -136,13 +136,13 @@ Click **Go to Service** to open **SAP Web IDE**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Open SAP Web IDE)]
+[ACCORDION-BEGIN [Step 11: ](Select new project)]
 Select **New Project from Template** to generate one.
 
-![Select new project from template](webide.png)
+![Select new project](webide.png)
 
 If you don't see this welcome page then follow the alternative way:
-**File** | **New** | **Project from Template**
+File -> New -> Project from Template
 
 [ACCORDION-END]
 
@@ -167,6 +167,5 @@ Click **Service Catalog** and select **`SAP_DEV_SYSTEM`** as service.
 
 ![Select `SAP_DEV_SYSTEM` as service](list.png)
 
-Now you can see a list of all services. You learn the importance of a scope. By adding the scope to your destination you are allowed to see the list of all services. But if you try to select any service, you'll get an error message. To create your UI project, you have to add a further definition to your scope. 
-
+Now you can see a list of all services. You learn the importance of a scope. By adding the scope to your destination you are allowed to see the list of all services. But if you try to select any service, you'll get an error message. To create your UI project, you have to add a further definition to your scope.
 [ACCORDION-END]
