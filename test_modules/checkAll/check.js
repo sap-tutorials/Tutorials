@@ -88,20 +88,15 @@ module.exports = function(files, showprogressbar, callback) {
                 if (fileContent != null) {
                     //check file content
                     var lineIndex = 0;
-                    fileContent.forEach(function(line, i) {
-                        checkContent(file, line, function(matchResult) {
-                            //build error log
-                            if (matchResult !== null) {
-                                cntContent++;
-                                logContent += '\n\n    > Error: \n        line:    ' + (i + 1) +
-                                    "\n        file:    " + fname +
-                                    "\n        reason:  " + matchResult;
-                            }
+                    const err = checkContent.check(file, fileContent);
+                    if(err && err.length) {
+                        cntContent += err.length;
+                        err.forEach(contErr => {
+                            logContent += '\n\n    > Error: \n        line:    ' + (contErr.line) +
+                            "\n        file:    " + fname +
+                            "\n        reason:  " + contErr.msg;
                         });
-                        if (index === files.length && lineIndex === fileContent.length) {
-
-                        }
-                    });
+                    }
                 } else {
                     cntNotCheckedContent++;
                 }
