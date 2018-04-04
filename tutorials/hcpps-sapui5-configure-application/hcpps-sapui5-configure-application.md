@@ -21,7 +21,7 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-s
   - Run your SAPUI5 application
   &nbsp;
   **Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Predictive services.
-  For more content on SAPUI5, you can check the dedicated SAPUI5 tutorials or the online SAPUI5 documentation available here: https://sapui5.hana.ondemand.com
+  For more content on SAPUI5, you can check the dedicated SAPUI5 tutorials or the online SAPUI5 documentation available here: <https://sapui5.hana.ondemand.com>
 
 ### Time to Complete
   **10 minutes**
