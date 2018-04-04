@@ -148,7 +148,7 @@ Tessel device has a Wi-Fi chip installed on the board. Connect your Tessel devic
 
 Tessel's modules are sensors and actuators that connect to a device and provide additional functionality and produce data.
 
-Read how to work with modules at https://t1-start.tessel.io/modules. Then pick available module and follow code installation and examples on corresponding module page, like:
+Read how to work with modules at <https://t1-start.tessel.io/modules>. Then pick available module and follow code installation and examples on corresponding module page, like:
 - <https://t1-start.tessel.io/modules/climate>
 - <https://t1-start.tessel.io/modules/ambient>
 - <https://t1-start.tessel.io/modules/accelerometer>
