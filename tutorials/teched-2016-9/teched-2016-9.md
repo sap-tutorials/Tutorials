@@ -32,7 +32,7 @@ However, you could just as easily use a Raspberry Pi, Arduino, or any number of 
 
 [ACCORDION-BEGIN [Step 1: ](Connection to the SAP Cloud Platform)]
 
-Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: <https://account.hanatrial.ondemand.com>
 
 Make sure you are using the **Europe (Trial)** landscape, and click on your account name to open the cockpit view.
 

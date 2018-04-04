@@ -72,7 +72,7 @@ Lack of proper access will lead to even more notable errors, such as an `XSA not
         </ol>
 </ol>
 
-You can find more details here: https://blogs.sap.com/2016/08/16/sap-web-ide-for-sap-hana-sps-12-patch-1-tips-and-tricks/
+You can find more details here: <https://blogs.sap.com/2016/08/16/sap-web-ide-for-sap-hana-sps-12-patch-1-tips-and-tricks/>
 
 Alternatively, you can test these steps by copying the preconfigured user into a new one, applying the proper role collections and enabling the access to the space with command `xs set-space-role`.
 
@@ -109,4 +109,3 @@ This means we need to make sure communications into those ports are free of bloc
 If you recently performed an upgrade, **make sure the hostname and Fully Qualified Domain Name (FQDN) are still correct**. The file /etc/hosts in the operating system of the HANA instance contains this information
 
 [ACCORDION-END]
-

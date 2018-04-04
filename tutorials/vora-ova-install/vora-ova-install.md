@@ -31,7 +31,7 @@ Refer to the last section of this How-to for most common troubleshooting activit
 
 Sign up for and request the free virtual machine appliance (the `.ova` file) of SAP Vora 1.4, developer edition from the SAP Store by clicking on **Trial Version** button on:
 
-https://store.sap.com/sap/cp/ui/resources/store/html/SolutionDetails.html?sap-language=EN&pid=0000014484
+<https://store.sap.com/sap/cp/ui/resources/store/html/SolutionDetails.html?sap-language=EN&pid=0000014484>
 
 You need to have free registration at SAP Store.
 
@@ -272,16 +272,16 @@ SELECT * FROM t1;
 The developer edition is not meant to be in a productive use case, but still you may want to get important security updates.
 You can get a registration code from SUSE that is valid for 60 days and use it to get updates.
 
-- Create an account at the SUSE Partner Portal: https://partner.suse.com/?eid=register_SUSE
+- Create an account at the SUSE Partner Portal: <https://partner.suse.com/?eid=register_SUSE>
 - Wait for the confirmation via e-mail
 - Download "`SUSE Linux Enterprise for SAP Applications 12 SP1 for x86_64`"
-    - Go to https://www.suse.com/products/sles-for-sap/
+    - Go to <https://www.suse.com/products/sles-for-sap/>
     - Choose "60 Day Free Trial"
     - Choose "SUSE Linux Enterprise Server for SAP Applications 12 SP1" (AMD64/Intel 64)
     - Log into your SUSE Partner account
     - You will get a registration code: Note it down.
     - You don't actually need to download the distribution.
-- You can also see the registration code in "Subscriptions" when you log into your account at https://partner.suse.com/
+- You can also see the registration code in "Subscriptions" when you log into your account at <https://partner.suse.com/>
 - Run the updates
     - Start YaST: ```sudo /sbin/yast```
     - Choose Software -> Online Update
