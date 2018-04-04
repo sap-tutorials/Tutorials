@@ -143,7 +143,7 @@ On the left side bar, navigate in **Security**, then click on **Authentication C
 
 Click on **Activate Custom Configuration**.
 
-![Authentication](15.png?)
+![Authentication](15.png)
 
 Check **User name and password** and **Client certificate** for the ***FORM*** authentication scheme
 

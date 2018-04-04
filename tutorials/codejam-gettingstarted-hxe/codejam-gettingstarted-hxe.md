@@ -48,12 +48,12 @@ In order to get your copy of the download, either the virtual machine or the bin
 ![Register](3.png)
 
 Once you have registered, proceed to setup you SAP HANA, express edition, using the right tutorial series depending on your choice:
-- Virtual Machine method: https://www.sap.com/developer/groups/hxe-install-vm.html
-- Binary Installer method: https://www.sap.com/developer/groups/hxe-install-binary.html
+- Virtual Machine method: <https://www.sap.com/developer/groups/hxe-install-vm.html>
+- Binary Installer method: <https://www.sap.com/developer/groups/hxe-install-binary.html>
 
 _Manual binary installations with alternative free operating systems_
-- Only for SPS01 and earlier - Google Cloud platform and Ubuntu: https://blogs.sap.com/2017/02/07/hana-express-edition-on-google-cloud-platform-and-ubuntu/
-- `openSUSE` on MS Azure: https://blogs.sap.com/2017/05/22/setting-up-your-free-sap-hana-express-edition-on-ms-azure-on-opensuse/
+- Only for SPS01 and earlier - Google Cloud platform and Ubuntu: <https://blogs.sap.com/2017/02/07/hana-express-edition-on-google-cloud-platform-and-ubuntu/>
+- `openSUSE` on MS Azure: <https://blogs.sap.com/2017/05/22/setting-up-your-free-sap-hana-express-edition-on-ms-azure-on-opensuse/>
 
 [ACCORDION-END]
 
@@ -231,16 +231,14 @@ The following tutorial shows how to use Node.js to get data from HXE.
 
 You can start exploring the XS Advanced Cockpit here:
 
-https://www.sap.com/developer/tutorials/xsa-explore-basics.html
+<https://www.sap.com/developer/tutorials/xsa-explore-basics.html>
 
 You can get started with XS Advanced development following this tutorial series:
 
-https://www.sap.com/developer/groups/hana-xsa-get-started.html
+<https://www.sap.com/developer/groups/hana-xsa-get-started.html>
 
 And here is how to integrate data from a database schema into your application:
 
-https://www.sap.com/developer/tutorials/xsa-create-user-provided-anonymous-service.html
-
+<https://www.sap.com/developer/tutorials/xsa-create-user-provided-anonymous-service.html>
 
 [ACCORDION-END]
-
