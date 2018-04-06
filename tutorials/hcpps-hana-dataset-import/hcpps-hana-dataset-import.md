@@ -84,7 +84,7 @@ Open the ***SAP HANA Web-based Development Workbench*** on your trial HANA insta
 
 Click on the **Open SQL Console** ![open](0-opensqlconsole.png) icon or press CTRL+ALT+C.
 
-![SAP HANA Web-based Development Workbench](02.png?)
+![SAP HANA Web-based Development Workbench](02.png)
 
 Download the dataset files for the services you to try out.
 

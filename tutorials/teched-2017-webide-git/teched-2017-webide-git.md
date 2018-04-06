@@ -20,7 +20,7 @@ You will create a Git repository in SAP Cloud Platform for your project, commit 
 
 [ACCORDION-BEGIN [Step 1: ](Log into your SAP Cloud Platform account)]
 
-Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: <https://account.hanatrial.ondemand.com>
 
 Make sure you are using the **Europe (Trial)** landscape, and click on your account name to open the cockpit view.
 

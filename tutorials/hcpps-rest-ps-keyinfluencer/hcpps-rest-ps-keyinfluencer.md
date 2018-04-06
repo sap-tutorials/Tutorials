@@ -72,7 +72,7 @@ The dataset will be using during this tutorial is extracted from the sample data
 
 The Census sample data file that you will use to follow the scenarios for Regression/Classification and Segmentation/Clustering is an excerpt from the American Census Bureau database, completed in 1994 by Barry Becker.
 
-> **Note:** For more information about the American Census Bureau, see http://www.census.gov published on non-SAP site.
+> **Note:** For more information about the American Census Bureau, see <http://www.census.gov> published on non-SAP site.
 
 &nbsp;
 

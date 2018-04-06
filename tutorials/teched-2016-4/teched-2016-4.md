@@ -19,7 +19,7 @@ Use the SAP Web IDE template wizard to build a Fiori UX app displaying informati
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Log into your SAP Cloud Platform account)]
-Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: <https://account.hanatrial.ondemand.com>
 
 Make sure you are using the **Europe (Rot) - Trial** landscape, and click on your account name to open the cockpit view.
 

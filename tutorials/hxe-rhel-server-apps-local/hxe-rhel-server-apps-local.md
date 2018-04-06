@@ -120,11 +120,11 @@ In order to install and run SAP HANA, express edition on a Red Hat Enterprise Li
 
 An overview of the ***Red Hat Enterprise Linux for SAP HANA Subscription*** is available here:
 
- - <a href="https://access.redhat.com/articles/1187363" target="new">https://access.redhat.com/articles/1187363</a>
+ - <https://access.redhat.com/articles/1187363>
 
 And the detailed options and instructions to subscribe your RHEL system to the ***RHEL for SAP HANA channel*** are available here:
 
- - <a href="https://access.redhat.com/solutions/2334521" target="new">https://access.redhat.com/solutions/2334521</a>
+ - <https://access.redhat.com/solutions/2334521>
 
 Once your system is properly configured with the subscription, you should be able to run the following command from a terminal console on your server:
 
@@ -427,7 +427,7 @@ java version "1.8.0_xx"
 Java(TM) SE Runtime Environment (build 1.8.0_xx-yyy)
 ```
 
-If you don't have it yet installed, you can check the following link for download link and installation instructions : <a href="https://tools.hana.ondemand.com/#cloud" target="new">https://tools.hana.ondemand.com/#cloud</a>
+If you don't have it yet installed, you can check the following link for download link and installation instructions : <https://tools.hana.ondemand.com/#cloud>
 
 Using the RPM option is most likely the easiest, as you will have to simply run the following command from your terminal console (where **<version>** needs to be adjusted based on the downloaded version):
 
@@ -452,9 +452,9 @@ Some of the changes applied requires a restart of the system to fully take effec
 
 [ACCORDION-BEGIN [Step 4: ](Register for SAP HANA, express edition)]
 
-Go to the registration page at https://www.sap.com/sap-hana-express published on the SAP site.
+Go to the registration page at <https://www.sap.com/sap-hana-express> published on the SAP site.
 
-Alternately, you can go to the SAP HANA, express edition launch page at https://www.sap.com/developer/topics/sap-hana-express.html published on SAP site and click the Register and download SAP HANA, express edition download manager link.
+Alternately, you can go to the SAP HANA, express edition launch page at <https://www.sap.com/developer/topics/sap-hana-express.html> published on SAP site and click the Register and download SAP HANA, express edition download manager link.
 
 Complete the registration form and click the Register button. The Registration Success page displays. You will also receive an email indicating successful registration.
 

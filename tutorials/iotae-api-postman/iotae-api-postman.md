@@ -18,7 +18,7 @@ In [previous tutorials](https://www.sap.com/developer/groups/iotae-computer-as-t
 Access to SAP IoT Application Enablement is usually routed through an application router as the single entry point for consumers. The application router handles the user authentication against **SAP User Account and Authentication Service (UAA)**. In addition, the service retains the generated JWT token for the duration of the client logon session. You can define multiple application routers per tenant and you can use one of the router to access IoT Application Enablement services.
 
 ### Tenant-specific Application Router
-SAP IoT Application Enablement offers tenant-specific application router to access the different backend services such as configuration, business partner, and thing services. For example, you can access the configuration services for the tenant `sap-iotaehandson2` using the application router URL https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appcore-conf/Configuration.
+SAP IoT Application Enablement offers tenant-specific application router to access the different backend services such as configuration, business partner, and thing services. For example, you can access the configuration services for the tenant `sap-iotaehandson2` using the application router URL <https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appcore-conf/Configuration>.
 
 The following illustrates the different parts of tenant-specific application router:
 
@@ -30,7 +30,7 @@ The following illustrates the different parts of tenant-specific application rou
 |`appcore-conf`|Name of the application you are accessing using the application router|
 |`Configuration`|API endpoint you are accessing within the application|
 
-For more information about the authorization concept of the SAP IoT Application Enablement platform, see https://help.sap.com/viewer/p/SAP_IOT_APPLICATION_SERVICES | **SAP IoT Application Enablement Services** | **Authorization**.
+For more information about the authorization concept of the SAP IoT Application Enablement platform, see <https://help.sap.com/viewer/p/SAP_IOT_APPLICATION_SERVICES> | **SAP IoT Application Enablement Services** | **Authorization**.
 
 ### Time to Complete
 **15 Min**
@@ -38,7 +38,7 @@ For more information about the authorization concept of the SAP IoT Application 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Log in via browser)]
-Open the URL https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appcore-conf/Configuration in the Chrome browser. After validating the user, the browser displays the configuration details.
+Open the URL <https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appcore-conf/Configuration> in the Chrome browser. After validating the user, the browser displays the configuration details.
 >**Note**: Please do not open the URL using the Incognito Mode on the browser.
 
 ```json
@@ -223,7 +223,7 @@ Object group is a technical object used for assigning object-based authorization
 10. In the **Headers** tab, enter `x-csrf-token` generated in _Step 2: Display package details_.
 ![x-csrf-token for the POST Request](iotae-api-postman-xcsrfPost.PNG)
 
-    >**Note**: While working on tutorials in a shared environment, for easy identification of your own objects, use your own user IDs (S-user or P-user depending on the system used) for the object names. To know your ID, see https://iotae-handson.accounts400.ondemand.com/ui/protected/profilemanagement or https://accounts.sap.com/ui/protected/profilemanagement.
+    >**Note**: While working on tutorials in a shared environment, for easy identification of your own objects, use your own user IDs (S-user or P-user depending on the system used) for the object names. To know your ID, see <https://iotae-handson.accounts400.ondemand.com/ui/protected/profilemanagement> or <https://accounts.sap.com/ui/protected/profilemanagement>.
 
 11. Click the **Send** button.
 Digital twin of your computer device as a thing is created. The URL of the thing created is returned in the **Location** field of the **Header** in the response payload.
@@ -332,7 +332,7 @@ A numeric value is created for the property `cpu_usage` with time stamp for the 
 
 
 [ACCORDION-BEGIN [Step 7: ](Explore IoT APIs in SAP API Hub)]
-To better understand IoT Application Enablement APIs, you can go to SAP API Hub at https://api.sap.com/#/shell/discover/contentpackage/IOTAE and review and execute different APIs in its sandbox.
+To better understand IoT Application Enablement APIs, you can go to SAP API Hub at <https://api.sap.com/#/shell/discover/contentpackage/IOTAE> and review and execute different APIs in its sandbox.
 
 
 [ACCORDION-END]

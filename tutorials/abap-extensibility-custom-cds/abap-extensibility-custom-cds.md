@@ -124,7 +124,7 @@ Now you can **publish** your Communication Scenario.
 If you already have a communication system and user then use them in the following steps.
 Otherwise you can create a new communication system and user by making use of the following example.
 Therefore go to Step 2: Creating a Communication System and User.
-https://blogs.sap.com/2017/05/17/part-viii-custom-business-object-exposure-as-external-web-service-bonus-plan/
+<https://blogs.sap.com/2017/05/17/part-viii-custom-business-object-exposure-as-external-web-service-bonus-plan/>
 
 
 [ACCORDION-END]
