@@ -1,13 +1,13 @@
 ---
 title: Building freestyle IoT application
-description: Building freestyle IoT application using SAP Web IDE Multi-Cloud in SAP Cloud Platform
+description: Building freestyle IoT application using SAP Web IDE Full-Stack in SAP Cloud Platform
 primary_tag: topic>internet-of-things
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Send the CPU usage data to SAP IoT Application Enablement](https://www.sap.com/developer/tutorials/iotae-comp-sendpy0.html)
+ - **Tutorials:** [Send the CPU usage data to SAP IoT Application Enablement](https://www.sap.com/developer/tutorials/iotae-comp-sendpy0.html) (you can also use other people's data coming from this tutorial)
 
 
 ## Next Steps
@@ -15,17 +15,17 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-applicati
 
 ## Details
 ### You will learn  
-You will learn the workflow of building the freestyle IoT application using SAP Web IDE Multi-Cloud
+You will learn the workflow of building the freestyle IoT application using SAP Web IDE Full-Stack
 
 ### Time to Complete
 **20 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Start SAP Web IDE Multi-Cloud Version)]
-SAP Web IDE, multi-cloud version is a powerful, extensible, web-based integrated development tool that simplifies end-to-end application development for SAP Cloud Platform.
+[ACCORDION-BEGIN [Step 1: ](Start SAP Web IDE Full-Stack)]
+SAP Web IDE Full-Stack is a powerful, extensible, web-based integrated development tool that simplifies end-to-end application development for SAP Cloud Platform.
 
-Start Web IDE in IoT Explore tenant using https://webidecp-a8a3863fc.dispatcher.hana.ondemand.com/
+Start SAP Web IDE in IoT Explore tenant using <https://webidecp-a8a3863fc.dispatcher.hana.ondemand.com/>
 
 ![Web IDE MC](iotaecompappmc0010.jpg)
 
@@ -33,7 +33,7 @@ Start Web IDE in IoT Explore tenant using https://webidecp-a8a3863fc.dispatcher.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable IoT Application Enable feature)]
-In Web IDE go to **Preferences**, then **Features**. Find **IoT Application Enablement** feature and turn it on.
+In SAP Web IDE go to **Preferences**, then **Features**. Find **IoT Application Enablement** feature and turn it on.
 
 Make sure following features are turned on as well: **Layout Editor** and **Storyboard**.
 
@@ -45,7 +45,7 @@ Make sure following features are turned on as well: **Layout Editor** and **Stor
 
 
 [ACCORDION-BEGIN [Step 3: ](Start the new project from the template)]
-Now go to **Development**. Right click on **Workspace** and choose the creation of a new project from the template.
+Now go to **Development**. Right click on **Workspace** and choose the creation of a new project from a template.
 
 ![New](iotaecompappmc0030.jpg)
 
@@ -64,8 +64,8 @@ Type `computeriot` as a project name and your user id as the namespace. Click **
 Leave everything as it is on the ___Template Customization___ step. Click **Next**
 
 On ___Data Source___ step select:
- - **Freestyle IoT: Things OData Service** as a service
- - all property sets for `sap.iotaeexplore.computeriotdevice:generic_computer` thing type
+ - **`Freestyle-IOTAS-ADVANCEDLIST-THING-ODATA`** as a service
+ - all property sets for `sap.iotaehandson2.computeriotdevice:generic_computer` thing type
 Click **Next**
 
 ![Data Source](iotaecompappmc0060.jpg)
@@ -75,7 +75,7 @@ Choose **2 Column Layout** and click **Finish**
 
 ![Layout](iotaecompappmc0070.jpg)
 
-The Web IDE will generate the code and will open the new application in the Layout Editor.
+SAP Web IDE will generate the code and will open the new application in the Layout Editor.
 ![Layout Editor](iotaecompappmc0080.jpg)
 
 
@@ -108,7 +108,7 @@ Now bind columns to data values. Select the first thing list column element (wit
 
 Repeat the same for the thing list column element from the second column (with element id `__column1`). Change its ___Text___ value to `{ThingName}`.
 
-Repeat the same for the third column changing its ___Text___ to `{DYN_ENT_sap_iotaeexplore_computeriotdevice__Default/Default.common_name}`. That's the common name property from the associated `Default` properties set. The easiest is to do this using the dialog for the text's data binding.
+Repeat the same for the third column changing its ___Text___ to `{DYN_ENT_sap_iotaehandson2_computeriotdevice__Default/Default.common_name}`. That's the common name property from the associated `Default` properties set. The easiest is to do this using the dialog for the text's data binding.
 ![Text data binding](iotaecompappmc0140.jpg)
 
 Next change column names to `ID`, `Name` and `Common name`.
@@ -134,10 +134,10 @@ Now select `SensorChart` element and change its properties:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Run the application)]
-Run your developed application by clicking on the green **Run** button in the upper left corner of the Web IDE.
+Run your developed application by clicking on the green **Run** button in the upper left corner of the SAP Web IDE.
 ![Run](iotaecompappmc0190.jpg)
 
-Once the application started find and click on your computer in the list of things on the left. The chart on the right will be refreshed with the collected measurements sent by the Python program from the physical computer.
+Once the application starts, find and click on your computer in the list of things on the left (you can also look at other people's computers). The chart on the right will be refreshed with the collected measurements sent by the Python program from the physical computer.
 
 Alert thresholds of `45%` and `90%`, which you defined in the Thing Modeler earlier, are displayed on the chart.
 ![Application!](iotaecompappmc0200.jpg)

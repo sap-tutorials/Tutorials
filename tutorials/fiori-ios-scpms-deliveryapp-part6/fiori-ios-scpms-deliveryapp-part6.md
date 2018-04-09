@@ -68,7 +68,7 @@ Defining request configuration allows:
 - Refresh interval on cached data
 - Delta tracking behavior
 
-A full list of Offline OData configuration options is available on https://help.sap.com/saphelp_smp307sdk/helpdata/en/f5/a25877c16f4fc384c44fcf0b92dab8/content.htm.
+A full list of Offline OData configuration options is available on <https://help.sap.com/saphelp_smp307sdk/helpdata/en/f5/a25877c16f4fc384c44fcf0b92dab8/content.htm>.
 
 To define what to use offline, you now create an **Application Configuration File**
 

@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ## Details
 ### You will learn  
 In the following exercise you will learn how to use the new Core Data Services (CDS) tools in ABAP in Eclipse. CDS is an extension of the ABAP Dictionary that allows you to define semantically rich data models in the database and to use these data models in your ABAP programs. CDS is a central part of enabling code push-down in ABAP applications.
-You will add the following: 
+You will add the following:
 
 - SELECT statement
 - CASE statement
@@ -76,7 +76,7 @@ To see details about the target data source of the association header, choose th
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add Fields from existing associations)]
+[ACCORDION-BEGIN [Step 5: ](Add fields from existing associations)]
 You will now add fields of related data sources to the SELECT list of `Z_Invoice_Items`, using the associations in path expressions. Each element in the path expression must be separated by a period.
 
   1.	Add the `company_name` of the business partner to the SELECT list using the associations **header** and **buyer** in a path expression

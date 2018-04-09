@@ -20,24 +20,31 @@ You'll learn how to prepare a Fiori reference app so that you can translate it u
 **10 Min**.
 
 ---
-[ACCORDION-BEGIN [Step 1: ](Locate SAP Web IDE in the cockpit)]
-In the service catalog, locate the **SAP Web IDE** tile by searching for `Web`, and then choose the tile.
+[ACCORDION-BEGIN [Step 1: ](Open overview screen of cockpit)]
+To go to the overview screen of the SAP Cloud Platform cockpit, choose your user ID at the top of the screen.
+
+![Locate SAP Web IDE](sth-prep-open-service-catalog.png)
+
+
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step 2: ](Locate SAP Web IDE in the cockpit)]
+Choose **Services** and locate the **SAP Web IDE** tile by searching for **`web`**. Then choose the tile.
 
 ![Locate SAP Web IDE](sth-prep-locate-IDE.png)
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open SAP Web IDE)]
+[ACCORDION-BEGIN [Step 3: ](Open SAP Web IDE)]
 
-Choose **Go to Service**.
+In the service description for SAP Web IDE, choose **Go to Service**.
 
 ![Open SAP Web IDE](sth-prep-open-IDE.png)
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a new project from a sample application)]
+[ACCORDION-BEGIN [Step 4: ](Create a new project from a sample application)]
 
 To get started with the app, ensure that you're on the **Home** tab (house icon) and choose **New Project from Sample Application**.
 
@@ -46,7 +53,7 @@ To get started with the app, ensure that you're on the **Home** tab (house icon)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Choose Approve Purchase Orders app)]
+[ACCORDION-BEGIN [Step 5: ](Choose the Approve Purchase Orders app)]
 
 To add a project with the required files to your account, choose **Approve Purchase Orders** and then **Next**.
 
@@ -55,7 +62,7 @@ To add a project with the required files to your account, choose **Approve Purch
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Accept standard license conditions)]
+[ACCORDION-BEGIN [Step 6: ](Accept standard license conditions)]
 
 Accept the standard license conditions by choosing **I agree** and then **Finish**.
 
@@ -64,22 +71,30 @@ Accept the standard license conditions by choosing **I agree** and then **Finish
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Open project file)]
-To be able to view the app in multiple languages and enable SAP Translation Hub to locate the resources file, you need to enter some data in the `.project.json` file. Expand the root folder in the project and double-click the `.project.json` file.
+[ACCORDION-BEGIN [Step 7: ](Open the project.json file)]
+To be able to view the app in multiple languages and enable SAP Translation Hub to locate the text resources file, you need to enter some data in the `.project.json` file.
+
+Expand the root folder of the application (`sample.ApprovePurchaseOrders`) and double-click the `.project.json` file.
+> Depending on your browser settings, you might have to disable the pop-up blocker to be able to open the file.
 
 ![Open project.json file](sth-prep-project-json.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Make project settings)]
+[ACCORDION-BEGIN [Step 8: ](Make project settings)]
 
-In this step, you're going to specify the domain for the texts (sales), the languages in which you want the app to be available (Danish, Dutch, Finnish, French, and German), and the name of the resources file (`i18n.properties`).
-In the `.project.json` file, enter a comma after the last square bracket (`]`) and choose **Enter** to insert a new line. At the start of the new line, paste the following code:
+In this step, you're going to specify the domain to which the texts belong (sales), the languages in which you want the app to be available (Danish, Dutch, Finnish, French, and German), and the name of the resources file (`i18n.properties`).
+In the `.project.json` file, locate the last square bracket (`]`) in the file:
+
+![Locate last square bracket](sth-prep-project-settings-start.png)
+
+Enter a comma after the last square bracket and choose **Enter** to insert a new line.
+At the start of the new line, paste the following code:
 
 ```
 "translation": {
     "translationDomain": "02",
-    "supportedLanguages": "da,nl,fi,fr,de",
+    "supportedLanguages": "da,nl,en,fi,fr,de",
     "defaultLanguage": "en",
     "defaultI18NPropertyFile": "i18n.properties",
     "resourceModelName": "i18n"
@@ -95,16 +110,16 @@ Save your settings.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create run configuration)]
+[ACCORDION-BEGIN [Step 9: ](Create a run configuration)]
 
-To test the application with mock data from a local system, you're going to need a special run configuration. To do this, right-click the application and choose **Run | Run Configurations**.
+To test the application with mock data from a local system, you're going to need a special run configuration. To do this, right-click the root folder of your application (`sample.ApprovePurchaseOrders`) and choose **Run | Run Configurations**.
 
 ![Run configurations](sth-prep-run-configs.png)
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Choose Web application)]
+[ACCORDION-BEGIN [Step 10: ](Choose Web application)]
 
 Choose the **+** sign then **Web Application**.
 
@@ -113,11 +128,11 @@ Choose the **+** sign then **Web Application**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Assign run application file)]
+[ACCORDION-BEGIN [Step 11: ](Assign a run application file)]
 
 Now you need to do the following:
 
-- Under **File Name**, choose the application file name `/webapp/test/flpSandboxMockServer.html`.
+- In the **File Name** field, choose the application file name `/webapp/test/flpSandboxMockServer.html`.
 - Under **Preview Mode**, select **With Frame**.
 - Under **Mock Data**, select **Run with mock data**.
 
@@ -128,16 +143,12 @@ Once you've done that, choose **OK**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Open app in Fiori launchpad)]
+[ACCORDION-BEGIN [Step 12: ](Open the app in the Fiori launchpad)]
 
 Now you want to see what the application looks like by accessing it from a Fiori launchpad. To do this, choose the green button shown below.
 
 ![Open with Fiori Launchpad](sth-prep-run-Fiori-LP.png)
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 12: ](Open the app)]
+> Depending on your browser settings, you might have to disable the pop-up blocker to proceed.
 
 Choose the **Approve Purchase Orders** tile.
 
@@ -146,7 +157,6 @@ Choose the **Approve Purchase Orders** tile.
 To make things look more realistic, the app uses mock data.
 
 ![Fiori app with mock data](sth-prep-mock-data.png)
-
 
 [ACCORDION-END]
 

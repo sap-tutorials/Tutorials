@@ -1,6 +1,6 @@
 ---
 title: Use a message broker
-description: Use a message broker to publish and subscribe to sensor data
+description: Use a message broker to publish and subscribe to sensor data.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -24,7 +24,7 @@ During this tutorial, you will learn how to use a message broker within a pipeli
 [ACCORDION-BEGIN [Step 1: ](Setup up Apache Kafka)]
 During this tutorial, you will use Apache Kafka as message broker to stream sensor data (i.e. you will publish sensor data via a stream and also consume this stream).
 
->Apache Kafka is a distributed streaming platform. Simply spoken, it allows you to publish and subscribe to message streams. You can find more information on https://kafka.apache.org.
+>Apache Kafka is a distributed streaming platform. Simply spoken, it allows you to publish and subscribe to message streams. You can find more information on <https://kafka.apache.org>.
 
 
 If you have not yet Apache Kafka (combined with Apache Zookeeper) set up, then an easy way to do is pulling an image from Docker Hub (https://hub.docker.com/).
@@ -61,7 +61,7 @@ Open the pipeline which you have created during the previous tutorials (`test.my
 
 Remove the connection between the **Data Generator** operator and the **Terminal** operator.
 
-Add a **Kafka Producer** operator to the pipeline by drag & drop. Then connect the **output** port of the **Data Generator** operator to the **message** port of the **Kafka Producer** operator.
+Add a **Kafka Producer** operator to the pipeline by drag & drop. Then connect the `output` port of the **Data Generator** operator to the `message` port of the **Kafka Producer** operator.
 
 ![picture_02](./datahub-pipelines-broker_02.png)  
 
@@ -75,14 +75,14 @@ Configure the **Kafka Producer** operator. You need to maintain the following pr
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure Kafka Consumer)]
-Add a **`Kafka Consumer`** operator to the pipeline by drag & drop.
-Add a **`ToString Converter`** operator to the pipeline by drag & drop.
-Connect the **`message`** port of the **`Kafka Consumer`** operator to the **`inmessage`** port of the **`ToString Converter`** operator.
-Connect the **`outstring`** port of the **`ToString Converter`** operator to the **`in1`** port of the **Terminal** operator.
+Add a **Kafka Consumer** operator to the pipeline by drag & drop.
+Add a **`ToString` Converter** operator to the pipeline by drag & drop.
+Connect the `message` port of the **Kafka Consumer** operator to the `inmessage` port of the **`ToString` Converter** operator.
+Connect the `outstring` port of the **`ToString` Converter** operator to the `in1` port of the **Terminal** operator.
 
 ![picture_03](./datahub-pipelines-broker_03.png)  
 
-Configure the **`Kafka Consumer`** operator. You need to maintain the following properties:
+Configure the **Kafka Consumer** operator. You need to maintain the following properties:
 
 | Property                       | Value                          |
 | ------------------------------ | ------------------------------ |

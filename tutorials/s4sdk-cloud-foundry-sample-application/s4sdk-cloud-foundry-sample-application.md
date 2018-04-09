@@ -9,7 +9,7 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
  - **Proficiency:** intermediate
 
 ### You will learn  
-This tutorial will cover your first steps when developing applications for SCP Cloud Foundry using SAP S/4HANA Cloud SDK. You will create an account for SCP Cloud Foundry and setup the Cloud Foundry command line interface for deploying and managing Cloud Foundry applications. Then you will generate your first project using the SAP S/4HANA Cloud SDK Maven archetype and deploy your first application to SCP Cloud Foundry. 
+This tutorial will cover your first steps when developing applications for SCP Cloud Foundry using SAP S/4HANA Cloud SDK. You will create an account for SCP Cloud Foundry and setup the Cloud Foundry command line interface for deploying and managing Cloud Foundry applications. Then you will generate your first project using the SAP S/4HANA Cloud SDK Maven archetype and deploy your first application to SCP Cloud Foundry.
 
 ### Time to Complete
 **20 Min**
@@ -18,7 +18,7 @@ This tutorial will cover your first steps when developing applications for SCP C
 
 [ACCORDION-BEGIN [Step 1: ](Setup for Cloud Foundry)]
 
-In order to deploy applications to `SCP Cloud Foundry`, you need to create a free trial account. You can create your account by visiting https://cloudplatform.sap.com/try.html
+In order to deploy applications to `SCP Cloud Foundry`, you need to create a free trial account. You can create your account by visiting <https://cloudplatform.sap.com/try.html>
 
 After creating your account and activating it via email, you can log in to your personal `Cloud Cockpit`. For your first visit, it should look like this:
 
@@ -36,9 +36,9 @@ To install `cf CLI`, you can either grab the latest release on the official rele
 
 In order to deploy applications on `SAP Cloud Foundry` you need to provide `cf CLI` with an API endpoint. The API endpoint depends on the region you chose for your account:
 
-  - for EU: https://api.cf.eu10.hana.ondemand.com
-  - for US EAST: https://api.cf.us10.hana.ondemand.com
-  - for US WEST (beta): https://api.cf.us20.hana.ondemand.com
+  - for EU: <https://api.cf.eu10.hana.ondemand.com>
+  - for US EAST: <https://api.cf.us10.hana.ondemand.com>
+  - for US WEST (beta): <https://api.cf.us20.hana.ondemand.com>
 
 Now enter the following commands (in this case for the EU region):
 

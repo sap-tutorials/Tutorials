@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    timezone:
+      America/Los_Angeles
+    docker:
+      - image: circleci/node:9.6.1
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install dependencies
+          command: npm install --production
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Run test tool
+          command: npm run test
+          no_output_timeout: '10m'
+notify:
+  webhooks:
+    # gitter hook
+    - url: https://webhooks.gitter.im/e/15f197634234d80a32fa
+

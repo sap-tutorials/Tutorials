@@ -22,7 +22,7 @@ How to clone the SAP HANA `INteractive` Education source code from Git Hub, gene
 [ACCORDION-BEGIN [Step 1: ](Clone SHINE from GitHub)]
 
 Open SAP Web IDE for SAP HANA and log in with a developer user.
->Note: By default, the URL for Web IDE in SAP HANA, express edition is https://hxehost:53075. You can use command  `xs apps` in space SAP in the Command Line Interface to find out the right
+>Note: By default, the URL for Web IDE in SAP HANA, express edition is `https://hxehost:53075`. You can use command  `xs apps` in space SAP in the Command Line Interface to find out the right
 
 Right-click on the **Workspace** and click on **Git-> Clone Repository**:
 
@@ -75,9 +75,6 @@ Click on the `controller` resource and replace the hostname and instance number 
 
 ![edit YAML](controller.png)
 
-Finally, you will change the name of the service for the shine-container so you can access it from your own multi-target application later. Click on the `shine-container` resource and add a parameter called `service-name` and the value `shine-container`
-
-![edit YAML](container.png)
 
 [ACCORDION-END]
 
@@ -182,6 +179,18 @@ You can also get a hint of the dependencies you will need to adjust by right-cli
 Once the `user-js` module is running, run the `core-js` module:
 
 ![Run modules](run-core.png)
+
+If it fails to execute and the error states **No service matches `%s`, key** or `No service matches auditlog` you need to bind the `auditlog` service manually. Use command `xs a` to find out the name of the `code-js` service name and bind it to the `auditlog` service with the following command:
+
+```
+xs bs <<core-js service name>> shine auditlog
+```
+
+For example:
+
+![Auditlog error](auditlog.png)
+
+>Note: Right click on the image and choose `Open in new tab` to see the details
 
 Then run the `user-java` module:
 

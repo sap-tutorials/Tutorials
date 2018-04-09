@@ -6,11 +6,13 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 ---
 
 ## Prerequisites  
- - **Proficiency:** Intermediate
+ - **Proficiency:** Beginner
  - **Tutorials:**  One of the following:
  - [Run and Test a streaming project](https://www.sap.com/developer/tutorials/sds-run-test.html)
  - [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-event-stream-alerts.html)
  - [Build custom Flex Operators to analyze event streams](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - [Configuring the Web Service Provider (WSP)](https://www.sap.com/developer/tutorials/sds-web-service-provider-configuration.html)
+ - [Using the Streaming Web Service](https://www.sap.com/developer/tutorials/sds-streaming-web-service.html)
 
 ## Next Steps
   - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
@@ -58,7 +60,7 @@ And finally:
 
 For this tutorial you will need a way of creating the calls that you will send to the server. We created this tutorial using Postman - though you can use whatever REST client you like.
 
-You can get Postman from http://www.getpostman.com/
+You can get Postman from <http://www.getpostman.com/>
 
 
 [ACCORDION-END]

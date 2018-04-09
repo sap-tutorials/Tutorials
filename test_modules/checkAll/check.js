@@ -72,7 +72,7 @@ module.exports = function(files, showprogressbar, callback) {
                 if (splitReport.length >= 3) {
                     //build error log
                     for (var i = 1; i <= splitReport.length - 2; i++) {
-                        var splitReason = splitReport[i].split('|');
+                        var splitReason = splitReport[i].split(/\|(.+)/);
                         cntMdspell++;
                         logMdSpell += '\n\n    > Error: \n        file:    ' + fname +
                             "\n        line:    " + splitReason[0] +
@@ -88,20 +88,15 @@ module.exports = function(files, showprogressbar, callback) {
                 if (fileContent != null) {
                     //check file content
                     var lineIndex = 0;
-                    fileContent.forEach(function(line, i) {
-                        checkContent(file, line, function(matchResult) {
-                            //build error log
-                            if (matchResult !== null) {
-                                cntContent++;
-                                logContent += '\n\n    > Error: \n        line:    ' + (i + 1) +
-                                    "\n        file:    " + fname +
-                                    "\n        reason:  " + matchResult;
-                            }
+                    const err = checkContent.check(file, fileContent);
+                    if(err && err.length) {
+                        cntContent += err.length;
+                        err.forEach(contErr => {
+                            logContent += '\n\n    > Error: \n        line:    ' + (contErr.line) +
+                            "\n        file:    " + fname +
+                            "\n        reason:  " + contErr.msg;
                         });
-                        if (index === files.length && lineIndex === fileContent.length) {
-
-                        }
-                    });
+                    }
                 } else {
                     cntNotCheckedContent++;
                 }

@@ -102,7 +102,7 @@ Once user is assigned to the role, stop and start `iotmms` application.
 
 [ACCORDION-BEGIN [Step 7: ](Review official documentation)]
 
-Check the official documentation at https://help.sap.com/viewer/product/SAP_CP_IOT_2.0/Cloud/en-US
+Check the official documentation at <https://help.sap.com/viewer/product/SAP_CP_IOT_2.0/Cloud/en-US>
 
 
 [ACCORDION-END]

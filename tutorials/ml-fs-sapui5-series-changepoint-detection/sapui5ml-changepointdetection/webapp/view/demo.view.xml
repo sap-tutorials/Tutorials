@@ -33,7 +33,7 @@
 							</VBox>
 							<VBox width="100%" alignContent="Start" alignItems="Start" justifyContent="Start">
 								<items>
-									<HBox width="100%" visible="{= typeof ${demo>/hasData} !== 'undefined'}">
+									<HBox width="100%" visible="{= ${demo>/hasData} === true}">
 										<items>
 											<VBox alignItems="End" width="50%">
 												<items>
@@ -51,7 +51,7 @@
 											</VBox>
 										</items>
 									</HBox>
-									<VBox width="100%" alignItems="Center" visible="{= typeof ${demo>/hasData} !== 'undefined'}">
+									<VBox width="100%" alignItems="Center" visible="{= ${demo>/hasData} === true}">
 										<items>
 											<Button text="Execute Service" press="onExecute"/>
 										</items>
@@ -60,7 +60,7 @@
 							</VBox>
 						</items>
 					</HBox>
-					<HBox width="100%" alignItems="Start" justifyContent="Start" visible="{= typeof ${demo>/hasData} !== 'undefined'}">
+					<HBox width="100%" alignItems="Start" justifyContent="Start" visible="{= ${demo>/hasData} === true}">
 						<items>
 							<VBox width="50%">
 								<items>
@@ -82,9 +82,9 @@
 									</Table>
 								</items>
 							</VBox>
-							<VBox width="50%" visible="{= typeof ${demo>/hasResult} !== 'undefined'}">
+							<VBox width="50%" visible="{= ${demo>/hasResult} === true }">
 								<items>
-									<Table columns="{demo>/resultCols}" items="{path: 'demo>/resultRows'}" visible="{= typeof ${demo>/hasResult} !== 'undefined'}">
+									<Table columns="{demo>/resultCols}" items="{path: 'demo>/resultRows'}" visible="{= ${demo>/hasResult} === true }">
 										<items>
 											<ColumnListItem cells="{demo>cols}">
 												<cells>

@@ -5,7 +5,7 @@
 		<pages>
 			<Page title="Image Classification">
 				<content>
-					<Carousel pages="{demo>/result-imageclassifier}" width="100%" visible="{= typeof ${demo>/resultVisible-imageclassifier} !== 'undefined'}">
+					<Carousel pages="{demo>/result-imageclassifier}" width="100%" visible="{= ${demo>/resultVisible-imageclassifier} === true}">
 						<pages>
 							<VBox width="100%" direction="Column" alignItems="Center">
 								<Image tooltip="canvas" class="sapUiLargeMargin" src="{demo>fileURL}"/>

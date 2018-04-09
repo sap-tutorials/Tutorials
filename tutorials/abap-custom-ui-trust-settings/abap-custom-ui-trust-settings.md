@@ -48,7 +48,7 @@ Save your changes.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Enter SAP Cloud Platform identity authentication administration console)]
+[ACCORDION-BEGIN [Step 4: ](Open identity authentication console)]
 Open the SAP Cloud Platform Identity Authentication Administration Console with:
 `https://<tenant ID>.subaccounts.ondemand.com/admin`
 You can also get the URL from your identity authentication tenant registration e-mail.
@@ -64,7 +64,7 @@ Choose **Applications & Resources** and go to **Applications**. Click **+ Add** 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Configure application' s SAML 2.0 trust with subaccount)]
+[ACCORDION-BEGIN [Step 6: ](Configure application's SAML 2.0 trust with subaccount)]
 Click on the newly created application on the left side and then on **Trust**. Configure the **`SAML 2.0`** trust with SAP Cloud Platform subaccount as a service provider.
 
 ![Configure application' s SAML 2.0 trust with subaccount](saml.png)
@@ -79,7 +79,7 @@ Switch again to your SAP Cloud Platform subaccount and open trust settings to do
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 8: ](Upload subaccount' s metadata as SAML 2.0 trust)]
+[ACCORDION-BEGIN [Step 8: ](Upload subaccount's metadata as SAML 2.0 trust)]
 Go back to your SAP Cloud Platform Identity Authentication Administration Console and choose **SAML 2.0 Configuration**. Upload the metadata XML file of your SAP Cloud Platform subaccount. On service provider metadata upload, the fields are populated with the parsed data from the XML file. Save the configuration settings.
 
 ![Upload subaccount' s metadata as SAML 2.0 trust](upload.png)
@@ -93,14 +93,14 @@ Select **Name ID Attribute**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Set application' s name ID attribute)]
+[ACCORDION-BEGIN [Step 10: ](Set application's name ID attribute)]
 Choose **Login Name** and save your changes.
 
 ![Set application' s name ID attribute](login.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Set application' s identity provider)]
+[ACCORDION-BEGIN [Step 11: ](Set application's identity provider)]
 Switch to **Identity Provider** and select it.
 
 ![Set application' s identity provider](provider.png)
@@ -124,7 +124,7 @@ https://<tenant ID>.subaccounts.ondemand.com/saml2/metadata
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Add subaccount' s trusted identity provider)]
+[ACCORDION-BEGIN [Step 14: ](Add subaccount's trusted identity provider)]
 Switch back to your SAP Cloud Platform cockpit and go to your trust settings.
 
 Choose **Application Identity Provider** to add a trusted identity provider.
@@ -133,7 +133,7 @@ Choose **Application Identity Provider** to add a trusted identity provider.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Upload identity tenant' s metadata as trusted identity provider)]
+[ACCORDION-BEGIN [Step 15: ](Upload identity tenant's metadata)]
 Upload identity authentication metadata XML file of your identity authentication tenant (Step 13) in the metadata file field. Save your changes.
 
 ![Upload identity tenant' s metadata as trusted identity provider](attribute.png)
