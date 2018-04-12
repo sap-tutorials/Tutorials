@@ -1,7 +1,7 @@
 ---
 title: Test the Custom Java Toolkit Adapter
 description: Test the MQTT Input Adapter we have created using Mosquitto and HANA Studio.
-auto-validation: false
+auto_validation: false
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---

@@ -1,7 +1,7 @@
 ---
 title: Where to Place the Custom Adapter Files
 description: Place the files we have created and edited for our Custom Adapter in the correct directory.
-auto-validation: false
+auto_validation: false
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
