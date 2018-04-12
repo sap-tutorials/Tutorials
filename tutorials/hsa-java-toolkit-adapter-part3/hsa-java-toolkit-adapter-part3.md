@@ -1,7 +1,7 @@
 ---
 title: Creating Custom Adapter Configuration Files
 description: Create a .cnxml file and an Adapter Configuration File(.xml) for your Custom Adapter.
-auto-validation: false
+auto_validation: false
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---

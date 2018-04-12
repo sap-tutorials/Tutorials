@@ -1,7 +1,7 @@
 ---
 title: Creating Custom Adapter Modules
 description: Create a Transporter Module and a Formatter module for your Custom Adapter using Java PAHO Library.
-auto-validation: false
+auto_validation: false
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---

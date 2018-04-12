@@ -1,7 +1,7 @@
 ---
 title: Introduction to Writing a Custom Java Toolkit Adapter for SAP HANA Streaming Analytics
 description: Gain a comprehensive overview on Custom Adapters for SAP HANA Streaming Analytics, and follow detailed instructions for developing a custom adapter using the Java Toolkit.
-auto-validation: false
+auto_validation: false
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
