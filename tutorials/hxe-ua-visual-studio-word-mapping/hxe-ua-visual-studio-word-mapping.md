@@ -7,13 +7,18 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Debugging Procedures](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-debugging.html)
+
+## Next Steps
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Deploy to the Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-google-cloud.html)
+
 
 ## Details
 ### You will learn  
 How to use the SAP HANA plugin for Microsoft Visual Studio to create a Twitter Word Map.
 
 ### Time to Complete
-**5 Min**
+**10 Min**
 
 ---
 
@@ -44,7 +49,7 @@ At the top of the Microsoft Visual Studio window, select **View** and then click
 ![Solution Explorer](solution_explorer.png)
 
 > **Note:**
-> This application is compatible with Python version 3.6 and later. If you have multiple Python environments, you will need to set the appropriate environment and load the corresponding SAP HANA client driver libraries in the **Solution Explorer** window. 
+> This application is compatible with Python version 3.6 and later. If you have multiple Python environments, you will need to set the appropriate environment and load the corresponding SAP HANA client driver libraries in the **Solution Explorer** window.
 
 [ACCORDION-END]
 
@@ -114,3 +119,6 @@ After a few moments, the word map for your Twitter account displays.
 
 
 ---
+
+## Next Steps
+- [SAP HANA Plugin for Microsoft Visual Studio - Deploy to the Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-google-cloud.html)
