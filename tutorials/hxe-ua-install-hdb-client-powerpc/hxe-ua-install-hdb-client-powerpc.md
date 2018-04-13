@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** 
+ - **Tutorials:**
 
 ## Details
 ### You will learn
@@ -66,9 +66,9 @@ cd <preferred_filepath>
 sudo tar <download_filepath>/clients_<OS>.zip
 ```
 
-    This extracts the following files and their contents:
+This extracts the following files and their contents:
 
-    `clients_linux_x86_64.tgz`
+`clients_linux_x86_64.tgz`
 
     -   `hdb_client_linux_x86_64.tgz`
 
@@ -160,5 +160,3 @@ sudo <unzipped_filepath>/HDB_CLIENT_<version>/hdbuninst
 Follow the instructions on the screen to uninstall the SAP HANA HDB client.
 
 [ACCORDION-END]
-
-

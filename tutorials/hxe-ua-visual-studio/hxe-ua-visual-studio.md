@@ -8,6 +8,9 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition, products>sap-ha
 ## Prerequisites  
  - **Proficiency:** Beginner
 
+## Next Steps
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Working with Tables](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-tables.html)
+
 ## Details
 ### You will learn  
 How to install the SAP HANA plugin on your Microsoft Visual Studio installation. The SAP HANA Plugin for Microsoft Visual Studio allows you to connect to your SAP HANA or SAP HANA, express edition installation through Microsoft Visual Studio. For these tutorials, we use an SAP HANA, express edition installation as an example.
@@ -86,3 +89,6 @@ For __Login information__, the __User name:__ is __SYSTEM__ and the __Password:_
 [ACCORDION-END]
 
 ---
+
+## Next Steps
+- [SAP HANA Plugin for Microsoft Visual Studio - Working with Tables](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-tables.html)

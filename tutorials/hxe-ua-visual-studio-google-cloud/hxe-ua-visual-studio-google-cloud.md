@@ -7,6 +7,10 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
+ - **Tutorials:** [SAP HANA Plugin for Microsoft Visual Studio - Word Mapping Project](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-word-mapping.html)
+
+## Next Steps
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
 
 ## Details
 ### You will learn  
@@ -98,3 +102,6 @@ The installation process begins. Follow the prompts to install SAP HANA, express
 [ACCORDION-END]
 
 ---
+
+## Next Steps
+ - Select a tutorial from the [Tutorial Navigator](http://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](http://www.sap.com/developer/tutorials.html)
