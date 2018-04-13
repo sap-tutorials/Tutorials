@@ -56,6 +56,18 @@ Download and install Docker Enterprise Edition for SUSE Enterprise Linux Server.
 
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 2: ](Log Into Docker)]
+
+To log into your Docker account, run:
+
+```
+sudo docker login
+```
+
+Follow the prompts and provide your Docker ID and password.
+
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Optional: ](Test Your Docker Installation)]
 
 Test your Docker installation by running the "Hello World" container application. Run the following command from your Docker-enabled command prompt:
@@ -75,7 +87,7 @@ Status: Downloaded newer image for alpine:latest
 hello
 ```
 
-If `hello` is printed, you have successfully pulled the container image **alpine** (a demo Linux distribution), and run the instance of the container `helloWorld`, and ran the command `echo` with an input parameter of `hello`.
+If `hello` is printed, you have successfully pulled the container image **alpine** (a demo Linux distribution), and ran the instance of the container `helloWorld`, and ran the command `echo` with an input parameter of `hello`.
 
 If you **did not** get this output, the Docker installation has not been completed or the Docker daemon can not connect to the internet. Review the process and check the [Docker Documentation](https://docs.docker.com/get-started/) for more information in troubleshooting your Docker installation.
 
@@ -87,7 +99,7 @@ sudo docker image rm alpine -f
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Download the SAP HANA, express edition Image from the Docker Library)]
+[ACCORDION-BEGIN [Step 3: ](Download the SAP HANA, express edition Image from the Docker Library)]
 
 Go to the [Docker Store](https://store.docker.com/).
 
@@ -98,7 +110,7 @@ Click on the **Setup Instructions** button.
 Copy the Docker pull address. Here is an example:
 
 ```
-sudo docker pull store/saplabs/hanaexpress:2.00.022.00.20171211.1
+sudo docker pull store/saplabs/hanaexpress:2.00.030.00.20180403.2
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
@@ -106,7 +118,7 @@ Open your Docker-enabled command line and use the Docker pull address to downloa
 This loads the SAP HANA, express edition image. To ensure that the image was loaded successfully, run:
 
 ```bash
-docker images
+sudo docker images
 ```
 
 The SAP HANA, express edition image will be listed as `hanaexpress`.
@@ -117,7 +129,7 @@ The SAP HANA, express edition image will be listed as `hanaexpress`.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Edit the host sysctl.conf file)]
+[ACCORDION-BEGIN [Step 4: ](Edit the host sysctl.conf file)]
 
 Before you can start the container, ensure that the following parameters are set in your host's `/etc/sysctl.conf` file. The host can be a virtual machine, physical machine, or a cloud instance.
 
@@ -146,7 +158,7 @@ The name of this directory does not need to match the name you give to your SAP 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Set Up Password for SAP HANA, express edition)]
+[ACCORDION-BEGIN [Step 5: ](Set Up Password for SAP HANA, express edition)]
 
 To make your system more secure, you specify your own password before you create your container. This is done by creating a `json` file as opposed to having a default password. The file can be stored locally or on another system accessible by URL. If the file is to be stored locally, store it in the */data/<directory_name>* directory you created earlier.
 
@@ -206,7 +218,7 @@ Make a note of the path to the `json` file. You will need this to load the SAP H
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Start SAP HANA, express edition Container)]
+[ACCORDION-BEGIN [Step 6: ](Start SAP HANA, express edition Container)]
 
 Use the SAP HANA, express edition image to create a container.
 
@@ -218,7 +230,7 @@ sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <container_name> \
-store/saplabs/hanaexpress:2.00.022.00.20171211.1 \
+store/saplabs/hanaexpress:2.00.030.00.20180403.2 \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>> \
 --agree-to-sap-license
 ```
@@ -233,7 +245,7 @@ sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name express_edition \
-store/saplabs/hanaexpress:2.00.022.00.20171211.1 \
+store/saplabs/hanaexpress:2.00.030.00.20180403.2 \
 --passwords-url file:///hana/password.json \
 --agree-to-sap-license
 ```
@@ -254,7 +266,7 @@ This example creates the SAP HANA, express edition container with the name `expr
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Log into SAP HANA, express edition Container)]
+[ACCORDION-BEGIN [Step 7: ](Log into SAP HANA, express edition Container)]
 
 To start your SAP HANA, express edition container, run the following command:
 
@@ -340,7 +352,7 @@ sudo docker run -p 10013:39013 -p 10017:39017 -p 10041-10045:39041-39045 -p 1002
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <additional_container_name> \
-store/saplabs/hanaexpress:2.00.022.00.20171211.1 \
+store/saplabs/hanaexpress:2.00.030.00.20180403.2 \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>>
 --agree-to-sap-license
 ```
@@ -368,7 +380,7 @@ sudo docker rm <old_container_name>
 Pull the new Docker image:
 
 ```
-sudo docker pull store/saplabs/hanaexpress:2.00.022.00.20171211.1
+sudo docker pull store/saplabs/hanaexpress:2.00.030.00.20180403.2
 ```
 
 Run the new Docker image using the old mounts:
@@ -381,7 +393,7 @@ sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <new_container_name> \
-store/saplabs/hanaexpress:2.00.022.00.20171211.1 \
+store/saplabs/hanaexpress:2.00.030.00.20180403.2 \
 --agree-to-sap-license
 ```
 
@@ -389,10 +401,10 @@ store/saplabs/hanaexpress:2.00.022.00.20171211.1 \
 
 [ACCORDION-BEGIN [Docker Run Usage: ](-Help Command)]
 
-The following is a list of options available for the `sudo docker run saplabs/hanaexpress` command.
+The following is a list of options available for the `sudo docker run store/saplabs/hanaexpress` command.
 
 ```
-sudo docker run store/saplabs/hanaexpress:2.00.022.00.20171211.1 -h
+sudo docker run store/saplabs/hanaexpress:2.00.030.00.20180403.2 -h
 usage: [options]
 --dont-check-consistency Skip consistency check between mount points
 --dont-check-mount-points Skip check for allowed mount points
