@@ -8,13 +8,13 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
 ## Prerequisites  
  - **Proficiency:** Beginner
  - You have a Google Account and/or have registered for the free trial on `cloud.google.com`
+ - You have enough permissions to edit the hosts file in your computer
 
 
 ## Next Steps
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
--  **Build your first app:** [Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
+-  **Build your first app:** [Get started with XS Advanced development](https://www.sap.com/developer/groups/hana-xsa-get-started.html)
 - Generate test data and check a sample enterprise application [deploying the SAP HANA `INteractive` Education model on XS Advanced](https://www.sap.com/developer/tutorials/xsa-ml-e2e-access-shine.html)
-- [Explore the administration cockpit and Command Line Interface in XS Advanced](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
 - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
 
 
@@ -60,7 +60,7 @@ To connect to the instance from a local SSH client, like PuTTY, port **22** also
 
 After reviewing all configuration options, click **Deploy**. This will take a few minutes.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Log in to the instance and change the administration passwords)]
@@ -109,20 +109,8 @@ The file will say either `in progress` or `success`. The installation is finishe
 
 Otherwise, if you have chosen to wait, you will see a success message once the installation has finished.
 
-You should also change your default Operating System password for user `hxeadm`. **Open a new SSH console** and use the following command as your GCP user for this:
-
-```
-sudo passwd hxeadm
-
-```
-
-![Change password](change pass.png)
-
->Note: The default `hxeadm` password is `HXEHana1`
-
-
+[DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](Take note of your external IP and connect)]
 
@@ -134,8 +122,7 @@ Take note of your IP address:
 
 ![IP address](ip.png)
 
-
-Alternatively, click on the `Learn more` and follow the steps to create and external IP address.
+Alternatively, click `Learn more` and follow the steps to create and external IP address.
 
 ![IP Address](7.png)
 
@@ -180,20 +167,34 @@ You can test you have successfully modified your configuration by entering the f
 
 ![See XSA](xsa_up.png)
 
-You an use the link to the Web IDE (`https://hxehost:53075/`) to open it
+You can use the link to the SAP Web IDE (`https://hxehost:53075/`) to open it
 
 >Note: If you get a 503 error, service unavailable, the service is probably still starting. Try again in a couple of minutes.
 
-Log in with `XSA_DEV` and the master password. You will see the Web IDE.
+Log in with `XSA_DEV` and the master password.
 
 ![test web ide](12.png)
 
-You can now start to use your SAP HANA, express edition. You can get started with your [first end-to-end XS Advanced application](https://www.sap.com/developer/groups/hana-xsa-get-started.html) or [explore additional tutorials at the Developer Center](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html).
-
+You can now start to use your SAP HANA, express edition or continue with the optional steps. You can get started with your [first end-to-end XS Advanced application](https://www.sap.com/developer/groups/hana-xsa-get-started.html) or [explore additional tutorials at the Developer Center](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html).
+[DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 5: ](Log in to the instance and change the administration passwords)]
+You should also change your default Operating System password for user `hxeadm`. **Open a new SSH console** and use the following command as your GCP user for this:
 
-[ACCORDION-BEGIN [Step 5 (Optional): ](Install additional components: EA Designer)]
+```
+sudo passwd hxeadm
+
+```
+
+![Change password](change pass.png)
+
+>Note: The default `hxeadm` password is `HXEHana1`
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6 (Optional): ](Install additional components: EA Designer)]
 
 **This step is optional.**
 
@@ -242,10 +243,10 @@ Make sure installation is successful when finished.
 
 ![deployment successful](success.png)
 
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6 (Optional): ](Install Smart Data Streaming)]
+[ACCORDION-BEGIN [Step 7 (Optional): ](Install Smart Data Streaming)]
 
 This step is **optional**.
 
@@ -305,12 +306,11 @@ You can later enable a link to the tool from the SAP Web IDE for SAP HANA:
 
 ![Web IDE](webide_sds.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps
  - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
- -  [Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
- - [Explore the administration cockpit in XS Advanced](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
+ -  [Get started with XS Advanced development](https://www.sap.com/developer/groups/hana-xsa-get-started.html)
  - Generate test data and check a sample enterprise application [deploying the SAP HANA INteractive Education model on XS Advanced](https://www.sap.com/developer/tutorials/xsa-ml-e2e-access-shine.html)
  - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
