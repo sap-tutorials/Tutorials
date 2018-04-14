@@ -27,15 +27,18 @@ This tutorial uses the SAP HANA `INteractive` Education model as an example for 
 
 Your current database module will use two containers, the `hdi-container` created with the database module and the target container from the SHINE application.
 
-If you are using SAP HANA 2.0 SPS03, right-click on the `db` module and choose **Add External SAP HANA service**
+- If you are using SAP HANA 2.0 SPS03, right-click on the `db` module and choose **Add External SAP HANA service**
 
-![Check service name](service.png)
+  ![Add external SAP HANA Service](sps03.png)
 
-Continue with step 2.
+  Choose the service from within the list and click **Finish**
+  ![Add external SAP HANA Service](sps03_2.png)
 
-If you are using  SAP HANA 2.0 SPS02 or lower:
+  Continue with step 2.
 
-    - Find out the name of the target container using command `xs s` from the command line interface (CLI):
+-  If you are using  SAP HANA 2.0 SPS02 or lower:
+
+    Find out the name of the target container using command `xs s` from the command line interface (CLI):
 
     ![Check service name](service.png)
 
