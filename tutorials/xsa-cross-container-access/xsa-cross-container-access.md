@@ -27,35 +27,43 @@ This tutorial uses the SAP HANA `INteractive` Education model as an example for 
 
 Your current database module will use two containers, the `hdi-container` created with the database module and the target container from the SHINE application.
 
-Find out the name of the target container using command `xs s` from the command line interface (CLI):
+If you are using SAP HANA 2.0 SPS03, right-click on the `db` module and choose **Add External SAP HANA service**
 
 ![Check service name](service.png)
 
->The CLI client can be executed from a HANA express command line as user `hxeadm` or downloaded to your computer using the download manager available after you [register to download SAP HANA, express edition](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html)
+Continue with step 2.
 
-Open the `mta.yaml` file in your consuming application and go to the **Resources** tab. Create a new resource of type `org.cloudfoundry.existing-service`.
+If you are using  SAP HANA 2.0 SPS02 or lower:
 
-Call it `consumed-core-container` and a new parameter with `service-name` as a key and the name of the service from command `xs s`
+    - Find out the name of the target container using command `xs s` from the command line interface (CLI):
 
-![Check service name](resource.png)
+    ![Check service name](service.png)
 
-Add a property with key `consumed-service-name` and value `${service-name}`
+    >The CLI client can be executed from a HANA express command line as user `hxeadm` or downloaded to your computer using the download manager available after you [register to download SAP HANA, express edition](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html)
+      Open the `mta.yaml` file in your consuming application and go to the **Resources** tab. Create a new resource of type `org.cloudfoundry.existing-service`.
 
-![Check service name](resource2.png)
+      Call it `consumed-core-container` and a new parameter with `service-name` as a key and the name of the service from command `xs s`
 
-Save the `mta.yaml` file.  Open the consuming `hdi-container` resource definition and take note of the name of the variable that has the service name assigned to its value:
+      ![Check service name](resource.png)
 
-![Check resource name](module0.png)
+      Add a property with key `consumed-service-name` and value `${service-name}`
 
-Select the consuming database module  and add a property with key `TARGET_CONTAINER` and refer to the variable set with the name of the consuming `hdi-container`:
+      ![Check service name](resource2.png)
 
-![Add resource](module.png)
+      Save the `mta.yaml` file.  Open the consuming `hdi-container` resource definition and take note of the name of the variable that has the service name assigned to its value:
 
-Add group `SERVICE_REPLACEMENTS` with key `consumed-db` and the value of the variable used to hold the value of the service name in the consuming `hdi-container` (`consumed-service-name` in this example).
+      ![Check resource name](module0.png)
 
-![Add resource](MODULE1.png)
+      Select the consuming database module  and add a property with key `TARGET_CONTAINER` and refer to the variable set with the name of the consuming `hdi-container`:
 
->Except for the name of the `hdi-container` from the external application and the environment variable `service-name`, the names of the variables can be adjusted to fit your needs.
+      ![Add resource](module.png)
+
+      Add group `SERVICE_REPLACEMENTS` with key `consumed-db` and the value of the variable used to hold the value of the service name in the consuming `hdi-container` (`consumed-service-name` in this example).
+
+      ![Add resource](MODULE1.png)
+
+      >Except for the name of the `hdi-container` from the external application and the environment variable `service-name`, the names of the variables can be adjusted to fit your needs.
+
 
 As a reference, the relevant parts of the `mta.yaml` file in this example look like this:
 
