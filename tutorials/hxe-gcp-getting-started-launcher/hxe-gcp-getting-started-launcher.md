@@ -134,7 +134,7 @@ Your SAP HANA, express edition instance is now up and running. You can continue 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3 (Recommended optional): ](Change the password for the operaitng syste,)]
+[ACCORDION-BEGIN [Step 3 (Recommended optional): ](Change the password for the operating system user)]
 You should also change your default Operating System password for user `hxeadm`. **Open a new SSH console** and use the following command as your GCP user for this:
 
 ```

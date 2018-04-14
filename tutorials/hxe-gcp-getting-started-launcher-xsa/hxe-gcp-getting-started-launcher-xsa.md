@@ -179,7 +179,7 @@ You can now start to use your SAP HANA, express edition or continue with the opt
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Log in to the instance and change the administration passwords)]
+[ACCORDION-BEGIN [Step 5 (Recommended optional): ](Change the password for the operating system user)]
 You should also change your default Operating System password for user `hxeadm`. **Open a new SSH console** and use the following command as your GCP user for this:
 
 ```
