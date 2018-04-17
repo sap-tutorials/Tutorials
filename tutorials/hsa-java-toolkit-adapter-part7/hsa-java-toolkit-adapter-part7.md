@@ -1,7 +1,7 @@
 ---
 title: Further Readings on Custom Adapters
 description: Learn more about features of Custom Adapters like enabling guaranteed delivery, creating an output adapter and implementing schema discovery.
-auto-validation: false
+auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
@@ -30,6 +30,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
 This is done in the custom transporter module. SAP documentation regarding the process can be found in section [Enabling Guaranteed Delivery for an Input Transporter](https://help.sap.com/doc/saphelp_esp_51sp10_adapt/5.1.10/en-US/e7/924c076f0f10149b76975e225dfdf7/frameset.htm).
 
+[DONE]
 
 [ACCORDION-END]
 [ACCORDION-BEGIN [Implement Schema Discovery](&nbsp;)]
@@ -49,6 +50,10 @@ This is done in the custom transporter module. SAP documentation regarding the p
     ```
 
   2. Implement sampling or non-sampling schema discovery in your custom transporter module. Consult section [Implementing Schema Discovery in a Custom Adapter](https://help.sap.com/doc/saphelp_esp_51sp11_bca/5.1.11/en-US/e7/8a48b56f0f10149134ab152de88342/frameset.htm) for more details.
+
+For the question below, select the correct answer, and click **Validate**.
+
+[VALIDATE_1]
 
 [ACCORDION-END]
 
@@ -116,6 +121,8 @@ If you have followed this tutorial to create an input adapter, only minor change
   6. `Mqtt.ccl`
 
       This project assumes the adapter is an input adapter, you will need to make a new project. However, doing so is outside the scope of this tutorial.
+
+[DONE]
 
 [ACCORDION-END]
 [ACCORDION-BEGIN [Create Stream Based Transporter and Formatter Modules](&nbsp;)]
@@ -193,6 +200,8 @@ Documentation regarding custom Formatter modules can be found in section [Buildi
 
 See the `$STREAMING_HOME/adapters/framework/examples/src` directory for source code for sample modules
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Pre-Defined Transporter and Formatter Modules](&nbsp;)]
@@ -202,6 +211,8 @@ If your transporter or formatter modules don't require very complex implementati
 You can find a listing of the predefined Formatter modules in section [Formatters Currently Available from SAP](https://help.sap.com/viewer/8280db55429040f8b665db30cf05a88e/2.0.02/en-US/e785c5536f0f10148ce5edaa93952636.html) as well as their location.
 
 You can find a listing of the predefined Transporter modules in section [Transporters Currently Available from SAP](https://help.sap.com/viewer/8280db55429040f8b665db30cf05a88e/2.0.02/en-US/e785c1236f0f1014bd14db27ffcf687b.html) as well as their location.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -228,6 +239,8 @@ You can find a listing of the predefined Transporter modules in section [Transpo
     `%STREAMING_HOME%\adapters\framework\instances\mqtt_input\adapter_config.xml`
 
   5. The adapter will use the `<EspProject>` element properties set in your `adapter_config.xml` file to connect to the project in studio and will use the `<MQTTInputTransporterParameters>` element properties as arguments.
+
+[DONE]
 
 [ACCORDION-END]
 

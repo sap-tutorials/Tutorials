@@ -1,7 +1,7 @@
 ---
 title: Creating Custom Adapter Modules
 description: Create a Transporter Module and a Formatter module for your Custom Adapter using Java PAHO Library.
-auto-validation: false
+auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
@@ -136,9 +136,11 @@ client.disconnect();
 
 The fifth and last method is `void destroy()`. Its purpose is to perform any cleanup tasks for your input or output transporter. For our purposes, it is not necessary to include any instructions in this method so we will leave it empty.
 
+[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a Formatter Module)]
+[ACCORDION-BEGIN [Step 2: ](Create a Formatter Module)]
 
 A formatter module converts between the data format of the transporter module and Streaming Analytics.
 
@@ -204,9 +206,11 @@ return in;
 
 The last method to implement is `void destroy()` which is intended for performing clean-up actions for the formatter. Our formatter does not require any destroy instructions.
 
+[DONE]
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Package Modules into a .jar file)]
+[ACCORDION-BEGIN [Step 3: ](Package Modules into a .jar file)]
 
 Now that we have written our `Transporter` and `Formatter` modules, we need to package them in a `.jar` file. If you have been following this tutorial, you should have a single java project containing `MqttTransporter.java`, `MqttFormatter.java` and `MqttCB.java`. Build a `.jar` containing all of these files. The process for doing so varies with `IDE` so, if you have questions, it is best to consult your `IDE's` help pages. Before building the `.jar` file, verify that you will be building it with the same `JRE` version as included in your Streaming Analytics install. Name the newly created `.jar` file `"mqtt-input.jar"`.
 
@@ -352,6 +356,8 @@ public class MqttFormatter extends RowFormatter {
 }
 
 ```
+
+[DONE]
 
 [ACCORDION-END]
 

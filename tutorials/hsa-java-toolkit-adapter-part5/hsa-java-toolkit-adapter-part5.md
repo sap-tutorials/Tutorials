@@ -1,7 +1,7 @@
 ---
 title: Where to Place the Custom Adapter Files
 description: Place the files we have created and edited for our Custom Adapter in the correct directory.
-auto-validation: false
+auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
@@ -47,6 +47,8 @@ Assuming you used the default install location, then the local Windows Streaming
 | `modulesdefine.xml` | `$STREAMING_HOME/adapters/framework/config` |
 | `custommodulesdefine.xml` <br/> `parametersdefine.xsd` | `$STREAMING_CUSTOM_ADAPTERS_HOME /config` |
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Server Side)]
@@ -62,6 +64,10 @@ To check the `$STREAMING_HOME` environment variable make sure that you're connec
 | `mqtt_input.cnxml`  | `$STREAMING_CUSTOM_ADAPTERS_HOME/cnxml ` |
 | `modulesdefine.xml` | `$STREAMING_HOME/adapters/framework/config` |
 | `custommodulesdefine.xml` <br/> `parametersdefine.xsd` | `$STREAMING_CUSTOM_ADAPTERS_HOME /config` |
+
+For the question below, select the correct answer, and click **Validate**.
+
+[VALIDATE_1]
 
 [ACCORDION-END]
 

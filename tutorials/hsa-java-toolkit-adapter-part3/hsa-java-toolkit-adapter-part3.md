@@ -1,7 +1,7 @@
 ---
 title: Creating Custom Adapter Configuration Files
 description: Create a .cnxml file and an Adapter Configuration File(.xml) for your Custom Adapter.
-auto-validation: false
+auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
@@ -383,6 +383,8 @@ In this step, we will write a file called `adapter_config.xml`, which will defin
 
 >Full documentation on writing a Formatter module can be found in the section [Configuring a New Adapter](https://help.sap.com/viewer/8280db55429040f8b665db30cf05a88e/2.0.01/en-US/e789bb9c6f0f101490bef9e3c7dd5186.html).
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Appendix ](&nbsp;)]
@@ -512,6 +514,8 @@ In this step, we will write a file called `adapter_config.xml`, which will defin
 </Adapter>
 
 ```
+
+[DONE]
 
 [ACCORDION-END]
 

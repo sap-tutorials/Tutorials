@@ -1,7 +1,7 @@
 ---
 title: Editing Adapter Configuration Files
 description: Edit a set of adapter configuration files in order to make the custom adapter available to both the HANA Streaming Analytics server at run time and in HANA Studio at design time.
-auto-validation: false
+auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
@@ -150,6 +150,8 @@ For the question below, select the correct answer, and click **Validate**.
         </xs:complexType>
       ```
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Appendix ](&nbsp;)]
@@ -267,6 +269,8 @@ For the question below, select the correct answer, and click **Validate**.
 </xs:schema>
 
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
