@@ -111,4 +111,4 @@ You can also click the ![Stop Debugging](stop_debugging.png) __Stop Debugging__ 
 ---
 
 ## Next Steps
-- [SAP HANA Plugin for Microsoft Visual Studio - Word Mapping Project](https://www.sap.com/developer/tutorials/hxe-ua-visual-word-mapping.html)
+- [SAP HANA Plugin for Microsoft Visual Studio - Word Mapping Project](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-word-mapping.html)

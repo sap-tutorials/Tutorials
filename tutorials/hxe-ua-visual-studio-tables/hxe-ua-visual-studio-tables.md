@@ -166,4 +166,4 @@ When you run the code again, it runs successfully and calculates the average His
 ---
 
 ## Next Steps
-- [SAP HANA Plugin for Microsoft Visual Studio - Debugging Procedures](https://www.sap.com/developer/tutorials/hxe-ua-visual-debugging.html)
+- [SAP HANA Plugin for Microsoft Visual Studio - Debugging Procedures](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio-debugging.html)

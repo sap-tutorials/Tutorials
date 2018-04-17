@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** 
+ - **Tutorials:** You have completed [Register](http://www.sap.com/developer/tutorials/hxe-ua-register.html) 
 
 ## Details
 ### You will learn

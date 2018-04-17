@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:**
+ - **Tutorials:** You have completed [Start SAP HANA, express edition Server (VM installations)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html) or [Test the Installation (Native Linux installations)](http://www.sap.com/developer/tutorials/hxe-ua-test-binary.html)
 
 ## Details
 ### You will learn
@@ -66,36 +66,33 @@ cd <preferred_filepath>
 sudo tar <download_filepath>/clients_<OS>.zip
 ```
 
-This extracts the following files and their contents:
+    This extracts the following files and their contents:
 
-`clients_linux_x86_64.tgz`
+    `clients_linux_x86_64.tgz`
 
--   `hdb_client_linux_x86_64.tgz`
+    -   `hdb_client_linux_x86_64.tgz`
 
--   `xs.onpremise.runtime.client_linuxx86_64.zip`
+    -   `xs.onpremise.runtime.client_linuxx86_64.zip`
 
+    `clients_linux_ppc64.le.tgz`
 
-`clients_linux_ppc64.le.tgz`
+    -   `hdb_client_linux_ppc64le.tgz`
 
--   `hdb_client_linux_ppc64le.tgz`
+    -   `xs.onpremise.runtime.client_linuxx86_64.zip`
 
--   `xs.onpremise.runtime.client_linuxx86_64.zip`
+    `clients_windows.zip`
 
+    -   `hdb_client_windows_x86_32.tgz`
 
-`clients_windows.zip`
+    -   `hdb_client_windows_x86_64.tgz`
 
--   `hdb_client_windows_x86_32.tgz`
+    -   `xs.onpremise.runtime.client_ntamd64.zip`
 
--   `hdb_client_windows_x86_64.tgz`
+    `clients_mac.tgz`
 
--   `xs.onpremise.runtime.client_ntamd64.zip`
+    -   `hdb_client_mac.tgz`
 
-
-`clients_mac.tgz`
-
--   `hdb_client_mac.tgz`
-
--   `xs.onpremise.runtime.client_darwinintel64.zip`
+    -   `xs.onpremise.runtime.client_darwinintel64.zip`
 
 
 [ACCORDION-END]
@@ -171,3 +168,5 @@ sudo <unzipped_filepath>/HDB_CLIENT_<version>/hdbuninst
 Follow the instructions on the screen to uninstall the SAP HANA HDB client.
 
 [ACCORDION-END]
+
+

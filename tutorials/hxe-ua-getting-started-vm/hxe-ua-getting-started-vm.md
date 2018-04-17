@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** 
+ - **Tutorials:** You have completed [Set Keyboard and Time Zone](http://www.sap.com/developer/tutorials/hxe-ua-keyboard-vm.html) 
 
 ## Details
 ### You will learn
@@ -114,7 +114,7 @@ SAP HANA 2.0, express edition is now running.
 
 [ACCORDION-BEGIN [Step 8: ](Test XSC.)]
 
-1.  Edit the `/etc/hosts` file.
+1.  Edit the `/etc/hosts` file. See [Edit the Hosts File](https://www-qa.sap.com/developer/tutorials/hxe-ua-hosts.html). 
 
 2.  Check that the `XSEngine` is running. From your host OS (not the VM guest) open a browser and enter:
 
