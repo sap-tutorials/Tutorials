@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** 
+ - **Tutorials:**  You have completed [Test the Installation](http://www.sap.com/developer/tutorials/hxe-ua-test-binary.html)  
 You must have SAP HANA, express edition installed prior to installing this package.
 
 

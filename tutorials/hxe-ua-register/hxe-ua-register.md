@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** 
+ - **Tutorials:** You have completed [Pre-installation Tasks](http://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
 
 ## Details
 ### You will learn
@@ -34,8 +34,8 @@ Enter all required information and click the *Register* button.
 
 > Note:
 > If you have an SAP login, click the Login icon at the top of the page to populate the registration form automatically.
-> 
-> 
+>
+>
 
 ![loioa9262ee42c674af59687ebe69ece8819_HiRes](loioa9262ee42c674af59687ebe69ece8819_HiRes.png)
 
@@ -53,8 +53,8 @@ If you have a Mac, or another type of machine, click *Platform-independent* for 
 
 > Note:
 > You must click the download manager links on the Registration Success page. If you attempt to copy a download manager URL to your browser, the download will fail with an error.
-> 
-> 
+>
+>
 
 [ACCORDION-END]
 
@@ -66,9 +66,7 @@ Save the download manager file to your laptop and open it. If your system displa
 
 > Note:
 > If you are inside a corporate firewall, you will be prompted for your proxy settings. Contact your IT administrator for your proxy host and proxy port information.
-> 
-> 
+>
+>
 
 [ACCORDION-END]
-
-

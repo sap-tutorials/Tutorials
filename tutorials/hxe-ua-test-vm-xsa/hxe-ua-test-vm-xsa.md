@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** 
+ - **Tutorials:** You have completed [Edit the Hosts File](http://www.sap.com/developer/tutorials/hxe-ua-hosts.html)
 
 ## Details
 ### You will learn

@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** 
+ - **Tutorials:** You have completed [Set Keyboard and Time Zone](http://www.sap.com/developer/tutorials/hxe-ua-keyboard-vm.html) 
 
 ## Details
 ### You will learn
