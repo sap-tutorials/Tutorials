@@ -94,7 +94,7 @@ Follow the prompts and provide your Docker ID and password.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Optional: ](Test Your Docker Installation)]
+[ACCORDION-BEGIN [Step 4: ]((Optional) Test Your Docker Installation)]
 
 Test your Docker installation by running the "Hello World" container application. Run the following command from your Docker-enabled command prompt:
 
@@ -125,11 +125,15 @@ sudo docker image rm alpine -f
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Download the SAP HANA, express edition Image from the Docker Library)]
+[ACCORDION-BEGIN [Step 5: ](Download the SAP HANA, express edition Image from the Docker Library)]
 
 Go to the [Docker Store](https://store.docker.com/).
 
 Click on the search bar and search for "SAP HANA, express edition".
+
+Choose **SAP HANA, express edition (database and application services)**.
+
+![Docker Store](choose_dockerxsa.png)
 
 Click on the **Setup Instructions** button.
 
@@ -155,7 +159,7 @@ The SAP HANA, express edition image will be listed as `hanaexpressxsa`.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Edit the host sysctl.conf file)]
+[ACCORDION-BEGIN [Step 6: ](Edit the host sysctl.conf file)]
 
 Before you can start the container, ensure that the following parameters are set in your host's `/etc/sysctl.conf` file. The host can be a virtual machine, physical machine, or a cloud instance.
 
@@ -177,7 +181,7 @@ sudo /sbin/sysctl -p
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Edit the /etc/hosts file)]
+[ACCORDION-BEGIN [Step 7: ](Edit the /etc/hosts file)]
 
 The `hxehost` IP address is private to the installation. In order for applications to access `hxehost`, add the `hxehost` IP address to your machine's hostname map. The hostname map is your machine's **`/etc/hosts`** file. You must edit **`/etc/hosts`** if you want to access any XS Advanced applications or use HANA Cockpit from your machine.
 
@@ -189,7 +193,7 @@ sudo sh - c 'echo <hxehost_IP_address>    hxehost >> /etc/hosts'
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Set Up Password for SAP HANA, express edition)]
+[ACCORDION-BEGIN [Step 8: ](Set Up Password for SAP HANA, express edition)]
 
 To make your system more secure, you specify your own password before you create your container. This is done by creating a `json` file as opposed to having a default password. The file can be stored locally or on another system accessible by URL. If the file is to be stored locally, store it in the */data/<directory_name>* directory you created earlier.
 
@@ -249,7 +253,7 @@ Make a note of the path to the `json` file. You will need this to load the SAP H
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Start SAP HANA, express edition Container)]
+[ACCORDION-BEGIN [Step 9: ](Start SAP HANA, express edition Container)]
 
 Use the SAP HANA, express edition image to create a container.
 
@@ -305,7 +309,7 @@ This example creates the SAP HANA, express edition container with the name `expr
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Log into SAP HANA, express edition Container)]
+[ACCORDION-BEGIN [Step 10: ](Log into SAP HANA, express edition Container)]
 
 To start your SAP HANA, express edition container, run the following command:
 
@@ -322,7 +326,7 @@ sudo docker exec -it express_edition bash
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Optional: ](Test the Container)]
+[ACCORDION-BEGIN [Step 11: ]((Optional) Test the Container)]
 
 When you are logged into the SAP HANA, express edition container, you can test your installation by entering the following:
 
@@ -347,7 +351,7 @@ And you should see the following services running:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Optional: ](Log Into System or Tenant Database)]
+[ACCORDION-BEGIN [Step 12: ]((Optional) Log Into System or Tenant Database)]
 
 You can log into the system database with the following command:
 
@@ -379,7 +383,7 @@ jdbc:sap://<ip_address>:39015/databaseName=<tenant_name>
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test SAP Web IDE)]
+[ACCORDION-BEGIN [Step 13: ]((Optional) Test SAP Web IDE)]
 
 After you have logged in, view the list of XSA applications. Enter:
 
