@@ -157,13 +157,13 @@ Follow these steps to create the logic to get the sales orders.
 
 [ACCORDION-BEGIN [Step 6: ](Add logic to get sales orders – request)]
 
-1. Add another activity from the SAP OData Connector to the microflow **Get List**.
+1. Add another activity to the microflow and select the **Get List** action from the SAP OData Connector.
 The **Get List** action retrieves a list of entities described in the domain model. In our case we will retrieve a list of SalesOrders.
 2. Fill in the required fields of the **Get List** action. For this tutorial, use the following settings:
 
     | Field | Value |
     |:-------|:-------|
-    | Query  | The URL to which you want to execute your request. In our case:<br><br> `https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/$metadata`<br><br>And it's constructed by entering the following code:<br><br> `@GWSAMPLE_BASIC.GWSAMPLE_BASIC + '/' + toString(GWSAMPLE_BASIC.EntitySetNames.SalesOrderSet)` |
+    | Query  | The URL to which you want to execute your request. In our case:<br><br> `https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/SalesOrderSet`<br><br>And it's constructed by entering the following code:<br><br> `@GWSAMPLE_BASIC.GWSAMPLE_BASIC + '/' + toString(GWSAMPLE_BASIC.EntitySetNames.SalesOrderSet)` |
     | Response type | The type you want to query from the OData service. Use `SalesOrder`. |
     | Request&nbsp;parameters | `RequestParams` variable |
     | Parent |empty|
