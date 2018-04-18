@@ -93,6 +93,12 @@ Now you have a Mendix module ready to be imported into your project.
 
     ![Generated Domain Model](mendix-salesorders6.png)
 
+3. In addition to the domain model, the OData Model Creator also created two other items:
+    * A constant with the name of the service, containing the service root URL
+    * An enumeration (**EntitySetNames**) containing a list of all the entity sets in the model
+
+    ![Generated Domain Model](mendix-salesorders33.png)
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create constants for ES5 credentials)]
@@ -115,6 +121,7 @@ Our tutorial uses basic authentication to connect to the ES5 system, so let's st
 4. Following the same steps, add a new constant and name it **`ES5Password`**.
 5. Enter your ES5 password as **`Default value`**.
 
+
     ![Add Constant](mendix-salesorders9.png)
 
 [ACCORDION-END]
@@ -127,7 +134,7 @@ Follow these steps to create the logic to get the sales orders.
 2. Right-click the line between the green and red dots in the microflow editor and select **Insert** | **Activity** (or drag and drop an activity from the upper toolbar).
 3. Double-click the new activity and scroll down to locate the SAP OData Connector actions.
 4. Select **`Create`** **`Request`** **`Params`**, and then click **Select**.
-5. Name the variable **`RequestParams`**.
+5. Name the variable **`RequestParams`**. This variable (as its name suggests) will hold the request parameters, and it's required for the **Add basic authentication** activity.
 
     ![Create Request Params](mendix-salesorders10.png)
 
@@ -151,6 +158,7 @@ Follow these steps to create the logic to get the sales orders.
 [ACCORDION-BEGIN [Step 6: ](Add logic to get sales orders – request)]
 
 1. Add another activity from the SAP OData Connector to the microflow **Get List**.
+The **Get List** action retrieves a list of entities described in the domain model. In our case we will retrieve a list of SalesOrders.
 2. Fill in the required fields of the **Get List** action. For this tutorial, use the following settings:
 
     | Field | Value |
@@ -163,6 +171,10 @@ Follow these steps to create the logic to get the sales orders.
     | Use&nbsp;Cloud&nbsp;Connector | `False` |
     | Output Variable | `SalesOrders` |
 
+> In our case, the `Use cloud connector` is set to `False` because ES5 is a publicly accessible system.<br>
+> If you would like to consume a service from your on-premise back-end system, you need to setup and configure the SAP Cloud Connector and then mark this field as `True`.<br>
+> When running the Mendix application on SAP Cloud Platform, the SAP Cloud Connector will automatically be utilized to gain access to your on-premise system.<br>
+> For more information, see the [SAP Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html) documentation.
 
 3. Verify the **Get List** dialog matches the following:
 
