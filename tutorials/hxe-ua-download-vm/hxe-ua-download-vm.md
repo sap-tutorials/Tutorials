@@ -75,12 +75,14 @@ Select one or more of the following packages:
 
 [ACCORDION-BEGIN [Step 5: ]((Optional) Download optional installation packages.)]
 
-You can download optional installation packages now (before your server is running), but note that you will need to transfer the installation files to your VM once downloaded. Transfer instructions vary depending on your hypervisor, and are not included in this documentation.
+Skip to the next step unless you are an advanced user.
 
 > Note:
-> SAP recommends you wait until your server is installed and running, and then download optional installation packages using the server's built-in Download Manager (console mode). This latter method is faster and more efficient.
+> SAP recommends beginners complete the installation process first, and then download optional installation packages **after** your server is installed and running. Downloading packages after installation is faster and easier, and uses the server's built-in Download Manager (console mode). You will be asked to follow the [Install Optional Packages](https://www.sap.com/developer/tutorials/hxe-ua-packages-vm-xsa.html) tutorial later in the installation workflow, once your server is installed and running. 
 > 
 > 
+
+If you choose to download optional installation packages now (before your server is running), note that you will need to transfer the installation files to your VM once downloaded. Transfer instructions vary depending on your hypervisor, and are not included in this documentation.
 
 > Note:
 > Concerned about memory? The memory consumption of each additional package is listed in the [SAP HANA 2.0, express edition Sizing Guide (Virtual Machine Method)](https://help.sap.com/viewer/9e4243e92f244537b2164a57a405a9fd).

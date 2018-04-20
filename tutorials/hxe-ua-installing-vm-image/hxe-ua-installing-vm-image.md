@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:**  
+ - **Tutorials:**  Open the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine](https://www.sap.com/developer/groups/hxe-install-vm.html) tutorial group or the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine (with SAP HANA XS Advanced)](https://www.sap.com/developer/groups/hxe-install-vm.html) tutorial group. 
 
 ## Details
 ### You will learn
@@ -26,7 +26,10 @@ These installation tutorials are also available as a [video](https://www.sap.com
 
 The SAP HANA 2.0, express edition VM image is platform-independent. You can install it to a Windows, OS X, or Linux machine, provided your laptop meets the storage and memory prerequisites. Choose the VM installation method if you want the simplest `on-premise` installation experience.
 
-(If you need a custom setup, use the Binary Installer Method, which is for Linux machines – running specific installations – that meet certain storage and memory prerequisites. See [https://www.sap.com/developer/groups/hxe-install-binary.html](https://www.sap.com/developer/groups/hxe-install-binary.html)).
+> Note:
+> If you need a custom on-premise setup, use the Binary Installer Method, which is for Linux machines – running specific installations – that meet certain storage and memory prerequisites. See [Install SAP HANA, express edition on a native Linux machine](https://www.sap.com/developer/groups/hxe-install-binary.html) or [Install SAP HANA, express edition on a native Linux machine (with SAP HANA XS Advanced)](https://www.sap.com/developer/groups/hxe-install-binary-xsa.html).
+> 
+> 
 
 The Virtual Machine method installs:
 
@@ -115,6 +118,14 @@ Example installation procedure for `VMware Workstation Player 12.x`:
 
 -   Register `VMware Workstation Player` when prompted, and follow the setup instructions.
 
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Go to the next tutorial.)]
+
+1.   If you don't have the parent tutorial group open already, open the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine](https://www.sap.com/developer/groups/hxe-install-vm.html) tutorial group or the [Install SAP HANA 2.0, express edition on a preconfigured virtual machine (with SAP HANA XS Advanced)](https://www.sap.com/developer/groups/hxe-install-vm.html) tutorial group. 
+
+2.   Click the next tutorial in the sequence. 
 
 [ACCORDION-END]
 
