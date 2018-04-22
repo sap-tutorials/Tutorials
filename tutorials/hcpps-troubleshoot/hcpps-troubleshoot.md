@@ -13,6 +13,9 @@ This troubleshooting is applicable for the following tutorial groups:
   - [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
   - [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
+## Next Steps
+ - [View all How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=tutorial:type/how-to)
+
 
 ## How-To Details
 The intent of this trouble shooting guide is to highlight few of the most common issues encountered while starting using the SAP Predictive services.
@@ -165,7 +168,7 @@ When I click on the **Application URL** link, I receive the following error mess
 Service Unavailable - No server is available to handle this request, or the application aac4paservicesXXXXXXXtrial.hanatrial.ondemand.com is temporarily down for maintenance. Excuse us for the inconvenience.
 ```
 
-This message is displayed when the application is either stopped not yet fully started.  
+This message is displayed when the application is either stopped not yet fully started.
 
 Check the application status.
 
@@ -191,7 +194,7 @@ HTTP Status 403 - Access to the requested resource has been denied
 
 - With the **Predictive services API Documentation** tile, this message is displayed when your account is not granted the **`C4PA-User`** role.
 
-- With the **Administration** tile, this message is displayed when your account is not granted the **`C4PA-Admin`** role.  
+- With the **Administration** tile, this message is displayed when your account is not granted the **`C4PA-Admin`** role.
 
 Go back to the `aac4paservicess` overview page in the SAP Cloud Platform Cockpit, then under **Security** > **Roles**, and assign your current account id to the **`C4PA-User`** and the **`C4PA-Admin`** role.
 
@@ -215,7 +218,7 @@ When I click on the **Application URL** link, I receive the following error mess
 
 This can happen for multiple reasons:
 
-1. Check there is no **Data Source Binding** defined for your HANA MDC instance in the `aac4paservicess` application  
+1. Check there is no **Data Source Binding** defined for your HANA MDC instance in the `aac4paservicess` application
 
     Go back to the `aac4paservicess` overview page in the SAP Cloud Platform Cockpit, then under **Configuration** > **Data Source Bindings**, and add a binding to your HANA MDC instance.
 
@@ -476,3 +479,6 @@ Alternatively, to avoid this issue you can limit the number of pooled connection
 Make sure you check all these common issues.
 
 Executing this diagnostic will be helpful if you create a support case or submit a question on the [SAP Cloud Platform Predictive Service](https://answers.sap.com/tags/73555000100800000130) community page.
+
+## Next Steps
+ - [View all How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=tutorial:type/how-to)

@@ -6,11 +6,11 @@ primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
 ## Details
-### You will learn  
+### You will learn
 
 - How to setup your SAP HANA XS OData service to be used in your SAPUI5 application
 
@@ -68,7 +68,7 @@ SELECT DISTINCT
   , "T2". "TITLE"
   , "T2". "GENRES"
   , "T3". "IMDBID"
-  , "T3". "TMDBID"       
+  , "T3". "TMDBID"
   , COUNT(1)               over( PARTITION BY "T1"."MOVIEID" ) AS "RATING_COUNT"
   , AVG("RATING")          over( PARTITION BY "T1"."MOVIEID" ) AS "RATING_AVG"
   , NTH_VALUE("TIMESTAMP",1) over( PARTITION BY "T1"."MOVIEID"  ORDER BY "T1"."TIMESTAMP" DESC, "T1"."MOVIEID") AS "LAST_RATING_DATE"
@@ -91,8 +91,8 @@ SELECT
   , "T2"."TITLE"
   , "T2"."GENRES"
   , "T3"."IMDBID"
-  , "T3"."TMDBID"       
-  , "T1"."RATING"  
+  , "T3"."TMDBID"
+  , "T1"."RATING"
   , "T1"."TIMESTAMP"
 FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS" "T1"
 LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" "T2" on ("T1".MOVIEID = "T2".MOVIEID)

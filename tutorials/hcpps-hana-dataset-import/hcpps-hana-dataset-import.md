@@ -32,9 +32,9 @@ Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob
 
 During this tutorial series, you will be able to address multiple services using different datasets.
 
-We could have used the HANA Studio import feature, but this would assume that you have it installed.  
+We could have used the HANA Studio import feature, but this would assume that you have it installed.
 
-Due to restrictions related to the resources, format and size that can be made available on the tutorial platform, it was required to split some of the data into several chunks.  
+Due to restrictions related to the resources, format and size that can be made available on the tutorial platform, it was required to split some of the data into several chunks.
 
 But first we need to create the tables.
 
