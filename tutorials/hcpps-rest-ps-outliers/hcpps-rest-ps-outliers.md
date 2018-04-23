@@ -26,11 +26,11 @@ Only the synchronous mode will be tested here but you can mimic what was done in
 > Therefore you can replace any occurrence of the token by the value listed above:
 >
 > - <code><b>C4PAURL</b></code> : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
->     
+>
 ```
      https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
 ```
->      
+>
 >
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
@@ -66,7 +66,7 @@ Optionally, you can define the following parameters to enhance your analysis:
   - number of reasons : number of reasons to return for each outlier
   - weight variable: column to be used to increase the importance of a row
   - skipped variables: a list of variables to skip from the analysis
-  - variable description: a more details description of the dataset  
+  - variable description: a more details description of the dataset
   - weight variable: a column to be used to increase the importance of a row
 
 [ACCORDION-END]
@@ -100,7 +100,7 @@ Variable | Description | Example of Values
 <nobr>`native country`</nobr> | Country of origin| United States, France, ...
 <nobr>`class`</nobr> | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
 
-[ACCORDION-END]  
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Register the Census dataset)]
 
@@ -128,7 +128,7 @@ URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/sync`
 
 **Take note of the returned dataset identifier.**
 
-[ACCORDION-END]    
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Run the Outliers service)]
 
@@ -177,7 +177,7 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   	{"position" : "14", "variable" : "hours_per_week", "storage" : "number" , "value" : "continuous"},
   	{"position" : "15", "variable" : "native_country", "storage" : "string" , "value" : "nominal" ,  "missing" : "?"},
   	{"position" : "16", "variable" : "class", "storage" : "number" , "value" : "nominal"}
-  ]  
+  ]
 }
 ```
 > Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
@@ -269,7 +269,7 @@ You can also play with the following parameters and check the differences:
 - skipped variables: exclude "`marital_status`"
 - variable description: for example as an ordinal variable
 
-[ACCORDION-END]    
+[ACCORDION-END]
 
 ### Optional
 

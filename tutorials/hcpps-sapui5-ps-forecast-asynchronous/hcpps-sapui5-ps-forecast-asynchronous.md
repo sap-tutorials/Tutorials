@@ -136,7 +136,7 @@ sap.ui.define([
     	});
     }
   });
-});    
+});
 ```
 
 You can notice that the service call is almost the same (minor change in the URL), but the returned payload is not the model but the job details.

@@ -26,8 +26,8 @@ You need to run a script and an installer executable to complete the necessary s
 
 > Note:
 > The current version of SAP HANA, express edition supports only one Data Provisioning Agent per machine.
-> 
-> 
+>
+>
 
 [ACCORDION-BEGIN [Step 1: ](Download `sdi.tgz`.)]
 
@@ -59,7 +59,7 @@ To install the Data Provisioning Agent, run `extract directory``/HANA_EXPRESS_20
 
 You are prompted to supply the following information (default values are given):
 
--   Installation path `[/usr/sap/dataprovagent]` 
+-   Installation path `[/usr/sap/dataprovagent]`
 
 -   Enter User name for Agent service (user must exist)
 
@@ -86,57 +86,93 @@ A user may need to be assigned specific roles and privileges to accomplish tasks
 
 > Note:
 > Permissions may also be required for accessing a particular database through a data provisioning adapter. See the *SAP HANA Smart Data Integration* documentation for complete information.
-> 
-> 
+>
+>
 
 > Note:
 > The information given below is for SAP HANA studio and SAP HANA Web-based Development Workbench only.
-> 
-> 
+>
+>
 
-|Task|Roles and Privileges|Description|
-|----|--------------------|-----------|
-|Register a DP Agent|**System privilege:**- `AGENT ADMIN`| |
-|Register an adapter|**System privilege:**- `ADAPTER ADMIN`| |
-|Configure DP Agent to use HTTP (cloud) protocol|**Role:**- `sap.hana.im.dp.proxy::AgentMessaging`|Whoever sets the DP Agent to use HTTP (cloud) in the DP Agent Configuration tool needs to be assigned this role.|
-|Create an Agent or adapter when SAP HANA is in the cloud|**Application privilege:**- `sap.hana.im.dp.admin::Administrator` |Needed when administrator want to create adapters/agent from agent `config` tool when SAP HANA is on the cloud (or Agent uses HTTP protocol).|
+|Task|Role or Privilege|Role or Privilege Name|Notes|
+|----|-----------------|----------------------|-----|
+|Register a DP Agent|**System privilege**|`AGENT ADMIN`| |
+|Register an adapter|**System privilege**|`ADAPTER ADMIN`| |
+|Configure DP Agent to use HTTP (cloud) protocol|**Role**|`sap.hana.im.dp.proxy::AgentMessaging`|Whoever sets the DP Agent to use HTTP (cloud) in the DP Agent Configuration tool needs to be assigned this role.|
+|Create an Agent or adapter when SAP HANA is in the cloud|**Application privilege**|`sap.hana.im.dp.admin::Administrator`|Needed when administrator want to create adapters/agent from agent `config` tool when SAP HANA is on the cloud (or Agent uses HTTP protocol).|
 
 **Monitoring Tasks**
 
 A user may need to be assigned specific roles or privileges to access and perform various tasks through the Data Provisioning monitors, which can be accessed from the SAP HANA cockpit.
 
-|Task|Roles and Privileges|Description|
-|----|--------------------|-----------|
-|Monitoring|**Role:**- `sap.hana.im.dp.monitor.roles::Monitoring`**Application privilege:**- `sap.hana.im.dp.monitor::Monitoring`|The Monitoring role includes the following application privileges- `sap.hana.ide::LandingPage`- `sap.hana.im.dp.monitor::Monitoring`|
-| |**Role:**- `sap.hana.im.dp.monitor.roles::Operations`|The Operations role includes the following application privileges (`sap.hana.im.dp.monitor`): - `AddLocationToAdapter`- `AlterAgent`- `AlterRemoteSource`- `AlterRemoteSubscription`- `CreateAgent`- `DeleteSchedule`- `DropAgent`- `ExecuteDesignTimeObject`- `NotificationAdministration`- `ProcessRemoteException` (This includes both remote source and remote subscription exceptions)- `RemoveLocationFromAdapter`- `ScheduleDesignTimeObjec`- `ScheduleTask`- `StartTask`- `StopTask`- `UpdateAdapter`|
+|Task|Role or Privilege|Role or Privilege Name|Notes|
+|----|-----------------|----------------------|-----|
+|Monitoring|**Role**|`sap.hana.im.dp.monitor.roles::Monitoring`|**The Monitoring role includes the following application privileges:**|
+| | | | `sap.hana.ide::LandingPage` |
+| | | | `sap.hana.im.dp.monitor::Monitoring` |
+| | **Application privilege** |`sap.hana.im.dp.monitor::Monitoring`| |
+|Operations|**Role**|`sap.hana.im.dp.monitor.roles::Operations`|**The Operations role includes the following application privileges (`sap.hana.im.dp.monitor`):** |
+| | | | `AddLocationToAdapter` |
+| | | | `AlterAgent` |
+| | | | `AlterRemoteSource` |
+| | | | `AlterRemoteSubscription` |
+| | | | `CreateAgent` |
+| | | | `DeleteSchedule` |
+| | | | `DropAgent` |
+| | | | `ExecuteDesignTimeObject` |
+| | | | `NotificationAdministration` |
+| | | | `ProcessRemoteException` (This includes both remote source and remote subscription exceptions)|
+| | | | `RemoveLocationFromAdapter` |
+| | | | `ScheduleDesignTimeObjec` |
+| | | | `ScheduleTask` |
+| | | | `StartTask` |
+| | | | `StopTask` |
+| | | | `UpdateAdapter` |
 
 **Remote Source and Remote Subscription Tasks**
 
 A user may need to be assigned specific roles or privileges to create and manage remote sources.
 
-|Task|Roles and Privileges|Description|
-|----|--------------------|-----------|
-|Create a remote source|**System privilege:**- CREATE REMOTE SOURCE|If a user can create a remote source (has CREATE REMOTE SOURCE system privilege), that user automatically has CREATE VIRTUAL TABLE, DROP, CREATE REMOTE SUBSCRIPTIONS and PROCESS REMOTE SUBSCRIPTION EXCEPTION privileges; they don't need to be assigned to the user. However, this only applies to remote sources that the user creates themselves. If a remote source is created by someone else, then those privileges must be assigned, for each remote source, in order to perform those tasks.|
-|Create a remote source in SAP HANA Web-based Development Workbench| **Role**: - `sap.hana.xs.ide.roles::CatalogDeveloper` | |
-|Alter a remote source|**Object privilege:**- ALTER|In order to alter a remote source, the user must have the ALTER object privilege on the remote source. Examples of altering a remote source include:- `ALTER REMOTE SOURCE <remote_source_name> SUSPEND CAPTURE`- `ALTER REMOTE SOURCE <remote_source_name> RESUME CAPTURE` |
-|Drop a remote source|**Object privilege:**- DROP|Must be explicitly granted for a remote source created by another user.|
-|Search for an object in a remote source|**Object privilege:** - ALTER on the remote source to be searched.|In order to search for remote objects (such as tables) in a remote source, the user must have the `ALTER` object privilege on the remote source, so that a dictionary can be created.|
-|Add a virtual table|**Object privilege:**- CREATE VIRTUAL TABLE|Must be explicitly granted for a remote source created by another user.|
+|Task|Role or Privilege|Role or Privilege Name|Notes|
+|----|-----------------|----------------------|-----|
+|Create a remote source|**System privilege**|CREATE REMOTE SOURCE|If a user can create a remote source (has CREATE REMOTE SOURCE system privilege), that user automatically has CREATE VIRTUAL TABLE, DROP, CREATE REMOTE SUBSCRIPTIONS and PROCESS REMOTE SUBSCRIPTION EXCEPTION privileges; they don't need to be assigned to the user. However, this only applies to remote sources that the user creates themselves. If a remote source is created by someone else, then those privileges must be assigned, for each remote source, in order to perform those tasks.|
+|Create a remote source in SAP HANA Web-based Development Workbench| **Role** |`sap.hana.xs.ide.roles::CatalogDeveloper`| |
+|Alter a remote source|**Object privilege**|ALTER|In order to alter a remote source, the user must have the ALTER object privilege on the remote source. **Examples of altering a remote source include:** |
+| | | | `ALTER REMOTE SOURCE <remote_source_name> SUSPEND CAPTURE` |
+| | | | `ALTER REMOTE SOURCE <remote_source_name> RESUME CAPTURE` |
+|Drop a remote source|**Object privilege**|DROP|Must be explicitly granted for a remote source created by another user.|
+|Search for an object in a remote source|**Object privilege** |ALTER on the remote source to be searched.|In order to search for remote objects (such as tables) in a remote source, the user must have the `ALTER` object privilege on the remote source, so that a dictionary can be created.|
+|Add a virtual table|**Object privilege**|CREATE VIRTUAL TABLE|Must be explicitly granted for a remote source created by another user.|
 
 **Replication Task and `Flowgraph` Tasks**
 
 A user may need to be assigned specific roles and privileges to create and run `flowgraphs` and replication tasks.
 
-|Task|Roles and Privileges|Description|
-|----|--------------------|-----------|
-|Create a flowgraph| **Role:** - `sap.hana.xs.ide.roles::EditorDeveloper` **Object privilege:** - EXECUTE on `"_SYS_REPO"."TEXT_ACCESSOR"` and `"_SYS_REPO"."MULTI_TEXT_ACCESSOR"` |Allows creation of `.hdbflowgraph`.|
-|Create a flowgraph of type Task|**Object privilege:**- SELECT (for input/output schema)| |
-|Create a replication task| **Role:** - `sap.hana.xs.ide.roles::EditorDeveloper` |Allows creation of `.hdbreptask`.|
-|Activate replication task (`.hdbreptask`)|**Object privileges:**- SELECT on the source schema- CREATE VIRTUAL TABLE on REMOTE SOURCE (Initial Load Only)- CREATE REMOTE SUBSCRIPTION on REMOTE SOURCE (for real time scenarios)|Must be granted to `_SYS_REPO`.|
-|Activate flowgraph (`.hdbflowgraph`)|**Object privileges:**- SELECT on the source table- INSERT, UPDATE, and DELETE on the target table- SELECT on the target schema (only when using a Template Table as a target)- If sequence is used, then GRANT SELECT on sequence- History Table: - GRANT INSERT on History Table - GRANT SELECT on Target Table.|Must be granted to `_SYS_REPO`.|
-|Execute a stored procedure|**Object privilege:**- EXECUTE|Needed on the schema where the stored procedure is located.|
-|Execute a task|**Object privilege:**- EXECUTE- INSERT- UPDATE- SELECT- DELETE|Needed on the schema where the task is located.|
-|Use the JIT (just-in-time) Data Preview option|**Object privilege:**- SELECT and EXECUTE with GRANT OPTION|Must be granted to `_SYS_REPO` user. Needed on the schema where the task or stored procedure is located.|
+|Task|Role or Privilege|Role or Privilege Name|Notes|
+|----|-----------------|----------------------|-----|
+|Create a flowgraph| **Role** | `sap.hana.xs.ide.roles::EditorDeveloper` |Allows creation of `.hdbflowgraph`.|
+| | **Object privilege** |EXECUTE| **EXECUTE privilege on:** |
+| | | | `"_SYS_REPO"."TEXT_ACCESSOR"` and|
+| | | | `"_SYS_REPO"."MULTI_TEXT_ACCESSOR"` |
+|Create a flowgraph of type Task|**Object privilege:**|SELECT (for input/output schema)| |
+|Create a replication task| **Role** | `sap.hana.xs.ide.roles::EditorDeveloper` |Allows creation of `.hdbreptask`.|
+|Activate replication task (`.hdbreptask`)|**Object privileges:**|SELECT on the source schema|Must be granted to `_SYS_REPO`.|
+| | |CREATE VIRTUAL TABLE on REMOTE SOURCE (Initial Load Only)|Must be granted to `_SYS_REPO`.|
+| | |CREATE REMOTE SUBSCRIPTION on REMOTE SOURCE (for real time scenarios)|Must be granted to `_SYS_REPO`.|
+|Activate flowgraph (`.hdbflowgraph`)|**Object privileges:**|SELECT on the source table|Must be granted to `_SYS_REPO`.|
+| | |INSERT, UPDATE, and DELETE on the target table|Must be granted to `_SYS_REPO`.|
+| | |SELECT on the target schema (only when using a Template Table as a target)|Must be granted to `_SYS_REPO`.|
+| | |If sequence is used, then GRANT SELECT on sequence|Must be granted to `_SYS_REPO`.|
+| | |History Table:|Must be granted to `_SYS_REPO`.|
+| | |GRANT INSERT on History Table|Must be granted to `_SYS_REPO`.|
+| | |GRANT SELECT on Target Table.|Must be granted to `_SYS_REPO`.|
+|Execute a stored procedure|**Object privilege**|EXECUTE|Needed on the schema where the stored procedure is located.|
+|Execute a task|**Object privileges:**|EXECUTE|Needed on the schema where the task is located.|
+| | |INSERT|Needed on the schema where the task is located.|
+| | |UPDATE|Needed on the schema where the task is located.|
+| | |SELECT|Needed on the schema where the task is located.|
+| | |DELETE|Needed on the schema where the task is located.|
+|Use the JIT (just-in-time) Data Preview option|**Object privilege**|SELECT and EXECUTE with GRANT OPTION|Must be granted to `_SYS_REPO` user. Needed on the schema where the task or stored procedure is located.|
 
 [ACCORDION-END]
 
@@ -144,9 +180,9 @@ A user may need to be assigned specific roles and privileges to create and run `
 
 Specify connection information and administrator credentials when the SAP HANA system is located on premise and does not require a secure SSL connection.
 
-1.   Navigate to the `DPAgent_root``/configTool` directory. 
+1.   Navigate to the `DPAgent_root``/configTool` directory.
 
-2.   Start the configuration tool. 
+2.   Start the configuration tool.
 
     -   On Windows, run `dpagentconfigtool.exe`.
 
@@ -155,10 +191,10 @@ Specify connection information and administrator credentials when the SAP HANA s
 
     > Note:
     > Start the configuration tool using the Data Provisioning Agent installation owner. The installation owner is the same user that is used to start the agent service.
-    > 
-    > 
+    >
+    >
 
-3.   Connect to the SAP HANA server. 
+3.   Connect to the SAP HANA server.
 
     -   Click *Connect to SAP HANA*.
 
@@ -167,19 +203,19 @@ Specify connection information and administrator credentials when the SAP HANA s
 
     > Note:
     > The administrator user that you use to connect to the SAP HANA system must have been granted the `AGENT ADMIN` and `ADAPTER ADMIN` system privileges. If the user that you want to use does not already have these privileges, you must grant them before you can connect to the SAP HANA system.
-    > 
-    > 
+    >
+    >
 
     > Note:
     > To determine the correct port number when SAP HANA is deployed in a multi-database configuration, execute the following SQL statement:
-    > 
+    >
     > ```bash
-    > SELECT DATABASE_NAME,SERVICE_NAME,PORT,SQL_PORT,(PORT + 2) HTTP_PORT 
-    > FROM SYS_DATABASES.M_SERVICES WHERE DATABASE_NAME='<DBNAME>' and 
+    > SELECT DATABASE_NAME,SERVICE_NAME,PORT,SQL_PORT,(PORT + 2) HTTP_PORT
+    > FROM SYS_DATABASES.M_SERVICES WHERE DATABASE_NAME='<DBNAME>' and
     > ((SERVICE_NAME='indexserver' and COORDINATOR_TYPE= 'MASTER') or (SERVICE_NAME='xsengine'))
     > ```
-    > 
-    > 
+    >
+    >
 
 [ACCORDION-END]
 
@@ -191,25 +227,25 @@ Before you can use adapters deployed on the Data Provisioning Agent, you must re
 
 -   The Agent Admin HANA User must have the following roles or privileges.
 
-    |Action|Role or Privilege|
-    |------|-----------------|
-    |Register adapter|- System privilege: `AGENT ADMIN`|
+    |Action|Role or Privilege|Role or Privilege Name|
+    |------|-----------------|----------------------|
+    |Register adapter|**System privilege** |`AGENT ADMIN`|
 
 -   For SAP HANA on Cloud, the Agent XS HANA User must have the following roles or privileges.
 
-    |Action|Role or Privilege|
-    |------|-----------------|
-    |Register adapter|- System privilege: `AGENT ADMIN`|
-    |Messaging between the agent and SAP HANA on Cloud|- Application privilege: `sap.hana.im.dp.proxy::AgentMessaging`|
+    |Action|Role or Privilege|Role or Privilege Name|
+    |------|-----------------|----------------------|
+    |Register adapter|**System privilege** |`AGENT ADMIN`|
+    |Messaging between the agent and SAP HANA on Cloud|**Application privilege** |`sap.hana.im.dp.proxy::AgentMessaging`|
 
 
-1.   Start the agent configuration tool and connect to the SAP HANA server. 
+1.   Start the agent configuration tool and connect to the SAP HANA server.
 
     The agent configuration tool is located at `DPAgent_root``/configTool`.
 
-2.   Click *Register Agent*. 
+2.   Click *Register Agent*.
 
-3.   Specify the agent connection information. 
+3.   Specify the agent connection information.
 
     -   If SAP HANA is not in the cloud, specify the agent name and hostname:
 
@@ -222,7 +258,7 @@ Before you can use adapters deployed on the Data Provisioning Agent, you must re
         -   When SAP HANA is in the cloud, the agent service will be restarted to complete the registration process.
 
 
-4.   Click *Register*. 
+4.   Click *Register*.
 
     The agent is registered with SAP HANA. If SAP HANA is in the cloud, the agent service is automatically restarted.
 
@@ -230,8 +266,8 @@ Before you can use adapters deployed on the Data Provisioning Agent, you must re
 
     > Note:
     > `Unregistering` the agent from the SAP HANA server performs a cascade drop of the agent. As a result, any remote subscriptions that use the agent will also be deleted, even if they are active.
-    > 
-    > 
+    >
+    >
 
 [ACCORDION-END]
 
@@ -243,34 +279,35 @@ Before you can connect to remote sources using an adapter, you must register the
 
 The HANA administrator user must have the following roles or privileges.
 
-|Action|Role or Privilege|
-|------|-----------------|
-|Register an adapter|- System privilege: `ADAPTER ADMIN` - Application privilege: `sap.hana.im.dp.admin::Administrator` |
+|Action|Role or Privilege|Role or Privilege Name|
+|------|-----------------|----------------------|
+|Register an adapter| **System privilege** |`ADAPTER ADMIN`|
+| | **Application privilege** |`sap.hana.im.dp.admin::Administrator`|
 
 > Note:
 > This application privilege is required only for SAP HANA in the cloud.
-> 
-> 
+>
+>
 
 > Note:
 > Before you register the adapter with the SAP HANA system, be sure that you have downloaded and installed the correct JDBC libraries (if necessary). For information about the proper JDBC library for your source, see the *Product Availability Matrix (PAM)*.
-> 
+>
 > Place your JDBC library in `DPAgent_root``/lib`, and you may need to manually create the `/lib` folder.
-> 
-> 
+>
+>
 
 1.   Start the Data Provisioning Agent Configuration tool and connect to SAP HANA.
 
-2.   For custom adapters, click *Deploy Adapter* and point to the adapter JAR files. 
+2.   For custom adapters, click *Deploy Adapter* and point to the adapter JAR files.
 
     > Note:
     > SAP-delivered data provisioning adapters are automatically deployed on the agent during agent installation.
-    > 
-    > 
+    >
+    >
 
-3.   Select the adapter to register and click *Register Adapter*. 
+3.   Select the adapter to register and click *Register Adapter*.
 
-4.   If required, configure the source system to which the adapter connects. 
+4.   If required, configure the source system to which the adapter connects.
 
     For example, log reader adapters require source configuration to enable real time replication.
 
@@ -287,5 +324,3 @@ When you have completed the installation and connected to HANA, you will want to
 For complete information about SAP HANA smart data integration, see the SAP Help Portal.
 
 [ACCORDION-END]
-
-

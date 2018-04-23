@@ -25,11 +25,11 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-servi
 > Therefore you can replace any occurrence of the token by the value listed above:
 >
 > - <code><b>C4PAURL</b></code> : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
->     
+>
 ```
      https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
 ```
->      
+>
 >
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
@@ -72,7 +72,7 @@ The dataset will be using during this tutorial is extracted from the sample data
 
 The Census sample data file that you will use to follow the scenarios for Regression/Classification and Segmentation/Clustering is an excerpt from the American Census Bureau database, completed in 1994 by Barry Becker.
 
-> **Note:** For more information about the American Census Bureau, see <http://www.census.gov> published on non-SAP site.
+> **Note:** For more information about the American Census Bureau, see <http://www.census.gov> published on a non-SAP site.
 
 &nbsp;
 
@@ -95,7 +95,7 @@ Variable | Description | Example of Values
 <nobr>`native country`</nobr> | Country of origin| United States, France, ...
 <nobr>`class`</nobr> | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
 
-[ACCORDION-END]  
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Register the Census dataset)]
 
@@ -125,7 +125,7 @@ URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/sync`
 
 **Take note of the returned dataset identifier.**
 
-[ACCORDION-END]    
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Run the Key Influencer service)]
 
@@ -373,7 +373,7 @@ But if you look closer you will notice that the `capital_gain` has been consider
 
 Let's fix that with a more accurate variable description.
 
-[ACCORDION-END]    
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Adjust the variable description)]
 
@@ -451,7 +451,7 @@ Let's try with the following **Body**, which define the missing value for the re
   	{"position" : "14", "variable" : "hours_per_week", "storage" : "number" , "value" : "continuous"},
   	{"position" : "15", "variable" : "native_country", "storage" : "string" , "value" : "nominal" ,  "missing" : "?"},
   	{"position" : "16", "variable" : "class", "storage" : "integer" , "value" : "nominal"}
-  ]  
+  ]
 }
 ```
 

@@ -116,7 +116,7 @@ Click on **Save**
 
 Now, you need to configure security settings for your ***SAP Cloud Platform Account***.
 
-On the left side bar, navigate in **Security**, then click on **Roles**  
+On the left side bar, navigate in **Security**, then click on **Roles**
 
 Assign your user name to the **`C4PA-User`** role using the **Assign** button (make sure you are not including the 'trial' at the end).
 
@@ -185,7 +185,7 @@ Click on the **Administration** tile
 
 Status is green! Congrats, you have configured the SAP Predictive services on your SAP Cloud Platform account.
 
-![Application](20.png)   
+![Application](20.png)
 
 [ACCORDION-END]
 
