@@ -1,7 +1,6 @@
 ---
 title: Using the SAP Fiori for iOS Mentor app
 description: Familiarize yourself with the SDK's companion app 'SAP Fiori for iOS Mentor'
-auto_validation: true
 primary_tag: operating-system>ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -33,7 +32,6 @@ Open the SAP Fiori for iOS Mentor app on your iPad. Upon opening, the app shows 
 
 ![Mentor app](fiori-ios-scpms-deliveryapp-part4-01.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Locate the Timeline Cell tile)]
@@ -42,7 +40,6 @@ Click on the **See All** link next to the **UI Components** section, and scroll 
 
 ![Mentor app](fiori-ios-scpms-deliveryapp-part4-02.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Examine the Timeline Cell control)]
@@ -55,7 +52,6 @@ You can also customize the look and feel on a more granular level. Click the **b
 
 ![Mentor app](fiori-ios-scpms-deliveryapp-part4-04.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Display the generated code)]
@@ -64,7 +60,6 @@ When you're happy with the final result, click the **Code button** (the one labe
 
 ![Mentor app](fiori-ios-scpms-deliveryapp-part4-05.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Export the generated code)]
@@ -81,7 +76,6 @@ The generated code can now be implemented into the appropriate places in the `Tr
 
 >   **NOTE** Since it may take a bit too long to go through the steps of copying and pasting the code, adding the control binding to the Proxy Classes' properties and format the data properly, you don't need to do this yourself. The code to implement will be provided in the next tutorial.
 
-[DONE]
 [ACCORDION-END]
 
 

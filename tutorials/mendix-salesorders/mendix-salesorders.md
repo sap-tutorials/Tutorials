@@ -14,7 +14,7 @@ tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platfor
 
 
 ## Details
-You can build business applications for the SAP Cloud Platform Cloud Foundry environment using SAP Cloud Platform Rapid Application Development by Mendix, without needing to write code. 
+You can build business applications for the SAP Cloud Platform Cloud Foundry environment using SAP Cloud Platform Rapid Application Development by Mendix, without needing to write code.
 
 This tutorial takes you through the basics of development in the Mendix Desktop Modeler and teaches you how to build a simple sales order application consuming the [`GWSAMPLE_BASIC service`](https://help.sap.com/viewer/68bf513362174d54b58cddec28794093/7.51.4/en-US/59283fc4528f486b83b1a58a4f1063c0.html) from the SAP Gateway Demo System (ES5).
 
@@ -95,7 +95,7 @@ Now you have a Mendix module ready to be imported into your project.
 
 3. In addition to the domain model, the OData Model Creator also created two other items:
     * A constant with the name of the service, containing the service root URL
-    * An enumeration (**EntitySetNames**) containing a list of all the entity sets in the model
+    * An enumeration (`EntitySetNames`) containing a list of all the entity sets in the model
 
     ![Generated Domain Model](mendix-salesorders33.png)
 
@@ -158,7 +158,7 @@ Follow these steps to create the logic to get the sales orders.
 [ACCORDION-BEGIN [Step 6: ](Add logic to get sales orders – request)]
 
 1. Add another activity to the microflow and select the **Get List** action from the SAP OData Connector.
-The **Get List** action retrieves a list of entities described in the domain model. In our case we will retrieve a list of SalesOrders.
+The **Get List** action retrieves a list of entities described in the domain model. In our case we will retrieve a list of sales orders.
 2. Fill in the required fields of the **Get List** action. For this tutorial, use the following settings:
 
     | Field | Value |
