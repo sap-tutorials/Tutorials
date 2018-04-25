@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-**`Maintain platform subaccounts and SAP Web IDE permissions`** as tutorial is a prerequisite .
+- **Tutorials:** [`Maintain platform subaccounts and SAP Web IDE permissions`](https://www.sap.com/developer/tutorials/abap-custom-ui-subaccount-permission.html)
 
 ## Details
 ### You will learn
@@ -93,14 +93,14 @@ Select **Name ID Attribute**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Set application's name ID attribute)]
+[ACCORDION-BEGIN [Step 10: ](Set application' s name ID attribute)]
 Choose **Login Name** and save your changes.
 
 ![Set application' s name ID attribute](login.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Set application's identity provider)]
+[ACCORDION-BEGIN [Step 11: ](Set application' s identity provider)]
 Switch to **Identity Provider** and select it.
 
 ![Set application' s identity provider](provider.png)

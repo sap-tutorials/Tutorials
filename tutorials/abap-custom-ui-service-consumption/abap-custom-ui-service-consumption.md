@@ -6,7 +6,9 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-The assignment of the business catalog **`SAP_CORE_BC_COM`**, **`SAP_CORE_BC_EXT`** to your user and **`Expose custom business object as external web service`** as tutorial represents the prerequisites for the usage of the service generation as well as custom communication scenario and communication arrangement creation.
+- **Tutorials:** [`Expose custom business object as external web service`](https://www.sap.com/developer/tutorials/abap-custom-ui-business-object.html)
+- **Authorizations:** The assignment of the business catalog **`SAP_CORE_BC_COM`**, **`SAP_CORE_BC_EXT`** to your user represents the prerequisites.
+
 
 ## Details
 ### You will learn
@@ -30,8 +32,8 @@ Open **Destinations** on SAP Cloud Platform.
 [ACCORDION-BEGIN [Step 2: ](Add service scope to destination)]
 Edit your **destination** and add your **custom CDS view service** to your scope.
 
-| ------------ | --------------------------------------------------------------------------------- |
-| **`scope:`** |  `ADT_0001 /UI5/APP_INDEX_0001 /IWFND/SG_MED_CATALOG_0002 YY1_BONUSPLAN_CDS_0001`  |
+| ----------- | --------------------------------------------------------------------------------- |
+| **`scope`** |  `ADT_0001 /UI5/APP_INDEX_0001 /IWFND/SG_MED_CATALOG_0002 YY1_BONUSPLAN_CDS_0001` |
 
 
 Your **scope** consists now of 4 parts:
@@ -79,7 +81,7 @@ Choose the **List Report Application** to create a new UI.
 Enter **`Bonusplan`** as project name and title.
 
 ![Enter basic information](bonusplan.png)
- 
+
 Click **Next**.
 
 [ACCORDION-END]
