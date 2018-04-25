@@ -50,10 +50,10 @@ Install the Download Manager to your client machine and download the client pack
 
     -   For Linux, navigate to the directory in which you wish to extract the client files and use the tar command.
 
-```bash
-cd <preferred_filepath>
-sudo tar <download_filepath>/clients_<OS>.zip
-```
+    ```bash
+    cd <preferred_filepath>
+    sudo tar <download_filepath>/clients_<OS>.zip
+    ```
 
     These files are extracted:
 
@@ -64,27 +64,27 @@ sudo tar <download_filepath>/clients_<OS>.zip
     -   `xs.onpremise.runtime.client_linuxx86_64.zip`
 
 
-`clients_linux_ppc64.le.tgz`
+    `clients_linux_ppc64.le.tgz`
 
--   `hdb_client_linux_ppc64le.tgz`
+    -   `hdb_client_linux_ppc64le.tgz`
 
--   `xs.onpremise.runtime.client_linuxx86_64.zip`
-
-
-`clients_windows.zip`
-
--   `hdb_client_windows_x86_32.tgz`
-
--   `hdb_client_windows_x86_64.tgz`
-
--   `xs.onpremise.runtime.client_ntamd64.zip`
+    -   `xs.onpremise.runtime.client_linuxx86_64.zip`
 
 
-`clients_mac.tgz`
+    `clients_windows.zip`
 
--   `hdb_client_mac.tgz`
+    -   `hdb_client_windows_x86_32.tgz`
 
--   `xs.onpremise.runtime.client_darwinintel64.zip`
+    -   `hdb_client_windows_x86_64.tgz`
+
+    -   `xs.onpremise.runtime.client_ntamd64.zip`
+
+
+    `clients_mac.tgz`
+
+    -   `hdb_client_mac.tgz`
+
+    -   `xs.onpremise.runtime.client_darwinintel64.zip`
 
 
 [ACCORDION-END]
@@ -99,7 +99,7 @@ Use a compression utility to extract the file you downloaded for your platform:
 
 -   (Linux) `xs.onpremise.runtime.client_linuxx86_64.zip`
 
--   (PowerPC) `xs.onpremise.runtime.client_linuxppc64le.zip` 
+-   (PowerPC) `xs.onpremise.runtime.client_linuxppc64le.zip`
 
 
 The system creates this folder:
@@ -153,8 +153,8 @@ xs api https://<hostname>:3<instance_number>30
 
 > Note:
 > If this step fails, it may be due to a missing SSL certificate. Continue on to the next step to add the SSL certificate, otherwise skip the next step.
-> 
-> 
+>
+>
 
 [ACCORDION-END]
 
@@ -202,8 +202,8 @@ xs login -u XSA_ADMIN -p "<password>"
 
 > Note:
 > A password is assigned to the `XSA_ADMIN` user during SAP HANA 2.0, express edition installation.
-> 
-> 
+>
+>
 
 [ACCORDION-END]
 
@@ -216,5 +216,3 @@ xs apps
 ```
 
 [ACCORDION-END]
-
-
