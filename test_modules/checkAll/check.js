@@ -15,6 +15,9 @@ var Entities = require('html-entities').AllHtmlEntities;
 
 module.exports = function(files, showprogressbar, callback) {
     console.log("\n");
+    
+    var { NODE_ENV } = process.env;
+    var isProduction = NODE_ENV == 'production';
 
     //initialize ProgressBar
     var bar = new ProgressBar('testing [:bar] :percent :elapsed', {
@@ -88,13 +91,29 @@ module.exports = function(files, showprogressbar, callback) {
                 if (fileContent != null) {
                     //check file content
                     var lineIndex = 0;
-                    const err = checkContent.check(file, fileContent);
+                    const err = checkContent.check(file, fileContent.lines);
                     if(err && err.length) {
                         cntContent += err.length;
-                        err.forEach(contErr => {
-                            logContent += '\n\n    > Error: \n        line:    ' + (contErr.line) +
+                        err.forEach(linkErr => {
+                            logContent += '\n\n    > Error: \n        line:    ' + (linkErr.line) +
                             "\n        file:    " + fname +
-                            "\n        reason:  " + contErr.msg;
+                            "\n        reason:  " + linkErr.msg;
+                        });
+                    }
+                    const tagsErr = checkContent.checkTags(fileContent.src);
+                    if(tagsErr) {
+                        cntContent++;
+                        logContent += '\n\n    > Error: ' +
+                        "\n        file:    " + fname +
+                        "\n        reason:  " + tagsErr;
+                    }
+                    const validationErrors = checkContent.checkValidation(fileContent.src, file, isProduction);
+                    if(validationErrors.length) {
+                        cntContent += validationErrors.length;
+                        validationErrors.forEach(err => {
+                            logContent += '\n\n    > Error:' +
+                            "\n        file:    " + fname +
+                            "\n        reason:  " + err.err;
                         });
                     }
                 } else {
@@ -102,7 +121,7 @@ module.exports = function(files, showprogressbar, callback) {
                 }
 
                 //check links
-                var links = getLinks(fileContent);
+                var links = getLinks(fileContent ? fileContent.src : '');
                 checkedLinks += links.length;
                 checkDeadLink(fname, links, function(results) {
                     index++;
@@ -120,7 +139,7 @@ module.exports = function(files, showprogressbar, callback) {
                             results.deadlinks.forEach(function(deadlink) {
                                 var line;
                                 const decodedUrl = entities.decode(deadlink.url);
-                                fileContent.forEach(function(line,i){
+                                (fileContent ? fileContent.lines : []).forEach(function(line,i){
                                   if(line.includes(decodedUrl)){
                                     line = i+1;
                                     const msg = '\n\n        url: ' + decodedUrl + '\n        line: ' + line + '\n        code: ' + deadlink.code;
