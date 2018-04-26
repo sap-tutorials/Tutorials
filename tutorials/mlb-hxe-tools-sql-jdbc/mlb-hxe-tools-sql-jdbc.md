@@ -1,6 +1,7 @@
 ---
-title: Use a JDBC based querying tools for SAP HANA, express edition
+title: Use a JDBC based querying tool with SAP HANA, express edition
 description: Provide details on the installation the SAP HANA client and instruction to connect a SAP HANA, express edition instance from almost any JDBC based querying tool.
+auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
 ---
@@ -61,6 +62,7 @@ The ***SAP HANA HDB Client*** software package includes the following connectivi
 
 Here you will install the ***SAP HANA HDB Client*** only.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Install the SAP HANA client)]
@@ -129,6 +131,7 @@ Once the installation is completed, you should get the following elements in you
 Installation finished successfully
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Locate the JDBC Driver)]
@@ -138,6 +141,7 @@ The driver (`ngdbc.jar`), which is installed as part of the SAP HANA client, is 
  - on Linux and UNIX platforms `/usr/sap/hdbclient/`
  - on Microsoft Windows platforms: `C:\Program Files\SAP\hdbclient\`
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Configure the driver)]
@@ -193,6 +197,7 @@ The **Drivers Definitions** list should include the new entry.
 
 Click on **Apply and Close** to close the ***Preferences*** popup window.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Configure your connections)]
@@ -251,6 +256,7 @@ With the SAP HANA, express edition default settings, it may look like this:
 
 Click on **Finish**.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Test the connections with SQL)]
@@ -278,6 +284,14 @@ Now switch to the **SYSTEMDB @ HXE (SYSTEM)** connection and run the same SQL st
 
 ![image Step 6](06-3.png)
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Validation)]
+
+Based on the available **JDBC Connection Properties** listed in the <a href="https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/109397c2206a4ab2a5386d494f4cf75e.html" target="new">online documentation</a>, provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Connection String: ](The server host)]
@@ -290,6 +304,7 @@ You can also specify one or more failover servers by adding additional hosts, as
 jdbc:sap://myServer:39015;failoverserver1:39015;failoverserver2:39015
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Connection String: ](The port number)]
@@ -320,6 +335,7 @@ The ***SQL/MDX*** service port to access the **HXE** ***Tenant databases*** of a
 
 Make sure that you can reach the port (using a telnet command) from the computer you will connect using Eclipse.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Connection String: ](The options)]
@@ -334,4 +350,5 @@ jdbc:sap://myServer:39015/?autocommit=false
 
 For more information about the **JDBC Connection Properties**, you can check the <a href="https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/109397c2206a4ab2a5386d494f4cf75e.html" target="new">online documentation</a>
 
+[DONE]
 [ACCORDION-END]

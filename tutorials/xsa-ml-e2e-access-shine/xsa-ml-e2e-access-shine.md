@@ -75,6 +75,9 @@ Click on the `controller` resource and replace the hostname and instance number 
 
 ![edit YAML](controller.png)
 
+Finally, you will change the name of the service for the shine-container so you can access it from your own multi-target application later. Click on the `shine-container` resource and add a parameter called `service-name` and the value `shine-container`
+
+![edit YAML](container.png)
 
 [ACCORDION-END]
 
@@ -180,18 +183,6 @@ Once the `user-js` module is running, run the `core-js` module:
 
 ![Run modules](run-core.png)
 
-If it fails to execute and the error states **No service matches `%s`, key** or `No service matches auditlog` you need to bind the `auditlog` service manually. Use command `xs a` to find out the name of the `code-js` service name and bind it to the `auditlog` service with the following command:
-
-```
-xs bs <<core-js service name>> shine auditlog
-```
-
-For example:
-
-![Auditlog error](auditlog.png)
-
->Note: Right click on the image and choose `Open in new tab` to see the details
-
 Then run the `user-java` module:
 
 ![Run modules](run-java.png)
@@ -212,7 +203,7 @@ Finally, run the web module. Right-click on the `web->resources->launchpad->inde
 
 A new tab will open in the browser. You can click on the generated URL if the pop-up blocker did not allow the application to start.
 
->Note: If you get an error related to the version of SAP UI5, update the version of the resource `sapui5-provider` in the `mta.yaml` file using the version informed by command `xs mtas` in the CLI
+>Note: If you get an error related to the version of SAP UI5, update the version of the resource `sapui5-provider` in the `mta.yaml` file. Switch to the SAP space first with command `xs s -t SAP` and take note of the version informed by command `xs mtas` in the CLI for the UI5 library.
 
 [DONE]
 [ACCORDION-END]

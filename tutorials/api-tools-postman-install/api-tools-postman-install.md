@@ -70,3 +70,5 @@ you are now all set to move to your next tutorial.
 [ACCORDION-END]
 
 
+## Next Steps
+ - [View all How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=tutorial:type/how-to)

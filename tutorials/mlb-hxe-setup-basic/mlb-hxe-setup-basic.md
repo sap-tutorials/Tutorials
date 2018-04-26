@@ -1,6 +1,7 @@
 ---
 title: Prepare your SAP HANA, express edition instance for Machine Learning
 description: Check that your instance is properly configured and meets the minimum requirements to execute built-in Machine Learning algorithms .
+auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
 ---
@@ -24,7 +25,8 @@ In order to interact with your SAP HANA, express edition instance, you will be r
 
 As a number of options are available, you can check the following link: [Install a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 1: ](Check your tenant database)]
 
@@ -54,8 +56,8 @@ If the **HXE** tenant is listed, but with the **`ACTIVE_STATUS`** set to **NO**,
 ```sql
 ALTER SYSTEM START DATABASE HXE;
 ```
-
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 2: ](Enable the Script Server)]
 
@@ -79,18 +81,12 @@ Connect to the **HXE** tenant using the **SYSTEM** user credentials and execute 
 SELECT SERVICE_NAME, PORT, ACTIVE_STATUS FROM SYS.M_SERVICES ORDER BY 1;
 ```
 
-The result should return:
+The result should return a list of service names, their associated port numbers and their statuses:
 
-|-----------------------|------------|---------------------|
-| **`SERVICE_NAME`**    | **`PORT`** | **`ACTIVE_STATUS`** |
-| `compileserver`       | 39010      | YES                 |
-| `daemon`              | 39000      | YES                 |
-| `indexserver`         | 39003      | YES                 |
-| `nameserver`          | 39001      | YES                 |
-| `scriptserver`        | 39040      | YES                 |
-| `webdispatcher`       | 39006      | YES                 |
+Provide an answer to the question below then click on **Validate**.
 
-[ACCORDION-END]
+[VALIDATE_1]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 3: ](Check the installed AFL libraries)]
 
@@ -108,7 +104,8 @@ The pre-installed AFL includes:
  - ***Predictive Analysis Library (PAL)***: defines functions that can be called to perform analytic algorithms.
  - ***Optimization Function Library (OFL)*** : defines a series of optimization function like Simplex
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 4: ](Create a dedicated user)]
 
@@ -124,6 +121,8 @@ CREATE USER ML_USER PASSWORD Welcome18Welcome18;
 
 -- Use this if you don't want to be forced to update your password on the first connection.
 -- CREATE USER ML_USER PASSWORD Welcome18Welcome18 NO FORCE_FIRST_PASSWORD_CHANGE;
+-- or
+-- ALTER USER ML_USER DISABLE PASSWORD LIFETIME;
 
 GRANT AFLPM_CREATOR_ERASER_EXECUTE TO ML_USER;
 GRANT AFL__SYS_AFL_AFLPAL_EXECUTE TO ML_USER;
@@ -141,7 +140,8 @@ Connect to the **HXE** tenant using the **`ML_USER`** user credentials (default 
 SELECT * FROM SYS.PROCEDURES WHERE SCHEMA_NAME = '_SYS_AFL';
 ```
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 5: ](Create a dedicated schema)]
 
@@ -154,6 +154,14 @@ Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execu
 -- DROP SCHEMA ML_DATA CASCADE;
 
 CREATE SCHEMA ML_DATA;
+SET SCHEMA ML_DATA;
 ```
 
-[ACCORDION-END]
+Execute the following SQL and provide an answer to the question below then click on **Validate**.
+
+```sql
+SELECT CURRENT_USER || ' / ' ||  CURRENT_SCHEMA FROM DUMMY;
+```
+
+[VALIDATE_2]
+[ACCORDION-END] 

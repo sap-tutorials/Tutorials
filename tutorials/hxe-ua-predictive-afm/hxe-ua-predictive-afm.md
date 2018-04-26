@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Predictive Analytics Using SQL Script](https://www.sap.com/developer/tutorials/hxe-ua-predictive-sql.html)
+ - **Tutorials:** [Predictive Analytics Using SQL Script]
 
 
 ## Next Steps

@@ -6,11 +6,11 @@ primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning, topic>sapui5 ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
 ## Details
-### You will learn  
+### You will learn
 
 - How to add a destination to your SAP Cloud Platform account
 - How to create a SAPUI5 application from a template using the SAP Web IDE

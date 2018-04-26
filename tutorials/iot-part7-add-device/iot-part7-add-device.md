@@ -176,7 +176,7 @@ You can as well see data on the chart, when have more values stored.
 [ACCORDION-BEGIN [Step 8: ](Test the configuration using MQTT WebSocket built-in client)]
 Go back to Message Management Service Cockpit and now choose the **Messaging through MQTT over WS** tile in **Data Services** group.
 
->MQTT is a connectivity protocol for the Internet of Things. It was designed as an extremely lightweight publish/subscribe messaging transport. You can find more at http://mqtt.org/.
+>MQTT is a connectivity protocol for the Internet of Things. It was designed as an extremely lightweight publish/subscribe messaging transport. You can find more at <http://mqtt.org/>.
 
 ![MQTT WS API tile](p7_19.png)
 

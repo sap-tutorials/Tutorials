@@ -1,8 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/m/MessageToast",
+	"sap/m/MessageBox",
 	"sap/m/Image"
-], function(Controller, MessageToast, Image) {
+], function(Controller, MessageBox, Image) {
 	"use strict";
 	return Controller.extend("sapui5ml.controller.demo", {
 
@@ -14,7 +14,7 @@ sap.ui.define([
 			var oBusyIndicator = new sap.m.BusyDialog();
 			oBusyIndicator.open();
 
-			// generqte the options qnd stringify
+			// generate the options and stringify
 			var options = {
 				"numTopics": oView.getModel("demo").getProperty("/options/numTopics"),
 				"numTopicsPerDoc": oView.getModel("demo").getProperty("/options/numTopicsPerDoc"),
@@ -32,16 +32,15 @@ sap.ui.define([
 
 			if (oControlEvent.getParameters().status === 200) {
 				// get the resvice respnse as JSON
-				var oTopicDetection = JSON.parse(oControlEvent.getParameters().responseRaw).topicDetection;
+				var oTopicDetection = JSON.parse(oControlEvent.getParameters().responseRaw).predictions;
 
 				// create a JSON model
-				var documents = new Array(0);
+				var documents = new Array(oTopicDetection.length);
 				for (var iTopicDetection = 0; iTopicDetection < oTopicDetection.length; iTopicDetection++) {
 					var oTopicDetectionDocument = {
 						"name": oTopicDetection[iTopicDetection].docName
 					};
 					oTopicDetectionDocument.topics = [];
-
 					for (var iTopics = 0; iTopics < oTopicDetection[iTopicDetection].topics.length; iTopics++) {
 						var oTopicDetectionTopic = {
 							"rank": iTopics,
@@ -49,15 +48,17 @@ sap.ui.define([
 							"score": oTopicDetection[iTopicDetection].scores[iTopics],
 							"keywords": oTopicDetection[iTopicDetection].keywords[iTopics]
 						};
+
 						oTopicDetectionDocument.topics.push(oTopicDetectionTopic);
 					}
-					documents.push(oTopicDetectionDocument);
+					documents[iTopicDetection] = oTopicDetectionDocument;
 				}
 				oView.getModel("demo").setProperty("/result", documents);
 				// display the result table
 				oView.getModel("demo").setProperty("/resultVisible", true);
 			} else {
-				MessageToast.show("Error " + oControlEvent.getParameters().status + " : " + oControlEvent.getParameters().responseRaw);
+                oView.getModel("demo").setProperty("/resultVisible", false);
+                MessageBox.show("Error " + oControlEvent.getParameters().status + " : " + JSON.parse(oControlEvent.getParameters().responseRaw).error_description);
 			}
 			this.oBusyIndicator.close();
 		}

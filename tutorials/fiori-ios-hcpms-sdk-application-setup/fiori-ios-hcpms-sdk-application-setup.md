@@ -1,7 +1,6 @@
 ---
 title: Create an application definition
 description: Create an application definition that enables you to manage the application. The application definition includes a unique application identifier, connections to the back-end data source, and optionally, other application-specific settings.
-auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -41,7 +40,6 @@ Got to the SAP Cloud Platform cockpit and click on **Services** in the main menu
 
 ![Enable Mobile Services](image-1.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Go to the Mobile Services cockpit and bookmark it)]
@@ -52,7 +50,6 @@ As it is likely that you need to return to this cockpit after you have created t
 
 ![Mobile Services Cockpit](image-2.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create the application definition)]
@@ -67,7 +64,6 @@ Log on to your **SAP Cloud Platform mobile service for development and operation
 
 ![Applications details](image-4.png)
 
-[DONE]
 
 [ACCORDION-END]
 
@@ -78,8 +74,6 @@ After entering the application details press the **Save** button to save the new
 ![One application in Mobile Services Cockpit](image-6.png)
 
 Take a note of the **Incomplete Configuration** message next to the **Connectivity** feature. This will be solved in the next step.
-
-[DONE]
 
 [ACCORDION-END]
 
@@ -99,7 +93,6 @@ The Sample Back End is now added:
 
 As you can see from the **Entity Sets** drop-down, the sample service contains quite a few entities. You may click the **Generate sample sales orders** and **Generate sample purchase orders** a couple of times to generate dummy data for these entities.
 
-[DONE]
 
 [ACCORDION-END]
 
@@ -115,7 +108,6 @@ Click on the **Connectivity** row, and you will notice the OData endpoint for th
 
 ![One application in Mobile Services Cockpit](image-10.png)
 
-[DONE]
 [ACCORDION-END]
 
 ## Next Steps

@@ -40,11 +40,11 @@ Lookups are available for:
 
 And you can download the complete collection as a series of Event CSV files here:
 
-- http://data.gdeltproject.org/events/index.html
+- <http://data.gdeltproject.org/events/index.html>
 
 You can find more details about GDELT version 1 here:
 
-- http://gdeltproject.org/data.html#documentation
+- <http://gdeltproject.org/data.html#documentation>
 
 [ACCORDION-END]
 
@@ -117,7 +117,7 @@ Save the `persistence.xml` file.
 
 [ACCORDION-BEGIN [Step 3: ](Download a GDELT data file)]
 
-Download one of the GDELT zipped CSV file, for example `20171008.export.CSV.zip`, from http://data.gdeltproject.org/events/index.html.
+Download one of the GDELT zipped CSV file, for example `20171008.export.CSV.zip`, from <http://data.gdeltproject.org/events/index.html>.
 
 Save the file locally, then extract the contents of the zip file into the `src/main/resources` project folder.
 

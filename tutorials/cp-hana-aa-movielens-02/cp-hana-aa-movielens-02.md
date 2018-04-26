@@ -6,11 +6,11 @@ primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
 ## Details
-### You will learn  
+### You will learn
 
 - Understand the basics about recommendation engines
 - Which statistics can help you better understand the structure of the dataset
@@ -128,10 +128,10 @@ The result should be:
 
 table name | row count
 -----------|-----------
-links      | 9125    
-movies     | 9125    
-ratings    | 100004  
-tags       | 1296    
+links      | 9125
+movies     | 9125
+ratings    | 100004
+tags       | 1296
 
 Here are a few conclusion we can make upfront:
 

@@ -162,7 +162,7 @@ And entering the full path:
 
 You can use these files to access the machine from SSH or FTP clients, such as PuTTY or WinSCP.
 
-The web SSH client is a good option for quick and background tasks, as it is intermittent. This is a known issue as explained  in the following link: https://cloud.google.com/compute/docs/ssh-in-browser#known_issues
+The web SSH client is a good option for quick and background tasks, as it is intermittent. This is a known issue as explained  in the following link: <https://cloud.google.com/compute/docs/ssh-in-browser#known_issues>
 
 For longer tasks such as file uploads or installations, use a client with a good handling of network micro-cuts.
 
