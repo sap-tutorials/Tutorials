@@ -6,11 +6,11 @@ primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
 ## Details
-### You will learn  
+### You will learn
 
 - How to create the relevant CDS artefacts to expose your flat files as CDS entities.
 
@@ -284,7 +284,7 @@ By default, the ***Role Editor*** will open by default, but instead we will be u
 
 Instead, right click on the **`user.hdbrole`** item in the tree, and use the **Open With** > **Text Editor** menu.
 
-Now, paste the following content:  
+Now, paste the following content:
 
 ```JavaScript
 role public.aa.movielens.hdb::user extends catalog role "sap.pa.apl.base.roles::APL_EXECUTE", "AFLPM_CREATOR_ERASER_EXECUTE", "AFL__SYS_AFL_AFLPAL_EXECUTE"

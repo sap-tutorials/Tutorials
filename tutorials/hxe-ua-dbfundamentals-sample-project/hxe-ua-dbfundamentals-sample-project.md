@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition   ]
 
 ## Prerequisites  
  - **How To's:** [Install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
- - **Files:** Download the `.csv` files from the SAP HANA Academy GitHub page: https://github.com/saphanaacademy/HXE/tree/master/STS.
+ - **Files:** Download the `.csv` files from the SAP HANA Academy GitHub page: <https://github.com/saphanaacademy/HXE/tree/master/STS>.
 
 
 ## Next Steps

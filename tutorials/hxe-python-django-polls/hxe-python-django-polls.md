@@ -69,9 +69,9 @@ Most Django based web applications use database back-ends for data persistence. 
 
       b. Run your test script in the python shell: `python test_hxe_conn.py`. If you are able to connect, the following string should be returned: `Hello Django HANA World`. If you are unable to connect, make sure that the connectivity setting--host, user, port and password--are correct for your database.
 
-      c. At this point, you have verified that you can use the `pyhdb` database driver to connect to HANA, express edition. Now you need to verify that Django can communicate with the `pyhdb` driver. To do this, you need to download the `django_hana` module from https://github.com/mathebox/django_hana_pyhdb.
+      c. At this point, you have verified that you can use the `pyhdb` database driver to connect to HANA, express edition. Now you need to verify that Django can communicate with the `pyhdb` driver. To do this, you need to download the `django_hana` module from <https://github.com/mathebox/django_hana_pyhdb>.
 
-      - Navigate to https://github.com/mathebox/django_hana_pyhdb in a browser.
+      - Navigate to <https://github.com/mathebox/django_hana_pyhdb> in a browser.
       - Select `Clone or download`.
       - Select `Download ZIP` and download the zip to a downloads or temporary directory of your choice. This will create the file `django_hana_pyhdb-master.zip`.
       - Unzip the contents of `django_hana_pyhdb-master.zip` under `djhxe`. This will create the folder `djhxe/django_hana_pyhdb-master`.

@@ -25,8 +25,8 @@ In Eclipse, choose in the menu bar Help > Install New Software...
 
 Select SAP Development Tools for Eclipse
 
-- Neon (4.6), add the URL https://tools.hana.ondemand.com/neon/
-- Mars (4.5), add the URL https://tools.hana.ondemand.com/mars/
+- Neon (4.6), add the URL <https://tools.hana.ondemand.com/neon/>
+- Mars (4.5), add the URL <https://tools.hana.ondemand.com/mars/>
 
 
 [ACCORDION-END]

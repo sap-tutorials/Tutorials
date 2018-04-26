@@ -87,7 +87,7 @@ Details how to connect and use the AWS image are described in [this PDF document
 |User name          | `DEVELOPER`           |
 |Password           | your master password  |
 
-- To use the SAP HANA Cloud Connector, enter the URL https://abapci.dummy.nodomain:8443/ and log on with user Administrator with the master password.
+- To use the SAP HANA Cloud Connector, enter the URL <https://abapci.dummy.nodomain:8443/> and log on with user Administrator with the master password.
 
 - On the AWS front end instance, there is also an Eclipse Luna version installed and available on the desktop. The Eclipse instance is already prepared for SAP Cloud Platform and you can use it to develop SAP Cloud Platform applications.
 

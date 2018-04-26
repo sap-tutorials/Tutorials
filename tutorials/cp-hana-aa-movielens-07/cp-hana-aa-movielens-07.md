@@ -6,11 +6,11 @@ primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning, topic>sapui5 ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
 ## Details
-### You will learn  
+### You will learn
 
 -  How to add a SAPUI5 controller and interact with the SAP HANA XS OData service
 -  How to add a SAPUI5 view and interact with the SAP HANA XS OData service

@@ -6,7 +6,9 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-The assignment of the business catalog **`SAP_CORE_BC_COM`**, **`SAP_CORE_BC_EXT`** to your user and **`Expose custom business object as external web service`** as tutorial represents the prerequisites for the usage of the service generation as well as custom communication scenario and communication arrangement creation.
+- **Tutorials:** [`Expose custom business object as external web service`](https://www.sap.com/developer/tutorials/abap-custom-ui-business-object.html)
+- **Authorizations:** The assignment of the business catalog **`SAP_CORE_BC_COM`**, **`SAP_CORE_BC_EXT`** to your user represents the prerequisites.
+
 
 ## Details
 ### You will learn
@@ -28,18 +30,17 @@ Open **Destinations** on SAP Cloud Platform.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add service scope to destination)]
-Edit your destination and add your custom CDS view service to your scope.
+Edit your **destination** and add your **custom CDS view service** to your scope.
 
-| ------------ | --------------------------------------------------------------------------------- |
-| **`scope`** |  `ADT_001 /UI5/APP_INDEX_0001 /IWFND/SG_MED_CATALOG_0002 YY1_BONUSPLAN_CDS_0001`  |
+| ----------- | --------------------------------------------------------------------------------- |
+| **`scope`** |  `ADT_0001 /UI5/APP_INDEX_0001 /IWFND/SG_MED_CATALOG_0002 YY1_BONUSPLAN_CDS_0001` |
 
 
 Your **scope** consists now of 4 parts:
-
-  - `ADT_001`: scope of the gateway service for ADT  
-  - `/UI5/APP_INDEX_0001`: scope of the UI2 app index
-  - `/IWFND/SG_MED_CATALOG_0002`: scope of the catalog service version 2.0
-  - `<CustomBusinessObjectServiceName> + _0001`: custom CDS view
+ - `ADT_0001`: scope of the gateway service for ADT  
+ - `/UI5/APP_INDEX_0001`: scope of the UI2 app index
+ - `/IWFND/SG_MED_CATALOG_0002`: scope of the catalog service version 2.0
+ - `<CustomBusinessObjectServiceName> + _0001`: custom CDS view
 
     example: `YY1_BONUSPLAN_CDS_0001`
 
@@ -58,13 +59,13 @@ Click **Go to Service** to open SAP Web IDE.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Open SAP Web IDE)]
+[ACCORDION-BEGIN [Step 4: ](Select new project)]
 Select **New Project from Template** to generate one.
 
-![Open SAP Web IDE](webide.png)
+![Select new project](webide.png)
 
 If you don't see this welcome page then follow the alternative way:
-**File** | **New** | **Project from Template**
+File -> New -> Project from Template
 
 
 [ACCORDION-END]
@@ -85,11 +86,11 @@ Click **Next**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Explore business object's service)]
-Search for **`YY1_BONUSPLAN_CDS`** and open the list. Now you can see the following:
+[ACCORDION-BEGIN [Step 7: ](Explore business object's service in SAP Web IDE)]
+Search for **`YY1_BONUSPLAN_CDS`** and open the list. Now you can see following:
 
 ![Explore business object's service in SAP Web IDE](list2.png)
 
-Without `YY1_BONUSPLAN_CDS_0001` as a parameter in your scope, you wouldn't be able to select `YY1_BONUSPLAN_CDS_0001` as a service to create your UI project. All other services still cannot be selected.  
+Without `YY1_BONUSPLAN_CDS_0001` as parameter in your scope you wouldn't be able to select `YY1_BONUSPLAN_CDS_0001` as service to create your UI project. All other services still cannot be selected.  
 
 [ACCORDION-END]
