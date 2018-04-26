@@ -1,6 +1,6 @@
 ---
 title: Test Streaming Lite Project
-description: Test the Streaming Lite Project by using the streamingsubscribe command line utility to see the flow of events through the project.
+description: Test the Streaming Lite Project by using the `streamingsubscribe` command line utility to see the flow of events through the project.
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
