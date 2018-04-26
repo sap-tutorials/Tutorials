@@ -1,7 +1,7 @@
 ---
 title: Test the Custom Java Toolkit Adapter
 description: Test the MQTT Input Adapter we have created using Mosquitto and HANA Studio.
-auto_validation: false
+auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
@@ -23,6 +23,8 @@ Open a command prompt(`CMD`) and navigate to the install directory of `Mosquitto
 
 ![Run Mosquitto Exe](runMosquittoExe.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Configure your Streaming Project)]
@@ -41,6 +43,8 @@ Replace **`<your-ip-address>`** with the `ip address` of the machine you will be
 
 ![Edit Your IP Address](editYourIpAddress.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Set Default Server URL)]
@@ -55,6 +59,8 @@ Ensure that the server you have placed your custom adapter, including the requir
 
     ![Setting Default URL Preferences](preferences-streaming-analytics.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Run your Streaming Project)]
@@ -67,6 +73,8 @@ To run your project, right click on the project in the Project Explorer, go to S
 
 ![Run your Streaming Project](run-streaming-project.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Open the Input Window)]
@@ -78,6 +86,8 @@ Switch to the SAP HANA Streaming Run-Test perspective from the Quick Access tool
 Open the input window by double clicking `InputWindow1` in the Run-Test perspective of HANA Studio. This is where the `MQTT` message will appear.
 
 ![Select Input Window 1](selectInputWindow1.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -113,6 +123,8 @@ PROPERTIES  mosquittoServerAddress = 'tcp://<your-ip-address>:1883' ,
 topic = 'test' ;
 
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
