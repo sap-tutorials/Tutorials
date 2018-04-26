@@ -1,6 +1,6 @@
 ---
 title: Introduction to Freezer Monitoring Lite
-description: Walk through creating and deploying a Streaming Lite project.
+description: Walk through creating and deploying a Streaming Lite project. 
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
