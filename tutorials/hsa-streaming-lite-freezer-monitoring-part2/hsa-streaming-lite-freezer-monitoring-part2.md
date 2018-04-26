@@ -1,6 +1,6 @@
 ---
 title: Install Streaming Lite and Setup Freezer Lite
-description: Learn how to install and configure Streaming Lite on Raspberry Pi 2.
+description: Learn how to install and configure Streaming Lite on Raspberry Pi 2. 
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
