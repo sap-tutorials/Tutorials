@@ -1,5 +1,6 @@
 ---
 title: Build and Deploy Streaming Lite Project
+description: Learn how to create, compile and deploy a streaming analytics project.
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
