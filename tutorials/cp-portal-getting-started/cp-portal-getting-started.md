@@ -1,5 +1,5 @@
 ---
-title: Prepare the Portal environment for creating sites
+title: Prepare Portal environment for creating sites
 description: Prepare your environment so you can create Portal freestyle sites.
 primary_tag: products>sap-cloud-platform-portal
 tags: [  topic>cloud,products>sap-cloud-platform-portal ]
@@ -50,11 +50,11 @@ tags: [  topic>cloud,products>sap-cloud-platform-portal ]
 
   Download the following resources for use in your Portal site (right-click the link and choose **Save link as**):
 
-  - [`logo-velotics.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials-Contribution/master/tutorials/cp-portal-getting-started/resources/logo-velotics.png)
-  - [`SupplierPortaHeader1.jpg`](https://raw.githubusercontent.com/SAPDocuments/Tutorials-Contribution/master/tutorials/cp-portal-getting-started/resources/SupplierPortaHeader1.jpg)
-  - [`SupplierPortaHeader2.jpg`](https://raw.githubusercontent.com/SAPDocuments/Tutorials-Contribution/master/tutorials/cp-portal-getting-started/resources/SupplierPortaHeader2.jpg)
-  - [`Testimonial1.jpg`](https://raw.githubusercontent.com/SAPDocuments/Tutorials-Contribution/master/tutorials/cp-portal-getting-started/resources/Testimonial1.jpg)
-  - [`Testimonial2.jpg`](https://raw.githubusercontent.com/SAPDocuments/Tutorials-Contribution/master/tutorials/cp-portal-getting-started/resources/Testimonial2.jpg)
+  - [`logo-velotics.png`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-portal-getting-started/resources/logo-velotics.png)
+  - [`SupplierPortaHeader1.jpg`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-portal-getting-started/resources/SupplierPortaHeader1.jpg)
+  - [`SupplierPortaHeader2.jpg`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-portal-getting-started/resources/SupplierPortaHeader2.jpg)
+  - [`Testimonial1.jpg`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-portal-getting-started/resources/Testimonial1.jpg)
+  - [`Testimonial2.jpg`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-portal-getting-started/resources/Testimonial2.jpg)
 
   [ACCORDION-END]
 
