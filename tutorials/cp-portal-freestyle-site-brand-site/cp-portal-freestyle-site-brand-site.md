@@ -1,6 +1,7 @@
 ---
-title: Create a theme for your Portal freestyle site
+title: Create theme for your Portal freestyle site
 description: Create and customize a theme and then import it into your Portal freestyle site.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
 tags: [  topic>cloud, products>sap-cloud-platform-portal ]
 ---
@@ -23,6 +24,7 @@ A default theme, provided by SAP, is assigned to each Portal site. You can creat
   1. Navigate to the Site Directory in your SAP Cloud Platform Portal Admin Space.
   2. In the Supplier Portal site, navigate to **Services and Tools** and select the UI Theme Designer tool.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -52,6 +54,8 @@ A default theme, provided by SAP, is assigned to each Portal site. You can creat
 A new theme named **`velotics`** is created as a copy of the SAP Belize theme with the custom properties that you entered.
 
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Customize the theme)]
@@ -70,6 +74,8 @@ To design and modify the theme, you need to first define a Target Page that will
   9.	Click **OK** to apply your changes. Notice that the change has been applied and the icon has changed.
 >To apply the new theme to your Portal site, you will need to publish it from the UI Theme Designer and then apply it from the Portal Theme Manager.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Publish the theme)]
@@ -79,6 +85,9 @@ To design and modify the theme, you need to first define a Target Page that will
   2. From the **Save & Publish** dialog, verify the theme parameters.
   3. Click **Save & Publish** to publish the **`Velotics`** theme.
 >Publishing the theme might take several moments.
+
+[DONE]
+
 
   [ACCORDION-END]
 
@@ -95,5 +104,8 @@ To design and modify the theme, you need to first define a Target Page that will
   ![Publish changes](11-publish-changes.png)
   8. Click **Publish** to only apply the changes. Select **Publish and Open** to publish your site and review the latest changes you have made to your site.
   ![Publish and Open](12-publish-and-open.png)
+
+[VALIDATE_1]
+
 
   [ACCORDION-END]

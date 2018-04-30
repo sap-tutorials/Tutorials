@@ -1,6 +1,7 @@
 ---
 title: Create a Portal freestyle site
 description: Create a freestyle site by adding pages and apps to the site, and then setting the site's layout and other properties.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
 tags: [  topic>cloud, products>sap-cloud-platform-portal ]
 ---
@@ -37,6 +38,8 @@ You can build an intuitive and user-friendly portal freestyle sites by adding pa
   ![Choose template](2-Choose-template.png)
   The new site instance opens in the Site Designer in a new browser tab.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Design your first Portal page)]
@@ -64,8 +67,8 @@ The site you have created is based on the **Basic Layout Set** site template. Th
     | Field | Value |
     |-------|------ |
     | **Image** | Click **Replace** to remove the default picture and select `SupplierPortaHeader2.jpg` (available in our resources) |
-    | **Title** | **We do smart business** |
-    | **Content** | **Join our smart business program today and increase your deliveries size.** |
+    | **Title** | We do smart business |
+    | **Content** | Join our smart business program today and increase your deliveries size. |
   8. **Save** your changes.
   9. Now select the middle section of the page and click the **+** icon to add a widget.
   10. Add the following widgets to the middle section:
@@ -79,31 +82,34 @@ The site you have created is based on the **Basic Layout Set** site template. Th
 
     | Field | Value |
     |------ | ----- |
-    | **Title** | **Approved Orders** |
-    | **Icon**  | **`sap-icon://Fiori2/F0003`** |
-    | **Text**  | **Click here to view orders that were not yet delivered** |
+    | **Title** | Approved Orders |
+    | **Icon**  | `sap-icon://Fiori2/F0003` |
+    | **Text**  | Click here to view orders that were not yet delivered |
   Second content item:
 
     | Field | Value |
     | ----- | ----- |
-    | **Title** | **Transaction History**
-    | **Text**  | **View an interactive history of the transactions you have recently worked with** |
+    | **Title** | Transaction History
+    | **Text**  | View an interactive history of the transactions you have recently worked with |
   Third content item:
 
     | Field | Value |
     | ----- | ----- |
-    | **Title** | **My Next Payments** |
-    | **Icon**  | **`sap-icon://Fiori2/F0028`** |
-    | **Text**  | **Click here to view your next expected payments** |
+    | **Title** | My Next Payments |
+    | **Icon**  | `sap-icon://Fiori2/F0028` |
+    | **Text**  | Click here to view your next expected payments |
  Fourth content item:
 
     | Field | Value |
     | ----- | ----- |
-    | **Title** | **Apply for a Bid** |
-    | **Icon**  | **`sap-icon://Fiori7/F0840`**
-    | **Text**  | **View current list of Request For Proposals and write your bid** |
+    | **Title** | Apply for a Bid |
+    | **Icon**  | `sap-icon://Fiori7/F0840`
+    | **Text**  | View current list of Request For Proposals and write your bid |
 
 12. **Save** your changes.
+
+[DONE]
+
 [ACCORDION-END]
 
 
@@ -124,13 +130,16 @@ The site you have created is based on the **Basic Layout Set** site template. Th
 
     | Field | Value |
     | ----- | ----- |
-    | **Margins** | **`50 pixel`** |
-    | **Content Width** | **`1024 pixel`** |
+    | **Margins** | `50 pixel` |
+    | **Content Width** | `1024 pixel` |
 
   7. **Save** your settings.
   8. Click on the arrow next to the **Header and Footer page and select **Set as home page**.
 The page structure is now ready. Verify that it looks like this:  
 ![Final Page Layout](10-Final-page-layout.png)
+
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add another new page with content)]
@@ -152,24 +161,26 @@ The page structure is now ready. Verify that it looks like this:
 
     | Field | Value|
     |--------|-------|
-    | **Title** | **John Doe** |
-    | **Text** | **Suppliers Partner Manager** |
-    | **Link: Display Text** | **Contact Me** |
+    | **Title** | John Doe |
+    | **Text** | Suppliers Partner Manager |
+    | **Link: Display Text** | Contact Me |
   13.	Click the second card Content item and enter the following content:
 
     | Field | Value|
     |--------|-------|
-    | **Title** | **Sam Lynn** |
-    | **Text** | **VP Partnership** |
-    | **Link: Display Text** | **Contact Me** |
+    | **Title** | Sam Lynn |
+    | **Text** | VP Partnership |
+    | **Link: Display Text** | Contact Me |
   14.	In the same manner, select the third Card Content Item and paste the following content:
 
     | Field | Value|
     |--------|-------|
-    | **Title** | **Carly Nelson** |
-    | **Text** | **VP Partnerships** |
-    | **Link: Display Text** | **Contact Me** |
+    | **Title** | Carly Nelson |
+    | **Text** | VP Partnerships |
+    | **Link: Display Text** | Contact Me |
   15.	**Save** your settings.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -184,6 +195,8 @@ The page structure is now ready. Verify that it looks like this:
   8.  Click **Add**.
   9.	**Save** your changes.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Preview and publish the site)]
@@ -194,6 +207,7 @@ The page structure is now ready. Verify that it looks like this:
   4.	Click the publish icon to publish the latest version of the site so that its available for your end users.
   ![Publish](19-publish.png)
 
+[VALIDATE_1]
 
 
 [ACCORDION-END]

@@ -1,6 +1,7 @@
 ---
-title: Edit the web content in your Portal freestyle site
+title: Edit web content in your Portal freestyle site
 description: Edit the web content of your Portal freestyle site in the Web Content Editor tool.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
 tags: [  topic>cloud, products>sap-cloud-platform-portal ]
 ---
@@ -24,6 +25,9 @@ In the Supplier Portal site, navigate to **Services and Tools** and select the W
 
 >Note that Administrators can also send you the URL to access the Web Content Editor tool.
 
+[DONE]
+
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Edit the web content)]
@@ -40,8 +44,8 @@ In the Supplier Portal site, navigate to **Services and Tools** and select the W
 
     | Field | Value |
     |-------|----------|
-    | Title | Supplier Updates |
-    | Text | Important update to all suppliers: As of 9.9.17, the  payment policy will be updated. Please read the note below carefully to learn more about the change. <br><br> All payments will be issued electronically, via Automated Clearing House (ACH) CTX format in the United States and the SWIFT Network outside the United States. There is generally one business day from when we issue a payment until it's received in the supplier's bank account. <br><br> The payment will be issued directly to the supplier's bank. Suppliers can request an email remittance from us that includes invoice details and payment information. Additional information, including email remittance and Electronic Payment Enrollment Forms can be accessed through the transaction history item in the updated Supplier Portal. |
+    | **Title** | Supplier Updates |
+    | **Text** | Important update to all suppliers: As of 9.9.17, the  payment policy will be updated. Please read the note below carefully to learn more about the change. <br><br> All payments will be issued electronically, via Automated Clearing House (ACH) CTX format in the United States and the SWIFT Network outside the United States. There is generally one business day from when we issue a payment until it's received in the supplier's bank account. <br><br> The payment will be issued directly to the supplier's bank. Suppliers can request an email remittance from us that includes invoice details and payment information. Additional information, including email remittance and Electronic Payment Enrollment Forms can be accessed through the transaction history item in the updated Supplier Portal. |
    8. Click **Save**.
    9. Click the back button again.
    10. Click the pencil icon next to the **Design List** web content entry.
@@ -52,18 +56,21 @@ In the Supplier Portal site, navigate to **Services and Tools** and select the W
 
     | Field | Value |
     | ----- | ----- |
-    | Text  | Statement of Work (SOW) parameters. A SOW helps ensure that expectations are understood and agreed upon by all parties up front.
-    | Image | Click **Replace** to replace the image and select `Testimonial1.jpg` (available in our resources).
+    | **Text**  | Statement of Work (SOW) parameters. A SOW helps ensure that expectations are understood and agreed upon by all parties up front.
+    | **Image** | Click **Replace** to replace the image and select `Testimonial1.jpg` (available in our resources).
 
    13. **Save** your settings.
    14. In the same way, select the second content Item and enter the following for the text:
 
     | Field | Value |
     | ----- | ----- |
-    | Text  | Because Velotics is committed to promoting a positive work environment, we expect our suppliers and their employees, agents, and subcontractors to adhere to the same standards of conduct and behavior that we expect from our own employees while they are on The Company property or doing business with The Company. Suppliers and their employees, agents, and subcontractors (collectively referred to as "Suppliers") must adhere to this Supplier Code of Conduct while conducting business with or on behalf of The Company.
-    | Image | Click **Replace** to replace the image and select `Testimonial2.jpg` (available in our resources).
+    | **Text**  | Because Velotics is committed to promoting a positive work environment, we expect our suppliers and their employees, agents, and subcontractors to adhere to the same standards of conduct and behavior that we expect from our own employees while they are on The Company property or doing business with The Company. Suppliers and their employees, agents, and subcontractors (collectively referred to as "Suppliers") must adhere to this Supplier Code of Conduct while conducting business with or on behalf of The Company.
+    | **Image** | Click **Replace** to replace the image and select `Testimonial2.jpg` (available in our resources).
 
    15.	Click **Save** and use the back button again.
+
+[DONE]
+
 
 [ACCORDION-END]
 
@@ -74,6 +81,8 @@ In the Supplier Portal site, navigate to **Services and Tools** and select the W
    ![Publish all changes](4-Publish-all-changes.png)
 
 >To publish only the content of a specific widget, simply select it and click **Publish**.
+
+[VALIDATE_1]
 
 [ACCORDION-END]
 

@@ -1,6 +1,7 @@
 ---
 title: Prepare Portal environment for creating sites
 description: Prepare your environment so you can create Portal freestyle sites.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
 tags: [  topic>cloud,products>sap-cloud-platform-portal ]
 ---
@@ -24,6 +25,7 @@ tags: [  topic>cloud,products>sap-cloud-platform-portal ]
   2. Enter your **User Name** and **Password** that you provided when you created your trial account, and click **Log On**.
   ![User name and password](2-user-name-and-password.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN
@@ -33,7 +35,8 @@ tags: [  topic>cloud,products>sap-cloud-platform-portal ]
   2. Click on your trial account.
   ![Open trial account](4-open-trial-account.png)
 
-  [ACCORDION-END]
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Enable SAP Cloud Platform Portal)]
   1. In the SAP Cloud Platform cockpit, click **Services** in the left panel to open the list of services available in your SAP Cloud Platform subaccount.
@@ -43,7 +46,9 @@ tags: [  topic>cloud,products>sap-cloud-platform-portal ]
   4. On the **Portal – Overview** page, if the service is not already enabled, turn it on.
   ![Portal Overview Page](1-portal-overview-page.png)
 
-  [ACCORDION-END]
+[VALIDATE_1]
+
+[ACCORDION-END]
 
   [ACCORDION-BEGIN [Step 4: ](Download resources)]
   We have provided a set of images for your site, for example, a site logo.
@@ -55,6 +60,8 @@ tags: [  topic>cloud,products>sap-cloud-platform-portal ]
   - [`SupplierPortaHeader2.jpg`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-portal-getting-started/resources/SupplierPortaHeader2.jpg)
   - [`Testimonial1.jpg`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-portal-getting-started/resources/Testimonial1.jpg)
   - [`Testimonial2.jpg`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-portal-getting-started/resources/Testimonial2.jpg)
+
+  [DONE]
 
   [ACCORDION-END]
 
