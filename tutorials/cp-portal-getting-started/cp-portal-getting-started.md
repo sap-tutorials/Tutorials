@@ -61,8 +61,8 @@ tags: [  topic>cloud,products>sap-cloud-platform-portal ]
   - [`Testimonial1.jpg`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-portal-getting-started/resources/Testimonial1.jpg)
   - [`Testimonial2.jpg`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-portal-getting-started/resources/Testimonial2.jpg)
 
-  [DONE]
+[DONE]
 
-  [ACCORDION-END]
+[ACCORDION-END]
 
 You have now set up your SAP Cloud Platform subaccount and you are ready to create your site in our next tutorial.
