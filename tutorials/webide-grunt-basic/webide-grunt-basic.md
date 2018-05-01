@@ -124,6 +124,18 @@ You can see any build errors in the console, which you can display by going to *
 >You may want to check out the blog [How `npm` `v5` Affects Your Projects in SAP Web IDE Full-Stack](https://blogs.sap.com/2018/03/11/how-npm-v5-affects-your-projects-in-sap-web-ide-full-stack/).
 
 
+<br>
+
+>**Tip**
+>If the build fails, do one of the following according to the failure reported in the console:
+>
+>  - **ERROR**: `Unable to locate local Grunt`
+>Right-click the project folder in the workspace, select **Clean npm Folder**, and build again.
+This option removes the node-modules folder that is automatically created by npm. For more information, see <https://docs.npmjs.com/files/folders>. After the build finishes, this folder is not displayed in your project, but is stored by the SAP Web IDE build infrastructure.
+  - **ERROR**: `npm ERR! code EINTEGRITY`
+  Delete your `package-lock.json` file from the project and run the build again.
+
+
 [ACCORDION-END]
 
 
