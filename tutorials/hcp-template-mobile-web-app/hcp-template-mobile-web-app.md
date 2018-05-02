@@ -145,21 +145,16 @@ Click the **Test** button to test the connection. If the connection is successfu
 
 [ACCORDION-BEGIN [Step 12: ](Specify settings)]
 
-On the **Template Customization** page you will specify the displayed values on the **Project Settings**, **Master Section** (Products List), **Main Data Fields**, the **Detail Section** (Selected Product Details) and the **Information Section** area.
+On the **Template Customization** page you will specify the displayed values on the **Application Settings**, **Data Binding - Object Section** (Products List), and the **Data Binding - Line Item Section** (Selected Product Details).
 
-![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_14.png)
-
-
-Fill out the **Project Settings** and **Master Section** as displayed in the screenshot.
+Fill out the **Application Settings** as noted in the table below.
 
 Field Name                  |  Value
 :---------------------------| :-------------
-Project Namespace           | `com.test.northwind`
+Type                        | `Standalone App`
 Title                       | `Products`
-OData Collection*           | `Products`
-Search Placeholder          | `Search `
-Search Tooltip              | `Search for product name`
-Search Field                | `ProductName`
+Project Namespace           | `com.test.northwind`
+
 
 ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_15.png)
 
@@ -168,13 +163,15 @@ Search Field                | `ProductName`
 
 [ACCORDION-BEGIN [Step 13: ](Add main data values)]
 
-Scroll down to the **Main Data Fields Section**. Fill out the Main Data Fields as displayed in the screenshot.
+Scroll down to the **Data Binding - Object Section**. Fill out the Data Binding - Object fields as shown in the table below.
 
 Field Name          |  Value
 :-------------------| :-------------
-Item title          | `ProductName`
-Numeric Attribute   | `UnitPrice`
-Units Attribute     | `QuantityPerUnit`
+Object Collection           | `Product`
+Object Collection ID         | `ProductID`
+Object Title          | `ProductName`
+Object Numeric Attribute   | `UnitPrice`
+Object Unit of Measure     | `QuantityPerUnit`
 
 ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_16.png)
 
@@ -183,36 +180,21 @@ Units Attribute     | `QuantityPerUnit`
 
 [ACCORDION-BEGIN [Step 14: ](Edit detail section)]
 
-Scroll down to the **Detail Section**. Fill out the Detail Section as displayed in the screenshot.
+Scroll down to the **Data Binding - Line Item Section**. Fill out the Data Binding - Line Item fields as displayed in the table below.
 
 Field Name              |  Value
 :-----------------------| :-------------
-Title                   | `Product Inventory Details`
-Additional Attribute 1  | `UnitsInStock`
-Additional Attribute 2  | `UnitsOnOrder`
+Line Item Collection    | `Supplier`
+Line Item Collection    | `SupplierID`
+Line Item Title         | `CompanyName`
 
 ![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_17.png)
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Edit information section)]
 
-Scroll down to the **Information Section**. Fill out the Information Section as displayed in the screenshot.
-
-Field Name              |  Value
-:-----------------------| :-------------
-OData Navigations       | `Supplier`
-Navigation Attribute 1  | `CompanyName`
-Navigation Attribute 2  | `Phone`
-Navigation Attribute 3  | `Address`
-
-![SAP Web IDE template customization page](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-template-mobile-web-app/mob1-2_18.png)
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 16: ](Click Finish)]
+[ACCORDION-BEGIN [Step 15: ](Click Finish)]
 
 Click **Finish** to create the new Northwind application. When the generation finishes, click the **Northwind project folder icon** to see the project structure.
 
@@ -221,7 +203,7 @@ Click **Finish** to create the new Northwind application. When the generation fi
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Run your app)]
+[ACCORDION-BEGIN [Step 16: ](Run your app)]
 
 To run your application, select the `index.html` file, and click the **Run** button. Your Northwind application will open in a Web IDE preview pane.
 
@@ -230,7 +212,7 @@ To run your application, select the `index.html` file, and click the **Run** but
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 18: ](View completed app)]
+[ACCORDION-BEGIN [Step 17: ](View completed app)]
 
 Congratulations! You've developed your application that shows the products and supplier data!
 
