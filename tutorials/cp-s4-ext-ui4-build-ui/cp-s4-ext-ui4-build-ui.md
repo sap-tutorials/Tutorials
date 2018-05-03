@@ -168,7 +168,7 @@ Inspect Missing Image Resources with Chrome Developer Tools
     To open access to MIME resources from back-end path **`sap/public/bc`** you need to edit the **`neo-app.json`** file that currently defines access to the **`sap/opu`** path. You can either additionally expose the **`sap/opu`** path or  open access by truncating the existing path from **`/sap/opu/odata`** to **`/sap`** (as described by Thomas in the video).
 
 7.  In SAP Web IDE select tab **neo-app.json**.
-    -   In the destination named `s4h-onpremise-http` shorten the `path` and `entryPath` values from **/sap/opu/odata** to **/sap**.
+    -   In the destination named `s4h-onpremise-http` shorten the `path` and `entryPath` values from **`/sap/opu/odata`** to **/sap**.
 
         ```json
         {

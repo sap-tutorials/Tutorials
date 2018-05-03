@@ -84,7 +84,7 @@ As the cloud connector is registered and started as a Windows Service, you can c
 
 [ACCORDION-BEGIN [Step 6: ](Verify connection)]
 
-To establish the connection to your SAP Cloud Platform developer account, log on to the cloud connector administration UI by invoking the URL <https://localhost:8443> (you might have to substitute the port by the one you selected during the installation) in a Web browser.
+To establish the connection to your SAP Cloud Platform developer account, log on to the cloud connector administration UI by invoking the URL `https://localhost:8443` (you might have to substitute the port by the one you selected during the installation) in a Web browser.
 
 Your browser will warn you that an untrusted certificate is used for the HTTPS connection. This is the case as the cloud connector is delivered with a self-signed `X.509` certificate. The documentation on how to configure a certificate that is trusted by your browser can be found in the Connectivity Service [online documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/bcd5e113c9164ae8a443325692cd5b12.html). In this tutorial, we accept the untrusted certificate. The cloud connector logon screen then is shown in the browser. As user and password, use the pre-defined credentials:
 
