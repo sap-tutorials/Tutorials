@@ -121,6 +121,7 @@ multitenant
 multipart
 MySQL
 Neo
+neo-app
 NetWeaver
 Node.js
 northwind
@@ -209,6 +210,7 @@ uncurried
 unpartitioned
 UTC
 util
+Velotics
 VirtualBox
 virtualization
 VMware

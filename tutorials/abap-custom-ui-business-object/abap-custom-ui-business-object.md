@@ -6,7 +6,9 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-The assignment of the business catalog **`SAP_CORE_BC_COM`**, **`SAP_CORE_BC_EXT`** to your user and **`Enable SAP Web IDE for S/4HANA system via OAuth`** as tutorial represents the prerequisites for the usage of the service generation as well as custom communication scenario and communication arrangement creation.
+- **Tutorials:** [`Enable SAP Web IDE for S/4HANA system via OAuth`](https://www.sap.com/developer/tutorials/abap-custom-ui-communication-arrangement.html )
+- **Authorizations:** The assignment of the business catalog **`SAP_CORE_BC_COM`**, **`SAP_CORE_BC_EXT`** to your user represents the prerequisites.
+
 
 ## Details
 ### You will learn  

@@ -5,8 +5,10 @@ primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
-## Prerequisites  
-The assignment of the business catalog **`SAP_CORE_BC_COM`** to your user and **`Create OAuth communication system and user`** as tutorial represents the prerequisites for the usage of communication arrangement.
+## Prerequisites
+- **Tutorials:** [`Create OAuth communication system and user`](https://www.sap.com/developer/tutorials/abap-custom-ui-communication-systems.html)
+- **Authorizations:** The assignment of the business catalog **`SAP_CORE_BC_COM`** represents the prerequisites for the usage of communication arrangement.
+
 
 ## Details
 ### You will learn
@@ -106,7 +108,7 @@ https://myXXXXXX-api.account.us3.hana.ondemand.com/sap/bc/sec/oauth2/token
 Add additional properties:
 
 | ----------------------------- | -------------------------------------------------------- |
-|        **`scope`**            | `ADT_0001 /UI5/APP_INDEX_0001 /IWFND/SG_MED_CATALOG_0002` |
+|        **`scope`**            | `ADT_0001 /UI5/APP_INDEX_0001 /IWFND/SG_MED_CATALOG_0002`|
 | **`authnContextClassRef`**    |      `urn:oasis:names:tc:SAML:2.0:ac:classes:X509`       |
 |       **`TrustAll`**          |                      `true`                              |
 |     **`WEBIDEEnabled`**       |                      `true`                              |  

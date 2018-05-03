@@ -45,7 +45,7 @@ To install the SAP HANA HDB client on a Windows machine, use either a graphical 
 
 Install the Download Manager to your client machine and download the client package.
 
-1.  Save the Download Manager installation files to your client machine and open it.
+1.  Save the Download Manager installation files to your client machine and open it. For instructions on downloading and running the Download Manager, see either the [Installing SAP HANA 2.0, express edition (Binary Installer Method)](http://www.sap.com/developer/tutorials/hxe-ua-installing-binary.html) or [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html) tutorials, or go straight to the SAP HANA, express edition [registration](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html) page.
 
 2.  In Download Manager, in the `Image` menu, select either `Virtual Machine` or `Binary Installer`.
 
@@ -61,10 +61,10 @@ Install the Download Manager to your client machine and download the client pack
 
     -   For Linux, navigate to the directory in which you wish to extract the client files and use the `tar` command:
 
-```bash
-cd <preferred_filepath>
-sudo tar <download_filepath>/clients_<OS>.zip
-```
+    ```bash
+    cd <preferred_filepath>
+    sudo tar <download_filepath>/clients_<OS>.zip
+    ```
 
     This extracts the following files and their contents:
 
@@ -168,5 +168,3 @@ sudo <unzipped_filepath>/HDB_CLIENT_<version>/hdbuninst
 Follow the instructions on the screen to uninstall the SAP HANA HDB client.
 
 [ACCORDION-END]
-
-

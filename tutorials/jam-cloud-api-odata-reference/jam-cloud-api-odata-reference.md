@@ -1,6 +1,7 @@
 ---
 title: Use the SAP Jam Collaboration OData API Reference
 description: Try out each SAP Jam Collaboration endpoint and view the results using the OData API Reference.
+auto_validation: true
 primary_tag: products>sap-jam-collaboration
 tags: [  tutorial>beginner, products>sap-jam, products>sap-cloud-platform, topic>cloud ]
 ---

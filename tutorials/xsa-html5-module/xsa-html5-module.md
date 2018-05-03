@@ -98,6 +98,8 @@ Alternatively, if you do not have the XS Advanced Cockpit in your server, you ca
 
     ![Command line UAA](6.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 
@@ -131,6 +133,7 @@ Open the `Code Editor` tab in the bottom to see the actual contents of the  `mta
 
 ![Code Editor](4_5.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -151,6 +154,8 @@ In this file you can map the routes to destinations you defined in the `mta.yaml
 ```
 
 You will learn how to add routes to backend modules in the next tutorials. You can check [this post](https://blogs.sap.com/2018/02/16/xs-advanced-for-not-so-dummies-routing/) to learn more about how this works.
+
+[DONE]
 
 [ACCORDION-END]
 

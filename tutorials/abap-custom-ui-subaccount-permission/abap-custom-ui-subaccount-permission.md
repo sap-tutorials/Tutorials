@@ -5,8 +5,8 @@ primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
-## Prerequisites  
-Access to a subaccount on SAP Cloud Platform in Neo Environment is expected.
+## Prerequisites   
+Authorizations: Access to a subaccount on SAP Cloud Platform in Neo Environment is expected.
 
 ## Details
 ### You will learn

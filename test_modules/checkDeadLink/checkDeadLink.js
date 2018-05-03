@@ -8,7 +8,7 @@ var options = {
   timeout: '90s',
 };
 
-const maxAttempts = 5;
+const maxAttempts = 2;
 
 const checkAndReportLink = (link, deadlinks, globalCounters, linkCounters, links, isPassed, callback) => {
   checkLink(link, options, function(err, results){

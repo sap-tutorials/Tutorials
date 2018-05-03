@@ -298,7 +298,7 @@ Right-click on the Header table and use the generated SQL statement in the valid
 
 ![SELECT statement from DB explorer](SELECT.png)
 
-[VALIDATION_1]
+[VALIDATE_1]
 
 [ACCORDION-END]
 
