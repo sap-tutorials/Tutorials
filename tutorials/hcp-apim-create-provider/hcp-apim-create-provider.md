@@ -1,6 +1,7 @@
 ---
 title: Create an API Provider System
 description: In this tutorial you will learn how to create an API Provider system. This provider system will connect to the SAP Developer System created in the previous step.
+auto_validation: true
 primary_tag: products>sap-api-management
 tags: [  tutorial>beginner, products>sap-gateway, products>sap-cloud-platform, products>sap-api-management ]
 ---

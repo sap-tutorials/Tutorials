@@ -1,6 +1,7 @@
 ---
 title:  Consume the API Proxy in SAP Web IDE
 description: In this tutorial you will learn how to consume the API Proxy created in the previous steps in SAP Web IDE
+auto_validation: true
 primary_tag: products>sap-api-management
 tags: [  tutorial>beginner,  products>sap-cloud-platform, products>sap-web-ide, products>sap-api-management ]
 ---

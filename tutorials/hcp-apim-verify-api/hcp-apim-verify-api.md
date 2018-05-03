@@ -1,6 +1,7 @@
 ---
 title: Protect your API Proxy by adding an Application Key Verification
 description: In this tutorial you will learn how to protect your API Proxy with a first simple policy -  the "Verify API Key" Policy.
+auto_validation: true
 primary_tag: products>sap-api-management
 tags: [  tutorial>beginner, topic>cloud, topic>security, products>sap-cloud-platform, products>sap-api-management ]
 ---

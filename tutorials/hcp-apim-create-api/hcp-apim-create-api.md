@@ -1,6 +1,7 @@
 ---
 title: Create an API Proxy
 description: In this tutorial you will learn how to create an API Proxy. You will learn how SAP Cloud Platform, API Management can leverage the OData catalog service to retrieve relevant information from a SAP Gateway system and pre-populate required information for the API Proxy
+auto_validation: true
 primary_tag: products>sap-api-management
 tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-api-management, products>sap-cloud-platform, products>sap-gateway ]
 ---
