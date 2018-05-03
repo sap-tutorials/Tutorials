@@ -97,11 +97,11 @@ In this step you will learn how to import a standard SAPUI5 app, which is locate
 
     >**Note:** The so-called [SAP Fiori Reference Apps](http://scn.sap.com/docs/DOC-59963) `Shop` and `Manage Products` used in this tutorial are sample applications for learning purposes. They do not access `real` product master data from the S/4HANA backend but are connected to the `Enterprise Procurement Model`.
 
-7.  In the workspace tree click on the folder icon of the newly imported project **manageproducts** to view its content.
+7.  In the workspace tree click on the folder icon of the newly imported project **`manageproducts`** to view its content.
 
     ![WebIDE 4](./images/w2-u5-s1/pic06-sapwebide-open-manprods.png)
 
-8.  Double-click on file **Workspace** | **manageproducts** | **neo-app.json**. The **neo-app.json** file provides the integration details between the user interface and the backend. Look at the destination **`s4h-onpremise-http`** that is used in the extension app. This destination is blending in the backend system in the path of the application.
+8.  Double-click on file **Workspace** | **`manageproducts`** | **neo-app.json**. The **neo-app.json** file provides the integration details between the user interface and the backend. Look at the destination **`s4h-onpremise-http`** that is used in the extension app. This destination is blending in the backend system in the path of the application.
 
     ```json
     {
@@ -121,7 +121,7 @@ In this step you will learn how to import a standard SAPUI5 app, which is locate
     }
     ```
 
-9.  To run the application click on node **manageproducts** and click the **Run** toolbar button (icon with green arrow symbol). In the popup click **Open Run Configuration**.
+9.  To run the application click on node **`manageproducts`** and click the **Run** toolbar button (icon with green arrow symbol). In the popup click **Open Run Configuration**.
 
     ![WebIDE 5](./images/w2-u5-s1/pic07-sapwebide-run-manprods.png)
 
@@ -165,7 +165,7 @@ Inspect Missing Image Resources with Chrome Developer Tools
 
     ![DevTools 4](./images/w2-u5-s2/pic04-chrome-devtools-sap-public-bc-notfound.png)
 
-    To open access to MIME resources from back-end path **sap/public/bc** you need to edit the **neo-app.json** file that currently defines access to the **sap/opu** path. You can either additionally expose the **sap/opu** path or  open access by truncating the existing path from **/sap/opu/odata** to **/sap** (as described by Thomas in the video).
+    To open access to MIME resources from back-end path **`sap/public/bc`** you need to edit the **`neo-app.json`** file that currently defines access to the **`sap/opu`** path. You can either additionally expose the **`sap/opu`** path or  open access by truncating the existing path from **`/sap/opu/odata`** to **`/sap`** (as described by Thomas in the video).
 
 7.  In SAP Web IDE select tab **neo-app.json**.
     -   In the destination named `s4h-onpremise-http` shorten the `path` and `entryPath` values from **/sap/opu/odata** to **/sap**.
@@ -208,7 +208,7 @@ In the next step you will extend the imported Fiori app by adding sort, filter a
 
 1.  Download the file [rating-extension.zip](./imports/html5/rating-extension.zip?raw=true) and open it in your ZIP client to view all changed project files.
 
-2.  In the SAP Web IDE project tree click **manageproducts**:
+2.  In the SAP Web IDE project tree click **`manageproducts`**:
 
 3.  Open context menu item **Import** | **From File System**.
 
@@ -216,7 +216,7 @@ In the next step you will extend the imported Fiori app by adding sort, filter a
 
 4.  In the Import dialog choose file **rating-extension.zip** you downloaded before.
 
-5.  To change the `Import to` field click **Select Folder** and choose **Workspace** | **manageproducts** and click  **OK**.
+5.  To change the `Import to` field click **Select Folder** and choose **Workspace** | **`manageproducts`** and click  **OK**.
 
     ![WebIDE 10](./images/w2-u5-s3/pic02-webide-import-mgprod-selectfolder.png)
 
@@ -244,11 +244,11 @@ In the next step you will extend the imported Fiori app by adding sort, filter a
 
 [ACCORDION-BEGIN [Step 6:](Explore custom code)]
 
-1.  Move back to the SAP Web IDE tab and open the file **Workspace** | **manageproducts** | **view** | **`ProductFilterDialog.fragment.xml`** with  double-click.
+1.  Move back to the SAP Web IDE tab and open the file **Workspace** | **`manageproducts`** | **view** | **`ProductFilterDialog.fragment.xml`** with  double-click.
 
 2.  The code block that was added during ZIP-file import is delimited by the lines **&lt;!-- begin** and **&lt;!-- end**. Also read the related description at the beginning to better understand the contained source code. You can also read the full source code here: [`ProductFilterDialog.fragment.xml`](./src/html/manageproducts/view/ProductFilterDialog.fragment.xml).
 
-3.  Open the file **Workspace** | **manageproducts** | **view** | **`ProductGroupingDialog.fragment.xml`** ([`ProductGroupingDialog.fragment.xml`](./src/html/manageproducts/view/ProductGroupingDialog.fragment.xml)) with  double-click to view the added source code:
+3.  Open the file **Workspace** | **`manageproducts`** | **view** | **`ProductGroupingDialog.fragment.xml`** ([`ProductGroupingDialog.fragment.xml`](./src/html/manageproducts/view/ProductGroupingDialog.fragment.xml)) with  double-click to view the added source code:
 
     ```xml
     <!-- Extending S/4HANA with SAP CP -->
@@ -258,7 +258,7 @@ In the next step you will extend the imported Fiori app by adding sort, filter a
     <!-- end   -->
     ```
 
-4.  Open the file **Workspace** | **manageproducts** | **view** | **`ProductSortDialog.fragment.xml`** ([`ProductSortDialog.fragment.xml`](./src/html/manageproducts/view/ProductSortDialog.fragment.xml) with double-click to view the added source code:
+4.  Open the file **Workspace** | **`manageproducts`** | **view** | **`ProductSortDialog.fragment.xml`** ([`ProductSortDialog.fragment.xml`](./src/html/manageproducts/view/ProductSortDialog.fragment.xml) with double-click to view the added source code:
 
     ```xml
     <!-- Extending S/4HANA with SAP CP -->
@@ -268,7 +268,7 @@ In the next step you will extend the imported Fiori app by adding sort, filter a
     <!-- end -->
     ```
 
-5.  To look at the added controller logic that handles the new grouping function open the file **Workspace** | **manageproducts** | **controller** | **`SubControllerForFGS.js`**, see [`SubControllerForFGS.js`](./src/html/manageproducts/controller/SubControllerForFGS.js). Go through this source code and check how it is done by reading the comment code lines.
+5.  To look at the added controller logic that handles the new grouping function open the file **Workspace** | **`manageproducts`** | **controller** | **`SubControllerForFGS.js`**, see [`SubControllerForFGS.js`](./src/html/manageproducts/controller/SubControllerForFGS.js). Go through this source code and check how it is done by reading the comment code lines.
 
 [ACCORDION-END]
 
@@ -280,7 +280,7 @@ The `manageproducts` SAPUI5 project that was imported from the local SAP NetWeav
 
 Execute the following steps to ensure that the `Component-preload.js` is later built correctly and therefore contains the UX extension code at run-time:
 
-1.  Click **Workspace** | **manageproducts** and choose context menu item **Project Settings**.
+1.  Click **Workspace** | **`manageproducts`** and choose context menu item **Project Settings**.
 
     ![WebIDE 15](./images/w2-u5-s4/pic00-webide-mgprod-proj-settings.png)
 
@@ -288,7 +288,7 @@ Execute the following steps to ensure that the `Component-preload.js` is later b
 
     ![WebIDE 16](./images/w2-u5-s4/pic01-webide-mgprod-enable-ui5cltbuild.png)
 
-3.  Click **Workspace** | **manageproducts** and choose context menu item **Deploy** | **Deploy to SAP Cloud Platform**.
+3.  Click **Workspace** | **`manageproducts`** and choose context menu item **Deploy** | **Deploy to SAP Cloud Platform**.
 
     ![WebIDE 17](./images/w2-u5-s4/pic02-webide-mgprod-deploy.png)
 
@@ -314,7 +314,7 @@ Back in the browser tab with SAP Web IDE you can directly proceed to register th
 
     ![WebIDE 21](./images/w2-u5-s4/pic06-webide-mgprod-regtoflp-start.png)
 
-    > **Note:** In case you closed the confirmation popup before, select  **manageproducts** in the project tree and click context menu item **Deploy** | **Register to SAP Fiori Launchpad**.
+    > **Note:** In case you closed the confirmation popup before, select  **`manageproducts`** in the project tree and click context menu item **Deploy** | **Register to SAP Fiori Launchpad**.
 
 2.  Under `General Information` click **Next**.
 

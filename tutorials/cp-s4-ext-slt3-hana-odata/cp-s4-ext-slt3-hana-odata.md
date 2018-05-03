@@ -161,7 +161,7 @@ In this step you are going to import a new database view to your SAP HANA databa
 
     ![Screenshot](images/w4-u4-s2/pic011--import-hana-analytics.jpg)
 
-13. In the `Project Exporer` view, expand **s4ext** | **analytics** | **data** and **s4ext** | **analytics** | **service**. You will see the new view `product.calculationview` and the `analytics.xsodata` OData service.
+13. In the `Project Exporer` view, expand **`s4ext`** | **analytics** | **data** and **`s4ext`** | **analytics** | **service**. You will see the new view `product.calculationview` and the `analytics.xsodata` OData service.
 
     ![Screenshot](images/w4-u4-s2/pic012--new-xs-view.jpg)
 
@@ -191,7 +191,7 @@ This step is designed to help you to explore and understand the data model that 
 
 1.  Go to Eclipse and open the `SAP HANA Development` perspective.
 
-2.  In the Project Explorer, navigate to **HANA** | **s4ext** | **analytics** | **data** and double-click on the `product.calculationview`.
+2.  In the Project Explorer, navigate to **HANA** | **`s4ext`** | **analytics** | **data** and double-click on the `product.calculationview`.
 
     ![Screenshot](images/w4-u4-s3/pic001--open-view.jpg)
 
@@ -251,7 +251,7 @@ In this step you will verify that the OData service exposing the analytical view
 
 1.  Go to Eclipse and open the `SAP HANA Development` perspective.
 
-2.  In the `Project Explorer` view, navigate to **HANA** | **s4ext** | **analytics** | **service** and double-click on the `analytics.xsodata` file.
+2.  In the `Project Explorer` view, navigate to **HANA** | **`s4ext`** | **analytics** | **service** and double-click on the `analytics.xsodata` file.
 
     ![Screenshot](images/w4-u4-s4/pic001--eclipse-open-xsodata.jpg)
 
