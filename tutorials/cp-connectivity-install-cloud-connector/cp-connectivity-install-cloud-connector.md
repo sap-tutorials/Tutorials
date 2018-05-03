@@ -1,6 +1,6 @@
 ---
 title: Install the Cloud Connector in your System Landscape
-description: With the Cloud Connector you can securely connect applications on SAP Cloud Platform with your on-premise systems.  This tutorial describes how to install it.
+description: Install the Cloud Connector to securely connect applications on SAP Cloud Platform with your on-premise systems.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-platform-connectivity ]
@@ -22,26 +22,36 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-cloud-plat
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Check the Prerequisites)]
+[ACCORDION-BEGIN [Step 1: ](Check the prerequisites)]
 
-In this tutorial we will install version 2.11.0.3 of the Cloud Connector on a PC with Windows 10. You need at least 2GB of RAM and 3GB of hard disk space to use this version of the Cloud Connector. Since the Cloud Connector will act as a gateway between SAP Cloud Platform and systems in your on-premise system landscape, it must have an Internet connection to the hosts of SAP Cloud Platform as well as LAN access to your systems (SAP Cloud Platform has IP addresses for connectivity for each region). As a consequence, the Cloud Connector will be a security-critical component in your system landscape, so it is highly recommended to restrict the operating system access to the machine where you install it to a minimal set of users who will administrate it.
+In this tutorial we will install version 2.11.0.3 of the Cloud Connector on a PC with Windows 10, but you should also be able to follow the steps if you use another operating system.
+
+You need at least 2GB of RAM and 3GB of hard disk space to use this version of the Cloud Connector.
+
+Since the Cloud Connector will act as a gateway between SAP Cloud Platform and systems in your on-premise system landscape, it must have an Internet connection to the hosts of SAP Cloud Platform as well as LAN access to your systems (SAP Cloud Platform has IP addresses for connectivity for each region). As a consequence, the Cloud Connector will be a security-critical component in your system landscape, so it is highly recommended to restrict the operating system access to the machine where you install it to a minimal set of users who will administrate it.
 
 > You can check the current prerequisites for newer versions of the Cloud Connector in the [official documentation](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e23f776e4d594fdbaeeb1196d47bbcc0.html). The list of IP addresses is also given there.
 
 For version 2.11.0.3 of the Cloud Connector the recommended version of the Java Development Kit (JDK) is Java 8 (`1.8.x`). Let's check first what Java version you have installed on your PC.
 
-1. In Windows, search for **`cmd`** to open a command prompt.
-2. Enter **`Java -version`** to find out which Java version you have installed.
-3. If you do not have the JDK for Java SE 8 installed you can download it from Oracle's [Java SE downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (on the **Downloads** tab).
-> You can also use SAP JVM. The installation procedure is described in the [official documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76137f42711e1014839a8273b0e91070.html).
+1. Open a command line (for example, in Windows, search for **`cmd`** to open a command prompt).
+2. Enter **`java -version`** to find out which Java version you have installed.
 
-4. After the download, follow the installation wizard to install the JDK for Java 8.
+If you do not have the JDK for Java SE 8 installed:
+
+1. Download the JDK for Java SE 8 from Oracle's [Java SE downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html) (on the **Downloads** tab).
+2. Follow the installation wizard to install the JDK for Java 8.
+
+The installation wizard will show the following success message after a successful installation:
+![Java 8 Success Message](Install-Java8.png)
+
+> You can also use SAP JVM. The installation procedure is described in the [official documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/76137f42711e1014839a8273b0e91070.html).
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Choose your Version of the Cloud Connector)]
+[ACCORDION-BEGIN [Step 2: ](Choose your version of the Cloud Connector)]
 
 The Cloud Connector runs on the following operating systems and is offered in two versions:
 
@@ -61,13 +71,15 @@ In this tutorial, we will install the Windows version for productive scenarios.
 
 [ACCORDION-BEGIN [Step 3: ](Install the Cloud Connector)]
 
-1. Open [https://tools.hana.ondemand.com/#cloud](https://tools.hana.ondemand.com/#cloud), scroll down to section **Cloud Connector**, and choose the Windows installer download.
+The installation is described for Windows 10 using Chrome as Web browser. Note that if you use another browser it will look slightly different. If you use Mac OS X or Linux OS, you will first have to unpack the downloaded installation package. If you get stuck, check the [official documentation](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/57ae3d62f63440f7952e57bfcef948d3.html) for installation instructions for your operating system.
+
+1. Open [https://tools.hana.ondemand.com/#cloud](https://tools.hana.ondemand.com/#cloud), scroll down to section **Cloud Connector**. To be able to illustrate the Cloud Connector in productive scenarios, we suggest to download the installer version.
 ![SAP Dev Tools Web Site](install-001.png)
 
 2. Read the **End User License Agreement** and confirm with **`I Have Read And Agree`**.
 ![End User License Agreement](install-002.png)
 
-3. Choose **`Run`**.
+3. After successful download, the downloaded file appears in the lower left corner of your Chrome browser. Choose **`Open`** (this may work differently depending on the browser you use).
 ![End User License Agreement](install-003.png)
 
 4. This version of the Cloud Connector (2.11.0.3) is not a signed installation yet. Choose **`More Info`** in the warning dialog of Windows Defender.
@@ -109,40 +121,52 @@ What is the standard port for accessing the Cloud Connector administration UI?
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Logon to the Cloud Connector)]
+[ACCORDION-BEGIN [Step 4: ](Log on to the Cloud Connector)]
 
 1. To access the Cloud Connector administration UI, open a Web browser and go to https://localhost:8443/ (adjust the port if you specified another one during the installation).
 
-2. Your browser will show a certificate error. Continue to the Web site anyway.
+2. Your browser will show a certificate error. Depending on what browser you use, the way to continue anyway will be different. In Chrome, you first have to choose **ADVANCED**.
 ![Certificate-Error](Initial-Config-001.png)
+
+3. On the next pop-up, choose **Proceed to localhost (unsafe)**. We will explain in the next step how you can overcome this procedure whenever you log on to the Cloud Connector administration UI.
+![Certificate-Error](Initial-Config-002.png)
 
 3. At the cloud connector login, log on with the following logon data:
     * User Name: **`Administrator`**
     * Password: **`manage`**
-![Login](Initial-Config-002.png)
+![Login](Initial-Config-003.png)
 
 4. After login, you will be asked to change your Administrator password. You can choose whether this instance of the Cloud Connector will be the master instance or a shadow instance. Choose **`Master`** and **`Save`**. For more information on how to use a shadow instance, see: [Install a Failover Instance for High Availability](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/c697705179a24d2b8b6be038fae59c33.html).
 
 > You can use LDAP (Lightweight Directory Access Protocol) to configure Cloud Connector authentication. For more information, see the [official documentation](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/120ceecfd84145a181ac160d588a7a3d.html).
 
+After the installation of the Cloud Connector you can see that its **Security Status** is red (**Risk**). We will show in the next two steps how to achieve a level of low risk for the Cloud Connector.
+
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Replace Self-Signed UI Certificate)]
+[ACCORDION-BEGIN [Step 5: ](Replace self-signed UI certificate)]
 
-To assure users of the Cloud Connector administration UI that they can trust its Web address (not localhost, but the fully qualified domain name of your server), we highly recommend replacing the self-signed UI certificate that is included by default with one from your trusted certificate authority (CA).
+If you just installed the Cloud Connector for your own use to try it out, you can leave out this step. But as soon as you use the Cloud Connector productively in your company, other colleagues would like to be sure that the Web address used for the Cloud Connector is valid. Now what is this all about?
 
-Before you start, you need to find out what certificate authority is usually used in your Intranet and how certificates are issued:
+Through the Cloud Connector you can generate an unsigned certificate that contains a public key which corresponds to a private key only known to the Cloud Connector. Public and private keys form a pair: Each public key corresponds to exactly one private key. Anyone who has the public key can encrypt data that can only be decrypted by the holder of the private key. This way you can securely exchange data over the Internet (and Intranet).
+
+Now there is a little snag: If you have a public key, how can you be sure to whom it belongs to? If you can generate such a key pair hackers can do so as well. And then they could give you their public key and claim that it belongs to your bank.
+
+That's when the certificate authority (CA) comes into play. They play a central role for [public key infrastructures](https://en.wikipedia.org/wiki/Public_key_infrastructure) (PKI) to vouch for public key holders that they represent valid identities. Technically, the CA provides a digital signature for a public key to say: "Yes, this public key belongs to the Cloud Connector administration UI. Believe me. I checked it.". To document this, the CA will create a _certificate_ that includes both, the public key and the digital signature.
+
+Now in your specific case, you need to find out what certificate authority is usually used in the Intranet of your company and how certificates are issued. Here are some hints how you can find this out:
 
 1. Open a Web site of your Intranet in Internet Explorer.
 
-2. Click the padlock at the end of the Internet Explorer address bar. The certificate authority is now displayed in the **Website Identification** pop-up.
-![CSR Find CA](CSR-Find-out-CA.png)
+2. Click the padlock next to your browser's address bar (depending on your browser it could be at the beginning or the end). Choose **Certificate**.
+![CSR Find CA](CSR-Find-out-CA-001.png)
 
-3. Search in your Intranet for information about your certificate authority and how certificates are issued.
+3. The **Certificate Information** will show you the CA which issued the certificate.
+![CSR Find CA](CSR-Find-out-CA-002.png)
 
-4. If you cannot find any information, ask an administrator.
+Search in your Intranet for information about your certificate authority and how certificates are issued. If you cannot find any information, this is a problem for your Web admin team, please consult them how to do this.
 
 After clarifying where you can get a certificate (sometimes referred to as **Enrollment Service**), you need to follow the process shown in the following graphic:
 ![CSR Process](CSR-Process.png)
@@ -163,17 +187,19 @@ After clarifying where you can get a certificate (sometimes referred to as **Enr
 6. Finally, choose **Restart** on the top of the Cloud Connector administration UI.
 ![Restart Cloud Connector](CSR-006.png)
 
-After the restart the certificate error should no longer be displayed.
+After the restart the certificate error should no longer appear.
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Set up a Windows Service User)]
+[ACCORDION-BEGIN [Step 6: ](Set up a service user (Windows only))]
 
-After a successful installation the Cloud Connector is available as a Windows service. Let's check its status and set up a Windows service user:
+After a successful installation the Cloud Connector you do not see much. The Cloud Connector is started as a background service on your PC. For example, in Windows, it is available as a service, in Linux it is started as a daemon.
 
-1. In Windows, enter **`Services`** in the central Windows search next to the Windows start button, and  choose the following match:
+In Windows, services can be started and stopped by all users of a PC by default. To ensure a minimum level of security you should restrict the rights to a specific user on your PC. Service users are specific to Windows only.
+
+1. Enter **`Services`** in the central Windows search next to the Windows start button, and  choose the following match:
 ![Search for Services](Windows-Service-001.png)
 
 2. Click on an entry in the service list, hit **`S`** on your keyboard, and scroll down in the list of services to find service **SAP Cloud Connector**. After selecting it, you can start, stop, and restart the service. Double-click it.
