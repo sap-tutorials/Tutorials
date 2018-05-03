@@ -7,7 +7,7 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
 ## Prerequisites
  - **Proficiency:** Intermediate
  - **Tutorials:**
-  - [Create a trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) 
+  - [Create a trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
   - [Install SAP NetWeaver in openSUSE](https://www.sap.com/developer/tutorials/cp-s4-ext-install-nw.html)
 ## Next Steps
 - [Data Mart Scenario (Part 2): Replicate data using SLT](https://www.sap.com/developer/tutorials/cp-s4-ext-slt2-setup-slt.html)
@@ -65,7 +65,7 @@ You want to replicate data from your on-premises SAP NetWeaver backend system in
 
 In this step you will log in to the `SAP HANA Cockpit` (not to be confused with the `SAP Cloud Platform Cockpit`). This is a web interface that allows you to administer and monitor the HANA database running in your SAP Cloud Platform account. You will create a new database user called `ACME` that will be used for all consecutive interactions with the database. It is not a recommended practice to work with the `SYSTEM` user - created by default - so that there is always an admin user available with extended privileges, in case the ACME user should get locked or compromised.
 
-2.  Click on **hana**, to open the overview page for your newly created HANA MDC database.
+2.  Click on **`hana`**, to open the overview page for your newly created HANA MDC database.
 
     ![Screenshot](images/w4-u2-s2/pic01--navigate-hana.jpg)
 
