@@ -50,6 +50,7 @@ Log onto your [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.co
 
 ![Log on to CP Cockpit](01-hcp.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -59,6 +60,7 @@ Under Connectivity, click on **Destinations**.
 
 ![Click on Destination](02-destination.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -96,6 +98,7 @@ Click on **Save**.
 
 ![Click on SAPWebIDEviaAPIManagement](07-Save.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -142,6 +145,7 @@ Click on **Save**.
 
 ![Click on Save](12-ClickSave2.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -159,6 +163,7 @@ Click on **Open SAP Web IDE**
 
 ![Open SAP Web IDE](15-OpenWebIDE.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -168,6 +173,7 @@ Click on **`File > New > Project from Template`**.
 
 ![Create new Template](16-NewProject.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -177,6 +183,7 @@ From the Template Selection windows click on **SAP Fiori Master-Detail Applicati
 
 ![Select Master Detail template](17-MasterDetail.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -186,6 +193,7 @@ Enter a project name: **`SAPWebIDEviaAPIManagement`** and click on **Next**.
 
 ![Enter name and click on Next](18-NameNext.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -195,6 +203,7 @@ From the **Service Catalog** drop-down, select the **Destination to API Develope
 
 ![Select Destination to API Developer Portal](19-DevPortalDestination.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -204,6 +213,7 @@ Select the **`GWSAMPLE_BASIC`** API Proxy created in [Create an API Proxy](https
 
 ![Select service and click on Subscribe](20-Subscribe.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -213,6 +223,7 @@ Click on **Next**
 
 ![Click on Next](22-ApplicationNext.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -240,6 +251,7 @@ and click on **Finish**
 
 ![Enter mapping information](23-EnterMappings.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -249,6 +261,7 @@ Double click on the **`manifest.json`** file from **`SAPWebIDEviaAPIManagement`*
 
 ![Open manifest.json](24-Openmanifest.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -258,6 +271,7 @@ Switch to the *Code Editor* view by clicking on **Code Editor**
 
 ![Switch to Code Editor](25-CodeEditor.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -275,6 +289,7 @@ Search for **`sap.ui5`** and go to the **models** section. There add the followi
 
 ![Add Code snippet](26-AddCodeTemplate.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -284,6 +299,7 @@ In order to get the API Key you need to open the **API Developer Portal** in a n
 
 ![Switch to Developer Portal](27-DevPortal.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -293,6 +309,7 @@ Click on the **Hamburger menu** and click on **Consume**
 
 ![Click on Consume](28-ClickOnConsume.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -302,6 +319,7 @@ Click on the Application **`SAPWebIDEviaAPIManagement`** which was automatically
 
 ![Open Application](29-OpenApplication.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -311,6 +329,7 @@ Mark and copy the **Application key**
 
 ![Copy Application Key](30-AppKey.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -324,6 +343,7 @@ Click on **Save**
 
 ![Save in Web IDE](32-WebIdeSave.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -337,6 +357,7 @@ You should see a Fiori app connecting via SAP API Management to the SAP Gateway 
 
 ![See results](34-ResultsInFioriApp.png)
 
+[DONE]
 
 [ACCORDION-END]
 

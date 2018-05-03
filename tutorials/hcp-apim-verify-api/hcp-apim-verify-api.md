@@ -65,6 +65,7 @@ Open the SAP API Management API Portal (you can get the URL from Enable the SAP 
 
 ![Access the API Portal](01-access_api_portal.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -74,6 +75,7 @@ From the **Hamburger Menu** in the upper left corner and click on **Develop**.
 
 ![Click on Develop](02-manage.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -83,6 +85,7 @@ Select the API `GWSAMPLE_BASIC` created in a previous step in the this tutorial 
 
 ![Select the GWSAMPLE_BASIC Proxy](03-GWSAMPLE.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -92,6 +95,7 @@ In the upper right corner click on **Policies** to open the policy information f
 
 ![Select policies on API page](04-Policies.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -101,6 +105,7 @@ In the Policy Editor, click on **Edit**.
 
 ![Click on Edit](05-Designer-Edit.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -110,6 +115,7 @@ Select the `PreFlow` from the `ProxyEndpoint` on the left hand side.
 
 ![Select pre-flow](06-Preflow.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -119,6 +125,7 @@ On the right hand, find the **Security Policies** section under the _Policies_ p
 
 ![Add Verify API Key policy](07-VerifyAPI.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -128,6 +135,7 @@ Enter the Policy Name `CheckAPIKey` and click on **Add**.
 
 ![Enter CheckAPIKey](08-AddPolicy.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -137,6 +145,7 @@ In the **Code Editor** found in the bottom pane, look for the `<APIKey ... />` t
 
 ![Adjust the policy](09-RequestHeader.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -150,6 +159,7 @@ Click on **Save** to save the changes to the API and enforce the new policies.
 
 ![Click on Save](11-Save.png)
 
+[DONE]
 
 [ACCORDION-END]
 

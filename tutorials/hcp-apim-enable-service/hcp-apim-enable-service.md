@@ -40,6 +40,7 @@ From the **SAP Cloud Platform cockpit**, select **Services**.
 
 ![Click on Services](01-services.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -53,6 +54,7 @@ Click on **Enable**
 
 ![Select Enable](03-enable.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -66,6 +68,7 @@ and the SAP API Management Dev Portal
 
 ![Access Dev Portal](05-access_dev_portal.png)
 
+[DONE]
 
 [ACCORDION-END]
 
