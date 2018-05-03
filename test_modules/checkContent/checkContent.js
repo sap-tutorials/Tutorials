@@ -41,7 +41,8 @@ const autoValidation = /auto_validation:\s(.*)\r?\n/i;
 const accordions = /(?<=ACCORDION-BEGIN).*?(?=ACCORDION-END)/sg;
 const validate = /(?<=\[VALIDATE_)[0-9]+(?=\])/g;
 const done = /\[DONE\]/g;
-const codeBlock = /`.*?`/sgi;
+const codeBlock = /```.*?```/sgi;
+const codeLine = /`.*?`/gi;
 
 
 const MB = Math.pow(2, 20);
@@ -138,11 +139,11 @@ module.exports = {
     checkValidation: (fileSrc, filePath, isProduction) => {
         const err = [];
         const autoValidationMatch = fileSrc.match(autoValidation);
-        const steps = fileSrc.match(accordions);
+        const steps = fileSrc.replace(codeBlock, '').replace(codeLine, '').match(accordions);
         let validationExists, noAnyValidation;
         if(steps) {
-            validationExists = steps.some(step => step.replace(codeBlock, '').match(validate));
-            noAnyValidation = steps.map((step, index) => ({ step, id: index + 1})).filter(({ step }) => !step.replace(codeBlock, '').match(validate) && !step.match(done));
+            validationExists = steps.some(step => step.match(validate));
+            noAnyValidation = steps.map((step, index) => ({ step, id: index + 1})).filter(({ step }) => !step.match(validate) && !step.match(done));
         }
         if(autoValidationMatch) {
             const [prop, value] = autoValidationMatch;
@@ -168,7 +169,7 @@ module.exports = {
                     });
                 } else {
                     const validationsMatch = steps
-                        .map(step => step.replace(codeBlock, '').match(validate))
+                        .map(step => step.match(validate))
                         .filter(match => match)
                         .reduce((arr, matches) => arr.concat(matches), []);
                     const duplicates = findDuplicates(validationsMatch);
