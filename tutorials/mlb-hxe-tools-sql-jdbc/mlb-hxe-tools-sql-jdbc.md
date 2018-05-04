@@ -40,101 +40,14 @@ For alternate options, you can also check the following link: [Select a SQL quer
 ### Time to Complete
 **10 Min**.
 
-[ACCORDION-BEGIN [Step 1: ](Download the SAP HANA client)]
+[ACCORDION-BEGIN [Prerequisites: ](Download & Install the SAP HANA HDB client)]
 
-After registering to download [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html), use the **Download Manager** to retrieve the client package for the system you will connect from.
-
-The package names are:
-
- - Linux (x86/64) : `clients_linux_x86_64.tgz`
- - Windows: `clients_windows.zip`
-
-The downloaded archive for the client package contains both the ***SAP HANA HDB Client*** and the ***SAP HANA XS CLI***.
-
-The ***SAP HANA HDB Client*** software package includes the following connectivity/drivers:
-
- - SQLDBC
- - ODBC
- - JDBC
- - Python (`PyDBAPI`)
- - Node.js
- - Ruby
-
-Here you will install the ***SAP HANA HDB Client*** only.
+Before you can proceed with the next steps, you will need to complete the **Installing SAP HANA HDB Client** for your target platform from the [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html) group.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install the SAP HANA client)]
-
-#### **Connecting from Linux environments**
-
-First, you need to extract the contents of the downloaded package:
-
-```bash
-tar -xvzf /opt/hxe/clients_linux_x86_64.tgz -C /opt/hxe
-```
-
-The following files will be extracted:
-
- - ***`hdb_client_linux_x86_64.tgz`*** : the *SAP HANA HDB Client* software package
- - ***`xs.onpremise.runtime.client_linuxx86_64.zip`*** : the *SAP HANA XS CLI* software package
-
-You need now to decompress the *SAP HANA HDB Client* package executing the following command:
-
-```bash
-tar -xvzf /opt/hxe/hdb_client_linux_x86_64.tgz -C /opt/hxe/installer
-```
-
-And now you can run the installer program executing the following commands:
-
-```bash
-sudo su -l hxeadm
-
-cd /opt/hxe/installer/HDB_CLIENT_LINUX_X86_64
-./hdbinst
-
-exit
-```
-
-Accept the prompts default values to configure your installation:
-
- - Installation Path : `/usr/sap/hdbclient`
-
-Once the installation is completed, you should get the following elements in your console:
-
-```
-Installation done
-```
-
-#### **Connecting from Windows environments**
-
-First, you need to extract the contents of the downloaded package using your favorite archive manager (for example `7zip`, `WinZip` or `WinRar`).
-
-The following files will be extracted:
-
- - ***`hdb_client_windows_x86_32.zip`*** : the *SAP HANA HDB Client* software package for Windows 32 bits platforms
- - ***`hdb_client_windows_x86_64.zip`*** : the *SAP HANA HDB Client* software package for Windows 64 bits platforms
- - ***`xs.onpremise.runtime.client_ntamd64.zip`*** : the *SAP HANA XS CLI* software package
-
-You need now to decompress the *SAP HANA HDB Client* package for your target platform.
-
-And now you can run the installer program executing the `hdbsetup.exe` application located in the `HDB_CLIENT_WINDOWS_X86_64` directory.
-
-Accept the prompts default values to configure your installation:
-
- - Installation Path : `C:\Program Files\sap\hdbclient`
-
-Once the installation is completed, you should get the following elements in your console:
-
-```
-Installation finished successfully
-```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Locate the JDBC Driver)]
+[ACCORDION-BEGIN [Step 1: ](Locate the JDBC Driver)]
 
 The driver (`ngdbc.jar`), which is installed as part of the SAP HANA client, is located at (unless specified otherwise during the installation):
 
@@ -144,7 +57,7 @@ The driver (`ngdbc.jar`), which is installed as part of the SAP HANA client, is 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure the driver)]
+[ACCORDION-BEGIN [Step 2: ](Configure the driver)]
 
 Here we will use the ***Eclipse Data Source Explorer*** as an example to highlight the key information that are require to configure a new JDBC driver in your tool of preference.
 
@@ -200,7 +113,7 @@ Click on **Apply and Close** to close the ***Preferences*** popup window.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Configure your connections)]
+[ACCORDION-BEGIN [Step 3: ](Configure your connections)]
 
 Now, either right-click on **Database Connections > New** or click on the ![image Step 5](05-1-connection-profile.png) to create a new Connection Profile.
 
@@ -259,7 +172,7 @@ Click on **Finish**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test the connections with SQL)]
+[ACCORDION-BEGIN [Step 4: ](Test the connections with SQL)]
 
 Click on the ***open scrapbook to edit SQL*** icon ![sql](00-sql.png), then select:
 
@@ -287,7 +200,7 @@ Now switch to the **SYSTEMDB @ HXE (SYSTEM)** connection and run the same SQL st
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Validation)]
+[ACCORDION-BEGIN [Step 5: ](Validation)]
 
 Based on the available **JDBC Connection Properties** listed in the <a href="https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/109397c2206a4ab2a5386d494f4cf75e.html" target="new">online documentation</a>, provide an answer to the question below then click on **Validate**.
 
@@ -340,7 +253,7 @@ Make sure that you can reach the port (using a telnet command) from the computer
 
 [ACCORDION-BEGIN [Connection String: ](The options)]
 
-The JDBC driver a full stack of options that can become handy when developing you application
+The JDBC driver supports a full set of options that can become handy when developing your application.
 
 For example, you can use the ***options*** parameter to specify the auto-commit behavior, as in the following example:
 

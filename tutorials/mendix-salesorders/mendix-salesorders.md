@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platfor
  - You are using a Windows desktop (or a Windows VM on a Mac).
  - You have access to an SAP Cloud Platform account. If not, you can open a trial account. See the [tutorial](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) or [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/65d74d39cb3a4bf8910cd36ec54d2b99.html).
  - You have completed the [Getting started with SAP Cloud Platform Rapid Application Development by Mendix](https://www.sap.com/developer/tutorials/mendix-onboarding.html) tutorial. Name your app **SAP Sales Orders**.
- - You have requested the [authentication credentials](https://gatewaytestdd27584c4.us2.hana.ondemand.com/SUPSignForms/) required to connect with the SAP Gateway Demo System (ES5).
+ - You have completed the [Create an account on the Gateway Demo system](https://www.sap.com/developer/tutorials/gateway-demo-signup.html) tutorial.
 
 
 ## Details

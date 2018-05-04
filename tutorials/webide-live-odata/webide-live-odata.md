@@ -1,7 +1,7 @@
 ---
 title: Change from mock server to live OData service
 description: Connect to a live backend system for your application.
-auto_validation: false
+auto_validation: true
 primary_tag: topic>sapui5
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---

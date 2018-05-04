@@ -179,8 +179,6 @@ You've now prepared everything for the translation step.
 
 ![successful deployment](sth-open-app.png)
 
-[VALIDATE_18]
-
 [ACCORDION-END]
 
 ## Next Steps
