@@ -20,7 +20,7 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
 In this tutorial you will create a HANA XS development project for the HANA database running on SAP Cloud Platform. You will create a new database view to analyze product data in your database. You will then create an OData service based on this new analytical view, so that you can consume and use the data in a SAP Fiori application to analyze this data.
 
 ### Time to Complete
-**80 Mins**
+**60 Mins**
 ---
 
 [ACCORDION-BEGIN [Step 1:](Ensure SAP HANA database is running)]
@@ -51,7 +51,7 @@ In this step you will ensure that the SAP HANA database operating in your SAP Cl
 
 In this step you will verify that your SAP NetWeaver system is running and operational. If you took a longer break or shut down your system, you might want to restore the VirtualBox snapshot `ABAP with SCC and SLT Replication` before you continue.
 
-1.  Log on to your SAP NetWeaver backend system as described in step 5 of the preceding tutorial [Replicate Data using SLT](https://www.sap.com/developer/tutorials/cp-s4-ext-slt2-setup-slt).
+1.  Log on to your SAP NetWeaver backend system as described in step 5 of the preceding tutorial [Replicate Data using SLT](https://www.sap.com/developer/tutorials/cp-s4-ext-slt2-setup-slt.html).
 
 2.  If you cannot log on to the system, then open your `openSUSE` desktop in `VirtualBox`, otherwise you may continue with step 3 below.
 

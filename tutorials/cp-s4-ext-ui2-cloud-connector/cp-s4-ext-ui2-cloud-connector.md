@@ -23,7 +23,7 @@ tags: [ tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform
 In this tutorial you will learn how to establish connectivity between SAP Cloud Platform and your SAP NetWeaver on-premises system. You will set up SAP Cloud Connector in your on-prem environment and allow SAP Cloud Platform to reach certain resources on your SAP NetWeaver server. Finally, you will set up a destination in SAP Cloud Platform to allow access to the `EPM Manage Products` OData service.
 
 ### Time to Complete
-**25 Mins**
+**30 Mins**
 
 ---
 
