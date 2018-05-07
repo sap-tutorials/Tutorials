@@ -21,7 +21,7 @@ tags: [ tutorial>intermediate, products>sap-s-4hana ]
 In this tutorial, you will install and set up a Linux operating system (openSUSE) in a VirtualBox virtual machine container. This can then be used as host operating system for installing an SAP NetWeaver system.
 
 ### Time to Complete
-**40 Mins**
+**30 Mins**
 
 ---
 

@@ -18,7 +18,7 @@ tags: [ tutorial>intermediate, products>sap-s-4hana ]
 SAP NetWeaver is the application server for SAP S/4HANA on-premises and for SAP Business Suite systems. In this tutorial you will learn to install a SAP NetWeaver system in openSUSE Linux. You can then use this server to explore and complete tutorials requiring an on-prem SAP backend.
 
 ### Time to Complete
-**90 Mins**
+**60 Mins**
 ---
 
 [ACCORDION-BEGIN [Step 1:](Download SAP NetWeaver AS ABAP)]

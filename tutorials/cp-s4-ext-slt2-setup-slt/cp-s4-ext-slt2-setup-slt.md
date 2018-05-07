@@ -6,7 +6,7 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
 ---
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **Tutorials:** [Data Mart Scenario (Part 1): Set up SAP HANA database on SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-slt1-hana.html)
+ - **Tutorials:** [Data Mart Scenario (Part 1): Set up SAP HANA database on SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-slt1-hana-mdc.html)
  - **Systems, Tools, Services:**
    -   SAP HANA database in SAP Cloud Platform trial account
    -   SAP S/4HANA backend system in `VirtualBox`
@@ -22,7 +22,7 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
 In this tutorial you will set up a data replication job using the SAP Landscape Transformation Replication Server (SLT). This replication job will replicate sales order data, product data and product ratings from your SAP backend system to the SAP HANA database running in your SAP Cloud Platform account.
 
 ### Time to Complete
-**70 Mins**
+**60 Mins**
 ---
 
 [ACCORDION-BEGIN [Step 1:](Ensure SAP HANA database is running)]

@@ -7,7 +7,7 @@ tags: [ tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform
 
 ## Prerequisites
 - **Proficiency:** Intermediate
-- **Tutorials:** [Create SAP Fiori Launchpad on SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-ui3-cloud-portal)
+- **Tutorials:** [Create SAP Fiori Launchpad on SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-ui3-cloud-portal.html)
 - **Systems, Tools, Services:**
     -  in Google Chrome browser: SAP Web IDE, SAP CP cockpit
 
