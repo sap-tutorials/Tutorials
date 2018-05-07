@@ -155,7 +155,7 @@ In this step you are going to import a new database view to your SAP HANA databa
 
     ![Screenshot](images/w4-u4-s2/pic010--import-archive.jpg)
 
-11. Download and select the [`hana-analytic-service.zip`](https://github.com/SAP/cloud-s4-datamart-tutorial/tree/master/hana) archive (containing the files to create the database view and the OData service) to your download folder from the official SAP GitHub repo.
+11. Download and select the [`hana-analytic-service.zip`](https://github.com/SAP/cloud-s4-datamart-tutorial/tree/master/datamart/hana) archive (containing the files to create the database view and the OData service) to your download folder from the **SAP S/4HANA & SAP Business Suite extension sample apps** GitHub repository.
 
 12. In the Eclipse import wizard, click on **Browse..**, select the `hana-analytic-service.zip` file you just downloaded, and click on **Finish**.
 
@@ -358,7 +358,7 @@ In this step you create a new destination in your SAP Cloud Platform account to 
 
 In this step you will import a prepared SAP Fiori application, which will allow you to analyze the product data exposed from the data mart you created above.
 
-1.  Download the [`productanalytics.zip`](https://github.com/SAP/cloud-s4-datamart-tutorial/tree/master/html5) archive containing the `Product Analytics` SAPUI5 application from the official SAP GitHub repository.
+1.  Download the [`productanalytics.zip`](https://github.com/SAP/cloud-s4-datamart-tutorial/tree/master/datamart/html5) archive containing the `Product Analytics` SAPUI5 application from the **SAP S/4HANA & SAP Business Suite extension sample apps** GitHub repository.
 
 2.  Open `SAP Web IDE` from your [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com/cockpit#/) by navigating to **Neo Trial** | **Services** | **SAP Web IDE**.
 
