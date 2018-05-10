@@ -1,6 +1,6 @@
 ---
 title: Enable OData APIs in SAP NetWeaver
-description: SAP S/4HANA on-premises UI extension (Part 1) - Learn to enable and expose OData services from an SAP S/4HANA on-premises SAP NetWeaver backend system.
+description: SAP S/4HANA on-premises UI extension (Part 1) - Learn to enable and expose OData services from an SAP S/4HANA on-premises SAP NetWeaver backend system. 
 primary_tag: topic>cloud
 tags: [ tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform ]
 ---
