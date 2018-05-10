@@ -33,7 +33,7 @@ Connect to your account in [MS Azure](https://portal.azure.com/) and click **Cre
 You will be presented with **two options**:
 
 - **SAP HANA, express edition (server-only)**: You can connect using SQL clients like SAP HANA Studio or any other client. Includes the Predictive Analytic Library, Machine learning libraries and other advanced analytics. **This version is covered in this tutorial**.
-- **SAP HANA, express edition + XS Advanced Applications** (also referred to as XSA): Includes all of the other features plus the Cloud Foundry based development platform,  SAP Web IDE for SAP HANA, administration cockpit among other applications like SHINE and Smart Data Streaming. OData support, Node.js and Java runtime environments are also included. This option requires more resources. Use this tutorial to learn how to set this version up.
+- **SAP HANA, express edition + XS Advanced Applications** (also referred to as XSA): Includes all of the other features plus the Cloud Foundry based development platform,  SAP Web IDE for SAP HANA, administration cockpit among other applications like SHINE and Smart Data Streaming. OData support, Node.js and Java runtime environments are also included. This option requires more resources. Use [this tutorial](https://www.sap.com/developer/tutorials/hxe-ms-azure-marketplace-xsa.html) to learn how to set this version up.
 
 
 In the search box, enter `HANA express`
