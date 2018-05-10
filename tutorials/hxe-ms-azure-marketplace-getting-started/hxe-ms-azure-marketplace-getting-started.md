@@ -26,7 +26,7 @@ This tutorial will guide you through the provisioning and setup of SAP HANA, exp
 
 [ACCORDION-BEGIN [Step 1: ](Choose your instance)]
 
-Connect to your account in [MS Azure](https://portal.azure.com/) and click on **New**
+Connect to your account in [MS Azure](https://portal.azure.com/) and click **Create resource**
 
 ![Open the Marketplace](marketplace.png)
 
