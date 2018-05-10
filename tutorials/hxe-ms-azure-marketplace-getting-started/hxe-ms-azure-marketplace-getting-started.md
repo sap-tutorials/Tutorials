@@ -69,16 +69,20 @@ You can now enter a password or generate an SSH key. Complete all the fields and
 
 Step 2 in the wizard presents you with the pre-defined resources for your SAP HANA, express edition, instance. You can also review the pricing per month:
 
-
 ![review pricing](pricing.png)
 
 Click on **Select**.
 
-Step 3 will provide you with additional options. Generally, the default values should suit your needs. Review them and modify them if necessary. Click **OK** when ready:
+Step 3 will provide you with additional options. Choose the advanced network options:
+
+![Enable ports](nw.png)
+
+
+Generally, the rest of the default values should suit your needs. Review them and modify them if necessary. Click **OK** when ready:
 
 ![review options](3.png)
 
-Review the final summary and click on **Purchase** to continue:
+Review the final summary and pricing and click on **Create** to continue:
 
 ![final summary](4.png)
 
