@@ -20,15 +20,9 @@ You'll learn how to start the server. At the end of this tutorial you'll be read
 
 ---
 
-> Note:
-> This tutorial is available as a [video](https://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
-> 
-> 
+This tutorial is available as a [video](https://www.sap.com/assetdetail/2016/09/d2900513-8a7c-0010-82c7-eda71af511fa.html).
 
-> Note:
-> This is an on-premise installation tutorial. Other installation methods are available. See [https://www.sap.com/developer/topics/sap-hana-express.html](https://www.sap.com/developer/topics/sap-hana-express.html).
-> 
-> 
+This is an on-premise installation tutorial. Other installation methods are available. See [https://www.sap.com/developer/topics/sap-hana-express.html](https://www.sap.com/developer/topics/sap-hana-express.html).
 
 [ACCORDION-BEGIN [Step 1: ](Note the VM IP address.)]
 
