@@ -5,7 +5,7 @@
   "main": "README.MD",
   "license": "Apache-2.0",
   "scripts": {
-    "test": "node test.js -gt"
+    "test": "node test.js -t"
   },
   "repository": {
     "type": "git",
