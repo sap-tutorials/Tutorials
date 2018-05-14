@@ -2,7 +2,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import sys, os, shutil, time, urllib
+import sys, os, shutil, time, tempfile, errno
 
 sys.path.append(os.path.expanduser("~") + '/models/samples/core/get_started')
 import iris_data
@@ -12,9 +12,9 @@ tf.app.flags.DEFINE_integer('steps'           , 10000           , 'number of tra
 tf.app.flags.DEFINE_integer('batch_size'      , 100             , 'batch size.')
 tf.app.flags.DEFINE_string ('export_path'     , os.path.expanduser("~") + '/export/iris' , 'export path')
 args = tf.app.flags.FLAGS
+
 def main(unused_argv):
   tf.logging.set_verbosity(tf.logging.INFO)
-  session = tf.InteractiveSession()
 
   ####################################################################
   # Begining of training section
@@ -40,70 +40,84 @@ def main(unused_argv):
   ####################################################################
   # End of training section
   ####################################################################
+
+  ####################################################################
   # Begining of export section
   ####################################################################
+  # Define the input receiver spec
+  feature_spec = {
+      'PetalLength': tf.placeholder(dtype=tf.float32, shape=[None,1], name='PetalLength'),
+      'PetalWidth' : tf.placeholder(dtype=tf.float32, shape=[None,1], name='PetalWidth'),
+      'SepalLength': tf.placeholder(dtype=tf.float32, shape=[None,1], name='SepalLength'),
+      'SepalWidth' : tf.placeholder(dtype=tf.float32, shape=[None,1], name='SepalWidth'),
+  }
   # Define the input receiver for the raw tensors
-  def _serving_input_receiver_fn():
-    feature_spec = {
-      'PetalLength': tf.placeholder(dtype=tf.float32, shape=[1,1], name='PetalLength'),
-      'PetalWidth' : tf.placeholder(dtype=tf.float32, shape=[1,1], name='PetalWidth'),
-      'SepalLength': tf.placeholder(dtype=tf.float32, shape=[1,1], name='SepalLength'),
-      'SepalWidth' : tf.placeholder(dtype=tf.float32, shape=[1,1], name='SepalWidth'),
-    }
+  def serving_input_receiver_fn():
     return tf.estimator.export.build_raw_serving_input_receiver_fn(feature_spec)()
 
+  # decreate a temp dir for the raw model export
+  tmp_model_dir = tempfile.mkdtemp()
+
   # export the raw model
-  path = classifier.export_savedmodel(args.export_path+ "-tmp", serving_input_receiver_fn=_serving_input_receiver_fn)
+  raw_model_path = classifier.export_savedmodel(tmp_model_dir, serving_input_receiver_fn=serving_input_receiver_fn)
 
-  # Note: one of the output is stored as an dt_int64 which is not yet supported in HANA, so we will need to cast it to a float
-  tf.saved_model.loader.load(session, [tf.saved_model.tag_constants.SERVING], path)
+  with tf.Graph().as_default():
+    with tf.Session() as session:
+      # reload the model to add the default signature
+      tf.saved_model.loader.load(session, [tf.saved_model.tag_constants.SERVING], raw_model_path)
 
-  # build tensors info for the inputs & the outputs into the signature def
-  signature_def = (
-    tf.saved_model.signature_def_utils.build_signature_def(
-      inputs = {
-        'PetalLength': tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('PetalLength_1:0')),
-        'PetalWidth' : tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('PetalWidth_1:0')),
-        'SepalLength': tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('SepalLength_1:0')),
-        'SepalWidth' : tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('SepalWidth_1:0')),
-      },
-      outputs = {
-        'predicted_class_id' : tf.saved_model.utils.build_tensor_info(
-                    # cast the ExpandDims tensors into a float instead of an int64
-                    tf.cast (
-                        tf.get_default_graph().get_tensor_by_name('dnn/head/predictions/ExpandDims:0')
-                        , dtype = tf.float32
-                    )
-                ),
-        'probabilities'      : tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('dnn/head/predictions/probabilities:0'))
-      },
-      method_name = tf.saved_model.signature_constants.PREDICT_METHOD_NAME
-    )
-  )
-  # recreate the model directory
-  shutil.rmtree(args.export_path)
-  os.makedirs(args.export_path)
-  shutil.rmtree(args.export_path)
+      # build tensors info for the inputs & the outputs into the signature def
+      signature_def = (
+        tf.saved_model.signature_def_utils.build_signature_def(
+          inputs = {
+            'PetalLength': tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('PetalLength:0')),
+            'PetalWidth' : tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('PetalWidth:0')),
+            'SepalLength': tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('SepalLength:0')),
+            'SepalWidth' : tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('SepalWidth:0')),
+          },
+          outputs = {
+            'predicted_class_id' : tf.saved_model.utils.build_tensor_info(
+              # cast the ExpandDims tensors into a float instead of an int64
+              tf.cast (
+                tf.get_default_graph().get_tensor_by_name(
+                  'dnn/head/predictions/ExpandDims:0'),
+                  dtype = tf.float32
+                )
+              ),
+            'probabilities'      : tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('dnn/head/predictions/probabilities:0'))
+          },
+          method_name = tf.saved_model.signature_constants.PREDICT_METHOD_NAME
+        )
+      )
 
-  # save the model with proper format
-  builder = tf.saved_model.builder.SavedModelBuilder(args.export_path + "/" + str(int(round(time.time()))))
-  builder.add_meta_graph_and_variables (
-      session,
-      [tf.saved_model.tag_constants.SERVING],
-      signature_def_map = {
-          tf.saved_model.signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY : signature_def
-      },
-  )
-  builder.save(as_text=False)
+      # remove all previous final models
+      try:
+        shutil.rmtree(args.export_path)
+      except OSError as e:
+        if e.errno != errno.EEXIST and e.errno != errno.ENOENT:
+          raise
 
-  # remove the temporary model
-  shutil.rmtree(path)
+      # save the model with proper format
+      builder = tf.saved_model.builder.SavedModelBuilder(args.export_path + "/" + str(int(round(time.time()))))
+      builder.add_meta_graph_and_variables (
+        session,
+        [tf.saved_model.tag_constants.SERVING],
+        signature_def_map = {
+            tf.saved_model.signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY : signature_def
+        },
+      )
+      # save the model with a default signature
+      builder.save(as_text=False)
+
+  # remove the intermediate saved model
+  try:
+    shutil.rmtree(tmp_model_dir)
+  except OSError as e:
+    if e.errno != errno.EEXIST and e.errno != errno.ENOENT:
+      raise
   ####################################################################
   # End of export section
   ####################################################################
-
-  tf.reset_default_graph()
-  session.close()
 
 if __name__ == '__main__':
     tf.app.run()

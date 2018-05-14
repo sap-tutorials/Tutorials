@@ -70,7 +70,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import sys, os, shutil, time, urllib
+import sys, os, shutil, time, tempfile, errno
 
 sys.path.append('/home/tmsadm/models/samples/core/get_started')
 import iris_data
@@ -78,12 +78,11 @@ import tensorflow as tf
 
 tf.app.flags.DEFINE_integer('steps'           , 10000           , 'number of training steps.')
 tf.app.flags.DEFINE_integer('batch_size'      , 100             , 'batch size.')
-tf.app.flags.DEFINE_string ('export_path'     , '/home/tmsadm/export/iris' , 'export path')
+tf.app.flags.DEFINE_string ('export_path'     , os.path.expanduser("~") + '/export/iris' , 'export path')
 args = tf.app.flags.FLAGS
 
 def main(unused_argv):
   tf.logging.set_verbosity(tf.logging.INFO)
-  session = tf.InteractiveSession()
 
   ####################################################################
   # Begining of training section
@@ -109,64 +108,77 @@ def main(unused_argv):
   ####################################################################
   # End of training section
   ####################################################################
+
+  ####################################################################
   # Begining of export section
   ####################################################################
+  # Define the input receiver spec
+  feature_spec = {
+      'PetalLength': tf.placeholder(dtype=tf.float32, shape=[None,1], name='PetalLength'),
+      'PetalWidth' : tf.placeholder(dtype=tf.float32, shape=[None,1], name='PetalWidth'),
+      'SepalLength': tf.placeholder(dtype=tf.float32, shape=[None,1], name='SepalLength'),
+      'SepalWidth' : tf.placeholder(dtype=tf.float32, shape=[None,1], name='SepalWidth'),
+  }
   # Define the input receiver for the raw tensors
-  def _serving_input_receiver_fn():
-    feature_spec = {
-      'PetalLength': tf.placeholder(dtype=tf.float32, shape=[1,1], name='PetalLength'),
-      'PetalWidth' : tf.placeholder(dtype=tf.float32, shape=[1,1], name='PetalWidth'),
-      'SepalLength': tf.placeholder(dtype=tf.float32, shape=[1,1], name='SepalLength'),
-      'SepalWidth' : tf.placeholder(dtype=tf.float32, shape=[1,1], name='SepalWidth'),
-    }
+  def serving_input_receiver_fn():
     return tf.estimator.export.build_raw_serving_input_receiver_fn(feature_spec)()
 
+  # decreate a temp dir for the raw model export
+  tmp_model_dir = tempfile.mkdtemp()
+
   # export the raw model
-  path = classifier.export_savedmodel(args.export_path+ "-tmp", serving_input_receiver_fn=_serving_input_receiver_fn)
+  raw_model_path = classifier.export_savedmodel(tmp_model_dir, serving_input_receiver_fn=serving_input_receiver_fn)
 
-  # Note: one of the output is stored as an dt_int64 which is not yet supported in HANA, so we will need to cast it to a float
-  tf.saved_model.loader.load(session, [tf.saved_model.tag_constants.SERVING], path)
+  with tf.Graph().as_default():
+    with tf.Session() as session:
+      # reload the model to add the default signature
+      tf.saved_model.loader.load(session, [tf.saved_model.tag_constants.SERVING], raw_model_path)
 
-  # build tensors info for the inputs & the outputs into the signature def
-  signature_def = (
-    tf.saved_model.signature_def_utils.build_signature_def(
-      inputs = {
-        'PetalLength': tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('PetalLength_1:0')),
-        'PetalWidth' : tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('PetalWidth_1:0')),
-        'SepalLength': tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('SepalLength_1:0')),
-        'SepalWidth' : tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('SepalWidth_1:0')),
-      },
-      outputs = {
-        'predicted_class_id' : tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('dnn/head/predictions/ExpandDims:0')),
-        'probabilities'      : tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('dnn/head/predictions/probabilities:0'))
-      },
-      method_name = tf.saved_model.signature_constants.PREDICT_METHOD_NAME
-    )
-  )
-  # recreate the model directory
-  shutil.rmtree(args.export_path)
-  os.makedirs(args.export_path)
-  shutil.rmtree(args.export_path)
+      # build tensors info for the inputs & the outputs into the signature def
+      signature_def = (
+        tf.saved_model.signature_def_utils.build_signature_def(
+          inputs = {
+            'PetalLength': tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('PetalLength:0')),
+            'PetalWidth' : tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('PetalWidth:0')),
+            'SepalLength': tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('SepalLength:0')),
+            'SepalWidth' : tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('SepalWidth:0')),
+          },
+          outputs = {
+            'predicted_class_id' : tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('dnn/head/predictions/ExpandDims:0')),
+            'probabilities'      : tf.saved_model.utils.build_tensor_info(tf.get_default_graph().get_tensor_by_name('dnn/head/predictions/probabilities:0'))
+          },
+          method_name = tf.saved_model.signature_constants.PREDICT_METHOD_NAME
+        )
+      )
 
-  # save the model with proper format
-  builder = tf.saved_model.builder.SavedModelBuilder(args.export_path + "/" + str(int(round(time.time()))))
-  builder.add_meta_graph_and_variables (
-      session,
-      [tf.saved_model.tag_constants.SERVING],
-      signature_def_map = {
-          tf.saved_model.signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY : signature_def
-      },
-  )
-  builder.save(as_text=False)
+      # remove all previous final models
+      try:
+        shutil.rmtree(args.export_path)
+      except OSError as e:
+        if e.errno != errno.EEXIST and e.errno != errno.ENOENT:
+          raise
 
-  # remove the temporary model
-  shutil.rmtree(path)
+      # save the model with proper format
+      builder = tf.saved_model.builder.SavedModelBuilder(args.export_path + "/" + str(int(round(time.time()))))
+      builder.add_meta_graph_and_variables (
+        session,
+        [tf.saved_model.tag_constants.SERVING],
+        signature_def_map = {
+            tf.saved_model.signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY : signature_def
+        },
+      )
+      # save the model with a default signature
+      builder.save(as_text=False)
+
+  # remove the intermediate saved model
+  try:
+    shutil.rmtree(tmp_model_dir)
+  except OSError as e:
+    if e.errno != errno.EEXIST and e.errno != errno.ENOENT:
+      raise
   ####################################################################
   # End of export section
   ####################################################################
-
-  tf.reset_default_graph()
-  session.close()
 
 if __name__ == '__main__':
     tf.app.run()
@@ -263,7 +275,6 @@ def main(_):
 
     cursor.close()
     connection.close()
-
 if __name__ == '__main__':
     tf.app.run()
 ```
@@ -306,15 +317,13 @@ You can now start the TensorFlow Serving `ModelServer` using the following comma
 > **Note:** As of the publication of this tutorial, there is no ***graceful*** shutdown command for the TensorFlow Serving `ModelServer`. Therefore you will need to kill the process manually.
 
 ```shell
-cd ~
-~/serving/bazel-bin/tensorflow_serving/model_servers/tensorflow_model_server --model_config_file=./export/config.cnf
+tensorflow_serving/model_servers/tensorflow_model_server --model_config_file=./export/config.cnf
 ```
 
 You can use the following command if you prefer to run it as a background process with all outputs redirected to a log file:
 
 ```shell
-cd ~/
-nohup  ~/serving/bazel-bin/tensorflow_serving/model_servers/tensorflow_model_server --model_config_file=./export/config.cnf > ./tensorflow_model_server.log 2>&1  </dev/null &
+nohup  tensorflow_model_server --model_config_file=./export/config.cnf > ./tensorflow_model_server.log 2>&1  </dev/null &
 ```
 
 [DONE]
@@ -328,7 +337,7 @@ Create the following file `~/export/iris_test_client.py` using the content of th
 
 ```python
 """
-A client that talks to tensorflow_model_server loaded with iris model.
+A client that talks to tensorflow_model_server serving the iris model.
 """
 from __future__ import print_function
 
@@ -344,7 +353,7 @@ import tensorflow as tf
 from tensorflow_serving.apis import predict_pb2
 from tensorflow_serving.apis import prediction_service_pb2
 
-sys.path.append('/home/tmsadm/models/samples/core/get_started')
+sys.path.append(os.path.expanduser("~") + '/models/samples/core/get_started')
 import iris_data
 
 from hdbcli import dbapi
@@ -355,7 +364,7 @@ tf.app.flags.DEFINE_integer('tmsport', 8500        , 'PredictionService port')
 tf.app.flags.DEFINE_string ('hxehost', 'localhost' , 'HXE host')
 tf.app.flags.DEFINE_integer('hxeport', 39015       , 'HXE port')
 tf.app.flags.DEFINE_string ('hxeusr' , 'ML_USER'   , 'HXE user name')
-tf.app.flags.DEFINE_string ('hxepwd' , '<< password >'  , 'HXE password')
+tf.app.flags.DEFINE_string ('hxepwd' , '<< password >>'  , 'HXE password')
 
 args = tf.app.flags.FLAGS
 
@@ -391,7 +400,11 @@ def main(_):
         request.inputs['SepalWidth' ].CopyFrom(tf.contrib.util.make_tensor_proto(SepalWidth , shape=[1]))
         response = stub.Predict(request, 100)
 
-        predicted_class_id = response.outputs['predicted_class_id'].int64_val[0]
+        # in case you are using SPS02 or prior, the int64 output is not supported
+        if(len(response.outputs['predicted_class_id'].int64_val) > 0) :
+          predicted_class_id = response.outputs['predicted_class_id'].int64_val[0]
+        else:
+          predicted_class_id = int(response.outputs['predicted_class_id'].float_val[0])
         predicted_class_name = iris_data.SPECIES[predicted_class_id]
         predicted_class_probability = response.outputs['probabilities'].float_val[int(predicted_class_id)]
 
@@ -401,6 +414,7 @@ def main(_):
 
 if __name__ == '__main__':
     tf.app.run()
+
 ```
 
 > **Note:** Make sure to update the `<< password >>` in the script
@@ -488,14 +502,15 @@ SET SCHEMA EML_DATA;
 -- DROP TYPE TT_IRIS_FEATURES_PETALLENGTH;
 -- DROP TYPE TT_IRIS_FEATURES_PETALWIDTH;
 -- DROP TYPE TT_IRIS_RESULTS;
+--
 -- DROP TABLE IRIS_PROC_PARAM_TABLE;
 -- DROP TABLE IRIS_PARAMS;
 -- DROP TABLE IRIS_RESULTS;
+--
 -- DROP VIEW IRIS_FEATURES_SEPALLENGTH;
 -- DROP VIEW IRIS_FEATURES_SEPALWIDTH;
 -- DROP VIEW IRIS_FEATURES_PETALLENGTH;
 -- DROP VIEW IRIS_FEATURES_PETALWIDTH;
-
 -- Define table types for iris
 CREATE TYPE TT_IRIS_PARAMS                AS TABLE ("Parameter" VARCHAR(100), "Value" VARCHAR(100));
 CREATE TYPE TT_IRIS_FEATURES_SEPALLENGTH  AS TABLE (SEPALLENGTH   FLOAT);
@@ -503,10 +518,10 @@ CREATE TYPE TT_IRIS_FEATURES_SEPALWIDTH   AS TABLE (SEPALWIDTH    FLOAT);
 CREATE TYPE TT_IRIS_FEATURES_PETALLENGTH  AS TABLE (PETALLENGTH   FLOAT);
 CREATE TYPE TT_IRIS_FEATURES_PETALWIDTH   AS TABLE (PETALWIDTH    FLOAT);
 CREATE TYPE TT_IRIS_RESULTS   AS TABLE (
+    -- when SPS02 or prior, make PREDICTED_CLASS_ID type FLOAT instead of INTEGER
     PREDICTED_CLASS_ID INTEGER,
     PROBABILITIES0 FLOAT,  PROBABILITIES1 FLOAT,  PROBABILITIES2 FLOAT
 );
-
 -- Create description table for procedure creation
 CREATE COLUMN TABLE IRIS_PROC_PARAM_TABLE (
     POSITION        INTEGER,
@@ -514,7 +529,6 @@ CREATE COLUMN TABLE IRIS_PROC_PARAM_TABLE (
     TYPE_NAME       NVARCHAR(256),
     PARAMETER_TYPE  VARCHAR(7)
 );
-
 -- Drop the wrapper procedure
 CALL SYS.AFLLANG_WRAPPER_PROCEDURE_DROP(CURRENT_SCHEMA, 'IRIS');
 -- Populate the wrapper procedure parameter table
@@ -539,15 +553,15 @@ CREATE VIEW IRIS_FEATURES_PETALWIDTH   AS SELECT PETALWIDTH   FROM TF_DATA.IRIS_
 
 CREATE TABLE IRIS_RESULTS LIKE TT_IRIS_RESULTS;
 
--- Perform linear regression
+-- Call the TensorFlow model
 CALL IRIS (IRIS_PARAMS, IRIS_FEATURES_PETALLENGTH, IRIS_FEATURES_PETALWIDTH, IRIS_FEATURES_SEPALLENGTH, IRIS_FEATURES_SEPALWIDTH, IRIS_RESULTS) WITH OVERVIEW;
 
 SELECT
-	D.ID, D.SEPALLENGTH, D.SEPALWIDTH, D.PETALLENGTH, D.PETALWIDTH, D.SPECIES , R.*
+  D.ID, D.SEPALLENGTH, D.SEPALWIDTH, D.PETALLENGTH, D.PETALWIDTH, D.SPECIES , R.*
 FROM
-	(SELECT *, ROW_NUMBER() OVER() AS RN FROM IRIS_RESULTS) R
+  (SELECT *, ROW_NUMBER() OVER() AS RN FROM IRIS_RESULTS) R
 JOIN
-	(SELECT *, ROW_NUMBER() OVER( ORDER BY ID ) AS RN FROM TF_DATA.IRIS_DATA) D ON R.RN = D.RN;
+  (SELECT *, ROW_NUMBER() OVER( ORDER BY ID ) AS RN FROM TF_DATA.IRIS_DATA) D ON R.RN = D.RN;
 ```
 The output result includes both the from the test set and the result. You can compare the `SPECIES` and `CLASS_IDS` columns which should be identical.
 

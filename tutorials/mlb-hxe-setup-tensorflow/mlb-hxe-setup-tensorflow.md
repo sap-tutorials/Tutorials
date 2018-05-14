@@ -22,7 +22,7 @@ Finally, you will learn how to configure your SAP HANA, express edition instance
 ## Details
 
 ### Time to Complete
-**120 Min**.
+**20 to 120 Min**.
 
 [ACCORDION-BEGIN [Info: ](SAP HANA External Machine Learning Library)]
 
@@ -151,7 +151,7 @@ sudo su -l tmsadm
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Install Required System Packages)]
+[ACCORDION-BEGIN [Step 3: ](Install TensorFlow Serving dependencies)]
 
 In order to successfully compile TensorFlow Serving `ModelServer`, you will need to install a C/C++ compiler.
 
@@ -162,6 +162,22 @@ Python and related tools are also required to complete the TensorFlow compilatio
 By default, SAP HANA, express edition setup a Python 2.7 version, but this one doesn't include the `numpy`, `pip`, `virtualenv` & `devel` packages.
 
 Therefore, you will add these missing packages too.
+
+#### For Debian or Ubuntu system:
+
+If you are planning on running TensorFlow Serving on `Debian` or `Ubuntu` system, you can simply follow the **Packages** section details from the [TensorFlow Serving setup instructions](https://www.tensorflow.org/serving/setup#packages).
+
+Then, install the `virtualenv` package using the following command:
+
+```shell
+sudo apt-get install virtualenv
+```
+
+Make sure that you have a Python 2.7 installation:
+
+```shell
+sudo apt-get install python-numpy python-dev python-pip python-wheel
+```
 
 #### For SUSE Linux Enterprise Server (including the SAP HANA, express edition VM):
 
@@ -311,7 +327,7 @@ sudo yum install \
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Install TensorFlow ModelServer Pre-Requisites)]
+[ACCORDION-BEGIN [Step 4: ](Install TensorFlow Serving Python Pre-Requisites)]
 
 Before install the TensorFlow Serving `ModelServer`, you will need to install a set of pre-requisites.
 
@@ -319,7 +335,7 @@ First, you have to create and activate a Python Virtual Environment (named `tms`
 
 ```shell
 cd ~/
-virtualenv --system-site-packages ~/tms
+virtualenv --python=python2.7 --system-site-packages ~/tms
 source ~/tms/bin/activate
 ```
 
@@ -327,40 +343,6 @@ Your terminal prompt should now look like the following:
 
 ```
 (tms) tmsadm@hxehost:~>
-```
-
-#### Bazel:
-
-`Bazel` is an open-source build and test tool similar to `Make`, `Maven`, and `Gradle`. It uses a human-readable, high-level build language.
-`Bazel` supports projects in multiple languages and builds outputs for multiple platforms.
-
-TensorFlow uses `Bazel` for its compilation. You can find the `Bazel` installation instructions [online](https://docs.bazel.build/versions/master/install.html).
-
-You can install `Bazel` 0.11.1 in a *user* mode using the following commands:
-
-```shell
-cd ~/
-curl -L https://github.com/bazelbuild/bazel/releases/download/0.11.1/bazel-0.11.1-installer-linux-x86_64.sh -o ~/bazel-0.11.1-installer-linux-x86_64.sh
-chmod +x ~/bazel-0.11.1-installer-linux-x86_64.sh
-./bazel-0.11.1-installer-linux-x86_64.sh --user
-export PATH="$PATH:$HOME/bin"
-rm ~/bazel-0.11.1-installer-linux-x86_64.sh
-```
-
-You can now check that `Bazel` 0.11.1 was properly installed using the following command:
-
-```shell
-bazel version
-```
-
-The output should look like the following:
-
-```
-Build label: 0.11.1
-Build target: bazel-out/k8-opt/bin/src/main/java/com/google/devtools/build/lib/bazel/BazelServer_deploy.jar
-Build time: ...
-Build timestamp: ...
-Build timestamp as int: ...
 ```
 
 #### Pip:
@@ -413,6 +395,8 @@ exit()
 
 A **Hello, TensorFlow!** message should be printed out.
 
+#### TensorFlow Serving API:
+
 And finally, the TensorFlow Serving API:
 
 ```shell
@@ -422,11 +406,50 @@ pip install tensorflow-serving-api
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Compile TensorFlow ModelServer)]
+[ACCORDION-BEGIN [Step 5: ](Install TensorFlow Serving)]
 
-As stated previously, TensorFlow Serving `ModelServer` binaries are only available for `Debian` Linux distribution.
+As stated previously, TensorFlow Serving `ModelServer` installable binaries are only available for `Debian` & `Ubuntu` Linux distribution.
 
-Therefore, we will need to compile the binary locally for SUSE Linux Enterprise Server and Red Hat Enterprise Linux.
+Therefore, on SUSE Linux Enterprise Server or Red Hat Enterprise Linux, you will need to compile the binary locally as detailed in this step.
+
+
+If you are planning on running TensorFlow Serving on `Debian` or `Ubuntu`system, you can simply following the [TensorFlow Serving setup instructions](https://www.tensorflow.org/serving/setup#installing_using_apt-get) and move to the next step.
+
+#### Bazel:
+
+`Bazel` is an open-source build and test tool similar to `Make`, `Maven`, and `Gradle`. It uses a human-readable, high-level build language.
+`Bazel` supports projects in multiple languages and builds outputs for multiple platforms.
+
+TensorFlow uses `Bazel` for its compilation. You can find the `Bazel` installation instructions [online](https://docs.bazel.build/versions/master/install.html).
+
+You can install `Bazel` 0.11.1 in a *user* mode using the following commands:
+
+```shell
+cd ~/
+curl -L https://github.com/bazelbuild/bazel/releases/download/0.11.1/bazel-0.11.1-installer-linux-x86_64.sh -o ~/bazel-0.11.1-installer-linux-x86_64.sh
+chmod +x ~/bazel-0.11.1-installer-linux-x86_64.sh
+./bazel-0.11.1-installer-linux-x86_64.sh --user
+export PATH="$PATH:$HOME/bin"
+rm ~/bazel-0.11.1-installer-linux-x86_64.sh
+```
+
+You can now check that `Bazel` 0.11.1 was properly installed using the following command:
+
+```shell
+bazel version
+```
+
+The output should look like the following:
+
+```
+Build label: 0.11.1
+Build target: bazel-out/k8-opt/bin/src/main/java/com/google/devtools/build/lib/bazel/BazelServer_deploy.jar
+Build time: ...
+Build timestamp: ...
+Build timestamp as int: ...
+```
+
+#### Clone TensorFlow Serving Git repository:
 
 The first step is to clone the TensorFlow Serving `ModelServer` locally using the following commands:
 
@@ -435,6 +458,8 @@ cd ~/
 git clone --recurse-submodules https://github.com/tensorflow/serving
 cd ~/serving
 ```
+
+#### Compile TensorFlow Serving:
 
 Then you will compile the source code with `Bazel` using the following command:
 
@@ -471,12 +496,28 @@ cd ~/serving
 bazel build -c opt //tensorflow_serving/model_servers:tensorflow_model_server
 ```
 
+#### Add TensorFlow Serving to the path:
+
+In order to permanently add the TensorFlow Serving `ModelServer` executable to your user path, you will add the compiled binary directory path in your profile file:
+
+```shell
+cd ~/
+echo "export PATH=$PATH:/home/tmsadm/serving/bazel-bin/tensorflow_serving/model_servers/" >> ~/.profile
+source .profile
+```
+
+Now you can call directly the TensorFlow Serving `ModelServer` executable without prefixing with the path.
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Start TensorFlow ModelServer)]
+[ACCORDION-BEGIN [Step 6: ](Start TensorFlow Serving)]
 
-Now that your compilation is completed, we can start the TensorFlow Serving `ModelServer`.
+Create a model export directory where you will store your TensorFlow Serving configuration and exported models:
+
+```shell
+mkdir -p ~/export
+```
 
 First, create the following empty model configuration file `/home/tmsadm/export/config.cnf` and add the following content:
 
@@ -484,19 +525,16 @@ First, create the following empty model configuration file `/home/tmsadm/export/
 model_config_list: {
 }
 ```
-
-You can now start the TensorFlow Serving `ModelServer` using the following command:
+Now that your installation and configuration is completed, you can start the TensorFlow Serving using the following command:
 
 ```shell
-cd ~/serving
-~/serving/bazel-bin/tensorflow_serving/model_servers/tensorflow_model_server --port=8500 --model_config_file=/home/tmsadm/export/config.cnf
+tensorflow_model_server --port=8500 --model_config_file=/home/tmsadm/export/config.cnf
 ```
 
 You can use the following command if you prefer to run it as a background process with all outputs redirected:
 
 ```shell
-cd ~/serving
-nohup  ~/serving/bazel-bin/tensorflow_serving/model_servers/tensorflow_model_server -port=8500 --model_config_file=/home/tmsadm/export/config.cnf > /home/tmsadm/export/tensorflow_model_server.log 2>&1  </dev/null &
+nohup  tensorflow_model_server -port=8500 --model_config_file=/home/tmsadm/export/config.cnf > /home/tmsadm/export/tensorflow_model_server.log 2>&1  </dev/null &
 ```
 
 [DONE]
@@ -504,7 +542,7 @@ nohup  ~/serving/bazel-bin/tensorflow_serving/model_servers/tensorflow_model_ser
 
 [ACCORDION-BEGIN [Step 7: ](Configure SAP HANA External Machine Learning)]
 
-Now that the TensorFlow Serving `ModelServer` is up and running, you will need to add its configuration to your SAP HANA, express edition instance.
+Now, that the TensorFlow Serving `ModelServer` is up and running, you will need to add its configuration to your SAP HANA, express edition instance.
 
 Before moving forward with the EML configuration, you need to grant the proper role to the `ML_USER` created during the [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html).
 
