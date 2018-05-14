@@ -5,7 +5,7 @@
   "main": "README.MD",
   "license": "Apache-2.0",
   "scripts": {
-    "test": "node test.js -pt"
+    "test": "node test.js -t"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,9 @@
     "markdown-spellcheck": "^1.3.1",
     "mkdirp": "^0.5.1",
     "progress": "^2.0.0",
-    "recursive-readdir": "^2.2.1"
+    "recursive-readdir": "^2.2.1",
+    "request": "^2.85.0",
+    "request-promise-native": "^1.0.5",
+    "fs-extra": "^6.0.0"
   }
 }
