@@ -2,7 +2,7 @@
 title: Create ABAPDoc comments in your class
 description: Learn how to maintain ABAP Doc documentation for your class
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [ tutorial>beginner, topic>abap-development ]
 ---
 
 ## Prerequisites  

@@ -306,8 +306,10 @@ pip install \
   sqlalchemy \
   sqlalchemy-hana \
   ipython-sql \
-  /usr/sap//HXE/home/sap/hdbclient/hdbcli-2.2.36.tar.gz
+  /usr/sap/hdbclient/hdbcli-2.2.36.tar.gz
 ```
+
+> **Note:** the `hdbcli` tar file may be with a different version than the one displayed above
 
 Once completed, you can create your first Python notebook using the **New** menu on the right end side:
 
@@ -334,7 +336,7 @@ Then add a second cell with the following content:
 
 Then, hit the **Run** button. You should get the following output on the screen:
 
-![Jupyter](06-1.png)
+![Jupyter](06-2.png)
 
 You can then manipulate the output using the following
 
@@ -396,6 +398,8 @@ Jupyter allows you to run R, but before you will need to enable it.
 
 To so, you will need to install `ÌKernel` as described in the following [installation guide](https://irkernel.github.io/installation/).
 
+For more details about the R kernel in Jupyter you can check the site : [https://irkernel.github.io/](https://irkernel.github.io/).
+
 All the steps detailed in the documentation are to be executed in a R console.
 
 It assumes that you have a local R installation. If not done yet, you can use the instructions from the following tutorial: [Configure the SAP HANA R integration with SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-setup-r.html)
@@ -403,8 +407,6 @@ It assumes that you have a local R installation. If not done yet, you can use th
 Once the installation is completed successfully, you will have now the ability to create R kernels:
 
 ![Jupyter](08-1.png)
-
-For more details about the R kernel in Jupyter you can check the site : [https://irkernel.github.io/](https://irkernel.github.io/).
 
 You can then consume HANA data either via JDBC or ODBC.
 

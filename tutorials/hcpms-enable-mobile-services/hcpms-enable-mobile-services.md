@@ -1,7 +1,6 @@
 ---
 title: Enable SAP Cloud Platform mobile services for development and operations
 description: Enable and configure the mobile services for development and operations in SAP Cloud Platform
-auto_validation: true
 primary_tag: topic>mobile
 tags: [products>sap-cloud-platform, topic>cloud, topic>mobile, tutorial>intermediate ]
 ---
@@ -24,7 +23,7 @@ In this tutorial, you will enable and configure SAP Cloud Platform mobile servic
 
 Go to your [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com) and log on.
 
-[DONE]
+
 
 [ACCORDION-END]
 
@@ -38,6 +37,6 @@ If Development & Operations is not enabled, click on the blue **Enable** button 
 
 ![Enable HCPms](mg5-1-03.png)
 
-[DONE]
+
 
 [ACCORDION-END]
