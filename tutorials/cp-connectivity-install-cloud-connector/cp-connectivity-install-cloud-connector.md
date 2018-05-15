@@ -146,7 +146,7 @@ After the installation of the Cloud Connector you can see that its **Security St
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Replace self-signed UI certificate)]
+[ACCORDION-BEGIN [Step 5: ](Replace self-signed UI certificate (optional))]
 
 If you just installed the Cloud Connector for your own use to try it out, you can leave out this step. But as soon as you use the Cloud Connector productively in your company, other colleagues would like to be sure that the Web address used for the Cloud Connector is valid. Now what is this all about?
 
@@ -193,9 +193,15 @@ After the restart the certificate error should no longer appear.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Set up a service user (Windows only))]
+[ACCORDION-BEGIN [Step 6: ](Manage the Cloud Connector service)]
 
-After a successful installation the Cloud Connector you do not see much. The Cloud Connector is started as a background service on your PC. For example, in Windows, it is available as a service, in Linux it is started as a daemon.
+The installer version of the Cloud Connector is associated to a service that runs in the background on your PC.
+
+In Linux, you manage the Cloud Connector service using the following command syntax:
+
+```shell
+service scc_daemon stop|restart|start|status
+```
 
 In Windows, services can be started and stopped by all users of a PC by default. To ensure a minimum level of security you should restrict the rights to a specific user on your PC. Service users are specific to Windows only.
 
