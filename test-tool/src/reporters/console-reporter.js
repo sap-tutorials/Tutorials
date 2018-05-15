@@ -43,7 +43,7 @@ const generateReport = (checkResult, filesCount) => {
             reportStructure.props.tagCheck.messages.push(commonError(tagsCheckResult, fileName)); 
         }
         if(validationsCheckResult) {
-            validationsCheckResult.forEach(msg => reportStructure.props.validationsCheck.messages.push(commonError(msg)));
+            validationsCheckResult.forEach(msg => reportStructure.props.validationsCheck.messages.push(commonError(msg, fileName)));
         }
         if(linkCheckResult) {
             const { linkCheck: { files } } = reportStructure.props;
