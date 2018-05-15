@@ -10,7 +10,8 @@ tags: [ tutorial>intermediate, products>sap-s-4hana ]
 -   **Tutorials:** [Install openSUSE in VirtualBox Virtual Machine](https://www.sap.com/developer/tutorials/cp-s4-ext-install-linux.html)
 
 ## Next Steps
--   [Set up SAP HANA database on SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-slt1-hana-mdc.html)
+-   [Tutorial Group: Create custom UI extension for Business Suite app on Cloud Platform](https://www.sap.com/developer/groups/cp-s4-ext-ui.html)
+-   [Tutorial Group: Create SAP S/4HANA data mart on SAP Cloud Platform](https://www.sap.com/developer/groups/cp-s4-ext-datamart.html)
 
 ## Details
 ### You will learn
