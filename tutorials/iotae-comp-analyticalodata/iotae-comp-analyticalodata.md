@@ -3,7 +3,7 @@ title: Using Analytical OData in IoT Application Enablement (AE)
 description: In this tutorial we are going to explore the Analytical OData Service in IoT AE to get aggregates on data very quickly.
 auto_validation: false
 primary_tag: topic>internet-of-things
-tags: [  tutorial>beginner ]
+tags: [  products>sap-leonardo, tutorial>beginner  ]
 ---
 
 ## Prerequisites  
