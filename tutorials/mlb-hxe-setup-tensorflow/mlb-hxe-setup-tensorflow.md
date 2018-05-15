@@ -502,7 +502,7 @@ In order to permanently add the TensorFlow Serving `ModelServer` executable to y
 
 ```shell
 cd ~/
-echo "export PATH=$PATH:/home/tmsadm/serving/bazel-bin/tensorflow_serving/model_servers/" >> ~/.profile
+echo "export PATH=$PATH:/home/tmsadm/tms/bin:/home/tmsadm/serving/bazel-bin/tensorflow_serving/model_servers/" >> ~/.profile
 source .profile
 ```
 
