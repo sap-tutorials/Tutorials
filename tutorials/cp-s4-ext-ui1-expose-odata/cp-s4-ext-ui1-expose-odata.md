@@ -1,6 +1,6 @@
 ---
 title: Enable OData APIs in SAP NetWeaver
-description: SAP S/4HANA on-premises UI extension (Part 1) - Learn to enable and expose OData services from an SAP S/4HANA on-premises SAP NetWeaver backend system.
+description: SAP S/4HANA on-premises UI extension (Part 1) - Learn to enable and expose OData services from an SAP S/4HANA on-premises SAP NetWeaver backend system. 
 primary_tag: topic>cloud
 tags: [ tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform ]
 ---
@@ -14,7 +14,7 @@ tags: [ tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform
     -  SAP NetWeaver AS ABAP 7.50 SP2
 
 ## Next Steps
-[Exposing Back-End APIs to the Cloud](https://www.sap.com/developer/tutorials/cp-s4-ext-ui2-cloud-connector.html)
+[SAP S/4HANA on-premises UI extension (Part 2): Exposing Back-End APIs to the Cloud](https://www.sap.com/developer/tutorials/cp-s4-ext-ui2-cloud-connector.html)
 
 ## Details
 ### You will learn
@@ -27,7 +27,7 @@ You will learn how to enable and expose OData services from a SAP NetWeaver back
 
 [ACCORDION-BEGIN [Step 1:](Check SAP NetWeaver is operational)]
 
-In this step you will verify that the `SAP NetWeaver` system you installed in the preceding tutorial is operational. 
+In this step you will verify that the `SAP NetWeaver` system you installed in the preceding tutorial is operational.
 
 1.  Open VirtualBox and make sure that your openSUSE VM is started.
 

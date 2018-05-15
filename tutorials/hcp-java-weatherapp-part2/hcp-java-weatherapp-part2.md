@@ -55,7 +55,7 @@ Save your changes and publish the update project to the local server by selectin
 
 [ACCORDION-BEGIN [Step 4: ](View app)]
 
-Once the publishing is done you can go back to the internal browser window and remove the `/hello` part of the URL and hit the **Enter** key. Now, you should see the same "Hello World!" message for the URL <http://localhost:8080/weatherapp/> as well. The reason for this is the `<welcome-file-list>` in the `web.xml` (located in the `WEB-INF` directory underneath the `webapp` folder).
+Once the publishing is done you can go back to the internal browser window and remove the `/hello` part of the URL and hit the **Enter** key. Now, you should see the same "Hello World!" message for the URL `http://localhost:8080/weatherapp/` as well. The reason for this is the `<welcome-file-list>` in the `web.xml` (located in the `WEB-INF` directory underneath the `webapp` folder).
 
 ![Run the java app, but use the base URL, not the servlet](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part2/e2e_02-4.png)
 

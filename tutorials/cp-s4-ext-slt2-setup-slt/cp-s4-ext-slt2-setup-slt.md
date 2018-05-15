@@ -6,7 +6,7 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
 ---
 ## Prerequisites
  - **Proficiency:** Intermediate
- - **Tutorials:** [Data Mart Scenario (Part 1): Set up SAP HANA database on SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-slt1-hana.html)
+ - **Tutorials:** [Data Mart Scenario (Part 1): Set up SAP HANA database on SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-slt1-hana-mdc.html)
  - **Systems, Tools, Services:**
    -   SAP HANA database in SAP Cloud Platform trial account
    -   SAP S/4HANA backend system in `VirtualBox`
@@ -22,7 +22,7 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
 In this tutorial you will set up a data replication job using the SAP Landscape Transformation Replication Server (SLT). This replication job will replicate sales order data, product data and product ratings from your SAP backend system to the SAP HANA database running in your SAP Cloud Platform account.
 
 ### Time to Complete
-**70 Mins**
+**60 Mins**
 ---
 
 [ACCORDION-BEGIN [Step 1:](Ensure SAP HANA database is running)]
@@ -51,15 +51,15 @@ In this step you will ensure that the SAP HANA database you created in the previ
 
 1.  Start your virtual machine with the NetWeaver installation (created in the previous tutorial).
 
-1.  Open a `Konsole` terminal window ( **Application Menu** | **System** | **Konsole** ).
+2.  Open a `Konsole` terminal window ( **Application Menu** | **System** | **Konsole** ).
 
-2.  Execute the following three commands to start and check the installed SAP NetWeaver AS ABAP:
+3.  Execute the following three commands to start and check the installed SAP NetWeaver AS ABAP:
 
-3.  Execute **`su -l npladm`** (will ask for `SAP NetWeaver AS ABAP` `system password`) to switch to `NetWeaver Admin` user, so that you act in this `Konsole` as this user and its permissions.
+4.  Execute **`su -l npladm`** (will ask for `SAP NetWeaver AS ABAP` `system password`) to switch to `NetWeaver Admin` user, so that you act in this `Konsole` as this user and its permissions.
 
-4.  Execute **`startsap ALL`** to start the ABAP server (if not already).
+5.  Execute **`startsap ALL`** to start the ABAP server (if not already).
 
-5.  Execute **`sapcontrol -nr 00 -function GetProcessList`** to check that the processes are running and are all `GREEN`
+6.  Execute **`sapcontrol -nr 00 -function GetProcessList`** to check that the processes are running and are all `GREEN`
 
     > **Note:** As `startsap ALL` can take some time, repeat the command execution a few times until all four processes `(IGS Watchdog, Dispatcher, Gateway, ICM)` are `GREEN`.
 
@@ -75,7 +75,7 @@ In this step you will ensure that the SAP HANA database you created in the previ
     icman, ICM, GREEN, Running, 2017 ... , ... , ...
     ```
 
-    ![Start ABAP 1](../cp-s4-ext-install-nw/images/w1-u6-s6/pic01--start-abap.png)
+    ![Start ABAP 1](images/w1-u6-s6/pic01--start-abap.png)
 
 [ACCORDION-END]
 
@@ -113,11 +113,11 @@ In this step you will install the current version of `SAP Cloud Connnector` and 
 
 5.  Specify the Service Channel Type: `HANA Database` and press **Next**.
 
-     | Property | Value |
-     | ------------- | ------------ |
-     | HANA Instance Name | **`hana`** |
-     | Local Instance Number | **`01`** |
-     | Enabled | **`true`** |
+    | Property              | Value      |
+    | --------------------- | ---------- |
+    | HANA Instance Name    | **`hana`** |
+    | Local Instance Number | **`01`**   |
+    | Enabled               | **`true`** |
 
     -   Click on **Finish**.
 
@@ -127,7 +127,7 @@ In this step you will install the current version of `SAP Cloud Connnector` and 
 
     ![Screenshot](images/w4-u3-s3/pic03--service-channels-success.jpg)
 
->Result of Step 4:** You have now installed SAP Cloud Connector and set up a Service Channel to your SAP Cloud Platform account, establishing the communication channel between your SAP NetWeaver backend system and the SAP HANA database in your SAP CP account.
+> **Result of Step 4:** You have now installed SAP Cloud Connector and set up a Service Channel to your SAP Cloud Platform account, establishing the communication channel between your SAP NetWeaver backend system and the SAP HANA database in your SAP CP account.
 
 [ACCORDION-END]
 
@@ -143,10 +143,10 @@ In this step you will set up a data replication job between your SAP NetWeaver b
 
 3.  In case you get asked, log on using the following credentials:
 
-    | Property | Value |
-    | ------------- | ------------ |
-    | Client | **`001`** |
-    | User | **`Developer`** |
+    | Property | Value           |
+    | -------- | --------------- |
+    | Client   | **`001`**       |
+    | User     | **`Developer`** |
     | Password | **`Appl1ance`** |
 
 4.  Click on **Run** | **Run ABAP Development Object...** from the menu, or select the corresponding icon from the toolbar.
@@ -174,10 +174,10 @@ In this step you will set up a data replication job between your SAP NetWeaver b
 
 9.  **Specify Source System** | **System Data**:
 
-    | Property | Value |
-    | ------------- | ------------ |
-    | RFC Connection  | **`selected`** |
-    | RFC Destination  | **`NPL`** |
+    | Property              | Value          |
+    | --------------------- | -------------- |
+    | RFC Connection        | **`selected`** |
+    | RFC Destination       | **`NPL`**      |
     | Allow Multiple Usage  | **`selected`** |
 
     -   Click **Next**
@@ -186,15 +186,15 @@ In this step you will set up a data replication job between your SAP NetWeaver b
 
 10. **Specify Target System** | **System Data**:
 
-    | Property | Value |
-    | ------------- | ------------ |
-    | DB Connection | **`selected`** |
-    | Database System | **`HANA`** |
-    | Administration User Name | **`ACME`** |
-    | Password | **`<ACME user password>`** (You changed the initial password of the ACME user when you first logged on in the previous tutorial.) |
-    | Host Name | **`localhost`** |
-    | Instance Number | **`01`** |
-    | Logical Port Number | **`15`** |
+    | Property                 | Value           |
+    | ------------------------ | --------------- |
+    | DB Connection            | **`selected`**  |
+    | Database System          | **`HANA`**      |
+    | Administration User Name | **`ACME`**      |
+    | Password                 | **`<ACME user password>`** (You changed the initial password of the ACME user when you first logged on in the previous tutorial.) |
+    | Host Name                | **`localhost`** |
+    | Instance Number          | **`01`**        |
+    | Logical Port Number      | **`15`**        |
 
     -   Click **Next**
 
@@ -270,12 +270,12 @@ In this step we are going to add the actual backend database tables containing s
 
     | Database Table Name | Table Contents        |
     |---------------------|-----------------------|
-    | `SNWD_PD` | (Product ID, price, category) |
-    | `SNWD_SO` | (Ordered quantities)          |
-    | `SNWD_SO_I` | (Ordered Items)             |
-    | `SNWD_SO_SL` | (Ordered quantities)       |
-    | `SNWD_TEXTS` | (Product names)            |
-    | `SNWD_REV_HEAD` | (Average ratings)       |
+    | `SNWD_PD` | (Product ID, price, category)   |
+    | `SNWD_SO` | (Ordered quantities)            |
+    | `SNWD_SO_I` | (Ordered Items)               |
+    | `SNWD_SO_SL` | (Ordered quantities)         |
+    | `SNWD_TEXTS` | (Product names)              |
+    | `SNWD_REV_HEAD` | (Average ratings)         |
 
     ![Screenshot](images/w4-u3-s6/pic03--table-names.jpg)
 
@@ -303,7 +303,7 @@ In this step we are going to add the actual backend database tables containing s
 
     ![Screenshot](images/w4-u3-s6/pic07--replication-running.jpg)
 
-> **Result of Step 7:**  You have now added all data tables to the `SLT_REPLICATION`scheme and started the replication process. Please be aware that this is a very resource intensive process and might take some time if you are doing this course using the minimum system requirements.
+> **Result of Step 7:**  You have now added all data tables to the `SLT_REPLICATION` scheme and started the replication process. Please be aware that this is a very resource intensive process and might take some time if you are doing this course using the minimum system requirements.
 
 [ACCORDION-END]
 

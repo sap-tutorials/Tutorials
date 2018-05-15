@@ -7,7 +7,7 @@ tags: [ tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform
 
 ## Prerequisites
 - **Proficiency:** Intermediate
-- **Tutorials:** [Create SAP Fiori Launchpad on SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-ui3-cloud-portal)
+- **Tutorials:** [SAP S/4HANA on-premises UI extension (Part 3): Create SAP Fiori Launchpad on SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-ui3-cloud-portal.html)
 - **Systems, Tools, Services:**
     -  in Google Chrome browser: SAP Web IDE, SAP CP cockpit
 
@@ -168,7 +168,7 @@ Inspect Missing Image Resources with Chrome Developer Tools
     To open access to MIME resources from back-end path **`sap/public/bc`** you need to edit the **`neo-app.json`** file that currently defines access to the **`sap/opu`** path. You can either additionally expose the **`sap/opu`** path or  open access by truncating the existing path from **`/sap/opu/odata`** to **`/sap`** (as described by Thomas in the video).
 
 7.  In SAP Web IDE select tab **neo-app.json**.
-    -   In the destination named `s4h-onpremise-http` shorten the `path` and `entryPath` values from **/sap/opu/odata** to **/sap**.
+    -   In the destination named `s4h-onpremise-http` shorten the `path` and `entryPath` values from **`/sap/opu/odata`** to **/sap**.
 
         ```json
         {
@@ -206,7 +206,7 @@ Inspect Missing Image Resources with Chrome Developer Tools
 
 In the next step you will extend the imported Fiori app by adding sort, filter and grouping functions with new SAPUI5 custom code. After importing the ready-to-run extension app into SAP Web IDE you explore the new functions on front end side and in the SAPUI5 source code.
 
-1.  Download the file [rating-extension.zip](./imports/html5/rating-extension.zip?raw=true) and open it in your ZIP client to view all changed project files.
+1.  Download the file [rating-extension.zip](https://github.com/SAP/cloud-s4-datamart-tutorial/raw/master/ui-extension/rating-extension.zip) from the **SAP S/4HANA & SAP Business Suite extension sample apps** GitHub repository and open it in your ZIP client to view all changed project files.
 
 2.  In the SAP Web IDE project tree click **`manageproducts`**:
 
@@ -244,11 +244,11 @@ In the next step you will extend the imported Fiori app by adding sort, filter a
 
 [ACCORDION-BEGIN [Step 6:](Explore custom code)]
 
-1.  Move back to the SAP Web IDE tab and open the file **Workspace** | **`manageproducts`** | **view** | **`ProductFilterDialog.fragment.xml`** with  double-click.
+1.  Move back to the SAP Web IDE tab and open the file **Workspace** | **`manageproducts`** | **view** | **`ProductFilterDialog.fragment.xml`** with a double-click.
 
-2.  The code block that was added during ZIP-file import is delimited by the lines **&lt;!-- begin** and **&lt;!-- end**. Also read the related description at the beginning to better understand the contained source code. You can also read the full source code here: [`ProductFilterDialog.fragment.xml`](./src/html/manageproducts/view/ProductFilterDialog.fragment.xml).
+2.  The code block that was added during ZIP-file import is delimited by the lines **&lt;!-- begin** and **&lt;!-- end**. Also read the related description at the beginning to better understand the contained source code.
 
-3.  Open the file **Workspace** | **`manageproducts`** | **view** | **`ProductGroupingDialog.fragment.xml`** ([`ProductGroupingDialog.fragment.xml`](./src/html/manageproducts/view/ProductGroupingDialog.fragment.xml)) with  double-click to view the added source code:
+3.  Open the file **Workspace** | **`manageproducts`** | **view** | **`ProductGroupingDialog.fragment.xml`** with a  double-click to view the added source code:
 
     ```xml
     <!-- Extending S/4HANA with SAP CP -->
@@ -258,7 +258,7 @@ In the next step you will extend the imported Fiori app by adding sort, filter a
     <!-- end   -->
     ```
 
-4.  Open the file **Workspace** | **`manageproducts`** | **view** | **`ProductSortDialog.fragment.xml`** ([`ProductSortDialog.fragment.xml`](./src/html/manageproducts/view/ProductSortDialog.fragment.xml) with double-click to view the added source code:
+4.  Open the file **Workspace** | **`manageproducts`** | **view** | **`ProductSortDialog.fragment.xml`** with a double-click to view the added source code:
 
     ```xml
     <!-- Extending S/4HANA with SAP CP -->
@@ -268,7 +268,7 @@ In the next step you will extend the imported Fiori app by adding sort, filter a
     <!-- end -->
     ```
 
-5.  To look at the added controller logic that handles the new grouping function open the file **Workspace** | **`manageproducts`** | **controller** | **`SubControllerForFGS.js`**, see [`SubControllerForFGS.js`](./src/html/manageproducts/controller/SubControllerForFGS.js). Go through this source code and check how it is done by reading the comment code lines.
+5.  To look at the added controller logic that handles the new grouping function open the file **Workspace** | **`manageproducts`** | **controller** | **`SubControllerForFGS.js`**. Go through this source code and check how it is done by reading the comment code lines.
 
 [ACCORDION-END]
 

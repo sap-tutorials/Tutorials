@@ -7,21 +7,21 @@ tags: [ tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform
 
 ## Prerequisites
 - **Proficiency:** Intermediate
-- **Tutorials:** [Expose OData services to SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-ui2-cloud-connector.html)
+- **Tutorials:** [SAP S/4HANA on-premises UI extension (Part 2): Expose OData services to SAP Cloud Platform](https://www.sap.com/developer/tutorials/cp-s4-ext-ui2-cloud-connector.html)
 - **Systems, Tools, Services:**
     - SAP Web IDE
     - SAP CP cockpit
     - SAP CP Portal Service
 
 ## Next Steps
-    -  [Extend an SAPUI5 application](https://www.sap.com/developer/tutorials/cp-s4-ext-ui4-build-ui.html)
+    -  [SAP S/4HANA on-premises UI extension (Part 4): Extend an SAPUI5 application](https://www.sap.com/developer/tutorials/cp-s4-ext-ui4-build-ui.html)
 
 ## Details
 ### You will learn
 You will create a SAP Fiori Launchpad on SAP Cloud Platform, which provides access to an application you will develop later. Acting as SAP Cloud Platform administrator, you first prepare the Portal Service inside your SAP Cloud Platform trial account and then add a first test application (SAP Web IDE) to a new launchpad with two groups, Product Management and Equipment Tracking.
 
 ### Time to Complete
-**25 Mins**
+**30 Mins**
 
 ---
 
@@ -29,7 +29,7 @@ You will create a SAP Fiori Launchpad on SAP Cloud Platform, which provides acce
 
 In SAP S/4HANA, the Fiori Launchpad is your central entry point for all sorts of SAP Fiori apps. You may operate a launchpad on-premises, or you might make use of the SAP Cloud Platform Portal service, which allows you to host the launchpad in your SAP Cloud Platform account. The Launchpad offers features such as navigation, personalization, and configuration options. The apps are displayed as various tiles and groups.
 
-Administrators must first set up their SAP Cloud Platform account prior to working in SAP Fiori launchpad. In this step you will set up the Portal Service in your SAP CP Trial Account. 
+Administrators must first set up their SAP Cloud Platform account prior to working in SAP Fiori launchpad. In this step you will set up the Portal Service in your SAP CP Trial Account.
 
 1.  In Google Chrome browser open the SAP CP Trial cockpit page in a new tab.
 

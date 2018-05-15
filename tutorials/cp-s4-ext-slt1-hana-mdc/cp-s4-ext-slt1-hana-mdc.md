@@ -5,16 +5,18 @@ primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform, products>sap-hana ]
 ---
 ## Prerequisites
- - **Proficiency:** Intermediate
- - **Tutorials:**
+- **Proficiency:** Intermediate
+- **Tutorials:**
   - [Create a trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
   - [Install SAP NetWeaver in openSUSE](https://www.sap.com/developer/tutorials/cp-s4-ext-install-nw.html)
+
 ## Next Steps
-- [Data Mart Scenario (Part 2): Replicate data using SLT](https://www.sap.com/developer/tutorials/cp-s4-ext-slt2-setup-slt.html)
+[Data Mart Scenario (Part 2): Replicate data using SLT](https://www.sap.com/developer/tutorials/cp-s4-ext-slt2-setup-slt.html)
 
 ## Details
 ### You will learn
-You will create a new SAP HANA database schema in your SAP Cloud Platform account. You will run administrative steps and assign appropriate roles to the database user `SYSTEM` and create a second database user `ACME`, which you will use in the forthcoming exercises. Finally, you will set up your SAP HANA Development Environment in your Eclipse IDE and connect it to your new SAP HANA database.
+
+You will create a new SAP HANA database schema in your SAP Cloud Platform Neo environment. You will run administrative steps and assign appropriate roles to the database user `SYSTEM` and create a second database user `ACME`, which you will use in the forthcoming exercises. Finally, you will set up your SAP HANA Development Environment in your Eclipse IDE and connect it to your new SAP HANA database.
 
 ### Time to Complete
 **30 Mins**

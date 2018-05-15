@@ -79,6 +79,7 @@ Finally, you will change the name of the service for the shine-container so you 
 
 ![edit YAML](container.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create additional services)]

@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 ## Prerequisites
  - **Proficiency:** Beginner
- - **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed. For older systems, please refer to [Dynamic Tiering Quick Start Guide - Lesson 1 - Creating Tables and Loading Data](http://www.sap.com/documents/2016/06/00f107f2-747c-0010-82c7-eda71af511fa.html) for instructions.
+ - **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed. 
  - **Credentials:** Connection details to initially connect as the "SYSTEM" user.
  - **Integrated Development Environment:** Basic working knowledge of SAP HANA Studio. E.g. You should be able to connect to your HANA instance from SAP HANA Studio and feel comfortable with executing simple queries.
 

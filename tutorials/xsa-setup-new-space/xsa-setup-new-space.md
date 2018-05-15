@@ -1,7 +1,6 @@
 ---
 title: SAP HANA - Create a Space in XS Advanced
 description: Create a new space for XS Advanced
-auto_validation: false
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
 ---
@@ -48,7 +47,6 @@ Provide a name for the space and the roles you want to give to `XSA_ADMIN`
 
 ![Name space](4.png)
 
-[DONE]
 [ACCORDION-END]
 
 
@@ -70,7 +68,6 @@ Go back using the **Home** button
 
 ![Add users](8.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Setup the Space using the space enablement tool)]
@@ -87,7 +84,6 @@ Once it is running, click on the link to see the URL (by default, `https://hxeho
 
 ![Space enablement](11.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run the Space enablement tool)]
@@ -102,6 +98,5 @@ Wait until processing finishes and you get a successful message:
 
 The space is now ready to use.
 
-[DONE]
 
 [ACCORDION-END]
