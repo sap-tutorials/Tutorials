@@ -93,7 +93,6 @@ def main(unused_argv):
         legacy_init_op = legacy_init_op,
     )
     builder.save(as_text=False)
-    session.close()
 
 if __name__ == '__main__':
     tf.app.run()

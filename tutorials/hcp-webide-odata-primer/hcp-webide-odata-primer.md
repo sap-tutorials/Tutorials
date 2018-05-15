@@ -348,8 +348,8 @@ If you would like to build an app similar to what you have done in this tutorial
 
 The two OData Service document URLs are:
 
-- <https://sapes5.sapdevcenter.com/sap/opu/odata/IWBEP/GWDEMO/>
-- <https://sapes5.sapdevcenter.com/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT/>
+- `https://sapes5.sapdevcenter.com/sap/opu/odata/IWBEP/GWDEMO/`
+- `https://sapes5.sapdevcenter.com/sap/opu/odata/IWFND/RMTSAMPLEFLIGHT/`
 
 To build an app like what you have now, but with data from SAP Gateway you simply need to:
 

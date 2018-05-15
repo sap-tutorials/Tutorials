@@ -17,7 +17,7 @@ As part of the [TensorFlow Hub](https://www.tensorflow.org/hub/), a library to f
 
 You will reuse a pre-trained image recognition model from the [How to Retrain an Image Classifier for New Categories](https://www.tensorflow.org/tutorials/image_retraining) tutorial from the TensorFlow website.
 
-However, this script currently includes a step to export the model using a 3 dimensions shape as the input which is not supported by the SAP HANA External Machine Learning integration .
+However, this script currently includes a step to export the model using a 3 dimensions shape as the input which is not supported by the SAP HANA External Machine Learning integration.
 
 Therefore, you will use a script that will save the retrained model a the raw image blob as input.
 
@@ -87,7 +87,6 @@ The scripts that you will leverage requires the TensorFlow Hub Python package, t
 
 ```shell
 pip install tensorflow_hub
-pip install tensorflow-serving-api
 ```
 
 Next, you can download the retrain script:
@@ -255,7 +254,6 @@ def main(unused_argv):
         legacy_init_op = legacy_init_op,
     )
     builder.save(as_text=False)
-    session.close()
 
 if __name__ == '__main__':
     tf.app.run()
@@ -444,15 +442,13 @@ You can now start the TensorFlow Serving `ModelServer` using the following comma
 > **Note:** As of the publication of this tutorial, there is no ***graceful*** shutdown command for the TensorFlow Serving `ModelServer`. Therefore you will need to kill the process manually.
 
 ```shell
-cd ~
-~/serving/bazel-bin/tensorflow_serving/model_servers/tensorflow_model_server --model_config_file=./export/config.cnf
+tensorflow_model_server --model_config_file=./export/config.cnf
 ```
 
 You can use the following command if you prefer to run it as a background process with all outputs redirected to a log file:
 
 ```shell
-cd ~/
-nohup  ~/serving/bazel-bin/tensorflow_serving/model_servers/tensorflow_model_server --model_config_file=./export/config.cnf > ./tensorflow_model_server.log 2>&1  </dev/null &
+nohup  tensorflow_model_server --model_config_file=./export/config.cnf > ./tensorflow_model_server.log 2>&1  </dev/null &
 ```
 
 [DONE]

@@ -18,7 +18,7 @@ In this tutorial you will learn how to create an application that process geospa
 
 [ACCORDION-BEGIN [Step 1: ](The GDELT data)]
 
-The data set you will use for the tutorial is the one provided by the Global Database of Events, Language, and Tone data (GDELT) version 1.0 from the [GDELT project](http://gdeltproject.org/).
+The data set you will use for the tutorial is the one provided by the Global Database of Events, Language, and Tone data (GDELT) version 1.0 from the [GDELT project](https://www.gdeltproject.org/).
 
 The GDELT 1.0 event dataset comprises over 3.5 billion mentions of over 364 million distinct events from almost every corner of the earth spanning January 1979 to present and updated daily.
 

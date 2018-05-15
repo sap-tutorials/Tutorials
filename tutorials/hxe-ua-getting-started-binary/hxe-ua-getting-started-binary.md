@@ -20,6 +20,11 @@ Check if your machine has the recommended software and hardware to successfully 
 
 ---
 
+> Note:
+> Additional documentation, including downloadable PDF manuals, is available on the [SAP Help Portal](https://help.sap.com/viewer/p/SAP_HANA,_EXPRESS_EDITION).
+> 
+> 
+
 [ACCORDION-BEGIN [Step 1: ](Ensure that your system meets the hardware requirements.)]
 
 Check if your system has the required hardware to successfully install and run SAP HANA 2.0, express edition.

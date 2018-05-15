@@ -1,8 +1,8 @@
 ---
 title: Basics of data visualization in SAP BusinessObjects Lumira
 description: Basics of visual data discovery
-primary_tag: products>sap-businessobjects-lumira
-tags: [  tutorial>beginner, products>sap-businessobjects-lumira ]
+primary_tag: products>sap-lumira
+tags: [  tutorial>beginner, products>sap-lumira ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
