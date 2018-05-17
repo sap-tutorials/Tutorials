@@ -125,7 +125,7 @@ Click **Send** to retrieve the following response:
 
 For the following steps, you can use the SAP API Business Hub page to send the request or use a REST client like Postman.
 
-You can request a user for the `handson2` tenant in this tutorial … and then you can directly call the API like this from a browser or from Postman (with Postman Interceptor).
+You can request a user for the `handson2` tenant which is used in this tutorial and then you can directly call the API like this from a browser or from Postman (with Postman Interceptor). If you want to do so, go to https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html and follow the instructions on the page. Afterwards, you are able to access the package configuration using the following link:
 
 ```
 https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appcore-conf/Configuration(%27sap.iotaehandson2.envirocar%27)
