@@ -108,13 +108,13 @@ You will know you are in the Code Editor because the file is all code. If you se
 
 ![what the code editor looks like](10b.png)
 
-Locate the `dataSources` array in the manifest file. You have added a new data source called `toysData` when you added the OData service in the earlier steps. You want to make this your **main** data service.
+Locate the `dataSources` array in the manifest file. You have added a new data source called `toysData` when you added the OData service in the earlier steps. You want to make this your **local** data service.
 
 ![data sources highlighted in manifest file](10c.png)
 
-**Rename** *`main`* to `localservice`.
+**Rename** *`local`* to `localservice`.
 
-**Rename** *`toysData`* to `main`.
+**Rename** *`toysData`* to `local`.
 
 ![new data source names in manifest file](11.png)
 
