@@ -2,6 +2,7 @@
 title: Call another method in the External API (Slack)
 description: Find more information from an external API using a second method call
 primary_tag: topic>sapui5
+auto_validation: true
 tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-web-ide ]
 ---
 ## Prerequisites  
@@ -9,6 +10,7 @@ tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-web-ide 
  - **Tutorials:** [Add navigation with your API call](https://www.sap.com/developer/tutorials/sapui5-navigate-api.html)
 
 ## Next Steps
+ - This is the end of this series
  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
@@ -31,7 +33,7 @@ When you call the user method for a given user, you will have more information a
 ![Slack user profile method documentation page](slack-1.png)
 
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add a new call to your main controller)]
@@ -79,7 +81,7 @@ self.getView().getModel("messages").setProperty("/data", message);
 
 ![updated code in the main controller](controller-1.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Update the main view)]
@@ -96,7 +98,7 @@ Your `ObjectHeader` should resemble the screenshot below.
 
 **SAVE** your changes.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Run your application)]
@@ -104,9 +106,12 @@ Make sure all your changes are saved and **RUN** your application. You should no
 
 ![application with user details displayed](final.png)
 
+**Copy and paste the URL** of the running application into the text box below.
 
+[VALIDATE_4]
 [ACCORDION-END]
 
 
 ## Next Steps
+ - This is the end of this series
  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
