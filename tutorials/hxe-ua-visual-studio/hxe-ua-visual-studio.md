@@ -32,9 +32,9 @@ For more information, visit the [Microsoft Visual Studio](https://www.visualstud
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Download the SAP HANA, express edition )]
+[ACCORDION-BEGIN [Step 2: ](Download the SAP HANA, express edition Download Manager )]
 
-You can download the SAP HANA plugin for Microsoft Visual Studio  by downloading the SAP HANA, express edition download manager. Go to the [SAP HANA, express edition](https://www.sap.com/sap-hana-express) homepage and click **Install SAP HANA, express edition**.
+You can download the SAP HANA plugin for Microsoft Visual Studio by downloading the SAP HANA, express edition download manager. Go to the [SAP HANA, express edition](https://www.sap.com/sap-hana-express) homepage and click **Install SAP HANA, express edition**.
 
 Enter your information and click **Register**.
 
@@ -52,11 +52,11 @@ Click on the appropriate Download Manager version for your system to download.
 
 [ACCORDION-BEGIN [Step 3: ](Install the Plugin for Microsoft Visual Studio)]
 
-Open the Download Manager on your machine. Select and download **Clients (Windows)**. This downloads `clients_windows.zip` which contains the files `hdb_client_windows_x86_32.zip`, `hdb_client_windows_x86_64zip`, and `xs.onpremise.runtime.client_ntamd64.zip`.
+Open the Download Manager on your machine. Select and download **Clients (Windows)**. This downloads `clients_windows.zip` which contains the files `hdb_client_windows_x86_32.zip`, `hdb_client_windows_x86_64.zip`, and `xs.onpremise.runtime.client_ntamd64.zip`.
 
 ![Download Manager](download_manager.png)
 
-Unzip `hdb_client_windows_x86_64zip` and run `hdbinst.exe`. Follow the onscreen instructions. This installs the Microsoft Visual Studio plugin, as well as the SAP HANA HDB Client.
+Unzip `hdb_client_windows_x86_64.zip` and run `hdbinst.exe`. Follow the onscreen instructions. This installs the Microsoft Visual Studio plugin, as well as the SAP HANA HDB Client.
 
 > **Note:**
 > Ensure that you are not running an instance of Microsoft Visual Studio while you are installing the plugin.

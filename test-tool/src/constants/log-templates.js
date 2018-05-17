@@ -1,7 +1,6 @@
 const commonError = (reason, fileName) => `
     >Error:
         file: ${fileName}
-        path: ${filePath}
         reason: ${reason}
 `;
 

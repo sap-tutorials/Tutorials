@@ -1,9 +1,9 @@
 ---
 title: Using Analytical OData in IoT Application Enablement (AE)
-description: In this tutorial we are going to explore the Analytical OData Service in IoT AE to get aggregates on data very quickly.
+description: Explore the Analytical OData service in IoT AE to get aggregates on data very quickly.
 auto_validation: false
 primary_tag: topic>internet-of-things
-tags: [  products>sap-leonardo, tutorial>beginner  ]
+tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-api-management ]
 ---
 
 ## Prerequisites  
@@ -19,44 +19,29 @@ tags: [  products>sap-leonardo, tutorial>beginner  ]
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get Access to the Demo System)]
+[ACCORDION-BEGIN [Step 1: ](Get access to demo system)]
 
-- User
+- **User**
+  Go to [https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html](https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html) and follow the instructions on the page to get a user and a password on the landscape used for this tutorial.
+- **Tools**
+  Please check step 4 in [https://www.sap.com/developer/groups/iotae-computer-as-thing.html](https://www.sap.com/developer/groups/iotae-computer-as-thing.html) to have the Postman tooling ready.
+- **SAP API Business Hub**
+  In order to access the following example, you could use the SAP API Business Hub at  [http://api.sap.com](http://api.sap.com). This is a web page to provide access to SAP demo systems based on API calls. If you click the link above or type the URL into your browser, you will navigate to the following web page:
+  ![API Business Hub](pic0.png)
+  Log in if you already have a user, otherwise register. Use the links in the upper-right corner.
+  ![Login](pic0r.png)
+    - Log in:
+      ![Image](pic1.png)
+    - Registration:
+      ![Image](pic2.png)
+      Fill in all mandatory fields and provide a decent email address as you will get an email with a confirmation link.
+      ![Email confirmation](pic3.png)
+      Click **Click here to activate your account**. Now you are ready to access the demo system via SAP API Business Hub.
 
-Go to [https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html](https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html) and follow the instructions on the page to get a user and a password on the landscape used for this tutorial.
+    For further questions regarding the API, please refer to the latest documentation:
+    <https://help.sap.com/viewer/350cb3262cb8496b9f5e9e8b039b52db/latest/en-US/66d4abe77cb44fd3b8299ce049b54dba.html>
 
-- Tools
-
-Please check step 4 in [https://www.sap.com/developer/groups/iotae-computer-as-thing.html](https://www.sap.com/developer/groups/iotae-computer-as-thing.html) to have the Postman tooling ready.
-
-- SAP API Business Hub
-
-In order to access the following example, you could use the SAP API Business Hub at  [http://api.sap.com](http://api.sap.com). This is a web page to provide access to SAP demo systems based on API calls. If you click on the link above or type the URL into your browser, you will navigate to the following web page:
-
-For further questions regarding the API, please refer to the latest documentation:
-```
-https://help.sap.com/viewer/350cb3262cb8496b9f5e9e8b039b52db/latest/en-US/66d4abe77cb44fd3b8299ce049b54dba.html
-```
-
-![Image](pic0.png)
-
-If you have already a user, please login and if not, please register by clicking on the link in the upper right corner.
-
-![Image](pic0r.png)
-
-- Login:
-
-![Image](pic1.jpeg)
-
-- Registration:
-
-![Image](pic2.jpeg)
-
-Please fill in all mandatory fields and provide a decent email address as you will get an email with a confirmation link.
-
-![Image](pic3.png)
-
-Please press "Click here to activate your account". Now you are ready to access the demo system via SAP API Business Hub.
+[DONE]
 
 [ACCORDION-END]
 
@@ -66,45 +51,51 @@ In this example, we are using data from the enviroCar database [https://enviroca
 
 ![Image](pic5.png)
 
-The database contains real-life car data in order to investigate the impact driving has on environmental factors, such as fuel consumption, CO2, or noise emissions. The data is anonymised, i.e. it is not possible to connect it to a specific driver. Data available via the enviroCar API can be used by third parties in accordance with the Open Database License (`ODbL`). We have further anonymised car types in order to not advertise certain brands.
+The database contains real-life car data in order to investigate the impact driving has on environmental factors, such as fuel consumption, CO2, or noise emissions. The data is anonymised, meaning it is not possible to connect it to a specific driver. Data available via the enviroCar API can be used by third parties in accordance with the Open Database License (`ODbL`). We have further anonymised car types in order to not advertise certain brands.
 
-We will use a part of this data for three cars and a subset of measurements. The three cars will be represented in the package "enviroCar" of our demo system.
+We will use a part of this data for three cars and a subset of measurements. The three cars will be represented in the package `enviroCar` of our demo system.
 
 We would like to know, which car had the highest fuel consumption for a given set of tracks. We will obtain the data by using the aggregates function.
 
-In order to verify the thing model, please go to the SAP API Business Hub and search for the API by clicking on "Browse":
+In order to verify the thing model, please go to the SAP API Business Hub and search for the API by clicking on **Browse**:
 
-![Image](pic6.png)
+![Browse](pic6.png)
 
-Enter IOTAE in the search field and press enter.
+Enter **`IOTAE`** in the search field and press **Enter**.
 
-![Image](pic7.png)
+![Search](pic7.png)
 
-The results list will provide the API Package "SAP Internet of Things (IoT) Application Enablement services".
+The results list will provide the API Package `SAP Internet of Things (IoT) Application Enablement services`.
 
-Click on the package to navigate to the following page:
+Click the package to navigate to the following page:
 
-![Image](pic8.png)
+![Navigate to API](pic8.png)
 
-Choose the tab "artifacts" ![Image](pic9.png) in order to see the three endpoints to access Configuration, Thing and Thing Analytics. We will have a look at all of them one at a time.
+Choose the tab **Artifacts** to see the three endpoints to access Configuration, Thing and Thing Analytics. We will have a look at all of them one at a time.
 
+![Artifacts](pic9.png)
+
+[DONE]
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 3: ](Verify configuration)]
 
-click on "Configuration"  in order to check the package  `enviroCar` . In the following screen click on "Get" for Configuration {id}.
+Click **Configuration** to check the package  `enviroCar`. In the following screen, click  **Get** for `Configuration {id}`.
 
- ![Image](pic10.png)
+ ![Click Get](pic10.png)
 
-Scroll down towards the editable field for "id" and enter
-`sap.iotaehandson2.envirocar`
+Scroll down to the editable field for `id` and enter `sap.iotaehandson2.envirocar`.
 
-![Image](pic11.png)
+![Enter ID](pic11.png)
 
-Click on ![Image](pic12.png) to try the Request. The response should look like this, showing the package configuration for `envirocar` with a thing type called `cartype` and a property set type `Measurements`.
+Click **Try it out!** to make the request.
 
- ![Image](pic13.png)
+![Try it out](pic12.png)
+
+The response should look like this, showing the package configuration for `envirocar` with a thing type called `cartype` and a property set type `Measurements`.
+
+ ![Response](pic13.png)
 
 This is one way to obtain the configuration. You can use a REST client or a similar method to get the same result.
 
@@ -114,97 +105,97 @@ https://sandbox.api.sap.com:443/iotae/conf/Configuration(%27sap.iotaehandson2.en
 ```
 and paste it into a REST client like Postman.
 
- ![Image](pic15.png)
+ ![Paste URL](pic15.png)
 
 Obtain the API key from the upper right corner.
 
- ![Image](pic14.png)
+ ![API key](pic14.png)
 
-Your API key will show up instead of the grey box. Copy the key to your clipboard.
+Your API key will show up instead of the gray box. Copy the key to your clipboard.
 
-![Image](pic16.png)
+![Copy key](pic16.png)
 
-Add the header `apikey` with your key:
+Add the header `apikey` with your key.
 
-![Image](pic17.png)
+![Add key header](pic17.png)
 
-Click on send
-![Image](pic18.png)
-to retrieve the following response:
+Click **Send** to retrieve the following response:
 
-![Image](pic19.png)
+![Send](pic19.png)
 
 For the following steps, you can use the SAP API Business Hub page to send the request or use a REST client like Postman.
 
-You can request a user for the `handson2` tenant in this tutorial … and then you can directly call the API like this from a browser or from postman (with postman interceptor).
+You can request a user for the `handson2` tenant in this tutorial … and then you can directly call the API like this from a browser or from Postman (with Postman Interceptor).
 
 ```
 https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appcore-conf/Configuration(%27sap.iotaehandson2.envirocar%27)
 ```
 
+[DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Verify things)]
 
-Go back to SAP API Business Hub page to select `things` instead of `configuration`. Click on `get` for `/things`.
+Go back to SAP API Business Hub page to select `things` instead of `configuration`. Click `get` for `/things`.
 
-![Image](pic20.png)
+![Select things](pic20.png)
 
-Remark: in case that you try this service without a filter, different things from other packages might show up that you do not expect. Please use the following filter to obtain the things as used in this example.
+>In case you try this service without a filter, different things from other packages might show up that you do not expect. Please use the following filter to obtain the things as used in this example.
 
-In the edit field for `$filter` add the following filter for the thing type:
+In the edit field for `$filter`, add the following filter for the thing type:
+
 ```
 _thingType eq 'sap.iotaehandson2.envirocar:CarType'
 ```
 
-![Image](pic21.png)
+![Filter](pic21.png)
 
-Click on "try it out". This will result in the following response
+Click **Try it out!**. This will result in the following response.
 
 You could have chosen the following URL directly:
+
 ```
 https://sandbox.api.sap.com:443/iotae/mds/Things?%24filter=_thingType%20eq%20%27sap.iotaehandson2.envirocar%3ACarType%27
 ```
 
 The result shows 4 cars that were taken out as examples from the `enviroCar` database.
 
-![Image](pic22.png)
+![4 cars](pic22.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Access Thing Analytics)]
 
-Now access the SAP API Business Hub and chose 'Thing Analytics'.
-We will verify time series data first.
+Now access the SAP API Business Hub and chose Thing Analytics'. We will verify time series data first.
 
-![Image](pic22.png)
+![Thing Analytics](pic22.png)
 
-Click on GET for measurements and then enter the following `property set type` in the editable field.
+Click **GET** for `measurements`.
 
-![Image](pic23.png)
+![Get measurements](pic23.png)
 
-Property set Type should be:
+Set the following:
 
-```
-sap.iotaehandson2.envirocar:Measurements
-```
-
-$filter should ne:
-
-```
-time ge datetime'2018-01-01T00:00:00' and time lt datetime'2018-03-01T00:00:00'
-```
+  - `propertySetTypeName`:
+    ```
+    sap.iotaehandson2.envirocar:Measurements
+    ```
+  - `$filter`:
+    ```
+    time ge datetime'2018-01-01T00:00:00' and time lt datetime'2018-03-01T00:00:00'
+    ```
 
 These are a mandatory parameters for the request.
 
-![Image](pic24.png)
+![Parameters](pic24.png)
 
 The response will look like this:
 
-![Image](pic25.png)
+![Response](pic25.png)
 
-The response contains single measurements that were obtained from a car and send to the enviroCar database. Each single measurement contains the car id (corresponds to the thing name), a timestamp and a list of different measurements for speed, temperature, fuel consumption, CO2 etc.
+The response contains single measurements that were obtained from a car and sent to the enviroCar database. Each single measurement contains the car ID (corresponds to the thing name), a timestamp and a list of different measurements for speed, temperature, fuel consumption, CO2 and more.
 
 One measurement looks like this:
 
@@ -270,33 +261,32 @@ One measurement looks like this:
       }
 ```
 
-In order to combine single measurements to a trip, a dedicated `Track` is added to the measurement (not during driving but later in the database).
+To combine single measurements to a trip, a dedicated `Track` is added to the measurement (not during driving but later in the database).
 
-Now open the chapter `time series aggregates` and  click on GET for `/sap.iotaehandson2.envirocar:Measurement`.
+Now open the chapter **Time Series Aggregates** and click **GET** for `/sap.iotaehandson2.envirocar:Measurement`.
 
-![Image](pic26.png)
+![Time series aggregates](pic26.png)
 
-Property set Type should be:
+Set the following:
 
-```
-sap.iotaehandson2.envirocar:Measurements
-```
-
-$filter should ne:
-
-```
-time ge datetime'2018-01-01T00:00:00' and time lt datetime'2018-03-01T00:00:00'
-```
+  - `propertySetTypeName`:
+    ```
+    sap.iotaehandson2.envirocar:Measurements
+    ```
+  - `$filter`:
+    ```
+    time ge datetime'2018-01-01T00:00:00' and time lt datetime'2018-03-01T00:00:00'
+    ```
 
 These are a mandatory parameters for the request.
 
-![Image](pic27.png)
+![Parameters](pic27.png)
 
-Click on "try it out" to obtain the following response:
+Click **Try it out!** to obtain the following response:
 
-![Image](pic28.png)
+![Response](pic28.png)
 
-For each single Property, a list of characteristics is calculated and displayed (like for 'CO2'):
+For each property, a list of characteristics is calculated and displayed (like for `CO2`):
 
 ```
 "CO2_MIN": "1.163272",
@@ -313,19 +303,16 @@ For each single Property, a list of characteristics is calculated and displayed 
 "CO2_TMAX": "/Date(1515563111000)/",
 ```
 
-It is possible to filter for a specific car (or thing). Set the property set type and $filter as follows:
+It is possible to filter for a specific car (or thing). Set the following:
 
-Property set Type should be:
-
-```
-sap.iotaehandson2.envirocar:Measurements
-```
-
-$filter should be:
-
-```
-id eq 'B66347EB30EF46D8BFCD6361532000A5' and time ge datetime'2018-01-01T00:00:00' and time lt datetime'2018-03-01T00:00:00'
-```
+  - `propertySetTypeName`:
+    ```
+    sap.iotaehandson2.envirocar:Measurements
+    ```
+  - `$filter`:
+    ```
+    id eq 'B66347EB30EF46D8BFCD6361532000A5' and time ge datetime'2018-01-01T00:00:00' and time lt datetime'2018-03-01T00:00:00'
+    ```
 
 This will provide the results for a single car only.
 
@@ -443,36 +430,37 @@ The result will look like this:
   }
 }
 ```
+[DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Access Thing Analytics with further options)]
 
-If you have processed Step 5, we can now consider additional options or verify details by enhancing the request with further parameters. Remain in the open the chapter `time series aggregates` and  click on GET for `/sap.iotaehandson2.envirocar:Measurements2`.
+If you have processed Step 5, we can now consider additional options or verify details by enhancing the request with further parameters.
 
-![Image](pic26.png)
+Remain in the open chapter **Time Series Aggregates** and click **GET** for `/sap.iotaehandson2.envirocar:Measurements2`.
 
-Property set Type should be:
+![Measurements2](pic26.png)
 
-```
-sap.iotaehandson2.envirocar:Measurements2
-```
+Set the following:
 
-$filter should ne:
-
-```
-time ge datetime'2018-03-01T00:00:00' and time lt datetime'2018-05-01T00:00:00'
-```
+  - `propertySetTypeName`:
+    ```
+    sap.iotaehandson2.envirocar:Measurements2
+    ```
+  - `$filter`:
+    ```
+    time ge datetime'2018-03-01T00:00:00' and time lt datetime'2018-05-01T00:00:00'
+    ```
 
 These are a mandatory parameters for the request.
 
-$select should ne:
-
+`$select` should be as follows:
 ```
 Track,Speed_AVG,Consumption_AVG
 ```
 
-Click on "try it out" to obtain the following response, the result will look like this:
+Click **Try it out!** to obtain the following response:
 
 ```
 {
@@ -500,16 +488,15 @@ Click on "try it out" to obtain the following response, the result will look lik
       },
 ```
 
-Compared to the example in Step 5, the aggregates are calculated based on a further dimension: the Track Number. This was possible as the property set `Measurements2` contained a different setting for property 'Track'. In `Measurements2` in was marked as a "dimension".
+Compared to the example in Step 5, the aggregates are calculated based on a further dimension: the track number. This was possible as the property set `Measurements2` contained a different setting for property `Track`. In `Measurements2`, it was marked as a dimension.
 
-So you see that you can slice and dice the data by using Analytical OData services. If you compare the data for all obtained results, you will find that the highest consumption average occurred in the last track `5a5709d844ea85087e6841de` as the average speed was the highest too.
+So you see that you can slice and dice the data by using Analytical OData services. If you compare the data for all obtained results, you will find that the highest consumption average occurred in the last track `5a5709d844ea85087e6841de` as the average speed was the highest, too.
 
 In case that you want to know which car or thing was used in the track, please add `id` at the beginning of the select list.
 
 For further questions regarding the API, please refer to the latest documentation:
-```
-https://help.sap.com/viewer/350cb3262cb8496b9f5e9e8b039b52db/latest/en-US/66d4abe77cb44fd3b8299ce049b54dba.html
-```
+
+<https://help.sap.com/viewer/350cb3262cb8496b9f5e9e8b039b52db/latest/en-US/66d4abe77cb44fd3b8299ce049b54dba.html>
 
 [VALIDATE_1]
 
