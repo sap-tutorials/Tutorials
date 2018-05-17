@@ -1,6 +1,6 @@
 ---
-title: Create an application consuming a calculation view using Hibernate on SAP HANA
-description: This tutorial shows how to create an application which uses Hibernate on SAP HANA to read data from a calculation view
+title: Create an app consuming calculation view using Hibernate on SAP HANA
+description: Create an application that uses Hibernate on SAP HANA to read data from a calculation view.
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>java, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
@@ -50,7 +50,7 @@ Replace `<Hibernate user>` with your actual Hibernate connection user. If your p
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Update the project configuration)]
+[ACCORDION-BEGIN [Step 2: ](Update project configuration)]
 
 Since the calculation view isn't a table that can be managed by Hibernate, Hibernate must be configured to not create the schema on startup. This can be done by setting the value of the property `hibernate.hbm2ddl.auto` to `none`.
 
@@ -93,7 +93,7 @@ Save the `persistence.xml` file.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create an entity for the calculation view)]
+[ACCORDION-BEGIN [Step 3: ](Create entity for calculation view)]
 
 In order for Hibernate to be able to run queries against the calculation view and to map the data from the calculation view to Java objects, a Java Persistence API (JPA) entity for the calculation view has to be created. The calculation view's output columns will be mapped as the fields of the entity.
 
@@ -161,7 +161,7 @@ Save the class file.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Run a simple query on the calculation view)]
+[ACCORDION-BEGIN [Step 4: ](Run simple query on calculation view)]
 
 Using the entity created in the previous step, we can now run queries against the calculation view.
 
@@ -246,7 +246,7 @@ Found 22472 products
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 5: ](Run a geospatial query on the calculation view)]
+[ACCORDION-BEGIN [Step 5: ](Run geospatial query on the calculation view)]
 
 It's also possible to run more complex queries against a calculation view, for example, geospatial queries leveraging the SAP HANA geospatial engine.
 
@@ -341,7 +341,7 @@ Found 10176 products from Europe
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 6: ]((Optional) Set the calculation view schema as the default schema)]
+[ACCORDION-BEGIN [Step 6 (optional): ](Set calculation view schema as default)]
 
 For flexibility or maintainability reasons it might be preferrable to not have the calculation view schema hard-coded on each entity.
 
