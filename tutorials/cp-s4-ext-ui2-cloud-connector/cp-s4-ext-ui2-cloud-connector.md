@@ -255,8 +255,8 @@ Based on the exposed SAP S/4HANA back-end system that is connected with your SAP
 
     Additional Property | Value
     --------------------|------------
-    WebIDEEnabled       | **`true`**
-    WebIDEUsage         | **`odata_abap,ui5_execute_abap,dev_abap`**
+    `WebIDEEnabled`       | **`true`**
+    `WebIDEUsage`        | **`odata_abap,ui5_execute_abap,dev_abap`**
 
     > **Note:** The URL `http://s4h:443` points to the virtual SAP Cloud Connector host **`s4h:443`**
     > The additional properties `WebIDEEnabled` and `WebIDEUsage` allow SAP Web IDE to call `design-time-specific` OData services from the ABAP backend  (e.g. `odata_abap` for the OData functionality of SAP Gateway, which allows SAP Web IDE to access the OData service catalog of the ABAP backend system).
