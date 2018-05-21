@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 ### You will learn  
 Coming soon! The preconfigured image is still not published but we are working on it. In the meantime, you can use the manual installation: https://www.sap.com/developer/groups/hxe-install-binary-xsa.html
 
-The recommended machine type for SAP HANA, express edition and XS Advanced applications on Amazon Web Serives is m4.2xlarge
+The recommended machine type for SAP HANA, express edition and XS Advanced applications on Amazon Web Services is `m4.2xlarge`
 
 ### Time to Complete
 **35 Min**
