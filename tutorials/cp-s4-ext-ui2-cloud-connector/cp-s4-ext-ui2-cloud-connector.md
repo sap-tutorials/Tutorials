@@ -177,7 +177,7 @@ To allow your SAP Cloud Platform applications to access SAP S/4HANA back-end sys
     Internal Port    | **`44300`**
     Virtual Host     | **`s4h`**
     Virtual Port     | **`443`**
-    Principal Type   | **`Kerberos`**
+    Principal Type   | **`none`**
     Description      | you can leave this empty
 
     >**Note:** The virtual host **`s4h:443`** specifies the host name to be used for the HTTP destination configuration in SAP Cloud Platform. The virtual host can be a fake name and does not need to exist.
@@ -245,24 +245,33 @@ Based on the exposed SAP S/4HANA back-end system that is connected with your SAP
     Name       | **`s4h-onpremise-http`**
     Type       | **`HTTP`**
     Descriptor | **`S/4HANA HTTP API`**
-    URL        | **`https://s4h:443`**
+    URL        | **`http://s4h:443`**
     Proxy Type | **`OnPremise`**
     Authentication | **`BasicAuthentication`**
     User | **DEVELOPER**
-    Password | this password was assigned by you after logging on for the first time with the user DEVELOPER. We suggested that you use the password **`Appl1ance`**
+    Password | this password was assigned by you after logging on for the first time with the user DEVELOPER. The tutorial recommended to use the password **`Appl1ance`**.
 
-6.  Click **Save**.
+6.  In the section **`Additional Properties`**, click on **`New Property`** and create the following two properties:
+
+    Additional Property | Value
+    --------------------|------------
+    `WebIDEEnabled`       | **`true`**
+    `WebIDEUsage`        | **`odata_abap,ui5_execute_abap,dev_abap`**
+
+    > **Note:** The URL `http://s4h:443` points to the virtual SAP Cloud Connector host **`s4h:443`**
+    > The additional properties `WebIDEEnabled` and `WebIDEUsage` allow SAP Web IDE to call `design-time-specific` OData services from the ABAP backend  (e.g. `odata_abap` for the OData functionality of SAP Gateway, which allows SAP Web IDE to access the OData service catalog of the ABAP backend system).
+
+
+7.  Click **Save**.
 
     ![SAP CP Cockpit 6](./images/w2-u3-s4/pic01-chrome-hcpcockpit-cloudcon-importhttpdest.png)
 
-    The newly imported HTTP destination configuration is displayed in read-only mode:
+    The newly created HTTP destination configuration is displayed in read-only mode:
 
     ![SAP CP Cockpit 7](./images/w2-u3-s4/pic02-chrome-hcpcockpit-cloudcon-s4hdestination.png)
 
-    > **Note:** The URL `https://s4h:443` points to the virtual SAP Cloud Connector host **`s4h:443`**
-    > The additional properties `WebIDEEnabled` and `WebIDEUsage` allow SAP Web IDE to call `design-time-specific` OData services from the ABAP backend  (e.g. `odata_abap` for the OData functionality of SAP Gateway allows SAP Web IDE to access the OData service catalog of the ABAP backend system).
 
-7.  Click **Check Connection** to test system communication between SAP Cloud Platform and the SAP back-end on network level.
+8.  Click **Check Connection** to test system communication between SAP Cloud Platform and the SAP back-end on network level.
 
     ![SAP CP Cockpit 8](./images/w2-u3-s4/pic03-chrome-hcpcockpit-cloudcon-checkcon.png)
 

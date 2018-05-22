@@ -10,8 +10,9 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 
 ## Details
 ### You will learn  
-Coming soon!
-This tutorial will walk you through the setup process of SAP HANA, express edition, and the XS Advanced applications platforms from an Amazon Marketplace Image in Amazon Web Services
+Coming soon! The preconfigured image is still not published but we are working on it. In the meantime, you can use the manual installation: <https://www.sap.com/developer/groups/hxe-install-binary-xsa.html>
+
+The recommended machine type for SAP HANA, express edition and XS Advanced applications on Amazon Web Services is `m4.2xlarge`
 
 ### Time to Complete
 **35 Min**
