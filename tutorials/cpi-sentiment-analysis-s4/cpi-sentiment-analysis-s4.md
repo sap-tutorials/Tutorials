@@ -1,8 +1,8 @@
 ---
 title: Set up an SAP Hybris Marketing Cloud system
 description: Set up the communication user on the SAP Hybris Marketing Cloud system.
-primary_tag: products>sap-s-4hana
-tags: [  tutorial>beginner ]
+primary_tag: products>sap-hybris-as-a-service-on-sap-cloud-platform
+tags: [  tutorial>beginner, products>sap-hybris-as-a-service-on-sap-cloud-platform, products>sap-s-4hana ]
 ---
 
 ## Prerequisites  
