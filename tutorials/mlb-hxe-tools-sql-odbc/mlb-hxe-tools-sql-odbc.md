@@ -1,6 +1,7 @@
 ---
-title: Use an ODBC based querying tools for SAP HANA, express edition
+title: Use an ODBC based querying tool with SAP HANA, express edition
 description: Provide details on the installation the SAP HANA client and instruction to connect a SAP HANA, express edition instance from almost any ODBC based querying tool.
+auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
 ---
@@ -23,108 +24,24 @@ For alternate options, you can also check the following link: [Select a SQL quer
 ### Time to Complete
 **10 Min**.
 
-[ACCORDION-BEGIN [Step 1: ](Download the SAP HANA client)]
+[ACCORDION-BEGIN [Prerequisites: ](Download & Install the SAP HANA HDB client)]
 
-After registering to download [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html), use the **Download Manager** to retrieve the client package for the system you will connect from.
+Before you can proceed with the next steps, you will need to complete the **Installing SAP HANA HDB Client** for your target platform from the [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html) group.
 
-The package names are:
-
- - Linux (x86/64) : `clients_linux_x86_64.tgz`
- - Windows: `clients_windows.zip`
-
-The downloaded archive for the client package contains both the ***SAP HANA HDB Client*** and the ***SAP HANA XS CLI***.
-
-The ***SAP HANA HDB Client*** software package includes the following connectivity/drivers:
-
- - SQLDBC
- - ODBC
- - JDBC
- - Python (`PyDBAPI`)
- - Node.js
- - Ruby
-
-Here you will install the ***SAP HANA HDB Client*** only.
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install the SAP HANA client)]
-
-#### **Connecting from Linux environments**
-
-First, you need to extract the contents of the downloaded package:
-
-```bash
-tar -xvzf /opt/hxe/clients_linux_x86_64.tgz -C /opt/hxe
-```
-
-The following files will be extracted:
-
- - ***`hdb_client_linux_x86_64.tgz`*** : the *SAP HANA HDB Client* software package
- - ***`xs.onpremise.runtime.client_linuxx86_64.zip`*** : the *SAP HANA XS CLI* software package
-
-You need now to decompress the *SAP HANA HDB Client* package executing the following command:
-
-```bash
-tar -xvzf /opt/hxe/hdb_client_linux_x86_64.tgz -C /opt/hxe/installer
-```
-
-And now you can run the installer program executing the following commands:
-
-```bash
-sudo su -l hxeadm
-
-cd /opt/hxe/installer/HDB_CLIENT_LINUX_X86_64
-./hdbinst
-
-exit
-```
-
-Accept the prompts default values to configure your installation:
-
- - Installation Path : `/usr/sap/hdbclient`
-
-Once the installation is completed, you should get the following elements in your console:
-
-```
-Installation done
-```
-
-#### **Connecting from Windows environments**
-
-First, you need to extract the contents of the downloaded package using your favorite archive manager (for example `7zip`, `WinZip` or `WinRar`).
-
-The following files will be extracted:
-
- - ***`hdb_client_windows_x86_32.zip`*** : the *SAP HANA HDB Client* software package for Windows 32 bits platforms
- - ***`hdb_client_windows_x86_64.zip`*** : the *SAP HANA HDB Client* software package for Windows 64 bits platforms
- - ***`xs.onpremise.runtime.client_ntamd64.zip`*** : the *SAP HANA XS CLI* software package
-
-You need now to decompress the *SAP HANA HDB Client* package for your target platform.
-
-And now you can run the installer program executing the `hdbsetup.exe` application located in the `HDB_CLIENT_WINDOWS_X86_64` directory.
-
-Accept the prompts default values to configure your installation:
-
- - Installation Path : `C:\Program Files\sap\hdbclient`
-
-Once the installation is completed, you should get the following elements in your console:
-
-```
-Installation finished successfully
-```
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Locate the ODBC Driver)]
+[ACCORDION-BEGIN [Step 1: ](Locate the ODBC Driver)]
 
 The driver (`lbodbcHDB.dll/so`), which is installed as part of the SAP HANA client, is located at (unless specified otherwise during the installation):
 
  - on Linux and UNIX platforms `/usr/sap/hdbclient/`
  - on Microsoft Windows platforms: `C:\Program Files\SAP\hdbclient\`
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Configure the driver)]
+[ACCORDION-BEGIN [Step 2: ](Configure the driver)]
 
 #### **Connecting from Linux environments**
 
@@ -181,9 +98,10 @@ odbcad32
 
 ![image Step 4](04-1.png)
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Configure your connections)]
+[ACCORDION-BEGIN [Step 3: ](Configure your connections)]
 
 Before connecting  with ODBC, you need to create an ODBC DSN (Data Source Name).
 
@@ -286,9 +204,10 @@ At the end, you should have both the HXE and SYSTEMDB ODBC DSN listed.
 > ### **Note** : for Docker users you will need to update the HXE port to ***39041*** and the SYSTEMDB one to ***39017***.
 &nbsp;
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test the connections with SQL)]
+[ACCORDION-BEGIN [Step 4: ](Test the connections with SQL)]
 
 #### **Connecting from Linux environments**
 
@@ -349,4 +268,71 @@ There are several options available like:
 
 Make sure you always use a 64 bit version else your DSN won't be listed.
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Validation)]
+
+Based on the available **ODBC Connection Properties** listed in the <a href="https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/7cab593774474f2f8db335710b2f5c50.html" target="new">online documentation</a>, provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Connection String: ](The server host)]
+
+You can use the IP address, the host name or the fully qualified name as long as the server host is reachable using a ping command from the machine that will run your program.
+
+You can also specify one or more failover servers by adding additional hosts, as in the following example:
+
+```bash
+ServerNode=myServer:39015,failoverserver1:39015,failoverserver2:39015
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Connection String: ](The port number)]
+
+The port number to be used in the connection string include the instance number which is assigned when a new instance is created.
+
+And, the pattern used for port assignments is: ***3&lt;instance number&gt;&lt;service port&gt;***.
+
+To execute SQL, you will need to connect to the ***SQL/MDX*** service port.
+
+#### **SAP HANA, express edition 1.0 and Single Database Container**
+
+In these earlier release, Single Database Container was the default installation mode and the default instance number was **00**.
+
+The ***SQL/MDX*** service port to access the database of a single tenant system is **15**, so the port is **30015**.
+
+To access a specific database, you will use the **`databasename`** in the option parameter.
+
+#### **SAP HANA, express edition 2.0 and Multi Database Container**
+
+With newer releases, Multi Database Container are installed by default and the instance number used by default value is **90**, unless specified otherwise during the setup.
+
+With Multi Database Container you must consider the SQL/MDX service port to access the System database (also called SYSTEMDB) and the Tenant databases.
+
+The ***SQL/MDX*** service port to access the **SYSTEMDB** ***System database*** of a multitenant system is **13**, so the port is **39013**
+
+The ***SQL/MDX*** service port to access the **HXE** ***Tenant databases*** of a multitenant system is **15**, so the port is **39015**
+
+Make sure that you can reach the port (using a telnet command) from the computer you will connect using Eclipse.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Connection String: ](The options)]
+
+The ODBC driver supports a full set of options that can become handy when developing your application.
+
+For example, you can use the ***options*** parameter in your DSN to specify the connection current schema, as in the following example:
+
+```bash
+CURRENTSCHEMA=ML_USER
+```
+
+For more information about the **ODBC Connection Properties**, you can check the <a href="https://help.sap.com/viewer/0eec0d68141541d1b07893a39944924e/2.0.02/en-US/7cab593774474f2f8db335710b2f5c50.html" target="new">online documentation</a>
+
+[DONE]
 [ACCORDION-END]

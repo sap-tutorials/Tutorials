@@ -2,7 +2,7 @@
 title: Create and run an ABAP application
 description: Create and run an ABAP application based on tables from the sample EPM data model.
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [ tutorial>beginner, topic>abap-development ]
 ---
 
 ## Prerequisites  

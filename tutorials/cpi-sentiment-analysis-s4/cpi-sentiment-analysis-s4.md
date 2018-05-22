@@ -35,7 +35,7 @@ Assign a password for the user in the password field for basic authentication. E
 ![user password](4.png)  
 
 Choose **Create**.
->It is also possible to use an existing user.  If an existing user is used, the password of this user is required as well.
+>It is also possible to use an existing user.  If an existing user is used, the password of this user is required as well. Secondly, it is also possible to upload the Cloud Platform Integration client certificate as well. For more information, please view the [documentation](https://help.sap.com/http.svc/rc/458b77f3adbd436ab2e3c6473132237c/1708/en-US/IntC4ChybrisMktCloudviaCPI.pdf).
 
 [ACCORDION-END]
 

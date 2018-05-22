@@ -101,7 +101,7 @@ Similar to what we have done to register the DataSource in the `web.xml` file, w
 
 [ACCORDION-BEGIN [Step 6: ](Save and deploy)]
 
-Save your changes and deploy/publish the application again. After successful authenticating yourself, navigate to the following URL: <http://localhost:8080/weatherapp/api/v1/weather?id=2158177>
+Save your changes and deploy/publish the application again. After successful authenticating yourself, navigate to the following URL: `http://localhost:8080/weatherapp/api/v1/weather?id=2158177`
 
 ![Testing the new weather destination](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part8/e2e_08-6.png)
 

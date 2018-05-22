@@ -1,7 +1,7 @@
 ---
 title: Display database content and run SQL queries
 description: Use Data Preview to display the content of tables and views and SQL Console to perform ad-hoc SQL queries
-tags: [  tutorial>beginner, topic>abap-development ]
+tags: [ tutorial>beginner, topic>abap-development ]
 primary_tag: topic>abap-development
 ---
 

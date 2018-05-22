@@ -6,11 +6,11 @@ primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
 ## Details
-### You will learn  
+### You will learn
 
 - How to use SAP HANA PAL APRIORI algorithm from SAP HANA 1.0 SPS12
 
@@ -73,16 +73,16 @@ Once the AFL wrapper is generated, it can be invoked through a call statement.
 Here is a quick code example:
 
 ```
--- --------------------------------------------------------------------------   
--- Create the table type for the dataset   
--- --------------------------------------------------------------------------   
+-- --------------------------------------------------------------------------
+-- Create the table type for the dataset
+-- --------------------------------------------------------------------------
 DROP TYPE TRAINING_DATASET_T;
 -- the training dataset definition
-CREATE TYPE TRAINING_DATASET_T AS TABLE( .... );   
+CREATE TYPE TRAINING_DATASET_T AS TABLE( .... );
 
--- --------------------------------------------------------------------------   
--- Create the AFL wrapper corresponding to the target APL function   
--- --------------------------------------------------------------------------   
+-- --------------------------------------------------------------------------
+-- Create the AFL wrapper corresponding to the target APL function
+-- --------------------------------------------------------------------------
 DROP TYPE PROCEDURE_SIGNATURE_T;
 CREATE TYPE PROCEDURE_SIGNATURE_T AS TABLE(
     "NAME"        VARCHAR (50),
@@ -95,7 +95,7 @@ DROP TYPE TRAINED_MODEL_T;
 CREATE TYPE TRAINED_MODEL_T AS TABLE(
     "NAME"  VARCHAR (50),
     "VALUE" VARCHAR (5000)
-);  
+);
 DROP TABLE OPERATION_CONFIG;
 
 DROP TYPE OPERATION_CONFIG_T;
@@ -104,22 +104,22 @@ CREATE TYPE OPERATION_CONFIG_T AS TABLE(
     "VALUE" VARCHAR (5000)
 );
 
--- --------------------------------------------------------------------------   
--- Create the AFL wrapper corresponding to the target PAL function   
--- --------------------------------------------------------------------------   
-DROP TABLE CREATE_MODEL_SIGNATURE;   
-CREATE COLUMN TABLE CREATE_MODEL_SIGNATURE like PROCEDURE_SIGNATURE_T;   
--- the signature is defined in the PAL API documentation   
+-- --------------------------------------------------------------------------
+-- Create the AFL wrapper corresponding to the target PAL function
+-- --------------------------------------------------------------------------
+DROP TABLE CREATE_MODEL_SIGNATURE;
+CREATE COLUMN TABLE CREATE_MODEL_SIGNATURE like PROCEDURE_SIGNATURE_T;
+-- the signature is defined in the PAL API documentation
 INSERT INTO CREATE_MODEL_SIGNATURE VALUES (1,'MYSCHEMA', 'TRAINING_DATASET_T' ,'IN');
 INSERT INTO CREATE_MODEL_SIGNATURE VALUES (2,'MYSCHEMA', 'OPERATION_CONFIG_T' ,'IN');
-INSERT INTO CREATE_MODEL_SIGNATURE VALUES (3,'MYSCHEMA', 'TRAINED_MODEL_T'    ,'OUT');  
+INSERT INTO CREATE_MODEL_SIGNATURE VALUES (3,'MYSCHEMA', 'TRAINED_MODEL_T'    ,'OUT');
 
-call SYS.AFLLANG_WRAPPER_PROCEDURE_DROP('MYSCHEMA','APLWRAPPER_CREATE_MODEL');   
+call SYS.AFLLANG_WRAPPER_PROCEDURE_DROP('MYSCHEMA','APLWRAPPER_CREATE_MODEL');
 call SYS.AFLLANG_WRAPPER_PROCEDURE_CREATE('AFLPAL','ARIMATRAIN','MYSCHEMA', 'APLWRAPPER_CREATE_MODEL', "CREATE_MODEL_SIGNATURE");
 
-DROP TABLE OPERATION_CONFIG;   
+DROP TABLE OPERATION_CONFIG;
 CREATE COLUMN TABLE OPERATION_CONFIG like OPERATION_CONFIG_T;
--- the function configuration is defined in the PAL API documentation   
+-- the function configuration is defined in the PAL API documentation
 INSERT INTO OPERATION_CONFIG VALUES ('P', 1,null,null);
 INSERT INTO OPERATION_CONFIG VALUES ('Q', 1,null,null);
 INSERT INTO OPERATION_CONFIG VALUES ('D', 0,null,null);
@@ -130,7 +130,7 @@ DROP TABLE TRAINED_MODEL;
 CREATE COLUMN TABLE TRAINED_MODEL LIKE TRAINED_MODEL_T;
 
 CALL APLWRAPPER_CREATE_MODEL("TRAINING_DATASET", "OPERATION_CONFIG");
-```    
+```
 
 For more information please refer to the online <a href="https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/1.0.12/en-US" target="new">documentation</a>..
 
@@ -368,7 +368,7 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 ```SQL
 SELECT
     COUNT(1) AS "MOVIE_COUNT"
-  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"  
+  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"
 FROM (
   SELECT "MOVIEID"
   FROM "MOVIELENS"."PAL_APRIORI_MODEL_USERS_RESULTS"
@@ -381,7 +381,7 @@ Let's verify how many distinct movies will potentially get recommended to a user
 ```SQL
 SELECT
     COUNT(1) AS "MOVIE_COUNT"
-  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"  
+  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"
 FROM (
   SELECT "PRERULE" AS "MOVIEID"
   FROM "MOVIELENS"."PAL_APRIORI_RESULT"
@@ -425,7 +425,7 @@ FROM (
     , "MOVIES"."TITLE"
     , "MOVIES"."GENRES"
     , "LINKS"."IMDBID"
-    , "LINKS"."TMDBID"  
+    , "LINKS"."TMDBID"
   FROM (
     SELECT "MOVIEID", "RULES"."POSTRULE" AS "CONSEQUENT", "RULES"."CONFIDENCE" AS "SCORE"
     FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" AS INPUT_DATA
@@ -463,7 +463,7 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 ```SQL
 SELECT
     COUNT(1) AS "MOVIE_COUNT"
-  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"  
+  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"
 FROM (
   SELECT "MOVIEID"
   FROM "MOVIELENS"."PAL_APRIORI_MODEL_ITEMS_RESULTS"

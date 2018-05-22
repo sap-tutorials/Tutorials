@@ -22,38 +22,46 @@ This tutorial will show you how to assign a tenant database to a space using the
 
 [ACCORDION-BEGIN [Step 1: ](Log in to the XS Advanced Administration)]
 
-The default URL for SAP HANA, express edition instances is `https://hxehost:51015`.
+If you are using SAP HANA, express edition, go into `https://hxehost:51036` or `https://hxehost:39030` to access the `xsa-cockpit` app.
+
+![Cockpit log in](39030_cockpit.png)
+
+Click on the button to open and log in to the XSA Cockpit
 
 ![Cockpit log in](1.png)
 
->If you are not using SAP HANA, express edition, or you have changed the ports, you can find out the right URL using command `xs apps` on the Command Line Interface and look for the URL for application `xsa-admin`. You can access the CLI directly from an SSH console on the server or download using the Download Manager. You can get the Download Manager after registering at the [Download site](https://www.sap.com/developer/topics/sap-hana-express.html)
+>If you are not using SAP HANA, express edition, or you have changed the ports, you can find out the right URL using command `xs apps` on the Command Line Interface and look for the URL for application `xsa-cockpit`. You can access the CLI directly from an SSH console on the server or download it using the Download Manager. You can get the Download Manager after registering at the [Download site](https://www.sap.com/developer/topics/sap-hana-express.html)
 
 &nbsp;
 
 You need a user with administration rights, such as `XSA_ADMIN`. Log in to the Administration tool with it
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable the tenant DB)]
 
-Click on **SAP HANA Logical Database Setup**
+Click on **Enable**
 
 ![Cockpit click on logical setup](logical.png)
-
-You will see the available tenant databases. Make sure the one you want to assign is in status `Running` and then press **Enable**
-
-![Tenant database](db.png)
 
 You will be prompted for the credentials to the tenant database
 
 ![Tenant database credentials](system.png)
+
+After a couple of seconds you will see the database is enabled
+
+![Tenant database credentials](enabled.png)
+
+[DONE]
 
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 3: ](Assign the tenant to the space)]
 
-Go back to the **Home** screen. Click on the **SAP HANA Service Broker Configuration** tile.
+Click **Map**
 
 ![Logical Database](broker.png)
 
@@ -65,11 +73,7 @@ Select the tenant database as `default` and click **OK**
 
 ![Default Database](map2.png)
 
-You will see a success message
+You can now use the space mapped to a tenant database in your Multi Target Applications.
 
-![Default Database](map3.png)
-
-You can now use the space in your Multi Target Applications.
-
-
+[DONE]
 [ACCORDION-END]

@@ -2,6 +2,7 @@
 title: Add an External API call to your app (Slack)
 description: Call an external API and display the data in a table
 primary_tag: topic>sapui5
+auto_validation: true
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 ## Prerequisites  
@@ -22,10 +23,10 @@ In this tutorial, you will either create a new app or modify an existing app you
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create or open an application in WebIDE)]
+[ACCORDION-BEGIN [Step 1: ](Create or open an application in SAP Web IDE)]
 If you already have an app created that you want to add external API data to, feel free to use that app. Go to your Web IDE, and open that application's folder. **If you already have an application you want to use, go on to Step 2 in this tutorial**.
 
-If you need to create a new application for your external API, use the Project from Template feature in Web IDE. In your Web IDE, click `File > New > Project from Template`.
+If you need to create a new application for your external API, use the Project from Template feature in SAP Web IDE. In your SAP Web IDE, click `File > New > Project from Template`.
 
 ![creating a new project from template in WebIDE](create-new.png)
 
@@ -37,7 +38,7 @@ Name the application `slack_app`. Click **Finish**.
 
 ![adding the name to the application](app-naming.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open the neo-app.json file)]
@@ -65,9 +66,9 @@ If you created a new application, your `neo-app.json` should match the image bel
 
 **SAVE** your changes.
 
-> If you have not refreshed your Web IDE since you added the new Slack destination to your SAP Cloud Platform trial account, please do so now. Web IDE needs to be refreshed before being able to run your application with a new destination.
+> If you have not refreshed your SAP Web IDE since you added the new Slack destination to your SAP Cloud Platform trial account, please do so now. SAP Web IDE needs to be refreshed before being able to run your application with a new destination.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add a table to display data in the XML View)]
@@ -103,7 +104,7 @@ Add a table to your view in between the `<content>` tags. You will bind a model 
 
 **SAVE** your changes.
 
-
+[VALIDATE_3]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Update the controller to set model)]
@@ -140,7 +141,7 @@ You will now create an `onInit` function for your controller. In this function, 
 
 **SAVE** your changes.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Setup a function for the API call)]
@@ -172,7 +173,7 @@ Replace `YOUR_CHANNEL_ID` and `YOUR_TOKEN` with the values from your Slack API. 
 
 **SAVE** your changes.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add Slack API call)]
@@ -209,7 +210,7 @@ You have `done` and `failure` functions defined as part of the AJAX call. If the
 
 **SAVE** your changes.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Call your load function)]
@@ -225,7 +226,7 @@ Back in your `onInit` function, add the following call at the end of the functio
 
 **SAVE** your changes.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Run your application)]
@@ -237,7 +238,7 @@ If your Slack team or channel used for the API call is new, there won't be a who
 
 ![final application image for basic API integration](slack-app.png)
 
-
+[VALIDATE_8]
 [ACCORDION-END]
 
 ### Optional
@@ -266,7 +267,7 @@ $.ajax({
 
 > Some networks block the header parameter in an AJAX. If you are seeing authentication or authorizations errors in your failure response, try testing the API with a service such as Postman. If Postman is able to successfully authenticate, it is most likely an issue with your network. Try again when you are able to access a less restrictive network or use the token parameter method of Authorization.
 
-
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps

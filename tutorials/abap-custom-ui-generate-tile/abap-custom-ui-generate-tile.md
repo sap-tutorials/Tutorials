@@ -6,7 +6,8 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-You need access to a SAP S/4HANA Cloud system. **`Create custom UI for S/4HANA on SAP Cloud Platform`** as tutorial represents a further prerequisite.
+- **Tutorials:** [`Create custom UI for S/4HANA on SAP Cloud Platform`](https://www.sap.com/developer/tutorials/abap-custom-ui-tile.html)
+
 
 ## Details
 ### You will learn

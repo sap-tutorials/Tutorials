@@ -1,14 +1,14 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/m/MessageToast"
-], function(Controller, MessageToast) {
+	"sap/m/MessageBox"
+], function(Controller, MessageBox) {
 	"use strict";
 
 	var defaultFileSrcUrl = "/resources/sap/ui/documentation/sdk/images/logo_ui5.png";
 
 	return Controller.extend("sapui5ml.controller.demo", {
 		fileTypeMissmatch: function(oControlEvent) {
-			MessageToast.show("Wrong file type!");
+			MessageBox.show("Wrong file type!");
 		},
 		fileUploadChange: function(oControlEvent) {
 			// start the busy indicator
@@ -70,9 +70,10 @@ sap.ui.define([
 				processResult(this, JSON.parse(oControlEvent.getParameters().responseRaw), this.srcFile.nam, this.srcFileURL);
 			} else {
 				oView.getModel("demo").setProperty("/resultVisible", false);
-				MessageToast.show("Error " + oControlEvent.getParameters().status + " : " + oControlEvent.getParameters().responseRaw);
+                MessageBox.show("Error " + oControlEvent.getParameters().status + " : " + JSON.parse(oControlEvent.getParameters().responseRaw).error_description);
 			}
 			this.oBusyIndicator.close();
+			MessageBox.show("Process completed!\n Target URL: " + oView.getModel("demo").getProperty("/url"));
 		},
 
 		onPressImageClassifier: function(oControlEvent) {
@@ -151,29 +152,39 @@ sap.ui.define([
 				if (oController.requestCount === 0) {
 					// close the busy indicator
 					oController.oBusyIndicator.close();
+					MessageBox.show("Process completed!\n Target URL: " + url);
 				}
 			};
 			var ajaxError = function(jqXHR, status, message) {
-				oController.getView().getModel("demo").setProperty("/resultVisible-" + service, false);
-				MessageToast.show("Error for file : " + formData.values().next().value.name + " \n status: " + status + "\n message: " + message);
+				oController.getView().getModel("demo").setProperty("/resultVisible-" + service, null);
+				MessageBox.show("Error for file : " + formData.values().next().value.name + " \n status: " + status + "\n message: " + JSON.parse(jqXHR.responseText).error_description);
+				oController.oBusyIndicator.close();
 			};
 			var xhrReadyStateChange = function() {
 				if (this.readyState === this.DONE) {
 					if (this.status === 200) {
-						// get the response as JSON and process the results
-						fnPrecessResult(oController, JSON.parse(this.response), formData.values().next().value.name);
+						// set the response as JSON in the demo model
+						var data = JSON.parse(this.response);
+						var fileName = formData.values().next().value.name;
+						var file = formData.get("files");
+						fnPrecessResult(oController, data, file, fileName);
+						// fnPrecessResult(oController, data, formData.values().next().value.name);
 					} else {
-						oController.getView().getModel("demo").setProperty("/resultVisible-" + service, false);
-						MessageToast.show("Error for file : " + formData.values().next().value.name + " \n status: " + this.status + "\n message: " +
-							this.response);
+						oController.getView().getModel("demo").setProperty("/resultVisible-" + service, null);
+						MessageBox.show("Error for file : " + formData.values().next().value.name + " \n status: " + this.status + "\n message: " + JSON.parse(this.responseText).error_description);
+
 					}
 					// close the busy indicator if all request have completed
 					oController.requestCount--;
-					if (oController.requestCount === 0) {
+					if (oController.requestCount <= 0) {
+						// close the busy indicator
 						oController.oBusyIndicator.close();
+						MessageBox.show("Process completed!\n Target URL: " + url);
 					}
 				}
 			};
+
+
 			if (mode === "ajax") {
 				$.ajax({
 					type: type,

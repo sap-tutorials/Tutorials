@@ -1,23 +1,23 @@
 ---
-title: Deploy a sample Fiori app to SAP Cloud Platform
-description: Deploy a sample Fiori app by committing and pushing it to the Git repository in your account on SAP Cloud Platform.
+title: Deploy an SAP Fiori app to SAP Cloud Platform
+description: Deploy an SAP Fiori app by committing and pushing it to the Git repository in your account on SAP Cloud Platform.
 primary_tag: products>sap-translation-hub
 tags: [  tutorial>intermediate, products>sap-cloud-platform, products>sap-web-ide, products>sap-translation-hub ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** intermediate
- - **Tutorials:** [Prepare sample Fiori app for translation](https://www.sap.com/developer/tutorials/sth-prepare-fiori-app-translation.html)
+ - **Tutorials:** [Prepare an SAP Fiori app for translation](https://www.sap.com/developer/tutorials/sth-prepare-fiori-app-translation.html)
 
 ## Next Steps
- - **Tutorials:** [Translate a sample Fiori app](https://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)
+ - **Tutorials:** [Translate an SAP Fiori app](https://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)
 
 
 ## Details
 ### You will learn  
 You'll learn how to create a Git repository on SAP Cloud Platform and synchronize your project in SAP Web IDE with the Git repository on SAP Cloud Platform.
 
-These steps are required for the next tutorial: [Translate a sample Fiori app](https://www.sap.com/developer/tutorials/sth-translate-fiori-app.html).
+These steps are required for the next tutorial: [Translate an SAP Fiori app](https://www.sap.com/developer/tutorials/sth-translate-fiori-app.html).
 
 
 ### Time to Complete
@@ -179,9 +179,8 @@ You've now prepared everything for the translation step.
 
 ![successful deployment](sth-open-app.png)
 
-[VALIDATE_18]
 
 [ACCORDION-END]
 
 ## Next Steps
-- [Translate your app with SAP Translation Hub](https://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)
+- [Translate an SAP Fiori app with SAP Translation Hub](https://www.sap.com/developer/tutorials/sth-translate-fiori-app.html)

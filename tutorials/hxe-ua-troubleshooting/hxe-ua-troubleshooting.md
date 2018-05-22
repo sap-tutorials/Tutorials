@@ -21,15 +21,13 @@ Perform these steps to resolve issues when installing SAP HANA 2.0, express edit
 
 [ACCORDION-BEGIN [Issue &#151; ](HDB Daemon not Running)]
 
-You are installing SAP HANA, express edition on a Linux server using `hdblcm`. You receive this error:  
+**Issue:** You are installing SAP HANA, express edition on a Linux server using `hdblcm`. You receive this error:  
 
 **Cannot start system.  
 Start instance 00 on host '`hxehost.localdomain.com`' failed.  
 FAIL: process `hdbdaemon` HDB Daemon not running.**
 
-### Solution
-
-Use `zypper` to check the `util-linux`, `util-linux-systemd` and `uuidd` packages to make sure they are at these versions:  
+**Solution:** Use `zypper` to check the `util-linux`, `util-linux-systemd` and `uuidd` packages to make sure they are at these versions:  
 
 `zypper info util-linux util-linux-systemd uuidd`
 
@@ -54,11 +52,9 @@ If the status is inactive, start socket activation:
 
 [ACCORDION-BEGIN [Issue &#151; ](Virtual Machine: Checking Resource Usage)]
 
-You are having memory issues on your VM and want to check resource usage.
+**Issue:** You are having memory issues on your VM and want to check resource usage.
 
-### Solution
-
-If you have HANA studio, right-click on the system and select **Configuration and Monitoring > Open Administration** and check the Overview and Landscape tabs for anything in red.
+**Solution:** If you have HANA studio, right-click on the system and select **Configuration and Monitoring > Open Administration** and check the Overview and Landscape tabs for anything in red.
 
 If you don't have HANA Studio, run the following queries in `hdbsql` to view SAP HANA resource usage:
 
@@ -84,11 +80,9 @@ Look for the **Use%** for the `/dev/sda1 filesystem`. If it is down to just a fe
 
 [ACCORDION-BEGIN [Issue &#151;](SAP HANA XS Applications Run Error)]
 
-You are trying to run a SAP HANA service on your SAP HANA 2.0, express edition installation and are receiving an error.
+**Issue:** You are trying to run a SAP HANA service on your SAP HANA 2.0, express edition installation and are receiving an error.
 
-### Solution
-
-Log in to your SAP HANA 2.0, express edition installation as `hxeadm`.
+**Solution:** Log in to your SAP HANA 2.0, express edition installation as `hxeadm`.
 
 ```
 sudo su -l <sid>adm
@@ -117,13 +111,11 @@ It may take a few minutes for the system to get started. Run `xs apps` again to 
 
 [ACCORDION-BEGIN [Issue &#151;](Download Manager Shows Error)]
 
-Error: `Failed to concatenate downloaded files`
+**Issue:** You have received the following error: `Failed to concatenate downloaded files`
 
 You are downloading packages using the Download Manager. The Status area and Progress Detail area show the error `Failed to concatenate downloaded files`.
 
-### Solution
-
-Check the log file for details. The log file is in the Temp directory:
+**Solution:** Check the log file for details. The log file is in the Temp directory:
 
 Linux: **`/tmp/hxedm[yymmdd].log`**
 
@@ -144,11 +136,9 @@ Change the **Save directory**. Download again.
 
 [ACCORDION-BEGIN [Issue &#151;](Locate Download Manager Log File)]
 
-You are downloading packages using the Download Manager when you terminate Download Manager before download completes, or Download Manager quits unexpectedly.
+**Issue:** You are downloading packages using the Download Manager when you terminate Download Manager before download completes, or Download Manager quits unexpectedly.
 
-### Solution
-
-Check the log file for details. The log file is in the Temp directory:
+**Solution:** Check the log file for details. The log file is in the Temp directory:
 
 Linux: **`/tmp/hxedm[yymmdd].log`**
 
@@ -159,13 +149,13 @@ Windows: **`%TEMP%\hxedm_[yymmdd].log`**
 
 [ACCORDION-BEGIN [Issue &#151;](Unable to Obtain an `IPv4` Address in `VMware`)]
 
-**Issue**: You are unable to obtain an `IPv4` `hxehost` IP address. You are using a `VMware` `hypervisor`.
+**Issue:** You are unable to obtain an `IPv4` `hxehost` IP address. You are using a `VMware` `hypervisor`.
 
 `VMware` defaults to `bridged` networking. You may need to adjust `VMware's` network adapter settings in certain circumstances.
 
 If you are behind a proxy or a firewall, your institution's network may prevent `VMware` from assigning an `IPv4` address when you attempt to locate your `hxehost` `IP` address.
 
-**Solution**:
+**Solution:**
 
 1. In `VMware`, change your network adapter settings from `Bridged` to `NAT`.
 
@@ -178,11 +168,11 @@ If you are behind a proxy or a firewall, your institution's network may prevent 
 
 [ACCORDION-BEGIN [Issue &#151;](`VMware` Fusion on `Mac OS X`: `hxexsa.ova` Installation Fails)]
 
-**Issue**: You use `VMware` Fusion on `Mac OS X`. You import and start `hxexsa.ova`. You receive an error message.
+**Issue:** You use `VMware` Fusion on `Mac OS X`. You import and start `hxexsa.ova`. You receive an error message.
 
 This error displays: "`XSA` cockpit apps failed to start at this point of time. Please retry by running `hxe_cockpit.sh` script"
 
-**Solution**:
+**Solution:**
 
 - Shut down the instance.
 
@@ -194,9 +184,9 @@ This error displays: "`XSA` cockpit apps failed to start at this point of time. 
 
 [ACCORDION-BEGIN [Issue &#151;](Upgrade Script Hangs While Upgrading VM Installation)]
 
-**Issue**: When you run `hxe_upgrade.sh`, you notice the upgrade hangs.
+**Issue:** When you run `hxe_upgrade.sh`, you notice the upgrade hangs.
 
-**Solution**: The VM is low on memory. Run the `hxe_gc` memory management script.
+**Solution:** The VM is low on memory. Run the `hxe_gc` memory management script.
 
 1. Open a new terminal to your VM.
 
@@ -219,6 +209,81 @@ This error displays: "`XSA` cockpit apps failed to start at this point of time. 
     - When prompted for System database user (SYSTEM) password, enter the New HANA database master password you specified during SAP HANA, express edition installation.
 
     The cleanup process runs. The command prompt returns when the cleanup process is finished.
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Issue &#151;](Memory Limit Exceeded - Additional Local Capacity)]
+
+**Issue:** You have exceeded the 32GB memory limit of SAP HANA, express edition and you wish to use more memory on your local machine.
+
+**Solution:** SAP HANA, express edition is limited to 32GB of memory. If you've exceeded this limit and wish to use additional memory for your local installation, purchase a license. Go to the [SAP HANA, express edition](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition) license page to purchase a license.
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Issue &#151;](Memory Limit Exceeded - No Additional Local Capacity)]
+
+**Issue:** You have exceeded the 32GB memory limit of SAP HANA, express edition and you wish to use more memory but you do not have any more available on your local machine.
+
+**Solution:** SAP HANA, express edition is limited to 32GB of memory. If you've exceeded this limit and wish to use additional memory but do not have any additional memory for your local installation, consider migrating to a cloud installation. Visit the [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html) homepage to view cloud offerings.
+
+Additionally, you can add more memory to your local installation and then purchase a license. Go to the [SAP HANA, express edition](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition) license page to purchase a license.
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Issue &#151;](Local Memory Usage Exceeded)]
+
+**Issue:** You have reached the memory limit on your local SAP HANA, express edition, but have not hit the 32GB memory limit
+
+**Solution:** Run garbage cleanup or stop unnecessary or extraneous SAP HANA, express edition processes.
+
+To run garbage collection, run:
+
+```bash
+cd /usr/sap/HXE/home/bin
+./hxe_gc.sh
+```
+
+Log into XSA
+
+```bash
+xs login
+```
+
+Follow the prompts to log in.
+
+See which XS apps are running:
+
+```bash
+xs apps
+```
+
+To stop any XS apps you do not wish to have running, run:
+
+```bash
+xs stop <app>
+```
+
+This will stop the XS app and free any resources it may have been using.
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Issue &#151;](Local Disk Space Full)]
+
+**Issue:** Your local machine has run out of disk space.
+
+**Solution:** You have a few options. You can physically install more disk space, make more disk available to your VM (for VM installations), or free up additional disk space by uninstalling and deleting unnecessary files and programs.
+
+You can also move your SAP HANA, express edition installation to a cloud provider. Visit the [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html) homepage to view cloud offerings.
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Issue &#151;](Local Disk Space Threshold Limited)]
+
+**Issue:** Your local machine has limited how much disk space your Virtual Machine can use for SAP HANA, express edition.
+
+**Solution:** If your virtual machine is limiting how much disk space SAP HANA, express edition is allowed to use, and you have exceeded that amount, visit the virtual machine's documentation to increase the virtual machine's disk space threshold.
+
+You can also move your SAP HANA, express edition installation to a cloud provider. Visit the [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html) homepage to view cloud offerings.
 
 [ACCORDION-END]
 

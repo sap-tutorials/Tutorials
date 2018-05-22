@@ -44,7 +44,7 @@ You should then have access to the Windows instance related to the AWS instance.
 
 Download the [compiled version of the sample project](https://github.com/SAP/cloud-personslist-scenario/blob/Extensions-005/sflight-web/sflight-web.war?raw=true).
 
-> If you want to take a look at the code clone our Git repository or explore it directly online using the GitHub webpage: https://github.com/SAP/cloud-personslist-scenario/tree/Extensions-005
+> If you want to take a look at the code clone our Git repository or explore it directly online using the GitHub webpage: <https://github.com/SAP/cloud-personslist-scenario/tree/Extensions-005>
 
 Open the [cloud cockpit](https://account.hanatrial.ondemand.com/cockpit) and logon with your SAP Cloud Platform user.
 

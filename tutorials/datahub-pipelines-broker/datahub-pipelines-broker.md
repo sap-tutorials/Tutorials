@@ -24,7 +24,7 @@ During this tutorial, you will learn how to use a message broker within a pipeli
 [ACCORDION-BEGIN [Step 1: ](Setup up Apache Kafka)]
 During this tutorial, you will use Apache Kafka as message broker to stream sensor data (i.e. you will publish sensor data via a stream and also consume this stream).
 
->Apache Kafka is a distributed streaming platform. Simply spoken, it allows you to publish and subscribe to message streams. You can find more information on https://kafka.apache.org.
+>Apache Kafka is a distributed streaming platform. Simply spoken, it allows you to publish and subscribe to message streams. You can find more information on <https://kafka.apache.org>.
 
 
 If you have not yet Apache Kafka (combined with Apache Zookeeper) set up, then an easy way to do is pulling an image from Docker Hub (https://hub.docker.com/).

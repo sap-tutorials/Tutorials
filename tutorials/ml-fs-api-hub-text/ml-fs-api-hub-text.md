@@ -1,8 +1,9 @@
 ---
-title: Machine Learning services for text content
+title: Processing Text Content with SAP Leonardo Machine Learning Foundation services on the API Business Hub
 description: Discover the SAP Leonardo Machine Learning Functional Service consuming text content on the SAP API Business Hub
-primary_tag: products>sap-leonardo-machine-learning
-tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-leonardo-machine-learning,  products>sap-api-management, products>sap-cloud-platform]
+auto_validation: true
+primary_tag: products>sap-leonardo-machine-learning-foundation
+tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-leonardo-machine-learning-foundation,  products>sap-api-management, products>sap-cloud-platform]
 ---
 
 ## Prerequisites  
@@ -27,8 +28,6 @@ The **Topic Detection** service allows you to extracts topics from documents and
 ### Time to Complete
 **10 Min**
 
----
-
 [ACCORDION-BEGIN [Step 1: ](Search the SAP API Business Hub)]
 
 In order to consume the **Topic Detection** SAP Leonardo Machine Learning Functional Services, you will first need to get the service URI, request and response parameters.
@@ -41,7 +40,8 @@ Then you will be able to search for the **SAP Leonardo Machine Learning - Functi
 
 ![SAP API Business Hub](02.png)
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 2: ](Analyze the service)]
 
@@ -99,7 +99,8 @@ And the response model schema is the following:
 }
 ```
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 [ACCORDION-BEGIN [Step 3: ](Test the service)]
 
@@ -163,27 +164,9 @@ For example here, for the `cheesecake.txt` document, the first list of keywords 
       {
         "docName": "cheesecake.txt",
         "keywords": [
-          [
-            "cheesecake",
-            "cheese",
-            "cream",
-            "bake",
-            "make"
-          ],
-          [
-            "deep",
-            "learn",
-            "neural",
-            "jump",
-            "network"
-          ],
-          [
-            "learn",
-            "machine",
-            "data",
-            "jump",
-            "algorithm"
-          ]
+          [ "cheesecake", "cheese", "cream", "bake", "make" ],
+          [ "deep", "learn", "neural", "jump", "network" ],
+          [ "learn", "machine", "data", "jump", "algorithm" ]
         ],
         "scores": [
           1.0059799604699027,
@@ -199,27 +182,9 @@ For example here, for the `cheesecake.txt` document, the first list of keywords 
       {
         "docName": "deep_learning.txt",
         "keywords": [
-          [
-            "deep",
-            "learn",
-            "neural",
-            "jump",
-            "network"
-          ],
-          [
-            "learn",
-            "machine",
-            "data",
-            "jump",
-            "algorithm"
-          ],
-          [
-            "cheesecake",
-            "cheese",
-            "cream",
-            "bake",
-            "make"
-          ]
+          [ "deep", "learn", "neural", "jump", "network" ],
+          [ "learn", "machine", "data", "jump", "algorithm" ],
+          [ "cheesecake", "cheese", "cream", "bake", "make" ]
         ],
         "scores": [
           1.0683225059034496,
@@ -235,27 +200,9 @@ For example here, for the `cheesecake.txt` document, the first list of keywords 
       {
         "docName": "machine_learning.txt",
         "keywords": [
-          [
-            "learn",
-            "machine",
-            "data",
-            "jump",
-            "algorithm"
-          ],
-          [
-            "cheesecake",
-            "cheese",
-            "cream",
-            "bake",
-            "make"
-          ],
-          [
-            "deep",
-            "learn",
-            "neural",
-            "jump",
-            "network"
-          ]
+		  [ "learn", "machine", "data", "jump", "algorithm" ],
+		  [ "cheesecake", "cheese", "cream", "bake", "make" ],
+          [ "deep", "learn", "neural", "jump", "network" ]
         ],
         "scores": [
           0.890515209507582,
@@ -272,13 +219,19 @@ For example here, for the `cheesecake.txt` document, the first list of keywords 
   }
 ```
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
----
+[ACCORDION-BEGIN [Step 4: ](Validation)]
+
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
+[ACCORDION-END] 
 
 ### Optional
 
-[ACCORDION-BEGIN [Step 4: ](Investigate similar services)]
+[ACCORDION-BEGIN [Step 5: ](Investigate similar services)]
 
 You can also try the following Machine Learning Functional Services consuming text content:
 
@@ -287,8 +240,9 @@ You can also try the following Machine Learning Functional Services consuming te
 
 For more information, you can also check the online [SAP Leonardo Machine Learning Foundation documentation](https://help.sap.com/viewer/product/SAP_LEONARDO_MACHINE_LEARNING_FOUNDATION/1.0/en-US)
 
-[ACCORDION-END]
+[DONE]
+[ACCORDION-END] 
 
 ## Next Steps
  - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
-  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

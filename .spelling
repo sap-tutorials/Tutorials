@@ -101,8 +101,10 @@ Kubernetes
 keychain
 Keychain
 keystore
+Konsole
 Leonardo
 Lifecycle
+localhost
 Lumira
 MacBook
 macOS
@@ -116,8 +118,10 @@ multistore
 Multistore
 Multitenant
 multitenant
+multipart
 MySQL
 Neo
+neo-app
 NetWeaver
 Node.js
 northwind
@@ -142,6 +146,7 @@ POJOs
 popup
 Postgres
 PostgreSQL
+Preinstallation
 preinstalled
 pre-pend
 pre-pended
@@ -205,6 +210,7 @@ uncurried
 unpartitioned
 UTC
 util
+Velotics
 VirtualBox
 virtualization
 VMware
@@ -215,6 +221,7 @@ Wi-Fi
 WinSCP
 Witalij
 Worklist
+Workset
 Wroblewski
 XML
 XSEngine
@@ -246,3 +253,6 @@ _23
 _24
 _25
 _FILE
+TensorFlow
+Bazel
+Jupyter

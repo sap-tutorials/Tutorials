@@ -19,7 +19,7 @@ Use the SAP Web IDE template wizard to build a Fiori UX app displaying informati
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Log into your SAP Cloud Platform account)]
-Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: <https://account.hanatrial.ondemand.com>
 
 Make sure you are using the **Europe (Rot) - Trial** landscape, and click on your account name to open the cockpit view.
 
@@ -225,7 +225,8 @@ You can click on items in the master list and the right-hand (detail) pane will 
 
 ![app running](te-2016-4-12.png)
 
-Click on **`Baleda`** in the master list, copy the alpha-numeric string below **`Jonathan Mason`**, paste it into the text field below and click **Validate**.
+Click on **`Bionic Research Lab`** in the master list, copy the first contact name in Contacts List, paste it into the text field below and click **Validate**.
+
 
 [VALIDATE_18]
 
