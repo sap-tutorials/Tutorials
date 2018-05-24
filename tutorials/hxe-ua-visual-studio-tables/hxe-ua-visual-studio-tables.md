@@ -59,7 +59,7 @@ Click ![Play Button](execute_button.png) **Execute** to execute the statements.
 Create the student score table by executing the following statements:
 
 ```bash
-CREATE TABLE SYSTEM.DEMO_STUDENT_SCORE_TABLE (name varchar(25),  SCORE_MATH int, SCORE_HISTORY INT, PRIMARY KEY(name));
+CREATE TABLE SYSTEM.DEMO_STUDENT_SCORE_TABLE (name varchar(25),  SCORE_MATH int, SCORE_HISTORY int, PRIMARY KEY(name));
 INSERT INTO SYSTEM.DEMO_STUDENT_SCORE_TABLE VALUES('Jerry','90','80');
 INSERT INTO SYSTEM.DEMO_STUDENT_SCORE_TABLE VALUES('Albert','91','81');
 INSERT INTO SYSTEM.DEMO_STUDENT_SCORE_TABLE VALUES('ShaoWei','92','82');

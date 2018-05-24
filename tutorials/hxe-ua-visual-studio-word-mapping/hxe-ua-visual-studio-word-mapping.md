@@ -28,12 +28,12 @@ Click **File** > **New** > **Project...**.
 
 ![New Project](new_project.png)
 
-In the **New Project**, under **Installed** cascade from **Other Languages** to **Python** and click **HANA Express**.
+In the **New Project** window, under **Installed** cascade from **Other Languages** to **Python** and click **HANA Express**.
 
 ![New Project Window](new_project_window.png)
 
 > **Note:**
-> The Category **Other Languages** may not appear on the list. Go straight to the *Python* category if you see it.
+> The Category **Other Languages** may not appear on the list. Go straight to the **Python** category if you see it.
 
 For this project select *HANA Express Tweets Analysis Application*. Choose a name and save location for your project and then click **OK**.
 
