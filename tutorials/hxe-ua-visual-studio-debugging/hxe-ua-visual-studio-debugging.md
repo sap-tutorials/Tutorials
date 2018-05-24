@@ -54,13 +54,13 @@ To mark a line as a **Breakpoint**, click the left side of the code line. A red 
 
 ![Breakpoint Location](breakpoint_location.png)
 
-If you click ![Continue Button](continue_button.png) you will be taken to the most recent **Breakpoint** that you have not stepped over.
+If you click the ![Continue Button](continue_button.png) **Continue Button** you will be taken to the most recent **Breakpoint** that you have not stepped over.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Stepping Into the Procedure)]
 
-If your line of code contains an procedure, you can ![Step Into](step_into.png) __Step Into__ the procedure. This opens up another window with the procedure selected.
+If your line of code contains a procedure, you can ![Step Into](step_into.png) __Step Into__ the procedure. This opens up another window with the procedure selected.
 
 Click the ![Step Into](step_into.png) __Step Into__ button. This opens the `system.calcMathAverage` procedure.
 

@@ -1,8 +1,8 @@
 ---
 title: Set up SAP Hybris Marketing Cloud integration with Twitter  
 description: The SAP Cloud Platform Integration package integrates social media data into SAP Hybris Marketing Cloud, and lets you load and analyze social media data from Twitter in SAP Hybris Marketing Cloud.
-primary_tag: products>sap-s-4hana
-tags: [  tutorial>beginner,products>sap-s-4hana ]
+primary_tag: products>sap-hybris-as-a-service-on-sap-cloud-platform
+tags: [  tutorial>beginner, products>sap-s-4hana, products>sap-hybris-as-a-service-on-sap-cloud-platform ]
 ---
 
 ## Prerequisites  

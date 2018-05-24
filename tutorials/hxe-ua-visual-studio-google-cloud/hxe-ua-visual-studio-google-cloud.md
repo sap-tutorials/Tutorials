@@ -79,7 +79,7 @@ Name your instance, choose the image type, and the instance type. Click **Launch
 ![Provision Completed](provision_completion.png)
 
 > **Note:**
-> You must enable the **Google Cloud Deployment Manager API** for use in your project. To enable the API, go to `https://console.developers.google.com/apis/api/deploymentmanager.googleapis.com/overview?project=<project number>`.
+> You must enable the **Google Cloud Deployment Manager API** for use in your project. To enable the API, go to `https://console.developers.google.com/apis/api/deploymentmanager.googleapis.com/overview?project=<project_number>`.
 
 When you are prompted to connect to the instance via an SSH connection, click **Connect**.
 

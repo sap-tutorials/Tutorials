@@ -2,7 +2,7 @@
 title: Build a Hybris Cloud app with SAP API Business Hub and SAP Cloud Platform SDK for iOS
 description: Use the SAP API Business Hub integration in SAP Cloud Platform SDK for iOS to create an app extending SAP Hybris Cloud
 primary_tag: products>sap-cloud-platform-sdk-for-ios
-tags: [  tutorial>how-to, tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, products>sap-hybris-as-a-service-on-sap-cloud-platform ]
+tags: [  tutorial>how-to, tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, products>sap-hybris-as-a-service-on-sap-cloud-platform, products>sap-api-management ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
