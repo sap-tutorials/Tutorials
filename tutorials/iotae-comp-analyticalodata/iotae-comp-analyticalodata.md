@@ -93,7 +93,7 @@ The response should look like this, showing the package configuration for `envir
 This is one way to obtain the configuration. You can use a REST client or a similar method to get the same result.
 
 Copy the URL
-```
+```http
 https://sandbox.api.sap.com:443/iotae/conf/Configuration(%27sap.iotaehandson2.envirocar%27)
 ```
 and paste it into a REST client like Postman.
@@ -120,7 +120,7 @@ For the following steps, you can use the SAP API Business Hub page to send the r
 
 You can request a user for the `handson2` tenant which is used in this tutorial and then you can directly call the API like this from a browser or from Postman (with Postman Interceptor). If you want to do so, go to https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html and follow the instructions on the page. Afterwards, you are able to access the package configuration using the following link:
 
-```
+```http
 https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appcore-conf/Configuration(%27sap.iotaehandson2.envirocar%27)
 ```
 
@@ -138,7 +138,7 @@ Go back to SAP API Business Hub page to select `things` instead of `configuratio
 
 In the edit field for `$filter`, add the following filter for the thing type:
 
-```
+```http
 _thingType eq 'sap.iotaehandson2.envirocar:CarType'
 ```
 
@@ -148,7 +148,7 @@ Click **Try it out!**. This will result in the following response.
 
 You could have chosen the following URL directly:
 
-```
+```http
 https://sandbox.api.sap.com:443/iotae/mds/Things?%24filter=_thingType%20eq%20%27sap.iotaehandson2.envirocar%3ACarType%27
 ```
 
@@ -163,20 +163,18 @@ The result shows 4 cars that were taken out as examples from the `enviroCar` dat
 
 Now access the SAP API Business Hub and chose Thing Analytics'. We will verify time series data first.
 
-![Thing Analytics](pic22.png)
+![Thing Analytics](pic23.png)
 
 Click **GET** for `measurements`.
-
-![Get measurements](pic23.png)
 
 Set the following:
 
   - `propertySetTypeName`:
-    ```
+    ```http
     sap.iotaehandson2.envirocar:Measurements
     ```
   - `$filter`:
-    ```
+    ```http
     time ge datetime'2018-01-01T00:00:00' and time lt datetime'2018-03-01T00:00:00'
     ```
 
@@ -190,9 +188,9 @@ The response will look like this:
 
 The response contains single measurements that were obtained from a car and sent to the enviroCar database. Each single measurement contains the car ID (corresponds to the thing name), a timestamp and a list of different measurements for speed, temperature, fuel consumption, CO2 and more.
 
-One measurement looks like this:
+The list of measurements looks like this:
 
-```
+```json
 "__metadata": {
           "id": "https://analytics-thing-sap.cfapps.eu10.hana.ondemand.com:443/measurements(id='B66347EB30EF46D8BFCD6361532000A5',time=datetime'2018-01-11T06%3A20%3A27')",
           "uri": "https://analytics-thing-sap.cfapps.eu10.hana.ondemand.com:443/measurements(id='B66347EB30EF46D8BFCD6361532000A5',time=datetime'2018-01-11T06%3A20%3A27')",
@@ -256,18 +254,18 @@ One measurement looks like this:
 
 To combine single measurements to a trip, a dedicated `Track` is added to the measurement (not during driving but later in the database).
 
-Now open the chapter **Time Series Aggregates** and click **GET** for `/sap.iotaehandson2.envirocar:Measurement`.
+Now open the chapter **Time Series Aggregates** and click **GET** for `/sap.iotaehandson2.envirocar:Measurement/aggregates`.
 
 ![Time series aggregates](pic26.png)
 
 Set the following:
 
   - `propertySetTypeName`:
-    ```
+    ```http
     sap.iotaehandson2.envirocar:Measurements
     ```
   - `$filter`:
-    ```
+    ```http
     time ge datetime'2018-01-01T00:00:00' and time lt datetime'2018-03-01T00:00:00'
     ```
 
@@ -311,7 +309,7 @@ This will provide the results for a single car only.
 
 The result will look like this:
 
-```
+```json
 {
   "d": {
     "results": [
@@ -431,25 +429,25 @@ The result will look like this:
 
 If you have processed Step 5, we can now consider additional options or verify details by enhancing the request with further parameters.
 
-Remain in the open chapter **Time Series Aggregates** and click **GET** for `/sap.iotaehandson2.envirocar:Measurements2`.
+Remain in the open chapter **Time Series Aggregates** and click **GET** for `/sap.iotaehandson2.envirocar:Measurements2/aggregates`.
 
 ![Measurements2](pic26.png)
 
 Set the following:
 
   - `propertySetTypeName`:
-    ```
+    ```http
     sap.iotaehandson2.envirocar:Measurements2
     ```
   - `$filter`:
-    ```
+    ```http
     time ge datetime'2018-03-01T00:00:00' and time lt datetime'2018-05-01T00:00:00'
     ```
 
 These are a mandatory parameters for the request.
 
 `$select` should be as follows:
-```
+```http
 Track,Speed_AVG,Consumption_AVG
 ```
 
@@ -478,7 +476,7 @@ Click **Try it out!** to obtain the following response:
         "Track": "5a53ba3044ea85087e433cba",
         "Consumption_AVG": "0.9329440295696259",
         "Speed_AVG": "1.5499999523162842"
-      },
+      }
 ```
 
 Compared to the example in Step 5, the aggregates are calculated based on a further dimension: the track number. This was possible as the property set `Measurements2` contained a different setting for property `Track`. In `Measurements2`, it was marked as a dimension.
