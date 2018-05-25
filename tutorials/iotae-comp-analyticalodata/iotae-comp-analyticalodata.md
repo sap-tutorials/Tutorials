@@ -26,17 +26,7 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
 - **Tools**
   Please check step 4 in [https://www.sap.com/developer/groups/iotae-computer-as-thing.html](https://www.sap.com/developer/groups/iotae-computer-as-thing.html) to have the Postman tooling ready.
 - **SAP API Business Hub**
-  In order to access the following example, you could use the SAP API Business Hub at  [http://api.sap.com](http://api.sap.com). This is a web page to provide access to SAP demo systems based on API calls. If you click the link above or type the URL into your browser, you will navigate to the following web page:
-  ![API Business Hub](pic0.png)
-  Log in if you already have a user, otherwise register. Use the links in the upper-right corner.
-  ![Login](pic0r.png)
-    - Log in:
-      ![Image](pic1.png)
-    - Registration:
-      ![Image](pic2.png)
-      Fill in all mandatory fields and provide a decent email address as you will get an email with a confirmation link.
-      ![Email confirmation](pic3.png)
-      Click **Click here to activate your account**. Now you are ready to access the demo system via SAP API Business Hub.
+New to API Business Hub? Check [https://www.sap.com/developer/tutorials/hcp-abh-getting-started.html](https://www.sap.com/developer/tutorials/hcp-abh-getting-started.html)
 
     For further questions regarding the API, please refer to the latest documentation:
     <https://help.sap.com/viewer/350cb3262cb8496b9f5e9e8b039b52db/latest/en-US/66d4abe77cb44fd3b8299ce049b54dba.html>
@@ -51,7 +41,8 @@ In this example, we are using data from the enviroCar database [https://enviroca
 
 ![Image](pic5.png)
 
-The database contains real-life car data in order to investigate the impact driving has on environmental factors, such as fuel consumption, CO2, or noise emissions. The data is anonymised, meaning it is not possible to connect it to a specific driver. Data available via the enviroCar API can be used by third parties in accordance with the Open Database License (`ODbL`). We have further anonymised car types in order to not advertise certain brands.
+The database contains real-life car data in order to investigate the impact driving has on environmental factors, such as fuel consumption, CO2, or noise emissions. The data is anonymised, meaning it is not possible to connect it to a specific driver. Data available via the enviroCar API can be used by third parties in accordance with the Open Database License (`ODbL`).
+We do not use the enviroCar service directly but a copy and we have further anonymised cars and car types in order to not advertise certain brands.
 
 We will use a part of this data for three cars and a subset of measurements. The three cars will be represented in the package `enviroCar` of our demo system.
 
@@ -80,6 +71,8 @@ Choose the tab **Artifacts** to see the three endpoints to access Configuration,
 
 
 [ACCORDION-BEGIN [Step 3: ](Verify configuration)]
+
+In this step, we will have a look at the configuration service to explore the contents of the package used in this example. We will see the thing types and property set types that we can get while accessing this package. The configuration is similar to a definition of objects and its properties.
 
 Click **Configuration** to check the package  `enviroCar`. In the following screen, click  **Get** for `Configuration {id}`.
 
