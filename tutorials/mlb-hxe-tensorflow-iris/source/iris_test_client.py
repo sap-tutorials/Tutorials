@@ -1,5 +1,5 @@
 """
-A client that talks to tensorflow_model_server loaded with iris model.
+A client that talks to tensorflow_model_server serving the iris model.
 """
 from __future__ import print_function
 
@@ -15,7 +15,7 @@ import tensorflow as tf
 from tensorflow_serving.apis import predict_pb2
 from tensorflow_serving.apis import prediction_service_pb2
 
-sys.path.append('/home/tmsadm/models/samples/core/get_started')
+sys.path.append(os.path.expanduser("~") + '/models/samples/core/get_started')
 import iris_data
 
 from hdbcli import dbapi
@@ -26,7 +26,7 @@ tf.app.flags.DEFINE_integer('tmsport', 8500        , 'PredictionService port')
 tf.app.flags.DEFINE_string ('hxehost', 'localhost' , 'HXE host')
 tf.app.flags.DEFINE_integer('hxeport', 39015       , 'HXE port')
 tf.app.flags.DEFINE_string ('hxeusr' , 'ML_USER'   , 'HXE user name')
-tf.app.flags.DEFINE_string ('hxepwd' , '<< password >'  , 'HXE password')
+tf.app.flags.DEFINE_string ('hxepwd' , '<< password >>'  , 'HXE password')
 
 args = tf.app.flags.FLAGS
 
@@ -62,7 +62,11 @@ def main(_):
         request.inputs['SepalWidth' ].CopyFrom(tf.contrib.util.make_tensor_proto(SepalWidth , shape=[1]))
         response = stub.Predict(request, 100)
 
-        predicted_class_id = response.outputs['predicted_class_id'].int64_val[0]
+        # in case you are using SPS02 or prior, the int64 output is not supported
+        if(len(response.outputs['predicted_class_id'].int64_val) > 0) :
+          predicted_class_id = response.outputs['predicted_class_id'].int64_val[0]
+        else:
+          predicted_class_id = int(response.outputs['predicted_class_id'].float_val[0])
         predicted_class_name = iris_data.SPECIES[predicted_class_id]
         predicted_class_probability = response.outputs['probabilities'].float_val[int(predicted_class_id)]
 

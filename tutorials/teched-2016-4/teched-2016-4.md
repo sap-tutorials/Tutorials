@@ -225,7 +225,8 @@ You can click on items in the master list and the right-hand (detail) pane will 
 
 ![app running](te-2016-4-12.png)
 
-Click on **`Baleda`** in the master list, copy the alpha-numeric string below **`Jonathan Mason`**, paste it into the text field below and click **Validate**.
+Click on **`Bionic Research Lab`** in the master list, copy the first contact name in Contacts List, paste it into the text field below and click **Validate**.
+
 
 [VALIDATE_18]
 

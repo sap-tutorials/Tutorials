@@ -2,6 +2,7 @@
 title: Add an API Proxy to a Product
 description: In SAP Cloud Platform, API Management, API Proxies are grouped and exposed as so called Products. In this tutorial you will create a new product and assign the previously created API Proxy to it
 primary_tag: products>sap-api-management
+auto_validation: true
 tags: [  tutorial>beginner, topic>cloud, products>sap-api-management, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
@@ -33,7 +34,7 @@ Open the SAP API Management API Portal (you can get the URL from Enable the SAP 
 
 ![Access API Portal](01-access_api_portal.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Quick start a product creation)]
@@ -42,7 +43,7 @@ From the Home screen,  click on **Product** under the Quick Actions tile.
 
 ![Click on Product](02-create_product.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](View current products)]
@@ -55,7 +56,7 @@ Select **Products** from the tab menu. This will bring up the list of previously
 
 ![Click on Product](04-manage-product.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a new product)]
@@ -64,7 +65,7 @@ On the **Products** tab, click on **Create** to start the new product wizard.
 
 ![Click on Create](05-ProductCreate.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add name and title)]
@@ -78,7 +79,7 @@ Title | Product For First API Proxy
 
 ![Product overview](05a.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Select the API Proxy)]
@@ -93,7 +94,7 @@ The list of API Proxies is populated from the APIs you have created. Select the 
 
 ![Click on OK](07-SelectAPI-OK.png)
 
-
+[VALIDATE_6]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Click Publish)]
@@ -106,7 +107,7 @@ One Product is now available.
 
 ![One Product is available](09-ProductPublished.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 
