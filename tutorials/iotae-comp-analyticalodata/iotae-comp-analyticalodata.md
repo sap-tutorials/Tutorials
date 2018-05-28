@@ -22,14 +22,14 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
 [ACCORDION-BEGIN [Step 1: ](Get access to demo system)]
 
 - **User**
-  Go to [https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html](https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html) and follow the instructions on the page to get a user and a password on the landscape used for this tutorial.
+  Go to https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html and follow the instructions on the page to get a user and a password on the landscape used for this tutorial.
 - **Tools**
-  Please check step 4 in [https://www.sap.com/developer/groups/iotae-computer-as-thing.html](https://www.sap.com/developer/groups/iotae-computer-as-thing.html) to have the Postman tooling ready.
+  Please check step 4 in https://www.sap.com/developer/groups/iotae-computer-as-thing.html to have the Postman tooling ready.
 - **SAP API Business Hub**
-New to API Business Hub? Check [https://www.sap.com/developer/tutorials/hcp-abh-getting-started.html](https://www.sap.com/developer/tutorials/hcp-abh-getting-started.html)
+New to API Business Hub? Check https://www.sap.com/developer/tutorials/hcp-abh-getting-started.html
 
     For further questions regarding the API, please refer to the latest documentation:
-    <https://help.sap.com/viewer/350cb3262cb8496b9f5e9e8b039b52db/latest/en-US/66d4abe77cb44fd3b8299ce049b54dba.html>
+    https://help.sap.com/viewer/350cb3262cb8496b9f5e9e8b039b52db/latest/en-US/66d4abe77cb44fd3b8299ce049b54dba.html
 
 [DONE]
 
@@ -37,7 +37,7 @@ New to API Business Hub? Check [https://www.sap.com/developer/tutorials/hcp-abh-
 
 [ACCORDION-BEGIN [Step 2: ](Access the AE IoT Services API)]
 
-In this example, we are using data from the enviroCar database [https://envirocar.org](https://envirocar.org).
+In this example, we are using data from the enviroCar database to be found at https://envirocar.org.
 
 ![Image](pic5.png)
 
