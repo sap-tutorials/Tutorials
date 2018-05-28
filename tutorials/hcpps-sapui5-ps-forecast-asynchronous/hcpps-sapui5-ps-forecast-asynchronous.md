@@ -1,22 +1,23 @@
 ---
-title: Implement the "Forecast" service asynchronous mode
-description: You will extend your application with the "Forecast" service using the asynchronous mode
+title: Implement the Forecast service asynchronous mode
+description: You will extend your application with the Forecast service using the asynchronous mode
+auto_validation: true
 primary_tag: products>sap-predictive-service
 tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Implement the "Forecast" service asynchronous mode](https://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
+  - **Tutorials:** [Implement the Forecast service asynchronous mode](https://www.sap.com/developer/tutorials/hcpps-sapui5-ps-forecast-synchronous.html)
 
 ## Next Steps
   - This was the end of the tutorial series. Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn
-  - How to add a SAPUI5 controller to interact with the "Forecast" SAP Cloud Platform predictive service in your SAPUI5 application with the asynchronous mode
+  - How to add a SAPUI5 controller to interact with the Forecast SAP Predictive service in your SAPUI5 application with the asynchronous mode
 
-> **Note:** our goal here is to mimic what was done using the REST Client around the "Forecast" services
+> **Note:** our goal here is to mimic what was done using the REST Client around the Forecast services
 
 ### Time to Complete
   **10 minutes**
@@ -25,7 +26,7 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-s
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
-Log into the [***SAP Cloud Platform Cockpit***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 Click on your ***SAP Cloud Platform Account Name*** as highlighted on the below screenshot.
 
@@ -47,11 +48,12 @@ This will open the ***SAP Web IDE*** where you have previously created the `pred
 
 ![HTML5 Applications](04.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
 
-For the moment we will just add the "Get Dataset List" functions and the "Forecast" similar to what we did in the previous tutorial.
+For the moment we will just add the "Get Dataset List" functions and the Forecast similar to what we did in the previous tutorial.
 
 Create a new file **`asynchronous.controller.js`** in `webapp/controller/forecast` either using the "File" menu or using the right click menu.
 
@@ -61,13 +63,16 @@ Open the `webapp/controller/forecast/asynchronous.controller.js` file and add th
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/m/MessageToast",
-	"pspredictive/fragment/dataset/DatasetList"
-], function(Controller, MessageToast, DatasetList) {
+	"sap/m/MessageBox",
+	"pspredictive/fragment/dataset/DatasetList",
+	"pspredictive/model/formatter"
+], function(Controller, MessageToast, MessageBox, DatasetList, formatter) {
 	"use strict";
 
 	jQuery.sap.require("pspredictive.fragment.dataset.DatasetList");
 
 	return Controller.extend("pspredictive.controller.forecast.asynchronous", {
+		formatter: formatter,
 		onInit: function() {
 			if (typeof sap.ui.getCore().getModel() === 'undefined') {
 				this.getView().setModel(new sap.ui.model.json.JSONModel(), "dataset_fragment");
@@ -93,20 +98,28 @@ sap.ui.define([
     	var oModelJob = oView.getModel("job_fragment");
 
     	// get the service parameters value
-    	var datasetId = this.getView().byId(event.getSource().data("eDatasetID")).getValue();
-    	var targetColumn = this.getView().byId(event.getSource().data("eTargetColumn")).getSelectedKey();
-    	var dateColumn = this.getView().byId(event.getSource().data("eDateColumn")).getSelectedKey();
-    	var numberOfForecasts = this.getView().byId(event.getSource().data("eNumberOfForecasts")).getValue();
-    	var referenceDate = this.getView().byId(event.getSource().data("eReferenceDate")).getValue();
+			var datasetId = this.getView().byId(event.getSource().data("eDatasetID")).getValue();
+			var targetColumn = this.getView().byId(event.getSource().data("eTargetColumn")).getSelectedKey();
+			var dateColumn = this.getView().byId(event.getSource().data("eDateColumn")).getSelectedKey();
+			var numberOfForecasts = this.getView().byId(event.getSource().data("eNumberOfForecasts")).getValue();
+			var referenceDate = this.getView().byId(event.getSource().data("eReferenceDate")).getValue();
+			var forecastMethod = this.getView().byId(event.getSource().data("eForecastMethod")).getSelectedKey();
+			var smoothingCycleLength = this.getView().byId(event.getSource().data("eSmoothingCycleLength")).getValue();
+			var maxLag = this.getView().byId(event.getSource().data("eMaximumLag")).getValue();
+			var numberOfPastValuesInOutput = this.getView().byId(event.getSource().data("eNumberOfPastValuesInOutput")).getValue();
 
-    	// define the service parameters
-    	var param = {
-    		datasetID: datasetId,
-    		targetColumn: targetColumn,
-    		dateColumn: dateColumn,
-    		numberOfForecasts: numberOfForecasts,
-    		referenceDate: referenceDate
-    	};
+			// define the service parameters
+			var param = {
+				datasetID: datasetId,
+				targetColumn: targetColumn,
+				dateColumn: dateColumn,
+				numberOfForecasts: numberOfForecasts,
+				referenceDate: referenceDate,
+				forecastMethod: forecastMethod,
+				smoothingCycleLength: smoothingCycleLength,
+				maxLag: maxLag,
+				numberOfPastValuesInOutput: numberOfPastValuesInOutput
+			};
 
     	// call the service and define call back methods
     	$.ajax({
@@ -118,7 +131,8 @@ sap.ui.define([
     		type: "POST",
     		data: JSON.stringify(param),
     		dataType: "json",
-    		async: false,
+    		async: true,
+            timeout: 3000000,
     		success: function(data) {
     			try {
     				//Save data set description data in the model
@@ -143,6 +157,7 @@ You can notice that the service call is almost the same (minor change in the URL
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
@@ -160,8 +175,8 @@ Create a new file **`asynchronous.view.xml`** in `webapp/view/forecast` either u
 Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following code:
 
 ```xml
-<mvc:View controllerName="pspredictive.controller.forecast.asynchronous" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
-	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
+<mvc:View controllerName="pspredictive.controller.forecast.asynchronous" xmlns:html="http://www.w3.org/2000/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Toolbar>
 		<ToolbarSpacer/>
@@ -180,7 +195,8 @@ Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following
 		<ToolbarSpacer/>
 		<Button icon="sap-icon://begin" text="Run forecast" custom:eDatasetID="idFormDatasetID" custom:eDateColumn="idFormDateColumn"
 			custom:eTargetColumn="idFormTargetColumn" custom:eReferenceDate="idFormReferenceDate" custom:eNumberOfForecasts="idFormNumberOfForecasts"
-			press="forecast"/>
+			custom:eForecastMethod="idFormForecastMethod" custom:eSmoothingCycleLength="idFormSmoothingCycleLength"
+			custom:eMaximumLag="idFormMaximumLag" custom:eNumberOfPastValuesInOutput="idFormNumberOfPastValuesInOutput" press="forecast"/>
 		<ToolbarSpacer/>
 	</Toolbar>
 </mvc:View>
@@ -188,6 +204,7 @@ Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Job status fragment)]
@@ -236,6 +253,7 @@ Open the `webapp/fragment/job/JobStatus.fragment.xml` file and add the following
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add the "check job status" function)]
@@ -265,7 +283,8 @@ checkStatus: function() {
 		},
 		url: "/ps/api/analytics/forecast/" + jobId + "/status",
 		type: "GET",
-		async: false,
+		async: true,
+		timeout: 3000000,
 		success: function(data) {
 			try {
 				//Save data set description data in the model
@@ -301,6 +320,7 @@ Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add the "get job result" function)]
@@ -331,7 +351,8 @@ getResults: function() {
 		},
 		url: "/ps/api/analytics/forecast/" + jobId,
 		type: "GET",
-		async: false,
+		async: true,
+		timeout: 3000000,
 		success: function(data) {
 			try {
 				//Save data set description data in the model
@@ -366,6 +387,7 @@ Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following
 </Panel>
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add the "delete job result")]
@@ -396,7 +418,8 @@ deleteResults: function() {
 		},
 		url: "/ps/api/analytics/forecast/" + jobId,
 		type: "DELETE",
-		async: false,
+		async: true,
+		timeout: 3000000,
 		success: function(data) {
 			try {
 				//Save data set description data in the model
@@ -428,6 +451,7 @@ Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following
 </Toolbar>
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Extend the default view)]
@@ -442,21 +466,25 @@ Inside the `<detailPages>` element, and uncomment the following element:
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Run the application)]
 
 Then, click on the **Run** icon ![Run Applications](0-run.png) or press `ALT+F5`.
 
-On the left panel, you should see an item labeled `Forecast Services`, click on it. Then click on `Asynchronous`
+On the left panel, you should see an item labeled **Forecast Services**, click on it. Then click on **Asynchronous**.
 
-Select the dataset you want to use from the list (Cash Flow is the one!), update the service parameters if needed, then press the `Run forecast` button.
+Select the dataset you want to use from the list (Cash Flow is the one!), update the service parameters if needed, then press the **Run forecast** button.
 
-The job status fragment will appear, click on "Get forecast job status" until the status becomes "SUCCESSFUL", then hit "Get Result".
+The job status fragment will appear, click on **Get forecast job status** until the status becomes **SUCCESSFUL**, then hit **Get Result**.
 
 Et voilà!
 ![Applications](05.png)
 
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Solution: ](Created and modified files)]
@@ -474,6 +502,7 @@ However, you won't be able to clone the repository and directly run the code fro
 
 Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps

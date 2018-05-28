@@ -37,7 +37,8 @@ sap.ui.define([
 				type: "POST",
 				data: JSON.stringify(param),
 				dataType: "json",
-				async: false,
+				async: true,
+				timeout: 3000000,
 				success: function(data) {
 					try {
 						//Save data set description data in the model

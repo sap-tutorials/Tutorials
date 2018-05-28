@@ -1,6 +1,7 @@
 ---
-title: Test the "Outliers" service
-description: Using a REST client, you will test the "Outliers" SAP Cloud Platform predictive service
+title: Test the Outliers service
+description: Using a REST client, you will test the Outliers SAP Predictive service
+auto_validation: true
 primary_tag: products>sap-predictive-service
 tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-service, products>sap-cloud-platform ]
 ---
@@ -15,28 +16,29 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-servi
 ## Details
 
 ### You will learn
- - How to use the "Outliers" SAP Predictive services from a REST Client.
+ - How to use the **Outliers** SAP Predictive services from a REST Client.
 
-Only the synchronous mode will be tested here but you can mimic what was done in the [Test the "Forecast" SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
+Only the synchronous mode will be tested here but you can mimic what was done in the [Test the Forecast SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-forecast.html) tutorial for the asynchronous mode.
+
+> ### **Note**: if you are running into some issue, you can check the [SAP Predictive services Troubleshooting guide](https://www.sap.com/developer/tutorials/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 ### Time to Complete
   **10 minutes**
 
-> In order to ease the readability of this tutorial, we have used tokens to replace long URLs.
-> Therefore you can replace any occurrence of the token by the value listed above:
->
-> - <code><b>C4PAURL</b></code> : represents the predictive services **Application URL** displayed on the overview page and should look like this (XYZ is your SAP Cloud Platform account name):
->
-```
-     https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
-```
->
->
-> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+[ACCORDION-BEGIN [Info: ](Application URL)]
 
-&nbsp;
+In order to ease the readability of this tutorial, we have used the **C4PAURL** token to replace the predictive services **Application URL** displayed on the overview page.
 
-> **Note**: if you are running into some issue, you can check the [SAP Predictive services Troubleshooting guide](https://www.sap.com/developer/tutorials/hcpps-troubleshoot.html) to diagnose the most common ones.
+Therefore you can replace any occurrence of the token by your value listed.
+
+The **Application URL** should look like this (where XYZ is your SAP Cloud Platform account name):
+
+ - `https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
+
+If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Info:](A short description of the Outliers service)]
 The Outliers service identifies the odd profiles of a dataset whose target indicator is significantly different from what is expected.
@@ -69,6 +71,7 @@ Optionally, you can define the following parameters to enhance your analysis:
   - variable description: a more details description of the dataset
   - weight variable: a column to be used to increase the importance of a row
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Info:](A short description of the Census dataset)]
@@ -100,6 +103,7 @@ Variable | Description | Example of Values
 <nobr>`native country`</nobr> | Country of origin| United States, France, ...
 <nobr>`class`</nobr> | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Register the Census dataset)]
@@ -112,10 +116,14 @@ Open a new tab in ***Postman***.
 
 &nbsp;
 
+Fill in the following information:
+
 Field Name     | Value
 :------------- | :--------------
 Request Type   | <code><b>POST</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/sync`
+
+Select the **Body** tab, enable the **raw** mode and select `JSON (application/json)` in the drop down, then add the following content:
 
 ```json
 {
@@ -128,6 +136,7 @@ URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/sync`
 
 **Take note of the returned dataset identifier.**
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Run the Outliers service)]
@@ -158,8 +167,8 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 ```json
 {
   "datasetID": 9999999,
-  "targetColumn": "age",
-  "skippedVariables" : ["id", "class", "sex", "race"],
+  "targetColumn": "class",
+  "skippedVariables" : ["id", "sex", "race"],
   "variableDescription" : [
   	{"position" : "1", "variable" : "id", "storage" : "number" , "value" : "nominal" ,  "key" : "1"},
   	{"position" : "2", "variable" : "age", "storage" : "number" , "value" : "continuous"},
@@ -184,91 +193,30 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 
 &nbsp;
 
-With these settings, we will get a scoring equation as SQL for HANA to predict the probability of the class variable to be a 1, excluding the "id", "sex", "race" variables from the analysis. It will also adjust the dataset description with proper settings.
+With these settings, you will get the list of entries where the difference between the "predicted value" and the "real value" exceeds the value of the error bar, which make these entries as odd entries or outliers.
 
 Click on **Send**
 
 Congratulations! You have just run the outliers service on the Census dataset.
 
-Here is the result:
+You can see that about 350 records out of the 48842 are marked as outliers.
 
-```
-{
-  "modelPerformance": {
-    "confidenceIndicator": 1,
-    "predictionConfidence": 0.9925,
-    "predictivePower": 0.8196,
-    "qualityRating": 5
-  },
-  "numberOfOutliers": 356,
-  "outliers": [
-    {
-      "dataPoint": {
-        "id": 43706,
-        "age": 28,
-        "workclass": "Private",
-        "fnlwgt": 103432,
-        "education": "HS-grad",
-        "education_num": 9,
-        "marital_status": "Never-married",
-        "occupation": "Transport-moving",
-        "relationship": "Own-child",
-        "race": "White",
-        "sex": "Male",
-        "capital_gain": 0,
-        "capital_loss": 0,
-        "hours_per_week": 45,
-        "native_country": "Portugal",
-        "class": 1
-      },
-      "errorBar": 0.07390104953508236,
-      "predictedValue": -0.19959287909119922,
-      "realValue": "1",
-      "reasons": [
-        {
-          "value": "Never-married",
-          "variable": "marital_status"
-        },
-        {
-          "value": "Own-child",
-          "variable": "relationship"
-        },
-        {
-          "value": "28",
-          "variable": "age"
-        }
-      ]
-    },
-    ...
-  ],
-  "parameters": {
-    "datasetID": 3,
-    "skippedVariables": [
-      "id"
-    ],
-    "targetColumn": "class",
-    "variableDescription": [
-      {
-        "key": 1,
-        "position": 1,
-        "storage": "integer",
-        "value": "nominal",
-        "variable": "id"
-      },
-      ...
-    ]
-  }
-}
-```
+The list is sorted by descending order to give first the records with the highest difference.
 
-We can see that 356 records out of the 48842 are marked as outliers, where the difference between the "predicted value" and the "real value" exceeds the value of the error bar. The list is sorted by descending order to give first the records with the highest difference.
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Additional test)]
 
 You can also play with the following parameters and check the differences:
 - number of outliers : ask for 10, 50 and 100
-- number of reasons" : ask for 1,5 and 10
-- skipped variables: exclude "`marital_status`"
-- variable description: for example as an ordinal variable
+- number of reasons" : ask for 1, 5 and 10
+- skipped variables: exclude `marital_status`
+- variable description: for example `education_num` as an ordinal variable
 
+[DONE]
 [ACCORDION-END]
 
 ### Optional

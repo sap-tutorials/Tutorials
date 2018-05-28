@@ -1,6 +1,7 @@
 ---
-title: Implement the "Register Dataset" services
-description: You will extend your application with the "Register Dataset" SAP Cloud Platform predictive service
+title: Implement the Register Dataset services
+description: You will extend your application with the Register Dataset SAP Predictive service
+auto_validation: true
 primary_tag: products>sap-predictive-service
 tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
@@ -14,8 +15,8 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-s
 
 ## Details
 ### You will learn
-  - How to add a SAPUI5 controller to interact with the "Register Dataset" SAP Cloud Platform predictive service in your SAPUI5 application
-  - How to add a SAPUI5 view to display the output of the "Register Dataset" SAP Cloud Platform predictive service call
+  - How to add a SAPUI5 controller to interact with the Register Dataset SAP Predictive service in your SAPUI5 application
+  - How to add a SAPUI5 view to display the output of the Register Dataset SAP Predictive service call
   - How to extend the default view and the newly created view
 
 ### Time to Complete
@@ -25,7 +26,7 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-s
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
-Log into the [***SAP Cloud Platform Cockpit***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 Click on your ***SAP Cloud Platform Account Name*** as highlighted on the below screenshot.
 
@@ -47,13 +48,14 @@ This will open the ***SAP Web IDE*** where you have previously created the `pred
 
 ![HTML5 Applications](04.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
 
 The controller will contain a function where:
 
-  - we process the call to the "Register Dataset" SAP Predictive services and return the dataset identifier along with the dataset description.
+  - we process the call to the Register Dataset SAP Predictive services and return the dataset identifier along with the dataset description.
 
 Create a new directory structure for **`webapp/controller/dataset`** either using the "File" menu or using the right click menu.
 
@@ -101,7 +103,8 @@ sap.ui.define([
 				type: "POST",
 				data: JSON.stringify(param),
 				dataType: "json",
-				async: false,
+				async: true,
+				timeout: 3000000,
 				success: function(data) {
 					try {
 						//Save data set description data in the model
@@ -125,6 +128,7 @@ sap.ui.define([
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
@@ -132,7 +136,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 The view will contain:
 
   - a select list with the list of dataset (built manually)
-  - a button that will trigger the "Register Dataset" service
+  - a button that will trigger the Register Dataset service
   - a table with the returned data
 
 > **Note:** the reason we use here a static select list is to avoid user errors.
@@ -160,7 +164,7 @@ Open the `webapp/view/dataset/register.view.xml` file and add the following code
 				</Select>
 			</InputListItem>
 		</FlexBox>
-		<FlexBox><Button text="Register dataset" type="Default" press="register" custom:input="idSelectDataset"/></FlexBox>
+		<FlexBox><Button text="Register Dataset" type="Default" press="register" custom:input="idSelectDataset"/></FlexBox>
 	</form:SimpleForm>
 	<Panel expandable="false" expanded="true" visible="{= typeof ${dataset_register>/dataset} !== 'undefined'}">
 		<form:Form editable="false" class="isReadonly">
@@ -232,6 +236,7 @@ Open the `webapp/view/dataset/register.view.xml` file and add the following code
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Extend the default view)]
@@ -246,6 +251,7 @@ Inside the `<detailPages>` element, uncomment the following element:
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Run the application)]
@@ -259,6 +265,9 @@ Select the dataset you want to register from the list, then press the `Register 
 Et voilà!
 ![Applications](05.png)
 
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Solution: ](Created and modified files)]
@@ -275,6 +284,7 @@ However, you won't be able to clone the repository and directly run the code fro
 
 Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps

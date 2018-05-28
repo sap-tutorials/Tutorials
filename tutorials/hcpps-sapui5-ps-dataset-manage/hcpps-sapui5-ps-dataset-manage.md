@@ -1,20 +1,21 @@
 ---
 title: Manage your registered "Datasets"
 description: You will extend your application with additional "Dataset" SAP Predictive services
+auto_validation: true
 primary_tag: products>sap-predictive-service
 tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Implement the "Register Dataset" service](https://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
+  - **Tutorials:** [Implement the Register Dataset service](https://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
 
 ## Next Steps
   - [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 ### You will learn
-  - How to use the other "Dataset" SAP Cloud Platform predictive service in your SAPUI5 application in order to:
+  - How to use the other "Dataset" SAP Predictive service in your SAPUI5 application in order to:
     - list registered datasets
     - view a dataset fields description
     - delete a dataset registration
@@ -29,7 +30,7 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-s
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
-Log into the [***SAP Cloud Platform Cockpit***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
 
 Click on your ***SAP Cloud Platform Account Name*** as highlighted on the below screenshot.
 
@@ -51,6 +52,7 @@ This will open the ***SAP Web IDE*** where you have previously created the `pred
 
 ![HTML5 Applications](04.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
@@ -80,6 +82,7 @@ sap.ui.define([
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
@@ -100,6 +103,7 @@ Open the `webapp/view/dataset/manage.view.xml` file and add the following code:
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Extend the default view)]
@@ -114,6 +118,7 @@ Inside the `<detailPages>` element, and uncomment the following element:
 
 Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](List registered datasets)]
@@ -149,7 +154,8 @@ getDatasetList: function() {
     },
     url: "/ps/api/analytics/dataset",
     type: "GET",
-    async: false,
+    async: true,
+    timeout: 3000000,
     success: function(data) {
       try {
         //Save data set description data in the model
@@ -219,6 +225,7 @@ On the left panel, you should see an item labeled `Dataset Services`, click on i
 Et voilà!
 ![Applications](05.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Get dataset fields description)]
@@ -238,7 +245,6 @@ Open the `webapp/controller/dataset/manage.controller.js` file and add the follo
 getDatasetDescription: function(oControlEvent) {
 	// set the busy indicator to avoid multi clicks
 	var oBusyIndicator = new sap.m.BusyDialog();
-	oBusyIndicator.open();
 
 	// get the current view
 	var oView = this.getView();
@@ -258,7 +264,8 @@ getDatasetDescription: function(oControlEvent) {
 			},
 			url: "/ps/api/analytics/dataset/" + dataSetId,
 			type: "GET",
-			async: false,
+			async: true,
+			timeout: 3000000,
 			success: function(data) {
 				try {
 					//Save data set description data in the model
@@ -359,6 +366,7 @@ Click on `Manage`, then on `Get Dataset List`, and finally select any of the reg
 Et voilà!
 ![Applications](06.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Delete a dataset registration)]
@@ -387,7 +395,7 @@ deleteDataset: function(event) {
 
 	// get the model
 	var oModel = oView.getModel("dataset_manage");
-
+	var bindingProperty = event.getSource().data("bindingProperty");
 	// call the service and define call back methods
 	$.ajax({
 		headers: {
@@ -396,11 +404,12 @@ deleteDataset: function(event) {
 		},
 		url: "/ps/api/analytics/dataset/" + event.getSource().data("datasetId"),
 		type: "DELETE",
-		async: false,
+		async: true,
+		timeout: 3000000,
 		success: function() {
 			try {
 				// remove the previous data
-				oModel.setProperty(event.getSource().data("bindingProperty"), undefined);
+				oModel.setProperty(bindingProperty, undefined);
 				// refresh the dataset list
 				oController.getDatasetList();
 			} catch (err) {
@@ -441,6 +450,7 @@ You can now click on `Delete Registration`, the registered dataset list should b
 Et voilà!
 ![Applications](07.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Update the dataset variable description)]
@@ -489,7 +499,8 @@ updateDataset: function(event) {
 		type: "POST",
 		data: JSON.stringify(param),
 		dataType: "json",
-		async: false,
+		async: true,
+		timeout: 3000000,
 		success: function() {
 			oBusyIndicator.close();
 		},
@@ -545,6 +556,9 @@ You can now click on `Update Description`. You can switch to another dataset and
 Et voilà!
 ![Applications](08.png)
 
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Solution: ](Created and modified files)]
@@ -561,6 +575,7 @@ However, you won't be able to clone the repository and directly run the code fro
 
 Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps

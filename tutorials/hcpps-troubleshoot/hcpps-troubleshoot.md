@@ -24,7 +24,7 @@ This guide has been built and structured to cover the different situations where
 
 And if you find an easier way to fix any issues listed here, or new issues with a  way to fix it, you are more than welcome to use the "Provide feedback" on the page to share your solution.
 
-If you face an issue that is not listed here, please submit this one on the [SAP Cloud Platform Predictive Service](https://answers.sap.com/tags/73555000100800000130) community page.
+If you face an issue that is not listed here, please submit this one on the [SAP Predictive service](https://answers.sap.com/tags/73555000100800000130) community page.
 
 As this is a living document, make sure you bookmark it check periodically the updates!
 
@@ -42,9 +42,9 @@ The ![icon](0-enable.png) button will trigger an "activation" request to the SAP
 
 The SAP Cloud Platform have multiple activation strategy/architecture based on the service you are looking at.
 
-For the SAP Cloud Platform Predictive Service, the activation will create a new entry in the SAP Cloud Platform "routing" service.
+For the SAP Predictive service, the activation will create a new entry in the SAP Cloud Platform "routing" service.
 
-This "routing" entry will "proxy" a URL bound to your account that points to the "service deployment application" which is hosted by the SAP Cloud Platform Predictive Service provisioning account (a separate SAP Cloud Platform account from yours).
+This "routing" entry will "proxy" a URL bound to your account that points to the "service deployment application" which is hosted by the SAP Predictive service provisioning account (a separate SAP Cloud Platform account from yours).
 
 This "proxy" URL is the one that will be used when you click on the **Go to Service** link and should look like this (where XXXXXXXXXXX is your account identifier):
 
@@ -58,7 +58,7 @@ https://aacockpitc4pa-XXXXXXXXXXXtrial.hanatrial.ondemand.com/com.sap.aa.hcp.coc
 
 The "service deployment application" will allow you deploy a Java application exposing the REST API to your account.
 
-Keep also in mind that the SAP Cloud Platform Predictive Service is not available by default on productive accounts, you will need the proper license/subscription to be able to enable it.
+Keep also in mind that the SAP Predictive service is not available by default on productive accounts, you will need the proper license/subscription to be able to enable it.
 
 With your personal developer/trial account, the service doesn't require any license/subscription to be able to enable it.
 
@@ -66,9 +66,9 @@ With your personal developer/trial account, the service doesn't require any lice
 
 [ACCORDION-BEGIN [Topic:](Access the service link)]
 
-Once the SAP Cloud Platform Predictive Service is enabled, then the **Go to Service** will be activated and expose the "proxy" URL.
+Once the SAP Predictive service is enabled, then the **Go to Service** will be activated and expose the "proxy" URL.
 
-Again here, if you can't access the "proxy" URL, there is nothing you can do as end-user to fix it, as it probably means that there is an issue with the SAP Cloud Platform "routing" service or the SAP Cloud Platform Predictive Service provisioning account.
+Again here, if you can't access the "proxy" URL, there is nothing you can do as end-user to fix it, as it probably means that there is an issue with the SAP Cloud Platform "routing" service or the SAP Predictive service provisioning account.
 
 [ACCORDION-END]
 
@@ -144,7 +144,7 @@ Check the latest "Default Traces" item using the ![icon](00-glasses.png)
 
 You can also download the file locally using the ![icon](0-download.png) icon.
 
-The trace content will be helpful if you create a support case or submit a question on the [SAP Cloud Platform Predictive Service](https://answers.sap.com/tags/73555000100800000130) community page.
+The trace content will be helpful if you create a support case or submit a question on the [SAP Predictive service](https://answers.sap.com/tags/73555000100800000130) community page.
 
 [ACCORDION-END]
 
@@ -178,7 +178,7 @@ Check the latest "Default Traces" item using the ![icon](00-glasses.png)
 
 You can also download the file locally using the ![icon](0-download.png) icon.
 
-The trace content will be helpful if you create a support case or submit a question on the [SAP Cloud Platform Predictive Service](https://answers.sap.com/tags/73555000100800000130) community page.
+The trace content will be helpful if you create a support case or submit a question on the [SAP Predictive service](https://answers.sap.com/tags/73555000100800000130) community page.
 
 ----
 
@@ -478,7 +478,7 @@ Alternatively, to avoid this issue you can limit the number of pooled connection
 
 Make sure you check all these common issues.
 
-Executing this diagnostic will be helpful if you create a support case or submit a question on the [SAP Cloud Platform Predictive Service](https://answers.sap.com/tags/73555000100800000130) community page.
+Executing this diagnostic will be helpful if you create a support case or submit a question on the [SAP Predictive service](https://answers.sap.com/tags/73555000100800000130) community page.
 
 ## Next Steps
  - [View all How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=tutorial:type/how-to)

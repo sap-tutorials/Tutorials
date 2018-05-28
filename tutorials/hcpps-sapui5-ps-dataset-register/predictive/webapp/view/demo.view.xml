@@ -34,25 +34,25 @@
 			</Page>
 		</masterPages>
 		<detailPages>
-			<Page id="detail" title="Test the SAP Cloud Platform Predictive Service in a SAPUI5 application">
+			<Page id="detail" title="Test the SAP Predictive Service in a SAPUI5 application">
 				<content></content>
 			</Page>
-			<Page id="detail_dataset_register" title="Register your Dataset with the SAP Cloud for predictive services">
+			<Page id="detail_dataset_register" title="Register your Dataset with the SAP Predictive services">
 				<content>
 					<mvc:XMLView viewName="pspredictive.view.dataset.register"/>
 				</content>
 			</Page>
-			<Page id="detail_dataset_manage" title="Manage your Data Set with the SAP Cloud for predictive services">
+			<Page id="detail_dataset_manage" title="Manage your Data Set with the SAP Predictive services">
 				<content>
 					<!--<mvc:XMLView viewName="pspredictive.view.dataset.manage"/>-->
 				</content>
 			</Page>
-			<Page id="detail_forecast_synchronous" title="Forecast with the SAP Cloud for predictive services (Synchronous Mode)">
+			<Page id="detail_forecast_synchronous" title="Forecast with the SAP Predictive services (Synchronous Mode)">
 				<content>
 					<!--<mvc:XMLView viewName="pspredictive.view.forecast.synchronous"/>-->
 				</content>
 			</Page>
-			<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Cloud for predictive services (Asynchronous Mode)">
+			<Page id="detail_forecast_asynchronous" title="Forecast with the SAP Predictive services (Asynchronous Mode)">
 				<content>
 					<!--<mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/>-->
 				</content>
