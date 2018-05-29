@@ -1,6 +1,7 @@
 ---
 title: Setup your trial SAP HANA MDC instance
 description: Learn how to setup a SAP HANA MDC instance to be used with the SAP Predictive services
+auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-service, products>sap-hana, products>sap-cloud-platform  ]
 ---
@@ -20,7 +21,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-servi
   **10 minutes**
 
 [ACCORDION-BEGIN [Step 1: ](Access your SAP Cloud Platform account)]
-Log into the [***SAP Cloud Platform Cockpit***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***.
 
 ![SAP Cloud Platform Cockpit](01.png)
 
@@ -28,6 +29,7 @@ Click on the ***SAP Cloud Platform developer Account*** link as highlighted on t
 
 ![Your Personal Developer Account](02.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create your HANA MDC instance)]
@@ -50,10 +52,11 @@ System User Password | `Welcome18Welcome18`
 
 ![New Database System](04.png)
 
-You can choose other values for theses properties. As reference them across several tutorials, you should remember the **System User Password** as your ***HANA System Account Password***.
+You can choose other values for theses properties. As a reference across the next tutorials, you should remember the **System User Password** as your ***HANA System Account Password***.
 
 Click on **Save**
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Wait for the creation to finish)]
@@ -63,12 +66,13 @@ It will take about 5 to 10 minutes for the creation process to complete. So, now
 
 You can refresh the page by hitting F5.
 
-Once you see the *Database started successfully* event appears in the list, you can proceed with the next step.
+Once you see the ***Database started successfully*** event appears in the list, you can proceed with the next step.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Restart the database)]
-Now that we have our HANA MDC instance, we will simply restart it to clear some cache and free up some resources.
+Now that you have our HANA MDC instance, you will simply need to restart it to clear some cache and free up some resources.
 
 Click on **Stop**.
 
@@ -83,11 +87,11 @@ Once the database is stopped, Click on **Start**.
 >
 >Therefore you can proceed with the next steps. However, at some point, the backup will complete, and your instance will be shutdown, therefore you will need to start it.
 
-&nbsp;
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Finalize your HANA MDC instance setup)]
+[ACCORDION-BEGIN [Step 5: ](Finalize your SYSTEM user setup)]
+
 Now, you will need to connect to the ***SAP HANA Cockpit*** at least once using the *HANA System User* in order to finalize the system account setup and add all the necessary roles.
 
 Click on **SAP HANA Cockpit**.
@@ -104,18 +108,13 @@ Click on **Log On**.
 
 You will receive an information message stating that your ***HANA System Account*** is not authorized to access the ***SAP HANA Cockpit***, but next you will be granted the necessary roles.
 
-Click on **OK**.
-
 ![Information](08.png)
 
-Then click on **Continue**
+Click on **OK**.
 
-![Successful](09.png)
+Before clicking on **Continue**, provide an answer to the question below then click on **Validate**.
 
-You are in the ***SAP HANA Cockpit***.
-
-![SAP HANA Cockpit](10.png)
-
+[VALIDATE_1]
 [ACCORDION-END]
 
 ## Next Steps

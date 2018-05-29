@@ -22,9 +22,9 @@ The intent of this trouble shooting guide is to highlight few of the most common
 
 This guide has been built and structured to cover the different situations where you may face these issue.
 
-And if you find an easier way to fix any issues listed here, or new issues with a  way to fix it, you are more than welcome to use the "Provide feedback" on the page to share your solution.
+And if you find an easier way to fix any issues listed here, or new issues with a  way to fix it, you are more than welcome to use the ***Provide feedback*** on the page to share your solution.
 
-If you face an issue that is not listed here, please submit this one on the [SAP Cloud Platform Predictive Service](https://answers.sap.com/tags/73555000100800000130) community page.
+If you face an issue that is not listed here, please submit this one on the [SAP Predictive service](https://answers.sap.com/tags/73555000100800000130) community page.
 
 As this is a living document, make sure you bookmark it check periodically the updates!
 
@@ -38,15 +38,15 @@ If you have an issue enabling the service, unfortunately there is nothing you ca
 
 However, let me explain you what actually happens when you click on the ![icon](0-enable.png) button which will enable the **Go to Service** link.
 
-The ![icon](0-enable.png) button will trigger an "activation" request to the SAP Cloud Platform "activation" service.
+The ![icon](0-enable.png) button will trigger an ***activation*** request to the SAP Cloud Platform ***activation*** service.
 
 The SAP Cloud Platform have multiple activation strategy/architecture based on the service you are looking at.
 
-For the SAP Cloud Platform Predictive Service, the activation will create a new entry in the SAP Cloud Platform "routing" service.
+For the SAP Predictive service, the activation will create a new entry in the SAP Cloud Platform ***routing*** service.
 
-This "routing" entry will "proxy" a URL bound to your account that points to the "service deployment application" which is hosted by the SAP Cloud Platform Predictive Service provisioning account (a separate SAP Cloud Platform account from yours).
+This ***routing*** entry will ***proxy*** a URL bound to your account that points to the ***service deployment application*** which is hosted by the SAP Predictive service provisioning account (a separate SAP Cloud Platform account from yours).
 
-This "proxy" URL is the one that will be used when you click on the **Go to Service** link and should look like this (where XXXXXXXXXXX is your account identifier):
+This ***proxy*** URL is the one that will be used when you click on the **Go to Service** link and should look like this (where XXXXXXXXXXX is your account identifier):
 
 ```
 https://aacockpitc4pa-XXXXXXXXXXXtrial.hanatrial.ondemand.com/com.sap.aa.hcp.cockpit/
@@ -54,11 +54,9 @@ https://aacockpitc4pa-XXXXXXXXXXXtrial.hanatrial.ondemand.com/com.sap.aa.hcp.coc
 
 > If you are unclear with what is your SAP Cloud Platform credentials and identifiers, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
-&nbsp;
+The ***service deployment application*** will allow you deploy a Java application exposing the REST API to your account.
 
-The "service deployment application" will allow you deploy a Java application exposing the REST API to your account.
-
-Keep also in mind that the SAP Cloud Platform Predictive Service is not available by default on productive accounts, you will need the proper license/subscription to be able to enable it.
+Keep also in mind that the SAP Predictive service is not available by default on productive accounts, you will need the proper license/subscription to be able to enable it.
 
 With your personal developer/trial account, the service doesn't require any license/subscription to be able to enable it.
 
@@ -66,15 +64,15 @@ With your personal developer/trial account, the service doesn't require any lice
 
 [ACCORDION-BEGIN [Topic:](Access the service link)]
 
-Once the SAP Cloud Platform Predictive Service is enabled, then the **Go to Service** will be activated and expose the "proxy" URL.
+Once the SAP Predictive service is enabled, then the **Go to Service** will be activated and expose the ***proxy*** URL.
 
-Again here, if you can't access the "proxy" URL, there is nothing you can do as end-user to fix it, as it probably means that there is an issue with the SAP Cloud Platform "routing" service or the SAP Cloud Platform Predictive Service provisioning account.
+Again here, if you can't access the ***proxy*** URL, there is nothing you can do as end-user to fix it, as it probably means that there is an issue with the SAP Cloud Platform ***routing*** service or the SAP Predictive service provisioning account.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Topic:](Deploying service)]
 
-One of the most common problem here when deploying the predictive service application to your account is: "which password should I use?"
+One of the most common problem here when deploying the predictive service application to your account is: ***which password should I use?***
 
 As you are deploying the predictive service application to your SAP Cloud Platform account, it's your SAP Cloud Platform account password.
 
@@ -82,7 +80,6 @@ As you are deploying the predictive service application to your SAP Cloud Platfo
 
 > If you are unclear with what is your SAP Cloud Platform credentials and identifiers, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
-&nbsp;
 
 ----
 
@@ -114,7 +111,7 @@ Once the deployment process is completed you will get a message and a link to th
 
 [ACCORDION-BEGIN [Topic:](Starting service application)]
 
-The deployed predictive service application which exposes the REST API is "just" a Java application deployed to your SAP Cloud Platform account and will consume compute units just like any other Java application.
+The deployed predictive service application which exposes the REST API is ***just*** a Java application deployed to your SAP Cloud Platform account and will consume compute units just like any other Java application.
 
 ![start](04.png)
 
@@ -136,21 +133,21 @@ With your personal developer/trial account, you only have one compute unit, so m
 
 ----
 
-If the application cannot start and hangs on with a "Starting" status for a while then goes to "Error"
+If the application cannot start and hangs on with a ***Starting*** status for a while then goes to ***Error***
 
 This one might be related to multiple causes and the best way to diagnose is to check the logs available under **Monitoring** > **Logging**.
 
-Check the latest "Default Traces" item using the ![icon](00-glasses.png)
+Check the latest ***Default Traces*** item using the ![icon](00-glasses.png)
 
 You can also download the file locally using the ![icon](0-download.png) icon.
 
-The trace content will be helpful if you create a support case or submit a question on the [SAP Cloud Platform Predictive Service](https://answers.sap.com/tags/73555000100800000130) community page.
+The trace content will be helpful if you create a support case or submit a question on the [SAP Predictive service](https://answers.sap.com/tags/73555000100800000130) community page.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Topic:](Accessing the service application URL)]
 
-Now that the deployed predictive service application is started we should be able to access the embedded web portion which gives you access to a documentation section and the administration panels.
+Now that the deployed predictive service application is started, you should be able to access the embedded web portion which gives you access to a documentation section and the administration panels.
 
 ![start](05.png)
 
@@ -174,11 +171,11 @@ Check the application status.
 
 If the application is started, then the best way to diagnose the issue is to check the logs available under **Monitoring** > **Logging**.
 
-Check the latest "Default Traces" item using the ![icon](00-glasses.png)
+Check the latest ***Default Traces*** item using the ![icon](00-glasses.png)
 
 You can also download the file locally using the ![icon](0-download.png) icon.
 
-The trace content will be helpful if you create a support case or submit a question on the [SAP Cloud Platform Predictive Service](https://answers.sap.com/tags/73555000100800000130) community page.
+The trace content will be helpful if you create a support case or submit a question on the [SAP Predictive service](https://answers.sap.com/tags/73555000100800000130) community page.
 
 ----
 
@@ -198,13 +195,11 @@ HTTP Status 403 - Access to the requested resource has been denied
 
 Go back to the `aac4paservicess` overview page in the SAP Cloud Platform Cockpit, then under **Security** > **Roles**, and assign your current account id to the **`C4PA-User`** and the **`C4PA-Admin`** role.
 
-(Hint: your user identifier is the piece blur on most of the screenshots, without the "trial")
+(Hint: your user identifier is the piece blur on most of the screenshots, without the ***trial***)
 
 A restart of the `aac4paservicess` application will be required.
 
 > If you are unclear with what is your SAP Cloud Platform credentials and identifiers, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
-
-&nbsp;
 
 ----
 
@@ -274,7 +269,7 @@ This error is usually caused because the URL entered is incorrect.
 
 In the tutorial, `C4PAURL` is used to reference your application URL, but is not properly replaced in the field.
 
-For example, in the "Dataset" call you will have to use the following URL:
+For example, in the ***Dataset*** call you will have to use the following URL:
 
   - `C4PAURL/dataset/sync`
 
@@ -390,9 +385,9 @@ and in the Postman context:
 
 [ACCORDION-BEGIN [Topic:](Consuming the service from a SAPUI5 application)]
 
-When building your SAPUI5 application to interact with the predictive services, we will assumes that you have configured your **Authentication Configuration** properly.
+When building your SAPUI5 application to interact with the predictive services, it assumes that you have configured your **Authentication Configuration** properly.
 
-So, before starting investigating you SAPUI5 application, make sure you are able at least to [Test the "Dataset" service using a REST Client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html).
+So, before starting investigating you SAPUI5 application, make sure you are able at least to [Test the Dataset service using a REST Client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html).
 
 If this test works, then you can start checking the following common issues.
 
@@ -435,13 +430,9 @@ In order to access the predictive services and to comply with [Cross-origin reso
 
     >**Note**: If you save any change details of your destination, you will need to refresh the Web IDE page for the change to be applied and restart your application.
 
-    &nbsp;
-
     As an additional test, you can try to switch from `AppToAppSSO` authentication to `BasicAuthentication` and use your SAP Cloud Platform credentials.
 
     > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
-
-    &nbsp;
 
     If using `BasicAuthentication` and your SAP Cloud Platform credentials works, it probably means that **Principal Propagation** is not enabled in your account and in this case, revert to `AppToAppSSO` authentication and go to the next section.
 
@@ -456,7 +447,7 @@ In order to access the predictive services and to comply with [Cross-origin reso
 
 [ACCORDION-BEGIN [Topic:](Consuming the service in general)]
 
-In this section, we will highlight common issues that doesn't fit in the other section (the a fallback section).
+In this section, common issues that doesn't fit in the other section (the a fallback section) will be highlighted.
 
 ## Common issues:
 
@@ -478,7 +469,7 @@ Alternatively, to avoid this issue you can limit the number of pooled connection
 
 Make sure you check all these common issues.
 
-Executing this diagnostic will be helpful if you create a support case or submit a question on the [SAP Cloud Platform Predictive Service](https://answers.sap.com/tags/73555000100800000130) community page.
+Executing this diagnostic will be helpful if you create a support case or submit a question on the [SAP Predictive service](https://answers.sap.com/tags/73555000100800000130) community page.
 
 ## Next Steps
  - [View all How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=tutorial:type/how-to)

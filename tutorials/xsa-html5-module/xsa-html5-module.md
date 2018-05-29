@@ -24,7 +24,7 @@ You will learn how to create an HTML5 endpoint with authentication using the Use
 
 [ACCORDION-BEGIN [Step 1: ](Add the HTML5 Module in your existing MTA project)]
 
-> ***What is a Multi-Target Application?***: The XS Advanced application platform is based on >Cloud Foundry, an open-source platform that provides a layer of abstraction between your application and the underlying infrastructure. This is useful because it allows you to deploy the same application in different cloud providers. Cloud Foundry allows for a micro-service approach. A Multi-Target Application allows you to bundle all the different micro-services conforming `your business application into the same lifecycle`. For more information about multi-target applications (MTA), refer to [this blog post](https://blogs.sap.com/2017/09/05/xs-advanced-for-not-so-dummies-pt-2-multi-target-applications/).
+> ***What is a Multi-Target Application?***: The XS Advanced application platform is based on Cloud Foundry, an open-source platform that provides a layer of abstraction between your application and the underlying infrastructure. This is useful because it allows you to deploy the same application in different cloud providers. Cloud Foundry allows for a micro-service approach. A Multi-Target Application allows you to bundle all the different micro-services conforming `your business application into the same lifecycle`. For more information about multi-target applications (MTA), refer to [this blog post](https://blogs.sap.com/2017/09/05/xs-advanced-for-not-so-dummies-pt-2-multi-target-applications/).
 
  Begin by right-clicking on your project and then choosing `New -> HTML5 Module`
 
@@ -77,26 +77,25 @@ Click **Finish** and you will see your instance is created.
 
 Alternatively, if you do not have the XS Advanced Cockpit in your server, you can use the Command Line Interface:
 
-    - This can be downloaded from the SAP HANA Developer Edition directly, using the Download Manager and choosing "Clients" from the [SAP HANA, Express Edition, getting started](https://www.sap.com/developer/topics/sap-hana-express.html) or via the [SAP Service Marketplace](https://websmp208.sap-ag.de/~SAPIDP/002006825000000234912001E)
+This can be downloaded from the SAP HANA Developer Edition directly, using the Download Manager and choosing "Clients" from the [SAP HANA, Express Edition, getting started](https://www.sap.com/developer/topics/sap-hana-express.html) or via the [SAP Service Marketplace](https://websmp208.sap-ag.de/~SAPIDP/002006825000000234912001E)
 
-    ```
-    xs login -a http://<hostname>:3XX30 -o HANAExpress -s development -u XSA_ADMIN
-    ```
+```
+xs login -a http://<hostname>:3XX30 -o HANAExpress -s development -u XSA_ADMIN
+```
 
-    If you are not using HANA Express, change the organization (`HANAExpress`), space (`development`) and user (`XSA_DEV`) accordingly. The API endpoint may also be different.
+If you are not using HANA Express, change the organization (`HANAExpress`), space (`development`) and user (`XSA_DEV`) accordingly. The API endpoint may also be different.
 
-    The space has to match the space that was setup in the Project Settings. You can check it by right-clicking on the repository folder and opening "Project Settings"
+The space has to match the space that was setup in the Project Settings. You can check it by right-clicking on the repository folder and opening "Project Settings"
 
+![Command line XS Login](5.png)
 
-    ![Command line XS Login](5.png)
-    To create the UAA service issue the following command:
+To create the UAA service issue the following command:
 
-    ```
-    xs create-service xsuaa space APP_UAA
+```
+xs create-service xsuaa space APP_UAA
+```
 
-    ```
-
-    ![Command line UAA](6.png)
+![Command line UAA](6.png)
 
 [DONE]
 
@@ -134,7 +133,6 @@ Open the `Code Editor` tab in the bottom to see the actual contents of the  `mta
 ![Code Editor](4_5.png)
 
 [DONE]
-
 [ACCORDION-END]
 
 

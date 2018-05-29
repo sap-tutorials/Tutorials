@@ -109,7 +109,7 @@ Now, let's build a SAPUI5 application! But before doing so let's first add the d
 
 [ACCORDION-BEGIN [Step 3: ](Access the SAP Cloud Platform Cockpit)]
 
-Go to your [***SAP Cloud Platform Cockpit***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) account and access "Your Personal Developer Account".
+Go to your [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) account and access "Your Personal Developer Account".
 
 ![SAP Cloud Platform Cockpit](06.png)
 

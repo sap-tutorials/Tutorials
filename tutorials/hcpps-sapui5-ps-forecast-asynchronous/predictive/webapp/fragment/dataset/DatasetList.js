@@ -24,7 +24,8 @@ sap.ui.define([
 				},
 				url: "/ps/api/analytics/dataset",
 				type: "GET",
-				async: false,
+				async: true,
+				timeout: 3000000,
 				success: function(data) {
 					try {
 						//Save data set description data in the model
@@ -43,7 +44,6 @@ sap.ui.define([
 		getDatasetDescription: function(oControlEvent) {
 			// set the busy indicator to avoid multi clicks
 			var oBusyIndicator = new sap.m.BusyDialog();
-			oBusyIndicator.open();
 
 			// get the current view
 			var oView = this.getView();
@@ -63,7 +63,8 @@ sap.ui.define([
 					},
 					url: "/ps/api/analytics/dataset/" + dataSetId,
 					type: "GET",
-					async: false,
+					async: true,
+					timeout: 3000000,
 					success: function(data) {
 						try {
 							//Save data set description data in the model
