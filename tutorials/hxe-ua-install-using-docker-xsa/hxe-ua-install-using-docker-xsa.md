@@ -7,9 +7,6 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Software:**
- - SUSE Linux Enterprise Server 12.0, 12.1, 12.2
- - Docker Enterprise Edition for SUSE Enterprise Linux Server
 
 
 ## Next Steps
@@ -35,17 +32,20 @@ SAP HANA, express edition is a streamlined version of the SAP HANA platform whic
 
 The software license allows for both non-production and production use cases, enabling you to quickly prototype, demo, and deploy next-generation applications using SAP HANA, express edition without incurring any license fees. Memory capacity increases beyond 32GB are available for purchase at the [SAP Store](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition).
 
-In addition to SUSE Enterprise, SAP HANA, express edition for Docker has been tested on the following Linux operating system versions:
+SAP HANA, express edition for Docker has been tested on the following Linux operating system versions:
 
-| Linux OS | OS Version |
-| --- | --- |
-| `Ubuntu`  | `17.04 (Zesty Zapus)` |
-| `openSUSE` | `openSUSE Leap` |
-| `CentOS` | `7 (Core)` |
-| `Debian` | `9 (Stretch)` |
-| `Fedora` | `25 (Server Edition)` |
+| Linux OS | OS Version | Docker Editions
+| --- | --- | --- |
+| `Ubuntu`  | `17.04 (Zesty Zapus)` | [Community](https://store.docker.com/editions/community/docker-ce-server-ubuntu),  [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-ubuntu) |
+| `openSUSE` | `openSUSE Leap` | [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-sles) |
+| `CentOS` | `7 (Core)` | [Community](https://store.docker.com/editions/community/docker-ce-server-centos),  [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-centos) |
+| `Debian` | `9 (Stretch)` | [Community](https://store.docker.com/editions/community/docker-ce-server-debian) |
+| `Fedora` | `25 (Server Edition)` | [Community](https://store.docker.com/editions/community/docker-ce-server-fedora) |
 
 **This installation does not support Docker for Windows or Docker for Mac.**
+
+> **Note:**
+> These instructions use `openSUSE` and Docker Enterprise Edition as an example. However, any of the supported operating systems listed above are compatible. Use the operating system and Docker installation that fits your needs best.
 
 [ACCORDION-BEGIN [Step 1: ](Install Docker)]
 
@@ -56,7 +56,7 @@ Download and install Docker Enterprise Edition for SUSE Enterprise Linux Server.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Manage Storage Size)]
+[ACCORDION-BEGIN [Step 2: ](Manage Storage System)]
 
 If your host file system is `xfs`, you can recommend the storage driver through the `devicemapper` in Docker. Add `-s devicemapper` to the `DOCKER_OPTS` property in the `docker` file.
 
@@ -188,7 +188,7 @@ The `hxehost` IP address is private to the installation. In order for applicatio
 Use the following command:
 
 ```bash
-sudo sh - c 'echo <hxehost_IP_address>    hxehost >> /etc/hosts'
+sudo sh -c 'echo <hxehost_IP_address>    hxehost >> /etc/hosts'
 ```
 
 [ACCORDION-END]
