@@ -1,7 +1,7 @@
 ---
 
-title: Continuous Integration (CI) Best Practices with SAP – Generic Project with CI using Cloud Services
-description: Part 5.1 – Configuring cloud-based CI system for Maven-based generic Java project.
+title: Continuous Integration (CI) Best Practices with SAP - Generic Project with CI using Cloud Services
+description: Part 5.1 - Configuring cloud-based CI system for Maven-based generic Java project.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
@@ -11,7 +11,7 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
   - **Proficiency:** Intermediate
   - [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html)
-
+  
 ## Next Steps
 
   - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
@@ -47,24 +47,24 @@ Figure 1: The component landscape
 ####  Procedure
 
 1. Enter the GitHub site and log in to your account.
-
+  
     > [GitHub](https://github.com)
 
 2. Create a new repository with a name of your choice. This example uses the name `generic_java_project`.
 
     ![Generic Java Project in GitHub](generic-project-cloud-1.png)
-
+      
 3. The next step is creating a sample application. Clone the new repository to your local PC. Before doing this, ensure that the proxy is set for Git.
-
+  
     - Set the HTTP proxy:
-
+      
     ```
     git config --global http.proxy {the URL of your HTTP proxy}
     git config --global https.proxy {the URL of your HTTPS proxy}
     ```
-
+      
     - Now clone the repository:
-
+    
     ```
     git clone {The URL of the new GitHub project}
     ```
@@ -86,15 +86,15 @@ Figure 1: The component landscape
     ```
 
 6. Open the URL of Travis CI in your browser and select **Sign in with GitHub**. You log in to Travis CI with your GitHub account.
-
+  
     > [Travis CI](https://travis-ci.org)
-
+    
 7. In the Travis CI front end, select **My Repositories** and select **+**.
-
+ 
     ![Generic Java Project in GitHub](generic-project-cloud-2.png)
-
+    
     You see a list of your GitHub repositories.
-
+   
 8. Add your repository (in this example, `generic_java_project`) to Travis CI by turning on the switch.
 
     ![Generic Java project in GitHub](generic-project-cloud-3.png)
@@ -108,7 +108,7 @@ Figure 1: The component landscape
     ```
     sudo: false
     language: java
-    jdk: oraclejdk7
+    jdk: oraclejdk8
     ```
 
 10. Commit and push the new file to trigger a build on Travis CI. Check the build status in Travis CI.
@@ -154,3 +154,4 @@ Figure 2: The CI process with pull requests in GitHub.
 ## Next Steps
 
   - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+  
