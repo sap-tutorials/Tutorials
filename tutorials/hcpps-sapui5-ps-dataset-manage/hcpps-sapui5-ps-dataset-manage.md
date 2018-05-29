@@ -1,6 +1,6 @@
 ---
-title: Manage your registered "Datasets"
-description: You will extend your application with additional "Dataset" SAP Predictive services
+title: Manage your registered Datasets
+description: You will extend your application with additional SAP Predictive services around Datasets
 auto_validation: true
 primary_tag: products>sap-predictive-service
 tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
@@ -15,13 +15,13 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-s
 
 ## Details
 ### You will learn
-  - How to use the other "Dataset" SAP Predictive service in your SAPUI5 application in order to:
+  - How to use the other ***Dataset*** SAP Predictive service in your SAPUI5 application in order to:
     - list registered datasets
     - view a dataset fields description
     - delete a dataset registration
     - update a dataset description
 
-> **Note:** our goal here is to mimic what was done using the REST Client around the "Dataset" services
+> **Note:** our goal here is to mimic what was done using the REST Client around the ***Dataset*** services
 
 ### Time to Complete
   **10 minutes**
@@ -30,7 +30,8 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-s
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
-Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***
+.
 
 Click on your ***SAP Cloud Platform Account Name*** as highlighted on the below screenshot.
 
@@ -57,9 +58,9 @@ This will open the ***SAP Web IDE*** where you have previously created the `pred
 
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
 
-Create a new directory structure for **`webapp/controller/dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/controller/dataset`** either using the ***File*** menu or using the right click menu.
 
-Create a new file **`manage.controller.js`** in `webapp/controller/dataset` either using the "File" menu or using the right click menu.
+Create a new file **`manage.controller.js`** in `webapp/controller/dataset` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/controller/dataset/manage.controller.js` file and add the following code:
 
@@ -80,16 +81,16 @@ sap.ui.define([
 });
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
 
-Create a new directory structure for **`webapp/view/dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/view/dataset`** either using the ***File*** menu or using the right click menu.
 
-Create a new file **`manage.view.xml`** in `webapp/view/dataset` either using the "File" menu or using the right click menu.
+Create a new file **`manage.view.xml`** in `webapp/view/dataset` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/view/dataset/manage.view.xml` file and add the following code:
 
@@ -101,7 +102,7 @@ Open the `webapp/view/dataset/manage.view.xml` file and add the following code:
 </mvc:View>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
@@ -116,7 +117,7 @@ Inside the `<detailPages>` element, and uncomment the following element:
 <mvc:XMLView viewName="pspredictive.view.dataset.manage"/>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
@@ -125,11 +126,11 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 The controller will contain a function where:
 
-  - we process the call to the "Dataset List" SAP Predictive services and return the list of registered dataset.
+  - it will process the call to the ***Dataset List*** SAP Predictive services and return the list of registered dataset.
 
 The view will contain:
 
-  - a button that will trigger the "Get Dataset List" service
+  - a button that will trigger the ***Get Dataset List*** service
   - a table with the list of registered datasets
 
 Open the `webapp/controller/dataset/manage.controller.js` file and add the following code right after the `onInit` function (don't forget to use a comma to separate them):
@@ -173,7 +174,7 @@ getDatasetList: function() {
 }
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Open the `webapp/view/dataset/manage.view.xml` file and add the following code inside the `mvc:View` element:
 
@@ -216,7 +217,7 @@ Open the `webapp/view/dataset/manage.view.xml` file and add the following code i
 </Panel>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Click on the **Run** icon ![Run Applications](0-run.png) or press `ALT+F5`.
 
@@ -232,7 +233,7 @@ Et voilà!
 
 You will add to the controller a function where:
 
-  - we process the call to the "Dataset Description" SAP Predictive services and return the dataset detailed description.
+  - it will process the call to the "Dataset Description" SAP Predictive services and return the dataset detailed description.
   - this function will be triggered either on a click or row change event on the table added previously
 
 You will add to the view:
@@ -284,7 +285,7 @@ getDatasetDescription: function(oControlEvent) {
 }
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Open the `webapp/view/dataset/manage.view.xml` file and add the following code inside the `mvc:View` element after the previous code:
 
@@ -355,7 +356,7 @@ Open the `webapp/view/dataset/manage.view.xml` file and add the following code i
 </Panel>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Click on the **Run** icon ![Run Applications](0-run.png) or press `ALT+F5`.
 
@@ -373,7 +374,7 @@ Et voilà!
 
 You will add to the controller a function where:
 
-  - we process the call to the "Delete Dataset" SAP Predictive services.
+  - it will process the call to the "Delete Dataset" SAP Predictive services.
 
 You will add to the view:
 
@@ -425,7 +426,7 @@ deleteDataset: function(event) {
 }
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Open the `webapp/view/dataset/manage.view.xml` file and add the following code inside the `mvc:View` element after the previous code:
 
@@ -437,7 +438,7 @@ Open the `webapp/view/dataset/manage.view.xml` file and add the following code i
 </Toolbar>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Click on the **Run** icon ![Run Applications](0-run.png) or press `ALT+F5`.
 
@@ -457,7 +458,7 @@ Et voilà!
 
 You will add to the controller a function where:
 
-  - we process the call to the "Update Dataset Variables" SAP Predictive services.
+  - it will process the call to the "Update Dataset Variables" SAP Predictive services.
 
 You will add to the view:
 
@@ -512,7 +513,7 @@ updateDataset: function(event) {
 }
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Open the `webapp/view/dataset/manage.view.xml` file and replace the following element which replace the text control for `value` attribute by an action select control:
 
@@ -543,7 +544,7 @@ Then, add the `Update Description` in the toolbar along with the `Delete Registr
 </Toolbar>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Click on the **Run** icon ![Run Applications](0-run.png) or press `ALT+F5`.
 

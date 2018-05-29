@@ -96,7 +96,7 @@ You can alternatively open the file using the ![open](0-opensqlfile.png) icon in
 
 Click on the **Run** ![open](0-run.png) button or press F8.
 
-> **Note**: Each files may take a few seconds to process (up to a minute each sometime), so if Google Chrome tells you that your page is "unresponsive", just ask him to wait.
+> **Note**: Each files may take a few seconds to process (up to a minute each sometime), so if Google Chrome tells you that your page is ***unresponsive***, just ask him to wait.
 
 ![Console](04.png)
 

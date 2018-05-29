@@ -25,13 +25,16 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-servi
 
 [ACCORDION-BEGIN [Info: ](Application URL)]
 
-In order to ease the readability of this tutorial, we have used the **C4PAURL** token to replace the predictive services **Application URL** displayed on the overview page.
+In order to ease the readability of this tutorial, the **C4PAURL** token was used
+ to replace the predictive services **Application URL** displayed on the overview page.
 
 Therefore you can replace any occurrence of the token by your value listed.
 
-The **Application URL** should look like this (where XYZ is your SAP Cloud Platform account name):
+The **Application URL** should look like this (where ***XYZ*** is your SAP Cloud Platform account name):
 
- - `https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
+```url
+https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
+```
 
 If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
@@ -57,13 +60,11 @@ The granularity of the prediction is the same as the granularity used in the dat
 > If you use extra-predictive variables, which are variables other than date and target indicator, their values must be known for each date of the forecasts.
 > The service may return forecasts without error bars beyond the maximum confident horizon.
 
-&nbsp;
-
 To summarize, in order to execute the forecast service, you will need a dataset with:
 
  - a date variable
  - a variable to predict (usually a continuous number variable), the target variable
- - optionally a set of "extra" predictors which can be used to better predict the forecast variable
+ - optionally a set of ***extra*** predictors which can be used to better predict the forecast variable
 
 The parameters required to run the service are:
 
@@ -73,13 +74,13 @@ The parameters required to run the service are:
 
 Optionally, you can define the following parameters to enhance your analysis:
 
- - the reference date (date after which the entries are call predictions), if none is specified then the last date will be used
- - forecast method: the method to use to generate the forecasts (default, smoothing or linear regression)
- - max lag: the maximum lag to consider to compute forecasts
- - number of past values in the output: the number of past data to return with the forecasts (default value is 0)
- - skipped variables: a list of variables to skip from the analysis
- - smoothing cycle length: the length to consider for a cycle. This parameter is enforced only when using smoothing techniques
- - variable description: a more details description of the dataset
+ - **the reference date** (date after which the entries are call predictions), if none is specified then the last date will be used
+ - **forecast method**: the method to use to generate the forecasts (default, smoothing or linear regression)
+ - **max lag**: the maximum lag to consider to compute forecasts
+ - **number of past values in the output**: the number of past data to return with the forecasts (default value is 0)
+ - **skipped variables**: a list of variables to skip from the analysis
+ - **smoothing cycle length**: the length to consider for a cycle. This parameter is enforced only when using smoothing techniques
+ - **variable description**: a more details description of the dataset
 
 [DONE]
 [ACCORDION-END]
@@ -110,13 +111,11 @@ First you need to register the dataset you will be using during this tutorial.
 
 Additionally, you will adjust the variables description which will help improve the quality of our model.
 
-As described in [**Step 1** of **Test the "Dataset" services** tutorial](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Cash Flow dataset using the following elements:
+As described in [**Step 1** of **Test the Dataset services** tutorial](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Cash Flow dataset using the following elements:
 
 Open a new tab in ***Postman***.
 
 > If you don't have ***Postman*** installed yet, you can refer to the following how-to guide: [Install Postman extension for Google Chrome as a REST client](https://www.sap.com/developer/tutorials/api-tools-postman-install.html)
-
-&nbsp;
 
 Fill in the following information:
 
@@ -146,8 +145,6 @@ Request Type   | <code><b>POST</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/`<code><b>ID</b></code>`/variables/update`
 
 > Make sure you replace the <code><b>ID</b></code> token in the URL with the one returned by the previous service call.
-
-&nbsp;
 
 Select the **Body** tab, enable the **raw** mode and select `JSON (application/json)` in the drop down, then add the following content:
 
@@ -202,9 +199,12 @@ Select the **Authorization** tab and fill in the following information:
 
 Field Name     | Value
 :------------- | :-------------
-Type           | `Basic Auth`
-Username       | your ***SAP Cloud Platform Account*** login (usually the email address used to register your ***SAP Cloud Platform*** account)
+Type           | **`Basic Auth`**
+Username       | your ***SAP Cloud Platform Account*** login*
 Password*      | your ***SAP Cloud Platform Account*** password
+
+>**Note:**
+Your SAP Cloud Platform Account login is usually the email address used to register your ***SAP Cloud Platform*** account.
 
 ![Postman URL](02.png)
 
@@ -220,9 +220,8 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
 }
 ```
 
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
-
-&nbsp;
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the Data Set SAP Predictive services using a REST client
+](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 
 With these settings, you will forecast the next 5 values of the Cash variable after the 1st of December 2001.
 
@@ -232,11 +231,11 @@ Congratulations! You have just run the forecast service on the `Cash` variable a
 
 In the output you will get the following information:
 
-  - `forecastValue`: the forecast values
-  - `realValue`: the current values in case you have provided a reference date where you already have the target value, and your goal is more to confirm that the real value follows a trend or is between boundaries
-  - `errorBarHigherBound` & `errorBarLowerBound`: the upper and lower limit of the confidence interval for the forecast value (+/-5%)
-  - model information: the structure of the forecast model
-  - model performance: the accuracy indicators
+  - **`forecastValue`**: the forecast values
+  - **`realValue`**: the current values in case you have provided a reference date where you already have the target value, and your goal is more to confirm that the real value follows a trend or is between boundaries
+  - **`errorBarHigherBound`** & **`errorBarLowerBound`**: the upper and lower limit of the confidence interval for the forecast value (+/-5%)
+  - **model information**: the structure of the forecast model
+  - **model performance**: the accuracy indicators
 
 Provide an answer to the question below then click on **Validate**.
 
@@ -256,7 +255,7 @@ Field Name     | Value
 Request Type   | <code><b>POST</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast`
 
-As you can notice the only difference here, is that you don't use the "sync" keyword in the URL.
+As you can notice the only difference here, is that you don't use the ***sync*** keyword in the URL.
 
 Select the **Authorization** tab and fill in the same details as in the previous call.
 
@@ -271,9 +270,8 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   "referenceDate" : "2001-12-01"
 }
 ```
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
-
-&nbsp;
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the Data Set SAP Predictive services using a REST client
+](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 
 Click on **Send**
 
@@ -332,8 +330,6 @@ URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast/`<code><b>I
 
 > Make sure to replace the `ID` by your Job ID as returned in the previous step
 
-&nbsp;
-
 Select the **Authorization** tab and fill in the same details as in the previous call.
 
 Click on **Send**
@@ -348,8 +344,6 @@ Request Type   | <code><b>DELETE</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/forecast/`<code><b>ID</b></code>
 
 > Make sure to replace the `ID` by your Job ID as returned in the previous step
-
-&nbsp;
 
 [DONE]
 [ACCORDION-END]

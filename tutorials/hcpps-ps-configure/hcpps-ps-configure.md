@@ -26,13 +26,12 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, 
   **10 minutes**
 
 [ACCORDION-BEGIN [Step 1: ](Enable the Predictive services)]
-Let's go back to the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Let's go back to the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***
+.
 
 Click on your ***SAP Cloud Platform Account name*** as highlighted on the below screenshot.
 
 > If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
-
-&nbsp;
 
 ![SAP Cloud Platform Cockpit](01.png)
 
@@ -134,7 +133,7 @@ The **`C4PA-User`** will enable your user to consume the services and the **`C4P
 >
 > Your ***SAP Cloud Platform Account User Name*** was displayed during the ***Deploy*** step.
 >
-> And in case you are using a trial account, make sure you don't include the "trial" at the end.
+> And in case you are using a trial account, make sure you don't include the ***trial*** word at the end.
 
 [DONE]
 [ACCORDION-END]

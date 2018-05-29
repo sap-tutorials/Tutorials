@@ -8,7 +8,7 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-s
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Manage registered predictive "datasets"](https://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
+  - **Tutorials:** [Manage registered predictive datasets](https://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
 
 ## Next Steps
   - [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
@@ -29,7 +29,8 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-s
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
-Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***
+.
 
 Click on your ***SAP Cloud Platform Account Name*** as highlighted on the below screenshot.
 
@@ -56,7 +57,7 @@ This will open the ***SAP Web IDE*** where you have previously created the `pred
 
 [ACCORDION-BEGIN [Step 2: ](Registered dataset list fragment)]
 
-The fragment will reuse some of the code that was used in the [Manage your registered "Datasets"](https://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html) tutorial.
+The fragment will reuse some of the code that was used in the [Manage your registered Datasets](https://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html) tutorial.
 
 The fragment will contain:
 
@@ -64,9 +65,9 @@ The fragment will contain:
 
 For more details on fragment, please refer to the [XML Templating documentation](https://sapui5.hana.ondemand.com/#docs/guide/5ee619fc1370463ea674ee04b65ed83b.html).
 
-Create a new directory structure for **`webapp/fragment/dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/fragment/dataset`** either using the ***File*** menu or using the right click menu.
 
-Create a new file **`DatasetList.fragment.xml`** in `webapp/fragment/dataset` either using the "File" menu or using the right click menu.
+Create a new file **`DatasetList.fragment.xml`** in `webapp/fragment/dataset` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/fragment/dataset/DatasetList.fragment.xml` file and add the following code:
 
@@ -104,7 +105,7 @@ Open the `webapp/fragment/dataset/DatasetList.fragment.xml` file and add the fol
 </core:FragmentDefinition>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
@@ -113,9 +114,9 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 The fragment will contain:
 
-  - a form displaying the dataset "header" description (ID, name number of rows & columns)
+  - a form displaying the dataset ***header*** description (ID, name number of rows & columns)
 
-Create a new file **`DatasetHeader.fragment.xml`** in `webapp/fragment/dataset` either using the "File" menu or using the right click menu.
+Create a new file **`DatasetHeader.fragment.xml`** in `webapp/fragment/dataset` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/fragment/dataset/DatasetHeader.fragment.xml` file and add the following code:
 
@@ -158,7 +159,7 @@ Open the `webapp/fragment/dataset/DatasetHeader.fragment.xml` file and add the f
 </core:FragmentDefinition>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
@@ -169,9 +170,9 @@ The fragment will contain:
 
   - a form displaying the input fields for the Forecast service parameters
 
-Create a new directory structure for **`webapp/fragment/forecast`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/fragment/forecast`** either using the ***File*** menu or using the right click menu.
 
-Create a new file **`ServiceForm.fragment.xml`** in `webapp/fragment/forecast` either using the "File" menu or using the right click menu.
+Create a new file **`ServiceForm.fragment.xml`** in `webapp/fragment/forecast` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/fragment/forecast/ServiceForm.fragment.xml` file and add the following code:
 
@@ -249,7 +250,7 @@ Open the `webapp/fragment/forecast/ServiceForm.fragment.xml` file and add the fo
 </core:FragmentDefinition>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
@@ -260,9 +261,9 @@ The fragment will contain:
 
   - a form displaying the Forecast service results
 
-Create a new directory structure for **`webapp/fragment/forecast`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/fragment/forecast`** either using the ***File*** menu or using the right click menu.
 
-Create a new file **`ServiceResult.fragment.xml`** in `webapp/fragment/forecast` either using the "File" menu or using the right click menu.
+Create a new file **`ServiceResult.fragment.xml`** in `webapp/fragment/forecast` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/fragment/forecast/ServiceResult.fragment.xml` file and add the following code:
 
@@ -359,7 +360,7 @@ Open the `webapp/fragment/forecast/ServiceResult.fragment.xml` file and add the 
 </core:FragmentDefinition>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
@@ -368,12 +369,12 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 The library will contain a function where:
 
-  - we process the call to the "Dataset List" SAP Predictive services and return the list of registered dataset.
-  - we process the call to the "Dataset Description" SAP Predictive services and return the dataset detailed description.
+  - it will process the call to the ***Dataset List*** SAP Predictive services and return the list of registered dataset.
+  - it will process the call to the ***Dataset Description*** SAP Predictive services and return the dataset detailed description.
 
 These functions will be triggered either on a click or row change event on the table added previously from the main controller.
 
-Create a new file **`DatasetList.js`** in `webapp/fragment/dataset` either using the "File" menu or using the right click menu.
+Create a new file **`DatasetList.js`** in `webapp/fragment/dataset` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/fragment/dataset/DatasetList.js` file and add the following code:
 
@@ -465,14 +466,14 @@ sap.ui.define([
 });
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create a new JavaScript library for the formatter)]
 
-Create a new file **`formatter.js`** in `webapp/model` either using the "File" menu or using the right click menu.
+Create a new file **`formatter.js`** in `webapp/model` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/model/formatter.js` file and add the following code:
 
@@ -509,16 +510,16 @@ sap.ui.define([
 });
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Create a new controller)]
 
-Create a new directory structure for **`webapp/controller/forecast`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/controller/forecast`** either using the ***File*** menu or using the right click menu.
 
-Create a new file **`synchronous.controller.js`** in `webapp/controller/forecast` either using the "File" menu or using the right click menu.
+Create a new file **`synchronous.controller.js`** in `webapp/controller/forecast` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/controller/forecast/synchronous.controller.js` file and add the following code:
 
@@ -615,7 +616,7 @@ sap.ui.define([
 });
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
@@ -624,16 +625,16 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 The view will contain:
 
-  - a button that will trigger the "Get Dataset List" service
+  - a button that will trigger the ***Get Dataset List*** service
   - use the fragments previously created to display:
     - the list of registered datasets
     - the selected dataset header description
     - the service parameters form
   - a button that will trigger the Forecast service in synchronous mode
 
-Create a new directory structure for **`webapp/view/forecast`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/view/forecast`** either using the ***File*** menu or using the right click menu.
 
-Create a new file **`synchronous.view.xml`** in `webapp/view/forecast` either using the "File" menu or using the right click menu.
+Create a new file **`synchronous.view.xml`** in `webapp/view/forecast` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/view/forecast/synchronous.view.xml` file and add the following code:
 
@@ -667,7 +668,7 @@ Open the `webapp/view/forecast/synchronous.view.xml` file and add the following 
 </mvc:View>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
@@ -682,7 +683,7 @@ Inside the `<detailPages>` element, uncomment the following element:
 <mvc:XMLView viewName="pspredictive.view.forecast.synchronous"/>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]

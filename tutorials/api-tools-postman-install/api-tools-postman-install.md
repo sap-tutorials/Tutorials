@@ -11,9 +11,10 @@ tags: [  tutorial>how-to, tutorial>beginner, topic>cloud, products>sap-api-manag
  - [View all How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=tutorial:type/how-to)
 
 ## How-To Details
-In this "how-to" guide, you learn how to install and configure the [Google Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/).
+In this ***how-to*** guide, you learn how to install and configure the [Google Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/).
 
-Postman will allow you to interact with REST API. In addition we will setup the Postman Interceptor extension so that you can reuse your current Google Chrome session cookies while interacting with the APIs.
+Postman will allow you to interact with REST API. In addition, you will
+ setup the Postman Interceptor extension so that you can reuse your current Google Chrome session cookies while interacting with the APIs.
 
 ### Time to Complete
 **5 Min**.
@@ -58,9 +59,9 @@ Enable the Interceptor by clicking on the Interceptor icon as highlighted.
 
 ![Postman](04.png)
 
-Click on the "Tools" icon ![Postman](06.png), then select "Settings" from the menu.
+Click on the **Tools** icon ![Postman](06.png), then select **Settings** from the menu.
 
-Enable the "Automatically follow redirects" option as highlighted.
+Enable the ***Automatically follow redirects*** option as highlighted.
 
 ![Postman](05.png)
 
