@@ -52,7 +52,7 @@ System User Password | `Welcome18Welcome18`
 
 ![New Database System](04.png)
 
-You can choose other values for theses properties. As reference them across several tutorials, you should remember the **System User Password** as your ***HANA System Account Password***.
+You can choose other values for theses properties. As a reference across the next tutorials, you should remember the **System User Password** as your ***HANA System Account Password***.
 
 Click on **Save**
 

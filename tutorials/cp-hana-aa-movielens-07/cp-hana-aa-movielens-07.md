@@ -15,8 +15,6 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 -  How to add a SAPUI5 controller and interact with the SAP HANA XS OData service
 -  How to add a SAPUI5 view and interact with the SAP HANA XS OData service
 
-&nbsp;
-
 ### Time to Complete
 **10 Min**
 
@@ -32,7 +30,7 @@ On the left side bar, you can navigate in **Services**, then using the search bo
 
 ![Web IDE](02.png)
 
-Click on the tile, then click on **Open SAP Web IDE**.
+Click on the tile, then click on **Go to Service**.
 
 ![Web IDE](03.png)
 
@@ -362,7 +360,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 The view will contain:
 
-- a input field that will provide suggestion when the first characters are typed leveraging the OData services and its filtering capabilities
+- an input field that will provide suggestion when the first characters are typed leveraging the OData services and its filtering capabilities
   - the search will look into the user identifier & the rating count
 - a series of tables to display:
   - the user details including the rating count & the average note, plus some details about the last rating

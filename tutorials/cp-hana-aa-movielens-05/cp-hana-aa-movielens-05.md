@@ -1,3 +1,4 @@
+
 ---
 title: Expose your recommendation results using SAP HANA XS OData
 description: Understand and implement some of the options available with SAP HANA to expose your results
@@ -31,8 +32,6 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 
 > ### **Note**
 >**Make sure the currently connected user is `MOVIELENS_USER` and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
-
-&nbsp;
 
 [DONE]
 [ACCORDION-END]
@@ -102,8 +101,6 @@ LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.LINKS"  "T3" on ("T1"
 > ### **Note**
 >You may receive a series of errors and warnings in the console log while running the above code. They should all be related to the drop statements at the beginning which are intended to help you re-run the script if needed.
 
-&nbsp;
-
 [DONE]
 [ACCORDION-END]
 
@@ -122,8 +119,6 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 > ### **Note**
 >**Make sure the currently connected user is `MOVIELENS_USER` and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
 
-&nbsp;
-
 [DONE]
 [ACCORDION-END]
 
@@ -138,8 +133,6 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 >SAP HANA version 1.0 SPS 12 currently supports OData version 2.0.
 >
 >To create an OData service, you create a flat file that contains the set of OData service. You save this file with the suffix `.xsodata` in the appropriate package for your application in the SAP HANA repository.
-
-&nbsp;
 
 Create a new file named **`data.xsodata`** in the **`public/aa/movielens/service`** package.
 
