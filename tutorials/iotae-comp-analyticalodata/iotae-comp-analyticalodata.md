@@ -1,6 +1,6 @@
 ---
-title: Using Analytical OData in IoT Application Enablement (AE)
-description: Explore the Analytical OData service in IoT AE to get aggregates on data very quickly.
+title: Using Analytical OData in IoT Application Enablement
+description: Explore the Analytical OData services in SAP IoT Application Enablement (AE) to get time series and aggregates on data
 auto_validation: false
 primary_tag: topic>internet-of-things
 tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-api-management ]
@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
 
 ## Details
 ### You will learn  
-- How to use the SAP API Business Hub
+- How to use the SAP API Business Hub to browse IoT AE services
 - How to use Analytical OData Services from SAP IoT Application Enablement
 
 ### Time to Complete
@@ -19,17 +19,18 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Get access to demo system)]
+[ACCORDION-BEGIN [Step 1: ](Get access to trial systems and tools)]
 
-- **User**
-  Go to https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html and follow the instructions on the page to get a user and a password on the landscape used for this tutorial.
+- **User in SAP IoT AE trial tenant**
+  Go to <https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html> and follow the instructions on the page to get a user and a password on the landscape used for this tutorial.
 - **Tools**
-  Please check step 4 in https://www.sap.com/developer/groups/iotae-computer-as-thing.html to have the Postman tooling ready.
+  Please check step 4 in <https://www.sap.com/developer/groups/iotae-computer-as-thing.html> to have the Postman tooling ready.
 - **SAP API Business Hub**
-New to API Business Hub? Check https://www.sap.com/developer/tutorials/hcp-abh-getting-started.html
+  New to API Business Hub? Check <https://www.sap.com/developer/tutorials/hcp-abh-getting-started.html> first.
+  Please note, that screenshots used in this tutorial are based on the classic design UI of the website: <https://api.sap.com/?ui=oldUI>
 
-    For further questions regarding the API, please refer to the latest documentation:
-    https://help.sap.com/viewer/350cb3262cb8496b9f5e9e8b039b52db/latest/en-US/66d4abe77cb44fd3b8299ce049b54dba.html
+For further questions regarding these APIs, please refer to the latest documentation:
+<https://help.sap.com/viewer/350cb3262cb8496b9f5e9e8b039b52db/latest/en-US/66d4abe77cb44fd3b8299ce049b54dba.html>
 
 [DONE]
 
@@ -37,14 +38,14 @@ New to API Business Hub? Check https://www.sap.com/developer/tutorials/hcp-abh-g
 
 [ACCORDION-BEGIN [Step 2: ](Access the AE IoT Services API)]
 
-In this example, we are using data from the enviroCar database to be found at https://envirocar.org.
+In this example, we are using data from the enviroCar database [https://envirocar.org](https://envirocar.org).
 
 ![Image](pic5.png)
 
 The database contains real-life car data in order to investigate the impact driving has on environmental factors, such as fuel consumption, CO2, or noise emissions. The data is anonymised, meaning it is not possible to connect it to a specific driver. Data available via the enviroCar API can be used by third parties in accordance with the Open Database License (`ODbL`).
 We do not use the enviroCar service directly but a copy and we have further anonymised cars and car types in order to not advertise certain brands.
 
-We will use a part of this data for three cars and a subset of measurements. The three cars will be represented in the package `enviroCar` of our demo system.
+We will use a part of this data for three cars and a subset of measurements. The three cars will be represented in the package `enviroCar` of our trial system.
 
 We would like to know, which car had the highest fuel consumption for a given set of tracks. We will obtain the data by using the aggregates function.
 
@@ -118,7 +119,7 @@ Click **Send** to retrieve the following response:
 
 For the following steps, you can use the SAP API Business Hub page to send the request or use a REST client like Postman.
 
-You can request a user for the `handson2` tenant which is used in this tutorial and then you can directly call the API like this from a browser or from Postman (with Postman Interceptor). If you want to do so, go to https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html and follow the instructions on the page. Afterwards, you are able to access the package configuration using the following link:
+You can request a user for the `handson2` tenant which is used in this tutorial and then you can directly call the API like this from a browser or from Postman (with Postman Interceptor). If you want to do so, go to <https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html> and follow the instructions on the page. Afterwards, you are able to access the package configuration using the following link:
 
 ```http
 https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appcore-conf/Configuration(%27sap.iotaehandson2.envirocar%27)
@@ -165,7 +166,7 @@ Now access the SAP API Business Hub and chose Thing Analytics'. We will verify t
 
 ![Thing Analytics](pic23.png)
 
-Click **GET** for `measurements`.
+Click **GET** for `/{propertySetTypeName}/measurements`.
 
 Set the following:
 
@@ -186,7 +187,7 @@ The response will look like this:
 
 ![Response](pic25.png)
 
-The response contains single measurements that were obtained from a car and sent to the enviroCar database. Each single measurement contains the car ID (corresponds to the thing name), a timestamp and a list of different measurements for speed, temperature, fuel consumption, CO2 and more.
+The response contains single measurements that were obtained from a car and sent to the `enviroCar` database. Each single measurement contains the car ID (corresponds to the thing name), a timestamp and a list of different measurements for speed, temperature, fuel consumption, CO2 and more.
 
 The list of measurements looks like this:
 
@@ -254,7 +255,7 @@ The list of measurements looks like this:
 
 To combine single measurements to a trip, a dedicated `Track` is added to the measurement (not during driving but later in the database).
 
-Now open the chapter **Time Series Aggregates** and click **GET** for `/sap.iotaehandson2.envirocar:Measurement/aggregates`.
+Now open the chapter **Time Series Aggregates** and click **GET** for `/{propertySetTypeName}/aggregates`.
 
 ![Time series aggregates](pic26.png)
 
@@ -279,7 +280,7 @@ Click **Try it out!** to obtain the following response:
 
 For each property, a list of characteristics is calculated and displayed (like for `CO2`):
 
-```
+```json
 "CO2_MIN": "1.163272",
 "CO2_MAX": "46.601913",
 "CO2_AVG": "11.82093400057939",
@@ -297,11 +298,11 @@ For each property, a list of characteristics is calculated and displayed (like f
 It is possible to filter for a specific car (or thing). Set the following:
 
   - `propertySetTypeName`:
-    ```
+    ```http
     sap.iotaehandson2.envirocar:Measurements
     ```
   - `$filter`:
-    ```
+    ```http
     id eq 'B66347EB30EF46D8BFCD6361532000A5' and time ge datetime'2018-01-01T00:00:00' and time lt datetime'2018-03-01T00:00:00'
     ```
 
@@ -429,7 +430,7 @@ The result will look like this:
 
 If you have processed Step 5, we can now consider additional options or verify details by enhancing the request with further parameters.
 
-Remain in the open chapter **Time Series Aggregates** and click **GET** for `/sap.iotaehandson2.envirocar:Measurements2/aggregates`.
+Remain in the open chapter **Time Series Aggregates** and click **GET** for `/{propertySetTypeName}/aggregates`.
 
 ![Measurements2](pic26.png)
 
@@ -453,7 +454,7 @@ Track,Speed_AVG,Consumption_AVG
 
 Click **Try it out!** to obtain the following response:
 
-```
+```json
 {
   "d": {
     "results": [
@@ -477,6 +478,10 @@ Click **Try it out!** to obtain the following response:
         "Consumption_AVG": "0.9329440295696259",
         "Speed_AVG": "1.5499999523162842"
       }
+...      
+    ]
+      }
+}      
 ```
 
 Compared to the example in Step 5, the aggregates are calculated based on a further dimension: the track number. This was possible as the property set `Measurements2` contained a different setting for property `Track`. In `Measurements2`, it was marked as a dimension.
