@@ -27,13 +27,16 @@ Only the synchronous mode will be tested here but you can mimic what was done in
 
 [ACCORDION-BEGIN [Info: ](Application URL)]
 
-In order to ease the readability of this tutorial, we have used the **C4PAURL** token to replace the predictive services **Application URL** displayed on the overview page.
+In order to ease the readability of this tutorial, the **C4PAURL** token was used
+ to replace the predictive services **Application URL** displayed on the overview page.
 
 Therefore you can replace any occurrence of the token by your value listed.
 
-The **Application URL** should look like this (where XYZ is your SAP Cloud Platform account name):
+The **Application URL** should look like this (where ***XYZ*** is your SAP Cloud Platform account name):
 
- - `https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
+```url
+https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
+```
 
 If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
@@ -51,7 +54,7 @@ This service:
 
 In general, an outlier can either result from a data quality issue to correct or represent a suspicious case to investigate.
 
-An observation is considered an outlier if the difference between its "predicted value" and its "real value" exceeds the value of the error bar where the error bar is a deviation measure of the values around the predicted score.
+An observation is considered an outlier if the difference between its ***predicted value*** and its ***real value*** exceeds the value of the error bar where the error bar is a deviation measure of the values around the predicted score.
 
 Reasons will list the variables whose values have the most influence in the score. For each variables, the contribution corresponding to the score is compared to its contribution for the whole population. The variables for which the contribution is the most differential are selected as the most important reason.
 
@@ -64,12 +67,12 @@ To summarize, in order to execute the outliers service, you need a dataset with:
 
 Optionally, you can define the following parameters to enhance your analysis:
 
-  - number of outliers : number of outliers to return
-  - number of reasons : number of reasons to return for each outlier
-  - weight variable: column to be used to increase the importance of a row
-  - skipped variables: a list of variables to skip from the analysis
-  - variable description: a more details description of the dataset
-  - weight variable: a column to be used to increase the importance of a row
+  - **number of outliers** : number of outliers to return
+  - **number of reasons** : number of reasons to return for each outlier
+  - **weight variable**: column to be used to increase the importance of a row
+  - **skipped variables**: a list of variables to skip from the analysis
+  - **variable description**: a more details description of the dataset
+  - **weight variable**: a column to be used to increase the importance of a row
 
 [DONE]
 [ACCORDION-END]
@@ -81,8 +84,6 @@ The dataset will be using during this tutorial is extracted from the sample data
 The Census sample data file that you will use to follow the scenarios for Regression/Classification and Segmentation/Clustering is an excerpt from the American Census Bureau database, completed in 1994 by Barry Becker.
 
 > **Note:** For more information about the American Census Bureau, see <http://www.census.gov> published on non-SAP site.
-
-&nbsp;
 
 This file presents the data on 48,842 individual Americans, of at least 17 years of age. Each individual is characterized by 15 data items. These data, or variables, are described in the following table.
 
@@ -101,20 +102,18 @@ Variable | Description | Example of Values
 <nobr>`capital_gain`</nobr> | Annual capital gains | Any numerical value
 <nobr>`capital_loss`</nobr> | Annual capital losses | Any numerical value
 <nobr>`native country`</nobr> | Country of origin| United States, France, ...
-<nobr>`class`</nobr> | Variable indicating whether or not the salary of the individual is greater or less than $50,000| "1" if the individual has a salary of greater than $50,000 & "0" if the individual has a salary of less than $50,000
+<nobr>`class`</nobr> | Variable indicating whether or not the salary of the individual is greater or less than $50,000| ***1*** if the individual has a salary of greater than $50,000 & ***0*** if the individual has a salary of less than $50,000
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Register the Census dataset)]
 
-As described in [**Step 1** of **Test the "Dataset" services** tutorial](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Census dataset using the following elements:
+As described in [**Step 1** of **Test the Dataset service** tutorial](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html), register the Census dataset using the following elements:
 
 Open a new tab in ***Postman***.
 
 > If you don't have ***Postman*** installed yet, you can refer to the following how-to guide: [Install Postman extension for Google Chrome as a REST client](https://www.sap.com/developer/tutorials/api-tools-postman-install.html)
-
-&nbsp;
 
 Fill in the following information:
 
@@ -148,7 +147,7 @@ Fill in the following information:
 Field Name     | Value
 :------------- | :--------------
 Request Type   | <code><b>POST</b></code>
-URL            | <code><b>C4PAURL</b></code>`api/analytics/outliers/sync`
+URL            | <code><b>C4PAURL</b></code>`/api/analytics/outliers/sync`
 
 ![Postman URL](01.png)
 
@@ -156,9 +155,12 @@ Select the **Authorization** tab and fill in the following information:
 
 Field Name     | Value
 :------------- | :-------------
-Type           | `Basic Auth`
-Username       | your ***SAP Cloud Platform Account*** login (usually the email address used to register your ***SAP Cloud Platform*** account)
+Type           | **`Basic Auth`**
+Username       | your ***SAP Cloud Platform Account*** login*
 Password*      | your ***SAP Cloud Platform Account*** password
+
+>**Note:**
+Your SAP Cloud Platform Account login is usually the email address used to register your ***SAP Cloud Platform*** account.
 
 ![Postman URL](02.png)
 
@@ -189,11 +191,9 @@ Select the **Body** tab, enable the **raw** mode and select `JSON (application/j
   ]
 }
 ```
-> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the "Data Set" SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
+> Make sure the `datasetID` (here the value 9999999) is correct. To get the list of valid identifier, you can run ***Step 6: List all registered datasets*** from the [Test the Data Set SAP Predictive services using a REST client](https://www.sap.com/developer/tutorials/hcpps-rest-ps-dataset.html) tutorial
 
-&nbsp;
-
-With these settings, you will get the list of entries where the difference between the "predicted value" and the "real value" exceeds the value of the error bar, which make these entries as odd entries or outliers.
+With these settings, you will get the list of entries where the difference between the ***predicted value*** and the ***real value*** exceeds the value of the error bar, which make these entries as odd entries or outliers.
 
 Click on **Send**
 
@@ -211,10 +211,11 @@ Provide an answer to the question below then click on **Validate**.
 [ACCORDION-BEGIN [Step 3: ](Additional test)]
 
 You can also play with the following parameters and check the differences:
-- number of outliers : ask for 10, 50 and 100
-- number of reasons" : ask for 1, 5 and 10
-- skipped variables: exclude `marital_status`
-- variable description: for example `education_num` as an ordinal variable
+
+- **number of outliers** : ask for 10, 50 and 100
+- **number of reasons** : ask for 1, 5 and 10
+- **skipped variables**: exclude `marital_status`
+- **variable description**: for example `education_num` as an ordinal variable
 
 [DONE]
 [ACCORDION-END]

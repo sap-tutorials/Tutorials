@@ -15,8 +15,8 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-servi
 
 ## Details
 ### You will learn
-  - How to create a new user account on your HANA MDC instance using the ***SAP HANA Cockpit***. Each Trial HANA MDC instance comes with a ***HANA System Account***. This user account shall be used only to execute "System" related activities.
-  In the "real world", it is uncommon to use this user account to develop an "end-user" application.
+  - How to create a new user account on your HANA MDC instance using the ***SAP HANA Cockpit***. Each Trial HANA MDC instance comes with a ***HANA System Account***. This user account shall be used only to execute ***System*** related activities.
+  In the ***real world***, it is uncommon to use this user account to develop an ***end-user*** application.
   - What are the user roles and privileges required on HANA to use the SAP Predictive services. As the SAP Predictive services use the HANA Automated Predictive Library, it is required to configure the user roles and privileges accordingly.
 
 ### Time to Complete

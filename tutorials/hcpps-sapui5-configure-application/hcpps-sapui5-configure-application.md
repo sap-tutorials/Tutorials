@@ -20,7 +20,6 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-s
   - How to create a SAPUI5 application from a template using the SAP Web IDE
   - How to add a destination to your SAPUI5 application
   - Run your SAPUI5 application
-  &nbsp;
 
 > ### **Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Predictive services.
 >
@@ -32,13 +31,16 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-s
 
 [ACCORDION-BEGIN [Info: ](Application URL)]
 
-In order to ease the readability of this tutorial, we have used the **C4PAURL** token to replace the predictive services **Application URL** displayed on the overview page.
+In order to ease the readability of this tutorial, the **C4PAURL** token was used
+ to replace the predictive services **Application URL** displayed on the overview page.
 
 Therefore you can replace any occurrence of the token by your value listed.
 
-The **Application URL** should look like this (where XYZ is your SAP Cloud Platform account name):
+The **Application URL** should look like this (where ***XYZ*** is your SAP Cloud Platform account name):
 
- - `https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
+```url
+https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
+```
 
 If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
@@ -46,7 +48,8 @@ If you are unclear with what is your SAP Cloud Platform account name, you can re
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Create your destination)]
-Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***
+.
 
 Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial*) as highlighted on the below screenshot.
 
@@ -80,7 +83,7 @@ Property Name          | Value
 
 ![Destinations](03.png)
 
-Click on **Save**
+Click on **Save**.
 
 Click on the **Test Connectivity** button ![HTML5 Applications](0-check.png) next to the `psapi` **Destination** to validate your configuration.
 
@@ -106,7 +109,7 @@ You will get access to the **SAP Web IDE** main page:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create your application using the SAPUI5 template)]
+[ACCORDION-BEGIN [Step 3: ](Create a project using the SAPUI5 template)]
 
 Click on **New Project from Template** in the ***Create Project*** section
 
@@ -139,7 +142,7 @@ View Name            | `demo`
 
 [ACCORDION-BEGIN [Step 4: ](Add the destinations to your application)]
 
-Your template project is created! Let's continue, and add the "destinations" previously created in the SAP Cloud Platform cockpit.
+Your template project is created! Let's continue, and add the ***destinations*** previously created in the SAP Cloud Platform cockpit.
 
 Open the `neo-app.json` file and update the file like this:
 
@@ -174,16 +177,16 @@ Open the `neo-app.json` file and update the file like this:
 }
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
-> **Note:**  there are multiple ways to add your destinations in a SAPUI5 application depending on the type of destinations. Here, we will simply add them manually in the `neo-app.json` file.
+> **Note:**  there are multiple ways to add your destinations in a SAPUI5 application depending on the type of destinations. Here, you will simply add them manually in the `neo-app.json` file.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Update the default view : demo.view.xml)]
 
-The default view created is located in `webapp/view/demo.view.xml`. We will update the view to prepare for the next steps.
+The default view created is located in `webapp/view/demo.view.xml`. You will update the view to prepare for the next steps.
 
 Open the `webapp/view/demo.view.xml` file and replace the existing code with the following code:
 
@@ -252,14 +255,14 @@ Open the `webapp/view/demo.view.xml` file and replace the existing code with the
 </mvc:View>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S).
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***).
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Update the default controller : demo.controller.js)]
 
-The default controller is located in `webapp/controller/demo.controller.js`. We will update the view to prepare for the next steps.
+The default controller is located in `webapp/controller/demo.controller.js`. You will update the view to prepare for the next steps.
 
 Open the `webapp/controller/demo.controller.js` file and replace the existing code with the following code:
 
@@ -300,7 +303,7 @@ sap.ui.define([
 });
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]

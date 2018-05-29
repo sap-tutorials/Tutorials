@@ -24,13 +24,16 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-servi
 
 [ACCORDION-BEGIN [Info: ](Application URL)]
 
-In order to ease the readability of this tutorial, we have used the **C4PAURL** token to replace the predictive services **Application URL** displayed on the overview page.
+In order to ease the readability of this tutorial, the **C4PAURL** token was used
+ to replace the predictive services **Application URL** displayed on the overview page.
 
 Therefore you can replace any occurrence of the token by your value listed.
 
-The **Application URL** should look like this (where XYZ is your SAP Cloud Platform account name):
+The **Application URL** should look like this (where ***XYZ*** is your SAP Cloud Platform account name):
 
- - `https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services`
+```url
+https://aac4paservicesXYZ.hanatrial.ondemand.com/com.sap.aa.c4pa.services
+```
 
 If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
@@ -63,8 +66,6 @@ Open a new tab in ***Postman***.
 
 > If you don't have ***Postman*** installed yet, you can refer to the following how-to guide: [Install Postman extension for Google Chrome as a REST client](https://www.sap.com/developer/tutorials/api-tools-postman-install.html)
 
-&nbsp;
-
 Fill in the following information:
 
 Field Name     | Value
@@ -84,8 +85,6 @@ Password*      | your ***SAP Cloud Platform Account*** password
 
 >**Note:**
 Your SAP Cloud Platform Account login is usually the email address used to register your ***SAP Cloud Platform*** account.
-
-&nbsp;
 
 ![Postman URL](02.png)
 
@@ -175,9 +174,7 @@ Provide an answer to the question below then click on **Validate**.
 >To check which version you are currently using, please go to the following URL and check the `X-Maven-Project-Version` property:
 >  - <code><b>C4PAURL</b></code>`/adminUI/index.html#/about`
 
-&nbsp;
-
-By default, the variable storage and value type (nominal, continuous,  ordinal) properties returned by the registration service are "guessed" from the data, which may sometime be inaccurate.
+By default, the variable storage and value type (nominal, continuous,  ordinal) properties returned by the registration service are ***guessed*** from the data, which may sometime be inaccurate.
 
 For example, with variable 4 (`MondayMonthInd`), it is guessed as a continuous integer, but should rather be an ordinal integer.
 
@@ -193,8 +190,6 @@ Request Type   | <code><b>POST</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/`<code><b>ID</b></code>`/variables/update`
 
 > Make sure you replace the <code><b>ID</b></code> token in the URL with the one returned by the dataset <code><b>ID</b></code> return in the first service call.
-
-&nbsp;
 
 Select the **Authorization** tab and fill in the same details as in the previous call.
 
@@ -224,8 +219,6 @@ Request Type   | <code><b>DELETE</b></code>
 URL            | <code><b>C4PAURL</b></code>`/api/analytics/dataset/`<code><b>ID</b></code>
 
 > Make sure you replace the <code><b>ID</b></code> token in the URL with the one returned by the dataset <code><b>ID</b></code> return in the first service call.
-
-&nbsp;
 
 Select the **Authorization** tab and fill in the same details as in the previous call.
 

@@ -26,7 +26,8 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-s
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
-Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***
+.
 
 Click on your ***SAP Cloud Platform Account Name*** as highlighted on the below screenshot.
 
@@ -55,11 +56,11 @@ This will open the ***SAP Web IDE*** where you have previously created the `pred
 
 The controller will contain a function where:
 
-  - we process the call to the Register Dataset SAP Predictive services and return the dataset identifier along with the dataset description.
+  - it will process the call to the Register Dataset SAP Predictive services and return the dataset identifier along with the dataset description.
 
-Create a new directory structure for **`webapp/controller/dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/controller/dataset`** either using the ***File*** menu or using the right click menu.
 
-Create a new file **`register.controller.js`** in `webapp/controller/dataset` either using the "File" menu or using the right click menu.
+Create a new file **`register.controller.js`** in `webapp/controller/dataset` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/controller/dataset/register.controller.js` file and add the following code:
 
@@ -126,7 +127,7 @@ sap.ui.define([
 
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
@@ -139,14 +140,12 @@ The view will contain:
   - a button that will trigger the Register Dataset service
   - a table with the returned data
 
-> **Note:** the reason we use here a static select list is to avoid user errors.
+> **Note:** the reason a static select list is used here is to avoid user input errors.
 This list can be dynamically generated using an additional HANA XS OData service, that will select the proper tables from the HANA database.
 
-&nbsp;
+Create a new directory structure for **`webapp/view/dataset`** either using the ***File*** menu or using the right click menu.
 
-Create a new directory structure for **`webapp/view/dataset`** either using the "File" menu or using the right click menu.
-
-Create a new file **`register.view.xml`** in `webapp/view/dataset` either using the "File" menu or using the right click menu.
+Create a new file **`register.view.xml`** in `webapp/view/dataset` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/view/dataset/register.view.xml` file and add the following code:
 
@@ -234,7 +233,7 @@ Open the `webapp/view/dataset/register.view.xml` file and add the following code
 
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
@@ -249,7 +248,7 @@ Inside the `<detailPages>` element, uncomment the following element:
 <mvc:XMLView viewName="pspredictive.view.dataset.register"/>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]

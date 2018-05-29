@@ -26,7 +26,8 @@ tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-s
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
-Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***
+.
 
 Click on your ***SAP Cloud Platform Account Name*** as highlighted on the below screenshot.
 
@@ -53,9 +54,9 @@ This will open the ***SAP Web IDE*** where you have previously created the `pred
 
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
 
-For the moment we will just add the "Get Dataset List" functions and the Forecast similar to what we did in the previous tutorial.
+For the moment, it will just add the ***Get Dataset List*** functions and the Forecast similar to what you did in the previous tutorial.
 
-Create a new file **`asynchronous.controller.js`** in `webapp/controller/forecast` either using the "File" menu or using the right click menu.
+Create a new file **`asynchronous.controller.js`** in `webapp/controller/forecast` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/controller/forecast/asynchronous.controller.js` file and add the following code:
 
@@ -155,7 +156,7 @@ sap.ui.define([
 
 You can notice that the service call is almost the same (minor change in the URL), but the returned payload is not the model but the job details.
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
@@ -164,13 +165,13 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 The view will contain:
 
-  - a button that will trigger the "Get Dataset List" service
+  - a button that will trigger the ***Get Dataset List*** service
   - use the fragments previously created to display:
     - the list of registered datasets
     - the selected dataset header description
     - the service parameters form
 
-Create a new file **`asynchronous.view.xml`** in `webapp/view/forecast` either using the "File" menu or using the right click menu.
+Create a new file **`asynchronous.view.xml`** in `webapp/view/forecast` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following code:
 
@@ -202,7 +203,7 @@ Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following
 </mvc:View>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
@@ -213,7 +214,7 @@ The fragment will contain:
 
   - the current status of a job
 
-Create a new file **`JobStatus.fragment.xml`** in `webapp/fragment/job` either using the "File" menu or using the right click menu.
+Create a new file **`JobStatus.fragment.xml`** in `webapp/fragment/job` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/fragment/job/JobStatus.fragment.xml` file and add the following code:
 
@@ -251,12 +252,12 @@ Open the `webapp/fragment/job/JobStatus.fragment.xml` file and add the following
 </core:FragmentDefinition>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Add the "check job status" function)]
+[ACCORDION-BEGIN [Step 6: ](Add the check job status function)]
 
 Open the `webapp/controller/forecast/asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
@@ -303,7 +304,7 @@ checkStatus: function() {
 }
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following code at the end of the view after the last `Toolbar` element:
 
@@ -318,12 +319,12 @@ Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following
 </Toolbar>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add the "get job result" function)]
+[ACCORDION-BEGIN [Step 7: ](Add the get job result function)]
 
 Open the `webapp/controller/forecast/asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
@@ -371,7 +372,7 @@ getResults: function() {
 }
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following code at the end of the view after the last `Toolbar` element:
 
@@ -390,7 +391,7 @@ Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add the "delete job result")]
+[ACCORDION-BEGIN [Step 8: ](Add the delete job result function)]
 
 Open the `webapp/controller/forecast/asynchronous.controller.js` file and add the following code right after the last function (don't forget to use a comma to separate them):
 
@@ -439,7 +440,7 @@ deleteResults: function() {
 }
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Open the `webapp/view/forecast/asynchronous.view.xml` file and add the following code at the end of the view after the last `Toolbar` element:
 
@@ -464,7 +465,7 @@ Inside the `<detailPages>` element, and uncomment the following element:
 <mvc:XMLView viewName="pspredictive.view.forecast.asynchronous"/>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 [DONE]
 [ACCORDION-END]

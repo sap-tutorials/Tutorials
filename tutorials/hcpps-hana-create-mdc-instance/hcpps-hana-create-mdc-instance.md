@@ -21,7 +21,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-servi
   **10 minutes**
 
 [ACCORDION-BEGIN [Step 1: ](Access your SAP Cloud Platform account)]
-Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***.
 
 ![SAP Cloud Platform Cockpit](01.png)
 
@@ -66,7 +66,7 @@ It will take about 5 to 10 minutes for the creation process to complete. So, now
 
 You can refresh the page by hitting F5.
 
-Once you see the *Database started successfully* event appears in the list, you can proceed with the next step.
+Once you see the ***Database started successfully*** event appears in the list, you can proceed with the next step.
 
 [DONE]
 [ACCORDION-END]
@@ -86,8 +86,6 @@ Once the database is stopped, Click on **Start**.
 >The initial backup may take up to an hour to execute, and your HANA MDC will not restart until it is completed.
 >
 >Therefore you can proceed with the next steps. However, at some point, the backup will complete, and your instance will be shutdown, therefore you will need to start it.
-
-&nbsp;
 
 [DONE]
 [ACCORDION-END]
