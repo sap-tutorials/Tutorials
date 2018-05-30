@@ -1,12 +1,12 @@
 ---
-title: Image Classification with SAP Leonardo Machine Learning Foundation in Java
-description: Discover how to implement SAP Leonardo Machine Learning Functional Service in a Java program
+title: Image Classification example with Java
+description: Discover how to implement SAP Leonardo Machine Learning Foundation service in a Java program
 auto_validation: true
 primary_tag: products>sap-leonardo-machine-learning-foundation
 tags: [ tutorial>beginner, topic>java, topic>machine-learning, products>sap-leonardo-machine-learning-foundation, topic>java, products>sap-api-management]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
  - [Sign up for an free trial account on the SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
@@ -15,7 +15,7 @@ tags: [ tutorial>beginner, topic>java, topic>machine-learning, products>sap-leon
  - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
-### You will learn  
+### You will learn
 In this tutorial, you will learn how to quickly integrate the **Image Classification** SAP Leonardo Machine Learning Functional Services published from the SAP API Business Hub sandbox in a Java program.
 
 This service allows you to calculates and returns a list of classifications/labels along with their probabilities for a given image.
@@ -33,11 +33,11 @@ In this tutorial, you will learn the basics of making API calls against the Mach
 ### Time to Complete
 **15 Min**
 
-[ACCORDION-BEGIN [Step 1: ](Get Your Sandbox URL)]
+[ACCORDION-BEGIN [Step 1: ](Get The Generated Code Snippet And the API key)]
 
-In order to consume the **Image Classification** Machine Learning Functional Services, you will first need to get the service URI, your API Key and the request and response parameters.
+In order to consume the **Image Classifier Service** SAP Leonardo Machine Learning Foundation service, you will first need to get the service URI, request and response parameters.
 
-Go to [https://api.sap.com/](https://api.sap.com) and click on the **Browse** tile.
+Go to [https://api.sap.com/](https://api.sap.com).
 
 ![SAP API Business Hub](01.png)
 
@@ -45,105 +45,77 @@ Then you will be able to search for the **SAP Leonardo Machine Learning - Functi
 
 ![SAP API Business Hub](02.png)
 
-Click on **Artifacts**, then click on the **Image Classification API**.
+Select **Image Classifier Service**.
 
 ![SAP API Business Hub](03.png)
 
-As you can notice the **Image Classification API** has only one resource (or service): `/inference_sync`.
+You can also access the page directly from the following address:
 
-Now click on the **Generate Code**.
+ - <https://api.sap.com/api/image_classification_api/resource>
 
-> **Note**: the term *inference* refers to the application phase (scoring) an existing model (as opposed to the training or inception phase) and *sync* for synchronous.
+As you can notice the API has only one resource (or service): `/inference_sync`.
 
 ![SAP API Business Hub](04.png)
 
-Now select the **Java** tab.
+> **Note**: the term *inference* refers to the application phase (scoring) an existing model (as opposed to the training or inception phase) and *sync* for synchronous.
+
+Now, click on the **Code Snippet**, then, select **Java**.
 
 ![SAP API Business Hub](05.png)
 
-Here is a copy of the generated code (which you can use later from here or from the **Copy to clipboard** button at the bottom):
+As you will notice, the generated code is missing the Java import statements along with the `API_KEY`, the request expected form data for the file content.
 
-```Java
-DataOutputStream dataOut = null;
-BufferedReader in =null;
+When using any of the APIs outside of the SAP API Business Hub, an application key is needed in every request header of your calls.
 
-try {
+To get to your API key, click on the **Show API Key** button.
 
-  String url = "https://sandbox.api.sap.com/ml/imageclassifier/inference_sync";
+![SAP API Business Hub](06.png)
 
-  URL urlObj = new URL(url);
-  HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();
-  //setting request method
-  connection.setRequestMethod("POST");
+You will be prompted to login if you are not yet.
 
-  //adding headers
-  connection.setRequestProperty("Content-Type","multipart/form-data");
-  connection.setRequestProperty("Accept","application/json");
-  connection.setRequestProperty("APIKey","<API_KEY>");
+Then, the following pop-up should appear. Click on the **Copy Key and Close** button and save it in a text editor.
 
-  connection.setDoInput(true);
-
-  //sending POST request
-  connection.setDoOutput(true);
-
-  int responseCode = connection.getResponseCode();
-  in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-  String inputLine;
-  StringBuffer response = new StringBuffer();
-  while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-  }
-
-  //printing response
-  System.out.println(response.toString());
-
-} catch (Exception e) {
-  //do something with exception
-  e.printStackTrace();
-} finally {
-  try {
-    if(dataOut != null) {
-      dataOut.close();
-    }
-    if(in != null) {
-      in.close();
-    }
-
-  } catch (IOException e) {
-    //do something with exception
-    e.printStackTrace();
-  }
-}
-```
-
-As you can notice, the Java import statements are missing along with request expected form data.
+![SAP API Business Hub](06-1.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get Your API key )]
+[ACCORDION-BEGIN [Step 2: ](Analyze the service)]
 
-When using any of the APIs outside of the SAP API Business Hub, an application key will be needed in every request header of your APIs calls.
+As you can notice the API has only one resource (or service): `/inference_sync`.
 
-To get to your API key, click on the ![key](00-key.png) icon in the top right corner of the page. Click on the key icon.
+Now click on the `/inference_sync` link to expand the section.
 
-The following pop-up should appear. Click on the **Copy API Key** button and save it in a text editor.
+> **Note**: the term *inference* refers to the application phase (scoring) an existing model (as opposed to the training or inception phase) and *sync* for synchronous.
 
-![SAP API Business Hub](06.png)
+As stated in the description, the service accepts either:
+
+ - an archive file with a zip/tar extensions containing multiple image files
+ - a single image
+ - a list of image as input
+
+The service returns a classification list with its scores (confidence).
+
+The supported image formats are ***JPEG***, ***PNG***, ***TIF*** or ***BMP*** (the actual content format is validated, so renaming files may simply not work).
+
+The input file, files or archive file will be sent as a `FormData` query parameter in the service request.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Start the Eclipse IDE)]
 
-Now, let's start the Eclipse IDE and select your workspace (either the default, a new or an existing one).
+Now, you can start the Eclipse IDE and select your workspace (either the default, a new or an existing one).
 
 If you don't have the Eclipse IDE installed, you can download the latest version from the following link: [Eclipse Downloads](https://www.eclipse.org/downloads/eclipse-packages/)
 
 You can pick either the **Eclipse IDE for Java EE Developers** or the **Eclipse IDE for Java Developers**.
 
-By default the Java perspective should be Launched. If not, use the menu bar and select **Window** > **Perspective** > **Open Perspective** > **Java**.
-If the Java perspective is not listed, then use the **Other...** o open it.
+By default the Java perspective should be Launched.
+
+If not, use the menu bar and select **Window** > **Perspective** > **Open Perspective** > **Java**.
+
+If the Java perspective is not listed, then use the **Other...** to open it.
 
 You can also close the **Welcome Page**.
 
@@ -160,7 +132,7 @@ You can name your project the way you want, here we will call it **`ml-imageclas
 
 Click on **Finish**.
 
-> **Note**: make sure you pick `JavaSE-1.8` as your project **Execution Runtime JRE**. This should help avoid coding compliance and  runtime issues with the provided code.
+> **Note**: make sure you pick `JavaSE-1.8` as your project **Execution Runtime JRE**. This should help avoid coding compliance and runtime issues with the provided code.
 
 ![Eclipse](08.png)
 

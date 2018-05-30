@@ -1,6 +1,6 @@
 ---
-title: Topic Detection with SAP Leonardo Machine Learning Foundation in SAPUI5
-description: Discover how to implement SAP Leonardo Machine Learning Functional Service in a SAPUI5 application
+title: Topic Detection example with SAPUI5
+description: Discover how to implement SAP Leonardo Machine Learning Foundation service in a SAPUI5 application
 auto_validation: true
 primary_tag: products>sap-leonardo-machine-learning-foundation
 tags: [ tutorial>beginner, topic>sapui5, topic>html5, topic>machine-learning, products>sap-leonardo-machine-learning-foundation, products>sap-api-management, products>sap-cloud-platform, products>sap-web-ide]
@@ -25,11 +25,11 @@ You will then be able to substitute the **Topic Detection** services with any ot
 ### Time to Complete
 **15 Min**
 
-[ACCORDION-BEGIN [Step 1: ](Get Your Sandbox URL)]
+[ACCORDION-BEGIN [Step 1: ](Get The API Sandbox URL And API Key)]
 
-In order to consume the **Topic Detection** Machine Learning Functional Services, you will first need to get the service URI, your API Key and the request and response parameters.
+In order to consume the **Topic Detection** SAP Leonardo Machine Learning Foundation service, you will first need to get the service URI and your API key, request and response parameters.
 
-Go to [https://api.sap.com/](https://api.sap.com) and click on the **Browse** tile.
+Go to [https://api.sap.com/](https://api.sap.com).
 
 ![SAP API Business Hub](01.png)
 
@@ -37,47 +37,78 @@ Then you will be able to search for the **SAP Leonardo Machine Learning - Functi
 
 ![SAP API Business Hub](02.png)
 
-Click on **Artifacts**, then click on the **Topic Detection API**.
+Select **Topic Detection API**.
 
 ![SAP API Business Hub](03.png)
 
-As you can notice the **Topic Detection API** has only one resource (or service): `/inference_sync`.
+You can also access the page directly from the following address:
 
-Now click on the **Overview** tab.
+ - <https://api.sap.com/api/topic_detection_api/resource>
 
-> **Note**: the term *inference* refers to the application phase (scoring) an existing model (as opposed to the training or inception phase) and *sync* for synchronous.
+![SAP API Business Hub](06.png)
 
-![SAP API Business Hub](04.png)
+To get to your API Sandbox URL, click on the **Details** tab.
 
-As displayed on the screen, the sandbox URL for the **Topic Detection API** where we need to append the API resource:
+The API Sandbox URL should be:
 
 ```JSON
-https://sandbox.api.sap.com/ml/topicdetection/inference_sync
+https://sandbox.api.sap.com/ml/topicdetection
 ```
+
+To get to your API key, click on the **Show API Key** button.
+
+You will be prompted to login if you are not yet.
+
+Then, the following pop-up should appear. Click on the **Copy Key and Close** button and save it in a text editor.
+
+![SAP API Business Hub](06-1.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get Your API key )]
+[ACCORDION-BEGIN [Step 2: ](Analyze the service)]
 
-When using any of the APIs outside of the SAP API Business Hub, an application key will be needed in every request header of your APIs calls.
+As you can notice the API has only one resource (or service): `/inference_sync`.
 
-To get to your API key, click on the ![key](00-key.png) icon in the top right corner of the page. Click on the key icon.
+Now click on the `/inference_sync` link to expand the section.
 
-The following pop-up should appear. Click on the **Copy API Key** button and save it in a text editor.
+> **Note**: the term *inference* refers to the application phase (scoring) an existing model (as opposed to the training or inception phase) and *sync* for synchronous.
 
-![SAP API Business Hub](05.png)
+As stated in the description, the service accepts either:
 
-Now, let's build a SAPUI5 application! But before doing so let's first add the destination to connect to the SAP API Business Hub.
+ - an archive file with a zip/tar extensions containing multiple text files
+ - a single text file
+ - a list of text files as input
+
+The service returns a list of detected topic with the associated keywords and scores (confidence).
+
+The supported text file formats is plain text only.
+
+The input file, files or archive file will be sent as a `FormData` query parameter in the service request.
+
+A series of options are also required for the following parameters:
+
+  - `numTopics`: Total number of topics to be detected
+  - `numTopicsPerDoc`: Number of most relevant topics to be listed per document
+  - `numKeywordsPerTopic`: Number of keywords to be listed per topic
+  - `numFeatures`: Maximum number of keywords to be extracted from documents in total
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Access the SAP Cloud Platform Cockpit)]
 
-Go to your [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) account and access "Your Personal Developer Account".
+Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit Neo Trial</b></a> with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***.
 
-![SAP Cloud Platform Cockpit](06.png)
+Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial* by default) as highlighted on the below screenshot.
+
+![SAP Cloud Platform Cockpit](07-1.png)
+
+You are now in your ***SAP Cloud Platform developer*** account!
+
+![Your Personal Developer Account](07-2.png)
+
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 [DONE]
 [ACCORDION-END]
@@ -87,8 +118,6 @@ Go to your [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatria
 You will need to create a destination in your SAP Cloud Platform account that allow will your applications to connect to external APIs such as the SAP API Business Hub.
 
 On the left side bar, you can navigate in **Connectivity** > **Destinations**.
-
-![Your Personal Developer Account](07.png)
 
 On the ***Destinations*** overview page, click on **New Destination**
 
@@ -126,7 +155,7 @@ On the left side bar, you can navigate in **Services**, then using the search bo
 
 ![Web IDE](10.png)
 
-Click on the tile, then click on **Open SAP Web IDE**.
+Click on the tile, then click on **Go to Service**.
 
 ![Web IDE](11.png)
 
