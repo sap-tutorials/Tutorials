@@ -250,19 +250,19 @@ The **OAuth** login screen of **SAP Cloud Platform mobile service for developmen
 
 The app now displays the initial **Data Privacy** acknowledgement page. Click **Agree** to proceed.
 
-![Build and run](fiori-ios-scpms-create-app-wwdc-22a.png)
+![Build and run](fiori-ios-scpms-create-app-wwdc-61.png)
 
 The app now proceeds with a 3-step wizard. First, you are presented the **Data Privacy** detail page. Click **Next** to proceed to the next step.
 
-![Build and run](fiori-ios-scpms-create-app-wwdc-22b.png)
+![Build and run](fiori-ios-scpms-create-app-wwdc-62.png)
 
 Next you are presented the **Security** detail page. Click **Next** to proceed to the next step.
 
-![Build and run](fiori-ios-scpms-create-app-wwdc-22c.png)
+![Build and run](fiori-ios-scpms-create-app-wwdc-63.png)
 
 Lastly you are presented the **Consent** detail page. Click **Allow** to proceed.
 
-![Build and run](fiori-ios-scpms-create-app-wwdc-22d.png)
+![Build and run](fiori-ios-scpms-create-app-wwdc-64.png)
 
 When you have finished the on-boarding steps, the application starts with an overview of the available **Collections** of the OData service:
 
