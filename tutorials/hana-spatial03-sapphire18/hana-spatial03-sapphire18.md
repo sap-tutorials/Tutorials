@@ -1,5 +1,5 @@
 ---
-title: Analyzing states and territories with SAP HANA Geospatial
+title: Analyzing states and territories
 description: Analyzing states and territories with SAP HANA Geospatial at SAPPHIRENOW 2018
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 
 ## Details
 ### You will learn  
-how you can use SAP HANA to analyze data from Shapefiles
+how you can use SAP HANA to analyze data from Shapefiles.
 
 ### Time to Complete
 **5 Min**

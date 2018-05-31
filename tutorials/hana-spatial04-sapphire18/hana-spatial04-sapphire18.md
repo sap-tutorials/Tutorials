@@ -1,5 +1,5 @@
 ---
-title: Analyzing Points of Interest with SAP HANA Geospatial
+title: Analyzing Points of Interest
 description: Analyzing Points of Interest with SAP HANA Geospatial at SAPPHIRENOW 2018
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
@@ -21,10 +21,12 @@ how you can use SAP HANA's spatial clustering to analyze PoI data
 This time you will analyze geographical distribution of Points of Interest, using data from `OpenBeerDB` as an example. This data set was last updated in 2011, but is still OK for the tutorial.
 
 Data has been loaded into tables:
+
 1. `"OPENBEERDB"."BREWERIES"` with breweries attributes,
 2. `"OPENBEERDB"."BREWERIES_GEO"` with geographical locations derived from geocoding based on address data from previous table.
 
 The table `"OPENBEERDB"."BREWERIES_GEO"` has been already extended with two columns:
+
 * `"loc_4326"` contains locations as points in spatial reference system `4326` (GPS locations on the Round Earth model),
 * `"loc_3857"` contains locations as points in spatial reference system `3857` (planar projection used on web maps).
 
@@ -93,7 +95,7 @@ order by 3 desc);
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](DBSCAN)]
+[ACCORDION-BEGIN [Step 5: ](DBSCAN Clustering)]
 
 DBSCAN is the Density-based spatial clustering of applications with noise.
 
