@@ -42,7 +42,7 @@ select
 "SHAPE".ST_GeometryType()
  from "GEOTECH"."cntry00"
  order by 1;
- ```
+```
 
 ![Geotypes](geosaphire2030.jpg)
 
@@ -61,7 +61,7 @@ select
 "SHAPE".ST_SRID()
  from "GEOTECH"."continent"
  order by 1;
- ```
+```
 
 ![SRID output](geosaphire2040.jpg)
 
