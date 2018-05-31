@@ -14,13 +14,10 @@
       "urlParametersNotNeeded": false,
       "_metadata": {
         "runnerId": "webapprunner",
-        "id": 282488,
+        "id": 2964343,
         "displayName": "Run index.html",
-        "lastRunTimeStamp": 1507711249668
+        "lastRunTimeStamp": 1527778252227
       }
     }
-  ],
-  "hybrid": {
-    "dirty": false
-  }
+  ]
 }

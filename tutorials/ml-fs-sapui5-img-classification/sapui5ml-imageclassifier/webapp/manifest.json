@@ -1,7 +1,7 @@
 {
-	"_version": "1.5.0",
+	"_version": "1.7.0",
 	"sap.app": {
-		"id": "demosapui5ml",
+		"id": "demosapui5ml-imageclassifier",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -14,6 +14,7 @@
 			"version": "1.40.12"
 		}
 	},
+
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -29,11 +30,16 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": ["sap_hcb", "sap_belize"]
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+
+		]
 	},
+
 	"sap.ui5": {
 		"rootView": {
-			"viewName": "demosapui5ml.view.demo",
+			"viewName": "demosapui5ml-imageclassifier.view.demo",
 			"type": "XML"
 		},
 		"dependencies": {
@@ -56,7 +62,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "demosapui5ml.i18n.i18n"
+					"bundleName": "demosapui5ml-imageclassifier.i18n.i18n"
 				}
 			},
 			"demo": {
@@ -70,9 +76,5 @@
 				"uri": "css/style.css"
 			}]
 		}
-	},
-	"sap.platform.hcp": {
-		"uri": "webapp",
-		"_version": "1.1.0"
 	}
 }

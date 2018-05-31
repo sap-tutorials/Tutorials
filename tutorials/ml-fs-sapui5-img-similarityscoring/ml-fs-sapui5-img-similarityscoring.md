@@ -260,7 +260,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
     },
     "description": "SAPUI5 Test Resources"
   }, {
-    "path": "/ml",
+    "path": "/ml-dest",
     "target": {
       "type": "destination",
       "name": "sapui5ml-api"
@@ -294,8 +294,8 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-  "url_featureextraction" : "/ml/featureextraction/inference_sync",
-  "url_similarityscoring" : "/ml/similarityscoring/inference_sync",
+  "url_featureextraction" : "/ml-dest/featureextraction/inference_sync",
+  "url_similarityscoring" : "/ml-dest/similarityscoring/inference_sync",
   "APIKey":"<<<<< COPY YOUR API KEY >>>>>"
 }
 ```
@@ -398,7 +398,7 @@ callService: function(oController, service, url, type, mode, apiKey, formData, f
       success: ajaxSuccess,
       error: ajaxError,
       contentType: false,
-      async: false,
+      async: true,
       data: formData,
       cache: false,
       processData: false

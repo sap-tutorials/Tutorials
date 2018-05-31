@@ -246,7 +246,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
     },
     "description": "SAPUI5 Test Resources"
   }, {
-    "path": "/ml",
+    "path": "/ml-dest",
     "target": {
       "type": "destination",
       "name": "sapui5ml-api"
@@ -280,7 +280,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-  "url": "/ml/topicdetection/inference_sync",
+  "url": "/ml-dest/topicdetection/inference_sync",
   "APIKey": "<<<<< COPY YOUR API KEY >>>>>",
   "options": {
     "numTopics": 3,

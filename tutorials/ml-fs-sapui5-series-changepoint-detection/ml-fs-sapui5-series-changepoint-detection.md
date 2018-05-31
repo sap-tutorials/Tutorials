@@ -244,7 +244,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
     },
     "description": "SAPUI5 Test Resources"
   }, {
-    "path": "/ml",
+    "path": "/ml-dest",
     "target": {
       "type": "destination",
       "name": "sapui5ml-api"
@@ -278,7 +278,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-  "url": "/ml/changepointdetection/inference_sync",
+  "url": "/ml-dest/changepointdetection/inference_sync",
   "APIKey": "<<<<< COPY YOUR API KEY >>>>>",
   "options": {
     "separator": "|",
@@ -544,7 +544,7 @@ sap.ui.define([
             oView.getModel("demo").getProperty("/options/series_separator") + "\"}",
           "texts": text
         }),
-        async: false,
+        async: true,
         success: function(data) {
           try {
             //get the result size
