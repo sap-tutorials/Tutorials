@@ -5,7 +5,6 @@ primary_tag: products>sap-predictive-service
 tags: [ tutorial>how-to, tutorial>beginner, products>sap-predictive-service ]
 ---
 
-
 ## Prerequisites
   - **Proficiency:** Beginner
   - **Tutorials:** [Enable, deploy and configure the SAP Predictive services](http://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
@@ -41,7 +40,6 @@ On the left side menu bar, you can expand **Monitoring > JMX Console**.
 
 ![aac4paservices JMX Console](01.png)
 
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Access the database pool size parameter)]
@@ -51,7 +49,6 @@ Now, expand `com.sap.analytics.cloud` > `binding-java-comp/env/jdbc/DefaultDB-jo
 As you can see the default value is 4.
 
 ![aac4paservices JMX Console](02.png)
-
 
 [ACCORDION-END]
 
@@ -65,13 +62,13 @@ Click on the execute icon ![aac4paservices JMX Console](00-execute.png).
 
 An new entry will appear in the **Operation results**.
 
-> Note: if you click back on **Attributes*, you will notice that the updated value is not displayed. You will need to refresh the page or switch to another parameter.
+> Note: if you click back on **Attributes**, you will notice that the updated value is not displayed. You will need to refresh the page or switch to another parameter.
 >
-> It is not required to restart the application after the parameter is updated. and if the application is restarted, the change will be maintained.
-
+>It is not required to restart the application after the parameter is updated. and if the application is restarted, the change will be maintained.
 
 [ACCORDION-END]
 
 ## Next Steps
-- [Install a REST client to interact with the SAP Predictive services](http://www.sap.com/developer/tutorials/hcpps-rest-client-install.html)
-- [View all How-Tos](https://www.sap.com/developer/tutorial-navigator.tutorials.html?tag=tutorial:type/how-to)
+- Then, you can move back to one of the following groups:
+    - [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+    - [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)

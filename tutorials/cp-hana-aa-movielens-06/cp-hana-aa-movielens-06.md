@@ -16,7 +16,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 - How to create a SAPUI5 application from a template using the SAP Web IDE
 - How to add a destination to your SAPUI5 application
 - Run your SAPUI5 application
-&nbsp;
+
 **Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Predictive services.
 For more content on SAPUI5, you can check the dedicated <a href="https://sapui5.hana.ondemand.com/#/topic/3da5f4be63264db99f2e5b04c5e853db" target="new">tutorials</a> section available on the <a href="https://sapui5.hana.ondemand.com" target="new">SAPUI5 documentation</a>.
 
@@ -25,11 +25,16 @@ For more content on SAPUI5, you can check the dedicated <a href="https://sapui5.
 
 [ACCORDION-BEGIN [Step 1: ](Create your destination)]
 
-Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit</b></a> with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit Neo Trial</b></a> with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***.
 
-Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial*) as highlighted on the below screenshot.
+Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial* by default) as highlighted on the below screenshot.
 
 ![SAP Cloud Platform Cockpit](01.png)
+
+You are now in your ***SAP Cloud Platform developer*** account!
+
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+
 
 On the left side bar, you can navigate in **Connectivity** > **Destinations**.
 
@@ -55,8 +60,6 @@ Password             | `Welcome18Welcome18`
 > ### **Note**:
 >**Make sure you paste your SAP HANA XS OData URL from the last tutorial in the URL field.**
 >**The URL should end like `data.xsodata` with no slash "/" at the end**
-
-&nbsp;
 
 Before clicking on **Save**, you will need to add the following properties to the destination using the ***New Property*** button:
 
@@ -84,7 +87,7 @@ On the left side bar, you can navigate in **Services**, then using the search bo
 
 ![Web IDE](06.png)
 
-Click on the **SAP Web IDE** tile, then click on **Open SAP Web IDE**.
+Click on the **SAP Web IDE** tile, then click on **Go to Service**.
 
 ![Web IDE](07.png)
 

@@ -11,7 +11,7 @@
 				</Select>
 			</InputListItem>
 		</FlexBox>
-		<FlexBox><Button text="Register dataset" type="Default" press="register" custom:input="idSelectDataset"/></FlexBox>
+		<FlexBox><Button text="Register Dataset" type="Default" press="register" custom:input="idSelectDataset"/></FlexBox>
 	</form:SimpleForm>
 	<Panel expandable="false" expanded="true" visible="{= typeof ${dataset_register>/dataset} !== 'undefined'}">
 		<form:Form editable="false" class="isReadonly">

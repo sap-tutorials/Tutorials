@@ -7,14 +7,11 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Software:**
- - SUSE Linux Enterprise Server 12.0, 12.1, 12.2
- - Docker Enterprise Edition for SUSE Enterprise Linux Server
 
 
 ## Next Steps
 - [How to Install SAP HANA 2.0, express edition Clients](https://www.sap.com/developer/tutorials/hxe-ua-howto-installing-clients.html)
- - [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
+- [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
 
 ## Details
 ### You will learn  
@@ -35,15 +32,15 @@ SAP HANA, express edition is a streamlined version of the SAP HANA platform whic
 
 The software license allows for both non-production and production use cases, enabling you to quickly prototype, demo, and deploy next-generation applications using SAP HANA, express edition without incurring any license fees. Memory capacity increases beyond 32GB are available for purchase at the [SAP Store](https://www.sapstore.com/solutions/99055/SAP-HANA%2C-express-edition).
 
-In addition to SUSE Enterprise, SAP HANA, express edition for Docker has been tested on the following Linux operating system versions:
+SAP HANA, express edition for Docker has been tested on the following Linux operating system versions:
 
-| Linux OS | OS Version |
-| --- | --- |
-| `Ubuntu`  | `17.04 (Zesty Zapus)` |
-| `openSUSE` | `openSUSE Leap` |
-| `CentOS` | `7 (Core)` |
-| `Debian` | `9 (Stretch)` |
-| `Fedora` | `25 (Server Edition)` |
+| Linux OS | OS Version | Docker Editions
+| --- | --- | --- |
+| `Ubuntu`  | `17.04 (Zesty Zapus)` | [Community](https://store.docker.com/editions/community/docker-ce-server-ubuntu),  [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-ubuntu) |
+| `openSUSE` | `openSUSE Leap` | [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-sles) |
+| `CentOS` | `7 (Core)` | [Community](https://store.docker.com/editions/community/docker-ce-server-centos),  [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-centos) |
+| `Debian` | `9 (Stretch)` | [Community](https://store.docker.com/editions/community/docker-ce-server-debian) |
+| `Fedora` | `25 (Server Edition)` | [Community](https://store.docker.com/editions/community/docker-ce-server-fedora) |
 
 **This installation does not support Docker for Windows or Docker for Mac.**
 

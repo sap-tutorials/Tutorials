@@ -10,9 +10,9 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
 
 ## Details
 ### You will learn  
-This tutorial will guide you through the creation and configuration of a Kubernetes cluster on Google Kubernetes Engine (GKE). You will then learn how to connect to SAP HANA, express edition running on the pods.
+This tutorial will guide you through the creation and configuration of a Kubernetes cluster on Google Kubernetes Engine (GKE). You will then learn how to connect to SAP HANA, express edition running on the pods. The configurations provided here should also work on other Kubernetes orchestrators such as Azure Kubernetes Service or Amazon EKS.
 
-The currently available image includes the **database server only**. The Extended Application Services, advanced and classic models (XS Advanced or XS Classic), are not included.
+The image used in this tutorial is the **database server only**. The Extended Application Services, advanced and classic models (XS Advanced or XS Classic), are not included in the image pulled here.
 
 ## Disclaimer
 SAP HANA, express edition (HXE) is officially supported on SLES. SAP Community members have been successful in running HXE on other Linux operating systems that are not formally supported by SAP, such as Red Hat, Ubuntu, openSUSE and Fedora. SAP is not committing to resolving any issues that may arise from running HXE on these platforms.
@@ -41,17 +41,17 @@ Click **Create cluster**.
 
 Fill in the basic details as per your preferences, and click **Customize**.
 
-![k8s details](details.png)
+![k8s details](details1.png)
 
-Configure the minimum requirements for your nodes. The **minimum** requirements for each container are:
+Configure the minimum requirements for your nodes. The **minimum** requirements for each container with the server-only Docker image for SAP HANA, express edition are:
 
-- 4 `vCPU`
+- 2 `vCPU`
 - 8 GB RAM
 - Ubuntu operating system
 
 If you are planning on running multiple containers per pod, you can adjust accordingly. This example is based on a single container per pod.
 
-![k8s details](node.png)
+![k8s details](node3.png)
 
 >Note: You can only run only one container with SAP HANA, express edition per pod.
 
@@ -76,10 +76,6 @@ This will open a `gcloud` console with a command ready to connect to the cluster
 
 ![Connect to cluster](connect3.png)
 
-Use command `kubectl get nodes` to list the nodes and their status.
-
-![Connect to cluster](connect4.png)
-
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create the deployment configuration files)]
@@ -98,7 +94,16 @@ For example:
 
 ![Create Docker secret](docker_secret.png)
 
-Locally on your computer, create a text file called `hxe.yaml` with the following content. **Replace** the path to password file with the one you have just created considering the following rules:
+From the console, use the following command to create a new file:
+
+```
+edit hxe.yaml
+```
+![Create Docker secret](edit.png)
+
+This will open an online editor where you will paste the contents of the file below.
+
+**Replace** the path to password file with the one you have just created considering the following rules:
 
 
 > ### **Note: Please check the password policy to avoid errors**
@@ -113,7 +118,7 @@ Locally on your computer, create a text file called `hxe.yaml` with the followin
 > - Cannot contain dictionary words
 > - Cannot contain simplistic or systematic values, like strings in ascending or descending numerical or alphabetical order
 
-Replace the password in the new file.
+Replace the password in the new file using the provided rules.
 
 ```text
 kind: ConfigMap
@@ -124,7 +129,7 @@ metadata:
 data:
   password.json: |+
     {"master_password" : "HXEHana1"}
----
+`---`
 kind: PersistentVolume
 apiVersion: v1
 metadata:
@@ -152,60 +157,93 @@ spec:
     requests:
       storage: 50Gi
 `---`
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: hxe-pod
+  name: hxe
   labels:
-    name: hxe-pod
+    name: hxe
 spec:
-  initContainers:
-    - name: install
-      image: busybox
-      command: [ 'sh', '-c', 'chown 12000:79 /hana/mounts' ]
-      volumeMounts:
+  selector:
+    matchLabels:
+      run: hxe
+      app: hxe
+      role: master
+      tier: backend
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: hxe
+        app: hxe
+        role: master
+        tier: backend
+    spec:
+      initContainers:
+        - name: install
+          image: busybox
+          command: [ 'sh', '-c', 'chown 12000:79 /hana/mounts' ]
+          volumeMounts:
+            - name: hxe-data
+              mountPath: /hana/mounts
+      volumes:
         - name: hxe-data
-          mountPath: /hana/mounts
-  restartPolicy: OnFailure
-  volumes:
-    - name: hxe-data
-      persistentVolumeClaim:
-         claimName: hxe-pvc
-    - name: hxe-config
-      configMap:
-         name: hxe-pass
-  imagePullSecrets:
-  - name: docker-secret
-  containers:
-  - name: hxe-container
-    image: "store/saplabs/hanaexpress:2.00.022.00.20171211.1"
-    ports:
-      - containerPort: 39013
-        name: port1
-      - containerPort: 39015
-        name: port2
-      - containerPort: 39017
-        name: port3
-      - containerPort: 8090
-        name: port4
-      - containerPort: 39041
-        name: port5
-      - containerPort: 59013
-        name: port6
-    args: [ "--agree-to-sap-license", "--dont-check-system", "--passwords-url", "file:///hana/hxeconfig/password.json" ]
-    volumeMounts:
-      - name: hxe-data
-        mountPath: /hana/mounts
-      - name: hxe-config
-        mountPath: /hana/hxeconfig
-
+          persistentVolumeClaim:
+             claimName: hxe-pvc
+        - name: hxe-config
+          configMap:
+             name: hxe-pass
+      imagePullSecrets:
+      - name: docker-secret
+      containers:
+      - name: hxe-container
+        image: "store/saplabs/hanaexpress:2.00.030.00.20180403.2"
+        ports:
+          - containerPort: 39013
+            name: port1
+          - containerPort: 39015
+            name: port2
+          - containerPort: 39017
+            name: port3
+          - containerPort: 8090
+            name: port4
+          - containerPort: 39041
+            name: port5
+          - containerPort: 59013
+            name: port6
+        args: [ "--agree-to-sap-license", "--dont-check-system", "--passwords-url", "file:///hana/hxeconfig/password.json" ]
+        volumeMounts:
+          - name: hxe-data
+            mountPath: /hana/mounts
+          - name: hxe-config
+            mountPath: /hana/hxeconfig
+`---`
+apiVersion: v1
+kind: Service
+metadata:
+  name: hxe-connect
+  labels:
+    app: hxe
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 39013
+    targetPort: 39013
+    name: port1
+  - port: 39015
+    targetPort: 39015
+    name: port2
+  - port: 39017
+    targetPort: 39017
+    name: port3
+  - port: 39041
+    targetPort: 39041
+    name: port5
+  selector:
+    app: hxe
 ```
 
-Save it and use the **Upload file** tool to upload it to your cluster.
-
-![Deployment configuration file](upload.png)  
-
-The file will be uploaded to your home directory (`/home/YOUR_GOOGLE_ID`).
+The file will be automatically saved to your home directory (`/home/YOUR_GOOGLE_ID`).
 
 [ACCORDION-END]
 
@@ -215,27 +253,43 @@ Use the following command to deploy the image on your pods and check deployment:
 
 ```
 kubectl create -f hxe.yaml
-kubectl describe pod hxe-pod
+kubectl describe pods
 ```
-If you scroll down, you will probably see a message stating that the image is being pulled.
 
-![Start container](pulling.png)  
+Initially, you will probably see a message stating that the image is being pulled. repeat the command a couple of minutes later until you see the container is started:
 
-Repeat the command `kubectl describe pod hxe-pod` until you see the container has started.
+![Container is started](started_c.png)  
 
-![Container is started](started.png)  
-
-The following command will give you more information about deployment and the `exec` command will log you into the container:
+The following command will provide the name of the pod created by the deployment configuration:
 
 ```
-kubectl logs hxe-pod
-kubectl exec -it hxe-pod bash
+kubectl get pods
 ```
+Use the name of the pod form the previous command to check additional logs or log in to the database
+```
+kubectl logs <<pod resulting from above command>>
+kubectl exec -it <<name of pod resulting from above command>> bash
+```
+
 
 Once in the container, you can check SAP HANA, express edition is running using `HDB info`.
 
 ![HANA is running](running.png)  
 
 You can edit the name in the `yaml` to deploy additional containers in empty nodes.
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Check your external IP address to connect to SAP HANA, express edition)]
+
+Since you are using a service to expose the ports in case you want to connect with external tools, such as `DBeaver`, you can see the external IP assigned to your container using
+
+```
+kubectl get services
+```
+
+>Note: The default port for SYSTEMDB in the Docker container is 39017 and for the default tenant, `HXE` the port is 39041.
+
+![Container services](services.png)  
 
 [ACCORDION-END]

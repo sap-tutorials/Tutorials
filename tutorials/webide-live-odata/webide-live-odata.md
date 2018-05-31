@@ -81,13 +81,11 @@ Locate the **`Component.js`** file under the *`webapp`* folder. **Double click**
 
 ![location of Component file](7.png)
 
-Two updates need to be made to this file to switch from the Mock Data to the Live Data service. Locate the server initialization line and the navigation properties variable. You want to remove the `server.init()` line as this initializes the mock server. Additionally, you need to update the navigation properties to match the new entity name of **Sets** instead of `ToysSet`.
+One update need to be made to this file to switch from the Mock Data to the Live Data service. You will need to update the navigation properties to match the new entity name of **Sets** instead of `ToysSet`.
 
 ![places to update in Component file](8.png)
 
-**Comment out `server.init()`** on line 14 by adding 2 forward slashes (`//`) to the beginning of the line.
-
-Change the word `ToysSet` to **`Sets`** in line 18.
+Change the word `ToysSet` to **`Sets`**.
 
 ![changes in Component file](9.png)
 
@@ -112,7 +110,7 @@ Locate the `dataSources` array in the manifest file. You have added a new data s
 
 ![data sources highlighted in manifest file](10c.png)
 
-**Rename** *`local`* to `localservice`.
+**Rename** *`local`* to `mockservice`.
 
 **Rename** *`toysData`* to `local`.
 
@@ -148,17 +146,15 @@ Open the **Detail controller**, or the controller ending in `_S1`.
 
 ![detail controller location in file](15.png)
 
-The **expand parameter** needs to be updated to match the new entity description. There are 2 instances of `PartOf` in the controller file. Both need to be updated.
+The **expand parameter** needs to be updated to match the new entity description.
 
-![value that needs to be changed in controller](16.png)
+Towards the bottom of the `onInit` function, right before the `onAfterRendering` function, there is a reference to the _expanded entity name_ that needs to be updated.
 
-In the `handleRouteMatched` function, find the `oParams` variable. **Change the value** of `expand` from *`PartOf`* to **`Parts`**.
+![binding parameter for the bar chart and table](17.png)
 
-![expand parameter change to Parts](17.png)
+In the `oBindingParameters` variable, **Change the value** of `path` from *`PartOf`* to **`Parts`** and `entitySet` from *`ToysSet`* to **`Sets`**.
 
-Towards the bottom of the `onInit` function, right before the `onAfterRendering` function, there is a reference to the _expanded entity name_ that needs to be updated. In the `oBindingParameters` variable, **Change the value** of `path` from *`PartOf`* to **`Parts`**.
-
-![binding parameter change to Parts](18.png)
+![binding parameter change to Parts and Sets](18.png)
 
 **SAVE** your changes.
 

@@ -18,7 +18,8 @@
 		<ToolbarSpacer/>
 		<Button icon="sap-icon://begin" text="Run forecast" custom:eDatasetID="idFormDatasetID" custom:eDateColumn="idFormDateColumn"
 			custom:eTargetColumn="idFormTargetColumn" custom:eReferenceDate="idFormReferenceDate" custom:eNumberOfForecasts="idFormNumberOfForecasts"
-			press="forecast"/>
+			custom:eForecastMethod="idFormForecastMethod" custom:eSmoothingCycleLength="idFormSmoothingCycleLength"
+			custom:eMaximumLag="idFormMaximumLag" custom:eNumberOfPastValuesInOutput="idFormNumberOfPastValuesInOutput" press="forecast"/>
 		<ToolbarSpacer/>
 	</Toolbar>
 	<Panel expandable="false" visible="{= typeof ${job_fragment>/job} !== 'undefined'}">
@@ -39,8 +40,8 @@
 		<core:Fragment fragmentName='pspredictive.fragment.forecast.ServiceResult' type='XML'/>
 	</Panel>
 	<Toolbar visible="{= typeof ${forecast_fragment>/model} !== 'undefined'}">
-  <ToolbarSpacer/>
-  <Button icon="sap-icon://folder" text="Delete Results" press="deleteResults"/>
-  <ToolbarSpacer/>
-</Toolbar>
+		<ToolbarSpacer/>
+		<Button icon="sap-icon://folder" text="Delete Results" press="deleteResults"/>
+		<ToolbarSpacer/>
+	</Toolbar>
 </mvc:View>

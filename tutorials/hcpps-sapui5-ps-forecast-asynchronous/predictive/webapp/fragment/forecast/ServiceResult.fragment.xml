@@ -61,28 +61,28 @@
 					<Text text="{forecast_fragment>date}"/>
 				</table:template>
 			</table:Column>
-			<table:Column sortProperty="forecastValue" filterProperty="forecastValue">
-				<Label text="Forecasted value"/>
-				<table:template>
-					<Text text="{forecast_fragment>forecastValue}"/>
-				</table:template>
-			</table:Column>
 			<table:Column sortProperty="realValue" filterProperty="realValue">
 				<Label text="Real value (if any)"/>
 				<table:template>
-					<Text text="{forecast_fragment>realValue}"/>
+					<Text text="{path : 'forecast_fragment>realValue', formatter: '.formatter.round'}"/>
+				</table:template>
+			</table:Column>
+			<table:Column sortProperty="forecastValue" filterProperty="forecastValue">
+				<Label text="Forecasted value"/>
+				<table:template>
+					<Text text="{path : 'forecast_fragment>forecastValue', formatter: '.formatter.round'}"/>
 				</table:template>
 			</table:Column>
 			<table:Column>
 				<Label text="Error Bar Lower Bound"/>
 				<table:template>
-					<Text text="{forecast_fragment>errorBarLowerBound}"/>
+					<Text text="{path : 'forecast_fragment>errorBarLowerBound', formatter: '.formatter.round'}"/>
 				</table:template>
 			</table:Column>
 			<table:Column>
 				<Label text="Error Bar Higher Bound"/>
 				<table:template>
-					<Text text="{forecast_fragment>errorBarHigherBound}"/>
+					<Text text="{path : 'forecast_fragment>errorBarHigherBound', formatter: '.formatter.round'}"/>
 				</table:template>
 			</table:Column>
 		</table:columns>
