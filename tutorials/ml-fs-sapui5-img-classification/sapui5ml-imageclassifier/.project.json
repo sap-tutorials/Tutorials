@@ -3,22 +3,16 @@
     "sap.watt.uitools.ide.fiori",
     "com.watt.common.builder.sapui5clientbuild"
   ],
-  "build": {
-    "targetFolder": "dist",
-    "sourceFolder": "webapp",
-    "buildRequired": true,
-    "lastBuildDateTime": "Mon, 07 Aug 2017 15:16:09 GMT"
-  },
   "generation": [
     {
       "templateId": "ui5template.basicSAPUI5ApplicationProjectCommon",
       "templateVersion": "1.32.0",
-      "dateTimeStamp": "Tue, 01 Aug 2017 07:37:44 GMT"
+      "dateTimeStamp": "Tue, 20 Mar 2018 18:29:15 GMT"
     },
     {
       "templateId": "ui5template.basicSAPUI5ApplicationProject",
       "templateVersion": "1.40.12",
-      "dateTimeStamp": "Tue, 01 Aug 2017 07:37:45 GMT"
+      "dateTimeStamp": "Tue, 20 Mar 2018 18:29:16 GMT"
     }
   ],
   "translation": {
@@ -40,9 +34,11 @@
     "blockPush": false,
     "blockPushLevel": "Error"
   },
-  "hcpdeploy": {
-    "account": "i304811trial",
-    "name": "imageclassifier",
-    "lastVersionWeTriedToDeploy": "1.0.0"
+  "build": {
+    "buildRequired": true,
+    "sourceFolder": "webapp",
+    "targetFolder": "dist",
+    "excludedFolders": [],
+    "excludedFiles": []
   }
 }

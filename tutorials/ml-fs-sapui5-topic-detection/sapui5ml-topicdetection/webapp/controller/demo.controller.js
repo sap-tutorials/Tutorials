@@ -57,7 +57,7 @@ sap.ui.define([
 				// display the result table
 				oView.getModel("demo").setProperty("/resultVisible", true);
 			} else {
-                oView.getModel("demo").setProperty("/resultVisible", false);
+				oView.getModel("demo").setProperty("/resultVisible", false);
                 MessageBox.show("Error " + oControlEvent.getParameters().status + " : " + JSON.parse(oControlEvent.getParameters().responseRaw).error_description);
 			}
 			this.oBusyIndicator.close();

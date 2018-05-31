@@ -193,7 +193,7 @@ sap.ui.define([
 					success: ajaxSuccess,
 					error: ajaxError,
 					contentType: false,
-					async: false,
+					async: true,
 					data: formData,
 					cache: false,
 					processData: false

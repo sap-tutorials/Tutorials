@@ -100,7 +100,7 @@ sap.ui.define([
 						oView.getModel("demo").getProperty("/options/series_separator") + "\"}",
 					"texts": text
 				}),
-				async: false,
+				async: true,
 				success: function(data) {
 					try {
 						//get the result size
