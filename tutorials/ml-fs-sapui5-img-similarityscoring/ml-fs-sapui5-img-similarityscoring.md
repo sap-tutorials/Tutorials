@@ -50,7 +50,7 @@ To get to your API Sandbox URL, click on the **Details** tab.
 The **Image Feature Extraction API** Sandbox URL should be:
 
 ```JSON
-https://sandbox.api.sap.com/ml/changepointdetection
+https://sandbox.api.sap.com/ml/featureextraction
 ```
 
 Do the same for the **Similarity Scoring API**.
@@ -180,7 +180,7 @@ You will get access to the **SAP Web IDE** main page:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create your application using the SAPUI5 template)]
+[ACCORDION-BEGIN [Step 6: ](Create a project using the SAPUI5 template)]
 
 Click on **New Project from Template** in the ***Create Project*** section or use the **File** > **New** > **Project from Template**.
 

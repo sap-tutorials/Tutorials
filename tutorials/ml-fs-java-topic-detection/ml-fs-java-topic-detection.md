@@ -33,7 +33,7 @@ In this tutorial, you will learn the basics of making API calls against the Mach
 ### Time to Complete
 **15 Min**
 
-[ACCORDION-BEGIN [Step 1: ](Get The Generated Code Snippet And the API key)]
+[ACCORDION-BEGIN [Step 1: ](Get The Code Snippet And the API key)]
 
 In order to consume the **Topic Detection API** SAP Leonardo Machine Learning Foundation service, you will first need to get the service URI, request and response parameters.
 
@@ -64,6 +64,8 @@ Now, click on the **Code Snippet**, then, select **Java**.
 ![SAP API Business Hub](05.png)
 
 As you will notice, the generated code is missing the Java import statements along with the `API_KEY`, the request expected form data for the file content.
+
+Click on the **Copy and Close**, then, save the code snippet in your favorite text editor.
 
 When using any of the APIs outside of the SAP API Business Hub, an application key is needed in every request header of your calls.
 
@@ -171,7 +173,7 @@ public class DemoTopicDetection {
 }
 ```
 
-You can now paste the generated code that was collected during step 1 and copy it in the body of the main function.
+You can now paste the generated code snippet that was collected during step 1 and copy it in the body of the main function.
 
 Make sure you replace the **`<API_KEY>`** token in the code by your API key (collected during step 2).
 
