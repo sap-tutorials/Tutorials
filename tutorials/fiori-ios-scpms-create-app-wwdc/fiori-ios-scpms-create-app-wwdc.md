@@ -894,11 +894,6 @@ fdlFUIWelcomeScreen_headlineLabel {
     font-color: #3A835B;
 }
 
-fdlFUIWelcomeScreen_primaryActionButton {
-    background-color-normal: #3A835B;
-    background-color-highlighted: #B0D450;
-}
-
 /* Fiori subheadline */
 fdlFontStyle_subheadline {
     font-style: subheadline;
