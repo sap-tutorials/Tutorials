@@ -140,6 +140,8 @@ Click on **Save**
 
 You can use the **Check Connectivity** button ![HTML5 Applications](00-check.png) next to the new **Destination** to validate that the URL can be accessed.
 
+You should receive a ***connection established*** message with potentially a ***404: Not Found*** response which is normal.
+
 [DONE]
 [ACCORDION-END]
 
