@@ -1,6 +1,6 @@
 ---
 title: Create a cloud-native application in SAP HANA
-description: Combine SAP HANA and Fiori to create a cloud-native application using a micro-services approach
+description: Combine SAP HANA and Fiori to create a cloud-native application using a micro-services approach.
 primary_tag: topic>cloud
 tags: [  tutorial>beginner, topic>big-data, topic>cloud, topic>html5, topic>odata, topic>sapui5, products>sap-hana ]
 ---
@@ -21,9 +21,9 @@ You will learn how to create a cloud-native applications involving SAP HANA, Nod
 
 Have you just created your own Virtual Machine on Google Cloud Platform?
 
-If **yes**, go to this URL [`https://hxehost:53075`](https://hxehost:53075).
+If **yes**, go to this URL `https://hxehost:53075`.
 
-If **not**, click on the `SAP HANA` button in the favorite bar in Google Chrome. ![Button](button.png)
+If **not**, click on the **SAP HANA** button in the favorite bar in Google Chrome. ![Button](button.png)
 
 If prompted, choose to continue to the site.
 
@@ -38,11 +38,11 @@ Log in with user `XSA_DEV` and `HXEHana2`.
 
 [ACCORDION-BEGIN [Step 2: ](Create a project)]
 
-If you see any existing folders, use the right-click menu to **delete them**.
+If you see any existing folders, use the right-click menu to delete them.
 
 ![Delete any existing projects](3.png)
 
-**Right-click** on Workspace and choose `New -> Project from template`.
+**Right-click** on Workspace and choose **New > Project from template**.
 
 ![Create a new project](4.png)
 
@@ -62,7 +62,7 @@ Click **Finish** to create your project.
 
 [ACCORDION-BEGIN [Step 3: ](Create a database module)]
 
-**Right-click** on `APP` and choose `New -> SAP HANA Database Module`.
+**Right-click** `APP` and choose **New > SAP HANA Database Module**.
 
 ![Create a new DB module](8.png)
 
@@ -70,19 +70,19 @@ Call the module `db`.
 
 ![Create a new DB module](9.png)
 
-Right-click on `src` and click on **Import**.
+Right-click `src` and click **Import > File or Project**.
 
 ![Import data](import.png)
 
-User **browse** to navigate to the folder `Desktop/1- HANA Data Import` and choose the file **`src (native).zip`**
+User **browse** to navigate to the folder `Desktop/1- HANA Data Import` and choose the file `src (native).zip`.
 
 ![Import data](11.png)
 
-Delete the name of the file and click on **OK**. When prompted, **confirm** the import.
+Delete the name of the file and click **OK**. When prompted, **confirm** the import.
 
 ![Import data](12.png)
 
-**Build** the database Module.
+**Build** the database module.
 
 ![Import data](13.png)
 
@@ -93,7 +93,7 @@ Congratulations! You have just created two tables and loaded data into them.
 [ACCORDION-BEGIN [Step 4: ](Expose data for consumption)]
 
 You will now create a Node.js module to expose the data in the tables using an OData service.
-**Right-click** on the `APP` and select `New -> Node.js Module`.
+**Right-click** `APP` and select **New > Node.js Module**.
 
 ![Create Node.js module](14.png)
 
@@ -101,15 +101,15 @@ Call it `js ` and click **Next**.
 
 ![Create Node.js module](15.png)
 
-Tick the box next to `Enable XSJS support` and click **Finish**
+Tick the box next to `Enable XSJS support`, and click **Finish**
 
 ![Create Node.js module](16.png)
 
-**Expand** the `js` folder and **right-click** on the `lib` folder. Create a new **File**
+Expand the `js` folder and **right-click** the `lib` folder. Create a new file.
 
 ![Create Node.js module](17.png)
 
-Call it `service.xsodata`
+Call it `service.xsodata`.
 
 ![Create Node.js module](18.png)
 
@@ -129,19 +129,19 @@ service {
 ```
 **Save**  the file.
 
-Open the `mta.yaml` file, click on the `js` module and use the **`+`** sign to add the `hdi_db` and `db` dependencies under requires.
+Open the `mta.yaml` file, click on the `js` module and use the **`+`** sign to add the `hdi_db` and `db` dependencies under **Requires**.
 
 ![Create Node.js module](yaml.png)
 
 **Save** the `mta.yaml` file.
 
-**Save** and **Run** the `js` module
+**Save** and **Run** the `js` module.
 
 ![Create Node.js module](21.png)
 
 This will build and redeploy the entire application because the `mta.yaml` file has been modified. This file describes the dependencies between the different modules (micro-services) and the order in which they are deployed.
 
-Once the application is **Running** you can proceed to the last step.
+Once the application is **Running**, you can proceed to the last step.
 
 ![Create Node.js module](running.png)
 
@@ -151,27 +151,27 @@ Once the application is **Running** you can proceed to the last step.
 
 You will now create the last module using a the SAP Fiori master-detail wizard.
 
-Right-click on `APP` and choose `SAP Fiori Master-detail Module`.
+Right-click `APP` and choose `SAP Fiori Master-Detail Module`.
 
 ![Create UI5 module](23.png)
 
-Call it `web` and click **Next**.
+Call it `web`, and click **Next**.
 
 ![Create UI5 module](24.png)
 
-Choose the available service and click **Next**
+Choose the available service and click **Next**.
 
 ![Create UI5 module](25.png)
 
-Map the fields for the header of the Sales Order in the wizard.
+Map the fields for the header of the sales order in the wizard.
 
 ![Create UI5 module](26.png)
 
-**Scroll down** to map the fields for the items in the sales orders
+**Scroll down** to map the fields for the items in the sales orders.
 
 ![Create UI5 module](27.png)
 
-**Right-click** on the web module and select `Run as -> Web Application`
+**Right-click** on the web module, and select **Run as > Web Application**.
 
 ![Create UI5 module](run.png)
 
@@ -181,7 +181,7 @@ Map the fields for the header of the Sales Order in the wizard.
 
 
 > ### **Congratulations!**
->You have created an instance of an SAP HANA service, a Node.js and a web micro-services and glued them together to produce a Multi-target application that can run both on premise or in the cloud.
+>You have created an instance of an SAP HANA service, a Node.js and a web micro-services and glued them together to produce a multi-target application that can run both on premise or in the cloud.
 >&nbsp;
 
 

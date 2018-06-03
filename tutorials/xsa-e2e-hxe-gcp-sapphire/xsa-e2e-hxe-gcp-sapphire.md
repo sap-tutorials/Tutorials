@@ -22,7 +22,7 @@ To complete this tutorial, you will be using a Virtual Machine powered and spons
 
 [ACCORDION-BEGIN [Step 1: ](Log in to your test account)]
 
-The experts at the Developer garage at SAPPHIRE NOW will provide you with access details. Open a new **incognito window** using Google Chrome.
+The experts at the Developer Garage at SAPPHIRE NOW will provide you with access details. Open a new **incognito window** using Google Chrome.
 
 ![Incognito Chrome](incognito.png)
 
