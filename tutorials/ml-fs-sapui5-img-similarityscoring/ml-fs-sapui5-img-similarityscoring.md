@@ -50,7 +50,7 @@ To get to your API Sandbox URL, click on the **Details** tab.
 The **Image Feature Extraction API** Sandbox URL should be:
 
 ```JSON
-https://sandbox.api.sap.com/ml/changepointdetection
+https://sandbox.api.sap.com/ml/featureextraction
 ```
 
 Do the same for the **Similarity Scoring API**.
@@ -160,6 +160,8 @@ Click on **Save**
 
 You can use the **Check Connectivity** button ![HTML5 Applications](00-check.png) next to the new **Destination** to validate that the URL can be accessed.
 
+You should receive a ***connection established*** message with potentially a ***404: Not Found*** response which is normal.
+
 [DONE]
 [ACCORDION-END]
 
@@ -180,7 +182,7 @@ You will get access to the **SAP Web IDE** main page:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create your application using the SAPUI5 template)]
+[ACCORDION-BEGIN [Step 6: ](Create a project using the SAPUI5 template)]
 
 Click on **New Project from Template** in the ***Create Project*** section or use the **File** > **New** > **Project from Template**.
 
@@ -260,7 +262,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
     },
     "description": "SAPUI5 Test Resources"
   }, {
-    "path": "/ml",
+    "path": "/ml-dest",
     "target": {
       "type": "destination",
       "name": "sapui5ml-api"
@@ -294,8 +296,8 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-  "url_featureextraction" : "/ml/featureextraction/inference_sync",
-  "url_similarityscoring" : "/ml/similarityscoring/inference_sync",
+  "url_featureextraction" : "/ml-dest/featureextraction/inference_sync",
+  "url_similarityscoring" : "/ml-dest/similarityscoring/inference_sync",
   "APIKey":"<<<<< COPY YOUR API KEY >>>>>"
 }
 ```
@@ -398,7 +400,7 @@ callService: function(oController, service, url, type, mode, apiKey, formData, f
       success: ajaxSuccess,
       error: ajaxError,
       contentType: false,
-      async: false,
+      async: true,
       data: formData,
       cache: false,
       processData: false

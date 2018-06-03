@@ -70,7 +70,7 @@ sap.ui.define([
 				processResult(this, JSON.parse(oControlEvent.getParameters().responseRaw), this.srcFile.nam, this.srcFileURL);
 			} else {
 				oView.getModel("demo").setProperty("/resultVisible", false);
-                MessageBox.show("Error " + oControlEvent.getParameters().status + " : " + JSON.parse(oControlEvent.getParameters().responseRaw).error_description);
+				MessageBox.show("Error " + oControlEvent.getParameters().status + " : " + oControlEvent.getParameters().responseRaw);
 			}
 			this.oBusyIndicator.close();
 			MessageBox.show("Process completed!\n Target URL: " + oView.getModel("demo").getProperty("/url"));
@@ -196,7 +196,7 @@ sap.ui.define([
 					success: ajaxSuccess,
 					error: ajaxError,
 					contentType: false,
-					async: false,
+					async: true,
 					data: formData,
 					cache: false,
 					processData: false

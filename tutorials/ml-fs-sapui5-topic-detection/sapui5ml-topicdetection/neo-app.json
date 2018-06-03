@@ -17,10 +17,10 @@
 		},
 		"description": "SAPUI5 Test Resources"
 	}, {
-		"path": "/ml",
+		"path": "/ml-dest",
 		"target": {
 			"type": "destination",
-			"name": "mlapi"
+			"name": "sapui5ml-api"
 		},
 		"description": "ML API destination"
 	}],

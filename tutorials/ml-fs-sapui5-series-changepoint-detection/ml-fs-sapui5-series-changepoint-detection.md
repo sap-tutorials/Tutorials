@@ -144,6 +144,8 @@ Click on **Save**
 
 You can use the **Check Connectivity** button ![HTML5 Applications](00-check.png) next to the new **Destination** to validate that the URL can be accessed.
 
+You should receive a ***connection established*** message with potentially a ***404: Not Found*** response which is normal.
+
 [DONE]
 [ACCORDION-END]
 
@@ -164,7 +166,7 @@ You will get access to the **SAP Web IDE** main page:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create your application using the SAPUI5 template)]
+[ACCORDION-BEGIN [Step 6: ](Create a project using the SAPUI5 template)]
 
 Click on **New Project from Template** in the ***Create Project*** section or use the **File** > **New** > **Project from Template**.
 
@@ -244,7 +246,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
     },
     "description": "SAPUI5 Test Resources"
   }, {
-    "path": "/ml",
+    "path": "/ml-dest",
     "target": {
       "type": "destination",
       "name": "sapui5ml-api"
@@ -278,7 +280,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-  "url": "/ml/changepointdetection/inference_sync",
+  "url": "/ml-dest/changepointdetection/inference_sync",
   "APIKey": "<<<<< COPY YOUR API KEY >>>>>",
   "options": {
     "separator": "|",
@@ -544,7 +546,7 @@ sap.ui.define([
             oView.getModel("demo").getProperty("/options/series_separator") + "\"}",
           "texts": text
         }),
-        async: false,
+        async: true,
         success: function(data) {
           try {
             //get the result size

@@ -1,11 +1,11 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
 	"sap/ui/Device",
-	"demosapui5ml/model/models"
+	"demosapui5ml-imageclassifier/model/models"
 ], function(UIComponent, Device, models) {
 	"use strict";
 
-	return UIComponent.extend("demosapui5ml.Component", {
+	return UIComponent.extend("demosapui5ml-imageclassifier.Component", {
 
 		metadata: {
 			manifest: "json"
