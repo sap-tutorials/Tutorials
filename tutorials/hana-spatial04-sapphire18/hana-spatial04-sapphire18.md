@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 
 ## Details
 ### You will learn  
- - How to use SAP HANA's spatial clustering to analyze PoI data
+ - How to use SAP HANA's spatial clustering to analyze Points of Interest data
 
 ### Time to Complete
 **5 Min**
@@ -18,7 +18,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 ---
 
 [ACCORDION-BEGIN [Step 1: ](OpenBeerDB)]
-This time you will analyze geographical distribution of points of interest, using data from `OpenBeerDB` as an example. This data set was last updated in 2011, but is still OK for the tutorial.
+This time you will analyze geographical distribution of points of interest, using data from `OpenBeerDB` as an example. This data set is the list of craft breweries, beers they are producing, their styles and categories. The data set was last updated in 2011, but is still OK for the tutorial.
 
 Data has been loaded into tables:
 
@@ -34,7 +34,7 @@ An SQL union `"OPENBEERDB"."V_BREWERIES_GEO"` has been created joining both.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Minibreweries in the US)]
+[ACCORDION-BEGIN [Step 2: ](Breweries in the US)]
 The `OpenBeerDB` data set is covering the entire globe. To select only breweries in the US, you will use the `"country"` attribute of the view.
 
 >As a bonus exercise, you can try to use geospatial predicate `ST_Within()` joining data with country shapes from `"GEOTECH"."cntry00"` table!
@@ -47,7 +47,7 @@ where "country" = 'United States';
 
 If visualized.
 
-![Minibreweries](geosaphire4010.jpg)
+![Breweries](geosaphire4010.jpg)
 
 [ACCORDION-END]
 
