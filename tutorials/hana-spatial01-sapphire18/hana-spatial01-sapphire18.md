@@ -113,7 +113,7 @@ Click the **Execute** icon, or press `F8`.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](GeoJSON)]
+[ACCORDION-BEGIN [Step 5: ](Convert geospatial format to GeoJSON)]
 In the SQL console window, enter or paste the following new query:
 
 ```sql
