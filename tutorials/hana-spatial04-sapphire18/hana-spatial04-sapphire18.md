@@ -1,6 +1,6 @@
 ---
-title: Analyzing Points of Interest
-description: Analyzing Points of Interest with SAP HANA Geospatial at SAPPHIRENOW 2018
+title: Analyze points of interest
+description: Analyze points of interest with SAP HANA Geospatial at SAPPHIRENOW 2018
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 
 ## Details
 ### You will learn  
-how you can use SAP HANA's spatial clustering to analyze PoI data
+ - How to use SAP HANA's spatial clustering to analyze PoI data
 
 ### Time to Complete
 **5 Min**
@@ -18,26 +18,26 @@ how you can use SAP HANA's spatial clustering to analyze PoI data
 ---
 
 [ACCORDION-BEGIN [Step 1: ](OpenBeerDB)]
-This time you will analyze geographical distribution of Points of Interest, using data from `OpenBeerDB` as an example. This data set was last updated in 2011, but is still OK for the tutorial.
+This time you will analyze geographical distribution of points of interest, using data from `OpenBeerDB` as an example. This data set was last updated in 2011, but is still OK for the tutorial.
 
 Data has been loaded into tables:
 
-1. `"OPENBEERDB"."BREWERIES"` with breweries attributes,
-2. `"OPENBEERDB"."BREWERIES_GEO"` with geographical locations derived from geocoding based on address data from previous table.
+* `"OPENBEERDB"."BREWERIES"` with breweries attributes,
+* `"OPENBEERDB"."BREWERIES_GEO"` with geographical locations derived from geocoding based on address data from previous table.
 
-The table `"OPENBEERDB"."BREWERIES_GEO"` has been already extended with two columns:
+The table `"OPENBEERDB"."BREWERIES_GEO"` has  already been extended with two columns:
 
 * `"loc_4326"` contains locations as points in spatial reference system `4326` (GPS locations on the Round Earth model),
 * `"loc_3857"` contains locations as points in spatial reference system `3857` (planar projection used on web maps).
 
-An SQL union `"OPENBEERDB"."V_BREWERIES_GEO"`has been created joining both.
+An SQL union `"OPENBEERDB"."V_BREWERIES_GEO"` has been created joining both.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Minibreweries in the US)]
-The `OpenBeerDB` data set is covering the entire globe. To select only breweries in the US you will use `"country"` attribute of the view.
+The `OpenBeerDB` data set is covering the entire globe. To select only breweries in the US, you will use the `"country"` attribute of the view.
 
->As a bonus exercise you can try to use geospatial predicate `ST_Within()` joining data with country shapes from `"GEOTECH"."cntry00"` table!
+>As a bonus exercise, you can try to use geospatial predicate `ST_Within()` joining data with country shapes from `"GEOTECH"."cntry00"` table!
 
 ```sql
 select ST_UnionAggr("loc_4326").st_asWKT()
@@ -77,7 +77,7 @@ order by 3 desc);
 
 [ACCORDION-BEGIN [Step 4: ](K-Means clustering)]
 
-K-means tries to find an assignment of points to clusters, so that the sum of squared distances of the points to the center of the cluster they belong to is minimal.
+K-means tries to find an assignment of points to cluster, so that the sum of squared distances of the points to the center of the cluster they belong to is minimal.
 
 ```sql
 select ST_UnionAggr("ConvexHull").st_asWKT() from
@@ -95,7 +95,7 @@ order by 3 desc);
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](DBSCAN Clustering)]
+[ACCORDION-BEGIN [Step 5: ](DBSCAN clustering)]
 
 DBSCAN is the Density-based spatial clustering of applications with noise.
 

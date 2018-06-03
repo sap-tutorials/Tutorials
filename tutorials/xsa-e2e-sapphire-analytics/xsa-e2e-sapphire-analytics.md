@@ -45,7 +45,7 @@ If you have not logged in already, use user **`XSA_DEV`** and password **`HXEHan
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create a Project)]
+[ACCORDION-BEGIN [Step 3: ](Create a project)]
 
 If you see any existing folders, use the right-click menu to delete them.
 
