@@ -22,7 +22,7 @@ To complete this tutorial, you will be using a Virtual Machine powered and spons
 
 [ACCORDION-BEGIN [Step 1: ](Log in to your test account)]
 
-The experts at the Developer garage at SAPPHIRE NOW will provide you with access details. Open a new **incognito window** using Google Chrome.
+The experts at the Developer Garage at SAPPHIRE NOW will provide you with access details. Open a new **incognito window** using Google Chrome.
 
 ![Incognito Chrome](incognito.png)
 
@@ -145,23 +145,16 @@ Open a new **incognito Google Chrome window**.
 Enter the following URL:
 
 ```text
-https://hxehost:53075
+https://hxehost:39030
 ```
-If prompted, choose to continue to the site.
-
-![Incognito Chrome](chrome2.png)
-
-Log in as `XSA_DEV` and use password `HXEHana2`.
-
-![Log in as XSA_DEV](password.png)
-
->Do you see a message saying `503 - Service Unavailable`? You have been too fast! Wait an additional minute or two while the service becomes ready. The site will refresh automatically and you will be able to log in.
-
-</br>
 
 > ### **Congratulations!**
 >You have successfully deployed and configured an SAP HANA, express edition virtual machine on Google Cloud.
 >&nbsp;
 >Let one of the experts at the booth know, and feel free to ask them any questions.
+
+You can continue with the next tutorial using your newly-created instance.
+
+![Incognito Chrome](running.png)
 
 [ACCORDION-END]

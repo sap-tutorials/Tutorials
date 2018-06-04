@@ -1,4 +1,3 @@
-
 ---
 title: Expose your recommendation results using SAP HANA XS OData
 description: Understand and implement some of the options available with SAP HANA to expose your results
@@ -9,6 +8,9 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 
 ## Prerequisites
  - **Proficiency:** Beginner
+
+## Next Steps
+- [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://www.sap.com/developer/groups/cp-hana-aa-movielens.html)
 
 ## Details
 ### You will learn
