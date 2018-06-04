@@ -22,7 +22,7 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>s
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create new destination)]
-In the SAP Cloud Platform cockpit, choose **Destination** | **New Destination**.
+In the SAP Cloud Platform cockpit, choose **Connectivity** | **Destination** | **New Destination**.
 
 ![New destination](Step1-NewDestination.png)
 
@@ -63,6 +63,9 @@ The SAP Web IDE properties for the destination look like this:
 ![New destination](Step3-SAPWebIDEProperties.png)
 Choose **Save**.
 
+> Caution
+An SAP Web IDE feature extends the functionality of SAP Web IDE and provides new capabilities to your IDE. Such features and plugins have full privileges to access your browser, your computer, and any data stored in your SAP Web IDE workspace or on SAP Cloud Platform, including the ability to read and modify your private and organizational data.
+Features and plugins that are not provided by SAP are under the responsibility of the feature author and may have different privacy policies, terms of use, or quality levels. You can enable features and plugins that are not provided by SAP and use them at your own risk. It is strongly recommended that you enable only features and extensions that you trust. At any time and without warning, SAP reserves the right to remove, disable, or uninstall features or plugins that are not provided by SAP from your environment.
 
 [ACCORDION-END]
 
