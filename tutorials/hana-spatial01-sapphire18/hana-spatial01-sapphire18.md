@@ -40,13 +40,13 @@ If the system `HXE@HXE(USER001)` is missing in the left **Systems** panel, then 
 
 [ACCORDION-BEGIN [Step 2 (optional): ](Configure the system in Eclipse)]
 
-If not, then add it by right click on the area, and selecting **Add System...** command.
+If system `HXE@HXE(USER001)` is not present, then add it by right click on the area `Systems`, and selecting **Add System...** command.
 
 Populate the first screen **Specify system** with following parameters
 
 | Parameter | Value |
 | --- | --- |
-| Host Name | `sapphirenownxe` |
+| Host Name | `hxegeo` |
 | Instance Number | `90` |
 | Mode | `Multiple containers` -> `Tenant database` |
 | Name | `HXE` |
