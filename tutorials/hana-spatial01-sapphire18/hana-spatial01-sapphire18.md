@@ -26,7 +26,7 @@ You will be using Eclipse IDE.
 
 Start Eclipse on this machine, if the application is not yet running. You can use an icon on the desktop or in the taskbar.
 
-![Icon](geosaphire001.jpg)
+![Icon](geosaphire001c.png)
 
 Next, make sure you have the proper perspective open in Eclipse, by going to menu **Window > Perspective > Open perspective > SAP HANA Administration Console**.
 
