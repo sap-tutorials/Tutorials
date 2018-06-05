@@ -166,10 +166,10 @@ Open a command session on the server machine or open a PuTTY session to the serv
 <installation_path>/<SID>/xs/controller_data/controller/ssl-pub/router
 ```
 
-For example, where `<installation_path>` is `/hana/shared` and `<SID>` is `HDB` the certificate location would be:
+For example, where `<installation_path>` is `/hana/shared` and `<SID>` is `HXE` the certificate location would be:
 
 ```bash
-/hana/shared/HDB/xs/controller_data/controller/ssl-pub/router/default.root.crt.pem
+/hana/shared/HXE/xs/controller_data/controller/ssl-pub/router/default.root.crt.pem
 ```
 
 Copy the certificate to a folder on the server where you can easily access it. Using an FTP client or the `scp` command, send a copy of the certificate from your server machine to a safe location on your client machine.
