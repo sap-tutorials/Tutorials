@@ -19,7 +19,7 @@ During this tutorial, you will build get to know how to monitor the execution of
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Monitoring tasks and workflows)]
-Open the SAP Data Hub Cockpit [`https://vhcalhxedb:51076/`](https://vhcalhxedb:51076/) via a web browser.
+Open the SAP Data Hub Cockpit (`https://vhcalhxedb:51076/`) via a web browser.
 
 Enter `DATAHUB` as **HANA Username** and the password which you have selected during system setup as **HANA Password** to logon to SAP Data Hub Cockpit. The system displays the **Overview** page.
 

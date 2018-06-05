@@ -21,7 +21,7 @@ During this tutorial, you will learn how to create a flowgraph. This will enrich
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create project)]
-Open the SAP Data Hub Cockpit [`https://vhcalhxedb:51076/`](https://vhcalhxedb:51076/) via a web browser.
+Open the SAP Data Hub Cockpit (`https://vhcalhxedb:51076/`) via a web browser.
 
 Enter `DATAHUB` as **HANA Username** and the password which you have selected during system setup as **HANA Password** to logon to SAP Data Hub Cockpit. The system displays the **Overview** page.
 

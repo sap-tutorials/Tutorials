@@ -19,7 +19,7 @@ During this tutorial, you will learn that Data Discovery cannot only be used on 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Load data into SAP Vora)]
-To be able to profile data in SAP Vora, you first need to load data into SAP Vora. Thereto open the SAP Data Hub Cockpit [`https://vhcalhxedb:51076/`](https://vhcalhxedb:51076/) via a web browser.
+To be able to profile data in SAP Vora, you first need to load data into SAP Vora. Thereto open the SAP Data Hub Cockpit (`https://vhcalhxedb:51076/`) via a web browser.
 
 Enter `DATAHUB` as **HANA Username** and the password which you have selected during system setup as **HANA Password** to logon to SAP Data Hub Cockpit. The system displays the **Overview** page.
 

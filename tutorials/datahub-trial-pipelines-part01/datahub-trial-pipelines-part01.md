@@ -24,7 +24,7 @@ Please note that this tutorial is similar to the `Generate sensor data` tutorial
 
 [ACCORDION-BEGIN [Step 1: ](Create a data pipeline)]
 
-Open the modelling environment for building pipelines via [https://vhcalruntime/app/pipeline-modeler](https://vhcalruntime/app/pipeline-modeler) (SAP Data Hub Pipeline Modeler).
+Open the modelling environment for building pipelines via SAP Data Hub Pipeline Modeler (`https://vhcalruntime/app/pipeline-modeler`).
 
 >As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub.pdf) guide.
 

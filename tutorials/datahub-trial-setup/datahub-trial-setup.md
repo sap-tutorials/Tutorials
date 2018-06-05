@@ -47,7 +47,7 @@ After the solution instance is up and running, you can finally connect to it.
 
 Thereto you first maintain your local host file as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub.pdf) guide (chapter 3.2).
 
-Afterwards you open [`https://vhcalhxedb:51076/`](https://vhcalhxedb:51076/) via a web browser.
+Afterwards you open (`https://vhcalhxedb:51076/`) via a web browser.
 
 Enter `DATAHUB` as **HANA Username** and the password which you have selected during step 3 as **HANA Password** to logon to SAP Data Hub Cockpit. The system displays the **Overview** page.
 

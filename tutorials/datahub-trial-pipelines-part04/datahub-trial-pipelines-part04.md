@@ -26,7 +26,7 @@ Please note that this tutorial is similar to the `Bundle data (via JavaScript)` 
 
 [ACCORDION-BEGIN [Step 1: ](Add JavaScript Operator)]
 
-Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment [(https://vhcalruntime/app/pipeline-modeler)](https://vhcalruntime/app/pipeline-modeler)
+Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment (`https://vhcalruntime/app/pipeline-modeler`)
 
 >As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub.pdf) guide.
 

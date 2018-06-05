@@ -59,7 +59,7 @@ Above code is just a sample code that demonstrates how your call should look lik
 
 As we don't have a `SAP Vora HdfsLoader Operator` equivalent for `GCS-Vora`, we would need to read the files from the GCS bucket and prepare SQL statements based on the file names and paths that can be provided to the **SAP Vora Client Operator**. The Vora Client then reads the files from the Google storage and attaches the file as a data source to the Vora table. From the previous step, we have the API call ready with us which we can use now in the JavaScript code.
 
-Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment [(https://vhcalruntime/app/pipeline-modeler)](https://vhcalruntime/app/pipeline-modeler)
+Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment (`https://vhcalruntime/app/pipeline-modeler`)
 
 >As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub.pdf) guide.
 

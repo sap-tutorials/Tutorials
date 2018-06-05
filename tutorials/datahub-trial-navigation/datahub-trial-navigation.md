@@ -19,7 +19,7 @@ During this tutorial, you will learn how to find your way around SAP Data Hub, t
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Access UIs via a web browser)]
-The SAP Data Hub Cockpit serves as central entry point to all user interfaces of SAP Data Hub. You access it by opening [`https://vhcalhxedb:51076/`](https://vhcalhxedb:51076/) via a web browser.
+The SAP Data Hub Cockpit serves as central entry point to all user interfaces of SAP Data Hub. You access it by opening (`https://vhcalhxedb:51076/`) via a web browser.
 
 Enter `DATAHUB` as **HANA Username** and the password which you have selected during step 3 as **HANA Password** to logon to SAP Data Hub Cockpit. The system displays the **Overview** page.
 

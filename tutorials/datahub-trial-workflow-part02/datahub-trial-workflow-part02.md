@@ -27,7 +27,7 @@ During this tutorial, you will build on what you have learned during the previou
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create table in SAP Vora)]
-To be able to store data in SAP Vora, you first need to create a table. Thereto open the SAP Data Hub Cockpit [`https://vhcalhxedb:51076/`](https://vhcalhxedb:51076/) via a web browser.
+To be able to store data in SAP Vora, you first need to create a table. Thereto open the SAP Data Hub Cockpit (`https://vhcalhxedb:51076/`) via a web browser.
 
 Enter `DATAHUB` as **HANA Username** and the password which you have selected during system setup as **HANA Password** to logon to SAP Data Hub Cockpit. The system displays the **Overview** page.
 
