@@ -1,6 +1,6 @@
 ---
 title: Generate sensor data
-description: Generate sensor data and display it in a terminal.
+description: Generate sensor data and display it in a terminal by using SAP Data Hub, developer edition
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---

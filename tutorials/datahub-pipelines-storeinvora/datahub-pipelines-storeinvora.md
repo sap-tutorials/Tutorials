@@ -1,6 +1,6 @@
 ---
 title: Store sensor data in SAP Vora
-description: Use SAP Vora to store sensor data.
+description: Use SAP Vora to store sensor data by using SAP Data Hub, developer edition.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
