@@ -22,7 +22,11 @@ Welcome to a tutorial showing you how to start with Geospatial SQL with SAP HANA
 
 The instance of the database with the preloaded data is available to you, so you need to connect to it first.
 
-You will be using Eclipse IDE, so start it on this machine if the application is not yet running.
+You will be using Eclipse IDE.
+
+Start Eclipse on this machine, if the application is not yet running. You can use an icon on the desktop or in the taskbar.
+
+![Icon](geosaphire001.jpg)
 
 Next, make sure you have the proper perspective open in Eclipse, by going to menu **Window > Perspective > Open perspective > SAP HANA Administration Console**.
 
@@ -127,7 +131,7 @@ Execute it by clicking the icon, or pressing `F8`.
 
 > ### What just happened?
 >
-> 1. You added additional parameter `4326` to the constructor. It tells SAP HANA, that the point is to be constructed using **Spatial Reference System** (**SRS**) with id `SRID = 4326`. This SRS is the one that is used by GPS satellite navigation system. It has been assigned id `4326` in [EPSG Geodetic Parameter Dataset](http://www.epsg-registry.org/) maintained by the International Association of Oil & Gas Producers (IOGP).
+> 1. You added additional parameter `4326` to the constructor. It tells SAP HANA, that the point is to be constructed using **Spatial Reference System (SRS)** with id `SRID = 4326`. This SRS is the one that is used by GPS satellite navigation system. It has been assigned id `4326` in [EPSG Geodetic Parameter Dataset](http://www.epsg-registry.org/) maintained by the International Association of Oil & Gas Producers (IOGP).
 > 2. SAP HANA supports this and almost 4000 other spatial reference systems from EPSG dataset. Users can define and add there own reference systems as well. The complete list and further details can be found in SAP HANA system view `"PUBLIC"."ST_SPATIAL_REFERENCE_SYSTEMS"`
 > 3. SRS `4326` defines Round Earth model with latitude and longitude coordinates. Please note that longitude coordinate should be first, followed by latitude. So, in the example above the latitude is `28.428534` (or `28°25'42.7" North`) and longitude is `-81.462109` (or `81°27'43.6" West`).
 > 4. To make the result readable for a human you used a geospatial method `.ST_asGeoJSON()` that converted the output to JSON-based standard notation `{"type": "Point", "coordinates": [-81.462109, 28.428534]}`.

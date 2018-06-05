@@ -146,6 +146,8 @@ group by "cluster_id");
 
 This completes this tutorial series. Please close all your SQL Console windows and log off the system.
 
+![Log off](geosaphire4080.jpg)
+
 Thank you for your time!
 
 [ACCORDION-END]
