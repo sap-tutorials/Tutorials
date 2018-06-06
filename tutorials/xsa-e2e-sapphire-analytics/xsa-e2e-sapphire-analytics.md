@@ -39,7 +39,7 @@ Use the `SAP HANA` button on the bookmarks to access SAP Web IDE for SAP HANA.
 
 ![Open a new incognito window](3.png)
 
-If you have not logged in already, use user **`XSA_DEV`** and password **`HXEHana2`**.
+If you have not logged in already, use user **`XSA_DEV`** and password **`HXEHana2`**
 
 ![Log in](password.png)
 
