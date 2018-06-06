@@ -122,7 +122,7 @@ Define the import properties:
 
 - **File Details:**
 
-    - Set the **Field Delimiter** value to **Semi Colon (,)**.
+    - Set the **Field Delimiter** value to **Comma (,)**.
     - Check the **Header row exists** box and set the **Header row** value to 1 as only one header row exists in `data_1.csv`.
     - Check the **Import all data** box.
 
@@ -164,7 +164,7 @@ Now, repeat the steps for the **`data_2.csv`** file with the following import pr
 
 - **File Details**
 
-    - Set the **Field Delimiter** value to **Semi Colon (,)**.
+    - Set the **Field Delimiter** value to **Comma (,)**.
     - Uncheck the **Header row exists** box as there is no header row in `data_2.csv`.
     - Check the **Import all data** box.
 
