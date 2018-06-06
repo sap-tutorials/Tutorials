@@ -1,7 +1,7 @@
 ---
 
-title: Continuous Integration (CI) Best Practices with SAP: Cloud Platform SDK for iOS
-description: Part 4.7: Basic CI setup with the SAP Cloud Platform SDK for iOS
+title: Continuous Integration (CI) Best Practices with SAP - Cloud Platform SDK for iOS
+description: Part 4.7 - Basic CI setup with the SAP Cloud Platform SDK for iOS
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
 
@@ -11,11 +11,11 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
   - **Proficiency:** Intermediate
   - [CI/CD Practices](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)
-  
+
 ## Next Steps
- 
+
   - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-  
+
 ---
 
 ### 1. Introduction
@@ -627,6 +627,5 @@ In your Jenkins web interface, you should now see a new build pop up under the l
 ## Next Steps
 
   You can read through the remaining guides in order to proceed with advanced automation topics such as Git-related workflows (e.g. branching strategies and code reviews) and setting up pipelines.
- 
+
   - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-  
