@@ -21,23 +21,26 @@ You will learn how to create a cloud-native applications involving SAP HANA, Nod
 
 Have you just created your own Virtual Machine on Google Cloud Platform?
 
-If **yes**, go to this URL `https://hxehost:53075`.
+If **yes**, go to this URL `https://hxehost:53075`
 
 If **not**, click on the **SAP HANA** button in the favorite bar in Google Chrome. ![Button](button.png)
 
-If prompted, choose to continue to the site.
+If a warning about the certificate appears, choose **Advanced > Continue to `hxehost`** to continue to the site.
 
 ![Incognito Chrome](chrome2.png)
 
-Log in with user `XSA_DEV` and `HXEHana2`.
+Log in with user `XSA_DEV` and `HXEHana2`
 
 ![Incognito Chrome](password.png)
+
+> You are now logged in to SAP Web IDE for SAP HANA, a tool to develop applications. You will be building a multi-target application. This is a collection of micro-services combined in the same development lifecycle to create a business application.
 
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 2: ](Create a project)]
 
+This is the SAP Web IDE for SAP HANA. It is the development tool for native SAP HANA development.
 If you see any existing folders, use the right-click menu to delete them.
 
 ![Delete any existing projects](3.png)
@@ -66,9 +69,13 @@ Click **Finish** to create your project.
 
 ![Create a new DB module](8.png)
 
-Call the module `db`.
+Call the module `db` and click **Next**.
 
 ![Create a new DB module](9.png)
+
+Click the checkbox to **Build module after creation**
+
+![Create a new DB module](db.png)
 
 Right-click `src` and click **Import > File or Project**.
 
@@ -109,7 +116,7 @@ Expand the `js` folder and **right-click** the `lib` folder. Create a new file.
 
 ![Create Node.js module](17.png)
 
-Call it `service.xsodata`.
+Call it `service.xsodata`
 
 ![Create Node.js module](18.png)
 
@@ -149,9 +156,9 @@ Once the application is **Running**, you can proceed to the last step.
 
 [ACCORDION-BEGIN [Step 5: ](Use the Fiori master-detail wizard to visualize your app)]
 
-You will now create the last module using a the SAP Fiori master-detail wizard.
+You will now create the web module using the SAP Fiori master-detail wizard.
 
-Right-click `APP` and choose `SAP Fiori Master-Detail Module`.
+Right-click `APP` and choose **New > SAP Fiori Master-Detail Module**.
 
 ![Create UI5 module](23.png)
 
@@ -181,7 +188,7 @@ Map the fields for the header of the sales order in the wizard.
 
 
 > ### **Congratulations!**
->You have created an instance of an SAP HANA service, a Node.js and a web micro-services and glued them together to produce a multi-target application that can run both on premise or in the cloud.
+>You have created an instance of an SAP HANA service, a Node.js and a web micro-services and glued them together to produce a multi-target application. This can run both on premise or in the cloud.
 >&nbsp;
 
 

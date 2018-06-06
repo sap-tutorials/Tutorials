@@ -116,7 +116,7 @@ Click the **Notepad** icon on the task bar and replace any existing IP address w
 
 ![Configure VM](host.png)
 
-The IP address should be followed by a space and `hxehost`.
+The IP address should be followed by a space and `hxehost`
 
 Save the file.
 
