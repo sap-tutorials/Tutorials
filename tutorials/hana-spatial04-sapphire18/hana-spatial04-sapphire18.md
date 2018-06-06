@@ -142,4 +142,14 @@ group by "cluster_id");
 
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 6: ](Log off the system)]
+
+This completes this tutorial series. Please close all your SQL Console windows and log off the system.
+
+![Log off](geosaphire4080.jpg)
+
+Thank you for your time!
+
+[ACCORDION-END]
+
 ---
