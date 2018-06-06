@@ -111,7 +111,7 @@ Go back into SAP Web IDE for SAP HANA and double-click the file `responses.csv` 
 
 ![New DB module](16.png)
 
-Save the file.
+**Save** the file.
 
 Right-click the `hana` module and choose **Build** from the contextual menu.
 
@@ -128,6 +128,10 @@ You can close the console and `responses.csv` file to make more room to work on 
 Right-click the folder `src` and choose **New > Calculation View**.
 
 ![New TA CV](cv.png)
+
+Call it `TEXT_ANALYTICS` and click **OK**.
+
+![New TA CV](18.png)
 
 Click **Aggregation** node and then the **+** sign to add a new data source.
 
@@ -197,8 +201,6 @@ Type `respon` and choose the result starting with `SAPPHIRE` and ending with `RE
 
 ![New view](32.png)
 
-Click the **+** sign to
-
 Use the button to expand details and double-click the data source to transfer the field to the results.
 
 ![New view](33.png)
@@ -215,7 +217,7 @@ Use the arrow on the anonymity column to configure the values.
 
 ![New view](35.png)
 
-Type in a higher level of `anonymization` for the countries. You do not need to type in all of the values.
+Type in a higher level of `anonymization` for the countries.
 
 Click **Back** when you are finished.
 
