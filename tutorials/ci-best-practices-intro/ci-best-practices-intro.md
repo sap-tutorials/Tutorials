@@ -29,6 +29,7 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 4.4. [SAPUI5/SAP Fiori on ABAP Front End Server](https://www.sap.com/developer/tutorials/ci-best-practices-fiori-abap.html)  
 4.5. [SAPUI5/SAP Fiori on SAP Cloud Platform](https://www.sap.com/developer/tutorials/ci-best-practices-fiori-sapcp.html)  
 4.6. [SAP HANA Extended Application Services, advanced model (XS advanced) on SAP HANA](https://www.sap.com/developer/tutorials/ci-best-practices-xsa.html)  
+4.7. [SAP Cloud Platform SDK for iOS](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html)  
 5. CI/CD Process Setup using SCM and build services on the cloud  
 5.1. [Generic Project with CI using Cloud Services](https://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html)  
 5.2. [Java Web on SAP Cloud Platform with CI using Cloud Services](https://www.sap.com/developer/tutorials/ci-best-practices-java-hcp-cloud.html)  
