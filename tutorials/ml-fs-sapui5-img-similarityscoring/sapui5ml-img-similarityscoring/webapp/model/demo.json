@@ -1,5 +1,5 @@
 {
-	"url_featureextraction" : "/ml/featureextraction/inference_sync",
-	"url_similarityscoring" : "/ml/similarityscoring/inference_sync",
+	"url_featureextraction" : "/ml-dest/featureextraction/inference_sync",
+	"url_similarityscoring" : "/ml-dest/similarityscoring/inference_sync",
 	"APIKey":"<<<<< COPY YOUR API KEY >>>>>"
 }

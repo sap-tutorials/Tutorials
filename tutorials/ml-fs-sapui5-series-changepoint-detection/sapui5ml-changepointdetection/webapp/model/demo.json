@@ -1,10 +1,8 @@
 {
-	"url": "/ml/changepointdetection/inference_sync",
-	"APIKey": "<<<<< COPY YOUR API KEY >>>>>",
+	"url": "/ml-dest/changepointdetection/inference_sync",
+	"APIKey":"<<<<< COPY YOUR API KEY >>>>>",
 	"options": {
 		"separator": "|",
-		"series_separator": "#",
-		"numDataPoints": 10,
-		"numDataSeries": 2
+		"series_separator": "#"
 	}
 }

@@ -14,6 +14,7 @@
 			"version": "1.40.12"
 		}
 	},
+
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -29,8 +30,13 @@
 			"tablet": true,
 			"phone": true
 		},
-		"supportedThemes": ["sap_hcb", "sap_belize"]
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+
+		]
 	},
+
 	"sap.ui5": {
 		"rootView": {
 			"viewName": "demosapui5ml-img-similarityscoring.view.demo",
@@ -61,8 +67,8 @@
 			},
 			"demo": {
 				"type": "sap.ui.model.json.JSONModel",
-				"uri": "model/demo.json",
-				"preload": true
+				"preload": true,
+				"uri": "model/demo.json"
 			}
 		},
 		"resources": {

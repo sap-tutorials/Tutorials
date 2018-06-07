@@ -1,6 +1,6 @@
 ---
-title: Image Similarity Scoring with SAP Leonardo Machine Learning Foundation in SAPUI5
-description: Discover how to implement SAP Leonardo Machine Learning Functional Service in a SAPUI5 application
+title: Image Similarity Scoring example with SAPUI5
+description: Discover how to implement SAP Leonardo Machine Learning Foundation service in a SAPUI5 application
 auto_validation: true
 primary_tag: products>sap-leonardo-machine-learning-foundation
 tags: [ tutorial>intermediate, topic>sapui5, topic>html5, topic>machine-learning, products>sap-leonardo-machine-learning-foundation, products>sap-api-management, products>sap-cloud-platform, products>sap-web-ide]
@@ -23,11 +23,11 @@ The **Image Feature Extraction** service allows you to extract a vector of featu
 ### Time to Complete
 **40 Min**
 
-[ACCORDION-BEGIN [Step 1: ](Get Your Sandbox URL)]
+[ACCORDION-BEGIN [Step 1: ](Get The API Sandbox URL And API Key)]
 
-In order to consume the **Image Feature Extraction** & **Similarity Scoring** Machine Learning Functional Services, you will first need to get the service URI, your API Key and the request and response parameters.
+In order to consume the **Image Feature Extraction** & **Similarity Scoring** SAP Leonardo Machine Learning Foundation service, you will first need to get the service URI and your API key, request and response parameters.
 
-Go to [https://api.sap.com/](https://api.sap.com) and click on the **Browse** tile.
+Go to [https://api.sap.com/](https://api.sap.com).
 
 ![SAP API Business Hub](01.png)
 
@@ -35,83 +35,94 @@ Then you will be able to search for the **SAP Leonardo Machine Learning - Functi
 
 ![SAP API Business Hub](02.png)
 
-Click on **Artifacts**, then click on the **Image Feature Extraction API**.
+Select **Image Feature Extraction API**.
 
 ![SAP API Business Hub](03.png)
 
-On the **Resource** tab, you can notice the **Image Feature Extraction API** has only one resource (or service): `/inference_sync`.
+You can also access the page directly from the following address:
 
-If you expand the `/inference_sync` resource and look for the ***Parameters*** section, you will not that the service request require the following:
+ - <https://api.sap.com/api/img_feature_extraction_api/resource>
 
-- **`files`** (required) : the list of file(s) to be uploaded. Either:
+![SAP API Business Hub](06.png)
 
-    - one image file (image formats, such as `.jpeg`, `.png`, `.tif`, or `.bmp`)
-    - one archive file containing multiple image files (format `.zip`, `.tar.gz`, or `tar`)
+To get to your API Sandbox URL, click on the **Details** tab.
 
-
-![SAP API Business Hub](04-0.png)
-
-Now click on the **Overview** tab.
-
-> **Note**: the term *inference* refers to the application phase (scoring) an existing model (as opposed to the training or inception phase) and *sync* for synchronous.
-
-![SAP API Business Hub](04-1.png)
-
-As displayed on the screen, the sandbox URL for the **Image Feature Extraction API** where we need to append the API resource:
+The **Image Feature Extraction API** Sandbox URL should be:
 
 ```JSON
-https://sandbox.api.sap.com/ml/featureextraction/inference_sync
+https://sandbox.api.sap.com/ml/featureextraction
 ```
 
-Repeat the above instruction for the **Similarity Scoring API**.
+Do the same for the **Similarity Scoring API**.
 
-the sandbox URL for the **Similarity Scoring API** where we need to append the API resource:
+You can also access the page directly from the following address:
+
+ - <https://api.sap.com/api/similarity_scoring_api/resource>
+
+The **Similarity Scoring API** Sandbox URL should be:
 
 ```JSON
-https://sandbox.api.sap.com/ml/similarityscoring/inference_sync
+https://sandbox.api.sap.com/ml/similarityscoring
 ```
 
-If you expand the `/inference_sync` resource and look for the ***Parameters*** section, you will not that the service request require the following:
+To get to your API key, click on the **Show API Key** button.
 
-- **`options`** (required) : a JSON string with the following attributes:
+You will be prompted to login if you are not yet.
 
-    - `numSimilarVectors` (required): the number of most similar vectors to return in the response
-    - `algorithm` (optional): the algorithm to use for calculation, one of [`naive`, `matrix_mult`, `clustering`]
+Then, the following pop-up should appear. Click on the **Copy Key and Close** button and save it in a text editor.
 
-
-    - example: {"numSimilarVectors":5}
-
-- **`files`** (required) : the archive file without folder hierarchy containing files containing a vector of features (archive format `zip`, `tar.gz`, or `tar`)
-
-    - Example for a vector of features:
-
-    ```
-    [0.012213259239223229, 0.06602939146591502, 0.2948209592491525, 0.3951995979880405]
-    ```
+![SAP API Business Hub](06-1.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Get Your API key)]
+[ACCORDION-BEGIN [Step 2: ](Analyze the services)]
 
-When using any of the APIs outside of the SAP API Business Hub, an application key will be needed in every request header of your APIs calls.
+As you will notice both API have only one resource (or service): `/inference_sync`.
 
-To get to your API key, click on the ![key](00-key.png) icon in the top right corner of the page. Click on the key icon.
+You can click on `/inference_sync` to expand the section.
 
-The following pop-up should appear. Click on the **Copy API Key** button and save it in a text editor.
+> **Note**: the term *inference* refers to the application phase (scoring) an existing model (as opposed to the training or inception phase) and *sync* for synchronous.
 
-![SAP API Business Hub](05.png)
+As stated in the description, the **Image Feature Extraction API** service accepts either:
 
-Now, let's build a SAPUI5 application! But before doing so let's first add the destination to connect to the SAP API Business Hub.
+ - an archive file with a zip/tar extensions containing multiple image files
+ - a single image
+ - a list of image as input
+
+The service returns a feature vector extracted from the image.
+
+The supported image formats are ***JPEG***, ***PNG***, ***TIF*** or ***BMP*** (the actual content format is validated, so renaming files may simply not work).
+
+As stated in the description, the **Similarity Scoring API** service accepts either:
+
+ - an archive file which should consist of files, each of them containing a feature vector.
+
+A series of options are also required for the following parameters:
+
+ - `numSimilarVectors`: Number of most similar vectors to return in response
+ - `algorithm`: The algorithm to use for calculation, one of [`naive`, `matrix_mult`, `clustering`] (Optional)
+
+The service returns the associated similarity scores.
+
+The input file, files or archive file will be sent as a `FormData` query parameter in the service request.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Access the SAP Cloud Platform Cockpit)]
 
-Go to your [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) account and access "Your Personal Developer Account".
+Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit Neo Trial</b></a> with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***.
 
-![SAP Cloud Platform Cockpit](06.png)
+Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial* by default) as highlighted on the below screenshot.
+
+![SAP Cloud Platform Cockpit](07-1.png)
+
+You are now in your ***SAP Cloud Platform developer*** account!
+
+![Your Personal Developer Account](07-2.png)
+
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 [DONE]
 [ACCORDION-END]
@@ -121,8 +132,6 @@ Go to your [***SAP Cloud Platform Cockpit Neo Trial***](https://account.hanatria
 You will need to create a destination in your SAP Cloud Platform account that allow will your applications to connect to external APIs such as the SAP API Business Hub.
 
 On the left side bar, you can navigate in **Connectivity** > **Destinations**.
-
-![Your Personal Developer Account](07.png)
 
 On the ***Destinations*** overview page, click on **New Destination**
 
@@ -151,6 +160,8 @@ Click on **Save**
 
 You can use the **Check Connectivity** button ![HTML5 Applications](00-check.png) next to the new **Destination** to validate that the URL can be accessed.
 
+You should receive a ***connection established*** message with potentially a ***404: Not Found*** response which is normal.
+
 [DONE]
 [ACCORDION-END]
 
@@ -160,7 +171,7 @@ On the left side bar, you can navigate in **Services**, then using the search bo
 
 ![Web IDE](10.png)
 
-Click on the tile, then click on **Open SAP Web IDE**.
+Click on the tile, then click on **Go to Service**.
 
 ![Web IDE](11.png)
 
@@ -171,7 +182,7 @@ You will get access to the **SAP Web IDE** main page:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create your application using the SAPUI5 template)]
+[ACCORDION-BEGIN [Step 6: ](Create a project using the SAPUI5 template)]
 
 Click on **New Project from Template** in the ***Create Project*** section or use the **File** > **New** > **Project from Template**.
 
@@ -251,7 +262,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
     },
     "description": "SAPUI5 Test Resources"
   }, {
-    "path": "/ml",
+    "path": "/ml-dest",
     "target": {
       "type": "destination",
       "name": "sapui5ml-api"
@@ -285,8 +296,8 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-  "url_featureextraction" : "/ml/featureextraction/inference_sync",
-  "url_similarityscoring" : "/ml/similarityscoring/inference_sync",
+  "url_featureextraction" : "/ml-dest/featureextraction/inference_sync",
+  "url_similarityscoring" : "/ml-dest/similarityscoring/inference_sync",
   "APIKey":"<<<<< COPY YOUR API KEY >>>>>"
 }
 ```
@@ -389,7 +400,7 @@ callService: function(oController, service, url, type, mode, apiKey, formData, f
       success: ajaxSuccess,
       error: ajaxError,
       contentType: false,
-      async: false,
+      async: true,
       data: formData,
       cache: false,
       processData: false

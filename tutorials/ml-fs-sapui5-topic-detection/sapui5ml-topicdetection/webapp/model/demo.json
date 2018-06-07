@@ -1,6 +1,6 @@
 {
-	"url": "/ml/topicdetection/inference_sync",
-	"APIKey":"<<<<< COPY YOUR API KEY >>>>>",
+	"url": "/ml-dest/topicdetection/inference_sync",
+	"APIKey": "<<<<< COPY YOUR API KEY >>>>>",
 	"options": {
 		"numTopics": 3,
 		"numTopicsPerDoc": 3,

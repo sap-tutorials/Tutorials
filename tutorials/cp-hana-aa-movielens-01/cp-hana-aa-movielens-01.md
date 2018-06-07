@@ -9,6 +9,9 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 ## Prerequisites
  - **Proficiency:** Beginner
 
+## Next Steps
+- [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://www.sap.com/developer/groups/cp-hana-aa-movielens.html)
+
 ## Details
 ### You will learn
 
@@ -54,20 +57,16 @@ When implementing the data persistence model, you can use either the ***Core Dat
 
 The ***`HDBtable`*** syntax is a collective term which includes the different configuration schema for each of the various design-time data artifacts, for example: schema (`.hdbschema`), sequence (`.hdbsequence`), table (`.hdbtable`), and view (`.hdbview`).
 
-
 This is why we will be using the SAP HANA ***`HDBtable`*** syntax including ***Core Data Service*** (CDS) artifacts instead, which only requires the ***SAP HANA Web-based Development Workbench*** available with any SAP HANA MDC on the ***SAP Cloud Platform***. All the objects will be created as ***design-time*** and will  allow us to adapt the structure easily without reloading the data.
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 1: ](Create your MOVIELENS database user)]
 
 > ### Note: As each HANA MDC instance comes only with a ***System Account*** called SYSTEM, which shall be used only to execute "System" related activities, you will need to add a new user account.
 >
 > In the "real world", it is uncommon to use the ***System Account*** to develop an "end-user" application.
-
-&nbsp;
 
 Using the ![navigation](0-navigation.png) menu bar icon, select the **Catalog** perspective.
 
@@ -121,19 +120,23 @@ Click on the ![run](0-run.png) **Run** button or press **F8**.
 
 [ACCORDION-BEGIN [Step 2: ](Switch to the MOVIELENS user)]
 
-Click on the ![Logout](0-logout.png) **Logout** icon located in the top right corner of the screen.
-
-![SAP HANA Web-based Development Workbench Login](15.png)
+Click on the **Logout** icon  ![Logout](0-logout.png) located in the top right corner of the screen.
 
 Now, you need to connect with your **`MOVIELENS_USER`** ***HANA User Account***.
 
 Enter **`MOVIELENS_USER`** as ***Username*** user name and **`Welcome18Welcome18`** as ***Password***, click on **Logon**.
 
+![SAP HANA Web-based Development Workbench Login](15.png)
+
 If you can login successfully, then your ***HANA User Account*** is properly configured.
+
+![SAP HANA Web-based Development Workbench Login](16.png)
 
 Click on **Catalog**.
 
 On the left side tree, expand the **Catalog** item and browse the list of entries available.
+
+![SAP HANA Web-based Development Workbench Login](13.png)
 
 Provide an answer to the question below then click on **Validate**.
 
@@ -142,9 +145,7 @@ Provide an answer to the question below then click on **Validate**.
 
 [ACCORDION-BEGIN [Step 3: ](Switch to the Editor perspective)]
 
-In order to create the CDS artifacts, we will be using the **Editor** perspective available in the **SAP HANA Web-based Development Workbench**.
-
-Use the ![navigation](0-navigation.png) icon from the menu:
+In order to create the CDS artifacts, we will be using the **Editor** perspective available in the **SAP HANA Web-based Development Workbench** using the ![navigation](0-navigation.png) icon from the menu:
 
 ![SAP HANA Web-based Development Workbench](02.png)
 
@@ -225,8 +226,6 @@ Your package structure should now look like this:
 > ### **Note**:
 >You should close the tabs that got opened for each of the imported files in order to release the resources used by your browser.
 
-&nbsp;
-
 Check the message console, and make sure there is no errors. The following messages should be displayed:
 
 ```
@@ -245,8 +244,6 @@ Check the message console, and make sure there is no errors. The following messa
 >A **schema** defines the container that holds database objects such as tables, views, and stored procedures. You need a schema to be able to write to the catalog.
 >
 >To create a database schema as a design-time object, you have to create a flat file that contains the schema definition and save this file with the suffix `.hdbschema` in the appropriate package for your application in the SAP HANA repository.
-
-&nbsp;
 
 Create a new file named **`MOVIELENS.hdbschema`** in the **`public/aa/movielens/hdb`** package with the following content:
 
@@ -276,9 +273,7 @@ For example, you can implement a role that grant access to design-time object li
 >
 This provides a lot of flexibility in term of authorization management. They are specified in a text file with the extension `.hdbrole`.
 
-&nbsp;
-
-Create a new file named **`user.hdbrole`** in the **`public/aa/movielens/service`** package.
+Create a new file named **`user.hdbrole`** in the **`public/aa/movielens/hdb`** package.
 
 By default, the ***Role Editor*** will open by default, but instead we will be using the ***Text Editor***, so you can close the ***Role Editor***.
 
@@ -318,8 +313,6 @@ Check the message console, and make sure there is no errors. The following messa
 >CDS documents have the file suffix `.hdbdd`. Each CDS document must contain the following basic elements:
 ><li> Name space declaration: The name space you define must be the first declaration in the CDS document and match the absolute package path to the location of the CDS document in the repository. It is possible to enclose parts of the name space in quotes (""), for example, to solve the problem of illegal characters in name spaces.</li>
 ><li> CDS artifact definitions: The objects that make up your persistence model, for example: contexts, entities, structured types, and views</li>
-
-&nbsp;
 
 Create a new file named **`data.hdbdd`** in the **`public/aa/movielens/hdb`** package with the following content:
 
@@ -385,8 +378,6 @@ Check the message console, and make sure there is no errors. The following messa
 >The configuration specifies the source file containing the data values to import and the target table in SAP HANA into which the data must be inserted.
 >
 >As further options, you can specify which field delimiter to use when interpreting data in the source `.csv` file and if keys must be used to determine which columns in the target table to insert the imported data into.
-
-&nbsp;
 
 Create a new file named **`data.hdbti`** in the **`public/aa/movielens/hdb`** package with the following content:
 

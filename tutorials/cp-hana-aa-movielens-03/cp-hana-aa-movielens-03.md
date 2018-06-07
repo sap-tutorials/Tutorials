@@ -6,20 +6,22 @@ primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
 ---
 
+## Prerequisites
+ - **Proficiency:** Beginner
+
+## Next Steps
+- [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://www.sap.com/developer/groups/cp-hana-aa-movielens.html)
+
+## Details
+### You will learn
+
+- How to use SAP HANA APL Recommendation algorithm
+
 > ### **Note**
 >As of the publication date for this tutorial, the SAP Cloud Platform provides SAP HANA MDC instances up to version 1.0 SPS12 and SAP HANA APL version 3.2 which will be use for the rest of the series.
 If you are using a different version of SAP HANA and the SAP HANA APL library, the code and the results may differ.
 >
 For more details about the APL function, check the online <a href="https://help.sap.com/viewer/cb31bd99d09747089754a0ba75067ed2/3.1/en-US/9bf31268c57e4c079f0cbabd36f39640.html" target="new">documentation</a>.
-&nbsp;
-
-## Prerequisites
- - **Proficiency:** Beginner
-
-## Details
-### You will learn
-
-- How to use SAP HANA APL Recommendation algorithm from SAP HANA APL version 3.2
 
 ### Time to Complete
 **20 Min**
@@ -220,8 +222,6 @@ By default, the function will identify **mega-hubs** (using the 4 "sigma" rule),
 >
 If you want to try out this scenario, you can build a view where the user id and the rating are concatenated into one column that will be used as the second entity type.
 
-&nbsp;
-
 When executed, the following code will generate a ***Recommendation*** model linking `USERID` & `MOVIEID` from the `RATINGS` CDS Entity.
 
 The results will be stored in the `APL_RECO_MODEL_USERS_LINKS` table under the `movielens` schema.
@@ -317,8 +317,6 @@ CALL "SAP_PA_APL"."sap.pa.apl.base::CLEANUP"(1,?);
 
 > ### **Note**
 >You may receive a series of errors and warnings in the console log while running the above code. They should all be related to the drop statements at the beginning which are intended to help you re-run the script if needed.
-
-&nbsp;
 
 [DONE]
 [ACCORDION-END]
@@ -508,8 +506,6 @@ FROM (
 ```
 
 All users will receive the requested 5 recommendations. However, only about 13% of the movies (1176 out of the 9,125) will get potentially recommended and only about 1.5% of the movies (149 out of the 9,125) are in the top 5 lists.
-
-&nbsp;
 
 Provide an answer to the question below then click on **Validate**.
 

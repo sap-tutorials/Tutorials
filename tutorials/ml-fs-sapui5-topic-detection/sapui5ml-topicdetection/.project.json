@@ -3,23 +3,24 @@
     "sap.watt.uitools.ide.fiori",
     "com.watt.common.builder.sapui5clientbuild"
   ],
-  "build": {
-    "targetFolder": "dist",
-    "sourceFolder": "webapp",
-    "buildRequired": true
-  },
   "generation": [
     {
       "templateId": "ui5template.basicSAPUI5ApplicationProjectCommon",
       "templateVersion": "1.32.0",
-      "dateTimeStamp": "Tue, 01 Aug 2017 12:49:49 GMT"
+      "dateTimeStamp": "Wed, 21 Mar 2018 08:46:34 GMT"
     },
     {
       "templateId": "ui5template.basicSAPUI5ApplicationProject",
       "templateVersion": "1.40.12",
-      "dateTimeStamp": "Tue, 01 Aug 2017 12:49:51 GMT"
+      "dateTimeStamp": "Wed, 21 Mar 2018 08:46:34 GMT"
     }
   ],
+  "codeCheckingTriggers": {
+    "notifyBeforePush": true,
+    "notifyBeforePushLevel": "Error",
+    "blockPush": false,
+    "blockPushLevel": "Error"
+  },
   "translation": {
     "translationDomain": "",
     "supportedLanguages": "en,fr,de",
@@ -33,10 +34,11 @@
       "js": "fioriJsValidator"
     }
   },
-  "codeCheckingTriggers": {
-    "notifyBeforePush": true,
-    "notifyBeforePushLevel": "Error",
-    "blockPush": false,
-    "blockPushLevel": "Error"
+  "build": {
+    "buildRequired": true,
+    "sourceFolder": "webapp",
+    "targetFolder": "dist",
+    "excludedFolders": [],
+    "excludedFiles": []
   }
 }

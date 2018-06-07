@@ -9,18 +9,19 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 ## Prerequisites
  - **Proficiency:** Beginner
 
+## Next Steps
+- [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://www.sap.com/developer/groups/cp-hana-aa-movielens.html)
+
 ## Details
 ### You will learn
 
-- How to use SAP HANA PAL APRIORI algorithm from SAP HANA 1.0 SPS12
+- How to use SAP HANA PAL APRIORI algorithm
 
 > ### **Note**
 >As of today, the SAP Cloud Platform provide an SAP HANA MDC instance up to version 1.0 SPS12 which will be using for the rest of the series.
 If you are using a different version of SAP HANA, the code and the results may differ.
 >
 For more details about the PAL function, check the online <a href="https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/1.0.12/en-US/f652a8186a144e929a1ade7a3cb7abe8.html" target="new">documentation</a>.
-
-&nbsp;
 
 ### Time to Complete
 **20 Min**
@@ -62,8 +63,6 @@ Other database objects also need to be created, such as database table types and
 
 > ### **Note**
 > With version 2.0 SPS02 of SAP HANA, a new and simplified scripting approach has been introduced. However, as the SAP Cloud Platform currently only offers SAP HANA 1.0 SPS12 (which may change in the future), we will only describe here what is currently possible with an SAP HANA instance on the SAP Cloud Platform.
-
-&nbsp;
 
 Just like the ***SAP HANA APL*** direct technique, it consists of explicitly generating an AFL wrapper for the APL function to be executed.
 The generation of this AFL wrapper requires the explicit creation of table types, signature table, input and output tables, etc.
@@ -150,8 +149,6 @@ For both the collaborative filtering and the content-based filtering scenario, t
 >Given a set of items, the algorithm attempts to find subsets which are common to at least a minimum number of the item sets. Apriori uses a "bottom up" approach, where frequent subsets are extended one item at a time, a step known as candidate generation, and groups of candidates are tested against the data. The algorithm terminates when no further successful extensions are found. Apriori uses breadth-first search and a tree structure to count candidate item sets efficiently. It generates candidate item sets of length k from item sets of length k-1, and then prunes the candidates which have an infrequent sub pattern. The candidate set contains all frequent k-length item sets. After that, it scans the transaction database to determine frequent item sets among the candidates.
 >Extracted from the documentation.
 
-&nbsp;
-
 [DONE]
 [ACCORDION-END]
 
@@ -197,8 +194,6 @@ The SAP HANA PAL `Apriori` algorithm provide multiple configuration options like
 We could also transform the data structure, and use the movie as one node (entity type) and the user associated with the rating notation as the second node (entity type), then use the same algorithm. And finally instead of using the user as the entry point we would use the user and the rating notation as the entry point.
 >
 If you want to try out this scenario, you can build a view where the user id and the rating are concatenated into one column that will be used as the second entity type.
-
-&nbsp;
 
 The PAL functions are really strict on the input format, so you will need to create a view to provide the input dataset in the proper format (`PAL_APRIORI_MODEL_INPUT`) .
 
@@ -295,8 +290,6 @@ CALL "MOVIELENS"."PROC_PAL_APRIORI" (
 
 > ### **Note**
 >You may receive a series of errors and warnings in the console log while running the above code. They should all be related to the drop statements at the beginning which are intended to help you re-run the script if needed.
-
-&nbsp;
 
 You will notice that the `MIN_SUPPORT` & `MIN_CONFIDENCE` are mandatory attributes to filter out some of the candidate associations.
 
