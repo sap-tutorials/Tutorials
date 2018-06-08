@@ -49,7 +49,7 @@ SAP HANA, express edition for Docker has been tested on the following Linux oper
 
 [ACCORDION-BEGIN [Step 1: ](Install Docker)]
 
-Download and install Docker Enterprise Edition for SUSE Enterprise Linux Server. Visit the [Docker Enterprise Edition SUSE Enterprise Linux Server](https://store.docker.com/editions/enterprise/docker-ee-server-sles?tab=description) page for information on how to install Docker on your SLES system.
+Download and install the appropriate Docker Edition for your system. Visit the [Docker Community Edition](https://store.docker.com/search?offering=community&type=edition) or [Docker Enterprise Edition](https://store.docker.com/search?offering=enterprise&type=edition) lists for more information and to download Docker for your machine.
 
 > **Note:**
 > Ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
@@ -168,7 +168,7 @@ fs.file-max=20000000
 fs.aio-max-nr=262144
 vm.memory_failure_early_kill=1
 vm.max_map_count=135217728
-net.ipv4.ip_local_port_range=40000 60999
+net.ipv4.ip_local_port_range=60000 65535
 ```
 
 To edit the `sysctl.conf` file, use the `vi` command to open the file and press `i` to switch to interactive mode. Edit the file as necessary, hit the `esc` key, and type and enter `:wq!` to write and save the changes.
@@ -262,7 +262,7 @@ sudo docker run -p 39013:39013 -p 39015:39015 -p 39041-39045:39041-39045 -p 1128
 -v /data/<directory_name>:/hana/mounts \
 --ulimit nofile=1048576:1048576 \
 --sysctl kernel.shmmax=1073741824 \
---sysctl net.ipv4.ip_local_port_range='40000 60999' \
+--sysctl net.ipv4.ip_local_port_range='60000 65535' \
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <container_name> \
@@ -281,7 +281,7 @@ sudo docker run -p 39013:39013 -p 39015:39015 -p 39041-39045:39041-39045 -p 1128
 -v /data/express_edition:/hana/mounts \
 --ulimit nofile=1048576:1048576 \
 --sysctl kernel.shmmax=1073741824 \
---sysctl net.ipv4.ip_local_port_range='40000 60999' \
+--sysctl net.ipv4.ip_local_port_range='60000 65535' \
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name express_edition \
