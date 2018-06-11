@@ -3,7 +3,7 @@ title: Using Analytical OData in IoT Application Enablement
 description: Explore the Analytical OData services in SAP IoT Application Enablement (AE) to get time series and aggregates on data
 auto_validation: true
 primary_tag: topic>internet-of-things
-tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-api-management ]
+tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-api-management, products>sap-iot-application-enablement ]
 ---
 
 ## Prerequisites  
