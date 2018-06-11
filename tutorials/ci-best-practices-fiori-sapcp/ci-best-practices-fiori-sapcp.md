@@ -212,19 +212,21 @@ For processing the Fiori project's sources on the build node, Grunt as a task pr
 
 ### 5. Installing the MTA Archive Builder
 
-As Java application, the MTA archive builder, which is available from the SAP ONE Support Launchpad, can be installed directly on the Jenkins slave machine, or it can be stored on a location which is accessible via HTTP, for example Nexus. The latter alternative has the advantage that upgrades are much easier to handle.
+As Java application, the MTA archive builder, which is available from the SAP Development Tools site, can be installed directly on the Jenkins slave machine, or it can be stored on a location which is accessible via HTTP, for example Nexus. The latter alternative has the advantage that upgrades are much easier to handle.
 
 > [Multi-target Application Archive Builder](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)  
-> [SAP ONE Support Launchpad](https://launchpad.support.sap.com/)
+> [SAP Development Tools](https://tools.hana.ondemand.com/#cloud)
 
 #### Procedure
 
-1. Enter SAP ONE Support Launchpad, navigate to Software Downloads, search for `MTA Archive Builder` and download the newest version.
+1. Enter SAP Development Tools, and search for `Multi-target Application Archive Builder` and download the latest version.
 
-![Download the MTA Archive Builder](download-mta-archive-builder.png)
 
-2. Upload the MTA archive builder JAR file to a location where it is accessible via HTTP, for example Nexus.
+2. Upload the MTA archive builder JAR file to a location where it is accessible via HTTP, for example Nexus. You can also directly download it via http  with `wget`.
 
+```
+wget -nv --output-document=<local path>/mta.jar --no-cookies --header "Cookie: eula_3_1_agreed=tools.hana.ondemand.com/developer-license-3_1.txt" https://tools.hana.ondemand.com/additional/mta_archive_builder-<latest version>.jar
+```
 
 ### 6. Creating the Grunt Build File
 
