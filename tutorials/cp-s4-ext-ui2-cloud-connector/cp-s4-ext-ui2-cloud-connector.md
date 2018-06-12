@@ -8,7 +8,7 @@ tags: [ tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform
 ## Prerequisites
 - **Proficiency:** Intermediate
 - **Tutorials:**
-    -  [Create a trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+    -  [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
     -  [SAP S/4HANA on-premises UI extension (Part 1): Enabling OData APIs in SAP NetWeaver](https://www.sap.com/developer/tutorials/cp-s4-ext-ui1-expose-odata.html)
 - **Systems, Tools, Services:**
     -  On host OS: VirtualBox, SAP Development Tools
