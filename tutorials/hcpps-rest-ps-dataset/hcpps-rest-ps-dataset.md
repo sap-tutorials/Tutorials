@@ -11,7 +11,8 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-servi
   - **Tutorials:** [Configure the SAP Predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-- [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+  - Continue with: [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+  - Or [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 ### You will learn
@@ -256,4 +257,5 @@ You have now listed all the data set registered in your environment.
 For more details on the SAP Predictive services, you can check the following the [`Dataset APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/ac9dc4ed145646a0b76b4729210fd067.html) documentation.
 
 ## Next Steps
-- [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+  - Continue with: [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+  - Or [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
