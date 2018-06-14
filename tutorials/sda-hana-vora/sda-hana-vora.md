@@ -28,7 +28,7 @@ The SAP HANA, express edition version used here is 2.0 SPS0.
 
 The following tutorial will guide you with the download & installation instructions:
 
-  - [Installing SAP HANA 2.0, express edition(Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
+  - [Installing SAP HANA 2.0, express edition(Virtual Machine Method)](https://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html)
 
 But before going to the next tutorial "Start Using SAP HANA 2.0, express edition (Virtual Machine Method)", we will need to adjust the network settings.
 
@@ -40,7 +40,7 @@ If you are using `VMWare`, go to "Virtual Machine Setting" > "Hardware" > "Netwo
 
 If you are using `VirtualBox`, go to "Settings" > "Network" and select "NAT", and save your changes.
 
-Now, you can move to [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html).
+Now, you can move to [Start Using SAP HANA 2.0, express edition (Virtual Machine Method)](https://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html).
 
 Make a note of the SAP HANA virtual machine IP address and the hostname running the following commands:
 

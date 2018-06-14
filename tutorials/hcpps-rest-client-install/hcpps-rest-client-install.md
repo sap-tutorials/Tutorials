@@ -10,7 +10,8 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, 
   - **Tutorials:** [Enable, deploy and configure the SAP Predictive services](https://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
 
 ## Next Steps
-  - [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+  - Continue with: [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+  - Or [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## How-To Details
 In this ***how-to*** guide, you learn how to install and configure the [Google Chrome Postman extension](http://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop/).
@@ -72,4 +73,5 @@ You are now all set to move to your next tutorial.
 [ACCORDION-END]
 
 ## Next Steps
-- [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+  - Continue with: [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+  - Or [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)

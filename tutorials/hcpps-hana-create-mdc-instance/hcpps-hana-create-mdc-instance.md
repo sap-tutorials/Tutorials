@@ -11,7 +11,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-servi
   - **Tutorials:** [Sign up for an free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
 ## Next Steps
-  - [Enable, deploy and configure the SAP Predictive services](https://www.sap.com/developer/tutorials/hcpps-ps-configure.html)
+  - [Setup a HANA user account](https://www.sap.com/developer/tutorials/hcpps-hana-create-user.html)
 
 ## Details
 ### You will learn

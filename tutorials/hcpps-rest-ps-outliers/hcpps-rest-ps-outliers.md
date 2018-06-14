@@ -11,7 +11,8 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-servi
   - **Tutorials:** [Configure the SAP Predictive services](https://www.sap.com/developer/groups/ps-configure.html)
 
 ## Next Steps
-- [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
+  - Continue with: [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+  - Or [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 
@@ -225,4 +226,5 @@ You can also play with the following parameters and check the differences:
 For more details on the SAP Predictive services, you can check the following the [`Outliers APIs`](https://help.sap.com/viewer/20cd1b0396db4826a9b76b4ce869f00a/Cloud/en-US/0c5454d0e1c840588fc072de5cad2474.html) documentation.
 
 ## Next Steps
-- [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
+  - Continue with: [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
+  - Or [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
