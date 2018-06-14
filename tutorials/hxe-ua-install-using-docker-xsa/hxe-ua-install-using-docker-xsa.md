@@ -278,6 +278,7 @@ Example:
 
 ```
 sudo docker run -p 39013:39013 -p 39015:39015 -p 39041-39045:39041-39045 -p 1128-1129:1128-1129 -p 59013-59014:59013-59014  -p 39030-39033:39030-39033 -p 51000-51060:51000-51060  -p 53075:53075  \
+-h hxehost \
 -v /data/express_edition:/hana/mounts \
 --ulimit nofile=1048576:1048576 \
 --sysctl kernel.shmmax=1073741824 \
