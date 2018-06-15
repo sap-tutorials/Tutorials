@@ -209,8 +209,8 @@ Edit the `index.html` file located under **`Workspace`** > **`sapui5ml`** > **`w
 
 It should eventually look something like this:
 
-```JavaScript
-data-sap-ui-resourceroots='{"demosapui5ml-changepointdetection": "", "sapui5ml": ""}'
+```
+data-sap-ui-resourceroots='{"xxxx": "", "sapui5ml": ""}'
 ```
 
 Click on the ![Save Button](00-save.png) button (or press CTRL+S).
