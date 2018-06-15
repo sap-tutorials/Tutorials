@@ -114,7 +114,7 @@ Open a new **SQL Console** using the ![sql](0-opensqlconsole.png) icon from the 
 Paste the following content in the console, and use the execute icon ![run](0-run.png) from the menu.
 
 ```SQL
-select 'links'   as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.hdb::data."
+select 'links'   as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.hdb::data.LINKS"
 union all
 select 'movies'  as "table name", count(1) as "row count" from "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES"
 union all
