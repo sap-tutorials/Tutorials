@@ -241,12 +241,12 @@ Open the **`demo.view.xml`** file and replace the existing code with the followi
 			</Page>
 			<Page id="detail_execute_apl_recommendation" title="Execute APL Recommendation Algorithm">
 				<content>
-					<!--<mvc:XMLView viewName="movielens.html.view.execute.collaborative"/>-->
+					<!--<mvc:XMLView viewName="movielens.html.view.execute.apl_recommendation"/>-->
 				</content>
 			</Page>
 			<Page id="detail_execute_pal_apriori" title="Execute PAL APRIORI Algorithm">
 				<content>
-					<!--<mvc:XMLView viewName="movielens.html.view.execute.contentbased"/>-->
+					<!--<mvc:XMLView viewName="movielens.html.view.execute.pal_apriori"/>-->
 				</content>
 			</Page>
 			<Page id="detail_compare_collaborative" title="Collaborative Filtering Results">

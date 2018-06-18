@@ -1,5 +1,5 @@
 ---
-title: Display your Recommendations results
+title: Display your Recommendations results in your application
 description: Understand and implement the basics of an SAPUI5 application to display your `Movielens` recommendation results
 auto_validation: true
 primary_tag: topic>machine-learning

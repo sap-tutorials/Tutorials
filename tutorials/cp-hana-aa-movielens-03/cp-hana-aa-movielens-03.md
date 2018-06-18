@@ -233,7 +233,7 @@ Paste the following content in the console, and use the execute icon ![run](0-ru
 ```SQL
 SET SCHEMA "MOVIELENS";
 
-SET SESSION 'APL_CACHE_SCHEMA' = '`MOVIELENS_USER`';
+SET SESSION 'APL_CACHE_SCHEMA' = 'MOVIELENS_USER';
 -- --------------------------------------------------------------------------
 -- Cleanup SAPL objects
 -- --------------------------------------------------------------------------
