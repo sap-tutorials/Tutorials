@@ -1,5 +1,5 @@
 ---
-title: Expose recommendation function and results using XSJS and XS OData
+title: Expose recommendation functions as XSJS and results as XS OData
 description: Understand and implement some of the options available with SAP HANA to expose your algorithm procedure and results
 auto_validation: true
 primary_tag: topic>machine-learning
@@ -267,7 +267,6 @@ The path of the file you have just created is **`movielens/db/src/js/lib/xsjs/pa
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 5: ](Build and Start the Node.js Module)]
 
