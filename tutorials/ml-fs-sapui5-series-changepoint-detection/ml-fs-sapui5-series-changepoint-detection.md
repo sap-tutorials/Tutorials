@@ -274,7 +274,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 There are multiple options to achieve this goal. Here we will use a pre-loaded JSON model configured in the `manifest.json` file.
 
-Create a new file named `demo.json` under **`Workspace`** > **`sapui5ml-changepointdetection`** > **`webapp`** > **`model`**, copy the below code and make sure you replace `<<<<< COPY YOUR API KEY >>>>>` by your the API key we retrieved in step 2.
+Create a new file named **`demo.json`** under **`Workspace`** > **`sapui5ml-changepointdetection`** > **`webapp`** > **`model`**, copy the below code and make sure you replace `<<<<< COPY YOUR API KEY >>>>>` by your the API key we retrieved in step 2.
 
 Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
