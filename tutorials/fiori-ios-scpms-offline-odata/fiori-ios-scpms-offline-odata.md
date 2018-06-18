@@ -1,6 +1,6 @@
 ---
-title: Create iOS application with Offline capabilities
-description: You will create an iOS application using the SAP Cloud Platform SDK for iOS which will have offline capabilities.
+title: Create an iOS App with Offline Capabilities
+description: Create an iOS app using the SAP Cloud Platform SDK for iOS which will have offline capabilities. This app not only supports offline OData, but also use an offline onboarding flow.
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, pro
 
 ## Details
 ### You will learn  
-In this tutorial, you will create a Fiori for iOS application with offline capabilities. This not only includes Offline OData, but also use an offline Onboarding flow.
+In this tutorial, you will use the SAP Cloud Platform SDK for iOS Assistant to create an SAP Fiori for iOS app with offline capabilities. This not only includes offline OData, but also use an offline onboarding flow.
 
 ### Time to Complete
 **15 Min**
@@ -22,14 +22,14 @@ In this tutorial, you will create a Fiori for iOS application with offline capab
 
 [ACCORDION-BEGIN [Step 1: ](Run the SAP Cloud Platform SDK for iOS Assistant)]
 
-Double-click the **SAP Cloud Platform SDK for iOS Assistant** icon to start the application. If no applications have been generated previously, you will see the initial screen:
+Double-click the **SAP Cloud Platform SDK for iOS Assistant** icon to start the application. If no apps have been generated previously, you will see the initial screen:
 
 ![SDK Assistant](fiori-ios-scpms-offline-odata-01.png)
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create an Xcode Project)]
+[ACCORDION-BEGIN [Step 2: ](Create an Xcode project)]
 
 Click the **Plus** button on the top-right of the SDK Assistant. The first page of the Xcode Project generation wizard lets you define the Project Properties.
 
@@ -51,7 +51,7 @@ Click **Next** to advance to the **SAP Cloud Platform mobile service for develop
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](SAP Cloud Platform mobile service for development and operations Configuration details)]
+[ACCORDION-BEGIN [Step 3: ](Enter configuration details)]
 
 In the **SAP Cloud Platform mobile service for development and operations Configuration** page, select the **Create** tab button.
 
@@ -70,7 +70,7 @@ Click **Next** to advance to the **OData Services** step.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](OData Services)]
+[ACCORDION-BEGIN [Step 4: ](Define OData back end connection)]
 
 In the **OData Services** page, you can define the back end connection. Here you will add the OData endpoint for the `Northwind` OData service.
 
@@ -108,7 +108,7 @@ Click **Next** to advance to the **Optional Features** step.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Optional Features)]
+[ACCORDION-BEGIN [Step 5: ](Specify optional features)]
 
 In the **Optional Features** page, you have the option to generate a **Master-Detail Application**, enable **logging** and **log uploads**, enable **remote notifications**, use **Discovery Service** and whether to use **Online** or **Offline** OData.
 
@@ -123,7 +123,7 @@ Make sure the checkboxes **Generate Master-Detail Application**, **Enable Loggin
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Generating the Xcode project)]
+[ACCORDION-BEGIN [Step 6: ](Generate the Xcode project)]
 
 After you have clicked **Finish** in the previous step, the SDK Assistant now loads the OData service's metadata. This metadata describes the data model, and can be accessed via `<service URL>$metadata`. For your service, the metadata URL would be `http://services.odata.org/V2/OData/OData.svc/$metadata`
 Based on this metadata, the OData proxy classes will be generated for the Xcode project.
@@ -139,7 +139,7 @@ In addition, the configuration settings you have provided in the SDK Assistant a
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Examine the generated Xcode Project)]
+[ACCORDION-BEGIN [Step 7: ](Examine the generated Xcode project)]
 
 After the SDK Assistant has finished, **Xcode** will launch and open the just generated `OfflineDemo` project.
 
@@ -156,15 +156,15 @@ Folders `ViewControllers/Product`, `ViewControllers/Category` and `ViewControlle
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Examine the specific Offline code)]
+[ACCORDION-BEGIN [Step 8: ](Examine the specific offline code)]
 
-Since you have generated the application for use with Offline OData capabilities, lets examine the changes made by the assistant compared to an online application.
+Since you have generated the app for use with offline OData capabilities, lets examine the changes made by the assistant compared to an online app.
 
 First, open file `AppDelegate.swift`. The first thing you'll notice is the OData service `DemoService` implements `OfflineODataProvider`. In addition, a flag `isOfflineStoreOpened` is added which indicates whether the offline store is open or closed:
 
 ![Offline code](fiori-ios-scpms-offline-odata-16.png)
 
-If you scroll down a bit to the `applicationDidEnterBackground(_:)` and `applicationWillEnterForeground(_:)` methods, you will see they call methods to close and open the Offline store, respectively.
+If you scroll down a bit to the `applicationDidEnterBackground(_:)` and `applicationWillEnterForeground(_:)` methods, you will see they call methods to close and open the offline store, respectively.
 
 ![Offline code](fiori-ios-scpms-offline-odata-14.png)
 
@@ -176,7 +176,7 @@ This method is called via the on-boarding delegate in file `OfflineDemo/Onboardi
 
 ![Offline code](fiori-ios-scpms-offline-odata-12.png)
 
-Navigate back to `AppDelegate.swift` and go back to method `onboardingContextCreated(onboardingContext:onboarding:)`. If you look at the implementation, you see it calls another method `configureOData(urlSession:serviceRoot:onboarding:)` which does the actual initializing of the Offline OData provider, and creates the defining queries for the OData entities:
+Navigate back to `AppDelegate.swift` and go back to method `onboardingContextCreated(onboardingContext:onboarding:)`. If you look at the implementation, you see it calls another method `configureOData(urlSession:serviceRoot:onboarding:)` which does the actual initializing of the offline OData provider, and creates the defining queries for the OData entities:
 
 ![Offline code](fiori-ios-scpms-offline-odata-17.png)
 
@@ -185,9 +185,9 @@ Just below this method are the implementing methods `openOfflineStore(sync:)` an
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Build and run the generated application)]
+[ACCORDION-BEGIN [Step 9: ](Build and run the generated app)]
 
-Click the **Run** button to build and run the generated application:
+Click the **Run** button to build and run the generated app:
 
 ![Build and run](fiori-ios-scpms-offline-odata-18.png)
 
@@ -199,9 +199,9 @@ Press **Allow**. You now see the initial landing page:
 
 ![Build and run](fiori-ios-scpms-offline-odata-20.png)
 
-The application name is shown, with a little description. You have the option to show a demo version of the application (this should be implemented by hand, as this is not generated by the iOS Assistant) or run the actual, live application.
+The application name is shown, with a little description. You have the option to show a demo version of the app (this should be implemented by hand, as this is not generated by the iOS Assistant) or run the actual, live app.
 
-In this tutorial, you use the live application. Clicking the blue **Start** button to proceed.
+In this tutorial, you use the live app. Clicking the blue **Start** button to proceed.
 
 The **OAuth** login screen of **SAP Cloud Platform mobile service for development and operations** is shown. Enter your login credentials for the SAP Cloud Platform and press the **Log On** button:
 
@@ -223,7 +223,7 @@ Lastly you are presented the **Consent** detail page. Click **Allow** to proceed
 
 ![Build and run](fiori-ios-scpms-offline-odata-25.png)
 
-When you have finished the on-boarding steps, the application starts. You will briefly see a message indicating the app is now opening the offline store:
+When you have finished the on-boarding steps, the app starts. You will briefly see a message indicating the app is now opening the offline store:
 
 ![Build and run](fiori-ios-scpms-offline-odata-26.png)
 
@@ -234,7 +234,7 @@ Once finished, it will present an overview of the available **Collections** of t
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Examine the generated application)]
+[ACCORDION-BEGIN [Step 10: ](Examine the generated app)]
 
 If you click on the `Suppliers` collection, you navigate to a **Master** list with all available `Supplier` entities:
 
@@ -266,22 +266,22 @@ You should now have no network connection:
 
 ![Offline](fiori-ios-scpms-offline-odata-31.png)
 
-Click on the `Suppliers` item. Instead of fetching the data from the OData service, it now retrieves it from the downloaded Offline store:
+Click on the `Suppliers` item. Instead of fetching the data from the OData service, it now retrieves it from the downloaded offline store:
 
 ![Offline](fiori-ios-scpms-offline-odata-32.png)
 
-Clicking on an entry similarly doesn't retrieve the entity from the OData service, but gets it from the Offline store as well:
+Clicking on an entry similarly doesn't retrieve the entity from the OData service, but gets it from the offline store as well:
 
 ![Offline](fiori-ios-scpms-offline-odata-33.png)
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Enable app for Offline Onboarding)]
+[ACCORDION-BEGIN [Step 12: ](Enable app for offline onboarding)]
 
-In the previous step, you could only switch to offline mode **after** you had logged in. This is because the Onboarding flow still validates the server connection, as well as downloads the configuration from SAP Cloud Platform mobile service for development and operations.
+In the previous step, you could only switch to offline mode **after** you had logged in. This is because the onboarding flow still validates the server connection, as well as downloads the configuration from SAP Cloud Platform mobile service for development and operations.
 
-In order for the app to start truly offline, you need to make a few minor changes to the Onboarding flow.
+In order for the app to start truly offline, you need to make a few minor changes to the onboarding flow.
 
 Open file `OfflineDemo/Onboarding/OnboardingManager.swift` and locate method `configuredOAuth2AuthenticationStep()`.
 
@@ -359,7 +359,7 @@ The app is now fully offline enabled.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Examine Offline Requests)]
+[ACCORDION-BEGIN [Step 14: ](Examine offline requests)]
 
 Using SAP Cloud Platform mobile service for development and operations cockpit, you can examine the offline OData requests.
 
