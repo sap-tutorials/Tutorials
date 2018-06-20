@@ -2,15 +2,11 @@
 title: Create and run an ABAP application
 description: Create and run an ABAP application based on tables from the sample EPM data model.
 primary_tag: topic>abap-development
-tags: [ tutorial>beginner, topic>abap-development ]
+tags: [  tutorial>beginner, topic>abap-development ]
 ---
 
 ## Prerequisites  
 [Create an ABAP project in Eclipse](https://www.sap.com/developer/tutorials/abap-create-project.html)
-
-
-## Next Steps
-[Display database content and run SQL queries](https://www.sap.com/developer/tutorials/abap-display-data-queries.html)
 
 ## Details
 ### You will learn  
@@ -23,7 +19,7 @@ In this tutorial you will learn how to create and run an ABAP application based 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create New ABAP Program)]
-a. Create a global Data Dictionary ("DDIC") structure: In the toolbar, select the **New** icon, then choose **ABAP Program...**:
+In the toolbar, select the **New** icon, then choose **ABAP Program...**:
 
 ![Image depicting create new](abap03-1a.png)
 
@@ -100,18 +96,3 @@ Press **F8** to run your program. An embedded SAP GUI will open inside of an Ecl
 
 
 [ACCORDION-END]
-
-## Next Steps
-You have 2 options:
-a. Retrieve data from the database by:
-  - creating a Data Dictionary structure (from an SQL query)
-  - a global ABAP class
-  - and a data element:
-
-[Display database content and run SQL queries](https://www.sap.com/developer/tutorials/abap-display-data-queries.html)
-
-OR
-
-b. Retrieve data from the database by creating a CDS view:
-
-[Create a CDS View](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html)
