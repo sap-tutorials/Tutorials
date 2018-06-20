@@ -45,6 +45,8 @@
         "datasources",
         "DesignStudio",
         "DataStore",
+        "debuggable",
+        "Debuggable",
         "Destructure",
         "Destructuring",
         "Destructured",

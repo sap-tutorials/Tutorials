@@ -28,7 +28,6 @@ It also includes a section dedicated to debugging and tracing.
 ### Time to Complete
 **45 Min**.
 
-
 [ACCORDION-BEGIN [Info: ](SAP HANA R integration)]
 
 To process R code in the context of the SAP HANA database, the R code is embedded in SAP HANA SQL code in the form of a RLANG procedure.
@@ -278,7 +277,6 @@ As explained previously, we need to recompile R with `shlib` enabled in order to
 In this example we will be using a newer version than the one listed in the PAM.
 
 In the below script, `curl` is used to download the package, but if your machine is not connected to the Internet, you can download manually the `R` package from [https://cran.r-project.org/](https://cran.r-project.org/) and transfer it.
-
 
 ```shell
 cd ~

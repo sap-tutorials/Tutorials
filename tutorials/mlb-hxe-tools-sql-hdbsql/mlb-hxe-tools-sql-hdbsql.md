@@ -127,12 +127,6 @@ Based on the available HDBSQL options listed in the [SAP HANA HDBSQL Options](ht
 
 You can use the IP address, the host name or the fully qualified name as long as the server host is reachable using a ping command from the machine that will run your program.
 
-You can also specify one or more failover servers by adding additional hosts, as in the following example:
-
-```bash
-jdbc:sap://myServer:39015;failoverserver1:39015;failoverserver2:39015
-```
-
 [DONE]
 [ACCORDION-END]
 
