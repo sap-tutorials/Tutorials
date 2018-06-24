@@ -208,6 +208,7 @@
         "ServletUnit",
         "Shapefile",
         "Shapefiles",
+	    "SharePoint",
         "SQLScript",
         "SKUs",
         "SQLAlchemy",
