@@ -46,13 +46,13 @@ This tutorial refers to an existing openSUSE installation in a Virtual Machine u
 
 Since the creation of this tutorial, the license for the ASE database that comes with the SAP NetWeaver AS ABAP 7.50 SP02 has expired. Before you start the installation, it is therefore important that you exchange a file in the SAP NetWeaver installation folder.
 
-1.  Go to [SAP Sharepoint](https://sap.sharepoint.com/:u:/s/101566/EXkXzn0jDixDort1NuidArYBYwur1doCnDACqMQnfS4vmA?e=6wnZQk).
+1.  Open this shared folder on the SAP instance of [SharePoint](https://sap.sharepoint.com/:u:/s/101566/EXkXzn0jDixDort1NuidArYBYwur1doCnDACqMQnfS4vmA?e=6wnZQk).
 
-3.  Download the file `dbexe.tgz.aa`.
+2.  Download the file `dbexe.tgz.aa`.
 
-4.  In your file explorer, go to the location where you extracted the SAP NetWeaver installation files. Now navigate to the folder `\server\TAR\x86_64`.
+3.  In your file explorer, go to the location where you extracted the SAP NetWeaver installation files. Now navigate to the folder `\server\TAR\x86_64`.
 
-5.  Here you will find a file `dbexe.tgz.aa`. This file should be replaced with the file you just downloaded from SAP Document Center.
+4.  Here you will find a file `dbexe.tgz.aa`. This file should be replaced with the file you just downloaded from SAP Document Center.
 
 > **Result of Step 2:** You now have a SAP NetWeaver Demo installation with a licensed ASE database, ready to be installed.
 
