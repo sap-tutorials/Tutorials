@@ -79,7 +79,7 @@ Assuming you don't already have a SAP Cloud Platform trial account, you will see
 
 Once you have accepted the Terms and Conditions and registered, the SAP Cloud Platform Regions page will load.
 
-Click on the ***Neo Trial*** button at the top or on the ***Europe (Rot) - Trial*** tile to access your free ***Personal Trial Account***.
+Click on the ***Neo Trial*** tile to access your free personal trial account.
 
 ![SAP Cloud Platform cockpit](hcp-regions.png)
 
