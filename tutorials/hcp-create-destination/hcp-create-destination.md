@@ -28,7 +28,7 @@ Northwind comes in several versions.  The tutorials currently use either V2 (<ht
 
 Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
 
-![SAP Cloud Platform log in page](mob1-1_1.png)
+![SAP Cloud Platform log in page](scp-trial-logon.png)
 
 [DONE]
 [ACCORDION-END]
@@ -72,7 +72,7 @@ Field Name       | Value
 `WebIDESystem`   | `Northwind_Data`
 `WebIDEUsage`    | `odata_gen`
 
-![Completed SAP Cloud Platform destination](mob1-1_3.png)
+![Completed SAP Cloud Platform destination](northwind-destination-details.png)
 
 
 [DONE]
