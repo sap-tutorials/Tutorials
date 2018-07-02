@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
  - **Proficiency:** Beginner
 
 ## Next Steps
- - [Run example pipelines in SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-examples.html)
+ - [Navigate around SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-navigation.html)
 
 
 ## Details
@@ -42,15 +42,17 @@ docker run hello-world
 ```
 
 You see an output similar to the following.
-![picture_01](./datahub-docker-setup_01.png)  
+![picture_01](./datahub-docker-setup_01.png)
+
+>Make sure that you select the Linux container and not the Windows container during the Docker installation.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download SAP Data Hub, developer edition)]
-Download SAP Data Hub, developer edition from SAP Store and unpack the archive to your disk. You find it via the following link.
+Download SAP Data Hub, developer edition and unpack the archive to your disk. You find it via the following link.
 
 ```sh
-https://store.sap.com/sap/cp/ui/resources/store/html/SolutionDetails.html?pid=0000014517
+https://www.sap.com/developer/trials-downloads/additional-downloads/sap-data-hub-developer-edition-14517.html
 ```
 
 Carefully read the `README.html` as well as the license agreement prior to continuing with the tutorial.
@@ -67,7 +69,7 @@ ENV http_proxy=http://myproxy:8080
 ENV https_proxy=http://myproxy:8080
 ```
 
-Open a terminal window and navigate to the directory where you have unpacked the archive (that is the directory which includes the `Dockerfile`). Build the docker image for SAP Data Hub, developer edition. Replace the build-time variables `VORA_USERNAME` and `VORA_PASSWORD` with meaningful values **prior to executing the following command**.
+Open a terminal window and navigate to the directory where you have unpacked the archive (that is the directory which includes the `Dockerfile`). Build the docker image for SAP Data Hub, developer edition. Replace the values of build-time variables `VORA_USERNAME` and `VORA_PASSWORD` in the following command with meaningful values **prior to executing the following command**.
 
 ```sh
 docker build --build-arg VORA_USERNAME=vora --build-arg VORA_PASSWORD=SomeNicePassword19920706 --tag datahub .
@@ -145,4 +147,4 @@ docker logs datahub
 ---
 
 ## Next Steps
-[Run example pipelines in SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-examples.html)
+[Navigate around SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-navigation.html)

@@ -65,7 +65,7 @@ Add a **Kafka Producer** operator to the pipeline by drag & drop. Then connect t
 
 ![picture_02](./datahub-pipelines-broker_02.png)  
 
-Configure the **Kafka Producer** operator. You need to maintain the following properties:
+Right click on the **Kafka Producer** and go to "Open Configuration" to configure the operator properties . You need to maintain the following properties:
 
 | Property                       | Value                          |
 | ------------------------------ | ------------------------------ |
@@ -75,19 +75,19 @@ Configure the **Kafka Producer** operator. You need to maintain the following pr
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure Kafka Consumer)]
-Add a **Kafka Consumer** operator to the pipeline by drag & drop.
+Add a **`Kafka Consumer2`** operator to the pipeline by drag & drop.
 Add a **`ToString` Converter** operator to the pipeline by drag & drop.
-Connect the `message` port of the **Kafka Consumer** operator to the `inmessage` port of the **`ToString` Converter** operator.
+Connect the `message` port of the **`Kafka Consumer2`** operator to the `ininterface` port of the **`ToString` Converter** operator.
 Connect the `outstring` port of the **`ToString` Converter** operator to the `in1` port of the **Terminal** operator.
 
 ![picture_03](./datahub-pipelines-broker_03.png)  
 
-Configure the **Kafka Consumer** operator. You need to maintain the following properties:
+Right click on the **`Kafka Consumer2`** and go to "Open Configuration" to configure the operator properties . You need to maintain the following properties:
 
 | Property                       | Value                          |
 | ------------------------------ | ------------------------------ |
+| `brokers`                      | `kafka:9092`                   |
 | `topics`                       | `sensordata`                   |
-| `zookeepers`                   | `kafka:2181`                   |
 
 Afterwards press the **Save** button.
 
@@ -101,8 +101,6 @@ When the **Status** tab indicates that the pipeline is running, use the context 
 ![picture_04](./datahub-pipelines-broker_04.png)  
 
 In contrast to the previous tutorial, this time the generated sensor data is not sent from the **Data Generator** operator to the **Terminal** operator directly, but via Apache Kafka.
-
-**Attention:** If you do not see any sensor data in the terminal, then stop the pipeline and try once more.
 
 Stop the pipeline by pressing the **Stop** button.
 
