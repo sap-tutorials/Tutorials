@@ -31,7 +31,7 @@ The SAP Data Hub, trial edition is deployed on Google Cloud Platform. Therefore 
 - **GCS Bucket Details**
 - **GCS JSON Key**
 
-If you don't already have the JSON Key, refer the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub.pdf) guide, which contains step-by-step explanation to download the key and get the bucket details.
+If you don't already have the JSON Key, refer the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_SP04.pdf) guide, which contains step-by-step explanation to download the key and get the bucket details.
 
 [DONE]
 
