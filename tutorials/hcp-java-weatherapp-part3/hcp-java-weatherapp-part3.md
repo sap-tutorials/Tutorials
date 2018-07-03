@@ -145,7 +145,7 @@ Within the Users tab you can manage local users. Let's create a simple test user
 
 [ACCORDION-BEGIN [Step 6: ](Enter credentials)]
 
-Now, when you navigate to the `HelloWorldServlet` with the URL <http://localhost:8080/weatherapp/hello> you'll first be prompted to enter your user credentials before you are forwarded to the requested servlet. If the authentication was successful you should now see a personalized welcome message instead of the dull "Hello World!" we saw earlier.
+Now, when you navigate to the `HelloWorldServlet` with the URL `http://localhost:8080/weatherapp/hello` you'll first be prompted to enter your user credentials before you are forwarded to the requested servlet. If the authentication was successful you should now see a personalized welcome message instead of the dull "Hello World!" we saw earlier.
 
 ![Running the Java app with authentication enabled](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part3/e2e_03-6.png)
 

@@ -6,33 +6,38 @@ primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning, topic>sapui5 ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
+## Next Steps
+- [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://www.sap.com/developer/groups/cp-hana-aa-movielens.html)
+
 ## Details
-### You will learn  
+### You will learn
 
 -  How to add a SAPUI5 controller and interact with the SAP HANA XS OData service
 -  How to add a SAPUI5 view and interact with the SAP HANA XS OData service
-
-&nbsp;
 
 ### Time to Complete
 **10 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
-Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit</b></a> with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit Neo Trial</b></a> with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***.
 
-Click on your ***SAP Cloud Platform Account Name*** as highlighted on the below screenshot.
+Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial* by default) as highlighted on the below screenshot.
 
 ![SAP Cloud Platform Cockpit](01.png)
+
+You are now in your ***SAP Cloud Platform developer*** account!
+
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 On the left side bar, you can navigate in **Services**, then using the search box enter `Web IDE`.
 
 ![Web IDE](02.png)
 
-Click on the tile, then click on **Open SAP Web IDE**.
+Click on the tile, then click on **Go to Service**.
 
 ![Web IDE](03.png)
 
@@ -354,7 +359,7 @@ Click on the ![Save Button](0-save.png) button (or press CTRL+S)
 
 The view will contain:
 
-- a input field that will provide suggestion when the first characters are typed leveraging the OData services and its filtering capabilities
+- an input field that will provide suggestion when the first characters are typed leveraging the OData services and its filtering capabilities
   - the search will look into the movie identifier, title & the rating count
 - a series of tables to display:
   - the movie details including the rating count & the average note, plus some details about the last rating

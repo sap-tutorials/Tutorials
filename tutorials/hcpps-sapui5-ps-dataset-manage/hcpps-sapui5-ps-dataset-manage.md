@@ -1,39 +1,44 @@
 ---
-title: Manage your registered "Datasets"
-description: You will extend your application with additional "Dataset" SAP Predictive services
+title: Manage your registered Datasets
+description: You will extend your application with additional SAP Predictive services around Datasets
+auto_validation: true
 primary_tag: products>sap-predictive-service
 tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Implement the "Register Dataset" service](https://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
+  - **Tutorials:** [Implement the Register Dataset service](https://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-register.html)
 
 ## Next Steps
   - [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 ### You will learn
-  - How to use the other "Dataset" SAP Cloud Platform predictive service in your SAPUI5 application in order to:
+  - How to use the other ***Dataset*** SAP Predictive service in your SAPUI5 application in order to:
     - list registered datasets
     - view a dataset fields description
     - delete a dataset registration
     - update a dataset description
 
-> **Note:** our goal here is to mimic what was done using the REST Client around the "Dataset" services
+> **Note:** our goal here is to mimic what was done using the REST Client around the ***Dataset*** services
 
 ### Time to Complete
   **10 minutes**
 
-> **Note**: if you are running into some issue, you can check the [SAP Predictive services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
+> **Note**: if you are running into some issue, you can check the [SAP Predictive services Troubleshooting guide](https://www.sap.com/developer/tutorials/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
-Log into the [***SAP Cloud Platform Cockpit***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit Neo Trial</b></a> with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***.
 
-Click on your ***SAP Cloud Platform Account Name*** as highlighted on the below screenshot.
+Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial* by default) as highlighted on the below screenshot.
 
 ![SAP Cloud Platform Cockpit](01.png)
+
+You are now in your ***SAP Cloud Platform developer*** account!
+
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 On the left side bar, you can navigate in **Services**, then using the search box enter `Web IDE`.
 
@@ -51,13 +56,14 @@ This will open the ***SAP Web IDE*** where you have previously created the `pred
 
 ![HTML5 Applications](04.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new controller)]
 
-Create a new directory structure for **`webapp/controller/dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/controller/dataset`** either using the ***File*** menu or using the right click menu.
 
-Create a new file **`manage.controller.js`** in `webapp/controller/dataset` either using the "File" menu or using the right click menu.
+Create a new file **`manage.controller.js`** in `webapp/controller/dataset` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/controller/dataset/manage.controller.js` file and add the following code:
 
@@ -78,15 +84,16 @@ sap.ui.define([
 });
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new view)]
 
-Create a new directory structure for **`webapp/view/dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/view/dataset`** either using the ***File*** menu or using the right click menu.
 
-Create a new file **`manage.view.xml`** in `webapp/view/dataset` either using the "File" menu or using the right click menu.
+Create a new file **`manage.view.xml`** in `webapp/view/dataset` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/view/dataset/manage.view.xml` file and add the following code:
 
@@ -98,8 +105,9 @@ Open the `webapp/view/dataset/manage.view.xml` file and add the following code:
 </mvc:View>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Extend the default view)]
@@ -112,19 +120,20 @@ Inside the `<detailPages>` element, and uncomment the following element:
 <mvc:XMLView viewName="pspredictive.view.dataset.manage"/>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](List registered datasets)]
 
 The controller will contain a function where:
 
-  - we process the call to the "Dataset List" SAP Predictive services and return the list of registered dataset.
+  - it will process the call to the ***Dataset List*** SAP Predictive services and return the list of registered dataset.
 
 The view will contain:
 
-  - a button that will trigger the "Get Dataset List" service
+  - a button that will trigger the ***Get Dataset List*** service
   - a table with the list of registered datasets
 
 Open the `webapp/controller/dataset/manage.controller.js` file and add the following code right after the `onInit` function (don't forget to use a comma to separate them):
@@ -149,7 +158,8 @@ getDatasetList: function() {
     },
     url: "/ps/api/analytics/dataset",
     type: "GET",
-    async: false,
+    async: true,
+    timeout: 3000000,
     success: function(data) {
       try {
         //Save data set description data in the model
@@ -167,7 +177,7 @@ getDatasetList: function() {
 }
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Open the `webapp/view/dataset/manage.view.xml` file and add the following code inside the `mvc:View` element:
 
@@ -210,7 +220,7 @@ Open the `webapp/view/dataset/manage.view.xml` file and add the following code i
 </Panel>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Click on the **Run** icon ![Run Applications](0-run.png) or press `ALT+F5`.
 
@@ -219,13 +229,14 @@ On the left panel, you should see an item labeled `Dataset Services`, click on i
 Et voilà!
 ![Applications](05.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Get dataset fields description)]
 
 You will add to the controller a function where:
 
-  - we process the call to the "Dataset Description" SAP Predictive services and return the dataset detailed description.
+  - it will process the call to the "Dataset Description" SAP Predictive services and return the dataset detailed description.
   - this function will be triggered either on a click or row change event on the table added previously
 
 You will add to the view:
@@ -238,7 +249,6 @@ Open the `webapp/controller/dataset/manage.controller.js` file and add the follo
 getDatasetDescription: function(oControlEvent) {
 	// set the busy indicator to avoid multi clicks
 	var oBusyIndicator = new sap.m.BusyDialog();
-	oBusyIndicator.open();
 
 	// get the current view
 	var oView = this.getView();
@@ -258,7 +268,8 @@ getDatasetDescription: function(oControlEvent) {
 			},
 			url: "/ps/api/analytics/dataset/" + dataSetId,
 			type: "GET",
-			async: false,
+			async: true,
+			timeout: 3000000,
 			success: function(data) {
 				try {
 					//Save data set description data in the model
@@ -277,7 +288,7 @@ getDatasetDescription: function(oControlEvent) {
 }
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Open the `webapp/view/dataset/manage.view.xml` file and add the following code inside the `mvc:View` element after the previous code:
 
@@ -348,7 +359,7 @@ Open the `webapp/view/dataset/manage.view.xml` file and add the following code i
 </Panel>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Click on the **Run** icon ![Run Applications](0-run.png) or press `ALT+F5`.
 
@@ -359,13 +370,14 @@ Click on `Manage`, then on `Get Dataset List`, and finally select any of the reg
 Et voilà!
 ![Applications](06.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Delete a dataset registration)]
 
 You will add to the controller a function where:
 
-  - we process the call to the "Delete Dataset" SAP Predictive services.
+  - it will process the call to the "Delete Dataset" SAP Predictive services.
 
 You will add to the view:
 
@@ -387,7 +399,7 @@ deleteDataset: function(event) {
 
 	// get the model
 	var oModel = oView.getModel("dataset_manage");
-
+	var bindingProperty = event.getSource().data("bindingProperty");
 	// call the service and define call back methods
 	$.ajax({
 		headers: {
@@ -396,11 +408,12 @@ deleteDataset: function(event) {
 		},
 		url: "/ps/api/analytics/dataset/" + event.getSource().data("datasetId"),
 		type: "DELETE",
-		async: false,
+		async: true,
+		timeout: 3000000,
 		success: function() {
 			try {
 				// remove the previous data
-				oModel.setProperty(event.getSource().data("bindingProperty"), undefined);
+				oModel.setProperty(bindingProperty, undefined);
 				// refresh the dataset list
 				oController.getDatasetList();
 			} catch (err) {
@@ -416,7 +429,7 @@ deleteDataset: function(event) {
 }
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Open the `webapp/view/dataset/manage.view.xml` file and add the following code inside the `mvc:View` element after the previous code:
 
@@ -428,7 +441,7 @@ Open the `webapp/view/dataset/manage.view.xml` file and add the following code i
 </Toolbar>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Click on the **Run** icon ![Run Applications](0-run.png) or press `ALT+F5`.
 
@@ -441,13 +454,14 @@ You can now click on `Delete Registration`, the registered dataset list should b
 Et voilà!
 ![Applications](07.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Update the dataset variable description)]
 
 You will add to the controller a function where:
 
-  - we process the call to the "Update Dataset Variables" SAP Predictive services.
+  - it will process the call to the "Update Dataset Variables" SAP Predictive services.
 
 You will add to the view:
 
@@ -489,7 +503,8 @@ updateDataset: function(event) {
 		type: "POST",
 		data: JSON.stringify(param),
 		dataType: "json",
-		async: false,
+		async: true,
+		timeout: 3000000,
 		success: function() {
 			oBusyIndicator.close();
 		},
@@ -501,7 +516,7 @@ updateDataset: function(event) {
 }
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Open the `webapp/view/dataset/manage.view.xml` file and replace the following element which replace the text control for `value` attribute by an action select control:
 
@@ -532,7 +547,7 @@ Then, add the `Update Description` in the toolbar along with the `Delete Registr
 </Toolbar>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
 Click on the **Run** icon ![Run Applications](0-run.png) or press `ALT+F5`.
 
@@ -545,6 +560,9 @@ You can now click on `Update Description`. You can switch to another dataset and
 Et voilà!
 ![Applications](08.png)
 
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Solution: ](Created and modified files)]
@@ -561,6 +579,7 @@ However, you won't be able to clone the repository and directly run the code fro
 
 Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps

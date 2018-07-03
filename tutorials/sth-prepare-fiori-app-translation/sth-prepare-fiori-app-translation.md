@@ -1,6 +1,6 @@
 ---
-title: Prepare sample Fiori app for translation
-description: Prepare an app based on a sample Fiori reference app and prepare it for translation with SAP Translation Hub.
+title: Prepare an SAP Fiori app for translation
+description: Prepare an app based on an SAP Fiori reference app and prepare it for translation with SAP Translation Hub.
 primary_tag: products>sap-translation-hub
 tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, topic>sapui5 ]
 ---
@@ -10,11 +10,11 @@ tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-pla
  - **Tutorials:** [Enable the SAP Translation Hub service](https://www.sap.com/developer/tutorials/sth-enable.html)
 
 ## Next Steps
-- [Deploy a sample Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)
+- [Deploy an SAP Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)
 
 ## Details
 ### You will learn  
-You'll learn how to prepare a Fiori reference app so that you can translate it using SAP Translation Hub.
+You'll learn how to prepare an SAP Fiori reference app so that you can translate it using SAP Translation Hub.
 
 ### Time to Complete
 **10 Min**.
@@ -94,7 +94,7 @@ At the start of the new line, paste the following code:
 ```
 "translation": {
     "translationDomain": "02",
-    "supportedLanguages": "da,nl,fi,fr,de",
+    "supportedLanguages": "da,nl,en,fi,fr,de",
     "defaultLanguage": "en",
     "defaultI18NPropertyFile": "i18n.properties",
     "resourceModelName": "i18n"
@@ -143,11 +143,11 @@ Once you've done that, choose **OK**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Open the app in the Fiori launchpad)]
+[ACCORDION-BEGIN [Step 12: ](Open the app in the SAP Fiori launchpad)]
 
-Now you want to see what the application looks like by accessing it from a Fiori launchpad. To do this, choose the green button shown below.
+Now you want to see what the application looks like by accessing it from an SAP Fiori launchpad. To do this, choose the green button shown below.
 
-![Open with Fiori Launchpad](sth-prep-run-Fiori-LP.png)
+![Open with SAP Fiori Launchpad](sth-prep-run-Fiori-LP.png)
 > Depending on your browser settings, you might have to disable the pop-up blocker to proceed.
 
 Choose the **Approve Purchase Orders** tile.
@@ -156,10 +156,10 @@ Choose the **Approve Purchase Orders** tile.
 
 To make things look more realistic, the app uses mock data.
 
-![Fiori app with mock data](sth-prep-mock-data.png)
+![SAP Fiori app with mock data](sth-prep-mock-data.png)
 
 [ACCORDION-END]
 
 
 ## Next Steps
-- [Deploy a sample Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)
+- [Deploy an SAP Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)

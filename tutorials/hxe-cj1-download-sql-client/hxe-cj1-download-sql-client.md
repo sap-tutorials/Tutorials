@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana\,-expre
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAP HANA, Express edition, CodeJam ](https://www.sap.com/developer/how-tos/2017/02/codejam-gettingstarted-hxe.html)
+ - **Tutorials:** [SAP HANA, Express edition, CodeJam ](https://www.sap.com/developer/tutorials/codejam-gettingstarted-hxe.html)
  - JDBC client: You need to have downloaded the clients from the HXE Download Manager. Go to the [registration site](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html) and get the download manager for free.
 
 

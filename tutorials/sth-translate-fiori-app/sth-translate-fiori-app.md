@@ -1,13 +1,13 @@
 ---
-title: Translate a sample Fiori app
-description: Use SAP Translation Hub to translate your Fiori app.
+title: Translate an SAP Fiori app
+description: Use SAP Translation Hub to translate your SAP Fiori app.
 primary_tag: products>sap-translation-hub
 tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
-  - **Tutorials:** [Deploy a sample Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)
+  - **Tutorials:** [Deploy an SAP Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)
 
 ## Next Steps
 - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, products>sap-translation-hub, products>sap-cloud-pla
 
 ## Details
 ### You will learn  
-You'll learn how to translate a Fiori app using SAP Translation Hub.
+You'll learn how to translate an SAP Fiori app using SAP Translation Hub.
 
 ### Time to Complete
 **10 Min**.
@@ -48,7 +48,7 @@ In the service description for SAP Translation Hub, choose **Go to UI for Transl
 
 First, you'll need to create a translation project. Choose **+** and then **Git Project**.  
 
-![Create git project](sth-translate-fiori-app-creategitproject.png)
+![Create Git project](sth-translate-fiori-app-creategitproject.png)
 
 
 [ACCORDION-END]
@@ -67,7 +67,7 @@ Target Languages   | Enter the target languages that you specified in your proje
 To see a quality index for translations provided by machine translation (not all languages are supported - see on-screen help for details), select **Show Quality Index for MT**.
 Leave all other fields and selection options as they are and choose **Save**.
 
-![Enter git translation project details](sth-translate-fiori-app-project-details.png)
+![Enter Git translation project details](sth-translate-fiori-app-project-details.png)
 
 
 [ACCORDION-END]
@@ -122,7 +122,7 @@ Enter your Git password and choose **Submit**.
 
 To see the translations in SAP Web IDE, you need to pull the translations from the Git repository.
 
-In SAP Web IDE (see where you left off in [Deploy a sample Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)), select the root folder (`sample.ApprovePurchaseOrders`) of your project.
+In SAP Web IDE (see where you left off in [Deploy an SAP Fiori app to SAP Cloud Platform](https://www.sap.com/developer/tutorials/sth-deploy-fiori-app.html)), select the root folder (`sample.ApprovePurchaseOrders`) of your project.
 
 Open the Git pane by choosing the icon under the magnifying glass at the right of the screen. Confirm that `sample.ApprovePurchaseOrders` appears under **Repository** and then choose **Pull**.
 
@@ -143,7 +143,7 @@ The `i18n` folder in your project now contains properties files for the target l
 
 [ACCORDION-BEGIN [Step 11: ](Run the app in additional languages)]
 
-As a final step, you can view the app in different languages. To open the Fiori launchpad, choose the green button shown below:
+As a final step, you can view the app in different languages. To open the SAP Fiori launchpad, choose the green button shown below:
 > Depending on your browser settings, you might have to disable the pop-up blocker to proceed.
 
 ![Run demo app](sth-translate-fiori-app-run-demo.png)

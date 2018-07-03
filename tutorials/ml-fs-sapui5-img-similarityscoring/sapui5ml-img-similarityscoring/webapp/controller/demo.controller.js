@@ -1,13 +1,13 @@
 /* global JSZip:true */
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/m/MessageToast"
-], function(Controller, MessageToast) {
+	"sap/m/MessageBox"
+], function(Controller, MessageBox) {
 	"use strict";
 
 	return Controller.extend("sapui5ml.controller.demo", {
 		fileTypeMissmatch: function(oControlEvent) {
-			MessageToast.show("Wrong file type!");
+			MessageBox.show("Wrong file type!");
 		},
 
 		onPressScoreSimilarity: function(oControlEvent) {
@@ -26,7 +26,7 @@ sap.ui.define([
 			// create the files
 			var result = oView.getModel("demo").getProperty("/result-featureextraction");
 			for (var i = 0; i < result.length; i++) {
-				zip.file(result[i].name, "[" + result[i].feature_vector + "]");
+				zip.file(result[i].name + ".json", JSON.stringify(result[i].feature_vector));
 				result[i].result = [];
 			}
 
@@ -36,10 +36,11 @@ sap.ui.define([
 			var mode = oControlEvent.getSource().data("mode");
 			var options = "{\"numSimilarVectors\" : " + (result.length - 1) + "}";
 			var processResult = function(oController, data, file, fileName) {
-				for (var ii = 0; ii < data.similarityScoring.length; ii++) {
+				for (var ii = 0; ii < data.predictions.length; ii++) {
 					for (var jj = 0; jj < result.length; jj++) {
-						if (data.similarityScoring[ii].id === result[jj].name) {
-							result[jj].result = data.similarityScoring[ii].similarVectors;
+						if (data.predictions[ii].id === result[jj].name + ".json") {
+							result[jj].result = data.predictions[ii].similarVectors;
+							break;
 						}
 					}
 				}
@@ -87,13 +88,13 @@ sap.ui.define([
 					JSZip.loadAsync(file).then(function(zip) {
 						Object.keys(zip.files).forEach(function(zipEntry) {
 							zip.files[zipEntry].async("blob").then(function(zipEntryFile) {
-								for (var i = 0; i < data.feature_vector_list.length; i++) {
-									if (zipEntry === data.feature_vector_list[i].name) {
+								for (var i = 0; i < data.predictions.length; i++) {
+									if (zipEntry === data.predictions[i].name) {
 										// Set the URL and file name
-										data.feature_vector_list[i].fileURL = URL.createObjectURL(zipEntryFile);
-										data.feature_vector_list[i].name = fileName + " --- " + data.feature_vector_list[i].name;
+										data.predictions[i].fileURL = URL.createObjectURL(zipEntryFile);
+										data.predictions[i].name = fileName + " --- " + data.predictions[i].name;
 										// push the result
-										result.push(data.feature_vector_list[i]);
+										result.push(data.predictions[i]);
 										// set the result back
 										oController.getView().getModel("demo").setProperty("/result-featureextraction", result);
 										// display the result table
@@ -104,10 +105,10 @@ sap.ui.define([
 						});
 					});
 				} else {
-					// Set the URL 
-					data.feature_vector_list[0].fileURL = URL.createObjectURL(file);
+					// Set the URL
+					data.predictions[0].fileURL = URL.createObjectURL(file);
 					// push the result
-					result.push(data.feature_vector_list[0]);
+					result.push(data.predictions[0]);
 					// set the result back
 					oController.getView().getModel("demo").setProperty("/result-featureextraction", result);
 					// display the result table
@@ -154,8 +155,9 @@ sap.ui.define([
 				}
 			};
 			var ajaxError = function(jqXHR, status, message) {
-				oController.getView().getModel("demo").setProperty("/resultVisible-" + service, false);
-				MessageToast.show("Error for file : " + formData.values().next().value.name + " \n status: " + status + "\n message: " + message);
+				oController.getView().getModel("demo").setProperty("/resultVisible-" + service, null);
+				MessageBox.show("Error for file : " + formData.values().next().value.name + " \n status: " + status + "\n message: " + JSON.parse(jqXHR.responseText).error_description);
+				oController.oBusyIndicator.close();
 			};
 			var xhrReadyStateChange = function() {
 				if (this.readyState === this.DONE) {
@@ -167,9 +169,9 @@ sap.ui.define([
 						fnPrecessResult(oController, data, file, fileName);
 						// fnPrecessResult(oController, data, formData.values().next().value.name);
 					} else {
-						oController.getView().getModel("demo").setProperty("/resultVisible-" + service, false);
-						MessageToast.show("Error for file : " + formData.values().next().value.name + " \n status: " + this.status + "\n message: " +
-							this.response);
+						oController.getView().getModel("demo").setProperty("/resultVisible-" + service, null);
+						MessageBox.show("Error for file : " + formData.values().next().value.name + " \n status: " + this.status + "\n message: " + JSON.parse(this.responseText).error_description);
+
 					}
 					// close the busy indicator if all request have completed
 					oController.requestCount--;
@@ -191,7 +193,7 @@ sap.ui.define([
 					success: ajaxSuccess,
 					error: ajaxError,
 					contentType: false,
-					async: false,
+					async: true,
 					data: formData,
 					cache: false,
 					processData: false

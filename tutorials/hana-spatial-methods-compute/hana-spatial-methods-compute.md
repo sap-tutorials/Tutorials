@@ -7,6 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, produc
 
 ## Prerequisites  
  - **Proficiency:** Beginner
+ - **Tutorial:** [Access methods](https://www.sap.com/developer/tutorials/hana-spatial-methods-access.html)
+
+## Next Steps
+ - [Transformation methods](https://www.sap.com/developer/tutorials/hana-spatial-methods-transform.html)
 
 ## Details
 ### You will learn  
@@ -171,3 +175,6 @@ order by 3 asc;
 
 
 ---
+
+## Next Steps
+ - [Transformation methods](https://www.sap.com/developer/tutorials/hana-spatial-methods-transform.html)

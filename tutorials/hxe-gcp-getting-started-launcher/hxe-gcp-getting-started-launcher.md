@@ -12,12 +12,12 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
 
 ## Next Steps
  - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
- - **Drivers and connectors**: Connect to your SAP HANA, express edition system database instance [using the plug in for Eclipse](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html) or connect to a [tenant database using HANA Studio](https://www.sap.com/developer/how-tos/2017/06/hxe-gcp-eclipse-tenant-connect.html)
+ - **Drivers and connectors**: Connect to your SAP HANA, express edition system database instance [using the plug in for Eclipse](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) or connect to a [tenant database using HANA Studio](https://www.sap.com/developer/tutorials/hxe-gcp-eclipse-tenant-connect.html)
  - **Additional languages?**: Build applications using different drivers and languages [such as Node.js, Python ](https://www.sap.com/developer/groups/hxe-tiny-world.html)
  - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
 
 ## Disclaimer
-The image currently only includes the SAP HANA database engine. The Extended Application Services, advanced model (XS Advanced) is not installed in this image. Check the following tutorial to setup the full image that includes XS Advanced: [Launch SAP HANA, express edition on GCP including XS Advanced applications](https://www.sap.com/developer/tutorials/hxe-gcp-getting-started-launcher-xsa.html)
+The image only includes the SAP HANA database engine. Extended Application Services, advanced model (XS Advanced) is not installed in this image. Check the following tutorial to setup the full image that includes XS Advanced: [Launch SAP HANA, express edition on GCP including XS Advanced applications](https://www.sap.com/developer/tutorials/hxe-gcp-getting-started-launcher-xsa.html)
 
 ## Details
 ### You will learn  
@@ -59,7 +59,7 @@ After reviewing all configuration options, scroll down and click **Deploy**. Thi
 
 ![Launch Compute Engine](deploy.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Log in to the instance and change the administration passwords)]
@@ -99,20 +99,20 @@ Once configuration is finished, you will see a success message:
 
 ![Success message](6.png)
 
-You should also change your default Operating System password for user `hxeadm`. **Open a new SSH console** and use the following command as your GCP user for this:
+Check the status of your database using command `HDB info`
 
-```
-sudo passwd hxeadm
+![Success message](HDBinfo.png)
 
-```
+You can optionally connect to the database using  `hdbsql -i 90 -d SYSTEMDB -u SYSTEM`
 
-![Change password](change pass.png)
+When prompted for a password, use the master database password.
 
->Note: The default `hxeadm` password is `HXEHana1`
+![Success message](hdbsql.png)
 
+Use `quit` to return to the command prompt.
 
+[DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](Take note of your external IP and connect)]
 
@@ -131,6 +131,22 @@ Alternatively, click on the `Learn more` and follow the steps to create a static
 
 Your SAP HANA, express edition instance is now up and running. You can continue to [explore tutorials to get you started](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html) or perform the optional steps below.
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3 (Recommended optional): ](Change the password for the operating system user)]
+You should also change your default Operating System password for user `hxeadm`. **Open a new SSH console** and use the following command as your GCP user for this:
+
+```
+sudo passwd hxeadm
+
+```
+
+![Change password](change pass.png)
+
+>Note: The default `hxeadm` password is `HXEHana1`
+
+[DONE]
 [ACCORDION-END]
 
 
@@ -162,7 +178,7 @@ Add the IP address followed by the name of the host, which will be `hxehost`:
 
 > Note: If Notepad asks you to create a new file you do not have enough permissions to save the file. Creating a new file will not alter the configuration as intended.
 
-
+[DONE]
 [ACCORDION-END]
 
 
@@ -187,14 +203,15 @@ CREATE USER WORKSHOP_01 PASSWORD <password> NO FORCE_FIRST_PASSWORD_CHANGE ;
 CALL GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::EditorDeveloper','WORKSHOP_01');
 CALL GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::CatalogDeveloper','WORKSHOP_01');
 ```
->Note: You may need to add additional roles or permissions depending on your development needs
+>Note: You may need to add additional roles or permissions depending on your goals
 
 ![Launcher](14.png)
 
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps
+- **Drivers and connectors for Python, Node.js, .NET, Java and others**: Sample applications using different drivers and languages [such as Node.js, Python ](https://www.sap.com/developer/groups/hxe-tiny-world.html)
+- **Access from HANA Studio**: Connect to your SAP HANA, express edition system database instance [using the plug in for Eclipse](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) or connect to a [tenant database using HANA Studio](https://www.sap.com/developer/tutorials/hxe-gcp-eclipse-tenant-connect.html)
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
-- **Drivers and connectors**: Connect to your SAP HANA, express edition system database instance [using the plug in for Eclipse](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html) or connect to a [tenant database using HANA Studio](https://www.sap.com/developer/how-tos/2017/06/hxe-gcp-eclipse-tenant-connect.html)
-- **Additional languages?**: Build applications using different drivers and languages [such as Node.js, Python ](https://www.sap.com/developer/groups/hxe-tiny-world.html)
 - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)

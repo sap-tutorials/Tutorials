@@ -6,7 +6,9 @@ tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
 ---
 
 ## Prerequisites  
-Access to a SAP Web IDE account is expected as a prerequisite. **`Make ABAP custom business object service's consumable on SAP Cloud Platform via OAuth`** as tutorial represents a further prerequisite.
+- **Tutorials:** [`Make ABAP custom business object service's consumable on SAP Cloud Platform via OAuth`](https://www.sap.com/developer/tutorials/abap-custom-ui-service-consumption.html)
+- **Authorizations:** Your user needs a business role with Unrestricted Write Access and business catalog Extensibility - Fiori App Development (ID: `SAP_CORE_BC_EXT_UI`). Access to a SAP Web IDE account is expected as a prerequisite.
+
 
 ## Details
 ### You will learn  
@@ -127,7 +129,7 @@ Select your project **`Bonusplan`** and deploy this to S/4HANA system via contex
 [ACCORDION-BEGIN [Step 13: ](Set options for deployment as new application)]
 A wizard opens. Set the destination to your S/4HANA system. Ensure that the UI is deployed as a new application. Click **Next**.
 
-![Set options for deployment as new application](update.png)
+![Set options for deployment as new application](update3.png)
 
 [ACCORDION-END]
 

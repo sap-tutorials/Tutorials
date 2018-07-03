@@ -37,38 +37,40 @@
 						</items>
 					</Table>
 					<VBox width="100%" direction="Column" alignItems="Center">
-						<Carousel pages="{demo>/result}" width="100%" visible="{= typeof ${demo>/resultVisible} !== 'undefined'}">
+						<Carousel pages="{demo>/result}" width="100%" visible="{= ${demo>/resultVisible} === true}">
 							<pages>
 								<VBox width="100%" direction="Column" alignItems="Center">
-									<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
-									<table:Table rows="{demo>topics}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5">
-										<table:columns>
-											<table:Column sortProperty="rank" filterProperty="rank">
-												<Label text="Topic id"/>
-												<table:template>
-													<Text text="{demo>id}"/>
-												</table:template>
-											</table:Column>
-											<table:Column sortProperty="rank" filterProperty="rank">
-												<Label text="Rank"/>
-												<table:template>
-													<Text text="{demo>rank}"/>
-												</table:template>
-											</table:Column>
-											<table:Column sortProperty="score" filterProperty="score">
-												<Label text="Score"/>
-												<table:template>
-													<Text text="{demo>score}"/>
-												</table:template>
-											</table:Column>
-											<table:Column>
-												<Label text="Keywords"/>
-												<table:template>
-													<Text text="{demo>keywords}"/>
-												</table:template>
-											</table:Column>
-										</table:columns>
-									</table:Table>
+									<ScrollContainer height="100%" width="100%" horizontal="true" vertical="true" focusable="true">
+										<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
+										<table:Table rows="{demo>topics}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5">
+											<table:columns>
+												<table:Column sortProperty="rank" filterProperty="rank">
+													<Label text="Topic id"/>
+													<table:template>
+														<Text text="{demo>id}"/>
+													</table:template>
+												</table:Column>
+												<table:Column sortProperty="rank" filterProperty="rank">
+													<Label text="Rank"/>
+													<table:template>
+														<Text text="{demo>rank}"/>
+													</table:template>
+												</table:Column>
+												<table:Column sortProperty="score" filterProperty="score">
+													<Label text="Score"/>
+													<table:template>
+														<Text text="{demo>score}"/>
+													</table:template>
+												</table:Column>
+												<table:Column>
+													<Label text="Keywords"/>
+													<table:template>
+														<Text text="{demo>keywords}"/>
+													</table:template>
+												</table:Column>
+											</table:columns>
+										</table:Table>
+									</ScrollContainer>
 								</VBox>
 							</pages>
 						</Carousel>

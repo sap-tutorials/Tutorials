@@ -19,7 +19,7 @@ In this tutorial, you will set up your SAP Cloud Platform account so you can use
 > The Mendix Desktop Modeler, for building your application, is available for Windows platforms only.
 
 ### You will learn  
-- How to set up environment to use SAP Cloud Platform Rapid Application Development.
+- How to set up your environment to use SAP Cloud Platform Rapid Application Development.
 - How to open SAP Cloud Platform Rapid Application Development.
 
 ### Time to Complete
@@ -38,8 +38,8 @@ Go to [https://account.hana.ondemand.com/cockpit](https://account.hana.ondemand.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Start Cloud Foundry trial)]
-If you do not already have a Cloud Foundry environment, go to **Home** | **Start Cloud Foundry Trial**.
+[ACCORDION-BEGIN [Step 2: ](Cloud Foundry trial)]
+If you do not already have a Cloud Foundry environment, go to **Home** | **Cloud Foundry Trial**.
 
 ![Start Cloud Foundry](mendix-onboarding2.png)
 
@@ -60,7 +60,7 @@ For more information about creating a Cloud Foundry environment, see [Get a Tria
 
 
 [ACCORDION-BEGIN [Step 3: ](Open the Mendix portal)]
-Go back to your Neo account. In the trial landscape, choose **Home** | **Go to Neo Trial**.
+Go back to your Neo account. In the trial landscape, choose **Home** | **Neo Trial**.
 
 ![Back to Neo](mendix-onboarding5.png)
 

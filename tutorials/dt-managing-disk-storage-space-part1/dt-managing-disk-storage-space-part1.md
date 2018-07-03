@@ -84,7 +84,7 @@ Once you have filled in the required information, you can click the "**Create**"
 
 > Note: You can also add a file using HANA Studio (through the System DB) by running a SQL command and changing parameters as required:
 ``` sql
-ALTER TABLE EXTENDED STORAGE ALTER DBSPACE ES_USER ADD FILE "ES_USER_FILE1" '<SID>ESDB_usr_1.es' SIZE 100 MB RESERVE 25 MB;
+ALTER EXTENDED STORAGE ALTER DBSPACE ES_USER ADD FILE "ES_USER_FILE1" '<SID>ESDB_usr_1.es' SIZE 100 MB RESERVE 25 MB;
 ```
 
 [ACCORDION-END]

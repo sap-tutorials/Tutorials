@@ -1,6 +1,7 @@
 ---
 title: Import a series of predictive demo dataset
 description: Import a demo data to be used with the SAP Predictive services
+auto_validation: true
 primary_tag: products>sap-predictive-service
 tags: [ tutorial>beginner, topic>machine-learning, products>sap-predictive-service, products>sap-hana, products>sap-cloud-platform ]
 ---
@@ -32,11 +33,11 @@ Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob
 
 During this tutorial series, you will be able to address multiple services using different datasets.
 
-We could have used the HANA Studio import feature, but this would assume that you have it installed.  
+You could have used the HANA Studio import feature, but this would assume that you have it installed.
 
-Due to restrictions related to the resources, format and size that can be made available on the tutorial platform, it was required to split some of the data into several chunks.  
+Due to restrictions related to the resources, format and size that can be made available on the tutorial platform, it was required to split some of the data into several chunks.
 
-But first we need to create the tables.
+But first you need to create the tables.
 
 Open the ***SAP HANA Web-based Development Workbench*** on your trial HANA instance connected as **`PSTRIAL`**, click on **Catalog**.
 
@@ -58,6 +59,7 @@ A **`PSDEMO`** schema should appear in the list.
 
 ![Catalog](03.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Import the dataset)]
@@ -84,7 +86,7 @@ Open the ***SAP HANA Web-based Development Workbench*** on your trial HANA insta
 
 Click on the **Open SQL Console** ![open](0-opensqlconsole.png) icon or press CTRL+ALT+C.
 
-![SAP HANA Web-based Development Workbench](02.png?)
+![SAP HANA Web-based Development Workbench](02.png)
 
 Download the dataset files for the services you to try out.
 
@@ -94,10 +96,32 @@ You can alternatively open the file using the ![open](0-opensqlfile.png) icon in
 
 Click on the **Run** ![open](0-run.png) button or press F8.
 
-> **Note**: Each files may take a few seconds to process (up to a minute each sometime), so if Google Chrome tells you that your page is "unresponsive", just ask him to wait.
+> **Note**: Each files may take a few seconds to process (up to a minute each sometime), so if Google Chrome tells you that your page is ***unresponsive***, just ask him to wait.
 
 ![Console](04.png)
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Verify the imported dataset)]
+
+You can now verify that the datasets where properly imported.
+
+Click on the ![SQL Console](0-opensqlconsole.png) button in the top menu bar, and paste the following SQL code:
+
+```sql
+SELECT 'Census' as TABLE, COUNT(1) FROM PSDEMO."Census"
+UNION
+SELECT 'CashFlow' as TABLE, COUNT(1) FROM PSDEMO."CashFlow"
+UNION
+SELECT 'Transactions' as TABLE, COUNT(1) FROM PSDEMO."Transactions"
+```
+
+Click on the ![run](0-run.png) **Run** button or press **F8**.
+
+Provide an answer to the question below then click on **Validate**
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 ## Next Steps

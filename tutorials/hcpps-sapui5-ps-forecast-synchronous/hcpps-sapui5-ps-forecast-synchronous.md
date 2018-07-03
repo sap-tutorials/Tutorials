@@ -1,38 +1,44 @@
 ---
-title: Implement the "Forecast" service synchronous mode
-description: You will extend your application with the "Forecast" service using the synchronous mode
+title: Implement the Forecast service synchronous mode
+description: You will extend your application with the Forecast service using the synchronous mode
+auto_validation: true
 primary_tag: products>sap-predictive-service
 tags: [ tutorial>intermediate, topic>machine-learning, products>sap-predictive-service, products>sap-cloud-platform, topic>sapui5 ]
 ---
 
 ## Prerequisites
   - **Proficiency:** Intermediate
-  - **Tutorials:** [Manage registered predictive "datasets"](https://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
+  - **Tutorials:** [Manage registered predictive datasets](https://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html)
 
 ## Next Steps
   - [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
 
 ## Details
 ### You will learn
-  - How to add a SAPUI5 controller to interact with the "Forecast" SAP Cloud Platform predictive service in your SAPUI5 application
-  - How to add a SAPUI5 view to display the output of the "Forecast" SAP Cloud Platform predictive service call
+  - How to add a SAPUI5 controller to interact with the Forecast SAP Predictive service in your SAPUI5 application
+  - How to add a SAPUI5 view to display the output of the Forecast SAP Predictive service call
   - How to extend the default view and the newly created view
   - How to create reusable fragments and function libraries
 
-> **Note:** our goal here is to mimic what was done using the REST Client around the "Forecast" services
+> **Note:** our goal here is to mimic what was done using the REST Client around the Forecast services
 
 ### Time to Complete
   **10 minutes**
 
-> **Note**: if you are running into some issue, you can check the [SAP Predictive services Troubleshooting guide](https://www.sap.com/developer/how-tos/2017/08/hcpps-troubleshoot.html) to diagnose the most common ones.
+> **Note**: if you are running into some issue, you can check the [SAP Predictive services Troubleshooting guide](https://www.sap.com/developer/tutorials/hcpps-troubleshoot.html) to diagnose the most common ones.
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
-Log into the [***SAP Cloud Platform Cockpit***](https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit Neo Trial</b></a> with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***.
 
-Click on your ***SAP Cloud Platform Account Name*** as highlighted on the below screenshot.
+Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial* by default) as highlighted on the below screenshot.
 
 ![SAP Cloud Platform Cockpit](01.png)
+
+You are now in your ***SAP Cloud Platform developer*** account!
+
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+
 
 On the left side bar, you can navigate in **Services**, then using the search box enter `Web IDE`.
 
@@ -50,11 +56,12 @@ This will open the ***SAP Web IDE*** where you have previously created the `pred
 
 ![HTML5 Applications](04.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Registered dataset list fragment)]
 
-The fragment will reuse some of the code that was used in the [Manage your registered "Datasets"](https://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html) tutorial.
+The fragment will reuse some of the code that was used in the [Manage your registered Datasets](https://www.sap.com/developer/tutorials/hcpps-sapui5-ps-dataset-manage.html) tutorial.
 
 The fragment will contain:
 
@@ -62,9 +69,9 @@ The fragment will contain:
 
 For more details on fragment, please refer to the [XML Templating documentation](https://sapui5.hana.ondemand.com/#docs/guide/5ee619fc1370463ea674ee04b65ed83b.html).
 
-Create a new directory structure for **`webapp/fragment/dataset`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/fragment/dataset`** either using the ***File*** menu or using the right click menu.
 
-Create a new file **`DatasetList.fragment.xml`** in `webapp/fragment/dataset` either using the "File" menu or using the right click menu.
+Create a new file **`DatasetList.fragment.xml`** in `webapp/fragment/dataset` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/fragment/dataset/DatasetList.fragment.xml` file and add the following code:
 
@@ -102,17 +109,18 @@ Open the `webapp/fragment/dataset/DatasetList.fragment.xml` file and add the fol
 </core:FragmentDefinition>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Registered dataset header description)]
+[ACCORDION-BEGIN [Step 3: ](Registered dataset header description fragment)]
 
 The fragment will contain:
 
-  - a form displaying the dataset "header" description (ID, name number of rows & columns)
+  - a form displaying the dataset ***header*** description (ID, name number of rows & columns)
 
-Create a new file **`DatasetHeader.fragment.xml`** in `webapp/fragment/dataset` either using the "File" menu or using the right click menu.
+Create a new file **`DatasetHeader.fragment.xml`** in `webapp/fragment/dataset` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/fragment/dataset/DatasetHeader.fragment.xml` file and add the following code:
 
@@ -155,8 +163,9 @@ Open the `webapp/fragment/dataset/DatasetHeader.fragment.xml` file and add the f
 </core:FragmentDefinition>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Forecast service parameters fragment)]
@@ -165,15 +174,15 @@ The fragment will contain:
 
   - a form displaying the input fields for the Forecast service parameters
 
-Create a new directory structure for **`webapp/fragment/forecast`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/fragment/forecast`** either using the ***File*** menu or using the right click menu.
 
-Create a new file **`ServiceForm.fragment.xml`** in `webapp/fragment/forecast` either using the "File" menu or using the right click menu.
+Create a new file **`ServiceForm.fragment.xml`** in `webapp/fragment/forecast` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/fragment/forecast/ServiceForm.fragment.xml` file and add the following code:
 
 ```xml
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
-	<form:Form editable="true" >
+	<form:Form editable="true">
 		<form:title>
 			<core:Title text="Forecast service parameters"/>
 		</form:title>
@@ -214,6 +223,30 @@ Open the `webapp/fragment/forecast/ServiceForm.fragment.xml` file and add the fo
 							<Input id="idFormNumberOfForecasts" value="10"/>
 						</form:fields>
 					</form:FormElement>
+					<form:FormElement label="Maximum Lag">
+						<form:fields>
+							<Input id="idFormMaximumLag" value="200"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Number of past data to return">
+						<form:fields>
+							<Input id="idFormNumberOfPastValuesInOutput" value="0"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Forecast Method">
+						<form:fields>
+							<Select id="idFormForecastMethod" forceSelection="true" selectedKey="{dataset_fragment>/ForecastMethod}">
+								<core:Item key="default" id="default" text="All"/>
+								<core:Item key="smoothing" id="smoothing" text="Smoothing"/>
+								<core:Item key="linear regression" id="linearregression" text="Linear Regression"/>
+							</Select>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Cycle Length (for Smoothing)" visible="{= ${dataset_fragment>/ForecastMethod} === 'smoothing'}">
+						<form:fields>
+							<Input id="idFormSmoothingCycleLength" value="10" />
+						</form:fields>
+					</form:FormElement>
 				</form:formElements>
 			</form:FormContainer>
 		</form:formContainers>
@@ -221,8 +254,9 @@ Open the `webapp/fragment/forecast/ServiceForm.fragment.xml` file and add the fo
 </core:FragmentDefinition>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Forecast service results fragment)]
@@ -231,9 +265,9 @@ The fragment will contain:
 
   - a form displaying the Forecast service results
 
-Create a new directory structure for **`webapp/fragment/forecast`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/fragment/forecast`** either using the ***File*** menu or using the right click menu.
 
-Create a new file **`ServiceResult.fragment.xml`** in `webapp/fragment/forecast` either using the "File" menu or using the right click menu.
+Create a new file **`ServiceResult.fragment.xml`** in `webapp/fragment/forecast` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/fragment/forecast/ServiceResult.fragment.xml` file and add the following code:
 
@@ -301,28 +335,28 @@ Open the `webapp/fragment/forecast/ServiceResult.fragment.xml` file and add the 
 					<Text text="{forecast_fragment>date}"/>
 				</table:template>
 			</table:Column>
-			<table:Column sortProperty="forecastValue" filterProperty="forecastValue">
-				<Label text="Forecasted value"/>
-				<table:template>
-					<Text text="{forecast_fragment>forecastValue}"/>
-				</table:template>
-			</table:Column>
 			<table:Column sortProperty="realValue" filterProperty="realValue">
 				<Label text="Real value (if any)"/>
 				<table:template>
-					<Text text="{forecast_fragment>realValue}"/>
+					<Text text="{path : 'forecast_fragment>realValue', formatter: '.formatter.round'}"/>
+				</table:template>
+			</table:Column>
+			<table:Column sortProperty="forecastValue" filterProperty="forecastValue">
+				<Label text="Forecasted value"/>
+				<table:template>
+					<Text text="{path : 'forecast_fragment>forecastValue', formatter: '.formatter.round'}"/>
 				</table:template>
 			</table:Column>
 			<table:Column>
 				<Label text="Error Bar Lower Bound"/>
 				<table:template>
-					<Text text="{forecast_fragment>errorBarLowerBound}"/>
+					<Text text="{path : 'forecast_fragment>errorBarLowerBound', formatter: '.formatter.round'}"/>
 				</table:template>
 			</table:Column>
 			<table:Column>
 				<Label text="Error Bar Higher Bound"/>
 				<table:template>
-					<Text text="{forecast_fragment>errorBarHigherBound}"/>
+					<Text text="{path : 'forecast_fragment>errorBarHigherBound', formatter: '.formatter.round'}"/>
 				</table:template>
 			</table:Column>
 		</table:columns>
@@ -330,20 +364,21 @@ Open the `webapp/fragment/forecast/ServiceResult.fragment.xml` file and add the 
 </core:FragmentDefinition>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create a new JavaScript library for the fragment)]
 
 The library will contain a function where:
 
-  - we process the call to the "Dataset List" SAP Predictive services and return the list of registered dataset.
-  - we process the call to the "Dataset Description" SAP Predictive services and return the dataset detailed description.
+  - it will process the call to the ***Dataset List*** SAP Predictive services and return the list of registered dataset.
+  - it will process the call to the ***Dataset Description*** SAP Predictive services and return the dataset detailed description.
 
 These functions will be triggered either on a click or row change event on the table added previously from the main controller.
 
-Create a new file **`DatasetList.js`** in `webapp/fragment/dataset` either using the "File" menu or using the right click menu.
+Create a new file **`DatasetList.js`** in `webapp/fragment/dataset` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/fragment/dataset/DatasetList.js` file and add the following code:
 
@@ -374,7 +409,8 @@ sap.ui.define([
 				},
 				url: "/ps/api/analytics/dataset",
 				type: "GET",
-				async: false,
+				async: true,
+				timeout: 3000000,
 				success: function(data) {
 					try {
 						//Save data set description data in the model
@@ -393,7 +429,6 @@ sap.ui.define([
 		getDatasetDescription: function(oControlEvent) {
 			// set the busy indicator to avoid multi clicks
 			var oBusyIndicator = new sap.m.BusyDialog();
-			oBusyIndicator.open();
 
 			// get the current view
 			var oView = this.getView();
@@ -413,7 +448,8 @@ sap.ui.define([
 					},
 					url: "/ps/api/analytics/dataset/" + dataSetId,
 					type: "GET",
-					async: false,
+					async: true,
+					timeout: 3000000,
 					success: function(data) {
 						try {
 							//Save data set description data in the model
@@ -434,15 +470,60 @@ sap.ui.define([
 });
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create a new controller)]
+[ACCORDION-BEGIN [Step 7: ](Create a new JavaScript library for the formatter)]
 
-Create a new directory structure for **`webapp/controller/forecast`** either using the "File" menu or using the right click menu.
+Create a new file **`formatter.js`** in `webapp/model` either using the ***File*** menu or using the right click menu.
 
-Create a new file **`synchronous.controller.js`** in `webapp/controller/forecast` either using the "File" menu or using the right click menu.
+Open the `webapp/model/formatter.js` file and add the following code:
+
+```js
+sap.ui.define([
+	"sap/ui/core/format/NumberFormat"
+], function() {
+	"use strict";
+	var isNumeric = function(oValue) {
+		var tmp = oValue && oValue.toString();
+		return !jQuery.isArray(oValue) && (tmp - parseFloat(tmp) + 1) >= 0;
+	};
+	jQuery.sap.require("sap.ui.core.format.NumberFormat");
+	var oNumberFormat = sap.ui.core.format.NumberFormat.getFloatInstance({
+		maxFractionDigits: 2,
+		groupingEnabled: true,
+		groupingSeparator: ",",
+		decimalSeparator: "."
+	}, sap.ui.getCore().getConfiguration().getLocale());
+
+	var round = function(value, decimal) {
+		if (value !== 'undefined' && isNumeric(value)) {
+			// return Number(value).toFixed(decimal);
+			return oNumberFormat.format(value);
+		} else {
+			return "nothing";
+		}
+	};
+	return {
+		round: function(value) {
+			return round(value);
+		}
+	};
+});
+```
+
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Create a new controller)]
+
+Create a new directory structure for **`webapp/controller/forecast`** either using the ***File*** menu or using the right click menu.
+
+Create a new file **`synchronous.controller.js`** in `webapp/controller/forecast` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/controller/forecast/synchronous.controller.js` file and add the following code:
 
@@ -450,13 +531,16 @@ Open the `webapp/controller/forecast/synchronous.controller.js` file and add the
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/m/MessageToast",
-	"pspredictive/fragment/dataset/DatasetList"
-], function(Controller, MessageToast, DatasetList) {
+	"sap/m/MessageBox",
+	"pspredictive/fragment/dataset/DatasetList",
+	"pspredictive/model/formatter"
+], function(Controller, MessageToast, MessageBox, DatasetList, formatter) {
 	"use strict";
 
 	jQuery.sap.require("pspredictive.fragment.dataset.DatasetList");
 
 	return Controller.extend("pspredictive.controller.forecast.synchronous", {
+		formatter: formatter,
 		onInit: function() {
 			if (typeof sap.ui.getCore().getModel() === 'undefined') {
 				this.getView().setModel(new sap.ui.model.json.JSONModel(), "dataset_fragment");
@@ -486,6 +570,10 @@ sap.ui.define([
 			var dateColumn = this.getView().byId(event.getSource().data("eDateColumn")).getSelectedKey();
 			var numberOfForecasts = this.getView().byId(event.getSource().data("eNumberOfForecasts")).getValue();
 			var referenceDate = this.getView().byId(event.getSource().data("eReferenceDate")).getValue();
+			var forecastMethod = this.getView().byId(event.getSource().data("eForecastMethod")).getSelectedKey();
+			var smoothingCycleLength = this.getView().byId(event.getSource().data("eSmoothingCycleLength")).getValue();
+			var maxLag = this.getView().byId(event.getSource().data("eMaximumLag")).getValue();
+			var numberOfPastValuesInOutput = this.getView().byId(event.getSource().data("eNumberOfPastValuesInOutput")).getValue();
 
 			// define the service parameters
 			var param = {
@@ -493,7 +581,11 @@ sap.ui.define([
 				targetColumn: targetColumn,
 				dateColumn: dateColumn,
 				numberOfForecasts: numberOfForecasts,
-				referenceDate: referenceDate
+				referenceDate: referenceDate,
+				forecastMethod: forecastMethod,
+				smoothingCycleLength: smoothingCycleLength,
+				maxLag: maxLag,
+				numberOfPastValuesInOutput: numberOfPastValuesInOutput
 			};
 
 			// call the service and define call back methods
@@ -506,7 +598,8 @@ sap.ui.define([
 				type: "POST",
 				data: JSON.stringify(param),
 				dataType: "json",
-				async: false,
+				async: true,
+				timeout: 3000000,
 				success: function(data) {
 					try {
 						//Save data set description data in the model
@@ -527,30 +620,31 @@ sap.ui.define([
 });
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create a new view)]
+[ACCORDION-BEGIN [Step 9: ](Create a new view)]
 
 The view will contain:
 
-  - a button that will trigger the "Get Dataset List" service
+  - a button that will trigger the ***Get Dataset List*** service
   - use the fragments previously created to display:
     - the list of registered datasets
     - the selected dataset header description
     - the service parameters form
-  - a button that will trigger the "Forecast" service in synchronous mode
+  - a button that will trigger the Forecast service in synchronous mode
 
-Create a new directory structure for **`webapp/view/forecast`** either using the "File" menu or using the right click menu.
+Create a new directory structure for **`webapp/view/forecast`** either using the ***File*** menu or using the right click menu.
 
-Create a new file **`synchronous.view.xml`** in `webapp/view/forecast` either using the "File" menu or using the right click menu.
+Create a new file **`synchronous.view.xml`** in `webapp/view/forecast` either using the ***File*** menu or using the right click menu.
 
 Open the `webapp/view/forecast/synchronous.view.xml` file and add the following code:
 
 ```xml
-<mvc:View controllerName="pspredictive.controller.forecast.synchronous" xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc"
-	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
+<mvc:View controllerName="pspredictive.controller.forecast.synchronous" xmlns:html="http://www.w3.org/2000/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
 	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<Toolbar>
 		<ToolbarSpacer/>
@@ -566,9 +660,10 @@ Open the `webapp/view/forecast/synchronous.view.xml` file and add the following 
 	</Panel>
 	<Toolbar visible="{= typeof ${dataset_fragment>/dataset} !== 'undefined'}">
 		<ToolbarSpacer/>
-		<Button icon="sap-icon://begin" text="Run forecast" custom:eDatasetID="idFormDatasetID"
-			custom:eDateColumn="idFormDateColumn" custom:eTargetColumn="idFormTargetColumn" custom:eReferenceDate="idFormReferenceDate"
-			custom:eNumberOfForecasts="idFormNumberOfForecasts" press="forecast"/>
+		<Button icon="sap-icon://begin" text="Run forecast" custom:eDatasetID="idFormDatasetID" custom:eDateColumn="idFormDateColumn"
+			custom:eTargetColumn="idFormTargetColumn" custom:eReferenceDate="idFormReferenceDate" custom:eNumberOfForecasts="idFormNumberOfForecasts"
+			custom:eForecastMethod="idFormForecastMethod" custom:eSmoothingCycleLength="idFormSmoothingCycleLength"
+			custom:eMaximumLag="idFormMaximumLag" custom:eNumberOfPastValuesInOutput="idFormNumberOfPastValuesInOutput" press="forecast"/>
 		<ToolbarSpacer/>
 	</Toolbar>
 	<Panel expandable="false" visible="{= typeof ${forecast_fragment>/model} !== 'undefined'}">
@@ -577,11 +672,12 @@ Open the `webapp/view/forecast/synchronous.view.xml` file and add the following 
 </mvc:View>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Extend the default view)]
+[ACCORDION-BEGIN [Step 10: ](Extend the default view)]
 
 Edit the `demo.view.xml` file located in the `webapp/view`.
 
@@ -591,21 +687,25 @@ Inside the `<detailPages>` element, uncomment the following element:
 <mvc:XMLView viewName="pspredictive.view.forecast.synchronous"/>
 ```
 
-Click on the ![Save Button](0-save.png) button (or press CTRL+S)
+Click on the ![Save Button](0-save.png) button (or press ***CTRL+S***)
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Run the application)]
+[ACCORDION-BEGIN [Step 11: ](Run the application)]
 
 Then, click on the **Run** icon ![Run Applications](0-run.png) or press `ALT+F5`.
 
-On the left panel, you should see an item labeled `Forecast Services`, click on it. Then click on `Synchronous`
+On the left panel, you should see an item labeled **Forecast Services**, click on it. Then click on **Synchronous**
 
-Select the dataset you want to use from the list (Cash Flow is the one!), update the service parameters if needed, then press the `Run forecast` button.
+Select the dataset you want to use from the list (Cash Flow is the one!), update the service parameters if needed, then press the **Run forecast** button.
 
 Et voilà!
 ![Applications](05.png)
 
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Solution: ](Created and modified files)]
@@ -617,6 +717,7 @@ In case you are having problems when running the application, please find bellow
   - [`webapp/fragment/dataset/DatasetList.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/dataset/DatasetList.js)
   - [`webapp/fragment/forecast/ServiceForm.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/forecast/ServiceForm.fragment.xml)
   - [`webapp/fragment/forecast/ServiceResult.fragment.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/fragment/forecast/ServiceResult.fragment.xml)
+  - [`webapp/model/formater.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/model/formatter.js)
   - [`webapp/controller/forecast/synchronous.controller.js`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/controller/forecast/synchronous.controller.js)
   - [`webapp/view/forecast/synchronous.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/view/forecast/synchronous.view.xml)
   - [`webapp/view/demo.view.xml`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcpps-sapui5-ps-forecast-synchronous/predictive/webapp/view/demo.view.xml)
@@ -627,6 +728,7 @@ However, you won't be able to clone the repository and directly run the code fro
 
 Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps

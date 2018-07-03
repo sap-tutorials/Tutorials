@@ -79,6 +79,7 @@ Finally, you will change the name of the service for the shine-container so you 
 
 ![edit YAML](container.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create additional services)]
@@ -203,7 +204,7 @@ Finally, run the web module. Right-click on the `web->resources->launchpad->inde
 
 A new tab will open in the browser. You can click on the generated URL if the pop-up blocker did not allow the application to start.
 
->Note: If you get an error related to the version of SAP UI5, update the version of the resource `sapui5-provider` in the `mta.yaml` file using the version informed by command `xs mtas` in the CLI
+>Note: If you get an error related to the version of SAP UI5, update the version of the resource `sapui5-provider` in the `mta.yaml` file. Switch to the SAP space first with command `xs s -t SAP` and take note of the version informed by command `xs mtas` in the CLI for the UI5 library.
 
 [DONE]
 [ACCORDION-END]

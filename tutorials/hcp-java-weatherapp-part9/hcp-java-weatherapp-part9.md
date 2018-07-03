@@ -74,7 +74,7 @@ Replace the content of the `index.html` file to match this [version in GitHub](h
 
 [ACCORDION-BEGIN [Step 5: ](Deploy your app)]
 
-Publish/deploy your updated app and navigate your browser to the root URL: <http://localhost:8080/weatherapp>. After successful authentication you should see a fully operational UI.
+Publish/deploy your updated app and navigate your browser to the root URL: `http://localhost:8080/weatherapp`. After successful authentication you should see a fully operational UI.
 
 ![App example showing weather info for a specific city](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part9/e2e_09-6.png)
 

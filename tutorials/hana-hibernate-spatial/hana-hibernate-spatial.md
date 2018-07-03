@@ -18,7 +18,7 @@ In this tutorial you will learn how to create an application that process geospa
 
 [ACCORDION-BEGIN [Step 1: ](The GDELT data)]
 
-The data set you will use for the tutorial is the one provided by the Global Database of Events, Language, and Tone data (GDELT) version 1.0 from the [GDELT project](http://gdeltproject.org/).
+The data set you will use for the tutorial is the one provided by the Global Database of Events, Language, and Tone data (GDELT) version 1.0 from the [GDELT project](https://www.gdeltproject.org/).
 
 The GDELT 1.0 event dataset comprises over 3.5 billion mentions of over 364 million distinct events from almost every corner of the earth spanning January 1979 to present and updated daily.
 
@@ -40,11 +40,11 @@ Lookups are available for:
 
 And you can download the complete collection as a series of Event CSV files here:
 
-- http://data.gdeltproject.org/events/index.html
+- <http://data.gdeltproject.org/events/index.html>
 
 You can find more details about GDELT version 1 here:
 
-- http://gdeltproject.org/data.html#documentation
+- <http://gdeltproject.org/data.html#documentation>
 
 [ACCORDION-END]
 
@@ -117,7 +117,7 @@ Save the `persistence.xml` file.
 
 [ACCORDION-BEGIN [Step 3: ](Download a GDELT data file)]
 
-Download one of the GDELT zipped CSV file, for example `20171008.export.CSV.zip`, from http://data.gdeltproject.org/events/index.html.
+Download one of the GDELT zipped CSV file, for example `20171008.export.CSV.zip`, from <http://data.gdeltproject.org/events/index.html>.
 
 Save the file locally, then extract the contents of the zip file into the `src/main/resources` project folder.
 

@@ -15,7 +15,7 @@ tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>mo
 ## Details
 
 ### You will learn
-[Git](https://try.github.io/levels/1/challenges/1) is a widely used source code management system for software development, and is built into your SAP Cloud Platform account, and integrated with SAP Web IDE.
+[Git](https://git-scm.com/) is a widely used source code management system for software development, and is built into your SAP Cloud Platform account, and integrated with SAP Web IDE.
 
 There are many reasons why you might want to use a source code management tool. Some obvious ones are:
 

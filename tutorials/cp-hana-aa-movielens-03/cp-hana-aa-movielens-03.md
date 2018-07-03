@@ -6,20 +6,22 @@ primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
 ---
 
+## Prerequisites
+ - **Proficiency:** Beginner
+
+## Next Steps
+- [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://www.sap.com/developer/groups/cp-hana-aa-movielens.html)
+
+## Details
+### You will learn
+
+- How to use SAP HANA APL Recommendation algorithm
+
 > ### **Note**
 >As of the publication date for this tutorial, the SAP Cloud Platform provides SAP HANA MDC instances up to version 1.0 SPS12 and SAP HANA APL version 3.2 which will be use for the rest of the series.
 If you are using a different version of SAP HANA and the SAP HANA APL library, the code and the results may differ.
 >
 For more details about the APL function, check the online <a href="https://help.sap.com/viewer/cb31bd99d09747089754a0ba75067ed2/3.1/en-US/9bf31268c57e4c079f0cbabd36f39640.html" target="new">documentation</a>.
-&nbsp;
-
-## Prerequisites  
- - **Proficiency:** Beginner
-
-## Details
-### You will learn  
-
-- How to use SAP HANA APL Recommendation algorithm from SAP HANA APL version 3.2
 
 ### Time to Complete
 **20 Min**
@@ -63,50 +65,50 @@ However, the ***SAP HANA APL*** installation package includes a script where you
 Here is a quick code example with the direct technique:
 
 ```
--- --------------------------------------------------------------------------   
--- Create the table type for the dataset   
--- --------------------------------------------------------------------------   
-drop type TRAINING_DATASET_T;   
-create type TRAINING_DATASET_T as table ( .... );   
+-- --------------------------------------------------------------------------
+-- Create the table type for the dataset
+-- --------------------------------------------------------------------------
+drop type TRAINING_DATASET_T;
+create type TRAINING_DATASET_T as table ( .... );
 
--- --------------------------------------------------------------------------   
--- Create the AFL wrapper corresponding to the target APL function   
--- --------------------------------------------------------------------------   
-DROP TABLE CREATE_MODEL_SIGNATURE;   
-create column table CREATE_MODEL_SIGNATURE  like PROCEDURE_SIGNATURE_T;   
+-- --------------------------------------------------------------------------
+-- Create the AFL wrapper corresponding to the target APL function
+-- --------------------------------------------------------------------------
+DROP TABLE CREATE_MODEL_SIGNATURE;
+create column table CREATE_MODEL_SIGNATURE  like PROCEDURE_SIGNATURE_T;
 
--- the signature is defined in the APL API documentation   
-INSERT INTO CREATE_MODEL_SIGNATURE values (1, 'MYSCHEMA','FUNCTION_HEADER_T'  , 'IN');   
-INSERT INTO CREATE_MODEL_SIGNATURE values (2, 'MYSCHEMA','OPERATION_CONFIG_T' , 'IN');   
-INSERT INTO CREATE_MODEL_SIGNATURE values (3, 'MYSCHEMA','TRAINING_DATASET_T' , 'IN');   
-INSERT INTO CREATE_MODEL_SIGNATURE values (4, 'MYSCHEMA','MODEL_BIN_OID_T'    , 'OUT');   
-INSERT INTO CREATE_MODEL_SIGNATURE values (5, 'MYSCHEMA','VARIABLE_DESC_OID_T', 'OUT');   
+-- the signature is defined in the APL API documentation
+INSERT INTO CREATE_MODEL_SIGNATURE values (1, 'MYSCHEMA','FUNCTION_HEADER_T'  , 'IN');
+INSERT INTO CREATE_MODEL_SIGNATURE values (2, 'MYSCHEMA','OPERATION_CONFIG_T' , 'IN');
+INSERT INTO CREATE_MODEL_SIGNATURE values (3, 'MYSCHEMA','TRAINING_DATASET_T' , 'IN');
+INSERT INTO CREATE_MODEL_SIGNATURE values (4, 'MYSCHEMA','MODEL_BIN_OID_T'    , 'OUT');
+INSERT INTO CREATE_MODEL_SIGNATURE values (5, 'MYSCHEMA','VARIABLE_DESC_OID_T', 'OUT');
 
-call SYS.AFLLANG_WRAPPER_PROCEDURE_DROP('MYSCHEMA','APLWRAPPER_CREATE_MODEL');   
-call SYS.AFLLANG_WRAPPER_PROCEDURE_CREATE('APL_AREA','CREATE_MODEL','MYSCHEMA', 'APLWRAPPER_CREATE_MODEL', CREATE_MODEL_SIGNATURE);   
+call SYS.AFLLANG_WRAPPER_PROCEDURE_DROP('MYSCHEMA','APLWRAPPER_CREATE_MODEL');
+call SYS.AFLLANG_WRAPPER_PROCEDURE_CREATE('APL_AREA','CREATE_MODEL','MYSCHEMA', 'APLWRAPPER_CREATE_MODEL', CREATE_MODEL_SIGNATURE);
 
--- --------------------------------------------------------------------------   
--- Create the input/output tables used as arguments for the APL function   
--- --------------------------------------------------------------------------   
-DROP TABLE FUNCTION_HEADER;   
-CREATE COLUMN TABLE FUNCTION_HEADER LIKE FUNCTION_HEADER_T;   
-INSERT INTO FUNCTION_HEADER values ('key', 'value');   
+-- --------------------------------------------------------------------------
+-- Create the input/output tables used as arguments for the APL function
+-- --------------------------------------------------------------------------
+DROP TABLE FUNCTION_HEADER;
+CREATE COLUMN TABLE FUNCTION_HEADER LIKE FUNCTION_HEADER_T;
+INSERT INTO FUNCTION_HEADER values ('key', 'value');
 
-DROP TABLE OPERATION_CONFIG;   
-CREATE COLUMN TABLE OPERATION_CONFIG LIKE OPERATION_CONFIG_T;   
-INSERT INTO OPERATION_CONFIG values ('key', 'value');   
+DROP TABLE OPERATION_CONFIG;
+CREATE COLUMN TABLE OPERATION_CONFIG LIKE OPERATION_CONFIG_T;
+INSERT INTO OPERATION_CONFIG values ('key', 'value');
 
-DROP TABLE TRAINED_MODEL;   
-CREATE COLUMN TABLE TRAINED_MODEL LIKE MODEL_BIN_OID_T;   
+DROP TABLE TRAINED_MODEL;
+CREATE COLUMN TABLE TRAINED_MODEL LIKE MODEL_BIN_OID_T;
 
-DROP TABLE VARIABLE_DESC;   
-CREATE COLUMN TABLE VARIABLE_DESC LIKE VARIABLE_DESC_OID_T;   
+DROP TABLE VARIABLE_DESC;
+CREATE COLUMN TABLE VARIABLE_DESC LIKE VARIABLE_DESC_OID_T;
 
--- --------------------------------------------------------------------------   
+-- --------------------------------------------------------------------------
 -- Execute the APL function using its AFL wrapper and the actual input/output tables
 -- --------------------------------------------------------------------------
 call APLWRAPPER_CREATE_MODEL(FUNCTION_HEADER, OPERATION_CONFIG, MYSCHEMA.TRAINING_DATASET, TRAINED_MODEL, VARIABLE_DESC) with overview;
-```    
+```
 
 - **The procedure technique**:
 
@@ -118,30 +120,30 @@ These APL stored procedures are part of the `HCO_PA_APL` delivery unit which is 
 Here is a quick code example with the procedure technique:
 
 ```
-SET SESSION 'APL_CACHE_SCHEMA' = 'APL_CACHE';  
+SET SESSION 'APL_CACHE_SCHEMA' = 'APL_CACHE';
 
--- --------------------------------------------------------------------------   
--- Create the input/output tables used as arguments for the APL function   
--- --------------------------------------------------------------------------   
-DROP TABLE FUNCTION_HEADER;   
+-- --------------------------------------------------------------------------
+-- Create the input/output tables used as arguments for the APL function
+-- --------------------------------------------------------------------------
+DROP TABLE FUNCTION_HEADER;
 CREATE COLUMN TABLE FUNCTION_HEADER LIKE "SAP_PA_APL"."sap.pa.apl.base::BASE.T.FUNCTION_HEADER";
-INSERT INTO FUNCTION_HEADER values ('key', 'value');   
+INSERT INTO FUNCTION_HEADER values ('key', 'value');
 
-DROP TABLE OPERATION_CONFIG;   
-CREATE COLUMN TABLE OPERATION_CONFIG LIKE "SAP_PA_APL"."sap.pa.apl.base::BASE.T.OPERATION_CONFIG_DETAILED";   
-INSERT INTO OPERATION_CONFIG values ('key', 'value');   
+DROP TABLE OPERATION_CONFIG;
+CREATE COLUMN TABLE OPERATION_CONFIG LIKE "SAP_PA_APL"."sap.pa.apl.base::BASE.T.OPERATION_CONFIG_DETAILED";
+INSERT INTO OPERATION_CONFIG values ('key', 'value');
 
-DROP TABLE TRAINED_MODEL;   
-CREATE COLUMN TABLE TRAINED_MODEL LIKE "SAP_PA_APL"."sap.pa.apl.base::BASE.T.MODEL_BIN_OID";   
+DROP TABLE TRAINED_MODEL;
+CREATE COLUMN TABLE TRAINED_MODEL LIKE "SAP_PA_APL"."sap.pa.apl.base::BASE.T.MODEL_BIN_OID";
 
-DROP TABLE VARIABLE_DESC;   
-CREATE COLUMN TABLE VARIABLE_DESC LIKE  "SAP_PA_APL"."sap.pa.apl.base::BASE.T.VARIABLE_DESC_OID";   
+DROP TABLE VARIABLE_DESC;
+CREATE COLUMN TABLE VARIABLE_DESC LIKE  "SAP_PA_APL"."sap.pa.apl.base::BASE.T.VARIABLE_DESC_OID";
 
--- --------------------------------------------------------------------------   
+-- --------------------------------------------------------------------------
 -- Execute the APL function using its AFL wrapper and the actual input/output tables
 -- --------------------------------------------------------------------------
-call "SAP_PA_APL"."sap.pa.apl.base::CREATE_MODEL"(FUNCTION_HEADER, OPERATION_CONFIG, 'MYSCHEMA','TRAINING_DATASET', TRAINED_MODEL, VARIABLE_DESC) with overview;  
-```    
+call "SAP_PA_APL"."sap.pa.apl.base::CREATE_MODEL"(FUNCTION_HEADER, OPERATION_CONFIG, 'MYSCHEMA','TRAINING_DATASET', TRAINED_MODEL, VARIABLE_DESC) with overview;
+```
 
 We will use the procedure technique in this tutorial.
 
@@ -220,8 +222,6 @@ By default, the function will identify **mega-hubs** (using the 4 "sigma" rule),
 >
 If you want to try out this scenario, you can build a view where the user id and the rating are concatenated into one column that will be used as the second entity type.
 
-&nbsp;
-
 When executed, the following code will generate a ***Recommendation*** model linking `USERID` & `MOVIEID` from the `RATINGS` CDS Entity.
 
 The results will be stored in the `APL_RECO_MODEL_USERS_LINKS` table under the `movielens` schema.
@@ -233,7 +233,7 @@ Paste the following content in the console, and use the execute icon ![run](0-ru
 ```SQL
 SET SCHEMA "MOVIELENS";
 
-SET SESSION 'APL_CACHE_SCHEMA' = '`MOVIELENS_USER`';
+SET SESSION 'APL_CACHE_SCHEMA' = 'MOVIELENS_USER';
 -- --------------------------------------------------------------------------
 -- Cleanup SAPL objects
 -- --------------------------------------------------------------------------
@@ -318,8 +318,6 @@ CALL "SAP_PA_APL"."sap.pa.apl.base::CLEANUP"(1,?);
 > ### **Note**
 >You may receive a series of errors and warnings in the console log while running the above code. They should all be related to the drop statements at the beginning which are intended to help you re-run the script if needed.
 
-&nbsp;
-
 [DONE]
 [ACCORDION-END]
 
@@ -396,7 +394,7 @@ FROM (
     , "MOVIES"."TITLE"
     , "MOVIES"."GENRES"
     , "LINKS"."IMDBID"
-    , "LINKS"."TMDBID"  
+    , "LINKS"."TMDBID"
   FROM (
       SELECT
           "T1"."USERID"
@@ -509,8 +507,6 @@ FROM (
 
 All users will receive the requested 5 recommendations. However, only about 13% of the movies (1176 out of the 9,125) will get potentially recommended and only about 1.5% of the movies (149 out of the 9,125) are in the top 5 lists.
 
-&nbsp;
-
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
@@ -544,7 +540,7 @@ FROM (
     , "MOVIES"."TITLE"
     , "MOVIES"."GENRES"
     , "LINKS"."IMDBID"
-    , "LINKS"."TMDBID"  
+    , "LINKS"."TMDBID"
   FROM (
       SELECT
           "T1"."MOVIEID"
@@ -610,7 +606,7 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 ```SQL
 SELECT
     COUNT(1) AS "MOVIE_COUNT"
-  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"  
+  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"
 FROM (
   SELECT "MOVIEID"
   FROM "MOVIELENS"."APL_RECO_MODEL_ITEMS_RESULTS"

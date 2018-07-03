@@ -9,10 +9,10 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:**
- [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html)
+ [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
 
 ## Next Steps
- - [Predictive Analytics Using SQL Script](https://www.sap.com/developer/tutorials/hxe-ua-predictive-sql.html)
+ - [Predictive Analytics Using SQL Script]
  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
@@ -196,5 +196,5 @@ GRANT SELECT, INSERT, DELETE ON SCHEMA <NEW_USER> TO _SYS_REPO;
 
 
 ## Next Steps
-- [Predictive Analytics Using SQL Script](https://www.sap.com/developer/tutorials/hxe-ua-predictive-sql.html)
+- [Predictive Analytics Using SQL Script]
 - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

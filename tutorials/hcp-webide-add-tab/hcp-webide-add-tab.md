@@ -51,7 +51,7 @@ When the Layout Editor opens, click on the `Supplier` icon. The **Properties and
 
 [ACCORDION-BEGIN [Step 3: ](Open SAPUI5 Icon Explorer)]
 
-In another browser tab, open the [SAPUI5 Icon Explorer](https://openui5.hana.ondemand.com/iconExplorer.html). The Icon Explorer shows all of the icons built into the SAPUI5 library.
+In another browser tab, open the [SAPUI5 Icon Explorer](https://openui5.hana.ondemand.com/test-resources/sap/m/demokit/iconExplorer/webapp/index.html). The Icon Explorer shows all of the icons built into the SAPUI5 library.
 
 ![UI5 icon explorer](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-add-tab/mob3-1_icon_3.png)
 

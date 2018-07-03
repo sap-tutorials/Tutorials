@@ -8,24 +8,27 @@
 					<Carousel pages="{path:'demo>/result-featureextraction'}" width="100%" visible="{= ${demo>/resultVisible-featureextraction} === true }">
 						<pages>
 							<VBox width="100%" direction="Column" alignItems="Center">
-								<Image height="200px" class="sapUiLargeMargin" src="{demo>fileURL}"/>
-								<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
-								<table:Table rows="{demo>result}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5" visible="{= ${demo>/resultVisible-similarityscoring} === true}">
-									<table:columns>
-										<table:Column sortProperty="id" filterProperty="label">
-											<Label text="File"/>
-											<table:template>
-												<Text text="{demo>id}"/>
-											</table:template>
-										</table:Column>
-										<table:Column sortProperty="score" filterProperty="score">
-											<Label text="Score"/>
-											<table:template>
-												<Text text="{demo>score}"/>
-											</table:template>
-										</table:Column>
-									</table:columns>
-								</table:Table>
+								<ScrollContainer height="100%" width="100%" horizontal="true" vertical="true" focusable="true">
+									<Image height="200px" class="sapUiLargeMargin" src="{demo>fileURL}"/>
+									<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
+									<table:Table rows="{demo>result}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5"
+										visible="{= ${demo>/resultVisible-similarityscoring} === true}">
+										<table:columns>
+											<table:Column sortProperty="id" filterProperty="label">
+												<Label text="File"/>
+												<table:template>
+													<Text text="{demo>id}"/>
+												</table:template>
+											</table:Column>
+											<table:Column sortProperty="score" filterProperty="score">
+												<Label text="Score"/>
+												<table:template>
+													<Text text="{demo>score}"/>
+												</table:template>
+											</table:Column>
+										</table:columns>
+									</table:Table>
+								</ScrollContainer>
 							</VBox>
 						</pages>
 					</Carousel>
@@ -37,7 +40,8 @@
 								change="onPressExtractFeatures" custom:mode="ajax" fileType="zip,png,jpeg,jpg,bmp,tiff,tif"
 								mimeType="application/x-zip-compressed,application/zip,application/octet-stream,image/png,image/jpg,image/jpeg,image/bmp,image/tiff"
 								typeMissmatch="fileTypeMissmatch"></unified:FileUploader>
-							<Button text="Score Similarity" press="onPressScoreSimilarity" custom:mode="ajax" visible="{= typeof ${demo>/resultVisible-featureextraction} !== 'undefined'}"/>
+							<Button text="Score Similarity" press="onPressScoreSimilarity" custom:mode="ajax"
+								visible="{= ${demo>/resultVisible-featureextraction} === true}"/>
 						</content>
 					</Toolbar>
 				</footer>

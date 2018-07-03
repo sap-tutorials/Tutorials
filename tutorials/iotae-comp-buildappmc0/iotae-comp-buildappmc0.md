@@ -25,7 +25,7 @@ You will learn the workflow of building the freestyle IoT application using SAP 
 [ACCORDION-BEGIN [Step 1: ](Start SAP Web IDE Full-Stack)]
 SAP Web IDE Full-Stack is a powerful, extensible, web-based integrated development tool that simplifies end-to-end application development for SAP Cloud Platform.
 
-Start SAP Web IDE in IoT Explore tenant using https://webidecp-a8a3863fc.dispatcher.hana.ondemand.com/
+Start SAP Web IDE in IoT Explore tenant using <https://webidecp-a8a3863fc.dispatcher.hana.ondemand.com/>
 
 ![Web IDE MC](iotaecompappmc0010.jpg)
 
@@ -64,7 +64,7 @@ Type `computeriot` as a project name and your user id as the namespace. Click **
 Leave everything as it is on the ___Template Customization___ step. Click **Next**
 
 On ___Data Source___ step select:
- - **Freestyle-IOTAS-ADVANCEDLIST-THING-ODATA** as a service
+ - **`Freestyle-IOTAS-ADVANCEDLIST-THING-ODATA`** as a service
  - all property sets for `sap.iotaehandson2.computeriotdevice:generic_computer` thing type
 Click **Next**
 

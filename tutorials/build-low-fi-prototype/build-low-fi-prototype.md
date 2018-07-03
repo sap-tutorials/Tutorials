@@ -1,7 +1,7 @@
 ---
 title: Create a low-fidelity SAP Build prototype
 description: Use SAP Build to turn your app idea sketches into a low-fidelity prototype.
-auto_validation: false
+auto_validation: true
 primary_tag: products>build>build
 tags: [  tutorial>beginner, products>build>build ]
 ---

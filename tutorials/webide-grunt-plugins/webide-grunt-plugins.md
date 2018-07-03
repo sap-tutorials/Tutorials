@@ -12,6 +12,12 @@ tags: [  tutorial>Intermediate, topic>cloud, topic>html5, topic>sapui5, products
  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details  
+### You will learn  
+- How to set up your project for running a Grunt build with multiple plugins
+- How to reference non-SAP Grunt plugins
+- How to configure your Grunt plugins
+- How to run a Grunt build
+
 SAP Web IDE provides a Grunt plugin for checking your JavaScript code (`lint`), removing previous builds (`clean`), and building your application (`build`). Of course, you may want to use your own Grunt plugin or one of hundreds publicly available. In SAP Web IDE, you can reference them, configure them, and run their tasks.
 
 In this tutorial, we will take a skeleton SAPUI5 project that displays a view with a title, and create a TypeScript class (`TitleGenerator`) to supply the title.
@@ -74,7 +80,7 @@ In the file enter the following code:
 	"private": true,
 	"dependencies": {
 		"grunt-ts": "X.X.X",
-		"@sap/grunt-sapui5-bestpractice-build": "1.3.33"
+		"@sap/grunt-sapui5-bestpractice-build": "1.3.56"
 	}
 }
 ```

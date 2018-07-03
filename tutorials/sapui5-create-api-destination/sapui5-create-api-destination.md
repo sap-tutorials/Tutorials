@@ -2,6 +2,7 @@
 title: Create a Destination for an External API (Slack)
 description: Create a destination in SAP Cloud Platform to connect with an external API
 primary_tag: topic>sapui5
+auto_validation: true
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
@@ -25,7 +26,7 @@ You will create a destination in your SAP Cloud Platform that will connect you t
 [ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform)]
 Go to your [SAP Cloud Platform Cockpit trial](https://account.hanatrial.ondemand.com/cockpit) instance and login.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open the Destinations page)]
@@ -33,7 +34,7 @@ Open the **Destinations** page found under the Connectivity section on the left-
 
 ![Destination location in HCP](destinations.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a new destination)]
@@ -41,7 +42,7 @@ Select **New Destination**.
 
 ![New Destination button in HCP](destinations-new.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Enter new destination details)]
@@ -68,7 +69,7 @@ Add _two_ Additional Properties fields by clicking on the **New Property** butto
 ![Destination details for Fitbit API](destinations-details.png)
 
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Verify your destination works)]
@@ -78,7 +79,7 @@ Check the connection to verify you set up the destination properly and that SAP 
 
 ![Destination check connection success message](destinations-success.png)
 
-
+[VALIDATE_5]
 [ACCORDION-END]
 
 ### Optional
@@ -133,7 +134,7 @@ See some other examples below of destination details for other APIs.
 
 
 
-
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps
