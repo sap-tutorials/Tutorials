@@ -209,7 +209,7 @@ In this example, you simply provide the context `start`, but it can be anything 
 
 Open the email on your device and click the link:
 
-![Try the universal link](fiori-ios-scpms-universal-link-15.jpeg)
+![Try the universal link](fiori-ios-scpms-universal-link-15.png)
 
 If you now click it, it should directly open your app without going to Safari first. If you look in the Xcode console, you see it logged the `start` context it received via the `NSUserActivity` hook:
 
