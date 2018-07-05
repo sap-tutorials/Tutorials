@@ -80,7 +80,7 @@ In the file enter the following code:
 	"private": true,
 	"dependencies": {
 		"grunt-ts": "X.X.X",
-		"@sap/grunt-sapui5-bestpractice-build": "1.3.56"
+		"@sap/grunt-sapui5-bestpractice-build": "1.3.58"
 	}
 }
 ```
