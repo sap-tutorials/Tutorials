@@ -3,7 +3,7 @@ title: MovieLens with SAP HANA PAL Apriori
 description: Understand the capabilities and options made available with the SAP HANA SAP HANA Predictive Analytics Library (PAL), find the algorithm to address your goal, and apply it to the data set
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [  tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
 ---
 
 ## Prerequisites
@@ -47,7 +47,7 @@ For more details about the PAL function, check the online <a href="https://help.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Info: ](Calling SAP HANA PAL functions from an HDI Container)]
+[ACCORDION-BEGIN [Info: ](Calling AFL functions from HDI containers)]
 
 In order to use an ***SAP HANA PAL*** function in SAP HANA, ultimately an AFL wrapper must be created and then invoked.
 
@@ -82,9 +82,9 @@ However, some preparation will be required to get the input in the right format.
 >&nbsp;
 >The algorithm terminates when no further successful extensions are found. Apriori uses breadth-first search and a tree structure to count candidate item sets efficiently.
 >&nbsp;
->It generates candidate item sets of length k from item sets of length k-1, and then prunes the candidates which have an infrequent sub pattern.  
+>It generates candidate item sets of length k from item sets of length k-1, and then prunes the candidates which have an infrequent sub pattern.
 >&nbsp;
->The candidate set contains all frequent k-length item sets.  
+>The candidate set contains all frequent k-length item sets.
 >&nbsp;
 >After that, it scans the transaction database to determine frequent item sets among the candidates.
 >Extracted from the documentation.
@@ -103,10 +103,12 @@ To apply a collaborative filtering approach with the ratings dataset, we would t
 
 The SAP HANA PAL `Apriori` algorithm provide multiple configuration options like:
 
-- **maximum consequent**: Maximum length of dependent items.
-- **maximum item length** :Total length of leading items and dependent items in the output.
-- **minimum support**: ignores items whose support values are greater than the value during the frequent items mining phase (UBIQUITOUS).
-- **left/right-hand side restriction**: specifies that some items are only allowed on the left/right-hand side of the association rules.
+Name                                 | Description
+-------------------------------------|------------------------------
+**maximum consequent**               | Maximum length of dependent items.
+**maximum item length**              | Total length of leading items and dependent items in the output.
+**minimum support**                  | ignores items whose support values are greater than the value during the frequent items mining phase (UBIQUITOUS).
+**left/right-hand side restriction** | Specifies that some items are only allowed on the left/right-hand side of the association rules.
 
 > ### **Note**
 >In this scenario, we are not considering the rating notation itself (between 0.5 to 5) to build the output list, which would help a list of movies that both users rated the same way. To achieve that, we would need to investigate the ***Factorized Polynomial Regression Models*** algorithm available in SAP HANA 2.0 SPS02.
@@ -140,13 +142,13 @@ A link to the Web IDE can also be found on the ***XSA Controller page*** at:
 
 [ACCORDION-BEGIN [Step 2: ](Create the CDS Entity & Table Type Artifacts)]
 
-In order to execute the APL algorithm, a series of table types will be required to process the AFL calls.
+In order to execute the APL algorithm, a series of table types and entities will be required to process the AFL calls.
 
 These types maps the input and output table structure for the <a href="https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/2.0.03/en-US/7a073d66173a4c1589ef5fbe5bb3120f.html" target="new"><b>APRIORI</b></a> function signature.
 
 Some elements of the function signature are bound to the `MovieLens` dataset structure.
 
-In the left side panel, expand the **`movielens/db/src/hdb`** tree.
+In the left side panel, expand the **`movielens/db/src/hdb`** tree node.
 
 ![Web IDE](02-01.png)
 
@@ -154,9 +156,15 @@ Right click on the **`hdb`** folder and select **New > Folder** (or press ***CTR
 
 Enter **`pal`** as the folder name, then click on **OK**.
 
-Right click on the **`pal`** folder node from the tree, and select **New > File** (or press ***CTRL+ALT+N***).
+Right click on the **`pal`** folder node from the tree, and select **New > File**.
 
 Enter **`apriori.hdbcds`** as the file name, then click on **OK**.
+
+This is the full path of the created file:
+
+```
+movielens/db/src/hdb/pal/apriori.hdbcds
+```
 
 Paste the following content:
 
@@ -214,12 +222,30 @@ context apriori {
         ID        : Integer;
         PMMLMODEL : String(5000);
     };
+    table type tt_movielens_collaborative_result {
+        USERID  : Integer;
+        RANK    : Integer;
+        MOVIEID : Integer;
+        SCORE   : Double;
+        TITLE   : String(255);
+        GENRES  : String(255);
+        IMDBID  : Integer;
+        TMDBID  : Integer;
+    };
+    table type tt_movielens_contentbased_result {
+        MOVIEID       : Integer;
+        RANK          : Integer;
+        SIMILAR_MOVIE : Integer;
+        SCORE         : Double;
+        TITLE         : String(255);
+        GENRES        : String(255);
+        IMDBID        : Integer;
+        TMDBID        : Integer;
+    };
 };
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu or press `CTRL+S`.
-
-The path of the file you have just created is **`movielens/db/src/hdb/pal/apriori.hdbcds`**.
+Save the file using the ![save](00-save.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -232,13 +258,19 @@ In the left side panel, expand the **`movielens/db/src/hdb/pal`** tree.
 
 ![Web IDE](03-01.png)
 
-Right click on the **`pal`** folder node from the tree, and select **New > File** (or press ***CTRL+ALT+N***).
+Right click on the **`pal`** folder node from the tree, and select **New > File**.
 
 Enter **`afllang`** as the folder name, then click on **OK**.
 
 Right click on the **`afllang`** folder and select **New > Folder** (or press ***CTRL+ALT+SHIFT+N***).
 
 Enter **`apriori_afl.hdbafllangprocedure`** as the file name, then click on **OK**.
+
+This is the full path of the created file:
+
+```
+movielens/db/src/hdb/pal/afllang/apriori.hdbafllangprocedure
+```
 
 Paste the following content:
 
@@ -267,52 +299,49 @@ Paste the following content:
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu or press `CTRL+S`.
-
-The path of the file you have just created is **`movielens/db/src/hdb/pal/afllang/apriori_afl.hdbafllangprocedure`**.
+Save the file using the ![save](00-save.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create the HDB SQL View Artifacts)]
 
-Before getting ***recommendations***, you will need to generate a SQL view that will leverage the output generated by this model.
+In order to get ***recommendation*** results, you will need to create a SQL view that will leverage the output generated by the model.
 
-The SQL code below will actually be generated by the APL function itself as text in the result operation log table (with some minor changes).
+The generated result rule set in the `aa.movielens.db.hdb.pal::apriori.result_rules` table are "just" the rules between movies
 
-As a reminder, the model used the ***Support*** as a weight/score metric, that will be transformed in a ***confidence*** metric in the result view.
+For the collaborative filtering results, you will need to associate the users with their rated movies as `PRERULE`, and rank the `POSTRULE` using the confidence.
 
-The view ill also limit to the 5 top recommendations.
+These SQL views code were manually handcrafted to achieve a similar output to the one generated by the SAP HANA Automated Predictive Library.
 
-These views will be later used to read the results from an HTML module via OData in your XSA project.
+As a reminder, the result rule set provide a ***confidence*** metric that will be used here.
+
+The view will also limit to the 5 top recommendations.
+
+These views will be later used to read the results from an HTML module via an OData service in your XSA project.
 
 #### Collaborative filtering results
-
-Now, you can create the view that you will use to extract up to 5 movies per users based on other users with the most similar rating list.
-
-The generated result in the `aa.movielens.db.hdb.pal::apriori.result_rules` table are "just" the rules between movies, now you need to associate the users with their rated movies as `PRERULE`, and rank the `POSTRULE` using the confidence.
 
 Right click on the **`pal`** folder and select **New > Folder** (or press ***CTRL+ALT+SHIFT+N***).
 
 Enter **`views`** as the folder name, then click on **OK**.
 
-Right click on the **`views`** folder node from the tree, and select **New > File** (or press ***CTRL+ALT+N***).
+Right click on the **`views`** folder node from the tree, and select **New > File**.
 
 Enter **`apriori_collaborative_filtering.hdbview`** as the file name, then click on **OK**.
+
+This is the full path of the created file:
+
+```
+movielens/db/src/hdb/pal/views/apriori_collaborative_filtering.hdbview
+```
 
 Paste the following content:
 
 ```SQL
 view "aa.movielens.db.hdb.pal.views::apriori_collaborative_filtering" as
 select
-      t1.userid
-    , t1.rank
-    , t1.movieid
-    , t1.score
-    , movies.title
-    , movies.genres
-    , links.imdbid
-    , links.tmdbid
+  userid, rank, t1.movieid, score, title, genres, imdbid, tmdbid
 from (
   select
       t1.userid
@@ -335,9 +364,7 @@ left outer join "aa.movielens.db.hdb::data.links"  links  on links.movieid  = t1
 where t1.rank <= 5;
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu or press `CTRL+S`.
-
-The path of the file you have just created is **`movielens/db/src/hdb/pal/views/apriori_collaborative_filtering.hdbview`**.
+Save the file using the ![save](00-save.png) icon from the menu.
 
 As you can notice, the view use both the model generated links (`aa.movielens.db.hdb.pal::apriori.result_rules`) and the initial dataset (`aa.movielens.db.hdb::data.ratings`).
 
@@ -351,26 +378,27 @@ Here, you will assume that the rating action of a single movie by multiple users
 
 For this scenario, you won't actually need to build another model as the previous one already provides the links between movies based on user ratings.
 
-Right click on the **`views`** folder node from the tree, and select **New > File** (or press ***CTRL+ALT+N***).
+Right click on the **`views`** folder node from the tree, and select **New > File**.
 
 Enter **`apriori_contentbased_filtering.hdbview`** as the file name, then click on **OK**.
+
+This is the full path of the created file:
+
+```
+movielens/db/src/hdb/pal/views/apriori_contentbased_filtering.hdbview
+```
+
+Paste the following content:
 
 ```SQL
 view "aa.movielens.db.hdb.pal.views::apriori_contentbased_filtering" as
 select
-      t1.movieid
-    , t1.rank
-    , t1.similar_movieid
-    , t1.score
-    , movies.title
-    , movies.genres
-    , links.imdbid
-    , links.tmdbid
+  t1.movieid, rank, similar_movie, score, title, genres, imdbid, tmdbid    
 from (
   select
       t1.movieid
     , row_number() over(partition by t1.movieid order by t1.score desc, t1.consequent desc ) as rank
-    , cast(t1.consequent as integer) as similar_movieid
+    , cast(t1.consequent as integer) as similar_movie
     , t1.score
   from (
     select movieid, rules.postrule as consequent, rules.confidence as score
@@ -379,14 +407,12 @@ from (
     where rules.postrule is not null
   ) t1
 ) t1
-left outer join "aa.movielens.db.hdb::data.movies" movies on movies.movieid = t1.similar_movieid
-left outer join "aa.movielens.db.hdb::data.links"  links  on links.movieid  = t1.similar_movieid
+left outer join "aa.movielens.db.hdb::data.movies" movies on movies.movieid = t1.similar_movie
+left outer join "aa.movielens.db.hdb::data.links"  links  on links.movieid  = t1.similar_movie
 where t1.rank <= 5;
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu or press `CTRL+S`.
-
-The path of the file you have just created is **`movielens/db/src/hdb/pal/views/apriori_contentbased_filtering.hdbview`**.
+Save the file using the ![save](00-save.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
@@ -397,7 +423,7 @@ Right click on the **`db`** folder and select **Build**.
 
 ![Web IDE](05-01.png)
 
-The console should at the display the following message:
+The console should display at the end the following message:
 
 ```
 (Builder) Build of /movielens/db completed successfully.
@@ -429,10 +455,10 @@ truncate table "aa.movielens.db.hdb.pal::apriori.result_rules";
 truncate table "aa.movielens.db.hdb.pal::apriori.model_pmml";
 
 -- Insert operation parameters
-insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MIN_SUPPORT'     , null, 0.1   , null);
-insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MIN_CONFIDENCE'  , null, 0.1   , null);
-insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MAX_CONSEQUENT'  , 1   , null  , null);
-insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MAX_ITEM_LENGTH' , 1   , null  , null);
+insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MIN_SUPPORT'     , null, 0.1, null);
+insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MIN_CONFIDENCE'  , null, 0.1, null);
+insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MAX_CONSEQUENT'  , 1	, null, null);
+insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MAX_ITEM_LENGTH' , 1	, null, null);
 
 call "aa.movielens.db.hdb.pal.afllang::apriori"(
 	"aa.movielens.db.hdb.pal::apriori.movielens_dataset",
@@ -458,9 +484,9 @@ Let's verify how many users will actually get recommendations using the followin
 ```SQL
 select reco_count, count(1) as user_count
 from (
-  select userid, max(rank) as reco_count
-  from "aa.movielens.db.hdb.pal.views::apriori_collaborative_filtering"
-  group by userid
+	select userid, max(rank) as reco_count
+	from "aa.movielens.db.hdb.pal.views::apriori_collaborative_filtering"
+	group by userid
 ) group by reco_count order by reco_count desc;
 ```
 
@@ -468,12 +494,12 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 
 ```SQL
 select
-    count(1) as movie_count
-  , count(1) *100 / (select count(1) as count from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
+	  count(1) as movie_count
+	, count(1) *100 / (select count(1) as count from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
 from (
-  select movieid
-  from "aa.movielens.db.hdb.pal.views::apriori_collaborative_filtering"
-  group by movieid
+	select movieid
+	from "aa.movielens.db.hdb.pal.views::apriori_collaborative_filtering"
+	group by movieid
 );
 ```
 
@@ -481,24 +507,29 @@ Let's verify how many distinct movies will potentially get recommended to a user
 
 ```SQL
 select
-    count(1) as movie_count
-  , count(1) *100 / (select count(1) as count from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
+	  count(1) as movie_count
+	, count(1) *100 / (select count(1) as count from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
 from (
-  select prerule as movieid
-  from "aa.movielens.db.hdb.pal::apriori.result_rules"
-  where prerule not like '%&%'
-  group by prerule
+	select prerule as movieid
+	from "aa.movielens.db.hdb.pal::apriori.result_rules"
+	where prerule not like '%&%'
+	group by prerule
 );
 ```
 
-Only 660 of the initial users will receive the requested 5 recommendations. However, only 200 distinct movies (2.2%) in total can be proposed overall and 41 movies (0.45%) in the top 5 lists.
+Based on the last result, you can conclude that:
+
+ - all 660 users will receive the requested 5 recommendations
+ - only about 0.45% of the movies (41 out of the 9,125) are in the top 5 lists
+ - only about 2.2% of the movies (200 out of the 9,125) will get potentially recommended
+
 
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Validate the content-base filtering results)]
+[ACCORDION-BEGIN [Step 8: ](Validate the content-based filtering results)]
 
 In order to be consistent, we should validate the same details that you verified with the SAP HANA APL Recommendation results.
 
@@ -507,9 +538,9 @@ Let's verify how many movies will actually get recommendations using the followi
 ```SQL
 select reco_count, count(1) as movie_count
 from (
-  select movieid, max(rank) as reco_count
-  from "aa.movielens.db.hdb.pal.views::apriori_contentbased_filtering"
-  group by movieid
+	select movieid, max(rank) as reco_count
+	from "aa.movielens.db.hdb.pal.views::apriori_contentbased_filtering"
+	group by movieid
 ) group by reco_count order by 1 desc;
 ```
 
@@ -517,12 +548,12 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 
 ```SQL
 select
-    count(1) as movie_count
-  , count(1) *100 / (select count(1) as count from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
+	  count(1) as movie_count
+	, count(1) *100 / (select count(1) as count from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
 from (
-  select movieid
-  from "aa.movielens.db.hdb.pal.views::apriori_contentbased_filtering"
-  group by movieid
+	select movieid
+	from "aa.movielens.db.hdb.pal.views::apriori_contentbased_filtering"
+	group by movieid
 );
 ```
 
@@ -533,19 +564,19 @@ Let's verify how many rating does the movies with no recommendation have using t
 ```SQL
 select rating_count, count(1) as movie_count
 from (
-  select ratings.movieid, count(1) as rating_count
-  from "aa.movielens.db.hdb::data.ratings" ratings
-  left outer join (
-    select movieid
-    from (
-      select prerule as movieid
-      from "aa.movielens.db.hdb.pal::apriori.result_rules"
-      where prerule not like '%&%'
-      group by prerule
-    )
-  ) t1 on (ratings.movieid = t1.movieid)
-  where t1.movieid is null
-  group by ratings.movieid
+	select ratings.movieid, count(1) as rating_count
+	from "aa.movielens.db.hdb::data.ratings" ratings
+	left outer join (
+		select movieid
+		from (
+			select prerule as movieid
+			from "aa.movielens.db.hdb.pal::apriori.result_rules"
+			where prerule not like '%&%'
+			group by prerule
+		)
+	) t1 on (ratings.movieid = t1.movieid)
+	where t1.movieid is null
+	group by ratings.movieid
 ) group by rating_count;
 ```
 

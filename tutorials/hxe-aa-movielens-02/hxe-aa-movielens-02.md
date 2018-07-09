@@ -1,9 +1,9 @@
 ---
 title: Create a Multi-Target Application Project and Modules in the Web IDE
-description: Learn how to create a Multi-Target Application Project and the required Modules to complete this tutorial series
+description: Learn how to create a Multi-Target Application Project and link it to your GitHub repository
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [  tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
 ---
 
 ## Prerequisites
@@ -14,7 +14,6 @@ tags: [  tutorial>beginner, products>sap-hana\, express-edition, topic>machine-l
 
 - Create a Multi-Target Application Project
 - Save your Web IDE project in a GIT repository
-- Create a SAP HANA Database Module
 
 
 ### Time to Complete
@@ -22,21 +21,19 @@ tags: [  tutorial>beginner, products>sap-hana\, express-edition, topic>machine-l
 
 [ACCORDION-BEGIN [Step 1: ](Create a GitHub repository)]
 
-Open your browser and open the GitHub <https://github.com/> home page and either sign in or sign-up for a new account.
-
-![GitHub](01-01.png)
+Open the GitHub <https://github.com/> home page in your browser and either sign in or sign-up for a new account.
 
 Once logged in, on the top right corner click the ![GitHub](00-github-plus.png) icon, and select **New repository**:
 
-![GitHub](01-02.png)
+![GitHub](01-01.png)
 
 Enter **`movielens`** as **Repository Name**, check **Initialize this repository with a README**, then click on **Create Repository**.
 
-![GitHub](01-03.png)
+![GitHub](01-02.png)
 
 Once the repository is created, get the repository URL by clicking on **Clone or Download**.
 
-![GitHub](01-04.png)
+![GitHub](01-03.png)
 
 Save this URL locally or keep the GitHub repository page open.
 
@@ -47,7 +44,7 @@ Follow the instruction below then click on **Validate**.
 
 [ACCORDION-BEGIN [Step 2: ](Set your Preferences)]
 
-Open the Web IDE, and login using the **`XSA_DEV`** credentials.
+Open the Web IDE and login using the **`XSA_DEV`** credentials.
 
 As a reminder the default URL for the Web IDE is:
 
@@ -76,7 +73,7 @@ Click on **Save**. The Web IDE will need to refresh.
 
 Select **Git Settings** and enter your Git email address and user name.
 
-![Web IDE](02-01.png)
+![Web IDE](02-02.png)
 
 Click on **Save**.
 
@@ -89,13 +86,13 @@ Switch to the ***Development*** perspective using the ![Web IDE Development](00-
 
 ![Web IDE](03-01.png)
 
-Open the Project template wizard using the  **File > New > Project From Template** menu (or press *CTR + ALT+ SHIFT + O*).
+Open the Project template wizard using the **File > New > Project From Template** menu.
 
 Select **Multi-Target Application Project**, then click on **Next**.
 
 ![MTA](03-02.png)
 
-Set your project name to `movielens`, then click on **Next**.
+Set your project name to **`movielens`**, then click on **Next**.
 
 ![MTA](03-03.png)
 
@@ -103,7 +100,7 @@ Leave the MTA details by default, set the **Space** to ***development*** and cli
 
 ![MTA](03-04.png)
 
-Now, right click on the `movielens` project and select **Build** from the drop down menu or use the **Build** menu to build your project.
+Now, right click on the **`movielens`** project folder and select **Build** from the drop down menu or use the **Build** menu to build your project.
 
 The console should output the following:
 
@@ -128,7 +125,7 @@ The console should output the following:
 
 Before linking your project to your GitHub repository, you will need to initialize a local repository.
 
-Right click on the `movielens` project and select **Git > Initialize Local Repository**.
+Right click on the **`movielens`** project and select **Git > Initialize Local Repository**.
 
 ![Web IDE](04-01.png)
 
@@ -144,7 +141,7 @@ Right click on the `movielens` project and select **Project Setting**.
 
 ![Web IDE](04-02.png)
 
-Under the **Git Repository Configuration** section, make sure the **`user.email`** is not set to **`null`**. If so, update the value
+Under the **Git Repository Configuration** section, make sure the **`user.email`** is not set to **`null`**. If so, update the value with your email address.
 
 ![Web IDE](04-03.png)
 
@@ -153,7 +150,7 @@ Under the **Git Repository Configuration** section, make sure the **`user.email`
 
 [ACCORDION-BEGIN [Step 5: ](Set the Git Remote URL)]
 
-Right click on the `movielens` project and select **Git > Set Remote**.
+Right click on the **`movielens`** project and select **Git > Set Remote**.
 
 ![Web IDE](05-01.png)
 

@@ -3,7 +3,7 @@ title: Analyze the MovieLens dataset
 description: Understanding the data set structure and content by extracting some statistics will allow you to better pick your algorithm and the associated setting
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [  tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
 ---
 
 ## Prerequisites
@@ -21,27 +21,27 @@ tags: [  tutorial>beginner, products>sap-hana\, express-edition, topic>machine-l
 
 [ACCORDION-BEGIN [Info: ](Recommendation Systems)]
 
-The goal of a recommendation systems is to produce a list of rules. This set of rules are usually built using a transactional type of data set which identifies links between a user and an item. Then, the rule set is applied to either to a user or an item to get a list of items to recommend.
+The goal of a recommendation systems is to produce a list of rules. This set of rules are usually built using a transactional type of data set which identifies links between users and items. Then, the rule set is applied to either a user or an item to get a list of items to recommend.
 
-These 2 approaches to building recommendation systems are:
+This imply 2 approaches to building recommendation systems:
 
-- Collaborative filtering:
+- **Collaborative filtering**:
 
-    With this approach, you can build a model using past users behaviors (items previously purchased by a user or movies rated by a user for example) and based on behavior similarities between users.
+  With this approach, you can build a model using past similarities between users behaviors (items previously purchased by a user or movies rated by a user for example).
 
-    Collaborative filtering is based on the assumption that users who had similar behaviors in the past will have the same behaviors in the future, and that they will like similar kinds of items as they liked in the past.
+  Collaborative filtering is based on the assumption that users who had similar behaviors in the past will have the same behaviors in the future, and that they will like items that other users with similar behaviors liked in the past.
 
-    In this scenario, you can build your model by analyzing links (transactions) between 2 types of nodes, one will be the user and the other the item. And the resulting model will allow you to extract the likelihood of a relation between a user and an item.
+  In this scenario, you can build your model by analyzing links (transactions) between 2 types of nodes, one will be the user and the other the item. And the resulting model will allow you to extract the likelihood of a relation between a user and an item.
 
-    In other word, when scoring with the model, the input information will be a user, and the output will be a list of items and their associated score.
+  In other word, when scoring with the model, the input information will be a user, and the output will be a list of items and their associated score.
 
-- Content-based filtering:
+- **Content-based filtering**:
 
-    With this approach, you can recommend items that are similar to each other based on the number of links they have in common compared to other items using for example a series of associated keywords or tags, but also user clicks or orders.
+  With this approach, you can recommend items that are similar to each other based on the number of links they have in common compared to other items using for example a series of associated keywords or tags, but also user clicks or orders.
 
-    Just like with *Collaborative filtering*, you can build your model by analyzing links (transactions) between 2 types of nodes, one will be the user and the other the item. Here the "user" doesn't represent always correspond to a user or buyer, but can reference a tag or a web session id.
+  Just like with *Collaborative filtering*, you can build your model by analyzing links (transactions) between 2 types of nodes, one will be the user and the other the item.
 
-    In the end, unlike with *Collaborative filtering*, the resulting model will allow you to extract the likelihood of a relation between a pair of items and when scoring with the model, the input information will be an item, and the output will be a list of items and their associated score.
+  In the end, unlike with *Collaborative filtering*, the resulting model will allow you to extract the likelihood of a relation between a pair of items (not user to items) and when scoring with the model, the input information will be an item, and the output will be a list of items and their associated score.
 
 > ### **Note**
 >The above description is only meant to give you a brief (and simplified) overview of what is a recommendation system in general.
@@ -52,7 +52,7 @@ These 2 approaches to building recommendation systems are:
 
 [ACCORDION-BEGIN [Info: ](The dataset structure)]
 
-Using the dataset <a href="http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html" target="new">README</a> content, you can extract the following details about the data file structure:
+Using the <a href="http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html" target="new">README</a> available with the dataset content, you can extract the following details about the data file structure:
 
 - ***Ratings***:
 
@@ -75,8 +75,8 @@ Using the dataset <a href="http://files.grouplens.org/datasets/movielens/ml-late
 - ***Links***:
 
     - `movieid`: represent the movie id
-    - `imdbId` : can be used to generate a link to the **`IMDb`** site.
-    - `tmdbId` : can be used to generate a link to the **`The Movie DB`** site.
+    - `imdbId` : can be used to generate a link to the ***`IMDb`*** site.
+    - `tmdbId` : can be used to generate a link to the ***`The Movie DB`*** site.
 
 [DONE]
 [ACCORDION-END]
@@ -97,12 +97,12 @@ A link to the Web IDE can also be found on the ***XSA Controller page*** at:
 
 - `https://hxehost:39030`
 
-Select **HDI Container** created previously with a name starting with ***`XSA_DEV`***.
+Select **HDI Container** connection created previously with a name starting with ***`XSA_DEV`***.
 
 Open a new **SQL Console** using the ![sql](00-dbexplorer-sql.png) icon.
 
 > ### **Note**
->For each of the next steps, you can decide to open a new **SQL Console** using the ![sql](00-dbexplorer-sql.png)  icon from the menu or reuse the same one by replacing its current over and over.
+>For each of the next steps, you can decide to open a new **SQL Console** using the ![sql](00-dbexplorer-sql.png) icon from the menu or reuse the same one by replacing its current over and over.
 
 Paste the following content in the console, and use the execute icon ![run](00-dbexplorer-run.png) from the menu.
 
@@ -118,12 +118,12 @@ select 'tags'    as "table name", count(1) as "row count" from "aa.movielens.db.
 
 The result should be:
 
-table name | row count
------------|-----------
-links      | 9125
-movies     | 9125
-ratings    | 100004
-tags       | 1296
+table name  | row count
+-----------:|-----------
+links       | 9125
+movies      | 9125
+ratings     | 100004
+tags        | 1296
 
 [DONE]
 [ACCORDION-END]
@@ -175,11 +175,11 @@ do begin
   declare tmp nvarchar(255);
   declare idx integer;
   declare sep nvarchar(1) := '|';
-  declare cursor cur for select distinct "genres" from "aa.movielens.db.hdb::data.movies";
+  declare cursor cur for select distinct genres from "aa.movielens.db.hdb::data.movies";
   declare genres nvarchar (255) := '';
   idx := 1;
   for cur_row as cur() do
-    select cur_row."genres" into genres from dummy;
+    select cur_row.genres into genres from dummy;
     tmp := :genres;
     while locate(:tmp,:sep) > 0 do
       genrearray[:idx] := substr_before(:tmp,:sep);
@@ -188,9 +188,8 @@ do begin
     end while;
     genrearray[:idx] := :tmp;
   end for;
-
-  genrelist = unnest(:genrearray) as ("genre");
-  select "genre" from :genrelist group by "genre";
+  genrelist = unnest(:genrearray) as (genre);
+  select genre from :genrelist group by genre;
 end;
 ```
 Here, I used the some of the SAP HANA *SQL Script* functions like `SUBSTR_BEFORE` & `SUBSTR_AFTER` to split the genre string into pieces.
@@ -210,11 +209,11 @@ do begin
   declare tmp nvarchar(255);
   declare idx integer;
   declare sep nvarchar(1) := '|';
-  declare cursor cur for select distinct "genres" from "aa.movielens.db.hdb::data.movies";
+  declare cursor cur for select distinct genres from "aa.movielens.db.hdb::data.movies";
   declare genres nvarchar (255) := '';
   idx := 1;
   for cur_row as cur() do
-    select cur_row."genres" into genres from dummy;
+    select cur_row.genres into genres from dummy;
     tmp := :genres;
     while locate(:tmp,:sep) > 0 do
       genrearray[:idx] := substr_before(:tmp,:sep);
@@ -223,9 +222,8 @@ do begin
     end while;
     genrearray[:idx] := :tmp;
   end for;
-
-  genrelist = unnest(:genrearray) as ("genre");
-  select "genre", count(1) from :genrelist group by "genre";
+  genrelist = unnest(:genrearray) as (genre);
+  select genre, count(1) from :genrelist group by genre;
 end;
 ```
 
@@ -242,12 +240,12 @@ Now, let's get the number of genres associated with each movies using the follow
 
 ```SQL
 select
-    "movieid"
-  , "title"
-  , occurrences_regexpr('[|]' in "genres") + 1 as "genre_count"
-  , "genres"
+    movieid
+  , title
+  , occurrences_regexpr('[|]' in genres) + 1 as genre_count
+  , genres
 from "aa.movielens.db.hdb::data.movies"
-order by "genre_count" asc;
+order by genre_count asc;
 ```
 
 You can see that many movies have only one genre.
@@ -265,18 +263,18 @@ Let's count the movies per genre count using the following SQL:
 
 ```SQL
 select
-    "genre_count", count(1)
+  genre_count, count(1)
 from (
-  select occurrences_regexpr('[|]' in "genres") + 1 "genre_count"
+  select occurrences_regexpr('[|]' in genres) + 1 genre_count
   from "aa.movielens.db.hdb::data.movies"
-) group by "genre_count" order by "genre_count";
+) group by genre_count order by genre_count;
 ```
 
 The result should be 2793 movies with one genre, which means almost a third of the movie set have one genre only.
 
 This means that these movies will be linked to another movie by at most one link, which will cause all relations between movies to be more or less equal in term of strength (the more links between nodes, the stronger the relationship is).
 
-You could also decide to simply exclude the movies with one genre and only keep the other but this would mean that you won't provide results for them which would require to address using an alternative approach.
+You could also decide to simply exclude the movies with one genre and only keep the other but this would mean that you won't provide results for them which would require to address them using an alternative approach.
 
 So, based on the elements gathered over the last steps, you can consider that the genre extracted from the movies on its own is not a good candidate to build a solid recommendation engine.
 
@@ -292,9 +290,9 @@ Now let's have a look at the tags distribution using the following SQL:
 ```SQL
 select count(1)
 from (
-  select "movieid", count(1) as "tag_count"
+  select movieid, count(1) as tag_count
   from "aa.movielens.db.hdb::data.tags"
-  group by "movieid"
+  group by movieid
 );
 ```
 
@@ -303,13 +301,13 @@ Only 689 movies have one or more tag.
 Now let's determine the tag count distribution per movies using the following SQL:
 
 ```SQL
-select "tag_count", count(1)
+select tag_count, count(1)
 from (
-  select "movieid", count(1) as "tag_count"
+  select movieid, count(1) as tag_count
   from "aa.movielens.db.hdb::data.tags"
-  group by "movieid"
+  group by movieid
 )
-group by "tag_count" order by "tag_count";
+group by tag_count order by tag_count;
 ```
 
 You can notice that out of the 689 movies with at least a tag, you have 483 movies with only one tag.
@@ -331,13 +329,13 @@ Using the results provided by the previous SQL statements, provide an answer to 
 Now let's determine the rating count distribution per movies using the following SQL:
 
 ```SQL
-select "rating_count", count(1) as "movie_count"
+select rating_count, count(1) as movie_count
 from (
-  select "movieid", count(1) as "rating_count"
+  select movieid, count(1) as rating_count
   from "aa.movielens.db.hdb::data.ratings"
-  group by "movieid"
+  group by movieid
 )
-group by "rating_count" order by "rating_count" asc;
+group by rating_count order by rating_count asc;
 ```
 
 This time, the list is a bit long to extract insights.
@@ -348,25 +346,25 @@ Instead of browsing the results for insights, you can use some aggregates like t
 
 ```SQL
 select distinct
-  min("rating_count") over( ) as "min",
-  max("rating_count") over( ) as "max",
-  avg("rating_count") over( ) as "avg",
-  sum("rating_count") over( ) as "sum",
-  median("rating_count") over( ) as "median",
-  stddev("rating_count") over( ) as "stddev",
-  count(*) over( ) as "category_count"
+  min(rating_count) over( ) as min,
+  max(rating_count) over( ) as max,
+  avg(rating_count) over( ) as avg,
+  sum(rating_count) over( ) as sum,
+  median(rating_count) over( ) as median,
+  stddev(rating_count) over( ) as stddev,
+  count(*) over( ) as category_count
 from (
-  select "movieid", count(1) as "rating_count"
+  select movieid, count(1) as rating_count
   from "aa.movielens.db.hdb::data.ratings"
-  group by "movieid"
+  group by movieid
 )
-group by "rating_count";
+group by rating_count;
 ```
 
 And the result is:
 
-  Aggregation    | Value
------------------|------
+     Aggregation | Value
+----------------:|------
            `MIN` | 1
            `MAX` | 341
            `AVG` | 104.135135
@@ -385,13 +383,13 @@ Using the results provided by the previous SQL statements, provide an answer to 
 Now let's determine the rating count distribution per user using the following SQL:
 
 ```SQL
-select "rating_count", count(1) as "user_count"
+select rating_count, count(1) as user_count
 from (
-  select "userid", count(1) as "rating_count"
+  select userid, count(1) as rating_count
   from "aa.movielens.db.hdb::data.ratings"
-  group by "userid"
+  group by userid
 )
-group by "rating_count" order by 1 desc;
+group by rating_count order by 1 desc;
 ```
 
 You can notice that one user rated 2391 movies, and the top 10 users all rated more than 1000 movies.
@@ -400,25 +398,25 @@ Again her, instead of browsing the results for insights, you can use some aggreg
 
 ```SQL
 select distinct
-  min("rating_count") over( ) as "min",
-  max("rating_count") over( ) as "max",
-  avg("rating_count") over( ) as "avg",
-  sum("rating_count") over( ) as "sum",
-  median("rating_count") over( ) as "median",
-  stddev("rating_count") over( ) as "stddev",
-  count(*) over( ) as "category_count"
+  min(rating_count) over( ) as min,
+  max(rating_count) over( ) as max,
+  avg(rating_count) over( ) as avg,
+  sum(rating_count) over( ) as sum,
+  median(rating_count) over( ) as median,
+  stddev(rating_count) over( ) as stddev,
+  count(*) over( ) as category_count
 from (
-  select "userid", count(1) as "rating_count"
+  select userid, count(1) as rating_count
   from "aa.movielens.db.hdb::data.ratings"
-  group by "userid"
+  group by userid
 )
-group by "rating_count" order by 1 desc;
+group by rating_count order by 1 desc;
 ```
 
 And the result is:
 
-  Aggregation    | Value
------------------|------
+     Aggregation | Value
+----------------:|------
            `MIN` | 20
            `MAX` | 2391
            `AVG` | 274.420454
@@ -437,77 +435,77 @@ Using the results provided by the previous SQL statements, provide an answer to 
 Now let's determine the rating notation distribution using the following SQL:
 
 ```SQL
-select "rating", count(1) as "rating_count"
+select rating, count(1) as rating_count
 from "aa.movielens.db.hdb::data.ratings"
-group by "rating" order by 1 desc;
+group by rating order by 1 desc;
 ```
 
 And the result is:
 
 `rating` | `rating_count`
----------|--------------
-   5     |       15095
-   4.5   |        7723
-   4     |       28750
-   3.5   |       10538
-   3     |       20064
-   2.5   |        4449
-   2     |        7271
-   1.5   |        1687
-   1     |        3326
-   0.5   |        1101
+--------:|--------------:
+  5      |       15095
+  4.5    |        7723
+  4      |       28750
+  3.5    |       10538
+  3      |       20064
+  2.5    |        4449
+  2      |        7271
+  1.5    |        1687
+  1      |        3326
+  0.5    |        1101
 
 Now let's determine the users distribution per rating notation using the following SQL:
 
 ```SQL
-select "rating",  count(1) as "users_count" from (
-  select "userid", "rating", count(1) as "rating_count"
+select rating,  count(1) as users_count from (
+  select userid, rating, count(1) as rating_count
   from "aa.movielens.db.hdb::data.ratings"
-  group by "userid", "rating"
+  group by userid, rating
 )
-group by "rating" order by 1 desc;
+group by rating order by 1 desc;
 ```
 
 And the result is:
 
 `rating` | `users_count`
----------|-------------
-   5     |        644
-   4.5   |        339
-   4     |        669
-   3.5   |        346
-   3     |        655
-   2.5   |        286
-   2     |        554
-   1.5   |        199
-   1     |        409
-   0.5   |        177
+--------:|--------------:
+  5      |        644
+  4.5    |        339
+  4      |        669
+  3.5    |        346
+  3      |        655
+  2.5    |        286
+  2      |        554
+  1.5    |        199
+  1      |        409
+  0.5    |        177
 
 Now let's determine the movies distribution per rating notation using the following SQL:
 
 ```SQL
-select "rating",  count(1) as "movie_count" from (
-  select "movieid", "rating", count(1) as "rating_count"
+select rating,  count(1) as movie_count from (
+  select movieid, rating, count(1) as rating_count
   from "aa.movielens.db.hdb::data.ratings"
-  group by "movieid", "rating"
+  group by movieid, rating
 )
-group by "rating" order by 1 desc;
+group by rating order by 1 desc;
 ```
 
 And the result is:
 
 `rating` | `movie_count`
----------|--------------
-   5     |         3127
-   4.5   |         2454
-   4     |         5141
-   3.5   |         3612
-   3     |         4771
-   2.5   |         2409
-   2     |         3130
-   1.5   |         1204
-   1     |         1959
-   0.5   |          868
+--------:|-------------:
+  5      |        3127
+  4.5    |        2454
+  4      |        5141
+  3.5    |        3612
+  3      |        4771
+  2.5    |        2409
+  2      |        3130
+  1.5    |        1204
+  1      |        1959
+  0.5    |         868
 
 Using the results provided by the previous SQL statements, provide an answer to the question below then click on **Validate**.
 
@@ -554,7 +552,7 @@ Again, we could eventually combine it to the tags and the genres and improve the
 
 [ACCORDION-BEGIN [Step 12: ](Final conclusion)]
 
-As a final conclusion, you can consider that the rating dataset on its own is the most promising candidate to build a  recommendation engine and despite some of the phenomenon assessed for the rating dataset.
+As a final conclusion, you can consider that the rating dataset on its own is the most promising candidate to build a recommendation engine and despite some of the phenomenon assessed for the rating dataset.
 
 However, while using this data will, you will need to pay attention to the following algorithm parameters:
 
