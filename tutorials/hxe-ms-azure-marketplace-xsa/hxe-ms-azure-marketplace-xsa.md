@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ## Next Steps
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
 - **XS Advanced:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
-- **XS Advanced:** [Explore the administration cockpit in XS Advanced](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
+- **XS Advanced:** [Explore the basic tools in the XS Advanced platform](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
 
 ## Details
 ### You will learn  
@@ -69,7 +69,7 @@ You can now enter a password or generate an SSH key. Complete all the fields and
 
 Step 2 in the wizard presents you with the pre-defined resources for your SAP HANA, express edition instance. You can also review the pricing per month:
 
-![review pricing](pricing.png)
+![review pricing](pricing_n.png)
 
 Click on **Select**.
 
@@ -348,4 +348,4 @@ You can later enable a link to the tool from the SAP Web IDE for SAP HANA:
 ## Next Steps
 - [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
 - **Intro to XS Advanced HANA Native Development:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
-- **XS Advanced:** [Explore the administration cockpit in XS Advanced](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
+- **XS Advanced:** [Explore the basic tools in the XS Advanced platform](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
