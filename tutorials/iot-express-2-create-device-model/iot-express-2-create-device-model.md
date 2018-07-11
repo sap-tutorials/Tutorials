@@ -7,12 +7,12 @@ tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sa
 
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Tutorial: Buy Leonardo IoT Foundation in the Store]
+- **Tutorials:** [Buy Leonardo IoT Foundation in the Store](https://www.sap.com/developer/tutorials/iot-express-1-buy-sapstore.html)
 - **Configuration:**
-1. You should have followed this guide [Enabling the Internet of Things Service for the Cloud
-  Foundry Environment](https://help.sap.com/doc/7806fb7e4de04b0089e93781f10527c4/Cloud/en-US/iot.enabling.service.pdf)
-2. You should have created a tenant and a user to work in for yourself based on the instance owner credentials from the previous step and this guide [Creating User and Tenant](https://help.sap.com/viewer/78ac6b240a97447986e09b991d8a570a/Cloud/en-US)
-2. If you want your data to feed into the Thing Model (aka Digital Twin) then you should have sent an email to `sapiotappenablement@sap.com` to ask for your SAP Cloud Platform IoT Service instance to be hooked up to your SAP IoT Application Enablement subscription and have received a confirmation. Please make sure you check out the subsequent tutorials in this case.
+1. You or someone from your team should have followed this guide [Enabling the Internet of Things Service for the Cloud
+  Foundry Environment](https://help.sap.com/viewer/c48328a1bee749da9902d52f080dba0d/Cloud/en-US)
+2. You or someone from your team should have created a tenant and a user to work in for yourself based on the instance owner credentials from the previous step and this guide [Creating User and Tenant](https://help.sap.com/viewer/78ac6b240a97447986e09b991d8a570a/Cloud/en-US)
+2. If you want your data to feed into the Thing Model (aka Digital Twin) in SAP IoT Application Enablement then you or someone in your team should have opened an incident at [http://support.sap.com](http://support.sap.com) on component `BC-NEO-SVC-IOT` to ask for your SAP Cloud Platform IoT Service instance to be hooked up to your SAP IoT Application Enablement subscription. Please make sure you check out the subsequent tutorials in this case.
 
 ## Details
 ### You will learn
@@ -20,12 +20,11 @@ tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sa
 - How to ingest simulated data using a Node.js script
 - How to ingest data using SAP Leonardo IoT Foundation Starter Kit
 
-
 ### Time to Complete
 **15 Min**
 
 ## Next Steps
-[Tutorial: Configure Device Hardware] or you can skip to [Tutorial: Create a Thing Model to bind your Digital Twin in a business context] if you do not have the time or do now want to use real hardware at this point
+- **Tutorials:** [Configure Device Hardware](https://www.sap.com/developer/tutorials/iot-express-3-configure-device.html), but you can also skip to [Create a Thing Model to bind your Digital Twin in a business context](https://www.sap.com/developer/tutorials/iot-express-4-create-thing-model.html) if you do not have the time or do now want to use real hardware at this point.
 
 ---
 

@@ -7,11 +7,11 @@ tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sa
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Configure Device Hardware] or at least [Create a Device Model]
+ - **Tutorials:** [Configure Device Hardware](https://www.sap.com/developer/tutorials/iot-express-3-configure-device.html) or at least [Create a Device Model](https://www.sap.com/developer/tutorials/iot-express-2-create-device-model.html)
  - **Configuration** You or someone else, that is an administrator in your global account, has walked through the following end-to-end configuration and onboarding guide: [SAP IoT Application Enablement: Onboarding - Setting up Your Account](https://help.sap.com/viewer/9dfedbe95cbe4a9f9a5ceddbef7f88e5/latest/en-US/c5b72d23880240dcb4b0d7b9523b065a.html).
 
 ## Next Steps
-  [Build an application with the Multi Stack Web IDE]
+- **Tutorials:** [Build an application with the Multi Stack Web IDE](https://www.sap.com/developer/tutorials/iot-express-5-use-webide-template.html)
 
 ## Details
 ### You will learn

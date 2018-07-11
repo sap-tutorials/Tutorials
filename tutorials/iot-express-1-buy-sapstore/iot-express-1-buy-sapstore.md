@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sa
  - **Other:** credit card, email account
 
 ## Next Steps
- - [Create Device Model]
+ - [Create Device Model](https://www.sap.com/developer/tutorials/iot-express-2-create-device-model.html)
 
 ## Details
 ### You will learn  
