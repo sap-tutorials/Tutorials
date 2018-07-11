@@ -281,6 +281,6 @@ Log in with user `XSA_DEV` and the password you indicated during the initial set
 </br>
 
 You can now start to use your SAP HANA, express edition, instance.
-Learn [how to develop your first XS Advanced application](https://www.sap.com/developer/groups/hana-xsa-get-started.html) or go to the [SAP Developer site](https://www.sap.com/developer/tutorial-navigator.html) for tutorials you can complete with your new instance.
+[Explore the XS Advanced platform basic tools](https://www.sap.com/developer/tutorials/xsa-explore-basics.html), Learn [how to develop your first XS Advanced application](https://www.sap.com/developer/groups/hana-xsa-get-started.html) or go to the [SAP Developer site](https://www.sap.com/developer/tutorial-navigator.html) for tutorials you can complete with your new instance.
 
 [ACCORDION-END]
