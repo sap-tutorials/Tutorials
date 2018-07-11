@@ -52,7 +52,7 @@ You see an output similar to the following.
 Download SAP Data Hub, developer edition and unpack the archive to your disk. You find it via the following link.
 
 ```sh
-https://www.sap.com/developer/trials-downloads/additional-downloads/sap-data-hub-developer-edition-14517.html
+https://www.sap.com/developer/trials-downloads/additional-downloads/sap-data-hub-developer-edition-1-4-15004.html
 ```
 
 Carefully read the `README.html` as well as the license agreement prior to continuing with the tutorial.
