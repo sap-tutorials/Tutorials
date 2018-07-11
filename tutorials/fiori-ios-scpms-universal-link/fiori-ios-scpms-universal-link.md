@@ -1,6 +1,7 @@
 ---
 title: Create Universal Links for iOS Apps
 description: Modify an SAP Cloud Platform SDK for iOS app to accept universal links. This allows users to navigate to your app via a URL sent by email or from a website.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -56,6 +57,7 @@ Enable the **Associated Domains** service:
 Click **Continue** to proceed.
 
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -68,6 +70,7 @@ In the next screen, review the settings you have provided:
 Scroll down and click **Register** when done.
 
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -79,6 +82,7 @@ The registration is now complete:
 
 Scroll down and click **Done** to dismiss the wizard.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Define application link on SAP Cloud Platform)]
@@ -118,6 +122,7 @@ Navigate back to **APIs**. You should now see two QR codes, as well as the gener
 Leave the page open, you will need the generated URL later.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Enable Associated Domains capability to your app)]
@@ -135,6 +140,7 @@ Please note the `applinks:` prefix. It is important you enter it exactly as stat
 ![Define application link](fiori-ios-scpms-universal-link-12.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Build and deploy the app)]
@@ -145,6 +151,7 @@ If you now build the app, you will notice an `<app_name>.entitlements` file is c
 
 Continue and deploy the app to your physical device.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Check the AASA file)]
@@ -167,6 +174,7 @@ The path listed is the path you will use as universal link in the next step. The
 
 It is up to the app developer to do something meaningful with the provided context. In the next step, you will simply detect the app is launched via a universal link, and log the URL context to the console.
 
+[VALIDATE_7]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Process the universal link context)]
@@ -191,12 +199,14 @@ When you click on a universal link, this hook will be called. The `userActivity`
 
 If you provide some context to the universal link URL, it will then be printed to the console by retrieving the `lastPathComponent` property of the URL.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Build and deploy the app)]
 
 Build and deploy the app to your physical device. After it has started, you can dismiss it to the background.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Try the universal link)]
@@ -209,13 +219,14 @@ In this example, you simply provide the context `start`, but it can be anything 
 
 Open the email on your device and click the link:
 
-![Try the universal link](fiori-ios-scpms-universal-link-15.jpeg)
+![Try the universal link](fiori-ios-scpms-universal-link-15.png)
 
 If you now click it, it should directly open your app without going to Safari first. If you look in the Xcode console, you see it logged the `start` context it received via the `NSUserActivity` hook:
 
 ![Try the universal link](fiori-ios-scpms-universal-link-16.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 

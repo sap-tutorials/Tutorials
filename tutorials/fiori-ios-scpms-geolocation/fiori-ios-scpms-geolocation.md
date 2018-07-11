@@ -1,6 +1,7 @@
 ---
 title: Build a geofencing app
 description: Build and app with geofencing notifications using SAP Cloud Platform SDK for iOS and SAP HANA MDC databse on SAP Cloud Platform
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>how-to, tutorial>advanced, operating-system>ios, topic>mobile, topic>odata, products>sap-hana, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -1071,7 +1072,7 @@ Also, if you dismiss the app to the background, you will receive a notification:
 
 You may find the simulator acts quite inaccurate at times when testing geofence events. Build and deploy the app on a physical device and enjoy a greater accuracy!
 
-[DONE]
+[VALIDATE_20]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 21: ](Where to go from here)]
