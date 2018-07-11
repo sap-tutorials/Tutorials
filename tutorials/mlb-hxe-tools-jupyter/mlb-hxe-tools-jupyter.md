@@ -52,7 +52,6 @@ sudo chmod -R a+rwx /opt/hxe
 
 /usr/sap/HXE/home/bin/HXEDownloadManager_linux.bin linuxx86_64 installer \
     -d /opt/hxe \
-	eml.tgz \
 	clients_linux_x86_64.tgz
 ```
 
@@ -141,7 +140,7 @@ sudo su -l jupyteradm
 
 [ACCORDION-BEGIN [Step 3: ](Install Required Python Utilities)]
 
-To complete the Jupyter setup, you will need some additional Python utilities .
+To complete the Jupyter setup, you will need some additional Python utilities packages.
 
 By default, SAP HANA, express edition setup a Python 2.7 version, but this one doesn't include the `pip` or `virtualenv` package.
 
@@ -149,16 +148,44 @@ Therefore, you will now add the missing packages.
 
 #### For SUSE Linux Enterprise Server (including the SAP HANA, express edition VM):
 
-As Python Pip and Virtual Environments are not part of the default SUSE repositories, you will use the ***openSUSE Python Development***.
+The following extensions/repositories are required to install the Python packages dependencies:
+
+- SUSE Linux Enterprise Software Development Kit
+- SUSE Linux Package Hub
+- `Toolchain` Module
+
+You can add these extensions/repositories using the following commands:
+
+```shell
+sudo SUSEConnect -p PackageHub/12.2/x86_64
+sudo SUSEConnect -p sle-sdk/12.2/x86_64
+sudo SUSEConnect -p sle-module-toolchain/12/x86_64
+```
+
+Then, you can clean and refresh the repository cache:
+
+```shell
+sudo zypper clean
+sudo zypper refresh
+```
+
+Then, you can execute the following command to install the compiler:
+
+```shell
+sudo zypper install --type pattern Basis-Devel
+```
+
+As Python Pip and Virtual Environments are not part of the default SUSE repositories, you will be using it from the ***openSUSE Python Development***.
 
 You can add the Python Modules repository using the following command:
 
 ```shell
-sudo zypper addrepo 'https://download.opensuse.org/repositories/devel:/languages:/python/SLE_12_SP2/devel:languages:python.repo'
+sudo zypper ar 'http://download.opensuse.org/repositories/devel:/languages:/python/SLE_12_SP3/'
 sudo zypper refresh
 ```
 
 Then, install the packages using the following command:
+
 ```shell
 sudo zypper install \
 	python-pip \

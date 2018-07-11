@@ -1,9 +1,9 @@
 ---
-title: Expose recommendation functions as XSJS and results as XS OData
-description: Understand and implement some of the options available with SAP HANA to expose your algorithm procedure and results
+title: Expose procedures as XSJS and views as XS OData
+description: Understand and implement some of the options available with SAP HANA to expose your algorithm procedures and views
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
+tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
 ---
 
 ## Prerequisites
@@ -72,34 +72,55 @@ Under the **Requires** section, add your ***SAP HANA Database Module*** resource
 
 ![Web IDE](03-03.png)
 
-Save the file using the ![save](00-save.png) icon from the menu or press `CTRL+S`.
+Save the file using the ![save](00-save.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create SAP HANA XS OData services)]
+[ACCORDION-BEGIN [Step 4: ](Create the folder structure)]
 
-Now, you can expose the results and summary views using XS OData services that will consumed by your SAPUI5 applications.
+Before creating the OData and XSJS services, you need to create the required directory structure.
 
 Expand the **`movielens/js/lib`** folder.
 
-Right click on the **`lib`** folder and select **New > Folder** (or press ***CTRL+ALT+SHIFT+N***).
+Create the following directory structure:
 
-Enter **`xsodata`** as the folder name, then click on **OK**.
+```
+|-- movielens/js/lib
+    |-- xsodata
+    |-- xsjs
+        |-- apl
+        |-- pal
+```
 
-Create a new file named **`data.xsodata`** in the **`movielens/js/lib/xsodata`** folder.
+[DONE]
+[ACCORDION-END]
 
-![Web IDE](04-01.png)
+[ACCORDION-BEGIN [Step 5: ](Create SAP HANA XS OData services)]
+
+Now, you can expose the results and summary views using XS OData services that will consumed by your SAPUI5 applications.
+
+In the left side panel, expand the **`movielens/js/lib/xsodata`** tree node.
+
+Right click on the **`xsodata`** folder node from the tree, and select **New > File**.
+
+Enter **`data.xsodata`** as the file name, then click on **OK**.
+
+This is the full path of the created file:
+
+```
+movielens/js/lib/xsodata/data.xsodata
+```
 
 Paste the following content in the console.
 
 ```JavaScript
 service {
   // expose the model result views
-  "aa.movielens.db.hdb.apl::recommendation_collaborative_filtering"  as "apl_recommendation_collaborative_filtering" key ("USERID" , "RANK");
-  "aa.movielens.db.hdb.apl::recommendation_contentbased_filtering"   as "apl_recommendation_contentbased_filtering"  key ("MOVIEID", "RANK");
-  "aa.movielens.db.hdb.pal::apriori_collaborative_filtering"         as "pal_apriori_collaborative_filtering"        key ("USERID" , "RANK");
-  "aa.movielens.db.hdb.pal::apriori_contentbased_filtering"          as "pal_apriori_contentbased_filtering"         key ("MOVIEID", "RANK");
+  "aa.movielens.db.hdb.apl.views::recommendation_collaborative_filtering"  as "apl_recommendation_collaborative_filtering" key ("USERID" , "RANK");
+  "aa.movielens.db.hdb.apl.views::recommendation_contentbased_filtering"   as "apl_recommendation_contentbased_filtering"  key ("MOVIEID", "RANK");
+  "aa.movielens.db.hdb.pal.views::apriori_collaborative_filtering"         as "pal_apriori_collaborative_filtering"        key ("USERID" , "RANK");
+  "aa.movielens.db.hdb.pal.views::apriori_contentbased_filtering"          as "pal_apriori_contentbased_filtering"         key ("MOVIEID", "RANK");
 
   // expose the summary user and movie views
   "aa.movielens.db.hdb.summary::ratings_user"       as "ratings_user"     key ("USERID");
@@ -108,173 +129,427 @@ service {
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu or press `CTRL+S`.
-
-The path of the file you have just created is **`movielens/db/src/js/lib/xsodata/data.xsodata`**.
+Save the file using the ![save](00-save.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create SAP HANA XSJS services)]
+[ACCORDION-BEGIN [Step 6: ](Create SAP HANA XSJS services for APL)]
 
-And last but not least, you can expose the XSJS services that will let you run the algorithm with different parameters.
+Now, you can expose the XSJS service that will let you run and retrieve the result for the APL Recommendation algorithm using the procedure created previously.
 
-The XSJS services can be called as REST API.
+#### The execution service
 
-In this example, the service implement a POST method that accepts a JSON stream with the set of parameters.
+As you will notice, not all the algorithm parameters are exposed, and this is on purpose, as you will use them for the result retrieval part.
 
-It uses the XSJS Connection API to execute the stored procedures previously created.
+In short, the service implements a POST method that accepts a JSON stream with a set of parameters.
+
+Then the XSJS Connection API is used to execute the stored procedures previously created.
 
 If successful, a HTTP OK return core is sent back with no body else the error message is returned.
 
-Expand the **`movielens/js/lib`** folder.
+In the left side panel, expand the **`movielens/js/lib/xsjs/apl`** tree node.
 
-Right click on the **`lib`** folder and select **New > Folder** (or press ***CTRL+ALT+SHIFT+N***).
+Right click on the **`apl`** folder node from the tree, and select **New > File**.
 
-Enter **`xsjs`** as the folder name, then click on **OK**.
+Enter **`recommendation_execute.xsjs`** as the file name, then click on **OK**.
 
-Create a new file named **`apl_recommendation.xsjs`** in the **`movielens/js/lib/xsjs`** folder.
+This is the full path of the created file:
+
+```
+movielens/js/lib/xsjs/apl/recommendation_execute.xsjs
+```
 
 Paste the following content in the console.
 
 ```JavaScript
 /*eslint no-console: 0, no-unused-vars: 0, dot-notation: 0*/
 /*eslint-env node, es6 */
+function close(o) {
+  try {
+    if (o) {
+      o.close();
+    }
+  } catch (e) { /* do nothing */ }
+}
 
 function methodNotAllowed() {
-	$.response.contentType = "text/html";
-	$.response.status = $.net.http.METHOD_NOT_ALLOWED;
-	$.response.setBody("405 Method Not Allowed");
+  $.response.status = $.net.http.METHOD_NOT_ALLOWED;
+  $.response.setBody(JSON.stringify({
+    message: "Method Not Allowed"
+  }));
 }
 
 function doPost() {
-	// Get the request body
-	var requestBody = JSON.parse($.request.body.asString());
-	// Build the SQL Query with the parameters
-	var query = "call \"aa.movielens.db.hdb.apl::recommendation_execute\"( ";
-	if (typeof requestBody.BESTSELLERTHRESHOLD !== "undefined") {
-		query += " BESTSELLERTHRESHOLD => " + requestBody.BESTSELLERTHRESHOLD + ",";
-	}
-	if (typeof requestBody.MAXTOPNODES !== "undefined") {
-		query += " MAXTOPNODES => " + requestBody.MAXTOPNODES + ",";
-	}
-	if (typeof requestBody.MINIMUMCONFIDENCE !== "undefined") {
-		query += " MINIMUMCONFIDENCE => " + requestBody.MINIMUMCONFIDENCE + ",";
-	}
-	if (typeof requestBody.MINIMUMPREDICTIVEPOWER !== "undefined") {
-		query += " MINIMUMPREDICTIVEPOWER => " + requestBody.MINIMUMPREDICTIVEPOWER + ",";
-	}
-	if (typeof requestBody.MINIMUMSUPPORT !== "undefined") {
-		query += " MINIMUMSUPPORT => " + requestBody.MINIMUMSUPPORT + ",";
-	}
-	query = query.replace(/,\s*$/, "");
-	query += ");";
+  var connection = null;
+  var preparedStatement = null;
+  try {
+    // Build the SQL Query with the parameters
+    var params = {};
+    if (typeof $.request.body !== "undefined") {
+      // Get the request body
+      var requestBody = JSON.parse($.request.body.asString());
+      if (typeof requestBody.BESTSELLERTHRESHOLD !== "undefined") {
+        params.BESTSELLERTHRESHOLD = requestBody.BESTSELLERTHRESHOLD;
+      }
+      if (typeof requestBody.MAXTOPNODES !== "undefined") {
+        params.MAXTOPNODES = requestBody.MAXTOPNODES;
+      }
+      if (typeof requestBody.MINIMUMCONFIDENCE !== "undefined") {
+        params.MINIMUMCONFIDENCE = requestBody.MINIMUMCONFIDENCE;
+      }
+      if (typeof requestBody.MINIMUMPREDICTIVEPOWER !== "undefined") {
+        params.MINIMUMPREDICTIVEPOWER = requestBody.MINIMUMPREDICTIVEPOWER;
+      }
+      if (typeof requestBody.MINIMUMSUPPORT !== "undefined") {
+        params.MINIMUMSUPPORT = requestBody.MINIMUMSUPPORT;
+      }
+    }
 
-	try {
-		var connection = $.db.getConnection();
-		var preparedStatement = connection.prepareStatement(query);
-		preparedStatement.execute();
-		preparedStatement.close();
-		connection.close();
-
-		$.response.contentType = "plain/text; charset=utf-16le";
-		$.response.status = $.net.http.OK;
-	} catch (e) {
-		$.response.setBody(JSON.stringify({ error : e}));
-		$.response.contentType = "application/json; charset=utf-16le";
-		$.response.status = $.net.http.BAD_REQUEST;
-	}
+    var start = Date.now();
+    connection = $.hdb.getConnection();
+    var algorithm = connection.loadProcedure(null, "aa.movielens.db.hdb.apl.procedures::recommendation_execute");
+    var results = algorithm(params);
+    $.response.status = $.net.http.OK;
+    $.response.setBody(JSON.stringify({
+      results: results,
+      message: "Process completed in : " + (Date.now() - start) + " ms"
+    }));
+  } catch (e) {
+    $.response.setBody(JSON.stringify({
+      message: e.message
+    }));
+    $.response.status = $.net.http.BAD_REQUEST;
+  } finally {
+    close(preparedStatement);
+    close(connection);
+  }
 }
-
+$.response.contentType = "application/json; charset=utf-16le";
 switch ($.request.method) {
-	case $.net.http.POST:
-		doPost();
-		break;
-	default:
-		methodNotAllowed();
-		break;
+  case $.net.http.POST:
+    doPost();
+    break;
+  default:
+    methodNotAllowed();
+    break;
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu or press `CTRL+S`.
+Save the file using the ![save](00-save.png) icon from the menu.
 
-The path of the file you have just created is **`movielens/db/src/js/lib/xsjs/apl_recommendation.xsjs`**.
+#### The collaborative & content based filtering results service
 
-Create a new file named **`pal_apriori.xsjs`** in the **`movielens/js/lib/xsjs`** folder.
+For the results procedure, you will be using very similar XSJS service for both the collaborative and content based filtering results where the only difference will be on the set of input parameters.
+
+Therefore, you will only create one XSJS service that serve both needs.
+
+In the left side panel, expand the **`movielens/js/lib/xsjs/apl`** tree node.
+
+Right click on the **`apl`** folder node from the tree, and select **New > File**.
+
+Enter **`recommendation_results.xsjs`** as the file name, then click on **OK**.
+
+This is the full path of the created file:
+
+```
+movielens/js/lib/xsjs/apl/recommendation_results.xsjs
+```
 
 Paste the following content in the console.
 
 ```JavaScript
 /*eslint no-console: 0, no-unused-vars: 0, dot-notation: 0*/
 /*eslint-env node, es6 */
+function close(o) {
+  try {
+    if (o) {
+      o.close();
+    }
+  } catch (e) { /* do nothing */ }
+}
 
 function methodNotAllowed() {
-	$.response.contentType = "text/html";
-	$.response.status = $.net.http.METHOD_NOT_ALLOWED;
-	$.response.setBody("405 Method Not Allowed");
+  $.response.status = $.net.http.METHOD_NOT_ALLOWED;
+  $.response.setBody(JSON.stringify({
+    message: "Method Not Allowed"
+  }));
 }
 
 function doPost() {
-	// Get the request body
-	var requestBody = JSON.parse($.request.body.asString());
-	// Build the SQL Query with the parameters
-	var query = "call \"aa.movielens.db.hdb.pal::apriori_execute\"( ";
-	if (typeof requestBody.MIN_SUPPORT !== "undefined") {
-		query += " MIN_SUPPORT => " + requestBody.MIN_SUPPORT + ",";
-	}
-	if (typeof requestBody.MIN_CONFIDENCE !== "undefined") {
-		query += " MIN_CONFIDENCE => " + requestBody.MIN_CONFIDENCE + ",";
-	}
-	if (typeof requestBody.MIN_LIFT !== "undefined") {
-		query += " MIN_LIFT => " + requestBody.MIN_LIFT + ",";
-	}
-	if (typeof requestBody.UBIQUITOUS !== "undefined") {
-		query += " UBIQUITOUS => " + requestBody.UBIQUITOUS + ",";
-	}
-	query = query.replace(/,\s*$/, "");
-	query += ");";
+  var connection = null;
+  var preparedStatement = null;
+  try {
+    // Build the SQL Query with the parameters
+    var params = {};
+    var resultType = "";
+    if (typeof $.request.body !== "undefined") {
+      // Get the request body
+      var requestBody = JSON.parse($.request.body.asString());
+      if (typeof requestBody.resultType !== "undefined") {
+        resultType = requestBody.resultType;
+      }
+      if (typeof requestBody.USERID !== "undefined") {
+        params.USERID = requestBody.USERID;
+      }
+      if (typeof requestBody.MOVIEID !== "undefined") {
+        params.MOVIEID = requestBody.MOVIEID;
+      }
+      if (typeof requestBody.BESTSELLERTHRESHOLD !== "undefined") {
+        params.BESTSELLERTHRESHOLD = requestBody.BESTSELLERTHRESHOLD;
+      }
+      if (typeof requestBody.INCLUDEBESTSELLERS !== "undefined") {
+        params.INCLUDEBESTSELLERS = (requestBody.INCLUDEBESTSELLERS ? 1 : 0);
+      }
+      if (typeof requestBody.SKIPALREADYOWNED !== "undefined") {
+        params.SKIPALREADYOWNED = (requestBody.SKIPALREADYOWNED ? 1 : 0);
+      }
+      if (typeof requestBody.KEEPTOPN !== "undefined") {
+        params.KEEPTOPN = requestBody.KEEPTOPN;
+      }
+    }
 
-console.log(query);
-	try {
-		var connection = $.db.getConnection();
-		var preparedStatement = connection.prepareStatement(query);
-		preparedStatement.execute();
-		preparedStatement.close();
-		connection.close();
-
-		$.response.contentType = "plain/text; charset=utf-16le";
-		$.response.status = $.net.http.OK;
-	} catch (e) {
-		$.response.setBody(JSON.stringify({ error : e}));
-		$.response.contentType = "application/json; charset=utf-16le";
-		$.response.status = $.net.http.BAD_REQUEST;
-	}
+    var start = Date.now();
+    connection = $.hdb.getConnection();
+    var algorithm = connection.loadProcedure(null, "aa.movielens.db.hdb.apl.procedures::recommendation_result_" + resultType);
+    var result = algorithm(params);
+    $.response.status = $.net.http.OK;
+    $.response.setBody(JSON.stringify({
+      results: result.RESULTS,
+      message: "Process completed in : " + (Date.now() - start) + " ms!"
+    }));
+  } catch (e) {
+    $.response.setBody(JSON.stringify({
+      message: e.message
+    }));
+    $.response.status = $.net.http.BAD_REQUEST;
+  } finally {
+    close(preparedStatement);
+    close(connection);
+  }
 }
-
+$.response.contentType = "application/json; charset=utf-16le";
 switch ($.request.method) {
-	case $.net.http.POST:
-		doPost();
-		break;
-	default:
-		methodNotAllowed();
-		break;
+  case $.net.http.POST:
+    doPost();
+    break;
+  default:
+    methodNotAllowed();
+    break;
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu or press `CTRL+S`.
-
-The path of the file you have just created is **`movielens/db/src/js/lib/xsjs/pal_apriori.xsjs`**.
+Save the file using the ![save](00-save.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Build and Start the Node.js Module)]
+[ACCORDION-BEGIN [Step 7: ](Create SAP HANA XSJS services for PAL)]
+
+Now, you can expose the XSJS service that will let you run and retrieve the result for the PAL APRIORI algorithm using the procedure created previously.
+
+#### The execution service
+
+As you will notice, not all the algorithm parameters are exposed, and this is on purpose, as you will use them for the result retrieval part.
+
+In short, the service implements a POST method that accepts a JSON stream with a set of parameters.
+
+Then the XSJS Connection API is used to execute the stored procedures previously created.
+
+If successful, a HTTP OK return core is sent back with no body else the error message is returned.
+
+In the left side panel, expand the **`movielens/js/lib/xsjs/pal`** tree node.
+
+Right click on the **`pal`** folder node from the tree, and select **New > File**.
+
+Enter **`apriori_execute.xsjs`** as the file name, then click on **OK**.
+
+This is the full path of the created file:
+
+```
+movielens/js/lib/xsjs/pal/apriori_execute.xsjs
+```
+
+Paste the following content in the console.
+
+```JavaScript
+/*eslint no-console: 0, no-unused-vars: 0, dot-notation: 0*/
+/*eslint-env node, es6 */
+function close(o) {
+  try {
+    if (o) {
+      o.close();
+    }
+  } catch (e) { /* do nothing */ }
+}
+
+function methodNotAllowed() {
+  $.response.status = $.net.http.METHOD_NOT_ALLOWED;
+  $.response.setBody(JSON.stringify({
+    message: "Method Not Allowed"
+  }));
+}
+
+function doPost() {
+  var connection = null;
+  var preparedStatement = null;
+  try {
+    // Build the SQL Query with the parameters
+    var params = {};
+    if (typeof $.request.body !== "undefined") {
+      // Get the request body
+      var requestBody = JSON.parse($.request.body.asString());
+      if (typeof requestBody.MIN_SUPPORT !== "undefined") {
+        params.MIN_SUPPORT = requestBody.MIN_SUPPORT;
+      }
+      if (typeof requestBody.MIN_CONFIDENCE !== "undefined") {
+        params.MIN_CONFIDENCE =  requestBody.MIN_CONFIDENCE ;
+      }
+      if (typeof requestBody.MIN_LIFT !== "undefined") {
+        params.MIN_LIFT = requestBody.MIN_LIFT;
+      }
+      if (typeof requestBody.UBIQUITOUS !== "undefined") {
+        params.UBIQUITOUS =  requestBody.UBIQUITOUS ;
+      }
+    }
+
+    var start = Date.now();
+    connection = $.hdb.getConnection();
+    var algorithm = connection.loadProcedure(null, "aa.movielens.db.hdb.pal.procedures::apriori_execute");
+    var results = algorithm(params);
+    $.response.status = $.net.http.OK;
+    $.response.setBody(JSON.stringify({
+      results: results,
+      message: "Process completed in : " + (Date.now() - start) + " ms"
+    }));
+  } catch (e) {
+    $.response.setBody(JSON.stringify({
+      message: e.message
+    }));
+    $.response.status = $.net.http.BAD_REQUEST;
+  } finally {
+    close(preparedStatement);
+    close(connection);
+  }
+}
+$.response.contentType = "application/json; charset=utf-16le";
+switch ($.request.method) {
+  case $.net.http.POST:
+    doPost();
+    break;
+  default:
+    methodNotAllowed();
+    break;
+}
+```
+
+Save the file using the ![save](00-save.png) icon from the menu.
+
+#### The collaborative & content based filtering results service
+
+For the results procedure, you will be using very similar XSJS service for both the collaborative and content based filtering results where the only difference will be on the set of input parameters.
+
+Therefore, you will only create one XSJS service that serve both needs.
+
+In the left side panel, expand the **`movielens/js/lib/xsjs/pal`** tree node.
+
+Right click on the **`pal`** folder node from the tree, and select **New > File**.
+
+Enter **`apriori_results.xsjs`** as the file name, then click on **OK**.
+
+This is the full path of the created file:
+
+```
+movielens/js/lib/xsjs/pal/apriori_results.xsjs
+```
+
+Paste the following content in the console.
+
+```JavaScript
+/*eslint no-console: 0, no-unused-vars: 0, dot-notation: 0*/
+/*eslint-env node, es6 */
+function close(o) {
+  try {
+    if (o) {
+      o.close();
+    }
+  } catch (e) { /* do nothing */ }
+}
+
+function methodNotAllowed() {
+  $.response.status = $.net.http.METHOD_NOT_ALLOWED;
+  $.response.setBody(JSON.stringify({
+    message: "Method Not Allowed"
+  }));
+}
+
+function doPost() {
+  var connection = null;
+  var preparedStatement = null;
+  try {
+    // Build the SQL Query with the parameters
+    var params = {};
+    var resultType = "";
+    if (typeof $.request.body !== "undefined") {
+      // Get the request body
+      var requestBody = JSON.parse($.request.body.asString());
+      if (typeof requestBody.resultType !== "undefined") {
+        resultType = requestBody.resultType;
+      }
+      if (typeof requestBody.USERID !== "undefined") {
+        params.USERID = requestBody.USERID;
+      }
+      if (typeof requestBody.MOVIEID !== "undefined") {
+        params.MOVIEID = requestBody.MOVIEID;
+      }
+      if (typeof requestBody.KEEPTOPN !== "undefined") {
+        params.KEEPTOPN = requestBody.KEEPTOPN;
+      }
+    }
+
+    var start = Date.now();
+    connection = $.hdb.getConnection();
+    var algorithm = connection.loadProcedure(null, "aa.movielens.db.hdb.pal.procedures::apriori_result_" + resultType);
+    var result = algorithm(params);
+
+    $.response.status = $.net.http.OK;
+    $.response.setBody(JSON.stringify({
+      results: result.RESULTS,
+      message: "Process completed in : " + (Date.now() - start) + " ms!"
+    }));
+  } catch (e) {
+    $.response.setBody(JSON.stringify({
+      message: e.message
+    }));
+    $.response.status = $.net.http.BAD_REQUEST;
+  } finally {
+    close(preparedStatement);
+    close(connection);
+  }
+}
+$.response.contentType = "application/json; charset=utf-16le";
+switch ($.request.method) {
+  case $.net.http.POST:
+    doPost();
+    break;
+  default:
+    methodNotAllowed();
+    break;
+}
+```
+
+Save the file using the ![save](00-save.png) icon from the menu.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Build and Start the Node.js Module)]
 
 Right click on the **`js`** folder and select **Build**.
 
-![Web IDE](05-01.png)
+![Web IDE](08-01.png)
 
-The console should at the display the following message:
+The console should display at the end the following message:
 
 ```
 (Builder) Build of /movielens/js completed successfully.
@@ -284,16 +559,16 @@ Select the **`js`** module,  then click on the execute icon ![run](00-run.png) f
 
 Once the application is started, you can click on the application URL:
 
-![Web IDE](05-02.png)
+![Web IDE](08-02.png)
 
 This should open the ***`index.xsjs`*** page.
 
-![Web IDE](05-03.png)
+![Web IDE](08-03.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test your XS OData service)]
+[ACCORDION-BEGIN [Step 9: ](Test your XS OData service)]
 
 Now, let's test your **XS OData** service.
 
@@ -305,7 +580,7 @@ xsodata/data.xsodata?$format=json
 
 You should now get the list of XS OData services available.
 
-![Web IDE](06-01.png)
+![Web IDE](09-01.png)
 
 Replace ***`xsodata/data.xsodata?$format=json`***  from the URL by:
 
@@ -313,14 +588,69 @@ Replace ***`xsodata/data.xsodata?$format=json`***  from the URL by:
 xsodata/data.xsodata/apl_recommendation_collaborative_filtering(USERID=1,RANK=1)/TITLE?$format=json
 ```
 
-You should get the rank 1 recommendation from the APL algorithm collaborative filtering results for user id 1.
+You should get the rank 1 recommendation from the APL algorithm collaborative filtering results for user id 1, which should be ***Star Wars: Episode V - The Empire Strikes Back (1980)***.
 
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Commit your changes)]
+[ACCORDION-BEGIN [Step 10: ](Test your XSJS service)]
+
+Open your preferred REST client, like **`cURL`**, and if don't have one yet you can [install and use Postman](https://www.sap.com/developer/tutorials/api-tools-postman-install.html).
+
+#### With Postman
+
+Open a new tab, and set the following information:
+
+Name           | Value
+:------------- | :--------------
+Request Method | POST
+URL            | `https://hxehost:51xxx/xsjs/apl/recommendation_results.xsjs`
+
+Select the **Body** tab, enable the **raw** mode, select **`JSON (application/json)`** in the drop down (instead of ***Text***), then past the following content:
+
+```JSON
+{
+  "USERID" : 32,
+  "BESTSELLERTHRESHOLD" : 100000,
+  "INCLUDEBESTSELLERS" : 0,
+  "SKIPALREADYOWNED" : 1,
+  "KEEPTOPN" : 5,
+  "resultType": "collaborative"
+}
+```
+
+Click on **Send**.
+
+![Postman](10-01.png)
+
+#### With `cURL`
+
+With `cURL`, you can use the following command:
+
+```shell
+curl --request POST \
+  --url https://hxehost:51xxx/xsjs/apl/recommendation_results.xsjs \
+  --header 'cache-control: no-cache' \
+  --header 'content-type: application/json' \
+  --data '{"USERID" : 32, "BESTSELLERTHRESHOLD" : 100000, "INCLUDEBESTSELLERS" : 0, "SKIPALREADYOWNED" : 1, "KEEPTOPN" : 5, "resultType": "collaborative"}'
+```
+
+> ### **Note:** Make sure to adjust the host and port number used in the URL to your local environment.
+&nbsp;
+> You might also need to add the following parameters when using `cURL`  to ignore certificate signature origin and proxy:
+> ```
+--insecure --noproxy "*"
+```
+
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_2]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 11: ](Commit your changes)]
 
 On the icon bar located on the right side of the Web IDE, click on the **Git Pane** icon ![Web IDE](00-webide-git.png).
 
