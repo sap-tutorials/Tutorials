@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>leonardo, topic>internet-of-things, products>s
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - **Tutorials:** [Tutorial: Create Device Model]
+ - **Tutorials:** [Tutorial: Create Device Model](https://www.sap.com/developer/tutorials/iot-express-2-create-device-model.html)
  - **Hardware:** Laptop, Monitor, HDMI Cable, USB Mouse and Keyboard
 
 
@@ -21,7 +21,7 @@ tags: [  tutorial>beginner, topic>leonardo, topic>internet-of-things, products>s
 **30 Min**
 
 ## Next Steps
-  - [Tutorial: Create Thing Model]
+  - [Tutorial: Create Thing Model](https://www.sap.com/developer/tutorials/iot-express-4-create-thing-model.html)
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Assemble the hardware)]

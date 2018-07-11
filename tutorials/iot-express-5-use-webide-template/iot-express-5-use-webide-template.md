@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>leonardo, topic>sapui5, products>sap-web-ide, 
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Configuration** You or someone else, that is an administrator in your global account, has walked through the following end-to-end configuration and onboarding guide: [SAP IoT Application Enablement: Onboarding - Setting up Your Account](https://help.sap.com/viewer/9dfedbe95cbe4a9f9a5ceddbef7f88e5/latest/en-US/c5b72d23880240dcb4b0d7b9523b065a.html).
- - **Tutorials:** [Create Thing Model]
+ - **Tutorials:** [Create Thing Model](https://www.sap.com/developer/tutorials/iot-express-4-create-thing-model.html)
 
 ## Details
 ### You will learn
