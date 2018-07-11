@@ -1,6 +1,7 @@
 ---
 title: Logging and tracing in SAP Cloud Platform mobile service for development and operations
 description: Logging and tracing overview in the SAP Cloud Platform mobile service for development and operations Administration Cockpit.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -38,10 +39,10 @@ In the bottom part, you can specify the logging purge periods:
 
 ![SDK Assistant](fiori-ios-hcpms-logging-02.png)
 
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Change application log settings)]
+[ACCORDION-BEGIN [Step 2: ](Change application log settings)]
 
 For our application, set the following logging levels and application traces:
 
@@ -58,7 +59,7 @@ By default, the log viewer displays logs and traces occurred in the last 60 minu
 
 ![SDK Assistant](fiori-ios-hcpms-logging-03.png)
 
-
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Examine changed log details)]
@@ -70,6 +71,7 @@ Now you have lowered the logging levels, try run your iOS application again, and
 ![SDK Assistant](fiori-ios-hcpms-logging-04.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps

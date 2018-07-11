@@ -758,7 +758,7 @@ If you now open the standard **Reminders** app on the device, your reminders are
 ![Build and run the app](fiori-ios-scpms-custom-app-creation-35.png)
 
 
-[DONE]
+[VALIDATE_20]
 [ACCORDION-END]
 
 

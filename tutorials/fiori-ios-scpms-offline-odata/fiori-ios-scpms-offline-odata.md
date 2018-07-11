@@ -1,6 +1,7 @@
 ---
 title: Create an iOS App with Offline Capabilities
 description: Create an iOS app using the SAP Cloud Platform SDK for iOS which will have offline capabilities. This app not only supports offline OData, but also use an offline onboarding flow.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -27,6 +28,7 @@ Double-click the **SAP Cloud Platform SDK for iOS Assistant** icon to start the 
 ![SDK Assistant](fiori-ios-scpms-offline-odata-01.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create an Xcode project)]
@@ -48,6 +50,7 @@ Enter the following details:
 Click **Next** to advance to the **SAP Cloud Platform mobile service for development and operations Configuration** step.
 
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -68,6 +71,7 @@ Enter the following details:
 Click **Next** to advance to the **OData Services** step.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Define OData back end connection)]
@@ -106,6 +110,7 @@ Click **OK** to save the backend configuration. It is now listed in the availabl
 Click **Next** to advance to the **Optional Features** step.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Specify optional features)]
@@ -121,6 +126,7 @@ Make sure the checkboxes **Generate Master-Detail Application**, **Enable Loggin
 > Most likely the checkbox for **Remote Notifications** is disabled. This happens because no APNS endpoint is configured for the application definition in SAP Cloud Platform mobile service for development and operations. Once configured with a valid certificate, this option becomes available.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Generate the Xcode project)]
@@ -137,6 +143,7 @@ In addition, the configuration settings you have provided in the SDK Assistant a
 > In that case, log on to your **SAP Cloud Platform mobile service for development and operations** account at `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/` and navigate to **Mobile Applications > Native/Hybrid**. Select one of the available application configurations and delete in order for the SDK Assistant to add the new application configuration.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Examine the generated Xcode project)]
@@ -154,6 +161,7 @@ Folder `OfflineDemo/Proxy Classes` contains the OData proxy classes generated fr
 Folders `ViewControllers/Product`, `ViewControllers/Category` and `ViewControllers/Supplier` contain the master and detail view controllers as well as a storyboard for the `Product`, `Category` and `Supplier` entities, respectively.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Examine the specific offline code)]
@@ -183,6 +191,7 @@ Navigate back to `AppDelegate.swift` and go back to method `onboardingContextCre
 Just below this method are the implementing methods `openOfflineStore(sync:)` and `closeOfflineStore()` for opening and closing the store (which are being called from the foreground and background events mentioned earlier). Methods `downloadOfflineStore()` and `uploadOfflineStore()` handle the the store syncing when online.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Build and run the generated app)]
@@ -232,6 +241,7 @@ Once finished, it will present an overview of the available **Collections** of t
 ![Build and run](fiori-ios-scpms-offline-odata-27.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Examine the generated app)]
@@ -250,6 +260,7 @@ In the same manner, you can examine the other entity collections.
 
 > However, the offline functionality of the app can be explained using the other two entity collections.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Use the app offline)]
@@ -275,6 +286,7 @@ Clicking on an entry similarly doesn't retrieve the entity from the OData servic
 ![Offline](fiori-ios-scpms-offline-odata-33.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Enable app for offline onboarding)]
@@ -346,6 +358,7 @@ private var restoringSteps: [OnboardingStep] {
 ```
 
 
+[VALIDATE_12]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Build and run the app again)]
@@ -357,6 +370,7 @@ Disable the network, and start the app from your device or simulator. The app sh
 The app is now fully offline enabled.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Examine offline requests)]
@@ -377,6 +391,7 @@ Similarly, select **Offline Response Time** from the filter and examine the resu
 
 In these reports, you can see the number of upload, download and refresh requests and their respective response times for each entity in your OData service.
 
+[DONE]
 [ACCORDION-END]
 
 

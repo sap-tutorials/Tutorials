@@ -1,6 +1,7 @@
 ---
 title: Download Stylesheet from SAP Cloud Platform to your iOS App
 description: Upload a stylesheet to SAP Cloud Platform mobile service for development and operations and download it to your app during the onboarding flow
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -60,6 +61,7 @@ fdlFUIWelcomeScreen_headlineLabel {
 
 Save the file when done, and close the text editor.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Upload the stylesheet)]
@@ -89,6 +91,7 @@ Click **OK** when done. The uploaded stylesheet is now listed:
 ![Upload the stylesheet](fiori-ios-scpms-theme-download-04.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -154,6 +157,7 @@ and add the following right after the `applyDuringRestore` step:
 NUIStyleSheetApplyStep(fileURL: nssResourceURL!)
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Build and run the app)]
@@ -163,6 +167,7 @@ Build and run the app. After you have logged on, you'll notice the app now uses 
 ![Upload the stylesheet](fiori-ios-scpms-theme-download-05.png)
 
 
+[VALIDATE_4]
 [ACCORDION-END]
 
 ---

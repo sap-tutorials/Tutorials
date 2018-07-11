@@ -1,6 +1,7 @@
 ---
 title: Translate your application using the SAP Translation Hub
 description: A successful application has to target a global audience, and software needs to speak its language. To translate your application, you need to separate the code from your text and translate these texts. The SAP Translation Hub can help you with machine translations of these text files. SAP Translation Hub is an SAP Cloud Platform service that opens the door to the wealth of SAP's translation assets accumulated over 30 years across multiple products and languages.
+auto_validation: true
 primary_tag: operating-system>ios
 tags: [  tutorial>how-to, tutorial>intermediate, operating-system>ios, topic>mobile, products>sap-cloud-platform ]
 ---
@@ -31,6 +32,7 @@ To create your first project, click on **File > New > Project** in the menu bar.
 Choose an appropriate location for your project and click on the **Create** button.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a simple view containing two labels and a button)]
@@ -44,6 +46,7 @@ Also add a button and set the text attribute of the button to `Confirm`. Your vi
 ![Simple application view](image-1.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Run the application and inspect the screen)]
@@ -59,6 +62,7 @@ As you can see from the screenshot, you will need to localize 3 items:
 - `Confirm` button
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Set the application's target languages)]
@@ -80,6 +84,7 @@ You should now see that German has been added:
 ![List of languages](image-5.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Inspect the main.storyboard's translations)]
@@ -93,6 +98,7 @@ If you click on the `Main.strings (German)` file, a text-editor pops up, which i
 ![Translation editor](image-7.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Enable the Translation Hub service)]
@@ -108,6 +114,7 @@ To find the Translation Hub service, select **Services** from the main menu, and
 Once the service has been enabled, `Not Enabled` will change into `Enabled` and the **Enable** button will disappear.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create a translation project for your app)]
@@ -136,6 +143,7 @@ After entering these values, click on the **Save** button.
 > Note: The domain that is entered here represents the context from which translations have to been taken. For example, the English word `Order` can have several meanings. To make sure the right meaning is selected for the translation, the context can be indicated by selecting the **Domain** value.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Upload the string file from the Xcode project)]
@@ -145,6 +153,7 @@ To upload a file, click on the **Upload File** button. In the file explorer you 
 ![Upload file](image-13.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Inspect the translation)]
@@ -168,6 +177,7 @@ Change the word `Englisch` to `Deutsch` as it should not be translated, but shou
 After changing the translation, press the **Save** button.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Download the translation and insert it into the project)]
@@ -179,6 +189,7 @@ Once is it download, open it with the finder and copy the translated `Main.strin
 ![Copy the translated file to your Xcode project](image-16.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Switch back to Xcode and verify the result)]
@@ -188,6 +199,7 @@ When you copied the file, Xcode should have found out that the file changed, and
 ![German translation in Xcode](image-17.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Run the application in German)]
@@ -203,6 +215,5 @@ If you run the app by pressing the **Build and Run** button at the top left sect
 > Note: You could achieve a similar result by changing the system language of your emulator or iOS device to German in **Settings > General > Language & Region > iPhone Language** and relaunching the app.
 
 
+[VALIDATE_12]
 [ACCORDION-END]
-
-

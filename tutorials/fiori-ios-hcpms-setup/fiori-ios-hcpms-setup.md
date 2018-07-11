@@ -23,7 +23,7 @@ In this tutorial, you will enable and configure SAP Cloud Platform mobile servic
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Cloud Platform cockpit)]
 
-Go to your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com) and log on. Once you are in the cockpit click on the **Neo Trial** tile.
+Go to your [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com) and log on.
 
 [DONE]
 [ACCORDION-END]
@@ -53,4 +53,4 @@ Return to the cockpit by clicking on your User ID "breadcrumb" link near the top
 [ACCORDION-END]
 
 ## Next Steps
- - [Create an application definition](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-application-setup.html) 
+ - [Create an application definition](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-sdk-application-setup.html)
