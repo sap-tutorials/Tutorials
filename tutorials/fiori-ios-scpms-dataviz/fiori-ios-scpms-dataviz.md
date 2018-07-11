@@ -1,6 +1,7 @@
 ---
 title: Data Visualisation with SAP Cloud Platform SDK for iOS
 description: Build an iOS app with the SAP Cloud Platform SDK for iOS and use the new SAP Fiori for iOS Chart Floorplan API's to visualise entity values of an OData service.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>how-to, tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -67,6 +68,7 @@ After the SDK Assistant has finished, **Xcode** will launch and open the just ge
 
 ![Create Xcode project with SDK Assistant](fiori-ios-scpms-dataviz-05.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Test the generated Xcode project)]
@@ -93,6 +95,7 @@ Click **Agree**, and the single entity collection is now shown:
 
 ![Test the generated Xcode project](fiori-ios-scpms-dataviz-13.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create View Controller)]
@@ -109,6 +112,7 @@ Click **Next** to continue. In the next page, save the file as `StockChart`
 
 Click **Create** to finalize the wizard. The new file will now open.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Implement View Controller)]
@@ -203,6 +207,7 @@ func requestEntities(completionHandler: @escaping (Error?) -> Void) {
 
 This will give an error, stating the class has no member `renderChart`. This method will be implemented in the next step
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Implement display of chart)]
@@ -266,6 +271,7 @@ The third method is called from the previous two methods, and will display a sum
 
 You will also see a couple of other errors. This is because the class needs a couple of delegates which aren't referenced yet. This will be corrected in the next step.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Add delegates)]
@@ -339,6 +345,7 @@ The first delegate is called when an item on the cart is clicked.
 
 The second delegate populates the chart with the OData entities values (see the mapped values in `chartCategoryTitles()` and `chartData()` methods).
 
+[VALIDATE_6]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Modify viewDidLoad method)]
@@ -350,6 +357,7 @@ initChart()
 updateChartView()
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Bind the View Controller to the View)]
@@ -381,6 +389,7 @@ case .myPrefixStock:
     masterViewController.navigationItem.title = "Stock"
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Run the application)]
@@ -395,6 +404,7 @@ Select one of the chart items. It should now display the summary info at the top
 
 ![Run the application](fiori-ios-scpms-dataviz-15.png)
 
+[DONE]
 [ACCORDION-END]
 
 

@@ -1,6 +1,7 @@
 ---
 title: Create a Fiori for iOS app in 50 minutes
 description: Create a Fiori for iOS app in 50 minutes
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -982,7 +983,7 @@ And, unsurprisingly, the custom UI you have created earlier follows the same the
 
 > For more on `NUI`, see [NUI readme](https://github.com/tombenner/nui/)
 
-[DONE]
+[VALIDATE_26]
 [ACCORDION-END]
 
 ---

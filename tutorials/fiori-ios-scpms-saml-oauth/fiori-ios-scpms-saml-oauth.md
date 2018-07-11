@@ -1,6 +1,7 @@
 ---
 title: SAML and OAuth 2 authentication
 description: Show the differences in generating an application with the SDK Assistant when choosing SAML or OAuth based authentication
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>security, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -144,7 +145,7 @@ You should now see the authorized client application for `hcpms`, as well as the
 
 ![Load metadata file](fiori-ios-scpms-saml-oauth-12.png)
 
-[DONE]
+[VALIDATE_5]
 [ACCORDION-END]
 
 

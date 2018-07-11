@@ -1,6 +1,7 @@
 ---
 title: Authenticate once and share data between multiple application
 description: Use the Onboarding flow to authenticate once and share data between multiple business applications built with SAP Cloud Platform SDK for iOS.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -69,6 +70,7 @@ After you have clicked **Finish** in the previous step, the SDK Assistant now lo
 
 After the SDK Assistant has finished, **Xcode** will launch and open the just generated `SharedOne` project.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable App Groups entitlement)]
@@ -83,6 +85,7 @@ Click the **Plus** button below it, and provide the following **App Group** ID:
 
 ![Create Xcode project with SDK Assistant](fiori-ios-scpms-shared-keystore-05.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -118,12 +121,14 @@ With this code, the following is happening:
  5. In order to share the same store ID, the step's `storeID` is set to a hard-coded `uuid` value.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create 'SharedTwo' Xcode project with SDK Assistant)]
 
 Repeat steps 1-3, but now, everywhere it says `SharedOne`, enter or use `SharedTwo` instead.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Store data in 'SharedOne' app)]
@@ -161,12 +166,14 @@ Next, locate method `application(_:didFinishLaunchingWithOptions:)` and just abo
 storeData()
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Run 'SharedOne' app)]
 
 If you now build and run the app `SharedOne`, after you have logged in and accepted the EULA, the app should run with the Collections view displaying the available OData entities, just like it normally would. However, since method `storeData()` has been called, an entry with key `myKey` is now added to the shared store.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Read data in 'SharedTwo' app)]
@@ -216,6 +223,7 @@ Finally, just above the bottom return statement, add:
 retrieveData()
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Run 'SharedTwo' app)]
@@ -224,12 +232,14 @@ If you now build and run the app `SharedTwo`, after you have logged in and accep
 
 ![Create Xcode project with SDK Assistant](fiori-ios-scpms-shared-keystore-06.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test the shared logon experience)]
 
 Now close both running apps, and open one of them again. You now notice you don't need to logon to both apps anymore, since the credentials are stored in the shared key store.
 
+[VALIDATE_9]
 [ACCORDION-END]
 
 

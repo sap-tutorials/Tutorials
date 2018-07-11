@@ -262,8 +262,6 @@ There are several options available like:
 
     As part of the [Microsoft Data Access Components (MDAC) Software Development Kit](https://msdn.microsoft.com/en-us/library/ms810805.aspx) (which can be downloaded from the [Microsoft Download Center](https://www.microsoft.com/en-us/download/details.aspx?id=21995)), this tool shows all the ODBC API function call and allow you to run SQL
 
- - [`FlySpeed SQL Query`](https://www.activedbsoft.com/download-querytool.html) free edition by `ActiveDBSoft`
-
  - [`ODBC QueryTool`](https://sourceforge.net/projects/odbcquerytool/) on `SourceForge`
 
 Make sure you always use a 64 bit version else your DSN won't be listed.
