@@ -548,6 +548,11 @@ Before moving forward with the EML configuration, you need to grant the proper r
 
 Make also sure that the Script Server has been added to your instance.
 
+Also for operational systems, it is recommend to use two separate users with distinctive roles:
+
+- Administering the TensorFlow `ModelServer` and model deployments
+- Calling the deployed models in your code
+
 Connect to the **HXE** tenant using the **SYSTEM** user credentials and execute the following SQL statement:
 
 ```SQL
