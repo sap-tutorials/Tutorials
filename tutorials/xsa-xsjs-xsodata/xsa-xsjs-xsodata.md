@@ -24,7 +24,7 @@ You will learn how to build the XSJS and XSODATA services used to expose your da
 [ACCORDION-BEGIN [Step 1: ](Create a Node.js module)]
 Like the previous exercises, you will start by creating a new module.  `New->Node.js Module`
 
-![New Module](1.png) 
+![New Module](1.png)
 
 Name the module `core_xsjs` and press Next.
 
@@ -226,6 +226,3 @@ Paste the result into the validation below. If you get an error, you might want 
 [VALIDATE_2]
 
 [ACCORDION-END]  
-
-## Next Steps
- - [Create a simple OData service](https://www.sap.com/developer/tutorials/xsa-xsodata.html)

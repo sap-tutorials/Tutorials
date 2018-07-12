@@ -24,7 +24,7 @@ You will learn how to create an HTML5 endpoint with authentication using the Use
 
 [ACCORDION-BEGIN [Step 1: ](Add the HTML5 Module in your existing MTA project)]
 
-> ***What is a Multi-Target Application?***: The XS Advanced application platform is based on Cloud Foundry, an open-source platform that provides a layer of abstraction between your application and the underlying infrastructure. This is useful because it allows you to deploy the same application in different cloud providers. Cloud Foundry allows for a micro-service approach. A Multi-Target Application allows you to bundle all the different micro-services conforming `your business application into the same lifecycle`. For more information about multi-target applications (MTA), refer to [this blog post](https://blogs.sap.com/2017/09/05/xs-advanced-for-not-so-dummies-pt-2-multi-target-applications/).
+> ***What is a Multi-Target Application?***: The XS Advanced application platform is based on Cloud Foundry, an open-source platform that provides a layer of abstraction between your application and the underlying infrastructure. This is useful because it allows you to deploy the same application in different cloud providers. Cloud Foundry allows for a micro-service approach. A Multi-Target Application allows you to bundle all the different micro-services conforming `your business application into the same lifecycle`.
 
  Begin by right-clicking on your project and then choosing `New -> HTML5 Module`
 
