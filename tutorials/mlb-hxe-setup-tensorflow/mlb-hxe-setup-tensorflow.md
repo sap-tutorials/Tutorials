@@ -544,14 +544,16 @@ nohup  tensorflow_model_server -port=8500 --model_config_file=/home/tmsadm/expor
 
 Now, that the TensorFlow Serving `ModelServer` is up and running, you will need to add its configuration to your SAP HANA, express edition instance.
 
-Before moving forward with the EML configuration, you need to grant the proper role to the `ML_USER` created during the [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html).
-
-Make also sure that the Script Server has been added to your instance.
-
-Also for operational systems, it is recommend to use two separate users with distinctive roles:
+For operational systems, it is highly recommended to use two separate type of  users with distinctive roles:
 
 - Administering the TensorFlow `ModelServer` and model deployments
 - Calling the deployed models in your code
+
+Each type of user will require dedicated roles to be granted.
+
+In your case, you will be reusing the `ML_USER` created during the [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html) tutorial for both roles.
+
+Make also sure that the Script Server has been enabled for your instance.
 
 Connect to the **HXE** tenant using the **SYSTEM** user credentials and execute the following SQL statement:
 
