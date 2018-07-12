@@ -1,6 +1,7 @@
 ---
 title: List Report Floorplan
 description: Enhance your app with a Fiori List Report Floorplan
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -62,6 +63,7 @@ With the just added Table View Controller selected, give it the name `Supplier P
 ![New Table View Controller](fiori-ios-scpms-floorplan-01.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create new subclass of a UITableViewController class)]
@@ -110,6 +112,7 @@ Switch to the **Storyboard** and select the **Supplier Products Table View**. In
 
 ![Link Table View Controller to subclass](fiori-ios-scpms-floorplan-03.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -131,6 +134,7 @@ Name the segue `showSupplierProducts`:
 ![Create Segue](fiori-ios-scpms-floorplan-05.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Implement Table View Cell for Suppliers)]
@@ -169,6 +173,7 @@ If you now run and build the application, the newly added table cell is displaye
 However, if you click on it, nothing happens... You will solve that in the next step.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Implement navigation logic)]
@@ -219,6 +224,7 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
 With this code, you create a query to load all related **Product** entities for the selected **Supplier** entity, and store the results into the `SupplierProductsViewController`.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Implement the SAP Fiori List Report Floorplan)]
@@ -295,6 +301,7 @@ If you now build and run the application, select a **Supplier** and click the **
 ![Floor plan](fiori-ios-scpms-floorplan-07.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Add Search Bar, Toolbar and Navigation bar)]
@@ -378,6 +385,7 @@ Type in the search bar, the list should update instantly:
 ![Floor plan](fiori-ios-scpms-floorplan-09.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add toolbar buttons)]
@@ -418,6 +426,7 @@ Build and run the application, the view should now have the buttons visible:
 ![Floor plan](fiori-ios-scpms-floorplan-10.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Update info.plist file)]
@@ -435,6 +444,7 @@ Open the `info.plist` file and add the following entry:
 ![Navigation Controller](fiori-ios-scpms-floorplan-11.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Enable Barcode Scanner in Search bar)]
@@ -463,6 +473,7 @@ searchController!.searchBar.barcodeScanner?.scanResultTransformer = { (scanStrin
 This code adds the Search Bar and attaches the Barcode Scanner to it. Upon successful scanning, the Search bar will now be filtered with the scanned value.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Using the Barcode Scanner)]
@@ -500,6 +511,7 @@ The list should now be filtered based on the scanned results:
 ![Navigation Controller](fiori-ios-scpms-floorplan-16.jpg)
 
 
+[VALIDATE_11]
 [ACCORDION-END]
 
 ## Next Steps

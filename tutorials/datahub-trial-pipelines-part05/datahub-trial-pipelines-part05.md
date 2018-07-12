@@ -61,7 +61,7 @@ As we don't have a `SAP Vora HdfsLoader Operator` equivalent for `GCS-Vora`, we 
 
 Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment (`https://vhcalruntime/app/pipeline-modeler`)
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_SP04.pdf) guide.
 
 Add a **JavaScript Operator** to the pipeline by drag & drop. Also add a **SAP Vora Client** operator similarly. Then connect the `outFilename` port of the **GCS Consumer** (this is an unused port in the GCS Consumer operator) to the `input` port of the **JavaScript Operator**. Also connect the `output` port of the **JavaScript Operator** to the `inSQL` port of the **SAP Vora Client Operator**
 

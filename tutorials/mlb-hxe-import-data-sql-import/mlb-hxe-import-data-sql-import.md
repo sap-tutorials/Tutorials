@@ -64,7 +64,7 @@ WHERE
 AND KEY     = 'enable_csv_import_path_filter'
 ```
 
-By default, the value is **true**, which means that the IMPORT FROM SQL command will only work for CSV files located at the path configured by **`csv_import_path_filter`**.
+By default, the value is **true**, which means that the IMPORT FROM SQL command will only work for CSV files located at the path configured by **`csv_import_path_filter`** which is not set by default.
 
 You can disable this restriction using the following SQL statement when connected as the **SYSTEM** user:
 

@@ -79,7 +79,7 @@ Add your `HANAExpress` Add System > Specify System
 Configuration:
 
 - Hostname: `HANAExpress` Hostname (use `/sbin/ifconfig` to find IP address of host)
-- Instance number: 90 (or 00 for SAP HANA 1.0, express edition installations)
+- Instance number: 90 (or 00 for SAP HANA 1.0, express edition installations, or the number you specified during a custom installation)
 - Mode: _Multiple containers_ > _System database_
 - Description: `HANAExpress` Edition
 

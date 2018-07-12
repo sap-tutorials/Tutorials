@@ -1,6 +1,7 @@
 ---
 title: Explore data in SAP Vora
 description: Explore data in SAP Vora (including profiling) by using SAP Data Hub, trial edition.
+auto_validation: false
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -29,14 +30,14 @@ Navigate to the **SAP Vora Tools** by clicking **link (1)** on the bottom of the
 
 ![picture_02](./datahub-trial-discovery-part02_02.png)  
 
-Create a new relational table by clicking **Create New (2)**.
+Create a new relational table by clicking **Create New (2)**. If you don't see the welcome screen like the one in the above screenshot, click on the **+** button (highlighted in the screenshot, in upper left corner) and navigate to **Create Relational Table**.
 
 ![picture_03](./datahub-trial-discovery-part02_03.png)  
 
 Enter the following information to create the relational table and then click **Next (3)** :
 
-| Field                          | Value                                                                                       |
-| ------------------------------ | ------------------------------------------------------------------------------------------- |
+| Field &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          | Value                                                                                       |
+| :------------------------------ | :------------------------------------------------------------------------------------------- |
 | `Name`                         | `CUSTOMERS`                                                                                 |
 | `Schema`                       | `VORA`                                                                                      |
 | `Engine`                       | `Relational`                                                                                |
@@ -56,6 +57,8 @@ On the next screen, change the **data type (4)** of the `CUSTOMER` column to `BI
 
 ![picture_05](./datahub-trial-discovery-part02_05.png)  
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Preview table)]
@@ -72,6 +75,8 @@ Select the `CUSTOMERS` table and then take a look at the content of the table by
 
 You see the first 100 rows of the table. Obviously the table stores the same customer data as the `Customers.csv` file (that is where you loaded the data from into the table). Navigate back by clicking on the **Discovery (8)** link.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Profile table)]
@@ -79,7 +84,7 @@ Next you profile the table. Profiling determines all kind of metadata about the 
 
 ![picture_08](./datahub-trial-discovery-part02_08.png)  
 
-Select the `CUSTOMERS` table and profile it by clicking **Profile -> Start Profiling (9)**.
+Select the `CUSTOMERS` table and profile it by clicking **Profiling -> Start Profiling (9)**.
 
 The system indicates that profiling started. It can take several minutes for profiling to complete. You can refresh the screen by clicking **Refresh (9)**. That is the right-most button in the toolbar in the upper right of the screen.
 
@@ -87,10 +92,18 @@ The system indicates that profiling started. It can take several minutes for pro
 
 When profiling completed, the system will display the profiling status as `Profiled`.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Display metadata and fact sheet)]
 You can take a look at metadata and fact sheet of the `CUSTOMERS` table just like you did during the previous tutorial for the files.
+
+Open the fact sheet for `Customers.csv` that you have profiled just now and answer the following questions with the help of the below screenshot :
+
+![picture_10](datahub-trial-discovery-part02_10.png)  
+
+[VALIDATE_1]
 
 [ACCORDION-END]
 
