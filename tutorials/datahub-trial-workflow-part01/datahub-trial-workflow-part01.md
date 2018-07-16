@@ -1,7 +1,7 @@
 ---
 title: Create workflow (part 1), Enrich data with flowgraph
 description: Build a flowgraph to enrich device data with country information by using SAP Data Hub, trial edition.
-auto_validation: false
+auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
