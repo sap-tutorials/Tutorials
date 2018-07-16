@@ -1,7 +1,7 @@
 ---
 
-title: Continuous Integration (CI) Best Practices with SAP: Fiori Hybrid Apps with SAP Mobile Platform SDK
-description: Part 4.8: Basic CI setup for Fiori Hybrid Apps with the SAP Mobile Platform SDK
+title: Continuous Integration (CI) Best Practices with SAP - SAP Fiori Hybrid Apps with SAP Mobile Platform SDK
+description: Part 4.8 - Basic CI setup for SAP Fiori Hybrid Apps with the SAP Mobile Platform SDK
 primary_tag: products>sap-cloud-platform
 tags: [ tutorial>intermediate, tutorial:type/project ]
 
@@ -163,7 +163,7 @@ These setup steps have been described in the [CI guide for native iOS developmen
 
 The [SAP Mobile Platform SDK](https://store.sap.com/sap/cp/ui/resources/store/html/SolutionDetails.html?pid=0000013098&catID=&pcntry=DE&sap-language=EN&_cp_id=id-1527256329389-0) is our collection of tools and libraries that facilitates integration of Android, Windows and iOS mobile apps with SAP Mobile Platform and SAP Cloud Platform Mobile Services. For this specific guide, it most notably contains the Kapsel SDK, which is a subset specifically tailored to developing applications with Cordova. In order to be able to leverage the Cordova plugins provided by SAP, you will need to download and install it on your developer machine. In Section 3, *Uploading Kapsel Plugins to npm*, we are going to make those plugins available to the build server and ourselves by means of an npm registry.
 
-In order to obtain a copy, simply follow the link given above, log in to SAP Store with your SCN user, click the "Trial Version" button shown in Figure 3 and fill out the request form. An e-mail with download instructions is going to be sent to you.
+In order to obtain a copy, simply follow the link given above, log in to SAP Store with your SCN user, click the "Trial Version" button shown in Figure 3 and fill out the request form. An e-mail with download instructions is going to be sent to you. For this tutorial, version ``3.1`` has been used.
 
 Once installed, add the following line to ``~/.bash_profile`` for easier access later on:
 
@@ -239,6 +239,7 @@ Next, we need to create a Cordova project and replace the default web app inside
 
 ```
 $ cordova create cordova-fiori-ci com.sap.ci.ios.CIExample
+$ cd cordova-fiori-ci
 ```
 
 Which creates an app named ``cordova-fiori-ci`` with the bundle identifier ``com.sap.ci.ios.CIExample``. Please note that you should use whatever App ID you registered with your Apple Developer program in step 2.4. In this case, we are simply reusing the application identifier we used in the [CI guide for native iOS development](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html).
@@ -260,7 +261,7 @@ Now that it has been established that everything works fine up to this point, we
 
 ```
 $ rm -rf www
-$ unzip ~/Downloads/com.sap.ci.cordova.zip -d www/
+$ unzip ~/Downloads/CIExample.zip -d www/
 $ mv www/neo-app.json ./neo-app.json
 ```
 
@@ -315,7 +316,7 @@ Now rerun the app via ``cordova emulate ios`` to verify the project has been con
 
 #### 4.3 Configuring Mobile Services
 
-Before we proceed with integrating the app with SAP Cloud Platform, please note that if you were following the [CI guide for native iOS development](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html), you can simply reuse the application configuration that was created on Mobile Services via the Cloud Platform SDK for iOS Assistant. Otherwise, please refer to Step 1 of the [Advanced Authentication Mobile Interactive Tutorial](https://www.sap.com/germany/developer/tutorial-navigator/mobile-interactive-tutorials/authentication/html5-ios/advanced.html). It will guide you through the steps required to configure a new application that we can use on Mobile Services. Please make sure that in the Security settings of the app, you select ``Basic`` instead of ``SAML``, as shown in Figure 8.
+Before we proceed with integrating the app with SAP Cloud Platform, please note that if you were following the [CI guide for native iOS development](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html), you can simply reuse the application configuration that was created on Mobile Services via the Cloud Platform SDK for iOS Assistant. Otherwise, please refer to Step 1 of the [Advanced Authentication Mobile Interactive Tutorial](https://www.sap.com/developer/tutorial-navigator/mobile-interactive-tutorials/authentication/html5-ios/advanced.html). It will guide you through the steps required to configure a new application that we can use on Mobile Services. Please make sure that in the Security settings of the app, you select ``Basic`` instead of ``SAML``, as shown in Figure 8.
 
 ![Figure 8: Security settings on SAP Cloud Platform Mobile Services](mobile-services-1-security.png)
 
@@ -337,7 +338,7 @@ Then, in ``www/webapp/index.html``, locate the following code snippet, which att
 				new sap.m.Shell({
 					app: new sap.ui.core.ComponentContainer({
 						height : "100%",
-						name : "com.sap.ci.cordova.CIexample"
+						name : "com.sap.ci.cordova.CIExample"
 					})
 				}).placeAt("content");
 			});
@@ -362,7 +363,7 @@ In order to make this work with Mobile Services, we need to adjust the applicati
       * Make sure to only provide the *host*, not the full server URL!
       */
     const SERVER_CONTEXT = {
-      serverHost: "hcpms-d053411trial.hanatrial.ondemand.com",
+      serverHost: "hcpms-pxxxxxxxtrial.hanatrial.ondemand.com",
       https: true,
       serverPort: 443
     };
@@ -400,7 +401,7 @@ In order to make this work with Mobile Services, we need to adjust the applicati
         new sap.m.Shell({
           app: new sap.ui.core.ComponentContainer({
             height : "100%",
-            name : "com.sap.ci.cordova.CIexample"
+            name : "com.sap.ci.cordova.CIExample"
           })
         }).placeAt("content");
       });
@@ -497,7 +498,7 @@ cd cordova-fiori-ci
 git init
 ```
 
-In order to not inflate the repository with superfluous generated files, add a ``.gitignore`` file. We can leverage the community-maintained service [gitignore.io](https;//www.gitignore.io) for that purpose:
+In order to not inflate the repository with superfluous generated files, add a ``.gitignore`` file. We can leverage the community-maintained service [gitignore.io](https://www.gitignore.io) for that purpose:
 
 ```
 curl https://www.gitignore.io/api/node%2Cmacos%2Capachecordova > .gitignore
@@ -529,7 +530,7 @@ Before we proceed with finalizing the setup, there are two options to discuss wh
 
 #### 4.9 Creating the Jenkins Pipeline
 
-Now we are getting to the final step - configuring our basic build job in Jenkins. In this guide, we are going to create a Pipeline by means of a so-called Jenkinsfile, which we can add to our project just as a regular source code artifact. The advantage is that this to include the knowledge and steps required to build a project within the project itself, rather than externally to it in some server configuration. Secondly, we can version such pipelines, which is a great way to evolve build scripts together with the project. First, please follow the instructions in Section 4.5 of the CI guide for native iOS development](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html) to create a new Pipeline project in your Jenkins instance, but make sure to also add "Clean before checkout" in the "Additional Behaviors" section, as shown in Figure 14. Then create a file called ``Jenkinsfile`` in the project root directory with the following contents:
+Now we are getting to the final step - configuring our basic build job in Jenkins. In this guide, we are going to create a Pipeline by means of a so-called Jenkinsfile, which we can add to our project just as a regular source code artifact. The advantage is that is externalizing the knowledge and steps required to build a project within the project itself, rather than externally to it in some server configuration. Secondly, we can version such pipelines, which is a great way to evolve build scripts together with the project. First, please follow the instructions in Section 4.5 of the [CI guide for native iOS development](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html) to create a new Pipeline project in your Jenkins instance, but make sure to also add "Clean before checkout" in the "Additional Behaviors" section, as shown in Figure 14. Then create a file called ``Jenkinsfile`` in the project root directory with the following contents:
 
 ```
 pipeline {
