@@ -25,17 +25,17 @@
     "color-log": "^0.0.2",
     "command-line-args": "^4.0.7",
     "cp-file": "^5.0.0",
+    "fs-extra": "^6.0.0",
     "html-entities": "^1.2.1",
     "inquirer": "^3.3.0",
-    "markdown-link-check": "^3.1.6",
+    "markdown-link-check": "^3.6.2",
     "markdown-spellcheck": "^1.3.1",
     "marked": "0.3.12",
     "mkdirp": "^0.5.1",
     "openurl": "^1.1.1",
     "progress": "^2.0.0",
     "recursive-readdir": "^2.2.1",
-    "request": "^2.85.0",
-    "request-promise-native": "^1.0.5",
-    "fs-extra": "^6.0.0"
+    "request": "^2.87.0",
+    "request-promise-native": "^1.0.5"
   }
 }
