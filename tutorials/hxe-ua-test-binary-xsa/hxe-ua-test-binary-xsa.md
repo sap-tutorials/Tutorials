@@ -97,7 +97,20 @@ If your site uses a proxy for connecting to HTTP and HTTPS servers, select *Cock
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test Web IDE.)]
+[ACCORDION-BEGIN [Step 3: ]((Optional) Turn on XSA messaging.)]
+
+If you want the XSA messaging service, issue these commands to start the messaging service applications:
+
+```bash
+xs start messaging-service-hub
+xs start messaging-service-node
+xs start messaging-service-broker
+
+```
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Test Web IDE.)]
 
 As the `sid``adm` user, log in to XSA services:
 
@@ -130,7 +143,7 @@ Log on to Web IDE using the `XSA_DEV` user.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ]((Optional) Test Your Installation Using the HANA Eclipse Plugin.)]
+[ACCORDION-BEGIN [Step 5: ]((Optional) Test Your Installation Using the HANA Eclipse Plugin.)]
 
 Download `Eclipse IDE for Java EE Developers` from [http://www.eclipse.org/neon/](http://www.eclipse.org/neon/) to your local file system.
 

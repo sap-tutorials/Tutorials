@@ -49,7 +49,7 @@ Optional installation packages have their own tutorials. Use this table to find 
 
 |Optional Installation Package|Installation Tutorial|
 |-----------------------------|---------------------|
-|Text analysis files for additional languages|[Install the Optional Text Analysis Files Package for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-text-analysis-vm.html) [Install the Optional Text Analysis Files Package for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-text-analysis-binary.html)|
+|Text analysis files for additional languages|[Install the Optional Text Analysis Files Package for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-text-analysis-vm.html) |
 |SAP Enterprise Architecture Designer|[Install the Optional SAP Enterprise Architecture Designer Package for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-installing-eads-vm.html) |
 |SAP HANA streaming analytics| [Get started with SAP HANA streaming analytics for SAP HANA, express edition](https://www.sap.com/developer/groups/sds-hxe-get-started.html) |
 |SAP HANA Interactive Education| [Install the Optional SAP HANA Interactive Education Package for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-shine-vm.html) |

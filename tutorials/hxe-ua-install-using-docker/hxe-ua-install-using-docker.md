@@ -46,7 +46,7 @@ SAP HANA, express edition for Docker has been tested on the following Linux oper
 
 [ACCORDION-BEGIN [Step 1: ](Install Docker)]
 
-Download and install Docker Enterprise Edition for SUSE Enterprise Linux Server. Visit the [Docker Enterprise Edition SUSE Enterprise Linux Server](https://store.docker.com/editions/enterprise/docker-ee-server-sles?tab=description) page for information on how to install Docker on your SLES system.
+Download and install the appropriate Docker Edition for your system. Visit the [Docker Community Edition](https://store.docker.com/search?offering=community&type=edition) or [Docker Enterprise Edition](https://store.docker.com/search?offering=enterprise&type=edition) lists for more information and to download Docker for your machine.
 
 > **Note:**
 > Ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.

@@ -20,15 +20,15 @@ You will learn how to download installation packages using the GUI mode Download
 
 ---
 
-You can also download optional installation packages, like the SAP Enterprise Architecture Designer Package, at this point in your installation, before you've started the server. However, SAP does not recommend downloading optional installation packages until **after** your server is installed and running. SAP recommends you download optional installation packages after you've installed, and recommends you use the built-in console mode Download Manager.
+You can also download **optional** installation packages (like the SAP Enterprise Architecture Designer Package) at this point in your installation, before you've started the server. However, SAP does not recommend downloading optional installation packages until **after** your server is installed and running.
 
-[ACCORDION-BEGIN [Step 1: ](Select the `Linux/x86-64` platform.)]
+[ACCORDION-BEGIN [Step 1: ](Select the `Linux/x86-64` platform)]
 
 In Download Manager, from the *Platform* pull-down, select SAP HANA, express edition on `Linux/x86-64`. (Virtual machine method installation is not available for *Linux/Power (little endian)*.)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Select the VM image.)]
+[ACCORDION-BEGIN [Step 2: ](Select the VM image)]
 
 From the *Image* pull-down, select *Virtual Machine*.
 
@@ -42,7 +42,7 @@ Click *Browse* and select a directory where your downloads will be saved.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Select an OVA and user guide.)]
+[ACCORDION-BEGIN [Step 4: ](Select an OVA and user guide)]
 
 Select one or more of the following packages:
 
@@ -73,7 +73,7 @@ Select one or more of the following packages:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ]((Optional) Download optional installation packages.)]
+[ACCORDION-BEGIN [Step 5: ]((Optional) Download optional installation packages)]
 
 Skip to the next step unless you are an advanced user.
 
@@ -134,7 +134,7 @@ If downloading optional installation packages now, select one or more of the fol
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Download your selections.)]
+[ACCORDION-BEGIN [Step 6: ](Download your selections)]
 
 Click the *Download* button.
 

@@ -28,12 +28,7 @@ SAP EA Designer is a separate download in the Download Manager.
 
 In this procedure you'll download the SAP EA Designer package (`eadesigner.tgz`) using the built-in Download Manager (Console Mode), extract the package, and run the installation script.
 
-> Note:
-> Use the server's built-in Download Manager (Console Mode) for Linux to download `eadesigner.tgz`. When logged-in as `hxeadm`, you can access the download manager (`HXEDownloadManager_linux.bin`) in directory `/usr/sap/HXE/home/bin`.
-> 
-> 
-
-[ACCORDION-BEGIN [Step 1: ](Run the memory management script.)]
+[ACCORDION-BEGIN [Step 1: ](Run the memory management script)]
 
 The `hxe_gc` memory management script frees up available VM memory.
 
@@ -57,7 +52,7 @@ The cleanup process runs. The command prompt returns when the cleanup process is
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Download `eadesigner.tgz` using the built-in Download Manager.)]
+[ACCORDION-BEGIN [Step 2: ](Download `eadesigner.tgz` using the built-in Download Manager)]
 
 In your VM, from the same directory where you ran `hxe_gc` (`/usr/sap/HXE/home/bin`), enter:
 
@@ -69,7 +64,7 @@ HXEDownloadManager_linux.bin linuxx86_64 vm eadesigner.tgz
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Navigate to the `Downloads` directory.)]
+[ACCORDION-BEGIN [Step 3: ](Navigate to the `Downloads` directory)]
 
 In your VM, enter:
 
@@ -111,7 +106,7 @@ cd HANA_EXPRESS_20
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Run the installation script.)]
+[ACCORDION-BEGIN [Step 7: ](Run the installation script)]
 
 In your VM, enter:
 
@@ -123,7 +118,7 @@ Installation begins.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Follow the installation prompts.)]
+[ACCORDION-BEGIN [Step 8: ](Follow the installation prompts)]
 
 -   When prompted for `HANA instance number [90]` press `Enter` to accept the default.
 
@@ -134,7 +129,7 @@ Installation begins.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Complete the installation.)]
+[ACCORDION-BEGIN [Step 9: ](Complete the installation)]
 
 When prompted to `Proceed with installation`, enter `Y`. Wait for installation to finish.
 
@@ -144,7 +139,7 @@ A success message displays when installation completes.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Confirm the status of SAP EA Designer.)]
+[ACCORDION-BEGIN [Step 10: ](Confirm the status of SAP EA Designer)]
 
 In your VM, enter:
 
@@ -163,7 +158,7 @@ The output will include all the applications of your organization and space. You
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Log in.)]
+[ACCORDION-BEGIN [Step 11: ](Log in)]
 
 -   Note the URL for `eadesigner`.
 
