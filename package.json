@@ -5,7 +5,8 @@
   "main": "README.MD",
   "license": "Apache-2.0",
   "scripts": {
-    "test": "node test.js -t"
+    "test": "node test.js -t",
+    "test-prod": "cross-env NODE_ENV=production node test.js -t"
   },
   "repository": {
     "type": "git",
@@ -37,5 +38,8 @@
     "request": "^2.85.0",
     "request-promise-native": "^1.0.5",
     "fs-extra": "^6.0.0"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
   }
 }
