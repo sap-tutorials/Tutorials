@@ -24,7 +24,7 @@ Postman will allow you to interact with REST API. In addition, you will
 
 [ACCORDION-BEGIN [Step 1: ](Install Google Chrome)]
 
-If you haven't done so yet, please install [Google Chrome](http://www.google.com/chrome/browser/desktop/).
+If you haven't done so yet, please install [Google Chrome](https://www.google.com/chrome/).
 
 [ACCORDION-END]
 
