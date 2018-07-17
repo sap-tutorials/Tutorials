@@ -2,7 +2,7 @@
 title: Kickstart Continuous Delivery for SAP S/4HANA Extensions on Google Kubernetes Engine
 description: Set up your Continuous Delivery infrastructure for SAP S/4HANA Extension applications on Google Kubernetes Engine.
 primary_tag: products>sap-s-4hana
-tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform, products>sap-s-4hana-cloud-sdk, topic>cloud, topic>Continues delivery ]
+tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform, products>sap-s-4hana-cloud-sdk, topic>cloud, topic>Continues delivery, topic>Pipeline ]
 ---
 
 ## Prerequisites  
