@@ -12,7 +12,7 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
 For a complete overview visit the [SAP S/4HANA Cloud SDK Overview](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).
 
 ### You will learn  
-In this tutorial, we will see how to set up a scalable [SAP S/4HANA Cloud SDK CI/CD server ](https://www.sap.com/germany/developer/topics/s4hana-cloud-sdk.html) on Google Kubernetes Engine within few minutes. We will also build an example application using our out of the box pipeline.
+In this tutorial, we will see how to set up a scalable [SAP S/4HANA Cloud SDK CI/CD server ](https://www.sap.com/germany/developer/topics/s4hana-cloud-sdk.html) on Google Kubernetes Engine within few minutes. We will also build an example application using the out of the box pipeline.
 
 ### You will win a Goodie
 In addition to gaining hands-on experience, you can also win a goodie if you can successfully build the example project using this guide.
@@ -25,7 +25,7 @@ In addition to gaining hands-on experience, you can also win a goodie if you can
 
 In this step, we will create a Kubernetes cluster which will be used in the following steps.  Let us create a Kubernetes cluster with 3 nodes which will contain 2 CPUs each.
 
-To begin, login to your Google Cloud Platform account. In the Google Cloud Platform dashboard, navigate to `Kubernetes Engine` and click on `create cluster`.
+To begin, log in to your Google Cloud Platform account. In the Google Cloud Platform dashboard, navigate to `Kubernetes Engine` and click on `create cluster`.
 
 ![Create Kubernetes cluster](images/1.PNG)
 
@@ -35,7 +35,7 @@ In the following page, change `Machine type` to use 2vCPUs. We will use default 
 ![Configure Kubernetes cluster](images/2.PNG)
 
 
-Click on create cluster. This will create cluster named `cluster-1` with 3 nodes.  The creation of cluster might take few minutes.
+Click on create cluster. This will create a cluster named `cluster-1` with 3 nodes.  The creation of cluster might take a few minutes.
 
 
 ![New Kubernetes cluster](images/4.PNG)
@@ -65,9 +65,9 @@ kubeconfig entry generated for cluster-1.
 
 [ACCORDION-BEGIN [Step 2: ](Setup Jenkins)]
 
-SAP S/4HANA Cloud SDK CI/CD Toolkit makes use of Jenkins to run the continuous delivery Pipeline. Let us setup the Jenkins with auto-scaling capabilities. Even though it is possible to use `kubectl` to setup the Jenkins on Kubernetes cluster, we will use helm, a package management tool for Kubernetes.
+SAP S/4HANA Cloud SDK CI/CD Toolkit makes use of Jenkins to run the continuous delivery Pipeline. Let us set up the Jenkins with auto-scaling capabilities. we will use helm package manager tool to set up the Jenkins on Kubernetes cluster.
 
-Execute the below commands in the cloud shell that is open. This command will execute a `helm` command with custom values.
+Execute the below commands in the cloud shell that is open. The `setup_jenkins` script will execute a `helm` command with custom values. This will create all the service account that are required to run the Jenkins ad agents along with the services to cater internal and external traffic.
 
 ```
 wget -O setup_jenkins https://raw.githubusercontent.com/SAP/cloud-s4-sdk-book/google-next/cx-server/setup_jenkins
@@ -79,7 +79,6 @@ chmod 700 setup_jenkins
 ```
 ![Jenkins Deployment using helm](images/9.PNG)
 
-With this, we have setup a Jenkins master which makes use of the custom Docker image that was created for SAP S/4HANA Cloud SDK, using Kubernetes deployment. The Jenkins master exposes the port `8080` on an external `LoadBalancer`. By executing these commands, we have also created the service user which is required to create Jenkins agents on-demand.
 
 The Jenkins that we have deployed is preconfigured with the libraries and the plugins that are required to execute the SAP S/4HANA Cloud SDK Pipeline.
 
