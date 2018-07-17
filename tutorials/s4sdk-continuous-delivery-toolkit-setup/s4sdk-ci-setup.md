@@ -71,18 +71,14 @@ Execute the below commands in the cloud shell that is open. The `setup_jenkins` 
 
 ```
 wget -O setup_jenkins https://raw.githubusercontent.com/SAP/cloud-s4-sdk-book/google-next/cx-server/setup_jenkins
-
 chmod 700 setup_jenkins
-
 ./setup_jenkins
-
 ```
 ![Jenkins Deployment using helm](images/9.PNG)
 
 
 The Jenkins that we have deployed is preconfigured with the libraries and the plugins that are required to execute the SAP S/4HANA Cloud SDK Pipeline.
-
-In order to examine the deployment status, please navigate to `Workloads` menu and please wait until the deployment status turns to green. This will take few minutes.
+In order to examine the deployment status, please navigate to `Workloads` menu and please wait until the deployment status turns to green. This will take a few minutes.
 
 ![Jenkins Deployment Status](images/11.PNG)
 
