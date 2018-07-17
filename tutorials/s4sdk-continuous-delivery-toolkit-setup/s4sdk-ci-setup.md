@@ -160,4 +160,5 @@ Unlike the standalone Jenkins instance, the Jenkins instance which is deployed o
 
 To get a detailed insight in to SAP S/4HANA Cloud SDK, please go through our [blog posts]((https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).  
 
-![Build Status](images/19.PNG)
+[DONE]
+[ACCORDION-END]
