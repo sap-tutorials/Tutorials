@@ -1,6 +1,6 @@
 ---
-title: Kickstart Continuous Delivery for SAP S/4HANA Extensions using Google Kubernetes Engine
-description: Set up your system to create an SAP Cloud Platform application with the S/4HANA Cloud SDK.
+title: Kickstart Continuous Delivery for SAP S/4HANA Extensions on Google Kubernetes Engine
+description: Set up your Continuous Delivery infrastructure for SAP S/4HANA Extension applications on Google Kubernetes Engine.
 primary_tag: products>sap-s-4hana
 tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform, products>sap-s-4hana-cloud-sdk, topic>cloud, topic>Continues delivery ]
 ---
@@ -23,7 +23,7 @@ In addition to gaining hands-on experience, you can also win a goodie if you can
 [ACCORDION-BEGIN [Step 1: ](Prepare the Infrastructure)]
 ### Setup Kubernetes cluster
 
-In this step, we will create a Kubernetes cluster which will be used in the following steps.  Let us create a Kubernetes cluster with 3 nodes which will contain 2 CPUs each. 
+In this step, we will create a Kubernetes cluster which will be used in the following steps.  Let us create a Kubernetes cluster with 3 nodes which will contain 2 CPUs each.
 
 To begin, login to your Google Cloud Platform account. In the Google Cloud Platform dashboard, navigate to `Kubernetes Engine` and click on `create cluster`.
 
