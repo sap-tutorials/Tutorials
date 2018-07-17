@@ -128,6 +128,9 @@ You can check the status of the pipeline execution in the Jenkins dashboard. Nav
 
 ![Pipeline Status](images/22.PNG)
 
+To switch to classic view of the Jenkins dashboard from Blue ocean view, you can click on the `Go to Classic` button on the right hand side.
+
+![Pipeline Classic view](images/18.PNG)
 
 [DONE]
 [ACCORDION-END]
@@ -155,6 +158,6 @@ You will find a code for the goodie once the job is successfully completed.
 
 Unlike the standalone Jenkins instance, the Jenkins instance which is deployed on the Kubernetes cluster gives us the flexibility to scale it based on the load. In addition Kubernetes will ensure the availability of the service by regular health check of the containers.
 
-To get an detailed insight in to SAP S/4HANA Cloud SDK, please go through our [blog posts]((https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).  
+To get a detailed insight in to SAP S/4HANA Cloud SDK, please go through our [blog posts]((https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).  
 
 ![Build Status](images/19.PNG)
