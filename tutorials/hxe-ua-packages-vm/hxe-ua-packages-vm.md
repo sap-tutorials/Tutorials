@@ -26,7 +26,7 @@ It is possible to download optional installation packages during the server inst
 
 Using the server's built-in command line Download Manager to download optional installation packages directly to your VM is the fastest and easiest way to install optional packages, as it saves you from having to transfer files from your client machine to the VM.
 
-[ACCORDION-BEGIN [Step 1: ](Choose optional installation packages.)]
+[ACCORDION-BEGIN [Step 1: ](Choose optional installation packages)]
 
 Decide what optional installation packages you want to install.
 
@@ -41,7 +41,7 @@ Decide what optional installation packages you want to install.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Locate the package-specific installation tutorials.)]
+[ACCORDION-BEGIN [Step 2: ](Locate the package-specific installation tutorials)]
 
 Optional installation packages have their own tutorials. Use this table to find the installation tutorial you're looking for:
 
@@ -55,5 +55,3 @@ Optional installation packages have their own tutorials. Use this table to find 
 |SAP HANA smart data integration| [Install the Optional SAP HANA Smart Data Integration Package for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-sdi-vm.html) |
 
 [ACCORDION-END]
-
-

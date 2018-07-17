@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Register](http://www.sap.com/developer/tutorials/hxe-ua-register.html) 
+ - **Tutorials:** You have completed [Register](http://www.sap.com/developer/tutorials/hxe-ua-register.html)
 
 ## Details
 ### You will learn
@@ -22,7 +22,7 @@ You will learn how to download installation packages using the GUI mode Download
 
 You can also download **optional** installation packages (like the SAP Enterprise Architecture Designer Package) at this point in your installation, before you've started the server. However, SAP does not recommend downloading optional installation packages until **after** your server is installed and running.
 
-[ACCORDION-BEGIN [Step 1: ](Select the `Linux/x86-64` platform)]
+[ACCORDION-BEGIN [Step 1: ](Select the Linux/x86-64 platform)]
 
 In Download Manager, from the *Platform* pull-down, select SAP HANA, express edition on `Linux/x86-64`. (Virtual machine method installation is not available for *Linux/Power (little endian)*.)
 
@@ -55,21 +55,21 @@ Select one or more of the following packages:
 
 > Note:
 > SAP plans to remove SAP HANA extended application services, classic model (XSC) and the corresponding SAP HANA Repository with the next major product version of SAP HANA.
-> 
+>
 > These components will be removed:
-> 
+>
 > -   SAP HANA extended application services, classic model
-> 
+>
 > -   SAP HANA Repository (XS classic)
-> 
+>
 > -   SAP HANA Studio (Development, Modeling, and Administration perspectives)
-> 
+>
 > -   SAP HANA Web-based Development Workbench (XS classic)
-> 
-> 
+>
+>
 > SAP strongly advises you to plan the transition of existing content and applications from XSC to SAP HANA extended application services, advanced model (XS Advanced).
-> 
-> 
+>
+>
 
 [ACCORDION-END]
 
@@ -78,16 +78,16 @@ Select one or more of the following packages:
 Skip to the next step unless you are an advanced user.
 
 > Note:
-> SAP recommends beginners complete the installation process first, and then download optional installation packages **after** your server is installed and running. Downloading packages after installation is faster and easier, and uses the server's built-in Download Manager (console mode). You will be asked to follow the [Install Optional Packages](https://www.sap.com/developer/tutorials/hxe-ua-packages-vm-xsa.html) tutorial later in the installation workflow, once your server is installed and running. 
-> 
-> 
+> SAP recommends beginners complete the installation process first, and then download optional installation packages **after** your server is installed and running. Downloading packages after installation is faster and easier, and uses the server's built-in Download Manager (console mode). You will be asked to follow the [Install Optional Packages](https://www.sap.com/developer/tutorials/hxe-ua-packages-vm-xsa.html) tutorial later in the installation workflow, once your server is installed and running.
+>
+>
 
 If you choose to download optional installation packages now (before your server is running), note that you will need to transfer the installation files to your VM once downloaded. Transfer instructions vary depending on your hypervisor, and are not included in this documentation.
 
 > Note:
 > Concerned about memory? The memory consumption of each additional package is listed in the [SAP HANA 2.0, express edition Sizing Guide (Virtual Machine Method)](https://help.sap.com/viewer/9e4243e92f244537b2164a57a405a9fd).
-> 
-> 
+>
+>
 
 If downloading optional installation packages now, select one or more of the following:
 
@@ -143,5 +143,3 @@ Your download is complete when a pop-up message appears confirming successful do
 ![loio72b159ec598543db8f01428aff2a5b36_LowRes](loio72b159ec598543db8f01428aff2a5b36_LowRes.png)
 
 [ACCORDION-END]
-
-
