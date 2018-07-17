@@ -11,8 +11,8 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
 ## Details
 For a complete overview visit the [SAP S/4HANA Cloud SDK Overview](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).
 
-### You will learn  
-In this tutorial, we will see how to set up a scalable SAP S/4HANA Cloud SDK CI/CD server on Google Kubernetes Engine within few minutes. We will also build an example application using the out of the box pipeline.
+### You will learn 
+The SAP S/4HANA Cloud SDK helps developers in building cloud-native extensions to SAP's S/4HANA ERP system. For this, it offers a Java library, project archetypes, and a attuned Continuous Delivery Toolkit. In this tutorial, we will see how to set up a scalable SAP S/4HANA Cloud SDK CI/CD server on Google Kubernetes Engine within few minutes. We will also build an SAP S/4HANA Cloud SDK based example application using the out of the box pipeline.
 
 ### Win a Goodie
 In addition to gaining hands-on experience, you can also win a goodie if you can successfully build the example project using this guide.
@@ -33,17 +33,17 @@ In the following page, change `Machine type` to use 2vCPUs. We will use default 
 
 ![Configure Kubernetes cluster](images/2.PNG)
 
-Click on create cluster. This will create a cluster named `cluster-1` with 3 nodes.  The creation of cluster might take a few minutes.
+Click on create cluster. This will create a cluster named `cluster-1` with 3 nodes.  The creation of cluster might take a few minutes. Once it is created, you should see it in your cluster overview like illustrated below:
 
 ![New Kubernetes cluster](images/4.PNG)
 
 ### Connect to Kubernetes cluster
 
-Click on the `Connect` button displayed next to the cluster name. This will open a dialogue. Click on `Run in Cloud Shell` option.
+Next, we need to connect to our freshly created cluster. Therefore, click on the `Connect` button displayed next to the cluster name. This will open a dialogue. Click on the `Run in Cloud Shell` option. This will open a browser based shell and open the connection from there.
 
 ![Connect to Kubernetes cluster](images/5.PNG)
 
-Once the Cloud Shell is open, hit Enter. This will import `auth` data for the cluster and initializes the `kubeconfig` entries. This will be later used by a command line interface `kubectl` to communicate with the cluster.
+Once the Cloud Shell is open, hit Enter. This will import `auth` data for the cluster and initializes the `kubeconfig` entries. This will be later used by the Kubernetes command line interface `kubectl` to communicate with the cluster.
 
 Example:
 
@@ -61,9 +61,9 @@ kubeconfig entry generated for cluster-1.
 
 [ACCORDION-BEGIN [Step 2: ](Setup Jenkins)]
 
-SAP S/4HANA Cloud SDK CI/CD Toolkit makes use of Jenkins to run the continuous delivery Pipeline. Let us set up the Jenkins with auto-scaling capabilities. we will use helm package manager tool to set up the Jenkins on Kubernetes cluster.
+SAP S/4HANA Cloud SDK CI/CD Toolkit makes use of a pre-configured Jenkins to run the continuous delivery Pipeline. Next, we will start the Jenkins server with auto-scaling capabilities on our Kubernetes cluster. Thanks to the helm package manager tool, setting up the Jenkins on Kubernetes our cluster is super simple.
 
-Execute the below commands in the cloud shell that is open. The `setup_jenkins` script will execute a `helm` command with custom values. This will create the service account that is required to run the Jenkins and agents along with the services to cater internal and external traffic to Jenkins.
+In order to make the installation even more convinient, we wrapped the installation in a small `setup_jenkins` shell script. To run it, execute the below commands in the cloud shell that is open. The `setup_jenkins` script will execute a `helm` command with custom values. This will create the service account that is required to run the Jenkins and agents along with the services to cater internal and external traffic to Jenkins.
 
 ```
 wget -O setup_jenkins https://raw.githubusercontent.com/SAP/cloud-s4-sdk-book/google-next/cx-server/setup_jenkins
@@ -83,15 +83,16 @@ In order to examine the deployment status, please navigate to `Workloads` menu a
 
 [ACCORDION-BEGIN [Step 3: ](Connect to Jenkins)]
 
-Once the setup is completed, it is time to build our first application with SAP S/4HANA Cloud SDK Pipeline. Navigate to Services menu under Kubernetes Engine and click on the endpoint of a `LoadBalancer` service.
+Once the setup is completed, it is time to build our first application with SAP S/4HANA Cloud SDK Pipeline. Navigate to Services menu under Kubernetes Engine and click on the endpoint of the `LoadBalancer` service.
 
 ![Connect to Jenkins](images/10.PNG)
 
 ### Login to Jenkins
 
-In the login screen please key-in *admin* as both user and password.  
-
+Now you should see the Jenkins login page, which looks like the screenshot below:
 ![Login to Jenkins](images/12.PNG)
+
+In the login screen please key-in *admin* as both user and password.
 
 [DONE]
 [ACCORDION-END]
@@ -112,19 +113,19 @@ In the following page, choose the source location. For this demo, we have create
 
 Please provide https://github.com/SAP/cloud-s4-sdk-book.git as the location for Project Repository.
 
-The example project has multiple branches. If we do not choose the branch to build, then Jenkins will build all the branches. But we would like to build only one branch, which is of our interest. Let us configure this. Click on `add` in the `Behaviors` section.
+Our example repository has multiple branches and contains the example application for this tutorial in the branch `google-next`. If we do not limit the build job to this branch, Jenkins will start building dozens of branches. This might be too much work - even for our powerful Kubernetes cluster ;) In order to configure Jenkins to only build our branch of interest, let's configure this behavior by clicking on `add` in the `Behaviors` section.
 
 ![Add GitHub repository](images/16.PNG)
 
- Choose `Filter By Name (with wildcards)`. This will expand the options. Please use `google-next` as a value for the `include` field.  This will build only the branch `google-next`.
+Choose `Filter By Name (with wildcards)`. This will expand the options. Please use `google-next` as a value for the `include` field.  This will build only the branch `google-next`.
 
 ![Configure GitHub repository branch](images/17.PNG)
 
 Save the configuration.
 
-That’s All.
+That’s All. You are done.
 
-Congratulations!! You have successfully setup your CI/CD infrastructure on Google Kubernetes Engine and started building your application using SAP S/4HANA Cloud SDK Pipeline.
+Congratulations! You have successfully setup your CI/CD infrastructure on Google Kubernetes Engine and started building the application from the `google-next` branch using SAP S/4HANA Cloud SDK Pipeline.
 
 You can check the status of the pipeline execution in the Jenkins dashboard.
 
