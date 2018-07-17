@@ -33,7 +33,7 @@ In the following page, change Machine type to use 2vCPUs. We will use default va
 ![Configure Kubernetes cluster](images/2.PNG)
 
 
-Click on create cluster. This will create cluster named ‘cluster-1’ with 3 nodes.  The creation of cluster might take few minutes.
+Click on create cluster. This will create cluster named `cluster-1` with 3 nodes.  The creation of cluster might take few minutes.
 
 ![New Kubernetes cluster](images/4.PNG)
 
