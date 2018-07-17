@@ -25,7 +25,7 @@ In addition to gaining hands-on experience, you can also win a goodie if you can
 
 In this step, we will create a Kubernetes cluster which will be used in the following steps.  Let us create a Kubernetes cluster with 3 nodes which will contain 2 CPUs each.
 
-To begin, log in to your Google Cloud Platform account. In the Google Cloud Platform dashboard, navigate to `Kubernetes Engine` and click on `create cluster`.
+To begin with, log in to your Google Cloud Platform account. In the Google Cloud Platform dashboard, navigate to `Kubernetes Engine` and click on `create cluster`.
 
 ![Create Kubernetes cluster](images/1.PNG)
 
