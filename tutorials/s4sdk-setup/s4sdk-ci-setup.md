@@ -16,7 +16,7 @@ For a complete overview visit the [SAP S/4HANA Cloud SDK Overview](https://blogs
 In this tutorial, you will go through the steps required to install the scalable [SAP S/4HANA Cloud SDK CI/CD Toolkit ](https://www.sap.com/germany/developer/topics/s4hana-cloud-sdk.html) on Google Kubernetes engine and execute an example pipeline on the Jenkins that you have setup.
 
 ### You will win a Goodie
-When you successfully setup the pipeline and build the example project, we will provide you a coupon code. Please bring that to the booth to win the exciting goodie.
+When you successfully setup the pipeline and build the example project, we will provide you with a coupon code. Please bring that to the booth to win an exciting goodie.
 
 ### Time to Complete
 **15 Min**
@@ -44,6 +44,7 @@ Click on the Connect button displayed next to the cluster name. This will open a
 ![Connect to Kubernetes cluster](images/5.PNG)
 
 Once the Cloud Shell is open, hit Enter. This will import `auth` data for the cluster and initializes the `kubeconfig` entries. This will be later used by a command line interface `kubectl` to communicate with the cluster.
+[DONE] [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Setup Jenkins)]
 
@@ -68,6 +69,7 @@ In order to examine the deployment status, please navigate to `Workloads` menu a
 
 ![Jenkins Deployment Status](images/11.PNG)
 
+[DONE] [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Connect to Jenkins)]
 
@@ -81,8 +83,9 @@ In the login screen please key-in *admin* as both user and password.
 
 ![Login to Jenkins](images/12.PNG)
 
+[DONE] [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Setup SAP S/4HANA Cloud SDK Pipeline)
+[ACCORDION-BEGIN [Step 4: ](Setup SAP S/4HANA Cloud SDK Pipeline)]
 
 Once the login is successful you will see a Jenkins dashboard.
 
@@ -102,3 +105,5 @@ Please provide http://35.238.249.92/user/firstapp.git as the location for Projec
 That’s All!! You have successfully setup your CI/CD infrastructure on Google Kubernetes Engine and started building your application using SAP S/4HANA Cloud SDK Pipeline.
 
 You can check status of the pipeline execution in the Jenkins dashboard.
+
+[DONE] [ACCORDION-END]
