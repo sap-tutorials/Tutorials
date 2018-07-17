@@ -44,7 +44,9 @@ Click on the Connect button displayed next to the cluster name. This will open a
 ![Connect to Kubernetes cluster](images/5.PNG)
 
 Once the Cloud Shell is open, hit Enter. This will import `auth` data for the cluster and initializes the `kubeconfig` entries. This will be later used by a command line interface `kubectl` to communicate with the cluster.
-[DONE] [ACCORDION-END]
+
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Setup Jenkins)]
 
@@ -53,7 +55,7 @@ SAP S/4HANA Cloud SDK CI/CD Toolkit makes use of Jenkins to run the Pipeline. Le
 Execute below command in the cloud shell that is open.
 
 ```
-wget http://35.238.249.92/user/k8s-docs/raw/master/setup_jenkins
+wget https://raw.githubusercontent.com/rkamath3/cloud-s4-sdk-book/master/cx-server/setup_jenkins
 
 chmod 700 setup_jenkins
 
@@ -69,7 +71,8 @@ In order to examine the deployment status, please navigate to `Workloads` menu a
 
 ![Jenkins Deployment Status](images/11.PNG)
 
-[DONE] [ACCORDION-END]
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Connect to Jenkins)]
 
@@ -83,7 +86,8 @@ In the login screen please key-in *admin* as both user and password.
 
 ![Login to Jenkins](images/12.PNG)
 
-[DONE] [ACCORDION-END]
+[DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Setup SAP S/4HANA Cloud SDK Pipeline)]
 
@@ -99,11 +103,12 @@ In the following page, choose the source location. For this demo, we have create
 
 ![Add source](images/15.PNG)
 
-Please provide http://35.238.249.92/user/firstapp.git as the location for Project Repository. Save the configuration.
+Please provide https://github.com/rkamath3/cloud-s4-sdk-book.git as the location for Project Repository. Save the configuration.
 
 
 That’s All!! You have successfully setup your CI/CD infrastructure on Google Kubernetes Engine and started building your application using SAP S/4HANA Cloud SDK Pipeline.
 
 You can check status of the pipeline execution in the Jenkins dashboard.
 
-[DONE] [ACCORDION-END]
+[DONE]
+[ACCORDION-END]
