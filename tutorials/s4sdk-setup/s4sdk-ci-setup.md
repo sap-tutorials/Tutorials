@@ -1,4 +1,3 @@
-
 ---
 title: Set up your CI/CD infrastructure for SAP S/4HANA Extension application on Google Kubernetes Engine
 description: Set up your system to create an SAP Cloud Platform application with the S/4HANA Cloud SDK.
