@@ -31,18 +31,18 @@ In this step, let us create a Kubernetes cluster which we can then make use of i
 
 In the following page, change Machine type to use 2vCPUs. We will use default values for other parameters.
 
-![Configure Kubernetes cluster](2.PNG)
+![Configure Kubernetes cluster](images/2.PNG)
 
 
 Click on create cluster. This will create cluster named ‘cluster-1’ with 3 nodes.  The creation of cluster might take few minutes.
 
-![New Kubernetes cluster](4.PNG)
+![New Kubernetes cluster](images/4.PNG)
 
 ### Connect to Kubernetes cluster
 
 Click on the Connect button displayed next to the cluster name. This will open a dialogue. Click on `Run in Cloud Shell` option.
 
-![Connect to Kubernetes cluster](5.PNG)
+![Connect to Kubernetes cluster](images/5.PNG)
 
 Once the Cloud Shell is open, hit Enter. This will import `auth` data for the cluster and initializes the `kubeconfig` entries. This will be later used by a command line interface `kubectl` to communicate with the cluster.
 
@@ -59,7 +59,7 @@ chmod 700 setup_jenkins
 
 ./setup_jenkins
 ```
-![Jenkins Deployment using helm](9.PNG)
+![Jenkins Deployment using helm](images/9.PNG)
 
 With this, we have setup a Jenkins master which makes use of the custom Docker image that was created for SAP S/4HANA Cloud SDK, using Kubernetes deployment. The Jenkins master exposes port 8080 on an external `LoadBalancer`. We also create the service user that is required to create Jenkins agents on-demand.
 
@@ -67,35 +67,35 @@ The Jenkins that we are setting up now, is preconfigured with the libraries and 
 
 In order to examine the deployment status, please navigate to `Workloads` menu and please wait until the deployment status turns green. This will take few minutes.
 
-![Jenkins Deployment Status](11.PNG)
+![Jenkins Deployment Status](images/11.PNG)
 
 
 [ACCORDION-BEGIN [Step 3: ](Connect to Jenkins)]
 
 Once the setup is completed, it is time to build our first application with SAP S/4HANA Cloud SDK Pipeline. Navigate to Services menu under Kubernetes Engine and click on the endpoint of a `LoadBalancer` service.
 
-![Connect to Jenkins](10.PNG)
+![Connect to Jenkins](images/10.PNG)
 
 ### Login to Jenkins
 
 In the login screen please key-in *admin* as both user and password.  
 
-![Login to Jenkins](12.PNG)
+![Login to Jenkins](images/12.PNG)
 
 
 [ACCORDION-BEGIN [Step 4: ](Setup SAP S/4HANA Cloud SDK Pipeline)
 
 Once the login is successful you will see a Jenkins dashboard.
 
-![Jenkins Dashboard](13.PNG)
+![Jenkins Dashboard](images/13.PNG)
 
 Click on create new jobs. In the following page choose a name of your choice for the item name field.  Choose a Multibranch Pipeline. Click on OK.
 
-![Pipeline Setup](14.PNG)
+![Pipeline Setup](images/14.PNG)
 
 In the following page, choose the source location. For this demo, we have created an example application that you can make use of. Please select Git from the dropdown in `Add source` option.
 
-![Add source](15.PNG)
+![Add source](images/15.PNG)
 
 Please provide http://35.238.249.92/user/firstapp.git as the location for Project Repository. Save the configuration.
 
