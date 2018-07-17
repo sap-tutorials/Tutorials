@@ -8,10 +8,7 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
 ## Prerequisites  
  - **Proficiency:** intermediate
 
-## Details
-For a complete overview visit the [SAP S/4HANA Cloud SDK Overview](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).
-
-### You will learn 
+### You will learn
 The SAP S/4HANA Cloud SDK helps developers in building cloud-native extensions to SAP's S/4HANA ERP system. For this, it offers a Java library, project archetypes, and a attuned Continuous Delivery Toolkit. In this tutorial, we will see how to set up a scalable SAP S/4HANA Cloud SDK CI/CD server on Google Kubernetes Engine within few minutes. We will also build an SAP S/4HANA Cloud SDK based example application using the out of the box pipeline.
 
 ### Win a Goodie
@@ -127,9 +124,10 @@ That’s All. You are done.
 
 Congratulations! You have successfully setup your CI/CD infrastructure on Google Kubernetes Engine and started building the application from the `google-next` branch using SAP S/4HANA Cloud SDK Pipeline.
 
-You can check the status of the pipeline execution in the Jenkins dashboard.
+You can check the status of the pipeline execution in the Jenkins dashboard. Navigate to Jenkins dashboard and click on the `Open Blue Ocean` in the left hand side of the menu.
 
-![Pipeline Status](images/18.PNG)
+![Pipeline Status](images/22.PNG)
+
 
 [DONE]
 [ACCORDION-END]
@@ -152,3 +150,11 @@ You will find a code for the goodie once the job is successfully completed.
 
 [DONE]
 [ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Conclusion and Further reading)]
+
+Unlike the standalone Jenkins instance, the Jenkins instance which is deployed on the Kubernetes cluster gives us the flexibility to scale it based on the load. In addition Kubernetes will ensure the availability of the service by regular health check of the containers.
+
+To get an detailed insight in to SAP S/4HANA Cloud SDK, please go through our [blog posts]((https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).  
+
+![Build Status](images/19.PNG)
