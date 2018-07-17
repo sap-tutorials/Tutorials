@@ -45,6 +45,15 @@ Click on the Connect button displayed next to the cluster name. This will open a
 
 Once the Cloud Shell is open, hit Enter. This will import `auth` data for the cluster and initializes the `kubeconfig` entries. This will be later used by a command line interface `kubectl` to communicate with the cluster.
 
+```
+Welcome to Cloud Shell! Type "help" to get started.
+Your Cloud Platform project in this session is set to dulcet-provider-210508.
+Use “gcloud config set project” to change to a different project.
+user@my-project:~$ gcloud container clusters get-credentials cluster-1 --zone us-central1-a --project my-project
+Fetching cluster endpoint and auth data.
+kubeconfig entry generated for cluster-1.
+```
+
 [DONE]
 [ACCORDION-END]
 
@@ -55,11 +64,12 @@ SAP S/4HANA Cloud SDK CI/CD Toolkit makes use of Jenkins to run the Pipeline. Le
 Execute below command in the cloud shell that is open.
 
 ```
-wget https://raw.githubusercontent.com/rkamath3/cloud-s4-sdk-book/master/cx-server/setup_jenkins
+wget -O setup_jenkins https://raw.githubusercontent.com/rkamath3/cloud-s4-sdk-book/master/cx-server/setup_jenkins
 
 chmod 700 setup_jenkins
 
 ./setup_jenkins
+
 ```
 ![Jenkins Deployment using helm](images/9.PNG)
 
