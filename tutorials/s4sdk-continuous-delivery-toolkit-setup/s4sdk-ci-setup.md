@@ -112,7 +112,7 @@ In the following page, choose the source location. For this demo, we have create
 
 Please provide https://github.com/SAP/cloud-s4-sdk-book.git as the location for Project Repository.
 
-The example project has multiple branches. If we do not choose the branch to build, then Jenkins will build all the branches. But we would like to build only one branch, which is of our interest. Let us configure this. Click on `add` in the behavior section.
+The example project has multiple branches. If we do not choose the branch to build, then Jenkins will build all the branches. But we would like to build only one branch, which is of our interest. Let us configure this. Click on `add` in the `Behaviors` section.
 
 ![Add GitHub repository](images/16.PNG)
 
