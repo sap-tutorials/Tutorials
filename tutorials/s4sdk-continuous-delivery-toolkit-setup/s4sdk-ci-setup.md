@@ -122,9 +122,11 @@ The example project has multiple branches. If we do not choose the branch to bui
 
 Save the configuration.
 
-That’s All!! You have successfully setup your CI/CD infrastructure on Google Kubernetes Engine and started building your application using SAP S/4HANA Cloud SDK Pipeline.
+That’s All.
 
-You can check status of the pipeline execution in the Jenkins dashboard.
+Congratulations!! You have successfully setup your CI/CD infrastructure on Google Kubernetes Engine and started building your application using SAP S/4HANA Cloud SDK Pipeline.
+
+You can check the status of the pipeline execution in the Jenkins dashboard.
 
 ![Pipeline Status](images/18.PNG)
 
