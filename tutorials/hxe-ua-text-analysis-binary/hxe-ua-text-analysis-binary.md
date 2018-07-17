@@ -22,21 +22,21 @@ You will learn how to download, install, and configure the `additional_lang.tgz`
 
 The `Text analysis files for additional languages` package contains the text analysis files for the HANA Text Analysis feature (for languages other than English or German).
 
-[ACCORDION-BEGIN [Step 1: ](Download `additional_lang.tgz`.)]
+[ACCORDION-BEGIN [Step 1: ](Download additional_lang.tgz)]
 
-In your VM, download `additional_lang.tgz` using the built-in Download Manager. From the same directory where you ran `hxe_gc` (`/usr/sap/HXE/home/bin`) enter:
+Download `additional_lang.tgz` using the built-in Download Manager. From directory `/usr/sap/`SID`/home/bin` enter:
 
 ```bash
-HXEDownloadManager_linux.bin linuxx86_64 vm additional_lang.tgz
+HXEDownloadManager_linux.bin linuxx86_64 installer additional_lang.tgz
 ```
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Update folder permissions.)]
+[ACCORDION-BEGIN [Step 2: ](Update folder permissions)]
 
-In your VM, update the folder permissions on the `lang` folder.
+Update the folder permissions on the `lang` folder.
 
-Navigate to `/hana/shared/<SID>/global/hdb/custom/config/lexicon/`
+Navigate to `/hana/shared/`SID`/global/hdb/custom/config/lexicon/`
 
 Enter this command:
 
@@ -46,12 +46,12 @@ chmod 755 lang
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Extract `additional_lang.tgz`.)]
+[ACCORDION-BEGIN [Step 3: ](Extract additional_lang.tgz)]
 
-This step extracts `<download_path>/additional_lang.tgz` to `/hana/shared/HXE/global/hdb/custom/config/lexicon`. Enter this command:
+This step extracts `<download_path>/additional_lang.tgz` to `/hana/shared/`SID`/global/hdb/custom/config/lexicon`. Enter this command:
 
 ```bash
-tar -xvzf /usr/sap/HXE/home/Downloads/additional_lang.tgz -C /hana/shared/HXE/global/hdb/custom/config/lexicon
+tar -xvzf /usr/sap/`SID`/home/Downloads/additional_lang.tgz -C /hana/shared/`SID`/global/hdb/custom/config/lexicon
 ```
 
 > Note:

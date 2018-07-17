@@ -1,15 +1,17 @@
 ---
 title: Download the Installer Files
-description: Use the Download Manager to download SAP HANA 2.0, express edition installation packages.
+description: Use the Download Manager in console mode to download SAP HANA 2.0, express edition installation packages.
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
 
-<!-- loioc259de83c51343f7968739cf9be8da8f -->
+<!-- loio605bef28cbed45a58c53d00c2c1375a1 -->
 
 ## Prerequisites
  - **Proficiency:** Beginner
  - **Tutorials:** 
+Close the Download Manager if it is running in GUI mode.
+
 
 ## Details
 ### You will learn
@@ -20,73 +22,102 @@ You will learn how to download the binary image of SAP HANA 2.0, express edition
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Select your platform and image.)]
+> Note:
+> The Download Manager for Windows (`HXEDownloadManager_win.exe`) runs in asynchronous mode, and console mode is not available. If you are a Windows user, download the platform-independent Download Manager (`HXEDownloadManager.jar`) to use console mode.
+> 
+> 
 
-In the Download Manager, in the *Platform* pull-down, select the platform you are installing on. In the *Image* pull-down, select Binary Installer.
+[ACCORDION-BEGIN [Step 1: ](Open a command prompt)]
 
-Click *Browse* and select a directory for your downloaded files.![loio470c3ab0f8524c43a42d1ee61647e398_LowRes](loio470c3ab0f8524c43a42d1ee61647e398_LowRes.png)
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Select the core packages to download.)]
-
-Select the *Server only installer* package and, if you want to install XSA, the *Applications* package.
-
--   *Server only installer* downloads `hxe.tgz`, which contains the SAP HANA 2.0, express edition server with Application Function Library. This file is necessary for installing SAP HANA 2.0, express edition.
--   *Applications* downloads `hxexsa.tgz`, which contains XS Advanced, Web IDE, and SAP HANA Cockpit.
-
-    > Note:
-    > Some additional components require this package. These components are marked *XSA only* in the list of packages below.
-    > 
-    > 
-
+Open a command prompt at the location where you saved the Download Manager file (`HXEDownloadManager.jar` or `HXEDownloadManager_linux.bin`
 
 > Note:
-> SAP plans to remove SAP HANA extended application services, classic model (XSC) and the corresponding SAP HANA Repository with the next major product version of SAP HANA.
-> 
-> These components will be removed:
-> 
-> -   SAP HANA extended application services, classic model
-> 
-> -   SAP HANA Repository (XS classic)
-> 
-> -   SAP HANA Studio (Development, Modeling, and Administration perspectives)
-> 
-> -   SAP HANA Web-based Development Workbench (XS classic)
-> 
-> 
-> SAP strongly advises you to plan the transition of existing content and applications from XSC to SAP HANA extended application services, advanced model (XS Advanced).
+> If you've already installed SAP HANA express edition, you can run the built-in download manager from any directory as the `sid``adm` user.
 > 
 > 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Select additional packages.)]
+[ACCORDION-BEGIN [Step 2: ](Display the command help using the `-h` argument)]
 
-|Package|Details|
-|-------|-------|
-| *Getting Started with SAP HANA, express edition (Binary Installer Method)* |Downloads a pdf version of this documentation.|
-| *Text analysis files for additional languages* |For languages other than English and German, these files are required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the *Server only* and *Applications* packages.)|
-| *SAP Enterprise Architect Designer (XSA only)* |Downloads `eadesigner.tgz`. Extract this in the same directory as `hxe.tgz` and `hxexsa.tgz` to include EA Designer in your installation process.|
-| *SAP HANA streaming analytics* |Downloads `hsa.tgz`, which contains SAP HANA streaming analytics. Extract this in the same directory as `hxe.tgz` and `hxexsa.tgz` to include streaming analytics in your installation process.|
-| *SAP HANA streaming analytics studio plug-in* |Downloads `hsa_plugin.zip`, which contains an Eclipse plugin for creating and deploying streaming analytics projects.|
-| *SAP HANA Interactive Education (XSA only)* |Downloads `shine.tgz`. Extract this in the same directory as `hxe.tgz` and `hxexsa.tgz` to include SHINE in your installation process.|
-| *SAP HANA External Machine Learning Library* |Downloads `eml.tgz`, which contains the SAP HANA External Machine Learning Library. The SAP HANA External Machine Learning Library is an application function library (AFL) supporting the integration of Google TensorFlow, as an external machine learning framework, with SAP HANA, express edition.|
-| *SAP HANA Automated Predictive Library* |Downloads `apl.tgz`, which contains the SAP HANA Automated Predictive Library. The SAP HANA Automated Predictive Library is an application function library which exposes the data mining capabilities of the Automated Analytics engine in SAP HANA through a set of functions.|
-| *Clients (Linux X86/64)* |Downloads `clients_linux_x86_64.tgz`. Each clients package downloads an archive containing client-tools bundles for the listed platform. Use the client packages to access developed SAP HANA 2.0, express edition applications from a client PC. The client machine does not require a SAP HANA installation to install and run the clients. **Tip:** After you develop an application using SAP HANA 2.0, express edition, install Download Manager to a client machine and download the *Clients* package to that client machine. You can then use the clients to connect to -- and test -- your HANA applications, emulating a customer.|
-| *Clients (Linux PPC/Little Endian)* |Downloads `clients_linux_ppc64le.tgz`. Each clients package downloads an archive containing client-tools bundles for the listed platform. Use the client packages to access developed SAP HANA 2.0, express edition applications from a client machine. The client machine does not require a SAP HANA installation to install and run the clients. **Tip:** After you develop an application using SAP HANA 2.0, express edition, install Download Manager to a client machine and download the *Clients* package to that client machine. You can then use the clients to connect to -- and test -- your HANA applications, emulating a customer.|
-| *Clients (Windows)* |Downloads `clients_windows.zip`. Each clients package downloads an archive containing client-tools bundles for the listed platform. Use the client packages to access developed SAP HANA 2.0, express edition applications from a client machine. The client machine does not require a SAP HANA installation to install and run the clients. **Tip:** After you develop an application using SAP HANA 2.0, express edition, install Download Manager to a client machine and download the *Clients* package to that client machine. You can then use the clients to connect to -- and test -- your HANA applications, emulating a customer.|
-| *Clients (Mac)* |Downloads `clients_mac.tgz`. Each clients package downloads an archive containing client-tools bundles for the listed platform. Use the client packages to access developed SAP HANA 2.0, express edition applications from a client machine. The client machine does not require a SAP HANA installation to install and run the clients. **Tip:** After you develop an application using SAP HANA 2.0, express edition, install Download Manager to a client machine and download the *Clients* package to that client machine. You can then use the clients to connect to -- and test -- your HANA applications, emulating a customer.|
-| *SAP HANA smart data integration* |Downloads `sdi.tgz`. SAP HANA smart data integration provides functionality to access source data, and to provision, replicate, and transform that data in SAP HANA on premise, or in the cloud.|
-| *SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64)* |Downloads `dpagent_linux_x86_64.tgz`. The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources.|
+Linux `x86_64` Download Manager example:
+
+```bash
+HXEDownloadManager_linux.bin -h
+```
+
+Platform-independent Download Manager example:
+
+```bash
+java -jar HXEDownloadManager.jar -h
+```
+
+> Note:
+> You must include an argument with each command. If you call the Download Manager without an argument, it opens in GUI mode.
+> 
+> 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Download the files.)]
+[ACCORDION-BEGIN [Step 3: ](Familiarize yourself with the command syntax, and the command arguments)]
 
-Click the *Download* button.
+Command syntax is:
 
-Your download is complete when a pop-up message appears confirming successful download. Make sure you wait for this message before accessing the downloaded files.
+```bash
+HXEDownloadManager [( [-h|-X] | [-d <save_directory>] [--ph <proxy_host>] [--pp <proxy_port>] <platform> <image> <file>... )]
+```
+
+Command arguments are:
+
+|Argument|Description|
+|--------|-----------|
+|`-h`|Print this help|
+|`-x`|Print extended help|
+|`-d <save_directory>`|Directory where to save the download file. Default is `%USERPROFILE%\Downloads` on Windows; and `~/Downloads` on Linux.|
+|`--ph <proxy_host>`|Proxy host name or IP address.|
+|`--pp <proxy_port>`|Proxy port.|
+|`<platform>`|HANA platform. Valid values are `linuxx86_64`, `linuxppc64le`.|
+|`<image>`|Type of image to download. Valid values for `linuxx86_64` platform are: `vm`, `installer`. Valid values for `linuxppc64le` platform are: `installer`.|
+|`<file>`|File(s) to download.|
+
+Valid <file> values:
+
+|Package|Description|
+|-------|-----------|
+| `Getting_Started_Binary_Installer.pdf` |User manual in PDF format: *Getting Started with SAP HANA, express edition (Binary Installer Method).* |
+| `hxe.tgz` |Downloads `hxe.tgz`; the server plus XSC and Application Function Library (AFL).|
+| `hxexsa.tgz` |Downloads `hxexsa.tgz`; the server plus XS Advanced, Web IDE, and SAP HANA Cockpit.|
+| `additional_lang.tgz` |Downloads `additional_lang.tgz`. For languages other than English and German, this package is required for the HANA Text Analysis function. (The text analysis files for English and German are already included in the `hxe.tgz` and `hxexsa.tgz` packages.)|
+| `eadesigner.tgz` |Valid only with `hxexsa.tgz`. SAP EA Designer lets you capture, analyze, and present your organization's landscapes, strategies, requirements, processes, data, and other artifacts in a shared environment.|
+| `hsa.tgz` |Downloads SAP HANA streaming analytics.|
+| `hsa_plugin.zip` |Downloads the Eclipse plugin for creating and deploying streaming analytics projects.|
+| `shine.tgz` |Valid only with `hxexsa.tgz`. SAP HANA Interactive Education (SHINE) makes it easy to learn how to build applications on SAP HANA Extended Application Services Advanced Model (XSA).|
+| `eml.tgz` |Downloads HANA Extended Machine Learning AFL.|
+| `apl.tgz` |Downloads SAP HANA Automated Predictive Library.|
+| `clients_linux_x86_64.tgz` |Client download package for Linux machines (x86/64 architectures). Use the client packages to access developed SAP HANA, express edition applications from a client PC.|
+| `clients_linux_ppc64le.tgz` |Client download package for Linux machines (little endian on Power architectures). Use the client packages to access developed SAP HANA, express edition applications from a client PC.|
+| `clients_windows.zip` |Client download package for Windows machines. Use the client packages to access developed SAP HANA, express edition applications from a client PC.|
+| `clients_mac.tgz` |Client download package for Mac. Use the client packages to access developed SAP HANA, express edition applications from a client PC.|
+| `sdi.tgz` |SAP HANA smart data integration download package. SAP HANA smart data integration provides functionality to access source data, and to provision, replicate, and transform that data in SAP HANA on premise, or in the cloud.|
+| `dpagent_linux_x86_64.tgz` |SAP HANA smart data integration - Data Provisioning Agent (Linux X86/64) download package. The Data Provisioning Agent provides secure connectivity between the SAP HANA database and your adapter-based sources.|
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Download one or more files)]
+
+This example uses the Linux Download Manager `HXEDownloadManager_linux.bin`. It specifies a proxy host, proxy port, and downloads *Getting Started with SAP HANA, express edition (Binary Installer Method)* and the SHINE package (`shine.tgz`).
+
+```bash
+HXEDownloadManager_linux.bin --ph proxy.yourcompany.corp --pp 8080 linuxx86_64 installer Getting_Started_Binary_Installer.pdf shine.tgz
+```
+
+This example uses the platform-independent Download Manager `HXEDownloadManager.jar`.
+
+It downloads *Getting Started with SAP HANA, express edition (Binary Installer Method)* and `hxexsa.tgz`.
+
+```bash
+java -jar HXEDownloadManager.jar linuxx86_64 installer Getting_Started_Binary_Installer.pdf hxexsa.tgz
+```
 
 [ACCORDION-END]
 
