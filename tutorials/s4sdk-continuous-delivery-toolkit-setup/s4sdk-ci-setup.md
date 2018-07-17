@@ -1,5 +1,5 @@
 ---
-title: Set up your CI/CD infrastructure for SAP S/4HANA Extension application on Google Kubernetes Engine
+title: Kickstart Continuous Delivery for SAP S/4HANA Extensions using Google Kubernetes Engine
 description: Set up your system to create an SAP Cloud Platform application with the S/4HANA Cloud SDK.
 primary_tag: products>sap-s-4hana
 tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform, products>sap-s-4hana-cloud-sdk, topic>cloud, topic>Continues delivery ]
@@ -12,10 +12,10 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
 For a complete overview visit the [SAP S/4HANA Cloud SDK Overview](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).
 
 ### You will learn  
-In this tutorial, we will go through the steps required to install the scalable [SAP S/4HANA Cloud SDK CI/CD Toolkit ](https://www.sap.com/germany/developer/topics/s4hana-cloud-sdk.html) on Google Kubernetes Engine and execute an example pipeline on the Jenkins that we have setup.
+In this tutorial, we will see how to set up a scalable [SAP S/4HANA Cloud SDK CI/CD server ](https://www.sap.com/germany/developer/topics/s4hana-cloud-sdk.html) on Google Kubernetes Engine within few minutes. We will also build an example application using our out of the box pipeline.
 
 ### You will win a Goodie
-When you successfully setup the pipeline and build the example project, we will provide you with a coupon code. Please bring that to the booth to win an exciting goodie.
+In addition to gaining hands-on experience, you can also win a goodie if you can successfully build the example project using this guide.
 
 ### Time to Complete
 **15 Min**
@@ -23,7 +23,9 @@ When you successfully setup the pipeline and build the example project, we will 
 [ACCORDION-BEGIN [Step 1: ](Prepare the Infrastructure)]
 ### Setup Kubernetes cluster
 
-In this step, let us create a Kubernetes cluster which we can then make use of in following steps. Login to your Google cloud platform account. Let us create a kubernetes cluster with 3 nodes which has 2 CPUs each. In the Google Cloud Platform dashboard, navigate to `Kubernetes Engine` and click on `create cluster`.
+In this step, we will create a Kubernetes cluster which will be used in the following steps.  Let us create a Kubernetes cluster with 3 nodes which will contain 2 CPUs each. 
+
+To begin, login to your Google Cloud Platform account. In the Google Cloud Platform dashboard, navigate to `Kubernetes Engine` and click on `create cluster`.
 
 ![Create Kubernetes cluster](images/1.PNG)
 
@@ -119,11 +121,13 @@ In the following page, choose the source location. For this demo, we have create
 
 Please provide https://github.com/SAP/cloud-s4-sdk-book.git as the location for Project Repository.
 
-![Add github repository](images/16.PNG)
+The example project has multiple branches. If we do not choose the branch to build, then Jenkins will build all the branches. But we would like to build only one branch, which is of our interest. Let us configure this. Click on `add` in the behavior section.
 
-The example project has multiple branches. If we do not choose the branch to build, then Jenkins will build all the branches. But we would like to build only one branch, which is of our interest. Let us configure this. Click on `add` in the behavior section. Choose `Filter By Name (With wild cards)`. This will expand the options. Please use `google-next` as a value for the `include` field.  This will build only the branch `google-next`.
+![Add GitHub repository](images/16.PNG)
 
-![Configure github repository branch](images/17.PNG)
+ Choose `Filter By Name (with wildcards)`. This will expand the options. Please use `google-next` as a value for the `include` field.  This will build only the branch `google-next`.
+
+![Configure GitHub repository branch](images/17.PNG)
 
 Save the configuration.
 
@@ -140,9 +144,17 @@ You can check status of the pipeline execution in the Jenkins dashboard.
 
 Please check the console output of the pipeline you have setup. Kindly show us the code that is displayed at the end of your log and win a Goodie.
 
-First click on the branch name `master`.
-![Navigate to master branch](images/15.PNG)
+First click on the branch name `google-next`. In the following window, click on the build number of the job.
 
+![Build Status](images/19.PNG)
+
+Now click on the `Console output` menu and scroll down to the bottom of the log.
+
+![Build log](images/20.PNG)
+
+You will find a code for the goodie once the job is successfully completed.
+
+![Goodie](images/21.PNG)
 
 [DONE]
 [ACCORDION-END]
