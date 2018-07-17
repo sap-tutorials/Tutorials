@@ -122,3 +122,11 @@ You can check status of the pipeline execution in the Jenkins dashboard.
 
 [DONE]
 [ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Win a Goodie)]
+
+Please check the console output of the pipeline you have setup. Kindly show us the code that is displayed at the end of your log and win a Goodie.
+
+
+[DONE]
+[ACCORDION-END]
