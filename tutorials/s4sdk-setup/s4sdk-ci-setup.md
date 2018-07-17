@@ -27,7 +27,7 @@ When you successfully setup the pipeline and build the example project, we will 
 
 In this step, let us create a Kubernetes cluster which we can then make use of in following steps. Let us create a cluster with 3 nodes which has 2 CPUs each. In your Google Cloud Platform dashboard, navigate to Kubernetes Engine and click on create cluster.
 
-![Create Kubernetes cluster](1.PNG)
+![Create Kubernetes cluster](images/1.PNG)
 
 In the following page, change Machine type to use 2vCPUs. We will use default values for other parameters.
 
@@ -83,7 +83,7 @@ In the login screen please key-in *admin* as both user and password.
 ![Login to Jenkins](12.PNG)
 
 
-[ACCORDION-BEGIN [Step 2: ](Setup SAP S/4HANA Cloud SDK Pipeline)]
+[ACCORDION-BEGIN [Step 4: ](Setup SAP S/4HANA Cloud SDK Pipeline)
 
 Once the login is successful you will see a Jenkins dashboard.
 
