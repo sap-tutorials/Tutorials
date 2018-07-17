@@ -31,15 +31,11 @@ To begin, log in to your Google Cloud Platform account. In the Google Cloud Plat
 
 In the following page, change `Machine type` to use 2vCPUs. We will use default values for other parameters.
 
-
 ![Configure Kubernetes cluster](images/2.PNG)
-
 
 Click on create cluster. This will create a cluster named `cluster-1` with 3 nodes.  The creation of cluster might take a few minutes.
 
-
 ![New Kubernetes cluster](images/4.PNG)
-
 
 ### Connect to Kubernetes cluster
 
@@ -74,8 +70,8 @@ wget -O setup_jenkins https://raw.githubusercontent.com/SAP/cloud-s4-sdk-book/go
 chmod 700 setup_jenkins
 ./setup_jenkins
 ```
-![Jenkins Deployment using helm](images/9.PNG)
 
+![Jenkins Deployment using helm](images/9.PNG)
 
 The Jenkins that we have deployed is preconfigured with the libraries and the plugins that are required to execute the SAP S/4HANA Cloud SDK Pipeline.
 In order to examine the deployment status, please navigate to `Workloads` menu and please wait until the deployment status turns to green. This will take a few minutes.
