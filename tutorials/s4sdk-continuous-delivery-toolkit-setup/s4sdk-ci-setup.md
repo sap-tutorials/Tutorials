@@ -125,6 +125,7 @@ That’s All. You are done.
 Congratulations! You have successfully setup your CI/CD infrastructure on Google Kubernetes Engine and started building the application from the `google-next` branch using SAP S/4HANA Cloud SDK Pipeline.
 
 You can check the status of the pipeline execution in the Jenkins dashboard. Navigate to Jenkins dashboard and click on the `Open Blue Ocean` in the left hand side of the menu.
+
 ![Pipeline Status](images/23.PNG)
 
 ![Pipeline Status](images/22.PNG)
