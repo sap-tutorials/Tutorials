@@ -61,9 +61,9 @@ chmod 700 setup_jenkins
 ```
 ![Jenkins Deployment using helm](images/9.PNG)
 
-With this, we have setup a Jenkins master which makes use of the custom Docker image that was created for SAP S/4HANA Cloud SDK, using Kubernetes deployment. The Jenkins master exposes port 8080 on an external `LoadBalancer`. We also create the service user that is required to create Jenkins agents on-demand.
+With this, we have setup a Jenkins master which makes use of the custom Docker image that was created for SAP S/4HANA Cloud SDK, using Kubernetes deployment. The Jenkins master exposes port 8080 on an external `LoadBalancer`. We have also created the service user which is required to create Jenkins agents on-demand.
 
-The Jenkins that we are setting up now, is preconfigured with the libraries and the plugins that are required to execute the SAP S/4HANA Cloud SDK Pipeline.
+The Jenkins that we have deployed is preconfigured with the libraries and the plugins that are required to execute the SAP S/4HANA Cloud SDK Pipeline.
 
 In order to examine the deployment status, please navigate to `Workloads` menu and please wait until the deployment status turns green. This will take few minutes.
 
