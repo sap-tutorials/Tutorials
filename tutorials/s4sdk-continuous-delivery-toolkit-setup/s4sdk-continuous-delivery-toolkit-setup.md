@@ -89,7 +89,7 @@ Once the setup is completed, it is time to build our first application with SAP 
 Now you should see the Jenkins login page, which looks like the screenshot below:
 ![Login to Jenkins](images/12.PNG)
 
-In the login screen please key-in *`admin`* as user and *`SAP@next18`* as password.
+In the login screen please key-in `admin` as the user and `SAP@next18` as the password.
 
 [DONE]
 [ACCORDION-END]
