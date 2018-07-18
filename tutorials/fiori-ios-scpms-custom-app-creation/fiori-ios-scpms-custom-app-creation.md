@@ -118,8 +118,7 @@ Enter the following details:
 Click **Next** to advance to the **Cloud Configuration** step.
 
 
-[VALIDATE_3]
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Cloud Configuration details)]
