@@ -47,7 +47,7 @@ Example:
 ```
 Welcome to Cloud Shell! Type "help" to get started.
 Your Cloud Platform project in this session is set to dulcet-provider-210508.
-Use “gcloud config set project” to change to a different project.
+Use "gcloud config set project" to change to a different project.
 user@my-project:~$ gcloud container clusters get-credentials cluster-1 --zone us-central1-a --project my-project
 Fetching cluster endpoint and auth data.
 kubeconfig entry generated for cluster-1.
@@ -108,7 +108,7 @@ In the following page, choose the source location. For this demo, we have create
 
 ![Add source](images/15.PNG)
 
-Please provide https://github.com/SAP/cloud-s4-sdk-book.git as the location for Project Repository.
+Please provide [https://github.com/SAP/cloud-s4-sdk-book.git](https://github.com/SAP/cloud-s4-sdk-book.git) as the location for Project Repository.
 
 Our example repository has multiple branches and contains the example application for this tutorial in the branch `google-next`. If we do not limit the build job to this branch, Jenkins will start building dozens of branches. This might be too much work - even for our powerful Kubernetes cluster ;) In order to configure Jenkins to only build our branch of interest, let's configure this behavior by clicking on `add` in the `Behaviors` section.
 
@@ -120,7 +120,7 @@ Choose `Filter By Name (with wildcards)`. This will expand the options. Please u
 
 Save the configuration.
 
-That’s All. You are done.
+That's All. You are done.
 
 Congratulations! You have successfully setup your CI/CD infrastructure on Google Kubernetes Engine and started building the application from the `google-next` branch using SAP S/4HANA Cloud SDK Pipeline.
 
