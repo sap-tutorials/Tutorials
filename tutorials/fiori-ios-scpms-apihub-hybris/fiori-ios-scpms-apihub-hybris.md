@@ -404,7 +404,8 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
     }
 
     return contactCell
-}```
+}
+```
 
 First, you get a reference to the current data via variable `corporateaccount`.
 
@@ -431,7 +432,7 @@ If you click on the activity buttons, the respective app should open.
 
 > If you're running on a physical device, everything should work as expected.
 
-[DONE]
+[VALIDATE_18]
 [ACCORDION-END]
 
 ---
