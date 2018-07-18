@@ -108,7 +108,7 @@ In the following page, choose the source location. For this demo, we have create
 
 ![Add source](images/15.PNG)
 
-Please provide [https://github.com/SAP/cloud-s4-sdk-book.git](https://github.com/SAP/cloud-s4-sdk-book.git)as the location for Project Repository.
+Please provide [https://github.com/SAP/cloud-s4-sdk-book.git](https://github.com/SAP/cloud-s4-sdk-book.git) as the location for Project Repository.
 
 Our example repository has multiple branches and contains the example application for this tutorial in the branch `google-next`. If we do not limit the build job to this branch, Jenkins will start building dozens of branches. This might be too much work - even for our powerful Kubernetes cluster ;) In order to configure Jenkins to only build our branch of interest, let's configure this behavior by clicking on `add` in the `Behaviors` section.
 
