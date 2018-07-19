@@ -180,7 +180,7 @@ As Python Pip and Virtual Environments are not part of the default SUSE reposito
 You can add the Python Modules repository using the following command:
 
 ```shell
-sudo zypper ar 'http://download.opensuse.org/repositories/devel:/languages:/python/SLE_12_SP3/'
+sudo zypper ar 'http://download.opensuse.org/repositories/devel:/languages:/python/SLE_12_SP3/devel:languages:python.repo'
 sudo zypper refresh
 ```
 
