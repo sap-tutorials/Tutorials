@@ -91,7 +91,6 @@ Follow the prompts to configure your installation.
 > -   At least 1 lowercase letter
 > -   At least 1 number
 > -   Can contain special characters, but not ``` ` ``` (backtick), `$` (dollar sign), `\` (backslash), `'` (single quote), or `"` (double quotes)
-> -   Cannot contain dictionary words
 > -   Cannot contain simplistic or systematic values, like strings in ascending or descending numerical or alphabetical order
 > 
 > 

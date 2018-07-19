@@ -20,7 +20,7 @@ You will learn how to download and install the `eml.tgz` SAP HANA External Machi
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download `eml.tgz`.)]
+[ACCORDION-BEGIN [Step 1: ](Download `eml.tgz`)]
 
 Use the Download Manager to download HANA External Machine Learning AFL, `eml.tgz`.
 
@@ -29,24 +29,37 @@ Use the Download Manager to download HANA External Machine Learning AFL, `eml.tg
 > 
 > 
 
+Navigate to `/usr/sap/HXE/home/bin`:
+
+```bash
+/usr/sap/HXE/home/bin
+```
+
+Enter the following command:
+
+```bash
+./HXEDownloadManager_linux.bin linuxx86_64 installer eml.tgz
+```
+
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Extract `eml.tgz`.)]
+[ACCORDION-BEGIN [Step 2: ](Extract `eml.tgz`)]
+
+Extract `eml.tgz`:
+
+```bash
+tar -xvzf eml.tgz
+```
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Run the installation script.)]
+[ACCORDION-BEGIN [Step 3: ](Run the installation script)]
 
-As `sid``adm`, run:
+As the `sid``adm` user, run:
 
 ```bash
 <extracted_path>/HANA_EXPRESS_20/install_eml.sh
 ```
-
-> Note:
-> For VM installations, `sid``adm` is `hxeadm`.
-> 
-> 
 
 For more information on the SAP HANA External Machine Learning Library, see the [SAP HANA documentation collection](https://help.sap.com/viewer/p/SAP_HANA_PLATFORM).
 

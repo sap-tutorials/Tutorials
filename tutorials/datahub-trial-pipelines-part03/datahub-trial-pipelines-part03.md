@@ -1,7 +1,7 @@
 ---
 title: Store sensor data in Google Cloud Storage
 description: Use Google Cloud Storage to store sensor data by using SAP Data Hub, trial edition.
-auto_validation: false
+auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---

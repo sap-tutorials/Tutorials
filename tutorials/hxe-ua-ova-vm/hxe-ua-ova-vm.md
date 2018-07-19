@@ -22,7 +22,7 @@ You will learn how to import the OVA file into your hypervisor.
 
 This example uses `VMware Player` as the hypervisor. You can use any supported hypervisor.
 
-[ACCORDION-BEGIN [Step 1: ](Open an existing virtual machine.)]
+[ACCORDION-BEGIN [Step 1: ](Open an existing virtual machine)]
 
 Start `VMware Player` and select *Open a Virtual Machine*.
 
@@ -30,7 +30,7 @@ Start `VMware Player` and select *Open a Virtual Machine*.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Open the OVA file.)]
+[ACCORDION-BEGIN [Step 2: ](Open the OVA file)]
 
 ![loioc81418ab91bb4ef5b180dbdd53e258de_LowRes](loioc81418ab91bb4ef5b180dbdd53e258de_LowRes.png)
 
@@ -40,7 +40,7 @@ The Import Virtual Machine dialog box displays.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Import the VM.)]
+[ACCORDION-BEGIN [Step 3: ](Import the VM)]
 
 Accept the defaults and click *Import*. The VM imports.
 
@@ -52,7 +52,7 @@ The import process takes approximately 5-10 minutes for `hxexsa.ova`.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Power on your VM.)]
+[ACCORDION-BEGIN [Step 4: ](Power on your VM)]
 
 Click *Play Virtual Machine*.
 

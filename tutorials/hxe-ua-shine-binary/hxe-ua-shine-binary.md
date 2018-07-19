@@ -22,7 +22,39 @@ You will learn how to download, install, and configure the `shine.tgz` SAP HANA 
 
 SHINE is provided as an optional component for SAP HANA, express edition. Download the SHINE installation file, `shine.tgz`, from the SAP HANA, express edition Download Manager. This download includes installation files for installing SHINE on XSC and XSA.
 
-[ACCORDION-BEGIN [Step 1: ](Install SHINE for XSC.)]
+[ACCORDION-BEGIN [Step 1: ](Download `shine.tgz`)]
+
+Use the Download Manager to download SHINE, `shine.tgz`.
+
+> Note:
+> If you're using Download Manager (GUI Mode) make sure you're using the latest version.
+> 
+> 
+
+Navigate to `/usr/sap/HXE/home/bin`:
+
+```bash
+/usr/sap/HXE/home/bin
+```
+
+Enter the following command:
+
+-   `x86_64`: `./HXEDownloadManager_linux.bin linuxx86_64 installer shine.tgz`
+-   `PowerPC`: `java -jar HXEDownloadManager.jar linuxppc64le installer shine.tgz`
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Extract `shine.tgz`)]
+
+Extract `shine.tgz`:
+
+```bash
+tar -xvzf shine.tgz
+```
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Install SHINE for XSC)]
 
 Installation files for SHINE for `XSC` are located at:
 
@@ -57,7 +89,7 @@ To install SHINE for XSC, see the [SAP HANA Interactive Education (SHINE) guide]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install SHINE for XSA.)]
+[ACCORDION-BEGIN [Step 4: ](Install SHINE for XSA)]
 
 Installation files for SHINE for `XSA` are located at:
 

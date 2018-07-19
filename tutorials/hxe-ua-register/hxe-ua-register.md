@@ -20,7 +20,7 @@ You will learn how to register for the product, and access the download manager.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open the registration page.)]
+[ACCORDION-BEGIN [Step 1: ](Open the registration page)]
 
 Go to the registration page at [http://sap.com/sap-hana-express](http://sap.com/sap-hana-express). (Alternately, you can go to the SAP HANA, express edition launch page at [http://www.sap.com/developer/topics/sap-hana-express.html](http://www.sap.com/developer/topics/sap-hana-express.html) and click the *Free Download* link.)
 
@@ -28,14 +28,14 @@ The registration page opens.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Complete the registration form.)]
+[ACCORDION-BEGIN [Step 2: ](Complete the registration form)]
 
 Enter all required information and click the *Register* button.
 
 > Note:
 > If you have an SAP login, click the Login icon at the top of the page to populate the registration form automatically.
->
->
+> 
+> 
 
 ![loioa9262ee42c674af59687ebe69ece8819_HiRes](loioa9262ee42c674af59687ebe69ece8819_HiRes.png)
 
@@ -43,22 +43,22 @@ The *Registration Success* page displays. (You will also receive an email indica
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Choose a download manager.)]
+[ACCORDION-BEGIN [Step 3: ](Choose a download manager)]
 
-Under *1A. ON-PREMISE INSTALLATION*, click the download manager that matches your system: Linux or Windows.
+Click the download manager that matches your system: *Linux DM* or *Windows DM*.
 
-If you have a Mac, or another type of machine, click *Platform-independent* for a platform-independent download manager.
+If you have a Mac, or another type of machine, click *Platform-independent DM* for a platform-independent download manager.
 
-![loio534adf168b2b4772964ab12eaae9df76_HiRes](loio534adf168b2b4772964ab12eaae9df76_HiRes.png)
+![loiob056730bef524060b3b75bd77cc004b8_LowRes](loiob056730bef524060b3b75bd77cc004b8_LowRes.png)
 
 > Note:
 > You must click the download manager links on the Registration Success page. If you attempt to copy a download manager URL to your browser, the download will fail with an error.
->
->
+> 
+> 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Save the download manager file.)]
+[ACCORDION-BEGIN [Step 4: ](Save the download manager file)]
 
 Save the download manager file to your laptop and open it. If your system displays a security warning when you open the file, ignore the warning.
 
@@ -66,7 +66,9 @@ Save the download manager file to your laptop and open it. If your system displa
 
 > Note:
 > If you are inside a corporate firewall, you will be prompted for your proxy settings. Contact your IT administrator for your proxy host and proxy port information.
->
->
+> 
+> 
 
 [ACCORDION-END]
+
+

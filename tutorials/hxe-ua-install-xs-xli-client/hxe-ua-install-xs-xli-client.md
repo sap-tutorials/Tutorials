@@ -22,7 +22,7 @@ How to install the The XS advanced client-tools bundle.
 
 The `server machine` in these instructions refers to the machine on which SAP HANA 2.0, express edition is installed, while `client machine` refers to your local machine. You do not need to install the two on the same machine or VM.
 
-[ACCORDION-BEGIN [Step 1: ](XS CLI client info.)]
+[ACCORDION-BEGIN [Step 1: ](XS CLI client info)]
 
 The XS advanced client-tools bundle (`xs.onpremise.runtime.client_<platform>-<version>.zip`) also includes the `Javascript` bundle (`xs_javascript-1.3.0-bundle.tar.gz`), which includes a selection of mandatory `Node.js` packages developed by SAP for use with the `Node.js` applications running XS Advanced runtime.
 
@@ -30,7 +30,7 @@ You can use the XS command line client to perform a wide variety of developer- a
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Download the client package.)]
+[ACCORDION-BEGIN [Step 2: ](Download the client package)]
 
 Install the Download Manager to your client machine and download the client package.
 
@@ -50,10 +50,10 @@ Install the Download Manager to your client machine and download the client pack
 
     -   For Linux, navigate to the directory in which you wish to extract the client files and use the tar command.
 
-    ```bash
-    cd <preferred_filepath>
-    sudo tar <download_filepath>/clients_<OS>.zip
-    ```
+```bash
+cd <preferred_filepath>
+sudo tar <download_filepath>/clients_<OS>.zip
+```
 
     These files are extracted:
 
@@ -64,32 +64,32 @@ Install the Download Manager to your client machine and download the client pack
     -   `xs.onpremise.runtime.client_linuxx86_64.zip`
 
 
-    `clients_linux_ppc64.le.tgz`
+`clients_linux_ppc64.le.tgz`
 
-    -   `hdb_client_linux_ppc64le.tgz`
+-   `hdb_client_linux_ppc64le.tgz`
 
-    -   `xs.onpremise.runtime.client_linuxx86_64.zip`
-
-
-    `clients_windows.zip`
-
-    -   `hdb_client_windows_x86_32.tgz`
-
-    -   `hdb_client_windows_x86_64.tgz`
-
-    -   `xs.onpremise.runtime.client_ntamd64.zip`
+-   `xs.onpremise.runtime.client_linuxx86_64.zip`
 
 
-    `clients_mac.tgz`
+`clients_windows.zip`
 
-    -   `hdb_client_mac.tgz`
+-   `hdb_client_windows_x86_32.tgz`
 
-    -   `xs.onpremise.runtime.client_darwinintel64.zip`
+-   `hdb_client_windows_x86_64.tgz`
+
+-   `xs.onpremise.runtime.client_ntamd64.zip`
+
+
+`clients_mac.tgz`
+
+-   `hdb_client_mac.tgz`
+
+-   `xs.onpremise.runtime.client_darwinintel64.zip`
 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Install the XS CLI client.)]
+[ACCORDION-BEGIN [Step 3: ](Install the XS CLI client)]
 
 Use a compression utility to extract the file you downloaded for your platform:
 
@@ -99,7 +99,7 @@ Use a compression utility to extract the file you downloaded for your platform:
 
 -   (Linux) `xs.onpremise.runtime.client_linuxx86_64.zip`
 
--   (PowerPC) `xs.onpremise.runtime.client_linuxppc64le.zip`
+-   (PowerPC) `xs.onpremise.runtime.client_linuxppc64le.zip` 
 
 
 The system creates this folder:
@@ -143,7 +143,7 @@ You see the `Client Version` in the output. If not, you cannot connect to XS Adv
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Connect to XS Advanced controller.)]
+[ACCORDION-BEGIN [Step 6: ](Connect to XS Advanced controller)]
 
 Specify the URL of the API end point on the SAP HANA server you want to connect to:
 
@@ -153,12 +153,12 @@ xs api https://<hostname>:3<instance_number>30
 
 > Note:
 > If this step fails, it may be due to a missing SSL certificate. Continue on to the next step to add the SSL certificate, otherwise skip the next step.
->
->
+> 
+> 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add SSL certificate to connect to the server.)]
+[ACCORDION-BEGIN [Step 7: ](Add SSL certificate to connect to the server)]
 
 Open a command session on the server machine or open a PuTTY session to the server machine. From the command prompt, log in as `sudo` and go to the certificate `default.root.crt.pem`, which is typically located here:
 
@@ -166,10 +166,10 @@ Open a command session on the server machine or open a PuTTY session to the serv
 <installation_path>/<SID>/xs/controller_data/controller/ssl-pub/router
 ```
 
-For example, where `<installation_path>` is `/hana/shared` and `<SID>` is `HXE` the certificate location would be:
+For example, where `<installation_path>` is `/hana/shared` and `<SID>` is `HDB` the certificate location would be:
 
 ```bash
-/hana/shared/HXE/xs/controller_data/controller/ssl-pub/router/default.root.crt.pem
+/hana/shared/HDB/xs/controller_data/controller/ssl-pub/router/default.root.crt.pem
 ```
 
 Copy the certificate to a folder on the server where you can easily access it. Using an FTP client or the `scp` command, send a copy of the certificate from your server machine to a safe location on your client machine.
@@ -202,12 +202,12 @@ xs login -u XSA_ADMIN -p "<password>"
 
 > Note:
 > A password is assigned to the `XSA_ADMIN` user during SAP HANA 2.0, express edition installation.
->
->
+> 
+> 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Test the XS Advanced connection.)]
+[ACCORDION-BEGIN [Step 8: ](Test the XS Advanced connection)]
 
 To test your connection to XS Advanced by running the following command on the SAP HANA 2.0, express edition server:
 
@@ -216,3 +216,5 @@ xs apps
 ```
 
 [ACCORDION-END]
+
+

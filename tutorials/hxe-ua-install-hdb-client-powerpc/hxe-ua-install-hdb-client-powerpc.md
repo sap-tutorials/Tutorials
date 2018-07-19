@@ -26,26 +26,26 @@ The clients let you access SAP HANA 2.0, express edition, from your client machi
 
 The clients included with the SAP HANA HDB client software package are:
 
--   SQLDBC
+-   JDBC
 
 -   ODBC
 
--   JDBC
+-   SQLDBC
+
+-   `ODBO/MDX`
 
 -   Python (`PyDBAPI`)
 
--   Node.js
-
--   Ruby
+-   `ADO.NET`
 
 
 To install the SAP HANA HDB client on a Windows machine, use either a graphical user interface or a command line.
 
-[ACCORDION-BEGIN [Step 1: ](Download the client package.)]
+[ACCORDION-BEGIN [Step 1: ](Download the client package)]
 
 Install the Download Manager to your client machine and download the client package.
 
-1.  Save the Download Manager installation files to your client machine and open it. For instructions on downloading and running the Download Manager, see either the [Installing SAP HANA 2.0, express edition (Binary Installer Method)](http://www.sap.com/developer/tutorials/hxe-ua-installing-binary.html) or [Installing SAP HANA 2.0, express edition (Virtual Machine Method)](http://www.sap.com/developer/tutorials/hxe-ua-installing-vm-image.html) tutorials, or go straight to the SAP HANA, express edition [registration](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html) page.
+1.  Save the Download Manager installation files to your client machine and open it.
 
 2.  In Download Manager, in the `Image` menu, select either `Virtual Machine` or `Binary Installer`.
 
@@ -61,10 +61,10 @@ Install the Download Manager to your client machine and download the client pack
 
     -   For Linux, navigate to the directory in which you wish to extract the client files and use the `tar` command:
 
-    ```bash
-    cd <preferred_filepath>
-    sudo tar <download_filepath>/clients_<OS>.zip
-    ```
+```bash
+cd <preferred_filepath>
+sudo tar <download_filepath>/clients_<OS>.zip
+```
 
     This extracts the following files and their contents:
 
@@ -93,11 +93,11 @@ Install the Download Manager to your client machine and download the client pack
     -   `hdb_client_mac.tgz`
 
     -   `xs.onpremise.runtime.client_darwinintel64.zip`
-    
+
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Install the SAP HANA HDB client.)]
+[ACCORDION-BEGIN [Step 2: ](Install the SAP HANA HDB client)]
 
 To install the SAP HANA client on a Linux PowerPC machine, do the following:
 
@@ -127,13 +127,13 @@ To install the SAP HANA client on a Linux PowerPC machine, do the following:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Log the installation.)]
+[ACCORDION-BEGIN [Step 3: ](Log the installation)]
 
 The system automatically logs the SAP HANA HDB client installation. The log files are stored at `%TEMP%\hdb_client_<time_stamp>` for Windows and `/var/temp/hdb_client_<time_stamp>` for Linux.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Connect to SAP HANA, express edition.)]
+[ACCORDION-BEGIN [Step 4: ](Connect to SAP HANA, express edition)]
 
 Connect to a SAP HANA 2.0, express edition system using either JDBC or Python.
 
@@ -146,7 +146,7 @@ See these `Tutorials`:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Uninstall the SAP HANA HDB client.)]
+[ACCORDION-BEGIN [Step 5: ](Uninstall the SAP HANA HDB client)]
 
 Each installation has its own uninstallation tool. Use the `hdbuninst` command to uninstall the client software from your command prompt.
 
@@ -157,3 +157,5 @@ sudo <unzipped_filepath>/HDB_CLIENT_<version>/hdbuninst
 Follow the instructions on the screen to uninstall the SAP HANA HDB client.
 
 [ACCORDION-END]
+
+

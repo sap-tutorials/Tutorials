@@ -13,7 +13,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Details
 ### You will learn
-You will learn how to download and install the `apl.tgz` SAP HANA Automated Predictive Library (APL) package package.
+You will learn how to download and install the `apl.tgz` SAP HANA Automated Predictive Library (APL) package.
 
 ### Time to Complete
 3 min
@@ -22,17 +22,29 @@ You will learn how to download and install the `apl.tgz` SAP HANA Automated Pred
 
 SAP HANA Automated Predictive Library is a separate download in the Download Manager. Use the Download Manager to download the SAP HANA Automated Predictive Library package, `apl.tgz`.
 
-[ACCORDION-BEGIN [Step 1: ](Download `apl.tgz`.)]
+[ACCORDION-BEGIN [Step 1: ](Download apl.tgz.)]
 
-Download `apl.tgz` using the built-in Download Manager. Enter:
+Use the Download Manager to download SAP HANA Automated Predictive Library package, `apl.tgz`.
+
+> Note:
+> If you're using Download Manager (GUI Mode) make sure you're using the latest version.
+> 
+> 
+
+Navigate to `/usr/sap/HXE/home/bin`:
 
 ```bash
-/usr/sap/HXE/home/bin/HXEDownloadManager_linux.bin linuxx86_64 installer apl.tgz
+/usr/sap/HXE/home/bin
 ```
+
+Enter the following command:
+
+-   `x86_64`: `./HXEDownloadManager_linux.bin linuxx86_64 installer apl.tgz`
+-   `PowerPC`: `java -jar HXEDownloadManager.jar linuxppc64le installer apl.tgz`
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Extract `apl.tgz`.)]
+[ACCORDION-BEGIN [Step 2: ](Extract apl.tgz)]
 
 ```bash
 tar -xvzf apl.tgz
@@ -40,7 +52,7 @@ tar -xvzf apl.tgz
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Run the installation script.)]
+[ACCORDION-BEGIN [Step 3: ](Run the installation script)]
 
 As the `sid``adm` user, run:
 

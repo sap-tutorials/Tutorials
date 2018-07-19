@@ -147,7 +147,7 @@ Windows: **`%TEMP%\hxedm_[yymmdd].log`**
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Issue &#151;](Unable to Obtain an `IPv4` Address in `VMware`)]
+[ACCORDION-BEGIN [Issue &#151;](Unable to Obtain an IPv4 Address in VMware)]
 
 **Issue:** You are unable to obtain an `IPv4` `hxehost` IP address. You are using a `VMware` `hypervisor`.
 
@@ -166,7 +166,7 @@ If you are behind a proxy or a firewall, your institution's network may prevent 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Issue &#151;](`VMware` Fusion on `Mac OS X`: `hxexsa.ova` Installation Fails)]
+[ACCORDION-BEGIN [Issue &#151;](VMware Fusion on Mac OS X: hxexsa.ova Installation Fails)]
 
 **Issue:** You use `VMware` Fusion on `Mac OS X`. You import and start `hxexsa.ova`. You receive an error message.
 
