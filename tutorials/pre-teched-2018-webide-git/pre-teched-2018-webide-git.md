@@ -1,7 +1,7 @@
 ---
 title: Commit your project to Git
 description: Create a git repository for your project and commit your project files from SAP Web IDE
-auto_validation: false
+auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-web-ide ]
 ---
