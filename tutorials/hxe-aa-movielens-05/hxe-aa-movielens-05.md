@@ -119,6 +119,12 @@ The installation will trigger a restart of your SAP HANA instance, so make sure 
 
 Once the SAP HANA Automated Predictive Library installation is completed, you will need to wait a few minutes for all services to be back online and proceed with the next step.
 
+Usually, you should add the **`APL_EXECUTE`** role to your user, however, this is not required when using an HDI container:
+
+```
+call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','ML_USER');
+```
+
 [DONE]
 [ACCORDION-END]
 
@@ -173,177 +179,188 @@ Paste the following content:
 namespace aa.movielens.db.hdb.apl;
 
 context recommendation {
-  entity function_header {
-    KEY   : String(50);
-    VALUE : String(255);
-  };
+    entity function_header {
+        KEY   : String(50);
+        VALUE : String(255);
+    };
 
-  entity operation_config {
-    KEY   : String(1000);
-    VALUE : String(5000);
-  };
+    table type tt_function_header {
+        KEY   : String(50);
+        VALUE : String(255);
+    };
 
-  entity variable_descs {
-    RANK          : Integer;
-    NAME          : String(255);
-    STORAGE       : String(10);
-    VALUETYPE     : String(10);
-    KEYLEVEL      : Integer;
-    ORDERLEVEL    : Integer;
-    MISSINGSTRING : String(255);
-    GROUPNAME     : String(255);
-    DESCRIPTION   : String(255);
-  };
+    entity operation_config {
+        KEY   : String(1000);
+        VALUE : String(5000);
+    };
 
-  entity result_model {
-    NAME       : String(255);
-    VERSION    : Integer;
-    ID         : Integer;
-    PARENTID   : Integer;
-    ENUMFLAG   : Integer;
-    PARAMNAME  : String(255);
-    PARAMTYPE  : String(255);
-    PARAMVALUE : String(255);
-  };
+    table type tt_operation_config {
+        KEY   : String(1000);
+        VALUE : String(5000);
+    };
 
-  entity result_model_node_user {
-    NODE : Integer; // must be of the same SQL type as the User column (userId from rating here)
-  };
+    entity variable_descs {
+        RANK          : Integer;
+        NAME          : String(255);
+        STORAGE       : String(10);
+        VALUETYPE     : String(10);
+        KEYLEVEL      : Integer;
+        ORDERLEVEL    : Integer;
+        MISSINGSTRING : String(255);
+        GROUPNAME     : String(255);
+        DESCRIPTION   : String(255);
+    };
 
-  entity result_model_node_movie {
-    NODE : Integer; // must be of the same SQL type as the Item column (movieId from rating  here)
-  };
+    table type tt_variable_descs {
+        RANK          : Integer;
+        NAME          : String(255);
+        STORAGE       : String(10);
+        VALUETYPE     : String(10);
+        KEYLEVEL      : Integer;
+        ORDERLEVEL    : Integer;
+        MISSINGSTRING : String(255);
+        GROUPNAME     : String(255);
+        DESCRIPTION   : String(255);
+    };
 
-  entity result_model_links {
-    GRAPH_NAME     : String(255);
-    WEIGHT         : Double;
-    KXNODEFIRST    : Integer; // must be of the same SQL type as the User column (userId from rating  here)
-    KXNODESECOND   : Integer; // must be of the same SQL type as the Item column (movieId from rating  here)
-    KXNODESECOND_2 : Integer; // must be of the same SQL type as the Item column (movieId from rating  here)
-  };
+    entity model {
+        NAME       : String(255);
+        VERSION    : Integer;
+        ID         : Integer;
+        PARENTID   : Integer;
+        ENUMFLAG   : Integer;
+        PARAMNAME  : String(255);
+        PARAMTYPE  : String(255);
+        PARAMVALUE : String(255);
+    };
 
-  entity result_operation_log {
-    OID       : String(50);
-    TIMESTAMP : UTCTimestamp;
-    LEVEL     : Integer;
-    ORIGIN    : String(50);
-    MESSAGE   : LargeString;
-  };
+    table type tt_model {
+        NAME       : String(255);
+        VERSION    : Integer;
+        ID         : Integer;
+        PARENTID   : Integer;
+        ENUMFLAG   : Integer;
+        PARAMNAME  : String(255);
+        PARAMTYPE  : String(255);
+        PARAMVALUE : String(255);
+    };
 
-  entity result_summary {
-    OID   : String(50);
-    KEY   : String(100);
-    VALUE : String(200);
-  };
+    entity operation_log {
+        OID       : String(50);
+        TIMESTAMP : UTCTimestamp;
+        LEVEL     : Integer;
+        ORIGIN    : String(50);
+        MESSAGE   : LargeString;
+    };
 
-  entity result_indicators {
-    OID      : String(50);
-    VARIABLE : String(255);
-    TARGET   : String(255);
-    KEY      : String(100);
-    VALUE    : LargeString;
-    DETAIL   : LargeString;
-  };
+    table type tt_operation_log {
+        OID       : String(50);
+        TIMESTAMP : UTCTimestamp;
+        LEVEL     : Integer;
+        ORIGIN    : String(50);
+        MESSAGE   : LargeString;
+    };
 
-  entity result_reco_sql_code {
-    OID   : String(50);
-    KEY   : String(100);
-    VALUE : LargeString;
-  };
+    entity summary {
+        OID   : String(50);
+        KEY   : String(100);
+        VALUE : String(200);
+    };
 
-  table type tt_function_header {
-    KEY   : String(50);
-    VALUE : String(255);
-  };
-  table type tt_operation_config {
-    KEY   : String(1000);
-    VALUE : String(5000);
-  };
-  table type tt_variable_descs {
-    RANK          : Integer;
-    NAME          : String(255);
-    STORAGE       : String(10);
-    VALUETYPE     : String(10);
-    KEYLEVEL      : Integer;
-    ORDERLEVEL    : Integer;
-    MISSINGSTRING : String(255);
-    GROUPNAME     : String(255);
-    DESCRIPTION   : String(255);
-  };
-  table type tt_model_native {
-    NAME       : String(255);
-    VERSION    : Integer;
-    ID         : Integer;
-    PARENTID   : Integer;
-    ENUMFLAG   : Integer;
-    PARAMNAME  : String(255);
-    PARAMTYPE  : String(255);
-    PARAMVALUE : String(255);
-  };
-  table type tt_operation_log {
-    OID       : String(50);
-    TIMESTAMP : UTCTimestamp;
-    LEVEL     : Integer;
-    ORIGIN    : String(50);
-    MESSAGE   : LargeString;
-  };
-  table type tt_summary {
-    OID   : String(50);
-    KEY   : String(100);
-    VALUE : String(200);
-  };
-  table type tt_indicators {
-    OID      : String(50);
-    VARIABLE : String(255);
-    TARGET   : String(255);
-    KEY      : String(100);
-    VALUE    : LargeString;
-    DETAIL   : LargeString;
-  };
-  table type tt_movielens_dataset {
-    USERID    : Integer;
-    MOVIEID   : Integer;
-    RATING    : Double;
-    TIMESTAMP : Integer;
-  };
-  table type tt_movielens_node_user {
-    NODE : Integer; // must be of the same SQL type as the User column (USERID here)
-  };
-  table type tt_movielens_node_movie {
-    NODE : Integer; // must be of the same SQL type as the Item column (MOVIEID here)
-  };
-  table type tt_movielens_links {
-    GRAPH_NAME     : String(255);
-    WEIGHT         : Double;
-    KXNODEFIRST    : Integer;     // must be of the same SQL type as the User column (USERID here)
-    KXNODESECOND   : Integer;     // must be of the same SQL type as the Item column (MOVIEID here)
-    KXNODESECOND_2 : Integer;     // must be of the same SQL type as the Item column (MOVIEID here)
-  };
-  table type tt_reco_sql_code {
-    OID   : String(50);
-    KEY   : String(100);
-    VALUE : LargeString;
-  };
-  table type tt_movielens_collaborative_result {
-    USERID  : Integer;
-    RANK    : Integer;
-    MOVIEID : Integer;
-    SCORE   : Double;
-    TITLE   : String(255);
-    GENRES  : String(255);
-    IMDBID  : Integer;
-    TMDBID  : Integer;
-  };
-  table type tt_movielens_contentbased_result {
-    MOVIEID       : Integer;
-    RANK          : Integer;
-    SIMILAR_MOVIE : Integer;
-    SCORE         : Double;
-    TITLE         : String(255);
-    GENRES        : String(255);
-    IMDBID        : Integer;
-    TMDBID        : Integer;
-  };
+    table type tt_summary {
+        OID   : String(50);
+        KEY   : String(100);
+        VALUE : String(200);
+    };
+
+    entity indicators {
+        OID      : String(50);
+        VARIABLE : String(255);
+        TARGET   : String(255);
+        KEY      : String(100);
+        VALUE    : LargeString;
+        DETAIL   : LargeString;
+    };
+
+    table type tt_indicators {
+        OID      : String(50);
+        VARIABLE : String(255);
+        TARGET   : String(255);
+        KEY      : String(100);
+        VALUE    : LargeString;
+        DETAIL   : LargeString;
+    };
+    table type tt_movielens_dataset {
+        USERID    : Integer;
+        MOVIEID   : Integer;
+        RATING    : Double;
+        TIMESTAMP : Integer;
+    };
+
+    entity model_node_user {
+        NODE : Integer; // must be of the same SQL type as the User column (userId from rating here)
+    };
+
+    table type tt_model_node_user {
+        NODE : Integer; // must be of the same SQL type as the User column (USERID here)
+    };
+
+    entity model_node_movie {
+        NODE : Integer; // must be of the same SQL type as the Item column (movieId from rating  here)
+    };
+
+    table type tt_model_node_movie {
+        NODE : Integer; // must be of the same SQL type as the Item column (MOVIEID here)
+    };
+
+    entity model_links {
+        GRAPH_NAME     : String(255);
+        WEIGHT         : Double;
+        KXNODEFIRST    : Integer; // must be of the same SQL type as the User column (userId from rating  here)
+        KXNODESECOND   : Integer; // must be of the same SQL type as the Item column (movieId from rating  here)
+        KXNODESECOND_2 : Integer; // must be of the same SQL type as the Item column (movieId from rating  here)
+    };
+
+    table type tt_model_links {
+        GRAPH_NAME     : String(255);
+        WEIGHT         : Double;
+        KXNODEFIRST    : Integer;     // must be of the same SQL type as the User column (USERID here)
+        KXNODESECOND   : Integer;     // must be of the same SQL type as the Item column (MOVIEID here)
+        KXNODESECOND_2 : Integer;     // must be of the same SQL type as the Item column (MOVIEID here)
+    };
+
+    entity model_sql_code {
+        OID   : String(50);
+        KEY   : String(100);
+        VALUE : LargeString;
+    };
+
+    table type tt_model_sql_code {
+        OID   : String(50);
+        KEY   : String(100);
+        VALUE : LargeString;
+    };
+
+    table type tt_movielens_collaborative_result {
+        USERID  : Integer;
+        RANK    : Integer64;
+        MOVIEID : Integer;
+        SCORE   : Double;
+        TITLE   : String(255);
+        GENRES  : String(255);
+        IMDBID  : Integer;
+        TMDBID  : Integer;
+    };
+    table type tt_movielens_contentbased_result {
+        MOVIEID       : Integer;
+        RANK          : Integer64;
+        SIMILAR_MOVIE : Integer;
+        SCORE         : Double;
+        TITLE         : String(255);
+        GENRES        : String(255);
+        IMDBID        : Integer;
+        TMDBID        : Integer;
+    };
 };
 ```
 
@@ -379,54 +396,18 @@ Paste the following content:
   "area" : "APL_AREA",
   "function" : "CREATE_RECO_MODEL_AND_TRAIN",
   "parameters" : [
-    {
-      "type" : "aa.movielens.db.hdb.apl::recommendation.tt_function_header",
-      "direction" : "IN"
-    },
-    {
-      "type" : "aa.movielens.db.hdb.apl::recommendation.tt_operation_config",
-      "direction" : "IN"
-    },
-    {
-      "type" : "aa.movielens.db.hdb.apl::recommendation.tt_variable_descs",
-      "direction" : "IN"
-    },
-    {
-      "type" : "aa.movielens.db.hdb.apl::recommendation.tt_movielens_dataset",
-      "direction" : "IN"
-    },
-    {
-      "type" : "aa.movielens.db.hdb.apl::recommendation.tt_model_native",
-      "direction" : "OUT"
-    },
-    {
-      "type" : "aa.movielens.db.hdb.apl::recommendation.tt_movielens_node_user",
-      "direction" : "OUT"
-    },
-    {
-      "type" : "aa.movielens.db.hdb.apl::recommendation.tt_movielens_node_movie",
-      "direction" : "OUT"
-    },
-    {
-      "type" : "aa.movielens.db.hdb.apl::recommendation.tt_movielens_links",
-      "direction" : "OUT"
-    },
-    {
-      "type" : "aa.movielens.db.hdb.apl::recommendation.tt_operation_log",
-      "direction" : "OUT"
-    },
-    {
-      "type" : "aa.movielens.db.hdb.apl::recommendation.tt_summary",
-      "direction" : "OUT"
-    },
-    {
-      "type" : "aa.movielens.db.hdb.apl::recommendation.tt_indicators",
-      "direction" : "OUT"
-    },
-    {
-      "type" : "aa.movielens.db.hdb.apl::recommendation.tt_reco_sql_code",
-      "direction" : "OUT"
-    }
+    {"direction" : "IN",  "type" : "aa.movielens.db.hdb.apl::recommendation.tt_function_header"},
+    {"direction" : "IN",  "type" : "aa.movielens.db.hdb.apl::recommendation.tt_operation_config"},
+    {"direction" : "IN",  "type" : "aa.movielens.db.hdb.apl::recommendation.tt_variable_descs"},
+    {"direction" : "IN",  "type" : "aa.movielens.db.hdb.apl::recommendation.tt_movielens_dataset"},
+    {"direction" : "OUT", "type" : "aa.movielens.db.hdb.apl::recommendation.tt_model"},
+    {"direction" : "OUT", "type" : "aa.movielens.db.hdb.apl::recommendation.tt_model_node_user"},
+    {"direction" : "OUT", "type" : "aa.movielens.db.hdb.apl::recommendation.tt_model_node_movie"},
+    {"direction" : "OUT", "type" : "aa.movielens.db.hdb.apl::recommendation.tt_model_links"},
+    {"direction" : "OUT", "type" : "aa.movielens.db.hdb.apl::recommendation.tt_operation_log"},
+    {"direction" : "OUT", "type" : "aa.movielens.db.hdb.apl::recommendation.tt_summary"},
+    {"direction" : "OUT", "type" : "aa.movielens.db.hdb.apl::recommendation.tt_indicators"},
+    {"direction" : "OUT", "type" : "aa.movielens.db.hdb.apl::recommendation.tt_model_sql_code"}
   ]
 }
 ```
@@ -456,18 +437,18 @@ Enter **`views`** as the folder name, then click on **OK**.
 
 Right click on the **`views`** folder node from the tree, and select **New > File**.
 
-Enter **`recommendation_collaborative_filtering.hdbview`** as the file name, then click on **OK**.
+Enter **`recommendation_collaborative.hdbview`** as the file name, then click on **OK**.
 
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/apl/views/recommendation_collaborative_filtering.hdbview
+movielens/db/src/hdb/apl/views/recommendation_collaborative.hdbview
 ```
 
 Paste the following content:
 
 ```SQL
-view "aa.movielens.db.hdb.apl.views::recommendation_collaborative_filtering" as
+view "aa.movielens.db.hdb.apl.views::recommendation_collaborative" as
 select
   userid, rank, t1.movieid, score, title, genres, imdbid, tmdbid
 from (
@@ -496,9 +477,9 @@ from (
                 , rules.kxnodesecond_2 as consequent
                 , rules.weight         as support
               from "aa.movielens.db.hdb::data.ratings" spacein
-              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Transactions') products on (products.kxnodefirst  = spacein.userid)
-              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Item'        ) rules    on (products.kxnodesecond = rules.kxnodesecond)
-              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Transactions') notin    on (rules.kxnodesecond_2  = notin.kxnodesecond) and (notin.kxnodefirst = spacein.userid)
+              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') products on (products.kxnodefirst  = spacein.userid)
+              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item'        ) rules    on (products.kxnodesecond = rules.kxnodesecond)
+              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') notin    on (rules.kxnodesecond_2  = notin.kxnodesecond) and (notin.kxnodefirst = spacein.userid)
                 where rules.kxnodesecond is not null  and notin.kxnodesecond is null
             ) t1
             union all
@@ -513,14 +494,14 @@ from (
                 , rules.kxnodesecond   as consequent
                 , rules.weight         as support
               from "aa.movielens.db.hdb::data.ratings" spacein
-              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Transactions') products on (products.kxnodefirst  = spacein.userid)
-              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Item'        ) rules    on (products.kxnodesecond = rules.kxnodesecond_2)
-              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Transactions') notin    on (rules.kxnodesecond    = notin.kxnodesecond) and (notin.kxnodefirst = spacein.userid)
+              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') products on (products.kxnodefirst  = spacein.userid)
+              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item'        ) rules    on (products.kxnodesecond = rules.kxnodesecond_2)
+              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') notin    on (rules.kxnodesecond    = notin.kxnodesecond) and (notin.kxnodefirst = spacein.userid)
               where rules.kxnodesecond_2 is not null and notin.kxnodesecond is null
             ) t1
         ) t1
-        left outer join (select kxnodesecond   as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name ='Transactions' group by kxnodesecond  ) t2_1 on (t1.antecedent = t2_1.antecedent)
-        left outer join (select kxnodesecond_2 as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name ='Transactions' group by kxnodesecond_2) t2_2 on (t1.antecedent = t2_2.antecedent)
+        left outer join (select kxnodesecond   as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name ='Transactions' group by kxnodesecond  ) t2_1 on (t1.antecedent = t2_1.antecedent)
+        left outer join (select kxnodesecond_2 as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name ='Transactions' group by kxnodesecond_2) t2_2 on (t1.antecedent = t2_2.antecedent)
       ) t1 group by t1.userid,  t1.consequent
   ) t1
 ) t1
@@ -531,7 +512,7 @@ where rank <= 5;
 
 Save the file using the ![save](00-save.png) icon from the menu.
 
-As you can notice, the view use both the model generated links (**`aa.movielens.db.hdb.apl::recommendation.result_model_links`**) and the initial dataset (**`aa.movielens.db.hdb::data.ratings`**).
+As you can notice, the view use both the model generated links (**`aa.movielens.db.hdb.apl::recommendation.model_links`**) and the initial dataset (**`aa.movielens.db.hdb::data.ratings`**).
 
 Off course, this model is for demonstration purpose and very specific to the initial purpose of this tutorial series, which is to give you a quick tour of the algorithm and may not be applicable as-is to other use cases or dataset.
 
@@ -545,18 +526,18 @@ For this scenario, you won't actually need to build another model as the previou
 
 Right click on the **`views`** folder node from the tree, and select **New > File**.
 
-Enter **`recommendation_contentbased_filtering.hdbview`** as the file name, then click on **OK**.
+Enter **`recommendation_contentbased.hdbview`** as the file name, then click on **OK**.
 
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/apl/views/recommendation_contentbased_filtering.hdbview
+movielens/db/src/hdb/apl/views/recommendation_contentbased.hdbview
 ```
 
 Paste the following content:
 
 ```SQL
-view "aa.movielens.db.hdb.apl.views::recommendation_contentbased_filtering" as
+view "aa.movielens.db.hdb.apl.views::recommendation_contentbased" as
 select
   t1.movieid, rank, similar_movie, score, title, genres, imdbid, tmdbid
 from (
@@ -582,8 +563,8 @@ from (
               , rules.kxnodesecond_2 as consequent
               , rules.weight as support
             from
-              "aa.movielens.db.hdb.apl::recommendation.result_model_node_movie" nodes
-            left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Item' ) rules    on (nodes.node = rules.kxnodesecond)
+              "aa.movielens.db.hdb.apl::recommendation.model_node_movie" nodes
+            left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item' ) rules    on (nodes.node = rules.kxnodesecond)
               where rules.kxnodesecond_2 is not null
             union all
             select
@@ -592,12 +573,12 @@ from (
               , rules.kxnodesecond   as consequent
               , rules.weight as support
             from
-              "aa.movielens.db.hdb.apl::recommendation.result_model_node_movie" nodes
-            left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Item' ) rules    on (nodes.node = rules.kxnodesecond_2)
+              "aa.movielens.db.hdb.apl::recommendation.model_node_movie" nodes
+            left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item' ) rules    on (nodes.node = rules.kxnodesecond_2)
             where rules.kxnodesecond is not null
         ) t1
-        left outer join (select kxnodesecond   as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name ='Transactions' group by kxnodesecond  ) t2_1 on (t1.antecedent = t2_1.antecedent)
-        left outer join (select kxnodesecond_2 as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name ='Transactions' group by kxnodesecond_2) t2_2 on (t1.antecedent = t2_2.antecedent)
+        left outer join (select kxnodesecond   as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name ='Transactions' group by kxnodesecond  ) t2_1 on (t1.antecedent = t2_1.antecedent)
+        left outer join (select kxnodesecond_2 as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name ='Transactions' group by kxnodesecond_2) t2_2 on (t1.antecedent = t2_2.antecedent)
       ) t1 group by t1.movieid, t1.consequent
   ) t1
 ) t1
@@ -630,7 +611,7 @@ The console should display at the end the following message:
 
 When executed, the following code will generate a ***Recommendation*** model linking `userId` & `moveId` from the `ratings` CDS Entity.
 
-The results will be stored in the **`"aa.movielens.db.hdb.apl::recommendation.result_model_links"`** table.
+The results will be stored in the **`"aa.movielens.db.hdb.apl::recommendation.model_links"`** table.
 
 Switch to the ***Database Explorer*** perspective using the ![Database Explorer](00-dbexplorer-icon.png) icon.
 
@@ -643,42 +624,42 @@ Open a new **SQL Console** using the ![sql](00-dbexplorer-sql.png) icon.
 Paste the following content in the console, and use the execute icon ![run](00-dbexplorer-run.png) from the menu.
 
 ```SQL
--- Clear tables content
-truncate table "aa.movielens.db.hdb.apl::recommendation.function_header";
-truncate table "aa.movielens.db.hdb.apl::recommendation.operation_config";
-truncate table "aa.movielens.db.hdb.apl::recommendation.variable_descs";
-truncate table "aa.movielens.db.hdb.apl::recommendation.result_operation_log";
-truncate table "aa.movielens.db.hdb.apl::recommendation.result_summary";
-truncate table "aa.movielens.db.hdb.apl::recommendation.result_indicators";
-
-truncate table "aa.movielens.db.hdb.apl::recommendation.result_model";
-truncate table "aa.movielens.db.hdb.apl::recommendation.result_model_node_user";
-truncate table "aa.movielens.db.hdb.apl::recommendation.result_model_node_movie";
-truncate table "aa.movielens.db.hdb.apl::recommendation.result_model_links";
-truncate table "aa.movielens.db.hdb.apl::recommendation.result_reco_sql_code";
-
 -- Insert operation parameters
+truncate table "aa.movielens.db.hdb.apl::recommendation.function_header";
 insert into "aa.movielens.db.hdb.apl::recommendation.function_header" values ('Oid', '#42');
 insert into "aa.movielens.db.hdb.apl::recommendation.function_header" values ('LogLevel', '8');
 
+truncate table "aa.movielens.db.hdb.apl::recommendation.operation_config";
 insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/ModelType'  , 'recommendation');
 insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/User'       , 'USERID'        ); -- mandatory
 insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/Item'       , 'MOVIEID'       ); -- mandatory
 insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/RuleWeight' , 'Support'       );
 
+-- Clear other tables content
+truncate table "aa.movielens.db.hdb.apl::recommendation.variable_descs";
+truncate table "aa.movielens.db.hdb.apl::recommendation.operation_log";
+truncate table "aa.movielens.db.hdb.apl::recommendation.summary";
+truncate table "aa.movielens.db.hdb.apl::recommendation.indicators";
+
+truncate table "aa.movielens.db.hdb.apl::recommendation.model";
+truncate table "aa.movielens.db.hdb.apl::recommendation.model_node_user";
+truncate table "aa.movielens.db.hdb.apl::recommendation.model_node_movie";
+truncate table "aa.movielens.db.hdb.apl::recommendation.model_links";
+truncate table "aa.movielens.db.hdb.apl::recommendation.model_sql_code";
+
 call "aa.movielens.db.hdb.apl.afllang::recommendation"(
-    "aa.movielens.db.hdb.apl::recommendation.function_header",
-    "aa.movielens.db.hdb.apl::recommendation.operation_config",
-    "aa.movielens.db.hdb.apl::recommendation.variable_descs",
-    "aa.movielens.db.hdb::data.ratings",
-    "aa.movielens.db.hdb.apl::recommendation.result_model",
-    "aa.movielens.db.hdb.apl::recommendation.result_model_node_user",
-    "aa.movielens.db.hdb.apl::recommendation.result_model_node_movie",
-    "aa.movielens.db.hdb.apl::recommendation.result_model_links",
-    "aa.movielens.db.hdb.apl::recommendation.result_operation_log",
-    "aa.movielens.db.hdb.apl::recommendation.result_summary",
-    "aa.movielens.db.hdb.apl::recommendation.result_indicators",
-    "aa.movielens.db.hdb.apl::recommendation.result_reco_sql_code"
+  "aa.movielens.db.hdb.apl::recommendation.function_header",
+  "aa.movielens.db.hdb.apl::recommendation.operation_config",
+  "aa.movielens.db.hdb.apl::recommendation.variable_descs",
+  "aa.movielens.db.hdb::data.ratings",
+  "aa.movielens.db.hdb.apl::recommendation.model",
+  "aa.movielens.db.hdb.apl::recommendation.model_node_user",
+  "aa.movielens.db.hdb.apl::recommendation.model_node_movie",
+  "aa.movielens.db.hdb.apl::recommendation.model_links",
+  "aa.movielens.db.hdb.apl::recommendation.operation_log",
+  "aa.movielens.db.hdb.apl::recommendation.summary",
+  "aa.movielens.db.hdb.apl::recommendation.indicators",
+  "aa.movielens.db.hdb.apl::recommendation.model_sql_code"
 ) with overview;
 ```
 
@@ -693,7 +674,7 @@ When performing an APL operation, especially training or applying a model, the A
 These messages are returned from an APL function through an output database table.
 
 ```sql
-select * from "aa.movielens.db.hdb.apl::recommendation.result_operation_log";
+select * from "aa.movielens.db.hdb.apl::recommendation.operation_log";
 ```
 
 - The summary:
@@ -703,7 +684,7 @@ When training or applying a model, debriefing information related to the operati
 This is known as the summary. This information is a set of indicators, provided as string pairs { KEY, VALUE }.
 
 ```sql
-select * from "aa.movielens.db.hdb.apl::recommendation.result_summary";
+select * from "aa.movielens.db.hdb.apl::recommendation.summary";
 ```
 
 - The indicators:
@@ -717,7 +698,7 @@ Indicators are returned from an APL function through an output database table. T
 Even if this output is not applicable for a recommendation mode, here is the SQL to check the output:
 
 ```sql
-select * from "aa.movielens.db.hdb.apl::recommendation.result_indicators";
+select * from "aa.movielens.db.hdb.apl::recommendation.indicators";
 ```
 
 - The operation result log:
@@ -725,7 +706,7 @@ select * from "aa.movielens.db.hdb.apl::recommendation.result_indicators";
 When performing some of the APL operation, a result might be returned in the operation result table. In the recommendation scenario, the returned result is the SQL to extract results from the links table.
 
 ```sql
-select * from "aa.movielens.db.hdb.apl::recommendation.result_reco_sql_code";
+select * from "aa.movielens.db.hdb.apl::recommendation.reco_sql_code";
 ```
 
 [DONE]
@@ -738,9 +719,9 @@ Let's verify how many users will actually get recommendations using the followin
 ```SQL
 select reco_count, count(1) as user_count
 from (
-	select userid, max(rank) as reco_count
-	from "aa.movielens.db.hdb.apl.views::recommendation_collaborative_filtering"
-	group by userid
+  select userid, max(rank) as reco_count
+  from "aa.movielens.db.hdb.apl.views::recommendation_collaborative"
+  group by userid
 ) group by reco_count order by 1 desc;
 ```
 
@@ -748,12 +729,12 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 
 ```SQL
 select
-	  count(1) as movie_count
-	, count(1) * 100 / (select count(1) as cnt from "aa.movielens.db.hdb::data.movies") as movie_ratio
+    count(1) as movie_count
+  , count(1) * 100 / (select count(1) as cnt from "aa.movielens.db.hdb::data.movies") as movie_ratio
 from (
-	select movieid
-	from "aa.movielens.db.hdb.apl.views::recommendation_collaborative_filtering"
-	group by movieid
+  select movieid
+  from "aa.movielens.db.hdb.apl.views::recommendation_collaborative"
+  group by movieid
 );
 ```
 
@@ -761,15 +742,15 @@ Let's verify how many distinct movies will potentially get recommended to a user
 
 ```SQL
 select
-	  count(1) as movie_count
-	, count(1) * 100 / (select count(1) as cnt from "aa.movielens.db.hdb::data.movies") as movie_ratio
+    count(1) as movie_count
+  , count(1) * 100 / (select count(1) as cnt from "aa.movielens.db.hdb::data.movies") as movie_ratio
 from (
-		select movieid
-		from (
-			select kxnodesecond	as movieid from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Item' group by	kxnodesecond
-			union all
-			select kxnodesecond_2 as movieid from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Item' group by	kxnodesecond_2
-		) group by movieid
+    select movieid
+    from (
+      select kxnodesecond   as movieid from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item' group by  kxnodesecond
+      union all
+      select kxnodesecond_2 as movieid from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item' group by  kxnodesecond_2
+    ) group by movieid
 );
 ```
 
@@ -791,9 +772,9 @@ Let's verify how many movies will actually get recommendations using the followi
 ```SQL
 select reco_count, count(1) as movie_count
 from (
-	select movieid, max(rank) as reco_count
-	from "aa.movielens.db.hdb.apl.views::recommendation_contentbased_filtering"
-	group by movieid
+  select movieid, max(rank) as reco_count
+  from "aa.movielens.db.hdb.apl.views::recommendation_contentbased"
+  group by movieid
 ) group by reco_count;
 ```
 
@@ -801,12 +782,12 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 
 ```SQL
 select
-	  count(1) as movie_count
-	, count(1) * 100 / (select count(1) as cnt from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
+    count(1) as movie_count
+  , count(1) * 100 / (select count(1) as cnt from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
 from (
-	select movieid
-	from "aa.movielens.db.hdb.apl.views::recommendation_contentbased_filtering"
-	group by movieid
+  select movieid
+  from "aa.movielens.db.hdb.apl.views::recommendation_contentbased"
+  group by movieid
 );
 ```
 
@@ -817,21 +798,21 @@ Let's verify how many rating does the movies with no recommendation have using t
 ```SQL
 select rating_count, count(1) as movie_count
 from (
-	select ratings.movieid, count(1) as rating_count
-	from "aa.movielens.db.hdb::data.ratings" ratings
-	left outer join (
-		select movieid
-		from (
-			select movieid
-			from (
-				select kxnodesecond	as movieid from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Item' group by	kxnodesecond
-				union all
-				select kxnodesecond_2 as movieid from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Item' group by	kxnodesecond_2
-			) group by movieid
-		)
-	) t1 on (ratings.movieid = t1.movieid)
-	where t1.movieid is null
-	group by ratings.movieid
+  select ratings.movieid, count(1) as rating_count
+  from "aa.movielens.db.hdb::data.ratings" ratings
+  left outer join (
+    select movieid
+    from (
+      select movieid
+      from (
+        select kxnodesecond   as movieid from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item' group by  kxnodesecond
+        union all
+        select kxnodesecond_2 as movieid from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item' group by  kxnodesecond_2
+      ) group by movieid
+    )
+  ) t1 on (ratings.movieid = t1.movieid)
+  where t1.movieid is null
+  group by ratings.movieid
 ) group by rating_count;
 ```
 

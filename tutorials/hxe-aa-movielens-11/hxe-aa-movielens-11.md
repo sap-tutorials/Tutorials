@@ -83,6 +83,8 @@ Create the following folder structure:
   |   |-- xsjs
   |   |-- xsodata
   |-- fragment
+  |   |-- xsjs
+  |   |-- xsodata  
   |-- view
   |   |-- xsjs
   |   |-- xsodata
@@ -181,38 +183,48 @@ Paste the following content:
 ```json
 {
   "services": {
-    "apl.recommendation": {
-      "execute_url": "/xsjs/apl/recommendation_execute.xsjs",
-      "execute_method": "POST",
-
-      "results_url": "/xsjs/apl/recommendation_results.xsjs",
-      "results_method": "POST"
+    "apl_recommendation": {
+      "execute": {
+        "url": "/xsjs/apl/recommendation_execute.xsjs",
+        "method": "POST",
+        "data": {
+          "BESTSELLERTHRESHOLD": 50000,
+          "MAXTOPNODES": 100000,
+          "MINIMUMSUPPORT": 2,
+          "MINIMUMCONFIDENCE": 0.05,
+          "MINIMUMPREDICTIVEPOWER": 0.1
+        }
+      },
+      "results": {
+        "url": "/xsjs/apl/recommendation_results.xsjs",
+        "method": "POST",
+        "data": {
+          "BESTSELLERTHRESHOLD": 50000,
+          "MAXTOPNODES": 100000,
+          "KEEPTOPN": 5,
+          "INCLUDEBESTSELLERS": false,
+          "SKIPALREADYOWNED": true
+        }
+      }
     },
-    "pal.apriori": {
-      "execute_url": "/xsjs/pal/apriori_execute.xsjs",
-      "execute_method": "POST",
-
-      "results_url": "/xsjs/pal/apriori_results.xsjs",
-      "results_method": "POST"
-    }
-  },
-  "default": {
-    "apl.recommendation": {
-      "BESTSELLERTHRESHOLD": 500,
-      "MAXTOPNODES": 100000,
-      "MINIMUMSUPPORT": 2,
-      "MINIMUMCONFIDENCE": 0.05,
-      "MINIMUMPREDICTIVEPOWER": 0.1,
-      "KEEPTOPN": 5,
-      "INCLUDEBESTSELLERS": false,
-      "SKIPALREADYOWNED": true
-    },
-    "pal.apriori": {
-      "KEEPTOPN": 5,
-      "MIN_SUPPORT": 0.1,
-      "MIN_CONFIDENCE": 0.1,
-      "MIN_LIFT": 0.0,
-      "UBIQUITOUS": 1.0
+    "pal_apriori": {
+      "execute": {
+        "url": "/xsjs/pal/apriori_execute.xsjs",
+        "method": "POST",
+        "data": {
+          "MIN_SUPPORT": 0.1,
+          "MIN_CONFIDENCE": 0.1,
+          "MIN_LIFT": 0.0,
+          "UBIQUITOUS": 1.0
+        }
+      },
+      "results": {
+        "url": "/xsjs/pal/apriori_results.xsjs",
+        "method": "POST",
+        "data": {
+          "KEEPTOPN": 5
+        }
+      }
     }
   }
 }
@@ -242,8 +254,7 @@ movielens/html/resources/webapp/model/formatter.js
 Paste the following content:
 
 ```JavaScript
-sap.ui.define([
-], function (){
+sap.ui.define([], function() {
   "use strict";
   var isNumeric = function(oValue) {
     var tmp = oValue && oValue.toString();
@@ -295,30 +306,30 @@ In the left side panel, expand the **`movielens/html/resources/webapp/fragment`*
 
 Right click on the **`fragment`** folder node from the tree, and select **New > File**.
 
-Enter **`menu.fragment.xml`** as the file name, then click on **OK**.
+Enter **`view_menu.fragment.xml`** as the file name, then click on **OK**.
 
 This is the full path of the created file:
 
 ```
-movielens/html/resources/webapp/fragment/menu.fragment.xml
+movielens/html/resources/webapp/fragment/view_menu.fragment.xml
 ```
 
 Paste the following content:
 
 ```xml
-<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:c="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
-  xmlns:u="sap.ui.unified">
-  <u:Menu  itemSelect="handleMenuItemPress" >
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+  xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:u="sap.ui.unified">
+  <u:Menu itemSelect="handleMenuItemPress">
     <u:MenuItem text="View Results with XS OData">
       <u:Menu>
-        <u:MenuItem text="Collaborative Filtering" c:to="xsodata.collaborative"/>
-        <u:MenuItem text="Content-Based Filtering" c:to="xsodata.contentbased"/>
+        <u:MenuItem text="Collaborative Filtering" custom:to="xsodata.collaborative"/>
+        <u:MenuItem text="Content-Based Filtering" custom:to="xsodata.contentbased"/>
       </u:Menu>
     </u:MenuItem>
     <u:MenuItem text="Execute Algorithms with XSJS">
       <u:Menu>
-        <u:MenuItem text="APL Recommendation" c:to="xsjs.apl_recommendation"/>
-        <u:MenuItem text="PAL APRIORI" c:to="xsjs.pal_apriori"/>
+        <u:MenuItem text="APL Recommendation" custom:to="xsjs.apl_recommendation"/>
+        <u:MenuItem text="PAL APRIORI" custom:to="xsjs.pal_apriori"/>
       </u:Menu>
     </u:MenuItem>
   </u:Menu>
@@ -326,8 +337,6 @@ Paste the following content:
 ```
 
 Save the file using the ![save](00-save.png) icon from the menu.
-
-The path of the file you have just created is **`movielens/html/resources/webapp/fragment/MovieDetails.fragment.xml`**.
 
 [DONE]
 [ACCORDION-END]
@@ -457,7 +466,7 @@ Open the **`demo.view.xml`** file and replace the existing code with the followi
       <content>
         <Bar>
           <contentMiddle>
-            <Title text="Moveilens Recommendation"/>
+            <Title text="MoveiLens Recommendation"/>
           </contentMiddle>
           <contentLeft>
             <Button icon="sap-icon://menu" press="handlePressOpenMenu"/>
@@ -504,7 +513,7 @@ sap.ui.define([
       var oButton = oEvent.getSource();
       // create menu only once
       if (!this._menu) {
-        this._menu = sap.ui.xmlfragment("movielens.html.fragment.menu", this);
+        this._menu = sap.ui.xmlfragment("movielens.html.fragment.view_menu", this);
         this.getView().addDependent(this._menu);
       }
       var eDock = sap.ui.core.Popup.Dock;

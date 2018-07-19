@@ -210,7 +210,7 @@ Switch to the **Resources** tab.
 
 Use the ![Web IDE](00-webide-plus.png) icon to add a new entry.
 
-Enter the name of the XSUAA service **`movielesn-uaa`** and select **`com.sap.xs.uaa`** as type.
+Enter the name of the XSUAA service **`movielens-uaa`** and select **`com.sap.xs.uaa-space`** as type.
 
 Add the following parameter:
 

@@ -196,8 +196,8 @@ xs stop cockpit-telemetry-svc
 The following services can be scaled up to ensure a better user experience during this tutorial series.
 
 ```shell
-xs scale di-runner -m 512M
-xs scale di-core -m 512M
+xs scale di-runner -m 512M -f -w
+xs scale di-core -m 512M -f -w
 ```
 
 #### Run the memory collector script:

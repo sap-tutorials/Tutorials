@@ -181,7 +181,14 @@ context apriori {
         STRING_VALUE : String(100);
     };
 
-    entity result_rules {
+    table type tt_parameter {
+        PARAM_NAME   : String(100);
+        INT_VALUE    : Integer;
+        DOUBLE_VALUE : Double;
+        STRING_VALUE : String(100);
+    };
+
+    entity rules {
         PRERULE    : String(500);
         POSTRULE   : String(500);
         SUPPORT    : Double;
@@ -189,7 +196,20 @@ context apriori {
         LIFT       : Double;
     };
 
-    entity model_pmml {
+    table type tt_rules {
+        PRERULE    : String(500);
+        POSTRULE   : String(500);
+        SUPPORT    : Double;
+        CONFIDENCE : Double;
+        LIFT       : Double;
+    };
+
+    entity pmml {
+        ID        : Integer;
+        PMMLMODEL : String(5000);
+    };
+
+    table type tt_pmml {
         ID        : Integer;
         PMMLMODEL : String(5000);
     };
@@ -201,27 +221,11 @@ context apriori {
             MOVIEID
         };
 
-    table type tt_parameter {
-        PARAM_NAME   : String(100);
-        INT_VALUE    : Integer;
-        DOUBLE_VALUE : Double;
-        STRING_VALUE : String(100);
-    };
     table type tt_movielens_dataset {
         USERID  : Integer;
         MOVIEID : Integer;
     };
-    table type tt_result_rules {
-        PRERULE    : String(500);
-        POSTRULE   : String(500);
-        SUPPORT    : Double;
-        CONFIDENCE : Double;
-        LIFT       : Double;
-    };
-    table type tt_model_pmml {
-        ID        : Integer;
-        PMMLMODEL : String(5000);
-    };
+
     table type tt_movielens_collaborative_result {
         USERID  : Integer;
         RANK    : Integer;
@@ -279,22 +283,10 @@ Paste the following content:
     "area" : "AFLPAL",
     "function" : "APRIORIRULE",
     "parameters" : [
-        {
-            "type" : "aa.movielens.db.hdb.pal::apriori.tt_movielens_dataset",
-            "direction" : "IN"
-        },
-        {
-            "type" : "aa.movielens.db.hdb.pal::apriori.tt_parameter",
-            "direction" : "IN"
-        },
-        {
-            "type" : "aa.movielens.db.hdb.pal::apriori.tt_result_rules",
-            "direction" : "OUT"
-        },
-        {
-            "type" : "aa.movielens.db.hdb.pal::apriori.tt_model_pmml",
-            "direction" : "OUT"
-        }
+        { "direction" : "IN",  "type" : "aa.movielens.db.hdb.pal::apriori.tt_movielens_dataset"},
+        { "direction" : "IN",  "type" : "aa.movielens.db.hdb.pal::apriori.tt_parameter"},
+        { "direction" : "OUT", "type" : "aa.movielens.db.hdb.pal::apriori.tt_rules"},
+        { "direction" : "OUT", "type" : "aa.movielens.db.hdb.pal::apriori.tt_pmml"}
     ]
 }
 ```
@@ -328,18 +320,18 @@ Enter **`views`** as the folder name, then click on **OK**.
 
 Right click on the **`views`** folder node from the tree, and select **New > File**.
 
-Enter **`apriori_collaborative_filtering.hdbview`** as the file name, then click on **OK**.
+Enter **`apriori_collaborative.hdbview`** as the file name, then click on **OK**.
 
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/pal/views/apriori_collaborative_filtering.hdbview
+movielens/db/src/hdb/pal/views/apriori_collaborative.hdbview
 ```
 
 Paste the following content:
 
 ```SQL
-view "aa.movielens.db.hdb.pal.views::apriori_collaborative_filtering" as
+view "aa.movielens.db.hdb.pal.views::apriori_collaborative" as
 select
   userid, rank, t1.movieid, score, title, genres, imdbid, tmdbid
 from (
@@ -350,11 +342,11 @@ from (
     , t1.score
   from (
     select
-    	input_data.userid,
-    	rules.postrule as consequent,
-    	max(rules.confidence) as score
+      input_data.userid,
+      rules.postrule as consequent,
+      max(rules.confidence) as score
     from "aa.movielens.db.hdb::data.ratings" as input_data
-    left outer join "aa.movielens.db.hdb.pal::apriori.result_rules" rules on (cast (input_data.movieid as varchar(500)) = rules.prerule)
+    left outer join "aa.movielens.db.hdb.pal::apriori.rules" rules on (cast (input_data.movieid as varchar(500)) = rules.prerule)
     where rules.postrule is not null
     group by input_data.userid, rules.postrule
   ) t1
@@ -380,18 +372,18 @@ For this scenario, you won't actually need to build another model as the previou
 
 Right click on the **`views`** folder node from the tree, and select **New > File**.
 
-Enter **`apriori_contentbased_filtering.hdbview`** as the file name, then click on **OK**.
+Enter **`apriori_contentbased.hdbview`** as the file name, then click on **OK**.
 
 This is the full path of the created file:
 
 ```
-movielens/db/src/hdb/pal/views/apriori_contentbased_filtering.hdbview
+movielens/db/src/hdb/pal/views/apriori_contentbased.hdbview
 ```
 
 Paste the following content:
 
 ```SQL
-view "aa.movielens.db.hdb.pal.views::apriori_contentbased_filtering" as
+view "aa.movielens.db.hdb.pal.views::apriori_contentbased" as
 select
   t1.movieid, rank, similar_movie, score, title, genres, imdbid, tmdbid    
 from (
@@ -403,7 +395,7 @@ from (
   from (
     select movieid, rules.postrule as consequent, rules.confidence as score
     from "aa.movielens.db.hdb::data.movies" as input_data
-    left outer join "aa.movielens.db.hdb.pal::apriori.result_rules" rules on (cast (input_data.movieid as varchar(500)) = rules.prerule)
+    left outer join "aa.movielens.db.hdb.pal::apriori.rules" rules on (cast (input_data.movieid as varchar(500)) = rules.prerule)
     where rules.postrule is not null
   ) t1
 ) t1
@@ -451,20 +443,20 @@ Paste the following content in the console, and use the execute icon ![run](00-d
 ```SQL
 -- Clear tables content
 truncate table "aa.movielens.db.hdb.pal::apriori.parameter";
-truncate table "aa.movielens.db.hdb.pal::apriori.result_rules";
-truncate table "aa.movielens.db.hdb.pal::apriori.model_pmml";
+truncate table "aa.movielens.db.hdb.pal::apriori.rules";
+truncate table "aa.movielens.db.hdb.pal::apriori.pmml";
 
 -- Insert operation parameters
 insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MIN_SUPPORT'     , null, 0.1, null);
 insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MIN_CONFIDENCE'  , null, 0.1, null);
-insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MAX_CONSEQUENT'  , 1	, null, null);
-insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MAX_ITEM_LENGTH' , 1	, null, null);
+insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MAX_CONSEQUENT'  , 1  , null, null);
+insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MAX_ITEM_LENGTH' , 1  , null, null);
 
 call "aa.movielens.db.hdb.pal.afllang::apriori"(
-	"aa.movielens.db.hdb.pal::apriori.movielens_dataset",
-	"aa.movielens.db.hdb.pal::apriori.parameter",
-	"aa.movielens.db.hdb.pal::apriori.result_rules",
-	"aa.movielens.db.hdb.pal::apriori.model_pmml"
+  "aa.movielens.db.hdb.pal::apriori.movielens_dataset",
+  "aa.movielens.db.hdb.pal::apriori.parameter",
+  "aa.movielens.db.hdb.pal::apriori.rules",
+  "aa.movielens.db.hdb.pal::apriori.pmml"
 ) with overview;
 ```
 
@@ -484,9 +476,9 @@ Let's verify how many users will actually get recommendations using the followin
 ```SQL
 select reco_count, count(1) as user_count
 from (
-	select userid, max(rank) as reco_count
-	from "aa.movielens.db.hdb.pal.views::apriori_collaborative_filtering"
-	group by userid
+  select userid, max(rank) as reco_count
+  from "aa.movielens.db.hdb.pal.views::apriori_collaborative"
+  group by userid
 ) group by reco_count order by reco_count desc;
 ```
 
@@ -494,12 +486,12 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 
 ```SQL
 select
-	  count(1) as movie_count
-	, count(1) *100 / (select count(1) as count from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
+    count(1) as movie_count
+  , count(1) *100 / (select count(1) as count from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
 from (
-	select movieid
-	from "aa.movielens.db.hdb.pal.views::apriori_collaborative_filtering"
-	group by movieid
+  select movieid
+  from "aa.movielens.db.hdb.pal.views::apriori_collaborative"
+  group by movieid
 );
 ```
 
@@ -507,13 +499,13 @@ Let's verify how many distinct movies will potentially get recommended to a user
 
 ```SQL
 select
-	  count(1) as movie_count
-	, count(1) *100 / (select count(1) as count from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
+    count(1) as movie_count
+  , count(1) *100 / (select count(1) as count from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
 from (
-	select prerule as movieid
-	from "aa.movielens.db.hdb.pal::apriori.result_rules"
-	where prerule not like '%&%'
-	group by prerule
+  select prerule as movieid
+  from "aa.movielens.db.hdb.pal::apriori.rules"
+  where prerule not like '%&%'
+  group by prerule
 );
 ```
 
@@ -538,9 +530,9 @@ Let's verify how many movies will actually get recommendations using the followi
 ```SQL
 select reco_count, count(1) as movie_count
 from (
-	select movieid, max(rank) as reco_count
-	from "aa.movielens.db.hdb.pal.views::apriori_contentbased_filtering"
-	group by movieid
+  select movieid, max(rank) as reco_count
+  from "aa.movielens.db.hdb.pal.views::apriori_contentbased"
+  group by movieid
 ) group by reco_count order by 1 desc;
 ```
 
@@ -548,12 +540,12 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 
 ```SQL
 select
-	  count(1) as movie_count
-	, count(1) *100 / (select count(1) as count from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
+    count(1) as movie_count
+  , count(1) *100 / (select count(1) as count from "aa.movielens.db.hdb::data.movies" ) as movie_ratio
 from (
-	select movieid
-	from "aa.movielens.db.hdb.pal.views::apriori_contentbased_filtering"
-	group by movieid
+  select movieid
+  from "aa.movielens.db.hdb.pal.views::apriori_contentbased"
+  group by movieid
 );
 ```
 
@@ -564,19 +556,19 @@ Let's verify how many rating does the movies with no recommendation have using t
 ```SQL
 select rating_count, count(1) as movie_count
 from (
-	select ratings.movieid, count(1) as rating_count
-	from "aa.movielens.db.hdb::data.ratings" ratings
-	left outer join (
-		select movieid
-		from (
-			select prerule as movieid
-			from "aa.movielens.db.hdb.pal::apriori.result_rules"
-			where prerule not like '%&%'
-			group by prerule
-		)
-	) t1 on (ratings.movieid = t1.movieid)
-	where t1.movieid is null
-	group by ratings.movieid
+  select ratings.movieid, count(1) as rating_count
+  from "aa.movielens.db.hdb::data.ratings" ratings
+  left outer join (
+    select movieid
+    from (
+      select prerule as movieid
+      from "aa.movielens.db.hdb.pal::apriori.rules"
+      where prerule not like '%&%'
+      group by prerule
+    )
+  ) t1 on (ratings.movieid = t1.movieid)
+  where t1.movieid is null
+  group by ratings.movieid
 ) group by rating_count;
 ```
 

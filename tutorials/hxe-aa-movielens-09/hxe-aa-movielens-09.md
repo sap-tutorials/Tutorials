@@ -276,79 +276,66 @@ PROCEDURE "aa.movielens.db.hdb.apl.procedures::recommendation_execute" (
    in MinimumConfidence      double  default 0.05,
    in MinimumPredictivePower double  default null,
    in MinimumSupport         integer default 2,
-   out result_operation_log "aa.movielens.db.hdb.apl::recommendation.tt_operation_log",
-   out result_summary       "aa.movielens.db.hdb.apl::recommendation.tt_summary",
-   out result_indicators    "aa.movielens.db.hdb.apl::recommendation.tt_indicators",
-   out result_reco_sql_code "aa.movielens.db.hdb.apl::recommendation.tt_reco_sql_code"
+   out operation_log  "aa.movielens.db.hdb.apl::recommendation.tt_operation_log",
+   out summary        "aa.movielens.db.hdb.apl::recommendation.tt_summary",
+   out indicators     "aa.movielens.db.hdb.apl::recommendation.tt_indicators",
+   out model_sql_code "aa.movielens.db.hdb.apl::recommendation.tt_model_sql_code"
 )
-LANGUAGE SQLSCRIPT
-SQL SECURITY INVOKER
-AS
+LANGUAGE SQLSCRIPT SQL SECURITY INVOKER AS
 BEGIN
     -- Insert operation parameters
     truncate table "aa.movielens.db.hdb.apl::recommendation.function_header";
-    in_function_header = select * from "aa.movielens.db.hdb.apl::recommendation.function_header";                                 
+    function_header = select * from "aa.movielens.db.hdb.apl::recommendation.function_header";                                 
 
     truncate table "aa.movielens.db.hdb.apl::recommendation.operation_config";
+    if :BestSellerThreshold     is not null then insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/BestSeller'             , cast(:BestSellerThreshold    as varchar));   end if;
+    if :MaxTopNodes             is not null then insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/MaxTopNodes'            , cast(:MaxTopNodes            as varchar));   end if;
+    if :MinimumConfidence       is not null then insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/MinimumConfidence'      , cast(:MinimumConfidence      as varchar));   end if;
+    if :MinimumPredictivePower  is not null then insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/MinimumPredictivePower' , cast(:MinimumPredictivePower as varchar));   end if;
+    if :MinimumSupport          is not null then insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/MinimumSupport'         , cast(:MinimumSupport         as varchar));   end if;
     insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/ModelType'  , 'recommendation'  );
     insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/User'       , 'USERID'          ); -- mandatory
     insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/Item'       , 'MOVIEID'         ); -- mandatory
     insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/RuleWeight' , 'Support'         );
-    if :BestSellerThreshold is not null then
-      insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/BestSeller'             , cast(:BestSellerThreshold    as varchar));
-    end if;
-    if :MaxTopNodes is not null then
-      insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/MaxTopNodes'            , cast(:MaxTopNodes            as varchar));
-    end if;
-    if :MinimumConfidence is not null then
-      insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/MinimumConfidence'      , cast(:MinimumConfidence      as varchar));
-    end if;
-    if :MinimumPredictivePower is not null then
-      insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/MinimumPredictivePower' , cast(:MinimumPredictivePower as varchar));
-    end if;
-    if :MinimumSupport is not null then
-      insert into "aa.movielens.db.hdb.apl::recommendation.operation_config" values ('APL/MinimumSupport'         , cast(:MinimumSupport         as varchar));
-  end if;
-
-    in_operation_config = select * from "aa.movielens.db.hdb.apl::recommendation.operation_config";       
+    operation_config = select * from "aa.movielens.db.hdb.apl::recommendation.operation_config";       
 
     truncate table "aa.movielens.db.hdb.apl::recommendation.variable_descs";
-    in_variable_descs = select * from "aa.movielens.db.hdb.apl::recommendation.variable_descs";                                   
+    variable_descs = select * from "aa.movielens.db.hdb.apl::recommendation.variable_descs";                                   
 
-    in_movielens_dataset = select * from "aa.movielens.db.hdb::data.ratings";           
+    movielens_dataset = select * from "aa.movielens.db.hdb::data.ratings";           
     call "aa.movielens.db.hdb.apl.afllang::recommendation"(
-        :in_function_header,
-        :in_operation_config,
-        :in_variable_descs,
-        :in_movielens_dataset,
-        :result_model,
-        :result_model_node_user,
-        :result_model_node_movie,
-        :result_model_links,
-        :result_operation_log,
-        :result_summary,
-        :result_indicators,
-        :result_reco_sql_code
+        :function_header,
+        :operation_config,
+        :variable_descs,
+        :movielens_dataset,
+        :model,
+        :model_node_user,
+        :model_node_movie,
+        :model_links,
+        :operation_log,
+        :summary,
+        :indicators,
+        :model_sql_code
     );
     -- Clear tables content
-    truncate table "aa.movielens.db.hdb.apl::recommendation.result_model";
-    truncate table "aa.movielens.db.hdb.apl::recommendation.result_model_node_user";
-    truncate table "aa.movielens.db.hdb.apl::recommendation.result_model_node_movie";
-    truncate table "aa.movielens.db.hdb.apl::recommendation.result_model_links";
-    truncate table "aa.movielens.db.hdb.apl::recommendation.result_operation_log";
-    truncate table "aa.movielens.db.hdb.apl::recommendation.result_summary";
-    truncate table "aa.movielens.db.hdb.apl::recommendation.result_indicators";    
-    truncate table "aa.movielens.db.hdb.apl::recommendation.result_reco_sql_code";
+    truncate table "aa.movielens.db.hdb.apl::recommendation.model";
+    truncate table "aa.movielens.db.hdb.apl::recommendation.model_node_user";
+    truncate table "aa.movielens.db.hdb.apl::recommendation.model_node_movie";
+    truncate table "aa.movielens.db.hdb.apl::recommendation.model_links";
+    truncate table "aa.movielens.db.hdb.apl::recommendation.operation_log";
+    truncate table "aa.movielens.db.hdb.apl::recommendation.summary";
+    truncate table "aa.movielens.db.hdb.apl::recommendation.indicators";    
+    truncate table "aa.movielens.db.hdb.apl::recommendation.model_sql_code";
 
     -- Insert the results
-    insert into "aa.movielens.db.hdb.apl::recommendation.result_model"            select * from :result_model;
-    insert into "aa.movielens.db.hdb.apl::recommendation.result_model_node_user"  select * from :result_model_node_user;
-    insert into "aa.movielens.db.hdb.apl::recommendation.result_model_node_movie" select * from :result_model_node_movie;
-    insert into "aa.movielens.db.hdb.apl::recommendation.result_model_links"      select * from :result_model_links;
-    insert into "aa.movielens.db.hdb.apl::recommendation.result_operation_log"    select * from :result_operation_log;
-    insert into "aa.movielens.db.hdb.apl::recommendation.result_summary"          select * from :result_summary;
-    insert into "aa.movielens.db.hdb.apl::recommendation.result_indicators"       select * from :result_indicators;        
-    insert into "aa.movielens.db.hdb.apl::recommendation.result_reco_sql_code"    select * from :result_reco_sql_code;
+    insert into "aa.movielens.db.hdb.apl::recommendation.model"            select * from :model;
+    insert into "aa.movielens.db.hdb.apl::recommendation.model_node_user"  select * from :model_node_user;
+    insert into "aa.movielens.db.hdb.apl::recommendation.model_node_movie" select * from :model_node_movie;
+    insert into "aa.movielens.db.hdb.apl::recommendation.model_links"      select * from :model_links;
+    insert into "aa.movielens.db.hdb.apl::recommendation.operation_log"    select * from :operation_log;
+    insert into "aa.movielens.db.hdb.apl::recommendation.summary"          select * from :summary;
+    insert into "aa.movielens.db.hdb.apl::recommendation.indicators"       select * from :indicators;        
+    insert into "aa.movielens.db.hdb.apl::recommendation.model_sql_code"   select * from :model_sql_code;
 END;
 ```
 
@@ -377,9 +364,7 @@ PROCEDURE "aa.movielens.db.hdb.apl.procedures::recommendation_result_collaborati
    ,in KeepTopN            integer default 5
    ,out results            "aa.movielens.db.hdb.apl::recommendation.tt_movielens_collaborative_result"
 )
-LANGUAGE SQLSCRIPT
-SQL SECURITY INVOKER
-AS
+LANGUAGE SQLSCRIPT SQL SECURITY INVOKER AS
 BEGIN
     results = select
     userid, rank, t1.movieid, score, title, genres, imdbid, tmdbid
@@ -405,9 +390,9 @@ BEGIN
                   , rules.kxnodesecond_2 as consequent
                   , rules.weight         as support
                 from "aa.movielens.db.hdb::data.ratings" spacein
-                left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Transactions') products on (products.kxnodefirst  = spacein.userid)
-                left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Item'        ) rules    on (products.kxnodesecond = rules.kxnodesecond)
-                left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Transactions') notin    on (rules.kxnodesecond_2  = notin.kxnodesecond) and (notin.kxnodefirst = spacein.userid) and (:SkipAlreadyOwned = 1)
+                left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') products on (products.kxnodefirst  = spacein.userid)
+                left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item'        ) rules    on (products.kxnodesecond = rules.kxnodesecond)
+                left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') notin    on (rules.kxnodesecond_2  = notin.kxnodesecond) and (notin.kxnodefirst = spacein.userid) and (:SkipAlreadyOwned = 1)
                   where rules.kxnodesecond is not null
                   and   spacein.userid = :UserId
                   and   notin.kxnodesecond is null
@@ -424,19 +409,19 @@ BEGIN
                   , rules.kxnodesecond   as consequent
                   , rules.weight         as support
                 from "aa.movielens.db.hdb::data.ratings" spacein
-                left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Transactions') products on (products.kxnodefirst  = spacein.userid)
-                left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Item'        ) rules    on (products.kxnodesecond = rules.kxnodesecond_2)
-                left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Transactions') notin    on (rules.kxnodesecond    = notin.kxnodesecond) and (notin.kxnodefirst = spacein.userid) and (:SkipAlreadyOwned = 1)
+                left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') products on (products.kxnodefirst  = spacein.userid)
+                left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item'        ) rules    on (products.kxnodesecond = rules.kxnodesecond_2)
+                left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') notin    on (rules.kxnodesecond    = notin.kxnodesecond) and (notin.kxnodefirst = spacein.userid) and (:SkipAlreadyOwned = 1)
                 where rules.kxnodesecond_2 is not null
                 and   spacein.userid = :UserId
                 and notin.kxnodesecond is null
               ) t1
           ) t1
-          left outer join (select kxnodesecond   as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name ='Transactions' group by kxnodesecond  ) t2_1 on (t1.antecedent = t2_1.antecedent)
-          left outer join (select kxnodesecond_2 as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name ='Transactions' group by kxnodesecond_2) t2_2 on (t1.antecedent = t2_2.antecedent)
+          left outer join (select kxnodesecond   as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name ='Transactions' group by kxnodesecond  ) t2_1 on (t1.antecedent = t2_1.antecedent)
+          left outer join (select kxnodesecond_2 as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name ='Transactions' group by kxnodesecond_2) t2_2 on (t1.antecedent = t2_2.antecedent)
           union all
           select :UserId as userid, movieid, count(1) from "aa.movielens.db.hdb::data.ratings" spacein
-          left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Transactions') notin    on (spacein.movieid    = notin.kxnodesecond) and (notin.kxnodefirst = spacein.userid) and :SkipAlreadyOwned = 1
+          left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Transactions') notin    on (spacein.movieid    = notin.kxnodesecond) and (notin.kxnodefirst = spacein.userid) and :SkipAlreadyOwned = 1
           where :IncludeBestSeller = 1 group by movieid having count(1) > BestSellerThreshold
         ) t1 group by t1.userid,  t1.consequent
     ) t1
@@ -471,9 +456,7 @@ PROCEDURE "aa.movielens.db.hdb.apl.procedures::recommendation_result_contentbase
    ,in KeepTopN            integer default 5
    ,out results          "aa.movielens.db.hdb.apl::recommendation.tt_movielens_contentbased_result"
 )
-LANGUAGE SQLSCRIPT
-SQL SECURITY INVOKER
-AS
+LANGUAGE SQLSCRIPT SQL SECURITY INVOKER AS
 BEGIN
     results = select
     t1.movieid, rank, similar_movie, score, title, genres, imdbid, tmdbid
@@ -497,8 +480,8 @@ BEGIN
                 , rules.kxnodesecond_2 as consequent
                 , rules.weight as support
               from
-                "aa.movielens.db.hdb.apl::recommendation.result_model_node_movie" nodes
-              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Item' ) rules    on (nodes.node = rules.kxnodesecond)
+                "aa.movielens.db.hdb.apl::recommendation.model_node_movie" nodes
+              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item' ) rules    on (nodes.node = rules.kxnodesecond)
               where rules.kxnodesecond_2 is not null
               and   nodes.node = :MovieId
               union all
@@ -508,13 +491,13 @@ BEGIN
                 , rules.kxnodesecond   as consequent
                 , rules.weight as support
               from
-                "aa.movielens.db.hdb.apl::recommendation.result_model_node_movie" nodes
-              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name = 'Item' ) rules    on (nodes.node = rules.kxnodesecond_2)
+                "aa.movielens.db.hdb.apl::recommendation.model_node_movie" nodes
+              left outer join (select * from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name = 'Item' ) rules    on (nodes.node = rules.kxnodesecond_2)
               where rules.kxnodesecond is not null
               and   nodes.node = :MovieId
           ) t1
-          left outer join (select kxnodesecond   as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name ='Transactions' group by kxnodesecond  ) t2_1 on (t1.antecedent = t2_1.antecedent)
-          left outer join (select kxnodesecond_2 as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.result_model_links" where graph_name ='Transactions' group by kxnodesecond_2) t2_2 on (t1.antecedent = t2_2.antecedent)
+          left outer join (select kxnodesecond   as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name ='Transactions' group by kxnodesecond  ) t2_1 on (t1.antecedent = t2_1.antecedent)
+          left outer join (select kxnodesecond_2 as antecedent, cast(count(*) as float) as count_antecedent from "aa.movielens.db.hdb.apl::recommendation.model_links" where graph_name ='Transactions' group by kxnodesecond_2) t2_2 on (t1.antecedent = t2_2.antecedent)
           union all
           select :MovieId as movieid, movieid as consequent, count(1) from "aa.movielens.db.hdb::data.ratings" nodes
           where :IncludeBestSeller = 1 and movieid != :MovieId group by movieid having count(1) > BestSellerThreshold
@@ -564,15 +547,15 @@ DO BEGIN
     MINIMUMCONFIDENCE      => 0.05,
     MINIMUMPREDICTIVEPOWER => null,
     MINIMUMSUPPORT         => 2,
-    RESULT_OPERATION_LOG   => :OPERATION_LOG,
-    RESULT_SUMMARY         => :SUMMARY,
-    RESULT_INDICATORS      => :INDICATORS,
-    RESULT_RECO_SQL_CODE   => :RECO_SQL_CODE
+    OPERATION_LOG   => :OPERATION_LOG,
+    SUMMARY         => :SUMMARY,
+    INDICATORS      => :INDICATORS,
+    MODEL_SQL_CODE  => :MODEL_SQL_CODE
   );
 
-  select 'distinct users included in the model' as key, count(1) as value from "aa.movielens.db.hdb.apl::recommendation.result_model_node_user"
+  select 'distinct users included in the model'  as key, count(1) as value from "aa.movielens.db.hdb.apl::recommendation.model_node_user"
   union all
-  select 'distinct movies included in the model', count(1) from "aa.movielens.db.hdb.apl::recommendation.result_model_node_movie";
+  select 'distinct movies included in the model' as key, count(1) as value from "aa.movielens.db.hdb.apl::recommendation.model_node_movie";
 END;
 ```
 
@@ -592,12 +575,12 @@ Paste the following content in the console, and use the execute icon ![run](00-d
 ```SQL
 DO BEGIN
   call "aa.movielens.db.hdb.apl.procedures::recommendation_result_collaborative"(
-  USERID              => 32,
-  INCLUDEBESTSELLER   => 0,
-  BESTSELLERTHRESHOLD => 50000,
-  SKIPALREADYOWNED    => 1,
-  KEEPTOPN            => 5,
-  RESULTS             => :results
+    USERID              => 32,
+    INCLUDEBESTSELLER   => 0,
+    BESTSELLERTHRESHOLD => 50000,
+    SKIPALREADYOWNED    => 1,
+    KEEPTOPN            => 5,
+    RESULTS             => :results
   );
   select * from :results;
 END;
@@ -619,11 +602,11 @@ Paste the following content in the console, and use the execute icon ![run](00-d
 ```SQL
 DO BEGIN
   call "aa.movielens.db.hdb.apl.procedures::recommendation_result_contentbased"(
-  MOVIEID             => 32,
-  INCLUDEBESTSELLER   => 0,
-  BESTSELLERTHRESHOLD => 50000,
-  KEEPTOPN            => 5,
-  RESULTS             => :results
+    MOVIEID             => 32,
+    INCLUDEBESTSELLER   => 0,
+    BESTSELLERTHRESHOLD => 50000,
+    KEEPTOPN            => 5,
+    RESULTS             => :results
   );
   select * from :results;
 END;
@@ -675,46 +658,34 @@ PROCEDURE "aa.movielens.db.hdb.pal.procedures::apriori_execute" (
    in min_confidence double default 0.1,
    in min_lift       double default 0.0,
    in ubiquitous     double default 1.0,
-   out result_rules  "aa.movielens.db.hdb.pal::apriori.tt_result_rules",
-   out model_pmml    "aa.movielens.db.hdb.pal::apriori.tt_model_pmml"
+   out rules   "aa.movielens.db.hdb.pal::apriori.rules",
+   out pmml    "aa.movielens.db.hdb.pal::apriori.pmml"
 )
-LANGUAGE SQLSCRIPT
-SQL SECURITY INVOKER
-AS
+LANGUAGE SQLSCRIPT SQL SECURITY INVOKER AS
 BEGIN
     -- Insert operation parameters
     truncate table "aa.movielens.db.hdb.pal::apriori.parameter";
+    if :min_support     is not null then insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MIN_SUPPORT'     , null, :min_support    , null);    end if;
+    if :min_confidence  is not null then insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MIN_CONFIDENCE'  , null, :min_confidence , null);    end if;
+    if :min_lift        is not null then insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MIN_LIFT'        , null, :min_lift       , null);    end if;
+    if :ubiquitous      is not null then insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('UBIQUITOUS'      , null, :ubiquitous     , null);    end if;
     insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MAX_CONSEQUENT'  , 1   , null  , null);
     insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MAX_ITEM_LENGTH' , 1   , null  , null);
+    parameter = select * from "aa.movielens.db.hdb.pal::apriori.parameter";                                 
 
-    if :min_support is not null then
-      insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MIN_SUPPORT'     , null, :min_support    , null);
-    end if;
-    if :min_confidence is not null then
-      insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MIN_CONFIDENCE'  , null, :min_confidence , null);
-    end if;
-    if :min_lift is not null then
-      insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('MIN_LIFT'        , null, :min_lift       , null);
-    end if;
-    if :ubiquitous is not null then       
-      insert into "aa.movielens.db.hdb.pal::apriori.parameter" VALUES ('UBIQUITOUS'      , null, :ubiquitous     , null);
-    end if;
-
-    in_parameter = select * from "aa.movielens.db.hdb.pal::apriori.parameter";                                 
-
-    in_movielens_dataset = select USERID, MOVIEID from "aa.movielens.db.hdb::data.ratings";
+    movielens_dataset = select USERID, MOVIEID from "aa.movielens.db.hdb::data.ratings";
     call "aa.movielens.db.hdb.pal.afllang::apriori"(
-        :in_movielens_dataset,
-        :in_parameter,
-        :result_rules,
-        :model_pmml
+        :movielens_dataset,
+        :parameter,
+        :rules,
+        :pmml
     );
     -- Clear tables content
-    truncate table "aa.movielens.db.hdb.pal::apriori.result_rules";
-    truncate table "aa.movielens.db.hdb.pal::apriori.model_pmml";
+    truncate table "aa.movielens.db.hdb.pal::apriori.rules";
+    truncate table "aa.movielens.db.hdb.pal::apriori.pmml";
     -- Insert the results
-    insert into "aa.movielens.db.hdb.pal::apriori.result_rules" select * from :result_rules;
-    insert into "aa.movielens.db.hdb.pal::apriori.model_pmml"   select * from :model_pmml;
+    insert into "aa.movielens.db.hdb.pal::apriori.rules" select * from :rules;
+    insert into "aa.movielens.db.hdb.pal::apriori.pmml"  select * from :pmml;
 END;
 ```
 
@@ -740,9 +711,7 @@ PROCEDURE "aa.movielens.db.hdb.pal.procedures::apriori_result_collaborative" (
    ,in KeepTopN  integer default 5
    ,out results  "aa.movielens.db.hdb.pal::apriori.tt_movielens_collaborative_result"
 )
-LANGUAGE SQLSCRIPT
-SQL SECURITY INVOKER
-AS
+LANGUAGE SQLSCRIPT SQL SECURITY INVOKER AS
 BEGIN
     results = select
     userid, rank, t1.movieid, score, title, genres, imdbid, tmdbid
@@ -756,7 +725,7 @@ BEGIN
         rules.postrule as consequent,
         max(rules.confidence) as score
       from "aa.movielens.db.hdb::data.ratings" as input_data
-      left outer join "aa.movielens.db.hdb.pal::apriori.result_rules" rules on (cast (input_data.movieid as varchar(500)) = rules.prerule)
+      left outer join "aa.movielens.db.hdb.pal::apriori.rules" rules on (cast (input_data.movieid as varchar(500)) = rules.prerule)
       where rules.postrule is not null
       and   input_data.userid = :UserId
       group by input_data.userid, rules.postrule
@@ -790,9 +759,7 @@ PROCEDURE "aa.movielens.db.hdb.pal.procedures::apriori_result_contentbased" (
    ,in KeepTopN  integer default 5
    ,out results  "aa.movielens.db.hdb.pal::apriori.tt_movielens_contentbased_result"
 )
-LANGUAGE SQLSCRIPT
-SQL SECURITY INVOKER
-AS
+LANGUAGE SQLSCRIPT SQL SECURITY INVOKER AS
 BEGIN
     results = select
     t1.movieid, rank, similar_movie, score, title, genres, imdbid, tmdbid    
@@ -805,7 +772,7 @@ BEGIN
     from (
       select movieid, rules.postrule as consequent, rules.confidence as score
       from "aa.movielens.db.hdb::data.movies" as input_data
-      left outer join "aa.movielens.db.hdb.pal::apriori.result_rules" rules on (cast (input_data.movieid as varchar(500)) = rules.prerule)
+      left outer join "aa.movielens.db.hdb.pal::apriori.rules" rules on (cast (input_data.movieid as varchar(500)) = rules.prerule)
       where rules.postrule is not null
       and   input_data.movieid = :MovieId
     ) t1
@@ -852,11 +819,11 @@ DO BEGIN
     MIN_CONFIDENCE => 0.1,
     MIN_LIFT       => 0.0,
     UBIQUITOUS     => 1.0,
-    RESULT_RULES   => :result_rules,
-    MODEL_PMML     => ?
+    RULES   => :rules,
+    PMML    => ?
   );
 
-  select 'rules count' as key, count(1) as value from :result_rules;
+  select 'rules count' as key, count(1) as value from :rules;
 END;
 ```
 
@@ -876,9 +843,9 @@ Paste the following content in the console, and use the execute icon ![run](00-d
 ```SQL
 DO BEGIN
   call "aa.movielens.db.hdb.pal.procedures::apriori_result_collaborative"(
-  USERID    => 23,
-  KEEPTOPN  => 5,
-  RESULTS   => :results
+    USERID    => 23,
+    KEEPTOPN  => 5,
+    RESULTS   => :results
   );
   select * from :results;
 END;
@@ -900,9 +867,9 @@ Paste the following content in the console, and use the execute icon ![run](00-d
 ```SQL
 DO BEGIN
   call "aa.movielens.db.hdb.pal.procedures::apriori_result_contentbased"(
-  MOVIEID   => 32,
-  KEEPTOPN  => 5,
-  RESULTS   => :results
+    MOVIEID   => 32,
+    KEEPTOPN  => 5,
+    RESULTS   => :results
   );
   select * from :results;
 END;

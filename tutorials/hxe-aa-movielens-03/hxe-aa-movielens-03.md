@@ -71,7 +71,7 @@ At the same time, you can also create procedures and functions using SQLScript, 
 
 #### ***Solution***
 
-As the purpose of this tutorial series is to build an end to end solution including a native SAP HANA application, you will be using the ***SAP HANA Persistence Model*** with the ***Core Data Service*** (CDS) artifacts in a ***SAP HANA Database Module***.
+As the purpose of this tutorial series is to discover how to use Machine Learning algorithms to build an end to end solution including a native SAP HANA application, you will be using the ***SAP HANA Persistence Model*** with the ***Core Data Service*** (CDS) artifacts in a ***SAP HANA Database Module***.
 
 [DONE]
 [ACCORDION-END]
@@ -271,83 +271,75 @@ Paste the following content:
 
 ```JSON
 {
-    "format_version": 1,
-    "imports": [
-        {
-            "column_mappings" : {
-                "MOVIEID" : "movieId",
-                "IMDBID" : "imdbId",
-                "TMDBID" : "tmdbId"
-            },
-            "import_settings" : {
-                "import_columns" : [ "MOVIEID", "IMDBID", "TMDBID"],
-                "include_filter" : [], "exclude_filter" : []
-            },
-            "source_data" : {
-                "data_type" : "CSV",
-                "file_name" : "aa.movielens.db.data::links.csv",
-                "has_header" : true,
-                "dialect"   : "HANA"
-            },
-            "target_table" : "aa.movielens.db.hdb::data.links"  
-        },
-        {
-            "column_mappings" : {
-                "MOVIEID" : "movieId",
-                "TITLE" : "title",
-                "GENRES" : "genres"
-            },
-            "import_settings" : {
-                "import_columns" : [ "MOVIEID", "TITLE", "GENRES"],
-                "include_filter" : [], "exclude_filter" : []
-            },
-            "source_data" : {
-                "data_type" : "CSV",
-                "file_name" : "aa.movielens.db.data::movies.csv",
-                "has_header" : true,
-                "dialect"   : "HANA"
-            },
-            "target_table" : "aa.movielens.db.hdb::data.movies"  
-        },
-        {
-            "column_mappings" : {
-                "USERID" : "userId",
-                "MOVIEID" : "movieId",
-                "RATING" : "rating",
-                "TIMESTAMP": "timestamp"
-            },
-            "import_settings" : {
-                "import_columns" : [ "USERID", "MOVIEID", "RATING", "TIMESTAMP"],
-                "include_filter" : [], "exclude_filter" : []
-            },
-            "source_data" : {
-                "data_type" : "CSV",
-                "file_name" : "aa.movielens.db.data::ratings.csv",
-                "has_header" : true,
-                "dialect"   : "HANA"
-            },
-            "target_table" : "aa.movielens.db.hdb::data.ratings"  
-        },
-        {
-            "column_mappings" : {
-                "USERID" : "userId",
-                "MOVIEID" : "movieId",
-                "TAG" : "tag",
-                "TIMESTAMP": "timestamp"
-            },
-            "import_settings" : {
-                "import_columns" : [ "USERID", "MOVIEID", "TAG", "TIMESTAMP"],
-                "include_filter" : [], "exclude_filter" : []
-            },
-            "source_data" : {
-                "data_type" : "CSV",
-                "file_name" : "aa.movielens.db.data::tags.csv",
-                "has_header" : true,
-                "dialect"   : "HANA"
-            },
-            "target_table" : "aa.movielens.db.hdb::data.tags"  
-        }        
-    ]
+  "format_version": 1,
+  "imports": [
+    {
+      "column_mappings" : {
+        "MOVIEID" : "movieId",
+        "IMDBID" : "imdbId",
+        "TMDBID" : "tmdbId"
+      },
+      "import_settings" : {
+        "import_columns" : [ "MOVIEID", "IMDBID", "TMDBID"],
+        "include_filter" : [], "exclude_filter" : []
+      },
+      "source_data" : {
+        "data_type" : "CSV", "has_header" : true, "dialect"   : "HANA",
+        "file_name" : "aa.movielens.db.data::links.csv"
+      },
+      "target_table" : "aa.movielens.db.hdb::data.links"  
+    },
+    {
+      "column_mappings" : {
+        "MOVIEID" : "movieId",
+        "TITLE" : "title",
+        "GENRES" : "genres"
+      },
+      "import_settings" : {
+        "import_columns" : [ "MOVIEID", "TITLE", "GENRES"],
+        "include_filter" : [], "exclude_filter" : []
+      },
+      "source_data" : {
+        "data_type" : "CSV", "has_header" : true, "dialect"   : "HANA",
+        "file_name" : "aa.movielens.db.data::movies.csv"
+      },
+      "target_table" : "aa.movielens.db.hdb::data.movies"  
+    },
+    {
+      "column_mappings" : {
+        "USERID" : "userId",
+        "MOVIEID" : "movieId",
+        "RATING" : "rating",
+        "TIMESTAMP": "timestamp"
+      },
+      "import_settings" : {
+        "import_columns" : [ "USERID", "MOVIEID", "RATING", "TIMESTAMP"],
+        "include_filter" : [], "exclude_filter" : []
+      },
+      "source_data" : {
+        "data_type" : "CSV", "has_header" : true, "dialect"   : "HANA",
+        "file_name" : "aa.movielens.db.data::ratings.csv"
+      },
+      "target_table" : "aa.movielens.db.hdb::data.ratings"  
+    },
+    {
+      "column_mappings" : {
+        "USERID" : "userId",
+        "MOVIEID" : "movieId",
+        "TAG" : "tag",
+        "TIMESTAMP": "timestamp"
+      },
+      "import_settings" : {
+        "import_columns" : [ "USERID", "MOVIEID", "TAG", "TIMESTAMP"],
+        "include_filter" : [], "exclude_filter" : []
+      },
+      "source_data" : {
+        "data_type" : "CSV", "has_header" : true, "dialect"   : "HANA",
+        "file_name" : "aa.movielens.db.data::tags.csv"
+      },
+      "target_table" : "aa.movielens.db.hdb::data.tags"  
+    }    
+  ]
 }
 ```
 

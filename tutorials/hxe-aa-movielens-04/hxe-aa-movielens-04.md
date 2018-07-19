@@ -137,11 +137,11 @@ Let's verify that every movie has a corresponding link and vice-versa using the 
 ```SQL
 select count(1)
 from "aa.movielens.db.hdb::data.links" l
-where not exists (select 1 from "aa.movielens.db.hdb::data.movies" m where l."movieid" = m."movieid")
+where not exists (select 1 from "aa.movielens.db.hdb::data.movies" m where l.movieid = m.movieid)
 union all
 select count(1)
 from "aa.movielens.db.hdb::data.movies" m
-where not exists (select 1 from "aa.movielens.db.hdb::data.links" l where l."movieid" = m."movieid");
+where not exists (select 1 from "aa.movielens.db.hdb::data.links" l where l.movieid = m.movieid);
 ```
 
 Based on the result, it seems that there isn't any movies with no links and vice-versa.
@@ -162,7 +162,7 @@ Anyway, let's check if all movies have genres with the following SQL:
 ```SQL
 select count(1)
 from "aa.movielens.db.hdb::data.movies"
-where "genres" is null or length("genres")=0;
+where genres is null or length(genres)=0;
 ```
 
 Based on the result, it seems that all movies have at least a genre.
