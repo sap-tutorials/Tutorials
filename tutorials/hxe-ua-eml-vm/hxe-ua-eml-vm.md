@@ -20,12 +20,7 @@ You will learn how to download and install the `eml.tgz` SAP HANA External Machi
 
 ---
 
-> Note:
-> Use the server's built-in Download Manager (Console Mode) for Linux to download `eml.tgz`. When logged-in as `hxeadm`, you can access the download manager (`HXEDownloadManager_linux.bin`) in directory `/usr/sap/HXE/home/bin`.
-> 
-> 
-
-[ACCORDION-BEGIN [Step 1: ](Run the memory management script.)]
+[ACCORDION-BEGIN [Step 1: ](Run the memory management script)]
 
 Run the `hxe_gc` memory management script to free up available VM memory.
 
@@ -47,7 +42,7 @@ Run the `hxe_gc` memory management script to free up available VM memory.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Download `eml.tgz`.)]
+[ACCORDION-BEGIN [Step 2: ](Download `eml.tgz`)]
 
 In your VM, download `eml.tgz` using the built-in Download Manager. From the same directory where you ran `hxe_gc` (`/usr/sap/HXE/home/bin`) enter:
 
@@ -57,7 +52,7 @@ HXEDownloadManager_linux.bin linuxx86_64 vm eml.tgz
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Extract `eml.tgz`.)]
+[ACCORDION-BEGIN [Step 3: ](Extract `eml.tgz`)]
 
 In your VM, extract `eml.tgz`.
 

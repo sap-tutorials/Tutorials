@@ -638,6 +638,8 @@ class ChartViewController: FUIChartFloorplanViewController {
 
 Now you have the scaffolding for the data visualizations class. We'll leave it for now, the actual implementation will be finalized in a later step.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 19: ](Add View Controller to Storyboard)]
@@ -664,6 +666,8 @@ Drag a **Table View Cell** onto the **Detail Table View**, and set the following
 With the segue selected, go to the **Attributes inspector** and provide the name `showChart` as its **Identifier**:
 
 ![Create Segue](fiori-ios-scpms-create-app-wwdc-49.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -983,7 +987,7 @@ And, unsurprisingly, the custom UI you have created earlier follows the same the
 
 > For more on `NUI`, see [NUI readme](https://github.com/tombenner/nui/)
 
-[VALIDATE_26]
+[VALIDATE_1]
 [ACCORDION-END]
 
 ---

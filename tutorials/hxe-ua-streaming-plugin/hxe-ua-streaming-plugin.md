@@ -22,7 +22,7 @@ Install the streaming analytics plugin for Eclipse, add a connection to the stre
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Edit the `/etc/hosts` File)]    
+[ACCORDION-BEGIN [Step 1: ](Edit the /etc/hosts File)]    
 
 If you're running SAP HANA, express edition in a virtual machine or cloud server instance, then depending on the network configuration, you may need to edit the `/etc/hosts` file on your local machine so Eclipse can connect to the streaming analytics server.
 
