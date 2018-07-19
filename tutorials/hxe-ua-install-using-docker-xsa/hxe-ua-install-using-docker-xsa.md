@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 
 ## Next Steps
-- [How to Install SAP HANA 2.0, express edition Clients](https://www.sap.com/developer/tutorials/hxe-ua-howto-installing-clients.html)
+- [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html)
 - [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
 
 ## Details
@@ -450,5 +450,5 @@ usage: [options]
 [ACCORDION-END]
 
 ## Next Steps
-- [How to Install SAP HANA 2.0, express edition Clients](https://www.sap.com/developer/tutorials/hxe-ua-howto-installing-clients.html)
+- [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html)
 - [Download and Install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)

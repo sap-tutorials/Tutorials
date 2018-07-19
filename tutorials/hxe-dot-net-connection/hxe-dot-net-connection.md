@@ -8,7 +8,7 @@ tags: [  tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-e
 ## Prerequisites  
 - **Proficiency:** Beginner
 
-- **Setup:** This tutorial assumes that you have followed the [How to Install SAP HANA 2.0, express edition Clients](http://www.sap.com/developer/tutorials/hxe-ua-howto-installing-clients.html) tutorial to install the HANA, express edition client software.
+- **Setup:** This tutorial assumes that you have followed the [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html) group tutorials to install the HANA, express edition client software.
 
 - **Setup:** You must have Microsoft Visual Studio 2010 or later installed on your computer.
 - **Setup:** You must have Microsoft .NET Framework installed on your computer (Generally .NET     Framework will be installed when you install Microsoft Visual Studio).
