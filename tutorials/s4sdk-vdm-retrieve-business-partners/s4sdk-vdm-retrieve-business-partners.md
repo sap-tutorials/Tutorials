@@ -19,38 +19,22 @@ tags: [  tutorial>beginner, topic>cloud, topic>java, topic>odata, products>sap-s
 
 ---
 
+Did you know that SAP customers produce 81% of the world's food? SAP software is used in different areas across the enterprise: while manufacturing goods, delivering orders to customers, paying employees, keeping track of the finances, and much more. As so-called ERP software, SAP S/4HANA Cloud runs the core of the business.
+
+How can you build Cloud-native applications that benefit from the rich set of business-critical functionality provided by SAP S/4HANA Cloud and from the broad adoption of SAP software? In this tutorial, you will get a short glimpse of the tools SAP provides to developers to achieve this.
+
 ### Overview
-You will use the Java virtual data model (VDM) of the SAP S/4HANA Cloud SDK to access business data stored in an SAP S/4HANA system.
+You will use the Java virtual data model (VDM) of the SAP S/4HANA Cloud SDK to access business data stored in an SAP S/4HANA system. In the background, this will call an OData API.
 
 The machine has already been prepared and you will find the source code for an Address Manager application in the development environment.
 
 There is just one thing missing: The app needs to retrieve the business partners (for example, customers) from an SAP S/4HANA system. This tutorial will walk you through the steps to implement the missing functionality using the SAP S/4HANA Cloud SDK, and to deploy the application on SAP Cloud Platform.
 
-### Setup Instructions
-Install the following tools on each machine:
-
-- Java
-- Maven
-- git
-- `IntelliJ` IDE
-- Cloud Foundry CLI
-- node
-
-Perform the following setup once on each machine:
-
-- `git clone`
-- `git checkout learning/vdm_tutorial-start`
-- Open `IntelliJ` and import project
-- In `IntelliJ`, open **File > Settings**, navigate to **Build, Execution, Deployment > Build Tools > Maven > Running Tests**, and uncheck **`argLine`**
-- Create run environment `Run local server` with environment variables:
-
-    ```
-    destinations=[{name: 'ErpQueryEndpoint', url: 'http://localhost:3000', username: 'DUMMY', password: 'dummy'}]
-    ALLOW_MOCKED_AUTH_HEADER=true
-    ```
-
 
 [ACCORDION-BEGIN [Step 1: ](Reset to initial state)]
+
+To begin, open the integrated development environment (IDE) `IntelliJ`. Look for this icon in the Windows task bar.
+![IntelliJ icon](0-0-intellij-icon.png)
 
 Someone else may have done the tutorial on this machine before. So, let's first make sure that everything is in the initial state required for this tutorial.
 
@@ -70,12 +54,14 @@ If the server is not already running, start the local server by clicking the gre
 
 [ACCORDION-BEGIN [Step 2: ](Test the initial state)]
 
+We have already a set of tests in place that check the existing functionality of the app. Your task is to get the last failing test to pass. Let's first run the tests based on the current state.
+
 Locate the folder `address-manager/integration-tests` in  the project pane on the left.
 
 Right-click `integration-tests` and select **Run 'All Tests'**.
 ![Run all tests](1-1-run-tests.png)
 
-While the tests are running, visit `http://localhost:8080/address-manager/` to see the currently implemented application in action. You will notice that the list of business partners on the left is still empty, because we have not yet implemented this functionality.
+While the tests are running, visit `http://localhost:8080/address-manager/` to see the currently implemented application in action. You will notice that the list of business partners on the left is still empty, because you have not yet implemented this functionality.
 ![Initial state of app](1-2-empty-app.png)
 
 Return to the development environment, where you should now see the test results.
@@ -87,6 +73,8 @@ The `testGetAll` test will have failed, because it tests the not yet implemented
 
 [ACCORDION-BEGIN [Step 3: ](Retrieve all business partners)]
 
+Let's now implement the missing piece of retrieving business partners. A business partner is a person or company that our company does business with, for example, as customer or vendor. Business partners are stored in an ERP system like SAP S/4HANA Cloud, from where we want to retrieve them.
+
 In the project pane on the left, expand the folder structure as follows:
 `address-manager > application > src > main > java > com.sap.cloud.s4hana.examples.addressmgr.commands`
 
@@ -96,7 +84,7 @@ Open the file `GetAllBusinessPartnersCommand` by double-clicking it.
 Look out for the method called `runCacheable` and select the text `Collections.emptyList()`.
 ![Select text in method](2-2-select-text.png)
 
-Replace the highlighted text with the following code snippet:
+Replace the highlighted text with the following code snippet. Either copy and paste the code, or try typing it into the IDE to experience the discover the capabilities of the SAP S/4HANA Cloud SDK:
 ```java
 service.getAllBusinessPartner()
     .select(BusinessPartner.BUSINESS_PARTNER,BusinessPartner.LAST_NAME, BusinessPartner.FIRST_NAME)
@@ -107,6 +95,8 @@ service.getAllBusinessPartner()
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Test and re-run the project)]
+
+Let's see if we correctly implemented the requirements by running our tests again.
 
 Re-run the tests by clicking on the green run icon in the left side bar of the bottom pane.
 ![Re-run tests](3-1-re-run-tests.png)
@@ -123,23 +113,19 @@ When you return to the development environment, the tests should now have all su
 
 [ACCORDION-BEGIN [Step 5: ](Filter for persons)]
 
-If you look closely in the app, there is one business partner for which no first or last name is displayed. This is because this business partner is not a natural person.
+If you look closely in the app, there is one business partner for which no first or last name is displayed. This is because this business partner is not a natural person, but a company.
 
-Because we only want our app to display persons, we are now going to implement a filter.
+Because we want our app to only display persons, we are now going to implement a filter.
 
 In the development environment, position the cursor directly in front of the `.execute()`.
-Either copy and paste the following code, or follow the step-by-step instructions below.
+Either copy and paste the following code, or enter it step-by-step into the IDE.
 ```java
 .filter(BusinessPartner.BUSINESS_PARTNER_CATEGORY.eq(CATEGORY_PERSON))
 ```
 
-If you want to experience the flow of using the SAP S/4HANA Cloud SDK, instead of copy-pasting the code above, follow these steps to build up the filter step-by-step, leveraging the suggestions and auto-completion of the development environment.
-
-1. Type `.filter` and hit **Enter** to choose the filter method suggested by the auto-completion.
-2. Type `BusinessPartner` and select the first suggestion, continue typing `.CATEGORY` and select `BUSINESS_PARTNER_CATEGORY`.
-3. Type `.eq(` and `CATEGORY_PERSON` to arrive at the same state.
-
 ![Implement filter](4-1-filter.png)
+
+With this, our app is complete for now, so we are now going to deploy it on SAP Cloud Platform.
 
 [ACCORDION-END]
 
@@ -256,18 +242,6 @@ At the end, make sure to log out from your SAP account in the browser and close 
 In the terminal of the development environment, type `cf logout` to log out from your SAP Cloud Platform account.
 
 ![Logout from SAP Cloud Platform](10-1-cf-logout.png)
-
-### Clean up
-It would be great if you prepared the environment for the next participant that may run this tutorial.
-
-To do so, follow these steps:
-
-  1. Type `clear` + **Enter** in the terminal of the development environment.
-  2. In the **Run** tool window on the bottom, close both tabs, that is, the local server and the tests. Click **Terminate** in the dialog window that appears, when closing the local server.
-  ![Clean up](10-2-clean-run.png)
-  3. Close all open editor tabs.
-  4. In the **Project** structure on the left, click the **Collapse All** icon.
-  ![Clean up](10-3-collapse-structure.png)
 
 [ACCORDION-END]
 
