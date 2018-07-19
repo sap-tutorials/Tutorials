@@ -42,7 +42,7 @@ tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sa
   2. Click **Capabilities**.
   3. Create a new capability by clicking the `+` at the top right.
   4. Set **Name** to `envData`.
-  5. Set **AlternateID** to `envData`.
+  5. Set **`AlternateID`** to `envData`.
   6. Add records to the **Properties** list using the `+` (near the search field on the left side).
   7. Add the following properties:
 
