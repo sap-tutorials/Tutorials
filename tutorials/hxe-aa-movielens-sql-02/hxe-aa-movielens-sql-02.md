@@ -15,7 +15,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 - Create a Multi-Target Application Project
 - Save your Web IDE project in a GIT repository
 
-
 ### Time to Complete
 **15 Min**
 
@@ -256,3 +255,5 @@ Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
 [ACCORDION-END]
+
+> ### **Note** If you are using Jupyter Notebook, you can download the following  [notebook](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-02/hxe-aa-movielens-sql-02.ipynb) to run most of the SQL statement listed in the tutorial.

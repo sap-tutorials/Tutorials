@@ -561,3 +561,5 @@ However, while using this data will, you will need to pay attention to the follo
 
 [DONE]
 [ACCORDION-END]
+
+> ### **Note** If you are using Jupyter Notebook, you can download the following  [notebook](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-03/hxe-aa-movielens-sql-03.ipynb) to run most of the SQL statement listed in the tutorial.

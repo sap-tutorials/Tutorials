@@ -607,4 +607,6 @@ As you can see, the movies with no recommendations have up to 92 ratings, and th
 [DONE]
 [ACCORDION-END]
 
+> ### **Note** If you are using Jupyter Notebook, you can download the following  [notebook](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-05/hxe-aa-movielens-sql-05.ipynb) to run most of the SQL statement listed in the tutorial.
+
 For the purpose of this tutorial series we will not play further with the algorithm, its parameters or the data. However you are more than welcome to do so considering the resources currently made available to you on the SAP Cloud Platform.
