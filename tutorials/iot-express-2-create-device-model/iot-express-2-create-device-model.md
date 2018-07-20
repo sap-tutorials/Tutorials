@@ -21,7 +21,7 @@ tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sa
 - How to ingest data using SAP Leonardo IoT Foundation Starter Kit
 
 ### Time to Complete
-**15 Min**
+**15 Min** 
 
 ## Next Steps
 - **Tutorials:** [Assemble and Configure Device Hardware](https://www.sap.com/developer/tutorials/iot-express-3-configure-device.html), but you can also skip to [Create a Thing Model and Bind Your Device into a Business Context](https://www.sap.com/developer/tutorials/iot-express-4-create-thing-model.html) if you do not have the time or do now want to use real hardware at this point.
@@ -42,7 +42,7 @@ tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sa
   2. Click **Capabilities**.
   3. Create a new capability by clicking the `+` at the top right.
   4. Set **Name** to `envData`.
-  5. Set **AlternateID** to `envData`.
+  5. Set **`AlternateID`** to `envData`.
   6. Add records to the **Properties** list using the `+` (near the search field on the left side).
   7. Add the following properties:
 
