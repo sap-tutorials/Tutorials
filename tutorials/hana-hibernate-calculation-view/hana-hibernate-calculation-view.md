@@ -2,6 +2,7 @@
 title: Create an app consuming calculation view using Hibernate on SAP HANA
 description: Create an application that uses Hibernate on SAP HANA to read data from a calculation view.
 primary_tag: products>sap-hana
+auto_validation: true
 tags: [  tutorial>intermediate, topic>java, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
@@ -24,8 +25,8 @@ If you haven't done so, please complete the tutorial [SAP HANA XS Advanced, Crea
 
 This tutorial builds upon the other tutorials in the tutorial group [Get started with Hibernate on SAP HANA, express edition](https://www.sap.com/developer/groups/hana-hibernate-getting-started.html). Please complete these tutorials before starting this one.
 
+[DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 1: ](Grant SQL access to the calculation view)]
 
@@ -45,10 +46,10 @@ To grant the container's access role to the Hibernate connection user, log in to
 GRANT "HANA_2_SPS1_HDI_DB_1::access_role" TO "<Hibernate user>"
 ```
 
-Replace `<Hibernate user>` with your actual Hibernate connection user. If your physical schema name is not `HANA_2_SPS1_HDI_DB_1` replace this with your actual schema name as well.
+Replace **`<Hibernate user>`** with your actual Hibernate connection user. If your physical schema name is not **`HANA_2_SPS1_HDI_DB_1`** replace this with your actual schema name as well.
 
+[DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 2: ](Update project configuration)]
 
@@ -91,6 +92,7 @@ Don't forget to update the following property values to match your target SAP HA
 
 Save the `persistence.xml` file.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create entity for calculation view)]
@@ -158,8 +160,8 @@ Now, generate the ***Getters*** and ***Setters*** for all the attributes using t
 
 Save the class file.
 
+[DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 4: ](Run simple query on calculation view)]
 
@@ -183,24 +185,22 @@ public class TestCalculationViewDataQuery {
 
 	public static void main(String[] args) {
 		try {
-			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory( "Tutorial" );
+			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Tutorial");
 			EntityManager entityManager = entityManagerFactory.createEntityManager();
 
 			// Select all products
-			TypedQuery<CdProduct> allProductsQuery = entityManager
-					.createQuery( "select c from CdProduct c", CdProduct.class );
+			TypedQuery<CdProduct> allProductsQuery = entityManager.createQuery("select c from CdProduct c", CdProduct.class);
 
 			List<CdProduct> products = allProductsQuery.getResultList();
 
-			System.out.println( "Found " + products.size() + " products" );
+			System.out.println("Found " + products.size() + " products");
 
 			entityManager.clear();
 			entityManager.close();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.exit( 0 );
+		System.exit(0);
 	}
 }
 ```
@@ -212,41 +212,13 @@ Run the application by right-clicking the class file and choosing ***Run As -> J
 You should see the following output log in your console:
 
 ```
-...
-INFO: HHH000204: Processing PersistenceUnitInfo [
-	name: Tutorial
-	...]
-Mai 07, 2018 3:04:47 PM org.hibernate.Version logVersion
-INFO: HHH000412: Hibernate Core {5.2.17.Final}
-Mai 07, 2018 3:04:47 PM org.hibernate.cfg.Environment <clinit>
-INFO: HHH000206: hibernate.properties not found
-Mai 07, 2018 3:04:47 PM org.hibernate.spatial.integration.SpatialService <init>
-INFO: HHH80000001: hibernate-spatial integration enabled : true
-Mai 07, 2018 3:04:47 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
-INFO: HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-Mai 07, 2018 3:04:47 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
-Mai 07, 2018 3:04:52 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001005: using driver [com.sap.db.jdbc.Driver] at URL [jdbc:sap://rhhxehost:39015]
-Mai 07, 2018 3:04:52 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001001: Connection properties: {user=HIBERNATE_TEST, password=****}
-Mai 07, 2018 3:04:52 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001003: Autocommit mode: false
-Mai 07, 2018 3:04:52 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
-INFO: HHH000115: Hibernate connection pool size: 5 (min=1)
-Mai 07, 2018 3:05:06 PM org.hibernate.dialect.Dialect <init>
-INFO: HHH000400: Using dialect: org.hibernate.spatial.dialect.hana.HANASpatialDialect
-Mai 07, 2018 3:05:06 PM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
-INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
-Mai 07, 2018 3:05:07 PM org.hibernate.hql.internal.QueryTranslatorFactoryInitiator initiateService
-INFO: HHH000397: Using ASTQueryTranslatorFactory
 Found 22472 products
 ```
 
+[DONE]
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 5: ](Run geospatial query on the calculation view)]
+[ACCORDION-BEGIN [Step 5: ](Run Geo Spatial query on the calculation view)]
 
 It's also possible to run more complex queries against a calculation view, for example, geospatial queries leveraging the SAP HANA geospatial engine.
 
@@ -272,30 +244,28 @@ public class TestCalculationViewSpatialQuery {
 
 	public static void main(String[] args) {
 		try {
-			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory( "Tutorial" );
+			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Tutorial");
 			EntityManager entityManager = entityManagerFactory.createEntityManager();
 
 			// Select all products provided by suppliers within a region
-			TypedQuery<CdProduct> regionalProductsQuery = entityManager
-					.createQuery( "select c from CdProduct c where within(c.point, :area) = true", CdProduct.class );
+			TypedQuery<CdProduct> regionalProductsQuery = entityManager.createQuery("select c from CdProduct c where within(c.point, :area) = true", CdProduct.class);
 
 			// Create a polygon describing a box around Europe
-			WktDecoder decoder = Wkt.newDecoder( Wkt.Dialect.HANA_EWKT );
-			Polygon<?> europeBox = (Polygon<?>) decoder.decode( "POLYGON((35 -10, 35 30, 71 30, 71 -10, 35 -10))" );
-			regionalProductsQuery.setParameter( "area", europeBox );
+			WktDecoder decoder = Wkt.newDecoder(Wkt.Dialect.HANA_EWKT);
+			Polygon<?> europeBox = (Polygon<?>) decoder.decode("POLYGON((35 -10, 35 30, 71 30, 71 -10, 35 -10))");
+			regionalProductsQuery.setParameter("area", europeBox);
 
 			// Return all products provided by suppliers within the Europe box
 			List<CdProduct> productsFromEurope = regionalProductsQuery.getResultList();
 
-			System.out.println( "Found " + productsFromEurope.size() + " products from Europe" );
+			System.out.println("Found " + productsFromEurope.size() + " products from Europe");
 
 			entityManager.clear();
 			entityManager.close();
-		}
-		catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.exit( 0 );
+		System.exit(0);
 	}
 }
 ```
@@ -307,50 +277,23 @@ Run the application by right-clicking the class file and choosing ***Run As -> J
 You should see the following output log in your console:
 
 ```
-...
-INFO: HHH000204: Processing PersistenceUnitInfo [
-	name: Tutorial
-	...]
-Mai 07, 2018 3:04:47 PM org.hibernate.Version logVersion
-INFO: HHH000412: Hibernate Core {5.2.17.Final}
-Mai 07, 2018 3:04:47 PM org.hibernate.cfg.Environment <clinit>
-INFO: HHH000206: hibernate.properties not found
-Mai 07, 2018 3:04:47 PM org.hibernate.spatial.integration.SpatialService <init>
-INFO: HHH80000001: hibernate-spatial integration enabled : true
-Mai 07, 2018 3:04:47 PM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
-INFO: HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-Mai 07, 2018 3:04:47 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
-Mai 07, 2018 3:04:52 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001005: using driver [com.sap.db.jdbc.Driver] at URL [jdbc:sap://rhhxehost:39015]
-Mai 07, 2018 3:04:52 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001001: Connection properties: {user=HIBERNATE_TEST, password=****}
-Mai 07, 2018 3:04:52 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001003: Autocommit mode: false
-Mai 07, 2018 3:04:52 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections <init>
-INFO: HHH000115: Hibernate connection pool size: 5 (min=1)
-Mai 07, 2018 3:05:06 PM org.hibernate.dialect.Dialect <init>
-INFO: HHH000400: Using dialect: org.hibernate.spatial.dialect.hana.HANASpatialDialect
-Mai 07, 2018 3:05:06 PM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
-INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
-Mai 07, 2018 3:05:07 PM org.hibernate.hql.internal.QueryTranslatorFactoryInitiator initiateService
-INFO: HHH000397: Using ASTQueryTranslatorFactory
 Found 10176 products from Europe
 ```
 
+[VALIDATE_1]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 6 (optional): ](Set calculation view schema as default)]
 
-For flexibility or maintainability reasons it might be preferrable to not have the calculation view schema hard-coded on each entity.
+For flexibility or maintainability reasons it might be preferable to not have the calculation view schema hard-coded on each entity.
 
 ```java
 ...
 @Entity
 @Table(name = "HANA_2_SPS1.db.src.data.models::CD_PRODUCT", schema = "HANA_2_SPS1_DB_1")
 public class CdProduct {
-...
+	...
+}
 ```
 
 If you don't want to specify the calculation view schema on the JPA entity, or if you want to run an entire application against a schema generated by the SAP Web IDE, you can specify the default schema in the Hibernate configuration via the property `hibernate.default_schema`:
@@ -393,11 +336,13 @@ Now you can remove the `schema` attribute from the entity's `@Table` annotation.
 @Entity
 @Table(name = "HANA_2_SPS1.db.src.data.models::CD_PRODUCT")
 public class CdProduct {
-...
+	...
+}
 ```
 
 The application will now run all queries including the queries against the calculation view with the container schema as the default schema.
 
+[DONE]
 [ACCORDION-END]
 
 ---
