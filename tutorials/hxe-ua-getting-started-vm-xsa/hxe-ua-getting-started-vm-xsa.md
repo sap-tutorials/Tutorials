@@ -24,7 +24,7 @@ This tutorial is available as a [video](https://www.sap.com/assetdetail/2016/09/
 
 This is an on-premise installation tutorial. Other installation methods are available. See [https://www.sap.com/developer/topics/sap-hana-express.html](https://www.sap.com/developer/topics/sap-hana-express.html).
 
-[ACCORDION-BEGIN [Step 1: ](Note the VM IP address.)]
+[ACCORDION-BEGIN [Step 1: ](Note the VM IP address)]
 
 The IP address of the VM is displayed on the login screen. Make a note of the IP address, since you'll need it in future steps.
 
@@ -37,7 +37,7 @@ The IP address of the VM is displayed on the login screen. Make a note of the IP
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Log in.)]
+[ACCORDION-BEGIN [Step 2: ](Log in)]
 
 At the *`hxehost` login* prompt, enter `hxeadm`.
 
@@ -51,19 +51,18 @@ When prompted for *(current) UNIX password*, enter the temporary password again:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Enter new password.)]
+[ACCORDION-BEGIN [Step 3: ](Enter new password)]
 
 When prompted for *New password*, enter a strong password with at least 8 characters. If your password is not strong enough, the system logs you off and you must log in again.
 
 > Note:
-> SAP HANA, express edition requires a `very strong password` that complies with these rules:
+> SAP HANA, express edition requires a `very strong password` -- even stronger than other editions of SAP HANA. Your password must comply with these rules:
 > 
 > -   At least 8 characters
 > -   At least 1 uppercase letter
 > -   At least 1 lowercase letter
 > -   At least 1 number
 > -   Can contain special characters, but not backtick, `$` (dollar sign), `\` (backslash), `'` (single quote), or `"` (double quotes)
-> -   Cannot contain dictionary words
 > -   Cannot contain simplistic or systematic values, like strings in ascending or descending numerical or alphabetical order
 > 
 > 
@@ -72,7 +71,7 @@ Strong password example: `E15342GcbaFd`. Do not use this password example, since
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Retype new password.)]
+[ACCORDION-BEGIN [Step 4: ](Retype new password)]
 
 When prompted to *Retype new password*, enter your strong password again.
 
@@ -80,7 +79,7 @@ When prompted to *Retype new password*, enter your strong password again.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Enter new HANA database master password.)]
+[ACCORDION-BEGIN [Step 5: ](Enter new HANA database master password)]
 
 When prompted for *New HANA database master password*, enter a strong password. Make a note of this password, since you'll need it later. You can enter the same password you used in step 3, or a new password. If you are entering a new password, see the password rules in step 3.
 
@@ -88,7 +87,7 @@ Entering the HANA database master password changes the SYSTEM user password. If 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Confirm HANA database master password.)]
+[ACCORDION-BEGIN [Step 6: ](Confirm HANA database master password)]
 
 When prompted to *Confirm "HANA database master password"*, enter the strong password again.
 
@@ -96,7 +95,7 @@ When prompted to *Confirm "HANA database master password"*, enter the strong pas
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Enter proxy settings.)]
+[ACCORDION-BEGIN [Step 7: ](Enter proxy settings)]
 
 When prompted *Do you need to use the proxy server to access the internet?* enter Y or N.
 
@@ -107,7 +106,7 @@ When prompted *Do you need to use the proxy server to access the internet?* ente
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Wait for XSA configuration.)]
+[ACCORDION-BEGIN [Step 8: ](Wait for XSA configuration)]
 
 Decide whether you want to wait for XSA configuration to complete before starting the server. When prompted to *Wait for XSA configuration to finish*, enter *Y* if you want to wait.
 
