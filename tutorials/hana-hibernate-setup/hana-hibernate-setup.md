@@ -1,7 +1,8 @@
 ---
 title: Setup Hibernate for SAP HANA in your Eclipse project
-description: This tutorial shows the basic setup steps required for getting started with Hibernate on SAP HANA
+description: This tutorial shows the basic setup steps required for getting started with Hibernate on SAP HANA.
 primary_tag: products>sap-hana
+auto_validation: true
 tags: [  tutorial>beginner, topic>java, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
@@ -13,7 +14,7 @@ tags: [  tutorial>beginner, topic>java, products>sap-hana, products>sap-hana\,-e
 In this tutorial you will learn how to use the Eclipse IDE to set up a Maven project that can be used to start developing applications using Hibernate and SAP HANA.
 
 ### Time to Complete
-**15 Min**
+**20 Min**
 
 [ACCORDION-BEGIN [Prerequisites: ](Software)]
 
@@ -26,6 +27,7 @@ You will also need an instance of **SAP HANA 2.0, express edition** (SPS02 revis
 
 To get your instance up and running, you can check the available options and get started on the [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html) product page.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Create a new Maven project In Eclipse)]
@@ -60,6 +62,7 @@ Your project is now created.
 
 ![Maven project](maven-project.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add Hibernate as a Maven dependency)]
@@ -84,6 +87,7 @@ Save the `pom.xml` file.
 
 The project should rebuild automatically.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add the HANA JDBC driver to the Eclipse project)]
@@ -94,6 +98,7 @@ This tutorial will also help you identify your system details (server host, port
 
 ![Project Library JDBC](maven-project-jdbc.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a persistence configuration)]
@@ -120,7 +125,7 @@ Paste the following content into the **`persistence.xml`** file:
             <property name="hibernate.connection.password" value="<password>"/>
             <!-- -->
             <property name="hibernate.connection.pool_size" value="5"/>
-            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.show_sql" value="false"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
             <property name="hibernate.bytecode.provider" value="javassist" />
@@ -139,6 +144,7 @@ Don't forget to update the following property values to match your target SAP HA
 
 Save the `persistence.xml` file.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Test your setup)]
@@ -184,34 +190,6 @@ Run the application by right-clicking the class file and choosing ***Run As -> J
 You should see the following output log in your console:
 
 ```
-nov. 07, 2017 8:30:29 AM org.hibernate.jpa.internal.util.LogHelper logPersistenceUnitInformation
-INFO: HHH000204: Processing PersistenceUnitInfo [
-	name: Tutorial
-	...]
-nov. 07, 2017 8:30:29 AM org.hibernate.Version logVersion
-INFO: HHH000412: Hibernate Core {5.2.12.Final}
-nov. 07, 2017 8:30:29 AM org.hibernate.cfg.Environment <clinit>
-INFO: HHH000206: hibernate.properties not found
-nov. 07, 2017 8:30:29 AM org.hibernate.spatial.integration.SpatialService <init>
-INFO: HHH80000001: hibernate-spatial integration enabled : true
-nov. 07, 2017 8:30:29 AM org.hibernate.annotations.common.reflection.java.JavaReflectionManager <clinit>
-INFO: HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-nov. 07, 2017 8:30:29 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
-WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
-nov. 07, 2017 8:30:29 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001005: using driver [com.sap.db.jdbc.Driver] at URL [jdbc:sap://rhhxehost:39015]
-nov. 07, 2017 8:30:29 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001001: Connection properties: {user=SYSTEM, password=****}
-nov. 07, 2017 8:30:29 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl buildCreator
-INFO: HHH10001003: Autocommit mode: false
-nov. 07, 2017 8:30:29 AM org.hibernate.engine.jdbc.connections.internal.PooledConnections <init>
-INFO: HHH000115: Hibernate connection pool size: 5 (min=1)
-nov. 07, 2017 8:30:29 AM org.hibernate.dialect.Dialect <init>
-INFO: HHH000400: Using dialect: org.hibernate.dialect.HANAColumnStoreDialect
-nov. 07, 2017 8:30:29 AM org.hibernate.engine.jdbc.env.internal.LobCreatorBuilderImpl useContextualLobCreation
-INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
-nov. 07, 2017 8:30:30 AM org.hibernate.tool.schema.internal.SchemaCreatorImpl applyImportSources
-INFO: HHH000476: Executing import script 'org.hibernate.tool.schema.internal.exec.ScriptSourceInputNonExistentImpl@14bdbc74'
 Hibernate:
     SELECT
         *
@@ -220,4 +198,7 @@ Hibernate:
 SUCCESS!
 ```
 
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
 [ACCORDION-END]
