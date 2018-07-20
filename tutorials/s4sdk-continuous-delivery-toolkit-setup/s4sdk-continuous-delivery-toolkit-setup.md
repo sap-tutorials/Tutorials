@@ -9,7 +9,7 @@ tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platfor
  - **Proficiency:** intermediate
 
 ### You will learn
-The SAP S/4HANA Cloud SDK helps developers in building cloud-native extensions to SAP's S/4HANA ERP system. For this, it offers a Java library, project archetypes, and an attuned Continuous Delivery Toolkit. In this tutorial, you will see how to set up a scalable SAP S/4HANA Cloud SDK CI/CD server on Google Kubernetes Engine within a few minutes. you will also build an SAP S/4HANA Cloud SDK-based example application using the out-of-the-box pipeline.
+The SAP S/4HANA Cloud SDK helps developers in building cloud-native extensions to SAP's S/4HANA. For this, it offers a Java library, project archetypes, and an attuned Continuous Delivery Toolkit. In this tutorial, you will see how to set up a scalable SAP S/4HANA Cloud SDK CI/CD server on Google Kubernetes Engine within a few minutes. you will also build an SAP S/4HANA Cloud SDK-based example application using the out-of-the-box pipeline.
 
 ### Time to Complete
 **15 Min**
@@ -46,7 +46,7 @@ Once the Cloud Shell is open, press **Enter**.
 
 [ACCORDION-BEGIN [Step 2: ](Set up Jenkins)]
 
-SAP S/4HANA Cloud SDK CI/CD Toolkit makes use of a pre-configured Jenkins to run the continuous delivery Pipeline. Next, you will start the Jenkins server with auto-scaling capabilities on our Kubernetes cluster. Thanks to the helm package manager tool, setting up the Jenkins on your Kubernetes cluster is super simple.
+SAP S/4HANA Cloud SDK CI/CD Toolkit makes use of a pre-configured Jenkins to run the Continuous Delivery Pipeline. Next, you will start the Jenkins server with auto-scaling capabilities on our Kubernetes cluster. Thanks to the helm package manager tool, setting up the Jenkins on your Kubernetes cluster is super simple.
 
 In order to make the installation even more convenient, the installation is wrapped in a small `setup_jenkins` shell script.
 
@@ -145,7 +145,7 @@ You will find a code for the goodie once the job is successfully completed.
 
 Unlike the standalone Jenkins instance, the Jenkins instance which is deployed on the Kubernetes cluster gives us the flexibility to scale it based on the load. In addition, Kubernetes will ensure the availability of the service by regular health check of the containers.
 
-To get detailed insight into SAP S/4HANA Cloud SDK, please go through our [blog posts]((https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).  
+To get detailed insight into SAP S/4HANA Cloud SDK, please go through our [blog posts](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).  
 
 [DONE]
 [ACCORDION-END]
