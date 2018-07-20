@@ -118,6 +118,8 @@ In your running Fiori Launchpad, copy the **Launchpad URL** and paste it into th
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Register for the lottery)]
+Thank you for completing the TechEd 2018 Lottery mission!
+
 
 [VALIDATE_10]
 
