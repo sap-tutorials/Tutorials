@@ -1,7 +1,6 @@
 ---
 title: Image services on the API Business Hub
 description: Discover how to test SAP Leonardo Machine Learning Foundation service on the SAP API Business Hub
-auto_validation: false
 primary_tag: products>sap-leonardo-machine-learning-foundation
 tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-leonardo-machine-learning-foundation, products>sap-api-management, products>sap-cloud-platform]
 ---
