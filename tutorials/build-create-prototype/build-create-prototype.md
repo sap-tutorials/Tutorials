@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, products>build>build ]
 
 ## Details
 ### You will learn  
-  - Create a prototype application with SAP Build's gallery and the easy to use drag-and-drop interface.
+  - Create a prototype application with SAP Build's gallery and the easy to use drag-and-drop interface. 
 
 
 ### Time to Complete

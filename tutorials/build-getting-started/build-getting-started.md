@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, products>build>build ]
 
 ## Details
 ### You will learn  
-SAP Build is a cloud based collaborative design tool that provides knowledge, tools, and inspiration to create beautiful apps that your users love. See for yourself how easy it can be to use SAP Build to learn design thinking, create interactive prototypes, collect feedback from users, and jump-start development without writing a single line of code. With SAP Build, it's easy to create, design, and develop applications according to the SAP Fiori design guide.
+SAP Build is a cloud based collaborative design tool that provides knowledge, tools, and inspiration to create beautiful apps that your users love. See for yourself how easy it can be to use SAP Build to learn design thinking, create interactive prototypes, collect feedback from users, and jump-start development without writing a single line of code. With SAP Build, it's easy to create, design, and develop applications according to the SAP Fiori design guide. 
 
 Take some time to get familiar with the SAP Build landscape and sign up for a free account today.
 
