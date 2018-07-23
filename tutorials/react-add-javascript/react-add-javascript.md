@@ -244,7 +244,7 @@ Run your application.  The output should look exactly the same, even though the 
 
 The first React component is a single list element.  In order to have multiple list elements, the next component will be a container that holds multiple list items.
 
-In Bootstrap, this is called a `list-group`.  Our new component will hold a list group, and place the list items inside of itself.  In React terms, this is called component [Children](https://facebook.github.io/react/docs/multiple-components.html#children).
+In Bootstrap, this is called a `list-group`.  Our new component will hold a list group, and place the list items inside of itself.  In React terms, this is called component [Composition](https://reactjs.org/docs/composition-vs-inheritance.html).  Composition is where you put multiple elements together to create a larger set.
 
 Open your `index.html` file, and scroll to the `<script>` tag in the top of the document.
 
