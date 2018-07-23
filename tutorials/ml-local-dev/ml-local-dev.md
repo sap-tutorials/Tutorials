@@ -52,11 +52,11 @@ On the web page, you will see a skeleton UI5 application with a single button. T
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Get Your Sandbox URL)]
+[ACCORDION-BEGIN [Step 3: ](Get The API Sandbox URL And API Key)]
 
-In order to consume the **Image Classification** Machine Learning Functional Services, you will first need to get the service URI, your API Key and the request and response parameters.
+In order to consume the **Image Classifier Service** SAP Leonardo Machine Learning Foundation service, you will first need to get the service URI and your API key, request and response parameters.
 
-Go to [https://api.sap.com/](https://api.sap.com) and click on the **Browse** tile.
+Go to [https://api.sap.com/](https://api.sap.com).
 
 ![SAP API Business Hub](01.png)
 
@@ -64,47 +64,54 @@ Then you will be able to search for the **SAP Leonardo Machine Learning - Functi
 
 ![SAP API Business Hub](02.png)
 
-Click on **Artifacts**, then click on the **Image Classification API**.
+Select **Image Classifier Service**.
 
 ![SAP API Business Hub](03.png)
 
-On the **Resource** tab, you can notice the **Image Classification API** has only one resource (or service): `/inference_sync`.
+You can also access the page directly from the following address:
 
-If you expand the `/inference_sync` resource and look for the ***Parameters*** section, you will not that the service request require the following:
+ - <https://api.sap.com/api/image_classification_api/resource>
 
-- **`files`** (required) : The list of file(s) to be uploaded. Either:
+![SAP API Business Hub](06.png)
 
-    - one image file (image formats, such as `.jpeg`, `.png`, `.tif`, or `.bmp`)
-    - one archive file containing multiple image files (format `.zip`, `.tar.gz`, or `tar`)
+To get to your API Sandbox URL, click on the **Details** tab.
 
-![SAP API Business Hub](04-0.png)
-
-Now click on the **Overview** tab.
-
-> **Note**: the term *inference* refers to the application phase (scoring) an existing model (as opposed to the training or inception phase) and *sync* for synchronous.
-
-![SAP API Business Hub](04-1.png)
-
-As displayed on the screen, the sandbox URL for the **Image Classification API** where we need to append the API resource:
+The API Sandbox URL should be:
 
 ```JSON
-https://sandbox.api.sap.com/ml/imageclassifier/inference_sync
+https://sandbox.api.sap.com/ml/imageclassifier
 ```
+
+To get to your API key, click on the **Show API Key** button.
+
+You will be prompted to login if you are not yet.
+
+Then, the following pop-up should appear. Click on the **Copy Key and Close** button and save it in a text editor.
+
+![SAP API Business Hub](06-1.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Get Your API key)]
+[ACCORDION-BEGIN [Step 4: ](Analyze the service)]
 
-When using any of the APIs outside of the SAP API Business Hub, an application key will be needed in every request header of your APIs calls.
+As you can notice the API has only one resource (or service): `/inference_sync`.
 
-To get to your API key, click on the ![key](00-key.png) icon in the top right corner of the page. Click on the key icon.
+Now click on the `/inference_sync` link to expand the section.
 
-The following pop-up should appear. Click on the **Copy API Key** button and save it in a text editor.
+> **Note**: the term *inference* refers to the application phase (scoring) an existing model (as opposed to the training or inception phase) and *sync* for synchronous.
 
-![SAP API Business Hub](05.png)
+As stated in the description, the service accepts either:
 
-Now, let's build a OpenUI5 application!
+ - an archive file with a zip/tar extensions containing multiple image files
+ - a single image
+ - a list of image as input
+
+The service returns a classification list with its scores (confidence).
+
+The supported image formats are ***JPEG***, ***PNG***, ***TIF*** or ***BMP*** (the actual content format is validated, so renaming files may simply not work).
+
+The input file, files or archive file will be sent as a `FormData` query parameter in the service request.
 
 [DONE]
 [ACCORDION-END]
