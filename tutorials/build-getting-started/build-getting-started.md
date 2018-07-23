@@ -3,7 +3,7 @@ title: Get started with SAP Build
 description: Learn where to sign up and start with SAP Build, SAP's prototyping tool.
 auto_validation: true
 primary_tag: products>sap-build
-tags: [  tutorial>beginner, products>build>build ]
+tags: [  tutorial>beginner, products>sap-build ]
 ---
 
 ## Prerequisites  
