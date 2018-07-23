@@ -489,24 +489,3 @@ Now that you have finished learning about Machine Learning with SAP and OpenUI5,
 
 [DONE]
 [ACCORDION-END]
-
-###Optional Steps
-
-[ACCORDION-BEGIN [Optional Step 1: ](Other ways to explore the application)]
-
-You can also try the  **Upload Picture with Ajax** and **Upload Picture with XHR** which will use direct XHR or Ajax request instead.
-
-It will also allow you to call the service with multiple local images without a zip archive.
-
-These button will trigger multiple synchronous service requests.
-
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Solution: ](Project files)]
-
-In case you are having problems when running the application, the complete project code can be found on the SAP Tutorial public [GitHub repository](https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/ml-fs-sapui5-img-classification/sapui5ml-imageclassifier).
-
-[DONE]
-[ACCORDION-END]
