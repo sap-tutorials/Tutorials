@@ -18,7 +18,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a new Kubernetes cluster)]
+[ACCORDION-BEGIN [Step 1: ](Create and configure a new Kubernetes cluster)]
 Use the credentials provided by one of the experts at the booth at Google Next '18 to log into the [Google Cloud Platform console](https://console.cloud.google.com).
 
 ![Create a new project](project.png)
@@ -30,10 +30,6 @@ Once there, use the menu on the top left corner to navigate a new Kubernetes clu
 Click **Create cluster**.
 
 ![Create a new project](new2.png)
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Configure your Kubernetes cluster)]
 
 Fill in the name, choose version `1.9.6` and click **Customize**.
 
@@ -48,7 +44,7 @@ Scroll down and click **Create**.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Connect to your cluster)]
+[ACCORDION-BEGIN [Step 2: ](Connect to your cluster)]
 
 The setup will take some time. Meanwhile, here is some information about what is SAP HANA, express edition to make waiting easier.
 
@@ -68,7 +64,7 @@ This will open a `gcloud` console with a command ready to connect to the cluster
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create the deployment configuration files)]
+[ACCORDION-BEGIN [Step 3: ](Create the deployment configuration files)]
 
 Go back to the `gcloud` console for your cluster.
 
@@ -82,9 +78,10 @@ kubectl create secret docker-registry docker-secret --docker-server=https://inde
 
 ![Create Docker secret](secret.png)
 
-From the console, use the following command to create a new file:
+From the console, use the following commands to create a new file and open the web text editor:
 
 ```
+touch hxe.yaml
 edit hxe.yaml
 ```
 
@@ -245,7 +242,7 @@ The file will be automatically saved to your home directory (`/home/YOUR_GOOGLE_
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Deploy a HANA Express Docker container on your Docker pod)]
+[ACCORDION-BEGIN [Step 4: ](Deploy a HANA Express Docker container on your Docker pod)]
 
 Use the following command to deploy the image on your pods and check deployment:
 
@@ -254,25 +251,45 @@ kubectl create -f hxe.yaml
 kubectl describe pods
 ```
 
-Initially, you will probably see a message stating that the image is being pulled. repeat the command a couple of minutes later until you see the container is started:
+Initially, you will probably see a message stating that the image is being pulled. Repeat the command a couple of minutes later until you see the container is started:
 
 ![Container is started](started_c.png)  
 
-Check the logs of the deployment to make sure it is up and running
+Use the following command to check the name of the pod. Make sure the status is `Running` and `2/2`.
 
 ```text
-kubectl logs deployment/hxe -c hxe-container
+kubectl get pods
 ```
 
-You will see a message saying `startup finished`
+Use the name of the pod to replace it in the following command
 
-![Container is started](finished.png)  
+```text
+kubectl exec -it <<pod-name>> bash
+```
+For example:
 
-If you do not see the message yet, wait one more minute and try the command again.
+![Container is started](ctl.png)  
+
+Use the following SQL commands to connect to the database and enable document store for later user
+
+```SQL
+hdbsql -i 90 -d systemdb -u SYSTEM -p HXEHana1
+```
+
+Paste the following command into the SQL prompt
+
+```sql
+alter database HXE add 'docstore';
+```
+
+Use `quit` to exit the SQL command line and `exit`
+
+![SQL command](2.png)  
+
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check your external IP address to connect to SAP HANA, express edition)]
+[ACCORDION-BEGIN [Step 5: ](Check your external IP address to connect to SAP HANA, express edition)]
 
 Get the external IP addresses from the SQLPAD service
 
@@ -304,8 +321,58 @@ Click on **New connection** and fill the details as below
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Play SQL)]
+[ACCORDION-BEGIN [Step 6: ](Play with SQL and earn a prize)]
 
 Click **New Query**
 
-![Container services](1.png)
+![New query](1.png)
+
+Paste the following commands in `SQLPAD`. Execute them one by one by selecting them and pressing **Run**.
+
+```sql
+
+create collection quotes;
+
+
+--Create a collection for document store and insert JSON values
+
+insert into quotes values ( { "FROM" : 'HOMER',   "QUOTE" :  'I want to share something with you: The three little sentences that will get you through life. Number 1: Cover for me. Number 2: Oh, good idea, Boss! Number 3: It wai like that when I got here.', "MOES_BAR" : 'Point(  -86.880306 36.508361 )', "QUOTE_ID" : 1  });
+insert into quotes values ( { "FROM" : 'HOMER',   "QUOTE" :  'Wait a minute. Bart''s teacher is named Krabappel? Oh, I''ve been calling her Crandall. Why did not anyone tell me? Ohhh, I have been making an idiot out of myself!', "QUOTE_ID" : 2, "MOES_BAR" : 'Point( -87.182708 37.213414 )' });
+insert into quotes values ( { "FROM" : 'HOMER',   "QUOTE" :  'Oh no! What have I done? I smashed open my little boy''s piggy bank, and for what? A few measly cents, not even enough to buy one beer. Weit a minute, lemme count and make sure…not even close.', "MOES_BAR" : 'Point( -122.400690 37.784366 )', "QUOTE_ID" : 3 });
+
+--Create a columnar table with a text fuzzy search index
+create column table quote_analysis
+(
+	id integer,
+	homer_quote text FAST PREPROCESS ON FUZZY SEARCH INDEX ON,
+	lon_lat nvarchar(200)
+
+);
+
+
+-- Copy the quotes form the JSON store to the relational table
+insert into quote_analysis
+with doc_store as (select quote_id, quote from quotes)
+select doc_store.quote_id as id, doc_store.quote as homer_quote, 'Point( -122.676366 45.535889 )'
+from doc_store;
+
+
+--Find out the lowest similarity with word "wait". Take note of the first ID
+select  id, score() as similarity , lon_lat, TO_VARCHAR(HOMER_QUOTE)
+from quote_analysis
+where contains(HOMER_QUOTE, 'wait', fuzzy(0.5,'textsearch=compare'))
+order by similarity asc
+
+--Do you want a prize? Fill in the ID in the WHERE clause below with the first result in the previous query
+-- to calculate the distance in kilometers between two points using the geospatial engine
+-- Share the result with any of the experts, they will give you something to cope with the distance
+with doc_store as (select quote_id, moes_bar from quotes)
+select st_geomFromText( quote_analysis.lon_lat, 4326).st_distance(st_geomFromtext( doc_store.moes_bar, 4326), 'meter') / 1000 as DISTANCE_KM
+from doc_store
+inner join quote_analysis on doc_store.quote_id = <<Fill in with the ID of the lowest similarity score>>;
+```
+
+**Congratulations!**
+You have completed this tutorial. Visit **`developers.sap.com`** to get your free deployment of SAP HANA, express edition and learn from hundreds of available tutorials.
+
+[ACCORDION-END]
