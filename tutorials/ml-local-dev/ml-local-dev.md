@@ -21,7 +21,7 @@ The **Image Classification** service allows you to calculates and returns a list
 **20 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Copy the project)]
-To help you get started, there is a skeleton project you will need to clone.
+To help you get started, there is a skeleton project you will need to create a local copy of.
 
 Unzip the *`googlenext`*  project and save it locally as **`googlenext_XX`** where XX is a a unique identifier like your initials, some numbers, or anything you can link of.
 
@@ -119,7 +119,7 @@ The input file, files or archive file will be sent as a `FormData` query paramet
 
 [ACCORDION-BEGIN [Step 5: ](Open the code editor)]
 
-Find the code editor on your computer and open the **`index.html`** file.
+Sublime Text is provided for you on the computer to edit the code. Open the **`index.html`** from the `googlenext_XX` project in Sublime Text.
 
 [DONE]
 [ACCORDION-END]
