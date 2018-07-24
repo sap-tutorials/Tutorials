@@ -73,7 +73,7 @@ Go back to the `gcloud` console for your cluster.
 Create a secret to fetch the Docker image using the command below. **Copy and paste** the command into the console and press **enter**.
 
 ```ssh
-kubectl create secret docker-registry docker-secret --docker-server=https://index.docker.io/v1/ --docker-username=gnext18 --docker-password=SAP@GoogleNext18 --docker-email=express.rocks@gmail.com
+kubectl create secret docker-registry docker-secret --docker-server=https://index.docker.io/v1/ --docker-username=gnext18 --docker-password=SAP@GoogleNext18 --docker-email=hana.express.rocks@gmail.com
 ```
 
 ![Create Docker secret](secret.png)
