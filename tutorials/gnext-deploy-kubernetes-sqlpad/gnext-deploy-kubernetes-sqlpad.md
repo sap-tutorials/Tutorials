@@ -103,7 +103,7 @@ metadata:
 data:
   password.json: |+
     {"master_password" : "HXEHana1"}
-`---`
+---
 kind: PersistentVolume
 apiVersion: v1
 metadata:
@@ -118,7 +118,7 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: "/data/hxe_pv"
-`---`
+---
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
@@ -130,7 +130,7 @@ spec:
   resources:
     requests:
       storage: 50Gi
-`---`
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -196,7 +196,7 @@ spec:
         ports:
         - containerPort: 3000
 
-`---`
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -220,7 +220,7 @@ spec:
     name: port5
   selector:
     app: hxe
-`---`
+---
 apiVersion: v1
 kind: Service
 metadata:
