@@ -117,10 +117,10 @@ Paste the following content in the console.
 ```JavaScript
 service {
   // expose the model result views
-  "aa.movielens.db.hdb.apl.views::recommendation_collaborative_filtering"  as "apl_recommendation_collaborative_filtering" key ("USERID" , "RANK");
-  "aa.movielens.db.hdb.apl.views::recommendation_contentbased_filtering"   as "apl_recommendation_contentbased_filtering"  key ("MOVIEID", "RANK");
-  "aa.movielens.db.hdb.pal.views::apriori_collaborative_filtering"         as "pal_apriori_collaborative_filtering"        key ("USERID" , "RANK");
-  "aa.movielens.db.hdb.pal.views::apriori_contentbased_filtering"          as "pal_apriori_contentbased_filtering"         key ("MOVIEID", "RANK");
+  "aa.movielens.db.hdb.apl.views::recommendation_collaborative"  as "apl_recommendation_collaborative" key ("USERID" , "RANK");
+  "aa.movielens.db.hdb.apl.views::recommendation_contentbased"   as "apl_recommendation_contentbased"  key ("MOVIEID", "RANK");
+  "aa.movielens.db.hdb.pal.views::apriori_collaborative"         as "pal_apriori_collaborative"        key ("USERID" , "RANK");
+  "aa.movielens.db.hdb.pal.views::apriori_contentbased"          as "pal_apriori_contentbased"         key ("MOVIEID", "RANK");
 
   // expose the summary user and movie views
   "aa.movielens.db.hdb.summary::ratings_user"       as "ratings_user"     key ("USERID");
@@ -585,7 +585,7 @@ You should now get the list of XS OData services available.
 Replace ***`xsodata/data.xsodata?$format=json`***  from the URL by:
 
 ```HTML
-xsodata/data.xsodata/apl_recommendation_collaborative_filtering(USERID=1,RANK=1)/TITLE?$format=json
+xsodata/data.xsodata/apl_recommendation_collaborative(USERID=1,RANK=1)/TITLE?$format=json
 ```
 
 You should get the rank 1 recommendation from the APL algorithm collaborative filtering results for user id 1, which should be ***Star Wars: Episode V - The Empire Strikes Back (1980)***.

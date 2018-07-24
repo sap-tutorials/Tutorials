@@ -2,8 +2,8 @@
 title: Create an SAP Build prototype
 description: Create a high-fidelity prototype with SAP Build.
 auto_validation: true
-primary_tag: products>build>build
-tags: [  tutorial>beginner, products>build>build ]
+primary_tag: products>sap-build
+tags: [  tutorial>beginner, products>sap-build ]
 ---
 
 ## Prerequisites  

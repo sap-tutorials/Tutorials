@@ -106,27 +106,27 @@ sap.ui.define([
           oModel.setProperty("/selectedItemId", itemId);
           oModel.setProperty("/selectedItem", item);
           oModel.setProperty("/itemType", type);
+          var searchFilters = new Filter({
+            filters: filters,
+            and: false
+          });
+          var history = this.getView().byId("history");
+          if (typeof history !== "undefined" && typeof history.getBinding("rows") !== "undefined") {
+            history.getBinding("rows").filter(searchFilters, FilterType.Application);
+          }
+          var resultsAPL = this.getView().byId(type + "_results_apl");
+          if (typeof resultsAPL !== "undefined" && typeof resultsAPL.getBinding("rows") !== "undefined") {
+            resultsAPL.getBinding("rows").filter(searchFilters, FilterType.Application);
+          }
+          var resultsPAL = this.getView().byId(type + "_results_pal");
+          if (typeof resultsPAL !== "undefined" && typeof resultsPAL.getBinding("rows") !== "undefined") {
+            resultsPAL.getBinding("rows").filter(searchFilters, FilterType.Application);
+          }
         }
       } else {
         oModel.setProperty("/selectedItemId", null);
         oModel.setProperty("/selectedItem", null);
         oModel.setProperty("/itemType", null);
-      }
-      var searchFilters = new Filter({
-        filters: filters,
-        and: false
-      });
-      var history = this.getView().byId(type + "_history");
-      if (typeof history !== "undefined" && typeof history.getBinding("rows") !== "undefined") {
-        this.getView().byId(type + "_history").getBinding("rows").filter(searchFilters, FilterType.Application);
-      }
-      var resultsAPL = this.getView().byId(type + "_results_apl");
-      if (typeof resultsAPL !== "undefined" && typeof resultsAPL.getBinding("rows") !== "undefined") {
-        this.getView().byId(type + "_results_apl").getBinding("rows").filter(searchFilters, FilterType.Application);
-      }
-      var _resultsPAL = this.getView().byId(type + "_results_pal");
-      if (typeof _resultsPAL !== "undefined" && typeof _resultsPAL.getBinding("rows") !== "undefined") {
-        this.getView().byId(type + "_results_pal").getBinding("rows").filter(searchFilters, FilterType.Application);
       }
     }
   });
@@ -138,7 +138,274 @@ Save the file using the ![save](00-save.png) icon from the menu.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create the views)]
+[ACCORDION-BEGIN [Step 3: ](Create the Fragments)]
+
+Using fragments in SAPUI5 application enables re-usability of display components but it's also a good way to keep your code shorter and easily maintainable.
+
+The XS OData services results are one good example of components that could be defined as fragments and re-used over and over.
+
+Expand the **`movielens/html/resources/webapp/fragment/xsodata`** folder.
+
+Create a new file **`collaborative.fragment.xml`**.
+
+This is the full path of the created file:
+
+```
+movielens/html/resources/webapp/fragment/xsodata/collaborative.fragment.xml
+```
+
+Paste the following content:
+
+```xml
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:ui="sap.ui"
+  xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+  <Panel expandable="false" headerText="Results for the APL Recommendation Algorithm">
+    <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="user_results_apl"
+      rows="{ path: 'odata>/apl_recommendation_collaborative', filters: [ { path: 'USERID', operator: 'EQ', value1: '-1' } ]}">
+      <ui:columns>
+        <ui:table.Column sortProperty="MOVIEID" width="10%">
+          <Label text="Movie ID"/>
+          <ui:template>
+            <Text text="{odata>MOVIEID}"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column sortProperty="TITLE">
+          <Label text="Title"/>
+          <ui:template>
+            <Text text="{odata>TITLE}"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column sortProperty="RANK" width="10%">
+          <Label text="Rank"/>
+          <ui:template>
+            <Text text="{odata>RANK}"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column sortProperty="SCORE" width="10%">
+          <Label text="Score"/>
+          <ui:template>
+            <Text text="{path : 'odata>SCORE', formatter : '.formatter.formatPercent'}"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column width="15%">
+          <Label text="Links"/>
+          <ui:template>
+            <HBox>
+              <Link text="IMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="http://www.imdb.com/title/tt{odata>IMDBID}"/>
+              <Link text="TMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="https://www.themoviedb.org/movie/{odata>TMDBID}"/>
+            </HBox>
+          </ui:template>
+        </ui:table.Column>
+      </ui:columns>
+    </ui:table.Table>
+  </Panel>
+  <Panel expandable="false" headerText="Results for the PAL APRIORI Algorithm">
+    <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="user_results_pal"
+      rows="{ path: 'odata>/pal_apriori_collaborative', filters: [ { path: 'USERID', operator: 'EQ', value1: '-1' } ]}">
+      <ui:columns>
+        <ui:table.Column sortProperty="MOVIEID" width="10%">
+          <Label text="Movie ID"/>
+          <ui:template>
+            <Text text="{odata>MOVIEID}"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column sortProperty="TITLE">
+          <Label text="Title"/>
+          <ui:template>
+            <Text text="{odata>TITLE}"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column sortProperty="RANK" width="10%">
+          <Label text="Rank"/>
+          <ui:template>
+            <Text text="{odata>RANK}"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column sortProperty="SCORE" width="10%">
+          <Label text="Score"/>
+          <ui:template>
+            <Text text="{path : 'odata>SCORE', formatter : '.formatter.formatPercent'}"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column width="15%">
+          <Label text="Links"/>
+          <ui:template>
+            <HBox>
+              <Link text="IMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="http://www.imdb.com/title/tt{odata>IMDBID}"/>
+              <Link text="TMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="https://www.themoviedb.org/movie/{odata>TMDBID}"/>
+            </HBox>
+          </ui:template>
+        </ui:table.Column>
+      </ui:columns>
+    </ui:table.Table>
+  </Panel>
+</core:FragmentDefinition>
+```
+
+Save the file using the ![save](00-save.png) icon from the menu.
+
+Create a new file **`contenbased.fragment.xml`**.
+
+This is the full path of the created file:
+
+```
+movielens/html/resources/webapp/fragment/xsodata/contenbased.fragment.xml
+```
+
+Paste the following content:
+
+```xml
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:ui="sap.ui"
+  xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+  <Panel expandable="false" headerText="Results for the APL Recommendation Algorithm">
+    <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="movie_results_apl"
+      rows="{ path: 'odata>/apl_recommendation_contentbased'}">
+      <ui:columns>
+        <ui:table.Column sortProperty="SIMILAR_MOVIE" width="10%">
+          <Label text="Similar Movie ID"/>
+          <ui:template>
+            <Text text="{odata>SIMILAR_MOVIE}" wrapping="false"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column sortProperty="TITLE">
+          <Label text="Title"/>
+          <ui:template>
+            <Text text="{odata>TITLE}" wrapping="false"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column sortProperty="RANK" width="10%">
+          <Label text="Rank"/>
+          <ui:template>
+            <Text text="{odata>RANK}" wrapping="false"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column sortProperty="odata>SCORE" width="10%">
+          <Label text="Score"/>
+          <ui:template>
+            <Text text="{path : 'odata>SCORE', formatter : '.formatter.formatPercent'}" wrapping="false"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column width="15%">
+          <Label text="Links"/>
+          <ui:template>
+            <HBox>
+              <Link text="IMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="http://www.imdb.com/title/tt{odata>IMDBID}"/>
+              <Link text="TMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="https://www.themoviedb.org/movie/{odata>TMDBID}"/>
+            </HBox>
+          </ui:template>
+        </ui:table.Column>
+      </ui:columns>
+    </ui:table.Table>
+  </Panel>
+  <Panel expandable="false" headerText="Results for the PAL APRIORI Algorithm">
+    <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="movie_results_pal"
+      rows="{ path: 'odata>/pal_apriori_contentbased'}">
+      <ui:columns>
+        <ui:table.Column sortProperty="SIMILAR_MOVIE" width="10%">
+          <Label text="Similar Movie ID"/>
+          <ui:template>
+            <Text text="{odata>SIMILAR_MOVIE}" wrapping="false"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column sortProperty="TITLE">
+          <Label text="Title"/>
+          <ui:template>
+            <Text text="{odata>TITLE}" wrapping="false"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column sortProperty="RANK" width="10%">
+          <Label text="Rank"/>
+          <ui:template>
+            <Text text="{odata>RANK}" wrapping="false"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column sortProperty="SCORE" width="10%">
+          <Label text="Score"/>
+          <ui:template>
+            <Text text="{path : 'odata>SCORE', formatter : '.formatter.formatPercent'}" wrapping="false"/>
+          </ui:template>
+        </ui:table.Column>
+        <ui:table.Column width="15%">
+          <Label text="Links"/>
+          <ui:template>
+            <HBox>
+              <Link text="IMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="http://www.imdb.com/title/tt{odata>IMDBID}"/>
+              <Link text="TMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="https://www.themoviedb.org/movie/{odata>TMDBID}"/>
+            </HBox>
+          </ui:template>
+        </ui:table.Column>
+      </ui:columns>
+    </ui:table.Table>
+  </Panel>
+</core:FragmentDefinition>
+```
+
+Save the file using the ![save](00-save.png) icon from the menu.
+
+Create a new file **`ratings_detailed.fragment.xml`**.
+
+This is the full path of the created file:
+
+```
+movielens/html/resources/webapp/fragment/xsodata/ratings_detailed.fragment.xml
+```
+
+Paste the following content:
+
+```xml
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:ui="sap.ui"
+  xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+  <ui:table.Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="history"
+    rows="{ path: 'odata>/ratings_detailed', filters: [ { path: 'USERID', operator: 'EQ', value1: '-1' } ]}">
+    <ui:columns>
+      <ui:table.Column sortProperty="USERID" width="10%">
+        <Label text="User ID"/>
+        <ui:template>
+          <Text text="{odata>USERID}"/>
+        </ui:template>
+      </ui:table.Column>
+      <ui:table.Column sortProperty="MOVIEID" width="10%">
+        <Label text="Movie ID"/>
+        <ui:template>
+          <Text text="{odata>MOVIEID}"/>
+        </ui:template>
+      </ui:table.Column>
+      <ui:table.Column sortProperty="TITLE">
+        <Label text="Title"/>
+        <ui:template>
+          <Text text="{odata>TITLE}"/>
+        </ui:template>
+      </ui:table.Column>
+      <ui:table.Column sortProperty="RATING" width="10%">
+        <Label text="Note"/>
+        <ui:template>
+          <Text text="{odata>RATING}"/>
+        </ui:template>
+      </ui:table.Column>
+      <ui:table.Column sortProperty="TIMESTAMP" width="15%">
+        <Label text="Date"/>
+        <ui:template>
+          <Text text="{path : 'odata>TIMESTAMP', formatter : '.formatter.formatEpoch'}"/>
+        </ui:template>
+      </ui:table.Column>
+      <ui:table.Column width="15%">
+        <Label text="Links"/>
+        <ui:template>
+          <HBox>
+            <Link text="IMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="http://www.imdb.com/title/tt{odata>IMDBID}"/>
+            <Link text="TMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="https://www.themoviedb.org/movie/{odata>TMDBID}"/>
+          </HBox>
+        </ui:template>
+      </ui:table.Column>
+    </ui:columns>
+  </ui:table.Table>
+</core:FragmentDefinition>
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Create the Views)]
 
 As you will be visualizing both the **collaborative filtering** and **content-based filtering** results, you will need to create two views.
 
@@ -176,7 +443,9 @@ movielens/html/resources/webapp/view/xsodata/collaborative.view.xml
 Paste the following content:
 
 ```xml
-<mvc:View xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="movielens.html.controller.xsodata.results">
+<mvc:View xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:ui="sap.ui"
+  xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:core="sap.ui.core"
+  xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="movielens.html.controller.xsodata.results">
   <Page showHeader="false">
     <content>
       <Bar>
@@ -188,7 +457,9 @@ Paste the following content:
         </contentLeft>
       </Bar>
       <Panel expandable="false" headerText="Search Users">
-        <Input width="100%" showSuggestion="true" suggest="onSuggestionSuggest" submit="onSuggestionSubmit" suggestionItemSelected="onSuggestionItemSelected" custom:type="user" id="user_input" placeholder="Enter a user identifier..." suggestionItems="{ path: 'odata>/ratings_user', filters: [ { path: 'USERID', operator: 'EQ', value1: '-1' } ]}">
+        <Input width="100%" showSuggestion="true" suggest="onSuggestionSuggest" submit="onSuggestionSubmit"
+          suggestionItemSelected="onSuggestionItemSelected" custom:type="user" id="user_input" placeholder="Enter a user identifier..."
+          suggestionItems="{ path: 'odata>/ratings_user', filters: [ { path: 'USERID', operator: 'EQ', value1: '-1' } ]}">
           <suggestionItems>
             <core:ListItem key="{odata>USERID}" text="{odata>USERID}" additionalText="Rating count : {odata>RATING_COUNT}"/>
           </suggestionItems>
@@ -244,123 +515,11 @@ Paste the following content:
             </form:Form>
           </Panel>
           <Panel expandable="true" expanded="true" headerText="Last Ratings">
-            <table:Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="user_history"
-              rows="{ path: 'odata>/ratings_detailed', filters: [ { path: 'USERID', operator: 'EQ', value1: '-1' } ]}">
-              <table:columns>
-                <table:Column sortProperty="MOVIEID" width="10%">
-                  <Label text="Movie ID"/>
-                  <table:template>
-                    <Text text="{odata>MOVIEID}"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="TITLE">
-                  <Label text="Title"/>
-                  <table:template>
-                    <Text text="{odata>TITLE}"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="RATING" width="10%">
-                  <Label text="Note"/>
-                  <table:template>
-                    <Text text="{odata>RATING}"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="TIMESTAMP" width="15%">
-                  <Label text="Date"/>
-                  <table:template>
-                    <Text text="{path : 'odata>TIMESTAMP', formatter : '.formatter.formatEpoch'}"/>
-                  </table:template>
-                </table:Column>
-                <table:Column width="15%">
-                  <Label text="Links"/>
-                  <table:template>
-                    <HBox>
-                      <Link text="IMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="http://www.imdb.com/title/tt{odata>IMDBID}"/>
-                      <Link text="TMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="https://www.themoviedb.org/movie/{odata>TMDBID}"/>
-                    </HBox>
-                  </table:template>
-                </table:Column>
-              </table:columns>
-            </table:Table>
+            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.odata_ratings_detailed" type="XML"/>
           </Panel>
-          <Panel expandable="false" headerText="Results for the APL Recommendation Algorithm">
-            <table:Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="user_results_apl" rows="{ path: 'odata>/apl_recommendation_collaborative_filtering', filters: [ { path: 'USERID', operator: 'EQ', value1: '-1' } ]}">
-              <table:columns>
-                <table:Column sortProperty="MOVIEID" width="10%">
-                  <Label text="Movie ID"/>
-                  <table:template>
-                    <Text text="{odata>MOVIEID}"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="TITLE">
-                  <Label text="Title"/>
-                  <table:template>
-                    <Text text="{odata>TITLE}"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="RANK" width="10%">
-                  <Label text="Rank"/>
-                  <table:template>
-                    <Text text="{odata>RANK}"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="SCORE" width="10%">
-                  <Label text="Score"/>
-                  <table:template>
-                    <Text text="{path : 'odata>SCORE', formatter : '.formatter.formatPercent'}"/>
-                  </table:template>
-                </table:Column>
-                <table:Column width="15%">
-                  <Label text="Links"/>
-                  <table:template>
-                    <HBox>
-                      <Link text="IMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="http://www.imdb.com/title/tt{odata>IMDBID}"/>
-                      <Link text="TMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="https://www.themoviedb.org/movie/{odata>TMDBID}"/>
-                    </HBox>
-                  </table:template>
-                </table:Column>
-              </table:columns>
-            </table:Table>
-          </Panel>
-          <Panel expandable="false" headerText="Results for the PAL APRIORI Algorithm">
-            <table:Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="user_results_pal" rows="{ path: 'odata>/pal_apriori_collaborative_filtering', filters: [ { path: 'USERID', operator: 'EQ', value1: '-1' } ]}">
-              <table:columns>
-                <table:Column sortProperty="MOVIEID" width="10%">
-                  <Label text="Movie ID"/>
-                  <table:template>
-                    <Text text="{odata>MOVIEID}"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="TITLE">
-                  <Label text="Title"/>
-                  <table:template>
-                    <Text text="{odata>TITLE}"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="RANK" width="10%">
-                  <Label text="Rank"/>
-                  <table:template>
-                    <Text text="{odata>RANK}"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="SCORE" width="10%">
-                  <Label text="Score"/>
-                  <table:template>
-                    <Text text="{path : 'odata>SCORE', formatter : '.formatter.formatPercent'}"/>
-                  </table:template>
-                </table:Column>
-                <table:Column width="15%">
-                  <Label text="Links"/>
-                  <table:template>
-                    <HBox>
-                      <Link text="IMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="http://www.imdb.com/title/tt{odata>IMDBID}"/>
-                      <Link text="TMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="https://www.themoviedb.org/movie/{odata>TMDBID}"/>
-                    </HBox>
-                  </table:template>
-                </table:Column>
-              </table:columns>
-            </table:Table>
-          </Panel>
+          <Panel expandable="true" expanded="true" headerText="Results">
+            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.odata_collaborative" type="XML"/>
+          </Panel>          
         </ScrollContainer>
       </Panel>
     </content>
@@ -381,7 +540,9 @@ movielens/html/resources/webapp/view/xsodata/contentbased.view.xml
 Paste the following content:
 
 ```xml
-<mvc:View xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="movielens.html.controller.xsodata.results">
+<mvc:View xmlns:html="http://www.w3.org/2000/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:ui="sap.ui"
+  xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table" xmlns:core="sap.ui.core"
+  xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="movielens.html.controller.xsodata.results">
   <Page showHeader="false" press="onNavMenuItemPress" icon="sap-icon://menu" id="master">
     <content>
       <Bar>
@@ -393,7 +554,9 @@ Paste the following content:
         </contentLeft>
       </Bar>
       <Panel expandable="false" headerText="Search Movies">
-        <Input width="100%" showSuggestion="true" suggest="onSuggestionSuggest" submit="onSuggestionSubmit" suggestionItemSelected="onSuggestionItemSelected" custom:type="movie" id="movie_input" placeholder="Enter a movie name or identifier ..." suggestionItems="{ path: 'odata>/ratings_movie', filters: [ { path: 'MOVIEID', operator: 'EQ', value1: '-1' } ]}">
+        <Input width="100%" showSuggestion="true" suggest="onSuggestionSuggest" submit="onSuggestionSubmit"
+          suggestionItemSelected="onSuggestionItemSelected" custom:type="movie" id="movie_input" placeholder="Enter a movie name or identifier ..."
+          suggestionItems="{ path: 'odata>/ratings_movie', filters: [ { path: 'MOVIEID', operator: 'EQ', value1: '-1' } ]}">
           <suggestionItems>
             <core:ListItem key="{odata>MOVIEID}" text="ID: {odata>MOVIEID} - Title: {odata>TITLE} - Rating count : {odata>RATING_COUNT}"/>
           </suggestionItems>
@@ -454,106 +617,10 @@ Paste the following content:
             </form:Form>
           </Panel>
           <Panel expandable="true" expanded="true" headerText="Last Ratings">
-            <table:Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="movie_history" rows="{ path: 'odata>/ratings_detailed'}">
-              <table:columns>
-                <table:Column sortProperty="USERID" width="10%">
-                  <Label text="User ID"/>
-                  <table:template>
-                    <Text text="{odata>USERID}" wrapping="false"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="RATING" width="10%">
-                  <Label text="Note"/>
-                  <table:template>
-                    <Text text="{odata>RATING}" wrapping="false"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="TIMESTAMP" width="15%">
-                  <Label text="Date"/>
-                  <table:template>
-                    <Text text="{path : 'odata>TIMESTAMP', formatter : '.formatter.formatEpoch'}" wrapping="false"/>
-                  </table:template>
-                </table:Column>
-              </table:columns>
-            </table:Table>
+            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.odata_ratings_detailed" type="XML"/>
           </Panel>
-          <Panel expandable="false" headerText="Results for the APL Recommendation Algorithm">
-            <table:Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="movie_results_apl" rows="{ path: 'odata>/apl_recommendation_contentbased_filtering'}">
-              <table:columns>
-                <table:Column sortProperty="SIMILAR_MOVIE" width="10%">
-                  <Label text="Similar Movie ID"/>
-                  <table:template>
-                    <Text text="{odata>SIMILAR_MOVIE}" wrapping="false"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="TITLE">
-                  <Label text="Title"/>
-                  <table:template>
-                    <Text text="{odata>TITLE}" wrapping="false"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="RANK" width="10%">
-                  <Label text="Rank"/>
-                  <table:template>
-                    <Text text="{odata>RANK}" wrapping="false"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="odata>SCORE" width="10%">
-                  <Label text="Score"/>
-                  <table:template>
-                    <Text text="{path : 'odata>SCORE', formatter : '.formatter.formatPercent'}" wrapping="false"/>
-                  </table:template>
-                </table:Column>
-                <table:Column width="15%">
-                  <Label text="Links"/>
-                  <table:template>
-                    <HBox>
-                      <Link text="IMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="http://www.imdb.com/title/tt{odata>IMDBID}"/>
-                      <Link text="TMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="https://www.themoviedb.org/movie/{odata>TMDBID}"/>
-                    </HBox>
-                  </table:template>
-                </table:Column>
-              </table:columns>
-            </table:Table>
-          </Panel>
-          <Panel expandable="false" headerText="Results for the PAL APRIORI Algorithm">
-            <table:Table selectionMode="None" visibleRowCount="5" enableBusyIndicator="true" refresh="true" id="movie_results_pal" rows="{ path: 'odata>/pal_apriori_contentbased_filtering'}">
-              <table:columns>
-                <table:Column sortProperty="SIMILAR_MOVIE" width="10%">
-                  <Label text="Similar Movie ID"/>
-                  <table:template>
-                    <Text text="{odata>SIMILAR_MOVIE}" wrapping="false"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="TITLE">
-                  <Label text="Title"/>
-                  <table:template>
-                    <Text text="{odata>TITLE}" wrapping="false"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="RANK" width="10%">
-                  <Label text="Rank"/>
-                  <table:template>
-                    <Text text="{odata>RANK}" wrapping="false"/>
-                  </table:template>
-                </table:Column>
-                <table:Column sortProperty="SCORE" width="10%">
-                  <Label text="Score"/>
-                  <table:template>
-                    <Text text="{path : 'odata>SCORE', formatter : '.formatter.formatPercent'}" wrapping="false"/>
-                  </table:template>
-                </table:Column>
-                <table:Column width="15%">
-                  <Label text="Links"/>
-                  <table:template>
-                    <HBox>
-                      <Link text="IMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="http://www.imdb.com/title/tt{odata>IMDBID}"/>
-                      <Link text="TMDb" class="sapUiTinyMarginBeginEnd" target="_blank" href="https://www.themoviedb.org/movie/{odata>TMDBID}"/>
-                    </HBox>
-                  </table:template>
-                </table:Column>
-              </table:columns>
-            </table:Table>
+          <Panel expandable="true" expanded="true" headerText="Results">
+            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.odata_contenbased" type="XML"/>
           </Panel>
         </ScrollContainer>
       </Panel>
@@ -567,22 +634,22 @@ Save the file using the ![save](00-save.png) icon from the menu.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Run the application)]
+[ACCORDION-BEGIN [Step 5: ](Run the application)]
 
 Select the **`html`** module, then click on the execute icon ![run](00-run.png) from the menu bar.
 
 Once the application is started, the application will open in a new tab/window or you can click on the application URL:
 
-![Web IDE](04-01.png)
+![Web IDE](05-01.png)
 
 This will open a web page with the following content:
 
-![Web IDE](04-02.png)
+![Web IDE](05-02.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Validate your Collaborative Filtering results)]
+[ACCORDION-BEGIN [Step 6: ](Validate your Collaborative Filtering results)]
 
 Using the menu icon on the top left corner of the panel, select **View Results with XS OData > Collaborative Filtering**.
 
@@ -592,14 +659,14 @@ The user details and list of previous rating should appear along with the recomm
 
 Et voilà!
 
-![Applications](05-01.png)
+![Applications](06-01.png)
 
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Validate your Content-based Filtering results)]
+[ACCORDION-BEGIN [Step 7: ](Validate your Content-based Filtering results)]
 
 Using the menu icon on the top left corner of the panel, select **View Results with XS OData > Content-based Filtering**.
 
@@ -611,14 +678,14 @@ The user details and list of previous rating should appear along with the recomm
 
 Et voilà!
 
-![Applications](06-01.png)
+![Applications](07-01.png)
 
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Commit your changes)]
+[ACCORDION-BEGIN [Step 8: ](Commit your changes)]
 
 On the icon bar located on the right side of the Web IDE, click on the **Git Pane** icon ![Web IDE](00-webide-git.png).
 

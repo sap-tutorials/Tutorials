@@ -36,9 +36,9 @@ To install `cf CLI`, you can either grab the latest release on the official rele
 
 In order to deploy applications on `SAP Cloud Foundry` you need to provide `cf CLI` with an API endpoint. The API endpoint depends on the region you chose for your account:
 
-  - for EU: <https://api.cf.eu10.hana.ondemand.com>
-  - for US EAST: <https://api.cf.us10.hana.ondemand.com>
-  - for US WEST (beta): <https://api.cf.us20.hana.ondemand.com>
+  - for EU: `https://api.cf.eu10.hana.ondemand.com`
+  - for US EAST: `https://api.cf.us10.hana.ondemand.com`
+  - for US WEST (beta): `https://api.cf.us20.hana.ondemand.com`
 
 Now enter the following commands (in this case for the EU region):
 
