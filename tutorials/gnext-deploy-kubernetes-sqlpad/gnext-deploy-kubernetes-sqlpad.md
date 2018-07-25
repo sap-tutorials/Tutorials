@@ -73,7 +73,7 @@ Go back to the `gcloud` console for your cluster.
 Create a secret to fetch the Docker image using the command below. **Copy and paste** the command into the console and press **enter**.
 
 ```ssh
-kubectl create secret docker-registry docker-secret --docker-server=https://index.docker.io/v1/ --docker-username=gnext18 --docker-password=SAP@GoogleNext18 --docker-email=express.rocks@gmail.com
+kubectl create secret docker-registry docker-secret --docker-server=https://index.docker.io/v1/ --docker-username=gnext18 --docker-password=SAP@GoogleNext18 --docker-email=hana.express.rocks@gmail.com
 ```
 
 ![Create Docker secret](secret.png)
@@ -103,7 +103,7 @@ metadata:
 data:
   password.json: |+
     {"master_password" : "HXEHana1"}
-`---`
+---
 kind: PersistentVolume
 apiVersion: v1
 metadata:
@@ -118,7 +118,7 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: "/data/hxe_pv"
-`---`
+---
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
@@ -130,7 +130,7 @@ spec:
   resources:
     requests:
       storage: 50Gi
-`---`
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -196,7 +196,7 @@ spec:
         ports:
         - containerPort: 3000
 
-`---`
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -220,7 +220,7 @@ spec:
     name: port5
   selector:
     app: hxe
-`---`
+---
 apiVersion: v1
 kind: Service
 metadata:
