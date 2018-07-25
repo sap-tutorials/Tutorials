@@ -40,7 +40,7 @@ SAP HANA, express edition for Docker has been tested on the following Linux oper
 | `openSUSE` | `openSUSE Leap` | [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-sles) |
 | `CentOS` | `7 (Core)` | [Community](https://store.docker.com/editions/community/docker-ce-server-centos),  [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-centos) |
 | `Debian` | `9 (Stretch)` | [Community](https://store.docker.com/editions/community/docker-ce-server-debian) |
-| `Fedora` | `25 (Server Edition)` | [Community](https://store.docker.com/editions/community/docker-ce-server-fedora) |
+| `Fedora` | `28 (Server Edition)` | [Community](https://store.docker.com/editions/community/docker-ce-server-fedora) |
 
 **This installation does not support Docker for Windows or Docker for Mac.**
 
@@ -140,7 +140,7 @@ Click on the **Setup Instructions** button.
 Copy the Docker pull address. Here is an example:
 
 ```bash
-sudo docker pull store/saplabs/hanaexpressxsa:2.00.030.00.20180403.2
+sudo docker pull store/saplabs/hanaexpressxsa:2.00.031.00.20180712.1
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
@@ -267,7 +267,7 @@ sudo docker run -p 39013:39013 -p 39015:39015 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <container_name> \
-store/saplabs/hanaexpressxsa:2.00.030.00.20180403.2 \
+store/saplabs/hanaexpressxsa:2.00.031.00.20180712.1 \
 --agree-to-sap-license \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>> \
 --proxy-host <proxy_hostname> \
@@ -287,7 +287,7 @@ sudo docker run -p 39013:39013 -p 39015:39015 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name express_edition \
-store/saplabs/hanaexpressxsa:2.00.030.00.20180403.2 \
+store/saplabs/hanaexpressxsa:2.00.031.00.20180712.1 \
 --agree-to-sap-license \
 --passwords-url file:///hana/password.json \
 --proxy-host <proxy_hostname> \
@@ -425,7 +425,7 @@ If you are prompted to change your password, follow the instructions.
 The following is a list of options available for the `sudo docker run store/saplabs/hanaexpressxsa` command.
 
 ```
-docker run store/saplabs/hanaexpressxsa:2.00.030.00.20180403.2 -h
+docker run store/saplabs/hanaexpressxsa:2.00.031.00.20180712.1 -h
 usage: [options]
 
 --dont-check-consistency           Skip consistency check between mount points
