@@ -186,14 +186,14 @@ The source files should be mapped with the following target tables:
 
 ### **Using the IMPORT FROM SQL command**
 
-The dataset files should be located in: **`/usr/sap/HXE/HDB90/work/data/`**
+The dataset files should be located in: **`/usr/sap/HXE/HDB90/work/data/movielens/`**
 
 Connect to the **HXE** tenant using the **`ML_USER`** user credentials using your SQL query tool.
 
 Execute the following SQL statement:
 
 ```SQL
-import from csv file '/usr/sap/HXE/HDB90/work/data/links.csv' into movielens_links
+import from csv file '/usr/sap/HXE/HDB90/work/data/movielens/links.csv' into movielens_links
 with
    record delimited by '\n'
    field delimited by ','
@@ -203,7 +203,7 @@ with
    error log '/home/jupyteradm/log/links.csv.err'
 ;
 
-import from csv file '/usr/sap/HXE/HDB90/work/data/movies.csv' into movielens_movies
+import from csv file '/usr/sap/HXE/HDB90/work/data/movielens/movies.csv' into movielens_movies
 with
    record delimited by '\n'
    field delimited by ','
@@ -213,7 +213,7 @@ with
    error log '/home/jupyteradm/log/movies.csv.err'
 ;
 
-import from csv file '/usr/sap/HXE/HDB90/work/data/ratings.csv' into movielens_ratings
+import from csv file '/usr/sap/HXE/HDB90/work/data/movielens/ratings.csv' into movielens_ratings
 with
    record delimited by '\n'
    field delimited by ','
@@ -223,7 +223,7 @@ with
    error log '/home/jupyteradm/log/ratings.csv.err'
 ;
 
-import from csv file '/usr/sap/HXE/HDB90/work/data/tags.csv' into movielens_tags
+import from csv file '/usr/sap/HXE/HDB90/work/data/movielens/tags.csv' into movielens_tags
 with
    record delimited by '\n'
    field delimited by ','
