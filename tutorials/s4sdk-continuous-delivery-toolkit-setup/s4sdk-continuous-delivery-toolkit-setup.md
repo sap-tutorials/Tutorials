@@ -2,17 +2,17 @@
 title: Kickstart Continuous Delivery for SAP S/4HANA Extensions on Google Kubernetes Engine
 description: Set up your continuous delivery infrastructure for SAP S/4HANA extension applications on Google Kubernetes Engine.
 primary_tag: products>sap-s-4hana
-tags: [  tutorial>intermediate, products>sap-s-4hana, products>sap-cloud-platform, products>sap-s-4hana-cloud-sdk, topic>cloud, topic>Continues delivery, topic>Pipeline ]
+tags: [  tutorial>Beginner, products>sap-s-4hana, products>sap-cloud-platform, products>sap-s-4hana-cloud-sdk, topic>cloud, topic>Continues delivery, topic>Pipeline ]
 ---
 
 ## Prerequisites  
- - **Proficiency:** intermediate
+ - **Proficiency:** Beginner
 
 ### You will learn
-The SAP S/4HANA Cloud SDK helps developers in building cloud-native extensions to SAP's S/4HANA ERP system. For this, it offers a Java library, project archetypes, and an attuned Continuous Delivery Toolkit. In this tutorial, you will see how to set up a scalable SAP S/4HANA Cloud SDK CI/CD server on Google Kubernetes Engine within a few minutes. you will also build an SAP S/4HANA Cloud SDK-based example application using the out-of-the-box pipeline.
+The SAP S/4HANA Cloud SDK helps developers in building cloud-native extensions to SAP's S/4HANA. For this, it offers a Java library, project archetypes, and an attuned Continuous Delivery Toolkit. In this tutorial, you will see how to set up a scalable SAP S/4HANA Cloud SDK CI/CD server on Google Kubernetes Engine within a few minutes. you will also build an SAP S/4HANA Cloud SDK-based example application using the out-of-the-box pipeline.
 
 ### Time to Complete
-**15 Min**
+**20 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Prepare the infrastructure)]
 
@@ -32,7 +32,7 @@ Change **Machine type** to use 2 `vCPUs`.
 
 ![Configure Kubernetes cluster](2.PNG)
 
-Click on **Create Cluster**. This will create a cluster named `cluster-1` with 3 nodes.  The creation of the cluster might take a few minutes. Once it's created, you should see it in your cluster overview.
+Click on **Create**. This will create a cluster named `cluster-1` with 3 nodes.  The creation of the cluster might take a few minutes. Once it's created, you should see it in your cluster overview.
 
 ![New Kubernetes cluster](4.PNG)
 
@@ -46,7 +46,7 @@ Once the Cloud Shell is open, press **Enter**.
 
 [ACCORDION-BEGIN [Step 2: ](Set up Jenkins)]
 
-SAP S/4HANA Cloud SDK CI/CD Toolkit makes use of a pre-configured Jenkins to run the continuous delivery Pipeline. Next, you will start the Jenkins server with auto-scaling capabilities on our Kubernetes cluster. Thanks to the helm package manager tool, setting up the Jenkins on your Kubernetes cluster is super simple.
+SAP S/4HANA Cloud SDK CI/CD Toolkit makes use of a pre-configured Jenkins to run the Continuous Delivery Pipeline. Next, you will start the Jenkins server with auto-scaling capabilities on our Kubernetes cluster. Thanks to the helm package manager tool, setting up the Jenkins on your Kubernetes cluster is super simple.
 
 In order to make the installation even more convenient, the installation is wrapped in a small `setup_jenkins` shell script.
 
@@ -78,8 +78,9 @@ Once the setup is completed, it is time to build our first application with SAP 
 Now you should see the Jenkins login page, which looks like the screenshot below:
 ![Login to Jenkins](12.PNG)
 
-In the login screen please key-in `admin` as the user and `SAP@next18` as the password.
+In the login screen please key-in `admin` as the user. The password can be found in the Jenkins installation log in the cloud shell.
 
+![Password to Jenkins](24.PNG)
 
 [ACCORDION-END]
 
@@ -89,7 +90,7 @@ Once the login is successful you will see a Jenkins dashboard.
 
 ![Jenkins Dashboard](13.PNG)
 
-Click on create new jobs. In the following page choose a name of your choice for the item name field.  Choose a `Multibranch` Pipeline. Click on OK.
+Click on create new jobs. In the following page choose a name of your choice for the item name field.  Choose a `Multibranch Pipeline`. Click on OK.
 
 ![Pipeline Setup](14.PNG)
 
@@ -131,7 +132,7 @@ Click on the branch name `google-next`. In the following window, click on the bu
 
 ![Build Status](19.PNG)
 
-Now click on the `Console output` menu and scroll down to the bottom of the log.
+Now click on the `Console Output` menu and scroll down to the bottom of the log.
 
 ![Build log](20.PNG)
 
@@ -141,11 +142,23 @@ You will find a code for the goodie once the job is successfully completed.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Conclusion and further reading)]
+[ACCORDION-BEGIN [Step 6: ](Cleanup)]
+
+Once you have successfully executed the job on Jenkins, kindly open the Google Cloud Platform console and navigate to the Kubernetes Engine. Click on *clusters*. In the following page. Click on the bin icon that is displayed next to the cluster. Please note that, the deletion of the Kubernetes cluster will also delete the Jenkins instance that you have created as part of this exercise.
+
+![Delete Cluster](25.PNG)
+
+Click on the `Delete` button.
+
+![Confirm Delete](26.PNG)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Conclusion and further reading)]
 
 Unlike the standalone Jenkins instance, the Jenkins instance which is deployed on the Kubernetes cluster gives us the flexibility to scale it based on the load. In addition, Kubernetes will ensure the availability of the service by regular health check of the containers.
 
-To get detailed insight into SAP S/4HANA Cloud SDK, please go through our [blog posts]((https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).  
+To get detailed insight into SAP S/4HANA Cloud SDK, please go through our [blog posts](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).  
 
 [DONE]
 [ACCORDION-END]

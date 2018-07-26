@@ -14,7 +14,7 @@ tags: [  tutorial>beginner, operating-system>android ]
   - About Fiori UI for Android and how to use Object Cells.
   - How to send a native notification to a registered user of the app.
 
-The [SAP Cloud Platform SDK for Android](https://blogs.sap.com/2018/06/06/sap-cloud-platform-sdk-for-android-has-arrived/) is available in limited release with general availability expected later this year.  
+The <a target="_blank" href="https://blogs.sap.com/2018/06/06/sap-cloud-platform-sdk-for-android-has-arrived/">SAP Cloud Platform SDK for Android</a> is available in limited release with general availability expected later this year.  
 
 
 ### Time to Complete
@@ -55,7 +55,7 @@ Click **Next** on the **Server Connection** tab.
 >```Admin API URL: https://hcpms-p2000464045trial.hanatrial.ondemand.com/```
 >```Admin UI URL: https://hcpmsadmin-p2000464045trial.dispatcher.hanatrial.ondemand.com/?hc_reset```
 >```Username: p2000464045```
->```Password: SCP!1pwd```
+>```Password: SCP!2pwd```
 
 On the **Cloud Configuration** tab:
 
@@ -75,8 +75,9 @@ On the **Project Configuration** tab:
 1. Set the **Project Name** to Wiz App.
 2. Set **Project Namespace** to `com.sap.wizapp`.
 3. Set **Project Location** to `C:\AndroidStudioProjects\WizApp`.
-4. For **JSON File Location**, browse to `C:\AndroidStudioProjects\` and select the `google-services.json`, which will enable the app to work with Google Firebase notifications.
-5. Click **Finish**.
+4. Check the **Enable Push** checkbox to enable push notification support in the app.
+5. For **JSON File Location**, browse to `C:\AndroidStudioProjects\` and select the `google-services.json`, which will enable the app to work with Google Firebase notifications.
+6. Click **Finish**.
 
 ![Project configuration](project-configuration.png)
 
@@ -99,7 +100,7 @@ The welcome screen is shown the first time the app is run.
 Sign in with the following credentials:
 
 - User Name: `p2000464045`
-- Password: `SCP!1pwd`
+- Password: `SCP!2pwd`
 
 ![Authentication screen](authentication-screen.png)
 The credentials are used to authenticate against the SAP Cloud Platform Identity Service, are  securely stored by the app, and do not need to be re-entered.  Take note of the time that the authentication occurred.  This will be helpful to know to identify the correct registration in the __Send a notification__ step.
@@ -111,8 +112,10 @@ The passcode (or fingerprint if enabled) screen provides an additional layer of 
 The first screen of the app shows the different entities that are in the sample OData service.
 ![Entities screen](entities-screen.png)
 
-There is a list and detail screen for each entity as well as an edit and create screen.
+Click on `ProductCategories` to reach the below list screen.
 ![Categories screen](categories-screen.png)
+
+Click on a list item to show an editable detail screen.
 ![Category detail](category-detail.png)
 
 
@@ -128,7 +131,7 @@ Click the **Customers** entity.
 ![Entities screen](entities-screen2.png)
 
 Notice that it displays the city rather than the customer name and address.  This is because the app was generated from the OData service metadata, which does not indicate which of the many fields from the customer entity to display.
-![Customers ccreen](original-customer.png)
+![Customers Screen](original-customer.png)
 
 Each customer is displayed in an Object Cell, which is one of the Fiori UI for Android controls.
 ![Object Cell](object-cell.png)
@@ -220,9 +223,10 @@ Notice that the **Customers** screen now contains additional fields in it's Obje
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Send a notification)]
-1. Open the [SAP Cloud Platform Mobile Services management cockpit](https://hcpmsadmin-p2000464045trial.dispatcher.hanatrial.ondemand.com/sap/mobile/admin/ui/index.html#/page.apps) with the following credentials:
+1. Open the
+<a target="_blank"  href="https://hcpmsadmin-p2000464045trial.dispatcher.hanatrial.ondemand.com/sap/mobile/admin/ui/index.html#/page.apps">SAP Cloud Platform Mobile Services management cockpit</a> with the following credentials:
     - User Name: `p2000464045`
-    - Password: `SCP!1pwd`
+    - Password: `SCP!2pwd`
   ![Management cockpit](sap-identity.png)
 2. Under **Mobile Applications**, select `Wiz App`.
 ![Management cockpit](management-cockpit.png)
