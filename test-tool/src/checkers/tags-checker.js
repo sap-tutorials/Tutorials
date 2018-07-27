@@ -18,8 +18,6 @@ module.exports = {
 
     if (!result) {
       return `${experienceTag.message}`;
-    } else if (result.length > 1) {
-      return `Experience tag should be specified once, but ${result.length} were found: ${result.join(', ')}`;
     }
   },
 };
