@@ -1,31 +1,28 @@
 ---
 title: Create a New User and Assign Permissions
-description: Create a new 'TPCH' user as well as assign roles and privileges to the new user.
-auto_validation: false
+description: Create a new TPCH user and assign roles and privileges to the new user.
+auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-web-ide ]
 ---
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA Dynamic Tiering component installed.
+ - **System:** Access to an SAP HANA 2.0 system with the optional SAP HANA dynamic tiering component installed.
  - **Credentials:** Connection details to initially connect to the tenant database as the tenant `SYSTEM` user.
- - **Access** Access to HANA Cockpit for the HANA system that DT is running on and which you will be working with.
-
-## Next Steps
-  - **Tutorials:** [Create Extended Storage](https://www.sap.com/developer/tutorials/hana-webide-dt-getting-started-2.html)
+ - **Access** Access to SAP HANA cockpit for the SAP HANA system that data tiering is running on and which you will be working with.
 
 ## Details
 ### You will learn  
-* Creating users in the database (you will create the TPCH schema that is used throughout the guide).
-* Assigning roles and privileges(permissions) to users.
+* How to create users in the database (and to create the TPCH schema used throughout the guide).
+* How to assign roles and privileges (permissions) to users.
 
 ### Time to Complete
 **10 Min**
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create the TPCH User)]
+[ACCORDION-BEGIN [Step 1: ](Create the TPCH user)]
 We will begin by creating a new user which we will use throughout the tutorial. To do so, we must use HANA Cockpit. Login to HANA Cockpit, click the **Resources** link at the top, and select the appropriate resource, which should be a SAP HANA Tenant Database.
 
 ![1.1](assets/hana-webide-dt-getting-started-2-df948257.png)
@@ -50,7 +47,7 @@ Click the **Save** button at the bottom-right to add the user.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Assign Roles and privileges to the TPCH User)]
+[ACCORDION-BEGIN [Step 2: ](Assign roles and privileges to the TPCH user)]
 Once the TPCH user is created, you will be redirected to a screen featuring this new user. Under **Authorization Mode**, click **Assign Roles**.
 
 ![1.5](assets/hana-webide-dt-getting-started-2-0cf7e605.png)
@@ -81,14 +78,12 @@ Follow the same steps as you did for assigning roles, and assign **all** of the 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Additional Information)]
-We will use this `TPCH` user through the tutorial. In the following tutorial, we will create extended storage to get started with Dynamic Tiering.
+[ACCORDION-BEGIN [Step 3: ](Additional information)]
+We will use this `TPCH` user through the tutorial. In the following tutorial, we will create extended storage to get started with dynamic tiering.
 
 [VALIDATE_1]
 
 [ACCORDION-END]
 
-## Next Steps
-  - **Tutorials:** [Create Extended Storage](https://www.sap.com/developer/tutorials/hana-webide-dt-getting-started-2.html)
 
 ---
