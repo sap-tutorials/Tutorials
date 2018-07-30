@@ -34,14 +34,14 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
         const xpTagsCheckResult = tagsChecker.checkExperienceTag(content);
         let tagsCheckResult;
         if (xpTagsCheckResult) {
-        tagsCheckResult = [xpTagsCheckResult];
+            tagsCheckResult = [xpTagsCheckResult];
         }
 
         if (primaryTagsCheckResult) {
-        if (!Array.isArray(tagsCheckResult)) {
-          tagsCheckResult = [];
-        }
-        tagsCheckResult.push(primaryTagsCheckResult);
+            if (!Array.isArray(tagsCheckResult)) {
+              tagsCheckResult = [];
+            }
+            tagsCheckResult.push(primaryTagsCheckResult);
         }
 
         if(passed) {
