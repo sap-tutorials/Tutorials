@@ -7,14 +7,14 @@ const linkChecker = require('./link-checker');
 const fileNameChecker = require('./file-name-checker');
 const tagsChecker = require('./tags-checker');
 const validationChecker = require('./validations-checker');
-const { common, linkUtils } = require('../utils'); 
+const { common, linkUtils } = require('../utils');
 
 const check = async (filePaths, projectPath, isProduction = false, interceptors = {}) => {
     let passed = true;
     const results = new Map();
 
     const { files, uniqueLinksToFiles } = await common.parseFiles(filePaths);
-    
+
     const uniqueLinks = Array.from(uniqueLinksToFiles.keys());
 
     if(interceptors.onStart) interceptors.onStart({ actionsCount: uniqueLinks.length + filePaths.length });
@@ -29,8 +29,20 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
         const fileNameCheckResult = fileNameChecker.checkFilePath(fileName, fileProjectPath);
         const spellCheckResult = spellChecker.checkSpellingSrc(content);
         const contentCheckResult = filePath.includes('tutorials') ? contentChecker.check(filePath, contentLines) : [];
-        const tagsCheckResult = tagsChecker.checkPrimaryTag(content);
         const validationsCheckResult = validationChecker.check(filePath, content, isProduction);
+        const primaryTagsCheckResult = tagsChecker.checkPrimaryTag(content);
+        const xpTagsCheckResult = tagsChecker.checkExperienceTag(content);
+        let tagsCheckResult;
+        if (xpTagsCheckResult) {
+            tagsCheckResult = [xpTagsCheckResult];
+        }
+
+        if (primaryTagsCheckResult) {
+            if (!Array.isArray(tagsCheckResult)) {
+              tagsCheckResult = [];
+            }
+            tagsCheckResult.push(primaryTagsCheckResult);
+        }
 
         if(passed) {
             passed = !(fileNameCheckResult || spellCheckResult.length || contentCheckResult.length || tagsCheckResult || validationsCheckResult.length);
