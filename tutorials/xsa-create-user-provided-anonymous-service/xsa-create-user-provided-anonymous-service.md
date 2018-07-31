@@ -1,6 +1,6 @@
 ---
-title: SAP HANA XS Advanced, create a user-provided anonymous service for SAP HANA database Schemas
-description: Access a classic or plain schema from an HDI container
+title: SAP HANA XS Advanced, Access a classic schema from an HDI container
+description: Create a user-provided service to access data from a plain or replicated schema from an HDI container
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 
 ## Details
 ### You will learn  
-This tutorial will walk you through the integration of a non `HDI-managed` database, such as a replicated database, into an HDI container and how to access it using a SQL anonymous connection.
+This tutorial will walk you through the integration of a non `HDI-managed` database, such as a replicated or ABAP database, into an HDI container and how to access it using a SQL anonymous connection.
 
 ### Time to Complete
 **15 Min**

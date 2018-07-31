@@ -102,7 +102,7 @@ You will see that the source of the SAP UI5 library is a public, remote resource
 
 In a productive scenario, there are many reasons to use a local version of the library. As of SAP HANA 2.0, SPS01, SAP UI5 was incorporated to XS Advanced as a micro-service for local consumption. You need to create an instance of the service to use on your Multi-Target Application just like you did with the UAA service.
 
-Alternate between normal and incognito mode or use another browser to log in to the XSA Cockpit with the user `XSA_ADMIN`. In an SAP HANA, express edition instance this application has been incorporated in SPS03 and is found on port 51036 (i.e., https://hxehost:51036 ).
+Alternate between normal and incognito mode or use another browser to log in to the XSA Cockpit with the user `XSA_ADMIN`. In an SAP HANA, express edition instance this application has been incorporated in SPS03 and is found on port 51036 (i.e., `https://hxehost:51036` ).
 
 Navigate to the service marketplace for the space where your application is deployed and click on the `sapui5` service
 
