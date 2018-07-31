@@ -1,7 +1,7 @@
 ---
 title: Execute an outbound service from custom business object
 description: Call an external service of SAP API Business Hub from inside the logic implementation of a custom business object.
-auto_validation: false
+auto_validation: true
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>intermediate, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
 ---
