@@ -11,5 +11,13 @@ module.exports = {
                 return `${primary_tag.message} -> ${keyWithTags}`;
             }
         }
+    },
+  checkExperienceTag: (fileSrc) => {
+    const { tags: { experienceTag } } = regexp;
+    const result = fileSrc.match(experienceTag.regexp);
+
+    if (!result) {
+      return `${experienceTag.message}`;
     }
+  },
 };

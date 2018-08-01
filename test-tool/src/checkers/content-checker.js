@@ -31,7 +31,18 @@ module.exports = {
             const result = [];
             const dir = path.dirname(filePath);
             const { content: { common, link, h1, mdnImg } } = regexp;
+            // true because meta is in the very beginning
+            let isMeta = true;
+            let metaBoundaries = 0;
             lines.forEach((line, index) => {
+              if (isMeta) {
+                if (line.replace(/\n/g, '') === '---') {
+                  metaBoundaries += 1;
+                }
+                if (metaBoundaries > 2) {
+                  isMeta = false;
+                }
+              }
                 if(line.includes('```')) {
                     isCodeBlock = !isCodeBlock;
                 }
@@ -45,12 +56,15 @@ module.exports = {
                     }
                 });
                 if(!isCodeBlock) {
-                    const match = line.match(link.regexp);
-                    if(match) {
-                        result.push({
+                    if (!isMeta) {
+                        // plain text URLs are allowed in meta
+                        const match = line.match(link.regexp);
+                        if(match) {
+                          result.push({
                             line: index + 1,
                             msg: `${link.message} -> ${match[0]}`
-                        });
+                          });
+                        }
                     }
                     const h1Match = line.match(h1.regexp);
                     if(h1Match) {
@@ -68,7 +82,7 @@ module.exports = {
                     result.push(...errors.map(err => ({ line: index + 1, msg: err })));
                 }
             });
-            return result;    
+            return result;
     },
-    
+
 }

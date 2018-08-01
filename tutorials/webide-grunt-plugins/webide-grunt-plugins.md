@@ -2,7 +2,7 @@
 title: Adding Grunt Plugins (TypeScript) in SAP Web IDE
 description: This tutorial shows you how to reference other plugins in your Grunt build in SAP Web IDE, and to configure and run tasks in those plugins. Specifically, it shows you how to build TypeScript files into JavaScript.
 primary_tag: products>sap-web-ide
-tags: [  tutorial>Intermediate, topic>cloud, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>intermediate, topic>cloud, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner

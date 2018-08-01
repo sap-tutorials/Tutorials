@@ -166,7 +166,7 @@ Longer the pipeline runs, more files are generated. Therefore, after a while sto
 
 Open [http://console.cloud.google.com](http://console.cloud.google.com) and navigate to the `/sensordata/` directory. You can notice that the output files are generated similar to the earlier tutorial.
 
-Now login to the **SAP Data Hub Cockpit** using the link [https://vhcalhxedb:51076/](https://vhcalhxedb:51076/) and click on the link **VORA Tools** found under the section - **Quick Links** > **Featured Links**
+Now login to the **SAP Data Hub Cockpit** using the link (`https://vhcalhxedb:51076/`) and click on the link **VORA Tools** found under the section - **Quick Links** > **Featured Links**
 
 ![picture3](datahub-trial-pipelines-part05-3.png)
 
