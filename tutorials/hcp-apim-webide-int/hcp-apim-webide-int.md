@@ -1,6 +1,7 @@
 ---
 title:  Consume the API Proxy in SAP Web IDE
 description: In this tutorial you will learn how to consume the API Proxy created in the previous steps in SAP Web IDE
+auto_validation: true
 primary_tag: products>sap-api-management
 tags: [  tutorial>beginner,  products>sap-cloud-platform, products>sap-web-ide, products>sap-api-management ]
 ---
@@ -10,13 +11,13 @@ tags: [  tutorial>beginner,  products>sap-cloud-platform, products>sap-web-ide, 
 
 ## Next Steps
 - This is the end of this series
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 
 ## Details
 ### You will learn  
 Since SAP Cloud Platform, API Management is one of many services on the SAP Cloud Platform it also offers a deep integration in SAP Web IDE. With this integration you can easily browse and consume services from SAP Cloud Platform, API Management and directly create SAP Fiori like SAPUI5 applications leveraging one of the templates offered in SAP Web IDE.
- 
+
 ### Time to Complete
 **20 Min**.
 
@@ -49,6 +50,7 @@ Log onto your [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.co
 
 ![Log on to CP Cockpit](01-hcp.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -58,28 +60,15 @@ Under Connectivity, click on **Destinations**.
 
 ![Click on Destination](02-destination.png)
 
+[DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create API Management Catalog destination)]
 
-<<<<<<< Updated upstream
-Enter/confirm all fields in the Destination configuration section with the information below.
-
-Field Name     | Value
-:------------- | :-------------
-Name           | `APIM_DevPortal_Trial`
-Type           | `HTTP`
-Description    | `Destination to API Developer Portal`
-URL            | take the URL of the developer Portal seen in [Activate SAP Cloud Platform, API Management on SAP Cloud Platform Trial](https://www.sap.com/developer/tutorials/hcp-apim-enable-service.html), e.g. `https://devportalu34f5b50f-YourIDtrial.hanatrial.ondemand.com`
-Proxy Type     | `Internet`
-Authentication | `AppToAppSSO`
-
-=======
 Click on **New Destination**.
 
 ![Click on New Destination](03-new_destination.png)
->>>>>>> Stashed changes
 
 Provide the following information to create a destination for the API Management Catalog. This will provide Web IDE access to all the API Proxies you have exposed through published products.
 
@@ -109,6 +98,7 @@ Click on **Save**.
 
 ![Click on SAPWebIDEviaAPIManagement](07-Save.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -120,18 +110,20 @@ To create a second destination click on **New Destination** again
 
 Provide the following information to the new destination.
 
-> Please make sure to enter the SAP Cloud Platform username and password, not the username and password for the ES4 SAP Developer System
+> Please make sure to enter the SAP Cloud Platform username and password, not the username and password for the ES5 SAP Developer System
 
 **Field** | **Value**
 ---- | ----
 Name | `APIM_Endpoint_Trial`
 Type | HTTP
 Description | Destination to API Portal
-URL | `https://trial.apim1.hanatrial.ondemand.com:443`
+URL | `https://<your-P-user>trial-trial.apim1.hanatrial.ondemand.com:443`
 Proxy Type | Internet
 Authentication | Basic
 Username | `<Your SAP Cloud Platform Username>`
 Password | `<Your SAP Cloud Platform Password>`
+
+Your URL for this destination can be found in the Test page of the API Portal. It should be your Proxy alias, host name, and port number. Verify that this is correct before using the destination.
 
 ![Enter values](09-Destination2.png)
 
@@ -153,6 +145,7 @@ Click on **Save**.
 
 ![Click on Save](12-ClickSave2.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -170,6 +163,7 @@ Click on **Open SAP Web IDE**
 
 ![Open SAP Web IDE](15-OpenWebIDE.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -179,6 +173,7 @@ Click on **`File > New > Project from Template`**.
 
 ![Create new Template](16-NewProject.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -188,6 +183,7 @@ From the Template Selection windows click on **SAP Fiori Master-Detail Applicati
 
 ![Select Master Detail template](17-MasterDetail.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -197,6 +193,7 @@ Enter a project name: **`SAPWebIDEviaAPIManagement`** and click on **Next**.
 
 ![Enter name and click on Next](18-NameNext.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -206,15 +203,17 @@ From the **Service Catalog** drop-down, select the **Destination to API Develope
 
 ![Select Destination to API Developer Portal](19-DevPortalDestination.png)
 
+[DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Select service and subscribe)]
 
-Select the **`GWSAMPLE_BASIC`** API Proxy created in [Create an API Proxy](http://www.google.de)   https://www.sap.com/developer/tutorials/hcp-apim-create-api.html) and click on **Subscribe**. From there select the related Product from [Add the API Proxy](http://www.google.de)  https://www.sap.com/developer/tutorials/hcp-apim-create-product.html)
+Select the **`GWSAMPLE_BASIC`** API Proxy created in [Create an API Proxy](https://www.sap.com/developer/tutorials/hcp-apim-create-api.html) and click on **Subscribe**. From there select the related Product from [Add the API Proxy](https://www.sap.com/developer/tutorials/hcp-apim-create-product.html)
 
 ![Select service and click on Subscribe](20-Subscribe.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -224,6 +223,7 @@ Click on **Next**
 
 ![Click on Next](22-ApplicationNext.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -251,6 +251,7 @@ and click on **Finish**
 
 ![Enter mapping information](23-EnterMappings.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -260,6 +261,7 @@ Double click on the **`manifest.json`** file from **`SAPWebIDEviaAPIManagement`*
 
 ![Open manifest.json](24-Openmanifest.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -269,6 +271,7 @@ Switch to the *Code Editor* view by clicking on **Code Editor**
 
 ![Switch to Code Editor](25-CodeEditor.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -286,6 +289,7 @@ Search for **`sap.ui5`** and go to the **models** section. There add the followi
 
 ![Add Code snippet](26-AddCodeTemplate.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -295,6 +299,7 @@ In order to get the API Key you need to open the **API Developer Portal** in a n
 
 ![Switch to Developer Portal](27-DevPortal.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -304,6 +309,7 @@ Click on the **Hamburger menu** and click on **Consume**
 
 ![Click on Consume](28-ClickOnConsume.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -313,6 +319,7 @@ Click on the Application **`SAPWebIDEviaAPIManagement`** which was automatically
 
 ![Open Application](29-OpenApplication.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -322,6 +329,7 @@ Mark and copy the **Application key**
 
 ![Copy Application Key](30-AppKey.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -335,6 +343,7 @@ Click on **Save**
 
 ![Save in Web IDE](32-WebIdeSave.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -344,10 +353,11 @@ Right click on the **Project** and select **Run > App in FLP Sandbox**
 
 ![Run the project](33-RunTheProject.png)
 
-You should see a Fiori app connecting via SAP API Management to the SAP Gateway Developer System ES4.
+You should see a Fiori app connecting via SAP API Management to the SAP Gateway Developer System ES5.
 
 ![See results](34-ResultsInFioriApp.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -355,4 +365,4 @@ You should see a Fiori app connecting via SAP API Management to the SAP Gateway 
 
 ## Next Steps
 - This is the end of this series
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

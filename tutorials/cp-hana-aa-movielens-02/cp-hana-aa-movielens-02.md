@@ -6,11 +6,14 @@ primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
+## Next Steps
+- [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://www.sap.com/developer/groups/cp-hana-aa-movielens.html)
+
 ## Details
-### You will learn  
+### You will learn
 
 - Understand the basics about recommendation engines
 - Which statistics can help you better understand the structure of the dataset
@@ -101,16 +104,12 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 >**Make sure the currently connected user is `MOVIELENS_USER` and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
 >
 
-&nbsp;
-
 First, let's count the rows in each table.
 
 Open a new **SQL Console** using the ![sql](0-opensqlconsole.png) icon from the menu or reuse an existing one.
 
 > ### **Note**
 >For each of the next steps, you can decide to open a new **SQL Console** using the ![sql](0-opensqlconsole.png) icon from the menu or reuse the same one by replacing its current over and over.
-
-&nbsp;
 
 Paste the following content in the console, and use the execute icon ![run](0-run.png) from the menu.
 
@@ -128,10 +127,10 @@ The result should be:
 
 table name | row count
 -----------|-----------
-links      | 9125    
-movies     | 9125    
-ratings    | 100004  
-tags       | 1296    
+links      | 9125
+movies     | 9125
+ratings    | 100004
+tags       | 1296
 
 Here are a few conclusion we can make upfront:
 
@@ -151,17 +150,17 @@ Let's verify that every movie has a corresponding link and vice-versa using the 
 
 ```SQL
 select count(1)
-from "MOVIELENS"."public.aa.movielens.service::data.LINKS" l
-where not exists (select 1 from "MOVIELENS"."public.aa.movielens.service::data.MOVIES" m where l."MOVIEID" = m."MOVIEID")
+from "MOVIELENS"."public.aa.movielens.hdb::data.LINKS" l
+where not exists (select 1 from "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" m where l."MOVIEID" = m."MOVIEID")
 UNION ALL
 select count(1)
-from "MOVIELENS"."public.aa.movielens.service::data.MOVIES" m
-where not exists (select 1 from "MOVIELENS"."public.aa.movielens.service::data.LINKS" l where l."MOVIEID" = m."MOVIEID");
+from "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" m
+where not exists (select 1 from "MOVIELENS"."public.aa.movielens.hdb::data.LINKS" l where l."MOVIEID" = m."MOVIEID");
 ```
 
-Based on the result, it seems that there is no movies without a link and vice-versa.
+Based on the result, it seems that there isn't any movies with no links and vice-versa.
 
-So when building our application, we will be able to leverage these URL and enhance our user experience with external links.
+So, when building our application, we will be able to leverage these URL and enhance our user experience with external links.
 
 [DONE]
 [ACCORDION-END]
@@ -176,7 +175,7 @@ Anyway, let's check if all movies have genres with the following SQL:
 
 ```SQL
 SELECT COUNT(1)
-FROM "MOVIELENS"."public.aa.movielens.service::data.MOVIES"
+FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES"
 WHERE "GENRES" IS NULL OR LENGTH("GENRES")=0;
 ```
 
@@ -191,7 +190,7 @@ BEGIN
   DECLARE tmp NVARCHAR(255);
   DECLARE idx INTEGER;
   DECLARE sep NVARCHAR(1) := '|';
-  DECLARE CURSOR cur FOR SELECT DISTINCT "GENRES" FROM "MOVIELENS"."public.aa.movielens.service::data.MOVIES";
+  DECLARE CURSOR cur FOR SELECT DISTINCT "GENRES" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES";
   DECLARE genres NVARCHAR (255) := '';
   idx := 1;
   FOR cur_row AS cur() DO
@@ -227,7 +226,7 @@ BEGIN
   DECLARE tmp NVARCHAR(255);
   DECLARE idx INTEGER;
   DECLARE sep NVARCHAR(1) := '|';
-  DECLARE CURSOR cur FOR SELECT DISTINCT "GENRES" FROM "MOVIELENS"."public.aa.movielens.service::data.MOVIES";
+  DECLARE CURSOR cur FOR SELECT DISTINCT "GENRES" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES";
   DECLARE genres NVARCHAR (255) := '';
   idx := 1;
   FOR cur_row AS cur() DO
@@ -263,7 +262,7 @@ SELECT
   , "TITLE"
   , OCCURRENCES_REGEXPR('[|]' IN GENRES) + 1 "GENRE_COUNT"
   , "GENRES"
-FROM "MOVIELENS"."public.aa.movielens.service::data.MOVIES"
+FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES"
 ORDER BY "GENRE_COUNT" ASC;
 ```
 
@@ -287,7 +286,7 @@ SELECT
 FROM (
   SELECT
     OCCURRENCES_REGEXPR('[|]' IN "GENRES") + 1 "GENRE_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.service::data.MOVIES"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES"
 )
 GROUP BY "GENRE_COUNT" ORDER BY "GENRE_COUNT";
 ```
@@ -313,7 +312,7 @@ Now let's have a look at the tags distribution using the following SQL:
 SELECT COUNT(1)
 FROM (
   SELECT "MOVIEID", COUNT(1) as "TAG_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.service::data.TAGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.TAGS"
   GROUP BY "MOVIEID"
 );
 ```
@@ -326,7 +325,7 @@ Now let's determine the tag count distribution per movies using the following SQ
 SELECT "TAG_COUNT", COUNT(1)
 FROM (
   SELECT "MOVIEID", COUNT(1) as "TAG_COUNT"
-  FROM "MOVIELENS"."public.aa.movielens.service::data.TAGS"
+  FROM "MOVIELENS"."public.aa.movielens.hdb::data.TAGS"
   GROUP BY "MOVIEID"
 )
 GROUP BY "TAG_COUNT" ORDER BY "TAG_COUNT";
@@ -339,8 +338,6 @@ Based on the elements gathered over the last steps, you can consider that the ta
 Also the tag data can only be used to address a content-based filtering approach.
 
 > **Idea**: you could eventually join the tags and the genres data together to expand the movie set coverage
-
-&nbsp;
 
 Using the results provided by the previous SQL statements, provide an answer to the question below then click on **Validate**.
 
@@ -567,8 +564,6 @@ But the average is 200/5 = 40 which is really far from the maximum. Actually wit
 >
 >Definition by the author, `Abdel Dadouche` (not meant to be fully scientific & open to discussions)
 
-&nbsp;
-
 Based on the elements gathered over the last few steps, and despite some of the phenomenon assessed in the data, we can consider that the rating dataset on its own is a possible candidate to build a solid recommendation engine.
 
 Again, we could eventually combine it to the tags and the genres and improve the overall recommendation results by increasing the result coverage in terms of users or movies.
@@ -596,8 +591,6 @@ However, while using this data will, you will need to pay attention to the follo
 >We consider a node to be a mega-hub when the number of links to other node is above a threshold. Theses node are usually excluded from analysis as they can severely impact the quality of a model.
 >
 >For example if we try to analyze grocery receipts, you can agree that many customer will "buy" a plastic bags (at least in France because we have a tendency to leave them in the car). But as an item it doesn't make sense to use it as it will be linked to many users and therefore many other items.
-
-&nbsp;
 
 [DONE]
 [ACCORDION-END]

@@ -2,6 +2,7 @@
 title: Introduction to Hibernate
 description: This tutorial gives a short introduction to the concepts of the Hibernate ORM (Object/Relational Mapping) framework.
 primary_tag: products>sap-hana
+auto_validation: true
 tags: [  tutorial>beginner, topic>java, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
@@ -14,7 +15,7 @@ tags: [  tutorial>beginner, topic>java, products>sap-hana, products>sap-hana\,-e
 In this tutorial you will learn the basic concepts of the Hibernate ORM (Object/Relational Mapping) framework.
 
 ### Time to Complete
-**10 Min**
+**5 Min**
 
 [ACCORDION-BEGIN [Step 1: ](The Hibernate ORM framework)]
 
@@ -22,21 +23,44 @@ In this tutorial you will learn the basic concepts of the Hibernate ORM (Object/
 
 ![Hibernate architecture](hana-hibernate-architecture.png)
 
-The Hibernate framework presents the user with an abstraction of the database thereby freeing the user from knowing too many details about the representation of the data in the database. The user only deals with the objects of the object-oriented model and can stay entirely within the concepts of the Java programming language.
+The Hibernate framework presents the user with an abstraction of the database thereby freeing the user from knowing too many details about the representation of the data in the database.
 
-The Hibernate framework thus solves the so called "[object-relational impedance mismatch](http://hibernate.org/orm/what-is-an-orm/#the-object-relational-impedance-mismatch)", i.e. it takes care of the conceptual differences between the object-oriented model and the relational model. The database specifics are implemented as so-called dialects that are called by the Hibernate core to generate valid SQL statements for the different database systems.
+The user only deals with the objects of the object-oriented model and can stay entirely within the concepts of the Java programming language.
 
-The general concept of object-relational mapping has been standardized in Java by the [Java Persistence API (JPA)](https://jcp.org/en/jsr/detail?id=338). Hibernate is also an implementation of the JPA and can therefore be used with any JPA-compliant application.
+The Hibernate framework thus solves the so called "[object-relational impedance mismatch](http://hibernate.org/orm/what-is-an-orm/#the-object-relational-impedance-mismatch)", i.e. it takes care of the conceptual differences between the object-oriented model and the relational model.
 
+The database specifics are implemented as so-called dialects that are called by the Hibernate core to generate valid SQL statements for the different database systems.
+
+The general concept of object-relational mapping has been standardized in Java by the [Java Persistence API (JPA)](https://jcp.org/en/jsr/detail?id=338).
+
+Hibernate is also an implementation of the JPA and can therefore be used with any JPA-compliant application.
+
+Provide an answer to the question below then click on **Validate**.
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Entities)]
 
-The core concept of the Hibernate domain model is the notion of an entity. An entity in the object-oriented model is usually an object which maps to a table row in the relational model. The entity's structure is defined by the corresponding class which is mapped to a database table.
+The core concept of the Hibernate domain model is the notion of an entity.
 
-Entities are objects that don't depend on other objects. They are identified by a unique identifier and usually contain the data that the application needs to be persisted. The data persisted in the database corresponding to an entity can be manipulated (created, altered, retrieved, deleted) via the Hibernate framework.
+An entity in the object-oriented model is usually an object which maps to a table row in the relational model.
 
-Entities are defined in the object-oriented model by means of Java annotations. The minimum required annotation is `@javax.persistence.Entity` which declares a class an entity. The identifier of the entity is specified using the `@javax.persistence.Id` annotation. There are many more annotations available that allow for a high degree of customization.
+The entity's structure is defined by the corresponding class which is mapped to a database table.
+
+Entities are objects that don't depend on other objects.
+
+They are identified by a unique identifier and usually contain the data that the application needs to be persisted.
+
+The data persisted in the database corresponding to an entity can be manipulated (created, altered, retrieved, deleted) via the Hibernate framework.
+
+Entities are defined in the object-oriented model by means of Java annotations.
+
+The minimum required annotation is `@javax.persistence.Entity` which declares a class an entity.
+
+The identifier of the entity is specified using the `@javax.persistence.Id` annotation.
+
+There are many more annotations available that allow for a high degree of customization.
 
 An example of an entity could be a person, an address, a phone number, etc. which would be transposed like this in your Java code:
 
@@ -62,15 +86,26 @@ public class PhoneNumber {
 }
 ```
 
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Associations)]
 
-A domain model usually defines relation between different entities. These relations are represented in the Hibernate model by different types of associations. These association types include one-to-one, one-to-many, many-to-one, and many-to-many.
+A domain model usually defines relation between different entities.
 
-In the object-oriented model the associations are usually members of a class (simple objects or lists or sets of objects, depending on the type of association). The associations are mapped to the relational model by means of intermediary tables and/or foreign key relations.
+These relations are represented in the Hibernate model by different types of associations.
 
-Like entities associations are defined in the Hibernate model via Java annotations. The annotations corresponding to the above associations are `@javax.persistence.OneToOne`, `@javax.persistence.OneToMany`, `@javax.persistence.ManyToOne`, and `@javax.persistence.ManyToMany`.
+These association types include one-to-one, one-to-many, many-to-one, and many-to-many.
+
+In the object-oriented model the associations are usually members of a class (simple objects or lists or sets of objects, depending on the type of association).
+
+The associations are mapped to the relational model by means of intermediary tables and/or foreign key relations.
+
+Like entities associations are defined in the Hibernate model via Java annotations.
+
+The annotations corresponding to the above associations are `@javax.persistence.OneToOne`, `@javax.persistence.OneToMany`, `@javax.persistence.ManyToOne`, and `@javax.persistence.ManyToMany`.
 
 An example for an association is a one-to-many association between a person and a phone number, i.e. a person can have one or more phone numbers, and this would be transposed like this in your Java code:
 
@@ -98,17 +133,22 @@ public class PhoneNumber {
 }
 ```
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](The Hibernate Session)]
 
 At application boot time the model is read from the Java classes by the Hibernate framework and transformed into a runtime representation.
 
-This runtime representation is created and validated by a Hibernate `SessionFactory` instance. The `SessionFactory` instance can then be used to create Hibernate Session objects which can be used to interact with the database. The Hibernate `Session` object provides methods for reading and writing data as well as querying capabilities.
+This runtime representation is created and validated by a Hibernate `SessionFactory` instance.
+
+The `SessionFactory` instance can then be used to create Hibernate Session objects which can be used to interact with the database.
+
+The Hibernate `Session` object provides methods for reading and writing data as well as querying capabilities.
 
 The JPA equivalent of the Hibernate `SessionFactory` is the `EntityManagerFactory`, the JPA equivalent of the Hibernate `Session` is the `EntityManager`.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Queries)]
@@ -146,6 +186,7 @@ query.setParameter( 1, "John Doe" );
 Person johnDoe = query.uniqueResult();
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Optional: ](Hibernate References)]
@@ -155,5 +196,5 @@ More information about Hibernate can be found using the following links:
  - [Hibernate ORM website](http://hibernate.org/orm/)
  - [Hibernate documentation](http://hibernate.org/orm/documentation/),
  - [Hibernate user guide](http://docs.jboss.org/hibernate/orm/current/userguide/html_single/Hibernate_User_Guide.html).
-
+[DONE]
 [ACCORDION-END]

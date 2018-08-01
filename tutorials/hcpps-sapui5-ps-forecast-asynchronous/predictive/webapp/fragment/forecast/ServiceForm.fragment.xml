@@ -1,5 +1,5 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:form="sap.ui.layout.form">
-	<form:Form editable="true" >
+	<form:Form editable="true">
 		<form:title>
 			<core:Title text="Forecast service parameters"/>
 		</form:title>
@@ -38,6 +38,30 @@
 					<form:FormElement label="Number of Forecast">
 						<form:fields>
 							<Input id="idFormNumberOfForecasts" value="10"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Maximum Lag">
+						<form:fields>
+							<Input id="idFormMaximumLag" value="200"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Number of past data to return">
+						<form:fields>
+							<Input id="idFormNumberOfPastValuesInOutput" value="0"/>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Forecast Method">
+						<form:fields>
+							<Select id="idFormForecastMethod" forceSelection="true" selectedKey="{dataset_fragment>/ForecastMethod}">
+								<core:Item key="default" id="default" text="All"/>
+								<core:Item key="smoothing" id="smoothing" text="Smoothing"/>
+								<core:Item key="linear regression" id="linearregression" text="Linear Regression"/>
+							</Select>
+						</form:fields>
+					</form:FormElement>
+					<form:FormElement label="Cycle Length (for Smoothing)" visible="{= ${dataset_fragment>/ForecastMethod} === 'smoothing'}">
+						<form:fields>
+							<Input id="idFormSmoothingCycleLength" value="10" />
 						</form:fields>
 					</form:FormElement>
 				</form:formElements>

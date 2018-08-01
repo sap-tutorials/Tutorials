@@ -1,8 +1,8 @@
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
-	"sap/m/MessageToast",
+	"sap/m/MessageBox",
 	"sap/m/Image"
-], function(Controller, MessageToast, Image) {
+], function(Controller, MessageBox, Image) {
 	"use strict";
 	return Controller.extend("sapui5ml.controller.demo", {
 
@@ -87,7 +87,6 @@ sap.ui.define([
 					text += seriesSeparator;
 				}
 			}
-
 			// call the service and define call back methods
 			$.ajax({
 				headers: {
@@ -101,18 +100,18 @@ sap.ui.define([
 						oView.getModel("demo").getProperty("/options/series_separator") + "\"}",
 					"texts": text
 				}),
-				async: false,
+				async: true,
 				success: function(data) {
 					try {
 						//get the result size
-						var iRowCount = data.response[0].split(",").length;
-						var iColCount = data.response.length;
+						var iRowCount = data.predictions[0].split(",").length;
+						var iColCount = data.predictions.length;
 
 						var oSeriesCol = new Array(iColCount);
 						var oSeriesRow = new Array(iRowCount);
 
 						// build the array to store the result data
-						for (var iCol = 0; iCol < data.response.length; iCol++) {
+						for (var iCol = 0; iCol < data.predictions.length; iCol++) {
 							var oCol = {
 								"colid": iCol
 							};
@@ -128,8 +127,8 @@ sap.ui.define([
 						}
 
 						// get the reslt data
-						for (var iColValue = 0; iColValue < data.response.length; iColValue++) {
-							var row = data.response[0].split(",");
+						for (var iColValue = 0; iColValue < data.predictions.length; iColValue++) {
+							var row = data.predictions[0].split(",");
 							for (var iRowValue = 0; iRowValue < row.length; iRowValue++) {
 								oSeriesCol[iColValue].rows[iRowValue] = row[iRowValue];
 								oSeriesRow[iRowValue].cols[iColValue] = row[iRowValue];
@@ -142,12 +141,12 @@ sap.ui.define([
 						oView.getModel("demo").setProperty("/hasResult", true);
 						oBusyIndicator.close();
 					} catch (err) {
-						MessageToast.show("Caught - [ajax error] :" + err.message);
+						MessageBox.show("Caught - [ajax error] : " + err.message);
 					}
 					oBusyIndicator.close();
 				},
 				error: function(request, status, error) {
-					MessageToast.show("Caught - [ajax error] :" + request.responseText);
+					MessageBox.show("Caught - [ajax error] : " + request.responseText);
 					oBusyIndicator.close();
 				}
 			});

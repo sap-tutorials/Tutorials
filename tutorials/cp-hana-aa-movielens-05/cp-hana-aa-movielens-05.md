@@ -6,11 +6,14 @@ primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
+## Next Steps
+- [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://www.sap.com/developer/groups/cp-hana-aa-movielens.html)
+
 ## Details
-### You will learn  
+### You will learn
 
 - How to setup your SAP HANA XS OData service to be used in your SAPUI5 application
 
@@ -31,8 +34,6 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 
 > ### **Note**
 >**Make sure the currently connected user is `MOVIELENS_USER` and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
-
-&nbsp;
 
 [DONE]
 [ACCORDION-END]
@@ -68,7 +69,7 @@ SELECT DISTINCT
   , "T2". "TITLE"
   , "T2". "GENRES"
   , "T3". "IMDBID"
-  , "T3". "TMDBID"       
+  , "T3". "TMDBID"
   , COUNT(1)               over( PARTITION BY "T1"."MOVIEID" ) AS "RATING_COUNT"
   , AVG("RATING")          over( PARTITION BY "T1"."MOVIEID" ) AS "RATING_AVG"
   , NTH_VALUE("TIMESTAMP",1) over( PARTITION BY "T1"."MOVIEID"  ORDER BY "T1"."TIMESTAMP" DESC, "T1"."MOVIEID") AS "LAST_RATING_DATE"
@@ -91,8 +92,8 @@ SELECT
   , "T2"."TITLE"
   , "T2"."GENRES"
   , "T3"."IMDBID"
-  , "T3"."TMDBID"       
-  , "T1"."RATING"  
+  , "T3"."TMDBID"
+  , "T1"."RATING"
   , "T1"."TIMESTAMP"
 FROM "MOVIELENS"."public.aa.movielens.hdb::data.RATINGS" "T1"
 LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" "T2" on ("T1".MOVIEID = "T2".MOVIEID)
@@ -101,8 +102,6 @@ LEFT OUTER JOIN "MOVIELENS"."public.aa.movielens.hdb::data.LINKS"  "T3" on ("T1"
 
 > ### **Note**
 >You may receive a series of errors and warnings in the console log while running the above code. They should all be related to the drop statements at the beginning which are intended to help you re-run the script if needed.
-
-&nbsp;
 
 [DONE]
 [ACCORDION-END]
@@ -122,8 +121,6 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 > ### **Note**
 >**Make sure the currently connected user is `MOVIELENS_USER` and not SYSTEM**. Check the upper right corner of the SAP HANA Web-based Development Workbench.
 
-&nbsp;
-
 [DONE]
 [ACCORDION-END]
 
@@ -138,8 +135,6 @@ Else, if you are already accessing one of the perspective, then use the ![plus](
 >SAP HANA version 1.0 SPS 12 currently supports OData version 2.0.
 >
 >To create an OData service, you create a flat file that contains the set of OData service. You save this file with the suffix `.xsodata` in the appropriate package for your application in the SAP HANA repository.
-
-&nbsp;
 
 Create a new file named **`data.xsodata`** in the **`public/aa/movielens/service`** package.
 

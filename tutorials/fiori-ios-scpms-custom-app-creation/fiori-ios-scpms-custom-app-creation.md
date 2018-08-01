@@ -1,6 +1,7 @@
 ---
 title: Create custom iOS app with SDK Assistant
 description: Create an Xcode project with SDK Assistant, remove all generated UI parts, and create a custom built UI instead.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -117,8 +118,7 @@ Enter the following details:
 Click **Next** to advance to the **Cloud Configuration** step.
 
 
-[VALIDATE_3]
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Cloud Configuration details)]
@@ -757,7 +757,7 @@ If you now open the standard **Reminders** app on the device, your reminders are
 ![Build and run the app](fiori-ios-scpms-custom-app-creation-35.png)
 
 
-[DONE]
+[VALIDATE_20]
 [ACCORDION-END]
 
 

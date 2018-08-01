@@ -1,15 +1,15 @@
 ---
-title: Intro to SAP HANA Spatial – Spatial columns
-description: Using table columns that support spatial data
+title: Spatial columns
+description: Using columns to store and process spatial data in tables
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
-- **Tutorials:** [Intro to SAP HANA Spatial: Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
+- **Tutorials:** [Polygons](https://www.sap.com/developer/tutorials/hana-spatial-intro3-polygon.html)
 
 ## Next Steps
-- [Intro to SAP HANA Spatial: Z and M coordinates](https://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
+- [Spatial Z and M coordinates](https://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
 
 ## Details
 ### You will learn  
@@ -20,19 +20,7 @@ In previous tutorials you learned how to create spatial objects and run selected
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a schema)]
-
-For the purpose of this tutorial, create a schema `TESTSGEO` or use any other schema in your instance, where you have privileges for creating tables.
-
-```sql
-CREATE SCHEMA TESTSGEO;
-SET SCHEMA TESTSGEO;
-```
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Review spatial types)]
+[ACCORDION-BEGIN [Step 1: ](Review spatial types)]
 
 The following spatial types can be used in column tables in SAP HANA:
 - `ST_POINT`,
@@ -57,17 +45,28 @@ Object-oriented properties of spatial data types:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Load data into table)]
+[ACCORDION-BEGIN [Step 2: ](Create a table and load sample data)]
+
+For the purpose of this tutorial, create a schema `TESTSGEO` or use any other schema in your instance, where you have privileges for creating tables.
+
+```sql
+CREATE SCHEMA TESTSGEO;
+SET SCHEMA TESTSGEO;
+```
 
 Create and load data into the `SpatialShapes` table. This example is taken from the SAP HANA Spatial Reference, so that you can run exercises from the official help as well.
 
 ```sql
 CREATE COLUMN TABLE SpatialShapes
 (
-ShapeID integer,
- shape ST_GEOMETRY
+  ShapeID integer,
+  shape ST_GEOMETRY
 );
+```
 
+Insert following sample data.
+
+```sql
 -- a set of points
 INSERT INTO SpatialShapes VALUES(1,  NEW ST_POINT('POINT(2.5 3.0)'));
 INSERT INTO SpatialShapes VALUES(2,  NEW ST_POINT('POINT(3.0 4.5)'));
@@ -94,7 +93,7 @@ Now, check the shapes you loaded, including types of geometries and which geomet
 
 ```sql
 SELECT SHAPEID, SHAPE.ST_asWKT(), SHAPE.ST_GeometryType(), SHAPE.ST_isEmpty()
-FROM SPATIALSHAPES;
+FROM "TESTSGEO"."SPATIALSHAPES";
 ```
 
 ![Dataset select](spatial0402.jpg)
@@ -102,17 +101,66 @@ FROM SPATIALSHAPES;
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Review aggregation methods)]
+[ACCORDION-BEGIN [Step 3: ](Geospatial data validation)]
+
+>Geospatial data validation is a new feature of SAP HANA 2.0 SPS 2, and therefore this step is valid only if you run this or later version of the software.
+
+Consider following example.
+
+```sql
+SELECT NEW ST_LINESTRING('LINESTRING(1.0 2.0, 1.0 2.0)').st_IsValid() from dummy;
+```
+
+The result of the query is `0`, meaning the shape is not valid. Indeed the beginning and end points of a single line string cannot be the same.
+
+Now insert this string into the table.
+```sql
+INSERT INTO SpatialShapes VALUES(100,  NEW ST_LINESTRING('LINESTRING(1.0 2.0, 1.0 2.0)'));
+```
+
+The insert will be successful and the new row with the invalid shape is added to the table. This is because by default there is no additional validation done on spatial columns as can be seen in the view `ST_GEOMETRY_COLUMNS`.
+
+```sql
+SELECT TABLE_NAME, COLUMN_NAME, VALIDATION
+FROM ST_GEOMETRY_COLUMNS
+WHERE SCHEMA_NAME='TESTSGEO' and TABLE_NAME='SPATIALSHAPES';
+```
+
+Alter the definition of the table's column to do validation checks now. Check how values are changes in the view `ST_GEOMETRY_COLUMNS`.
+
+```sql
+ALTER TABLE "TESTSGEO"."SPATIALSHAPES" ALTER ("SHAPE" ST_GEOMETRY(0) VALIDATION FULL);
+```
+
+Try to insert invalid shape into the column once again.
+
+```sql
+INSERT INTO SpatialShapes VALUES(101,  NEW ST_LINESTRING('LINESTRING(1.0 2.0, 1.0 2.0)'));
+```
+
+This time you should receive an error message, like following: `spatial error: The geometry is considered invalid by function ST_IsValid, but only valid geometries are allowed for column...`
+
+>Altering column for turn validation does not do revalidation of already inserted data and applies only to new and modified data.
+
+Remove these test records from the table as they won't be needed in further exercises.
+
+```sql
+DELETE FROM "TESTSGEO"."SPATIALSHAPES" WHERE "SHAPEID" > 15;
+```
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Aggregate shapes from a spatial column using union)]
 
 When you need to combine multiple shapes into one you can use different set operations and aggregation methods.
 
-Aggregation methods are executed on spatial columns of tables in SAP HANA.
+**Aggregation methods** are executed on spatial columns of tables in SAP HANA.
 
-`ST_UnionAggr()` returns the spatial union of all of the geometries in a group.
+`ST_UnionAggr()` returns the spatial union of all of the geometries in a column.
 
 ```sql
 SELECT ST_UnionAggr(SHAPE).ST_asWKT() as UnionAggr
-FROM SPATIALSHAPES
+FROM "TESTSGEO"."SPATIALSHAPES"
 WHERE SHAPE.ST_isEmpty()=0 and SHAPE.ST_GeometryType() = 'ST_LineString';
 ```
 
@@ -124,22 +172,25 @@ Presented graphically, it looks like the diagram below:
 
 Also note that spatial predicates were used in the query above to select only geometries of type `LineString` type and only those that are not empty.
 
+**Check your knowledge**
+1. Query the union aggregation of polygons only from the table.
+2. Query the union aggregation of boundaries of polygons from the table.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Additional aggregation methods)]
 
-Two more important aggregate methods are
-- `ST_ConvexHullAggr()` which returns the convex hull for all of the geometries in a group, known as "rubber band" method,
-- `ST_EnvelopeAggr()` which returns the bounding rectangle for all of the geometries in a group.
+Two other important **aggregate methods** are
+- `ST_EnvelopeAggr()` which returns the bounding rectangle for all of the geometries in a group,
+- `ST_ConvexHullAggr()` which returns the convex hull for all of the geometries in a group, known as "rubber band" method.
 
-Execute this query to best illustrate both types of aggregations. It uses the set operation method `ST_Union()` to return the geometry value that represents the point set union of two geometries.
+Execute this query to best illustrate both types of aggregations. It uses the **set operation method** `ST_Union()` to return the geometry value that represents the point set union of two geometries.
 
 ```sql
 SELECT
 ST_ConvexHullAggr(SHAPE).ST_Boundary().ST_Union(ST_UnionAggr(SHAPE)).ST_asWKT() as ConvexHullAggr,
 ST_EnvelopeAggr(SHAPE).ST_Boundary().ST_Union(ST_UnionAggr(SHAPE)).ST_asWKT() as EnvelopeAggr
-FROM SPATIALSHAPES
+FROM "TESTSGEO"."SPATIALSHAPES"
 WHERE SHAPE.ST_isEmpty()=0 and SHAPE.ST_GeometryType() = 'ST_LineString';
 ```
 
@@ -165,4 +216,4 @@ And the result of `ST_EnvelopeAggr()`:
 - Read [SAP HANA Spatial Reference](https://help.sap.com/viewer/cbbbfc20871e4559abfd45a78ad58c02/latest/en-US)
 
 ## Next Steps
-- [Intro to SAP HANA Spatial: Z and M coordinates](https://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)
+- [Z and M coordinates](https://www.sap.com/developer/tutorials/hana-spatial-intro5-z-m-coordinates.html)

@@ -2,6 +2,7 @@
 title: Testing API Business Hub APIs with Curl
 description: Try out an SAP API locally on your machine.
 primary_tag: products>sap-cloud-platform
+auto_validation: true
 tags: [  tutorial>beginner, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
@@ -35,7 +36,7 @@ In the pop-up window, you will find your API Key. Click the **Copy to Clipboard*
 
 **Copy you application key into a text editor.** You will need it later. Close the API key window once you have your API key.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Generate sample API call code)]
@@ -51,7 +52,7 @@ Select **Curl** and then **Copy to Clipboard**.
 
 ![generated code examples in Curl](3.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 
@@ -70,7 +71,7 @@ Hit **Enter** to run the command. It may take a few seconds before data is seen 
 
 > **New to Curl?**: If you are new to Curl or are running into issues where your command line is saying the command curl does not exist, please visit the [Curl website](https://curl.haxx.se/). The Curl website contains documentation about client-side URL transfers and how to install it on your machine.   
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Try adding a parameter to the API call)]
@@ -82,7 +83,7 @@ Remember the parameters you set when testing in the API Business Hub? Try adding
 
 **Stuck?** Move on to the next step.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add multiple parameters to the API call)]
@@ -118,7 +119,7 @@ If you just add in the above line and try to run the code, you will find it does
 
 ![results for top 5 results with 3 selected fields](14.png)
 
-
+[VALIDATE_5]
 [ACCORDION-END]
 
 

@@ -1,8 +1,9 @@
 ---
 title: Enable, deploy and configure the SAP Predictive services
 description: Enable, deploy and configure the SAP Predictive services
-primary_tag: products>sap-cloud-platform-predictive-service
-tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-predictive-service]
+auto_validation: true
+primary_tag: products>sap-predictive-service
+tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, products>sap-predictive-service]
 ---
 
 ## Prerequisites
@@ -11,7 +12,7 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, 
 
 ## Next Steps
 
-- If you are running a developer account on the SAP Cloud Platform, you should continue with: [How to update the database pool configuration of the SAP Predictive services](https://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
+- If you are running a developer account on the SAP Cloud Platform, you should continue with: [How to update the database pool configuration of the SAP Predictive services](https://www.sap.com/developer/tutorials/hcpps-ps-configure-dbpool.html)
 - Then, you can move to one of the following groups:
     - [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
     - [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)
@@ -25,15 +26,15 @@ tags: [ tutorial>beginner, topic>machine-learning, products>sap-cloud-platform, 
   **10 minutes**
 
 [ACCORDION-BEGIN [Step 1: ](Enable the Predictive services)]
-Let's go back to the [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) with your free trial account on **Europe (Rot) - Trial** and access "Your Personal Developer Account".
+Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit Neo Trial</b></a> with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***.
 
-Click on your ***SAP Cloud Platform Account name*** as highlighted on the below screenshot.
-
-> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
-
-&nbsp;
+Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial* by default) as highlighted on the below screenshot.
 
 ![SAP Cloud Platform Cockpit](01.png)
+
+You are now in your ***SAP Cloud Platform developer*** account!
+
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
 
 On the left side bar, click on **Services**.
 
@@ -49,6 +50,7 @@ Click on **Enable**
 
 Once enable, you will need to deploy the ***Cloud for Predictive Analytics*** application.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Deploy the Predictive services application)]
@@ -78,45 +80,47 @@ Click on **OK** to confirm the deployment
 
 ![Cloud for Predictive Analytics](08.png)
 
+Once deployed, you will be provided with the **SAP Predictive Java application dashboard*** URL.
+
+![Cloud for Predictive Analytics](09.png)
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Configure the data source binding)]
 
-Once deployed, you will be provided with the ***Application Dashboard*** URL.
+Click on the **SAP Predictive Java application dashboard** previously displayed.
 
-Click on the highlighted link
-
-![Cloud for Predictive Analytics](09.png)
+![Cloud for Predictive Analytics](10.png)
 
 Now, you need to add you a data source binding to your trial HANA MDC instance.
 
 On the left side bar, navigate in **Configuration**, then click on **Data Source Binding**
 
-![Cloud for Predictive Analytics](10.png)
+![Cloud for Predictive Analytics](11.png)
+
+Click on **New Binding**
 
 The data source binding will allow the ***Cloud for Predictive Analytics*** application to locate the data to be consumed by the service and execute the ***SAP HANA Automated Predictive Library*** (`APL`) on it, but also to persist a set on internal tables.
 
 ![New Binding](12.png)
 
-Click on **New Binding**
+It should propose you by default your HANA MDC instance (named `mdc`) you just created.
 
-![New Binding](11.png)
-
-It should propose you by default your HANA MDC instance (named `mdc`) we just created.
-
-Enter your ***HANA User Account*** login (`PSTRIAL`) and password (`Welcome17Welcome17`).
+Enter your ***HANA User Account*** login (`PSTRIAL`) and password (`Welcome18Welcome18`).
 
 Click on **Save**
 
 ![Binding](13.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Assign the roles to your user)]
 
 Now, you need to configure security settings for your ***SAP Cloud Platform Account***.
 
-On the left side bar, navigate in **Security**, then click on **Roles**  
+On the left side bar, navigate in **Security**, then click on **Roles**
 
 Assign your user name to the **`C4PA-User`** role using the **Assign** button (make sure you are not including the 'trial' at the end).
 
@@ -130,20 +134,21 @@ The **`C4PA-User`** will enable your user to consume the services and the **`C4P
 >
 > Your ***SAP Cloud Platform Account User Name*** was displayed during the ***Deploy*** step.
 >
-> And in case you are using a trial account, make sure you don't include the "trial" at the end.
+> And in case you are using a trial account, make sure you don't include the ***trial*** word at the end.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Modify the Authentication scheme)]
 Now, you need to modify the authentication schemes for the `C4PA` application.
 
-This will simplify the way we will build a SAPUI5 application that consumes these services.
+This will simplify the way you will build a SAPUI5 application that consumes these services.
 
 On the left side bar, navigate in **Security**, then click on **Authentication Configuration**
 
 Click on **Activate Custom Configuration**.
 
-![Authentication](15.png?)
+![Authentication](15.png)
 
 Check **User name and password** and **Client certificate** for the ***FORM*** authentication scheme
 
@@ -151,10 +156,11 @@ Click on **Save**
 
 ![Authentication](15-1.png)
 
-Next, you will receive next an alert regarding the fact that the changes will be applied on the next restart, which is what we will do next.
+Next, you will receive next an alert regarding the fact that the changes will be applied on the next restart, which is what you will do next.
 
 ![Authentication](16.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Start the application)]
@@ -171,6 +177,9 @@ Once started, you will be provided with the **Application URLs** which will give
 
 Later, you will be using the ***Application URLs***, so you should save the highlighted URL in a notepad as your ***C4PA Application URL***.
 
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Verify the setup)]
@@ -185,13 +194,14 @@ Click on the **Administration** tile
 
 Status is green! Congrats, you have configured the SAP Predictive services on your SAP Cloud Platform account.
 
-![Application](20.png)   
+![Application](20.png)
 
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps
 
-- If you are running a developer account on the SAP Cloud Platform, you should continue with: [How to update the database pool configuration of the SAP Predictive services](https://www.sap.com/developer/how-tos/2017/03/hcpps-ps-configure-dbpool.html)
+- If you are running a developer account on the SAP Cloud Platform, you should continue with: [How to update the database pool configuration of the SAP Predictive services](https://www.sap.com/developer/tutorials/hcpps-ps-configure-dbpool.html)
 - Then, you can move to one of the following groups:
     - [Test the SAP Predictive services using a REST client](https://www.sap.com/developer/groups/ps-test-rest.html)
     - [Build an SAPUI5 application to interact with the SAP Predictive services](https://www.sap.com/developer/groups/ps-sapui5.html)

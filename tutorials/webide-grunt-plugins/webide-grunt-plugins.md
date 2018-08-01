@@ -2,16 +2,22 @@
 title: Adding Grunt Plugins (TypeScript) in SAP Web IDE
 description: This tutorial shows you how to reference other plugins in your Grunt build in SAP Web IDE, and to configure and run tasks in those plugins. Specifically, it shows you how to build TypeScript files into JavaScript.
 primary_tag: products>sap-web-ide
-tags: [  tutorial>Intermediate, topic>cloud, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>intermediate, topic>cloud, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
 - **Tutorials:** [Grunt Build in SAP Web IDE](https://www.sap.com/developer/tutorials/webide-grunt-basic.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details  
+### You will learn  
+- How to set up your project for running a Grunt build with multiple plugins
+- How to reference non-SAP Grunt plugins
+- How to configure your Grunt plugins
+- How to run a Grunt build
+
 SAP Web IDE provides a Grunt plugin for checking your JavaScript code (`lint`), removing previous builds (`clean`), and building your application (`build`). Of course, you may want to use your own Grunt plugin or one of hundreds publicly available. In SAP Web IDE, you can reference them, configure them, and run their tasks.
 
 In this tutorial, we will take a skeleton SAPUI5 project that displays a view with a title, and create a TypeScript class (`TitleGenerator`) to supply the title.
@@ -74,7 +80,7 @@ In the file enter the following code:
 	"private": true,
 	"dependencies": {
 		"grunt-ts": "X.X.X",
-		"@sap/grunt-sapui5-bestpractice-build": "^1.3.19"
+		"@sap/grunt-sapui5-bestpractice-build": "1.3.58"
 	}
 }
 ```
@@ -371,4 +377,4 @@ The method `getTitle()` is called from within the `View1` controller.
 [ACCORDION-END]
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

@@ -1,6 +1,7 @@
 ---
 title: Implement Fiori for iOS controls
 description: Implement Fiori for iOS controls
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -88,7 +89,7 @@ Then a reference is created to the Object Cell with identifier `FUIObjectTableVi
 
 Finally, now you have the reference to the Fiori Object Cell control, you then bind the model properties to the control properties and return the instance of that control.
 
-[DONE]
+[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Build and run the application)]

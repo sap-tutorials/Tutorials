@@ -1,6 +1,6 @@
 ---
-title: SAP HANA, express edition - Getting started with the Marketplace on Microsoft Azure
-description: Get your SAP HANA, express edition, instance from the launcher in MS Azure
+title: SAP HANA, express edition (Database services) - Getting started with the Marketplace on Microsoft Azure
+description: Get your SAP HANA, express edition instance from the launcher in MS Azure (Database server)
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---
@@ -11,9 +11,9 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 
 ## Next Steps
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.html)
-- **XS Advanced:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
-- **XS Advanced:** [Explore the administration cockpit in XS Advanced](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
+- **Drivers and connectors**: Connect to your SAP HANA, express edition system database instance [using the plug in for Eclipse](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) or connect to a [tenant database using HANA Studio](https://www.sap.com/developer/tutorials/hxe-gcp-eclipse-tenant-connect.html)
+- **Additional languages?**: Build applications using different drivers and languages [such as Node.js, Python ](https://www.sap.com/developer/groups/hxe-tiny-world.html)
 
 ## Details
 ### You will learn  
@@ -26,14 +26,14 @@ This tutorial will guide you through the provisioning and setup of SAP HANA, exp
 
 [ACCORDION-BEGIN [Step 1: ](Choose your instance)]
 
-Connect to your account in [MS Azure](https://portal.azure.com/) and click on **New**
+Connect to your account in [MS Azure](https://portal.azure.com/) and click **Create resource**
 
 ![Open the Marketplace](marketplace.png)
 
 You will be presented with **two options**:
 
-- **SAP HANA, express edition (server-only)**: You can connect using SQL clients like SAP HANA Studio or any other client. Includes the Predictive Analytic Library, Machine learning libraries and other advanced analytics.
-- **SAP HANA, express edition + XS Advanced Applications** (also referred to as XSA): Includes all of the other features plus the Cloud Foundry based development platform,  SAP Web IDE for SAP HANA, administration cockpit among other applications like SHINE and Smart Data Streaming. OData support, Node.js and Java runtime environments are also included. This option requires more resources.
+- **SAP HANA, express edition (server-only)**: You can connect using SQL clients like SAP HANA Studio or any other client. Includes the Predictive Analytic Library, Machine learning libraries and other advanced analytics. **This version is covered in this tutorial**.
+- **SAP HANA, express edition + XS Advanced Applications** (also referred to as XSA): Includes all of the other features plus the Cloud Foundry based development platform,  SAP Web IDE for SAP HANA, administration cockpit among other applications like SHINE and Smart Data Streaming. OData support, Node.js and Java runtime environments are also included. This option requires more resources. Use [this tutorial](https://www.sap.com/developer/tutorials/hxe-ms-azure-marketplace-xsa.html) to learn how to set this version up.
 
 
 In the search box, enter `HANA express`
@@ -41,7 +41,7 @@ In the search box, enter `HANA express`
 ![Search for HANA Express](marketplace1.png)
 
 
-**Click** on the option that best suits your needs.
+**Click** on `SAP HANA, express edition (server)`.
 
 
 [ACCORDION-END]
@@ -69,21 +69,20 @@ You can now enter a password or generate an SSH key. Complete all the fields and
 
 Step 2 in the wizard presents you with the pre-defined resources for your SAP HANA, express edition, instance. You can also review the pricing per month:
 
-For the server-only option:
-
-![review pricing](pricing.png)
-
-Or for the option with XS Advanced applications:
-
-![review pricing](pricing2.png)
+![review pricing](pricing_n.png)
 
 Click on **Select**.
 
-Step 3 will provide you with additional options. Generally, the default values should suit your needs. Review them and modify them if necessary. Click **OK** when ready:
+Step 3 will provide you with additional options. Choose the advanced network options:
+
+![Enable ports](nw_n.png)
+
+
+Generally, the rest of the default values should suit your needs. Review them and modify them if necessary. Click **OK** when ready:
 
 ![review options](3.png)
 
-Review the final summary and click on **Purchase** to continue:
+Review the final summary and pricing and click on **Create** to continue:
 
 ![final summary](4.png)
 
@@ -105,7 +104,7 @@ Take note of your external IP address:
 
       ![IP in PuTTY](ssh.png)
 
-      >Note: If you chose to use an SSH key as an authentication method, you will need to add it in `SSH->Auth`
+      Note: If you chose to use an SSH key as an authentication method, you will need to add it in `SSH->Auth`
 
 - If you are using an **Apple** computer, open a terminal (`Finder -> Applications -> Terminal`)
 
@@ -129,23 +128,69 @@ From the SSH console, enter the following command:
 
 You will be prompted for a password for the administration users. **Read the rules** carefully before selecting one:
 
-Password must be at least 8 characters in length.  It must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number.  Special characters are allowed, except `\` (backslash), `"` (double quotes), and `backtick`.
+> ### **Note: Please check the password policy to avoid errors**
+>
+> SAP HANA, express edition requires a very strong password that complies with these rules:
+>
+> - At least 8 characters
+> - At least 1 uppercase letter
+> - At least 1 lowercase letter
+> - At least 1 number
+> - Can contain special characters, but not _&grave;_ (backtick), _&#36;_ (dollar sign),  _&#92;_ (backslash), _&#39;_ (single quote), or _&quot;_ (double quotes)
+> - Cannot contain dictionary words
+> - Cannot contain simplistic or systematic values, like strings in ascending or descending numerical or alphabetical order
 
-> If you are installing the option with **XS Advanced applications**,  you will also be asked if you want to wait for the configuration to finish. If you choose not to, you can check the status of the installation using the command `cat /usr/sap/HXE/home/xsa_config_status`
+&nbsp;
 
-![Configuration in process](xsa.png)
-
-Once the configuration is finished, you will see the following message:
+Confirm the setup with **Y**. Once the configuration is finished, you will see a success message like the following one:
 
 ![Configuration successful](finished.png)
 
+Your SAP HANA, express edition database is now up and running.
 
+You can perform the optional setup steps below (recommended) or continue to [explore tutorials to get you started](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html) or perform the optional steps below.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Map the hosts file)]
+[ACCORDION-BEGIN [Step 6 (Optional): ](Change the password for the operating system user)]
 
-**This step is optional for server-only installations. You only need to do it if you chose the XS Advanced applications option**.
+The default password for the operating system administration user is `HXEHana1`. You can change it to one of your choice.
+
+Open a **new SSH session** and log in with user `hxeadm`.
+
+![Change password](change_password.png)
+
+>Alternatively, from a new SSH session, you can use command `sudo passwd hxeadm` to change the password.
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7 (Optional): ](Create a development user)]
+
+It is always safe to create a development user and even make a copy of the SYSTEM user to use as an administrator in case you somehow lock yourself out.
+
+In a new SSH console, switch to the user `hxeadm` and connect to the database as follows:
+
+```SSH
+sudo su - hxeadm
+
+hdbsql -i 90 -d SYSTEMDB -u SYSTEM
+```
+
+Enter the master password you chose at setup. When the `hdbsql` command prompt is ready, enter the following (replacing a the password and username for one of your choice):
+
+```SQL
+CREATE USER WORKSHOP_01 PASSWORD <password> NO FORCE_FIRST_PASSWORD_CHANGE ;
+
+CALL GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::EditorDeveloper','WORKSHOP_01');
+CALL GRANT_ACTIVATED_ROLE ('sap.hana.ide.roles::CatalogDeveloper','WORKSHOP_01');
+```
+>Note: You may need to add additional roles or permissions depending on your development needs
+
+![Launcher](14.png)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8 (Optional): ](Map the hosts file)]
 
 Use your IP address to map it to the hosts file in your computer. You need administration permissions to do this.
 
@@ -175,161 +220,12 @@ Add the IP address followed by the name of the host, `hxehost`:
 
 </br>
 
-For **XS Advanced installations**, you can test you have successfully modified your configuration by entering the following URL in your browser: `https://hxehost:53075/`
-
-![test web ide](11.png)
-
-Log in with `XSA_DEV` and the master password. You will see the Web IDE.
-
-![test web ide](12.png)
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 7 (Optional): ](Change the password for the operating system user)]
-
-The default password for the operating system administration user is `HXEHana1`. You can change it to one of your choice.
-
-Open a **new SSH session** and log in with user `hxeadm`.
-
-![Change password](change_password.png)
-
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8 (Optional): ](XS Advanced applications ONLY - Install SHINE or Enterprise Designer)]
-
-If you chose the **XS Advanced** applications, you can install additional components. These components are **OPTIONAL** and independent among themselves.
-
-Open a new console and log in with your MS Azure id. Go into the `Downloads` folder and list the contents.
-
-```
-cd /Downloads
-ls
-```
-
-You will find the installation packages for the Enterprise Architecture Designer  (`eadesigner.tgz`) and the SAP HANA Interactive Education (SHINE, `shine.tgz`).
-
-![Downloads folder](downloads_folder.png)
-
-To install any of these packages, change permissions and decompress it first with the following command:
-
-```
-sudo chmod 777 -R <<compressed_file>>
-sudo tar -xvzf <<name of the file>>
-
-```
-
-For example:
-
-![Downloads](decompress.png)
-
-Switch to user `hxeadm`. Go into the decompressed folder and execute the installation script you want.
-
-```
-sudo su hxeadm
-cd /Downloads/HANA_EXPRESS_20
-```
-</br>
-![switch user](15.png)
-
-
-Execute `install_eadesigner.sh` if you want to install the Enterprise Architecture Designer:
-
-
-```
-./install_eadesigner.sh
-```
-
-For example:
-
-![EA designer](eadesigner.png)
-
-If you want to know the URLs to connect to the Enterprise Designer, type `xs apps`:
-
-![Check EA](eadesigner1.png)
-
-And/or `install_shine.sh` to install SHINE:
-
-```
-./install_shine.sh
-```
-For example:
-
-![install shine](shine.png)
-
-Make sure installation is successful when finished.
-
-![deployment successful](success.png)
-
-You can find more information on the SHINE module in the [official GitHub repository](https://github.com/SAP/hana-shine-xsa)
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9 (Optional): ](XS Advanced applications ONLY - Install Smart Data Streaming)]
-
-Open a new SSH console and log in as you MS Azure VM user ID. Find out your internal IP address with the following command:
-
-```
-sudo ifconfig
-```
-
-Once the IP is shown, take note of it:
-
-![IF Config](ifconfig.png)
-
-And map it in the hosts file in your virtual machine:
-
-```
-sudo edit /etc/hosts
-```
-
-A text-editor will open. Use the arrow keys to move to where `127.0.0.2` is. Once there, press letter `i` to enter insert mode. Use the Delete key to delete IP `127.0.0.1` and enter your internal IP:
-
-![change hosts name](vi.png)
-
-Once you are finished editing, press `Esc` and write `:wq` to save your changes. If you want to discard your changes, you can use `:!q`
-
-![change hosts name](vi2.png)
-
-Back in the console prompt, navigate to the Downloads folder, extract the installation files:
-
-```
-cd /Downloads
-sudo tar -xvzf sa.tgz
-```
-
-![untar file](tar_sa.png)
-
-Once finished, execute the installation script. Be sure to enter **`hxehost`** as the name of the host when prompted:
-
-```
-sudo ./HANA_EXPRESS_20/install_sa.sh
-```
-
-As follows:
-
-![execute](sds.png)
-
-Once finished, you can verify it is running with the following command
-```
-ps -ef | grep streaming
-```
-
-![check streaming](sds_ok.png)
-
-You can later enable a link to the tool from the SAP Web IDE for SAP HANA:
-
-![Web IDE](webide_sds.png)
-
 
 [ACCORDION-END]
 
 
 
 ## Next Steps
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.html)
-- **XS Advanced:** [ Get started with XS Advanced development](https://www.sap.com/developer/topics/sap-hana-express.html)
-- **XS Advanced:** [Explore the administration cockpit in XS Advanced](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
+- **Drivers and connectors**: Connect to your SAP HANA, express edition system database instance [using the plug in for Eclipse](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) or connect to a [tenant database using HANA Studio](https://www.sap.com/developer/tutorials/hxe-gcp-eclipse-tenant-connect.html)
+- **Additional languages?**: Build applications using different drivers and languages [such as Node.js, Python ](https://www.sap.com/developer/groups/hxe-tiny-world.html)

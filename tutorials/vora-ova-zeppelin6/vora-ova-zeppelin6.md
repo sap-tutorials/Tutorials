@@ -35,7 +35,7 @@ Next up you will look into working with popular file types in data management na
 Start this tutorial by launching the Zeppelin notebook `6_ORC and Parquet files`.
 
 In order to create ORC and Parquet files you will switch to Spark context. More information about Spark SQL methods and function can be found here:
-https://spark.apache.org/docs/1.6.1/api/java/org/apache/spark/sql/types/package-summary.html
+<https://spark.apache.org/docs/1.6.1/api/java/org/apache/spark/sql/types/package-summary.html>
 
 Run the highlighted paragraphs in the notebook.
 ![Create files](zep6_02_14.jpg)

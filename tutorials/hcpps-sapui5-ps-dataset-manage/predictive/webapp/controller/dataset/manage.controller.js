@@ -29,7 +29,8 @@ sap.ui.define([
 				},
 				url: "/ps/api/analytics/dataset",
 				type: "GET",
-				async: false,
+				async: true,
+				timeout: 3000000,
 				success: function(data) {
 					try {
 						//Save data set description data in the model
@@ -68,7 +69,8 @@ sap.ui.define([
 					},
 					url: "/ps/api/analytics/dataset/" + dataSetId,
 					type: "GET",
-					async: false,
+					async: true,
+					timeout: 3000000,
 					success: function(data) {
 						try {
 							//Save data set description data in the model
@@ -98,7 +100,7 @@ sap.ui.define([
 
 			// get the model
 			var oModel = oView.getModel("dataset_manage");
-
+			var bindingProperty = event.getSource().data("bindingProperty");
 			// call the service and define call back methods
 			$.ajax({
 				headers: {
@@ -107,11 +109,12 @@ sap.ui.define([
 				},
 				url: "/ps/api/analytics/dataset/" + event.getSource().data("datasetId"),
 				type: "DELETE",
-				async: false,
+				async: true,
+				timeout: 3000000,
 				success: function() {
 					try {
 						// remove the previous data
-						oModel.setProperty(event.getSource().data("bindingProperty"), undefined);
+						oModel.setProperty(bindingProperty, undefined);
 						// refresh the dataset list
 						oController.getDatasetList();
 					} catch (err) {
@@ -158,7 +161,8 @@ sap.ui.define([
 				type: "POST",
 				data: JSON.stringify(param),
 				dataType: "json",
-				async: false,
+				async: true,
+				timeout: 3000000,
 				success: function() {
 					oBusyIndicator.close();
 				},

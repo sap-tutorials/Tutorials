@@ -1,21 +1,22 @@
-<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table"
-	xmlns:u="sap.ui.unified" xmlns="sap.m" controllerName="sapui5ml.controller.demo" displayBlock="true">
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:table="sap.ui.table" xmlns:unified="sap.ui.unified" xmlns="sap.m"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" controllerName="sapui5ml.controller.demo"
+	displayBlock="true">
 	<App>
 		<pages>
 			<Page title="Image Classification">
 				<content>
-					<VBox width="100%" direction="Column" alignItems="Center">
-						<Carousel pages="{demo>/predictions}" width="100%" visible="{= typeof ${demo>/resultVisible} !== 'undefined'}">
-							<pages>
-								<VBox width="100%" direction="Column" alignItems="Center">
-									<Image id="idImage" tooltip="canvas" visible="false" class="sapUiLargeMargin"/>
+					<Carousel pages="{demo>/result-imageclassifier}" width="100%" height="100%" visible="{= ${demo>/resultVisible-imageclassifier} === true}">
+						<pages>
+							<VBox width="100%" direction="Column" alignItems="Center" height="100%">
+								<ScrollContainer height="100%" width="100%" horizontal="true" vertical="true" focusable="true">
+									<Image tooltip="canvas" class="sapUiLargeMargin" src="{demo>fileURL}"/>
 									<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
 									<table:Table rows="{demo>results}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5">
 										<table:columns>
 											<table:Column sortProperty="label" filterProperty="label">
 												<Label text="Label"/>
 												<table:template>
-													<Link text="{demo>label}" href="https://www.google.fr/search?q={label}&amp;newwindow=1&amp;tbm=isch" target="search"/>
+													<Link text="{demo>label}" href="https://www.google.com/search?q={demo>label}&amp;newwindow=1&amp;tbm=isch" target="search"/>
 												</table:template>
 											</table:Column>
 											<table:Column sortProperty="score" filterProperty="score">
@@ -26,23 +27,32 @@
 											</table:Column>
 										</table:columns>
 									</table:Table>
-								</VBox>
-							</pages>
-						</Carousel>
-					</VBox>
+								</ScrollContainer>
+							</VBox>
+						</pages>
+					</Carousel>
 				</content>
 				<footer>
 					<Toolbar width="100%">
 						<content>
-							<u:FileUploader id="idFileUpload_0" buttonOnly="true" buttonText="SAPUI5 FileUploader with Built-in XHR" name="files" uploadUrl="{demo>/url}"
-								useMultipart="true" sendXHR="true" sameFilenameAllowed="true" uploadOnChange="true" uploadStart="fileUploadStart"
-								uploadComplete="fileUploadComplete" change="fileUploadChange">
-								<u:headerParameters>
-									<u:FileUploaderParameter name="APIKey" value="{demo>/APIKey}"/>
-									<u:FileUploaderParameter name="Accept" value="application/json"/>
-								</u:headerParameters>
-							</u:FileUploader>
-							<u:FileUploader id="idFileUpload_2" buttonOnly="true" buttonText="SAPUI5 FileUploader with Custom XHR" change="fileUploadChange_xhr"></u:FileUploader>
+							<unified:FileUploader buttonOnly="true" buttonText="Upload Picture" sameFilenameAllowed="true" multiple="false"
+								fileType="zip,png,jpeg,jpg,bmp,tiff,tif"
+								mimeType="application/x-zip-compressed,application/zip,application/octet-stream,image/png,image/jpg,image/jpeg,image/bmp,image/tiff"
+								typeMissmatch="fileTypeMissmatch" change="fileUploadChange" uploadStart="fileUploadStart" uploadComplete="fileUploadComplete" name="files"
+								uploadUrl="{demo>/url}" useMultipart="true" sendXHR="true" uploadOnChange="true">
+								<unified:headerParameters>
+									<unified:FileUploaderParameter name="APIKey" value="{demo>/APIKey}"/>
+									<unified:FileUploaderParameter name="Accept" value="application/json"/>
+								</unified:headerParameters>
+							</unified:FileUploader>
+							<unified:FileUploader buttonOnly="true" buttonText="Upload Picture with Ajax" sameFilenameAllowed="true" multiple="true"
+								fileType="zip,png,jpeg,jpg,bmp,tiff,tif"
+								mimeType="application/x-zip-compressed,application/zip,application/octet-stream,image/png,image/jpg,image/jpeg,image/bmp,image/tiff"
+								typeMissmatch="fileTypeMissmatch" change="onPressImageClassifier" custom:mode="ajax"></unified:FileUploader>
+							<unified:FileUploader buttonOnly="true" buttonText="Upload Picture with XHR" sameFilenameAllowed="true" multiple="true"
+								fileType="zip,png,jpeg,jpg,bmp,tiff,tif"
+								mimeType="application/x-zip-compressed,application/zip,application/octet-stream,image/png,image/jpg,image/jpeg,image/bmp,image/tiff"
+								typeMissmatch="fileTypeMissmatch" change="onPressImageClassifier" custom:mode="xhr"></unified:FileUploader>
 						</content>
 					</Toolbar>
 				</footer>

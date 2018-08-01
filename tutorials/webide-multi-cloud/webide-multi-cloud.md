@@ -1,6 +1,6 @@
 ---
-title: Enable the Multi Cloud Web IDE
-description: Learn how to enable the multi cloud version of Web IDE
+title: Enable SAP Web IDE Full-Stack
+description: Learn how to enable the full-stack version of SAP Web IDE
 primary_tag: products>sap-web-ide
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
 ---
@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
  
 ## Details
 ### You will learn  
-Find all the latest features available from Web IDE in the latest, full-stack enabled version.
+Find all the latest features available from SAP Web IDE in the latest, full-stack enabled version.
 
 ### Time to Complete
 **5 Min**
@@ -34,12 +34,12 @@ Go to **Services**
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Find the full-stack Web IDE)]
+[ACCORDION-BEGIN [Step 2: ](Find SAP Web IDE Full-Stack)]
 On the Service catalog, search for **Web IDE**.
 
 ![search on SCP services page](3.png)
 
-Select the **SAP Web IDE for Full-Stack Development** service.
+Select the **SAP Web IDE Full-Stack** service.
 
 ![sap web ide full-stack version](4.png)
 
@@ -59,12 +59,12 @@ Wait for the status to change to the green, _Enabled_ status.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Open the Web IDE)]
-Once the service is enabled, click the **Go to Service** link. This will open the new, full-stack Web IDE.
+[ACCORDION-BEGIN [Step 4: ](Open the SAP Web IDE)]
+Once the service is enabled, click the **Go to Service** link. This will open the new, full-stack version of SAP Web IDE.
 
 ![go to service link location for web ide](6.png)
 
-SAP Web IDE for Full-Stack Development includes some new features. You will explore them in the following tutorials.
+SAP Web IDE Full-Stack includes some new features. You will explore them in the following tutorials.
 
 
 [ACCORDION-END]
@@ -72,8 +72,8 @@ SAP Web IDE for Full-Stack Development includes some new features. You will expl
 
 ### Optional
 
-[ACCORDION-BEGIN [Step 5: ](Troubleshooting the Web IDE)]
-Are you having trouble opening SAP Web IDE for Full-Stack Development? If you are seeing a 501/503 error, it may be that your principal propagation flag is not set properly.
+[ACCORDION-BEGIN [Step 5: ](Troubleshooting the SAP Web IDE)]
+Are you having trouble opening SAP Web IDE Full-Stack? If you are seeing a 501/503 error, it may be that your principal propagation flag is not set properly.
 
 To enable your principal propagation flag, in your SAP Cloud Platform Cockpit, click **Security** then **Trust**.
 
@@ -87,10 +87,10 @@ Change the value of **Principal Propagation** to _Enabled_ and **Save**.
 
 ![enabled trust flags](9.png)
 
-Now, go back to step 4 and try to open SAP Web IDE for Full-Stack Development again.
+Now, go back to step 4 and try to open SAP Web IDE Full-Stack again.
 
 
 [ACCORDION-END]
 
 ## Next Steps
-- [Using SAP API Business Hub with Web IDE](https://www.sap.com/developer/tutorials/webide-api-hub.html)
+- [Using SAP API Business Hub with SAP Web IDE](https://www.sap.com/developer/tutorials/webide-api-hub.html)

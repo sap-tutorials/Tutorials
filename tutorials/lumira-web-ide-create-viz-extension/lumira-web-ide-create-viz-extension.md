@@ -1,8 +1,8 @@
 ---
 title: Creating a new viz extension project
 description: A step-by-step guide on how to get started with building a visualization extension for SAP Lumira using SAP Web IDE
-primary_tag: products>sap-businessobjects-lumira
-tags: [  tutorial>beginner, products>sap-businessobjects-lumira, products>sap-cloud-platform, products>sap-web-ide ]
+primary_tag: products>sap-lumira
+tags: [  tutorial>beginner, products>sap-lumira, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
@@ -12,7 +12,7 @@ tags: [  tutorial>beginner, products>sap-businessobjects-lumira, products>sap-cl
 
 ## Next Steps
 - Adapt a D3 Chart for Lumira with SAP Web IDE (coming soon)
-- Or, select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Or, select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -304,4 +304,4 @@ Save the extension in your computer. You can then use the extension in Lumira as
 
 ## Next Steps
 - Adapt a D3 Chart for Lumira with SAP Web IDE (coming soon)
-- Or, select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Or, select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

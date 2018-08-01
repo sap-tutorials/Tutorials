@@ -10,7 +10,7 @@ In this tutorial, you will install the dependencies needed and configure your Re
 
 Then you will learn how to download the binary installer archives of SAP HANA 2.0, express edition, decompress and install it on your server, including some additional packages for your SAP HANA 2.0, express edition installation.
 
-For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/how-tos/2016/09/hxe-ua-troubleshooting.html).
+For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/tutorials/hxe-ua-troubleshooting.html).
 
 > ### **Note:**
 >**This tutorial was build and tested using SAP HANA, express edition 2.0 SPS02 revision 21 and Red Hat Enterprise Linux 7.2 for `x86-64` as VMware Virtual Machine**.
@@ -37,6 +37,10 @@ Before you get started, you should check if your machine meet the recommended so
 >
 > - SUSE Linux Enterprise Server for SAP Applications, 12.1, 12.2
 > - SUSE Linux Enterprise Server for SAP Applications, IBM Power Systems (`ppc64le` - "Little Endian"), 12.1, 12.2
+> - Red Hat Enterprise Linux for SAP Applications 7.2, 7.3
+> - Red Hat Enterprise Linux for SAP Applications for Power 7.3 (SAP HANA 2.0, express edition SPS 02 Rev 21 or higher required)
+>
+>Please refer to the version of the [binary installation guide](https://help.sap.com/viewer/32c9e0c8afba4c87814e61d6a1141280/2.0.02/en-US) for the latest updates.
 >
 >SAP Community members have been successful in running HXE on newer or other Linux operating systems that are not formally supported by SAP, such as Ubuntu, openSUSE and Fedora.
 >
@@ -116,11 +120,11 @@ In order to install and run SAP HANA, express edition on a Red Hat Enterprise Li
 
 An overview of the ***Red Hat Enterprise Linux for SAP HANA Subscription*** is available here:
 
- - <a href="https://access.redhat.com/articles/1187363" target="new">https://access.redhat.com/articles/1187363</a>
+ - <https://access.redhat.com/articles/1187363>
 
 And the detailed options and instructions to subscribe your RHEL system to the ***RHEL for SAP HANA channel*** are available here:
 
- - <a href="https://access.redhat.com/solutions/2334521" target="new">https://access.redhat.com/solutions/2334521</a>
+ - <https://access.redhat.com/solutions/2334521>
 
 Once your system is properly configured with the subscription, you should be able to run the following command from a terminal console on your server:
 
@@ -129,6 +133,12 @@ sudo yum repolist
 ```
 
 In the output you should have an entry like **`RHEL EUS Server SAP HANA`**.
+
+If the repositories are not listed or enabled, you can run the following command:
+
+```bash
+sudo subscription-manager repos --enable="rhel-sap-hana-for-rhel-7-server-rpms" --enable="rhel-7-server-rpms"
+```
 
 Now, you have to clean the `yum` cached data.
 
@@ -201,7 +211,8 @@ You will need to install the following additional packages:
 From your terminal console, execute the following command:
 
 ```bash
-sudo yum -y install xulrunner \
+sudo yum -y install \
+	xulrunner \
 	sudo \
 	libssh2 \
 	expect \
@@ -219,9 +230,10 @@ sudo yum -y install xulrunner \
 	bind-utils
 ```
 
-The command uses the `-y` which will assume that all question like using more space will be answered as yes.
+The command uses the `-y` which will assume that all questions will be answered as yes.
 
-As the output may be long and not easy visualize, you can run the command again, you should be able to spot easily packages that can't install as properly installed ones won't get reinstalled.
+As the output may be long and not easy to visualize, you can run the command again.
+You should be able to easily spot packages that can't install properly.
 
 ---
 
@@ -395,8 +407,8 @@ To configure the firewall, you can use the `firewall-config` tool. In this case,
 To avoid problems with the firewall during installation, it can be beneficial to disable it completely during the installation process with the following commands:
 
 ```bash
-sudo systemctl stop firewalld
-sudo systemctl disable firewall
+sudo systemctl stop firewalld.service
+sudo systemctl disable firewalld.service
 ```
 
 You can check the best practice section about firewall configuration once you complete the installation to properly configure your system.
@@ -422,7 +434,7 @@ java version "1.8.0_xx"
 Java(TM) SE Runtime Environment (build 1.8.0_xx-yyy)
 ```
 
-If you don't have it yet installed, you can check the following link for download link and installation instructions : <a href="https://tools.hana.ondemand.com/#cloud" target="new">https://tools.hana.ondemand.com/#cloud</a>
+If you don't have it yet installed, you can check the following link for download link and installation instructions : <https://tools.hana.ondemand.com/#cloud>
 
 Using the RPM option is most likely the easiest, as you will have to simply run the following command from your terminal console (where **<version>** needs to be adjusted based on the downloaded version):
 
@@ -447,9 +459,9 @@ Some of the changes applied requires a restart of the system to fully take effec
 
 [ACCORDION-BEGIN [Step 4: ](Register for SAP HANA, express edition)]
 
-Go to the registration page at http://sap.com/sap-hana-express published on the SAP site.
+Go to the registration page at <https://www.sap.com/sap-hana-express> published on the SAP site.
 
-Alternately, you can go to the SAP HANA, express edition launch page at https://www.sap.com/developer/topics/sap-hana-express.html published on SAP site and click the Register and download SAP HANA, express edition download manager link.
+Alternately, you can go to the SAP HANA, express edition launch page at <https://www.sap.com/developer/topics/sap-hana-express.html> published on SAP site and click the Register and download SAP HANA, express edition download manager link.
 
 Complete the registration form and click the Register button. The Registration Success page displays. You will also receive an email indicating successful registration.
 
@@ -549,7 +561,7 @@ Execute the following commands to create the directory where you download the in
 
 ```bash
 sudo mkdir /opt/hxe
-sudo chmod a+rwx /opt/hxe
+sudo chmod -R a+rwx /opt/hxe
 
 cd <download manager path>
 
@@ -607,7 +619,7 @@ Now that the file are downloaded, you can transfer them to the ***`/opt/hxe`*** 
 Make sure you update the read/write/execute permission on the `/opt/hxe` directory using the following command:
 
 ```bash
-sudo chmod a+rwx /opt/hxe
+sudo chmod -R a+rwx /opt/hxe
 ```
 
 For more information about the other downloadable package, please refer to the ***Appendix*** step.
@@ -878,7 +890,7 @@ You need now to execute the following commands:
 ```bash
 sudo su -l hxeadm
 
-HDB info | grep -e hdbnameserver -e hdbcompileserver -e hdbindexserver -e hdbdiserver -e hdbwebdispatcher
+HDB info | grep -e hdbnameserver -e hdbcompileserver -e hdbindexserver -e hdbwebdispatcher
 ```
 
 The output should look like this:
@@ -887,7 +899,6 @@ The output should look like this:
 hxeadm    71252  71235 55.2 7982280 5377200      \_ hdbnameserver
 hxeadm    71347  71235  2.1 1580412 257312      \_ hdbcompileserver
 hxeadm    71374  71235 12.8 5321396 2845732      \_ hdbindexserver -port 39003
-hxeadm    71516  71235  1.6 1588012 260768      \_ hdbdiserver
 hxeadm    71518  71235  1.9 1880592 279788      \_ hdbwebdispatcher
 ```
 
@@ -896,7 +907,6 @@ The following services must be running:
   * `hdbnameserver`
   * `hdbcompileserver`
   * `hdbindexserver`
-  * `hdbdiserver`
   * `hdbwebdispatcher`
 
 If any of the above services is not listed, you must start your instance executing the following command:
@@ -915,8 +925,8 @@ When the prompt returns, the system is started.
 
 You can check the following links to verify some of the connectivity options available for the ***SAP HANA HDB Client***:
 
- - <a href="https://www.sap.com/developer/how-tos/2016/08/hxe-connect-hxe-using-jdbc.html" target="new">JDBC</a>
- - <a href="https://www.sap.com/developer/how-tos/2016/08/hxe-python-connection.html" target="new">Python</a>
+ - <a href="https://www.sap.com/developer/tutorials/hxe-connect-hxe-using-jdbc.html" target="new">JDBC</a>
+ - <a href="https://www.sap.com/developer/tutorials/hxe-python-connection.html" target="new">Python</a>
  - ODBC (content coming soon!)
  - SQLDBC (content coming soon!)
  - Node.js (content coming soon!)
@@ -1278,11 +1288,7 @@ cd /usr/sap/HXE/home/bin
 
 When prompted for System database user (SYSTEM) password, enter the master password you specified during SAP HANA, express edition installation.
 
-The command prompt returns when the cleanup process is finished, and the expected logs should be displayed in the console:
-
-```
-tcp   0   0 0.0.0.0:8090    0.0.0.0:*     LISTEN   off (0.00/0/0)
-```
+The command prompt returns when the cleanup process is finished, and the memory usage before and after the process are displayed.
 
 [ACCORDION-END]
 
@@ -1326,18 +1332,18 @@ Name                     | Default | Range                      | Rule          
 -------------------------|---------|----------------------------|-------------------|--------------------
 Host Agent               | 1128    | 1128                       | 1128              | SAP Host Agent with SOAP/HTTP
 Host Agent               | 1129    | 1129                       | 1129              | SAP Host Agent with SOAP/HTTPS
-HTTPS                    | 4300    | <nobr>4300 – 4399</nobr>   | 43&lt;NN&gt;      | SAP Web Dispatcher
-HTTP                     | 8000    | <nobr>8000 – 8099</nobr>   | 80&lt;NN&gt;      | SAP Web Dispatcher
-`indexserver`            | 30013   | <nobr>30013 – 39913</nobr> | 3&lt;NN&gt;13     | SQL/MDX access port for standard access to the system database of a multitenant system.
-`indexserver`            | 30015   | <nobr>30015 – 39915</nobr> | 3&lt;NN&gt;15     | SQL/MDX access port for standard access to the tenant database of a multitenant system (automatically created).
-`statisticsserver`       | 30017   | <nobr>30017 – 39917</nobr> | 3&lt;NN&gt;17     | Applicable when run as a separate service (default is embedded).
-HTTP(S)                  | 30030   | <nobr>30030 – 39930</nobr> | 3&lt;NN&gt;30     | In an XSA runtime environment and port routing used, allow data access connection to the `xscontroller-managed` Web Dispatcher
-HTTP(S)                  | 30032   | <nobr>30032 – 39932</nobr> | 3&lt;NN&gt;32     | In an XSA runtime environment and port routing used, allow data access connection to the `xscontroller-managed` Web Dispatcher
-HTTP(S)                  | 30033   | <nobr>30033 – 39933</nobr> | 3&lt;NN&gt;33     | Single port for all SAP HANA XSA application and services when routing is done by host names instead of ports. For more information see SAP Note 2245631.
-`indexserver`            | None    | <nobr>30041– 39998</nobr>  | 3&lt;NN&gt;41 – 3&lt;NN&gt;98 | SQL/MDX access port for standard access to the tenant databases of a multitenant system. Port assigned automatically from available port at creation time.
-SOAP/HTTP                | 50013   | <nobr>50013 – 59913</nobr> | 5&lt;NN&gt;13     | Instance Agent
-SOAP/HTTPS               | 50014   | <nobr>50014 – 59914</nobr> | 5&lt;NN&gt;14     | ‌Instance Agent
-HTTP(S)                  | None    | <nobr>51000 – 51500</nobr> | 51000 – 51500     | In an XSA runtime environment and port routing used, port range used for the connection from the `xscontroller-managed` Web Dispatcher to the `xscontroller` for application instances access
+HTTPS                    | 4300    | <nobr>4300 - 4399</nobr>   | 43&lt;NN&gt;      | SAP Web Dispatcher
+HTTP                     | 8000    | <nobr>8000 - 8099</nobr>   | 80&lt;NN&gt;      | SAP Web Dispatcher
+`indexserver`            | 30013   | <nobr>30013 - 39913</nobr> | 3&lt;NN&gt;13     | SQL/MDX access port for standard access to the system database of a multitenant system.
+`indexserver`            | 30015   | <nobr>30015 - 39915</nobr> | 3&lt;NN&gt;15     | SQL/MDX access port for standard access to the tenant database of a multitenant system (automatically created).
+`statisticsserver`       | 30017   | <nobr>30017 - 39917</nobr> | 3&lt;NN&gt;17     | Applicable when run as a separate service (default is embedded).
+HTTP(S)                  | 30030   | <nobr>30030 - 39930</nobr> | 3&lt;NN&gt;30     | In an XSA runtime environment and port routing used, allow data access connection to the `xscontroller-managed` Web Dispatcher
+HTTP(S)                  | 30032   | <nobr>30032 - 39932</nobr> | 3&lt;NN&gt;32     | In an XSA runtime environment and port routing used, allow data access connection to the `xscontroller-managed` Web Dispatcher
+HTTP(S)                  | 30033   | <nobr>30033 - 39933</nobr> | 3&lt;NN&gt;33     | Single port for all SAP HANA XSA application and services when routing is done by host names instead of ports. For more information see SAP Note�2245631.
+`indexserver`            | None    | <nobr>30041 - 39998</nobr>  | 3&lt;NN&gt;41 - 3&lt;NN&gt;98 | SQL/MDX access port for standard access to the tenant databases of a multitenant system. Port assigned automatically from available port at creation time.
+SOAP/HTTP                | 50013   | <nobr>50013 - 59913</nobr> | 5&lt;NN&gt;13     | Instance Agent
+SOAP/HTTPS               | 50014   | <nobr>50014 - 59914</nobr> | 5&lt;NN&gt;14     | Instance Agent
+HTTP(S)                  | None    | <nobr>51000 - 51500</nobr> | 51000 - 51500     | In an XSA runtime environment and port routing used, port range used for the connection from the `xscontroller-managed` Web Dispatcher to the `xscontroller` for application instances access
 
 > **Note**: &lt;NN&gt; represent the instance id of your SAP HANA, expression edition. The default value is <b>90</b>.
 

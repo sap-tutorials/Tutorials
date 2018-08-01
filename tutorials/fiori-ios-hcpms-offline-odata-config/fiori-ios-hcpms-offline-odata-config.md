@@ -1,6 +1,7 @@
 ---
 title: Configure the behavior of Offline OData
 description: Configure the behavior of the Offline OData Service
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -49,7 +50,7 @@ Defining request configuration allows:
 - Refresh interval on cached data
 - Delta tracking behavior
 
-A full list of Offline Data configuration options is available on https://help.sap.com/saphelp_smp307sdk/helpdata/en/f5/a25877c16f4fc384c44fcf0b92dab8/content.htm.
+A full list of Offline Data configuration options is available on <https://help.sap.com/saphelp_smp307sdk/helpdata/en/f5/a25877c16f4fc384c44fcf0b92dab8/content.htm>.
 
 To define what to use offline, you now create an **Application Configuration File**
 
@@ -98,7 +99,7 @@ Defining request configuration:
 
 >Note: Since the purchase orders and sales orders are more subject to change than for instance products and customers, you have set the refresh interval for these to 15 minutes; the other entities will be refreshed each day by default.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Configure application definition)]
@@ -112,6 +113,7 @@ Navigate to **Offline Configuration**. The links next to the connection name sho
 ![Upload application-config.ini file](fiori-ios-hcpms-offline-odata-config-02.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Upload Application  Configuration File)]
@@ -125,6 +127,7 @@ Click **Upload**. If everything goes well, the formerly disabled links are now e
 ![Upload application-config.ini file](fiori-ios-hcpms-offline-odata-config-04.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Examine uploaded configuration)]
@@ -136,6 +139,7 @@ Click through the now-enabled links, and you should be able to review the settin
 ![Upload application-config.ini file](fiori-ios-hcpms-offline-odata-config-06.png)
 
 
+[VALIDATE_4]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Finalize upload)]
@@ -143,6 +147,7 @@ Click through the now-enabled links, and you should be able to review the settin
 Click **OK** to close the dialog, and click **Save** to store the changes.
 
 
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps

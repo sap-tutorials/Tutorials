@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-cloud-platfor
  - **Tutorials:** [ABC Analysis with SAP HANA PAL](https://www.sap.com/developer/tutorials/teched-2016-10.html)
 
 ## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -32,7 +32,7 @@ However, you could just as easily use a Raspberry Pi, Arduino, or any number of 
 
 [ACCORDION-BEGIN [Step 1: ](Connection to the SAP Cloud Platform)]
 
-Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: <https://account.hanatrial.ondemand.com>
 
 Make sure you are using the **Europe (Trial)** landscape, and click on your account name to open the cockpit view.
 
@@ -292,4 +292,4 @@ The table with your data will match the **Message Type** id generated earlier.
 [ACCORDION-END]
 
 ## Next Steps
-  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

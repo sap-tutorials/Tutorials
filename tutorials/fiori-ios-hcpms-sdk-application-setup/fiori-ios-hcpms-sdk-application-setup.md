@@ -67,8 +67,8 @@ Log on to your **SAP Cloud Platform mobile service for development and operation
 
 ![Applications details](image-4.png)
 
-[DONE]
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Initial application definition created)]
@@ -79,8 +79,8 @@ After entering the application details press the **Save** button to save the new
 
 Take a note of the **Incomplete Configuration** message next to the **Connectivity** feature. This will be solved in the next step.
 
-[DONE]
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Add Sample Back End Feature)]
@@ -99,8 +99,8 @@ The Sample Back End is now added:
 
 As you can see from the **Entity Sets** drop-down, the sample service contains quite a few entities. You may click the **Generate sample sales orders** and **Generate sample purchase orders** a couple of times to generate dummy data for these entities.
 
-[DONE]
 
+[VALIDATE_5]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Examine application definition)]

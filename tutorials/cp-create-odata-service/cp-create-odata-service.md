@@ -1,7 +1,7 @@
 ---
 title: Create a destination for your live OData service
 description: Create a Destination to allow SAP Cloud Platform to read data
-auto_validation: false
+auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, topic>cloud, topic>mobile, topic>odata, tutorial>beginner ]
 ---
@@ -26,6 +26,10 @@ Destinations are used for the outbound communication of your application to a re
 Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Platform cockpit.
 
 ![SAP Cloud Platform log in page](mob1-1_1.png)
+
+You will use your Neo trial for this tutorial (and related series). Select **Neo Trail** to get to your SAP Cloud Platform cockpit.
+
+![SAP Cloud Platform landscape selection for Neo](neo-trial.png)
 
 [DONE]
 [ACCORDION-END]
