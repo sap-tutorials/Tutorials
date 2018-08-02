@@ -28,7 +28,8 @@ Log onto your SAP Cloud Platform account.
 
 ![Open cockpit](OpenCockpit.png)
 
-Make sure you are in the Neo environment, not the Cloud Foundry environment. Neo is the classic, proprietary SAP Cloud Platform, and you can return to it by going **Home** | **Go to Neo Trial**.
+Make sure you are in the Neo environment, not the Cloud Foundry environment. Neo is the classic, proprietary SAP Cloud Platform, and you can return to it by going **Home** | **Go to Neo Trial**. 
+
 
 
 [ACCORDION-END]
