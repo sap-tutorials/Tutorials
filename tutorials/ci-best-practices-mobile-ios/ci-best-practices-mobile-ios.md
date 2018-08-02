@@ -132,7 +132,7 @@ $ gem install fastlane -NV
 
 ##### 2.1.5 iOS Development Tools
 
-[https://developer.apple.com/xcode/](Xcode) is the standard IDE for anything related to Apple, and also includes the required build tools for Cordova to be able to compile iOS applications. In order to install it, you will need to open the App Store on both your build server and your developer machine and search for the software, as shown in Figure 4. Once done, run the following command in order to make sure all required command-line tools are available, too:
+[Xcode](https://developer.apple.com/xcode/) is the standard IDE for anything related to Apple, and also includes the required build tools for Cordova to be able to compile iOS applications. In order to install it, you will need to open the App Store on both your build server and your developer machine and search for the software, as shown in Figure 4. Once done, run the following command in order to make sure all required command-line tools are available, too:
 
 ```
 $ xcode-select --install
@@ -232,7 +232,7 @@ Now we can start our Jenkins service and go ahead with the configuration. Run
 $ brew services start jenkins
 ```
 
-and open ``http://localhost:8080/`` in your browser. Jenkins will now require a password for you to log in as an administrator, but unlike other software it does not come with a preset default. Instead it is generated during setup and stored in a file, which we now need to read, e.g. from your Terminal via
+and open [``http://localhost:8080/``](http://localhost:8080/) in your browser. Jenkins will now require a password for you to log in as an administrator, but unlike other software it does not come with a preset default. Instead it is generated during setup and stored in a file, which we now need to read, e.g. from your Terminal via
 
 ```
 $ cat ~/.jenkins/secrets/initialAdminPassword
@@ -282,7 +282,7 @@ to reload the configuration in an already-open Terminal. Once this has been done
 $ $ARTIFACTORY_HOME/bin/artifactoryctl start
 ```
 
-Once the server has started, navigate to [http://localhost:8081](http://localhost:8081) to open the Artifactory web interface. When it is asking you which repositories to create, pick only CocoaPods or everything Mobile-related as shown in Figure 14. The absolute minimum you should select, however, is CocoaPods.
+Once the server has started, navigate to [``http://localhost:8081``](http://localhost:8081) to open the Artifactory web interface. When it is asking you which repositories to create, pick only CocoaPods or everything Mobile-related as shown in Figure 14. The absolute minimum you should select, however, is CocoaPods.
 
 When everything is set up, Artifactory will take you to the main dashboard, containing a neat "Set Me Up" section that nicely explains how to proceed with your system setup, as shown in Figure 15. Select the ``cocoapods-local`` entry to learn how to configure your Mac for this repository. In a nutshell, you need to do three things: Installing the CocoaPods Artifactory extension, adding the ``cocoapods-local`` repository to your Mac, and configuring credentials to access that repository. To do so, run
 
