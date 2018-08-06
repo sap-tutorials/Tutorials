@@ -1,8 +1,10 @@
 ---
 title: Build an IoT Condition Monitoring App
-description: Build a basic condition monitoring and sensor data visualization application with SAP Web IDE in 5 minutes.
+description: Build a basic condition monitoring and sensor data visualization application with SAP Web IDE in 15 minutes.
 primary_tag: topic>internet-of-things
-tags: [  tutorial>beginner, topic>leonardo, topic>sapui5, products>sap-web-ide, products>sap-web-ide-plug-ins, products>sap-IoT-application-enablement, products>sap-cloud-platform  ]
+auto_validation: true
+time: 15
+tags: [  tutorial>beginner, products>sap-leonardo, topic>sapui5, products>sap-web-ide, products>sap-web-ide-plug-ins, products>sap-IoT-application-enablement, products>sap-cloud-platform  ]
 ---
 
 ## Prerequisites  
@@ -16,9 +18,6 @@ tags: [  tutorial>beginner, topic>leonardo, topic>sapui5, products>sap-web-ide, 
 - How to use templates to speed up developing prototypes for certain use cases.
 - How to use the sensor chart UI control to discover patterns in your initial sensor data.
 
-### Time to Complete
-**15 Min**
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Start the Web IDE Full-Stack)]
@@ -29,6 +28,8 @@ Start SAP Web IDE Full-Stack using the URL provided by your team administrator. 
 To log in, use the same email address and password you are using  within the thing modeler. The home screen looks like this:
 
 ![Web IDE MC](iotaecompappmc0010.jpg)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -44,6 +45,8 @@ Turn on the following features:
 
 ![Web IDE MC - Features](iotaecompappmc0020.jpg)
 
+[DONE]
+
 [ACCORDION-END]
 
 
@@ -51,6 +54,8 @@ Turn on the following features:
 In the **Development** perspective, right-click  **Workspace** and create a new project from a template (there are other ways to do this, for example, from the home page).
 
 ![New](iotaecompappmc0030.jpg)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -75,6 +80,7 @@ SAP Web IDE will generate the code and will open the new application in the Code
 
 ![Code Editor](iotaecompappmc0080.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -100,6 +106,8 @@ The example below shows 2 patterns -- the light sensor in this case seems to jum
 You will discover that if you collect sensor data from the real world, there will always be surprises, both in that you cannot see what you thought you would find in the data, and also that you see patterns in the data that you did not expect to see.
 
 For more support on in-depth topics on building an IoT Application, refer to [http://developer.sap.com/](http://developer.sap.com/) under **IoT**.
+
+[VALIDATE_1]
 
 [ACCORDION-END]
 

@@ -1,0 +1,52 @@
+{
+	"format_version": 1,
+	"imports": [
+		{
+			"target_table": "MY_BOOKSHOP_BOOKS",
+			"source_data": {
+			"data_type": "CSV",
+				"file_name": "Books.csv",
+				"has_header": true
+			},
+			"import_settings": {
+			"import_columns": [
+					"ID",
+					"TITLE",
+					"AUTHOR_ID",
+					"STOCK"
+				]
+			}
+		},
+		{
+			"target_table": "MY_BOOKSHOP_AUTHORS",
+			"source_data": {
+			"data_type": "CSV",
+				"file_name": "Authors.csv",
+				"has_header": true
+			},
+			"import_settings": {
+			"import_columns": [
+					"ID",
+					"NAME"
+				]
+			}
+		},
+		{
+			"target_table": "MY_BOOKSHOP_ORDERS",
+			"source_data": {
+			"data_type": "CSV",
+				"file_name": "Orders.csv",
+				"has_header": true
+			},
+			"import_settings": {
+			"import_columns": [
+					"ID",
+					"BUYER",
+					"DATE",
+					"AMOUNT",
+					"BOOK_ID"
+				]
+			}
+		}
+	]
+}
