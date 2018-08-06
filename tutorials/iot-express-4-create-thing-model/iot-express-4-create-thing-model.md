@@ -2,7 +2,9 @@
 title: Create a Thing Model and Bind to Device
 description: Use the Thing Modeler to create the master data and the measurement properties, then map your thing to devices and sensors, and to your business process.
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-iot ]
+auto_validation: false
+time: 20
+tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-iot ]
 ---
 
 ## Prerequisites  
@@ -21,9 +23,6 @@ tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sa
 - How to add a new thing connected to your device
 - How to secure thing data using access rights
 
-### Time to Complete
-**20 Min**
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Access Fiori Launchpad with IoT Application Enablement apps)]
@@ -38,6 +37,8 @@ tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sa
 >Enter the email address used with your SAP Cloud Platform account and the password if you are asked for one.
 
   ![Go to SAP IoT Application Enablement Subscription](go_to_iotae.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -58,6 +59,8 @@ tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sa
   ![Packages List](packages_list.png)
 
   ![Add new package](new_package.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -84,6 +87,8 @@ tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sa
 
   ![Result property](new_property_save.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 
@@ -102,8 +107,7 @@ Note that we focus on the data we want to use in the business application -- the
 8. Set the name of the property set to `envData`.
 9. Set **Property Set Category** as `Measured Values` (third option).
 10. Click **Save**.
-11. In the **Measured Values** list (see Step 4 for details about adding a new property).
-12. Add a property called `temperature` with type `Integer` and unit of measure `DegreeCelsius`, symbol `°C`, and choose to have an upper and lower threshold for the temperature.
+12. In the **Measured Values** list (see Step 4 for details about adding a new property) add a property called `temperature` with type `Integer` and unit of measure `DegreeCelsius`, symbol `°C`, and choose to have an upper and lower threshold for the temperature.
 13. Add a property called `humidity`, type `Integer` and unit of measure `Percentage`, symbol `%`.
 14. Add a property called `light`, type `Integer` and without a unit of measure.
 15. Click `Save` (on the bottom grey bar, right side of the screen).
@@ -113,6 +117,8 @@ Note that we focus on the data we want to use in the business application -- the
 ![New Property Set](new_property_set.png)
 
 ![Measures property set](measures_property_set_final.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -127,6 +133,8 @@ The last step to set up our metadata and required to capture things and measurem
 
 ![Thing Type](thingtype.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 
@@ -135,7 +143,7 @@ The last step to set up our metadata and required to capture things and measurem
 Now we are ready to create a new thing and map it to the device you created earlier.
 
 1. Click **New Thing** from the upper-right corner.
-2. In the dialog, enter `greenhouse1` as the name (`1` indicates that this is your first instance of this type of greenhouse).
+2. In the dialog, enter `greenhouse1` or `greenhouse2` as the name (`1` or `2`indicates that this is your first or second instance of this type of greenhouse).
 3. Add a description and select the default authorization group. Note that this authorization group will be something that later, when you automate onboarding of things and you define differentiated access rights to the time series, will be very specific authorization groups you have created to make sure the your application users see only the things and time series data for those things, that they should see.
 4. Choose the device and sensors created in the earlier tutorials.
 
@@ -144,6 +152,8 @@ You now should see the properties from the sensor mapped to the properties of th
 If you have your device running and connected to the internet, you should now see data popping in for the measurements.
 
 ![New Thing Dialog](newthing.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -161,5 +171,7 @@ Lastly we will set the things serial number and the location to make sure we can
 ![Location and Serial Number](masterdata.png)
 
 You are now ready to build interactive or batch applications on top of your greenhouse things.
+
+[VALIDATE_1]
 
 [ACCORDION-END]
