@@ -2,7 +2,7 @@
 title: Assemble and Configure Device Hardware
 description: Assemble device hardware, configure device firmware and deploy it in the field.
 primary_tag: topic>internet-of-things
-auto_validation: false
+auto_validation: true
 time: 30
 tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-iot]
 ---
@@ -200,14 +200,14 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
 
 > **IMPORTANT:** Check before running that you have configured the device model in SAP Cloud Platform Internet of Things Service as it is mentioned in the prerequisite tutorial.
 
-  Finally, adjust the node script in the following places:
+Finally, adjust the node script in the following places:
 
-    1. The tenant name in `settings` variable - this is the instance name for IoT Service (in `https://76eae3d3-9de6-4345-b26c-ff35be052652.eu10.cp.iot.sap/` it's `76eae3d3-9de6-4345-b26c-ff35be052652`)
-    2. The alternate IDs of your device, sensor and capability in the `settings` variable.
-    3. The secret for your certificate
-    4. The name of your certificate file
+  1. The tenant name in `settings` variable - this is the instance name for IoT Service (in `https://76eae3d3-9de6-4345-b26c-ff35be052652.eu10.cp.iot.sap/` it's `76eae3d3-9de6-4345-b26c-ff35be052652`)
+  2. The alternate IDs of your device, sensor and capability in the `settings` variable.
+  3. The secret for your certificate
+  4. The name of your certificate file
 
-  Now the firmware is ready to be run. Normally, it would be nice to be executed automatically when the device boots but in this case we will start it manually in the next step.
+Now the firmware is ready to be run. Normally, it would be nice to be executed automatically when the device boots but in this case we will start it manually in the next step.
 
 [DONE]
 
@@ -216,16 +216,16 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
 
 [ACCORDION-BEGIN [Step 5: ](Run the firmware)]
 
-  To run the firmware execute the following commands in a terminal or command line window:
+To run the firmware execute the following commands in a terminal or command line window:
 
-    ```
-    cd Downloads
-    sudo node app.js
-    ```
+```
+cd Downloads
+sudo node app.js
+```
 
-  This will now continuously read sensor values, print them and send the data to IoT Service for Cloud Foundry. The data is not beeing picked up by anyone. It is forwarded to IoT Application Enablement but while there is no thing mapped the data is not persisted.
+This will now continuously read sensor values, print them and send the data to IoT Service for Cloud Foundry. The data is not beeing picked up by anyone. It is forwarded to IoT Application Enablement but while there is no thing mapped the data is not persisted.
 
-  ![Output on the PI](sensoroutput.png)
+![Output on the PI](sensoroutput.png)
 
 [VALIDATE_1]
 
