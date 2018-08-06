@@ -2,7 +2,7 @@
 title: Create a Thing Model and Bind to Device
 description: Use the Thing Modeler to create the master data and the measurement properties, then map your thing to devices and sensors, and to your business process.
 primary_tag: topic>internet-of-things
-auto_validation: false
+auto_validation: true
 time: 20
 tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-iot ]
 ---

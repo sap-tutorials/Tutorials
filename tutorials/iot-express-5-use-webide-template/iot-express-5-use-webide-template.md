@@ -2,7 +2,7 @@
 title: Build an IoT Condition Monitoring App
 description: Build a basic condition monitoring and sensor data visualization application with SAP Web IDE in 15 minutes.
 primary_tag: topic>internet-of-things
-auto_validation: false
+auto_validation: true
 time: 15
 tags: [  tutorial>beginner, products>sap-leonardo, topic>sapui5, products>sap-web-ide, products>sap-web-ide-plug-ins, products>sap-IoT-application-enablement, products>sap-cloud-platform  ]
 ---
