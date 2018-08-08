@@ -14,7 +14,7 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 
 - Understand the basics about recommendation engines
 - Which statistics can help you better understand the structure of the dataset
-- Based on the statistical assessment, identity what algorithm options are available
+- Based on the statistical assessment, identify what algorithm options are available
 
 ### Time to Complete
 **30 Min**
@@ -83,16 +83,20 @@ Using the <a href="http://files.grouplens.org/datasets/movielens/ml-latest-small
 
 [ACCORDION-BEGIN [Step 1: ](Select, install and configure a SQL query tool)]
 
-As you will mostly execute SQL commands during this series, you will need to setup a SQL query tool for SAP HANA, express edition as describe in the following tutorial group:
+As you will mostly execute SQL commands during this series, you will need to setup a SQL query tool for SAP HANA, express edition.
+
+The following tutorial group describes a series of option you can pick one from (you don't need to setup all of them, but one is enough):
 
  - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
+
+Off course you can use any tool of your choice!
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Check the row counts)]
 
-Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement to create the table structure:
+Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement to check the number of rows:
 
 ```SQL
 select 'links'   as table, count(1) as count from movielens_links
@@ -106,12 +110,12 @@ select 'tags'    as table, count(1) as count from movielens_tags;
 
 The result should be:
 
-table name  | row count
------------:|-----------
-links       | 9125
-movies      | 9125
-ratings     | 100004
-tags        | 1296
+**Table name**  | **Row count**
+---------------:|-----------
+**links**       | 9125
+**movies**      | 9125
+**ratings**     | 100004
+**tags**        | 1296
 
 [DONE]
 [ACCORDION-END]

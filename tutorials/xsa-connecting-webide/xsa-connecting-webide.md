@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>html5, products>sap-hana, products>sap-web-ide
 ---
 
 ## Prerequisites  
-  - If you do not have a HANA System with XS Advanced, [get your own instance of SAP HANA, express edition with XS Advanced](https://www.sap.com/developer/topics/sap-hana-express.html)
+  - If you do not have a HANA System with XS Advanced, [get your own instance of SAP HANA, express edition with XS Advanced](https://sap.com/developer/topics/sap-hana-express.html#flowchart)
 
 ## Details
 SAP HANA Extended Application Services, advanced model is the new development paradigm from SAP based around the Cloud Foundry concepts and architectures.
@@ -23,6 +23,9 @@ Check [this series of blogs posts](https://blogs.sap.com/2017/09/04/xs-advanced-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Launch SAP Web IDE for SAP HANA)]
+
+> These tutorials are based on SAP HANA, express edition. You can get your instance for free following [these instructions](https://sap.com/developer/topics/sap-hana-express.html#flowchart)
+
 By default, in SAP HANA, express edition, SAP Web IDE for SAP HANA can be accessed using `https://hxehost:53075/`. If you are using a different system, you can check the URL using command `xs apps | grep webide` in the [XS Command Line Interface](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/addd59069e6f444ca6ccc064d131feec.html).
 
 User: `XSA_DEV`
