@@ -3,7 +3,7 @@ title: Create an SAP Cloud Platform destination pointing to an SAP Gateway
 description: Create a new destination pointing to the SAP Gateway Demo System
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>cloud, products>sap-gateway, products>sap-cloud-platform  ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-gateway, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites  

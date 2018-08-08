@@ -101,7 +101,7 @@ As stated in the description, the **Similarity Scoring API** service accepts eit
 A series of options are also required for the following parameters:
 
  - `numSimilarVectors`: Number of most similar vectors to return in response
- - `algorithm`: The algorithm to use for calculation, one of [`naive`, `matrix_mult`, `clustering`] (Optional)
+ - `algorithm`: The algorithm to use for calculation, one of `naive`, `matrix_mult`, `clustering` (optional)
 
 The service returns the associated similarity scores.
 

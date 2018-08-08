@@ -2,7 +2,7 @@
 title: Build an SAPUI5 mobile app based on your data model and run it with mock data
 description: Learn how to build a mobile app using the SAPUI5 Master Detail Kapsel Application template based on your manually created data model
 primary_tag: products>sap-cloud-platform
-tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>intermediate ]
+tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>html5, topic>mobile, topic>odata, topic>sapui5, tutorial>intermediate  ]
 ---
 
 ## Prerequisites  
