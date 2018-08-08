@@ -59,24 +59,9 @@ However, this method requires that the table are created before the execution of
 
 If you want to learn more about this import method, you can check the following tutorial: [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-sql-import.html)
 
-- ***SAP HANA Persistence Model***
-
-The **SAP HANA extended application services, advanced model**, (XS advanced) provide a comprehensive platform for the development and execution of native data-intensive applications.
-
-The application data model comprises all the database artifacts used to store and provision data for your application's back end and user interface.
-
-As part of the process of defining the database persistence model for your application, you can create database design-time artifacts such as tables and views, for example using Core Data Services (CDS).
-
-At the same time, you can also create procedures and functions using SQLScript, which can be used to insert data into (and remove data from) tables or views.
-
 #### ***Solution***
 
-As the purpose of this tutorial series is to discover how to use Machine Learning algorithms to build a model leveraging the SAP HANA libraries, you can use either:
-
-- ***SAP HANA Tools*** plugin for Eclipse IDE
-- ***IMPORT FROM*** statement from the SAP HANA HDB Client
-
-To learn more about these options, you can refer to:
+Both options are valid and will be described here. To learn more about these options, you can refer to:
 
 - [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html)
 - [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-sql-import.html)
@@ -159,7 +144,7 @@ create column table movielens_tags(
 
 [ACCORDION-BEGIN [Step 3: ](Import the Dataset)]
 
-Depending on your the import method option you have selected, complete the following steps.
+Depending on your the import method option you have selected, complete one of the following steps.
 
 ### **Using the SAP HANA Tools for Eclipse**
 
