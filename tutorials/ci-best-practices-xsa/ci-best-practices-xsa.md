@@ -29,14 +29,15 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
 The SAP HANA Developer Guide for SAP HANA XS Advanced Model is a good starting point for getting familiar with application development for SAP HANA Extended Application Services, advanced model (XS advanced). The `TinyWorld` tutorial is a good introduction to developing your first SAP HANA XS advanced application using different module types. For detailed information about installing an SAP HANA XS Advanced instance, see the official documentation listed below. The example we describe in this chapter is based on SAP HANA XS advanced 2.0 SPS00.
 
-> [SAP HANA Platform](https://help.sap.com/viewer/p/SAP_HANA_PLATFORM)  
+> [SAP HANA Platform](https://help.sap.com/viewer/p/SAP_HANA_PLATFORM)
+> [Download or install SAP HANA, express edition with XS Advanced for free](https://sap.com/developer/topics/sap-hana-express.html#flowchart)
 > [SAP HANA Developer Guide for SAP HANA XS Advanced Model](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.01/en-US)  
 > [SAP HANA Server Installation and Update Guide](https://help.sap.com/viewer/2c1988d620e04368aa4103bf26f17727/2.0.01/en-US)  
 > [`TinyWorld` Tutorial](https://blogs.sap.com/2016/03/28/developing-with-xs-advanced-a-tinyworld-tutorial)
 
-There are also comprehensive SAP HANA Academy videos on YouTube:
+There are also comprehensive step-by-step tutorials to get started at the SAP Developer Center:
 
-> [SAP HANA Academy - XS Advanced (YouTube)](https://www.youtube.com/playlist?list=PLkzo92owKnVwL3AWaWVbFVrfErKkMY02a)
+> [Getting started with XS Advanced development](https://www.sap.com/developer/groups/hana-xsa-get-started.html)
 
 SAP HANA XS advanced applications may consist of multiple modules and be implemented as a multi target application (MTA) project using SAP Web IDE for SAP HANA. For details developing MTAs, see the official guides listed above. You can find more information about concepts, design, and specification of MTAs in the MTA specification:
 
@@ -48,7 +49,7 @@ SAP HANA XS advanced applications may consist of multiple modules and be impleme
 
 The CI process discussed in this chapter implements an MTA running on SAP HANA XS advanced. Source changes are pushed by the developer to a central Git repository (either the one that is integrated in SAP HANA or a custom Git repository). Inside the CI build, the MTA archive builder - a command-line tool shipped by SAP - triggers the technology-specific compilers for the dedicated modules contained in the MTA. Then, the MTA archive builder packages the artifacts from each module into one archive file with the extension `.mtar`. To download and learn more about the MTA archive builder refer to the following links:  
 
-> [MTA Archive Builder Download](https://tools.hana.ondemand.com/#cloud)  
+> [MTA Archive Builder Download](https://launchpad.support.sap.com/#/softwarecenter/template/products/%20_APP=00200682500000001943&_EVENT=DISPHIER&HEADER=Y&FUNCTIONBAR=N&EVENT=TREE&NE=NAVIGATE&ENR=73554900100800000903&V=MAINT&TA=ACTUAL&PAGE=SEARCH/MULTITRG%20APP%20ARCHIVE%20BUILDER)  
 > [MTA Archive Builder Documentation](https://help.sap.com/viewer/58746c584026430a890170ac4d87d03b/Cloud/en-US/ba7dd5a47b7a4858a652d15f9673c28d.html)
 
 After the MTA archive builder has run, the build result is automatically deployed into an environment for automatic testing during the CI build. For the deployment, the XS advanced command-line client triggers the XS deploy service. The CI build may contain tests such as static code checks for the JavaScript sources (`ESLint`) or automated tests for the user interface.

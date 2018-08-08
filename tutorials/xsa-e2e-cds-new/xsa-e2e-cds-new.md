@@ -35,6 +35,8 @@ Replace the existing code with following code into the editor to create two addi
 
 ```sql
 
+@OData.publish : true
+
 context PO {
 
     entity APPROVAL_STATUS {
