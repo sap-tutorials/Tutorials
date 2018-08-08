@@ -2,6 +2,8 @@
 title: Getting started with the SAP API Business Hub
 description: Learn how to find and test the API Business Hub.
 primary_tag: products>sap-cloud-platform
+author_name: Meredith Hassett
+author_profile: https://github.com/mhassett92
 auto_validation: true
 tags: [  tutorial>beginner, products>sap-cloud-platform ]
 ---

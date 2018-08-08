@@ -11,11 +11,11 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
   - **Proficiency:** Intermediate
   - [CI/CD Practices](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)
-  
+
 ## Next Steps
- 
+
   - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-  
+
 ---
 
 ### 1. Introduction
@@ -282,7 +282,7 @@ to reload the configuration in an already-open Terminal. Once this has been done
 $ $ARTIFACTORY_HOME/bin/artifactoryctl start
 ```
 
-Once the server has started, navigate to [http://localhost:8081](http://localhost:8081) to open the Artifactory web interface. When it is asking you which repositories to create, pick only CocoaPods or everything Mobile-related as shown in Figure 14. The absolute minimum you should select, however, is CocoaPods.
+Once the server has started, navigate to `http://localhost:8081` to open the Artifactory web interface. When it is asking you which repositories to create, pick only CocoaPods or everything Mobile-related as shown in Figure 14. The absolute minimum you should select, however, is CocoaPods.
 
 When everything is set up, Artifactory will take you to the main dashboard, containing a neat "Set Me Up" section that nicely explains how to proceed with your system setup, as shown in Figure 15. Select the ``cocoapods-local`` entry to learn how to configure your Mac for this repository. In a nutshell, you need to do three things: Installing the CocoaPods Artifactory extension, adding the ``cocoapods-local`` repository to your Mac, and configuring credentials to access that repository. To do so, run
 
@@ -627,6 +627,5 @@ In your Jenkins web interface, you should now see a new build pop up under the l
 ## Next Steps
 
   You can read through the remaining guides in order to proceed with advanced automation topics such as Git-related workflows (e.g. branching strategies and code reviews) and setting up pipelines.
- 
+
   - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-  

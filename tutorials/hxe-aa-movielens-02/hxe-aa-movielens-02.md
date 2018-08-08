@@ -116,7 +116,7 @@ The console should output the following:
 > ### **Note:**
 >If you get the following error: ***Could not start the build because no builder is installed in your space***, it probably mean that the builders are not deployed in the ***development*** space.
 >&nbsp;
->You will need to complete the first step (Verify the builders deployment) from the [***Check your environment*** tutorial](../hxe-aa-movielens-01/hxe-aa-movielens-01.md).
+>You will need to complete the first step (Verify the builders deployment) from the [***Check your environment*** tutorial](https://www.sap.com/developer/tutorials/hxe-aa-movielens-01.html).
 
 [DONE]
 [ACCORDION-END]

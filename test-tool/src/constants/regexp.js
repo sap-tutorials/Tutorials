@@ -10,10 +10,6 @@ module.exports = {
                 message: 'no filenames in alt-text for images allowed',
             },
             {
-                regexp: new RegExp('[^!]\\[.*?(here|there|file|folder|this|page)\\]\\((.*?)\\)'),
-                message: 'no useless hyperlinked terms',
-            },
-            {
                 regexp: new RegExp('\\[(.{1,2}|\\s{1,})\\]\\(.*\\)'),
                 message: 'conventions of alt-text for link/image are not observed (at least 3 characters, not only spaces)',
             },

@@ -67,6 +67,10 @@ You can now explore the graphical Core Data Services editor briefly.
 
 Right-click on the entity and choose **Graphical Editor**.
 
+Double-click on the context to create an entity:
+
+![create CDS](context.png)
+
 **Click** on an entity and drop it in the editor:
 
 ![create CDS graphical](10.png)

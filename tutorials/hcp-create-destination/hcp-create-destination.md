@@ -16,7 +16,7 @@ Destinations are used for the outbound communication of your application to a re
 
 The data source you will use in this tutorial series is called "Northwind", which is a publicly accessible OData source hosted by <http://www.odata.org>:
 
-Northwind comes in several versions.  The tutorials currently use either V2 (<http://services.odata.org/V2/Northwind/Northwind.svc/>) or V3 (<http://services.odata.org/V3/Northwind/Northwind.svc/>).  To support both versions, and other versions that may be added later, you will create a generic connection to the Northwind service.  The exact path - and exact version - will be configured in later tutorials.
+Northwind comes in several versions.  The tutorials currently use either V2 (<https://services.odata.org/V2/Northwind/Northwind.svc/>) or V3 (<https://services.odata.org/V3/Northwind/Northwind.svc/>).  To support both versions, and other versions that may be added later, you will create a generic connection to the Northwind service.  The exact path - and exact version - will be configured in later tutorials.
 
 ### Time to Complete
 **5 Min.**
@@ -50,13 +50,14 @@ Field Name     | Value
 :------------- | :-------------
 Name           | `Northwind`
 Type           | `HTTP`
-Description    | `Northwind OData Service`
-URL            | `http://services.odata.org`
+Description    | `Northwind OData services`
+URL            | `https://services.odata.org`
 Proxy Type     | `Internet`
 Authentication | `NoAuthentication`
 
-> Do **not** use the entire path for the URL.  The URL should only be `http://services.odata.org`
+> Do **not** use the entire path for the URL.  The URL should only be `https://services.odata.org`
 
+When you specify a URL with the HTTPS scheme, a checkbox "Use default JDK truststore" will appear. Ensure that this is checked. 
 
 [DONE]
 [ACCORDION-END]
@@ -64,7 +65,7 @@ Authentication | `NoAuthentication`
 [ACCORDION-BEGIN [Step 4: ](Add properties)]
 
 
-Add three **Additional Properties** fields by clicking on the **New Property** button once for each property.
+Add three **Additional Properties** by clicking on the **New Property** button once for each property.
 
 Field Name       | Value
 :--------------- | :-------------
