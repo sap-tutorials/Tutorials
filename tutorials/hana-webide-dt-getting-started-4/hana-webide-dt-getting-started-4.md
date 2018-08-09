@@ -1,6 +1,6 @@
 ---
 title: Converting Between an In-Memory Table and an Extended Table
-description: Convert an in-memory column store table to an extended table and vice versa.
+description: Convert between an in-memory and an extended table (and vice-versa) using SQL scripts in SAP Web IDE for SAP HANA.
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-web-ide ]
@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 
 ## Details
 ### You will learn  
-* How to convert between an in-memory and an extended table using SQL scripts in SAP Web IDE for SAP HANA.
+* How to convert an in-memory column store table to an extended table and vice versa.
 
 ### Time to Complete
 **15 Min**
@@ -33,11 +33,11 @@ Copy and paste the script below into the console, and press then green play butt
 ALTER TABLE "TPCH"."NATION_DT" NOT USING EXTENDED STORAGE
 ```
 
-![Executing Script](assets/hana-webide-dt-getting-started-4-c165bc36.png)
+![Executing Script](assets/hana-webide-dt-getting-started-4-b66c9b61.jpg)
 
 Go back to the **Tables** tab and click the **refresh** icon. You should see that the `NATION_DT` table is no longer an `EXTENDED` table, and is now an in-memory table.
 
-![Refresh Tables](assets/hana-webide-dt-getting-started-4-84ac84ed.png)
+![Refresh Tables](assets/hana-webide-dt-getting-started-4-02ba6363.jpg)
 
 [DONE]
 
@@ -51,11 +51,11 @@ ALTER TABLE "TPCH"."NATION_DT" USING EXTENDED STORAGE
 ```
 > Notice that the difference between the "`ALTER TABLE`" statement here and the previous section is the removal of "`NOT`".
 
-![Executing Script](assets/hana-webide-dt-getting-started-4-16b45111.png)
+![exe2](assets/hana-webide-dt-getting-started-4-4928e239.jpg)
 
 Go back and **refresh** the **Tables** tab. You should see that the `NATION_DT` table is no longer an in-memory database, as it has the `EXTENDED` attribute.
 
-![Extended Table](assets/hana-webide-dt-getting-started-4-90648f4b.png)
+![Extended Table](assets/hana-webide-dt-getting-started-4-254d0033.jpg)
 
 [DONE]
 

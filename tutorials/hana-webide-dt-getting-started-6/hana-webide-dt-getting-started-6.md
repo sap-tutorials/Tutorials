@@ -33,7 +33,7 @@ SELECT * FROM "TPCH"."ORDERS_CS"
 UNION ALL
 SELECT * FROM "TPCH"."ORDERS_DT"
 ```
->Note: Since we are explicitly managing the data set between `ORDERS_CS` and `ORDERS_DT` to ensure that data is not duplicated between the 2 tables, we can use the `UNION ALL` variation of the `UNION` clause, which is faster because it doesn't eliminate duplicate records in the combined result set.
+> Since we are explicitly managing the data set between `ORDERS_CS` and `ORDERS_DT` to ensure that data is not duplicated between the 2 tables, we can use the `UNION ALL` variation of the `UNION` clause, which is faster because it doesn't eliminate duplicate records in the combined result set.
 
 ![Union Query](assets/hana-webide-dt-getting-started-7-864f21b2.png)
 

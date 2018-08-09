@@ -1,6 +1,6 @@
 ---
 title: Create Extended Storage
-description: Create extended storage for dynamic tiering.
+description: Check the extended storage status for the HANA System and creating extended storage to enable dynamic tiering.
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-web-ide ]
@@ -30,7 +30,11 @@ Open and login to Web IDE. You should be greeted to a blank-looking screen. Clic
 
 ![2.1](assets/hana-webide-dt-getting-started-cfd2bfa5.png)
 
-In the new window, select **SAP HANA Database (Multitenant)** as the database type, enter the **host name** and **instance number** and login as the **TPCH** user we created. Check the **save user and password** so you won't have to re-enter your credentials when re-connecting to the system. Click OK to add the database.
+1. In the new window, select **SAP HANA Database (Multitenant)** as the database type.
+2. Enter the **host name** and **instance number** of your HANA instance.
+3. Login with the appropriate credentials for the **TPCH** user we created.
+4. Check the **save user and password** box so you won't have to re-enter your credentials when re-connecting to the system.
+5. Click OK to add the database.
 
 ![2.2](assets/hana-webide-dt-getting-started-2d4e714e.png)
 
@@ -54,7 +58,7 @@ A *Manage Services* window should pop up. Scroll down to the `esserver` service 
 * Status of "Installed but not running yet" with a yellow triangle, then proceed to Create Extended Storage section below.
 * Status of "Running" with a green box, then you are all set and can skip the rest of this tutorial section by scrolling to the bottom of this lesson and clicking the link to part 3.
 
-![2.5](assets/hana-webide-dt-getting-started-1a10eab9.png)
+![2.5](assets/hana-webide-dt-getting-started-2-8a148fdf.jpg)
 
 [VALIDATE_1]
 
@@ -71,9 +75,9 @@ CREATE EXTENDED STORAGE AT '<your.machine.name>' size 1000 MB;
 ```
 Replace "<your.machine.name>" with the host name of the machine where the dynamic tiering component is installed.
 
-> Note: This script will create 1 GB of `dbspace`. This is small for DT (warm store) which can scale up to handle 100 TB of data, but 1 GB is sufficient for tutorial purposes.
+> This script will create 1 GB of `dbspace`. This is small for DT (warm store) which can scale up to handle 100 TB of data, but 1 GB is sufficient for tutorial purposes.
 
-![2.7](assets/hana-webide-dt-getting-started-ed433cc3.png)
+![2.7](assets/hana-webide-dt-getting-started-2-a74d1840.jpg)
 
 Execute the script using the green play button. It will create the extended storage `dbspace` for SAP HANA dynamic tiering. Repeat step 2 to verify that extended storage is setup successfully.
 
@@ -82,7 +86,7 @@ Execute the script using the green play button. It will create the extended stor
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Additional information)]
-The "CREATE EXTENDED STORAGE" statement creates the warm store and the required `dbspaces`. A `dbspace` is a logical name for a container of files used to store the dynamic tiering table data and related objects. `Dbspaces` are specialized to manage specific types of data. Types of `dbspaces` used by dynamic tiering include `ES_SYSTEM`, `ES_USER`, `ES_DELTA` etc. Creating the extended storage `dbspace` is a prerequisite to creating extended tables.
+The `CREATE EXTENDED STORAGE` statement creates the warm store and the required `dbspaces`. A `dbspace` is a logical name for a container of files used to store the dynamic tiering table data and related objects. `Dbspaces` are specialized to manage specific types of data. Types of `dbspaces` used by dynamic tiering include `ES_SYSTEM`, `ES_USER`, `ES_DELTA` etc. Creating the extended storage `dbspace` is a prerequisite to creating extended tables.
 
 [DONE]
 

@@ -1,6 +1,6 @@
 ---
 title: Migrate Records in Related Tables Using Stored Procedures
-description: Using a stored procedure to migrate records in related tables as a single transaction.
+description: Use a stored procedure to migrate records in related tables as a single transaction.
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-web-ide ]
@@ -41,19 +41,19 @@ INTO TPCH.LINEITEM_CS
   WITH THREADS 8 BATCH 10000;
 ```
 
-> Note: `ORDERS_CS` cannot be truncated unlike the other tables due to foreign key constraints. Therefore a "`DELETE`" statement is used instead.
+> `ORDERS_CS` cannot be truncated unlike the other tables due to foreign key constraints. Therefore a "`DELETE`" statement is used instead.
 
-![Running Script](assets/hana-webide-dt-getting-started-6-3b070497.png)
+![Running Script](assets/hana-webide-dt-getting-started-5-310ff1f4.jpg)
 
 Verify everything executed correctly.
 
-![Verify Scripts](assets/hana-webide-dt-getting-started-6-8a90452d.png)
+![Verify Script](assets/hana-webide-dt-getting-started-5-78cbae0a.jpg)
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Migrating data between tables)]
+[ACCORDION-BEGIN [Step 2: ](Migrate data between tables)]
 Observe the script below. This script copies records older than 2015-1-1 from the in-memory `LINEITEM_CS` table to the extended table `LINEITEM_DT` in dynamic tiering. Next, it will delete the moved records from the `LINEITEM_CS` table to free up storage space in-memory now that the data has been copied to dynamic tiering. The "WHERE" statement in the script is used to selectively choose data. In this script specifically, the "WHERE" statement is used to select data from the `LINEITEM_CS` table whose `L_SHIPDATE` is before January 1st, 2015.
 
 ```SQL
@@ -67,7 +67,8 @@ DELETE FROM "TPCH"."LINEITEM_CS"
 
 Copy and paste the script above into the SQL console. Press the Execute button to execute the migration.
 
-> **Important**: Though this works as intended there can be unintended consequences. Since the "INSERT" and "DELETE" operations occur as **separate transactions**, if data is manipulated **between** the transactions, we may see unexpected results. Take this scenario for example: we run the script which copies records prior to January 1st, 2015 from the CS table into the DT table. Then, someone adds a record before January 1st, 2015 into the CS table, after which the "DELETE" operation deletes all records from the CS table prior to January 1st, 2015.
+> **IMPORTANT**: Though this works as intended there can be unintended consequences. Since the "INSERT" and "DELETE" operations occur as **separate transactions**, if data is manipulated **between** the transactions, we may see unexpected results.
+Take this scenario for example: we run the script which copies records prior to January 1st, 2015 from the CS table into the DT table. Then, someone adds a record before January 1st, 2015 into the CS table, after which the "DELETE" operation deletes all records from the CS table prior to January 1st, 2015.
 In this case, that added record is lost as it gets deleted before being moved into the DT table.   
 
 [DONE]
@@ -130,7 +131,7 @@ Now that the store procedure is created, you can execute the stored procedure by
 CALL "TPCH"."Migrate_Aged_Orders_1"();
 ```
 
-![Successful Procedure Call_1](assets/hana-webide-dt-getting-started-5-9bf982ec.png)
+![Successful 1](assets/hana-webide-dt-getting-started-5-c1cbb76e.jpg)
 
 Verify that the data has been inserted into the **`LINEITEM_DT`** table either by executing the query below or by right clicking on the table in the catalogue and choosing **Open Data**.
 
@@ -145,7 +146,7 @@ Verify that the data has been deleted from the **`LINEITEM_CS`** table by execut
 SELECT * FROM "TPCH"."LINEITEM_CS" WHERE "TPCH"."LINEITEM_CS"."L_SHIPDATE" < '2015-1-1';
 ```
 
-![See removed data](assets/hana-webide-dt-getting-started-6-7c71c813.png)
+![See Removed Data](assets/hana-webide-dt-getting-started-5-b5d14d8c.jpg)
 
 [DONE]
 
@@ -171,11 +172,11 @@ INTO TPCH.LINEITEM_CS
   WITH THREADS 8 BATCH 10000;
 ```
 
-![Refresh Data 2](assets/hana-webide-dt-getting-started-6-3b070497.png)
+![RD2](assets/hana-webide-dt-getting-started-5-310ff1f4.jpg)
 
-![Refresh Data 2](assets/hana-webide-dt-getting-started-6-8a90452d.png)
+![RD2](assets/hana-webide-dt-getting-started-5-78cbae0a.jpg)
 
-> Note: `ORDERS_CS` cannot be truncated unlike the other tables due to foreign key constraints. Therefore a "DELETE" statement is used instead.
+> `ORDERS_CS` cannot be truncated unlike the other tables due to foreign key constraints. Therefore a "DELETE" statement is used instead.
 
 Next, we will create the `Migrate_Aged_Orders2` stored procedure. In this procedure, we will use a **variable** to migrate data older than a year from the in-memory tables over to the dynamic tiering tables. The `Migrate_Aged_Orders2()` stored procedure migrates historical data from **both** the in-memory `ORDERS_CS` and `LINEITEM_CS` tables to the dynamic tiering tables `ORDERS_DT` and `LINEITEM_DT` respectively. Copy and paste the script below into a SQL console. Then press the green execute button to create the procedure and verify it executed correctly.
 
@@ -206,7 +207,7 @@ DELETE FROM "TPCH"."ORDERS_CS"
 END;
 ```
 
-> Note: The declaration of `varAgedDate` at the beginning dynamically gives a year prior to today's date. As well, it ensures that each data modification statement is referencing the same date value and does not change through out the execution of the stored procedure. Otherwise, an execution during midnight might produce unexpected results.
+> The declaration of `varAgedDate` at the beginning dynamically gives a year prior to today's date. As well, it ensures that each data modification statement is referencing the same date value and does not change through out the execution of the stored procedure. Otherwise, an execution during midnight might produce unexpected results.
 The `INSERT` and `DELETE` statements are executed in a **specific order** to comply with the declared foreign key relationship between the in-memory `ORDERS_CS` and `LINEITEM_CS` tables.
 
 ![Create Procedure 2](assets/hana-webide-dt-getting-started-5-c98f1481.png)
@@ -215,7 +216,7 @@ The `INSERT` and `DELETE` statements are executed in a **specific order** to com
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Calling the more complex migration stored procedure)]
+[ACCORDION-BEGIN [Step 7: ](Call the more complex migration stored procedure)]
 Now that the store procedure is created. You can execute the stored procedure by calling it. Run the script below in a SQL console and make sure it executed correctly.
 
 ```SQL
@@ -224,7 +225,7 @@ CALL "TPCH"."Migrate_Aged_Orders2"();
 
 As mentioned previously, the stored procedure is a single statement, resulting in the entire store procedure executing as a single atomic transaction even-though the procedure itself contains multiple statements.
 
-![Call Procedure 2](assets/hana-webide-dt-getting-started-5-67d77e6b.png)
+![](assets/hana-webide-dt-getting-started-5-0eb97f50.jpg)
 
 Verify that the data has been inserted into the **`LINEITEM_DT`** table either by executing the query below or by right clicking on the table in the catalogue and choosing **Open Data**.
 
