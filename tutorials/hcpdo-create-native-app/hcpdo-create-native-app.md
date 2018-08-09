@@ -47,11 +47,11 @@ Enter the following and click **Save**.
 
 Field Name              | Value
 :---------------------- | :-------------    
-Config Template         | ` Native`
-ID                      | `com.northwind.native`
-Name                    | `nwnative`
-Description             | `Native version of Northwind app`
-Vendor                  | `SAP`
+`Config Template`       | ` Native`
+`ID`                    | `com.northwind.native`
+`Name`                  | `nwnative`
+`Description`           | `Native version of Northwind app`
+`Vendor`                | `SAP`
 
 ![Create Application](mg6-1-04.png)
 
