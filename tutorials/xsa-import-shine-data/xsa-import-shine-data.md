@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner | Intermediate | Advanced
+ - **Proficiency:** Beginner
  - **Tutorials:** [Create an HDI Module](https://www.sap.com/developer/tutorials/xsa-hdi-module.html)
 
 
@@ -16,6 +16,8 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 ## Details
 ### You will learn  
 This tutorial will guide you through the process of downloading sample data and database artifacts and importing it into SAP HANA using SAP Web IDE for SAP HANA.
+
+If you are looking to import the entire SAP HANA `INteractive` Education model for XS Advanced, follow this tutorial instead: [https://www.sap.com/canada/developer/tutorials/xsa-ml-e2e-access-shine.html](https://www.sap.com/canada/developer/tutorials/xsa-ml-e2e-access-shine.html)
 
 ### Time to Complete
 **5 Min**
@@ -43,21 +45,18 @@ Import the archive into the data folder. This will probably be `src\data`. Right
 
 ![Confirm](3.png)
 
-
-
 [ACCORDION-END]
 
 
 [ACCORDION-BEGIN [Step 3: ](Purge duplicates and Build)]
 
-Delete the files `FLIGHT.hdbcds`, `header.csv`, `item.csv` and `Purchase.hdbtabledata` to avoid conflicts during build:
+Delete the files `FLIGHT.hdbcds`, `header.csv`,  `item.csv` and `load.hdbtabledata` (if available) to avoid conflicts during build:
 
 ![Delete](4.png)
 
 **Build** the db module:
 
 ![Build](5.png)
-
 
 
 [ACCORDION-END]
@@ -68,9 +67,19 @@ Formerly known as HANA Runtime Tools or `HRTT` in previous versions, the Databas
 
 ![HRTT](6.png)
 
-
 >In SPS12, the HANA Runtime Tool was accessed from `https://<hostname>:51006` or, for `SAP HANA, express edition`. from `http://<hostname>:51018`
 
+Use the `+` icon to add a database container into the Explorer.
+
+![HRTT](7.png)
+
+Locate your HDI container and add it. You will find it as a concatenation of your user ID and the name of your project.
+
+![HRTT](8.png)
+
+Once added you can see the tables and their content.
+
+![HRTT](9.png)
 
 [ACCORDION-END]
 
