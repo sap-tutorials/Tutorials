@@ -1,6 +1,6 @@
 ---
-title: SAP HANA XS Advanced, Creating a Graphical Calculation View
-description: Creating a Graphical Calculation View with a Dimension data type
+title: SAP HANA XS Advanced, Creating a Cube Calculation View
+description: Creating a Graphical Calculation View with a Cube data type
 primary_tag: products>sap-hana
 auto_validation: true
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]

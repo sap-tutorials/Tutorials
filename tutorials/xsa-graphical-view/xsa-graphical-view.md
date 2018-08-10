@@ -1,5 +1,5 @@
 ---
-title: SAP HANA XS Advanced, Creating a Graphical Calculation View
+title: SAP HANA XS Advanced, Creating a Dimension Graphical Calculation View
 description: Creating a Graphical Calculation View with a Dimension data type
 primary_tag: products>sap-hana
 auto_validation: true
@@ -67,7 +67,7 @@ Call it `PRODUCTS` and choose type `DIMENSION` and click **Create**
 
 Click the `Create join` button and drop the node at the bottom of the design window
 
-![New Join node](join.gif)
+![New Join node](join1.gif)
 
 Right-click on the node and call it `Product_BP`
 
