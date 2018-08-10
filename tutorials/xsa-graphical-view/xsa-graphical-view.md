@@ -71,7 +71,7 @@ Click the `Create join` button and drop the node at the bottom of the design win
 
 Right-click on the node and call it `Product_BP`
 
-![New Join node](rename.gif)
+![New Join node](rename.png)
 
 Press **enter** and select the node again, choose the **+** sign to add data sources
 
@@ -170,15 +170,15 @@ Rename the join node to `ProductDesc`.
 
 Connect the node `ProductDesc` to the projection node. Use the `AutoLayout` feature to align the nodes and the `Auto Map by name` button to create the output.
 
-![Final view](final.gif)
+![Final view](final.png)
 
 **Build** the view then right-click on it and choose `Data Preview`.
 
-![Final view](17.gif)
+![Final view](17.png)
 
 The output should be similar to the following. Copy the SQL statement produced by the `SQL` button into the validation below to complete it
 
-![Final view](sql.gif)
+![Final view](sql.png)
 
 [VALIDATE_1]
 

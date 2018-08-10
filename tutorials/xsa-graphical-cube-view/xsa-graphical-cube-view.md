@@ -130,7 +130,7 @@ Build the `db` module and return to the database explorer
 
 Navigate to the column view, right-click on it and select **Open Data**.
 
-![Final view](16.gif)
+![Final view](16.png)
 
 [VALIDATE_1]
 
