@@ -4,10 +4,8 @@ description: Learn how to easily import flat dataset files in your SAP HANA, exp
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 15
 ---
-
-## Prerequisites
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn
@@ -15,8 +13,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 - Create a Multi-Target Application Project
 - Save your Web IDE project in a GIT repository
 
-### Time to Complete
-**15 Min**
 
 [ACCORDION-BEGIN [Info: ](Which MovieLens dataset?)]
 
