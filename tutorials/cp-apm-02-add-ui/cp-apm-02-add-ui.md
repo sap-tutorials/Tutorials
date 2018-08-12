@@ -134,7 +134,7 @@ The columns are displayed with mock data
 
 [ACCORDION-BEGIN [Step 8: ](Add UI annotations)]
 
-1. Go to `app/webapp/localService` and double-click the file you just created to open it in the Annotation Modeler.
+1. Go to `app/webapp/localService` and right-click on the file you just created to use the context menu, selecting **`Open With -> Annotation Modeler`**.
 2. Expand the **Books** entity.
 The **Local Annotations** entry includes the annotation file you have just created.
 3. Go to the **Actions** column and choose **`Add subnodes`**.
