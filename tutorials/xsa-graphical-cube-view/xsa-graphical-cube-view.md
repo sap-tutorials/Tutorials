@@ -64,7 +64,7 @@ Finally, rename the node to `PO`.
 
 Connect the output of the join to the `Star Join`. Use the **+** sign to search and select `PRODUCTS`.
 
-![Create star join](star.gif)
+![Create star join](star2.gif)
 
 Join the `PRODUCTID` and `PRODUCT.PRODUCTID` as an inner join.
 

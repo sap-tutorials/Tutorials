@@ -127,7 +127,6 @@ You are now set to start development. Check the [tutorial section in the Develop
 Here are some suggestions:
 - [Create a Table and Upload data into SAP HANA, express edition ](https://www.sap.com/developer/tutorials/hxe-cj1-create-table-upload-data.html)
 - [Get started with Geospatial](https://sap.com/developer/tutorials/hana-spatial-intro1-point.html)
-- [Use Node.js to connect to SAP HANA]
 
 
 [ACCORDION-END]
