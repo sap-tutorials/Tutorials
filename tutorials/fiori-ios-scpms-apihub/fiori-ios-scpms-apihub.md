@@ -1,6 +1,7 @@
 ---
 title: SAP Leonardo Machine Learning and the iOS SDK
 description: In this How-To tutorial, you will test SAP Leonardo's Machine Learning capabilities exposed through SAP API Hub and implement these in a native iOS application build with the SAP Cloud Platform SDK for iOS.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>how-to, tutorial>intermediate, operating-system>ios, topic>cloud, topic>mobile, products>sap-api-management, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -44,6 +45,7 @@ Specify a location to store your project and click **Finish**.
 Your project is now generated.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add SAP Cloud Platform SDK for iOS framework files)]
@@ -69,6 +71,7 @@ Drag the 3 selected SDK framework files onto the **Embedded Binaries** panel.
 The relevant SAP Cloud Platform SDK for iOS framework files are now included in the project.
 
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -102,6 +105,7 @@ The **Table View Controller** and its toolbar should now look like this:
 ![Add table view](fiori-ios-scpms-apihub-07.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create Table View Controller custom class)]
@@ -130,6 +134,7 @@ Review the location the class will be stored, and click **Create**.
 ![Add class](fiori-ios-scpms-apihub-10.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Link Table View Controller to custom class)]
@@ -139,6 +144,7 @@ In the Storyboard, select the **Table View Controller**. In the **Identity inspe
 ![Add class](fiori-ios-scpms-apihub-12.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create toolbar button actions)]
@@ -199,6 +205,7 @@ class ImageClassifierTVC: UITableViewController {
 ```
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Allow Camera and Photos Library usage)]
@@ -218,6 +225,7 @@ Your `info.plist` file should now look like this:
 ![Add action](fiori-ios-scpms-apihub-14.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Explore the SAP API Hub)]
@@ -295,6 +303,7 @@ If you test the service, you will receive a response like the following:
 In your app, you're only interested in the `results` array containing objects with the classification and score. With this information, you can now build your app's logic.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Change class delegates and add fields)]
@@ -334,6 +343,7 @@ override func viewDidLoad() {
 This sets the initial logger level to `info`, and assigns the image picker delegate to the class.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Add FUIObjectTableViewCell to table)]
@@ -356,6 +366,7 @@ Switch to the **Attributes inspector** and set the **Identifier** to `classifica
 ![API Hub](fiori-ios-scpms-apihub-16.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Implement table cell logic)]
@@ -392,6 +403,7 @@ override func tableView(_ tableView: UITableView, numberOfRowsInSection section:
 This method returns the number of items in the `classifications` array. In addition, if the `classifications` array contains no items, a placeholder text is displayed.  
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Implement Camera and Photo Library usage)]
@@ -511,6 +523,7 @@ If you now click the **Camera** button, you are asked to give the app permission
 Click **OK**, and take a picture. Click **Use Photo**, and the app navigates back to the initial screen. Nothing happens further, because you did not yet implemented the SAP Leonardo Image Classification API from the SAP API Hub yet. You will fix that in the next steps.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Implement SAP Leonardo Image Classification API)]
@@ -614,6 +627,7 @@ private func createBody(
 ```
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Bind response to FUIObjectTableViewCell)]
@@ -651,6 +665,7 @@ tableView.separatorStyle = .none
 This ensures the table cell is rendered correctly.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Build and run the application)]
@@ -664,8 +679,5 @@ If you now click the **Use Photo** button, the image is sent to the SAP API Hub 
 ![App](fiori-ios-scpms-apihub-27.png)
 
 
+[VALIDATE_15]
 [ACCORDION-END]
-
-
-
-

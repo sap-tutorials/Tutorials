@@ -276,7 +276,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 There are multiple options to achieve this goal. Here we will use a pre-loaded JSON model configured in the `manifest.json` file.
 
-Create a new file named `demo.json` under **`Workspace`** > **`sapui5ml-topicdetection`** > **`webapp`** > **`model`**, copy the below code and make sure you replace `<<<<< COPY YOUR API KEY >>>>>` by your the API key we retrieved in step 2.
+Create a new file named **`demo.json`** under **`Workspace`** > **`sapui5ml-topicdetection`** > **`webapp`** > **`model`**, copy the below code and make sure you replace `<<<<< COPY YOUR API KEY >>>>>` by your the API key we retrieved in step 2.
 
 Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
@@ -327,102 +327,105 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```XML
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form" xmlns:table="sap.ui.table"
-  xmlns:u="sap.ui.unified" xmlns="sap.m" controllerName="sapui5ml.controller.demo" displayBlock="true">
-  <App>
-    <pages>
-      <Page title="Topic Detection">
-        <content>
-          <Table>
-            <columns>
-              <Column vAlign="Middle"/>
-              <Column vAlign="Middle"/>
-            </columns>
-            <items>
-              <ColumnListItem >
-                <cells>
-                  <Label text="Total number of topics to be detected"/>
-                  <StepInput value="{demo>/options/numTopics}" required="true"/>
-                </cells>
-              </ColumnListItem>
-              <ColumnListItem>
-                <cells>
-                  <Label text="Number of most relevant topics to be listed per document"/>
-                  <StepInput value="{demo>/options/numTopicsPerDoc}" required="true"/>
-                </cells>
-              </ColumnListItem>
-              <ColumnListItem>
-                <cells>
-                  <Label text="Number of keywords to be listed per topic"/>
-                  <StepInput value="{demo>/options/numKeywordsPerTopic}" required="true"/>
-                </cells>
-              </ColumnListItem>
-              <ColumnListItem>
-                <cells>
-                  <Label text="Maximum number of keywords to be extracted from documents in total"/>
-                  <StepInput value="{demo>/options/numFeatures}"/>
-                </cells>
-              </ColumnListItem>
-            </items>
-          </Table>
-          <VBox width="100%" direction="Column" alignItems="Center">
-            <Carousel pages="{demo>/result}" width="100%" visible="{= ${demo>/resultVisible} === true}">
-              <pages>
-                <VBox width="100%" direction="Column" alignItems="Center">
-                  <Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
-                  <table:Table rows="{demo>topics}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5">
-                    <table:columns>
-                      <table:Column sortProperty="rank" filterProperty="rank">
-                        <Label text="Topic id"/>
-                        <table:template>
-                          <Text text="{demo>id}"/>
-                        </table:template>
-                      </table:Column>
-                      <table:Column sortProperty="rank" filterProperty="rank">
-                        <Label text="Rank"/>
-                        <table:template>
-                          <Text text="{demo>rank}"/>
-                        </table:template>
-                      </table:Column>
-                      <table:Column sortProperty="score" filterProperty="score">
-                        <Label text="Score"/>
-                        <table:template>
-                          <Text text="{demo>score}"/>
-                        </table:template>
-                      </table:Column>
-                      <table:Column>
-                        <Label text="Keywords"/>
-                        <table:template>
-                          <Text text="{demo>keywords}"/>
-                        </table:template>
-                      </table:Column>
-                    </table:columns>
-                  </table:Table>
-                </VBox>
-              </pages>
-            </Carousel>
-          </VBox>
-        </content>
-        <footer>
-          <Toolbar width="100%">
-            <content>
-              <u:FileUploader id="idFileUpload" buttonOnly="true" buttonText="Upload Text File Archive" name="files" uploadUrl="{demo>/url}"
-                sameFilenameAllowed="true" useMultipart="true" sendXHR="true" uploadOnChange="true" accept="zip,tar" change="fileUploadChange"
-                uploadComplete="fileUploadComplete">
-                <u:headerParameters>
-                  <u:FileUploaderParameter name="APIKey" value="{demo>/APIKey}"/>
-                  <u:FileUploaderParameter name="Accept" value="application/json"/>
-                </u:headerParameters>
-                <u:parameters>
-                  <u:FileUploaderParameter name="options" value="{demo>/optionsJs}"/>
-                </u:parameters>
-              </u:FileUploader>
-            </content>
-          </Toolbar>
-        </footer>
-      </Page>
-    </pages>
-  </App>
+	xmlns:u="sap.ui.unified" xmlns="sap.m" controllerName="sapui5ml.controller.demo" displayBlock="true">
+	<App>
+		<pages>
+			<Page title="Topic Detection">
+				<content>
+					<Table>
+						<columns>
+							<Column vAlign="Middle"/>
+							<Column vAlign="Middle"/>
+						</columns>
+						<items>
+							<ColumnListItem >
+								<cells>
+									<Label text="Total number of topics to be detected"/>
+									<StepInput value="{demo>/options/numTopics}" required="true"/>
+								</cells>
+							</ColumnListItem>
+							<ColumnListItem>
+								<cells>
+									<Label text="Number of most relevant topics to be listed per document"/>
+									<StepInput value="{demo>/options/numTopicsPerDoc}" required="true"/>
+								</cells>
+							</ColumnListItem>
+							<ColumnListItem>
+								<cells>
+									<Label text="Number of keywords to be listed per topic"/>
+									<StepInput value="{demo>/options/numKeywordsPerTopic}" required="true"/>
+								</cells>
+							</ColumnListItem>
+							<ColumnListItem>
+								<cells>
+									<Label text="Maximum number of keywords to be extracted from documents in total"/>
+									<StepInput value="{demo>/options/numFeatures}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+					<VBox width="100%" direction="Column" alignItems="Center">
+						<Carousel pages="{demo>/result}" width="100%" visible="{= ${demo>/resultVisible} === true}">
+							<pages>
+								<VBox width="100%" direction="Column" alignItems="Center">
+									<ScrollContainer height="100%" width="100%" horizontal="true" vertical="true" focusable="true">
+										<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
+										<table:Table rows="{demo>topics}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5">
+											<table:columns>
+												<table:Column sortProperty="rank" filterProperty="rank">
+													<Label text="Topic id"/>
+													<table:template>
+														<Text text="{demo>id}"/>
+													</table:template>
+												</table:Column>
+												<table:Column sortProperty="rank" filterProperty="rank">
+													<Label text="Rank"/>
+													<table:template>
+														<Text text="{demo>rank}"/>
+													</table:template>
+												</table:Column>
+												<table:Column sortProperty="score" filterProperty="score">
+													<Label text="Score"/>
+													<table:template>
+														<Text text="{demo>score}"/>
+													</table:template>
+												</table:Column>
+												<table:Column>
+													<Label text="Keywords"/>
+													<table:template>
+														<Text text="{demo>keywords}"/>
+													</table:template>
+												</table:Column>
+											</table:columns>
+										</table:Table>
+									</ScrollContainer>
+								</VBox>
+							</pages>
+						</Carousel>
+					</VBox>
+				</content>
+				<footer>
+					<Toolbar width="100%">
+						<content>
+							<u:FileUploader id="idFileUpload" buttonOnly="true" buttonText="Upload Text File Archive" name="files" uploadUrl="{demo>/url}"
+								sameFilenameAllowed="true" useMultipart="true" sendXHR="true" uploadOnChange="true" accept="zip,tar" change="fileUploadChange"
+								uploadComplete="fileUploadComplete">
+								<u:headerParameters>
+									<u:FileUploaderParameter name="APIKey" value="{demo>/APIKey}"/>
+									<u:FileUploaderParameter name="Accept" value="application/json"/>
+								</u:headerParameters>
+								<u:parameters>
+									<u:FileUploaderParameter name="options" value="{demo>/optionsJs}"/>
+								</u:parameters>
+							</u:FileUploader>
+						</content>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
 </mvc:View>
+
 ```
 
 [DONE]

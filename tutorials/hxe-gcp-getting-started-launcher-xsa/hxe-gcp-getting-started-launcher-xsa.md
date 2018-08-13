@@ -12,9 +12,10 @@ tags: [  tutorial>beginner, topic>big-data, topic>cloud, products>sap-hana, prod
 
 
 ## Next Steps
-- [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
 -  **Build your first app:** [Get started with XS Advanced development](https://www.sap.com/developer/groups/hana-xsa-get-started.html)
+- [Explore the basic tools in the XS Advanced platform](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
 - Generate test data and check a sample enterprise application [deploying the SAP HANA `INteractive` Education model on XS Advanced](https://www.sap.com/developer/tutorials/xsa-ml-e2e-access-shine.html)
+- [Review SAP HANA, express edition content, tutorials and quick start guides](https://www.sap.com/developer/topics/sap-hana-express.tutorials.html)
 - **OPTIONAL** [Setup PuTTY and WinSCP to access your SAP HANA, express edition instance on Google Cloud Platform](https://www.sap.com/developer/tutorials/hxe-gcp-setup-putty-winscp-windows.html)
 
 

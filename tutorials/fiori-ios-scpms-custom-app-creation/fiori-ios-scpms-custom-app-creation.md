@@ -118,8 +118,7 @@ Enter the following details:
 Click **Next** to advance to the **Cloud Configuration** step.
 
 
-[VALIDATE_3]
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Cloud Configuration details)]
@@ -758,7 +757,7 @@ If you now open the standard **Reminders** app on the device, your reminders are
 ![Build and run the app](fiori-ios-scpms-custom-app-creation-35.png)
 
 
-[DONE]
+[VALIDATE_20]
 [ACCORDION-END]
 
 

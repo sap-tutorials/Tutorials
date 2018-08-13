@@ -101,7 +101,7 @@ As stated in the description, the **Similarity Scoring API** service accepts eit
 A series of options are also required for the following parameters:
 
  - `numSimilarVectors`: Number of most similar vectors to return in response
- - `algorithm`: The algorithm to use for calculation, one of [`naive`, `matrix_mult`, `clustering`] (Optional)
+ - `algorithm`: The algorithm to use for calculation, one of `naive`, `matrix_mult`, `clustering` (optional)
 
 The service returns the associated similarity scores.
 
@@ -628,48 +628,53 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```XML
 <mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:table="sap.ui.table" xmlns:unified="sap.ui.unified" xmlns:layout="sap.ui.layout" xmlns="sap.m"
-  xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
-  controllerName="sapui5ml.controller.demo" displayBlock="true">
-  <App>
-    <pages>
-      <Page title="Image Similarity Scoring">
-        <content>
-          <Carousel pages="{path:'demo>/result-featureextraction'}" width="100%" visible="{= ${demo>/resultVisible-featureextraction} === true }">
-            <pages>
-              <VBox width="100%" direction="Column" alignItems="Center">
-                <Image height="200px" class="sapUiLargeMargin" src="{demo>fileURL}"/>
-                <Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
-                <table:Table rows="{demo>result}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5" visible="{= ${demo>/resultVisible-similarityscoring} === true}">
-                  <table:columns>
-                    <table:Column sortProperty="id" filterProperty="label">
-                      <Label text="File"/>
-                      <table:template>
-                        <Text text="{demo>id}"/>
-                      </table:template>
-                    </table:Column>
-                    <table:Column sortProperty="score" filterProperty="score">
-                      <Label text="Score"/>
-                      <table:template>
-                        <Text text="{demo>score}"/>
-                      </table:template>
-                    </table:Column>
-                  </table:columns>
-                </table:Table>
-              </VBox>
-            </pages>
-          </Carousel>
-        </content>
-        <footer>
-          <Toolbar width="100%">
-            <content>
-              <unified:FileUploader buttonOnly="true" sameFilenameAllowed="true" multiple="true" buttonText="Get Image Features" change="onPressExtractFeatures" custom:mode="ajax" fileType="zip,png,jpeg,jpg,bmp,tiff,tif" mimeType="application/x-zip-compressed,application/zip,application/octet-stream,image/png,image/jpg,image/jpeg,image/bmp,image/tiff" typeMissmatch="fileTypeMissmatch"></unified:FileUploader>
-              <Button text="Score Similarity" press="onPressScoreSimilarity" custom:mode="ajax" visible="{= ${demo>/resultVisible-featureextraction} === true}"/>
-            </content>
-          </Toolbar>
-        </footer>
-      </Page>
-    </pages>
-  </App>
+	xmlns:core="sap.ui.core" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="sapui5ml.controller.demo" displayBlock="true">
+	<App>
+		<pages>
+			<Page title="Image Similarity Scoring">
+				<content>
+					<Carousel pages="{path:'demo>/result-featureextraction'}" width="100%" visible="{= ${demo>/resultVisible-featureextraction} === true }">
+						<pages>
+							<VBox width="100%" direction="Column" alignItems="Center">
+								<ScrollContainer height="100%" width="100%" horizontal="true" vertical="true" focusable="true">
+									<Image height="200px" class="sapUiLargeMargin" src="{demo>fileURL}"/>
+									<Label text="File name: {demo>name}" class="sapUiLargeMargin"></Label>
+									<table:Table rows="{demo>result}" enableBusyIndicator="true" selectionMode="Single" visibleRowCount="5" visible="{= ${demo>/resultVisible-similarityscoring} === true}">
+										<table:columns>
+											<table:Column sortProperty="id" filterProperty="label">
+												<Label text="File"/>
+												<table:template>
+													<Text text="{demo>id}"/>
+												</table:template>
+											</table:Column>
+											<table:Column sortProperty="score" filterProperty="score">
+												<Label text="Score"/>
+												<table:template>
+													<Text text="{demo>score}"/>
+												</table:template>
+											</table:Column>
+										</table:columns>
+									</table:Table>
+								</ScrollContainer>
+							</VBox>
+						</pages>
+					</Carousel>
+				</content>
+				<footer>
+					<Toolbar width="100%">
+						<content>
+							<unified:FileUploader buttonOnly="true" sameFilenameAllowed="true" multiple="true" buttonText="Get Image Features"
+								change="onPressExtractFeatures" custom:mode="ajax" fileType="zip,png,jpeg,jpg,bmp,tiff,tif"
+								mimeType="application/x-zip-compressed,application/zip,application/octet-stream,image/png,image/jpg,image/jpeg,image/bmp,image/tiff"
+								typeMissmatch="fileTypeMissmatch"></unified:FileUploader>
+							<Button text="Score Similarity" press="onPressScoreSimilarity" custom:mode="ajax" visible="{= ${demo>/resultVisible-featureextraction} === true}"/>
+						</content>
+					</Toolbar>
+				</footer>
+			</Page>
+		</pages>
+	</App>
 </mvc:View>
 ```
 

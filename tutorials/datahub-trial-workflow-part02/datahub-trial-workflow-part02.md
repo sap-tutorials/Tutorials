@@ -1,6 +1,7 @@
 ---
 title: Create workflow (part 2), Aggregate data with flowgraph
 description: Build a flowgraph to aggregate device data using SAP Data Hub, trial edition.
+auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -67,6 +68,8 @@ Create the following columns:
 
 Finally click **Finish** to create the table.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create data sets)]
@@ -78,7 +81,7 @@ Create a data set for the `Events.parquet` files via the menu **New > Data Set**
 
 Enter the following information:
 
-| Field                          | Value                                                                  |
+| Field&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                            | Value                                                                  |
 | ------------------------------ | ---------------------------------------------------------------------- |
 | `Description`                  | `Events (Google Cloud Storage)`                                        |
 | `File Path`                    | file via **Browse** button, in our case `datahub-trial/Events.parquet` |
@@ -106,6 +109,9 @@ Then click **Show Structure** and directly afterwards the **Auto Propose** butto
 ![picture_08](./datahub-trial-workflow-part02_08.png)  
 
 Use the **Activate** button to activate the data set.
+
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create flowgraph task)]
@@ -115,11 +121,11 @@ Now you create a flowgraph task to aggregate the `Events.parquet` file per count
 
 Select `Events` and `EnrichedDevices` as **Source** and `Statistics` as **Target** data set. Also enter `Calculate Statistics` as **Description**.
 
-Add a **Join** by clicking **Add Node**. The flowgraph now looks like this:
+Click the **Add node button (1)** followed by the **Join button (2)** as displayed in the following screenshot :
 
 ![picture_10](./datahub-trial-workflow-part02_10.png)
 
-Connect the `Events` data set with the `JOIN_IN` port of the **Join** and connect the `EnrichDevices` data set with the `JOIN_IN_1` port of the **Join**.
+Connect the `Events` data set with the `JOIN_IN` port of the **Join** and connect the `EnrichDevices` data set with the `JOIN_IN_1` port of the **Join**. The flowgraph now looks like this :
 
 ![picture_11](./datahub-trial-workflow-part02_11.png)
 
@@ -206,6 +212,8 @@ Finally select `First Row` as **Duplicate Strategy (6)** and click **Apply**. La
 
 Use the **Activate** button to activate the flowgraph.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Execute flowgraph task)]
@@ -217,6 +225,8 @@ You see the log view. Refresh the log view by clicking **Refresh** until the sta
 
 **Remark**: Even though the data volume is comparatively small, it profiling can take comparatively long to complete. Profiling uses Apache Spark and it takes time to spin up the Spark workers.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Check result)]
@@ -224,7 +234,10 @@ Now check the result of the flowgraph task. Thereto open the `Statistics` data s
 
 ![picture_23](./datahub-trial-workflow-part02_23.png)
 
-You see the aggregated maximum and minimum humidity as well as temperature.
+You see the aggregated maximum and minimum humidity as well as temperature. Using the above screenshot and your generated `Statistics` data set, answer the below question.
+
+[VALIDATE_1]
+
 [ACCORDION-END]
 
 ---

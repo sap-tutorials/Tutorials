@@ -1,6 +1,7 @@
 ---
 title: Create workflow (part 1), Enrich data with flowgraph
 description: Build a flowgraph to enrich device data with country information by using SAP Data Hub, trial edition.
+auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -44,6 +45,9 @@ Select all three connections and enter corresponding **Destination Names** (this
 | `VORA_PIPELINE_CONN_DEFAULT`   | `VORA_PIPELINE_CONN_DEFAULT`                                  |
 
 Select the **Activate Destinations** checkbox. Then click **OK**.
+
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create data sets)]
@@ -91,7 +95,7 @@ Finally, create a data set that will point to a file called `EnrichedDevices.csv
 
 Enter the following information:
 
-| Field                          | Value                                                               |
+| Field &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                          | Value                                                               |
 | ------------------------------ | ------------------------------------------------------------------- |
 | `Description`                  | `Enriched Devices (Google Cloud Storage)`                           |
 | `File Path`                    | a **new** file; **first** use the **Browse** button to select `datahub-trial/Devices.csv`, **then** change to `datahub-trial/EnrichedDevices.csv` |
@@ -101,13 +105,16 @@ Enter the following information:
 | `Text Delimiter`               | `"`                                                                 |
 | `Includes Header`              | `No`                                                                |
 
->The flowgraph later will not create a single file, but a partitioned one. Consequently when you check HDFS later, you will find a complete folder `EnrichedDevices.csv`. This includes many files (partitions) with the data.
+>The flowgraph later will not create a single file, but a partitioned one. Consequently when you check GCS later, you will find a complete folder `EnrichedDevices.csv`. This includes many files (partitions) with the data.
 
 Click **Show Structure** followed by **Import Structure > From Data Set**. In the popup select `Devices` as data set to import the structure from.
 
 ![picture_10](./datahub-trial-workflow-part01_10.png)
 
-Click **Activate** to activate the data set.  
+Click **Activate** to activate the data set.
+
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create flowgraph task)]
@@ -142,7 +149,7 @@ Then click **configure (10)** of the **Join**. The following screen opens:
 
 ![picture_14](./datahub-trial-workflow-part01_14.png)
 
-Here you select that the following columns are read from the two data sets. Ensure that the `COUNTRY` **Source Column** also uses `COUNTRY` as **Output Column**.
+Use the **X button (a in the above screenshot)** in the first column to remove unwanted fields and use the **+ button (b in the above screenshot)** above the table to add new fields. Here you select that the following columns are read from the two data sets. Ensure that the `COUNTRY` **Source Column** also uses `COUNTRY` as **Output Column**.
 
 | Source      | Source Column  | Input Port  | Output Column |
 | ----------- | -------------- | ----------- | ------------- |
@@ -156,7 +163,7 @@ Navigate to the **Criteria (11)** tab.
 
 ![picture_15](./datahub-trial-workflow-part01_15.png)
 
-Here you maintain an **Inner join** between the `DEVICES` data set and the `CUSTOMERS` data set. Then click on the `There are no conditions` **link (12)**.
+Here you maintain an **Inner join** between the `DEVICES` data set and the `CUSTOMERS` data set. For this, select the highlighted **+** button and select the entries that are displayed. Then click on the `There are no conditions` **link (12)**.
 
 ![picture_16](./datahub-trial-workflow-part01_16.png)
 
@@ -172,6 +179,8 @@ Click two times **Apply** and finally connect the **Join** with the `EnrichedDev
 
 Activate the flowgraph.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Execute flowgraph task)]
@@ -186,6 +195,8 @@ You see the log view. Refresh the log view by clicking **Refresh (14)** until th
 
 >Even though the data volume is comparatively low, it can take the flowgraph comparatively long to complete. The flowgraph uses Apache Spark and it takes time to spin up the Spark workers.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Check result)]
@@ -193,7 +204,9 @@ Now check the result of the flowgraph task. Thereto open the `EnrichedDevices` d
 
 ![picture_20](./datahub-trial-workflow-part01_20.png)
 
-You see that (in contrast to the `Devices` data set) the `EnrichedDevices` data set does not include any null values. The original file has been enriched from the table in SAP Vora.
+You see that (in contrast to the `Devices` data set) the `EnrichedDevices` data set does not include any null values. The original file has been enriched from the table in SAP Vora. Using the above screenshot and your generated `EnrichedDevices` data set, answer the below question.
+
+[VALIDATE_1]
 
 [ACCORDION-END]
 

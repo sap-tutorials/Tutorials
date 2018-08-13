@@ -27,12 +27,12 @@ Add a **`SAP Vora HdfsLoader`** operator to the pipeline by drag & drop. Then co
 
 Configure the **`SAP Vora HdfsLoader`** operator. You need to maintain the following properties:
 
-| Property                       | Value                                |
-| ------------------------------ | ------------------------------------ |
+| Property &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                     | Value                                |
+| :------------------------------ | :------------------------------------ |
 | `dsn`                          | `v2://vora:2202/?binary=true`        |
-| `hadoopNamenode`               | `hdfs:9000`                          |
 | `initStatements`               | `CREATE TABLE IF NOT EXISTS SENSORDATA (counter INTEGER, deviceid INTEGER, temperature DOUBLE, humidity DOUBLE, co2 DOUBLE, co DOUBLE, lpg DOUBLE, smoke DOUBLE, presence INTEGER, light DOUBLE, sound DOUBLE);`   |
 | `tableName`                    | `SENSORDATA`                         |
+| `hadoopNamenode`               | `hdfs:9000`                          |
 
 Afterwards press the **Save** button.
 

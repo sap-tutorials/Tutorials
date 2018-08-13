@@ -27,6 +27,10 @@ Go to <https://account.hanatrial.ondemand.com> and log in to your SAP Cloud Plat
 
 ![SAP Cloud Platform log in page](mob1-1_1.png)
 
+You will use your Neo trial for this tutorial (and related series). Select **Neo Trail** to get to your SAP Cloud Platform cockpit.
+
+![SAP Cloud Platform landscape selection for Neo](neo-trial.png)
+
 [DONE]
 [ACCORDION-END]
 

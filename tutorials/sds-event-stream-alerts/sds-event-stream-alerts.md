@@ -2,7 +2,7 @@
 title: Generating Alerts Using a Derived Window in SAP HANA Streaming Analytics
 description: Create and use Derived Window to analyze events, filter data, and generate alerts.
 primary_tag: products>sap-hana-streaming-analytics
-tags: [  tutorial>Intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
+tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
  - **Proficiency:** Intermediate

@@ -1,6 +1,6 @@
 ---
 
-title: Continuous Integration (CI) Best Practices with SAP - Cloud Platform SDK for iOS
+title: Continuous Integration (CI) Best Practices with SAP - SAP Cloud Platform SDK for iOS
 description: Part 4.7 - Basic CI setup with the SAP Cloud Platform SDK for iOS
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
@@ -160,7 +160,7 @@ Before we proceed, go to the [Apple Developer website](https://developer.apple.c
 Connect your iPhone to your Mac. Then, in Xcode, in the top menu, navigate to "Window" > "Devices and Simulators". Add your connected device via the "+" button to the bottom left as shown in Figure 5.
 
 ###### 2.1.5.2 Development Certificate
-In the left-hand side menu, in the "Certificates" section, select "Development" to see your list of certificates, as shown in Figure 6. Hit the "+" button to add a new one, selecting "iOS App Development" as the purpose of your certificate (Figure 7). You will then need to create a Certificate Signing Request (CSR) on your Mac and upload it to the Developer page to receive your certificate. Finally, download and install the certificate to your local keychain.
+Back on the Apple Developer site, in the left-hand side menu, in the "Certificates" section, select "Development" to see your list of certificates, as shown in Figure 6. Hit the "+" button to add a new one, selecting "iOS App Development" as the purpose of your certificate (Figure 7). You will then need to create a Certificate Signing Request (CSR) on your Mac and upload it to the Developer page to receive your certificate. Finally, download and install the certificate to your local keychain.
 
 ##### 2.1.5.3 Distribution Certificate
 In the left-hand side menu, in the "Certificates" section, select "Production" to see your list of certificates, which should look similar to the Development Certificates list. Hit the "+" button to add a new one, but this time selecting "App Store and Ad Hoc" distribution as the purpose of your certificate. Once more, you will need to provide a CSR to generate the certificate, which you should download and install, too. Please note that if you are a member of a team you may not be able to generate new distribution certificates, which from a security point of view is a good thing. However, in order to build a shippable binary at the end of this guide, you will need to contact the certificate owner for their private key and install it on your build machine in order to be able to use it.
@@ -223,7 +223,7 @@ We need to make this modification because the brew installation overrides the Je
 We should also make sure to install the latest Xcode command-line interface (CLI) tools. Otherwise the iOS builds later on might not work:
 
 ```
-$ xcode-select install
+$ xcode-select --install
 ```
 
 Now we can start our Jenkins service and go ahead with the configuration. Run
@@ -239,7 +239,7 @@ $ cat ~/.jenkins/secrets/initialAdminPassword
 ```
 You can now just copy the displayed password and paste it into the Jenkins UI. When asked which plugins to install, just go with the default selection, as shown in Figure 11. Among other things, the defaults enable us to leverage Pipelines, a great feature that enables us to also version control build scripts. Eventually you will be asked to optionally create a new admin user (Figure 12).
 
-Finally we will need to adjust the Jenkins ``PATH`` environment variable to make sure that the tools we are using can find their dependencies. Since Jenkins is started as a service, it won't be able to inherit your user environment variables, even though it will be started in your user context. The issue is that environment variables are typically stored in ``~/.bash_profile``, which is only evaluated after your Jenkins server stared. Therefore we need to maintain those variables manually. In order to do so, in the Jenkins UI, click the "Manager Jenkins" link in the left-hand menu. Then navigate to Configure System > Global Properties > Environment Variables, and click "Add PATH". In your Terminal, execute
+Finally we will need to adjust the Jenkins ``PATH`` environment variable to make sure that the tools we are using can find their dependencies. Since Jenkins is started as a service, it won't be able to inherit your user environment variables, even though it will be started in your user context. The issue is that environment variables are typically stored in ``~/.bash_profile``, which is only evaluated after your Jenkins server stared. Therefore we need to maintain those variables manually. In order to do so, in the Jenkins UI, click the "Manage Jenkins" link in the left-hand menu. Then navigate to Configure System > Global Properties > Environment Variables, and click "Add PATH". In your Terminal, execute
 
 ```
 $ echo $PATH
@@ -282,7 +282,7 @@ to reload the configuration in an already-open Terminal. Once this has been done
 $ $ARTIFACTORY_HOME/bin/artifactoryctl start
 ```
 
-Once the server has started, navigate to [http://localhost:8081](http://localhost:8081) to open the Artifactory web interface. When it is asking you which repositories to create, pick only CocoaPods or everything Mobile-related as shown in Figure 14. The absolute minimum you should select, however, is CocoaPods.
+Once the server has started, navigate to `http://localhost:8081` to open the Artifactory web interface. When it is asking you which repositories to create, pick only CocoaPods or everything Mobile-related as shown in Figure 14. The absolute minimum you should select, however, is CocoaPods.
 
 When everything is set up, Artifactory will take you to the main dashboard, containing a neat "Set Me Up" section that nicely explains how to proceed with your system setup, as shown in Figure 15. Select the ``cocoapods-local`` entry to learn how to configure your Mac for this repository. In a nutshell, you need to do three things: Installing the CocoaPods Artifactory extension, adding the ``cocoapods-local`` repository to your Mac, and configuring credentials to access that repository. To do so, run
 

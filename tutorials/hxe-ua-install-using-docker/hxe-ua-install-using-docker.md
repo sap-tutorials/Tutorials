@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 
 
 ## Next Steps
-- [How to Install SAP HANA 2.0, express edition Clients](https://www.sap.com/developer/tutorials/hxe-ua-howto-installing-clients.html)
+- [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html)
 - [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
 
 ## Details
@@ -40,13 +40,13 @@ SAP HANA, express edition for Docker has been tested on the following Linux oper
 | `openSUSE` | `openSUSE Leap` | [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-sles) |
 | `CentOS` | `7 (Core)` | [Community](https://store.docker.com/editions/community/docker-ce-server-centos),  [Enterprise](https://store.docker.com/editions/enterprise/docker-ee-server-centos) |
 | `Debian` | `9 (Stretch)` | [Community](https://store.docker.com/editions/community/docker-ce-server-debian) |
-| `Fedora` | `25 (Server Edition)` | [Community](https://store.docker.com/editions/community/docker-ce-server-fedora) |
+| `Fedora` | `28 (Server Edition)` | [Community](https://store.docker.com/editions/community/docker-ce-server-fedora) |
 
 **This installation does not support Docker for Windows or Docker for Mac.**
 
 [ACCORDION-BEGIN [Step 1: ](Install Docker)]
 
-Download and install Docker Enterprise Edition for SUSE Enterprise Linux Server. Visit the [Docker Enterprise Edition SUSE Enterprise Linux Server](https://store.docker.com/editions/enterprise/docker-ee-server-sles?tab=description) page for information on how to install Docker on your SLES system.
+Download and install the appropriate Docker Edition for your system. Visit the [Docker Community Edition](https://store.docker.com/search?offering=community&type=edition) or [Docker Enterprise Edition](https://store.docker.com/search?offering=enterprise&type=edition) lists for more information and to download Docker for your machine.
 
 > **Note:**
 > Ensure your proxy settings have been properly set up. See [**HTTP/HTTPS proxy**](https://docs.docker.com/engine/admin/systemd/#httphttps-proxy) in the Docker documentation.
@@ -111,7 +111,7 @@ Click on the **Setup Instructions** button.
 Copy the Docker pull address. Here is an example:
 
 ```
-sudo docker pull store/saplabs/hanaexpress:2.00.030.00.20180403.2
+sudo docker pull store/saplabs/hanaexpress:2.00.031.00.20180712.1
 ```
 
 Open your Docker-enabled command line and use the Docker pull address to download the image.
@@ -231,7 +231,7 @@ sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <container_name> \
-store/saplabs/hanaexpress:2.00.030.00.20180403.2 \
+store/saplabs/hanaexpress:2.00.031.00.20180712.1 \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>> \
 --agree-to-sap-license
 ```
@@ -246,7 +246,7 @@ sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name express_edition \
-store/saplabs/hanaexpress:2.00.030.00.20180403.2 \
+store/saplabs/hanaexpress:2.00.031.00.20180712.1 \
 --passwords-url file:///hana/password.json \
 --agree-to-sap-license
 ```
@@ -353,7 +353,7 @@ sudo docker run -p 10013:39013 -p 10017:39017 -p 10041-10045:39041-39045 -p 1002
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <additional_container_name> \
-store/saplabs/hanaexpress:2.00.030.00.20180403.2 \
+store/saplabs/hanaexpress:2.00.031.00.20180712.1 \
 --passwords-url <file://<path_to_json_file> OR http/https://<url_to_json_file>>
 --agree-to-sap-license
 ```
@@ -381,7 +381,7 @@ sudo docker rm <old_container_name>
 Pull the new Docker image:
 
 ```
-sudo docker pull store/saplabs/hanaexpress:2.00.030.00.20180403.2
+sudo docker pull store/saplabs/hanaexpress:2.00.031.00.20180712.1
 ```
 
 Run the new Docker image using the old mounts:
@@ -394,7 +394,7 @@ sudo docker run -p 39013:39013 -p 39017:39017 -p 39041-39045:39041-39045 -p 1128
 --sysctl kernel.shmmni=524288 \
 --sysctl kernel.shmall=8388608 \
 --name <new_container_name> \
-store/saplabs/hanaexpress:2.00.030.00.20180403.2 \
+store/saplabs/hanaexpress:2.00.031.00.20180712.1 \
 --agree-to-sap-license
 ```
 
@@ -405,7 +405,7 @@ store/saplabs/hanaexpress:2.00.030.00.20180403.2 \
 The following is a list of options available for the `sudo docker run store/saplabs/hanaexpress` command.
 
 ```
-sudo docker run store/saplabs/hanaexpress:2.00.030.00.20180403.2 -h
+sudo docker run store/saplabs/hanaexpress:2.00.031.00.20180712.1 -h
 usage: [options]
 --dont-check-consistency Skip consistency check between mount points
 --dont-check-mount-points Skip check for allowed mount points
@@ -429,5 +429,5 @@ hdb_version
 [ACCORDION-END]
 
 ## Next Steps
-- [How to Install SAP HANA 2.0, express edition Clients](https://www.sap.com/developer/tutorials/hxe-ua-howto-installing-clients.html)
+- [Install the SAP HANA, express edition clients](https://www.sap.com/developer/groups/hxe-install-clients.html)
 - [Download and Install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)

@@ -588,7 +588,7 @@ Again, this model is for demonstration purpose and very specific to my initial p
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Validate the content-base filtering results)]
+[ACCORDION-BEGIN [Step 7: ](Validate the content-based filtering results)]
 
 Let's verify how many movies will actually get recommendations using the following SQL:
 
@@ -601,20 +601,20 @@ FROM (
 ) GROUP BY "RECO_COUNT";
 ```
 
-Let's verify how many distinct movies will actually get recommended to a user (part of the top 5 scores) using the following SQL:
+Let's verify how many distinct similar movies will actually get recommended to a movie (part of the top 5 scores) using the following SQL:
 
 ```SQL
 SELECT
-    COUNT(1) AS "MOVIE_COUNT"
+    COUNT(1) AS "SIMILAR_MOVIEID"
   , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"
 FROM (
-  SELECT "MOVIEID"
+  SELECT "SIMILAR_MOVIEID"
   FROM "MOVIELENS"."APL_RECO_MODEL_ITEMS_RESULTS"
-  GROUP BY "MOVIEID"
+  GROUP BY "SIMILAR_MOVIEID"
 );
 ```
 
-Only 1050 will receive the requested 5 recommendations out of the 1176 movies that will receive at least one recommendations.
+Only 1050 movies will receive the requested 5 recommendations out of the 1176 movies that will receive at least one recommendations.
 
 Let's verify how many rating does the movies with no recommendation have using the following SQL:
 

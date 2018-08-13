@@ -1,6 +1,7 @@
 ---
 title: Build a Hybris Cloud app with SAP API Business Hub and SAP Cloud Platform SDK for iOS
 description: Use the SAP API Business Hub integration in SAP Cloud Platform SDK for iOS to create an app extending SAP Hybris Cloud
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>how-to, tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios, products>sap-hybris-as-a-service-on-sap-cloud-platform, products>sap-api-management ]
 ---
@@ -71,6 +72,7 @@ Click **Add** when finished. The account is now added to the SDK Assistant:
 
 Close the **Accounts** dialog.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create an Xcode Project)]
@@ -91,6 +93,7 @@ Enter the following details:
 
 Click **Next** to advance to the **SAP Cloud Platform mobile service for development and operations Configuration** step.
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -110,6 +113,7 @@ Enter the following details:
 
 Click **Next** to advance to the **OData Services** step.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](OData Services)]
@@ -144,6 +148,7 @@ Click **OK** to dismiss the dialog. The OData destination is now added:
 
 Click **Next** to advance to the **Optional Features** step.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Optional Features)]
@@ -157,6 +162,7 @@ Make sure the checkboxes **Generate Master-Detail Application**, **Enable Loggin
 > Most likely the checkbox for **Remote Notifications** is disabled. This happens because no APNS endpoint is configured for the application definition in SAP Cloud Platform mobile service for development and operations. Once configured with a valid certificate, this option becomes available.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Generating the Xcode project)]
@@ -171,6 +177,7 @@ In addition, the configuration settings you have provided in the SDK Assistant a
 
 > In that case, log on to your **SAP Cloud Platform mobile service for development and operations** account at `https://hcpms-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/` and navigate to **Mobile Applications > Native/Hybrid**. Select one of the available application configurations and delete in order for the SDK Assistant to add the new application configuration.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Examine the generated Xcode Project)]
@@ -185,6 +192,7 @@ Folder `MyHybris/Onboarding` contains logic for the user on-boarding, authentica
 
 Folder `Proxy Classes` contains the OData proxy classes generated from the OData service. File `APIMKTCORPORATEACCOUNTSRVEntities.swift` acts as a data service provider to gain access to the OData entities. The files `AccountTeamMember.swift`, `AdditionalID.swift`, `CorporateAccountOriginData.swift`, `CorporateAccount.swift` and `MarketingAttribute.swift` are proxy classes which give access to the various properties of the respective OData entities.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Build and run the generated application)]
@@ -219,6 +227,7 @@ The app starts with an overview of the available **Collections** of the OData se
 
 ![Build and run](fiori-ios-scpms-apihub-hybris-21.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Examine the generated application)]
@@ -234,6 +243,7 @@ If you click on one of the `CorporateAccount` entities, you navigate to a **Deta
 ![Build and run](fiori-ios-scpms-apihub-hybris-23.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Open the SAP Fiori for iOS Mentor app)]
@@ -244,6 +254,7 @@ Open the SAP Fiori for iOS Mentor app on your iPad. Upon opening, the app shows 
 
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Locate the Contact Cell)]
@@ -253,6 +264,7 @@ Click on the **See All** link next to the **UI Components** section, and scroll 
 ![Mentor app](fiori-ios-scpms-apihub-hybris-26.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Examine the Contact Cell control)]
@@ -264,6 +276,7 @@ Click the **Contact Cell** tile. You now see a page wit a representation of the 
 > You can also customize the look and feel on a more granular level. Click the **button with three dots** in the lower right corner. This will bring a pop up where you can specify different settings for the control. The control's look and feel is instantly updated, giving you an idea of the final result.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Display the generated code)]
@@ -273,6 +286,7 @@ When you're happy with the final result, click the **Code button** (the one labe
 ![Mentor app](fiori-ios-scpms-apihub-hybris-28.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Export the generated code)]
@@ -290,6 +304,7 @@ The generated code can now be implemented into the appropriate places in the `Co
 >   **NOTE** Since it may take a bit too long to go through the steps of copying and pasting the code, adding the control binding to the Proxy Classes' properties and format the data properly, you don't need to do this yourself. The code to implement will be provided in the next steps.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Define Contact Cell Activities)]
@@ -304,6 +319,7 @@ Add the following private field to class `CorporateAccountsMasterViewController`
 private var activities = [FUIActivityItem.phone, FUIActivityItem.message, FUIActivityItem.email]
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 16: ](Modify viewDidLoad method)]
@@ -328,6 +344,7 @@ to
 self.tableView.estimatedRowHeight = 50
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 17: ](Render Contact Cell)]
@@ -387,7 +404,8 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
     }
 
     return contactCell
-}```
+}
+```
 
 First, you get a reference to the current data via variable `corporateaccount`.
 
@@ -399,6 +417,7 @@ Then, some extra fields are bound to the control.
 
 And finally, the activities defined in step 15 are added to the cell, and a handler is implemented for the activities.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 18: ](Build and run the application)]
@@ -413,6 +432,7 @@ If you click on the activity buttons, the respective app should open.
 
 > If you're running on a physical device, everything should work as expected.
 
+[VALIDATE_18]
 [ACCORDION-END]
 
 ---

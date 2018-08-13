@@ -1,6 +1,7 @@
 ---
 title: Use a message broker
 description: Use a message broker to publish and subscribe to sensor data by using SAP Data Hub, trial edition.
+auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -46,7 +47,7 @@ In the Cloud Launcher search box, search for `kafka`. There are multiple provide
 
 On the next page, click **Launch on Compute Engine**. Following details should be configured in Kafka properties –
 
-|  Field Name     | Value
+|  Field Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    | Value
 |  :------------- | :-------------
 |  Deployment name | `kafka-1`
 |  Zone           | Combine the region and zone for your instance which we have noted down earlier. `europe-west1-d` in this example
@@ -60,13 +61,15 @@ From the instance details page, note down the **Primary Internal IP** of this VM
 
 >Primary Internal IP will be referred to as Internal IP in step 2 and 3 below.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add and configure Kafka Producer)]
 
 Open the pipeline which you have created in the previous tutorial `(test.myFirstPipeline)`, in the modelling environment (`https://vhcalruntime/app/pipeline-modeler`)
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_SP04.pdf) guide.
 
 Remove the connection between **Data Generator** operator and the **Terminal** operator
 
@@ -80,6 +83,8 @@ Configure the **Kafka Producer** operator by maintaining the following propertie
 |  :------------- | :-------------
 |  Brokers  | **Internal IP:9092**, Example – 0.0.0.0:9092 (Refer to step 1 for the IP)
 |  Topic  | `sensordata`
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -103,6 +108,8 @@ Configure the **Kafka Consumer 2** operator by maintaining the following propert
 
 Once done, click **Save**.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Execute the data pipeline)]
@@ -112,6 +119,10 @@ Click **Run** to execute the pipeline
 When the **Status** tab indicates that the pipeline is running, use the context menu **Open UI** of the **Terminal** operator to see the generated sensor data.
 
 ![picture6](datahub-trial-pipelines-part02-6.png)
+
+Copy any row of the terminal output and paste it in the frame below and click on **Validate**.
+
+[VALIDATE_1]
 
 Stop the pipeline by clicking **Stop**.
 

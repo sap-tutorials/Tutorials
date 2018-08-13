@@ -3,7 +3,7 @@ title: Create an SAP Cloud Platform destination pointing to an SAP Gateway
 description: Create a new destination pointing to the SAP Gateway Demo System
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>cloud, products>sap-gateway, products>sap-cloud-platform  ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-gateway, products>sap-cloud-platform ]
 ---
 
 ## Prerequisites  
@@ -21,9 +21,9 @@ You will create a destination (a server end-point where SAP Cloud Platform can s
 [ACCORDION-BEGIN [Step 1: ](Log into your SAP Cloud Platform account)]
 Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: <https://account.hanatrial.ondemand.com>
 
-Make sure you are using the **Europe (Trial)** landscape, and click on your account name as highlighted on the screenshot to open the cockpit view.
+Click on the ***Neo Trial*** tile to open the cockpit for the Neo environment.
 
-![Click on user name](te-2016-3-01.png)
+![Click on Neo Trial](hcp-regions.png)
 
 [DONE]
 [ACCORDION-END]

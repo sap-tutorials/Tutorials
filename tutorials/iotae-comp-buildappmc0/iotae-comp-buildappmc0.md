@@ -2,7 +2,7 @@
 title: Building freestyle IoT application
 description: Building freestyle IoT application using SAP Web IDE Full-Stack in SAP Cloud Platform
 primary_tag: topic>internet-of-things
-tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-web-ide  ]
 ---
 
 ## Prerequisites  

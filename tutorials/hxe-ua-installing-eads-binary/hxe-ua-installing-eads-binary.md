@@ -26,12 +26,7 @@ SAP EA Designer is a separate download in the Download Manager.
 
 In this procedure you'll download the SAP EA Designer package (`eadesigner.tgz`) using the built-in Download Manager (Console Mode), extract the package, and run the installation script.
 
-> Note:
-> Use the server's built-in Download Manager (Console Mode) for Linux to download `eadesigner.tgz`. When logged-in as `hxeadm`, you can access the download manager (`HXEDownloadManager_linux.bin`) in directory `/usr/sap/HXE/home/bin`.
-> 
-> 
-
-[ACCORDION-BEGIN [Step 1: ](Download `eadesigner.tgz` using the built-in Download Manager.)]
+[ACCORDION-BEGIN [Step 1: ](Download `eadesigner.tgz` using the built-in Download Manager)]
 
 Navigate to `/usr/sap/HXE/home/bin`:
 
@@ -41,15 +36,14 @@ Navigate to `/usr/sap/HXE/home/bin`:
 
 Enter the following command:
 
-```bash
-HXEDownloadManager_linux.bin linuxx86_64 installer eadesigner.tgz
-```
+-   `x86_64`: `./HXEDownloadManager_linux.bin linuxx86_64 installer eadesigner.tgz`
+-   `PowerPC`: `java -jar HXEDownloadManager.jar linuxppc64le installer eadesigner.tgz`
 
 ![loiof8015cbabcd944589df9eb1975488fa6_LowRes](loiof8015cbabcd944589df9eb1975488fa6_LowRes.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Navigate to the `Downloads` directory.)]
+[ACCORDION-BEGIN [Step 2: ](Navigate to the `Downloads` directory)]
 
 Enter:
 
@@ -91,7 +85,7 @@ cd HANA_EXPRESS_20
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Run the installation script.)]
+[ACCORDION-BEGIN [Step 6: ](Run the installation script)]
 
 Enter:
 
@@ -103,13 +97,13 @@ Installation begins.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Follow the installation prompts.)]
+[ACCORDION-BEGIN [Step 7: ](Follow the installation prompts)]
 
 When prompted for passwords, enter the master password you specified when you installed SAP HANA 2.0, express edition.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Complete the installation.)]
+[ACCORDION-BEGIN [Step 8: ](Complete the installation)]
 
 When prompted to `Proceed with installation`, enter `Y`. Wait for installation to finish.
 
@@ -119,7 +113,7 @@ A success message displays when installation completes.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Log in.)]
+[ACCORDION-BEGIN [Step 9: ](Log in)]
 
 -   Note the URL for `eadesigner`.
 

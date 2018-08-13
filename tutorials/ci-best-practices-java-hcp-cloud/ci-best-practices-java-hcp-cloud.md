@@ -245,6 +245,9 @@ The following blog gives a good introduction for Cloud Foundry on SAP Cloud Plat
   
 > [A new seamless SAP Cloud Platform experience](https://blogs.sap.com/2017/05/16/a-new-seamless-sap-cloud-platform-experience/)
 
+The following blog guides on the steps to the unified SAP Cloud Platform Cockpit experience:
+> [A Step by Step guide to the unified SAP Cloud Platform Cockpit experience](https://blogs.sap.com/2018/05/24/a-step-by-step-guide-to-the-unified-sap-cloud-platform-cockpit-experience/)
+
 We use the Cloud Foundry Maven plugin to handle the deployment of the application to the QA space. For the deployment to the production space, we need a different approach since blue-green deployment is not supported by the Cloud foundry client like it is for Neo. We use a separate shell script to do that.
 
 The artifact (the `.war` file) used for the deployment to QA and to production should be the same and not be built twice. Therefore, it is stored into a temporary folder on Travis CI side. For that, some changes in the `pom.xml` file are needed.

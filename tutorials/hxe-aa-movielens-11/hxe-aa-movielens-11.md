@@ -3,7 +3,7 @@ title: Configure your SAPUI5 HTML Module
 description: Configure your SAPUI5 application and your connect it to your SAP HANA XS OData service to consume your `Movielens` recommendations
 auto_validation: true
 primary_tag: topic>machine-learning
-tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning, topic>sapui5 ]
+tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
 ---
 
 ## Prerequisites
@@ -16,6 +16,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
  - Add a dependency to the Node.js Module as a destination
  - Configure the Application Router
  - Configure the Application Manifest
+ - Create a series of Formatter
  - Run your SAPUI5 application
 
 **Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Predictive services.
@@ -51,90 +52,297 @@ In the left panel, right click on the `movielens` project, then select **New > S
 
 Enter the following information, then click on **Next**
 
-Field Name           | Value
--------------------- | --------------
-Module Name          | `html`
-Namespace            | `movielens`
+Field Name          | Value
+------------------- | --------------
+Module Name         | `html`
+Namespace           | `movielens`
 
 ![Web IDE](02-02.png)
 
 Enter the following information, then click on **Finish**
 
-Field Name           | Value
--------------------- | --------------
-View Type            | `XML`
-View Name            | `demo`
+Field Name          | Value
+------------------- | --------------
+View Type           | `XML`
+View Name           | `demo`
 
 ![Web IDE](02-03.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add Module Dependencies)]
+[ACCORDION-BEGIN [Step 3: ](Create the folder structure)]
 
-In order to consume the XS OData service from the Node.js Module created previously, you will need to add a dependency from the SAPUI5 HTML Module to the Node.js Module.
+Expand the **`movielens/html/resources/webapp/`** folder.
 
-Open the **`mta.yaml`** file located in the `movielens` project folder.
+Create the following folder structure:
+
+```
+|-- movielens/html/resources/webapp/
+  |-- controller
+  |   |-- xsjs
+  |   |-- xsodata
+  |-- fragment
+  |   |-- xsjs
+  |   |-- xsodata  
+  |-- view
+  |   |-- xsjs
+  |   |-- xsodata
+```
 
 ![Web IDE](03-01.png)
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Add Module Dependencies)]
+
+In order to consume the XS OData service from the Node.js Module created previously, you will need to add a dependency from the SAPUI5 HTML Module to the Node.js Module.
+
+Open the **`mta.yaml`** file located in the **`movielens`** project folder.
+
+![Web IDE](04-01.png)
+
 Select the **`html`** module.
 
-![Web IDE](03-02.png)
+![Web IDE](04-02.png)
 
 Under the **Requires** section, add your ***Node.js API provider*** (most likely named **`js_api` (provider)**).
 
 Set the **Group** value to **destinations**.
 
-![Web IDE](03-03.png)
+![Web IDE](04-03.png)
 
 Add the following properties to the **`js_api`** entry:
 
-Key                  | Value
--------------------- | --------------
-`name`               | `movielens_api`
-`url`                | `~{url}`
+Key                 | Value
+------------------- | --------------
+`name`              | `movielens_api`
+`url`               | `~{url}`
+`timeout`           | 3000000
 
-![Web IDE](03-04.png)
 
-Save the file using the ![save](00-save.png) icon from the menu or press `CTRL+S`.
+![Web IDE](04-04.png)
+
+Save the file using the ![save](00-save.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Edit the Application Router Configuration)]
+[ACCORDION-BEGIN [Step 5: ](Edit the Application Router Configuration)]
 
 The XS Advanced Application Router Configuration file (`xs-app.json`) contains the configuration information used by the application router.
 
 For more details on the syntax, please check the online [documentation](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/5f77e58ec01b46f6b64ee1e2afe3ead7.html).
 
-Open the **`xs-app.json`** file located in the `movielens/html` folder.
+Open the **`xs-app.json`** file located in the **`movielens/html`** folder.
 
 Replace the current content by the following:
 
 ```JSON
 {
-	"welcomeFile": "webapp/index.html",
-	"authenticationMethod": "none",
-	"routes": [{
-		"source": "/xsjs/(.*)(.xsjs)",
-		"destination": "movielens_api",
-		"csrfProtection": true,
- 		"authenticationType": "none"
-	}, {
-		"source": "/xsodata/(.*)(.xsodata)",
-		"destination": "movielens_api",
- 		"authenticationType": "none"
-	}]
+  "welcomeFile": "webapp/index.html",
+  "authenticationMethod": "none",
+  "routes": [{
+    "source": "/xsjs/(.*)(.xsjs)",
+    "destination": "movielens_api",
+    "csrfProtection": true,
+    "authenticationType": "none"
+  }, {
+    "source": "/xsodata/(.*)(.xsodata)",
+    "destination": "movielens_api",
+    "csrfProtection": true,
+    "authenticationType": "none"
+  }]
 }
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu or press `CTRL+S`.
+Save the file using the ![save](00-save.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Edit the Application Descriptor)]
+[ACCORDION-BEGIN [Step 6: ](Create a JSON Model)]
+
+In order to store some default configuration values for the XS OData or the XSJS service calls, you will define a JSON model that will be loaded thanks to the configuration of the `manifest.json` previously done.
+
+In the left side panel, expand the **`movielens/html/resources/webapp/model`** tree node.
+
+Right click on the **`model`** folder node from the tree, and select **New > File**.
+
+Enter **`config.json`** as the file name, then click on **OK**.
+
+This is the full path of the created file:
+
+```
+movielens/html/resources/webapp/model/config.json
+```
+
+Paste the following content:
+
+```json
+{
+  "services": {
+    "apl_recommendation": {
+      "execute": {
+        "url": "/xsjs/apl/recommendation_execute.xsjs",
+        "method": "POST",
+        "data": {
+          "BESTSELLERTHRESHOLD": 50000,
+          "MAXTOPNODES": 100000,
+          "MINIMUMSUPPORT": 2,
+          "MINIMUMCONFIDENCE": 0.05,
+          "MINIMUMPREDICTIVEPOWER": 0.1
+        }
+      },
+      "results": {
+        "url": "/xsjs/apl/recommendation_results.xsjs",
+        "method": "POST",
+        "data": {
+          "BESTSELLERTHRESHOLD": 50000,
+          "MAXTOPNODES": 100000,
+          "KEEPTOPN": 5,
+          "INCLUDEBESTSELLERS": false,
+          "SKIPALREADYOWNED": true
+        }
+      }
+    },
+    "pal_apriori": {
+      "execute": {
+        "url": "/xsjs/pal/apriori_execute.xsjs",
+        "method": "POST",
+        "data": {
+          "MIN_SUPPORT": 0.1,
+          "MIN_CONFIDENCE": 0.1,
+          "MIN_LIFT": 0.0,
+          "UBIQUITOUS": 1.0
+        }
+      },
+      "results": {
+        "url": "/xsjs/pal/apriori_results.xsjs",
+        "method": "POST",
+        "data": {
+          "KEEPTOPN": 5
+        }
+      }
+    }
+  }
+}
+```
+
+Save the file using the ![save](00-save.png) icon from the menu.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 7: ](Create Formatters)]
+
+In order to format some of the properties in the User Interface that will be returned by the XS OData or the XSJS services, you will need to define formatters.
+
+In the left side panel, expand the **`movielens/html/resources/webapp/model`** tree node.
+
+Right click on the **`model`** folder node from the tree, and select **New > File**.
+
+Enter **`formatter.js`** as the file name, then click on **OK**.
+
+This is the full path of the created file:
+
+```
+movielens/html/resources/webapp/model/formatter.js
+```
+
+Paste the following content:
+
+```JavaScript
+sap.ui.define([], function() {
+  "use strict";
+  var isNumeric = function(oValue) {
+    var tmp = oValue && oValue.toString();
+    return !jQuery.isArray(oValue) && (tmp - parseFloat(tmp) + 1) >= 0;
+  };
+  return {
+    formatEpoch: function(value) {
+      var result = "";
+      if (value !== "undefined" && isNumeric(value)) {
+        result = new Date(value * 1000).toDateString();
+      }
+      return result;
+    },
+    formatNumber: function(value) {
+      var result = "";
+      if (value !== "undefined" && isNumeric(value)) {
+        result = Number(value).toFixed(2);
+      }
+      return result;
+    },
+    formatPercent: function(value) {
+      var result = "";
+      if (value !== "undefined" && isNumeric(value)) {
+        result = Number(value * 100).toFixed(2) + "%";
+      }
+      return result;
+    },
+    isNumeric: isNumeric
+  };
+});
+```
+
+Save the file using the ![save](00-save.png) icon from the menu.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 8: ](Create a Fragment)]
+
+Using fragments in SAPUI5 application enables re-usability of display components.
+
+In your case, a menu will be used in all your views.
+
+So instead of duplicating the code, you will create a fragment that will include the menu structure.
+
+Then, using the **`demo`** controller as your base controller, you will define a function that will be reused by every other view.
+
+In the left side panel, expand the **`movielens/html/resources/webapp/fragment`** tree node.
+
+Right click on the **`fragment`** folder node from the tree, and select **New > File**.
+
+Enter **`view_menu.fragment.xml`** as the file name, then click on **OK**.
+
+This is the full path of the created file:
+
+```
+movielens/html/resources/webapp/fragment/view_menu.fragment.xml
+```
+
+Paste the following content:
+
+```xml
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core"
+  xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:u="sap.ui.unified">
+  <u:Menu itemSelect="handleMenuItemPress">
+    <u:MenuItem text="View Results with XS OData">
+      <u:Menu>
+        <u:MenuItem text="Collaborative Filtering" custom:to="xsodata.collaborative"/>
+        <u:MenuItem text="Content-Based Filtering" custom:to="xsodata.contentbased"/>
+      </u:Menu>
+    </u:MenuItem>
+    <u:MenuItem text="Execute Algorithms with XSJS">
+      <u:Menu>
+        <u:MenuItem text="APL Recommendation" custom:to="xsjs.apl_recommendation"/>
+        <u:MenuItem text="PAL APRIORI" custom:to="xsjs.pal_apriori"/>
+      </u:Menu>
+    </u:MenuItem>
+  </u:Menu>
+</core:FragmentDefinition>
+```
+
+Save the file using the ![save](00-save.png) icon from the menu.
+
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 6: ](Edit the Application Descriptor)]
 
 The descriptor file (`manifest.json`) for applications, components, and libraries is inspired by the Web Application Manifest concept introduced by the W3C.
 
@@ -142,54 +350,106 @@ The descriptor provides a central, machine-readable and easy-to-access location 
 
 It includes the definition of OData data sources and models used by SAPUI5 applications.
 
-Open the **`manifest.json`** file located in the `movielens/html/resources/webapp` folder.
+Open the **`manifest.json`** file located in the **`movielens/html/resources/webapp`** folder.
 
 In the **`"sap.app"`** section, replace the **`"sourceTemplate"`** element by:
 
 ```JSON
-		"sourceTemplate": {
-			"id": "hanatemplates.basicSAPUI5ApplicationProject",
-			"version": "0.0.0"
-		},
-		"dataSources": {
-			"data.xsodata": {
-				"uri": "/movielens_api/xsodata/data.xsodata/",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "2.0"
-				}
-			}
-		}
+"sourceTemplate": {
+  "id": "hanatemplates.basicSAPUI5ApplicationProject",
+  "version": "0.0.0"
+},
+"dataSources": {
+  "data.xsodata": {
+    "uri": "/xsodata/data.xsodata/",
+    "type": "OData",
+    "settings": {
+      "odataVersion": "2.0"
+    }
+  }
+}
 ```
 
-In the **`"models"`** section, replace the **`"i18n"`** element by:
+In the **`"models"`** section, add next to the **`"i18n"`** element the **`"odata"`** and **`"config"`** elements like that:
 
 ```JSON
-			"i18n": {
-				"type": "sap.ui.model.resource.ResourceModel",
-				"settings": {
-					"bundleName": "movielens.html.i18n.i18n"
-				}
-			},
-			"": {
-				"type": "sap.ui.model.odata.v2.ODataModel",
-				"settings": {
-					"defaultOperationMode": "Server",
-					"defaultBindingMode": "TwoWay",
-					"defaultCountMode": "Both"
-				},
-				"dataSource": "data.xsodata",
-				"preload": false
-			}
+"models": {
+  "i18n": {
+    "type": "sap.ui.model.resource.ResourceModel",
+    "settings": {
+      "bundleName": "movielens.html.i18n.i18n"
+    }
+  },
+  "odata": {
+    "type": "sap.ui.model.odata.v2.ODataModel",
+    "preload": false,
+    "settings": {
+      "defaultOperationMode": "Server",
+      "defaultBindingMode": "Default",
+      "defaultCountMode": "None",
+      "useBatch": false
+    },
+    "dataSource": "data.xsodata"
+  },
+  "config": {
+    "type": "sap.ui.model.json.JSONModel",
+    "preload": true,
+    "uri": "model/config.json"
+  }
+},
 ```
 
+In the **`"routing"`** section,replace the existing content like that:
 
-Save the file using the ![save](00-save.png) icon from the menu or press `CTRL+S`.
+```JSON
+"routing": {
+  "config": {
+    "routerClass": "sap.m.routing.Router",
+    "viewType": "XML",
+    "async": true,
+    "viewPath": "movielens.html.view",
+    "controlAggregation": "pages",
+    "controlId": "idAppControl",
+    "transition": "slide"
+  },
+  "routes": [{
+    "name": "demo",
+    "pattern": "",
+    "target": "demo"
+  }],
+  "targets": {
+    "demo": {
+      "clearAggregation": true,
+      "viewName": "demo"
+    },
+    "xsodata.collaborative": {
+      "clearAggregation": true,
+      "viewName": "xsodata.collaborative"
+    },
+    "xsodata.contentbased": {
+      "clearAggregation": true,
+      "viewName": "xsodata.contentbased"
+    },
+    "xsjs.apl_recommendation": {
+      "clearAggregation": true,
+      "viewName": "xsjs.apl_recommendation"
+    },
+    "xsjs.pal_apriori": {
+      "clearAggregation": true,
+      "viewName": "xsjs.pal_apriori"
+    }
+  }
+}
+```
+
+Save the file using the ![save](00-save.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Update the default view)]
+[ACCORDION-BEGIN [Step 10: ](Update the default view)]
+
+The default view will be extended with a title and a menu button that will allow you navigate within the different functionality of the application.
 
 The default application view is located in:
 
@@ -200,76 +460,34 @@ These updates are made in preparation for the next steps.
 Open the **`demo.view.xml`** file and replace the existing code with the following code:
 
 ```xml
-<mvc:View controllerName="movielens.html.controller.demo" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
-	displayBlock="true" xmlns="sap.m" xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
-	<SplitApp id="SplitAppDemo" initialMaster="master" initialDetail="detail">
-		<masterPages>
-			<Page id="master" title="Scenario">
-				<content>
-					<List itemPress="onMasterListItemPress">
-						<items>
-							<StandardListItem title="Compare Results" type="Navigation" custom:to="sub_master_compare"/>
-							<StandardListItem title="Execute Algorithms" type="Navigation" custom:to="sub_master_execute"/>
-						</items>
-					</List>
-				</content>
-			</Page>
-			<Page id="sub_master_execute" title="Execute Algorithms" showNavButton="true" navButtonPress="onPressMasterBack">
-				<content>
-					<List itemPress="onDetailListItemPress">
-						<items>
-							<StandardListItem title="APL Recommendation" type="Active" custom:to="detail_execute_apl_recommendation"/>
-							<StandardListItem title="PAL APRIORI" type="Active" custom:to="detail_execute_pal_apriori"/>
-						</items>
-					</List>
-				</content>
-			</Page>
-			<Page id="sub_master_compare" title="Compare Results" showNavButton="true" navButtonPress="onPressMasterBack">
-				<content>
-					<List itemPress="onDetailListItemPress">
-						<items>
-							<StandardListItem title="Collaborative Filtering" type="Active" custom:to="detail_compare_collaborative"/>
-							<StandardListItem title="Content-based Filtering" type="Active" custom:to="detail_compare_contentbased"/>
-						</items>
-					</List>
-				</content>
-			</Page>
-		</masterPages>
-		<detailPages>
-			<Page id="detail" title="Moveilens Recommendation">
-				<content></content>
-			</Page>
-			<Page id="detail_execute_apl_recommendation" title="Execute APL Recommendation Algorithm">
-				<content>
-					<!--<mvc:XMLView viewName="movielens.html.view.execute.collaborative"/>-->
-				</content>
-			</Page>
-			<Page id="detail_execute_pal_apriori" title="Execute PAL APRIORI Algorithm">
-				<content>
-					<!--<mvc:XMLView viewName="movielens.html.view.execute.contentbased"/>-->
-				</content>
-			</Page>
-			<Page id="detail_compare_collaborative" title="Collaborative Filtering Results">
-				<content>
-					<!--<mvc:XMLView viewName="movielens.html.view.compare.collaborative"/>-->
-				</content>
-			</Page>
-			<Page id="detail_compare_contentbased" title="Content-based Filtering Results">
-				<content>
-					<!--<mvc:XMLView viewName="movielens.html.view.compare.contentbased"/>-->
-				</content>
-			</Page>
-		</detailPages>
-	</SplitApp>
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="movielens.html.controller.demo" displayBlock="true">
+  <App id="idAppControl">
+    <Page showHeader="false">
+      <content>
+        <Bar>
+          <contentMiddle>
+            <Title text="MoveiLens Recommendation"/>
+          </contentMiddle>
+          <contentLeft>
+            <Button icon="sap-icon://menu" press="handlePressOpenMenu"/>
+          </contentLeft>
+        </Bar>
+      </content>
+    </Page>
+  </App>
 </mvc:View>
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu or press `CTRL+S`.
+Save the file using the ![save](00-save.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Update the default controller)]
+[ACCORDION-BEGIN [Step 11: ](Update the default controller)]
+
+As stated earlier, the default controller will become the base controller for every other that you will build to run the application.
+
+This will allow you to reuse a series of function over and over.
 
 The default application controller is located in:
 
@@ -281,94 +499,106 @@ Open the **`demo.controller.js`** file and replace the existing code with the fo
 
 ```js
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
-	"sap/m/MessageToast"
-], function(Controller, MessageToast) {
-	"use strict";
+  "sap/ui/core/mvc/Controller",
+  "sap/ui/model/Filter",
+  "sap/ui/model/FilterOperator",
+  "sap/ui/model/FilterType",
+  "movielens/html/model/formatter"
+], function(Controller, Filter, FilterOperator, FilterType, formatter) {
+  "use strict";
+  return Controller.extend("movielens.html.controller.demo", {
+    formatter: formatter,
 
-	return Controller.extend("movielens.html.controller.demo", {
-		onInit: function() {
-			if (typeof sap.ui.getCore().getModel() === 'undefined') {
-				sap.ui.getCore().setModel(new sap.ui.model.json.JSONModel());
-			}
-		},
-		getSplitAppObj: function() {
-			var result = sap.ui.getCore().byId(this.createId("SplitAppDemo"));
-			if (!result) {
-				MessageToast.show("SplitApp object can't be found", {
-					duration: 5000
-				});
-			}
-			return result;
-		},
-		onMasterListItemPress: function(oEvent) {
-			var sToPageId = oEvent.getParameter("listItem").getCustomData()[0].getValue();
-			this.getSplitAppObj().toMaster(this.createId(sToPageId));
-		},
-		onPressMasterBack: function() {
-			this.getSplitAppObj().backMaster();
-		},
-		onDetailListItemPress: function(oEvent) {
-			var sToPageId = oEvent.getParameter("listItem").getCustomData()[0].getValue();
-			this.getSplitAppObj().toDetail(this.createId(sToPageId));
-		}
-	});
+    handlePressOpenMenu: function(oEvent) {
+      var oButton = oEvent.getSource();
+      // create menu only once
+      if (!this._menu) {
+        this._menu = sap.ui.xmlfragment("movielens.html.fragment.view_menu", this);
+        this.getView().addDependent(this._menu);
+      }
+      var eDock = sap.ui.core.Popup.Dock;
+      this._menu.open(this._bKeyboard, oButton, eDock.BeginTop, eDock.BeginBottom, oButton);
+    },
+    handleMenuItemPress: function(oEvent) {
+      if (oEvent.getParameter("item").getSubmenu()) {
+        return;
+      }
+      var to = oEvent.getParameter("item").data("to");
+      if (to) {
+        this.getOwnerComponent().getTargets().display(to);
+      }
+
+    },
+    onSuggestionSubmit: function(oEvent) {
+      var type = oEvent.getSource().data("type");
+      this.selectItem(type, oEvent.getParameter("value"));
+    },
+    onSuggestionItemSelected: function(oEvent) {
+      if (oEvent.getParameter("selectedItem") !== null) {
+        var type = oEvent.getSource().data("type");
+        this.selectItem(type, oEvent.getParameter("selectedItem").getKey());
+      }
+    },
+    onSuggestionSuggest: function(oEvent) {
+      var type = oEvent.getSource().data("type");
+      var value = oEvent.getSource().getValue();
+      var searchFilters = [];
+      if (value) {
+        // don"t search numeric field if the input is not numerci
+        if (formatter.isNumeric(value)) {
+          if (type === "user") {
+            searchFilters.push(new Filter("USERID", FilterOperator.EQ, value));
+          } else if (type === "movie") {
+            searchFilters.push(new Filter("MOVIEID", FilterOperator.EQ, value));
+          }
+          searchFilters.push(new Filter("RATING_COUNT", FilterOperator.EQ, value));
+        }
+        if (type === "movie") {
+          searchFilters.push(new Filter("tolower(TITLE)", FilterOperator.Contains, "'" + value.toLowerCase() + "'"));
+        }
+        searchFilters.push(new Filter("tolower(DESCRIPTION)", FilterOperator.Contains, "'" + value.toLowerCase() + "'"));
+      }
+      this.getView().byId(type + "_input").getBinding("suggestionItems").filter(new Filter({
+        filters: searchFilters,
+        and: false
+      }), FilterType.Application);
+    }
+  });
 });
 ```
 
-Save the file using the ![save](00-save.png) icon from the menu or press `CTRL+S`.
+Save the file using the ![save](00-save.png) icon from the menu.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Create the folder structure)]
-
-Expand the **`movielens/html/resources/webapp/`** folder.
-
-Create the following folder structure:
-
-```
-|-- movielens/html/resources/webapp/
-	|-- controller
-	| 	|-- compare
-	| 	|-- execute
-	|-- view
-	| 	|-- compare
-	| 	|-- execute
-```
-
-![Web IDE](08-01.png)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Validate your changes)]
+[ACCORDION-BEGIN [Step 12: ](Validate your changes)]
 
 Open the **`mta.yaml`** file located in the `movielens` project folder using the **Code editor**.
 
-![Web IDE](09-01.png)
+![Web IDE](12-01.png)
 
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Run the application)]
+[ACCORDION-BEGIN [Step 13: ](Run the application)]
 
-Select the **`html`** module,  then click on the execute icon ![run](00-run.png) from the menu bar.
+Select the **`html`** module, then click on the execute icon ![run](00-run.png) from the menu bar.
 
 Once the application is started, the application will open in a new tab/window or you can click on the application URL:
 
-![Web IDE](10-01.png)
+![Web IDE](13-01.png)
 
 This will open a web page with the following content:
 
-![Web IDE](10-02.png)
+![Web IDE](13-02.png)
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Commit your changes)]
+[ACCORDION-BEGIN [Step 14: ](Commit your changes)]
 
 On the icon bar located on the right side of the Web IDE, click on the **Git Pane** icon ![Web IDE](00-webide-git.png).
 

@@ -20,7 +20,7 @@ You'll learn how to confirm that your SAP HANA, express edition installation is 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Test your server installation.)]
+[ACCORDION-BEGIN [Step 1: ](Test your server installation)]
 
 In a terminal, log in as the `sid``adm` user.
 
@@ -44,7 +44,7 @@ A success page displays:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ]((Optional) Test Your Installation Using the HANA Eclipse Plugin.)]
+[ACCORDION-BEGIN [Step 2: ]((Optional) Test Your Installation Using the HANA Eclipse Plugin)]
 
 Download `Eclipse IDE for Java EE Developers` from [http://www.eclipse.org/neon/](http://www.eclipse.org/neon/) to your local file system.
 
@@ -55,5 +55,3 @@ Launch when prompted, or go to the Eclipse folder (example: `C:\Users\`path`\ecl
 Follow the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html) to connect to your SAP HANA, express edition client machine.
 
 [ACCORDION-END]
-
-

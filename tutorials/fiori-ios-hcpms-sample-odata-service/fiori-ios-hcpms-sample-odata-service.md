@@ -1,6 +1,7 @@
 ---
 title: Sample OData services
 description: Using the sample OData service included with the SAP Cloud Platform mobile service for development and operations account.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -39,7 +40,7 @@ In SAP Cloud Platform mobile service for development and operations cockpit, nav
 
 ![Developer tab](fiori-ios-hcpms-sample-odata-service-01.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Examine the Service information)]
@@ -49,6 +50,7 @@ To view the service information, click the URL next to **Root URL**.
 To view the schema metadata for the service, click the URL next to **Metadata URL**.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Generate sample data)]
@@ -62,6 +64,7 @@ In order to use the sample service, you need to generate some sample data first.
 > Every click on each button will add another 10 sample orders to the Sample OData service.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Configure the application definition)]
@@ -69,6 +72,7 @@ In order to use the sample service, you need to generate some sample data first.
 Navigate to **Applications**, and next to the `com.sap.tutorial.demoapp.Demo` application, click the **Action** button, and select **Configure**.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Set Security Configuration)]
@@ -78,6 +82,7 @@ Under the **Information** tab, make sure **Security Configuration** is set to **
 ![Developer tab](fiori-ios-hcpms-sample-odata-service-05.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Setup Back End connection)]
@@ -93,6 +98,7 @@ Switch to the **Back End** tab and define a connection to the sample OData servi
 ![Application backend](fiori-ios-hcpms-sample-odata-service-02.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Configure SSO mechanism)]
@@ -104,6 +110,7 @@ At panel **SSO Mechanism**, set the authentication method to **Basic Authenticat
 > For the SSO Mechanism for the sample OData service, you can choose between `Basic Authentication` or `App2AppSSO`. In one of the next tutorials, we will use the **SDK Assistant** to create an application based on this Sample OData service, and since the SDK Assistant currently only supports Basic Authentication, we will use the **Basic Authentication** setting.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Enter SAP Cloud Platform credentials)]
@@ -115,6 +122,7 @@ Mark the checkbox next to **Basic Authentication**, and click the **Edit** butto
 Click **Save** to close the dialog.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Save configuration)]
@@ -124,6 +132,7 @@ Click **Save** to store the back-end configuration.
 For now, this complements this tutorial step. In the following tutorials, you will actually query the OData service and display the results.
 
 
+[VALIDATE_9]
 [ACCORDION-END]
 
 ## Next Steps

@@ -9,7 +9,7 @@ tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:**  
+ - **Tutorials:**  You have completed [Import the OVA](https://www.sap.com/developer/tutorials/hxe-ua-ova-vm.html)  
 
 ## Details
 ### You will learn
@@ -22,7 +22,7 @@ You'll learn how to start the VM, change the VM default keyboard layout, and cha
 
 If you don't change the keyboard layout to match the physical keyboard of your host machine (referred to as your **laptop** in this documentation), you may encounter problems later when logging in.
 
-[ACCORDION-BEGIN [Step 1: ](Start your VM.)]
+[ACCORDION-BEGIN [Step 1: ](Start your VM)]
 
 Open your hypervisor application.
 
@@ -32,7 +32,7 @@ Power on (or click *Play* on) your SAP HANA 2.0, express edition VM.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Change the keyboard layout if your laptop doesn't use an English (US) keyboard.)]
+[ACCORDION-BEGIN [Step 2: ](Change the keyboard layout if your laptop doesn't use an English (US) keyboard)]
 
 The system prompts you to either change the VM keyboard, or accept the default English (US) QWERTY keyboard. Enter `Y` to change the keyboard or `N` to use the default.
 
@@ -48,7 +48,7 @@ Use the arrow keys to scroll to the desired keyboard layout. `Tab` to the *OK* b
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Change time zone.)]
+[ACCORDION-BEGIN [Step 3: ](Change time zone)]
 
 Change the time zone if your laptop is not in the default UTC (GMT) time zone.
 

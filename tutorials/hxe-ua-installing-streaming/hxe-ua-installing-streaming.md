@@ -22,45 +22,63 @@ Install the SAP HANA client package and SAP HANA streaming analytics on an SAP H
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Download the streaming analytics installation package)]
+[ACCORDION-BEGIN [Step 1: ](Download `hsa.tgz` using the built-in Download Manager.)]
 
-Use the SAP HANA, express edition Download Manager to download the streaming analytics installation package, `hsa.tgz`.
+Navigate to `/usr/sap/HXE/home/bin`:
 
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Copy hsa.tgz to the virtual machine)]
-
-If you are installing streaming analytics on an SAP HANA, express edition virtual machine, locate the download package.
-
-| If you downloaded using...        | Then do this...  |
-| ---------------- | -------------|
-| The VM's built-in Download Manager (Console Mode)           | Locate ` hsa.tgz ` in the VM's Save Directory (`~/Downloads` by default.) |
-| The Download Manager (GUI Mode) on your laptop            | Transfer ` hsa.tgz ` from your laptop's Save Directory to `~/Downloads` on your VM.|
-
-
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Extract hsa.tgz)]
-
-Extract the contents of `hsa.tgz`:
-
-```
-tar -xvzf <download_path>/hsa.tgz
+```bash
+/usr/sap/HXE/home/bin
 ```
 
->**Tip:**
-> You may have to give these files run permissions. Example:
+Enter the following command:
 
-> ```bash
-> chmod -R 777 <download_path>/hsa.tgz
-> ```
-
+```bash
+HXEDownloadManager_linux.bin linuxx86_64 installer hsa.tgz
+```
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Edit the /etc/hosts file)]
+[ACCORDION-BEGIN [Step 2: ](Navigate to the `Downloads` directory.)]
+
+Enter:
+
+```bash
+cd /usr/sap/HXE/home/Downloads
+```
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](View the contents of the `Downloads` directory to confirm `hsa.tgz` exists.)]
+
+Enter:
+
+```bash
+ls
+```
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Extract the file.)]
+
+Enter:
+
+```bash
+tar -xvzf hsa.tgz
+```
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Navigate to the `HANA_EXPRESS_20` directory.)]
+
+Enter:
+
+```bash
+cd HANA_EXPRESS_20
+```
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Edit the /etc/hosts file.)]
 
 If you are installing streaming analytics on an SAP HANA, express edition virtual machine, edit the `/etc/hosts` file on the VM and modify the `hxehost.localdomain.com   hxehost` line to have your VM's IP address:
 
@@ -68,10 +86,9 @@ If you are installing streaming analytics on an SAP HANA, express edition virtua
 <VM_IP_address>  hxehost.localdomain.com   hxehost
 ```    
 
-
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Run the installer)]
+[ACCORDION-BEGIN [Step 7: ](Run the installation script.)]
 
 Navigate to the `HANA_EXPRESS_20` directory where you extracted the files and run `install_hsa.sh` as the root user:
 

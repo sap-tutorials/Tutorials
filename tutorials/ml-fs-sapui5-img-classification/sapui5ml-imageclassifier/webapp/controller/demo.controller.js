@@ -67,7 +67,7 @@ sap.ui.define([
 
 			if (oControlEvent.getParameters().status === 200) {
 				// get the response as JSON and process the results
-				processResult(this, JSON.parse(oControlEvent.getParameters().responseRaw), this.srcFile.nam, this.srcFileURL);
+				processResult(this, JSON.parse(oControlEvent.getParameters().responseRaw), this.srcFile.name, this.srcFileURL);
 			} else {
 				oView.getModel("demo").setProperty("/resultVisible", false);
 				MessageBox.show("Error " + oControlEvent.getParameters().status + " : " + oControlEvent.getParameters().responseRaw);
