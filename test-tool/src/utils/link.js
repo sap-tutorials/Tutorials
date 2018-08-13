@@ -2,16 +2,6 @@ const { Writable } = require('stream');
 
 const { regexp } = require('../constants');
 
-class FakeWritable extends Writable {
-    constructor(options) {
-        super(options);
-    }
-
-    _write(chunk, encoding, callback) {
-        callback();
-    }
-};
-
 const extractLinks = (content) => {
     const { link: { markdown, pure } } = regexp;
 
@@ -37,7 +27,6 @@ const extractLinks = (content) => {
 const is2xx = (statusCode) => /^2/.test('' + statusCode);
 
 module.exports = {
-    FakeWritable,
     extractLinks,
     is2xx,
 };
