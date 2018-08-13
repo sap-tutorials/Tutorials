@@ -77,7 +77,7 @@ Press **enter** and select the node again, choose the **+** sign to add data sou
 
 ![Call it Products](4.png)
 
-Add `MD.Products` and `MD.BusinessPartners` to the node
+Add `MD.Products` and `MD.BusinessPartners` to the node. Use the **+** sign to search for the entities.
 
 ![Add data sources](a1.gif)
 
@@ -126,7 +126,7 @@ Rename the current join node to `Address`
 
 [ACCORDION-BEGIN [Step 5: ](Join products with texts)]
 
-Add a new join node and use the `Address` node as input. Add `Util.Texts` as a datasource.
+Add a new join node and use the `Address` node as input. Add `Util.Texts` as a data source.
 
 ![Add texts](11.png)
 

@@ -1,6 +1,6 @@
 ---
 title: Check your environment
-description: Check your environment before starting the MovieLens tutorial series for SAP HANA, express edition
+description: Check your environment before starting the Forecast tutorial series for SAP HANA, express edition
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
@@ -51,7 +51,36 @@ The following tutorial group describes a series of option you can pick one from 
 
 Off course you can use any tool of your choice!
 
-In order to ease the execution of some of the SQL statements, some tutorials will be provided with Jupyter Notebook (which can be installed as described in the following tutorial: [Use Jupyter Notebook with SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-jupyter.html)).
+Also, looking at raw data is not always easy when you want to evaluate them. Therefore, it is recommended to visualize them graphically.
+
+Therefore you can setup a tool like Jupyter (as described in the following tutorial: [Use Jupyter Notebook with SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-jupyter.html)) which will allow you to run both your SQL and to use Python libraries to visualize your data in graphs.
+
+In the following tutorials, you will be provided a series of Python code snippets to run in your Jupyter Notebooks in order to visualize the data.
+
+But first, you will need to add the below code snippet in your first cell which will initialize the connection to your HXE instance:
+
+```python
+import sqlalchemy, os
+from sqlalchemy import create_engine
+
+import pandas as pd
+import matplotlib
+import matplotlib.pyplot as plt
+
+%matplotlib inline
+
+%reload_ext sql
+%config SqlMagic.displaylimit = 5
+%config SqlMagic.feedback = False
+%config SqlMagic.autopandas = True
+
+hxe_connection = 'hana://ML_USER:Welcome18@hxehost:39015';
+
+%sql $hxe_connection
+
+pd.options.display.max_rows = 1000
+pd.options.display.max_colwidth = 1000
+```
 
 **Make sure to update the `hxe_connection` to match your current environment.**
 

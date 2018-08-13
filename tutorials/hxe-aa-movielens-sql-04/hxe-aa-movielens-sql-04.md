@@ -4,10 +4,8 @@ description: Understand the capabilities and options made available with the SAP
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 30
 ---
-
-## Prerequisites
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn
@@ -15,9 +13,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 - Understand the basics about the SAP HANA Automated Predictive Library
 - How to call SAP HANA Automated Predictive Library functions from SQL
 - Identify which algorithm options are available for recommendation engines
-
-### Time to Complete
-**20 Min**
 
 [ACCORDION-BEGIN [Info: ](SAP HANA Automated Predictive Library)]
 
