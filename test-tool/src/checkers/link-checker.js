@@ -59,6 +59,12 @@ const checkAttempt = async (options, attempt, maxAttempts) => {
               } else {
                 resolve(stream.response);
               }
+            })
+            .on('error', (error) => {
+                reject({
+                     err: error,
+                     res: stream.response,
+                });
             });
           });
         try {
