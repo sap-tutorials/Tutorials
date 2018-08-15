@@ -118,7 +118,17 @@ In your running Fiori Launchpad, copy the **Launchpad URL** and paste it into th
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Register for the ticket drawing)]
-Thank you for completing the SAP TechEd 2018 drawing mission!
+Thank you for completing the pre-SAP TechEd 2018 drawing mission!
+
+Since you have gotten to the last step in this mission, you have the option of entering a drawing for a chance to win a free SAP TechEd pass (includes show floor and lectures access only) to the location of your choice. To register, please fill out one of the following registration forms, depending on which SAP TechEd you want to register for.
+
+>**IMPORTANT** You can only register for one location.
+
+Contest ends Sept. 10, 2018.
+
+- [Las Vegas](https://www.sap.com/cmp/oth/crm-xb18-evt-teched010/index.html)
+- [Barcelona](https://www.sap.com/cmp/oth/crm-xb18-evt-teched01/index.html)
+- [Bangalore](https://www.sap.com/cmp/oth/crm-xb18-evt-teched011/index.html)
 
 
 [VALIDATE_10]
