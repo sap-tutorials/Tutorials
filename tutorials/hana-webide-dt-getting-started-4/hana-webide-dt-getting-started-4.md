@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [Create Tables and Import Data](https://www.sap.com/developer/tutorials/hana-webide-dt-getting-started-3.htmll)
+ - **Tutorials:** [Create Tables and Import Data](https://www.sap.com/developer/tutorials/hana-webide-dt-getting-started-3.html)
 
 ## Next Steps
  - **Tutorials:** [Selectively Move Data Between In-Memory and Extended Tables](https://www.sap.com/developer/tutorials/hana-webide-dt-getting-started-5.html)
