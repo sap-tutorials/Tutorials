@@ -225,7 +225,7 @@ CALL "TPCH"."Migrate_Aged_Orders2"();
 
 As mentioned previously, the stored procedure is a single statement, resulting in the entire store procedure executing as a single atomic transaction even-though the procedure itself contains multiple statements.
 
-![](assets/hana-webide-dt-getting-started-5-0eb97f50.jpg)
+![Stored procedure](assets/hana-webide-dt-getting-started-5-0eb97f50.jpg)
 
 Verify that the data has been inserted into the **`LINEITEM_DT`** table either by executing the query below or by right clicking on the table in the catalogue and choosing **Open Data**.
 
