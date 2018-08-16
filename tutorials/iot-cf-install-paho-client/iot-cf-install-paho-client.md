@@ -1,8 +1,9 @@
 ---
 title: Install the Paho Client
 description: Install the Paho client to send data to the SAP Cloud Platform Internet of Things Service Cloud using MQTT and REST.
+auto_validation: false
 primary_tag: products>sap-cloud-platform-internet-of-things
-tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things ]
+tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud ]
 ---
 
 <!-- loio13db11a65036448ea5194b2a8e922c62 -->
@@ -13,16 +14,16 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 ## Details
 ### You will learn
-- How to install the Paho client for MQTT on Windows or macOS.
+- How to install the Paho client for MQTT on Windows or macOS
 
 ### Time to Complete
-10 min
+5 min
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Install the Paho Client on Windows 10)]
 
-1.  Download the [Paho Client (Windows/ macOS)](http://www.eclipse.org/paho/components/tool//).
+1.  Download the [Paho Client (Windows)](http://www.eclipse.org/paho/components/tool//).
 
     A ZIP archive `org.eclipse.paho.ui.app-1.0.0-win32.win32.x86_64.zip` should be downloaded.
 
@@ -37,12 +38,13 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     >
     >
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Install the Paho Client on macOS)]
 
-1.  Download the [Paho Client (Windows/ macOS)](http://www.eclipse.org/paho/components/tool//).
+1.  Download the [Paho Client (macOS)](http://www.eclipse.org/paho/components/tool//).
 
     A GZ archive `org.eclipse.paho.ui.app-1.0.0-macosx.cocoa.x86_64.tar.gz` should be downloaded.
 
@@ -57,5 +59,6 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     >
     >
 
+[DONE]
 
 [ACCORDION-END]

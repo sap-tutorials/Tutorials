@@ -1,8 +1,9 @@
 ---
 title: Create a Device Model Using the API
 description: Create a device model for the SAP Cloud Platform Internet of Things Service using the Internet of Things API Service.
+auto_validation: false
 primary_tag: products>sap-cloud-platform-internet-of-things
-tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things ]
+tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud ]
 ---
 
 <!-- loioc4da75750e5b42488cb5874d3fc623da -->
@@ -12,7 +13,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 ## Details
 ### You will learn
-- How to create a device model in the SAP Cloud Platform Internet of Things Service using the Internet of Things API Service
+- How to create a device model in the Internet of Things Service using the Internet of Things API Service
 
 ### Time to Complete
 20 min
@@ -25,11 +26,11 @@ In the following a capability is created. A capability can be reused since it ca
 
 1.  Open the Internet of Things API Service UI.
 
-```bash
-https://<HOST_NAME>/iot/core/api/v1/doc/
-```
+    ```bash
+    https://<HOST_NAME>/iot/core/api/v1/doc/
+    ```
 
-You will see the main page with the categories overview.
+    You see the main page with the categories overview.
 
 2.  Choose *Authorize* .
 
@@ -115,6 +116,7 @@ You will see the main page with the categories overview.
 
 10. Note down the `id` of the capability.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -175,6 +177,7 @@ In the following a sensor type is created. The previously created capability is 
 
 8.  Note down the `id` of the sensor type.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -230,7 +233,7 @@ In the following a device entity is created. The device entity does not have any
 
     ```
 
-9.  Paste the *JSON string* in the *Example Value*field for POST request.
+9.  Paste the *JSON string* in the *Example Value* field for POST request.
 
     ```bash
     {
@@ -239,7 +242,7 @@ In the following a device entity is created. The device entity does not have any
     }
     ```
 
-    Optional: You can set the device to a router device, which is allowed to send data on behalf of another device. Set the parameter as follows:
+    (Optional) You can set the device to a router device, which is allowed to send data on behalf of another device. Set the parameter as follows:
 
     ```bash
     "authorizations":[{"type":"router"}]
@@ -250,7 +253,7 @@ In the following a device entity is created. The device entity does not have any
     >
     >
 
-10. Choose *Execute*
+10. Choose *Execute*.
 
 11. Scroll to the *Server response* body and *Code*. In case of success the response code is `200` and the *Response body* contains all information of the created device.
 
@@ -282,6 +285,7 @@ In the following a device entity is created. The device entity does not have any
 
 12. Note down the `id` of the device.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -331,6 +335,7 @@ In the following a sensor entity is created. The sensor will be assigned to the 
 
 8.  Note down the `id` of the sensor.
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -364,16 +369,14 @@ In the following it is described how the payload looks like for sending data to 
     }
     ```
 
-2.  The message is now sent to the previously created sensor.
+    The message is now sent to the previously created sensor. For more information on how to publish data, please refer to the tutorials [Send Data with MQTT] and [Send Data with REST].
 
-    For more information on how to publish data, please refer to the tutorials [Sending Data with MQTT](https://help.sap.com/viewer/e765b2a5b99540ce84da397c20cc1993/Cloud/en-US) and [Sending Data with REST](https://help.sap.com/viewer/d5f07bf9e1d646959a006f98d4cce321/Cloud/en-US).
-
-3.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consuming Measures.](https://help.sap.com/viewer/7e269da75d024ef09bfb7a5986c47517/Cloud/en-US)
+2.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures].
 
 
 **Send Data to an Automatically Created Sensor**
 
-1.  Alternatively, you can send data using the sensor type ID. In this case the system will automatically create a new sensor with the provided sensor type.
+1.  Alternatively, you can send data using the sensor type ID. In this case the system automatically creates a new sensor with the provided sensor type.
 
     ```bash
     {
@@ -401,11 +404,10 @@ In the following it is described how the payload looks like for sending data to 
     }
     ```
 
-2.  The message is now sent to a newly created sensor.
+    The message is now sent to a newly created sensor. For more information on how to publish data, please refer to the tutorials [Send Data with MQTT] and [Send Data with REST].
 
-    For more information on how to publish data, please refer to the tutorials [Sending Data with MQTT](https://help.sap.com/viewer/e765b2a5b99540ce84da397c20cc1993/Cloud/en-US) and [Sending Data with REST](https://help.sap.com/viewer/d5f07bf9e1d646959a006f98d4cce321/Cloud/en-US).
+2.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures].
 
-3.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consuming Measures.](https://help.sap.com/viewer/7e269da75d024ef09bfb7a5986c47517/Cloud/en-US)
-
+[VALIDATE_1]
 
 [ACCORDION-END]

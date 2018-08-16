@@ -1,6 +1,7 @@
 ---
 title: Install cURL
 description: Install cURL to send data to the SAP Cloud Platform Internet of Things Service Cloud using REST.
+auto_validation: false
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things ]
 ---
@@ -13,7 +14,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 ## Details
 ### You will learn
-- How to install cURL on Windows or macOS.
+- How to install cURL on Windows or macOS
 
 ### Time to Complete
 10 min
@@ -22,7 +23,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 [ACCORDION-BEGIN [Step 1: ](Install cURL on Windows 10)]
 
-1.  Download [cURL (Windows)](https://curl.haxx.se/dlwiz/?type=bin&os=Win64&flav=-&ver=-&cpu=x86_64)
+1.  Download [cURL (Windows)](https://curl.haxx.se/dlwiz/?type=bin&os=Win64&flav=-&ver=-&cpu=x86_64).
 
     > Note:
     > Please use the recommended version [curl-7.58.0](https://bintray.com/artifact/download/vszakats/generic/curl-7.58.0-win64-mingw.7z).
@@ -31,7 +32,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 2.  Extract the downloaded ZIP archive.
 
-3.  For ease of use we recommend that you add the directories from the OpenSSL binaries to your PATH environment variable. For example, you could enter the following in your terminal (only valid for one session):
+3.  For ease of use we recommend that you add the directories from the cURL binaries to your PATH environment variable. For example, you could enter the following in your terminal (only valid for one session):
 
     ```bash
     set PATH=%PATH%;c:\<PATH_TO_CURL.EXE>
@@ -56,12 +57,13 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     Features: AsynchDNS IDN IPv6 Largefile SSPI Kerberos SPNEGO NTLM SSL libz brotli TLS-SRP HTTP2 HTTPS-proxy MultiSSL
     ```
 
+[VALIDATE_1]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Install cURL on macOS)]
 
-1.  CURL is usually installed by default on macOS (`/user/bin/curl`).
+1.  cURL is usually installed by default on macOS (`/user/bin/curl`).
 
 2.  Check the version of cURL. Enter the following command in the terminal:
 
@@ -84,6 +86,6 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     Protocols: dict file ftp ftps gopher http https imap imaps ldap ldaps pop3 pop3s rtsp smb smbs smtp smtps telnet tftp
     Features: AsynchDNS IPv6 Largefile GSS-API Kerberos SPNEGO NTLM NTLM_WB SSL libz HTTP2 UnixSockets HTTPS-proxyt
     ```
-
+[DONE]
 
 [ACCORDION-END]

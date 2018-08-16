@@ -1,25 +1,29 @@
 ---
 title: Send Data with REST
 description: Send data to the SAP Cloud Platform Internet of Things Service Cloud using REST.
+auto_validation: false
 primary_tag: products>sap-cloud-platform-internet-of-things
-tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things ]
+tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud ]
 ---
 
 <!-- loioe341f4746979496d8abad6f1e0d8a1dc -->
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Install curl] and [Install OpenSSL].
+ - **Tutorials:** You have completed [Install cURL] and [Install OpenSSL].
 
 ## Details
 ### You will learn
-- How to send data to the SAP Cloud Platform Internet of Things Service Cloud using REST.
-- How to use cURL as a sample client for REST.
+- How to create a device model for the Internet of Things Service
+- How to send data to the Internet of Things Service Cloud using REST
+- How to use cURL as a sample client for REST
 
 ### Time to Complete
 20 min
 
 ---
+
+You have to create a device model for the Internet of Things Service using the Internet of Things Service Cockpit.
 
 [ACCORDION-BEGIN [Step 1: ](Create a Capability)]
 
@@ -37,28 +41,31 @@ In the following a capability is created. A capability can be reused since it ca
 
 4.  In the *General Information* section, enter a *Name*. Optionally enter an *Alternate ID* for the capability.
 
-    *Name*: for example, `MyCapability`
+    *Name*: `MyCapability`
 
-    *Alternate ID*: for example, `1234`
+    *Alternate ID*: `1234`
 
 5.  In the *Properties* section, specify additional properties. Choose **+** (Add a property) from the toolbar of the properties table.
 
 6.  Enter a *Name* for the property.
 
-    *Name*: for example, `temperature`
+    *Name*: `temperature`
 
 7.  Select a *Data Type* from the dropdown box for the property.
 
-    *Data Type*: for example, `float`
+    *Data Type*: `float`
 
 8.  Enter a *Unit of Measure*.
 
-    *Unit of Measure*: for example, `Celsius`
+    *Unit of Measure*: `Celsius`
 
-9.  Choose *Create*. Note down the *Alternate ID* of the capability.
+9.  Choose *Create*.
 
-    You see a message that the capability was created successfully.
+10. Note down the *Alternate ID* of the capability.
 
+    You get a notification that the capability was created successfully.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -66,108 +73,91 @@ In the following a capability is created. A capability can be reused since it ca
 
 In the following a sensor type is created. The previously created capability is assigned to the sensor type.
 
-1.  Log on to the Internet of Things Service Cockpit with your user credentials.
+1.  Use the main menu to navigate to the *Sensor Types* section of the *Device Management* category.
 
-    ```bash
-    https://<HOST_NAME>/iot/cockpit/
-    ```
+2.  Choose **+** (Create a sensor type) above the sensor types list.
 
-2.  Use the main menu to navigate to the *Sensor Types* section of the *Device Management* category.
+3.  In the *General Information* section, enter a *Name*. Optionally enter an *Alternate ID* for the sensor type.
 
-3.  Choose **+** (Create a sensor type) above the sensor types list.
+    *Name*: `MySensorType`
 
-4.  In the *General Information* section, enter a *Name*. Optionally enter an *Alternate ID* for the sensor type.
+4.  In the *Capabilities* section, add capabilities for this sensor type. Choose **+** (Add a capability) from the toolbar of the capabilities table.
 
-    *Name*: for example, `MySensorType`
+5.  Select the previously created *Capability* from the dropdown box.
 
-5.  In the *Capabilities* section, add capabilities for this sensor type. Choose **+** (Add a capability) from the toolbar of the capabilities table.
-
-6.  Select the previously created *Capability* from the dropdown box.
-
-7.  Select the capability *Type* from the dropdown box.
+6.  Select the capability *Type* from the dropdown box.
 
     *Type*: `measure`
 
-8.  Choose *Create*.
+7.  Choose *Create*.
 
-    You see a message that the sensor type was created successfully.
+    You get a notification that the sensor type was created successfully.
 
+[DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create a REST Device)]
 
-In the following a device entity is created. The device entity does not have any sensors attached, yet. The device entity will be assigned to the REST gateway.
+In the following a device is created. The device does not have any sensors attached, yet. The device is assigned to the REST gateway.
 
-1.  Log on to the Internet of Things Service Cockpit with your user credentials.
+1.  Use the main menu to navigate to the *Devices* section of the *Device Management* category.
 
-    ```bash
-    https://<HOST_NAME>/iot/cockpit/
-    ```
+2.  Choose **+** (Create a device) above the devices list.
 
-2.  Use the main menu to navigate to the *Devices* section of the *Device Management* category.
+3.  In the *General Information* section, enter a *Name*, and select a *Gateway* from the dropdown box. Optionally enter an *Alternate ID* for the device.
 
-3.  Choose **+** (Create a device) above the devices list.
-
-4.  In the *General Information* section, enter a *Name*, and select a *Gateway* from the dropdown box. Optionally enter an *Alternate ID* for the device.
-
-    *Name*: for example, `MyDevice`
+    *Name*: `MyDevice`
 
     *Gateway*: `IoT Gateway REST`
 
-    *Alternate ID*: for example, `11223344`
+    *Alternate ID*: `11223344`
 
-5.  Choose *Create*. Note down the *Alternate ID* of the device.
+4.  Choose *Create*.
 
-    You see a message that the device was created successfully.
+5.  Note down the *Alternate ID* of the device.
 
+    You get a notification that the device was created successfully.
+
+[DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a Sensor)]
 
-In the following a sensor entity is created. The sensor will be assigned to the previously created device and will be a kind of the previously created sensor type.
+In the following a sensor is created. The sensor is assigned to the previously created device and is a kind of the previously created sensor type.
 
-1.  Log on to the Internet of Things Service Cockpit with your user credentials.
+1.  Use the main menu to navigate to the *Devices* section of the *Device Management* category.
 
-    ```bash
-    https://<HOST_NAME>/iot/cockpit/
-    ```
+2.  Search for and select the previously created device.
 
-2.  Use the main menu to navigate to the *Devices* section of the *Device Management* category.
+3.  In the *Sensors* section, choose **+** (Add a sensor) to add a new sensor.
 
-3.  Search for and select the previously created device.
+4.  In the *General Information* section, enter a *Name*, and select the previously created *Sensor Type* from the dropdown box. Optionally enter an *Alternate ID* for the sensor.
 
-4.  In the *Sensors* section, choose **+** (Add a sensor) to add a new sensor.
+    *Name*: `MySensor`
 
-5.  In the *General Information* section, enter a *Name*, and select the previously created *Sensor Type* from the dropdown box. Optionally enter an *Alternate ID* for the sensor.
+    *Alternate ID*: `4321`
 
-    *Name*: for example, `MySensor`
+6.  Choose *Add*.
 
-    *Alternate ID*: for example, `4321`
+7.  Note down the *Alternate ID* of the sensor.
 
-6.  Choose *Add*. Note down the *Alternate ID* of the sensor.
+    You get a notification that the sensor was created successfully.
 
-    You see a message that the sensor was created successfully.
-
+[DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Generate the Device Certificate)]
 
-1.  Log on to the Internet of Things Service Cockpit with your user credentials.
-
-    ```bash
-    https://<HOST_NAME>/iot/cockpit/
-    ```
-
-2.  Use the main menu to navigate to the *Devices* section of the *Device Management* category.
+1.  Use the main menu to navigate to the *Devices* section of the *Device Management* category.
 
 3.  Choose the previously created device.
 
 4.  On the device details page, choose the *Certificate* tab.
 
-5.  In the *Generate Certificate* dialog, select the type of certificate you want to generate. For this tutorial please use *PEM* and choose *Generate*.
+5.  In the *Generate Certificate* dialog, select the type of certificate you want to generate and choose *Generate*.
 
     > Note:
     > Supported types are PEM and P12. Based on the certificate type you choose, the system downloads a `*-device_certificate.pem` or `*-device_certificate.p12` and a dialog opens, which shows the *Secret* key.
@@ -176,31 +166,23 @@ In the following a sensor entity is created. The sensor will be assigned to the 
 
 6.  Select and copy the displayed *Secret* key before closing the dialog or leaving the page, as it cannot be restored at a later point in time.
 
-7.  Rename `*-device_certificate.pem` to `certificate.pem`.
+7.  Rename `*-device_certificate.pem` to `client.pem`or `*-device_certificate.p12` to `client.p12`.
 
-8.  Open the console in the directory where the previously downloaded `*.pem` file is located. Enter the following command in the terminal:
-
-    ```bash
-    openssl pkcs12 -export -in certificate.pem -inkey certificate.pem -out client.ks
-    ```
-
-    > Note:
-    > Use the copied *Secret* key from the previous step for all password requests (import pass phrase and Export Password).
-    >
-    >
-
-    A file named `client.ks` is created.
-
+[VALIDATE_1]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Publish Data With curl Using REST)]
+[ACCORDION-BEGIN [Step 6: ](Publish Data With cURL Using REST)]
 
 **Prerequisites:**
 
--   You have created the device model.
+-   You have installed the REST client (cURL). A description of how to install the cURL client can be found in the tutorial [Install cURL].
 
--   You have generated a certificate for your REST device and wrote down the secret key.
+-   You have installed OpenSSL. A description of how to install OpenSSL can be found in the tutorial [Install OpenSSL].
+
+-   You have created the device model in step 1-4.
+
+-   You have generated a certificate for your REST device and written down the secret key.
 
 
 Open the terminal (macOS) or command line tool CMD (Windows) and change the directory to the path of the extracted REST device certificate.
@@ -210,7 +192,7 @@ Open the terminal (macOS) or command line tool CMD (Windows) and change the dire
 >
 >
 
-**Send data using curl to the device (only for curl with OpenSSL on Windows or for curl without SecureTransport using LibreSSL on macOS).**
+**Send data using cURL to the device (only for cURL with OpenSSL on Windows or for cURL without SecureTransport using LibreSSL on macOS).**
 
 1.  Enter and send the message string.
 
@@ -220,13 +202,13 @@ Open the terminal (macOS) or command line tool CMD (Windows) and change the dire
 
     Two formats are allowed:
 
-    -   One with the measures specified as array of array.
+    -   One with the measures specified as an array of arrays.
 
         ```bash
         curl -v -k -E client.pem:jJ3fF7dD0rR2rR3wW0eE2tT -H "Content-Type:application/json" -d "{ \"capabilityAlternateId\": \"1234\", \"sensorAlternateId\": \"4321\", \"measures\": [[\"25\"]] }" https://demo.eu10.cp.iot.sap/iot/gateway/rest/measures/11223344
         ```
 
-    -   Another one, specifying measures as array of JSON objects where the name of each property defined in the capability is the key.
+    -   Another one, specifying measures as an array of JSON objects where the name of each property defined in the capability is the key.
 
         ```bash
         curl -v -k -E client.pem:jJ3fF7dD0rR2rR3wW0eE2tT -H "Content-Type:application/json" -d "{ \"capabilityAlternateId\": \"1234\", \"sensorAlternateId\": \"4321\", \"measures\": [{\"temperature\": \"25\"}] }" https://demo.eu10.cp.iot.sap/iot/gateway/rest/measures/11223344
@@ -242,10 +224,10 @@ Open the terminal (macOS) or command line tool CMD (Windows) and change the dire
     < HTTP/1.1 200 OK
     ```
 
-3.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consuming Measures.](https://help.sap.com/viewer/7e269da75d024ef09bfb7a5986c47517/Cloud/en-US)
+3.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures].
 
 
-**Send data using curl to the device (only for curl with SecureTransport on macOS).**
+**Send data using cURL to the device (only for cURL with SecureTransport on macOS).**
 
 1.  Enter and send the message string.
 
@@ -255,13 +237,13 @@ Open the terminal (macOS) or command line tool CMD (Windows) and change the dire
 
     Two formats are allowed:
 
-    -   One with the measures specified as array of array.
+    -   One with the measures specified as an array of arrays.
 
         ```bash
         curl -v -k -E client.p12:jJ3fF7dD0rR2rR3wW0eE2tT -H "Content-Type:application/json" -d "{ \"capabilityAlternateId\": \"1234\", \"sensorAlternateId\": \4321\", \"measures\": [[\"25\"]] }" https://demo.eu10.cp.iot.sap/iot/gateway/rest/measures/11223344
         ```
 
-    -   Another one, specifying measures as array of JSON objects where the name of each property defined in the capability is the key.
+    -   Another one, specifying measures as an array of JSON objects where the name of each property defined in the capability is the key.
 
         ```bash
         curl -v -k -E client.p12:jJ3fF7dD0rR2rR3wW0eE2tT -H "Content-Type:application/json" -d "{ \"capabilityAlternateId\": \"1234\", \"sensorAlternateId\": \"4321\", \"measures\": [{\"temperature\": \"25\"}] }" https://demo.eu10.cp.iot.sap/iot/gateway/rest/measures/11223344
@@ -277,7 +259,8 @@ Open the terminal (macOS) or command line tool CMD (Windows) and change the dire
     < HTTP/1.1 200 OK
     ```
 
-3.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consuming Measures.](https://help.sap.com/viewer/7e269da75d024ef09bfb7a5986c47517/Cloud/en-US)
+3.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures].
 
+[DONE]
 
 [ACCORDION-END]
