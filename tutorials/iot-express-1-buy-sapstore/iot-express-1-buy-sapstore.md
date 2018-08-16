@@ -3,7 +3,6 @@ title: Get Your Hands on SAP Leonardo IoT Foundation Software and Hardware
 description: Purchase SAP Leonardo IoT Foundation and acquire the hardware necessary to follow subsequent tutorials.
 primary_tag: topic>internet-of-things
 auto_validation: true
-time: 15
 tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-internet-of-things ]
 ---
 
@@ -17,6 +16,9 @@ tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, prod
 ## Details
 ### You will learn  
 You will learn which services from SAP Cloud Platform are required for building and deploying applications. You will see how to acquire them. You will also get guidance on a simple hardware kit to get you started with sensors.
+
+### Time to Complete
+**15 Min**
 
 
 ---

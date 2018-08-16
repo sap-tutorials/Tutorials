@@ -3,7 +3,6 @@ title: Assemble and Configure Device Hardware
 description: Assemble device hardware, configure device firmware and deploy it in the field.
 primary_tag: topic>internet-of-things
 auto_validation: true
-time: 30
 tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-iot]
 ---
 
@@ -18,6 +17,11 @@ tags: [  tutorial>beginner, products>sap-leonardo, topic>internet-of-things, pro
 - How to connect sensors to a device
 - How to read sensor values from device firmware
 - How to securely send data to the cloud using certificates
+
+### Time to Complete
+**30 Min**
+
+
 
 ## Next Steps
   - [Create a Thing Model and Bind Your Device into a Business Context](https://www.sap.com/developer/tutorials/iot-express-4-create-thing-model.html)

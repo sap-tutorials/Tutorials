@@ -4,7 +4,6 @@ description: Define a data and service model using SAP Web IDE Full-Stack and th
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide ]
-time: 10
 ---
 
 ## Prerequisites  
@@ -14,6 +13,10 @@ time: 10
 ## Details
 ### You will learn  
   - How to develop a simple business service on SAP Cloud Platform using the application programming model and SAP Web IDE Full-Stack.
+
+
+### Time to Complete
+**10 Min**
 
 ---
 

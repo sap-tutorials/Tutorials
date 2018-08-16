@@ -4,7 +4,6 @@ description: Deploy the data model to the SAP HANA database that is associated w
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide ]
-time: 10
 ---
 
 ## Prerequisites  
@@ -13,6 +12,10 @@ time: 10
 ## Details
 ### You will learn  
   - How to deploy the data model you created for your business application to the SAP HANA database using SAP Web IDE Full-Stack.
+
+
+### Time to Complete
+**10 Min**
 
 ---
 

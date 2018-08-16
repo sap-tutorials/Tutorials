@@ -3,7 +3,6 @@ title: Create a Simple IoT Device Model
 description: Create a simple IoT device model in the IoT service of SAP Cloud Platform.
 primary_tag: topic>internet-of-things
 auto_validation: true
-time: 30
 tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-cloud-platform, products>sap-cloud-platform-iot ]
 ---
 
@@ -21,6 +20,10 @@ tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, prod
 - How to create a device model
 - How to ingest simulated data using a Node.js script
 - How to ingest data using SAP Leonardo IoT Foundation Starter Kit
+
+### Time to Complete
+**30 Min**
+
 
 
 ## Next Steps

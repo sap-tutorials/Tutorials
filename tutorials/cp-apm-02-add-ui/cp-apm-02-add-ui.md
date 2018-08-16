@@ -4,7 +4,6 @@ description: Create the UI for your business application using SAP Web IDE Full-
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, topic>html5, topic>java, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
-time: 10
 ---
 
 ## Prerequisites  
@@ -14,6 +13,11 @@ time: 10
 ### You will learn  
   - How to use SAP Web IDE Full-Stack HTML5 templates and the Annotation Modeler to create a UI for your business application.
 
+  
+### Time to Complete
+**10 Min**
+
+  
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Compile OData models)]

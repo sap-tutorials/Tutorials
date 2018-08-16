@@ -3,7 +3,6 @@ title: Create a Thing Model and Bind to Device
 description: Use the Thing Modeler to create the master data and the measurement properties, then map your thing to devices and sensors, and to your business process.
 primary_tag: topic>internet-of-things
 auto_validation: true
-time: 20
 tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-cloud-platform-iot ]
 ---
 
@@ -12,6 +11,12 @@ tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, prod
  - **Tutorials:** [Assemble and Configure Device Hardware](https://www.sap.com/developer/tutorials/iot-express-3-configure-device.html) or at least [Create a Simple IoT Device Model](https://www.sap.com/developer/tutorials/iot-express-2-create-device-model.html)
  - **Configuration** You or someone else that is an administrator in your global account has walked through the following end-to-end configuration and onboarding guide: [SAP IoT Application Enablement: Onboarding - Setting up Your Account](https://help.sap.com/viewer/9dfedbe95cbe4a9f9a5ceddbef7f88e5/latest/en-US/c5b72d23880240dcb4b0d7b9523b065a.html).
 
+### Time to Complete
+**20 Min**
+ 
+ 
+ 
+ 
 ## Next Steps
 - **Tutorials:** [Build an IoT Condition Monitoring App](https://www.sap.com/developer/tutorials/iot-express-5-use-webide-template.html)
 
