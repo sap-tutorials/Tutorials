@@ -55,13 +55,13 @@ cd <preferred_filepath>
 sudo tar <download_filepath>/clients_<OS>.zip
 ```
 
-    These files are extracted:
+These files are extracted:
 
-    `clients_linux_x86_64.tgz`
+`clients_linux_x86_64.tgz`
 
-    -   `hdb_client_linux_x86_64.tgz`
+-   `hdb_client_linux_x86_64.tgz`
 
-    -   `xs.onpremise.runtime.client_linuxx86_64.zip`
+-   `xs.onpremise.runtime.client_linuxx86_64.zip`
 
 
 `clients_linux_ppc64.le.tgz`
@@ -99,7 +99,7 @@ Use a compression utility to extract the file you downloaded for your platform:
 
 -   (Linux) `xs.onpremise.runtime.client_linuxx86_64.zip`
 
--   (PowerPC) `xs.onpremise.runtime.client_linuxppc64le.zip` 
+-   (PowerPC) `xs.onpremise.runtime.client_linuxppc64le.zip`
 
 
 The system creates this folder:
@@ -153,8 +153,8 @@ xs api https://<hostname>:3<instance_number>30
 
 > Note:
 > If this step fails, it may be due to a missing SSL certificate. Continue on to the next step to add the SSL certificate, otherwise skip the next step.
-> 
-> 
+>
+>
 
 [ACCORDION-END]
 
@@ -202,8 +202,8 @@ xs login -u XSA_ADMIN -p "<password>"
 
 > Note:
 > A password is assigned to the `XSA_ADMIN` user during SAP HANA 2.0, express edition installation.
-> 
-> 
+>
+>
 
 [ACCORDION-END]
 
@@ -216,5 +216,3 @@ xs apps
 ```
 
 [ACCORDION-END]
-
-
