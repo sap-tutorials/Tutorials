@@ -3,12 +3,18 @@ title: Add a user task to your workflow
 description: Enhance your workflow with a user task, in this case, to add an approval.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner ]
-time: 15
 ---
 
 ## Details
 ### You will learn  
 how to start an instance of the workflow definition that you have defined.
+
+
+### Time to Complete
+**15 Min**
+
+
+
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Add the workflow apps to your homepage)]

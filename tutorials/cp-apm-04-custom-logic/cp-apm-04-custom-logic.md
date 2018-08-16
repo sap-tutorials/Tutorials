@@ -4,7 +4,6 @@ description: Add custom handlers for specific situations that are not covered by
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide ]
-time: 10
 ---
 
 ## Prerequisites  
@@ -13,6 +12,11 @@ time: 10
 ## Details
 ### You will learn  
   - How to add custom handlers in your service model to adapt to situations that are not covered by the generic service provider.
+
+  
+  
+### Time to Complete
+**10 Min**
 
 ---
 
