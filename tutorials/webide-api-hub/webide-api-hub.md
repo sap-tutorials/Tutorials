@@ -3,7 +3,7 @@ title: Using API Hub with Web IDE
 description: Learn how to use the SAP API Business Hub integration with Web IDE
 primary_tag: topic>sapui5
 auto_validation: true
-tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide  ]
 ---
 
 ## Prerequisites  

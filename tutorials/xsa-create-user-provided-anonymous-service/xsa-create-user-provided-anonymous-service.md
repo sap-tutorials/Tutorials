@@ -1,6 +1,6 @@
 ---
-title: SAP HANA XS Advanced, create a user-provided anonymous service for SAP HANA database Schemas
-description: Access a classic or plain schema from an HDI container
+title: SAP HANA XS Advanced, Access a classic schema from an HDI container
+description: Create a user-provided service to access data from a plain or replicated schema from an HDI container
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
@@ -11,7 +11,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 
 ## Details
 ### You will learn  
-This tutorial will walk you through the integration of a non `HDI-managed` database, such as a replicated database, into an HDI container and how to access it using a SQL anonymous connection.
+This tutorial will walk you through the integration of a non `HDI-managed` database, such as a replicated or ABAP database, into an HDI container and how to access it using a SQL anonymous connection.
 
 ### Time to Complete
 **15 Min**
@@ -124,8 +124,8 @@ xs cups CROSS_SCHEMA_PRODUCTS -p  "host","port","user","password","driver","tags
 ```
 You will be prompted for each of the values you have listed:
 - user: SYSTEM
-- PORT: 3XX13 or 3XX15 - where XX stands for the instance number. You can confirm the port by running `netstat | grep 3xx13` in the command line in your HXE instance.
-- PASSWORD: The administration password for SYSTEM
+- port: 3XX13 or 3XX15 - where XX stands for the instance number. You can confirm the port by running `netstat | grep 3xx13` in the command line in your HXE instance.
+- password : The administration password for SYSTEM
 - driver: `com.sap.db.jdbc.Driver`
 - tags: `[ "hana" ]`
 - schema: PLAIN
@@ -144,6 +144,7 @@ And execute it in a console:
 ![XS CUPS execution](5.png)
 
 > Note: You should now be able to add the user provided service as if it were an HDI container in the Database Explorer and see the `PRODUCT_SEGMENTS` table with data.
+> If you get errors at this point, you should verify the user you set in the User-provided service can connect with the same credentials, that the database is enabled for XSA if you are using a tenant (by default, in `https://hxehost:51039/cockpit#/xsa/logicalDatabases`) and the host and port are correct.
 
 [DONE]
 

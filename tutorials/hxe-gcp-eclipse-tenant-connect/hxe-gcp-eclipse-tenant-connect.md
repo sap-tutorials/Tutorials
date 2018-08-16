@@ -2,7 +2,7 @@
 title: Google Cloud Launcher – Connect to a Tenant database from SAP HANA Studio
 description: This how-to explains the steps to connect to a tenant database in SAP HANA, express edition, created in the Google Cloud Platform created from the Launcher
 primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>how-to, products>sap-hana\,-express-edition ]
+tags: [  tutorial>beginner, tutorial>how-to, products>sap-hana\,-express-edition ]
 ---
 ## Prerequisites  
  - [Create a HANA Express instance using the Google Cloud Launcher](https://www.sap.com/developer/tutorials/hxe-gcp-getting-started-launcher.html)

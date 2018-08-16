@@ -10,10 +10,6 @@ module.exports = {
                 message: 'no filenames in alt-text for images allowed',
             },
             {
-                regexp: new RegExp('[^!]\\[.*?(here|there|file|folder|this|page)\\]\\((.*?)\\)'),
-                message: 'no useless hyperlinked terms',
-            },        
-            {
                 regexp: new RegExp('\\[(.{1,2}|\\s{1,})\\]\\(.*\\)'),
                 message: 'conventions of alt-text for link/image are not observed (at least 3 characters, not only spaces)',
             },
@@ -46,7 +42,7 @@ module.exports = {
                 message: 'curly single quotes found. change to straight using apostrophe key'
             },
         ],
-        link: { 
+        link: {
             regexp: new RegExp('(?<![`\\(\\[]|(href=")|(link=")|(src="))(http|ftp|https):\\/\\/([\\w_-]+(?:(?:\\.[\\w_-]+)+))([\\w.,@?^=%&:/~+#-]*[\\w@?^=%&/~+#-])\\/?(?=([^`]*`[^`]*`)*[^`]*$)(?!(([^\\[]*\\])|([^\\<]*\\>)|([^\\(]*\\))))'),
             message: 'plain text URL'
         },
@@ -59,7 +55,7 @@ module.exports = {
             messages: {
                 size: 'file size is more than 1 MB',
                 existence: 'missed local image',
-            } 
+            }
         },
     },
     validation: {
@@ -91,11 +87,15 @@ module.exports = {
             regexp: /primary_tag:\s?\[?(.*?)\]?\r?\n/i,
             message: 'More than one primary tag specified',
         },
+      experienceTag: {
+        regexp: /tutorial>(beginner)|(intermediate)|(advanced)/g,
+        message: 'experience tag is required',
+      },
     },
     link: {
         absoluteURL: new RegExp('^[a-z][a-z0-9+.-]*:'),
         markdown: [
-            /\[[^\]]*\]\((http[s]?:\/\/.+?)\)/g, 
+            /\[[^\]]*\]\((http[s]?:\/\/.+?)\)/g,
             /\[[^\]]*\]\s*?:\s*?<(http[s]?:\/\/.+?)>/g,
             /<(http[s]?:\/\/.*?)>/g
         ],

@@ -3,7 +3,7 @@ title: Create theme for your Portal freestyle site
 description: Create and customize a theme and then import it into your Portal freestyle site.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
-tags: [  topic>cloud, products>sap-cloud-platform-portal ]
+tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform-portal ]
 ---
 
 ## Prerequisites  

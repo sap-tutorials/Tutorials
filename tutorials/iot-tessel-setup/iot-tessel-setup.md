@@ -24,7 +24,7 @@ Here you will prepare your development environment on a laptop to work with a Te
 ### Optional - Additional Configuration Steps for the SAP Cloud Platform
 
 1. Sign up for your free developer account at [SAP Cloud Platform trial](http://developers.sap.com/cloud)
-2. Install a current version of [Eclipse Java EE](http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/keplersr2)
+2. Install a current version of [Eclipse Java EE](http://www.eclipse.org/downloads/packages/release/photon)
 2. Install the SAP Cloud Platform plugins to our Eclipse version from the [SAP website](http://tools.hana.ondemand.com/#cloud) follow the instructions on the site for the Cloud SDK as well.    - Update your Eclipse to ensure both Git and Maven plugins are in place.    - Configure Server Runtimes (linking to SDK downloads)
 
 ### Optional - Additional Configuration Steps for the SAP HANA on premise

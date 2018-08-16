@@ -3,7 +3,7 @@ title: Create a Portal freestyle site
 description: Create a freestyle site by adding pages and apps to the site, and then setting the site's layout and other properties.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
-tags: [  topic>cloud, products>sap-cloud-platform-portal ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform-portal ]
 ---
 
 ## Prerequisites  
