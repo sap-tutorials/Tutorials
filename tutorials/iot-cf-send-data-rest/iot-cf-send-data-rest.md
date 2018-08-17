@@ -1,7 +1,7 @@
 ---
 title: Send Data with REST
 description: Send data to the SAP Cloud Platform Internet of Things Service Cloud using REST.
-auto_validation: false
+auto_validation: true
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud ]
 ---

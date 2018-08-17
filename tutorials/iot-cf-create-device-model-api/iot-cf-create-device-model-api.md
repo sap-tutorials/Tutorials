@@ -1,7 +1,7 @@
 ---
 title: Create a Device Model Using the API
 description: Create a device model for the SAP Cloud Platform Internet of Things Service using the Internet of Things API Service.
-auto_validation: false
+auto_validation: true
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud ]
 ---

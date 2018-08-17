@@ -1,7 +1,7 @@
 ---
 title: Consume Measures
 description: Consume measures using the Internet of Things Service Cockpit or the Internet of Things API Service.
-auto_validation: false
+auto_validation: true
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud ]
 ---

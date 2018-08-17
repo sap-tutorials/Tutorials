@@ -1,7 +1,7 @@
 ---
 title: Create User and Tenant
 description: Create a user and tenant in the Internet of Things Service Cockpit.
-auto_validation: false
+auto_validation: true
 primary_tag: products>sap-cloud-platform-internet-of-things
 tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic>internet-of-things, topic>cloud ]
 ---
