@@ -179,6 +179,3 @@ You also can check the [SAP HANA HDBSQL (Command-Line Reference)](https://help.s
 
 [DONE]
 [ACCORDION-END]
-
-
-[ACCORDION-END]
