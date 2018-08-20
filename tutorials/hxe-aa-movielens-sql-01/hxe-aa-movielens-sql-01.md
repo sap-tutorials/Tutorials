@@ -1,5 +1,5 @@
 ---
-title: Check your environment
+title: Check your environment (SQL)
 description: Check your environment before starting the MovieLens tutorial series for SAP HANA, express edition
 auto_validation: true
 primary_tag: topic>machine-learning
