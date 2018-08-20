@@ -178,7 +178,4 @@ For more information about the **HDBSQL options**, you can check the <a href="ht
 You also can check the [SAP HANA HDBSQL (Command-Line Reference)](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.02/en-US/c22c67c3bb571014afebeb4a76c3d95d.html) for more details.
 
 [DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-END]
+[ACCORDION-END] 
