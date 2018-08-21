@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Install the Paho Client](https://www.sap.com/developer/tutorials/iot-cf-install-paho-client.html)and [Install OpenSSL](https://www.sap.com/developer/tutorials/iot-cf-install-openssl.html).
+ - **Tutorials:** You have completed [Install the Paho Client](https://www.sap.com/developer/tutorials/iot-cf-install-paho-client.html) and [Install OpenSSL](https://www.sap.com/developer/tutorials/iot-cf-install-openssl.html).
 
 ## Details
 ### You will learn
@@ -402,7 +402,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     >
     >
 
-6.  Choose *Browse* for *Trust Store Location* and choose the `/jre/lib/security/cacerts` of your local Java installation folder if you use a trusted certification authority like VeriSign.
+6.  Choose *Browse* for *Trust Store Location* and choose the `/jre/lib/security/cacerts` of your local Java installation folder if you use a trusted certification authority like Verisign.
 
     > Note:
     > You might need to change the file type to **`*.*`** in the file selection menu.

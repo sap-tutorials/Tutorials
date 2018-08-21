@@ -21,6 +21,9 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 ### Time to Complete
 20 min
 
+## Next Steps
+- **Tutorials:** [Consume Measures](https://www.sap.com/developer/tutorials/iot-cf-consume-measures.html)
+
 ---
 
 You have to create a device model for the Internet of Things Service using the Internet of Things Service Cockpit.
@@ -224,7 +227,7 @@ In the following a sensor entity is created. The sensor is assigned to the previ
 
 6.  Enter the copied or noted *Secret* key into the field for the *Key Store Password*.
 
-7.  Choose *Browse* for *Trust Store Location* and choose the `/jre/lib/security/cacerts` of your local Java installation folder if you use a trusted certification authority like VeriSign.
+7.  Choose *Browse* for *Trust Store Location* and choose the `/jre/lib/security/cacerts` of your local Java installation folder if you use a trusted certification authority like Verisign.
 
     > Note:
     > You might need to change the file type to `*.*` in the file selection menu.
