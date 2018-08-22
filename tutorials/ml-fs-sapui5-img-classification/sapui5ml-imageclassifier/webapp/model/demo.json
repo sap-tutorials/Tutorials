@@ -1,4 +1,4 @@
 {
-	"url" : "/ml-dest/imageclassifier/inference_sync",
-	"APIKey":"<<<<< COPY YOUR API KEY >>>>>"
+  "url" : "/ml-dest/imageclassification/classification",
+  "APIKey":"<<<<< COPY YOUR API KEY >>>>>"
 }
