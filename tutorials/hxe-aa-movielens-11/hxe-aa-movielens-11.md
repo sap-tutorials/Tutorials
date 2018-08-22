@@ -115,11 +115,11 @@ Set the **Group** value to **destinations**.
 
 Add the following properties to the **`js_api`** entry:
 
-Key                 | Value
-------------------- | --------------
-`name`              | `movielens_api`
-`url`               | `~{url}`
-`timeout`           | 3000000
+Key                | Value
+------------------ | --------------
+`name`             | `movielens_api`
+`url`              | `~{url}`
+`timeout`          | 3000000
 
 
 ![Web IDE](04-04.png)
