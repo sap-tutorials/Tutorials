@@ -8,7 +8,7 @@ time: 30
 ---
 
 ## Prerequisites
- - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://www.sap.com/developer/groups/hxe-aa-moveilens-sql.html)
+ - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://www.sap.com/developer/groups/hxe-aa-movielens-sql.html)
 
 ## Details
 ### You will learn
