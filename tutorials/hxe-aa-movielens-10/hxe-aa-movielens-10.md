@@ -4,6 +4,7 @@ description: Understand and implement some of the options available with SAP HAN
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 15
 ---
 
 ## Prerequisites
@@ -16,9 +17,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
  - Add a dependency to the SAP HANA Database Module
  - Create a XS OData service
  - Test the  XS OData service
-
-### Time to Complete
-**15 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
 

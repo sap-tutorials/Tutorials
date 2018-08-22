@@ -4,6 +4,7 @@ description: Learn how to create a Multi-Target Application Project and link it 
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 15
 ---
 
 ## Prerequisites
@@ -14,10 +15,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 
 - Create a Multi-Target Application Project
 - Save your Web IDE project in a GIT repository
-
-
-### Time to Complete
-**15 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Create a GitHub repository)]
 

@@ -4,6 +4,7 @@ description: Understanding the data set structure and content by extracting some
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 30
 ---
 
 ## Prerequisites
@@ -15,9 +16,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 - Understand the basics about recommendation engines
 - Which statistics can help you better understand the structure of the dataset
 - Based on the statistical assessment, identity what algorithm options are available
-
-### Time to Complete
-**30 Min**
 
 [ACCORDION-BEGIN [Info: ](Recommendation Systems)]
 

@@ -4,6 +4,7 @@ description: Understand the capabilities and options made available with the SAP
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 30
 ---
 
 ## Prerequisites
@@ -16,9 +17,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 - How to call SAP HANA Predictive Analytics Library functions from an XSA application and an HDI container
 - Identify which algorithm options are available for recommendation engines
 - How to use SAP HANA APL APRIORI algorithm from an XSA application and an HDI container
-
-### Time to Complete
-**30 Min**
 
 [ACCORDION-BEGIN [Info: ](SAP HANA Predictive Analytics Library)]
 

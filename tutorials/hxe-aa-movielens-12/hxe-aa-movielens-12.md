@@ -4,6 +4,7 @@ description: Understand and implement the basics of an SAPUI5 application to dis
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
+time: 15
 ---
 
 ## Prerequisites
@@ -14,9 +15,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 
 - How to add a SAPUI5 controller and interact with an XS OData service
 - How to add a SAPUI5 view and interact with an XS OData service
-
-### Time to Complete
-**15 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
 

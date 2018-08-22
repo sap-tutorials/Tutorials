@@ -4,6 +4,7 @@ description: Configure your SAPUI5 application and your connect it to your SAP H
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
+time: 25
 ---
 
 ## Prerequisites
@@ -21,9 +22,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 
 **Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Predictive services.
 For more content on SAPUI5, you can check the dedicated <a href="https://sapui5.hana.ondemand.com/#/topic/3da5f4be63264db99f2e5b04c5e853db" target="new">tutorials</a> section available on the <a href="https://sapui5.hana.ondemand.com" target="new">SAPUI5 documentation</a>.
-
-### Time to Complete
-**25 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
 

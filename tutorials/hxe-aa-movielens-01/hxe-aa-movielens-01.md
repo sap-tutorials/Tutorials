@@ -4,6 +4,7 @@ description: Check your environment before starting the MovieLens tutorial serie
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 20
 ---
 
 ## Prerequisites
@@ -17,9 +18,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 - Enable the builders for the development space
 - Add a connection in the Database Explorer
 - Enable the Script Server to allow the execution of `AFL`s functions
-
-### Time to Complete
-**20 Min**
 
 [ACCORDION-BEGIN [Info: ](Which SAP HANA flavor and version?)]
 

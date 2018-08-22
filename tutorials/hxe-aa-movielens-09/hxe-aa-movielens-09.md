@@ -4,6 +4,7 @@ description: Create a series of SQL Views that will be used in a SAPUI5 applicat
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 20
 ---
 
 ## Prerequisites
@@ -13,9 +14,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 ### You will learn
 
 - Create a HDB SQL View Artifact
-
-### Time to Complete
-**20 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
 

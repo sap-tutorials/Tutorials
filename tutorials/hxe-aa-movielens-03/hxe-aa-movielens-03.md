@@ -4,6 +4,7 @@ description: Learn how to easily import flat dataset files in your SAP HANA, exp
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 20
 ---
 
 ## Prerequisites
@@ -14,9 +15,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 
 - How to create CDS artifacts to expose your dataset as CDS entities.
 - How to load your dataset content in the CDS entities.
-
-### Time to Complete
-**20 Min**
 
 [ACCORDION-BEGIN [Info: ](Which MovieLens dataset?)]
 
