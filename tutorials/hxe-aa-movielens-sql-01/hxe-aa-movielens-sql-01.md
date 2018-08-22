@@ -1,22 +1,18 @@
 ---
-title: Check your environment (SQL)
+title: Check your environment (MovieLens SQL)
 description: Check your environment before starting the MovieLens tutorial series for SAP HANA, express edition
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 15
 ---
 
 ## Details
 ### You will learn
+
 - Which flavor and version of SAP HANA, express edition is needed to complete this tutorial series
 - Complete a series of required post-installation task
 - Enable the Script Server to allow the execution of `AFL`s functions
-
-
-### Time to Complete
-**15 Min**
-
-
 
 [ACCORDION-BEGIN [Info: ](Which SAP HANA flavor and version?)]
 
