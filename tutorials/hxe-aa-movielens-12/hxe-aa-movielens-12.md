@@ -515,11 +515,11 @@ Paste the following content:
             </form:Form>
           </Panel>
           <Panel expandable="true" expanded="true" headerText="Last Ratings">
-            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.odata_ratings_detailed" type="XML"/>
+            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.ratings_detailed" type="XML"/>
           </Panel>
           <Panel expandable="true" expanded="true" headerText="Results">
-            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.odata_collaborative" type="XML"/>
-          </Panel>          
+            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.collaborative" type="XML"/>
+          </Panel>
         </ScrollContainer>
       </Panel>
     </content>
@@ -617,10 +617,10 @@ Paste the following content:
             </form:Form>
           </Panel>
           <Panel expandable="true" expanded="true" headerText="Last Ratings">
-            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.odata_ratings_detailed" type="XML"/>
+            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.ratings_detailed" type="XML"/>
           </Panel>
           <Panel expandable="true" expanded="true" headerText="Results">
-            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.odata_contenbased" type="XML"/>
+            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.contenbased" type="XML"/>
           </Panel>
         </ScrollContainer>
       </Panel>
