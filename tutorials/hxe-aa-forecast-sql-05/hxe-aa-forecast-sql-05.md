@@ -7,6 +7,9 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 time: 30
 ---
 
+## Prerequisites
+ - [Use Machine Learning to Build a Time Series model using SQL](https://www.sap.com/developer/groups/hxe-aa-forecast-sql.html)
+
 ## Details
 ### You will learn
 

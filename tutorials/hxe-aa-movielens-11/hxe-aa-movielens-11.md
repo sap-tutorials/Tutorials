@@ -8,7 +8,10 @@ time: 25
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-moveilens.html)
+
+## Next Steps
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-moveilens.html)
 
 ## Details
 ### You will learn

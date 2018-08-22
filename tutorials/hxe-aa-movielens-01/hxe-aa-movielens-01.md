@@ -7,8 +7,8 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 time: 20
 ---
 
-## Prerequisites
- - **Proficiency:** Beginner
+## Next Steps
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-moveilens.html)
 
 ## Details
 ### You will learn
