@@ -1,5 +1,5 @@
 ---
-title: Enable the SAP Cloud Platform Internet of Things Service for the Cloud Foundry Environment
+title: Enable SAP Cloud Platform Internet of Things for Cloud Foundry
 description: Create a service instance and a service key to enable the Internet of Things service.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-internet-of-things
