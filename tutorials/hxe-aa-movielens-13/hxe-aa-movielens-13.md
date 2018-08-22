@@ -244,6 +244,7 @@ Paste the following content:
 ```
 
 Save the file using the ![save](00-save.png) icon from the menu.
+
 [DONE]
 [ACCORDION-END]
 
