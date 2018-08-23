@@ -1,6 +1,6 @@
 ---
 title: Enable SAP Web IDE Full Stack
-description: Learn how to enable the Full Stack version of SAP Web IDE
+description: You can use many different tools to build and deploy apps on the SAP Cloud Platform, but we recommend SAP Web IDE, a service of SAP Cloud Platform. In this tutorial, you'll locate it, enable it, and access it, all from your browser, without needing to install anything.
 primary_tag: products>sap-web-ide
 auto_validation: true
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
