@@ -4,19 +4,20 @@ description: Understand and implement the basics of an SAPUI5 application to gen
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
+time: 10
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
+
+## Next Steps
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
 
 ## Details
 ### You will learn
 
 - How to add a SAPUI5 controller and interact with an XSJS service
 - How to add a SAPUI5 view and interact with an XSJS service
-
-### Time to Complete
-**10 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
 
@@ -244,6 +245,7 @@ Paste the following content:
 ```
 
 Save the file using the ![save](00-save.png) icon from the menu.
+
 [DONE]
 [ACCORDION-END]
 

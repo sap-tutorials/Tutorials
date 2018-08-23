@@ -4,20 +4,21 @@ description: Understand the capabilities and options made available with the SAP
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 30
 ---
+
+## Prerequisites
+ - [Use Machine Learning to Build a Time Series model using SQL](https://www.sap.com/developer/groups/hxe-aa-forecast-sql.html)
+
+## Next Steps
+ - [Use Machine Learning to Build a Time Series model using SQL](https://www.sap.com/developer/groups/hxe-aa-forecast-sql.html)
 
 ## Details
 ### You will learn
+
 - Understand the basics about the SAP HANA Automated Predictive Library
 - How to call SAP HANA Automated Predictive Library functions from SQL
 - Identify which algorithm options are available for recommendation engines
-
-### Time to Complete
-**30 Min**
-
-
-
-
 
 [ACCORDION-BEGIN [Info: ](SAP HANA Automated Predictive Library)]
 

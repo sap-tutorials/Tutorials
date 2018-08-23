@@ -1,13 +1,14 @@
 ---
-title: Check your environment
+title: Check your environment (MovieLens App)
 description: Check your environment before starting the MovieLens tutorial series for SAP HANA, express edition
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 20
 ---
 
-## Prerequisites
- - **Proficiency:** Beginner
+## Next Steps
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
 
 ## Details
 ### You will learn
@@ -17,9 +18,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 - Enable the builders for the development space
 - Add a connection in the Database Explorer
 - Enable the Script Server to allow the execution of `AFL`s functions
-
-### Time to Complete
-**20 Min**
 
 [ACCORDION-BEGIN [Info: ](Which SAP HANA flavor and version?)]
 

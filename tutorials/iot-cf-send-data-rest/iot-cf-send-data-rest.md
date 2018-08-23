@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Install cURL] and [Install OpenSSL].
+ - **Tutorials:** You have completed [Install cURL](https://www.sap.com/developer/tutorials/iot-cf-install-curl.html) and [Install OpenSSL](https://www.sap.com/developer/tutorials/iot-cf-install-openssl.html).
 
 ## Details
 ### You will learn
@@ -35,7 +35,7 @@ In the following a capability is created. A capability can be reused since it ca
     https://<HOST_NAME>/iot/cockpit/
     ```
 
-2.  Use the main menu to navigate to the *Capabilities* section of the *Device Management* category.
+2.  On the home page, select a tenant first and then use the main menu to navigate to the *Capabilities* section of the *Device Management* category.
 
 3.  Choose **+** (Create a capability) above the capabilities list.
 
@@ -176,9 +176,9 @@ In the following a sensor is created. The sensor is assigned to the previously c
 
 **Prerequisites:**
 
--   You have installed the REST client (cURL). A description of how to install the cURL client can be found in the tutorial [Install cURL].
+-   You have installed the REST client (cURL). A description of how to install the cURL client can be found in the tutorial [Install cURL](https://www.sap.com/developer/tutorials/iot-cf-install-curl.html).
 
--   You have installed OpenSSL. A description of how to install OpenSSL can be found in the tutorial [Install OpenSSL].
+-   You have installed OpenSSL. A description of how to install OpenSSL can be found in the tutorial [Install OpenSSL](https://www.sap.com/developer/tutorials/iot-cf-install-openssl.html).
 
 -   You have created the device model in step 1-4.
 
@@ -192,7 +192,7 @@ Open the terminal (macOS) or command line tool CMD (Windows) and change the dire
 >
 >
 
-**Send data using cURL to the device (only for cURL with OpenSSL on Windows or for cURL without SecureTransport using LibreSSL on macOS).**
+**Send data using cURL (only for cURL with OpenSSL on Windows or for cURL without SecureTransport using LibreSSL on macOS).**
 
 1.  Enter and send the message string.
 
@@ -224,10 +224,10 @@ Open the terminal (macOS) or command line tool CMD (Windows) and change the dire
     < HTTP/1.1 200 OK
     ```
 
-3.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures].
+3.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures](https://www.sap.com/developer/tutorials/iot-cf-consume-measures.html).
 
 
-**Send data using cURL to the device (only for cURL with SecureTransport on macOS).**
+**Send data using cURL (only for cURL with SecureTransport on macOS).**
 
 1.  Enter and send the message string.
 
@@ -259,7 +259,7 @@ Open the terminal (macOS) or command line tool CMD (Windows) and change the dire
     < HTTP/1.1 200 OK
     ```
 
-3.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures].
+3.  You can check the incoming values using the *Data Visualization* of the device in the Internet of Things Service Cockpit or the Internet of Things API Service. For more information, please refer to the tutorial [Consume Measures](https://www.sap.com/developer/tutorials/iot-cf-consume-measures.html).
 
 [DONE]
 

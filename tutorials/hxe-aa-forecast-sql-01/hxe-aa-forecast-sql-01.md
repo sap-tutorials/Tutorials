@@ -1,21 +1,21 @@
 ---
-title: Check your environment (forecast)
+title: Check your environment (Forecast SQL)
 description: Check your environment before starting the Forecast tutorial series for SAP HANA, express edition
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 15
 ---
+
+## Next Steps
+ - [Use Machine Learning to Build a Time Series model using SQL](https://www.sap.com/developer/groups/hxe-aa-forecast-sql.html)
 
 ## Details
 ### You will learn
+
 - Which flavor and version of SAP HANA, express edition is needed to complete this tutorial series
 - Complete a series of required post-installation task
 - Enable the Script Server to allow the execution of `AFL`s functions
-
-### Time to Complete
-**15 Min**
-
-
 
 [ACCORDION-BEGIN [Info: ](Which SAP HANA flavor and version?)]
 

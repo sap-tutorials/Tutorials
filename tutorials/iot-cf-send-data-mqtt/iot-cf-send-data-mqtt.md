@@ -10,7 +10,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Install the Paho Client] and [Install OpenSSL].
+ - **Tutorials:** You have completed [Install the Paho Client](https://www.sap.com/developer/tutorials/iot-cf-install-paho-client.html) and [Install OpenSSL](https://www.sap.com/developer/tutorials/iot-cf-install-openssl.html).
 
 ## Details
 ### You will learn
@@ -20,6 +20,9 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 ### Time to Complete
 20 min
+
+## Next Steps
+- **Tutorials:** [Consume Measures](https://www.sap.com/developer/tutorials/iot-cf-consume-measures.html)
 
 ---
 
@@ -35,7 +38,7 @@ In the following a capability is created. A capability can be reused since it ca
     https://<HOST_NAME>/iot/cockpit/
     ```
 
-2.  Use the main menu to navigate to the *Capabilities* section of the *Device Management* category.
+2.  On the home page, select a tenant first and then use the main menu to navigate to the *Capabilities* section of the *Device Management* category.
 
 3.  Choose **+** (Create a capability) above the capabilities list.
 
@@ -191,9 +194,9 @@ In the following a sensor entity is created. The sensor is assigned to the previ
 
 **Prerequisites:**
 
--   You have installed the MQTT client (Paho). A description of how to install the Paho client can be found in the tutorial [Install the Paho Client].
+-   You have installed the MQTT client (Paho). A description of how to install the Paho client can be found in the tutorial [Install the Paho Client](https://www.sap.com/developer/tutorials/iot-cf-install-paho-client.html).
 
--   You have installed OpenSSL. A description of how to install OpenSSL can be found in the tutorial [Install OpenSSL].
+-   You have installed OpenSSL. A description of how to install OpenSSL can be found in the tutorial [Install OpenSSL](https://www.sap.com/developer/tutorials/iot-cf-install-openssl.html).
 
 -   You have created the device model in step 1-4.
 
@@ -224,7 +227,7 @@ In the following a sensor entity is created. The sensor is assigned to the previ
 
 6.  Enter the copied or noted *Secret* key into the field for the *Key Store Password*.
 
-7.  Choose *Browse* for *Trust Store Location* and choose the `/jre/lib/security/cacerts` of your local Java installation folder if you use a trusted certification authority like VeriSign.
+7.  Choose *Browse* for *Trust Store Location* and choose the `/jre/lib/security/cacerts` of your local Java installation folder if you use a trusted certification authority like Verisign.
 
     > Note:
     > You might need to change the file type to `*.*` in the file selection menu.

@@ -4,19 +4,20 @@ description: Learn how to easily import flat dataset files in your SAP HANA, exp
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 15
 ---
+
+## Prerequisites
+ - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://www.sap.com/developer/groups/hxe-aa-movielens-sql.html)
+
+## Next Steps
+ - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://www.sap.com/developer/groups/hxe-aa-movielens-sql.html)
 
 ## Details
 ### You will learn
+
 - Create a Multi-Target Application Project
 - Save your Web IDE project in a GIT repository
-
-
-### Time to Complete
-**15 Min**
-
-
-
 
 [ACCORDION-BEGIN [Info: ](Which MovieLens dataset?)]
 

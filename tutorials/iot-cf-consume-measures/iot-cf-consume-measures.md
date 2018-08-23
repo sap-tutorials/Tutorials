@@ -28,7 +28,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     https://<HOST_NAME>/iot/cockpit/
     ```
 
-2.  Use the main menu to navigate to the *Devices* section of the *Device Management* category.
+2.  On the home page, select a tenant first and then use the main menu to navigate to the *Devices* section of the *Device Management* category.
 
     All devices are listed.
 

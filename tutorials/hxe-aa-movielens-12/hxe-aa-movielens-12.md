@@ -4,19 +4,20 @@ description: Understand and implement the basics of an SAPUI5 application to dis
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
+time: 15
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
+
+## Next Steps
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
 
 ## Details
 ### You will learn
 
 - How to add a SAPUI5 controller and interact with an XS OData service
 - How to add a SAPUI5 view and interact with an XS OData service
-
-### Time to Complete
-**15 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
 
@@ -515,11 +516,11 @@ Paste the following content:
             </form:Form>
           </Panel>
           <Panel expandable="true" expanded="true" headerText="Last Ratings">
-            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.odata_ratings_detailed" type="XML"/>
+            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.ratings_detailed" type="XML"/>
           </Panel>
           <Panel expandable="true" expanded="true" headerText="Results">
-            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.odata_collaborative" type="XML"/>
-          </Panel>          
+            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.collaborative" type="XML"/>
+          </Panel>
         </ScrollContainer>
       </Panel>
     </content>
@@ -617,10 +618,10 @@ Paste the following content:
             </form:Form>
           </Panel>
           <Panel expandable="true" expanded="true" headerText="Last Ratings">
-            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.odata_ratings_detailed" type="XML"/>
+            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.ratings_detailed" type="XML"/>
           </Panel>
           <Panel expandable="true" expanded="true" headerText="Results">
-            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.odata_contenbased" type="XML"/>
+            <ui:core.Fragment fragmentName="movielens.html.fragment.xsodata.contenbased" type="XML"/>
           </Panel>
         </ScrollContainer>
       </Panel>

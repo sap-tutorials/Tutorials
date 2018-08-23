@@ -4,19 +4,20 @@ description: Learn how to easily import flat dataset files in your SAP HANA, exp
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 20
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
+
+## Next Steps
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
 
 ## Details
 ### You will learn
 
 - How to create CDS artifacts to expose your dataset as CDS entities.
 - How to load your dataset content in the CDS entities.
-
-### Time to Complete
-**20 Min**
 
 [ACCORDION-BEGIN [Info: ](Which MovieLens dataset?)]
 

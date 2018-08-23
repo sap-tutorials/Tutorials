@@ -4,10 +4,14 @@ description: Understand and implement some of the options available with SAP HAN
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 15
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
+
+## Next Steps
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
 
 ## Details
 ### You will learn
@@ -16,9 +20,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
  - Add a dependency to the SAP HANA Database Module
  - Create a XS OData service
  - Test the  XS OData service
-
-### Time to Complete
-**15 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
 
@@ -648,7 +649,6 @@ Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_2]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 11: ](Commit your changes)]
 

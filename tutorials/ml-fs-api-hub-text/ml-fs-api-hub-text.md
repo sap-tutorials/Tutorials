@@ -40,7 +40,7 @@ Then you will be able to search for the **SAP Leonardo Machine Learning - Functi
 
 ![SAP API Business Hub](02.png)
 
-Select **Topic Detection API**.
+Select **Inference Service for Topic Detection**.
 
 ![SAP API Business Hub](03.png)
 
@@ -53,9 +53,9 @@ You can also access the page directly from the following address:
 
 [ACCORDION-BEGIN [Step 2: ](Analyze the service)]
 
-As you can notice the API has only one resource (or service): `/inference_sync`.
+As you can notice the API has only one resource (or service): `/topic-detection`.
 
-Now click on the `/inference_sync` link to expand the section.
+Now click on the `/topic-detection` link to expand the section.
 
 > **Note**: the term *inference* refers to the application phase (scoring) an existing model (as opposed to the training or inception phase) and *sync* for synchronous.
 
@@ -208,8 +208,12 @@ Provide an answer to the question below then click on **Validate**.
 
 You can also try the following Machine Learning Functional Services consuming text content:
 
-  - the **Document Feature Extraction API**
-  - the **Product Text Classification API**
+  - **Inference Service for Customizable Text Classification**
+  - **Inference Service for Document Feature Extraction**
+  - **Inference Service for Scene Text Recognition**
+  - **Inference Service for Machine Translation**
+  - **Inference Service for Language Detection**
+  - **Product Text Classification API**
 
 For more information, you can also check the online [SAP Leonardo Machine Learning Foundation documentation](https://help.sap.com/viewer/product/SAP_LEONARDO_MACHINE_LEARNING_FOUNDATION/1.0/en-US)
 
@@ -219,4 +223,3 @@ For more information, you can also check the online [SAP Leonardo Machine Learni
 ## Next Steps
  - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
- 

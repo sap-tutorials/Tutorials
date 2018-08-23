@@ -4,18 +4,19 @@ description: Create a series of SQL Views that will be used in a SAPUI5 applicat
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 20
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
+
+## Next Steps
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
 
 ## Details
 ### You will learn
 
 - Create a HDB SQL View Artifact
-
-### Time to Complete
-**20 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
 

@@ -10,11 +10,11 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
 
 ## Prerequisites
  - **Proficiency:** Beginner
- - **Tutorials:** You have completed [Install the Paho Client] and [Install OpenSSL].
+ - **Tutorials:** You have completed [Install the Paho Client](https://www.sap.com/developer/tutorials/iot-cf-install-paho-client.html) and [Install OpenSSL](https://www.sap.com/developer/tutorials/iot-cf-install-openssl.html).
 
 ## Details
 ### You will learn
-- How to send commands to Internet of Things Service Cloud using MQTT
+- How to send commands to the Internet of Things Service Cloud using MQTT
 - How to use Paho as a sample client for MQTT
 
 ### Time to Complete
@@ -337,7 +337,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     https://<HOST_NAME>/iot/cockpit/
     ```
 
-2.  Use the main menu to navigate to the *Devices* section of the *Device Management* category.
+2.  On the home page, select a tenant first and then use the main menu to navigate to the *Devices* section of the *Device Management* category.
 
 3.  Choose the previously created device.
 
@@ -402,7 +402,7 @@ tags: [ tutorial>beginner, products>sap-cloud-platform-internet-of-things, topic
     >
     >
 
-6.  Choose *Browse* for *Trust Store Location* and choose the `/jre/lib/security/cacerts` of your local Java installation folder if you use a trusted certification authority like VeriSign.
+6.  Choose *Browse* for *Trust Store Location* and choose the `/jre/lib/security/cacerts` of your local Java installation folder if you use a trusted certification authority like Verisign.
 
     > Note:
     > You might need to change the file type to **`*.*`** in the file selection menu.
