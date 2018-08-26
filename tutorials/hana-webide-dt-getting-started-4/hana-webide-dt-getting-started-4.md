@@ -1,5 +1,5 @@
 ---
-title: Converting Between an In-Memory Table and an Extended Table
+title: Convert Between an In-Memory Table and an Extended Table
 description: Convert between an in-memory and an extended table (and vice-versa) using SQL scripts in SAP Web IDE for SAP HANA.
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering
