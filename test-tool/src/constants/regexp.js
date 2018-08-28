@@ -54,7 +54,7 @@ module.exports = {
             regexp: new RegExp('\\!\\[[^\\]]+\\]\\((?!http)(.+?)\\)'),
             messages: {
                 size: 'file size is more than 1 MB',
-                existence: 'missed local image',
+                existence: 'missing image',
             }
         },
     },

@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs');
 
 const { regexp } = require('../constants');
-const { common } = require('../utils'); 
+const { common } = require('../utils');
 
 module.exports = {
     check: (filePath, content, isProduction) => {
@@ -28,7 +28,7 @@ module.exports = {
                     err.push(messages.production.auto_validation);
                 }
             }
-            if(value && (value == 'true' || value == 'false')) {  
+            if(value && (value == 'true' || value == 'false')) {
                 if(!validationFormExists) {
                     err.push(messages.validate_restrictions.at_least_one);
                 } else {
@@ -44,7 +44,7 @@ module.exports = {
                             (new Set(validationsMatch)).forEach(validationNumber => {
                                 const validateBlock = vrFile.match(validate_vr(validationNumber));
                                 if(!validateBlock) {
-                                    err.push(messages.validate_restrictions.missed_validation(validationNumber));
+                                    err.push(messages.validate_restrictions.not_defined(validationNumber));
                                 } else if (validateBlock.length > 1) {
                                     err.push(messages.validate_restrictions.duplicates_vr(validationNumber));
                                 }
