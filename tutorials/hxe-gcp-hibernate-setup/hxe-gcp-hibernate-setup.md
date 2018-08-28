@@ -5,7 +5,6 @@ auto_validation: false
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>intermediate, topic>java, products>sap-hana\,-express-edition ]
 time: 30
----
 
 ## Prerequisites  
  - **Tutorials:** [SAP HANA, express edition, in Google Cloud Platform Launcher (Database Services)](https://www.sap.com/developer/tutorials/hxe-gcp-getting-started-launcher.html)
@@ -49,7 +48,7 @@ You can import the project as a Maven project into Eclipse.
 
 Open the Eclipse IDE.
 
-Import the project by selecting **File > Import...**, then choosing **Maven > Existing Maven Projects**
+Import the project by selecting **File > Import...**, then choosing **Maven > Existing Maven Projects**.
 
 ![Import Maven project](import-maven-project.png)
 

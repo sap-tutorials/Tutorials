@@ -1,5 +1,5 @@
 ---
-title: Full-text search queries with Hibernate
+title: Add full-text search queries with Hibernate
 description: Leverage the full-text search capabilities of SAP HANA through Hibernate.
 auto_validation: false
 primary_tag: products>sap-hana\,-express-edition
@@ -8,7 +8,6 @@ time: 20
 ---
 
 ## Prerequisites  
-- **Proficiency:** Intermediate
 - **Tutorials:** [Advanced geospatial processing with Hibernate](https://www.sap.com/developer/tutorials/hxe-gcp-hibernate-spatial.html)
 
 ## Details

@@ -1,5 +1,5 @@
 ---
-title: Advanced geospatial processing with Hibernate
+title: Add advanced geospatial processing with Hibernate
 description: Make use of the SAP HANA geospatial engine via Hibernate Spatial.
 auto_validation: false
 primary_tag: products>sap-hana\,-express-edition
@@ -8,7 +8,6 @@ time: 20
 ---
 
 ## Prerequisites  
-- **Proficiency:** Intermediate
 - **Tutorials:** [Prepare to build a translytical application with Hibernate](https://www.sap.com/developer/tutorials/hxe-gcp-hibernate-setup.html)
 
 ## Details
@@ -33,11 +32,11 @@ query = this.em.createQuery(
     Incident.class );
 ```
 
-Some of the disadvantages of this query are
+Some of the disadvantages of this query are:
 
-- The query is somewhat long and hard to understand
-- The query uses a constant for converting a distance in meters to degrees which is less accurate the farther the given location is from the earth's equator
-- For simplicity, the query retrieves the incidents whose x and y coordinates are within +/- the distance which means that the area of the incidents is a rectangle rather than a circle
+- The query is somewhat long and hard to understand.
+- The query uses a constant for converting a distance in meters to degrees which is less accurate the farther the given location is from the earth's equator.
+- For simplicity, the query retrieves the incidents whose x and y coordinates are within +/- the distance which means that the area of the incidents is a rectangle rather than a circle.
 
 All of these disadvantages can be addressed by using SAP HANA's built-in geospatial engine.
 
@@ -302,8 +301,8 @@ to make the method a Spring event listener.
   @Transactional
   @Order(10)
   public void transformIncidentLocations(ContextRefreshedEvent event) {
-...
-
+  ...
+  }
 ```
 
 During application startup the method will now be called and transform the locations from the current SRS 4326 to the SRS 7131.
