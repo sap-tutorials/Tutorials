@@ -34,7 +34,7 @@ The driver is a Python package that needs to be installed using Python utility p
 | Platform                  | Location                                          |
 |---------------------------|---------------------------------------------------|
 | Microsoft Windows         | `C:\Program Files\SAP\hdbclient\hdbcli-X.Y.Z.zip` |
-| Linux and UNIX            | `/usr/sap/hdbclient/hdbcli-X.Y.Z.zip`             |
+| Linux and UNIX            | `/usr/sap/hdbclient/hdbcli-X.Y.Z.tar.gz`             |
 
 Depending on your target platform and the Python utility program available on your system, choose one of the following command:
 
