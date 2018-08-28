@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build>
+  <output>
+    <rootpage>hxe-ua-text-analysis-vm.zip</rootpage>
+    <sap.dita.src.pattern>^(.*)\.([^.]*)$</sap.dita.src.pattern>
+    <sap.dita.loio.pattern>^loio(.*)$</sap.dita.loio.pattern>
+    <sap.dita.dest.pattern>\1.md</sap.dita.dest.pattern>
+    <sap.dita.O2O.pattern>$1.md</sap.dita.O2O.pattern>
+    <sap.dita.O2O.t2t.pattern />
+  </output>
+</build>

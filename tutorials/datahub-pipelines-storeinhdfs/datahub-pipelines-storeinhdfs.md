@@ -1,6 +1,6 @@
 ---
 title: Store sensor data in HDFS
-description: Use HDFS to store sensor data
+description: Use HDFS to store sensor data by using SAP Data Hub, developer edition.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -26,34 +26,34 @@ The SAP Data Hub, developer edition per default comes with an Apache Hadoop inst
 
 ![picture_01](./datahub-pipelines-storeinhdfs_01.png)  
 
-Navigate to **Utilities** | **Browse the file system (1)** and display the **`/tmp/hdfsManager`** directory (when you install SAP Data Hub, developer edition initially, this directory is empty).
+Navigate to **Utilities** | **Browse the file system (1)** and display the `/tmp/hdfsManager` directory (when you install SAP Data Hub, developer edition initially, this directory is empty).
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add and configure HDFS Producer)]
-Open the pipeline which you have created during the previous tutorials (`test.myFirstPipeline`) in the modelling environment `http://localhost:8090`.
+Open the pipeline which you have created during the previous tutorials (`test.myFirstPipeline`) in the modelling environment `http://localhost:8090`. For this, select the **Graphs** tab in the tab bar on the left side and search for `test.myFirstPiepline`.
 
-Remove the connection between the **`Kafka Consumer`** operator and the **`ToString Converter`** operator.
+Remove the connection between the **`Kafka Consumer2`** operator and the **`ToString` Converter** operator.
 
-Add a **`HDFS Producer`** operator to the pipeline by drag & drop. Then connect the **`message`** port of the **`Kafka Consumer`** operator to the **`inFile`** port of the **`HDFS Producer`** operator.
+Add a **HDFS Producer** operator to the pipeline by drag & drop. Then connect the `message` port of the **`Kafka Consumer2`** operator to the `inFile` port of the **HDFS Producer** operator.
 
 ![picture_02](./datahub-pipelines-storeinhdfs_02.png)  
 
-Configure the **`HDFS Producer`** operator. You need to maintain the following properties:
+Configure the **HDFS Producer** operator. You need to maintain the following properties:
 
 | Property                       | Value                                 |
 | ------------------------------ | ------------------------------------- |
 | `append`                       | `false`                               |
+| `path`                         | `/tmp/hdfsManager/test_<counter>.txt` |
 | `hadoopNamenode`               | `hdfs:9000`                           |
 | `hadoopUser`                   | `hdfs`                                |
-| `path`                         | `/tmp/hdfsManager/test_<counter>.txt` |
 
-The **`HDFS Producer`** will write the received data to files in the `/tmp/hdfsManager` directory. The files follow the scheme `test_<counter>.txt` (whereas `<counter>` is an incremental integer).
+The **HDFS Producer** will write the received data to files in the `/tmp/hdfsManager` directory. The files follow the scheme `test_<counter>.txt` (whereas `<counter>` is an incremental integer).
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure HDFS Consumer)]
-Add a **`HDFS Consumer`** operator to the pipeline by drag & drop. Then connect the **`outFile`** port of the **`HDFS Consumer`** operator to the **`inmessage`** port of the **`ToString Converter`** operator.
+Add a **HDFS Consumer** operator to the pipeline by drag & drop. Then connect the `outFile` port of the **HDFS Consumer** operator to the `ininterface` port of the **`ToString` Converter** operator.
 
 ![picture_03](./datahub-pipelines-storeinhdfs_03.png)  
 
@@ -61,10 +61,10 @@ Configure the **HDFS Consumer** operator. You need to maintain the following pro
 
 | Property                       | Value                               |
 | ------------------------------ | ----------------------------------- |
-| `hadoopNamenode`               | `hdfs:9000`                         |
-| `hadoopUser`                   | `hdfs`                              |
-| `onlyReadOnChange`             | `true`                              |
 | `path`                         | `/tmp/hdfsManager/`                 |
+| `hadoopNamenode`               | `hdfs:9000`                         |
+| `onlyReadOnChange`             | `true`                              |
+| `hadoopUser`                   | `hdfs`                              |
 
 Afterwards press the **Save** button.
 

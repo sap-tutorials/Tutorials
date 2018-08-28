@@ -1,6 +1,7 @@
 ---
 title: Localize an iOS app with SAP Translation Hub
 description: Take an iOS app generated with the SDK Assistant and make it multilingual with SAP Translation Hub.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -68,7 +69,7 @@ In the next screen, add the following details:
 | Field | Value |
 |----|----|
 | Name | A descriptive name for the configuration, for instance `SAP Translation Hub` |
-| Base URL | `https://saptranslation-<your_trial_account_user>trial.hanatrial.ondemand.com/translationhub/api/v1` |
+| Base URL | `https://saptranslation-<your_trial_account_user>trial.hanatrial.ondemand.com/` |
 | User | Your trial account user |
 | Password | Password for your trial account user |
 
@@ -192,7 +193,7 @@ Build and run the application. You will now see the (partial) translation of the
 ![Add translations](fiori-ios-scpms-custom-app-translation-17.png)
 
 
-[DONE]
+[VALIDATE_11]
 [ACCORDION-END]
 
 

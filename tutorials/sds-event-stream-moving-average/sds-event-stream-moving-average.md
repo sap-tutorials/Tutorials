@@ -1,8 +1,8 @@
 ---
 title: Create a moving average on an event stream using an Aggregation Window
 description: Add an aggregate window to create a moving average on the event data, smoothing out the raw data.
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner

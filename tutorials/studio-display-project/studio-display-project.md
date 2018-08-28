@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
  - **Tutorials:** [SAP HANA Studio, Import your data](https://www.sap.com/developer/tutorials/studio-import-data.html)
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -102,4 +102,4 @@ Now that you have data it's time to display it in some way as well as enable acc
 
 
 ## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

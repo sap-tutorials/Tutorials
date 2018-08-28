@@ -1,7 +1,6 @@
 ---
 title: Manage and monitor your app on SAP Cloud Platform Mobile Services
 description: Familiarize yourself with the different statistics gathered from the mobile app which can be shown in SAP Cloud Platform mobile service for development and operations
-auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -30,7 +29,7 @@ Open a browser to SAP Cloud Platform mobile service for development and operatio
 
 ![Examine Analytics options](fiori-ios-scpms-deliveryapp-part7-08.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Display User Registrations)]
@@ -45,7 +44,7 @@ Click the **User Registration** link. Depending on whether you have deployed you
 
 In this view, you can specify specific client log levels per registration, as well as removing existing registrations.
 
-[DONE]
+
 [ACCORDION-END]
 
 
@@ -57,7 +56,7 @@ You should now see the active users per application:
 
 ![Display User Registrations](fiori-ios-scpms-deliveryapp-part7-02.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Display Request statistics)]
@@ -68,7 +67,7 @@ You should now see the total number of requests in the last 7 days:
 
 ![Display User Registrations](fiori-ios-scpms-deliveryapp-part7-03.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Display Response Time statistics)]
@@ -79,7 +78,7 @@ You should now see the response times in the last 7 days, split by **Mobile Resp
 
 ![Display User Registrations](fiori-ios-scpms-deliveryapp-part7-04.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Display Offline Requests statistics)]
@@ -90,7 +89,7 @@ You should now see the total number of Offline requests in the last 7 days, spli
 
 ![Display User Registrations](fiori-ios-scpms-deliveryapp-part7-05.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Display Offline Response Time statistics)]
@@ -101,7 +100,7 @@ You should now see the total number of Offline requests in the last 7 days, spli
 
 ![Display User Registrations](fiori-ios-scpms-deliveryapp-part7-06.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Display Outbound Traffic statistics)]
@@ -112,7 +111,7 @@ You should now see the total number of bytes sent in the last 4 weeks:
 
 ![Display User Registrations](fiori-ios-scpms-deliveryapp-part7-07.png)
 
-[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Display Application specific statistics)]
@@ -136,7 +135,7 @@ And here you see why displaying the statistics for one single app can be practic
 ![Display User Registrations](fiori-ios-scpms-deliveryapp-part7-12.png)
 
 
-[DONE]
+
 [ACCORDION-END]
 
 

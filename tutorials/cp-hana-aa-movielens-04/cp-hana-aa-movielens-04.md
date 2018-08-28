@@ -6,21 +6,22 @@ primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
 
-## Details
-### You will learn  
+## Next Steps
+- [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://www.sap.com/developer/groups/cp-hana-aa-movielens.html)
 
-- How to use SAP HANA PAL APRIORI algorithm from SAP HANA 1.0 SPS12
+## Details
+### You will learn
+
+- How to use SAP HANA PAL APRIORI algorithm
 
 > ### **Note**
 >As of today, the SAP Cloud Platform provide an SAP HANA MDC instance up to version 1.0 SPS12 which will be using for the rest of the series.
 If you are using a different version of SAP HANA, the code and the results may differ.
 >
 For more details about the PAL function, check the online <a href="https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/1.0.12/en-US/f652a8186a144e929a1ade7a3cb7abe8.html" target="new">documentation</a>.
-
-&nbsp;
 
 ### Time to Complete
 **20 Min**
@@ -63,8 +64,6 @@ Other database objects also need to be created, such as database table types and
 > ### **Note**
 > With version 2.0 SPS02 of SAP HANA, a new and simplified scripting approach has been introduced. However, as the SAP Cloud Platform currently only offers SAP HANA 1.0 SPS12 (which may change in the future), we will only describe here what is currently possible with an SAP HANA instance on the SAP Cloud Platform.
 
-&nbsp;
-
 Just like the ***SAP HANA APL*** direct technique, it consists of explicitly generating an AFL wrapper for the APL function to be executed.
 The generation of this AFL wrapper requires the explicit creation of table types, signature table, input and output tables, etc.
 This is all supposed to be done by the PAL consumer, through SQL DDL & DML statements.
@@ -73,16 +72,16 @@ Once the AFL wrapper is generated, it can be invoked through a call statement.
 Here is a quick code example:
 
 ```
--- --------------------------------------------------------------------------   
--- Create the table type for the dataset   
--- --------------------------------------------------------------------------   
+-- --------------------------------------------------------------------------
+-- Create the table type for the dataset
+-- --------------------------------------------------------------------------
 DROP TYPE TRAINING_DATASET_T;
 -- the training dataset definition
-CREATE TYPE TRAINING_DATASET_T AS TABLE( .... );   
+CREATE TYPE TRAINING_DATASET_T AS TABLE( .... );
 
--- --------------------------------------------------------------------------   
--- Create the AFL wrapper corresponding to the target APL function   
--- --------------------------------------------------------------------------   
+-- --------------------------------------------------------------------------
+-- Create the AFL wrapper corresponding to the target APL function
+-- --------------------------------------------------------------------------
 DROP TYPE PROCEDURE_SIGNATURE_T;
 CREATE TYPE PROCEDURE_SIGNATURE_T AS TABLE(
     "NAME"        VARCHAR (50),
@@ -95,7 +94,7 @@ DROP TYPE TRAINED_MODEL_T;
 CREATE TYPE TRAINED_MODEL_T AS TABLE(
     "NAME"  VARCHAR (50),
     "VALUE" VARCHAR (5000)
-);  
+);
 DROP TABLE OPERATION_CONFIG;
 
 DROP TYPE OPERATION_CONFIG_T;
@@ -104,22 +103,22 @@ CREATE TYPE OPERATION_CONFIG_T AS TABLE(
     "VALUE" VARCHAR (5000)
 );
 
--- --------------------------------------------------------------------------   
--- Create the AFL wrapper corresponding to the target PAL function   
--- --------------------------------------------------------------------------   
-DROP TABLE CREATE_MODEL_SIGNATURE;   
-CREATE COLUMN TABLE CREATE_MODEL_SIGNATURE like PROCEDURE_SIGNATURE_T;   
--- the signature is defined in the PAL API documentation   
+-- --------------------------------------------------------------------------
+-- Create the AFL wrapper corresponding to the target PAL function
+-- --------------------------------------------------------------------------
+DROP TABLE CREATE_MODEL_SIGNATURE;
+CREATE COLUMN TABLE CREATE_MODEL_SIGNATURE like PROCEDURE_SIGNATURE_T;
+-- the signature is defined in the PAL API documentation
 INSERT INTO CREATE_MODEL_SIGNATURE VALUES (1,'MYSCHEMA', 'TRAINING_DATASET_T' ,'IN');
 INSERT INTO CREATE_MODEL_SIGNATURE VALUES (2,'MYSCHEMA', 'OPERATION_CONFIG_T' ,'IN');
-INSERT INTO CREATE_MODEL_SIGNATURE VALUES (3,'MYSCHEMA', 'TRAINED_MODEL_T'    ,'OUT');  
+INSERT INTO CREATE_MODEL_SIGNATURE VALUES (3,'MYSCHEMA', 'TRAINED_MODEL_T'    ,'OUT');
 
-call SYS.AFLLANG_WRAPPER_PROCEDURE_DROP('MYSCHEMA','APLWRAPPER_CREATE_MODEL');   
+call SYS.AFLLANG_WRAPPER_PROCEDURE_DROP('MYSCHEMA','APLWRAPPER_CREATE_MODEL');
 call SYS.AFLLANG_WRAPPER_PROCEDURE_CREATE('AFLPAL','ARIMATRAIN','MYSCHEMA', 'APLWRAPPER_CREATE_MODEL', "CREATE_MODEL_SIGNATURE");
 
-DROP TABLE OPERATION_CONFIG;   
+DROP TABLE OPERATION_CONFIG;
 CREATE COLUMN TABLE OPERATION_CONFIG like OPERATION_CONFIG_T;
--- the function configuration is defined in the PAL API documentation   
+-- the function configuration is defined in the PAL API documentation
 INSERT INTO OPERATION_CONFIG VALUES ('P', 1,null,null);
 INSERT INTO OPERATION_CONFIG VALUES ('Q', 1,null,null);
 INSERT INTO OPERATION_CONFIG VALUES ('D', 0,null,null);
@@ -130,7 +129,7 @@ DROP TABLE TRAINED_MODEL;
 CREATE COLUMN TABLE TRAINED_MODEL LIKE TRAINED_MODEL_T;
 
 CALL APLWRAPPER_CREATE_MODEL("TRAINING_DATASET", "OPERATION_CONFIG");
-```    
+```
 
 For more information please refer to the online <a href="https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/1.0.12/en-US" target="new">documentation</a>..
 
@@ -149,8 +148,6 @@ For both the collaborative filtering and the content-based filtering scenario, t
 ><center><b>SAP HANA PAL Apriori algorithm</b></center>
 >Given a set of items, the algorithm attempts to find subsets which are common to at least a minimum number of the item sets. Apriori uses a "bottom up" approach, where frequent subsets are extended one item at a time, a step known as candidate generation, and groups of candidates are tested against the data. The algorithm terminates when no further successful extensions are found. Apriori uses breadth-first search and a tree structure to count candidate item sets efficiently. It generates candidate item sets of length k from item sets of length k-1, and then prunes the candidates which have an infrequent sub pattern. The candidate set contains all frequent k-length item sets. After that, it scans the transaction database to determine frequent item sets among the candidates.
 >Extracted from the documentation.
-
-&nbsp;
 
 [DONE]
 [ACCORDION-END]
@@ -197,8 +194,6 @@ The SAP HANA PAL `Apriori` algorithm provide multiple configuration options like
 We could also transform the data structure, and use the movie as one node (entity type) and the user associated with the rating notation as the second node (entity type), then use the same algorithm. And finally instead of using the user as the entry point we would use the user and the rating notation as the entry point.
 >
 If you want to try out this scenario, you can build a view where the user id and the rating are concatenated into one column that will be used as the second entity type.
-
-&nbsp;
 
 The PAL functions are really strict on the input format, so you will need to create a view to provide the input dataset in the proper format (`PAL_APRIORI_MODEL_INPUT`) .
 
@@ -296,8 +291,6 @@ CALL "MOVIELENS"."PROC_PAL_APRIORI" (
 > ### **Note**
 >You may receive a series of errors and warnings in the console log while running the above code. They should all be related to the drop statements at the beginning which are intended to help you re-run the script if needed.
 
-&nbsp;
-
 You will notice that the `MIN_SUPPORT` & `MIN_CONFIDENCE` are mandatory attributes to filter out some of the candidate associations.
 
 The value selected here were set relatively high to prevent long running processes on your trial environment. But in a real life scenario, these settings must be determined based on an the initial analysis of the training dataset.
@@ -368,7 +361,7 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 ```SQL
 SELECT
     COUNT(1) AS "MOVIE_COUNT"
-  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"  
+  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"
 FROM (
   SELECT "MOVIEID"
   FROM "MOVIELENS"."PAL_APRIORI_MODEL_USERS_RESULTS"
@@ -381,7 +374,7 @@ Let's verify how many distinct movies will potentially get recommended to a user
 ```SQL
 SELECT
     COUNT(1) AS "MOVIE_COUNT"
-  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"  
+  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"
 FROM (
   SELECT "PRERULE" AS "MOVIEID"
   FROM "MOVIELENS"."PAL_APRIORI_RESULT"
@@ -425,7 +418,7 @@ FROM (
     , "MOVIES"."TITLE"
     , "MOVIES"."GENRES"
     , "LINKS"."IMDBID"
-    , "LINKS"."TMDBID"  
+    , "LINKS"."TMDBID"
   FROM (
     SELECT "MOVIEID", "RULES"."POSTRULE" AS "CONSEQUENT", "RULES"."CONFIDENCE" AS "SCORE"
     FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" AS INPUT_DATA
@@ -463,7 +456,7 @@ Let's verify how many distinct movies will actually get recommended to a user (p
 ```SQL
 SELECT
     COUNT(1) AS "MOVIE_COUNT"
-  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"  
+  , COUNT(1) *100 / (SELECT COUNT(1) AS "COUNT" FROM "MOVIELENS"."public.aa.movielens.hdb::data.MOVIES" ) AS "MOVIE_RATIO"
 FROM (
   SELECT "MOVIEID"
   FROM "MOVIELENS"."PAL_APRIORI_MODEL_ITEMS_RESULTS"

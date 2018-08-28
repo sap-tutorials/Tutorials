@@ -2,6 +2,7 @@
 title: Create a simple application using Hibernate on SAP HANA
 description: This tutorial shows how to create a simple application using Hibernate on SAP HANA to interact with the database.
 primary_tag: products>sap-hana
+auto_validation: true
 tags: [  tutorial>beginner, topic>java, products>sap-hana, products>sap-hana\,-express-edition ]
 ---
 
@@ -33,6 +34,7 @@ As defined by the model three Java classes representing the entities will be cre
 
 As the identity of a version entity will be defined by a composite value (i.e. the project to which it belongs and the version string), we will need an additional class named `VersionPK` to represent it.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create the Version Key Entity)]
@@ -49,8 +51,8 @@ package com.sap.hana.hibernate.tutorial.simple;
 import java.io.Serializable;
 
 public class VersionPK implements Serializable {
-	private String versionNumber;
-	private Project project;
+  private String versionNumber;
+  private Project project;
 }
 ```
 
@@ -70,6 +72,7 @@ private static final long serialVersionUID = 1L;
 ```
 
 &nbsp;
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create the Version Entity)]
@@ -96,21 +99,19 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Version {
   @Id
-	private String versionNumber;
-	@ManyToOne
-	private Project project;
-	private Date releaseDate;
+  private String versionNumber;
+  @ManyToOne
+  private Project project;
+  private Date releaseDate;
 
-	protected Version() {
-	}
-	public Version(String versionNumber, Project project) {
-		this.versionNumber = versionNumber;
-		this.project = project;
-		this.releaseDate = new Date();
-	}
-	public void setReleaseDate(Date releaseDate) {
-		this.releaseDate = releaseDate;
-	}
+  protected Version() {
+  }
+
+  public Version(String versionNumber, Project project) {
+    this.versionNumber = versionNumber;
+    this.project = project;
+    this.releaseDate = new Date();
+  }
 }
 ```
 
@@ -122,6 +123,7 @@ Save the class file.
 
 &nbsp;
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create the Developer Entity)]
@@ -147,26 +149,20 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import org.hibernate.annotations.NaturalId;
-
 @Entity
 public class Developer {
   @Id
-	private String eMailAddress;
-	private String name;
-	@OneToMany(mappedBy = "projectOwner")
-	private List<Project> ownedProjects;
+  private String eMailAddress;
+  private String name;
+  @OneToMany(mappedBy = "projectOwner")
+  private List<Project> ownedProjects;
 
-	protected Developer() {
-	}
+  protected Developer() {
+  }
 
-	public Developer(String eMailAddress) {
-		this.eMailAddress = eMailAddress;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
+  public Developer(String eMailAddress) {
+    this.eMailAddress = eMailAddress;
+  }
 }
 ```
 
@@ -178,6 +174,7 @@ Save the class file.
 
 &nbsp;
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create the Project Entity)]
@@ -207,37 +204,37 @@ import javax.persistence.OneToMany;
 @Entity
 public class Project {
   @ManyToMany
-	private List<Developer> contributors;
+  private List<Developer> contributors;
 
-	@Id
-	private String name;
+  @Id
+  private String name;
 
-	@ManyToOne
-	private Developer projectOwner;
+  @ManyToOne
+  private Developer projectOwner;
 
-	@OneToMany(mappedBy = "project")
-	private List<Version> versions;
+  @OneToMany(mappedBy = "project")
+  private List<Version> versions;
 
-	protected Project() {
-	}
-	public Project(String name) {
-		this.name = name;
-	}
-	public void addContributor(Developer contributor) {
-		if (this.contributors == null) {
-			this.contributors = new ArrayList<>();
-		}
-		this.contributors.add(contributor);
-	}
-	public void addVersion(Version version) {
-		if (this.versions == null) {
-			this.versions = new ArrayList<>();
-		}
-		this.versions.add(version);
-	}
-	public void setProjectOwner(Developer projectOwner) {
-		this.projectOwner = projectOwner;
-	}
+  protected Project() {
+  }
+
+  public Project(String name) {
+    this.name = name;
+  }
+
+  public void addContributor(Developer contributor) {
+    if (this.contributors == null) {
+      this.contributors = new ArrayList<Developer>();
+    }
+    this.contributors.add(contributor);
+  }
+
+  public void addVersion(Version version) {
+    if (this.versions == null) {
+      this.versions = new ArrayList<Version>();
+    }
+    this.versions.add(version);
+  }
 }
 ```
 
@@ -247,6 +244,7 @@ Save the class file.
 
 &nbsp;
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Test your entities)]
@@ -269,80 +267,80 @@ import javax.persistence.Persistence;
 
 public class TestSimple {
 
-	private static Developer createDeveloper(String name, String eMail) {
-		Developer developer = new Developer(eMail);
-		developer.setName(name);
-		return developer;
-	}
+  private static Developer createDeveloper(String name, String eMail) {
+    Developer developer = new Developer(eMail);
+    developer.setName(name);
+    return developer;
+  }
 
-	private static Project createProject(String name, Developer owner) {
-		Project project = new Project(name);
-		project.setProjectOwner(owner);
-		return project;
-	}
+  private static Project createProject(String name, Developer owner) {
+    Project project = new Project(name);
+    project.setProjectOwner(owner);
+    return project;
+  }
 
-	private static Version createVersion(String versionNumber, Project project) {
-		Version version = new Version(versionNumber, project);
-		return version;
-	}
+  private static Version createVersion(String versionNumber, Project project) {
+    Version version = new Version(versionNumber, project);
+    return version;
+  }
 
-	public static void main(String[] args) {
-		try {
-			EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Tutorial");
-			EntityManager entityManager = entityManagerFactory.createEntityManager();
+  public static void main(String[] args) {
+    try {
+      EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("Tutorial");
+      EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-			entityManager.getTransaction().begin();
+      entityManager.getTransaction().begin();
 
-			System.out.println("************************************************************************");
-			System.out.println(" >> Creating entities");
-			System.out.println("************************************************************************");
+      System.out.println("************************************************************************");
+      System.out.println(" >> Creating entities");
+      System.out.println("************************************************************************");
 
-			Developer john = createDeveloper("John Doe", "john@doe.com");
-			entityManager.persist(john);
+      Developer john = createDeveloper("John Doe", "john@doe.com");
+      entityManager.persist(john);
 
-			Developer jane = createDeveloper("Jane Doe", "jane@doe.com");
-			entityManager.persist(jane);
+      Developer jane = createDeveloper("Jane Doe", "jane@doe.com");
+      entityManager.persist(jane);
 
-			Project project = createProject("John's big project", john);
-			project.addContributor(jane);
+      Project project = createProject("John's big project", john);
+      project.addContributor(jane);
 
-			Version version = createVersion("1.0", project);
-			project.addVersion(version);
+      Version version = createVersion("1.0", project);
+      project.addVersion(version);
 
-			entityManager.persist(project);
+      entityManager.persist(project);
 
-			project.addVersion(version);
+      project.addVersion(version);
 
-			entityManager.persist(version);
+      entityManager.persist(version);
 
-			entityManager.getTransaction().commit();
-			entityManager.clear();
+      entityManager.getTransaction().commit();
+      entityManager.clear();
 
-			System.out.println("************************************************************************");
-			System.out.println(" >> Creating entities completed");
-			System.out.println("************************************************************************");
+      System.out.println("************************************************************************");
+      System.out.println(" >> Creating entities completed");
+      System.out.println("************************************************************************");
 
-			System.out.println("************************************************************************");
-			System.out.println(" >> Finding project by name");
-			System.out.println("************************************************************************");
+      System.out.println("************************************************************************");
+      System.out.println(" >> Finding project by name");
+      System.out.println("************************************************************************");
 
-			Project johnsBigProject = entityManager.find(Project.class, "John's big project");
+      Project johnsBigProject = entityManager.find(Project.class, "John's big project");
 
-			System.out.println("************************************************************************");
-			System.out.println(" >> Getting project name : " + johnsBigProject.getName());
-			System.out.println(" >> Getting project owner: " + johnsBigProject.getProjectOwner().getName());
-			System.out.println("************************************************************************");
+      System.out.println("************************************************************************");
+      System.out.println(" >> Getting project name : " + johnsBigProject.getName());
+      System.out.println(" >> Getting project owner: " + johnsBigProject.getProjectOwner().getName());
+      System.out.println("************************************************************************");
 
-			assert johnsBigProject.getName().equals("John's big project");
-			assert johnsBigProject.getProjectOwner().getName().equals("John Doe");
-			System.out.println("************************************************************************");
-			entityManager.clear();
-			entityManager.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		System.exit(0);
-	}
+      assert johnsBigProject.getName().equals("John's big project");
+      assert johnsBigProject.getProjectOwner().getName().equals("John Doe");
+      System.out.println("************************************************************************");
+      entityManager.clear();
+      entityManager.close();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    System.exit(0);
+  }
 }
 ```
 
@@ -350,27 +348,12 @@ Save the class file.
 
 Run the application by right-clicking the class file and choosing ***Run As -> Java Application*** or click on the ![Run](run.png) icon.
 
-You should see the following output log in your console:
+You should see the following output log in your console (with only the `stdout`):
 
 ```
-INFO: HHH000204: Processing PersistenceUnitInfo [
-	name: Tutorial
-	...]
-INFO: HHH000412: Hibernate Core {5.2.12.Final}
-INFO: HHH000206: hibernate.properties not found
-INFO: HHH80000001: hibernate-spatial integration enabled : true
-INFO: HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
-WARN: HHH10001002: Using Hibernate built-in connection pool (not for production use!)
-INFO: HHH10001005: using driver [com.sap.db.jdbc.Driver] at URL [jdbc:sap://rhhxehost:39015]
-INFO: HHH10001001: Connection properties: {user=SYSTEM, password=****}
-INFO: HHH10001003: Autocommit mode: false
-INFO: HHH000115: Hibernate connection pool size: 5 (min=1)
-INFO: HHH000400: Using dialect: org.hibernate.dialect.HANAColumnStoreDialect
-INFO: HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
 Hibernate:
 
     drop table Developer cascade
-INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@72ea6193] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
 Hibernate:
 
     drop table Project cascade
@@ -381,10 +364,6 @@ Hibernate:
 
     drop table Version cascade
 Hibernate: create column table Developer (eMailAddress varchar(255) not null, name varchar(255), primary key (eMailAddress))
-INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@7c541c15] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-Hibernate: create column table Project (name varchar(255) not null, projectOwner_eMailAddress varchar(255), primary key (name))
-Hibernate: create column table Project_Developer (Project_name varchar(255) not null, contributors_eMailAddress varchar(255) not null)
-Hibernate: create column table Version (versionNumber varchar(255) not null, releaseDate timestamp, project_name varchar(255) not null, primary key (project_name, versionNumber))
 Hibernate:
 
     alter table Project
@@ -463,4 +442,5 @@ Hibernate:
 
 This output shows the SQL statements that were generated to insert the values into the database and to read the project from the database again.
 
+[VALIDATE_1]
 [ACCORDION-END]

@@ -156,7 +156,7 @@ Save your changes and publish/deploy your application.
 
 [ACCORDION-BEGIN [Step 7: ](View the app)]
 
-Navigate to the following URL: <http://localhost:8080/weatherapp/api/v1/auth>. After successful authentication you should see your username.
+Navigate to the following URL: `http://localhost:8080/weatherapp/api/v1/auth`. After successful authentication you should see your username.
 
 ![Running the Java app with RESTful API enabled](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-java-weatherapp-part5/e2e_05-7.png)
 

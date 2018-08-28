@@ -1,6 +1,7 @@
 ---
 title: Read SAP Mobile Secure configuration data
 description: Use the Configuration Provider to load predefined configuration data defined in SAP Cloud Platform Mobile Secure into your app
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -39,6 +40,7 @@ If it is already enabled, click the tile and click the **Go to Admin Console** l
 ![Enable Mobile Secure](fiori-ios-scpms-configprovider-02.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a configuration)]
@@ -81,6 +83,7 @@ The configuration for the specified email domain is now saved:
 ![Create a configuration](fiori-ios-scpms-configprovider-05.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -98,6 +101,7 @@ You should get the following response:
 ![Create a configuration](fiori-ios-scpms-configprovider-06.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add ConfigurationLoaderDelegate)]
@@ -138,6 +142,7 @@ func configurationProvider(_ provider: ConfigurationProviding, requestedInput: [
 ```
 
 
+[VALIDATE_4]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Load configuration)]
@@ -159,6 +164,7 @@ This forces the configuration loader to only check the Discovery Service provide
 
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Retrieve loaded configuration)]
@@ -182,7 +188,8 @@ Then you simply print the retrieved configuration `Dictionary` object to the deb
 ![Create a configuration](fiori-ios-scpms-configprovider-07.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

@@ -1,8 +1,8 @@
 ---
 title: Using the Streaming Playback tool to test a streaming project
 description: Run a streaming project and stream some simulated data through it using the record/payback tool. View the output in the stream viewer.
-primary_tag: products>sap-hana-smart-data-streaming
-tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-smart-data-streaming, products>sap-hana\,-express-edition   ]
+primary_tag: products>sap-hana-streaming-analytics
+tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
 ---
 
 ## Prerequisites  

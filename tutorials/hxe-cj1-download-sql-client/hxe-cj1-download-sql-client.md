@@ -1,14 +1,13 @@
 ---
 title: Download a SQL client and connect to your instance (SAP HANA, express edition, server-only)
-description: This tutorial will walk you through downloading a client to connect to SAP HANA, express edition.
+description: This tutorial will walk you through downloading a client to connect to SAP HANA, express edition using the JDBC driver
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana\,-express-edition ]
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner | Intermediate | Advanced
- - **Tutorials:** [SAP HANA, Express edition, CodeJam ](https://www.sap.com/developer/how-tos/2017/02/codejam-gettingstarted-hxe.html)
- - JDBC client: You need to have downloaded the clients from the HXE Download Manager
+ - **Proficiency:** Beginner
+ - JDBC client: You need to have downloaded the clients from the HXE Download Manager. Go to the [registration site](https://www.sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html) and get the download manager for free.
 
 
 ## Next Steps
@@ -16,7 +15,7 @@ tags: [  tutorial>beginner, topic>big-data, topic>sql, products>sap-hana\,-expre
 
 ## Details
 ### You will learn  
-Describe what the user will learn from your tutorial and what the outcome will be.
+You will learn how to download and configure am open source database client and use the JDBC driver for SAP HANA to connect to your SAP HANA, express edition instance.
 
 ### Time to Complete  
 **15 Min**
@@ -25,11 +24,13 @@ Describe what the user will learn from your tutorial and what the outcome will b
 
 [ACCORDION-BEGIN [Step 1: ](Download a database client)]
 
-This tutorial series will use the client `DBeaver`. You can choose to install any other client that allows you to connect to your SAP HANA; express edition, database and enter SQL commands.
+This tutorial series will use the client `DBeaver`. You can choose to install any other client that allows you to connect to your SAP HANA, express edition, database and enter SQL commands.
+
+> Here are some suggestions for other tools to connect with the SAP HANA, express edition database:
+> - [Install the HANA plugin for Microsoft Visual Studio](https://sap.com/developer/groups/hxe-install-hana-plugin-microsoft-visual-studio.html)
+> - [Use plugin for Eclipse](https://sap.com/developer/tutorials/hxe-howto-eclipse.html)
 
 [Download `DBeaver`](http://dbeaver.jkiss.org/download/) and follow the instructions to install it.
-
-
 
 [ACCORDION-END]
 
@@ -39,12 +40,18 @@ Look for the SAP HANA connector and click on **Next**
 
 ![Connect to SAP HANA](1.png)
 
-Enter your hostname, username (**SYSTEM**, unless you have already set up another administrator user) and the port: 3XX13, where XX is the instance number (probably, 90).
-**Important note**  if you are using HANA 2.0 SPS00 or an earlier version, the port will end in 15, i.e., 3XX15, where 90 is the instance number.
+Enter your hostname (for example, `hxehost`) if you have [mapped it in your hosts file](https://sap.com/developer/tutorials/hxe-ua-hosts.html) or external IP address, username (for example, **SYSTEM**, unless you have already set up another administrator user) and the port: 3XX13, where XX is the instance number (default is 90). If you are using the Docker container, the default port for the system database is 39017.
+
+> **Important note**  
+> SAP HANA, express edition includes a default tenant database called HXE and a system database, called `systemdb`.
+> The system database is where administration tasks are performed. The tenant databases are where the actual SQL and development is performed. In the context of SAP HANA, express edition, most clients will resolve the tenant database through the port 39013 - or 39017 - if the database name is set to `HXE`.
+
 
 Then click on **Edit Driver Settings**.
 
 ![Edit driver settings](2.png)
+
+> **Default port assignment**: The default port for the system database in all deployments, except for Docker, is 39013. The default port for the first tenant, HXE, is 39015. For Docker containers, the default port the system database is 39017 and for the first tenant is 39041
 
 Click on **Add File** to choose from the clients you downloaded with the HXE Download Manager.
 
@@ -95,12 +102,10 @@ GRANT CREATE ANY ON SCHEMA "CODEJAM" TO "CODEJAMMER" WITH GRANT OPTION;
 GRANT DROP ON SCHEMA "CODEJAM" TO "CODEJAMMER" WITH GRANT OPTION;
 GRANT "IMPORT" TO "CODEJAMMER";
 
-
 ```
 
 Press the `Execute script` button or `CTRL+X`, you can check the results in the `Execution Log` tab once it is done.
 ![Grants](6.png)
-
 
 
 [ACCORDION-END]
@@ -117,7 +122,11 @@ Replace the login details with those of the new user:
 
 ![CODEJAMMER](8.png)
 
-You can now begin with development.
+You are now set to start development. Check the [tutorial section in the Developer Center](https://sap.com/developer/topics/sap-hana.tutorials.html#tutorials).
+
+Here are some suggestions:
+- [Create a Table and Upload data into SAP HANA, express edition ](https://www.sap.com/developer/tutorials/hxe-cj1-create-table-upload-data.html)
+- [Get started with Geospatial](https://sap.com/developer/tutorials/hana-spatial-intro1-point.html)
 
 
 [ACCORDION-END]

@@ -37,7 +37,7 @@ Click the red `X` button next to `ES_USER_FILE1`. A pop-up dialogue box will app
 
 > Note: You can also delete the `Dbspace` file using HANA Studio (through the System Database) by running a SQL command:
 ``` sql
-ALTER TABLE EXTENDED STORAGE ALTER DBSPACE ES_USER DROP FILE "ES_USER_FILE1";
+ALTER EXTENDED STORAGE ALTER DBSPACE ES_USER DROP FILE "ES_USER_FILE1";
 ```
 
 [ACCORDION-END]

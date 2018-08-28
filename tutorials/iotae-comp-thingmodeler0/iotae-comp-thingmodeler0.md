@@ -7,8 +7,6 @@ tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-applicati
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **System access:** You have a user in the `sap-iotaehandson2` tenant (in limited availability as of now)
-
 
 ## Next Steps
  - [Send the CPU usage data to SAP IoT Application Enablement](https://www.sap.com/developer/tutorials/iotae-comp-sendpy0.html)
@@ -22,18 +20,18 @@ You will learn how to onboard your computer as the IoT thing for collecting sens
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open SAP IoT Application Enablement Thing Modeler)]
-Go to https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html and follow the instructions on the page to get a user and a password on the tenant landscape used for this tutorial.
+[ACCORDION-BEGIN [Step 1: ](Open SAP IoT Application Enablement Launch Page)]
+Go to <https://www.sap.com/cmp/ft/crm-xm17-gtm-1sc-iotae/index.html> and follow the instructions on the page to get a user and a password on the landscape used for this tutorial.
 
-Open https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/launchpage/ in the web browser. Use the user id provided to you and not your email address to login.
+Open <https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/launchpage/> in the web browser. Use the user id provided to you and _not_ your email address to login.
 
-![Thing Modeler](iotaecomptm0010.jpg)
+![Launchpage with Thing Modeler](iotaecomptm0010.jpg)
 
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](The `computeriotdevice` package)]
-Open **Package Manager** application.
+Open the **Package Manager** application.
 
 A package serves as a container for thing-related objects, such as thing types, things, property sets, properties, or event types.
 
@@ -50,20 +48,19 @@ While in the Package Manager click on the **Open in Thing Properties Catalog** i
 
 ![Open in ](iotaecomptm0030.jpg)
 
-The property sets have been already preconfigured for you. The package contains two property sets:
+The property sets have been already preconfigured for you. The package contains three property sets among them:
  1. `Default` of the type Basic Data - with one property `common_name`
  2. `resource_sensors_2` of the type Measured Data - with one property `cpu_usage` and another one called `cpu_type`
 
 The property `cpu_usage` is what we want to measure and has
  - ___float___ data type,
- - ___percentage___ unit of measure,
- - and two thresholds: ___upper___ and ___uppermost___.
+ - ___percentage___ unit of measure.
 
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Thing type `generic_computer`)]
-In the Thing Properties Catalog click on the **Thing Modeler**.
+In the Thing Properties Catalog click on the **Thing Modeler** (the button is in the lower right corner).
 
 In the **Thing Types** pane you will see `generic_computer` thing type defined with:
  - Basic Data properties from the `Default` set,
@@ -88,7 +85,7 @@ These values will create the device in SAP Cloud Platform account `a2667617c` us
 
 ![Definition](iotaecomptm0080.jpg)
 
-Click **Save**. After a few seconds the new thing will be created and its technical device id and authorization token for the API calls will be displayed. Copy these values.
+Click **Save**. After a few seconds the new thing will be created and its technical device id and authorization token for the API calls will be displayed. Copy these values using your mouse and control-c/command-c.
 
 ![technical ids](iotaecomptm0090.jpg)
 
@@ -114,7 +111,7 @@ Click **Save**
 
 ![Save master data](iotaecomptm0100.jpg)
 
-Secondly, set the alert thresholds for CPU usage. Go to **Measured Values**. Expand `resource_sensors` category, then `cpu_usage` property.
+Secondly, set the alert thresholds for CPU usage. Go to **Measured Values**. Expand `resource_sensors_2` category, then `cpu_usage` property.
 
 Set `upper` value to `45`, and `uppermost` to `90`.
 

@@ -33,7 +33,7 @@ The Static Maps API returns an image that you can display in a HTML image tag.
 [ACCORDION-BEGIN [Step 2: ](Create a Destination for the API)]
 In order to use the Google Maps API, you need to create a new destination in SAP Cloud Platform for your application.
 
-Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: <https://account.hanatrial.ondemand.com>
 
 Make sure you are using the **Europe (Trial)** landscape, and click on your account name to open the cockpit view.
 

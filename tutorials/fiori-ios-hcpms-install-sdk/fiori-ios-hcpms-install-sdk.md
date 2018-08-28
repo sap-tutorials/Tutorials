@@ -1,6 +1,7 @@
 ---
 title: Installing the SAP Cloud Platform for iOS SDK
 description: Installing the SAP Cloud Platform for iOS SDK files into your project.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -41,6 +42,7 @@ The **SAP Cloud Platform SDK for iOS Assistant** will be covered in detail in on
 
 > ![Adding files dialog](fiori-ios-hcpms-install-sdk-09.png)
 
+[VALIDATE_1]
 [ACCORDION-END]
 
 ## Next Steps

@@ -11,7 +11,7 @@ tags: [  tutorial>intermediate, topic>cloud, topic>security, products>sap-cloud-
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
@@ -29,9 +29,9 @@ The cloud connector is a software component, which runs as an on-premise agent i
 
 Before you begin, please check the [Prerequisites](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e23f776e4d594fdbaeeb1196d47bbcc0.html) section in the cloud connector documentation, to see if your hardware and software is capable of running the cloud connector.
 
-After verifying the compatibility, you need to download the cloud connector binaries for your operating system from the SAP Cloud Platform tools page: https://tools.hana.ondemand.com/#cloud
+After verifying the compatibility, you need to download the cloud connector binaries for your operating system from the SAP Cloud Platform tools page: <https://tools.hana.ondemand.com/#cloud>
 
-For Windows and Linux there is a normal (installer) and a portable version available. Please check the documentation, if you're not familiar with the differences of the two version or need help making your decision: https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/57ae3d62f63440f7952e57bfcef948d3.html
+For Windows and Linux there is a normal (installer) and a portable version available. Please check the documentation, if you're not familiar with the differences of the two version or need help making your decision: <https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/57ae3d62f63440f7952e57bfcef948d3.html>
 
 > This tutorial uses Windows as operating system and thus focus on the usage of the Windows MSI installer of the cloud connector. If you want to install the cloud connector on one of the other supported operating systems, please refer to the documentation how to install it on other operating systems.
 
@@ -84,7 +84,7 @@ As the cloud connector is registered and started as a Windows Service, you can c
 
 [ACCORDION-BEGIN [Step 6: ](Verify connection)]
 
-To establish the connection to your SAP Cloud Platform developer account, log on to the cloud connector administration UI by invoking the URL <https://localhost:8443> (you might have to substitute the port by the one you selected during the installation) in a Web browser.
+To establish the connection to your SAP Cloud Platform developer account, log on to the cloud connector administration UI by invoking the URL `https://localhost:8443` (you might have to substitute the port by the one you selected during the installation) in a Web browser.
 
 Your browser will warn you that an untrusted certificate is used for the HTTPS connection. This is the case as the cloud connector is delivered with a self-signed `X.509` certificate. The documentation on how to configure a certificate that is trusted by your browser can be found in the Connectivity Service [online documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/bcd5e113c9164ae8a443325692cd5b12.html). In this tutorial, we accept the untrusted certificate. The cloud connector logon screen then is shown in the browser. As user and password, use the pre-defined credentials:
 
@@ -189,4 +189,4 @@ Review some related materials online:
 - [Configure RFC resource in Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/ca5868997e48468395cf0ca4882f5783.html)
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

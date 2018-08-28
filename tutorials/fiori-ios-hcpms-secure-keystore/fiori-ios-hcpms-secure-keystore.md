@@ -1,6 +1,7 @@
 ---
 title: Basic Authentication and Secure Key Store
 description: Authenticate using Basic Authentication and store credentials in secure key store.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, topic>mobile, operating-system>ios, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -36,6 +37,7 @@ Select the template **iOS > Swift File** and click **Next**
 ![Xcode](fiori-ios-hcpms-secure-keystore-02.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Specify class name)]
@@ -47,6 +49,7 @@ Specify name `KeystoreAuthenticator` for this file and click **Next**
 The new Swift file is now created. In this file, you will now add logic to initialize the secure store, and read / save functionality.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add import statements)]
@@ -60,6 +63,7 @@ import SAPCommon
 ```
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Implement type definition)]
@@ -78,6 +82,7 @@ class KeystoreAuthenticator: NSObject, SAPURLSessionDelegate {
 ```
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Initialize Secure Store)]
@@ -105,6 +110,7 @@ private func initializeSecureStore() {
 This method will first initialize a new `SecureKeyValueStore` in the default location with the database file name `authenticationKeystore.db`. It then tries to open it with the `encryptionKey` you have specified earlier, and then reads the contents of the mapped keys `username` and `password`. If it finds a stored value, it will assign these values to their respective fields. In case it doesn't find any previously stored values, it will just finish silently.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Call initialization method from init event hook)]
@@ -119,6 +125,7 @@ override init() {
 ```
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Create authentication method)]
@@ -141,6 +148,7 @@ public func authenticate() {
 ```
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Add authenticator field)]
@@ -152,6 +160,7 @@ var authenticator: KeystoreAuthenticator!
 ```
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Change logon view controller behavior)]
@@ -182,6 +191,7 @@ if (storyboard != nil) {
 Now the `KeystoreAuthenticator` class will be initialized, and checks whether user credentials are already stored in the key store.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Implement storing of credentials)]
@@ -204,7 +214,7 @@ public func storeCredential(username: String, password: String) {
 
 This method will be called when tapping the login button from the Basic Authentication view.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Store credentials after successful logon)]
@@ -227,6 +237,7 @@ authenticator?.storeCredential(username: self.usernameTextField.text!,
 This will store the credentials upon first login via the Basic Authentication screen.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Implement urlSession task delegate)]
@@ -282,6 +293,7 @@ If you now build and run the application, it will present the Basic Authenticati
 If you now close the application and open it again, it will not ask for your user credentials, but immediately log you in using the stored credentials.
 
 
+[VALIDATE_12]
 [ACCORDION-END]
 
 ## Next Steps

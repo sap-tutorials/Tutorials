@@ -1,8 +1,9 @@
 ---
-title: Change Point Detection ML service with SAPUI5
-description: Discover how to implement SAP Leonardo Machine Learning Functional Service in a SAPUI5 application
-primary_tag: products>sap-leonardo-machine-learning
-tags: [ tutorial>beginner, topic>sapui5, topic>html5, topic>machine-learning, products>sap-leonardo-machine-learning, products>sap-api-management, products>sap-cloud-platform, products>sap-web-ide]
+title: Change Point Detection example with SAPUI5
+description: Discover how to implement SAP Leonardo Machine Learning Foundation service in a SAPUI5 application
+auto_validation: true
+primary_tag: products>sap-leonardo-machine-learning-foundation
+tags: [ tutorial>beginner, topic>sapui5, topic>html5, topic>machine-learning, products>sap-leonardo-machine-learning-foundation, products>sap-api-management, products>sap-cloud-platform, products>sap-web-ide]
 ---
 
 ## Prerequisites  
@@ -17,18 +18,18 @@ tags: [ tutorial>beginner, topic>sapui5, topic>html5, topic>machine-learning, pr
 ### You will learn  
 In this tutorial, you will learn how to quickly integrate the **Time Series Change Point Detection** SAP Leonardo Machine Learning Functional Services published from the SAP API Business Hub sandbox in a SAPUI5 application.
 
+The **Time Series Change Point Detection** service allows you to calculates and returns the probability of the change point for each data point in the provided univariate or multivariate time series.
+
 You will then be able to substitute the **Time Series Change Point Detection** services with any other SAP Leonardo Machine Learning Functional Services that consumes text content.
 
 ### Time to Complete
 **20 Min**
 
----
+[ACCORDION-BEGIN [Step 1: ](Get The API Sandbox URL And API Key)]
 
-[ACCORDION-BEGIN [Step 1: ](Get Your Sandbox URL)]
+In order to consume the **Time Series Change Point Detection** SAP Leonardo Machine Learning Foundation service, you will first need to get the service URI and your API key, request and response parameters.
 
-In order to consume the **Time Series Change Point Detection** Machine Learning Functional Services, you will first need to get the service URI, your API Key and the request and response parameters.
-
-Go to [https://api.sap.com/](https://api.sap.com) and click on the **Browse** tile.
+Go to [https://api.sap.com/](https://api.sap.com).
 
 ![SAP API Business Hub](01.png)
 
@@ -36,46 +37,78 @@ Then you will be able to search for the **SAP Leonardo Machine Learning - Functi
 
 ![SAP API Business Hub](02.png)
 
-Click on **Artifacts**, then click on the **Time Series Change Point Detection API**.
+Select **Time Series Change Point Detection API**.
 
 ![SAP API Business Hub](03.png)
 
-As you can notice the **Time Series Change Point Detection API** has only one resource (or service): `/inference_sync`.
+You can also access the page directly from the following address:
 
-Now click on the **Overview** tab.
+ - <https://api.sap.com/api/changepoint_detection_api/resource>
+
+![SAP API Business Hub](06.png)
+
+To get to your API Sandbox URL, click on the **Details** tab.
+
+The API Sandbox URL should be:
+
+```JSON
+https://sandbox.api.sap.com/ml/changepointdetection
+```
+
+To get to your API key, click on the **Show API Key** button.
+
+You will be prompted to login if you are not yet.
+
+Then, the following pop-up should appear. Click on the **Copy Key and Close** button and save it in a text editor.
+
+![SAP API Business Hub](06-1.png)
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Analyze the service)]
+
+As you can notice the API has only one resource (or service): `/inference_sync`.
+
+Now click on the `/inference_sync` link to expand the section.
 
 > **Note**: the term *inference* refers to the application phase (scoring) an existing model (as opposed to the training or inception phase) and *sync* for synchronous.
 
-![SAP API Business Hub](04.png)
+As stated in the description, the service accepts either:
 
-As displayed on the screen, the sandbox URL for the **Time Series Change Point Detection API** where we need to append the API resource:
+ - an archive file with a zip/tar extensions containing multiple text files
+ - a text file
+ - a text as input representing the series of data
 
-```JSON
-https://sandbox.api.sap.com/ml/changepointdetection/inference_sync
-```
+The service returns a list of change point probabilities.
 
-[ACCORDION-END]
+The supported text file formats is plain text only.
 
-[ACCORDION-BEGIN [Step 2: ](Get Your API key )]
+The input text, file, files or archive file will be sent as a `FormData` query parameter in the service request.
 
-When using any of the APIs outside of the SAP API Business Hub, an application key will be needed in every request header of your APIs calls.
+A series of options are also required for the following parameters:
 
-To get to your API key, click on the ![key](00-key.png) icon in the top right corner of the page. Click on the key icon.
+  - `separator`: Values separator (the default value is the comma: ",")
+  - `series_separator`: Series separator for multivariate time series. (the default value is the colon: ":")
 
-The following pop-up should appear. Click on the **Copy API Key** button and save it in a text editor.
-
-![SAP API Business Hub](05.png)
-
-Now, let's build a SAPUI5 application! But before doing so let's first add the destination to connect to the SAP API Business Hub.
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Access the SAP Cloud Platform Cockpit)]
 
-Go to your [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.com/cockpit) account and access "Your Personal Developer Account".
+Log into the <a href="https://account.hanatrial.ondemand.com/cockpit#/region/neo-eu1-trial/overview" target="new"><b>SAP Cloud Platform Cockpit Neo Trial</b></a> with your free trial account on **Europe (Rot) - Trial** and access ***Your Personal Developer Account***.
 
-![SAP HANA Cloud Platform Cockpit](06.png)
+Click on your ***SAP Cloud Platform Account*** identifier (which ends with *trial* by default) as highlighted on the below screenshot.
 
+![SAP Cloud Platform Cockpit](07-1.png)
+
+You are now in your ***SAP Cloud Platform developer*** account!
+
+![Your Personal Developer Account](07-2.png)
+
+> If you are unclear with what is your SAP Cloud Platform account name, you can refer to the following blog entry: [SAP Cloud Platform login, user name, account id, name or display name: you are lost? Not anymore!](https://blogs.sap.com/2017/01/31/sap-hana-cloud-platform-trial-login-name-user-name-account-name-account-identifier-you-are-lost-not-anymore/)
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Configure your destination)]
@@ -83,8 +116,6 @@ Go to your [***SAP Cloud Platform Cockpit***](http://account.hanatrial.ondemand.
 You will need to create a destination in your SAP Cloud Platform account that allow will your applications to connect to external APIs such as the SAP API Business Hub.
 
 On the left side bar, you can navigate in **Connectivity** > **Destinations**.
-
-![Your Personal Developer Account](07.png)
 
 On the ***Destinations*** overview page, click on **New Destination**
 
@@ -113,6 +144,9 @@ Click on **Save**
 
 You can use the **Check Connectivity** button ![HTML5 Applications](00-check.png) next to the new **Destination** to validate that the URL can be accessed.
 
+You should receive a ***connection established*** message with potentially a ***404: Not Found*** response which is normal.
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Open the Web IDE)]
@@ -121,7 +155,7 @@ On the left side bar, you can navigate in **Services**, then using the search bo
 
 ![Web IDE](10.png)
 
-Click on the tile, then click on **Open SAP Web IDE**.
+Click on the tile, then click on **Go to Service**.
 
 ![Web IDE](11.png)
 
@@ -129,9 +163,10 @@ You will get access to the **SAP Web IDE** main page:
 
 ![Web IDE](12.png)
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Create your application using the SAPUI5 template)]
+[ACCORDION-BEGIN [Step 6: ](Create a project using the SAPUI5 template)]
 
 Click on **New Project from Template** in the ***Create Project*** section or use the **File** > **New** > **Project from Template**.
 
@@ -159,6 +194,7 @@ View Name            | `demo`
 
 ![Project](15.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Extend the application resource roots)]
@@ -173,12 +209,13 @@ Edit the `index.html` file located under **`Workspace`** > **`sapui5ml`** > **`w
 
 It should eventually look something like this:
 
-```JavaScript
-data-sap-ui-resourceroots='{"demosapui5ml-changepointdetection": "", "sapui5ml": ""}'
+```
+data-sap-ui-resourceroots='{"xxxx": "", "sapui5ml": ""}'
 ```
 
 Click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Configure your SAPUI5 application)]
@@ -191,56 +228,64 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-	"welcomeFile": "/webapp/index.html",
-	"routes": [{
-		"path": "/resources",
-		"target": {
-			"type": "service",
-			"name": "sapui5",
-			"entryPath": "/resources"
-		},
-		"description": "SAPUI5 Resources"
-	}, {
-		"path": "/test-resources",
-		"target": {
-			"type": "service",
-			"name": "sapui5",
-			"entryPath": "/test-resources"
-		},
-		"description": "SAPUI5 Test Resources"
-	}, {
-		"path": "/ml",
-		"target": {
-			"type": "destination",
-			"name": "sapui5ml-api"
-		},
-		"description": "ML API destination"
-	}],
-	"sendWelcomeFileRedirect": true,
-	"headerWhiteList": [
-		"APIKey"
-	]
+  "welcomeFile": "/webapp/index.html",
+  "routes": [{
+    "path": "/resources",
+    "target": {
+      "type": "service",
+      "name": "sapui5",
+      "entryPath": "/resources"
+    },
+    "description": "SAPUI5 Resources"
+  }, {
+    "path": "/test-resources",
+    "target": {
+      "type": "service",
+      "name": "sapui5",
+      "entryPath": "/test-resources"
+    },
+    "description": "SAPUI5 Test Resources"
+  }, {
+    "path": "/ml-dest",
+    "target": {
+      "type": "destination",
+      "name": "sapui5ml-api"
+    },
+    "description": "ML API destination"
+  }],
+  "sendWelcomeFileRedirect": true,
+  "headerWhiteList": [
+    "APIKey"
+  ]
 }
 ```
 
+> ### **Note:** `headerWhiteList`
+>
+>By default, headers element like the `APIKey` will be blocked when used in a SAPUI5 control like the `FileUploader`. This is the reason why we add it to the white list.
+>
+
+&nbsp;
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Store your API setting in a JSON model)]
 
 There are multiple options to achieve this goal. Here we will use a pre-loaded JSON model configured in the `manifest.json` file.
 
-Create a new file named `demo.json` under **`Workspace`** > **`sapui5ml-changepointdetection`** > **`webapp`** > **`model`**, copy the below code and make sure you replace `<<<<< COPY YOUR API KEY >>>>>` by your the API key we retrieved in step 2.
+Create a new file named **`demo.json`** under **`Workspace`** > **`sapui5ml-changepointdetection`** > **`webapp`** > **`model`**, copy the below code and make sure you replace `<<<<< COPY YOUR API KEY >>>>>` by your the API key we retrieved in step 2.
 
 Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-	"url": "/ml/changepointdetection/inference_sync",
-	"APIKey": "<<<<< COPY YOUR API KEY >>>>>",
-	"options": {
-		"separator": "|",
-		"series_separator": "#"
-	}
+  "url": "/ml-dest/changepointdetection/inference_sync",
+  "APIKey": "<<<<< COPY YOUR API KEY >>>>>",
+  "options": {
+    "separator": "|",
+    "series_separator": "#"
+  }
 }
 ```
 
@@ -264,6 +309,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 }
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Extend the main SAPUI5 view)]
@@ -276,118 +322,119 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```XML
 <mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns:form="sap.ui.layout.form" xmlns="sap.m"
-	controllerName="sapui5ml.controller.demo" displayBlock="true">
-	<App>
-		<pages>
-			<Page title="Change Point Detection">
-				<content>
-					<HBox width="100%">
-						<items>
-							<VBox width="100%" direction="Column">
-								<items>
-									<HBox width="100%">
-										<items>
-											<VBox alignItems="End" width="50%">
-												<items>
-													<Text textAlign="End" class="sapUiSmallMargin" text="Number of data point"/>
-													<Text textAlign="End" class="sapUiSmallMargin" text="Number of series"/>
-												</items>
-											</VBox>
-											<VBox alignItems="Start" width="50%">
-												<items>
-													<StepInput value="{demo>/options/numDataPoints}" required="true"/>
-													<StepInput value="{demo>/options/numDataSeries}" required="true"/>
-												</items>
-											</VBox>
-										</items>
-									</HBox>
-									<VBox width="100%" alignItems="Center">
-										<items>
-											<Button text="Generate Sample Data" press="onGenerate"/>
-										</items>
-									</VBox>
-								</items>
-							</VBox>
-							<VBox width="100%" alignContent="Start" alignItems="Start" justifyContent="Start">
-								<items>
-									<HBox width="100%" visible="{= typeof ${demo>/hasData} !== 'undefined'}">
-										<items>
-											<VBox alignItems="End" width="50%">
-												<items>
-													<Text textAlign="End" class="sapUiSmallMargin" text="Values separator"/>
-													<Text textAlign="End" class="sapUiSmallMargin" text="Series separator for multivariate time series"/>
-												</items>
-											</VBox>
-											<VBox alignItems="Start" width="50%">
-												<items>
-													<Input type="Text"
-														value="{ path : 'demo>/options/separator', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength: 1 } }"/>
-													<Input type="Text"
-														value="{ path : 'demo>/options/series_separator', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength: 1 } }"/>
-												</items>
-											</VBox>
-										</items>
-									</HBox>
-									<VBox width="100%" alignItems="Center" visible="{= typeof ${demo>/hasData} !== 'undefined'}">
-										<items>
-											<Button text="Execute Service" press="onExecute"/>
-										</items>
-									</VBox>
-								</items>
-							</VBox>
-						</items>
-					</HBox>
-					<HBox width="100%" alignItems="Start" justifyContent="Start" visible="{= typeof ${demo>/hasData} !== 'undefined'}">
-						<items>
-							<VBox width="50%">
-								<items>
-									<Table columns="{demo>/cols}" items="{path: 'demo>/rows'}">
-										<items>
-											<ColumnListItem cells="{demo>cols}">
-												<cells>
-													<Input value="{demo>}"/>
-												</cells>
-											</ColumnListItem>
-										</items>
-										<columns>
-											<Column>
-												<header>
-													<Text text="{demo>colid}"/>
-												</header>
-											</Column>
-										</columns>
-									</Table>
-								</items>
-							</VBox>
-							<VBox width="50%" visible="{= typeof ${demo>/hasResult} !== 'undefined'}">
-								<items>
-									<Table columns="{demo>/resultCols}" items="{path: 'demo>/resultRows'}" visible="{= typeof ${demo>/hasResult} !== 'undefined'}">
-										<items>
-											<ColumnListItem cells="{demo>cols}">
-												<cells>
-													<Input value="{demo>}" editable="false"/>
-												</cells>
-											</ColumnListItem>
-										</items>
-										<columns>
-											<Column>
-												<header>
-													<Text text="Result series: {demo>colid}"/>
-												</header>
-											</Column>
-										</columns>
-									</Table>
-								</items>
-							</VBox>
-						</items>
-					</HBox>
-				</content>
-			</Page>
-		</pages>
-	</App>
+  controllerName="sapui5ml.controller.demo" displayBlock="true">
+  <App>
+    <pages>
+      <Page title="Change Point Detection">
+        <content>
+          <HBox width="100%">
+            <items>
+              <VBox width="100%" direction="Column">
+                <items>
+                  <HBox width="100%">
+                    <items>
+                      <VBox alignItems="End" width="50%">
+                        <items>
+                          <Text textAlign="End" class="sapUiSmallMargin" text="Number of data point"/>
+                          <Text textAlign="End" class="sapUiSmallMargin" text="Number of series"/>
+                        </items>
+                      </VBox>
+                      <VBox alignItems="Start" width="50%">
+                        <items>
+                          <StepInput value="{demo>/options/numDataPoints}" required="true"/>
+                          <StepInput value="{demo>/options/numDataSeries}" required="true"/>
+                        </items>
+                      </VBox>
+                    </items>
+                  </HBox>
+                  <VBox width="100%" alignItems="Center">
+                    <items>
+                      <Button text="Generate Sample Data" press="onGenerate"/>
+                    </items>
+                  </VBox>
+                </items>
+              </VBox>
+              <VBox width="100%" alignContent="Start" alignItems="Start" justifyContent="Start">
+                <items>
+                  <HBox width="100%" visible="{= ${demo>/hasData} === true}">
+                    <items>
+                      <VBox alignItems="End" width="50%">
+                        <items>
+                          <Text textAlign="End" class="sapUiSmallMargin" text="Values separator"/>
+                          <Text textAlign="End" class="sapUiSmallMargin" text="Series separator for multivariate time series"/>
+                        </items>
+                      </VBox>
+                      <VBox alignItems="Start" width="50%">
+                        <items>
+                          <Input type="Text"
+                            value="{ path : 'demo>/options/separator', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength: 1 } }"/>
+                          <Input type="Text"
+                            value="{ path : 'demo>/options/series_separator', type : 'sap.ui.model.type.String', constraints : { minLength: 1, maxLength: 1 } }"/>
+                        </items>
+                      </VBox>
+                    </items>
+                  </HBox>
+                  <VBox width="100%" alignItems="Center" visible="{= ${demo>/hasData} === true}">
+                    <items>
+                      <Button text="Execute Service" press="onExecute"/>
+                    </items>
+                  </VBox>
+                </items>
+              </VBox>
+            </items>
+          </HBox>
+          <HBox width="100%" alignItems="Start" justifyContent="Start" visible="{= ${demo>/hasData} === true}">
+            <items>
+              <VBox width="50%">
+                <items>
+                  <Table columns="{demo>/cols}" items="{path: 'demo>/rows'}">
+                    <items>
+                      <ColumnListItem cells="{demo>cols}">
+                        <cells>
+                          <Input value="{demo>}"/>
+                        </cells>
+                      </ColumnListItem>
+                    </items>
+                    <columns>
+                      <Column>
+                        <header>
+                          <Text text="{demo>colid}"/>
+                        </header>
+                      </Column>
+                    </columns>
+                  </Table>
+                </items>
+              </VBox>
+              <VBox width="50%" visible="{= ${demo>/hasResult} === true}">
+                <items>
+                  <Table columns="{demo>/resultCols}" items="{path: 'demo>/resultRows'}" visible="{= ${demo>/hasResult} === true}">
+                    <items>
+                      <ColumnListItem cells="{demo>cols}">
+                        <cells>
+                          <Input value="{demo>}" editable="false"/>
+                        </cells>
+                      </ColumnListItem>
+                    </items>
+                    <columns>
+                      <Column>
+                        <header>
+                          <Text text="Result series: {demo>colid}"/>
+                        </header>
+                      </Column>
+                    </columns>
+                  </Table>
+                </items>
+              </VBox>
+            </items>
+          </HBox>
+        </content>
+      </Page>
+    </pages>
+  </App>
 </mvc:View>
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Extend the main SAPUI5 controller)]
@@ -398,164 +445,164 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JavaScript
 sap.ui.define([
-	"sap/ui/core/mvc/Controller",
-	"sap/m/MessageToast",
-	"sap/m/Image"
-], function(Controller, MessageToast, Image) {
-	"use strict";
-	return Controller.extend("sapui5ml.controller.demo", {
+  "sap/ui/core/mvc/Controller",
+  "sap/m/MessageBox",
+  "sap/m/Image"
+], function(Controller, MessageBox, Image) {
+  "use strict";
+  return Controller.extend("sapui5ml.controller.demo", {
 
-		onGenerate: function(oControlEvent) {
-			// get the current view
-			var oView = this.getView();
+    onGenerate: function(oControlEvent) {
+      // get the current view
+      var oView = this.getView();
 
-			// start the busy indicator
-			var oBusyIndicator = new sap.m.BusyDialog();
-			// keep a reference in the view to close it later
-			oBusyIndicator.open();
+      // start the busy indicator
+      var oBusyIndicator = new sap.m.BusyDialog();
+      // keep a reference in the view to close it later
+      oBusyIndicator.open();
 
-			// get a random number
-			var rnd = Math.random();
+      // get a random number
+      var rnd = Math.random();
 
-			// get the expected data points count
-			var iRowCount = oView.getModel("demo").getProperty("/options/numDataPoints");
-			var iColCount = oView.getModel("demo").getProperty("/options/numDataSeries");
+      // get the expected data points count
+      var iRowCount = oView.getModel("demo").getProperty("/options/numDataPoints");
+      var iColCount = oView.getModel("demo").getProperty("/options/numDataSeries");
 
-			// build the array to store the generated data
-			var oSeriesCol = new Array(iColCount);
-			var oSeriesRow = new Array(iRowCount);
-			for (var iCol = 0; iCol < iColCount; iCol++) {
-				var oCol = {
-					"colid": iCol
-				};
-				oCol.rows = new Array(iRowCount);
-				oSeriesCol[iCol] = (oCol);
-			}
-			for (var iRow = 0; iRow < iRowCount; iRow++) {
-				var oRow = {
-					"rowid": iRow
-				};
-				oRow.cols = new Array(iColCount);
-				oSeriesRow[iRow] = (oRow);
-			}
+      // build the array to store the generated data
+      var oSeriesCol = new Array(iColCount);
+      var oSeriesRow = new Array(iRowCount);
+      for (var iCol = 0; iCol < iColCount; iCol++) {
+        var oCol = {
+          "colid": iCol
+        };
+        oCol.rows = new Array(iRowCount);
+        oSeriesCol[iCol] = (oCol);
+      }
+      for (var iRow = 0; iRow < iRowCount; iRow++) {
+        var oRow = {
+          "rowid": iRow
+        };
+        oRow.cols = new Array(iColCount);
+        oSeriesRow[iRow] = (oRow);
+      }
 
-			// generate the data
-			for (var iColValue = 0; iColValue < iColCount; iColValue++) {
-				for (var iRowValue = 0; iRowValue < iRowCount; iRowValue++) {
-					var value = (Math.cos((1 + iRowValue) * rnd * (1 + iColValue) * 20) * 100).toFixed(2);
-					oSeriesCol[iColValue].rows[iRowValue] = (value);
-					oSeriesRow[iRowValue].cols[iColValue] = (value);
-				}
-			}
+      // generate the data
+      for (var iColValue = 0; iColValue < iColCount; iColValue++) {
+        for (var iRowValue = 0; iRowValue < iRowCount; iRowValue++) {
+          var value = (Math.cos((1 + iRowValue) * rnd * (1 + iColValue) * 20) * 100).toFixed(2);
+          oSeriesCol[iColValue].rows[iRowValue] = (value);
+          oSeriesRow[iRowValue].cols[iColValue] = (value);
+        }
+      }
 
-			// save it in the model
-			oView.getModel("demo").setProperty("/cols", oSeriesCol);
-			oView.getModel("demo").setProperty("/rows", oSeriesRow);
-			oView.getModel("demo").setProperty("/hasData", true);
-			oBusyIndicator.close();
-		},
+      // save it in the model
+      oView.getModel("demo").setProperty("/cols", oSeriesCol);
+      oView.getModel("demo").setProperty("/rows", oSeriesRow);
+      oView.getModel("demo").setProperty("/hasData", true);
+      oBusyIndicator.close();
+    },
 
-		onExecute: function(oControlEvent) {
-			// start the busy indicator
-			var oBusyIndicator = new sap.m.BusyDialog();
-			// keep a reference in the view to close it later
-			oBusyIndicator.open();
+    onExecute: function(oControlEvent) {
+      // start the busy indicator
+      var oBusyIndicator = new sap.m.BusyDialog();
+      // keep a reference in the view to close it later
+      oBusyIndicator.open();
 
-			// get the current view
-			var oView = this.getView();
+      // get the current view
+      var oView = this.getView();
 
-			// get service settings and options
-			var url = oView.getModel("demo").getProperty("/url");
-			var APIKey = oView.getModel("demo").getProperty("/APIKey");
-			var separator = oView.getModel("demo").getProperty("/options/separator");
-			var seriesSeparator = oView.getModel("demo").getProperty("/options/series_separator");
+      // get service settings and options
+      var url = oView.getModel("demo").getProperty("/url");
+      var APIKey = oView.getModel("demo").getProperty("/APIKey");
+      var separator = oView.getModel("demo").getProperty("/options/separator");
+      var seriesSeparator = oView.getModel("demo").getProperty("/options/series_separator");
 
-			// generate the options as JSON stringify
-			var options = {
-				"separator": oView.getModel("demo").getProperty("/options/separator"),
-				"series_separator": oView.getModel("demo").getProperty("/options/series_separator")
-			};
-			oView.getModel("demo").setProperty("/optionsJs", JSON.stringify(options));
+      // generate the options as JSON stringify
+      var options = {
+        "separator": oView.getModel("demo").getProperty("/options/separator"),
+        "series_separator": oView.getModel("demo").getProperty("/options/series_separator")
+      };
+      oView.getModel("demo").setProperty("/optionsJs", JSON.stringify(options));
 
-			// convert the input data in the proper format using the separator & seriesSeparator options
-			var text = "";
-			var series = oView.getModel("demo").getProperty("/cols");
-			for (var i = 0; i < series.length; i++) {
-				text += series[i].rows.join(separator);
-				if (i < series.length - 1) {
-					text += seriesSeparator;
-				}
-			}
+      // convert the input data in the proper format using the separator & seriesSeparator options
+      var text = "";
+      var series = oView.getModel("demo").getProperty("/cols");
+      for (var i = 0; i < series.length; i++) {
+        text += series[i].rows.join(separator);
+        if (i < series.length - 1) {
+          text += seriesSeparator;
+        }
+      }
+      // call the service and define call back methods
+      $.ajax({
+        headers: {
+          'Accept': 'application/json',
+          'APIKey': APIKey
+        },
+        url: url,
+        type: "POST",
+        data: $.param({
+          "options": "{\"separator\":\"" + oView.getModel("demo").getProperty("/options/separator") + "\", \"series_separator\":\"" +
+            oView.getModel("demo").getProperty("/options/series_separator") + "\"}",
+          "texts": text
+        }),
+        async: true,
+        success: function(data) {
+          try {
+            //get the result size
+            var iRowCount = data.predictions[0].split(",").length;
+            var iColCount = data.predictions.length;
 
-			// call the service and define call back methods
-			$.ajax({
-				headers: {
-					'Accept': 'application/json',
-					'APIKey': APIKey
-				},
-				url: url,
-				type: "POST",
-				data: $.param({
-					"options": "{\"separator\":\"" + oView.getModel("demo").getProperty("/options/separator") + "\", \"series_separator\":\"" +
-						oView.getModel("demo").getProperty("/options/series_separator") + "\"}",
-					"texts": text
-				}),
-				async: false,
-				success: function(data) {
-					try {
-						//get the result size
-						var iRowCount = data.response[0].split(",").length;
-						var iColCount = data.response.length;
+            var oSeriesCol = new Array(iColCount);
+            var oSeriesRow = new Array(iRowCount);
 
-						var oSeriesCol = new Array(iColCount);
-						var oSeriesRow = new Array(iRowCount);
+            // build the array to store the result data
+            for (var iCol = 0; iCol < data.predictions.length; iCol++) {
+              var oCol = {
+                "colid": iCol
+              };
+              oCol.rows = new Array(iRowCount);
+              oSeriesCol[iCol] = (oCol);
+            }
+            for (var iRow = 0; iRow < iRowCount; iRow++) {
+              var oRow = {
+                "rowid": iRow
+              };
+              oRow.cols = new Array(iColCount);
+              oSeriesRow[iRow] = (oRow);
+            }
 
-						// build the array to store the result data
-						for (var iCol = 0; iCol < data.response.length; iCol++) {
-							var oCol = {
-								"colid": iCol
-							};
-							oCol.rows = new Array(iRowCount);
-							oSeriesCol[iCol] = (oCol);
-						}
-						for (var iRow = 0; iRow < iRowCount; iRow++) {
-							var oRow = {
-								"rowid": iRow
-							};
-							oRow.cols = new Array(iColCount);
-							oSeriesRow[iRow] = (oRow);
-						}
+            // get the reslt data
+            for (var iColValue = 0; iColValue < data.predictions.length; iColValue++) {
+              var row = data.predictions[0].split(",");
+              for (var iRowValue = 0; iRowValue < row.length; iRowValue++) {
+                oSeriesCol[iColValue].rows[iRowValue] = row[iRowValue];
+                oSeriesRow[iRowValue].cols[iColValue] = row[iRowValue];
+              }
+            }
 
-						// get the reslt data
-						for (var iColValue = 0; iColValue < data.response.length; iColValue++) {
-							var row = data.response[0].split(",");
-							for (var iRowValue = 0; iRowValue < row.length; iRowValue++) {
-								oSeriesCol[iColValue].rows[iRowValue] = row[iRowValue];
-								oSeriesRow[iRowValue].cols[iColValue] = row[iRowValue];
-							}
-						}
-
-						// save it in the model
-						oView.getModel("demo").setProperty("/resultCols", oSeriesCol);
-						oView.getModel("demo").setProperty("/resultRows", oSeriesRow);
-						oView.getModel("demo").setProperty("/hasResult", true);
-						oBusyIndicator.close();
-					} catch (err) {
-						MessageToast.show("Caught - [ajax error] :" + err.message);
-					}
-					oBusyIndicator.close();
-				},
-				error: function(request, status, error) {
-					MessageToast.show("Caught - [ajax error] :" + request.responseText);
-					oBusyIndicator.close();
-				}
-			});
-			oBusyIndicator.close();
-		}
-	});
+            // save it in the model
+            oView.getModel("demo").setProperty("/resultCols", oSeriesCol);
+            oView.getModel("demo").setProperty("/resultRows", oSeriesRow);
+            oView.getModel("demo").setProperty("/hasResult", true);
+            oBusyIndicator.close();
+          } catch (err) {
+            MessageBox.show("Caught - [ajax error] : " + err.message);
+          }
+          oBusyIndicator.close();
+        },
+        error: function(request, status, error) {
+          MessageBox.show("Caught - [ajax error] : " + request.responseText);
+          oBusyIndicator.close();
+        }
+      });
+      oBusyIndicator.close();
+    }
+  });
 });
 ```
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Test the application)]
@@ -570,7 +617,15 @@ You will notice that the longer the series is, the lower the probability will be
 
 ![Result](16.png)
 
+[DONE]
 [ACCORDION-END]
+[ACCORDION-BEGIN [Step 13: ](Validation)]
+
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
+[ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Solution: ](Project files)]
 
@@ -582,8 +637,9 @@ You have to import the `sapui5ml-imageclassifier` directory content into your ex
 
 Make sure you check the [LICENSE](https://github.com/SAPDocuments/Tutorials/blob/master/LICENSE.txt) before starting using its content.
 
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps
  - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

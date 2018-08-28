@@ -2,7 +2,7 @@
 title: Create sales order app with SAP Cloud Platform Rapid Application Development by Mendix
 description: Create a sales order app that consumes a service from the SAP Gateway Demo System (ES5).
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platform  ]
 ---
 
 ## Prerequisites  
@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platfor
  - You are using a Windows desktop (or a Windows VM on a Mac).
  - You have access to an SAP Cloud Platform account. If not, you can open a trial account. See the [tutorial](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) or [documentation](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/65d74d39cb3a4bf8910cd36ec54d2b99.html).
  - You have completed the [Getting started with SAP Cloud Platform Rapid Application Development by Mendix](https://www.sap.com/developer/tutorials/mendix-onboarding.html) tutorial. Name your app **SAP Sales Orders**.
- - You have requested the [authentication credentials](https://gatewaytestdd27584c4.us2.hana.ondemand.com/SUPSignForms/) required to connect with the SAP Gateway Demo System (ES5).
+ - You have completed the [Create an account on the Gateway Demo system](https://www.sap.com/developer/tutorials/gateway-demo-signup.html) tutorial.
 
 
 ## Details
@@ -95,7 +95,7 @@ Now you have a Mendix module ready to be imported into your project.
 
 3. In addition to the domain model, the OData Model Creator also created two other items:
     * A constant with the name of the service, containing the service root URL
-    * An enumeration (**EntitySetNames**) containing a list of all the entity sets in the model
+    * An enumeration (`EntitySetNames`) containing a list of all the entity sets in the model
 
     ![Generated Domain Model](mendix-salesorders33.png)
 
@@ -158,7 +158,7 @@ Follow these steps to create the logic to get the sales orders.
 [ACCORDION-BEGIN [Step 6: ](Add logic to get sales orders – request)]
 
 1. Add another activity to the microflow and select the **Get List** action from the SAP OData Connector.
-The **Get List** action retrieves a list of entities described in the domain model. In our case we will retrieve a list of SalesOrders.
+The **Get List** action retrieves a list of entities described in the domain model. In our case we will retrieve a list of sales orders.
 2. Fill in the required fields of the **Get List** action. For this tutorial, use the following settings:
 
     | Field | Value |

@@ -1,17 +1,21 @@
 ---
 title: SAP HANA XS Advanced, Connecting to SAP Web IDE and cloning a Git Repository to begin development
-description: Part 1 of 3, Connect to Web IDE and Clone a Git Repository to begin development
+description: Connect to Web IDE and Clone a Git Repository to create a Multi-Target Application
+auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>html5, products>sap-hana, products>sap-web-ide ]
 ---
 
 ## Prerequisites  
- - [How to create an SAP HANA Developer Edition in the Cloud](https://www.sap.com/developer/tutorials/hana-setup-cloud.html)
+  - If you do not have a HANA System with XS Advanced, [get your own instance of SAP HANA, express edition with XS Advanced](https://sap.com/developer/topics/sap-hana-express.html#flowchart)
 
 ## Details
-SAP HANA XS Advanced is the new development paradigm from SAP based around the Cloud Foundry concepts and architectures. To begin with you will need see how to connect to the SAP Web IDE for SAP HANA and clone a Git Repository.
+SAP HANA Extended Application Services, advanced model is the new development paradigm from SAP based around the Cloud Foundry concepts and architectures.
+To begin with you will need see how to connect to the SAP Web IDE for SAP HANA and clone a Git Repository.
 
 As of SPS12, all design-time artifacts are stored in Git instead of the HANA database. We need to setup the repository so development can be collaborative.
+
+Check [this series of blogs posts](https://blogs.sap.com/2017/09/04/xs-advanced-for-not-so-dummies/) to get introduced to the basic concepts in XS Advanced development, such as Multi-target Applications and micro-services.
 
 ### Time to Complete
 **20 Min**
@@ -20,22 +24,16 @@ As of SPS12, all design-time artifacts are stored in Git instead of the HANA dat
 
 [ACCORDION-BEGIN [Step 1: ](Launch SAP Web IDE for SAP HANA)]
 
-Launch the SAP Web IDE for SAP HANA at the following URL in your web browser. The `hostname` of course is the hostname of the SAP HANA Developer Edition that you created in the previous tutorial. Remember for XSA you will need to use the hostname and not the IP address of the server, instructions are found on the server landing page itself.
+> These tutorials are based on SAP HANA, express edition. You can get your instance for free following [these instructions](https://sap.com/developer/topics/sap-hana-express.html#flowchart)
 
-
-`https://<hostname>:53075/`
-
+By default, in SAP HANA, express edition, SAP Web IDE for SAP HANA can be accessed using `https://hxehost:53075/`. If you are using a different system, you can check the URL using command `xs apps | grep webide` in the [XS Command Line Interface](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/addd59069e6f444ca6ccc064d131feec.html).
 
 User: `XSA_DEV`
 Password: The password provided when you set up HANA Express
 
-or you can use
-
-User: `WORKSHOP_01`
-Password: `HanaRocks2017` or what you changed it to
-
 ![Log in to SAP Web IDE for SAP HANA](1.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -46,8 +44,11 @@ From a separate tab in the web browser, log into [GitHub](https://GitHub.com). I
 
 ![Sign in or sign up to your GitHub account](1_git.png)
 
-> If you are setting up the repository for use beyond this tutorial, you may want to create an organization and invite other users to join your repository. Further information on GitHub can be found [on GitHub](https://help.github.com/articles/creating-a-new-repository/)
+> If you are setting up the repository for use beyond this tutorial, you may want to create an organization and invite other users to join your repository. Further information can be found [on GitHub](https://help.github.com/articles/creating-a-new-repository/)
 
+Alternatively, if you do not wish to create an account on GitHub, you can create a project by right-clicking on your workspace and following the wizard for Multi-Target Applications in `New->Project from Template`
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -59,9 +60,10 @@ Follow the instructions in the **New Repository** option from the **+** menu in 
 
 ![New Repository](2.png)
 
-Complete the form, adding a name and description and click on **Create Repository**.
+Complete the form adding a name and description, make sure to tick **Initialize this repository with a README** and click on **Create Repository**.
 ![New Repository](3.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -69,6 +71,7 @@ Complete the form, adding a name and description and click on **Create Repositor
 [ACCORDION-BEGIN [Step 4: ](Clone the Repository into the Workspace)]
 
 Form the GitHub page, copy the URL of the repository from the **Clone or Download** menu
+
 ![Use the Clone or Download button from the right corner](3_1.png)
 
 Return to the SAP Web IDE for SAP HANA. Right click on the Workspace and choose **Clone Repository** from the Git menu.
@@ -81,14 +84,13 @@ Enter authentication details:
 - User:  `<Your GitHub User ID>`
 - Password:  `<You've guessed: Your GitHub password!>`
 
-
 Tick the **Remember me** box so it will not ask again for the remainder of the session.
-
 
 If successful, you will see the repository folder in your workspace, which is now connected to the git repository.
 ![Git is cloned into SAP HANA Web IDE](4_3.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Configure the Space for the repository)]
@@ -101,19 +103,18 @@ Right-click on the folder for the repository and select **Project Settings**
 
 ![Project Settings for Git repository](5.png)
 
-
-Select the proper space (probably, development) from the list of available spaces, or use the space setup by the System Administrator:
+Select the proper space (for HANA express, `development`) from the list of available spaces, or use the space setup by the System Administrator:
 
 ![Select development space](6.png)
 
-
-
->If you cannot find an appropriate Space, you may need to enable it or configure your user by going to the `Organization and Space Management` in `https://your host:51015/index.html` (or asking your System Administrator).
+> If you cannot find an appropriate space, you may either lack the `SpaceDeveloper` role to one or may need to [create one](https://www.sap.com/developer/tutorials/xsa-setup-new-space.html). By default, SAP HANA, express edition brings a development space that is implicitly mapped to the system database. If you are planning on using any of the advanced analytics features (such as Machine Learning), you need to [map the space to a tenant database](https://www.sap.com/canada/developer/tutorials/xsa-tenant-db-space.html), such as the default one, HXE.
 
 Click **Save**.
 
+Open the GitHub pane using the menu bar on the right to complete the validation for this tutorial
+
+![Open pane](git.png)
+
+[VALIDATE_7]
 
 [ACCORDION-END]
-
-## Next Steps
- - [SAP HANA XS Advanced Creating an HTML5 Module](https://www.sap.com/developer/tutorials/xsa-html5-module.html)

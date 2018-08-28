@@ -1,11 +1,12 @@
 ---
-title: Machine Learning services for text content
-description: Discover the SAP Leonardo Machine Learning Functional Service consuming text content on the SAP API Business Hub
-primary_tag: products>sap-leonardo-machine-learning
-tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-leonardo-machine-learning,  products>sap-api-management, products>sap-cloud-platform]
+title: Text Processing services on the API Business Hub
+description: Discover how to test SAP Leonardo Machine Learning Foundation service on the SAP API Business Hub
+auto_validation: true
+primary_tag: products>sap-leonardo-machine-learning-foundation
+tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-leonardo-machine-learning-foundation, products>sap-api-management, products>sap-cloud-platform]
 ---
 
-## Prerequisites  
+## Prerequisites
  - **Proficiency:** Beginner
  - [Sign up for an free trial account on the SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 
@@ -14,7 +15,7 @@ tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-leon
  - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
-### You will learn  
+### You will learn
 In this tutorial, you will learn where to find and test the **SAP Leonardo Machine Learning Functional Services** published on the SAP API Business Hub that consumes text content.
 
 The **Topic Detection API** Machine Learning Functional Services will be used as an example to demonstrate how to consume text content, but you will be able to transpose this tutorial to other services which also consume content like :
@@ -22,16 +23,16 @@ The **Topic Detection API** Machine Learning Functional Services will be used as
  - the **Document Feature Extraction API**
  - the **Product Text Classification API**
 
+The **Topic Detection** service allows you to extracts topics from documents and scores them according to the most relevant topics.
+
 ### Time to Complete
 **10 Min**
 
----
-
 [ACCORDION-BEGIN [Step 1: ](Search the SAP API Business Hub)]
 
-In order to consume the **Topic Detection** SAP Leonardo Machine Learning Functional Services, you will first need to get the service URI, request and response parameters.
+In order to consume the **Topic Detection API** SAP Leonardo Machine Learning Foundation service, you will first need to get the service URI, request and response parameters.
 
-Go to [https://api.sap.com/](https://api.sap.com) and click on the **Browse** tile.
+Go to [https://api.sap.com/](https://api.sap.com).
 
 ![SAP API Business Hub](01.png)
 
@@ -39,23 +40,32 @@ Then you will be able to search for the **SAP Leonardo Machine Learning - Functi
 
 ![SAP API Business Hub](02.png)
 
+Select **Inference Service for Topic Detection**.
+
+![SAP API Business Hub](03.png)
+
+You can also access the page directly from the following address:
+
+ - <https://api.sap.com/api/topic_detection_api/resource>
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Analyze the service)]
 
-Click on **Artifacts**, then click on the **Topic Detection API API**.
+As you can notice the API has only one resource (or service): `/topic-detection`.
 
-![SAP API Business Hub](03.png)
-
-As you can notice the **Topic Detection API** has only one resource (or service): `/inference_sync`.
-
-Now click on the `/inference_sync` link to expand the section.
+Now click on the `/topic-detection` link to expand the section.
 
 > **Note**: the term *inference* refers to the application phase (scoring) an existing model (as opposed to the training or inception phase) and *sync* for synchronous.
 
-![SAP API Business Hub](04.png)
+As stated in the description, the service accepts either:
 
-As stated in the description, the service accepts either an archive file with a zip/tar extensions containing multiple text files, a single text file or a list of text files as input and returns a detected topic list with the associated keywords and scores (confidence).
+ - an archive file with a zip/tar extensions containing multiple text files
+ - a single text file
+ - a list of text files as input
+
+The service returns a list of detected topic with the associated keywords and scores (confidence).
 
 The supported text file formats is plain text only.
 
@@ -68,50 +78,24 @@ A series of options are also required for the following parameters:
   - `numKeywordsPerTopic`: Number of keywords to be listed per topic
   - `numFeatures`: Maximum number of keywords to be extracted from documents in total
 
-And the response model schema is the following:
-
-```JSON
-{
-  "_id": "string",
-  "error": "string",
-  "request": {},
-  "status": "QUEUED",
-  "tenantName": "string",
-  "topicDetection": [
-    {
-      "docName": "string",
-      "keywords": [
-        [
-          "string"
-        ]
-      ],
-      "scores": [
-        0
-      ],
-      "topics": [
-        0
-      ]
-    }
-  ],
-  "error_description": "string"
-}
-```
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Test the service)]
 
-Now, scroll down a bit further and click on ![login-to-try-out](00-login-to-try-out.png). You will be prompted for your SAP Cloud Platform credentials.
+In the top right corner of the page, click on the **Log On** button.
 
-Scroll up a little for the **Query Parameters** section.
+You will be prompted for your SAP Cloud Platform credentials.
 
-In the **Options** field enter the following:
+Scroll down to the **Parameters** section.
+
+In the **options** field enter the following:
 
 ```JSON
 {"numTopics":3, "numTopicsPerDoc":3, "numKeywordsPerTopic":5}
 ```
 
-Now let's build an archive with at least more than 2 text files.
+Now let's build an archive with at least 3 text files (as `numTopics` is equal to 3).
 
 If you are missing some inspiration, use the following articles content to create your text files:
 
@@ -121,17 +105,9 @@ If you are missing some inspiration, use the following articles content to creat
 
 Create a zip out of these text files.
 
-Click on the **Browse** button next to `files` parameter and pick your zip file.
+Click on the **Choose File** button next to `files` parameter and pick your zip file.
 
-![SAP API Business Hub](05.png)
-
-Now scroll down a bit further and click on ![try-out](00-try-out.png).
-
-Please take a note of the **Request URL** which we will use later:
-
-```
-https://sandbox.api.sap.com/ml/topicdetection/inference_sync
-```
+Now, scroll down and click on **Try out**.
 
 In the **Response Body**, you will get for each file, the associated keywords, topics and score.
 
@@ -161,27 +137,9 @@ For example here, for the `cheesecake.txt` document, the first list of keywords 
       {
         "docName": "cheesecake.txt",
         "keywords": [
-          [
-            "cheesecake",
-            "cheese",
-            "cream",
-            "bake",
-            "make"
-          ],
-          [
-            "deep",
-            "learn",
-            "neural",
-            "jump",
-            "network"
-          ],
-          [
-            "learn",
-            "machine",
-            "data",
-            "jump",
-            "algorithm"
-          ]
+          [ "cheesecake", "cheese", "cream", "bake", "make" ],
+          [ "deep", "learn", "neural", "jump", "network" ],
+          [ "learn", "machine", "data", "jump", "algorithm" ]
         ],
         "scores": [
           1.0059799604699027,
@@ -197,27 +155,9 @@ For example here, for the `cheesecake.txt` document, the first list of keywords 
       {
         "docName": "deep_learning.txt",
         "keywords": [
-          [
-            "deep",
-            "learn",
-            "neural",
-            "jump",
-            "network"
-          ],
-          [
-            "learn",
-            "machine",
-            "data",
-            "jump",
-            "algorithm"
-          ],
-          [
-            "cheesecake",
-            "cheese",
-            "cream",
-            "bake",
-            "make"
-          ]
+          [ "deep", "learn", "neural", "jump", "network" ],
+          [ "learn", "machine", "data", "jump", "algorithm" ],
+          [ "cheesecake", "cheese", "cream", "bake", "make" ]
         ],
         "scores": [
           1.0683225059034496,
@@ -233,27 +173,9 @@ For example here, for the `cheesecake.txt` document, the first list of keywords 
       {
         "docName": "machine_learning.txt",
         "keywords": [
-          [
-            "learn",
-            "machine",
-            "data",
-            "jump",
-            "algorithm"
-          ],
-          [
-            "cheesecake",
-            "cheese",
-            "cream",
-            "bake",
-            "make"
-          ],
-          [
-            "deep",
-            "learn",
-            "neural",
-            "jump",
-            "network"
-          ]
+		  [ "learn", "machine", "data", "jump", "algorithm" ],
+		  [ "cheesecake", "cheese", "cream", "bake", "make" ],
+          [ "deep", "learn", "neural", "jump", "network" ]
         ],
         "scores": [
           0.890515209507582,
@@ -270,23 +192,34 @@ For example here, for the `cheesecake.txt` document, the first list of keywords 
   }
 ```
 
+[DONE]
 [ACCORDION-END]
 
----
+[ACCORDION-BEGIN [Step 4: ](Validation)]
+
+Provide an answer to the question below then click on **Validate**.
+
+[VALIDATE_1]
+[ACCORDION-END]
 
 ### Optional
 
-[ACCORDION-BEGIN [Step 4: ](Investigate similar services)]
+[ACCORDION-BEGIN [Step 5: ](Investigate similar services)]
 
 You can also try the following Machine Learning Functional Services consuming text content:
 
-  - the **Document Feature Extraction API**
-  - the **Product Text Classification API**
+  - **Inference Service for Customizable Text Classification**
+  - **Inference Service for Document Feature Extraction**
+  - **Inference Service for Scene Text Recognition**
+  - **Inference Service for Machine Translation**
+  - **Inference Service for Language Detection**
+  - **Product Text Classification API**
 
 For more information, you can also check the online [SAP Leonardo Machine Learning Foundation documentation](https://help.sap.com/viewer/product/SAP_LEONARDO_MACHINE_LEARNING_FOUNDATION/1.0/en-US)
 
+[DONE]
 [ACCORDION-END]
 
 ## Next Steps
  - Select your next tutorial from these SAP Leonardo Machine Learning groups: [SAP API Business Hub](https://www.sap.com/developer/groups/ml-fs-api-hub.html), [Java](https://www.sap.com/developer/groups/ml-fs-java.html) or [SAPUI5](https://www.sap.com/developer/groups/ml-fs-sapui5.html)
-  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+ - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

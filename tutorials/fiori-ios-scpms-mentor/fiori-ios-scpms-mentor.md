@@ -1,6 +1,7 @@
 ---
 title: Using the SAP Fiori Mentor app
 description: Use the SAP Fiori Mentor app on your iPad to explore and modify Fiori controls which you then transfer to your Xcode project
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -31,6 +32,7 @@ On your iPad running iOS 10, open the **App Store** application. In the search b
 At the search results screen, tap the **Get** button next to the **SAP Fiori Mentor** app icon. The app will now download and install on your device.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Explore the SAP Fiori Mentor app)]
@@ -48,6 +50,7 @@ The next row lists the **Fiori UI components**, which will be explained in more 
 The next row lists the SDK's **Foundation Components** concepts such as Authentication, Logging, etc. Clicking on one of these tiles will navigate to the API documentation for that foundation component.
 
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -60,6 +63,7 @@ At the **Fiori UI Components** tile row, click the **See All** button. A page wi
 Scroll through the page to get an idea of the available Fiori UI Components.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Explore the Timeline Cell)]
@@ -75,6 +79,7 @@ Below that is a row of **quick links** to various styles of the control. Clickin
 A preview of the control is displayed according to the currently selected style. At the bottom you can switch the layout of the control between iPad and iPhone modes.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Modify the Timeline Cell)]
@@ -88,6 +93,7 @@ If you now change some properties for the control, you will see the changes are 
 ![SAP Fiori Mentor app](fiori-ios-scpms-mentor-05.png)
 
 
+[VALIDATE_5]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Use the modified Timeline Cell in your project)]
@@ -105,6 +111,7 @@ Tap the **Select All** button in the top-right. The sample code is now selected,
 Click the **Copy** action button.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Examine the copied code)]
@@ -120,6 +127,7 @@ In method `viewDidLoad()`, it sets up the table view with a specific height, sty
 Method `tableView(cellForRowAt)` returns a `FUITimelineCell` instance, and has the exact properties set you have selected in the SAP Fiori Mentor app.
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Implement the copied code)]
@@ -195,6 +203,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
 ```
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Add model binding to implemented code)]
@@ -211,6 +220,7 @@ timelineCell.eventText =  String(describing: productcategory.numberOfProducts)
 ```
 
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Build and run the app)]
@@ -220,6 +230,7 @@ Build and run the application. After logging in, click the **Product Categories*
 ![SAP Fiori Mentor app](fiori-ios-scpms-mentor-10.png)
 
 
+[DONE]
 [ACCORDION-END]
 
 

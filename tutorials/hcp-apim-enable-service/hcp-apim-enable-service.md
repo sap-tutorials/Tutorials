@@ -1,6 +1,7 @@
 ---
 title: Enable the SAP Cloud Platform, API Management Service
 description: Learn how to enable SAP Cloud Platform, SAP API Management in your SAP Cloud Platform trial account
+auto_validation: true
 primary_tag: products>sap-api-management
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-api-management ]
 ---
@@ -39,6 +40,7 @@ From the **SAP Cloud Platform cockpit**, select **Services**.
 
 ![Click on Services](01-services.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -52,6 +54,7 @@ Click on **Enable**
 
 ![Select Enable](03-enable.png)
 
+[DONE]
 
 [ACCORDION-END]
 
@@ -65,6 +68,7 @@ and the SAP API Management Dev Portal
 
 ![Access Dev Portal](05-access_dev_portal.png)
 
+[DONE]
 
 [ACCORDION-END]
 

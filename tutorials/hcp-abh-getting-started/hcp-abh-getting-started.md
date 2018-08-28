@@ -2,6 +2,9 @@
 title: Getting started with the SAP API Business Hub
 description: Learn how to find and test the API Business Hub.
 primary_tag: products>sap-cloud-platform
+author_name: Meredith Hassett
+author_profile: https://github.com/mhassett92
+auto_validation: true
 tags: [  tutorial>beginner, products>sap-cloud-platform ]
 ---
 ## Prerequisites  
@@ -26,7 +29,7 @@ In your SAP Cloud Platform account, select **Services** from the side menu.
 
 ![service in SAP Cloud Platformmenu](1.png)
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open SAP API Business Hub)]
@@ -46,7 +49,7 @@ This will direct you to the homepage for the SAP API Business Hub.
 
 You can access the SAP API Business hub through SAP Cloud Platform or by just visiting their website by going to <http://api.sap.com>.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Find an API Package in the Hub)]
@@ -68,7 +71,7 @@ This will bring you to the API documentation and overview. Select the **Artifact
 
 The Success Factors contains many APIs that can be used. APIs are grouped into Business Packages so they are easier to find.
 
-
+[DONE]
 [ACCORDION-END]
 
 
@@ -86,6 +89,7 @@ Once you click the API, you will see all the available methods for the API. In t
 When you click the method, you are able to see all the query parameters and their corresponding documentation, such as what data type is expected and what the parameter is used for.
 
 
+[VALIDATE_4]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Test the API in the Hub)]
@@ -111,7 +115,7 @@ If there aren't any issues, you will see the resulting request URL and the respo
 
 Feel free to keep playing around in the SAP API Business Hub to better understand the methods available in the User Management API.
 
-
+[DONE]
 [ACCORDION-END]
 
 

@@ -1,8 +1,8 @@
 ---
 title: Getting started with SAP Cloud Platform Rapid Application Development by Mendix
 description: Set up your SAP Cloud Platform account so you can use SAP Cloud Platform Rapid Application Development by Mendix to build applications to be deployed on SAP Cloud Platform.
-primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+primary_tag: products>sap-rad-by-mendix
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform, products>sap-rad-by-mendix  ]
 ---
 ## Prerequisites  
 - **Proficiency:** Beginner
@@ -12,7 +12,6 @@ tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 ## Details  
 You can build business applications for the SAP Cloud Platform Cloud Foundry environment using SAP Cloud Platform Rapid Application Development by Mendix, without needing to write code.
 
-
 In this tutorial, you will set up your SAP Cloud Platform account so you can use SAP Cloud Platform Rapid Application Development to build applications to be deployed on SAP Cloud Platform.
 
 >This tutorial is applicable whether you have a productive or trial Neo environment, but assumes that you are using a trial Cloud Foundry environment.
@@ -20,7 +19,7 @@ In this tutorial, you will set up your SAP Cloud Platform account so you can use
 > The Mendix Desktop Modeler, for building your application, is available for Windows platforms only.
 
 ### You will learn  
-- How to set up environment to use SAP Cloud Platform Rapid Application Development.
+- How to set up your environment to use SAP Cloud Platform Rapid Application Development.
 - How to open SAP Cloud Platform Rapid Application Development.
 
 ### Time to Complete

@@ -18,8 +18,9 @@ Use the SAP Web IDE templates wizard to build an SAP Fiori app displaying inform
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log into your SAP Cloud Platform Trial account)]
-Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: https://account.hanatrial.ondemand.com
+
+[ACCORDION-BEGIN [Step 1: ](Log into your SAP Cloud Platform trial account)]
+Log into [SAP Cloud Platform](https://account.hanatrial.ondemand.com) by opening the following URL in a new tab: <https://account.hanatrial.ondemand.com>
 
 Click on Neo Trial to open the cockpit view.
 

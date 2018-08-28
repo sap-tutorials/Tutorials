@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
  - **Proficiency:** Beginner
 
 ## Next Steps
- - [Run example pipelines in SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-examples.html)
+ - [Navigate around SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-navigation.html)
 
 
 ## Details
@@ -42,15 +42,17 @@ docker run hello-world
 ```
 
 You see an output similar to the following.
-![picture_01](./datahub-docker-setup_01.png)  
+![picture_01](./datahub-docker-setup_01.png)
+
+>Make sure that you select the Linux container and not the Windows container during the Docker installation.
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download SAP Data Hub, developer edition)]
-Download SAP Data Hub, developer edition from SAP Store and unpack the archive to your disk. You find it via the following link.
+Download SAP Data Hub, developer edition and unpack the archive to your disk. You find it via the following link.
 
 ```sh
-https://store.sap.com/sap/cp/ui/resources/store/html/SolutionDetails.html?pid=0000014517
+https://www.sap.com/developer/trials-downloads/additional-downloads/sap-data-hub-developer-edition-1-4-15004.html
 ```
 
 Carefully read the `README.html` as well as the license agreement prior to continuing with the tutorial.
@@ -67,7 +69,7 @@ ENV http_proxy=http://myproxy:8080
 ENV https_proxy=http://myproxy:8080
 ```
 
-Open a terminal window and navigate to the directory where you have unpacked the archive (that is the directory which includes the `Dockerfile`). Build the docker image for SAP Data Hub, developer edition. Replace the build-time variables `VORA_USERNAME` and `VORA_PASSWORD` with meaningful values **prior to executing the following command**.
+Open a terminal window and navigate to the directory where you have unpacked the archive (that is the directory which includes the `Dockerfile`). Build the docker image for SAP Data Hub, developer edition. Replace the values of build-time variables `VORA_USERNAME` and `VORA_PASSWORD` in the following command with meaningful values **prior to executing the following command**.
 
 ```sh
 docker build --build-arg VORA_USERNAME=vora --build-arg VORA_PASSWORD=SomeNicePassword19920706 --tag datahub .
@@ -90,10 +92,12 @@ Create a Docker network by opening a terminal window (or using the already open 
 docker network create dev-net
 ```
 
-Run a Docker container based on image `datahub`. By publishing the ports `8090`, `9099`, `9225` and `50070` you ensure that you later can access the different user interfaces running inside the Docker container via `localhost`.
+Run a Docker container based on image `datahub`. By publishing the ports `8090`, `8998`, `9225` and `50070` you ensure that you later can access the different user interfaces running inside the Docker container via `localhost`.
+
+The `livy` parameter starts Apache Livy (inside the Docker container) and thereby makes it possible to access Spark via REST services (from outside the Docker container), e.g. to connect from Apache Zeppelin to the SAP Vora tables.
 
 ```sh
-docker run -ti --publish 127.0.0.1:8090:8090 --publish 127.0.0.1:9099:9099 --publish 127.0.0.1:9225:9225 --publish 127.0.0.1:50070:50070 --name datahub --hostname datahub --network dev-net datahub run --agree-to-sap-license --hdfs --zeppelin
+docker run -ti --publish 127.0.0.1:8090:8090 --publish 127.0.0.1:8998:8998 --publish 127.0.0.1:9225:9225 --publish 127.0.0.1:50070:50070 --name datahub --hostname datahub --network dev-net datahub run --agree-to-sap-license --hdfs --livy
 ```
 
 After a few minutes (during which you can follow what happens inside the container), you see an output ("status loop") similar to the following. The output refreshes every minute and indicates that all services related to SAP Data Hub, developer edition are running.
@@ -107,10 +111,10 @@ After a few minutes (during which you can follow what happens inside the contain
 [ACCORDION-BEGIN [Step 5: ](Perform a smoke test)]
 Open a web browser and test the following URLs (where necessary enter **Username** and **Password** which you have set while building the Docker image):
 
-* `http://localhost:8090` (SAP Data Hub - Data Pipelines)
-* `http://localhost:9099` (Apache Zeppelin)
+* `http://localhost:8090` (SAP Data Hub Pipeline Modeler)
 * `http://localhost:9225` (SAP Vora Tools)
 * `http://localhost:50070` (Apache Hadoop User Interface)
+* `http://localhost:8998` (Livy)
 
 If all URLs are working, you can assume that you have successfully set up SAP Data Hub, developer edition on your local computer.
 
@@ -123,10 +127,10 @@ You can stop SAP Data Hub, developer edition by using the `stop` command. After 
 docker stop datahub
 ```
 
-You can also restart SAP Data Hub, developer edition (without creating a completely new container) by using the `start` command (this will not open a "status loop").
+You can also restart SAP Data Hub, developer edition (without creating a completely new container) by using the `start` command (this will not open a "status loop"). The `-i` option ensures that you see the "status loop".
 
 ```sh
-docker start datahub
+docker start -i datahub
 ```
 
 **Attention**: When stopping and restarting the Docker container, currently the tables which you have created in SAP Vora get lost. You need to recreate them.
@@ -143,4 +147,4 @@ docker logs datahub
 ---
 
 ## Next Steps
-[Run example pipelines in SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-examples.html)
+[Navigate around SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-navigation.html)

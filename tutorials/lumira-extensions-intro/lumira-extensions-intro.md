@@ -1,8 +1,8 @@
 ---
 title: Install and deploy SAP Lumira extensions
 description: Downloading, installing and deploying a sample visualization extension in SAP Lumira
-primary_tag: products>sap-businessobjects-lumira
-tags: [  tutorial>beginner, products>sap-businessobjects-lumira]
+primary_tag: products>sap-lumira
+tags: [  tutorial>beginner, products>sap-lumira]
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
@@ -13,7 +13,7 @@ tags: [  tutorial>beginner, products>sap-businessobjects-lumira]
 
 ## Details
 ### You will learn  
-How to find and download SAP Lumira visualization extensions, install them in SAP Lumira and then use them. 
+How to find and download SAP Lumira visualization extensions, install them in SAP Lumira and then use them.
 
 ### Introduction to SAP Lumira Visualization Extensions
 SAP BusinessObjects Lumira, a self-service BI tool, uses in-built data visualization charts (as seen in the prerequisite tutorial). Sometimes, the data you want to represent may not be appropriately visualized with existing chart types. Or maybe you may have a creative way of visualizing data differently. SAP Lumira Visualization Extensions enable you to do just that. They are essentially plugins that enable customized and different types of charts which allow you to explore and visualize your data better.
@@ -83,7 +83,7 @@ In this tutorial, you will learn how to use an example viz extension (Bullet Cha
 
 ## Optional Steps
  - Explore visual extensions available from SAP Partners at the [SAP Analytics Extensions Directory](https://analytics-extensions.enter.sap/)
- - You can explore as well open sourced visual extensions provided by community, like https://github.com/michalkorzen/lumira-sankey-advanced
+ - You can explore as well open sourced visual extensions provided by community, like <https://github.com/michalkorzen/lumira-sankey-advanced>
  - Think about contributing your own viz extensions as open source as well
 
 ## Next Steps

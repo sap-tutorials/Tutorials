@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-
  - **Proficiency:** Beginner
  - **Tutorials:**
     - [Installing SAP HANA Streaming Analytics for SAP HANA, Express Edition](https://www.sap.com/developer/tutorials/hxe-ua-installing-streaming.html)
-    - [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html)
+    - [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
 
 ## Next Steps
  - [Create a Streaming Project with SAP HANA Streaming Analytics](https://www.sap.com/developer/tutorials/sds-create-streaming-project.html)
@@ -22,7 +22,7 @@ Install the streaming analytics plugin for Eclipse, add a connection to the stre
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Edit the `/etc/hosts` File)]    
+[ACCORDION-BEGIN [Step 1: ](Edit the /etc/hosts File)]    
 
 If you're running SAP HANA, express edition in a virtual machine or cloud server instance, then depending on the network configuration, you may need to edit the `/etc/hosts` file on your local machine so Eclipse can connect to the streaming analytics server.
 
@@ -185,7 +185,7 @@ In this step we will create a named **Data Service** on the SAP HANA streaming a
 
     ![Rename Service](rename-service.png)
 
-    ![Name the service](name-service-02.PNG)
+    ![Name the service](name-service-02.png)
 
 6. To confirm that the HANA service is configured properly, right-click on it and select **Discover**:
 

@@ -1,6 +1,7 @@
 ---
 title: Customize theme and on-boarding of iOS app
 description: Create a stylesheet to apply a custom theme and change the default on-boarding behavior for your iOS app.
+auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>intermediate, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
 ---
@@ -197,7 +198,7 @@ Add a different character, and now the **Next** button is enabled:
 
 ![Build and run the application](fiori-ios-scpms-custom-app-theming-09.png)
 
-[DONE]
+[VALIDATE_6]
 [ACCORDION-END]
 
 

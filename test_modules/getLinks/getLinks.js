@@ -1,24 +1,23 @@
 'use strict';
 
+const expressions = [
+    /\[[^\]]*\]\((http[s]?:\/\/.+?)\)/g, //[...](<url>)
+    /\[[^\]]*\]\s*?:\s*?<(http[s]?:\/\/.+?)>/g,//[...]: <url>
+    /<(http[s]?:\/\/.*?)>/g
+];
+
 module.exports = function(fileContent) {
 
-    //regular expressions to find links
-    var expressions = [
-        /\[[^\]]*\]\((http[s]?:\/\/[^\) ]+)/g, //[...](<url>)
-        /\[[^\]]*\]\s*:\s*(http[s]?:\/\/.*)/g, //[...]: <url>
-    ];
-
-    var links = [];
+    const links = [];
 
     //get all links
-    expressions.forEach(function(expression) {
-        var match = expression.exec(fileContent);
+    expressions.forEach(exp => {
+        let match = exp.exec(fileContent);
         while (match !== null) {
             links.push(match[1]);
-            match = expression.exec(fileContent);
-        }
-    }, this);
+            match = exp.exec(fileContent);
+        } 
+    });
 
     return links;
-
 }

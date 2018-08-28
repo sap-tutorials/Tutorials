@@ -12,7 +12,7 @@ tags: [ products>sap-cloud-platform, products>sap-web-ide, topic>cloud, topic>ht
 - [Create an account on the Gateway Demo system](https://www.sap.com/developer/tutorials/gateway-demo-signup.html)
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 
@@ -31,9 +31,9 @@ Converting an app built on mock data to a live service requires editing only two
 
 [ACCORDION-BEGIN [Step 1: ](Perform Gateway Service sign up )]
 
-The live service you will use is the [ES4 Gateway service](https://sapes4.sapdevcenter.com/). To begin, please follow the steps in the Gateway Service sign up tutorial, and then continue with step 2 below.
+The live service you will use is the ES5 Gateway service (`https://sapes5.sapdevcenter.com/`). To begin, please follow the steps in the Gateway Service sign up tutorial, and then continue with step 2 below.
 
-> For reference, the service document URL you will use is: <https://sapes4.sapdevcenter.com/sap/opu/odata/IWBEP/GWDEMO>
+> For reference, the service document URL you will use is: `https://sapes5.sapdevcenter.com/sap/opu/odata/IWBEP/GWDEMO`
 
 
 
@@ -45,14 +45,14 @@ To provide access to the service, you will need create a destination in SAP Clou
 
 Field Name     | Value
 :------------- | :-------------
-Name           | `Gateway_SAPES4`
+Name           | `Gateway_SAPES5`
 Type           | `HTTP`
 Description    | `DevCenter Gateway`
-URL            | `https://sapes4.sapdevcenter.com`
+URL            | `https://sapes5.sapdevcenter.com`
 Proxy Type     | `Internet`
 Authentication | `BasicAuthentication`
-User           | `<Your ES4 Gateway user> (e.g. p12345678)`
-Password       | `<Your ES4 Gateway password>`
+User           | `<Your ES5 Gateway user> (e.g. p12345678)`
+Password       | `<Your ES5 Gateway password>`
 
 
 [ACCORDION-END]
@@ -98,14 +98,14 @@ Open `Component.js` in Web IDE, and search for `serviceConfig` in the metadata d
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Point to the ES4 Gateway service document)]
+[ACCORDION-BEGIN [Step 6: ](Point to the ES5 Gateway service document)]
 
-Update the two fields under `serviceConfig` (`name` and `serviceUrl`) to point to the ES4 Gateway service document and save your edits.
+Update the two fields under `serviceConfig` (`name` and `serviceUrl`) to point to the ES5 Gateway service document and save your edits.
 
 Field Name       | Value
 :--------------- | :-------------
 `name`           | `GWDEMO`
-`serviceUrl`     | `/destinations/Gateway_SAPES4/sap/opu/odata/IWBEP/GWDEMO`
+`serviceUrl`     | `/destinations/Gateway_SAPES5/sap/opu/odata/IWBEP/GWDEMO`
 
 ![serviceConfig edit](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_6.png)
 
@@ -114,14 +114,14 @@ Field Name       | Value
 
 [ACCORDION-BEGIN [Step 7: ](Add route definition)]
 
-Open the `neo-app.json` file, paste in the additional route definition below to point to the ES4 Gateway and save your edits.
+Open the `neo-app.json` file, paste in the additional route definition below to point to the ES5 Gateway and save your edits.
 
 ```json
 {
-  "path": "/destinations/Gateway_SAPES4",
+  "path": "/destinations/Gateway_SAPES5",
   "target": {
     "type": "destination",
-    "name": "Gateway_SAPES4"
+    "name": "Gateway_SAPES5"
   },
   "description": "DevCenter Gateway"
 },
@@ -134,9 +134,9 @@ Open the `neo-app.json` file, paste in the additional route definition below to 
 
 [ACCORDION-BEGIN [Step 8: ](Review metadata document)]
 
-To display the metadata document used by the service, open a browser tab to the service document URL and add `$metadata` to the end (if prompted to log in, use your ES4 Gateway user ID and password).
+To display the metadata document used by the service, open a browser tab to the service document URL and add `$metadata` to the end (if prompted to log in, use your ES5 Gateway user ID and password).
 
-<https://sapes4.sapdevcenter.com/sap/opu/odata/IWBEP/GWDEMO/$metadata>
+`https://sapes5.sapdevcenter.com/sap/opu/odata/IWBEP/GWDEMO/$metadata>`
 
 At the top of the page, note that the `Namespace` is `GWDEMO`.
 
@@ -199,7 +199,7 @@ In the `List` element, the items attribute points to the primary collection (dis
 
 [ACCORDION-BEGIN [Step 14: ](Save and run)]
 
-Save all your changes, select the `index.html` file and run the app. The data displayed is now sourced from the ES4 Gateway rather than your mock data.
+Save all your changes, select the `index.html` file and run the app. The data displayed is now sourced from the ES5 Gateway rather than your mock data.
 
 ![App running against Gateway OData service](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hcp-webide-switch-live-odata/m104_3_14.png)
 
@@ -216,4 +216,4 @@ You should now commit and push your edits to Git and redeploy the app to SAP Clo
 
 
 ## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorials.html)
+- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

@@ -1,5 +1,5 @@
 {
-	"_version": "1.5.0",
+	"_version": "1.7.0",
 	"sap.app": {
 		"id": "demosapui5ml-changepointdetection",
 		"type": "application",

@@ -8,10 +8,6 @@ tags: [  tutorial>beginner, topic>abap-development ]
 ## Prerequisites  
 [Create an ABAP project in Eclipse](https://www.sap.com/developer/tutorials/abap-create-project.html)
 
-
-## Next Steps
-[Display database content and run SQL queries](https://www.sap.com/developer/tutorials/abap-display-data-queries.html)
-
 ## Details
 ### You will learn  
 In this tutorial you will learn how to create and run an ABAP application based on tables of the SAP NetWeaver Demo sample EPM Model (details in the SAP Community [The SAP NetWeaver Enterprise Procurement Model – An Introduction](https://archive.sap.com/documents/docs/DOC-31458). So you can reiterate the tutorial on any SAP NetWeaver 7.5 system.  
@@ -23,7 +19,7 @@ In this tutorial you will learn how to create and run an ABAP application based 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create New ABAP Program)]
-a. Create a global Data Dictionary ("DDIC") structure: In the toolbar, select the **New** icon, then choose **ABAP Program...**:
+In the toolbar, select the **New** icon, then choose **ABAP Program...**:
 
 ![Image depicting create new](abap03-1a.png)
 
@@ -100,18 +96,3 @@ Press **F8** to run your program. An embedded SAP GUI will open inside of an Ecl
 
 
 [ACCORDION-END]
-
-## Next Steps
-You have 2 options:
-a. Retrieve data from the database by:
-  - creating a Data Dictionary structure (from an SQL query)
-  - a global ABAP class
-  - and a data element:
-
-[Display database content and run SQL queries](https://www.sap.com/developer/tutorials/abap-display-data-queries.html)
-
-OR
-
-b. Retrieve data from the database by creating a CDS view:
-
-[Create a CDS View](https://www.sap.com/developer/tutorials/abap-dev-adt-create-cds-view.html)

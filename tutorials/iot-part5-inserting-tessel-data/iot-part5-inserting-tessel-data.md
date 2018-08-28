@@ -181,9 +181,10 @@ In addition to viewing the data directly, you can view the OData service in a br
 
 The URL to the service document is shown below (for `johndoe`). To see your data, add `/HISTORY` to see the XML feed or `/HISTORY?$format=json` for JSON format to the end of the URL as shown here:
 
-- **Service Document:** http://52.90.177.151/CODEJAMMER/johndoe/myiot/mydata.xsodata
-- **XML Version:** http://52.90.177.151/CODEJAMMER/johndoe/myiot/mydata.xsodata/HISTORY
-- **JSON Version:** http://52.90.177.151/CODEJAMMER/johndoe/myiot/mydata.xsodata/HISTORY?$format=json
+- **Service Document:** `http://52.90.177.151/CODEJAMMER/johndoe/myiot/mydata.xsodata`
+- **XML Version:** `http://52.90.177.151/CODEJAMMER/johndoe/myiot/mydata.xsodata/HISTORY`
+- **JSON Version:** `http://52.90.177.151/CODEJAMMER/johndoe/myiot/mydata.xsodata/HISTORY?$format=json`
+
 The JSON formatted output:
 
 ![JSON results from xsodata](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/iot-part5-inserting-tessel-data/p5_12.png)

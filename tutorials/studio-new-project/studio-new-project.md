@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/how-tos/2016/09/hxe-howto-eclipse.html)
+ - **Tutorials:** [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
 
 ## Next Steps
  - [SAP HANA Studio, Deploy your project](https://www.sap.com/developer/tutorials/studio-deploy-project.html)

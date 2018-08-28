@@ -18,7 +18,7 @@ Choose your next step depending on whether you would like to deploy to Cloud Fou
 For a complete overview visit the [SAP S/4HANA Cloud SDK Overview](https://blogs.sap.com/2017/05/10/first-steps-with-sap-s4hana-cloud-sdk/).
 
 ### You will learn  
-In this tutorial, you will go through the steps required to install the [SDK](https://www.sap.com/germany/developer/topics/s4hana-cloud-sdk.html) and corresponding tools to use it for the development of your SAP Cloud Platform application.
+In this tutorial, you will go through the steps required to install the [SDK](https://www.sap.com/germany/developer/topics/s4hana-cloud-sdk.html) and corresponding tools to use it for the development of your SAP Cloud Platform application. 
 
 
 ### Time to Complete
