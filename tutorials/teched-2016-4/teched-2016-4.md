@@ -207,7 +207,7 @@ To run your app, select your project folder and click the **Run** button.
 
 ![Launch the app](te-2016-4-11c.png)
 
-When prompted, select the index.html as the file to run, and click **OK**.
+When prompted, select the `index.html` as the file to run, and click **OK**.
 
 ![Launch the app](te-2016-4-11bc.png)
 
