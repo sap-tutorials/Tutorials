@@ -24,9 +24,6 @@ module.exports = {
                 if(vrFileExists) {
                     err.push(messages.production.rules_vr);
                 }
-                if(value !== 'true') {
-                    err.push(messages.production.auto_validation);
-                }
             }
             if(value && (value == 'true' || value == 'false')) {
                 if(!validationFormExists) {
