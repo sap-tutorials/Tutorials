@@ -10,6 +10,10 @@ module.exports = {
                 message: 'no filenames in alt-text for images allowed',
             },
             {
+                regexp: new RegExp('[^!]\\[.*?(here|there|file|folder|this|page)\\]\\((.*?)\\)'),
+                message: 'no useless hyperlinked terms',
+            },
+            {
                 regexp: new RegExp('\\[(.{1,2}|\\s{1,})\\]\\(.*\\)'),
                 message: 'conventions of alt-text for link/image are not observed (at least 3 characters, not only spaces)',
             },
@@ -54,7 +58,7 @@ module.exports = {
             regexp: new RegExp('\\!\\[[^\\]]+\\]\\((?!http)(.+?)\\)'),
             messages: {
                 size: 'file size is more than 1 MB',
-                existence: 'missing image',
+                existence: 'missed local image',
             }
         },
     },
@@ -69,6 +73,7 @@ module.exports = {
         messages: {
             production: {
                 rules_vr: 'VALIDATION: rules.vr file must not be presented in the production',
+                auto_validation: `VALIDATION: Value of auto_validation property must be set to 'true' in the production`,
             },
             validate_restrictions: {
                 at_least_one: 'VALIDATION: Tutorial must have at least one validate element',
@@ -102,5 +107,6 @@ module.exports = {
     },
     fileName: {
         restrictedSymbols: new RegExp('[^a-z0-9-]'),
-    }
+    },
+  step: /\[Step\s?\d\:\s?\]\([\w\s]+\)/g,
 };
