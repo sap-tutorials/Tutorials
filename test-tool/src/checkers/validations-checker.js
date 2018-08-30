@@ -36,7 +36,7 @@ module.exports = {
       const dirPath = path.dirname(filePath);
       const rulesPath = path.join(dirPath, 'rules.vr');
       const vrFileExists = fs.existsSync(rulesPath);
-      if (!isProduction) {
+      if (isProduction) {
         if (vrFileExists) {
           err.push(messages.production.rules_vr);
         }
