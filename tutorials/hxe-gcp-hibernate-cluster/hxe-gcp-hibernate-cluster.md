@@ -3,7 +3,7 @@ title: Add spatial clustering with Hibernate
 description: Make use of the SAP HANA geospatial clustering capabilities.
 auto_validation: false
 primary_tag: products>sap-hana\,-express-edition
-tags: [  tutorial>intermediate, topic>java, products>sap-hana\,-express-edition ]
+tags: [  tutorial>intermediate, topic>java, products>sap-hana\,-express-edition  ]
 time: 20
 ---
 
