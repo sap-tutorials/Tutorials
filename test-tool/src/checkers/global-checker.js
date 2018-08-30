@@ -18,6 +18,11 @@ function initialise() {
  * */
 const checkTutorialGrouping = async ({ projectPath, interceptors, checkResult, results }) => {
   const filePath = `${projectPath}${path.sep}tutorial-grouping.md`;
+
+  if (!fs.existsSync(filePath)) {
+    return;
+  }
+
   const { files, uniqueLinksToFiles } = await common.parseFiles([filePath]);
   const uniqueLinks = Array.from(uniqueLinksToFiles.keys());
   const linkCheckResults = await linkChecker.checkLinks(uniqueLinks, interceptors.onAction);
