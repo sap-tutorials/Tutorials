@@ -1,41 +1,46 @@
-const path = require('path');
 const md = require('markdown-spellcheck').default;
 
 const { list } = require('../../config/spelling.white.list.json');
 
-const options = {
-    ignoreAcronyms: true,
-    ignoreNumbers: true,
-    suggestions: false,
-    dictionary: {
-        file: path.join(__dirname, '../../config/dictionary/en-us'),
+const { options: { spellCheckOptions } } = require('../constants');
+
+function initialise() {
+  md.spellcheck.initialise(spellCheckOptions);
+  list.forEach(word => md.spellcheck.addWord(word));
+}
+
+const generateReport = (result, errors) => result.split(/\r?\n/)
+  .filter(err => !!err.trim())
+  .map((err, index) => {
+    err = err.trim();
+    console.log(err);
+    if (err) {
+      return {
+        line: err.split('|')[0].trim(),
+        reason: errors[index].word,
+      };
     }
-};
 
-md.spellcheck.initialise(options);
-list.forEach(word => md.spellcheck.addWord(word));
+    return null;
+  });
 
-const generateReport = result => result.split(/\r?\n/)
-                                       .map(err => err.trim())
-                                       .filter(err => err)
-                                       .map(err => err.split('|').map(el => el.trim()))
-                                       .map(([line, reason]) => ({ line, reason }));
 
 const checkSpelling = (filePath) => {
-    const errors = md.spellFile(filePath, options);
-    const result = md.generateFileReport('', errors);
-    return generateReport(result);
+  const result = md.spellFile(filePath, spellCheckOptions);
+  const report = md.generateFileReport('', result);
+  return generateReport(report, result.errors);
 };
 
 const checkSpellingSrc = (src) => {
-    const result = {
-        errors: md.spell(src, options),
-        src: src
-    };
-    return generateReport(md.generateFileReport('', result));
-}
+  const result = {
+    errors: md.spell(src, spellCheckOptions),
+    src,
+  };
+  return generateReport(md.generateFileReport('', result), result.errors);
+};
 
 module.exports = {
-    checkSpelling,
-    checkSpellingSrc,
+  initialise,
+  checkSpelling,
+  checkSpellingSrc,
 };

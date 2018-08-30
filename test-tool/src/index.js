@@ -6,6 +6,8 @@ const { consoleReporter } = require('./reporters');
 const { globalChecker } = require('./checkers');
 const { logTemplates } = require('./constants');
 
+globalChecker.initialise();
+
 const run = async (projectPath, isProdRunMode) => {
     const interceptors = {
         onAction: null,
