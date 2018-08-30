@@ -40,9 +40,6 @@ module.exports = {
         if (vrFileExists) {
           err.push(messages.production.rules_vr);
         }
-        if (value !== 'true') {
-          err.push(messages.production.autoValidation);
-        }
       }
       // eslint-disable-next-line eqeqeq
       if (value && (value == 'true' || value == 'false')) {
