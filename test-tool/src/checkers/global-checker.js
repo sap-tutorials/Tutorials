@@ -136,7 +136,7 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
     });
   });
 
-  if (isProduction) {
+  if (!isProduction) {
     await checkTutorialGrouping({
       projectPath,
       interceptors,
