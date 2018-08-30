@@ -69,7 +69,6 @@ module.exports = {
         messages: {
             production: {
                 rules_vr: 'VALIDATION: rules.vr file must not be presented in the production',
-                auto_validation: `VALIDATION: Value of auto_validation property must be set to 'true' in the production`,
             },
             validate_restrictions: {
                 at_least_one: 'VALIDATION: Tutorial must have at least one validate element',
