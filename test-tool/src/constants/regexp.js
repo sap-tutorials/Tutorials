@@ -103,5 +103,6 @@ module.exports = {
     },
     fileName: {
         restrictedSymbols: new RegExp('[^a-z0-9-]'),
-    }
+    },
+  step: /\[Step\s?\d\:\s?\]\([\w\s]+\)/g,
 };

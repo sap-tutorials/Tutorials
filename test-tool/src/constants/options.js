@@ -1,3 +1,5 @@
+const path= require('path');
+
 const foldersOptions = {
     all: 'all',
     wip: 'wip',
@@ -13,6 +15,14 @@ const tutorialsFoldersOptions = {
 };
 
 module.exports = {
+  spellCheckOptions: {
+    ignoreAcronyms: true,
+    ignoreNumbers: true,
+    suggestions: false,
+    dictionary: {
+      file: path.join(__dirname, '../../config/dictionary/en-us'),
+    },
+  },
     consoleInputOptionsDefinitions: [
         { name: 'help',        alias: 'h', type: Boolean },
         { name: 'all',         alias: 'a', type: Boolean },
@@ -22,7 +32,7 @@ module.exports = {
         { name: 'input',       alias: 'i', type: String  },
         { name: 'file',        alias: 'f', type: Boolean },
         { name: 'progressbar', alias: 'p', type: Boolean },
-        { name: 'guides',      alias: 'g', type: Boolean },  
+        { name: 'guides',      alias: 'g', type: Boolean },
     ],
     inquirer: {
         foldersOptions,

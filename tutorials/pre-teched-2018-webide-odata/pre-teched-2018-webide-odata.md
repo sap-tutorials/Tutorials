@@ -3,7 +3,7 @@ title: Change from a mock server to live OData service for TechEd
 description: Connect to a live backend system for your application
 auto_validation: true
 primary_tag: topic>sapui5
-tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide  ]
+tags: [ tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide  ]
 ---
 
 ## Prerequisites  

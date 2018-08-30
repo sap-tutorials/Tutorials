@@ -1,5 +1,5 @@
 ---
-title: Creating Multi-Store Tables
+title: Create Multi-Store Tables
 description: Learn about multi-store tables, partition types, and create a multi-store table
 auto_validation: true
 primary_tag: products>sap-hana-dynamic-tiering

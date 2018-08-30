@@ -150,7 +150,7 @@ From the menu options, select **Run > Run as > Web Application**.
 
 ![right click path for selecting run as web application](22.png)
 
-If prompted, select `testFLPServiceMockService.html` as the file to run. Click **OK**.
+If prompted, select `testFLPServiceMockServer.html` as the file to run. Click **OK**.
 
 ![file selection in prompt](23.png)
 
