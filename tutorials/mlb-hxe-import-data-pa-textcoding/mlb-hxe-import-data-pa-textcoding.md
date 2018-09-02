@@ -4,6 +4,7 @@ description: Import SAP Predictive Analytics Text Coding Sample Datasets in your
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 10
 ---
 
 ## Prerequisites  
@@ -16,8 +17,7 @@ In this tutorial, you will learn how to download and import the SAP Predictive A
 
 ## Details
 
-### Time to Complete
-**10 Min**.
+---
 
 [ACCORDION-BEGIN [Info: ](Sample file structure)]
 

@@ -4,28 +4,19 @@ description: Provide details on the installation the SAP HANA client and instruc
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
+time: 10
 ---
-## Prerequisites  
-- Proficiency: intermediate
 
+## Details
 ### You will learn
+  - How to install the SAP HANA client for SAP HANA, express edition
+  - How to connect your SAP HANA, express edition instance using the SAP HANA HDBSQL tool
 
-In this tutorial, you will install the SAP HANA client for SAP HANA, express edition.
-
-Then, you will learn how to connect your SAP HANA, express edition instance using the SAP HANA HDBSQL tool.
-
-SAP HANA HDBSQL is a command line tool for executing commands on SAP HANA databases.
-
-The HDBSQL tools support an interactive mode, a non-interactive mode and a file mode.
-
-HDBSQL provide a large number of features like variable substitution, use of input and output files, formatting options etc.
+SAP HANA HDBSQL is a command line tool for executing commands on SAP HANA databases. The HDBSQL tools support an interactive mode, a non-interactive mode, and a file mode. HDBSQL provide a large number of features like variable substitution, use of input and output files, formatting options, and more.
 
 For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
 
-## Details
-
-### Time to Complete
-**10 Min**.
+---
 
 [ACCORDION-BEGIN [Prerequisites: ](Download & Install the SAP HANA HDB client)]
 
