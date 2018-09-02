@@ -1,20 +1,15 @@
 ---
-title: Create workflow project from template
+title: Create a Workflow Project from a Template
 description: Create a new workflow project in SAP Cloud Platform using SAP Web IDE.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform ]
+time: 5
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn  
-- To create a project for your workflow in the SAP Web IDE Full-Stack.
-- To deploy this project to the SAP Cloud Platform.
-
-### Time to Complete
-**5 Min**
+  - How to create a project for your workflow in the SAP Web IDE Full-Stack.
+  - How to deploy this project to the SAP Cloud Platform.
 
 ---
 
@@ -45,18 +40,17 @@ tags: [  tutorial>beginner, products>sap-cloud-platform ]
    You should now see a project with a workflow file in your workspace:
 ![Workflow Project](workflow-project.png)
 
-> Note: If there are layout issues with the editor window (can't see the properties), simply refresh the SAP Web IDE window (F5).
+> If there are layout issues with the editor window (can't see the properties), simply refresh the SAP Web IDE window (F5).
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Deploy your workflow)]
 1. Select the workflow file in the workspace.
-    > Note: Make sure that you really selected the file and not the project.
+    >Make sure that you really selected the file and not the project.
 2. Open the context menu by right-clicking on the project, and select **Deploy** | **Deploy to SAP Cloud Platform Workflow**.
 ![Deploy Workflow](deploy-workflow.png)
 In the top right corner, you see a success notification.
-
-  ![Deploy Notification](deploy-notification.png)
+![Deploy Notification](deploy-notification.png)
 
 [ACCORDION-END]
 
