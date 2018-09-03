@@ -48,7 +48,7 @@ headers: {
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Insert the IP addres)] ￼
+[ACCORDION-BEGIN [Step 2: ](Insert the IP address)] ￼
 
 The function creates an http object with the proper hostname or IP address of your server and the location of your XSODATA file you created. Insert the IP address for your server in this line: `host: 'XX.XX.XX.XX',`
 

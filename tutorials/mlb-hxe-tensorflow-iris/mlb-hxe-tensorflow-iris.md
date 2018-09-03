@@ -85,7 +85,7 @@ def main(unused_argv):
   tf.logging.set_verbosity(tf.logging.INFO)
 
   ####################################################################
-  # Begining of training section
+  # Beginning of training section
   ####################################################################
   # Get the training data
   (train_x, train_y), (test_x, test_y) = iris_data.load_data()
@@ -110,7 +110,7 @@ def main(unused_argv):
   ####################################################################
 
   ####################################################################
-  # Begining of export section
+  # Beginning of export section
   ####################################################################
   # Define the input receiver spec
   feature_spec = {

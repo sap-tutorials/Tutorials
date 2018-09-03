@@ -15,7 +15,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 ## Details
 ### You will learn
 
-- How to create the relevant CDS artefacts to expose your flat files as CDS entities.
+- How to create the relevant CDS artifacts to expose your flat files as CDS entities.
 
 ### Time to Complete
 **15 Min**

@@ -43,7 +43,7 @@ tags: [  tutorial>beginner, topic>html5 ]
     ```
     ![metadata](step-8.png)
 
-    Here properties has just one attribute which is title and it's type is string, aggregations are two buttons with type as button, mutiple tells whether it is a 0...1 aggregation or 0...n aggregation and set visibility as hidden. You will require two events, one for generating captcha and other for validating the generated captcha and your input.
+    Here properties has just one attribute which is title and it's type is string, aggregations are two buttons with type as button, multiple tells whether it is a 0...1 aggregation or 0...n aggregation and set visibility as hidden. You will require two events, one for generating captcha and other for validating the generated captcha and your input.
 
 2. Now the `init` function. As described in the previous tutorial, this is where your initial control is born.
    You will do the initialization here.

@@ -48,7 +48,7 @@ Other database objects also need to be created, such as table types or signature
 
 There are two techniques for calling APL functions, the ***direct technique*** and the ***procedure technique***.
 
-However, since you are working in an **HDI container** with CDS artifacts, you will be creating an ***AFLLANG procedures*** artefacts to surface the APL functions and call them with table types or signature table defined using design time artifacts, like CDS Entities and others.
+However, since you are working in an **HDI container** with CDS artifacts, you will be creating an ***AFLLANG procedures*** artifacts to surface the APL functions and call them with table types or signature table defined using design time artifacts, like CDS Entities and others.
 
 For more details, you can check the [AFL Language Procedures](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/7f630904dfe045beb114a6c25896649f.html) documentation.
 

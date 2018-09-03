@@ -109,7 +109,7 @@ Navigate to the folder named `FlaskWebProject1` and modify the `__init__.py` fil
     def server_error(e):
         #log the error and stacktrace
         logging.exception ('an error occurred during a request.')
-        return 'An internal error occured.', 500
+        return 'An internal error occurred.', 500
 
     if __name__ == '__main__':
       app.run(host='127.0.0.1', port=8080, debug=True)

@@ -25,7 +25,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create tables)]
-This tutorial is a continuation of previous tutorials. It assumes you have created a `TPCH` user with the correct permissions, and logged into the database using this user. On Web IDE, right click the database (should be labelled `<Tenant>@Host(TPCH)`), and select **Open SQL Console**. You can also use the shortcut **Ctrl + Alt + C**.
+This tutorial is a continuation of previous tutorials. It assumes you have created a `TPCH` user with the correct permissions, and logged into the database using this user. On Web IDE, right click the database (should be labeled `<Tenant>@Host(TPCH)`), and select **Open SQL Console**. You can also use the shortcut **Ctrl + Alt + C**.
 
 ![3.1](assets/hana-webide-dt-getting-started-3-3d2ecb5c.png)
 
@@ -288,25 +288,23 @@ You should see the tables we created in the new window. The dynamic tiering tabl
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Script explanation)]
-The key syntax difference when creating a dynamic tiering table is the addition of the `USING EXTENDED STORAGE` clause to the `CREATE TABLE` statement as seen in the picture below. You may also notice that it did not explicitly state that the dynamic tiering tables should be `COLUMN` tables. All dynamic tiering tables are stored as columnar tables, so the use of `CREATE COLUMN TABLE` vs `CREATE TABLE` is optional.
+The key syntax difference when creating a dynamic tiering table is the addition of the `USING EXTENDED STORAGE` clause to the `CREATE TABLE` statement as seen in the picture below. You may also notice that it did not explicitly state that the dynamic tiering tables should be "COLUMN" tables. All dynamic tiering tables are stored as columnar tables, so the use of `CREATE COLUMN TABLE` vs `CREATE TABLE` is optional.
 
-![3.7](assets/hana-webide-dt-getting-started-3-59e87a80.jpg)
+![3.7](assets/hana-webide-dt-getting-started-3-67ef55a2.png)
 
 [DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Download data files and copy to HANA directory)]
-One of the prerequisites of this tutorial is that you have copied the data files onto your SAP HANA system.
-
-Before proceeding, please download the [Data Files](https://s3.amazonaws.com/sapiq/Dynamic+Tiering+Quick+Start+Guide/SAP+HANA+Dynamic+Tiering+Quick+Start+Guide+-+Supporting+Files.zip) zip and decompress it to get the individual data files. These `CSV` data files contains the data for their respective tables and is needed for the import procedure. Copy all the data files into the "`/hana/shared/<SID>/HDB00/work/TPCH_DATA/`" directory on your HANA dynamic tiering host. `<SID>` is your system's System ID. This directory also assumes that you are using instance "00". The actual directory format is: "`/hana/shared/<SID>/HDB<instance_number>/<workspace_name>/TPCH_DATA`" and the typical workspace name is "default".
+One of the prerequisites of this tutorial is that you have copied the data files onto your SAP HANA system. Before proceeding, please download the [Data Files](https://s3.amazonaws.com/sapiq/Dynamic+Tiering+Quick+Start+Guide/SAP+HANA+Dynamic+Tiering+Quick+Start+Guide+-+Supporting+Files.zip) zip and decompress it to get the individual data files. These "`CSV`" data files contains the data for their respective tables and is needed for the import procedure. Copy all the data files into the "`/hana/shared/<SID>/HDB00/work/TPCH_DATA/`" directory on your HANA dynamic tiering host. "`<SID>`" is your system's System ID. For example, the `<SID>` as seen in the pictures in step 1 is `HA1` This directory also assumes that you are using instance "00". The actual directory format is: "`/hana/shared/<SID>/HDB<instance_number>/<workspace_name>/TPCH_DATA`" and the typical workspace name is "default".
 
 [DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Import data into tables)]
-On Web IDE, right click the database (should be labelled `<Tenant>@Host(TPCH)`), and select **Open SQL Console**. You can also use the shortcut **Ctrl + Alt + C**.
+On Web IDE, right click the database (should be labeled `<Tenant>@Host(TPCH)`), and select **Open SQL Console**. You can also use the shortcut **Ctrl + Alt + C**.
 
 ![3.8](assets/hana-webide-dt-getting-started-3-3d2ecb5c.png)
 
@@ -344,7 +342,7 @@ INTO TPCH.PARTSUPP_CS
   WITH THREADS 4 BATCH 10000;
 ```
 
-![3.9](assets/hana-webide-dt-getting-started-3-2a20c60a.jpg)
+![3.9](assets/hana-webide-dt-getting-started-3-0c231bda.png)
 
 Delete the code in the SQL Console. Then copy and paste the script below into the SQL console. Replace "`<SID>`" with your System Id. Then press the play button to import data from the "`CSV`" files in to the extended tables. Verify everything executed successfully.
 
@@ -375,9 +373,7 @@ IMPORT FROM CSV FILE '/hana/shared/<SID>/HDB00/work/TPCH_DATA/PartSupp.csv'
 ```
 ![3.10](assets/hana-webide-dt-getting-started-3-28a6f093.png)
 
-1. In the **Database Explorer** tab, expand to **Catalog** > **TPCH** and click on **Tables**.
-2. Right click any of the tables that appear below, and select **Open Data**.
-3. You should be able to see that the table is not empty and that the table has been successfully imported. Repeat the check for all tables in the Tables folder.
+In the **Database Explorer** tab, expand to **Catalog** > **TPCH** and click on **Tables**. Right click any of the tables that appear below, and select **Open Data**. You should be able to see that the table is not empty and that the table has been successfully imported. Repeat the check for all tables in the Tables folder.
 
 ![3.11](assets/hana-webide-dt-getting-started-3-bb58b257.png)
 

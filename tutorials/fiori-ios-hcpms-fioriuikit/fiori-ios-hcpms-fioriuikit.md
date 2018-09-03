@@ -83,7 +83,7 @@ override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexP
 
 The above code does the following:
 
-First, increase the row hight since the Object Cell is higher than the standard table cell.
+First, increase the row height since the Object Cell is higher than the standard table cell.
 
 Then a reference is created to the Object Cell with identifier `FUIObjectTableViewCell`.
 
