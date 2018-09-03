@@ -1,5 +1,5 @@
 ---
-title: Implementing logic for a Custom Business Object (Bonus Plan)
+title: Implement logic for custom business object (S4/HANA Cloud, ABAP Extensibility)
 description: Implement custom business object logic to control your application
 primary_tag: topic>abap-extensibility
 tags: [  tutorial>beginner, topic>abap-extensibility, topic>cloud, products>sap-s-4hana ]
@@ -37,25 +37,29 @@ Now, as we will implement the logic to set the ID in backend and nowhere else, w
 
 1. Open the business object **Bonus Plan** in Custom Business Objects application
 2. Start Edit Mode by executing the **Edit Draft** action.
-3. Switch to **Fields** section.
+3. **Go to Fields and Logic**.
 4. **Check** the Read-Only box for key field **`ID`**.
 ![Check Read-Only box](CBO_checkReadOnly.png)
-[ACCORDION-END]
+5. Go back via the application's **Back** button.
+![Fiori Application's Back Button](AppBackButton.png)
 
+
+[ACCORDION-END]
 [ACCORDION-BEGIN [Step 2: ](Enable logic implementation)]
 
-1. Switch to **General Information** section.
-2. **Check** the box for **Determination and Validation**
+1. Still editing the custom business object **Bonus Plan**'s definition, **Check** the box for **Determination and Validation**
 ![Check Determination and Validation box](CBO_checkDeterminationAndValidation.png)
-3. **Publish** the business object.
+2. **Publish** the business object definition.
 
 Now you are enabled to implement **determination logic** which is called **after each modification** to a Bonus Plan instance from the UI, as well as **validation logic** which is called **before each save** of an instance.
-[ACCORDION-END]
 
+
+[ACCORDION-END]
 [ACCORDION-BEGIN [Step 3: ](Start logic implementation)]
 For **published** Custom Business Objects **without a Draft version** you can implement logic.
-1. Switch to **Logic** section.
-![Switch to Logic section](CBO_LogicSection.png)
+
+1. **Go to Fields and Logic**
+![Go to Fields and Logic](CBO_go2FieldsAndLogic_detail.png)
 2. Enter the After Modification Event Logic which is a Determination Logic.
 ![Enter After Modification logic](CBO_go2AfterModify.png)
 3. In the logic view you initially see the not editable empty published version.
@@ -63,8 +67,10 @@ Click the **Create Draft** action.
 ![Create Draft of logic implementation](CBO_AfterModifyCreateDraft.png)
 An editable copy of the published version appears left to it. With the **Draft Version** and **Published Version** actions you can decide what coding to see.
 ![View Draft and/or Published Version of logic](CBO_AfterModifyDraftOrPublishedVersion.png)
-[ACCORDION-END]
 
+
+
+[ACCORDION-END]
 [ACCORDION-BEGIN [Step 4: ](Implement After Modification: fix values)]
 Implement After Modification event with following fix value functionality:
 
