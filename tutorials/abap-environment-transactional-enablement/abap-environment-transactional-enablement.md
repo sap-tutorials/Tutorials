@@ -3,6 +3,7 @@ title: Add Transactional Behavior to Your Core Data Service
 description: Create a behavior implementation in SAP Cloud Platform ABAP Environment.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-environment]
+time: 10
 ---
 
 ## Prerequisites  
