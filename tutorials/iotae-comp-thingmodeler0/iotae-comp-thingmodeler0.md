@@ -62,7 +62,7 @@ The property `cpu_usage` is what we want to measure and has
 [ACCORDION-BEGIN [Step 4: ](Thing type `generic_computer_3`)]
 In the Thing Properties Catalog click on the **Thing Modeler** (the button is in the lower right corner).
 
-In the **Thing Types** pane you will see `generic_computer_3` (please do not use generic_computer anymore, for generic_computer ingestion is not working anymore due to a misconfiguration issue) thing type defined with:
+In the **Thing Types** pane you will see `generic_computer_3` (please do not use `generic_computer` anymore, for `generic_computer` ingestion is not working anymore due to a misconfiguration issue) thing type defined with:
  - Basic Data properties from the `Default` set,
  - Measured Values properties from the `resource_sensors_2` set.
 
