@@ -80,7 +80,7 @@ Update the `path` in your `httpOptions` variable file to match your name (e.g. r
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Add funtion to send JSON)] ￼
+[ACCORDION-BEGIN [Step 5: ](Add function to send JSON)] ￼
 
 At the bottom of your JavaScript file, insert the function below. This function that takes your JSON formatted information and sends it via the HTTP connection you established.
 

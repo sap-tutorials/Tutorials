@@ -244,4 +244,4 @@ You will see that the search now also returns results when searching for terms l
 ---
 
 ## Next Steps
-- [Spatial clustering with Hibernate](https://www.sap.com/developer/tutorials/hxe-gcp-hibernate-text-cluster.html)
+- [Spatial clustering with Hibernate](https://www.sap.com/developer/tutorials/hxe-gcp-hibernate-cluster.html)
