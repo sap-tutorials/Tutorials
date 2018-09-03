@@ -1,0 +1,72 @@
+---
+title: Create Developer User in SAP Cloud Platform ABAP environment
+description: Create a developer user with the developer role in SAP Cloud Platform ABAP environment.
+primary_tag: topic>abap-development
+tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+time: 10
+---
+
+## Prerequisites  
+- You must have an administrator user.
+
+## Details
+### You will learn
+- How to create an employee user
+- How to assign business roles to an employee user
+
+In this tutorial, wherever `xxx` appears, use a number (e.g. `000`).
+
+### Time to Complete
+**10 Min**.
+
+
+---
+[ACCORDION-BEGIN [Step 1: ](Log in to SAP Fiori launchpad as administrator)]
+
+Log in with admin user to the SAP Fiori launchpad.
+![Login to Fiori](Picture1.png)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 2: ](Navigate to Maintain Employees application)]
+
+Navigate to **Maintain Employees** application.
+![Maintain Employees](Picture2.png)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Create a new employee)]
+
+Create a new employee by clicking **New**.
+![Create a new employee](Picture3.png)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 4: ](Enter user data)]
+
+1. Enter user data and a valid Email address.
+2. **Save** your changes.
+![Enter user data](Picture4.png)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Create business user)]
+
+1. Select the newly created entry in the employee list.
+2. Press **Create Business User**.
+![Create business user](Picture5.png)
+
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Add business roles)]
+
+1. Press **Add** Business Roles.
+![Add business Roles](Picture6.png)
+2. Select business role **Developer** and press **OK**.
+![Add business Roles](Picture7.png)
+3. Save all changes with click on **Save**.
+![save](Picture8.png)
+
+[ACCORDION-END]
+
+---
