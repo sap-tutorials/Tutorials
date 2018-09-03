@@ -13,7 +13,6 @@ const generateReport = (result, errors) => result.split(/\r?\n/)
   .filter(err => !!err.trim())
   .map((err, index) => {
     err = err.trim();
-    console.log(err);
     if (err) {
       return {
         line: err.split('|')[0].trim(),
