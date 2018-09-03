@@ -103,7 +103,7 @@ Open the URL <https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/ap
     |scope|Scope of the package (public, private, and tenant)|
     |services|Indicates thing service or event service|
 
-  7. You can create a thing instance for the thing type `generic_computer` in the next step.
+  7. You can create a thing instance for the thing type `generic_computer_3` in the next step.
 
     >**Note**: At rare instances, the method displays `200-OK` but without a response payload. In such scenario, ensure to redo Step 1.
 
@@ -115,12 +115,12 @@ Open the URL <https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/ap
 To create data for a thing, you must identify the property set type that is used to define property sets for a thing type.	Firstly, read details of a thing type and then read details of a property set type.
 
 1. In Postman, choose the **GET** method.
-2. Enter the following request URL: `https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Configuration/ThingTypes('sap.iotaehandson2.computeriotdevice:generic_computer')`
+2. Enter the following request URL: `https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Configuration/ThingTypes('sap.iotaehandson2.computeriotdevice:generic_computer_3')`
 3. Click the **Send** button. Thing type details are retrieved.
 
     ```json
     {
-        "name": "sap.iotaehandson2.computeriotdevice:generic_computer",
+        "name": "sap.iotaehandson2.computeriotdevice:generic_computer_3",
         "description": {
             "en": "Generic computer"
         },
@@ -150,7 +150,7 @@ To create data for a thing, you must identify the property set type that is used
     }
     ```
 
-4. To read details of a property set type `sap.iotaehandson2.computeriotdevice:resource_sensors` defined for the thing type `sap.iotaehandson2.computeriotdevice:generic_computer`, enter the following request URL: `https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Configuration/PropertySetTypes('sap.iotaehandson2.computeriotdevice:resource_sensors_2')`
+4. To read details of a property set type `sap.iotaehandson2.computeriotdevice:resource_sensors` defined for the thing type `sap.iotaehandson2.computeriotdevice:generic_computer_3`, enter the following request URL: `https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Configuration/PropertySetTypes('sap.iotaehandson2.computeriotdevice:resource_sensors_2')`
 5. Click the **Send** button.
 Property set type details retrieved. You can use the property `cpu_usage` to create data for a thing.
 
@@ -214,7 +214,7 @@ Object group is a technical object used for assigning object-based authorization
     "en": "pDevice00"
 },
 "_thingType": [
-    "sap.iotaehandson2.computeriotdevice:generic_computer"
+    "sap.iotaehandson2.computeriotdevice:generic_computer_3"
 ],
 "_objectGroup": "C6484A9DC2274E4A87BCED73AAEA8650"
 }
@@ -241,7 +241,7 @@ Thing details are retrieved and displayed in the response payload.
         "en": "pDevice00"
     },
     "_thingType": [
-        "sap.iotaehandson2.computeriotdevice:generic_computer"
+        "sap.iotaehandson2.computeriotdevice:generic_computer_3"
     ],
     "_objectGroup": "C6484A9DC2274E4A87BCED73AAEA8650"
 }
@@ -254,12 +254,12 @@ Thing details are retrieved and displayed in the response payload.
 Using API endpoints is one of the ways to directly ingest data for a thing. Alternatively, using device management too you can ingest data for a thing.
 
 1. In Postman, choose the **PUT** method.
-2. Enter the following request URL: `https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Things('6FD61AF611ED4357A20E2FC56B7CFB2E')/sap.iotaehandson2.computeriotdevice:generic_computer/resource_sensors_2`
+2. Enter the following request URL: `https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Things('6FD61AF611ED4357A20E2FC56B7CFB2E')/sap.iotaehandson2.computeriotdevice:generic_computer_3/resource_sensors_2`
 
     | Field | Description |
     |------|--------------|
     |Thing ID|`6FD61AF611ED4357A20E2FC56B7CFB2E`|
-    |Thing Type|`sap.iotaehandson2.computeriotdevice:generic_computer`|
+    |Thing Type|`sap.iotaehandson2.computeriotdevice:generic_computer_3`|
     |Property Set|`resource_sensors_2`|
     |Property|`cpu_usage`|
 
@@ -290,7 +290,7 @@ A numeric value is created for the property `cpu_usage` with time stamp for the 
 [ACCORDION-BEGIN [Step 6: ](Read time series data)]
 1. In Postman, choose the **GET** method.
 2. Enter the following request URL:
-    `https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Things('6FD61AF611ED4357A20E2FC56B7CFB2E')/sap.iotaehandson2.computeriotdevice:generic_computer/resource_sensors_2?timerange=1D`
+    `https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Things('6FD61AF611ED4357A20E2FC56B7CFB2E')/sap.iotaehandson2.computeriotdevice:generic_computer_3/resource_sensors_2?timerange=1D`
     Data is requested for a time range=1 day. The other possible values are:
 
       - #M - For the specified number months
