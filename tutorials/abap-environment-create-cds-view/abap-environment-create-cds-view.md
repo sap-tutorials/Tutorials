@@ -1,14 +1,13 @@
 ---
 title: Create and Expose a Core Data Service Based on a Database Table
-description: Build a List Report App with the ABAP RESTful Programming Model for SAP Fiori
+description: Build a list report app with the ABAP RESTful programming model for SAP Fiori.
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-environment ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 10
 ---
 
 ## Prerequisites  
 - SAP Cloud Platform ABAP environment user
-- Tutorial: Create Simple Database Table for ABAP Environment
 - Business Catalog `SAP_CORE_BC_EXT_TST` assigned to your business user
 - Initial development setup
 
@@ -193,11 +192,10 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 1. Search for **service definition**, select the appropriate entry and click **Next**.
 ![Create service definition](service.png)
 
-2. Create a Service definition:
+2. Create a service definition and cal it **`Z_I_BOOKING_XXX`**.
+    >You may replace **`XXX`** with a number of your choice (e.g. 001).
 
- - Name: **`Z_I_BOOKING_XXX`**
-You may replace **`XXX`** with a number of your choice (e.g. 001).
-![Create service definition](service2.png)
+    ![Create service definition](service2.png)
 
 3. Click **Finish** to complete your transport request.
 ![Create service definition](transport2.png)
@@ -208,7 +206,7 @@ You may replace **`XXX`** with a number of your choice (e.g. 001).
 Expose the **`Z_I_Booking`** and the **`I_Country`** view entities.
 ![Expose entities](expose.png)
 
-Save and active your service definition.
+Save and activate your service definition.
 
 [ACCORDION-END]
 
@@ -222,10 +220,10 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 1. Search for **service binding**, select the appropriate entry and click **Next**.
 ![Create service binding](binding.png)
 
-2. Create a service binding definition:
-- Name: **`Z_I_BOOKING_XXX`**
-You may replace **`XXX`** with a number of your choice (e.g. 001).
-![Create service binding](binding2.png)
+2. Create a service binding definition and call it **`Z_I_BOOKING_XXX`**.
+    >You may replace **`XXX`** with a number of your choice (e.g. 001).
+
+    ![Create service binding](binding2.png)
 
 3. Click **Finish** to complete your transport request.
 ![Create service binding](binding3.png)
@@ -251,13 +249,13 @@ Click **Publish Locally** to publish your service binding.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Open Fiori Element View)]
+[ACCORDION-BEGIN [Step 12: ](Open SAP Fiori elements view)]
 1. Go back to your service binding **`Z_I_BOOKING_XXX`**
-   Open the preview for Fiori Elements App on the right side.
-   ![Open Fiori Element View](fiori.png)
+   Open the preview for SAP Fiori elements app on the right side.
+   ![Open SAP Fiori elements view](fiori.png)
 
 2. Check your result:
-   ![Open Fiori Element View](fiori2.png)
+   ![Open SPA Fiori elements view](fiori2.png)
 
 [ACCORDION-END]
 
@@ -277,10 +275,11 @@ Click **Publish Locally** to publish your service binding.
 2. Select **List Report Application** and click **Next**.
  ![Create SAP Fiori List Report Application](template2.png)
 3. Insert following data to your list report application and click **Next**:
-![Create SAP Fiori List Report Application](template3.png)
-- Project Name: **`Project_App_XXX`**
-- Title: **My Application**
-- Application Component Hierarchy: **`<your_component_hierachy>`**
+    ![Create SAP Fiori List Report Application](template3.png)
+
+    - Project Name: **`Project_App_XXX`**
+    - Title: **My Application**
+    - Application Component Hierarchy: **`<your_component_hierachy>`**
 
 4. Click on **Service Catalog** and choose your system, which has already been created with your initial system setup. Search for your service **`Z_I_BOOKING_XXX`**, select it and click **Next**.
 ![Create SAP Fiori List Report Application](template4.png)

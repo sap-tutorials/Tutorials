@@ -2,7 +2,7 @@
 title: Create Your First ABAP Console Application
 description: Create an ABAP class and ABAP package in Eclipse to run your application console in SAP Cloud Platform ABAP environment.
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-environment]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
 time: 5
 ---
 

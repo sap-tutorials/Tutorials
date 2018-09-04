@@ -2,13 +2,12 @@
 title: Add Transactional Behavior to Your Core Data Service
 description: Create a behavior implementation in SAP Cloud Platform ABAP Environment.
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-environment]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform]
 time: 10
 ---
 
 ## Prerequisites  
 - SAP Cloud Platform ABAP environment User
-- Tutorial: Create and Expose a Core Data Service Based on a Database Table
 - Business Catalog `SAP_CORE_BC_EXT_TST` assigned to your business user
 - Initial development setup
 
@@ -20,7 +19,7 @@ time: 10
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
-Go to your ABAP package created in tutorial: **`Build a List Report App with the ABAP RESTful Programming Model for SAP Fiori`** and open your data definition **`ZI_BOOKING_XXX`** to add following statement: **`root`**
+Go to your ABAP package created in [Create and Expose a Core Data Service Based on a Database Table](https://www.sap.com/developer/tutorials/abap-environment-create-cds-view.html) and open your data definition **`ZI_BOOKING_XXX`** to add the following statement: **`root`**
 ![Open Eclipse](eclipse.png)
 
 Save and activate.
@@ -49,9 +48,9 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Implement behavior definition)]
-Provide an alias (booking) and specify the lock master.
+Provide an alias (`booking`) and specify the lock master.
 Define the table field **`LastChangedAt`** for the `etag` handling.
-Add also following operations:
+Add the following operations:
 
 - create
 - update
@@ -77,28 +76,29 @@ Save and activate.
 1. Go to the bottom of the class editor and click on the **Global Class** tab
 ![Enhance local class](code.png)
 
-2. Go* to the bottom of the class editor and click on the **Local Types** tab. This is the place the proper implementation of the behavior definition shall be implemented. In the unmanaged approach, you as developer are responsible for the complete transactional handling.
+2. Go to the bottom of the class editor and click on the **Local Types** tab. This is the place the proper implementation of the behavior definition shall be implemented. In the unmanaged approach, you as developer are responsible for the complete transactional handling.
 ![Enhance local class](code2.png)
 
 3. Define a data buffer at the top of the editor by defining the local class **`lcl_buffer`** as shown on the screenshot. You can use the source code provided below:
 ![Enhance local class](code3.png)
 
-```swift
-CLASS lcl_buffer DEFINITION.
-* 1) define the data buffer  
-  PUBLIC SECTION.
+    ```swift
+    CLASS lcl_buffer DEFINITION.
+    * 1) define the data buffer  
+      PUBLIC SECTION.
 
-    TYPES: BEGIN OF ty_buffer.
-        INCLUDE TYPE   ztbooking_xxx AS data.
-    TYPES: flag TYPE c LENGTH 1,
-           END OF ty_buffer.
+        TYPES: BEGIN OF ty_buffer.
+            INCLUDE TYPE   ztbooking_xxx AS data.
+        TYPES: flag TYPE c LENGTH 1,
+               END OF ty_buffer.
 
-    TYPES tt_bookings TYPE SORTED TABLE OF ty_buffer WITH UNIQUE KEY booking.
+        TYPES tt_bookings TYPE SORTED TABLE OF ty_buffer WITH UNIQUE KEY booking.
 
-    CLASS-DATA mt_buffer TYPE tt_bookings.
-ENDCLASS.
-```
-Add also the final statement to your **`lcl_handler`** class.
+        CLASS-DATA mt_buffer TYPE tt_bookings.
+    ENDCLASS.
+    ```
+
+    Add also the final statement to your **`lcl_handler`** class.
 
 4. Enhance the definition of the local class **`lcl_handler`**. Enhance the parameter interface of the method modify with importing parameters **`roots_to_create`**, **`roots_to_update`** and **`roots_to_delete`** for the different operations. Add the read method.
 ![Enhance local class](code4.png)
@@ -107,123 +107,123 @@ Add also the final statement to your **`lcl_handler`** class.
 [ACCORDION-BEGIN [Step 7: ](Implement methods in handler class)]
 1. Implement the modify method in your **`lcl_handler`** implementation class.
 
-```swift
-" handle delete
-    LOOP AT roots_to_delete INTO DATA(ls_delete).
-      " check for content id (%cid) handling
-      IF ls_delete-booking IS INITIAL.
-        ls_delete-booking = mapped-booking[ %cid = ls_delete-%cid_ref ]-booking.
-      ENDIF.
+    ```swift
+    " handle delete
+        LOOP AT roots_to_delete INTO DATA(ls_delete).
+          " check for content id (%cid) handling
+          IF ls_delete-booking IS INITIAL.
+            ls_delete-booking = mapped-booking[ %cid = ls_delete-%cid_ref ]-booking.
+          ENDIF.
 
-      READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_delete-booking ASSIGNING <ls_buffer>.
-      IF sy-subrc = 0.
-        " already in buffer, check why
-        IF <ls_buffer>-flag = 'C'.
-          "delete after create => just remove from buffer
-          DELETE TABLE lcl_buffer=>mt_buffer WITH TABLE KEY booking = ls_delete-booking.
-        ELSE.
-          <ls_buffer>-flag = 'D'.
-        ENDIF.
-      ELSE.
-        " not yet in buffer.
-        "TODO read from DB and raise error it does not exist...
-        INSERT VALUE #( flag = 'D' booking = ls_delete-booking ) INTO TABLE lcl_buffer=>mt_buffer.
-      ENDIF.
-    ENDLOOP.
-```
+          READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_delete-booking ASSIGNING <ls_buffer>.
+          IF sy-subrc = 0.
+            " already in buffer, check why
+            IF <ls_buffer>-flag = 'C'.
+              "delete after create => just remove from buffer
+              DELETE TABLE lcl_buffer=>mt_buffer WITH TABLE KEY booking = ls_delete-booking.
+            ELSE.
+              <ls_buffer>-flag = 'D'.
+            ENDIF.
+          ELSE.
+            " not yet in buffer.
+            "TODO read from DB and raise error it does not exist...
+            INSERT VALUE #( flag = 'D' booking = ls_delete-booking ) INTO TABLE lcl_buffer=>mt_buffer.
+          ENDIF.
+        ENDLOOP.
+    ```
 
 2. Add also following code to your **`lcl_handler`** implementation class.
 
-```swift
-" handle create
-IF roots_to_create IS NOT INITIAL.
-  " if there are creates, then we need to know the maximum booking number.
-  SELECT SINGLE MAX( booking ) FROM ztbooking_xxx INTO @DATA(lv_max_booking).
-ENDIF.
+    ```swift
+    " handle create
+    IF roots_to_create IS NOT INITIAL.
+      " if there are creates, then we need to know the maximum booking number.
+      SELECT SINGLE MAX( booking ) FROM ztbooking_xxx INTO @DATA(lv_max_booking).
+    ENDIF.
 
-LOOP AT roots_to_create INTO DATA(ls_create).
-  " next booking number
-  ADD 1 TO lv_max_booking.
-  ls_create-%data-booking = lv_max_booking.
-  GET TIME STAMP FIELD DATA(zv_tsl).
-  ls_create-%data-lastchangedat = zv_tsl.  "Handle field LastChangedAt
+    LOOP AT roots_to_create INTO DATA(ls_create).
+      " next booking number
+      ADD 1 TO lv_max_booking.
+      ls_create-%data-booking = lv_max_booking.
+      GET TIME STAMP FIELD DATA(zv_tsl).
+      ls_create-%data-lastchangedat = zv_tsl.  "Handle field LastChangedAt
 
-  " insert as created into buffer
-  INSERT VALUE #( flag = 'C' data = CORRESPONDING #( ls_create-%data ) ) INTO TABLE lcl_buffer=>mt_buffer.
+      " insert as created into buffer
+      INSERT VALUE #( flag = 'C' data = CORRESPONDING #( ls_create-%data ) ) INTO TABLE lcl_buffer=>mt_buffer.
 
-  " tell framework about new key if a content id (%cid) is used.:
-  IF ls_create-%cid IS NOT INITIAL.
-    INSERT VALUE #( %cid = ls_create-%cid  booking = ls_create-booking ) INTO TABLE mapped-booking.
-  ENDIF.
-ENDLOOP.
-```
+      " tell framework about new key if a content id (%cid) is used.:
+      IF ls_create-%cid IS NOT INITIAL.
+        INSERT VALUE #( %cid = ls_create-%cid  booking = ls_create-booking ) INTO TABLE mapped-booking.
+      ENDIF.
+    ENDLOOP.
+    ```
 
 3. Create a handle update by adding following coding:
 
-```swift
-" handle update
-IF roots_to_update IS NOT INITIAL.
-  LOOP AT roots_to_update INTO DATA(ls_update).
-    " check for content id (%cid) handling
-    IF ls_update-booking IS INITIAL.
-      ls_update-booking = mapped-booking[ %cid = ls_update-%cid_ref ]-booking.
+    ```swift
+    " handle update
+    IF roots_to_update IS NOT INITIAL.
+      LOOP AT roots_to_update INTO DATA(ls_update).
+        " check for content id (%cid) handling
+        IF ls_update-booking IS INITIAL.
+          ls_update-booking = mapped-booking[ %cid = ls_update-%cid_ref ]-booking.
+        ENDIF.
+
+        " search in buffer
+        READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_update-booking ASSIGNING FIELD-SYMBOL(<ls_buffer>).
+        IF sy-subrc <> 0.
+          " not yet in buffer, read from table
+
+          SELECT SINGLE * FROM ztbooking_xxx WHERE booking = @ls_update-booking INTO @DATA(ls_db).
+          "TODO raise error it does not exist...
+
+          INSERT VALUE #( flag = 'U' data = ls_db ) INTO TABLE lcl_buffer=>mt_buffer ASSIGNING <ls_buffer>.
+        ENDIF.
+
+        IF ls_update-%control-customername IS NOT INITIAL..
+          <ls_buffer>-customername = ls_update-customername.
+        ENDIF.
+        IF ls_update-%control-cost  IS NOT INITIAL..
+          <ls_buffer>-cost = ls_update-cost.
+        ENDIF.
+        IF ls_update-%control-dateoftravel   IS NOT INITIAL..
+          <ls_buffer>-dateoftravel  = ls_update-dateoftravel .
+        ENDIF.
+        IF ls_update-%control-currencycode  IS NOT INITIAL..
+          <ls_buffer>-currencycode = ls_update-currencycode.
+        ENDIF.
+        " TODO ....  same for the other fields ....        
+        GET TIME STAMP FIELD DATA(zv_tsl2).
+        <ls_buffer>-lastchangedat = zv_tsl2. "handling for field LastChangedAt (for eTag)
+      ENDLOOP.
     ENDIF.
 
-    " search in buffer
-    READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_update-booking ASSIGNING FIELD-SYMBOL(<ls_buffer>).
-    IF sy-subrc <> 0.
-      " not yet in buffer, read from table
-
-      SELECT SINGLE * FROM ztbooking_xxx WHERE booking = @ls_update-booking INTO @DATA(ls_db).
-      "TODO raise error it does not exist...
-
-      INSERT VALUE #( flag = 'U' data = ls_db ) INTO TABLE lcl_buffer=>mt_buffer ASSIGNING <ls_buffer>.
-    ENDIF.
-
-    IF ls_update-%control-customername IS NOT INITIAL..
-      <ls_buffer>-customername = ls_update-customername.
-    ENDIF.
-    IF ls_update-%control-cost  IS NOT INITIAL..
-      <ls_buffer>-cost = ls_update-cost.
-    ENDIF.
-    IF ls_update-%control-dateoftravel   IS NOT INITIAL..
-      <ls_buffer>-dateoftravel  = ls_update-dateoftravel .
-    ENDIF.
-    IF ls_update-%control-currencycode  IS NOT INITIAL..
-      <ls_buffer>-currencycode = ls_update-currencycode.
-    ENDIF.
-    " TODO ....  same for the other fields ....        
-    GET TIME STAMP FIELD DATA(zv_tsl2).
-    <ls_buffer>-lastchangedat = zv_tsl2. "handling for field LastChangedAt (for eTag)
-  ENDLOOP.
-ENDIF.
-
-```
+    ```
 4. Implement the method read in your **`lcl_handler`** implementation class. Save your changes.
 
-```swift
-METHOD read.
-  LOOP AT it_booking_key INTO DATA(ls_booking_key).
-    " check if it is in buffer (and not deleted).
-    READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_booking_key-booking INTO DATA(ls_booking).
-    IF sy-subrc = 0 AND ls_booking-flag <> 'U'.
-      INSERT CORRESPONDING #( ls_booking-data ) INTO TABLE et_booking.
-    ELSE.
-      SELECT SINGLE * FROM ztbooking_xxx WHERE booking = @ls_booking_key-booking INTO @DATA(ls_db).
-      IF sy-subrc = 0.
-        INSERT CORRESPONDING #( ls_db ) INTO TABLE et_booking.
-      ELSE.
-        INSERT VALUE #( booking = ls_booking_key-booking ) INTO TABLE failed-booking.
-      ENDIF.
-    ENDIF.
-  ENDLOOP.
-ENDMETHOD.
-ENDCLASS.
-```
+    ```swift
+    METHOD read.
+      LOOP AT it_booking_key INTO DATA(ls_booking_key).
+        " check if it is in buffer (and not deleted).
+        READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_booking_key-booking INTO DATA(ls_booking).
+        IF sy-subrc = 0 AND ls_booking-flag <> 'U'.
+          INSERT CORRESPONDING #( ls_booking-data ) INTO TABLE et_booking.
+        ELSE.
+          SELECT SINGLE * FROM ztbooking_xxx WHERE booking = @ls_booking_key-booking INTO @DATA(ls_db).
+          IF sy-subrc = 0.
+            INSERT CORRESPONDING #( ls_db ) INTO TABLE et_booking.
+          ELSE.
+            INSERT VALUE #( booking = ls_booking_key-booking ) INTO TABLE failed-booking.
+          ENDIF.
+        ENDIF.
+      ENDLOOP.
+    ENDMETHOD.
+    ENDCLASS.
+    ```
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Implement method in saver class)]
-1. Implement the method save of the local class **`lcl_saver`**.
+Implement the method save of the local class **`lcl_saver`**.
 
 ```swift
 METHOD save.  "to be implemented:  CREATE, UPDATE, DELETE on DB (zwischenspeichern im member
@@ -254,7 +254,7 @@ Save and activate your code.
 
 [ACCORDION-BEGIN [Step 9: ](Check result)]
 
-1. This is how your complete source code should look like (local types):
+This is how your complete source code should look like (local types):
 
 ```swift
 CLASS lcl_buffer DEFINITION.
@@ -406,7 +406,7 @@ ENDCLASS.
 
 ```
 
-2. Refresh and test your application in the browser. Now you are able to delete, add and edit objects in your application.
+Refresh and test your application in the browser. Now you are able to delete, add and edit objects in your application.
 ![Check result](result.png)
 
 [ACCORDION-END]

@@ -2,7 +2,7 @@
 title: Create a UI that Consumes an Exposed ABAP Service
 description: Use SAP Web IDE Full-Stack to create a UI for an ABAP service in SAP Cloud Platform ABAP environment.
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 15
 ---
 

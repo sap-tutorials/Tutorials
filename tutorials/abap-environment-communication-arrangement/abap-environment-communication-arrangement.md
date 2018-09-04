@@ -2,7 +2,7 @@
 title: Maintain a Communication Arrangement for an Exposed Service
 description: Create a communication user and a communication system for a CDS service in SAP Cloud Platform ABAP environment.
 primary_tag: topic>abap-development
-tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+tags: [  tutorial>beginner, topic>abap-development, products>sap-cloud-platform ]
 time: 15
 ---
 
