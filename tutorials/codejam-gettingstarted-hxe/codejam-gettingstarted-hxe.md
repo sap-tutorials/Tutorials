@@ -3,6 +3,7 @@ title: SAP CodeJam Getting Started with SAP HANA, express edition
 description: Links, tips, tricks and more for getting started with the SAP HANA, express edition
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>how-to, tutorial>beginner, tutorial>intermediate, products>sap-hana, products>sap-hana\,-express-edition  ]
+time: 360
 ---
 ## Prerequisites  
  - **Systems used:** SAP HANA 1.00 SPS12, SAP HANA 2.00 SPS00, SAP HANA 2.00 SPS01, SAP HANA 2 SPS02 - SAP HANA, express edition
@@ -11,9 +12,6 @@ tags: [  tutorial>how-to, tutorial>beginner, tutorial>intermediate, products>sap
 ## How-To Details
 The following will document links, tips and tricks and more related to the SAP CodeJam Getting Started with SAP HANA, express edition event.
 
-
-### Time to Complete
-**5 to 6 Hours**.
 
 ---
 

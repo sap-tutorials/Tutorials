@@ -4,6 +4,7 @@ description: Provide details on the installation and configuration of the SAP HA
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
+time: 120
 ---
 
 ## Prerequisites  
@@ -21,8 +22,7 @@ Finally, you will learn how to configure your SAP HANA, express edition instance
 
 ## Details
 
-### Time to Complete
-**20 to 120 Min**.
+---
 
 [ACCORDION-BEGIN [Info: ](SAP HANA External Machine Learning Library)]
 
