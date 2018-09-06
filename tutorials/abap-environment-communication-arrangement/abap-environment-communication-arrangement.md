@@ -1,4 +1,5 @@
 ---
+auto_validation: true 
 title: Maintain a Communication Arrangement for an Exposed Service
 description: Create a communication user and a communication system for a CDS service in SAP Cloud Platform ABAP environment.
 primary_tag: topic>abap-development
@@ -24,6 +25,7 @@ In this tutorial, wherever `xxx` appears, use a number (e.g. `000`).
 2. Navigate to  **Communication Management**.
 ![Communication Manager](Picture2.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -34,6 +36,7 @@ In this tutorial, wherever `xxx` appears, use a number (e.g. `000`).
 2. Create a new user by clicking **New**.
 ![click on New](Picture4.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -44,6 +47,7 @@ In this tutorial, wherever `xxx` appears, use a number (e.g. `000`).
 3. Click **Create**.
 ![Add Communication User data](Picture5.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -54,6 +58,7 @@ In this tutorial, wherever `xxx` appears, use a number (e.g. `000`).
 2. Create a new communication system by clicking **New**.
 ![click on New button](Picture7.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -64,6 +69,7 @@ In this tutorial, wherever `xxx` appears, use a number (e.g. `000`).
 A new communication system will be registered.
 ![Add system ID](Picture8.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -75,6 +81,7 @@ A new communication system will be registered.
 ![Add data](Picture9.png)
 ![Add communication user](Picture10.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -85,6 +92,7 @@ A new communication system will be registered.
 2. Create a new communication arrangement by clicking **New**.
 ![click on new](Picture12.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -93,6 +101,7 @@ A new communication system will be registered.
 Select your scenario and click on **Create**.
 ![Select Scenario](Picture13.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -103,6 +112,7 @@ Select your scenario and click on **Create**.
 3. Click **Save**.
 ![Enter Data](Picture14.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -111,9 +121,15 @@ Select your scenario and click on **Create**.
 1. Paste your service URL in a browser or in Postman.
 2. Use the communication user and password.
 3. Check if you can connect to the service and there is no error.
-
 ![check Service](Picture15.png)
+![check Service](Picture16.png)
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 11: ](Test yourself)]
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 ---

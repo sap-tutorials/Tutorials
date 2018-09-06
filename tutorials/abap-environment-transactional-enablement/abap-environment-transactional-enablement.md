@@ -1,4 +1,5 @@
 ---
+auto_validation: true
 title: Add Transactional Behavior to Your Core Data Service
 description: Create a behavior implementation in SAP Cloud Platform ABAP Environment.
 primary_tag: topic>abap-development
@@ -15,6 +16,7 @@ time: 10
 ### You will learn
 - How to define a behavior implementation
 
+In this tutorial, wherever `xxx` appears, use a number (e.g. `000`).
 
 ---
 
@@ -24,12 +26,14 @@ Go to your ABAP package created in [Create and Expose a Core Data Service Based 
 
 Save and activate.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Open other repository object)]
 Right-click on your package and navigate to **New** > **Other ABAP Repository Object** from the appearing context menu.
 ![Open other repository object](object.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create behavior definition)]
@@ -45,6 +49,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 4. Check result. An empty behavior definition for unmanaged implementation is created.
 ![Create behavior definition](unmanaged.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Implement behavior definition)]
@@ -59,6 +64,8 @@ Add the following operations:
 ![Implement behavior definition](etag.png)
 
 Save and activate.
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create behavior implementation)]
@@ -70,6 +77,8 @@ Save and activate.
 
 3. Provide a transport request if required and click **Finish**.
 ![Create behavior implementation](transport.png)
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Enhance local class)]
@@ -102,6 +111,8 @@ Save and activate.
 
 4. Enhance the definition of the local class **`lcl_handler`**. Enhance the parameter interface of the method modify with importing parameters **`roots_to_create`**, **`roots_to_update`** and **`roots_to_delete`** for the different operations. Add the read method.
 ![Enhance local class](code4.png)
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Implement methods in handler class)]
@@ -220,6 +231,8 @@ Save and activate.
     ENDMETHOD.
     ENDCLASS.
     ```
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Implement method in saver class)]
@@ -250,163 +263,177 @@ METHOD save.  "to be implemented:  CREATE, UPDATE, DELETE on DB (zwischenspeiche
 ```
 
 Save and activate your code.
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Check result)]
 
-This is how your complete source code should look like (local types):
+1. This is how your complete source code should look like (local types):
 
-```swift
-CLASS lcl_buffer DEFINITION.
-* 1) define the data buffer
-  PUBLIC SECTION.
+    ```swift
+    CLASS lcl_buffer DEFINITION.
+    * 1) define the data buffer
+      PUBLIC SECTION.
 
-    TYPES: BEGIN OF ty_buffer.
-        INCLUDE TYPE   ztbooking_xxx AS data.
-    TYPES: flag TYPE c LENGTH 1,
-           END OF ty_buffer.
+        TYPES: BEGIN OF ty_buffer.
+            INCLUDE TYPE   ztbooking_xxx AS data.
+        TYPES: flag TYPE c LENGTH 1,
+               END OF ty_buffer.
 
-    TYPES tt_bookings TYPE SORTED TABLE OF ty_buffer WITH UNIQUE KEY booking.
+        TYPES tt_bookings TYPE SORTED TABLE OF ty_buffer WITH UNIQUE KEY booking.
 
-    CLASS-DATA mt_buffer TYPE tt_bookings.
-ENDCLASS.
+        CLASS-DATA mt_buffer TYPE tt_bookings.
+    ENDCLASS.
 
-CLASS lcl_handler DEFINITION final INHERITING FROM cl_abap_behavior_handler.
-  PRIVATE SECTION.
-    METHODS modify FOR BEHAVIOR IMPORTING
-      roots_to_create    FOR CREATE booking
-      roots_to_update    FOR UPDATE booking
-      roots_to_delete    FOR DELETE booking.
+    CLASS lcl_handler DEFINITION final INHERITING FROM cl_abap_behavior_handler.
+      PRIVATE SECTION.
+        METHODS modify FOR BEHAVIOR IMPORTING
+          roots_to_create    FOR CREATE booking
+          roots_to_update    FOR UPDATE booking
+          roots_to_delete    FOR DELETE booking.
 
-    METHODS read FOR BEHAVIOR
-      IMPORTING it_booking_key FOR READ booking RESULT et_booking.
-ENDCLASS.
+        METHODS read FOR BEHAVIOR
+          IMPORTING it_booking_key FOR READ booking RESULT et_booking.
+    ENDCLASS.
 
-class lcl_handler implementation.
-  METHOD modify.
+    class lcl_handler implementation.
+      METHOD modify.
 
-    LOOP AT roots_to_delete INTO DATA(ls_delete).
-      IF ls_delete-booking IS INITIAL.
-        ls_delete-booking = mapped-booking[ %cid = ls_delete-%cid_ref ]-booking.
-      ENDIF.
+        LOOP AT roots_to_delete INTO DATA(ls_delete).
+          IF ls_delete-booking IS INITIAL.
+            ls_delete-booking = mapped-booking[ %cid = ls_delete-%cid_ref ]-booking.
+          ENDIF.
 
-      READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_delete-booking ASSIGNING field-symbol(<ls_buffer>).
-      IF sy-subrc = 0.
-        IF <ls_buffer>-flag = 'C'.
-          DELETE TABLE lcl_buffer=>mt_buffer WITH TABLE KEY booking = ls_delete-booking.
-        ELSE.
-          <ls_buffer>-flag = 'D'.
-        ENDIF.
-      ELSE.
-        INSERT VALUE #( flag = 'D' booking = ls_delete-booking ) INTO TABLE lcl_buffer=>mt_buffer.
-      ENDIF.
-    ENDLOOP.
+          READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_delete-booking ASSIGNING field-symbol(<ls_buffer>).
+          IF sy-subrc = 0.
+            IF <ls_buffer>-flag = 'C'.
+              DELETE TABLE lcl_buffer=>mt_buffer WITH TABLE KEY booking = ls_delete-booking.
+            ELSE.
+              <ls_buffer>-flag = 'D'.
+            ENDIF.
+          ELSE.
+            INSERT VALUE #( flag = 'D' booking = ls_delete-booking ) INTO TABLE lcl_buffer=>mt_buffer.
+          ENDIF.
+        ENDLOOP.
 
-    " handle creates
-    IF roots_to_create IS NOT INITIAL.
+        " handle creates
+        IF roots_to_create IS NOT INITIAL.
 
-      SELECT SINGLE MAX( booking ) FROM ztbooking_xxx INTO @DATA(lv_max_booking).
-    ENDIF.
-
-    LOOP AT roots_to_create INTO DATA(ls_create).
-      ADD 1 TO lv_max_booking.
-      ls_create-%data-booking = lv_max_booking.
-      GET TIME STAMP FIELD DATA(zv_tsl).
-      ls_create-%data-lastchangedat = zv_tsl.
-      INSERT VALUE #( flag = 'C' data = CORRESPONDING #( ls_create-%data ) ) INTO TABLE lcl_buffer=>mt_buffer.
-
-      IF ls_create-%cid IS NOT INITIAL.
-        INSERT VALUE #( %cid = ls_create-%cid  booking = ls_create-booking ) INTO TABLE mapped-booking.
-      ENDIF.
-    ENDLOOP.
-
-    " handle update
-    IF roots_to_update IS NOT INITIAL.
-      LOOP AT roots_to_update INTO DATA(ls_update).
-        IF ls_update-booking IS INITIAL.
-          ls_update-booking = mapped-booking[ %cid = ls_update-%cid_ref ]-booking.
+          SELECT SINGLE MAX( booking ) FROM ztbooking_xxx INTO @DATA(lv_max_booking).
         ENDIF.
 
-        READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_update-booking ASSIGNING <ls_buffer>.
-        IF sy-subrc <> 0.
+        LOOP AT roots_to_create INTO DATA(ls_create).
+          ADD 1 TO lv_max_booking.
+          ls_create-%data-booking = lv_max_booking.
+          GET TIME STAMP FIELD DATA(zv_tsl).
+          ls_create-%data-lastchangedat = zv_tsl.
+          INSERT VALUE #( flag = 'C' data = CORRESPONDING #( ls_create-%data ) ) INTO TABLE lcl_buffer=>mt_buffer.
 
-          SELECT SINGLE * FROM ztbooking_xxx WHERE booking = @ls_update-booking INTO @DATA(ls_db).
-          INSERT VALUE #( flag = 'U' data = ls_db ) INTO TABLE lcl_buffer=>mt_buffer ASSIGNING <ls_buffer>.
+          IF ls_create-%cid IS NOT INITIAL.
+            INSERT VALUE #( %cid = ls_create-%cid  booking = ls_create-booking ) INTO TABLE mapped-booking.
+          ENDIF.
+        ENDLOOP.
+
+        " handle update
+        IF roots_to_update IS NOT INITIAL.
+          LOOP AT roots_to_update INTO DATA(ls_update).
+            IF ls_update-booking IS INITIAL.
+              ls_update-booking = mapped-booking[ %cid = ls_update-%cid_ref ]-booking.
+            ENDIF.
+
+            READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_update-booking ASSIGNING <ls_buffer>.
+            IF sy-subrc <> 0.
+
+              SELECT SINGLE * FROM ztbooking_xxx WHERE booking = @ls_update-booking INTO @DATA(ls_db).
+              INSERT VALUE #( flag = 'U' data = ls_db ) INTO TABLE lcl_buffer=>mt_buffer ASSIGNING <ls_buffer>.
+            ENDIF.
+
+            IF ls_update-%control-customername IS NOT INITIAL..
+              <ls_buffer>-customername = ls_update-customername.
+            ENDIF.
+            IF ls_update-%control-cost  IS NOT INITIAL..
+              <ls_buffer>-cost = ls_update-cost.
+            ENDIF.
+            IF ls_update-%control-dateoftravel   IS NOT INITIAL..
+              <ls_buffer>-dateoftravel  = ls_update-dateoftravel .
+            ENDIF.
+            IF ls_update-%control-currencycode  IS NOT INITIAL..
+              <ls_buffer>-currencycode = ls_update-currencycode.
+            ENDIF.
+            GET TIME STAMP FIELD DATA(zv_tsl2).
+            <ls_buffer>-lastchangedat = zv_tsl2.
+          ENDLOOP.
         ENDIF.
+      endmethod.
 
-        IF ls_update-%control-customername IS NOT INITIAL..
-          <ls_buffer>-customername = ls_update-customername.
+      METHOD read.
+        LOOP AT it_booking_key INTO DATA(ls_booking_key).
+          " check if it is in buffer (and not deleted).
+          READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_booking_key-booking INTO DATA(ls_booking).
+          IF sy-subrc = 0 AND ls_booking-flag <> 'U'.
+            INSERT CORRESPONDING #( ls_booking-data ) INTO TABLE et_booking.
+          ELSE.
+            SELECT SINGLE * FROM ztbooking_xxx WHERE booking = @ls_booking_key-booking INTO @DATA(ls_db).
+            IF sy-subrc = 0.
+              INSERT CORRESPONDING #( ls_db ) INTO TABLE et_booking.
+            ELSE.
+              INSERT VALUE #( booking = ls_booking_key-booking ) INTO TABLE failed-booking.
+            ENDIF.
+          ENDIF.
+        ENDLOOP.
+      ENDMETHOD.
+    ENDCLASS.
+
+
+    CLASS lcl_saver DEFINITION INHERITING FROM cl_abap_behavior_saver.
+      PROTECTED SECTION.
+        METHODS finalize          REDEFINITION.
+        METHODS check_before_save REDEFINITION.
+        METHODS save              REDEFINITION.
+    ENDCLASS.
+
+    CLASS lcl_saver IMPLEMENTATION.
+
+      METHOD save.
+        DATA lt_data TYPE STANDARD TABLE OF ztbooking_xxx.
+
+        lt_data = VALUE #(  FOR row IN lcl_buffer=>mt_buffer WHERE  ( flag = 'C' ) (  row-data ) ).
+        IF lt_data IS NOT INITIAL.
+          INSERT ztbooking_xxx FROM TABLE @lt_data.
         ENDIF.
-        IF ls_update-%control-cost  IS NOT INITIAL..
-          <ls_buffer>-cost = ls_update-cost.
+        lt_data = VALUE #(  FOR row IN lcl_buffer=>mt_buffer WHERE  ( flag = 'U' ) (  row-data ) ).
+        IF lt_data IS NOT INITIAL.
+          UPDATE ztbooking_xxx FROM TABLE @lt_data.
         ENDIF.
-        IF ls_update-%control-dateoftravel   IS NOT INITIAL..
-          <ls_buffer>-dateoftravel  = ls_update-dateoftravel .
+        lt_data = VALUE #(  FOR row IN lcl_buffer=>mt_buffer WHERE  ( flag = 'D' ) (  row-data ) ).
+        IF lt_data IS NOT INITIAL.
+          DELETE ztbooking_xxx FROM TABLE @lt_data.
         ENDIF.
-        IF ls_update-%control-currencycode  IS NOT INITIAL..
-          <ls_buffer>-currencycode = ls_update-currencycode.
-        ENDIF.
-        GET TIME STAMP FIELD DATA(zv_tsl2).
-        <ls_buffer>-lastchangedat = zv_tsl2.
-      ENDLOOP.
-    ENDIF.
-  endmethod.
+      ENDMETHOD.
 
-  METHOD read.
-    LOOP AT it_booking_key INTO DATA(ls_booking_key).
-      " check if it is in buffer (and not deleted).
-      READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_booking_key-booking INTO DATA(ls_booking).
-      IF sy-subrc = 0 AND ls_booking-flag <> 'U'.
-        INSERT CORRESPONDING #( ls_booking-data ) INTO TABLE et_booking.
-      ELSE.
-        SELECT SINGLE * FROM ztbooking_xxx WHERE booking = @ls_booking_key-booking INTO @DATA(ls_db).
-        IF sy-subrc = 0.
-          INSERT CORRESPONDING #( ls_db ) INTO TABLE et_booking.
-        ELSE.
-          INSERT VALUE #( booking = ls_booking_key-booking ) INTO TABLE failed-booking.
-        ENDIF.
-      ENDIF.
-    ENDLOOP.
-  ENDMETHOD.
-ENDCLASS.
+      METHOD finalize.
+      ENDMETHOD.
 
+      METHOD check_before_save.
+      ENDMETHOD.
+    ENDCLASS.
+    ```
 
-CLASS lcl_saver DEFINITION INHERITING FROM cl_abap_behavior_saver.
-  PROTECTED SECTION.
-    METHODS finalize          REDEFINITION.
-    METHODS check_before_save REDEFINITION.
-    METHODS save              REDEFINITION.
-ENDCLASS.
-
-CLASS lcl_saver IMPLEMENTATION.
-
-  METHOD save.
-    DATA lt_data TYPE STANDARD TABLE OF ztbooking_xxx.
-
-    lt_data = VALUE #(  FOR row IN lcl_buffer=>mt_buffer WHERE  ( flag = 'C' ) (  row-data ) ).
-    IF lt_data IS NOT INITIAL.
-      INSERT ztbooking_xxx FROM TABLE @lt_data.
-    ENDIF.
-    lt_data = VALUE #(  FOR row IN lcl_buffer=>mt_buffer WHERE  ( flag = 'U' ) (  row-data ) ).
-    IF lt_data IS NOT INITIAL.
-      UPDATE ztbooking_xxx FROM TABLE @lt_data.
-    ENDIF.
-    lt_data = VALUE #(  FOR row IN lcl_buffer=>mt_buffer WHERE  ( flag = 'D' ) (  row-data ) ).
-    IF lt_data IS NOT INITIAL.
-      DELETE ztbooking_xxx FROM TABLE @lt_data.
-    ENDIF.
-  ENDMETHOD.
-
-  METHOD finalize.
-  ENDMETHOD.
-
-  METHOD check_before_save.
-  ENDMETHOD.
-ENDCLASS.
-
-```
-
-Refresh and test your application in the browser. Now you are able to delete, add and edit objects in your application.
+2. Refresh and test your application in the browser. Now you are able to delete, add and edit objects in your application.
 ![Check result](result.png)
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Test yourself)]
+Define an unmanaged implementation of a behavior definition for following in the right order (without the lock master statement and `etag` handling):
+
+ - `ZI_TEST` alias `test`
+ - Methods:
+  - create
+  - update
+  - delete
+
+[VALIDATE_1]
 [ACCORDION-END]

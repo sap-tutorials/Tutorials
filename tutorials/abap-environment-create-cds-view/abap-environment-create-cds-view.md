@@ -1,4 +1,5 @@
 ---
+auto_validation: true 
 title: Create and Expose a Core Data Service Based on a Database Table
 description: Build a list report app with the ABAP RESTful programming model for SAP Fiori.
 primary_tag: topic>abap-development
@@ -16,6 +17,7 @@ time: 10
 - How to create a database table
 - How to create a Core Data Service
 
+In this tutorial, wherever `xxx` appears, use a number (e.g. `000`).
 
 ---
 
@@ -23,6 +25,7 @@ time: 10
 Select to your ABAP package created in tutorial **Create Simple Database Table for ABAP Environment** and create a Core Data Services (CDS) data definition.
 ![Open Eclipse](object.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create data definition)]
@@ -30,7 +33,6 @@ Select to your ABAP package created in tutorial **Create Simple Database Table f
 ![Create data definition](definition.png)
 
 2. Enter a name and a description for your data definition `ZI_BOOKING_XXX`.
-You may replace **`XXX`** with a number of your choice (e.g. 001).
 ![Create data definition](data.png)
 
 3. Select a new transport request and click **Next**.
@@ -39,54 +41,53 @@ You may replace **`XXX`** with a number of your choice (e.g. 001).
 4. Select **Define View template** and press **Finish**.
 ![Create data definition](view.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Specify SQL view)]
 1. Specify the `sql view name` in the view definition as **`ZV_BOOKING_XXX`**.
-You may replace **`XXX`** with a number of your choice (e.g. 001).
 ![Specify SQL view](cds.png)
 
 2. Specify your data source after the select from statement as **`ztbooking_xxx`**.
-You may replace **`XXX`** with a number of your choice (e.g. 001).
 ![Specify SQL view](cds2.png)
 
 3. Specify your data definition as shown below.
 The keyword key is used to specific a key element and the keyword as is used to define alias names. The two associations `I_Country` and `I_Currency` are defined and exposed in the projection. The element `CurrencyCode` is specified as currency key for the element Cost which is an amount field. The view entity is specified as searchable using the view annotation `@Search.searchable: true` and the element `CustomerName` is specified as default search element using the element annotation `@Search.defaultSearchElement: true`.
 
-```swift
+    ```swift
+    @AbapCatalog.sqlViewName 'ZV_BOOKING_XXX'
+    @AbapCatalog.compiler.compareFilter : true
+    @AbapCatalog.preserveKey: true
+    @AccessControl.authorizationCheck: #CHECK
+    @EndUserText.label : 'Data Definition Booking'
+    @Search.searchable : true
+    define view ZI_BOOKING_XXX
+       as select from ztbooking_xxx as Booking
+       association [0..1] to I_Country  as _Country  on $projection.country = _Country.country
+       association [0..1] to I_Currency as _Currency on $projection.CurrencyCode = _Currency.Currency
 
-@AbapCatalog.sqlViewName 'ZV_BOOKING_XXX'
-@AbapCatalog.compiler.compareFilter : true
-@AbapCatalog.preserveKey: true
-@AccessControl.authorizationCheck: #CHECK
-@EndUserText.label : 'Data Definition Booking'
-@Search.searchable : true
-define view ZI_BOOKING_XXX
-   as select from ztbooking_xxx as Booking
-   association [0..1] to I_Country  as _Country  on $projection.country = _Country.country
-   association [0..1] to I_Currency as _Currency on $projection.CurrencyCode = _Currency.Currency
+       {
+         key booking              as Booking,
+             @Search.defaultSearchElement: true
+             customername         as CustomerName,
+             numberofpassengers   as NumberOfPassengers,
+             emailaddress         as EmailAddress,
+             country,
+             dateofbooking        as DateOfBooking,
+             dateoftravel         as DateOfTravel,
+             @Semantics.amount.currencyCode: 'CurrencyCode'
+             cost,
+             @Semantics.currencyCode: true
+             currencycode          as CurrencyCode,
+             lastchangedat         as LastChangedAt,
 
-   {
-     key booking              as Booking,
-         @Search.defaultSearchElement: true
-         customername         as CustomerName,
-         numberofpassengers   as NumberOfPassengers,
-         emailaddress         as EmailAddress,
-         country,
-         dateofbooking        as DateOfBooking,
-         dateoftravel         as DateOfTravel,
-         @Semantics.amount.currencyCode: 'CurrencyCode'
-         cost,
-         @Semantics.currencyCode: true
-         currencycode          as CurrencyCode,
-         lastchangedat         as LastChangedAt,
+             _Country,
+             _Currency       
+    }
+    ```
+    Save and activate.
 
-         _Country,
-         _Currency       
-}
-
-```
-Save and activate.
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add UI annotation)]
@@ -104,102 +105,103 @@ Save and activate.
 
 2. Replace your code with following:
 
-```swift
-define root view ZI_Booking_XXX
-  as select from ztbooking_xxx as Booking
-  association [0..1] to I_Country  as _Country  on $projection.country = _Country.Country
-  association [0..1] to I_Currency as _Currency on $projection.CurrencyCode = _Currency.Currency
-{
+    ```swift
+    define root view ZI_Booking_XXX
+      as select from ztbooking_xxx as Booking
+      association [0..1] to I_Country  as _Country  on $projection.country = _Country.Country
+      association [0..1] to I_Currency as _Currency on $projection.CurrencyCode = _Currency.Currency
+    {
 
-      @UI.facet: [
-        {
-          id:       'Booking',
-          purpose:  #STANDARD,
-          type:     #IDENTIFICATION_REFERENCE,
-          label:    'Booking',
-          position: 10 }
-      ]
+          @UI.facet: [
+            {
+              id:       'Booking',
+              purpose:  #STANDARD,
+              type:     #IDENTIFICATION_REFERENCE,
+              label:    'Booking',
+              position: 10 }
+          ]
 
 
-      @UI: {
-          lineItem: [ { position: 10, importance: #HIGH, label: 'Booking ID' } ],
-          identification:[ { position: 10, label: 'Booking ID' } ]
+          @UI: {
+              lineItem: [ { position: 10, importance: #HIGH, label: 'Booking ID' } ],
+              identification:[ { position: 10, label: 'Booking ID' } ]
+              }
+      key booking                                as Booking,
+
+          @UI: {
+            lineItem: [ { position: 20, label: 'Customer', importance: #HIGH } ],
+            identification:[ { position: 10, label: 'Customer' } ]
           }
-  key booking                                as Booking,
+          @Search.defaultSearchElement: true
+          customername                           as CustomerName,
 
-      @UI: {
-        lineItem: [ { position: 20, label: 'Customer', importance: #HIGH } ],
-        identification:[ { position: 10, label: 'Customer' } ]
-      }
-      @Search.defaultSearchElement: true
-      customername                           as CustomerName,
+          @UI: {
+          lineItem: [ { position: 30, label: 'No of Passengers', importance: #HIGH } ],
+          identification:[ { position: 30, label: 'No of Passengers' } ]
+          }
+          numberofpassengers                     as NumberOfPassengers,
 
-      @UI: {
-      lineItem: [ { position: 30, label: 'No of Passengers', importance: #HIGH } ],
-      identification:[ { position: 30, label: 'No of Passengers' } ]
-      }
-      numberofpassengers                     as NumberOfPassengers,
+          @UI: {
+               identification:[ { position: 40, label: 'Email' } ]
+           }
+          emailaddress                           as EmailAddress,
 
-      @UI: {
-           identification:[ { position: 40, label: 'Email' } ]
-       }
-      emailaddress                           as EmailAddress,
+          @UI: {
+               identification:[ { position: 50, label: 'Country' } ]
+           }
+          country,
 
-      @UI: {
-           identification:[ { position: 50, label: 'Country' } ]
-       }
-      country,
+          @UI: {
+               identification:[ { position: 60, label: 'Booked On' } ]
+           }
+          dateofbooking                          as DateOfBooking,
 
-      @UI: {
-           identification:[ { position: 60, label: 'Booked On' } ]
-       }
-      dateofbooking                          as DateOfBooking,
-
-      @UI: {   identification:[ { position: 70, label: 'Traveling on' } ]    }
-      dateoftravel                           as DateOfTravel,
+          @UI: {   identification:[ { position: 70, label: 'Traveling on' } ]    }
+          dateoftravel                           as DateOfTravel,
 
 
-      @UI: {
-      lineItem: [ { position: 40, label: 'Cost', importance: #HIGH } ],
-      identification:[ { position: 80, label: 'Cost' } ]
-      }
-      @Semantics.amount.currencyCode: 'CurrencyCode'
-      cost,
+          @UI: {
+          lineItem: [ { position: 40, label: 'Cost', importance: #HIGH } ],
+          identification:[ { position: 80, label: 'Cost' } ]
+          }
+          @Semantics.amount.currencyCode: 'CurrencyCode'
+          cost,
 
-      @UI: { identification:[ { position: 90, label: 'Currency' } ]     }
-      @Semantics.currencyCode: true
-      currencycode                           as CurrencyCode,
+          @UI: { identification:[ { position: 90, label: 'Currency' } ]     }
+          @Semantics.currencyCode: true
+          currencycode                           as CurrencyCode,
 
-      @UI: { identification:[ { position: 100, label: 'Last Changed At' } ] }
-      lastchangedat                          as LastChangedAt,
+          @UI: { identification:[ { position: 100, label: 'Last Changed At' } ] }
+          lastchangedat                          as LastChangedAt,
 
-      //publich associations
-      _Country,
-      _Currency
-}
+          //publich associations
+          _Country,
+          _Currency
+    }
+    ```
+    Save and activate your data definition.
 
-```
-Save and activate your data definition.
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Open other repository object)]
 Right-click on your package and navigate to **New** > **Other ABAP Repository Object** from the appearing context menu.
 ![Open other repository object](object.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Create service definition)]
 1. Search for **service definition**, select the appropriate entry and click **Next**.
 ![Create service definition](service.png)
 
-2. Create a service definition and cal it **`Z_I_BOOKING_XXX`**.
-    >You may replace **`XXX`** with a number of your choice (e.g. 001).
-
+2. Create a service definition and call it **`Z_I_BOOKING_XXX`**.
     ![Create service definition](service2.png)
 
 3. Click **Finish** to complete your transport request.
 ![Create service definition](transport2.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Expose entities)]
@@ -208,12 +210,14 @@ Expose the **`Z_I_Booking`** and the **`I_Country`** view entities.
 
 Save and activate your service definition.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Open other repository object)]
 Right-click on your package and navigate to **New** > **Other ABAP Repository Object** from the appearing context menu.
 ![Open other repository object](object.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Create service binding)]
@@ -221,20 +225,20 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 ![Create service binding](binding.png)
 
 2. Create a service binding definition and call it **`Z_I_BOOKING_XXX`**.
-    >You may replace **`XXX`** with a number of your choice (e.g. 001).
-
-    ![Create service binding](binding2.png)
+![Create service binding](binding2.png)
 
 3. Click **Finish** to complete your transport request.
 ![Create service binding](binding3.png)
-
  Save and activate your service binding.
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 10: ](Publish locally)]
 Click **Publish Locally** to publish your service binding.
 ![Publish locally](locally.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Check your metadata)]
@@ -247,6 +251,7 @@ Click **Publish Locally** to publish your service binding.
 3. Check your result:
 ![Check your metadata](metadata.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 12: ](Open SAP Fiori elements view)]
@@ -257,6 +262,7 @@ Click **Publish Locally** to publish your service binding.
 2. Check your result:
    ![Open SPA Fiori elements view](fiori2.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 13: ](Open SAP Web IDE Full-Stack)]
@@ -266,6 +272,7 @@ Click **Publish Locally** to publish your service binding.
 2. Click **Go to Service** to switch to SAP Web IDE Full-Stack.
 ![Open SAP Web IDE Full-Stack](go.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 14: ](Create SAP Fiori List Report Application)]
@@ -274,12 +281,14 @@ Click **Publish Locally** to publish your service binding.
 
 2. Select **List Report Application** and click **Next**.
  ![Create SAP Fiori List Report Application](template2.png)
-3. Insert following data to your list report application and click **Next**:
-    ![Create SAP Fiori List Report Application](template3.png)
 
+3. Insert following data to your list report application and click **Next**:
     - Project Name: **`Project_App_XXX`**
     - Title: **My Application**
     - Application Component Hierarchy: **`<your_component_hierachy>`**
+
+
+    ![Create SAP Fiori List Report Application](template3.png)
 
 4. Click on **Service Catalog** and choose your system, which has already been created with your initial system setup. Search for your service **`Z_I_BOOKING_XXX`**, select it and click **Next**.
 ![Create SAP Fiori List Report Application](template4.png)
@@ -290,6 +299,7 @@ Click **Publish Locally** to publish your service binding.
 6. Select **Booking for OData Collection** and click **Finish**.
 ![Create SAP Fiori List Report Application](template6.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 15: ](Check your result)]
@@ -300,4 +310,17 @@ Click **Publish Locally** to publish your service binding.
 2. Click on your application **`Project_App_XXX`** to check your result.
 ![Check your result](result2.png)
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 15: ](Test yourself)]
+Write following UI annotation as a header Information:
+
+- `typeName`: `Test`
+- `typeNamePlural`: `Tests`
+- `title`:
+  - `type`: `#STANDARD`
+  - `value`: `testyourself`
+
+[VALIDATE_1]
 [ACCORDION-END]
