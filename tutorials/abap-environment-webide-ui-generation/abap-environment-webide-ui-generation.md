@@ -1,4 +1,5 @@
 ---
+auto_validation: true 
 title: Create a UI that Consumes an Exposed ABAP Service
 description: Use SAP Web IDE Full-Stack to create a UI for an ABAP service in SAP Cloud Platform ABAP environment.
 primary_tag: topic>abap-development
@@ -19,6 +20,7 @@ In this tutorial, wherever `xxx` appears, use a number (e.g. `000`).
 
 Log into SAP Cloud Platform (Cockpit) as an administrator.
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -27,6 +29,7 @@ Log into SAP Cloud Platform (Cockpit) as an administrator.
 Switch to destinations and click **New Destination**.
 ![Create Destination](Picture1.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -46,6 +49,7 @@ Enter following data to your destination.
 
 ![Destination Data](Picture2.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -55,6 +59,7 @@ Enter following data to your destination.
 2. Click on **Save**.
 ![additional properties](Picture3.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -64,6 +69,7 @@ Check the connection to be sure if you get a successful connection.
 ![Check Connection](Picture4.png)
 ![Check Connection](Picture5.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -72,6 +78,7 @@ Check the connection to be sure if you get a successful connection.
 Navigate to **Services**, search for SAP Web IDE Full-stack and select it.
 ![Web IDE](Picture6.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -81,6 +88,7 @@ Open **Go to Service**.
 You will be navigated to SAP Web IDE.
 ![Go to Service](Picture7.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -90,6 +98,7 @@ Select  **New Project from Template** to generate one.
 ![New Project](Picture8.png)
 If you don´t see this welcome page then follow the alternative way: **File** > **New** > **Project from Template**.
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -99,6 +108,7 @@ If you don´t see this welcome page then follow the alternative way: **File** > 
 2. Click  **Next** to create a new UI.
 ![List Report App](Picture9.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -108,6 +118,7 @@ If you don´t see this welcome page then follow the alternative way: **File** > 
 2. Click **Next**.
 ![Basic Data](Picture10.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -121,6 +132,7 @@ If you don´t see this welcome page then follow the alternative way: **File** > 
 ![Choose System](Picture11.png)
 If you don´t see your created destination, you should restart your browser and log in again.
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -131,6 +143,7 @@ If you don´t see your created destination, you should restart your browser and 
 2. Choose a file to run.
 ![Run the Webapp](Picture13.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -139,6 +152,7 @@ If you don´t see your created destination, you should restart your browser and 
 Navigate to your application.
 ![Open your application](Picture14.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -149,6 +163,7 @@ Navigate to your application.
 2. Select fields that shall be displayed or select all and click **OK**.
 ![select fields](Picture16.png)
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -158,5 +173,11 @@ By clicking on **GO** you can see the filtered data on UI.
 ![GO button](Picture17.png)
 ![UI view](Picture18.png)
 
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 16: ](Test yourself)]
+
+[VALIDATE_1]
 [ACCORDION-END]
 ---
