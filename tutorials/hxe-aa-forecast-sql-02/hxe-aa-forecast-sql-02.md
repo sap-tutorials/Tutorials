@@ -16,8 +16,7 @@ time: 15
 ## Details
 ### You will learn
 
-- Create a Multi-Target Application Project
-- Save your Web IDE project in a GIT repository
+- How to load your dataset content in your SAP HANA, express edition instance
 
 [ACCORDION-BEGIN [Info: ](Which Time series dataset?)]
 

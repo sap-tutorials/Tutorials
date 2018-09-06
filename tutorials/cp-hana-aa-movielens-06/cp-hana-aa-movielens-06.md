@@ -203,7 +203,7 @@ Open the `webapp/view/demo.view.xml` file and replace the existing code with the
       </Page>
     </masterPages>
     <detailPages>
-      <Page id="detail" title="Moveilens Recommendation">
+      <Page id="detail" title="MovieLens Recommendation">
         <content></content>
       </Page>
       <Page id="detail_collaborative" title="Collaborative Filtering">

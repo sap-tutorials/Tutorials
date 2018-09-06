@@ -467,7 +467,7 @@ Open the **`demo.view.xml`** file and replace the existing code with the followi
       <content>
         <Bar>
           <contentMiddle>
-            <Title text="MoveiLens Recommendation"/>
+            <Title text="MovieLens Recommendation"/>
           </contentMiddle>
           <contentLeft>
             <Button icon="sap-icon://menu" press="handlePressOpenMenu"/>

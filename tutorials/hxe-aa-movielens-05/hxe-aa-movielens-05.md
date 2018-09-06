@@ -21,7 +21,7 @@ time: 30
 - Identify which algorithm options are available for recommendation engines
 - How to use SAP HANA APL Recommendation algorithm from an XSA application using an HDI container
 
-[ACCORDION-BEGIN [Info: ](SAP HANA Automated Predictive Library)]
+[ACCORDION-BEGIN [Step 1:](SAP HANA Automated Predictive Library)]
 
 The ***SAP HANA Automated Predictive Library*** (APL) is an ***Application Function Library*** (AFL) which lets you use the data mining capabilities of the ***SAP Predictive Analytics*** automated analytics engine on your SAP HANA stored data.
 
@@ -38,7 +38,7 @@ For more details about the SAP HANA APL function, check the online <a href="http
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Info: ](Calling AFL functions from HDI containers)]
+[ACCORDION-BEGIN [Step 1:](Calling AFL functions from HDI containers)]
 
 In order to use any ***SAP HANA APL*** functions, ultimately an AFL wrapper must be created and then invoked.
 
@@ -55,7 +55,7 @@ For more details, you can check the [AFL Language Procedures](https://help.sap.c
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Info: ](Recommendation engines with SAP HANA APL)]
+[ACCORDION-BEGIN [Step 1:](Recommendation engines with SAP HANA APL)]
 
 As stated previously, the ***SAP HANA Automated Predictive Library*** (APL) uses the data mining capabilities provided by the ***SAP Predictive Analytics*** automated analytics engine.
 
@@ -80,7 +80,7 @@ For more information please refer to the online <a href="https://help.sap.com/vi
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Info: ](SAP HANA APL Recommendation function)]
+[ACCORDION-BEGIN [Step 1:](SAP HANA APL Recommendation function)]
 
 The **SAP HANA APL** function that you will be using is:
 
