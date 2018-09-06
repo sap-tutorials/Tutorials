@@ -1,22 +1,16 @@
 ---
-title: SAP HANA XS Advanced, create a Calculation View with K-anonymity
-description: Anonymize data to protect privacy
+title: Create a Calculation View with K-anonymity (XS Advanced)
+description: Anonymize data to protect privacy.
 auto_validation: true
 primary_tag: topic>big-data
 tags: [  tutorial>intermediate, topic>big-data, topic>cloud, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
+time: 20
 ---
-
-## Prerequisites  
- - **Proficiency:** Intermediate
-
 
 ## Details
 ### You will learn  
- - How to create a Calculation View
+ - How to create a calculation view
  - Use artifacts to import data from text file
-
-### Time to Complete
-**20 Min**
 
 ---
 
