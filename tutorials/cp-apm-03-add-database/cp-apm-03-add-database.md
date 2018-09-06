@@ -96,6 +96,3 @@ You now have actual data served automatically.
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-- [Add Custom Logic to Your Service](https://www.sap.com/developer/tutorials/cp-apm-04-custom-logic.html)

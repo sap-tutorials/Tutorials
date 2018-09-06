@@ -50,5 +50,3 @@ When doing so, you will have the option to either delete just the catalog or to 
 
 
 [ACCORDION-END]
-## Next Steps
- - **Tutorials** [Creating and Recovering Delta Backups](https://www.sap.com/developer/tutorials/dt-backup-recovery-part6.html)

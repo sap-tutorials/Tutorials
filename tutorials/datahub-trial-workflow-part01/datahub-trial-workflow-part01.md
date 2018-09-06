@@ -211,6 +211,3 @@ You see that (in contrast to the `Devices` data set) the `EnrichedDevices` data 
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-[Create workflow (part 2): Aggregate data with flowgraph ](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part02.html)

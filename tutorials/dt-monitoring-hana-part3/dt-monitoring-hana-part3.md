@@ -56,5 +56,3 @@ With SAP HANA Studio, there is no need to manually restart the extended storage 
 
 [ACCORDION-END]
 
-## Next Steps
-- **Tutorials:** [Additional checks in SAP HANA Cockpit and SAP HANA Studio](https://www.sap.com/developer/tutorials/dt-monitoring-hana-part4.html)

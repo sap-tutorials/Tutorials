@@ -149,6 +149,3 @@ Open the CDS View in the Data Preview by choosing **F8**. Your CDS View should l
 ![Image depicting step 15-data-preview](step 15-data-preview.png)
 
 [ACCORDION-END]
-
-## Next Steps
-- [Display a CDS view using ALV with IDA](https://www.sap.com/developer/tutorials/abap-dev-adt-use-cds-view.html)

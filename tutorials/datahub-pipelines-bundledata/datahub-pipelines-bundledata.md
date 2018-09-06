@@ -106,6 +106,3 @@ hdfs dfs -cat /tmp/hdfsManager/test_1.txt
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-[Store sensor data in SAP Vora](https://www.sap.com/developer/tutorials/datahub-pipelines-storeinvora.html)

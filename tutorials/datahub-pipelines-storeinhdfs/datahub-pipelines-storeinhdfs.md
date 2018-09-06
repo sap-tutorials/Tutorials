@@ -86,6 +86,3 @@ Stop the pipeline by pressing the **Stop** button.
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-[Bundle data (via JavaScript)](https://www.sap.com/developer/tutorials/datahub-pipelines-bundledata.html)

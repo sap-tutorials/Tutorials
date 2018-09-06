@@ -83,5 +83,3 @@ The "CREATE EXTENDED STORAGE" statement creates the warm store and the required 
 
 [ACCORDION-END]
 
-## Next Steps
-  - **Tutorials:** [Create a New User and Assign Permissions](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part2.html)

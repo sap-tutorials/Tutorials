@@ -162,6 +162,3 @@ Follow the same procedures to move the CSS file
     ![Run - no changes should appear](run-app.png)
 
 
-
-## Next Steps
- - **Tutorials** [Add ODATA to the application](https://www.sap.com/developer/tutorials/angular-add-odata.html)

@@ -95,6 +95,3 @@ To troubleshoot problems, take a look at the logs inside the Docker container. Y
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-[Run example pipelines in SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-examples.html)

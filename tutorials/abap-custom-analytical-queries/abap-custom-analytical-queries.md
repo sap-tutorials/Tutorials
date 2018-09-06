@@ -9,9 +9,6 @@ time: 15
 ## Prerequisites  
 The Business user requires the Role `SAP_BCR_CA_ANA_AQD_PC` to access the Query Designer.
 
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
 ## Details
 **Custom Analytical Queries** is a tool used for reporting and analysis.
 Raw data from business documents are getting converted into a meaningful grid.
@@ -178,5 +175,3 @@ Now **Save** and **Publish** your draft.
 
 [ACCORDION-END]
 
-
-## Next Steps
