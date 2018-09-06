@@ -9,7 +9,8 @@ time: 20
 
 ## Details
 ### You will learn
-  - How to build and deploy a TensorFlow Deep Neural Network Classifier for the Iris dataset and then integrate it with SAP HANA, express edition
+
+During this tutorial, you will learn how to build and deploy a TensorFlow Deep Neural Network Classifier for the Iris dataset and then integrate it with SAP HANA, express edition.
 
 As part of the [TensorFlow models repository](https://github.com/tensorflow/models), you can find the script for a simple Deep Neural Network using the Iris dataset for classification.
 
