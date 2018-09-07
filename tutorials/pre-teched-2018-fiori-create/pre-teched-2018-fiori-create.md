@@ -91,4 +91,11 @@ In your **Fiori Launchpad Cockpit dashboard**, copy the **URL up to the ?** and 
 [VALIDATE_6]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 7: ](Explore your Fiori Configuration Cockpit)]
+
+On your cockpit dashboard, you can find summary details about all the apps your have deployed to your Fiori Launchpad. As you add apps, don't forget to come back here to configure more security and monitor performance.
+
+[DONE]
+[ACCORDION-END]
+
 ---
