@@ -3,124 +3,213 @@ title: Set up SAP HANA, express edition, on Amazon Web Services - Database serve
 description: Set up your SAP HANA, express edition, on Amazon Web Services
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition ]
+time: 35
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn  
 This tutorial will walk you through the setup process of SAP HANA, express edition, from an Amazon Marketplace Image in Amazon Web Services
 
-### Time to Complete
-**35 Min**
-
----
-
 [ACCORDION-BEGIN [Step 1: ](Sign in and select the AMI)]
 
-Sign in or create an account to access the [Amazon Web Services Marketplace](https://aws.amazon.com/marketplace/).
+Sign in or create an account on [Amazon Web Services Portal](https://portal.aws.amazon.com/billing/signup#/start)
 
-After you perform the next search, you will be presented with two options. The right one will depend on what you are looking to do. **This tutorial covers the core database option**.
+Access the [Amazon Web Services Marketplace](https://aws.amazon.com/marketplace/).
 
-  -  **SAP HANA, express edition (core database server):** The database server. This includes the in-memory database, to which you can connect using different drivers and connectors for different languages (`JDBC`, `ODBC`, `ADO.NET`, driver for `Python`, `Node.js` modules, etc.). You can use the database services and the advanced analytics processing engines (e.g., geospatial, text analytics, Extended Machine Library or Predictive Analytics Library, etc.) .
+![Amazon Web Services Marketplace](_01.png)
 
-  -  **SAP HANA, express edition (server + applications):** The database server plus the XS Advanced platform. This includes the database server and the micro-services oriented, polyglot development platform. This includes the SAP Web IDE for SAP HANA, the administration cockpit among other applications like SHINE, Enterprise Architecture Designer and Smart Data Streaming. OData V2 and V4 support, Node.js and Java runtime environments are also included. This option requires more resources. Go to the following tutorial if you prefer this option: <https://www.sap.com/developer/tutorials/hxe-xsa-aws-setup.html>
+Using the search bar at the top, enter **SAP HANA, express edition** and press **Enter** or click on the search icon.
 
-Look for **HANA Express** and choose **SAP HANA, express edition**
+After you perform the search, you will be presented with two options. The right one will depend on what you are looking to do.
 
-Search for  **HANA Express**
+**This tutorial covers the core database option.**
 
-![Search for HXE](1.png)
+  -  **SAP HANA, express edition:**
 
-Select the `SAP HANA, express edition` option. **Review** the provided information and click on **Continue to Subscribe**
+      The core database server includes the in-memory database, to which you can connect using different drivers and connectors for different languages (`JDBC`, `ODBC`, `ADO.NET`, driver for `Python`, `Node.js` modules, etc.).
 
-![Search for HXE](2.png)
+      You can use the database services and the advanced analytics processing engines (e.g., geospatial, text analytics, Extended Machine Library or Predictive Analytics Library, etc.).
 
-Continue scrolling down to review the **pricing** and additional information. Once you are ready, click **Continue to Configuration**.
+  -  **SAP HANA, express edition (server + applications):**
 
-![Search for HXE](continue.png)
+      The database server plus the XS Advanced platform includes the database server and the micro-services oriented, polyglot development platform.
 
+      It includes the SAP Web IDE for SAP HANA, the administration cockpit among other applications like SHINE, Enterprise Architecture Designer and Smart Data Streaming. OData V2 and V4 support, Node.js and Java runtime environments are also included.
+
+      This option requires more resources.
+
+      For details about this option, go to the following tutorial: <https://www.sap.com/developer/tutorials/hxe-xsa-aws-setup.html>
+
+Select the **SAP HANA, express edition** option.
+
+Scroll down and review the **Pricing** and additional information.
+
+Click on **Continue to Subscribe**
+
+![Amazon Web Services Marketplace](_02.png)
+
+Review and accept the software **Terms and Conditions**.
+
+Click **Continue to Configuration**.
+
+![Amazon Web Services Marketplace](_03.png)
 
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 2: ](Choose instance type)]
 
 Review the pricing, choose a region and click **Continue to Launch**.
 
-![Search for HXE](launch_3.png)
+![Amazon Web Services Marketplace](_04.png)
 
-Choose **Launch from Website**, `m4.xlarge` as the instance and select or create a `VPC`.
+Select:
 
-![Search for HXE](configure.png)
+ - Choose Action:  **Launch from Website**.
+ - EC2 Instance Type : **`m4.xlarge`**
+
+![Amazon Web Services Marketplace](_05.png)
 
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 3: ](Configure network)]
 
-Choose or create a subnet and **Create a security group based on Seller Settings**
+Select or create a **`VPC`**
 
-![Configure network](net.png)
+![Amazon Web Services Marketplace](_06.png)
 
-Name the security group, add a description and click **Save**
+Once the **`VPC`** is created or selected, select a **Subnet**
 
-![Configure network](nw2.png)
+![Amazon Web Services Marketplace](_07.png)
+
+Click on **Create a security group based on Seller Settings**.
+
+![Amazon Web Services Marketplace](_08.png)
+
+Name your security group, add a description and click **Save**
+
+![Configure network](_09.png)
 
 [ACCORDION-END]
 
-
-[ACCORDION-BEGIN [Step 4: ](Launch your instance)]
+[ACCORDION-BEGIN [Step 4: ](Create a Key Pair)]
 
 Click **Create a key pair**.
 
-![Create a pair](pair.png)
+![Amazon Web Services Marketplace](_10.png)
 
-Click the button to **Create a Key pair**, set a name and click **Create**
+The **EC2 Dashboard** will open.
 
-![Create a pair](key2.png)
+Click on **Create a Key pair**.
+
+![Amazon Web Services Marketplace](_11.png)
+
+Set a name and click **Create**
+
+![Amazon Web Services Marketplace](_12.png)
 
 **Download** the generated file and store it in a secure location.
 
-> ### **You will need the generated file to access your instance**
+> ### Note:  **You will need the generated file to access your instance**
 >
 > This file is your key to access the server. If you lose your `.pem` file you will not be able to access the instance later.
 >
 
-&nbsp;
+Go back to the instance creation page, and click the `refresh` buttons.
 
-Click the `refresh` buttons to choose the newly-create settings
+Choose the newly-create setting.
 
-![Create a pair](launch1.png)
-
-Click **`EC2 Console`** to see your instance
-
-![Wait instance](console.png)
+![Amazon Web Services Marketplace](_13.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Connect to your instance)]
+[ACCORDION-BEGIN [Step 5: ](Launch your instance)]
 
-Once the instance is ready, you can connect to it using an SSH client. Copy the external IP address from the instance information:
+Once the configuration is completed, click on the **Launch** button.
 
-![IP address](IP.png)
+![Amazon Web Services Marketplace](_14.png)
 
-There are different methods to connect to your instance depending on the system you are using to connect from:
+Click on the **[EC2 Console](https://console.aws.amazon.com/ec2)** link to see your instance
 
-  -  Windows computer: If you are using a Windows PC, you will need to download an SSH client, [such as PuTTY](https://winscp.net/eng/download.php) and `PuTTYgen` to convert your `.pem` file to a `.ppk` private key file. Follow this guide for further information: <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html>
+![Amazon Web Services Marketplace](_15.png)
 
-  ![using PuTTY](5.png)
+From the **EC2 Console**, you will be able to monitor the instance initialization.
 
-  Use user `ec2-user` when prompted.
+![Amazon Web Services Marketplace](_16.png)
 
-  -  Mac or Linux computer: You can use command `ssh` from a terminal as follows
+You may need to refresh the page to get the **Status Checks** updated.
 
-  ```ssh
-  ssh -i /path/my-key-pair.pem ec2-user@your_ip_address
-  ```
+Once the instance is ready, you can connect to it using an SSH client.
 
-  There is more information about connecting to your instance on this guide: <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html>
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Connect to your instance)]
+
+There are different methods to connect to your instance depending on the system you are using to connect from.
+
+You can use a **standalone SSH client** like **`PuTTY`**.
+
+There is also a option to use **Java SSH Client** directly from your browser which uses **`MindTerm`**.
+
+However this require the use of NPAPI, which is being deprecated and unsupported by most browsers like Chrome, Microsoft Edge or recent version of Firefox.
+
+Therefore, it is recommended to use a ***standalone SSH client***.
+
+For more details about standalone SSH client option, you can check the [Connecting to Your Linux Instance Using SSH]( https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html) guide.
+
+From the **EC2 Console**, select your EC2 instance:
+
+![Amazon Web Services Marketplace](_17.png)
+
+Copy the **`IPv4` Public IP** or the **Public DNS (`IPv4`)** address from the instance information.
+
+Then follow the instruction based on your client platform using the ***Public DNS*** host name as highlighted above.
+
+### **Windows platform**:
+
+If you are using a Windows PC, you will need to download and install:
+
+- an SSH client, such as **`PuTTY`**
+- a key pair converter such as **`PuTTYgen`** (one time operation)
+
+#### **Create private key file**
+
+***This is a one time operation.***
+
+Open **`PuTTYgen`**.
+
+Use the **Load** button to import your `X.509` certificate **`.pem`** file.
+
+Use the **Save private key** button to save your private key file as **`.ppk`**.
+
+![PuTTY](_18-00.png)
+
+**Connect**:
+
+Start a new **`PuTTY`** session.
+
+Enter the **`IPv4` Public IP** or the **Public DNS (`IPv4`)** address in the **Host Name (or IP address)** field.
+
+![PuTTY](_18-01.png)
+
+On the left tree, select **Connection > SSH > Auth**, select the generated private key **`.ppk`** file:
+
+![PuTTY](_18-02.png)
+
+Click on **Open**.
+
+When prompted, use **`ec2-user`** as user.
+
+Check the following guide for further information: [Connecting to Your Linux Instance from Windows Using PuTTY](<http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html)
+
+### **Mac or Linux platform**
+
+You can use command `ssh` from a terminal as follows:
+
+```shell
+ssh -i /path/my-key-pair.pem ec2-user@public_ip_address
+```
+
+There is more information about connecting to your instance on this guide: [Connecting to Your Linux Instance Using SSH](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
 
 [ACCORDION-END]
 
@@ -128,7 +217,7 @@ There are different methods to connect to your instance depending on the system 
 
 Once you have established an SSH session, use user `ec2-user` to log in
 
-![using PuTTY](login.png)
+![PuTTY](_19.png)
 
 Change the password for `hxeadm` using the following command:
 
@@ -138,16 +227,16 @@ sudo passwd hxeadm
 
 As follows:
 
-![Change password](passwd.png)
+![PuTTY](_20.png)
 
 
-use the following command to start configuring your instance:
+Switch now to user **`hxeadm`** to start configuring your instance:
 
 ```ssh
 sudo su - hxeadm
 ```
 
-![switch to hxeadm](ssh1.png)
+![PuTTY](_21.png)
 
 You will be prompted for the master password for your database. **If you lose this password, you will lose access to your instance**.
 
@@ -165,19 +254,17 @@ You will be prompted for the master password for your database. **If you lose th
 > - Cannot contain simplistic or systematic values, like strings in ascending or descending numerical or alphabetical order
 >
 
-&nbsp;
-
 Enter the password you want to set for your administration user and then type **Y** to continue setup.
 
-![enter the password](ssh2.png)
+![PuTTY](_22.png)
 
 The setup script will perform different configurations. After a couple of minutes, you should see a success message
 
-![success message](configured.png)
+![PuTTY](_23.png)
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Optional: Check your instance)]
+[ACCORDION-BEGIN [Step 8: ](Check your instance)]
 
 You can now check your instance is running properly. From the console log, use the following command as user `hxeadm` to see which processes your database is running:
 
@@ -191,11 +278,9 @@ You should see (at least) the following processes:
 - `hdbwebdispatcher`
 - `hdbwebdispatcher`
 
-![HDB info output](hdb.png)
+![PuTTY](_24.png)
 
->Note: You can run commands `HDB start` and `HDB stop` respectively to start and stop your SAP HANA instance
-
-&nbsp;
+> ### **Note** You can run commands `HDB start` and `HDB stop` respectively to start and stop your SAP HANA instance
 
 You can also log in to the database to check everything is running as intended. Use the following commands
 
@@ -207,7 +292,11 @@ This will log you into the command-line SQL client.  You can exit using `quit`.
 
 All the next steps are optional and enable additional functionality in your SAP HANA, express edition, instance.
 
-You can now connect to your instance using any SQL client that uses JDBC drivers, such as [Visual Studio](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio.html),[the `DBeaver` SQL client](https://www.sap.com/developer/tutorials/hxe-cj1-download-sql-client.html) or HANA Studio, a plugin to [download and install on Eclipse](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
+You can now connect to your instance using any SQL client that uses JDBC drivers, such as:
+
+ - [Visual Studio](https://www.sap.com/developer/tutorials/hxe-ua-visual-studio.html)
+ - [the `DBeaver` SQL client](https://www.sap.com/developer/tutorials/hxe-cj1-download-sql-client.html)
+ - HANA Studio, a plugin to [download and install on Eclipse](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
 
 If anything is going wrong, [check the questions and answers from the community](https://answers.sap.com/index.html).
 
