@@ -15,13 +15,13 @@ time: 25
 
 ## Details
 ### You will learn
-
- - Create a SAPUI5 HTML Module
- - Add a dependency to the Node.js Module as a destination
- - Configure the Application Router
- - Configure the Application Manifest
- - Create a series of Formatter
- - Run your SAPUI5 application
+- Create a SAPUI5 HTML Module
+- Add a dependency to the Node.js Module as a destination
+- How use JSON models
+- Configure the Application Router
+- Configure the Application Manifest
+- Create a series of Formatter
+- Run your SAPUI5 application
 
 **Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Predictive services.
 For more content on SAPUI5, you can check the dedicated <a href="https://sapui5.hana.ondemand.com/#/topic/3da5f4be63264db99f2e5b04c5e853db" target="new">tutorials</a> section available on the <a href="https://sapui5.hana.ondemand.com" target="new">SAPUI5 documentation</a>.

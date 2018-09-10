@@ -4,20 +4,15 @@ description: Import SAP Predictive Analytics Census Sample Dataset in your SAP H
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 10
 ---
 
 ## Prerequisites  
-- Proficiency: beginner
 - [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
 
-### You will learn
-
-In this tutorial, you will learn how to download and import the SAP Predictive Analytics Census sample dataset into your SAP HANA, express edition instance.
-
 ## Details
-
-### Time to Complete
-**10 Min**.
+### You will learn
+In this tutorial, you will learn how to download and import the SAP Predictive Analytics Census sample dataset into your SAP HANA, express edition instance.
 
 [ACCORDION-BEGIN [Info: ](Sample file structure)]
 
@@ -54,7 +49,7 @@ This Census data set (`Census01.csv`) presents the data on 48842 individual Amer
 | <nobr>`class`</nobr>          | Variable indicating if the salary is greater $50 k | <nobr>if salary > $50 k then 1 else 0</nobr>
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Create the table structure)]
 
@@ -81,7 +76,7 @@ CREATE TABLE PA_DATA.CENSUS (
 ```
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download the Sample Data)]
 
@@ -138,7 +133,7 @@ The dataset files should now be located in: **`/usr/sap/HXE/HDB90/work/sample_ce
 You can now move to **Step 3: Import Using the IMPORT FROM SQL command**.
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import Using the SAP HANA Tools for Eclipse)]
 
@@ -165,7 +160,7 @@ The source files should be mapped with the following target tables:
 | `Census01.csv`             | `PA_DATA.CENSUS`                
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import Using the IMPORT FROM SQL command)]
 
@@ -188,7 +183,7 @@ WITH
 ```
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Verify the imported data)]
 
@@ -199,11 +194,11 @@ SELECT 'CENSUS' as TABLE_NAME, count(1) as ROW_COUNT from PA_DATA.CENSUS;
 ```
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Validation)]
 
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
-[ACCORDION-END] 
+[ACCORDION-END]

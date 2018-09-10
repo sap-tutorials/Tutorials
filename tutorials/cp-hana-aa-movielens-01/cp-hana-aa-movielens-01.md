@@ -4,21 +4,15 @@ description: Learn how to easily import flat dataset files in your SAP HANA MDC 
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
+time: 15
 ---
-
-## Prerequisites
- - **Proficiency:** Beginner
 
 ## Next Steps
 - [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://www.sap.com/developer/groups/cp-hana-aa-movielens.html)
 
 ## Details
 ### You will learn
-
 - How to create the relevant CDS artifacts to expose your flat files as CDS entities.
-
-### Time to Complete
-**15 Min**
 
 [ACCORDION-BEGIN [Info: ](Which MovieLens dataset?)]
 

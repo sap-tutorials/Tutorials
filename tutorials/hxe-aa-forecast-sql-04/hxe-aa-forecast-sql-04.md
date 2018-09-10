@@ -15,7 +15,6 @@ time: 30
 
 ## Details
 ### You will learn
-
 - Understand the basics about the SAP HANA Automated Predictive Library
 - How to call SAP HANA Automated Predictive Library functions from SQL
 - Identify which algorithm options are available for recommendation engines

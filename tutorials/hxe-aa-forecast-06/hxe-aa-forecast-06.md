@@ -15,7 +15,6 @@ time: 30
 
 ## Details
 ### You will learn
-
 - Understand the basics about the SAP HANA Predictive Analytics Library
 - How to call SAP HANA Predictive Analytics Library functions from an XSA application and an HDI container
 - Identify which algorithm options are available for recommendation engines

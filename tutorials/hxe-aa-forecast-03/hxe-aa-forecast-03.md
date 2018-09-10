@@ -15,7 +15,6 @@ time: 20
 
 ## Details
 ### You will learn
-
 - How to create CDS artifacts to expose your dataset as CDS entities.
 - How to load your dataset content in the CDS entities.
 

@@ -12,7 +12,6 @@ time: 20
 
 ## Details
 ### You will learn
-
 - Which flavor and version of SAP HANA, express edition is needed to complete this tutorial series
 - Complete a series of required post-installation task
 - Enable the builders for the development space

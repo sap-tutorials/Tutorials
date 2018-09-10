@@ -9,8 +9,9 @@ time: 20
 
 ## Details
 ### You will learn
-
 - Create a HDB SQL View Artifact
+- Create a HDB Procedure Artifact
+
 
 [ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
 

@@ -3,20 +3,13 @@ title: Use Jupyter Notebook with SAP HANA, express edition
 description: Provide details on the installation and configuration of Jupyter Notebooks to use with  SAP HANA, express edition.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
-tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition ]
+time: 20
 ---
 
-## Prerequisites  
-- Proficiency: Intermediate
-
-### You will learn
-
-During this tutorial, you will learn how to install the Jupyter Notebook application on your system and connect it to your SAP HANA, express edition.
-
 ## Details
-
-### Time to Complete
-**20 Min**.
+### You will learn
+During this tutorial, you will learn how to install the Jupyter Notebook application on your system and connect it to your SAP HANA, express edition.
 
 [ACCORDION-BEGIN [Info: ](Jupyter)]
 

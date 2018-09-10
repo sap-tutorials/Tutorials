@@ -4,17 +4,14 @@ description: Configure your SAPUI5 application and your connect it to your SAP H
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning, topic>sapui5 ]
+time: 10
 ---
-
-## Prerequisites
- - **Proficiency:** Beginner
 
 ## Next Steps
 - [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://www.sap.com/developer/groups/cp-hana-aa-movielens.html)
 
 ## Details
 ### You will learn
-
 - How to add a destination to your SAP Cloud Platform account
 - How to create a SAPUI5 application from a template using the SAP Web IDE
 - How to add a destination to your SAPUI5 application
@@ -22,9 +19,6 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 
 **Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Predictive services.
 For more content on SAPUI5, you can check the dedicated <a href="https://sapui5.hana.ondemand.com/#/topic/3da5f4be63264db99f2e5b04c5e853db" target="new">tutorials</a> section available on the <a href="https://sapui5.hana.ondemand.com" target="new">SAPUI5 documentation</a>.
-
-### Time to Complete
-**10 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Create your destination)]
 

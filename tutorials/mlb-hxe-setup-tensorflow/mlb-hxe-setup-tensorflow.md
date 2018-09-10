@@ -3,15 +3,15 @@ title: Configure the TensorFlow integration (SAP HANA EML) with SAP HANA, expres
 description: Provide details on the installation and configuration of the SAP HANA External Machine Learning Library with SAP HANA, express edition.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
-tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition ]
 time: 120
 ---
 
 ## Prerequisites  
-- Proficiency: Intermediate
+- [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
 
+## Details
 ### You will learn
-
 During this tutorial, you will learn how to install and configure the TensorFlow integration with SAP HANA, express edition.
 
 First, you will download and install the required SAP HANA components.
@@ -19,10 +19,6 @@ First, you will download and install the required SAP HANA components.
 Then, as the TensorFlow Serving `ModelServer` binaries are only available for `Debian` Linux distribution, you will learn how to compile it from scratch, deploy and expose a model for SUSE Linux Enterprise Server and Red Hat Enterprise Linux.
 
 Finally, you will learn how to configure your SAP HANA, express edition instance to consume the exposed TensorFlow models.
-
-## Details
-
----
 
 [ACCORDION-BEGIN [Info: ](SAP HANA External Machine Learning Library)]
 

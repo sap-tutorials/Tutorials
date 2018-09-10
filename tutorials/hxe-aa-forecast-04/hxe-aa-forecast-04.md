@@ -15,7 +15,6 @@ time: 30
 
 ## Details
 ### You will learn
-
 - Understand the basics about Time Series analysis
 - Which statistics can help you better understand the structure of the dataset
 - Based on the statistical assessment, identify what algorithm options are available

@@ -11,7 +11,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 
 ## Details
 ### You will learn
-
 - How to use inheritance in controller
 - How use JSON models
 - Create and use Formatters

@@ -4,21 +4,15 @@ description: Understand and implement some of the options available with SAP HAN
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
+time: 5
 ---
-
-## Prerequisites
- - **Proficiency:** Beginner
 
 ## Next Steps
 - [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://www.sap.com/developer/groups/cp-hana-aa-movielens.html)
 
 ## Details
 ### You will learn
-
 - How to setup your SAP HANA XS OData service to be used in your SAPUI5 application
-
-### Time to Complete
-**5 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Switch to the Catalog perspective)]
 

@@ -11,7 +11,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 
 ## Details
 ### You will learn
-
  - Create a SAPUI5 HTML Module
  - Add a dependency to the Node.js Module as a destination
  - Run your SAPUI5 application

@@ -15,7 +15,6 @@ time: 15
 
 ## Details
 ### You will learn
-
 - How to load your dataset content in your SAP HANA, express edition instance
 
 [ACCORDION-BEGIN [Info: ](Which Time series dataset?)]

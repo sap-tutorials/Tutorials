@@ -11,7 +11,6 @@ tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-le
 
 ## Details
 ### You will learn
-
 - How to create a XSUAA service with its security descriptor
 - How to configure users and role in the XSA Administration Cockpit
 - How to add the required security configuration to your MTA project

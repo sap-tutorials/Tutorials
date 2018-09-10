@@ -9,7 +9,6 @@ time: 15
 
 ## Details
 ### You will learn
-
 - How to use inheritance in controller
 - How use JSON models
 - Create and use Formatters

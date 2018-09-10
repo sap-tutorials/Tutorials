@@ -4,17 +4,14 @@ description: Understand the capabilities and options made available with SAP HAN
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
+time: 20
 ---
-
-## Prerequisites
- - **Proficiency:** Beginner
 
 ## Next Steps
 - [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://www.sap.com/developer/groups/cp-hana-aa-movielens.html)
 
 ## Details
 ### You will learn
-
 - How to use SAP HANA APL Recommendation algorithm
 
 > ### **Note**
@@ -22,9 +19,6 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 If you are using a different version of SAP HANA and the SAP HANA APL library, the code and the results may differ.
 >
 For more details about the APL function, check the online <a href="https://help.sap.com/viewer/cb31bd99d09747089754a0ba75067ed2/3.1/en-US/9bf31268c57e4c079f0cbabd36f39640.html" target="new">documentation</a>.
-
-### Time to Complete
-**20 Min**
 
 [ACCORDION-BEGIN [Info: ](SAP HANA Automated Predictive Library)]
 

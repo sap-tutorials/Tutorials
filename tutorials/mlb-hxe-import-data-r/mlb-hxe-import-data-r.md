@@ -4,20 +4,17 @@ description: Import data from the R Datasets package in your SAP HANA, express e
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 10
 ---
+
 ## Prerequisites  
-- Proficiency: beginner
+- [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
 
+## Details
 ### You will learn
-
 As part of the [R Datasets package](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html), you can get access to over a hundred sample datasets to address many Machine learning scenarios.
 
 In this tutorial, you will learn how to proceed to import the sample dataset into your SAP HANA, express edition instance.
-
-## Details
-
-### Time to Complete
-**10 Min**.
 
 [ACCORDION-BEGIN [Prerequisite: ](Prepare your environment)]
 
@@ -238,4 +235,4 @@ SELECT COUNT(1) FROM ABILITY;
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_2]
-[ACCORDION-END] 
+[ACCORDION-END]
