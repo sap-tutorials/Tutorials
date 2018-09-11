@@ -64,7 +64,42 @@ Your project is now created.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Hibernate as a Maven dependency)]
+[ACCORDION-BEGIN [Step 2: ](Set the minimum Java version)]
+By default, the Eclipse Maven plugin will configure the project to use Java 1.5. Since this Java version is very old and lacks many features, we will set the Java version to Java 8.
+
+Open the **`pom.xml`** file and switch to the **Overview** tab.
+
+![pom](pom-overview.png)
+
+Click on **Create...** in the **Properties** area.
+
+Enter the following details:
+
+- Name: `maven.compiler.source`
+- Value: `1.8`
+
+![Add Java compiler source property](add-compiler-source-property.png)
+
+Click on **OK**
+
+Save the `pom.xml` file.
+
+In order for the change to become effective, the project configuration must be updated.
+
+Right-click on the project in the **Project Explorer** tab and choose **Maven -> Update Project...**.
+
+![Update Maven project](maven-update-project.png)
+
+The following dialog shows what will be updated. You don't need to change anything.
+
+![Update Maven project dialog](update-project-dialog.png)
+
+Click on **OK**
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Add Hibernate as a Maven dependency)]
 
 Open the **`pom.xml`** file and switch to the **Dependencies** tab.
 
@@ -89,7 +124,7 @@ The project should rebuild automatically.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add Maven dependencies for Java 9 and higher)]
+[ACCORDION-BEGIN [Step 4: ](Add Maven dependencies for Java 9 and higher)]
 If you are using Java 9 or higher, you'll have to add the JAXB jars as explicit dependencies. Add the following dependencies just like the Hibernate dependency in the previous step:
 
 **JAXB API**
@@ -119,7 +154,7 @@ If you are using Java 9 or higher, you'll have to add the JAXB jars as explicit 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add the HANA JDBC driver as a Maven dependency)]
+[ACCORDION-BEGIN [Step 5: ](Add the HANA JDBC driver as a Maven dependency)]
 The HANA JDBC driver can be added as another Maven dependency. Repeat the steps to add a Maven dependency with the following data:
 
 - Group Id: `com.sap.cloud.db.jdbc`
@@ -129,7 +164,7 @@ The HANA JDBC driver can be added as another Maven dependency. Repeat the steps 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Create a persistence configuration)]
+[ACCORDION-BEGIN [Step 6: ](Create a persistence configuration)]
 
 Create a file named **`persistence.xml`** in **`tutorial/src/main/resources/META_INF`** using the ***File -> New -> File*** menu bar.
 
@@ -175,7 +210,7 @@ Save the `persistence.xml` file.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Test your setup)]
+[ACCORDION-BEGIN [Step 7: ](Test your setup)]
 
 Create a new **`TestSetup`** Java class in a package named **`com.sap.hana.hibernate.tutorial.setup`** (either using a right-click on the project and choose ***New -> Class*** or use the ***File -> New -> Class*** menu bar), then paste the following content:
 
