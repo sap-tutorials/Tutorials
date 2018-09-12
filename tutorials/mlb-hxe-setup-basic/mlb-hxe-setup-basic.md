@@ -4,20 +4,15 @@ description: Check that your instance is properly configured and meets the minim
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 10
 ---
 
 ## Prerequisites  
-- Proficiency: beginner
 - [Select and Install a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
 
-### You will learn
-
-In this tutorial, you will enable your SAP HANA, express edition instance to use the Machine Learning libraries available and verify that your system meets the minimum requirements.
-
 ## Details
-
-### Time to Complete
-**10 Min**.
+### You will learn
+In this tutorial, you will enable your SAP HANA, express edition instance to use the Machine Learning libraries available and verify that your system meets the minimum requirements.
 
 [ACCORDION-BEGIN [Prerequisite: ](Install a SQL query tool)]
 
@@ -26,7 +21,7 @@ In order to interact with your SAP HANA, express edition instance, you will be r
 As a number of options are available, you can check the following link: [Install a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Check your tenant database)]
 
@@ -57,7 +52,7 @@ If the **HXE** tenant is listed, but with the **`ACTIVE_STATUS`** set to **NO**,
 ALTER SYSTEM START DATABASE HXE;
 ```
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable the Script Server)]
 
@@ -86,7 +81,7 @@ The result should return a list of service names, their associated port numbers 
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Check the installed AFL libraries)]
 
@@ -105,7 +100,7 @@ The pre-installed AFL includes:
  - ***Optimization Function Library (OFL)*** : defines a series of optimization function like Simplex
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a dedicated user)]
 
@@ -141,7 +136,7 @@ SELECT * FROM SYS.PROCEDURES WHERE SCHEMA_NAME = '_SYS_AFL';
 ```
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Create a dedicated schema)]
 
@@ -164,4 +159,4 @@ SELECT CURRENT_USER || ' / ' ||  CURRENT_SCHEMA FROM DUMMY;
 ```
 
 [VALIDATE_2]
-[ACCORDION-END] 
+[ACCORDION-END]

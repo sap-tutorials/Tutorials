@@ -85,7 +85,6 @@ In this step we create a technical user DEMO. The purpose of this user is to res
 
 1. Call transaction SU01, enter **`DEMO`** in entry field **User**, and choose **Create** (F8).
 ![Create User DEMO](SU01-001.png)
-
 2. Enter **`DEMO`** as **Last name** on tab **Address**.
 3. Change to tab **Logon Data**, choose **User Type** **`Service`**, provide a password, and press RETURN. For the following steps, we assume that you chose **`Welcome`** as a password. Note that you can also choose user type **`Dialog`** or **`Communication Data`**.
 ![Logon Data](SU01-001b.png)
@@ -116,6 +115,8 @@ In this step we create a technical user DEMO. The purpose of this user is to res
 ![Transaction STC01](STC01-007-REFAPPS.png)
 3. You need to add your user in order to generate sample data. Enter **`DEMO`** in entry field **Users to be added to `ITelO`**, save, and choose **Back**.
 ![Transaction STC01](STC01-008-REFAPPS.png)
+> Note that the access to the OData service will be restricted to the users you enter here. If several users need to access the service, return to step 3 to create more users and add them here by choosing **`multiple selection`** (![multiple selection](multiple-selection-icon.png)).
+
 4. Choose **Start/Resume Task List Run in Dialog** (F8). Note that due to the generation of sample data, the task list run will run for a few minutes. If you need to re-generate the sample data, you just need to run the last two tasks of this task list.
 ![Transaction STC01](STC01-009-REFAPPS.png)
 5. After completion of the task list run, it should look like this:

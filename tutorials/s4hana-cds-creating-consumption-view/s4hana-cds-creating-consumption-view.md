@@ -3,9 +3,9 @@ title: Creating Consumption views based on basic/interface views
 description: Create a Consumption CDS view  
 primary_tag: products>sap-s-4hana
 tags: [  tutorial>beginner, products>sap-s-4hana ]
+time: 20
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Tutorials:** [Creating basic/interface views in Open Core Data Services ](https://www.sap.com/developer/tutorial-navigator.html)
 
 ## Next Steps
@@ -17,9 +17,6 @@ tags: [  tutorial>beginner, products>sap-s-4hana ]
 - How to use Core Data Services
 - How to create a consumption views on top of interface views.
 
-
-### Time to Complete
-**15-20 Min**
 
 ---
 

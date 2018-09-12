@@ -106,8 +106,6 @@ You need to update the navigation properties to match the new entity name of **S
 
 ![places to update in Component file](8.png)
 
-**Comment out `server.init()`** on line 14 by adding 2 forward slashes (`//`) to the beginning of the line.
-
 Change the word `ToysSet` to **`Sets`** in line 18.
 
 ![changes in Component file](9.png)

@@ -187,6 +187,3 @@ Execute `ZCDS_INVOICE_ITEMS_EURO` again by choosing **Execute (F8)**.
 
 [ACCORDION-END]
 
-## Next Steps
-
-  - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

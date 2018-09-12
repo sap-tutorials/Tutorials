@@ -1,18 +1,16 @@
 ---
-title: Build simple approval UI for your workflow
+title: Build Simple Approval UI for Your Workflow
 description: Build the UI to be displayed to execute a user task (task performed by a person) within a workflow.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner ]
+time: 15
 ---
 
 ## Details
 ### You will learn  
-- To build a user task.
-- To implement a SAPUI5 application that has a page (called "view").
-- To complete the workflow by approving or rejecting the task in My Inbox.
-
-### Time to Complete
-**15 Min**
+- How to build a user task
+- How to implement a SAPUI5 application that has a page (called view)
+- How to complete the workflow by approving or rejecting the task in My Inbox
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE Full-Stack)]
@@ -23,8 +21,9 @@ tags: [  tutorial>beginner ]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Creating a new SAPUI5 application)]
+[ACCORDION-BEGIN [Step 2: ](Create a new SAPUI5 application)]
 In the SAP Web IDE Full-Stack, create a new project using a template.
+
 1. In the navigation area, choose the home icon.
 2. Choose **New Project from Template**.
 ![New Project](new-project.png)
@@ -45,15 +44,15 @@ The HTML page is still empty. You need to add the necessary UI controls for disp
 
 [ACCORDION-BEGIN [Step 3: ](Create the form layout)]
 1. To use the form layout, enable the **`sap.ui.layout`** package in the project settings of SAP Web IDE:
-    1. Choose **Workspace** | **`BookUIApplication`**.
-    2. Right-click the **`BookUIApplication`** project, and choose **Project Settings**.
-     ![Choose Project Settings](open-project-settings.png)
-     Under **SAPUI5**, select the **`sap.ui.layout`** package, and then **Save**.
-     ![Select Layout](select-layout.png)
+  <ol type="a"><li>Choose **Workspace** | **`BookUIApplication`**.
+  </li><li>Right-click the **`BookUIApplication`** project, and choose **Project Settings**.
+   ![Choose Project Settings](open-project-settings.png)
+   Under **SAPUI5**, select the **`sap.ui.layout`** package, and then **Save**.
+   ![Select Layout](select-layout.png)</li></ol>
 2. Open the newly created view using the layout editor:
-    1. Choose **Workspace** | **`BookUIApplication`** | **`webapp`** | **view** | **`ApproveBookView.view.xml`**.
-    2. Right-click and choose **Open With** | **Layout Editor**.
-     ![Open Layout Editor](open-layout-editor.png)    
+  <ol type="a"><li>Choose **Workspace** | **`BookUIApplication`** | **`webapp`** | **view** | **`ApproveBookView.view.xml`**.
+  </li><li>Right-click and choose **Open With** | **Layout Editor**.
+   ![Open Layout Editor](open-layout-editor.png)</li></ol>
 3. To add a form to the page, choose **Layout** | **Simple Form** and drag it onto the editor canvas.
      ![Add Simple Form](add-simple-form.png)    
 4. Select the **Title** element, and change the title text under **Properties** to 'Book Details'.
@@ -67,9 +66,10 @@ Your page layout should now look like this:
 
 [ACCORDION-BEGIN [Step 4: ](Add a data binding)]
 1. To bind the UI controls to data from the workflow context, use the **Value** field in the properties of the input control:
-    1. Select the input control with the label **Title**, and enter '{/product}'.
-    2. Select the input control with the label **Price**, and enter '{/price}'.
-![Add Values](add-values.png)
+  <ol type="a"><li>Select the input control with the label **Title**, and enter '{/product}'.
+  </li><li>Second line
+  </li><li>Select the input control with the label **Price**, and enter '{/price}'.
+![Add Values](add-values.png)</li></ol>
 2. To prevent the approver from changing the title or price, set the **Editable** property to **false** for both input elements.
 3. Choose **Save**.
 
@@ -98,7 +98,7 @@ To make the workflow context available to the UI controls, you need to retrieve 
 3. Choose **Save**.
 4. To deploy the project, select the project in the workspace and choose **Deploy** | **Deploy to SAP Cloud Platform**. On the following screen, choose **Deploy**.
    ![Deploy Project](deploy-project.png)
-    > Note: If you open the application in the browser, you see a blank page because the UI only works when running inside the My Inbox application.  
+    > If you open the application in the browser, you see a blank page because the UI only works when running inside the My Inbox application.  
 
 [ACCORDION-END]  
 
@@ -194,10 +194,10 @@ To add **Approve** and **Reject** buttons to actually complete the task, go back
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Completing the workflow)]
+[ACCORDION-BEGIN [Step 8: ](Complete the workflow)]
 1. Deploy the **`BookUIApplication`** project again. Select the project and choose **Deploy** | **Deploy to SAP Cloud Platform**. On the following screen, choose **Deploy**.
 2. Refresh My Inbox to check the updated UI for the task.
-    > Note: To see the new buttons, you may have to clean the browser cache or force a "hard reload".
+    > To see the new buttons, you may have to clean the browser cache or force a "hard reload".
 
     ![Redeploy Project](redeploy-project.png)
 3. To complete the workflow, choose either **Approve** or **Reject** in the My Inbox app.

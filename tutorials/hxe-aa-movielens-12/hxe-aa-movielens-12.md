@@ -15,9 +15,9 @@ time: 15
 
 ## Details
 ### You will learn
-
-- How to add a SAPUI5 controller and interact with an XS OData service
-- How to add a SAPUI5 view and interact with an XS OData service
+- Create and use Fragments
+- Create a SAPUI5 controller and interact with an XS OData service
+- Create a SAPUI5 view and interact with an XS OData service
 
 [ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
 

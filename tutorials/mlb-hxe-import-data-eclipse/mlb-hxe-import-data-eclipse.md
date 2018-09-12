@@ -4,16 +4,17 @@ description: Provide details on the import data feature available in the SAP HAN
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition ]
+time: 10
 ---
 
 ## Prerequisites  
-- Proficiency: beginner
 - [Eclipse IDE](https://www.eclipse.org/downloads/) installed, running and properly connected to the internet.
 - [SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql-eclipse.html) installed and connected to your SAP HANA, express edition.
 - [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
 
-### You will learn
 
+## Details
+### You will learn
 In this tutorial, you will learn how to use the SAP HANA Tools for Eclipse Import feature from your local machine to your SAP HANA, express edition.
 
 The Import feature supports different file format (TXT, CSV and Excel work sheet and work book), field delimiters, use of header rows, full or partial imports, use existing or new tables.
@@ -26,11 +27,6 @@ This requires the data set file to be physically located on your SAP HANA, expre
 Using the ***IMPORT FROM*** SQL command is recommended for larger files.
 
 For more information, you can check the following tutorial: [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-sql-import.html)
-
-## Details
-
-### Time to Complete
-**10 Min**.
 
 [ACCORDION-BEGIN [Prerequisite: ](SAP HANA Tools for Eclipse)]
 

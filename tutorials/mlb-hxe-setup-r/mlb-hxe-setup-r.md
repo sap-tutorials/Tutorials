@@ -3,14 +3,15 @@ title: Configure the SAP HANA R integration with SAP HANA, express edition
 description: Provide details on the installation and configuration of the SAP HANA R integration with SAP HANA, express edition.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
-tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition ]
+time: 45
 ---
 
 ## Prerequisites  
-- Proficiency: Intermediate
+- [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
 
+## Details
 ### You will learn
-
 The pre-built version of R are not compiled with dynamic/shared libraries enable which is required for the SAP HANA integration.
 
 Therefore, you must compile the R package from its source code with the dynamic/shared libraries (`--enable-R-shlib`).
@@ -22,11 +23,6 @@ Some elements of configuration, such as authentication or SSL, will not be cover
 For further details, you can consult the [SAP HANA R Integration Guide](https://help.sap.com/viewer/a78d7f701c3341339fafe4031b64f015/2.0.02/en-US/dbad714484d242789688a551fbdf5573.html).
 
 It also includes a section dedicated to debugging and tracing.
-
-## Details
-
-### Time to Complete
-**45 Min**.
 
 [ACCORDION-BEGIN [Info: ](SAP HANA R integration)]
 
@@ -321,7 +317,7 @@ Client-side implementations are available for popular languages such as C/C++ an
 
 If your host is connected to the Internet, you can leverage the CRAN mirror to install `Rserve` else you can download it manually and transfer it.
 
-To install the `Rserver` package and make available to every user you should start R as a supper user running the following command:
+To install the `Rserve` package and make available to every user you should start R as a supper user running the following command:
 
 ```shell
 sudo R
@@ -355,7 +351,7 @@ library("Rserve")
 
 You should not receive any message after executing the command.
 
-Now, as we installed the `Rserver` as super user, we need to add proper rights to any users executing the following command:
+Now, as we installed the `Rserve` as super user, we need to add proper rights to any users executing the following command:
 
 ```shell
 sudo chmod 755 /usr/lib64/R/bin/Rserve

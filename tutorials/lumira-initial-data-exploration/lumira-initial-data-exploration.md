@@ -29,7 +29,7 @@ In Status bar check how many rows and columns are in the dataset. In this exampl
 
 ![Dataset view in Grid view of the Prepare room](Lum02-01.png)
 
-All of columns became **Dimensions** to analyse data. Dimensions with numeric data have been additionally recognized by SAP BusinessObjects Lumira as **Measures**, which can be used for numerical analysis using different types of aggregation. Aggregation of the type `Sum` is the default for all measures.
+All of columns became **Dimensions** to analyze data. Dimensions with numeric data have been additionally recognized by SAP BusinessObjects Lumira as **Measures**, which can be used for numerical analysis using different types of aggregation. Aggregation of the type `Sum` is the default for all measures.
 
 > You can check UI components terminology of SAP BusinessObjects Lumira by downloading the ***Terminology Quick Reference*** from User Guides available at [SAP BusinessObjects Lumira help portal](https://help.sap.com/lumira#section2).
 
@@ -86,7 +86,7 @@ And to find what lines of products are best selling in `Australia`, add the filt
 
 ![Filter dialog window](Lum02-06.png)
 
-You should notice that Austria has been added as a filter in **Filters bar**. Remove it from there by clicking `x` after you analysed filtered data.
+You should notice that Austria has been added as a filter in **Filters bar**. Remove it from there by clicking `x` after you analyzed filtered data.
 
 ![Remove filter from the Filters bar](Lum02-07.png)
 

@@ -260,7 +260,7 @@ func userNotificationCenter(_: UNUserNotificationCenter, didReceive response: UN
 // Called when a notification is delivered to a foreground app.
 func userNotificationCenter(_: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
     self.logger.info("Remote Notification arrived while app was in forground: \(notification.request.content.body)")
-    // Currently we are presenting the notification alert as the application were in the backround.
+    // Currently we are presenting the notification alert as the application were in the background.
     // If you have handled the notification and do not want to display an alert, call the completionHandle with empty options: completionHandler([])
     completionHandler([.alert, .sound])
 }

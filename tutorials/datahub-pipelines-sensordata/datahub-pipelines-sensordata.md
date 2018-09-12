@@ -80,6 +80,3 @@ Stop the pipeline by pressing the **Stop** button (you find it next to the **Run
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-[Use a message broker](https://www.sap.com/developer/tutorials/datahub-pipelines-broker.html)

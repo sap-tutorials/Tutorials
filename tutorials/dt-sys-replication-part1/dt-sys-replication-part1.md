@@ -23,7 +23,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
 
 [ACCORDION-BEGIN [Step 1: ](Introduction)]
 
-System replication is a high-availability feature in every SAP HANA installation, offering an inherent diaster recovery support. It is a mirroring configuration where you set up a secondary system that is an exact copy of the main, primary system.
+System replication is a high-availability feature in every SAP HANA installation, offering an inherent disaster recovery support. It is a mirroring configuration where you set up a secondary system that is an exact copy of the main, primary system.
 
 The instances in the secondary system operate in recovery mode, which means all secondary system services constantly communicate with their primary counterparts, replicate and persist data and logs, and load data to memory to build a shadow database. The secondary system is passive until the primary system becomes unavailable and a takeover is performed.
 

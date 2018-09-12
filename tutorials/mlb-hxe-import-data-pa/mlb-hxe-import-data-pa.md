@@ -4,22 +4,16 @@ description: Prepare to import SAP Predictive Analytics Sample Dataset in your S
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 10
 ---
-## Prerequisites  
-- Proficiency: beginner
 
+## Details
 ### You will learn
-
 As part of the [SAP Predictive Analytics documentation](https://help.sap.com/viewer/p/SAP_PREDICTIVE_ANALYTICS), you can download sample datasets to address many Machine learning scenarios.
 
 In this tutorial, you will learn how to import all the SAP Predictive Analytics sample dataset into your SAP HANA, express edition instance.
 
 For each data set, you will be provided with the table creation DDL and IMPORT FROM SQL statement if you choose that route.
-
-## Details
-
-### Time to Complete
-**10 Min**.
 
 [ACCORDION-BEGIN [Prerequisite: ](Prepare your environment)]
 

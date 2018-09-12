@@ -15,7 +15,6 @@ time: 15
 
 ## Details
 ### You will learn
-
  - Create a Node.js Module
  - Add a dependency to the SAP HANA Database Module
  - Create a XS OData service

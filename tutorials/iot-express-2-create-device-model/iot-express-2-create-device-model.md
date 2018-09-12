@@ -2,7 +2,8 @@
 title: Create a Simple IoT Device Model
 description: Create a simple IoT device model in the IoT service of SAP Cloud Platform.
 primary_tag: topic>internet-of-things
-auto_validation: true
+auto_validation: false
+time: 30
 tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-cloud-platform, products>sap-cloud-platform-iot ]
 ---
 
@@ -21,10 +22,6 @@ tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, prod
 - How to ingest simulated data using a Node.js script
 - How to ingest data using SAP Leonardo IoT Foundation Starter Kit
 
-### Time to Complete
-**30 Min**
-
-
 
 ## Next Steps
 - **Tutorials:** [Assemble and Configure Device Hardware](https://www.sap.com/developer/tutorials/iot-express-3-configure-device.html), but you can also skip to [Create a Thing Model and Bind Your Device into a Business Context](https://www.sap.com/developer/tutorials/iot-express-4-create-thing-model.html) if you do not have the time or do now want to use real hardware at this point.
@@ -33,7 +30,7 @@ tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, prod
 
 [ACCORDION-BEGIN [Step 1: ](Login to your IoT service instance)]
 
-  1. Go to `https://<INSTANCE-NAME>.eu10.cp.iot.sap/iot/cockpit/#/welcome` (replace `<INSTANCE-NAME>` with your own, it looks like this for example: https://76eae3d3-9de6-4345-b26c-ff35be052652.eu10.cp.iot.sap/). Open a browser window and access the IoT Service for Cloud Foundry cockpit from it - the fastest way to get there is to open [http://hana.ondemand.com/](http://hana.ondemand.com/) and then navigate to your cloud foundry sub-account, from there to your space and in there you can find the `dashboard` in the service instances list.
+  1. Go to `https://<INSTANCE-NAME>.eu10.cp.iot.sap/iot/cockpit/#/welcome` (replace `<INSTANCE-NAME>` with your own, it looks like this for example: `https://76eae3d3-9de6-4345-b26c-ff35be052652.eu10.cp.iot.sap/`). Open a browser window and access the IoT Service for Cloud Foundry cockpit from it - the fastest way to get there is to open [http://hana.ondemand.com/](http://hana.ondemand.com/) and then navigate to your cloud foundry sub-account, from there to your space and in there you can find the `dashboard` in the service instances list.
   2. Login with your user name and password (in the cloud cockpit you can find the root user credentials in the cloud foundry space in the service key area of the service instance)
 
 [DONE]

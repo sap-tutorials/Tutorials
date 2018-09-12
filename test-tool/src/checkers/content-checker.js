@@ -2,10 +2,9 @@
 
 const path = require('path');
 const fs = require('fs');
-const md = require('markdown-spellcheck').default;
 
 const tagChecker = require('./tags-checker');
-const { regexp, constraints, options: { spellCheckOptions } } = require('../constants');
+const { regexp, constraints } = require('../constants');
 
 const fileExistsSyncCS = (filePath) => {
   const dir = path.dirname(filePath);
@@ -26,12 +25,6 @@ const checkLocalImage = (absImgPath, imgName) => {
     result.push(`${mdnImg.messages.existence} -> ${imgName}`);
   }
   return result;
-};
-
-const checkStepSpelling = (line) => {
-  const content = line.replace(/[[]()]?/g, '');
-
-  return md.spell(content, spellCheckOptions);
 };
 
 module.exports = {
@@ -119,18 +112,6 @@ module.exports = {
             msg: `${h1.message} -> ${h1Match[0]}`,
           });
         }
-      }
-
-      const { step } = regexp;
-      const stepMatch = line.match(step);
-
-      if (stepMatch) {
-        const errors = checkStepSpelling(stepMatch[0]);
-
-        result.stepSpellCheckResult.push(...errors.map(err => ({
-          line: index + 1,
-          reason: err.word,
-        })));
       }
     });
 

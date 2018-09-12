@@ -144,7 +144,7 @@ You should see the following once you execute the statement above. Notice how "`
 
 ![7.6](assets/hana-webide-dt-getting-started-7-03e7f676.jpg)
 
-If you scroll right, you will see a column labelled "`STORAGE_TYPE`" which shows you what the storage type for each partition is:
+If you scroll right, you will see a column labeled "`STORAGE_TYPE`" which shows you what the storage type for each partition is:
 
 ![7.9](assets/hana-webide-dt-getting-started-7-ba69bc38.jpg)
 

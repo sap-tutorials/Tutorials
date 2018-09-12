@@ -52,5 +52,3 @@ Once you click this, you can view the log and data backups in the files.
 
 [ACCORDION-END]
 
-## Next Steps
- - **Tutorials** [Managing Backup Files](https://www.sap.com/developer/tutorials/dt-backup-recovery-part5.html)

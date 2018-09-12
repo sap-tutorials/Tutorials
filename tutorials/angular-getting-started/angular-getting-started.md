@@ -117,5 +117,3 @@ Connect to the SAP Web IDE (free for development use), and then get a simple pro
 
 Yes, you can.   We are using Web IDE because it provides an unlimited, free, developer account.  It also has a built-in web front end, so that you can test your code immediately.  And, it has a pretty good HTML and JavaScript editing system.  But there are plenty of other development IDE's, including Eclipse, that would work as well.  Feel free to use the one that your company is using, or try out a new one.
 
-## Next Steps
- - **Tutorials:** [Create the Bootstrap Template](https://www.sap.com/developer/tutorials/angular-bootstrap-template.html)

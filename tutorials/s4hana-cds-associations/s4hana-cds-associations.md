@@ -3,9 +3,9 @@ title: Core Data Services, creating Associations (Joins)
 description: Core Data Services, creating Associations (Joins)
 primary_tag: products>sap-s-4hana
 tags: [  tutorial>beginner, products>sap-s-4hana ]
+time: 20
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Tutorials:**
  - [Core Data  Services](https://www.sap.com/developer/tutorials/s4hana-cds-associations.html)
  - [Preparing views for Associations/Joins](https://www.sap.com/developer/tutorials/s4hana-cds-preparing-views-associations.html)
@@ -16,10 +16,8 @@ tags: [  tutorial>beginner, products>sap-s-4hana ]
 
 ## Details
 ### You will learn  
-How to join many views together.
+  - How to join many views together
 
-### Time to Complete
-**15-20 Min**
 
 ---
 

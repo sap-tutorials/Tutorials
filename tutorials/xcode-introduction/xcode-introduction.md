@@ -24,7 +24,7 @@ You will learn where to find the resources to get started with Swift development
 
 The SAP Cloud Platform SDK for iOS will enable companies and developers to quickly develop their own native apps, built with Swift, Apple's modern programming language. These native apps for iPhone and iPad can take advantage of all the innovative iOS technologies.
 
-To develop applications using the SAP Cloud Platform SDK for iOS, you will need to use the Xcode development environment and build your applications using the Swift programing language. Apple provides all the developer tools, resources, and programs to get started. Use the resources below to learn more about Swift, iOS, and the Apple Developer Enterprise Program.
+To develop applications using the SAP Cloud Platform SDK for iOS, you will need to use the Xcode development environment and build your applications using the Swift programming language. Apple provides all the developer tools, resources, and programs to get started. Use the resources below to learn more about Swift, iOS, and the Apple Developer Enterprise Program.
 
 - Learn more about Swift, Apple's modern and powerful programming language for iOS, `macOS`, tvOS, and watchOS: <https://developer.apple.com/swift/>
 

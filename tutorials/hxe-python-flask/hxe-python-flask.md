@@ -96,7 +96,7 @@ This tutorial will guide you through the process of creating a sample Python/Fla
     def server_error(e):
         #log the error and stacktrace
         logging.exception ('An error occurred during a request.')
-        return 'An internal error occured.', 500
+        return 'An internal error occurred.', 500
 
     #run the app.
     if __name__ == "__main__":

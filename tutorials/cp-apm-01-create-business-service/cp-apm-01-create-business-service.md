@@ -121,6 +121,3 @@ An error message is displayed because we have not added a database yet.
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-- [Add a UI to Your Business Application](https://www.sap.com/developer/tutorials/cp-apm-02-add-ui.html)

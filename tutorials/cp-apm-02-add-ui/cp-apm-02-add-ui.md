@@ -167,6 +167,3 @@ The application now shows data according to the added annotations.
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-- [Add a Database to Your Business Application](https://www.sap.com/developer/tutorials/cp-apm-03-add-database.html)

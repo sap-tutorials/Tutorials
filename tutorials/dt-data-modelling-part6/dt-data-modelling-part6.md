@@ -3,6 +3,7 @@ title: Seeing Calculation View Results
 description: Generating select statements for results and visulization
 primary_tag: products>sap-hana-dynamic-tiering
 tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering, products>sap-hana-studio, topic>big-data, topic>sql ]
+time: 15
 ---
 
 ## Prerequisites
@@ -12,8 +13,6 @@ tags: [ tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering,
 ### You will learn
   - How to generate a `SQL` Select Statement for a Calculation View
   - How to Visualize Queries
-### Time to Complete
- **15 Min**
 
  ---
 [ACCORDION-BEGIN [Step 1: ](Seeing Results)]

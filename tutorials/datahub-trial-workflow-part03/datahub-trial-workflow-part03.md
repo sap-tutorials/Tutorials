@@ -50,6 +50,3 @@ You see the log view. Refresh the log view by clicking **Refresh** until the sta
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-[Create workflow (part 4): Monitor task and workflow execution ](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part04.html)

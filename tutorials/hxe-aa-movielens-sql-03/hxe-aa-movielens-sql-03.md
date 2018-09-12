@@ -12,10 +12,9 @@ time: 30
 
 ## Next Steps
  - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://www.sap.com/developer/groups/hxe-aa-movielens-sql.html)
- 
+
 ## Details
 ### You will learn
-
 - Understand the basics about recommendation engines
 - Which statistics can help you better understand the structure of the dataset
 - Based on the statistical assessment, identify what algorithm options are available

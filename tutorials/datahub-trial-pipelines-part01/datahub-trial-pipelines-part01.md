@@ -90,5 +90,3 @@ Stop the pipeline by clicking **Stop** (you find it next to the **Run** button).
 
 ---
 
-## Next Steps
- - [Use a message broker](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part02.html)
