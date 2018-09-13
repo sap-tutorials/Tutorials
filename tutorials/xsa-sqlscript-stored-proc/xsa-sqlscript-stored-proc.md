@@ -3,11 +3,9 @@ title: Creating Stored Procedures
 description: Leveraging SQLScript in Stored Procedures & User Defined Functions
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition  ]
----
-## Prerequisites  
-- **Proficiency:** Intermediate
-- **Tutorials:** [Creating a Calculation View with a Cube data type and Star Join](https://www.sap.com/developer/tutorials/xsa-sqlscript-cube.html)
+time: 15
 
+---
 ## Next Steps
 - [Parallel Processing and Parameters](https://www.sap.com/developer/tutorials/xsa-sqlscript-parallel.html)
 
@@ -16,8 +14,6 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 In this exercise you will create a small procedure `get_po_header_data` with two implicit SELECT queries.
 **Please note - This tutorial is based on SPS11**
 
-### Time to Complete
-**15 Min**.
 
 ---
 
