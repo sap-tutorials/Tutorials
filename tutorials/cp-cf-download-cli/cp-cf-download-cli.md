@@ -40,7 +40,7 @@ Open a command prompt on your computer.
 
 > In Windows, you can search in the start menu for the application "command prompt".  
 > On a Mac, use spotlight to find the application "terminal".  
-> On linux/unix, you know how this works, just open your favorite command shell.
+> On Linux/Unix, you know how this works, just open your favorite command shell.
 
 Next, test the Cloud Foundry command line interface to make certain it is installed correctly.
 
