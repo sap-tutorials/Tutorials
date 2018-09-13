@@ -301,4 +301,3 @@ You can now connect to your instance using any SQL client that uses JDBC drivers
 If anything is going wrong, [check the questions and answers from the community](https://answers.sap.com/index.html).
 
 [ACCORDION-END]
-

@@ -215,6 +215,19 @@ Off course you can use any tool of your choice!
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 1: ](Add the APL Role to your User)]
+
+Usually, you need add the **`APL_EXECUTE`** role to your user, however, this is not required when using an HDI container:
+
+Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statements.
+
+```
+call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','ML_USER');
+```
+
+[DONE]
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 2: ](Forecast with Cash Flow)]
 
 As stated previously, the Cash Flow data set includes more than just a date and signal to be forecasted. An additional 23 attributes are also available to help build a better model.
