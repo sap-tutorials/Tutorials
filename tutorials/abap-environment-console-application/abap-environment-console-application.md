@@ -155,7 +155,7 @@ Click **Finish** to create your transport request.
 Add the following method to your ABAP class.
 
 ```swift
-class Z_CLASS definition
+class Z_CLASS_XXX definition
 public
 final
 create public .
@@ -166,7 +166,7 @@ protected section.
 private section.
 ENDCLASS.
 
-CLASS Z_CLASS IMPLEMENTATION.
+CLASS Z_CLASS_XXX IMPLEMENTATION.
 METHOD IF_OO_ADT_CLASSRUN~MAIN.
 out->write(`Hello world!`).
 ENDMETHOD.
