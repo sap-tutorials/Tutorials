@@ -1,6 +1,7 @@
 ---
 title: Add a User Task to Your Workflow
 description: Enhance your workflow with a user task, in this case, to add an approval.
+auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner ]
 time: 15
@@ -30,6 +31,7 @@ time: 15
 You now see the apps on your SAP Fiori launchpad homepage.
 ![Apps on Homepage](apps-homepage.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Display your workflow definition and start an instance)]
@@ -48,6 +50,7 @@ You now see the apps on your SAP Fiori launchpad homepage.
 
     >Excursion: When you start a workflow, you can provide a JSON structure as input data. These JSON objects get stored within the workflow as context data. You can use them throughout the workflow, for example, in gateways, user tasks, or service tasks. For more information about handling workflow data, see [Manage Workflows Using the Monitor Workflows App] (https://help.sap.com/viewer/aa302ee52d3a4420b6cc3ecaaeee2ee7/Cloud/en-US/e6163e119ba645d0ae6a31022b670381.html).
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Access the workflow editor)]
@@ -60,6 +63,7 @@ You now see the apps on your SAP Fiori launchpad homepage.
 3. Right-click the workflow file, and choose **Open With** | **Workflow Editor**.
 ![Open Workflow File](open-wf-file.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add a user task to the workflow)]
@@ -88,6 +92,7 @@ You now see the apps on your SAP Fiori launchpad homepage.
     </li><li>Second line
     </li><li>Open the context menu and select **Deploy** | **Deploy to SAP Cloud Platform Workflow**.</li></ol>
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Start a new workflow instance)]
@@ -100,14 +105,16 @@ You now see the apps on your SAP Fiori launchpad homepage.
    The execution log shows a task waiting in the inbox.
 ![Start a new instance.](start-second-instance.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Open the task in My Inbox)]
 1. Go back to the Fiori launchpad homepage. The **My Inbox** tile shows one open task.
    ![Open Task in My Inbox](open-task.png)
-2. Open the inbox. The task and some header information is displayed, but no further details or actions are given.
+2. Open the inbox. The task and some header information is displayed, but no further details or task-specific actions are given.
 ![Display Task in My Inbox](task-in-inbox.png)
 
+[VALIDATE_6]
 [ACCORDION-END]
 
 ---
