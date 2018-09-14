@@ -156,7 +156,7 @@ Expand the **`forecast/db/src`** folder.
 Create the following directory structure:
 
 ```
-|-- forecast/db
+|-- forecast/db/src
     |-- algorithms
 		|-- apl
 	        |-- afllang

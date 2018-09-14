@@ -123,7 +123,7 @@ Expand the **`movielens/db/src`** folder.
 Create the following directory structure:
 
 ```
-|-- movielens/db
+|-- movielens/db/src
     |-- data
     |-- hdb
         |-- apl
