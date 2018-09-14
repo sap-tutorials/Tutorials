@@ -548,7 +548,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_1]
 [ACCORDION-END]
 
--BEGIN [Step 8: ](Validate the content-based filtering results)]
+[ACCORDION-BEGIN [Step 8: ](Validate the content-based filtering results)]
 
 In order to be consistent, we should validate the same details that you will verify with other models results.
 

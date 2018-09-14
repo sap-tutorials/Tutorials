@@ -226,6 +226,19 @@ As you will mostly execute SQL commands during this series, you will need to set
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 1: ](Add the APL Role to your User)]
+
+Usually, you need add the **`APL_EXECUTE`** role to your user, however, this is not required when using an HDI container:
+
+Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statements.
+
+```
+call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','ML_USER');
+```
+
+[DONE]
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 2: ](Run Recommendation APL function)]
 
 While assessing the available data, you found out that the ratings was the best candidate to build our collaborative filtering an content-based filter scenarios.
