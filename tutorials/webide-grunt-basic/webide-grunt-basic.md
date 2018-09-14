@@ -8,9 +8,6 @@ tags: [  tutorial>beginner, topic>cloud, topic>html5, topic>sapui5, products>sap
 ## Prerequisites  
 - **Proficiency:** Beginner
 
-## Next Steps
-- **Tutorials** [Using Other Grunt Plugins in SAP Web IDE](https://www.sap.com/developer/tutorials/webide-grunt-plugins.html)
-
 
 ## Details
 ### You will learn  
@@ -36,9 +33,6 @@ The `grunt-sapui5-bestpractice-build` Grunt plugin is published on the SAP npm r
 `@sap:registry=https://npm.sap.com/`
 
 For more information, see <https://docs.npmjs.com/files/npmrc>.
-
-
-
 
 
 
@@ -137,7 +131,3 @@ This option removes the node-modules folder that is automatically created by npm
 
 
 [ACCORDION-END]
-
-
-## Next Steps
-- **Tutorials** [Using Other Grunt Plugins in SAP Web IDE](https://www.sap.com/developer/tutorials/webide-grunt-plugins.html)

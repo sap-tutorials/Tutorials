@@ -95,5 +95,3 @@ select * from M_SERVICES
 [ACCORDION-END]
 
 
-## Next Steps
-- **Tutorials:** [Creating and Removing Extended Storage](https://www.sap.com/developer/tutorials/dt-monitoring-hana-part2.html)

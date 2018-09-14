@@ -127,6 +127,3 @@ define type zso_invoice_item {
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-- [Create an ABAP class](https://www.sap.com/developer/tutorials/abap-dev-create-new-class.html)

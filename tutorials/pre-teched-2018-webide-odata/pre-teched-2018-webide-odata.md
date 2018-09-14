@@ -3,7 +3,7 @@ title: Change from a mock server to live OData service for TechEd
 description: Connect to a live backend system for your application
 auto_validation: true
 primary_tag: topic>sapui5
-tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
+tags: [ tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide  ]
 ---
 
 ## Prerequisites  
@@ -105,8 +105,6 @@ Locate the **`Component.js`** file under the *`webapp`* folder. **Double click**
 You need to update the navigation properties to match the new entity name of **Sets** instead of `ToysSet`.
 
 ![places to update in Component file](8.png)
-
-**Comment out `server.init()`** on line 14 by adding 2 forward slashes (`//`) to the beginning of the line.
 
 Change the word `ToysSet` to **`Sets`** in line 18.
 

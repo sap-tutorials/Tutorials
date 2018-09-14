@@ -1,6 +1,6 @@
 ---
 title: SAP HANA XS Advanced, explore the basic tools
-description: This tutorial will walk you through exploring the basics of XS Advanced tools, such as athe adminsitration cockpit or SAP Web IDE for SAP HANA
+description: This tutorial will walk you through exploring the basics of XS Advanced tools, such as athe administration cockpit or SAP Web IDE for SAP HANA
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner ]
 ---

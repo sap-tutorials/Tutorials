@@ -45,7 +45,7 @@ Then you will be able to search for the **SAP Leonardo Machine Learning - Functi
 
 ![SAP API Business Hub](02.png)
 
-Select **Image Classifier Service**.
+Select **Inference Service for Customizable Image Classification**.
 
 ![SAP API Business Hub](03.png)
 
@@ -53,7 +53,7 @@ You can also access the page directly from the following address:
 
  - <https://api.sap.com/api/image_classification_api/resource>
 
-As you can notice the API has only one resource (or service): `/inference_sync`.
+As you can notice the API has only one resource (or service): `/classification`.
 
 ![SAP API Business Hub](04.png)
 
@@ -84,9 +84,9 @@ Then, the following pop-up should appear. Click on the **Copy Key and Close** bu
 
 [ACCORDION-BEGIN [Step 2: ](Analyze the service)]
 
-As you can notice the API has only one resource (or service): `/inference_sync`.
+As you can notice the API has only one resource (or service): `/classification`.
 
-Now click on the `/inference_sync` link to expand the section.
+Now click on the `/classification` link to expand the section.
 
 > **Note**: the term *inference* refers to the application phase (scoring) an existing model (as opposed to the training or inception phase) and *sync* for synchronous.
 
@@ -350,7 +350,7 @@ public class DemoImageClassification {
 
     try {
 
-      String url = "https://sandbox.api.sap.com/ml/imageclassifier/inference_sync";
+      String url = "https://sandbox.api.sap.com/ml/imageclassification/classification";
 
       URL urlObj = new URL(url);
       HttpURLConnection connection = (HttpURLConnection) urlObj.openConnection();

@@ -387,5 +387,3 @@ Go to the **System** tab on the left side. By clicking the drop down arrow,  exp
 
 [ACCORDION-END]
 
-## Next Steps
-- **Tutorials:** [Converting Between an In-Memory Table and an Extended Table](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part4.html)

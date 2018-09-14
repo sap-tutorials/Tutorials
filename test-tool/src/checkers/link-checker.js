@@ -46,17 +46,28 @@ const checkAttempt = async (options, attempt, maxAttempts) => {
         };
     } catch(e) {
         const promise = new Promise((resolve, reject) => {
-            configured.request.get(options, (err, res) => {
-                if(err || !linkUtils.is2xx(res.statusCode)) {
-                    reject({ 
-                        err, res
-                    });
-                } else {
-                    resolve(res);
-                }
-            }).pipe(new FakeWritable({ objectMode: true }));
-        });
-        try {   
+          const stream = configured.request
+            .get(options)
+            .on('data', () => {
+                // prevents from reading whole response body
+              stream.abort();
+              if(!linkUtils.is2xx(stream.response.statusCode)) {
+                reject({
+                  err: stream.response.statusMessage,
+                  res: stream.response,
+                });
+              } else {
+                resolve(stream.response);
+              }
+            })
+            .on('error', (error) => {
+                reject({
+                     err: error,
+                     res: stream.response,
+                });
+            });
+          });
+        try {
             const result = await promise;
             return {
                 link: options.uri,

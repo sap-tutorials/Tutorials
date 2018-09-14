@@ -3,7 +3,7 @@ title: Deploy your app to Fiori Launchpad
 description: Learn how to deploy your application
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide, products>sap-fiori  ]
+tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide, products>sap-fiori ]
 ---
 
 ## Prerequisites  
@@ -114,13 +114,5 @@ In your running Fiori Launchpad, copy the **Launchpad URL** and paste it into th
 
 
 [VALIDATE_9]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 10: ](Register for the lottery)]
-Thank you for completing the TechEd 2018 Lottery mission!
-
-
-[VALIDATE_10]
 
 [ACCORDION-END]

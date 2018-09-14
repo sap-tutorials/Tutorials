@@ -4,22 +4,19 @@ description: Understand and implement the basics of XSUAA to secure your applica
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning]
+time: 10
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
 
 ## Details
 ### You will learn
-
 - How to create a XSUAA service with its security descriptor
 - How to configure users and role in the XSA Administration Cockpit
 - How to add the required security configuration to your MTA project
 
 For more details, check the [Maintaining Application Security in XS Advanced](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/latest/en-US/35d910ee7c7a445a950b6aad989a5a26.html) documentation.
-
-### Time to Complete
-**10 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Open the SAP HANA XS Advanced Cockpit)]
 

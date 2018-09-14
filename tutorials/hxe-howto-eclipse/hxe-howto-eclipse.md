@@ -96,7 +96,7 @@ Add your `HANAExpress` Add System > Specify System
 Configuration:
 
 - Hostname: `HANAExpress` Hostname (use `/sbin/ifconfig` to find IP address of host)
-- Instance number: `<arbitary unique instance number>`
+- Instance number: `<arbitrary unique instance number>`
 - Mode: _Multiple containers_ > _Tenant database_
 - Name: `SYSTEMDB:39017`
 - Description: `HANAExpress` Edition

@@ -4,26 +4,27 @@ description: Configure your SAPUI5 application and your connect it to your SAP H
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning, topic>sapui5 ]
+time: 25
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
+
+## Next Steps
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
 
 ## Details
 ### You will learn
-
- - Create a SAPUI5 HTML Module
- - Add a dependency to the Node.js Module as a destination
- - Configure the Application Router
- - Configure the Application Manifest
- - Create a series of Formatter
- - Run your SAPUI5 application
+- Create a SAPUI5 HTML Module
+- Add a dependency to the Node.js Module as a destination
+- How use JSON models
+- Configure the Application Router
+- Configure the Application Manifest
+- Create a series of Formatter
+- Run your SAPUI5 application
 
 **Note:** The intent of the following tutorials is not to focus on SAPUI5 but to use it as mean to execute the SAP Predictive services.
 For more content on SAPUI5, you can check the dedicated <a href="https://sapui5.hana.ondemand.com/#/topic/3da5f4be63264db99f2e5b04c5e853db" target="new">tutorials</a> section available on the <a href="https://sapui5.hana.ondemand.com" target="new">SAPUI5 documentation</a>.
-
-### Time to Complete
-**25 Min**
 
 [ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
 
@@ -115,11 +116,11 @@ Set the **Group** value to **destinations**.
 
 Add the following properties to the **`js_api`** entry:
 
-Key                 | Value
-------------------- | --------------
-`name`              | `movielens_api`
-`url`               | `~{url}`
-`timeout`           | 3000000
+Key                | Value
+------------------ | --------------
+`name`             | `movielens_api`
+`url`              | `~{url}`
+`timeout`          | 3000000
 
 
 ![Web IDE](04-04.png)
@@ -466,7 +467,7 @@ Open the **`demo.view.xml`** file and replace the existing code with the followi
       <content>
         <Bar>
           <contentMiddle>
-            <Title text="MoveiLens Recommendation"/>
+            <Title text="MovieLens Recommendation"/>
           </contentMiddle>
           <contentLeft>
             <Button icon="sap-icon://menu" press="handlePressOpenMenu"/>

@@ -67,6 +67,3 @@ Click the deploy button near the top right or the F8 key on your keyboard to exe
 
 [ACCORDION-END]
 
-
-## Next Steps
- - **Tutorials** [Creating Database Backups](https://www.sap.com/developer/tutorials/dt-backup-recovery-part2.html)

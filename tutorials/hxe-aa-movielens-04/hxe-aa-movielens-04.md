@@ -4,22 +4,22 @@ description: Understanding the data set structure and content by extracting some
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 30
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
+
+## Next Steps
+ - [Use Machine Learning to Build a Movie Recommendation application using the XS advanced development model](https://www.sap.com/developer/groups/hxe-aa-movielens.html)
 
 ## Details
 ### You will learn
-
 - Understand the basics about recommendation engines
 - Which statistics can help you better understand the structure of the dataset
 - Based on the statistical assessment, identity what algorithm options are available
 
-### Time to Complete
-**30 Min**
-
-[ACCORDION-BEGIN [Info: ](Recommendation Systems)]
+[ACCORDION-BEGIN [Step 1:](Recommendation Systems)]
 
 The goal of a recommendation systems is to produce a list of rules. This set of rules are usually built using a transactional type of data set which identifies links between users and items. Then, the rule set is applied to either a user or an item to get a list of items to recommend.
 
@@ -50,7 +50,7 @@ This imply 2 approaches to building recommendation systems:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Info: ](The dataset structure)]
+[ACCORDION-BEGIN [Step 1:](The dataset structure)]
 
 Using the <a href="http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html" target="new">README</a> available with the dataset content, you can extract the following details about the data file structure:
 

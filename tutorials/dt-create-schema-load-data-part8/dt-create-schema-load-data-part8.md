@@ -132,7 +132,7 @@ Execute the following in a SQL Console to view the ranges created in your range 
 select * from TABLE_PARTITIONS where TABLE_NAME = 'LINEITEM_MS'
 ```
 
-You should see the following once you execute the statement above. Notice how "`LEVEL_1_RANGE_MIN_VALUE`" and  "`LEVEL_1_RANGE_MAX_VALUE`" for row 6 is empty. The reason for it being empty is because it represents "`OTHERS`". Remember that "`OTHERS`" does not have a set minimum value nor a maximum value, it simply collects anything that does not fall under any of the other partitions. If you scroll right, you will see a column labelled "`STORAGE_TYPE`" which shows you what the storage type for each partition is.
+You should see the following once you execute the statement above. Notice how "`LEVEL_1_RANGE_MIN_VALUE`" and  "`LEVEL_1_RANGE_MAX_VALUE`" for row 6 is empty. The reason for it being empty is because it represents "`OTHERS`". Remember that "`OTHERS`" does not have a set minimum value nor a maximum value, it simply collects anything that does not fall under any of the other partitions. If you scroll right, you will see a column labeled "`STORAGE_TYPE`" which shows you what the storage type for each partition is.
 
 ![View Range](ViewRange.png)
 

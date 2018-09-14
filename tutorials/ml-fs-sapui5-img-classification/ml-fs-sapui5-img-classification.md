@@ -38,7 +38,7 @@ Then you will be able to search for the **SAP Leonardo Machine Learning - Functi
 
 ![SAP API Business Hub](02.png)
 
-Select **Image Classifier Service**.
+Select **Inference Service for Customizable Image Classification**.
 
 ![SAP API Business Hub](03.png)
 
@@ -53,7 +53,7 @@ To get to your API Sandbox URL, click on the **Details** tab.
 The API Sandbox URL should be:
 
 ```JSON
-https://sandbox.api.sap.com/ml/imageclassifier
+https://sandbox.api.sap.com/ml/imageclassification
 ```
 
 To get to your API key, click on the **Show API Key** button.
@@ -274,7 +274,7 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-  "url" : "/ml-dest/imageclassifier/inference_sync",
+  "url" : "/ml-dest/imageclassification/classification",
   "APIKey":"<<<<< COPY YOUR API KEY >>>>>"
 }
 ```

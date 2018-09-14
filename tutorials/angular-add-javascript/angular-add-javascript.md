@@ -318,6 +318,3 @@ AngularJS:
 
 [ACCORDION-END]
 
----
-## Next Steps
-- **Tutorials** [Separate the JavaScript and CSS Files](https://www.sap.com/developer/tutorials/angular-separate-files.html)

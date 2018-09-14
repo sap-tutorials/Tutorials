@@ -546,7 +546,7 @@ private func sendImage(image: UIImage, filename: String) {
         "Content-Type": "multipart/form-data; boundary=\(boundary)"
     ]
 
-    var request = URLRequest(url: URL(string: "https://sandbox.api.sap.com/ml/imageclassifier/inference_sync")!,
+    var request = URLRequest(url: URL(string: "https://sandbox.api.sap.com/ml/prodimgclassifier/inference_sync")!,
                                       cachePolicy: .useProtocolCachePolicy,
                                       timeoutInterval: 10.0)
     //setting request method

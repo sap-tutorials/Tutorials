@@ -109,5 +109,3 @@ From the fact sheet for `Devices.csv`, click on the column **Type** and open det
 [ACCORDION-END]
 ---
 
-## Next Steps
-[Explore data in SAP Vora](https://www.sap.com/developer/tutorials/datahub-trial-discovery-part02.html)

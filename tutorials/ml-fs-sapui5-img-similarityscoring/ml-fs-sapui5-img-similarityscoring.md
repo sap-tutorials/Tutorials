@@ -35,7 +35,7 @@ Then you will be able to search for the **SAP Leonardo Machine Learning - Functi
 
 ![SAP API Business Hub](02.png)
 
-Select **Image Feature Extraction API**.
+Select **Inference Service For Customizable Image Feature Extraction**.
 
 ![SAP API Business Hub](03.png)
 
@@ -47,19 +47,19 @@ You can also access the page directly from the following address:
 
 To get to your API Sandbox URL, click on the **Details** tab.
 
-The **Image Feature Extraction API** Sandbox URL should be:
+The **Inference Service For Customizable Image Feature Extraction** Sandbox URL should be:
 
 ```JSON
-https://sandbox.api.sap.com/ml/featureextraction
+https://sandbox.api.sap.com/ml/imagefeatureextraction
 ```
 
-Do the same for the **Similarity Scoring API**.
+Do the same for the **Inference Service for Similarity Scoring**.
 
 You can also access the page directly from the following address:
 
  - <https://api.sap.com/api/similarity_scoring_api/resource>
 
-The **Similarity Scoring API** Sandbox URL should be:
+The **Inference Service for Similarity Scoring** Sandbox URL should be:
 
 ```JSON
 https://sandbox.api.sap.com/ml/similarityscoring
@@ -78,13 +78,13 @@ Then, the following pop-up should appear. Click on the **Copy Key and Close** bu
 
 [ACCORDION-BEGIN [Step 2: ](Analyze the services)]
 
-As you will notice both API have only one resource (or service): `/inference_sync`.
+As you will notice both API have only one resource (or service), `/similarity-scoring` for **Inference Service for Similarity Scoring** and `/feature-extraction` for **Inference Service For Customizable Image Feature Extraction** .
 
-You can click on `/inference_sync` to expand the section.
+You can click on the resource to expand the section.
 
 > **Note**: the term *inference* refers to the application phase (scoring) an existing model (as opposed to the training or inception phase) and *sync* for synchronous.
 
-As stated in the description, the **Image Feature Extraction API** service accepts either:
+As stated in the description, the **Inference Service For Customizable Image Feature Extraction** service accepts either:
 
  - an archive file with a zip/tar extensions containing multiple image files
  - a single image
@@ -94,14 +94,14 @@ The service returns a feature vector extracted from the image.
 
 The supported image formats are ***JPEG***, ***PNG***, ***TIF*** or ***BMP*** (the actual content format is validated, so renaming files may simply not work).
 
-As stated in the description, the **Similarity Scoring API** service accepts either:
+As stated in the description, the **Inference Service for Similarity Scoring** service accepts either:
 
  - an archive file which should consist of files, each of them containing a feature vector.
 
 A series of options are also required for the following parameters:
 
  - `numSimilarVectors`: Number of most similar vectors to return in response
- - `algorithm`: The algorithm to use for calculation, one of [`naive`, `matrix_mult`, `clustering`] (Optional)
+ - `algorithm`: The algorithm to use for calculation, one of `naive`, `matrix_mult`, `clustering` (optional)
 
 The service returns the associated similarity scores.
 
@@ -296,8 +296,8 @@ Then click on the ![Save Button](00-save.png) button (or press CTRL+S).
 
 ```JSON
 {
-  "url_featureextraction" : "/ml-dest/featureextraction/inference_sync",
-  "url_similarityscoring" : "/ml-dest/similarityscoring/inference_sync",
+  "url_featureextraction" : "/ml-dest/imagefeatureextraction/feature-extraction",
+  "url_similarityscoring" : "/ml-dest/similarityscoring/similarity-scoring",
   "APIKey":"<<<<< COPY YOUR API KEY >>>>>"
 }
 ```

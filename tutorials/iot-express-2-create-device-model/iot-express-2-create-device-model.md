@@ -2,7 +2,9 @@
 title: Create a Simple IoT Device Model
 description: Create a simple IoT device model in the IoT service of SAP Cloud Platform.
 primary_tag: topic>internet-of-things
-tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sap-cloud-platform, products>sap-cloud-platform-iot ]
+auto_validation: false
+time: 30
+tags: [ tutorial>beginner, products>sap-leonardo, topic>internet-of-things, products>sap-cloud-platform, products>sap-cloud-platform-iot ]
 ---
 
 ## Prerequisites  
@@ -20,18 +22,18 @@ tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sa
 - How to ingest simulated data using a Node.js script
 - How to ingest data using SAP Leonardo IoT Foundation Starter Kit
 
-### Time to Complete
-**15 Min** 
 
 ## Next Steps
 - **Tutorials:** [Assemble and Configure Device Hardware](https://www.sap.com/developer/tutorials/iot-express-3-configure-device.html), but you can also skip to [Create a Thing Model and Bind Your Device into a Business Context](https://www.sap.com/developer/tutorials/iot-express-4-create-thing-model.html) if you do not have the time or do now want to use real hardware at this point.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log into your IoT service instance)]
+[ACCORDION-BEGIN [Step 1: ](Login to your IoT service instance)]
 
-  1. Go to `https://<INSTANCE-NAME>.eu10.cp.iot.sap/iot/cockpit/#/welcome` (replace `<INSTANCE-NAME>` with your own, it looks like this for example: `https://76eae3d3-9de6-4345-b26c-ff35be052652.eu10.cp.iot.sap/`). You can refer back to the above mentioned configuration guide to find it.
-  2. Log in with your user name and password (in the cloud cockpit you can find the root user credentials in the Cloud Foundry space in the service key area of the service instance).
+  1. Go to `https://<INSTANCE-NAME>.eu10.cp.iot.sap/iot/cockpit/#/welcome` (replace `<INSTANCE-NAME>` with your own, it looks like this for example: `https://76eae3d3-9de6-4345-b26c-ff35be052652.eu10.cp.iot.sap/`). Open a browser window and access the IoT Service for Cloud Foundry cockpit from it - the fastest way to get there is to open [http://hana.ondemand.com/](http://hana.ondemand.com/) and then navigate to your cloud foundry sub-account, from there to your space and in there you can find the `dashboard` in the service instances list.
+  2. Login with your user name and password (in the cloud cockpit you can find the root user credentials in the cloud foundry space in the service key area of the service instance)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -57,6 +59,12 @@ tags: [ tutorial>beginner, topic>leonardo, topic>internet-of-things, products>sa
 
 ![Create Capability](cap2.png)
 
+![Capability List](cap1.png)
+
+![Create Capability](cap2.png)
+
+[DONE]
+
 [ACCORDION-END]
 
 
@@ -75,6 +83,8 @@ You need to define a sensor type to assign sensors on the devices.
 ![Sensor Type List](sensorType1.png)
 
 ![Create Sensor Type](sensorType2.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -104,7 +114,9 @@ You will create a new device with a sensor using the already defined sensor type
 
 ![Add Sensor for Device](device4.png)
 
-Your device has a sensor now. Check the sensor alternate ID that was auto-generated in the sensor list.
+Your device has a sensor now. Check the sensor alternate ID that was defined by you (or auto-generated if you did not specify it) in the sensor list.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -125,6 +137,8 @@ You will download the certificate. Be sure you write down the secret password fr
 
 ![Download Device Certificate](device4.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 
@@ -138,7 +152,7 @@ If you have the hardware kit, than replace lines 195-199 with the actual reading
   1. Create a folder named `node-mqtt-simulator`.
   2. In the folder, create a file called `package.json` and copy-paste the following code :
 
-    ```json
+    ```javascript
     {
       "name": "data-ingestion-iot-services",
       "version": "1.0.0",
@@ -157,7 +171,7 @@ If you have the hardware kit, than replace lines 195-199 with the actual reading
     }
     ```
 
-3. In the folder, a file called `app.js` and copy-paste the following code :
+  3. In the folder, a file called `app.js` and copy-paste the following code :
 
     ```javascript
     const mqtt = require('mqtt')
@@ -269,10 +283,13 @@ If you have the hardware kit, than replace lines 195-199 with the actual reading
   5. Create a subfolder called `certificates`.
   6. Download the certificate file and save it in the `certificates` folder with name `device1-device_certificate.pem`.
   7. Copy the secret and paste it in a new file, in the same folder as the certificate, with name `device1-device_password.txt`. Make sure you only add the password and no newline or return character.
-  8. Run the app with `npm start` or `node app.js`.
+  8. Download required node libraries using `npm install` from the folder that has the `package.json`in it.
+  9. Run the app with `npm start` or `node app.js`.
   9. Check the console log for errors and additional information. The console log should look like this:
 
     ![Device Data is generated Ok](dataok.png)
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -286,6 +303,8 @@ To check the device data, navigate using the `Device Management`.
 You should see data flowing in the system.
 
 ![Device Chart](devicedata.png)
+
+[VALIDATE_1]
 
 [ACCORDION-END]
 

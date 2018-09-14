@@ -4,23 +4,16 @@ description: Provide details on the installation and configuration of SQL query 
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>how-to, tutorial>beginner, products>sap-hana\, express-edition ]
+time: 10
 ---
 
-## Prerequisites  
-- Proficiency: beginner
-
+## Details
 ### You will learn
-
 In this how-to guide, you will find references to the various options available to execute SQL on SAP HANA, express edition.
 
 These options either embeds or leverage one of the available connector/driver from the SAP HANA client.
 
 You can use one of the links that match your preference and proceed with the installation and configuration.
-
-## Details
-
-### Time to Complete
-**10 Min**.
 
 [ACCORDION-BEGIN [Option: ](SAP HANA Tools for Eclipse)]
 

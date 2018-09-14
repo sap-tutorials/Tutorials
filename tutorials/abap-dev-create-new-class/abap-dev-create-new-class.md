@@ -385,6 +385,3 @@ Now run the program. You should get a SAP List Viewer roughly like this:
 [DONE]
 [ACCORDION-END]
 ---
-
-## Next Steps: Optional
-- [Create a data element](https://www.sap.com/developer/tutorials/abap-dev-adt-create-data-element.html)

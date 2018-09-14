@@ -3,9 +3,9 @@ title: Building simple tiles within Fiori Launchpad
 description: Build a tile within Fiori Launchpad based on an CDS Odata Service
 primary_tag: products>sap-s-4hana
 tags: [ tutorial>intermediate, products>sap-s-4hana ]
+time: 20
 ---
 ## Prerequisites  
- - **Proficiency:** Intermediate
  - **Tutorials:** [Creating simple tiles within Fiori Launchpad](https://www.sap.com/developer/tutorials/s4hana-cds-launchpad-designer-fiori-role.html)
 
 ## Next Steps
@@ -13,10 +13,7 @@ tags: [ tutorial>intermediate, products>sap-s-4hana ]
 
 ## Details
 ### You will learn  
-How to create a tile within Fiori Launchpad.
-
-### Time to Complete
-**15-20 Min**
+  - How to create a tile within SAP Fiori Launchpad
 
 ---
 

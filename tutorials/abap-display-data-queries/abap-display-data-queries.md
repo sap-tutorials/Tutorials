@@ -224,5 +224,3 @@ Check that the output on the right hand side contains the company name. You will
 
 [ACCORDION-END]
 
-## Next Steps
-[Create a new Data Dictionary structure](https://www.sap.com/developer/tutorials/abap-dev-adt-create-new-structure.html)

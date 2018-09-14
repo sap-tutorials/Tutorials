@@ -201,7 +201,7 @@ Look at the syntax you just entered into the `PurchaseOrder.hdbcds` file in more
 
 First, you need to define some reusable elemental types. These will later be used to define the data type of individual columns in our tables. Within the `PurchaseOrder` context, create element types for `BusinessKey`, `SDate`, `CurrencyT`, `AmountT`, `QuantityT`, `UnitT`, and `StatusT`.
 
-	```
+```
   context PurchaseOrder {
       type BusinessKey : String(10);
       type SDate : LocalDate;
@@ -211,7 +211,7 @@ First, you need to define some reusable elemental types. These will later be use
       type UnitT : String(3);
       type StatusT : String(1);
 
-	```
+```
 
 You can also create reusable structures with multiple fields. This is useful when the same sets of fields are repeated in multiple tables. Create a reusable structure for History – with `CREATEDBY`, `CREATEDAT`, `CHANGEDBY`, and `CHANGEDAT` fields.
 
@@ -306,7 +306,7 @@ Right-click on the Header table and use the generated SQL statement in the valid
 
 There are several ways to load data into your tables in SAP HANA. you will use an artifact similar to the former `.hdbti` development object, that allows you to upload a file into your directory in SPA Web IDE and load the data into a table or tables according to the configuration. This is handy for initial loads or small configuration tables.
 
-In your `data` folder, create a file named `load.hdbtabledata` and enter this text into it. Don't forget to save the file afterwards.
+In your `data` folder, **create a file** named `load.hdbtabledata` and enter this text into it. Don't forget to save the file afterwards.
 
 ```json
 {
@@ -392,16 +392,18 @@ In your `data` folder, create a file named `load.hdbtabledata` and enter this te
 
 > Note: You can find a reference of the `.hdbtabledata` artifact in the [official SAP Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.03/en-US/35c4dd829d2046f29fc741505302f74d.html?q=hdbtabledata)
 
-Skim through the contents of the file you have just created and you will see the `file_name` fields. Create a file called `header.csv` with the following content:
+Skim through the contents of the file you have just created and you will see the `file_name` fields.
 
-```
+**Create a file** called `header.csv` with the following content:
+
+```text
 0500000000,0000000033,20120101,0000000033,20120101,9000000001,0100000000,EUR,13224.47,11113,2111.47,N,I,I,I,I
 0500000001,0000000033,20120102,0000000033,20120102,9000000001,0100000002,EUR,12493.73,10498.94,1994.79,N,I,I,I,I
 ```
 
-And data for the item table named `item.csv`.  Don't forget to **save** all of the files.
+**Create a file** called `item.csv` and use the following data.  Don't forget to **save** all of the files.
 
-```
+```text
 0500000000,0000000010,HT-1000,,EUR,1137.64,956,181.64,1,EA,20121204
 0500000000,0000000020,HT-1091,,EUR,61.88,52,9.88,2,EA,20121204
 0500000000,0000000030,HT-6100,,EUR,1116.22,938,178.22,2,EA,20121204

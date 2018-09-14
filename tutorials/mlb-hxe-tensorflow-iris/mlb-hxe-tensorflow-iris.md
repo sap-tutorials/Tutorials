@@ -3,14 +3,12 @@ title: Deploy a TensorFlow Iris Classifier in SAP HANA, express edition
 description: Provide details on the deployment of a classifier model based on the Iris dataset in SAP HANA, express edition.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
-tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition ]
+time: 20
 ---
 
-## Prerequisites  
-- Proficiency: Intermediate
-
+## Details
 ### You will learn
-
 During this tutorial, you will learn how to build and deploy a TensorFlow Deep Neural Network Classifier for the Iris dataset and then integrate it with SAP HANA, express edition.
 
 As part of the [TensorFlow models repository](https://github.com/tensorflow/models), you can find the script for a simple Deep Neural Network using the Iris dataset for classification.
@@ -22,11 +20,6 @@ However, this script doesn't include a step to export the model using the `Saved
 Therefore, you will use a modified version of the script to train then export the model in the right format.
 
 The SAP HANA External Machine Learning integration also requires the of the ***raw*** tensors in the model signature instead of the `tf.train.Example` approach.
-
-## Details
-
-### Time to Complete
-**20 Min**.
 
 [ACCORDION-BEGIN [Step 1: ](Build and Export a TensorFlow Model)]
 
@@ -85,7 +78,7 @@ def main(unused_argv):
   tf.logging.set_verbosity(tf.logging.INFO)
 
   ####################################################################
-  # Begining of training section
+  # Beginning of training section
   ####################################################################
   # Get the training data
   (train_x, train_y), (test_x, test_y) = iris_data.load_data()
@@ -110,7 +103,7 @@ def main(unused_argv):
   ####################################################################
 
   ####################################################################
-  # Begining of export section
+  # Beginning of export section
   ####################################################################
   # Define the input receiver spec
   feature_spec = {

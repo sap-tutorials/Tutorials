@@ -4,19 +4,12 @@ description: Import SAP Predictive Analytics Association Rules Sample Dataset in
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 10
 ---
 
-## Prerequisites
-- Proficiency: beginner
-
-### You will learn
-
-In this tutorial, you will learn how to download and import the SAP Predictive Analytics Association Rules sample dataset into your SAP HANA, express edition instance.
-
 ## Details
-
-### Time to Complete
-**10 Min**.
+### You will learn
+In this tutorial, you will learn how to download and import the SAP Predictive Analytics Association Rules sample dataset into your SAP HANA, express edition instance.
 
 [ACCORDION-BEGIN [Info: ](Sample file structure)]
 
@@ -85,7 +78,7 @@ This data set presents website navigation and includes a reference file (`websit
 | <nobr>`Time`</nobr> 			| the date/time of the visit 	| <nobr>A date/time</nobr>
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Create the table structure)]
 
@@ -123,7 +116,7 @@ CREATE TABLE PA_DATA.WEBSITE_TRANSACTIONS (
 ```
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download the Sample Data)]
 
@@ -179,7 +172,7 @@ The dataset files should now be located in: **`/usr/sap/HXE/HDB90/work/sample_as
 You can now move to **Step 3: Import Using the IMPORT FROM SQL command**.
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import Using the SAP HANA Tools for Eclipse)]
 
@@ -205,7 +198,7 @@ The source files should be mapped with the following target tables:
 | `website_transactions.txt` 	| `PA_DATA.WEBSITE_TRANSACTIONS` 	| Semi Colon (;)
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import Using the IMPORT FROM SQL command)]
 
@@ -256,7 +249,7 @@ WITH
 ```
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Verify the imported data)]
 
@@ -274,11 +267,11 @@ SELECT 'WEBSITE_TRANSACTIONS' as TABLE_NAME, count(1) as ROW_COUNT from PA_DATA.
 ```
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Validation)]
 
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
-[ACCORDION-END] 
+[ACCORDION-END]

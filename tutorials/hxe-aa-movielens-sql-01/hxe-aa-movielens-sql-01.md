@@ -1,25 +1,20 @@
 ---
-title: Check your environment
+title: Check your environment (MovieLens SQL)
 description: Check your environment before starting the MovieLens tutorial series for SAP HANA, express edition
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 15
 ---
 
-## Prerequisites
- - **Proficiency:** Beginner
+## Next Steps
+ - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://www.sap.com/developer/groups/hxe-aa-movielens-sql.html)
 
 ## Details
 ### You will learn
-
 - Which flavor and version of SAP HANA, express edition is needed to complete this tutorial series
 - Complete a series of required post-installation task
-- Enable the builders for the development space
-- Add a connection in the Database Explorer
 - Enable the Script Server to allow the execution of `AFL`s functions
-
-### Time to Complete
-**20 Min**
 
 [ACCORDION-BEGIN [Info: ](Which SAP HANA flavor and version?)]
 
@@ -27,15 +22,17 @@ In order to complete this tutorial series, you need to use as a minimum version:
 
  - **SAP HANA, express edition 2.0 SPS03**
 
-This version will allow you to complete all the steps described in the series. And thanks to the availability of the SAP HANA Automated Predictive Library (APL), you will be able to compare different predictive libraries.
+This version will allow you to complete all the steps described in the series. And thanks to the availability of the SAP HANA Automated Predictive Library (APL), you will be able to use and compare different predictive libraries.
 
-As you may already know, SAP HANA, express edition comes in two different flavors. In this series, you will be running series of SQL statements. Therefore, you will need:
+As you may already know, SAP HANA, express edition comes in two different flavors. In this series, you will be running series of SQL statements.
 
- - **Server only**
+Therefore, the **Server only** is the minimum required.
+
+However, if you have a **Server + Apps** instance, you can use it too.
 
 You can check the [SAP HANA, express edition installation flowchart](https://www.sap.com/developer/topics/sap-hana-express.html#flowchart) to find all the installation details.
 
-If you don't have an instance up and running, be aware that you don't need to complete the installation of all optional packages (this will be described when needed).
+If you don't have an instance up and running, be aware that you don't need to complete the installation of all the optional packages (this will be described when needed in the series).
 
 [DONE]
 [ACCORDION-END]
@@ -46,15 +43,19 @@ In order to complete this series, you will first need to prepare your instance t
 
 Complete the following group:
 
-- [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
+ - [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
 
-As you will mostly execute SQL commands during this series, you will need to setup a SQL query tool for SAP HANA, express edition as describe in the following tutorial group:
+As you will mostly execute SQL commands during this series, you will need to setup a SQL query tool for SAP HANA, express edition.
+
+The following tutorial group describes a series of option you can pick one from (you don't need to setup all of them, but one is enough):
 
  - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
 
-Off course you can use any tool of your choice, like Jupyter (as described in the following [tutorial](Use Jupyter Notebook with SAP HANA, express edition)).
+Off course you can use any tool of your choice!
 
-Finally, you don't need to setup all of them, but one is enough.
+In order to ease the execution of some of the SQL statements, some tutorials will be provided with Jupyter Notebook (which can be installed as described in the following tutorial: [Use Jupyter Notebook with SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-jupyter.html)).
+
+**Make sure to update the `hxe_connection` to match your current environment.**
 
 [DONE]
 [ACCORDION-END]

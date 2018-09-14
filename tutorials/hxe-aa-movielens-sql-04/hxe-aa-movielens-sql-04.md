@@ -4,20 +4,20 @@ description: Understand the capabilities and options made available with the SAP
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 30
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
+ - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://www.sap.com/developer/groups/hxe-aa-movielens-sql.html)
+
+## Next Steps
+ - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://www.sap.com/developer/groups/hxe-aa-movielens-sql.html)
 
 ## Details
 ### You will learn
-
 - Understand the basics about the SAP HANA Automated Predictive Library
 - How to call SAP HANA Automated Predictive Library functions from SQL
 - Identify which algorithm options are available for recommendation engines
-
-### Time to Complete
-**20 Min**
 
 [ACCORDION-BEGIN [Info: ](SAP HANA Automated Predictive Library)]
 
@@ -222,6 +222,19 @@ Once the SAP HANA Automated Predictive Library installation is completed, you wi
 As you will mostly execute SQL commands during this series, you will need to setup a SQL query tool for SAP HANA, express edition as describe in the following tutorial group:
 
  - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Add the APL Role to your User)]
+
+Usually, you need add the **`APL_EXECUTE`** role to your user, however, this is not required when using an HDI container:
+
+Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statements.
+
+```
+call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','ML_USER');
+```
 
 [DONE]
 [ACCORDION-END]

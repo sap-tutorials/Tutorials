@@ -1,19 +1,17 @@
 ---
-title: Create an account on the Gateway Demo system
+title: Create an Account on the Gateway Demo System
 description: Sign up for an account on our demo Gateway server (ES5).
 auto_validation: true
 primary_tag: products>sap-gateway
 tags: [ products>sap-gateway, topic>cloud, topic>odata, tutorial>beginner ]
+time: 5
 ---
-## Prerequisites  
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn
-How to create an account on the Gateway Demo System (ES5).  At the end of this tutorial, you will have a username & password, and will be able to sign in to the Gateway Web front end.
+  - How to create an account on the Gateway Demo System (ES5).
 
-### Time to Complete
-**5 Min**.
+At the end of this tutorial, you will have a username and password, and will be able to sign in to the Gateway web front end.
 
 ---
 
@@ -23,9 +21,7 @@ First we need to create an account on the Gateway System.  The system will use y
 
 Click this link in your browser: [Gateway Registration system](https://register.sapdevcenter.com/SUPSignForms).
 
-> **Note:** In order to sign up for an account on the Gateway Demo System, you must have an account on **sap.com**.  To register for an account on sap.com, navigate to [https://www.sap.com](https://www.sap.com/index.html), and then click on the **person icon** in the upper left hand corner of the web page. Once your account is set up, you can continue to register.
-
-&nbsp;
+>In order to sign up for an account on the Gateway Demo System, you must have an account on **sap.com**.  To register for an account on sap.com, navigate to [https://www.sap.com](https://www.sap.com/index.html), and then click on the **person icon** in the upper left hand corner of the web page. Once your account is set up, you can continue to register.
 
 You should see this page:
 
@@ -36,13 +32,13 @@ You should see this page:
 
 [ACCORDION-BEGIN [Step 2: ](Fill out registration form)]
 
-Verify all of your *User Information* on the web page.   Please be certain your email address is correct.  If this address is incorrect, please fix it in your sap.com user profile.
+Verify all of your user information on the web page.   Please be certain your email address is correct.  If this address is incorrect, please fix it in your sap.com user profile.
 
-Next, read the Terms and Conditions, and check the box next to the line *I have read and understood the Terms and Conditions.*
+Next, read the Terms and Conditions, and check the box next to the line **I have read and understood the Terms and Conditions**.
 
-When ready, click the **Register** button.
+When ready, click **Register**.
 
-The screen will change and the word *Success* will appear.
+The screen will change and the word **Success** will appear.
 
 ![Gateway Web sign up success](2b.png)
 
@@ -50,7 +46,7 @@ The screen will change and the word *Success* will appear.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Registration email)]
+[ACCORDION-BEGIN [Step 3: ](Review registration email)]
 
 Check your email inbox.  You will receive an email from `no-reply@sap.com` to your email account with your username and password.
 
@@ -64,7 +60,7 @@ This is an example of the registration confirmation email:
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 4: ](Go to the SAP Gateway Web GUI)]
+[ACCORDION-BEGIN [Step 4: ](Go to SAP Gateway web GUI)]
 
 Once you received your registration email, go to the [SAP Gateway Web GUI](https://sapes5.sapdevcenter.com/).  Enter the username and initial password from your email.
 
@@ -80,12 +76,6 @@ The system will request that you change your initial password to a new password 
 
 ![Initial login - change your password](5.png)
 
-[DONE]
-[ACCORDION-END]
-
-
-[ACCORDION-BEGIN [Step 6: ](New Password confirmation)]
-
 When your password is changed, you will see a confirmation dialog.
 
 ![Initial login - password change confirmation](6.png)
@@ -94,7 +84,7 @@ When your password is changed, you will see a confirmation dialog.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 7: ](Logged in)]
+[ACCORDION-BEGIN [Step 7: ](Go to SAP Easy Access page)]
 
 You should now see the **SAP Easy Access** screen.  Your account is now active and ready for use.
 
@@ -123,5 +113,3 @@ There are two different forums, depending on what type of trouble you are experi
 - For questions about SAP Gateway (this includes using the Gateway server, creating services, or accessing ODATA) please post any questions to the [SAP NetWeaver Gateway Community](https://www.sap.com/community/topic/gateway.html) Q&A system.  
 
 - For any problems with registration, or password changes, please email <rac-support@sap.com>.
-
-

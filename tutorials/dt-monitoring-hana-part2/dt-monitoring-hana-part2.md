@@ -83,5 +83,4 @@ Once you click on "**Delete**", you should see the following show up. The "Restr
 [ACCORDION-END]
 
 
-## Next Steps
-- **Tutorials:** [Stopping and Restarting the Extended Storage Service](https://www.sap.com/developer/tutorials/dt-monitoring-hana-part3.html)
+

@@ -4,10 +4,10 @@ description: Provide details on the installation the SAP HANA client and instruc
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
+time: 10
 ---
-## Prerequisites  
-- Proficiency: intermediate
 
+## Details
 ### You will learn
 In this tutorial, you will install the SAP HANA client for SAP HANA, express edition.
 
@@ -18,11 +18,6 @@ The Linux `isql` tool is included in the unixODBC package. Please refer to your 
 On Windows environments, there is no pre-installed tool available out-of-the-box.
 
 For alternate options, you can also check the following link: [Select a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-sql.html).
-
-## Details
-
-### Time to Complete
-**10 Min**.
 
 [ACCORDION-BEGIN [Prerequisites: ](Download & Install the SAP HANA HDB client)]
 

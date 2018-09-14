@@ -4,20 +4,17 @@ description: Understand the capabilities and options made available with the SAP
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 30
 ---
 
 ## Prerequisites
- - **Proficiency:** Beginner
+ - [Use Machine Learning to Build a Movie Recommendation model using SQL](https://www.sap.com/developer/groups/hxe-aa-movielens-sql.html)
 
 ## Details
 ### You will learn
-
 - Understand the basics about the SAP HANA Predictive Analytics Library
 - How to call SAP HANA Predictive Analytics Library functions from SQL
 - Identify which algorithm options are available for recommendation engines
-
-### Time to Complete
-**30 Min**
 
 [ACCORDION-BEGIN [Info: ](SAP HANA Predictive Analytics Library)]
 
@@ -551,7 +548,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_1]
 [ACCORDION-END]
 
--BEGIN [Step 8: ](Validate the content-based filtering results)]
+[ACCORDION-BEGIN [Step 8: ](Validate the content-based filtering results)]
 
 In order to be consistent, we should validate the same details that you will verify with other models results.
 

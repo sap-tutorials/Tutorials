@@ -1,6 +1,6 @@
 ---
 title: SAP HANA, express edition, install dependencies for openSUSE
-description: Install the despendencies for openSUSE Linux before you install SAP HANA, express edition
+description: Install the dependencies for openSUSE Linux before you install SAP HANA, express edition
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>beginner, products>sap-hana\,-express-edition ]
 ---

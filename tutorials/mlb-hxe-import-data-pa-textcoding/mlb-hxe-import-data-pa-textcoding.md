@@ -4,20 +4,17 @@ description: Import SAP Predictive Analytics Text Coding Sample Datasets in your
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 10
 ---
 
 ## Prerequisites  
-- Proficiency: beginner
 - [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
 
+## Details
 ### You will learn
-
 In this tutorial, you will learn how to download and import the SAP Predictive Analytics Text Coding sample dataset into your SAP HANA, express edition instance.
 
-## Details
-
-### Time to Complete
-**10 Min**.
+---
 
 [ACCORDION-BEGIN [Info: ](Sample file structure)]
 
@@ -45,7 +42,7 @@ The sample structure for the  [**Sample Text Coding**](https://help.sap.com/http
 **Note:** `desc` and `KxDesc` files are SAP Predictive Analytics dataset description files and will not be loaded.
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Create the table structure)]
 
@@ -137,7 +134,7 @@ CREATE TABLE PA_DATA.DMC2006_ENRICHED (
 ```
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download the Sample Data)]
 
@@ -201,7 +198,7 @@ The dataset files should now be located in: **`/usr/sap/HXE/HDB90/work/sample_te
 You can now move to **Step 3: Import Using the IMPORT FROM SQL command**.
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import Using the SAP HANA Tools for Eclipse)]
 
@@ -225,7 +222,7 @@ The source files should be mapped with the following target tables:
 | `dmc2006_enriched.txt`        | `PA_DATA.DMC2006_ENRICHED`         | Tab (\t)
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Import Using the IMPORT FROM SQL command)]
 
@@ -259,7 +256,7 @@ WITH
 ```
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Verify the imported data)]
 
@@ -268,16 +265,15 @@ You can verify that the data was imported properly using the following SQL state
 ```SQL
 SELECT 'DMC2006'            as TABLE_NAME, count(1) as ROW_COUNT from PA_DATA.DMC2006
 UNION
-SELECT 'DMC2006_ENRICHED'   as TABLE_NAME, count(1) as ROW_COUNT from PA_DATA.DMC2006_ENRICHED
-;
+SELECT 'DMC2006_ENRICHED'   as TABLE_NAME, count(1) as ROW_COUNT from PA_DATA.DMC2006_ENRICHED;
 ```
 
 [DONE]
-[ACCORDION-END] 
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Validation)]
 
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
-[ACCORDION-END] 
+[ACCORDION-END]

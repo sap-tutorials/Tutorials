@@ -107,6 +107,3 @@ Stop the pipeline by pressing the **Stop** button.
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-[Store sensor data in HDFS](https://www.sap.com/developer/tutorials/datahub-pipelines-storeinhdfs.html)

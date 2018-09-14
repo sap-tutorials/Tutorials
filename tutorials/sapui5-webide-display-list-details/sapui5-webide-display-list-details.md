@@ -3,9 +3,9 @@ title: SAPUI5 - Display List Element Details
 description: Add details to a list, making it a multi-line list element
 primary_tag: topic>sapui5
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform ]
+time: 15
 ---
 ## Prerequisites  
-- **Proficiency:** Beginner
 - **How-To** [Start this tutorial series](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)
 - **Tutorials:** This tutorial is part of a series.  The previous tutorial is part 5: [Enable Routing in your Application](https://www.sap.com/developer/tutorials/sapui5-webide-enable-routing.html)
 
@@ -18,8 +18,6 @@ In order to improve our web app, you can display a more detail information for e
 
 You will also add a Detail view and controller as well as alter the `View1` view and controller.  
 
-### Time to Complete
-**10-15 Minutes**.
 
 ---
 >  **Web IDE** If you don't have the Web IDE open, follow these steps: [Enable and open the SAP Cloud Platform Web IDE](https://www.sap.com/developer/tutorials/sapui5-webide-open-webide.html)

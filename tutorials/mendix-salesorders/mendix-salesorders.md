@@ -2,7 +2,7 @@
 title: Create sales order app with SAP Cloud Platform Rapid Application Development by Mendix
 description: Create a sales order app that consumes a service from the SAP Gateway Demo System (ES5).
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platform ]
+tags: [  tutorial>beginner, topic>cloud, topic>odata, products>sap-cloud-platform  ]
 ---
 
 ## Prerequisites  

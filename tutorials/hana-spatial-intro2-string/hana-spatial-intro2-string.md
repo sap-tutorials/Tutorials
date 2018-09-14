@@ -38,7 +38,7 @@ Execute the query. The `ST_Dimension()` method will return `1`. In the previous 
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Caclulate the length)]
+[ACCORDION-BEGIN [Step 2: ](Calculate the length)]
 
 Unlike a point, a line has length. Use the `ST_Length()` method to calculate it.
 

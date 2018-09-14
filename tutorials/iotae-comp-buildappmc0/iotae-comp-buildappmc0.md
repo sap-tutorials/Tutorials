@@ -2,7 +2,7 @@
 title: Building freestyle IoT application
 description: Building freestyle IoT application using SAP Web IDE Full-Stack in SAP Cloud Platform
 primary_tag: topic>internet-of-things
-tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-web-ide ]
+tags: [  tutorial>beginner, topic>internet-of-things, products>sap-iot-application-enablement, products>sap-cloud-platform, products>sap-web-ide  ]
 ---
 
 ## Prerequisites  
@@ -65,7 +65,7 @@ Leave everything as it is on the ___Template Customization___ step. Click **Next
 
 On ___Data Source___ step select:
  - **`Freestyle-IOTAS-ADVANCEDLIST-THING-ODATA`** as a service
- - all property sets for `sap.iotaehandson2.computeriotdevice:generic_computer` thing type
+ - all property sets for `sap.iotaehandson2.computeriotdevice:generic_computer_3` thing type
 Click **Next**
 
 ![Data Source](iotaecompappmc0060.jpg)

@@ -2,7 +2,9 @@
 title: Using ABAP with the SAP API Business Hub
 description: Add a code snippet from the API Hub into your ABAP report.
 primary_tag: topic>abap-development
-auto_validation: true
+auto_validation: false
+author_name: Meredith Hassett
+author_profile: https://github.com/mhassett92
 tags: [  tutorial>beginner, topic>abap-development  ]
 ---
 

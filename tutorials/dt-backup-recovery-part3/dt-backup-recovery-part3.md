@@ -84,5 +84,3 @@ Once the recovery process completes, the Recovery Execution Summary screen will 
 
 [ACCORDION-END]
 
-## Next Steps
-  - **Tutorials** [Reviewing Available Backups](https://www.sap.com/developer/tutorials/dt-backup-recovery-part4.html)

@@ -29,7 +29,7 @@ We will begin by creating a new user which we will use throughout the tutorial. 
 
 Scroll to the **User and Role Management** section, and click the **Manage Users** link.
 
-![1.2](assets/hana-webide-dt-getting-started-2-00317696.png)
+![1.2](assets/hana-webide-dt-getting-started-1-90defe78.jpg)
 
 At the bottom left, click the blue "+" button and select **Create User**.
 
@@ -39,7 +39,7 @@ In the new window, enter `TPCH` as the username, and select **password** for *Au
 
 ![1.4](assets/hana-webide-dt-getting-started-2-68221dc5.png)
 
-> Note: Remember the password as you will need it to login as the TPCH user.
+> Remember the password as you will need it to login as the TPCH user.
 
 Click the **Save** button at the bottom-right to add the user.
 
@@ -63,11 +63,11 @@ Click **Edit**, followed by **add** on the new window. Here, you can assign role
 
 Confirm you have added all the roles, and hit **Save** followed by the back arrow.
 
-![1.7](assets/hana-webide-dt-getting-started-2-0625e39b.png)
+![1.7](assets/hana-webide-dt-getting-started-1-a69b11e2.jpg)
 
 Next, we will add the required privileges by clicking the **Assign Privileges** link under the **Authorization Mode** heading (same as before).
 
-![1.8](assets/hana-webide-dt-getting-started-2-02598736.png)
+![1.8](assets/hana-webide-dt-getting-started-1-753234fe.jpg)
 
 Follow the same steps as you did for assigning roles, and assign **all** of the following privileges:
 * `EXTENDED STORAGE ADMIN`

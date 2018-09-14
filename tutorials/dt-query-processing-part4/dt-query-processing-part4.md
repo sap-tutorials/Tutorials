@@ -118,6 +118,3 @@ As you can see, after creating the index, if we run the query again and view the
 
 
 [ACCORDION-END]
-
-## Next Steps
-- **Tutorials:**

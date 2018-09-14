@@ -4,17 +4,14 @@ description: Understand the capabilities and options made available with SAP HAN
 auto_validation: true
 primary_tag: topic>machine-learning
 tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topic>machine-learning ]
+time: 20
 ---
-
-## Prerequisites
- - **Proficiency:** Beginner
 
 ## Next Steps
 - [Leverage SAP HANA 1.0 Machine Learning capabilities to build a recommendation engine on the SAP Cloud Platform](https://www.sap.com/developer/groups/cp-hana-aa-movielens.html)
 
 ## Details
 ### You will learn
-
 - How to use SAP HANA PAL APRIORI algorithm
 
 > ### **Note**
@@ -22,9 +19,6 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-cloud-platform, topi
 If you are using a different version of SAP HANA, the code and the results may differ.
 >
 For more details about the PAL function, check the online <a href="https://help.sap.com/viewer/2cfbc5cf2bc14f028cfbe2a2bba60a50/1.0.12/en-US/f652a8186a144e929a1ade7a3cb7abe8.html" target="new">documentation</a>.
-
-### Time to Complete
-**20 Min**
 
 [ACCORDION-BEGIN [Info: ](SAP HANA Predictive Analytics Library)]
 

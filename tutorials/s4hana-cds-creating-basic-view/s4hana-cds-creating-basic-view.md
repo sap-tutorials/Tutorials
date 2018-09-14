@@ -3,9 +3,9 @@ title: Creating basic/interface views in Open Core Data Services
 description: Creating basic view  in Open Core Data Services also know as interface view
 primary_tag: products>sap-s-4hana
 tags: [  tutorial>beginner, products>sap-s-4hana ]
+time: 20
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Tutorials:** [Setting and starting an S4/HANA CAL instance and connecting to a Window instance on Amazon Web Services. ](https://www.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 ## Next Steps
@@ -14,10 +14,7 @@ tags: [  tutorial>beginner, products>sap-s-4hana ]
 
 ## Details
 ### You will learn  
-How to create a basic view on top of data content in the demo table SCARR from ABAP system.
-
-### Time to Complete
-**15-25 Min**
+  - How to create a basic view on top of data content in the demo table SCARR from ABAP system
 
 ---
 

@@ -4,13 +4,11 @@ description: Provide details on the deployment of a classifier model based on an
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
+time: 20
 ---
 
-## Prerequisites  
-- Proficiency: Intermediate
-
+## Details
 ### You will learn
-
 During this tutorial, you will learn how to customize a pre-trained `ImageNet` TensorFlow model, deploy it and then integrate it with SAP HANA, express edition.
 
 As part of the [TensorFlow Hub](https://www.tensorflow.org/hub/), a library to foster the publication, discovery, and consumption of reusable parts of machine learning models, you can now easily import and customize a pre-trained model.
@@ -22,11 +20,6 @@ However, this script currently includes a step to export the model using a 3 dim
 Therefore, you will use a script that will save the retrained model a the raw image blob as input.
 
 The retrain will be done using the provided flowers data set but you are free to try out with your own labeled photo library.
-
-## Details
-
-### Time to Complete
-**20 Min**.
 
 [ACCORDION-BEGIN [Step 1: ](Prepare the retraining data)]
 

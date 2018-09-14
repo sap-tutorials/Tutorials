@@ -34,13 +34,9 @@ Log on to your [SAP Cloud Platform account](https://account.hanatrial.ondemand.c
 
 [ACCORDION-BEGIN [Step 2: ](Open the create app dialog )]
 
-Click on the **Applications** tile or on **Applications** in the left navigation bar.
+Click on the **Create new app** tile on the home screen to open the create app dialog box.
 
 ![Development and Operations cockpit](mg6-1-02.png)
-
-The Click the **Create Application** icon to open the create app dialog box.
-
-![Applicaitons tile](mg6-1-03.png)
 
 
 [ACCORDION-END]
@@ -51,15 +47,11 @@ Enter the following and click **Save**.
 
 Field Name              | Value
 :---------------------- | :-------------    
-App ID                  | `com.northwind.native`
-Version                 | `1.0` (populated for you)
-Name                    | `nwnative`
-Type                    | ` Native`
-Description             | `Native version of Northwind app`
-Vendor                  | `SAP`
-Enable CSRF protection  | (leave unchecked)
-Ignore Case for User Name | (leave unchecked)
-Security Configuration    | `None` (from drop-down)
+`Config Template`       | ` Native`
+`ID`                    | `com.northwind.native`
+`Name`                  | `nwnative`
+`Description`           | `Native version of Northwind app`
+`Vendor`                | `SAP`
 
 ![Create Application](mg6-1-04.png)
 
@@ -68,30 +60,56 @@ Security Configuration    | `None` (from drop-down)
 
 [ACCORDION-BEGIN [Step 4: ](Enter back-end settings and save)]
 
-The Edit Application screen is displayed with the **INFORMATION** tab displayed.
+The Application Definition screen is displayed with the **INFORMATION** tab displayed.
 
-Click on the **BACK END** tab and enter the following and click **Save**.
+Notice the *Incomplete Configuration* warning message next to the **Connectivity** feature in the **Assigned Features** pane on the right:
+
+![back-end settings](mg6-1-05.png)
+
+Clicking on the **Connectivity** feature will navigate to the **Connectivity** page for your app:
+
+![back-end settings](mg6-1-06.png)
+
+Click the **Create** button and a wizard will pop up:
+
+![back-end settings](mg6-1-07.png)
+
+Leave these values and click **Next**.
+
+In the next screen, enter the following and click **Next**.
 
 Field Name              | Value
 :---------------------- | :-------------    
-Backend URL             | `http://services.odata.org/V2/Northwind/Northwind.svc`
+URL                     | `http://services.odata.org/V2/Northwind/Northwind.svc`
 Proxy Type              | `Internet`
-Authentication Type     | `No Authentication` (from drop-down)
 Maximum Connections     | `100`
-Rewrite Mode            | `Rewrite URL on HCPms`
-Relative Paths          | (leave blank)
+Rewrite Mode            | `Rewrite URL`
 
 
-![BACK END Information](mg6-1-06.png)
+![BACK END Information](mg6-1-08.png)
+
+Click **Next** twice to advance through both the **Custom Headers** and **Annotations** screens. In the final screen, enter the following details:
+
+Field Name              | Value
+:---------------------- | :-------------    
+SSO Mechanism           | `No Authentication`
+
+
+![BACK END Information](mg6-1-09.png)
+
+Click **Finish** to save the back end configuration. The new configuration is now listed:
+
+![BACK END Information](mg6-1-10.png)
+
 
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](View applications)]
 
-Once the application is created, click the **Home** navigation bar and you will see the number of Applications has increased.
+Once the application is created, click the **Home** navigation bar and you will see the number of **Applications** and **Destinations** has increased.
 
-![Cockpit homepage](mg6-1-07.png)
+![Cockpit homepage](mg6-1-11.png)
 
 
 [ACCORDION-END]

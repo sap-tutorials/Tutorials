@@ -103,5 +103,3 @@ The recovery is now complete.
 ![Recovery summary](recovery-summary.png)
 
 [ACCORDION-END]
-## Next Steps
-- Other tutorials can be found at [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

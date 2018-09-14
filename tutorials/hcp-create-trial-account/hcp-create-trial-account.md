@@ -4,18 +4,13 @@ description: How to sign up for a free trial account on SAP Cloud Platform
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, topic>cloud, tutorial>beginner ]
+time: 5
 ---
-
-## Prerequisites
- - **Proficiency:** Beginner
-
 
 ## Details
 ### You will learn  
 You will register with the SAP website and then "upgrade" your account (at no cost) for the SAP Cloud Platform trial.
 
-### Time to Complete
-**5 mins**
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Log into the SAP website)]

@@ -2,7 +2,9 @@
 title: Add API Business Hub API to a UI5 Application
 description: Incorporate a SAP API into your UI5 application using Web IDE.
 primary_tag: products>sap-cloud-platform
-auto_validation: true
+auto_validation: false
+author_name: Meredith Hassett
+author_profile: https://github.com/mhassett92
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
 ---
 

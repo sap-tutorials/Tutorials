@@ -3,6 +3,7 @@ title: Building a simple approval UI for your workflow with Workflow Forms
 description: You learn how to use the forms editor to create a basic user interface for your user task workflow.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
+
 time: 15
 ---
 
@@ -14,7 +15,6 @@ time: 15
   - How to define a basic form-based user task UI without having to cope with SAPUI5 coding.
   - How to use it in a user task of a workflow.
 
-
 ---
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE Full-Stack)]
 1. In your Web browser, open the cockpit of [SAP Cloud Platform](https://account.hanatrial.ondemand.com/cockpit).
@@ -25,7 +25,6 @@ time: 15
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a form for a user task)]
-
 1. In the SAP Web IDE Full-Stack, open the ``MyFirstWorkflow.workflow`` workflow file and select the **`ApproveBook`** task.
 2. Under **User Task Properties**, select **User Interface**.
    ![Select User Interface](select-ui.png)
@@ -65,7 +64,6 @@ time: 15
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add approve and reject buttons)]
-
 1. In the form editor (for the ``ApproveBook.form``), select the **Decisions** section.
 2. To add two new buttons, click **Add** twice.
    ![Add New Buttons](add-buttons-fields.png)
@@ -82,10 +80,10 @@ time: 15
       - In column **Type**, enter **Negative**.
    ![Enter Decision Texts](create-decision-texts.png)
 
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Deploy your form)]
-
 1. Select the form file in the workspace.
 2. Open the context menu by right-clicking on the ``ApproveBook.form`` file, and choose **Deploy** | **Deploy to SAP Cloud Platform Workflow**.
 ![Deploy Form](deploy-form-file.png)
@@ -96,7 +94,6 @@ After the successful deployment a corresponding message toast is displayed.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Deploy your workflow)]
-
 1. Select the workflow file in the workspace.
 2. Open the context menu by right-clicking on the ``MyFirstWorkflow.workflow`` file, and choose **Deploy** | **Deploy to SAP Cloud Platform Workflow**.
 ![Deploy Form File](deploy-workflow-file.png)
