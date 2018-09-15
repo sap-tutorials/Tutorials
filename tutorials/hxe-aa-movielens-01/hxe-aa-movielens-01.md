@@ -43,6 +43,12 @@ In order to complete the next steps, you will be using the XS CLI client which i
 
 Therefore, you can run these commands on the server using a terminal console, or remotely using `PuTTY` for example.
 
+If you running the commands remotely using `PuTTY`, make sure to switch to the `hxeadm` user:
+
+```shell
+sudo su - hxeadm
+```
+
 > ### **Note:** You may prefer to run XS CLI commands remotely (from your local desktop for example). To do so, you can complete the [XS CLI Client installation](https://www.sap.com/developer/tutorials/hxe-ua-install-xs-xli-client.html)
 
 Execute the following series of XS CLI commands.
@@ -91,7 +97,7 @@ xs spaces
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Verify the builders deployment)]
+[ACCORDION-BEGIN [Step 1: ](Verify the builders deployment)]
 
 With some installations, the builders are not deployed in the ***development*** space which will prevent you from successfully building and running your projects in the SAP Web IDE.
 
@@ -113,7 +119,7 @@ Showing status and information about "di-space-enablement-ui"
   memory:           16.0 MB
   disk:             <unlimited>
   buildpack:        ***************
-  urls:             https://hxehost:51024
+  urls:             https://hxehost:510XX
 ```
 
 #### Start the app:
@@ -138,7 +144,7 @@ Showing status and information about "di-space-enablement-ui"
   memory:           16.0 MB
   disk:             <unlimited>
   buildpack:        ***************
-  urls:             https://hxehost:51024
+  urls:             https://hxehost:510XX
 
 Instances of droplet 1 created at Apr 4, 2018 5:36:52 PM
 index  created                 state    os user
@@ -150,7 +156,7 @@ index  created                 state    os user
 
 You can now access the application ***`urls`*** displayed in the previous command output.
 
-From the previous output, the URL is: `https://hxehost:51024`
+From the previous output, the URL is: `https://hxehost:510XX` (make sure to adjust the URL based on your current output).
 
 Login using the **`XSA_ADMIN`** credentials.
 
@@ -210,7 +216,11 @@ The following script can be executed at any time to collected back unused proces
 
 [ACCORDION-BEGIN [Step 4: ](Access the SAP HANA XS Advanced Cockpit)]
 
-From the XSA Controller page, access the **SAP HANA XS Advanced Cockpit***.
+From the XSA Controller page, access the **SAP HANA XS Advanced Cockpit**.
+
+As a reminder the default URL for the SAP HANA XS Advanced Cockpit is:
+
+ - `https://hxehost:39030`
 
 ![XSA Controller](04-01.png)
 
@@ -221,10 +231,6 @@ Login using the **`XSA_ADMIN`** credentials.
 Once logged in, you will get access to the SAP HANA XS Advanced Cockpit:
 
 ![SAP HANA XS Advanced Cockpit](04-03.png)
-
-As a reminder the default URL for the SAP HANA XS Advanced Cockpit is:
-
- - `https://hxehost:51036`
 
 [DONE]
 [ACCORDION-END]
@@ -334,7 +340,7 @@ Select **SAP HANA Database (Multitenant)** as ***Database Type***.
 
 Enter the HXE host name and instance number (default value is 90).
 
-Select **Tenant Database**.
+Select **Tenant Database** and enter **HXE** as name.
 
 Enter the **SYSTEM** user name and password (which is initially set to the master password during the first boot initialization).
 
