@@ -3,7 +3,7 @@ title: Display Messages in an SAPUI5 App
 description:  Perform the basic SAPUI5 bootstrapping, layouting, model creation and binding, and event handling to display the consumed messages.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>cloud , topic>javascript, topic>sapui5 ]
+tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>cloud , topic>javascript, topic>sapui5  ]
 time: 25
 ---
 

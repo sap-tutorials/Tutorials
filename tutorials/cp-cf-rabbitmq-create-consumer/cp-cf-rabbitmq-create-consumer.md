@@ -3,7 +3,7 @@ title: Create a Consumer App
 description: Create a web-based app that connects to a RabbitMQ message queue and subscribes to event queues.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>cloud , topic>javascript ]
+tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>cloud , topic>javascript  ]
 time: 30
 ---
 

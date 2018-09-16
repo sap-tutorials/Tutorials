@@ -19,23 +19,22 @@ time: 15
   - About the Service Marketplace, and services provided by SAP
   - Spaces and resource management
 
-Add additional information: Background information, longer prerequisites
-
 ---
 
 [ACCORDION-BEGIN [Step](Introduction to Cloud Foundry)]
 
 ![Cloud Foundry Logo, copyright Cloud Foundry Foundation](cloud-foundry-logo.png)
 
-Let's begin by explaining the name Cloud Foundry&trade;.  What is it?  [Cloud Foundry (or CF) is a specification and set of software tools by the Cloud Foundry Foundation](https://www.cloudfoundry.org/) (and before that, the Linux foundation).  It's entirely open source, and any company or organization can use the tools or create a system that follows the CF specifications.
+Let's begin by explaining the name Cloud Foundry&trade;.  What is it?  Cloud Foundry (or CF) is a specification and set of software tools by the [Cloud Foundry Foundation](https://www.cloudfoundry.org/) (and before that, the Linux foundation).  It's entirely open source, and any company or organization can use the tools or create a system that follows the CF specifications.
 
 SAP has implemented Cloud Foundry on it's SAP Cloud Platform, as a next-generation Platform as a Service (PaaS) development and runtime environment.  
 
 Cloud Foundry has significant benefits to developers and organizations:
+
 - **Language independent** - choose any language runtime, and add new languages as needed
-- **Admin separation** - Administrators and developers can work in parallel
+- **Admin separation** - administrators and developers can work in parallel
 - **Standard Command Line Interface** - the same CLI is used by all CF providers, not just SAP
-- **Open Source** - Contributions by many companies, updates and new features are faster
+- **Open Source** - contributions by many companies, updates and new features are faster
 
 We will discuss many of these new features in the sections below.
 
@@ -59,7 +58,7 @@ Platform as a Service PaaS moves control of the runtime - the application server
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step](Fixing a PaaS problem - Build Packs and Services)]
+[ACCORDION-BEGIN [Step](Fixing a PaaS problem - build packs and services)]
 
 PaaS systems suffer from one problem, however.  Moving the runtime layer to the cloud means the organization loses control of the runtime layer.  If the organization wants to make changes, they need to work with the cloud provider.  
 
@@ -102,7 +101,7 @@ Running the WAR file in the cloud is simple.  Just run the command `cf push WAR-
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](SAP Marketplace - Services we provide)]
+[ACCORDION-BEGIN [Step](SAP Marketplace - services we provide)]
 
 SAP has provided a number of services for Cloud Foundry developers.  
 
@@ -121,7 +120,7 @@ Cloud Foundry has a standard working environment for individual applications:  i
 
 Spaces are individual working areas, which normally contain a single application.  Each space has an allocation of resources from the global account (the global account belongs to your team or organization).  The allocation is called a **quota** by SAP, and limits the amount of memory, the number of URL's (called routes), and other resources.  Each space is assigned to 1 or more users (called **members**).
 
-> **Note**:  Spaces can contain more than one application, if you want.  
+> Spaces can contain more than one application, if you want.  
 
 Organizations can create spaces for individual projects, and then also create spaces for production, testing, Q&A, and any other deployments they need.  Each space is separate, and isolated from all the others.
 

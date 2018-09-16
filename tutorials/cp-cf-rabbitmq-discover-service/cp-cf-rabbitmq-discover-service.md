@@ -3,7 +3,7 @@ title: Explore the RabbitMQ Service Instance via the Dashboard
 description: Navigate to the RabbitMQ service instance's dashboard, and use both it and the command line tool to explore the instance in more detail.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, products>sap-cloud-platform, topic>cloud, topic>javascript ]
+tags: [ tutorial>beginner, products>sap-cloud-platform, topic>cloud, topic>javascript  ]
 time: 15
 ---
 
