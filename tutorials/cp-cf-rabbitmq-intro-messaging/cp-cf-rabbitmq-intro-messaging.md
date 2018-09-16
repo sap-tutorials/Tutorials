@@ -3,7 +3,7 @@ title: Learn about Messaging Between Microservices
 description: Learn about the open source message broker RabbitMQ and its concepts, including why microservices need to communicate in an asynchronous manner.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>intermediate,  products>sap-cloud-platform, topic>cloud  ]
+tags: [  tutorial>intermediate,  products>sap-cloud-platform, topic>cloud ]
 time: 20
 ---
 

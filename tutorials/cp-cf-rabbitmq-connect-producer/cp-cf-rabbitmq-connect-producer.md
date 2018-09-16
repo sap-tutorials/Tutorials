@@ -3,7 +3,7 @@ title: Connect an App to an RabbitMQ Service Instance
 description: Define the connection to the RabbitMQ service (in Cloud Foundry as well as for local development), read the payload from an incoming request, and forward it to the message broker.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>cloud , topic>javascript  ]
+tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>cloud , topic>javascript ]
 time: 20
 ---
 

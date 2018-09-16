@@ -3,7 +3,7 @@ title: Create a RabbitMQ Service Instance
 description: Explore the service marketplace in your SAP Cloud Platform Cloud Foundry space and create a new RabbitMQ service for your microservices.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>beginner, products>sap-cloud-platform, topic>cloud , topic>javascript  ]
+tags: [ tutorial>beginner, products>sap-cloud-platform, topic>cloud , topic>javascript ]
 time: 10
 ---
 

@@ -3,7 +3,7 @@ title: Create a Producer App
 description: Create a web app that offers two endpoints, one to create new messages and another to retrieve the outbox (sent messages).
 auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>cloud, topic>javascript  ]
+tags: [ tutorial>intermediate, products>sap-cloud-platform, topic>cloud, topic>javascript ]
 time: 20
 ---
 
