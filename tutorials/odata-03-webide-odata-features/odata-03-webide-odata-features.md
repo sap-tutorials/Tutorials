@@ -1,7 +1,7 @@
 ---
 title: Use SAP Web IDE OData Features to Create a Simple App
 description: Explore basic OData features built into the SAP Web IDE by building a simple SAPUI5 app.
-auto_validation: false
+auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, topic>sap-web-ide, topic>odata, tutorial>beginner ]
 time: 15

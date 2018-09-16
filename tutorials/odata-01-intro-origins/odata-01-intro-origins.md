@@ -1,7 +1,7 @@
 ---
 title: Learn about OData Fundamentals
 description: Discover OData's origins and learn about the fundamentals of OData by exploring a public OData service.
-auto_validation: false
+auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [ products>sap-cloud-platform, topic>cloud, topic>odata, tutorial>beginner ]
 time: 15
