@@ -1,5 +1,5 @@
 ---
-title: Using JPA in Custom Logic
+title: Use JPA in Custom Logic
 description: Use Java Persistence API (JPA) in your application to store and retrieve data.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
