@@ -1,5 +1,5 @@
 ---
-auto_validation: true 
+auto_validation: true
 title: Create and Expose a Core Data Service Based on a Database Table
 description: Build a list report app with the ABAP RESTful programming model for SAP Fiori.
 primary_tag: topic>abap-development
@@ -106,7 +106,7 @@ The keyword key is used to specific a key element and the keyword as is used to 
 2. Replace your code with following:
 
     ```swift
-    define root view ZI_Booking_XXX
+    define view ZI_Booking_XXX
       as select from ztbooking_xxx as Booking
       association [0..1] to I_Country  as _Country  on $projection.country = _Country.Country
       association [0..1] to I_Currency as _Currency on $projection.CurrencyCode = _Currency.Currency
@@ -205,8 +205,15 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Expose entities)]
-Expose the **`Z_I_Booking`** and the **`I_Country`** view entities.
-![Expose entities](expose.png)
+Expose the **`ZI_Booking_XXX`** and the **`I_Country`** view entities.
+```swift
+  @EndUserText.label: 'Service Definition for Booking'
+
+  define service Z_I_Booking_XXX {
+  expose ZI_Booking_XXX as Booking;
+  expose I_Country  as Country;
+  }
+```
 
 Save and activate your service definition.
 
