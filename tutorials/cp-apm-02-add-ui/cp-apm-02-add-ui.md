@@ -4,6 +4,7 @@ description: Create the UI for your business application using SAP Web IDE Full-
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, topic>html5, topic>java, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
+time: 10
 ---
 
 ## Prerequisites  
@@ -13,17 +14,12 @@ tags: [  tutorial>intermediate, topic>html5, topic>java, topic>sapui5, products>
 ### You will learn  
   - How to use SAP Web IDE Full-Stack HTML5 templates and the Annotation Modeler to create a UI for your business application.
 
-  
-### Time to Complete
-**10 Min**
-
-  
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Compile OData models)]
 
 1. In your workspace, right-click **bookshop**, your project root folder.
-2. Choose **Build CDS**
+2. Choose **Build** | **Build CDS**
 
     ![Build CDS](build-cds.png)
 
@@ -138,7 +134,7 @@ The columns are displayed with mock data
 
 [ACCORDION-BEGIN [Step 8: ](Add UI annotations)]
 
-1. Go to `app/webapp/localService` and right-click on the file you just created to use the context menu, selecting **`Open With -> Annotation Modeler`**.
+1. Go to `app/webapp/localService` and right-click on the file you just created to use the context menu, selecting **Open Annotation Modeler**.
 2. Expand the **Books** entity.
 The **Local Annotations** entry includes the annotation file you have just created.
 3. Go to the **Actions** column and choose **`Add subnodes`**.

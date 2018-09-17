@@ -2,8 +2,9 @@
 title: Set up SAP HANA, express edition, on Amazon Web Services - XS Advanced applications
 description: Set up your SAP HANA, express edition, with XS Advanced on Amazon Web Services
 primary_tag: products>sap-hana\,-express-edition
+auto_validation: true
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition ]
-time: 35
+time: 20
 ---
 
 ## Details
@@ -54,6 +55,7 @@ Click **Continue to Configuration**.
 
 ![Amazon Web Services Marketplace](_03.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Choose instance type)]
@@ -69,6 +71,7 @@ Select:
 
 ![Amazon Web Services Marketplace](_05.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Configure network)]
@@ -89,6 +92,7 @@ Name your security group, add a description and click **Save**
 
 ![Configure network](_09.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create a Key Pair)]
@@ -120,6 +124,7 @@ Choose the newly-create setting.
 
 ![Amazon Web Services Marketplace](_13.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Launch your instance)]
@@ -140,6 +145,7 @@ You may need to refresh the page to get the **Status Checks** updated.
 
 Once the instance is ready, you can connect to it using an SSH client.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Connect to your instance)]
@@ -147,13 +153,11 @@ There are different methods to connect to your instance depending on the system 
 
 You can use a **standalone SSH client** like **`PuTTY`**.
 
-There is also a option to use **Java SSH Client** directly from your browser which uses **`MindTerm`**.
+> ### **Note:** There is also a option to use **Java SSH Client** directly from your browser which uses **`MindTerm`**.
+>
+>However this require the use of NPAPI, which is being deprecated and unsupported by most browsers like Chrome, Microsoft Edge or recent version of Firefox.
 
-However this require the use of NPAPI, which is being deprecated and unsupported by most browsers like Chrome, Microsoft Edge or recent version of Firefox.
-
-Therefore, it is recommended to use a ***standalone SSH client***.
-
-For more details about standalone SSH client option, you can check the [Connecting to Your Linux Instance Using SSH]( https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html) guide.
+>Therefore, it is recommended to use a ***standalone SSH client***.
 
 From the **EC2 Console**, select your EC2 instance:
 
@@ -208,7 +212,9 @@ You can use command `ssh` from a terminal as follows:
 ssh -i /path/my-key-pair.pem ec2-user@public_ip_address
 ```
 
-There is more information about connecting to your instance on this guide: [Connecting to Your Linux Instance Using SSH](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html).
+For more details about standalone SSH client option, you can check the [Connecting to Your Linux Instance Using SSH]( https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html) guide.
+
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Configure your server)]
@@ -282,8 +288,10 @@ You will see `status=success` once it has finished:
 
 ![PuTTY](_25.png)
 
-> Note: If the status is not successful, you can check the log to see what errors occurred using the command `cat`, for example, `cat /var/tmp/hdb_init_config_2017-11-27_19.36.24.log`.
+> Note: If the status is not successful, you can check the log to see what errors occurred using the command, for example:
+> `cat /var/tmp/hdb_init_config_2017-11-27_19.36.24.log`.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Check your instance)]
@@ -297,7 +305,7 @@ You should see (at least) the following processes:
 
 - `hdbnameserver`
 - `hdbcompileserver`
-- `hdbwebdispatcher`
+- `hdbindexserver`
 - `hdbwebdispatcher`
 
 ![PuTTY](_26.png)
@@ -319,10 +327,11 @@ Repeat the second command until you see `STARTED` and **`1/1`** for applications
 
 ![PuTTY](_27.png)
 
-Make sure you map the hosts file as indicated in the next step before you call Web IDE.
+Make sure you update the hosts file as indicated in the next step before you call Web IDE.
 
-If anything is going wrong, [check the questions and answers from the community](https://answers.sap.com/index.html).
+Provide an answer to the question below then click on **Validate**.
 
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Map the host)]
@@ -379,10 +388,7 @@ Log in with user `XSA_DEV` and the password you provided during the initial setu
 &nbsp;
 >Make sure you use user `XSA_ADMIN` in different browsers or incognito mode to avoid authorization errors.
 
+[DONE]
 [ACCORDION-END]
 
-You can now start to use your SAP HANA, express edition, instance:
-
- - [Explore the XS Advanced platform basic tools](https://www.sap.com/developer/tutorials/xsa-explore-basics.html)
- - Learn [how to develop your first XS Advanced application](https://www.sap.com/developer/groups/hana-xsa-get-started.html)
- - or go to the [SAP Developer site](https://www.sap.com/developer/tutorial-navigator.html) for tutorials you can complete with your new instance.
+If anything is going wrong, [check the questions and answers from the community](https://answers.sap.com/index.html).

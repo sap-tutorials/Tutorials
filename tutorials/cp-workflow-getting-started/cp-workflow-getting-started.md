@@ -1,6 +1,7 @@
 ---
 title: Prepare to Create Workflows in SAP Cloud Platform
 description: Enable and configure services and assign the user roles you'll need for creating workflows.
+auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 time: 5
@@ -25,6 +26,7 @@ time: 5
 3. Select **Services** from the left-hand navigation.
 ![Select Service](select-services.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Enable the Portal service for your account)]
@@ -32,6 +34,7 @@ time: 5
 Search for the **Portal** service. Then select it, and choose **Enable**.
 ![Enable the Portal service](portal-enabled.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Enable SAP Web IDE Full-Stack)]
@@ -42,6 +45,7 @@ Search for the **Portal** service. Then select it, and choose **Enable**.
 
 ![Enable SAP Web IDE](webide-enabled.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Enable the workflow service)]
@@ -52,6 +56,7 @@ Search for the **Portal** service. Then select it, and choose **Enable**.
 
 ![Enable the workflow service](workflow-enabled.png)
 
+[VALIDATE_4]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Assign roles)]
@@ -67,7 +72,7 @@ Search for the **Portal** service. Then select it, and choose **Enable**.
 
 > If you are not sure what your user ID is, see the person icon in the header toolbar of the SAP Cloud Platform cockpit.
 
-
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Set up the workflow editor)]
@@ -81,6 +86,7 @@ To use the workflow editor, you need to first activate the feature in the SAP We
 
 ![Workflow Editor Feature](workflow-editor.png)
 
+[DONE]
 [ACCORDION-END]
 
 ---
