@@ -30,6 +30,16 @@ const run = async (projectPath, isProdRunMode) => {
     };
 };
 
+const runSpecific = async (filePaths, projectPath, isProdRunMode, interceptors = {}) => {
+  const checkResult = await globalChecker.check(filePaths, projectPath, isProdRunMode, interceptors);
+  const report = consoleReporter.generateReport(checkResult, filePaths.length);
+  consoleReporter.outputReportToConsole(report, filePaths.length);
+  return {
+    passed: checkResult.passed,
+  };
+};
+
 module.exports = {
     run,
+    runSpecific,
 };

@@ -84,7 +84,7 @@ module.exports = {
     },
     tags: {
         primary_tag: {
-            regexp: /primary_tag:\s?\[?(.*?)\]?\r?\n/i,
+            regexp: /(?<=primary_tag:)\s?\[?[\w\s>,\-]*\]?\r?\n?/i,
             message: 'More than one primary tag specified',
         },
       experienceTag: {
