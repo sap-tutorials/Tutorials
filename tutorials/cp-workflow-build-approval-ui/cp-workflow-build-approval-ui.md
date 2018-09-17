@@ -1,7 +1,6 @@
 ---
 title: Building a simple approval UI for your workflow with Workflow Forms
 description: You learn how to use the forms editor to create a basic user interface for your user task workflow.
-auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 time: 15
@@ -23,7 +22,6 @@ time: 15
 3. Select **Services** from the left-hand navigation.
 4. Search for the **Workflow** service. Then select it, and choose **SAP Web IDE for Full-Stack Development**.
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a form for a user task)]
@@ -44,7 +42,6 @@ time: 15
   You created the new file ``ApproveBook.form`` in the workflow project in the folder ``MyWorkflowProject/forms/MyFirstWorkflow``. The form editor opened automatically, so you can edit the form in the subsequent steps.
   ![View New File](new-file.png)
 
-[VALIDATE_2]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add fields to your form)]
@@ -65,7 +62,6 @@ time: 15
       - In column **Context Path**, enter `${context.price}`.
    ![Enter Row Data](enter-row-data-fields.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Add approve and reject buttons)]
@@ -86,7 +82,6 @@ time: 15
       - In column **Type**, enter **Negative**.
    ![Enter Decision Texts](create-decision-texts.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Deploy your form)]
@@ -98,7 +93,6 @@ time: 15
 After the successful deployment a corresponding message toast is displayed.
 ![View Toast](success-toast.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Deploy your workflow)]
@@ -107,7 +101,6 @@ After the successful deployment a corresponding message toast is displayed.
 2. Open the context menu by right-clicking on the ``MyFirstWorkflow.workflow`` file, and choose **Deploy** | **Deploy to SAP Cloud Platform Workflow**.
 ![Deploy Form File](deploy-workflow-file.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 7: ](Start a new workflow instance)]
@@ -120,7 +113,6 @@ After the successful deployment a corresponding message toast is displayed.
    The execution log shows a task waiting in the inbox.
 ![Start a new instance.](start-second-instance.png)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Open the task in My Inbox)]
@@ -129,7 +121,6 @@ After the successful deployment a corresponding message toast is displayed.
 2. Open the inbox. The task and some header information is displayed, but no further details or actions are given.
 ![Display Task in My Inbox](form-task-inbox2.png)
 
-[DONE]
 [ACCORDION-END]
 
 
