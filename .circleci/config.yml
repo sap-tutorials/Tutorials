@@ -18,7 +18,7 @@ jobs:
             - node_modules
       - run:
           name: Run test tool
-          command: npm run test
+          command: npm run test-last-commit
           no_output_timeout: '20m'
 notify:
   webhooks:
