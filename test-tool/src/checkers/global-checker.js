@@ -77,6 +77,13 @@ const check = async (filePaths, projectPath, isProduction = false, interceptors 
   };
   const results = new Map();
 
+  // remove not existing files, case: tool ran on the last commit where some file was renamed
+  for (let filePath of filePaths) {
+    if (!fs.existsSync(filePath)) {
+      filePaths = filePaths.filter(f => f!== filePath);
+    }
+  }
+
   const { files, uniqueLinksToFiles } = await common.parseFiles(filePaths);
 
   const uniqueLinks = Array.from(uniqueLinksToFiles.keys());
