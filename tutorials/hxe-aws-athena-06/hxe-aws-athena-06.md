@@ -4,7 +4,7 @@ description: Consume data from Amazon Athena in queries executed from SAP HANA, 
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
 tags: [  tutorial>beginner, topic>cloud, topic>sql, products>sap-hana\,-express-edition ]
-time: 15
+time: 10
 ---
 
 ## Details

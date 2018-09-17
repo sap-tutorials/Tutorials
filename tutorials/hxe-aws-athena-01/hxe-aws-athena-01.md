@@ -4,7 +4,7 @@ description: This tutorial will guide you through the steps to prepare your AWS 
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
 tags: [  tutorial>beginner, topic>cloud, topic>sql, products>sap-hana\,-express-edition ]
-time: 20
+time: 10
 ---
 
 ## Details
@@ -168,7 +168,7 @@ So technically, you can use the **SAP HANA, express edition**. but you will need
 
 Therefore, in order to benefit from the SAP Web IDE, you could use the **SAP HANA, express edition (server + applications)**.
 
-Before starting to follow the <a href="https://www.sap.com/developer/tutorials/hxe-xsa-aws-setup.html" target="&#95;blank">Set up SAP HANA, express edition, on Amazon Web Services</a> tutorial, make sure that:
+Before starting to follow the next tutorial (**Set up SAP HANA, express edition, on Amazon Web Services**), make sure that:
 
  - you use the **SAP HANA, express edition (server + applications)** AMI
  - you say *no* when prompted about waiting for XSA configuration completion
@@ -178,7 +178,5 @@ Once completed, you should have access to your instance using:
   - a SSH client like ***`PuTTY`***
   - the SAP Web IDE from the following URL `https://hxehost:53075`
 
-Provide an answer to the question below then click on **Validate**.
-
-[VALIDATE_3]
+[DONE]
 [ACCORDION-END]

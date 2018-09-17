@@ -4,7 +4,7 @@ description: Learn how to import data from the Global Database of Events, Langua
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
 tags: [  tutorial>beginner, topic>cloud, topic>sql, products>sap-hana\,-express-edition ]
-time: 15
+time: 10
 ---
 
 ## Details
