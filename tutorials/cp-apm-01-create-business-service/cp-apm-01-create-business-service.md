@@ -4,7 +4,6 @@ description: Define a data and service model using SAP Web IDE Full-Stack and th
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide ]
-time: 10
 ---
 
 ## Prerequisites  
@@ -14,6 +13,10 @@ time: 10
 ## Details
 ### You will learn  
   - How to develop a simple business service on SAP Cloud Platform using the application programming model and SAP Web IDE Full-Stack.
+
+
+### Time to Complete
+**10 Min**
 
 ---
 
@@ -25,9 +28,8 @@ time: 10
     >If you do not see the template, make sure **All Categories** is selected from the **Category** drop-down menu and try again.
 
 3. Enter **`bookshop`** as the project name and choose **Next**.
-4. Complete the **Project Details** tab as shown in the screenshot:
-![Complete the project details](project-details.png)
-    >You should update the **Java Package** to match the namespace used in this sample application, which is `my.bookshop`.
+4. Under **Java Module Settings**, enter **`my.bookshop`** as the package name.
+    >The namespace used in this sample application is `my.bookshop`.
 
 5. Choose **Finish**.
 

@@ -138,7 +138,7 @@ Choose the `Auto Map` button to automatically map the parameters to the columns 
 > #What are the different types of views for?
 > - Empty type: The view of type `default` or empty, is not exposed to BI tools and is free-form.
 > - Cube: measures, aggregations. Exposed to BI Tools (generates BI Metadata)
-> - Cube with star Join: Join fact data with dimension type calculation view. For example, join transactional data containing prices and discounts (facts) with data that helps to organize those facts, such as master data (customers, product categories) or time dimensions (quarters, years).
+> - Cube with star Join: Join fact data with dimension type calculation view. For example, join transactional data contiaing prices and discounts (facts) with ddata that helps to organize those facts, such as master data (customers, product categories) or time dimensions (quarters, years).
 > - Dimension: No measures, no aggregations and no exposure to BI tools.
 
 [DONE]
