@@ -141,7 +141,7 @@ In the text area below, enter the text you inserted in the **JVM Arguments** fie
 
 [ACCORDION-BEGIN [Step 9: ](Deploy the WAR file locally)]
 
-Use Java Web Tomcat 8 server and **com.sap.cloud.samples.web.hooks.web** > **BackendSystemServlet.java** servlet. Furthermore, on the **Web Modules** page of **Java Web Tomcat 8 Server**, set the path `/`. See [Deploy Locally from Eclipse IDE](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/0f16c9db4a9c407abb1b4987c0afe714.html).
+Use Java Web Tomcat 8 server and **`com.sap.cloud.samples.web.hooks.web`** > **`BackendSystemServlet.java`** servlet. Furthermore, on the **Web Modules** page of **Java Web Tomcat 8 Server**, set the path `/`. See [Deploy Locally from Eclipse IDE](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/0f16c9db4a9c407abb1b4987c0afe714.html).
 
 ![loio268839fdcfff424b88419150c824da78_LowRes](loio268839fdcfff424b88419150c824da78_LowRes.png)
 
