@@ -1,6 +1,7 @@
 ---
 title: Create a Workflow Project from a Template
 description: Create a new workflow project in SAP Cloud Platform using SAP Web IDE.
+auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform ]
 time: 5
@@ -22,6 +23,7 @@ time: 5
 3. On the **Workflow** tile, choose **SAP Web IDE for Full-Stack Development**.
 ![Choose Full-Stack](choose-full-stack.png)
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Create a new project)]
@@ -42,6 +44,7 @@ time: 5
 
 > If there are layout issues with the editor window (can't see the properties), simply refresh the SAP Web IDE window (F5).
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Deploy your workflow)]
@@ -52,6 +55,7 @@ time: 5
 In the top right corner, you see a success notification.
 ![Deploy Notification](deploy-notification.png)
 
+[VALIDATE_3]
 [ACCORDION-END]
 
 ---

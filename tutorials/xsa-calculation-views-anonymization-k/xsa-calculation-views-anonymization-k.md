@@ -9,6 +9,9 @@ time: 20
 
 ## Details
 ### You will learn  
+
+ - How to create a Calculation View using an `anonymization` node
+ - Use `k-anonymity` to hide data that can identify individuals by comparing other identifying information. See the [SAP Help for more information](https://help.sap.com/viewer/e8e6c8142e60469bb401de5fdb6f7c00/2.0.03/en-US/205f52e73c4a422e91fb9a0fbd5f3ec6.html)
  - How to create a calculation view
  - Use artifacts to import data from text file
 
@@ -17,7 +20,7 @@ time: 20
 [ACCORDION-BEGIN [Step 1: ](Check pre-requisites)]
 
 ### Map a space to your tenant
-Make sure your project is using a space that is mapped to a tenant. Here is how to [create a new space, only if you do not want to use the default development space](https://sap.com/developer/tutorials/xsa-setup-new-space.html) and [how to map it to a tenant database](https://sap.com/developer/tutorials/xsa-tenant-db-space.html)
+Make sure your project is using a space that is mapped to a tenant. Here is how to [create a new space,](https://sap.com/developer/tutorials/xsa-setup-new-space.html) only if you do not want to use the default development space and [how to map it to a tenant database](https://sap.com/developer/tutorials/xsa-tenant-db-space.html)
 
 ### Start the script server in your tenant database
 If you have not already, log in to your System database as SYSTEM and execute the following statement. In HANA express, as `hxeadm`
@@ -212,7 +215,7 @@ Click **Back**. Connect the `JOBS` node to the aggregation node.
 > ### Why is this useful?
 > `Anonymization` of data helps companies protect privacy and comply with data protection regulations, such as GDPR, together with many other measures to mask data that could potentially identify an individual.
 >&nbsp;
-> In this example, there are single combinations of job roles in specific countries. In other words, if the lucky number was sensitive information such as the salary and somebody knew who filled in the spreadsheet, they could deduce an individual's salary because of the unique combination of job role and country.
+> In this example, there are single combinations of job roles in specific countries. In other words, if the other fields were sensitive information such as the salary and somebody knew who filled in the spreadsheet, they could deduce an individual's salary because of the unique combination of job role and country.
 
 [DONE]
 [ACCORDION-END]

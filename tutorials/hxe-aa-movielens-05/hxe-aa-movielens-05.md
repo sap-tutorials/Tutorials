@@ -119,7 +119,17 @@ The installation will trigger a restart of your SAP HANA instance, so make sure 
 
 Once the SAP HANA Automated Predictive Library installation is completed, you will need to wait a few minutes for all services to be back online and proceed with the next step.
 
-Usually, you should add the **`APL_EXECUTE`** role to your user, however, this is not required when using an HDI container:
+Usually, you need add the **`APL_EXECUTE`** role to your user, however, this is not required when using an HDI container:
+
+```
+call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','ML_USER');
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
+Usually, you need add the **`APL_EXECUTE`** role to your user, however, this is not required when using an HDI container:
 
 ```
 call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','ML_USER');

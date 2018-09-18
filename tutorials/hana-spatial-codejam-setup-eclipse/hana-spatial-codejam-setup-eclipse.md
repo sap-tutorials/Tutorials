@@ -1,7 +1,6 @@
 ---
-title: Setup Eclipse for SAP HANA in SAP Cloud Platform Neo Trial
+title: Set up Eclipse for SAP HANA in SAP Cloud Platform Neo Trial
 description: Setup Eclipse for SAP HANA in SAP Cloud Platform Neo Trial
-auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>sql, products>sap-cloud-platform, products>sap-hana ]
 time: 10
@@ -31,7 +30,6 @@ Provide your SCP user password to open the tunnel.
 
 ![Open tunnel](p010.jpg)
 
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add the system in Eclipse)]
@@ -62,7 +60,6 @@ Click **Finish**
 If all parameters where correct and the tunnel is open, then the new system entry is added.
 
 
-[DONE]
 [ACCORDION-END]
 
 
@@ -76,7 +73,6 @@ In SQL Console type the following code and execute it to check everything is fin
 select 'Hello CodeJam!' as Greeting from dummy;
 ```
 
-[DONE]
 [ACCORDION-END]
 
 

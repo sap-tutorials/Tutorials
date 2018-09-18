@@ -1,16 +1,20 @@
 ---
-title: Build Simple Approval UI for Your Workflow
-description: Build the UI to be displayed to execute a user task (task performed by a person) within a workflow.
+title: Build a Simple Approval UI for Your Workflow with Workflow Forms
+description: Use the forms editor to create a basic user interface for your user task workflow.
+auto_validation: true
 primary_tag: products>sap-cloud-platform
-tags: [  tutorial>beginner ]
+tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 time: 15
 ---
 
+## Prerequisites  
+- **Tutorials:** You have executed the previous tutorials in [Get started with SAP Cloud Platform workflows](https://www.sap.com/developer/groups/cp-workflow-service.html).
+
 ## Details
 ### You will learn  
-- How to build a user task
-- How to implement a SAPUI5 application that has a page (called view)
-- How to complete the workflow by approving or rejecting the task in My Inbox
+  - How to define a basic form-based user task UI without having to cope with SAPUI5 coding
+  - How to use it in a user task of a workflow
+
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE Full-Stack)]
@@ -19,201 +23,121 @@ time: 15
 3. Select **Services** from the left-hand navigation.
 4. Search for the **Workflow** service. Then select it, and choose **SAP Web IDE for Full-Stack Development**.
 
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Create a new SAPUI5 application)]
-In the SAP Web IDE Full-Stack, create a new project using a template.
+[ACCORDION-BEGIN [Step 2: ](Create a form for a user task)]
 
-1. In the navigation area, choose the home icon.
-2. Choose **New Project from Template**.
-![New Project](new-project.png)
-3. Choose **SAPUI5 Application**.
-![Choose SAPUI5 App](choose-sapui5-app.png)
-4. Choose **Next**.
-5. Enter a name for the new workflow project, for example, `BookUIApplication` and a namespace, for example, `BookUIApplication`.
-![Enter Project Name](enter-project-name.png)
-6. Choose **Next**.
-7. Enter a name for the view, for example, `ApproveBookView`.
-![Add View Name](add-view-name.png)
-8. Choose **Finish**.
-9. Choose **Run**.
-![Choose Run](choose-run.png)
-The HTML page is still empty. You need to add the necessary UI controls for displaying the book details, like title and price.
+1. In the SAP Web IDE Full-Stack, open the ``MyFirstWorkflow.workflow`` workflow file and select the **`ApproveBook`** task.
+2. Under **User Task Properties**, select **User Interface**.
+   ![Select User Interface](select-ui.png)
+3. In the **Type** field, choose **Form**.
+4. To create a new form, choose the **Create File** link.  
+   ![Create File](create-file-link2.png)
+5. In the **New Form** dialog, enter the following data:
+      - Name: `ApproveBook`
+      - ID: `approvebook`
+      - Revision: `1.0`
+   ![Enter Data](new-form-dialog2.png)
+6. Choose **Create**.
 
+  You created the new file ``ApproveBook.form`` in the workflow project in the folder ``MyWorkflowProject/forms/MyFirstWorkflow``. The form editor opened automatically, so you can edit the form in the subsequent steps.
+  ![View New File](new-file.png)
+
+[VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Create the form layout)]
-1. To use the form layout, enable the **`sap.ui.layout`** package in the project settings of SAP Web IDE:
-  <ol type="a"><li>Choose **Workspace** | **`BookUIApplication`**.
-  </li><li>Right-click the **`BookUIApplication`** project, and choose **Project Settings**.
-   ![Choose Project Settings](open-project-settings.png)
-   Under **SAPUI5**, select the **`sap.ui.layout`** package, and then **Save**.
-   ![Select Layout](select-layout.png)</li></ol>
-2. Open the newly created view using the layout editor:
-  <ol type="a"><li>Choose **Workspace** | **`BookUIApplication`** | **`webapp`** | **view** | **`ApproveBookView.view.xml`**.
-  </li><li>Right-click and choose **Open With** | **Layout Editor**.
-   ![Open Layout Editor](open-layout-editor.png)</li></ol>
-3. To add a form to the page, choose **Layout** | **Simple Form** and drag it onto the editor canvas.
-     ![Add Simple Form](add-simple-form.png)    
-4. Select the **Title** element, and change the title text under **Properties** to 'Book Details'.
-     ![Change Title](change-title.png)
-5. Similarly, select and change the **Label 1** text to 'Title' and **Label 2** to 'Price'.
-6. Remove the second input control in the first row by selecting it and then pressing the delete key.
-Your page layout should now look like this:
-![New Layout](new-page.png)
+[ACCORDION-BEGIN [Step 3: ](Add fields to your form)]
 
+1. In the form editor (for the ``ApproveBook.form``), select the **Fields** section.
+2. To add two new fields, click **Add Field** twice.
+   ![Add New Fields](add-fields-editable.png)
+3. Fill the two new rows that are added in the **Fields** section as follows.
+
+    First row:
+
+      - In column **`Lable/Title`**, enter `Title`.
+      - In column **Type**, select **String**.
+      - In column **Context Path**, enter `${context.product}`.      
+
+    &nbsp;
+    Second row:
+
+      - In column **`Lable/Title`**, enter `Price`.
+      - In column **Type**, select **Float**.
+      - In column **Context Path**, enter `${context.price}`.
+   ![Enter Row Data](enter-row-data-fields.png)
+
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add a data binding)]
-1. To bind the UI controls to data from the workflow context, use the **Value** field in the properties of the input control:
-  <ol type="a"><li>Select the input control with the label **Title**, and enter '{/product}'.
-  </li><li>Second line
-  </li><li>Select the input control with the label **Price**, and enter '{/price}'.
-![Add Values](add-values.png)</li></ol>
-2. To prevent the approver from changing the title or price, set the **Editable** property to **false** for both input elements.
-3. Choose **Save**.
+[ACCORDION-BEGIN [Step 4: ](Add approve and reject buttons)]
 
+1. In the form editor (for the ``ApproveBook.form``), select the **Decisions** section.
+2. To add two new buttons, click **Add** twice.
+   ![Add New Buttons](add-buttons-fields.png)
+3. Fill the two new rows that are added in the **Decisions** section as follows.
+
+    First row:
+
+      - In column **Text**, enter `Approve`.
+      - In column **ID**, make sure that **approve** is entered.
+      - In column **Type**, enter **Positive**.
+
+    &nbsp;
+    Second row:
+
+      - In column **Text**, enter `Reject`.
+      - In column **ID**, make sure that **reject** is entered.
+      - In column **Type**, enter **Negative**.
+   ![Enter Decision Texts](create-decision-texts.png)
+
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Initialize the data model)]
-To make the workflow context available to the UI controls, you need to retrieve the task context data. To do this, call the Workflow REST API with the task ID of the currently shown task instance in My Inbox. My Inbox passes this data to our component using the startup parameters.
+[ACCORDION-BEGIN [Step 5: ](Deploy your form)]
 
-1. Open the **`Component.js`** file under **`Workspace`** | **`BookUIApplication`** | **`webapp`**.
-2. Find the **init** function, and add the following code snippet to the file:
+1. Select the form file in the workspace.
+2. Open the context menu by right-clicking on the ``ApproveBook.form`` file, and choose **Deploy** | **Deploy to SAP Cloud Platform Workflow**.
+![Deploy Form](deploy-form-file.png)
 
+After the successful deployment a corresponding message toast is displayed.
+![View Toast](success-toast.png)
 
-    ```javascript
-    // get task data
-    var startupParameters = this.getComponentData().startupParameters;
-    var taskModel = startupParameters.taskModel;
-    var taskData = taskModel.getData();
-    var taskId = taskData.InstanceID;
-
-    // initialize model
-    var contextModel = new sap.ui.model.json.JSONModel("/bpmworkflowruntime/rest/v1/task-instances/" + taskId + "/context");
-    contextModel.setDefaultBindingMode(sap.ui.model.BindingMode.OneWay);
-    this.setModel(contextModel);
-    ```
-![Add Code](add-code.png)
-3. Choose **Save**.
-4. To deploy the project, select the project in the workspace and choose **Deploy** | **Deploy to SAP Cloud Platform**. On the following screen, choose **Deploy**.
-   ![Deploy Project](deploy-project.png)
-    > If you open the application in the browser, you see a blank page because the UI only works when running inside the My Inbox application.  
-
-[ACCORDION-END]  
-
-[ACCORDION-BEGIN [Step 6: ](Link the UI5 component to the user task)]
-
-You can now refer to the deployed UI5 application from your approval task in the workflow:
-
-1. In the SAP Web IDE, open the workflow file and select the **`ApproveBook`** task.
-2. Under **Details** in the **User Task Properties**, find the properties for specifying the user interface.
-3. Choose **Select**.
-![Choose Select](select-ui.png)
-4. Select the **`BookUIApplication`** project and the **`webapp`** component path.
-5. Choose **OK**.
-   ![Choose User Interface](choose-ui.png)
-6. Choose **Save**.  
-7. To deploy the workflow file again, select it in the workspace and choose **Deploy** | **Deploy to SAP Cloud Platform Workflow**.
-8. To test the workflow, start a new instance from the **Monitor Workflow** application and open the task in My Inbox.
-   You should see the following task details:
-   ![Test Workflow](task-details.png)
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add Approve and Reject buttons)]
-To add **Approve** and **Reject** buttons to actually complete the task, go back and edit the **`Component.js`** file again.
+[ACCORDION-BEGIN [Step 6: ](Deploy your workflow)]
 
-1. Open the **`Component.js`** file under **`Workspace`** | **`BookUIApplication`** | **`webapp`**.
-2. Add the following functions to your component:  
-    - `_fetchToken`: Retrieves an XSRF token from the workflow service API. The token is used to authenticate when calling the POST method to complete the task.  
-    - `_completeTask`: Calls the workflow service API to complete the current task, and pass on the approval status ("true" or "false") using the JSON payload to the workflow context.  
-    - '`_refreshTask`: Tells My Inbox to remove the task on completion from the list.
+1. Select the workflow file in the workspace.
+2. Open the context menu by right-clicking on the ``MyFirstWorkflow.workflow`` file, and choose **Deploy** | **Deploy to SAP Cloud Platform Workflow**.
+![Deploy Form File](deploy-workflow-file.png)
 
-    Right after the closing bracket of the init function, add the following code snippet to the file:
-
-    ```javascript
-    ,
-
-		_completeTask: function(taskId, approvalStatus) {
-			var token = this._fetchToken();
-			$.ajax({
-				url: "/bpmworkflowruntime/rest/v1/task-instances/" + taskId,
-				method: "PATCH",
-				contentType: "application/json",
-				async: false,
-				data: "{\"status\": \"COMPLETED\", \"context\": {\"approved\":\"" + approvalStatus + "\"}}",
-				headers: {
-					"X-CSRF-Token": token
-				}
-			});
-			this._refreshTask(taskId);
-		}
-
-		, _fetchToken: function() {
-			var token;
-			$.ajax({
-				url: "/bpmworkflowruntime/rest/v1/xsrf-token",
-				method: "GET",
-				async: false,
-				headers: {
-					"X-CSRF-Token": "Fetch"
-				},
-				success: function(result, xhr, data) {
-					token = data.getResponseHeader("X-CSRF-Token");
-				}
-			});
-			return token;
-		},
-
-		_refreshTask: function(taskId) {
-			this.getComponentData().startupParameters.inboxAPI.updateTask("NA", taskId);
-		}
-    ```
-![Add Codesnippet](add-codesnippet.png)
-3. Add the **Approve** and **Reject** buttons to the My Inbox action footer by adding the following code to the body of the init function within the **`Component.js`** file:
-
-    ```javascript
-		    //add actions
-                    startupParameters.inboxAPI.addAction({
-                            action: "Approve",
-                            label: "Approve"
-                    }, function(button) {
-                            this._completeTask(taskId, true);
-                    }, this);
-                    startupParameters.inboxAPI.addAction({
-                            action: "Reject",
-                            label: "Reject"
-                    }, function(button) {
-                            this._completeTask(taskId, false);
-                    }, this);
-    ```
-![Add Actions](add-actions.png)
-    When the user presses the buttons, the `_completeTask` function will be called.
-4. Choose **Save**.
-
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Complete the workflow)]
-1. Deploy the **`BookUIApplication`** project again. Select the project and choose **Deploy** | **Deploy to SAP Cloud Platform**. On the following screen, choose **Deploy**.
-2. Refresh My Inbox to check the updated UI for the task.
-    > To see the new buttons, you may have to clean the browser cache or force a "hard reload".
+[ACCORDION-BEGIN [Step 7: ](Start a new workflow instance)]
+1. In the SAP Fiori launchpad, open the **Monitor Workflow - Workflow Definitions** tile.
+   Note that the version of your workflow definition has increased from "1" to "2".
+2. Choose **Start New Instance**.
+3. Leave the standard JSON input as is, and choose **Start New Instance**.
+![Start New Instance](start-new-instance.png)
+4. Choose **Show Instances**.
+   The execution log shows a task waiting in the inbox.
+![Start a new instance.](start-second-instance.png)
 
-    ![Redeploy Project](redeploy-project.png)
-3. To complete the workflow, choose either **Approve** or **Reject** in the My Inbox app.
-   The task should disappear from **My Inbox**, and the workflow instance should disappear from the **Monitor Workflows** instances list.
+[DONE]
 [ACCORDION-END]
 
----
+[ACCORDION-BEGIN [Step 8: ](Open the task in My Inbox)]
+1. Go back to the Fiori launchpad homepage. The **My Inbox** tile shows one open task.
+   ![Open Task in My Inbox](open-task.png)
+2. Open the inbox. The task and some header information is displayed, but no further details or actions are given.
+![Display Task in My Inbox](form-task-inbox2.png)
 
-You defined and deployed a workflow using the SAP Web IDE. You started and monitored workflow instances with the Monitor Workflow app, and you saw user tasks in the My Inbox.
-You have successfully completed the implementation of the first version of your Book Order workflow.
+[DONE]
+[ACCORDION-END]
 
-Check out the [Workflow Developer Guide](https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/60ae81179050478caa4212fad4ba50f2.html) or explore the [REST API](https://help.sap.com/doc/40db36d987084ab09e496381090e9a2e/Cloud/en-US/wfs-core-api-docu.html).
-
-Share your feedback on SAP Cloud Platform Workflow!
-
-If you want to learn more about the integration of workflow into your user interfaces, check out this [blog](https://blogs.sap.com/2017/10/12/understanding-custom-ui-integration-with-sap-cloud-platform-workflow/).
 
 
 ---
