@@ -108,20 +108,12 @@ https://myXXXXXX-api.account.us3.hana.ondemand.com/sap/bc/sec/oauth2/token
 Add additional properties:
 
 | ----------------------------- | -------------------------------------------------------- |
-|        **`scope`**            | `ADT_0001 /UI5/APP_INDEX_0001 /IWFND/SG_MED_CATALOG_0002`|
 | **`authnContextClassRef`**    |      `urn:oasis:names:tc:SAML:2.0:ac:classes:X509`       |
 |       **`TrustAll`**          |                      `true`                              |
 |     **`WEBIDEEnabled`**       |                      `true`                              |  
 |      **`WebIDEUsage`**        |         `odata_abap,ui5_execute_abap,dev_abap`           |
 
 
-
-Your scope consists of 3 parts:
- - `ADT_0001`: scope of the Gateway service for ADT  
- - /`UI5`/`APP_INDEX_0001`: scope of the UI2 app index
- - /`IWFND`/`SG_MED_CATALOG_0002`: scope of the catalog service version 2.0
-
-Be sure that all parts within the scope are separated with a space.
 
 **Save** your changes.
 
