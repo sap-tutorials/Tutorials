@@ -1,6 +1,6 @@
 ---
-title: Call an external API
-description: Pointing to an external API and display its output in the console
+title: Call an External API
+description: Point to an external API and display its output in the console.
 auto_validation: true
 primary_tag: topic>abap-development
 tags: [  tutorial>intermediate, topic>abap-development, topic>cloud, products>sap-cloud-platform ]
@@ -8,13 +8,13 @@ time: 30
 ---
 
 ## Prerequisites  
- -  Communication arrangement for scenario `SAP_COM_0276` was created with service instance name `OutboundCommunication`
- -	You have created a package
- -  You have opened the SAP Cloud Platform Cockpit and navigated to the correct space
+ -  Communication arrangement for scenario `SAP_COM_0276` was created with service instance name `OutboundCommunication`.
+ -	You have created a package.
+ -  You have opened the SAP Cloud Platform cockpit and navigated to the correct space.
 
 ## Details
 ### You will learn  
-  - How to call an external API from inside an ABAP system (here, using a class). Thus, you can remain within the ABAP environment and work with standard APIs
+  - How to call an external API from inside an ABAP system using a class
 
 ---
 
@@ -58,7 +58,8 @@ Check the connection:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Create an ABAP class)]
-Now, you will create an ABAP class, which you can run in the console:
+Now, you will create an ABAP class, which you can run in the console.
+
   1. In the ABAP Development Tools `(ADT)`, in the Package Explorer, select your package and choose **New > ABAP Class** from the context menu:
   ![Image depicting step-4a-create-class](step-4a-create-class.png)
   2. Enter a name and description for your class and choose Next. **Remember to change `XXX` to your group number**:
@@ -133,15 +134,16 @@ METHOD if_oo_adt_classrun~main.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 8: ](Check, save, and activate)]
-1. Check your syntax (**`Ctrl+F2`**).
-2. Save (**`Ctrl+S`**) and activate (**`Ctrl+F3`**) your class.
+1. Check your syntax (`Ctrl+F2`).
+2. Save (`Ctrl+S`) and activate (`Ctrl+F3`) your class.
 
 [DONE]
 
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Run the class in the console)]
-Run your class in the console (**`F9`**).
+Run your class in the console (`F9`).
+
 The output should look something like this:
 ![Image depicting step-9-console](step-9-console.png)
 
@@ -150,7 +152,7 @@ The output should look something like this:
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 9: ](Test yourself)]
-Ensure that you can test your class in the console in `ADT` by inserting the correct interface method below:
+Create the variable `lo_request` using the DATA statement and the `get_http_request` method of the `lo_http_client` object. Enter the correct below.
 
 [VALIDATE_1]
 
