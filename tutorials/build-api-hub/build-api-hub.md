@@ -2,8 +2,8 @@
 title: Using the API Hub in SAP Build
 description: Learn how to use the SAP API Business Hub integration in SAP Build.
 auto_validation: true
-primary_tag: products>build>build
-tags: [  tutorial>intermediate, products>build>build, products>sap-api-management ]
+primary_tag: products>build
+tags: [  tutorial>intermediate, products>build, products>sap-api-management ]
 ---
 
 ## Prerequisites  
