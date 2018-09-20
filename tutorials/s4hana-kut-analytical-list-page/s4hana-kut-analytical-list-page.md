@@ -2,7 +2,7 @@
 title: Create an Analytical List Page Report
 description: Create an analytical list page with charts and tables for flexible ad-hoc analysis of actual costs and statistical key figures.
 auto_validation: true
-primary_tag: topic>abap-development, products>sap-s-4hana
+primary_tag: products>sap-s-4hana
 tags: [  tutorial>intermediate, topic>abap-development, products>sap-s-4hana ]
 time: 30
 ---
