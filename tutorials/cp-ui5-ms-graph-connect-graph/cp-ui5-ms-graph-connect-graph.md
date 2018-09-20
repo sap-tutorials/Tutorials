@@ -238,19 +238,19 @@ Replace the content of the form (of the second page) with the following SAPUI5 c
     <layout:GridData span="L4 M4"/>
   </layoutData>
 </Label>
-<Text text="{DeliveryAddress}"/>
+<Link press="onPressLink" enabled="{= !!${session>/givenName} }" text="{DeliveryAddress}"/>
 <Label text="GrossAmount">
   <layoutData>
     <layout:GridData span="L4 M4"/>
   </layoutData>
 </Label>
-<Link press="onPressLink" enabled="{= !!${session>/givenName} }" text="{GrossAmount}"/>
+<Text text="{GrossAmount}"/>
 <Label text="CurrencyCode">
   <layoutData>
     <layout:GridData span="L4 M4"/>
   </layoutData>
 </Label>
-<Link press="onPressLink" enabled="{= !!${session>/givenName} }" text="{CurrencyCode}"/>
+<Text text="{CurrencyCode}"/>
 <Label text="ItemCount">
   <layoutData>
     <layout:GridData span="L4 M4"/>
