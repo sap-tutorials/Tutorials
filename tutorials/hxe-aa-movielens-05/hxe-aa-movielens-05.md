@@ -113,27 +113,15 @@ By default, the function will identify **mega-hubs** (using the 4 ***sigma*** ru
 
 [ACCORDION-BEGIN [Pre-requisite: ](Install SAP HANA APL package)]
 
-If not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-apl-binary.html).
+The installation requires you to have access to the system using a SSH client like ***`PuTTY`***, but also to have access to the ***`hxeadm`*** user with ***`sudo`*** rights configured.
+
+To run the download manager you will need Java t be installed on the system.
 
 The installation will trigger a restart of your SAP HANA instance, so make sure to save your current work before.
 
 Once the SAP HANA Automated Predictive Library installation is completed, you will need to wait a few minutes for all services to be back online and proceed with the next step.
 
-Usually, you need add the **`APL_EXECUTE`** role to your user, however, this is not required when using an HDI container:
-
-```
-call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','ML_USER');
-```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
-Usually, you need add the **`APL_EXECUTE`** role to your user, however, this is not required when using an HDI container:
-
-```
-call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','ML_USER');
-```
+So if not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-apl-binary.html).
 
 [DONE]
 [ACCORDION-END]

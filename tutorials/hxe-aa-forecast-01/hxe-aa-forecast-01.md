@@ -41,7 +41,7 @@ If you don't have an instance up and running, be aware that you don't need to co
 
 In order to complete the next steps, you will be using the XS CLI client which is locally installed with your SAP HANA 2.0, express edition instance.
 
-Therefore, you can run these commands on the server using a terminal console, or remotely using `PuTTY` for example.
+Therefore, you can run these commands directly from the server using a SSH client like `PuTTY` for example.
 
 If you running the commands remotely using `PuTTY`, make sure to switch to the `hxeadm` user:
 
@@ -92,6 +92,39 @@ xs orgs
 &nbsp;
 ```shell
 xs spaces
+```
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Rescale processes)]
+
+If your environment is limited in term of memory resources and in order to ensure a smooth experience, you can execute the following commands to stop certain services, rescale the memory used by some processes and run the memory collector.
+
+#### Stop services:
+
+The following services can be stopped as you won't leverage them in this tutorial series.
+
+```shell
+xs stop sap-portal-static-resources
+xs stop cockpit-telemetry-svc
+```
+
+#### Stop services:
+
+The following services can be scaled up to ensure a better user experience during this tutorial series.
+
+```shell
+xs scale di-runner -m 512M -f -w
+xs scale di-core -m 512M -f -w
+```
+
+#### Run the memory collector script:
+
+The following script can be executed at any time to collected back unused process memory.
+
+```shell
+/usr/sap/HXE/home/bin/hxe_gc.sh
 ```
 
 [DONE]
@@ -179,39 +212,6 @@ xs stop di-space-enablement-ui
 Based on the outputs returned previously, provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Rescale processes)]
-
-If your environment is limited in term of memory resources and in order to ensure a smooth experience, you can execute the following commands to stop certain services, rescale the memory used by some processes and run the memory collector.
-
-#### Stop services:
-
-The following services can be stopped as you won't leverage them in this tutorial series.
-
-```shell
-xs stop sap-portal-static-resources
-xs stop cockpit-telemetry-svc
-```
-
-#### Stop services:
-
-The following services can be scaled up to ensure a better user experience during this tutorial series.
-
-```shell
-xs scale di-runner -m 512M -f -w
-xs scale di-core -m 512M -f -w
-```
-
-#### Run the memory collector script:
-
-The following script can be executed at any time to collected back unused process memory.
-
-```shell
-/usr/sap/HXE/home/bin/hxe_gc.sh
-```
-
-[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Access the SAP HANA XS Advanced Cockpit)]
@@ -381,7 +381,13 @@ Paste the following SQL statement in the console and click on the ***Run*** icon
 ALTER DATABASE HXE ADD 'scriptserver';
 ```
 
-Now, you can now verify that the service is started using the first SQL statement.
+Select the **HXE** tenant connection in the ***Database Explorer*** panel, then click on the **Open SQL Console** icon ![Database Explorer](00-dbexplorer-sql.png) (or press ***CTRL+ALT+C***).
+
+Now, you can now verify that the service is started using the following SQL statement:
+
+```sql
+SELECT SERVICE_NAME, PORT, ACTIVE_STATUS FROM SYS.M_SERVICES ORDER BY 1;
+```
 
 The result should return a list of service names, their associated port numbers and their statuses including an entry for the `scriptserver`.
 
