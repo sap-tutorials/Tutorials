@@ -7,22 +7,19 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 time: 10
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
-
 ## Details
 ### You will learn  
 
-- **THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the AppSpace and we will provide everything you will need.
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the AppSpace and we will provide everything you will need.
 
-To complete this tutorial, you will be using a Virtual Machine powered and sponsored by [Google Cloud](https://cloud.google.com/).
+To complete this tutorial, you will be using a virtual machine powered and sponsored by [Google Cloud](https://cloud.google.com/).
 
 ![Google Cloud Platform](gcpx2.png)
 
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Log in to your test account)]
+[ACCORDION-BEGIN [Step 1: ](Log into your test account)]
 
 The experts at the Developer Garage at SAP TechEd will provide you with access details. Open a new **incognito window** using Google Chrome.
 
@@ -133,7 +130,7 @@ Configuration will take just a couple of minutes. In the meantime, continue with
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Configure access to your Virtual Machine)]
+[ACCORDION-BEGIN [Step 3: ](Configure access to your virtual machine)]
 
 Click on the name of the instance
 

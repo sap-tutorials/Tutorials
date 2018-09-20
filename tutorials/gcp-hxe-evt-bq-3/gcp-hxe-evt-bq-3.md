@@ -1,6 +1,6 @@
 ---
-title: Run a predictive algorithm and connect to the plain schema
-description: Copy the data form a remote source and train the ARIMA model to create rpedictions based on the data in Google BigQuery
+title: Create a predictive model
+description: Copy the data form a remote source and train the ARIMA model to create predictions based on the data in Google BigQuery.
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
@@ -10,16 +10,17 @@ time: 15
 
 ## Details
 ### You will learn  
-  - **THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the AppSpace and we will provide everything you will need.
   - How to create tables using SQL in a classic schema
-  - Train and run an ARIMA predictive model in a classic schema
+  - How to train and run an ARIMA predictive model in a classic schema
   - How to create a user-provided service to access the plain schema from an HDI container
+
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the AppSpace and we will provide everything you will need.
 
 All of these artifacts can also be created as design-time artifacts to be deployed in the HDI container. This approach will allow you to manually execute the SQL commands and learn how to create the user-provided service.
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Create a Columnar table)]
+[ACCORDION-BEGIN [Step 1: ](Create a columnar table)]
 
 Start by clearing all open SQL tabs. Open a new one.
 
