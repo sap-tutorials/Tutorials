@@ -1,5 +1,5 @@
 ---
-title: Explore and Customize your SAP Web IDE Full-Stack
+title: Explore and Customize Your SAP Web IDE Full-Stack
 description: Get to know your new development environment by setting some of the preferences.
 auto_validation: true
 primary_tag: products>sap-web-ide
