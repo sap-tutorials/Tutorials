@@ -182,14 +182,14 @@ As the dataset files get updated periodically, and in order to ensure consistenc
 
 Download the following files locally (right click on the link, then use the ***Save link as*** option):
 
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/CashFlows.csv" target="new">`CashFlows.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/KxDesc_CashFlows.csv" target="new">`KxDesc_CashFlows.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/Lag1AndCycles.csv" target="new">`Lag1AndCycles.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/Lag1AndCyclesAndWn.csv" target="new">`Lag1AndCyclesAndWn.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/Ozone.csv" target="new">`Ozone.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/TrendAndCyclic.csv" target="new">`TrendAndCyclic.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/TrendAndCyclicAndWn.csv" target="new">`TrendAndCyclicAndWn.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/TrendAndCyclicAnd_4Wn.csv" target="new">`TrendAndCyclicAnd_4Wn.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/CashFlows.csv" target="new">`CashFlows.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/KxDesc_CashFlows.csv" target="new">`KxDesc_CashFlows.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/Lag1AndCycles.csv" target="new">`Lag1AndCycles.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/Lag1AndCyclesAndWn.csv" target="new">`Lag1AndCyclesAndWn.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/Ozone.csv" target="new">`Ozone.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/TrendAndCyclic.csv" target="new">`TrendAndCyclic.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/TrendAndCyclicAndWn.csv" target="new">`TrendAndCyclicAndWn.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/TrendAndCyclicAnd_4Wn.csv" target="new">`TrendAndCyclicAnd_4Wn.csv`</a>
 
 > ###**Note**: If you want to import your own data files, make sure it uses the  **`csv`** file extension.
 
@@ -205,14 +205,14 @@ Click on **OK**.
 
 Repeat the operation for all the previously downloaded files:
 
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/CashFlows.csv" target="new">`CashFlows.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/KxDesc_CashFlows.csv" target="new">`KxDesc_CashFlows.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/Lag1AndCycles.csv" target="new">`Lag1AndCycles.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/Lag1AndCyclesAndWn.csv" target="new">`Lag1AndCyclesAndWn.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/Ozone.csv" target="new">`Ozone.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/TrendAndCyclic.csv" target="new">`TrendAndCyclic.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/TrendAndCyclicAndWn.csv" target="new">`TrendAndCyclicAndWn.csv`</a>
-- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/TrendAndCyclicAnd_4Wn.csv" target="new">`TrendAndCyclicAnd_4Wn.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/CashFlows.csv" target="new">`CashFlows.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/KxDesc_CashFlows.csv" target="new">`KxDesc_CashFlows.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/Lag1AndCycles.csv" target="new">`Lag1AndCycles.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/Lag1AndCyclesAndWn.csv" target="new">`Lag1AndCyclesAndWn.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/Ozone.csv" target="new">`Ozone.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/TrendAndCyclic.csv" target="new">`TrendAndCyclic.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/TrendAndCyclicAndWn.csv" target="new">`TrendAndCyclicAndWn.csv`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-03/data/TrendAndCyclicAnd_4Wn.csv" target="new">`TrendAndCyclicAnd_4Wn.csv`</a>
 
 Your package structure should now look like this:
 
