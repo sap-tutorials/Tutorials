@@ -157,7 +157,7 @@ Download the following files locally (right click on the link, then use the ***S
 
 Again, before using these files, make sure you have reviewed the dataset <a href="http://files.grouplens.org/datasets/movielens/ml-latest-small-README.html" target="new">README</a> file for the usage licenses and other details.
 
-In the left side panel, expand the **`movielens/db/src/hdb/data`** tree node.
+In the left side panel, expand the **`movielens/db/src/data`** tree node.
 
 Right click on the **`data`** folder, and use the **Import** > **File or Project** menu item.
 
