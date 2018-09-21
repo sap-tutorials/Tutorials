@@ -27,14 +27,14 @@ The datasets archive structure for the [**Sample Time Series**](https://help.sap
 |--sample_time_series_3.3.1_en-us_production.zip
    |-- Time series.zip
    |   |-- Time series
-   |       |-- CashFlows.txt
-   |       |-- KxDesc_CashFlows.txt
-   |       |-- Lag1AndCycles.txt
-   |       |-- Lag1AndCyclesAndWn.txt
-   |       |-- R_ozone-la.txt
-   |       |-- TrendAndCyclic.txt
-   |       |-- TrendAndCyclicAnd_4Wn.txt
-   |       |-- TrendAndCyclicAndWn.txt
+   |       |-- CashFlows.csv
+   |       |-- KxDesc_CashFlows.csv
+   |       |-- Lag1AndCycles.csv
+   |       |-- Lag1AndCyclesAndWn.csv
+   |       |-- R_ozone-la.csv
+   |       |-- TrendAndCyclic.csv
+   |       |-- TrendAndCyclicAnd_4Wn.csv
+   |       |-- TrendAndCyclicAndWn.csv
    |-- metadata.xml
 ```
 
@@ -43,13 +43,13 @@ The datasets archive structure for the [**Sample Time Series**](https://help.sap
 
 #### **Cash Flows**
 
-The Cash Flows file (`CashFlows.txt`) presents daily measures of cash flows from January 2, 1998 to September, 30 1998. Each observation is characterized by 25 variables.
+The Cash Flows file (`CashFlows.csv`) presents daily measures of cash flows from January 2, 1998 to September, 30 1998. Each observation is characterized by 25 variables.
 
 In this scenario, you are an executive of a financial entity that manages cash-flows. Your role is to make sure that credits are available with the correct amount at the correct date to provide the best management possible of your financial flows.
 
 #### **Los Angeles Ozone**
 
-The Los Angeles Ozone file (`R_ozone-la.txt`) presents monthly averages of hourly ozone (O3) readings in downtown Los Angeles from 1955 to 1972.
+The Los Angeles Ozone file (`R_ozone-la.csv`) presents monthly averages of hourly ozone (O3) readings in downtown Los Angeles from 1955 to 1972.
 
 Each observation is characterized by 2 variables, a time and an average of the hourly ozone readings for the month.
 
@@ -81,7 +81,7 @@ However, this would require the ***Eclipse IDE*** to be locally installed and pr
 
 Then, you would need to know the complete data file format description in order to create the tables with the proper columns structure. And, last but not least, any changes would require to recreate the all structure and reload the data.
 
-If you want to learn more about this import method, you can check the following tutorial: [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html)
+If you want to learn more about this import method, you can check the following tutorial: **Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse**
 
 - ***SAP HANA HDB Client***
 
@@ -89,35 +89,16 @@ The **SAP HANA HDB Client** provides an ***IMPORT FROM*** statement allowing you
 
 However, this method requires that the table are created before the execution of the command.
 
-If you want to learn more about this import method, you can check the following tutorial: [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-sql-import.html)
+If you want to learn more about this import method, you can check the following tutorial: **Import CSV into SAP HANA, express edition using IMPORT FROM SQL command**.
 
 #### ***Solution***
 
-Both options are valid and will be described here. To learn more about these options, you can refer to:
+Both options are valid but for the sake of simplicity only the Eclipse option will be described here.
+
+To learn more about these options, you can refer to:
 
 - [Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html)
 - [Import CSV into SAP HANA, express edition using IMPORT FROM SQL command](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-sql-import.html)
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 3: ](Download the dataset CSV files)]
-
-Open the [SAP Predictive Analytic online documentation](https://help.sap.com/viewer/p/SAP_PREDICTIVE_ANALYTICS) page.
-
-Locate the **Samples** section and click on the **View All** button.
-
-Select the [**Sample Time Series**](https://help.sap.com/http.svc/download?deliverable_id=20555051) entry.
-
-The download should begin.
-
-Once the download completes, extract the `Time series.zip` file included in the downloaded `sample_time_series_x.y.y_en-us_production.zip` archive file.
-
-If you are planning on using the ***IMPORT FROM*** statement from the SAP HANA HDB Client, then you will need to transfer the extracted files using an FTP client to following location on the HXE server:
-
-```
-/usr/sap/HXE/HDB90/work/data/
-```
 
 [DONE]
 [ACCORDION-END]
@@ -190,14 +171,36 @@ create table forecast_trend_and_cyclic_and_4wn (
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 3: ](Import the Dataset)]
 
-Depending on your the import method option you have selected, complete one of the following steps.
+As the dataset files get updated periodically, and in order to ensure consistency of content and validation, a copy of the data is available under the <a href="https://github.com/SAPDocuments/Tutorials/tree/master/tutorials/hxe-aa-forecast-sql-02/data" target="new">data</a> directory within the SAP Tutorial GitHub repository.
 
-### **Using the SAP HANA Tools for Eclipse**
+Download the following files locally (right click on the link, then use the ***Save link as*** option):
 
-You can import the data using the [SAP HANA Tools for Eclipse Import feature](https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html) using the following details:
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/CashFlows.csv" target="new">`CashFlows`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/KxDesc_CashFlows.csv" target="new">`KxDesc_CashFlows`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/Lag1AndCycles.csv" target="new">`Lag1AndCycles`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/Lag1AndCyclesAndWn.csv" target="new">`Lag1AndCyclesAndWn`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/R_ozone-la.csv" target="new">`R_ozone-la`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/TrendAndCyclic.csv" target="new">`TrendAndCyclic`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/TrendAndCyclicAndWn.csv" target="new">`TrendAndCyclicAndWn`</a>
+- <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-forecast-sql-02/data/TrendAndCyclicAnd_4Wn.csv" target="new">`TrendAndCyclicAnd_4Wn`</a>
+
+Using the  **File > Import...** menu, select **SAP HANA Content > Data From Local File**.
+
+You can also use the search field to locate the entry.
+
+![image Step 3](03-0.png)
+
+Click on **Next**.
+
+Select the Target System connection **HXE @ HXE (`ML_USER`)**.
+
+![image Step 3](03-1.png)
+
+Click on **Next**.
+
+The following panel allows you to set a series of import options:
 
 - **File Details:**
 
@@ -213,88 +216,15 @@ The source files should be mapped with the following target tables:
 
 | Source File                   | Target Table      
 | ----------------------------- | -----------------
-| `CashFlows.txt`               | `ML_USER.FORECAST_CASHFLOW`
-| `R_ozone-la.txt`              | `ML_USER.FORECAST_OZONE`
-| `Lag1AndCycles.txt`           | `ML_USER.FORECAST_LAG_1_AND_CYCLES`
-| `Lag1AndCyclesAndWn.txt`      | `ML_USER.FORECAST_LAG_1_AND_CYCLES_AND_WN`
-| `TrendAndCyclic.txt`          | `ML_USER.FORECAST_TREND_AND_CYCLIC`
-| `TrendAndCyclicAndWn.txt`     | `ML_USER.FORECAST_TREND_AND_CYCLIC_AND_WN`
-| `TrendAndCyclicAnd_4Wn.txt`   | `ML_USER.FORECAST_TREND_AND_CYCLIC_AND_4WN`
+| `CashFlows.csv`               | `ML_USER.FORECAST_CASHFLOW`
+| `R_ozone-la.csv`              | `ML_USER.FORECAST_OZONE`
+| `Lag1AndCycles.csv`           | `ML_USER.FORECAST_LAG_1_AND_CYCLES`
+| `Lag1AndCyclesAndWn.csv`      | `ML_USER.FORECAST_LAG_1_AND_CYCLES_AND_WN`
+| `TrendAndCyclic.csv`          | `ML_USER.FORECAST_TREND_AND_CYCLIC`
+| `TrendAndCyclicAndWn.csv`     | `ML_USER.FORECAST_TREND_AND_CYCLIC_AND_WN`
+| `TrendAndCyclicAnd_4Wn.csv`   | `ML_USER.FORECAST_TREND_AND_CYCLIC_AND_4WN`
 
-### **Using the IMPORT FROM SQL command**
-
-The dataset files should be located in: **`/usr/sap/HXE/HDB90/work/data/`**
-
-Connect to the **HXE** tenant using the **`ML_USER`** user credentials using your SQL query tool.
-
-Execute the following SQL statement:
-
-```SQL
-import from csv file '/usr/sap/HXE/HDB90/work/data/forecast/CashFlows.txt' into forecast_cashflow
-with
-   record delimited by '\n'
-   field delimited by '\t'
-   optionally enclosed by '"'
-   skip first 1 row
-   fail on invalid data
-   error log '/home/jupyteradm/log/CashFlows.txt.err'
-;
-import from csv file '/usr/sap/HXE/HDB90/work/data/forecast/R_ozone-la.txt' into forecast_ozone
-with
-   record delimited by '\n'
-   field delimited by '\t'
-   optionally enclosed by '"'
-   skip first 1 row
-   fail on invalid data
-   error log '/home/jupyteradm/log/R_ozone-la.txt.err'
-;
-import from csv file '/usr/sap/HXE/HDB90/work/data/forecast/Lag1AndCycles.txt' into forecast_lag_1_and_cycles
-with
-   record delimited by '\n'
-   field delimited by '\t'
-   optionally enclosed by '"'
-   skip first 1 row
-   fail on invalid data
-   error log '/home/jupyteradm/log/Lag1AndCycles.txt.err'
-;
-import from csv file '/usr/sap/HXE/HDB90/work/data/forecast/Lag1AndCyclesAndWn.txt' into FORECAST_LAG_1_AND_CYCLES_AND_WN
-with
-   record delimited by '\n'
-   field delimited by '\t'
-   optionally enclosed by '"'
-   skip first 1 row
-   fail on invalid data
-   error log '/home/jupyteradm/log/Lag1AndCyclesAndWn.txt.err'
-;
-import from csv file '/usr/sap/HXE/HDB90/work/data/forecast/TrendAndCyclic.txt' into FORECAST_TREND_AND_CYCLIC
-with
-   record delimited by '\n'
-   field delimited by '\t'
-   optionally enclosed by '"'
-   skip first 1 row
-   fail on invalid data
-   error log '/home/jupyteradm/log/TrendAndCyclic.txt.err'
-;
-import from csv file '/usr/sap/HXE/HDB90/work/data/forecast/TrendAndCyclicAndWn.txt' into FORECAST_TREND_AND_CYCLIC_AND_WN
-with
-   record delimited by '\n'
-   field delimited by '\t'
-   optionally enclosed by '"'
-   skip first 1 row
-   fail on invalid data
-   error log '/home/jupyteradm/log/TrendAndCyclicAndWn.txt.err'
-;
-
-import from csv file '/usr/sap/HXE/HDB90/work/data/forecast/TrendAndCyclicAnd_4Wn.txt' into FORECAST_TREND_AND_CYCLIC_AND_4WN
-with
-   record delimited by '\n'
-   field delimited by '\t'
-   optionally enclosed by '"'
-   skip first 1 row
-   fail on invalid data
-   error log '/home/jupyteradm/log/TrendAndCyclicAnd_4Wn.txt.err'
-;
-```
+**Repeat this operation for each dataset files.**
 
 [DONE]
 [ACCORDION-END]

@@ -87,55 +87,6 @@ Each observation is characterized by 2 variables described in the following tabl
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Select, install and configure a SQL query tool)]
-
-As you will mostly execute SQL commands during this tutorial, you will need to setup a SQL query tool for SAP HANA, express edition.
-
-The following tutorial group describes a series of option you can pick one from (you don't need to setup all of them, but one is enough):
-
- - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
-
-Off course you can use any tool of your choice!
-
-Looking at raw data is not always easy when you want to evaluate them. Therefore, it is recommended to visualize them graphically.
-
-Therefore you can setup a tool like Jupyter (as described in the following tutorial: [Use Jupyter Notebook with SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-jupyter.html)) which will allow you to run both your SQL and to use Python libraries to visualize your data in graphs.
-
-In the following tutorial, you will be provided a series of Python code snippets to run in your Jupyter Notebooks in order to visualize the data.
-
-But first, you will need to add the below code snippet in your first cell which will initialize the connection to your HXE instance:
-
-```python
-import sqlalchemy, os
-from sqlalchemy import create_engine
-
-import pandas as pd
-import matplotlib
-import matplotlib.pyplot as plt
-
-%matplotlib inline
-
-%reload_ext sql
-%config SqlMagic.displaylimit = 5
-%config SqlMagic.feedback = False
-%config SqlMagic.autopandas = True
-
-hxe_connection = 'hana://ML_USER:Welcome18@hxehost:39015';
-
-%sql $hxe_connection
-
-pd.options.display.max_rows = 1000
-pd.options.display.max_colwidth = 1000
-```
-
-> ### **Note:**
->
-> - Make sure to update the `hxe_connection` to match your current environment.
-> - To execute the SQL code snippets in Jupyter, make sure to add a **`%%sql`** at the beginning to leverage the `IPython-sql` features
-
-[DONE]
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 1: ](Check the row counts)]
 
 Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement to check the number of rows:
@@ -183,23 +134,7 @@ Let's have a look at the data using the following SQL:
 select cashdate, cash from forecast_cashflow order by cashdate asc;
 ```
 
-Here is a code snippet to visualize the data in your Jupyter Notebook:
-
-```python
-result = %sql select cashdate, cash from forecast_cashflow order by cashdate asc;
-
-time = matplotlib.dates.date2num(result.cashdate)
-
-fig, ax = plt.subplots()
-ax.plot(time, result.cash, 'ro-', markersize=2, color='blue')
-ax.xaxis_date()
-
-fig.autofmt_xdate()
-fig.set_size_inches(20, 12)
-plt.show()
-```
-
-And here is the result:
+And here is the result in a graph:
 
 ![Jupyter](02-01.png)
 
@@ -292,17 +227,7 @@ The result should be:
 
 As you can notice the average and median values are not in the same range of values which may imply a skewed data distribution.
 
-Using the following Python code snippet in Jupyter can help you visualize the cash flow value in ascending order:
-
-```python
-result = %sql select row_number() over (order by cash asc) as row_num, cash from forecast_cashflow order by cash asc;
-
-fig, ax = plt.subplots()
-ax.plot(result.row_num, result.cash, 'ro-', markersize=2, color='blue')
-
-fig.set_size_inches(20, 12)
-plt.show()
-```
+Here is a graph which can help you visualize the cash flow value in ascending order:
 
 ![Jupyter](02-02.png)
 
@@ -372,23 +297,7 @@ Let's have a look at the data using the following SQL:
 select time, reading from forecast_ozone order by time asc;
 ```
 
-Here is a code snippet to visualize the data in your Jupyter Notebook:
-
-```python
-result = %sql select time, reading from forecast_ozone order by time asc;
-
-time = matplotlib.dates.date2num(result.time)
-
-fig, ax = plt.subplots()
-ax.plot(time, result.reading, 'ro-', markersize=2, color='blue')
-ax.xaxis_date()
-
-fig.autofmt_xdate()
-fig.set_size_inches(20, 12)
-plt.show()
-```
-
-And here is the result:
+And here is the result in a graph:
 
 ![Jupyter](03-01.png)
 
@@ -471,17 +380,7 @@ The result should be:
 
 As you can notice the average and median values are in the same range of values.
 
-Using the following Python code snippet in Jupyter can help you visualize the ozone reading value in ascending order:
-
-```python
-result = %sql select row_number() over (order by reading asc) as row_num, reading from forecast_ozone order by 1 asc;
-
-fig, ax = plt.subplots()
-ax.plot(result.row_num, result.reading, 'ro-', markersize=2, color='blue')
-
-fig.set_size_inches(20, 12)
-plt.show()
-```
+Here is a graph which can help you visualize the ozone reading value in ascending order:
 
 ![Jupyter](03-02.png)
 
@@ -554,30 +453,7 @@ join forecast_lag_1_and_cycles_and_wn l1cwn
 on l1cnn.time = l1cwn.time
 ```
 
-Here is a code snippet to visualize the data in your Jupyter Notebook:
-
-```python
-result = %sql select \
-    l1cnn.time, l1cnn.signal as signal , l1cwn.signal as signal_wn, l1cnn.signal - l1cwn.signal as delta \
-from \
-     forecast_lag_1_and_cycles        l1cnn \
-join forecast_lag_1_and_cycles_and_wn l1cwn \
-on l1cnn.time = l1cwn.time
-
-time = matplotlib.dates.date2num(result.time)
-
-fig, ax = plt.subplots()
-ax.plot(time, result.signal,    'ro-', markersize=2, color='blue')
-ax.plot(time, result.signal_wn, 'ro-', markersize=2, color='red')
-ax.bar (time, result.delta           , color='green')
-ax.xaxis_date()
-
-fig.autofmt_xdate()
-fig.set_size_inches(20, 12)
-plt.show()
-```
-
-And here is the result:
+And here is the result in a graph:
 
 ![Jupyter](04-01.png)
 
@@ -649,19 +525,7 @@ The result should be:
 
 As you can notice the average and median values are in the same range of values for both datasets.
 
-Using the following Python code snippet in Jupyter can help you visualize the signal values in ascending order:
-
-```python
-result    = %sql select row_number() over (order by signal asc) as row_num, signal from forecast_lag_1_and_cycles        order by 1, 2;
-result_wn = %sql select row_number() over (order by signal asc) as row_num, signal from forecast_lag_1_and_cycles_and_wn order by 1, 2;
-
-fig, ax = plt.subplots()
-ax.plot(result.row_num,    result.signal,    'ro-', markersize=2, color='blue')
-ax.plot(result_wn.row_num, result_wn.signal, 'ro-', markersize=2, color='red')
-
-fig.set_size_inches(20, 12)
-plt.show()
-```
+Here is a graph that can help you visualize the signal values in ascending order:
 
 ![Jupyter](04-02.png)
 
@@ -757,35 +621,7 @@ join forecast_trend_and_cyclic_and_wn  tcwn on tcnn.time = tcwn.time
 join forecast_trend_and_cyclic_and_4wn tc4n on tcnn.time = tc4n.time
 ```
 
-Here is a code snippet to visualize the data in your Jupyter Notebook:
-
-```python
-result = %sql select \
-    tcnn.time \
-    , tcnn.signal  as signal \
-    , tcwn.signal  as signal_wn \
-    , tc4n.signal  as signal_4n \
-from \
-     forecast_trend_and_cyclic         tcnn \
-join forecast_trend_and_cyclic_and_wn  tcwn on tcnn.time = tcwn.time \
-join forecast_trend_and_cyclic_and_4wn tc4n on tcnn.time = tc4n.time \
-
-time = matplotlib.dates.date2num(result.time)
-
-fig, ax = plt.subplots()
-
-ax.plot(time, result.signal,    'ro-', markersize=2, color='blue')
-ax.plot(time, result.signal_wn, 'ro-', markersize=2, color='red')
-ax.plot(time, result.signal_4n, 'ro-', markersize=2, color='yellow')
-
-ax.xaxis_date()
-
-fig.autofmt_xdate()
-fig.set_size_inches(20, 12)
-plt.show()
-```
-
-And here is the result:
+And here is the result in a graph:
 
 ![Jupyter](05-01.png)
 
@@ -858,21 +694,7 @@ The result should be:
 
 As you can notice the average and median values are all in the same range of values for each datasets.
 
-Using the following Python code snippet in Jupyter can help you visualize the signal values in ascending order:
-
-```python
-result    = %sql select row_number() over (order by signal asc) as row_num, signal from forecast_trend_and_cyclic         order by 1, 2;
-result_wn = %sql select row_number() over (order by signal asc) as row_num, signal from forecast_trend_and_cyclic_and_wn  order by 1, 2;
-result_4n = %sql select row_number() over (order by signal asc) as row_num, signal from forecast_trend_and_cyclic_and_4wn order by 1, 2;
-
-fig, ax = plt.subplots()
-ax.plot(result.row_num,    result.signal,    'ro-', markersize=2, color='blue')
-ax.plot(result_wn.row_num, result_wn.signal, 'ro-', markersize=2, color='red')
-ax.plot(result_4n.row_num, result_4n.signal, 'ro-', markersize=2, color='yellow')
-
-fig.set_size_inches(20, 12)
-plt.show()
-```
+Here is a graph which can help you visualize the signal values in ascending order:
 
 ![Jupyter](05-02.png)
 

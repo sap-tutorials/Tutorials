@@ -1,0 +1,26 @@
+RANK	NAME	STORAGE	VALUETYPE	KEYLEVEL	ORDERLEVEL	MISSINGSTRING	GROUPNAME	DESCRIPTION
+0	Date	datetime	continuous	1	1			
+1	WorkingDaysIndices	number	continuous	0	0			
+2	ReverseWorkingDaysIndices	number	continuous	0	0			
+3	MondayMonthInd	number	ordinal	0	0			
+4	TuesdayMonthInd	number	ordinal	0	0			
+5	WednesdayMonthInd	number	ordinal	0	0			
+6	ThursdayMonthInd	number	ordinal	0	0			
+7	FridayMonthInd	number	ordinal	0	0			
+8	BeforeLastMonday	number	nominal	0	0			
+9	LastMonday	number	nominal	0	0			
+10	BeforeLastTuesday	number	nominal	0	0			
+11	LastTuesday	number	nominal	0	0			
+12	BeforeLastWednesday	number	nominal	0	0			
+13	LastWednesday	number	nominal	0	0			
+14	BeforeLastThursday	number	nominal	0	0			
+15	LastThursday	number	nominal	0	0			
+16	BeforeLastFriday	number	nominal	0	0			
+17	LastFriday	number	nominal	0	0			
+18	Last5WDaysInd	number	ordinal	0	0			
+19	Last5WDays	number	nominal	0	0			
+20	Last4WDaysInd	number	ordinal	0	0			
+21	Last4WDays	number	nominal	0	0			
+22	LastWMonth	number	nominal	0	0			
+23	BeforeLastWMonth	number	nominal	0	0			
+24	Cash	number	continuous	0	0			
