@@ -1,5 +1,5 @@
 ---
-title: Set up your AWS environment
+title: Set Up Your AWS Environment
 description: Prepare your AWS environment to complete this tutorial series.
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
