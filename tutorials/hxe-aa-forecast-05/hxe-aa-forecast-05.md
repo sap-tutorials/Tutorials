@@ -96,19 +96,17 @@ Name                          | Description
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Install SAP HANA APL package)]
+[ACCORDION-BEGIN [Pre-requisite: ](Install SAP HANA APL package)]
 
-If not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-apl-binary.html).
+The installation requires you to have access to the system using a SSH client like ***`PuTTY`***, but also to have access to the ***`hxeadm`*** user with ***`sudo`*** rights configured.
+
+To run the download manager you will need Java t be installed on the system.
 
 The installation will trigger a restart of your SAP HANA instance, so make sure to save your current work before.
 
 Once the SAP HANA Automated Predictive Library installation is completed, you will need to wait a few minutes for all services to be back online and proceed with the next step.
 
-Usually, you should add the **`APL_EXECUTE`** role to your user, however, this is not required when using an HDI container:
-
-```
-call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','ML_USER');
-```
+So if not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-apl-binary.html).
 
 [DONE]
 [ACCORDION-END]
@@ -161,82 +159,94 @@ forecast/db/src/algorithms/apl/common.hdbcds
 Paste the following content:
 
 ```JavaScript
-namespace aa.forecast.db.algorithms.pal;
+namespace aa.forecast.db.algorithms.apl;
 
-context common {
-    table type tt_parameter {
-        "param_name"   : String(1000);
-        "int_value"    : Integer;
-        "double_value" : Double;
-        "string_value" : String(255);
+context forecast {
+    table type tt_function_header {
+        "KEY"   : String(50);
+        "VALUE" : String(255);
+    };
+    table type tt_operation_config {
+        "KEY"     : String(1000);
+        "VALUE"   : LargeString;
+        "CONTEXT" : LargeString;
+    };
+    table type tt_variable_descs {
+        "RANK"          : Integer;
+        "NAME"          : String(255);
+        "STORAGE"       : String(10);
+        "VALUETYPE"     : String(10);
+        "KEYLEVEL"      : Integer;
+        "ORDERLEVEL"    : Integer;
+        "MISSINGSTRING" : String(255);
+        "GROUPNAME"     : String(255);
+        "DESCRIPTION"   : String(255);
+        "OID"           : String(255);
+    };
+    table type tt_variable_roles {
+        "NAME"             : String(127);
+        "ROLE"             : String(10);
+        "COMPOSITION_TYPE" : String(10);
+        "COMPONENT_NAME"   : String(127);
+        "OID"              : String(50);
+    };
+    table type tt_operation_log {
+        "OID"       : String(50);
+        "TIMESTAMP" : UTCTimestamp;
+        "LEVEL"     : Integer;
+        "ORIGIN"    : String(50);
+        "MESSAGE"   : LargeString;
+    };
+    table type tt_summary {
+        "OID"   : String(50);
+        "KEY"   : String(100);
+        "VALUE" : String(200);
+    };
+    table type tt_indicators {
+        "OID"      : String(50);
+        "VARIABLE" : String(255);
+        "TARGET"   : String(255);
+        "KEY"      : String(100);
+        "VALUE"    : LargeString;
+        "DETAIL"   : LargeString;
+    };
+    table type tt_results {
+        "signal_time"          : UTCDateTime;
+        "signal_value"         : Double;
+        "kts_1"                : Double;
+        "kts_1_lowerlimit_95%" : Double;
+        "kts_1_upperlimit_95%" : Double;
     };
     table type tt_dataset {
-        "signal_time"  : Integer;
+        "signal_time"  : UTCDateTime;
         "signal_value" : Double;
     };
-    table type tt_statistics {
-        "stat_name"  : String(100);
-        "stat_value" : String(100);
-    };
-};
-
-context seasonality_test {
-    table type tt_output {
-        "signal_time" : Integer;
-        "seasonal"    : Double;
-        "trend"       : Double;
-        "random"      : Double;
-    };
-};
-
-context smoothing {
-    table type tt_output_raw {
-        "signal_time"  : Integer;
-        "forecast"     : Double;
-        "lowerlimit_1" : Double;
-        "upperlimit_1" : Double;
-        "lowerlimit_2" : Double;
-        "upperlimit_2" : Double;
-    };
-    table type tt_output {
-        "signal_time"  : Integer;
-        "signal_value" : Double;
-        "forecast"     : Double;
-        "lowerlimit_1" : Double;
-        "upperlimit_1" : Double;
-        "lowerlimit_2" : Double;
-        "upperlimit_2" : Double;
-    };
-};
-
-context arima {
-    table type tt_model {
-        "key"   : String(100);
-        "value" : String(5000);
-    };
-    table type tt_fit {
-        "signal_time" : Integer;
-        "fitted"      : Double;
-        "residuals"   : Double;
-    };
-    table type tt_output_raw {
-        "signal_time"    : Integer;
-        "forecast"       : Double;
-        "standard_error" : Double;
-        "lowerlimit_80"  : Double;
-        "upperlimit_80"  : Double;
-        "lowerlimit_95"  : Double;
-        "upperlimit_95"  : Double;
-    };
-    table type tt_output {
-        "signal_time"    : Integer;
-        "signal_value"   : Double;
-        "forecast"       : Double;
-        "standard_error" : Double;
-        "lowerlimit_80"  : Double;
-        "upperlimit_80"  : Double;
-        "lowerlimit_95"  : Double;
-        "upperlimit_95"  : Double;
+    table type tt_dataset_cashflows_extrapredictors {
+        "signal_time"               : UTCDateTime;
+        "WorkingDaysIndices"        : Integer;
+        "ReverseWorkingDaysIndices" : Integer;
+        "MondayMonthInd"            : Integer;
+        "TuesdayMonthInd"           : Integer;
+        "WednesdayMonthInd"         : Integer;
+        "ThursdayMonthInd"          : Integer;
+        "FridayMonthInd"            : Integer;
+        "BeforeLastMonday"          : Integer;
+        "LastMonday"                : Integer;
+        "BeforeLastTuesday"         : Integer;
+        "LastTuesday"               : Integer;
+        "BeforeLastWednesday"       : Integer;
+        "LastWednesday"             : Integer;
+        "BeforeLastThursday"        : Integer;
+        "LastThursday"              : Integer;
+        "BeforeLastFriday"          : Integer;
+        "LastFriday"                : Integer;
+        "Last5WDaysInd"             : Integer;
+        "Last5WDays"                : Integer;
+        "Last4WDaysInd"             : Integer;
+        "Last4WDays"                : Integer;
+        "LastWMonth"                : Integer;
+        "BeforeLastWMonth"          : Integer;
+		"signal_value"              : Double;
     };
 };
 ```

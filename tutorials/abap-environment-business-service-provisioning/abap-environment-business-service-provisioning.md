@@ -81,7 +81,7 @@ We want to create service binding to bind service to a protocol and preview.
 1. Right click on your package and choose **New** > **Other ABAP Repository Object** > **Business Services** > **Service Binding**.
 2. Click **Next**.
 ![Add Service Binding](Picture6.png)
-3. Enter data for a new service binding. Use the service definition created in last step.
+3. Enter data for a new service binding. Use the service definition created in last step. 
 4. Click **Next**.
 ![Create Service Binding](Picture7.png)
 

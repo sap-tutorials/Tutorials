@@ -1,6 +1,6 @@
 ---
-title: Setup your AWS environment
-description: This tutorial will guide you through the steps to prepare your AWS environment to complete this tutorial series
+title: Set up your AWS environment
+description: Prepare your AWS environment to complete this tutorial series.
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
 tags: [  tutorial>beginner, topic>cloud, topic>sql, products>sap-hana\,-express-edition ]
@@ -31,7 +31,7 @@ Access the <a href="https://console.aws.amazon.com/console" target="&#95;blank">
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Create a User in AWS)]
+[ACCORDION-BEGIN [Step 1: ](Create a user in AWS)]
 
 In order to later configure the ODBC connection from SAP HANA, express edition to Amazon Athena, you will need to provide your credentials using the Access & Security Key.
 
@@ -90,7 +90,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Create a S3 bucket)]
+[ACCORDION-BEGIN [Step 1: ](Create an S3 bucket)]
 
 If you have followed the ***<a href="https://docs.aws.amazon.com/athena/latest/ug/getting-started.html" target="&#95;blank">Getting Started</a>*** guide for Amazon Athena, a S3 bucket will be created automagically.
 
@@ -154,7 +154,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Launch a SAP HANA, express edition instance)]
+[ACCORDION-BEGIN [Step 1: ](Launch an SAP HANA, express edition instance)]
 
 In order to complete this tutorial series, you need to use as a minimum version:
 
@@ -168,7 +168,7 @@ So technically, you can use the **SAP HANA, express edition**. but you will need
 
 Therefore, in order to benefit from the SAP Web IDE, you could use the **SAP HANA, express edition (server + applications)**.
 
-Before starting to follow the next tutorial (**Set up SAP HANA, express edition, on Amazon Web Services**), make sure that:
+Before starting to follow the next tutorial (named **Set up SAP HANA, express edition, on Amazon Web Services**), make sure that:
 
  - you use the **SAP HANA, express edition (server + applications)** AMI
  - you say *no* when prompted about waiting for XSA configuration completion

@@ -1,7 +1,7 @@
 ---
 title: Build a CRUD Master-Detail App as a Hybrid App
 description: Enable an app as a hybrid mobile app using the Hybrid App Toolkit plugin provided by SAP Web IDE. Then build it using the cloud build service.
-auto_validation: false
+auto_validation: true
 primary_tag: products>sap-web-ide
 tags: [  tutorial>beginner, topic>mobile, products>sap-cloud-platform, products>sap-web-ide, products>sap-web-ide-plug-ins ]
 time: 10

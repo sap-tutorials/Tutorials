@@ -1,6 +1,6 @@
 ---
 title: Query Amazon Athena from SAP HANA, express edition
-description: Consume data from Amazon Athena in queries executed from SAP HANA, express edition and combine with local data
+description: Consume data from Amazon Athena in queries executed from SAP HANA, express edition and combine with local data.
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
 tags: [  tutorial>beginner, topic>cloud, topic>sql, products>sap-hana\,-express-edition ]
@@ -9,11 +9,11 @@ time: 10
 
 ## Details
 ### You will learn  
-  - How to do create a remote source using SAP HANA, Smart Data Access
-  - How to do create a virtual table using SAP HANA, Smart Data Access
+  - How to create a remote source using SAP HANA, Smart Data Access
+  - How to create a virtual table using SAP HANA, Smart Data Access
   - Execute queries consuming data from Amazon Athena and from both Amazon Athena and  SAP HANA, express edition
 
-[ACCORDION-BEGIN [Step 1: ](Open the Web IDE)]
+[ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
 In order to complete this tutorial, you will be using the SAP Web IDE hosted by your SAP HANA, express edition.
 
@@ -97,7 +97,7 @@ You should have now your remote source listed.
 
 As mentioned before you can create the same remote source using SQL.
 
-To open a new SQL console, either press **CTRL + ALT +C** or use the **SQL** icon in the bar above the panel.
+To open a new SQL console use the **SQL** icon in the bar above the panel.
 
 Then, you can execute the following SQL statements:
 

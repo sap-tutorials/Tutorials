@@ -1,6 +1,6 @@
 ---
-title: Import GDELT data in Amazon Athena
-description: Learn how to import data from the Global Database of Events, Language and Tone (GDELT) Project in Amazon Athena
+title: Import GDELT Data in Amazon Athena
+description: Learn how to import data from the Global Database of Events, Language and Tone (GDELT) Project in Amazon Athena.
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
 tags: [  tutorial>beginner, topic>cloud, topic>sql, products>sap-hana\,-express-edition ]
@@ -9,8 +9,8 @@ time: 5
 
 ## Details
 ### You will learn  
-  - Access Amazon Athena Interactive query tool
-  - Create a database and a table in Amazon Athena using data stored in a S3 bucket
+  - How to access Amazon Athena Interactive query tool
+  - How to create a database and a table in Amazon Athena using data stored in a S3 bucket
 
 ***Amazon Athena*** is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is server less, so there is no infrastructure to manage, and you pay only for the queries that you run.
 

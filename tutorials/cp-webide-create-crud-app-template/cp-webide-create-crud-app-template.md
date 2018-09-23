@@ -1,7 +1,7 @@
 ---
 title: Create a CRUD Master-Detail App
 description: Create a CRUD Master-Detail app using the template provided by SAP Web IDE, and get it ready to be built as a hybrid app.
-auto_validation: false
+auto_validation: true
 primary_tag: products>sap-web-ide
 tags: [  tutorial>beginner, topic>mobile, products>sap-cloud-platform, products>sap-web-ide, products>sap-web-ide-plug-ins ]
 time: 15

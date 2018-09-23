@@ -1,6 +1,6 @@
 ---
-title: Setup the ODBC Driver for Amazon Athena
-description: Learn how to setup the Amazon Athena ODBC to use it with SAP HANA, express edition
+title: Set Up the ODBC Driver for Amazon Athena
+description: Set up the Amazon Athena ODBC to use it with SAP HANA, express edition.
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
 tags: [  tutorial>beginner, topic>cloud, topic>sql, products>sap-hana\,-express-edition ]
@@ -10,33 +10,26 @@ time: 10
 
 ## Details
 ### You will learn  
-  - How to do install and configure the Simba ODBC Driver for Amazon Athena
-
-[ACCORDION-BEGIN [Step 1: ](Start a SSH session)]
-
-Connect to your SAP HANA, express edition using an SSH client as **`ec2-user`**.
-
-For reference, you can check the ***Set up SAP HANA, express edition, on Amazon Web Services*** **<a href="https://www.sap.com/developer/tutorials/hxe-aws-setup.html" target="&#95;blank">server only</a>** or **<a href="https://www.sap.com/developer/tutorials/hxe-xsa-aws-setup.html" target="&#95;blank">server + applications</a>** tutorial for more details.
-
-[DONE]
-[ACCORDION-END]
+  - How to install and configure the Simba ODBC driver for Amazon Athena
 
 [ACCORDION-BEGIN [Step 1: ](Install unixODBC)]
 
 Before installing the Simba ODBC Driver for Amazon Athena, you will need to install **`unixODBC`**, an ODBC driver manager for Linux platforms.
 
-Form your SSH session, execute the following command:
+Connect to your SAP HANA, express edition using an SSH client as **`ec2-user`** and  execute the following command:
 
 ```shell
 sudo zypper install -y unixODBC
 ```
 
+This will install the **`unixODBC`** driver manager.
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Install Simba ODBC Driver for Amazon Athena RPM)]
+[ACCORDION-BEGIN [Step 1: ](Install Simba ODBC driver for Amazon Athena RPM)]
 
-Then you can install the Simba ODBC Driver for Amazon Athena available <a href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-odbc.html" target="&#95;blank">online</a>.
+Then, you can install the Simba ODBC Driver for Amazon Athena available <a href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-odbc.html" target="&#95;blank">online</a>.
 
 Form your SSH session, execute the following commands:
 
@@ -58,9 +51,9 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Configure the ODBC Driver definition)]
+[ACCORDION-BEGIN [Step 1: ](Configure the ODBC driver definition)]
 
-Now that the software package is properly installed, you need to configure the ODBC Driver definition.
+Now that the software package is properly installed, you need to configure the ODBC driver definition.
 
 Form your SSH session, execute the following command:
 
@@ -103,7 +96,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Setup the credentials)]
+[ACCORDION-BEGIN [Step 1: ](Set up the credentials)]
 
 In order to connect using the Simba ODBC Driver for Amazon Athena, you will need to provide credentials from a user that have access to both Amazon Athena and Amazon S3.
 
@@ -119,10 +112,8 @@ Form your SSH session, execute the following commands:
 
 ```shell
 cd ~
-
-mkdir .aws
-
-vi .aws/credentials
+mkdir ~/.aws
+vi ~/.aws/credentials
 ```
 
 Insert the following content then save and exit ***`vi`***:
@@ -142,7 +133,7 @@ Make sure to update the **Access key ID** and **Secret access key**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Setup the ODBC DSN)]
+[ACCORDION-BEGIN [Step 1: ](Set up the ODBC DSN)]
 
 Now, you can create the ODBNC DSN that will be used in SAP HANA, express edition to initiate the remote source connection.
 
@@ -153,6 +144,7 @@ Form your SSH session, execute the following command:
 ```shell
 vi ~/.odbc.ini
 ```
+
 Insert the following content then save and exit ***`vi`***:
 
 ```property
@@ -173,14 +165,14 @@ S3OutputLocation=s3://sap-hana-athena/
 AuthenticationType=Default Credentials
 ```
 
-Make sure to update the **`AwsRegion`** and the **`S3OutputLocation`** (if you used a different S3 bucket name).
+Make sure to update the **`AwsRegion`** and the **`S3OutputLocation`** (if you used a different S3 bucket name for example).
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Test the connection)]
 
-Form your SSH session, execute the following command:
+Form your previous SSH session, execute the following command:
 
 ```shell
 isql AWSAthena

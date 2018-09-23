@@ -16,12 +16,17 @@ time: 10
 ### You will learn
 - How to define a behavior implementation
 
+
 In this tutorial, wherever `xxx` appears, use a number (e.g. `000`).
+
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
-Go to your ABAP package created in [Create and Expose a Core Data Service Based on a Database Table](https://www.sap.com/developer/tutorials/abap-environment-create-cds-view.html) and open your data definition **`ZI_BOOKING_XXX`** to add the following statement: **`root`**
+Go to your ABAP package created in [Create and Expose a Core Data Service Based on a Database Table](https://www.sap.com/developer/tutorials/abap-environment-create-cds-view.html)and open your data definition `ZI_BOOKING_XXX` to add following statement:
+
+`root`
+
 ![Open Eclipse](eclipse.png)
 
 Save and activate.
@@ -37,7 +42,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create behavior definition)]
-1. Navigate to **Core Data Services**, select **data definition** and press **Next**.
+1. Navigate to **Core Data Services**, select **Behavior Definition** and press **Next**.
 ![Create behavior definition](definition.png)
 
 2. Create a behavior definition for booking node/entities.
@@ -53,16 +58,19 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Implement behavior definition)]
-Provide an alias (`booking`) and specify the lock master.
-Define the table field **`LastChangedAt`** for the `etag` handling.
-Add the following operations:
+Provide an alias (`booking`) and specify the lock master. Define the table field **`LastChangedAt`** for the `etag` handling. Replace the following coding:
 
-- create
-- update
-- delete
-
-![Implement behavior definition](etag.png)
-
+```swift
+    implementation unmanaged;
+    define behavior for ZI_BOOKING_XXX alias booking
+    lock master
+    etag LastChangedAt
+    {
+      create;
+      update;
+      delete;
+    }
+```
 Save and activate.
 
 [DONE]
@@ -126,7 +134,7 @@ Save and activate.
             ls_delete-booking = mapped-booking[ %cid = ls_delete-%cid_ref ]-booking.
           ENDIF.
 
-          READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_delete-booking ASSIGNING <ls_buffer>.
+          READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_delete-booking ASSIGNING field-symbol(<ls_buffer>).
           IF sy-subrc = 0.
             " already in buffer, check why
             IF <ls_buffer>-flag = 'C'.
@@ -137,13 +145,12 @@ Save and activate.
             ENDIF.
           ELSE.
             " not yet in buffer.
-            "TODO read from DB and raise error it does not exist...
             INSERT VALUE #( flag = 'D' booking = ls_delete-booking ) INTO TABLE lcl_buffer=>mt_buffer.
           ENDIF.
         ENDLOOP.
     ```
 
-2. Add also following code to your **`lcl_handler`** implementation class.
+2. Add also following code to your **`lcl_handler`** implementation class (modify method).
 
     ```swift
     " handle create
@@ -157,7 +164,8 @@ Save and activate.
       ADD 1 TO lv_max_booking.
       ls_create-%data-booking = lv_max_booking.
       GET TIME STAMP FIELD DATA(zv_tsl).
-      ls_create-%data-lastchangedat = zv_tsl.  "Handle field LastChangedAt
+      ls_create-%data-lastchangedat = zv_tsl.  
+      "Handle field LastChangedAt
 
       " insert as created into buffer
       INSERT VALUE #( flag = 'C' data = CORRESPONDING #( ls_create-%data ) ) INTO TABLE lcl_buffer=>mt_buffer.
@@ -181,12 +189,11 @@ Save and activate.
         ENDIF.
 
         " search in buffer
-        READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_update-booking ASSIGNING FIELD-SYMBOL(<ls_buffer>).
+        READ TABLE lcl_buffer=>mt_buffer WITH KEY booking = ls_update-booking ASSIGNING <ls_buffer>.
         IF sy-subrc <> 0.
           " not yet in buffer, read from table
 
           SELECT SINGLE * FROM ztbooking_xxx WHERE booking = @ls_update-booking INTO @DATA(ls_db).
-          "TODO raise error it does not exist...
 
           INSERT VALUE #( flag = 'U' data = ls_db ) INTO TABLE lcl_buffer=>mt_buffer ASSIGNING <ls_buffer>.
         ENDIF.
@@ -202,8 +209,7 @@ Save and activate.
         ENDIF.
         IF ls_update-%control-currencycode  IS NOT INITIAL..
           <ls_buffer>-currencycode = ls_update-currencycode.
-        ENDIF.
-        " TODO ....  same for the other fields ....        
+        ENDIF.      
         GET TIME STAMP FIELD DATA(zv_tsl2).
         <ls_buffer>-lastchangedat = zv_tsl2. "handling for field LastChangedAt (for eTag)
       ENDLOOP.
@@ -239,25 +245,25 @@ Save and activate.
 Implement the method save of the local class **`lcl_saver`**.
 
 ```swift
-METHOD save.  "to be implemented:  CREATE, UPDATE, DELETE on DB (zwischenspeichern im member
+METHOD save.  
     DATA lt_data TYPE STANDARD TABLE OF ztbooking_xxx.
 
     " find all rows in buffer with flag = created
     lt_data = VALUE #(  FOR row IN lcl_buffer=>mt_buffer WHERE  ( flag = 'C' ) (  row-data ) ).
     IF lt_data IS NOT INITIAL.
-      INSERT ztbooking_xxx FROM TABLE lt_data.
+      INSERT ztbooking_xxx FROM TABLE @lt_data.
     ENDIF.
 
     " find all rows in buffer with flag = updated
     lt_data = VALUE #(  FOR row IN lcl_buffer=>mt_buffer WHERE  ( flag = 'U' ) (  row-data ) ).
     IF lt_data IS NOT INITIAL.
-      UPDATE ztbooking_xxx FROM TABLE lt_data.
+      UPDATE ztbooking_xxx FROM TABLE @lt_data.
     ENDIF.
 
     " find all rows in buffer with flag = deleted
     lt_data = VALUE #(  FOR row IN lcl_buffer=>mt_buffer WHERE  ( flag = 'D' ) (  row-data ) ).
     IF lt_data IS NOT INITIAL.
-      DELETE ztbooking_xxx FROM TABLE lt_data.
+      DELETE ztbooking_xxx FROM TABLE @lt_data.
     ENDIF.
   ENDMETHOD.
 ```
@@ -317,7 +323,7 @@ Save and activate your code.
           ENDIF.
         ENDLOOP.
 
-        " handle creates
+        " handle create
         IF roots_to_create IS NOT INITIAL.
 
           SELECT SINGLE MAX( booking ) FROM ztbooking_xxx INTO @DATA(lv_max_booking).

@@ -5232,7 +5232,7 @@ movieId,title,genres
 7782,Sniper (1993),Action|Drama
 7786,Genghis Blues (1999),Documentary
 7787,To Hell and Back (1955),Action|Drama|War
-7789,"11'09""01 - September 11 (2002)",Drama
+7789,"11'09\"01 - September 11 (2002)",Drama
 7790,"Bon Voyage, Charlie Brown (and Don't Come Back!) (1980)",Animation|Children|Comedy
 7791,Internal Affairs (1990),Crime|Thriller
 7792,"Parallax View, The (1974)",Thriller
@@ -6646,7 +6646,7 @@ movieId,title,genres
 51277,"36th Chamber of Shaolin, The (Shao Lin san shi liu fang) (Master Killer) (1978)",Action|Adventure
 51304,Karla (2006),Crime|Drama|Thriller
 51357,Citizen X (1995),Crime|Drama|Thriller
-51372,"""Great Performances"" Cats (1998)",Musical
+51372,"\"Great Performances\" Cats (1998)",Musical
 51380,"Canterbury Tales, The (I racconti di Canterbury) (1972)",Comedy|Drama
 51412,Next (2007),Action|Sci-Fi|Thriller
 51418,Breaking and Entering (2006),Drama

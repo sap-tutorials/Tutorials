@@ -193,35 +193,26 @@ Name                          | Description
 
 [ACCORDION-BEGIN [Pre-requisite: ](Install SAP HANA APL package)]
 
-If not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-apl-binary.html).
+The installation requires you to have access to the system using a SSH client like ***`PuTTY`***, but also to have access to the ***`hxeadm`*** user with ***`sudo`*** rights configured.
+
+To run the download manager you will need Java t be installed on the system.
 
 The installation will trigger a restart of your SAP HANA instance, so make sure to save your current work before.
 
 Once the SAP HANA Automated Predictive Library installation is completed, you will need to wait a few minutes for all services to be back online and proceed with the next step.
 
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 1: ](Select, install and configure a SQL query tool)]
-
-As you will mostly execute SQL commands during this tutorial, you will need to setup a SQL query tool for SAP HANA, express edition.
-
-The following tutorial group describes a series of option you can pick one from (you don't need to setup all of them, but one is enough):
-
- - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
-
-Off course you can use any tool of your choice!
+So if not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-apl-binary.html).
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Add the APL Role to your User)]
 
-Usually, you need add the **`APL_EXECUTE`** role to your user, however, this is not required when using an HDI container:
+To execute APL functions, you need add the **`APL_EXECUTE`** role to your user.
 
 Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statements.
 
-```
+```sql
 call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','ML_USER');
 ```
 
@@ -478,35 +469,6 @@ Where you have:
  - the training data set (green)
  - the forecasted values (blue)
  - the error bar (red)
-
-The above graph was generated using the following Python code:
-
-```python
-forecast = %sql select \
-      c.cashdate \
-    , c.cash \
-    , kts_1                  as forecast \
-    , "kts_1_lowerlimit_95%" as lower_limit \
-    , "kts_1_upperlimit_95%" as upper_limit \
-from \
-     forecast_cashflow c \
-join apl_cashflow_result f \
-on   c.cashdate = f.cashdate \
-order by c.cashdate asc;
-
-cashdate         = matplotlib.dates.date2num(forecast.cashdate)
-
-fig, ax = plt.subplots()
-ax.plot(cashdate, forecast.cash       , 'ro-', markersize=2, color='green')
-ax.plot(cashdate, forecast.forecast   , 'ro-', markersize=2, color='blue')
-ax.plot(cashdate, forecast.lower_limit, 'ro-', markersize=2, color='red')
-ax.plot(cashdate, forecast.upper_limit, 'ro-', markersize=2, color='red')
-ax.xaxis_date()
-
-fig.autofmt_xdate()
-fig.set_size_inches(20, 15)
-plt.show()
-```
 
 Now let's run the same algorithm but the **"Extra Predictors"**
 
@@ -910,35 +872,6 @@ Where you have:
  - the error bar (red)
 
 You can notice that the error bar is only available till the forecast has reached the maximum horizon.
-
-The above graph was generated using the following Python code:
-
-```python
-forecast = %sql select \
-      f.time \
-    , c.reading \
-    , kts_1                  as forecast \
-    , "kts_1_lowerlimit_95%" as lower_limit \
-    , "kts_1_upperlimit_95%" as upper_limit \
-from \
-     apl_ozone_result f \
-left outer join forecast_ozone c \
-on   c.time = f.time \
-order by f.time asc;
-
-time         = matplotlib.dates.date2num(forecast.time)
-
-fig, ax = plt.subplots()
-ax.plot(time, forecast.reading    , 'ro-', markersize=2, color='green')
-ax.plot(time, forecast.forecast   , 'ro-', markersize=2, color='blue')
-ax.plot(time, forecast.lower_limit, 'ro-', markersize=2, color='red')
-ax.plot(time, forecast.upper_limit, 'ro-', markersize=2, color='red')
-ax.xaxis_date()
-
-fig.autofmt_xdate()
-fig.set_size_inches(20, 20)
-plt.show()
-```
 
 Provide an answer to the question below then click on **Validate**.
 

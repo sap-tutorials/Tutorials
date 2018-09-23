@@ -4,6 +4,7 @@ description: Deploy the data model to the SAP HANA database that is associated w
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide ]
+time: 10
 ---
 
 ## Prerequisites  
@@ -12,10 +13,6 @@ tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, product
 ## Details
 ### You will learn  
   - How to deploy the data model you created for your business application to the SAP HANA database using SAP Web IDE Full-Stack.
-
-
-### Time to Complete
-**10 Min**
 
 ---
 
@@ -88,6 +85,7 @@ Once connected you can view the different database artifacts. For example, the b
 2. Right-click the **app** module and choose **Run | Run Configurations**.
 3. Choose **`Run flpSandbox.html`** and deselect **Run with mock data**.
 4. Choose **Save and Run**.
+5. Open your app from the SAP Fiori Launchpad and choose **Go**.
 
 You now have actual data served automatically.
 

@@ -1,6 +1,6 @@
 ---
 title: Enable your SAP HANA, express edition instance for SAP HANA Smart Data Access
-description: Learn how to enable your SAP HANA, express edition system for SAP HANA Smart Data Access
+description: Enable your SAP HANA, express edition system for SAP HANA Smart Data Access.
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
 tags: [  tutorial>beginner, topic>cloud, topic>sql, products>sap-hana\,-express-edition ]
@@ -8,7 +8,11 @@ time: 10
 ---
 
 ## Details
-### You will learn  
+### You will learn
+- Create a SAP HANA Smart Data Access definition file for Amazon Athena
+- Enable the Script server
+- Enable the SAP HANA Smart Data Access safe Mode
+
 **SAP HANA Smart Data Access** provide the ability to create remote sources and virtual tables.
 
 For more information about SAP HANA Smart Data Access, you can check the online <a href="https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/a07c7ff25997460bbcb73099fb59007d.html" target="&#95;blank">documentation</a>.
@@ -21,24 +25,17 @@ The **Safe Mode** provides the capability to load ODBC drivers and execute ODBC 
 
 For more details, you can check the <a href="https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/6f01ebd7ed574fcfbf493ebd303eb6b1.html" target="&#95;blank">Safe Mode for ODBC Connections</a> documentation.
 
-[ACCORDION-BEGIN [Step 1: ](Start a SSH session)]
-
-Connect to your SAP HANA, express edition using an SSH client as **`ec2-user`**.
-
-For reference, you can check the ***Set up SAP HANA, express edition, on Amazon Web Services*** **<a href="https://www.sap.com/developer/tutorials/hxe-aws-setup.html" target="&#95;blank">server only</a>** or **<a href="https://www.sap.com/developer/tutorials/hxe-xsa-aws-setup.html" target="&#95;blank">server + applications</a>** tutorial for more details.
-
-[DONE]
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 1: ](Configure SAP HANA SDA for Amazon Athena)]
 
 In order to best leverage the SAP HANA Smart Data Access, you will now add a dedicated configuration that will optimize the way queries will be executed between SAP HANA, express edition and Amazon Athena.
 
 To learn more about it, you can check the [SAP HANA Smart Data Access](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.03/en-US/a07c7ff25997460bbcb73099fb59007d.html) documentation from the SAP HANA Administration guide.
 
-In the SSH session, you will first need to make sure that you are using the ***`ec2-user`*** user in your current SSH session.
+Connect to your SAP HANA, express edition using an SSH client as **`ec2-user`**.
 
-Then as the ***`ec2-user`***, the prompt should become:
+So first, let's make sure that you are using the ***`ec2-user`*** user in your current SSH session.
+
+The prompt should be:
 
 ```
 ec2-user@hxehost:~>
@@ -271,9 +268,9 @@ sudo chown hxeadm:sapsys /usr/sap/HXE/SYS/exe/hdb/config/property_athena.ini
 
 [ACCORDION-BEGIN [Step 1: ](Connect to the System Database)]
 
-The **Script Server** activation for the **HXE** tenant can only be done in the ***System Database***.
+The **Script Server** activation for the **HXE** tenant can only be done from a connection to the ***System Database***.
 
-From an SSH session, switch to the **`hxeadm`** user using:
+From the previous SSH session, switch to the **`hxeadm`** user using:
 
 ```shell
 sudo su - hxeadm

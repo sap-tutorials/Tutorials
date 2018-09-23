@@ -1,6 +1,6 @@
 ---
-title: Import GDELT data in SAP HANA, express edition
-description: Learn how to import data from the Global Database of Events, Language and Tone (GDELT) Project in SAP HANA, express edition
+title: Import GDELT Data in SAP HANA, express edition
+description: Learn how to import data from the Global Database of Events, Language and Tone (GDELT) Project into SAP HANA, express edition.
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
 tags: [  tutorial>beginner, topic>cloud, topic>sql, products>sap-hana\,-express-edition ]
@@ -11,27 +11,18 @@ time: 10
 ### You will learn  
 In this tutorial, you will learn how to use the ***IMPORT FROM SQL*** command and load data set files to your SAP HANA, express edition.
 
-It requires:
+The tutorial requires:
 
  - the files to be physically located on your SAP HANA, express edition host.
  - the table to be created before the execution of the command.
 
-For more details on the available options you can check the <a href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f712e175191014907393741fadcb97.html" target="&#95;blank">SAP HANA SQL and System Views Reference > IMPORT FROM Statement (Data Import Export)</a> documentation.
+For more details on the available options, you can check the <a href="https://help.sap.com/viewer/4fe29514fd584807ac9f2a04f6754767/latest/en-US/20f712e175191014907393741fadcb97.html" target="&#95;blank">SAP HANA SQL and System Views Reference > IMPORT FROM Statement (Data Import Export)</a> documentation.
 
-As an alternate solution, you can also use the ***SAP HANA Tools*** for Eclipse which provides a subset of features available in the IMPORT FROM SQL command.
+As an alternate solution, you can also use the ***SAP HANA Tools*** for Eclipse, which provides a subset of features available in the IMPORT FROM SQL command.
 
 However, it allows you to import data directly from your client and not the SAP HANA, express edition host.
 
 For more information, you can check the following tutorial: <a href="https://www.sap.com/developer/tutorials/mlb-hxe-import-data-eclipse.html" target="&#95;blank">Import CSV into SAP HANA, express edition using the SAP HANA Tools for Eclipse</a>
-
-[ACCORDION-BEGIN [Step 1: ](Start a SSH session)]
-
-Connect to your SAP HANA, express edition using an SSH client as **`ec2-user`**.
-
-For reference, you can check the ***Set up SAP HANA, express edition, on Amazon Web Services*** **<a href="https://www.sap.com/developer/tutorials/hxe-aws-setup.html" target="&#95;blank">server only</a>** or **<a href="https://www.sap.com/developer/tutorials/hxe-xsa-aws-setup.html" target="&#95;blank">server + applications</a>** tutorial for more details.
-
-[DONE]
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Download the data files)]
 
@@ -39,7 +30,7 @@ The lookup tables that will be loaded in SAP HANA, express edition are available
 
 As stated above, you will need to download the data set files on your SAP HANA, express edition host.
 
-Therefore, connect to your SAP HANA, express edition using an SSH client as **`ec2-user`**.
+Connect to your SAP HANA, express edition using an SSH client like ***`PuTTY`*** as **`ec2-user`**.
 
 Once the SSH session open, switch to the **`hxeadm`** user using:
 
@@ -98,6 +89,10 @@ create table gdelt_hana.ethnic         (code  varchar(3),  label           varch
 create table gdelt_hana.country        (code  varchar(3),  label           varchar(255));
 ```
 
+You have just created a database user named ***`gdelt_hana`*** in SAP HANA, along with a series of tables.
+
+the password for the ***`gdelt_hana`*** user is ***`Welcome18Welcome18`***.
+
 You can now quit the current HDBSQL session using **\q**.
 
 [DONE]
@@ -105,7 +100,7 @@ You can now quit the current HDBSQL session using **\q**.
 
 [ACCORDION-BEGIN [Step 1: ](Import the data)]
 
-From the previous SSH session, start a new HDBSQL session using:
+From the previous SSH session, start a new HDBSQL session for the ***`gdelt_hana`*** user using:
 
 ```shell
 hdbsql -i 90 -d HXE -u gdelt_hana -p Welcome18Welcome18
@@ -122,6 +117,8 @@ import from csv file '/usr/sap/HXE/HDB90/work/CAMEO.eventcodes.txt'     into gde
 import from csv file '/usr/sap/HXE/HDB90/work/CAMEO.ethnic.txt'         into gdelt_hana.ethnic         with field delimited by '\t' skip first 1 row fail on invalid data;
 import from csv file '/usr/sap/HXE/HDB90/work/CAMEO.country.txt'        into gdelt_hana.country        with field delimited by '\t' skip first 1 row fail on invalid data;
 ```
+
+This will import the data files into the previously created tables.
 
 Now, execute the following statement to get the row counts:
 
@@ -140,7 +137,7 @@ union all select 'country'       , count(1) from gdelt_hana.country;
 
 > ### **Note**: To exit the result mode, press the letter ***q***.
 
-Provide an answer to the question below then click on **Validate**.
+Provide an answer to the question below, and then click **Validate**.
 
 [VALIDATE_1]
 [ACCORDION-END]
