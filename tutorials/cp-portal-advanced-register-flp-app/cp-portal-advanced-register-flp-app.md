@@ -62,7 +62,7 @@ time: 5
 Switch back to the **SAP Cloud Platform Portal Admin Space** in your browser tab.
 
   1. From the Portal Admin Space, open the **Supplier Portal** for edit in the Site Designer.
-    ![Open Site in Site designer](../cp-portal-advanced-add-flp-page/0-open-site-edit.png)
+    ![Open Site in Site designer](0-open-site-edit.png)
     > If the Site Designer is already opened in your browser, **refresh** it to apply the latest changes you performed in the SAP Web IDE.
 
   2. From the top-level menu click on the **Preview** icon to preview the latest changes.
