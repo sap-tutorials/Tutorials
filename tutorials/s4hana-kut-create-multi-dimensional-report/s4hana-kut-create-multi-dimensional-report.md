@@ -128,7 +128,7 @@ Execute from the Group Query Design the App View Browser and display the content
 
     > The field Name will be filled automatically by the system !
 
-    Afterwardsm, click **OK**.
+    Afterwards, click **OK**.
 
     ![Custom key figure04](report_aq_12_04.png)
 
