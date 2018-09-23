@@ -42,7 +42,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create behavior definition)]
-1. Navigate to **Core Data Services**, select **data definition** and press **Next**.
+1. Navigate to **Core Data Services**, select **Behavior Definition** and press **Next**.
 ![Create behavior definition](definition.png)
 
 2. Create a behavior definition for booking node/entities.
