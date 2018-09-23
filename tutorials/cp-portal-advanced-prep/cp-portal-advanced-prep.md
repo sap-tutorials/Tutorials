@@ -104,7 +104,8 @@ In this step you will enable the **SAP Cloud Platform Portal**, **SAP Web IDE Fu
     - From the **SAP Translation Hub - Overview** page, click **Enable** to enable the service.
       ![SAP Translation Hub Overview Page](8-translation-hub-overview-page.png)
 
-      [DONE]
+
+[VALIDATE_1]
 
 [ACCORDION-END]
 
