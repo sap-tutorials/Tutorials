@@ -25,6 +25,7 @@ Log on with your user and password
 
 > Your user is your desktop number. Your password will be given to you by your instructor.
 
+[DONE]
 [ACCORDION-END]
 
 
