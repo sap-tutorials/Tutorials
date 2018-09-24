@@ -1,5 +1,5 @@
 ---
-title: Set Up SAP HANA, express edition on Amazon Web Services (XS Advanced)
+title: Set up SAP HANA, express edition on Amazon Web Services (XS Advanced)
 description: Set up your SAP HANA, express edition with XS Advanced on Amazon Web Services.
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
