@@ -18,7 +18,8 @@ time: 20
 
 This tutorial assumes you've already completed the tutorials in the group [Get started with SAP Cloud Platform workflows](https://www.sap.com/developer/groups/cp-workflow-service.html). This means you're familiar with general Workflow service concepts, the workflow definition tooling in SAP Web IDE, and you have the `MyInbox` and `Workflow Monitor` apps set up on an SAP Fiori launchpad site on the Portal service.
 
-It also assumes you have set up a Connectivity service destination for Northwind OData services, as described in [Create a destination for the Northwind OData service endpoint].
+It also assumes you have set up a Connectivity service destination for Northwind OData services, as described in [Create a Destination for the Northwind OData Services](https://www.sap.com/developer/tutorials/hcp-create-destination.html).
+
 You will use one of the [Northwind OData services](https://services.odata.org) as the external service in this tutorial, creating a simple workflow that queries for product information in a hypothetical order processing situation.
 
 > In this tutorial and others the general name "SAP Web IDE" is used. Specifically, the "Full Stack" version is implied throughout.
