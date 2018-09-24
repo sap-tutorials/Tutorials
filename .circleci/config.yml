@@ -1,8 +1,7 @@
 version: 2
 jobs:
   build-last-commit:
-    timezone:
-      America/Los_Angeles
+    timezone: America/Los_Angeles
     docker:
       - image: circleci/node:9.6.1
     steps:
