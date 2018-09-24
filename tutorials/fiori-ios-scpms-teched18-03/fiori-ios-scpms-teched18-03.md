@@ -24,7 +24,7 @@ By default, if you tap on the `DeliveryStatus` in the detail page for a selected
 
 In Xcode, open the file `MyDeliveries/ViewControllers/PackagesType/PackagesTypeDetailViewController.swift` and locate function `tableView(_:, didSelectRowAt indexPath:)`. You can also use the `Open Quickly` feature of Xcode to search for the `PackagesTypeDetailViewController` class with `Command + Shift + O`.
 
-When you tap on the 5th row named `DeliveryStatus`, the associated storyboard is loaded, and the `PackageType`'s related `DeliveryStatusType` entities are loaded using the `self.deliveryService.loadProperty` function.
+In the application, when you tap on the 5th row named `DeliveryStatus`, the associated storyboard is loaded, and the `PackageType`'s related `DeliveryStatusType` entities are loaded using the `self.deliveryService.loadProperty` function.
 
 Currently, the function receives two arguments; the associated property and the instance field into which the results should be stored. However, the function can receive a 3rd argument with a `DataQuery` instance.
 
