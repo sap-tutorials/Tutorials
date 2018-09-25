@@ -83,6 +83,8 @@ In this example, there is 1GB memory free, which is more than enough for the ODa
 
 So you can see what's going on throughout the rest of this tutorial, open the SAP Web IDE console with menu path **View** > **Console**. If there's already content displayed in it, you can clear it with menu path **View** > **Clear Console**.
 
+> You may need to switch back from the Preferences perspective to the Development perspective first. 
+
 Notice there's also a **Run Console** option too -- you'll be switched to that automatically later in this tutorial when you execute the generated OData service for the first time.
 
 > You can switch between the different views (Console, Problems, Run Console and Resource Manager) using the appropriate icons in the bottom right of the SAP Web IDE display.
@@ -98,9 +100,7 @@ Use the project wizard to start a new project, using menu path **File** > **New*
 
 In the **Basic Information** step, enter **`Products`** for the project name.
 
-In the **Project Details** step, select **`Java`** for the Service, and **`SAP HANA Database`** for the Database. Leave the value for the Java Package (`my.company`) as it is - it will be fine for purposes of this tutorial.
-
-![project details step](project-details-step.png)
+In the **Project Details** step, select **`Java`** for the Service, **`my.app`** for the Java Package, and **`SAP HANA Database`** for the Database. 
 
 When you finish the template wizard, you should have a project in your workspace that looks something like this:
 
@@ -139,7 +139,7 @@ It's time to define the data model, declaring an entity with a few properties.
 Open the **`data-model.cds`** file within the `db` folder. It should already contain some sample declarations. Replace the entire contents with the following:
 
 ```
-namespace my.company;
+namespace my.app;
 
 entity Products {
   key ProductID : Integer;
@@ -152,7 +152,7 @@ entity Products {
 >&nbsp;
 > ![CDS autocomplete and syntax checking](cds-autocomplete-and-syntax-checking.png)
 
-Once you've added the entity definition, save the file.
+Once you've added the entity definition, **save** the file.
 
 Because of the **Perform CDS Build upon save** preference you checked earlier, a build of the project is triggered automatically, and you can see the results in the Console. If you look at the details, you'll notice that various artifacts have been created not only in the `db` folder but also in the `srv` folder. The following screenshot depicts what you might see -- the files highlighted have just been generated.
 
@@ -168,19 +168,19 @@ Indeed, if you open the `CatalogService.xml` file, you'll see something that may
 
 In a similar way to how you defined the data model, you should now define the service.
 
-From within the `srv` folder, open the **`my-service.cds`** file, and you'll see some default content, including some comment lines. Remove the comment lines, and replace the current entity definition (`entity MyEntity { ... }`) so that the entire file contents look like this:
+From within the `srv` folder, open the **`my-service.cds`** file, and you'll see some default content, including some comment lines. Replace the entire content with this:
 
 ```
-using my.company from '../db/data-model';
+using my.app from '../db/data-model';
 
 service CatalogService {
-  entity Products as projection on company.Products;
+  entity Products as projection on app.Products;
 }
 ```
 
 The first line creates a reference to the information in the data model you defined earlier, and the service, which will be an OData service called `CatalogService`, has a single entity type `Products` which is based upon the `Products` entity definition in that data model.
 
-Save the file.
+**Save** the file.
 
 You'll notice another build in the Console; after it finishes, you'll see that the contents of the `CatalogService.xml` file in the `srv/src/resources/edmx/` folder has been updated to reflect your new service definition, and looks like this:
 
