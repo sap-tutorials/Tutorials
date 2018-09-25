@@ -1,6 +1,6 @@
 ---
-title: Create a Java Application Using a Template
-description: Use a SAP Web IDE template to start from nothing and create a simple Java application for the Cloud Foundry environment of SAP Cloud Platform.
+title: Prepare to create a Java app with an MTA template
+description: Use a Multi-Target Application (MTA) template to prepare for building a simple Java app.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide, topic>java]
@@ -13,13 +13,13 @@ time: 10
 ## Details
 ### You will learn  
   - How to create a project with the **Template** option in SAP Web IDE
-  - How to find your application in your Workspace
+  - What an MTA descriptor file looks like
 
 **Please make note** that most of the information on the SAP Web IDE will reference deploying an application to the traditional SAP Cloud Platform data center infrastructure called **Neo**, but the _Prerequisites_ section utilizes a tutorial that has information on how to enable java developers to utilize **Cloud Foundry** spaces.
 
 [ACCORDION-BEGIN [Step 1: ](Create a new project from template)]
 
-In order to build and run you Java application in the Web IDE, you will first need to create a **Multi-Target Application** project.
+In order to create a Java app in the Web IDE and deploy it, you will first need to create a **Multi-Target Application** project.
 
 >For more details, you can check a detailed description of [The Multi-Target Application Model](https://www.sap.com/docs/download/2016/06/e2f618e4-757c-0010-82c7-eda71af511fa.pdf).
 
