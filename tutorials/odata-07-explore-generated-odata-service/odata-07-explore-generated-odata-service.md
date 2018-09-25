@@ -60,7 +60,7 @@ executed in 2 ms - Rows Affected: 3
 
 You can import the Northwind product data by providing a couple of files -- a CSV file containing the data, and a file that defines the data source and how the fields map between the data source and the target table in the database.
 
-Within the `db/src` folder, create a new folder called `csv`. Import into this new folder the following two files:
+Back in the Development perspective, within the `db/src` folder, create a new folder called **`csv`**. Import into this new folder the following two files:
 
 - [`Products.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/odata-07-explore-generated-odata-service/csv/Products.csv): Product data in CSV format
 - [`Data.hdbtabledata`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/odata-07-explore-generated-odata-service/csv/Data.hdbtabledata): Definition of data source and field mappings
@@ -71,7 +71,7 @@ When you've done this, you should see these files in the explorer, thus:
 
 ![contents of CSV folder](contents-of-csv-folder.png)
 
-Now you can rerun the database build facility that will recognize the new artifacts and import the data automatically. To do this, back in the **Development** perspective, use the context menu on the **`db`** folder and choose menu path **Build** > **Build**.
+Now you can rerun the database build facility that will recognize the new artifacts and import the data automatically. To do this, use the context menu on the **`db`** folder and choose menu path **Build** > **Build**.
 
 > If you check in the Console during or after this operation, you'll see references to the `Products.csv` and `Data.hdbtabledata` files being recognized and processed accordingly.
 
