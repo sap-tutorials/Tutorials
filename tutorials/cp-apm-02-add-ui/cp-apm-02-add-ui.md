@@ -136,6 +136,9 @@ The columns are displayed with mock data
 
 1. Go to `app/webapp/localService` and right-click on the file you just created to use the context menu, selecting **Open Annotation Modeler**.
 2. Expand the **Books** entity.
+
+> If you don't see any entities listed, use the **Select Targets** button to search for and select the **Books** entity type.
+
 The **Local Annotations** entry includes the annotation file you have just created.
 3. Go to the **Actions** column and choose **`Add subnodes`**.
 
