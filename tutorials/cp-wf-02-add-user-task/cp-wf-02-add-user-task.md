@@ -13,11 +13,13 @@ time: 15
 - How a simple UI5 app can provide a basic UI for user tasks
 - What script tasks are and how to reference the workflow context within them
 
-In the tutorial [Add a user task to your workflow](https://www.sap.com/developer/tutorials/cp-workflow-add-usertask.html) within the beginner tutorial group [Get started with SAP Cloud Platform workflows](https://www.sap.com/developer/groups/cp-workflow-service.html) you added a basic user task to the workflow definition, and in the user interface details you specified dummy entries (`test`) which caused a default task display mechanism to be used in the `MyInbox` app.
+In the beginner tutorial group [Get started with SAP Cloud Platform workflows](https://www.sap.com/developer/groups/cp-workflow-service.html) you added a basic user task to a simple workflow definition, and initially, in the user interface details, you specified dummy entries (`test`) which caused a default task display mechanism to be used in the `MyInbox` app. Later on you used the [Workflow Forms](https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/bc57d645aee44e11afc8992fd27e544c.html) feature to build an approval UI. The Workflow Forms feature is great for building UIs without any coding, but if you want to take the first steps towards building your own custom UIs, this tutorial will show you what's involved. 
 
-In this tutorial, you'll create and deploy a simple UI5 app that can be used in place of this default mechanism. The app has just enough functionality for you to display information from within the contexts of your running workflow instances, and to allow decisions by marking the tasks as **Complete** (which would move the instances on from the user task into the status **Completed**, in the case of this workflow definition).
+In this tutorial, you'll create and deploy a simple UI5 app that can be used for user tasks. The app has just enough functionality for you to display information from within the contexts of your running workflow instances, and to allow decisions by marking the tasks as **Complete** (which would move the instances on from the user task into the status **Completed**, in the case of this workflow definition).
 
-You'll then reference this deployed UI5 app in the user interface details, instead of providing dummy information.
+You'll then reference this deployed UI5 app in the user interface details, instead of providing dummy information or creating a UI with Workflow Forms.
+
+> We recommend the use of Workflow Forms if you don't need any specific or custom UI features for the user tasks in your workflow definition.
 
 > In this tutorial and others the general name "SAP Web IDE" is used. Specifically, the "Full Stack" version is implied throughout.
 
@@ -239,7 +241,7 @@ Very briefly, here's a summary of what's going on in this file, specifically in 
 
 So when the initialization of this app's component is complete, everything is ready to show to the user task recipient, and to enable them to complete the task with the appropriate action button.
 
-Don't forget to save the file!
+Don't forget to **save** the file!
 
 [DONE]
 [ACCORDION-END]
@@ -412,7 +414,9 @@ Just select **Close** here. The app does not need to be registered to a launchpa
 
 [ACCORDION-BEGIN [Step 7: ](Create a user task in the workflow definition)]
 
-Now that you have the `genericusertask` app deployed to SAP Cloud Platform, you can use it in the specification of a user task in the workflow definition. Find and open the workflow definition file **`processorder.workflow`** in your **`NorthwindOrderProcess`** project.
+Now that you have the `genericusertask` app deployed to SAP Cloud Platform, you can use it in the specification of a user task in the workflow definition.
+
+Find and open the workflow definition file **`processorder.workflow`** in your **`NorthwindOrderProcess`** project.
 
 As a reminder, this is what your workflow definition looks like right now:
 
@@ -440,7 +444,7 @@ In the **DETAILS** section:
 | Description  | **`Please confirm the order for '${context.stockinfo.ProductName}'.`**
 | Users        | (Your trial user name, e.g. P999999 - use upper case for the initial letter)
 
-> You will have encountered expressions like those in this section in the previous tutorial [Create a workflow definition using an external service]. Find out more about these expressions in the SAP Help Portal, under the [Configure Service Tasks](https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/a8a6267f537841fbb22c159ba2af8835.html) topic.
+> You will have encountered expressions like those in this section in the previous tutorial [Create a Workflow Definition Using an External Service](https://www.sap.com/developer/tutorials/cp-wf-01-create-definition.html). Find out more about these expressions in the SAP Help Portal, under the [Configure Service Tasks](https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/a8a6267f537841fbb22c159ba2af8835.html) topic.
 
 In the **USER INTERFACE** section:
 
@@ -501,7 +505,7 @@ Select it, and in the **Script Task Properties**, specify **`Configure Context`*
 
 ![adding the configurecontext.js script](configurecontext-script.png)
 
-Don't forget to go back and save the workflow definition.
+Don't forget to go back and **save** the workflow definition.
 
 The `configurecontext.js` file should have been created within the project's folder structure, as shown below. Remove any sample code and comments that have been automatically placed in there, replacing everything with the following content, and then save the file:
 

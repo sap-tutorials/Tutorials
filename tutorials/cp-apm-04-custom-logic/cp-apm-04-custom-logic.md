@@ -38,7 +38,7 @@ The `OrdersService.java` file is created.
 
 Open the new `OrdersService.java` file and replace the template with the following code:
 
-```
+```java
 package my.bookshop;
 
 import java.util.ArrayList;

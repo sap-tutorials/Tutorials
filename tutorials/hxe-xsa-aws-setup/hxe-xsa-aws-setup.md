@@ -1,6 +1,6 @@
 ---
-title: Set up SAP HANA, express edition, on Amazon Web Services - XS Advanced applications
-description: Set up your SAP HANA, express edition, with XS Advanced on Amazon Web Services
+title: Set Up SAP HANA, express edition on Amazon Web Services (XS Advanced)
+description: Set up your SAP HANA, express edition with XS Advanced on Amazon Web Services.
 primary_tag: products>sap-hana\,-express-edition
 auto_validation: true
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition ]
@@ -95,7 +95,7 @@ Name your security group, add a description and click **Save**
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a Key Pair)]
+[ACCORDION-BEGIN [Step 4: ](Create a key pair)]
 
 Click **Create a key pair**.
 

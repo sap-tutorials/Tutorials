@@ -1,6 +1,6 @@
 ---
-title: Setup the connection between Google BigQuery and SAP HANA using Smart Data Access
-description: Setup SAP HANA Express edition to connect to Google BugQuery and access large datasets
+title: Set Up Connection Between Google BigQuery and SAP HANA
+description: Set up SAP HANA, express edition to connect to Google BigQuery and access large datasets, using Smart Data Access.
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition ]
@@ -10,11 +10,11 @@ time: 5
 
 ## Details
 ### You will learn  
-  - **THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the AppSpace and we will provide everything you will need.
   - How to connect to Google BigQuery and run different queries
   - How to configure your SAP HANA, express edition instance to connect to Google BigQuery and perform development tasks
 
-Add additional information: Background information, longer prerequisites
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the AppSpace and we will provide everything you will need.
+
 
 ---
 
@@ -109,7 +109,7 @@ And keep the CSV file open as you will need the data.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a Dataset in Google BigQuery)]
+[ACCORDION-BEGIN [Step 4: ](Create a dataset in Google BigQuery)]
 
 Click on the name of your project and then on **Create Dataset**.
 
@@ -151,7 +151,7 @@ Call it `RESULTS`
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Check the setup has finished and tweak the environment)]
+[ACCORDION-BEGIN [Step 6: ](Check setup finished and tweak environment)]
 
 Go back into the console where the setup script was running. By now, it should have finished. If it hasn't, wait for it.
 Execute the following command to log in to the XS Advanced CLI:

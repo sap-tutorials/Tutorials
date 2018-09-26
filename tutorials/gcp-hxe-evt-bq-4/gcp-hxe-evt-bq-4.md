@@ -1,6 +1,6 @@
 ---
-title: Visualize the prediction and flag periods indicating the heat death of the universe
-description: Configure the HDI container to access the data from the predictive model and create a calculation view to compare the prediction with actual measurements
+title: Visualize the Prediction and Flag Periods Indicating the Heat Death of the Universe
+description: Configure the HDI container to access the data from the predictive model and create a calculation view to compare the prediction with actual measurements.
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
@@ -10,16 +10,16 @@ time: 15
 
 ## Details
 ### You will learn  
-  - **THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the AppSpace and we will provide everything you will need.
-
   - How to access plain schema from an HDI Container
   - How to create database objects using design-time artifacts
   - How to create a calculation view of type cube
 
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the AppSpace and we will provide everything you will need.
+
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add the user-provided service to your Multi Target Application)]
+[ACCORDION-BEGIN [Step 1: ](Add the user-provided service to your multi-target application)]
 
 Go into the coding tools in SAP Web IDE for SAP HANA. Right-click on the database module and choose **`Modeling actions -> Add External SAP HANA Service`**.
 
@@ -63,7 +63,7 @@ Once imported, expand the `db` module and **Build** the two inner folders
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create a Calculation View)]
+[ACCORDION-BEGIN [Step 3: ](Create a calculation view)]
 
 The import has created two tables and filled them with data. Those tables include a mapping for the periods to interpret the output of the predictive algorithm and some **fake** current measurements.
 
