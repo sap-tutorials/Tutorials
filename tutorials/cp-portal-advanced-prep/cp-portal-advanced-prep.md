@@ -21,7 +21,7 @@ time: 20
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Open your SAP Cloud Platform rial account cockpit)]
+[ACCORDION-BEGIN [Step 1: ](Open your SAP Cloud Platform trial account cockpit)]
 
 1. Go to SAP Cloud Platform by going to <https://account.hanatrial.ondemand.com/>.
   ![Log on screen](1-log-on-HCP.png)
@@ -181,7 +181,7 @@ Import the applications used in this tutorial to add to your SAP Web IDE and dep
 After importing all of the apps, your workspace should look like this:
       ![Final workspace](071-final-workspace.png)
 
-      [DONE]
+[DONE]
 
 [ACCORDION-END]
 
