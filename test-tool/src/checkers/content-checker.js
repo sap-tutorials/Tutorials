@@ -15,15 +15,22 @@ const fileExistsSyncCS = (filePath) => {
 const checkLocalImage = (absImgPath, imgName) => {
   const result = [];
   const { content: { mdnImg } } = regexp;
-  const exists = fileExistsSyncCS(absImgPath);
-  if (exists) {
-    const { size } = fs.statSync(absImgPath);
-    if (size > constraints.img.MB) {
-      result.push(`${mdnImg.messages.size} -> ${imgName}`);
+
+  try {
+    const exists = fileExistsSyncCS(absImgPath);
+
+    if (exists) {
+      const { size } = fs.statSync(absImgPath);
+      if (size > constraints.img.MB) {
+        result.push(`${mdnImg.messages.size} -> ${imgName}`);
+      }
+    } else {
+      result.push(`${mdnImg.messages.existence} -> ${imgName}`);
     }
-  } else {
-    result.push(`${mdnImg.messages.existence} -> ${imgName}`);
+  } catch (e) {
+    result.push(e.message);
   }
+
   return result;
 };
 
