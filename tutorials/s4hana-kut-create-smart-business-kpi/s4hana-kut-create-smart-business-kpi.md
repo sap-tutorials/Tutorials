@@ -16,15 +16,21 @@ time: 30
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Log into SAP Fiori launchpad)]
-First you need to log into the Fiori Launchpad.
-Click this link in your browser: [Link will be available soon]
+First you need to log into the SAP Fiori launchpad.
+1. Double clicks on the **Remote Desktop icon** on the taskbar of your windows desktop.
+
+    ![Fiori Launchpad login preparation](kut_smbkpi_01_01.png)
+
+2. The Remote Desktop Connection gets open and you are redirected to the SAP FIORI Launchpad.
 
 You should see this page:
 
-![ Fiori Launchpad login screen](kut_smbkpi_01.png)
+  ![Fiori Launchpad login continue](kut_smbkpi_01_02.png)
 
-Log on with your user and password
->Your your user is your desktop number. Your password will be given to you by your instructor.
+3. Login now with your user and password
+
+> Your user is `S4HANAPUT-XX` where **XX** is your desktop number. Your password will be given to you by your instructors.
+
 
 [DONE]
 [ACCORDION-END]
@@ -57,8 +63,8 @@ In the Fiori Launchpad, from the group KPI Design select the App KPI Workspace a
 
     |  Field Name         | Value
     |  :------------------| :-------------
-    |  Title              | `XXX_ APSEMTAGSTATISTIC`
-    |  Description        | `XXX_ APSEMTAGSTATISTIC`
+    |  Title              | `XXXX_ APSEMTAGSTATISTIC`
+    |  Description        | `XXXX_ APSEMTAGSTATISTIC`
 
     > Replace **`XXXX`** with your initials !
     ![Maintain Parameters](kut_smbkpi_05.png)
@@ -102,7 +108,7 @@ The **Evaluation window** gets open with `prefilled` data.
 
 ![Evaluation Data ](kut_smbkpi_12.png)
 
-The evaluation would define the KPI based on **`AmountInGlobalCurrency`**, or any other dimensions.
+The evaluation would define the KPI based on **`NetIncomeAmtByNumberofEmpl`**, or any other dimensions.
 
 1. Maintain:
 
@@ -134,9 +140,9 @@ The evaluation would define the KPI based on **`AmountInGlobalCurrency`**, or an
 
     |  Field Name         | Value
     |  :------------------| :-------------
-    |  Critical           | `50000`
+    |  Target             | `525000`
     |  Warning            | `500000`
-    |  Target             | `425000`
+    |  Critical           | `50000`
 
     ![Maintain Threshold](kut_smbkpi_16.png)
 
@@ -229,7 +235,7 @@ as it is shown on the similar picture below.
 
     ![Report execution](kut_smbkpi_26.png)
 
-    ... and afterwards click on the catalog `Z_MONJE_TEC` similar to the picture below.
+    ... and afterwards click on the catalog  name `Catalog TechEd AppSpace` similar to the picture below.
 
     ![Report execution](kut_smbkpi_27.png)
 
