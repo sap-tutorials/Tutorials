@@ -15,18 +15,20 @@ time: 30
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Log into SAP Fiori launchpad)]
-First you need to log into the Fiori Launchpad.
-Click this link in your browser:
+First you need to log into the SAP Fiori launchpad.
+1. Double clicks on the **Remote Desktop icon** on the taskbar of your windows desktop.
 
-[ Fiori Launchpad ]
+  ![Fiori Launchpad login preparation](kut_alp_01_01.png)
+
+2. The Remote Desktop Connection gets open and you are redirected to the SAP FIORI Launchpad.
 
 You should see this page:
 
-![ Fiori Launchpad login screen](kut_alp_01.png)
+  ![Fiori Launchpad login continue](kut_alp_01_02.png)
 
-Log on with your user and password
+3. Login now with your user and password
 
-> Your user is your desktop number. Your password will be given to you by your instructor.
+> Your user is `S4HANAPUT-XX` where **XX** is your desktop number. Your password will be given to you by your instructors.
 
 [DONE]
 [ACCORDION-END]
@@ -76,8 +78,7 @@ Maintain the fields on the window as following:
 [ACCORDION-BEGIN [Step 5: ](Activate report)]
 
 1. Click **Activate and Add Evaluation**.
-
-    ![Create evaluation](kut_alp_06.png)
+>Please activate before save. If not you would have to return to the Edit modus again !
 
 2. Click on local object as transport request.
 
@@ -113,29 +114,7 @@ Maintain the fields on the window as following:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Create report)]
-
-1. In the **Create Report** window, maintain the following fields:
-
-    |  Field Name         | Value
-    |  :------------------| :-------------
-    |  Title              | `ZAPSEMTAGSTATISTIC_XXXX`
-    |  CDS View           | `ZC_APSEMTAGSTATISTICAL`
-    |  OData Service      | `/sap/opu/odata/sap/ZC_APSEMTAGSTATISTICAL_CDS`
-    |  Entity Set         | `ZC_APSEMTAGSTATISTICALResults`
-
-2. Click **Activate**.
-
-    ![Create Report Table parameters](kut_alp_11.png)
-
-3. In the **Save Transport** screen, double-click **Local Object**.
-
-    ![Create Report Table parameters](kut_alp_12.png)
-
-[VALIDATE_1]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 8: ](Explore report details)]
+[ACCORDION-BEGIN [Step 7: ](Explore report details)]
 
 1. On the **Report Workspace** screen, select your report on the left, by marking the entry in **My Last Worked On**.
 
@@ -151,7 +130,7 @@ Maintain the fields on the window as following:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Publish and configure report tile)]
+[ACCORDION-BEGIN [Step 8: ](Publish and configure report tile)]
 
 1. In the **Publish Report** screen, as shown below:
 
@@ -182,7 +161,7 @@ Maintain the fields on the window as following:
 [VALIDATE_2]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Configure report drill-down)]
+[ACCORDION-BEGIN [Step 9: ](Configure report drill-down)]
 
 Select your report on the left by selecting the entry in **My Last Worked On** section. Details of your report are shown on the right.
 
@@ -193,7 +172,7 @@ Click **Configure**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 11: ](Configure charts)]
+[ACCORDION-BEGIN [Step 10: ](Configure charts)]
 
 1. Select the dimensions to be shown on the chart axis (e.g., Cost Center), and then click **OK**.
 
@@ -208,7 +187,7 @@ Click **Configure**.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 12: ](Maintain chart properties)]
+[ACCORDION-BEGIN [Step 11: ](Maintain chart properties)]
 
 Set the field **View Title** to **`By Cost Center`** and click **OK**. The left panel is hidden, and the chart is shown in full screen mode.
 
@@ -221,7 +200,7 @@ A new toolbar is added on top (in the right corner).
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 13: ](Configure table)]
+[ACCORDION-BEGIN [Step 12: ](Configure table)]
 
 Click **+** on the top right to configure the table.
 
@@ -231,12 +210,12 @@ A **Select** screen with dimension fields opens, similar to this:
 
 ![Configure table Dimension fields ](kut_alp_25.png)
 
-> The Measure **`Amount in Glob Crcy`** is selected by default.
+> Remark: The Measure **`Amount in Glob Crcy`** is selected by default.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 14: ](Select dmensions and measures)]
+[ACCORDION-BEGIN [Step 13: ](Select dimensions and measures)]
 
 1. In the **Select** screen, check the dimensions and measure fields as on the picture below.
 
@@ -250,7 +229,7 @@ A **Select** screen with dimension fields opens, similar to this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 15: ](Maintain table details)]
+[ACCORDION-BEGIN [Step 14: ](Maintain table details)]
 
 1. Set the **View Title** field to **`By Cost Center`** and click **OK**.
 
@@ -265,7 +244,7 @@ A **Select** screen with dimension fields opens, similar to this:
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 16: ](Preview table and charts)]
+[ACCORDION-BEGIN [Step 15: ](Preview table and charts)]
 
 1. On the left is the **All Active Evaluations** panel, and on the right shows the preview of your chart and table. Switch between them with the drop-down list box.
 
@@ -283,7 +262,7 @@ You have now completed the configuration of your analytical list page.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 17: ](Execute report)]
+[ACCORDION-BEGIN [Step 16: ](Execute report)]
 
 1. Return to the SAP Fiori launchpad, click on the **Me** icon (top-left corner next to the SAP logo). The **Me** area opens on the left.
 
@@ -291,7 +270,7 @@ You have now completed the configuration of your analytical list page.
 
 2. Click the App Finder to open it.
 
-3. Search for **`ZZ1_APSEMTAGSTATISTIC_XXX`** (top-right corner). The tile for your report will be displayed.
+3. Search for **`ZZ1_APSEMTAGSTATISTIC_XXX`** (top-right corner). The tile for your report will be displayed or look for it under the catalog **Catalog TechEd AppSpace**
 
 4. Click the tile to start the report.
 
