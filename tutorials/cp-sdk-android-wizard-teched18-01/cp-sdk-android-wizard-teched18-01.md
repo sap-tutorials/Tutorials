@@ -1,24 +1,19 @@
 ---
-title: Use the SAP Wizard to create your first Android application
-description: Create an Android application that will be connected against an OData backend.
-auto_validation: false
+title: Use SAP Wizard to Create Your First Android Application
+description: Create an Android application that will be connected to an OData backend.
+auto_validation: true
 primary_tag: operating-system>android
 tags: [  tutorial>beginner, operating-system>android ]
+time: 15
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn  
-  - How to create an Android app using the Android Studio integrated SAP Wizard.
-
-### Time to Complete
-**15 Min**
+  - How to create an Android app using the Android Studio integrated SAP Wizard
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Setup)]
+[ACCORDION-BEGIN [Step 1: ](Set up development tools)]
 
 If Android Studio is running, close it.
 
@@ -28,7 +23,7 @@ If there is an existing project at `C:\AndroidStudioProjects\WizApp`, delete it.
 
 ![Delete existing project](delete-old-project.png)
 
-If there is an emulator running and an app on it named Wiz App, delete it (Long press, App info, UNINSTALL).
+If there is an emulator running and an app on it named Wiz App, delete it (Long press, **App info**, then **UNINSTALL**).
 
 ![App Info](app-info.png)
 ![Uninstall App](uninstall.png)
@@ -37,7 +32,7 @@ Check if the emulator has airplane mode enabled.
 
 ![Airplane mode enabled](airplane-mode-enabled.png)
 
-If so, turn it off by swiping down from the top of the emulator and clicking on the airplane icon.  
+If so, turn it off by swiping down from the top of the emulator and clicking the airplane icon.  
 
 ![Airplane mode disabled](airplane-mode-disabled.png)
 
@@ -54,25 +49,27 @@ Open **Android Studio**.
 Choose **Start a new SAP Cloud Platform Android project**.
 
 ![New project](new-project.png)
-> **Note**: The SAP Cloud Platform SDK has been pre-installed on this machine from <a target="_blank" href="https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-android-15508.html">Trial Downloads</a>. For further installation details see <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/getting-started/installing.html">Installing the SAP Cloud Platform SDK for Android</a>.
+
+> The SAP Cloud Platform SDK has been pre-installed on this machine from <a target="_blank" href="https://www.sap.com/developer/trials-downloads/additional-downloads/sap-cloud-platform-sdk-for-android-15508.html">Trial Downloads</a>. For further installation details see <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/getting-started/installing.html">Installing the SAP Cloud Platform SDK for Android</a>.
+
 
 The wizard can save the server connection details for multiple servers. A preconfigured account has been provided.
 Click **Next** on the **Server Connection** tab.
 
 ![Server connection](server-connection.png)
 
-> **Note**: If the values are missing, the following values can be used:
+> If the values are missing, the following values can be used:
 
 | Field | Value |
-|----|----|
+|:----|:----|
 | Account Name | `SAP Cloud Platform Mobile Services Trial` |
 | Admin API URL | `https://hcpms-p2000464045trial.hanatrial.ondemand.com/` |
 | Admin UI URL | `https://hcpmsadmin-p2000464045trial.dispatcher.hanatrial.ondemand.com/?hc_reset` |
-| Username | p2000464045 |
-| Password | SCP!2pwd |
+| Username | `p2000464045` |
+| Password | `SCP!2pwd` |
 
-On the **Cloud Configuration** tab select **Use Existing** and set the Application ID to **`com.sap.wizapp`**.
-Click **Next** to configure the OData Services.
+On the **Cloud Configuration** tab, select **Use Existing** and set the Application ID to **`com.sap.wizapp`**.
+Click **Next** to configure the OData services.
 
 ![Cloud configuration](cloud-configuration.png)
 
@@ -81,21 +78,24 @@ The application configuration has already been created and has added multiple fe
 ![App features](appFeatures.png)
 
 The SAP Cloud Platform Mobile Services provides a sample backend destination named `com.sap.edm.sampleservice.v2` that is being used here to provide data for the application. It contains product categories, product, supplier, customer and sales order data.
+
 Click **Next**.
 
 ![OData services](odata-services.png)
 
-On the **Project Configuration** tab provide the following configuration data:
+On the **Project Configuration** tab, provide the following configuration data:
 
 | Field | Value |
-|----|----|
+|:----|:----|
 | Project Name | `Wiz App` |
 | Project Namespace | `com.sap.wizapp` |
 | Project Configuration | `C:\AndroidStudioProjects\WizApp` |
 | Password | Password for your trial account user |
 
-Uncheck **Use Discovery Service for Application bootstrapping**, check the **Enable Logging** and **Enable Upload** checkboxes to enable the log level to be set by the user and have the ability to upload the log to the server. Also Check the **Enable Push** checkbox to enable push notification support in the app.
-Now you have to browse for the `google-services.json` at path `C:\AndroidStudioProjects\`. This will enable the app to work with Google Firebase notifications.
+Uncheck **Use Discovery Service for Application bootstrapping**, check the **Enable Logging** and **Enable Upload** checkboxes to enable the log level to be set by the user and have the ability to upload the log to the server. Also check the **Enable Push** checkbox to enable push notification support in the app.
+
+Now you have to browse for `google-services.json` at path `C:\AndroidStudioProjects\`. This will enable the app to work with Google Firebase notifications.
+
 Click **Finish**
 
 ![Project configuration](project-configuration.png)
@@ -123,7 +123,7 @@ The welcome screen is shown the first time the app is run.
 Sign in with the following credentials:
 
 | Field | Value |
-|----|----|
+|:----|:----|
 | User Name | `p2000464045` |
 | Password | `SCP!2pwd` |
 

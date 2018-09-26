@@ -1,23 +1,19 @@
 ---
-title: Offline Enablement
-description: Enable Offline OData in your Android application.
+title: Enable Offline OData in your Android Application
+description: You will learn how to enable Offline OData in your Android application.
+auto_validation: true
 primary_tag: operating-system>android
 tags: [  tutorial>beginner, operating-system>android ]
+time: 20
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn  
-  - How to enable Offline OData in your Android application.
-
-### Time to Complete
-**20 Min**
+  - How to enable Offline OData in your Android application
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add Offline OData dependency to your build.gradle document)]
+[ACCORDION-BEGIN [Step 1: ](Add dependency to build.gradle document)]
 
 In Android Studio, add the following line to the list of dependencies in the app's **`build.gradle`** file to include the <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Developing_Offline_Applications.html">Offline OData</a> framework.
 
@@ -26,12 +22,14 @@ implementation group:'com.sap.cloud.android', name:'offline-odata', version: sdk
 ```
 
 ![Offline OData Gradle Dependency](offline-odata-gradle-file.png)
+
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Implement handling for ODataStore and Offline OData)]
+[ACCORDION-BEGIN [Step 2: ](Add code to open offline store)]
 
 Press **`Ctrl+N`** and enter **`SAPServiceManager.java`**.
-In the SAPServiceManager comment out (Select and press Ctrl /) the following variable:
+In the `SAPServiceManager` class comment out (Select and press Ctrl /) the following variable:
     `//private OnlineODataProvider provider;`
 
 In the same class add the following variables and press  **`Alt+Enter`** to make use of Android Studio quick fix to add the missing import.
@@ -43,7 +41,8 @@ private static final String TAG = SAPServiceManager.class.getName();
 
 Delete or comment out the methods **`openODataStore`** and **`getServiceRoot`** as they will be replaced in the next step.
 
-Add the below methods and press  **`Alt+Enter`** to make use of Android Studio quick fix to add the missing imports.  
+Add the below methods and press  **`Alt+Enter`** to make use of Android Studio quick fix to add the missing imports.
+
 For `Context`, choose `android.content.Context`.
 
 ```Java
@@ -112,6 +111,7 @@ public String getServiceRoot() {
 ```
 
 Press **`Ctrl+N`** and enter **`LogonActivity.java`**.
+
 Press **`Ctrl+F`** and enter **`openODataStore`**. In the `LogonActivity.java` add the application context to the `openODataStore` call as a parameter as shown below:
 
 ![getApplicationContext() parameter added](application-context-parameter.png)
@@ -119,12 +119,14 @@ Press **`Ctrl+F`** and enter **`openODataStore`**. In the `LogonActivity.java` a
 ```Java
 }, getApplicationContext());
 ```
+
+[DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Run and explore the now offline enabled application)]
+[ACCORDION-BEGIN [Step 3: ](Run and explore the application)]
 Run the application, upon reaching the home screen, it may take a few moments for the offline store to open.
 
-> **Note:** The first time the app is opened it will take longer to open the offline store as it needs to be created and populated.  Make sure Wi-Fi is enabled. Consult the `Logcat` log and wait for the following messages to appear.
+> The first time the app is opened it will take longer to open the offline store as it needs to be created and populated.  Make sure Wi-Fi is enabled. Consult the `Logcat` log and wait for the following messages to appear.
 
 ![Log Message from Opening offline store](offline-store-opened.png)
 
@@ -132,7 +134,7 @@ Turn on airplane mode on your device (swipe down from the top of the emulator an
 
 ![Airplane mode on your device](airplane-mode.png)
 
-Navigate to the list of customers by tapping the "Customers" row. Now tap on a customer.
+Navigate to the list of customers by tapping the **Customers** row. Now tap on a customer.
 
 To edit the customer tap the "Edit Customer" icon.
 
@@ -150,7 +152,7 @@ Re-open the app and check the `Logcat`. It shows the upload and download operati
 
 ![Successful upload/download](upload-successful.png)
 
-> **Note:** This example does not handle conflicts. Details on this topic are available at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Designing_an_Offline_Application_to_Handle_Conflicts_and_Errors.html#offline-odata-conflicts">Offline OData Conflicts</a>.
+> This example does not handle conflicts. Details on this topic are available at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Designing_an_Offline_Application_to_Handle_Conflicts_and_Errors.html#offline-odata-conflicts">Offline OData Conflicts</a>.
 
 [VALIDATE_1]
 [ACCORDION-END]
