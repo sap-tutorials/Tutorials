@@ -46,7 +46,7 @@ import SAPFoundation
 import SAPFiori
 import SAPCommon
 ```
-> You can remove the `import UIKit` import because the `SAPFiori` Framework has the UIKit in it's body.
+> You can remove the `import UIKit` import because the `SAPFiori` Framework has the `UIKit` in it's body.
 
 Then change the signature of the class so it now extends from `FUIChartFloorplanViewController`:
 
@@ -63,7 +63,7 @@ Now you have the scaffolding for the data visualizations class. We'll leave it f
 
 [ACCORDION-BEGIN [Step 2: ](Add view controller to storyboard)]
 
-Open the `PackagesType.storyboard` file, and from the **Object library**, drag a **View Controller** onto the storyboard. Select the **View Controller** and go to the **Atributes Inspector**. Set the **title** to **Chart View**:
+Open the `PackagesType.storyboard` file, and from the **Object library**, drag a **View Controller** onto the storyboard. Select the **View Controller** and go to the **Attributes Inspector**. Set the **title** to **Chart View**:
 
 ![Create View Controller](fiori-ios-scpms-create-app-teched18-part4-46.png)
 
