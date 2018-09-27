@@ -3,25 +3,22 @@ title: Test SAP HANA, express edition
 description: Test your XSC, XSA, SAP Web IDE, and Cockpit installations.
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 10
 ---
 
 <!-- loioa00667372f1a44228ae039268e927ba6 -->
 
 ## Prerequisites
- - **Proficiency:** Beginner  
 
 ## Details
 ### You will learn
 You'll learn how to confirm that your SAP HANA, express edition installation is running.
 
-### Time to Complete
-10 min
-
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Test your server installation)]
 
-In a terminal, log in as the `sid``adm` user.
+In a terminal, log in as the <sid>`adm` user.
 
 Enter `HDB info`. The following services must be running:
 
@@ -35,7 +32,7 @@ If any services are not running, enter `HDB start`. When the prompt returns, the
 Check that the XSEngine is running. Open a browser and enter:
 
 ```bash
-http://`hostname`:80`instance-number`
+http://<hostname>:80<instance-number>
 ```
 
 A success page displays:
@@ -46,7 +43,7 @@ A success page displays:
 
 [ACCORDION-BEGIN [Step 2: ](Test XSA)]
 
-As the `sid``adm` user, log in to XSA services:
+As the <sid>`adm` user, log in to XSA services:
 
 ```bash
 xs-admin-login
@@ -111,7 +108,7 @@ xs start messaging-service-broker
 
 [ACCORDION-BEGIN [Step 4: ](Test Web IDE)]
 
-As the `sid``adm` user, log in to XSA services:
+As the <sid>`adm` user, log in to XSA services:
 
 ```bash
 xs-admin-login
@@ -148,7 +145,7 @@ Download `Eclipse IDE for Java EE Developers` from [http://www.eclipse.org/neon/
 
 Follow the Eclipse installer prompts.
 
-Launch when prompted, or go to the Eclipse folder (example: `C:\Users\`path`\eclipse\jee-neon`) and run the `eclipse` executable file.
+Launch when prompted, or go to the Eclipse folder (example: `C:\Users\<path>\eclipse\jee-neon`) and run the `eclipse` executable file.
 
 Follow the tutorial [How to download and install the HANA Eclipse plugin](http://www.sap.com/developer/tutorials/hxe-howto-eclipse.html) to connect to your SAP HANA, express edition client machine.
 
