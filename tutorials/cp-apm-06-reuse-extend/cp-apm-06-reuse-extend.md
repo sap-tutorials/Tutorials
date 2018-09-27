@@ -36,7 +36,7 @@ Imagine that you need to create a product catalog app that includes reviews for 
 The **SAP Cloud Platform Business Application** template is your starting point. After creating the template, you will have the default project layout, which includes a data and service module.
 
 1. Open SAP Web IDE and choose **File** | **New** | **Project from Template**.
-2. Choose **SAP Cloud Platform Business Application**.
+2. Choose **SAP Cloud Platform Business Application**, and in the **Basic Information** tab, specify **`SampleApp`** as the Project Name.
 
     ![Select the project template](web-ide-template.png)
 
@@ -68,9 +68,9 @@ To reuse the product catalog model, you need to declare a dependency in the `pac
     Your `package.json` file should look like this:
 
 
-    ```
+    ```xml
     {
-    "name": "my.app",
+    "name": "SampleApp",
     "description": "A simple data model for SAP CP application",
     "version": "1.0.0",
     "dependencies": {
@@ -94,31 +94,16 @@ To reuse the product catalog model, you need to declare a dependency in the `pac
 
 In your `data-model.cds`, you will:
 
-- Import the `Product` entity with a `Using` directive.
+- Import the `Product` entity with a `using` directive.
 - Add a `Reviews` entity that will be associated with the `Product` entity.
 
 >`Using` directives let you declare shortcut aliases to fully-qualified names or namespaces of definitions in other files and import them into your model. In this example, the `using` directive imports the Products entity.
 
 1. Go to **`db`** module and open the `data-model.cds` file.
-2. Add the following sample code:
+2. Replace the sample code with:
 
-    ```
-    using clouds.products.Products from '@sap/cloud-samples-catalog';
-
-    entity Reviews {
-      key Review: UUID;
-      product: Association to Products @title: '{i18n>product}';
-      title: String(60) @title: '{i18n>reviewTitle}';
-      message: String(1024) @title: '{i18n>reviewText}';
-      rating: Decimal(4, 2) @title: '{i18n>rating}';
-      helpfulCount: Integer @title: '{i18n>ratedHelpful}';
-      helpfulTotal: Integer @title: '{i18n>ratedTotal}';
-    }
-    ```
-  Your `data-model.cds` should look like this:
-
-    ```
-    namespace my.app;
+    ```java
+    namespace SampleApp;
 
     using clouds.products.Products from '@sap/cloud-samples-catalog';
 
@@ -132,6 +117,9 @@ In your `data-model.cds`, you will:
       helpfulTotal: Integer @title: '{i18n>ratedTotal}';
     }
     ```
+
+    > If you see CDS errors telling you that the artifact or module relating to the `using` statement could not be found, you can ignore them - they're temporary and not entirely accurate.
+
 3. Save your file.
 
 [DONE]
@@ -144,7 +132,7 @@ The goal is to navigate from `Products` to `Reviews`. To do this, you need to ex
 
 1. In the `data-model.cds` file, add the following sample code:
 
-    ```
+    ```java
     extend Products with {
     	Reviews: Association to many Reviews on Reviews.product = $self @title: '{i18n>review}';
     }
@@ -152,8 +140,8 @@ The goal is to navigate from `Products` to `Reviews`. To do this, you need to ex
 
     Your `data-model.cds` file should look like this:
 
-    ```  
-    namespace my.app;
+    ```java  
+    namespace SampleApp;
 
     using clouds.products.Products from '@sap/cloud-samples-catalog';
 
@@ -185,8 +173,8 @@ You need to extend `CatalogService` with the view on the `Reviews` entity you ad
 1. Expand the **`srv`** module and open **`my-service.cds`**
 2. Replace the sample code with:
 
-    ```
-    namespace my.app;
+    ```java
+    namespace SampleApp;
     using my.app from '../db/data-model';
 
     using clouds.products.CatalogService from '@sap/cloud-samples-catalog';
@@ -204,6 +192,9 @@ You need to extend `CatalogService` with the view on the `Reviews` entity you ad
 
     }    
     ```
+
+    > If you see CDS errors telling you that the artifact or module relating to the `using` statement could not be found, you can ignore them - they're temporary and not entirely accurate.
+
 3. Save your file.
 
 [VALIDATE_1]
@@ -233,19 +224,7 @@ Right-click the **`db`** module and choose **Build**.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Compile the OData models)]
-
-Right-click **`SampleApp`** and choose **Build** | **Build CDS**.
-
-![Build CDS from your project root folder](build-cds-project.png)
-
-The EDMX artifacts are generated and stored in the **`srv`** module under `/src/main/resources/edmx`.
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 9: ](Add an HTML5 template)]
+[ACCORDION-BEGIN [Step 8: ](Add an HTML5 template)]
 
 You have successfully created the data and service module. To complete your application, you need to add a UI.
 
@@ -261,6 +240,8 @@ You have successfully created the data and service module. To complete your appl
 
 5. Choose **Current Project**.
 6. Choose **`clouds.products.CatalogService`**.
+    > If there are multiple instances of the service listed, choose the first one.
+
 7. In the **Template Customization** tab, choose **Products** from the **OData Collection** dropdown menu.
     >**Reviews** is automatically populated in the **OData Navigation** field.
 
@@ -270,7 +251,7 @@ You have successfully created the data and service module. To complete your appl
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Test-run the UI)]
+[ACCORDION-BEGIN [Step 9: ](Test-run the UI)]
 
 1. Right-click the **`webapp`** module and choose **Run** | **Run as Web Application**.
 2. Choose **`flpSandbox.html`**.
@@ -281,12 +262,12 @@ You have successfully created the data and service module. To complete your appl
 
     |  Field Name                  | Description
     |  :-------------------------  | :--------------------------------------------------------------------------
-    |  Neo Environment User ID     | The ID of your global subaccount that contains your Neo environment
-    |  Neo Environment Password    | The password of your global subaccount that contains your Neo environment
+    |  Neo Environment User ID     | The ID of your subaccount that contains your Neo environment
+    |  Neo Environment Password    | The password of your subaccount that contains your Neo environment
 4. Choose **Create**.
 The SAP Fiori launchpad opens.
 
-    >It might take a minute or two for the SAP Fiori launchpad to open.
+    >It might take a few seconds for the SAP Fiori launchpad to open.
 
 Since you have not added any data, the application is empty. You should see something like this:
 

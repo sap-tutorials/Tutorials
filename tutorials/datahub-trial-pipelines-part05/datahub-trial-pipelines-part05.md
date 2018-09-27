@@ -138,7 +138,7 @@ Now we would be configuring the second operator that we have added - **SAP Vora 
 |  Field Name     | Value
 |  :------------- | :-------------
 |  `dsn`  | `v2://vora-tx-coordinator:10002/?binary=true`
-|  user  | Username for the application. Default is - `default/datahub`
+|  user  | Username for the application. Default is - `default\datahub`
 |  password  | Your password for the above username
 
 Keep all the other properties as is and **Save** the graph.

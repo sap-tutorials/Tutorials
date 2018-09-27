@@ -7,6 +7,9 @@ tags: [ topic>workflow, topic>sap-web-ide, tutorial>intermediate ]
 time: 20
 ---
 
+## Prerequisites  
+- **Tutorials:** [Create a Destination for the Northwind OData Services](https://www.sap.com/developer/tutorials/hcp-create-destination.html)
+
 ## Details
 ### You will learn
 - What service tasks are and how to use them
@@ -15,7 +18,8 @@ time: 20
 
 This tutorial assumes you've already completed the tutorials in the group [Get started with SAP Cloud Platform workflows](https://www.sap.com/developer/groups/cp-workflow-service.html). This means you're familiar with general Workflow service concepts, the workflow definition tooling in SAP Web IDE, and you have the `MyInbox` and `Workflow Monitor` apps set up on an SAP Fiori launchpad site on the Portal service.
 
-It also assumes you have set up a Connectivity service destination for Northwind OData services, as described in [Create a destination for the Northwind OData service endpoint].
+It also assumes you have set up a Connectivity service destination for Northwind OData services, as described in [Create a Destination for the Northwind OData Services](https://www.sap.com/developer/tutorials/hcp-create-destination.html).
+
 You will use one of the [Northwind OData services](https://services.odata.org) as the external service in this tutorial, creating a simple workflow that queries for product information in a hypothetical order processing situation.
 
 > In this tutorial and others the general name "SAP Web IDE" is used. Specifically, the "Full Stack" version is implied throughout.
@@ -154,7 +158,7 @@ Below the WORKFLOW CONTEXT is the EXECUTION LOG, which shows a trail of every st
 
 [ACCORDION-BEGIN [Step 7: ](Call an external service via a service task)]
 
-It's now time to enhance the workflow definition and add a step to call an external service. The service you'll use is an Northwind OData service that you explored in [Learn about OData fundamentals]:
+It's now time to enhance the workflow definition and add a step to call an external service. The service you'll use is an Northwind OData service that you explored in [Learn about OData fundamentals](https://www.sap.com/developer/tutorials/odata-01-intro-origins.html):
 
 <https://services.odata.org/V3/Northwind/Northwind.svc/>
 
@@ -214,14 +218,14 @@ Use menu path **File** > **Save** to save these values.
 
 Taking the values one at at time, here are the explanations:
 
-- `Northwind` is the name of the destination that you set up in [Create a destination for the Northwind OData service endpoint].
+- `Northwind` is the name of the destination that you set up in [Create a Destination for the Northwind OData Services](https://www.sap.com/developer/tutorials/hcp-create-destination.html).
 - The path specification is the relative URL for the version 3 Northwind OData service, specifically requesting an individual `Product` entity. The specification of an individual entity is done with a combination of the entity set name (`Products`) followed by the value of the key property, in brackets. Here the value is dynamically inserted from the `ProductID` property in the workflow context. The expression style used (`${context.ProductID}`) is described in the Workflow service documentation in the Help Portal under the [Configure Service Tasks](https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/a8a6267f537841fbb22c159ba2af8835.html) topic. Note the `$format` system query option requesting JSON format in the response - this is so the response can be stored in the context.
 - The HTTP Method is `GET`, used for either an OData query or read operation. Because of the specification of a specific entity in the URL, this is a read operation.
 - The response data must be stored in the workflow context, and `${context.stockinfo}` states that it should be stored in the context's `stockinfo` property.
 
 > To keep things simple, there is deliberately no error checking in case the ID specified relates to a non-existent product.
 
-Re-deploy the workflow definition to the SAP Cloud Platform Workflow service in the same way you did earlier in this tutorial.
+**Re-deploy the workflow definition** to the SAP Cloud Platform Workflow service in the same way you did earlier in this tutorial.
 
 [VALIDATE_7]
 [ACCORDION-END]

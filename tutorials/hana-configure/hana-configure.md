@@ -3,9 +3,9 @@ title: SAP HANA XS Classic, Getting started with SAP HANA and connecting the Web
 description: Access your first data in a native SAP HANA Application.
 primary_tag: products>sap-hana
 tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
+time: 20
 ---
 ## Prerequisites  
-- **Proficiency:** Beginner
 - **Tutorials:** [How to create an SAP HANA Developer Edition in the Cloud](https://www.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 ## Next Steps
@@ -14,13 +14,11 @@ tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform
 
 ## Details
 ### You will learn  
-1. How to use HANA Studio Perspectives
-2. How to create a connection to the HANA back end
-3. Getting started with the HANA Web based development workbench
+  - How to use SAP HANA Studio Perspectives
+  - How to create a connection to the SAP HANA backend
+  - How to get started with the SAP HANA web-based development workbench
 
-
-### Time to Compete
-**20 Min**.
+---
 
 [ACCORDION-BEGIN [Step 1: ](Host Configuration)]
 

@@ -1,6 +1,6 @@
 ---
-title: Customize Your Java Application
-description: Start to get a feel for modifying an existing codebase using the SAP Web IDE by adding a small feature to your app.
+title: Add a simple Java app to a Multi-Target Application
+description: Start to get a feel for modifying an existing codebase using SAP Web IDE by adding a Java module to a Multi-Target Application (MTA).
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, products>sap-cloud-platform, products>sap-web-ide ]
@@ -9,7 +9,7 @@ time: 10
 
 ## Details
 ### You will learn  
-  - Where to do edit/add to your java codebase via the SAP Web IDE
+  - Where to add your Java codebase
   - How to edit an application before running and deploying it
 
 
@@ -59,7 +59,7 @@ Click any of the folders with a **+** symbol to expand them.
 
 [ACCORDION-BEGIN [Step 3: ](Validate choices from the wizard)]
 
-When selecting your add-on, there was a menu of available tiles to choose from like some of those shown in the picture below.  
+When selecting your module, there was a menu of available tiles to choose from like some of those shown in the picture below.  
 
 ![highlight-simple-web-app](highlight-simple-web-app.png)
 

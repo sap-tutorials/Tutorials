@@ -1,6 +1,6 @@
 ---
-title: Use Jupyter Notebook with SAP HANA, express edition
-description: Provide details on the installation and configuration of Jupyter Notebooks to use with  SAP HANA, express edition.
+title: Use JupyterLab with SAP HANA, express edition
+description: Provide details on the installation and configuration of JupyterLab to use with  SAP HANA, express edition.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>intermediate, products>sap-hana\, express-edition ]
@@ -9,16 +9,17 @@ time: 20
 
 ## Details
 ### You will learn
-During this tutorial, you will learn how to install the Jupyter Notebook application on your system and connect it to your SAP HANA, express edition.
+During this tutorial, you will learn how to install the `JupyterLab` application on your system and connect it to your SAP HANA, express edition.
 
 [ACCORDION-BEGIN [Info: ](Jupyter)]
 
+`JupyterLab` is the next-generation web-based user interface for Project Jupyter.
 
-The Jupyter Notebook is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations and narrative text.
+As an open-source web application, it allows you to create and share documents that contain live code, equations, visualizations and narrative text.
 
-A Jupyter Notebook can therefore be used both as SQL query based tool but also to develop in dozens of programming languages.
+`JupyterLab` can therefore be used both as SQL query based tool but also to develop in dozens of programming languages.
 
-For more details you can check the [Jupyter](http://jupyter.org) web page.
+For more details you can check the [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) web page.
 
 [DONE]
 [ACCORDION-END]
@@ -150,8 +151,13 @@ The following extensions/repositories are required to install the Python package
 You can add these extensions/repositories using the following commands:
 
 ```shell
+sudo SUSEConnect -p SLES_SAP/12.3/x86_64
 sudo SUSEConnect -p PackageHub/12.2/x86_64
+sudo SUSEConnect -p PackageHub/12.3/x86_64
+sudo SUSEConnect -p PackageHub/12.4/x86_64
 sudo SUSEConnect -p sle-sdk/12.2/x86_64
+sudo SUSEConnect -p sle-sdk/12.3/x86_64
+sudo SUSEConnect -p sle-sdk/12.4/x86_64
 sudo SUSEConnect -p sle-module-toolchain/12/x86_64
 ```
 
@@ -168,28 +174,20 @@ Then, you can execute the following command to install the compiler:
 sudo zypper install --type pattern Basis-Devel
 ```
 
-As Python Pip and Virtual Environments are not part of the default SUSE repositories, you will be using it from the ***openSUSE Python Development***.
-
-You can add the Python Modules repository using the following command:
+Then, install the Python `devel` package using the following command:
 
 ```shell
-sudo zypper ar 'http://download.opensuse.org/repositories/devel:/languages:/python/SLE_12_SP3/devel:languages:python.repo'
-sudo zypper refresh
+sudo zypper install	python-devel
 ```
 
-Then, install the packages using the following command:
+As Python Pip and Virtual Environments are not part of the default SUSE repositories, you will be building from the sourc.
+
+First, you will need to download the install script, run it then install `virtualenv` using the following command:
 
 ```shell
-sudo zypper install \
-	python-pip \
-	python-devel \
-	python-virtualenv
-```
-
-And finally remove the Python Modules repository using the following command:
-
-```shell
-sudo zypper rr 'devel_languages_python'
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+sudo python get-pip.py
+sudo pip install virtualenv
 ```
 
 #### For Red Hat Enterprise Linux:
@@ -231,7 +229,7 @@ source ~/jupyter/bin/activate
 And finally you can install Jupyter using the following commands:
 
 ```shell
-pip install jupyter
+pip install jupyterlab
 ```
 
 [DONE]
@@ -242,7 +240,7 @@ pip install jupyter
 Once the installation is completed, you can run the following command to generate the default configuration file.
 
 ```shell
-jupyter notebook --generate-config
+jupyter-lab --generate-config
 ```
 
 The command should output the path to the configuration file:
@@ -277,25 +275,30 @@ Then, you should set a password to secure the environment using the following co
 jupyter notebook password
 ```
 
-You can now start Jupyter notebook  using the following command:
+You can now start `JupyterLab` using the following command where `xxx.xxx.xxx.xxx` represent the host IP address where you have just installed `JupyterLab`:
 
 ```shell
-jupyter notebook &
+jupyter lab --ip=xxx.xxx.xxx.xxx  &
 ```
 
 The following output will be displayed:
 
 ```
-[I 15:44:11.015 NotebookApp] Serving notebooks from local directory: /home/jupyteradm
-[I 15:44:11.015 NotebookApp] 0 active kernels
-[I 15:44:11.015 NotebookApp] The Jupyter Notebook is running at:
-[I 15:44:11.015 NotebookApp] https://[all ip addresses on your system]:8888/
-[I 15:44:11.015 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[I 17:44:46.071 LabApp] The port 8889 is already in use, trying another port.
+[I 17:44:46.087 LabApp] JupyterLab extension loaded from /home/jupyteradm/jupyter/lib/python2.7/site-packages/jupyterlab
+[I 17:44:46.087 LabApp] JupyterLab application directory is /home/jupyteradm/jupyter/share/jupyter/lab
+[W 17:44:46.092 LabApp] JupyterLab server extension not enabled, manually loading...
+[I 17:44:46.098 LabApp] JupyterLab extension loaded from /home/jupyteradm/jupyter/lib/python2.7/site-packages/jupyterlab
+[I 17:44:46.098 LabApp] JupyterLab application directory is /home/jupyteradm/jupyter/share/jupyter/lab
+[I 17:44:46.108 LabApp] Serving notebooks from local directory: /home/jupyteradm
+[I 17:44:46.109 LabApp] The Jupyter Notebook is running at:
+[I 17:44:46.109 LabApp] https://xxx.xxx.xxx.xxx:8890/
+[I 17:44:46.109 LabApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
 ```
 
 You can now open the following URL after replacing `hxehost` with the current hostname.
 
- - `https://hxehost:8888/tree`
+ - `https://xxx.xxx.xxx.xxx:8888/tree`
 
 As your certificate has been signed locally, you will receive a **Your connection is not private** message from your browser, but you can proceed.
 
@@ -326,16 +329,22 @@ pip install \
   sqlalchemy \
   sqlalchemy-hana \
   ipython-sql \
-  /usr/sap/hdbclient/hdbcli-2.2.36.tar.gz
+  /usr/sap/hdbclient/hdbcli-2.3.106.tar.gz
 ```
 
 > **Note:** the `hdbcli` tar file may be with a different version than the one displayed above
 
-Once completed, you can create your first Python notebook using the **New** menu on the right end side:
+Once completed, you can create your first Python notebook using the **File > New > Notebook** menu:
 
 ![Jupyter](06-1.png)
 
-You can then enter the following code in the first cell after updating the `hxe_coonection` variable with your system details.
+Select Python 2 as **Kernel** then click on **Select**:
+
+![Jupyter](06-2.png)
+
+You can then paste the following code in the first cell after updating the `hxe_coonection` variable with your system details.
+
+Here, it is assumed that you have completed the [Prepare your SAP HANA, express edition instance for Machine Learning](https://developers.sap.com/tutorials/mlb-hxe-setup-basic.html) tutorial:
 
 ```python
 import sqlalchemy
@@ -351,12 +360,12 @@ hxe_connection = 'hana://ML_USER:Welcome18Welcome18@localhost:39015';
 Then add a second cell with the following content:
 
 ```python
-%sql select count(1) FROM R_DATA.IRIS;
+%sql select count(1) FROM TABLES;
 ```
 
-Then, hit the **Run** button. You should get the following output on the screen:
+Then, hit the ![Run](00-run.png) button. You should get the following output on the screen:
 
-![Jupyter](06-2.png)
+![Jupyter](06-3.png)
 
 You can then manipulate the output using the following
 
@@ -481,7 +490,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_3]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Troubleshooting: ](Use R Kernel for code)]
+[ACCORDION-BEGIN [Step 10: ](Troubleshooting: Use R Kernel for code)]
 
 ##### **Error: "Unable to start device PNG"**
 

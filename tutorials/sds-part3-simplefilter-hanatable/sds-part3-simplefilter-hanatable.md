@@ -3,13 +3,10 @@ title: Filter and Output to SAP HANA Table in SAP HANA Smart Data Streaming
 description: Part 3 of 9. Add a filter and output the desired events to a SAP HANA Table through SAP HANA Output adapter.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
+author_name: Bill Jiang
+author_profile: https://github.com/BillJiangSAP
+time: 15
 ---
-## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Create a new Streaming Project in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part2-create-streaming-project.html)
-
-## Next Steps
- - **Tutorials:** [Using a HANA Reference Element in a Smart Data Streaming project](https://www.sap.com/developer/tutorials/sds-part4-hana-table-event-streaming.html)
 
 ## Details
 ### You will learn  
@@ -17,8 +14,7 @@ tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-h
  - Adding a HANA Output adapter to connect the filtered stream to a HANA table, capturing the events in the HANA database.
  - Compiling the streaming project and check for errors.
 
-### Time to Complete
-**15 Min**.
+
 
 ---
 
@@ -88,6 +84,3 @@ tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-h
 2. Check the **Problems** view to see if the project compiled without errors.
 
     ![check errors](compile/2-check-errors.png)
-
-## Next Steps
- - **Tutorials:** [Using a HANA Reference Element in a Smart Data Streaming project](https://www.sap.com/developer/tutorials/sds-part4-hana-table-event-streaming.html)

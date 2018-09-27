@@ -4,6 +4,7 @@ title: Continuous Integration (CI) Best Practices with SAP – Introduction and 
 description: Part 1 – Introduction and Navigation through the Best Practices Guide
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
+time: 15
 
 ---
 

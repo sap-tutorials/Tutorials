@@ -1,5 +1,5 @@
 ---
-auto_validation: true 
+auto_validation: true
 title: Maintain a Communication Arrangement for an Exposed Service
 description: Create a communication user and a communication system for a CDS service in SAP Cloud Platform ABAP environment.
 primary_tag: topic>abap-development
@@ -31,7 +31,7 @@ In this tutorial, wherever `xxx` appears, use a number (e.g. `000`).
 
 [ACCORDION-BEGIN [Step 2: ](Create communication user)]
 
-1. Navigate to **Communication User**.
+1. Navigate to **Maintain Communication User**.
 ![Navigate to application](Picture3.png)
 2. Create a new user by clicking **New**.
 ![click on New](Picture4.png)

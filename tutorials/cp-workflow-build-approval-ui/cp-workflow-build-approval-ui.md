@@ -56,16 +56,17 @@ time: 15
 
     First row:
 
-      - In column **`Lable/Title`**, enter `Title`.
+      - In column **Label/Title**, enter **`Title`**.
       - In column **Type**, select **String**.
-      - In column **Context Path**, enter `${context.product}`.      
+      - In column **Context Path**, enter **`${context.product}`**.      
 
     &nbsp;
     Second row:
 
-      - In column **`Lable/Title`**, enter `Price`.
+      - In column **Label/Title**, enter **`Price`**.
       - In column **Type**, select **Float**.
-      - In column **Context Path**, enter `${context.price}`.
+      - In column **Context Path**, enter `**${context.price}**`.
+
    ![Enter Row Data](enter-row-data-fields.png)
 
 [DONE]
@@ -80,17 +81,20 @@ time: 15
 
     First row:
 
-      - In column **Text**, enter `Approve`.
-      - In column **ID**, make sure that **approve** is entered.
-      - In column **Type**, enter **Positive**.
+      - In column **Text**, enter **`Approve`**.
+      - In column **ID**, make sure that **`approve`** is entered.
+      - In column **Type**, select **Positive**.
 
     &nbsp;
     Second row:
 
-      - In column **Text**, enter `Reject`.
-      - In column **ID**, make sure that **reject** is entered.
-      - In column **Type**, enter **Negative**.
+      - In column **Text**, enter **`Reject`**.
+      - In column **ID**, make sure that **`reject`** is entered.
+      - In column **Type**, select **Negative**.
+
    ![Enter Decision Texts](create-decision-texts.png)
+
+   Don't forget to **save** the file.
 
 [DONE]
 [ACCORDION-END]
@@ -118,7 +122,7 @@ After the successful deployment a corresponding message toast is displayed.
 
 [ACCORDION-BEGIN [Step 7: ](Start a new workflow instance)]
 1. In the SAP Fiori launchpad, open the **Monitor Workflow - Workflow Definitions** tile.
-   Note that the version of your workflow definition has increased from "1" to "2".
+   Note that the version of your workflow definition has increased.
 2. Choose **Start New Instance**.
 3. Leave the standard JSON input as is, and choose **Start New Instance**.
 ![Start New Instance](start-new-instance.png)
@@ -132,7 +136,7 @@ After the successful deployment a corresponding message toast is displayed.
 [ACCORDION-BEGIN [Step 8: ](Open the task in My Inbox)]
 1. Go back to the Fiori launchpad homepage. The **My Inbox** tile shows one open task.
    ![Open Task in My Inbox](open-task.png)
-2. Open the inbox. The task and some header information is displayed, but no further details or actions are given.
+2. Open the inbox. The task and some header information is displayed, and the values for the Title and Price properties are shown. In addition, there are Approve and Reject actions available for this user task.
 ![Display Task in My Inbox](form-task-inbox2.png)
 
 [DONE]

@@ -3,23 +3,19 @@ title: Using a HANA Reference Element in a Smart Data Streaming project
 description: Part 4 of 9. Add a HANA Reference element and using a Join operator to combine reference and streaming data.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
+author_name: Bill Jiang
+author_profile: https://github.com/BillJiangSAP
+time: 15
 ---
-## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Filter and Output to SAP HANA Table in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part3-simplefilter-hanatable.html)
-
-## Next Steps
- - **Tutorials:** [Using an Aggregate Window in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part5-add-aggregate-window.html)
 
 ## Details
 ### You will learn  
- - Adding a HANA Reference element to the project
- - Joining event streams to SAP HANA tables in order to enrich raw event data.
- - Filtering and analyzing data based on context or historical information from HANA.
+ - How to add a HANA Reference element to the project
+ - How to join event streams to SAP HANA tables in order to enrich raw event data
+ - How to filter and analyzing data based on context or historical information from HANA
 
 
-### Time to Complete
-**15 Min**.
+
 
 ---
 
@@ -97,7 +93,3 @@ tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-h
 12. We want to join on MACHINEID. Select **MACHINEID : string** in each source column and then click **Add**. Once its been added click **OK**.
 
     ![join clause](event-streaming/12-join-clause.png)
-
-
-## Next Steps
- - **Tutorials:** [Using an Aggregate Window in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part5-add-aggregate-window.html)

@@ -1,5 +1,5 @@
 ---
-title: Configure your Microsoft account
+title: Configure Your Microsoft Account
 description: Configure your Microsoft account and create an outlook.com user.
 auto_validation: true
 primary_tag: topic>cloud
