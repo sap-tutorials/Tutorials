@@ -4,24 +4,16 @@ description: Find more information from an external API using a second method ca
 primary_tag: topic>sapui5
 auto_validation: true
 tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-web-ide ]
+author_name: Meredith Hassett
+author_profile: https://github.com/mhassett92
+time: 10
 ---
-## Prerequisites  
- - **Proficiency:**  Intermediate
- - **Tutorials:** [Add navigation with your API call](https://www.sap.com/developer/tutorials/sapui5-navigate-api.html)
-
-## Next Steps
- - This is the end of this series
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
 In this tutorial, you will a new call to another Slack API method to retrieve more data about the user who is sending the message. You will display this new data on the main view of your application.
 
 ![application with user details displayed](final.png)
-
-
-### Time to Complete
-**10 Min**.
 
 ---
 
@@ -110,8 +102,3 @@ Make sure all your changes are saved and **RUN** your application. You should no
 
 [VALIDATE_4]
 [ACCORDION-END]
-
-
-## Next Steps
- - This is the end of this series
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

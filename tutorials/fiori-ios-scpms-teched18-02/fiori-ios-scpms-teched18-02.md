@@ -90,7 +90,7 @@ The OData service structure, and how the two entities are related, are explained
 
 The generated application demonstrates the OData proxy classes are working, it enables you to browse their properties, and demonstrates push notifications and the various authentication mechanisms.
 
-Examine the OData service's metadata, which can be accessed via `https://sapdevsdd27584c4.us2.hana.ondemand.com/codejam/wwdc/services/DeliveryService.xsodata/$metadata`:
+Examine the OData service's metadata, which can be accessed via `https://sapdevsdd27584c4.us2.hana.ondemand.com/codejam/wwdc/services/DeliveryService.xsodata/$metadata`
 
 ```xml
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
@@ -144,23 +144,23 @@ Examine the OData service's metadata, which can be accessed via `https://sapdevs
 </edmx:Edmx>
 ```
 
-As you can see, it is a fairly simple data model containing two Entity Sets (or tables) called `Packages` and `DeliveryStatus`. Each entity in the set (or record) is identified as a `PackagesType` and `DeliveryStatusType`, respectively.
+As you can see, it is a fairly simple data model containing two Entity Sets (or tables) called `Packages` and `DeliveryStatus`. Each entity (or record) in the set is identified as a `PackagesType` and `DeliveryStatusType`, respectively.
 
 There is also an association between `PackagesType` and `DeliveryStatusType`, where a single `PackagesType` can have related `DeliveryStatusType`'s with a `0..n` cardinality.
 
-We will now show for each `PackageType` its related `DeliveryStatusType`s, shown in a timeline in ascending order (newest on top). The timeline will be build using **SAP Fiori for iOS controls**.
+We will now show for each `PackageType` its related `DeliveryStatusType`s, shown in a timeline in ascending order (newest on top). The timeline is built using **SAP Fiori for iOS controls**.
 
 Using the SDK's `SAPOData` framework, you can create OData queries in a simple way. Instead of executing SQL statements, the SDK provides a 'fluent interface' or 'method chaining' approach to constructing queries, which makes the code much more readable.
 
 A query to get all `DeliveryStatus` entities for a particular `Package` would look something like this:
 
 ```swift
- // Function 1
- let query = DataQuery()
-     // SELECT * FROM DeliveryStatus
-     .from(DeliveryServiceMetadata.EntitySets.deliveryStatus)
-     // WHERE DeliveryStatus.packageID == <selected package ID>
-     .where(DeliveryStatusType.packageID.equal((currentEntity?.packageID)!))
+// Function 1
+let query = DataQuery()
+// SELECT * FROM DeliveryStatus
+  .from(DeliveryServiceMetadata.EntitySets.deliveryStatus)
+// WHERE DeliveryStatus.packageID == <selected package ID>
+  .where(DeliveryStatusType.packageID.equal((currentEntity?.packageID)))
 ```
 
 The result of this query is an array of `DeliveryStatusType` objects.
@@ -168,14 +168,14 @@ The result of this query is an array of `DeliveryStatusType` objects.
 With OData, you can even have greater flexibility. Since there is a one-to-many association (or 'Navigation Link') between `Package` and `DeliveryStatus`, you could also load the `Package` object and all related child `DeliveryStatus` entities at once:
 
 ```swift
- // Function 2
- let query = DataQuery()
-     // SELECT * FROM Packages
-     .from(DeliveryServiceMetadata.EntitySets.packages)
-     // WHERE <primary key> = <selected package ID>
-     .withKey(PackagesType.key(packageID: currentEntity?.packageID))
-     // LEFT JOIN DeliveryStatus ON <abstracted, defined in association>
-     .expand(PackagesType.deliveryStatus)
+// Function 2
+let query = DataQuery()
+// SELECT * FROM Packages
+  .from(DeliveryServiceMetadata.EntitySets.packages)
+// WHERE <primary key> = <selected package ID>
+  .withKey(PackagesType.key(packageID: currentEntity?.packageID))
+// LEFT JOIN DeliveryStatus ON <abstracted, defined in association>
+  .expand(PackagesType.deliveryStatus)
 ```
 
 Using the generated OData Proxy classes, you can then simply access the `PackagesType` related `DeliveryStatusType` objects:

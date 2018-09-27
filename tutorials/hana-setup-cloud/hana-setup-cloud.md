@@ -3,10 +3,10 @@ title: How to create an SAP HANA Developer Edition in the Cloud
 description: Create an SAP HANA instance in one of the two public cloud providers, Amazon AWS or Microsoft Azure.
 primary_tag: products>sap-hana
 tags: [ products>sap-hana, products>sap-cloud-platform, tutorial>beginner ]
+time: 25
 ---
 
 ## Prerequisites  
-- **Proficiency:** Beginner
 - You will need to have an account on either Microsoft Azure or Amazon AWS
 
 ## Next Steps
@@ -20,8 +20,7 @@ This tutorial provides step by step instructions to walk you through the CAL set
 ### IMPORTANT
 Please refer to the following tutorial for instructions to set up SAP HANA, express edition on SAP Cloud Appliance Library: [https://www.sap.com/developer/tutorials/hxe-setup-aws-azure.html](https://www.sap.com/developer/tutorials/hxe-setup-aws-azure.html)
 
-### Time to Compete
-This section takes about **10 minutes** to complete, and about **10 to 25 minutes** after completion to get the Virtual Machine started.
+This tutorial takes about **10 minutes** to complete, and about **10 to 25 minutes** after completion to get the Virtual Machine started.
 
 > ### Warning
 >Both the Amazon AWS and Microsoft Azure accounts will charge you for time on those cloud systems.

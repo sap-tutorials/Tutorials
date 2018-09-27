@@ -1,23 +1,19 @@
 ---
-title: Use Fiori for Android controls to enhance your application.
+title: Use Fiori for Android Controls to Enhance Your Application.
 description: Enhance your application with the Object Cell and add a divider to cells in a list for customers.
+auto_validation: true
 primary_tag: operating-system>android
 tags: [  tutorial>beginner, operating-system>android ]
+time: 20
 ---
-
-## Prerequisites  
- - **Proficiency:** Beginner
 
 ## Details
 ### You will learn  
-  - How to enhance your Android application with Fiori for Android controls.
-
-### Time to Complete
-**20 Min**
+  - How to enhance your Android application with Fiori for Android controls
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Change the master property for the customer's screen)]
+[ACCORDION-BEGIN [Step 1: ](Change master property for customer's screen)]
 If your application is still running on your emulator then return to the entity list screen by pressing the back button twice. If you restarted your application or restarted the emulator the first screen of the app will be the entity list screen.
 
 ![Back from detail screen](back-from-detail.png)
@@ -63,7 +59,7 @@ Press **`Control+F12`** and enter **`onBindViewHolder`** to move to the `onBindV
 
 ![Find onBindViewHolder](find-onBindViewHolder.png)
 
-Comment out (Select and press Ctrl /) the following lines of code which set the `ObjectView's` headline, and detail image.
+Comment out (select and press **`Ctrl+/`**) the following lines of code which set the `ObjectView's` headline, and detail image.
 
 ![ItemListActivity](ItemListActivity.png)
 

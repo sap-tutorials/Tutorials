@@ -4,13 +4,10 @@ description: Enable navigation to a detail view by selecting a message from the 
 primary_tag: topic>sapui5
 auto_validation: true
 tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-web-ide ]
+author_name: Meredith Hassett
+author_profile: https://github.com/mhassett92
+time: 15
 ---
-## Prerequisites  
- - **Proficiency:** Intermediate
- - **Tutorials:** [Add paging to your API call](https://www.sap.com/developer/tutorials/sapui5-paging-api.html)
-
-## Next Steps
- - [Call another method in the API](https://www.sap.com/developer/tutorials/sapui5-nested-api-calls.html)
 
 ## Details
 ### You will learn  
@@ -20,9 +17,6 @@ You will add navigation to your application in this tutorial. This will enable y
 
 ![final output of detail view with nav back](detail.png)
 
-
-### Time to Complete
-**15 Min**.
 
 ---
 
@@ -277,6 +271,3 @@ Make sure all your changes are saved and **RUN** your application.
 
 [VALIDATE_9]
 [ACCORDION-END]
-
-## Next Steps
- - [Call another method in the API](https://www.sap.com/developer/tutorials/sapui5-nested-api-calls.html)

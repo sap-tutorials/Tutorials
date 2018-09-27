@@ -3,16 +3,12 @@ title: Run and Test a Project in SAP HANA Smart Data Streaming
 description: Part 7 of 9. Run and test the streaming project using Stream View, Manual Input, and Event Tracer tools.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
+author_name: Bill Jiang
+author_profile: https://github.com/BillJiangSAP
+time: 15
 ---
 ## Prerequisites  
-- **Proficiency:** Beginner
-- **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part6-alerts.html)
 - **Files:** Download the [**`machinedata.csv`**](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/sds-event-stream-playback/machinedata.csv) file, which will be use later for playback during testing.
-
-## Next Steps
-Either of the following tutorials may be done next:
-- **Tutorials:** [Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part8-patterns.html)
-- **Tutorials:** [Custom Flex Operators with Advanced CCL in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part9-flex-operators.html)
 
 ## Details
 ### You will learn  
@@ -22,8 +18,6 @@ Either of the following tutorials may be done next:
 - Using the Manual Input tool to manually generate test events and send them into your project one at a time.
 - Using the Event Tracer tool to see how an event flows through the directed graph within the project.
 
-### Time to Complete
-**15 Min**.
 
 ---
 
@@ -196,9 +190,3 @@ Find the entry that you submitted through Manual Input.
 
 
 [ACCORDION-END]
-
-
-## Next Steps
-Either of the following tutorials may be done next:
-- **Tutorials:** [Watch for Patterns of Events and Use the CCL Editor in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part8-patterns.html)
-- **Tutorials:** [Custom Flex Operators with Advanced CCL in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part9-flex-operators.html)

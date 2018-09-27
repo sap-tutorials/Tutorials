@@ -3,21 +3,18 @@ title: Create a Streaming Project in SAP HANA Smart Data Streaming
 description: Part 2 of 9. Create a SAP HANA Smart Data Streaming (SDS) project in SAP HANA Studio with streaming plug-in and visual editor.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
+author_name: Bill Jiang
+author_profile: https://github.com/BillJiangSAP
+time: 20
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Tutorials:** [Configure SAP HANA Smart Data Streaming Server Connection](https://www.sap.com/developer/tutorials/sds-part1-configure-streaming-server.html)
-
-## Next Steps
- - **Tutorials:** [Filter and Output to SAP HANA Table in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part3-simplefilter-hanatable.html)
 
 ## Details
 ### You will learn  
  - Creating a new streaming project: a project contains one or more input streams/windows and then directs the flow of data through continuous queries and/or custom operators, publishing output events via adapters.
  - Defining an input stream to receive incoming events: All incoming events enter a project via an input stream or input window. The schema of the input stream (or window) defines the fields that events on that stream will (or may) contain.
 
-### Time to Complete
-**20 Min**.
 
 ---
 
@@ -161,7 +158,3 @@ tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-h
     Note: You can just drag the shape to a new position to organize our diagram.
 
     ![drag stream](new-stream/10-drag-stream.png)
-
-
-## Next Steps
- - **Tutorials:** [Filter and Output to SAP HANA Table in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part3-simplefilter-hanatable.html)

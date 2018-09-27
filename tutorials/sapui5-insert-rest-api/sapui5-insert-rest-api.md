@@ -4,13 +4,11 @@ description: Call an external API and display the data in a table
 primary_tag: topic>sapui5
 auto_validation: true
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
+author_name: Meredith Hassett
+author_profile: https://github.com/mhassett92
+time: 20
 ---
-## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Register your App with an External API](https://www.sap.com/developer/tutorials/sapui5-register-app-api.html)
 
-## Next Steps
- - [Add paging to your API call](https://www.sap.com/developer/tutorials/sapui5-paging-api.html)
 
 ## Details
 ### You will learn  
@@ -18,8 +16,6 @@ In this tutorial, you will either create a new app or modify an existing app you
 
 ![final application image for basic API integration](slack-app.png)
 
-### Time to Complete
-**20 Min**.
 
 ---
 
@@ -269,6 +265,3 @@ $.ajax({
 
 [DONE]
 [ACCORDION-END]
-
-## Next Steps
- - [Add paging to your API call](https://www.sap.com/developer/tutorials/sapui5-paging-api.html)

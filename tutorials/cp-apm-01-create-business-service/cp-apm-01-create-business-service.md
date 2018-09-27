@@ -1,6 +1,6 @@
 ---
 title: Create a Business Service Using CDS
-description: Define a data and service model using SAP Web IDE Full-Stack and the application programming model based on Core Data Services (CDS).
+description: Define a data and service model using SAP Web IDE Full-Stack and the application programming model based on Core Data and Services (CDS).
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide ]
@@ -39,7 +39,7 @@ time: 10
 
 1. Open `db/data-model.cds` and replace the template with the following CDS definitions:
 
-    ```
+    ```java
     namespace my.bookshop;
 
     entity Books {
@@ -78,7 +78,7 @@ time: 10
 2. Choose **Rename** and change the file name to **`cat-service.cds`**.
 3. Open `cat-service.cds` and replace the template with the following CDS definitions:
 
-    ```
+    ```java
     using my.bookshop from '../db/data-model';
     service CatalogService {
       entity Books @readonly as projection on bookshop.Books;
@@ -119,3 +119,6 @@ An error message is displayed because we have not added a database yet.
 [ACCORDION-END]
 
 ---
+
+## Next Steps
+- [Add a UI to Your Business Application](https://www.sap.com/developer/tutorials/cp-apm-02-add-ui.html)

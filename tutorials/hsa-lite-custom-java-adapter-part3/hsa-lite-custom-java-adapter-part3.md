@@ -4,22 +4,21 @@ description: Walk through the steps for coding the Streaming Lite Custom Java Ad
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
+time: 15
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
 - **Tutorial:** [Set Up the Eclipse Project for Streaming Lite Custom Java Adapter](https://www.sap.com/developer/tutorials/hsa-lite-custom-java-adapter-part2.html)
 
 ## Next Steps
  - [Deploy and Test the Streaming Lite Custom Adapter](https://www.sap.com/developer/tutorials/hsa-lite-custom-java-adapter-part4.html)
 
 ## Details
-### Time to Complete
-**25 Min**
+
+The full source code for the Custom Java Adapter is available in the 'Appendix' section of this tutorial.
 
 ---
 
-> **Note:** The full source code for the Custom Java Adapter is available in the 'Appendix' section of this tutorial.
 
 [ACCORDION-BEGIN [Step 1: ](Import Statements)]
 
@@ -512,6 +511,3 @@ public class JavaAdapter {
 [ACCORDION-END]
 
 ---
-
-## Next Steps
- - [Deploy and Test the Streaming Lite Custom Adapter](https://www.sap.com/developer/tutorials/hsa-lite-custom-java-adapter-part4.html)

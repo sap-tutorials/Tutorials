@@ -4,20 +4,15 @@ description: Add your app details to the external API app key management system
 primary_tag: topic>sapui5
 auto_validation: true
 tags: [  tutorial>beginner, topic>sapui5 ]
+author_name: Meredith Hassett
+author_profile: https://github.com/mhassett92
+time: 15
 ---
-## Prerequisites  
- - **Proficiency:** Beginner
- - **Tutorials:** [Create a Destination for an External API](https://www.sap.com/developer/tutorials/sapui5-create-api-destination.html)
-
-## Next Steps
- - [Add an External API call to your app](https://www.sap.com/developer/tutorials/sapui5-insert-rest-api.html)
 
 ## Details
 ### You will learn  
 Create a developer account on the API's website. This will allow you to be able to get a developer key and track details about the API usage from your application.
 
-### Time to Complete
-**15 Min**.
 
 ---
 
@@ -146,7 +141,3 @@ Select **Create token** for you user on your development team. This will generat
 
 [VALIDATE_12]
 [ACCORDION-END]
-
-
-## Next Steps
- - [Add an External API call to your app](https://www.sap.com/developer/tutorials/sapui5-insert-rest-api.html)

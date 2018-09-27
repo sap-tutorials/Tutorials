@@ -15,7 +15,7 @@ time: 30
 
 [ACCORDION-BEGIN [Step 1: ](Execute app Custom Analytical Queries)]
 
-Go back to the SAP Fiori launchpad home, select and execute from **Query Design** > **Custom Analytical Queries**.
+Go back to the SAP Fiori launchpad home, select and execute from the group **Query Design** > **Custom Analytical Queries**.
 ![Title screen](report_aq_01.png)
 
 [DONE]
@@ -80,9 +80,9 @@ After publishing, the status will change from **Draft** to **Publish**. You will
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Display content of query)]
+[ACCORDION-BEGIN [Step 5: ](Preview content of query)]
 
-Execute from the Group Query Design the App View Browser and display the content of your query **`ZZ1_APSEMTAGSTATISTIC_XXXX`**  with the following values:
+Go back to the SAP Fiori launchpad home, select and execute from the group Query Design the App View Browser and show the content of your query **`ZZ1_APSEMTAGSTATISTIC_XXXX`**  by maintaining the fields on the **Prompts** screen with following values:
 
 |  Field Name                | Value
 |  :-------------------------| :-------------
@@ -91,6 +91,16 @@ Execute from the Group Query Design the App View Browser and display the content
 |  Fin Statement Version     | `L000`
 |  Fiscal Year               | `2018`
 |  Controlling Area          | `A000`
+
+![Content Preview one](report_aq_10_01.png)
+
+![Content Preview two](report_aq_10_02.png)
+
+![Content Preview three](report_aq_10_03.png)
+
+![Content Preview four](report_aq_10_04.png)
+
+![Content Preview fIVE](report_aq_10_05.png)
 
 [DONE]
 [ACCORDION-END]
@@ -108,7 +118,7 @@ Execute from the Group Query Design the App View Browser and display the content
 
 [ACCORDION-BEGIN [Step 7: ](Create custom key figure for report)]
 
-1. Go back to the entry point of the app Custom Analytical Queries. In the search field, enter `ZZ1_APSEMTAGSTATISTIC_XXXX`, which is the name of the view you have created previously, and then click the search button.
+1. Go back to the SAP Fiori launchpad home, select and execute from the group **Query Design** the app Custom Analytical Queries. In the search field, enter `ZZ1_APSEMTAGSTATISTIC_XXXX`, which is the name of the view you have created previously, and then click the search button.
 
     ![Custom key figure01](report_aq_12_01.png)
 
