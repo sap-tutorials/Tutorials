@@ -4,6 +4,7 @@ title: Continuous Integration (CI) Best Practices with SAP - SAP Cloud Platform 
 description: Part 4.7 - Basic CI setup with the SAP Cloud Platform SDK for iOS
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
+time: 15
 
 ---
 
