@@ -100,7 +100,7 @@ Set the return value to `6`:
 
 ```swift
 override func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-    return 6
+  return 6
 }
 ```
 Next, locate the function `tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath)`.
@@ -109,11 +109,11 @@ To display the added Table View Cell, add an extra `case` statement, just above 
 
 ```swift
 case 5:
-    let navigationLink = tableView.dequeueReusableCell(withIdentifier: "NavToShowChart",
-        for: indexPath) as UITableViewCell
-    navigationLink.textLabel?.text = "Show Waiting Time..."
-    navigationLink.textLabel?.textColor = UIColor.preferredFioriColor(forStyle: .primary1)
-    return navigationLink
+  let navigationLink = tableView.dequeueReusableCell(withIdentifier: "NavToShowChart", for: indexPath) as UITableViewCell
+  navigationLink.textLabel?.text = "Show Waiting Time..."
+  navigationLink.textLabel?.textColor = UIColor.preferredFioriColor(forStyle: .primary1)
+
+  return navigationLink
 ```
 
 [DONE]
@@ -127,18 +127,20 @@ Replace the `viewDidLoad` function with the following:
 
 ```swift
 override func viewDidLoad() {
-    super.viewDidLoad()
+  super.viewDidLoad()
 
-    title = "Waiting Time"
-    chartView.chartType = .bar
-    // chartView.numberOfGridlines = 4
-    chartView.dataSource = self
+  title = "Waiting Time"
+  chartView.chartType = .bar
 
-    summaryView.dataSource = self
-    titleText.text = "Duration"
-    status.text = "Click chart for details"
-    categoryAxisTitle.text = "Location"
-    valuesAxisTitle.text = "Waiting time in hours"
+  // chartView.numberOfGridlines = 4
+
+  chartView.dataSource = self
+  summaryView.dataSource = self
+
+  titleText.text = "Duration"
+  status.text = "Click chart for details"
+  categoryAxisTitle.text = "Location"
+  valuesAxisTitle.text = "Waiting time in hours"
 }
 ```
 
@@ -150,95 +152,86 @@ At the bottom of the file, add the following two extensions:
 
 ```swift
 extension ChartViewController: FUIChartSummaryDataSource {
+  func chartView(_ chartView: FUIChartView, summaryItemForCategory categoryIndex: Int) -> FUIChartSummaryItem? {
+    let item = FUIChartSummaryItem()
+    item.categoryIndex = categoryIndex
+    item.isPreservingTrendHeight = false
+    switch categoryIndex {
+      case -1:
+        item.isEnabled = false
+        let values: [Double] = {
+          var values: [Double] = []
+          for series in chartView.series {
+            let categoriesUpperBound = series.numberOfValues - 1
+            if let valuesInSeries = series.valuesInCategoryRange((0...categoriesUpperBound), dimension: 0) {
+              values.append(valuesInSeries.compactMap({ $0 }).reduce(0.0, +))
+            }
+          }
+          return values
+        }()
 
-    func chartView(_ chartView: FUIChartView, summaryItemForCategory categoryIndex: Int) -> FUIChartSummaryItem? {
+          let numberFormatter  = NumberFormatter()
+          numberFormatter.maximumFractionDigits = 0
+          item.valuesText = values.map { "\(numberFormatter.string(from: $0 as NSNumber)!) hours" }
+          item.title.text = "Total wait time"
 
-        let item = FUIChartSummaryItem()
-        item.categoryIndex = categoryIndex
-        item.isPreservingTrendHeight = false
-
-        switch categoryIndex {
-        case -1:
-            item.isEnabled = false
-
-            let values: [Double] = {
-                var values: [Double] = []
-                for series in chartView.series {
-                    let categoriesUpperBound = series.numberOfValues - 1
-                    if let valuesInSeries = series.valuesInCategoryRange((0...categoriesUpperBound), dimension: 0) {
-                        values.append(valuesInSeries.compactMap({ $0 }).reduce(0.0, +))
-                    }
-                }
-                return values
-            }()
-
-            let numberFormatter  = NumberFormatter()
-            numberFormatter.maximumFractionDigits = 0
-
-            item.valuesText = values.map { "\(numberFormatter.string(from: $0 as NSNumber)!) hours" }
-            item.title.text = "Total wait time"
-
-        default:
-            item.isEnabled = true
-
-            let values: [Double] = {
-                var values: [Double] = []
-                for series in chartView.series {
-                    values.append(series.valueForCategory(categoryIndex, dimension: 0)!)
-                }
-                return values
-            }()
-
-            item.valuesText = values.map { formattedTitleForDouble($0)! }
-            item.title.text = chartCategoryTitles()[categoryIndex]
-        }
-
-        return item
+      default:
+        item.isEnabled = true
+        let values: [Double] = {
+          var values: [Double] = []
+          for series in chartView.series {
+            values.append(series.valueForCategory(categoryIndex, dimension: 0)!)
+          }
+          return values
+        }()
+        item.valuesText = values.map { formattedTitleForDouble($0)! }
+        item.title.text = chartCategoryTitles()[categoryIndex]
     }
+    return item
+  }
 }
 
 extension ChartViewController: FUIChartViewDataSource {
+  // MARK: - FUIChartViewDataSource functions
 
-    // MARK: - FUIChartViewDataSource functions
-    func numberOfSeries(in: FUIChartView) -> Int {
-        return chartData().count
-    }
+  func numberOfSeries(in: FUIChartView) -> Int {
+    return chartData().count
+  }
 
-    func chartView(_ chartView: FUIChartView, numberOfValuesInSeries seriesIndex: Int) -> Int {
-        return chartData()[seriesIndex].count
-    }
+  func chartView(_ chartView: FUIChartView, numberOfValuesInSeries seriesIndex: Int) -> Int {
+    return chartData()[seriesIndex].count
+  }
 
-    func chartView(_ chartView: FUIChartView, valueForSeries seriesIndex: Int, category categoryIndex: Int, dimension dimensionIndex: Int) -> Double? {
-        return chartData()[seriesIndex][categoryIndex]
-    }
+  func chartView(_ chartView: FUIChartView, valueForSeries seriesIndex: Int, category categoryIndex: Int, dimension dimensionIndex: Int) -> Double? {
+    return chartData()[seriesIndex][categoryIndex]
+  }
 
-    func chartView(_ chartView: FUIChartView, formattedStringForValue value: Double, axis: FUIChartAxisId) -> String? {
-        return formattedTitleForDouble(value)
-    }
+  func chartView(_ chartView: FUIChartView, formattedStringForValue value: Double, axis: FUIChartAxisId) -> String? {
+    return formattedTitleForDouble(value)
+  }
 
-    func chartView(_ chartView: FUIChartView, titleForCategory categoryIndex: Int, inSeries seriesIndex: Int) -> String? {
-        return chartCategoryTitles()[categoryIndex]
-    }
+  func chartView(_ chartView: FUIChartView, titleForCategory categoryIndex: Int, inSeries seriesIndex: Int) -> String? {
+    return chartCategoryTitles()[categoryIndex]
+  }
 
-    // MARK: - helper functions for generating & formatting sample dat
+  // MARK: - helper functions for generating & formatting sample data
+  func chartSeriesTitles() -> [String] {
+    return ["Actual", "Target"]
+  }
 
-    func chartSeriesTitles() -> [String] {
-        return ["Actual", "Target"]
-    }
-    func chartCategoryTitles() -> [String] {
-        return ["Shipment picked up", "HONG-KONG", "AMSTERDAM", "LONDON-HEATHROW", "READING", "Delivered"]
-    }
+  func chartCategoryTitles() -> [String] {
+    return ["Shipment picked up", "HONG-KONG", "AMSTERDAM", "LONDON-HEATHROW", "READING", "Delivered"]
+  }
 
-    func chartData() -> [[Double]] {
-        return [[2, 42, 32, 7, 5, 1]]
-    }
+  func chartData() -> [[Double]] {
+    return [[2, 42, 32, 7, 5, 1]]
+  }
 
-    func formattedTitleForDouble(_ value: Double) -> String? {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.maximumFractionDigits = 0
-        return numberFormatter.string(from: value as NSNumber)
-    }
-
+  func formattedTitleForDouble(_ value: Double) -> String? {
+    let numberFormatter = NumberFormatter()
+    numberFormatter.maximumFractionDigits = 0
+    return numberFormatter.string(from: value as NSNumber)
+  }
 }
 ```
 

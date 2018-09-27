@@ -33,7 +33,7 @@ This step provides simplified steps to configure the SAP Cloud Platform SDK for 
 
 Log on to your SAP Cloud Platform trial account at [https://account.hanatrial.ondemand.com/](https://account.hanatrial.ondemand.com/) and once logged in, navigate to **Services**. Scroll down to **Mobile Services** and click on the **Development & Operations** tile. In the **Development & Operations - Overview** page, click the **Go to Service** link to open a new window to **SAP Cloud Platform mobile service for development and operations**.
 
-> Alternatively, you can go directly to `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/`.
+> Alternatively, you can go directly to `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/`
 
 ![SCPms landing page](fiori-ios-scpms-create-app-teched18-part1-01.png)
 
@@ -83,7 +83,7 @@ Double-click the **SAP Cloud Platform SDK for iOS Assistant** icon to start the 
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3: ](Create new application)]
+[ACCORDION-BEGIN [Step 3: ](Create a new application)]
 
 Click the **Create new** button in the **First Steps** section. The first page of the Xcode project generation wizard lets you define the project properties.
 
@@ -111,7 +111,7 @@ Click **Next** to advance to the **Destinations** step.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create new destination)]
+[ACCORDION-BEGIN [Step 4: ](Create a new destination)]
 
 In the **Destinations** page, you can define the backend connection. Here you will add the OData endpoint for the `DeliveryService` OData service.
 
@@ -154,9 +154,9 @@ Make sure the checkboxes **Enable Log Upload**, **Enable Remote Notifications** 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Set up Xcode project)]
+[ACCORDION-BEGIN [Step 6: ](Set up Xcode Project)]
 
-In the **Xcode Project configuration** page you will setup your actual Xcode Project for development later on.
+In the **Xcode Project configuration** page you will setup your actual Xcode project for development later on.
 Enter the following details:
 
 | Field | Value |
@@ -172,7 +172,7 @@ Click **Next** to advance to the **Proxy Classes** step. Here you can see what d
 
 ![Project Properties](fiori-ios-scpms-create-app-teched18-part1-15a.png)
 
-Click **Next** to go to the **UI Configuration** step. Set the Destination radio button to **Master / Detail View with Onboarding for destination:** and click finish.
+Click **Next** to go to the **UI Configuration** step. Set the **Destination** radio button to **Master / Detail View with Onboarding for destination:** and click finish.
 
 ![Project Properties](fiori-ios-scpms-create-app-teched18-part1-15b.png)
 
@@ -181,7 +181,7 @@ Click **Next** to go to the **UI Configuration** step. Set the Destination radio
 
 [ACCORDION-BEGIN [Step 7: ](Generate the Xcode project)]
 
-After you have clicked **Finish** in the previous step, the SDK Assistant now loads the OData service's metadata. This metadata describes the data model, and can be accessed via `<service URL>$metadata`. For your service, the metadata URL would be `https://sapdevsdd27584c4.us2.hana.ondemand.com/codejam/wwdc/services/DeliveryService.xsodata/$metadata`
+After you have clicked **Finish** in the previous step, the SDK Assistant now loads the OData service's metadata. This metadata describes the data model, and can be accessed via `<service URL>$metadata`. For your service, the metadata URL is `https://sapdevsdd27584c4.us2.hana.ondemand.com/codejam/wwdc/services/DeliveryService.xsodata/$metadata`
 Based on this metadata, the OData proxy classes will be generated for the Xcode project.
 
 In addition, the configuration settings you have provided in the SDK Assistant are now being sent to SAP Cloud Platform mobile service for development and operations.

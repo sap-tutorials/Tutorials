@@ -37,16 +37,13 @@ DataQuery().orderBy(DeliveryStatusType.deliveryTimestamp, SortOrder.descending)
 ...so the code with the function call looks like this:
 
 ```swift
-self.deliveryService.loadProperty(PackagesType.deliveryStatus,
-                                  into: self.entity,
-                                  query: DataQuery().orderBy(DeliveryStatusType.deliveryTimestamp,
-                                                             SortOrder.descending)) { error in
-    self.hideFioriLoadingIndicator()
-    if let error = error {
-        completionHandler(nil, error)
-        return
-    }
-    completionHandler(self.entity.deliveryStatus, nil)
+self.deliveryService.loadProperty(PackagesType.deliveryStatus, into: self.entity, query: DataQuery().orderBy(DeliveryStatusType.deliveryTimestamp, SortOrder.descending)) { error in
+  self.hideFioriLoadingIndicator()
+  if let error = error {
+    completionHandler(nil, error)
+    return
+  }
+  completionHandler(self.entity.deliveryStatus, nil)
 }
 ```
 
@@ -105,7 +102,7 @@ Locate the line `self.tableView.estimatedRowHeight = 98` and remove it.
 In place of the just removed line of code, add the following:
 
 ```swift
-self.tableView.register(FUITimelineCell.self, forCellReuseIdentifier: "FUITimelineCell")
+self.tableView.register(FUITimelineCell.self, forCellReuseIdentifier:"FUITimelineCell")
 self.tableView.register(FUITimelineMarkerCell.self, forCellReuseIdentifier: "FUITimelineMarkerCell")
 self.tableView.estimatedRowHeight = 44
 self.tableView.backgroundColor = UIColor.preferredFioriColor(forStyle: .backgroundBase)
@@ -125,13 +122,12 @@ Replace it with the following:
 
 ```swift
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let deliverystatustype = self.entities[indexPath.row]
-    if deliverystatustype.selectable != 0 {
-        return self.getFUITimelineCell(deliverystatustype: deliverystatustype, indexPath: indexPath)
-    }
-    else {
-        return self.getFUITimelineMarkerCell(deliverystatustype: deliverystatustype, indexPath: indexPath)
-    }
+  let deliverystatustype = self.entities[indexPath.row]
+  if deliverystatustype.selectable != 0 {
+    return self.getFUITimelineCell(deliverystatustype: deliverystatustype, indexPath: indexPath)
+  } else {
+    return self.getFUITimelineMarkerCell(deliverystatustype: deliverystatustype, indexPath: indexPath)
+  }
 }
 
 ```
@@ -140,50 +136,50 @@ Finally, add the following functions:
 
 ```swift
 private func getFUITimelineMarkerCell(deliverystatustype: DeliveryStatusType, indexPath: IndexPath) -> UITableViewCell {
+  let cell = tableView.dequeueReusableCell(withIdentifier: "FUITimelineMarkerCell", for: indexPath)
+  guard let timelineCell = cell as? FUITimelineMarkerCell else {
+    return cell
+  }
+  
+  timelineCell.nodeImage = self.getNodeImage(statusType: deliverystatustype.statusType!)
+  timelineCell.showLeadingTimeline = indexPath.row == 0 ? false : true
+  timelineCell.showTrailingTimeline = indexPath.row == self.entities.count - 1 ? false : true
+  timelineCell.eventText = self.getFormattedDateTime(timestamp: deliverystatustype.deliveryTimestamp!)
+  timelineCell.titleText = deliverystatustype.status
 
-    let cell = tableView.dequeueReusableCell(withIdentifier: "FUITimelineMarkerCell", for: indexPath)
-    guard let timelineCell = cell as? FUITimelineMarkerCell else {
-        return cell
-    }
-    timelineCell.nodeImage = self.getNodeImage(statusType: deliverystatustype.statusType!)
-    timelineCell.showLeadingTimeline = indexPath.row == 0 ? false : true
-    timelineCell.showTrailingTimeline = indexPath.row == self.entities.count - 1 ? false : true
-    timelineCell.eventText = self.getFormattedDateTime(timestamp: deliverystatustype.deliveryTimestamp!)
-    timelineCell.titleText = deliverystatustype.status
-
-    return timelineCell
+  return timelineCell
 }
 
 private func getFUITimelineCell(deliverystatustype: DeliveryStatusType, indexPath: IndexPath) -> UITableViewCell {
+  let cell = tableView.dequeueReusableCell(withIdentifier: "FUITimelineCell", for: indexPath)
+  guard let timelineCell = cell as? FUITimelineCell else {
+    return cell
+  }
 
-    let cell = tableView.dequeueReusableCell(withIdentifier: "FUITimelineCell", for: indexPath)
-    guard let timelineCell = cell as? FUITimelineCell else {
-        return cell
-    }
-    timelineCell.nodeImage = self.getNodeImage(statusType: deliverystatustype.statusType!)
-    timelineCell.eventText = self.getFormattedDateTime(timestamp: deliverystatustype.deliveryTimestamp!)
-    timelineCell.headlineText = deliverystatustype.status
-    timelineCell.subheadlineText = deliverystatustype.location
+  timelineCell.nodeImage = self.getNodeImage(statusType: deliverystatustype.statusType!)
+  timelineCell.eventText = self.getFormattedDateTime(timestamp: deliverystatustype.deliveryTimestamp!)
+  timelineCell.headlineText = deliverystatustype.status
+  timelineCell.subheadlineText = deliverystatustype.location
 
-    return timelineCell
+  return timelineCell
 }
 
 private func getFormattedDateTime(timestamp: LocalDateTime) -> String {
-    let formatter = DateFormatter()
-    formatter.dateFormat = "MM/dd HH:mm"
+  let formatter = DateFormatter()
+  formatter.dateFormat = "MM/dd HH:mm"
 
-    return formatter.string(from: timestamp.utc())
+  return formatter.string(from: timestamp.utc())
 }
 
 private func getNodeImage(statusType: String) -> UIImage {
-    switch statusType {
+  switch statusType {
     case "start"    : return FUITimelineNode.start
     case "inactive" : return FUITimelineNode.inactive
     case "complete" : return FUITimelineNode.complete
     case "earlyEnd" : return FUITimelineNode.earlyEnd
     case "end"      : return FUITimelineNode.end
     default         : return FUITimelineNode.open
-    }
+  }
 }
 ```
 
@@ -203,9 +199,7 @@ Since you're not interested in displaying the whole collection of `DeliveryStatu
 Open file `./MyDeliveries/Model/CollectionType.swift` and change the constant `all` to only return packages:
 
 ```swift
-static let all = [
-    packages
-]
+static let all = [ packages ]
 ```
 
 [DONE]
