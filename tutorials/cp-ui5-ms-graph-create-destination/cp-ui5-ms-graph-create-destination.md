@@ -1,5 +1,5 @@
 ---
-title: Create a OData Destination
+title: Create an OData Destination
 description: Create a new destination in the SAP Cloud Platform Neo environment for a purchase order OData service.
 auto_validation: true
 primary_tag: products>sap-cloud-platform

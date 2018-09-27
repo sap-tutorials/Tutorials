@@ -12,7 +12,7 @@ time: 10
 - How workflows can take different paths through their flow via gateways
 - How to specify the conditions that influence an exclusive gateway decision
 
-This tutorial follows on from [Add a user task and generic UI to your workflow definition]. As the workflow from this previous tutorial stands, there is a single flow from end to end, which looks like this:
+This tutorial follows on from [Add a user task and generic UI to your workflow definition](https://www.sap.com/developer/tutorials/cp-wf-02-add-user-task.html). As the workflow from this previous tutorial stands, there is a single flow from end to end, which looks like this:
 
 ![single flow workflow definition](single-flow.png)
 
@@ -218,7 +218,7 @@ Don't forget to save it!
 
 [ACCORDION-BEGIN [Step 6: ](Test the new flow)]
 
-Deploy the updated workflow definition in the same way as you did in [Add a User Task and Generic UI to Your Workflow] -- in other words by using the context menu on the workflow definition file **`processorder.workflow`** and choosing **Deploy** > **Deploy to SAP Cloud Platform Workflow**.
+Deploy the updated workflow definition in the same way as you did in [Add a User Task and Generic UI to Your Workflow](https://www.sap.com/developer/tutorials/cp-wf-02-add-user-task.html) -- in other words by using the context menu on the workflow definition file **`processorder.workflow`** and choosing **Deploy** > **Deploy to SAP Cloud Platform Workflow**.
 
 Switch to your launchpad site and start the **Monitor Workflow - Workflow Definitions** app.
 

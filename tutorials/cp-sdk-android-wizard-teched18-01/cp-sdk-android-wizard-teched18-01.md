@@ -9,7 +9,7 @@ time: 15
 
 ## Details
 ### You will learn  
-  - How to create an Android app using the Android Studio integrated SAP Wizard
+  - How to create an Android app using the Android Studio integrated SAP wizard
 
 ---
 

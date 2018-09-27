@@ -15,16 +15,21 @@ time: 15
 
 [ACCORDION-BEGIN [Step 1: ](Log into SAP Fiori launchpad)]
 First you need to log into the SAP Fiori launchpad.
-Click this link in your browser: [ Link will be available soon]
+1. Double clicks on the **Remote Desktop icon** on the taskbar of your windows desktop.
+
+    ![Fiori Launchpad login preparation](kut_search_01_01.png)
+
+2. The Remote Desktop Connection gets open and you are redirected to the SAP FIORI Launchpad.
 
 You should see this page:
 
-![Fiori Launchpad login screen](kut_search_01.png)
+    ![Fiori Launchpad login preparation continue](kut_search_01_02.png)
 
-Log on with your user and password
+3. Login now with your user and password
 
-> Your user is your desktop number. Your password will be given to you by your instructor.
+> Your user is `S4HANAPUT-XX` where **XX** is your desktop number. Your password will be given to you by your instructors.
 
+[DONE]
 [ACCORDION-END]
 
 

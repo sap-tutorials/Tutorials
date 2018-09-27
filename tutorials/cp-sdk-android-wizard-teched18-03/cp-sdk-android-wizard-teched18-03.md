@@ -1,6 +1,6 @@
 ---
 title: Add Notification Service to Your Application
-description: Add foreground and background notifications to your application with help of Google Firebase. 
+description: Add foreground and background notifications to your application with help of Google Firebase.
 auto_validation: true
 primary_tag: operating-system>android
 tags: [  tutorial>beginner, operating-system>android ]

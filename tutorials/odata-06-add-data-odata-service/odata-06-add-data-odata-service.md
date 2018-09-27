@@ -120,7 +120,7 @@ In the **Raw Data** tab of the data editor, use the **+** button to add new rows
 
 ![adding rows](adding-rows.png)
 
-Fill in your own values, or use the Northwind `Products` data that you looked at in [Define a Simple Data Model and OData Service with CDS], via this URL:
+Fill in your own values, or use the Northwind `Products` data that you looked at in [Define a Simple Data Model and OData Service with CDS](https://www.sap.com/developer/tutorials/odata-05-data-model-service.html), via this URL:
 
 <https://services.odata.org/V3/Northwind/Northwind.svc/Products?$format=json&$select=ProductID,ProductName,UnitsInStock>
 

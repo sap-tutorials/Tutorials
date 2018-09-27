@@ -37,67 +37,45 @@ If you don't have an instance up and running, be aware that you don't need to co
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Setup the XS CLI API endpoint and login)]
+[ACCORDION-BEGIN [Step 1: ](Login with XS CLI)]
 
 In order to complete the next steps, you will be using the XS CLI client which is locally installed with your SAP HANA 2.0, express edition instance.
 
 Therefore, you can run these commands directly from the server using a SSH client like `PuTTY` for example.
 
-If you running the commands remotely using `PuTTY`, make sure to switch to the `hxeadm` user:
+First, make sure to switch to the `hxeadm` user:
 
 ```shell
 sudo su - hxeadm
 ```
 
-> ### **Note:** You may prefer to run XS CLI commands remotely (from your local desktop for example). To do so, you can complete the [XS CLI Client installation](https://www.sap.com/developer/tutorials/hxe-ua-install-xs-xli-client.html)
+> ### **Note:** You may prefer to run XS CLI commands from your local desktop for example. To do so, you can complete the [XS CLI Client installation](https://www.sap.com/developer/tutorials/hxe-ua-install-xs-xli-client.html)
 
-Execute the following series of XS CLI commands.
+Execute the following XS CLI command.
 
 #### Set the API endpoint:
 
 ```shell
-xs api https://hxehost:39030
+xs login -a https://hxehost:39030 -o HANAExpress -s SAP -u XSA_ADMIN --cacert /hana/shared/HXE/xs/controller_data/controller/ssl-pub/router/default.root.crt.pem
 ```
+
+You will be prompted for the ***`XSA_ADMIN`*** password (which is initially set to the master password during the first boot initialization).
 
 > ### **Note:** if you receive the following error when executing the previous command:
 >&nbsp;
 ```
 FAILED: SSL connection error (supposedly untrusted connection, check the certificates)
 ```
->As describe in the [XS CLI Client installation](https://www.sap.com/developer/tutorials/hxe-ua-install-xs-xli-client.html) tutorial, you will need to use the SSL certificate with the **`cacert`** command switch, and issue a command like this instead:
->&nbsp;
-```shell
-xs api https://hxehost:39030 -cacert <path>/default.root.crt.pem
-```
-Where the default path for the certificate on the server is:
+>This probably mean that your `default.root.crt.pem` is not located in:
 >
- - `/hana/shared/HXE/xs/controller_data/controller/ssl-pub/router`
+ - `/hana/shared/HXE/xs/controller_data/controller/ssl-pub/router/default.root.crt.pem`
 >
-
-#### Login to your organization and space:
-
-```shell
-xs login -o HANAExpress -s SAP -u XSA_ADMIN
-```
-
-> ### **Note:**
->You will be prompted for the ***`XSA_ADMIN`*** password (which is initially set to the master password during the first boot initialization).
->&nbsp;
->You can get the list of organizations using the following command:
-&nbsp;
-```shell
-xs orgs
-```
-> and the list of spaces using:
-&nbsp;
-```shell
-xs spaces
-```
+>Locate the file and use the relevant path.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Rescale processes)]
+[ACCORDION-BEGIN [Step 3: ](Stop & Rescale processes)]
 
 If your environment is limited in term of memory resources and in order to ensure a smooth experience, you can execute the following commands to stop certain services, rescale the memory used by some processes and run the memory collector.
 
@@ -110,7 +88,7 @@ xs stop sap-portal-static-resources
 xs stop cockpit-telemetry-svc
 ```
 
-#### Stop services:
+#### Rescale services:
 
 The following services can be scaled up to ensure a better user experience during this tutorial series.
 
@@ -237,9 +215,9 @@ Once logged in, you will get access to the SAP HANA XS Advanced Cockpit:
 
 [ACCORDION-BEGIN [Step 1: ](Update the XSA tenant configuration)]
 
-By default, the *SYSTEMDB* will be used when deploying or running your XSA application using HDI containers.
+By default, the ***SYSTEMDB*** will be used when deploying or running your XSA application using HDI containers.
 
-However, in order to leverage the SAP HANA AFL libraries, you will need to enable the *Script Server*, which is not possible on the *SYSTEMDB*.
+However, in order to leverage the SAP HANA AFL libraries, you will need to enable the *Script Server*, which is not possible on the ***SYSTEMDB***.
 
 Therefore, you will need to map the HXE tenant to your development space.
 
@@ -253,7 +231,7 @@ As you can notice, by default, the HXE tenant is not enabled for XSA and is not 
 
 Click on the **Enable** icon ![SAP HANA XS Advanced Cockpit](00-xsa-tenant-enable.png) for the **HXE** tenant.
 
-Provide the SYSTEM user credentials for the HXE tenant ( ***Tenant Database*** ) and the SYSTEMDB ( ***Physical Database*** ).
+Provide the ***SYSTEM*** user credentials for the HXE tenant (in the ***Tenant Database*** section) and the SYSTEMDB (in the ***Physical Database*** section).
 
 ![SAP HANA XS Advanced Cockpit](05-03.png)
 

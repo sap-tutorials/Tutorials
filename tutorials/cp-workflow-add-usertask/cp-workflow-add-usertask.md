@@ -76,21 +76,16 @@ You now see the apps on your SAP Fiori launchpad homepage.
 4. Switch to the **Details** tab.
 5. Under **Display Texts**, define the task subject, that is, the text that the user sees in his or her inbox.
    To show the book name, use an expression that references a field from the sample JSON structure. For more information about using expressions, see [Expressions](https://help.sap.com/viewer/f85276c5069a429fa37d1cd352785c25/Cloud/en-US/9f91b1c0fac3414d9cba1015dea381f1.html).
-   In the **Subject** field, enter `Approve ${context.product}`.
+   In the **Subject** field, enter **`Approve ${context.product}`**.
 ![Add Subject](add-subject.png)
 6. Under **Recipients**, define who will receive the task. Enter your user ID exactly as displayed in the user info.
     > The field is case sensitive.
 
-7. Under **User Interface**, enter dummy entries ('test') for the application and component names of the SAPUI component, which displays the task in the inbox.
+7. Under **User Interface**, enter dummy entries (**`test`**) for the application and component names of the SAPUI component, which displays the task in the inbox.
 ![Add User Interface](add-user-interface.png)
 8. Make sure that no element of the workflow is selected.
 ![Deselect All](deselect-elements.png)
-9. Save and deploy the workflow again.
-    To deploy your workflow:
-
-    <ol type="a"><li>Select the workflow file in the workspace.
-    </li><li>Second line
-    </li><li>Open the context menu and select **Deploy** | **Deploy to SAP Cloud Platform Workflow**.</li></ol>
+9. **Save** the workflow, and re-deploy it by selecting the workflow file in the workspace and using the context menu item **Deploy** | **Deploy to SAP Cloud Platform Workflow**.
 
 [DONE]
 [ACCORDION-END]

@@ -65,7 +65,7 @@ Replace the placeholder (`<YOUR APP ID>`) with the id you saved in the previous 
 
 This file contains constants you need later in this tutorial.
 
-> The optional `eslint` comments in the first two lines prevent that the SAP Web IDE will show neglectable warnings.
+> The optional `eslint` comments in the first two lines prevent SAP Web IDE from showing ignorable warnings.
 
 [DONE]
 [ACCORDION-END]

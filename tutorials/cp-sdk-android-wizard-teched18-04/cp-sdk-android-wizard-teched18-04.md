@@ -1,6 +1,6 @@
 ---
-title: Enable Offline OData in your Android Application
-description: You will learn how to enable Offline OData in your Android application.
+title: Enable Offline OData in Your Android Application
+description: Enable Offline OData in your Android application.
 auto_validation: true
 primary_tag: operating-system>android
 tags: [  tutorial>beginner, operating-system>android ]

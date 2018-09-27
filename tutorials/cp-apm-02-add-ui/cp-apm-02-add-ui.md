@@ -16,20 +16,7 @@ time: 10
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Compile OData models)]
-
-1. In your workspace, right-click **bookshop**, your project root folder.
-2. Choose **Build** | **Build CDS**
-
-    ![Build CDS](build-cds.png)
-
-The EDMX artifacts are generated and stored in `CatalogService.xml`.
-
-[VALIDATE_2]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Add an HTML5 template)]
+[ACCORDION-BEGIN [Step 1: ](Add an HTML5 template)]
 
 1. Right-click the **bookshop** folder and choose **New | HTML5 Module**
 2. Choose **List Report Application**.
@@ -61,7 +48,7 @@ This binds the application UI to the `Books` entity set.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Test-run the UI)]
+[ACCORDION-BEGIN [Step 2: ](Test-run the UI)]
 
 1. Right-click the **app** module and choose **Run | Run As | Web Application**.
 2. Choose **`flpSandbox.html`**.
@@ -72,19 +59,19 @@ This binds the application UI to the `Books` entity set.
 
     |  Field Name                  | Description
     |  :-------------------------  | :--------------------------------------------------------------------------
-    |  Neo Environment User ID     | The ID of your global subaccount that contains your Neo environment
-    |  Neo Environment Password    | The password of your global subaccount that contains your Neo environment
+    |  Neo Environment User ID     | The ID of your subaccount that contains your Neo environment
+    |  Neo Environment Password    | The password of your subaccount that contains your Neo environment
 4. Choose **Create**.
 The SAP Fiori `launchpad` opens.
 
-    >It might take a minute or two for the SAP Fiori `launchpad` to open.
+    >It might take a few seconds for the SAP Fiori `launchpad` to open.
 
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Open your app)]
+[ACCORDION-BEGIN [Step 3: ](Open your app)]
 
 1. Select your app to see a preview of the UI application.
 This might take a few seconds, but once it opens, you will see a table without columns, because UI annotations have not been defined.
@@ -92,13 +79,16 @@ This might take a few seconds, but once it opens, you will see a table without c
 
     ![Choose Settings](settings-books-app.png)
 3. Choose **Go**.
+
+    >You may see an error, because we have not added any data yet. In this case, choose **Cancel** and continue with the next step.
+
 The empty columns are displayed.
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Edit the run configurations)]
+[ACCORDION-BEGIN [Step 4: ](Edit the run configurations)]
 
 1. Right-click the **app** module and choose **Run | Run Configurations**.
 2. Choose **`Run flpSandbox.html`** and check the **Run with mock data** option.
@@ -111,19 +101,19 @@ The empty columns are displayed.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 6: ](Re-open your app)]
+[ACCORDION-BEGIN [Step 5: ](Re-open your app)]
 
 1. Open the app from the SAP Fiori Launchpad and choose **Settings** to add the columns you want to see.
 2. Choose **OK**.
 3. Choose **Go**.
 
-The columns are displayed with mock data
+The columns are displayed with mock data.
 
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 7: ](Add an annotation file)]
+[ACCORDION-BEGIN [Step 6: ](Add an annotation file)]
 
 1. Go to `app/webapp`, right-click the **`localService`** folder and choose **New  Annotation File**
 2. Leave the default values and follow the wizard.
@@ -132,11 +122,14 @@ The columns are displayed with mock data
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Add UI annotations)]
+[ACCORDION-BEGIN [Step 7: ](Add UI annotations)]
 
-1. Go to `app/webapp/localService` and right-click on the file you just created to use the context menu, selecting **Open Annotation Modeler**.
+1. Go to `app/webapp/localService`, right-click on the file you just created and choose **Open Annotation Modeler**.
 2. Expand the **Books** entity.
-The **Local Annotations** entry includes the annotation file you have just created.
+
+    > If you don't see any entities listed, use the **Select Targets** button to search for and select the **Books** entity type.
+
+    The **Local Annotations** entry includes the annotation file you have just created.
 3. Go to the **Actions** column and choose **`Add subnodes`**.
 
     ![Add subnodes](adding-annotations-1.png)
