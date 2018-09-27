@@ -4,6 +4,8 @@ description: Create a destination in SAP Cloud Platform to connect with an exter
 primary_tag: topic>sapui5
 auto_validation: true
 tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform ]
+author_name: Meredith Hassett
+author_profile: https://github.com/mhassett92
 time: 10
 ---
 

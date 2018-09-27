@@ -3,6 +3,8 @@ title: Create a Streaming Project with SAP HANA Streaming Analytics
 description: Create a SAP HANA Streaming Analytics project using the streaming plug-in for Eclipse.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
+author_name: Jeff Wooten
+author_profile: https://github.com/jdwoot
 time: 20
 ---
 

@@ -3,6 +3,8 @@ title: Configure SAP HANA Smart Data Streaming Server Connection
 description: Part 1 of 9. Configure SAP HANA streaming connection and add SAP HANA data service in SAP HANA Studio.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
+author_name: Bill Jiang
+author_profile: https://github.com/BillJiangSAP
 time: 20
 ---
 ## Prerequisites  

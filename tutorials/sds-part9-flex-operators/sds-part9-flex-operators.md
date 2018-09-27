@@ -3,6 +3,8 @@ title: Custom Flex Operators with Advanced CCL in SAP HANA Smart Data Streaming
 description: Part 9 of 9. Use flex operator for status reports. Advanced CCL techniques.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
+author_name: Bill Jiang
+author_profile: https://github.com/BillJiangSAP
 time: 20
 ---
 

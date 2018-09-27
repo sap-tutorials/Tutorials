@@ -4,6 +4,8 @@ description: Add your app details to the external API app key management system
 primary_tag: topic>sapui5
 auto_validation: true
 tags: [  tutorial>beginner, topic>sapui5 ]
+author_name: Meredith Hassett
+author_profile: https://github.com/mhassett92
 time: 15
 ---
 

@@ -3,6 +3,8 @@ title: Filter and Output to SAP HANA Table in SAP HANA Smart Data Streaming
 description: Part 3 of 9. Add a filter and output the desired events to a SAP HANA Table through SAP HANA Output adapter.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
+author_name: Bill Jiang
+author_profile: https://github.com/BillJiangSAP
 time: 15
 ---
 

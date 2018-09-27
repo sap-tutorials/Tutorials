@@ -4,6 +4,8 @@ description: Limit the page size of your API call and introduce paging to enhanc
 primary_tag: topic>sapui5
 auto_validation: true
 tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-web-ide ]
+author_name: Meredith Hassett
+author_profile: https://github.com/mhassett92
 time: 20
 ---
 

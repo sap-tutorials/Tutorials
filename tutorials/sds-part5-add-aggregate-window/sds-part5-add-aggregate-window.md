@@ -3,6 +3,8 @@ title: Using an Aggregate Window in SAP HANA Smart Data Streaming
 description: Part 5 of 9. Add an aggregate window to hold data for pattern observation and trend monitoring.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
+author_name: Bill Jiang
+author_profile: https://github.com/BillJiangSAP
 time: 20
 ---
 ## Prerequisites  

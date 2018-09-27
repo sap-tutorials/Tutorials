@@ -3,6 +3,8 @@ title: Run and Test a Project in SAP HANA Smart Data Streaming
 description: Part 7 of 9. Run and test the streaming project using Stream View, Manual Input, and Event Tracer tools.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
+author_name: Bill Jiang
+author_profile: https://github.com/BillJiangSAP
 time: 15
 ---
 ## Prerequisites  

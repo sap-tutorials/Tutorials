@@ -4,6 +4,8 @@ description: Call an external API and display the data in a table
 primary_tag: topic>sapui5
 auto_validation: true
 tags: [  tutorial>beginner, topic>html5, topic>sapui5, products>sap-cloud-platform, products>sap-web-ide ]
+author_name: Meredith Hassett
+author_profile: https://github.com/mhassett92
 time: 20
 ---
 
