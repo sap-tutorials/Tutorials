@@ -4,13 +4,8 @@ description: Limit the page size of your API call and introduce paging to enhanc
 primary_tag: topic>sapui5
 auto_validation: true
 tags: [  tutorial>intermediate, topic>html5, topic>sapui5, products>sap-web-ide ]
+time: 20
 ---
-## Prerequisites  
- - **Proficiency:** Intermediate
- - **Tutorials:** [Add an API call to your app](https://www.sap.com/developer/tutorials/sapui5-insert-rest-api.html)
-
-## Next Steps
- - [Add navigation with your API call](https://www.sap.com/developer/tutorials/sapui5-navigate-api.html)
 
 ## Details
 ### You will learn  
@@ -18,9 +13,6 @@ All APIs handle paging a little differently. In this tutorial, you will learn ho
 
 ![application with Next button enabled](next-button.png)
 
-
-### Time to Complete
-**20 Min**.
 
 ---
 
@@ -260,7 +252,3 @@ Copy and paste the URL of your application in the text box below.
 
 [VALIDATE_9]
 [ACCORDION-END]
-
-
-## Next Steps
- - [Add navigation with your API call](https://www.sap.com/developer/tutorials/sapui5-navigate-api.html)

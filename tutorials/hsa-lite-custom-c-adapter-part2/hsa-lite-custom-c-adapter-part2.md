@@ -3,10 +3,10 @@ title: Code Custom C/C++ Adapter for Freezer Monitoring Lite
 auto_validation: true
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition ]
+time: 30
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Tutorial:** [Introduction to Custom C/C++ Adapters for Freezer Monitoring Lite](https://www.sap.com/developer/tutorials/hsa-lite-custom-c-adapter-part1.html)
 
 ## Next Steps
@@ -14,10 +14,7 @@ tags: [  tutorial>intermediate, topic>internet-of-things, products>sap-hana-stre
 
 ## Details
 
-### Time to Complete
-**30 Min**
-
-> **Note:** The full source for `custom_c_adapter.cpp` is available in the **Appendix** section of this tutorial.
+The full source for `custom_c_adapter.cpp` is available in the **Appendix** section of this tutorial.
 
 ---
 

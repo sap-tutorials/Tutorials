@@ -3,21 +3,18 @@ title: Using an Aggregate Window in SAP HANA Smart Data Streaming
 description: Part 5 of 9. Add an aggregate window to hold data for pattern observation and trend monitoring.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
+time: 20
 ---
 ## Prerequisites  
  - **Proficiency:** Beginner
  - **Tutorials:** [Using a HANA Reference Element in a Smart Data Streaming project](https://www.sap.com/developer/tutorials/sds-part4-hana-table-event-streaming.html)
 
-## Next Steps
- - **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part6-alerts.html)
-
 ## Details
 ### You will learn  
- - Adding aggregate window to hold multiple data entry and observe patterns.
- - Using time-based sliding event window to compute metrics and monitor trends.
+ - How to add aggregate window to hold multiple data entry and observe patterns
+ - How to use time-based sliding event window to compute metrics and monitor trends
 
-### Time to Complete
-**20 Min**.
+
 
 ---
 
@@ -112,7 +109,3 @@ tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-h
 22. Edit this expression to compute an average. Also, since the value field is a string, before we can compute an average, we need to convert it to a number. Change the expression to: `avg(to_decimal(DEVICE_EVENTS.EVENT_VALUE, 4, 2))`. Confirm your entry by pressing **Enter**.
 
     ![average event value](22-avgeventvalue.png)
-
-
-## Next Steps
- - **Tutorials:** [Generating Alerts Using a Derived Window in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part6-alerts.html)

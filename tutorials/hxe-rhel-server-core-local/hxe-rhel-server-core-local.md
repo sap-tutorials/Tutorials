@@ -3,24 +3,21 @@ title: Install SAP HANA 2.0, express edition on Red Hat Enterprise Linux (Server
 description: Learn how to prepare your Red Hat Enterprise Linux system to install and test SAP HANA, express edition
 primary_tag: products>sap-hana\,-express-edition  
 tags: [  tutorial>intermediate, products>sap-hana\,-express-edition]
+time: 90
 ---
 
-### You will learn
-In this tutorial, you will install the dependencies needed and configure your Red Hat Enterprise Linux system for the setup and execution of SAP HANA, express edition.
 
-Then you will learn how to download the binary installer archives of SAP HANA 2.0, express edition, decompress and install it on your server, including some additional packages for your SAP HANA 2.0, express edition installation.
+## Details
+### You will learn
+  - How to install the dependencies needed and configure your Red Hat Enterprise Linux system for the setup and execution of SAP HANA, express edition
+  - How to download the binary installer archives of SAP HANA 2.0, express edition, decompress and install it on your server, including some additional packages for your SAP HANA 2.0, express edition installation
 
 For troubleshooting information, see [SAP HANA, express edition Troubleshooting](https://www.sap.com/developer/tutorials/hxe-ua-troubleshooting.html).
 
-> ### **Note:**
->**This tutorial was build and tested using SAP HANA, express edition 2.0 SPS02 revision 21 and Red Hat Enterprise Linux 7.2 for `x86-64` as VMware Virtual Machine**.
+> This tutorial was build and tested using SAP HANA, express edition 2.0 SPS02 revision 21 and Red Hat Enterprise Linux 7.2 for `x86-64` as VMware Virtual Machine.
 
-&nbsp;
 
-## Details
-
-### Time to Complete
-**90 Min**
+---
 
 [ACCORDION-BEGIN [Step 1: ](Verify your Machine Requirements)]
 
@@ -1086,7 +1083,7 @@ HTTP                     | 8000    | <nobr>8000 - 8099</nobr>   | 80&lt;NN&gt;  
 `statisticsserver`       | 30017   | <nobr>30017 - 39917</nobr> | 3&lt;NN&gt;17     | Applicable when run as a separate service (default is embedded).
 HTTP(S)                  | 30030   | <nobr>30030 - 39930</nobr> | 3&lt;NN&gt;30     | In an XSA runtime environment and port routing used, allow data access connection to the `xscontroller-managed` Web Dispatcher
 HTTP(S)                  | 30032   | <nobr>30032 - 39932</nobr> | 3&lt;NN&gt;32     | In an XSA runtime environment and port routing used, allow data access connection to the `xscontroller-managed` Web Dispatcher
-HTTP(S)                  | 30033   | <nobr>30033 - 39933</nobr> | 3&lt;NN&gt;33     | Single port for all SAP HANA XSA application and services when routing is done by host names instead of ports. For more information see SAP Note 2245631.
+HTTP(S)                  | 30033   | <nobr>30033 - 39933</nobr> | 3&lt;NN&gt;33     | Single port for all SAP HANA XSA application and services when routing is done by host names instead of ports. For more information see SAP Noteï¿½2245631.
 `indexserver`            | None    | <nobr>30041 - 39998</nobr>  | 3&lt;NN&gt;41 - 3&lt;NN&gt;98 | SQL/MDX access port for standard access to the tenant databases of a multitenant system. Port assigned automatically from available port at creation time.
 SOAP/HTTP                | 50013   | <nobr>50013 - 59913</nobr> | 5&lt;NN&gt;13     | Instance Agent
 SOAP/HTTPS               | 50014   | <nobr>50014 - 59914</nobr> | 5&lt;NN&gt;14     | Instance Agent

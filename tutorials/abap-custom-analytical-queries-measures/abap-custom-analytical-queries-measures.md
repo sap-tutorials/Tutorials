@@ -3,6 +3,7 @@ title: Custom Analytical Queries Calculated Measures
 description: Create a Custom Analytical Queries with Calculated Measures.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+time: 15
 ---
 
 ## Prerequisites  
@@ -16,8 +17,6 @@ By using Custom Analytical Queries you do not need to understand the technical d
 
 ### You will learn  
 This tutorial teaches you the creation of a Custom Analytical Query and the addition of a Calculated Measures. You will also be able to edit your calculated Measures and define an Exception Aggregation.
-### Time to Complete
-**15 Min**.
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Open Custom Analytical Queries Application)]

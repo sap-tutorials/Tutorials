@@ -3,27 +3,22 @@ title: Create a Streaming Project with SAP HANA Streaming Analytics
 description: Create a SAP HANA Streaming Analytics project using the streaming plug-in for Eclipse.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [  tutorial>beginner, topic>internet-of-things, products>sap-hana-streaming-analytics, products>sap-hana\,-express-edition   ]
+time: 20
 ---
+
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Tutorials:** [Installing and Configuring the Streaming Studio Plugin](https://www.sap.com/developer/tutorials/hxe-ua-streaming-plugin.html)
 
-## Next Steps
- - **Tutorials:** [Capture Streaming Output in the SAP HANA Database](https://www.sap.com/developer/tutorials/sds-event-stream-tables.html)
-
 ## Details
-
-In this tutorial series we will be building a project using a simple Internet of Things (IoT) scenario.  Our project will be designed to monitor a set of freezer units that are equipped with sensors to report temperature, power on/off events, and door open/close events. We will apply various operators to analyze and transform this data, generate alerts, and capture information in the HANA database.
-
 ### You will learn  
  - How to create a new streaming project
  - Define an input stream to receive incoming events, including the field structure (schema) for the incoming events
  - Add a filter to apply to the event stream
 
-### Time to Complete
-**20 Min**
+ In this tutorial series we will be building a project using a simple Internet of Things (IoT) scenario.  Our project will be designed to monitor a set of freezer units that are equipped with sensors to report temperature, power on/off events, and door open/close events. We will apply various operators to analyze and transform this data, generate alerts, and capture information in the HANA database.
 
 ---
+
 [ACCORDION-BEGIN [Step 1: ](Create a new streaming project)]
 
 Click the **File** menu. Then click the **New** > **Project...**.
