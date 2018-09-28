@@ -13,28 +13,48 @@ time: 15
 
 ## Outline
 
-1. [Introduction and Navigator (this document)](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)  
+1. [Introduction and Navigator (this document)](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
+
 2. Continuous Integration and Delivery  
-2.1. [CI/CD Practices](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)  
-2.2. [Pipeline Suggestions](https://www.sap.com/developer/tutorials/ci-best-practices-pipelines.html)  
-3. CI/CD Landscape - Component Setup  
-3.1. [Source Code Versioning System](https://www.sap.com/developer/tutorials/ci-best-practices-scm.html)  
-3.2. [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)  
-3.3. [Artifact Repository](https://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)  
-3.4. [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)  
-3.5. [CD Pipeline Skeleton](https://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html)  
+
+    2.1. [CI/CD Practices](https://www.sap.com/developer/tutorials/ci-best-practices-ci-cd.html)  
+
+    2.2. [Pipeline Suggestions](https://www.sap.com/developer/tutorials/ci-best-practices-pipelines.html)
+
+3. CI/CD Landscape - Component Setup
+
+    3.1. [Source Code Versioning System](https://www.sap.com/developer/tutorials/ci-best-practices-scm.html)
+
+    3.2. [Build Scheduler](https://www.sap.com/developer/tutorials/ci-best-practices-build.html)
+
+    3.3. [Artifact Repository](https://www.sap.com/developer/tutorials/ci-best-practices-artifacts.html)  
+
+    3.4. [Landscape Configuration](https://www.sap.com/developer/tutorials/ci-best-practices-landscape.html)  
+
+    3.5. [CD Pipeline Skeleton](https://www.sap.com/developer/tutorials/ci-best-practices-pipeline-skeleton.html)  
+
 4. CI/CD Process Setup  
-4.1. [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html)  
-4.2. [Java Web on SAP Cloud Platform](https://www.sap.com/developer/tutorials/ci-best-practices-java-hcp.html)  
-4.3. [SAP HANA Extended Application Services (XS), classic model](https://www.sap.com/developer/tutorials/ci-best-practices-xsc.html)  
-4.4. [SAPUI5/SAP Fiori on ABAP Front End Server](https://www.sap.com/developer/tutorials/ci-best-practices-fiori-abap.html)  
-4.5. [SAPUI5/SAP Fiori on SAP Cloud Platform](https://www.sap.com/developer/tutorials/ci-best-practices-fiori-sapcp.html)  
-4.6. [SAP HANA Extended Application Services, advanced model (XS advanced) on SAP HANA](https://www.sap.com/developer/tutorials/ci-best-practices-xsa.html)  
-4.7. [SAP Cloud Platform SDK for iOS](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html)
-4.8. [SAP Fiori Hybrid Apps with SAP Mobile Platform SDK](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-cordova.html)
+    4.1. [Generic Project](https://www.sap.com/developer/tutorials/ci-best-practices-generic.html)  
+    
+    4.2. [Java Web on SAP Cloud Platform](https://www.sap.com/developer/tutorials/ci-best-practices-java-hcp.html)
+
+    4.3. [SAP HANA Extended Application Services (XS), classic model](https://www.sap.com/developer/tutorials/ci-best-practices-xsc.html)  
+
+    4.4. [SAPUI5/SAP Fiori on ABAP Front End Server](https://www.sap.com/developer/tutorials/ci-best-practices-fiori-abap.html)
+
+    4.5. [SAPUI5/SAP Fiori on SAP Cloud Platform](https://www.sap.com/developer/tutorials/ci-best-practices-fiori-sapcp.html)  
+
+    4.6. [SAP HANA Extended Application Services, advanced model (XS advanced) on SAP HANA](https://www.sap.com/developer/tutorials/ci-best-practices-xsa.html)  
+
+    4.7. [SAP Cloud Platform SDK for iOS](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-ios.html)
+
+    4.8. [SAP Fiori Hybrid Apps with SAP Mobile Platform SDK](https://www.sap.com/developer/tutorials/ci-best-practices-mobile-cordova.html)
+
 5. CI/CD Process Setup using SCM and build services on the cloud  
-5.1. [Generic Project with CI using Cloud Services](https://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html)  
-5.2. [Java Web on SAP Cloud Platform with CI using Cloud Services](https://www.sap.com/developer/tutorials/ci-best-practices-java-hcp-cloud.html)  
+
+    5.1. [Generic Project with CI using Cloud Services](https://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html)  
+
+    5.2. [Java Web on SAP Cloud Platform with CI using Cloud Services](https://www.sap.com/developer/tutorials/ci-best-practices-java-hcp-cloud.html)  
 
 ---
 
