@@ -8,7 +8,7 @@ time: 15
 ---
 
 ## Prerequisites  
-- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform Mobile Service for Development and Operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
+- **Tutorials:** [Get a Free Trial Account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html) and [Enable SAP Cloud Platform Mobile Services](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
 - **Development environment:** Apple iMac, MacBook or MacBook Pro running Xcode 10 or higher
 - **SAP Cloud Platform SDK for iOS:** Version 3.0
 
@@ -21,7 +21,7 @@ Before you start, make sure you:
 
   - Have downloaded SAP Cloud Platform SDK for iOS **version 3.0**.
   - Have a trial account on SAP Cloud Platform. See [Get a Free Trial Account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html).
-  - Have enabled SAP Cloud Platform mobile service for development and operations. See [Enable SAP Cloud Platform Mobile Service for Development and Operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html).
+  - Have enabled SAP Cloud Platform Mobile Services. See [Enable SAP Cloud Platform Mobile Services](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html).
 
 ---
 
@@ -29,15 +29,15 @@ Before you start, make sure you:
 
 > If you have already configured the SAP Cloud Platform SDK for iOS Assistant, you can **skip this step** and proceed with "Step 2 - Run the SAP Cloud Platform SDK for iOS Assistant".
 
-This step provides simplified steps to configure the SAP Cloud Platform SDK for iOS Assistant application using the SAP Cloud Platform mobile service for development and operations cockpit.
+This step provides simplified steps to configure the SAP Cloud Platform SDK for iOS Assistant application using the SAP Cloud Platform Mobile Services cockpit.
 
-Log on to your SAP Cloud Platform trial account at [https://account.hanatrial.ondemand.com/](https://account.hanatrial.ondemand.com/) and once logged in, navigate to **Services**. Scroll down to **Mobile Services** and click on the **Development & Operations** tile. In the **Development & Operations - Overview** page, click the **Go to Service** link to open a new window to **SAP Cloud Platform mobile service for development and operations**.
+Log on to your SAP Cloud Platform trial account at [https://account.hanatrial.ondemand.com/](https://account.hanatrial.ondemand.com/) and once logged in, navigate to **Services**. Scroll down to **Mobile Services** and click on the **Development & Operations** tile. In the **Development & Operations - Overview** page, click the **Go to Service** link to open a new window to **SAP Cloud Platform Mobile Services**.
 
 > Alternatively, you can go directly to `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/`
 
 ![SCPms landing page](fiori-ios-scpms-create-app-teched18-part1-01.png)
 
-Once you're logged in to **SAP Cloud Platform mobile service for development and operations**, click the **Important Links** tab in the lower left bottom. The **Important Links** section opens.
+Once you're logged in to **SAP Cloud Platform Mobile Services**, click the **Important Links** tab in the lower left bottom. The **Important Links** section opens.
 
 Locate the tile **SAP Cloud Platform SDK for iOS Assistant** and click the **Importing URLs directly into Assistant** link:
 
@@ -184,13 +184,13 @@ Click **Next** to go to the **UI Configuration** step. Set the **Destination** r
 After you have clicked **Finish** in the previous step, the SDK Assistant now loads the OData service's metadata. This metadata describes the data model, and can be accessed via `<service URL>$metadata`. For your service, the metadata URL is `https://sapdevsdd27584c4.us2.hana.ondemand.com/codejam/wwdc/services/DeliveryService.xsodata/$metadata`
 Based on this metadata, the OData proxy classes will be generated for the Xcode project.
 
-In addition, the configuration settings you have provided in the SDK Assistant are now being sent to SAP Cloud Platform mobile service for development and operations.
+In addition, the configuration settings you have provided in the SDK Assistant are now being sent to SAP Cloud Platform Mobile Services.
 
-> **NB:** If you have already 5 native applications defined in SAP Cloud Platform mobile service for development and operations, the SDK Assistant will give the following error:
+> **NB:** If you have already 5 native applications defined in SAP Cloud Platform Mobile Services, the SDK Assistant will give the following error:
 
 > ![Optional Features](fiori-ios-scpms-create-app-teched18-part1-16.png)
 
-> In that case, log on to your **SAP Cloud Platform mobile service for development and operations** account at `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/` and navigate to **Mobile Applications > Native/Hybrid**. Select one of the available application configurations and delete it in order for the SDK Assistant to add the new application configuration.
+> In that case, log on to your **SAP Cloud Platform mobile Services** account at `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/` and navigate to **Mobile Applications > Native/Hybrid**. Select one of the available application configurations and delete it in order for the SDK Assistant to add the new application configuration.
 
 [DONE]
 [ACCORDION-END]
