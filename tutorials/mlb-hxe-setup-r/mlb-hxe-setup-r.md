@@ -24,8 +24,6 @@ For further details, you can consult the [SAP HANA R Integration Guide](https://
 
 It also includes a section dedicated to debugging and tracing.
 
-[ACCORDION-BEGIN [Info: ](SAP HANA R integration)]
-
 To process R code in the context of the SAP HANA database, the R code is embedded in SAP HANA SQL code in the form of a RLANG procedure.
 
 The SAP HANA database uses an external R environment to execute this R code, similarly to native database operations like joins or aggregations.
@@ -49,9 +47,6 @@ Once the R process completes the function execution, the resulting R data frame 
 Since the internal column-oriented data structure used within the SAP HANA database for intermediate results is very similar to the vector-oriented R data frame, this conversion is very efficient.
 
 A key benefit of having the overall control flow situated on the database side is that the database execution plans are inherently parallel and, therefore, multiple R processes can be triggered to run in parallel without having to worry about parallel execution within a single R process.
-
-[DONE]
-[ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 1: ](Create a Dedicated User)]
 

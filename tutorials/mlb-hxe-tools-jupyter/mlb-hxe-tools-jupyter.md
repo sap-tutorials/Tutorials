@@ -15,6 +15,14 @@ time: 20
 ### You will learn
 During this tutorial, you will learn how to install the `JupyterLab` application on your system and connect it to your SAP HANA, express edition.
 
+`JupyterLab` is the next-generation web-based user interface for Project Jupyter.
+
+As an open-source web application, it allows you to create and share documents that contain live code, equations, visualizations and narrative text.
+
+`JupyterLab` can therefore be used both as SQL query based tool but also to develop in dozens of programming languages.
+
+For more details you can check the [`JupyterLab`](https://jupyterlab.readthedocs.io/en/stable/) web page.
+
 [ACCORDION-BEGIN [Step 1: ](Create a Dedicated User)]
 
 As a best practice, I recommended you to create a dedicated user to run Jupyter. It will help you both restrict access to your system but also help avoiding side any effect on the `hxeadm` user that is running the SAP HANA, express edition instances.
@@ -257,8 +265,6 @@ Installation done
 
 [DONE]
 [ACCORDION-END]
-
-
 
 [ACCORDION-BEGIN [Step 4: ](Install JupyterLab)]
 
