@@ -256,6 +256,7 @@ TYPE_VARBINARY : VARBINARY
 > ### **Note**: You can paste content in **`vi`** using the following keyboard combination:
 > - Enable the insert mode : **ESC** then **I**
 > - Paste the clipboard content : **CTRL+SHIFT+V**
+> - Exit `vi`: **ESC** then **`:wq!`**
 
 Then, switch the file ownership back to ***`hxeadm`***:
 
