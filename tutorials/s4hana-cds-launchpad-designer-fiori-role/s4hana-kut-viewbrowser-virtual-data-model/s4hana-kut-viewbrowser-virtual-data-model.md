@@ -45,7 +45,7 @@ afterwards click on the **OK** button.
 
    You should see this page:
 
-   ![Fiori Launchpad login continue](kut_search_01_02.png)
+     ![Fiori Launchpad login continue](kut_search_01_02.png)
 
 6. Login now with your user and password
 
