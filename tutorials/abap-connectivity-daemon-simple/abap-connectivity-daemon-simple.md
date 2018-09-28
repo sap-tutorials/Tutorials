@@ -17,7 +17,7 @@ tags: [ tutorial>intermediate, topic>abap-development ]
 
 
 ### Introduction to ABAP Daemons
-ABAP Daemons are provided by the ABAP Daemon Framework (ADF). They are used to handle events in a reliable way by running in sessions with unlimited lifetime. ABAP programs can communicate with the daemons by sending messages to them using the Push Channel Protocol.
+ABAP Daemons are provided by the ABAP Daemon Framework (ADF). They are used to handle events in a reliable way by running in sessions with unlimited lifetime. ABAP programs can communicate with the daemons by sending messages to them using ABAP Messaging Channels and message type Push Channel Protocol.
 
 You can make yourself more familiar with the ABAP Daemon Framework by reading the [official documentation](https://help.sap.com/viewer/753088fc00704d0a80e7fbd6803c8adb/1709.001/en-US/311af9b769d84fffa7b7384bae27109c.html).
 
@@ -171,7 +171,10 @@ To do so, paste the following code into the `PUBLIC SECTION` of the class defini
 CLASS-METHODS start
   IMPORTING
     iv_daemon_name TYPE string
-    iv_timeout     TYPE i.
+    iv_timeout     TYPE i
+  RAISING
+    cx_abap_daemon_error
+    cx_ac_message_type_pcp_error.
 ```
 Instantiate the ABAP Daemon using the ABAP Daemon Manager. Its static method `CL_ABAP_DAEMON_CLIENT_MANAGER=>START` requires the name and priority of the daemon as parameters. Additionally, you can pass the startup parameters as a PCP message.
 
@@ -179,21 +182,16 @@ Copy these lines into your class implementation:
 
 ```ABAP
 METHOD start.
-  TRY.
-      " set ABAP Daemon start parameters
-      DATA(lo_pcp) = cl_ac_message_type_pcp=>create( ).
-      lo_pcp->set_field( i_name = 'timeout' i_value = CONV #( iv_timeout ) ).
+  " set ABAP Daemon start parameters
+  DATA(lo_pcp) = cl_ac_message_type_pcp=>create( ).
+  lo_pcp->set_field( i_name = 'timeout' i_value = CONV #( iv_timeout ) ).
 
-      " start the daemon application using the ABAP Daemon Manager
-      cl_abap_daemon_client_manager=>start(
-          i_class_name = 'ZCL_TUTORIAL_SIMPLE_DAEMON'
-          i_name       = CONV #( iv_daemon_name )
-          i_priority   = cl_abap_daemon_client_manager=>co_session_priority_low
-          i_parameter  = lo_pcp ).
-
-    CATCH cx_abap_daemon_error cx_ac_message_type_pcp_error.
-      " to do: error handling, e.g. write error log!
-  ENDTRY.
+  " start the daemon application using the ABAP Daemon Manager
+  cl_abap_daemon_client_manager=>start(
+      i_class_name = 'ZCL_TUTORIAL_SIMPLE_DAEMON'
+      i_name       = CONV #( iv_daemon_name )
+      i_priority   = cl_abap_daemon_client_manager=>co_session_priority_low
+      i_parameter  = lo_pcp ).
 ENDMETHOD.
 ```
 
@@ -213,7 +211,10 @@ Paste the code below into the `PUBLIC SECTION` of the class definition.
 CLASS-METHODS send
   IMPORTING
     iv_daemon_name TYPE string
-    iv_text        TYPE string.
+    iv_text        TYPE string
+  RAISING
+    cx_abap_daemon_error
+    cx_ac_message_type_pcp_error.
 ```
 
 In order to send PCP messages to your daemon, you first have to retrieve a list of all running ABAP Daemon instances of your class `ZCL_TUTORIAL_SIMPLE_DAEMON`. Afterwards, you can compare the name of each instance to `IV_DAEMON_NAME` and send the PCP message accordingly.
@@ -221,28 +222,22 @@ In order to send PCP messages to your daemon, you first have to retrieve a list 
 Insert the following code into the class implementation:
 ```ABAP
 METHOD send.
-  TRY.
-      " retrieve the list of ABAP Daemon instances
-      DATA(lt_ad_info) = cl_abap_daemon_client_manager=>get_daemon_info( i_class_name = 'ZCL_TUTORIAL_SIMPLE_DAEMON').
+  " retrieve the list of ABAP Daemon instances
+  DATA(lt_ad_info) = cl_abap_daemon_client_manager=>get_daemon_info( i_class_name = 'ZCL_TUTORIAL_SIMPLE_DAEMON').
 
-      " create PCP message with text
-      DATA(lo_pcp) = cl_ac_message_type_pcp=>create( ).
-      lo_pcp->set_text( iv_text ).
+  " create PCP message with text
+  DATA(lo_pcp) = cl_ac_message_type_pcp=>create( ).
+  lo_pcp->set_text( iv_text ).
 
-      " for each running daemon instance of this class
-      LOOP AT lt_ad_info ASSIGNING FIELD-SYMBOL(<ls_info>).
+  " for each running daemon instance of this class
+  LOOP AT lt_ad_info ASSIGNING FIELD-SYMBOL(<ls_info>).
 
-        " send a message if the names match
-        IF iv_daemon_name = <ls_info>-name.
-          cl_abap_daemon_client_manager=>attach( <ls_info>-instance_id )->send( lo_pcp ).
-        ENDIF.
+    " send a message if the names match
+    IF iv_daemon_name = <ls_info>-name.
+      cl_abap_daemon_client_manager=>attach( <ls_info>-instance_id )->send( lo_pcp ).
+    ENDIF.
 
-      ENDLOOP.
-
-    CATCH cx_abap_daemon_error cx_ac_message_type_pcp_error.
-      " to do: error handling, e.g. write error log!
-  ENDTRY.
-
+  ENDLOOP.
 ENDMETHOD.
 ```
 
@@ -297,30 +292,27 @@ Alternatively, you can also create a static `STOP` method. Therefore, add this t
 ```ABAP
 CLASS-METHODS stop
   IMPORTING
-    iv_daemon_name TYPE string.
+    iv_daemon_name TYPE string
+  RAISING
+    cx_abap_daemon_error.
 ```
 
 Copy the following lines into the class implementation:
 
 ```ABAP
 METHOD stop.
-  TRY.
-      " retrieve the list of ABAP Daemon instances
-      DATA(lt_ad_info) = cl_abap_daemon_client_manager=>get_daemon_info( i_class_name = 'ZCL_TUTORIAL_SIMPLE_DAEMON').
+  " retrieve the list of ABAP Daemon instances
+  DATA(lt_ad_info) = cl_abap_daemon_client_manager=>get_daemon_info( i_class_name = 'ZCL_TUTORIAL_SIMPLE_DAEMON').
 
-      " for each running daemon instance of this class
-      LOOP AT lt_ad_info ASSIGNING FIELD-SYMBOL(<ls_info>).
+  " for each running daemon instance of this class
+  LOOP AT lt_ad_info ASSIGNING FIELD-SYMBOL(<ls_info>).
 
-        " stop the daemon if the names match
-        IF iv_daemon_name = <ls_info>-name.
-            cl_abap_daemon_client_manager=>stop( i_instance_id = <ls_info>-instance_id ).
-        ENDIF.
+    " stop the daemon if the names match
+    IF iv_daemon_name = <ls_info>-name.
+        cl_abap_daemon_client_manager=>stop( i_instance_id = <ls_info>-instance_id ).
+    ENDIF.
 
-      ENDLOOP.
-
-    CATCH cx_abap_daemon_error.
-      " to do: error handling, e.g. write error log!
-  ENDTRY.
+  ENDLOOP.
 ENDMETHOD.
 ```
 
