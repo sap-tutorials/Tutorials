@@ -84,14 +84,12 @@ Open the downloaded text file:
 
 ![Mentor app](fiori-ios-scpms-create-app-teched18-part3-42.png)
 
-The generated code can now be implemented into the appropriate places in the `TrackingInfoViewController.swift` file.
-
 > Since it may take a bit too long to go through the steps of copying and pasting the code, adding the control binding to the Proxy Classes' properties and format the data properly, you don't need to do this yourself. The code to implement will be provided in the next step.
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Initialize table layout)]
+[ACCORDION-BEGIN [Step 3: ](Implement the FUITimelineCell into your UITableView)]
 
 In this step, you implement the Fiori Timeline cells to show the `DeliveryStatus` entities in a logical way.
 
@@ -140,7 +138,7 @@ private func getFUITimelineMarkerCell(deliverystatustype: DeliveryStatusType, in
   guard let timelineCell = cell as? FUITimelineMarkerCell else {
     return cell
   }
-  
+
   timelineCell.nodeImage = self.getNodeImage(statusType: deliverystatustype.statusType!)
   timelineCell.showLeadingTimeline = indexPath.row == 0 ? false : true
   timelineCell.showTrailingTimeline = indexPath.row == self.entities.count - 1 ? false : true
