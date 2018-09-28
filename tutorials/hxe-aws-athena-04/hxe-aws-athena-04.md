@@ -129,6 +129,7 @@ Make sure to update the **Access key ID** and **Secret access key**.
 > ### **Note**: You can paste content in **`vi`** using the following keyboard combination:
 > - Enable the insert mode : **ESC** then **I**
 > - Paste the clipboard content : **CTRL+SHIFT+V**
+> - Exit `vi`: **ESC** then **`:wq!`**
 
 [DONE]
 [ACCORDION-END]

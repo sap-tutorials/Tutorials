@@ -175,7 +175,7 @@ You need to extend `CatalogService` with the view on the `Reviews` entity you ad
 
     ```java
     namespace SampleApp;
-    using my.app from '../db/data-model';
+    using SampleApp as samp from '../db/data-model';
 
     using clouds.products.CatalogService from '@sap/cloud-samples-catalog';
 
@@ -188,7 +188,7 @@ You need to extend `CatalogService` with the view on the `Reviews` entity you ad
     			UpdateRestrictions: {Updatable: false},
     			DeleteRestrictions: {Deletable: false}
     		}
-    	) as projection on app.Reviews;
+    	) as projection on samp.Reviews;
 
     }    
     ```
