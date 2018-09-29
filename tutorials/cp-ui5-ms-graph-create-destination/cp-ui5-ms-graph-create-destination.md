@@ -34,7 +34,7 @@ This shows you the raw data this OData service provides. This service runs in th
 [ACCORDION-BEGIN [step ](Import a destination from a local file)]
 Create a new destination for the ES5 System if you don't have one.
 
-1. Download <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-ui5-ms-graph-create-destination/data/ES5_Destination.txt" download>this descriptor file</a> (alternatively you can create the destination manually by clicking **New Destination**).
+1. Download <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-ui5-ms-graph-create-destination/ES5_Destination.txt" download>this descriptor file</a> (alternatively you can create the destination manually by clicking **New Destination**).
 2. Go to the Neo environment in the SAP Cloud Platform cockpit and open the
 **Connectivity** dropdown menu in the side panel and select **Destinations**.
 3. Click **Import Destination** to import the descriptor file.
