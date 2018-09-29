@@ -16,7 +16,7 @@ time: 10
 Now to expand your simple application and deploy it to the SAP HANA server.
 
 &nbsp;
-> **DEPRECATED:** SAP HANA XS Clas is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
 
 &nbsp;
 

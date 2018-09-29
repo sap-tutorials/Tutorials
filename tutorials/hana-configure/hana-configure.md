@@ -5,8 +5,6 @@ primary_tag: products>sap-hana
 tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
 time: 20
 ---
-## Prerequisites  
-- **Tutorials:** [How to create an SAP HANA Developer Edition in the Cloud](https://www.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 ## Next Steps
 - [Develop your first SAP HANA XSC application](https://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
