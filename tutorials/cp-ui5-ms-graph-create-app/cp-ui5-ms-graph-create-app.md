@@ -95,7 +95,6 @@ This page will display all existing purchase orders in a list.
 ```xml
 <mvc:View controllerName="com.sap.teched18.msgraph.PurchaseOrderApp.controller.MainView" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
   <App id="idAppControl">
-		...
 ```
 2. Add a new page which will be used to show the details of a single purchase order.
 ```xml
@@ -200,7 +199,7 @@ onNavButtonPress: function (oEvent) {
   var oStartPage = oApp.getPages()[0];
   oApp.back(oStartPage.getId());
 },
-<!-- INSERT IN STEP 7 OF THE NEXT TUTORIAL -->
+// INSERT IN STEP 7 OF THE NEXT TUTORIAL
 ```
 
 [DONE]
