@@ -9,8 +9,14 @@ time: 360
  - **Systems used:** SAP HANA 1.00 SPS12, SAP HANA 2.00 SPS00, SAP HANA 2.00 SPS01, SAP HANA 2 SPS02 - SAP HANA, express edition
 
 
-## How-To Details
+## Details
 The following will document links, tips and tricks and more related to the SAP CodeJam Getting Started with SAP HANA, express edition event.
+
+
+&nbsp;
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+
+&nbsp;
 
 
 ---

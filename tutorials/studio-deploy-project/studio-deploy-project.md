@@ -3,11 +3,11 @@ title: SAP HANA Studio, Deploy Project
 description: Deploy your project to the SAP HANA repository
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition , products>sap-hana-studio ]
+time: 10
 ---
 ## Prerequisites  
-- **Proficiency:** Beginner
-- **Tutorials:** [SAP HANA Studio, Deploy your project](https://www.sap.com/developer/tutorials/studio-deploy-project.html)
--
+  - **Tutorials:** [SAP HANA Studio, Deploy your project](https://www.sap.com/developer/tutorials/studio-deploy-project.html)
+
 ## Next Steps
 - [SAP HANA Studio, Import your data](https://www.sap.com/developer/tutorials/studio-import-data.html)
 
@@ -15,8 +15,11 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 ### You will learn  
 Now to expand your simple application and deploy it to the SAP HANA server.
 
-### Time to Complete
-**10 Min**.
+&nbsp;
+> **DEPRECATED:** SAP HANA XS Clas is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+
+&nbsp;
+
 
 ---
 
@@ -62,6 +65,3 @@ Finally right click again and under **Team** choose **Activate All** to activate
 [ACCORDION-END]
 
 ￼
-
-## Next Steps
-- [SAP HANA Studio, Import your data](https://www.sap.com/developer/tutorials/studio-import-data.html)

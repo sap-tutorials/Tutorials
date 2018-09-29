@@ -3,17 +3,21 @@ title: Adding a Custom Landing page to your HXE system
 description: See how to alter your system and load a custom landing page.
 primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>how-to, tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition  ]
+time: 10
 ---
 ## Prerequisites  
  - **Systems used:** SAP HANA express edition
  - [Adding a Custom Login Screen to your HXE system](http://www.sap.com/developer/tutorials/hxe-custom-login.html)
 
 
-## How-To Details
-The purpose behind this guide is to show you how to add a custom landing page to your system, thus changing the default one and allowing for even more customization to your system.
+## Details
+&nbsp;
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
 
-### Time to Complete
-**10 Min**.
+&nbsp;
+
+
+The purpose behind this guide is to show you how to add a custom landing page to your system, thus changing the default one and allowing for even more customization to your system.
 
 ---
 

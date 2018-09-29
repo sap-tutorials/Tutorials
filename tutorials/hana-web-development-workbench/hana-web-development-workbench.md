@@ -15,11 +15,17 @@ time: 15
 [Access your first Data from a native SAP HANA Application](https://www.sap.com/developer/tutorials/hana-data-access-authorizations.html)
 
 ## Details
-
 ### You will learn  
 1. How to use the SAP HANA Web-based Development Workbench.
 2. How to develop a simple server-side application.
 3. How to publish and run an application.
+
+&nbsp;
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+
+&nbsp;
+
+
 
 ---
 

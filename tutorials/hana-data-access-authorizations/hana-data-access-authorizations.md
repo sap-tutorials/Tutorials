@@ -13,11 +13,17 @@ time: 15
 - [Enable XSODATA in your SAP HANA XSC application](https://www.sap.com/developer/tutorials/hana-xsodata.html)
 
 ## Details
-
 ### You will learn  
 1. How to create a simple schema and table.
 2. Importing data automatically via a CSV file.
 3. Preparing and executing a very simple SQL query on the table.
+
+&nbsp;
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+
+&nbsp;
+
+
 
 ---
 
