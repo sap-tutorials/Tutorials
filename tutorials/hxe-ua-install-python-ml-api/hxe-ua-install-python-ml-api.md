@@ -42,7 +42,7 @@ For the location you extracted the SAP HANA HDB client files, run:
 pip install hana_ml-<version>.tar.gz
 ```
 
-This command installs the `hana_ml` package containing the following modules and submodules:
+This command installs the `hana_ml` package containing the following modules and sub-modules:
 
 -   `hana_ml.dataframe`
 
