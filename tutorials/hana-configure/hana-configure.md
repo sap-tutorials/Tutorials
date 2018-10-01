@@ -5,8 +5,6 @@ primary_tag: products>sap-hana
 tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
 time: 20
 ---
-## Prerequisites  
-- **Tutorials:** [How to create an SAP HANA Developer Edition in the Cloud](https://www.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 ## Next Steps
 - [Develop your first SAP HANA XSC application](https://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
@@ -23,9 +21,9 @@ time: 20
 [ACCORDION-BEGIN [Step 1: ](Host Configuration)]
 
 
-Access your HANA instance that was created in ["How to create an SAP HANA Developer Edition in the Cloud"](https://www.sap.com/developer/tutorials/hana-setup-cloud.html).
+Access your HANA instance.
 
-Chose Notepad as the Open with Editor.
+Choose Notepad as the Open with Editor.
 
 Replace the current IP address in front of the hostname `hanapm` with the specific IP address for this workshop which was supplied by your instructor.
 

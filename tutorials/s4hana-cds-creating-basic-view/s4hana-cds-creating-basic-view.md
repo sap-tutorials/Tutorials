@@ -5,8 +5,6 @@ primary_tag: products>sap-s-4hana
 tags: [  tutorial>beginner, products>sap-s-4hana ]
 time: 20
 ---
-## Prerequisites  
- - **Tutorials:** [Setting and starting an S4/HANA CAL instance and connecting to a Window instance on Amazon Web Services. ](https://www.sap.com/developer/tutorials/hana-setup-cloud.html)
 
 ## Next Steps
 [Creating consumption view based on basic/interface view. ](https://www.sap.com/developer/tutorials/s4hana-cds-creating-consumption-view.html)

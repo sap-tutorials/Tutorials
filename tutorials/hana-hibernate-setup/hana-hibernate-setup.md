@@ -21,9 +21,8 @@ In this tutorial you will learn how to use the Eclipse IDE to set up a Maven pro
 To complete this tutorial, you will need:
 
  - **Eclipse IDE for Java EE Developers Neon** or newer (other Eclipse packages may require to manually install additional components)
- - The **SAP HANA Client** (available using the **SAP HANA, express edition** download manager or from the [SAP Store](https://store.sap.com/sap/cpa/ui/resources/store/html/SolutionDetails.html?pid=0000012950))
 
-You will also need an instance of **SAP HANA 2.0, express edition** (SPS02 revision 21 or newer), and both package, the ***Server only*** and ***Server + Applications***, works.
+You will also need an instance of **SAP HANA 2.0, express edition** (SPS02 revision 24 or newer). Both packages, the ***Server only*** and ***Server + Applications***, will work.
 
 To get your instance up and running, you can check the available options and get started on the [SAP HANA, express edition](https://www.sap.com/developer/topics/sap-hana-express.html) product page.
 
@@ -65,7 +64,42 @@ Your project is now created.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add Hibernate as a Maven dependency)]
+[ACCORDION-BEGIN [Step 2: ](Set the minimum Java version)]
+By default, the Eclipse Maven plugin will configure the project to use Java 1.5. Since this Java version is very old and lacks many features, we will set the Java version to Java 8.
+
+Open the **`pom.xml`** file and switch to the **Overview** tab.
+
+![pom](pom-overview.png)
+
+Click on **Create...** in the **Properties** area.
+
+Enter the following details:
+
+- Name: `maven.compiler.source`
+- Value: `1.8`
+
+![Add Java compiler source property](add-compiler-source-property.png)
+
+Click on **OK**
+
+Save the `pom.xml` file.
+
+In order for the change to become effective, the project configuration must be updated.
+
+Right-click on the project in the **Project Explorer** tab and choose **Maven -> Update Project...**.
+
+![Update Maven project](maven-update-project.png)
+
+The following dialog shows what will be updated. You don't need to change anything.
+
+![Update Maven project dialog](update-project-dialog.png)
+
+Click on **OK**
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 3: ](Add Hibernate as a Maven dependency)]
 
 Open the **`pom.xml`** file and switch to the **Dependencies** tab.
 
@@ -77,7 +111,7 @@ Enter the following details:
 
 - Group Id: `org.hibernate`
 - Artifact Id: `hibernate-core`
-- Version: `5.2.12.Final`
+- Version: `5.3.6.Final`
 
 ![Add Hibernate as a Maven dependency](add-hibernate-dependency.png)
 
@@ -90,18 +124,47 @@ The project should rebuild automatically.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Add the HANA JDBC driver to the Eclipse project)]
+[ACCORDION-BEGIN [Step 4: ](Add Maven dependencies for Java 9 and higher)]
+If you are using Java 9 or higher, you'll have to add the JAXB jars as explicit dependencies. Add the following dependencies just like the Hibernate dependency in the previous step:
 
-Follow the steps from the tutorial **[Connect to SAP HANA, express edition using JDBC](https://www.sap.com/developer/tutorials/hxe-connect-hxe-using-jdbc.html)** to add the JDBC driver to your Eclipse project.
+**JAXB API**
 
-This tutorial will also help you identify your system details (server host, port, username and password).
+- Group Id: `javax.xml.bind`
+- Artifact Id: `jaxb-api`
+- Version: `2.2.11`
 
-![Project Library JDBC](maven-project-jdbc.png)
+**JAXB Core**
+
+- Group Id: `com.sun.xml.bind`
+- Artifact Id: `jaxb-core`
+- Version: `2.2.11`
+
+**JAXB Implementation**
+
+- Group Id: `com.sun.xml.bind`
+- Artifact Id: `jaxb-impl`
+- Version: `2.2.11`
+
+**Activation Framework**
+
+- Group Id: `javax.activation`
+- Artifact Id: `activation`
+- Version: `1.1.1`
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Create a persistence configuration)]
+[ACCORDION-BEGIN [Step 5: ](Add the HANA JDBC driver as a Maven dependency)]
+The HANA JDBC driver can be added as another Maven dependency. Repeat the steps to add a Maven dependency with the following data:
+
+- Group Id: `com.sap.cloud.db.jdbc`
+- Artifact Id: `ngdbc`
+- Version: `2.3.48`
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 6: ](Create a persistence configuration)]
 
 Create a file named **`persistence.xml`** in **`tutorial/src/main/resources/META_INF`** using the ***File -> New -> File*** menu bar.
 
@@ -147,7 +210,7 @@ Save the `persistence.xml` file.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 5: ](Test your setup)]
+[ACCORDION-BEGIN [Step 7: ](Test your setup)]
 
 Create a new **`TestSetup`** Java class in a package named **`com.sap.hana.hibernate.tutorial.setup`** (either using a right-click on the project and choose ***New -> Class*** or use the ***File -> New -> Class*** menu bar), then paste the following content:
 

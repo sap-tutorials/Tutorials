@@ -1,26 +1,25 @@
 ---
 title: Installing SAP HANA HDB Client (Linux)
 description: Install the client package if you intend to develop XS applications on a machine that will not have a local SAP HANA 2.0, express edition installation.
+author_name: Adrian Plata
+author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 10
 ---
 
 <!-- loio14767ea1c8174336aa72126a82d8551b -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
  - **Tutorials:** You have completed [Start SAP HANA, express edition Server (VM installations)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html) or [Test the Installation (Native Linux installations)](http://www.sap.com/developer/tutorials/hxe-ua-test-binary.html)
 
 ## Details
 ### You will learn
 How to install the SAP HANA client on a Linux machine, using either a graphical user interface or a command line.
 
-### Time to Complete
-10 min
-
 ---
 
-The `server machine` in these instructions refers to the laptop on which SAP HANA 2.0, express edition is installed, while `client machine` refers to your local machine. You do not need to install the two on same machine or VM.
+The `server machine` in these instructions refers to the laptop on which SAP HANA 2.0, express edition is installed, while `client machine` refers to your local machine. You do not need to install the two on the same machine or VM.
 
 The clients let you access SAP HANA 2.0, express edition, from your client machine. This is the Reduced SAP Client package.
 
@@ -51,48 +50,26 @@ Install the Download Manager to your client machine and download the client pack
 
 3.  Click `Browse` and select a directory where your client package will be saved.
 
-4.  Select the `Clients` package that matches the machine you will be installing the clients on. Clear the Select boxes of all other packages.
+4.  Select the `Clients (Linux X86/64)` package. Clear the Select boxes of all other packages.
 
-5.  Click `Download`. The `hdb_client_<OS>.tgz` file (`clients_windows.zip` for Windows) downloads to your save directory.
+5.  Click `Download`. The `clients_linux_x86_64.tgz` file downloads to your save directory.
 
 6.  Extract the compressed clients file:
 
-    -   For Windows and Mac machines, use a compression utility.
+    Navigate to the directory in which you wish to extract the client files and use the `tar` command:
 
-    -   For Linux, navigate to the directory in which you wish to extract the client files and use the `tar` command:
-
-```bash
-cd <preferred_filepath>
-sudo tar <download_filepath>/clients_<OS>.zip
-```
+    ```bash
+    cd <preferred_filepath>
+    sudo tar <download_filepath>/clients_linux_x86_64.tgz
+    ```
 
     This extracts the following files and their contents:
 
-    `clients_linux_x86_64.tgz`
+    -   hana_ml-<version>.tar.gz
 
     -   `hdb_client_linux_x86_64.tgz`
 
     -   `xs.onpremise.runtime.client_linuxx86_64.zip`
-
-    `clients_linux_ppc64.le.tgz`
-
-    -   `hdb_client_linux_ppc64le.tgz`
-
-    -   `xs.onpremise.runtime.client_linuxx86_64.zip`
-
-    `clients_windows.zip`
-
-    -   `hdb_client_windows_x86_32.tgz`
-
-    -   `hdb_client_windows_x86_64.tgz`
-
-    -   `xs.onpremise.runtime.client_ntamd64.zip`
-
-    `clients_mac.tgz`
-
-    -   `hdb_client_mac.tgz`
-
-    -   `xs.onpremise.runtime.client_darwinintel64.zip`
 
 
 [ACCORDION-END]
@@ -129,7 +106,7 @@ To install the SAP HANA client on a Linux machine, do the following:
 
 [ACCORDION-BEGIN [Step 3: ](Log the installation)]
 
-The system automatically logs the SAP HANA HDB client installation. The log files are stored at `%TEMP%\hdb_client_<time_stamp>` for Windows and `/var/temp/hdb_client_<time_stamp>` for Linux.
+The system automatically logs the SAP HANA HDB client installation. The log files are stored at `/var/temp/hdb_client_<time_stamp>` for Linux.
 
 [ACCORDION-END]
 
@@ -157,5 +134,3 @@ sudo <unzipped_filepath>/HDB_CLIENT_<version>/hdbuninst
 Follow the instructions on the screen to uninstall the SAP HANA HDB client.
 
 [ACCORDION-END]
-
-

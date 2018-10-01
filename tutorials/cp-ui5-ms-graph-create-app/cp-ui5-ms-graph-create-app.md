@@ -95,7 +95,6 @@ This page will display all existing purchase orders in a list.
 ```xml
 <mvc:View controllerName="com.sap.teched18.msgraph.PurchaseOrderApp.controller.MainView" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:f="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
   <App id="idAppControl">
-		...
 ```
 2. Add a new page which will be used to show the details of a single purchase order.
 ```xml
@@ -183,7 +182,7 @@ This page will display all existing purchase orders in a list.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step ](Add navigation logic)]
-1. Add the following function to the `MainView.controller.js` (`webbapp > controller`) file to handle click events on the list items.
+1. Handle the click events, which will be triggered once the user clicks on the list items. Paste the following function to the empty object (second parameter of the `Controller.extend` method) in the `MainView.controller.js` (`webbapp > controller`) file.
 ```javascript
 onClickPO: function (oEvent) {
   var oApp = this.getView().getContent()[0];
@@ -200,7 +199,7 @@ onNavButtonPress: function (oEvent) {
   var oStartPage = oApp.getPages()[0];
   oApp.back(oStartPage.getId());
 },
-<!-- INSERT IN STEP 7 OF THE NEXT TUTORIAL -->
+// INSERT IN STEP 7 OF THE NEXT TUTORIAL
 ```
 
 [DONE]

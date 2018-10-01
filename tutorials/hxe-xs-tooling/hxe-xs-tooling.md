@@ -1,14 +1,17 @@
 ---
 title: Adding XS Tooling to your SAP HANA, express edition Server Image
 description: Add the XSC tooling to your SAP HANA, express edition Server only image
-primary_tag: products>sap-hana\,-express-edition 
+primary_tag: products>sap-hana\,-express-edition
 tags: [  tutorial>how-to, tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition , products>sap-hana-studio ]
 ---
 ## Prerequisites  
  - **Systems used:** SAP HANA, express edition server only
 
 
-## How-To Details
+## Details
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+
+
 Out of the box the SAP HANA, express edition (HXE) server only option is ready to go with a lot of basic functionality. However, to use it you need to install the SAP HANA plugin for Eclipse. This of course is not a bad thing, however you may also like the idea of using the browser based tools.
 
 This guide will help walk you through the steps necessary to install the SAP HANA XS tooling allowing you to use a browser to interact with your server going forward.
@@ -115,4 +118,3 @@ This guide will help walk you through the steps necessary to install the SAP HAN
 16. Also verify that your system and resources are still in an acceptable state.  
 
 	![catalog](25.png)
-

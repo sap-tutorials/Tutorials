@@ -3,6 +3,7 @@ title: SAP HANA Studio, Build a Calculation View and View the Data in MS Excel
 description: In this tutorial, you will go through all the steps to import data from a MS Excel Spreadsheet, model a simple Calculation view and viewing the results in  a pivot table  using  the HANA MDX connector.
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana-studio ]
+time: 25
 ---
 
 ## Prerequisites  
@@ -10,15 +11,15 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana
  - [Create a Repository Workspace](https://www.sap.com/developer/tutorials/studio-new-project.html)
 
 
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
-
 ## Details
 ### You will learn  
 In this tutorial, you will go through all the steps to import data from a MS Excel Spreadsheet, model a simple Calculation view and view the results in a pivot table  using the HANA MDX connector from MS Excel. You will first create the basic setup within an XS Project.
 
-### Time to Complete
-**25 Min**
+&nbsp;
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+
+&nbsp;
+
 
 ---
 
@@ -292,7 +293,3 @@ You can now use Excel to execute OLAP queries against SAP HANA and create Pivot 
 
 
 ---
-
-
-## Next Steps
-- Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)

@@ -15,17 +15,39 @@ time: 15
 
 [ACCORDION-BEGIN [Step 1: ](Log into SAP Fiori launchpad)]
 First you need to log into the SAP Fiori launchpad.
-1. Double clicks on the **Remote Desktop icon** on the taskbar of your windows desktop.
 
-    ![Fiori Launchpad login preparation](kut_search_01_01.png)
+1. Open the Windows Start Menu and search for **Remote Desktop Connection** and start the Desktop app
 
-2. The Remote Desktop Connection gets open and you are redirected to the SAP FIORI Launchpad.
+   ![Fiori Launchpad login preparation](kut_search_01_01_01.png)
 
-You should see this page:
+2. In the **Remote Desktop Connection** maintain the field Computer with the alias `techedappspace` and click on the **Connect** button.
 
-    ![Fiori Launchpad login preparation continue](kut_search_01_02.png)
+   ![Fiori Launchpad login preparation1](kut_search_01_01_02.png)
 
-3. Login now with your user and password
+3. The Windows Security screen opens. On the Security screen click on the field labeled with **More choices**.
+
+   ![Fiori Launchpad login preparation2](kut_search_01_01_03.png)
+
+
+4. On the Security screen select **Use a different account** and maintain the fields as follow:
+
+> Please be aware that you should replace **xx** with your desktop number.
+
+|  Field Name                | Value
+|  :-------------------------| :-------------
+|  User Name                 | `.\train-xx`
+|  Password                  | `The password will be given to you by your instructor`
+afterwards click on the **OK** button.
+
+   ![Fiori Launchpad login continue1 ](kut_search_01_01_04.png)  
+
+5. You are now redirected to the SAP FIORI Launchpad.
+
+   You should see this page:
+
+   ![Fiori Launchpad login continue](kut_search_01_02.png)
+
+6. Login now with your user and password
 
 > Your user is `S4HANAPUT-XX` where **XX** is your desktop number. Your password will be given to you by your instructors.
 

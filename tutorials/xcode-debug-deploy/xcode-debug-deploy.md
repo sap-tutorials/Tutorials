@@ -3,21 +3,15 @@ title: Debug and deploy the iOS app to an iPad
 description: Debug your app by setting breakpoints and inspecting variables both in the simulator as well as on a physical device
 primary_tag: operating-system>ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios ]
+time: 10
 ---
 ## Prerequisites  
-- **Proficiency:** Beginner
 - **Development machine:** Access to a Mac computer
-- **Tutorials:** [Build your first Xcode & Swift App](https://www.sap.com/developer/tutorials/xcode-build-swift-app.html)
-
-## Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 ### You will learn  
-How to debug your application and how to deploy your app to an iPad
+  - How to debug your application and how to deploy your app to an iPad
 
-### Time to Complete
-**10 Min**.
 
 ---
 
@@ -118,5 +112,3 @@ Congratulations, you have now deployed and debugged your self-built app to an iP
 
 [ACCORDION-END]
 
-### Next Steps
- - Select a tutorial from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
