@@ -1,26 +1,25 @@
 ---
 title: Installing SAP HANA HDB Client (Mac)
 description: Install the client package if you intend to develop XS applications on a machine that will not have a local SAP HANA 2.0, express edition installation.
+author_name: Adrian Plata
+author_profile: https://github.com/aplata-sap
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>beginner, products>sap-hana\,-express-edition ]
+time: 10
 ---
 
 <!-- loio06fe72b1ede54bc88321e15c896eade6 -->
 
 ## Prerequisites
- - **Proficiency:** Beginner
  - **Tutorials:** You have completed [Start SAP HANA, express edition Server (VM installations)](http://www.sap.com/developer/tutorials/hxe-ua-getting-started-vm.html) or [Test the Installation (Native Linux installations)](http://www.sap.com/developer/tutorials/hxe-ua-test-binary.html)
 
 ## Details
 ### You will learn
 How to install the SAP HANA client on a Mac, using either a graphical user interface or a command line.
 
-### Time to Complete
-10 min
-
 ---
 
-The `server machine` in these instructions refers to the laptop on which SAP HANA 2.0, express edition is installed, while `client machine` refers to your local machine. You do not need to install the two on same machine or VM.
+The `server machine` in these instructions refers to the laptop on which SAP HANA 2.0, express edition is installed, while `client machine` refers to your local machine. You do not need to install the two on the same machine or VM.
 
 The clients let you access SAP HANA 2.0, express edition, from your client machine. This is the Reduced SAP Client package.
 
@@ -39,8 +38,6 @@ The clients included with the SAP HANA HDB client software package are:
 -   `ADO.NET`
 
 
-To install the SAP HANA HDB client on a Windows machine, use either a graphical user interface or a command line.
-
 [ACCORDION-BEGIN [Step 1: ](Download the client package)]
 
 Install the Download Manager to your client machine and download the client package.
@@ -51,44 +48,13 @@ Install the Download Manager to your client machine and download the client pack
 
 3.  Click `Browse` and select a directory where your client package will be saved.
 
-4.  Select the `Clients` package that matches the machine you will be installing the clients on. Clear the Select boxes of all other packages.
+4.  Select the `Clients (Mac)` package. Clear the Select boxes of all other packages.
 
-5.  Click `Download`. The `hdb_client_<OS>.tgz` file (`clients_windows.zip` for Windows) downloads to your save directory.
+5.  Click `Download`. The `clients_mac.tgz` file downloads to your save directory.
 
-6.  Extract the compressed clients file:
-
-    -   For Windows and Mac machines, use a compression utility.
-
-    -   For Linux, navigate to the directory in which you wish to extract the client files and use the `tar` command:
-
-```bash
-cd <preferred_filepath>
-sudo tar <download_filepath>/clients_<OS>.zip
-```
+6.  Use a compression utility to extract the compressed clients file.
 
     This extracts the following files and their contents:
-
-    `clients_linux_x86_64.tgz`
-
-    -   `hdb_client_linux_x86_64.tgz`
-
-    -   `xs.onpremise.runtime.client_linuxx86_64.zip`
-
-    `clients_linux_ppc64.le.tgz`
-
-    -   `hdb_client_linux_ppc64le.tgz`
-
-    -   `xs.onpremise.runtime.client_linuxx86_64.zip`
-
-    `clients_windows.zip`
-
-    -   `hdb_client_windows_x86_32.tgz`
-
-    -   `hdb_client_windows_x86_64.tgz`
-
-    -   `xs.onpremise.runtime.client_ntamd64.zip`
-
-    `clients_mac.tgz`
 
     -   `hdb_client_mac.tgz`
 
@@ -157,5 +123,3 @@ sudo <unzipped_filepath>/HDB_CLIENT_<version>/hdbuninst
 Follow the instructions on the screen to uninstall the SAP HANA HDB client.
 
 [ACCORDION-END]
-
-
