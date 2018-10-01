@@ -182,7 +182,7 @@ This page will display all existing purchase orders in a list.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step ](Add navigation logic)]
-1. Add the following function to the `MainView.controller.js` (`webbapp > controller`) file to handle click events on the list items.
+1. Handle the click events, which will be triggered once the user clicks on the list items. Paste the following function to the empty object (second parameter of the `Controller.extend` method) in the `MainView.controller.js` (`webbapp > controller`) file.
 ```javascript
 onClickPO: function (oEvent) {
   var oApp = this.getView().getContent()[0];
