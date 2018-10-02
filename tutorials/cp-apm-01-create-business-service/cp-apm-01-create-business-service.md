@@ -11,7 +11,7 @@ time: 10
  - Log in to the [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com/cockpit#/home/trialhome)
  - **Tutorials:** [Set up Cloud Foundry trial](https://www.sap.com/developer/tutorials/cp-cf-create-account.html)
  - [Enable SAP Web IDE Full-Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html)
- - [Learn about WebIDE and Connect WebIDE to Cloud Foundry](https://www.sap.com/developer/tutorials/webide-customize.html)
+ - [Learn about Web IDE and Connect Web IDE to Cloud Foundry](https://www.sap.com/developer/tutorials/webide-customize.html)
  - Select a Cloud Foundry space. See [Select a Cloud Foundry Space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html)
 
 ## Details

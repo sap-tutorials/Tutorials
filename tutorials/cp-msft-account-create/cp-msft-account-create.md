@@ -14,6 +14,7 @@ time: 5
 [ACCORDION-BEGIN [Step 1: ](Create a new Microsoft account)]
 
 Go to **<https://apps.dev.microsoft.com>** and click **Create one** to create a new account.
+
 ![create a new account](create_new_account.png)
 
 Enter an existing mail address and click **Next**.
