@@ -2,7 +2,7 @@
 title: Setup Cloud Foundry and Web IDE
 description: Get a new Cloud Foundry trial account and set up SAP Web IDE Full Stack for development
 auto_validation: true
-primary_tag: products>sap-cloud-platfor
+primary_tag: products>sap-cloud-platform
 tags: [  tutorial>beginner, topic>cloud, products>sap-cloud-platform ]
 time: 20
 ---
