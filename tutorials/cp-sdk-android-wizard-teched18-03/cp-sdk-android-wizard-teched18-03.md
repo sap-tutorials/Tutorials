@@ -15,7 +15,7 @@ time: 10
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add foreground notification)]
-Open the <a target="_blank" href="https://hcpmsadmin-p2000464045trial.dispatcher.hanatrial.ondemand.com/sap/mobile/admin/ui/index.html">SAP Cloud Platform Mobile Services management cockpit</a> with the following credentials:
+Open the <a target="_blank" href="https://hcpmsadmin-p2000464045trial.dispatcher.hanatrial.ondemand.com/sap/mobile/admin/ui/index.html">SAP Cloud Platform Mobile Services management cockpit</a> by right-clicking on the link and choose **Open link in incognito window**. Enter the following credentials:
 
 ![Management cockpit](sap-identity.png)
 
