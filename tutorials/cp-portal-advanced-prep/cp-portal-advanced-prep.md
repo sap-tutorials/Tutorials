@@ -25,19 +25,19 @@ time: 20
 
 1. Go to SAP Cloud Platform by going to <https://account.hanatrial.ondemand.com/>.
 
-  ![Log on screen](1-log-on-HCP.png)
+    ![Log on screen](1-log-on-HCP.png)
   
 2. Enter your user name and password that you provided when you created your trial account, and click **Log On**.
 
-  ![User name and password](2-user-name-and-password.png)
+    ![User name and password](2-user-name-and-password.png)
   
 3. Select **Neo Trial**.
 
-  ![Neo trial](3-neo-trial.png)
+    ![Neo trial](3-neo-trial.png)
   
 4. Click your trial account.
 
-  ![Open trial account](4-open-trial-account.png)
+    ![Open trial account](4-open-trial-account.png)
 
 [DONE]
 
