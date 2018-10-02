@@ -24,12 +24,19 @@ time: 20
 [ACCORDION-BEGIN [Step 1: ](Open your SAP Cloud Platform trial account cockpit)]
 
 1. Go to SAP Cloud Platform by going to <https://account.hanatrial.ondemand.com/>.
+
   ![Log on screen](1-log-on-HCP.png)
+  
 2. Enter your user name and password that you provided when you created your trial account, and click **Log On**.
+
   ![User name and password](2-user-name-and-password.png)
+  
 3. Select **Neo Trial**.
+
   ![Neo trial](3-neo-trial.png)
+  
 4. Click your trial account.
+
   ![Open trial account](4-open-trial-account.png)
 
 [DONE]
@@ -40,7 +47,9 @@ time: 20
 Set up a destination and its parameters for making a connection to the SAP Gateway demo system OData service from your SAP Cloud Platform trial account.
 
   1. From your SAP Cloud Platform Cockpit, click **Connectivity** > **Destinations** and click **New Destination**.
+  
     ![Create destination](5-create-new-destination.png)
+    
   2. Define the following properties:
 
     | Field | Value  
@@ -53,10 +62,6 @@ Set up a destination and its parameters for making a connection to the SAP Gatew
     | `User`  | **`Your ES5 user name`**
     | `Password` | **`Your ES5 password`**  
     ![Destination properties](6-destination-properties.png)
-    
-[DONE]
-
-[ACCORDION-END]  
 
 3. Click **New Property** and define the following properties:
 
@@ -72,11 +77,14 @@ Set up a destination and its parameters for making a connection to the SAP Gatew
     > Note: The **Usage** property with value **Backend** is required for consuming SAP Backend applications (SAP GUI for HTML and Web Dynpro ABAP) in SAP Cloud Platform Portal sites.
 
 4. Save your settings.
+
 5. Click **Check Connection**.
+
    Verify that you get the following message:
+   
   ![Connection to ES5 established](8-connection-to-ES5-established.png)  
 
-  [DONE]
+[DONE]
 
 [ACCORDION-END]
 
