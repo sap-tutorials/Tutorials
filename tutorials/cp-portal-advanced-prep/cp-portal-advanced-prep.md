@@ -54,7 +54,9 @@ Set up a destination and its parameters for making a connection to the SAP Gatew
     | `Password` | **`Your ES5 password`**  
     ![Destination properties](6-destination-properties.png)
     
-[DONE]    
+[DONE]
+
+[ACCORDION-END]  
 
 3. Click **New Property** and define the following properties:
 
