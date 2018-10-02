@@ -102,7 +102,7 @@ Click on **Create bucket**.
 
 ![Amazon Web Services](04-01.png)
 
-Enter a **Bucket name** like ***`sap-hana-athena`*** (this identifier must be unique).
+Enter a **Bucket name** like ***`sap-hana-athena-<my unique id>`*** replacing the ***<my unique id>*** by a unique identifier across all existing S3 buckets on AWS (this identifier must really be unique so pick your ***`athena`*** user ARN Id for example).
 
 Click on **Create**.
 
@@ -122,7 +122,7 @@ Paste the following code in the **Bucket Policy editor** after adjusting the **A
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "sap-hana-athena",
+            "Sid": "sap-hana-athena-<my unique id>",
             "Action": [
                 "s3:GetBucketLocation",
                 "s3:GetObject",
@@ -144,6 +144,8 @@ Paste the following code in the **Bucket Policy editor** after adjusting the **A
     ]
 }
 ```
+
+Adjust the ***<my unique id>***  token.
 
 Click on **Save**.
 

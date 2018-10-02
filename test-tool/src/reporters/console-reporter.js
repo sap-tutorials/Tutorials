@@ -3,7 +3,7 @@ const logger = require('color-log');
 const { logTemplates } = require('../constants');
 
 const generateReport = (checkResult, filesCount) => {
-    const { 
+    const {
         commonError,
         fileNameError,
         fileError,
@@ -40,7 +40,7 @@ const generateReport = (checkResult, filesCount) => {
             }
         }
         if(tagsCheckResult) {
-            reportStructure.props.tagCheck.messages.push(commonError(tagsCheckResult, fileName)); 
+            reportStructure.props.tagCheck.messages.push(commonError(tagsCheckResult, fileName));
         }
         if(validationsCheckResult) {
             validationsCheckResult.forEach(msg => reportStructure.props.validationsCheck.messages.push(commonError(msg, fileName)));
@@ -74,6 +74,10 @@ const outputReportToConsole = (report, filesCount) => {
         linksGenericReport,
     } = logTemplates;
 
+    if (filesCount === 0) {
+      return logger.warn('No files tested');
+    }
+
     Object.values(report.props).forEach(logProp => {
         if(logProp.type !== 'LINKS') {
             const log = genericReport(logProp.type, filesCount, logProp.messages.length, logProp.messages.join(''));
@@ -97,7 +101,7 @@ const outputReportToConsole = (report, filesCount) => {
                 logger.info(linksGenericReport('', '', report.meta.checkedLinksCount, filesCount, 0));
             }
             if(warnLog) {
-                logger.warn(linksGenericReport('(TRUSTED or Tutorials Docs)', warnLog, report.meta.checkedLinksCount, filesCount, linksCounter('warnDeadLink'))); 
+                logger.warn(linksGenericReport('(TRUSTED or Tutorials Docs)', warnLog, report.meta.checkedLinksCount, filesCount, linksCounter('warnDeadLink')));
             }
         }
     });
