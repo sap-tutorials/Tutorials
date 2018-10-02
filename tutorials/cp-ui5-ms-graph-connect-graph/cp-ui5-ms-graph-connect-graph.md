@@ -45,7 +45,7 @@ Save the changes and scroll to the top to save app id in your clipboard or a new
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step](Create Microsoft Graph config file)]
 
-Create a new folder named **`msal`** in the `webapp` folder and add a file named **`msalconfig.js`** with the following content to this folder:
+Navigate to back to your SAP Web IDE and create a new folder named **`msal`** in the `webapp` folder and add a file named **`msalconfig.js`** with the following content to this folder:
 
 ```javascript
 /* eslint-disable sap-no-global-define */
@@ -72,6 +72,7 @@ This file contains constants you need later in this tutorial.
 
 [ACCORDION-BEGIN [Step](Load Microsoft Authentication Library)]
 
+Copy the following two lines of code right below the existing `script-tag` in the `index.html` file.
 
 ```html
 <script src="https://secure.aadcdn.microsoftonline-p.com/lib/0.2.3/js/msal.min.js"></script>
@@ -84,7 +85,7 @@ This file contains constants you need later in this tutorial.
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step ](Initialize the MSAL client)]
 
-1. Replace the definition header of the `MainView.controller.js` with this code to suppress warning in the SAP Web IDE and to inject more SAPUI5 controls via dependency injection.
+1. Replace the `sap.ui.define` function header (usually the first three lines above the `"use strict"` [directive](https://www.w3schools.com/js/js_strict.asp)) of the `MainView.controller.js` with this code to suppress warning in the SAP Web IDE and to inject more SAPUI5 controls via dependency injection.
 
     ```javascript
     /* global msalconfig, Msal */
@@ -92,7 +93,7 @@ This file contains constants you need later in this tutorial.
       function (Controller, MessageToast, JSONModel){
     ```
 
-2. The `onInit` hook initializes the connection to the Microsoft Graph API once the controller is initialized. Add this hook above the first function in the controller:
+2. The `onInit` hook initializes the connection to the Microsoft Graph API once the controller is initialized. Add this hook right before the `onClickPO` function in the controller:
 ```javascript
 onInit: function () {
   this.oUserAgentApplication = new Msal.UserAgentApplication(msalconfig.clientID, null,
@@ -350,7 +351,7 @@ onOpenEmail: function (oEvent) {
 [ACCORDION-BEGIN [Step](Re-deploy the application)]
 Deploy the latest version of the application to the SAP Cloud Platform Neo environment. Right click on the project and select the **Deploy**  operation and **SAP Cloud Platform** as the target. You can confirm the default values with the **Deploy** button.
 
-Now you are able to click on a property on the details page to search for this term. You will be redirected to the search results page, which will preview the found mails. Click on the subject of an email to open it in the `outlook.com` web application.
+Now you are able to click on a property on the details page to search for this term in your mail account. You will be redirected to the search results page, which will preview the found mails. Click on the subject of an email to open it in the `outlook.com` web application.
 
 ![redeployed application](./redeploy.png)
 

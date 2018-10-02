@@ -102,7 +102,9 @@ Click on **Create bucket**.
 
 ![Amazon Web Services](04-01.png)
 
-Enter a **Bucket name** like ***`sap-hana-athena`*** (this identifier must be unique).
+Enter as **Bucket name** ***`sap-hana-athena-<my unique id>`*** where ***<my unique id>*** is a unique identifier across all existing S3 bucket on AWS.
+
+You can use the user ARN numerical identifier from the previous step as ***<my unique id>***.
 
 Click on **Create**.
 
@@ -114,7 +116,7 @@ Click on the newly created bucket.
 
 Select **Permissions**, then **Bucket policy**.
 
-Paste the following code in the **Bucket Policy editor** after adjusting the **AWS Principal** using the User ARN saved previously:
+Paste the following code in the **Bucket Policy editor** after adjusting the **Sid** (the ***<my unique id>***  token) representing your S3 Bucket ARN along with the **AWS Principal** using the User ARN saved previously:
 
 ```json
 {
@@ -122,7 +124,7 @@ Paste the following code in the **Bucket Policy editor** after adjusting the **A
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "sap-hana-athena",
+            "Sid": "sap-hana-athena-<my unique id>",
             "Action": [
                 "s3:GetBucketLocation",
                 "s3:GetObject",
@@ -134,11 +136,11 @@ Paste the following code in the **Bucket Policy editor** after adjusting the **A
             ],
             "Effect": "Allow",
             "Resource": [
-                "arn:aws:s3:::sap-hana-athena",
-                "arn:aws:s3:::sap-hana-athena/*"
+                "arn:aws:s3:::sap-hana-athena-<my unique id>",
+                "arn:aws:s3:::sap-hana-athena-<my unique id>/*"
             ],
             "Principal": {
-                "AWS": "arn:aws:iam::XXXXXXXXXXXXX:user/athena"
+                "AWS": "arn:aws:iam::<my unique id>:user/athena"
             }
         }
     ]

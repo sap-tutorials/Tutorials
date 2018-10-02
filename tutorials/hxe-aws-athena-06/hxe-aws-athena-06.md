@@ -106,8 +106,10 @@ create remote source athena
 	adapter "odbc"
 	configuration file 'property_athena.ini'
 	configuration 'DSN=AWSAthena'
-	with credential type 'NONE';
+	with credential type 'PASSWORD' using 'user=<Access key ID>;password=<Secret access key>';
 ```
+
+Make sure to replace the **Access key ID** and **Secret access key** with the values retrieved previously before running the statement.
 
 [DONE]
 [ACCORDION-END]
@@ -170,7 +172,7 @@ You can now query the Amazon Athena virtual table just any other table.
 For example, you can run, in a new SQL console, the following SQL statement:
 
 ```sql
-select count(1) from gdelt_athena.events;
+select count(1) from gdelt_athena.events where year = 2017;
 ```
 
 You can get the count of event per year using the following SQL:

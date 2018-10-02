@@ -1,6 +1,6 @@
 ---
 title: Explore the Generated App and OData Service
-description: Build, run and examine the generated application to understand the OData service in detail.
+description: Build, run and examine the generated application to understand the OData service in detail. 
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]

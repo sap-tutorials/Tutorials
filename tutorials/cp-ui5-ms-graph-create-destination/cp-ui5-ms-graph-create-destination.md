@@ -38,7 +38,7 @@ Create a new destination for the ES5 System if you don't have one.
 2. Go to the Neo environment in the SAP Cloud Platform cockpit and open the
 **Connectivity** dropdown menu in the side panel and select **Destinations**.
 3. Click **Import Destination** to import the descriptor file.
-![create neo destination](./createDest.png)
+    ![create neo destination](./createDest.png)
 
     You should see the following values the pre-filled form:
 
@@ -63,14 +63,14 @@ Create a new destination for the ES5 System if you don't have one.
 
 2. Enter your credentials for the ES5 system and click **Save** to create a new destination in the Neo environment.
 
-![create neo destination completed form](./createDestForm.png)
+    ![create neo destination completed form](./createDestForm.png)
 
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [step ](Test the destination)]
 Hit **Check Connection** to test whether the destination has been created successfully. You should now see a green check mark and the status code "307: Temporary Redirect".
 
-![307 success](./destcreated.png)
+    ![307 success](./destcreated.png)
 
 [DONE]
 [ACCORDION-END]
