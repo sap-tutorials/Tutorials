@@ -12,7 +12,7 @@ time: 10
 
 ## Details
 ### You will learn  
-  - How to add custom handlers in your service model to adapt to situations that are not covered by the generic service provider.
+  - How to add custom handlers in your service model to adapt to situations that are not covered by the generic service provider
 
 ---
 
@@ -28,6 +28,7 @@ time: 10
     ![Enter name for Java class](new-java-class.png)
 
 4. Choose **Finish**.
+
 The `OrdersService.java` file is created.
 
 [DONE]

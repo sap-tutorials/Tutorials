@@ -12,7 +12,7 @@ time: 10
 
 ## Details
 ### You will learn  
-  - How to use SAP Web IDE Full-Stack HTML5 templates and the Annotation Modeler to create a UI for your business application.
+  - How to use SAP Web IDE Full-Stack HTML5 templates and the Annotation Modeler to create a UI for your business application
 
 ---
 
@@ -78,6 +78,7 @@ This might take a few seconds, but once it opens, you will see a table without c
 2. Choose **Settings** to add the columns you want to see and choose **OK**.
 
     ![Choose Settings](settings-books-app.png)
+
 3. Choose **Go**.
 
     >You may see an error, because we have not added any data yet. In this case, choose **Cancel** and continue with the next step.
