@@ -188,11 +188,15 @@ The SAP Cloud Platform Portal tutorial GitHub repository contains various SAPUI5
 Import the applications used in this tutorial to add to your SAP Web IDE and deploy them to your SAP Cloud Platform account.
 
 1. In the development workspace, select the `Workspace` root folder.
+
 2. Right-click and select **Import** > **File or Project**.
 
     ![Import to File System](05-Import-to-file-system.png)
 
-3. From the **Import** dialog box, select the `productslist.zip` file located in the sample repository unzipped folder:  `cloud-portal-tutorial-samples-master\TECHED2018\productslist`.
+3. From the **Import** dialog box, select the `productslist.zip` file located in the sample repository unzipped folder:
+
+    `cloud-portal-tutorial-samples-master\TECHED2018\productslist`.
+
 4. Check **Extract Archive** and make sure that **Import to** is `/productslist`.
 
     ![Products List zip file](06-productslist-zip-file.png)

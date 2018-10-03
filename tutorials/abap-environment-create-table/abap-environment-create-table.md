@@ -37,6 +37,7 @@ Open Eclipse, and select **New** > **ABAP Package**.
     Click **Next**.
 
     ![Create ABAP package](package2.png)
+    
 2. Move on with **Next**.
 
     ![Create ABAP package](package3.png)

@@ -49,7 +49,9 @@ In this tutorial, wherever `xxx` appears, use a number (e.g. `000`).
 [ACCORDION-BEGIN [Step 3: ](Add communication user data)]
 
 1. Enter a user name and description for your user.
+
 2. Give your user a password.
+
 3. Click **Create**.
 
     ![Add Communication User data](Picture5.png)
@@ -102,9 +104,12 @@ A new communication system will be registered.
 [ACCORDION-BEGIN [Step 7: ](Create communication arrangement)]
 
 1. Navigate back to Home and then to **Communication Arrangement**.
-![Communication Arrangement application](Picture11.png)
+
+    ![Communication Arrangement application](Picture11.png)
+
 2. Create a new communication arrangement by clicking **New**.
-![click on new](Picture12.png)
+
+    ![click on new](Picture12.png)
 
 [DONE]
 [ACCORDION-END]

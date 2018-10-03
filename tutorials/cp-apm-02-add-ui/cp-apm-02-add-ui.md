@@ -74,7 +74,9 @@ The SAP Fiori `launchpad` opens.
 [ACCORDION-BEGIN [Step 3: ](Open your app)]
 
 1. Select your app to see a preview of the UI application.
-This might take a few seconds, but once it opens, you will see a table without columns, because UI annotations have not been defined.
+
+    This might take a few seconds, but once it opens, you will see a table without columns, because UI annotations have not been defined.
+
 2. Choose **Settings** to add the columns you want to see and choose **OK**.
 
     ![Choose Settings](settings-books-app.png)

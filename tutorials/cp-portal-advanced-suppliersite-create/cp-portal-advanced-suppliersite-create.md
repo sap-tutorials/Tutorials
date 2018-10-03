@@ -77,6 +77,7 @@ The new site instance is created and opened in the Site Designer in a new browse
     ![Open Site Menu Editor](11-open-menu-editor.png)
 
 2. Double click on the last entry named **Contact Us** from the list of menu items, to open the text for edit.
+
 3. Enter the new value **Contact Our Suppliers**.
 
     ![Enter new header text](12-change-menu-entry.png)

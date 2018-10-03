@@ -39,6 +39,7 @@ In this tutorial, we will add a Portal widget to one of the Supplier Portal page
 
 [ACCORDION-BEGIN [Step 2: ](Change section layout)]
 1. In the **Contact Us** page, click the bottom white section to expose the section action items.
+
 2. Click the section **Settings icon** (2nd from the top).
 
     ![Click section settings](12-click-section-settings.png)
@@ -76,12 +77,15 @@ The Supplier Lookup widget is now placed as the first widget in the section.
 
 [ACCORDION-BEGIN [Step 4: ](Configure widget settings)]
 1. Go back to the **Contact Us** page in the Site Designer.
+
 2. Click the **Supplier Lookup** widget to expose it's action items.
+
 3. Click the widget settings menu icon.
 
     ![Click widget settings icon](16-widget-settings-icon.png)
 
 4. In the widget settings dialog, switch to Enable Search Suggestions for the Supplier Lookup widget.
+
 5. Click **Save**.
 
     ![Save widget settings](16-widget-settings-save.png)
