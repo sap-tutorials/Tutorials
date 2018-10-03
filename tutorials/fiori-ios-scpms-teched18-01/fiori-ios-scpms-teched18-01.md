@@ -31,7 +31,7 @@ Before you start, make sure you:
 
 This step provides simplified steps to configure the SAP Cloud Platform SDK for iOS Assistant application using the SAP Cloud Platform Mobile Services cockpit.
 
-Log on to your SAP Cloud Platform trial account at [https://account.hanatrial.ondemand.com/](https://account.hanatrial.ondemand.com/) and once logged in, navigate to **Services**. Scroll down to **Mobile Services** and click on the **Development & Operations** tile. In the **Development & Operations - Overview** page, click the **Go to Service** link to open a new window to **SAP Cloud Platform Mobile Services**.
+Log on to your SAP Cloud Platform trial account at [https://account.hanatrial.ondemand.com/](https://account.hanatrial.ondemand.com/) and once logged in choose **Neo Trial** as your target landscape. Click on **Services** on the right side to see all available Services. Scroll down to **Mobile Services, std**, click on the tile. After the Service page loaded click the **Enable** button to enable this service. After the Service is enabled click the **Go to Service** link to open a new window to **SAP Cloud Platform Mobile Services**.
 
 > Alternatively, you can go directly to `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/`
 
@@ -186,7 +186,7 @@ Based on this metadata, the OData proxy classes will be generated for the Xcode 
 
 In addition, the configuration settings you have provided in the SDK Assistant are now being sent to SAP Cloud Platform Mobile Services.
 
-> **NB:** If you have already 5 native applications defined in SAP Cloud Platform Mobile Services, the SDK Assistant will give the following error:
+> **Note:** If you have already 5 native applications defined in SAP Cloud Platform Mobile Services, the SDK Assistant will give the following error:
 
 > ![Optional Features](fiori-ios-scpms-create-app-teched18-part1-16.png)
 
@@ -197,21 +197,23 @@ In addition, the configuration settings you have provided in the SDK Assistant a
 
 [ACCORDION-BEGIN [Step 8: ](Examine the generated Xcode project)]
 
-You can now select the `MyDeliveries` application project under **Recent Projects** in you SDK Assistant.
+You can now select the `MyDeliveries` application project under **Recent Projects** in the SDK Assistant.
 
 ![Xcode project overview](fiori-ios-scpms-create-app-teched18-part1-17.png)
 
-Next hover over the project name and click the down pointing arrow to see **Open** from the appearing menu. Click **Open** to open the Xcode application project.
+> If Xcode does not open automatically to show your project, click on the project name in the SDK Assistant and click **Open**.
+
+In Xcode, the left-hand sidebar of the window shows various Navigators for exploring your project, source control, debugging, and so on. If it's not already selected, select the **Project Navigator** by clicking on the folder icon above the left-hand sidebar. This shows all of the files in the project.
 
 ![Xcode project overview](fiori-ios-scpms-create-app-teched18-part1-17a.png)
 
-The `Main.storyboard` shows a split-view setup for the generated Master-Detail views.
+The `Main.storyboard` file shows a split-view setup for the generated Master-Detail views.
 
-Folder `MyDeliveries/Onboarding` contains logic for the user onboarding, authentication and handling of `passcodes` and Touch ID.
+The `MyDeliveries/Onboarding` folder contains logic for the user onboarding, authentication and handling of `passcodes` and Touch ID.
 
-Folder `MyDeliveries/Proxy Classes` contains the OData proxy classes generated from the OData service. File `DeliveryService.swift` in the `Proxy Classes/public` folder acts as a data service provider to gain access to the OData entities. The two files `PackagesType.swift` and `DeliveryStatusType.swift` are classes for the OData entities `Packages` and `DeliveryStatus`, respectively. These classes give access to the various properties of the OData entities.
+The `MyDeliveries/Proxy Classes` folder contains the OData proxy classes generated from the OData service. The `DeliveryService.swift` file in the `Proxy Classes/public` folder acts as a data service provider to gain access to the OData entities. The two files `PackagesType.swift` and `DeliveryStatusType.swift` are classes for the OData entities `Packages` and `DeliveryStatus`, respectively. These classes give access to the various properties of the OData entities.
 
-Folders `ViewControllers/PackagesType` and `ViewControllers/DeliveryStatusType` contain the master and detail view controllers as well as a storyboard for the `Packages` and `DeliveryStatus` entities, respectively.
+The `ViewControllers/PackagesType` and `ViewControllers/DeliveryStatusType` folders contain the master and detail view controllers as well as a storyboard for the `Packages` and `DeliveryStatus` entities, respectively.
 
 [VALIDATE_1]
 [ACCORDION-END]
