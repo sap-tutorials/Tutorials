@@ -20,7 +20,7 @@ time: 5
 
 [ACCORDION-BEGIN [Step 1: ](Connect to the cloud shell)]
 
-Go back to the Google Chrome window and open a `gcloud` console:
+Go back to the Google Chrome window and open a **new** `gcloud` console:
 
 ![Configure VM](gcloud.png)
 
@@ -28,6 +28,9 @@ Click **Run in cloud shell**. When prompted, click **Enter** twice and leave the
 
 ![Configure VM](g2.png)
 
+**Confirm** starting loud shell when prompted. Also confirm generating SSH keys and leave the passphrase blank.
+
+![Configure VM](g3.png)
 
 [DONE]
 
@@ -37,7 +40,10 @@ Click **Run in cloud shell**. When prompted, click **Enter** twice and leave the
 
 Use the following two commands to create a file and edit it using the embedded editor
 
+> **Note**: You can use copy (`CTRL+C`) and paste (`CTRL+C`) for each of the commands.
+
 ```text
+exit
 touch setup.sh
 edit setup.sh
 ```
@@ -85,7 +91,7 @@ The script will also restart the database. Continue with the next step while thi
 
 [ACCORDION-BEGIN [Step 3: ](Download master data from Google BigQuery)]
 
-Use a **new tab in the browser** to open [Google BigQuery](https://console.cloud.google.com/bigquery).
+Use a **new tab in the browser** to open [Google BigQuery](https://bigquery.cloud.google.com/queries/).
 
 Look for `noaa-gsod` in the list of datasets
 
@@ -95,16 +101,17 @@ Locate the `stations` table and click on **Query Table**.
 
 ![Open BigQuery](10.png)
 
+Click **Show options**
+
+![Open BigQuery](x1.png)
+
+Clear the checkbox for **Use legacy SQL** and click again on **Query Table**
+
+![Open BigQuery](x3.png)
+
 Add a `*` to the query and run it:
 
 ![Open BigQuery](11.png)
-
-Click **Download as CSV**
-
-![Open BigQuery](12.png)
-
-And keep the CSV file open as you will need the data.
-
 
 [DONE]
 [ACCORDION-END]
@@ -117,7 +124,7 @@ Click on the name of your project and then on **Create Dataset**.
 
 Call it `HeatDeath` and click **Create dataset**
 
-![Create BigQuery](14.png)
+![Create BigQuery](x4.png)
 
 [DONE]
 
@@ -125,7 +132,7 @@ Call it `HeatDeath` and click **Create dataset**
 
 [ACCORDION-BEGIN [Step 5: ](Query stations closer to your current location)]
 
-We loaded the same dataset you downloaded from the `stations` table into SAP HANA and used a geospatial function to find out which stations are closer to our current location in Las Vegas.
+We loaded the same dataset you queried from the `stations` table into SAP HANA and used a geospatial function to find out which stations are closer to our current location in Las Vegas.
 
 ![Query geospatial](lv.png)
 
@@ -142,11 +149,11 @@ For example:
 
 Click **Save as table**
 
-![Create BigQuery](16.png)
+![Create BigQuery](x9.png)
 
 Call it `RESULTS`
 
-![Create BigQuery](RESULTS.png)
+![Create BigQuery](X10.png)
 
 [DONE]
 [ACCORDION-END]
@@ -154,6 +161,13 @@ Call it `RESULTS`
 [ACCORDION-BEGIN [Step 6: ](Check setup finished and tweak environment)]
 
 Go back into the console where the setup script was running. By now, it should have finished. If it hasn't, wait for it.
+
+![Create BigQuery](x8.png)
+
+Open a **new SSH console** to the virtual machine:
+
+![Create BigQuery](x11.png)
+
 Execute the following command to log in to the XS Advanced CLI:
 
 ```
@@ -171,7 +185,7 @@ Paste the following command to prepare your environment for development:
 xs scale di-core -m 512M
 ```
 
-![Configure HXE](scale.png)
+![Configure HXE](x12.png)
 
 Use the following two commands to map the tenant database to the development space.
 
@@ -183,6 +197,10 @@ xs map-tenant-database -o HANAExpress -s development HXE
 ```
 
 ![Configure HXE](map.png)
+
+**It is important** to make sure the results of both operations are successful.
+
+![Configure HXE](x15.png)
 
 Copy the results of the following command into the validation to complete it.
 
