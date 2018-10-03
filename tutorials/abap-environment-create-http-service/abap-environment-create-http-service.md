@@ -24,21 +24,26 @@ You can then access the ABAP system from the browser, for example to fetch a rep
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create an HTTP service)]
-  1. Select your package and choose **New > Other Repository Object** from the context menu:
-  ![Image depicting step-1a-new-repo-object](step-1a-new-repo-object.png)
+1. Select your package and choose **New > Other Repository Object** from the context menu:
 
-  2. Enter the filter text **HTTP** and choose **Next**:
-  ![Image depicting step-1b-choose-HTTP-service](step-1b-choose-HTTP-service.png)
+    ![Image depicting step-1a-new-repo-object](step-1a-new-repo-object.png)
 
-  3. Enter a **name** and **description** for your service and choose **Next**:
-  ![Image depicting step-1c-name-service](step-1c-name-service.png)
+2. Enter the filter text **HTTP** and choose **Next**:
 
-  4. Choose or create a **transport request**:
-  ![Image depicting step-1d-transport-request](step-1d-transport-request.png)
+    ![Image depicting step-1b-choose-HTTP-service](step-1b-choose-HTTP-service.png)
 
-  The new HTTP service is displayed on a new tab. The handler class and URL are generated automatically, in the form:
-  **`https://<server:port>/sap/bc/http/sap/<service_name>?sap-client=100`**
-  ![Image depicting step-1e-new-service-created](step-1e-new-service-created.png)
+3. Enter a **name** and **description** for your service and choose **Next**:
+
+    ![Image depicting step-1c-name-service](step-1c-name-service.png)
+
+4. Choose or create a **transport request**:
+
+    ![Image depicting step-1d-transport-request](step-1d-transport-request.png)
+
+The new HTTP service is displayed on a new tab. The handler class and URL are generated automatically, in the form:
+**`https://<server:port>/sap/bc/http/sap/<service_name>?sap-client=100`**
+
+![Image depicting step-1e-new-service-created](step-1e-new-service-created.png)
 
 [DONE]
 
@@ -47,11 +52,12 @@ You can then access the ABAP system from the browser, for example to fetch a rep
 [ACCORDION-BEGIN [Step 2: ](Implement the handler class)]
 Now, you will implement the handler class, starting with a simple text output.
 
-  1. Open the handler class by clicking on it:
-    ![Image depicting step-2a-open-handler-class](step-2a-open-handler-class.png)
-  2. The structure of the class and the interfaces statement for `IF_HTTP_SERVICE_EXTENSION` are generated automatically.
+1. Open the handler class by clicking on it:
 
-  3. Go to the class implementation section and insert the following statement in the method:
+    ![Image depicting step-2a-open-handler-class](step-2a-open-handler-class.png)
+
+2. The structure of the class and the interfaces statement for `IF_HTTP_SERVICE_EXTENSION` are generated automatically.
+3. Go to the class implementation section and insert the following statement in the method:
 
     **`response->set_text('Hello again!').`**
 
@@ -69,10 +75,12 @@ Save (`Ctrl+S`) and activate (`Ctrl+F3`) your class.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Test the service)]
-  1. Test your service in the browser by clicking the URL link:
+1. Test your service in the browser by clicking the URL link:
+
     ![Image depicting step-4-test-http-service](step-4-test-http-service.png)
 
-  2. If necessary, log in again. The preview open automatically in a new tab and display something like this:
+2. If necessary, log in again. The preview open automatically in a new tab and display something like this:
+
     ![Image depicting step-4b-hello](step-4b-hello.png)
 
 [DONE]
@@ -101,9 +109,10 @@ response->set_text( lv_text ).
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Test the service again)]
-  1. Save (`Ctrl+S`) and activate (`Ctrl+F3`) your class.
-  2. Test your service by clicking the URL link again. This time, the preview should display something like this:
-  ![Image depicting step-6-system-date](step-6-system-date.png)
+1. Save (`Ctrl+S`) and activate (`Ctrl+F3`) your class.
+2. Test your service by clicking the URL link again. This time, the preview should display something like this:
+
+    ![Image depicting step-6-system-date](step-6-system-date.png)
 
 [DONE]
 
