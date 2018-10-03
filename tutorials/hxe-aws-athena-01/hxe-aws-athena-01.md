@@ -102,9 +102,9 @@ Click on **Create bucket**.
 
 ![Amazon Web Services](04-01.png)
 
-Enter as **Bucket name** ***`sap-hana-athena-<my unique id>`*** where ***<my unique id>*** is a unique identifier across all existing S3 bucket on AWS.
+Enter as **Bucket name** ***`sap-hana-athena-<my unique id>`*** where ***&lt;my unique id&gt;*** is a unique identifier across all existing S3 bucket on AWS.
 
-You can use the user ARN numerical identifier from the previous step as ***<my unique id>***.
+You can use the user ARN numerical identifier from the previous step as ***&lt;my unique id&gt;***.
 
 > ### **Note:**
 >Please note that you will need to create your S3 bucket in a region where Amazon Athena is available: 
