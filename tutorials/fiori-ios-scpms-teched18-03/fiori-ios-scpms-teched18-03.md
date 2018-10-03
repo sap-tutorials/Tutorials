@@ -76,15 +76,11 @@ When you're happy with the final result, tap the **Code button** (the one labele
 
 ![Mentor app](fiori-ios-scpms-create-app-teched18-part3-40.png)
 
-To use the generated code in Xcode, tap the **Share** button in the top-right, and use **AirDrop** to transfer to your Mac:
+If you are using your own Mac and iPad that are both logged into the same iCloud account, you can tap the **Share** button in the top-right, and tap **Copy** to copy the code to the Universal Clipboard. You can then paste it directly into Xcode on your Mac.
 
 ![Mentor app](fiori-ios-scpms-create-app-teched18-part3-41.png)
 
-Open the downloaded text file:
-
-![Mentor app](fiori-ios-scpms-create-app-teched18-part3-42.png)
-
-> Since it may take a bit too long to go through the steps of copying and pasting the code, adding the control binding to the Proxy Classes' properties and format the data properly, you don't need to do this yourself. The code to implement will be provided in the next step.
+> **Note:** For this exercise, you don't need to do this yourself. The code to implement will be provided in the next step.
 
 [DONE]
 [ACCORDION-END]
