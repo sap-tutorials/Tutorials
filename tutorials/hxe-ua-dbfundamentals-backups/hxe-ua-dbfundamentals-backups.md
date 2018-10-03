@@ -1,6 +1,7 @@
 ---
 title: Create a Backup
 description: Learn how to complete common tasks when setting up a new database. In this tutorial, you will create a backup for your database using HANA cockpit, HANA studio, or SQL.
+auto_validation: true
 primary_tag: products>sap-hana\,-express-edition
 tags: [ tutorial>how-to, tutorial>beginner, products>sap-hana\,-express-edition  ]
 ---
@@ -52,7 +53,7 @@ How to create a backup for you database using either HANA Cockpit, HANA Studio, 
 
     ![Successful Backup](successful_backup.png)
 
-
+[VALIDATE_1]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Option 2: ](SAP HANA Studio)]
@@ -80,7 +81,7 @@ How to create a backup for you database using either HANA Cockpit, HANA Studio, 
 
 5. Review your backup settings and click __Finish__ to begin creating your backup. Creating your backup will take a few minutes.
 
-
+[VALIDATE_2]
 [ACCORDION-END]
 
 
@@ -167,7 +168,7 @@ How to create a backup for you database using either HANA Cockpit, HANA Studio, 
 
     A list of your backup files is displayed.
 
-
+[VALIDATE_3]
 [ACCORDION-END]
 
 
