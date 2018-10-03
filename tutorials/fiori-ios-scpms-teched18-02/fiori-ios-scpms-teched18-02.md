@@ -36,7 +36,7 @@ The application name is shown, with a description. You have the option to show a
 
 In this tutorial, you use the live application. Tap the blue **Start** button to proceed.
 
-The **OAuth** login screen of **SAP Cloud Platform mobile service for development and operations** is shown. Enter your login credentials for the SAP Cloud Platform and tap the **Log On** button:
+The **OAuth** login screen of **SAP Cloud Platform Mobile Services** is shown. Enter your login credentials for the SAP Cloud Platform and tap the **Log On** button:
 
 ![Build and run](fiori-ios-scpms-create-app-teched18-part2-21.png)
 
