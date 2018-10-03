@@ -31,7 +31,7 @@ Before you start, make sure you:
 
 This step provides simplified steps to configure the SAP Cloud Platform SDK for iOS Assistant application using the SAP Cloud Platform Mobile Services cockpit.
 
-Log on to your SAP Cloud Platform trial account at [https://account.hanatrial.ondemand.com/](https://account.hanatrial.ondemand.com/) and once logged in choose **Neo Trial** as your target landscape. Click on **Services** on the right side to see all available Services. Scroll down to **Mobile Services, std**, click on the tile. After the Service page loaded click the **Enable** button to enable this service. After the Service is enabled click the **Go to Service** link to open a new window to **SAP Cloud Platform Mobile Services**.
+Log on to your SAP Cloud Platform trial account at [https://account.hanatrial.ondemand.com/](https://account.hanatrial.ondemand.com/) and once logged in choose **Neo Trial** as your target landscape. Click on **Services** on the left side to see all available Services. Scroll down to **Mobile Services, std**, click on the tile. After the Service page loaded click the **Enable** button to enable this service. After the Service is enabled click the **Go to Service** link to open a new window to **SAP Cloud Platform Mobile Services**.
 
 > Alternatively, you can go directly to `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/`
 
