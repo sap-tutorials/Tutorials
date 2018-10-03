@@ -43,11 +43,11 @@ The opening screen will appear.  Choose **Cloud Foundry Trial** as the type of a
 
 Clicking on the Cloud Foundry trial link will bring up the **Start Cloud Foundry Trial** dialog box.  Choose one of regions from this list.    
 
-We suggest that you use the _Europe (Frankfurt)_ region.  
+We suggest that you use the _US East (VA)_ region.  
 
-> We suggest the _Europe (Frankfurt)_ region because it has the largest list of services.  If you want to use a region closer to you, [check to be certain it has the services you want before selecting it](https://help.sap.com/doc/aa1ccd10da6c4337aa737df2ead1855b/Cloud/en-US/3b642f68227b4b1398d2ce1a5351389a.html?3b642f68227b4b1398d2ce1a5351389a.html).
+> Each Cloud Foundry region has a different list of available services.  If you want to use a different region with a particular service, [check to be certain it has the services you want before selecting it](https://help.sap.com/doc/aa1ccd10da6c4337aa737df2ead1855b/Cloud/en-US/3b642f68227b4b1398d2ce1a5351389a.html?3b642f68227b4b1398d2ce1a5351389a.html).
 
-![Choose a nearby region](2b.png)
+![Choose a nearby region](2b-east.png)
 
 You will then see a dialog box while the account is set up.  When complete, the dialog box will look like this.  Click **Go To Space** to continue.
 
