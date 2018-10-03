@@ -94,37 +94,38 @@ Copy the following two lines of code right below the existing `script-tag` in th
     ```
 
 2. The `onInit` hook initializes the connection to the Microsoft Graph API once the controller is initialized. Add this hook right before the `onClickPO` function in the controller:
-```javascript
-onInit: function () {
-  this.oUserAgentApplication = new Msal.UserAgentApplication(msalconfig.clientID, null,
-    function (errorDesc, token, error, tokenType) {
-      if (errorDesc) {
-        var formattedError = JSON.stringify(error, null, 4);
-        if (formattedError.length < 3) {
-          formattedError = error;
-        }
-        MessageToast.show("Error, please check the $.sap.log for details");
-        $.sap.log.error(error);
-        $.sap.log.error(errorDesc);
-      } else {
-        this.fetchUserInfo();
+
+    ```javascript
+    onInit: function () {
+      this.oUserAgentApplication = new Msal.UserAgentApplication(msalconfig.clientID, null,
+        function (errorDesc, token, error, tokenType) {
+          if (errorDesc) {
+            var formattedError = JSON.stringify(error, null, 4);
+            if (formattedError.length < 3) {
+              formattedError = error;
+            }
+            MessageToast.show("Error, please check the $.sap.log for details");
+            $.sap.log.error(error);
+            $.sap.log.error(errorDesc);
+          } else {
+            this.fetchUserInfo();
+          }
+        }.bind(this), {
+          redirectUri: msalconfig.redirectUri
+        });
+      //Previous version of msal uses redirect url via a property
+      if (this.oUserAgentApplication.redirectUri) {
+        this.oUserAgentApplication.redirectUri = msalconfig.redirectUri;
       }
-    }.bind(this), {
-      redirectUri: msalconfig.redirectUri
-    });
-  //Previous version of msal uses redirect url via a property
-  if (this.oUserAgentApplication.redirectUri) {
-    this.oUserAgentApplication.redirectUri = msalconfig.redirectUri;
-  }
-  // If page is refreshed, continue to display user info
-  if (!this.oUserAgentApplication.isCallback(window.location.hash) && window.parent === window && !window.opener) {
-    var user = this.oUserAgentApplication.getUser();
-    if (user) {
-      this.fetchUserInfo();
-    }
-  }
-},
-```
+      // If page is refreshed, continue to display user info
+      if (!this.oUserAgentApplication.isCallback(window.location.hash) && window.parent === window && !window.opener) {
+        var user = this.oUserAgentApplication.getUser();
+        if (user) {
+          this.fetchUserInfo();
+        }
+      }
+    },
+    ```
 
 [VALIDATE_4]
 [ACCORDION-END]
@@ -143,11 +144,16 @@ Add a new button to the header of the first page in the `MainView.view.xml` file
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step ](Add a session model)]
 1. This previous step used a model named `session`. Open the `manifest.json` file and make sure you use the **Descriptor Editor** to declare the **`session`** model.
-![openmanifest](./openmanifest.png)
+
+    ![openmanifest](./openmanifest.png)
+
 2. Open the tab **Models** and click the plus button.
-![addmodel](./addmodel.png)
+
+    ![addmodel](./addmodel.png)
+
 3. Name the model **`session`** and make sure it's type is **`JSON`**.
-![modeldialog](./modeldialog.png)
+
+    ![modeldialog](./modeldialog.png)
 
 
 [VALIDATE_6]
