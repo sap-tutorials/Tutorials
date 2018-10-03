@@ -180,6 +180,7 @@ You can get the count of event per year using the following SQL:
 ```sql
 select "year", count(*) as events_count
 from   gdelt_athena.events
+where "year" is not null
 group by "year"
 order by "year";
 ```
@@ -215,10 +216,10 @@ Execute the following SQL:
 
 ```sql
 select
-	e."eventcode"         as "event_code",
-	ec.description        as "event_description",
-	e."year"              as "event_year",
-	sum(e."events_count") as "events_total_count"
+	e."eventcode"         as "event code",
+	ec.description        as "event type name",
+	e."year"              as "event year",
+	sum(e."events_count") as "events total count"
 from (
 	select
 		e."eventcode",
