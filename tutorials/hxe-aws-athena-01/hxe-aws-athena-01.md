@@ -141,7 +141,7 @@ Paste the following code in the **Bucket Policy editor** after adjusting the **S
 
 ```json
 {
-    "Id": "sap-hana-athena",
+    "Id": "sap-hana-athena-<my unique id>",
     "Version": "2012-10-17",
     "Statement": [
         {
