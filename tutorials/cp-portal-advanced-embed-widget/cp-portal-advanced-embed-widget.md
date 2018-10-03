@@ -40,9 +40,13 @@ In this tutorial, we will add a Portal widget to one of the Supplier Portal page
 [ACCORDION-BEGIN [Step 2: ](Change section layout)]
 1. In the **Contact Us** page, click the bottom white section to expose the section action items.
 2. Click the section **Settings icon** (2nd from the top).
-  ![Click section settings](12-click-section-settings.png)
+
+    ![Click section settings](12-click-section-settings.png)
+
 3. In the Layout settings under the list of widgets in this section, drag the **Supplier Lookup** widget entry and drop it above the **Large Icon Links Card** widgets entry to rearrange their order on the page.
-  ![Click section settings](13-reorder-widgets.png)
+
+    ![Click section settings](13-reorder-widgets.png)
+
 4. Click **Save**.
 
 The Supplier Lookup widget is now placed as the first widget in the section.
@@ -52,15 +56,20 @@ The Supplier Lookup widget is now placed as the first widget in the section.
 
 [ACCORDION-BEGIN [Step 3: ](Preview your changes in Supplier Portal)]
 1. In the Supplier Portal site designer top level menu, click the **Preview Icon**.
-  ![Click preview icon](14-preview-icon.png)
-> The Supplier Portal runtime is opened in the preview environment in a new browser tab.
+
+    ![Click preview icon](14-preview-icon.png)
+
+    > The Supplier Portal runtime is opened in the preview environment in a new browser tab.
 
 2. Click **Contact Our Suppliers** in the Supplier Portal site navigation menu to open the page.
-> Notice that the new Supplier Lookup widget is rendered in the page.
+
+    > Notice that the new Supplier Lookup widget is rendered in the page.
 
 3. In the **Supplier Lookup** widget search bar, enter the search term `SAP` and click the magnifying glass icon to search for the supplier details.
-  ![Show Site Preview](15-preview-site.png)
-> The search action performs an OData call on ES5 to search for a supplier contact named `SAP`
+
+    ![Show Site Preview](15-preview-site.png)
+
+    > The search action performs an OData call on ES5 to search for a supplier contact named `SAP`
 
 [DONE]
 [ACCORDION-END]
@@ -69,14 +78,19 @@ The Supplier Lookup widget is now placed as the first widget in the section.
 1. Go back to the **Contact Us** page in the Site Designer.
 2. Click the **Supplier Lookup** widget to expose it's action items.
 3. Click the widget settings menu icon.
-  ![Click widget settings icon](16-widget-settings-icon.png)
+
+    ![Click widget settings icon](16-widget-settings-icon.png)
+
 4. In the widget settings dialog, switch to Enable Search Suggestions for the Supplier Lookup widget.
 5. Click **Save**.
-  ![Save widget settings](16-widget-settings-save.png)
+
+    ![Save widget settings](16-widget-settings-save.png)
+
 6. Click the **Preview icon** again to preview the latest changes.
 7. In the site preview, navigate to the **Contact Our Suppliers** page.
 8. In the Supplier Lookup widget search bar, start typing *SAP*. Notice that the changes in the widget settings have been applied, and the search bar now suggests a list of relevant suppliers retrieved from the ES5 back-end system.
-  ![Widget Settings applied](17-widget-settings-applied.png)
+
+    ![Widget Settings applied](17-widget-settings-applied.png)
 
 
 [VALIDATE_1]
