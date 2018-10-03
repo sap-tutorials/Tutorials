@@ -106,8 +106,10 @@ Enter as **Bucket name** ***`sap-hana-athena-<my unique id>`*** where ***&lt;my 
 
 You can use the user ARN numerical identifier from the previous step as ***&lt;my unique id&gt;***.
 
-> ### **Note:**
->Please note that you will need to create your S3 bucket in a region where Amazon Athena is available: 
+For the sake of simplicity, choose **US East (N. Virginia)** as the region.
+
+> #### **Note:**
+> Please note that in order to use your S3 bucket with Amazon Athena, they will need to be located in the same region. Here is the list of regions where Amazon Athena is available: 
 >
 >  - Northern Virginia
 >  - Ohio
@@ -123,7 +125,7 @@ You can use the user ARN numerical identifier from the previous step as ***&lt;m
 >
 >You can find the region coverage for all AWS services [here](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services).
 >
->It is also recommended for you to create your SAP HANA, express edition instance in the selected region.
+>It is also recommended for you to create your SAP HANA, express edition instance in the same region.
 
 Click on **Create**.
 
