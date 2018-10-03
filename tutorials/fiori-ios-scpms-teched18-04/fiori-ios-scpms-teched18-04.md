@@ -63,11 +63,13 @@ Now you have the scaffolding for the data visualizations class. We'll leave it f
 
 [ACCORDION-BEGIN [Step 2: ](Add view controller to storyboard)]
 
-Open the `PackagesType.storyboard` file, and from the **Object library**, drag a **View Controller** onto the storyboard. Select the **View Controller** and go to the **Attributes Inspector**. Set the **title** to **Chart View**:
+Open the `PackagesType.storyboard` file, and click the **Object Library** button in the right area of the toolbar. Drag a **View Controller** onto the storyboard.
+
+Select the new **View Controller** and go to the **Attributes Inspector**. Set the **title** to **Chart View**:
 
 ![Create View Controller](fiori-ios-scpms-create-app-teched18-part4-46.png)
 
-Now switch to the **Identity inspector** and set the **Custom Class** to `ChartViewController`:
+Now switch to the **Identity Inspector**, enter `ChartViewController` for the **Custom Class**, and press Return. Be sure to get the spelling right; if it's correct, you'll see the Module change to MyDeliveries (the name of your project):
 
 ![Create View Controller](fiori-ios-scpms-create-app-teched18-part4-47.png)
 

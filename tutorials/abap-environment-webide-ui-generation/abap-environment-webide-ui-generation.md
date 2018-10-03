@@ -1,5 +1,5 @@
 ---
-auto_validation: true 
+auto_validation: true
 title: Create a UI that Consumes an Exposed ABAP Service
 description: Use SAP Web IDE Full-Stack to create a UI for an ABAP service in SAP Cloud Platform ABAP environment.
 primary_tag: topic>abap-development
@@ -27,6 +27,7 @@ Log into SAP Cloud Platform (Cockpit) as an administrator.
 [ACCORDION-BEGIN [Step 2: ](Create destination)]
 
 Switch to destinations and click **New Destination**.
+
 ![Create Destination](Picture1.png)
 
 [DONE]
@@ -57,6 +58,7 @@ Enter following data to your destination.
 
 1. Enter additional properties by click on **New Property**.
 2. Click on **Save**.
+
 ![additional properties](Picture3.png)
 
 [DONE]
@@ -66,7 +68,9 @@ Enter following data to your destination.
 [ACCORDION-BEGIN [Step 5: ](Check connection)]
 
 Check the connection to be sure if you get a successful connection.
+
 ![Check Connection](Picture4.png)
+
 ![Check Connection](Picture5.png)
 
 [DONE]
@@ -76,6 +80,7 @@ Check the connection to be sure if you get a successful connection.
 [ACCORDION-BEGIN [Step 6: ](Search SAP Web IDE Full-Stack)]
 
 Navigate to **Services**, search for SAP Web IDE Full-stack and select it.
+
 ![Web IDE](Picture6.png)
 
 [DONE]
@@ -85,7 +90,9 @@ Navigate to **Services**, search for SAP Web IDE Full-stack and select it.
 [ACCORDION-BEGIN [Step 7: ](Go to service)]
 
 Open **Go to Service**.
+
 You will be navigated to SAP Web IDE.
+
 ![Go to Service](Picture7.png)
 
 [DONE]
@@ -95,7 +102,9 @@ You will be navigated to SAP Web IDE.
 [ACCORDION-BEGIN [Step 8: ](Create a new project from template)]
 
 Select  **New Project from Template** to generate one.
+
 ![New Project](Picture8.png)
+
 If you don´t see this welcome page then follow the alternative way: **File** > **New** > **Project from Template**.
 
 [DONE]
@@ -106,6 +115,7 @@ If you don´t see this welcome page then follow the alternative way: **File** > 
 
 1. Choose  **List Report Application**.
 2. Click  **Next** to create a new UI.
+
 ![List Report App](Picture9.png)
 
 [DONE]
@@ -116,6 +126,7 @@ If you don´t see this welcome page then follow the alternative way: **File** > 
 
 1. Enter a name for your project, a title and the application component hierarchy, if needed.
 2. Click **Next**.
+
 ![Basic Data](Picture10.png)
 
 [DONE]
@@ -129,7 +140,9 @@ If you don´t see this welcome page then follow the alternative way: **File** > 
 3. Then you must enter a relative URL of the service you want to explore. It is just a part of the URL that you entered in the destination for this service. The relevant part is `/sap/opu/odata/… `
 4. Now the status of the service can be tested by clicking **Test** button.
 5. Click on **Next**.
+
 ![Choose System](Picture11.png)
+
 If you don´t see your created destination, you should restart your browser and log in again.
 
 [DONE]
@@ -139,9 +152,12 @@ If you don´t see your created destination, you should restart your browser and 
 [ACCORDION-BEGIN [Step 12: ](Run the webapp)]
 
 1. Run your application by clicking the **Run** button.
-![Run the Webapp](Picture12.png)
+
+    ![Run the Webapp](Picture12.png)
+
 2. Choose a file to run.
-![Run the Webapp](Picture13.png)
+
+    ![Run the Webapp](Picture13.png)
 
 [DONE]
 [ACCORDION-END]
@@ -150,6 +166,7 @@ If you don´t see your created destination, you should restart your browser and 
 [ACCORDION-BEGIN [Step 13: ](Open your application)]
 
 Navigate to your application.
+
 ![Open your application](Picture14.png)
 
 [DONE]
@@ -159,9 +176,12 @@ Navigate to your application.
 [ACCORDION-BEGIN [Step 14: ](Select fields to be displayed on UI)]
 
 1. To set some filters click on settings icon.
-![set Settings](Picture15.png)
+
+    ![set Settings](Picture15.png)
+
 2. Select fields that shall be displayed or select all and click **OK**.
-![select fields](Picture16.png)
+
+    ![select fields](Picture16.png)
 
 [DONE]
 [ACCORDION-END]
@@ -170,7 +190,9 @@ Navigate to your application.
 [ACCORDION-BEGIN [Step 15: ](Test your UI)]
 
 By clicking on **GO** you can see the filtered data on UI.
+
 ![GO button](Picture17.png)
+
 ![UI view](Picture18.png)
 
 [DONE]

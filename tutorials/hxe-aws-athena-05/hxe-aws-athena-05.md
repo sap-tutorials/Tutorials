@@ -50,188 +50,34 @@ sudo vi /usr/sap/HXE/SYS/exe/hdb/config/property_athena.ini
 Insert the following content then save and exit ***`vi`***:
 
 ```shell
-CAP_AGGREGATES : true
-CAP_AGGREGATES_COLNAME : true
-CAP_AGGR_STDDEV : true
-CAP_AND : true
-CAP_AND_DIFFERENT_COLUMNS : true
-CAP_ARRAY_FETCH : true
-CAP_BETWEEN : true
-CAP_CASE_EXPRESSION : true
-CAP_COLUMN_CAP : true
-CAP_CORRELATION_IN_UPDATE : true
-CAP_CRT_TEMP_TABLES : false
-CAP_DELETE : true
-CAP_DIST_AGGREGATES : true
-CAP_EXPR_IN_FULL_OUTER_JOIN : true
-CAP_EXPR_IN_GROUPBY : true
-CAP_EXPR_IN_INNER_JOIN : true
-CAP_EXPR_IN_LEFT_OUTER_JOIN : true
-CAP_EXPR_IN_ORDERBY : true
-CAP_EXPR_IN_PROJ : true
-CAP_EXPR_IN_WHERE : true
-CAP_GROUPBY : true
-CAP_GROUPING_SETS : false
-CAP_INSERT : false
-CAP_IN : true
-CAP_JOINS : true
-CAP_JOINS_FULL_OUTER : true
-CAP_JOINS_OUTER : true
-CAP_LIKE : true
-CAP_LIMIT : true
-CAP_NESTED_FUNC_IN_FULL_OUTER_JOIN : true
-CAP_NESTED_FUNC_IN_GROUPBY : true
-CAP_NESTED_FUNC_IN_INNER_JOIN : true
-CAP_NESTED_FUNC_IN_LEFT_OUTER_JOIN : true
-CAP_NESTED_FUNC_IN_ORDERBY : true
-CAP_NESTED_FUNC_IN_PROJ : true
-CAP_NESTED_FUNC_IN_WHERE : true
-CAP_NONEQUAL_COMPARISON : true
-CAP_OFFSET : true
-CAP_OFFSET_ARG : false
-CAP_OR : true
-CAP_ORDERBY : true
-CAP_ORDERBY_EXPRESSIONS : true
-CAP_ORDERBY_NULLS_ORDERING : false
-CAP_OR_DIFFERENT_COLUMNS : true
-CAP_PARAM_FUNCTION_SUBSTITUTION : false
-CAP_PROJECT : true
-CAP_SELECT : true
-CAP_SEQUENCE_EXPRESSION : true
-CAP_SIMPLE_EXPR_IN_FULL_OUTER_JOIN : true
-CAP_SIMPLE_EXPR_IN_GROUPBY : true
-CAP_SIMPLE_EXPR_IN_INNER_JOIN : true
-CAP_SIMPLE_EXPR_IN_LEFT_OUTER_JOIN : true
-CAP_SIMPLE_EXPR_IN_ORDERBY : true
-CAP_SIMPLE_EXPR_IN_PROJ : true
-CAP_SIMPLE_EXPR_IN_WHERE : true
 CAP_SUBQUERY : true
-CAP_SUBQUERY_GROUPBY : true
-CAP_SUBQUERY_UPDATE : true
-CAP_TABLE_CAP : false
+CAP_ORDERBY : true
+CAP_JOINS : true
+CAP_GROUPBY : true
+CAP_AND : true
+CAP_OR : true
 CAP_TOP : false
-CAP_TOP_UNDER_UNION : false
-CAP_TRUNCATE_TABLE : false
-CAP_TSQL_DELUPD : true
-CAP_UNIONALL : false
-CAP_UPDATE : true
-CAP_WHERE : true
-CAP_OWNER_SUPPORTED : true
-CAP_SUBQUERY_DELETE : true
-CAP_DISTINCT : true
-CAP_HAVING : true
-CAP_BI_POWER : true
-CAP_BI_ROUND : true
-CAP_BI_SIGN : true
-CAP_BI_SIN : true
-CAP_BI_SQRT : true
-CAP_BI_TAN : true
-CAP_BI_LTRIM : true
-CAP_BI_RTRIM : true
-CAP_BI_ABS : true
-CAP_BI_COS : true
-CAP_BI_ROWID : true
-CAP_BI_EXP : true
-CAP_BI_FLOOR : true
-CAP_BI_LENGTH : true
+CAP_LIMIT : true
+CAP_SUBQUERY :  true
+CAP_SUBQUERY_GROUPBY : true
 
-FUNC_ASCII : true
 FUNC_ABS : true
-FUNC_ACOS : true
 FUNC_ADD : true
 FUNC_ADD_DAYS : DATE_ADD(DAY,$2,$1)
 FUNC_ADD_MONTHS : DATE_ADD(MONTH,$2,$1)
 FUNC_ADD_SECONDS : DATE_ADD(SECOND,$2,$1)
 FUNC_ADD_YEARS : DATE_ADD(YEAR,$2,$1)
-FUNC_ASCII : false
+FUNC_ASCII : true
+FUNC_ACOS : true
 FUNC_ASIN : true
 FUNC_ATAN : true
-FUNC_ATAN2 : true
-FUNC_BITAND : (SELECT BIT_AND(x) FROM UNNEST([$1, $2]) as x)
-FUNC_CAST : true
-FUNC_CEIL : true
-FUNC_CHR : false
-FUNC_COALESCE : COALESCE($*)
-FUNC_CONCAT : true
-FUNC_COS : true
-FUNC_COSH : true
-FUNC_DAYS_BETWEEN : DATE_DIFF($1, $2, DAY)
-FUNC_DIV : true
-FUNC_EXP : true
-FUNC_EXTRACT_DAY : true
-FUNC_EXTRACT_HOUR : true
-FUNC_EXTRACT_MINUTE : true
-FUNC_EXTRACT_MONTH : true
-FUNC_EXTRACT_SECOND : true
-FUNC_EXTRACT_YEAR : true
-FUNC_FLOOR : true
-FUNC_GREATEST : true
-FUNC_IFNULL : IFNULL($1, $2)
-FUNC_LAST_DAY : false
-FUNC_LEAST : true
-FUNC_LENGTH : true
-FUNC_LN : true
-FUNC_LOCATE : false
-FUNC_LOG : true
-FUNC_LOWER : true
-FUNC_LPAD : true
-FUNC_MOD : true
-FUNC_MUL : true
-FUNC_NCHR : CODE_POINTS_TO_STRING([$1])
-FUNC_NEXT_DAY : false
-FUNC_NULLIF : false
-FUNC_NVL2 : false
-FUNC_POWER : true
-FUNC_REPLACE{#2} : false
-FUNC_REPLACE{#3} : true
-FUNC_ROUND{#2} : true
-FUNC_ROUND{#3} : false
-FUNC_RPAD : true
-FUNC_SECONDS_BETWEEN : TIME_DIFF($1, $2, SECOND)
-FUNC_SIGN : true
-FUNC_SIN : true
-FUNC_SINH : true
-FUNC_SQRT : true
-FUNC_SUB : true
-FUNC_SUBSTR : SUBSTR($*)
-FUNC_SUBSTR_AFTER : false
-FUNC_SUBSTR_BEFORE : false
-FUNC_TAN : true
-FUNC_TANH : true
-FUNC_TO_ALPHANUM : false
-FUNC_TO_BIGINT : CAST($1 AS INT64)
-FUNC_TO_BINARY : CAST($1 AS BYTES)
-FUNC_TO_BLOB : false
-FUNC_TO_CHAR : CAST ($1 AS STRING)
-FUNC_TO_CLOB : false
-FUNC_TO_DATE{#1} : DATE($1)
-FUNC_TO_DATE{#2} : false
-FUNC_TO_DATS : false
-FUNC_TO_DECIMAL : CAST($1 AS FLOAT64)
-FUNC_TO_DOUBLE : CAST($1 AS FLOAT64)
-FUNC_TO_FIXED16 : false
-FUNC_TO_INT : false
-FUNC_TO_INTEGER : false
-FUNC_TO_NCHAR : CAST ($1 AS STRING)
-FUNC_TO_NCLOB : false
-FUNC_TO_NUMBER : false
-FUNC_TO_NVARCHAR : CAST ($1 AS STRING)
-FUNC_TO_REAL : false
-FUNC_TO_SECONDDATE : CAST ($1 AS TIMESTAMP)
-FUNC_TO_SMALLDECIMAL : false
-FUNC_TO_SMALLINT : false
-FUNC_TO_TIME : TIME($1)
-FUNC_TO_TIMESTAMP : CAST ($1 AS TIMESTAMP)
-FUNC_TO_TINYINT: false
 FUNC_TO_VARBINARY : false
 FUNC_TO_VARCHAR : false
 FUNC_TRIM_BOTH : TRIM($1)
 FUNC_TRIM_LEADING : LTRIM($1)
 FUNC_TRIM_TRAILING : RTRIM($1)
 FUNC_UMINUS : false
-FUNC_UNICODE : false
 FUNC_UPPER : true
-FUNC_VAR : false
 FUNC_WEEKDAY : false
 
 TYPE_TINYINT : TINYINT
@@ -251,6 +97,8 @@ TYPE_DECIMAL : DECIMAL($PRECISION,$SCALE)
 TYPE_VARCHAR : VARCHAR($PRECISION)
 TYPE_BINARY : VARBINARY
 TYPE_VARBINARY : VARBINARY
+
+PROP_USE_UNIX_DRIVER_MANAGER : true
 ```
 
 > ### **Note**: You can paste content in **`vi`** using the following keyboard combination:
@@ -320,7 +168,17 @@ HDB stop && HDB start
 
 The restart process will take a few minutes to complete.
 
-Once completed, you can run the following command to get the list of started processes:
+Although the database is running, the XS Advanced applications and services may still be loading. Check the progress by running the following command in the XS Command Line Interface.
+
+```shell
+xs-admin-login
+xs apps | grep webide
+```
+
+When prompted, use the password you provided at the beginning of the installation script.
+
+Repeat the second command until you see STARTED and 1/1 for applications webide.
+Once started, you can run the following command to get the list of started processes:
 
 ```shell
 HDB info

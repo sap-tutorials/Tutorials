@@ -180,6 +180,7 @@ You can get the count of event per year using the following SQL:
 ```sql
 select "year", count(*) as events_count
 from   gdelt_athena.events
+where "year" is not null 
 group by "year"
 order by "year";
 ```
@@ -215,10 +216,10 @@ Execute the following SQL:
 
 ```sql
 select
-	e."eventcode"         as "event_code",
-	ec.description        as "event_description",
-	e."year"              as "event_year",
-	sum(e."events_count") as "events_total_count"
+	e."eventcode"         as "event code",
+	ec.description        as "event type name",
+	e."year"              as "event year",
+	sum(e."events_count") as "events total count"
 from (
 	select
 		e."eventcode",
@@ -236,10 +237,12 @@ join gdelt_hana.eventcodes ec on e."eventcode" = ec.code
 where e."year" = 2017
 and   e."actiongeo_countrycode" = 'FR'
 group by e."year", e."eventcode", ec.code, ec.description
-order by e."year", "events_total_count" desc;
+order by e."year", "events total count" desc;
 ```
 
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_2]
 [ACCORDION-END]
+
+Congratulations! You have just completed your mission: combine the power of SAP HANA, express edition with Amazon Athena!

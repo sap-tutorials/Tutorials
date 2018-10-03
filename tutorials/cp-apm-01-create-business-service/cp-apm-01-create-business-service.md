@@ -16,7 +16,7 @@ time: 10
 
 ## Details
 ### You will learn  
-  - How to develop a simple business service on SAP Cloud Platform using the application programming model and SAP Web IDE Full-Stack.
+  - How to develop a simple business service on SAP Cloud Platform using the application programming model and SAP Web IDE Full-Stack
 
 ---
 

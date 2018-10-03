@@ -73,7 +73,7 @@ Click **Next** to configure the OData services.
 
 ![Cloud configuration](cloud-configuration.png)
 
-The application configuration has already been created and has added multiple features of the SAP Cloud Platform Mobile Services. The configuration can be viewed by clicking the **Go to cockpit** link in the bottom left of the wizard page.
+The application configuration has already been created and has added multiple features of the SAP Cloud Platform Mobile Services.
 
 ![App features](appFeatures.png)
 

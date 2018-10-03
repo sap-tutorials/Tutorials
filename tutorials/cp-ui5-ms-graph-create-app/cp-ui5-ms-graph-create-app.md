@@ -21,6 +21,7 @@ time: 20
     ![Navigate to services](./cockpit_services.png)
 
 2. Navigate to the SAP Web IDE Full-Stack tile and click on it.
+
 3. Hit **Go To Service** to open the SAP Web IDE Full-Stack.
 
     ![Go to Service link](./open_ide.png)

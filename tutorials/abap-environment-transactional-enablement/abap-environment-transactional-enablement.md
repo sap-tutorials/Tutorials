@@ -23,7 +23,7 @@ In this tutorial, wherever `xxx` appears, use a number (e.g. `000`).
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Open Eclipse)]
-Go to your ABAP package created in [Create and Expose a Core Data Service Based on a Database Table](https://www.sap.com/developer/tutorials/abap-environment-create-cds-view.html)and open your data definition `ZI_BOOKING_XXX` to add following statement:
+Go to your ABAP package created in [Create and Expose a Core Data Service Based on a Database Table](https://www.sap.com/developer/tutorials/abap-environment-create-cds-view.html) and open your data definition `ZI_BOOKING_XXX` to add following statement:
 
 `root`
 
@@ -36,6 +36,7 @@ Save and activate.
 
 [ACCORDION-BEGIN [Step 2: ](Open other repository object)]
 Right-click on your package and navigate to **New** > **Other ABAP Repository Object** from the appearing context menu.
+
 ![Open other repository object](object.png)
 
 [DONE]
@@ -43,16 +44,20 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 
 [ACCORDION-BEGIN [Step 3: ](Create behavior definition)]
 1. Navigate to **Core Data Services**, select **Behavior Definition** and press **Next**.
-![Create behavior definition](definition.png)
+
+    ![Create behavior definition](definition.png)
 
 2. Create a behavior definition for booking node/entities.
-![Create behavior definition](definition2.png)
+
+    ![Create behavior definition](definition2.png)
 
 3. Click **Finish** to complete your transport request.
-![Create behavior definition](definition3.png)
+
+    ![Create behavior definition](definition3.png)
 
 4. Check result. An empty behavior definition for unmanaged implementation is created.
-![Create behavior definition](unmanaged.png)
+
+    ![Create behavior definition](unmanaged.png)
 
 [DONE]
 [ACCORDION-END]
@@ -78,26 +83,32 @@ Save and activate.
 
 [ACCORDION-BEGIN [Step 5: ](Create behavior implementation)]
 1. Right-click on your behavior definition and select **New Behavior Implementation**.
-![Create behavior implementation](behavior.png)
+
+    ![Create behavior implementation](behavior.png)
 
 2. Provide a name and click **Next**.
-![Create behavior implementation](class.png)
+
+    ![Create behavior implementation](class.png)
 
 3. Provide a transport request if required and click **Finish**.
-![Create behavior implementation](transport.png)
+
+    ![Create behavior implementation](transport.png)
 
 [DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 6: ](Enhance local class)]
 1. Go to the bottom of the class editor and click on the **Global Class** tab
-![Enhance local class](code.png)
+
+    ![Enhance local class](code.png)
 
 2. Go to the bottom of the class editor and click on the **Local Types** tab. This is the place the proper implementation of the behavior definition shall be implemented. In the unmanaged approach, you as developer are responsible for the complete transactional handling.
-![Enhance local class](code2.png)
+
+    ![Enhance local class](code2.png)
 
 3. Define a data buffer at the top of the editor by defining the local class **`lcl_buffer`** as shown on the screenshot. You can use the source code provided below:
-![Enhance local class](code3.png)
+
+    ![Enhance local class](code3.png)
 
     ```swift
     CLASS lcl_buffer DEFINITION.
@@ -118,6 +129,7 @@ Save and activate.
     Add also the final statement to your **`lcl_handler`** class.
 
 4. Enhance the definition of the local class **`lcl_handler`**. Enhance the parameter interface of the method modify with importing parameters **`roots_to_create`**, **`roots_to_update`** and **`roots_to_delete`** for the different operations. Add the read method.
+
 ![Enhance local class](code4.png)
 
 [DONE]
@@ -427,7 +439,8 @@ Save and activate your code.
     ```
 
 2. Refresh and test your application in the browser. Now you are able to delete, add and edit objects in your application.
-![Check result](result.png)
+
+    ![Check result](result.png)
 
 [DONE]
 [ACCORDION-END]

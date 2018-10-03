@@ -102,9 +102,30 @@ Click on **Create bucket**.
 
 ![Amazon Web Services](04-01.png)
 
-Enter as **Bucket name** ***`sap-hana-athena-<my unique id>`*** where ***<my unique id>*** is a unique identifier across all existing S3 bucket on AWS.
+Enter as **Bucket name** ***`sap-hana-athena-<my unique id>`*** where ***&lt;my unique id&gt;*** is a unique identifier across all existing S3 bucket on AWS.
 
-You can use the user ARN numerical identifier from the previous step as ***<my unique id>***.
+You can use the user ARN numerical identifier from the previous step as ***&lt;my unique id&gt;***.
+
+For the sake of simplicity, choose **US East (N. Virginia)** as the region.
+
+> #### **Note:**
+> Please note that in order to use your S3 bucket with Amazon Athena, they will need to be located in the same region. Here is the list of regions where Amazon Athena is available: 
+>
+>  - Northern Virginia
+>  - Ohio
+>  - Oregon
+>  - Ireland
+>  - Frankfurt
+>  - London
+>  - Singapore
+>  - Tokyo
+>  - Sydney
+>  - Seoul
+>  - Mumbai
+>
+>You can find the region coverage for all AWS services [here](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services).
+>
+>It is also recommended for you to create your SAP HANA, express edition instance in the same region.
 
 Click on **Create**.
 
@@ -120,7 +141,7 @@ Paste the following code in the **Bucket Policy editor** after adjusting the **S
 
 ```json
 {
-    "Id": "sap-hana-athena",
+    "Id": "sap-hana-athena-<my unique id>",
     "Version": "2012-10-17",
     "Statement": [
         {

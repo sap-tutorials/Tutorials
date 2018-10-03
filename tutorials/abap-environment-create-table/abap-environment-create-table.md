@@ -37,9 +37,13 @@ Open Eclipse, and select **New** > **ABAP Package**.
     Click **Next**.
 
     ![Create ABAP package](package2.png)
+    
 2. Move on with **Next**.
+
     ![Create ABAP package](package3.png)
+
 3. Select transport request and click **Finish**.
+
     ![Create ABAP package](package4.png)
 
 [DONE]
@@ -57,6 +61,7 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
 1. Search for **database table**, select the appropriate entry, and click **Next**.
 
     ![Create database table](db.png)
+
 2. Maintain the required information:
 
     - Name: **`ZTBOOKING_XXX`**
@@ -67,10 +72,12 @@ Right-click on your package and navigate to **New** > **Other ABAP Repository Ob
     ![Create database table](db2.png)
 
 3. On the next dialog, provide a transport request and click **Finish**.
+
     ![Create database table](db3.png)
 
 4. Check result. An empty table is now created.
-![Check code](empty.png)
+
+    ![Check code](empty.png)
 
 [DONE]
 [ACCORDION-END]
@@ -118,7 +125,9 @@ Save and activate the database table.
     - Description: **Class to generate bookings**
 
     Click **Next**.
+
     ![Create ABAP class](class2.png)
+
 3. Provide a transport request and click **Finish**.
 
     ![Create ABAP class](class3.png)
@@ -182,16 +191,20 @@ Save and active your class.
 
 [ACCORDION-BEGIN [Step 8: ](Run ABAP application)]
 1. Run your class as an ABAP application (console) or press **F9**.
-![Run ABAP application](application.png)
+
+    ![Run ABAP application](application.png)
 
 2. Check console output.
-![Check console output](output.png)
+
+    ![Check console output](output.png)
 
 3. Switch back to your data definition and press **F8** to see the inserted data.
-![Check inserted data](data.png)
+
+    ![Check inserted data](data.png)
 
 4. Now check your result.
-![Check inserted data](result.png)
+
+    ![Check inserted data](result.png)
 
 [DONE]
 [ACCORDION-END]

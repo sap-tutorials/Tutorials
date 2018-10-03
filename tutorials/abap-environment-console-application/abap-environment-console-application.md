@@ -75,6 +75,7 @@ Connect to your system by using your e-mail address and your Windows password.
 
 [ACCORDION-BEGIN [Step 6: ](Connect to service instance)]
 Connect to service instance by selecting **Next**.
+
 ![Connect to Service Instance](instance.png)
 
 [DONE]
@@ -117,10 +118,13 @@ Move on with **Next**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Select transport request)]
- 1. Add a description for the request.
- 2. Click **Finish**.
-![Select transport request](transport.png)
- The ABAP package is now created.
+1. Add a description for the request.
+
+2. Click **Finish**.
+
+    ![Select transport request](transport.png)
+
+The ABAP package is now created.
 
 [DONE]
 [ACCORDION-END]
@@ -180,10 +184,12 @@ Save and activate your changes.
 
 [ACCORDION-BEGIN [Step 16: ](Execute ABAP application)]
 1. Right-click your class and select **Run As** > **ABAP Application (Console)** or select your class and press **`F9`**.
-![Execute ABAP application](console.png)
+
+    ![Execute ABAP application](console.png)
 
 2. Check your result.
-![Execute ABAP application](result.png)
+
+    ![Execute ABAP application](result.png)
 
 [DONE]
 [ACCORDION-END]

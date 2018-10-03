@@ -12,7 +12,7 @@ time: 10
 
 ## Details
 ### You will learn  
-  - How to deploy the data model you created for your business application to the SAP HANA database using SAP Web IDE Full-Stack.
+  - How to deploy the data model you created for your business application to the SAP HANA database using SAP Web IDE Full-Stack
 
 ---
 
@@ -33,6 +33,7 @@ Wait for the notification that says the build was successful.
 To view the generated deployment artifacts, SAP HANA Database Explorer must be enabled in SAP Web IDE. If you have already enabled the SAP HANA Database Explorer, go to step 3.
 
 1. Go to **Tools | Preferences | Features**.
+
 2. Search for the database explorer and enable it.
 
     ![Enable the database explorer](enable-database-explorer.png)
@@ -46,7 +47,8 @@ To view the generated deployment artifacts, SAP HANA Database Explorer must be e
 [ACCORDION-BEGIN [Step 3: ](Open the SAP HANA Database Explorer)]
 
 1. Go to **Tools | Database Explorer**.
-2. Choose **Connect**
+
+2. Choose **Connect**.
 
     ![Connect to the database](connect-database.png)
 
@@ -63,10 +65,15 @@ Once connected you can view the different database artifacts. For example, the b
 [ACCORDION-BEGIN [Step 4: ](Fill in initial data)]
 
 1. Download the following files:
- [`Authors.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Authors.csv)
- [`Books.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Books.csv)
- [`Orders.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Orders.csv)
- [`Data.hdbtabledata`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Data.hdbtabledata)
+
+    [`Authors.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Authors.csv)
+
+    [`Books.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Books.csv)
+
+    [`Orders.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Orders.csv)
+
+    [`Data.hdbtabledata`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Data.hdbtabledata)
+
 2. In your workspace, go to `bookshop/db/src/`, right-click on the **`src`** folder and choose **Import | File or Project**.
 3. Browse to the location where you have saved the `Authors.csv` file.
 4. In the **Import to** field, add **`/csv`** to the default location and choose **OK**.
