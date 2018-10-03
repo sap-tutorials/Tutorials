@@ -161,12 +161,12 @@ Driver=/opt/simba/athenaodbc/lib/64/libathenaodbc_sb64.so
 
 AwsRegion=us-east-1
 Schema=default
-S3OutputLocation=s3://sap-hana-athena/
+S3OutputLocation=s3://sap-hana-athena-<my unique id>/
 
 AuthenticationType=Default Credentials
 ```
 
-Make sure to update the **`AwsRegion`** and the **`S3OutputLocation`** (if you used a different S3 bucket name for example).
+Make sure to adjust the **`AwsRegion`** and the **`S3OutputLocation`** based on your current environment.
 
 [DONE]
 [ACCORDION-END]
