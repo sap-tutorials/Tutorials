@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>html5 ]
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - **Tutorials:** [SAPUI5 Extending Simple Control](https://www.sap.com/developer/tutorials/sapui5-extending-simple-control.html)
+ - **Tutorials:** [SAPUI5 Extending Simple Control](https://developers.sap.com/tutorials/sapui5-extending-simple-control.html)
  - Should have basic understanding of HTML, CSS and JavaScript.
 
 ## Next Steps
