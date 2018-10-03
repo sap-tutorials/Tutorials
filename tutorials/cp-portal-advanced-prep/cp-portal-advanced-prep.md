@@ -173,7 +173,9 @@ The SAP Cloud Platform Portal tutorial GitHub repository contains various SAPUI5
 
 [ACCORDION-BEGIN [Step 6: ](Open SAP Web IDE Full-Stack)]
 1. In the SAP Cloud Platform cockpit, click **Services** in the left panel and open the **SAP Web IDE Full-Stack** tile.
+
 2. From the **SAP Web IDE Full-Stack- Overview** page, click **Go to Service** to open the development environment.
+
 3. Click the **Development** perspective:
 
     ![Development Perspective in Web IDE](04-Development-Perspective.png)

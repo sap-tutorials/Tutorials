@@ -76,6 +76,7 @@ SAP customers who run classic SAP UI applications on their data center backend c
 
 [ACCORDION-BEGIN [Step 2: ](Set up an external access portal landscape)]
 1. From the site designer left side panel, click the cog icon to open the **Site Settings** editor.
+
 2. Click **Edit**
 
     ![Site Settings](6-site-settings.png)

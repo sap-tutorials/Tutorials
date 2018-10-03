@@ -22,8 +22,11 @@ Create all Business services with ABAP namespace `Z...`.
 [ACCORDION-BEGIN [Step 1: ](Create your own ABAP package)]
 
 1. Open eclipse and connect to your system.
+
 2. Right click on main package `ZLOCAL` choose **New** > **ABAP Package**.
+
 3. Create your own ABAP development package `Z_PACKAGE_XXX`  as a sub package of `ZLOCAL`.
+
 4. Click **Next**.
 
     ![Create ABAP package](Picture1.png)
@@ -53,11 +56,13 @@ Add your package to **Favorite Packages**.
 We want to create service definition to expose CDS entities and their behavior.
 
 1. Right click on your package and choose **New** > **Other ABAP Repository Object** > **Business Services** > **Service Definition**.
+
 2. Click **Next**.
 
     ![Add Service Definition](Picture4.png)
 
 3. Create a service definition by adding following information.
+
 4. Click **Next**.
 
     ![Create Service Definition](Picture5.png)
@@ -87,11 +92,13 @@ define service Z_DEF_XXX {
 We want to create service binding to bind service to a protocol and preview.
 
 1. Right click on your package and choose **New** > **Other ABAP Repository Object** > **Business Services** > **Service Binding**.
+
 2. Click **Next**.
 
     ![Add Service Binding](Picture6.png)
 
 3. Enter data for a new service binding. Use the service definition created in last step.
+
 4. Click **Next**.
 
     ![Create Service Binding](Picture7.png)
@@ -112,11 +119,13 @@ Click **Publish locally**, and then you will see the service name and service UR
 [ACCORDION-BEGIN [Step 7: ](Create a communication scenario)]
 
 1. Right click on your package and choose **New** > **Other ABAP Repository Object** > **Communication Management** > **Communication Scenario**.
+
 2. Click **Next**.
 
     ![Add Communication Scenario](Picture9.png)
 
 3. Enter data for a communication scenario.
+
 4. Click **Next**.
 
     ![Create Communication Scenario](Picture10.png)

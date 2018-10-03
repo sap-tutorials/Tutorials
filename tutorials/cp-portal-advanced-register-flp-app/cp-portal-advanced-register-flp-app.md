@@ -17,7 +17,9 @@ time: 5
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE Full-Stack)]
 1. In the SAP Cloud Platform cockpit, click **Services** in the left panel and open the SAP Web IDE Full-Stack tile.
+
 2. From the **SAP Web IDE Full-Stack- Overview** page, click **Go to Service**.
+
 3. Click the **Development** perspective:
 
     ![Development Perspective in Web IDE](0-web-ide-workspace.png)
@@ -29,6 +31,7 @@ time: 5
 
 [ACCORDION-BEGIN [Step 2: ](Register Product List app to launchpad)]
 1. Select the `productlist` app folder from the SAP web IDE Full-Stack Development workspace.
+
 2. Right click and select **Deploy > Register to SAP Fiori Launchpad**
 
     ![Register to FLP in Web IDE](1-register-to-flp.png)

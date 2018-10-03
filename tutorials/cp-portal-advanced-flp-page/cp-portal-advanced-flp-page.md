@@ -75,7 +75,9 @@ Tile groups logically aggregate tiles in the SAP Fiori launchpad page.
 In this step you will add the SAP Fiori launchpad page (named **Transactions**) to the Portal's navigation menu.
 
 1. From the list of pages in the left side panel, select the  **Transactions** page.
+
 2. Click the bottom-facing-arrow icon to open the page action menu.
+
 3. Click **Add to Menu**.
 
     ![Add to Menu](6-add-to-menu.png)

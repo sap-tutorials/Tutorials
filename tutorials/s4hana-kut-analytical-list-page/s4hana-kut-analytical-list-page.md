@@ -16,6 +16,7 @@ time: 30
 
 [ACCORDION-BEGIN [Step 1: ](Log into SAP Fiori launchpad)]
 First you need to log into the SAP Fiori launchpad.
+
 1. Double clicks on the **Remote Desktop icon** on the taskbar of your windows desktop.
 
     ![Fiori Launchpad login preparation](kut_alp_01_01.png)

@@ -24,6 +24,7 @@ The SAP Translation Hub automatically translates the uploaded text resources int
 
 [ACCORDION-BEGIN [Step 1: ](Download master language resources)]
 1. From the left side panel in the Supplier Portal Site Designer, click on the **Service and Tools** icon.
+
 2. From the list of Services and Tools click on the **Translation Manager** tile.
 
     ![Translation Manager](1-launch-translation-service.png)
@@ -68,6 +69,7 @@ The SAP Translation Hub user interface is opened in a new browser tab.
 
 [ACCORDION-BEGIN [Step 3: ](Create translation projects)]
 1. Create a new **Translation Project** by click on the **+ Icon** at the footer of the empty list of projects.
+
 2. From the **Project Type** popover, select `File Upload`.
 
     ![New Translation Project](6-new-translation-project.png)
@@ -86,8 +88,11 @@ The SAP Translation Hub user interface is opened in a new browser tab.
     > The new Translation Project is created.
 
 5. Click on the **Upload File** button on the right side of the footer.
+
 6. In the **File Upload** dialog click on **Browse**.
+
 7. Navigate to the `master_language_<date>` folder and select the `<SITE_ID>.properties` file.
+
 8. Click on **Upload and Translate**.
 
     ![Upload File](8-upload-file.png)
@@ -95,6 +100,7 @@ The SAP Translation Hub user interface is opened in a new browser tab.
     > Notice that the translation process begins.
 
 9. Once the translation process is complete, click on the **Translations** tab.
+
 10. Click on **Download Translations** from the right side button in the footer.
 
     ![Download Translations](8-1-download-translations.png)
@@ -102,6 +108,7 @@ The SAP Translation Hub user interface is opened in a new browser tab.
     > Notice that the `Supplier Portal Site Texts.zip` file is downloaded to your desktop.
 
 11. Save the `Supplier Portal Site Texts.zip` file - you will need it for the next step.
+
 12. Repeat steps 1 to 11 to translate the `WCE_<SITE_ID>.properties` file.
 
     - Name the project `Supplier Portal WCM Texts`.
@@ -133,13 +140,17 @@ The SAP Translation Hub user interface is opened in a new browser tab.
 
 [ACCORDION-BEGIN [Step 5: ](Run Supplier Portal in desired language)]
 1. From the site designer top-level menu, click on the **Publish Icon** to publish the latest changes.
+
 2. In the dialog box click **Publish and Open** to open the site runtime in the master language (English) in a new browser tab.
+
 3. In the Supplier Portal runtime site, click on the **Me Icon** on the left side of the top-level menu.
+
 4. Click on **Settings**.
 
     ![Open User Settings](11-open-user-settings.png)
 
 5. In the Settings dialog, select **Language & Region**.
+
 6. Select a language from the list and click **Save**
 
     ![Open User Settings](12-set-user-language.png)

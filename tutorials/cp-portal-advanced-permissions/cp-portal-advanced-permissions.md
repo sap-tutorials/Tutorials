@@ -27,11 +27,13 @@ By default all portal pages are created with restricted access permissions. We w
     ![Page management](1-page-management.png)
 
 2. From the list of pages select the **Marketing** page item and click on the **Cog Icon** to open the **Page Settings** editor.
+
 3. Click on **Edit** to edit the settings.
 
     ![Page settings](2-page-settings.png)
 
 4. Under **Page Authorization** change the **Access Level** to `Public`.
+
 5. Click **Save**.
 
     ![Page settings](3-page-authorization.png)
@@ -80,11 +82,13 @@ In this step we will see how the permission settings are applied in the site run
 
 [ACCORDION-BEGIN [Step 4: ](View restricted pages)]
 1. In the same browser you used in the previous step, click on the **Person** icon on the top-left to open the **Me Area**.
+
 2. Click on **Sign In** to log-in to the Supplier Portal.
 
     ![Portal login](8-login.png)
 
 3. In the SAP Cloud Platform **Log On** screen, enter your user credentials (same one's you've been using up until now).
+
 4. Click **Log On**
 
     ![Platform credentials](9-platfrom-ceredentials.png)

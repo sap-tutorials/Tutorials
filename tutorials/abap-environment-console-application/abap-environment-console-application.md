@@ -118,8 +118,9 @@ Move on with **Next**.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 11: ](Select transport request)]
- 1. Add a description for the request.
- 2. Click **Finish**.
+1. Add a description for the request.
+
+2. Click **Finish**.
 
     ![Select transport request](transport.png)
 

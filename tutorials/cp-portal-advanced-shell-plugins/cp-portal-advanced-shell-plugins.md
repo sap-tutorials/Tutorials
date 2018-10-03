@@ -18,6 +18,7 @@ Shell plugins are SAPUI5 component apps that are initiated when the Portal site 
 
 [ACCORDION-BEGIN [Step 1: ](Add Shell Plugin to your site)]
 1. Open the Supplier Portal for edit in the Site Designer.
+
 2. Click on the **Content Management** icon from the left side bar and select **Apps**
 
     ![Content management](1-content-management.png)
@@ -29,6 +30,7 @@ Shell plugins are SAPUI5 component apps that are initiated when the Portal site 
     ![New app configuration](1-new-app-config.png)
 
 4. In the New App **Properties** tab under **General** click on the **App Resource** selection input to select an app.
+
 5. In the **Select App Resource** dialog search for the `langselectorplugin`, select it, and click **OK**.
 
     ![Select application resource](2-select-app.png)
@@ -40,7 +42,9 @@ Shell plugins are SAPUI5 component apps that are initiated when the Portal site 
     ![Change Type to shell plugin](3-app-type-plugin.png)
 
 7. In the New App top filter tabs select Catalogs to assign the Shell Plugin to specific user roles.
+
 8. Click on the **+ Icon** and add the `Everyone` catalog.
+
 9. Click **Save**.
 
     ![Assign Everyone Catalog](4-assign-catalog.png)
