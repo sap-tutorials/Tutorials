@@ -182,7 +182,7 @@ isql AWSAthena
 You can now run the following SQL statement:
 
 ```sql
-select count(distinct year) from gdelt_athena.events
+select count(distinct year) from gdelt_athena.events 
 ```
 Provide an answer to the question below then click on **Validate**.
 
