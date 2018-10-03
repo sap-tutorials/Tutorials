@@ -18,13 +18,13 @@ time: 30
 First you need to log into the SAP Fiori launchpad.
 1. Double clicks on the **Remote Desktop icon** on the taskbar of your windows desktop.
 
-  ![Fiori Launchpad login preparation](kut_alp_01_01.png)
+    ![Fiori Launchpad login preparation](kut_alp_01_01.png)
 
 2. The Remote Desktop Connection gets open and you are redirected to the SAP FIORI Launchpad.
 
-You should see this page:
+    You should see this page:
 
-  ![Fiori Launchpad login continue](kut_alp_01_02.png)
+    ![Fiori Launchpad login continue](kut_alp_01_02.png)
 
 3. Login now with your user and password
 
@@ -44,7 +44,8 @@ In the SAP Fiori launchpad, go to group **Report Design** and double-click the a
 
 [ACCORDION-BEGIN [Step 3: ](Get started with report creation)]
 1. After you have successfully executed the App Report Workspace, the below window gets open.
-![Apps on the Fiori Launchpad](kut_alp_03.png)
+
+    ![Apps on the Fiori Launchpad](kut_alp_03.png)
 
 2. In the Report Workplace window, click on the + Add on the bottom left toolbar to create your report as depicted below:
 
@@ -210,7 +211,7 @@ A **Select** screen with dimension fields opens, similar to this:
 
 ![Configure table Dimension fields ](kut_alp_25.png)
 
-> Remark: The Measure **`Amount in Glob Crcy`** is selected by default.
+> The Measure **`Amount in Glob Crcy`** is selected by default.
 
 [DONE]
 [ACCORDION-END]
