@@ -237,7 +237,7 @@ join gdelt_hana.eventcodes ec on e."eventcode" = ec.code
 where e."year" = 2017
 and   e."actiongeo_countrycode" = 'FR'
 group by e."year", e."eventcode", ec.code, ec.description
-order by e."year", "events_total_count" desc;
+order by e."year", "events total count" desc;
 ```
 
 Provide an answer to the question below then click on **Validate**.
