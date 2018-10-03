@@ -1,6 +1,6 @@
 ---
-title: Import Data from Google BigQuery and Run Predictive Algorithm in SAP HANA
-description: Connect to SAP Web IDE for SAP HANA and execute an ARIMA model using the imported data.
+title: Connect to SAP Web IDE and Import Data from Google BigQuery
+description: Connect to SAP Web IDE for SAP HANA and create a remote source
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]

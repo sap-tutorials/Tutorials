@@ -146,6 +146,8 @@ Click the **Notepad** icon on the task bar and replace any existing IP address w
 
 The IP address should be followed by a space and `hxehost`
 
+> Delete or comment out other entries with `hxehost`
+
 Save the file.
 
 Read the following text to answer the question below.
@@ -179,13 +181,15 @@ https://hxehost:39030
 > ### **Congratulations!**
 >You have successfully deployed and configured an SAP HANA, express edition virtual machine on Google Cloud.
 >&nbsp;
->Let one of the experts at the booth know, and feel free to ask them any questions.
+>
 
 You can continue with the next tutorial using your newly-created instance.
 
 ![Incognito Chrome](running.png)
 
 Click on `webide` to complete the validation below. Paste the URL into the box below to complete the validation.
+
+> If you get a `503 Service Unavailable` message, wait a couple of more seconds while the applications finish starting.
 
 [VALIDATE_2]
 [ACCORDION-END]
