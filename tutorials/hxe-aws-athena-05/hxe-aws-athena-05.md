@@ -320,7 +320,17 @@ HDB stop && HDB start
 
 The restart process will take a few minutes to complete.
 
-Once completed, you can run the following command to get the list of started processes:
+Although the database is running, the XS Advanced applications and services may still be loading. Check the progress by running the following command in the XS Command Line Interface.
+
+```shell
+xs-admin-login
+xs apps | grep webide
+```
+
+When prompted, use the password you provided at the beginning of the installation script.
+
+Repeat the second command until you see STARTED and 1/1 for applications webide.
+Once started, you can run the following command to get the list of started processes:
 
 ```shell
 HDB info
