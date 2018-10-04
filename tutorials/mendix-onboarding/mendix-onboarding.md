@@ -80,15 +80,39 @@ This opens the registration page.
 
 
 [ACCORDION-BEGIN [Step 4: ](Create a Mendix account)]
-Fill in the registration form for creating an SAP Cloud Platform Rapid Application Development user, and choose **Register**.
+Choose to **Sign in**.
 
-![Register](mendixRegister.png)
+![Sign in](mendixSignin.png)
 
-A confirmation email is sent to you.
+Choose to **sign in with SAP**.
 
-![Confirmation email](mendixRegister2.png)
+![Sign in with SAP](mendixSigninWithSAP.png)
 
-Click on the link in the email, which opens the development portal. Log in.
+Choose your SAP Cloud Platform region from the drop-down and click **Select region**.
+
+![Select region](mendixSelectRegion.png)
+
+This will redirect you to SAP Cloud Platform's login page. Login with your SAP's email and password.
+
+![Login SAP](mendixLoginSAP.png)
+
+Choose **Authorize**.
+
+![Authorize](mendixSAPAuthorize.png)
+
+Choose **Confirm**.
+
+![Confirm](mendixConfirm.png)
+
+Enter your SAP Cloud Platform credentials, and choose **Create**.
+
+![Register](mendixCreateUser.png)
+
+Select an option or choose to **Skip this step**.
+
+![Skip step](mendixSkipStep.png)
+
+Now you're in the Mendix development portal.
 
 
 [ACCORDION-END]
@@ -102,17 +126,17 @@ In the development portal home page, choose **Create App**.
 
 ![Open Mendix portal](mendix-onboarding7.png)
 
-Choose SAP to see the SAP-related templates.
+If not already selected, choose SAP Apps to see the SAP-related templates.
 
-![SAP templates](mendix-onboarding7a.png)
+![SAP templates](mendixSAPApps.png)
 
-Choose a template, and choose **View Details**.
+Choose the **Fiori Blank** template, and choose **View Details**.
 
-![Choose template](mendix-onboarding8.png)
+![Choose template](mendixFioriBlankApp.png)
 
 Choose **Use this app**.
 
-![Create app](mendix-onboarding9.png)
+![Create app](mendixUseThisApp.png)
 
 Enter a name, and choose **Create App**.
 
@@ -141,7 +165,7 @@ To start working on your app, choose **Edit App**.
 
 You build apps using the Mendix Desktop Modeler, which is an application installed on your desktop. If you don't have the modeler, install it by going to the [app store](https://appstore.home.mendix.com/link/modeler/).
 
-![Mendix Desktop Modeler](modeler.png)
+![Mendix Desktop Modeler](mendixModeler.png)
 
 
 
