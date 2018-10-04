@@ -92,7 +92,7 @@ Choose your SAP Cloud Platform region from the drop-down and click **Select regi
 
 ![Select region](mendixSelectRegion.png)
 
-This will redirect you to SAP Cloud Platform's login page. Login with your SAP's email and password.
+This will redirect you to SAP Cloud Platform's login page. Enter your SAP Cloud Platform credentials and sign in.
 
 ![Login SAP](mendixLoginSAP.png)
 
@@ -104,7 +104,7 @@ Choose **Confirm**.
 
 ![Confirm](mendixConfirm.png)
 
-Enter your SAP Cloud Platform credentials, and choose **Create**.
+Enter your name and a password, and choose **Create**.
 
 ![Register](mendixCreateUser.png)
 
