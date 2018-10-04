@@ -48,11 +48,13 @@ To view the generated deployment artifacts, SAP HANA Database Explorer must be e
 
 1. Go to **Tools | Database Explorer**.
 
-2. Choose **Connect**.
+2. Expand **Cloud Foundry API Endpoint** and choose the URL of the Cloud Foundry API for a region, where you created your space. It should be `https://api.cf.us10.hana.ondemand.com` if you followed suggested values for this tutorial group.
 
-    ![Connect to the database](connect-database.png)
+3. Choose **Connect**.
 
-3. Select the bookshop database.
+    ![Connect to the database](connect-database-api.png)
+
+4. Select the bookshop database.
 
     ![Add the database](add-database.png)
 
