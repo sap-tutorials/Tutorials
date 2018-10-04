@@ -15,13 +15,12 @@ time: 30
 
 ## Details
 ### You will learn
-
 - Understand the basics about the SAP HANA Predictive Analytics Library
 - How to call SAP HANA Predictive Analytics Library functions from an XSA application and an HDI container
 - Identify which algorithm options are available for recommendation engines
 - How to use SAP HANA APL APRIORI algorithm from an XSA application and an HDI container
 
-[ACCORDION-BEGIN [Info: ](SAP HANA Predictive Analytics Library)]
+[ACCORDION-BEGIN [Step 1:](SAP HANA Predictive Analytics Library)]
 
 The ***SAP HANA Predictive Analytics Library*** (PAL) is an ***Application Function Library*** (AFL) which defines a set of functions that can be called from within ***SAP HANA SQL Script*** (an extension of SQL) to perform analytic algorithms.
 
@@ -48,7 +47,7 @@ For more details about the PAL function, check the online <a href="https://help.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Info: ](Calling AFL functions from HDI containers)]
+[ACCORDION-BEGIN [Step 1:](Calling AFL functions from HDI containers)]
 
 In order to use an ***SAP HANA PAL*** function in SAP HANA, ultimately an AFL wrapper must be created and then invoked.
 
@@ -65,7 +64,7 @@ Therefore, you won't need to create table types or signature table using SQL, bu
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Info: ](Recommendation engines with SAP HANA PAL)]
+[ACCORDION-BEGIN [Step 1:](Recommendation engines with SAP HANA PAL)]
 
 As stated above, the ***SAP HANA Predictive Analytics Library*** (PAL) delivers over a hundred of ***best in class industry standard*** algorithms.
 
@@ -93,7 +92,7 @@ However, some preparation will be required to get the input in the right format.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Info: ](SAP HANA PAL APRIORI function)]
+[ACCORDION-BEGIN [Step 1:](SAP HANA PAL APRIORI function)]
 While assessing the available data, we found out that only the ratings can be used to build our collaborative filtering an content-based filter scenarios.
 
 The SAP HANA PAL function that we will be using in this step is
@@ -263,11 +262,11 @@ In the left side panel, expand the **`movielens/db/src/hdb/pal`** tree.
 
 ![Web IDE](03-01.png)
 
-Right click on the **`pal`** folder node from the tree, and select **New > File**.
+Right click on the **`pal`** folder node from the tree, and select **New > Folder**.
 
 Enter **`afllang`** as the folder name, then click on **OK**.
 
-Right click on the **`afllang`** folder and select **New > Folder** (or press ***CTRL+ALT+SHIFT+N***).
+Right click on the **`afllang`** folder and select **New > File**.
 
 Enter **`apriori_afl.hdbafllangprocedure`** as the file name, then click on **OK**.
 
@@ -315,7 +314,7 @@ These views will be later used to read the results from an HTML module via an OD
 
 #### Collaborative filtering results
 
-Right click on the **`pal`** folder and select **New > Folder** (or press ***CTRL+ALT+SHIFT+N***).
+Right click on the **`pal`** folder and select **New > Folder**.
 
 Enter **`views`** as the folder name, then click on **OK**.
 

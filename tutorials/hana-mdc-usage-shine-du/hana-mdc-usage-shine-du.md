@@ -3,9 +3,8 @@ title: SAP HANA MDC Usage – SHINE Delivery Unit
 description: Learn how to import/export a SAP HANA Interactive Education (SHINE) Delivery Unit (DU)
 primary_tag: products>sap-hana
 tags: [  tutorial>how-to, tutorial>beginner, products>sap-cloud-platform, products>sap-hana ]
+time: 30
 ---
-## Prerequisites  
- - **Proficiency:** Beginner
 
 ## Details
   - Installing SAP HANA Tools for your Eclipse
@@ -14,8 +13,10 @@ tags: [  tutorial>how-to, tutorial>beginner, products>sap-cloud-platform, produc
 ### You will learn
   In this tutorial you'll learn how to import a SAP HANA Interactive Education (SHINE) Delivery Unit (DU) from the web, make some small modifications in the code, and export the DU again.
 
-### Time to Complete
-**30 Min**.
+&nbsp;
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+
+&nbsp;
 
 ---
 

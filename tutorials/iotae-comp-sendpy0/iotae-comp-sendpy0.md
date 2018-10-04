@@ -64,7 +64,7 @@ import time, sys, platform
 
 hostiotmms = 'iotmmsa2667617c.hana.ondemand.com'
 apiiotmmsdata = '/com.sap.iotservices.mms/v1/api/http/data/'
-msgtypeid = 'dc88bf65edae02a05da7'
+msgtypeid = 'd2b2db6980f940fae7d3'
 
 deviceid = '591188FC5CEF41_fake_3E9D5AE3F641429BB5'
 authtoken = '7461f8d7385_fake_179d36fcfd8'
@@ -156,7 +156,7 @@ You can find corresponding value in the output of the Python's script as well.
 [ACCORDION-BEGIN [Step 5: ](Check posted values in the API)]
 The power of SAP IoT Application Enablement is in its rich set of APIs available to build powerful customer applications on top of data from devices.
 
-E.g. to check last 5 values posted open following URL in the browser, like Chrome: <https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Things('591188FC5CEF413E9D5AE3F641429BB5')/sap.iotaehandson2.computeriotdevice:generic_computer/resource_sensors_2?timerange=1H&$top=5>
+E.g. to check last 5 values posted open following URL in the browser, like Chrome: <https://sap-iotaehandson2.iot-sap.cfapps.eu10.hana.ondemand.com/appiot-mds/Things('591188FC5CEF413E9D5AE3F641429BB5')/sap.iotaehandson2.computeriotdevice:generic_computer_3/resource_sensors_2?timerange=1H&$top=5>
 
 You need to modify the thing id from `591188FC5CEF413E9D5AE3F641429BB5` to your own. Properly formatted URL will return results like this to authorized user.
 ![Values in API](iotaecomppy0040.jpg)

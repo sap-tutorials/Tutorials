@@ -2,7 +2,9 @@
 title: Testing API Business Hub APIs with Curl
 description: Try out an SAP API locally on your machine.
 primary_tag: products>sap-cloud-platform
-auto_validation: true
+auto_validation: false
+author_name: Meredith Hassett
+author_profile: https://github.com/mhassett92
 tags: [  tutorial>beginner, products>sap-cloud-platform ]
 ---
 ## Prerequisites  

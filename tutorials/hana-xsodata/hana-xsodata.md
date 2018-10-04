@@ -3,6 +3,7 @@ title: SAP HANA XS Classic, Enable XSODATA in your SAP HANA XSC Application
 description: In this tutorial you willenable XSODATA in the SAP HANA XSC application you just created.
 primary_tag: products>sap-hana
 tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
+time: 10
 ---
 
 ## Prerequisites  
@@ -13,13 +14,17 @@ tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform
 - [Consume XSODATA in your SAP HANA XSC Application](https://www.sap.com/developer/tutorials/hana-consume-xsodata.html)
 
 ## Details
-
 ### You will learn  
-How to create a simple `xsodata` service.
+  - How to create a simple `xsodata` service
 
-### Time to Complete
-Beginners might take **10 minutes** to execute this tutorial.
+&nbsp;
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
 
+&nbsp;
+
+
+
+---
 
 [ACCORDION-BEGIN [Step 1: Create a sub package for your services](Create a sub package for your services)]
 

@@ -251,5 +251,3 @@ Remember in our early application, the *Available* and *Discontinued* label were
 - Dynamic CSS class in HTML: [`ng-class`](https://docs.angularjs.org/api/ng/directive/ngClass) directive.  
 
 
-## Next Steps
- - This is the end of this tutorial series. [Return to the Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html).

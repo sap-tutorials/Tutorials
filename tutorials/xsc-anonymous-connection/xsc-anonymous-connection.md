@@ -3,18 +3,21 @@ title: Anonymous Connections in SAP HANA XSC
 description: See how to enable anonymous access to your XSC application
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>security, products>sap-hana, products>sap-hana\,-express-edition  ]
+time: 10
 ---
 ## Prerequisites  
  - **Systems used:** SAP HAHA, SAP HANA express edition, SAP Cloud Platform MDC instance
 
 
 ## How-To Details
+&nbsp;
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+
+&nbsp;
+
 The following how to guide will show you how to enable an anonymous connection to your XSC application. In many cases you will of course not want anonymous access however there may be a case where it would be prudent or even required.
 
 The simple steps should allow you to enable your entire project or a single package or sub-package for anonymous access.
-
-### Time to Complete
-**10 Min**.
 
 ---
 
@@ -44,6 +47,3 @@ The simple steps should allow you to enable your entire project or a single pack
     ![login details](3.png)
 
 8. Chose edit then enter the user login information, this will enable the anonymous connection to work for users going to that particular package of your application.
-
-## Next Steps
- - [View all How-Tos](http://www.sap.com/developer/tutorial-navigator.how-to.html)

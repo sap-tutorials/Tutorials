@@ -55,7 +55,7 @@ Above code is just a sample code that demonstrates how your call should look lik
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Add Javascript and Vora Client Operator)]
+[ACCORDION-BEGIN [Step 2: ](Add JavaScript and Vora Client Operator)]
 
 As we don't have a `SAP Vora HdfsLoader Operator` equivalent for `GCS-Vora`, we would need to read the files from the GCS bucket and prepare SQL statements based on the file names and paths that can be provided to the **SAP Vora Client Operator**. The Vora Client then reads the files from the Google storage and attaches the file as a data source to the Vora table. From the previous step, we have the API call ready with us which we can use now in the JavaScript code.
 
@@ -138,7 +138,7 @@ Now we would be configuring the second operator that we have added - **SAP Vora 
 |  Field Name     | Value
 |  :------------- | :-------------
 |  `dsn`  | `v2://vora-tx-coordinator:10002/?binary=true`
-|  user  | Username for the application. Default is - `default/datahub`
+|  user  | Username for the application. Default is - `default\datahub`
 |  password  | Your password for the above username
 
 Keep all the other properties as is and **Save** the graph.

@@ -147,7 +147,6 @@ You should now understand six important ABAP Dictionary objects and the relation
 Now, You can either:
 
   - [Learn about the ABAP Repository for development objects](coming soon) or
-  - [Go back to ABAP for Newbies](https://www.sap.com/developer/topics/abap-platform/abap-for-newbies.html)
 
 [VALIDATE_1]
 

@@ -3,14 +3,15 @@ title: Configure the SAP HANA R integration with SAP HANA, express edition
 description: Provide details on the installation and configuration of the SAP HANA R integration with SAP HANA, express edition.
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
-tags: [ tutorial>how-to, tutorial>intermediate, products>sap-hana\, express-edition ]
+tags: [ tutorial>intermediate, products>sap-hana\, express-edition ]
+time: 45
 ---
 
 ## Prerequisites  
-- Proficiency: Intermediate
+- [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
 
+## Details
 ### You will learn
-
 The pre-built version of R are not compiled with dynamic/shared libraries enable which is required for the SAP HANA integration.
 
 Therefore, you must compile the R package from its source code with the dynamic/shared libraries (`--enable-R-shlib`).
@@ -22,13 +23,6 @@ Some elements of configuration, such as authentication or SSL, will not be cover
 For further details, you can consult the [SAP HANA R Integration Guide](https://help.sap.com/viewer/a78d7f701c3341339fafe4031b64f015/2.0.02/en-US/dbad714484d242789688a551fbdf5573.html).
 
 It also includes a section dedicated to debugging and tracing.
-
-## Details
-
-### Time to Complete
-**45 Min**.
-
-[ACCORDION-BEGIN [Info: ](SAP HANA R integration)]
 
 To process R code in the context of the SAP HANA database, the R code is embedded in SAP HANA SQL code in the form of a RLANG procedure.
 
@@ -54,9 +48,6 @@ Since the internal column-oriented data structure used within the SAP HANA datab
 
 A key benefit of having the overall control flow situated on the database side is that the database execution plans are inherently parallel and, therefore, multiple R processes can be triggered to run in parallel without having to worry about parallel execution within a single R process.
 
-[DONE]
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 1: ](Create a Dedicated User)]
 
 As a best practice, it is recommended to create a dedicated user to run your R activities.
@@ -76,6 +67,7 @@ Then, you can execute the following command to add the `radm` user to the `sudoe
 
 ```shell
 sudo bash -c 'echo "radm ALL=(ALL) NOPASSWD: ALL" >>/etc/sudoers'
+sudo bash -c 'echo "umask 022" >>/home/radm/.bashrc'
 ```
 
 Now, you can switch to the `radm` user if not done yet:
@@ -87,77 +79,79 @@ sudo su -l radm
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Verify Your Java Installation)]
+[ACCORDION-BEGIN [Step 1: ](Install C Compiler & Required Packages)]
 
-One the requirement to install and enable the SAP HANA R integration with SAP HANA, express edition is a 64-bit Java Runtime Environment (JRE) 8 or Higher.
-
-To check if Java is installed, you can run the following command from your terminal console:
-
-```shell
-java -version
-```
-
-which should return:
-
-```
-java version "1.8.0_xx"
-Java(TM) SE Runtime Environment (build 1.8.0_xx-yyy)
-```
-
-If you don't have it yet installed, you can check the following link for download link and installation instructions : <https://tools.hana.ondemand.com/#cloud>
-
-Using the RPM option is most likely the easiest, as you will have to simply run the following command from your terminal console (where **<version>** needs to be adjusted based on the downloaded version):
-
-```
-sudo rpm -ivh <rpm directory>/sapjvm-<version>-linux-x64.rpm
-```
-
-Then you will need to update the "alternatives" and enable your flavor of java using the following commands:
-
-```bash
-sudo update-alternatives --install "/usr/bin/java" "java" "/usr/java/sapjvm_8_latest/bin/java" 1
-sudo update-alternatives --set java /usr/java/sapjvm_8_latest/bin/java
-```
-
-[DONE]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 2: ](Install package dependencies)]
-
-In order to successfully complete the setup, you will need to add the following packages:
+To complete the Jupyter setup, you will need some additional packages
 
 |-----------------------|-------------------|-------------------|
 |`xorg-x11-devel` 		|`gcc-fortran` 		|`texinfo` 			|
 |`readline-devel` 		|`gcc-c++` 			|`cairo-devel` 		|
 |`libcurl-devel` 		|`xz-devel` 		|`pcre-devel` 		|
 
-#### For SUSE Linux Enterprise Server (including the SAP HANA, express edition VM):
+Therefore, you will now add the missing packages.
 
-The following extensions/repositories are required to install the `Basis-Devel` package group and some additional packages in a later step:
+### **For SUSE Linux Enterprise Server (including the SAP HANA, express edition VM):**
 
-- SUSE Linux Enterprise Software Development Kit
-- SUSE Linux Package Hub
-- `Toolchain` Module
-
-You can add these extensions/repositories using the following commands:
+First, you will need to check your current status using the following command:
 
 ```shell
-sudo SUSEConnect -p PackageHub/12.2/x86_64
-sudo SUSEConnect -p sle-sdk/12.2/x86_64
-sudo SUSEConnect -p sle-module-toolchain/12/x86_64
+sudo SUSEConnect --status-text
 ```
+
+It should return the following information in the console:
+
+```
+Installed Products:
+------------------------------------------
+  SUSE Linux Enterprise Server for SAP Applications 12 SP3
+  (SLES_SAP/12.3/x86_64)
+
+  Registered
+------------------------------------------
+```
+
+If your system is marked as *Not Registered*, then you will need to register  with `SUSEConnect` using your registration code and email:
+
+```shell
+sudo SUSEConnect -r <registration code> -e <registration email>
+```
+
+Once registered, you will be able to list the available extensions using the following command:
+
+```shell
+sudo SUSEConnect --list-extension
+```
+
+You can then activate these extensions/repositories using the following commands:
+
+The following extensions/repositories are required to install the Python packages dependencies:
+
+- SUSE Linux Package for SAP Applications 12 SP2
+
+	```shell
+	sudo SUSEConnect -p SLES_SAP/12.2/x86_64
+	```
+
+- SUSE Linux Enterprise Software Development Kit 12 SP2
+
+	```shell
+	sudo SUSEConnect -p sle-sdk/12.2/x86_64
+	```
+
+- `Toolchain` Module
+
+	```shell
+	sudo SUSEConnect -p sle-module-toolchain/12/x86_64
+	```
+
+Make sure to adjust the version/extension name based on the result from the ***`--list-extension`*** result.
+
+These commands will be successful only if you have registered your system with `SUSEConnect`:
 
 Then, you can clean and refresh the repository cache:
 
 ```shell
-sudo zypper clean
 sudo zypper refresh
-```
-
-These commands will be successful only if you have registered your system with `SUSEConnect`:
-
-```shell
-sudo SUSEConnect -r <registration code> -e <registration email>
 ```
 
 Then, you can execute the following command to install the compiler:
@@ -181,7 +175,7 @@ sudo zypper install \
 	cairo-devel
 ```
 
-#### For Red Hat Enterprise Linux:
+### **For Red Hat Enterprise Linux:**
 
 The following extensions/repositories are required to install the `Development Tools` package group and some additional packages in a later step:
 
@@ -225,6 +219,41 @@ sudo yum -y install \
 [DONE]
 [ACCORDION-END]
 
+[ACCORDION-BEGIN [Step 2: ](Verify Your Java Installation)]
+
+One the requirement to install and enable the SAP HANA R integration with SAP HANA, express edition is a 64-bit Java Runtime Environment (JRE) 8 or Higher.
+
+To check if Java is installed, you can run the following command from your terminal console:
+
+```shell
+java -version
+```
+
+which should return:
+
+```
+java version "1.8.0_xx"
+Java(TM) SE Runtime Environment (build 1.8.0_xx-yyy)
+```
+
+If you don't have it yet installed, you can check the following link for download link and installation instructions : <https://tools.hana.ondemand.com/#cloud>
+
+Using the RPM option is most likely the easiest, as you will have to simply run the following command from your terminal console (where **<version>** needs to be adjusted based on the downloaded version):
+
+```
+sudo rpm -ivh <rpm directory>/sapjvm-<version>-linux-x64.rpm
+```
+
+Then you will need to update the "alternatives" and enable your flavor of java using the following commands:
+
+```bash
+sudo update-alternatives --install "/usr/bin/java" "java" "/usr/java/sapjvm_8_latest/bin/java" 1
+sudo update-alternatives --set java /usr/java/sapjvm_8_latest/bin/java
+```
+
+[DONE]
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 3: ](Install TexInfo)]
 
 [`Texinfo`](https://www.gnu.org/software/texinfo/) is the official documentation format of the GNU project and is used by multiple project including R to build the manuals.
@@ -246,16 +275,16 @@ tar -xf ~/texinfo-6.5.tar.gz
 
 cd ~/texinfo-6.5
 
-./configure --prefix=/usr --disable-static
+./configure --prefix=/usr --disable-static > install.log
 
-make clean
-make
-make info
+make clean >> install-textinfo.log
+make >> install-textinfo.log
+make info >> install-textinfo.log
 
-sudo make install
+sudo make install >> install-textinfo.log
 sudo chmod -R 755 /usr/share/texinfo
 
-make clean
+make clean >> install-textinfo.log
 rm ~/texinfo-6.5.tar.gz
 ```
 
@@ -285,16 +314,16 @@ tar -xf ~/R-3.4.3.tar.gz
 
 cd ~/R-3.4.3
 
-./configure --prefix=/usr --enable-R-shlib
+./configure --prefix=/usr --enable-R-shlib > install-r.log
 
-make clean
-make
-make info
+make clean >> install-r.log
+make >> install-r.log
+make info >> install-r.log
 
-sudo make install
+sudo make install >> install-r.log
 sudo chmod -R 755 /usr/lib64/R
 
-make clean
+make clean >> install-r.log
 rm ~/R-3.4.3.tar.gz
 ```
 
@@ -311,7 +340,7 @@ Provide an answer to the question below then click on **Validate**.
 
 [ACCORDION-BEGIN [Step 5: ](Download, Compile and Install Rserve)]
 
-`Rserve` acts as a socket server (TCP/IP or local sockets) which allows binary requests to be sent to R.
+`Rserve` acts as a socket server (TCP/IP or local sockets) which allows binary requests to be sent to an R process.
 
 Every connection has a separate workspace and working directory.
 
@@ -321,7 +350,7 @@ Client-side implementations are available for popular languages such as C/C++ an
 
 If your host is connected to the Internet, you can leverage the CRAN mirror to install `Rserve` else you can download it manually and transfer it.
 
-To install the `Rserver` package and make available to every user you should start R as a supper user running the following command:
+To install the `Rserve` package and make available to every user you should start R as a supper user running the following command:
 
 ```shell
 sudo R
@@ -355,7 +384,7 @@ library("Rserve")
 
 You should not receive any message after executing the command.
 
-Now, as we installed the `Rserver` as super user, we need to add proper rights to any users executing the following command:
+Now, as we installed the `Rserve` as super user, we need to add proper rights to any users executing the following command:
 
 ```shell
 sudo chmod 755 /usr/lib64/R/bin/Rserve
@@ -376,7 +405,7 @@ The port for starting `Rserve` has to be chosen wisely as it will be configured 
 You can use 9999 as this port is not used often:
 
 ```shell
-R CMD Rserve --RS-port <PORT> --no-save --RS-encoding utf8
+R CMD Rserve --RS-port 9999 --no-save --RS-encoding utf8
 ```
 
 The `--no-save` option makes sure that the invoked R runtime do not store the R environment onto the file system after the R execution has been stopped.

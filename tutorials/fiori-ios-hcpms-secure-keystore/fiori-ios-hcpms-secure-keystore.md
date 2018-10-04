@@ -178,7 +178,7 @@ if (storyboard != nil) {
 }
 ```
 
-These lines ensure you will be presented with the Basic Authentication view every time the application starts. Since you don't want to show the screen if user credentials are stored in the secure keychain, you now need to change this behaviour. Replace these lines with the following:
+These lines ensure you will be presented with the Basic Authentication view every time the application starts. Since you don't want to show the screen if user credentials are stored in the secure keychain, you now need to change this behavior. Replace these lines with the following:
 
 ```swift
 // ...etc...

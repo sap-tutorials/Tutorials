@@ -3,13 +3,11 @@ title: Custom Analytical Queries
 description: Setup Custom Analytical Queries for use.
 primary_tag: topic>abap-development
 tags: [  tutorial>beginner, topic>abap-development, topic>abap-extensibility ]
+time: 15
 ---
 
 ## Prerequisites  
 The Business user requires the Role `SAP_BCR_CA_ANA_AQD_PC` to access the Query Designer.
-
-## Next Steps
- - Select a tutorial group from the [Tutorial Navigator](https://www.sap.com/developer/tutorial-navigator.html) or the [Tutorial Catalog](https://www.sap.com/developer/tutorial-navigator.tutorials.html)
 
 ## Details
 **Custom Analytical Queries** is a tool used for reporting and analysis.
@@ -18,8 +16,6 @@ By using Custom Analytical Queries you do not need to understand the technical d
 
 ### You will learn  
 In this tutorial you will learn how to setup Custom Analytical Queries for use. This section deals with creating, deleting and modifying queries. The creation of Restricted Measures will take part in this example.
-### Time to Complete
-**15 Min**.
 
 ---
 
@@ -179,5 +175,3 @@ Now **Save** and **Publish** your draft.
 
 [ACCORDION-END]
 
-
-## Next Steps

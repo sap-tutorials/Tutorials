@@ -35,7 +35,7 @@ In the first parts a Manager wants to define business objects "Bonus Plan" for e
 As there was no backend implementation to set the mandatory key field **`ID`** so far, we were forced to set it from the UI to be able to save instances.
 Now, as we will implement the logic to set the ID in backend and nowhere else, we will set that key field to Read-Only for the UI.
 
-`1.` Open the business object **Bonus Plan** in Custom Business Objects application
+1. Open the business object **Bonus Plan** in Custom Business Objects application
 2. Start Edit Mode by executing the **Edit Draft** action.
 3. **Go to Fields and Logic**.
 4. **Check** the Read-Only box for key field **`ID`**.
@@ -47,7 +47,7 @@ Now, as we will implement the logic to set the ID in backend and nowhere else, w
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step 2: ](Enable logic implementation)]
 
-`1.` Still editing the custom business object **Bonus Plan**'s definition, **Check** the box for **Determination and Validation**
+1. Still editing the custom business object **Bonus Plan**'s definition, **Check** the box for **Determination and Validation**
 ![Check Determination and Validation box](CBO_checkDeterminationAndValidation.png)
 2. **Publish** the business object definition.
 
@@ -194,7 +194,7 @@ These are the possible errors in detail:
       - Factors and Percentages must be > 0
       - Percentages must be < 100
       - LowBonusAssignmentFactor must be < HighBonusAssignmentFactor
-      - Empoyee ID must be set
+      - Employee ID must be set
 
 ```abap
 * consistency error message START

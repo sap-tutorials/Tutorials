@@ -32,7 +32,7 @@ Return to the SQL tab and change the filter value for the first input parameter.
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Run the CALL ststement)]
+[ACCORDION-BEGIN [Step 2: ](Run the CALL statement)]
 
 Select the entire CALL statement, and click **Run**
 

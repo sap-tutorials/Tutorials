@@ -120,5 +120,3 @@ SELECT * FROM "TPCH"."LINEITEM_CS" WHERE "TPCH"."LINEITEM_CS"."L_SHIPDATE" < '20
 
 [ACCORDION-END]
 
-## Next Steps
-- **Tutorials:** [Migrate Records in Related Tables Using Stored Procedure](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part6.html)

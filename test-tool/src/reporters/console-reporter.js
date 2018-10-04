@@ -74,6 +74,10 @@ const outputReportToConsole = (report, filesCount) => {
         linksGenericReport,
     } = logTemplates;
 
+    if (filesCount === 0) {
+      return logger.warn('No files tested');
+    }
+
     Object.values(report.props).forEach(logProp => {
         if(logProp.type !== 'LINKS') {
             const log = genericReport(logProp.type, filesCount, logProp.messages.length, logProp.messages.join(''));

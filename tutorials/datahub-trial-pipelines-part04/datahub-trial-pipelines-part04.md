@@ -110,5 +110,3 @@ You can open any of the generated file by clicking on the filename which opens i
 
 ---
 
-## Next Steps
-- [Store sensor data in SAP Vora](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part05.html)

@@ -25,7 +25,7 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana-dynamic-tiering
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create tables)]
-This tutorial is a continuation of previous tutorials. It assumes you have created a `TPCH` user with the correct permissions, and logged into the database using this user. On Web IDE, right click the database (should be labelled `<Tenant>@Host(TPCH)`), and select **Open SQL Console**. You can also use the shortcut **Ctrl + Alt + C**.
+This tutorial is a continuation of previous tutorials. It assumes you have created a `TPCH` user with the correct permissions, and logged into the database using this user. On Web IDE, right click the database (should be labeled `<Tenant>@Host(TPCH)`), and select **Open SQL Console**. You can also use the shortcut **Ctrl + Alt + C**.
 
 ![3.1](assets/hana-webide-dt-getting-started-3-3d2ecb5c.png)
 
@@ -306,7 +306,7 @@ Before proceeding, please download the [Data Files](https://s3.amazonaws.com/sap
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Import data into tables)]
-On Web IDE, right click the database (should be labelled `<Tenant>@Host(TPCH)`), and select **Open SQL Console**. You can also use the shortcut **Ctrl + Alt + C**.
+On Web IDE, right click the database (should be labeled `<Tenant>@Host(TPCH)`), and select **Open SQL Console**. You can also use the shortcut **Ctrl + Alt + C**.
 
 ![3.8](assets/hana-webide-dt-getting-started-3-3d2ecb5c.png)
 

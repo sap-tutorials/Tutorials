@@ -1,8 +1,10 @@
 ---
 title: SAP HANA XS Advanced, explore the basic tools
-description: This tutorial will walk you through exploring the basics of XS Advanced tools, such as athe adminsitration cockpit or SAP Web IDE for SAP HANA
+description: This tutorial will walk you through exploring the basics of XS Advanced tools, such as athe administration cockpit or SAP Web IDE for SAP HANA
 primary_tag: products>sap-hana
-tags: [  tutorial>beginner ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition ]
+auto_validation: true
+time: 10
 ---
 
 ## Prerequisites  
@@ -16,18 +18,21 @@ tags: [  tutorial>beginner ]
 
 ## Details
 ### You will learn  
-You will explore the basic tools to develop and perform administration tasks in XS Advanced,
-
-### Time to Complete
-**15 Min**
+- How to connect to the XS Advanced platform using the Command Line Interface
+- How to connect to SAP Web IDE for SAP HANA and the Database Explorer
+- How to connect to administration tools such as the SAP HANA Database Cockpit or the XS Advanced Cockpit
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Log in to the XS Command Line Interface from the server)]
 
-The XS CLI enables you to maintain not only the applications that are deployed to the XS advanced run-time environment, but also the run-time environment itself, and the users who access and use it. You can get it from the [download manager for SAP HANA, express edition](https://sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html) or from the [SAP Service Marketplace](https://launchpad.support.sap.com/#/softwarecenter). Make sure you have the latest version in order to avoid issues.
+The XS CLI is also available by default in the SAP HANA server with XS Advanced applications. In the case of SAP HANA, express edition, you can access it from the same SSH console you used to start and configure your platform.
 
-The XS CLI is also available by default in the SAP HANA server with XS Advanced applications.
+The XS CLI enables you to maintain not only the applications that are deployed to the XS advanced run-time environment, but also the run-time environment itself, and the users who access and use it.
+> Note: You can get it from the [download manager for SAP HANA, express edition](https://sap.com/cmp/ft/crm-xu16-dat-hddedft/index.html) or from the [SAP Service Marketplace](https://launchpad.support.sap.com/#/softwarecenter). Make sure you have the latest version in order to avoid issues.
+
+**This tutorial assumes you are using the CLI from the operating system in your SAP HANA, express edition instance.**
+
 From a console connected to the operating system, switch to user `hxeadm` and log in as follows:
 
 ```bash
@@ -36,6 +41,9 @@ xs login
 ```
 
 ![XS login](xslogin.png)
+
+>Note: `hxeadm` is the default administration user in the operating system in SAP HANA, express edition.
+
 
 Enter the master password to log in with `XSA_ADMIN`. You are now logged in to the default organization and space. You can later log in to a different organization or space by adding `-s` for space or `-o` for organization.
 
@@ -57,6 +65,7 @@ You can check on the status of the running applications with command `xs apps`. 
 
 You can also see a list of running services with command `xs services`. You can find more details about [service types and the service marketplace in the SAP Help](https://help.sap.com/viewer/4505d0bdaf4948449b7f7379d24d0f0d/2.0.02/en-US/33e3c5926feb4098a32edcaa7290c3d1.html) portal.
 
+[DONE]
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Access the SAP HANA Cockpit or the XS Advanced Cockpit)]
@@ -76,6 +85,7 @@ The name for the SAP HANA XS Advanced Cockpit is `xsa-cockpit`
 
 You can find out more about the administration tools for SAP HANA 1.0 SPS12 and SAP HANA 2.0 SPS00 and higher in the [dedicated SAP Help](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.03/en-US/577f8d3ffebd4265b73e2c673d934412.html) portal.
 
+[DONE]
 [ACCORDION-END]
 
 
@@ -97,12 +107,21 @@ You can also find the Database Explorer where you can connect to the physical SY
 
 ![XS admin](db.png)
 
-The third icon takes yo to the settings, where you can configure different aspects of the code and modelling editors, shortcuts and plugins enabled for SAP Web IDE for SAP HANA. For example, if you wanted to use the Fiori Launchpad plugin for development, you would need to access the settings.
+The third icon takes you to the settings, where you can configure different aspects of the code and modelling editors, shortcuts and plugins enabled for SAP Web IDE for SAP HANA. For example, if you wanted to use the Fiori Launchpad plugin for development, you would need to access the settings.
 
 ![XS admin](settings.png)
 
 On the left side panel, you will find additional tools that will be explored incrementally along with the XS Advanced application development tutorials.
 
+[DONE]
+[ACCORDION-END]
+[ACCORDION-BEGIN [Step 4: ](Connect to your system database)]
+
+Go back into the database explorer, click **+** to add a database and use the options below to connect to the SYSTEM database.
+
+> SAP HANA supports multiple databases, isolated form each other, in the same environment. This concept is known as multi-tenancy. There is one database, the system database, that has limited SQL capabilities and is used to perform administration tasks over the contained databases, called tenants. Tenant databases have all of the SQL capabilities enabled. SAP HANA, express edition, brings one default first tenant called `HXE`.
+
+[VALIDATE_1]
 [ACCORDION-END]
 
 ## Next Steps

@@ -139,5 +139,4 @@ You will now be able to view the Prepared Query Plan for the extended table.
 
 [ACCORDION-END]
 
-## Next Steps
-- **Tutorials:** [Compare Prepared and Executed Plan](https://www.sap.com/developer/tutorials/dt-query-processing-part2.html)
+

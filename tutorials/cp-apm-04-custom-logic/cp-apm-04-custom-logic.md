@@ -4,6 +4,7 @@ description: Add custom handlers for specific situations that are not covered by
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide ]
+time: 10
 ---
 
 ## Prerequisites  
@@ -11,18 +12,14 @@ tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, product
 
 ## Details
 ### You will learn  
-  - How to add custom handlers in your service model to adapt to situations that are not covered by the generic service provider.
-
-  
-  
-### Time to Complete
-**10 Min**
+  - How to add custom handlers in your service model to adapt to situations that are not covered by the generic service provider
 
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add a new Java class)]
 
 1. In the **`srv`** module, go to `src/main/java/my/bookshop` and open the context menu.
+
 2. Choose **New | Java Class**.
 
     ![Add Java Class](add-java-class.png)
@@ -32,6 +29,7 @@ tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, product
     ![Enter name for Java class](new-java-class.png)
 
 4. Choose **Finish**.
+
 The `OrdersService.java` file is created.
 
 [DONE]
@@ -42,7 +40,7 @@ The `OrdersService.java` file is created.
 
 Open the new `OrdersService.java` file and replace the template with the following code:
 
-```
+```java
 package my.bookshop;
 
 import java.util.ArrayList;

@@ -169,9 +169,15 @@ Open the file `pom.xml` in the project's root directory and update the build pro
 </properties>
 ```
 
-You'll have to update the properties `jdbc.username`, `jdbc.password`, `jdbc.host`, and `jdbc.port` to match the actual connection data of your database instance.
+You'll have to update the properties `jdbc.host`, and `jdbc.port` to match the actual connection data of your database instance.
 
-You'll also have to update the properties `google.project.id` to match your Google Cloud Platform project ID and `google.api.key` to match the API key created earlier.
+> **Note:** Check out the tutorial [Connect to SAP HANA, express edition using JDBC](https://www.sap.com/poland/developer/tutorials/hxe-connect-hxe-using-jdbc.html) for information about which values to use for `jdbc.host`, and `jdbc.port`.
+
+You'll also have to update the properties `jdbc.username` and `jdbc.password` with valid user credentials.
+
+> **Note:** The default schema of the database user specified in the `jdbc.username` property must be empty.
+
+Lastly, you'll have to update the properties `google.project.id` to match your Google Cloud Platform project ID and `google.api.key` to match the API key created earlier.
 
 After the adjustment the properties should look something like this:
 

@@ -3,15 +3,14 @@ title: Configure SAP HANA Smart Data Streaming Server Connection
 description: Part 1 of 9. Configure SAP HANA streaming connection and add SAP HANA data service in SAP HANA Studio.
 primary_tag: products>sap-hana-streaming-analytics
 tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-hana-studio ]
+author_name: Bill Jiang
+author_profile: https://github.com/BillJiangSAP
+time: 20
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **System:** You must have an SAP HANA SPS10 system or higher with smart data streaming installed that you can connect to and use.
  - **Integrated Development Environment:** You must have SAP HANA Studio 2 installed with the streaming plug-in installed and configured.
  - This tutorial assumes you will be using the HANA SYSTEM user to connect to your HANA system and will refer to it as "SYSTEM".
-
-## Next Steps
- - **Tutorials:** [Create a Streaming Project in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part2-create-streaming-project.html)
 
 ## Details
 ### You will learn
@@ -20,8 +19,6 @@ tags: [ tutorial>beginner, products>sap-hana-streaming-analytics, products>sap-h
  - Connecting to a streaming server in SAP HANA Studio.
  - Adding and configuring a SAP HANA data service.
 
-### Time to Complete
-**20 Min**.
 
 ---
 
@@ -137,6 +134,3 @@ your credentials when re-connecting to the system. Next click **Finish** or pres
 8. To verify that the service is properly configured, right click again on the **`freezermon_service`** service, and select **Discover**. When the service is correctly configured, executing the **Discover** operation will display the database schema that is accessible through the service.
 
     ![Discover Schema](configure-data-service-8-discover-schema.png)
-
-## Next Steps
-- **Tutorials:** [Create a Streaming Project in SAP HANA Smart Data Streaming](https://www.sap.com/developer/tutorials/sds-part2-create-streaming-project.html)

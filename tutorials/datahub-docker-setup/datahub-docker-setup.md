@@ -146,5 +146,3 @@ docker logs datahub
 
 ---
 
-## Next Steps
-[Navigate around SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-navigation.html)

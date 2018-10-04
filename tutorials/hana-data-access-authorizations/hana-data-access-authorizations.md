@@ -3,24 +3,29 @@ title: SAP HANA XS Classic, Access your first data in a SAP HANA XSC Application
 description: In this tutorial you will make your very first steps to access data in SAP HANA. This tutorial will write a SAP HANA XSC application, using the Web-based Development Workbench.
 primary_tag: products>sap-hana
 tags: [ products>sap-hana, products>sap-hana-studio, products>sap-cloud-platform, topic>sql, topic>big-data, tutorial>beginner]
+time: 15
 ---
 
 ## Prerequisites  
-- **Proficiency:** Beginner
  - **Tutorials:** [Develop your first SAP HANA XSC application](https://www.sap.com/developer/tutorials/hana-web-development-workbench.html)
 
 ## Next Steps
 - [Enable XSODATA in your SAP HANA XSC application](https://www.sap.com/developer/tutorials/hana-xsodata.html)
 
 ## Details
-
 ### You will learn  
 1. How to create a simple schema and table.
 2. Importing data automatically via a CSV file.
 3. Preparing and executing a very simple SQL query on the table.
 
-### Time to Complete
-Beginners might take **10-15 minutes** to execute this tutorial.
+&nbsp;
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+
+&nbsp;
+
+
+
+---
 
 [ACCORDION-BEGIN [Step 1: Create your data sub package](Create your data sub package)]
 

@@ -720,7 +720,7 @@ module.exports = {
 
 				], function(err, result) {
 					wss.broadcast(err || "done");
-					wss.broadcast("Error Occured disrupting flow of Waterfall for #1");
+					wss.broadcast("Error Occurred disrupting flow of Waterfall for #1");
 					pool.release(client);
 					cb();
 				}); //end Waterfall
@@ -775,7 +775,7 @@ module.exports = {
 
 					], function(err, result) {
 						wss.broadcast(err || "done");
-						wss.broadcast("Error Occured disrupting flow of Waterfall for #2");
+						wss.broadcast("Error Occurred disrupting flow of Waterfall for #2");
 						pool.release(client);
 						cb();
 					}); //end Waterfall

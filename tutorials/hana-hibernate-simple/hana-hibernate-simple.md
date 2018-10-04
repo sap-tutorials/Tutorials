@@ -52,7 +52,7 @@ import java.io.Serializable;
 
 public class VersionPK implements Serializable {
   private String versionNumber;
-  private Project project;
+  private String project;
 }
 ```
 
@@ -72,6 +72,7 @@ private static final long serialVersionUID = 1L;
 ```
 
 &nbsp;
+
 [DONE]
 [ACCORDION-END]
 
@@ -100,6 +101,7 @@ import javax.persistence.ManyToOne;
 public class Version {
   @Id
   private String versionNumber;
+  @Id
   @ManyToOne
   private Project project;
   private Date releaseDate;
@@ -224,14 +226,14 @@ public class Project {
 
   public void addContributor(Developer contributor) {
     if (this.contributors == null) {
-      this.contributors = new ArrayList<Developer>();
+      this.contributors = new ArrayList<>();
     }
     this.contributors.add(contributor);
   }
 
   public void addVersion(Version version) {
     if (this.versions == null) {
-      this.versions = new ArrayList<Version>();
+      this.versions = new ArrayList<>();
     }
     this.versions.add(version);
   }

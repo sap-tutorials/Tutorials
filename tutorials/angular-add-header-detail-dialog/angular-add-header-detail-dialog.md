@@ -269,6 +269,3 @@ Angular:
 [ACCORDION-END]
 
 
----
-## Next Steps
-- **Tutorials** [Add a Form to your application](https://www.sap.com/developer/tutorials/angular-forms-intro.html)

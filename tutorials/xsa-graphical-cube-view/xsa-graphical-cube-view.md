@@ -1,12 +1,12 @@
 ---
-title: SAP HANA XS Advanced, Creating a Cube Calculation View
-description: Creating a Graphical Calculation View with a Cube data type
+title: Create a Cube Calculation View (XS Advanced)
+description: Create a graphical calculation view with a cube data type.
 primary_tag: products>sap-hana
 auto_validation: true
 tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\,-express-edition   ]
+time: 15
 ---
 ## Prerequisites  
-- **Proficiency:** Intermediate
 - **Tutorials:** [Create a calculation view of data type Dimension](https://www.sap.com/developer/tutorials/xsa-graphical-view.html)
 
 
@@ -15,10 +15,6 @@ tags: [  tutorial>intermediate, topic>sql, products>sap-hana, products>sap-hana\
 - How to create a calculation view with a Cube data type
 - Use a star join to combine data from a dimension calculation view and a table
 - Perform currency conversion
-
-
-### Time to Complete
-**15 Min**.
 
 ---
 

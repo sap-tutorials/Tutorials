@@ -3,9 +3,9 @@ title: SAP HANA Studio, Import Data
 description: Import Data to your SAP HANA system
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition , products>sap-hana-studio ]
+time: 10
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Tutorials:** [SAP HANA Studio, Deploy your project](https://www.sap.com/developer/tutorials/studio-deploy-project.html)
 
 ## Next Steps
@@ -15,8 +15,11 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 ### You will learn  
 Now to expand your application to include data objects and import your sample data.
 
-### Time to Complete
-**10 Min**.
+&nbsp;
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+
+&nbsp;
+
 
 ---
 
@@ -113,6 +116,3 @@ Now to expand your application to include data objects and import your sample da
 13. Now that the mappings are done you can choose "Import", provided everything goes OK you will have your data now imported into the system and should be able to see it from the "Catalog".
 
 	![Content](13.png)
-
-## Next Steps
- - [SAP HANA Studio, Display your project](https://www.sap.com/developer/tutorials/studio-display-project.html)

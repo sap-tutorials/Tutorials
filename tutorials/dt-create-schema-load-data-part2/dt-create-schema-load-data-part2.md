@@ -109,5 +109,4 @@ You should see another connection to your system show up under the **Systems** v
 
 [ACCORDION-END]
 
-## Next Steps
-- **Tutorials:** [Create Tables and Import Data](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part3.html)
+

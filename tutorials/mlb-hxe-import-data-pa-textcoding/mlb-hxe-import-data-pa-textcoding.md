@@ -4,20 +4,17 @@ description: Import SAP Predictive Analytics Text Coding Sample Datasets in your
 auto_validation: true
 primary_tag: products>sap-hana\, express-edition
 tags: [ tutorial>beginner, products>sap-hana\, express-edition, topic>machine-learning ]
+time: 10
 ---
 
 ## Prerequisites  
-- Proficiency: beginner
 - [Prepare your SAP HANA, express edition instance for Machine Learning](https://www.sap.com/developer/tutorials/mlb-hxe-setup-basic.html)
 
+## Details
 ### You will learn
-
 In this tutorial, you will learn how to download and import the SAP Predictive Analytics Text Coding sample dataset into your SAP HANA, express edition instance.
 
-## Details
-
-### Time to Complete
-**10 Min**.
+---
 
 [ACCORDION-BEGIN [Info: ](Sample file structure)]
 

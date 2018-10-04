@@ -306,5 +306,3 @@ So, now that we have Bootstrap, let's set up the template for our application.
 ## Additional Information
  - [Bootstrap](https://getbootstrap.com/) - get more information about Bootstrap.
 
-## Next Steps
- - **Tutorials** [Add the AngularJS JavaScript](https://www.sap.com/developer/tutorials/angular-add-javascript.html)

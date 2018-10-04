@@ -15,7 +15,6 @@ time: 30
 
 ## Details
 ### You will learn
-
 - Understand the basics about the SAP HANA Automated Predictive Library
 - How to call SAP HANA Automated Predictive Library functions from SQL
 - Identify which algorithm options are available for recommendation engines
@@ -209,20 +208,28 @@ By default, the function will identify **mega-hubs** (using the 4 ***sigma*** ru
 
 [ACCORDION-BEGIN [Pre-requisite: ](Install SAP HANA APL package)]
 
-If not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-apl-binary.html).
+The installation requires you to have access to the system using a SSH client like ***`PuTTY`***, but also to have access to the ***`hxeadm`*** user with ***`sudo`*** rights configured.
+
+To run the download manager you will need Java t be installed on the system.
 
 The installation will trigger a restart of your SAP HANA instance, so make sure to save your current work before.
 
 Once the SAP HANA Automated Predictive Library installation is completed, you will need to wait a few minutes for all services to be back online and proceed with the next step.
 
+So if not done yet, you will need to complete the [SAP HANA Automated Predictive Library installation for SAP HANA, express edition](https://www.sap.com/developer/tutorials/hxe-ua-apl-binary.html).
+
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Select, install and configure a SQL query tool)]
+[ACCORDION-BEGIN [Step 1: ](Add the APL Role to your User)]
 
-As you will mostly execute SQL commands during this series, you will need to setup a SQL query tool for SAP HANA, express edition as describe in the following tutorial group:
+To execute APL functions, you need add the **`APL_EXECUTE`** role to your user.
 
- - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
+Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statements.
+
+```sql
+call _SYS_REPO.GRANT_ACTIVATED_ROLE ('sap.pa.apl.base.roles::APL_EXECUTE','ML_USER');
+```
 
 [DONE]
 [ACCORDION-END]
@@ -669,5 +676,6 @@ Provide an answer to the question below then click on **Validate**.
 [ACCORDION-END]
 
 > ### **Note** If you are using Jupyter Notebook, you can download the following  [notebook](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/hxe-aa-movielens-sql-04/hxe-aa-movielens-sql-04.ipynb) to run most of the SQL statement listed in the tutorial.
+You can follow the [Use Jupyter Notebook with SAP HANA, express edition](https://www.sap.com/developer/tutorials/mlb-hxe-tools-jupyter.html)) tutorial for more details.
 
 For the purpose of this tutorial series we will not play further with the algorithm, its parameters or the data. However you are more than welcome to do so considering the resources currently made available to you on the SAP Cloud Platform.

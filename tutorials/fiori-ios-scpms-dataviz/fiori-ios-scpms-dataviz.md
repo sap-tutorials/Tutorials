@@ -1,6 +1,6 @@
 ---
 title: Data Visualisation with SAP Cloud Platform SDK for iOS
-description: Build an iOS app with the SAP Cloud Platform SDK for iOS and use the new SAP Fiori for iOS Chart Floorplan API's to visualise entity values of an OData service.
+description: Build an iOS app with the SAP Cloud Platform SDK for iOS and use the new SAP Fiori for iOS Chart Floorplan API's to visualize entity values of an OData service.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>how-to, tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
@@ -15,7 +15,7 @@ tags: [  tutorial>how-to, tutorial>beginner, operating-system>ios, topic>mobile,
 ## How-To Details
 As of version 2.1, the SAP Cloud Platform SDK for iOS now incorporates a **Chart Floor plan** for data visualisation.
 
-In this tutorial, you will use the Sample OData service to visualise stock item quantities using a bar chart.
+In this tutorial, you will use the Sample OData service to visualize stock item quantities using a bar chart.
 
 ![How-To Details](fiori-ios-scpms-dataviz-14.png)
 

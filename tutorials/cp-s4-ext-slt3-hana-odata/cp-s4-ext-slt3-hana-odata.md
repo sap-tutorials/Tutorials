@@ -161,7 +161,7 @@ In this step you are going to import a new database view to your SAP HANA databa
 
     ![Screenshot](images/w4-u4-s2/pic011--import-hana-analytics.jpg)
 
-13. In the `Project Exporer` view, expand **`s4ext`** | **analytics** | **data** and **`s4ext`** | **analytics** | **service**. You will see the new view `product.calculationview` and the `analytics.xsodata` OData service.
+13. In the `Project Explorer` view, expand **`s4ext`** | **analytics** | **data** and **`s4ext`** | **analytics** | **service**. You will see the new view `product.calculationview` and the `analytics.xsodata` OData service.
 
     ![Screenshot](images/w4-u4-s2/pic012--new-xs-view.jpg)
 

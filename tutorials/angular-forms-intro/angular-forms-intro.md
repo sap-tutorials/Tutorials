@@ -236,5 +236,3 @@ The input field is in the form, but it's not connected to anything.  Next, add i
 
 - We used the [`setTimeout()`](http://www.w3schools.com/jsref/met_win_settimeout.asp) JavaScript function to add a delay before the alert box disappeared.  `setTimeout()` puts an event on the event queue after a specified delay (in milliseconds).  This is the best way to delay something, as the user will not be blocked while waiting for the timer to expire.
 
-## Next Steps
- - **Tutorials** [AngularJS Filters](https://www.sap.com/developer/tutorials/angular-filters.html)

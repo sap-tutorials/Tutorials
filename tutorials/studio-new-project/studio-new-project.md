@@ -3,9 +3,9 @@ title: SAP HANA Studio, Setup a new project
 description: Setup a new project using the SAP HANA Studio
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition , products>sap-hana-studio ]
+time: 10
 ---
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Tutorials:** [How to download and install the HANA Eclipse plugin](https://www.sap.com/developer/tutorials/hxe-howto-eclipse.html)
 
 ## Next Steps
@@ -13,10 +13,13 @@ tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-editi
 
 ## Details
 ### You will learn  
-Setup your first project with SAP HANA Studio for the SAP HANA, express edition.
+  - How to set up your first project with SAP HANA Studio for the SAP HANA, express edition
 
-### Time to Complete
-**10 Min**.
+&nbsp;
+> **DEPRECATED:** SAP HANA XS Classic is deprecated as of SPS02. Please use XS Advanced, and learn about how to get started with the new mission [Get Started with XS Advanced Development](https://www.sap.com/developer/missions/xsa-get-started.html).
+
+&nbsp;
+
 
 ---
 
@@ -57,6 +60,3 @@ Setup your first project with SAP HANA Studio for the SAP HANA, express edition.
 	```
 
 	The content of the `.xsapp` can actually be empty.
-
-## Next Steps
-- [SAP HANA Studio, Deploy your project](https://www.sap.com/developer/tutorials/studio-deploy-project.html)

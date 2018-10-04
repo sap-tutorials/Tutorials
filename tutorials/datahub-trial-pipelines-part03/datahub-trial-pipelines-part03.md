@@ -150,5 +150,3 @@ Stop the pipeline by clicking **Stop**.
 
 ---
 
-## Next Steps
-- [Bundle data (via JavaScript)](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part04.html)

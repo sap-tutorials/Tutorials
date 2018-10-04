@@ -4,6 +4,7 @@ title: Continuous Integration (CI) Best Practices with SAP - SAP Cloud Platform 
 description: Part 4.7 - Basic CI setup with the SAP Cloud Platform SDK for iOS
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
+time: 15
 
 ---
 
@@ -132,7 +133,7 @@ $ gem install fastlane -NV
 
 ##### 2.1.5 iOS Development Tools
 
-[https://developer.apple.com/xcode/](Xcode) is the standard IDE for anything related to Apple, and also includes the required build tools for Cordova to be able to compile iOS applications. In order to install it, you will need to open the App Store on both your build server and your developer machine and search for the software, as shown in Figure 4. Once done, run the following command in order to make sure all required command-line tools are available, too:
+[Xcode](https://developer.apple.com/xcode/) is the standard IDE for anything related to Apple, and also includes the required build tools for Cordova to be able to compile iOS applications. In order to install it, you will need to open the App Store on both your build server and your developer machine and search for the software, as shown in Figure 4. Once done, run the following command in order to make sure all required command-line tools are available, too:
 
 ```
 $ xcode-select --install
@@ -232,7 +233,7 @@ Now we can start our Jenkins service and go ahead with the configuration. Run
 $ brew services start jenkins
 ```
 
-and open ``http://localhost:8080/`` in your browser. Jenkins will now require a password for you to log in as an administrator, but unlike other software it does not come with a preset default. Instead it is generated during setup and stored in a file, which we now need to read, e.g. from your Terminal via
+and open `http://localhost:8080/` in your browser. Jenkins will now require a password for you to log in as an administrator, but unlike other software it does not come with a preset default. Instead it is generated during setup and stored in a file, which we now need to read, e.g. from your Terminal via
 
 ```
 $ cat ~/.jenkins/secrets/initialAdminPassword

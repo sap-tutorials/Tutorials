@@ -242,5 +242,3 @@ You see the aggregated maximum and minimum humidity as well as temperature. Usin
 
 ---
 
-## Next Steps
-[Create workflow (part 3): Build a workflow ](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part03.html)

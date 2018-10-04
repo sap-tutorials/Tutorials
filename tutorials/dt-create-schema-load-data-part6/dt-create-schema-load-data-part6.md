@@ -124,5 +124,3 @@ SELECT * FROM "TPCH"."LINEITEM_CS" WHERE "TPCH"."LINEITEM_CS"."L_SHIPDATE" < '20
 
 [ACCORDION-END]
 
-## Next Steps
-- **Tutorials:** [View Data Across Both In-Memory and Dynamic Tiering Tables Using a SQL View](https://www.sap.com/developer/tutorials/dt-create-schema-load-data-part7.html)

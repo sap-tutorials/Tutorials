@@ -84,7 +84,7 @@ select
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Find neighbouring countries)]
+[ACCORDION-BEGIN [Step 3: ](Find neighboring countries)]
 Based on loaded data, let's find all countries sharing land boarders with Germany.
 
 ```sql
@@ -96,7 +96,7 @@ country."SHAPE".ST_Intersection(neighbour."SHAPE") as "BORDER_SHAPE"
  order by 1,2;
 ```
 
-![neighbouring countries](geosaphire2060.jpg)
+![neighboring countries](geosaphire2060.jpg)
 
 > ### What just happened?
 >
@@ -107,8 +107,8 @@ country."SHAPE".ST_Intersection(neighbour."SHAPE") as "BORDER_SHAPE"
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Which countries have most neighbours?)]
-As you could count from a result of the previous query, Germany has 9 land neighbours. Are there countries that have more?
+[ACCORDION-BEGIN [Step 4: ](Which countries have most neighbors?)]
+As you could count from a result of the previous query, Germany has 9 land neighbors. Are there countries that have more?
 
 ```sql
 select country.CNTRY_NAME as "country", count(neighbour.CNTRY_NAME) as "neighbours"
@@ -118,13 +118,13 @@ group by country.CNTRY_NAME
 order by "neighbours" desc, "country";
 ```
 
-![Biggest number of neighbours](geosaphire2070.jpg)
+![Biggest number of neighbors](geosaphire2070.jpg)
 
 > What just happened?
 >
 > 1. Same as in the previous step you used spatial predicate `ST_Touches()` to find all countries whose geometries have touch points.
-> 2. Then you used SQL `group by` to count all neighbours for each country.
-> 3. At the end you sorted the result by the number of neighbours.
+> 2. Then you used SQL `group by` to count all neighbors for each country.
+> 3. At the end you sorted the result by the number of neighbors.
 
 [ACCORDION-END]
 

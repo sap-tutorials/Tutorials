@@ -131,5 +131,3 @@ Looking at the output in this example, you will notice that both the estimated #
 
 [ACCORDION-END]
 
-## Next Steps
-- **Tutorials:** [Detailed Query Plan and Indexes](https://www.sap.com/developer/tutorials/dt-query-processing-part4.html)

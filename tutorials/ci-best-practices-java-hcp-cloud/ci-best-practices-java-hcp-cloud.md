@@ -4,6 +4,7 @@ title: Continuous Integration (CI) Best Practices with SAP - Java Web on SAP Clo
 description: Part 5.2 - Configuring Cloud-based Build System for Maven-based Java Web on SAP Cloud Platform project.
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, tutorial:type/project ]
+time: 15
 
 ---
 
@@ -11,7 +12,7 @@ tags: [  tutorial>intermediate, tutorial:type/project ]
 
   - **Proficiency:** Intermediate
   - [Generic Project with CI on Cloud](https://www.sap.com/developer/tutorials/ci-best-practices-generic-cloud.html)
-  
+
 ---
 
 
@@ -23,7 +24,7 @@ This chapter is a continuation of the discussion in [Generic Project (Pure Java)
 > [Tutorial: Developing and deploying a basic Java application on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-java-basic-app.html)  
 > [Installing the SDK](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/7613843c711e1014839a8273b0e91070.html)  
 > [SDK Download](https://tools.hana.ondemand.com/#cloud)
- 
+
 We go beyond the pure build, and discuss how to add a post-build step to deploy the application to SAP Cloud Platform.
 
 ![Landscape using GitHub and Travis CI](java-hcp-cloud-1.png)
@@ -36,9 +37,9 @@ We also explain the best practices with respect to the Travis CI integration and
 
 Figure 2: Blue-green deployment
 
-This document covers the blue-green deployment procedures on both Neo and Cloud Foundry environment. 
+This document covers the blue-green deployment procedures on both Neo and Cloud Foundry environment.
 
-SAP Cloud Platform offers two ways to achieve zero downtime blue-green deployment of applications in Neo environment: 
+SAP Cloud Platform offers two ways to achieve zero downtime blue-green deployment of applications in Neo environment:
 
 - Manually – involves manually enabling or disabling application processes. This method provides better control over the processes and lets you specify the time at which the new version is enabled.
 - Automatically – also called "rolling update". The entire process switch is automated. The system automatically chooses and disables the processes of the old version while simultaneously enabling the new version. We describe below how to use the rolling update feature in the Neo case.
@@ -50,11 +51,11 @@ For the Cloud Foundry environment, we use a shell script to apply the blue-green
 
 - In case of SAP Cloud Platform Neo
 
-    - Ensure that there are two different subaccounts on SAP Cloud Platform: QA and production. The production account must have at least three compute units available at the time of deployment. 
+    - Ensure that there are two different subaccounts on SAP Cloud Platform: QA and production. The production account must have at least three compute units available at the time of deployment.
 
 - In case of SAP Cloud Platform Cloud Foundry
 
-    - Ensure to have two different spaces: QA and production. Ensure to have the necessary provisioning done for the application runtime. 
+    - Ensure to have two different spaces: QA and production. Ensure to have the necessary provisioning done for the application runtime.
 
 
 ### 3. Basic Setup
@@ -124,8 +125,8 @@ The tools that are required for deployment to SAP Cloud Platform Neo are already
       </properties>
     ...
     ```
-    
-    The above step ensures that the 'Neo SDK' is installed in the project directory to be accessed by the Maven goals. 
+
+    The above step ensures that the 'Neo SDK' is installed in the project directory to be accessed by the Maven goals.
 
 3. The profile `cloud-integration-tests` is used for automated testing and deployment to the QA account. In the section of `pom.xml` that defines the profile `cloud-integration-tests`, add the following lines to define the SDK installation directory:
 
@@ -156,11 +157,11 @@ The tools that are required for deployment to SAP Cloud Platform Neo are already
       </profile>
     ...
     ```
-     
+
     > [SAP Cloud Platform Maven Plugin](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/4cbdab6e2eb14c92ab76540ffb32174c.html)
 
     The profile `cloud-integration-tests` must also contain the Maven steps to deploy the application and restart it in the QA environment. Include the following executions as part of the `${sap.cloud.sdk.plugin}` plugin configuration inside the profile:
-    
+
     ```
     <execution>
       <id>deploying-application</id>
@@ -188,7 +189,7 @@ The tools that are required for deployment to SAP Cloud Platform Neo are already
 
     Once the tests on the QA account pass, the profile `update`, which is described in the next step, deploys the application into the production environment. Maven executes the deployment to production only if the test has been passed, thus ensuring continuous deployment.
 
-      
+
 4. The rolling update on the production account is handled by the profile `update`. It ensures that the current running process is shut down gracefully before the updated application's processes start.
 
     > [Console Client Commands: rolling-update](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/3f5d41207b6a4d0b9ad2e46dc6f27e69.html).
@@ -235,14 +236,14 @@ The tools that are required for deployment to SAP Cloud Platform Neo are already
     ...
     ```
 
-For the rolling update to execute successfully, the minimum number of processes that needs to be configured at the time of deployment is three. The currently running process (blue) takes up one process and the new process waiting to run (green) needs another process, along with the units required to process the rolling update. 
+For the rolling update to execute successfully, the minimum number of processes that needs to be configured at the time of deployment is three. The currently running process (blue) takes up one process and the new process waiting to run (green) needs another process, along with the units required to process the rolling update.
 
 ### 5. Deploying to SAP Cloud Platform - Cloud Foundry environment
 
 If the application should be deployed to SAP Cloud Platform Neo, skip this section and refer to section 4.
 
 The following blog gives a good introduction for Cloud Foundry on SAP Cloud Platform:
-  
+
 > [A new seamless SAP Cloud Platform experience](https://blogs.sap.com/2017/05/16/a-new-seamless-sap-cloud-platform-experience/)
 
 The following blog guides on the steps to the unified SAP Cloud Platform Cockpit experience:
@@ -324,7 +325,7 @@ The artifact (the `.war` file) used for the deployment to QA and to production s
       </profiles>
     ...
     ```
-    As we use a neo example we also need to adapt the parent pom.xml file - located in the root folder named `java_sapcp_project`. There we must delete all configuration in regards to profile `cloud-integration-tests`. 
+    As we use a neo example we also need to adapt the parent pom.xml file - located in the root folder named `java_sapcp_project`. There we must delete all configuration in regards to profile `cloud-integration-tests`.
     > **Note**: Please be sure that the whole `profile` block is disabled/deleted.
 
     ```
@@ -345,11 +346,11 @@ The artifact (the `.war` file) used for the deployment to QA and to production s
 4. For the Cloud Foundry environment, we use a shell script to perform the blue-green deployment. It has two parts:
 
     a. Installing CF CLI to perform the Cloud Foundry operations. Further information about installing the Cloud Foundry Command Line Interface can be found here:
-    
-      > [Cloud Foundry Command Line Interface](https://docs.cloudfoundry.org/cf-cli/). 
+
+      > [Cloud Foundry Command Line Interface](https://docs.cloudfoundry.org/cf-cli/).
 
     b. Performing the blue-green deployment to Cloud Foundry. The new version of the application is deployed in parallel to the still running old version of the application using the manifest of the old application version. Then the route is changed from the old to the new version, and the old version is deleted.
-  
+
     The script expects to retrieve the API endpoint of the SAP Cloud Platform account, organization and space details along with the user credentials from environment variables. They are defined when configuring the Travis build in the next section.
 
     In the root folder of your project, create a new file named `cf_blue_green_travis.sh` with the following content.
@@ -372,11 +373,11 @@ The artifact (the `.war` file) used for the deployment to QA and to production s
     function on_fail () {
       finally
       echo "DEPLOY FAILED - you may need to check 'cf apps' and 'cf routes' and do manual cleanup"
-      
+
       # Set the Exit code to 1 to denote this as an erroneous Travis build
-      exit 1 
+      exit 1
     }
-    
+
     #
     # Fist part: installation of the Cloud Foundry client
     #
@@ -387,38 +388,38 @@ The artifact (the `.war` file) used for the deployment to QA and to production s
     # Get the cloud foundry public key and add the repository
     wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
     echo "deb http://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
-    
+
     # Update the local package index, then install the cf CLI
     sudo apt-get update
     sudo apt-get install cf-cli
-    
+
     # Login to Cloud Foundry
     cf api $CF_API #Use the cf api command to set the api endpoint
     cf login -u $CF_PROD_USERNAME -p $CF_PROD_PASSWORD -o $CF_ORGANIZATION -s $CF_PROD_SPACE
-    
+
     # Get the script path to execute the script
     pushd `dirname $0` > /dev/null
     popd > /dev/null
-    
+
     #
     # Second Part: blue-green deployment
     #
-    
+
     #Store the current path
     CURRENTPATH=$(pwd)
 
     # Set the application name in BLUE variable
-    BLUE=$CF_APP 
-    
-    # Green variable will store a temporary name for the application 
+    BLUE=$CF_APP
+
+    # Green variable will store a temporary name for the application
     GREEN="${BLUE}-B"
-    
+
     # Pull the up-to-date manifest from the BLUE (existing) application
     MANIFEST=$(mktemp -t "${BLUE}_manifestXXXXXXX.temp")
-    
+
     # Create the new manifest file for deployment
     cf create-app-manifest $BLUE -p $MANIFEST
-    
+
     # Check in case of first run and empty manifest file
     if [ ! -s $MANIFEST ]
     then
@@ -431,29 +432,29 @@ The artifact (the `.war` file) used for the deployment to QA and to production s
       - route: $BLUE.$CF_DOMAIN" > $MANIFEST
       cf push -f $MANIFEST -p /tmp/$CF_APP.war
     fi
-        
+
     # Find and replace the application name (to the name stored in green variable) in the manifest file
     sed -i -e "s/: ${BLUE}/: ${GREEN}/g" $MANIFEST
     sed -i -e "s?path: ?path: $CURRENTPATH/?g" $MANIFEST
-    
+
     trap on_fail ERR
-        
+
     # Prepare the URL of the green application
     DOMAIN=$CF_DOMAIN
     cf push -f $MANIFEST -p /tmp/$CF_APP.war
     GREENURL=https://${GREEN}.${DOMAIN}
-        
+
     # Check the URL to find if it fails
     curl --fail -I -k $GREENURL
-    
+
     # Reroute the application URL to the green process
     cf routes | tail -n +4 | grep $BLUE | awk '{print $3" -n "$2}' | xargs -n 3 cf map-route $GREEN
-    
-    # Perform deletion of old application and rename the green process to blue 
+
+    # Perform deletion of old application and rename the green process to blue
     cf delete $BLUE -f
     cf rename $GREEN $BLUE
     cf delete-route $DOMAIN -n $GREEN -f
-    
+
     # Clean up
     finally
 
@@ -470,7 +471,7 @@ The configurations in the Neo and Cloud Foundry case differ from each other, hen
 #### Procedure for the Neo environment
 
 1. Open the `pom.xml` file and make the following changes in the `properties` section.
-     
+
     ```
     ...
       <properties>
@@ -488,29 +489,29 @@ The configurations in the Neo and Cloud Foundry case differ from each other, hen
     This ensures that the SAP Cloud Platform access information is taken from the build environment, and we don't need to include that information in the `pom.xml` file.
 
     The account password is encrypted and defined as part of the global environment variables in `.travis.yml` in one of the steps below.
-  
+
 2. Open `.travis.yml` and add the following lines, which forces Travis to call Maven using the correct profile, to `.travis.yml`:
 
     ```
     script:
     - mvn clean install -P cloud-integration-tests -Denv.SAP_CLOUD_HOST=$SAP_CLOUD_HOST -Denv.SAP_CLOUD_ACCOUNT=$SAP_CLOUD_ACCOUNT -Denv.SAP_CLOUD_USERNAME=$SAP_CLOUD_USERNAME -Denv.SAP_CLOUD_PASSWORD=$SAP_CLOUD_PASSWORD
 
-    after_success: 
+    after_success:
     - mvn clean install -P update -Denv.SAP_CLOUD_HOST=$SAP_CLOUD_PROD_HOST -Denv.SAP_CLOUD_ACCOUNT=$SAP_CLOUD_PROD_ACCOUNT -Denv.SAP_CLOUD_USERNAME=$SAP_CLOUD_PROD_USERNAME -Denv.SAP_CLOUD_PASSWORD=$SAP_CLOUD_PROD_PASSWORD
     ```
 
     The first Maven call executes the unit tests and upon successful test execution, deploys the application to the QA account.
-    
+
     The second Maven call triggers the deployment of the application to the production account.
-    
+
     The environment variables are part of the settings in Travis CI in the next step.
 
 3. Open Travis CI and go to your project. Select **More options > Settings**, switch **Limit concurrent jobs** on and enter `1` as the value to prevent concurrent builds from colliding with the deployments on SAP Cloud Platform.
 
-4. Still in the Settings dialog, add environment variables 
+4. Still in the Settings dialog, add environment variables
 
     > [Travis Documentation: Customizing the Build](https://docs.travis-ci.com/user/customizing-the-build)
-    
+
     Open Travis CI and go to your project. Select **More options > Settings** and add the values below. You must switch off **Display value in build log** to avoid making your settings public.
 
     Field                     | Value                               
@@ -521,7 +522,7 @@ The configurations in the Neo and Cloud Foundry case differ from each other, hen
     `SAP_CLOUD_PROD_USERNAME` | `<The user name of your SAP Cloud Platform production account>`
     `SAP_CLOUD_PROD_ACCOUNT`  | `<The name of your SAP Cloud Platform production account>`
     `SAP_CLOUD_PROD_HOST`     | `hana.ondemand.com`
-   
+
     Although the environment variables are not visible, they are stored in clear text. The next steps properly explain how to encrypt the SAP Cloud Platform password.
 
     ![Build configuration in Travis](java-hcp-cloud-3.png)
@@ -537,7 +538,7 @@ The configurations in the Neo and Cloud Foundry case differ from each other, hen
     ```
 
     This command automatically adds an encrypted environment entry into `.travis.yml`, which should look similar to the following:
-         
+
     ```
     sudo: false
     jdk: oraclejdk8
@@ -605,7 +606,7 @@ The configurations in the Neo and Cloud Foundry case differ from each other, hen
 
 3. Open Travis CI and go to your project. Select **More options > Settings**, switch **Limit concurrent jobs** on and enter `1` as the value to prevent concurrent builds from colliding with the deployments on SAP Cloud Platform.
 
-4. Still in the Settings dialog, add environment variables 
+4. Still in the Settings dialog, add environment variables
 
     > [Travis Documentation: Customizing the Build](https://docs.travis-ci.com/user/customizing-the-build)
 
@@ -634,7 +635,7 @@ The configurations in the Neo and Cloud Foundry case differ from each other, hen
     ```
 
     This command automatically adds an encrypted environment entry into `.travis.yml`, which should look similar to the following:
-         
+
     ```
     sudo: false
     jdk: oraclejdk8
@@ -682,7 +683,7 @@ Unit tests scrutinize classes individually and independently for proper operatio
 
     ![JUnit Test case execution in Maven build](java-hcp-cloud-6.png)
 
-    If the JUnit test case fails, the deployment phase in the Maven build is interrupted. 
+    If the JUnit test case fails, the deployment phase in the Maven build is interrupted.
 
 
 ### 8. Further Refinements
@@ -695,9 +696,9 @@ Unit tests scrutinize classes individually and independently for proper operatio
     ```
 
     The application name is generated from the branch and the build number. Any build produces a unique application name that is also well-categorized by branch. Ensure that the resulting name adheres to the application naming rules for SAP Cloud Platform.  
-     
+
     > [Console Client Commands: deploy](https://help.sap.com/viewer/65de2977205c403bbc107264b8eccf4b/Cloud/en-US/937db4fa204c456f9b7820f83bc87118.html)
-     
+
 2. Restricting builds for branches:  
     If only a few branches should be built automatically, add a build restriction into `.travis.yml`:
 
@@ -706,15 +707,14 @@ Unit tests scrutinize classes individually and independently for proper operatio
       only:
         - master
     ```
-     
+
     > [Travis Documentation: Building Specific Branches](https://docs.travis-ci.com/user/customizing-the-build/#Building-Specific-Branches)
 
 More sophisticated control mechanisms are provided by the Travis build matrix:
 
 > [Travis Documentation: Build Matrix](https://docs.travis-ci.com/user/customizing-the-build/#Build-Matrix)
-  
+
 
 ## Next Steps
 
   - [Back to the Navigator](https://www.sap.com/developer/tutorials/ci-best-practices-intro.html)
-  

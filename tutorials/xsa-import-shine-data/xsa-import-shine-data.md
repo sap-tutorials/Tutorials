@@ -1,26 +1,19 @@
 ---
-title: SAP HANA XS Advanced, import tables and large datasets
-description: Import SHINE sample tables and data using SAP WebIDE for SAP HANA
+title: Import Tables and Large Datasets (XS Advanced)
+description: Import SHINE sample tables and data using SAP Web IDE for SAP HANA.
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, topic>big-data, products>sap-hana, products>sap-hana\,-express-edition ]
+time: 5
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
  - **Tutorials:** [Create an HDI Module](https://www.sap.com/developer/tutorials/xsa-hdi-module.html)
-
-
-## Next Steps
-  - [Create a Dimension Graphical View](https://www.sap.com/developer/tutorials/xsa-graphical-view.html)
 
 ## Details
 ### You will learn  
 This tutorial will guide you through the process of downloading sample data and database artifacts and importing it into SAP HANA using SAP Web IDE for SAP HANA.
 
 If you are looking to import the entire SAP HANA `INteractive` Education model for XS Advanced, follow this tutorial instead: [https://www.sap.com/canada/developer/tutorials/xsa-ml-e2e-access-shine.html](https://www.sap.com/canada/developer/tutorials/xsa-ml-e2e-access-shine.html)
-
-### Time to Complete
-**5 Min**
 
 ---
 
@@ -85,6 +78,3 @@ Once added you can see the tables and their content.
 
 
 ---
-
-## Next Steps
-- [Create a Dimension type Graphical View](https://www.sap.com/developer/tutorials/xsa-graphical-view.html)
