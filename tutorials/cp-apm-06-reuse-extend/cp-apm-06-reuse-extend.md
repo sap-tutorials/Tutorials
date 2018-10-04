@@ -126,47 +126,7 @@ In your `data-model.cds`, you will:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add the association to the Reviews entity)]
-
-The goal is to navigate from `Products` to `Reviews`. To do this, you need to extend `Products` with an association to `Reviews`.
-
-1. In the `data-model.cds` file, add the following sample code:
-
-    ```java
-    extend Products with {
-    	Reviews: Association to many Reviews on Reviews.product = $self @title: '{i18n>review}';
-    }
-    ```
-
-    Your `data-model.cds` file should look like this:
-
-    ```java  
-    namespace SampleApp;
-
-    using clouds.products.Products from '@sap/cloud-samples-catalog';
-
-    extend Products with {
-      Reviews: Association to many Reviews on Reviews.product = $self @title: '{i18n>review}';
-    }
-
-    entity Reviews {
-      key Review: UUID;
-      product: Association to Products @title: '{i18n>product}';
-      title: String(60) @title: '{i18n>reviewTitle}';
-      message: String(1024) @title: '{i18n>reviewText}';
-      rating: Decimal(4, 2) @title: '{i18n>rating}';
-      helpfulCount: Integer @title: '{i18n>ratedHelpful}';
-      helpfulTotal: Integer @title: '{i18n>ratedTotal}';
-    }
-    ```
-
-2. Save your file.
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Define the service model)]
+[ACCORDION-BEGIN [Step 4: ](Define the service model)]
 
 You need to extend `CatalogService` with the view on the `Reviews` entity you added in your `data-model.cds` file.
 
@@ -200,6 +160,47 @@ You need to extend `CatalogService` with the view on the `Reviews` entity you ad
 [VALIDATE_1]
 
 [ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 5: ](Add the association to the Reviews entity)]
+
+The ultimate goal is to navigate from `Products` to `Reviews`. To do this, you need to extend `Products` with an association to `Reviews`.
+
+1. Back in the `data-model.cds` file, add the following sample code:
+
+    ```java
+    extend Products with {
+    	Reviews: Association to many Reviews on Reviews.product = $self @title: '{i18n>review}';
+    }
+    ```
+
+    Your `data-model.cds` file should now look like this:
+
+    ```java  
+    namespace SampleApp;
+
+    using clouds.products.Products from '@sap/cloud-samples-catalog';
+
+    extend Products with {
+      Reviews: Association to many Reviews on Reviews.product = $self @title: '{i18n>review}';
+    }
+
+    entity Reviews {
+      key Review: UUID;
+      product: Association to Products @title: '{i18n>product}';
+      title: String(60) @title: '{i18n>reviewTitle}';
+      message: String(1024) @title: '{i18n>reviewText}';
+      rating: Decimal(4, 2) @title: '{i18n>rating}';
+      helpfulCount: Integer @title: '{i18n>ratedHelpful}';
+      helpfulTotal: Integer @title: '{i18n>ratedTotal}';
+    }
+    ```
+
+2. Save your file.
+
+[DONE]
+
+[ACCORDION-END]
+
 
 [ACCORDION-BEGIN [Step 6: ](Build the db module)]
 
