@@ -1,6 +1,6 @@
 ---
 title: Enable Offline OData in Your Android Application
-description: Enable Offline OData in your Android application.
+description: Use the Offline OData library to enable data access from an on device database.
 auto_validation: true
 primary_tag: operating-system>android
 tags: [  tutorial>beginner, operating-system>android ]
@@ -15,7 +15,7 @@ time: 20
 
 [ACCORDION-BEGIN [Step 1: ](Add dependency to build.gradle document)]
 
-In Android Studio, add the following line to the list of dependencies in the app's **`build.gradle`** file to include the <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Developing_Offline_Applications.html">Offline OData</a> framework.
+In Android Studio, add the following line to the list of dependencies in the app's **`build.gradle`** file to include the <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Developing_Offline_Applications.html">Offline OData</a> framework and click on **`Sync Now`**.
 
 ```Java
 implementation group:'com.sap.cloud.android', name:'offline-odata', version: sdkVersion
@@ -29,10 +29,26 @@ implementation group:'com.sap.cloud.android', name:'offline-odata', version: sdk
 [ACCORDION-BEGIN [Step 2: ](Add code to open offline store)]
 
 Press **`Ctrl+N`** and enter **`SAPServiceManager.java`**.
-In the `SAPServiceManager` class comment out (Select and press Ctrl /) the following variable:
-    `//private OnlineODataProvider provider;`
 
-In the same class add the following variables and press  **`Alt+Enter`** to make use of Android Studio quick fix to add the missing import.
+Add the following imports.
+
+```Java
+import android.content.Context;
+import android.util.Log;
+import com.sap.cloud.mobile.odata.core.AndroidSystem;
+import com.sap.cloud.mobile.odata.offline.OfflineODataDefiningQuery;
+import com.sap.cloud.mobile.odata.offline.OfflineODataException;
+import com.sap.cloud.mobile.odata.offline.OfflineODataParameters;
+import com.sap.cloud.mobile.odata.offline.OfflineODataProvider;
+import java.net.MalformedURLException;
+import java.net.URL;
+```
+
+In the `SAPServiceManager` class comment out (Select and press Ctrl /) the following variable.
+
+`//private OnlineODataProvider provider;`
+
+In the same class add the following variables.
 
 ```Java
 private OfflineODataProvider provider;
@@ -41,9 +57,7 @@ private static final String TAG = SAPServiceManager.class.getName();
 
 Delete or comment out the methods **`openODataStore`** and **`getServiceRoot`** as they will be replaced in the next step.
 
-Add the below methods and press  **`Alt+Enter`** to make use of Android Studio quick fix to add the missing imports.
-
-For `Context`, choose `android.content.Context`.
+Add the below methods.
 
 ```Java
 public void openODataStore(Action0 callback, Context context) {
