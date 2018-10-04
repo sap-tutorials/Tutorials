@@ -71,7 +71,7 @@ Select the new **View Controller** and go to the **Attributes Inspector**. Set t
 
 ![Create View Controller](fiori-ios-scpms-create-app-teched18-part4-46.png)
 
-Now switch to the **Identity Inspector**, enter `ChartViewController` for the **Custom Class**, and press Return. Be sure to get the spelling right; if it's correct, you'll see the Module change to MyDeliveries (the name of your project):
+Now switch to the **Identity Inspector**, enter `ChartViewController` for the **Custom Class**, and press Return. Be sure to get the spelling right; if it's correct, you'll see the Module change to `MyDeliveries` (the name of your project):
 
 ![Create View Controller](fiori-ios-scpms-create-app-teched18-part4-47.png)
 
