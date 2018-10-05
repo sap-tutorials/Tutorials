@@ -39,6 +39,7 @@ Git is part of most Linux distribution and can be seen as a standard tool on a d
 
 > [Gerrit Download](http://gerrit-releases.storage.googleapis.com/index.html)  
 > [Gerrit Documentation](https://gerrit-review.googlesource.com/Documentation/index.html)  
+> [Gerrit quick get started guide](https://gerrit-review.googlesource.com/Documentation/linux-quickstart.html)
 
 As part of the CI landscape, identify a Linux machine that will act as the host of the central Gerrit installation.
 
