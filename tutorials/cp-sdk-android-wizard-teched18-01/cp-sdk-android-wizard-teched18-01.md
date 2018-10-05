@@ -9,7 +9,7 @@ time: 15
 
 ## Details
 ### You will learn  
-  - How to create an Android app using the Android Studio integrated SAP wizard
+  - How to create an Android app using the Android Studio integrated SAP Wizard
 
 ---
 
@@ -89,14 +89,13 @@ On the **Project Configuration** tab, provide the following configuration data:
 |:----|:----|
 | Project Name | `Wiz App` |
 | Project Namespace | `com.sap.wizapp` |
-| Project Configuration | `C:\AndroidStudioProjects\WizApp` |
-| Password | Password for your trial account user |
+| Project Location | `C:\AndroidStudioProjects\WizApp` |
+| Use Discovery Service for Application bootstrapping | uncheck |
+| Generate Master-Detail Application | check |
+| Enable Logging | check |
+| Enable Upload | check |
+| Enable Push | check and browse to `C:\AndroidStudioProjects\google-services.json` |
 
-Uncheck **Use Discovery Service for Application bootstrapping**, check the **Enable Logging** and **Enable Upload** checkboxes to enable the log level to be set by the user and have the ability to upload the log to the server. Also check the **Enable Push** checkbox to enable push notification support in the app.
-
-Now you have to browse for `google-services.json` at path `C:\AndroidStudioProjects\`. This will enable the app to work with Google Firebase notifications.
-
-Click **Finish**
 
 ![Project configuration](project-configuration.png)
 

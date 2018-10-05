@@ -177,7 +177,7 @@ xs apps | grep webide
 
 When prompted, use the password you provided at the beginning of the installation script.
 
-Repeat the second command until you see STARTED and 1/1 for applications webide.
+Repeat the second command until you see STARTED and 1/1 for applications `webide`.
 Once started, you can run the following command to get the list of started processes:
 
 ```shell
