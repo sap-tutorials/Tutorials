@@ -1,6 +1,6 @@
 ---
 title: Add Notification Service to Your Application
-description: Add foreground and background notifications to your application with help of Google Firebase. 
+description: Add foreground and background notifications to your application with help of Google Firebase.
 auto_validation: true
 primary_tag: operating-system>android
 tags: [  tutorial>beginner, operating-system>android ]
@@ -14,11 +14,13 @@ time: 10
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add foreground notification)]
-Open the <a target="_blank" href="https://hcpmsadmin-p2000464045trial.dispatcher.hanatrial.ondemand.com/sap/mobile/admin/ui/index.html">SAP Cloud Platform Mobile Services management cockpit</a> by right-clicking on the link and choose **Open link in incognito window**. Enter the following credentials:
+[ACCORDION-BEGIN [Step 1: ](Send a notification)]
+
+Open the <a target="_blank" href="https://hcpmsadmin-p2000464045trial.dispatcher.hanatrial.ondemand.com/sap/mobile/admin/ui/index.html">SAP Cloud Platform Mobile Services management cockpit</a> by right-clicking on the link and choose **Open link in incognito window**.
 
 ![Management cockpit](sap-identity.png)
 
+Enter the following credentials.
 | Field | Value |
 |:----|:----|
 | Username | `p2000464045` |
@@ -38,6 +40,11 @@ Specify the notification text to send to the app.
 
 ![Send notification](send-notification2.png)
 
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 2: ](Receive foreground notification)]
 Notice that the app shows the notification.
 
 ![Receive notification](receive-notification.png)
@@ -45,7 +52,7 @@ Notice that the app shows the notification.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add background notification)]
+[ACCORDION-BEGIN [Step 3: ](Receive background notification)]
 
 On the emulator, open another app, such as Chrome, which will cause the Wiz App to no longer be the foreground app.
 

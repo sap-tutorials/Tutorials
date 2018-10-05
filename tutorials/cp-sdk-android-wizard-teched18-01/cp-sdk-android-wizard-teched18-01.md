@@ -54,7 +54,6 @@ Choose **Start a new SAP Cloud Platform Android project**.
 
 
 The wizard can save the server connection details for multiple servers. A preconfigured account has been provided.
-Click **Next** on the **Server Connection** tab.
 
 ![Server connection](server-connection.png)
 
@@ -69,7 +68,6 @@ Click **Next** on the **Server Connection** tab.
 | Password | `SCP!2pwd` |
 
 On the **Cloud Configuration** tab, select **Use Existing** and set the Application ID to **`com.sap.wizapp`**.
-Click **Next** to configure the OData services.
 
 ![Cloud configuration](cloud-configuration.png)
 
@@ -79,9 +77,9 @@ The application configuration has already been created and has added multiple fe
 
 The SAP Cloud Platform Mobile Services provides a sample backend destination named `com.sap.edm.sampleservice.v2` that is being used here to provide data for the application. It contains product categories, product, supplier, customer and sales order data.
 
-Click **Next**.
 
 ![OData services](odata-services.png)
+
 
 On the **Project Configuration** tab, provide the following configuration data:
 
