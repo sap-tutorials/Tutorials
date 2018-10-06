@@ -13,13 +13,12 @@ tags: [  tutorial>intermediate, products>sap-cloud-platform, products>sap-cloud-
 
 ## Details
 ### You will learn  
-- How to set up principal propagation in SAP Cloud Platform.
+- How to set up principal propagation in SAP Cloud Platform
 - How to establish trust from the Neo environment to the Cloud Foundry environment
 
-In this tutorial you will set up a connection between SAP Cloud Platform Neo Environment (Neo) and Cloud Foundry Environment (CF).
+In this tutorial you will set up a connection between SAP Cloud Platform Neo environment (Neo) and Cloud Foundry environment (CF).
 
-A simple application in CF will consume data from an Neo application, and therefore propagate the user details from one environment to the other.
-This is called "Principal Propagation" and requires some additional steps establishing trust between the environments, to guarantee security.
+A simple application in CF will consume data from an Neo application, and therefore propagate the user details from one environment to the other. This is called "Principal Propagation" and requires some additional steps establishing trust between the environments, to guarantee security.
 
 ### Time to Complete
 **45 Min**
@@ -28,31 +27,40 @@ This is called "Principal Propagation" and requires some additional steps establ
 
 [ACCORDION-BEGIN [Step 1: ](Adapt the ESPM Application)]
 1. If you're using Eclipse for the first time, you will see a Welcome Page. Close this page.
-    ![click new](01-close-welcome.png)
+
+    ![Close welcome page](01-close-welcome.png)
 
 1. Open Eclipse and choose **Window** > **Perspective** > **Open Perspective** > **Other...**, select **Git** and click **Open**.
-    ![click new](01-open-git-perspective.png)
+
+    ![Open git perspective](01-open-git-perspective.png)
 
 1. Click **Clone a Git repository**.
-    ![click new](01-clone-a-git-repository.png)
+
+    ![Click "Clone a Git repository"](01-clone-a-git-repository.png)
 
 1. Insert `https://github.com/SAP/cloud-espm-v2.git` into the URI field and click **Next**.
-    ![click new](01-clone-set-url.png)
+
+    ![Enter git url](01-clone-set-url.png)
 
 1. Make sure only the **master** branch is selected and click **Next**.
-    ![click new](01-clone-select-master.png)
+
+    ![Select branch](01-clone-select-master.png)
 
 1. Click **Finish** and wait until the clone has finished.
-    ![click new](01-clone-finish.png)
+
+    ![Start git clone](01-clone-finish.png)
 
 1. Right-click on `cloud-espm-v2` > **Import Projects...**.
-    ![click new](01-import-start.png)
+
+    ![Open import dialog](01-import-start.png)
 
 1. Make sure Eclipse hast detected all projects and click **Finish**.
-    ![click new](01-import-finish.png)
+
+    ![Import all projects](01-import-finish.png)
 
 1. Open the **Java EE** Perspective and edit the `web.xml` file: Look for `<auth-method>FORM</auth-method>` and change it to `<auth-method>OAUTH</auth-method>`. Don't forget to save your changes.
-    ![click new](01-edit-webxml.png)
+
+    ![Adapt web.xml](01-edit-webxml.png)
 
 [DONE]
 
@@ -138,13 +146,16 @@ Note: You need to change to the approuter directory using the `cd` command first
 
 [ACCORDION-BEGIN [Step 3: ](Build the ESPM Application)]
 1. Make a right-click on `espm` and select **Export**.
-    ![click new](03-export-start.png)
+
+    ![Open export dialog](03-export-start.png)
 
 1. Select **Web** > **WAR file** and click **Next**.
-    ![click new](03-export-war.png)
+
+    ![select war export](03-export-war.png)
 
 1. Select a Destination on your machine and click **Finish**.
-    ![click new](03-export-finish.png)
+
+    ![finish war export](03-export-finish.png)
     
 
 [DONE]
@@ -156,42 +167,55 @@ Note: You need to change to the approuter directory using the `cd` command first
 1. Open the Neo cockpit.
 
 1. Navigate to **SAP HANA / SAP ASE** > **Databases & Schemas** and click **New**
-    ![click new](04-database-new.png)
+
+    ![open create database dialog](04-database-new.png)
 
 1. Create a database named `espm` and select a password. Make sure you don't lose it, we'll need it soon.
+
     ![create database dialog](04-database-create-dialog.png)
     
 1. Wait until you see the event with description **Tenant DB creation finished successfully (created and configured)** (this can take up to 15 minutes). Now navigate back to your subaccount.
+
     ![wait and navigate back](04-database-wait.png)
     
 1. Navigate to **Applications** > **Java Applications** and click **Deploy Application**
+
     ![click deploy application](04-java-open-deploy.png)
 
 1. Select the `espm-cloud-web.war` you've exported in the first step, be sure to use the **Tomcat 8** Runtime and click deploy. Note: Don't change the name of the application.
+
     ![deploy application](04-java-deploy.png)
     
 1. Wait until the application is successfully deployed and click **Done**.
+
     ![click done](04-java-deploy-done.png)
     
 1. Open the details of the application by clicking its name.
+
     ![open details](04-java-open-details.png)
     
 1. Navigate to **Configuration** > **Data Source Bindings** and click **New Binding**.
+
     ![new binding](04-java-open-binding.png)
     
 1. Enter `SYSTEM` and the password you choose while creating the database as credentials and click **Save**.
+
     ![create database binding](04-java-save-binding.png)
 
 1. Navigate to **Security** > **Roles**, make sure the **Retailer** role is selected and click **Assign** in the Individual Users section.
+
     ![Open role assignment dialog](04-java-open-role-assign.png)
 
 1. Enter your email-address (the one you use for your Cloud Foundry Account) and click **Assign**.
+
     ![Assign role to yourself](04-java-assign-role.png)
 
 1. Navigate to **Overview** and click **Start**.
+
     ![start application](04-java-start.png)
 
 1. Wait until you can see **Started** and open the Application URL.
+
     ![open application](04-java-wait.png)
 
 
@@ -202,12 +226,15 @@ Note: You need to change to the approuter directory using the `cd` command first
 [ACCORDION-BEGIN [Step 5: ](Establish trust between CF and Neo)]
 
 1. Open the CF environment in a new tab, navigate into your subaccount, go to **Connectivity** > **Destinations** and export the X509 certificate of the destination service by clicking the **Download Trust** button.
+
     ![Download Certificate](05-download-trust.png)
     
 1. Go to **Overview** and find your subaccounts id and the landscape host. You will need it later. **Notice:** The landscape host does **not** include `api.cf.`!
+
     ![Find subaccount details](05-find-cf-details.png)
 
 1. Go to the Neo environment > **Security > Trust > Application Identity Provider** and click on **Add Trusted Identity Provider**.
+
     ![Open add trusted IDP dialog](05-click-add-trusted-idp.png)
 
 1. Enter the following details and click **Save**.
@@ -217,10 +244,12 @@ Note: You need to change to the approuter directory using the `cd` command first
     | Name                 | `cfapps.` + Landscape Host + `/` + subaccount ID e.g. `cfapps.eu10.hana.ondemand.com/77f532e6-71f7-44e9-9761-c0b24f6f38ca` |
     | Signing Certificate  | Open the certificate file downloaded earlier with your favorite editor and copy everything between **\-\-\-\-\-BEGIN CERTIFICATE\-\-\-\-\-** and **\-\-\-\-\-END CERTIFICATE\-\-\-\-\-**. |
     
+
     ![Trusted IDP details](05-trusted-idp-details.png)
 
 1. Go to **Security > OAuth > Clients** and click **Register new client**.
-    ![Trusted IDP details](05-register-new-client.png)
+
+    ![Register new OAuth Client](05-register-new-client.png)
 
 1. Enter the following details and click **Save**.
 
@@ -234,6 +263,7 @@ Note: You need to change to the approuter directory using the `cd` command first
     | Redirect URI         | Unused in this scenario. Use e.g. `https://example.com`         |
     
     Example:
+
     ![OAuth client sample configuration](05-register-new-client-details.png)
 
 1. Go back to the CF environment and click **New Destination**.
@@ -279,6 +309,7 @@ Note: You need to change to the approuter directory using the `cd` command first
     | US East (Sterling)   | `https://us3.hana.ondemand.com/services`  |
     
     Example:
+
     ![Example destination configuration](05-destination-details.png)
 
 [DONE]
@@ -289,27 +320,34 @@ Note: You need to change to the approuter directory using the `cd` command first
 
 1. Create Destination Service Instance
     - Navigate into your **dev** space.
+
     ![Go to dev space](06-cf-click-dev-space.png)
     - Open the **Service Marketplace** under **Services**.
+
     ![Open Service Marketplace](06-cf-open-service-marketplace.png)
 
     - Find and click the **destination** tile.
+
     ![Open destination service in Marketplace](06-cf-destination-tile.png)
 
     - Click **New Instance**.
+
     ![Click create new destination service instance](06-cf-destination-new-instance.png)
 
     - Press **Next** three times.
 
     - Enter the **Instance Name**: `destination-demo-lite` and click **Finish**.
-    ![Set instance name](06-cf-destination-instance-name.png)
+
+    ![Set destination service instance name](06-cf-destination-instance-name.png)
 
 1. Create Authorization & Trust Management Service Instance (aka XSUAA)
 
     - Click the arrow next to **destination** (see screenshot) and select **Authorization & Trust Management**.
+
     ![Open dropdown and select Authorization & Trust Management](06-cf-xsuaa-goto.png)
 
     - Click **New Instance**.
+
     ![Create new XSUAA instance](06-cf-xsuaa-new-instance.png)
 
     - Press **Next** only once.
@@ -336,10 +374,12 @@ Note: You need to change to the approuter directory using the `cd` command first
         	]
         }
         ```
+
     ![Verify json was loaded](06-cf-xsuaa-check-parameters.png)
 
     - Enter the **Instance Name**: `xsuaa-demo` and click **Finish**.
-    ![Set instance name](06-cf-xsuaa-instance-name.png)
+
+    ![Set xsuaa instance name](06-cf-xsuaa-instance-name.png)
 
 1. Create Manifest File for the approuter.
 
@@ -366,18 +406,23 @@ Note: You need to change to the approuter directory using the `cd` command first
 1. Deploy the Approuter
 
     - Back in the Browser click the **dev**-space, **Applications** followed by **Deploy Application**.
+
     ![Click Deploy Application](06-cf-click-deploy-application.png)
 
     - Click **Browse** and select `approuter.zip` as **File Location**. Then do the same for the **Manifest Location** and select the `approuter-manifest.yml`. Finally click **Deploy**.
+
     ![Browser for approuter.zip and approuter-manifest.yml](06-cf-deploy-approuter.png)
 
     - Wait until your application shows a green **Started** as State and then click on **approuter-demo**.
+
     ![Wait for green started](06-cf-wait-for-deployment.png)
 
     - Navigate to the Approuter by clicking the link as shown in the screenshot.
+
     ![Open approuter](06-cf-start-app.png)
 
     - Login using the E-Mail-Address and password of your trial account.
+
     ![Login into application](06-cf-loginto-app.png)
 
 [DONE]
