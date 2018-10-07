@@ -67,8 +67,11 @@ https://sapes5.sapdevcenter.com/sap/opu/odata/iwbep/GWSAMPLE_BASIC/$metadata
 To generate the service module, follow these steps:
 
 1. Save the metadata file to your hard drive.
+
 2. Open the SAP [OData Model Creator](https://sapodatamodelcreator.mendixcloud.com/).
+
 3. Select the **Manual** option.
+
 4. Upload the OData metadata XML file and click **Continue**:
 
     ![Domain Model Creator](mendix-salesorders2.png)
@@ -78,6 +81,7 @@ To generate the service module, follow these steps:
     ![Domain Model Creator Schema](mendix-salesorders2a.png)
 
 6. Press **`Generate`** **`.mpk`**. A progress bar will be shown during the parsing and generation of the module.
+
 7. Once the generation is done, the **Download** button appears. Notice that the file name of your module is extracted from the metadata file itself.
 
     Press **Download** and save the `.mpk` file locally.
@@ -93,14 +97,13 @@ Now you have a Mendix module ready to be imported into your project.
 
 1. Open the project that you created, right-click the project root folder, select **Import module package…** and select the `.mpk` file.
 
-    ![Import module package](mendix-salesorders4.png)
-
+    ![Import module package](mendix-salesorders4.png) <br>
     
     You now have your `GWSAMPLE_BASIC` module available in your project ready to use in combination with the SAP OData Connector.
 
     ![Import module package](mendix-salesorders5.png)
 
-2. Open the generated domain model and explore the entities and associations. Imagine that you had to create that manually -- a lot of work!
+2. Open the generated domain model and explore the entities and associations. Imagine that you had to create that manually -- **a lot of work!**
 
     ![Generated Domain Model](mendix-salesorders6.png)
 
@@ -119,6 +122,7 @@ Now that we have our domain model in place, it's time to implement the connectiv
 Our tutorial uses basic authentication to connect to the ES5 system, so let's store the username and password in constants.
 
 1. Right-click **`MyFirstModule`** and add a new folder called **`Constants`**.
+
 2. Right-click the **`Constants`** folder and add a new constant called **`ES5Username`**.
 
     ![Add Constant](mendix-salesorders7.png)
@@ -128,6 +132,7 @@ Our tutorial uses basic authentication to connect to the ES5 system, so let's st
     ![Add Constant](mendix-salesorders8.png)
 
 4. Following the same steps, add a new constant and name it **`ES5Password`**.
+
 5. Enter your ES5 password as **`Default value`**.
 
     ![Add Constant](mendix-salesorders9.png)
@@ -139,21 +144,29 @@ Our tutorial uses basic authentication to connect to the ES5 system, so let's st
 Follow these steps to create the logic to get the sales orders.
 
 1. Right-click **`MyFirstModule`** and add a new microflow, name it **`ACT_GetSalesOrders`**.
+
 2. Right-click the line between the green and red dots in the microflow editor and select **Insert** | **Activity** (or drag and drop an activity from the upper toolbar).
+
 3. Double-click the new activity and scroll down to locate the SAP OData Connector actions.
+
 4. Select **`Create`** **`Request`** **`Params`**, and then click **Select**.
+
 5. Name the variable **`RequestParams`**. This variable (as its name suggests) will hold the request parameters, and it's required for the **Add basic authentication** activity.
 
     ![Create Request Params](mendix-salesorders10.png)
 
 6. Following the same steps, add an **Add basic authentication** activity.
+
 7. Select the **`$RequestParams`** variable in the **Request parameters** dropdown.
+
 8. Click **Edit...** for the **Username** and select the **`ES5Username`** constant by entering the following argument: `@MyFirstModule.ES5Username`
 
     ![Add Basic Authentication](mendix-salesorders12.png)
 
 9. Follow the same steps for the **Password**.
+
 10. Change the output **Variable** name to **Authentication**.
+
 11. Click **OK** to close the dialog.
 
 ![Add Basic Authentication](mendix-salesorders13.png)
@@ -164,6 +177,7 @@ Follow these steps to create the logic to get the sales orders.
 
 1. Add another activity to the microflow and select the **Get List** action from the SAP OData Connector.
 The **Get List** action retrieves a list of entities described in the domain model. In our case we will retrieve a list of sales orders.
+
 2. Fill in the required fields of the **Get List** action. For this tutorial, use the following settings:
 
     | Field | Value |
@@ -176,10 +190,11 @@ The **Get List** action retrieves a list of entities described in the domain mod
     | Use&nbsp;Cloud&nbsp;Connector | `false` |
     | Output Variable | `SalesOrders` |
 
-> In our case, the `Use cloud connector` is set to `false` because ES5 is a publicly accessible system. <br>
-> If you would like to consume a service from your on-premise back-end system, you need to setup and configure the SAP Cloud Connector and then mark this field as `true`. <br>
-> When running the Mendix application on SAP Cloud Platform, the SAP Cloud Connector will automatically be utilized to gain access to your on-premise system. <br>
-> For more information, see the [SAP Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html) documentation.
+    > In our case, the `Use cloud connector` is set to `false` because ES5 is a publicly accessible system. <br>
+    > If you would like to consume a service from your on-premise back-end system, you need to setup and configure the SAP Cloud Connector and then mark this field as `true`. <br>
+    > When running the Mendix application on SAP Cloud Platform, the SAP Cloud Connector will automatically be utilized to gain access to your on-premise system. <br>
+    > For more information, see the [SAP Cloud Connector](https://help.sap.com/viewer/cca91383641e40ffbe03bdc78f00f681/Cloud/en-US/e6c7616abb5710148cfcf3e75d96d596.html) documentation.
+
 
 3. Verify the **Get List** dialog matches the following:
 
@@ -194,8 +209,11 @@ The **Get List** action retrieves a list of entities described in the domain mod
 In the microflow, make the return value of the microflow a **`List`** of **`SalesOrders`** so you can call the microflow as a data source in a page.
 
   1. Double-click the **`End-Event`** (red dot).
+
   2. Select **`List`** for the **Type**.
+
   3. Select **`SalesOrder`** for the **Entity**.
+
   4. Click on **Generate…** and select the **`SalesOrders`** variable.
 
       ![Expression value](mendix-salesorders15.png)
@@ -207,6 +225,7 @@ In the microflow, make the return value of the microflow a **`List`** of **`Sale
   6. Click **OK** to close the dialog.
 
 Your microflow should look like the following:
+
     ![Microflow](mendix-salesorders17.png)
 
 [ACCORDION-END]
@@ -214,13 +233,19 @@ Your microflow should look like the following:
 [ACCORDION-BEGIN [Step 8: ](Create a new master detail page)]
 
 1. Right-click **`MyFirstModule`**, and choose to add a Page.
+
 2. Enter a name for the page (e.g. `MyFirstPage`).
+
 3. Select the **`SAP_MasterDetail (SAP_UI_Resources)`** Navigation layout.
+
 4. Select the **Fiori Master Lists** category on the left-side menu and select the **Master List** template.
+
     ![Add New Page](mendix-salesorders17a.png)
 
 5. Click **OK**.
+
 6. Notice the **Errors** tab located at the bottom pane is showing an error **`No entity configured for the data source of this list view`**.
+
     ![Add New Page](mendix-salesorders17d.png)
 
 [ACCORDION-END]
@@ -230,21 +255,29 @@ Your microflow should look like the following:
 Now we will bind the Master section to the Sales Orders.
 
 1. Double-click the error from the **Errors** tab to get the **List View** of the **Master** section selected.
+
     ![Edit List View](mendix-salesorders17b.png)
 
 2. Double-click the **List View**, and change its **Data Source** to your **`ACT_GetSalesOrders`** microflow.
+
     ![Edit List View](mendix-salesorders18.png)
 
 3. When prompted to automatically fill the contents of the list view, choose **No**.
+
 4. Select the content of the **List View**, right-click it and choose **Delete**.
+
     ![List View Content](mendix-salesorders18a.png)
 
 5. Open the **Connector** tab on the right-side pane to view the properties of the `Sales Order` entity.
+
     ![Open Connector Tab](mendix-salesorders19.png)
 
 6. Double-click (or drag and drop) the **`CustomerID`** property from the **Connector** tab.
+
 7. In the page, select the content below the **`Customer ID`** you just added and add the **`CustomerName`** property.
+
 8. Select the content below it and add the **`CreatedAt`** property.
+
 9. Verify it looks like the following:
 
     ![List View Content Final](mendix-salesorders20.png)
@@ -264,7 +297,9 @@ Now we're going to make some modifications in the Detail section of the page.
     ![Footer](mendix-salesorders22.png)
 
 3. Scroll back up, double-click the **Title** text and change it to **`Sales Order`**.
+
 4. Double-click the **Subtitle** text and change it to **`Details`**.
+
 5. Select the container with the `New` and `Delete` buttons and delete it.
 
     ![Delete Container](mendix-salesorders22a.png)
@@ -276,17 +311,21 @@ Now let's bind the Detail section and present some more Sales Order properties:
     ![3 Containers](mendix-salesorders22b.png)
 
 7. Select the first container and delete both `Category` and `Value` texts. 
+
 8. Double-click the **`SalesOrderID`** property from the Connector tab.
 
     ![Container for SalesOrderID](mendix-salesorders23.png)
 
 9. Select the second container and delete both texts again.
+
 10. Double-click the **`CurrencyCode`** and the **`GrossAmount`** properties.
 
     ![Container for CurrencyCode](mendix-salesorders24.png)
 
 11. Select the third container and delete both texts again.
+
 12. Double-click the **`Note`**, **`LifecycleStatusDescripion`** and **`BillingStatusDescription`** properties.
+
 13. Verify the UI looks like the following:
 
     ![Container for Note](mendix-salesorders25.png)
@@ -304,7 +343,9 @@ Mendix apps work by showing pages to the user. You can define which page should 
     ![Open Navigation](mendix-salesorders26.png)
 
 2. Click **`Select…`** next to **Default home page**.
+
 3. Select the new page you created in the previous step as the new home page.
+
 4. Click **Select**.
 
 [ACCORDION-END]
@@ -317,12 +358,13 @@ To run the app for the first time, follow these steps.
 
 1. Click **Run** | **Run Locally**.
 
-    ![Run Locally](mendix-salesorders28.png)
+    ![Run Locally](mendix-salesorders28.png) <br>
 
     If you see the pop-up window asking if you want to create a database, select **Yes**. <br>
     If you see the pop-up window asking if you want to save your changed, select **Save and continue**.
 
 2. Wait until the startup of the app has finished and the app is running.
+
 3. Click **View** to view the app in your browser.
 
     ![View App](mendix-salesorders29.png)
@@ -340,13 +382,13 @@ The application will automatically bind to the Connectivity, XSUAA and PostgreSQ
 
 1. Click **Run**.
 
-    ![Run](mendix-salesorders31.png)
+    ![Run](mendix-salesorders31.png) <br>
 
     The deployment process will start and you will be notified when completed.
 
     ![Deploy](mendix-salesorders32.png)
 
-3. Once the application is deployed successfully, click on **View** to run it from SAP Cloud Platform.
+2. Once the application is deployed successfully, click on **View** to run it from SAP Cloud Platform.
 
 [ACCORDION-END]
 
