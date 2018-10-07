@@ -225,7 +225,6 @@ In the microflow, make the return value of the microflow a **`List`** of **`Sale
   6. Click **OK** to close the dialog.
 
 Your microflow should look like the following:
-
     ![Microflow](mendix-salesorders17.png)
 
 [ACCORDION-END]
