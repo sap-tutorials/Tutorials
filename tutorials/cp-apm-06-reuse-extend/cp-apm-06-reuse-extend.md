@@ -68,7 +68,7 @@ To reuse the product catalog model, you need to declare a dependency in the `pac
     Your `package.json` file should look like this:
 
 
-    ```xml
+    ```json
     {
     "name": "SampleApp",
     "description": "A simple data model for SAP CP application",
@@ -102,7 +102,7 @@ In your `data-model.cds`, you will:
 1. Go to **`db`** module and open the `data-model.cds` file.
 2. Replace the sample code with:
 
-    ```java
+    ```cds
     namespace SampleApp;
 
     using clouds.products.Products from '@sap/cloud-samples-catalog';
@@ -133,7 +133,7 @@ You need to extend `CatalogService` with the view on the `Reviews` entity you ad
 1. Expand the **`srv`** module and open **`my-service.cds`**
 2. Replace the sample code with:
 
-    ```java
+    ```cds
     namespace SampleApp;
     using SampleApp as samp from '../db/data-model';
 
@@ -167,7 +167,7 @@ The ultimate goal is to navigate from `Products` to `Reviews`. To do this, you n
 
 1. Back in the `data-model.cds` file, add the following sample code:
 
-    ```java
+    ```cds
     extend Products with {
     	Reviews: Association to many Reviews on Reviews.product = $self @title: '{i18n>review}';
     }
@@ -175,7 +175,7 @@ The ultimate goal is to navigate from `Products` to `Reviews`. To do this, you n
 
     Your `data-model.cds` file should now look like this:
 
-    ```java  
+    ```cds
     namespace SampleApp;
 
     using clouds.products.Products from '@sap/cloud-samples-catalog';
