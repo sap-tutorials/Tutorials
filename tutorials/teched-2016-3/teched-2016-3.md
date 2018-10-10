@@ -67,7 +67,7 @@ Leave the **Use default JDK truststore** checked.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Add properties and save)]
+[ACCORDION-BEGIN [Step 4: ](Specify additional properties and save)]
 
 Add the following **Additional Properties** fields by clicking on the **New Property** button once for each property.
 
@@ -75,11 +75,12 @@ Field Name       | Value
 :--------------- | :-------------
 `WebIDEEnabled`  | `true`
 `WebIDESystem`   | `gateway`
-`WebIDEUsage`    | `odata_abap`
+`WebIDEUsage`    | `odata_gen, odata_abap, bsp_execute_abap`
+`sap-client`     | `002`
 
 ![creating destination](te-2016-3-03.png)
 
-> Values for the `WebIDEUsage` property determine how the SAP Web IDE interprets the destination definition and presents it to you for connection and consumption. The value `odata_abap` signifies that the destination represents an SAP Gateway system hosting OData services, and that provides a special catalog service for finding and selecting available OData services. OData services from this destination are to be selected via the Service Catalog data connection source in the SAP Web IDE **New Project** wizard.
+> Values for the `WebIDEUsage` property determine how the SAP Web IDE interprets the destination definition and presents it to you for connection and consumption. For example, the value `odata_abap` signifies that the destination represents an SAP Gateway system hosting OData services, and that provides a special catalog service for finding and selecting available OData services. OData services from this destination are to be selected via the Service Catalog data connection source in the SAP Web IDE **New Project** wizard.
 >&nbsp;
 > Find out more about the possible values for the `WebIDEUsage` property in the SAP Help Portal, in the [Connect to ABAP Systems](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/Cloud/en-US/5c3debce758a470e8342161457fd6f70.html) section.
 
