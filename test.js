@@ -1,4 +1,7 @@
-const testTool = require('./test-tool/src');
+var testTool = require('./test-tool/src');
+var checkNodeV = require('./check-node-v');
+var NODE_ENV = process.env.NODE_ENV;
+var isProduction = NODE_ENV == 'production';
 
 const { NODE_ENV } = process.env;
 const isProduction = NODE_ENV == 'production';
