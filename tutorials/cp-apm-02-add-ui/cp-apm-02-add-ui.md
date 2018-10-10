@@ -19,7 +19,6 @@ time: 10
 [ACCORDION-BEGIN [Step 1: ](Add an HTML5 template)]
 
 1. Right-click the **bookshop** folder and choose **New | HTML5 Module**
-
 2. Choose **List Report Application**.
 
     ![Choose the HTML5 template](html5-template.png)
@@ -52,7 +51,6 @@ This binds the application UI to the `Books` entity set.
 [ACCORDION-BEGIN [Step 2: ](Test-run the UI)]
 
 1. Right-click the **app** module and choose **Run | Run As | Web Application**.
-
 2. Choose **`flpSandbox.html`**.
 
     >If you have previously selected **`flpSandbox.html`** as your run configuration for web applications, you will not see a dialog box. Web IDE will use **`flpSandbox.html`** as the default.
@@ -63,7 +61,6 @@ This binds the application UI to the `Books` entity set.
     |  :-------------------------  | :--------------------------------------------------------------------------
     |  Neo Environment User ID     | The ID of your subaccount that contains your Neo environment
     |  Neo Environment Password    | The password of your subaccount that contains your Neo environment
-
 4. Choose **Create**.
 The SAP Fiori `launchpad` opens.
 
@@ -77,16 +74,13 @@ The SAP Fiori `launchpad` opens.
 [ACCORDION-BEGIN [Step 3: ](Open your app)]
 
 1. Select your app to see a preview of the UI application.
-
-    This might take a few seconds, but once it opens, you will see a table without columns, because UI annotations have not been defined.
-
+This might take a few seconds, but once it opens, you will see a table without columns, because UI annotations have not been defined.
 2. Choose **Settings** to add the columns you want to see and choose **OK**.
 
     ![Choose Settings](settings-books-app.png)
-
 3. Choose **Go**.
 
-    >You may see an error, because we have not added any data yet. In this case, choose **Cancel** and continue with the next step.
+    >You may see an error, because you have not added any data yet. In this case, choose **Cancel** and continue with the next step.
 
 The empty columns are displayed.
 
@@ -97,7 +91,6 @@ The empty columns are displayed.
 [ACCORDION-BEGIN [Step 4: ](Edit the run configurations)]
 
 1. Right-click the **app** module and choose **Run | Run Configurations**.
-
 2. Choose **`Run flpSandbox.html`** and check the **Run with mock data** option.
 
     ![Edit the run configurations](run-configurations-for-app.png)
@@ -132,13 +125,11 @@ The columns are displayed with mock data.
 [ACCORDION-BEGIN [Step 7: ](Add UI annotations)]
 
 1. Go to `app/webapp/localService`, right-click on the file you just created and choose **Open Annotation Modeler**.
-
 2. Expand the **Books** entity.
 
     > If you don't see any entities listed, use the **Select Targets** button to search for and select the **Books** entity type.
 
     The **Local Annotations** entry includes the annotation file you have just created.
-
 3. Go to the **Actions** column and choose **`Add subnodes`**.
 
     ![Add subnodes](adding-annotations-1.png)
@@ -148,19 +139,14 @@ The columns are displayed with mock data.
     ![Add LineItem](adding-annotations-2.png)
 
     A new entry is created: **`UI.LineItem`**.
-
 5. For **`UI.LineItem`**, choose **`Add subnodes`**.
-
 6. From the **`Add to UI.LineItem`** dialog box, choose **`DataField`** and then **OK**.
-
-    A new entry is created: **Value**.
-
+A new entry is created: **Value**.
 7. Go to the **Value** column and choose **Title** from the **Property** drop-down menu.
 
     ![Add Value](adding-annotations-3.png)
 
 8. Choose **Save** and then **Run**.
-
 9. Choose **Go**
 
 The application now shows data according to the added annotations.
