@@ -8,10 +8,7 @@ time: 10
 ---
 
 ## Prerequisites  
- - Log in to the [SAP Cloud Platform Cockpit](https://account.hanatrial.ondemand.com/cockpit#/home/trialhome)
- - **Tutorials:** [Set up Cloud Foundry trial](https://www.sap.com/developer/tutorials/cp-cf-create-account.html)
- - [Enable SAP Web IDE Full-Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html)
- - [Learn about Web IDE and Connect Web IDE to Cloud Foundry](https://www.sap.com/developer/tutorials/webide-customize.html)
+ - **Tutorials:** [Enable SAP Web IDE Full-Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html)
  - Select a Cloud Foundry space. See [Select a Cloud Foundry Space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html)
 
 ## Details
@@ -42,7 +39,7 @@ time: 10
 
 1. Open `db/data-model.cds` and replace the template with the following CDS definitions:
 
-    ```java
+    ```CDS
     namespace my.bookshop;
 
     entity Books {
@@ -81,7 +78,7 @@ time: 10
 2. Choose **Rename** and change the file name to **`cat-service.cds`**.
 3. Open `cat-service.cds` and replace the template with the following CDS definitions:
 
-    ```java
+    ```CDS
     using my.bookshop from '../db/data-model';
     service CatalogService {
       entity Books @readonly as projection on bookshop.Books;
