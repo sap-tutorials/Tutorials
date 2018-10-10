@@ -13,7 +13,7 @@ time: 10
 
 ## Details
 ### You will learn  
-  - How to develop a simple business service on SAP Cloud Platform using the application programming model and SAP Web IDE Full-Stack.
+  - How to develop a simple business service on SAP Cloud Platform using the application programming model and SAP Web IDE Full-Stack
 
 ---
 
@@ -39,7 +39,7 @@ time: 10
 
 1. Open `db/data-model.cds` and replace the template with the following CDS definitions:
 
-    ```cds
+    ```CDS
     namespace my.bookshop;
 
     entity Books {
@@ -78,7 +78,7 @@ time: 10
 2. Choose **Rename** and change the file name to **`cat-service.cds`**.
 3. Open `cat-service.cds` and replace the template with the following CDS definitions:
 
-    ```cds
+    ```CDS
     using my.bookshop from '../db/data-model';
     service CatalogService {
       entity Books @readonly as projection on bookshop.Books;

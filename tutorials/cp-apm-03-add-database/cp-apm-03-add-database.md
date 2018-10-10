@@ -12,7 +12,7 @@ time: 10
 
 ## Details
 ### You will learn  
-  - How to deploy the data model you created for your business application to the SAP HANA database using SAP Web IDE Full-Stack.
+  - How to deploy the data model you created for your business application to the SAP HANA database using SAP Web IDE Full-Stack
 
 ---
 

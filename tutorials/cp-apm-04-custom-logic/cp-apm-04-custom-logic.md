@@ -19,7 +19,6 @@ time: 10
 [ACCORDION-BEGIN [Step 1: ](Add a new Java class)]
 
 1. In the **`srv`** module, go to `src/main/java/my/bookshop` and open the context menu.
-
 2. Choose **New | Java Class**.
 
     ![Add Java Class](add-java-class.png)
@@ -29,7 +28,6 @@ time: 10
     ![Enter name for Java class](new-java-class.png)
 
 4. Choose **Finish**.
-
 The `OrdersService.java` file is created.
 
 [DONE]
