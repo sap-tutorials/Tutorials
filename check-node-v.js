@@ -23,12 +23,12 @@ module.exports = function () {
       if (currentVersion < minVersion) {
         logger.error(`
           ATTENTION!
-          You are using an outdated Node.js version. Currently installed version ${clearOut} is not supported, please upgrade it to v${parseInt(minVersion)} or higher.
+          You are using an outdated Node.js version. Currently installed version ${clearOut} is not supported, please upgrade to v${parseInt(minVersion)} or higher.
           Test tool cannot be run. Exiting.
           `);
         return process.exit(1);
       } else {
-        logger.info(`Node version is ${clearOut}. Ready to run test tool.`);
+        logger.info(`Node version is ${clearOut}. Ready to run test tool.`);
       }
     })
     .catch(function(error) {
