@@ -38,6 +38,7 @@ Imagine that you need to create a product catalog app that includes reviews for 
 The **SAP Cloud Platform Business Application** template is your starting point. After creating the template, you will have the default project layout, which includes a data and service module.
 
 1. Open SAP Web IDE and choose **File** | **New** | **Project from Template**.
+
 2. Choose **SAP Cloud Platform Business Application**, and in the **Basic Information** tab, specify **`SampleApp`** as the Project Name.
 
     ![Select the project template](web-ide-template.png)
@@ -105,11 +106,13 @@ To reuse the product catalog model, you need to declare a dependency in the `pac
 In your `data-model.cds`, you will:
 
 - Import the `Product` entity with a `using` directive.
+
 - Add a `Reviews` entity that will be associated with the `Product` entity.
 
 >`Using` directives let you declare shortcut aliases to fully-qualified names or namespaces of definitions in other files and import them into your model. In this example, the `using` directive imports the Products entity.
 
 1. Go to **`db`** module and open the `data-model.cds` file.
+
 2. Replace the sample code with:
 
     ```CDS
@@ -140,7 +143,8 @@ In your `data-model.cds`, you will:
 
 You need to extend `CatalogService` with the view on the `Reviews` entity you added in your `data-model.cds` file.
 
-1. Expand the **`srv`** module and open **`my-service.cds`**
+1. Expand the **`srv`** module and open **`my-service.cds`**.
+
 2. Replace the sample code with:
 
     ```CDS
@@ -225,10 +229,13 @@ Right-click the **`db`** module and choose **Build**.
 [ACCORDION-BEGIN [Step 7: ](Test-run your service)]
 
 1. Right-click the **`srv`** module and choose **Run** | **Run as Java Application**.
+
 2. Open the service URL from the **Run Console**.
 
     ![Run console](run-console-view.png)
+
 3. Click on the service URL.
+
 4. Add **`/$metadata`** to the URL to check your service.
 
 [DONE]
@@ -240,8 +247,11 @@ Right-click the **`db`** module and choose **Build**.
 You have successfully created the data and service module. To complete your application, you need to add a UI.
 
 1. In your workspace, right-click **`SampleApp`** (your project root folder).
-2. Choose **New | HTML5 Module**
+
+2. Choose **New | HTML5 Module**.
+
 3. Choose **List Report Application** as your template.
+
 4. Complete the following fields:
 
     |  Field Name     | Value
@@ -250,10 +260,13 @@ You have successfully created the data and service module. To complete your appl
     |  Title          | `App`
 
 5. Choose **Current Project**.
+
 6. Choose **`clouds.products.CatalogService`**.
+
     > If there are multiple instances of the service listed, choose the first one.
 
 7. In the **Template Customization** tab, choose **Products** from the **OData Collection** dropdown menu.
+
     >**Reviews** is automatically populated in the **OData Navigation** field.
 
 8. Choose **Finish**.
@@ -265,6 +278,7 @@ You have successfully created the data and service module. To complete your appl
 [ACCORDION-BEGIN [Step 9: ](Test-run the UI)]
 
 1. Right-click the **`webapp`** module and choose **Run** | **Run as Web Application**.
+
 2. Choose **`flpSandbox.html`**.
 
     >If you have previously selected **`flpSandbox.html`** as your run configuration for web applications, you will not see a dialog box. Web IDE will use **`flpSandbox.html`** as the default.
@@ -275,7 +289,9 @@ You have successfully created the data and service module. To complete your appl
     |  :-------------------------  | :--------------------------------------------------------------------------
     |  Neo Environment User ID     | The ID of your subaccount that contains your Neo environment
     |  Neo Environment Password    | The password of your subaccount that contains your Neo environment
+
 4. Choose **Create**.
+
 The SAP Fiori launchpad opens.
 
     >It might take a few seconds for the SAP Fiori launchpad to open.
