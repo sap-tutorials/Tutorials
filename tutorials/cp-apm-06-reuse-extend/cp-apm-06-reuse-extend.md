@@ -128,7 +128,7 @@ In your `data-model.cds`, you will:
     }
     ```
 
-    > If you see CDS errors telling you that the artifact or module relating to the `using` statement could not be found, you can ignore them - they're temporary and not entirely accurate.
+    > If you see CDS errors telling you that the artifact or module relating to the `using` statement could not be found, you can ignore them - they're temporary and not entirely accurate. You might also see an error in the console log saying that the artifact `my.bookshop` was not found. This is because you have not updated the namespace in the service module. You can ignore this error for now, as it should be resolved in the next step.
 
 3. Save your file.
 
@@ -288,5 +288,6 @@ Since you have not added any data, the application is empty. You should see some
 
 [ACCORDION-END]
 
+If you would like to add data to your sample application, you can use the database explorer feature in SAP Web IDE. To learn how, check out this tutorial: [Add Data to Your OData Service](https://developers.sap.com/tutorials/odata-06-add-data-odata-service.html)
 
 ---
