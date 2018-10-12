@@ -12,7 +12,7 @@ const checkFilePath = (filename, fileProjectPath) => {
     var fileNameChunks = clearFileName.split('-');
 
     const containsIncludedFolder = !!includedFolders.find(includedFolder => folders.includes(includedFolder));
-    
+
     if(folders.length > maxFoldersDepth && containsIncludedFolder) {
         return 'there is no subfolder for tutorials allowed';
     }
@@ -29,8 +29,12 @@ const checkFilePath = (filename, fileProjectPath) => {
 
 checkFileName = (fileName, existingFileNames = []) => {
     const { fileName: { maxChunks, maxLength } } = constraints;
-    
+
     const fileNameChunks = fileName.split('-');
+
+    if (fileName.endsWith('-')) {
+        return 'file name cannot end with the dash';
+    }
 
     if (fileName.match(regexp.fileName.restrictedSymbols)) {
         return 'no underscores or umlauts or uppercase letters allowed';
