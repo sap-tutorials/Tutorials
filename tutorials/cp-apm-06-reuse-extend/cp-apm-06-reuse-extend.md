@@ -72,18 +72,26 @@ To reuse the product catalog model, you need to declare a dependency in the `pac
 
     ```json
     {
-    "name": "SampleApp",
-    "description": "A simple data model for SAP CP application",
-    "version": "1.0.0",
-    "dependencies": {
-      "@sap/cds": "2.x",
-      "@sap/cloud-samples-catalog": "https://github.com/SAP/cloud-samples-catalog.git#rel-1.0"
-    },
-
-    "scripts": {
-      "build": "cds build --clean"
-    },
-    "private": true
+        "name": "SampleApp",
+        "description": "Reference application built according to the CAP model",
+        "version": "1.0.0",
+        "dependencies": {
+            "@sap/cds": "2.x",
+            "@sap/cloud-samples-catalog": "https://github.com/SAP/cloud-samples-catalog.git#rel-1.0"
+        },
+        "scripts": {
+            "build": "cds build --clean",
+            "watch": "nodemon -w . -i node_modules/**,.git/** -e cds -x npm run build"
+        },
+        "cds": {
+            "data": {
+                "model": "db/"
+            },
+            "service": {
+                "model": "srv/"
+            }
+        },
+        "private": true
     }
     ```
 3. Save your file.
