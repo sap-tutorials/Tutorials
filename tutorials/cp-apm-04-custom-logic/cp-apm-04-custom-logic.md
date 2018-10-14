@@ -8,7 +8,7 @@ time: 10
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Add a Database to Your Business Application](https://www.sap.com/developer/tutorials/cp-apm-03-add-database.html)
+ - [Add a Database to Your Business Application](https://www.sap.com/developer/tutorials/cp-apm-03-add-database.html)
 
 ## Details
 ### You will learn  
@@ -19,6 +19,7 @@ time: 10
 [ACCORDION-BEGIN [Step 1: ](Add a new Java class)]
 
 1. In the **`srv`** module, go to `src/main/java/my/bookshop` and open the context menu.
+
 2. Choose **New | Java Class**.
 
     ![Add Java Class](add-java-class.png)
@@ -28,7 +29,8 @@ time: 10
     ![Enter name for Java class](new-java-class.png)
 
 4. Choose **Finish**.
-The `OrdersService.java` file is created.
+
+    The `OrdersService.java` file is created.
 
 [DONE]
 
@@ -91,7 +93,9 @@ public class OrdersService {
 [ACCORDION-BEGIN [Step 3: ](Run the application)]
 
 1. Right-click the **`srv`** module and choose **Run | Java Application**.
+
 2. Go to the **Run Console** and click on the URL.
+
 3. Add **`CatalogService/Orders`** to the URL.
 
     Look for **amount** and enter the value in the text area below.
