@@ -38,6 +38,7 @@ In this tutorial, wherever `xxx` appears, use a number (e.g. `000`).
 
 [ACCORDION-BEGIN [Step 2: ](Create your own ABAP package)]
 
+Mark the steps 2 and 3 as completed by pressing `Done` if you have already created the package `Z_Package_XXX` (where XXX is your group number) in the previous tutorials.
 1. Open eclipse and connect to your system.
 2. Right click on main package **ZLOCAL**  and choose **New** > **ABAP Package**.
 3. Create your own ABAP development package `Z_PACKAGE_XXX`  as a sub package of **ZLOCAL**.
@@ -142,8 +143,81 @@ Open service definitions in your package and make sure if your new service defin
 2. Open **Handler Class**.
 ![Open handler Class](http5.png)
 3. Copy the code in the class and change it with your data.
-4. Retrieve Name of `ZA_BusinessPartner_XXX` Data Definition.
-![create code](http6.png)
+
+| --------------------------------- |---------------------------------------------------------------------------------- |
+|   `i_service_instance_name`       | the value of the service instance name property of the communication arrangement  |
+|           `i_name`                |                        the name of the destination                                |
+|       `i_authn_mode`              |                   `if_a4c_cp_service`=>`user_propagation`                         |
+|  `iv_service_definition_name`     |               Data definition created as part of client proxy                     |
+Retrieve Name of `ZA_BusinessPartner_XXX` Data Definition.
+
+```swift
+CLASS zcl_s4_bupa_xxx DEFINITION PUBLIC CREATE PUBLIC .
+  PUBLIC SECTION.
+    INTERFACES if_http_service_extension .
+ENDCLASS.
+
+CLASS zcl_s4_bupa_xxx IMPLEMENTATION.
+  METHOD if_http_service_extension~handle_request.
+    TRY.
+        DATA(lo_destination) = cl_http_destination_provider=>create_by_cloud_destination(
+             i_name                  = 'S4BusinessPartnerOAuth2'
+             i_service_instance_name = 'OutboundCommunication'
+             i_authn_mode =  if_a4c_cp_service=>user_propagation
+         ).
+
+        cl_web_http_client_manager=>create_by_http_destination(
+          EXPORTING
+            i_destination = lo_destination
+          RECEIVING
+            r_client = DATA(lo_http_client)
+        ).
+
+        **Relative service path**
+        lo_http_client->get_http_request( )->set_uri_path( '/sap/opu/odata/sap/API_BUSINESS_PARTNER' ).
+        lo_http_client->set_csrf_token( ).
+
+        DATA(lo_client_proxy)  = cl_web_odata_client_factory=>create_v2_remote_proxy(
+           iv_service_definition_name = 'ZS4_API_BUSINESS_PARTNER_XXX'
+           io_http_client             = lo_http_client
+           iv_relative_service_root   = '/sap/opu/odata/sap/API_BUSINESS_PARTNER' ).
+
+        **Entity set A_BUSINESSPARTNER in business partner integration service**
+        DATA(lo_create_request) = lo_client_proxy->create_resource_for_entity_set('A_BUSINESSPARTNER')->create_request_for_create( ).
+
+        DATA(lv_userid) = cl_abap_context_info=>get_user_technical_name( ).
+
+        SELECT SINGLE *
+        FROM i_businessuser
+            WITH PRIVILEGED ACCESS
+        WHERE userid = @lv_userid INTO
+        @DATA(ls_businessuser).
+
+        IF sy-subrc <> 0.
+          response->set_text( |Error retrieving business user { lv_userid }| ).
+          RETURN.
+        ENDIF.
+
+        DATA(ls_bupa) = VALUE za_businesspartner_XXX(
+          businesspartnercategory = '1'
+          firstname = ls_businessuser-firstname
+          lastname = ls_businessuser-lastname
+        ).
+
+        lo_create_request->set_business_data( ls_bupa ).
+
+        DATA(lo_create_response) = lo_create_request->execute( ).
+        lo_create_response->get_business_data( IMPORTING es_business_data = ls_bupa ).
+
+        response->set_text( |Business parter { ls_bupa-businesspartner } was created| ).
+
+      CATCH cx_root INTO DATA(lx_exception).
+        response->set_text( lx_exception->get_text( ) ).
+    ENDTRY.
+  ENDMETHOD.
+ENDCLASS.
+
+```
 
 [DONE]
 [ACCORDION-END]
