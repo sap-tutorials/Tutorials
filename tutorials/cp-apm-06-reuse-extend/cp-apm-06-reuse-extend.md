@@ -131,7 +131,9 @@ In your `data-model.cds`, you will:
     }
     ```
 
-    > If you see CDS errors telling you that the artifact or module relating to the `using` statement could not be found, you can ignore them - they're temporary and not entirely accurate. You might also see an error in the console log saying that the artifact `my.bookshop` was not found. This is because you have not updated the namespace in the service module. You can ignore this error for now, as it should be resolved in the next step.
+    > If you see CDS errors telling you that the artifact or module relating to the `using` statement could not be found, you can ignore them - they're temporary and not entirely accurate. You might also see an error in the console saying that the artifact `my.bookshop` was not found. This is because you have not updated the namespace in the service module. You can ignore this error for now, as it should be resolved in the next step.
+
+    > There's a further error that you also may see in the console relating to a `syntax-anno-after-struct` warning. You can also ignore this for now.
 
 3. Save your file.
 
