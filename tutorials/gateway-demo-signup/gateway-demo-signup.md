@@ -40,21 +40,10 @@ When ready, click **Register**.
 
 The screen will change and the word **Success** will appear.
 
-![Gateway Web sign up success](2b.png)
-
-[DONE]
-[ACCORDION-END]
+![Gateway Web sign up success](2.png)
 
 
-[ACCORDION-BEGIN [Step 3: ](Review registration email)]
-
-Check your email inbox.  You will receive an email from `no-reply@sap.com` to your email account with your username and password.
-
-Your username and a temporary password are also displayed on the registration screen.  The username is **User ID**, and you can click the button to reveal the temporary password.
-
-This is an example of the registration confirmation email:
-
-![Gateway Registration email confirmation](3.png)
+Your username and a temporary password are displayed on the registration screen. The username is **User ID**, and you can click **Show Password?** to reveal the temporary password.
 
 [DONE]
 [ACCORDION-END]
