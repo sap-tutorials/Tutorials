@@ -25,15 +25,9 @@ The **Safe Mode** provides the capability to load ODBC drivers and execute ODBC 
 
 For more details, you can check the <a href="https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/latest/en-US/6f01ebd7ed574fcfbf493ebd303eb6b1.html" target="&#95;blank">Safe Mode for ODBC Connections</a> documentation.
 
-[ACCORDION-BEGIN [Step 1: ](Configure SAP HANA SDA for Amazon Athena)]
+[ACCORDION-BEGIN [Step 1: ](Switch to the ec2-user user)]
 
-In order to best leverage the SAP HANA Smart Data Access, you will now add a dedicated configuration that will optimize the way queries will be executed between SAP HANA, express edition and Amazon Athena.
-
-To learn more about it, you can check the [SAP HANA Smart Data Access](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.03/en-US/a07c7ff25997460bbcb73099fb59007d.html) documentation from the SAP HANA Administration guide.
-
-Connect to your SAP HANA, express edition using an SSH client as **`ec2-user`**.
-
-So first, let's make sure that you are using the ***`ec2-user`*** user in your current SSH session.
+Connect to your SAP HANA, express edition instance using an SSH client as the **`ec2-user`** user.
 
 The prompt should be:
 
@@ -41,11 +35,29 @@ The prompt should be:
 ec2-user@hxehost:~>
 ```
 
-Once your SSH session is with the ***`ec2-user`***, you can run the following command to create the configuration for Amazon Athena:
+If you are using an existing session and the prompt is **```hxeadm@hxehost:~>```** , then run the **exit** command to return to **`ec2-user`**.
+
+Make sure the prompt is **```ec2-user@hxehost:~>```** before moving to the next step.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Configure SAP HANA SDA for Amazon Athena)]
+
+In order to best leverage the SAP HANA Smart Data Access, you will now add a dedicated configuration that will optimize the way queries will be executed between SAP HANA, express edition and Amazon Athena.
+
+To learn more about it, you can check the [SAP HANA Smart Data Access](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.03/en-US/a07c7ff25997460bbcb73099fb59007d.html) documentation from the SAP HANA Administration guide.
+
+Run the following command to create the SAP HANA Smart Data Access configuration for Amazon Athena:
 
 ```shell
 sudo vi /usr/sap/HXE/SYS/exe/hdb/config/property_athena.ini
 ```
+
+> ### **Note**: Below are a few useful **`vi`** keyboard combinations:
+> - Enable the insert mode : **ESC** then **I**
+> - Paste the clipboard content : **CTRL+SHIFT+V**
+> - Exit and save `vi`: **ESC** then **`:wq!`**
 
 Insert the following content then save and exit ***`vi`***:
 
@@ -101,11 +113,6 @@ TYPE_VARBINARY : VARBINARY
 PROP_USE_UNIX_DRIVER_MANAGER : true
 ```
 
-> ### **Note**: You can paste content in **`vi`** using the following keyboard combination:
-> - Enable the insert mode : **ESC** then **I**
-> - Paste the clipboard content : **CTRL+SHIFT+V**
-> - Exit `vi`: **ESC** then **`:wq!`**
-
 Then, switch the file ownership back to ***`hxeadm`***:
 
 ```shell
@@ -115,17 +122,31 @@ sudo chown hxeadm:sapsys /usr/sap/HXE/SYS/exe/hdb/config/property_athena.ini
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Connect to the System Database)]
+[ACCORDION-BEGIN [Step 1: ](Switch to the hxeadm user)]
 
-The **Script Server** activation for the **HXE** tenant can only be done from a connection to the ***System Database***.
+As the ODBC connection will be initialized by the SAP HANA, express edition process, it is important to configure the ODBC DSN as the ***`hxeadm`*** user.
 
-From the previous SSH session, switch to the **`hxeadm`** user using:
+Form your SSH session, execute the following command:
 
 ```shell
 sudo su - hxeadm
 ```
+The prompt should be:
 
-Then, start a HDBSQL session to connect to the ***System Database*** using:
+```
+hxeadm@hxehost:~>
+```
+
+Make sure the prompt is **```hxeadm@hxehost:~>```** before moving to the next step.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Connect to the System Database)]
+
+The **Script Server** activation for the **HXE** tenant can only be done from a connection to the ***System Database***.
+
+Start a HDBSQL session to connect to the ***System Database*** using:
 
 ```shell
 hdbsql -i 90 -d SYSTEMDB -u system
@@ -175,9 +196,10 @@ xs-admin-login
 xs apps | grep webide
 ```
 
-When prompted, use the password you provided at the beginning of the installation script.
+When prompted, use the password provided during the SAP HANA initialization process (the master password).
 
-Repeat the second command until you see STARTED and 1/1 for applications `webide`.
+Repeat the second command until you see ***STARTED*** and ***1/1*** for the `webide` applications.
+
 Once started, you can run the following command to get the list of started processes:
 
 ```shell
