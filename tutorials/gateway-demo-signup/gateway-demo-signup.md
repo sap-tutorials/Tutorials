@@ -72,7 +72,6 @@ When your password is changed, you will see a confirmation dialog.
 [DONE]
 [ACCORDION-END]
 
-
 [ACCORDION-BEGIN [Step 7: ](Go to SAP Easy Access page)]
 
 You should now see the **SAP Easy Access** screen.  Your account is now active and ready for use.
