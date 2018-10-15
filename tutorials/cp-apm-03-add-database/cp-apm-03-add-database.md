@@ -4,7 +4,7 @@ description: Deploy the data model to the SAP HANA database that is associated w
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide ]
-time: 10
+time: 15
 ---
 
 ## Prerequisites  

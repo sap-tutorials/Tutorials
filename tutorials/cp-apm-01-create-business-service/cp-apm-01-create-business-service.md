@@ -110,23 +110,23 @@ time: 10
 
     >This might take a few minutes because a new cloud container has to be initialized and started. Subsequent restarts are much faster, because hot deployment is used.
 
-2. Go to the **Run Console** and click on the URL.
+1. Go to the **Run Console** and click on the URL.
 
     ![Run console](run-console.png)
 
     A new browser window opens containing a link to the OData service.
 
-3. Click on the service link.
+1. Click on the service link.
 
-The OData service document opens.
+    The OData service document opens.
 
-4. Add **`/$metadata`** to the URL and refresh.
+1. Add **`/$metadata`** to the URL and refresh.
 
-The OData metadata document opens in EDMX format.
+    The OData metadata document opens in EDMX format.
 
-5. Replace `/$metadata` with **`/Books`**.
+1. Replace `/$metadata` with **`/Books`**.
 
-An error message is displayed because we have not added a database yet.
+    An error message is displayed because we have not added a database yet.
 
 [DONE]
 

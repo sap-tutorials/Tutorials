@@ -79,13 +79,13 @@ The SAP Fiori `launchpad` opens.
 
 1. Select your app to see a preview of the UI application.
 
-This might take a few seconds, but once it opens, you will see a table without columns, because UI annotations have not been defined.
+    This might take a few seconds, but once it opens, you will see a table without columns, because UI annotations have not been defined.
 
-2. Choose **Settings** to add the columns you want to see and choose **OK**.
+1. Choose **Settings** to add the columns you want to see and choose **OK**.
 
     ![Choose Settings](settings-books-app.png)
 
-3. Choose **Go**.
+1. Choose **Go**.
 
     >You may see an error, because you have not added any data yet. In this case, choose **Cancel** and continue with the next step.
 
@@ -137,37 +137,37 @@ The columns are displayed with mock data.
 
 1. Go to `app/webapp/localService`, right-click on the file you just created and choose **Open Annotation Modeler**.
 
-2. Expand the **Books** entity.
+1. Expand the **Books** entity.
 
     > If you don't see any entities listed, use the **Select Targets** button to search for and select the **Books** entity type.
 
     The **Local Annotations** entry includes the annotation file you have just created.
 
-3. Go to the **Actions** column and choose **`Add subnodes`**.
+1. Go to the **Actions** column and choose **`Add subnodes`**.
 
     ![Add subnodes](adding-annotations-1.png)
 
-4. From the **Add to Local Annotations** dialog box, choose **`LineItem`** and then **OK**.
+1. From the **Add to Local Annotations** dialog box, choose **`LineItem`** and then **OK**.
 
     ![Add LineItem](adding-annotations-2.png)
 
     A new entry is created: **`UI.LineItem`**.
 
-5. For **`UI.LineItem`**, choose **`Add subnodes`**.
+1. For **`UI.LineItem`**, choose **`Add subnodes`**.
 
-6. From the **`Add to UI.LineItem`** dialog box, choose **`DataField`** and then **OK**.
+1. From the **`Add to UI.LineItem`** dialog box, choose **`DataField`** and then **OK**.
 
-  A new entry is created: **Value**.
+    A new entry is created: **Value**.
 
-7. Go to the **Value** column and choose **Title** from the **Property** drop-down menu.
+1. Go to the **Value** column and choose **Title** from the **Property** drop-down menu.
 
     ![Add Value](adding-annotations-3.png)
 
-8. Choose **Save** and then **Run**.
+1. Choose **Save** and then **Run**.
 
-9. Choose **Go**
+1. Choose **Go**
 
-The application now shows data according to the added annotations.
+    The application now shows data according to the added annotations.
 
 [VALIDATE_1]
 
