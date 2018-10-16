@@ -129,13 +129,13 @@ The SAP Cloud Platform Portal tutorial GitHub repository contains various SAPUI5
 
       ![Download repository as ZIP](01-download-repository-zip.png)
 
-      > A cloud-portal-tutorial-samples-master.zip file is downloaded to your desktop.
+    > A cloud-portal-tutorial-samples-master.zip file is downloaded to your desktop.
 
   3. Right-click the **cloud-portal-tutorial-samples-master.zip** and select **Extract Here** to extract the repository ZIP file into a folder.
 
       ![Download repository as ZIP](02-extract-repository-zip.png)
 
-      > A new cloud-portal-tutorial-samples-master folder is created
+    > A new cloud-portal-tutorial-samples-master folder is created
 
   4. Open the `cloud-portal-tutorial-samples-master\TECHED2018` folder
 
@@ -209,7 +209,7 @@ Import the applications used in this tutorial to add to your SAP Web IDE and dep
 
     ![Products List imported](07-productslist-imported.png)
 
->**IMPORTANT:** Repeat 1 to 5 to import** `supplierlookup` **and** `langselectorplugin`
+>**IMPORTANT:** Repeat 1 to 5 to import `supplierlookup` and `langselectorplugin`
 
 After importing all of the apps, your workspace should look like this:
 

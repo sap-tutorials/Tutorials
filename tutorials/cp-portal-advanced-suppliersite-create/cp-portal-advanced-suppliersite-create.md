@@ -56,12 +56,15 @@ The new site instance is created and opened in the Site Designer in a new browse
 
 [ACCORDION-BEGIN [Step 3: ](Edit page content)]
 1. From the list of pages available in the site, click on the  **Contact Us** page to edit its content.
+
 2. The **Contact Us** header is displayed using a Web Content widget. Click on the widget to expose its menu action items.
+
 3. Click on the `Pencil` action item to edit the widget content.
 
     ![Edit Header widget](8-edit-header-text.png)
 
 4. In the **Edit Content** dialog enter the new title `Contact our Suppliers` and enter a subtitle.
+
 5. Finally click **Save**
 
     ![Enter new header text](9-header-text-content.png)
