@@ -48,15 +48,19 @@ To view the generated deployment artifacts, SAP HANA database explorer must be e
 
 1. Go to **Tools | Database Explorer**.
 
-2. Expand **Cloud Foundry API Endpoint** and choose the URL of the Cloud Foundry API for the region, where you created your space.
+1. Expand **Cloud Foundry API Endpoint** and choose the URL of the Cloud Foundry API for the region, where you created your space.
 
     It should be `https://api.cf.us10.hana.ondemand.com` if you followed the suggested values for this tutorial group.
 
     ![Connect to the database](connect-database.png)
 
-3. Choose **Connect**.
+1. Choose **Connect**.
 
-4. Select the bookshop database.
+1. Choose **Yes**.
+
+    ![Add a Database](database-explorer-popup.png)
+
+1. Select the bookshop database.
 
     ![Add the database](add-database.png)
 
@@ -70,13 +74,13 @@ To view the generated deployment artifacts, SAP HANA database explorer must be e
 
 1. Download the following files:
 
- [`Authors.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Authors.csv)
+    [`Authors.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Authors.csv)
 
- [`Books.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Books.csv)
+    [`Books.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Books.csv)
 
- [`Orders.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Orders.csv)
+    [`Orders.csv`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Orders.csv)
 
- [`Data.hdbtabledata`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Data.hdbtabledata)
+    [`Data.hdbtabledata`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Data.hdbtabledata)
 
 2. In your workspace, go to `bookshop/db/src/`, right-click on the **`src`** folder and choose **Import | File or Project**.
 
@@ -94,7 +98,9 @@ To view the generated deployment artifacts, SAP HANA database explorer must be e
 
 [ACCORDION-BEGIN [Step 5: ](Re-build the db module and run the app)]
 
-1. Right-click the **`db`** module and choose **build**.
+1. Go back to your workspace and right-click the **`db`** module and choose **build**.
+
+    Wait for the notification that says the build was successful.
 
 2. Right-click the **app** module and choose **Run | Run Configurations**.
 
