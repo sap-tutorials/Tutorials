@@ -24,14 +24,18 @@ time: 10
 
 2. Search for **SAP Cloud Platform Business Application**.
 
+    >If you see an error stating that you do not have a builder in your space, make sure you have completed the prerequisite, [Select a Cloud Foundry Space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html), and saved your preferences.
+
     ![Select the project template](web-ide-template.png)
-    >If you do not see the template, make sure **All Categories** is selected from the **Category** drop-down menu and try again.
+
+    >If you do not see the template, make sure **All Categories** is selected from the **Category** drop-down menu and try again. If you still do not see the template, make sure the **SAP Cloud Platform Business Application Development Tools** are enabled. See [Developing SAP Cloud Platform Business Applications](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/99936743e1964680a0884479bfa75c8e.html).
 
 3. Enter **`bookshop`** as the project name and choose **Next**.
 
 4. Complete the **Project Details** tab as shown in the screenshot:
 
     ![Complete the project details](project-details.png)
+
     >You should update the **Java Package** to match the namespace used in this sample application, which is `my.bookshop`.
 
 5. Choose **Finish**.
