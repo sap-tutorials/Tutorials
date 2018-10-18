@@ -27,7 +27,7 @@ https://sapes5.sapdevcenter.com/sap/opu/odata/sap/SEPMRA_PO_APV/PurchaseOrders?$
 
 This shows you the raw data this OData service provides. This service runs in the ES5 system and returns purchase orders in the `JSON` format.
 
->Browser plugins (e.g., for [Google Chrome](https://chrome.google.com/webstore/search/json%20formatter), [Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/search/?platform=mac&q=json%20formatter) and [Microsoft Edge](https://www.microsoft.com/de-de/search/result.aspx?q=json+formatter) ) can help you to format the data.)
+>Browser plugins (e.g., for [Google Chrome](https://chrome.google.com/webstore/search/json%20formatter), [Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/search/?platform=mac&q=json%20formatter) and [Microsoft Edge](https://www.microsoft.com/de-de/search/result.aspx?q=json+formatter) ) can help you to format the data.
 
 [VALIDATE_1]
 [ACCORDION-END]
@@ -36,10 +36,13 @@ Create a new destination for the ES5 System if you don't have one.
 
 1. Download <a href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-ui5-ms-graph-create-destination/ES5_Destination.txt" download>this descriptor file</a> (alternatively you can create the destination manually by clicking **New Destination**).
 
-2. Go to the Neo environment in the SAP Cloud Platform cockpit and open the
-**Connectivity** dropdown menu in the side panel and select **Destinations**.
+2. Open your SAP Cloud Platform Cockpit (https://account.hanatrial.ondemand.com/cockpit) and go to the Neo environment in the SAP Cloud Platform cockpit.
 
-3. Click **Import Destination** to import the descriptor file.
+    ![go to neo trial](./neo_cockpit.png)
+
+3. Open the **Connectivity** dropdown menu in the side panel and select **Destinations**.
+
+4. Click **Import Destination** to import the descriptor file.
 
     ![create neo destination](./createDest.png)
 
@@ -64,7 +67,7 @@ Create a new destination for the ES5 System if you don't have one.
     | **`sap-client`** | **`002`** |
     | **`WebIDESystem`** | **`gateway`** |
 
-2. Enter your credentials for the ES5 system and click **Save** to create a new destination in the Neo environment.
+5. Enter your credentials for the ES5 system and click **Save** to create a new destination in the Neo environment.
 
     ![create neo destination completed form](./createDestForm.png)
 
@@ -73,7 +76,7 @@ Create a new destination for the ES5 System if you don't have one.
 [ACCORDION-BEGIN [step ](Test the destination)]
 Hit **Check Connection** to test whether the destination has been created successfully. You should now see a green check mark and the status code "307: Temporary Redirect".
 
-    ![307 success](./destcreated.png)
+![307 success](./destcreated.png)
 
 [DONE]
 [ACCORDION-END]
