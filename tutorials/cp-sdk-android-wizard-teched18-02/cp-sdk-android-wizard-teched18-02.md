@@ -113,7 +113,7 @@ Notice that two of the classes, `ESPMContainerMetadata` and `Drawable` cannot be
 
 Select each class and press **`Alt+Enter`** to make use of Android Studio quick fix to add the missing imports.
 
-Comment out (select and press Ctrl /) the lines (around line 400) that set the **`Subheadline`**, **`Footnote`** and **`Icon`** as that is now conditionally handled in the previously added code.
+Comment out (select and press Ctrl /) the lines (around line 423) that set the **`Subheadline`**, **`Footnote`** and **`Icon`** as that is now conditionally handled in the previously added code.
 
 ![comment Headline](commentHeadline.png)
 
@@ -141,6 +141,8 @@ Notice that two of the classes, `LinearLayoutManager` and `DividerItemDecoration
 Run the app and notice that each row in the Recycler View has a divider.
 
 ![Customers screen with divider](customer-with-divider.png)
+
+Congratulations! You have customized the display of a Fiori for Android Object Cell.
 
 [VALIDATE_1]
 [ACCORDION-END]
