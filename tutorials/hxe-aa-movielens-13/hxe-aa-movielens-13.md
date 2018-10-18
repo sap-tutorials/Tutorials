@@ -1,5 +1,5 @@
 ---
-title: Execute the Recommendations algorithm
+title: Execute the Recommendations algorithm (MovieLens App)
 description: Understand and implement the basics of an SAPUI5 application to generate your `Movielens` recommendation results using XSJS services
 auto_validation: true
 primary_tag: topic>machine-learning

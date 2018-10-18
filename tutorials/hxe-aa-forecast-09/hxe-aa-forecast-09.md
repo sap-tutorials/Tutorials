@@ -1,5 +1,5 @@
 ---
-title: Create additional database artifacts
+title: Create additional database artifacts (Forecast App)
 description: Create a series of SQL Views that will be used in a SAPUI5 application
 auto_validation: true
 primary_tag: topic>machine-learning

@@ -1,5 +1,5 @@
 ---
-title: Display from the XS OData service
+title: Display from the XS OData service (Forecast App)
 description: Understand and implement the basics of an SAPUI5 application to display your `Movielens` recommendation results exposed with an XS OData service
 auto_validation: true
 primary_tag: topic>machine-learning
