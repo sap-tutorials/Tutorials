@@ -20,7 +20,7 @@ You will configure your recently created Microsoft account and get an `@outlook.
 
 [ACCORDION-BEGIN [Step 1: ](Go to your Microsoft profile)]
 
-Copy the URL `https://account.microsoft.com/profile/>` and paste it into your browser, click **Manage how you sign in to Microsoft** to navigate to your account configuration.
+Copy the URL **`https://account.microsoft.com/profile/`** and paste it into your browser, click **Manage how you sign in to Microsoft** to navigate to your account configuration.
 
 ![profile overview](profile.png)
 

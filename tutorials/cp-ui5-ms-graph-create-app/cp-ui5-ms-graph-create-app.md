@@ -16,11 +16,11 @@ time: 20
 
 [ACCORDION-BEGIN [Step ](Create a HTML5 project)]
 
-1. Go to the Neo environment in the SAP Cloud Platform Cockpit (https://account.hanatrial.ondemand.com/) and open the **Services** menu in the side panel.
+1. Go to the **Neo** environment in the SAP Cloud Platform Cockpit (https://account.hanatrial.ondemand.com/) and open the **Services** menu in the side panel.
 
     ![Navigate to services](./cockpit_services.png)
 
-2. Navigate to the SAP Web IDE Full-Stack tile and click on it.
+2. Navigate to the **SAP Web IDE Full-Stack** tile and click on it.
 
 3. Hit **Go To Service** to open the SAP Web IDE Full-Stack.
 
@@ -84,7 +84,7 @@ time: 20
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step ](Add a list to the view)]
-Replace the existing `<Page>` element with the following snippet to add an instance of `sap.m.List` to the `MainView.view.xml` file. You can find the file in the `webbapp > view` folder within your HTML5 project.
+Replace the existing `<Page>` element with the following snippet to add an instance of `sap.m.List` to the `MainView.view.xml` file. You can find the file in the `webapp > view` folder within your HTML5 project.
 
 ```xml
 <Page
