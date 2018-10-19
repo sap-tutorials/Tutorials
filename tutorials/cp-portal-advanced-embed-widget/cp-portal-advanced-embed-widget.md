@@ -23,16 +23,23 @@ In this tutorial, we will add a Portal widget to one of the Supplier Portal page
 
 [ACCORDION-BEGIN [Step 1: ](Add supplier lookup widget to Portal page)]
 1. From the Portal Admin space, hover over the new **Supplier Portal** tile and click **Edit** to open it for edit in the site designer.
-  ![Open site for edit](1-open-site-for-edit.png)
+
+    ![Open site for edit](1-open-site-for-edit.png)
+
 2. From the list of pages at the left-side panel, select the **Contact Us** page to edit it's content.
 3. Click the bottom white section to expose the section action menu.
 4. Select the **+** icon item to open the **Content Gallery** and add widgets to this section
-  ![Open Content Gallery](10-section-action-menu.png)
+
+    ![Open Content Gallery](10-section-action-menu.png)
+
 5. In the Content Gallery search bar type *Supplier Lookup* to find the widget you deployed earlier.
 6. Select the widget tile to add it to the section.
-  ![Select Supplier Lookup widget](10-add-supplierlookup-widget.png)
+
+    ![Select Supplier Lookup widget](10-add-supplierlookup-widget.png)
+
 7. The `Supplier Lookup` widget is added to the bottom of the section
-  ![Supplier Lookup widget added](11-widget-added-to-page.png)
+
+    ![Supplier Lookup widget added](11-widget-added-to-page.png)
 
 [DONE]
 [ACCORDION-END]
