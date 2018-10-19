@@ -182,7 +182,7 @@ The SAP Cloud Platform Portal tutorial GitHub repository contains various SAPUI5
   1. In the SAP Cloud Platform cockpit, click **Services** in the left panel and open the **SAP Web IDE Full-Stack** tile.
   2. From the **SAP Web IDE Full-Stack- Overview** page, click **Go to Service** to open the development environment.
   3. Click the **Development** perspective:
-
+  
     ![Development Perspective in Web IDE](04-Development-Perspective.png)
 
 >You've opened your development environment, now let's import our SAPUI5 app into it.
@@ -224,7 +224,7 @@ After importing all of the apps, your workspace should look like this:
   1. In SAP Web IDE, right-click the `productsList` folder and select **Deploy** > **Deploy to SAP Cloud Platform**.
 
     ![Deploy app](08-Deploy-app.png)
-    
+
   2. Enter your SAP Cloud Platform subaccount credentials and click **Login**.
   3. On the screen that opens, click **Deploy**.
 
