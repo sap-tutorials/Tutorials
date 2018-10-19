@@ -3,6 +3,8 @@ title: Build a basic Swift app with Xcode
 description: Build your first iOS app using the Swift programming language in Xcode.
 primary_tag: operating-system>ios
 tags: [  tutorial>beginner, topic>mobile, operating-system>ios ]
+author_name: Robin van het Hof
+author_profile: https://github.com/qualiture
 time: 10
 ---
 ## Prerequisites  

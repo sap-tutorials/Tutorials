@@ -219,13 +219,19 @@ For more details about standalone SSH client option, you can check the [Connecti
 
 [ACCORDION-BEGIN [Step 6: ](Configure your server)]
 
-Once you have established an SSH session, use user `ec2-user` to log in
+Once you have established an SSH session, use the **`ec2-user`** user to log in:
 
 ![PuTTY](_19.png)
 
-Change the password for `hxeadm` using the following command:
+The prompt should become:
 
 ```
+ec2-user@hxehost:~>
+```
+
+Change the password for `hxeadm` using the following command:
+
+```shell
 sudo passwd hxeadm
 ```
 

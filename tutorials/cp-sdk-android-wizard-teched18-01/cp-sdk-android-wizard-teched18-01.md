@@ -145,6 +145,8 @@ Tap on a list item to show an editable detail screen.
 
 ![Category detail](product-detail.png)
 
+Congratulations!  You have created your first Android app using the SAP Cloud Platform SDK for Android!
+
 [VALIDATE_1]
 [ACCORDION-END]
 

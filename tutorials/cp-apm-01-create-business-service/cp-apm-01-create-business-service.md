@@ -8,8 +8,9 @@ time: 10
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Enable SAP Web IDE Full-Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html)
- - Select a Cloud Foundry space. See [Select a Cloud Foundry Space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html)
+ - [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
+ - [Enable SAP Web IDE Full-Stack](https://www.sap.com/developer/tutorials/webide-multi-cloud.html)
+ - [Select a Cloud Foundry Space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html)
 
 ## Details
 ### You will learn  
@@ -20,13 +21,21 @@ time: 10
 [ACCORDION-BEGIN [Step 1: ](Start a project)]
 
 1. In SAP Web IDE choose **File** | **New** | **Project from Template**.
+
 2. Search for **SAP Cloud Platform Business Application**.
-![Select the project template](web-ide-template.png)
-    >If you do not see the template, make sure **All Categories** is selected from the **Category** drop-down menu and try again.
+
+    >If you see an error stating that you do not have a builder in your space, make sure you have completed the prerequisite, [Select a Cloud Foundry Space](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/98f49286ac05492f88428c603d146fc3.html), and saved your preferences.
+
+    ![Select the project template](web-ide-template.png)
+
+    >If you do not see the template, make sure **All Categories** is selected from the **Category** drop-down menu and try again. If you still do not see the template, make sure the **SAP Cloud Platform Business Application Development Tools** are enabled. See [Developing SAP Cloud Platform Business Applications](https://help.sap.com/viewer/825270ffffe74d9f988a0f0066ad59f0/CF/en-US/99936743e1964680a0884479bfa75c8e.html).
 
 3. Enter **`bookshop`** as the project name and choose **Next**.
+
 4. Complete the **Project Details** tab as shown in the screenshot:
-![Complete the project details](project-details.png)
+
+    ![Complete the project details](project-details.png)
+
     >You should update the **Java Package** to match the namespace used in this sample application, which is `my.bookshop`.
 
 5. Choose **Finish**.
@@ -75,7 +84,9 @@ time: 10
 [ACCORDION-BEGIN [Step 3: ](Define a service)]
 
 1. Go to `srv/my-service.cds` and open the context menu.
+
 2. Choose **Rename** and change the file name to **`cat-service.cds`**.
+
 3. Open `cat-service.cds` and replace the template with the following CDS definitions:
 
     ```CDS
@@ -88,6 +99,7 @@ time: 10
     ```
 
     ![Define the service model](define-service-model.png)
+
 4. Save the file.
 
 [VALIDATE_2]
@@ -102,23 +114,26 @@ time: 10
 
     >This might take a few minutes because a new cloud container has to be initialized and started. Subsequent restarts are much faster, because hot deployment is used.
 
-2. Go to the **Run Console** and click on the URL.
+1. Go to the **Run Console** and click on the URL.
 
     ![Run console](run-console.png)
 
     A new browser window opens containing a link to the OData service.
-3. Click on the service link.
-The OData service document opens.
-4. Add **`/$metadata`** to the URL and refresh.
-The OData metadata document opens in EDMX format.
-5. Replace `/$metadata` with **`/Books`**.
-An error message is displayed because we have not added a database yet.
+
+1. Click on the service link.
+
+    The OData service document opens.
+
+1. Add **`/$metadata`** to the URL and refresh.
+
+    The OData metadata document opens in EDMX format.
+
+1. Replace `/$metadata` with **`/Books`**.
+
+    An error message is displayed because we have not added a database yet.
 
 [DONE]
 
 [ACCORDION-END]
 
 ---
-
-## Next Steps
-- [Add a UI to Your Business Application](https://www.sap.com/developer/tutorials/cp-apm-02-add-ui.html)

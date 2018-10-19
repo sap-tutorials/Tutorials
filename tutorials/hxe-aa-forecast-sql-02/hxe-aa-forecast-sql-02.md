@@ -1,5 +1,5 @@
 ---
-title: Import the Time series datasets
+title: Import the Time series datasets (Forecast SQL)
 description: Learn how to easily import flat dataset files in your SAP HANA, express edition instance
 auto_validation: true
 primary_tag: topic>machine-learning
