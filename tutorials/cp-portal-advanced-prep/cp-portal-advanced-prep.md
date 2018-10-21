@@ -98,6 +98,7 @@ Set up a destination and its parameters for making a connection to the SAP Gatew
 
 
 [ACCORDION-BEGIN [Step 4: ](Enable SAP Cloud Platform services)]
+
 In this step you will enable the **SAP Cloud Platform Portal** and **SAP Web IDE Full-Stack** on your SAP Cloud Platform account.
 
 >Platform services are enabled once, therefore if you enabled any one of these services in the past, there is no need to do it again.
@@ -107,6 +108,7 @@ In this step you will enable the **SAP Cloud Platform Portal** and **SAP Web IDE
 2. Enable the **Portal** Service
 
     - Select the **User Experience** category from the **Categories** dropdown list.
+
     - Click the **Portal** tile to open the service overview page.
 
         ![Enable services](2-enable-services.png)
@@ -118,7 +120,9 @@ In this step you will enable the **SAP Cloud Platform Portal** and **SAP Web IDE
 3. Enable the **SAP Web IDE Full-Stack** Service
 
     - Navigate back to the **Services** page.
-    - Select the **Developer Experience** category from the **Categories** dropdown list.  
+
+    - Select the **Developer Experience** category from the **Categories** dropdown list.
+     
     - Click the **SAP Web IDE Full-Stack** tile to open the service overview page.
 
         ![Enable Web IDE Full Stack service](5-enable-webide-fullstack.png)
