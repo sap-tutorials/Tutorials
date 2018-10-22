@@ -2,7 +2,7 @@
 title: Add a Launchpad Page to Your Freestyle Portal Site
 description: Add an SAP Fiori launchpad page to your Portal site and add apps to it.
 primary_tag: products>sap-cloud-platform-portal
-tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-portal  ]
+tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-portal ]
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 time: 10

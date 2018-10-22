@@ -3,7 +3,7 @@ title: Add a Web Dynpro ABAP Application to Your Supplier Portal
 description: Add an existing Web Dynpro ABAP backend app to your freestyle Portal site.
 auto_validation: true
 primary_tag: products>sap-cloud-platform-portal
-tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform-portal ]
+tags: [ tutorial>beginner, topic>cloud, products>sap-cloud-platform-portal  ]
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 time: 10
