@@ -17,7 +17,6 @@ In this tutorial, we will add a new SAP Fiori launchpad page to the Supplier Por
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Create new SAP Fiori launchpad page)]
-
 1. From the Portal Admin Space, open the **Supplier Portal** for edit in the Site Designer.
 
     ![Open Site in Site designer](0-open-site-edit.png)
@@ -48,7 +47,6 @@ In this step you will create a new tile Group.
 Tile groups logically aggregate tiles in the SAP Fiori launchpad page.
 
 1. From the list of pages in the left side panel, select the new **Transactions** page to open the **Manage Groups** editor.
-
 2. Click the **+** icon at the footer of the (empty) list of Groups.
 
     ![Create new FLP group](3-create-flp-group.png)
@@ -58,9 +56,7 @@ Tile groups logically aggregate tiles in the SAP Fiori launchpad page.
     ![Enter group name](4-new-group-name.png)
 
 4. In the New Group wizard click the **Roles** tab to assign roles to the tile group.
-
 5. Click the **+** icon in the empty **Assigned Roles** table.
-
 6. In the dialog box, select the **Everyone** role and click **OK**.
 
     ![Assign group role](5-asssign-group-role.png)

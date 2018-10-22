@@ -111,7 +111,6 @@ SAP customers who run classic SAP UI applications on their data center backend c
     > The Fiori Launchpad page is displayed with the new Tile group **Purchase Orders** and a new tile (**Search POs**) under it.
 
 3. Click the **Search POs** tile to launch the Web Dynpro ABAP app embedded in the portal page.
-
 4. In the app, click **Go** to retrieve the list of Purchase Orders.
 
     ![WDA Preview](9-wda-preview.png)

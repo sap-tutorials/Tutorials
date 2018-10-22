@@ -20,9 +20,11 @@ time: 5
 
 2. From the **SAP Web IDE Full-Stack- Overview** page, click **Go to Service**.
 
-3. Click the **Development** perspective.
+3. Click the **Development** perspective:
 
->You've opened your development environment, notice that the 3 applications you imported earlier (`videodialogplugin`, `productlist`, `supplierlookup`) are available in your workspace.
+    ![Development Perspective in Web IDE](0-web-ide-workspace.png)
+
+>You've opened your development environment, notice that the 3 applications you imported earlier (`langselectorplugin`, `productlist`, `supplierlookup`) are available in your workspace.
 
 [DONE]
 [ACCORDION-END]
