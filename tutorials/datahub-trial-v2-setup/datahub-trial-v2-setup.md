@@ -1,5 +1,5 @@
 ---
-title: Set up SAP Data Hub, trial edition in SAP Data Hub 2
+title: Set up SAP Data Hub 2, trial edition
 description: Create a solution instance of SAP Data Hub, trial edition.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -28,7 +28,7 @@ If you do not yet have an account on Google Cloud Platform, then create one as w
 * Google Cloud Platform Projects: <https://cloud.google.com/storage/docs/projects>
 * Google Cloud Platform Service Accounts: <https://cloud.google.com/iam/docs/service-accounts>
 
-The necessary roles for the service account are described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_SP04.pdf) guide (chapter 2.1).
+The necessary roles for the service account are described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide (chapter 2.1).
 
 [DONE]
 
