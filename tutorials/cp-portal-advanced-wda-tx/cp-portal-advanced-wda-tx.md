@@ -40,15 +40,15 @@ SAP customers who run classic SAP UI applications on their data center backend c
     * **App Type** = `Web Dynpro ABAP`
     * **Application ID** = `S_EPM_FPM_PO`
 
-    (The transaction ID associated with the application we wish to add)
+        (The transaction ID associated with the application we wish to add)
 
     * **System Alias** = `ES5`
 
-    (The name of the destination connecting to the SAP Backend)
+        (The name of the destination connecting to the SAP Backend)
 
     * **SAP Business Client URI**	= `/ui2/nwbc/~canvas;window=app/WDA/S_EPM_FPM_PO`
 
-    (Path to the SAP NetWeaver Business Client used to run the app together with transaction ID)
+        (Path to the SAP NetWeaver Business Client used to run the app together with transaction ID)
 
 6. Above that, under **Intent Navigation** enter the following values:
 
@@ -61,9 +61,11 @@ SAP customers who run classic SAP UI applications on their data center backend c
 
     ![WDA Catalog](3-wda-catalog.png)
 
-8. In the New App configuration top level tab select **Groups** and click the **+** to add the new app to a tile group on the Fiori Launchpad page
+8. In the New App configuration top level tab select **Groups** and click the **+** to add the new app to a tile group on the Fiori Launchpad page.
+
 9. In the **Select Groups** dialog click **New** to create a new tile group. Name the group **Purchase Orders** and click **OK** to close the New Group dialog.
-10. In the Select Groups dialog, select the new **Purchase Orders** group and click **OK**
+
+10. In the Select Groups dialog, select the new **Purchase Orders** group and click **OK**.
 
     ![WDA Group](4-add-new-group.png)
 
@@ -77,7 +79,7 @@ SAP customers who run classic SAP UI applications on their data center backend c
 [ACCORDION-BEGIN [Step 2: ](Set up an external access portal landscape)]
 1. From the site designer left side panel, click the cog icon to open the **Site Settings** editor.
 
-2. Click **Edit**
+2. Click **Edit**.
 
     ![Site Settings](6-site-settings.png)
 
@@ -89,7 +91,7 @@ SAP customers who run classic SAP UI applications on their data center backend c
     * **Launch SAP GUI apps in place** = `Yes`
     * **Launch WDA apps in place** = `Yes`
 
-4. Click **Save**
+4. Click **Save**.
 
     ![System Settings](7-system-settings.png)
 

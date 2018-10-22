@@ -106,9 +106,9 @@ After you have successfully executed the App View Browser, the below window gets
     |  Fiscal Year               | `2018`
     |  Controlling Area          | `A000`
 
-Afterward click on the OK button to start the display of the content of the selected View.
+    Afterward click on the OK button to start the display of the content of the selected View.
 
-![Apps on the Fiori Launchpad](kut_search_06.png)
+    ![Apps on the Fiori Launchpad](kut_search_06.png)
 
 [VALIDATE_2]
 [ACCORDION-END]

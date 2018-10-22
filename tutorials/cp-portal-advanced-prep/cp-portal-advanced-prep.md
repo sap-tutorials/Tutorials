@@ -122,7 +122,7 @@ In this step you will enable the **SAP Cloud Platform Portal** and **SAP Web IDE
     - Navigate back to the **Services** page.
 
     - Select the **Developer Experience** category from the **Categories** dropdown list.
-     
+
     - Click the **SAP Web IDE Full-Stack** tile to open the service overview page.
 
         ![Enable Web IDE Full Stack service](5-enable-webide-fullstack.png)
@@ -226,7 +226,7 @@ Import the applications used in this tutorial to add to your SAP Web IDE and dep
 
     ![Products List imported](07-productslist-imported.png)
 
->**IMPORTANT:** Repeat 1 to 5 to import** `supplierlookup` **and**  `videodialogplugin`
+>**IMPORTANT:** Repeat 1 to 5 to import `supplierlookup` **and**  `videodialogplugin`
 
 After importing all of the apps, your workspace should look like this:
 
@@ -246,7 +246,7 @@ After importing all of the apps, your workspace should look like this:
 
 3. On the screen that opens, click **Deploy**.
 
->**IMPORTANT:** Repeat this step for** `supplierlookup` **and** `videodialogplugin`.
+>**IMPORTANT:** Repeat this step for `supplierlookup` **and** `videodialogplugin`.
 
 Now that the apps exists in your SAP Cloud Platform subaccount, you will be able to add it to your Portal freestyle site.
 
