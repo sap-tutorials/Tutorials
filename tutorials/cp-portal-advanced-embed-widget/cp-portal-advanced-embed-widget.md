@@ -22,17 +22,21 @@ In this tutorial, we will add a Portal widget to one of the Supplier Portal page
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Add supplier lookup widget to Portal page)]
+
 1. From the Portal Admin space, hover over the new **Supplier Portal** tile and click **Edit** to open it for edit in the site designer.
 
     ![Open site for edit](1-open-site-for-edit.png)
 
 2. From the list of pages at the left-side panel, select the **Contact Us** page to edit it's content.
+
 3. Click the bottom white section to expose the section action menu.
+
 4. Select the **+** icon item to open the **Content Gallery** and add widgets to this section
 
     ![Open Content Gallery](10-section-action-menu.png)
 
 5. In the Content Gallery search bar type *Supplier Lookup* to find the widget you deployed earlier.
+
 6. Select the widget tile to add it to the section.
 
     ![Select Supplier Lookup widget](10-add-supplierlookup-widget.png)
@@ -45,6 +49,7 @@ In this tutorial, we will add a Portal widget to one of the Supplier Portal page
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Change section layout)]
+
 1. In the **Contact Us** page, click the bottom white section to expose the section action items.
 
 2. Click the section **Settings icon** (2nd from the top).
@@ -83,6 +88,7 @@ The Supplier Lookup widget is now placed as the first widget in the section.
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Configure widget settings)]
+
 1. Go back to the **Contact Us** page in the Site Designer.
 
 2. Click the **Supplier Lookup** widget to expose it's action items.
@@ -98,7 +104,9 @@ The Supplier Lookup widget is now placed as the first widget in the section.
     ![Save widget settings](16-widget-settings-save.png)
 
 6. Click the **Preview icon** again to preview the latest changes.
+
 7. In the site preview, navigate to the **Contact Our Suppliers** page.
+
 8. In the Supplier Lookup widget search bar, start typing *SAP*. Notice that the changes in the widget settings have been applied, and the search bar now suggests a list of relevant suppliers retrieved from the ES5 back-end system.
 
     ![Widget Settings applied](17-widget-settings-applied.png)

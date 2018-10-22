@@ -66,6 +66,8 @@ Click **Save** when finished. The account is now added to the SDK Assistant:
 
 ![Import URLs](fiori-ios-scpms-create-app-teched18-part1-06.png)
 
+Click **Back** to return to the main screen for the **SAP Cloud Platform SDK for iOS Assistant**.
+
 [DONE]
 [ACCORDION-END]
 
@@ -85,16 +87,16 @@ Double-click the **SAP Cloud Platform SDK for iOS Assistant** icon to start the 
 
 [ACCORDION-BEGIN [Step 3: ](Create a new application)]
 
-Click the **Create new** button in the **First Steps** section. The first page of the Xcode project generation wizard lets you define the project properties.
+Click the **Create new** button in the **First Steps** section. The first step of the Xcode project generation workflow lets you define the project properties.
 
 ![Project Properties](fiori-ios-scpms-create-app-teched18-part1-08a.png)
 
-Click the **Create new Application** tile on the right site of the **Create a new App** page. This will allow us to setup our application project the most flexible way.
+Click the **Create new Application** tile on the right side of the **Create a new App** step. This will allow us to setup our application project the most flexible way.
 
 Next select your **SAP Cloud Platform Mobile Services account** and click **Next**.
 ![Project Properties](fiori-ios-scpms-create-app-teched18-part1-08c.png)
 
-In the **Add an SAP Cloud Platform Mobile Services application** page, add the needed application details to create an application in your mobile services account.
+In the **Add an SAP Cloud Platform Mobile Services application** step, add the needed application details to create an application in your mobile services account.
 
 Enter the following details:
 
@@ -113,7 +115,7 @@ Click **Next** to advance to the **Destinations** step.
 
 [ACCORDION-BEGIN [Step 4: ](Create a new destination)]
 
-In the **Destinations** page, you can define the backend connection. Here you will add the OData endpoint for the `DeliveryService` OData service.
+In the **Destinations** step, you can define the backend connection. Here you will add the OData endpoint for the `DeliveryService` OData service.
 
 ![Destinations](fiori-ios-scpms-create-app-teched18-part1-10.png)
 
@@ -145,7 +147,7 @@ Click **Next** to advance to the **Features** step.
 
 [ACCORDION-BEGIN [Step 5: ](Enable features)]
 
-In the **Optional Features** page, you have the option to generate a **Master-Detail Application**, enable **logging** and **log uploads**, enable **remote notifications**, use **Discovery Service** and whether to use **Online** or **Offline** OData.
+In the **Optional Features** step, you have the option to enable **logging** and **log uploads**, enable **remote notifications**, use **Discovery Service** and whether to use **Online** or **Offline** OData.
 
 ![Features](fiori-ios-scpms-create-app-teched18-part1-14.png)
 
@@ -156,7 +158,7 @@ Make sure the checkboxes **Enable Log Upload**, **Enable Remote Notifications** 
 
 [ACCORDION-BEGIN [Step 6: ](Set up Xcode Project)]
 
-In the **Xcode Project configuration** page you will setup your actual Xcode project for development later on.
+In the **Xcode Project configuration** step you will setup your actual Xcode project for development later on.
 Enter the following details:
 
 | Field | Value |
