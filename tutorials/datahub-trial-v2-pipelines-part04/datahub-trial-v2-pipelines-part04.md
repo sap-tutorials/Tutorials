@@ -6,7 +6,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 ---
 
 ## Prerequisites  
- - **Proficiency:** Beginner
+ - **Proficiency:** Intermediate
  - You have completed [Store sensor data in GCS](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part03.html)
 
 ## Next Steps
