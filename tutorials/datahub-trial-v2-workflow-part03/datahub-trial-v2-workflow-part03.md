@@ -62,4 +62,4 @@ We have now executed the **Workflow 3** but you will notice in the above screens
 ---
 
 ## Next Steps
-[Create Workflow (part 4): Monitor task and Workflow execution ](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part04.html)
+[Create Workflow (part 4): Monitor task and Workflow execution ](https://developers.sap.com/germany/tutorials/datahub-trial-v2-workflow-part04.html)
