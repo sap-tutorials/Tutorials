@@ -142,8 +142,6 @@ override func viewDidLoad() {
   status.text = "Click chart for details"
   categoryAxisTitle.text = "Location"
   valuesAxisTitle.text = "Waiting time in hours"
-
-  chartView.series.colors = [UIColor(named: "Chart")!]
 }
 ```
 
