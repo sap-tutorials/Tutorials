@@ -151,7 +151,7 @@ This sets the default settings for the chart, in this case, a bar chart.
 
 A couple of errors are now shown. That is because the chart's data source is not yet implemented.
 
-For this tutorial we will just use sample data. Add the following computed properties just below the `viewDidLoad` function:
+For this tutorial we will just use sample data. Add the following variables just below the `viewDidLoad` function:
 
 ```swift
 // MARK: - Sample Data
