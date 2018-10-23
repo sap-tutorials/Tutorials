@@ -53,7 +53,6 @@ Enter a phone number and click **Send Code**. You should receive another verific
 
 You are now done with the registration for an Microsoft account. Copy the URL of your Application Registration Portal and paste it in the text field below, then click **Validate**.
 
-
 ![registration portal](registration_portal.png)
 
 [VALIDATE_2]
