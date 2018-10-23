@@ -63,14 +63,6 @@ You will be presented with the terms and policies applied to the test account.
 
 [ACCORDION-BEGIN [Step 3: ](Configure your project)]
 
-Click **CONSOLE**.
-
-![Click console](console.png)
-
-Agree to the terms applicable to the test account.
-
-![Agree to terms](agree.png)
-
 Click **Select a project**.
 
 ![Select project](project.png)
