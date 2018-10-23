@@ -75,7 +75,7 @@ Finally click **Finish** to create the table.
 
 Open the modelling environment for building pipelines via SAP Data Hub Modeler (`https://sapdatahubtrial/app/pipeline-modeler`).
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_SP04.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
 
 Enter `default` as **Tenant ID**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password**.
 
@@ -221,4 +221,4 @@ You will notice that the table has records per country for events Humidity and T
 ---
 
 ## Next Steps
-[Create Workflow (part 3): Build a Workflow ](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part03.html)
+[Create Workflow (part 3): Build a Workflow ](https://developers.sap.com/germany/tutorials/datahub-trial-v2-workflow-part03.html)

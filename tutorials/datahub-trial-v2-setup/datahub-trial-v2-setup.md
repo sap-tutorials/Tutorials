@@ -1,5 +1,5 @@
 ---
-title: Set up SAP Data Hub, trial edition in SAP Data Hub 2
+title: Set up SAP Data Hub 2, trial edition
 description: Create a solution instance of SAP Data Hub, trial edition.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -28,7 +28,7 @@ If you do not yet have an account on Google Cloud Platform, then create one as w
 * Google Cloud Platform Projects: <https://cloud.google.com/storage/docs/projects>
 * Google Cloud Platform Service Accounts: <https://cloud.google.com/iam/docs/service-accounts>
 
-The necessary roles for the service account are described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_SP04.pdf) guide (chapter 2.1).
+The necessary roles for the service account are described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide (chapter 2.1).
 
 [DONE]
 
@@ -42,7 +42,7 @@ Link your Google Cloud Platform project to SAP Cloud Appliance Library. This ste
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Create solution instance)]
-Next, you can create a solution instance of SAP Data Hub, trial edition via SAP Cloud Appliance Library. The necessary steps to do so are described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_SP04.pdf) guide (chapter 2.3).
+Next, you can create a solution instance of SAP Data Hub, trial edition via SAP Cloud Appliance Library. The necessary steps to do so are described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide (chapter 2.3).
 
 The creation of the solution instance takes around 40 minutes.
 
@@ -53,7 +53,7 @@ The creation of the solution instance takes around 40 minutes.
 [ACCORDION-BEGIN [Step 4: ](Connect to SAP Data Hub Launchpad)]
 After the solution instance is up and running, you can finally connect to it.
 
-Thereto you first maintain your local host file as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_SP04.pdf) guide (chapter 3.2).
+Thereto you first maintain your local host file as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide (chapter 3.2).
 
 Afterwards you open (`https://sapdatahubtrial/`) via a web browser.
 
