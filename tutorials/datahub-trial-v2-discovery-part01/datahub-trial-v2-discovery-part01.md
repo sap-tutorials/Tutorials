@@ -90,4 +90,4 @@ Next also profile the content of the two other files and afterwards take a look 
 ---
 
 ## Next Steps
-[Explore data in SAP Vora](https://www.sap.com/developer/tutorials/datahub-trial-discovery-part02.html)
+[Explore data in SAP Vora](https://developers.sap.com/germany/tutorials/datahub-trial-v2-discovery-part02.html)

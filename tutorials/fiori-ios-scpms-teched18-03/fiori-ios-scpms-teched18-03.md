@@ -139,7 +139,7 @@ private func timelineMarkerCell(representing deliveryStatusType: DeliveryStatusT
 
   cell.nodeImage = nodeImage(for: deliveryStatusType)
   cell.showLeadingTimeline = indexPath.row != 0
-  cell.showTrailingTimeline = indexPath.row! = (self.entities.count - 1)
+  cell.showTrailingTimeline = indexPath.row != (self.entities.count - 1)
   cell.eventText = dateFormatter.string(from: deliveryStatusType.deliveryTimestamp!.utc())
   cell.titleText = deliveryStatusType.status
 

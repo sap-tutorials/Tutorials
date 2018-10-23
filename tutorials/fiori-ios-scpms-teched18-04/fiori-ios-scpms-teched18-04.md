@@ -142,8 +142,6 @@ override func viewDidLoad() {
   status.text = "Click chart for details"
   categoryAxisTitle.text = "Location"
   valuesAxisTitle.text = "Waiting time in hours"
-
-  chartView.series.colors = [UIColor(named: "Chart")!]
 }
 ```
 
@@ -151,7 +149,20 @@ This sets the default settings for the chart, in this case, a bar chart.
 
 A couple of errors are now shown. That is because the chart's data source is not yet implemented.
 
-This extension contains functions used for formatting the required data in to the correct format.
+For this tutorial we will just use sample data. Add the following variables just below the `viewDidLoad` function:
+
+```swift
+// MARK: - Sample Data
+
+let chartSeriesTitles = ["Actual", "Target"]
+
+let chartCategoryTitles = ["Shipment picked up", "HONG-KONG", "AMSTERDAM", "LONDON-HEATHROW", "READING", "Delivered"]
+
+let chartData = [[2.0, 42.0, 32.0, 7.0, 5.0, 1.0]]
+
+```
+
+The following extension contains functions used for formatting the required data in to the correct format.
 Copy and paste it below the actual closing bracket of the class.
 
 ```swift

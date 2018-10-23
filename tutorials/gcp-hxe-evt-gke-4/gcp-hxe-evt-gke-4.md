@@ -153,7 +153,7 @@ Use the ID returned in the previous query to replace in the placeholder below.
 with doc_store as (select quote_id, moes_bar from quotes)
 select st_geomFromText( quote_analysis.lon_lat, 4326).st_distance(st_geomFromtext( doc_store.moes_bar, 4326), 'meter') / 1000 as DISTANCE_KM
 from doc_store
-inner join quote_analysis on doc_store.quote_id = <<Fill in with the ID of the lowest similarity score>>;
+inner join quote_analysis on doc_store.quote_id = <<Fill in with the ID of the highest similarity score>>;
 ```
 
 

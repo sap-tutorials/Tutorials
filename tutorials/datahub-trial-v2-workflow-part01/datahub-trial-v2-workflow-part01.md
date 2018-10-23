@@ -24,7 +24,7 @@ During this tutorial, you will learn how to create a Data Transform. This will e
 [ACCORDION-BEGIN [Step 1: ](Add Data Transform and Trigger)]
 Open the modelling environment for building pipelines via SAP Data Hub Modeler (`https://sapdatahubtrial/app/pipeline-modeler`).
 
->As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_SP04.pdf) guide.
+>As the above URL is a local URL, it will be accessible only if you are doing the tutorials and have already configured the hosts file. If not, please refer to [Getting Started with SAP Data Hub, trial edition](https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon.
 
@@ -166,4 +166,4 @@ You see that (in contrast to the `Devices` data set) the `EnrichedDevices` data 
 ---
 
 ## Next Steps
-[Create Workflow (part 2): Aggregate data with Data Transform ](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part02.html)
+[Create Workflow (part 2): Aggregate data with Data Transform ](https://developers.sap.com/tutorials/datahub-trial-v2-workflow-part02.html)

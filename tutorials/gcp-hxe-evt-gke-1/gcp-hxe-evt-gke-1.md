@@ -7,16 +7,11 @@ tags: [tutorial>beginner, products>sap-hana]
 primary_tag: products>sap-hana
 ---
 
-## Prerequisites
- - Prerequisite 1
- - Prerequisite 2
-
 ## Details
 ### You will learn
-  - How to do something
-  - Why this technology is helpful
+  - How to create a Kubernetes cluster in the Google Kubernetes Engine
+  - How to configure a cluster to deploy SAP HANA, express edition and SQLPAD
 
-Add additional information: Background information, longer prerequisites
 
 ---
 
