@@ -375,6 +375,7 @@ Now you are able to click on a property on the details page to search for this t
 
 > **IMPORTANT:** Please make sure that there are mails in your outlook account (any folder is fine) which match the keywords you might search for. Otherwise your search request will return an empty result set.
 
+
 [VALIDATE_12]
 [ACCORDION-END]
 
