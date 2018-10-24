@@ -15,7 +15,7 @@ time: 20
 
 [ACCORDION-BEGIN [Step 1: ](Add dependency to build.gradle document)]
 
-In Android Studio, add the following line to the list of dependencies in the app's **`build.gradle`** file to include the <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Developing_Offline_Applications.html">Offline OData</a> framework and click on **`Sync Now`**.
+In Android Studio, add the following line to the list of dependencies in the app's **`build.gradle`** file to include the <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Introduction.html">Offline OData</a> framework and click on **`Sync Now`**.
 
 ```Java
 implementation group:'com.sap.cloud.android', name:'offline-odata', version: sdkVersion
@@ -166,7 +166,7 @@ Re-open the app and check the `Logcat`. It shows the upload and download operati
 
 ![Successful upload/download](upload-successful.png)
 
-> This example does not handle conflicts. Details on this topic are available at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Designing_an_Offline_Application_to_Handle_Conflicts_and_Errors.html#offline-odata-conflicts">Offline OData Conflicts</a>.
+> This example does not handle conflicts. Details on this topic are available at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Errors_And_Conflicts.html">Offline OData Conflicts</a>.
 
 Congratulations! You have created an offline enabled application and have completed this TechEd App Space mission.  A version of these tutorials that includes the full setup is available at <a target="_blank" href="https://developers.sap.com/group.sdk-android.html">Get Started with SAP Cloud Platform SDK for Android</a>.
 
