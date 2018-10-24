@@ -247,6 +247,7 @@ onNavButtonPress: function (oEvent) {
 
 Insert the URL of your running web application below:
 
+
 [VALIDATE_7]
 [ACCORDION-END]
 
