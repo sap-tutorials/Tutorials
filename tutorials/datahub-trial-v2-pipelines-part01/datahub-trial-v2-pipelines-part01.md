@@ -9,7 +9,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
  - **Proficiency:** Beginner
 
 ## Next Steps
- - [Use a message broker](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part02.html)
+ - [Use a message broker](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part02.html)
 
 ## Details
 ### You will learn  

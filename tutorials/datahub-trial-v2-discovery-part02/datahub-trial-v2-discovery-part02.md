@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have completed [Explore data in Google Cloud Storage](https://www.sap.com/developer/tutorials/datahub-trial-discovery-part01.html)
+ - You have completed [Explore data in Google Cloud Storage](https://developers.sap.com/germany/tutorials/datahub-trial-v2-discovery-part01.html)
 
 ## Details
 ### You will learn  

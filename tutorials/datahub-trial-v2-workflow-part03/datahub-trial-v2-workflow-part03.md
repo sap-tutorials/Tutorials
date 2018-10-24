@@ -7,10 +7,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have completed [Create Workflow (part 2): Aggregate data with Data Transform](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part02.html)
+ - You have completed [Create Workflow (part 2): Aggregate data with Data Transform](https://developers.sap.com/germany/tutorials/datahub-trial-v2-workflow-part02.html)
 
 ## Next Steps
- - [Create Workflow (part 4): Monitor task and Workflow execution ](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part04.html)
+ - [Create Workflow (part 4): Monitor task and Workflow execution ](https://developers.sap.com/germany/tutorials/datahub-trial-v2-workflow-part04.html)
 
 ## Details
 ### You will learn  

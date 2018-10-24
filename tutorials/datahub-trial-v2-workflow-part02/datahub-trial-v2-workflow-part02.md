@@ -8,10 +8,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - You have completed [Create Workflow (part 1): Enrich data with Data Transform](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part01.html)
+ - You have completed [Create Workflow (part 1): Enrich data with Data Transform](https://developers.sap.com/germany/tutorials/datahub-trial-v2-workflow-part01.html)
 
 ## Next Steps
- - [Create Workflow (part 3): Build a Workflow ](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part03.html)
+ - [Create Workflow (part 3): Build a Workflow ](https://developers.sap.com/germany/tutorials/datahub-trial-v2-workflow-part03.html)
 
 ## Details
 ### You will learn  

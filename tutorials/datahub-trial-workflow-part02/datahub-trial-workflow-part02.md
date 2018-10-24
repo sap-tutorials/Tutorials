@@ -1,5 +1,5 @@
 ---
-title: Create workflow (part 2), Aggregate data with flowgraph
+title: Create workflow (part 2), Aggregate data with flowgraph in SAP Data Hub 1.4
 description: Build a flowgraph to aggregate device data using SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
@@ -14,6 +14,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
  - [Create workflow (part 3): Build a workflow ](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part03.html)
 
 ## Details
+**This tutorial is obsolete and will be removed shortly (mid-November 2018).**
 ### You will learn  
 During this tutorial, you will build on what you have learned during the previous tutorial about flowgraph. You will build a more complicated flowgraph now. This will aggregate the `Events.parquet` file per country. It will store the result of the aggregation in a table in SAP Vora:
 
@@ -241,4 +242,3 @@ You see the aggregated maximum and minimum humidity as well as temperature. Usin
 [ACCORDION-END]
 
 ---
-

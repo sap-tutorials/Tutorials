@@ -1,5 +1,5 @@
 ---
-title: Use a message broker
+title: Use a message broker in SAP Data Hub 1.4
 description: Use a message broker to publish and subscribe to sensor data by using SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
@@ -14,6 +14,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 - [Store sensor data in GCS](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part03.html)
 
 ## Details
+**This tutorial is obsolete and will be removed shortly (mid-November 2018).**
 ### You will learn  
   - How to use a message broker within a pipeline.
 
@@ -129,5 +130,3 @@ Stop the pipeline by clicking **Stop**.
 [ACCORDION-END]
 
 ---
-
-

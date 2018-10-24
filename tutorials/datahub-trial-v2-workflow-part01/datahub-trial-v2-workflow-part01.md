@@ -10,7 +10,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
  - **Proficiency:** Beginner
 
 ## Next Steps
- - [Create Workflow (part 2): Aggregate data with Data Transform ](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part02.html)
+ - [Create Workflow (part 2): Aggregate data with Data Transform ](https://developers.sap.com/germany/tutorials/datahub-trial-v2-workflow-part02.html)
 
 ## Details
 ### You will learn  
