@@ -18,26 +18,18 @@ time: 25
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Change sort order)]
+[ACCORDION-BEGIN [Step 1: ](Change the sort order)]
 
-By default, if you tap on the `DeliveryStatus` in the detail page for a selected `Package`, you would get the related entities in whatever order the OData service returns them. Ideally, you want these to show sorted, with the latest status on top.
+By default, if the user taps on the "DeliveryStatus" row in the detail page for a selected `Package`, the related entities are displayed in whatever order the OData service returns them. Ideally, these would be sorted, with the latest status update on top.
 
-In Xcode, open the file `MyDeliveries/ViewControllers/PackagesType/PackagesTypeDetailViewController.swift` and locate function `tableView(_: didSelectRowAt:)`. You can also use the `Open Quickly` feature of Xcode to search for the `PackagesTypeDetailViewController` class with `Command + Shift + O`.
+In Xcode, open `PackagesTypeDetailViewController.swift` and locate the function `tableView(_:didSelectRowAt:)`. You can also use the `Open Quickly` feature of Xcode to search for the `PackagesTypeDetailViewController` class with `Command + Shift + O`.
 
-In the application, when you tap on the 5th row named `DeliveryStatus`, the associated storyboard is loaded, and the `PackageType`'s related `DeliveryStatusType` entities are loaded using the `self.deliveryService.loadProperty` function.
+When the user runs the application, selects a package, and taps on the 5th row of the package detail ("DeliveryStatus"), this function is called. It loads the associated storyboard for displaying the delivery status UI, and it sets up code that will load the package's related delivery status entities by way of the `self.deliveryService.loadProperty` function.
 
-Currently, the function receives two arguments; the associated property and the instance field into which the results should be stored. However, the function can receive a 3rd argument with a `DataQuery` instance.
-
-Since we want the results in descending order, create a new variable which contains the required data query:
+Inside the `tableView(_:didSelectRowAt:)` function, look for the following lines, which load the `deliveryStatus` property:
 
 ```swift
-let sortQuery = DataQuery().orderBy(DeliveryStatusType.deliveryTimestamp, .descending)
-```
-
-Insert the `sortQuery` variable as 3rd argument to the `self.deliveryService.loadProperty` function:
-
-```swift
-self.deliveryService.loadProperty(PackagesType.deliveryStatus, into: self.entity, query: sortQuery)) { error in
+self.deliveryService.loadProperty(PackagesType.deliveryStatus, into: self.entity) { error in
   self.hideFioriLoadingIndicator()
   if let error = error {
     completionHandler(nil, error)
@@ -45,6 +37,20 @@ self.deliveryService.loadProperty(PackagesType.deliveryStatus, into: self.entity
   }
   completionHandler(self.entity.deliveryStatus, nil)
 }
+```
+
+Currently, the `loadProperty` function receives two arguments: the associated property (`PackagesType.deliveryStatus`) and the `entity` into which the results should be stored (the object for the currently selected package). However, the function can receive a 3rd argument with a `DataQuery` instance, which further modifies the query used to fetch the related entities. Since we want the results in descending order, we'll add a data query that specifies descending order for the delivery timestamps.
+
+Create a new `sortQuery` constant for the data query just **above** those lines:
+
+```swift
+let sortQuery = DataQuery().orderBy(DeliveryStatusType.deliveryTimestamp, .descending)
+```
+
+Then insert the `sortQuery` constant as the 3rd argument to the `self.deliveryService.loadProperty` function:
+
+```swift
+self.deliveryService.loadProperty(PackagesType.deliveryStatus, into: self.entity, query: sortQuery) { error in
 ```
 
 The function now receives a query object, indicating you want to sort on the `deliveryTimestamp` field of the `DeliveryStatusType` entity, in descending order.
