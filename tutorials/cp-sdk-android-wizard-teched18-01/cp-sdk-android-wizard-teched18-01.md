@@ -2,8 +2,8 @@
 title: Use SAP Wizard to Create Your First Android Application
 description: Create an Android application that will be connected to an OData backend.
 auto_validation: true
-primary_tag: operating-system>android
-tags: [  tutorial>beginner, operating-system>android ]
+primary_tag: products>sap-cloud-platform-sdk-for-android
+tags: [  tutorial>beginner, operating-system>android, products>sap-cloud-platform-sdk-for-android ]
 time: 15
 ---
 
