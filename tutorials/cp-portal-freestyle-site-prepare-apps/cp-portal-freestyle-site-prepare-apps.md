@@ -1,8 +1,8 @@
 ---
-title: Prepare an SAP Fiori App to Add to Your Launchpad Page
+title: Deploy an SAP Fiori App to SAP Cloud Platform
 description: Deploy a SAPUI5 app to your SAP Cloud Platform subaccount to use in a Portal freestyle site.
 primary_tag: products>sap-cloud-platform-portal
-tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-portal ]
+tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-portal  ]
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 time: 10

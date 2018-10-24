@@ -1,8 +1,8 @@
 ---
-title: Add an SAP Fiori (SAPUI5) App to Your Freestyle Portal Site
+title: Add a Deployed Fiori App to Your Launchpad Page
 description: Add the app that you deployed to your SAP Cloud Platform subaccount to your launchpad page.
 primary_tag: products>sap-cloud-platform-portal
-tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-portal ]
+tags: [  tutorial>beginner, topic>sapui5, products>sap-cloud-platform, products>sap-cloud-platform-portal  ]
 author_name: Lindsay Bert
 author_profile: https://github.com/LindsayBert
 time: 10
