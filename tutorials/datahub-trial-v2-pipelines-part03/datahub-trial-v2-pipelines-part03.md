@@ -8,10 +8,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have completed [Use a message broker](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part02.html)
+ - You have completed [Use a message broker](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part02.html)
 
 ## Next Steps
-- [Bundle data (via JavaScript)](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part04.html)
+- [Bundle data (via JavaScript)](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part04.html)
 
 ## Details
 ### You will learn  

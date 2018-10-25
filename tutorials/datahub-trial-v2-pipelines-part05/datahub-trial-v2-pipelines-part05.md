@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Intermediate
- - You have completed [Bundle data (via JavaScript)](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part04.html)
+ - You have completed [Bundle data (via JavaScript)](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part04.html)
 
 ## Details
 ### You will learn  
