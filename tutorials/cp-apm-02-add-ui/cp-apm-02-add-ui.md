@@ -51,7 +51,7 @@ time: 10
 
 [ACCORDION-BEGIN [Step 2: ](Test-run the UI)]
 
-1. Right-click the **app** module and choose **Run | Web Application**.
+1. Right-click the **app** module and choose **Run | SAP Fiori Launchpad Sandbox**.
 
 2. Choose **`flpSandbox.html`**.
 
