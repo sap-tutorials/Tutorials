@@ -5,10 +5,6 @@ primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - You have completed [Create Workflow (part 3): Build a task Workflow](https://developers.sap.com/germany/tutorials/datahub-trial-v2-workflow-part03.html)
-
 ## Details
 ### You will learn  
 During this tutorial, you will build get to know how to monitor the execution of tasks.

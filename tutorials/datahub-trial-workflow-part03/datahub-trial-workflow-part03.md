@@ -5,13 +5,6 @@ primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - You have completed [Create workflow (part 2): Aggregate data with flowgraph](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part02.html)
-
-## Next Steps
- - [Create workflow (part 4): Monitor task and workflow execution ](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part04.html)
-
 ## Details
 **This tutorial is obsolete and will be removed shortly (mid-November 2018).**
 ### You will learn  

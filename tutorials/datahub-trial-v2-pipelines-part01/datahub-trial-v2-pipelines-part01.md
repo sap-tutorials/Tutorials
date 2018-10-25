@@ -5,12 +5,6 @@ primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
-
-## Next Steps
- - [Use a message broker](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part02.html)
-
 ## Details
 ### You will learn  
 - How to use a **Data Generator** to generate random sample data
