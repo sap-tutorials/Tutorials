@@ -7,7 +7,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have completed [Create Workflow (part 3): Build a task Workflow](https://www.sap.com/developer/tutorials/datahub-trial-workflow-part03.html)
+ - You have completed [Create Workflow (part 3): Build a task Workflow](https://developers.sap.com/germany/tutorials/datahub-trial-v2-workflow-part03.html)
 
 ## Details
 ### You will learn  

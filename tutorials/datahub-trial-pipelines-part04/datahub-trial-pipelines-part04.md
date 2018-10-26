@@ -1,5 +1,5 @@
 ---
-title: Bundle data (via JavaScript)
+title: Bundle data (via JavaScript) in SAP Data Hub 1.4
 description: Bundle sensor data before storing it in Google Cloud Storage by using SAP Data Hub, trial edition.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
@@ -13,6 +13,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 - [Store sensor data in SAP Vora](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part05.html)
 
 ## Details
+**This tutorial is obsolete and will be removed shortly (mid-November 2018).**
 ### You will learn  
 - How to bundle the sensor data before storing in Google Cloud Storage
 - How to use a **JavaScript operator**
@@ -109,4 +110,3 @@ You can open any of the generated file by clicking on the filename which opens i
 [ACCORDION-END]
 
 ---
-

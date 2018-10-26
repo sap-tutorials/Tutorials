@@ -8,10 +8,10 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
 
 ## Prerequisites  
  - **Proficiency:** Beginner
- - You have completed [Generate sensor data](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part01.html)
+ - You have completed [Generate sensor data](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part01.html)
 
 ## Next Steps
-- [Store sensor data in GCS](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part03.html)
+- [Store sensor data in GCS](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part03.html)
 
 ## Details
 ### You will learn  

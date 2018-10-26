@@ -85,4 +85,4 @@ Afterwards upload the following three files to Google Cloud Storage. Some of the
 ---
 
 ## Next Steps
-[Navigate around SAP Data Hub, trial edition](https://www.sap.com/developer/tutorials/datahub-trial-navigation.html)
+[Navigate around SAP Data Hub, trial edition](https://developers.sap.com/germany/tutorials/datahub-trial-v2-navigation.html)
