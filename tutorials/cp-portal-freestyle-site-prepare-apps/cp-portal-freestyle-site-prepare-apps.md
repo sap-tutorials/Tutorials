@@ -102,7 +102,7 @@ The SAP Cloud Platform Portal tutorial GitHub repository contains various SAPUI5
     <ol type="a"></li><li>Select all of the included files (Ctrl^A).
     </li><li>Right-click and select **Add to `productlist.zip`**.</li></ol><br>
 
-        ![CREATE ZIP](11-11-zip-all-files.png)
+      ![CREATE ZIP](11-11-zip-all-files.png)
 
 3. A new ZIP file named `productlist.zip` is created inside the folder.
 
