@@ -2,8 +2,8 @@
 title: Use SAP Wizard to Create Your First Android Application
 description: Create an Android application that will be connected to an OData backend.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-android
-tags: [  tutorial>beginner, operating-system>android, products>sap-cloud-platform-sdk-for-android ]
+primary_tag: operating-system>android
+tags: [  tutorial>beginner, operating-system>android ]
 time: 15
 ---
 
@@ -12,6 +12,10 @@ time: 15
   - How to create an Android app using the Android Studio integrated SAP Wizard
 
 ---
+
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the `AppSpace` and we will provide everything you will need.
+
+
 
 [ACCORDION-BEGIN [Step 1: ](Set up development tools)]
 
@@ -71,7 +75,7 @@ On the **Cloud Configuration** tab, select **Use Existing** and set the Applicat
 
 ![Cloud configuration](cloud-configuration.png)
 
-The application configuration has already been created and has added multiple features of the SAP Cloud Platform Mobile Services.
+The application configuration page for the `com.sap.wizapp` is shown below that is referenced from the above screen of the wizard.  It has already been created and has added multiple features of the SAP Cloud Platform Mobile Services.
 
 ![App features](appFeatures.png)
 

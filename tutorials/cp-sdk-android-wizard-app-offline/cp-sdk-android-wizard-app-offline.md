@@ -1,5 +1,5 @@
 ---
-title: Enable Offline OData in Your Android Application
+title: Offline Enable Your Android Application
 description: Enable offline OData in your Android application resulting in an application that can be used without a network connection and one that performs data requests with less latency.
 primary_tag: products>sap-cloud-platform-sdk-for-android
 auto_validation: true
@@ -18,7 +18,7 @@ time: 30
 
 [ACCORDION-BEGIN [Step 1: ](Add offline OData dependency)]
 
-In Android Studio, add the following line to the list of dependencies in the app's **`build.gradle`** file to include the Offline OData framework and click on **`Sync Now`**.
+In Android Studio, add the following line to the list of dependencies in the app's **`build.gradle`** file to include the Offline OData framework and click on **`Sync Now`**.  After the sync completes, it will be possible to use the libraries in the `offline-odata` component.
 
 ```Java
 implementation group:'com.sap.cloud.android', name:'offline-odata', version: sdkVersion
@@ -42,11 +42,12 @@ ndk {
 
 On Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and enter **`SAPServiceManager`** to open `SAPServiceManager.java`.
 
-Add the following imports:
+Add the following imports.  Note they will appear grey until they are used in the following steps.
 
 ```Java
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 import com.sap.cloud.mobile.odata.core.AndroidSystem;
 import com.sap.cloud.mobile.odata.offline.OfflineODataDefiningQuery;
 import com.sap.cloud.mobile.odata.offline.OfflineODataException;
@@ -56,7 +57,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 ```
 
-In the `SAPServiceManager` class **comment out (select and press Ctrl / or Command /)** the following variable and add the following two variables:  
+In the `SAPServiceManager` class, select the variable, **`OnlineODataProvider`** and replace it with the two following variables.
 
 ```Java
 //private OnlineODataProvider provider;
@@ -64,17 +65,20 @@ private OfflineODataProvider provider;
 private static final String TAG = SAPServiceManager.class.getName();
 ```
 
-Also in `SAPServiceManager` delete or comment out the methods **`openODataStore`** and **`getServiceRoot`** and replace them with the code below:
+In `SAPServiceManager` delete or comment out the methods **`openODataStore`** and **`getServiceRoot`**.
+
+
+Add the following methods.
 
 ```Java
 public void openODataStore(Action0 callback, Context context) {
-    setupOfflineOData(context);
-    callback.call();
+    setupOfflineOData(callback, context);
 }
 
-private void setupOfflineOData(Context context) {
+private void setupOfflineOData(Action0 callback, Context context) {
     try {
         if (configurationData.loadData()) {
+            Toast.makeText(context, "Opening the offline store which may take a few moments the first time it is opened.", Toast.LENGTH_LONG).show();
             // Initialize application context for use by OfflineODataProvider
             AndroidSystem.setContext(context);
             // commonly set parameters include setStoreEncryptionKey, setStoreName, setStorePath
@@ -103,6 +107,7 @@ private void setupOfflineOData(Context context) {
   provider.open(() -> {
       Log.d(TAG, "Offline store opened.");
       eSPMContainer = new ESPMContainer(provider);
+      callback.call();
       syncOfflineData();  // TODO could be triggered via a menu action
   }, (OfflineODataException offlineODataException) -> {
       Log.d(TAG, "Offline store did not open.", offlineODataException);
@@ -142,7 +147,7 @@ On Windows press **`Ctrl+N`** or on a Mac press **`command+O`** and enter **`Log
 
 On Windows press **`Ctrl+F`** or on a Mac press **`command+F`**  and enter **`openODataStore`**.
 
-In the `startEntitySetListActivity` method, add the application context to the `openODataStore` call as a parameter as shown below:
+In the `startEntitySetListActivity` method, add the application context to the `openODataStore` call as a parameter as shown below.   Note, this can be done by replacing the second last line of the method with the below code.
 
 ![getApplicationContext() parameter added](application-context-parameter.png)
 

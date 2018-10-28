@@ -2,8 +2,8 @@
 title: Use Fiori for Android Controls to Enhance Your Application.
 description: Enhance your application with the Object Cell and add a divider to cells in a list for customers.
 auto_validation: true
-primary_tag: products>sap-cloud-platform-sdk-for-android
-tags: [  tutorial>beginner, operating-system>android, products>sap-cloud-platform-sdk-for-android ]
+primary_tag: operating-system>android
+tags: [  tutorial>beginner, operating-system>android ]
 time: 20
 ---
 
@@ -12,6 +12,9 @@ time: 20
   - How to enhance your Android application with Fiori for Android controls
 
 ---
+
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the `AppSpace` and we will provide everything you will need.
+
 
 [ACCORDION-BEGIN [Step 1: ](Change master property for customer's screen)]
 If your application is still running on your emulator then return to the entity list screen by pressing the back button twice. If you restarted your application or restarted the emulator the first screen of the app will be the entity list screen.
@@ -107,15 +110,16 @@ else {
 }
 ```
 
+Below the just pasted code, comment out (select and press Ctrl /) the lines that set the **`Subheadline`**, **`Footnote`** and **`Icon`** as that is now conditionally handled in the previously added code.
+
+![comment Headline](commentHeadline.png)
+
+
 Notice that two of the classes, `ESPMContainerMetadata` and `Drawable` cannot be resolved and are shown in red.  
 
 ![ESPMContainerMetadata](CustomersUIConnector.png)
 
 Select each class and press **`Alt+Enter`** to make use of Android Studio quick fix to add the missing imports.
-
-Comment out (select and press Ctrl /) the lines (around line 423) that set the **`Subheadline`**, **`Footnote`** and **`Icon`** as that is now conditionally handled in the previously added code.
-
-![comment Headline](commentHeadline.png)
 
 Run the app and notice the Customer's screen has been customized.
 
