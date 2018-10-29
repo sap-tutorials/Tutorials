@@ -61,7 +61,7 @@ Select to your ABAP package created in tutorial **Create Simple Database Table f
   3. Specify your data definition as shown below. The keyword key is used to specific a key element and the keyword as is used to define alias names. The two associations `I_Country` and `I_Currency` are defined and exposed in the projection. The element `CurrencyCode` is specified as currency key for the element Cost which is an amount field. The view entity is specified as searchable using the view annotation `@Search.searchable: true` and the element `CustomerName` is specified as default search element using the element annotation `@Search.defaultSearchElement: true`.
 
     ```swift
-    @AbapCatalog.sqlViewName 'ZV_BOOKING_XXX'
+    @AbapCatalog.sqlViewName: 'ZV_BOOKING_XXX'
     @AbapCatalog.compiler.compareFilter : true
     @AbapCatalog.preserveKey: true
     @AccessControl.authorizationCheck: #CHECK
@@ -294,13 +294,29 @@ Click **Publish Locally** to publish your service binding.
 
 [ACCORDION-BEGIN [Step 12: ](Open SAP Fiori elements view)]
   1. Go back to your service binding **`Z_I_BOOKING_XXX`**
-   Open the preview for SAP Fiori elements app on the right side.
+   Open the preview for SAP Fiori elements app on the right side with double-clicking or right click.
 
       ![Open SAP Fiori elements view](fiori.png)
 
-   2. Check your result:
+  2. Login with your username and password.
 
-      ![Open SPA Fiori elements view](fiori2.png)
+      ![Login](fiori2.png)
+
+  3. To set some filter click on settings icon.
+
+      ![Settings](fiori3.png)
+
+  4. Select fields that shall be displayed or select all and click on **OK**.
+
+      ![Select filter](fiori4.png)
+
+  5. Click on **GO**.
+
+      ![GO button](fiori5.png)
+
+  6. Check your result:
+
+      ![Open SPA Fiori elements view](fiori6.png)
 
 [DONE]
 [ACCORDION-END]

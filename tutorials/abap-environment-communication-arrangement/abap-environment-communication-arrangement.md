@@ -163,9 +163,11 @@ Select your scenario and click on **Create**.
 [ACCORDION-BEGIN [Step 11: ](Check the service URL)]
   1. Paste your service URL in a browser or in Postman.
 
-  2. Use the communication user and password.
+  2. Remove `-api` from the link.
 
-  3. Check if you can connect to the service and there is no error.
+  3. Use the communication user and password.
+
+  4. Check if you can connect to the service and there is no error.
 
       ![check Service](Picture15.png)
 
