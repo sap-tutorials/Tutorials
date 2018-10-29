@@ -1,6 +1,6 @@
 ---
 title: SAP HANA XS Advanced - Cross-container access
-description: Access objects in another HDI container.
+description: Access objects in an HDI container from another application
 primary_tag: products>sap-hana
 tags: [  tutorial>intermediate,, products>sap-web-ide  ]
 ---

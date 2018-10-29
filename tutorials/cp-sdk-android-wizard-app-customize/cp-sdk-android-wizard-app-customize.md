@@ -114,6 +114,11 @@ else {
 }
 ```
 
+Below the just pasted code, comment out (select and press Ctrl /) the lines that set the **`Subheadline`**, **`Footnote`** and **`Icon`** as that is now conditionally handled in the previously added code.
+
+![comment Headline](commentHeadline.png)
+
+
 
 Notice that two of the classes, `Customer` and `Drawable` cannot be resolved and are shown in red.  
 
@@ -121,10 +126,6 @@ Notice that two of the classes, `Customer` and `Drawable` cannot be resolved and
 
 
 Select each class and on Windows press **`Alt+Enter`** or on a Mac press **`option+return`** to make use of Android Studio quick fix to add the missing imports.  If prompted with multiple options, select `Import Class`.
-
-Further down (around line 400), **comment out (select and press `Ctrl / or Command /`)** the lines that set the **`Subheadline`**, **`Footnote`** and **`Icon`** as that is now conditionally handled in the previously added code.
-
-![comment Headline](commentHeadline.png)
 
 
 Run the app and notice the Customer's screen has been improved.

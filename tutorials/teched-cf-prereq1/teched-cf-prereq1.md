@@ -19,7 +19,7 @@ time: 20
 
 ---
 
-[ACCORDION-BEGIN [Step](Log into SAP Cloud Platform)]
+[ACCORDION-BEGIN [Step 1](Log into SAP Cloud Platform)]
 
 Start by [logging into SAP Cloud Platform](https://account.hanatrial.ondemand.com/).
 
@@ -30,7 +30,7 @@ Start by [logging into SAP Cloud Platform](https://account.hanatrial.ondemand.co
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](Select account type)]
+[ACCORDION-BEGIN [Step 2](Select account type)]
 
 The opening screen will appear.  Choose **Cloud Foundry Trial** as the type of account.
 
@@ -39,7 +39,7 @@ The opening screen will appear.  Choose **Cloud Foundry Trial** as the type of a
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](Select region for trial account)]
+[ACCORDION-BEGIN [Step 3](Select region for trial account)]
 
 Clicking on the Cloud Foundry trial link will bring up the **Start Cloud Foundry Trial** dialog box.  Choose one of regions from this list.    
 
@@ -56,17 +56,17 @@ You will then see a dialog box while the account is set up.  When complete, the 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Open the SAP Web IDE Full Stack)]
+[ACCORDION-BEGIN [Step 4: ](Open the SAP Web IDE Full Stack)]
 
 The next step is to open the SAP Web IDE Full Stack.
 
-Open a **new tab** in to the [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/).  Then click on the **Neo Trial** link.
+1. Open a **new tab** in to the [SAP Cloud Platform cockpit](https://account.hanatrial.ondemand.com/).  Then click on the **Neo Trial** link.
 
-Next, go to the **Services** link on the left side of the screen.
+2. Next, go to the **Services** link on the left side of the screen.
 
-![services location on SAP CP Home page](1.png)
+    ![services location on SAP CP Home page](1.png)
 
-![services page on SAP CP](2.png)
+    ![services page on SAP CP](2.png)
 
 [VALIDATE_1]
 [ACCORDION-END]

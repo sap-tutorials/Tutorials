@@ -160,6 +160,7 @@ Alternatively, you can use a **Secure User Store** (`a.k.a.` ***`hdbuserstore`**
 When using the ***`hdbuserstore`***, your credentials (including your user name and server details) are saved and secured in a store that can used directly from the HDBSQL tool but not only.
 
 [DONE]
+[ACCORDION-END]
 
 [ACCORDION-BEGIN [Connection String: ](The options)]
 

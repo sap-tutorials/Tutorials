@@ -1,5 +1,5 @@
 ---
-title: Time Series with SAP HANA PAL
+title: Time Series with SAP HANA PAL (Forecast SQL)
 description: Understand the capabilities and options made available with the SAP HANA Predictive Analytics Library (PAL), which algorithm can be used to address your goal, and apply it to the data set
 auto_validation: true
 primary_tag: topic>machine-learning

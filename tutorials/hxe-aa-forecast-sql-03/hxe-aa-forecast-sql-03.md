@@ -1,5 +1,5 @@
 ---
-title: Analyze the Time series datasets
+title: Analyze the Time series datasets (Forecast SQL)
 description: Understanding the data set structure and content by extracting some statistics will allow you to better pick your algorithm and the associated setting
 auto_validation: true
 primary_tag: topic>machine-learning

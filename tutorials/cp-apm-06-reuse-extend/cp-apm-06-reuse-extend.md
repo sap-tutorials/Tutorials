@@ -131,7 +131,9 @@ In your `data-model.cds`, you will:
     }
     ```
 
-    > If you see CDS errors telling you that the artifact or module relating to the `using` statement could not be found, you can ignore them - they're temporary and not entirely accurate. You might also see an error in the console log saying that the artifact `my.bookshop` was not found. This is because you have not updated the namespace in the service module. You can ignore this error for now, as it should be resolved in the next step.
+    > If you see CDS errors telling you that the artifact or module relating to the `using` statement could not be found, you can ignore them - they're temporary and not entirely accurate. You might also see an error in the console saying that the artifact `my.bookshop` was not found. This is because you have not updated the namespace in the service module. You can ignore this error for now, as it should be resolved in the next step.
+
+    > There's a further error that you also may see in the console relating to a `syntax-anno-after-struct` warning. You can also ignore this for now.
 
 3. Save your file.
 
@@ -279,26 +281,26 @@ You have successfully created the data and service module. To complete your appl
 
 1. Right-click the **`webapp`** module and choose **Run** | **Run as Web Application**.
 
-2. Choose **`flpSandbox.html`**.
+1. Choose **`flpSandbox.html`**.
 
     >If you have previously selected **`flpSandbox.html`** as your run configuration for web applications, you will not see a dialog box. Web IDE will use **`flpSandbox.html`** as the default.
 
-3. In the **Destination Creation** dialog box, complete the following fields:
+1. In the **Destination Creation** dialog box, complete the following fields:
 
     |  Field Name                  | Description
     |  :-------------------------  | :--------------------------------------------------------------------------
     |  Neo Environment User ID     | The ID of your subaccount that contains your Neo environment
     |  Neo Environment Password    | The password of your subaccount that contains your Neo environment
 
-4. Choose **Create**.
+1. Choose **Create**.
 
-The SAP Fiori launchpad opens.
+    The SAP Fiori launchpad opens.
 
     >It might take a few seconds for the SAP Fiori launchpad to open.
 
-Since you have not added any data, the application is empty. You should see something like this:
+    Since you have not added any data, the application is empty. You should see something like this:
 
-![Sample add](sample-app-view.png)
+    ![Sample add](sample-app-view.png)
 
 [DONE]
 

@@ -314,7 +314,7 @@ Click **Publish Locally** to publish your service binding.
 
       ![GO button](fiori5.png)
 
-  2. Check your result:
+  6. Check your result:
 
       ![Open SPA Fiori elements view](fiori6.png)
 

@@ -80,7 +80,7 @@ After you have successfully executed the App View Browser, the below window gets
 
     ![View selection](kut_search_09.png)
 
-2. In the **View Details** window, you have the choice between several tabs (**Definition**, **Annotation**, **Cross Reference**) on which you can view details of the considered view for analysis purposes. For example, on **Definition**, you can see the available fields as well as their data elements, descriptions, data types, and lengths.
+2. In the **View Details** window, you have (**test**) the choice between several tabs (**Definition**, **Annotation**, **Cross Reference**) on which you can view details of the considered view for analysis purposes. For example, on **Definition**, you can see the available fields as well as their data elements, descriptions, data types, and lengths.
 
     ![View details displayed](kut_search_10.png)
 
@@ -106,9 +106,9 @@ After you have successfully executed the App View Browser, the below window gets
     |  Fiscal Year               | `2018`
     |  Controlling Area          | `A000`
 
-Afterward click on the OK button to start the display of the content of the selected View.
+    Afterward click on the OK button to start the display of the content of the selected View.
 
-![Apps on the Fiori Launchpad](kut_search_06.png)
+    ![Apps on the Fiori Launchpad](kut_search_06.png)
 
 [VALIDATE_2]
 [ACCORDION-END]

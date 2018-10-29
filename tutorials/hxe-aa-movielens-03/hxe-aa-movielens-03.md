@@ -1,5 +1,5 @@
 ---
-title: Import the MovieLens dataset
+title: Import the MovieLens dataset (MovieLens App)
 description: Learn how to easily import flat dataset files in your SAP HANA, express edition instance using the Design-Time objects and Core Data Services (CDS) features
 auto_validation: true
 primary_tag: topic>machine-learning

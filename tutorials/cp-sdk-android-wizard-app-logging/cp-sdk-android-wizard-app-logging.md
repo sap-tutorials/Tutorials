@@ -116,6 +116,8 @@ Additionally, you can access the logs locally on an emulator. The file system of
 
 Congratulations! You have explored how the logging library can be used to debug or support a deployed application.
 
+The blog series <a target="_blank" href="https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-1/">Step by Step with the SAP Cloud Platform SDK for Android</a> may also be of interest.
+
 [DONE]
 [ACCORDION-END]
 

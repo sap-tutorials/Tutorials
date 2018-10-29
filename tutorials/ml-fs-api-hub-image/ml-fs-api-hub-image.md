@@ -22,8 +22,12 @@ This service allows you to calculates and returns a list of classifications/labe
 
 The **Image Classification** Machine Learning Functional Services will be used as an example to demonstrate how to consume image content, but you will be able to transpose this tutorial to other services which also consume images content like :
 
- - the **Image Feature Extraction API**
- - the **Product Image Classification API**
+ - **[Product Image Classification API](https://api.sap.com/api/product_image_classification_api/resource)**
+ - **[Multi-Instance Image Segmentation](https://api.sap.com/api/instance_segmentor_api/resource)**
+ - **[Scene Text Recognition](https://api.sap.com/api/scene_text_recognition_api/resource)**
+ - **[Face Detection](https://api.sap.com/api/face_detection_api/resource)**
+ - **[Customizable Object Detection](https://api.sap.com/api/object_detection_api/resource)**
+ - **[Human Detection](https://api.sap.com/api/human_detection_api/resource)**
 
 ### Time to Complete
 **10 Min**
@@ -55,7 +59,7 @@ You can also access the page directly from the following address:
 
 As you can notice the API has only one resource (or service): `/classification`.
 
-Now click on the `/classification` link to expand the section.
+Now click on the **`/classification`** link to expand the section.
 
 > **Note**: the term *inference* refers to the application phase (scoring) an existing model (as opposed to the training or inception phase) and *sync* for synchronous.
 
@@ -78,19 +82,21 @@ The input file, files or archive file will be sent as a `FormData` query paramet
 
 In the top right corner of the page, click on the **Log On** button.
 
-You will be prompted for your SAP Cloud Platform credentials.
+You will be prompted for your SAP credentials (you can use your SAP Cloud Platform credentials for example).
 
-Scroll down to the **Parameters** section and click on the **Choose File** button next to `files` parameter.
+Scroll down to the **Parameters** section and click on the **Try out** button, then you can use the **Choose File** button next to `files` parameter to select your files.
 
 Select any image file on your local machine (and if you are missing some inspiration, use [Google Search](https://www.google.fr/search?q=duck&tbm=isch) to search for duck images).
 
 Make sure you pick a ***JPEG***, ***PNG***, ***TIF*** or ***BMP*** format with a resolution below 1024 by 1024 pixels else you will receive a 400 error response.
 
-Now, scroll down and click on **Try out**.
+Now, scroll down and click on **Execute**.
+
+![API Hub](04.png)
 
 In the **Response Body**, you will get the top 5 classes/label with an associated score (that sums up to 1).
 
-```JSON
+```
 {
   "_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "predictions": [
@@ -150,12 +156,12 @@ Provide an answer to the question below then click on **Validate**.
 
 You can also try the following Machine Learning Functional Services consuming images:
 
- - **Inference Service For Customizable Image Feature Extraction**
- - **Inference Service for Customizable Object Detection**
- - **Inference Service for Face Feature Extraction**
- - **Inference Service for Scene Text Recognition**
- - **Inference Service for Human Detection**
- - **Inference Service for Face Detection**
+ - **[Product Image Classification API](https://api.sap.com/api/product_image_classification_api/resource)**
+ - **[Multi-Instance Image Segmentation](https://api.sap.com/api/instance_segmentor_api/resource)**
+ - **[Scene Text Recognition](https://api.sap.com/api/scene_text_recognition_api/resource)**
+ - **[Face Detection](https://api.sap.com/api/face_detection_api/resource)**
+ - **[Customizable Object Detection](https://api.sap.com/api/object_detection_api/resource)**
+ - **[Human Detection](https://api.sap.com/api/human_detection_api/resource)**
 
 Alternatively, you can try to compress into a zip a series of images and call the service.
 

@@ -1,5 +1,5 @@
 ---
-title: Execute the APL Forecast algorithm
+title: Execute the APL Forecast algorithm (Forecast App)
 description: Understand and implement the basics of an SAPUI5 application to generate your Forecast results using XSJS services and Machine Learning algorithm in SAP HANA, express edition
 auto_validation: true
 primary_tag: topic>machine-learning

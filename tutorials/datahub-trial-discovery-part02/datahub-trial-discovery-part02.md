@@ -1,5 +1,5 @@
 ---
-title: Explore data in SAP Vora
+title: Explore data in SAP Vora in SAP Data Hub 1.4
 description: Explore data in SAP Vora (including profiling) by using SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
@@ -11,6 +11,7 @@ tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-
  - You have completed [Explore data in Google Cloud Storage](https://www.sap.com/developer/tutorials/datahub-trial-discovery-part01.html)
 
 ## Details
+**This tutorial is obsolete and will be removed shortly (mid-November 2018).**
 ### You will learn  
 During this tutorial, you will learn that Data Discovery cannot only be used on files (for example stored in Google Cloud Storage). Data Discovery also works on other data stores, in particular SAP Vora.
 
