@@ -6,12 +6,6 @@ primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
-
-## Next Steps
- - [Create Workflow (part 2): Aggregate data with Data Transform ](https://developers.sap.com/germany/tutorials/datahub-trial-v2-workflow-part02.html)
-
 ## Details
 ### You will learn  
 During this tutorial, you will learn how to create a Data Transform. This will enrich the `Devices.csv` file, which you have taken a look at during one of the previous tutorials, with country information.

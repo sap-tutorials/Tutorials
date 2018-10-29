@@ -6,13 +6,6 @@ primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - You have completed [Generate sensor data](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part01.html)
-
-## Next Steps
-- [Store sensor data in GCS](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part03.html)
-
 ## Details
 ### You will learn  
   - How to use a message broker within a pipeline.
