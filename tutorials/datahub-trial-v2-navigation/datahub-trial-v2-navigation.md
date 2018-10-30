@@ -6,10 +6,6 @@ primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - You have completed [Set up SAP Data Hub, trial edition](https://developers.sap.com/germany/tutorials/datahub-trial-v2-setup.html).
-
 ## Details
 ### You will learn  
 During this tutorial, you will learn how to find your way around SAP Data Hub, trial edition. You will also learn how to troubleshoot problems.

@@ -5,10 +5,6 @@ primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Intermediate
- - You have completed [Bundle data (via JavaScript)](https://developers.sap.com/germany/tutorials/datahub-trial-v2-pipelines-part04.html)
-
 ## Details
 ### You will learn  
 - How to store the data in SAP VORA from Google Cloud Storage

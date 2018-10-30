@@ -5,12 +5,6 @@ primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
-
-## Next Steps
- - [Use a message broker](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part02.html)
-
 ## Details
 **This tutorial is obsolete and will be removed shortly (mid-November 2018).**
 ### You will learn  

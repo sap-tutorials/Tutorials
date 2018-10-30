@@ -6,13 +6,6 @@ primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - You have completed [Generate sensor data](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part01.html)
-
-## Next Steps
-- [Store sensor data in GCS](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part03.html)
-
 ## Details
 **This tutorial is obsolete and will be removed shortly (mid-November 2018).**
 ### You will learn  

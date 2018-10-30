@@ -5,13 +5,6 @@ primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - You have completed [Create Workflow (part 2): Aggregate data with Data Transform](https://developers.sap.com/germany/tutorials/datahub-trial-v2-workflow-part02.html)
-
-## Next Steps
- - [Create Workflow (part 4): Monitor task and Workflow execution ](https://developers.sap.com/germany/tutorials/datahub-trial-v2-workflow-part04.html)
-
 ## Details
 ### You will learn  
 During this tutorial, you will build a task Workflow using the **Pipeline** operator. This Workflow combines both tasks which you created during the previous tutorials into a process which you execute at once.

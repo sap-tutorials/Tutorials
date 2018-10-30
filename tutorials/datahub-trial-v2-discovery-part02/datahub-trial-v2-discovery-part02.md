@@ -6,10 +6,6 @@ primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - You have completed [Explore data in Google Cloud Storage](https://developers.sap.com/germany/tutorials/datahub-trial-v2-discovery-part01.html)
-
 ## Details
 ### You will learn  
 During this tutorial, you will learn that Metadata Explorer cannot only be used on files (for example stored in Google Cloud Storage). Metadata Explorer also works on other data stores, in particular SAP Vora.

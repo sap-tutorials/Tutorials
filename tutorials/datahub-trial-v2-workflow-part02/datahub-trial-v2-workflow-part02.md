@@ -6,13 +6,6 @@ primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Intermediate
- - You have completed [Create Workflow (part 1): Enrich data with Data Transform](https://developers.sap.com/germany/tutorials/datahub-trial-v2-workflow-part01.html)
-
-## Next Steps
- - [Create Workflow (part 3): Build a Workflow ](https://developers.sap.com/germany/tutorials/datahub-trial-v2-workflow-part03.html)
-
 ## Details
 ### You will learn  
 During this tutorial, you will build on what you have learned during the previous tutorial about Data Transform. You will build a more complicated Data Transform now. This will aggregate the `Events.parquet` file per country. It will store the result of the aggregation in a table in SAP Vora:
