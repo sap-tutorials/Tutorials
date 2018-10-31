@@ -78,8 +78,6 @@ Now that the application has a connection to the "Northwind" destination, the ne
 
 There are two ways to create a model:  in the JavaScript code, or by using the `mainfest.json` file.  Adding the model to the `manifest.json` file will set one up automatically.  
 
-> **NOTE**  To create the model directly in JavaScript, read [the model help documentation](https://sapui5.netweaver.ondemand.com/docs/guide/5278bfd38f3940b192df0e39f2fb33b3.html).
-
 
 1.  Open the `manifest.json` file, and select the **Models** link at the top of the screen:
 
