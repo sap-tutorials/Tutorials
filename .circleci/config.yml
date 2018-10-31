@@ -37,7 +37,31 @@ jobs:
           name: Run test tool on the all tutorials
           command: npm run test
           no_output_timeout: '15m'
-
+  build:
+    docker:
+      - image: circleci/node:9.6.1
+    steps:
+      - run: echo "RUN_BUILD is ${RUN_BUILD}"
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install dependencies
+          command: |
+            if [[ ${RUN_BUILD} ]]; then
+              npm install --production
+            fi
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run:
+          name: Run test tool on the all tutorials
+          command: |
+            if [[ ${RUN_BUILD} ]]; then
+              npm run test
+            fi
+          no_output_timeout: '15m'
 notify:
   webhooks:
     # gitter hook
