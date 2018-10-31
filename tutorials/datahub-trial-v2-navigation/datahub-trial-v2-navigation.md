@@ -1,5 +1,5 @@
 ---
-title: Navigate around SAP Data Hub, trial edition in SAP Data Hub 2
+title: Navigate around SAP Data Hub 2, trial edition
 description: Find your way around SAP Data Hub, trial edition.
 auto_validation: false
 primary_tag: products>sap-data-hub
