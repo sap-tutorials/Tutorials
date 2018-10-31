@@ -1,6 +1,5 @@
 version: 2
 jobs:
-  build:
   build-last-commit:
     docker:
       - image: circleci/node:9.6.1
