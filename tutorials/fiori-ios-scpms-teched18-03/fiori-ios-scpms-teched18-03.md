@@ -18,26 +18,18 @@ time: 25
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Change sort order)]
+[ACCORDION-BEGIN [Step 1: ](Change the sort order)]
 
-By default, if you tap on the `DeliveryStatus` in the detail page for a selected `Package`, you would get the related entities in whatever order the OData service returns them. Ideally, you want these to show sorted, with the latest status on top.
+By default, if the user taps on the "DeliveryStatus" row in the detail page for a selected `Package`, the related entities are displayed in whatever order the OData service returns them. Ideally, these would be sorted, with the latest status update on top.
 
-In Xcode, open the file `MyDeliveries/ViewControllers/PackagesType/PackagesTypeDetailViewController.swift` and locate function `tableView(_:, didSelectRowAt indexPath:)`. You can also use the `Open Quickly` feature of Xcode to search for the `PackagesTypeDetailViewController` class with `Command + Shift + O`.
+In Xcode, open `PackagesTypeDetailViewController.swift` and locate the function `tableView(_:didSelectRowAt:)`. You can also use the `Open Quickly` feature of Xcode to search for the `PackagesTypeDetailViewController` class with `Command + Shift + O`.
 
-In the application, when you tap on the 5th row named `DeliveryStatus`, the associated storyboard is loaded, and the `PackageType`'s related `DeliveryStatusType` entities are loaded using the `self.deliveryService.loadProperty` function.
+When the user runs the application, selects a package, and taps on the 5th row of the package detail ("DeliveryStatus"), this function is called. It loads the associated storyboard for displaying the delivery status UI, and it sets up code that will load the package's related delivery status entities by way of the `self.deliveryService.loadProperty` function.
 
-Currently, the function receives two arguments; the associated property and the instance field into which the results should be stored. However, the function can receive a 3rd argument with a `DataQuery` instance.
-
-Since we want the results in descending order, add the following as a 3rd argument:
+Inside the `tableView(_:didSelectRowAt:)` function, look for the following lines, which load the `deliveryStatus` property:
 
 ```swift
-DataQuery().orderBy(DeliveryStatusType.deliveryTimestamp, SortOrder.descending)
-```
-
-...so the code with the function call looks like this:
-
-```swift
-self.deliveryService.loadProperty(PackagesType.deliveryStatus, into: self.entity, query: DataQuery().orderBy(DeliveryStatusType.deliveryTimestamp, SortOrder.descending)) { error in
+self.deliveryService.loadProperty(PackagesType.deliveryStatus, into: self.entity) { error in
   self.hideFioriLoadingIndicator()
   if let error = error {
     completionHandler(nil, error)
@@ -45,6 +37,20 @@ self.deliveryService.loadProperty(PackagesType.deliveryStatus, into: self.entity
   }
   completionHandler(self.entity.deliveryStatus, nil)
 }
+```
+
+Currently, the `loadProperty` function receives two arguments: the associated property (`PackagesType.deliveryStatus`) and the `entity` into which the results should be stored (the object for the currently selected package). However, the function can receive a 3rd argument with a `DataQuery` instance, which further modifies the query used to fetch the related entities. Since we want the results in descending order, we'll add a data query that specifies descending order for the delivery timestamps.
+
+Create a new `sortQuery` constant for the data query just **above** those lines:
+
+```swift
+let sortQuery = DataQuery().orderBy(DeliveryStatusType.deliveryTimestamp, .descending)
+```
+
+Then insert the `sortQuery` constant as the 3rd argument to the `self.deliveryService.loadProperty` function:
+
+```swift
+self.deliveryService.loadProperty(PackagesType.deliveryStatus, into: self.entity, query: sortQuery) { error in
 ```
 
 The function now receives a query object, indicating you want to sort on the `deliveryTimestamp` field of the `DeliveryStatusType` entity, in descending order.
@@ -87,7 +93,7 @@ If you are using your own Mac and iPad that are both logged into the same iCloud
 
 [ACCORDION-BEGIN [Step 3: ](Implement the FUITimelineCell into your UITableView)]
 
-In this step, you implement the Fiori Timeline cells to show the `DeliveryStatus` entities in a logical way.
+In this step, you implement the Fiori Timeline cells to show the `DeliveryStatus` entities in a logical way. To do that we have to implement the right code into the `DeliveryStatusTypeMasterViewController.swift` class.
 
 Open the file `./MyDeliveries/ViewControllers/DeliveryStatusType/DeliveryStatusTypeMasterViewController.swift` and locate the function `viewDidLoad()`. You can also use the `Open Quickly` feature of Xcode to search for the `DeliveryStatusTypeMasterViewController.swift` class with `Command + Shift + O`.
 
@@ -110,74 +116,68 @@ self.tableView.separatorStyle = .none
 
 [ACCORDION-BEGIN [Step 4: ](Implement FUITimelineCell logic)]
 
-Next, locate function `tableView(_ tableView:, cellForRowAt indexPath:)`.
-
-Replace it with the following:
+Next, locate function `tableView(_:cellForRowAt:)` and replace the existing function with the code below:
 
 ```swift
 override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-  let deliverystatustype = self.entities[indexPath.row]
-  if deliverystatustype.selectable != 0 {
-    return self.getFUITimelineCell(deliverystatustype: deliverystatustype, indexPath: indexPath)
-  } else {
-    return self.getFUITimelineMarkerCell(deliverystatustype: deliverystatustype, indexPath: indexPath)
-  }
-}
+        let deliveryStatusType = self.entities[indexPath.row]
+        if deliveryStatusType.selectable != 0 {
+            return timelineCell(representing: deliveryStatusType, forRowAt: indexPath)
+        } else {
+            return timelineMarkerCell(representing: deliveryStatusType, forRowAt: indexPath)
+        }
+    }
 
 ```
 
-Finally, add the following functions:
+Add the following functions right below the `tableView(_:cellForRowAt:)` function:
 
 ```swift
-private func getFUITimelineMarkerCell(deliverystatustype: DeliveryStatusType, indexPath: IndexPath) -> UITableViewCell {
-  let cell = tableView.dequeueReusableCell(withIdentifier: "FUITimelineMarkerCell", for: indexPath)
-  guard let timelineCell = cell as? FUITimelineMarkerCell else {
-    return cell
-  }
 
-  timelineCell.nodeImage = self.getNodeImage(statusType: deliverystatustype.statusType!)
-  timelineCell.showLeadingTimeline = indexPath.row == 0 ? false : true
-  timelineCell.showTrailingTimeline = indexPath.row == self.entities.count - 1 ? false : true
-  timelineCell.eventText = self.getFormattedDateTime(timestamp: deliverystatustype.deliveryTimestamp!)
-  timelineCell.titleText = deliverystatustype.status
+private lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd HH:mm"
+        return formatter
+}()
 
-  return timelineCell
+private func timelineMarkerCell(representing deliveryStatusType: DeliveryStatusType, forRowAt indexPath: IndexPath) -> FUITimelineMarkerCell {
+  let cell = tableView.dequeueReusableCell(withIdentifier: "FUITimelineMarkerCell", for: indexPath) as! FUITimelineMarkerCell
+
+  cell.nodeImage = nodeImage(for: deliveryStatusType)
+  cell.showLeadingTimeline = indexPath.row != 0
+  cell.showTrailingTimeline = indexPath.row != (self.entities.count - 1)
+  cell.eventText = dateFormatter.string(from: deliveryStatusType.deliveryTimestamp!.utc())
+  cell.titleText = deliveryStatusType.status
+
+  return cell
 }
 
-private func getFUITimelineCell(deliverystatustype: DeliveryStatusType, indexPath: IndexPath) -> UITableViewCell {
-  let cell = tableView.dequeueReusableCell(withIdentifier: "FUITimelineCell", for: indexPath)
-  guard let timelineCell = cell as? FUITimelineCell else {
-    return cell
-  }
+private func timelineCell(representing deliveryStatusType: DeliveryStatusType, forRowAt indexPath: IndexPath) -> FUITimelineCell {
 
-  timelineCell.nodeImage = self.getNodeImage(statusType: deliverystatustype.statusType!)
-  timelineCell.eventText = self.getFormattedDateTime(timestamp: deliverystatustype.deliveryTimestamp!)
-  timelineCell.headlineText = deliverystatustype.status
-  timelineCell.subheadlineText = deliverystatustype.location
+  let cell = tableView.dequeueReusableCell(withIdentifier: "FUITimelineCell", for: indexPath) as! FUITimelineCell
 
-  return timelineCell
+  cell.nodeImage = nodeImage(for: deliveryStatusType)
+  cell.eventText = dateFormatter.string(from: deliveryStatusType.deliveryTimestamp!.utc())
+  cell.headlineText = deliveryStatusType.status
+  cell.subheadlineText = deliveryStatusType.location
+
+  return cell
 }
 
-private func getFormattedDateTime(timestamp: LocalDateTime) -> String {
-  let formatter = DateFormatter()
-  formatter.dateFormat = "MM/dd HH:mm"
-
-  return formatter.string(from: timestamp.utc())
-}
-
-private func getNodeImage(statusType: String) -> UIImage {
-  switch statusType {
+private func nodeImage(for deliveryStatusType: DeliveryStatusType) -> UIImage {
+    switch deliveryStatusType.statusType! {
     case "start"    : return FUITimelineNode.start
     case "inactive" : return FUITimelineNode.inactive
     case "complete" : return FUITimelineNode.complete
     case "earlyEnd" : return FUITimelineNode.earlyEnd
     case "end"      : return FUITimelineNode.end
     default         : return FUITimelineNode.open
-  }
+    }
 }
+
 ```
 
-The changed function `tableView(_ tableView:, cellForRowAt indexPath:)` decides based on `DeliveryStatus` property `selectable` which specific timeline cell to render. The rendering is done via two private functions `getFUITimelineMarkerCell(deliverystatustype:, indexPath:)` and `getFUITimelineCell(deliverystatustype:, indexPath:)`.
+The changed function `tableView(_:cellForRowAt:)` decides based on `DeliveryStatus` property `selectable` which specific timeline cell to render. The rendering is done via two private functions `timelineMarkerCell(representing:forRowAt:)` and `timelineCell(representing:forRowAt:)`.
 
 > These two private functions are implemented based on the code from the **SAP Fiori for iOS Mentor** app, but the code from the Mentor app has been split into two separate functions and control binding has already been implemented for easier implementation in this tutorial.
 

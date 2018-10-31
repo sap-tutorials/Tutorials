@@ -4,11 +4,11 @@ description: Deploy the data model to the SAP HANA database that is associated w
 auto_validation: true
 primary_tag: products>sap-cloud-platform
 tags: [  tutorial>intermediate, topic>java, products>sap-cloud-platform, products>sap-web-ide ]
-time: 10
+time: 15
 ---
 
 ## Prerequisites  
- - **Tutorials:** [Add a UI to Your Business Application](https://www.sap.com/developer/tutorials/cp-apm-02-add-ui.html)
+ - [Add a UI to Your Business Application](https://www.sap.com/developer/tutorials/cp-apm-02-add-ui.html)
 
 ## Details
 ### You will learn  
@@ -30,7 +30,7 @@ Wait for the notification that says the build was successful.
 
 [ACCORDION-BEGIN [Step 2: ](Enable SAP HANA Database Explorer)]
 
-To view the generated deployment artifacts, SAP HANA Database Explorer must be enabled in SAP Web IDE. If you have already enabled the SAP HANA Database Explorer, go to step 3.
+To view the generated deployment artifacts, SAP HANA database explorer must be enabled in SAP Web IDE. If you have already enabled the SAP HANA database explorer, go to step 3.
 
 1. Go to **Tools | Preferences | Features**.
 
@@ -48,15 +48,23 @@ To view the generated deployment artifacts, SAP HANA Database Explorer must be e
 
 1. Go to **Tools | Database Explorer**.
 
-2. Choose **Connect**.
+1. Expand **Cloud Foundry API Endpoint** and choose the URL of the Cloud Foundry API for the region, where you created your space.
+
+    It should be `https://api.cf.us10.hana.ondemand.com` if you followed the suggested values for this tutorial group.
 
     ![Connect to the database](connect-database.png)
 
-3. Select the bookshop database.
+1. Choose **Connect**.
+
+1. Choose **Yes**.
+
+    ![Add a Database](database-explorer-popup.png)
+
+1. Select the bookshop database.
 
     ![Add the database](add-database.png)
 
-Once connected you can view the different database artifacts. For example, the books table that you have created.
+    Once connected you can view the different database artifacts. For example, the books table that you have created.
 
 [DONE]
 
@@ -75,7 +83,9 @@ Once connected you can view the different database artifacts. For example, the b
     [`Data.hdbtabledata`] (https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-apm-03-add-database/csv/Data.hdbtabledata)
 
 2. In your workspace, go to `bookshop/db/src/`, right-click on the **`src`** folder and choose **Import | File or Project**.
+
 3. Browse to the location where you have saved the `Authors.csv` file.
+
 4. In the **Import to** field, add **`/csv`** to the default location and choose **OK**.
 
     >This creates a **`/csv`** folder under `/bookshop/db/src` and adds the `Authors.csv` file to that location.
@@ -88,10 +98,16 @@ Once connected you can view the different database artifacts. For example, the b
 
 [ACCORDION-BEGIN [Step 5: ](Re-build the db module and run the app)]
 
-1. Right-click the **`db`** module and choose **build**.
+1. Go back to your workspace and right-click the **`db`** module and choose **build**.
+
+    Wait for the notification that says the build was successful.
+
 2. Right-click the **app** module and choose **Run | Run Configurations**.
+
 3. Choose **`Run flpSandbox.html`** and deselect **Run with mock data**.
+
 4. Choose **Save and Run**.
+
 5. Open your app from the SAP Fiori Launchpad and choose **Go**.
 
 You now have actual data served automatically.

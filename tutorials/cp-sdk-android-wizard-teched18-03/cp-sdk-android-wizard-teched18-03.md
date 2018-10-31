@@ -14,10 +14,16 @@ time: 10
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Add foreground notification)]
-Open the <a target="_blank" href="https://hcpmsadmin-p2000464045trial.dispatcher.hanatrial.ondemand.com/sap/mobile/admin/ui/index.html">SAP Cloud Platform Mobile Services management cockpit</a> by right-clicking on the link and choose **Open link in incognito window**. Enter the following credentials:
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the `AppSpace` and we will provide everything you will need.
+
+
+[ACCORDION-BEGIN [Step 1: ](Send a notification)]
+
+Open the <a target="_blank" href="https://hcpmsadmin-p2000464045trial.dispatcher.hanatrial.ondemand.com/sap/mobile/admin/ui/index.html">SAP Cloud Platform Mobile Services management cockpit</a> by right-clicking on the link and choose **Open link in incognito window**.
 
 ![Management cockpit](sap-identity.png)
+
+Enter the following credentials.
 
 | Field | Value |
 |:----|:----|
@@ -38,6 +44,11 @@ Specify the notification text to send to the app.
 
 ![Send notification](send-notification2.png)
 
+[DONE]
+[ACCORDION-END]
+
+
+[ACCORDION-BEGIN [Step 2: ](Receive foreground notification)]
 Notice that the app shows the notification.
 
 ![Receive notification](receive-notification.png)
@@ -45,7 +56,7 @@ Notice that the app shows the notification.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 2: ](Add background notification)]
+[ACCORDION-BEGIN [Step 3: ](Receive background notification)]
 
 On the emulator, open another app, such as Chrome, which will cause the Wiz App to no longer be the foreground app.
 
@@ -64,6 +75,8 @@ Custom logic could be added to the app to decide on the action to take, such as 
 ![Show Notification Code](show-notification-code.png)
 
 > Further information on push can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/foundation/remotenotification.html">Push Notifications</a>, <a target="_blank" href="https://help.sap.com/viewer/38dbd9fbb49240f3b4d954e92335e670/Cloud/en-US/aaec2dbe78ec4fc08ef0a605a899e3dd.html">Push API Notification Scenarios</a>, and <a target="_blank" href="https://firebase.google.com/docs/cloud-messaging/concept-options">About FCM Messages</a>
+
+Congratulations! You have seen how an app can make use of foreground and background notifications.
 
 [VALIDATE_1]
 [ACCORDION-END]

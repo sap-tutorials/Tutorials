@@ -152,13 +152,13 @@ Maintain the fields on the window as following:
     |  Semantic Object    | `CostCenter`
     |  Action             | `analyzeALP_XXXX`
 
+    >Replace XXXX with your initials!  
+
     ![Maintain configuration tile](kut_alp_17.png)
 
 4. Click **Save and Configure Drill-Down**. The **Drill-Down Configuration Details** screen opens, showing an empty screen with the message **No drill-down has been configured**.
 
     ![Maintain configuration tile save](kut_alp_18.png)
-
->Replace XXXX with your initials!  
 
 [VALIDATE_2]
 [ACCORDION-END]

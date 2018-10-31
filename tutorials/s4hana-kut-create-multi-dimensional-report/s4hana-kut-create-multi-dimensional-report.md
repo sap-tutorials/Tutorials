@@ -108,10 +108,12 @@ Go back to the SAP Fiori launchpad home, select and execute from the group Query
 [ACCORDION-BEGIN [Step 6: ](Explore content of  query)]
 
 1. Drill-down by segment.
-![Drill-down by Segment](report_aq_11.png)
+
+    ![Drill-down by Segment](report_aq_11.png)
 
 2. Drill-down by cost center.
-![Drill-down by Cost Center](report_aq_12.png)
+
+    ![Drill-down by Cost Center](report_aq_12.png)
 
 [DONE]
 [ACCORDION-END]

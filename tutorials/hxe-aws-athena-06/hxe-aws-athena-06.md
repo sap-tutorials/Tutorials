@@ -169,18 +169,12 @@ You can now inspect the table definition.
 
 You can now query the Amazon Athena virtual table just any other table.
 
-For example, you can run, in a new SQL console, the following SQL statement:
-
-```sql
-select count(1) from gdelt_athena.events where year = 2017;
-```
-
-You can get the count of event per year using the following SQL:
+For example, you can get the count of event per year using the following SQL:
 
 ```sql
 select "year", count(*) as events_count
 from   gdelt_athena.events
-where "year" is not null 
+where "year" is not null
 group by "year"
 order by "year";
 ```

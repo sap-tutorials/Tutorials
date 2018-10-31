@@ -1,6 +1,6 @@
 ---
 title: Enable Offline OData in Your Android Application
-description: Enable Offline OData in your Android application.
+description: Use the Offline OData library to enable data access from an on device database.
 auto_validation: true
 primary_tag: operating-system>android
 tags: [  tutorial>beginner, operating-system>android ]
@@ -13,9 +13,12 @@ time: 20
 
 ---
 
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the `AppSpace` and we will provide everything you will need.
+
+
 [ACCORDION-BEGIN [Step 1: ](Add dependency to build.gradle document)]
 
-In Android Studio, add the following line to the list of dependencies in the app's **`build.gradle`** file to include the <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Developing_Offline_Applications.html">Offline OData</a> framework.
+In Android Studio, add the following line to the list of dependencies in the app's **`build.gradle`** file to include the Offline OData framework and click on **`Sync Now`**.  After the sync completes, it will be possible to use the libraries in the `offline-odata` component.
 
 ```Java
 implementation group:'com.sap.cloud.android', name:'offline-odata', version: sdkVersion
@@ -29,31 +32,45 @@ implementation group:'com.sap.cloud.android', name:'offline-odata', version: sdk
 [ACCORDION-BEGIN [Step 2: ](Add code to open offline store)]
 
 Press **`Ctrl+N`** and enter **`SAPServiceManager.java`**.
-In the `SAPServiceManager` class comment out (Select and press Ctrl /) the following variable:
-    `//private OnlineODataProvider provider;`
 
-In the same class add the following variables and press  **`Alt+Enter`** to make use of Android Studio quick fix to add the missing import.
+Add the following imports.  Note they will appear grey until they are used in the following steps.
 
 ```Java
+import android.content.Context;
+import android.util.Log;
+import android.widget.Toast;
+import com.sap.cloud.mobile.odata.core.AndroidSystem;
+import com.sap.cloud.mobile.odata.offline.OfflineODataDefiningQuery;
+import com.sap.cloud.mobile.odata.offline.OfflineODataException;
+import com.sap.cloud.mobile.odata.offline.OfflineODataParameters;
+import com.sap.cloud.mobile.odata.offline.OfflineODataProvider;
+import java.net.MalformedURLException;
+import java.net.URL;
+```
+
+In the `SAPServiceManager` class, select the variable, **`OnlineODataProvider`** and replace it with the two following variables.
+
+```Java
+//private OnlineODataProvider provider;
 private OfflineODataProvider provider;
 private static final String TAG = SAPServiceManager.class.getName();
 ```
 
-Delete or comment out the methods **`openODataStore`** and **`getServiceRoot`** as they will be replaced in the next step.
 
-Add the below methods and press  **`Alt+Enter`** to make use of Android Studio quick fix to add the missing imports.
+Comment out the methods **`openODataStore`** and **`getServiceRoot`**.
 
-For `Context`, choose `android.content.Context`.
+
+Add the below methods.
 
 ```Java
 public void openODataStore(Action0 callback, Context context) {
-    setupOfflineOData(context);
-    callback.call();
+    setupOfflineOData(callback, context);
 }
 
-private void setupOfflineOData(Context context) {
+private void setupOfflineOData(Action0 callback, Context context) {
     try {
         if (configurationData.loadData()) {
+            Toast.makeText(context, "Opening the offline store which may take a few moments the first time it is opened.", Toast.LENGTH_LONG).show();
             //Initialize application context for use by OfflineODataProvider
             AndroidSystem.setContext(context);
             //commonly set parameters include setStoreEncryptionKey, setStoreName, setStorePath
@@ -74,6 +91,7 @@ private void setupOfflineOData(Context context) {
   provider.open(() -> {
       Log.d(TAG, "Offline store opened.");
       eSPMContainer = new ESPMContainer(provider);
+      callback.call();
       syncOfflineData();  //TODO could be triggered via a menu action
   }, (OfflineODataException offlineODataException) -> {
       Log.d(TAG, "Offline store did not open.", offlineODataException);
@@ -112,7 +130,7 @@ public String getServiceRoot() {
 
 Press **`Ctrl+N`** and enter **`LogonActivity.java`**.
 
-Press **`Ctrl+F`** and enter **`openODataStore`**. In the `LogonActivity.java` add the application context to the `openODataStore` call as a parameter as shown below:
+Press **`Ctrl+F`** and enter **`openODataStore`**. In the `LogonActivity.java` add the application context to the `openODataStore` call as a parameter as shown below.  Note, this can be done by replacing the second last line of the method with the below code.
 
 ![getApplicationContext() parameter added](application-context-parameter.png)
 
@@ -152,7 +170,11 @@ Re-open the app and check the `Logcat`. It shows the upload and download operati
 
 ![Successful upload/download](upload-successful.png)
 
-> This example does not handle conflicts. Details on this topic are available at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Designing_an_Offline_Application_to_Handle_Conflicts_and_Errors.html#offline-odata-conflicts">Offline OData Conflicts</a>.
+> This example does not handle conflicts. Details on this topic are available at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/user-guide/odata/Offline_OData_Handling_Errors_And_Conflicts.html">Offline OData Conflicts</a>.
+
+Congratulations! You have created an offline enabled application and have completed this TechEd App Space mission.  A version of these tutorials that includes the full setup is available at <a target="_blank" href="https://developers.sap.com/group.sdk-android.html">Get Started with SAP Cloud Platform SDK for Android</a>.
+
+See also the blog <a target="_blank" href="https://blogs.sap.com/2018/10/15/step-by-step-with-the-sap-cloud-platform-sdk-for-android-part-1/">Step by Step with the SAP Cloud Platform SDK for Android</a>.
 
 [VALIDATE_1]
 [ACCORDION-END]
