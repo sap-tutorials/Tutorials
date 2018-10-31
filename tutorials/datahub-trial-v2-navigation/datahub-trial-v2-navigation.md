@@ -1,5 +1,5 @@
 ---
-title: Navigate around SAP Data Hub, trial edition in SAP Data Hub 2
+title: Navigate around SAP Data Hub 2, trial edition
 description: Find your way around SAP Data Hub, trial edition.
 auto_validation: false
 primary_tag: products>sap-data-hub
@@ -74,7 +74,7 @@ The SAP Data Hub System Management (direct link: `https://sapdatahubtrial/app/da
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Troubleshoot problems and show logs)]
-To troubleshoot problems you can access the operating system of the virtual machines as well as the Kubernetes cluster underlying your solution instance. You also have access to Grafana and Kibana web users interfaces for monitoring and troubleshooting.
+To troubleshoot problems you can access the operating system of the virtual machines as well as the Kubernetes cluster underlying your solution instance. You also have access to `Grafana` and `Kibana` web users interfaces for monitoring and troubleshooting.
 
 If you need to troubleshoot problems, please refer to the corresponding chapters of the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide.
 
