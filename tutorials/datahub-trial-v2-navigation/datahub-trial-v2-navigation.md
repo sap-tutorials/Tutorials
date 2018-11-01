@@ -1,6 +1,6 @@
 ---
-title: Navigate around SAP Data Hub 2, trial edition
-description: Find your way around SAP Data Hub, trial edition.
+title: Navigate around SAP Data Hub, trial edition 2.3
+description: Find your way around SAP Data Hub, trial editio 2.3.
 auto_validation: false
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
