@@ -1,6 +1,6 @@
 ---
-title: Set up SAP Data Hub 2, trial edition
-description: Create a solution instance of SAP Data Hub, trial edition.
+title: Set up SAP Data Hub, trial edition 2.3, trial edition
+description: Create a solution instance of SAP Data Hub, trial edition 2.3.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -79,4 +79,4 @@ Afterwards upload the following three files to Google Cloud Storage. Some of the
 ---
 
 ## Next Steps
-[Navigate around SAP Data Hub, trial edition](https://developers.sap.com/germany/tutorials/datahub-trial-v2-navigation.html)
+[Navigate around SAP Data Hub, trial edition 2.3](https://developers.sap.com/germany/tutorials/datahub-trial-v2-navigation.html)
