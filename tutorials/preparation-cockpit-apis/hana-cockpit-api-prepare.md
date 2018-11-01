@@ -114,7 +114,7 @@ The output should look similar to this and your port number for `cockpit-adminui
 
 ![expected output](cockpit-adminui-svc port.png)
 
-> For the cockpit GET API `GroupResourcesGet` specifically, you will need your port number for `cockpit-landscape-svc`. Run the following command to obtain this number when necessary:
+> For the cockpit GET API endpoints `GroupsForUserGet` and `GroupResourcesGet` specifically, you will need your port number for `cockpit-landscape-svc`. Run the following command to obtain this number when necessary:
 ```
 xs apps | grep cockpit-landscape-svc
 ```

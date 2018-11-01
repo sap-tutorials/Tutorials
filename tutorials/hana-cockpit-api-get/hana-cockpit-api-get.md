@@ -42,7 +42,7 @@ def list_cockpit_resources(client, authorization):
     return resourceListResponse.json()
 ```
 
-Suppose we only want all the names of the cockpit resources. We then need to parse the JSON response:
+Suppose we only want all the names and the ID numbers of the cockpit resources. We then need to parse the JSON response:
 ```Python
 result = list_cockpit_resources(client, authorization)
 resources = result["result"]
@@ -65,33 +65,33 @@ Cockpit resources:
 
 
 [ACCORDION-BEGIN [Step 2: ](Call the GroupsForUserGet endpoint)]
-This endpoint returns information about the existing resource groups in SAP HANA cockpit that you are allowed to see.
+This endpoint returns information about the existing resource groups in SAP HANA cockpit that you are allowed to see. As mentioned in the previous tutorial **_Get Ready to Use the SAP HANA Cockpit REST API_**, you will need your port number for `cockpit-landscape-svc` to be able to call this endpoint.
 
-To use this endpoint, copy the following code to your Python source file.
+To use this endpoint, copy the following code to your Python source file. Replace *<host.domain.com>* and *<port for cockpit-landscape-svc>* with your own identities.
 
 ```Python
 def list_cockpit_groups(client, authorization):
-    targetURI = baseURL + '/group/GroupsGet'
+    targetURI = 'https://' + '<host.domain.com>' + ':' + '<port for cockpit-landscape-svc>' + '/group/GroupsForUserGet'
 
     groupListResponse = client.get(targetURI, verify=False, headers=get_header(authorization))
-    return groupListResponse.json() # We now have all the information about the cockpit groups
+    return groupListResponse.json()
 ```
 
 Suppose we only want all the names of the cockpit groups, we then need to parse the JSON response:
 ```Python
 result = list_cockpit_groups(client, authorization)
-groups = result["d"]["results"]
+groups = result["result"]
 print("Cockpit groups:")
 for group in groups:
-    print("- Group name: " + group["Name"] + ", group ID: " + group["Id"])
+    print("- Group name: " + group["Name"])
 ```
 
 Run the entire program and your output should be similar to the following:
 ```
 Cockpit groups:
-- Group name: GROUP1, group ID: 4
-- Group name: GROUP2, group ID: 5
-- Group name: GROUP3, group ID: 6
+- Group name: GROUP1
+- Group name: GROUP2
+- Group name: GROUP3
 ```
 
 [VALIDATE_2]

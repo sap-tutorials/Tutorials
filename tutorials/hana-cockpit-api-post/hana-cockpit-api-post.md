@@ -297,8 +297,8 @@ def list_cockpit_resources(client, authorization):
     return resourceListResponse.json()
 
 # List all groups that are visible to the customer
-def list_cockpit_groups(client, authorization):
-    targetURI = baseURL + '/group/GroupsGet'
+def list_cockpit_groups(client, authorization, prefix_URL):
+    targetURI = prefix_URL + '/group/GroupsForUserGet'
 
     groupListResponse = client.get(targetURI, verify=False, headers=get_header(authorization))
     return groupListResponse.json()
@@ -634,8 +634,11 @@ def main(): # launch the interactive program
                 printJSON("Registered Resources:\n", cockpit_resources)
 
             elif api == 2:
-                cockpit_groups = list_cockpit_groups(client, authorization)
-                printJSON('Resource Groups:\n', cockpit_groups)
+              landscape_port = input("Please enter your port number for the app cockpit-landscape-svc: ")
+              # need this port specifically for this endpoint
+              prefix_URL = 'https://' + HANA_HOST + ':' + landscape_port
+              cockpit_groups = list_cockpit_groups(client, authorization, prefix_URL)
+              printJSON('Resource Groups:\n', cockpit_groups)
 
             elif api == 3:
                 while True:
