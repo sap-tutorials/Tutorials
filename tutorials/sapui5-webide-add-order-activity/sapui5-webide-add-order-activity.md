@@ -93,4 +93,4 @@ That is all for this series!  Return to the tutorial catalog for more tutorials 
  - This is the end of this tutorial series.  
 
 ## Additional Information
-- [`Footer`](https://sapui5.hana.ondemand.com/explored.html#/sample/sap.m.sample.Page/preview)- [`MessageBox`](https://sapui5.hana.ondemand.com/docs/api/symbols/sap.m.MessageBox.html)- [`MessageToast`](https://sapui5.hana.ondemand.com/docs/api/symbols/sap.m.MessageToast.html)
+- [`Footer`](https://sapui5.hana.ondemand.com/explored.html#/sample/sap.m.sample.Page/preview)- [`MessageBox`](https://sapui5.hana.ondemand.com/#/api/sap.m.MessageBox)- [`MessageToast`](https://sapui5.hana.ondemand.com/#/api/sap.m.MessageToast)
