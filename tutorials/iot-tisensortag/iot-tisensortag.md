@@ -5,7 +5,7 @@ primary_tag: topic>internet-of-things
 tags: [  tutorial>beginner, topic>internet-of-things ]
 ---
 ## Prerequisites  
- - **Device:** [`TI SensorTag`](http://www.ti.com/ww/de/wireless_connectivity/sensortag2015/)
+ - **Device:** [`TI SensorTag`](http://www.ti.com/ww/de/wireless_connectivity/sensortag/)
  - Bluetooth connectivity
 
 ## How-To Details
@@ -34,4 +34,3 @@ The following describes the general procedures necessary to setup your local env
     For more information see [Installation instructions](https://www.npmjs.com/package/sensortag)
 
 4. You may also need to check the prerequisites for [`Noble`](https://github.com/sandeepmistry/noble#prerequisites)
-
