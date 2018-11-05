@@ -20,11 +20,11 @@ time: 25
 
 [ACCORDION-BEGIN [Step 1: ](Change the sort order)]
 
-By default, if the user taps on the "DeliveryStatus" row in the detail page for a selected `Package`, the related entities are displayed in whatever order the OData service returns them. Ideally, these would be sorted, with the latest status update on top.
+By default, if the user taps on the **`DeliveryStatus`** row in the detail page for a selected `Package`, the related entities are displayed in whatever order the OData service returns them. Ideally, these would be sorted, with the latest status update on top.
 
 In Xcode, open `PackagesTypeDetailViewController.swift` and locate the function `tableView(_:didSelectRowAt:)`. You can also use the `Open Quickly` feature of Xcode to search for the `PackagesTypeDetailViewController` class with `Command + Shift + O`.
 
-When the user runs the application, selects a package, and taps on the 5th row of the package detail ("DeliveryStatus"), this function is called. It loads the associated storyboard for displaying the delivery status UI, and it sets up code that will load the package's related delivery status entities by way of the `self.deliveryService.loadProperty` function.
+When the user runs the application, selects a package, and taps on the 5th row of the package detail (**`DeliveryStatus`**), this function is called. It loads the associated storyboard for displaying the delivery status UI, and it sets up code that will load the package's related delivery status entities by way of the `self.deliveryService.loadProperty` function.
 
 Inside the `tableView(_:didSelectRowAt:)` function, look for the following lines, which load the `deliveryStatus` property:
 
