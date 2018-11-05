@@ -11,7 +11,7 @@ time: 10
 ### You will learn  
   - How to create a remote source using SAP HANA, Smart Data Access
   - How to create a virtual table using SAP HANA, Smart Data Access
-  - Execute queries consuming data from Amazon Athena and from both Amazon Athena and  SAP HANA, express edition
+  - Execute queries consuming data from Amazon Athena and from both Amazon Athena and SAP HANA, express edition
 
 [ACCORDION-BEGIN [Step 1: ](Open SAP Web IDE)]
 
@@ -238,5 +238,3 @@ Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_2]
 [ACCORDION-END]
-
-Congratulations! You have just completed your mission: combine the power of SAP HANA, express edition with Amazon Athena!
