@@ -8,7 +8,7 @@ primary_tag: products>sap-leonardo-machine-learning-foundation
 ---
 
 ## Prerequisites
- - [Create a Machine Learning Foundation service instance on the Cloud Foundry environment](https://developers.sap.com/tutorial-navigator.html?mlfs-cf-create-instance.html)
+ - [Create a Machine Learning Foundation service instance on the Cloud Foundry environment](https://developers.sap.com/tutorials/cp-mlf-create-instance.html)
  - [Install Postman as a REST client](https://developers.sap.com/tutorials/api-tools-postman-install.html)
 
 ## Details

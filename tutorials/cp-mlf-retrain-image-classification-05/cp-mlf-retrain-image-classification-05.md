@@ -1,8 +1,8 @@
 ---
-title: Use the Image Classification API from a REST Client
-description: Call the Image Classification API from a REST Client like Postman
+title: Consume the Image Classification Model Retrained Model
+description: Discover how to consume the retrained model for the Image Classification Retraining scenario
 auto_validation: true
-time: 10
+time: 15
 tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
 primary_tag: products>sap-leonardo-machine-learning-foundation
 ---
@@ -15,11 +15,13 @@ primary_tag: products>sap-leonardo-machine-learning-foundation
 ## Details
 ### You will learn
   - Call an API from a REST client like Postman
-  - The basics about Machine Learning Foundation Service for Image Classification
+  - The basics about Machine Learning Foundation Service for Image Classification in the Retraining scenario context
 
 [ACCORDION-BEGIN [Step](The Image Classification Service)]
 
-The Image Classification service calculates and returns a list of classifications along with their probabilities for a given image. It extracts feature vectors for any given image for comparison, information retrieval, clustering, or further processing.
+Just like the Image Classification service, the retrained Image Classification service calculates and returns a list of classifications along with their probabilities for a given image using your predefined categories.
+
+The only difference is in the URL to be called, where you will need to append the following ```/models/{model name}/versions/{model version}```.
 
 This is the list of accepted file extensions:
 
@@ -58,29 +60,45 @@ Fill in the following additional information:
 Field Name               | Value
 :----------------------- | :--------------
 <nobr>HTTP Method</nobr> | POST
-<nobr>URL<nobr>          | <nobr>`https://mlftrial-image-classifier.cfapps.eu10.hana.ondemand.com/api/v2/image/classification`</nobr>
+<nobr>URL<nobr>          | <nobr>`https://mlftrial-image-classifier.cfapps.eu10.hana.ondemand.com/api/v2/image/classification/models/flowers/versions/1`</nobr>
 
 > **Note** As a reminder, the URL depends on you Cloud Platform landscape region but for the trial landscape only ***Europe (Frankfurt)*** provide access to the Machine Learning Foundation services.
 
 On the **Body** tab, keep **`form-data`** selected. Add a new key named **files** and switch it to **File** instead of **Text** (default).
 
-Select your image file.
+Select one of the image file in the ```flowers/try/roses``` directory.
 
 ![Postman](02.png)
 
-If you are missing some inspiration, you can use [Google Search](https://www.google.fr/search?q=duck&tbm=isch) to search for duck images.
-
 Click on **Send**.
 
-You should receive a response that includes a series of predictions entries for each input files:
+You should receive a response that includes a series of predictions entries for the input files with only the five flowers category the model was retrained for:
 
 ![Postman](03.png)
 
 ```json
-{
-    "label": "drake",
-    "score": 0.9270621538162231
-}
+"results": [
+    {
+        "label": "roses",
+        "score": 0.9573449492454529
+    },
+    {
+        "label": "tulips",
+        "score": 0.0396801233291626
+    },
+    {
+        "label": "sunflowers",
+        "score": 0.0027627646923065186
+    },
+    {
+        "label": "dandelion",
+        "score": 0.00018524238839745522
+    },
+    {
+        "label": "daisy",
+        "score": 0.0000269435749942204
+    }
+]
 ```
 
 [DONE]
@@ -92,4 +110,3 @@ Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_1]
 [ACCORDION-END]
----
