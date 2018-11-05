@@ -1,5 +1,5 @@
 ---
-title: Text Processing services on the API Business Hub
+title: Text Processing services with the API Business Hub console
 description: Discover how to test SAP Leonardo Machine Learning Foundation service on the SAP API Business Hub
 auto_validation: true
 primary_tag: products>sap-leonardo-machine-learning-foundation
