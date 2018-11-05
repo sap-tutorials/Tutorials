@@ -1,4 +1,4 @@
-mlfs-cf-oauth-token-rest---
+---
 title: Get your OAuth Access Token using a REST Client
 description: Call the authentication API to retrieve your Access Token
 auto_validation: true
