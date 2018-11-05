@@ -10,7 +10,7 @@ primary_tag: products>sap-leonardo-machine-learning-foundation
 ## Prerequisites
  - [Create a Machine Learning Foundation service instance on the Cloud Foundry environment](https://developers.sap.com/tutorial-navigator.html?mlfs-cf-create-instance.html)
  - [Install Postman as a REST client](https://developers.sap.com/tutorials/api-tools-postman-install.html)
- - [Get your OAuth Access Token using a REST Client](https://developers.sap.com/tutorial-navigator.html?mlfs-cf-oauth-token-rest.html)
+ - [Get your OAuth Access Token using a REST Client](https://developers.sap.com/tutorials/cp-mlf-rest-generate-oauth-token.html)
 
 ## Details
 ### You will learn
@@ -71,7 +71,7 @@ On the **Authorization** tab, select **Bearer Token**, then enter **`{{OAuthToke
 
 ![Postman](01.png)
 
-> ### **Note:**: the **`OAuthToken`** environment variable can be retrieved following the [Get your OAuth Access Token using a REST Client](https://developers.sap.com/tutorial-navigator.html?mlfs-cf-oauth-token-rest.html) tutorial.
+> ### **Note:**: the **`OAuthToken`** environment variable can be retrieved following the [Get your OAuth Access Token using a REST Client](https://developers.sap.com/tutorials/cp-mlf-rest-generate-oauth-token.html) tutorial.
 
 Fill in the following additional information:
 
