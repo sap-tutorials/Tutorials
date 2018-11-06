@@ -116,11 +116,11 @@ sap.ui.getCore().attachInit(function () {
 var oModel = new sap.ui.model.json.JSONModel({
   queue: 'Queue_1',
   queues: [{
-      name: 'Queue_1'
-    }, {
-      name: 'Queue_2'
-    }, {
-      name: 'Queue_3'
+    name: 'Queue_1'
+  }, {
+    name: 'Queue_2'
+  }, {
+    name: 'Queue_3'
   }],
 });
 ```
@@ -218,11 +218,11 @@ new sap.m.App({
 1. Declare the function `updateHistory` which reads the currently selected queue from the model and sends the corresponding request to the defined endpoint. Also invoke this function immediately, so that the model can update.
 ```javascript
 function updateInbox() {
-    var sQueue = oModel.getProperty('/queue');
-    $.get('/inbox?queue=' + sQueue, function (data) {
-        oModel.setProperty('/inbox', data);
-        sap.m.MessageToast.show('Updated ' + sQueue)
-    })
+  var sQueue = oModel.getProperty('/queue');
+  $.get('/inbox?queue=' + sQueue, function (data) {
+    oModel.setProperty('/inbox', data);
+    sap.m.MessageToast.show('Updated ' + sQueue)
+  })
 }
 updateInbox();
 ```
@@ -237,9 +237,9 @@ new sap.m.Button({
 3. Invoke `updateHistory`, when selected option of the select control changes.
 ```javascript
 new sap.m.Select({
-    selectedKey: '{/queue}',
-    items: ...,
-    change: updateInbox
+  selectedKey: '{/queue}',
+  items: ...,
+  change: updateInbox
 })
 ```
 
@@ -276,15 +276,6 @@ new sap.m.Button({
   text: "Reject",
   press: respondToMessage,
   ...
-})
-```
-
-3. Invoke `updateHistory` when selected option of the select control changes.
-```javascript
-new sap.m.Select({
-    selectedKey: '{/queue}',
-    items: ...,
-    change: updateInbox
 })
 ```
 

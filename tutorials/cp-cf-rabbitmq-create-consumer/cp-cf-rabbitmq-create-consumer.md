@@ -131,13 +131,13 @@ Object.keys(oQueueCaches).forEach(function(sQueueName) {
   });
   console.log(`Waiting for messages in ${sQueueName}.`);
   oChannel.consume(sQueueName, function(msg) {
-    oQueueCaches[sQueueName].push({
+  oQueueCaches[sQueueName].push({
       replyTo: msg.properties.replyTo,
       correlationId: msg.properties.correlationId,
       message: msg.content.toString()
-    });
-    oChannel.ack(msg);
-    console.log(`Received ${msg.content.toString()} in queue ${sQueueName}`);
+  });
+  oChannel.ack(msg);
+  console.log(`Received ${msg.content.toString()} in queue ${sQueueName}`);
   });
 });
 ```
@@ -176,17 +176,21 @@ docker run -it --rm -p 5672:5672 -p 15672:15672 rabbitmq
 Run `npm start` from the root directory of your project to test your application.
 
 1. The console output should tell that the application started successfully.
-![started app](started-app.png)
+
+  ![started app](started-app.png)
 2. Open the web-based UI of the producer app at <http://localhost:3000> and send a message to the local RabbitMQ service.
-![producer app](publisher.png)
+
+  ![producer app](publisher.png)
 3. Verify that the consumer received the sent message.
-![received app](received-app.png)
+
+  ![received app](received-app.png)
 
 [VALIDATE_6]
 [ACCORDION-END]
 [ACCORDION-BEGIN [step ](Deploy your consumer application to SAP Cloud Platform)]
 Specify the deployment information in a `manifest.yml` file in the root folder:
 ```yml
+---
 applications:
  - name: consumer
    random-route: true
@@ -211,9 +215,12 @@ Now you can consume message queues and print them in the log of the consumer app
 [ACCORDION-BEGIN [step ](Troubleshooting)]
 
 **Problem**: I see the following error message when I execute `npm start`: "Error: Cannot find module 'express'"
+
 **Solution**: This means that there are some missing dependencies. Please run `npm install` to install them.
 
+
 **Problem**: I see the following error message when I execute `cf push`: "Server error, status code: 400, error code: 210003, message: The host is taken"
+
 **Solution**: This means this application name is already use in the current Cloud Foundry environment (probably by another user). Please change the property 'name' in the `manifest.yml` file.
 
 [DONE]
