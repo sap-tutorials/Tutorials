@@ -64,5 +64,5 @@ You will add a `<SearchField>` control to the initial page of the application. W
 - The next tutorial in the series is Part 10: [Add an Order Activity to the form](https://www.sap.com/developer/tutorials/sapui5-webide-add-order-activity.html)
 
 ## Additional Information
-- [`<SearchField>` element](https://sapui5.hana.ondemand.com/explored.html#/entity/sap.m.SearchField/samples)
-- [Model filter](https://sapui5.hana.ondemand.com/docs/api/symbols/sap.ui.model.Filter.html)
+- [`<SearchField>` element](https://sapui5.hana.ondemand.com/#/api/sap.m.SearchField)
+- [Model filter](https://sapui5.hana.ondemand.com/#/api/sap.ui.model.Filter)

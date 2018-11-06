@@ -14,6 +14,7 @@ time: 5
 [ACCORDION-BEGIN [Step 1: ](Create a new Microsoft account)]
 
 Go to **<https://apps.dev.microsoft.com>** and click **Create one** to create a new account.
+
 ![create a new account](create_new_account.png)
 
 Enter an existing mail address and click **Next**.
@@ -50,8 +51,7 @@ Enter a phone number and click **Send Code**. You should receive another verific
 
 ![security information](security_info.png)
 
-You are now done with the registration for an Microsoft account. Copy the URL of your Application Registration Portal and paste it in the text field below, then click **Validate**.
-
+You are now done with the registration for an Microsoft account. Copy the URL of your Application Registration Portal and paste it in the text field below, then click on **Validate**.
 
 ![registration portal](registration_portal.png)
 

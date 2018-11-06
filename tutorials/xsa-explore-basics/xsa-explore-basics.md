@@ -121,6 +121,22 @@ Go back into the database explorer, click **+** to add a database and use the op
 
 > SAP HANA supports multiple databases, isolated form each other, in the same environment. This concept is known as multi-tenancy. There is one database, the system database, that has limited SQL capabilities and is used to perform administration tasks over the contained databases, called tenants. Tenant databases have all of the SQL capabilities enabled. SAP HANA, express edition, brings one default first tenant called `HXE`.
 
+For SAP HANA, express edition, these are the defaults:
+
+  -   Host: `hxehost` or `localhost`
+  -   Instance number: 90
+  -   If you wanted to connect to the tenant database, the name is `HXE`. Make sure you choose the radio button for `tenant database` in that case.
+
+![XS admin](db.jpg)
+
+Use the `SQL` button and enter the following query.
+
+```sql
+select * from dummy;
+```
+
+Use `F8` or the green **run** icon to execute the query. Enter the result of the query in the box below to complete the validation.
+
 [VALIDATE_1]
 [ACCORDION-END]
 

@@ -16,19 +16,31 @@ time: 20
 
 [ACCORDION-BEGIN [Step ](Create a HTML5 project)]
 
-1. Go to the Neo environment in the SAP Cloud Platform Cockpit (https://account.hanatrial.ondemand.com/) and open the **Services** menu in the side panel.
-![Navigate to services](./cockpit_services.png)
-2. Navigate to the SAP Web IDE Full-Stack tile and click on it.
+1. Go to the **Neo** environment in the SAP Cloud Platform Cockpit (https://account.hanatrial.ondemand.com/) and open the **Services** menu in the side panel.
+
+    ![Navigate to services](./cockpit_services.png)
+
+2. Navigate to the **SAP Web IDE Full-Stack** tile and click on it.
+
 3. Hit **Go To Service** to open the SAP Web IDE Full-Stack.
-![Go to Service link](./open_ide.png)
+
+    ![Go to Service link](./open_ide.png)
+
 4. Click on **New** in the header toolbar to create a **Project from Template**.
-![Create new project from Template](./webidecreateproject.png)
+
+    ![Create new project from Template](./webidecreateproject.png)
+
 5. Select **SAPUI5 Application** and choose the latest SAPUI5 version **SAP Innovation** and confirm with **Next**.
-![select ui5](./web-ui5.png)
-6. Enter the **Module name** and the **Namespace** (e.g. **`PurchaseOrderApp`** and **`com.sap.teched18.msgraph`**) you want to use.
-![Create new app from WebIDE](./webide-create-app.png)
+
+    ![select ui5](./web-ui5.png)
+
+6. Enter the **Project name** and the **Namespace** (e.g. **`PurchaseOrderApp`** and **`com.sap.teched18.msgraph`**) you want to use.
+
+    ![Create new app from WebIDE](./webide-create-app.png)
+
 7. Change the default name of the view to **`MainView`** and create the app by clicking **Finish**.
-![Create new app from WebIDE](./webide-finish-app-creation.png)
+
+    ![Create new app from WebIDE](./webide-finish-app-creation.png)
 
 > It's worth bookmarking the SAP Web IDE in your browser if you haven't done so already.
 
@@ -38,11 +50,17 @@ time: 20
 [ACCORDION-BEGIN [Step ](Connect the application to the destination)]
 
 1. Open the context menu with a right click on the project and select **New** on the first and **OData Service** on the second hierarchy level.
-![webide-html5-rightclick-new-odataservice](./webide-new-service.png)
+
+    ![webide-html5-rightclick-new-odataservice](./webide-new-service.png)
+
 2. Select **Service Catalog** as the **Source type** and **SAP GATEWAY** as the source. You can search for **`purchase`** to find the OData service of interested (`SEPMRA_PO_APV`) easily.
-![webide-wizard-find-po-service](./webide-test-service.png)
+
+    ![webide-wizard-find-po-service](./webide-test-service.png)
+
 3. Make sure the service is selected and click **Next**
-![Select service](./webide-select-odata.png)
+
+    ![Select service](./webide-select-odata.png)
+
  Keep the default selection **Use default model** and click **Next** to get to the confirmation page. Press **Finish** to confirm the everything.
 
 > This wizard modified the `manifest.json` file of your project.
@@ -53,17 +71,20 @@ time: 20
 [ACCORDION-BEGIN [Step ](Test the connected OData service)]
 
 1. Test the application by clicking on the run button.
-![Select service](./run-button.png)
+
+    ![Select service](./run-button.png)
+
 2. Click F12 open the development tools of your browser on Windows or `cmd + alt + i` on Mac.
 3. Select the **Network** tab and **filter** the network traffic for **`meta`** to find the request, which is sent to the destination. Click one the request to check the status code of this request. It should be 200 (OK).
-![Select service](./chrome-network.png)
+
+    ![Select service](./chrome-network.png)
 
 > In case this request fails, there has been a issue while creating the destination in the Neo environment. Please make go back to the previous tutorial to make sure the destination is set up correctly
 
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step ](Add a list to the view)]
-Replace the existing `<Page>` element with the following snippet to add an instance of `sap.m.List` to the `MainView.view.xml` file. You can find the file in the `webbapp > view` folder within your HTML5 project.
+Replace the existing `<Page>` element with the following snippet to add an instance of `sap.m.List` to the `MainView.view.xml` file. You can find the file in the `webapp > view` folder within your HTML5 project.
 
 ```xml
 <Page
@@ -90,6 +111,8 @@ This page will display all existing purchase orders in a list.
 
 
 [ACCORDION-BEGIN [Step ](Add the details page)]
+
+> Caution: The property `controllerName` (here `com.sapteched18.msgraph.PurchaseOrderApp.controller.MainView`) corresponds to your namespace and project name you have defined in the wizard in Step 1.6. So make sure they fit together. If you have chosen a different namespace and project as shown in the screenshot, please adjust your code accordingly.
 
 1. Replace the XML Declaration in the `MainView.view.xml` file with the following snippet to make use of more SAPUI5 libraries.
 ```xml
@@ -207,15 +230,23 @@ onNavButtonPress: function (oEvent) {
 [ACCORDION-BEGIN [Step ](Deploy to the Neo environment)]
 
 1. Now the application is ready to be deployed! Right click on the project and select the operation **Deploy** and the target **SAP Cloud Platform**.
-![deploy menu](./webidedeploy.png)
+
+    ![deploy menu](./webidedeploy.png)
+
 2. You can use the default parameter in the dialog and confirm with **Deploy**
-![deploy dialog](./webidedeploytoneo.png)
+
+    ![deploy dialog](./webidedeploytoneo.png)
+
 3. The deployment process will take a while. Once it's done, **Open the active version of the application**
-![deployed](./deployed.png)
+
+    ![deployed](./deployed.png)
+
 4. You should now be able to access your deployed application. Congrats!
-![running](./running.png)
+
+    ![running](./running.png)
 
 Insert the URL of your running web application below:
+
 
 [VALIDATE_7]
 [ACCORDION-END]

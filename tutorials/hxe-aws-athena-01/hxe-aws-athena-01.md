@@ -102,7 +102,30 @@ Click on **Create bucket**.
 
 ![Amazon Web Services](04-01.png)
 
-Enter a **Bucket name** like ***`sap-hana-athena-<my unique id>`*** replacing the ***<my unique id>*** by a unique identifier across all existing S3 buckets on AWS (this identifier must really be unique so pick your ***`athena`*** user ARN Id for example).
+Enter as **Bucket name** ***`sap-hana-athena-<my unique id>`*** where ***&lt;my unique id&gt;*** is a unique identifier across all existing S3 bucket on AWS.
+
+You can use the user ARN numerical identifier from the previous step as ***&lt;my unique id&gt;***.
+
+For the sake of simplicity, choose **US East (N. Virginia)** as the region.
+
+> #### **Note:**
+> Please note that in order to use your S3 bucket with Amazon Athena, they will need to be located in the same region. Here is the list of regions where Amazon Athena is available:
+>
+>  - Northern Virginia
+>  - Ohio
+>  - Oregon
+>  - Ireland
+>  - Frankfurt
+>  - London
+>  - Singapore
+>  - Tokyo
+>  - Sydney
+>  - Seoul
+>  - Mumbai
+>
+>You can find the region coverage for all AWS services [here](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services).
+>
+>It is also recommended for you to create your SAP HANA, express edition instance in the same region.
 
 Click on **Create**.
 
@@ -114,11 +137,11 @@ Click on the newly created bucket.
 
 Select **Permissions**, then **Bucket policy**.
 
-Paste the following code in the **Bucket Policy editor** after adjusting the **AWS Principal** using the User ARN saved previously:
+Paste the following code in the **Bucket Policy editor** after adjusting the **Sid** (the ***<my unique id>***  token) representing your S3 Bucket ARN along with the **AWS Principal** using the User ARN saved previously:
 
 ```json
 {
-    "Id": "sap-hana-athena",
+    "Id": "sap-hana-athena-<my unique id>",
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -134,18 +157,16 @@ Paste the following code in the **Bucket Policy editor** after adjusting the **A
             ],
             "Effect": "Allow",
             "Resource": [
-                "arn:aws:s3:::sap-hana-athena",
-                "arn:aws:s3:::sap-hana-athena/*"
+                "arn:aws:s3:::sap-hana-athena-<my unique id>",
+                "arn:aws:s3:::sap-hana-athena-<my unique id>/*"
             ],
             "Principal": {
-                "AWS": "arn:aws:iam::XXXXXXXXXXXXX:user/athena"
+                "AWS": "arn:aws:iam::<my unique id>:user/athena"
             }
         }
     ]
 }
 ```
-
-Adjust the ***<my unique id>***  token.
 
 Click on **Save**.
 
@@ -154,31 +175,4 @@ Click on **Save**.
 Provide an answer to the question below then click on **Validate**.
 
 [VALIDATE_2]
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 1: ](Launch an SAP HANA, express edition instance)]
-
-In order to complete this tutorial series, you need to use as a minimum version:
-
- - **SAP HANA, express edition 2.0 SPS03**
-
-SAP HANA, express edition which is available on the <a href="https://aws.amazon.com/marketplace" target="&#95;blank">AWS Marketplace</a> comes in two different flavors, a **database core server** and a **server + applications** flavor.
-
-During this series, you will mostly be running series of SQL statements.
-
-So technically, you can use the **SAP HANA, express edition**. but you will need to install a SQL Query tool on top.
-
-Therefore, in order to benefit from the SAP Web IDE, you could use the **SAP HANA, express edition (server + applications)**.
-
-Before starting to follow the next tutorial (named **Set up SAP HANA, express edition, on Amazon Web Services**), make sure that:
-
- - you use the **SAP HANA, express edition (server + applications)** AMI
- - you say *no* when prompted about waiting for XSA configuration completion
-
-Once completed, you should have access to your instance using:
-
-  - a SSH client like ***`PuTTY`***
-  - the SAP Web IDE from the following URL `https://hxehost:53075`
-
-[DONE]
 [ACCORDION-END]

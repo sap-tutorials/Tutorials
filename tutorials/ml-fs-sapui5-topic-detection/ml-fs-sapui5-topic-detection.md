@@ -1,5 +1,5 @@
 ---
-title: Topic Detection example with SAPUI5
+title: Topic Detection with SAPUI5
 description: Discover how to implement SAP Leonardo Machine Learning Foundation service in a SAPUI5 application
 auto_validation: true
 primary_tag: products>sap-leonardo-machine-learning-foundation

@@ -94,7 +94,7 @@ You now check the row count.
 Paste the following SQL statement then click on **Run query**:
 
 ```sql
-select count(1) from gdelt_athena.events
+select count(distinct year) from gdelt_athena.events
 ```
 
 Provide an answer to the question below then click on **Validate**.

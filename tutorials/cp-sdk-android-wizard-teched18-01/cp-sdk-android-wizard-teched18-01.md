@@ -9,9 +9,13 @@ time: 15
 
 ## Details
 ### You will learn  
-  - How to create an Android app using the Android Studio integrated SAP wizard
+  - How to create an Android app using the Android Studio integrated SAP Wizard
 
 ---
+
+**THIS TUTORIAL SERIES CAN ONLY BE EXECUTED AT TECHED**  as it is. Please find us at the Google booth in the `AppSpace` and we will provide everything you will need.
+
+
 
 [ACCORDION-BEGIN [Step 1: ](Set up development tools)]
 
@@ -54,7 +58,6 @@ Choose **Start a new SAP Cloud Platform Android project**.
 
 
 The wizard can save the server connection details for multiple servers. A preconfigured account has been provided.
-Click **Next** on the **Server Connection** tab.
 
 ![Server connection](server-connection.png)
 
@@ -69,19 +72,18 @@ Click **Next** on the **Server Connection** tab.
 | Password | `SCP!2pwd` |
 
 On the **Cloud Configuration** tab, select **Use Existing** and set the Application ID to **`com.sap.wizapp`**.
-Click **Next** to configure the OData services.
 
 ![Cloud configuration](cloud-configuration.png)
 
-The application configuration has already been created and has added multiple features of the SAP Cloud Platform Mobile Services. The configuration can be viewed by clicking the **Go to cockpit** link in the bottom left of the wizard page.
+The application configuration page for the `com.sap.wizapp` is shown below that is referenced from the above screen of the wizard.  It has already been created and has added multiple features of the SAP Cloud Platform Mobile Services.
 
 ![App features](appFeatures.png)
 
 The SAP Cloud Platform Mobile Services provides a sample backend destination named `com.sap.edm.sampleservice.v2` that is being used here to provide data for the application. It contains product categories, product, supplier, customer and sales order data.
 
-Click **Next**.
 
 ![OData services](odata-services.png)
+
 
 On the **Project Configuration** tab, provide the following configuration data:
 
@@ -89,14 +91,13 @@ On the **Project Configuration** tab, provide the following configuration data:
 |:----|:----|
 | Project Name | `Wiz App` |
 | Project Namespace | `com.sap.wizapp` |
-| Project Configuration | `C:\AndroidStudioProjects\WizApp` |
-| Password | Password for your trial account user |
+| Project Location | `C:\AndroidStudioProjects\WizApp` |
+| Use Discovery Service for Application bootstrapping | uncheck |
+| Generate Master-Detail Application | check |
+| Enable Logging | check |
+| Enable Upload | check |
+| Enable Push | check and browse to `C:\AndroidStudioProjects\google-services.json` |
 
-Uncheck **Use Discovery Service for Application bootstrapping**, check the **Enable Logging** and **Enable Upload** checkboxes to enable the log level to be set by the user and have the ability to upload the log to the server. Also check the **Enable Push** checkbox to enable push notification support in the app.
-
-Now you have to browse for `google-services.json` at path `C:\AndroidStudioProjects\`. This will enable the app to work with Google Firebase notifications.
-
-Click **Finish**
 
 ![Project configuration](project-configuration.png)
 
@@ -147,6 +148,8 @@ Tap on `Products` to reach the below list screen.
 Tap on a list item to show an editable detail screen.
 
 ![Category detail](product-detail.png)
+
+Congratulations!  You have created your first Android app using the SAP Cloud Platform SDK for Android!
 
 [VALIDATE_1]
 [ACCORDION-END]

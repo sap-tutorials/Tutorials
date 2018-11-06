@@ -1,5 +1,5 @@
 ---
-title: Secure your application with XSUAA
+title: Secure your application with XSUAA (Forecast App)
 description: Understand and implement the basics of XSUAA to secure your application
 auto_validation: true
 primary_tag: topic>machine-learning

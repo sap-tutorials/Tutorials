@@ -1,18 +1,13 @@
 ---
-title: Set up SAP Data Hub, trial edition
+title: Set up SAP Data Hub 1.4, trial edition
 description: Create a solution instance of SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
-
-## Next Steps
- - [Navigate around SAP Data Hub, trial edition](https://www.sap.com/developer/tutorials/datahub-trial-navigation.html)
-
 ## Details
+**This tutorial is obsolete and will be removed shortly (mid-November 2018).**
 ### You will learn  
 During this tutorial, you will learn how to create a solution instance of SAP Data Hub, trial edition. SAP Data Hub, trial edition is provisioned via SAP Cloud Appliance Library. It runs in your account on Google Cloud Platform.
 
@@ -85,4 +80,3 @@ Afterwards upload the following three files to Google Cloud Storage. Some of the
 [ACCORDION-END]
 
 ---
-

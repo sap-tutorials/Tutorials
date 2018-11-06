@@ -31,7 +31,7 @@ Before you start, make sure you:
 
 This step provides simplified steps to configure the SAP Cloud Platform SDK for iOS Assistant application using the SAP Cloud Platform Mobile Services cockpit.
 
-Log on to your SAP Cloud Platform trial account at [https://account.hanatrial.ondemand.com/](https://account.hanatrial.ondemand.com/) and once logged in, navigate to **Services**. Scroll down to **Mobile Services** and click on the **Development & Operations** tile. In the **Development & Operations - Overview** page, click the **Go to Service** link to open a new window to **SAP Cloud Platform Mobile Services**.
+Log on to your SAP Cloud Platform trial account at [https://account.hanatrial.ondemand.com/](https://account.hanatrial.ondemand.com/) and once logged in choose **Neo Trial** as your target landscape. Click on **Services** on the left side to see all available Services. Scroll down to **Mobile Services, std**, click on the tile. After the Service page loaded click the **Enable** button to enable this service. After the Service is enabled click the **Go to Service** link to open a new window to **SAP Cloud Platform Mobile Services**.
 
 > Alternatively, you can go directly to `https://hcpmsadmin-<your_user_id>trial.dispatcher.hanatrial.ondemand.com/`
 
@@ -66,6 +66,8 @@ Click **Save** when finished. The account is now added to the SDK Assistant:
 
 ![Import URLs](fiori-ios-scpms-create-app-teched18-part1-06.png)
 
+Click **Back** to return to the main screen for the **SAP Cloud Platform SDK for iOS Assistant**.
+
 [DONE]
 [ACCORDION-END]
 
@@ -85,16 +87,16 @@ Double-click the **SAP Cloud Platform SDK for iOS Assistant** icon to start the 
 
 [ACCORDION-BEGIN [Step 3: ](Create a new application)]
 
-Click the **Create new** button in the **First Steps** section. The first page of the Xcode project generation wizard lets you define the project properties.
+Click the **Create new** button in the **First Steps** section. The first step of the Xcode project generation workflow lets you define the project properties.
 
 ![Project Properties](fiori-ios-scpms-create-app-teched18-part1-08a.png)
 
-Click the **Create new Application** tile on the right site of the **Create a new App** page. This will allow us to setup our application project the most flexible way.
+Click the **Create new Application** tile on the right side of the **Create a new App** step. This will allow us to setup our application project the most flexible way.
 
 Next select your **SAP Cloud Platform Mobile Services account** and click **Next**.
 ![Project Properties](fiori-ios-scpms-create-app-teched18-part1-08c.png)
 
-In the **Add an SAP Cloud Platform Mobile Services application** page, add the needed application details to create an application in your mobile services account.
+In the **Add an SAP Cloud Platform Mobile Services application** step, add the needed application details to create an application in your mobile services account.
 
 Enter the following details:
 
@@ -113,7 +115,7 @@ Click **Next** to advance to the **Destinations** step.
 
 [ACCORDION-BEGIN [Step 4: ](Create a new destination)]
 
-In the **Destinations** page, you can define the backend connection. Here you will add the OData endpoint for the `DeliveryService` OData service.
+In the **Destinations** step, you can define the backend connection. Here you will add the OData endpoint for the `DeliveryService` OData service.
 
 ![Destinations](fiori-ios-scpms-create-app-teched18-part1-10.png)
 
@@ -145,7 +147,7 @@ Click **Next** to advance to the **Features** step.
 
 [ACCORDION-BEGIN [Step 5: ](Enable features)]
 
-In the **Optional Features** page, you have the option to generate a **Master-Detail Application**, enable **logging** and **log uploads**, enable **remote notifications**, use **Discovery Service** and whether to use **Online** or **Offline** OData.
+In the **Optional Features** step, you have the option to enable **logging** and **log uploads**, enable **remote notifications**, use **Discovery Service** and whether to use **Online** or **Offline** OData.
 
 ![Features](fiori-ios-scpms-create-app-teched18-part1-14.png)
 
@@ -156,7 +158,7 @@ Make sure the checkboxes **Enable Log Upload**, **Enable Remote Notifications** 
 
 [ACCORDION-BEGIN [Step 6: ](Set up Xcode Project)]
 
-In the **Xcode Project configuration** page you will setup your actual Xcode project for development later on.
+In the **Xcode Project configuration** step you will setup your actual Xcode project for development later on.
 Enter the following details:
 
 | Field | Value |
@@ -186,7 +188,7 @@ Based on this metadata, the OData proxy classes will be generated for the Xcode 
 
 In addition, the configuration settings you have provided in the SDK Assistant are now being sent to SAP Cloud Platform Mobile Services.
 
-> **NB:** If you have already 5 native applications defined in SAP Cloud Platform Mobile Services, the SDK Assistant will give the following error:
+> **Note:** If you have already 5 native applications defined in SAP Cloud Platform Mobile Services, the SDK Assistant will give the following error:
 
 > ![Optional Features](fiori-ios-scpms-create-app-teched18-part1-16.png)
 
@@ -197,21 +199,23 @@ In addition, the configuration settings you have provided in the SDK Assistant a
 
 [ACCORDION-BEGIN [Step 8: ](Examine the generated Xcode project)]
 
-You can now select the `MyDeliveries` application project under **Recent Projects** in you SDK Assistant.
+You can now select the `MyDeliveries` application project under **Recent Projects** in the SDK Assistant.
 
 ![Xcode project overview](fiori-ios-scpms-create-app-teched18-part1-17.png)
 
-Next hover over the project name and click the down pointing arrow to see **Open** from the appearing menu. Click **Open** to open the Xcode application project.
+> If Xcode does not open automatically to show your project, click on the project name in the SDK Assistant and click **Open**.
+
+In Xcode, the left-hand sidebar of the window shows various Navigators for exploring your project, source control, debugging, and so on. If it's not already selected, select the **Project Navigator** by clicking on the folder icon above the left-hand sidebar. This shows all of the files in the project.
 
 ![Xcode project overview](fiori-ios-scpms-create-app-teched18-part1-17a.png)
 
-The `Main.storyboard` shows a split-view setup for the generated Master-Detail views.
+The `Main.storyboard` file shows a split-view setup for the generated Master-Detail views.
 
-Folder `MyDeliveries/Onboarding` contains logic for the user onboarding, authentication and handling of `passcodes` and Touch ID.
+The `MyDeliveries/Onboarding` folder contains logic for the user onboarding, authentication and handling of `passcodes` and Touch ID.
 
-Folder `MyDeliveries/Proxy Classes` contains the OData proxy classes generated from the OData service. File `DeliveryService.swift` in the `Proxy Classes/public` folder acts as a data service provider to gain access to the OData entities. The two files `PackagesType.swift` and `DeliveryStatusType.swift` are classes for the OData entities `Packages` and `DeliveryStatus`, respectively. These classes give access to the various properties of the OData entities.
+The `MyDeliveries/Proxy Classes` folder contains the OData proxy classes generated from the OData service. The `DeliveryService.swift` file in the `Proxy Classes/public` folder acts as a data service provider to gain access to the OData entities. The two files `PackagesType.swift` and `DeliveryStatusType.swift` are classes for the OData entities `Packages` and `DeliveryStatus`, respectively. These classes give access to the various properties of the OData entities.
 
-Folders `ViewControllers/PackagesType` and `ViewControllers/DeliveryStatusType` contain the master and detail view controllers as well as a storyboard for the `Packages` and `DeliveryStatus` entities, respectively.
+The `ViewControllers/PackagesType` and `ViewControllers/DeliveryStatusType` folders contain the master and detail view controllers as well as a storyboard for the `Packages` and `DeliveryStatus` entities, respectively.
 
 [VALIDATE_1]
 [ACCORDION-END]

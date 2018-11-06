@@ -3,7 +3,7 @@ title: Create a Smart Business KPI from an Analytical Query
 description: Create a KPI to analyze a specific key figure (e.g., cost per employee) and display this on the SAP Fiori launchpad.
 auto_validation: true
 primary_tag: topic>abap-development
-tags: [  tutorial>intermediate, topic>abap-development, products>sap-s-4hana ]
+tags: [  tutorial>intermediate, topic>abap-development, products>sap-s-4hana  ]
 time: 30
 ---
 
@@ -20,34 +20,34 @@ First you need to log into the SAP Fiori launchpad.
 
 1. Open the Windows Start Menu and search for **Remote Desktop Connection** and start the Desktop app
 
-   ![Fiori Launchpad login preparation](kut_smbkpi_01_01_01.png)
+    ![Fiori Launchpad login preparation](kut_smbkpi_01_01_01.png)
 
 2. In the **Remote Desktop Connection** maintain the field Computer with the alias `techedappspace` and click on the **Connect** button.
 
-   ![Fiori Launchpad login preparation1](kut_smbkpi_01_01_02.png)
+    ![Fiori Launchpad login preparation1](kut_smbkpi_01_01_02.png)
 
 3. The Windows Security screen opens. On the Security screen click on the field labeled with **More choices**.
 
-   ![Fiori Launchpad login preparation2](kut_smbkpi_01_01_03.png)
-
+    ![Fiori Launchpad login preparation2](kut_smbkpi_01_01_03.png)
 
 4. On the Security windows select **Use a different account** and maintain the fields as follow:
 
-> Please be aware that you should replace **xx** with your desktop number.
+    > Please be aware that you should replace **xx** with your desktop number.
 
-|  Field Name                | Value
-|  :-------------------------| :-------------
-|  User Name                 | `.\train-xx`
-|  Password                  | `The password will be given to you by your instructor`
-afterwards click on the **OK** button.
+    |  Field Name                | Value
+    |  :-------------------------| :-------------
+    |  User Name                 | `.\train-xx`
+    |  Password                  | `The password will be given to you by your instructor`
 
-   ![Fiori Launchpad login continue1 ](kut_smbkpi_01_01_04.png)  
+    Afterwards click on the **OK** button.
+
+    ![Fiori Launchpad login continue1 ](kut_smbkpi_01_01_04.png)  
 
 5. You are now redirected to the SAP FIORI Launchpad.
 
-   You should see this page:
+    You should see this page:
 
-  ![Fiori Launchpad login continue](kut_smbkpi_01_02.png)
+    ![Fiori Launchpad login continue](kut_smbkpi_01_02.png)
 
 6. Login now with your user and password
 
@@ -70,7 +70,8 @@ In the Fiori Launchpad, from the group KPI Design select the App KPI Workspace a
 [ACCORDION-BEGIN [Step 3: ](Get started with KPI Creation)]
 
 1. After you have successfully executed the App KPI Workspace, the below window gets open.
-![Apps on the Fiori Launchpad](kut_smbkpi_03.png)
+
+    ![Apps on the Fiori Launchpad](kut_smbkpi_03.png)
 
 2. In the KPI Workplace window, click on the + Add on the bottom left toolbar to create a KPI as depicted below:
 
@@ -273,5 +274,3 @@ as it is shown on the similar picture below.
 
 [DONE]
 [ACCORDION-END]
-
-## Next Steps

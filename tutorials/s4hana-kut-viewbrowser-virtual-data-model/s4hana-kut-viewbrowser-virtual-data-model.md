@@ -18,34 +18,34 @@ First you need to log into the SAP Fiori launchpad.
 
 1. Open the Windows Start Menu and search for **Remote Desktop Connection** and start the Desktop app
 
-   ![Fiori Launchpad login preparation](kut_search_01_01_01.png)
+    ![Fiori Launchpad login preparation](kut_search_01_01_01.png)
 
 2. In the **Remote Desktop Connection** maintain the field Computer with the alias `techedappspace` and click on the **Connect** button.
 
-   ![Fiori Launchpad login preparation1](kut_search_01_01_02.png)
+    ![Fiori Launchpad login preparation1](kut_search_01_01_02.png)
 
 3. The Windows Security screen opens. On the Security screen click on the field labeled with **More choices**.
 
-   ![Fiori Launchpad login preparation2](kut_search_01_01_03.png)
-
+    ![Fiori Launchpad login preparation2](kut_search_01_01_03.png)
 
 4. On the Security screen select **Use a different account** and maintain the fields as follow:
 
-> Please be aware that you should replace **xx** with your desktop number.
+    > Please be aware that you should replace **xx** with your desktop number.
 
-|  Field Name                | Value
-|  :-------------------------| :-------------
-|  User Name                 | `.\train-xx`
-|  Password                  | `The password will be given to you by your instructor`
-afterwards click on the **OK** button.
+    |  Field Name                | Value
+    |  :-------------------------| :-------------
+    |  User Name                 | `.\train-xx`
+    |  Password                  | `The password will be given to you by your instructor`
 
-   ![Fiori Launchpad login continue1 ](kut_search_01_01_04.png)  
+    Afterwards, click **OK**.
+
+    ![Fiori Launchpad login continue1 ](kut_search_01_01_04.png)  
 
 5. You are now redirected to the SAP FIORI Launchpad.
 
-   You should see this page:
+    You should see this page:
 
-   ![Fiori Launchpad login continue](kut_search_01_02.png)
+    ![Fiori Launchpad login continue](kut_search_01_02.png)
 
 6. Login now with your user and password
 
@@ -80,7 +80,7 @@ After you have successfully executed the App View Browser, the below window gets
 
     ![View selection](kut_search_09.png)
 
-2. In the **View Details** window, you have the choice between several tabs (**Definition**, **Annotation**, **Cross Reference**) on which you can view details of the considered view for analysis purposes. For example, on **Definition**, you can see the available fields as well as their data elements, descriptions, data types, and lengths.
+2. In the **View Details** window, you have (**test**) the choice between several tabs (**Definition**, **Annotation**, **Cross Reference**) on which you can view details of the considered view for analysis purposes. For example, on **Definition**, you can see the available fields as well as their data elements, descriptions, data types, and lengths.
 
     ![View details displayed](kut_search_10.png)
 
@@ -106,9 +106,9 @@ After you have successfully executed the App View Browser, the below window gets
     |  Fiscal Year               | `2018`
     |  Controlling Area          | `A000`
 
-Afterward click on the OK button to start the display of the content of the selected View.
+    Afterward click on the OK button to start the display of the content of the selected View.
 
-![Apps on the Fiori Launchpad](kut_search_06.png)
+    ![Apps on the Fiori Launchpad](kut_search_06.png)
 
 [VALIDATE_2]
 [ACCORDION-END]

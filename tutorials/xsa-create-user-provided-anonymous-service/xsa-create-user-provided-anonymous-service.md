@@ -91,7 +91,7 @@ INSERT INTO "PLAIN"."PRODUCT_SEGMENT" VALUES ('HT-1004','A');
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3A: ](SPS03 - Create a User-Provided service using a wizard)]
+[ACCORDION-BEGIN [Step 3: ](SPS03 - Create a User-Provided service using a wizard)]
 
 If you are using SAP HANA, express edition SPS03, the process has been simplified and you can now execute a wizard that will complete many of the steps required to access a plain schema from your database module.
 
@@ -113,7 +113,7 @@ Click **Finish**.
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 3B: ](SPS02 or lower - Create a User-Provided service using the XS CLI)]
+[ACCORDION-BEGIN [Step 4: ](SPS02 or lower - Create a User-Provided service using the XS CLI)]
 
 Open a command line to execute a command with the XS client. You will now create a user-provided service called `CROSS_SCHEMA_LOCATIONS` to allow other modules to access the new schema.
 
@@ -150,7 +150,7 @@ And execute it in a console:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Check or modify the MTA.yaml file)]
+[ACCORDION-BEGIN [Step 5: ](Check or modify the MTA.yaml file)]
 
 If you are using SPS03, the entry should have been automatically added into the `MTA.yaml` file, you will only need to adjust the name of the service.
 
@@ -201,7 +201,7 @@ resources:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 8: ](Grant privileges to the schema)]
+[ACCORDION-BEGIN [Step 6: ](Grant privileges to the schema)]
 
 Create a file called `cfg/plain.hdbgrants` in the `db` module. This will create both the folder if it does not exist and the file.
 
@@ -244,7 +244,7 @@ Add the following code:
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 9: ](Add a synonym)]
+[ACCORDION-BEGIN [Step 7: ](Add a synonym)]
 
 In the `src` folder, add a file called `synonyms/plain.hdbsynonym`. Add an entry called `PRODUCT_SEGMENT` and use the search button to add the PLAIN schema form the user-provided service.
 
@@ -255,11 +255,13 @@ Check the user-provided service and look for `PRODUCT_SEGMENTS`. Double-click on
 ![Synonym](syn.png)
 
 **Save** the file.
+
+
 [DONE]
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 10: ](Create a CDS file)]
+[ACCORDION-BEGIN [Step 8: ](Create a CDS file)]
 
 Create a new HDB CDS artifact called `segments.hdbcds` under `db/src/data`. Use the code editor to paste the following code:
 

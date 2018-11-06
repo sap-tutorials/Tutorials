@@ -1,16 +1,13 @@
 ---
-title: Navigate around SAP Data Hub, trial edition
+title: Navigate around SAP Data Hub 1.4, trial edition
 description: Find your way around SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - You have completed [Set up SAP Data Hub, trial edition](https://www.sap.com/developer/tutorials/datahub-trial-setup.html).
-
 ## Details
+**This tutorial is obsolete and will be removed shortly (mid-November 2018).**
 ### You will learn  
 During this tutorial, you will learn how to find your way around SAP Data Hub, trial edition. You will also learn how to troubleshoot problems.
 

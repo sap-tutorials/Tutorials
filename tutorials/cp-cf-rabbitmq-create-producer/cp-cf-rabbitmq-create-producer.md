@@ -127,8 +127,7 @@ Copy the following values to the Postman form to send an HTTP request to your lo
 | 5 - Content-Type  | **`JSON(application/json)`**  |
 | 6 - Payload  | `{"msg": "Hello SAP Cloud Platform"}` |
 
-
- ![sendmessage](./postman-send-message.png)
+![sendmessage](./postman-send-message.png)
 
 The response of this message should be a status 201 message.
 
@@ -137,7 +136,7 @@ The response of this message should be a status 201 message.
 [ACCORDION-BEGIN [Step 6: ](Deploy your producer application to SAP Cloud Platform)]
 In order to push the application to Cloud Foundry, you need to specify the deployment information in a `manifest.yml` file in the root folder.
 ```yml
- ---
+---
 applications:
 - name: producer
   random-route: true
@@ -156,6 +155,7 @@ services:
 This file contains all the deployment information, which are required by the Cloud Foundry environment.
 
 The command `cf push` reads this manifest file and deploys the application to SAP Cloud Platform. You should see the URL in the console output when the deployment has completed.
+
 ![deployed](pushed.png)
 
 Please copy and paste the URL of your newly deployed service into Postman to test the service.
@@ -167,6 +167,7 @@ Please copy and paste the URL of your newly deployed service into Postman to tes
 [ACCORDION-BEGIN [Step 7: ](Troubleshooting)]
 
 **Problem**: I see the following error message when I execute `cf push`: "Server error, status code: 400, error code: 210003, message: The host is taken"
+
 **Solution**: This means this application name is already use in the current Cloud Foundry environment (probably by another user). Please change the property `name` in the `manifest.yml` file
 
 [DONE]

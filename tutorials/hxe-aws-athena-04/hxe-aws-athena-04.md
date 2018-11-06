@@ -12,11 +12,28 @@ time: 10
 ### You will learn  
   - How to install and configure the Simba ODBC driver for Amazon Athena
 
+[ACCORDION-BEGIN [Step 1: ](Switch to the ec2-user user)]
+
+Connect to your SAP HANA, express edition instance using an SSH client as the **`ec2-user`** user.
+
+The prompt should be:
+
+```
+ec2-user@hxehost:~>
+```
+
+If you are using an existing session and the prompt is **```hxeadm@hxehost:~>```** , then run the **exit** command to return to **`ec2-user`**.
+
+Make sure the prompt is **```ec2-user@hxehost:~>```** before moving to the next step.
+
+[DONE]
+[ACCORDION-END]
+
 [ACCORDION-BEGIN [Step 1: ](Install unixODBC)]
 
 Before installing the Simba ODBC Driver for Amazon Athena, you will need to install **`unixODBC`**, an ODBC driver manager for Linux platforms.
 
-Connect to your SAP HANA, express edition using an SSH client as **`ec2-user`** and  execute the following command:
+Execute the following command:
 
 ```shell
 sudo zypper install -y unixODBC
@@ -75,7 +92,7 @@ odbcinst: Driver installed. Usage count increased to 1.
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Switch user)]
+[ACCORDION-BEGIN [Step 1: ](Switch to the hxeadm user)]
 
 As the ODBC connection will be initialized by the SAP HANA, express edition process, it is important to configure the ODBC DSN as the ***`hxeadm`*** user.
 
@@ -84,8 +101,20 @@ Form your SSH session, execute the following command:
 ```shell
 sudo su - hxeadm
 ```
+The prompt should be:
 
-Then execute the following command to validate that ***`unixODBC`*** is properly configured for the ***`hxeadm`*** user:
+```
+hxeadm@hxehost:~>
+```
+
+Make sure the prompt is **```hxeadm@hxehost:~>```** before moving to the next step.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 1: ](Check the driver installation)]
+
+Execute the following command to validate that ***`unixODBC`*** is properly configured for the ***`hxeadm`*** user:
 
 ```shell
 odbcinst -j
@@ -115,8 +144,12 @@ cd ~
 mkdir ~/.aws
 vi ~/.aws/credentials
 ```
+> ### **Note**: Below are a few useful **`vi`** keyboard combinations:
+> - Enable the insert mode : **ESC** then **I**
+> - Paste the clipboard content : **CTRL+SHIFT+V**
+> - Exit and save `vi`: **ESC** then **`:wq!`**
 
-Insert the following content then save and exit ***`vi`***:
+Adjust the **Access key ID** and **Secret access key** in a local notepad before inserting then save and exit in the ***`vi`*** session:
 
 ```property
 [default]
@@ -125,11 +158,6 @@ aws_secret_access_key=<< replace with the athena user secret access key >>
 ```
 
 Make sure to update the **Access key ID** and **Secret access key**.
-
-> ### **Note**: You can paste content in **`vi`** using the following keyboard combination:
-> - Enable the insert mode : **ESC** then **I**
-> - Paste the clipboard content : **CTRL+SHIFT+V**
-> - Exit `vi`: **ESC** then **`:wq!`**
 
 [DONE]
 [ACCORDION-END]
@@ -145,8 +173,12 @@ Form your SSH session, execute the following command:
 ```shell
 vi ~/.odbc.ini
 ```
+> ### **Note**: Below are a few useful **`vi`** keyboard combinations:
+> - Enable the insert mode : **ESC** then **I**
+> - Paste the clipboard content : **CTRL+SHIFT+V**
+> - Exit and save `vi`: **ESC** then **`:wq!`**
 
-Insert the following content then save and exit ***`vi`***:
+Adjust the **`AwsRegion`** and the **`S3OutputLocation`** properties based on your current environment in a local notepad before inserting then save and exit in the ***`vi`*** session:
 
 ```property
 [ODBC]
@@ -161,12 +193,10 @@ Driver=/opt/simba/athenaodbc/lib/64/libathenaodbc_sb64.so
 
 AwsRegion=us-east-1
 Schema=default
-S3OutputLocation=s3://sap-hana-athena/
+S3OutputLocation=s3://sap-hana-athena-<my unique id>/
 
 AuthenticationType=Default Credentials
 ```
-
-Make sure to update the **`AwsRegion`** and the **`S3OutputLocation`** (if you used a different S3 bucket name for example).
 
 [DONE]
 [ACCORDION-END]
@@ -182,7 +212,7 @@ isql AWSAthena
 You can now run the following SQL statement:
 
 ```sql
-select distinct year from gdelt_athena.events
+select count(distinct year) from gdelt_athena.events
 ```
 Provide an answer to the question below then click on **Validate**.
 

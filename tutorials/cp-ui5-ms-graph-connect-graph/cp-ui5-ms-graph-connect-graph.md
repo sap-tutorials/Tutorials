@@ -28,9 +28,21 @@ Replace `Your App name goes here` with an application name of your choice and pr
 
 ![portal app name](./ms-portal-app-name.png)
 
-You are now forwarded to the configuration of your application. Navigate to the **Platforms** sections and add the URL of your SAPUI5 application. You can also add `localhost:8000` in case you wish to test the application locally as well.
+ Navigate to the **Platforms** sections and click on **Add Platform**.
+
+![portal-app-platform-details](./ms_portal_add_platform.png)
+
+Select **Web** in order to configure a new application.
+
+![portal-web-platform-details](./ms_portal_web_platform.png)
+
+You are now forwarded to the configuration of your application. Add the URL of your SAPUI5 application you have deployed in the previous tutorial.
 
 ![portal-app-platform-details](./ms-portal-callbacks.png)
+
+> You can also add `localhost:8000` as an additional Redirect URL in case you wish to test the application locally as well.
+
+
 To enable your application to search for emails navigate to `Microsoft Graph Permissions`, click on **Add** and select the **`Mail.read`** permission.
 
 ![portal app name](./ms-portal-add-permission.png)
@@ -45,7 +57,7 @@ Save the changes and scroll to the top to save app id in your clipboard or a new
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step](Create Microsoft Graph config file)]
 
-Create a new folder named **`msal`** in the `webapp` folder and add a file named **`msalconfig.js`** with the following content to this folder:
+Navigate to back to your SAP Web IDE and create a new folder named **`msal`** in the `webapp` folder and add a file named **`msalconfig.js`** with the following content to this folder:
 
 ```javascript
 /* eslint-disable sap-no-global-define */
@@ -72,6 +84,7 @@ This file contains constants you need later in this tutorial.
 
 [ACCORDION-BEGIN [Step](Load Microsoft Authentication Library)]
 
+Copy the following two lines of code right below the first `script-tag` in the `index.html` file.
 
 ```html
 <script src="https://secure.aadcdn.microsoftonline-p.com/lib/0.2.3/js/msal.min.js"></script>
@@ -84,7 +97,7 @@ This file contains constants you need later in this tutorial.
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step ](Initialize the MSAL client)]
 
-1. Replace the definition header of the `MainView.controller.js` with this code to suppress warning in the SAP Web IDE and to inject more SAPUI5 controls via dependency injection.
+1. Replace the `sap.ui.define` function header (usually the first three lines above the `"use strict"` [directive](https://www.w3schools.com/js/js_strict.asp)) of the `MainView.controller.js` with this code to suppress warning in the SAP Web IDE and to inject more SAPUI5 controls via dependency injection.
 
     ```javascript
     /* global msalconfig, Msal */
@@ -92,38 +105,39 @@ This file contains constants you need later in this tutorial.
       function (Controller, MessageToast, JSONModel){
     ```
 
-2. The `onInit` hook initializes the connection to the Microsoft Graph API once the controller is initialized. Add this hook above the first function in the controller:
-```javascript
-onInit: function () {
-  this.oUserAgentApplication = new Msal.UserAgentApplication(msalconfig.clientID, null,
-    function (errorDesc, token, error, tokenType) {
-      if (errorDesc) {
-        var formattedError = JSON.stringify(error, null, 4);
-        if (formattedError.length < 3) {
-          formattedError = error;
-        }
-        MessageToast.show("Error, please check the $.sap.log for details");
-        $.sap.log.error(error);
-        $.sap.log.error(errorDesc);
-      } else {
-        this.fetchUserInfo();
+2. The `onInit` hook initializes the connection to the Microsoft Graph API once the controller is initialized. Add this hook right before the `onClickPO` function in the controller:
+
+    ```javascript
+    onInit: function () {
+      this.oUserAgentApplication = new Msal.UserAgentApplication(msalconfig.clientID, null,
+        function (errorDesc, token, error, tokenType) {
+          if (errorDesc) {
+            var formattedError = JSON.stringify(error, null, 4);
+            if (formattedError.length < 3) {
+              formattedError = error;
+            }
+            MessageToast.show("Error, please check the $.sap.log for details");
+            $.sap.log.error(error);
+            $.sap.log.error(errorDesc);
+          } else {
+            this.fetchUserInfo();
+          }
+        }.bind(this), {
+          redirectUri: msalconfig.redirectUri
+        });
+      //Previous version of msal uses redirect url via a property
+      if (this.oUserAgentApplication.redirectUri) {
+        this.oUserAgentApplication.redirectUri = msalconfig.redirectUri;
       }
-    }.bind(this), {
-      redirectUri: msalconfig.redirectUri
-    });
-  //Previous version of msal uses redirect url via a property
-  if (this.oUserAgentApplication.redirectUri) {
-    this.oUserAgentApplication.redirectUri = msalconfig.redirectUri;
-  }
-  // If page is refreshed, continue to display user info
-  if (!this.oUserAgentApplication.isCallback(window.location.hash) && window.parent === window && !window.opener) {
-    var user = this.oUserAgentApplication.getUser();
-    if (user) {
-      this.fetchUserInfo();
-    }
-  }
-},
-```
+      // If page is refreshed, continue to display user info
+      if (!this.oUserAgentApplication.isCallback(window.location.hash) && window.parent === window && !window.opener) {
+        var user = this.oUserAgentApplication.getUser();
+        if (user) {
+          this.fetchUserInfo();
+        }
+      }
+    },
+    ```
 
 [VALIDATE_4]
 [ACCORDION-END]
@@ -142,11 +156,16 @@ Add a new button to the header of the first page in the `MainView.view.xml` file
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step ](Add a session model)]
 1. This previous step used a model named `session`. Open the `manifest.json` file and make sure you use the **Descriptor Editor** to declare the **`session`** model.
-![openmanifest](./openmanifest.png)
+
+    ![openmanifest](./openmanifest.png)
+
 2. Open the tab **Models** and click the plus button.
-![addmodel](./addmodel.png)
+
+    ![addmodel](./addmodel.png)
+
 3. Name the model **`session`** and make sure it's type is **`JSON`**.
-![modeldialog](./modeldialog.png)
+
+    ![modeldialog](./modeldialog.png)
 
 
 [VALIDATE_6]
@@ -350,11 +369,12 @@ onOpenEmail: function (oEvent) {
 [ACCORDION-BEGIN [Step](Re-deploy the application)]
 Deploy the latest version of the application to the SAP Cloud Platform Neo environment. Right click on the project and select the **Deploy**  operation and **SAP Cloud Platform** as the target. You can confirm the default values with the **Deploy** button.
 
-Now you are able to click on a property on the details page to search for this term. You will be redirected to the search results page, which will preview the found mails. Click on the subject of an email to open it in the `outlook.com` web application.
+Now you are able to click on a property on the details page to search for this term in your mail account. You will be redirected to the search results page, which will preview the found mails. Click on the subject of an email to open it in the `outlook.com` web application.
 
 ![redeployed application](./redeploy.png)
 
 > **IMPORTANT:** Please make sure that there are mails in your outlook account (any folder is fine) which match the keywords you might search for. Otherwise your search request will return an empty result set.
+
 
 [VALIDATE_12]
 [ACCORDION-END]

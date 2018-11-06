@@ -1,6 +1,6 @@
 ---
 title: Explore the Generated App and OData Service
-description: Build, run and examine the generated application to understand the OData service in detail.
+description: Build, run and examine the generated application to understand the OData service in detail. 
 auto_validation: true
 primary_tag: products>sap-cloud-platform-sdk-for-ios
 tags: [  tutorial>beginner, operating-system>ios, topic>mobile, topic>odata, products>sap-cloud-platform, products>sap-cloud-platform-sdk-for-ios ]
@@ -24,11 +24,11 @@ Click the **Run** button to build and run the generated application:
 
 ![Build and run](fiori-ios-scpms-create-app-teched18-part2-18.png)
 
-The **Simulator** app now launches. If you have configured the app to allow for push notifications, you will get the following pop-up:
+The **Simulator** app now launches. If you have configured the app to allow for push notifications, you will get the following alert dialogue:
 
 ![Build and run](fiori-ios-scpms-create-app-teched18-part2-19.png)
 
-Press **Allow**. You now see the initial landing page:
+Press **Allow**. You now see the initial view:
 
 ![Build and run](fiori-ios-scpms-create-app-teched18-part2-20.png)
 
@@ -36,7 +36,7 @@ The application name is shown, with a description. You have the option to show a
 
 In this tutorial, you use the live application. Tap the blue **Start** button to proceed.
 
-The **OAuth** login screen of **SAP Cloud Platform mobile service for development and operations** is shown. Enter your login credentials for the SAP Cloud Platform and tap the **Log On** button:
+The **OAuth** login screen of **SAP Cloud Platform Mobile Services** is shown. Enter your login credentials for the SAP Cloud Platform and tap the **Log On** button:
 
 ![Build and run](fiori-ios-scpms-create-app-teched18-part2-21.png)
 
@@ -44,7 +44,7 @@ The app now displays the initial **Data Privacy** acknowledgement page. Tap **Al
 
 ![Build and run](fiori-ios-scpms-create-app-teched18-part2-61.png)
 
-The app now proceeds with a 3-step wizard. First, you will see the **Data Privacy** detail page. Tap **Next** to proceed to the next step.
+The app now proceeds with a 3-step process. First, you will see the **Data Privacy** detail page. Tap **Next** to proceed to the next step.
 
 ![Build and run](fiori-ios-scpms-create-app-teched18-part2-62.png)
 
@@ -89,6 +89,10 @@ The OData service structure, and how the two entities are related, are explained
 [ACCORDION-BEGIN [Step 3: ](Introduction to the SDK's OData API)]
 
 The generated application demonstrates the OData proxy classes are working, it enables you to browse their properties, and demonstrates push notifications and the various authentication mechanisms.
+
+To examine the OData service's metadata you have to enable the developer features in Safari first. For that open the Safari browser and click on **Safari**, then **Preferences** and click on **Advanced**. In the **Advanced** tab you can enable the **Show Develop menu in the menu bar** to enable the developer features. The **Develop** menu will now be visible in Safari. If you click on **Develop**, choose **Show Web Inspector** to display raw XML in Safari.
+
+> **Note:** We provided you the XML below so you don't have to do this necessarily.
 
 Examine the OData service's metadata, which can be accessed via `https://sapdevsdd27584c4.us2.hana.ondemand.com/codejam/wwdc/services/DeliveryService.xsodata/$metadata`
 

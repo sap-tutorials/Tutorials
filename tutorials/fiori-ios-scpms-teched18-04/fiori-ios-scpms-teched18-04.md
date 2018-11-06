@@ -21,7 +21,7 @@ For brevity, static data is used, but this can easily be changed to OData entiti
 
 [ACCORDION-BEGIN [Step 1: ](Data visualization example)]
 
-In the **Project navigator**, navigate to the `MyDeliveries/ViewControllers/PackagesType` folder. Right-click this folder, and from the context menu, select **New File...**
+In the **Project navigator**, navigate to the `MyDeliveries/ViewControllers/PackagesType` folder. Control-click (or right-click) this folder, and from the context menu, select **New File...**
 
 In the dialog, select **Cocoa Touch Class**:
 
@@ -46,7 +46,6 @@ import SAPFoundation
 import SAPFiori
 import SAPCommon
 ```
-> You can remove the `import UIKit` import because the `SAPFiori` Framework has the `UIKit` in it's body.
 
 Then change the signature of the class so it now extends from `FUIChartFloorplanViewController`:
 
@@ -63,15 +62,19 @@ Now you have the scaffolding for the data visualizations class. We'll leave it f
 
 [ACCORDION-BEGIN [Step 2: ](Add view controller to storyboard)]
 
-Open the `PackagesType.storyboard` file, and from the **Object library**, drag a **View Controller** onto the storyboard. Select the **View Controller** and go to the **Attributes Inspector**. Set the **title** to **Chart View**:
+Open the `PackagesType.storyboard` file, and click the **Object Library** button in the right area of the toolbar. Drag a **View Controller** onto the storyboard.
+
+![Create View Controller](fiori-ios-scpms-create-app-teched18-part4-46-1.png)
+
+Select the new **View Controller** and go to the **Attributes Inspector**. Set the **Title** to **Chart View**:
 
 ![Create View Controller](fiori-ios-scpms-create-app-teched18-part4-46.png)
 
-Now switch to the **Identity inspector** and set the **Custom Class** to `ChartViewController`:
+Now switch to the **Identity Inspector**, enter `ChartViewController` for the **Custom Class**, and press Return. Be sure to get the spelling right; if it's correct, you'll see the Module change to `MyDeliveries` (the name of your project):
 
 ![Create View Controller](fiori-ios-scpms-create-app-teched18-part4-47.png)
 
-Drag a **Table View Cell** onto the **Detail Table View**, and set the following properties in the attribute inspector:
+Use the **Object Library** to drag a single **Table View Cell** onto the **Detail Table View**, and set the following properties in the attribute inspector:
 
 | Field | Value |
 |----|----|
@@ -80,7 +83,7 @@ Drag a **Table View Cell** onto the **Detail Table View**, and set the following
 
 ![Create Table View Cell](fiori-ios-scpms-create-app-teched18-part4-48.png)
 
-Control-click the just added **Table View Cell** and drag it onto the **Chart View Scene**. From the **Segue** pop-up, choose **Show**.
+Hold down the Control key and drag from the just added **Table View Cell** to the **Chart View Scene**, creating a connection line between them. From the **Segue** dialog, choose **Show**.
 
 With the segue selected, go to the attributes inspector and provide the name `showChart` as its **Identifier**.
 
@@ -109,17 +112,17 @@ To display the added Table View Cell, add an extra `case` statement, just above 
 
 ```swift
 case 5:
-  let navigationLink = tableView.dequeueReusableCell(withIdentifier: "NavToShowChart", for: indexPath) as UITableViewCell
-  navigationLink.textLabel?.text = "Show Waiting Time..."
-  navigationLink.textLabel?.textColor = UIColor.preferredFioriColor(forStyle: .primary1)
+  let chartNavigationCell = tableView.dequeueReusableCell(withIdentifier: "NavToShowChart", for: indexPath)
+  chartNavigationCell.textLabel?.text = "Waiting Time"
+  chartNavigationCell.textLabel?.textColor = .preferredFioriColor(forStyle: .primary1)
 
-  return navigationLink
+  return chartNavigationCell
 ```
 
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 4: ](Implement chart view controller)]
+[ACCORDION-BEGIN [Step 4: ](Implement Chart View Controller)]
 
 In the **Project navigator**, navigate to the `MyDeliveries/ViewControllers/PackagesType` folder and open the `ChartViewController.swift` file you have created in step 18.
 
@@ -131,8 +134,6 @@ override func viewDidLoad() {
 
   title = "Waiting Time"
   chartView.chartType = .bar
-
-  // chartView.numberOfGridlines = 4
 
   chartView.dataSource = self
   summaryView.dataSource = self
@@ -148,105 +149,118 @@ This sets the default settings for the chart, in this case, a bar chart.
 
 A couple of errors are now shown. That is because the chart's data source is not yet implemented.
 
-At the bottom of the file, add the following two extensions:
+For this tutorial we will just use sample data. Add the following variables just below the `viewDidLoad` function:
 
 ```swift
-extension ChartViewController: FUIChartSummaryDataSource {
-  func chartView(_ chartView: FUIChartView, summaryItemForCategory categoryIndex: Int) -> FUIChartSummaryItem? {
-    let item = FUIChartSummaryItem()
-    item.categoryIndex = categoryIndex
-    item.isPreservingTrendHeight = false
-    switch categoryIndex {
-      case -1:
-        item.isEnabled = false
-        let values: [Double] = {
-          var values: [Double] = []
-          for series in chartView.series {
-            let categoriesUpperBound = series.numberOfValues - 1
-            if let valuesInSeries = series.valuesInCategoryRange((0...categoriesUpperBound), dimension: 0) {
-              values.append(valuesInSeries.compactMap({ $0 }).reduce(0.0, +))
-            }
-          }
-          return values
-        }()
+// MARK: - Sample Data
 
-          let numberFormatter  = NumberFormatter()
-          numberFormatter.maximumFractionDigits = 0
-          item.valuesText = values.map { "\(numberFormatter.string(from: $0 as NSNumber)!) hours" }
-          item.title.text = "Total wait time"
+let chartSeriesTitles = ["Actual", "Target"]
 
-      default:
-        item.isEnabled = true
-        let values: [Double] = {
-          var values: [Double] = []
-          for series in chartView.series {
-            values.append(series.valueForCategory(categoryIndex, dimension: 0)!)
-          }
-          return values
-        }()
-        item.valuesText = values.map { formattedTitleForDouble($0)! }
-        item.title.text = chartCategoryTitles()[categoryIndex]
-    }
-    return item
-  }
-}
+let chartCategoryTitles = ["Shipment picked up", "HONG-KONG", "AMSTERDAM", "LONDON-HEATHROW", "READING", "Delivered"]
 
-extension ChartViewController: FUIChartViewDataSource {
-  // MARK: - FUIChartViewDataSource functions
+let chartData = [[2.0, 42.0, 32.0, 7.0, 5.0, 1.0]]
 
-  func numberOfSeries(in: FUIChartView) -> Int {
-    return chartData().count
-  }
-
-  func chartView(_ chartView: FUIChartView, numberOfValuesInSeries seriesIndex: Int) -> Int {
-    return chartData()[seriesIndex].count
-  }
-
-  func chartView(_ chartView: FUIChartView, valueForSeries seriesIndex: Int, category categoryIndex: Int, dimension dimensionIndex: Int) -> Double? {
-    return chartData()[seriesIndex][categoryIndex]
-  }
-
-  func chartView(_ chartView: FUIChartView, formattedStringForValue value: Double, axis: FUIChartAxisId) -> String? {
-    return formattedTitleForDouble(value)
-  }
-
-  func chartView(_ chartView: FUIChartView, titleForCategory categoryIndex: Int, inSeries seriesIndex: Int) -> String? {
-    return chartCategoryTitles()[categoryIndex]
-  }
-
-  // MARK: - helper functions for generating & formatting sample data
-  func chartSeriesTitles() -> [String] {
-    return ["Actual", "Target"]
-  }
-
-  func chartCategoryTitles() -> [String] {
-    return ["Shipment picked up", "HONG-KONG", "AMSTERDAM", "LONDON-HEATHROW", "READING", "Delivered"]
-  }
-
-  func chartData() -> [[Double]] {
-    return [[2, 42, 32, 7, 5, 1]]
-  }
-
-  func formattedTitleForDouble(_ value: Double) -> String? {
-    let numberFormatter = NumberFormatter()
-    numberFormatter.maximumFractionDigits = 0
-    return numberFormatter.string(from: value as NSNumber)
-  }
-}
 ```
 
-The first extension is responsible for drawing the chart items.
+The following extension contains functions used for formatting the required data in to the correct format.
+Copy and paste it below the actual closing bracket of the class.
 
-The chart item at `categoryIndex` value `-1` is the "pinned" or "fixed position" item in the chart's summary header.
-The chart item at the other or `default` positions are the actual chart items.
+```swift
+// MARK: - Formatters
 
-The second extension is the DataSource responsible for providing the data to the chart. Here you see the hard-coded values for the category titles and chart data.
+private extension ChartViewController {
+
+    private static let measurementFormatter: MeasurementFormatter = {
+        let formatter = MeasurementFormatter()
+        formatter.numberFormatter.maximumFractionDigits = 0
+        formatter.unitOptions = .providedUnit
+        formatter.unitStyle = .long
+        return formatter
+    }()
+
+    private static let numberFormatter: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.maximumFractionDigits = 0
+        return formatter
+    }()
+}
+
+```
+
+The `FUIChartSummaryDataSource` extension is used for the actual drawing of the data.
+Copy and paste it below the actual closing bracket of the class.
+
+```swift
+// MARK: - FUIChartSummaryDataSource implementation
+
+extension ChartViewController: FUIChartSummaryDataSource {
+
+    func chartView(_ chartView: FUIChartView, summaryItemForCategory categoryIndex: Int) -> FUIChartSummaryItem? {
+
+        let item = FUIChartSummaryItem()
+        item.categoryIndex = categoryIndex
+        item.isPreservingTrendHeight = false
+
+        switch categoryIndex {
+
+        case -1:
+            item.isEnabled = false
+            let values: [Measurement<UnitDuration>] = chartView.series.compactMap { series in
+                let categoriesUpperBound = series.numberOfValues - 1
+                guard let valuesInSeries = series.valuesInCategoryRange(0...categoriesUpperBound, dimension: 0) else { return nil }
+                let hours = valuesInSeries.lazy.compactMap { $0 }.reduce(0.0, +)
+                return Measurement(value: hours, unit: UnitDuration.hours)
+            }
+            item.valuesText = values.map { ChartViewController.measurementFormatter.string(from: $0) }
+            item.title.text = "Total wait time"
+
+        default:
+            item.isEnabled = true
+            let values = chartView.series.map { $0.valueForCategory(categoryIndex, dimension: 0)! }
+            item.valuesText = values.map { ChartViewController.numberFormatter.string(for: $0)! }
+            item.title.text = chartCategoryTitles[categoryIndex]
+        }
+        return item
+    }
+}
+
+```
+
+The third extension is the actual DataSource, responsible for providing the data to the chart.
+Copy and paste it below the actual closing bracket of the class.
+
+```swift
+// MARK: - FUIChartViewDataSource implementation
+
+extension ChartViewController: FUIChartViewDataSource {
+
+    func numberOfSeries(in: FUIChartView) -> Int {
+        return chartData.count
+    }
+
+    func chartView(_ chartView: FUIChartView, numberOfValuesInSeries seriesIndex: Int) -> Int {
+        return chartData[seriesIndex].count
+    }
+
+    func chartView(_ chartView: FUIChartView, valueForSeries seriesIndex: Int, category categoryIndex: Int, dimension dimensionIndex: Int) -> Double? {
+        return chartData[seriesIndex][categoryIndex]
+    }
+
+    func chartView(_ chartView: FUIChartView, formattedStringForValue value: Double, axis: FUIChartAxisId) -> String? {
+        return ChartViewController.numberFormatter.string(for: value)!
+    }
+
+    func chartView(_ chartView: FUIChartView, titleForCategory categoryIndex: Int, inSeries seriesIndex: Int) -> String? {
+        return chartCategoryTitles[categoryIndex]
+    }
+}
+```
 
 If you build and run the application, and tap on one of the **Packages** entities, you can see the added cell which navigates to the chart:
 
 ![Chart View](fiori-ios-scpms-create-app-teched18-part4-50.png)
 
-If you tap the **Show Waiting Time...** cell, you will see the bar chart with the delivery waiting times, and calculated total waiting time (89 hours):
+If you tap the **Waiting Time** cell, you will see the bar chart with the delivery waiting times, and calculated total waiting time (89 hours):
 
 ![Chart View](fiori-ios-scpms-create-app-teched18-part4-51.png)
 

@@ -8,7 +8,7 @@ tags: [  tutorial>beginner, topic>html5 ]
  - **Proficiency:** Beginner
 
 ## Next Steps
- - [SAPUI5 Extending a simple control](https://www.sap.com/developer/tutorials/sapui5-extending-simple-control.html)
+ - [SAPUI5 Extending a simple control](https://developers.sap.com/tutorials/sapui5-extending-simple-control.html)
 
 ## Details
 ### You will learn

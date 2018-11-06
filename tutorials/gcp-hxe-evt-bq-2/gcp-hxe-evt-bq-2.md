@@ -1,6 +1,6 @@
 ---
-title: Import Data from Google BigQuery and Run Predictive Algorithm in SAP HANA
-description: Connect to SAP Web IDE for SAP HANA and execute an ARIMA model using the imported data.
+title: Connect to SAP Web IDE and Import Data from Google BigQuery
+description: Connect to SAP Web IDE for SAP HANA and create a remote source
 auto_validation: true
 primary_tag: products>sap-hana
 tags: [  tutorial>beginner, products>sap-hana, products>sap-hana\,-express-edition, products>sap-web-ide ]
@@ -104,8 +104,6 @@ grant CREATE REMOTE SOURCE to BQUSR;
 GRANT AFL__SYS_AFL_AFLPAL_EXECUTE_WITH_GRANT_OPTION TO BQUSR;
 GRANT AFL__SYS_AFL_APL_AREA_EXECUTE to  BQUSR;
 GRANT AFLPM_CREATOR_ERASER_EXECUTE TO  BQUSR;
-CREATE REMOTE SOURCE BIGQUERY ADAPTER "odbc" CONFIGURATION FILE 'property_bq.ini' CONFIGURATION 'DSN=GoogleBQ';
-grant create virtual table on remote source BIGQUERY to DB_1#OO;
 
 ```
 
