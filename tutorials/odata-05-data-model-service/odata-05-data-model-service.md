@@ -134,7 +134,7 @@ In the next step you'll create an entity definition that has these three propert
 
 [ACCORDION-BEGIN [Step 8: ](Define the data model)]
 
-It's time to define the data model, declaring an entity with a few properties.
+It's time to define the data model, declaring an entity with a few properties. You'll want to modify the service definition too, so be prepared *not* to save your changes just yet - you'll be saving them together with the service definition changes in the next step.
 
 Open the **`data-model.cds`** file within the `db` folder. It should already contain some sample declarations. Replace the entire contents with the following:
 
@@ -152,17 +152,10 @@ entity Products {
 >&nbsp;
 > ![CDS autocomplete and syntax checking](cds-autocomplete-and-syntax-checking.png)
 
-Once you've added the entity definition, **save** the file.
-
-Because of the **Perform CDS Build upon save** preference you checked earlier, a build of the project is triggered automatically, and you can see the results in the Console. If you look at the details, you'll notice that various artifacts have been created not only in the `db` folder but also in the `srv` folder. The following screenshot depicts what you might see -- the files highlighted have just been generated.
-
-![Generated files](generated-files.png)
-
-Indeed, if you open the `CatalogService.xml` file, you'll see something that may feel familiar -- it's metadata, in XML format, for your fledgling OData service. The metadata is based on a default service definition; in the next step, you'll modify that definition to use your new Products entity.
+Remember - at this stage you should *not* save the file.
 
 [DONE]
 [ACCORDION-END]
-
 
 [ACCORDION-BEGIN [Step 9: ](Specify the service definition)]
 
@@ -180,19 +173,30 @@ service CatalogService {
 
 The first line creates a reference to the information in the data model you defined earlier, and the service, which will be an OData service called `CatalogService`, has a single entity type `Products` which is based upon the `Products` entity definition in that data model.
 
-**Save** the file.
+At this point you should have two files open, **`data-model.cds`** and **`my-service.cds`**, both with unsaved changes. It's now time to save both of them at the same time - use menu path **File** > **Save All** to do this.
 
-You'll notice another build in the Console; after it finishes, you'll see that the contents of the `CatalogService.xml` file in the `srv/src/resources/edmx/` folder has been updated to reflect your new service definition, and looks like this:
+> Because of the **Perform CDS Build upon save** preference you checked earlier, a build of the project is triggered automatically. And as the changes to both these files reference each other, it makes more sense to save them at the same time - otherwise you'd encounter some build errors due to missing references.
+
+[DONE]
+[ACCORDION-END]
+
+[ACCORDION-BEGIN [Step 10: ](Examine the build results)]
+
+It's worth spending a bit of time looking at the build results in the Console. If you look at the details, you'll notice that various artifacts have been created not only in the `db` folder but also in the `srv` folder. The following screenshot depicts what you might see -- the files highlighted have just been generated.
+
+![Generated files](generated-files.png)
+
+Indeed, if you open the `CatalogService.xml` file (in the `srv/src/resources/edmx/` folder), you'll see something that may feel familiar -- it's metadata, in XML format, for your fledgling OData service. It reflects your new service definition, and looks like this:
 
 ![CatalogService metadata](catalogservice-metadata.png)
 
 You can clearly see the entity type definition for `Products`, with the three properties you defined in the data model.
 
-[VALIDATE_9]
+[VALIDATE_10]
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 9: ](Create the database)]
+[ACCORDION-BEGIN [Step 11: ](Create the database)]
 
 You're almost there -- you have the data definition and the service definition, there are artifacts generated for the SAP HANA database (as well as the OData metadata and the OData service itself). What's left is to create the database schema by deploying those artifacts.
 
@@ -210,7 +214,7 @@ You may wish to check the results of this activity in the Cloud Foundry environm
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 10: ](Start the OData service)]
+[ACCORDION-BEGIN [Step 12: ](Start the OData service)]
 
 It's now time to start up the OData service for the first time. There's no data in the database yet, so there are no products to show at this point, but you can at least look at the OData service and metadata documents.
 
