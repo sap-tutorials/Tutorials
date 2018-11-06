@@ -1,6 +1,6 @@
 ---
 title: Upload your Dataset for Image Classification Retraining
-description: Discover how to upload your dataset for the SAP Leonardo Machine Learning foundation Image Classification Retraining scenario
+description: Discover how to upload your dataset for the SAP Leonardo Machine Learning foundation Image Classification Retraining scenario 
 auto_validation: true
 time: 20
 tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
