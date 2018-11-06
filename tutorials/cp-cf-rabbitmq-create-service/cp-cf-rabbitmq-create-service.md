@@ -27,7 +27,8 @@ time: 10
 ```bash
 cf marketplace
 ```
-![cfm](./rabbit-cf-m.png)
+
+  ![cfm](./rabbit-cf-m.png)
 
 2. Select the plan **`v3.7-dev`** and create the service name **`pubsub-messagingservice`** by running:
 ```bash
@@ -44,7 +45,8 @@ You should now see your newly created service.
 ```bash
 cf delete-service pubsub-messagingservice
 ```
-![delete service](./delete-cli.png)
+
+  ![delete service](./delete-cli.png)
 
 
 
@@ -56,21 +58,30 @@ cf delete-service pubsub-messagingservice
 [ACCORDION-BEGIN [Step: ](Navigate to the service marketplace)]
 
 Log onto the [SAP Cloud Platform](https://account.hanatrial.ondemand.com/) and enter the Cloud Foundry (Trial) environment.
+
 ![start](./trial-start.png)
+
 Browse to the sub-account you want to add the new message broker service to.
+
 ![subaccounts](./subaccounts.png)
 
 Click **Spaces** to see your spaces and select the tile of the space where your service should live.
+
 ![space](./space.png)
+
 Click **Service Marketplace**.
+
 ![marketplace](./panel-marketplace.png)
 
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step: ](Display all RabbitMQ services)]
 Now you can search for the RabbitMQ service by typing **`rabbit`** in the search field in the top right.
+
 ![searchmarketplace](./servicemarketplace-search-rabbit.png)
+
 Select this service by clicking the associated tile to see an overview of this service. You can use the corresponding buttons on the left-hand side to switch from  **Overview** to  **Instances**. The new screen lists all existing service instances of this service type.
+
 ![rabbitoverview](./rabbit-services-empyt-list.png)
 
 [VALIDATE_2]
@@ -81,9 +92,11 @@ Select this service by clicking the associated tile to see an overview of this s
    3. Enter the desired name of the service **`pubsub-messagingservice`** on the last screen on the dialog.
    4. Click **Finish** to create the RabbitMQ service.
 
- ![rabbitfinish](./finish-create-rabbitmq.png)
+![rabbitfinish](./finish-create-rabbitmq.png)
+
 You should now be able to see the newly created service in the list of existing services.
- ![rabbitverify](./confirm-service.png)
+
+![rabbitverify](./confirm-service.png)
 
 [VALIDATE_3]
 [ACCORDION-END]
