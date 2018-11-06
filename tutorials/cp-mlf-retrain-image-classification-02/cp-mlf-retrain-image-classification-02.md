@@ -1,6 +1,6 @@
 ---
 title: Upload your Dataset for Image Classification Retraining
-description: Discover how to upload your dataset for the SAP Leonardo Machine Learning foundation Image Classification Retraining scenario 
+description: Discover how to upload your dataset for the SAP Leonardo Machine Learning foundation Image Classification Retraining scenario
 auto_validation: true
 time: 20
 tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
@@ -29,7 +29,7 @@ cf login
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](Get the Service Key details]
+[ACCORDION-BEGIN [Step](Get the Service Key details)]
 
 When you created the service key for the Machine Learning Foundation service, you were provided with the following details:
 
@@ -49,7 +49,7 @@ Provide an answer to the question below then click on **Validate**.
 [VALIDATE_1]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step](Set the Machine Learning foundation plugin Configuration]
+[ACCORDION-BEGIN [Step](Set the Machine Learning foundation plugin Configuration)]
 
 In your terminal console, execute the following command but make sure to update the ***authentication URL***, the ***job submission API URL***, and the ***retraining API URL*** first:
 

@@ -1,5 +1,5 @@
 ---
-title: Deploy the Image Classification Model Retrained Model
+title: Deploy the Image Classification Retrained Model
 description: Discover how to deploy the retraining model for the SAP Leonardo Machine Learning foundation Image Classification Retraining scenario
 auto_validation: true
 time: 15

@@ -1,5 +1,5 @@
 ---
-title: Prepare your Dataset for Image Classification Retraining
+title: Prepare your Dataset for the Image Classification Retraining scenario
 description: Discover how to prepare your dataset for the SAP Leonardo Machine Learning foundation Image Classification Retraining scenario
 auto_validation: true
 time: 15

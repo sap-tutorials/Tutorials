@@ -1,6 +1,6 @@
 ---
 title: Use the Similarity Scoring with the Face Feature Extraction API from a REST Client
-description: Call the Similarity Scoring with the Face Feature Extraction API from a REST Client like Postman
+description: Discover how to call the Similarity Scoring with the Face Feature Extraction API from a REST Client like Postman
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
@@ -93,11 +93,11 @@ First you will need to select and download a series of pictures with faces.
 
 If you are missing some inspiration, you can use the following pictures from the **Women Tech Influencer Fireside Chat** at SAP TechEd Las Vegas 2018 :
 
- - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132" target="blank" download="Image 10751.jpg">Image 10751</a>
- - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="Image 10772.jpg">Image 10772</a>
- - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135" target="blank" download="Image 10779.jpg">Image 10779</a>
+ - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132" target="blank" download="SAP_TechEd_LV2018_10751.jpg">Image `SAP_TechEd_LV2018_10751`</a>
+ - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="SAP_TechEd_LV2018_10772.jpg">Image `SAP_TechEd_LV2018_10772`</a>
+ - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135" target="blank" download="SAP_TechEd_LV2018_10779.jpg">Image `SAP_TechEd_LV2018_10779`</a>
 
-The first image (`SAP_TechEd_LV2018_10751.jpg`) contains only one face, the second image (`SAP_TechEd_LV2018_10772.jpg`) contains three faces and the third image (`SAP_TechEd_LV2018_10779.jpg`) another three faces.
+The first image (`Image SAP_TechEd_LV2018_10751`) contains only one face, the second image (`Image SAP_TechEd_LV2018_10772`) contains three faces and the third image (`Image SAP_TechEd_LV2018_10779`) another three faces.
 
 As you will notice one face is present in all 3 pictures and a second face in only 2.
 
@@ -126,9 +126,9 @@ Add 3 elements with the **key** named **files** and switch it to **File** instea
 
 Then set the file with the downloaded images in the following order:
 
- - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132" target="blank" download="Image 10751.jpg">Image 10751</a>
- - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="Image 10772.jpg">Image 10772</a>
- - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135" target="blank" download="Image 10779.jpg">Image 10779</a>
+ - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132" target="blank" download="SAP_TechEd_LV2018_10751.jpg">Image `SAP_TechEd_LV2018_10751`</a>
+ - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="SAP_TechEd_LV2018_10772.jpg">Image `SAP_TechEd_LV2018_10772`</a>
+ - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135" target="blank" download="SAP_TechEd_LV2018_10779.jpg">Image `SAP_TechEd_LV2018_10779`</a>
 
 The sequence of files is important here as you will be using a script to retrieve the corresponding responses.
 
@@ -137,13 +137,13 @@ The sequence of files is important here as you will be using a script to retriev
 Switch to the **Tests** tab and insert the following code:
 
 ```
-pm.environment.set("v00", decodeURIComponent(pm.response.json().predictions[0].faces[0].face_feature))
-pm.environment.set("v10", decodeURIComponent(pm.response.json().predictions[1].faces[0].face_feature))
-pm.environment.set("v11", decodeURIComponent(pm.response.json().predictions[1].faces[1].face_feature))
-pm.environment.set("v12", decodeURIComponent(pm.response.json().predictions[1].faces[2].face_feature))
-pm.environment.set("v20", decodeURIComponent(pm.response.json().predictions[2].faces[0].face_feature))
-pm.environment.set("v21", decodeURIComponent(pm.response.json().predictions[2].faces[1].face_feature))
-pm.environment.set("v22", decodeURIComponent(pm.response.json().predictions[2].faces[2].face_feature))
+pm.environment.set("Face 1 - SAP_TechEd_LV2018_10751", decodeURIComponent(pm.response.json().predictions[0].faces[0].face_feature))
+pm.environment.set("Face 1 - SAP_TechEd_LV2018_10772", decodeURIComponent(pm.response.json().predictions[1].faces[0].face_feature))
+pm.environment.set("Face 2 - SAP_TechEd_LV2018_10772", decodeURIComponent(pm.response.json().predictions[1].faces[1].face_feature))
+pm.environment.set("Face 3 - SAP_TechEd_LV2018_10772", decodeURIComponent(pm.response.json().predictions[1].faces[2].face_feature))
+pm.environment.set("Face 1 - SAP_TechEd_LV2018_10779", decodeURIComponent(pm.response.json().predictions[2].faces[0].face_feature))
+pm.environment.set("Face 2 - SAP_TechEd_LV2018_10779", decodeURIComponent(pm.response.json().predictions[2].faces[1].face_feature))
+pm.environment.set("Face 3 - SAP_TechEd_LV2018_10779", decodeURIComponent(pm.response.json().predictions[2].faces[2].face_feature))
 ```
 
 ![Postman](03.png)
@@ -158,8 +158,7 @@ You should receive a response that includes for each input image an entry with a
 {
     "faces": [
         {
-            "face_feature": [ "..."
-            ],
+            "face_feature": [ "..."],
             "face_location": {
                 "bottom": 663,
                 "left": 959,
@@ -175,61 +174,187 @@ You should receive a response that includes for each input image an entry with a
 
 Each entry in the response represents a box that identify one of the face.
 
+
+
 <table border="0">
-	<tr><td><img id="img_550132" width="600px"/></td></tr><tr><td><canvas id="canvas_550132"/></td></tr>
-	<tr><td><img id="img_550134" width="600px"/></td></tr><tr><td><canvas id="canvas_550134"/></td></tr>
-	<tr><td><img id="img_550135" width="600px"/></td></tr><tr><td><canvas id="canvas_550135"/></td></tr>				
+	<tr><td colspan=2><a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132" target="blank" download="SAP_TechEd_LV2018_10751.jpg">Image SAP_TechEd_LV2018_10751</a></td></tr>
+	<tr><td><img id="img_10751" width="600px"/></td></tr><tr><td><canvas id="canvas_10751"/></td></tr>
+	<tr><td colspan=2><a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="SAP_TechEd_LV2018_10772.jpg">Image SAP_TechEd_LV2018_10772</a></td></tr>
+	<tr><td><img id="img_10772" width="600px"/></td></tr><tr><td><canvas id="canvas_10772"/></td></tr>
+	<tr><td colspan=2><a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135" target="blank" download="SAP_TechEd_LV2018_10779.jpg">Image SAP_TechEd_LV2018_10779</a></td></tr>
+	<tr><td><img id="img_10779" width="600px"/></td></tr><tr><td><canvas id="canvas_10779"/></td></tr>				
 </table>
 
 <script>
-function myFunction(imagId) {
+function drawImage(imagId) {
 	var oImg = document.getElementById("img_" + imagId);;
 	var oCanvas = document.getElementById("canvas_" + imagId);
 	oCanvas.width = oImg.width;
-	oCanvas.height = oImg.height * oImg.width / oImg.naturalWidth;
+	oCanvas.height = oImg.height; // * oImg.width / oImg.naturalWidth;
 
 	var ctx = oCanvas.getContext("2d");
-    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height * oImg.width / oImg.naturalWidth);
+    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height ); //* oImg.width / oImg.naturalWidth);
 
     ctx.lineWidth="3";
     ctx.strokeStyle="red";
 	ctx.fillStyle = "white";
-	ctx.font = "30pt Arial";
+	ctx.font = "14pt Arial";
+
 
 	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
-
+    oImg.style.display = "none";
     return ctx;
 }
+var response = {
+    "predictions": [
+        {
+            "faces": [
+                {
+                    "face_location": {
+                        "bottom": 663,
+                        "left": 935,
+                        "right": 1157,
+                        "top": 440
+                    }
+                }
+            ],
+            "name": "10751-pic-2000y2000.jpg",
+            "numberOfFaces": 1
+        },
+        {
+            "faces": [
+                {
+                    "face_location": {
+                        "bottom": 676,
+                        "left": 551,
+                        "right": 737,
+                        "top": 490
+                    }
+                },
+                {
+                    "face_location": {
+                        "bottom": 649,
+                        "left": 115,
+                        "right": 270,
+                        "top": 494
+                    }
+                },
+                {
+                    "face_location": {
+                        "bottom": 655,
+                        "left": 923,
+                        "right": 1109,
+                        "top": 469
+                    }
+                }
+            ],
+            "name": "SAP_TechEd_LV2018_10772",
+            "numberOfFaces": 3
+        },
+        {
+            "faces": [
+                {
+                    "face_location": {
+                        "bottom": 676,
+                        "left": 324,
+                        "right": 510,
+                        "top": 490
+                    }
+                },
+                {
+                    "face_location": {
+                        "bottom": 649,
+                        "left": 769,
+                        "right": 924,
+                        "top": 494
+                    }
+                },
+                {
+                    "face_location": {
+                        "bottom": 632,
+                        "left": 1078,
+                        "right": 1233,
+                        "top": 477
+                    }
+                }
+            ],
+            "name": "SAP_TechEd_LV2018_10779",
+            "numberOfFaces": 3
+        }
+    ]
+};
 
 window.onload = function() {
-	var oImg_550132    = document.getElementById("img_550132");
-    var oImg_550134    = document.getElementById("img_550134");
-    var oImg_550135    = document.getElementById("img_550135");
+	var oImg_10751 = document.getElementById("img_10751");
+    var oImg_10772 = document.getElementById("img_10772");
+    var oImg_10779 = document.getElementById("img_10779");
 
-	oImg_550132.onload = function(){
-		var ctx = myFunction("550132")
- 		ctx.strokeRect(959,440,1182-959,663-440);   ctx.fillText("v00", 959, 440);
+	oImg_10751.onload = function(){
+		var ctx = drawImage("10751")
+ 		ctx.strokeRect(
+            response.predictions[0].faces[0].face_location.left,
+            response.predictions[0].faces[0].face_location.top,
+            response.predictions[0].faces[0].face_location.right - response.predictions[0].faces[0].face_location.left,
+            response.predictions[0].faces[0].face_location.bottom - response.predictions[0].faces[0].face_location.top
+        );  
+		ctx.fillText("Face 1", response.predictions[0].faces[0].face_location.left, response.predictions[0].faces[0].face_location.top);
     }
 
-	oImg_550134.onload = function(){
-		var ctx = myFunction("550134")
-		ctx.strokeRect(572,511,758-572,696-511);   ctx.fillText("v10", 572, 511);
-		ctx.strokeRect(77,511,262-77,696-511);   ctx.fillText("v11", 77, 511);
-		ctx.strokeRect(923,511,1109-923,696-511);   ctx.fillText("v12", 923, 511);
+	oImg_10772.onload = function(){
+		var ctx = drawImage("10772")
+		ctx.strokeRect(
+            response.predictions[1].faces[0].face_location.left,
+            response.predictions[1].faces[0].face_location.top,
+            response.predictions[1].faces[0].face_location.right - response.predictions[1].faces[0].face_location.left,
+            response.predictions[1].faces[0].face_location.bottom - response.predictions[1].faces[0].face_location.top
+        );  
+		ctx.strokeRect(response.predictions[1].faces[1].face_location.left,
+            response.predictions[1].faces[1].face_location.top,
+            response.predictions[1].faces[1].face_location.right - response.predictions[1].faces[1].face_location.left,
+            response.predictions[1].faces[1].face_location.bottom - response.predictions[1].faces[1].face_location.top
+        );  
+		ctx.strokeRect(response.predictions[1].faces[2].face_location.left,
+            response.predictions[1].faces[2].face_location.top,
+            response.predictions[1].faces[2].face_location.right - response.predictions[1].faces[2].face_location.left,
+            response.predictions[1].faces[2].face_location.bottom - response.predictions[1].faces[2].face_location.top
+         );  
 
+		ctx.fillText("Face 1", response.predictions[1].faces[0].face_location.left, response.predictions[1].faces[0].face_location.top);
+		ctx.fillText("Face 2", response.predictions[1].faces[1].face_location.left, response.predictions[1].faces[1].face_location.top);
+		ctx.fillText("Face 3", response.predictions[1].faces[2].face_location.left, response.predictions[1].faces[2].face_location.top);
 	}
-	oImg_550135.onload = function(){
-        var ctx = myFunction("550135")
-		ctx.strokeRect(324,490,510-324,676-490);   ctx.fillText("v20", 324, 490);
-		ctx.strokeRect(786,511,941-786,666-511);   ctx.fillText("v21", 786, 511);
-		ctx.strokeRect(1088,469,1274-1088,655-469);   ctx.fillText("v22", 1088, 469);
+	oImg_10779.onload = function(){
+        var ctx = drawImage("10779")
+		ctx.strokeRect(
+            response.predictions[2].faces[0].face_location.left,
+            response.predictions[2].faces[0].face_location.top,
+            response.predictions[2].faces[0].face_location.right - response.predictions[2].faces[0].face_location.left,
+            response.predictions[2].faces[0].face_location.bottom - response.predictions[2].faces[0].face_location.top
+        );  
+		ctx.strokeRect(
+            response.predictions[2].faces[1].face_location.left,
+            response.predictions[2].faces[1].face_location.top,
+            response.predictions[2].faces[1].face_location.right - response.predictions[2].faces[1].face_location.left,
+            response.predictions[2].faces[1].face_location.bottom - response.predictions[2].faces[1].face_location.top
+        );  
+		ctx.strokeRect(
+            response.predictions[2].faces[2].face_location.left,
+            response.predictions[2].faces[2].face_location.top,
+            response.predictions[2].faces[2].face_location.right - response.predictions[2].faces[2].face_location.left,
+            response.predictions[2].faces[2].face_location.bottom - response.predictions[2].faces[2].face_location.top
+        );  
+
+		ctx.fillText("Face 1", response.predictions[2].faces[0].face_location.left, response.predictions[2].faces[0].face_location.top);
+		ctx.fillText("Face 2", response.predictions[2].faces[1].face_location.left, response.predictions[2].faces[1].face_location.top);
+		ctx.fillText("Face 3", response.predictions[2].faces[2].face_location.left, response.predictions[2].faces[2].face_location.top);
 	}
 
-	oImg_550132.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132";
-    oImg_550134.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134";
-    oImg_550135.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135";
+	oImg_10751.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132";
+    oImg_10772.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134";
+    oImg_10779.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135";
 };
 </script>
+
 
 Here is a simple HTML code you can use to visualize other results:
 
@@ -238,57 +363,184 @@ Here is a simple HTML code you can use to visualize other results:
 <body>
 
 <table border="0">
-	<tr><td><img id="img_550132" width="600px"/></td></tr><tr><td><canvas id="canvas_550132"/></td></tr>
-	<tr><td><img id="img_550134" width="600px"/></td></tr><tr><td><canvas id="canvas_550134"/></td></tr>
-	<tr><td><img id="img_550135" width="600px"/></td></tr><tr><td><canvas id="canvas_550135"/></td></tr>				
+	<tr><td colspan=2><a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132" target="blank" download="SAP_TechEd_LV2018_10751.jpg">Image SAP_TechEd_LV2018_10751</a></td></tr>
+	<tr><td><img id="img_10751" width="600px"/></td></tr><tr><td><canvas id="canvas_10751"/></td></tr>
+	<tr><td colspan=2><a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="SAP_TechEd_LV2018_10772.jpg">Image SAP_TechEd_LV2018_10772</a></td></tr>
+	<tr><td><img id="img_10772" width="600px"/></td></tr><tr><td><canvas id="canvas_10772"/></td></tr>
+	<tr><td colspan=2><a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135" target="blank" download="SAP_TechEd_LV2018_10779.jpg">Image SAP_TechEd_LV2018_10779</a></td></tr>
+	<tr><td><img id="img_10779" width="600px"/></td></tr><tr><td><canvas id="canvas_10779"/></td></tr>				
 </table>
 
 <script>
-function myFunction(imagId) {
+function drawImage(imagId) {
 	var oImg = document.getElementById("img_" + imagId);;
 	var oCanvas = document.getElementById("canvas_" + imagId);
 	oCanvas.width = oImg.width;
-	oCanvas.height = oImg.height * oImg.width / oImg.naturalWidth;
+	oCanvas.height = oImg.height; // * oImg.width / oImg.naturalWidth;
 
 	var ctx = oCanvas.getContext("2d");
-    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height * oImg.width / oImg.naturalWidth);
+    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height ); //* oImg.width / oImg.naturalWidth);
 
-    ctx.lineWidth="10";
+    ctx.lineWidth="3";
     ctx.strokeStyle="red";
-	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
+	ctx.fillStyle = "white";
+	ctx.font = "14pt Arial";
 
+
+	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
+    oImg.style.display = "none";
     return ctx;
 }
+var response = {
+    "predictions": [
+        {
+            "faces": [
+                {
+                    "face_location": {
+                        "bottom": 663,
+                        "left": 935,
+                        "right": 1157,
+                        "top": 440
+                    }
+                }
+            ],
+            "name": "10751-pic-2000y2000.jpg",
+            "numberOfFaces": 1
+        },
+        {
+            "faces": [
+                {
+                    "face_location": {
+                        "bottom": 676,
+                        "left": 551,
+                        "right": 737,
+                        "top": 490
+                    }
+                },
+                {
+                    "face_location": {
+                        "bottom": 649,
+                        "left": 115,
+                        "right": 270,
+                        "top": 494
+                    }
+                },
+                {
+                    "face_location": {
+                        "bottom": 655,
+                        "left": 923,
+                        "right": 1109,
+                        "top": 469
+                    }
+                }
+            ],
+            "name": "SAP_TechEd_LV2018_10772",
+            "numberOfFaces": 3
+        },
+        {
+            "faces": [
+                {
+                    "face_location": {
+                        "bottom": 676,
+                        "left": 324,
+                        "right": 510,
+                        "top": 490
+                    }
+                },
+                {
+                    "face_location": {
+                        "bottom": 649,
+                        "left": 769,
+                        "right": 924,
+                        "top": 494
+                    }
+                },
+                {
+                    "face_location": {
+                        "bottom": 632,
+                        "left": 1078,
+                        "right": 1233,
+                        "top": 477
+                    }
+                }
+            ],
+            "name": "SAP_TechEd_LV2018_10779",
+            "numberOfFaces": 3
+        }
+    ]
+};
 
 window.onload = function() {
-	var oImg_550132    = document.getElementById("img_550132");
-    var oImg_550134    = document.getElementById("img_550134");
-    var oImg_550135    = document.getElementById("img_550135");
+	var oImg_10751 = document.getElementById("img_10751");
+    var oImg_10772 = document.getElementById("img_10772");
+    var oImg_10779 = document.getElementById("img_10779");
 
-	oImg_550132.onload = function(){
-		var ctx = myFunction("550132")
- 		ctx.strokeRect(959,440,1182-959,663-440);
+	oImg_10751.onload = function(){
+		var ctx = drawImage("10751")
+ 		ctx.strokeRect(
+            response.predictions[0].faces[0].face_location.left,
+            response.predictions[0].faces[0].face_location.top,
+            response.predictions[0].faces[0].face_location.right - response.predictions[0].faces[0].face_location.left,
+            response.predictions[0].faces[0].face_location.bottom - response.predictions[0].faces[0].face_location.top
+        );  
+		ctx.fillText("Face 1", response.predictions[0].faces[0].face_location.left, response.predictions[0].faces[0].face_location.top);
     }
 
-	oImg_550134.onload = function(){
-		var ctx = myFunction("550134")
-		ctx.strokeRect(572,511,758-572,696-511);
-		ctx.strokeRect(77,511,262-77,696-511);
-		ctx.strokeRect(923,511,1109-923,696-511);
+	oImg_10772.onload = function(){
+		var ctx = drawImage("10772")
+		ctx.strokeRect(
+            response.predictions[1].faces[0].face_location.left,
+            response.predictions[1].faces[0].face_location.top,
+            response.predictions[1].faces[0].face_location.right - response.predictions[1].faces[0].face_location.left,
+            response.predictions[1].faces[0].face_location.bottom - response.predictions[1].faces[0].face_location.top
+        );  
+		ctx.strokeRect(response.predictions[1].faces[1].face_location.left,
+            response.predictions[1].faces[1].face_location.top,
+            response.predictions[1].faces[1].face_location.right - response.predictions[1].faces[1].face_location.left,
+            response.predictions[1].faces[1].face_location.bottom - response.predictions[1].faces[1].face_location.top
+        );  
+		ctx.strokeRect(response.predictions[1].faces[2].face_location.left,
+            response.predictions[1].faces[2].face_location.top,
+            response.predictions[1].faces[2].face_location.right - response.predictions[1].faces[2].face_location.left,
+            response.predictions[1].faces[2].face_location.bottom - response.predictions[1].faces[2].face_location.top
+         );  
 
+		ctx.fillText("Face 1", response.predictions[1].faces[0].face_location.left, response.predictions[1].faces[0].face_location.top);
+		ctx.fillText("Face 2", response.predictions[1].faces[1].face_location.left, response.predictions[1].faces[1].face_location.top);
+		ctx.fillText("Face 3", response.predictions[1].faces[2].face_location.left, response.predictions[1].faces[2].face_location.top);
 	}
-	oImg_550135.onload = function(){
-        var ctx = myFunction("550135")
-		ctx.strokeRect(324,490,510-324,676-490);
-		ctx.strokeRect(786,511,941-786,666-511);
-		ctx.strokeRect(1088,469,1274-1088,655-469);
+	oImg_10779.onload = function(){
+        var ctx = drawImage("10779")
+		ctx.strokeRect(
+            response.predictions[2].faces[0].face_location.left,
+            response.predictions[2].faces[0].face_location.top,
+            response.predictions[2].faces[0].face_location.right - response.predictions[2].faces[0].face_location.left,
+            response.predictions[2].faces[0].face_location.bottom - response.predictions[2].faces[0].face_location.top
+        );  
+		ctx.strokeRect(
+            response.predictions[2].faces[1].face_location.left,
+            response.predictions[2].faces[1].face_location.top,
+            response.predictions[2].faces[1].face_location.right - response.predictions[2].faces[1].face_location.left,
+            response.predictions[2].faces[1].face_location.bottom - response.predictions[2].faces[1].face_location.top
+        );  
+		ctx.strokeRect(
+            response.predictions[2].faces[2].face_location.left,
+            response.predictions[2].faces[2].face_location.top,
+            response.predictions[2].faces[2].face_location.right - response.predictions[2].faces[2].face_location.left,
+            response.predictions[2].faces[2].face_location.bottom - response.predictions[2].faces[2].face_location.top
+        );  
+
+		ctx.fillText("Face 1", response.predictions[2].faces[0].face_location.left, response.predictions[2].faces[0].face_location.top);
+		ctx.fillText("Face 2", response.predictions[2].faces[1].face_location.left, response.predictions[2].faces[1].face_location.top);
+		ctx.fillText("Face 3", response.predictions[2].faces[2].face_location.left, response.predictions[2].faces[2].face_location.top);
 	}
 
-	oImg_550132.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132";
-    oImg_550134.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134";
-    oImg_550135.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135";
+	oImg_10751.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132";
+    oImg_10772.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134";
+    oImg_10779.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135";
 };
 </script>
+
 </body>
 </html>
 ```
@@ -322,13 +574,13 @@ Paste the following value:
 {
 	"0":
 	[
-		{"id": "v00", "vector": [{{v00}}]},
-		{"id": "v10", "vector": [{{v10}}]},
-		{"id": "v11", "vector": [{{v11}}]},
-		{"id": "v12", "vector": [{{v12}}]},
-		{"id": "v20", "vector": [{{v20}}]},
-		{"id": "v21", "vector": [{{v21}}]},
-		{"id": "v22", "vector": [{{v22}}]}
+		{"id": "Face 1 - SAP_TechEd_LV2018_10751", "vector": [{{Face 1 - SAP_TechEd_LV2018_10751}}]},
+		{"id": "Face 1 - SAP_TechEd_LV2018_10772", "vector": [{{Face 1 - SAP_TechEd_LV2018_10772}}]},
+		{"id": "Face 1 - SAP_TechEd_LV2018_10772", "vector": [{{Face 2 - SAP_TechEd_LV2018_10772}}]},
+		{"id": "Face 1 - SAP_TechEd_LV2018_10772", "vector": [{{Face 3 - SAP_TechEd_LV2018_10772}}]},
+		{"id": "Face 1 - SAP_TechEd_LV2018_10779", "vector": [{{Face 1 - SAP_TechEd_LV2018_10779}}]},
+		{"id": "Face 2 - SAP_TechEd_LV2018_10779", "vector": [{{Face 2 - SAP_TechEd_LV2018_10779}}]},
+		{"id": "Face 3 - SAP_TechEd_LV2018_10779", "vector": [{{Face 3 - SAP_TechEd_LV2018_10779}}]}
 	]
 }
 ```
@@ -347,27 +599,27 @@ Click on **Send**.
 
 You should receive a response that includes for each input feature vector (in your case 7 in total) the top 3 most similar feature vectors.
 
-For example here, the face identified as **`v00`** from the first image (`SAP_TechEd_LV2018_10751.jpg`) has been matched with faces:
+For example here, the face identified as **`Face 1`** from the first image (`SAP_TechEd_LV2018_10751.jpg`) has been matched with faces:
 
- - **`v11`** from the second image (`SAP_TechEd_LV2018_10772.jpg`) with a score of ***0.88***
- - **`v12`** from the second image (`SAP_TechEd_LV2018_10772.jpg`) with a score of ***0.93***
- - **`v21`** from the second image (`SAP_TechEd_LV2018_10779.jpg`) with a score of ***0.96***
+ - **`Face 1`** from the second image (`SAP_TechEd_LV2018_10772.jpg`) with a score of ***0.88***
+ - **`Face 2`** from the second image (`SAP_TechEd_LV2018_10772.jpg`) with a score of ***0.93***
+ - **`Face 1`** from the second image (`SAP_TechEd_LV2018_10779.jpg`) with a score of ***0.96***
 
 ```json
 {
-    "id": "v00",
+    "id": "Face 1 - SAP_TechEd_LV2018_10751",
     "similarVectors": [
         {
-            "id": "v21",
-            "score": 0.9653868993549426
+            "id": "Face 2 - SAP_TechEd_LV2018_10779",
+            "score": 0.9630163637668147
         },
         {
-            "id": "v12",
-            "score": 0.9343656611744725
+            "id": "Face 1 - SAP_TechEd_LV2018_10772",
+            "score": 0.9516095016675089
         },
         {
-            "id": "v11",
-            "score": 0.8803163672575983
+            "id": "Face 1 - SAP_TechEd_LV2018_10772",
+            "score": 0.8970996999149072
         }
     ]
 }

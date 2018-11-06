@@ -1,6 +1,6 @@
 ---
 title: Get your OAuth Access Token using a REST Client
-description: Call the authentication API to retrieve your Access Token
+description: Use the Machine Learning Foundation Authentication API to retrieve your OAuth Access Token which will grant you access to the Machine Learning Foundation services
 auto_validation: true
 time: 10
 tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]

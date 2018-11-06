@@ -1,6 +1,6 @@
 ---
 title: Use the Similarity Scoring with the Image Feature Extraction API from a REST Client
-description: Call the Similarity Scoring with the Image Feature Extraction API from a REST Client like Postman
+description: Discover how to call the Similarity Scoring with the Image Feature Extraction API from a REST Client like Postman
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]

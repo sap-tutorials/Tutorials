@@ -1,6 +1,6 @@
 ---
 title: Use the Human Detection API from a REST Client
-description: Call the Human Detection API from a REST Client like Postman
+description: Discover how to call the Human Detection API from a REST Client like Postman
 auto_validation: true
 time: 10
 tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
@@ -72,11 +72,11 @@ Select your image file.
 
 If you are missing some inspiration, you can use the following pictures from the **Women Tech Influencer Fireside Chat** at SAP TechEd Las Vegas 2018 :
 
- - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132" target="blank" download="Image 10751.jpg">Image 10751</a>
- - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="Image 10772.jpg">Image 10772</a>
- - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135" target="blank" download="Image 10779.jpg">Image 10779</a>
+ - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132" target="blank" download="SAP_TechEd_LV2018_10751.jpg">Image `SAP_TechEd_LV2018_10751`</a>
+ - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="SAP_TechEd_LV2018_10772.jpg">Image `SAP_TechEd_LV2018_10772`</a>
+ - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135" target="blank" download="SAP_TechEd_LV2018_10779.jpg">Image `SAP_TechEd_LV2018_10779`</a>
 
-The first image (`SAP_TechEd_LV2018_10751.jpg`) contains only 3 person, the second image (`SAP_TechEd_LV2018_10772.jpg`) contains 6 person and the third image (`SAP_TechEd_LV2018_10779.jpg`) also 6 person.
+The first image (`SAP_TechEd_LV2018_10751.jpg`) contains only 3 person, the second image (`SAP_TechEd_LV2018_10772.jpg`) contains 5 person and the third image (`SAP_TechEd_LV2018_10779.jpg`) 6 person.
 
 Click on **Send**.
 
@@ -118,7 +118,7 @@ Here is the results represented on <a href="https://sapteched2018.event-hosting.
 </table>
 
 <script>
-function myFunction(imagId) {
+function drawImage(imagId) {
 	var oImg = document.getElementById("img_" + imagId);;
 	var oCanvas = document.getElementById("canvas_" + imagId);
 	oCanvas.width = oImg.width;
@@ -133,7 +133,7 @@ function myFunction(imagId) {
 	ctx.font = "14pt Arial";
 
 	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
-
+    oImg.style.display = "none";
     return ctx;
 }
 
@@ -152,7 +152,7 @@ window.onload = function() {
         "num_detections": 3
     };
 	oImg.onload = function(){
-		var ctx = myFunction("1")
+		var ctx = drawImage("1")
 		ctx.strokeRect(
             response.detection_boxes[0][1] * oCanvas.width,
             response.detection_boxes[0][0] * oCanvas.height,
@@ -191,7 +191,7 @@ Here is a simple HTML code you can use to visualize other results:
 </table>
 
 <script>
-function myFunction(imagId) {
+function drawImage(imagId) {
 	var oImg = document.getElementById("img_" + imagId);;
 	var oCanvas = document.getElementById("canvas_" + imagId);
 	oCanvas.width = oImg.width;
@@ -206,7 +206,7 @@ function myFunction(imagId) {
 	ctx.font = "14pt Arial";
 
 	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
-
+    oImg.style.display = "none";
     return ctx;
 }
 
@@ -225,7 +225,7 @@ window.onload = function() {
         "num_detections": 3
     };
 	oImg.onload = function(){
-		var ctx = myFunction("1")
+		var ctx = drawImage("1")
 		ctx.strokeRect(
             response.detection_boxes[0][1] * oCanvas.width,
             response.detection_boxes[0][0] * oCanvas.height,
