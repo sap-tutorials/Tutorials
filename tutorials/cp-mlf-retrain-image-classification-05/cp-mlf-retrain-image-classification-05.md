@@ -1,5 +1,5 @@
 ---
-title: Consume the Image Classification Model Retrained Model
+title: Consume the Image Classification Retrained Model
 description: Discover how to consume the retrained model for the Image Classification Retraining scenario
 auto_validation: true
 time: 15
