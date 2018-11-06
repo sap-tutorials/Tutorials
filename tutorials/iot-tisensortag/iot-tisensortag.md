@@ -5,7 +5,7 @@ primary_tag: topic>internet-of-things
 tags: [  tutorial>beginner, topic>internet-of-things ]
 ---
 ## Prerequisites  
- - **Device:** [`TI SensorTag`](http://www.ti.com/ww/de/wireless_connectivity/sensortag/)
+ - **Device:** [`TI SensorTag`](http://www.ti.com/ww/en/wireless_connectivity/sensortag/index.html)
  - Bluetooth connectivity
 
 ## How-To Details
