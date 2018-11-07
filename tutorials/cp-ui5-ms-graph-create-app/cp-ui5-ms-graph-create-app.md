@@ -75,7 +75,7 @@ time: 20
     ![Select service](./run-button.png)
 
 2. Click F12 open the development tools of your browser on Windows or `cmd + alt + i` on Mac.
-3. Select the **Network** tab and **filter** the network traffic for **`meta`** to find the request, which is sent to the destination. Click one the request to check the status code of this request. It should be 200 (OK).
+3. Select the **Network** tab and **filter** the network traffic for **`meta`** to find the request, which is sent to the destination. Click one the request to check the status code of this request. It should be 200 or 307 (OK).
 
     ![Select service](./chrome-network.png)
 
@@ -105,6 +105,8 @@ Replace the existing `<Page>` element with the following snippet to add an insta
 <!-- INSERT CODE IN STEP 5.2 HERE -->
 ```
 This page will display all existing purchase orders in a list.
+
+> Hint: Pretty print the pasted code with: Command + Alt + B (Mac) or Control + Alt + B (Windows)
 
 [DONE]
 [ACCORDION-END]
