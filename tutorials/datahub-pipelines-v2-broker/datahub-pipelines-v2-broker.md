@@ -1,19 +1,13 @@
 ---
-title: Use a message broker in SAP Data Hub, developer edition 1.4
-description: Use a message broker to publish and subscribe to sensor data by using SAP Data Hub, developer edition 1.4.
+title:  Use a message broker in SAP Data Hub, developer edition 2.3
+description: Use a message broker to publish and subscribe to sensor data by using SAP Data Hub, developer edition 2.3.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
-
- - You have completed [Generate sensor data](https://www.sap.com/developer/tutorials/datahub-pipelines-sensordata.html)
-
-## Next Steps
- - [Store sensor data in HDFS](https://www.sap.com/developer/tutorials/datahub-pipelines-storeinhdfs.html)
+## Prerequisites 
 
 ## Details
-**This tutorial is obsolete and will be removed shortly (end of-November 2018).**
 ### You will learn  
 During this tutorial, you will learn how to use a message broker within a pipeline. You will use a **Kafka Producer** as well as a **Kafka Consumer**.
 
@@ -37,7 +31,8 @@ docker search kafka
 ```
 
 You see a list of images related to Apache Kafka. The `spotify/kafka` image is suitable for the purpose of this tutorial. It runs Apache Kafka as well as Apache Zookeeper.
-![picture_01](./datahub-pipelines-broker_01.png)  
+
+![picture_01](./datahub-pipelines-v2-broker_01.png)  
 
 Pull the `spotify/kafka` image from Docker Hub by entering the following command.
 
@@ -64,7 +59,7 @@ Remove the connection between the **Data Generator** operator and the **Terminal
 
 Add a **Kafka Producer** operator to the pipeline by drag & drop. Then connect the `output` port of the **Data Generator** operator to the `message` port of the **Kafka Producer** operator.
 
-![picture_02](./datahub-pipelines-broker_02.png)  
+![picture_02](./datahub-pipelines-v2-broker_02.png)  
 
 Right click on the **Kafka Producer** and go to "Open Configuration" to configure the operator properties . You need to maintain the following properties:
 
@@ -76,12 +71,9 @@ Right click on the **Kafka Producer** and go to "Open Configuration" to configur
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure Kafka Consumer)]
-Add a **`Kafka Consumer2`** operator to the pipeline by drag & drop.
-Add a **`ToString` Converter** operator to the pipeline by drag & drop.
-Connect the `message` port of the **`Kafka Consumer2`** operator to the `ininterface` port of the **`ToString` Converter** operator.
-Connect the `outstring` port of the **`ToString` Converter** operator to the `in1` port of the **Terminal** operator.
+Add a **`Kafka Consumer2`** operator to the pipeline by drag & drop. Add a **`ToString` Converter** operator to the pipeline by drag & drop. Connect the `message` port of the **`Kafka Consumer2`** operator to the `ininterface` port of the **`ToString` Converter** operator. Connect the `outstring` port of the **`ToString` Converter** operator to the `in1` port of the **Terminal** operator.
 
-![picture_03](./datahub-pipelines-broker_03.png)  
+![picture_03](./datahub-pipelines-v2-broker_03.png)  
 
 Right click on the **`Kafka Consumer2`** and go to "Open Configuration" to configure the operator properties . You need to maintain the following properties:
 
@@ -99,7 +91,7 @@ Press the **Run** button to execute the pipeline.
 
 When the **Status** tab indicates that the pipeline is running, use the context menu **Open UI** of the **Terminal** operator to see the generated sensor data.
 
-![picture_04](./datahub-pipelines-broker_04.png)  
+![picture_04](./datahub-pipelines-v2-broker_04.png)  
 
 In contrast to the previous tutorial, this time the generated sensor data is not sent from the **Data Generator** operator to the **Terminal** operator directly, but via Apache Kafka.
 
