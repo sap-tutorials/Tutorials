@@ -16,7 +16,7 @@ Raw data from business documents are getting converted into a meaningful grid.
 By using Custom Analytical Queries you do not need to understand the technical details.
 
 ### You will learn  
-This tutorial teaches you the creation of a Custom Analytical Query and the addition of a Calculated Measures. You will also be able to edit your calculated Measures and define an Exception Aggregation.
+This tutorial teaches you the creation of a Custom Analytical Query and the addition of a Calculated Measures. You will also be able to edit your calculated Measures and define an Exception Aggregation. dsfdsf sdfdsfds sdfdsf sdfsd fdsfdsf 
 
 ---
 [ACCORDION-BEGIN [Step 1: ](Open Custom Analytical Queries Application)]
