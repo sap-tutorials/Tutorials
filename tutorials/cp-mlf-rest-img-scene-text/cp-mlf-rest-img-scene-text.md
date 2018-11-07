@@ -160,6 +160,7 @@ window.onload = function() {
 		var ctx = drawImage("1")
 
         ctx.moveTo(response.results[0].boundingBox.x1, response.results[0].boundingBox.y1);
+
         ctx.lineTo(response.results[0].boundingBox.x2, response.results[0].boundingBox.y2);
         ctx.lineTo(response.results[0].boundingBox.x3, response.results[0].boundingBox.y3);
         ctx.lineTo(response.results[0].boundingBox.x4, response.results[0].boundingBox.y4);
@@ -228,6 +229,7 @@ window.onload = function() {
 		var ctx = drawImage("1")
 
         ctx.moveTo(response.results[0].boundingBox.x1, response.results[0].boundingBox.y1);
+		
         ctx.lineTo(response.results[0].boundingBox.x2, response.results[0].boundingBox.y2);
         ctx.lineTo(response.results[0].boundingBox.x3, response.results[0].boundingBox.y3);
         ctx.lineTo(response.results[0].boundingBox.x4, response.results[0].boundingBox.y4);
