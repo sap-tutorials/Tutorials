@@ -1,16 +1,13 @@
 ---
-title: Run example pipelines in SAP Data Hub, developer edition 1.4
-description: Explore the example pipelines that are delivered with SAP Data Hub, developer edition 1.4.
+title: Run example pipelines in SAP Data Hub, developer edition 2.3
+description: Explore the example pipelines that are delivered with SAP Data Hub, developer edition 2.3.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - You have completed [Navigate around SAP Data Hub, developer edition](https://www.sap.com/developer/tutorials/datahub-docker-navigation.html)
+## Prerequisites
 
 ## Details
-**This tutorial is obsolete and will be removed shortly (end of-November 2018).**
 ### You will learn  
 During this tutorial, you will learn how to run the examples pipelines delivered with SAP Data Hub, developer edition.
 
@@ -20,9 +17,9 @@ During this tutorial, you will learn how to run the examples pipelines delivered
 ---
 
 [ACCORDION-BEGIN [Step 1: ](Familiarize yourself with the modelling UI)]
-Open the modelling environment for building pipelines via `http://localhost:8090` (SAP Data Hub Pipeline Modeler).
+Open the modelling environment for building pipelines via `http://localhost:8090` (SAP Data Hub Modeler).
 
-![picture_01](./datahub-docker-examples_01.png)  
+![picture_01](./datahub-docker-v2-examples_01.png)  
 
 The modelling environment consists of four main parts:
  - **Navigation (1)**: You use this part of the modelling environment to access pipelines (also known as graphs), operators and the repository.
