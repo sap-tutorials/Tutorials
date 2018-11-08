@@ -1,6 +1,6 @@
 ---
 title: Create a Machine Learning Foundation service instance on the Cloud Foundry environment
-description: Discover how to create a service instance for the Machine Learning Foundation and the associated service key using the SAP Platform Cockpit or the Cloud Foundry Command Line Interface (CLI) 
+description: Discover how to create a service instance for the Machine Learning Foundation and the associated service key using the SAP Platform Cockpit or the Cloud Foundry Command Line Interface (CLI)
 auto_validation: true
 time: 15
 tags: [tutorial>beginner, topic>cloud, topic>machine-learning, products>sap-cloud-platform, products>sap-cloud-platform-for-the-cloud-foundry-environment]
@@ -27,6 +27,8 @@ Access the SAP Cloud Platform Cockpit and login if necessary:
 Select the **Cloud Foundry Trial**.
 
 ![SAP Cloud Platform](01.png)
+
+**Make sure that your subaccount was created in the Europe (Frankfurt) region which is right now the only region that provides access to the Machine Learning Foundation services.**
 
 [DONE]
 [ACCORDION-END]
@@ -77,7 +79,7 @@ Next, click on the **dev** space box to open your working space.
 
 [ACCORDION-BEGIN [Step](Access your Service Marketplace)]
 
-In the Cloud Foundry environment, you usually enable services by creating a service instance using either the SAP Cloud Platform cockpit or the Cloud Foundry command line interface (cf CLI).
+In the Cloud Foundry environment, you usually enable services by creating a service instance using either the SAP Cloud Platform cockpit or the Cloud Foundry command line interface (`cf CLI`).
 
 In the Cloud Foundry environment, services are offered in a marketplace, from which users can create service instances on-demand.
 

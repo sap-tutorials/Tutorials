@@ -130,7 +130,7 @@ Copy the following two lines of code right below the first `script-tag` in the `
         this.oUserAgentApplication.redirectUri = msalconfig.redirectUri;
       }
       // If page is refreshed, continue to display user info
-      if (!this.oUserAgentApplication.isCallback(window.location.hash) && window.parent === window && !window.opener) {
+      if (!this.oUserAgentApplication.isCallback(window.location.hash) && window.parent === window) {
         var user = this.oUserAgentApplication.getUser();
         if (user) {
           this.fetchUserInfo();

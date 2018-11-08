@@ -38,7 +38,10 @@ The input file (or the archive file) is provided using form data (as an element 
 
 The service will return a JSON response that includes the bounding boxes coordinates for the identified faces.
 
-For more details, you can check the [Inference Service for Face Detection on the SAP API Business Hub](https://api.sap.com/api/face_detection_api/resource).
+For more details, you can check the following links:
+
+ - [Inference Service for Face Detection on the SAP API Business Hub](https://api.sap.com/api/face_detection_api/resource)
+ - [Swagger documentation](https://mlftrial-face-detector.cfapps.eu10.hana.ondemand.com/api/v2alpha1/image/face-detection)
 
 [DONE]
 [ACCORDION-END]
@@ -251,7 +254,19 @@ window.onload = function() {
 </html>
 ```
 
-You will notice that the rectangle uses the following format: (left, top, right - left, bottom - top)
+You will notice that the [`strokeRect` function](https://www.w3schools.com/tags/canvas_strokerect.asp) uses the following format: 
+
+- x	: The x-coordinate of the upper-left corner of the rectangle
+- y	: The y-coordinate of the upper-left corner of the rectangle
+- width	: The width of the rectangle, in pixels
+- height : The height of the rectangle, in pixels
+
+Which correspond to following attribute of the bounding box:
+
+- x	: left
+- y	: top
+- width	: right - left
+- height : bottom - top
 
 [DONE]
 [ACCORDION-END]

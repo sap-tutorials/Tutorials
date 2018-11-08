@@ -38,7 +38,10 @@ The input file (or the archive file) is provided using form data (as an element 
 
 The service will return a JSON response that includes the bounding boxes coordinates for the identified humans.
 
-For more details, you can check the [Inference Service for Human Detection on the SAP API Business Hub](https://api.sap.com/api/human_detection_api/resource).
+For more details, you can check the following links:
+
+ - [Inference Service for Human Detection on the SAP API Business Hub](https://api.sap.com/api/human_detection_api/resource)
+ - [Swagger documentation](https://mlftrial-human-detection.cfapps.eu10.hana.ondemand.com)
 
 [DONE]
 [ACCORDION-END]
@@ -80,7 +83,7 @@ The first image (`SAP_TechEd_LV2018_10751.jpg`) contains only 3 person, the seco
 
 Click on **Send**.
 
-You should receive a response that includes a series of detected person entries (the following result is for Image 10751):
+You should receive a response that includes the bounding boxes for each detected person, the class for each entry and the associated score (the following result is for Image `SAP_TechEd_LV2018_10751`):
 
 ![Postman](03.png)
 
@@ -88,30 +91,40 @@ You should receive a response that includes a series of detected person entries 
 {
     "detection_boxes": [
         [
-            0.1799386590719223,
-            0.02037128061056137,
-            0.977997362613678,
-            0.47837960720062256
+            0.18104881048202515,
+            0.023201702162623405,
+            0.9796464443206787,
+            0.47891876101493835
         ],
         [
-            0.2418273687362671,
-            0.3918556272983551,
-            0.9809070825576782,
-            0.6808136105537415
+            0.24236789345741272,
+            0.3937094509601593,
+            0.9823036789894104,
+            0.6805010437965393
         ],
         [
-            0.16099587082862854,
-            0.6079592704772949,
-            0.9867111444473267,
-            0.9851326942443848
+            0.15145030617713928,
+            0.6179994940757751,
+            0.9898813962936401,
+            0.9882261157035828
         ]
+    ],
+    "detection_classes": [
+        "human",
+        "human",
+        "human"
+    ],
+    "detection_scores": [
+        0.9998396635055542,
+        0.9981719255447388,
+        0.9972606897354126
     ]
 }
 ```
 
 Each entry in the detection box represents a box that identify one of the person.
 
-Here is the results represented on <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132" target="blank" download="Image 10751.jpg">Image 10751</a>:
+Here is the results represented on <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132" target="blank" download="SAP_TechEd_LV2018_10751.jpg">Image `SAP_TechEd_LV2018_10751`</a>:
 
 <table border="0">
 	<tr><td><img id="img_1"/></div></td></tr><tr><td><canvas id="canvas_1"/></td></tr>
@@ -148,8 +161,7 @@ window.onload = function() {
 			[0.16099587082862854, 0.6079592704772949,  0.9867111444473267, 0.9851326942443848]
         ],
         "detection_classes": [ "human", "human", "human" ],
-        "detection_scores": [ 0.99981290102005, 0.9982737302780151, 0.9978749752044678 ],
-        "num_detections": 3
+        "detection_scores": [ 0.99981290102005, 0.9982737302780151, 0.9978749752044678 ]
     };
 	oImg.onload = function(){
 		var ctx = drawImage("1")
@@ -257,7 +269,19 @@ window.onload = function() {
 </html>
 ```
 
-You will notice that the rectangle uses the following format: (left, top, right - left, bottom - top)
+You will notice that the [`strokeRect` function](https://www.w3schools.com/tags/canvas_strokerect.asp) uses the following format:
+
+- x	: The x-coordinate of the upper-left corner of the rectangle
+- y	: The y-coordinate of the upper-left corner of the rectangle
+- width	: The width of the rectangle, in pixels
+- height : The height of the rectangle, in pixels
+
+Which correspond to following attribute of the bounding box (the returned value represent the relative position for x and y using the image width and height):
+
+- x	: index 1 * canvas width
+- y	: index 0 * canvas height
+- width	: index 3 * canvas width - index 1 * canvas width
+- height : index 2 * canvas height - index 0 * canvas height
 
 [DONE]
 [ACCORDION-END]
