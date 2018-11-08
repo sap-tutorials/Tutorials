@@ -1,11 +1,12 @@
 ---
 title:  Use a message broker in SAP Data Hub, developer edition 2.3
 description: Use a message broker to publish and subscribe to sensor data by using SAP Data Hub, developer edition 2.3.
+auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites 
+## Prerequisites
 
 ## Details
 ### You will learn  
@@ -50,6 +51,8 @@ docker run --name kafka --hostname kafka --network dev-net spotify/kafka
 
 The `hostname` and `network` options ensure that you can easily address Apache Kafka from the pipeline later on.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add and configure Kafka Producer)]
@@ -68,6 +71,8 @@ Right click on the **Kafka Producer** and go to "Open Configuration" to configur
 | `brokers`                      | `kafka:9092`                   |
 | `topic`                        | `sensordata`                   |
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure Kafka Consumer)]
@@ -84,6 +89,8 @@ Right click on the **`Kafka Consumer2`** and go to "Open Configuration" to confi
 
 Afterwards press the **Save** button.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Execute the data pipeline)]
@@ -96,6 +103,8 @@ When the **Status** tab indicates that the pipeline is running, use the context 
 In contrast to the previous tutorial, this time the generated sensor data is not sent from the **Data Generator** operator to the **Terminal** operator directly, but via Apache Kafka.
 
 Stop the pipeline by pressing the **Stop** button.
+
+[DONE]
 
 [ACCORDION-END]
 
