@@ -29,7 +29,7 @@ Then delete the local copy of the file.
 
 When creating your SAP HANA, express edition, you had to :
 
-- create a key pair:
+- create a key pair (the ***`pem`*** file):
 
 ![Amazon Web Services Marketplace](02.png)
 
@@ -46,11 +46,13 @@ Then delete the local copy of the file.
 
 [ACCORDION-BEGIN [Step 1: ](SAP HANA, express edition Instance)]
 
-You will get charged if don't stop your SAP HANA, express edition instance as detailed in the [Set up SAP HANA, express edition on Amazon Web Services (XS Advanced)](https://developers.sap.com/tutorials/hxe-xsa-aws-setup.html).
+When using the SAP HANA, express edition AMI from AWS, you will be charged for both the EC2 instance and the provisioned EBS volumes used by this instance.
 
-Therefore it is recommended that you **stop** your SAP HANA, express edition instance when you won't need to use it for a while
+Therefore, even if you ***stop*** your EC2 instance running your SAP HANA, express edition instance, you will still be charged for the provisioned EBS volumes.
 
-You can also **terminate** the instance if you don't need it anymore.
+Only detaching and deleting the EBS volumes will prevent that but your SAP HANA, express edition will no longer be usable.
+
+Therefore it is recommended that you **terminate** your SAP HANA, express edition instance when you won't need to use it anymore or for a while
 
 To do so, access the **<a href="https://console.aws.amazon.com/ec2" target="&#95;blank">EC2 Dashboard</a>**.
 
@@ -58,7 +60,7 @@ Click on **1 Running Instances**.
 
 ![Amazon Web Services EC2 Dashboard](04.png)
 
-Right click on the running instance, then select **Instance State > Stop** (unless you want to destroy it using the **Terminate** option).
+Right click on the running instance, then select **Instance State > Terminate**.
 
 ![Amazon Web Services EC2 Dashboard](05.png)
 
@@ -81,6 +83,8 @@ After a few seconds, they will both be marked as **available**.
 ![Amazon Web Services EC2 Dashboard](09.png)
 
 Provide an answer to the question below then click on **Validate**.
+
+Select both volumes then use the **Actions > Delete** button.
 
 [VALIDATE_1]
 [ACCORDION-END]

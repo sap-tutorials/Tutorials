@@ -308,3 +308,7 @@ Provide an answer to the question below then click on **Validate**.
 [ACCORDION-END]
 
 If anything is going wrong, [check the questions and answers from the community](https://answers.sap.com/index.html).
+
+> ### **Warning:** When using the SAP HANA, express edition AMI from AWS, you will be charged for both the EC2 instance and the provisioned EBS volumes used by this instance.
+Therefore, even if you ***suspend*** your EC2 instance running your SAP HANA, express edition instance, you will still be charged for the provisioned EBS volumes.
+Only detaching and deleting the EBS volumes will prevent that but your SAP HANA, express edition will no longer be usable.
