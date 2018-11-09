@@ -81,19 +81,6 @@ Using the <a href="http://files.grouplens.org/datasets/movielens/ml-latest-small
 [DONE]
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 1: ](Select, install and configure a SQL query tool)]
-
-As you will mostly execute SQL commands during this series, you will need to setup a SQL query tool for SAP HANA, express edition.
-
-The following tutorial group describes a series of option you can pick one from (you don't need to setup all of them, but one is enough):
-
- - [Select, install and configure a SQL query tool for SAP HANA, express edition](https://www.sap.com/developer/groups/mlb-hxe-tools-sql.html).
-
-Off course you can use any tool of your choice!
-
-[DONE]
-[ACCORDION-END]
-
 [ACCORDION-BEGIN [Step 1: ](Check the row counts)]
 
 Connect to the **HXE** tenant using the **`ML_USER`** user credentials and execute the following SQL statement to check the number of rows:

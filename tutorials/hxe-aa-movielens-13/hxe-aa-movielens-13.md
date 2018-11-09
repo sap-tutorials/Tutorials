@@ -666,7 +666,7 @@ Paste the following content:
     <content>
       <Bar>
         <contentMiddle>
-          <Title text="Execute The APL Forecast Algorithm"/>
+          <Title text="Execute The APL Recommendation Algorithm"/>
         </contentMiddle>
         <contentLeft>
           <Button icon="sap-icon://menu" press="handlePressOpenMenu"/>
