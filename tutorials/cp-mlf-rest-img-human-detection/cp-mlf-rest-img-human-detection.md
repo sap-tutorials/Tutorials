@@ -151,7 +151,7 @@ function drawImage(imagId) {
 	ctx.fillStyle = "white";
 	ctx.font = fontSize + "px Arial";
 
-	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
+	// // ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
     oImg.style.display = "none";
     return ctx;
 }
@@ -244,7 +244,7 @@ function drawImage(imagId) {
 	ctx.fillStyle = "white";
 	ctx.font = fontSize + "px Arial";
 
-	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
+	// // ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
     oImg.style.display = "none";
     return ctx;
 }

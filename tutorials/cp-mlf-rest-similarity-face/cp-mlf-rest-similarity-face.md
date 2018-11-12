@@ -199,7 +199,7 @@ function drawImage(imagId) {
 	ctx.fillStyle = "white";
 	ctx.font = "14pt Arial";
 
-	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
+	// ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
     oImg.style.display = "none";
     return ctx;
 }
@@ -349,7 +349,7 @@ function drawImage(imagId) {
 	ctx.fillStyle = "white";
 	ctx.font = "14pt Arial";
 
-	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
+	// ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
     oImg.style.display = "none";
     return ctx;
 }
