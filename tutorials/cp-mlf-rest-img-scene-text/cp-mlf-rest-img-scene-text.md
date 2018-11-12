@@ -76,9 +76,18 @@ Select your image file.
 
 ![Postman](02.png)
 
-If you are missing some inspiration, you can use the [Hollywood sign picture](https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/HollywoodSign.jpg/320px-HollywoodSign.jpg).
+If you are missing some inspiration, you can use the following pictures from [SAP TechEd Barcelona 2018](https://sapteched2018.event-hosting.com/Gallery-336659.html):
 
-![Hollywood sign](https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/HollywoodSign.jpg/320px-HollywoodSign.jpg)
+ - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551006" target="blank" download="SAP_TechEd_BCN2018_01020.jpg">Image `SAP_TechEd_BCN2018_01020`</a>
+ - <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551064" target="blank" download="SAP_TechEd_BCN2018_01256.jpg">Image `SAP_TechEd_BCN2018_01256`</a>
+
+The first image (`SAP_TechEd_BCN2018_01020.jpg`) contains the following text :
+
+  - SAP TechEd Registration Check-In
+
+The second image (`SAP_TechEd_BCN2018_01256.jpg`) contains the following text :
+
+  - Pleas have your Photo `I.D.` ready
 
 Click on **Send**.
 
@@ -88,22 +97,50 @@ You should receive a response that includes a series of entries:
 
 ```json
 {
-    "imageName": "320px-HollywoodSign.jpg",
+    "imageName": "SAP_TechEd_BCN2018_01020.jpg",
     "results": [
-      {
-        "bboxAccuracy": 0.9450600147247314,
-        "boundingBox": {
-          "x1": 27,
-          "x2": 303,
-          "x3": 304,
-          "x4": 27,
-          "y1": 81,
-          "y2": 76,
-          "y3": 125,
-          "y4": 130
+        {
+            "bboxAccuracy": 0.9788690209388733,
+            "boundingBox": {
+                "x1": 1139,
+                "x2": 1477,
+                "x3": 1482,
+                "x4": 1144,
+                "y1": 291,
+                "y2": 276,
+                "y3": 402,
+                "y4": 417
+            },
+            "text": "Check-ll"
         },
-        "text": "HOLLYYOOD"
-      }
+        {
+            "bboxAccuracy": 0.981939971446991,
+            "boundingBox": {
+                "x1": 799,
+                "x2": 1098,
+                "x3": 1104,
+                "x4": 804,
+                "y1": 381,
+                "y2": 365,
+                "y3": 477,
+                "y4": 493
+            },
+            "text": "Registration"
+        },
+        {
+            "bboxAccuracy": 0.977262020111084,
+            "boundingBox": {
+                "x1": 530,
+                "x2": 632,
+                "x3": 640,
+                "x4": 538,
+                "y1": 472,
+                "y2": 458,
+                "y3": 516,
+                "y4": 530
+            },
+            "text": "TECHED"
+        }
     ]
 }
 ```
@@ -115,6 +152,8 @@ Each entry in the response represents a box that identify a bounding box with an
 </table>
 
 <script>
+var fontSize = 10;
+
 function drawImage(imagId) {
 	var oImg = document.getElementById("img_" + imagId);;
 	var oCanvas = document.getElementById("canvas_" + imagId);
@@ -126,10 +165,9 @@ function drawImage(imagId) {
 
     ctx.lineWidth="3";
     ctx.strokeStyle="red";
-	ctx.fillStyle = "white";
-	ctx.font = "14pt Arial";
-
+	ctx.font = fontSize + "px Arial";
 	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
+    oImg.style.display = "none";
 
     return ctx;
 }
@@ -139,38 +177,83 @@ window.onload = function() {
 	var oCanvas = document.getElementById("canvas_1");
 
     var response = {
-		"results": [
-			{
-		        "bboxAccuracy": 0.9450600147247314,
-		        "boundingBox": {
-		          "x1": 27,
-		          "x2": 303,
-		          "x3": 304,
-		          "x4": 27,
-		          "y1": 81,
-		          "y2": 76,
-		          "y3": 125,
-		          "y4": 130
-	        },
-	        "text": "HOLLYYOOD"
-	      }
-	    ]
+        "imageName": "SAP_TechEd_BCN2018_01020.jpg",
+        "predictions": [
+            {
+                "bboxAccuracy": 0.9788690209388733,
+                "boundingBox": {
+                    "x1": 1139,
+                    "x2": 1477,
+                    "x3": 1482,
+                    "x4": 1144,
+                    "y1": 291,
+                    "y2": 276,
+                    "y3": 402,
+                    "y4": 417
+                },
+                "text": "Check-ll"
+            },
+            {
+                "bboxAccuracy": 0.981939971446991,
+                "boundingBox": {
+                    "x1": 799,
+                    "x2": 1098,
+                    "x3": 1104,
+                    "x4": 804,
+                    "y1": 381,
+                    "y2": 365,
+                    "y3": 477,
+                    "y4": 493
+                },
+                "text": "Registration"
+            },
+            {
+                "bboxAccuracy": 0.977262020111084,
+                "boundingBox": {
+                    "x1": 530,
+                    "x2": 632,
+                    "x3": 640,
+                    "x4": 538,
+                    "y1": 472,
+                    "y2": 458,
+                    "y3": 516,
+                    "y4": 530
+                },
+                "text": "TECHED"
+            }
+        ]
     };
 	oImg.onload = function(){
 		var ctx = drawImage("1")
+		for (var i = 0; i < response.predictions.length; i++) {
+            // draw the bouding box
+			ctx.moveTo(response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1);
+			ctx.lineTo(response.predictions[i].boundingBox.x2, response.predictions[i].boundingBox.y2);
+			ctx.lineTo(response.predictions[i].boundingBox.x3, response.predictions[i].boundingBox.y3);
+			ctx.lineTo(response.predictions[i].boundingBox.x4, response.predictions[i].boundingBox.y4);
+			ctx.lineTo(response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1);
+			ctx.stroke();
 
-        ctx.moveTo(response.results[0].boundingBox.x1, response.results[0].boundingBox.y1);
-
-        ctx.lineTo(response.results[0].boundingBox.x2, response.results[0].boundingBox.y2);
-        ctx.lineTo(response.results[0].boundingBox.x3, response.results[0].boundingBox.y3);
-        ctx.lineTo(response.results[0].boundingBox.x4, response.results[0].boundingBox.y4);
-        ctx.lineTo(response.results[0].boundingBox.x1, response.results[0].boundingBox.y1);
-        ctx.stroke();  
-
-        ctx.fillText(response.results[0].text, response.results[0].boundingBox.x2, response.results[0].boundingBox.y2);
-
+            // write the text with the box angle
+			var text =  "#" + i  + ": " + response.predictions[i].text + " " + ( response.predictions[i].bboxAccuracy * 100 ).toFixed(2) + "%";
+			ctx.save();
+            // do some trigonometry to calculate the angle
+            var ab = Math.abs(response.predictions[i].boundingBox.x2 - response.predictions[i].boundingBox.x1);
+            var ac = Math.abs(response.predictions[i].boundingBox.y2 - response.predictions[i].boundingBox.y1);
+            var bc = Math.sqrt( Math.pow(ab, 2) + Math.pow(ac, 2));
+            var clockwise = (response.predictions[i].boundingBox.y2 - response.predictions[i].boundingBox.y1 > 0 ? 1 : -1);
+			var angle = Math.acos(ab /  bc);
+			ctx.rotate( clockwise * angle );
+            // draw the background box
+            ctx.fillStyle = 'red';
+            ctx.fillRect(response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1, ctx.measureText(text).width, parseInt(fontSize*1.5));
+            // write the text in the box
+            ctx.fillStyle = "white";
+            ctx.fillText(text, response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1 + fontSize);
+            ctx.restore();
+		}
     }
-	oImg.src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/HollywoodSign.jpg/320px-HollywoodSign.jpg";
+	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551006";
 };
 </script>
 
@@ -179,11 +262,14 @@ Here is a simple HTML code you can use to visualize other results:
 ```HTML
 <html>
 <body>
+
 <table border="0">
 	<tr><td><img id="img_1"/></div></td></tr><tr><td><canvas id="canvas_1"/></td></tr>
 </table>
 
 <script>
+var fontSize = 10;
+
 function drawImage(imagId) {
 	var oImg = document.getElementById("img_" + imagId);;
 	var oCanvas = document.getElementById("canvas_" + imagId);
@@ -195,10 +281,9 @@ function drawImage(imagId) {
 
     ctx.lineWidth="3";
     ctx.strokeStyle="red";
-	ctx.fillStyle = "white";
-	ctx.font = "14pt Arial";
-
+	ctx.font = fontSize + "px Arial";
 	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
+    oImg.style.display = "none";
 
     return ctx;
 }
@@ -208,38 +293,84 @@ window.onload = function() {
 	var oCanvas = document.getElementById("canvas_1");
 
     var response = {
-		"results": [
-			{
-		        "bboxAccuracy": 0.9450600147247314,
-		        "boundingBox": {
-		          "x1": 27,
-		          "x2": 303,
-		          "x3": 304,
-		          "x4": 27,
-		          "y1": 81,
-		          "y2": 76,
-		          "y3": 125,
-		          "y4": 130
-	        },
-	        "text": "HOLLYYOOD"
-	      }
-	    ]
+        "imageName": "SAP_TechEd_BCN2018_01020.jpg",
+        "predictions": [
+            {
+                "bboxAccuracy": 0.9788690209388733,
+                "boundingBox": {
+                    "x1": 1139,
+                    "x2": 1477,
+                    "x3": 1482,
+                    "x4": 1144,
+                    "y1": 291,
+                    "y2": 276,
+                    "y3": 402,
+                    "y4": 417
+                },
+                "text": "Check-ll"
+            },
+            {
+                "bboxAccuracy": 0.981939971446991,
+                "boundingBox": {
+                    "x1": 799,
+                    "x2": 1098,
+                    "x3": 1104,
+                    "x4": 804,
+                    "y1": 381,
+                    "y2": 365,
+                    "y3": 477,
+                    "y4": 493
+                },
+                "text": "Registration"
+            },
+            {
+                "bboxAccuracy": 0.977262020111084,
+                "boundingBox": {
+                    "x1": 530,
+                    "x2": 632,
+                    "x3": 640,
+                    "x4": 538,
+                    "y1": 472,
+                    "y2": 458,
+                    "y3": 516,
+                    "y4": 530
+                },
+                "text": "TECHED"
+            }
+        ]
     };
 	oImg.onload = function(){
 		var ctx = drawImage("1")
+		for (var i = 0; i < response.predictions.length; i++) {
+            // draw the bouding box
+			ctx.moveTo(response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1);
+			ctx.lineTo(response.predictions[i].boundingBox.x2, response.predictions[i].boundingBox.y2);
+			ctx.lineTo(response.predictions[i].boundingBox.x3, response.predictions[i].boundingBox.y3);
+			ctx.lineTo(response.predictions[i].boundingBox.x4, response.predictions[i].boundingBox.y4);
+			ctx.lineTo(response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1);
+			ctx.stroke();
 
-        ctx.moveTo(response.results[0].boundingBox.x1, response.results[0].boundingBox.y1);
-		
-        ctx.lineTo(response.results[0].boundingBox.x2, response.results[0].boundingBox.y2);
-        ctx.lineTo(response.results[0].boundingBox.x3, response.results[0].boundingBox.y3);
-        ctx.lineTo(response.results[0].boundingBox.x4, response.results[0].boundingBox.y4);
-        ctx.lineTo(response.results[0].boundingBox.x1, response.results[0].boundingBox.y1);
-        ctx.stroke();  
+            // write the text with the box angle
+			var text =  "#" + i  + ": " + response.predictions[i].text + " " + ( response.predictions[i].bboxAccuracy * 100 ).toFixed(2) + "%";
+            ctx.save();
+            // do some trigonometry to calculate the angle
+            var ab = Math.abs(response.predictions[i].boundingBox.x2 - response.predictions[i].boundingBox.x1);
+            var ac = Math.abs(response.predictions[i].boundingBox.y2 - response.predictions[i].boundingBox.y1);
+            var bc = Math.sqrt( Math.pow(ab, 2) + Math.pow(ac, 2));
+            var clockwise = (response.predictions[i].boundingBox.y2 - response.predictions[i].boundingBox.y1 > 0 ? 1 : -1);
+			var angle = Math.acos(ab /  bc);
+			ctx.rotate( clockwise * angle );
 
-        ctx.fillText(response.results[0].text, response.results[0].boundingBox.x2, response.results[0].boundingBox.y2);
-
+            // draw the background box
+            ctx.fillStyle = 'red';
+            ctx.fillRect(response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1, ctx.measureText(text).width, parseInt(fontSize*1.5));
+            // write the text in the box
+            ctx.fillStyle = "white";
+            ctx.fillText(text, response.predictions[i].boundingBox.x1, response.predictions[i].boundingBox.y1 + fontSize);
+            ctx.restore();
+		}
     }
-	oImg.src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/HollywoodSign.jpg/320px-HollywoodSign.jpg";
+	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551006";
 };
 </script>
 </body>
