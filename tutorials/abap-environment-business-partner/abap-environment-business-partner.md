@@ -10,13 +10,13 @@ time: 20
 ### Prerequisites  
 - Communication arrangement for scenario `SAP_COM_0276` was created with service instance name  `OutboundCommunication`.
 - Business user in SAP S/4 HANA Cloud has business role `SAP_BR_BUPA_MASTER_SPECIALIST` in order to create business partners in SAP S/4 HANA​.
-- Integration between S/4 HANA Cloud and SAP Cloud Platform ABAP environment completed​.
+- Integration between S/4 HANA Cloud and SAP Cloud Platform ABAP Environment completed​.
 
 ## Details
 ### You will learn  
-  - How to implement outbound service call from SAP Cloud Platform ABAP environment to S/4 HANA Cloud service
-  - How to retrieve data of logged in business user in SAP Cloud Platform ABAP environment
-  - Create business partner in S/4 HANA Cloud system based on data of business user in SAP Cloud Platform ABAP environment (use Business Partner Integration Service in SAP S/4 HANA)​
+  - How to implement outbound service call from SAP Cloud Platform ABAP Environment to S/4 HANA Cloud service
+  - How to retrieve data of logged in business user in SAP Cloud Platform ABAP Environment
+  - Create business partner in S/4 HANA Cloud system based on data of business user in SAP Cloud Platform ABAP Environment (use Business Partner Integration Service in SAP S/4 HANA)​
   - Return business partner id after creation
 
 Create all ABAP artifacts with namespace `Z...` for local development.
@@ -255,7 +255,7 @@ ENDCLASS.
   2. Enter Business User email and password and click on Log on.
 
       business user requires the `SAP_BR_BUPA_MASTER_SPECIALIST` business role.
-      This User has the same email-address for both S/4 HANA and SAP Cloud Platform ABAP environment.
+      This User has the same email-address for both S/4 HANA and SAP Cloud Platform ABAP Environment.
 
       ![Log On](Picture11.png)
 
