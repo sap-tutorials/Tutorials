@@ -1,5 +1,5 @@
 ---
-title: Connect your ABAP System with SAP Cloud Platform Using a Secure Tunnel
+title: Connect an ABAP System with SAP Cloud Platform Using a Secure Tunnel
 description: Set up your SAP Cloud Platform account and the Cloud Connector to establish a secure tunnel between SAP Cloud Platform and the Application Server ABAP in your system landscape.
 auto_validation: true
 primary_tag: products>sap-cloud-platform
@@ -20,7 +20,7 @@ time: 15
 
 ---
 
-[ACCORDION-BEGIN [Step 1: ](Connect the Cloud Connector with SAP Cloud Platform trial subaccount)]
+[ACCORDION-BEGIN [Step 1: ](Connect Cloud Connector with trial subaccount)]
 
 Before you can access data from the Cloud Connector in an application on SAP Cloud Platform, you must establish a trust between your SAP Cloud Platform subaccount and the Cloud Connector that is installed in your system landscape. To do so, you need your subaccount ID.
 
@@ -62,7 +62,7 @@ Before you can access data from the Cloud Connector in an application on SAP Clo
 [ACCORDION-END]
 
 
-[ACCORDION-BEGIN [Step 2: ](Connect your Cloud Connector with ABAP system)]
+[ACCORDION-BEGIN [Step 2: ](Connect Cloud Connector with ABAP system)]
 Access from any application on SAP Cloud Platform to resources on your ABAP system are provided by mapping the IP address of your ABAP system ( **Internal Host** ) to a **Virtual Host**. You provide this mapping and further attributes relevant for the connection in the **`ACCESS CONTROL`**. After the access control is set up you can use the virtual host on SAP Cloud platform to allow applications to connect to services on your ABAP system.
 
 In this step we do not provide any password information. It will have to be provided later on SAP Cloud Platform when you create a destination for this host.
@@ -111,7 +111,7 @@ In this step we do not provide any password information. It will have to be prov
 
 [ACCORDION-END]
 
-[ACCORDION-BEGIN [Step 3: ](Allow access to required resources of ABAP system)]
+[ACCORDION-BEGIN [Step 3: ](Allow access to ABAP resources)]
 
 Before applications on SAP Cloud Platform can access any services of the ABAP system you must specify the corresponding paths in table **`Resources Accessible On <your virtual host>:<port>`**.
 
