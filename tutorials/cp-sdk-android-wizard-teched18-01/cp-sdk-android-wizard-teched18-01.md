@@ -98,6 +98,8 @@ On the **Project Configuration** tab, provide the following configuration data:
 | Enable Upload | check |
 | Enable Push | check and browse to `C:\AndroidStudioProjects\google-services.json` |
 
+If for some reason this file is missing, it can be downloaded from <a target="_blank" href="https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/cp-sdk-android-wizard-teched18-01/google-services.json">google-services.json</a>.
+
 
 ![Project configuration](project-configuration.png)
 

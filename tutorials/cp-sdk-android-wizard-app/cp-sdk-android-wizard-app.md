@@ -11,7 +11,7 @@ time: 20
 - [Sign up for a free trial account on SAP Cloud Platform](https://www.sap.com/developer/tutorials/hcp-create-trial-account.html)
 - [Enable SAP Cloud Platform mobile service for development and operations](https://www.sap.com/developer/tutorials/fiori-ios-hcpms-setup.html)
 - **Development environment:** Android Studio
-- **SAP Cloud Platform SDK for Android:** Version 1.1.0
+- **SAP Cloud Platform SDK for Android:** Version 1.1.x
 
 ## Details
 ### You will learn  
