@@ -1,4 +1,0 @@
-/n/IWFND/MAINT_SERVICE
-Technical Service Name = *ZEPM*
-Select ZEPM_REF_APPS_SHOP_SRV and **SAP Gateway Client**
-Resource to be released: /sap/opu/odata/sap/EPM_REF_APPS_SHOP_SRV/?$format=xml
