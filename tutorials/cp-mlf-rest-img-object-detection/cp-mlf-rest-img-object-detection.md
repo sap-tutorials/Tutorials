@@ -130,6 +130,8 @@ Here is the results represented on <a href="https://sapteched2018.event-hosting.
 </table>
 
 <script>
+var fontSize = 14;
+
 function drawImage(imagId) {
 	var oImg = document.getElementById("img_" + imagId);;
 	var oCanvas = document.getElementById("canvas_" + imagId);
@@ -142,9 +144,9 @@ function drawImage(imagId) {
     ctx.lineWidth="3";
     ctx.strokeStyle="red";
 	ctx.fillStyle = "white";
-	ctx.font = "14pt Arial";
+	ctx.font = fontSize + "px Arial";
 
-	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
+	// ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
     oImg.style.display = "none";
     return ctx;
 }
@@ -154,39 +156,58 @@ window.onload = function() {
 	var oCanvas = document.getElementById("canvas_1");
 
     var response = {
-        "detection_boxes": [
-	        [ 0.2735770344734192, 0.10513334721326828, 0.8366726636886597, 0.2314799576997757 ],
-	        [ 0, 0.4907439947128296, 0.8411328196525574, 0.9973546266555786 ],
-			[ 0.06066185235977173, 0.1283799558877945, 0.8287661671638489, 0.6976333260536194 ]
+	    "detection_boxes": [
+	        [
+	            0.2735770344734192,
+	            0.10513334721326828,
+	            0.8366726636886597,
+	            0.2314799576997757
+	        ],
+	        [
+	            0,
+	            0.4907439947128296,
+	            0.8411328196525574,
+	            0.9973546266555786
+	        ],
+	        [
+	            0.06066185235977173,
+	            0.1283799558877945,
+	            0.8287661671638489,
+	            0.6976333260536194
+	        ]
 	    ],
-		"detection_classes": [ "bottle", "person", "tvmonitor" ],
-		"detection_scores": [ 0.9997833371162415, 0.9976527094841003, 0.9811497926712036 ]
-    };
+	    "detection_classes": [
+	        "bottle",
+	        "person",
+	        "tvmonitor"
+	    ],
+	    "detection_scores": [
+	        0.9997833371162415,
+	        0.9976527094841003,
+	        0.9811497926712036
+	    ]
+	};
 	oImg.onload = function(){
 		var ctx = drawImage("1")
-		ctx.strokeRect(
-            response.detection_boxes[0][1] * oCanvas.width,
-            response.detection_boxes[0][0] * oCanvas.height,
-            response.detection_boxes[0][3] * oCanvas.width  - response.detection_boxes[0][1] * oCanvas.width,
-            response.detection_boxes[0][2] * oCanvas.height - response.detection_boxes[0][0] * oCanvas.height
+		for (var i = 0; i < response.detection_boxes.length; i++) {
+			var text = "#" + i  + ": " + response.detection_classes[i] + " " + ( response.detection_scores[i] * 100 ).toFixed(2) + "%";
+            ctx.strokeRect(
+	            response.detection_boxes[i][1] * oCanvas.width,
+	            response.detection_boxes[i][0] * oCanvas.height,
+	            response.detection_boxes[i][3] * oCanvas.width  - response.detection_boxes[i][1] * oCanvas.width,
+	            response.detection_boxes[i][2] * oCanvas.height - response.detection_boxes[i][0] * oCanvas.height
 
-        );  
-		ctx.strokeRect(
-            response.detection_boxes[1][1] * oCanvas.width, //x
-            response.detection_boxes[1][0] * oCanvas.height,//y
-            response.detection_boxes[1][3] * oCanvas.width  - response.detection_boxes[1][1] * oCanvas.width,
-            response.detection_boxes[1][2] * oCanvas.height - response.detection_boxes[1][0] * oCanvas.height
-        );         
-		ctx.strokeRect(
-            response.detection_boxes[2][1] * oCanvas.width,
-            response.detection_boxes[2][0] * oCanvas.height,
-            response.detection_boxes[2][3] * oCanvas.width  - response.detection_boxes[2][1] * oCanvas.width,
-            response.detection_boxes[2][2] * oCanvas.height - response.detection_boxes[2][0] * oCanvas.height
-        );        
-        ctx.fillText(response.detection_classes[0] + " " + response.detection_scores[0], response.detection_boxes[0][1] * oCanvas.width, response.detection_boxes[0][2] * oCanvas.height );
-        ctx.fillText(response.detection_classes[1] + " " + response.detection_scores[1], response.detection_boxes[1][1] * oCanvas.width, response.detection_boxes[1][2] * oCanvas.height );
-        ctx.fillText(response.detection_classes[2] + " " + response.detection_scores[2], response.detection_boxes[2][1] * oCanvas.width, response.detection_boxes[2][2] * oCanvas.height );
-
+	        );
+            // write the text with the box angle
+            ctx.save();
+            // draw the background box
+            ctx.fillStyle = 'red';
+            ctx.fillRect(response.detection_boxes[i][1] * oCanvas.width, response.detection_boxes[i][0] * oCanvas.height, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
+            // write the text in the box
+            ctx.fillStyle = "white";
+            ctx.fillText(text, response.detection_boxes[i][1] * oCanvas.width, response.detection_boxes[i][0] * oCanvas.height + fontSize);
+            ctx.restore();			
+		}
     }
 	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551397";
 };
@@ -202,6 +223,8 @@ Here is a simple HTML code you can use to visualize other results:
 </table>
 
 <script>
+var fontSize = 14;
+
 function drawImage(imagId) {
 	var oImg = document.getElementById("img_" + imagId);;
 	var oCanvas = document.getElementById("canvas_" + imagId);
@@ -214,9 +237,9 @@ function drawImage(imagId) {
     ctx.lineWidth="3";
     ctx.strokeStyle="red";
 	ctx.fillStyle = "white";
-	ctx.font = "14pt Arial";
+	ctx.font = fontSize + "px Arial";
 
-	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
+	// ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
     oImg.style.display = "none";
     return ctx;
 }
@@ -226,39 +249,58 @@ window.onload = function() {
 	var oCanvas = document.getElementById("canvas_1");
 
     var response = {
-        "detection_boxes": [
-	        [ 0.2735770344734192, 0.10513334721326828, 0.8366726636886597, 0.2314799576997757 ],
-	        [ 0, 0.4907439947128296, 0.8411328196525574, 0.9973546266555786 ],
-			[ 0.06066185235977173, 0.1283799558877945, 0.8287661671638489, 0.6976333260536194 ]
+	    "detection_boxes": [
+	        [
+	            0.2735770344734192,
+	            0.10513334721326828,
+	            0.8366726636886597,
+	            0.2314799576997757
+	        ],
+	        [
+	            0,
+	            0.4907439947128296,
+	            0.8411328196525574,
+	            0.9973546266555786
+	        ],
+	        [
+	            0.06066185235977173,
+	            0.1283799558877945,
+	            0.8287661671638489,
+	            0.6976333260536194
+	        ]
 	    ],
-		"detection_classes": [ "bottle", "person", "tvmonitor" ],
-		"detection_scores": [ 0.9997833371162415, 0.9976527094841003, 0.9811497926712036 ]
-    };
+	    "detection_classes": [
+	        "bottle",
+	        "person",
+	        "tvmonitor"
+	    ],
+	    "detection_scores": [
+	        0.9997833371162415,
+	        0.9976527094841003,
+	        0.9811497926712036
+	    ]
+	};
 	oImg.onload = function(){
 		var ctx = drawImage("1")
-		ctx.strokeRect(
-            response.detection_boxes[0][1] * oCanvas.width,
-            response.detection_boxes[0][0] * oCanvas.height,
-            response.detection_boxes[0][3] * oCanvas.width  - response.detection_boxes[0][1] * oCanvas.width,
-            response.detection_boxes[0][2] * oCanvas.height - response.detection_boxes[0][0] * oCanvas.height
+		for (var i = 0; i < response.detection_boxes.length; i++) {
+			ctx.strokeRect(
+	            response.detection_boxes[i][1] * oCanvas.width,
+	            response.detection_boxes[i][0] * oCanvas.height,
+	            response.detection_boxes[i][3] * oCanvas.width  - response.detection_boxes[i][1] * oCanvas.width,
+	            response.detection_boxes[i][2] * oCanvas.height - response.detection_boxes[i][0] * oCanvas.height
 
-        );  
-		ctx.strokeRect(
-            response.detection_boxes[1][1] * oCanvas.width, //x
-            response.detection_boxes[1][0] * oCanvas.height,//y
-            response.detection_boxes[1][3] * oCanvas.width  - response.detection_boxes[1][1] * oCanvas.width,
-            response.detection_boxes[1][2] * oCanvas.height - response.detection_boxes[1][0] * oCanvas.height
-        );         
-		ctx.strokeRect(
-            response.detection_boxes[2][1] * oCanvas.width,
-            response.detection_boxes[2][0] * oCanvas.height,
-            response.detection_boxes[2][3] * oCanvas.width  - response.detection_boxes[2][1] * oCanvas.width,
-            response.detection_boxes[2][2] * oCanvas.height - response.detection_boxes[2][0] * oCanvas.height
-        );        
-        ctx.fillText(response.detection_classes[0] + " " + response.detection_scores[0], response.detection_boxes[0][1] * oCanvas.width, response.detection_boxes[0][2] * oCanvas.height );
-        ctx.fillText(response.detection_classes[1] + " " + response.detection_scores[1], response.detection_boxes[1][1] * oCanvas.width, response.detection_boxes[1][2] * oCanvas.height );
-        ctx.fillText(response.detection_classes[2] + " " + response.detection_scores[2], response.detection_boxes[2][1] * oCanvas.width, response.detection_boxes[2][2] * oCanvas.height );
-
+	        );
+            // write the text with the box angle
+            var text = "#" + i  + ": " + response.detection_classes[i] + " " + ( response.detection_scores[i] * 100 ).toFixed(2) + "%";
+            ctx.save();
+            // draw the background box
+            ctx.fillStyle = 'red';
+            ctx.fillRect(response.detection_boxes[i][1] * oCanvas.width, response.detection_boxes[i][0] * oCanvas.height, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
+            // write the text in the box
+            ctx.fillStyle = "white";
+            ctx.fillText(text, response.detection_boxes[i][1] * oCanvas.width, response.detection_boxes[i][0] * oCanvas.height + fontSize);
+            ctx.restore();			
+		}
     }
 	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=551397";
 };
@@ -279,7 +321,6 @@ Which correspond to following attribute of the bounding box (the returned value 
 - y	: index 0 * canvas height
 - width	: index 3 * canvas width - index 1 * canvas width
 - height : index 2 * canvas height - index 0 * canvas height
-
 
 [DONE]
 [ACCORDION-END]

@@ -83,46 +83,52 @@ The first image (`SAP_TechEd_LV2018_10751.jpg`) contains 3 person with only 1 fa
 
 Click on **Send**.
 
-You should receive a response that includes a series of faces entries:
+You should receive a response that includes a series of faces entries.
 
 ![Postman](03.png)
 
+This is the result for `SAP_TechEd_LV2018_10772`:
+
 ```json
-{
-    "faces": [
-        {
-            "bottom": 676,
-            "left": 324,
-            "right": 510,
-            "top": 490
-        },
-        {
-            "bottom": 649,
-            "left": 769,
-            "right": 924,
-            "top": 494
-        },
-        {
-            "bottom": 632,
-            "left": 1078,
-            "right": 1233,
-            "top": 477
-        }
-    ],
-    "name": "550135-pic-2000y2000.jpg",
-    "numberOfFaces": 3
-}
+"predictions": [
+    {
+        "faces": [
+            {
+                "bottom": 696,
+                "left": 572,
+                "right": 758,
+                "top": 511
+            },
+            {
+                "bottom": 696,
+                "left": 77,
+                "right": 262,
+                "top": 511
+            },
+            {
+                "bottom": 696,
+                "left": 923,
+                "right": 1109,
+                "top": 511
+            }
+        ],
+        "name": "SAP_TechEd_LV2018_10772.jpg",
+        "numberOfFaces": 3
+    }
+]
 ```
 
 Each entry in the response represents a box that identify one of the face.
 
-Here is the results represented on <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135" target="blank" download="Image 10779.jpg">Image 10779</a>
+Here is the results represented on <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="Image 10779.jpg">Image 10779</a>
 
 <table border="0">
 	<tr><td><img id="img_1"/></div></td></tr><tr><td><canvas id="canvas_1"/></td></tr>
 </table>
 
 <script>
+var fontSize = 14;
+
 function drawImage(imagId) {
 	var oImg = document.getElementById("img_" + imagId);
 	var oCanvas = document.getElementById("canvas_" + imagId);
@@ -135,9 +141,9 @@ function drawImage(imagId) {
     ctx.lineWidth="3";
     ctx.strokeStyle="red";
 	ctx.fillStyle = "white";
-	ctx.font = "14pt Arial";
+	ctx.font = fontSize + "px Arial";
 
-	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
+	// ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
     oImg.style.display = "none";
     return ctx;
 }
@@ -145,40 +151,50 @@ var imagId = 1;
 var response = {
     "faces": [
         {
-            "bottom": 676,
-            "left": 324,
-            "right": 510,
-            "top": 490
+            "bottom": 696,
+            "left": 572,
+            "right": 758,
+            "top": 511
         },
         {
-            "bottom": 649,
-            "left": 769,
-            "right": 924,
-            "top": 494
+            "bottom": 696,
+            "left": 77,
+            "right": 262,
+            "top": 511
         },
         {
-            "bottom": 632,
-            "left": 1078,
-            "right": 1233,
-            "top": 477
+            "bottom": 696,
+            "left": 923,
+            "right": 1109,
+            "top": 511
         }
     ],
-    "name": "550135-pic-2000y2000.jpg",
+    "name": "SAP_TechEd_LV2018_10772.jpg",
     "numberOfFaces": 3
-}
+};
 window.onload = function() {
 	var oImg    = document.getElementById("img_" + imagId);
 	oImg.onload = function(){
 		var ctx = drawImage("1")
-		ctx.strokeRect(response.faces[0].left, response.faces[0].top, response.faces[0].right - response.faces[0].left, response.faces[0].bottom - response.faces[0].top);  
-		ctx.strokeRect(response.faces[1].left, response.faces[1].top, response.faces[1].right - response.faces[1].left, response.faces[1].bottom - response.faces[1].top);  
-		ctx.strokeRect(response.faces[2].left, response.faces[2].top, response.faces[2].right - response.faces[2].left, response.faces[2].bottom - response.faces[2].top);  
-
-		ctx.fillText("0", response.faces[0].left, response.faces[0].top);
-		ctx.fillText("1", response.faces[1].left, response.faces[1].top);
-		ctx.fillText("2", response.faces[2].left, response.faces[2].top);
+		for (var i = 0; i < response.faces.length; i++) {
+            ctx.strokeRect(
+				response.faces[i].left,
+				response.faces[i].top,
+				response.faces[i].right - response.faces[i].left,
+				response.faces[i].bottom - response.faces[i].top);  
+            // write the text with the box angle
+            var text = "Face #" + i;
+			ctx.save();
+            // draw the background box
+            ctx.fillStyle = 'red';
+            ctx.fillRect(response.faces[i].left, response.faces[i].top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
+            // write the text in the box
+            ctx.fillStyle = "white";
+            ctx.fillText(text, response.faces[i].left, response.faces[i].top + fontSize);
+            ctx.restore();
+		}
     }
-	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135";
+	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134";
 };
 </script>
 
@@ -186,12 +202,13 @@ Here is a simple HTML code you can use to visualize other results:
 
 ```HTML
 <html>
-<body>
-<table border="0">
+<body><table border="0">
 	<tr><td><img id="img_1"/></div></td></tr><tr><td><canvas id="canvas_1"/></td></tr>
 </table>
 
 <script>
+var fontSize = 14;
+
 function drawImage(imagId) {
 	var oImg = document.getElementById("img_" + imagId);
 	var oCanvas = document.getElementById("canvas_" + imagId);
@@ -204,9 +221,9 @@ function drawImage(imagId) {
     ctx.lineWidth="3";
     ctx.strokeStyle="red";
 	ctx.fillStyle = "white";
-	ctx.font = "14pt Arial";
+	ctx.font = fontSize + "px Arial";
 
-	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
+	// ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
     oImg.style.display = "none";
     return ctx;
 }
@@ -214,47 +231,57 @@ var imagId = 1;
 var response = {
     "faces": [
         {
-            "bottom": 676,
-            "left": 324,
-            "right": 510,
-            "top": 490
+            "bottom": 696,
+            "left": 572,
+            "right": 758,
+            "top": 511
         },
         {
-            "bottom": 649,
-            "left": 769,
-            "right": 924,
-            "top": 494
+            "bottom": 696,
+            "left": 77,
+            "right": 262,
+            "top": 511
         },
         {
-            "bottom": 632,
-            "left": 1078,
-            "right": 1233,
-            "top": 477
+            "bottom": 696,
+            "left": 923,
+            "right": 1109,
+            "top": 511
         }
     ],
-    "name": "550135-pic-2000y2000.jpg",
+    "name": "SAP_TechEd_LV2018_10772.jpg",
     "numberOfFaces": 3
-}
+};
 window.onload = function() {
 	var oImg    = document.getElementById("img_" + imagId);
 	oImg.onload = function(){
 		var ctx = drawImage("1")
-		ctx.strokeRect(response.faces[0].left, response.faces[0].top, response.faces[0].right - response.faces[0].left, response.faces[0].bottom - response.faces[0].top);  
-		ctx.strokeRect(response.faces[1].left, response.faces[1].top, response.faces[1].right - response.faces[1].left, response.faces[1].bottom - response.faces[1].top);  
-		ctx.strokeRect(response.faces[2].left, response.faces[2].top, response.faces[2].right - response.faces[2].left, response.faces[2].bottom - response.faces[2].top);  
-
-		ctx.fillText("0", response.faces[0].left, response.faces[0].top);
-		ctx.fillText("1", response.faces[1].left, response.faces[1].top);
-		ctx.fillText("2", response.faces[2].left, response.faces[2].top);
+		for (var i = 0; i < response.faces.length; i++) {
+            ctx.strokeRect(
+				response.faces[i].left,
+				response.faces[i].top,
+				response.faces[i].right - response.faces[i].left,
+				response.faces[i].bottom - response.faces[i].top);  
+            // write the text with the box angle
+            var text = "Face #" + i;
+			ctx.save();
+            // draw the background box
+            ctx.fillStyle = 'red';
+            ctx.fillRect(response.faces[i].left, response.faces[i].top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
+            // write the text in the box
+            ctx.fillStyle = "white";
+            ctx.fillText(text, response.faces[i].left, response.faces[i].top + fontSize);
+            ctx.restore();
+		}
     }
-	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550135";
+	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134";
 };
 </script>
 </body>
 </html>
 ```
 
-You will notice that the [`strokeRect` function](https://www.w3schools.com/tags/canvas_strokerect.asp) uses the following format: 
+You will notice that the [`strokeRect` function](https://www.w3schools.com/tags/canvas_strokerect.asp) uses the following format:
 
 - x	: The x-coordinate of the upper-left corner of the rectangle
 - y	: The y-coordinate of the upper-left corner of the rectangle

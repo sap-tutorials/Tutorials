@@ -83,9 +83,13 @@ The first image (`SAP_TechEd_LV2018_10751.jpg`) contains only 3 person, the seco
 
 Click on **Send**.
 
-You should receive a response that includes the bounding boxes for each detected person, the class for each entry and the associated score (the following result is for Image `SAP_TechEd_LV2018_10751`):
+You should receive a response that includes the bounding boxes for each detected person, the class for each entry and the associated score.
 
 ![Postman](03.png)
+
+
+This is the result for `SAP_TechEd_LV2018_10751`:
+
 
 ```json
 {
@@ -131,6 +135,8 @@ Here is the results represented on <a href="https://sapteched2018.event-hosting.
 </table>
 
 <script>
+var fontSize = 14;
+
 function drawImage(imagId) {
 	var oImg = document.getElementById("img_" + imagId);;
 	var oCanvas = document.getElementById("canvas_" + imagId);
@@ -143,9 +149,9 @@ function drawImage(imagId) {
     ctx.lineWidth="3";
     ctx.strokeStyle="red";
 	ctx.fillStyle = "white";
-	ctx.font = "14pt Arial";
+	ctx.font = fontSize + "px Arial";
 
-	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
+	// // ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
     oImg.style.display = "none";
     return ctx;
 }
@@ -155,39 +161,58 @@ window.onload = function() {
 	var oCanvas = document.getElementById("canvas_1");
 
     var response = {
-        "detection_boxes": [
-            [0.1799386590719223,  0.02037128061056137, 0.977997362613678,  0.47837960720062256],
-			[0.2418273687362671,  0.3918556272983551,  0.9809070825576782, 0.6808136105537415],
-			[0.16099587082862854, 0.6079592704772949,  0.9867111444473267, 0.9851326942443848]
-        ],
-        "detection_classes": [ "human", "human", "human" ],
-        "detection_scores": [ 0.99981290102005, 0.9982737302780151, 0.9978749752044678 ]
-    };
+	    "detection_boxes": [
+	        [
+	            0.18104881048202515,
+	            0.023201702162623405,
+	            0.9796464443206787,
+	            0.47891876101493835
+	        ],
+	        [
+	            0.24236789345741272,
+	            0.3937094509601593,
+	            0.9823036789894104,
+	            0.6805010437965393
+	        ],
+	        [
+	            0.15145030617713928,
+	            0.6179994940757751,
+	            0.9898813962936401,
+	            0.9882261157035828
+	        ]
+	    ],
+	    "detection_classes": [
+	        "human",
+	        "human",
+	        "human"
+	    ],
+	    "detection_scores": [
+	        0.9998396635055542,
+	        0.9981719255447388,
+	        0.9972606897354126
+	    ]
+	};
 	oImg.onload = function(){
 		var ctx = drawImage("1")
-		ctx.strokeRect(
-            response.detection_boxes[0][1] * oCanvas.width,
-            response.detection_boxes[0][0] * oCanvas.height,
-            response.detection_boxes[0][3] * oCanvas.width  - response.detection_boxes[0][1] * oCanvas.width,
-            response.detection_boxes[0][2] * oCanvas.height - response.detection_boxes[0][0] * oCanvas.height
+		for (var i = 0; i < response.detection_boxes.length; i++) {
+            ctx.strokeRect(
+	            response.detection_boxes[i][1] * oCanvas.width,
+	            response.detection_boxes[i][0] * oCanvas.height,
+	            response.detection_boxes[i][3] * oCanvas.width  - response.detection_boxes[i][1] * oCanvas.width,
+	            response.detection_boxes[i][2] * oCanvas.height - response.detection_boxes[i][0] * oCanvas.height
 
-        );  
-		ctx.strokeRect(
-            response.detection_boxes[1][1] * oCanvas.width,
-            response.detection_boxes[1][0] * oCanvas.height,
-            response.detection_boxes[1][3] * oCanvas.width  - response.detection_boxes[1][1] * oCanvas.width,
-            response.detection_boxes[1][2] * oCanvas.height - response.detection_boxes[1][0] * oCanvas.height
-        );         
-		ctx.strokeRect(
-            response.detection_boxes[2][1] * oCanvas.width,
-            response.detection_boxes[2][0] * oCanvas.height,
-            response.detection_boxes[2][3] * oCanvas.width  - response.detection_boxes[2][1] * oCanvas.width,
-            response.detection_boxes[2][2] * oCanvas.height - response.detection_boxes[2][0] * oCanvas.height
-        );        
-        ctx.fillText(response.detection_classes[0] + " " + response.detection_scores[0], response.detection_boxes[0][1] * oCanvas.width, response.detection_boxes[0][0] * oCanvas.height);
-        ctx.fillText(response.detection_classes[1] + " " + response.detection_scores[1], response.detection_boxes[1][1] * oCanvas.width, response.detection_boxes[1][0] * oCanvas.height);
-        ctx.fillText(response.detection_classes[2] + " " + response.detection_scores[2], response.detection_boxes[2][1] * oCanvas.width, response.detection_boxes[2][0] * oCanvas.height);
-
+	        );
+            // write the text with the box angle
+            var text = "#" + i  + ": " + response.detection_classes[i] + " " + ( response.detection_scores[i] * 100 ).toFixed(2) + "%";
+			ctx.save();
+            // draw the background box
+            ctx.fillStyle = 'red';
+            ctx.fillRect(response.detection_boxes[i][1] * oCanvas.width, response.detection_boxes[i][0] * oCanvas.height, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
+            // write the text in the box
+            ctx.fillStyle = "white";
+            ctx.fillText(text, response.detection_boxes[i][1] * oCanvas.width , response.detection_boxes[i][0] * oCanvas.height + fontSize);
+            ctx.restore();
+		}
     }
 	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132";
 };
@@ -203,6 +228,8 @@ Here is a simple HTML code you can use to visualize other results:
 </table>
 
 <script>
+var fontSize = 14;
+
 function drawImage(imagId) {
 	var oImg = document.getElementById("img_" + imagId);;
 	var oCanvas = document.getElementById("canvas_" + imagId);
@@ -215,9 +242,9 @@ function drawImage(imagId) {
     ctx.lineWidth="3";
     ctx.strokeStyle="red";
 	ctx.fillStyle = "white";
-	ctx.font = "14pt Arial";
+	ctx.font = fontSize + "px Arial";
 
-	ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
+	// // ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
     oImg.style.display = "none";
     return ctx;
 }
@@ -227,40 +254,58 @@ window.onload = function() {
 	var oCanvas = document.getElementById("canvas_1");
 
     var response = {
-        "detection_boxes": [
-            [0.1799386590719223,  0.02037128061056137, 0.977997362613678,  0.47837960720062256],
-			[0.2418273687362671,  0.3918556272983551,  0.9809070825576782, 0.6808136105537415],
-			[0.16099587082862854, 0.6079592704772949,  0.9867111444473267, 0.9851326942443848]
-        ],
-        "detection_classes": [ "human", "human", "human" ],
-        "detection_scores": [ 0.99981290102005, 0.9982737302780151, 0.9978749752044678 ],
-        "num_detections": 3
-    };
+	    "detection_boxes": [
+	        [
+	            0.18104881048202515,
+	            0.023201702162623405,
+	            0.9796464443206787,
+	            0.47891876101493835
+	        ],
+	        [
+	            0.24236789345741272,
+	            0.3937094509601593,
+	            0.9823036789894104,
+	            0.6805010437965393
+	        ],
+	        [
+	            0.15145030617713928,
+	            0.6179994940757751,
+	            0.9898813962936401,
+	            0.9882261157035828
+	        ]
+	    ],
+	    "detection_classes": [
+	        "human",
+	        "human",
+	        "human"
+	    ],
+	    "detection_scores": [
+	        0.9998396635055542,
+	        0.9981719255447388,
+	        0.9972606897354126
+	    ]
+	};
 	oImg.onload = function(){
 		var ctx = drawImage("1")
-		ctx.strokeRect(
-            response.detection_boxes[0][1] * oCanvas.width,
-            response.detection_boxes[0][0] * oCanvas.height,
-            response.detection_boxes[0][3] * oCanvas.width  - response.detection_boxes[0][1] * oCanvas.width,
-            response.detection_boxes[0][2] * oCanvas.height - response.detection_boxes[0][0] * oCanvas.height
+		for (var i = 0; i < response.detection_boxes.length; i++) {
+            ctx.strokeRect(
+	            response.detection_boxes[i][1] * oCanvas.width,
+	            response.detection_boxes[i][0] * oCanvas.height,
+	            response.detection_boxes[i][3] * oCanvas.width  - response.detection_boxes[i][1] * oCanvas.width,
+	            response.detection_boxes[i][2] * oCanvas.height - response.detection_boxes[i][0] * oCanvas.height
 
-        );  
-		ctx.strokeRect(
-            response.detection_boxes[1][1] * oCanvas.width,
-            response.detection_boxes[1][0] * oCanvas.height,
-            response.detection_boxes[1][3] * oCanvas.width  - response.detection_boxes[1][1] * oCanvas.width,
-            response.detection_boxes[1][2] * oCanvas.height - response.detection_boxes[1][0] * oCanvas.height
-        );         
-		ctx.strokeRect(
-            response.detection_boxes[2][1] * oCanvas.width,
-            response.detection_boxes[2][0] * oCanvas.height,
-            response.detection_boxes[2][3] * oCanvas.width  - response.detection_boxes[2][1] * oCanvas.width,
-            response.detection_boxes[2][2] * oCanvas.height - response.detection_boxes[2][0] * oCanvas.height
-        );        
-        ctx.fillText(response.detection_classes[0] + " " + response.detection_scores[0], response.detection_boxes[0][1] * oCanvas.width, response.detection_boxes[0][0] * oCanvas.height);
-        ctx.fillText(response.detection_classes[1] + " " + response.detection_scores[1], response.detection_boxes[1][1] * oCanvas.width, response.detection_boxes[1][0] * oCanvas.height);
-        ctx.fillText(response.detection_classes[2] + " " + response.detection_scores[2], response.detection_boxes[2][1] * oCanvas.width, response.detection_boxes[2][0] * oCanvas.height);
-
+	        );
+            // write the text with the box angle
+            var text = "#" + i  + ": " +response.detection_classes[i] + " " + ( response.detection_scores[i] * 100 ).toFixed(2) + "%";
+			ctx.save();
+            // draw the background box
+            ctx.fillStyle = 'red';
+            ctx.fillRect(response.detection_boxes[i][1] * oCanvas.width, response.detection_boxes[i][0] * oCanvas.height, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
+            // write the text in the box
+            ctx.fillStyle = "white";
+            ctx.fillText(text, response.detection_boxes[i][1] * oCanvas.width , response.detection_boxes[i][0] * oCanvas.height + fontSize);
+            ctx.restore();
+		}
     }
 	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550132";
 };

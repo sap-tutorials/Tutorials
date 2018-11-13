@@ -58,7 +58,7 @@ sap.ui.define([
 				oView.getModel("demo").setProperty("/resultVisible", true);
 			} else {
 				oView.getModel("demo").setProperty("/resultVisible", false);
-                MessageBox.show("Error " + oControlEvent.getParameters().status + " : " + JSON.parse(oControlEvent.getParameters().responseRaw).error_description);
+                MessageBox.show("Error " + oControlEvent.getParameters().status + " : " + JSON.parse(oControlEvent.getParameters().responseRaw).error.message);
 			}
 			this.oBusyIndicator.close();
 		}
