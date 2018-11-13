@@ -472,7 +472,7 @@ sap.ui.define([
 
       if (oControlEvent.getParameters().status === 200) {
         // get the resvice respnse as JSON
-        var oTopicDetection = JSON.parse(oControlEvent.getParameters().responseRaw).topicDetection;
+        var oTopicDetection = JSON.parse(oControlEvent.getParameters().responseRaw).predictions;
 
         // create a JSON model
         var documents = new Array(oTopicDetection.length);
@@ -481,7 +481,6 @@ sap.ui.define([
             "name": oTopicDetection[iTopicDetection].docName
           };
           oTopicDetectionDocument.topics = [];
-
           for (var iTopics = 0; iTopics < oTopicDetection[iTopicDetection].topics.length; iTopics++) {
             var oTopicDetectionTopic = {
               "rank": iTopics,
@@ -489,16 +488,17 @@ sap.ui.define([
               "score": oTopicDetection[iTopicDetection].scores[iTopics],
               "keywords": oTopicDetection[iTopicDetection].keywords[iTopics]
             };
+
             oTopicDetectionDocument.topics.push(oTopicDetectionTopic);
           }
-          documents.push(oTopicDetectionDocument);
+          documents[iTopicDetection] = oTopicDetectionDocument;
         }
         oView.getModel("demo").setProperty("/result", documents);
         // display the result table
         oView.getModel("demo").setProperty("/resultVisible", true);
       } else {
         oView.getModel("demo").setProperty("/resultVisible", false);
-        MessageBox.show("Error " + oControlEvent.getParameters().status + " : " + JSON.parse(oControlEvent.getParameters().responseRaw).error_description);
+                MessageBox.show("Error " + oControlEvent.getParameters().status + " : " + JSON.parse(oControlEvent.getParameters().responseRaw).error_description);
       }
       this.oBusyIndicator.close();
     }
