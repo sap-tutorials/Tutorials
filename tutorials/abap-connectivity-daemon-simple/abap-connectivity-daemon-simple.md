@@ -46,7 +46,10 @@ Replace your `ON_ACCEPT` method with the following code. It accepts all start re
 ```abap
 METHOD if_abap_daemon_extension~on_accept.
   TRY.
-      IF i_context_base->get_start_caller_info( )-program = 'ZCL_TUTORIAL_SIMPLE_DAEMON====CP'.
+      DATA lv_program_name TYPE program.
+      lv_program_name = cl_oo_classname_service=>get_classpool_name( 'ZCL_TUTORIAL_SIMPLE_DAEMON' ).
+
+      IF i_context_base->get_start_caller_info( )-program = lv_program_name.
         e_setup_mode = co_setup_mode-accept.
       ELSE.
         e_setup_mode = co_setup_mode-reject.
