@@ -1,6 +1,7 @@
 ---
 title: Store sensor data in HDFS in SAP Data Hub, developer edition 2.3
 description: Use HDFS to store sensor data by using SAP Data Hub, developer edition 2.3.
+auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -35,6 +36,8 @@ Open `http://localhost:50070` and check that HDFS is up and running.
 
 Navigate to **Utilities** | **Browse the file system (1)** and display the `/tmp/hdfsManager` directory (when you install SAP Data Hub, developer edition initially, this directory is empty).
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Add and configure Write File Operator)]
@@ -60,6 +63,8 @@ Click on the text box for **Connection** value and configure the following prope
 
 The **Write File** operator will write the received data to files in the `/tmp/hdfsManager` directory. The files follow the scheme `test_<counter>.txt` (whereas `<counter>` is an incremental integer).
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 3: ](Add and configure Read File Operator)]
@@ -81,6 +86,8 @@ Click on the text box for **Connection** value and configure the following prope
 
 Afterwards press the **Save** button.
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 4: ](Execute the data pipeline)]
@@ -95,6 +102,8 @@ Open `http://localhost:50070` and display the `/tmp/hdfsManager` directory. The 
 ![picture_04](./datahub-pipelines-v2-storeinhdfs_04.png)  
 
 Stop the pipeline by pressing the **Stop** button.
+
+[DONE]
 
 [ACCORDION-END]
 

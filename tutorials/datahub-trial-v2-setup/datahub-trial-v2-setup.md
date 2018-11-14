@@ -1,6 +1,7 @@
 ---
 title: Set up SAP Data Hub, trial edition 2.3
 description: Create a solution instance of SAP Data Hub, trial edition 2.3.
+auto_validation: false
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -47,30 +48,13 @@ The creation of the solution instance takes around 40 minutes.
 [ACCORDION-BEGIN [Step 4: ](Connect to SAP Data Hub Launchpad)]
 After the solution instance is up and running, you can finally connect to it.
 
-Thereto you first maintain your local host file as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide (chapter 3.2).
+Therefore you first maintain your local host file as described in the [**Getting Started with SAP Data Hub, trial edition**] (https://caldocs.hana.ondemand.com/caldocs/help/Getting_Started_Data_Hub_23.pdf) guide (chapter 3.2).
 
 Afterwards you open (`https://sapdatahubtrial/`) via a web browser.
 
 Enter **DEFAULT** as the **Tenant**, `DATAHUB` as **Username** and the password which you have selected during system setup as **Password** to logon to the Launchpad. The system displays the **Application Launchpad** page.
 
 ![picture_01](./datahub-trial-v2-setup_01.png)  
-
-[DONE]
-
-[ACCORDION-END]
-
-[ACCORDION-BEGIN [Step 5: ](Connect to Google Cloud Storage)]
-From the SAP Data Hub Launchpad you can connect the solution instance to Google Cloud Storage. This is necessary to "bring in" data into SAP Data Hub.
-
-The steps to connect the solution instance to Google Cloud Storage are described in the **Getting Started with SAP Data Hub, trial edition** guide (chapter 4).
-Ensure that you go through the **Getting Started with SAP Data Hub, trial edition** properly before starting with the tutorials.
-Afterwards upload the following three files to Google Cloud Storage. Some of the subsequent tutorials will use these files to discover data in Google Cloud Storage, profile it and transform it:
-
-- [`Customers.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/datahub-trial-setup/Customers.csv)
-- [`Devices.csv`](https://raw.githubusercontent.com/SAPDocuments/Tutorials/master/tutorials/datahub-trial-setup/Devices.csv)
-- [`Events.parquet`](https://github.com/SAPDocuments/Tutorials/raw/master/tutorials/datahub-trial-setup/Events.parquet)
-
->Right click each of the above links and use the "Save link as.." option to download the files on your local drive.
 
 [DONE]
 

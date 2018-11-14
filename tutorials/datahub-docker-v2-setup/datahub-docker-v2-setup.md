@@ -1,6 +1,7 @@
 ---
 title: Set up SAP Data Hub, developer edition 2.3
 description: Download and install SAP Data Hub, developer edition 2.3.
+auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
@@ -41,6 +42,8 @@ You see an output similar to the following:
 
 ![picture_01](./datahub-docker-v2-setup_01.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 2: ](Download SAP Data Hub, developer edition)]
@@ -51,6 +54,8 @@ https://www.sap.com/developer/trials-downloads/additional-downloads/sap-data-hub
 ```
 
 Carefully read the `README.html` as well as the license agreement prior to continuing with the tutorial.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -78,6 +83,8 @@ docker images
 You see an output similar to the following:
 
 ![picture_02](./datahub-docker-v2-setup_02.png)  
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -113,6 +120,8 @@ After the installations are completed, the container would be started. You would
 
 ![picture_04](./datahub-docker-v2-setup_04.png)
 
+[DONE]
+
 [ACCORDION-END]
 
 [ACCORDION-BEGIN [Step 5: ](Perform a smoke test)]
@@ -123,6 +132,8 @@ Open a web browser and test the following URLs (where necessary enter **Username
 * `http://localhost:50070` (Apache Hadoop User Interface)
 
 If all URLs are working, you can assume that you have successfully set up SAP Data Hub, developer edition on your local computer.
+
+[DONE]
 
 [ACCORDION-END]
 
@@ -147,6 +158,8 @@ If you like to see what is going on (after you have issued a `start` command) yo
 ```sh
 docker logs datahub
 ```
+
+[DONE]
 
 [ACCORDION-END]
 
