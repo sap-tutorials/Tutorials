@@ -3,7 +3,7 @@ title: Create Workflow (part 2), Aggregate data with Data Transform in SAP Data 
 description: Build a pipeline to aggregate device data using SAP Data Hub, trial edition 2.3.
 auto_validation: false
 primary_tag: products>sap-data-hub
-tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
+tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora  ]
 ---
 
 ## Details
