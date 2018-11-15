@@ -1,4 +1,4 @@
-const { Writable } = require('stream');
+const { URL } = require('url');
 
 const { regexp } = require('../constants');
 
@@ -18,15 +18,17 @@ const extractLinks = (content) => {
         const match = mdlink.match(pure);
         if(match) {
             return match.shift();
-        } 
+        }
     })
     .filter(link => link);
     return [...(new Set(links))];
 };
 
 const is2xx = (statusCode) => /^2/.test('' + statusCode);
+const isHttps = (url) => new URL(url).protocol.startsWith('https');
 
 module.exports = {
     extractLinks,
     is2xx,
+    isHttps,
 };
