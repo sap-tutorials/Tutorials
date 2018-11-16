@@ -120,81 +120,103 @@ This is the result for `SAP_TechEd_LV2018_10772`:
 
 Each entry in the response represents a box that identify one of the face.
 
-Here is the results represented on <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="Image 10779.jpg">Image 10779</a>
+Here is the results represented on <a href="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134" target="blank" download="Image SAP_TechEd_LV2018_10772">Image `SAP_TechEd_LV2018_10772`</a>
 
-<table border="0">
-	<tr><td><img id="img_1"/></div></td></tr><tr><td><canvas id="canvas_1"/></td></tr>
-</table>
-
+<img id="SAP_TechEd_LV2018_10772.jpg" width="100%" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134"/>
+<canvas id="canvas_SAP_TechEd_LV2018_10772.jpg"/>
 <script>
 var fontSize = 14;
 
-function drawImage(imagId) {
-	var oImg = document.getElementById("img_" + imagId);
-	var oCanvas = document.getElementById("canvas_" + imagId);
-	oCanvas.width = oImg.width;
-	oCanvas.height = oImg.height * oImg.width / oImg.naturalWidth;
+var response = {
+    "id": "b0b3fae9-ffbe-4a83-77d7-03edf57bcae0",
+    "predictions": [
+        {
+            "faces": [
+                {
+                    "bottom": 696,
+                    "left": 572,
+                    "right": 758,
+                    "top": 511
+                },
+                {
+                    "bottom": 696,
+                    "left": 77,
+                    "right": 262,
+                    "top": 511
+                },
+                {
+                    "bottom": 696,
+                    "left": 923,
+                    "right": 1109,
+                    "top": 511
+                }
+            ],
+            "name": "SAP_TechEd_LV2018_10772.jpg",
+            "numberOfFaces": 3
+        }
+    ],
+    "processedTime": "2018-11-13T18:25:17.413827+00:00",
+    "status": "DONE"
+};
+function drawCanvas(imageId) {
+	var oImg    = document.getElementById(imageId);
+    var oCanvas = document.getElementById("canvas_" + imageId);
+
+	oCanvas.width  = oImg.width;
+	oCanvas.height = oImg.height;
 
 	var ctx = oCanvas.getContext("2d");
-    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height * oImg.width / oImg.naturalWidth);
+    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height);
 
     ctx.lineWidth="3";
     ctx.strokeStyle="red";
 	ctx.fillStyle = "white";
 	ctx.font = fontSize + "px Arial";
 
-	// ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
     oImg.style.display = "none";
     return ctx;
 }
-var imagId = 1;
-var response = {
-    "faces": [
-        {
-            "bottom": 696,
-            "left": 572,
-            "right": 758,
-            "top": 511
-        },
-        {
-            "bottom": 696,
-            "left": 77,
-            "right": 262,
-            "top": 511
-        },
-        {
-            "bottom": 696,
-            "left": 923,
-            "right": 1109,
-            "top": 511
-        }
-    ],
-    "name": "SAP_TechEd_LV2018_10772.jpg",
-    "numberOfFaces": 3
-};
+function drawBoundingBox(ctx, imageId, item, text) {
+	var oImg    = document.getElementById(imageId);
+    var oCanvas = document.getElementById("canvas_" + imageId);
+
+    var widthRatio  = oCanvas.width  / oImg.naturalWidth;
+    var heightRatio = oCanvas.height / oImg.naturalHeight;
+
+    // get the box attributes
+    var left = item.left * widthRatio;
+    var top  = item.top  * heightRatio;
+    var width  = (item.right  - item.left) * widthRatio;
+    var height = (item.bottom - item.top ) * heightRatio;
+
+    // draw the box
+    ctx.strokeRect(left, top, width, height);
+
+    // write the text with the box angle
+    ctx.save();
+    ctx.fillStyle = 'red';
+    ctx.fillRect(left, top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
+    // write the text in the box
+    ctx.fillStyle = "white";
+    ctx.fillText(text, left, top + fontSize);
+    ctx.restore();
+}
+
 window.onload = function() {
-	var oImg    = document.getElementById("img_" + imagId);
-	oImg.onload = function(){
-		var ctx = drawImage("1")
-		for (var i = 0; i < response.faces.length; i++) {
-            ctx.strokeRect(
-				response.faces[i].left,
-				response.faces[i].top,
-				response.faces[i].right - response.faces[i].left,
-				response.faces[i].bottom - response.faces[i].top);  
-            // write the text with the box angle
-            var text = "Face #" + i;
-			ctx.save();
-            // draw the background box
-            ctx.fillStyle = 'red';
-            ctx.fillRect(response.faces[i].left, response.faces[i].top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
-            // write the text in the box
-            ctx.fillStyle = "white";
-            ctx.fillText(text, response.faces[i].left, response.faces[i].top + fontSize);
-            ctx.restore();
-		}
-    }
-	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134";
+	for (var idx = 0; idx < response.predictions.length; idx++) {
+        var items = response.predictions[idx].faces;
+        var name = response.predictions[idx].name;
+        var oImg = document.getElementById(name);
+        if(oImg){
+            oImg.onload = function(){
+                var ctx = drawCanvas(name);
+                for (var i = 0; i < items.length; i++) {
+                    drawBoundingBox(ctx, name, items[i], "Face #" + i);
+                }                
+            }
+            oImg.src = oImg.src;
+        }
+	}
 };
 </script>
 
@@ -202,79 +224,103 @@ Here is a simple HTML code you can use to visualize other results:
 
 ```HTML
 <html>
-<body><table border="0">
-	<tr><td><img id="img_1"/></div></td></tr><tr><td><canvas id="canvas_1"/></td></tr>
-</table>
+<body>
 
+<img id="SAP_TechEd_LV2018_10772.jpg" width="100%" src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134"/>
+<canvas id="canvas_SAP_TechEd_LV2018_10772.jpg"/>
 <script>
 var fontSize = 14;
 
-function drawImage(imagId) {
-	var oImg = document.getElementById("img_" + imagId);
-	var oCanvas = document.getElementById("canvas_" + imagId);
-	oCanvas.width = oImg.width;
-	oCanvas.height = oImg.height * oImg.width / oImg.naturalWidth;
+var response = {
+    "id": "b0b3fae9-ffbe-4a83-77d7-03edf57bcae0",
+    "predictions": [
+        {
+            "faces": [
+                {
+                    "bottom": 696,
+                    "left": 572,
+                    "right": 758,
+                    "top": 511
+                },
+                {
+                    "bottom": 696,
+                    "left": 77,
+                    "right": 262,
+                    "top": 511
+                },
+                {
+                    "bottom": 696,
+                    "left": 923,
+                    "right": 1109,
+                    "top": 511
+                }
+            ],
+            "name": "SAP_TechEd_LV2018_10772.jpg",
+            "numberOfFaces": 3
+        }
+    ],
+    "processedTime": "2018-11-13T18:25:17.413827+00:00",
+    "status": "DONE"
+};
+function drawCanvas(imageId) {
+	var oImg    = document.getElementById(imageId);
+    var oCanvas = document.getElementById("canvas_" + imageId);
+
+	oCanvas.width  = oImg.width;
+	oCanvas.height = oImg.height;
 
 	var ctx = oCanvas.getContext("2d");
-    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height * oImg.width / oImg.naturalWidth);
+    ctx.drawImage(oImg, 0, 0, oImg.width, oImg.height);
 
     ctx.lineWidth="3";
     ctx.strokeStyle="red";
 	ctx.fillStyle = "white";
 	ctx.font = fontSize + "px Arial";
 
-	// ctx.scale( oCanvas.width  / oImg.naturalWidth, oCanvas.height / oImg.naturalHeight);
     oImg.style.display = "none";
     return ctx;
 }
-var imagId = 1;
-var response = {
-    "faces": [
-        {
-            "bottom": 696,
-            "left": 572,
-            "right": 758,
-            "top": 511
-        },
-        {
-            "bottom": 696,
-            "left": 77,
-            "right": 262,
-            "top": 511
-        },
-        {
-            "bottom": 696,
-            "left": 923,
-            "right": 1109,
-            "top": 511
-        }
-    ],
-    "name": "SAP_TechEd_LV2018_10772.jpg",
-    "numberOfFaces": 3
-};
+function drawBoundingBox(ctx, imageId, item, text) {
+	var oImg    = document.getElementById(imageId);
+    var oCanvas = document.getElementById("canvas_" + imageId);
+
+    var widthRatio  = oCanvas.width  / oImg.naturalWidth;
+    var heightRatio = oCanvas.height / oImg.naturalHeight;
+
+    // get the box attributes
+    var left = item.left * widthRatio;
+    var top  = item.top  * heightRatio;
+    var width  = (item.right  - item.left) * widthRatio;
+    var height = (item.bottom - item.top ) * heightRatio;
+
+    // draw the box
+    ctx.strokeRect(left, top, width, height);
+
+    // write the text with the box angle
+    ctx.save();
+    ctx.fillStyle = 'red';
+    ctx.fillRect(left, top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
+    // write the text in the box
+    ctx.fillStyle = "white";
+    ctx.fillText(text, left, top + fontSize);
+    ctx.restore();
+}
+
 window.onload = function() {
-	var oImg    = document.getElementById("img_" + imagId);
-	oImg.onload = function(){
-		var ctx = drawImage("1")
-		for (var i = 0; i < response.faces.length; i++) {
-            ctx.strokeRect(
-				response.faces[i].left,
-				response.faces[i].top,
-				response.faces[i].right - response.faces[i].left,
-				response.faces[i].bottom - response.faces[i].top);  
-            // write the text with the box angle
-            var text = "Face #" + i;
-			ctx.save();
-            // draw the background box
-            ctx.fillStyle = 'red';
-            ctx.fillRect(response.faces[i].left, response.faces[i].top, ctx.measureText(text).width + ctx.lineWidth, ctx.lineWidth + fontSize);
-            // write the text in the box
-            ctx.fillStyle = "white";
-            ctx.fillText(text, response.faces[i].left, response.faces[i].top + fontSize);
-            ctx.restore();
-		}
-    }
-	oImg.src="https://sapteched2018.event-hosting.com/srv/ds/custom/download?size=2048&images=550134";
+	for (var idx = 0; idx < response.predictions.length; idx++) {
+        var items = response.predictions[idx].faces;
+        var name = response.predictions[idx].name;
+        var oImg = document.getElementById(name);
+        if(oImg){
+            oImg.onload = function(){
+                var ctx = drawCanvas(name);
+                for (var i = 0; i < items.length; i++) {
+                    drawBoundingBox(ctx, name, items[i], "Face #" + i);
+                }                
+            }
+            oImg.src = oImg.src;
+        }
+	}
 };
 </script>
 </body>

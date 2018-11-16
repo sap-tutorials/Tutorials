@@ -54,7 +54,7 @@ Fill in the following additional information:
 Field Name               | Value
 :----------------------- | :--------------
 <nobr>HTTP Method</nobr> | POST
-<nobr>URL<nobr>          | <nobr>`https://mlftrial-topic-detection.cfapps.eu10.hana.ondemand.com/api/v2/text/topic-detection`</nobr>
+<nobr>URL<nobr>          | <nobr>`https://mlftrial-machine-translation.cfapps.eu10.hana.ondemand.com/api/v2/text/translation`</nobr>
 
 > **Note** As a reminder, the URL depends on you Cloud Platform landscape region but for the trial landscape only ***Europe (Frankfurt)*** provide access to the Machine Learning Foundation services.
 
