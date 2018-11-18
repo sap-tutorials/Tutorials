@@ -35,9 +35,7 @@
     "mkdirp": "^0.5.1",
     "openurl": "^1.1.1",
     "progress": "^2.0.0",
-    "recursive-readdir": "^2.2.1",
-    "request": "^2.87.0",
-    "request-promise-native": "^1.0.5"
+    "recursive-readdir": "^2.2.1"
   },
   "devDependencies": {
     "cross-env": "^5.2.0"
