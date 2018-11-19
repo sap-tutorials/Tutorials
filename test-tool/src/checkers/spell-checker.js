@@ -1,7 +1,7 @@
 const path = require('path');
 const md = require('markdown-spellcheck').default;
 
-const { list } = require('../../config/spelling.white.list.json');
+const { list } = require('../../../data/spelling.white.list.json');
 
 const options = {
     ignoreAcronyms: true,
