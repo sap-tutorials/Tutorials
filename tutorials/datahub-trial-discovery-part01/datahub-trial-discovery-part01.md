@@ -1,18 +1,13 @@
 ---
-title: Explore data in Google Cloud Storage
+title: Explore data in Google Cloud Storage in SAP Data Hub 1.4
 description: Explore data in Google Cloud Storage (including profiling) by using SAP Data Hub, trial edition.
 auto_validation: true
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
-
-## Next Steps
- - [Explore data in SAP Vora](https://www.sap.com/developer/tutorials/datahub-trial-discovery-part02.html)
-
 ## Details
+**This tutorial is obsolete and will be removed shortly (mid-November 2018).**
 ### You will learn  
 During this tutorial, you will learn how to use Data Discovery in SAP Data Hub. This allows you to learn more about data residing in, for example, Google Cloud Storage by profiling, previewing and viewing the metadata. You will use data residing in Google Cloud Storage.
 
@@ -108,4 +103,3 @@ From the fact sheet for `Devices.csv`, click on the column **Type** and open det
 
 [ACCORDION-END]
 ---
-

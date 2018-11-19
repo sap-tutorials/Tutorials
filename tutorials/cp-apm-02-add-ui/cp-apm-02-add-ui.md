@@ -51,11 +51,11 @@ time: 10
 
 [ACCORDION-BEGIN [Step 2: ](Test-run the UI)]
 
-1. Right-click the **app** module and choose **Run | Run As | Web Application**.
+1. Right-click the **app** module and choose **Run | SAP Fiori Launchpad Sandbox**.
 
 2. Choose **`flpSandbox.html`**.
 
-    >If you have previously selected **`flpSandbox.html`** as your run configuration for web applications, you will not see a dialog box. Web IDE will use **`flpSandbox.html`** as the default.
+    >If you have previously selected **`flpSandbox.html`** as your run configuration for web applications, you will not see a dialog box. SAP Web IDE will use **`flpSandbox.html`** as the default.
 
 3. In the **Destination Creation** dialog box, complete the following fields:
 
@@ -66,7 +66,7 @@ time: 10
 
 4. Choose **Create**.
 
-The SAP Fiori `launchpad` opens.
+    The SAP Fiori `launchpad` opens.
 
     >It might take a few seconds for the SAP Fiori `launchpad` to open.
 

@@ -16,16 +16,15 @@ time: 30
 
 [ACCORDION-BEGIN [Step 1: ](Log into SAP Fiori launchpad)]
 First you need to log into the SAP Fiori launchpad.
-
 1. Double clicks on the **Remote Desktop icon** on the taskbar of your windows desktop.
 
-    ![Fiori Launchpad login preparation](kut_alp_01_01.png)
+  ![Fiori Launchpad login preparation](kut_alp_01_01.png)
 
 2. The Remote Desktop Connection gets open and you are redirected to the SAP FIORI Launchpad.
 
-    You should see this page:
+You should see this page:
 
-    ![Fiori Launchpad login continue](kut_alp_01_02.png)
+  ![Fiori Launchpad login continue](kut_alp_01_02.png)
 
 3. Login now with your user and password
 
@@ -45,8 +44,7 @@ In the SAP Fiori launchpad, go to group **Report Design** and double-click the a
 
 [ACCORDION-BEGIN [Step 3: ](Get started with report creation)]
 1. After you have successfully executed the App Report Workspace, the below window gets open.
-
-    ![Apps on the Fiori Launchpad](kut_alp_03.png)
+![Apps on the Fiori Launchpad](kut_alp_03.png)
 
 2. In the Report Workplace window, click on the + Add on the bottom left toolbar to create your report as depicted below:
 
@@ -62,7 +60,7 @@ Maintain the fields on the window as following:
   - **Title:** **`ZZ1_APSEMTAGSTATISTIC_XXXX`**
 > Replace XXXX with your initials
 
-  - **CDS View:** Query created in the previous tutorial, and then select OData Service and Entity Set from the value help.
+  - **CDS View:** Use the query view **`ZC_APSEMTAGSTATISTICAL`**, and then select OData Service and Entity Set from the value help.
 > If you did not create your own query, you can use:
 
     |  Field Name         | Value
@@ -95,6 +93,8 @@ Maintain the fields on the window as following:
 
     ![Create Report Evaluation parameters](kut_alp_08.png)
 
+  > Replace XXXX with your initials  
+
 2. Set **Scaling Factor** under **Report Data Source** to `Auto`, and **Decimal Precision** to `Auto`.
 
     ![Create Report Evaluation Data Source](kut_alp_09.png)
@@ -104,7 +104,7 @@ Maintain the fields on the window as following:
     |  Field Name                | Value
     |  :------------------       | :-------------
     |  To-Period                 | `7`
-    |  Category                  | `ATC01`
+    |  Category                  | `ACT01`
     |  Fin Statement Version     | `L000`
     |  Fiscal Year               | `2018`
     |  Controlling Area          | `A000`
@@ -151,6 +151,8 @@ Maintain the fields on the window as following:
     |  Catalog            | `X-SAP-UI2-CATALOGPAGE:Z_MONJE_TEC`
     |  Semantic Object    | `CostCenter`
     |  Action             | `analyzeALP_XXXX`
+
+    > Replace XXXX with your initials
 
     ![Maintain configuration tile](kut_alp_17.png)
 
@@ -212,7 +214,7 @@ A **Select** screen with dimension fields opens, similar to this:
 
 ![Configure table Dimension fields ](kut_alp_25.png)
 
-> The Measure **`Amount in Glob Crcy`** is selected by default.
+> Remark: The Measure **`Amount in Glob Crcy`** is selected by default.
 
 [DONE]
 [ACCORDION-END]

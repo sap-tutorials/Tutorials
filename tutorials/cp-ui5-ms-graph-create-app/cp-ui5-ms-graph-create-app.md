@@ -16,11 +16,11 @@ time: 20
 
 [ACCORDION-BEGIN [Step ](Create a HTML5 project)]
 
-1. Go to the Neo environment in the SAP Cloud Platform Cockpit (https://account.hanatrial.ondemand.com/) and open the **Services** menu in the side panel.
+1. Go to the **Neo** environment in the SAP Cloud Platform Cockpit (https://account.hanatrial.ondemand.com/) and open the **Services** menu in the side panel.
 
     ![Navigate to services](./cockpit_services.png)
 
-2. Navigate to the SAP Web IDE Full-Stack tile and click on it.
+2. Navigate to the **SAP Web IDE Full-Stack** tile and click on it.
 
 3. Hit **Go To Service** to open the SAP Web IDE Full-Stack.
 
@@ -75,7 +75,7 @@ time: 20
     ![Select service](./run-button.png)
 
 2. Click F12 open the development tools of your browser on Windows or `cmd + alt + i` on Mac.
-3. Select the **Network** tab and **filter** the network traffic for **`meta`** to find the request, which is sent to the destination. Click one the request to check the status code of this request. It should be 200 (OK).
+3. Select the **Network** tab and **filter** the network traffic for **`meta`** to find the request, which is sent to the destination. Click one the request to check the status code of this request. It should be 200 or 307 (OK).
 
     ![Select service](./chrome-network.png)
 
@@ -84,7 +84,7 @@ time: 20
 [DONE]
 [ACCORDION-END]
 [ACCORDION-BEGIN [Step ](Add a list to the view)]
-Replace the existing `<Page>` element with the following snippet to add an instance of `sap.m.List` to the `MainView.view.xml` file. You can find the file in the `webbapp > view` folder within your HTML5 project.
+Replace the existing `<Page>` element with the following snippet to add an instance of `sap.m.List` to the `MainView.view.xml` file. You can find the file in the `webapp > view` folder within your HTML5 project.
 
 ```xml
 <Page
@@ -105,6 +105,8 @@ Replace the existing `<Page>` element with the following snippet to add an insta
 <!-- INSERT CODE IN STEP 5.2 HERE -->
 ```
 This page will display all existing purchase orders in a list.
+
+> Hint: Pretty print the pasted code with: Command + Alt + B (Mac) or Control + Alt + B (Windows)
 
 [DONE]
 [ACCORDION-END]
@@ -246,6 +248,7 @@ onNavButtonPress: function (oEvent) {
     ![running](./running.png)
 
 Insert the URL of your running web application below:
+
 
 [VALIDATE_7]
 [ACCORDION-END]

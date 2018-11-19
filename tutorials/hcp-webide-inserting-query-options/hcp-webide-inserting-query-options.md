@@ -52,7 +52,7 @@ If you run your app, you will notice that the OData results are returned sorted 
 
 It is easier for a user to find a given product by name if the list is in alphabetical order. To implement this through a query option, you could append the `items` attribute in `Main.view.xml` with `?$orderby=ProductName`.
 
-However, the proper way to make the change is to use the [UI5 Sorter](https://openui5.hana.ondemand.com/docs/api/symbols/sap.ui.model.Sorter.html) for list bindings. In `Master.view.xml`, modify the `items` attribute of the `List` element as shown below.
+However, the proper way to make the change is to use the [UI5 Sorter](https://openui5.hana.ondemand.com/#/api/sap.ui.model.Sorter) for list bindings. In `Master.view.xml`, modify the `items` attribute of the `List` element as shown below.
 
 The items attribute should be:
 
@@ -100,7 +100,7 @@ this._oView = this.getView();
 
 [ACCORDION-BEGIN [Step 6: ](Add the filter)]
 
-At the bottom on the `onInit` function, insert the code snippet below which adds an `attachAfterRendering` function which defines the parameters for the [UI5 Filter](https://openui5.hana.ondemand.com/docs/api/symbols/sap.ui.model.Filter.html), creates a new `Filter` object, gets the list binding and applies the filter:
+At the bottom on the `onInit` function, insert the code snippet below which adds an `attachAfterRendering` function which defines the parameters for the [UI5 Filter](https://openui5.hana.ondemand.com/#/api/sap.ui.model.Filter), creates a new `Filter` object, gets the list binding and applies the filter:
 
 ```javascript
 // inserted function to filter master list

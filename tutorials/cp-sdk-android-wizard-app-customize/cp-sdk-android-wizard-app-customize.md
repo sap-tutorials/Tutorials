@@ -114,6 +114,11 @@ else {
 }
 ```
 
+Below the just pasted code, comment out (select and press Ctrl /) the lines that set the **`Subheadline`**, **`Footnote`** and **`Icon`** as that is now conditionally handled in the previously added code.
+
+![comment Headline](commentHeadline.png)
+
+
 
 Notice that two of the classes, `Customer` and `Drawable` cannot be resolved and are shown in red.  
 
@@ -121,10 +126,6 @@ Notice that two of the classes, `Customer` and `Drawable` cannot be resolved and
 
 
 Select each class and on Windows press **`Alt+Enter`** or on a Mac press **`option+return`** to make use of Android Studio quick fix to add the missing imports.  If prompted with multiple options, select `Import Class`.
-
-Further down (around line 400), **comment out (select and press `Ctrl / or Command /`)** the lines that set the **`Subheadline`**, **`Footnote`** and **`Icon`** as that is now conditionally handled in the previously added code.
-
-![comment Headline](commentHeadline.png)
 
 
 Run the app and notice the Customer's screen has been improved.
@@ -156,7 +157,7 @@ Run the app and notice that each row in the Recycler View has a divider.
 
 ![Customers screen with divider](customer-with-divider.png)
 
-> **Note**: Further information on Fiori for Android can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/fiori_ui_overview.html">Fiori UI Overview</a>.
+> **Note**: Further information on Fiori for Android can be found at <a target="_blank" href="https://help.sap.com/doc/c2d571df73104f72b9f1b73e06c5609a/Latest/en-US/docs/fioriui/fiori_ui_overview.html">Fiori UI Overview</a> and <a target="_blank" href="https://experience.sap.com/fiori-design-android/object-cell/">Fiori Android Design Guidelines</a>.
 
 Congratulations! You have customized the display of a Fiori for Android Object Cell.
 

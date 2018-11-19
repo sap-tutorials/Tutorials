@@ -122,7 +122,7 @@ Go back to the SAP Fiori launchpad home, select and execute from the group Query
 
     ![Custom key figure01](report_aq_12_01.png)
 
-2. Check the view **`ZZ1_APSEMTAGSTATISTIC_XXX`** and afterwards click the arrow button to display the details of the query, and afterwards click **Edit**.
+2. Check the view **`ZZ1_APSEMTAGSTATISTIC_XXXX`** and afterwards click the arrow button to display the details of the query, and afterwards click **Edit**.
 
     ![Custom key figure02](report_aq_12_02.png)
 
@@ -176,28 +176,22 @@ Go back to the SAP Fiori launchpad home, select and execute from the group Query
 [ACCORDION-BEGIN [Step 8: ](Create launchpad tile for report)]
 
 1. Click the **Action** icon.
-
-    ![Action icon](report_aq_13.png)
-
+![Action icon](report_aq_13.png)
 2. Click **Save as Tile**.
-
-    ![Save as icon](report_aq_14.png)
-
+![Save as icon](report_aq_14.png)
 3. In the **Save Tile** window, maintain the fields as follows:
 
     - **Title:** Actual Cost and Headcount XXXX Report
     - **Subtitle:** Filter by Cost Center
     - **Group:** My Home
-    - **Save title:** `report_aq_15.png`
+>Replace  XXXX with your initial
 
 4. Afterwards click on the OK button
-
-    ![Save tile OK](report_aq_16.png)
+![Save tile OK](report_aq_16.png)
 
 5. Go to SAP Fiori launchpad home page, and navigate to the group **My Home**, and
 make sure that you see a tile labeled with **Actual Cost and Headcount XXXX Report**.
-
-    ![Tile in Fiori Launchpad](report_aq_17.png)
+![Tile in Fiori Launchpad](report_aq_17.png)
 
 
 [DONE]

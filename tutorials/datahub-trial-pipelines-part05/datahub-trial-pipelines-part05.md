@@ -1,15 +1,12 @@
 ---
-title: Store sensor data in SAP Vora
+title: Store sensor data in SAP Vora in SAP Data Hub 1.4
 description: Use SAP Vora to store sensor data by using SAP Data Hub, trial edition.
 primary_tag: products>sap-data-hub
 tags: [  tutorial>beginner, topic>big-data, products>sap-data-hub, products>sap-vora ]
 ---
 
-## Prerequisites  
- - **Proficiency:** Beginner
- - You have completed [Bundle data (via JavaScript)](https://www.sap.com/developer/tutorials/datahub-trial-pipelines-part04.html)
-
 ## Details
+**This tutorial is obsolete and will be removed shortly (mid-November 2018).**
 ### You will learn  
 - How to store the data in SAP VORA from Google Cloud Storage
 - How to use a **SAP Vora Client**

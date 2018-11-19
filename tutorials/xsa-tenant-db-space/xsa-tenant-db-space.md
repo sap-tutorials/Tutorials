@@ -56,6 +56,8 @@ xs map-tenant-database -o HANAExpress -s development HXE
 
 [ACCORDION-BEGIN [Step 2: ](Option 2: Log in to the XS Advanced Administration)]
 
+**Do NOT perform these steps if you performed option 1**.
+
 If you are using SAP HANA, express edition, go into `https://hxehost:51036` or `https://hxehost:39030` to access the `xsa-cockpit` app.
 
 ![Cockpit log in](39030_cockpit.png)

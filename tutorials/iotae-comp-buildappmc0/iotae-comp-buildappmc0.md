@@ -114,7 +114,8 @@ Repeat the same for the third column changing its ___Text___ to `{DYN_ENT_sap_io
 Next change column names to `ID`, `Name` and `Common name`.
 ![Column names](iotaecompappmc0150.jpg)
 
-Next define the action of the chart refresh when another thing is selected from the list. Click on the higher element `ThingList`, then **Actions** and open Action Configuration dialog for the **Row Select** action.
+Next define the action of the chart refresh when another thing is selected from the list. Click on the higher element `ThingList`, then **Events** and open Action Configuration dialog by selecting **Wire to Action** for the **Row Select** event.
+
 ![Open action configuration](iotaecompappmc0160.jpg)
 
 Select **`doReload`** action with the **`thing`** context. Click **OK**

@@ -4,7 +4,7 @@ title: Continuous Integration (CI) Best Practices with SAP - SAP Fiori Hybrid Ap
 description: Part 4.8 - Basic CI setup for SAP Fiori Hybrid Apps with the SAP Mobile Platform SDK
 primary_tag: products>sap-cloud-platform
 tags: [ tutorial>intermediate, tutorial:type/project ]
-time: 15
+time: 120
 
 ---
 
