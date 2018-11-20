@@ -75,11 +75,20 @@ time: 20
     ![Select service](./run-button.png)
 
 2. Click F12 open the development tools of your browser on Windows or `cmd + alt + i` on Mac.
-3. Select the **Network** tab and **filter** the network traffic for **`meta`** to find the request, which is sent to the destination. Click one the request to check the status code of this request. It should be 200 or 307 (OK).
+3. Select the **Network** tab and **filter** the network traffic for **`meta`** to find the request, which is sent to the destination. Click one the request to check the status code of this request. It should be 200 (OK) or 304 (Not Modified).
 
     ![Select service](./chrome-network.png)
 
-> In case this request fails, there has been a issue while creating the destination in the Neo environment. Please make go back to the previous tutorial to make sure the destination is set up correctly
+> In case this request fails, there has been a issue while creating the destination in the Neo environment. Please go back to the previous tutorial to make sure the destination is set up correctly
+> Hint: The most recent version of the Web IDE Full-Stack (181108) contains a minor bug. Please make sure the destination in the `neo-app.json` file looks as follows:
+```
+"path": "/sap/opu/odata",
+"target": {
+  "type": "destination",
+  "name": "SAP_Gateway",
+  "entryPath": "/sap/opu/odata"
+},
+```
 
 [DONE]
 [ACCORDION-END]
