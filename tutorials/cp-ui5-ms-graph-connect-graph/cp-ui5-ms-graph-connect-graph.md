@@ -66,7 +66,7 @@ Navigate to back to your SAP Web IDE and create a new folder named **`msal`** in
 window.msalconfig = {
     clientID: "<YOUR APP ID>",
     redirectUri: location.origin,
-    graphBaseEndpoint: "https://graph.microsoft.com/beta/",
+    graphBaseEndpoint: "https://graph.microsoft.com/v1.0/",
     userInfoSuffix: "me/",
     queryMessagesSuffix: "me/messages?$search=\"$1\"&$top=150",
     graphAPIScopes: ['User.Read', 'Mail.Read']
