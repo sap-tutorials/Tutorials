@@ -51,7 +51,7 @@ Save the changes and scroll to the top to save app id in your clipboard or a new
 
 ![appid](./appid.png)
 
-> You (and the users of your application) can revoke the given permissions at <https://myapps.microsoft.com>
+> You (and the users of your application) can revoke the given permissions at <https://myapps.microsoft.com> [for Microsoft Office 365 users] or <https://account.live.com/consent/Manage> [for outlook.com users] 
 
 [VALIDATE_1]
 [ACCORDION-END]
